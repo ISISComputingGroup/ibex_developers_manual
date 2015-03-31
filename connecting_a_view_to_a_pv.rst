@@ -416,9 +416,14 @@ The simplest way to do this is to add a method for creating the binding to the V
 
 .. code::
 
+    private DataBindingContext bindingContext;
+
     private void doBinding(Label lblTitle){
-        DataBindingContext bindingContext = new DataBindingContext();
+        bindingContext = new DataBindingContext();
 		bindingContext.bindValue(WidgetProperties.text().observe(lblTitle), BeanProperties.value("title").observe(Title.getInstance().model()));
     }
 
 * Then the method can be called from the createPartControl method of the View
+
+Writing to a PV
+---------------
