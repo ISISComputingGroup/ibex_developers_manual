@@ -670,7 +670,7 @@ Hopefully once the GUI is started that all works as expected.
 So what is going on and what are these new bits we are using? 
 
 * WritableObservingTextBox is a custom ISIS control for displaying and editing a value where they are different PVs for reading and writing
-* WritableObservableAdapter is the object for linking up the two PVs. Essentially it does the same as what we did earlier with reading one PV and writing
+* WritableObservableAdapter is the object for linking up the two PVs. Essentially it does the same as what we did earlier with reading one PV and writing to another
 * View Model - a class for providing presentation logic and state information for a View. The code could live in the View itself, but it is cleaner to put it in a separate class.
 
 http://blogs.msdn.com/b/dphill/archive/2009/01/31/the-viewmodel-pattern.aspx provides a good explanation of View Models and how they fit in with the View and Model.
