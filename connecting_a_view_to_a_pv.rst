@@ -204,11 +204,12 @@ The firePropertyChange method raises an event when the title changes.
             }
         };
         
-        
+        @Override
         public String getTitle(){
             return title;
         }
         
+        @Override
         public void setTitle(String value){
             firePropertyChange("title", this.title, this.title = value);
         }
@@ -268,10 +269,12 @@ The firePropertyChange method raises an event when the title changes.
             }
         };
         
+        @Override
         public String getTitle(){
             return title;
         }
         
+        @Override
         public void setTitle(String value){
             firePropertyChange("title", this.title, this.title = value);
         }
@@ -427,3 +430,277 @@ The simplest way to do this is to add a method for creating the binding to the V
 
 Writing to a PV
 ---------------
+
+For this example we will start by adding a writeable PV for writing to the title to the TitleVariable class, so it now looks like this:
+
+.. code::
+
+    package org.csstudio.isis.title;
+
+    import org.csstudio.isis.epics.observing.InitialiseOnSubscribeObservable;
+    import org.csstudio.isis.epics.writing.Writable;
+    import org.csstudio.isis.instrument.Channels;
+    import org.csstudio.isis.instrument.InstrumentVariables;
+    import org.csstudio.isis.instrument.channels.CharWaveformChannel;
+
+    public class TitleVariable extends InstrumentVariables {
+        
+        public final InitialiseOnSubscribeObservable<String> titleRBV = reader(new CharWaveformChannel(), "DAE:TITLE");
+        public final Writable<String> titleSP = writable(new CharWaveformChannel(), "DAE:TITLE:SP");
+
+        public TitleVariable(Channels channels) {
+            super(channels);
+        }
+    }
+    
+Note that the type of the new PV is Writable and uses writable and not reader.
+
+Next we open the ITitleModel interface and add two new methods for working with the set-point, it now looks like this:
+
+.. code::
+
+    package org.csstudio.isis.title;
+
+
+    public interface ITitleModel {
+        String getTitle();
+        void setTitle(String value);
+        String getTitleSP();
+        void setTitleSP(String value);
+    }
+
+This interface is implemented in the ObservableTitleModel class, so we need to add implementations for the two new methods. 
+In fact, the ObservableTitleModel should now be showing an error because these methods are not implemented. 
+Open the class and hover over the class name, it should give you the option to 'Add unimplemented methods', select this. 
+Now we need to add code for these new methods:
+
+.. code::
+
+    ...
+    @Override
+	public String getTitleSP() {
+		return "";
+	}
+
+    @Override
+	public void setTitleSP(String value) {
+		titleVar.titleSP.write(value);
+	}
+    ...
+    
+The getter returns an empty string, but this does not matter - we could wire it up to get the current value of the set-point using a BaseObserver in the same way we did for reading the current title earlier, but we will leave that as an exercise for the reader!
+
+The setter uses the Writable object to write the new value to the IOC via channel access.
+
+Finally we need to edit the View itself to enable it to bind to titleSP. For this we add a text-box called txtNewTitle and set up the binding:
+
+.. code::
+
+    ...
+    bindingContext.bindValue(WidgetProperties.text(SWT.Modify).observe(txtNewTitle), BeanProperties.value("titleSP").observe(org.csstudio.isis.title.Title.getInstance().model()));
+    ...
+
+The key thing to note here is that WidgetProperties.txt takes SWT.Modify; this tells the binding to push the changes back to the model when the text-box is changed.
+
+If we start the GUI it can be seen that as we type in the text-box the title changes; however, it is not ideal as the title set-point is updated with every keystroke which seems a bit unnecessary.
+
+The alternative is to have a set button. First add a string property for the title SP called titleSP like so:
+
+.. code::
+    ...
+    public class ObservableTitleModel extends ModelObject implements ITitleModel {
+
+	private String title;
+	private String titleSP;
+	private final TitleVariable titleVar;
+	
+	private final BaseObserver<String> titleObserver = new BaseObserver<String>(){
+    ...
+
+Now we modify the getter and setter to use this variable for storing the new title before it is sent to the IOC:
+
+.. code::
+
+    ...
+    @Override
+    public String getTitleSP() {
+		return titleSP;
+	}
+
+    @Override
+	public void setTitleSP(String value) {
+		firePropertyChange("titleSP", this.titleSP, this.titleSP = value);
+	}
+    ...
+    
+We also add a method to the ITitleModel interface and the implementation to the ObservableTitleModle for sending the string to the IOC:
+
+.. code::
+
+    ...
+    @Override
+    public void sendTitleSP()
+	{
+		titleVar.titleSP.write(titleSP);
+	}
+    ...
+
+The final step is to add a button to the View's createPartControl method:
+
+.. code::
+
+    ...
+    Button btnSet = new Button(parent, SWT.NONE);
+    btnSet.setText("Set");
+    btnSet.addSelectionListener(new SelectionAdapter() {
+        @Override
+        public void widgetSelected(SelectionEvent e){
+            org.csstudio.isis.title.Title.getInstance().model().sendTitleSP();
+        }
+    });
+    ...
+
+Using a Read-Write control
+--------------------------
+
+It is fine to have separate controls on the View for reading and writing, but sometimes it is more convenient to have one control for both.
+
+This is relatively straightforward as there is already a helper class called WritableObservableAdapter that does most of the work.
+
+The first step though is to create a View Model class in our UI plug-in, so create a new class in org.csstudio.isis.ui.title called ViewModel.
+This class is where we will connect up the WritableObservableAdapter, but first we need to make some changes to ObservableTitleModel 
+and to do that we start by modifying ITitleModel to add a methods for accessing the Writeable object and a CachingObservable object (explained later):
+
+.. code::
+
+    package org.csstudio.isis.title;
+
+    import org.csstudio.isis.epics.observing.CachingObservable;
+    import org.csstudio.isis.epics.writing.Writable;
+
+
+    public interface ITitleModel {
+        String getTitle();
+        void setTitle(String value);
+        String getTitleSP();
+        void setTitleSP(String value);
+        void sendTitleSP();
+        CachingObservable<String> title();
+        Writable<String> titleSetter();
+    }
+
+Now we implement these methods in ObservableTitleModel:
+
+.. code::
+
+    ...
+    @Override
+    public CachingObservable<String> title() {
+		return titleVar.titleRBV;
+	}
+
+    @Override
+	public Writable<String> titleSetter() {
+		return titleVar.titleSP;
+	}
+    ...
+    
+Next we add some code to ViewModel to connect things up::
+
+.. code::
+
+    package org.csstudio.isis.ui.myperspective;
+
+
+    import org.csstudio.isis.title.ObservableTitleModel;
+    import org.csstudio.isis.ui.widgets.observable.WritableObservableAdapter;
+
+    public class ViewModel {
+        
+        public final ObservableTitleModel model = org.csstudio.isis.title.Title.getInstance().model();
+        
+        public final WritableObservableAdapter title = new WritableObservableAdapter(model.titleSetter(), model.title());
+        
+        public ViewModel() {
+            
+        }
+    }
+    
+Some error messages will appear relating to WritableObservableAdapter; to fix, hover over WritableObervableAdaptor and select "Add 'org.csstudio.isis.ui.widgets' to required bundles".
+Errors will still remain on model.titleSetter() and model.title(), so hover over one of those and select "Add 'org.csstudio.isis.epics' to required bundles".
+
+Now we need to adjust the View to use the ViewModel, first we strip out all of the code relating to the previous label, text-box and button (including the bindings), and then we add a ViewModel object and a WritableObservingTextBox:
+
+.. code::
+
+    package org.csstudio.isis.ui.myperspective;
+
+    import org.csstudio.isis.ui.widgets.observable.WritableObservingTextBox;
+    import org.eclipse.swt.SWT;
+    import org.eclipse.swt.widgets.Composite;
+    import org.eclipse.ui.part.ViewPart;
+    import org.eclipse.swt.layout.GridData;
+    import org.eclipse.swt.layout.GridLayout;
+
+    public class MyView extends ViewPart {
+        public static final String ID = "org.csstudio.isis.ui.myperspective.myview";
+
+        private final ViewModel viewModel = new ViewModel();
+        private WritableObservingTextBox rbNumber;
+        
+        public MyView() {
+        }
+
+        @Override
+        public void createPartControl(Composite parent) {
+            parent.setLayout(new GridLayout(1, false));
+            rbNumber = new WritableObservingTextBox(parent, SWT.NONE, viewModel.title);
+            rbNumber.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
+            
+        }
+
+        @Override
+        public void setFocus() {
+        }
+
+    }
+
+Hopefully once the GUI is started that all works as expected. 
+
+So what is going on and what are these new bits we are using? 
+
+* WritableObservingTextBox is a custom ISIS control for displaying and editing a value where they are different PVs for reading and writing
+* WritableObservableAdapter is the object for linking up the two PVs. Essentially it does the same as what we did earlier with reading one PV and writing
+* View Model - a class for providing presentation logic and state information for a View. The code could live in the View itself, but it is cleaner to put it in a separate class.
+
+http://blogs.msdn.com/b/dphill/archive/2009/01/31/the-viewmodel-pattern.aspx provides a good explanation of View Models and how they fit in with the View and Model.
+
+As you have probably noticed there are a number of methods in the ObservableTitlemodel that is no longer used, these can be removed (don't forgot to remove them from the interface as well!). The BaseObserver can also be removed.
+
+.. code::
+
+    package org.csstudio.isis.title;
+
+    import org.csstudio.isis.epics.observing.CachingObservable;
+    import org.csstudio.isis.epics.writing.Writable;
+    import org.csstudio.isis.model.ModelObject;
+
+    public class ObservableTitleModel extends ModelObject implements ITitleModel {
+
+        private final TitleVariable titleVar;
+        
+        public ObservableTitleModel(TitleVariable titleVar){
+            this.titleVar = titleVar;
+            //titleVar.titleRBV.subscribe(titleObserver);
+        }
+
+        @Override
+        public CachingObservable<String> title() {
+            return titleVar.titleRBV;
+        }
+
+        @Override
+        public Writable<String> titleSetter() {
+            return titleVar.titleSP;
+        }
+    }
