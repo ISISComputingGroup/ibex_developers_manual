@@ -605,7 +605,7 @@ Now we implement these methods in ObservableTitleModel:
 	}
     ...
     
-Next we add some code to ViewModel to connect things up::
+Next we add some code to ViewModel to connect things up:
 
 .. code::
 
