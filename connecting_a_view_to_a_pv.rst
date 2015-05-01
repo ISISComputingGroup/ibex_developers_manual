@@ -83,7 +83,7 @@ Adding a Model interface
 
 Next we create a Model interface:
 
-* Create a new Interface called ITitleModel
+* Create a new Interface called TitleModel
 
 * Implementing the interface will require getTitle and setTitle methods, so the code needs to look like:
 
@@ -91,10 +91,11 @@ Next we create a Model interface:
 
     package org.csstudio.isis.title;
 
-    public interface ITitleModel {
+    public interface TitleModel {
         String getTitle();
         void setTitle(String value);
     }
+
 
 Adding an ObservableModel
 -------------------------
@@ -117,13 +118,13 @@ Next we create an ObservableModel which allows us to bind controls on the View t
 
 * The next error can be fixed via the drop-down by selecting "Import 'ModelObject' (org.csstudio.isis.model)"
 
-* The class also needs to implement ITitleModel, so change the code to implement ITitleModel:
+* The class also needs to implement TitleModel, so change the code to implement TitleModel:
 
 .. code::
 
-    public class ObservableTitleModel extends ModelObject implements ITitleModel {
+    public class ObservableTitleModel extends ModelObject implements TitleModel {
 
-* There should now be an error because the methods of ITitleModel are not implemented. Hover over the error and select 'Add unimplemented methods'. The code should look like this:
+* There should now be an error because the methods of TitleModel are not implemented. Hover over the error and select 'Add unimplemented methods'. The code should look like this:
 
 .. code::
 
@@ -132,7 +133,7 @@ Next we create an ObservableModel which allows us to bind controls on the View t
     import org.csstudio.isis.epics.observing.BaseObserver;
     import org.csstudio.isis.model.ModelObject;
 
-    public class ObservableTitleModel extends ModelObject implements ITitleModel {
+    public class ObservableTitleModel extends ModelObject implements TitleModel {
 
         private String title;
         
@@ -182,7 +183,7 @@ The firePropertyChange method raises an event when the title changes.
     import org.csstudio.isis.epics.observing.BaseObserver;
     import org.csstudio.isis.model.ModelObject;
 
-    public class ObservableTitleModel extends ModelObject implements ITitleModel {
+    public class ObservableTitleModel extends ModelObject implements TitleModel {
 
         private String title;
         
@@ -220,7 +221,7 @@ The firePropertyChange method raises an event when the title changes.
 .. code::
 
     ...
-    public class ObservableTitleModel extends ModelObject implements ITitleModel {
+    public class ObservableTitleModel extends ModelObject implements TitleModel {
 
         private String title;
         private final TitleVariable titleVar;
@@ -246,7 +247,7 @@ The firePropertyChange method raises an event when the title changes.
     import org.csstudio.isis.epics.observing.BaseObserver;
     import org.csstudio.isis.model.ModelObject;
 
-    public class ObservableTitleModel extends ModelObject implements ITitleModel {
+    public class ObservableTitleModel extends ModelObject implements TitleModel {
 
         private String title;
         private final TitleVariable titleVar;
@@ -455,14 +456,14 @@ For this example we will start by adding a writeable PV for writing to the title
     
 Note that the type of the new PV is Writable and uses writable and not reader.
 
-Next we open the ITitleModel interface and add two new methods for working with the set-point, it now looks like this:
+Next we open the TitleModel interface and add two new methods for working with the set-point, it now looks like this:
 
 .. code::
 
     package org.csstudio.isis.title;
 
 
-    public interface ITitleModel {
+    public interface TitleModel {
         String getTitle();
         void setTitle(String value);
         String getTitleSP();
@@ -508,7 +509,7 @@ The alternative is to have a set button. First add a string property for the tit
 
 .. code::
     ...
-    public class ObservableTitleModel extends ModelObject implements ITitleModel {
+    public class ObservableTitleModel extends ModelObject implements TitleModel {
 
 	private String title;
 	private String titleSP;
@@ -533,7 +534,7 @@ Now we modify the getter and setter to use this variable for storing the new tit
 	}
     ...
     
-We also add a method to the ITitleModel interface and the implementation to the ObservableTitleModle for sending the string to the IOC:
+We also add a method to the TitleModel interface and the implementation to the ObservableTitleModle for sending the string to the IOC:
 
 .. code::
 
@@ -569,7 +570,7 @@ This is relatively straightforward as there is already a helper class called Wri
 
 The first step though is to create a View Model class in our UI plug-in, so create a new class in org.csstudio.isis.ui.title called ViewModel.
 This class is where we will connect up the WritableObservableAdapter, but first we need to make some changes to ObservableTitleModel 
-and to do that we start by modifying ITitleModel to add a methods for accessing the Writeable object and a CachingObservable object (explained later):
+and to do that we start by modifying TitleModel to add a methods for accessing the Writeable object and a CachingObservable object (explained later):
 
 .. code::
 
@@ -579,7 +580,7 @@ and to do that we start by modifying ITitleModel to add a methods for accessing 
     import org.csstudio.isis.epics.writing.Writable;
 
 
-    public interface ITitleModel {
+    public interface TitleModel {
         String getTitle();
         void setTitle(String value);
         String getTitleSP();
@@ -685,7 +686,7 @@ As you have probably noticed there are a number of methods in the ObservableTitl
     import org.csstudio.isis.epics.writing.Writable;
     import org.csstudio.isis.model.ModelObject;
 
-    public class ObservableTitleModel extends ModelObject implements ITitleModel {
+    public class ObservableTitleModel extends ModelObject implements TitleModel {
 
         private final TitleVariable titleVar;
         
