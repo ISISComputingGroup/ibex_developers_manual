@@ -11,7 +11,9 @@ Quick overview of workflow:
 #. Create a pull request (developer)
 #. Review (reviewer)
 #. Merge the changes (reviewer or developer)
+#. Delete the branch (reviewer or developer)
 #. Close the ticket (reviewer or developer)
+
 
 Getting started with GitHub (first time only)
 ---------------------------------------------
@@ -281,15 +283,93 @@ Before reviewing the pull request it is necessary to copy the branch locally if 
 Merging changes
 ---------------
 
-Basically there are two types of merges: one where the code changes don't clash with other changes; and, one where it does clash.
+Basically there are two types of merges: one where the code changes don't clash with other changes on master; and, one where it does clash.
 
 If it does not clash then it can be merged via the "Merge pull request" button on the pull request page on GitHub.
 
-Otherwise, it is slightly more complicated:
+Otherwise, GitHub will say "We can't automatically merge this pull request" on the pull request page.
+This requires manual intervention:
 
+* From the command line switch to the the master branch if not already on it
 
+* Next fetch the most up-to-date version of master:
 
+.. code::
 
+    mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (master)
+    $ git fetch origin
+    
+* Merge the master with the branch:
+
+.. code::
+
+    mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (master)
+    $ git merge Ticket768
+    Auto-merging base/uk.ac.stfc.isis.ibex.ui.blocks/src/uk/ac/stfc/isis/ibex/ui/blocks/groups/GroupsPanel.java
+    CONFLICT (content): Merge conflict in base/uk.ac.stfc.isis.ibex.ui.blocks/src/uk/ac/stfc/isis/ibex/ui/blocks/groups/GroupsPanel.java
+    Automatic merge failed; fix conflicts and then commit the result.
+    
+* The merge has failed (as expected) but we can now view the code conflict:
+
+.. code::
+
+    ...
+    <<<<<<< HEAD
+                        showBanner("No groups to display!");
+    =======
+                        // Leave text blank
+                        showBanner("");
+    >>>>>>> Ticket768
+    ...
+    
+
+* For this example I decide to keep my changes and ignore the master, so the next step is merge the new changes and update on GitHub:
+
+.. code::
+
+    mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (master|MERGING)
+    $ git status -s
+    M  uk.ac.stfc.isis.ibex.ui.blocks/src/uk/ac/stfc/isis/ibex/ui/blocks/groups/BannerComposite.java
+    UU uk.ac.stfc.isis.ibex.ui.blocks/src/uk/ac/stfc/isis/ibex/ui/blocks/groups/GroupsPanel.java
+    ?? .metadata/
+    ?? uk.ac.stfc.isis.ibex.client.tycho.parent/workspace/
+    ?? workspace/
+    ?? ../runtime-ibex.product/
+    ?? ../surefire-reports/
+    
+    mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (master|MERGING)
+    $ git add uk.ac.stfc.isis.ibex.ui.blocks/src/uk/ac/stfc/isis/ibex/ui/blocks/groups/GroupsPanel.java
+
+    mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (master|MERGING)
+    $ git status -s
+    M  uk.ac.stfc.isis.ibex.ui.blocks/src/uk/ac/stfc/isis/ibex/ui/blocks/groups/BannerComposite.java
+    M  uk.ac.stfc.isis.ibex.ui.blocks/src/uk/ac/stfc/isis/ibex/ui/blocks/groups/GroupsPanel.java
+    ?? .metadata/
+    ?? uk.ac.stfc.isis.ibex.client.tycho.parent/workspace/
+    ?? workspace/
+    ?? ../runtime-ibex.product/
+    ?? ../surefire-reports/
+    
+    mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (master|MERGING)
+    $ git commit -m "Resolved conflict with Ticket768"
+    [master 2aaaf10] Resolved conflict with Ticket768
+
+    mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (master)
+    $ git push origin master
+    Username for 'https://github.com': matt.clarke@stfc.ac.uk
+    Password for 'https://matt.clarke@stfc.ac.uk@github.com':
+    Counting objects: 1, done.
+    Writing objects: 100% (1/1), 229 bytes | 0 bytes/s, done.
+    Total 1 (delta 0), reused 0 (delta 0)
+    To https://github.com/ISISComputingGroup/ibex_gui.git
+       06cecee..2aaaf10  master -> master
+
+* Now if you look at the pull request on GitHub it should say it has been merged and closed.
+
+Deleting the branch
+-------------------
+
+Once the branch has been merged into master it can be deleted via the pull request page on GitHub
 
 
 
