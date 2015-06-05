@@ -369,7 +369,7 @@ This requires manual intervention:
 Deleting the branch
 -------------------
 
-Once the branch has been merged into master it can be deleted via the pull request page on GitHub
+Once the branch has been merged into master it can be deleted via the pull request page on GitHub. Don't worry it is not permanently deleted!
 
 
 
