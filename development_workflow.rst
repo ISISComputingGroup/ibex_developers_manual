@@ -1,0 +1,295 @@
+=============================
+IBEX GUI Development Workflow
+=============================
+
+Quick overview of workflow:
+
+#. Create a branch for the ticket (developer)
+#. Clone the branch locally (developer)
+#. Modify the code (developer)
+#. Push back the changes (developer)
+#. Create a pull request (developer)
+#. Review (reviewer)
+#. Merge the changes (reviewer or developer)
+#. Close the ticket (reviewer or developer)
+
+Getting started with GitHub (first time only)
+---------------------------------------------
+
+* Register with !GitHub to create an account
+* Download and install `git client for Windows <https://git-scm.com/download/win>`_ or `GitHub for Windows <https://windows.github.com/>`_
+* Add the RAL proxy to C:/Users/YourName/.gitconfig
+
+.. code::
+
+    [http]
+        proxy = http://wwwcache.rl.ac.uk:8080
+
+    [https]
+        proxy = http://wwwcache.rl.ac.uk:8080
+
+        
+Cloning the repository (first time only)
+----------------------------------------
+
+* From the repository page copy the "HTTPS clone URL":
+
+.. image:: images/development_workflow/clone.png
+    :height: 705 
+    :width: 1084
+    :scale: 85 %
+    :align: center
+
+
+* Open Git Bash or Git Shell from the Windows Start Menu
+
+* In the console enter the following (paste the address from the previous step) to create a local copy of the repository:
+
+.. code::
+
+    mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ (master)
+    $ git clone https://github.com/ISISComputingGroup/ibex_gui.git
+
+* Now enter the ibex_gui directory:
+
+.. code::
+    
+    mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (master)
+    $ cd ibex_gui
+    
+* The command line shows in brackets which branch you are on - probably master at this time
+
+* Use the git branch command to list the available branches:
+
+.. code::
+
+    mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (master)
+    $ git branch -a
+    * master
+      remotes/origin/HEAD -> origin/master
+      remotes/origin/master
+
+
+Creating a branch
+-----------------
+* Go to the IBEX GUI GitHub repository https://github.com/ISISComputingGroup/ibex_gui
+* The page should look something like this:
+
+.. image:: images/development_workflow/start.png
+    :height: 695 
+    :width: 1053
+    :scale: 85 %
+    :align: center
+
+* Click the branch drop-down button which will list all the current branches. Type a name in the box and then click "Create branch" to create a new branch:
+
+.. image:: images/development_workflow/create_branch.png
+    :height: 677 
+    :width: 1058
+    :scale: 85 %
+    :align: center
+    
+Note: Where possible use the Trac ticket number for the branch name
+
+* The page should switch to the new branch:
+
+.. image:: images/development_workflow/new_branch.png
+    :height: 705 
+    :width: 1084
+    :scale: 85 %
+    :align: center
+
+    
+Cloning the branch locally
+--------------------------
+
+It is necessary to clone the new branch locally if you don't already have it:
+
+* First get an updated list of remote branches:
+
+.. code::
+
+    mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (master)
+    $ git remote update
+    Fetching origin
+    From https://github.com/ISISComputingGroup/ibex_gui
+     * [new branch]      Ticket768 -> origin/Ticket768
+
+* The new branch should appear in the branch list:
+
+.. code:: 
+
+    mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (master)
+    $ git branch -a
+    * master
+      remotes/origin/HEAD -> origin/master
+      remotes/origin/Ticket768
+      remotes/origin/master
+      
+* Switch to the new branch created earlier:
+
+.. code::
+    
+    $ git checkout Ticket768
+
+* Now you can start coding!
+
+Pushing the changes back
+------------------------
+
+Now the code changes have been made, it is time to push the changes back to the repository on GitHub:
+
+* From the command line we can see what changes we have made using the git status command like so:
+
+.. code::
+
+    mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (Ticket768)
+    $ git status -s
+     M uk.ac.stfc.isis.ibex.ui.blocks/src/uk/ac/stfc/isis/ibex/ui/blocks/groups/BannerComposite.java
+     M uk.ac.stfc.isis.ibex.ui.blocks/src/uk/ac/stfc/isis/ibex/ui/blocks/groups/GroupsPanel.java
+    ?? .metadata/
+    ?? uk.ac.stfc.isis.ibex.client.tycho.parent/workspace/
+    ?? workspace/
+    ?? ../runtime-ibex.product/
+    ?? ../surefire-reports/
+
+We can see that I have modified two .java files (indicated by the M) and there are a few files not under source control (indicated by ??).
+I am not interested in the files not under source control as they are default files created by Eclipse. Notice that there is a space before the M on the modified files.
+
+* To be able to commit the changes back they have to be staged using the git add command like so:
+
+.. code::
+
+    mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (Ticket768)
+    $ git add -u
+
+The -u flag tells git to stage any modified files that are already in source control. To add new files or stage only specific files use the file name instead like so:
+
+.. code::
+
+    mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (Ticket768)
+    $ git add some_file_name.txt
+    
+* If we repeat the git status command we get something like this:
+    
+.. code::
+
+    mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (Ticket768)
+    $ git status -s
+    M  uk.ac.stfc.isis.ibex.ui.blocks/src/uk/ac/stfc/isis/ibex/ui/blocks/groups/BannerComposite.java
+    M  uk.ac.stfc.isis.ibex.ui.blocks/src/uk/ac/stfc/isis/ibex/ui/blocks/groups/GroupsPanel.java
+    ?? .metadata/
+    ?? uk.ac.stfc.isis.ibex.client.tycho.parent/workspace/
+    ?? workspace/
+    ?? ../runtime-ibex.product/
+    ?? ../surefire-reports/
+
+Notice that there is no longer a space before the M, this indicates that the file is staged.
+
+* Now we commit the changes locally using the git commit command like so:
+
+.. code::
+
+    mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (Ticket768)
+    $ git commit -m "Removed no groups message from UI"
+    [Ticket768 8b9814f] Removed no groups message from UI
+     2 files changed, 3 insertions(+), 3 deletions(-)
+
+* Next we push the changes back to GitHub using the git push command like so:
+
+.. code::
+
+    mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (Ticket768)
+    $ git push origin Ticket768
+    Counting objects: 31, done.
+    Delta compression using up to 8 threads.
+    Compressing objects: 100% (8/8), done.
+    Writing objects: 100% (15/15), 965 bytes | 0 bytes/s, done.
+    Total 15 (delta 6), reused 0 (delta 0)
+    To https://github.com/ISISComputingGroup/ibex_gui.git
+       86f5162..8b9814f  Ticket768 -> Ticket768
+
+* If we navigate back to the branch on the GitHub page we can see that the changes have been pushed back:
+
+.. image:: images/development_workflow/pushed_branch.png
+    :height: 813 
+    :width: 1053
+    :scale: 85 %
+    :align: center
+
+Create a pull request
+---------------------
+
+* Create a pull request by clicking the 'Compare & pull request' button while on the correct branch:
+
+.. image:: images/development_workflow/pull_request_start.png
+    :height: 813 
+    :width: 1053
+    :scale: 85 %
+    :align: center
+
+* The new page allows you to add comments and to review the modifications before creating the pull request. 
+Notice that for my changes it says "Able to merge". This means that my changes don't clash with any other changes that have been made on the master while I have been working on the branch.
+
+.. image:: images/development_workflow/open_a_pull_request_start.png
+    :height: 769 
+    :width: 1270
+    :scale: 85 %
+    :align: center
+
+* Clicking the "Create pull request" button will create the pull request and that is us done for now as the ticket now needs to be reviewed
+
+Reviewing a pull request
+------------------------
+
+Before reviewing the pull request it is necessary to copy the branch locally if you don't already have it:
+
+* First get an updated list of remote branches:
+
+.. code::
+
+    mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (master)
+    $ git remote update
+    Fetching origin
+    From https://github.com/ISISComputingGroup/ibex_gui
+     * [new branch]      Ticket768 -> origin/Ticket768
+
+* The new branch should appear in the branch list:
+
+.. code:: 
+
+    mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (master)
+    $ git branch -a
+    * master
+      remotes/origin/HEAD -> origin/master
+      remotes/origin/Ticket768
+      remotes/origin/master
+      
+* Now checkout the branch:
+
+.. code::
+
+    mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (master)
+    $ git checkout Ticket768
+    Branch Ticket768 set up to track remote branch Ticket768 from origin.
+    Switched to a new branch 'Ticket768'
+    
+* The code can now be loaded into Eclipse and reviewed
+
+* Once the code has been reviewed either you can merge the changes yourself via GitHub or you can pass it back to the developer to do it
+
+Merging changes
+---------------
+
+Basically there are two types of merges: one where the code changes don't clash with other changes; and, one where it does clash.
+
+If it does not clash then it can be merged via the "Merge pull request" button on the pull request page on GitHub.
+
+Otherwise, it is slightly more complicated:
+
+
+
+
+
+
+
