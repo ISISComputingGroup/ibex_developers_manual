@@ -2,7 +2,7 @@
 IBEX GUI Development Coding Conventions
 =======================================
 
-Unless stated otherwise below we should follow the standard Java conventions.
+Unless stated otherwise below we should follow the standard Java conventions where possible.
 
 Getters and Setters
 -------------------
