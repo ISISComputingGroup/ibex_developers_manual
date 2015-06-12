@@ -4,17 +4,17 @@ IBEX GUI Development Workflow
 
 Quick overview of workflow:
 
-#. Create a branch for the ticket via GitHub (developer)
+#. **Create a branch for the ticket via GitHub (developer)**
     * Use the Trac ticket number for the branch name followed by a brief description, e.g. Ticket780_SelectNewTarget
-#. Clone the branch locally (developer)
-#. Modify the code (developer)
-#. Push back the changes (developer)
-#. Create a pull request (developer)
-#. Review (reviewer)
+#. **Clone the branch locally (developer)**
+#. **Modify the code (developer)**
+#. **Push back the changes (developer)**
+#. **Create a pull request (developer)**
+#. **Review (reviewer)**
     * If it is okay move to the next step, otherwise inform the developer of the problem and add a comment to the pull request
-#. Merge the changes (reviewer or developer)
-#. Delete the branch (reviewer or developer)
-#. Close the ticket in Trac (reviewer or developer)
+#. **Merge the changes (reviewer or developer)**
+#. **Delete the branch (reviewer or developer)**
+#. **Close the ticket in Trac (reviewer or developer)**
 
 
 Getting started with GitHub (first time only)
