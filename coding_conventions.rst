@@ -4,6 +4,56 @@ IBEX GUI Development Coding Conventions
 
 Unless stated otherwise below we should follow the standard Java conventions where possible.
 
+Checkstyle
+----------
+
+Code should be run through Checkstyle via Eclipse and corrected (within reason) before being committed.
+The Checkstyle plug-in can be installed via the Eclipse Marketplace.
+
+There is a Checkstyle configuration file called checkstyle_config_eclipse.xml in the GUI repository that should be used inside Eclipse.
+It is more picky that the one used on Jenkins as it warns about 'magic numbers' and 'Java-docs'.
+Our Checkstyle configuration can be chosen in Eclipse via Preferences->Checkstyle
+
+By right-clicking on a file one can tell Checkstyle to check that file.
+
+Warnings that should be fixed where possible:
+
+    * Whitespace warnings (can be auto-fixed, see the Code Formatting section)
+
+    * Missing Javadoc comments (particular the class one)
+
+Warnings that should be reviewed before committing:
+
+    * Magic numbers - if it is related to a GUI layout then ignore, otherwise think about whether to fix it. Unfortunately Checkstyle can be a little overzealous sometimes...
+
+    * Name must match pattern - ignore GUI names that don't match the recommended pattern (e.g. gd_switchToCombo)
+
+Any other warnings can probably be ignored, but feel free to fix them if you want.
+    
+Checkstyle also has a suppress warning flag that tells it to ignore certain warnings, for example:
+
+.. code::
+
+    @SuppressWarnings({"checkstyle:magicnumber", "checkstyle:localvariablename"})
+    public void getSecondsInHours(int hours) {
+        int seconds_per_hour = 60 * 60;    // Magic numbers and a variable name that does not conform to the recommended style!
+        return hours * seconds_per_hour;
+    }
+
+Code Formatting
+---------------
+
+A quick way to format the code correctly is to use Ctrl+Shift+F in Eclipse.
+However, this uses a default maximum line width of 80 characters so it auto-wraps anything longer than that. 
+80 characters seems a bit short so change it to 120 characters:
+
+    * In Eclipse open Preferences->Java->Code Style->Formatter
+    * Click the 'Edit' button
+    * Open the 'Line Wrapping' tab and under 'General settings' set the maximum line width to 120
+    * The dialog will warn about this being a built-in profile, so change the profile name (Eclipse_ISIS perhaps?)
+    * Click 'Apply' and 'OK'
+    
+
 Getters and Setters
 -------------------
 

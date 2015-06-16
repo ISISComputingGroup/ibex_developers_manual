@@ -11,8 +11,10 @@ Quick overview of workflow:
 #. **Push back the changes (developer)**
 #. **Create a pull request (developer)**
 #. **Review (reviewer)**
+    * Assign the pull request to yourself to indicate you are reviewing it (and, perhaps, add a comment as well)
     * If it is okay move to the next step, otherwise inform the developer of the problem and add a comment to the pull request
 #. **Merge the changes (reviewer or developer)**
+    * If it is a simple merge the reviewer can do it, otherwise ask the developer to do it
 #. **Delete the branch (reviewer or developer)**
 #. **Close the ticket in Trac (reviewer or developer)**
 
@@ -20,7 +22,7 @@ Quick overview of workflow:
 Getting started with GitHub (first time only)
 ---------------------------------------------
 
-* Register with !GitHub to create an account
+* Register with GitHub to create an account
 * Download and install `git client for Windows <https://git-scm.com/download/win>`_ or `GitHub for Windows <https://windows.github.com/>`_
 * Add the RAL proxy to C:/Users/YourName/.gitconfig
 
