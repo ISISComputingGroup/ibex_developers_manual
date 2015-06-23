@@ -4,14 +4,16 @@ IBEX GUI Development Workflow
 
 Quick overview of workflow:
 
-#. **Create a branch for the ticket via GitHub (developer)**
+#. **Create a branch for the ticket (based on master) via GitHub (developer)**
     * Use the Trac ticket number for the branch name followed by a brief description, e.g. Ticket780_SelectNewTarget
 #. **Clone the branch locally (developer)**
 #. **Modify the code (developer)**
 #. **Push back the changes (developer)**
+    * make sure you have merged in any changes to master that have occurred since your ticket was created - makes reviewer's life easier
+    * please follow commenting guidelines below
 #. **Create a pull request (developer)**
-    * Set the milestone to the current sprint
-    * Add an appropriate label (ticket, bug, enhancement etc.) 
+    * Assign the correct sprint milestone to the ticket
+    * Assign an appropriate label (ticket, bug, enhancement, ...)
 #. **Review (reviewer)**
     * Assign the pull request to yourself to indicate you are reviewing it (and, perhaps, add a comment as well)
     * If it is okay move to the next step, otherwise inform the developer of the problem and add a comment to the pull request
@@ -20,13 +22,17 @@ Quick overview of workflow:
 #. **Delete the branch (reviewer or developer)**
 #. **Close the ticket in Trac (reviewer or developer)**
 
+Notes:
+
+* You don't have to create branches on GitHub first, often it is more convenient to create them locally first instead (which you must do if you intend to rebase)
+* Deleting a branch on github does not delete it from you local repository clone   
 
 Getting started with GitHub (first time only)
 ---------------------------------------------
 
 * Register with GitHub to create an account
-* Download and install `git client for Windows <https://git-scm.com/download/win>`_ or `GitHub for Windows <https://windows.github.com/>`_
-* Add the RAL proxy to C:/Users/YourName/.gitconfig
+* Download and install `git client for Windows <https://git-scm.com/download/win>`_ or `GitHub for Windows <https://windows.github.com/>`_ or `Tortoise Git <https://tortoisegit.org/>`_ 
+* Configure RAL proxy, either add the RAL proxy to C:/Users/YourName/.gitconfig
 
 .. code::
 
@@ -34,8 +40,33 @@ Getting started with GitHub (first time only)
         proxy = http://wwwcache.rl.ac.uk:8080
 
     [https]
-        proxy = http://wwwcache.rl.ac.uk:8080
+        proxy = https://wwwcache.rl.ac.uk:8080
 
+or type:
+
+.. code::
+
+    git config --global http.proxy http://wwwcache.rl.ac.uk:8080
+    git config --global https.proxy https://wwwcache.rl.ac.uk:8080
+
+* Set you username and email address - TotroiseGit "Setting->Git" and select "global", or via command line:
+
+.. code::
+
+    git config --global user.name "YOUR NAME"
+    git config --global user.email "YOUR EMAIL ADDRESS"
+
+* Set a default commit editor (not needed for TotroiseGit):
+
+.. code::
+
+    git config --global core.editor "start notepad++"
+
+* Set linehandling (on Windows):
+ 
+.. code::
+
+    git config --global core.autocrlf true
         
 Cloning the repository (first time only)
 ----------------------------------------
@@ -194,15 +225,35 @@ The -u flag tells git to stage any modified files that are already in source con
 
 Notice that there is no longer a space before the M, this indicates that the file is staged.
 
-* Now we commit the changes locally using the git commit command like so:
+* Now we commit the changes locally using the git commit command. 
+
+The commit will require a comment and the format for comments should be as per https://robots.thoughtbot.com/5-useful-tips-for-a-better-commit-message i.e. 
+50 char title, blank line, further details wrapped at 72 characters per line. 
 
 .. code::
 
     mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (Ticket768)
-    $ git commit -m "Removed no groups message from UI"
-    [Ticket768 8b9814f] Removed no groups message from UI
-     2 files changed, 3 insertions(+), 3 deletions(-)
+    $ git commit 
 
+* Check for upstream commits
+
+Before we finally push to the server we will merge into our branch any changes that have been pushed to master on github, this
+is to make the job easier for a reviewer as we will see potential merge conflicts and handle them ourselves. We update out local master branch with
+changes on GitHub and then merge them into our copy: 
+
+.. code::
+
+    mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (Ticket768)
+    $ git pull origin master
+    From https://github.com/ISISComputingGroup/ibex_gui
+     * branch            master     -> FETCH_HEAD
+     Already up-to-date.   
+    mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (Ticket768)
+    $ git merge master
+    Already up-to-date.
+
+(Advanced usage note: if your branch does not yet exist on GitHub, and has not been otherwise shared with another developer, then you may wish to consider doing a rebase rather than a merge) 
+    
 * Next we push the changes back to GitHub using the git push command like so:
 
 .. code::
@@ -382,6 +433,6 @@ Deleting the branch
 -------------------
 
 Once the branch has been merged into master it can be deleted via the pull request page on GitHub. Don't worry it is not permanently deleted!
-
+You will also have to delete the branch locally.
 
 
