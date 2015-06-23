@@ -9,11 +9,11 @@ Quick overview of workflow:
 #. **Clone the branch locally (developer)**
 #. **Modify the code (developer)**
 #. **Push back the changes (developer)**
-#   * make sure you have merged in any changes to master that have occurred since your ticket was created - makes reviewer's life easier
-#   * please follow commenting guidelines below
+    * make sure you have merged in any changes to master that have occurred since your ticket was created - makes reviewer's life easier
+    * please follow commenting guidelines below
 #. **Create a pull request (developer)**
-#   * Assign the correct sprint milestone to the ticket
-#   * Assign an appropriate label (ticket, bug, enhancement, ...)
+    * Assign the correct sprint milestone to the ticket
+    * Assign an appropriate label (ticket, bug, enhancement, ...)
 #. **Review (reviewer)**
     * Assign the pull request to yourself to indicate you are reviewing it (and, perhaps, add a comment as well)
     * If it is okay move to the next step, otherwise inform the developer of the problem and add a comment to the pull request
@@ -23,6 +23,7 @@ Quick overview of workflow:
 #. **Close the ticket in Trac (reviewer or developer)**
 
 Notes:
+
 * You don't have to create branches on GitHub first, often it is more convenient to create them locally first instead (which you meus do if you intend to rebase)
 * Deleting a branch on github does not delete it from you local repository clone   
 
@@ -61,6 +62,8 @@ or type:
 
     git config --global core.editor "start notepad++"
 
+* Set linehandling (on Windows):
+ 
 .. code::
 
     git config --global core.autocrlf true
@@ -222,7 +225,9 @@ The -u flag tells git to stage any modified files that are already in source con
 
 Notice that there is no longer a space before the M, this indicates that the file is staged.
 
-* Now we commit the changes locally using the git commit command. The commit will require a comment and the
+* Now we commit the changes locally using the git commit command. 
+
+The commit will require a comment and the
 format for comments should be as per https://robots.thoughtbot.com/5-useful-tips-for-a-better-commit-message i.e. 
 50 char title, blank line, further details wrapped at 72 characters per line. 
 
@@ -231,8 +236,10 @@ format for comments should be as per https://robots.thoughtbot.com/5-useful-tips
     faa59@NDW847 /c/development/github/freddie/asyn (HigherCOMPorts)
     $ git commit 
 
-* Before we finally push to the server we will merge into our branch any changes that have been pushed to master on github, this
-is to make the job easier for a reviewer as we will see potential merge conflicts. We update out local master branch with
+* Check for upstream commits
+
+Before we finally push to the server we will merge into our branch any changes that have been pushed to master on github, this
+is to make the job easier for a reviewer as we will see potential merge conflicts and handle them ourselves. We update out local master branch with
 changes on GitHub and then merge them into our copy: 
 
 .. code::
@@ -245,7 +252,7 @@ changes on GitHub and then merge them into our copy:
     $ git merge master
     Already up-to-date.
 
-(Advanced note: if your branch does not yet exist on GitHub, and has not been otherwise shared with another developer, then you may wish to consider doing a rebase rather than a merge) 
+(Advanced usage note: if your branch does not yet exist on GitHub, and has not been otherwise shared with another developer, then you may wish to consider doing a rebase rather than a merge) 
     
 * Next we push the changes back to GitHub using the git push command like so:
 
