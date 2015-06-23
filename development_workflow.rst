@@ -10,6 +10,8 @@ Quick overview of workflow:
 #. **Modify the code (developer)**
 #. **Push back the changes (developer)**
 #. **Create a pull request (developer)**
+    * Set the milestone to the current sprint
+    * Add an appropriate label (ticket, bug, enhancement etc.) 
 #. **Review (reviewer)**
     * Assign the pull request to yourself to indicate you are reviewing it (and, perhaps, add a comment as well)
     * If it is okay move to the next step, otherwise inform the developer of the problem and add a comment to the pull request
@@ -243,7 +245,13 @@ Notice that for my changes it says "Able to merge". This means that my changes d
     :scale: 85 %
     :align: center
 
-* Clicking the "Create pull request" button will create the pull request and that is us done for now as the ticket now needs to be reviewed
+* Clicking the "Create pull request" button will create the pull request
+
+* Assign the milestone for the pull request to the current sprint 
+
+* Choose an appropriate label for this pull request, for example: ticket or bug
+
+* That is us done for now as the ticket now needs to be reviewed
 
 Reviewing a pull request
 ------------------------
