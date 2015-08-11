@@ -49,7 +49,7 @@ or type:
     git config --global http.proxy http://wwwcache.rl.ac.uk:8080
     git config --global https.proxy https://wwwcache.rl.ac.uk:8080
 
-* Set you username and email address - TotroiseGit "Setting->Git" and select "global", or via command line:
+* Set you username and email address - TortoiseGit "Setting->Git" and select "global", or via command line:
 
 .. code::
 
