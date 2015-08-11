@@ -238,7 +238,7 @@ The commit will require a comment and the format for comments should be as per h
 * Check for upstream commits
 
 Before we finally push to the server we will merge into our branch any changes that have been pushed to master on github, this
-is to make the job easier for a reviewer as we will see potential merge conflicts and handle them ourselves. We update out local master branch with
+is to make the job easier for a reviewer as we will see potential merge conflicts and handle them ourselves. We update our local master branch with
 changes on GitHub and then merge them into our copy: 
 
 .. code::
@@ -290,7 +290,7 @@ Create a pull request
 * The new page allows you to add comments and to review the modifications before creating the pull request. 
 Notice that for my changes it says "Able to merge". This means that my changes don't clash with any other changes that have been made on the master while I have been working on the branch.
 
-.. image:: images/development_workflow/open_a_pull_request_start.png
+.. image:: images/development_workflow/open_a_pull_request.png
     :height: 769 
     :width: 1270
     :scale: 85 %
