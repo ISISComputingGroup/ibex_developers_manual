@@ -62,7 +62,7 @@ or type:
 
     git config --global core.editor "start notepad++"
 
-* Set linehandling (on Windows):
+* Set line-handling (on Windows):
  
 .. code::
 
