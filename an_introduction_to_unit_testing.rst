@@ -174,6 +174,31 @@ Note: Each test should be independent of the other tests as there is no guarante
         // Clean up
     }
     
+Eclipse is complaining
+----------------------
+
+Running the tests in Eclipse might crash with an error like:
+
+.. code::
+
+    Class not found org.myexample.plugin.tests.StringManipulatorTest
+    java.lang.ClassNotFoundException: org.myexample.plugin.tests.StringManipulatorTest
+        at java.net.URLClassLoader.findClass(Unknown Source)
+        at java.lang.ClassLoader.loadClass(Unknown Source)
+        at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)
+        at java.lang.ClassLoader.loadClass(Unknown Source)
+        ...
+
+This is a known bug and there is a workaround:
+
+* Right-click on the test plug-in, and under "Run As" select "Run Configurations"
+* In the new dialog click on the "Classpath" tab
+* Select "User Entries" and click the "Advanced" button
+* Select "Add Folders" and click "OK"
+* In the new dialog, expand the test plug-in and select the "bin" folder and click "OK"
+* On the original dialog, click "Apply" and then "Run"
+* Hopefully, the tests will now work and you should be able to re-run them in the normal way
+    
 Naming conventions
 ------------------
 
@@ -190,4 +215,93 @@ It may be worth adding the magic-number suppression too depending on the type of
 Mockito
 -------
 
+Mockito is a framework for creating mock objects that can be substituted for real objects to make testing easier and more specific.
+For example: writing tests that don't rely on a database, file or network connection being present.
 
+Like JUnit is can be used inside a Fragment Project after the dependency is added (org.mockito).
+
+Mockito allows a mock object to be created which can then have methods run on it as if it was the real object.
+Then it can be verified that the methods were called:
+
+.. code::
+
+    // Simple/stupid example of mock creation
+    List mockedList = mock(List.class);
+
+    // Using mock object - it does not throw any "unexpected interaction" exception
+    mockedList.add("one");
+    mockedList.clear();
+
+    // Verify that add was called with the parameter "one"
+    verify(mockedList).add("one");
+    
+    // Verify that clear was called just once
+    verify(mockedList, times(1)).clear();
+    
+Mockito allows stub methods to be created. Effectively, these are dummy methods that replace the real method for certain conditions.
+A simple example:
+
+.. code::
+
+    // Create mock object
+    List mockedList = mock(List.class);
+    
+    // Create a stub method that returns "first" on get(0)
+    when(mockedList.get(0)).thenReturn("first");
+    
+    // Create another stub method that throws an exception
+    when(mockedList.get(1)).thenThrow(new RuntimeException());
+    
+    // Call the stub method - this returns "first"
+    String ans = mockedList.get(0);
+    
+    // This raises an exception
+    mockedList.get(1)
+    
+A more realistic example of using Mockito is to mock a database wrapper so that a real database is not required:
+
+.. code::
+
+    @Test
+	public void get_row_data() {
+		// Arrange
+		// Create a mock database wrapper as we are not testing that
+		DatabaseWrapper wrapper = mock(DatabaseWrapper.class);
+		
+		// Create a mock "response"
+		List<String> data = new ArrayList<String>();
+		data.add("John");
+		data.add("Smith");
+		data.add("01/01/1955");
+		when(wrapper.getRowData(0)).thenReturn(data);   // This is the key line
+		
+		// This is the object we are really testing
+		DataHolder dataHolder = new DataHolder(wrapper);
+		
+		// Act
+		List<String> ans = dataHolder.getFirstRow();
+		
+		// Assert
+		assertEquals(data, ans);
+    }
+
+There are plenty of other features of Mockito listed in the official documentation.
+
+Code coverage
+-------------
+
+It is useful to see what parts of a plug-in's code are used or not used by the unit tests. 
+If a piece of code is not used by the unit tests then that may mean that an extra test is required
+
+Unit test code coverage can be examined inside Eclipse using EclEmma which can be installed via the Eclipse Marketplace (under the "Help" menu).
+Once EclEmma is installed the coverage of the unit tests can be examined. Right-click on the test project and select Coverage As->JUnit Test.
+This will run the tests and calculate the coverage, the results should look something like this:
+
+.. image:: images/an_introduction_to_unit_testing/coverage_result.png
+    :height: 697
+    :width: 910
+    :scale: 85 %
+    :align: center
+    
+From the results it can be seen that 63.2% of the StringManipulator code is used by the unit tests. 
+The code that isn't used is highlighted in red - for this example we can see that we need to write a test that tests the reverseString method.
