@@ -199,11 +199,11 @@ This is a known bug and there is a workaround:
 * On the original dialog, click "Apply" and then "Run"
 * Hopefully, the tests will now work and you should be able to re-run them in the normal way
     
-Naming conventions
-------------------
+Naming conventions for unit tests
+---------------------------------
 
-Java methods are usually lower CamelCase (e.g getNameValue), but for the tests we have adopted the convention of using underscore spaced method names (e.g. does_two_plus_two_equal_four).
-This is probably easier to read that CamelCase, but it does upset CheckStyle; to tell CheckStyle to ignore the name format add a warning suppression to the top of the class:
+Java methods are usually lower CamelCase (e.g getNameValue), but for some of the tests we have adopted the convention of using underscore spaced method names (e.g. does_two_plus_two_equal_four).
+This is probably easier to read that CamelCase, but it does upset CheckStyle; therefore, to tell CheckStyle to ignore the name format add a warning suppression to the top of the class:
 
 .. code::
 
@@ -212,6 +212,9 @@ This is probably easier to read that CamelCase, but it does upset CheckStyle; to
     
 It may be worth adding the magic-number suppression too depending on the type of tests.
 
+The basic naming guideline is for the test name to explain what it is doing and perhaps what it expects, for example: invalid_user_name_throws_exception or getting_user_returns_user.
+Where possible don't include the method being tested name in the test name as that could change over time.
+
 Mockito
 -------
 
@@ -219,46 +222,8 @@ Mockito is a framework for creating mock objects that can be substituted for rea
 For example: writing tests that don't rely on a database, file or network connection being present.
 
 Like JUnit is can be used inside a Fragment Project after the dependency is added (org.mockito).
-
-Mockito allows a mock object to be created which can then have methods run on it as if it was the real object.
-Then it can be verified that the methods were called:
-
-.. code::
-
-    // Simple/stupid example of mock creation
-    List mockedList = mock(List.class);
-
-    // Using mock object - it does not throw any "unexpected interaction" exception
-    mockedList.add("one");
-    mockedList.clear();
-
-    // Verify that add was called with the parameter "one"
-    verify(mockedList).add("one");
-    
-    // Verify that clear was called just once
-    verify(mockedList, times(1)).clear();
-    
-Mockito allows stub methods to be created. Effectively, these are dummy methods that replace the real method for certain conditions.
-A simple example:
-
-.. code::
-
-    // Create mock object
-    List mockedList = mock(List.class);
-    
-    // Create a stub method that returns "first" on get(0)
-    when(mockedList.get(0)).thenReturn("first");
-    
-    // Create another stub method that throws an exception
-    when(mockedList.get(1)).thenThrow(new RuntimeException());
-    
-    // Call the stub method - this returns "first"
-    String ans = mockedList.get(0);
-    
-    // This raises an exception
-    mockedList.get(1)
-    
-A more realistic example of using Mockito is to mock a database wrapper so that a real database is not required:
+   
+An example of using Mockito would be to mock a database wrapper so that a real database is not required:
 
 .. code::
 
@@ -285,7 +250,7 @@ A more realistic example of using Mockito is to mock a database wrapper so that 
 		assertEquals(data, ans);
     }
 
-There are plenty of other features of Mockito listed in the official documentation.
+For more detail on Mockito see the using_mockito_for_testing_in_ibex document.
 
 Code coverage
 -------------

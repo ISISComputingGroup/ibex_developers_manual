@@ -43,26 +43,27 @@ Checkstyle also has a suppress warning flag that tells it to ignore certain warn
 Code Formatting
 ---------------
 
-For Java use Standard Eclipse formatting, for example:
+For Java use the standard Java conventions built in to Eclipse. This can be set via Window->Preferences->Java->Code Style->Formatter.
+
+An example of what it looks like:
 
 .. code::
 
     void foo2() {
-	if (true) {
-	    return;
-	}
+        if (true) {
+            return;
+        }
 
-	if (true) {
-	    return;
-	} else if (false) {
-	    return;
-	} else {
-	    return;
-	}
+        if (true) {
+            return;
+        } else if (false) {
+            return;
+        } else {
+            return;
+        }
     }
 
 In Eclipse, a quick way to auto-format the code correctly is to use Ctrl+Shift+F.
-    
 
 Getters and Setters
 -------------------
