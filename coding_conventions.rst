@@ -43,15 +43,25 @@ Checkstyle also has a suppress warning flag that tells it to ignore certain warn
 Code Formatting
 ---------------
 
-A quick way to format the code correctly is to use Ctrl+Shift+F in Eclipse.
-However, this uses a default maximum line width of 80 characters so it auto-wraps anything longer than that. 
-80 characters seems a bit short so change it to 100 characters:
+For Java use Standard Eclipse formatting, for example:
 
-    * In Eclipse open Preferences->Java->Code Style->Formatter
-    * Click the 'Edit' button
-    * Open the 'Line Wrapping' tab and under 'General settings' set the maximum line width to 100
-    * The dialog will warn about this being a built-in profile, so change the profile name (Eclipse_ISIS perhaps?)
-    * Click 'Apply' and 'OK'
+.. code::
+
+    void foo2() {
+	if (true) {
+	    return;
+	}
+
+	if (true) {
+	    return;
+	} else if (false) {
+	    return;
+	} else {
+	    return;
+	}
+    }
+
+In Eclipse, a quick way to auto-format the code correctly is to use Ctrl+Shift+F.
     
 
 Getters and Setters
