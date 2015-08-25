@@ -69,7 +69,7 @@ Behind the scenes when you create a binding the data-binding framework automatic
 (not strictly true - it is a bean object that is associated with the widget). The removePropertyChangeListener is called when the widget binding is disposed, e.g. when the GUI is closed.
 
 The firePropertyChange method is used to inform the listeners when the value has changed.
-Note: if oldValue and newValue are the same then the event is not raised
+Note: if oldValue and newValue are the same then the event is not raised.
 
 The Person class is the class that is going to be used as the model the UI binds to. Add the following code:
 
@@ -373,4 +373,5 @@ Replace the code between the DATABINDING START and the DATABINDING FINISH with:
         
 In this example, the Update strategy is initialised with POLICY_ON_REQUEST. This means the updates are only send to the model (the Person object) when told to.
 The models are updated when updateModels is called by the DataBindingContext which in this example is on a button click.
+
 Running this example in the debugger shows that the setName method is only called when the button is clicked rather than on every modification.
