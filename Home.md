@@ -1,3 +1,3 @@
 Welcome to the ibex_developers_manual wiki!
 
-[a relative link](development_workflow.rst)
+[a link](https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/development_workflow.rst)
