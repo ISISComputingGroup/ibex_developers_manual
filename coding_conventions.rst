@@ -43,7 +43,7 @@ Checkstyle also has a suppress warning flag that tells it to ignore certain warn
 Code Formatting
 ---------------
 
-For Java use the standard Java conventions built in to Eclipse. This can be set via Window->Preferences->Java->Code Style->Formatter.
+For Java use the standard conventions built in to Eclipse. This can be set via Window->Preferences->Java->Code Style->Formatter; the one required is called "Eclipse [built-in]".
 
 An example of what it looks like:
 
