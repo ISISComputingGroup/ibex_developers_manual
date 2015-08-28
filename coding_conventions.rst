@@ -100,3 +100,13 @@ For example:
         public boolean isVisible { return visible; }
         public void setVisible(boolean visible) { this.visible = visible; }
     }
+    
+Code Comments
+-------------
+
+Comments should have a space between the // and the text, and start with a capital letter::
+
+    // This is a good comment
+    
+    //this is a bad comment
+    
