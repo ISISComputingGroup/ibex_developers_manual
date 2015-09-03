@@ -110,3 +110,10 @@ Comments should have a space between the // and the text, and start with a capit
     
     //this is a bad comment
     
+Use Data-binding
+----------------
+
+For connecting UI elements to data from the back-end use data-binding. 
+It seems that if data-binding and more traditional SWT wiring up is used (e.g. AddPropertyChangeListener) then the data-binding will stop working*, so always using data-binding should avoid this problem.
+
+*This does need more investigation to find out why it occurs
