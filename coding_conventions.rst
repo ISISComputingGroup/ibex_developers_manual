@@ -4,6 +4,43 @@ IBEX GUI Development Coding Conventions
 
 Unless stated otherwise below we should follow the standard Java conventions where possible.
 
+Code Documentation
+------------------
+
+Classes and methods should be documented using the Javadoc syntax. For example:
+
+    /**
+     * A make-your-own pizza.
+     *
+     * This class allows a custom pizza to be order by the customer.
+     * Note: it does not calculate the price.
+     */
+    public class CustomPizza extends Pizza {
+        private final static int MAX_TOPPINGS = 6;
+        private List<Topping> toppingList;
+
+        /**
+         * The default constructor.
+         */
+        public CustomPizza() {
+            toppingList = new ArrayList<Topping>();
+        }
+
+        /**
+         * Add a topping to the pizza.
+         * @param topping the topping to add
+         * @return true if the topping was added
+         */
+        public boolean AddTopping(Topping topping) {
+            if (toppingList.size() < MAX_TOPPINGS) {
+                toppingList.add(topping);
+                return true;
+            }
+            
+            return false;
+        }
+    }
+
 Checkstyle
 ----------
 
