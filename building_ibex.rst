@@ -22,4 +22,4 @@ Building via Maven
 #. From the command line, navigate to the build directory in the IBEX code
 #. Run the build.bat file
 #. Wait for a few minutes while it builds
-#. After the build finishes it can be found in \base\uk.ac.stfc.isis.ibex.client.product\target\products\
+#. After the build finishes it can be found in \\base\\uk.ac.stfc.isis.ibex.client.product\\target\\products\\
