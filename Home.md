@@ -36,3 +36,8 @@ Welcome to the ibex_developers_manual wiki!
 
 [Mockito]
 (https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/using_mockito_for_testing_in_ibex.rst)
+
+## Eclipse
+
+[Common Eclipse Issues]
+(https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/common_eclipse_issues.rst
