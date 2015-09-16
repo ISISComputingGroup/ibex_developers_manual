@@ -38,4 +38,4 @@ Welcome to the ibex_developers_manual wiki!
 
 ## Eclipse
 
-[Common Eclipse Issues](https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/common_eclipse_issues.rst
+[Common Eclipse Issues](https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/common_eclipse_issues.rst)
