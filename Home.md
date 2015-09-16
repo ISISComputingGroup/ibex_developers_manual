@@ -14,8 +14,7 @@ Welcome to the ibex_developers_manual wiki!
 [Adding a Perspective]
 (https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/adding_a_button_to_the_perspective_switcher.rst)
 
-[Adding Plug-ins and Features to the Build]
-(https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/adding_a_plugin_or_feature_to_maven_build.rst)
+[Adding Plug-ins and Features to the Build](https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/adding_a_plugin_or_feature_to_maven_build.rst)
 
 [Data-Binding]
 (https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/an_introduction_to_databinding.rst)
@@ -39,5 +38,4 @@ Welcome to the ibex_developers_manual wiki!
 
 ## Eclipse
 
-[Common Eclipse Issues]
-(https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/common_eclipse_issues.rst
+[Common Eclipse Issues](https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/common_eclipse_issues.rst
