@@ -55,3 +55,24 @@ Possible solution:
 
 * Check the offending plug-in has been added to one of the feature projects as a plug-in
 
+I really cannot workout why it is not working!
+----------------------------------------------
+
+Starting the GUI via Eclipse just doesn't seem to work and I cannot see why!
+
+One useful thing to try is to use the run configuration to check all the correct plug-ins are included:
+
+* Right-click on ibex.product in uk.ac.stfc.isis.ibex.client.product and select Run As->Run Configurations...
+* Select ibex.product under Eclipse Application
+* From the tabs select "Plug-ins" and click the "Validate Plug-ins" button
+* If it displays errors because plug-ins are missing:
+
+    * Close the dialogs and add the missing plug-ins to the feature.xml file in uk.ac.stfc.isis.ibex.feature.base or one of the features
+    * Repeat this whole process again from the beginning
+    
+* If there are no errors then click the "Run" button to see if it works
+
+If this does not work then good luck!
+
+
+
