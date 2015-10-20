@@ -55,6 +55,12 @@ Possible solution:
 
 * Check the offending plug-in has been added to one of the feature projects as a plug-in
 
+New plugin is not available (and possibly crashing existing plugins)
+--------------------------------------------------------------------
+
+This might be difficult to find as an error, and it may not exist for other developers - even on the same branch!
+Adding the plugin directly to your configuration solves this.
+
 I really cannot workout why it is not working!
 ----------------------------------------------
 
