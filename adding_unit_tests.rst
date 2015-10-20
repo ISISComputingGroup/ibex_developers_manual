@@ -11,6 +11,7 @@ Here are the steps required in Eclipse:
 #. Create a new Fragment Project
     * File > New > Project... > Plug-in Development > Fragment Project
     * Set the project name to <the full name of the plug-in to test>.tests
+    * Change the location to the repository rather than the workspace (don't forget the project name)
     * Click "Next"
     * Click the "Browse" button next to "Plug-in ID" 
     * Select the plug-in to test and click "OK"
