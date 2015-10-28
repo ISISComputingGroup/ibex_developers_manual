@@ -28,6 +28,7 @@ Here are the steps required in Eclipse:
     * The class name **must** end in Test to be picked up by the automated build
     
 #. Add tests to the class
+    * Add org.junit and org.mockito (if required) to the 'Required Plug-ins', under the Dependencies tab for the manifest
 
 #. Convert the new plug-in to a Maven project
     * Right-click on the plug-in and select Configure > Convert to Maven Project
