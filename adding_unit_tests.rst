@@ -25,6 +25,7 @@ Here are the steps required in Eclipse:
 #. In the new Package create a class for adding test
     * Select the Package
     * File > New > Class
+    * The class name **must** end in Test to be picked up by the automated build
     
 #. Add tests to the class
 
