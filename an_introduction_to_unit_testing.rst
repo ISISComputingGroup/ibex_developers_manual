@@ -198,6 +198,15 @@ This is a known bug and there is a workaround:
 * In the new dialog, expand the test plug-in and select the "bin" folder and click "OK"
 * On the original dialog, click "Apply" and then "Run"
 * Hopefully, the tests will now work and you should be able to re-run them in the normal way
+
+Eclipse is not picking up new tests
+-----------------------------------
+
+If Eclipse is not picking up changes when you add tests you may need to change the default output folder for tests for Maven to pick it up.
+
+* Right-click on the tests plug-in, go to properties, Java build path
+* Change the output folder to target/test-classes (you may need to create this folder first by clicking browse, selecting target and adding the test-classes folder)
+* If this does not work try deleting the target/test-classes folder first, if it existed already, and do a clean rebuild of the workspace
     
 Naming conventions for unit tests
 ---------------------------------
