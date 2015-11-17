@@ -174,40 +174,6 @@ Note: Each test should be independent of the other tests as there is no guarante
         // Clean up
     }
     
-Eclipse is complaining
-----------------------
-
-Running the tests in Eclipse might crash with an error like:
-
-.. code::
-
-    Class not found org.myexample.plugin.tests.StringManipulatorTest
-    java.lang.ClassNotFoundException: org.myexample.plugin.tests.StringManipulatorTest
-        at java.net.URLClassLoader.findClass(Unknown Source)
-        at java.lang.ClassLoader.loadClass(Unknown Source)
-        at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)
-        at java.lang.ClassLoader.loadClass(Unknown Source)
-        ...
-
-This is a known bug and there is a workaround:
-
-* Right-click on the test plug-in, and under "Run As" select "Run Configurations"
-* In the new dialog click on the "Classpath" tab
-* Select "User Entries" and click the "Advanced" button
-* Select "Add Folders" and click "OK"
-* In the new dialog, expand the test plug-in and select the "bin" folder and click "OK"
-* On the original dialog, click "Apply" and then "Run"
-* Hopefully, the tests will now work and you should be able to re-run them in the normal way
-
-Eclipse is not picking up new tests
------------------------------------
-
-If Eclipse is not picking up changes when you add tests you may need to change the default output folder for tests for Maven to pick it up.
-
-* Right-click on the tests plug-in, go to properties, Java build path
-* Change the output folder to target/test-classes (you may need to create this folder first by clicking browse, selecting target and adding the test-classes folder)
-* If this does not work try deleting the target/test-classes folder first, if it existed already, and do a clean rebuild of the workspace
-    
 Naming conventions for unit tests
 ---------------------------------
 
@@ -279,3 +245,47 @@ This will run the tests and calculate the coverage, the results should look some
     
 From the results it can be seen that 63.2% of the StringManipulator code is used by the unit tests. 
 The code that isn't used is highlighted in red - for this example we can see that we need to write a test that tests the reverseString method.
+
+    
+Eclipse is complaining
+======================
+
+ClassNotFoundException
+----------------------
+
+Running the tests in Eclipse might crash with an error like:
+
+.. code::
+
+    Class not found org.myexample.plugin.tests.StringManipulatorTest
+    java.lang.ClassNotFoundException: org.myexample.plugin.tests.StringManipulatorTest
+        at java.net.URLClassLoader.findClass(Unknown Source)
+        at java.lang.ClassLoader.loadClass(Unknown Source)
+        at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)
+        at java.lang.ClassLoader.loadClass(Unknown Source)
+        ...
+
+This is a known bug and there is a workaround:
+
+* Right-click on the test plug-in, and under "Run As" select "Run Configurations"
+* In the new dialog click on the "Classpath" tab
+* Select "User Entries" and click the "Advanced" button
+* Select "Add Folders" and click "OK"
+* In the new dialog, expand the test plug-in and select the "bin" folder and click "OK"
+* On the original dialog, click "Apply" and then "Run"
+* Hopefully, the tests will now work and you should be able to re-run them in the normal way
+
+Eclipse is not picking up new tests
+-----------------------------------
+
+If Eclipse is not picking up changes when you add tests you may need to change the default output folder for tests for Maven to pick it up.
+
+* Right-click on the tests plug-in, go to properties, Java build path
+* Change the output folder to target/test-classes (you may need to create this folder first by clicking browse, selecting target and adding the test-classes folder)
+* If this does not work try deleting the target/test-classes folder first, if it existed already, and do a clean rebuild of the workspace
+
+IncompatibleClassChangeError
+----------------------------
+
+If the tests are failing because of an IncompatibleClassChangeError error then the solution is to delete the bin and target folders for both the main plug-in and the corresponding test plug-in
+

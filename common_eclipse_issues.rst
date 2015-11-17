@@ -61,8 +61,8 @@ New plugin is not available (and possibly crashing existing plugins)
 This might be difficult to find as an error, and it may not exist for other developers - even on the same branch!
 Adding the plugin directly to your configuration solves this.
 
-I really cannot workout why it is not working!
-----------------------------------------------
+I really cannot work out why the GUI won't start!
+-------------------------------------------------
 
 Starting the GUI via Eclipse just doesn't seem to work and I cannot see why!
 
@@ -79,6 +79,5 @@ One useful thing to try is to use the run configuration to check all the correct
 * If there are no errors then click the "Run" button to see if it works
 
 If this does not work then good luck!
-
 
 
