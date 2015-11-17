@@ -31,7 +31,7 @@ Welcome to the ibex_developers_manual wiki!
 
 [An Introduction to Unit Testing](https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/an_introduction_to_unit_testing.rst)
 
-[Adding Unit Tests](https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/adding_unit_tests.rst)
+[Adding Unit Tests Step by Step](https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/adding_unit_tests.rst)
 
 [Mockito]
 (https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/using_mockito_for_testing_in_ibex.rst)
