@@ -8,7 +8,7 @@ Observers
 ---------
 Before.
 
-.. image:: images/refacotring_for_observables_and_writesrs/observers_before.png
+.. image:: images/refactoring_for_observables_and_writers/observers_before.png
    :height: 606 
    :width: 449
    :scale: 100 %
@@ -16,7 +16,7 @@ Before.
 
 After.
 
-.. image:: images/refacotring_for_observables_and_writesrs/observers_after.png
+.. image:: images/refactoring_for_observables_and_writers/observers_after.png
    :height: 525 
    :width: 438
    :scale: 100 %
