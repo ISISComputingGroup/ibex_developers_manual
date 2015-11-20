@@ -6,17 +6,20 @@ This document describes before and after of refactoring performed on various cla
 
 Observers
 ---------
-
 Before.
 
 .. image:: images/refacotring_for_observables_and_writesrs/observers_before.png
-   :scale: 50 %
+   :height: 606 
+   :width: 449
+   :scale: 100 %
    :align: center
 
 After.
 
- .. image:: images/refacotring_for_observables_and_writesrs/observers_after.png
-    :scale: 25 %
-    :align: center
+.. image:: images/refacotring_for_observables_and_writesrs/observers_after.png
+   :height: 525 
+   :width: 438
+   :scale: 100 %
+   :align: center
 
 After refactoring the two existing interfaces were combined into a single Observer interface, and ObservableAdapter was renamed.
