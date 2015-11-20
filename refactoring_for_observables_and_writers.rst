@@ -5,8 +5,9 @@ Refactoring for Observables, Observers, Writables and Writers
 This document describes before and after of refactoring performed on various classes that relate to reading and writing to PVs.
 
 Observers
----------
-Before.
+=========
+Original
+--------
 
 .. image:: images/refactoring_for_observables_and_writers/observers_before.png
    :height: 606 
@@ -14,7 +15,8 @@ Before.
    :scale: 100 %
    :align: center
 
-After.
+November 2015
+-------------
 
 .. image:: images/refactoring_for_observables_and_writers/observers_after.png
    :height: 525 
