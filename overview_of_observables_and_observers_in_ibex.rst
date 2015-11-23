@@ -86,8 +86,18 @@ Concrete Subscriptions
 Class Overview
 ==============
 
-The image below shows an overview of the class hierarchy for the observables in this document. Note that PairObservable is left off to keep the diagram easy to read.
+The image below shows an overview of the class hierarchy for the observables as it has evolved over time. Note that PairObservable is left off to keep the diagrams easy to read.
 
-.. image:: images/overview_of_observables_and_observers_in_ibex/class.png
+Original
+--------
+
+.. image:: images/overview_of_observables_and_observers_in_ibex/observables_pre_nov_2015.png
+    :scale: 100 %
+    :align: center
+    
+November 2015
+-------------
+
+.. image:: images/overview_of_observables_and_observers_in_ibex/observables_nov_2015.png
     :scale: 100 %
     :align: center
