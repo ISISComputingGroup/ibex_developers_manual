@@ -22,8 +22,8 @@ Welcome to the ibex_developers_manual wiki!
 [Connecting a View to a PV]
 (https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/connecting_a_view_to_a_pv.rst)
 
-[An Overview of Observables and Observers]
-(https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/overview_of_observables_and_observers_in_ibex.rst)
+[Class Diagrams for Observables, Observers, Writables and Writers]
+(https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/refactoring_for_observables_and_writers.rst)
 
 
 
