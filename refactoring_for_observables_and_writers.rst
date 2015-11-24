@@ -1,8 +1,27 @@
-=============================================================
-Refactoring for Observables, Observers, Writables and Writers
-=============================================================
+================================================================
+Class Diagrams for Observables, Observers, Writables and Writers
+================================================================
 
-This document describes before and after of refactoring performed on various classes that relate to reading and writing to PVs.
+This document contains the class diagrams for the various classes that relate to reading and writing to PVs.
+It also shows how the design has been evolved and refactored over time.
+
+Observables and Observers Overall Diagram
+=========================================
+
+Original
+--------
+
+.. image:: images/refactoring_for_observables_and_writers/observables_and_observers_pre_nov_2015.png
+    :scale: 100 %
+    :align: center
+    
+November 2015
+-------------
+
+.. image:: images/refactoring_for_observables_and_writers/observables_and_observers_nov_2015.png
+    :scale: 100 %
+    :align: center
+
 
 Observables
 ===========
