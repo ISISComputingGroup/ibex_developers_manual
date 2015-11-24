@@ -8,6 +8,8 @@ It also shows how the design has been evolved and refactored over time.
 Observables and Observers Overall Diagram
 =========================================
 
+NOTE: PairObservable is not depicted for clarity.
+
 Original
 --------
 
