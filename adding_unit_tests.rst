@@ -35,7 +35,7 @@ Here are the steps required in Eclipse:
     * Click "Finish"
     
 #. Add the new plug-in to the Parent POM
-    * Select the parent pom.xml file
+    * Select the pom.xml file in uk.ac.stfc.isis.ibex.client.tycho.parent
     * On the overview tab click "Add..." under the Modules section
     * Select the new plug-in from the list
     * Enable the "Update POM parent section in selected projects" option and click "OK"
