@@ -16,6 +16,8 @@ Download and install plugins
 #. From Help -> Install New Software add a repository with the name ObjectAid UML Explorer and URL http://www.objectaid.net/update, then install ObjectAid Class Diagram only (uncheck the other 3 options)
 #. From Help -> Eclipse Marketplace install Eclipse Checkstyle Plug-in
 #. Configure Checkstyle, Window -> Preferences -> Checkstyle, select New, Internal Configuration then import the IBEX Checkstyle file (found in the root of the git repository for the UI) NOTE - This is why we can't use EPF exports, the Checkstyle configurations get lost
+#. From Help -> Eclipse Marketplace install Unnecessary Code Detector
+#. Configure Unnecessary Code Detector, Window -> Preferences -> UCDetector, change the 'Active mode' to 'Unused only [built-in]'
 #. Run an update from Help -> Check for Updates
 
 Save actions
@@ -55,6 +57,7 @@ In Window -> Preferences -> Java -> Code Style -> Code Templates
 Finally
 -------
 
+#. From Window -> Preferences -> Maven -> Errors/Warnings choose 'Ignore' for 'Plugin execution not covered by lifecycle configuration'
 #. Tidy up - check for paths tied to your own user account and either remove the offending line or delete the file
 #. Zip up both the workspace and the eclipse folder, to get all plugins and settings
 
