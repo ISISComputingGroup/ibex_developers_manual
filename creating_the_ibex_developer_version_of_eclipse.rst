@@ -58,6 +58,7 @@ Finally
 -------
 
 #. From Window -> Preferences -> Maven -> Errors/Warnings choose 'Ignore' for 'Plugin execution not covered by lifecycle configuration'
+#. From Window -> Preferences -> General -> Error Reporting set 'Action' to 'Never Send'
 #. Tidy up - check for paths tied to your own user account and either remove the offending line or delete the file
 #. Zip up both the workspace and the eclipse folder, to get all plugins and settings
 
