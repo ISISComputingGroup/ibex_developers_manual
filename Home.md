@@ -25,7 +25,8 @@ Welcome to the ibex_developers_manual wiki!
 [Class Diagrams for Observables, Observers, Writables and Writers]
 (https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/refactoring_for_observables_and_writers.rst)
 
-
+[PV Switching]
+(https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/pv_switching.rst)
 
 ## Testing
 
