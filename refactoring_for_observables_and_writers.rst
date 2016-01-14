@@ -44,6 +44,15 @@ November 2015
    :width: 438
    :scale: 100 %
    :align: center
+   
+January 2016
+-------------
+
+.. image:: images/refactoring_for_observables_and_writers/observables_2016_01.png
+   :height: 525 
+   :width: 438
+   :scale: 100 %
+   :align: center
 
 Observers
 =========
