@@ -36,7 +36,7 @@ The proposed solution was to remove the central PVAddressBook class and instead 
 
 2. On initialisation the factory will then query the InstrumentSwitchers class for the specific Switcher class that handles that type of switching
 
-3. The original class that wanted the PV will subsequently ask the factory for PVs, providing the channel type and PV address. This will be provided as a SwitchableInitialiseOnSubscribeObservable that can be subscribed to for value changes.
+3. The original class that wanted the PV will subsequently ask the factory for PVs, providing the channel type and PV address. This will be provided as a SwitchableObservable that can be subscribed to for value changes.
 
 4. Before providing the new Observable object the factory will register it with the relevant Switcher class, each of which holds a list of all Switchable objects that it is required to switch. The Switchable Observable is also provided with a reference to the switcher so that it can remove itself from the relevant list if it is closed for any reason.
 
@@ -59,6 +59,6 @@ The inner workings of the switching code need not be understood to create PVs th
 .. code::
 
     ObservableFactory closingObsFactory = new ObservableFactory(OnInstrumentSwitch.CLOSE);
-    InitialiseOnSubscribeObservable<String> pv =  closingObsFactory.getSwitchableObservable(new StringChannel(), “A_PV_ADDRESS”));
+    ForwardingObservable<String> pv =  closingObsFactory.getSwitchableObservable(new StringChannel(), “A_PV_ADDRESS”));
 
 The above code will create a String type PV observable that will close when the instrument is changed. Subscriptions can now be attached to the PV and will be called when PVs change value.
