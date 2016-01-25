@@ -14,6 +14,7 @@ Quick overview of workflow:
 #. **Create a pull request (developer)**
     * Assign the correct sprint milestone to the ticket
     * Assign an appropriate label (ticket, bug, enhancement, ...)
+	* In the description add some information on how to test the new feature
 #. **Review (reviewer)**
     * Assign the pull request to yourself to indicate you are reviewing it (and, perhaps, add a comment as well)
     * If it is okay move to the next step, otherwise inform the developer of the problem and add a comment to the pull request
@@ -302,6 +303,12 @@ Notice that for my changes it says "Able to merge". This means that my changes d
 
 * Choose an appropriate label for this pull request, for example: ticket or bug
 
+* Ensure that the code has built and tested correctly, this can be seen by a message on the bottom of the PR. Note that any increase in checkstyle issues will result in a failed build. If you believe these to be unavoidable discuss with the reviewer.
+
+.. image:: images/development_workflow/checked_pr.png
+    :scale: 100 %
+    :align: center
+	
 * That is us done for now as the ticket now needs to be reviewed
 
 Reviewing a pull request
