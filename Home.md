@@ -1,3 +1,9 @@
+# The IBEX Project #
+
+## Project Overview ##
+
+[Architectural Design](../IBEX-GUI-Development-Workflow)
+
 # The GUI #
 
 ## Getting Started
