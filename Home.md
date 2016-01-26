@@ -1,4 +1,4 @@
-# The IBEX GUI #
+# The GUI #
 
 ## Getting Started
 
@@ -42,3 +42,5 @@
 ## Eclipse
 
 [Common Eclipse Issues](https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/common_eclipse_issues.rst)
+
+# The Server #
