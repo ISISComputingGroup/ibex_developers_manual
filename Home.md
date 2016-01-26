@@ -1,5 +1,3 @@
-Welcome to the ibex_developers_manual wiki!
-
 # The IBEX GUI #
 
 ## Getting Started
