@@ -1,7 +1,11 @@
 Welcome to the ibex_developers_manual wiki!
 
+# The IBEX GUI #
+
 ## Getting Started
-[The Development Workflow](https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/development_workflow.rst)
+
+[The Development Workflow]
+(https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/IBEX-GUI-Development-Workflow)
 
 [How to Build]
 (https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/building_ibex.rst)
