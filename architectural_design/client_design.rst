@@ -1,8 +1,8 @@
 =================================
-IBEX Client Architechtural Design
+IBEX Client Architectural Design
 =================================
 
-This document describes the architechtural design for the IBEX client. Eventually there should be outlines of the architechural design for each part of the high level design.
+This document describes the architectural design for the IBEX client. Eventually there should be outlines of the architectural design for each part of the high level design.
 
 Client Design Overview
 ----------------------

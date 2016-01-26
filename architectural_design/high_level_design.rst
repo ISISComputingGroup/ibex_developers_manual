@@ -1,8 +1,8 @@
-=====================================
-IBEX High Level Architechtural Design
-=====================================
+====================================
+IBEX High Level Architectural Design
+====================================
 
-This document describes the high level design for IBEX. Eventually there should be outlines of the architechural design for each part of the high level design.
+This document describes the high level design for IBEX. Eventually there should be outlines of the architectural design for each part of the high level design.
 
 High Level Design
 -----------------
@@ -37,10 +37,10 @@ Coming soon...
 Low Level Design Documents
 --------------------------
 
-Below is a list of the lower level architechural design documents.
+Below is a list of the lower level architectural design documents.
 
 .. _Alarms: https://trac.isis.rl.ac.uk/ICP/wiki/Alarms
-.. _Client: client_design.rst
+.. _Client: client_design.html
 
 * Alarms_
 * Client_
