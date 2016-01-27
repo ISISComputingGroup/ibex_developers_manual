@@ -1,7 +1,7 @@
 ![Perspective Switcher](images/adding_a_button_to_the_perspective_switcher/IBEX_complete_perspective_switcher_highlighted.png)
 
 
-###Creating a plug-in
+### Creating a plug-in
 
 * In Eclipse, add a new UI plug-in via File->New->Plug-in Project
 
@@ -12,22 +12,17 @@
 
 * The dialog should look like this:
 
-![Perspective Switcher](images/adding_a_button_to_the_perspective_switcher/eclipse_add_perspective_plugin1.png)
+![Add Perspective](images/adding_a_button_to_the_perspective_switcher/eclipse_add_perspective_plugin1.png)
 
 * Click 'Next'
 
 * On the next page of the dialog check it looks like the following and click 'Finish':
 
-.. image:: images/adding_a_button_to_the_perspective_switcher/eclipse_add_perspective_plugin2.png
-    :height: 638
-    :width:  554
-    :scale: 85 %
-    :align: center
+![Add Perspective](images/adding_a_button_to_the_perspective_switcher/eclipse_add_perspective_plugin2.png)
    
 Note: Generate an activator is unchecked as generally we do not need one for UI plug-ins, but it does not really matter if there is one.
 
-Creating a Perspective
-----------------------
+### Creating a Perspective
 
 Now the plug-in has been created: 
 
@@ -39,21 +34,13 @@ Now the plug-in has been created:
 
 * The dialog should look something like this:
 
-.. image:: images/adding_a_button_to_the_perspective_switcher/eclipse_adding_a_package.png
-    :height: 527
-    :width: 560 
-    :scale: 85 %
-    :align: center
+![Add a package](images/adding_a_button_to_the_perspective_switcher/eclipse_adding_a_package.png)
 
 We now need to add a Perspective class to the new package; the easiest way to do this is to copy and paste an existing one, for example: the one in org.csstudio.isis.ui.scripting, and edit it.
 
 The first thing you will notice is that there are numerous red errors. 
 
-.. image:: images/adding_a_button_to_the_perspective_switcher/eclipse_perspective_copy_errors.png
-    :width: 782 
-    :height: 505
-    :scale: 85 %
-    :align: center
+![Eclipse errors](images/adding_a_button_to_the_perspective_switcher/eclipse_perspective_copy_errors.png
 
 These are easily fixed:
 
@@ -73,8 +60,7 @@ The errors should now have disappeared, but there are a few more things to do:
 
 * Add a new icon (we will leave that as it is for now and fix it later!)
 
-Creating a View
----------------
+### Creating a View
 
 With the Perspective now in place we need to add a View:
 
@@ -88,11 +74,7 @@ With the Perspective now in place we need to add a View:
 
 The dialog should look something like this:
 
-.. image:: images/adding_a_button_to_the_perspective_switcher/eclipse_adding_a_View.png
-    :width: 572 
-    :height: 657
-    :scale: 85 %
-    :align: center
+![Add a View](images/adding_a_button_to_the_perspective_switcher/eclipse_adding_a_View.png
 
 The new class file should open in the editor. For this example I am just going to add a web browser to the view:
 
@@ -114,8 +96,7 @@ The new class file should open in the editor. For this example I am just going t
 
 * It should now look something like:
 
-.. code::
-
+```java
     package org.csstudio.isis.ui.myperspective;
 
     import org.eclipse.swt.widgets.Composite;
@@ -140,11 +121,10 @@ The new class file should open in the editor. For this example I am just going t
         @Override
         public void setFocus() {
         }
-
     }
+```
 
-Adding the Perspective and View to the GUI
-------------------------------------------
+### Adding the Perspective and View to the GUI
 
 Note: The extensions are defined in XML inside plugin.xml, so example XML is included below if you would prefer to edit that directly.
 
@@ -154,27 +134,15 @@ To add both the new Perspective and View to the main GUI we use extensions. Firs
 
 * Open the MANIFEST.MF file in META_INF and select the 'Extensions' tab, it should be empty like this:
 
-.. image:: images/adding_a_button_to_the_perspective_switcher/eclipse_no_extensions.png
-    :width: 627
-    :height: 751
-    :scale: 85 %
-    :align: center
+![Extensions](images/adding_a_button_to_the_perspective_switcher/eclipse_no_extensions.png
    
 * Click the 'Add' button and select org.csstudio.isis.ui.perspectives extension point and click 'Finish'
 
-.. image:: images/adding_a_button_to_the_perspective_switcher/eclipse_select_extension_point.png
-    :width: 572 
-    :height: 657
-    :scale: 85 %
-    :align: center
+![Extension points](images/adding_a_button_to_the_perspective_switcher/eclipse_select_extension_point.png
 
 * It should now look like this:
 
-.. image:: images/adding_a_button_to_the_perspective_switcher/eclipse_extensions_added1.png
-    :width: 598 
-    :height: 256
-    :scale: 85 %
-    :align: center
+![Extension points](images/adding_a_button_to_the_perspective_switcher/eclipse_extensions_added1.png
    
 * Right-click on the org.csstudio.isis.ui.perspectives extension point and select New->contribution
 
@@ -182,11 +150,7 @@ To add both the new Perspective and View to the main GUI we use extensions. Firs
 
 * Using the 'Browse' button select the Perspective class created earlier, the screen should now look like like this:
 
-.. image:: images/adding_a_button_to_the_perspective_switcher/eclipse_extensions_added2.png
-    :width: 905
-    :height: 340
-    :scale: 85 %
-    :align: center
+![Extension points](images/adding_a_button_to_the_perspective_switcher/eclipse_extensions_added2.png
    
 * Using the 'Add' button as before we need to add org.eclipse.ui.perspectives extension point
 
@@ -194,16 +158,10 @@ To add both the new Perspective and View to the main GUI we use extensions. Firs
 
 * Select the newly added item and fill in the required details, it should look something like this:
 
-.. image:: images/adding_a_button_to_the_perspective_switcher/eclipse_extensions_added3.png
-    :width: 903 
-    :height: 259
-    :scale: 85 %
-    :align: center
+![Extension points](images/adding_a_button_to_the_perspective_switcher/eclipse_extensions_added3.png
 
 The XML in plugin.xml for what we have done so far is:
-
-.. code::
-
+```xml
    <extension
          point="org.csstudio.isis.ui.perspectives">
       <contribution
@@ -218,7 +176,7 @@ The XML in plugin.xml for what we have done so far is:
             name="My Perspective">
       </perspective>
    </extension>
-   
+``` 
 
 Now we add the extensions for the View:
 
@@ -245,11 +203,7 @@ Now we add the extensions for the View:
 
 * It should look something like this:
 
-.. image:: images/adding_a_button_to_the_perspective_switcher/eclipse_extensions_added4.png
-    :width: 1129
-    :height: 329
-    :scale: 85 %
-    :align: center
+![Extension points](images/adding_a_button_to_the_perspective_switcher/eclipse_extensions_added4.png
    
 * Next, using the 'Add' button we need to add org.eclipse.ui.views extension point
 
@@ -257,16 +211,10 @@ Now we add the extensions for the View:
 
 * Set the class and id to the name and id of your View class respectively; it should look something like this:
 
-.. image:: images/adding_a_button_to_the_perspective_switcher/eclipse_extensions_added5.png
-    :width: 1134
-    :height: 274
-    :scale: 85 %
-    :align: center
+![Extension points](images/adding_a_button_to_the_perspective_switcher/eclipse_extensions_added5.png
    
 The XML in the plugin.xml for the View related stuff is:
-
-.. code::
-
+```xml
    <extension
          point="org.eclipse.ui.perspectiveExtensions">
             <perspectiveExtension
@@ -295,7 +243,8 @@ The XML in the plugin.xml for the View related stuff is:
             restorable="true">
       </view>
    </extension>
-   
+```   
+
 Finally, the last step is to add the plug-in we created to org.csstudio.isis.feature.base:
 
 * Open the feature.xml file in org.csstudio.isis.feature.base and select the Plug-ins tab
@@ -305,8 +254,7 @@ Finally, the last step is to add the plug-in we created to org.csstudio.isis.fea
 * Save everything and run the main GUI - hopefully, the new Perspective will appear
 
 
-Adding a new icon
------------------
+### Adding a new icon
 
 * Grab a nice png icon which is appropriately sized from somewhere like http://www.flaticon.com/ 
 
@@ -318,18 +266,12 @@ Adding a new icon
 
 * Tick the icons box under Binary Build to include the icons folder in the build
 
-.. image:: images/adding_a_button_to_the_perspective_switcher/eclipse_add_icons_to_build.png
-    :width: 564
-    :height: 281
-    :scale: 85 %
-    :align: center
+![Add an icon](images/adding_a_button_to_the_perspective_switcher/eclipse_add_icons_to_build.png
 
 * Open the Perspective class created earlier
 
 * Change the image method to return the new icon from the correct plug-in by changing the plug-in name and icon name, like so:
-
-.. code::
-
+```java
     package org.csstudio.isis.ui.myperspective;
 
     import org.csstudio.isis.ui.perspectives.BasePerspective;
@@ -361,7 +303,6 @@ Adding a new icon
             return ResourceManager.getPluginImage("org.csstudio.isis.myperspective", "icons/myperspective.png");
         }
     }
-
-   
+```   
    
 * Finally, start the GUI to check the new icon is shown
