@@ -1,4 +1,5 @@
-Quick overview of workflow:
+Quick overview of workflow
+--------------------------
 
 #. **Create a branch for the ticket (based on master) via GitHub (developer)**
     * Use the Trac ticket number for the branch name followed by a brief description, e.g. Ticket780_SelectNewTarget
