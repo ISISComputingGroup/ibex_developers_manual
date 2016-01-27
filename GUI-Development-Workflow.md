@@ -241,7 +241,7 @@ Notice that for my changes it says "Able to merge". This means that my changes d
 
 * Ensure that the code has built and tested correctly, this can be seen by a message on the bottom of the PR. Note that any increase in checkstyle issues will result in a failed build. If you believe these to be unavoidable discuss with the reviewer.
 
-![GitHub](images/development_workflow/checked_pr.png
+![GitHub](images/development_workflow/checked_pr.png)
 	
 * That is us done for now as the ticket now needs to be reviewed
 
