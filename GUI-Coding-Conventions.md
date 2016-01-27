@@ -1,10 +1,9 @@
 Unless stated otherwise below we should follow the standard Java conventions where possible.
 
-Code Documentation
-------------------
+## Code Documentation ##
 
 Classes and methods should be documented using the Javadoc syntax. For example:
-
+```java
     /**
      * A make-your-own pizza.
      *
@@ -36,9 +35,9 @@ Classes and methods should be documented using the Javadoc syntax. For example:
             return false;
         }
     }
+```
 
-Checkstyle
-----------
+## Checkstyle ##
 
 Code should be run through Checkstyle via Eclipse and corrected (within reason) before being committed.
 The Checkstyle plug-in can be installed via the Eclipse Marketplace.
@@ -64,20 +63,20 @@ Warnings that should be reviewed before committing:
 Any other warnings can probably be ignored, but feel free to fix them if you want.
     
 Checkstyle also has a suppress warning flag that tells it to ignore certain warnings, for example:
-
+```java
     @SuppressWarnings({"checkstyle:magicnumber", "checkstyle:localvariablename"})
     public void getSecondsInHours(int hours) {
         int seconds_per_hour = 60 * 60;    // Magic numbers and a variable name that does not conform to the recommended style!
         return hours * seconds_per_hour;
     }
+```
 
-Code Formatting
----------------
+## Code Formatting ##
 
 For Java use the standard conventions built in to Eclipse. This can be set via Window->Preferences->Java->Code Style->Formatter; the one required is called "Eclipse [built-in]".
 
 An example of what it looks like:
-
+```java
     void foo2() {
         if (true) {
             return;
@@ -91,11 +90,10 @@ An example of what it looks like:
             return;
         }
     }
-
+```
 In Eclipse, a quick way to auto-format the code correctly is to use Ctrl+Shift+F.
 
-Getters and Setters
--------------------
+## Getters and Setters ##
 
 Where possible getters and setters should follow the JavaBeans convention, namely:
 
@@ -106,7 +104,7 @@ Where possible getters and setters should follow the JavaBeans convention, namel
     * **Setter** - starts with "set"
 
 For example:
-
+```java
     class Point {
         private double x;
         private double y;
@@ -127,18 +125,17 @@ For example:
         public boolean isVisible { return visible; }
         public void setVisible(boolean visible) { this.visible = visible; }
     }
-    
-Code Comments
--------------
+```    
+## Code Comments ##
 
 Comments should have a space between the // and the text, and start with a capital letter::
-
+```java
     // This is a good comment
     
     //this is a bad comment
-    
-Use Data-binding
-----------------
+```
+   
+## Use Data-binding ##
 
 For connecting UI elements to data from the back-end use data-binding. 
 It seems that if data-binding and more traditional SWT wiring up is used (e.g. AddPropertyChangeListener) then the data-binding will stop working*, so always using data-binding should avoid this problem.
