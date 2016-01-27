@@ -64,10 +64,11 @@ Warnings that should be reviewed before committing:
 Any other warnings can probably be ignored, but feel free to fix them if you want.
     
 Checkstyle also has a suppress warning flag that tells it to ignore certain warnings, for example:
+
 ```java
     @SuppressWarnings({"checkstyle:magicnumber", "checkstyle:localvariablename"})
     public void getSecondsInHours(int hours) {
-        int seconds_per_hour = 60 * 60;    // Magic numbers and a variable name that does not conform to the recommended style!
+        int seconds_per_hour = 60 * 60;    // Magic numbers and a bad variable name
         return hours * seconds_per_hour;
     }
 ```
