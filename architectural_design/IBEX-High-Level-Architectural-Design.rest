@@ -36,7 +36,7 @@ Low Level Design Documents
 Below is a list of the lower level architectural design documents.
 
 .. _Alarms: https://trac.isis.rl.ac.uk/ICP/wiki/Alarms
-.. _Client: IBEX-Client-Design
+.. _Client: IBEX-Client-Architectural-Design
 
 * Alarms_
 * Client_
