@@ -107,7 +107,7 @@ Note: Use the Trac ticket number for the branch name followed by a brief descrip
 
 * The page should switch to the new branch:
 
-![GitHub](images/development_workflow/new_branch.png
+![GitHub](images/development_workflow/new_branch.png)
     
 ## Cloning the branch locally
 
@@ -217,7 +217,7 @@ changes on GitHub and then merge them into our copy:
     Total 15 (delta 6), reused 0 (delta 0)
     To https://github.com/ISISComputingGroup/ibex_gui.git
        86f5162..8b9814f  Ticket768 -> Ticket768
-
+```
 * If we navigate back to the branch on the GitHub page we can see that the changes have been pushed back:
 
 ![GitHub](images/development_workflow/pushed_branch.png)
