@@ -4,9 +4,9 @@
 
 [Architectural Design](../wiki/IBEX-High-Level-Architectural-Design)
 
-# The GUI #
+## The GUI ##
 
-## Getting Started
+### Getting Started
 
 [The Development Workflow]
 (https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/IBEX-GUI-Development-Workflow)
