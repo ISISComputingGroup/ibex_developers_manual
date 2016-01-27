@@ -101,7 +101,7 @@ $ git branch -a
 
 * Click the branch drop-down button which will list all the current branches. Type a name in the box and then click "Create branch" to create a new branch:
 
-![GitHub](images/development_workflow/create_branch.png)
+![GitHub](gui_development/images/development_workflow/create_branch.png)
     
 Note: Use the Trac ticket number for the branch name followed by a brief description, e.g. Ticket780_SelectNewTarget
 
