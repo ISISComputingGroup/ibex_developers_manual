@@ -8,16 +8,13 @@
 
 ### Getting Started
 
-[The Development Workflow]
-(https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/IBEX-GUI-Development-Workflow)
+[The Development Workflow](IBEX-GUI-Development-Workflow)
 
-[How to Build]
-(https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Building-the-GUI)
+[How to Build](Building-the-GUI)
 
 ### Coding
 
-[Coding Conventions]
-(https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/GUI-Coding-Conventions)
+[Coding Conventions](GUI-Coding-Conventions)
 
 [Adding a Perspective]
 (https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/adding_a_button_to_the_perspective_switcher.rst)
