@@ -1,6 +1,3 @@
-
-## Adding a button to the Perspective Switcher
-
 ![Perspective Switcher](images/adding_a_button_to_the_perspective_switcher/IBEX_complete_perspective_switcher_highlighted.png)
 
 
@@ -15,11 +12,7 @@
 
 * The dialog should look like this:
 
-.. image:: images/adding_a_button_to_the_perspective_switcher/eclipse_add_perspective_plugin1.png
-    :height: 629 
-    :width: 545
-    :scale: 85 %
-    :align: center
+![Perspective Switcher](images/adding_a_button_to_the_perspective_switcher/eclipse_add_perspective_plugin1.png)
 
 * Click 'Next'
 
