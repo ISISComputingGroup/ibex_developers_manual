@@ -1,11 +1,10 @@
 
-# Adding a button to the Perspective Switcher
+## Adding a button to the Perspective Switcher
 
 ![Perspective Switcher](images/adding_a_button_to_the_perspective_switcher/IBEX_complete_perspective_switcher_highlighted.png)
 
 
-Creating a plug-in
-------------------
+###Creating a plug-in
 
 * In Eclipse, add a new UI plug-in via File->New->Plug-in Project
 
