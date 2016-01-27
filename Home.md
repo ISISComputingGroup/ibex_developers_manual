@@ -2,51 +2,42 @@
 
 ## Project Overview ##
 
-[Architectural Design](../wiki/IBEX-High-Level-Architectural-Design)
+[Architectural Design](IBEX-High-Level-Architectural-Design)
 
 ## The GUI ##
 
 ### Getting Started
 
-[The Development Workflow]
-(https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/IBEX-GUI-Development-Workflow)
+[The Development Workflow](GUI-Development-Workflow)
 
-[How to Build]
-(https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Building-the-GUI)
+[How to Build](Building-the-GUI)
 
 ### Coding
 
-[Coding Conventions]
-(https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/GUI-Coding-Conventions)
+[Coding Conventions](GUI-Coding-Conventions)
 
-[Adding a Perspective]
-(https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/adding_a_button_to_the_perspective_switcher.rst)
+[Adding a Perspective](Adding-a-Button-to-the-Perspective-Switcher)
 
-[Adding Plug-ins and Features to the Build](https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/adding_a_plugin_or_feature_to_maven_build.rst)
+[Adding Plug-ins and Features to the Build](Adding-a-Plugin-or-Feature-to-Maven-Build)
 
-[Data-Binding]
-(https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/an_introduction_to_databinding.rst)
+[Data-Binding](An-Introduction-to-Databinding)
 
-[Connecting a View to a PV]
-(https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/connecting_a_view_to_a_pv.rst)
+[Connecting a View to a PV](Connecting-a-View-to-a-PV)
 
-[Class Diagrams for Observables, Observers, Writables and Writers]
-(https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/refactoring_for_observables_and_writers.rst)
+[Class Diagrams for Observables, Observers, Writables and Writers](Refactoring-for-Observables-and-Writers)
 
-[PV Switching]
-(https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/pv_switching.rst)
+[PV Switching](PV-Switching)
 
 ### Testing
 
-[An Introduction to Unit Testing](https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/an_introduction_to_unit_testing.rst)
+[An Introduction to Unit Testing](An-Introduction-to-Unit-Testing)
 
-[Adding Unit Tests Step by Step](https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/adding_unit_tests.rst)
+[Adding Unit Tests Step by Step](Adding-Unit-Tests)
 
-[Mockito]
-(https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/using_mockito_for_testing_in_ibex.rst)
+[Mockito](Using-Mockito-for-Testing-in-the-GUI)
 
 ### Eclipse
 
-[Common Eclipse Issues](https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/common_eclipse_issues.rst)
+[Common Eclipse Issues](Common-Eclipse-Tasks)
 
 ## The Server ##
