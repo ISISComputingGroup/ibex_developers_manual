@@ -7,6 +7,7 @@ There are essentially two steps: adding a POM file to the plug-in/feature and ed
 * Open the file in Eclipse and switch to the pom.xml tab
 
 * Paste the following if it is a plug-in:
+
 ```xml
     <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
       <modelVersion>4.0.0</modelVersion>
