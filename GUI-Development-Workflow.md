@@ -29,7 +29,7 @@ Notes:
 ## Getting started with GitHub (first time only)
 
 * Register with GitHub to create an account
-* Download and install `git client for Windows <https://git-scm.com/download/win>`_ or `GitHub for Windows <https://windows.github.com/>`_ or `Tortoise Git <https://tortoisegit.org/>`_ 
+* Download and install [git client for Windows] (https://git-scm.com/download/win>) or [GitHub for Windows] (https://windows.github.com/) or [Tortoise Git] (https://tortoisegit.org/)
 * Configure RAL proxy, either add the RAL proxy to C:/Users/YourName/.gitconfig
 ```
 [http]
