@@ -64,7 +64,7 @@ git config --global core.autocrlf true
 
 * From the repository page copy the "HTTPS clone URL":
 
-![GitHub](GUI_development/images/development_workflow/clone.png)
+![GitHub](GUI_development/images/gui_development_workflow/clone.png)
 
 * Open Git Bash or Git Shell from the Windows Start Menu
 
@@ -97,17 +97,17 @@ $ git branch -a
 * Go to the IBEX GUI GitHub repository https://github.com/ISISComputingGroup/ibex_gui
 * The page should look something like this:
 
-![GitHub](GUI_development/images/development_workflow/start.png)
+![GitHub](GUI_development/images/gui_development_workflow/start.png)
 
 * Click the branch drop-down button which will list all the current branches. Type a name in the box and then click "Create branch" to create a new branch:
 
-![GitHub](GUI_development/images/development_workflow/create_branch.png)
+![GitHub](GUI_development/images/gui_development_workflow/create_branch.png)
     
 Note: Use the Trac ticket number for the branch name followed by a brief description, e.g. Ticket780_SelectNewTarget
 
 * The page should switch to the new branch:
 
-![GitHub](GUI_development/images/development_workflow/new_branch.png)
+![GitHub](GUI_development/images/gui_development_workflow/new_branch.png)
     
 ## Cloning the branch locally
 
@@ -220,18 +220,18 @@ To https://github.com/ISISComputingGroup/ibex_gui.git
 ```
 * If we navigate back to the branch on the GitHub page we can see that the changes have been pushed back:
 
-![GitHub](GUI_development/images/development_workflow/pushed_branch.png)
+![GitHub](GUI_development/images/gui_development_workflow/pushed_branch.png)
 
 ## Create a pull request
 
 * Create a pull request by clicking the 'Compare & pull request' button while on the correct branch:
 
-![GitHub](GUI_development/images/development_workflow/pull_request_start.png)
+![GitHub](GUI_development/images/gui_development_workflow/pull_request_start.png)
 
 * The new page allows you to add comments and to review the modifications before creating the pull request. 
 Notice that for my changes it says "Able to merge". This means that my changes don't clash with any other changes that have been made on the master while I have been working on the branch.
 
-![GitHub](GUI_development/images/development_workflow/open_a_pull_request.png)
+![GitHub](GUI_development/images/gui_development_workflow/open_a_pull_request.png)
 
 * Clicking the "Create pull request" button will create the pull request
 
@@ -241,7 +241,7 @@ Notice that for my changes it says "Able to merge". This means that my changes d
 
 * Ensure that the code has built and tested correctly, this can be seen by a message on the bottom of the PR. Note that any increase in checkstyle issues will result in a failed build. If you believe these to be unavoidable discuss with the reviewer.
 
-![GitHub](GUI_development/images/development_workflow/checked_pr.png)
+![GitHub](GUI_development/images/gui_development_workflow/checked_pr.png)
 	
 * That is us done for now as the ticket now needs to be reviewed
 

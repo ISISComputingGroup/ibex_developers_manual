@@ -2,7 +2,7 @@ Connecting a View to a PV
 
 The basic arrangement for the mechanism for connecting a View to a PV is shown below:
 
-![Basic principle](images/connecting_a_view_to_a_pv/basic_principle.png)
+![Basic principle](GUI_development/images/connecting_a_view_to_a_pv/basic_principle.png)
 
 ## Adding an Observable
 

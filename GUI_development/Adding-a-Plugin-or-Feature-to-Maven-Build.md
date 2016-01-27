@@ -48,7 +48,7 @@ There are essentially two steps: adding a POM file to the plug-in/feature and ed
 
 * Open the pom.xml file in org.csstudio.isis.tycho.parent in Eclipse. It should look like this:
 
-![POM file](images//adding_a_plugin_or_feature_to_maven_build/parent_pom.png)
+![POM file](GUI_development/images/adding_a_plugin_or_feature_to_maven_build/parent_pom.png)
 
 * Click the 'Add' button under the Modules section
 

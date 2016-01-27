@@ -13,21 +13,21 @@ NOTE: PairObservable is not depicted for clarity.
 Original
 --------
 
-.. image:: images/refactoring_for_observables_and_writers/observables_and_observers_pre_nov_2015.png
+.. image:: GUI_development/images/refactoring_for_observables_and_writers/observables_and_observers_pre_nov_2015.png
     :scale: 100 %
     :align: center
     
 November 2015
 -------------
 
-.. image:: images/refactoring_for_observables_and_writers/observables_and_observers_nov_2015.png
+.. image:: GUI_development/images/refactoring_for_observables_and_writers/observables_and_observers_nov_2015.png
     :scale: 100 %
     :align: center
     
 January 2016
 -------------
 
-.. image:: images/refactoring_for_observables_and_writers/observables_and_observers_jan_2016.png
+.. image:: GUI_development/images/refactoring_for_observables_and_writers/observables_and_observers_jan_2016.png
     :scale: 100 %
     :align: center
 
@@ -37,7 +37,7 @@ Observables
 Original
 --------
 
-.. image:: images/refactoring_for_observables_and_writers/observables_before.png
+.. image:: GUI_development/images/refactoring_for_observables_and_writers/observables_before.png
    :height: 606 
    :width: 449
    :scale: 100 %
@@ -46,7 +46,7 @@ Original
 November 2015
 -------------
 
-.. image:: images/refactoring_for_observables_and_writers/observables_after.png
+.. image:: GUI_development/images/refactoring_for_observables_and_writers/observables_after.png
    :height: 525 
    :width: 438
    :scale: 100 %
@@ -55,7 +55,7 @@ November 2015
 January 2016
 -------------
 
-.. image:: images/refactoring_for_observables_and_writers/observables_2016_01.png
+.. image:: GUI_development/images/refactoring_for_observables_and_writers/observables_2016_01.png
    :height: 525 
    :width: 438
    :scale: 100 %
@@ -66,7 +66,7 @@ Observers
 Original
 --------
 
-.. image:: images/refactoring_for_observables_and_writers/observers_before.png
+.. image:: GUI_development/images/refactoring_for_observables_and_writers/observers_before.png
    :height: 606 
    :width: 449
    :scale: 100 %
@@ -75,7 +75,7 @@ Original
 November 2015
 -------------
 
-.. image:: images/refactoring_for_observables_and_writers/observers_after.png
+.. image:: GUI_development/images/refactoring_for_observables_and_writers/observers_after.png
    :height: 525 
    :width: 438
    :scale: 100 %
@@ -88,7 +88,7 @@ Writables
 Original
 --------
 
-.. image:: images/refactoring_for_observables_and_writers/writables_before.png
+.. image:: GUI_development/images/refactoring_for_observables_and_writers/writables_before.png
    :height: 606 
    :width: 449
    :scale: 100 %
@@ -97,7 +97,7 @@ Original
 November 2015
 -------------
 
-.. image:: images/refactoring_for_observables_and_writers/writables_after.png
+.. image:: GUI_development/images/refactoring_for_observables_and_writers/writables_after.png
    :height: 525 
    :width: 438
    :scale: 100 %
@@ -108,7 +108,7 @@ Writers
 Original
 --------
 
-.. image:: images/refactoring_for_observables_and_writers/writers_before.png
+.. image:: GUI_development/images/refactoring_for_observables_and_writers/writers_before.png
    :height: 606 
    :width: 449
    :scale: 100 %
@@ -117,7 +117,7 @@ Original
 November 2015
 -------------
 
-.. image:: images/refactoring_for_observables_and_writers/writers_after.png
+.. image:: GUI_development/images/refactoring_for_observables_and_writers/writers_after.png
    :height: 525 
    :width: 438
    :scale: 100 %
