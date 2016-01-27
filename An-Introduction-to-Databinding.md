@@ -54,7 +54,7 @@ public class ModelObject {
         changeSupport.firePropertyChange(propertyName, oldValue, newValue);
     }
 }
-'''
+```
 The ModelObject contains the code that is essential for data-binding. 
 
 Behind the scenes when you create a binding the data-binding framework automatically calls addPropertyChangeListener for the UI widget being bound 
