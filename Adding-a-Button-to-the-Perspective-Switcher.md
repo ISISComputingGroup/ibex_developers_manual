@@ -1,13 +1,8 @@
 
 # Adding a button to the Perspective Switcher
 
-![Alt attribute text Here](images/adding_a_button_to_the_perspective_switcher/IBEX_complete_perspective_switcher_highlighted.png)
+![Perspective Switcher](images/adding_a_button_to_the_perspective_switcher/IBEX_complete_perspective_switcher_highlighted.png)
 
-.. image:: images/adding_a_button_to_the_perspective_switcher/IBEX_complete_perspective_switcher_highlighted.png
-    :height: 974
-    :width: 1457   
-    :scale: 50 %
-    :align: center
 
 Creating a plug-in
 ------------------
