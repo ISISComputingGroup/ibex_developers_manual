@@ -36,11 +36,11 @@ Now the Plug-in is created we can create an Observable:
 
 * We require TitleVariable to inherit from Instrument Variables, so open the code file for TitleVariable and modify the code like so:
 ```java
-    package org.csstudio.isis.title;
+package org.csstudio.isis.title;
 
-    public class TitleVariable extends InstrumentVariables {
+public class TitleVariable extends InstrumentVariables {
 
-    }
+}
 ``` 
 * The InstrumentVariables will have a red error indicator, so hover over it and select "Import 'InstrumentVariables' (org.csstudio.isis.instrument)" from the drop-down
 
@@ -48,22 +48,22 @@ Now the Plug-in is created we can create an Observable:
 
 * Next we add the observable for the PV:
 ```java
-    package org.csstudio.isis.title;
+package org.csstudio.isis.title;
 
-    import org.csstudio.isis.epics.observing.InitialiseOnSubscribeObservable;
-    import org.csstudio.isis.instrument.Channels;
-    import org.csstudio.isis.instrument.InstrumentVariables;
-    import org.csstudio.isis.instrument.channels.CharWaveformChannel;
+import org.csstudio.isis.epics.observing.InitialiseOnSubscribeObservable;
+import org.csstudio.isis.instrument.Channels;
+import org.csstudio.isis.instrument.InstrumentVariables;
+import org.csstudio.isis.instrument.channels.CharWaveformChannel;
 
-    public class TitleVariable extends InstrumentVariables {
-        
-        public final InitialiseOnSubscribeObservable<String> titleRBV = reader(new CharWaveformChannel(), "DAE:TITLE");
+public class TitleVariable extends InstrumentVariables {
+    
+    public final InitialiseOnSubscribeObservable<String> titleRBV = reader(new CharWaveformChannel(), "DAE:TITLE");
 
-        public TitleVariable(Channels channels) {
-            super(channels);
-        }
-
+    public TitleVariable(Channels channels) {
+        super(channels);
     }
+
+} 
 ```
 Explanation on Channels, InitialiseOnSubscribeObservable and reader.
 
