@@ -2,7 +2,7 @@
 
 ## Project Overview ##
 
-[Architectural Design](../wiki/IBEX-High-Level-Architectural-Design)
+[Architectural Design](IBEX-High-Level-Architectural-Design)
 
 ## The GUI ##
 
