@@ -3,6 +3,7 @@ Unless stated otherwise below we should follow the standard Java conventions whe
 ## Code Documentation ##
 
 Classes and methods should be documented using the Javadoc syntax. For example:
+
 ```java
     /**
      * A make-your-own pizza.
@@ -50,15 +51,15 @@ By right-clicking on a file one can tell Checkstyle to check that file.
 
 Warnings that should be fixed where possible:
 
-    * Whitespace warnings (can be auto-fixed, see the Code Formatting section)
+* Whitespace warnings (can be auto-fixed, see the Code Formatting section)
 
-    * Missing Javadoc comments (particular the class one)
+* Missing Javadoc comments (particular the class one)
 
 Warnings that should be reviewed before committing:
 
-    * Magic numbers - if it is related to a GUI layout then ignore, otherwise think about whether to fix it. Unfortunately Checkstyle can be a little overzealous sometimes...
+* Magic numbers - if it is related to a GUI layout then ignore, otherwise think about whether to fix it. Unfortunately Checkstyle can be a little overzealous sometimes...
 
-    * Name must match pattern - ignore GUI names that don't match the recommended pattern (e.g. gd_switchToCombo)
+* Name must match pattern - ignore GUI names that don't match the recommended pattern (e.g. gd_switchToCombo)
 
 Any other warnings can probably be ignored, but feel free to fix them if you want.
     
@@ -97,11 +98,11 @@ In Eclipse, a quick way to auto-format the code correctly is to use Ctrl+Shift+F
 
 Where possible getters and setters should follow the JavaBeans convention, namely:
 
-    * **Getter** - starts with "get"
+* **Getter** - starts with "get"
     
-    * **Boolean Getter** - can start with "is" or "get"
+* **Boolean Getter** - can start with "is" or "get"
     
-    * **Setter** - starts with "set"
+* **Setter** - starts with "set"
 
 For example:
 ```java
