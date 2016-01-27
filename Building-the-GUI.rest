@@ -1,7 +1,3 @@
-=============
-Building IBEX 
-=============
-
 We have a book which should serve as a reasonable introduction to the Eclipse RCP platform: 'Eclipse Rich Client Platform' by McAffer, Lemieux and Aniszczyk.
 
 Building via Eclipse
