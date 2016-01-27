@@ -7,7 +7,7 @@ This document describes the high level design for IBEX. Eventually there should 
 High Level Design
 -----------------
 
-.. image:: images/high_level_architecture.png
+.. image:: architectural_design/images/high_level_architecture.png
     :align: center
     
 Notes on the figure:
