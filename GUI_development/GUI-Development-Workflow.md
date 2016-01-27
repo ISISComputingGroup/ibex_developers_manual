@@ -64,7 +64,7 @@ git config --global core.autocrlf true
 
 * From the repository page copy the "HTTPS clone URL":
 
-![GitHub](images/development_workflow/clone.png)
+![GitHub](GUI_development/images/development_workflow/clone.png)
 
 * Open Git Bash or Git Shell from the Windows Start Menu
 
