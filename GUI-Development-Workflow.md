@@ -295,7 +295,7 @@ mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (master)
 $ git fetch origin
     
 * Merge the master with the branch:
-```
+
 mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (master)
 $ git merge Ticket768
 Auto-merging base/uk.ac.stfc.isis.ibex.ui.blocks/src/uk/ac/stfc/isis/ibex/ui/blocks/groups/GroupsPanel.java
