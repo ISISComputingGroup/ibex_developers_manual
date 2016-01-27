@@ -9,33 +9,33 @@ There are essentially two steps: adding a POM file to the plug-in/feature and ed
 * Paste the following if it is a plug-in:
 
 ```xml
-    <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-      <modelVersion>4.0.0</modelVersion>
-      <artifactId>YOUR_ITEM_NAME_HERE</artifactId>
-      <packaging>eclipse-plugin</packaging>
-      <parent>
-        <groupId>CSS_ISIS</groupId>
-        <version>1.0.0-SNAPSHOT</version>
-        <artifactId>org.csstudio.isis.tycho.parent</artifactId>
-        <relativePath>../org.csstudio.isis.tycho.parent</relativePath>
-      </parent>
-      <version>1.0.0-SNAPSHOT</version>
-    </project>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>YOUR_ITEM_NAME_HERE</artifactId>
+  <packaging>eclipse-plugin</packaging>
+  <parent>
+    <groupId>CSS_ISIS</groupId>
+    <version>1.0.0-SNAPSHOT</version>
+    <artifactId>org.csstudio.isis.tycho.parent</artifactId>
+    <relativePath>../org.csstudio.isis.tycho.parent</relativePath>
+  </parent>
+  <version>1.0.0-SNAPSHOT</version>
+</project>
 ```
 * Or paste the following if it is a feature:
 
 ```xml
-    <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-      <modelVersion>4.0.0</modelVersion>
-      <artifactId>YOUR_ITEM_NAME_HERE</artifactId>
-      <packaging>eclipse-feature</packaging>
-      <parent>
-        <groupId>CSS_ISIS</groupId>
-        <version>1.0.0-SNAPSHOT</version>
-        <artifactId>org.csstudio.isis.tycho.parent</artifactId>
-        <relativePath>../org.csstudio.isis.tycho.parent</relativePath>
-      </parent>
-    </project>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>YOUR_ITEM_NAME_HERE</artifactId>
+  <packaging>eclipse-feature</packaging>
+  <parent>
+    <groupId>CSS_ISIS</groupId>
+    <version>1.0.0-SNAPSHOT</version>
+    <artifactId>org.csstudio.isis.tycho.parent</artifactId>
+    <relativePath>../org.csstudio.isis.tycho.parent</relativePath>
+  </parent>
+</project>
 ``` 
 * In either case replace the YOUR_ITEM_NAME_HERE with the plug-in/feature name; example names:
 
