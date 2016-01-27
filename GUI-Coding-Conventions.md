@@ -5,8 +5,6 @@ Code Documentation
 
 Classes and methods should be documented using the Javadoc syntax. For example:
 
-.. code::
-
     /**
      * A make-your-own pizza.
      *
