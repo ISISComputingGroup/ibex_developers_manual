@@ -32,32 +32,32 @@ Notes:
 * Download and install `git client for Windows <https://git-scm.com/download/win>`_ or `GitHub for Windows <https://windows.github.com/>`_ or `Tortoise Git <https://tortoisegit.org/>`_ 
 * Configure RAL proxy, either add the RAL proxy to C:/Users/YourName/.gitconfig
 ```
-    [http]
-        proxy = http://wwwcache.rl.ac.uk:8080
+[http]
+    proxy = http://wwwcache.rl.ac.uk:8080
 
-    [https]
-        proxy = https://wwwcache.rl.ac.uk:8080
+[https]
+    proxy = https://wwwcache.rl.ac.uk:8080
 ```
 or type:
 
 ```
-    git config --global http.proxy http://wwwcache.rl.ac.uk:8080
-    git config --global https.proxy https://wwwcache.rl.ac.uk:8080
+git config --global http.proxy http://wwwcache.rl.ac.uk:8080
+git config --global https.proxy https://wwwcache.rl.ac.uk:8080
 ```
 * Set you username and email address - TortoiseGit "Setting->Git" and select "global", or via the command line:
 
 ```
-    git config --global user.name "YOUR NAME"
-    git config --global user.email "YOUR EMAIL ADDRESS"
+git config --global user.name "YOUR NAME"
+git config --global user.email "YOUR EMAIL ADDRESS"
 ```
 * Set a default commit editor (not needed for TortoiseGit):
 
 ```
-    git config --global core.editor "start notepad++"
+git config --global core.editor "start notepad++"
 ```
 * Set line-handling (on Windows):
 ```
-    git config --global core.autocrlf true
+git config --global core.autocrlf true
 ```        
 
 ## Cloning the repository (first time only)
@@ -71,25 +71,25 @@ or type:
 * In the console enter the following (paste the address from the previous step) to create a local copy of the repository:
 
 ```
-    mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ (master)
-    $ git clone https://github.com/ISISComputingGroup/ibex_gui.git
+mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ (master)
+$ git clone https://github.com/ISISComputingGroup/ibex_gui.git
 ```
 
 * Now enter the ibex_gui directory:
 ```
-    mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (master)
-    $ cd ibex_gui
+mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (master)
+$ cd ibex_gui
 ```   
 * The command line shows in brackets which branch you are on - probably master at this time
 
 * Use the git branch command to list the available branches:
 
 ```
-    mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (master)
-    $ git branch -a
-    * master
-      remotes/origin/HEAD -> origin/master
-      remotes/origin/master
+mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (master)
+$ git branch -a
+* master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
 ```
 
 ## Creating a branch
@@ -115,24 +115,24 @@ It is necessary to clone the new branch locally if you don't already have it:
 
 * First get an updated list of remote branches:
 ```
-    mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (master)
-    $ git remote update
-    Fetching origin
-    From https://github.com/ISISComputingGroup/ibex_gui
-     * [new branch]      Ticket768 -> origin/Ticket768
+mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (master)
+$ git remote update
+Fetching origin
+From https://github.com/ISISComputingGroup/ibex_gui
+ * [new branch]      Ticket768 -> origin/Ticket768
 ```
 * The new branch should appear in the branch list:
 ```
-    mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (master)
-    $ git branch -a
-    * master
-      remotes/origin/HEAD -> origin/master
-      remotes/origin/Ticket768
-      remotes/origin/master
+mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (master)
+$ git branch -a
+* master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/Ticket768
+  remotes/origin/master
 ```      
 * Switch to the new branch created earlier:
 ```
-    $ git checkout Ticket768
+$ git checkout Ticket768
 ```
 * Now you can start coding!
 
@@ -142,15 +142,15 @@ Now the code changes have been made, it is time to push the changes back to the 
 
 * From the command line we can see what changes we have made using the git status command like so:
 ```
-    mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (Ticket768)
-    $ git status -s
-     M uk.ac.stfc.isis.ibex.ui.blocks/src/uk/ac/stfc/isis/ibex/ui/blocks/groups/BannerComposite.java
-     M uk.ac.stfc.isis.ibex.ui.blocks/src/uk/ac/stfc/isis/ibex/ui/blocks/groups/GroupsPanel.java
-    ?? .metadata/
-    ?? uk.ac.stfc.isis.ibex.client.tycho.parent/workspace/
-    ?? workspace/
-    ?? ../runtime-ibex.product/
-    ?? ../surefire-reports/
+mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (Ticket768)
+$ git status -s
+ M uk.ac.stfc.isis.ibex.ui.blocks/src/uk/ac/stfc/isis/ibex/ui/blocks/groups/BannerComposite.java
+ M uk.ac.stfc.isis.ibex.ui.blocks/src/uk/ac/stfc/isis/ibex/ui/blocks/groups/GroupsPanel.java
+?? .metadata/
+?? uk.ac.stfc.isis.ibex.client.tycho.parent/workspace/
+?? workspace/
+?? ../runtime-ibex.product/
+?? ../surefire-reports/
 ```
 
 We can see that I have modified two .java files (indicated by the M) and there are a few files not under source control (indicated by ??).
@@ -158,26 +158,26 @@ I am not interested in the files not under source control as they are default fi
 
 * To be able to commit the changes back they have to be staged using the git add command like so:
 ```
-    mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (Ticket768)
-    $ git add -u
+mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (Ticket768)
+$ git add -u
 ```
 
 The -u flag tells git to stage any modified files that are already in source control. To add new files or stage only specific files use the file name instead like so:
 ```
-    mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (Ticket768)
-    $ git add some_file_name.txt
+mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (Ticket768)
+$ git add some_file_name.txt
 ```    
 * If we repeat the git status command we get something like this:
 ```
-    mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (Ticket768)
-    $ git status -s
-    M  uk.ac.stfc.isis.ibex.ui.blocks/src/uk/ac/stfc/isis/ibex/ui/blocks/groups/BannerComposite.java
-    M  uk.ac.stfc.isis.ibex.ui.blocks/src/uk/ac/stfc/isis/ibex/ui/blocks/groups/GroupsPanel.java
-    ?? .metadata/
-    ?? uk.ac.stfc.isis.ibex.client.tycho.parent/workspace/
-    ?? workspace/
-    ?? ../runtime-ibex.product/
-    ?? ../surefire-reports/
+mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (Ticket768)
+$ git status -s
+M  uk.ac.stfc.isis.ibex.ui.blocks/src/uk/ac/stfc/isis/ibex/ui/blocks/groups/BannerComposite.java
+M  uk.ac.stfc.isis.ibex.ui.blocks/src/uk/ac/stfc/isis/ibex/ui/blocks/groups/GroupsPanel.java
+?? .metadata/
+?? uk.ac.stfc.isis.ibex.client.tycho.parent/workspace/
+?? workspace/
+?? ../runtime-ibex.product/
+?? ../surefire-reports/
 ```
 Notice that there is no longer a space before the M, this indicates that the file is staged.
 
@@ -186,8 +186,8 @@ Notice that there is no longer a space before the M, this indicates that the fil
 The commit will require a comment and the format for comments should be as per https://robots.thoughtbot.com/5-useful-tips-for-a-better-commit-message i.e. 
 50 char title, blank line, further details wrapped at 72 characters per line. 
 ```
-    mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (Ticket768)
-    $ git commit 
+mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (Ticket768)
+$ git commit 
 ```
 * Check for upstream commits
 
@@ -195,28 +195,28 @@ Before we finally push to the server we will merge into our branch any changes t
 is to make the job easier for a reviewer as we will see potential merge conflicts and handle them ourselves. We update our local master branch with
 changes on GitHub and then merge them into our copy: 
 ```
-    mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (Ticket768)
-    $ git pull origin master
-    From https://github.com/ISISComputingGroup/ibex_gui
-     * branch            master     -> FETCH_HEAD
-     Already up-to-date.   
-    mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (Ticket768)
-    $ git merge master
-    Already up-to-date.
+mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (Ticket768)
+$ git pull origin master
+From https://github.com/ISISComputingGroup/ibex_gui
+ * branch            master     -> FETCH_HEAD
+ Already up-to-date.   
+mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (Ticket768)
+$ git merge master
+Already up-to-date.
 ```
 (Advanced usage note: if your branch does not yet exist on GitHub, and has not been otherwise shared with another developer, then you may wish to consider doing a rebase rather than a merge) 
     
 * Next we push the changes back to GitHub using the git push command like so:
 ```
-    mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (Ticket768)
-    $ git push origin Ticket768
-    Counting objects: 31, done.
-    Delta compression using up to 8 threads.
-    Compressing objects: 100% (8/8), done.
-    Writing objects: 100% (15/15), 965 bytes | 0 bytes/s, done.
-    Total 15 (delta 6), reused 0 (delta 0)
-    To https://github.com/ISISComputingGroup/ibex_gui.git
-       86f5162..8b9814f  Ticket768 -> Ticket768
+mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (Ticket768)
+$ git push origin Ticket768
+Counting objects: 31, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (15/15), 965 bytes | 0 bytes/s, done.
+Total 15 (delta 6), reused 0 (delta 0)
+To https://github.com/ISISComputingGroup/ibex_gui.git
+   86f5162..8b9814f  Ticket768 -> Ticket768
 ```
 * If we navigate back to the branch on the GitHub page we can see that the changes have been pushed back:
 
@@ -251,27 +251,27 @@ Before reviewing the pull request it is necessary to copy the branch locally if 
 
 * First get an updated list of remote branches:
 ```
-    mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (master)
-    $ git remote update
-    Fetching origin
-    From https://github.com/ISISComputingGroup/ibex_gui
-     * [new branch]      Ticket768 -> origin/Ticket768
+mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (master)
+$ git remote update
+Fetching origin
+From https://github.com/ISISComputingGroup/ibex_gui
+ * [new branch]      Ticket768 -> origin/Ticket768
 ```
 * The new branch should appear in the branch list:
 ```
-    mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (master)
-    $ git branch -a
-    * master
-      remotes/origin/HEAD -> origin/master
-      remotes/origin/Ticket768
-      remotes/origin/master
+mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (master)
+$ git branch -a
+* master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/Ticket768
+  remotes/origin/master
 ```
 * Now checkout the branch:
 ```
-    mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (master)
-    $ git checkout Ticket768
-    Branch Ticket768 set up to track remote branch Ticket768 from origin.
-    Switched to a new branch 'Ticket768'
+mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (master)
+$ git checkout Ticket768
+Branch Ticket768 set up to track remote branch Ticket768 from origin.
+Switched to a new branch 'Ticket768'
 ```
 
 * The code can now be loaded into Eclipse and reviewed
@@ -291,67 +291,67 @@ This requires manual intervention:
 
 * Next fetch the most up-to-date version of master:
 ```
-    mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (master)
-    $ git fetch origin
+mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (master)
+$ git fetch origin
     
 * Merge the master with the branch:
 ```
-    mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (master)
-    $ git merge Ticket768
-    Auto-merging base/uk.ac.stfc.isis.ibex.ui.blocks/src/uk/ac/stfc/isis/ibex/ui/blocks/groups/GroupsPanel.java
-    CONFLICT (content): Merge conflict in base/uk.ac.stfc.isis.ibex.ui.blocks/src/uk/ac/stfc/isis/ibex/ui/blocks/groups/GroupsPanel.java
-    Automatic merge failed; fix conflicts and then commit the result.
-    
+mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (master)
+$ git merge Ticket768
+Auto-merging base/uk.ac.stfc.isis.ibex.ui.blocks/src/uk/ac/stfc/isis/ibex/ui/blocks/groups/GroupsPanel.java
+CONFLICT (content): Merge conflict in base/uk.ac.stfc.isis.ibex.ui.blocks/src/uk/ac/stfc/isis/ibex/ui/blocks/groups/GroupsPanel.java
+Automatic merge failed; fix conflicts and then commit the result.
+```
 * The merge has failed (as expected) but we can now view the code conflict:
 ```
-    ...
-    <<<<<<< HEAD
-                        showBanner("No groups to display!");
-    =======
-                        // Leave text blank
-                        showBanner("");
-    >>>>>>> Ticket768
-    ...
+...
+<<<<<<< HEAD
+                    showBanner("No groups to display!");
+=======
+                    // Leave text blank
+                    showBanner("");
+>>>>>>> Ticket768
+...
 ```
 
 * For this example I decide to keep my changes and ignore the master, so the next step is merge the new changes and update on GitHub:
 ```
-    mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (master|MERGING)
-    $ git status -s
-    M  uk.ac.stfc.isis.ibex.ui.blocks/src/uk/ac/stfc/isis/ibex/ui/blocks/groups/BannerComposite.java
-    UU uk.ac.stfc.isis.ibex.ui.blocks/src/uk/ac/stfc/isis/ibex/ui/blocks/groups/GroupsPanel.java
-    ?? .metadata/
-    ?? uk.ac.stfc.isis.ibex.client.tycho.parent/workspace/
-    ?? workspace/
-    ?? ../runtime-ibex.product/
-    ?? ../surefire-reports/
-    
-    mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (master|MERGING)
-    $ git add uk.ac.stfc.isis.ibex.ui.blocks/src/uk/ac/stfc/isis/ibex/ui/blocks/groups/GroupsPanel.java
+mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (master|MERGING)
+$ git status -s
+M  uk.ac.stfc.isis.ibex.ui.blocks/src/uk/ac/stfc/isis/ibex/ui/blocks/groups/BannerComposite.java
+UU uk.ac.stfc.isis.ibex.ui.blocks/src/uk/ac/stfc/isis/ibex/ui/blocks/groups/GroupsPanel.java
+?? .metadata/
+?? uk.ac.stfc.isis.ibex.client.tycho.parent/workspace/
+?? workspace/
+?? ../runtime-ibex.product/
+?? ../surefire-reports/
 
-    mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (master|MERGING)
-    $ git status -s
-    M  uk.ac.stfc.isis.ibex.ui.blocks/src/uk/ac/stfc/isis/ibex/ui/blocks/groups/BannerComposite.java
-    M  uk.ac.stfc.isis.ibex.ui.blocks/src/uk/ac/stfc/isis/ibex/ui/blocks/groups/GroupsPanel.java
-    ?? .metadata/
-    ?? uk.ac.stfc.isis.ibex.client.tycho.parent/workspace/
-    ?? workspace/
-    ?? ../runtime-ibex.product/
-    ?? ../surefire-reports/
-    
-    mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (master|MERGING)
-    $ git commit -m "Resolved conflict with Ticket768"
-    [master 2aaaf10] Resolved conflict with Ticket768
+mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (master|MERGING)
+$ git add uk.ac.stfc.isis.ibex.ui.blocks/src/uk/ac/stfc/isis/ibex/ui/blocks/groups/GroupsPanel.java
 
-    mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (master)
-    $ git push origin master
-    Username for 'https://github.com': matt.clarke@stfc.ac.uk
-    Password for 'https://matt.clarke@stfc.ac.uk@github.com':
-    Counting objects: 1, done.
-    Writing objects: 100% (1/1), 229 bytes | 0 bytes/s, done.
-    Total 1 (delta 0), reused 0 (delta 0)
-    To https://github.com/ISISComputingGroup/ibex_gui.git
-       06cecee..2aaaf10  master -> master
+mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (master|MERGING)
+$ git status -s
+M  uk.ac.stfc.isis.ibex.ui.blocks/src/uk/ac/stfc/isis/ibex/ui/blocks/groups/BannerComposite.java
+M  uk.ac.stfc.isis.ibex.ui.blocks/src/uk/ac/stfc/isis/ibex/ui/blocks/groups/GroupsPanel.java
+?? .metadata/
+?? uk.ac.stfc.isis.ibex.client.tycho.parent/workspace/
+?? workspace/
+?? ../runtime-ibex.product/
+?? ../surefire-reports/
+
+mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (master|MERGING)
+$ git commit -m "Resolved conflict with Ticket768"
+[master 2aaaf10] Resolved conflict with Ticket768
+
+mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (master)
+$ git push origin master
+Username for 'https://github.com': matt.clarke@stfc.ac.uk
+Password for 'https://matt.clarke@stfc.ac.uk@github.com':
+Counting objects: 1, done.
+Writing objects: 100% (1/1), 229 bytes | 0 bytes/s, done.
+Total 1 (delta 0), reused 0 (delta 0)
+To https://github.com/ISISComputingGroup/ibex_gui.git
+   06cecee..2aaaf10  master -> master
 ```
 * Now if you look at the pull request on GitHub it should say it has been merged and closed.
 
