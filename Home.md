@@ -17,7 +17,7 @@
 ### Coding
 
 [Coding Conventions]
-(https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/coding_conventions.rst)
+(https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/GUI-Coding-Conventions)
 
 [Adding a Perspective]
 (https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/adding_a_button_to_the_perspective_switcher.rst)
