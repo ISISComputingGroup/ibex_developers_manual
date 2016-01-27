@@ -78,8 +78,6 @@ For Java use the standard conventions built in to Eclipse. This can be set via W
 
 An example of what it looks like:
 
-.. code::
-
     void foo2() {
         if (true) {
             return;
@@ -108,8 +106,6 @@ Where possible getters and setters should follow the JavaBeans convention, namel
     * **Setter** - starts with "set"
 
 For example:
-
-.. code::
 
     class Point {
         private double x;
