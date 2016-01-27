@@ -302,8 +302,8 @@ Auto-merging base/uk.ac.stfc.isis.ibex.ui.blocks/src/uk/ac/stfc/isis/ibex/ui/blo
 CONFLICT (content): Merge conflict in base/uk.ac.stfc.isis.ibex.ui.blocks/src/uk/ac/stfc/isis/ibex/ui/blocks/groups/GroupsPanel.java
 Automatic merge failed; fix conflicts and then commit the result.
 ```
-* The merge has failed (as expected) but we can now view the code conflict:
-```
+* The merge has failed (as expected) but we can now view the code conflict in Eclipse:
+```java
 ...
 <<<<<<< HEAD
                     showBanner("No groups to display!");
