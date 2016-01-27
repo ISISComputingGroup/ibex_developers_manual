@@ -12,7 +12,7 @@
 (https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/IBEX-GUI-Development-Workflow)
 
 [How to Build]
-(https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/building_ibex.rst)
+(https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/master/Building-the-GUI)
 
 ### Coding
 
