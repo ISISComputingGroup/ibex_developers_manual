@@ -65,8 +65,6 @@ Any other warnings can probably be ignored, but feel free to fix them if you wan
     
 Checkstyle also has a suppress warning flag that tells it to ignore certain warnings, for example:
 
-.. code::
-
     @SuppressWarnings({"checkstyle:magicnumber", "checkstyle:localvariablename"})
     public void getSecondsInHours(int hours) {
         int seconds_per_hour = 60 * 60;    // Magic numbers and a variable name that does not conform to the recommended style!
@@ -79,8 +77,6 @@ Code Formatting
 For Java use the standard conventions built in to Eclipse. This can be set via Window->Preferences->Java->Code Style->Formatter; the one required is called "Eclipse [built-in]".
 
 An example of what it looks like:
-
-.. code::
 
     void foo2() {
         if (true) {
@@ -110,8 +106,6 @@ Where possible getters and setters should follow the JavaBeans convention, namel
     * **Setter** - starts with "set"
 
 For example:
-
-.. code::
 
     class Point {
         private double x;
