@@ -14,7 +14,7 @@
 [How to Build]
 (https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/building_ibex.rst)
 
-## Coding
+### Coding
 
 [Coding Conventions]
 (https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/coding_conventions.rst)
@@ -36,7 +36,7 @@
 [PV Switching]
 (https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/pv_switching.rst)
 
-## Testing
+### Testing
 
 [An Introduction to Unit Testing](https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/an_introduction_to_unit_testing.rst)
 
@@ -45,8 +45,8 @@
 [Mockito]
 (https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/using_mockito_for_testing_in_ibex.rst)
 
-## Eclipse
+### Eclipse
 
 [Common Eclipse Issues](https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/common_eclipse_issues.rst)
 
-# The Server #
+## The Server ##
