@@ -1,4 +1,4 @@
-> [Wiki](Home) ▸ [[IBEX High Level Architectural Design]] **IBEX Client Architectural Design**
+> [Wiki](Home) ▸ [[IBEX High Level Architectural Design]] ▸ **IBEX Client Architectural Design**
 
 This document describes the architectural design for the IBEX client. Eventually there should be outlines of the architectural design for each part of the high level design.
 
