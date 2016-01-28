@@ -1,3 +1,5 @@
+# The IBEX Project #
+
 ## Project Overview ##
 
 [Architectural Design](IBEX-High-Level-Architectural-Design)
