@@ -1,10 +1,8 @@
 This document describes the architectural design for the IBEX client. Eventually there should be outlines of the architectural design for each part of the high level design.
 
-Client Design Overview
-----------------------
+### Client Design Overview
 
-.. image:: https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/architectural_design/images/client_architecture.png
-    :align: center
+[Client Architecture](architectural_design/images/client_architecture.png)
     
 Notes on the figure:
 
@@ -12,13 +10,11 @@ Notes on the figure:
 * JDBC - Java Database Connectivity
 * JMS - Java Messaging Service
 
-Eclipse RCP
------------
+### Eclipse RCP
 
 The IBEX client is based on Eclipse RCP (Rich Client Platform).
 
-CS-Studio
----------
+### CS-Studio
 
 The client makes use of CS-Studio components such as:
 
@@ -29,7 +25,6 @@ The client makes use of CS-Studio components such as:
 
 ... and others to be listed later.
 
-PyDev
------
+### PyDev
 
 IBEX uses PyDev to provide the Python scripting window in the IBEX client.
