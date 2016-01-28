@@ -2,7 +2,7 @@ This document describes the architectural design for the IBEX client. Eventually
 
 ### Client Design Overview
 
-[Client Architecture](architectural_design/images/client_architecture.png)
+![Client Architecture](architectural_design/images/client_architecture.png)
     
 Notes on the figure:
 
