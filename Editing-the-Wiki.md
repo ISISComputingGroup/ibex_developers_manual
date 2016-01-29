@@ -15,7 +15,7 @@ Pages can be organised into folders, but only by checking the Wiki out, arrangin
 
 ### Adding Images
 
-To add images you need to check out the Wiki and add them manually. The images should go in their own folder, for example an image for this page would need to go in `images/using_the_wiki`.
+To add images you need to check out the Wiki and add them manually. The images should go in their own folder, for example an image for this page would need to go in `/images/using_the_wiki/`.
 
 ```shell
 git add images/using_the_wiki/test.png
@@ -28,5 +28,5 @@ git push
 The Wiki is largely unstrctured. To help provide navigation breadcrumb trails can be used. Insert the following at the top of the page:
 
 ```
-> [Wiki](Home) ▸ [[Level 1]] ▸ [[Level 2]] ▸ **Level 3**
+> [Wiki](Home) ▸ [[Level 1]] ▸ [[Level 2]] ▸ **Document Title**
 ```
