@@ -10,7 +10,7 @@
 1. In the plugin ``org.csstudio.isis.feature.base``, open ``feature.xml`` and go to the 'Plug-ins' tab. Add your new plugin to the plug-ins list.
 
 1. Add a ``pom.xml file`` to the plugin so that it can be built with maven. This should be the same as the pom file in every other project; the only thing you'll need to change is the plugin's name (the ``artifactId``). The contents should be as below. Other sections of the pom follow will be inherited from ``org.csstudio.isis.tycho.parent`` and so don't need to be explicitly included::
-
+```xml
     <project xmlns="http://maven.apache.org/POM/4.0.0" 
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
@@ -26,14 +26,14 @@
       </parent>
       <version>1.0.0-SNAPSHOT</version>
     </project>
-
+```
 1. In the plugin ``org.csstudio.isis.tycho.parent``, add your new plugin to the list of modules (you may have to do this manually in the XML view).
 
 
 ## Easy Plugin Access
 
 One option to enable easy access to your plug-in object is to use the singleton pattern. Declare a static variable in your plug-in class for the singleton. Store the first (and only) instance of the plug-in class in the singleton when it is created. Then access the singleton when needed through a static ``getDefault()`` method. Your Activator class should look something like this::
-
+```java
     public class Activator extends AbstractUIPlugin 
     {
         public static final String PLUGIN_ID = "org.csstudio.isis.ui.logger";
@@ -57,8 +57,7 @@ One option to enable easy access to your plug-in object is to use the singleton 
             super.stop(context);
         }
     }
-
-
+```
 
 ## Force Plugin To Start At Eclipse Startup
 
@@ -77,7 +76,7 @@ In your plugin:
 In Eclipse, Jobs are units of runnable work that can be scheduled to be run with the job manager. Once a job has completed, it can be scheduled to run again (jobs are reusable). You might want to use a job to prevent UI freeze, i.e., if clicking a button performs a long operation or calculation, you still want the UI to respond while performing the operation. You might also use a job if a task needs to run continuously in the background for the lifetime of the program (as is the case for the JMS handler thread that receives messages from the IOC log server).
 
 A job can be prepared as follows::
-
+```java
     Job fooJob = new Job("My Foo Job") 
     {
         @Override
@@ -87,13 +86,13 @@ A job can be prepared as follows::
             return Status.OK_STATUS;
         }
     };
-
+```
 The string passed to the constructor will be the name of the thread that you will see if you are debugging the application.
 
 The job can be started with::
-
-    fooJob.schedule();
-
+```java
+fooJob.schedule();
+```
 More details can be found in the `Vogella tutorial <http://www.vogella.com/tutorials/EclipseJobs/article.html>`_.
 
 
@@ -104,7 +103,7 @@ Where possible, you should use the Eclipse data binding framework to update UI e
 The display of UI elements is not handled in the main execution thread but in a separate UI thread. Consequently, if you attempt to alter the display of any UI element from the main thread, you will get an Invalid Thread Access exception. We can overcome this limitation by calling the ``Display.asyncExec()``, which passes a runnable command to the UI thread and asks for it to be run at the next available opportunity.
 
 As an example, if you had a UI class, FooDisplay, which had a method, ``setLabelText()``, you might implement it as follows:
-
+```java
     public class FooDisplay extends Canvas
     {
         private Label fooLabel;
@@ -120,10 +119,7 @@ As an example, if you had a UI class, FooDisplay, which had a method, ``setLabel
             });
         }
     }
-
-
-
-
+```
 
 ## Add A New Perspective
 
@@ -135,13 +131,13 @@ The following steps will allow you to add an existing UI plugin to the perspecti
 1. Override the 'ID' and 'name' methods from BasePerspective. ID should return a string ID for the class (e.g, the fully qualified class name), and 'name' should return the name to be displayed on the button.
 1. Optionally, add an image file which will be the perspective switcher button's icon. Put this in an 'icons' folder in the plugin directory.
 1. If you added an icon, Override the 'image' method from BasePerspective to return an ``Image``::
-
+```java
     @Override
     public Image image() {
         return ResourceManager.getPluginImage("org.csstudio.isis.ui.foo", 
             "icons/foo.png");
     }
-
+```
 1. In the plugin's, ``plugin.xml`` file, go to the extensions tab and add the following extensions:
 
   * ``org.eclipse.ui.views`` - add a new 'view' to this; point it at the ViewPart class.
@@ -151,7 +147,7 @@ The following steps will allow you to add an existing UI plugin to the perspecti
   * ``org.csstudio.isis.ui.perspectives`` - add a new 'contribution to this; the class should be the plugin's ``Perspective`` class.
 
 Once you've added everything, the ``plugin.xml`` file should look like::
-
+```xml
     <plugin>
       <extension point="org.eclipse.ui.views">
         <view class="org.csstudio.isis.ui.log.FooView"
@@ -187,9 +183,8 @@ Once you've added everything, the ``plugin.xml`` file should look like::
         </contribution>
       </extension>
     </plugin>
-
+```
 If you have followed the above steps and correctly extended all the extension points, a button for your plugin will be automatically added to the perspective switcher.
-
 
 Add A Preference Page
 ---------------------
@@ -199,8 +194,8 @@ Many plugins may have options that you want the user of the client to be able to
 1. Make sure your plugin contributes to the UI, i.e., that its activator class extends ``AbstractUIPlugin``, not ``BundleActivator``, and that it has a static ``getDefault()`` method.
 1. In your plugin, add a new preference package, called e.g., ``org.csstudio.isis.foo.preferences``.
     
-1. Create a new class called e.g., ``FooPreferenceConstants``, which will store tags and default values for each preference in your plugin. In the below example, we specify tags and defaults for a String preference called name and a integer preference called count. The tags are used internally by eclipse to refer to the preference and will not be displayed to the user::
-
+1. Create a new class called e.g., ``FooPreferenceConstants``, which will store tags and default values for each preference in your plugin. In the below example, we specify tags and defaults for a String preference called name and a integer preference called count. The tags are used internally by eclipse to refer to the preference and will not be displayed to the user:
+```java
     public class FooPreferenceConstants 
     {
         public static final String TAG_NAME = "fooName";
@@ -209,9 +204,9 @@ Many plugins may have options that you want the user of the client to be able to
         public static final String DEFAULT_NAME = "This is my foo name!";
         public static final int DEFAULT_COUNT = 5;
     }
-    
+```    
 1. Create a new class called e.g., ``FooPreferenceInitializer``, that extends ``AbstractPreferenceInitializer``, which will set the default values of each preference::
-
+```java
     public class FooPreferenceInitializer 
         extends AbstractPreferenceInitializer {
 
@@ -225,10 +220,10 @@ Many plugins may have options that you want the user of the client to be able to
                 FooPreferenceConstants.DEFAULT_COUNT);
         }
     }
-      
+```      
 1. Add a new preference page class called, e.g., ``FooPreferencePage``, and have it extend the Eclipse class ``FieldEditorPreferencePage`` and implement the interface ``IWorkbenchPreferencePage``.
 1. Add a constructor and implementations of the functions ``creatFieldEditors()`` and ``init()``::
-
+```java
     public class FooPreferencePage extends FieldEditorPreferencePage 
         implements IWorkbenchPreferencePage 
     {
@@ -250,7 +245,7 @@ Many plugins may have options that you want the user of the client to be able to
         public void init(IWorkbench workbench) {
         }
     }
-
+```
 1. Open the plugins ``plugin.xml`` and navigate to the Extensions tab.
 
   * Add the extension ``org.eclipse.core.runtime.preferences``.
@@ -258,8 +253,8 @@ Many plugins may have options that you want the user of the client to be able to
   * Add the extension ``org.eclipse.ui.preferencePages``.
   * To this, add a new ``Page`` and set its class to ``FooPreferencePage``. You can also set the ``name``, which will displayed in the UI.
 
-  The ``plugin.xml`` should look like the following::
-  
+The ``plugin.xml`` should look like the following:
+```xml  
     <?xml version="1.0" encoding="UTF-8"?>
     <?eclipse version="3.4"?>
     <plugin>
@@ -276,7 +271,7 @@ Many plugins may have options that you want the user of the client to be able to
           </page>
        </extension>
     </plugin>
-
+```
 When you start the client, the Foo preference page should now appear in the Eclipse Preferences window. Changes made by the user will be persisted to file automatically by the Eclipse framework and will be reloaded next time the user starts the client.
 
 For more details see the `Vogella preferences tutorial <http://www.vogella.com/tutorials/EclipsePreferences/article.html>`_.
@@ -289,7 +284,7 @@ Sometimes it may be necessary to add a new menu item to the menu bar in the Ecli
 1. Create a class that extends ``org.eclipse.core.commands.IHandler``; call it something like ``FooHandler``. Add the unimplemented methods.
 1. Make ``isEnabled()`` and ``isHandled()`` return ``true``.
 1. Make ``execute()`` instantiate and open your dialog (or perform whatever other action you have in mind)::
-
+```java
     public class FooHandler implements IHandler 
     {
         @Override
@@ -322,7 +317,7 @@ Sometimes it may be necessary to add a new menu item to the menu bar in the Ecli
         public void removeHandlerListener(IHandlerListener handlerListener) {
         }
     }
-    
+```    
 1. Open the plugins ``plugin.xml`` and navigate to the Extensions tab.
 
   * Add the extension ``org.eclipse.ui.commands``.
@@ -332,8 +327,8 @@ Sometimes it may be necessary to add a new menu item to the menu bar in the Ecli
   * To this, add a new ``menu``. Give it an ``id`` and ``label`` (this will be displayed on the menu bar).
   * To the ``menu``, add a new ``command``. Set the ``commandId`` to be the ``id of the ``command`` you created earlier and give it a label that will be displayed in the menu on the UI;
   
-  The ``plugin.xml`` should now resemble::
-  
+The ``plugin.xml`` should now resemble:
+```xml  
     <?xml version="1.0" encoding="UTF-8"?>
     <?eclipse version="3.4"?>
     <plugin>
@@ -358,7 +353,7 @@ Sometimes it may be necessary to add a new menu item to the menu bar in the Ecli
           </command>
        </extension>
     </plugin>
-
+```xml
 The menu should now be visible in the client UI. For more details see the `Vogella menus tutorial <http://www.vogella.com/tutorials/EclipseCommands/article.html>`_.
 
 ## Add A Third Party Library To A Plugin
