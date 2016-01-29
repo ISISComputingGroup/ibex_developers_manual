@@ -9,7 +9,7 @@
 1. Click finish.
 1. In the plugin ``org.csstudio.isis.feature.base``, open ``feature.xml`` and go to the 'Plug-ins' tab. Add your new plugin to the plug-ins list.
 
-1. Add a ``pom.xml file`` to the plugin so that it can be built with maven. This should be the same as the pom file in every other project; the only thing you'll need to change is the plugin's name (the ``artifactId``). The contents should be as below. Other sections of the pom follow will be inherited from ``org.csstudio.isis.tycho.parent`` and so don't need to be explicitly included::
+1. Add a ``pom.xml file`` to the plugin so that it can be built with maven. This should be the same as the pom file in every other project; the only thing you'll need to change is the plugin's name (the ``artifactId``). The contents should be as below. Other sections of the pom follow will be inherited from ``org.csstudio.isis.tycho.parent`` and so don't need to be explicitly included:
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" 
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
@@ -32,7 +32,7 @@
 
 ## Easy Plugin Access
 
-One option to enable easy access to your plug-in object is to use the singleton pattern. Declare a static variable in your plug-in class for the singleton. Store the first (and only) instance of the plug-in class in the singleton when it is created. Then access the singleton when needed through a static ``getDefault()`` method. Your Activator class should look something like this::
+One option to enable easy access to your plug-in object is to use the singleton pattern. Declare a static variable in your plug-in class for the singleton. Store the first (and only) instance of the plug-in class in the singleton when it is created. Then access the singleton when needed through a static ``getDefault()`` method. Your Activator class should look something like this:
 ```java
 public class Activator extends AbstractUIPlugin 
 {
@@ -75,7 +75,7 @@ In your plugin:
 
 In Eclipse, Jobs are units of runnable work that can be scheduled to be run with the job manager. Once a job has completed, it can be scheduled to run again (jobs are reusable). You might want to use a job to prevent UI freeze, i.e., if clicking a button performs a long operation or calculation, you still want the UI to respond while performing the operation. You might also use a job if a task needs to run continuously in the background for the lifetime of the program (as is the case for the JMS handler thread that receives messages from the IOC log server).
 
-A job can be prepared as follows::
+A job can be prepared as follows:
 ```java
 Job fooJob = new Job("My Foo Job") 
 {
@@ -89,7 +89,7 @@ Job fooJob = new Job("My Foo Job")
 ```
 The string passed to the constructor will be the name of the thread that you will see if you are debugging the application.
 
-The job can be started with::
+The job can be started with:
 ```java
 fooJob.schedule();
 ```
@@ -130,7 +130,7 @@ The following steps will allow you to add an existing UI plugin to the perspecti
 1. Add a new class to the plugin called ``FooPerspective`` or something similar, and have it extend ``org.csstudio.isis.ui.perspectives.BasePerspective``.
 1. Override the 'ID' and 'name' methods from BasePerspective. ID should return a string ID for the class (e.g, the fully qualified class name), and 'name' should return the name to be displayed on the button.
 1. Optionally, add an image file which will be the perspective switcher button's icon. Put this in an 'icons' folder in the plugin directory.
-1. If you added an icon, Override the 'image' method from BasePerspective to return an ``Image``::
+1. If you added an icon, Override the 'image' method from BasePerspective to return an ``Image``:
 ```java
 @Override
 public Image image() {
@@ -146,7 +146,7 @@ public Image image() {
   * Add a new ``view`` to this ``perspectiveExtension``; set the relative to be ``org.csstudio.isis.ui.perspectives.PerspectiveSwitcher``.
   * ``org.csstudio.isis.ui.perspectives`` - add a new 'contribution to this; the class should be the plugin's ``Perspective`` class.
 
-Once you've added everything, the ``plugin.xml`` file should look like::
+Once you've added everything, the ``plugin.xml`` file should look like:
 ```xml
 <plugin>
   <extension point="org.eclipse.ui.views">
@@ -205,7 +205,7 @@ public class FooPreferenceConstants
     public static final int DEFAULT_COUNT = 5;
 }
 ```    
-1. Create a new class called e.g., ``FooPreferenceInitializer``, that extends ``AbstractPreferenceInitializer``, which will set the default values of each preference::
+1. Create a new class called e.g., ``FooPreferenceInitializer``, that extends ``AbstractPreferenceInitializer``, which will set the default values of each preference:
 ```java
 public class FooPreferenceInitializer 
     extends AbstractPreferenceInitializer {
@@ -222,7 +222,7 @@ public class FooPreferenceInitializer
 }
 ```      
 1. Add a new preference page class called, e.g., ``FooPreferencePage``, and have it extend the Eclipse class ``FieldEditorPreferencePage`` and implement the interface ``IWorkbenchPreferencePage``.
-1. Add a constructor and implementations of the functions ``creatFieldEditors()`` and ``init()``::
+1. Add a constructor and implementations of the functions ``creatFieldEditors()`` and ``init()``:
 ```java
 public class FooPreferencePage extends FieldEditorPreferencePage 
     implements IWorkbenchPreferencePage 
@@ -283,7 +283,7 @@ Sometimes it may be necessary to add a new menu item to the menu bar in the Ecli
 
 1. Create a class that extends ``org.eclipse.core.commands.IHandler``; call it something like ``FooHandler``. Add the unimplemented methods.
 1. Make ``isEnabled()`` and ``isHandled()`` return ``true``.
-1. Make ``execute()`` instantiate and open your dialog (or perform whatever other action you have in mind)::
+1. Make ``execute()`` instantiate and open your dialog (or perform whatever other action you have in mind):
 ```java
 public class FooHandler implements IHandler 
 {
