@@ -1,5 +1,7 @@
 # The IBEX Project #
 
+[Using the Wiki](Using-the-Wiki)
+
 ## Project Overview ##
 
 [Architectural Design](IBEX-High-Level-Architectural-Design)
