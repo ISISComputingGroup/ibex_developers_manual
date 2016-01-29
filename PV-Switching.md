@@ -1,4 +1,4 @@
-If you are only interested in how to create PVs in IBEX with proper switching behaviour go to [Using the PV Switching](## Using the PV Switching).
+If you are only interested in how to create PVs in IBEX with proper switching behaviour go to [Using the PV Switching](#UsingPvSwitching).
 
 ## Background ##
 
@@ -36,9 +36,7 @@ A similar process also occurs when switching writable PVs, as can be seen in the
 
 ![Writables](images/pv_switching/new_switching_writables.jpg)
 
-## Using the PV Switching 
-
-.. _`Using the PV Switching`:
+## Using the PV Switching<a name="UsingPvSwitching"></a>
 
 The inner workings of the switching code need not be understood to create PVs that switch with the instrument. Only steps 1 and 3 in the previous list need be performed by a class that wants a new PV. Specifically the following code must be used
 ```java
