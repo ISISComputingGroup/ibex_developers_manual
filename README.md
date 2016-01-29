@@ -1,3 +1,3 @@
-# ibex_developers_manual
+# The IBEX Developer's Manual
 
-See the GitHub wiki for a list of contents
+The documentation is all contained in the [GitHub wiki](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki)
