@@ -103,7 +103,7 @@ public class ObservableTitleModel extends ModelObject{
 
 * The class also needs to implement TitleModel, so change the code to implement TitleModel:
 ```java
-    public class ObservableTitleModel extends ModelObject implements TitleModel {
+public class ObservableTitleModel extends ModelObject implements TitleModel {
 ```
 * There should now be an error because the methods of TitleModel are not implemented. Hover over the error and select 'Add unimplemented methods'. The code should look like this:
 ```java
