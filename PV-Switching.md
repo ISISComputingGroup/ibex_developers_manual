@@ -1,4 +1,5 @@
-If you are only interested in how to create PVs in IBEX with proper switching behaviour go to `Using the PV Switching`_.
+If you are only interested in how to create PVs in IBEX with proper switching behaviour go to `Using the PV Switching`_
+[Using the PV Switching](#Using the PV Switching).
 
 ## Background ##
 
