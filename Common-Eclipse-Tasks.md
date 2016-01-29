@@ -11,21 +11,21 @@
 
 1. Add a ``pom.xml file`` to the plugin so that it can be built with maven. This should be the same as the pom file in every other project; the only thing you'll need to change is the plugin's name (the ``artifactId``). The contents should be as below. Other sections of the pom follow will be inherited from ``org.csstudio.isis.tycho.parent`` and so don't need to be explicitly included::
 ```xml
-    <project xmlns="http://maven.apache.org/POM/4.0.0" 
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
-          http://maven.apache.org/xsd/maven-4.0.0.xsd">
-      <modelVersion>4.0.0</modelVersion>
-      <artifactId>org.csstudio.isis.foo</artifactId>
-      <packaging>eclipse-plugin</packaging>
-      <parent>
-        <groupId>CSS_ISIS</groupId>
-        <version>1.0.0-SNAPSHOT</version>
-        <artifactId>org.csstudio.isis.tycho.parent</artifactId>
-        <relativePath>../org.csstudio.isis.tycho.parent</relativePath>
-      </parent>
-      <version>1.0.0-SNAPSHOT</version>
-    </project>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>org.csstudio.isis.foo</artifactId>
+  <packaging>eclipse-plugin</packaging>
+  <parent>
+    <groupId>CSS_ISIS</groupId>
+    <version>1.0.0-SNAPSHOT</version>
+    <artifactId>org.csstudio.isis.tycho.parent</artifactId>
+    <relativePath>../org.csstudio.isis.tycho.parent</relativePath>
+  </parent>
+  <version>1.0.0-SNAPSHOT</version>
+</project>
 ```
 1. In the plugin ``org.csstudio.isis.tycho.parent``, add your new plugin to the list of modules (you may have to do this manually in the XML view).
 
@@ -34,29 +34,29 @@
 
 One option to enable easy access to your plug-in object is to use the singleton pattern. Declare a static variable in your plug-in class for the singleton. Store the first (and only) instance of the plug-in class in the singleton when it is created. Then access the singleton when needed through a static ``getDefault()`` method. Your Activator class should look something like this::
 ```java
-    public class Activator extends AbstractUIPlugin 
-    {
-        public static final String PLUGIN_ID = "org.csstudio.isis.ui.logger";
+public class Activator extends AbstractUIPlugin 
+{
+    public static final String PLUGIN_ID = "org.csstudio.isis.ui.logger";
 
-        private static Activator plugin;
+    private static Activator plugin;
 
-        public Activator() {
-        }
-
-        public static Activator getDefault() {
-            return plugin;
-        }
-
-        public void start(BundleContext context) throws Exception {
-            super.start(context);
-            plugin = this;
-        }
-
-        public void stop(BundleContext context) throws Exception {
-            plugin = null;
-            super.stop(context);
-        }
+    public Activator() {
     }
+
+    public static Activator getDefault() {
+        return plugin;
+    }
+
+    public void start(BundleContext context) throws Exception {
+        super.start(context);
+        plugin = this;
+    }
+
+    public void stop(BundleContext context) throws Exception {
+        plugin = null;
+        super.stop(context);
+    }
+}
 ```
 
 ## Force Plugin To Start At Eclipse Startup
@@ -77,15 +77,15 @@ In Eclipse, Jobs are units of runnable work that can be scheduled to be run with
 
 A job can be prepared as follows::
 ```java
-    Job fooJob = new Job("My Foo Job") 
+Job fooJob = new Job("My Foo Job") 
+{
+    @Override
+    protected IStatus run(IProgressMonitor monitor) 
     {
-        @Override
-        protected IStatus run(IProgressMonitor monitor) 
-        {
-            fooCalculator.performLongTask();
-            return Status.OK_STATUS;
-        }
-    };
+        fooCalculator.performLongTask();
+        return Status.OK_STATUS;
+    }
+};
 ```
 The string passed to the constructor will be the name of the thread that you will see if you are debugging the application.
 
@@ -104,21 +104,21 @@ The display of UI elements is not handled in the main execution thread but in a 
 
 As an example, if you had a UI class, FooDisplay, which had a method, ``setLabelText()``, you might implement it as follows:
 ```java
-    public class FooDisplay extends Canvas
-    {
-        private Label fooLabel;
+public class FooDisplay extends Canvas
+{
+    private Label fooLabel;
 
-        private void setLabelText(final String text)
+    private void setLabelText(final String text)
+    {
+        Display.getDefault().asyncExec(new Runnable() 
         {
-            Display.getDefault().asyncExec(new Runnable() 
-            {
-                @Override
-                public void run() {
-                    fooLabel.setText(text);
-                }
-            });
-        }
+            @Override
+            public void run() {
+                fooLabel.setText(text);
+            }
+        });
     }
+}
 ```
 
 ## Add A New Perspective
@@ -132,11 +132,11 @@ The following steps will allow you to add an existing UI plugin to the perspecti
 1. Optionally, add an image file which will be the perspective switcher button's icon. Put this in an 'icons' folder in the plugin directory.
 1. If you added an icon, Override the 'image' method from BasePerspective to return an ``Image``::
 ```java
-    @Override
-    public Image image() {
-        return ResourceManager.getPluginImage("org.csstudio.isis.ui.foo", 
-            "icons/foo.png");
-    }
+@Override
+public Image image() {
+    return ResourceManager.getPluginImage("org.csstudio.isis.ui.foo", 
+        "icons/foo.png");
+}
 ```
 1. In the plugin's, ``plugin.xml`` file, go to the extensions tab and add the following extensions:
 
@@ -148,41 +148,41 @@ The following steps will allow you to add an existing UI plugin to the perspecti
 
 Once you've added everything, the ``plugin.xml`` file should look like::
 ```xml
-    <plugin>
-      <extension point="org.eclipse.ui.views">
-        <view class="org.csstudio.isis.ui.log.FooView"
-          id="org.csstudio.isis.ui.log.FooView"
-          name="Foo"
-          restorable="true">
-        </view>
-      </extension>
+<plugin>
+  <extension point="org.eclipse.ui.views">
+    <view class="org.csstudio.isis.ui.log.FooView"
+      id="org.csstudio.isis.ui.log.FooView"
+      name="Foo"
+      restorable="true">
+    </view>
+  </extension>
 
-      <extension point="org.eclipse.ui.perspectives">
-        <perspective class="org.csstudio.isis.ui.log.FooPerspective"
-            id="org.csstudio.isis.ui.log.FooPerspective"
-            name="Foo">
-        </perspective>
-      </extension>
+  <extension point="org.eclipse.ui.perspectives">
+    <perspective class="org.csstudio.isis.ui.log.FooPerspective"
+        id="org.csstudio.isis.ui.log.FooPerspective"
+        name="Foo">
+    </perspective>
+  </extension>
 
-      <extension point="org.eclipse.ui.perspectiveExtensions">
-        <perspectiveExtension targetID="org.csstudio.isis.ui.log.FooPerspective">
-          <view closeable="false"
-              id="org.csstudio.isis.ui.foo.FooView"
-              minimized="false"
-              ratio="0.1f"
-              relationship="right"
-              relative="org.csstudio.isis.ui.perspectives.PerspectiveSwitcher"
-              showTitle="false"
-              visible="true">
-          </view>
-        </perspectiveExtension>
-      </extension>
+  <extension point="org.eclipse.ui.perspectiveExtensions">
+    <perspectiveExtension targetID="org.csstudio.isis.ui.log.FooPerspective">
+      <view closeable="false"
+          id="org.csstudio.isis.ui.foo.FooView"
+          minimized="false"
+          ratio="0.1f"
+          relationship="right"
+          relative="org.csstudio.isis.ui.perspectives.PerspectiveSwitcher"
+          showTitle="false"
+          visible="true">
+      </view>
+    </perspectiveExtension>
+  </extension>
 
-      <extension point="org.csstudio.isis.ui.perspectives">
-        <contribution class="org.csstudio.isis.ui.foo.FooPerspective">
-        </contribution>
-      </extension>
-    </plugin>
+  <extension point="org.csstudio.isis.ui.perspectives">
+    <contribution class="org.csstudio.isis.ui.foo.FooPerspective">
+    </contribution>
+  </extension>
+</plugin>
 ```
 If you have followed the above steps and correctly extended all the extension points, a button for your plugin will be automatically added to the perspective switcher.
 
@@ -196,55 +196,55 @@ Many plugins may have options that you want the user of the client to be able to
     
 1. Create a new class called e.g., ``FooPreferenceConstants``, which will store tags and default values for each preference in your plugin. In the below example, we specify tags and defaults for a String preference called name and a integer preference called count. The tags are used internally by eclipse to refer to the preference and will not be displayed to the user:
 ```java
-    public class FooPreferenceConstants 
-    {
-        public static final String TAG_NAME = "fooName";
-        public static final String TAG_COUNT = "fooCount";
+public class FooPreferenceConstants 
+{
+    public static final String TAG_NAME = "fooName";
+    public static final String TAG_COUNT = "fooCount";
 
-        public static final String DEFAULT_NAME = "This is my foo name!";
-        public static final int DEFAULT_COUNT = 5;
-    }
+    public static final String DEFAULT_NAME = "This is my foo name!";
+    public static final int DEFAULT_COUNT = 5;
+}
 ```    
 1. Create a new class called e.g., ``FooPreferenceInitializer``, that extends ``AbstractPreferenceInitializer``, which will set the default values of each preference::
 ```java
-    public class FooPreferenceInitializer 
-        extends AbstractPreferenceInitializer {
+public class FooPreferenceInitializer 
+    extends AbstractPreferenceInitializer {
 
-        public void initializeDefaultPreferences() {
-            IPreferenceStore store 
-                = Activator.getDefault().getPreferenceStore();
+    public void initializeDefaultPreferences() {
+        IPreferenceStore store 
+            = Activator.getDefault().getPreferenceStore();
 
-            store.setDefault(FooPreferenceConstants.TAG_NAME, 
-                FooPreferenceConstants.DEFAULT_NAME);
-            store.setDefault(FooPreferenceConstants.TAG_COUNT, 
-                FooPreferenceConstants.DEFAULT_COUNT);
-        }
+        store.setDefault(FooPreferenceConstants.TAG_NAME, 
+            FooPreferenceConstants.DEFAULT_NAME);
+        store.setDefault(FooPreferenceConstants.TAG_COUNT, 
+            FooPreferenceConstants.DEFAULT_COUNT);
     }
+}
 ```      
 1. Add a new preference page class called, e.g., ``FooPreferencePage``, and have it extend the Eclipse class ``FieldEditorPreferencePage`` and implement the interface ``IWorkbenchPreferencePage``.
 1. Add a constructor and implementations of the functions ``creatFieldEditors()`` and ``init()``::
 ```java
-    public class FooPreferencePage extends FieldEditorPreferencePage 
-        implements IWorkbenchPreferencePage 
-    {
-        public FooPreferencePage() {
-            super(GRID);
-            setPreferenceStore(Activator.getDefault().getPreferenceStore());
-            setDescription("Settings for Foo.");
-        }
-
-        @Override
-        public void createFieldEditors() {
-            addField(new StringFieldEditor(FooPreferenceConstants.TAG_NAME, 
-                "Foo Name", getFieldEditorParent()));
-            addField(new StringFieldEditor(FooPreferenceConstants.TAG_COUNT, 
-                "Foo Count", getFieldEditorParent()));
-        }
-
-        @Override
-        public void init(IWorkbench workbench) {
-        }
+public class FooPreferencePage extends FieldEditorPreferencePage 
+    implements IWorkbenchPreferencePage 
+{
+    public FooPreferencePage() {
+        super(GRID);
+        setPreferenceStore(Activator.getDefault().getPreferenceStore());
+        setDescription("Settings for Foo.");
     }
+
+    @Override
+    public void createFieldEditors() {
+        addField(new StringFieldEditor(FooPreferenceConstants.TAG_NAME, 
+            "Foo Name", getFieldEditorParent()));
+        addField(new StringFieldEditor(FooPreferenceConstants.TAG_COUNT, 
+            "Foo Count", getFieldEditorParent()));
+    }
+
+    @Override
+    public void init(IWorkbench workbench) {
+    }
+}
 ```
 1. Open the plugins ``plugin.xml`` and navigate to the Extensions tab.
 
@@ -255,22 +255,22 @@ Many plugins may have options that you want the user of the client to be able to
 
 The ``plugin.xml`` should look like the following:
 ```xml  
-    <?xml version="1.0" encoding="UTF-8"?>
-    <?eclipse version="3.4"?>
-    <plugin>
-       <extension point="org.eclipse.core.runtime.preferences">
-          <initializer 
-            class="org.csstudio.isis.foo.preferences.FooPreferenceInitializer">
-          </initializer>
-       </extension>
-       <extension point="org.eclipse.ui.preferencePages">
-          <page
-            class="org.csstudio.isis.foo.preferences.FooPreferencePage"
-            id="org.csstudio.isis.foo.preferences.FooPreferencePage"
-            name="Foo Preferences">
-          </page>
-       </extension>
-    </plugin>
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension point="org.eclipse.core.runtime.preferences">
+      <initializer 
+        class="org.csstudio.isis.foo.preferences.FooPreferenceInitializer">
+      </initializer>
+   </extension>
+   <extension point="org.eclipse.ui.preferencePages">
+      <page
+        class="org.csstudio.isis.foo.preferences.FooPreferencePage"
+        id="org.csstudio.isis.foo.preferences.FooPreferencePage"
+        name="Foo Preferences">
+      </page>
+   </extension>
+</plugin>
 ```
 When you start the client, the Foo preference page should now appear in the Eclipse Preferences window. Changes made by the user will be persisted to file automatically by the Eclipse framework and will be reloaded next time the user starts the client.
 
@@ -285,38 +285,38 @@ Sometimes it may be necessary to add a new menu item to the menu bar in the Ecli
 1. Make ``isEnabled()`` and ``isHandled()`` return ``true``.
 1. Make ``execute()`` instantiate and open your dialog (or perform whatever other action you have in mind)::
 ```java
-    public class FooHandler implements IHandler 
-    {
-        @Override
-        public void addHandlerListener(IHandlerListener handlerListener) {
-        }
-
-        @Override
-        public void dispose() {
-        }
-
-        @Override
-        public Object execute(ExecutionEvent event) throws ExecutionException {
-            Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
-            FooDialog dialog = new FooDialog(shell);
-            dialog.open();
-            return null;
-        }
-
-        @Override
-        public boolean isEnabled() {
-            return true;
-        }
-
-        @Override
-        public boolean isHandled() {
-            return true;
-        }
-
-        @Override
-        public void removeHandlerListener(IHandlerListener handlerListener) {
-        }
+public class FooHandler implements IHandler 
+{
+    @Override
+    public void addHandlerListener(IHandlerListener handlerListener) {
     }
+
+    @Override
+    public void dispose() {
+    }
+
+    @Override
+    public Object execute(ExecutionEvent event) throws ExecutionException {
+        Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
+        FooDialog dialog = new FooDialog(shell);
+        dialog.open();
+        return null;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
+
+    @Override
+    public boolean isHandled() {
+        return true;
+    }
+
+    @Override
+    public void removeHandlerListener(IHandlerListener handlerListener) {
+    }
+}
 ```    
 1. Open the plugins ``plugin.xml`` and navigate to the Extensions tab.
 
@@ -329,38 +329,33 @@ Sometimes it may be necessary to add a new menu item to the menu bar in the Ecli
   
 The ``plugin.xml`` should now resemble:
 ```xml  
-    <?xml version="1.0" encoding="UTF-8"?>
-    <?eclipse version="3.4"?>
-    <plugin>
-       <extension point="org.eclipse.ui.menus">
-          <menuContribution
-                allPopups="false"
-                locationURI="menu:org.eclipse.ui.main.menu">
-             <menu label="Foo Menu">
-                <command
-                      commandId="org.csstudio.isis.foo.command"
-                      label="Foo Menu Item"
-                      style="push">
-                </command>
-             </menu>
-          </menuContribution>
-       </extension>
-       <extension point="org.eclipse.ui.commands">
-          <command
-                defaultHandler="org.csstudio.isis.foo.FooHandler"
-                id="org.csstudio.isis.foo.command"
-                name="Do Foo">
-          </command>
-       </extension>
-    </plugin>
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <menu label="Foo Menu">
+            <command
+                  commandId="org.csstudio.isis.foo.command"
+                  label="Foo Menu Item"
+                  style="push">
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+   <extension point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="org.csstudio.isis.foo.FooHandler"
+            id="org.csstudio.isis.foo.command"
+            name="Do Foo">
+      </command>
+   </extension>
+</plugin>
 ```
 The menu should now be visible in the client UI. For more details see the [Vogella menus tutorial](http://www.vogella.com/tutorials/EclipseCommands/article.html).
 
 ## Add A Third Party Library To A Plugin
 
 To do
-
-
-
-
-
