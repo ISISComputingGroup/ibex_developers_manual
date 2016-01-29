@@ -10,23 +10,23 @@
 1. In the plugin ``org.csstudio.isis.feature.base``, open ``feature.xml`` and go to the 'Plug-ins' tab. Add your new plugin to the plug-ins list.
 
 1. Add a ``pom.xml file`` to the plugin so that it can be built with maven. This should be the same as the pom file in every other project; the only thing you'll need to change is the plugin's name (the ``artifactId``). The contents should be as below. Other sections of the pom follow will be inherited from ``org.csstudio.isis.tycho.parent`` and so don't need to be explicitly included:
-```xml
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
-      http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <artifactId>org.csstudio.isis.foo</artifactId>
-  <packaging>eclipse-plugin</packaging>
-  <parent>
-    <groupId>CSS_ISIS</groupId>
-    <version>1.0.0-SNAPSHOT</version>
-    <artifactId>org.csstudio.isis.tycho.parent</artifactId>
-    <relativePath>../org.csstudio.isis.tycho.parent</relativePath>
-  </parent>
-  <version>1.0.0-SNAPSHOT</version>
-</project>
-```
+    ```xml
+    <project xmlns="http://maven.apache.org/POM/4.0.0" 
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+          http://maven.apache.org/xsd/maven-4.0.0.xsd">
+      <modelVersion>4.0.0</modelVersion>
+      <artifactId>org.csstudio.isis.foo</artifactId>
+      <packaging>eclipse-plugin</packaging>
+      <parent>
+        <groupId>CSS_ISIS</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+        <artifactId>org.csstudio.isis.tycho.parent</artifactId>
+        <relativePath>../org.csstudio.isis.tycho.parent</relativePath>
+      </parent>
+      <version>1.0.0-SNAPSHOT</version>
+    </project>
+    ```
 1. In the plugin ``org.csstudio.isis.tycho.parent``, add your new plugin to the list of modules (you may have to do this manually in the XML view).
 
 
