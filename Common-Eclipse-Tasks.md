@@ -195,57 +195,57 @@ Many plugins may have options that you want the user of the client to be able to
 1. In your plugin, add a new preference package, called e.g., ``org.csstudio.isis.foo.preferences``.
     
 1. Create a new class called e.g., ``FooPreferenceConstants``, which will store tags and default values for each preference in your plugin. In the below example, we specify tags and defaults for a String preference called name and a integer preference called count. The tags are used internally by eclipse to refer to the preference and will not be displayed to the user:
-```java
-public class FooPreferenceConstants 
-{
-    public static final String TAG_NAME = "fooName";
-    public static final String TAG_COUNT = "fooCount";
+    ```java
+    public class FooPreferenceConstants 
+    {
+        public static final String TAG_NAME = "fooName";
+        public static final String TAG_COUNT = "fooCount";
 
-    public static final String DEFAULT_NAME = "This is my foo name!";
-    public static final int DEFAULT_COUNT = 5;
-}
-```    
-1. Create a new class called e.g., ``FooPreferenceInitializer``, that extends ``AbstractPreferenceInitializer``, which will set the default values of each preference:
-```java
-public class FooPreferenceInitializer 
-    extends AbstractPreferenceInitializer {
-
-    public void initializeDefaultPreferences() {
-        IPreferenceStore store 
-            = Activator.getDefault().getPreferenceStore();
-
-        store.setDefault(FooPreferenceConstants.TAG_NAME, 
-            FooPreferenceConstants.DEFAULT_NAME);
-        store.setDefault(FooPreferenceConstants.TAG_COUNT, 
-            FooPreferenceConstants.DEFAULT_COUNT);
+        public static final String DEFAULT_NAME = "This is my foo name!";
+        public static final int DEFAULT_COUNT = 5;
     }
-}
-```      
+    ```    
+1. Create a new class called e.g., ``FooPreferenceInitializer``, that extends ``AbstractPreferenceInitializer``, which will set the default values of each preference:
+    ```java
+    public class FooPreferenceInitializer 
+        extends AbstractPreferenceInitializer {
+
+        public void initializeDefaultPreferences() {
+            IPreferenceStore store 
+                = Activator.getDefault().getPreferenceStore();
+
+            store.setDefault(FooPreferenceConstants.TAG_NAME, 
+                FooPreferenceConstants.DEFAULT_NAME);
+            store.setDefault(FooPreferenceConstants.TAG_COUNT, 
+                FooPreferenceConstants.DEFAULT_COUNT);
+        }
+    }
+    ```      
 1. Add a new preference page class called, e.g., ``FooPreferencePage``, and have it extend the Eclipse class ``FieldEditorPreferencePage`` and implement the interface ``IWorkbenchPreferencePage``.
 1. Add a constructor and implementations of the functions ``creatFieldEditors()`` and ``init()``:
-```java
-public class FooPreferencePage extends FieldEditorPreferencePage 
-    implements IWorkbenchPreferencePage 
-{
-    public FooPreferencePage() {
-        super(GRID);
-        setPreferenceStore(Activator.getDefault().getPreferenceStore());
-        setDescription("Settings for Foo.");
-    }
+    ```java
+    public class FooPreferencePage extends FieldEditorPreferencePage 
+        implements IWorkbenchPreferencePage 
+    {
+        public FooPreferencePage() {
+            super(GRID);
+            setPreferenceStore(Activator.getDefault().getPreferenceStore());
+            setDescription("Settings for Foo.");
+        }
 
-    @Override
-    public void createFieldEditors() {
-        addField(new StringFieldEditor(FooPreferenceConstants.TAG_NAME, 
-            "Foo Name", getFieldEditorParent()));
-        addField(new StringFieldEditor(FooPreferenceConstants.TAG_COUNT, 
-            "Foo Count", getFieldEditorParent()));
-    }
+        @Override
+        public void createFieldEditors() {
+            addField(new StringFieldEditor(FooPreferenceConstants.TAG_NAME, 
+                "Foo Name", getFieldEditorParent()));
+            addField(new StringFieldEditor(FooPreferenceConstants.TAG_COUNT, 
+                "Foo Count", getFieldEditorParent()));
+        }
 
-    @Override
-    public void init(IWorkbench workbench) {
+        @Override
+        public void init(IWorkbench workbench) {
+        }
     }
-}
-```
+    ```
 1. Open the plugins ``plugin.xml`` and navigate to the Extensions tab.
 
   * Add the extension ``org.eclipse.core.runtime.preferences``.
@@ -284,40 +284,40 @@ Sometimes it may be necessary to add a new menu item to the menu bar in the Ecli
 1. Create a class that extends ``org.eclipse.core.commands.IHandler``; call it something like ``FooHandler``. Add the unimplemented methods.
 1. Make ``isEnabled()`` and ``isHandled()`` return ``true``.
 1. Make ``execute()`` instantiate and open your dialog (or perform whatever other action you have in mind):
-```java
-public class FooHandler implements IHandler 
-{
-    @Override
-    public void addHandlerListener(IHandlerListener handlerListener) {
-    }
+    ```java
+    public class FooHandler implements IHandler 
+    {
+        @Override
+        public void addHandlerListener(IHandlerListener handlerListener) {
+        }
 
-    @Override
-    public void dispose() {
-    }
+        @Override
+        public void dispose() {
+        }
 
-    @Override
-    public Object execute(ExecutionEvent event) throws ExecutionException {
-        Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
-        FooDialog dialog = new FooDialog(shell);
-        dialog.open();
-        return null;
-    }
+        @Override
+        public Object execute(ExecutionEvent event) throws ExecutionException {
+            Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
+            FooDialog dialog = new FooDialog(shell);
+            dialog.open();
+            return null;
+        }
 
-    @Override
-    public boolean isEnabled() {
-        return true;
-    }
+        @Override
+        public boolean isEnabled() {
+            return true;
+        }
 
-    @Override
-    public boolean isHandled() {
-        return true;
-    }
+        @Override
+        public boolean isHandled() {
+            return true;
+        }
 
-    @Override
-    public void removeHandlerListener(IHandlerListener handlerListener) {
+        @Override
+        public void removeHandlerListener(IHandlerListener handlerListener) {
+        }
     }
-}
-```    
+    ```    
 1. Open the plugins ``plugin.xml`` and navigate to the Extensions tab.
 
   * Add the extension ``org.eclipse.ui.commands``.
