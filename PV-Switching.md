@@ -41,6 +41,7 @@ A similar process also occurs when switching writable PVs, as can be seen in the
 The inner workings of the switching code need not be understood to create PVs that switch with the instrument. Only steps 1 and 3 in the previous list need be performed by a class that wants a new PV. Specifically the following code must be used
 ```java
 ObservableFactory closingObsFactory = new ObservableFactory(OnInstrumentSwitch.CLOSE);
-ForwardingObservable<String> pv =  closingObsFactory.getSwitchableObservable(new StringChannel(), “A_PV_ADDRESS”));
+ForwardingObservable<String> pv 
+             = closingObsFactory.getSwitchableObservable(new StringChannel(), “A_PV_ADDRESS”));
 ```
 The above code will create a String type PV observable that will close when the instrument is changed. Subscriptions can now be attached to the PV and will be called when PVs change value.
