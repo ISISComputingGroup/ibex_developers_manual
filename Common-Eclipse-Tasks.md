@@ -131,13 +131,13 @@ The following steps will allow you to add an existing UI plugin to the perspecti
 1. Override the 'ID' and 'name' methods from BasePerspective. ID should return a string ID for the class (e.g, the fully qualified class name), and 'name' should return the name to be displayed on the button.
 1. Optionally, add an image file which will be the perspective switcher button's icon. Put this in an 'icons' folder in the plugin directory.
 1. If you added an icon, Override the 'image' method from BasePerspective to return an ``Image``:
-```java
-@Override
-public Image image() {
-    return ResourceManager.getPluginImage("org.csstudio.isis.ui.foo", 
-        "icons/foo.png");
-}
-```
+    ```java
+    @Override
+    public Image image() {
+        return ResourceManager.getPluginImage("org.csstudio.isis.ui.foo", 
+            "icons/foo.png");
+    }
+    ```
 1. In the plugin's, ``plugin.xml`` file, go to the extensions tab and add the following extensions:
 
   * ``org.eclipse.ui.views`` - add a new 'view' to this; point it at the ViewPart class.
