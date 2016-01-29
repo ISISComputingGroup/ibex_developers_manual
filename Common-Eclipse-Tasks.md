@@ -93,12 +93,12 @@ The job can be started with::
 ```java
 fooJob.schedule();
 ```
-More details can be found in the `Vogella tutorial <http://www.vogella.com/tutorials/EclipseJobs/article.html>`_.
+More details can be found in the [Vogella tutorial](http://www.vogella.com/tutorials/EclipseJobs/article.htm>).
 
 
 ## Updating The UI (Without Data Binding)
 
-Where possible, you should use the Eclipse data binding framework to update UI elements (see `Vogella databinding tutorial <http://www.vogella.com/tutorials/EclipseDataBinding/article.html>`_); however in some cases this is not convenient or possible.
+Where possible, you should use the Eclipse data binding framework to update UI elements (see [Vogella databinding tutorial](http://www.vogella.com/tutorials/EclipseDataBinding/article.html); however in some cases this is not convenient or possible.
 
 The display of UI elements is not handled in the main execution thread but in a separate UI thread. Consequently, if you attempt to alter the display of any UI element from the main thread, you will get an Invalid Thread Access exception. We can overcome this limitation by calling the ``Display.asyncExec()``, which passes a runnable command to the UI thread and asks for it to be run at the next available opportunity.
 
@@ -274,7 +274,7 @@ The ``plugin.xml`` should look like the following:
 ```
 When you start the client, the Foo preference page should now appear in the Eclipse Preferences window. Changes made by the user will be persisted to file automatically by the Eclipse framework and will be reloaded next time the user starts the client.
 
-For more details see the `Vogella preferences tutorial <http://www.vogella.com/tutorials/EclipsePreferences/article.html>`_.
+For more details see the [Vogella preferences tutorial](http://www.vogella.com/tutorials/EclipsePreferences/article.html).
 
 
 ## Add A Menu
@@ -354,7 +354,7 @@ The ``plugin.xml`` should now resemble:
        </extension>
     </plugin>
 ```xml
-The menu should now be visible in the client UI. For more details see the `Vogella menus tutorial <http://www.vogella.com/tutorials/EclipseCommands/article.html>`_.
+The menu should now be visible in the client UI. For more details see the [Vogella menus tutorial](http://www.vogella.com/tutorials/EclipseCommands/article.html).
 
 ## Add A Third Party Library To A Plugin
 
