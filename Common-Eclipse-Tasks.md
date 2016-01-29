@@ -353,7 +353,7 @@ The ``plugin.xml`` should now resemble:
           </command>
        </extension>
     </plugin>
-```xml
+```
 The menu should now be visible in the client UI. For more details see the [Vogella menus tutorial](http://www.vogella.com/tutorials/EclipseCommands/article.html).
 
 ## Add A Third Party Library To A Plugin
