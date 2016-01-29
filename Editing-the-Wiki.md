@@ -1,5 +1,5 @@
 ### Markdown
-Markdown is the preferred format for Wiki pages as it supports useful features like code highlighting. Other similar document types are available, for example ReST may be useful if moving documentation from other sources.
+Markdown is the preferred format for Wiki pages as it supports useful features like code highlighting. Other similar document types are available, for example ReST or MediaWiki may be useful if moving documentation from other sources.
 
 For a 3-minute introduction to Markdown see ['Mastering Markdown'](https://guides.github.com/features/mastering-markdown/).
 
