@@ -10,9 +10,21 @@ mkdir danfysik8000
 cd danfysik8000
 git init
 
+unpack on Linux
+ 
 now unpack the initial vendor code, if it unpacks to something like 1-11/... then move everything up a level. You want the top level directory to contain the usual EPICS configure and *App directory layout. Also delete any files that are not source files or directories e.g. O.Common, O.linux-x86 , top level bin and lib, db.  Also delete any .svn directories
 also files that end in a ~
  
+git add .
+git commit -m "Imported danfysik 8000 version 1.11"
+git remote add origin https://github.com/ISISComputingGroup/EPICS-danfysik8000.git
+git push -u origin master
+
+git checkout -b vendor
+git tag -a vendor_1_11 -m "Tag of danfysik 8000 import version 1.11"
+git push origin vendor
+git push --tags
+
 
 
 
