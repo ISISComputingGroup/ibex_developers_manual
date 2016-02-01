@@ -49,3 +49,5 @@
 [Git Workflow](Git-Cribs)
 
 [Useful Git Commands](Git Commands)
+
+[Adding new modules](Adding new modules)
