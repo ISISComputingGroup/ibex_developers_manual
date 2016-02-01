@@ -53,6 +53,46 @@ git merge vendor_1_12
 resolve conflicts
 
 
+cd EPICS/support
+mkdir danfysikMps8000
+git add danfysikMps8000
+git commit -m "Add danfysikMps8000"
+
+cd danfysikMps8000
+ git submodule add https://github.com/ISISComputingGroup/EPICS-danfysikMps8000.git master
+now add a MAkefile to the same directory as "master", copy it from e.g. 
+
+cp ../calc/Makefile .
+
+git add .gitmodules support/danfysikMps8000/Makefile  support/danfysikMps8000/master
+git commit -m "Add danfysikMps8000 submodule"
+
+now make sure it builds
+
+configure/RELEASE like ../calc/master/configure/RELEASE
+Makefile for *App and *app as well as iocBoot and iocboot
+
+make
+git status
+add .gitignore and .gitattributes
+
+make make celan uninstall   all work
+
+if all OK, add it to support/Makefile
+
+add to configure/MASTER_RELEASE
+
+ioc/master
+
+mkdir DANFYSIK8000
+
+makeBaseApp.pl -t ioc -i DANFYSIK8000-IOC-03
+
+
+
+
+
+
 
 
 
