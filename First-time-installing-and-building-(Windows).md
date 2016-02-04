@@ -43,3 +43,9 @@ Do leave TCP/IP access enabled.
 
 ### Run build.bat
 `cd` to `\Instrument\Apps\EPICS\` and run `build.bat`
+
+### Run setup_css.bat
+In `Instrument\Apps\EPICS\CSS\master` run `setup_css.bat`
+this will create directories for the archive engine. in `.\css-win.x86_64`
+
+
