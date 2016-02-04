@@ -2,9 +2,9 @@
 
 This document describes the high level design for IBEX. Eventually there should be outlines of the architectural design for each part of the high level design.
 
-### Experiment Data Database
+### Experiment Details Database
 
-![Experiment Data Database](architectural_design/images/Database-Schemas/experiment_data_database.png)
+![Experiment Details Database](architectural_design/images/Database-Schemas/experiment_details_database.png)
 
 ### IOC Database
 
