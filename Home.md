@@ -44,6 +44,10 @@
 
 ## The Server ##
 
+### Getting Started
+
+[First time installing and building (Windows)](First-time-installing-and-building-(Windows))
+
 ## Working with Git(Hub) ##
 
 [Git Workflow](Git-Cribs)
