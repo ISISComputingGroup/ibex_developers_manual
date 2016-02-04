@@ -23,8 +23,8 @@ Install [CMake](https://cmake.org/download/)
 ### Install Java SDK
 Install the [Java SDK for Windows x64](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 
-### Install maven (set environment variables for the SDK with JAVA_HOME and maven in PATH)
-Install [Maven](https://maven.apache.org/download.cgi) and follow the 'Windows tips' in [these instructions ](https://maven.apache.org/install.html)
+### Install maven 
+Install [Maven](https://maven.apache.org/download.cgi) and follow the 'Windows tips' in [these instructions ](https://maven.apache.org/install.html) to set environment variables for the SDK with JAVA_HOME and maven in PATH
 
 ### Install Git 
 Install Git from [here](https://git-scm.com/download/win)
