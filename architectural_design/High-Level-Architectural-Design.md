@@ -1,10 +1,10 @@
-> [Wiki](Home) ▸ **IBEX High Level Architectural Design**
+> [Wiki](Home) ▸ **High Level Architectural Design**
 
 This document describes the high level design for IBEX. Eventually there should be outlines of the architectural design for each part of the high level design.
 
 ### High Level Design
 
-![High Level Architecture](architectural_design/images/high_level_architecture.png)
+![High Level Architecture](architectural_design/images/High-Level-Architectural-Design/high_level_architecture.png)
     
 Notes on the figure:
 
@@ -31,7 +31,8 @@ Coming soon...
 Below is a list of the lower level architectural design documents.
 
 * [Alarms](https://trac.isis.rl.ac.uk/ICP/wiki/Alarms)
-* [Client](IBEX-Client-Architectural-Design)
+* [Database Schemas](Database-Schemas)
+* [Client](Client-Architectural-Design)
 
 ### Notes
 
