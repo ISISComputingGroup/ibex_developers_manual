@@ -4,7 +4,7 @@
 
 ## Project Overview ##
 
-[Architectural Design](IBEX-High-Level-Architectural-Design)
+[Architectural Design](High-Level-Architectural-Design)
 
 ## The GUI ##
 
@@ -47,6 +47,14 @@
 ### Getting Started
 
 [First time installing and building (Windows)](First-time-installing-and-building-(Windows))
+
+### The Block Server
+
+[The Block Server](block_server)
+
+[Block Server Structure](block_server_structure)
+
+[Configuration Rules](configuration_rules)
 
 ## Working with Git(Hub) ##
 
