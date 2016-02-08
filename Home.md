@@ -48,13 +48,9 @@
 
 [First time installing and building (Windows)](First-time-installing-and-building-(Windows))
 
-### The Block Server
+### The BlockServer
 
-[The Block Server](Block-Server)
-
-[Block Server Structure](Block-Server-Structure)
-
-[Configuration Rules](Block-Server-Configuration-Rules)
+[The BlockServer](BlockServer)
 
 ## Working with Git(Hub) ##
 
