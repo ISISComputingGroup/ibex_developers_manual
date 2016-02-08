@@ -1,7 +1,3 @@
-************************
-Rules for Configurations
-************************
-
 A record of the rules for the various parts of a configuration.
 
 --------------
