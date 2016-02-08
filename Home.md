@@ -50,11 +50,11 @@
 
 ### The Block Server
 
-[The Block Server](block_server)
+[The Block Server](Block-Server)
 
-[Block Server Structure](block_server_structure)
+[Block Server Structure](Block-Server-Structure)
 
-[Configuration Rules](configuration_rules)
+[Configuration Rules](Block-Server-Configuration-Rules)
 
 ## Working with Git(Hub) ##
 
