@@ -51,7 +51,9 @@
 ### The Block Server
 
 [The Block Server](block_server)
+
 [Block Server Structure](block_server_structure)
+
 [Configuration Rules](configuration_rules)
 
 ## Working with Git(Hub) ##
