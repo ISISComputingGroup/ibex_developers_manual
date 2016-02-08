@@ -19,8 +19,6 @@ The blocks are PV aliases created using the blocks gateway - a standard channel 
 
 The PV file typically looks something like this:
 
-::
-
     \(.*\)CS:SB:CJHGAP\(.*\)    ALIAS    \1MOT:JAWS1:HGAP\2
     \(.*\)CS:SB:CJVGAP\(.*\)    ALIAS    \1MOT:JAWS1:VGAP\2
     \(.*\)CS:SB:A1HGAP\(.*\)    ALIAS    \1MOT:JAWS2:HGAP\2
@@ -51,15 +49,11 @@ Read Commands
 **BLOCKSERVER:BLOCKNAMES**
 Note: this used by genie_python for checking block names used in CSETs etc. are valid
 
-::
-
     Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:BLOCKNAMES
     Returns the block names as compressed and hexed JSON list(CHAR waveform)
 
 **BLOCKSERVER:GROUPS**
 Note: This PV is currently used by the web dashboard
-
-::
 
     Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:GROUPS
     Returns the groups and their blocks as a compressed then hexed JSON list of dictionaries (CHAR waveform).
@@ -71,8 +65,6 @@ Note: This PV is currently used by the web dashboard
 
 **BLOCKSERVER:CONFIGS**
 
-::
-
     Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:CONFIGS
     Returns a list of the available configurations, including descriptions and the pv associated with the configuration, as compressed then hexed JSON (CHAR waveform)
 	Example JSON (dehexed and decompressed):
@@ -82,8 +74,6 @@ Note: This PV is currently used by the web dashboard
 	
 **BLOCKSERVER:COMPS**
 
-::
-
     Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:COMPS
     Returns a list of the components available, including descriptions and the pv associated with the configuration, as compressed then hexed JSON (CHAR waveform)
 		'[{"name": "Test Subconfig", "description": "A test component", "pv": "TEST_SUBCONFIG"}
@@ -92,21 +82,15 @@ Note: This PV is currently used by the web dashboard
 
 **BLOCKSERVER:GET_RC_OUT**
 
-::
-
     Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:GET_RC_OUT
     Returns a list of the PVs that are outside of their run-control limits as compressed then hexed JSON (CHAR waveform)
 
 **BLOCKSERVER:GET_RC_PARS**
 
-::
-
     Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:GET_RC_PARS
     Returns a dictionary of the run-control settings for the blocks as compressed then hexed JSON (CHAR waveform)
 
 **BLOCKSERVER:GET_CURR_CONFIG_DETAILS**
-
-::
 
     Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:GET_CURR_CONFIG_DETAILS
     Returns a compressed and hexed JSON dictionary describing the current configuration or component.
@@ -133,8 +117,6 @@ Note: This PV is currently used by the web dashboard
 
 **BLOCKSERVER:*config_pv*:GET_CONFIG_DETAILS**
 
-::
-
 	Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:*config_pv*:GET_CONFIG_DETAILS
 	Returns a compressed and hexed JSON dictionary describing the configuration with the pv *config_pv*. (To find config pvs use the CONFIGS command)
 	Example JSON (dehexed and decompressed):
@@ -160,8 +142,6 @@ Note: This PV is currently used by the web dashboard
 		 
 **BLOCKSERVER:*component_pv*:GET_COMPONENT_DETAILS**
 
-::
-
 	Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:*component_pv*:GET_COMPONENT_DETAILS
 	Returns a compressed and hexed JSON dictionary describing the component with the pv *component_pv*. (To find component pvs use the COMPS command)
  	Example JSON (dehexed and decompressed):
@@ -186,8 +166,6 @@ Note: This PV is currently used by the web dashboard
 		 
 **BLOCKSERVER:BLANK_CONFIG**
 
-::
-
 	Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:BLANK_CONFIG
 	Returns a compressed and hexed JSON dictionary describing a blank configuration.
         '{"iocs": [],
@@ -200,35 +178,25 @@ Note: This PV is currently used by the web dashboard
 
 **BLOCKSERVER:*component_pv*:DEPENDENCIES**
 
-::
-
     Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:*component_pv*:DEPENDENCIES
     Returns a list of the configurations that contain the component specified in *component_pv*, formatted as compressed then hexed JSON (CHAR waveform)
 		 
 **BLOCKSERVER:CURR_CONFIG_CHANGED**
-
-::
 
     Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:CURR_CONFIG_CHANGED
     Returns 1 when the active configuration has been modified on the filesystem. Returns 0 otherwise. 
 
 **BLOCKSERVER:SYNOPTICS:NAMES**
 
-::
-
     Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:SYNOPTICS:NAMES
     Returns a list of the available synoptics formatted as compressed then hexed JSON (CHAR waveform)
 
 **BLOCKSERVER:SYNOPTICS:*synoptic_name*:GET**
 
-::
-
     Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:SYNOPTICS:*synoptic_name*:GET
     Returns a compressed and hexed string containing the XML for the specified synoptic (CHAR waveform)
 
 **BLOCKSERVER:SYNOPTICS:GET_DEFAULT**
-
-::
 
     Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:SYNOPTICS:GET_DEFAULT
     Returns a compressed and hexed string containing the XML for the current synoptic (CHAR waveform)
@@ -242,8 +210,6 @@ Write Commands
 
 **BLOCKSERVER:LOAD_CONFIG**
 
-::
-
     Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:LOAD_CONFIG abcdefabdcdefabcdef1234567890
     Loads the specified configuration. Requires a compressed and hexed JSON string. This automatically restarts the blocks gateway and updates the archiver
 
@@ -251,8 +217,6 @@ Write Commands
 
 **BLOCKSERVER:SAVE_CONFIG**
 Note: Used by the client(s) for "save" and "save as" for the current active configuration
-
-::
 
     Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:SAVE_CONFIG abcdefabdcdefabcdef1234567890
     Saves the current active configuration under the specified name. Requires a compressed and hexed JSON string.
@@ -262,8 +226,6 @@ Note: Used by the client(s) for "save" and "save as" for the current active conf
     
 **BLOCKSERVER:CLEAR_CONFIG**
 
-::
-
     Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:CLEAR_CONFIG clear
     Send any non-null value to clear the current configuration, i.e. remove blocks, groups and IOCs.
     Note: it does not restart the gateway.
@@ -272,16 +234,12 @@ Note: Used by the client(s) for "save" and "save as" for the current active conf
 
 **BLOCKSERVER:START_IOCS**
 
-::
-
     Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:START_IOCS abcdefabdcdefabcdef1234567890
     Starts the specified IOC or IOCs. Requires compressed and hexed JSON list of IOCS.
 
     Returns "OK" or an error message (compressed and hexed JSON).
 
 **BLOCKSERVER:STOP_IOCS**
-
-::
 
     Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:STOP_IOCS abcdefabdcdefabcdef1234567890
     Stops the specified IOC or IOCS. Requires compressed and hexed JSON list of IOCS.
@@ -290,7 +248,6 @@ Note: Used by the client(s) for "save" and "save as" for the current active conf
 
 **BLOCKSERVER:RESTART_IOCS**
 
-::
 
     Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:RESTART_IOCS abcdefabdcdefabcdef1234567890
     Restarts the specified IOC or IOCs. Requires compressed and hexed JSON list of IOCS.
@@ -298,8 +255,6 @@ Note: Used by the client(s) for "save" and "save as" for the current active conf
     Returns "OK" or an error message (compressed and hexed JSON).
 
 **BLOCKSERVER:SET_RC_PARS**
-
-::
 
     Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:SET_RC_PARS abcdefabdcdefabcdef1234567890
     Edits the run-control settings on a block or blocks. Requires compressed and hexed JSON dictionary of dictionaries with the following parameters:
@@ -314,8 +269,6 @@ Note: Used by the client(s) for "save" and "save as" for the current active conf
 
 
 **BLOCKSERVER:SET_CURR_CONFIG_DETAILS**
-
-::
 
     Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:SET_CURR_CONFIG_DETAILS abcdefabdcdefabcdef1234567890
     Sets the current configuration to the setting specified. Requires compressed and hexed JSON dictionary.
@@ -341,8 +294,6 @@ Note: Used by the client(s) for "save" and "save as" for the current active conf
          }'
 
 **BLOCKSERVER:SAVE_NEW_CONFIG**
-
-::
 
 	Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:SAVE_NEW_CONFIG abcdefabdcdefabcdef1234567890
 	Saves a configuration to XML without affecting the current active configuration.
@@ -372,8 +323,6 @@ Note: Used by the client(s) for "save" and "save as" for the current active conf
 
 **BLOCKSERVER:SAVE_NEW_COMPONENT**
 
-::
-
 	Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:SAVE_NEW_COMPONENT abcdefabdcdefabcdef1234567890
 	Saves a component to XML without affecting the current configuration.
 	This will give an error if trying to overwrite components of the current active configuration.
@@ -401,8 +350,6 @@ Note: Used by the client(s) for "save" and "save as" for the current active conf
 		 
 **BLOCKSERVER:DELETE_CONFIGS**
 
-::
-
     Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:DELETE_CONFIGS abcdefabdcdefabcdef1234567890
     Removes a configuration or configurations from the BlockServer and filesystem. Requires a compressed and hexed JSON list of configuration names to remove.
     If this is done in error the configuration can be recovered from version control. For removing one configuration only, create a list of one item.
@@ -410,8 +357,6 @@ Note: Used by the client(s) for "save" and "save as" for the current active conf
     Returns "OK" or an error message (compressed and hexed JSON).
 	
 **BLOCKSERVER:DELETE_COMPONENTS**
-
-::
 
     Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:DELETE_COMPONENTS abcdefabdcdefabcdef1234567890
     Removes a component or components from the BlockServer and filesystem. Requires a compressed and hexed JSON list of component names to remove.
@@ -421,8 +366,6 @@ Note: Used by the client(s) for "save" and "save as" for the current active conf
 	
 **BLOCKSERVER:ACK_CURR_CHANGED**
 
-::
-
     Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:ACK_CUR_CHANGED
 	Resets the CURR_CONFIG_CHANGED PV to a 0.
 
@@ -430,16 +373,12 @@ Note: Used by the client(s) for "save" and "save as" for the current active conf
 
 **BLOCKSERVER:SYNOPTICS:SET_DETAILS**
 
-::
-
     Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:SYNOPTICS:SET_DETAILS abcdefabdcdefabcdef1234567890
     Saves the synoptic with supplied compressed and hexed xml data, saving under the name specified in the xml.
 	
     Returns "OK" or an error message (compressed and hexed JSON).
 	
 **BLOCKSERVER:SYNOPTICS:DELETE**
-
-::
 
     Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:SYNOPTICS:DELETE abcdefabdcdefabcdef1234567890
 	Removes a synoptic from the BlockServer and filesystem. Requires a compressed and hexed JSON list of synoptics names to remove.
