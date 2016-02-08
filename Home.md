@@ -54,7 +54,7 @@
 
 ## The Build Server
 
-[Jenkins Build Server](Jenkins-BuildServer)
+[Jenkins Build Server](Jenkins-Build-Server)
 
 ## Working with Git(Hub) ##
 
