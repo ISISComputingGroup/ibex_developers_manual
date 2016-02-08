@@ -41,6 +41,13 @@ Do leave TCP/IP access enabled.
 ### Recursive clone from git
 `git clone --recursive https://github.com/ISISComputingGroup/ibex_gui.git` 
 
+### Install Python modules
+
+In a command window run:
+`install_python_modules.bat`
+
+If mysql-connector-python fails, download it from ​[here](http://dev.mysql.com/downloads/connector/python/). The Windows installers don't seem to work, instead select "Platform Independent" and download the source zip, then unpack and run the usual `python setup.py install`
+
 ### Run build.bat
 `cd` to `\Instrument\Apps\EPICS\` and run `build.bat`
 
