@@ -1,7 +1,3 @@
-*********************************
-The BlockServer Program Structure
-*********************************
-
 This document is intended to outline the internal structure of the BlockServer for reference by future developers. Please be
 aware that the BlockServer is a work in progress and as such this document is liable to change.
 
