@@ -14,7 +14,7 @@ to both the active configuration on the instrument and other potential configura
 filewatcher to ensure that any manual changes to configurations are correctly handled. Below is an UML overview of the most 
 significant parts:
 
-.. figure:: img/full_uml.png
+.. figure:: blockserver/images/Block-Server-Configuration-Rules/full_uml.png
    :width: 100%
    :align: center
 
