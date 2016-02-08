@@ -38,6 +38,8 @@ Make sure you use the agreed password for the root directory. If you don't know 
 
 Do leave TCP/IP access enabled.
 
+Note: For running tests locally, make sure that you have run `Create test account.bat` from `EPCIS/SystemSetup/` as well
+
 ### Recursive clone from git
 `git clone --recursive https://github.com/ISISComputingGroup/ibex_gui.git` 
 
