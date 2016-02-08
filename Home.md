@@ -4,7 +4,7 @@
 
 ## Project Overview ##
 
-[Architectural Design](IBEX-High-Level-Architectural-Design)
+[Architectural Design](High-Level-Architectural-Design)
 
 ## The GUI ##
 
