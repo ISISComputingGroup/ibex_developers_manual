@@ -1,8 +1,6 @@
-> [Wiki](Home) ▸ **BlockServer**
-
 The BlockServer is **responsible** for:
 
-* Creating blocks
+ Creating blocks
 * Creating groups
 * Loading and saving configurations
 
