@@ -13,7 +13,7 @@ See [BlockServer Structure](Block-Server-Structure) and [BlockServer Configurati
 ------------
 What it does
 ------------
-The BlockServer is a Channel Access Server (CAS) written in Python using the `PCASpy <https://code.google.com/p/pcaspy/>`_ module.
+The BlockServer is a Channel Access Server (CAS) written in Python using the [PCASpy](https://code.google.com/p/pcaspy/) module.
 It provides a number of PVs that allow the blocks to be configured (see below) and configurations to be created and loaded.
 The blocks are PV aliases created using the blocks gateway - a standard channel access gateway running on localhost (127.0.0.1). When a configuration is loaded or the blocks changed then the BlockServer regenerates the PV file for the gateway. 
 
@@ -34,7 +34,7 @@ The BlockServer is also responsible for configuring the blocks archiver to log t
 
 Configurations are saved in a directory with the configuration's name. The directory contains separate XML files for the blocks, groups, components, IOCs and meta-data that make up the configuration.
 
-The BlockServer also provides a mechanism for starting and stopping IOCs and retrieving the interesting PVs for the currently running IOCs. The BlockServer can start and stop IOCs that are running inside `ProcServ <http://sourceforge.net/projects/procserv/>`_ as ProcServ provides PVs to enable this. The PVs for the currently running IOCs are read directly from a database.
+The BlockServer also provides a mechanism for starting and stopping IOCs and retrieving the interesting PVs for the currently running IOCs. The BlockServer can start and stop IOCs that are running inside [ProcServ](http://sourceforge.net/projects/procserv/) as ProcServ provides PVs to enable this. The PVs for the currently running IOCs are read directly from a database.
 
 NOTE: As the BlockServer often needs to send a lot of data via channel access (as a CHAR waveform), it it necessary in some cases to compress the data before sending using zlib. The compressed data is then converted to hex to avoid any null characters been sent across channel access.
 
