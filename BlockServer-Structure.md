@@ -13,7 +13,7 @@ to both the active configuration on the instrument and other potential configura
 filewatcher to ensure that any manual changes to configurations are correctly handled. Below is an UML overview of the most 
 significant parts:
 
-![Full UML](../blockserver/images/Block-Server-Configuration-Rules/full_uml.png)
+![Full UML](blockserver/images/Block-Server-Configuration-Rules/full_uml.png)
 
 ----------------
 Channel Access
