@@ -47,7 +47,7 @@ Note: For running tests locally, make sure that you have run `Create test accoun
 
 ### Install genie_python
 
-Run the 'genie_python_install.bat` batch file located in `\\isis\inst$\Kits$\CompGroup\ICP\Client\genie_python`
+Run the `genie_python_install.bat` batch file located in `\\isis\inst$\Kits$\CompGroup\ICP\Client\genie_python`
 
 ### Install Python modules
 
