@@ -38,7 +38,9 @@ Make sure you use the agreed password for the root directory. If you don't know 
 
 Do leave TCP/IP access enabled.
 
-Note: For running tests locally, make sure that you have run `Create test account.bat` from `EPCIS/SystemSetup/` as well
+Once installed run the `config_mysql.bat` batch file in `EPCIS/SystemSetup/`.
+
+Note: For running tests locally, make sure that you have run `Create test account.bat` from `EPICS/SystemSetup/` as well
 
 ### Recursive clone from git
 `git clone --recursive https://github.com/ISISComputingGroup/ibex_gui.git` 
