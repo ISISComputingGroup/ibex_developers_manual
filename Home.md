@@ -48,9 +48,10 @@
 
 [First time installing and building (Windows)](First-time-installing-and-building-(Windows))
 
-### The BlockServer
+### System Components
 
 [The BlockServer](BlockServer)
+[The MySQL Database](The-MySQL-Database)
 
 ## The Build Server
 
