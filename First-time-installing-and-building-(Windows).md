@@ -40,7 +40,7 @@ Do leave TCP/IP access enabled.
 
 Once installed run the `config_mysql.bat` batch file in `EPCIS/SystemSetup/`.
 
-Note: For running tests locally, make sure that you have run `Create test account.bat` from `EPICS/SystemSetup/` as well
+Note: For running tests locally, make sure that you have run `Create test account.bat` from `EPICS/SystemSetup/` as well.
 
 ### Recursive clone from git
 `git clone --recursive https://github.com/ISISComputingGroup/ibex_gui.git` 
