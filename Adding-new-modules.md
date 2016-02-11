@@ -11,37 +11,47 @@ Software imported from outside should use a "vendor branch" so new versions are 
 
 Often unpacking the code on Linux is preferred as there are less line endings issues. A vendor branch should contain unchanged original code i.e. don't add our own readme or .gitignore etc here, do that on master  However remove binaries from the unpacked original code if they have been left in and are not relevant
  
-now unpack the initial vendor code, if it unpacks to something like 1-11/... then move everything up a level. You want the top level directory to contain the usual EPICS configure and *App directory layout. Also delete any files that are not source files or directories e.g. O.Common, O.linux-x86 , top level bin and lib, db.  Also delete any .svn directories
-also files that end in a ~
+Now unpack the initial vendor code, if it unpacks to something like 1-11/... then move everything up a level. You want the top level directory to contain the usual EPICS configure and *App directory layout. Also delete any files that are not source files or directories e.g. O.Common, O.linux-x86 , top level bin and lib, db that might have got left in.  Also delete any .svn directories and files that end in a ~ (temporary files). Then add the files and push to GitHub
  
-git add .
-git commit -m "Imported danfysik 8000 version 1.11"
-git remote add origin https://github.com/ISISComputingGroup/EPICS-danfysik8000.git
-git push -u origin master
+    git add .
+    git commit -m "Imported danfysik 8000 version 1.11"
+    git remote add origin https://github.com/ISISComputingGroup/EPICS-danfysik8000.git
+    git push -u origin master
 
-create vendior branch
+then create the vendor branch
 
-git checkout -b vendor
-git tag -a vendor_1_11 -m "Tag of danfysik 8000 import version 1.11"
-git push origin vendor
-git push --tags
+    git checkout -b vendor
+    git tag -a vendor_1_11 -m "Tag of danfysik 8000 import version 1.11"
+    git push origin vendor
+    git push --tags
 
 now move back to master and make local changes
 
-git checkout master
-create readme.md, file to say where we got it from, 
+    git checkout master
 
+and create readme.md to say where we got the code originally from, and also .gitignore and .gitattributes 
 
-adding new version
-checkout vendor branch
-rm -fr *
-unpack
-git add -u .
-git add .
-git commit -m "Imported danfysik 8000 version 1.12"
-git tag -a vendor_1_12 -m "Tag of danfysik 8000 import version 1.12"
-git push origin vendor
-git push --tags
+# Updating vendor branch
+
+First checkout the vendor branch and remove all files
+
+    git checkout vendor
+    rm -fr *
+
+Then unpack the new code into the directory in the same was as above. You'll have files added, removed and changed to handle. Type  git status  and remove unwanted files like like binaries and temporary files as described above. Then type  
+
+    git add -u .
+
+This will add changed files. Again check with a   git status  that all is looking right before using 
+
+    git add .
+
+to add new and remove deleted files. Then commit and tag the changes
+
+    git commit -m "Imported danfysik 8000 version 1.12"
+    git tag -a vendor_1_12 -m "Tag of danfysik 8000 import version 1.12"
+    git push origin vendor
+    git push --tags
 
 an then merge
 
