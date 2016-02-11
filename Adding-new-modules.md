@@ -1,4 +1,6 @@
 # Adding a new module
+
+## initial import
 In this example we will use the EPICS-danfysik8000 repository
 
 First create a new GitHub repository - all EPICS modules should have an "EPICS-" prefix. Use the "new repository" button on https://github.com/ISISComputingGroup but make sure you create a blank repository i.e. without a README, licence or .gitignore file  Also decide on public or private repository, if you create it private one you can easily make it public later, but there is a limit on how many private repositories we can have at any one time. Also go into "add teams and collaborators" and add the ICP-Write group to write access to the repository
@@ -31,50 +33,23 @@ now move back to master and make local changes
 
 and create readme.md to say where we got the code originally from, and also .gitignore and .gitattributes 
 
-# Updating vendor branch
+## Adding module as submodule
 
-First checkout the vendor branch and remove all files
+create a directory root for the submodule
+    cd EPICS/support
+    mkdir danfysikMps8000
+    git add danfysikMps8000
+    git commit -m "Add danfysikMps8000"
 
-    git checkout vendor
-    rm -fr *
+Then add new repository as a local directory called "master"
 
-Then unpack the new code into the directory in the same was as above. You'll have files added, removed and changed to handle. Type  git status  and remove unwanted files like like binaries and temporary files as described above. Then type  
+    cd danfysikMps8000
+    git submodule add https://github.com/ISISComputingGroup/EPICS-danfysikMps8000.git master
 
-    git add -u .
+You'll need a Makefile in the directory containing "master", copy it from e.g. ../calc/Makefile  Then add the files
 
-This will add changed files. Again check with a   git status  that all is looking right before using 
-
-    git add .
-
-to add new and remove deleted files. Then commit and tag the changes
-
-    git commit -m "Imported danfysik 8000 version 1.12"
-    git tag -a vendor_1_12 -m "Tag of danfysik 8000 import version 1.12"
-    git push origin vendor
-    git push --tags
-
-an then merge
-
-git checkout master
-git pull
-git merge vendor_1_12
-
-resolve conflicts
-
-
-cd EPICS/support
-mkdir danfysikMps8000
-git add danfysikMps8000
-git commit -m "Add danfysikMps8000"
-
-cd danfysikMps8000
- git submodule add https://github.com/ISISComputingGroup/EPICS-danfysikMps8000.git master
-now add a MAkefile to the same directory as "master", copy it from e.g. 
-
-cp ../calc/Makefile .
-
-git add .gitmodules support/danfysikMps8000/Makefile  support/danfysikMps8000/master
-git commit -m "Add danfysikMps8000 submodule"
+    git add .gitmodules support/danfysikMps8000/Makefile support/danfysikMps8000/master
+    git commit -m "Add danfysikMps8000 submodule"
 
 now make sure it builds
 
@@ -102,6 +77,37 @@ makeBaseApp.pl -t ioc -i DANFYSIK8000-IOC-03
 
 
 
+
+
+## Updating vendor branch
+
+First checkout the vendor branch and remove all files
+
+    git checkout vendor
+    rm -fr *
+
+Then unpack the new code into the directory in the same was as above. You'll have files added, removed and changed to handle. Type  git status  and remove unwanted files like like binaries and temporary files as described above. Then type  
+
+    git add -u .
+
+This will add changed files. Again check with a   git status  that all is looking right before using 
+
+    git add .
+
+to add new and remove deleted files. Then commit and tag the changes
+
+    git commit -m "Imported danfysik 8000 version 1.12"
+    git tag -a vendor_1_12 -m "Tag of danfysik 8000 import version 1.12"
+    git push origin vendor
+    git push --tags
+
+Now you need to go back to master and merge in new version of vendor code
+
+    git checkout master
+    git pull
+    git merge vendor_1_12
+
+And resolve conflicts before committing
 
 
 
