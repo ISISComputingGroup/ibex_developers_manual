@@ -31,11 +31,12 @@ now move back to master and make local changes
 
     git checkout master
 
-and create readme.md to say where we got the code originally from, and also .gitignore and .gitattributes 
+and create readme.md to say where we got the code originally from. You can also add an initial .gitattributes and .gitignore
 
 ## Adding module as submodule
 
 create a directory root for the submodule
+
     cd EPICS/support
     mkdir danfysikMps8000
     git add danfysikMps8000
@@ -51,33 +52,12 @@ You'll need a Makefile in the directory containing "master", copy it from e.g. .
     git add .gitmodules support/danfysikMps8000/Makefile support/danfysikMps8000/master
     git commit -m "Add danfysikMps8000 submodule"
 
-now make sure it builds
+now make sure it builds. You'll probably need to update   configure/RELEASE to be like e.g. ../calc/master/configure/RELEASE   Also check the Makefile for both *App and *app targets as well as iocBoot and iocboot - on windows this results in a double match due to case insensitivity, so remove the the *app and iocboot
 
-configure/RELEASE like ../calc/master/configure/RELEASE
-Makefile for *App and *app as well as iocBoot and iocboot
+    make
+    git status
 
-make
-git status
-add .gitignore and .gitattributes
-
-make make celan uninstall   all work
-
-if all OK, add it to support/Makefile
-
-add to configure/MASTER_RELEASE
-
-ioc/master
-
-mkdir DANFYSIK8000
-
-makeBaseApp.pl -t ioc -i DANFYSIK8000-IOC-03
-
-
-
-
-
-
-
+Then create/adjust .gitignore and .gitattributes  and check    make clean uninstall   all work. If everything OK, add new module to support/Makefile and to configure/MASTER_RELEASE
 
 ## Updating vendor branch
 
