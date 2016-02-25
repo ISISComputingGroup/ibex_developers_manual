@@ -46,7 +46,7 @@ Decisions already made:
 
 A simple diagram of the design:
 
-[[Image(Backend Design.png)]]
+![Back End Design](design_documents/images/Script-Server-Back-End-Design-Document/Back_End_Design.png)
 
 Commands:
 
