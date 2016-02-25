@@ -1,6 +1,6 @@
 This document is designed to be read in conjunction with the equivalent back-end design document.
 
-##What it should do
+## What it should do
 
 * Be able to run as part of the main IBEX client
 * Access the script server for the instrument that IBEX is currently pointing at
@@ -24,6 +24,10 @@ This document is designed to be read in conjunction with the equivalent back-end
 * Be able to run separately from the main IBEX client (optional)
 (*) These actions should only be allowed by instrument scientists and the controls teams
 
+## Note on naming
+
+We need to be careful how we name different parts. There is server that is responsible for queuing and running jobs and something responsible for building scripts and sending them to the server. Suggested names for the client are 'Script Builder', but we would prefer something to capture the fact it covers building and submitting scripts. Something more abstract such as 'Scan Engine' or 'Autorun' are other options.
+
 ## Architectural design
 
 The script server front-end is initially planned to be part of the IBEX client, so will be an Eclipse RCP application. The architectural design should follow the design used elsewhere in the GUI, with the model-view-viewmodel pattern and a separation of the business logic in one plugin, and the UI components in another package.
@@ -44,7 +48,10 @@ JMS can be used with a Python server my means of a broker, such as RabbitMQ or A
 The interface design will most likely follow a similar idea to the one from the SNS ScanServer, shown in figure 1. Figures 2 and 3 show some ideas for a mock-up following similar designs to how other parts of the IBEX client works. If the interface becomes too cluttered the script editor can be made another tab along with ‘Sever Status’ and ‘Server Console’.
 
 ![SNS Scan Server](design_documents/images/Script-Server-Front-End-Design-Document/Scan_Server_Annotated.png)
+*Figure 1 - SNS Scan Server*
 
 ![SNS Scan Server](design_documents/images/Script-Server-Front-End-Design-Document/Scan_Server_IBEX_mockup.png)
+*Figure 2: Using the script builder. New commands can be dragged and dropped into the script, and existing commands can have their properties set.*
 
 ![SNS Scan Server](design_documents/images/Script-Server-Front-End-Design-Document/Scan_Server_IBEX_manual_edit_mockup.png)
+*Figure 3: Manually editing a script – commands can still be dragged and dropped as Python commands.*
