@@ -1,6 +1,6 @@
 > [Wiki](Home) ▸ [[Design Documents]] ▸ **Script Server Back End Design Document**
 
-This document should be read alongside the [front-end design document](Script Server Front End Design Document).
+This document should be read alongside the [front-end design document](Script-Server-Front-End-Design-Document).
 
 ## What it should do
 * Accept multiple clients
