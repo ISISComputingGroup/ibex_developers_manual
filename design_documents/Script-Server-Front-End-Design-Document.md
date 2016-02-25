@@ -26,8 +26,6 @@ This document is designed to be read in conjunction with the equivalent [back-en
 * Script validation – can provide feedback on potential issues when creating or editing a job, and an estimate of the length of time the job will take. The main validation and time estimates should be done on the server side. Some basic validation could be done in the client (e.g. parameters have values set).
 * Show if a job has finished successfully or not, and show a detailed error report from the server if a job has failed
 * Be able to run separately from the main IBEX client (optional)
-* Allow jobs created with the script builder to be saved as XML
-* Allow jobs
 
 (*) These actions should only be allowed by instrument scientists and the controls teams
 
