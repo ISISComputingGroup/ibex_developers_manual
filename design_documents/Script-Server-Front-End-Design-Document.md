@@ -47,5 +47,7 @@ The interface design will most likely follow a similar idea to the one from the 
 *Figure 1 - SNS Scan Server*
 
 ![SNS Scan Server](design_documents/images/Script-Server-Front-End-Design-Document/Scan_Server_IBEX_mockup.png)
+*Figure 2 - Using the script builder. New commands can be dragged and dropped into the script, and existing commands can have their properties set.*
 
 ![SNS Scan Server](design_documents/images/Script-Server-Front-End-Design-Document/Scan_Server_IBEX_manual_edit_mockup.png)
+*Figure 3 - Manually editing a script – commands can still be dragged and dropped as Python commands.*
