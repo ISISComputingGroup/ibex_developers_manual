@@ -1,6 +1,6 @@
 > [Wiki](Home) ▸ [[Design Documents]] ▸ **Script Server Front End Design Document**
 
-This document is designed to be read in conjunction with the equivalent [Script Server Back End Design Document](back-end design document).
+This document is designed to be read in conjunction with the equivalent [back-end design document](Script-Server-Back-End-Design-Document).
 
 ## What it should do
 
