@@ -10,7 +10,9 @@ This document is designed to be read in conjunction with the equivalent [back-en
 * Allow addition of new commands* (optional)
 * Allow the available commands to be used to create a new script via a drag and drop interface. The client will be responsible for converting the available commands into a Python script, and inserting the necessary server call backs.
 * Allow new scripts to be created as hand-written code (i.e. plain text document)
-* Allow scripts to be saved locally, before they are sent to the server (or should they just be saveable on the server?)
+* Allow scripts to be saved locally, before they are sent to the server
+* Allow scripts to be loaded from disk
+* Script builder scripts will need to be saved as XML, hand-written scripts can be saved as Python, but either can be sent to the server
 * Allow the creation new jobs and send them to the server to be queued
 * Show the current status of the job queue
 * Show the status of the current job (% done, current line etc.)
@@ -24,6 +26,8 @@ This document is designed to be read in conjunction with the equivalent [back-en
 * Script validation – can provide feedback on potential issues when creating or editing a job, and an estimate of the length of time the job will take. The main validation and time estimates should be done on the server side. Some basic validation could be done in the client (e.g. parameters have values set).
 * Show if a job has finished successfully or not, and show a detailed error report from the server if a job has failed
 * Be able to run separately from the main IBEX client (optional)
+* Allow jobs created with the script builder to be saved as XML
+* Allow jobs
 
 (*) These actions should only be allowed by instrument scientists and the controls teams
 
