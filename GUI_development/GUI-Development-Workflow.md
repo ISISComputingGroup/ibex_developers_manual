@@ -12,7 +12,7 @@
     * Assign an appropriate label (ticket, bug, enhancement, ...)
 	* In the description add some information on how to test the new feature
 1. **Review (reviewer)**
-    * Assign the pull request to yourself to indicate you are reviewing it (and, perhaps, add a comment as well)
+    * Add a comment to say you are reviewing it
     * Check that the pull request has been built by Jenkins with no errors
     * Check that the ticket fixes the associated issue
     * If it is okay move to the next step, otherwise inform the developer of the problem and add a comment to the pull request
