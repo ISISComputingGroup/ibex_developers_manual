@@ -1,16 +1,14 @@
 ## Quick overview of workflow
 
 1. **Create a branch for the ticket (based on master) via GitHub (developer)**
-    * Use the Trac ticket number for the branch name followed by a brief description, e.g. Ticket780_SelectNewTarget
+    * Use the git issue number for the branch name followed by a brief description, e.g. Ticket780_SelectNewTarget
 1. **Clone the branch locally (developer)**
 1. **Modify the code (developer)**
 1. **Push back the changes (developer)**
     * make sure you have merged in any changes to master that have occurred since your ticket was created - makes reviewer's life easier
     * please follow commenting guidelines below
 1. **Create a pull request (developer)**
-    * Assign the correct sprint milestone to the ticket
-    * Assign an appropriate label (ticket, bug, enhancement, ...)
-	* In the description add some information on how to test the new feature
+    * Reference the git issue number in the comments
 1. **Review (reviewer)**
     * Add a comment to say you are reviewing it
     * Check that the pull request has been built by Jenkins with no errors
