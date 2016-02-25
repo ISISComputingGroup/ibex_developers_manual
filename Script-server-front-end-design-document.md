@@ -38,3 +38,7 @@ The protocols for communicating with the servers that are currently used are:
 REST would make a good option as it is widely used and easy to implement the Java client, as well as the Python server. It keeps it easy to use multiple clients looking at one server and to write new clients. It would be more difficult to push messages to the client with REST, so the clients may have to poll the server for information on script progress etc.
 
 JMS can be used with a Python server my means of a broker, such as RabbitMQ or ActiveMQ. This would make supporting multiple clients fairly straightforward still, and allow messages to be pushed to clients. This would require a little more maintenance as it requires setting up the broker server. ZeroMQ is designed for high throughput but does not guarantee messages will be received. This makes it less suitable for this application. 
+
+## Interface Design
+
+The interface design will most likely follow a similar idea to the one from the SNS ScanServer, shown in figure 1. Figures 2 and 3 show some ideas for a mock-up following similar designs to how other parts of the IBEX client works. If the interface becomes too cluttered the script editor can be made another tab along with ‘Sever Status’ and ‘Server Console’.
