@@ -43,11 +43,8 @@ JMS can be used with a Python server my means of a broker, such as RabbitMQ or A
 
 The interface design will most likely follow a similar idea to the one from the SNS ScanServer, shown in figure 1. Figures 2 and 3 show some ideas for a mock-up following similar designs to how other parts of the IBEX client works. If the interface becomes too cluttered the script editor can be made another tab along with ‘Sever Status’ and ‘Server Console’.
 
-![SNS Scan Server](design_documents/images/Script-Server-Front-End-Design-Document/SNS_Scan_Server.png)
-*Figure 1 - SNS Scan Server*
+![SNS Scan Server](design_documents/images/Script-Server-Front-End-Design-Document/Scan_Server_Annotated.png)
 
 ![SNS Scan Server](design_documents/images/Script-Server-Front-End-Design-Document/Scan_Server_IBEX_mockup.png)
-*Figure 2 - Using the script builder. New commands can be dragged and dropped into the script, and existing commands can have their properties set.*
 
 ![SNS Scan Server](design_documents/images/Script-Server-Front-End-Design-Document/Scan_Server_IBEX_manual_edit_mockup.png)
-*Figure 3 - Manually editing a script – commands can still be dragged and dropped as Python commands.*
