@@ -1,3 +1,7 @@
+> [Wiki](Home) ▸ [[Design Documents]] ▸ **Script Server Back End Design Document**
+
+This document should be read alongside the [Script Server Front End Design Document](front-end design document).
+
 ## What it should do
 * Accept multiple clients
 * Serve up a list of available commands for the specified instrument over some protocol. The command should contain command parameters and a description, for example:
