@@ -5,8 +5,8 @@
 1. **Clone the branch locally (developer)**
 1. **Modify the code (developer)**
 1. **Push back the changes (developer)**
-    * make sure you have merged in any changes to master that have occurred since your ticket was created - makes reviewer's life easier
-    * please follow commenting guidelines below
+    * Make sure you have merged in any changes to master that have occurred since your ticket was created - makes reviewer's life easier
+    * Please follow commenting guidelines below
 1. **Create a pull request (developer)**
     * Reference the git issue number in the comments
 1. **Review (reviewer)**
@@ -233,9 +233,7 @@ Notice that for my changes it says "Able to merge". This means that my changes d
 
 * Clicking the "Create pull request" button will create the pull request
 
-* Assign the milestone for the pull request to the current sprint 
-
-* Choose an appropriate label for this pull request, for example: ticket or bug
+* Reference the git issue in the comments (paste a link to the issue - TBC?)
 
 * Ensure that the code has built and tested correctly, this can be seen by a message on the bottom of the PR. Note that any increase in checkstyle issues will result in a failed build. If you believe these to be unavoidable discuss with the reviewer.
 
