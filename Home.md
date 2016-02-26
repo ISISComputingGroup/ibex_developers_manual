@@ -66,9 +66,3 @@
 [Useful Git Commands](Git Commands)
 
 [Adding new modules](Adding new modules)
-
-## Design Documents ##
-
-[Script Server Back End Design Document](Script Server Back End Design Document)
-
-[Script Server Front End Design Document](Script Server Front End Design Document)
