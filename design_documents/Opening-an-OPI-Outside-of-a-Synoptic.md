@@ -5,6 +5,7 @@
 We need to settle on a good name for this. Current ideas are:
 * Component Viewer
 * Components
+* Devices
 * Beam/SE Devices
 * Beam/SE Components
 * Target View
