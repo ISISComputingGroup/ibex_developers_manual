@@ -64,4 +64,4 @@ into account.
 
 ## Synoptic changes
 
-Changes should be made once this is complete to use the component targets within the synoptics. This should not be done until the component targets editor and BlockServer changes are completed and well tested. When implementing the changes this should be taken into account though, to make sure synoptics can easily make use of a component target.
+Changes should be made once this is complete to use the component targets within the synoptics. This should not be done until the component views editor and BlockServer changes are completed and well tested. When implementing the changes this should be taken into account though, to make sure synoptics can easily make use of a component target.
