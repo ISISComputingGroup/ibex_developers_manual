@@ -6,7 +6,7 @@
 
 [Architectural Design](High-Level-Architectural-Design)
 
-[Design Documents](Proposed Design Documents)
+[Proposed Design Documents](Design Documents)
 
 ## The GUI ##
 
