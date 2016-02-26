@@ -12,7 +12,9 @@ We need to settle on a good name for this. Current ideas are:
 
 ## GUI Design
 
-The figure below shows a layout for the GUI. This is designed as a first attempt layout, to be similar to the existing synoptic view and hence straightforward to implement. We need to consider how best to open up multiple OPIs on one screen, but this does not necessarily need to exist in the first iteration. 
+The figure below shows a layout for the GUI. This is designed as a first attempt layout, to be similar to the existing synoptic view and hence straightforward to implement. We need to consider how best to open up multiple OPIs on one screen, but this does not necessarily need to exist in the first iteration.
+
+![OPI View](design_documents/images/Opening-an-OPI-Outside-of-a-Synoptic/IBEX_UI_New_OPI_View.png)
 
 Note that the 'Edit List' dialogue will look different with the changes for automatically setting defaults and the new way of setting properties.
 
