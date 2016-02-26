@@ -42,7 +42,7 @@ The component targets are currently stored in the synoptics, for example as:
 </target>
 ```
 
-We should be able to use this structure directly. A schema for the component views will be required, which can just be a subset of what is currently in the synoptics:
+We should be able to re-use this structure directly. A schema for the component views will be required, which can just be a subset of what is currently in the synoptics:
 
 ```xml
 <complexType name="target">
