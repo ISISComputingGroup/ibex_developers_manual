@@ -1,3 +1,5 @@
+> [Wiki](Home) ▸ [[Design Documents]] ▸ **Opening an OPI Outside of a Synoptic**
+
 ## Names
 
 We need to settle on a good name for this. Current ideas are:
