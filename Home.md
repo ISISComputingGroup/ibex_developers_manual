@@ -5,6 +5,7 @@
 ## Project Overview ##
 
 [Architectural Design](High-Level-Architectural-Design)
+
 [Design Documents](Proposed Design Documents)
 
 ## The GUI ##
