@@ -1,12 +1,24 @@
+## Names
+
+We need to settle on a good name for this. Current ideas are:
+* Component Viewer
+* Components
+* Beam/SE Devices
+* Beam/SE Components
+* Target View
+* Component Targets
+* Target View
+* OPIs (technical term, not really suitable)
+
 ## GUI Design
 
-The figure below shows a layout for the GUI. This is designed as a first attempt layout, to be similar to the existing synoptic view and hence easy to implement. We need to consider how best to open up multiple OPIs on one screen, but this does not necessarily need to exist in the first iteration. 
+The figure below shows a layout for the GUI. This is designed as a first attempt layout, to be similar to the existing synoptic view and hence straightforward to implement. We need to consider how best to open up multiple OPIs on one screen, but this does not necessarily need to exist in the first iteration. 
 
 Note that the 'Edit List' dialogue will look different with the changes for automatically setting defaults and the new way of setting properties.
 
 ## BlockServer Storage
 
-The BlockServer will be responsible for saving a list of 'Component Targets'*. It is proposed that each of these are stored as a separate XML file in the folder: `NDXXXXX/configurations/component_targets`.
+The BlockServer will be responsible for saving a list of 'Component Views'. It is proposed that each of these are stored as a separate XML file in the folder: `NDXXXXX/configurations/component_views`.
 
 The component targets are currently stored in the synoptics, for example as:
 ```xml
@@ -26,7 +38,7 @@ The component targets are currently stored in the synoptics, for example as:
 </target>
 ```
 
-We should be able to use this structure directly. A schema for the component targets will be required, which can just be a subset of what is currently in the synoptics, which is:
+We should be able to use this structure directly. A schema for the component views will be required, which can just be a subset of what is currently in the synoptics:
 
 ```xml
 <complexType name="target">
@@ -43,7 +55,9 @@ We should be able to use this structure directly. A schema for the component tar
 
 ```
 
-The component targets will be served up in the same way as the synoptics, JSON over Channel Access. Note the way PVs are named needs to take [#1053](https://github.com/ISISComputingGroup/IBEX/issues/1053)
+The component views will be served up in the same way as the synoptics, JSON over Channel Access. Note the way PVs are named needs to take [#1053](https://github.com/ISISComputingGroup/IBEX/issues/1053)
 into account.
 
-(*) This name is not great. What else can we use? We should probably avoid 'OPI', as it more of a technical term. Component Screen, Component View, Target Screen, Target View... there must be something better!
+## Synoptic changes
+
+Changes should be made once this is complete to use the component targets within the synoptics. This should not be done until the component targets editor and BlockServer changes are completed and well tested. When implementing the changes this should be taken into account though, to make sure synoptics can easily make use of a component target.
