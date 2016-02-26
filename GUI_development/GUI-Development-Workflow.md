@@ -9,7 +9,7 @@
     * Please follow commenting guidelines below
 1. **Create a pull request (developer)**
     * Reference the git issue in the comments, for example:
-    ```ISISComputingGroup/IBEX/issues/1016```
+    
 1. **Review (reviewer)**
     * Add a comment to say you are reviewing it
     * Check that the pull request has been built by Jenkins with no errors
