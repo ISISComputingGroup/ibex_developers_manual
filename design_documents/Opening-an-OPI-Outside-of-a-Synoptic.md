@@ -58,6 +58,26 @@ We should be able to re-use this structure directly. A schema for the component 
     </sequence>
 </complexType>
 
+<simpleType name="targettype">
+    <restriction base="string">
+        <enumeration value="COMPONENT"></enumeration>
+        <enumeration value="OPI"></enumeration>
+    </restriction>
+</simpleType>
+
+<complexType name="targetproperty">
+    <sequence>
+        <element name="key" type="string"></element>
+        <element name="value" type="string"></element>
+    </sequence>
+</complexType>
+
+<complexType name="targetproperties">
+    <sequence>
+        <element name="property" type="tns:targetproperty" maxOccurs="unbounded" minOccurs="0"></element>
+    </sequence>
+</complexType>
+
 ```
 
 The component views will be served up in the same way as the synoptics, JSON over Channel Access. Note the way PVs are named needs to take [#1053](https://github.com/ISISComputingGroup/IBEX/issues/1053)
