@@ -42,7 +42,8 @@
 
 ### Eclipse
 
-[Common Eclipse Issues](Common-Eclipse-Tasks)
+[Common Eclipse Tasks](Common-Eclipse-Tasks)
+[Common Eclipse Issues](Common Eclipse Issues)
 
 ## The Server ##
 
