@@ -8,8 +8,10 @@ The type XXXXXXX cannot be resolved. It is indirectly referenced from required .
 -------------------------------------------------------------------------------------------
 Possible solutions:
 
+* Check the error message: you may need to add a dependency to the plugin that contains XXXXXXX.
 * Delete the complaining plugin from the workspace and then re-import it.
 * Remove JRE System Library from the complaining plug-in's Java Build Path then re-add it.
+
 
 Product XXXXXXXXXXX.product could not be found
 ----------------------------------------------
