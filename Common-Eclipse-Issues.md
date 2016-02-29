@@ -13,8 +13,7 @@ Possible solutions:
 
 Typically is followed by a lot of errors relating to bundle resolution, for example:
 
-.. code::
-
+```
     !MESSAGE Product uk.ac.stfc.isis.ibex.product.product could not be found.
 
     !ENTRY org.eclipse.osgi 2 0 2015-09-16 15:25:45.343
@@ -45,6 +44,7 @@ Typically is followed by a lot of errors relating to bundle resolution, for exam
     !MESSAGE Bundle uk.ac.stfc.isis.ibex.ui.perspectives_1.0.0.qualifier [465] was not resolved.
     !SUBENTRY 2 uk.ac.stfc.isis.ibex.ui.perspectives 2 0 2015-09-16 15:25:45.393
     !MESSAGE Missing required bundle uk.ac.stfc.isis.ibex.ui.statusbar_1.0.0.
+```
 
 From this example it seems to be related to uk.ac.stfc.isis.ibex.ui.statusbar as that appears multiple times.
 
