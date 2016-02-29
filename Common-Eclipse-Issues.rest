@@ -1,7 +1,3 @@
-=====================
-Common Eclipse Issues
-=====================
-
 Sometimes the error messages that Eclipse gives are a little opaque, so here are some possible solutions for some of the more common issues.
 
 The type XXXXXXX cannot be resolved. It is indirectly referenced from required .class files
