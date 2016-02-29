@@ -1,7 +1,7 @@
 Sometimes the error messages that Eclipse gives are a little opaque, so here are some possible solutions for some of the more common issues.
 
-The type XXXXXXX cannot be resolved. It is indirectly referenced from required .class files
--------------------------------------------------------------------------------------------
+### The type XXXXXXX cannot be resolved. It is indirectly referenced from required .class files ###
+
 Possible solutions:
 
 * Check the error message: you may need to add a dependency to the plugin that contains XXXXXXX.
@@ -9,8 +9,7 @@ Possible solutions:
 * Remove JRE System Library from the complaining plug-in's Java Build Path then re-add it.
 
 
-Product XXXXXXXXXXX.product could not be found
-----------------------------------------------
+### Product XXXXXXXXXXX.product could not be found ###
 
 Typically is followed by a lot of errors relating to bundle resolution, for example:
 
@@ -53,14 +52,16 @@ Possible solution:
 
 * Check the offending plug-in has been added to one of the feature projects as a plug-in
 
-New plugin is not available (and possibly crashing existing plugins)
---------------------------------------------------------------------
+### New plugin is not available (and possibly crashing existing plugins) ###
 
 This might be difficult to find as an error, and it may not exist for other developers - even on the same branch!
 Adding the plugin directly to your configuration solves this.
 
-I really cannot work out why the GUI won't start!
--------------------------------------------------
+### Menu items are missing ###
+
+This is usually because a dependency is missing. See "I really cannot work out why the GUI won't start!" below
+
+### I really cannot work out why the GUI won't start! ###
 
 Starting the GUI via Eclipse just doesn't seem to work and I cannot see why!
 
