@@ -2,7 +2,7 @@ Sometimes the error messages that Eclipse gives are a little opaque, so here are
 
 ### The type XXXXXXX cannot be resolved. It is indirectly referenced from required .class files ###
 
-Possible solutions:
+Possible solutions (in order of desperation):
 
 * Check the error message: you may need to add a dependency to the plugin that contains XXXXXXX. For example: if the error message is ```The type org.eclipse.ui.plugin.AbstractUIPlugin cannot be resolved. It is indirectly referenced from required .class files``` then the org.eclipse.ui plugin requires adding.
 * Delete the complaining plugin from the workspace and then re-import it.
@@ -59,7 +59,7 @@ Adding the plugin directly to your configuration solves this.
 
 ### Menu items are missing ###
 
-This is usually because a dependency is missing. See "I really cannot work out why the GUI won't start!" below
+This is usually because a dependency is missing. See "I really cannot work out why the GUI won't start!" below.
 
 ### I really cannot work out why the GUI won't start! ###
 
@@ -72,7 +72,7 @@ One useful thing to try is to use the run configuration to check all the correct
 * From the tabs select "Plug-ins" and click the "Validate Plug-ins" button
 * If it displays errors because plug-ins are missing:
 
-    * Close the dialogs and add the missing plug-ins to the feature.xml file in uk.ac.stfc.isis.ibex.feature.base or one of the features
+    * Close the dialogs and add the missing plug-ins to the feature.xml file in uk.ac.stfc.isis.ibex.feature.base or one of the other features
     * Repeat this whole process again from the beginning
     
 * If there are no errors then click the "Run" button to see if it works
