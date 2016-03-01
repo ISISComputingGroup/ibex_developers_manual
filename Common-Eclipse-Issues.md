@@ -4,7 +4,7 @@ Sometimes the error messages that Eclipse gives are a little opaque, so here are
 
 Possible solutions:
 
-* Check the error message: you may need to add a dependency to the plugin that contains XXXXXXX.
+* Check the error message: you may need to add a dependency to the plugin that contains XXXXXXX. For example: if the error message is ```The type org.eclipse.ui.plugin.AbstractUIPlugin cannot be resolved. It is indirectly referenced from required .class files``` then the org.eclipse.ui plugin requires adding.
 * Delete the complaining plugin from the workspace and then re-import it.
 * Remove JRE System Library from the complaining plug-in's Java Build Path then re-add it.
 
