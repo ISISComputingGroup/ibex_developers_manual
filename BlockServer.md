@@ -105,7 +105,7 @@ Note: This PV is currently used by the web dashboard
                     {"name": "testblock3", "local": true, "pv": "NDWXXX:xxxx:EUROTHERM1:RBV", "component": null, "visible": true, "log_periodic": false, "log_rate": 0, "log_deadband": 1.0}
                    ],
           "components":
-                       [{"name": "sub1"}],
+                       [{"name": "comp1"}],
           "groups":
                    [{"blocks": ["testblock1"], "name": "Group1", "component": null},
                     {"blocks": ["testblock2"], "name": "Group2", "component": null},
@@ -130,7 +130,7 @@ Note: This PV is currently used by the web dashboard
                     {"name": "testblock3", "local": true, "pv": "NDWXXX:xxxx:EUROTHERM1:RBV", "component": null, "visible": true, "log_periodic": false, "log_rate": 0, "log_deadband": 1.0}
                    ],
           "components":
-                       [{"name": "sub1"}],
+                       [{"name": "comp1"}],
           "groups":
                    [{"blocks": ["testblock1"], "name": "Group1", "component": null},
                     {"blocks": ["testblock2"], "name": "Group2", "component": null},
@@ -283,7 +283,7 @@ Note: Used by the client(s) for "save" and "save as" for the current active conf
                     {"name": "testblock3", "local": true, "pv": "NDWXXX:xxxx:EUROTHERM1:RBV", "component": null, "visible": true, "log_periodic": false, "log_rate": 0, "log_deadband": 1.0}
                    ],
           "components":
-                       [{"name": "sub1"}],
+                       [{"name": "comp1"}],
           "groups":
                    [{"blocks": ["testblock1"], "name": "Group1", "component": null},
                     {"blocks": ["testblock2"], "name": "Group2", "component": null},
@@ -311,7 +311,7 @@ Note: Used by the client(s) for "save" and "save as" for the current active conf
                     {"name": "testblock3", "local": true, "pv": "NDWXXX:xxxx:EUROTHERM1:RBV", "component": null, "visible": true, "log_periodic": false, "log_rate": 0, "log_deadband": 1.0}
 				   ],
 		  "components":
-					   [{"name": "sub1"}],
+					   [{"name": "comp1"}],
 		  "groups":
 				   [{"blocks": ["testblock1"], "name": "Group1", "component": null},
 					{"blocks": ["testblock2"], "name": "Group2", "component": null},
