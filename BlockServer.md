@@ -1,6 +1,6 @@
 The BlockServer is **responsible** for:
 
- Creating blocks
+* Creating blocks
 * Creating groups
 * Loading and saving configurations
 
@@ -58,9 +58,9 @@ Note: This PV is currently used by the web dashboard
     Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:GROUPS
     Returns the groups and their blocks as a compressed then hexed JSON list of dictionaries (CHAR waveform).
     Example JSON (dehexed and decompressed):
-        '[{"blocks": ["testblock1", "testblock2"], "name": "Example group", "subconfig": null},
-          {"blocks": ["testblock3", "testblock4"], "name": "Different group", "subconfig": null},
-          {"blocks": [], "name": "NONE", "subconfig": null}
+        '[{"blocks": ["testblock1", "testblock2"], "name": "Example group", "component": null},
+          {"blocks": ["testblock3", "testblock4"], "name": "Different group", "component": null},
+          {"blocks": [], "name": "NONE", "component": null}
          ]'
 
 **BLOCKSERVER:CONFIGS**
@@ -76,9 +76,9 @@ Note: This PV is currently used by the web dashboard
 
     Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:COMPS
     Returns a list of the components available, including descriptions and the pv associated with the configuration, as compressed then hexed JSON (CHAR waveform)
-		'[{"name": "Test Subconfig", "description": "A test component", "pv": "TEST_SUBCONFIG"}
-		  {"name": "Another Subconfig", "description": "To test again", "pv": "ANOTHER_SUBCONFIG"}
-		  {"name": "TeSt SuBCoNfIg", "description": "This component has the same name", "pv": "TEST_SUBCONFIG1"}]'
+		'[{"name": "Test component", "description": "A test component", "pv": "TEST_COMP"}
+		  {"name": "Another component", "description": "To test again", "pv": "ANOTHER_COMP"}
+		  {"name": "TeSt ComPonent", "description": "This component has the same name", "pv": "TEST_COMP1"}]'
 
 **BLOCKSERVER:GET_RC_OUT**
 
@@ -96,20 +96,20 @@ Note: This PV is currently used by the web dashboard
     Returns a compressed and hexed JSON dictionary describing the current configuration or component.
     Example JSON (dehexed and decompressed):
         '{"iocs":
-                 [{"simlevel": "None", "autostart": true, "restart": false, "pvsets": [{"name": "SET", "enabled": "true"}], "pvs": [], "macros": [], "name": "SIMPLE1", "subconfig": null},
-                  {"simlevel": "devsim", "autostart": true, "restart": false, "pvsets": [{"name": "SET", "enabled": "true"}], "pvs": [], "macros": [], "name": "SIMPLE2", "subconfig": null}
+                 [{"simlevel": "None", "autostart": true, "restart": false, "pvsets": [{"name": "SET", "enabled": "true"}], "pvs": [], "macros": [], "name": "SIMPLE1", "component": null},
+                  {"simlevel": "devsim", "autostart": true, "restart": false, "pvsets": [{"name": "SET", "enabled": "true"}], "pvs": [], "macros": [], "name": "SIMPLE2", "component": null}
                  ],
           "blocks":
-                   [{"name": "testblock1", "local": true, "pv": "NDWXXX:xxxx:SIMPLE:VALUE1", "subconfig": null, "visible": true, "log_periodic": true, "log_rate": 10, "log_deadband": 0},
-                    {"name": "testblock2", "local": true, "pv": "NDWXXX:xxxx:SIMPLE:VALUE1", "subconfig": null, "visible": true, "log_periodic": true, "log_rate": 5, "log_deadband": 0},
-                    {"name": "testblock3", "local": true, "pv": "NDWXXX:xxxx:EUROTHERM1:RBV", "subconfig": null, "visible": true, "log_periodic": false, "log_rate": 0, "log_deadband": 1.0}
+                   [{"name": "testblock1", "local": true, "pv": "NDWXXX:xxxx:SIMPLE:VALUE1", "component": null, "visible": true, "log_periodic": true, "log_rate": 10, "log_deadband": 0},
+                    {"name": "testblock2", "local": true, "pv": "NDWXXX:xxxx:SIMPLE:VALUE1", "component": null, "visible": true, "log_periodic": true, "log_rate": 5, "log_deadband": 0},
+                    {"name": "testblock3", "local": true, "pv": "NDWXXX:xxxx:EUROTHERM1:RBV", "component": null, "visible": true, "log_periodic": false, "log_rate": 0, "log_deadband": 1.0}
                    ],
           "components":
                        [{"name": "sub1"}],
           "groups":
-                   [{"blocks": ["testblock1"], "name": "Group1", "subconfig": null},
-                    {"blocks": ["testblock2"], "name": "Group2", "subconfig": null},
-                    {"blocks": ["testblock3"], "name": "NONE", "subconfig": null}],
+                   [{"blocks": ["testblock1"], "name": "Group1", "component": null},
+                    {"blocks": ["testblock2"], "name": "Group2", "component": null},
+                    {"blocks": ["testblock3"], "name": "NONE", "component": null}],
           "name": "TESTCONFIG1",
 		  "description": "A test configuration",
 		  "history": ["2015-02-16"]
@@ -121,20 +121,20 @@ Note: This PV is currently used by the web dashboard
 	Returns a compressed and hexed JSON dictionary describing the configuration with the pv *config_pv*. (To find config pvs use the CONFIGS command)
 	Example JSON (dehexed and decompressed):
         '{"iocs":
-                 [{"simlevel": "None", "autostart": true, "restart": false, "pvsets": [{"name": "SET", "enabled": "true"}], "pvs": [], "macros": [], "name": "SIMPLE1", "subconfig": null},
-                  {"simlevel": "devsim", "autostart": true, "restart": false, "pvsets": [{"name": "SET", "enabled": "true"}], "pvs": [], "macros": [], "name": "SIMPLE2", "subconfig": null}
+                 [{"simlevel": "None", "autostart": true, "restart": false, "pvsets": [{"name": "SET", "enabled": "true"}], "pvs": [], "macros": [], "name": "SIMPLE1", "component": null},
+                  {"simlevel": "devsim", "autostart": true, "restart": false, "pvsets": [{"name": "SET", "enabled": "true"}], "pvs": [], "macros": [], "name": "SIMPLE2", "component": null}
                  ],
           "blocks":
-                   [{"name": "testblock1", "local": true, "pv": "NDWXXX:xxxx:SIMPLE:VALUE1", "subconfig": null, "visible": true, "log_periodic": true, "log_rate": 10, "log_deadband": 0},
-                    {"name": "testblock2", "local": true, "pv": "NDWXXX:xxxx:SIMPLE:VALUE1", "subconfig": null, "visible": true, "log_periodic": true, "log_rate": 5, "log_deadband": 0},
-                    {"name": "testblock3", "local": true, "pv": "NDWXXX:xxxx:EUROTHERM1:RBV", "subconfig": null, "visible": true, "log_periodic": false, "log_rate": 0, "log_deadband": 1.0}
+                   [{"name": "testblock1", "local": true, "pv": "NDWXXX:xxxx:SIMPLE:VALUE1", "component": null, "visible": true, "log_periodic": true, "log_rate": 10, "log_deadband": 0},
+                    {"name": "testblock2", "local": true, "pv": "NDWXXX:xxxx:SIMPLE:VALUE1", "component": null, "visible": true, "log_periodic": true, "log_rate": 5, "log_deadband": 0},
+                    {"name": "testblock3", "local": true, "pv": "NDWXXX:xxxx:EUROTHERM1:RBV", "component": null, "visible": true, "log_periodic": false, "log_rate": 0, "log_deadband": 1.0}
                    ],
           "components":
                        [{"name": "sub1"}],
           "groups":
-                   [{"blocks": ["testblock1"], "name": "Group1", "subconfig": null},
-                    {"blocks": ["testblock2"], "name": "Group2", "subconfig": null},
-                    {"blocks": ["testblock3"], "name": "NONE", "subconfig": null}],
+                   [{"blocks": ["testblock1"], "name": "Group1", "component": null},
+                    {"blocks": ["testblock2"], "name": "Group2", "component": null},
+                    {"blocks": ["testblock3"], "name": "NONE", "component": null}],
           "name": "TESTCONFIG1",
 		  "description": "A test configuration",
 		  "history": ["2015-02-16"]
@@ -146,19 +146,19 @@ Note: This PV is currently used by the web dashboard
 	Returns a compressed and hexed JSON dictionary describing the component with the pv *component_pv*. (To find component pvs use the COMPS command)
  	Example JSON (dehexed and decompressed):
         '{"iocs":
-                 [{"simlevel": "None", "autostart": true, "restart": false, "pvsets": [{"name": "SET", "enabled": "true"}], "pvs": [], "macros": [], "name": "SIMPLE1", "subconfig": null},
-                  {"simlevel": "devsim", "autostart": true, "restart": false, "pvsets": [{"name": "SET", "enabled": "true"}], "pvs": [], "macros": [], "name": "SIMPLE2", "subconfig": null}
+                 [{"simlevel": "None", "autostart": true, "restart": false, "pvsets": [{"name": "SET", "enabled": "true"}], "pvs": [], "macros": [], "name": "SIMPLE1", "component": null},
+                  {"simlevel": "devsim", "autostart": true, "restart": false, "pvsets": [{"name": "SET", "enabled": "true"}], "pvs": [], "macros": [], "name": "SIMPLE2", "component": null}
                  ],
           "blocks":
-                   [{"name": "testblock1", "local": true, "pv": "NDWXXX:xxxx:SIMPLE:VALUE1", "subconfig": null, "visible": true, "log_periodic": true, "log_rate": 10, "log_deadband": 0},
-                    {"name": "testblock2", "local": true, "pv": "NDWXXX:xxxx:SIMPLE:VALUE1", "subconfig": null, "visible": true, "log_periodic": true, "log_rate": 5, "log_deadband": 0},
-                    {"name": "testblock3", "local": true, "pv": "NDWXXX:xxxx:EUROTHERM1:RBV", "subconfig": null, "visible": true, "log_periodic": false, "log_rate": 0, "log_deadband": 1.0}
+                   [{"name": "testblock1", "local": true, "pv": "NDWXXX:xxxx:SIMPLE:VALUE1", "component": null, "visible": true, "log_periodic": true, "log_rate": 10, "log_deadband": 0},
+                    {"name": "testblock2", "local": true, "pv": "NDWXXX:xxxx:SIMPLE:VALUE1", "component": null, "visible": true, "log_periodic": true, "log_rate": 5, "log_deadband": 0},
+                    {"name": "testblock3", "local": true, "pv": "NDWXXX:xxxx:EUROTHERM1:RBV", "component": null, "visible": true, "log_periodic": false, "log_rate": 0, "log_deadband": 1.0}
                    ],
           "components": [],
           "groups":
-                   [{"blocks": ["testblock1"], "name": "Group1", "subconfig": null},
-                    {"blocks": ["testblock2"], "name": "Group2", "subconfig": null},
-                    {"blocks": ["testblock3"], "name": "NONE", "subconfig": null}],
+                   [{"blocks": ["testblock1"], "name": "Group1", "component": null},
+                    {"blocks": ["testblock2"], "name": "Group2", "component": null},
+                    {"blocks": ["testblock3"], "name": "NONE", "component": null}],
           "name": "TESTCOMP1",
 		  "description": "A test component",
 		  "history": ["2015-02-16"]
@@ -274,20 +274,20 @@ Note: Used by the client(s) for "save" and "save as" for the current active conf
     Sets the current configuration to the setting specified. Requires compressed and hexed JSON dictionary.
     Example JSON (dehexed and decompressed):
         '{"iocs":
-                 [{"simlevel": "None", "autostart": true, "restart": false, "pvsets": [{"name": "SET", "enabled": "true"}], "pvs": [], "macros": [], "name": "SIMPLE1", "subconfig": null},
-                  {"simlevel": "recsim", "autostart": true, "restart": false, "pvsets": [{"name": "SET", "enabled": "true"}], "pvs": [], "macros": [], "name": "SIMPLE2", "subconfig": null}
+                 [{"simlevel": "None", "autostart": true, "restart": false, "pvsets": [{"name": "SET", "enabled": "true"}], "pvs": [], "macros": [], "name": "SIMPLE1", "component": null},
+                  {"simlevel": "recsim", "autostart": true, "restart": false, "pvsets": [{"name": "SET", "enabled": "true"}], "pvs": [], "macros": [], "name": "SIMPLE2", "component": null}
                  ],
           "blocks":
-                   [{"name": "testblock1", "local": true, "pv": "NDWXXX:xxxx:SIMPLE:VALUE1", "subconfig": null, "visible": true, "log_periodic": true, "log_rate": 10, "log_deadband": 0},
-                    {"name": "testblock2", "local": true, "pv": "NDWXXX:xxxx:SIMPLE:VALUE1", "subconfig": null, "visible": true, "log_periodic": true, "log_rate": 5, "log_deadband": 0},
-                    {"name": "testblock3", "local": true, "pv": "NDWXXX:xxxx:EUROTHERM1:RBV", "subconfig": null, "visible": true, "log_periodic": false, "log_rate": 0, "log_deadband": 1.0}
+                   [{"name": "testblock1", "local": true, "pv": "NDWXXX:xxxx:SIMPLE:VALUE1", "component": null, "visible": true, "log_periodic": true, "log_rate": 10, "log_deadband": 0},
+                    {"name": "testblock2", "local": true, "pv": "NDWXXX:xxxx:SIMPLE:VALUE1", "component": null, "visible": true, "log_periodic": true, "log_rate": 5, "log_deadband": 0},
+                    {"name": "testblock3", "local": true, "pv": "NDWXXX:xxxx:EUROTHERM1:RBV", "component": null, "visible": true, "log_periodic": false, "log_rate": 0, "log_deadband": 1.0}
                    ],
           "components":
                        [{"name": "sub1"}],
           "groups":
-                   [{"blocks": ["testblock1"], "name": "Group1", "subconfig": null},
-                    {"blocks": ["testblock2"], "name": "Group2", "subconfig": null},
-                    {"blocks": ["testblock3"], "name": "NONE", "subconfig": null}],
+                   [{"blocks": ["testblock1"], "name": "Group1", "component": null},
+                    {"blocks": ["testblock2"], "name": "Group2", "component": null},
+                    {"blocks": ["testblock3"], "name": "NONE", "component": null}],
           "name": "TESTCONFIG1",
 		  "description": "A test configuration",
 		  "history": ["2015-02-16"]
@@ -302,20 +302,20 @@ Note: Used by the client(s) for "save" and "save as" for the current active conf
 	
 	Example JSON (dehexed and decompressed):
 		'{"iocs":
-				 [{"simlevel": "None", "autostart": true, "restart": false, "pvsets": [{"name": "SET", "enabled": "true"}], "pvs": [], "macros": [], "name": "SIMPLE1", "subconfig": null},
-				  {"simlevel": "recsim", "autostart": true, "restart": false, "pvsets": [{"name": "SET", "enabled": "true"}], "pvs": [], "macros": [], "name": "SIMPLE2", "subconfig": null}
+				 [{"simlevel": "None", "autostart": true, "restart": false, "pvsets": [{"name": "SET", "enabled": "true"}], "pvs": [], "macros": [], "name": "SIMPLE1", "component": null},
+				  {"simlevel": "recsim", "autostart": true, "restart": false, "pvsets": [{"name": "SET", "enabled": "true"}], "pvs": [], "macros": [], "name": "SIMPLE2", "component": null}
 				 ],
 		  "blocks":
-                   [{"name": "testblock1", "local": true, "pv": "NDWXXX:xxxx:SIMPLE:VALUE1", "subconfig": null, "visible": true, "log_periodic": true, "log_rate": 10, "log_deadband": 0},
-                    {"name": "testblock2", "local": true, "pv": "NDWXXX:xxxx:SIMPLE:VALUE1", "subconfig": null, "visible": true, "log_periodic": true, "log_rate": 5, "log_deadband": 0},
-                    {"name": "testblock3", "local": true, "pv": "NDWXXX:xxxx:EUROTHERM1:RBV", "subconfig": null, "visible": true, "log_periodic": false, "log_rate": 0, "log_deadband": 1.0}
+                   [{"name": "testblock1", "local": true, "pv": "NDWXXX:xxxx:SIMPLE:VALUE1", "component": null, "visible": true, "log_periodic": true, "log_rate": 10, "log_deadband": 0},
+                    {"name": "testblock2", "local": true, "pv": "NDWXXX:xxxx:SIMPLE:VALUE1", "component": null, "visible": true, "log_periodic": true, "log_rate": 5, "log_deadband": 0},
+                    {"name": "testblock3", "local": true, "pv": "NDWXXX:xxxx:EUROTHERM1:RBV", "component": null, "visible": true, "log_periodic": false, "log_rate": 0, "log_deadband": 1.0}
 				   ],
 		  "components":
 					   [{"name": "sub1"}],
 		  "groups":
-				   [{"blocks": ["testblock1"], "name": "Group1", "subconfig": null},
-					{"blocks": ["testblock2"], "name": "Group2", "subconfig": null},
-					{"blocks": ["testblock3"], "name": "NONE", "subconfig": null}],
+				   [{"blocks": ["testblock1"], "name": "Group1", "component": null},
+					{"blocks": ["testblock2"], "name": "Group2", "component": null},
+					{"blocks": ["testblock3"], "name": "NONE", "component": null}],
 		  "name": "TESTCONFIG1",
 		  "description": "A test configuration",
 		  "history": ["2015-02-16"]
@@ -330,18 +330,18 @@ Note: Used by the client(s) for "save" and "save as" for the current active conf
 	
 	Example JSON (dehexed and decompressed):
 		'{"iocs":
-				 [{"simlevel": "None", "autostart": true, "restart": false, "pvsets": [{"name": "SET", "enabled": "true"}], "pvs": [], "macros": [], "name": "SIMPLE1", "subconfig": null},
-				  {"simlevel": "recsim", "autostart": true, "restart": false, "pvsets": [{"name": "SET", "enabled": "true"}], "pvs": [], "macros": [], "name": "SIMPLE2", "subconfig": null}
+				 [{"simlevel": "None", "autostart": true, "restart": false, "pvsets": [{"name": "SET", "enabled": "true"}], "pvs": [], "macros": [], "name": "SIMPLE1", "component": null},
+				  {"simlevel": "recsim", "autostart": true, "restart": false, "pvsets": [{"name": "SET", "enabled": "true"}], "pvs": [], "macros": [], "name": "SIMPLE2", "component": null}
 				 ],
 		  "blocks":
-                   [{"name": "testblock1", "local": true, "pv": "NDWXXX:xxxx:SIMPLE:VALUE1", "subconfig": null, "visible": true, "log_periodic": true, "log_rate": 10, "log_deadband": 0},
-                    {"name": "testblock2", "local": true, "pv": "NDWXXX:xxxx:SIMPLE:VALUE1", "subconfig": null, "visible": true, "log_periodic": true, "log_rate": 5, "log_deadband": 0},
-                    {"name": "testblock3", "local": true, "pv": "NDWXXX:xxxx:EUROTHERM1:RBV", "subconfig": null, "visible": true, "log_periodic": false, "log_rate": 0, "log_deadband": 1.0}
+                   [{"name": "testblock1", "local": true, "pv": "NDWXXX:xxxx:SIMPLE:VALUE1", "component": null, "visible": true, "log_periodic": true, "log_rate": 10, "log_deadband": 0},
+                    {"name": "testblock2", "local": true, "pv": "NDWXXX:xxxx:SIMPLE:VALUE1", "component": null, "visible": true, "log_periodic": true, "log_rate": 5, "log_deadband": 0},
+                    {"name": "testblock3", "local": true, "pv": "NDWXXX:xxxx:EUROTHERM1:RBV", "component": null, "visible": true, "log_periodic": false, "log_rate": 0, "log_deadband": 1.0}
 				   ],
 		  "groups":
-				   [{"blocks": ["testblock1"], "name": "Group1", "subconfig": null},
-					{"blocks": ["testblock2"], "name": "Group2", "subconfig": null},
-					{"blocks": ["testblock3"], "name": "NONE", "subconfig": null}],
+				   [{"blocks": ["testblock1"], "name": "Group1", "component": null},
+					{"blocks": ["testblock2"], "name": "Group2", "component": null},
+					{"blocks": ["testblock3"], "name": "NONE", "component": null}],
           "components": [],
 		  "name": "TESTCOMP1",
 		  "description": "A test component",
