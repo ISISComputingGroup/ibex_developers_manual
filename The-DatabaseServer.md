@@ -1,4 +1,4 @@
-The DatabaseServer is a Channel Access Server (CAS) written in Python using the [PCASpy])https://code.google.com/p/pcaspy/) module.
+The DatabaseServer is a Channel Access Server (CAS) written in Python using the [PCASpy](https://code.google.com/p/pcaspy/) module.
 
 The DatabaseServer serves the following information from the instrument database:
 
