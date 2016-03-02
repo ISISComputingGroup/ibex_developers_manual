@@ -14,7 +14,7 @@ The names of the beamline and sample parameter PVs are read from a database.
 
 ### Read Commands ###
 
-** BLOCKSERVER:IOCS **
+**BLOCKSERVER:IOCS**
 
 ```
     Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:IOCS
@@ -40,7 +40,7 @@ The names of the beamline and sample parameter PVs are read from a database.
          }'
 ```
 
-** BLOCKSERVER:IOCS_NOT_TO_STOP **
+**BLOCKSERVER:IOCS_NOT_TO_STOP**
 
 ```
     Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:IOCS_NOT_TO_STOP
@@ -51,7 +51,7 @@ The names of the beamline and sample parameter PVs are read from a database.
          ]'
 ```
 
-** BLOCKSERVER:SAMPLE_PARS **
+**BLOCKSERVER:SAMPLE_PARS**
 
 ```
     Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:SAMPLE_PARS
@@ -63,7 +63,7 @@ The names of the beamline and sample parameter PVs are read from a database.
          ]'
 ```
 
-** BLOCKSERVER:BEAMLINE_PARS **
+**BLOCKSERVER:BEAMLINE_PARS**
 
 ```
     Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:BEAMLINE_PARS
@@ -75,7 +75,7 @@ The names of the beamline and sample parameter PVs are read from a database.
          ]'
 ```
 
-** BLOCKSERVER:PVS:INTEREST:HIGH **
+**BLOCKSERVER:PVS:INTEREST:HIGH**
 
 ```
     Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:PVS:INTEREST:HIGH
@@ -88,7 +88,7 @@ The names of the beamline and sample parameter PVs are read from a database.
          ]'
 ```
 
-** BLOCKSERVER:PVS:INTEREST:MEDIUM **
+**BLOCKSERVER:PVS:INTEREST:MEDIUM**
 
 ```
     Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:PVS:INTEREST:MEDIUM
@@ -101,7 +101,7 @@ The names of the beamline and sample parameter PVs are read from a database.
          ]'
 ```
 
-** BLOCKSERVER:PVS:ACTIVE **
+**BLOCKSERVER:PVS:ACTIVE**
 
 ```
     Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:PVS:ACTIVE
@@ -114,7 +114,7 @@ The names of the beamline and sample parameter PVs are read from a database.
          ]'
 ```
 
-** BLOCKSERVER:PVS:ALL **
+**BLOCKSERVER:PVS:ALL**
 
 ```
     Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:PVS:ALL
@@ -127,7 +127,7 @@ The names of the beamline and sample parameter PVs are read from a database.
          ]'
 ```
 
-** BLOCKSERVER:INTERESTING_PVS:*ioc*:*level* **
+**BLOCKSERVER:INTERESTING_PVS:_ioc_:_level_**
 
 ```
     Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:INTERESTING_PVS:*ioc*:*level*
