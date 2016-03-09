@@ -11,7 +11,8 @@ We need to settle on a good name for this. Current ideas are:
 * Target View
 * Component Targets
 * Target View
-* OPIs (technical term, not really suitable)
+* OPIs
+* Screens
 
 ## GUI Design
 
