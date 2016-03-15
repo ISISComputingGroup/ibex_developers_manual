@@ -22,10 +22,6 @@
 
 [The MySQL Database](The-MySQL-Database)
 
-## The Build Server
-
-[Jenkins Build Server](Jenkins-Build-Server)
-
 ## The GUI ##
 
 ### Getting Started
@@ -65,6 +61,10 @@
 [Common Eclipse Issues](Common Eclipse Issues)
 
 # Other Information #
+
+## The Build Server
+
+[Jenkins Build Server](Jenkins-Build-Server)
 
 ## Working with Git and GitHub ##
 
