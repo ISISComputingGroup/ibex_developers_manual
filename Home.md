@@ -66,7 +66,9 @@
 
 # Other Information #
 
-## Working with Git(Hub) ##
+## Working with Git and GitHub ##
+
+[Getting Started]
 
 [Git Workflow](Git-Cribs)
 
