@@ -46,7 +46,7 @@
 
 [Common Eclipse Issues](Common Eclipse Issues)
 
-## The Server ##
+## The Backend System ##
 
 ### Getting Started
 
@@ -63,6 +63,8 @@
 ## The Build Server
 
 [Jenkins Build Server](Jenkins-Build-Server)
+
+# Other Information #
 
 ## Working with Git(Hub) ##
 
