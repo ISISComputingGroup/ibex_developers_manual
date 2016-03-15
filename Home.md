@@ -62,9 +62,9 @@
 
 [Common Eclipse Issues](Common Eclipse Issues)
 
-# genie_python #
+## genie_python ##
 
-[Building genie_python]()
+[Building genie_python](Building-genie_python)
 
 # Other Information #
 
