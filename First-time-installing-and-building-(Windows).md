@@ -63,5 +63,28 @@ If mysql-connector-python fails, download it from ​[here](http://dev.mysql.com
 In `Instrument\Apps\EPICS\CSS\master` run `setup_css.bat`
 this will create directories for the archive engine. in `.\css-win.x86_64`
 
+### Setting up a configurations directory
 
+* Create the following folder structure: `C:\Instrument\Settings\config`
 
+* Navigate to the config folder
+
+* Via a git client clone the repository from 'http://spudulike@control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/inst.git' to a directory with your machine name, like so:
+```
+git clone http://control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/inst.git NDWXXX
+```
+* Confirm that you now have the config file structure in place (components, configurations and synoptics directories)
+
+* Create a branch from master with an identifiable name (e.g. name or fed-id):
+```
+cd NDWXXX/
+git checkout -b myfedid
+```
+Any configs created through IBEX will now be stored on this branch
+
+* It is possible to access the configurations of another developer or of an instrument by fetching the correct branch and switching to it, like so:
+```
+git fetch
+git checkout NDXALF
+```
+Note: The developer branch has been created to store useful configurations that may be shared amongst all developers.
