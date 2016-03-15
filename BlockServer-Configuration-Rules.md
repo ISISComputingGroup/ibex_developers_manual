@@ -6,7 +6,7 @@ A record of the rules for the various parts of a configuration.
 Configurations
 --------------
 
-* A configuration can be contain multiple components
+* A configuration can contain multiple components
 * A configuration cannot contain other configurations
 * A configuration can be converted to a component only if it does not contain any components
 
@@ -20,7 +20,7 @@ Blocks
 * Blocks do not know which group they are in
 * Blocks can only belong to one group
 * Blocks know which component they are in with null (None in Python) meaning they are not in a component
-* If a block appears more than once in a configuration the subsequent occurances are ignored (raise warning)
+* If a block appears more than once in a configuration the subsequent occurrences are ignored (raise warning)
 * If a block is duplicated in a component then the component instance is ignored (raise warning)
 * If a block appears in multiple component the first one read is used, the rest are ignored (raise warning)
 
@@ -44,7 +44,7 @@ Components
 * Components cannot contain other components
 * A component group cannot contain blocks that are not in that component
 * When a component is loaded as part of a configuration its IOCs are started if they are not already started
-* Components cannot be loaded on their own only as part of a configuration
+* Components cannot be loaded on their own, they can only be loaded as part of a configuration
 
 ----
 IOCs
