@@ -10,7 +10,7 @@ git config --global user.name "YOUR NAME"
 git config --global user.email "YOUR EMAIL ADDRESS"
 ```
 
-Or from TortoiseGit select "Setting->Git" and select "global" and enter your details.
+Or from TortoiseGit, select "Setting->Git" and select "global" and enter your details.
 
 * Set a default commit editor (not needed for TortoiseGit):
 
