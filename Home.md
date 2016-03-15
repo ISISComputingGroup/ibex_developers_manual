@@ -68,7 +68,7 @@
 
 [Jenkins Build Server](Jenkins-Build-Server)
 
-[Adding a Node to the Build Server] (Node-Build-Server)
+[Adding a Windows machine to Jenkins] (Adding-a-new-Windows-machine-to-Jenkins)
 
 ## Working with Git and GitHub ##
 
