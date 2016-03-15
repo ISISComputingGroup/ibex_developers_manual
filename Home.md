@@ -22,6 +22,8 @@
 
 [The MySQL Database](The-MySQL-Database)
 
+[Configurations] (Configurations)
+
 ## The GUI ##
 
 ### Getting Started
