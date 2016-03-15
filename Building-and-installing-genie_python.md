@@ -1,5 +1,7 @@
 ### Building
 
+Note: these are essentially the same steps as used by the Jenkins build server.
+
 Clone the source from https://github.com/ISISComputingGroup/genie_python.git
 
 The process for building the product is automated; it just requires the build_python.bat file in the package_builder folder to be run.
@@ -38,3 +40,9 @@ For packages that we have modified it ourselves it is just necessary to create a
 ### Installing on the instruments
 
 On the instrument connect to the shared drive (\\isis\inst$\Kits$\CompGroup\ICP\Client\genie_python) and run the genie_python_install.bat file.
+
+### Quickly deploy minor changes to instruments
+
+If changes have been made to the genie_python source (and tested!), it can be quicker just to copy the changed files onto the instrument directly rather than wait for the build server.
+The genie_python source can be found in C:\Instrument\Apps\Python\Lib\site-packages\genie_python.
+Restarting genie_python will pick up the changes.
