@@ -68,6 +68,8 @@
 
 [Jenkins Build Server](Jenkins-Build-Server)
 
+[Adding a Node to the Build Server] (Node-Build-Server)
+
 ## Working with Git and GitHub ##
 
 [Getting Started with Git] (Getting-started-with-Git-and-GitHub)
