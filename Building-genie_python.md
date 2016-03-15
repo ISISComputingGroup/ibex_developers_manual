@@ -1,3 +1,5 @@
+### Building
+
 Clone the source from https://github.com/ISISComputingGroup/genie_python.git
 
 The process for building the product is automated; it just requires the build_python.bat file in the package_builder folder to be run.
@@ -14,4 +16,25 @@ The batch file does the following:
 
 * Copies the Scripts and site-packages directories into the clean Python installation
 
-* Zips the Python installation and bundles it with the install scripts etc. and copies it to the shared kits$ drive
+* Zips the Python installation and bundles it with the install scripts etc. and copies it to the shared drive
+
+### Installing on the instruments
+
+On the instrument connect to the shared drive (\\isis\inst$\Kits$\CompGroup\ICP\Client\genie_python) and run the genie_python_install.bat file.
+
+### Creating Python packages
+
+Some of the packages we want to use do not come with an installer that is suitable for an automated build (e.g. PyQt) or are packages we have modified to meet our needs.
+For these packages we have created our own installable units as zip files. To create one of these units for a package with an unsuitable installer follow these steps:
+
+* Install the correct version of Python
+
+* Install the package using the supplied installer
+
+* In the Python directory, locate the package in Lib\\site-packages and zip it up with a name of the form name-x.x.x.zip where x.x.x is the version number of the package
+
+* Copy the zip file to the shared drive (\\\\isis\\inst$\\Kits$\\CompGroup\\ICP\\genie_python_dependencies)
+
+* Modify the build_python.bat file so it includes the new zip
+
+For packages that we have modified it ourselves it is just necessary to create an appropriately named zip file and modify build_python.bat to unzip the file to \\Lib\\site-packages.
