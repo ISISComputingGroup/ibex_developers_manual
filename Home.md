@@ -62,6 +62,10 @@
 
 [Common Eclipse Issues](Common Eclipse Issues)
 
+# genie_python #
+
+[Building genie_python]()
+
 # Other Information #
 
 ## The Build Server
