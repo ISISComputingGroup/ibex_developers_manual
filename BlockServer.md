@@ -8,7 +8,7 @@ It can also be used to:
 
 * Start and stop IOCs via ProcServ
 
-See [BlockServer Structure](Block-Server-Structure) and [BlockServer Configuration Rules](BlockServer-Configuration-Rules) for further information.
+See [BlockServer Structure](Block-Server-Structure) for further information.
 
 ------------
 What it does
