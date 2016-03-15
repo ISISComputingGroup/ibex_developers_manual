@@ -1,3 +1,3 @@
-## The Configuration Rules ##
+### The Configuration Rules ###
 
 [Configuration Rules](BlockServer-Configuration-Rules)
