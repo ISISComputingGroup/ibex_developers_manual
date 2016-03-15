@@ -1,5 +1,3 @@
-> [Wiki](Home) ▸ [[BlockServer]] ▸ **BlockServer Configuration Rules**
-
 A record of the rules for the various parts of a configuration.
 
 ## Configurations ##
