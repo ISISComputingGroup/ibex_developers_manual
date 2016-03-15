@@ -44,5 +44,6 @@ On the instrument connect to the shared drive (\\isis\inst$\Kits$\CompGroup\ICP\
 ### Quickly deploy minor changes to instruments
 
 If changes have been made to the genie_python source (and tested!), it can be quicker just to copy the changed files onto the instrument directly rather than wait for the build server.
+
 The genie_python source can be found in C:\Instrument\Apps\Python\Lib\site-packages\genie_python.
 Restarting genie_python will pick up the changes.
