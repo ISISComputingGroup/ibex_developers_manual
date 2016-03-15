@@ -68,7 +68,7 @@
 
 ## Working with Git and GitHub ##
 
-[Getting Started]
+[Getting Started] (Getting-started-with-Git-and-GitHub)
 
 [Git Workflow](Git-Cribs)
 
