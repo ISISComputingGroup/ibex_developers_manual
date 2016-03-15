@@ -64,7 +64,7 @@
 
 ## genie_python ##
 
-[Building and Installing genie_python](Building-genie_python)
+[Building and Installing genie_python](Building-and-installing-genie_python)
 
 # Other Information #
 
