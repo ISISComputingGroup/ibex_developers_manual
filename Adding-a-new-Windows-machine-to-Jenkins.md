@@ -26,4 +26,4 @@ These are instructions for adding a new Windows machine as a node to be used by 
 
 * This should launch a Java window from which, select File, Install as Windows Service
 
-[The Jenkins Website](​https://wiki.jenkins-ci.org/display/JENKINS/Step+by+step+guide+to+set+up+master+and+slave+machines)
+See the Jenkins [website](​https://wiki.jenkins-ci.org/display/JENKINS/Step+by+step+guide+to+set+up+master+and+slave+machines) for more information
