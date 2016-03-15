@@ -2,7 +2,7 @@
 Create these directories from the command line: C:\Instruments\Apps\
 
 ### Install Perl
-Download and install [Strawberry Perl ](http://strawberryperl.com/)
+Download and install [Strawberry Perl](http://strawberryperl.com/)
 
 ### Install Visual Studio 2010
 Install Visual Studio 2010 
@@ -30,7 +30,7 @@ Install [Maven](https://maven.apache.org/download.cgi) and follow the 'Windows t
 Install Git from [here](https://git-scm.com/download/win)
 
 ### Install MySQL
-Install mySQL 5.6 [here](https://dev.mysql.com/downloads/windows/installer/5.6.html)
+Install MySQL 5.6 from [here](https://dev.mysql.com/downloads/windows/installer/5.6.html)
 
 Select "server only"/"server machine" on first page of install wizard and change the data path to `c:\instrument\var\mysql` 
 
@@ -63,6 +63,5 @@ If mysql-connector-python fails, download it from ​[here](http://dev.mysql.com
 In `Instrument\Apps\EPICS\CSS\master` run `setup_css.bat`
 this will create directories for the archive engine. in `.\css-win.x86_64`
 
-### 
 
 
