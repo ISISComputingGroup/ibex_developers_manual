@@ -24,40 +24,6 @@ Notes:
 * You don't have to create branches on GitHub first, often it is more convenient to create them locally first instead (which you must do if you intend to rebase)
 * Deleting a branch on github does not delete it from you local repository clone   
 
-## Getting started with GitHub (first time only)
-
-* Register with GitHub to create an account
-* Download and install [git client for Windows] (https://git-scm.com/download/win>) or [GitHub for Windows] (https://windows.github.com/) or [Tortoise Git] (https://tortoisegit.org/)
-* Configure RAL proxy, either add the RAL proxy to C:/Users/YourName/.gitconfig
-```
-[http]
-    proxy = http://wwwcache.rl.ac.uk:8080
-
-[https]
-    proxy = https://wwwcache.rl.ac.uk:8080
-```
-or type:
-
-```
-git config --global http.proxy http://wwwcache.rl.ac.uk:8080
-git config --global https.proxy https://wwwcache.rl.ac.uk:8080
-```
-* Set you username and email address - TortoiseGit "Setting->Git" and select "global", or via the command line:
-
-```
-git config --global user.name "YOUR NAME"
-git config --global user.email "YOUR EMAIL ADDRESS"
-```
-* Set a default commit editor (not needed for TortoiseGit):
-
-```
-git config --global core.editor "start notepad++"
-```
-* Set line-handling (on Windows):
-```
-git config --global core.autocrlf true
-```        
-
 ## Cloning the repository (first time only)
 
 * From the repository page copy the "HTTPS clone URL":
