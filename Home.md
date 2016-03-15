@@ -8,6 +8,24 @@
 
 [Proposed Design Documents](Design Documents)
 
+## The Backend System ##
+
+### Getting Started
+
+[First time installing and building (Windows)](First-time-installing-and-building-(Windows))
+
+### System Components
+
+[The BlockServer](BlockServer)
+
+[The DatabaseServer](The-DatabaseServer)
+
+[The MySQL Database](The-MySQL-Database)
+
+## The Build Server
+
+[Jenkins Build Server](Jenkins-Build-Server)
+
 ## The GUI ##
 
 ### Getting Started
@@ -46,29 +64,11 @@
 
 [Common Eclipse Issues](Common Eclipse Issues)
 
-## The Backend System ##
-
-### Getting Started
-
-[First time installing and building (Windows)](First-time-installing-and-building-(Windows))
-
-### System Components
-
-[The BlockServer](BlockServer)
-
-[The DatabaseServer](The-DatabaseServer)
-
-[The MySQL Database](The-MySQL-Database)
-
-## The Build Server
-
-[Jenkins Build Server](Jenkins-Build-Server)
-
 # Other Information #
 
 ## Working with Git and GitHub ##
 
-[Getting Started] (Getting-started-with-Git-and-GitHub)
+[Getting Started with Git] (Getting-started-with-Git-and-GitHub)
 
 [Git Workflow](Git-Cribs)
 
