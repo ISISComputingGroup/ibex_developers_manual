@@ -88,3 +88,7 @@ git fetch
 git checkout NDXALF
 ```
 Note: The developer branch has been created to store useful configurations that may be shared amongst all developers.
+
+### Building the GUI
+
+After following the above instructions please see [Building the GUI](Building-the-GUI).
