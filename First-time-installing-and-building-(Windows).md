@@ -27,7 +27,7 @@ Install the [Java SDK for Windows x64](http://www.oracle.com/technetwork/java/ja
 Install [Maven](https://maven.apache.org/download.cgi) and follow the 'Windows tips' in [these instructions ](https://maven.apache.org/install.html) to set environment variables for the SDK with JAVA_HOME and maven in PATH
 
 ### Install Git 
-Install Git from [here](https://git-scm.com/download/win)
+Install Git from [here](https://git-scm.com/download/win). Optionally you may wish to install [Tortoise Git](https://tortoisegit.org/) too, which provides useful tools for diffs and merging. 
 
 ### Install MySQL
 Install MySQL 5.6 from [here](https://dev.mysql.com/downloads/windows/installer/5.6.html)
