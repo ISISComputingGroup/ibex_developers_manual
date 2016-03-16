@@ -12,10 +12,9 @@ Create a directory for where you want your IBEX GUI to reside (e.g. `C:\Instrume
 
 ## Building via Eclipse ##
 
-
 ### Eclipse IBEX Developer's Edition
 
-If you are working on the IBEX GUI please use the IBEX Eclipse editor, which is available, within ISIS, via a zip file at \\\isis\inst$\Kits$\CompGroup\ICP\Developer Tools, simply unzip the the file to your chosen location for Eclipse and use the provided workspace. You can choose to download Eclipse directly from ​http://www.eclipse.org/downloads/packages/eclipse-rcp-and-rap-developers/mars1, but you will need to alter settings to get the correct defaults for formatting.
+If you are working on the IBEX GUI please use the IBEX Eclipse editor, which is available, within ISIS, via a zip file at `\\isis\inst$\Kits$\CompGroup\ICP\Developer Tools`, simply unzip the the file to your chosen location for Eclipse and use the provided workspace. You can choose to download Eclipse directly from ​http://www.eclipse.org/downloads/packages/eclipse-rcp-and-rap-developers/mars1, but you will need to alter settings to get the correct defaults for formatting.
 
 ### Building
 
@@ -33,4 +32,4 @@ These are the steps needed to run the GUI via Eclipse:
 1. From the command line, navigate to the build directory in the IBEX code
 1. Run the build.bat file
 1. Wait for a few minutes while it builds
-1. After the build finishes it can be found in \\base\\uk.ac.stfc.isis.ibex.client.product\\target\\products\\
+1. After the build finishes it can be found in `\base\uk.ac.stfc.isis.ibex.client.product\target\products\`
