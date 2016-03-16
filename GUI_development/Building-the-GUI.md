@@ -1,9 +1,10 @@
+Before building and running the GUI please make sure you have followed the steps from here: [First time installing and building (Windows)](First-time-installing-and-building-(Windows)). In particular make sure Git and genie_python are installed.
+
+## Eclipse RCP resources
+
 We have a book which should serve as a reasonable introduction to the Eclipse RCP platform: 'Eclipse Rich Client Platform' by McAffer, Lemieux and Aniszczyk. There is also a basic introduction at http://www.vogella.com/tutorials/EclipseRCP/article.html.
 
 ## Checking out the GUI
-
-Before building and running the GUI please make sure you have followed the steps from here (First-time-installing-and-building-(Windows))[First-time-installing-and-building-(Windows)]
-
 
 Create a directory for where you want your IBEX GUI to reside (e.g. `C:\Instrument\Dev`). From an appropriate Git console (e.g. Git Bash) navigate to your directory and run:
 
