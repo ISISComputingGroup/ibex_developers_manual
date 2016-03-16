@@ -1,8 +1,22 @@
-We have a book which should serve as a reasonable introduction to the Eclipse RCP platform: 'Eclipse Rich Client Platform' by McAffer, Lemieux and Aniszczyk.
+We have a book which should serve as a reasonable introduction to the Eclipse RCP platform: 'Eclipse Rich Client Platform' by McAffer, Lemieux and Aniszczyk. There is also a basic introduction at http://www.vogella.com/tutorials/EclipseRCP/article.html.
+
+## Checking out the GUI
+
+Before building and running the GUI please make sure you have followed the steps from here (First-time-installing-and-building-(Windows))[First-time-installing-and-building-(Windows)]
+
+
+Create a directory for where you want your IBEX GUI to reside (e.g. `C:\Instrument\Dev`). From an appropriate Git console (e.g. Git Bash) navigate to your directory and run:
+
+`git clone https://github.com/ISISComputingGroup/ibex_gui.git`
 
 ## Building via Eclipse ##
 
-This assumes you have got as far as cloning the GitHub repo.
+
+### Eclipse IBEX Developer's Edition
+
+If you are working on the IBEX GUI please use the IBEX Eclipse editor, which is available, within ISIS, via a zip file at \\\isis\inst$\Kits$\CompGroup\ICP\Developer Tools, simply unzip the the file to your chosen location for Eclipse and use the provided workspace. You can choose to download Eclipse directly from ​http://www.eclipse.org/downloads/packages/eclipse-rcp-and-rap-developers/mars1, but you will need to alter settings to get the correct defaults for formatting.
+
+### Building
 
 These are the steps needed to run the GUI via Eclipse:
 
