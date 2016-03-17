@@ -1,6 +1,3 @@
-### Create directory structure
-Create these directories from the command line: C:\Instruments\Apps\
-
 ### Install Perl
 Download and install [Strawberry Perl](http://strawberryperl.com/)
 
@@ -38,25 +35,25 @@ In `C:\Instrument\Apps\` run:
 ### Install MySQL
 Install MySQL 5.6 from [here](https://dev.mysql.com/downloads/windows/installer/5.6.html)
 
-Select "server only"/"server machine" on first page of install wizard and change the data path to `c:\instrument\var\mysql` 
+Select "server only"/"server machine" on first page of install wizard and change the data path to `C:\Instrument\Var\mysql`
 
-Make sure you use the agreed password for the root directory. If you don't know what that password is you should be able to find it in `/Instrument/Apps/EPICS/CSS/master/ArchiveEngine/setup_mysql_database.txt`.
+Make sure you use the agreed password for the root directory. If you don't know what that password is you should be able to find it in `C:\Instrument\Apps\EPICS\CSS\master\ArchiveEngine\setup_mysql_database.txt`.
 
 Do leave TCP/IP access enabled.
 
-Once installed run the `config_mysql.bat` batch file in `EPCIS/SystemSetup/`.
+Once installed run the `config_mysql.bat` batch file in `C:\Instrument\Apps\EPICS\SystemSetup\`.
 
-Note: For running tests locally, make sure that you have run `Create test account.bat` from `EPICS/SystemSetup/` as well.
+Note: For running tests locally, make sure that you have run `Create test account.bat` from `C:\Instrument\Apps\EPICS\SystemSetup\` as well.
 
 ### Install genie_python
 
 Run the `genie_python_install.bat` batch file located in `\\isis\inst$\Kits$\CompGroup\ICP\Client\genie_python`
 
 ### Run build.bat
-`cd` to `\Instrument\Apps\EPICS\` and run `build.bat`
+`cd` to `C:\Instrument\Apps\EPICS\` and run `build.bat`
 
 ### Run setup_css.bat
-In `Instrument\Apps\EPICS\CSS\master` run `setup_css.bat`
+In `C:\Instrument\Apps\EPICS\CSS\master` run `setup_css.bat`
 this will create directories for the archive engine. in `.\css-win.x86_64`
 
 ### Setting up a configurations directory
