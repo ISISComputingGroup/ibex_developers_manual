@@ -43,7 +43,7 @@ Do leave TCP/IP access enabled.
 
 Once installed run the `config_mysql.bat` batch file in `C:\Instrument\Apps\EPICS\SystemSetup\`.
 
-Note: For running tests locally, make sure that you have run `Create test account.bat` from `C:\Instrument\Apps\EPICS\SystemSetup\` as well.
+Note: For running tests locally, make sure that you have run `create_test_account.bat` from `C:\Instrument\Apps\EPICS\SystemSetup\` as well.
 
 ### Install genie_python
 
