@@ -2,7 +2,9 @@
 
 ## Names
 
-We need to settle on a good name for this. Current ideas are:
+The suggested name for this is 'Device Screens'. We will change the terminolgy currently used in the synoptic from 'Component' to 'Device' too, for consistency (this avoids ambiguity with a component as part of a configuration).
+
+The name is still open to debate, other ideas were:
 * Component Viewer
 * Components
 * Devices
@@ -24,7 +26,7 @@ Note that the 'Edit List' dialogue will look different with the changes for auto
 
 ## BlockServer Storage
 
-The BlockServer will be responsible for saving a list of 'Component Views'. It is proposed that each of these are stored as a separate XML file in the folder: `NDXXXXX/configurations/component_views`.
+The BlockServer will be responsible for saving a list of 'Device Screens'. It is proposed that each of these are stored as a separate XML file in the folder: `NDXXXXX/configurations/device_screens`.
 
 The component targets are currently stored in the synoptics, for example as:
 ```xml
@@ -44,7 +46,7 @@ The component targets are currently stored in the synoptics, for example as:
 </target>
 ```
 
-We should be able to re-use this structure directly. A schema for the component views will be required, which can just be a subset of what is currently in the synoptics:
+We should be able to re-use this structure directly. A schema for the device screens will be required, which can just be a subset of what is currently in the synoptics:
 
 ```xml
 <complexType name="target">
@@ -81,9 +83,9 @@ We should be able to re-use this structure directly. A schema for the component 
 
 ```
 
-The component views will be served up in the same way as the synoptics, JSON over Channel Access. Note the way PVs are named needs to take [#1053](https://github.com/ISISComputingGroup/IBEX/issues/1053)
+The device screens will be served up in the same way as the synoptics, JSON over Channel Access. Note the way PVs are named needs to take [#1053](https://github.com/ISISComputingGroup/IBEX/issues/1053)
 into account.
 
 ## Synoptic changes
 
-Changes should be made once this is complete to use the component targets within the synoptics. This should not be done until the component views editor and BlockServer changes are completed and well tested. When implementing the changes this should be taken into account though, to make sure synoptics can easily make use of a component target.
+Changes should be made once this is complete to use the device screens within the synoptics. This should not be done until the device screens editor and BlockServer changes are completed and well tested. When implementing the changes this should be taken into account though, to make sure synoptics can easily make use of a device screen.
