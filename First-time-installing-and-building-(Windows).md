@@ -49,13 +49,6 @@ Note: For running tests locally, make sure that you have run `Create test accoun
 
 Run the `genie_python_install.bat` batch file located in `\\isis\inst$\Kits$\CompGroup\ICP\Client\genie_python`
 
-### Install Python modules
-
-In a command window run:
-`install_python_modules.bat`
-
-If mysql-connector-python fails, download it from ​[here](http://dev.mysql.com/downloads/connector/python/). The Windows installers don't seem to work, instead select "Platform Independent" and download the source zip, then unpack and run the usual `python setup.py install`
-
 ### Run build.bat
 `cd` to `\Instrument\Apps\EPICS\` and run `build.bat`
 
