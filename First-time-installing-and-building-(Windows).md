@@ -35,7 +35,7 @@ In `C:\Instrument\Apps\` run:
 ### Install MySQL
 Install MySQL 5.6 from [here](https://dev.mysql.com/downloads/windows/installer/5.6.html)
 
-Select "server only"/"server machine" on first page of install wizard and change the data path to `C:\Instrument\Var\mysql`
+Select "server only" on first page of install wizard and change the data path to `C:\Instrument\Var\mysql`. Later, in the Advanced configuration settings, select the "server machine" option.
 
 Make sure you use the agreed password for the root directory. If you don't know what that password is you should be able to find it in `C:\Instrument\Apps\EPICS\CSS\master\ArchiveEngine\setup_mysql_database.txt`.
 
