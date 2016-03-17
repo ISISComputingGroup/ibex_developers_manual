@@ -29,6 +29,12 @@ Install [Maven](https://maven.apache.org/download.cgi) and follow the 'Windows t
 ### Install Git 
 Install Git from [here](https://git-scm.com/download/win). Optionally you may wish to install [Tortoise Git](https://tortoisegit.org/) too, which provides useful tools for diffs and merging. 
 
+### Recursive clone from git
+
+In `C:\Instrument\Apps\` run:
+
+`git clone --recursive https://github.com/ISISComputingGroup/EPICS.git`
+
 ### Install MySQL
 Install MySQL 5.6 from [here](https://dev.mysql.com/downloads/windows/installer/5.6.html)
 
@@ -41,9 +47,6 @@ Do leave TCP/IP access enabled.
 Once installed run the `config_mysql.bat` batch file in `EPCIS/SystemSetup/`.
 
 Note: For running tests locally, make sure that you have run `Create test account.bat` from `EPICS/SystemSetup/` as well.
-
-### Recursive clone from git
-`git clone --recursive https://github.com/ISISComputingGroup/EPICS.git`
 
 ### Install genie_python
 
