@@ -9,7 +9,7 @@
     * Please follow commenting guidelines below
 1. **Create a pull request (developer)**
     * Reference the git issue in the comments, for example: ```ISISComputingGroup/IBEX/issues/1016```
-    * Assign correct milestone
+    * Assign the correct milestone
 1. **Review (reviewer)**
     * Assigne the pull request to yourself to indicate you are reviewing it
     * Check that the pull request has been built by Jenkins with no errors
@@ -201,6 +201,8 @@ Notice that for my changes it says "Able to merge". This means that my changes d
 * Clicking the "Create pull request" button will create the pull request
 
 * Reference the git issue in the comments by paste a link to the issue. For example ```ISISComputingGroup/IBEX/issues/1016```
+
+* Assign the correct milestone
 
 * Ensure that the code has built and tested correctly, this can be seen by a message on the bottom of the PR. Note that any increase in checkstyle issues will result in a failed build. If you believe these to be unavoidable discuss with the reviewer.
 
