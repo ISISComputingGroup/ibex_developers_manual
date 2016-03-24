@@ -11,7 +11,7 @@
     * Reference the git issue in the comments, for example: ```ISISComputingGroup/IBEX/issues/1016```
     * Assign correct milestone
 1. **Review (reviewer)**
-    * Add a comment to say you are reviewing it
+    * Assigne the pull request to yourself to indicate you are reviewing it
     * Check that the pull request has been built by Jenkins with no errors
     * Check that the ticket fixes the associated issue
     * If it is okay move to the next step, otherwise inform the developer of the problem and add a comment to the pull request
