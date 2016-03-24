@@ -14,7 +14,7 @@
     * Assigne the pull request to yourself to indicate you are reviewing it
     * Check that the pull request has been built by Jenkins with no errors
     * Check that the ticket fixes the associated issue
-    * If it is okay move to the next step, otherwise inform the developer of the problem and add a comment to the pull request
+    * If it is okay then move to the next step, otherwise inform the developer of the problem and add a comment to the pull request
 1. **Merge the changes (reviewer or developer)**
     * If it is a simple merge the reviewer can do it, otherwise ask the developer to do it
 1. **Delete the branch (reviewer or developer)**
