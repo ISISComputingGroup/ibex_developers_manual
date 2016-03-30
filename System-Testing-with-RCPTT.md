@@ -14,7 +14,7 @@ In RCPTT create a new 'RCP Testing Tool Project' called IBEX_System_Tests.
 
 Next create a new 'Test Suite' called All_Tests.
 
-Next create a new 'Context' of type 'Workspace'. Under 'Workspace Options' tick 'Clear workspace'.
+Next create a new 'Context' of type 'Workspace'. Under 'Workspace Options' tick 'Clear workspace'. Add 'isis.log, logs' to 'Do not clear'.
 
 Create another 'Context' this time of type 'Launch'. Under options select 'Terminate existing launches' and 'Clear launch configurations'.
 
@@ -22,7 +22,8 @@ Add both of these contexts to 'Default Contexts' under 'Project Settings'.
 
 Create a new 'Test Case'. Click the record button in the top right to start using IBEX and record some behaviour. Use `Shift+Alt+7` to switch to verification mode. In verification mode you can click on items to get access to their properties. The desired assertions can be selected.
 
-Here is an example of a recorded script to create a new block
+Below is an example of a recorded script to create a new block.
+
 ```java
 get-menu "Configuration/Edit Current Configuration..." | click
 with [get-window "Edit Configuration"] {
@@ -76,3 +77,9 @@ java -jar %RUNNER%/plugins/org.eclipse.equinox.launcher_1.3.100.v20150511-1540.j
  -junitReport %RESULTS%/report.xml ^
  -import %PROJECT% 
 ```
+
+## Useful links
+
+API - possibly out of date? [http://download.xored.com/q7/docs/ecl-api/latest](http://download.xored.com/q7/docs/ecl-api/latest)
+RCPTT Documentation - [http://www.eclipse.org/rcptt/documentation/](http://www.eclipse.org/rcptt/documentation/)
+Tutorial on RCPTT - [http://eclipsesource.com/blogs/tutorials/rcp-testing-tool-rcptt-basic-tutorial/](http://eclipsesource.com/blogs/tutorials/rcp-testing-tool-rcptt-basic-tutorial/)
