@@ -56,6 +56,8 @@
 
 [Mockito](Using-Mockito-for-Testing-in-the-GUI)
 
+[System/UI Testing](System Testing)
+
 ### Eclipse
 
 [Common Eclipse Tasks](Common-Eclipse-Tasks)
