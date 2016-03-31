@@ -81,5 +81,7 @@ java -jar %RUNNER%/plugins/org.eclipse.equinox.launcher_1.3.100.v20150511-1540.j
 ## Useful links
 
 API - possibly out of date? [http://download.xored.com/q7/docs/ecl-api/latest](http://download.xored.com/q7/docs/ecl-api/latest)
+
 RCPTT Documentation - [http://www.eclipse.org/rcptt/documentation/](http://www.eclipse.org/rcptt/documentation/)
+
 Tutorial on RCPTT - [http://eclipsesource.com/blogs/tutorials/rcp-testing-tool-rcptt-basic-tutorial/](http://eclipsesource.com/blogs/tutorials/rcp-testing-tool-rcptt-basic-tutorial/)
