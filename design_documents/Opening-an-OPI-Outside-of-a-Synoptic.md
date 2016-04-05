@@ -30,20 +30,17 @@ The BlockServer will be responsible for saving a list of 'Device Screens'. It is
 
 The component targets are currently stored in the synoptics, for example as:
 ```xml
-<target>
-    <name>Pinhole Selector</name>
+<device>
+    <name>Eurotherm 1</name>             <-- The name given by the user
+    <key>Eurotherm</key>                 <-- The type of device, should match that in opi_info.xml
     <type>OPI</type>
     <properties>
         <property>
-            <key>PH</key>
-            <value>PINHOLE</value>
-        </property>
-        <property>
-            <key>MM</key>
-            <value>MOT:MTR0601</value>
+            <key>EURO</key>
+            <value>EUROTHERM1</value>
         </property>
     </properties>
-</target>
+</device>
 ```
 
 We should be able to re-use this structure directly. A schema for the device screens will be required, which can just be a subset of what is currently in the synoptics:
