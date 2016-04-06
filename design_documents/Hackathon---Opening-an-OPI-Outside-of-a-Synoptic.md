@@ -117,3 +117,12 @@ Tasks:
 
 ![OPI View](design_documents/images/Hackathon---Opening-an-OPI-Outside-of-a-Synoptic/IBEX_UI_New_OPI_View.png)
 *Figure 2 - Mockup of the Device Screen view with the configuration dialog*
+
+### Useful information
+
+#### Running the BlockServer standalone
+
+1. Open `C:\Instrument\Apps\EPICS\ISIS\inst_servers\master\start_blockserver_cmd.bat' into Notepad
+1. Comment out the `%HIDEWINDOW% h` line near the top
+1. Replace `%PYTHONW%` with `%PYTHON%`
+1. From the command line run start_blockserver_cmd.bat
