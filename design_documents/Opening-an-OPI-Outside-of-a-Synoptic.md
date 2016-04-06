@@ -28,7 +28,7 @@ Note that the 'Edit List' dialogue will look different with the changes for auto
 
 The BlockServer will be responsible for saving a list of 'Device Screens'. It is proposed that each of these are stored as a separate XML file in the configuration or component: `NDXXXXX/configurations/my_config/device_screens.xml`.
 
-The component targets are currently stored in the synoptics, for example as:
+The XML structure will be similar to:
 ```xml
 <devices>
     <device>
@@ -45,7 +45,7 @@ The component targets are currently stored in the synoptics, for example as:
 </devices>
 ```
 
-We should be able to re-use this structure directly. A schema for the device screens will be required, which can just be a subset of what is currently in the synoptics:
+A schema for the device screens will be required:
 
 ```xml
 <complexType name="device">
