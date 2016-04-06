@@ -4,7 +4,7 @@
 
 The suggested name for this is 'Device Screens'. We will change the terminolgy currently used in the synoptic from 'Component' to 'Device' too, for consistency (this avoids ambiguity with a component as part of a configuration).
 
-The name is still open to debate, other ideas were:
+Other ideas for names were:
 * Component Viewer
 * Components
 * Devices
