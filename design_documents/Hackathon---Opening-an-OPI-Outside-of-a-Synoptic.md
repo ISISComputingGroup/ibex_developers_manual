@@ -6,9 +6,10 @@
 * [Link to original design document (superseded by this)](Opening-an-OPI-Outside-of-a-Synoptic)
 
 ### The aim in a nutshell
-Add a tab to the IBEX GUI where OPIs for connected equipment can be viewed – similar to the LabVIEW tab in SECI.
+Add a tab to the IBEX GUI where OPIs for connected equipment can be viewed – similar to the LabVIEW tab in SECI (see figure 1).
 
 ![SECI](design_documents/images/Hackathon---Opening-an-OPI-Outside-of-a-Synoptic/SECI.png)
+*Figure 1 - SECI's LABView view*
 
 ### Proposed implementation
 
@@ -107,12 +108,12 @@ It is proposed that it will be via the device screens that macros etc. are confi
 Tasks:
 
 1. Connect up to the new PVs and decode/encode the data
-1. A new perspective/tab for showing the OPIs (see mockup in figure 1)
-1. A dialog for configuring the device screens (see mockup in figure 1)
+1. A new perspective/tab for showing the OPIs (see mockup in figure 2)
+1. A dialog for configuring the device screens (see mockup in figure 2)
 1. The synoptic editor will no longer need to allow editing of macros, but will need a way to pick the correct screen (and suggest defaults)
 1. The synoptic XML may need to change to handle device screens (this will need to be done in collaboration with the people working on the BlockServer)
 1. Unit tests
 1. GUI tests (ask Ian for help)
 
 ![OPI View](design_documents/images/Hackathon---Opening-an-OPI-Outside-of-a-Synoptic/IBEX_UI_New_OPI_View.png)
-*Figure 1 - Mockup of the Device Screen view with the configuration dialog*
+*Figure 2 - Mockup of the Device Screen view with the configuration dialog*
