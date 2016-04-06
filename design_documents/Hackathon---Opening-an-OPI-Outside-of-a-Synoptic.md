@@ -121,6 +121,7 @@ Tasks:
 ### Useful information
 
 #### Running the BlockServer "standalone"
+It might be useful to be able to start and stop the BlockServer without having to use ProcServCtrl while developing. To enable this follow these steps:
 
 1. Open `C:\Instrument\Apps\EPICS\start_inst_full.bat` in Notepad
     * Comment out the line `call %STARTINSTDIR%ISIS\inst_servers\master\start_blockserver.bat`
@@ -130,4 +131,4 @@ Tasks:
     * Replace `%PYTHONW%` with `%PYTHON%`
     * Save the changes
 1. Run `start_inst.bat`. This will start the system without the BlockServer
-1. From the command line run start_blockserver_cmd.bat to start the BlockServer. The BlockServer can then be stopped and restarted as required 
+1. From the command line run start_blockserver_cmd.bat to start the BlockServer.
