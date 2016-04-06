@@ -1,6 +1,7 @@
-## Vague Outline for the Hackathon for (ISISComputingGroup/IBEX#1083)[Ticket 1083]
+## Vague Outline for the Hackathon for Ticket 1083
 
-ISISComputingGroup/IBEX#1083
+* [Link to ticket on GitHub](https://github.com/ISISComputingGroup/IBEX/issues/1083)
+* [Link to original design document (superseded by this)](Opening-an-OPI-Outside-of-a-Synoptic)
 
 ### The aim in a nutshell
 Add a tab to the IBEX GUI where OPIs for connected equipment can be viewed – similar to the LabVIEW tab in SECI.
