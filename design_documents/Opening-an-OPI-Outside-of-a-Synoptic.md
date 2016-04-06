@@ -46,9 +46,12 @@ The component targets are currently stored in the synoptics, for example as:
 We should be able to re-use this structure directly. A schema for the device screens will be required, which can just be a subset of what is currently in the synoptics:
 
 ```xml
-<complexType name="target">
+<complexType name="device">
     <sequence>
         <element name="name" type="string" maxOccurs="1"
+            minOccurs="1">
+        </element>
+        <element name="key" type="string" maxOccurs="1"
             minOccurs="1">
         </element>
         <element name="type" type="tns:targettype" maxOccurs="1"
