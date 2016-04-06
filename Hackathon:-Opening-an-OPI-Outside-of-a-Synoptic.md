@@ -1,0 +1,68 @@
+## Vague Outline for the Hackathon for (ISISComputingGroup/IBEX#1083)[Ticket 1083]
+
+ISISComputingGroup/IBEX#1083
+
+### The aim in a nutshell
+Add a tab to the IBEX GUI where OPIs for connected equipment can be viewed – similar to the LabVIEW tab in SECI.
+
+IMAGE GOES HERE
+
+### Proposed implementation
+
+This may change on the day as we get going but it is something to get started with.
+
+#### 1. The interface
+The BlockServer and GUI s communicate through two PVs; one for reading and one for writing:
+
+* `%MYPVPREFIX%CS:BLOCKSERVER:GET_SCREENS` = returns the XML for the screens
+
+* `%MYPVPREFIX%CS:BLOCKSERVER:SET_SCREENS` = sets the XML for the screens
+
+The data sent over Channel Access will need to be zipped and hashed in the same way as the configurations and synoptics.
+
+#### 2. The BlockServer
+
+The BlockServer will be responsible for saving and loading a list of 'Device Screens'. It is proposed that these are stored in a separate XML file in the configuration or component: `NDXXXXX/configurations/my_config/device_screens.xml`.
+
+The XML will be something like:
+
+
+```xml
+<devices>
+    <device>
+        <name>Eurotherm 1</name>             
+        <key>Eurotherm</key>                 
+        <type>OPI</type>
+        <properties>
+            <property>
+                <key>EURO</key>
+                <value>EUROTHERM1</value>
+            </property>
+        </properties>
+    </device>
+</devices>
+```
+
+A schema will also be required.
+
+The PVs and logic should be implemented in such a way as to be optional, so if, say, the ESS didn’t want the functionality it would be easy to exclude. The way the synoptics are handled is an example of how to do this.
+
+The XML for the synoptic may need to change to allow device screens to be specified – this will need to be coordinated with the GUI side (see Task 5 in Section 3).
+
+**UNIT TESTS MUST BE WRITTEN!**
+
+#### 3. The GUI
+
+It is proposed that it will be via the device screens that macros etc. are configured for an OPI. The synoptic editor will be simplified to just allow the already configured device screens to be used for creating a synoptic. In other words, if the device screen is not configured for an item of kit, it will not be possible to add that kit to the synoptic. 
+
+*Note: We may need a quick way to launch the "device screen configurator" from the synoptic editor*
+
+Tasks:
+
+1. Connect up to the new PVs and decode/encode the data
+1. A new perspective/tab for showing the OPIs
+1. A dialog for configuring the device screens
+1. The synoptic editor will no longer need to allow editing of macros, but will need a way to pick the correct screen (and suggest defaults)
+1. The synoptic XML may need to change to handle device screens (this will need to be done in collaboration with the people working on the BlockServer)
+1. Unit tests
+1. GUI tests (ask Ian for help)
