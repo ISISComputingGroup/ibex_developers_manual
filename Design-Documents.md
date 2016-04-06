@@ -6,4 +6,4 @@
 
 ### GUI
 
-[Opening an OPI Outside of a Synoptic](Opening-an-OPI-Outside-of-a-Synoptic)
+[Hackathon - Opening an OPI Outside of a Synoptic](Hackathon---Opening-an-OPI-Outside-of-a-Synoptic)

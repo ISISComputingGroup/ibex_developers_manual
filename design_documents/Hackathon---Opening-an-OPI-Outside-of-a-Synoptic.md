@@ -1,3 +1,5 @@
+> [Wiki](Home) ▸ [[Design Documents]] ▸ **Hackathon - Opening an OPI Outside of a Synoptic**
+
 ## Vague Outline for the Hackathon for Ticket 1083
 
 * [Link to ticket on GitHub](https://github.com/ISISComputingGroup/IBEX/issues/1083)
@@ -113,4 +115,4 @@ Tasks:
 1. GUI tests (ask Ian for help)
 
 ![OPI View](design_documents/images/Hackathon---Opening-an-OPI-Outside-of-a-Synoptic/IBEX_UI_New_OPI_View.png)
-* Figure 1 - Mockup of the Device Screen view with the configuration dialog*
+*Figure 1 - Mockup of the Device Screen view with the configuration dialog*
