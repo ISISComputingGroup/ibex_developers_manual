@@ -9,7 +9,7 @@
 Add a tab to the IBEX GUI where OPIs for connected equipment can be viewed – similar to the LabVIEW tab in SECI (see figure 1).
 
 ![SECI](design_documents/images/Hackathon---Opening-an-OPI-Outside-of-a-Synoptic/SECI.png)
-*Figure 1 - SECI's LABView view*
+*Figure 1 - SECI's LabVIEW view*
 
 ### Proposed implementation
 
