@@ -26,7 +26,7 @@ Note that the 'Edit List' dialogue will look different with the changes for auto
 
 ## BlockServer Storage
 
-The BlockServer will be responsible for saving a list of 'Device Screens'. It is proposed that each of these are stored as a separate XML file in the configuration or component: `NDXXXXX/configurations/my_config/device_screens.xml`.
+The BlockServer will be responsible for saving a list of 'Device Screens'. It is proposed that these are stored as a separate XML file in the configuration or component: `NDXXXXX/configurations/my_config/device_screens.xml`.
 
 The XML structure will be similar to:
 ```xml
