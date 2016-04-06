@@ -27,7 +27,6 @@ The BlockServer will be responsible for saving and loading a list of 'Device Scr
 
 The XML will be something like:
 
-
 ```xml
 <devices>
     <device>
@@ -44,7 +43,52 @@ The XML will be something like:
 </devices>
 ```
 
-A schema will also be required.
+A schema will also be required. It could look something like:
+
+```xml
+
+<complexType name="devices">
+    <sequence>
+        <element name="device" type="device" maxOccurs="unbounded" minOccurs="0"></element>
+    </sequence>
+</complexType>
+
+<complexType name="device">
+    <sequence>
+        <element name="name" type="string" maxOccurs="1"
+            minOccurs="1">
+        </element>
+        <element name="key" type="string" maxOccurs="1"
+            minOccurs="1">
+        </element>
+        <element name="type" type="tns:type" maxOccurs="1"
+            minOccurs="1">
+        </element>
+        <element name="properties" type="tns:properties" maxOccurs="1" minOccurs="0"></element>
+    </sequence>
+</complexType>
+
+<simpleType name="type">
+    <restriction base="string">
+        <enumeration value="COMPONENT"></enumeration>
+        <enumeration value="OPI"></enumeration>
+    </restriction>
+</simpleType>
+
+<complexType name="property">
+    <sequence>
+        <element name="key" type="string"></element>
+        <element name="value" type="string"></element>
+    </sequence>
+</complexType>
+
+<complexType name="properties">
+    <sequence>
+        <element name="property" type="tns:property" maxOccurs="unbounded" minOccurs="0"></element>
+    </sequence>
+</complexType>
+
+```
 
 The PVs and logic should be implemented in such a way as to be optional, so if, say, the ESS didn’t want the functionality it would be easy to exclude. The way the synoptics are handled is an example of how to do this.
 
