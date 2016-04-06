@@ -120,9 +120,14 @@ Tasks:
 
 ### Useful information
 
-#### Running the BlockServer standalone
+#### Running the BlockServer "standalone"
 
+1. Open `C:\Instrument\Apps\EPICS\start_inst_full.bat` in Notepad
+    * Comment out the line `call %STARTINSTDIR%ISIS\inst_servers\master\start_blockserver.bat`
+    * Save the changes
 1. Open `C:\Instrument\Apps\EPICS\ISIS\inst_servers\master\start_blockserver_cmd.bat' into Notepad
-1. Comment out the `%HIDEWINDOW% h` line near the top
-1. Replace `%PYTHONW%` with `%PYTHON%`
-1. From the command line run start_blockserver_cmd.bat
+    * Comment out the `%HIDEWINDOW% h` line near the top
+    * Replace `%PYTHONW%` with `%PYTHON%`
+    * Save the changes
+1. Run `start_inst.bat`. This will start the system without the BlockServer
+1. From the command line run start_blockserver_cmd.bat to start the BlockServer. The BlockServer can then be stopped and restarted as required 
