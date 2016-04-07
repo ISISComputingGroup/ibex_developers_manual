@@ -200,6 +200,7 @@ Now we add the extensions for the View:
     * showTitle: false
     * standalone: true
     * visible: true
+    * relationship: right
 
 * It should look something like this:
 
