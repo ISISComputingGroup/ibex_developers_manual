@@ -36,7 +36,7 @@ Now the plug-in has been created:
 
 ![Add a package](GUI_development/images/adding_a_button_to_the_perspective_switcher/eclipse_adding_a_package.png)
 
-We now need to add a Perspective class to the new package; the easiest way to do this is to copy and paste an existing one, for example: the one in org.csstudio.isis.ui.scripting, and edit it.
+We now need to add a Perspective class to the new package; the easiest way to do this is to copy and paste an existing one, for example: the one in uk.ac.stfc.isis.ibex.ui.scripting, and edit it.
 
 The first thing you will notice is that there are numerous red errors. 
 
@@ -92,12 +92,12 @@ The new class file should open in the editor. For this example I am just going t
 
 * Delete the TODO comments
 
-* Add an ID for the View which is the full-name of the class in lower-case; for example: org.csstudio.isis.ui.myperspective.myview
+* Add an ID for the View which is the full-name of the class in lower-case; for example: uk.ac.stfc.isis.ibex.ui.myperspective.myview
 
 * It should now look something like:
 
 ```java
-    package org.csstudio.isis.ui.myperspective;
+    package uk.ac.stfc.isis.ibex.ui.myperspective;
 
     import org.eclipse.swt.widgets.Composite;
     import org.eclipse.ui.part.ViewPart;
@@ -106,7 +106,7 @@ The new class file should open in the editor. For this example I am just going t
     import org.eclipse.swt.browser.Browser;
 
     public class MyView extends ViewPart {
-        public static final String ID = "org.csstudio.isis.ui.myperspective.myview";
+        public static final String ID = "uk.ac.stfc.isis.ibex.ui.myperspective.myview";
         
         public MyView() {
         }
@@ -144,7 +144,7 @@ To add both the new Perspective and View to the main GUI we use extensions. Firs
 
 ![Extension points](GUI_development/images/adding_a_button_to_the_perspective_switcher/eclipse_extensions_added1.png)
    
-* Right-click on the org.csstudio.isis.ui.perspectives extension point and select New->contribution
+* Right-click on the uk.ac.stfc.isis.ibex.ui.perspectives extension point and select New->contribution
 
 * The contribution should appear below the extension point
 
@@ -163,16 +163,16 @@ To add both the new Perspective and View to the main GUI we use extensions. Firs
 The XML in plugin.xml for what we have done so far is:
 ```xml
    <extension
-         point="org.csstudio.isis.ui.perspectives">
+         point="uk.ac.stfc.isis.ibex.ui.perspectives">
       <contribution
-            class="org.csstudio.isis.ui.myperspective.Perspective">
+            class="uk.ac.stfc.isis.ibex.ui.myperspective.Perspective">
       </contribution>
    </extension>
    <extension
          point="org.eclipse.ui.perspectives">
          <perspective
-            class="org.csstudio.isis.ui.myperspective.Perspective"
-            id="org.csstudio.isis.ui.myperspective.perspective"
+            class="uk.ac.stfc.isis.ibex.ui.myperspective.Perspective"
+            id="uk.ac.stfc.isis.ibex.ui.myperspective.perspective"
             name="My Perspective">
       </perspective>
    </extension>
@@ -184,13 +184,13 @@ Now we add the extensions for the View:
 
 * Right-click on the new extension point and select New->perspectiveExtension; the new perspectiveExtension should appear below the extension point
 
-* For the new perspectiveExtension set the targetID to the ID of your perspective, for this example it is org.csstudio.isis.ui.myperspective.perspective
+* For the new perspectiveExtension set the targetID to the ID of your perspective, for this example it is uk.ac.stfc.isis.ibex.ui.myperspective.perspective
 
 * Right-click on the perspectiveExtension and select New->view; the new view should appear
 
-* Select the view and change the ID to the ID of your View, for example: org.csstudio.isis.ui.myperspective.myview
+* Select the view and change the ID to the ID of your View, for example: uk.ac.stfc.isis.ibex.ui.myperspective.myview
 
-* Change the relative to org.csstudio.isis.ui.perspectives.PerspectiveSwitcher
+* Change the relative to uk.ac.stfc.isis.ibex.ui.perspectives.PerspectiveSwitcher
 
 * The remaining setting determine how the View will appear and behave, it is recommended that you set the following values:
 
@@ -218,15 +218,15 @@ The XML in the plugin.xml for the View related stuff is:
    <extension
          point="org.eclipse.ui.perspectiveExtensions">
             <perspectiveExtension
-            targetID="org.csstudio.isis.ui.myperspective.perspective">
+            targetID="uk.ac.stfc.isis.ibex.ui.myperspective.perspective">
          <view
                closeable="false"
-               id="org.csstudio.isis.ui.myperspective.myview"
+               id="uk.ac.stfc.isis.ibex.ui.myperspective.myview"
                minimized="false"
                moveable="false"
                ratio="0.1f"
                relationship="right"
-               relative="org.csstudio.isis.ui.perspectives.PerspectiveSwitcher"
+               relative="uk.ac.stfc.isis.ibex.ui.perspectives.PerspectiveSwitcher"
                showTitle="false"
                standalone="true"
                visible="true">
@@ -237,17 +237,17 @@ The XML in the plugin.xml for the View related stuff is:
          point="org.eclipse.ui.views">
          <view
             allowMultiple="false"
-            class="org.csstudio.isis.ui.myperspective.MyView"
-            id="org.csstudio.isis.ui.myperspective.myview"
+            class="uk.ac.stfc.isis.ibex.ui.myperspective.MyView"
+            id="uk.ac.stfc.isis.ibex.ui.myperspective.myview"
             name="My View"
             restorable="true">
       </view>
    </extension>
 ```   
 
-Finally, the last step is to add the plug-in we created to org.csstudio.isis.feature.base:
+Finally, the last step is to add the plug-in we created to uk.ac.stfc.isis.ibex.feature.base:
 
-* Open the feature.xml file in org.csstudio.isis.feature.base and select the Plug-ins tab
+* Open the feature.xml file in uk.ac.stfc.isis.ibex.feature.base and select the Plug-ins tab
 
 * Click the 'Add' button and select the new plug-in we created
 
@@ -272,16 +272,16 @@ Finally, the last step is to add the plug-in we created to org.csstudio.isis.fea
 
 * Change the image method to return the new icon from the correct plug-in by changing the plug-in name and icon name, like so:
 ```java
-    package org.csstudio.isis.ui.myperspective;
+    package uk.ac.stfc.isis.ibex.ui.myperspective;
 
-    import org.csstudio.isis.ui.perspectives.BasePerspective;
+    import uk.ac.stfc.isis.ibex.ui.perspectives.BasePerspective;
     import org.eclipse.swt.graphics.Image;
     import org.eclipse.ui.IPageLayout;
     import org.eclipse.wb.swt.ResourceManager;
 
     public class Perspective extends BasePerspective {
 
-        public static final String ID = "org.csstudio.isis.ui.myperspective.perspective"; //$NON-NLS-1$
+        public static final String ID = "uk.ac.stfc.isis.ibex.ui.myperspective.perspective"; //$NON-NLS-1$
 
         @Override
         public void createInitialLayout(IPageLayout layout) {
@@ -300,7 +300,7 @@ Finally, the last step is to add the plug-in we created to org.csstudio.isis.fea
         
         @Override
         public Image image() {
-            return ResourceManager.getPluginImage("org.csstudio.isis.myperspective", "icons/myperspective.png");
+            return ResourceManager.getPluginImage("uk.ac.stfc.isis.ibex.myperspective", "icons/myperspective.png");
         }
     }
 ```   
