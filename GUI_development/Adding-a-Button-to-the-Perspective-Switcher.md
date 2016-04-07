@@ -50,6 +50,8 @@ These are easily fixed:
 
 * Open the MANIFEST.MF file in META_INF and select the 'Dependencies' tab; on that tab click the 'Add' button under 'Required Plug-ins'. From the list select uk.ac.stfc.isis.ibex.ui and click 'OK'
 
+* Also add org.eclipse.core.runtime.
+
 * Save all the changes.
 
 The errors should now have disappeared, but there are a few more things to do:
