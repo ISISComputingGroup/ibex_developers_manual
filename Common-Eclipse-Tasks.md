@@ -2,12 +2,12 @@
 
 1. In Eclipse IDE, File Menu > New > Plugin Project.
 1. Give the Project a name, e.g. ``uk.ac.stfc.isis.ibex.foo``. If it is a UI plugin, it should have a "ui" in the top part of the name e.g. ``uk.ac.stfc.isis.ibex.ui.foo`` 
-1. For location, select the base source code folder, e.g., ``C:\Instrument\Dev\Client\base\org.csstudio.isis.foo``, rather than the default option (which will probably be the workspace).
+1. For location, select the base source code folder, e.g., ``C:\Instrument\Dev\Client\base\uk.ac.stfc.isis.ibex.foo``, rather than the default option (which will probably be the workspace).
 1. Click next.
 1. Make sure 'Generate an activator, a Java...' is checked.
 1. If this is to be a UI plugin, check 'This plug-in will make contributions to the UI. This will cause the Activator to extend ``AbstractUIPlugin`` rather than ``BundleActivator``. Plugins that contribute to the UI in any way such as by adding a preference page or menu item, need to be UI plugins
 1. Click finish.
-1. In the plugin ``org.csstudio.isis.feature.base``, open ``feature.xml`` and go to the 'Plug-ins' tab. Add your new plugin to the plug-ins list.
+1. In the plugin ``uk.ac.stfc.isis.ibex.feature.base``, open ``feature.xml`` and go to the 'Plug-ins' tab. Add your new plugin to the plug-ins list.
 
 1. Add a ``pom.xml file`` to the plugin so that it can be built with maven. This should be the same as the pom file in every other project; the only thing you'll need to change is the plugin's name (the ``artifactId``). The contents should be as below. Other sections of the pom follow will be inherited from ``org.csstudio.isis.tycho.parent`` and so don't need to be explicitly included:
     ```xml
@@ -16,18 +16,18 @@
         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
           http://maven.apache.org/xsd/maven-4.0.0.xsd">
       <modelVersion>4.0.0</modelVersion>
-      <artifactId>org.csstudio.isis.foo</artifactId>
+      <artifactId>uk.ac.stfc.isis.ibex.foo</artifactId>
       <packaging>eclipse-plugin</packaging>
       <parent>
         <groupId>CSS_ISIS</groupId>
         <version>1.0.0-SNAPSHOT</version>
-        <artifactId>org.csstudio.isis.tycho.parent</artifactId>
-        <relativePath>../org.csstudio.isis.tycho.parent</relativePath>
+        <artifactId>uk.ac.stfc.isis.ibex.client.tycho.parent</artifactId>
+        <relativePath>../uk.ac.stfc.isis.ibex.client.tycho.parent</relativePath>
       </parent>
       <version>1.0.0-SNAPSHOT</version>
     </project>
     ```
-1. In the plugin ``org.csstudio.isis.tycho.parent``, add your new plugin to the list of modules (you may have to do this manually in the XML view).
+1. In the plugin ``uk.ac.stfc.isis.ibex.client.tycho.parent``, add your new plugin to the list of modules (you may have to do this manually in the XML view).
 
 
 ## Easy Plugin Access
