@@ -136,7 +136,7 @@ To add both the new Perspective and View to the main GUI we use extensions. Firs
 
 ![Extensions](GUI_development/images/adding_a_button_to_the_perspective_switcher/eclipse_no_extensions.png)
    
-* Click the 'Add' button and select org.csstudio.isis.ui.perspectives extension point and click 'Finish'
+* Click the 'Add' button and select uk.ac.stfc.isis.ibex.ui.perspectives extension point and click 'Finish'
 
 ![Extension points](GUI_development/images/adding_a_button_to_the_perspective_switcher/eclipse_select_extension_point.png)
 
