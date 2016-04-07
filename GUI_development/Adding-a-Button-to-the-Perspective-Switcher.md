@@ -44,17 +44,15 @@ The first thing you will notice is that there are numerous red errors.
 
 These are easily fixed:
 
-* Hover the mouse over 'BasePerspective' on the 'public class Perspective' line and select 'Add 'org.csstudio.isis.ui.perspectives' to required bundles
+* Hover the mouse over 'BasePerspective' on the 'public class Perspective' line and select 'Fix project setup...'
 
 * Delete the 'Consoles.getDefault().createConsole();' line
 
-* Open the MANIFEST.MF file in META_INF and select the 'Dependencies' tab; on that tab click the 'Add' button under 'Required Plug-ins'. From the list select org.csstudio.isis.ui and click 'OK'
+* Open the MANIFEST.MF file in META_INF and select the 'Dependencies' tab; on that tab click the 'Add' button under 'Required Plug-ins'. From the list select uk.ac.stfc.isis.ibex.ui and click 'OK'
 
 * Save all the changes.
 
 The errors should now have disappeared, but there are a few more things to do:
-
-* Modify the ID string to be the full-name of the class in lower-case; for example: org.csstudio.isis.ui.myperspective.perspective
 
 * Change the value returned by the name function to be what you want shown on the Perspective Switcher
 
