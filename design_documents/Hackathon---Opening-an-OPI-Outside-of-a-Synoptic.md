@@ -132,3 +132,5 @@ It might be useful to be able to start and stop the BlockServer without having t
     * Save the changes
 1. Run `start_inst.bat`. This will start the system without the BlockServer
 1. From the command line run start_blockserver_cmd.bat to start the BlockServer.
+
+#### Don't forget there are tutorials for the GUI on the wiki
