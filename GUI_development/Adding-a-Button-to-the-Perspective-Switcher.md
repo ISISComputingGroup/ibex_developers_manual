@@ -5,10 +5,10 @@
 
 * In Eclipse, add a new UI plug-in via File->New->Plug-in Project
 
-* Give it a name, for example: org.csstudio.isis.ui.myperspective
+* Give it a name, for example: uk.ac.stfc.isis.ibex.ui.myperspective
 
 * Do not use the default location, instead set it to C:\\Instrument\\Dev\\client\\ISIS\\base\\ plus the plug-in name. 
-    * for example: C:\\Instrument\\Dev\\client\\ISIS\\base\\org.csstudio.isis.ui.myperspective
+    * for example: C:\\Instrument\\Dev\\ibex_gui\\base\\uk.ac.stfc.isis.ibex.ui.myperspective
 
 * The dialog should look like this:
 
