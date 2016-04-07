@@ -1,7 +1,7 @@
 ## Add A New Plugin
 
 1. In Eclipse IDE, File Menu > New > Plugin Project.
-1. Give the Project a name, e.g. ``org.csstudio.isis.foo``.
+1. Give the Project a name, e.g. ``uk.ac.stfc.isis.ibex.foo``. If it is a UI plugin, it should have a "ui" in the top part of the name e.g. ``uk.ac.stfc.isis.ibex.ui.foo`` 
 1. For location, select the base source code folder, e.g., ``C:\Instrument\Dev\Client\base\org.csstudio.isis.foo``, rather than the default option (which will probably be the workspace).
 1. Click next.
 1. Make sure 'Generate an activator, a Java...' is checked.
