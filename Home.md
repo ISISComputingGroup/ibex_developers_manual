@@ -64,6 +64,8 @@
 
 [Common Eclipse Issues](Common Eclipse Issues)
 
+[Creating the IBEX Developer Version of Eclipse](Creating-the-IBEX-Developer-Version-of-Eclipse)
+
 ## genie_python ##
 
 [Building and Installing genie_python](Building-and-installing-genie_python)
