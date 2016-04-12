@@ -1,24 +1,25 @@
 ## Getting Started
 
-Download the latest testing tool from the [Eclipse RCPTT website](https://www.eclipse.org/rcptt/download/).
+Checkout the ibex_system_tests repository by running:
+```
+git clone https://github.com/ISISComputingGroup/ibex_system_tests.git
+```
 
-Unpack the testing tool as you would for the Eclipse IDE.
+The Eclipse IBEX Developer's Edition (version 3) comes with Eclipse RCPTT already installed. It is recommended to use a separate workspace for the system tests to the IBEX GUI, but it is not essential. Once you have started Eclipse you can select Window -> Open Perspective -> Other -> RCPTT to get to the RCPTT perspective.
+
+You can also just download the latest testing tool from the [Eclipse RCPTT website](https://www.eclipse.org/rcptt/download/).
+
+## Importing a Project
+
+Importing the system tests works in the same way as for the GUI. In Eclipse choose File -> Import -> Existing Projects into Workspace, then choose the RCPTT_Tests folder from the GitHub repository.
 
 ## Configure the Application Under Test (AUT)
 
-In the bottom of the RCPTT window, under applications, right click and add IBEX as the AUT. The location will be something like `C:\Instrument\Dev\Client\ibex_gui\base\uk.ac.stfc.isis.ibex.client.product\target\products\ibex.product\win32\win32\x86_64`. The name should be filled out automatically as `uk.ac.stfc.isis.ibex.product.product`. Click 'Finish'.
+In the bottom of the RCPTT window, under applications, right click and add IBEX as the AUT. If you want to use a development version of the GUI the location will be something like `C:\Instrument\Dev\Client\ibex_gui\base\uk.ac.stfc.isis.ibex.client.product\target\products\ibex.product\win32\win32\x86_64`. You can also use a version from the build server instead, just point RCPTT at the folder containing the executable.
+
+The name should be filled out automatically as `uk.ac.stfc.isis.ibex.product.product`. Click 'Finish'.
 
 ## Create Some Tests
-
-In RCPTT create a new 'RCP Testing Tool Project' called IBEX_System_Tests.
-
-Next create a new 'Test Suite' called All_Tests.
-
-Next create a new 'Context' of type 'Workspace'. Under 'Workspace Options' tick 'Clear workspace'. Add 'isis.log, logs' to 'Do not clear'.
-
-Create another 'Context' this time of type 'Launch'. Under options select 'Terminate existing launches' and 'Clear launch configurations'.
-
-Add both of these contexts to 'Default Contexts' under 'Project Settings'.
 
 Create a new 'Test Case'. Click the record button in the top right to start using IBEX and record some behaviour. Use `Shift+Alt+7` to switch to verification mode. In verification mode you can click on items to get access to their properties. The desired assertions can be selected.
 
@@ -40,13 +41,22 @@ with [get-window "Edit Configuration"] {
         get-button OK | click
     }
 }
-wait 2000
-get-view Blocks | get-label "NEW_BLOCK:" | get-property "toString()" | equals "Label {NEW_BLOCK: }" | verify-true
+
+// Goes into instrument updating mode, so make sure we wait for this to finish
+wait 10000
+
+// Assert the new block exists
+get-view Blocks | get-label "NEW_BLOCK:" | get-property caption | equals "NEW_BLOCK: " | verify-true
 ```
 
-Note here the line `wait 2000` was added manually, this is required as the BlockServer takes some time to respond to the request. Anything that depends purely on the GUI should not need to wait like this.
+Note here the line `wait 10000` was added manually, this is required as the BlockServer takes some time to respond to the request. Anything that depends purely on the GUI should not need to wait like this.
 
 Finally, under 'All_Tests' choose 'Add Test Case' from the buttons on the right and add the newly created test. Add more tests here to run them one by one.
+
+## Warnings and Gotchas
+
+* Add wait XXXX when the GUI will be reading/writing to PVs and may take some time to respond
+* The perspective switcher buttons do not get recorded properly, to manually switch just do e.g. `get-label "Log Plotter" | click`
 
 ## Running tests automatically
 
@@ -77,6 +87,30 @@ java -jar %RUNNER%/plugins/org.eclipse.equinox.launcher_1.3.100.v20150511-1540.j
  -junitReport %RESULTS%/report.xml ^
  -import %PROJECT% 
 ```
+
+## Setting up a New RCPTT Project for Testing IBEX
+
+In RCPTT create a new 'RCP Testing Tool Project' and give it a name.
+
+Next create a new 'Test Suite' called All_Tests.
+
+Next create a new 'Context' of type 'Workspace'. Under 'Workspace Options' tick 'Clear workspace'. Add 'isis.log, logs' to 'Do not clear'.
+
+Create another 'Context' this time of type 'Launch'. Under options select 'Terminate existing launches' and 'Clear launch configurations'.
+
+Create a third 'Context' this time of type 'ECL Script'. Add the following:
+
+```java
+// 200 ms between commands
+set-q7-option eclExecutionDelay 200
+
+// 5 s between tests
+wait 5000
+```
+
+The first command here sets 200 ms between every command for the GUI test. This can slow the test down a lot, so this could be reduced with testing. Similarly the 5 seconds between each test will slow down the test execution, so this could be reduced too. RCPTT is clever at knowing when it should wait for pure GUI elements to finish updating, but knows nothing about the EPICS back-end, hence the need for the artificial delays.
+
+Add all of these contexts to 'Default Contexts' under 'Project Settings'.
 
 ## Useful links
 
