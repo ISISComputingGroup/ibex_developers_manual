@@ -1,3 +1,5 @@
+See [System Testing Proposals](System-Testing-Proposals) for a brief bit on the rationale behind the system tests.
+
 ## Getting Started
 
 Checkout the ibex_system_tests repository by running:
