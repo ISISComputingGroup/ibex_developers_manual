@@ -56,7 +56,7 @@
 
 [Mockito](Using-Mockito-for-Testing-in-the-GUI)
 
-[System/UI Testing](System Testing)
+[System/UI Testing](System-Testing-with-RCPTT)
 
 ### Eclipse
 
