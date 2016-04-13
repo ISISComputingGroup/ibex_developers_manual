@@ -28,5 +28,6 @@ The system test are set up to take copies of the other built artefacts and run G
 
 Next the EPICS build is copied over, the contents of `C:\Instrument\Settings\` and `C:\Instrument\Var\` removed and `start_inst.bat` is run. Finally the GUI is copied over, and `runner.cmd` is run to start the [RCP Testing Tool tests](System-Testing-with-RCPTT).
 
+See [special notes on configuring Jenkins for the GUI tests](Adding-a-new-Windows-machine-to-Jenkins#jenkins_gui_tests).
 
 
