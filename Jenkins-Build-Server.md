@@ -22,7 +22,11 @@ There is a Jenkins Build Server located at [http://epics-jenkins.isis.rl.ac.uk/]
 
 genie_python gets built and put at `\\isis\inst$\Kits$\CompGroup\ICP\Client\genie_python`. There is a batch file to do the installation.
 
+### System Tests
 
+The system test are set up to take copies of the other built artefacts and run GUI tests through RCPTT. They first remove the old genie_python and run `genie_python_install.bat`.
+
+Next the EPICS build is copied over, the contents of `C:\Instrument\Settings\` and `C:\Instrument\Var\` removed and `start_inst.bat` is run. Finally the GUI is copied over, and `runner.cmd` is run to start the [RCP Testing Tool tests](System-Testing-with-RCPTT).
 
 
 
