@@ -1,3 +1,5 @@
+> [Wiki](Home) ▸ [[Jenkins Build Server]] ▸ **Adding a new Windows machine to Jenkins**
+
 These are instructions for adding a new Windows machine as a node to be used by Jenkins.
 
 ### Initial Preparation
