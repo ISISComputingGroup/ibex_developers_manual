@@ -1,4 +1,4 @@
-> [Wiki](Home) ▸ [[Testing]] ▸ [[System-Testing-with-RCPTT]] ▸ **System Testing Proposals**
+> [Wiki](Home) ▸ [[Testing]] ▸ [[System Testing with RCPTT]] ▸ **System Testing Proposals**
 
 ## System Testing Proposals
 
