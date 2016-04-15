@@ -14,6 +14,13 @@ Install:
 * Visual Studio 2010 SP1
 * Visual C++ 2010 SP1 Compiler Update for the Windows SDK 7.1
 
+### Install Visual Studio 2013
+Windows SDK 7 has compatibility issues with newer versions of Windows. In this case, Visual Studio 2013 may be used instead.
+
+During the installation of VS2013, under "Optional Features" make sure to include Microsoft Foundation Classes for C++.
+
+Additionally, download and install [this library](https://www.microsoft.com/en-us/download/details.aspx?id=40770).
+
 ### Install CMake
 Install [CMake](https://cmake.org/download/) 
 
