@@ -31,14 +31,15 @@ Save actions
 Formatting
 ----------
 
-From Window -> Preferences -> Java -> Code Style -> Formatter
+There are a number of changes to the formatting. The easiest way to get the correct code formatting is to start with the most recent previous developer's edition, choose Window -> Preferences -> Java -> Code Style -> Formatter. IBEX should be active, choose to Edit then Export.
 
-Click 'New', start with 'Java Conventions' and save the formatting as 'IBEX'. Then edit this profile.
+To recreate the formatter from scratch these are the known steps. Start by going to 'New', start with 'Java Conventions' and save the formatting as 'IBEX'. Then edit this profile.
 
 #. Under 'Indentation' Tab policy -> Spaces only, Tab size -> 4
 #. Under 'Indentation' check Statements within 'case' body
 #. Under 'Comments' uncheck 'Format line comments on first column'
 #. Under 'Comments'' check 'Enable header comment formatting'
+#. Under 'Comments'' uncheck 'New line after @param tags'
 #. Under 'Line Wrapping' select 'enum declaration'. For 'Constants and ''implements' clause' set the line wrapping to 'Wrap all elements, every element on new line' and check the 'Force split' box
 #. Under 'Line Wrapping' select 'enum declaration'. For 'Constant arguments' set the line wrapping to 'Wrap where necessary' and leave 'Force split' unchecked
 
