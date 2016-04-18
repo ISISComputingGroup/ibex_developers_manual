@@ -138,3 +138,55 @@ For example, let's say we have two separate packages: com.example.library; and, 
     </dependencies>
 </project>
 ```
+It also has a dependency on GSON for the hell of it. The dependencies have a scope, this determines how they are treated. The most common options are:
+
+* `compile` - dependencies are available in all classpaths (default)
+* `test` - only needed for testing
+* `provided` - provided at run-time, e.g. from the JDK
+* `runtime` - not needed for compilation
+* `system` - have to provide the containing JAR explicitly
+
+There are other options and more detailed explanations on the [maven website] (https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html) 
+
+Now application has no idea where to find library, so we create a new POM file in a higher directory which will be our parent POM. The parent provides the information for both modules to work together. The POM looks something like:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example.parent</groupId>
+    <artifactId>parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+ 
+  <modules>
+    <module>com.example.application</module>
+    <module>com.example.library</module>
+  </modules>
+</project>
+```
+The modules tags specify the location of the modules to build. And the modules' POMs need to have a reference to the parent, like so:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>library</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <parent>
+        <groupId>com.example.parent</groupId>
+        <artifactId>parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+</project>
+``` 
+Running the build using the parent POM (i.e. from the same directory) will build both modules and link them appropriately.
