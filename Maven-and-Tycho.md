@@ -66,7 +66,7 @@ In many ways it can be consider the equivalent of a Makefile as it defines how t
 </project>
 ``` 
 
-Let's explain the various parts:
+Let's explain the various parts shown:
 * Near the top we have the following information:
     * The groupId is usually the name of the overarching project and is the same style as a Java package ID, e.g. org.apache.maven
     * The name that the project is often known by, e.g. maven
