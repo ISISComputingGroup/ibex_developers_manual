@@ -80,7 +80,7 @@ See https://maven.apache.org/pom.html for more information on the various sectio
 
 ### A Maven project ###
 
-Maven is very pick about how a project is laid out, it requires the various directories to name and positioned correctly.
+Maven is very picky about how a project is laid out, it requires the various directories to be named and positioned correctly.
 Luckily, most IDEs will take care of this for us.
 
 The layout is as follows:
@@ -98,7 +98,7 @@ The layout is as follows:
 ```
 
 
-The POM described above is sufficient for us to build a project from the command line using Maven. The common commands used are:
+The POM described above is sufficient for us to build a project from the command line using Maven. The commonly used commands used are:
 
 * `mvn compile` - this creates the JVM bytecode
 * `mvn test` - this runs any unit tests
