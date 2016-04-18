@@ -104,3 +104,37 @@ The POM described above is sufficient for us to build a project from the command
 * `mvn test` - this runs any unit tests
 * `mvn package` - create the jar and runs the tests
 * `mvn clean` - removes any previous build artifacts
+
+### Multiple modules ###
+
+If we have a project made up of a number of different packages (or modules) with dependencies then Maven can handle that.
+For example, let's say we have two separate packages: com.example.library; and, com.example.application where application depends on library. The POM for application would need to indicate this dependency like so:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.maven_example</groupId>
+    <artifactId>myApp</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.example.library</groupId>
+            <artifactId>library</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.6.2</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+</project>
+```
