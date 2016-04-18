@@ -98,7 +98,7 @@ The layout is as follows:
 ```
 
 
-This POM is sufficient for us to build a project from the command line using Maven. The common commands used are:
+The POM described above is sufficient for us to build a project from the command line using Maven. The common commands used are:
 
 * `mvn compile` - this creates the JVM bytecode
 * `mvn test` - this runs any unit tests
