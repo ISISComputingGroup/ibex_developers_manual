@@ -190,3 +190,37 @@ The modules tags specify the location of the modules to build. And the modules' 
 </project>
 ``` 
 Running the build using the parent POM (i.e. from the same directory) will build both modules and link them appropriately.
+
+### Profiles ###
+Using profiles it is possible to configure the build for different circumstances. For example, say I want to install the final product in a certain directory sometimes then I can add a profile for this, like so:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>library</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <parent>
+        <groupId>com.example.parent</groupId>
+        <artifactId>parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <profiles>
+    <profile>
+        <id>release</id>
+        <build>
+            <directory>c:\\release\</directory>
+        </build>
+    </profile>
+   </profiles>
+</project>
+``` 
+Running the build with the profile specified will result in the final product being installed into the specified directory. To run a profile, specify the profile using -P like so:
+```mvn package -Prelease```
