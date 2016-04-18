@@ -146,7 +146,7 @@ It also has a dependency on GSON for the hell of it. The dependencies have a sco
 * `runtime` - not needed for compilation
 * `system` - have to provide the containing JAR explicitly
 
-There are other options and more detailed explanations on the [maven website] (https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html) 
+There are other options and more detailed explanations on the [Maven website] (https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html) 
 
 Now application has no idea where to find library, so we create a new POM file in a higher directory which will be our parent POM. The parent provides the information for both modules to work together. The POM looks something like:
 
