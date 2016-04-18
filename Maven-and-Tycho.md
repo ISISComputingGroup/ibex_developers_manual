@@ -224,3 +224,7 @@ Using profiles it is possible to configure the build for different circumstances
 ``` 
 Running the build with the profile specified will result in the final product being installed into the specified directory. To run a profile, specify the profile using -P like so:
 ```mvn package -Prelease```
+
+Profiles can be used for a number of things, such as specifying the JDK version number or the OS to build for.
+
+For more information see the [Maven website] (http://maven.apache.org/guides/introduction/introduction-to-profiles.html)
