@@ -32,6 +32,8 @@
 
 [How to Build](Building-the-GUI)
 
+[Maven and Tycho](Maven-and-Tycho)
+
 ### Coding
 
 [Coding Conventions](GUI-Coding-Conventions)
