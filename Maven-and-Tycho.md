@@ -102,4 +102,5 @@ The POM described above is sufficient for us to build a project from the command
 
 * `mvn compile` - this creates the JVM bytecode
 * `mvn test` - this runs any unit tests
-* 'mvn package' - create the jar and runs the tests
+* `mvn package` - create the jar and runs the tests
+* `mvn clean` - removes any previous build artifacts
