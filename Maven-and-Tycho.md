@@ -25,7 +25,7 @@ In many ways it can be consider the equivalent of a Makefile as it defines how t
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.maven_example.test</groupId>
-    <artifactId>myApp</artifactId>
+    <artifactId>test</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
@@ -77,3 +77,29 @@ Let's explain the various parts shown:
 * The build section defines specific information for the build such as the plugins to use. In this example, we use install4j to create an executable file
 
 See https://maven.apache.org/pom.html for more information on the various sections.
+
+### A Maven project ###
+
+Maven is very pick about how a project is laid out, it requires the various directories to name and positioned correctly.
+Luckily, most IDEs will take care of this for us.
+
+The layout is as follows:
+```
+|- The top-level of the project
+    |- src
+        |- main
+            |- java
+                |- The packages directories for the source e.g. com.myexample
+            |- resources
+        |- test
+            |- java
+                |- The packages directories for the tests
+    - pom.xml 
+```
+
+
+This POM is sufficient for us to build a project from the command line using Maven. The common commands used are:
+
+* `mvn compile` - this creates the JVM bytecode
+* `mvn test` - this runs any unit tests
+* 'mvn package' - create the jar and runs the tests
