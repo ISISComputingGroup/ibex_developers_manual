@@ -24,7 +24,7 @@ In many ways it can be consider the equivalent of a Makefile as it defines how t
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.maven_example.myApp</groupId>
+    <groupId>com.maven_example.test</groupId>
     <artifactId>myApp</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
@@ -65,3 +65,15 @@ In many ways it can be consider the equivalent of a Makefile as it defines how t
 
 </project>
 ``` 
+
+Let's explain the various parts:
+* Near the top we have the following information:
+    * The groupId is usually the name of the overarching project and is the same style as a Java package ID, e.g. org.apache.maven
+    * The name that the project is often known by, e.g. maven
+    * The version number. SNAPSHOT is automatically replaced by a date-time indicating the build time
+    * Packaging defines what is built, in this case a standard jar file
+* The dependencies section defines any external dependencies required for the project, in this case only junit is required
+* The properties section is used to define other properties relevant to the build
+* The build section defines specific information for the build such as the plugins to use. In this example, we use install4j to create an executable file
+
+See https://maven.apache.org/pom.html for more information on the various sections.
