@@ -87,4 +87,11 @@ and run
 
 This will launch the Nicos demo, which is comprised of several services, including a server monitoring window and the main Nicos gui.
 
-If you see errors about version numbers, it is because Nicos is trying to use ```git``` in the shell. You can fix this either by adding git to your PATH variables, or by launching the Nicos demo from a git-enabled bash.
+#### Troubleshooting
+
+* If you see errors about version numbers, it is because Nicos is trying to use ```git``` in the shell. You can fix this either by adding git to your PATH variables, or by launching the Nicos demo from a git-enabled bash.
+
+* On error: `Starting NICOS demo system, please wait: cacheFatal error while initializing: Setup cache does not exist (setup paths are C:\Instrument\nicos-core\custom\NDW1407\setups)` this is an environment variable set wrongly. Rerun this from a new command line terminal
+
+
+
