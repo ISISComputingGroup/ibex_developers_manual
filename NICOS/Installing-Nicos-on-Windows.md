@@ -19,7 +19,7 @@ Navigate to the directory you want to use Nicos and run
 
 ## Install C++ compiler for Python 2.7
 
-Install the Microsoft Visual C++ compiler for Python 2.7, which can be downloaded [here](http://aka.ms/vcpython27)
+Install the Microsoft Visual C++ compiler for Python 2.7, which can be downloaded [here](http://aka.ms/vcpython27).
 
 ## Install sip
 
