@@ -77,7 +77,7 @@
 
 ### Getting Started
 
-[Installing on Windows](NICOS---Installing-Nicos-on-Windows)
+[Installing on Windows](Installing-Nicos-on-Windows)
 
 # Other Information #
 
