@@ -29,7 +29,7 @@ You may need to update some of the following paths based on your Visual Studio v
 
 To set your environment variables correctly, run
 
-```"C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\vcvarsall.bat" amd64```
+    "C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\vcvarsall.bat" amd64
 
 The ```amd64``` option sets the environment to use 64-bit tools. This is important because Genie Python is distributed as a 64-bit version of Python. If you wish to use a 32-bit version of Python, remove this option and use the defaults. 
 
