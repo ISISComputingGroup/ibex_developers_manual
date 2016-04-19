@@ -9,6 +9,8 @@ As we intend to integrate with IBEX, we are going to work with Genie Python. You
 
 Genie Python can be installed by following the instructions [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/First-time-installing-and-building-(Windows)).
 
+For the remainder of this wiki, when we refer to Python, it is Genie Python and all commands launched using Python should use the Genie Python executable.
+
 ## Clone the Nicos repository
 
 Navigate to the directory you want to use Nicos and run
@@ -37,17 +39,23 @@ You should now be able to run ```nmake``` successfully from the command line.
 
 Download the Windows source zip for **sip** from [here](https://www.riverbankcomputing.com/software/sip/download) and extract it to a local directory. Navigate to that directory and run the following command (using Genie Python)
 
-```.../python.exe configure.py```
+```
+    .../python.exe configure.py
+```
 
 This will generate the necessary make file. 
 
 Next (from the same directory) run
 
-```nmake```
+```
+    nmake
+```
 
 then
 
-```nmake install```
+```
+    nmake install
+```
 
 With any luck, sip is now installed in your version of Genie Python.
 
@@ -55,7 +63,9 @@ With any luck, sip is now installed in your version of Genie Python.
 
 From the location of Nicos-core, run the following
 
-```[Genie Python dir]/scripts/pip.exe install -r requirements.txt```
+```
+    .../Python/scripts/pip.exe install -r requirements.txt
+```
 
 This will grab all of the required Python libraries for Nicos.
 
@@ -65,11 +75,15 @@ The installation for the Nicoslivewidget will fail. That's expected. Isabella an
 
 Navigate to
 
-```[Nicos dir]/bin```
+```
+    .../nicos-core/bin
+```
 
 and run
 
-```[Genie Python dir]/python.exe Nicos-demo```
+```
+    .../Python/python.exe Nicos-demo
+```
 
 This will launch the Nicos demo.
 
