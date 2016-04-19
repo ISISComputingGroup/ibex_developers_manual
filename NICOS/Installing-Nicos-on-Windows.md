@@ -1,6 +1,6 @@
 # Installing Nicos on Windows
 
-You can find a broad introduction to Nicos [here](http://cdn.frm2.tum.de/fileadmin/stuff/services/ITServices/Nicos-master/dirhtml/).
+You can find a broad introduction to Nicos [here](http://cdn.frm2.tum.de/fileadmin/stuff/services/ITServices/nicos-master/dirhtml/).
 
 The Nicos source was written primarily for Linux and so things can be a bit more difficult on Windows.
 
@@ -15,7 +15,7 @@ For the remainder of this wiki, when we refer to Python, it is Genie Python and 
 
 Navigate to the directory you want to use Nicos and run
 
-```git clone git://trac.frm2.tum.de/home/repos/git/frm2/Nicos/Nicos-core.git```
+```git clone git://trac.frm2.tum.de/home/repos/git/frm2/Nicos/nicos-core.git```
 
 ## Install sip
 
@@ -61,7 +61,7 @@ With any luck, sip is now installed in your version of Genie Python.
 
 ## Get other required Python libraries
 
-From the location of Nicos-core, run the following
+From the location of nicos-core, run the following
 
 ```
     .../Python/scripts/pip.exe install -r requirements.txt
@@ -82,7 +82,7 @@ Navigate to
 and run
 
 ```
-    .../Python/python.exe Nicos-demo
+    .../Python/python.exe nicos-demo
 ```
 
 This will launch the Nicos demo.
