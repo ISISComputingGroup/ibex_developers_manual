@@ -35,11 +35,7 @@ You should now be able to run ```nmake``` successfully from the command line.
 
 ### Installing **sip** from source
 
-Download the Windows source zip for **sip** and extract it to a local directory.
-
-```https://www.riverbankcomputing.com/software/sip/download```
-
-Navigate to that directory and run the following command (using Genie Python)
+Download the Windows source zip for **sip** from [here](https://www.riverbankcomputing.com/software/sip/download) and extract it to a local directory. Navigate to that directory and run the following command (using Genie Python)
 
 ```.../python.exe configure.py```
 
