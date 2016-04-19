@@ -73,6 +73,6 @@ and run
 
     .../Python/python.exe nicos-demo
 
-This will launch the Nicos demo.
+This will launch the Nicos demo, which is comprised of several services, including a server monitoring window and the main Nicos gui.
 
 If you see errors about version numbers, it is because Nicos is trying to use ```git``` in the shell. You can fix this either by adding git to your PATH variables, or by launching the Nicos demo from a git-enabled bash.
