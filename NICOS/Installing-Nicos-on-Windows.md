@@ -39,23 +39,17 @@ You should now be able to run ```nmake``` successfully from the command line.
 
 Download the Windows source zip for **sip** from [here](https://www.riverbankcomputing.com/software/sip/download) and extract it to a local directory. Navigate to that directory and run the following command (using Genie Python)
 
-```
-    .../python.exe configure.py
-```
+```.../python.exe configure.py```
 
 This will generate the necessary make file. 
 
 Next (from the same directory) run
 
-```
-    nmake
-```
+```nmake```
 
 then
 
-```
-    nmake install
-```
+```nmake install```
 
 With any luck, sip is now installed in your version of Genie Python.
 
@@ -63,9 +57,7 @@ With any luck, sip is now installed in your version of Genie Python.
 
 From the location of nicos-core, run the following
 
-```
-    .../Python/scripts/pip.exe install -r requirements.txt
-```
+```.../Python/scripts/pip.exe install -r requirements.txt```
 
 This will grab all of the required Python libraries for Nicos.
 
@@ -75,15 +67,11 @@ The installation for the Nicoslivewidget will fail. That's expected. Isabella an
 
 Navigate to
 
-```
-    .../nicos-core/bin
-```
+```.../nicos-core/bin```
 
 and run
 
-```
-    .../Python/python.exe nicos-demo
-```
+```.../Python/python.exe nicos-demo```
 
 This will launch the Nicos demo.
 
