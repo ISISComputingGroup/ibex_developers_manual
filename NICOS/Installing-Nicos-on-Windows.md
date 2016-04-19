@@ -23,6 +23,8 @@ sip allows Python to access C/C++ libraries as Python modules. Unfortunately, th
 
 ### Set up environment variables
 
+If you are already running an EPICS terminal, you should skip this step as the necessary environment variables are set as standard. If you're using a standard command prompt, you should continue with this section.
+
 We're going to use Visual Studio 2010 to run the make file and install sip, so install it if you don't already have it. Any recent version of Visual Studio should suffice. 
 
 You may need to update some of the following paths based on your Visual Studio version and install location.
