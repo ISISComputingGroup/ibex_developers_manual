@@ -69,7 +69,9 @@ From the location of nicos-core, run the following
 
     .../Python/scripts/pip.exe install -r requirements.txt
 
-This will grab all of the required Python libraries for Nicos.
+This will grab all of the required Python libraries for Nicos. Then run:
+
+    .../Python/scripts/pip.exe install --extra-index-url https://forge.frm2.tum.de/simple  nicos-pyctl
 
 The installation for the Nicoslivewidget will fail. That's expected. Isabella and I tried hard to get the live widget to work to no avail. It means the live view will be unavailable when you launch the Nicos gui. As we don't intend to use that part of Nicos in IBEX, we've chosen to proceed without further attempts to resolve this issue.
 
