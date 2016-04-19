@@ -72,6 +72,13 @@
 
 [Building and Installing genie_python](Building-and-installing-genie_python)
 
+
+## Nicos ##
+
+### Getting Started
+
+[Installing on Windows](NICOS---Installing-Nicos-on-Windows)
+
 # Other Information #
 
 [Jenkins Build Server](Jenkins-Build-Server)
