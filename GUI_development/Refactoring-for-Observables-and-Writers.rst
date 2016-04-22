@@ -102,6 +102,17 @@ November 2015
    :width: 438
    :scale: 100 %
    :align: center
+   
+April 2016
+-------------
+
+.. image:: GUI_development/images/refactoring_for_observables_and_writers/writables_april2016.png
+   :height: 404 
+   :width: 289
+   :scale: 100 %
+   :align: center
+   
+After refactoring, the ForwardingWritable is passed a converter, which can either convert value or do nothing.
 
 Writers
 =======
