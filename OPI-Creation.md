@@ -7,9 +7,9 @@ Load in the project in `ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources`
 Create a new OPI with File -> New  BOY -> OPI File
 Change to the "OPI Editor" prespective to allow easier editing.
 
+Create the IOC
 
-
-# Macros
+## Macros
 When an OPI is opened from the synopic (via OpiTargetView.java) you get at least the following macros automatically set:
 
 - `NAME`: the opt title, as defined by the synoptic component editor (e.g. "Slit 2")
@@ -26,6 +26,12 @@ One convention we have used is to define a macro within the opened OPI called PV
 
 here EURO would be a parameter passed from the synoptic and it is combined with P to create the prefix for all PVs referenced within the OPI screen
 
+# House keeping
+
+Add the IOC name with appropriate information, including macros to the  xml file
+
+  ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources\opi_info.xml
+
 # Developer Testing
 
 ## Start the IOC
@@ -33,5 +39,20 @@ here EURO would be a parameter passed from the synoptic and it is combined with 
 Make sure the instrument is running with the `EPICS\start_inst.bat` command
 Open an epics terminal a list all running instruments with
 
-    console -M< localhost -x
+    console -M localhost -x
+
+To interact with an IOC use
+
+    console -M localhost <IOC_NAME>
+
+console will attempt to complete the name if you only give part of it and will give you possible options. Once in the console:
+* `ctrl-x` : starts and stops thw IOC
+* `crtl-e` `c` `.`: exits the console
+
+TO switch an IOC to simulation mode the default is
+
+   caput <IOC PV NAME>:SIM 1
+
+
+
 
