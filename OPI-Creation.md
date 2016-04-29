@@ -60,7 +60,7 @@ console will attempt to complete the name if you only give part of it and will g
 
 TO switch an IOC to simulation mode the default is
 
-   caput <IOC PV NAME>:SIM 1
+    caput <IOC PV NAME>:SIM 1
 
 
 
