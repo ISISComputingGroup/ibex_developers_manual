@@ -7,7 +7,7 @@ Load in the project in `ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources`
 Create a new OPI with File -> New  BOY -> OPI File
 Change to the "OPI Editor" prespective to allow easier editing.
 
-Create the IOC
+Edit the OPI not that some Macros are provided.
 
 ## Macros
 When an OPI is opened from the synopic (via OpiTargetView.java) you get at least the following macros automatically set:
@@ -26,12 +26,21 @@ One convention we have used is to define a macro within the opened OPI called PV
 
 here EURO would be a parameter passed from the synoptic and it is combined with P to create the prefix for all PVs referenced within the OPI screen
 
-# House keeping
+# Completing the OPI
 
-Add the IOC name with appropriate information, including macros to the  xml file
+Add the IOC name with appropriate information, including macros to the xml file
 
   ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources\opi_info.xml
 
+In the xml file:
+* `key`: unique name for component
+* `value.type`: the component type, same as name of constant in ComponentType (uk.ac.stfc.isis.ibex.synoptic.model)
+    This enables the correct component target details to be added when component details are selected
+* `value.path`: the path to the opi file (relative to the resources folder)
+* `value.description`: description which is shown in target details
+* `value.macros.macro.name`: name of macro in OPI
+* `value.macro.macro.description`: description of macro value which appears in target details when user clicks on the macro
+  
 # Developer Testing
 
 ## Start the IOC
