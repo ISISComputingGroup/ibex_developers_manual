@@ -15,7 +15,7 @@ For the remainder of this wiki, when we refer to Python, it is Genie Python and 
 
 Navigate to the directory you want to use Nicos and run
 
-    git clone git://trac.frm2.tum.de/home/repos/git/frm2/nicos/nicos-core.git
+    git clone https://github.com/ISISComputingGroup/nicos-core.git
 
 ## Install C++ compiler for Python 2.7
 
