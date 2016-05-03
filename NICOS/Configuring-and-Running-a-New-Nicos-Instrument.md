@@ -1,6 +1,6 @@
 # Configuring and Running a New Nicos Instrument
 
-Nicos instruments configurations are stored under ```nicos-core/custom/```. These configurations are made to be very modular.
+Nicos instruments configurations are stored under ```nicos-core/custom/```. These configurations are designed to be very modular.
 
 ## Configuring an Instrument
 
@@ -20,7 +20,10 @@ There are two ways of specifying which instrument to run:
 * have a ```nicos.conf``` file in the root ```nicos-core``` directory, pointing at the instrument we wish to run. For example, to run the instrument ```IbexTestInstrument```, the file would contain:
 	[nicos]
 	instrument = IbexTestInstrument
+
 Now, as we need the correct EPICS and CA macros to be set for running genie_python commands (and ultimately Nicos to run with all the other Ibex instrument processes), we need to launch Nicos processes through an EPICS terminal. This terminal already sets a macro ```INSTRUMENT```, which gives us the option to simply have an instrument directory called ```custom/NDXXXX", e.g. for ```NDXDEMO``` we would have ```custom/NDXDEMO```.
+
+For testing purposes though it's more convenient to have a ```nicos.conf``` file specifying the instrument to launch, even when running from an EPICS terminal.
 
 
 
