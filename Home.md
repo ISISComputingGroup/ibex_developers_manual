@@ -83,6 +83,10 @@
 
 [Installing on Windows](Installing-Nicos-on-Windows)
 
+### Configurations
+
+[Instrument Configuration] (Configuring-and-Running-a-New-Nicos-Instrument)
+
 # Other Information #
 
 [Jenkins Build Server](Jenkins-Build-Server)
