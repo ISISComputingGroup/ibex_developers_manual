@@ -9,13 +9,13 @@ Checkout the ibex_system_tests repository by running:
 git clone https://github.com/ISISComputingGroup/ibex_system_tests.git
 ```
 
-The Eclipse IBEX Developer's Edition (version 3) comes with Eclipse RCPTT already installed. It is recommended to use a separate workspace for the system tests to the IBEX GUI, but it is not essential. Once you have started Eclipse you can select Window -> Open Perspective -> Other -> RCPTT to get to the RCPTT perspective.
+The Eclipse IBEX Developer's Edition (version 3) comes with Eclipse RCPTT already installed. It is recommended to use a separate workspace for the system tests to the IBEX GUI, but it is not essential. Once you have started Eclipse you can select Window -> Perspective -> Open Perspective -> Other -> RCPTT to get to the RCPTT perspective.
 
 You can also just download the latest testing tool from the [Eclipse RCPTT website](https://www.eclipse.org/rcptt/download/).
 
 ## Importing a Project
 
-Importing the system tests works in the same way as for the GUI. In Eclipse choose File -> Import -> Existing Projects into Workspace, then choose the RCPTT_Tests folder from the GitHub repository.
+Importing the system tests works in the same way as for the GUI. In Eclipse choose File -> Import -> General -> Existing Projects into Workspace, then choose the RCPTT_Tests folder from the GitHub repository.
 
 ## Configure the Application Under Test (AUT)
 
