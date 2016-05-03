@@ -18,7 +18,8 @@ If no instrument is specified, Nicos will run ```demo``` by default.
 
 There are two ways of specifying which instrument to run:
 * have an environmnent variable called ```INSTRUMENT``` containing the instrument's name: Nicos will then look for an instrument with that name under ```custom/```
-* have a ```nicos.conf``` file in the root ```nicos-core``` directory, pointing at the instrument we wish to run. For example, to run the instrument ```IbexTestInstrument```, the file would contain:
+* have a ```nicos.conf``` file in the root ```nicos-core/``` directory, pointing at the instrument we wish to run. For example, to run the instrument ```IbexTestInstrument```, the file would contain:
+
 	[nicos]
 	instrument = IbexTestInstrument
 
