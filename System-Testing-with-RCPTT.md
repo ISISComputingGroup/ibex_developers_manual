@@ -116,7 +116,7 @@ The first command here sets 200 ms between every command for the GUI test. This 
 
 Add all of these contexts to 'Default Contexts' under 'Project Settings'.
 
-## Jeknins Notes
+## Jenkins Notes
 
 See [special notes on configuring Jenkins for the GUI tests](Adding-a-new-Windows-machine-to-Jenkins#jenkins_gui_tests).
 
