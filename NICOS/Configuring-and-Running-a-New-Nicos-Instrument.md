@@ -10,7 +10,7 @@ An instrument can be configured as to which Nicos commands it should run. These 
 * ```nicos-core/nicos/commands``` in the case of generic Nicos commands
 * the instrument's own ```lib/``` directory in the case of instrument-specific commands
 
-It might be possible for an instrument to include files from another instrument too, as long as it is listed in the ```setup_subdirs``` section of the ```nicos.conf``` file (e.g. see ```antares/```, which includes ```frm2/```). NOTE: this hasn't been tested, but if it's the case it would allow us to have a base Ibex instrument containing core commands and settings common to all Ibex instruments, without committing new files to the core ```nicos/``` directory.
+It might be possible for an instrument to include files from another instrument too, as long as it is listed in the ```setup_subdirs``` section of the ```nicos.conf``` file (e.g. see ```antares/```, which includes ```frm2/```). NOTE: this hasn't been tested, but if it's the case it would allow us to have a basic Ibex instrument containing core commands and settings common to all Ibex instruments, without committing new files to the core ```nicos/commands``` directory.
 
 ## Running an Instrument
 
