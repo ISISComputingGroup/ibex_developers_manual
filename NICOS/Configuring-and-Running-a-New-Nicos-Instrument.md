@@ -17,12 +17,12 @@ It might be possible for an instrument to include files from another instrument 
 If no instrument is specified, Nicos will run ```demo``` by default.
 
 There are two ways of specifying which instrument to run:
-* have a macro called ```INSTRUMENT``` containing the instrument's name: Nicos will then look for an instrument under ```custom/``` with that name
+* have an environmnent variable called ```INSTRUMENT``` containing the instrument's name: Nicos will then look for an instrument under ```custom/``` with that name
 * have a ```nicos.conf``` file in the root ```nicos-core``` directory, pointing at the instrument we wish to run. For example, to run the instrument ```IbexTestInstrument```, the file would contain:
 	[nicos]
 	instrument = IbexTestInstrument
 
-Now, as we need the correct EPICS and CA macros to be set for running genie_python commands (and ultimately Nicos to run with all the other Ibex instrument processes), we need to launch Nicos processes through an EPICS terminal. This terminal already sets a macro ```INSTRUMENT```, which gives us the option to simply have an instrument directory called ```custom/NDXXXX", e.g. for ```NDXDEMO``` we would have ```custom/NDXDEMO```.
+Now, as we need the correct EPICS and CA environmnent variables to be set for running genie_python commands (and ultimately Nicos to run with all the other Ibex instrument processes), we need to launch Nicos processes through an EPICS terminal. This terminal already sets an ```INSTRUMENT``` environmnent variable, which gives us the option to simply have an instrument directory called ```custom/NDXXXX", e.g. for ```NDXDEMO``` we would have ```custom/NDXDEMO```.
 
 For testing purposes though it's more convenient to have a ```nicos.conf``` file specifying the instrument to launch, even when running from an EPICS terminal.
 
