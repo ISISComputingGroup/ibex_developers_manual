@@ -1,6 +1,6 @@
 ## StreamDevice support module
 
-Note: The support module is put in the `EPICS\support` directory, but the actual IOC(s) are put in the `EPICS\ioc` directory
+Note: The support module is put in the `EPICS\support` directory, but the actual IOC(s) are put in the `EPICS\ioc\master` directory
 
 First, set up the Support Module (Using the Hameg 8123 as an example.):
 
@@ -61,7 +61,7 @@ Delete the db file in `Hameg_8123Sup` and modify the Makefile so it not longer r
 
 ## Creating the IOC
 
-All IOCs used at ISIS reside in the `EPICS\ioc` directory.
+All IOCs used at ISIS reside in the `EPICS\ioc\master` directory.
 
 For this example we are using the Hameg 8123.
 
