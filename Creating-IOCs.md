@@ -123,25 +123,6 @@ $(APPNAME)_LIBS += pcre
 $(APPNAME)_LIBS += asyn
 ```
 
-Now the `configure\RELEASE` file need to be edited to include these extra support modules, for the Hameg the asyn, stream and PCRE modules need to be added:
-```
-## ISIS standard modules ##
-ICPCONFIG=$(SUPPORT)/icpconfig
-PVDUMP=$(SUPPORT)/pvdump
-DEVIOCSTATS=$(SUPPORT)/devIocStats/3-1-11
-AUTOSAVE=$(SUPPORT)/autosave/R5_0
-SNCSEQ=$(SUPPORT)/seq/2-1-11
-CAPUTLOG=$(SUPPORT)/caPutLog/3-3-3
-SQLITE=$(SUPPORT)/sqlite
-UTILITIES=$(SUPPORT)/utilities
-ZLIB=$(SUPPORT)/zlib/1-2-8
-## add other modules here ##
-ASYN=$(SUPPORT)/asyn/4-22
-STREAMDEVICE=$(SUPPORT)/StreamDevice
-PCRE=$(SUPPORT)/pcre
-ONRPC=$(SUPPORT)/oncrpc/2
-```
-
 Next the db file needs to created. For the Hameg (and most devices) the db only need to be stored in `HAMEG8123-IOC-01App\Db`. For the Hameg the part of the db file looks like this:
 ```
 record(ai, "$(P)CHAN_A:TRIG_LVL")
