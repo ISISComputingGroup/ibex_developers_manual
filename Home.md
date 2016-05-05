@@ -56,9 +56,9 @@ Information regarding the backend systems, including the block server, databases
 
 [Creating the IBEX Developer Version of Eclipse](Creating-the-IBEX-Developer-Version-of-Eclipse)
 
-## genie_python ##
+## [Genie Python](Building-and-installing-genie_python) ##
 
-[Building and Installing genie_python](Building-and-installing-genie_python)
+How to build and install Genie Python
 
 ## Epics ##
 
