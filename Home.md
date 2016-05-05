@@ -66,15 +66,9 @@ Information regarding the backend systems, including the block server, databases
 
 [EPICS training](EPICS-training)
 
-## Nicos ##
+## [Nicos](Nicos) ##
 
-### Getting Started
-
-[Installing on Windows](Installing-Nicos-on-Windows)
-
-### Configurations
-
-[Instrument Configuration] (Configuring-and-Running-a-New-Nicos-Instrument)
+How to build and configure Nicos.
 
 ## [Jenkins Build Server](Jenkins-Build-Server) ##
 
