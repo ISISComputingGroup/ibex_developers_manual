@@ -23,4 +23,5 @@ How to build and configure Nicos.
 # Useful tools
 
 [CA snooper](CA-snooper)
-[ISIS modules for file handling)(ISIS-modules-for-file-handling)
+
+[ISIS modules for file handling](ISIS-modules-for-file-handling)
