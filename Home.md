@@ -1,6 +1,6 @@
 # The IBEX Project #
 
-[Editing the Wiki](Editing-the-Wiki)
+## [Editing the Wiki](Editing-the-Wiki) ##
 
 [Project overview](Project-Overview)
 
