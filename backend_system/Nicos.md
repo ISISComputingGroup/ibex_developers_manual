@@ -2,6 +2,6 @@
 
 [Installing on Windows](Installing-Nicos-on-Windows)
 
-# Configurations
+# [Instrument Configuration] (Configuring-and-Running-a-New-Nicos-Instrument)
 
-[Instrument Configuration] (Configuring-and-Running-a-New-Nicos-Instrument)
+# [Script server design] (Script-server-design)
