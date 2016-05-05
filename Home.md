@@ -2,6 +2,8 @@
 
 [Editing the Wiki](Editing-the-Wiki)
 
+[Project overview](Project-Overview)
+
 ## Project Overview ##
 
 [ICP/IBEX Project Overview](https://github.com/ISISComputingGroup/IBEX/wiki)

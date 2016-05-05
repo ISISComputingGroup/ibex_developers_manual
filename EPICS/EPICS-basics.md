@@ -374,7 +374,7 @@ Three machines:
 
 ![Gateway schematic][gateway]
 
-[gateway]: gateway.png "Gateway schematic"
+[gateway]: https://raw.githubusercontent.com/wiki/ISISComputingGroup/ibex_developers_manual/EPICS/gateway.png "Gateway schematic"
 
 The gateway uses a file called gateway.pvlist that defines the PVs available via the gateway; using your PV names, edit it so it contains something along the lines of:
 
