@@ -6,7 +6,7 @@
 
 [ISIS PV guide](ISIS-PV-Guide)
 
-[PV naming}](PV-Naming)
+[PV naming](PV-Naming)
 
 [PV units](PV-Units)
 
