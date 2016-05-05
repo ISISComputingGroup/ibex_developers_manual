@@ -2,11 +2,11 @@
 
 [Creating an ISIS IOC](Creating-An-ISIS-IOC)
 
-[Editing DisableRecords](Editing-DisableRecords)
+[Editing DisableRecords](Disable-records)
 
 [ISIS PV guide](ISIS-PV-Guide)
 
-[PV naming}](PV-Naming)
+[PV naming](PV-Naming)
 
 [PV units](PV-Units)
 
