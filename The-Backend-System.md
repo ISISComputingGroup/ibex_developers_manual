@@ -15,3 +15,7 @@
 # IOCs
 
 [IOC Documentation](http://epics.isis.rl.ac.uk/doxygen/main/)
+
+# [Nicos](Nicos)
+
+How to build and configure Nicos.
