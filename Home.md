@@ -76,9 +76,9 @@ Information regarding the backend systems, including the block server, databases
 
 [Instrument Configuration] (Configuring-and-Running-a-New-Nicos-Instrument)
 
-# Other Information #
+## [Jenkins Build Server](Jenkins-Build-Server) ##
 
-[Jenkins Build Server](Jenkins-Build-Server)
+Information regarding the IBEX build server.
 
 ## [Working with Git and GitHub](Working-with-git-and-github) ##
 
