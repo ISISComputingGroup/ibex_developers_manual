@@ -20,6 +20,7 @@ A Nicos instrument can then have any number of additional setup files in the ```
 
 More documentation on the setup files is available [here] (http://cdn.frm2.tum.de/fileadmin/stuff/services/ITServices/nicos-master/dirhtml/setups/#setups).
 
+
 It looks like it's possible for an instrument to include setup files from another instrument too, as long as it is listed in the ```setup_subdirs``` section of a file called ```nicos.conf``` in the root instrument directory (e.g. see ```antares/```, which includes ```frm2/```). NOTE: this hasn't been tested, but if it's the case it would allow us to have a basic Ibex instrument containing core commands and settings common to all Ibex instruments, without committing new files to the core ```nicos/commands``` directory.
 
 To run the Nicos GUI, the instrument must have a ```guiconfig.py``` file in the root instrument directory (if copying from another Nicos instrument, make sure any hard-coded path containing the instrument name is adjusted correctly).
@@ -28,7 +29,7 @@ To run the Nicos GUI, the instrument must have a ```guiconfig.py``` file in the 
 
 If no instrument is specified, Nicos will run ```demo``` by default.
 
-There are two ways of specifying which instrument to run:
+There are at least two ways of specifying which instrument to run:
 * have an environmnent variable called ```INSTRUMENT``` containing the instrument's name: Nicos will then look for an instrument with that name under ```custom/```
 * have a ```nicos.conf``` file in the root ```nicos-core/``` directory, pointing at the instrument we wish to run. For example, to run the instrument ```IbexTestInstrument```, the file would contain:
 ```
