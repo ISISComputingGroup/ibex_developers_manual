@@ -60,11 +60,9 @@ Information regarding the backend systems, including the block server, databases
 
 How to build and install Genie Python.
 
-## Epics ##
+## [EPICS](EPICS) ##
 
-[EPICS basics](EPICS-basics)
-
-[EPICS training](EPICS-training)
+The basics of EPICS and links to additional training resources.
 
 ## [Nicos](Nicos) ##
 
