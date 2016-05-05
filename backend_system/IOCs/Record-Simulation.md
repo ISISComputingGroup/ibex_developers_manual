@@ -1,4 +1,3 @@
-= Record Simulation =
 EPICS supports the concept of running IOC records in "simulation mode" - here rather than reading input/output from devices 
 according to the INP/OUT fields the record will bypass hardware and use an alternative value. We should only need to add this support to records that access hardware, other records should be able to work as normal on these supplied simulated values.
 
@@ -8,7 +7,7 @@ Though a simulated motor exists, it is probably still worth doing record simulat
 
 First add the following record that will be used to indicate if simulation mode is being used
 
-
+```
 record(bo, "$(P)SIM") 
 {
     field(SCAN, "Passive")
@@ -16,11 +15,11 @@ record(bo, "$(P)SIM")
     field(ZNAM, "NO")
     field(ONAM, "YES")
 }
-
+```
 
 next you need to modify any records that talk to real hardware (i.e. those where DTYP is not "Soft Channel" or "Raw Soft Channel"). You add the SIML field (to tell the record whether it should run in simulation mode) and the SIOL fields (to tell it where to read/write values when in simulation mode). For example:
  
-
+```
 record(ai, "$(P)CURRENT") 
 {
     field(SCAN, "1 second")
@@ -53,11 +52,13 @@ record(ai, "$(P)CURRENT:SP:RBV")
     field(SIML, "$(P)SIM")
     field(SIOL, "$(P)SIM:CURRENT:SP:RBV")
 }
+```
 
 
 
 We now need to add, and join if necessary, the relevant $(P)SIM dummy records. For the moment we will just do a simple join of the records by creating an alias - however by using an alias rather than pointing at a single PV we allow a future option of using a soft IOC to e.g. ramp values smoothly. 
 
+```
 record(ao, "$(P)SIM:CURRENT") 
 {
     field(SCAN, "Passive")
@@ -67,4 +68,4 @@ record(ao, "$(P)SIM:CURRENT")
 alias("$(P)SIM:CURRENT","$(P)SIM:CURRENT:SP")
 
 alias("$(P)SIM:CURRENT","$(P)SIM:CURRENT:SP:RBV")
-
+```
