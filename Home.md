@@ -80,12 +80,6 @@ Information regarding the backend systems, including the block server, databases
 
 [Jenkins Build Server](Jenkins-Build-Server)
 
-## Working with Git and GitHub ##
+## [Working with Git and GitHub](Working-with-git-and-github) ##
 
-[Getting Started with Git] (Getting-started-with-Git-and-GitHub)
-
-[Git Workflow](Git-Cribs)
-
-[Useful Git Commands](Git Commands)
-
-[Adding new modules](Adding new modules)
+Getting started with Git and GitHub, development workflows and useful common commands.
