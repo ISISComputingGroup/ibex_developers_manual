@@ -2,7 +2,7 @@
 
 [Creating an ISIS IOC](Creating-An-ISIS-IOC)
 
-[Editing DisableRecords](Editing-DisableRecords)
+[Disable records](Disable-records)
 
 [ISIS PV guide](ISIS-PV-Guide)
 
