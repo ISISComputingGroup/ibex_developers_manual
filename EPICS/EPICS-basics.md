@@ -1,10 +1,8 @@
-# EPICS Basics #
-
 If you are setting up a development environment for the first time, it is recommended that you first look at the [Getting started guide](First-time-installing-and-building-(Windows)).
 
 The following instructions have been migrated from Trac to GitHub and some steps may no longer be appropriate for the IBEX project.
 
-## Building EPICS with VS2012 Express on a 64-bit Windows ##
+# Building EPICS with VS2012 Express on a 64-bit Windows #
 1. Download and install Visual Studio Express 2012 for Windows Desktop
 1. Download and install Strawberry Perl (64 bit version) to C:\strawberry\
 1. Download, unzip and copy GNU Make for Windows to C:\gnuwin32
@@ -26,7 +24,7 @@ cd ..
 make
 It should build now, taking about 5-10 minutes.
 
-### Preparing to use EPICS ###
+## Preparing to use EPICS ##
 
 Add some environment variables:
 EPICS_HOST_ARCH=windows-x64
@@ -34,13 +32,13 @@ EPICS=C:\EPICS\
 Add the following directory to the PATH environment variable:
 
 %EPICS%\base\bin\%EPICS_HOST_ARCH%
-### To build a debug version ###
+## To build a debug version ##
 
 Edit startup\win32.bat
 Change set EPICS_HOST_ARCH=windows-x64 line to set EPICS_HOST_ARCH=windows-x64-debug
 Then rebuild using make.
 
-## Creating a simple IOC ##
+# Creating a simple IOC #
 Run Win32.bat from $EPICS_BASE\startup
 
 Create a directory in the directory below EPICS base called my_iocs or whatever. Inside that create a directory called simpleioc.
@@ -91,7 +89,7 @@ The IOC should start. Type dbl to print a list of PVs. If the PVs are not there 
 
 If you start a new command line and set the paths as above if it will be possible to use caput, caget etc. If you edit the records, you may need to run make again - just stop the IOC, type make and then restart the IOC.
 
-## Creating a random number generator IOC ##
+# Creating a random number generator IOC #
 Largely based on the tutorial found here.
 
 Run Win32.bat from $EPICS_BASE\startup
@@ -185,23 +183,23 @@ Move to iocBoot\iocrand\
 
 Edit the appropriate parts of st.cmd to look like this:
 
-## Register all support components
+# Register all support components
 dbLoadDatabase "dbd/rand.dbd"
 rand_registerRecordDeviceDriver pdbbase
-## Load record instances
+# Load record instances
 dbLoadRecords("db/rand.db", S=324235")
 Now run the IOC:
 
 ..\..\bin\windows-x64\rand.exe st.cmd
-## ProcServer ##
+# ProcServer #
 
-### Installation ###
+## Installation ##
 
 Download the Windows executable from http://sourceforge.net/projects/procserv/ and install somewhere in your EPICS installation. For example: C:\EPICS_PILOT\support\procserver. Obtain CygWin1.dll and put it into the ProcServer directory (installing CygWin and copying and pasting the file is one way).
 
 Add the ProcServer directory to your EPICS path; for example: edit the .bat file that is used to configure your EPICS environment.
 
-### Running a simple example ###
+## Running a simple example ##
 
 From the command line, move to the iocBoot directory of an IOC (e.g. C:\EPICS_PILOT\ISIS\simpleioc\iocBoot\iocsimple).
 
@@ -216,7 +214,7 @@ This will spawn a blank command window for the IOC. The parameters explained:
 20000 is the port that ProcServer will run on
 From another command line it should be possible to use caget to get values from the newly spawned IOC. Note: ProcServer can be started without the IOC being loaded using -w, the IOC can then be started later remotely.
 
-### Connecting remotely ###
+## Connecting remotely ##
 
 By default, ProcServer access is restricted to the local host. To enable read-only remote access the -l (small L) parameter needs to be specified with a port number. For example:
 
@@ -255,9 +253,9 @@ This connection is read/write so sending IOC commands like dbl and dbtpf will wo
 
 By default, typing exit and pressing return will quit and restart the IOC, and a mixture of ProcServer and IOC messages will be seen. The IOC can be set to not automatically restart by specifying the --noautorestart parameter when starting !ProcServer. It is still possible to restart the IOC remotely once exited by using CTRL+X followed by pressing return.
 
-## PV Gateway ##
+# PV Gateway #
 
-### Building ###
+## Building ##
 
 NOTE: this has already been done for the EPICS PILOT, so it can be downloaded and built from there.
 
@@ -278,7 +276,7 @@ Edit line 117 in the Makefile in srcgateway to read:
 PROD_LIBS = regex
 Move to the extensions directory and type "make" to build it.
 
-### A simple example ###
+## A simple example ##
 
 Three machines:
 
@@ -326,14 +324,14 @@ YOURMACHINE.* ALLOW
 The PVs should now be accessible like so:
 
 caget YOURMACHINE:pvtotal
-### Running on one machine (Block Server) ###
+## Running on one machine (Block Server) ##
 
-#### IOC ####
+## IOC ##
 
 set EPICS_CA_ADDR_LIST=127.0.0.1 YOUR_IP_ADDRESS
 Run the SimpleIoc!
 
-#### Gateway ####
+## Gateway ##
 
 Create a file called blocks.pvlist and add the following:
 
@@ -345,14 +343,14 @@ ASG(DEFAULT) {
    RULE(1,READ)
 }
 gateway -pvlist blocks.pvlist -access gateway.access -cip 127.0.0.1 -sip YOUR_IP_ADDRESS
-#### CAGET ####
+## CAGET ##
 
 set EPICS_CA_ADDR_LIST=127.0.0.1 YOUR_IP_ADDRESS
 caget BLOCK1  #This works via the gateway
 caget NDWxxx:username:SIMPLE:VALUE1  #This works via standard CA
 caput NDWxxx:username:SIMPLE:VALUE1 5  #This works via standard CA
 caput BLOCK1 10  #This is not allowed by the gateway
-### Creating an Alias Gateway ###
+## Creating an Alias Gateway ##
 
 An alias gateway offers three advantages:
 
@@ -398,12 +396,12 @@ Clients need to point at the correct host:
 set EPICS_CA_ADDR_LIST=130.246.37.143
 Any request for a PV starting HOST:user will then be received by the gateway and it will access the IOC.
 
-## EPICS Access Security ##
+# EPICS Access Security #
 See the EPICS Application Developer's Guide for more information.
 
 All examples assume you are using the [wiki:CreateSimpleIOC Simple IOC] or something similar.
 
-### Simple Example ###
+## Simple Example ##
 
 UAG(uag) {user1, user2}
 HAG(hag) {officePC, instPC}
@@ -429,7 +427,7 @@ To enable security on an IOC, the following needs to be added before iocInit:
 asSetFilename("C:\absolute_path_to_ioc\iocBoot\iocsimple\security.acf")
 An absolute file path for the security file should be used.
 
-### Advanced Example ###
+## Advanced Example ##
 
 UAG(local) {user1}
 HAG(cabin) {instPC}
@@ -454,7 +452,7 @@ everyone can read the PVs
 user1 can write to PVs from instPC only
 user2 can write to PVs from his office PC, but only if simple:value2 equals 1
 
-### Access Security Groups ###
+## Access Security Groups ##
 
 A record can be added to a specific access security group using the ASG field, otherwise it will be automatically placed in the DEFAULT ASG. For example, the following adds the simple:value2 record to the ACCESS ASG:
 
@@ -490,7 +488,7 @@ ASG(ACCESS) {
 }
 Now only user1 (on instPC) can read or write to simple:value2.
 
-### Changing Permissions Example ###
+## Changing Permissions Example ##
 
 There are two subroutines (asSubInit, asSubProcess) that can be used to force the IOC to reload the security settings file. In the .db file add a record like this:
 
@@ -514,10 +512,10 @@ Test that it is possible to write to one of the PVs using caget. Next manually r
 caget reset 1
 The security settings should now have been reloaded, and it should no longer be possible to write to any of the PVs (including resetting the permissions!).
 
-## Using the Array Subroutine (aSub) ##
+# Using the Array Subroutine (aSub) #
 An aSub record is a record that can call a C routine. This record is not used for device communication.
 
-### Creating an IOC that uses aSub ###
+## Creating an IOC that uses aSub ##
 
 A simple example that creates an aSub record that doubles the input value.
 
@@ -583,23 +581,23 @@ The caget should return a value of 10.
 
 NOTE: The aSub record automatically allocates space for input and output values based on NOA and NOVA.
 
-## Adding devIocStats to an IOC ##
+# Adding devIocStats to an IOC #
 Assuming devIocStats exists in your system and the IOC to be modified is complete (i.e. it builds and runs correctly), follow the following steps to add devIocStats to it:
 
 Open configure\RELEASE and add DEVIOCSTATS=YOUR_PATH/devIocStats/3-1-11 with YOUR_PATH replaced appropriately.
 Open the st.cmd for the IOC and change it to look something like this
 #!../../bin/windows-x64/MY_IOC
-## You may have to change MY_IOC to something else
-## everywhere it appears in this file
+# You may have to change MY_IOC to something else
+# everywhere it appears in this file
 < envPaths
-epicsEnvSet "IOCNAME" "$(P=$(MYPVPREFIX))MY_IOC"               ## (1) The IOC name used in PVs
-epicsEnvSet "IOCSTATS_DB" "$(DEVIOCSTATS)/db/iocAdminSoft.db"  ## (2) The path to devIocStats db to use
+epicsEnvSet "IOCNAME" "$(P=$(MYPVPREFIX))MY_IOC"               # (1) The IOC name used in PVs
+epicsEnvSet "IOCSTATS_DB" "$(DEVIOCSTATS)/db/iocAdminSoft.db"  # (2) The path to devIocStats db to use
 cd ${TOP}
-## Register all support components
+# Register all support components
 dbLoadDatabase "dbd/MY_IOC.dbd"
 MY_IOC_registerRecordDeviceDriver pdbbase
-dbLoadRecords("db/my_ioc.db","P=$(IOCNAME)")                   ## (3) Pass the IOCNAME to the IOC's db
-dbLoadRecords("$(IOCSTATS_DB)","IOC=$(IOCNAME)")               ## (4) Load the devIocStats db
+dbLoadRecords("db/my_ioc.db","P=$(IOCNAME)")                   # (3) Pass the IOCNAME to the IOC's db
+dbLoadRecords("$(IOCSTATS_DB)","IOC=$(IOCNAME)")               # (4) Load the devIocStats db
 cd ${TOP}/iocBoot/${IOC}
 iocInit
 The key changes are highlighted by the numbered comments.
@@ -612,16 +610,16 @@ Additional step: if there is a dbd file in MY_IOCApp\src, then you might need to
 
 Finally rebuild the IOC (make clean uninstall followed by make)
 
-## Creating a Sequencer ##
+# Creating a Sequencer #
 
-### Create an IOC ###
+## Create an IOC ##
 
 mkdir seqex
 cd seqex
 makebaseapp.pl -t ioc seqex
 makebaseapp.pl -i -t ioc seqex
 
-### Create additional files ###
+## Create additional files ##
 
 cd seqexApp/db
 echo. 2> seqex.db
@@ -631,9 +629,9 @@ echo. 2> sncProgram.st
 echo. 2> sncExample.stt
 echo. 2> sncExample.dbd
 
-### Modify the files ###
+## Modify the files ##
 
-#### seqexApp/db/seqex.db ####
+## seqexApp/db/seqex.db ##
 
 record(ai, "$(user):aiExample")
 {
@@ -673,17 +671,17 @@ record(calc, "$(user):calcExample")
         field(LSV, "MINOR")
         field(LLSV, "MAJOR")
 }
-#### seqexApp/db/Makefile ####
+## seqexApp/db/Makefile ##
 
 Add:
 
 DB += seqex.db
 
-#### seqexApp/src/sncProgram.st ####
+## seqexApp/src/sncProgram.st ##
 
 #include "../sncExample.stt"
 
-#### seqexApp/src/sncExample.stt ####
+## seqexApp/src/sncExample.stt ##
 
 program sncExample
 double v;
@@ -707,11 +705,11 @@ ss ss1 {
         }
 }
 
-#### seqexApp/src/sncExample.dbd ####
+## seqexApp/src/sncExample.dbd ##
 
 registrar(sncExampleRegistrar)
 
-#### build.mak (if using ISIS build) or Makefile (if not) ####
+## build.mak (if using ISIS build) or Makefile (if not) ##
 
 Add:
 
@@ -723,23 +721,23 @@ ifneq ($(SNCSEQ),)
         $(APPNAME)_LIBS += seq pv
 endif
 
-#### configure/RELEASE ####
+## configure/RELEASE ##
 
 Make sure there is a uncommented line like below but with the correct path for your system:
 
 SNCSEQ=PATH_TO_YOUR_SEQ_INSTALLATION
 
-#### iocBoot/iocseqex/st.cmd #### 
+## iocBoot/iocseqex/st.cmd ## 
 
 Uncomment and adjust the dbLoadrecords line, e.g:
 
-## Load our record instances
+# Load our record instances
 dbLoadRecords("db/seqex.db","user=yournameHost")
 Uncomment and adjust the seq line, e.g.:
 
-## Start any sequence programs
+# Start any sequence programs
 seq sncExample,"user=yourname3Host"
 
-### Build the IOC ###
+## Build the IOC ##
 
 Build and run the IOC as normal.
