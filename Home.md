@@ -2,37 +2,13 @@
 
 [Editing the Wiki](Editing-the-Wiki)
 
-[Project overview](Project-Overview)
+## [Project overview](Project-Overview) ##
 
-[The backend system](The-Backend-System)
+High level overview of the project including architectural and design documents.
 
-## Project Overview ##
+## [The backend system](The-Backend-System) ##
 
-[ICP/IBEX Project Overview](https://github.com/ISISComputingGroup/IBEX/wiki)
-
-[Architectural Design](High-Level-Architectural-Design)
-
-[Proposed Design Documents](Design Documents)
-
-## The Backend System ##
-
-### Getting Started
-
-[First time installing and building (Windows)](First-time-installing-and-building-(Windows))
-
-### System Components
-
-[The BlockServer](BlockServer)
-
-[The DatabaseServer](The-DatabaseServer)
-
-[The MySQL Database](The-MySQL-Database)
-
-[Configurations] (Configurations)
-
-### IOCs
-
-[IOC Documentation](http://epics.isis.rl.ac.uk/doxygen/main/)
+Information regarding the backend systems, including the block server, databases, configurations, and IOCs. Also contains the getting started guide for setting up the backend.
 
 ## The GUI ##
 
