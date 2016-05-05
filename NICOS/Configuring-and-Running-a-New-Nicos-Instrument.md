@@ -14,7 +14,7 @@ An instrument requiring the Nicos daemon must have, as a minimum, a ```setups/``
 # automatically.
 ```
 
-A Nicos instrument can then have any number of additional setup files in the ```setups``` directory, each specifying a set of devices and commands that the daemon is configured to recognise (see for example Nicos demo). A setup file called ```system.py``` if present, is always loaded. Here we can define a ```modules``` section, listing the file names of the modules that should be included. Command files can be located in:
+A Nicos instrument can then have any number of additional setup files in the ```setups``` directory, each specifying a set of devices and commands that the daemon is configured to recognise (see for example Nicos ```demo```). A setup file called ```system.py``` if present, is always loaded. Here we can define a ```modules``` section, listing the file names of the modules that should be included. Command files can be located in:
 * ```nicos-core/nicos/commands``` in the case of generic Nicos commands
 * the instrument's own ```lib/``` directory in the case of instrument-specific commands
 
