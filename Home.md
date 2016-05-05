@@ -56,36 +56,22 @@ Information regarding the backend systems, including the block server, databases
 
 [Creating the IBEX Developer Version of Eclipse](Creating-the-IBEX-Developer-Version-of-Eclipse)
 
-## genie_python ##
+## [Genie Python](Building-and-installing-genie_python) ##
 
-[Building and Installing genie_python](Building-and-installing-genie_python)
+How to build and install Genie Python.
 
-## Epics ##
+## [EPICS](EPICS) ##
 
-[EPICS basics](EPICS-basics)
+The basics of EPICS and links to additional training resources.
 
-[EPICS training](EPICS-training)
+## [Nicos](Nicos) ##
 
-## Nicos ##
+How to build and configure Nicos.
 
-### Getting Started
+## [Jenkins Build Server](Jenkins-Build-Server) ##
 
-[Installing on Windows](Installing-Nicos-on-Windows)
+Information regarding the IBEX build server.
 
-### Configurations
+## [Working with Git and GitHub](Working-with-git-and-github) ##
 
-[Instrument Configuration] (Configuring-and-Running-a-New-Nicos-Instrument)
-
-# Other Information #
-
-[Jenkins Build Server](Jenkins-Build-Server)
-
-## Working with Git and GitHub ##
-
-[Getting Started with Git] (Getting-started-with-Git-and-GitHub)
-
-[Git Workflow](Git-Cribs)
-
-[Useful Git Commands](Git Commands)
-
-[Adding new modules](Adding new modules)
+Getting started with Git and GitHub, development workflows and useful common commands.
