@@ -315,6 +315,7 @@ Note: the port (in this case 20000) needs access through the firewall.
 
 Connecting now will show slightly more information:
 
+```
 @@@ Welcome to procServ (procServ Process Server 2.6.0)
 @@@ Use ^X to kill the child, auto restart is ON, use ^T to toggle auto restart
 @@@ procServ server PID: 4748
@@ -325,9 +326,11 @@ Connecting now will show slightly more information:
 @@@ procServ server started at: Thu Apr  4 10:52:40 2013
 @@@ Child "Simple IOC" started at: Thu Apr  4 10:52:40 2013
 @@@ 0 user(s) and 0 logger(s) connected (plus you)
+```
+
 This connection is read/write so sending IOC commands like dbl and dbtpf will work.
 
-By default, typing exit and pressing return will quit and restart the IOC, and a mixture of ProcServer and IOC messages will be seen. The IOC can be set to not automatically restart by specifying the --noautorestart parameter when starting !ProcServer. It is still possible to restart the IOC remotely once exited by using CTRL+X followed by pressing return.
+By default, typing exit and pressing return will quit and restart the IOC, and a mixture of ProcServer and IOC messages will be seen. The IOC can be set to not automatically restart by specifying the `--noautorestart` parameter when starting ProcServer. It is still possible to restart the IOC remotely once exited by using `CTRL+X` followed by pressing return.
 
 # PV Gateway #
 
@@ -335,97 +338,149 @@ By default, typing exit and pressing return will quit and restart the IOC, and a
 
 NOTE: this has already been done for the EPICS PILOT, so it can be downloaded and built from there.
 
-Download gnuregex from EPICS site. Place in extensionssrc directory (assuming extensions_top has already been installed).
+Download `gnuregex` from EPICS site. Place in `extensions\src` directory (assuming extensions_top has already been installed).
 
-Download gateway source source from EPICS site. Place in extensions\src directory.
+Download gateway source source from EPICS site. Place in `extensions\src` directory.
 
-Edit gateway.cc by adding the following near the top:
+Edit `gateway.cc` by adding the following near the top:
 
+```
 #ifdef WIN32
   #define strcasecmp _stricmp
 #endif
+```
+
 Edit gateResources.cc and edit line 55 to read:
 
+```
 time_t now;
+```
+
 Edit line 117 in the Makefile in srcgateway to read:
 
+```
 PROD_LIBS = regex
+```
+
 Move to the extensions directory and type "make" to build it.
 
 ## A simple example ##
 
 Three machines:
 
-INST = PC running IOCs
-GATE = PC running gateway
-VIEW = Viewing PC (only needs caget)
-Gateway
+1. INST = PC running IOCs
+1. GATE = PC running gateway
+1. VIEW = Viewing PC (only needs caget)
+
+![Gateway schematic][gateway]
+
+[gateway]: gateway.png "Gateway schematic"
+
 The gateway uses a file called gateway.pvlist that defines the PVs available via the gateway; using your PV names, edit it so it contains something along the lines of:
 
+```
 PCA:KITNAME:PV1 ALLOW
 PCA:KITNAME:PV2 ALLOW
+
+```
+
 IMPORTANT: there must be a blank line after the final definition or it will not work!
 
 There is a second file called gateway.access that defines the access rights. The access is defined using the EPICS Access Security syntax. For read-only access for everyone it should contain:
 
+```
 ASG(DEFAULT) {
    RULE(1,READ)
 }
-For more information, see [wiki:AccessSecurity EPICS Access Security]
+```
 
-Start the gateway with the following command (replacing IP_OF_INST and IP_OF_GATE with the correct IP addresses):
+For more information, see [Access Security](#Access-Security).
 
+Start the gateway with the following command (replacing `IP_OF_INST` and `IP_OF_GATE` with the correct IP addresses):
+
+```
 gateway -pvlist gateway.pvlist -access gateway.access -cip IP_OF_INST -sip IP_OF_GATE
-NOTE: to send multiple client addresses, use a quoted space separated list, e.g. 192.168.0.1 192.168.0.2 \ NOTE: if -cip is not defined then the gateway will use EPICS_CA_ADDR_LIST by default. \
+```
 
-On VIEW, run the following commands:
+NOTE: to send multiple client addresses, use a quoted space separated list, e.g. `192.168.0.1 192.168.0.2`. NOTE: if `-cip` is not defined then the gateway will use `EPICS_CA_ADDR_LIST` by default. \
 
+On `VIEW`, run the following commands:
+
+```
 set EPICS_CA_ADDR_LIST= IP_OF_GATE
 caget PCA:KITNAME:PV1
+```
+
 Hopefully, that should work. If you now stop the gateway process on GATE and retry the caget on VIEW, it should fail.
 
 To use an aliases, simply change the gateway.pvlist, so it contains something like:
 
+```
 MY_ALIASNAME ALIAS PCA:KITNAME:PV1
+```
+
 IMPORTANT: there must be a blank line after the final definition or it will not be defined!
 
 From VIEW, it should now be possible to use caget with the alias:
 
+```
 caget MY_ALIASNAME
-To access statistics about the gateway via Channel Access the gateway.pvlist needs to be edited to allow access to the gateway PVs:
+```
 
+To access statistics about the gateway via Channel Access the gateway.pvlist needs to be edited to allow access to the
+gateway PVs:
+
+```
 PCA:KITNAME:PV1 ALLOW
 PCA:KITNAME:PV2 ALLOW
 YOURMACHINE.* ALLOW
+```
+
 The PVs should now be accessible like so:
 
+```
 caget YOURMACHINE:pvtotal
+```
+
 ## Running on one machine (Block Server) ##
 
 ## IOC ##
 
-set EPICS_CA_ADDR_LIST=127.0.0.1 YOUR_IP_ADDRESS
+set `EPICS_CA_ADDR_LIST=127.0.0.1 YOUR_IP_ADDRESS`
+
 Run the SimpleIoc!
 
 ## Gateway ##
 
-Create a file called blocks.pvlist and add the following:
+Create a file called `blocks.pvlist` and add the following:
 
+```
 BLOCK1 ALIAS NDWxxx:username:SIMPLE:VALUE1
 <BLANK LINE>
-Create a file called gateway.access and add the following:
+```
 
+Create a file called `gateway.access` and add the following:
+
+```
 ASG(DEFAULT) {
    RULE(1,READ)
 }
+```
+
+```
 gateway -pvlist blocks.pvlist -access gateway.access -cip 127.0.0.1 -sip YOUR_IP_ADDRESS
+```
+
 ## CAGET ##
 
+```
 set EPICS_CA_ADDR_LIST=127.0.0.1 YOUR_IP_ADDRESS
 caget BLOCK1  #This works via the gateway
 caget NDWxxx:username:SIMPLE:VALUE1  #This works via standard CA
 caput NDWxxx:username:SIMPLE:VALUE1 5  #This works via standard CA
 caput BLOCK1 10  #This is not allowed by the gateway
+```
+
 ## Creating an Alias Gateway ##
 
 An alias gateway offers three advantages:
@@ -435,50 +490,70 @@ Firewall rules are required only for a single process using known ports
 It offers a single place to impose security
 In order to prevent the gateway from blocking itself, it needs to be run on a different interface or port from the IOCs it is serving.
 
-To use a different port, start gateway with the options -sport 5066 -cport 5064 and on the client use set EPICS_CA_ADDR_LIST=130.246.37.143:5066
+To use a different port, start gateway with the options `-sport 5066 -cport 5064` and on the client use set `EPICS_CA_ADDR_LIST=130.246.37.143:5066`
 
 We however are planning to restrict the IOCs to running on the loopback interface by setting:
 
+```
 set EPICS_CA_ADDR_LIST=127.255.255.255
 set EPICS_CAS_BEACON_ADDR_LIST=127.255.255.255
 set EPICS_CAS_INTF_ADDR_LIST=127.0.0.1
+```
+
 Note that for multiple IOCs to work, the broadcast address must be used.
 
 Because the clients only use the loopback interface they have no interaction with windows firewall.
 
 The gateway can then be started with:
 
+```
 gateway.exe -pvlist pvlist.txt -access access.txt -prefix HOST:gateway -cip 127.255.255.255 -sip 130.246.37.143
+```
+
 Since it listens only on the external address and looks for PVs only on the loopback address, there is no need for aliasing for non-standard ports to prevent ambiguity.
 
 Assuming the PVs all start HOST:user, the following pvlist.txt will allow full access to any PV, along with the gateway's internal PVs:
 
+```
 EVALUATION    ORDER ALLOW, DENY
 HOST:gateway:.*    ALLOW
 HOST:user:.*    ALLOW    DEFAULT 0
 HOST:user:.*    ALLOW    DEFAULT 1
-The following access.txt allows full access to everything that does not have a group set:
+```
 
+The following `access.txt` allows full access to everything that does not have a group set:
+
+```
 ASG(DEFAULT) {
     RULE(0,WRITE)
     RULE(1,WRITE)
 }
+```
+
 The HOST firewall needs either to allow network access for the gateway program, or rules like:
 
+```
 netsh advfirewall firewall add rule name="EPICS" dir=in localport=5064 action=allow protocol=udp
 netsh advfirewall firewall add rule name="EPICS" dir=in localport=5064 action=allow protocol=tcp
+```
+
 Clients need to point at the correct host:
 
+```
 set EPICS_CA_ADDR_LIST=130.246.37.143
+```
+
 Any request for a PV starting HOST:user will then be received by the gateway and it will access the IOC.
 
 # EPICS Access Security #
-See the EPICS Application Developer's Guide for more information.
+
+See the [EPICS Application Developer's Guide](http://www.aps.anl.gov/epics/base/R3-15/0-docs/AppDevGuide/node9.html#SECTION00910000000000000000) for more information.
 
 All examples assume you are using the [wiki:CreateSimpleIOC Simple IOC] or something similar.
 
 ## Simple Example ##
 
+```
 UAG(uag) {user1, user2}
 HAG(hag) {officePC, instPC}
 ASG(DEFAULT) {
@@ -488,23 +563,32 @@ ASG(DEFAULT) {
     HAG(hag)
   }
 }
+```
+
 These rules provide read access to anyone located anywhere and write access to user1 and user2 if they are located at officePC or instPC.
 
-The 1 in RULE(1,READ) represents the access level for a field and must be set to 0 or 1. By default, the standard records types are all defined as 1 except for VAL, CMD and RES. For example: it could be configured that everybody can read record fields with 0 access level, and advanced users can read everything:
+The 1 in `RULE(1,READ)` represents the access level for a field and must be set to 0 or 1. By default, the standard records types are all defined as 1 except for `VAL`, `CMD` and `RES`. For example: it could be configured that everybody can read record fields with 0 access level, and advanced users can read everything:
 
+```
 RULE(0,READ)
 RULE(1,READ) {
   UAG(uag)
 }
+```
+
 Having level 1 access automatically includes access to level 0.
 
 To enable security on an IOC, the following needs to be added before iocInit:
 
+```
 asSetFilename("C:\absolute_path_to_ioc\iocBoot\iocsimple\security.acf")
+```
+
 An absolute file path for the security file should be used.
 
 ## Advanced Example ##
 
+```
 UAG(local) {user1}
 HAG(cabin) {instPC}
 UAG(remote) {user2}
@@ -522,23 +606,29 @@ ASG(DEFAULT) {
     CALC("A=1")
   }
 }
+```
+
 This rule states that:
 
-everyone can read the PVs
-user1 can write to PVs from instPC only
-user2 can write to PVs from his office PC, but only if simple:value2 equals 1
+- everyone can read the PVs
+- user1 can write to PVs from instPC only
+- user2 can write to PVs from his office PC, but only if simple:value2 equals 1
 
 ## Access Security Groups ##
 
-A record can be added to a specific access security group using the ASG field, otherwise it will be automatically placed in the DEFAULT ASG. For example, the following adds the simple:value2 record to the ACCESS ASG:
+A record can be added to a specific access security group using the ASG field, otherwise it will be automatically placed in the `DEFAULT ASG`. For example, the following adds the simple:value2 record to the `ACCESS ASG`:
 
+```
 record(ai, "simple:value2")
 {
     field(ASG, "ACCESS")
     field(VAL, 2)
 }
-The ACCESS group can then have different security settings to the DEFAULT group. For example, modifying the security file like so:
+```
 
+The `ACCESS` group can then have different security settings to the `DEFAULT` group. For example, modifying the security file like so:
+
+```
 UAG(local) {user1}
 HAG(cabin) {instPC}
 UAG(remote) {user2}
@@ -562,18 +652,24 @@ ASG(ACCESS) {
     HAG(cabin)
   }
 }
-Now only user1 (on instPC) can read or write to simple:value2.
+```
+
+Now only user1 (on instPC) can read or write to `simple:value2`.
 
 ## Changing Permissions Example ##
 
-There are two subroutines (asSubInit, asSubProcess) that can be used to force the IOC to reload the security settings file. In the .db file add a record like this:
+There are two subroutines (`asSubInit`, `asSubProcess`) that can be used to force the IOC to reload the security settings file. In the .db file add a record like this:
 
+```
 record(sub,"reset") {
    field(INAM,"asSubInit")
    field(SNAM, "asSubProcess")
 }
+```
+
 Set the security file to look something like (change the UAG and HAG details to match your system):
 
+```
 UAG(user) {user1}
 HAG(office) {officePC}
 ASG(DEFAULT) {
@@ -583,13 +679,19 @@ ASG(DEFAULT) {
      HAG(office)
   }
 }
+```
+
 Test that it is possible to write to one of the PVs using caget. Next manually remove the write rule from the security file and save it. Type the following:
 
+```
 caget reset 1
+```
+
 The security settings should now have been reloaded, and it should no longer be possible to write to any of the PVs (including resetting the permissions!).
 
 # Using the Array Subroutine (aSub) #
-An aSub record is a record that can call a C routine. This record is not used for device communication.
+
+An `aSub` record is a record that can call a C routine. This record is not used for device communication.
 
 ## Creating an IOC that uses aSub ##
 
@@ -597,10 +699,14 @@ A simple example that creates an aSub record that doubles the input value.
 
 Create an IOC in the usual method:
 
+```
 makeBaseApp.pl -t ioc asubtest
 makeBaseApp.pl -i -t ioc asubtest
-Move to the asubtestApp\src directory and create a file called my_asub_routine.c. In the new file put (warning: bad C code alert):
+```
 
+Move to the `asubtestApp\sr`c directory and create a file called `my_asub_routine.c`. In the new file put (warning: bad C code alert):
+
+```
 #include <registryFunction.h>
 #include <epicsExport.h>
 #include "aSubRecord.h"
@@ -621,15 +727,24 @@ static long my_asub_routine(aSubRecord *prec) {
     return 0;
 }
 epicsRegisterFunction(my_asub_routine);
-Create a file called asubroutine.dbd and put the following in it:
+```
 
+Create a file called `asubroutine.dbd` and put the following in it:
+
+```
 function(my_asub_routine)
+```
+
 Open the Makefile, and add the following in the appropriate places:
 
+```
 asubtest_DBD += asubroutine.dbd
 asubtest_SRCS += my_asub_routine.c
-Move to the asubtestApp\Db directory and create a file called asubtest.db. Add the following to it:
+```
 
+Move to the `asubtestApp\Db` directory and create a file called asubtest.db. Add the following to it:
+
+```
 record(ai, "testasub:value_in")
 {
     field(VAL, 1)
@@ -647,21 +762,32 @@ record(ai, "testasub:value_out")
 {
     field(INP, "testasub:my_asub.VALA")
 }
+```
+
 Return to the IOC's top directory and run make. Assuming it builds successfully, run the IOC and from another command-line try:
 
+```
 caput testasub:value_in 5
+```
+
 Followed by:
 
+```
 caget testasub:value_out
+```
+
 The caget should return a value of 10.
 
 NOTE: The aSub record automatically allocates space for input and output values based on NOA and NOVA.
 
 # Adding devIocStats to an IOC #
-Assuming devIocStats exists in your system and the IOC to be modified is complete (i.e. it builds and runs correctly), follow the following steps to add devIocStats to it:
 
-Open configure\RELEASE and add DEVIOCSTATS=YOUR_PATH/devIocStats/3-1-11 with YOUR_PATH replaced appropriately.
-Open the st.cmd for the IOC and change it to look something like this
+Assuming `devIocStats` exists in your system and the IOC to be modified is complete (i.e. it builds and runs correctly), follow the following steps to add `devIocStats` to it:
+
+Open `configure\RELEASE` and add `DEVIOCSTATS=YOUR_PATH/devIocStats/3-1-11` with `YOUR_PATH` replaced appropriately.
+Open the `st.cmd` for the IOC and change it to look something like this
+
+```
 #!../../bin/windows-x64/MY_IOC
 # You may have to change MY_IOC to something else
 # everywhere it appears in this file
@@ -676,13 +802,18 @@ dbLoadRecords("db/my_ioc.db","P=$(IOCNAME)")                   # (3) Pass the IO
 dbLoadRecords("$(IOCSTATS_DB)","IOC=$(IOCNAME)")               # (4) Load the devIocStats db
 cd ${TOP}/iocBoot/${IOC}
 iocInit
+```
+
 The key changes are highlighted by the numbered comments.
 
-Open MY_IOCApp\src\Makefile and add:
+Open `MY_IOCApp\src\Makefile` and add:
 
+```
 MY_IOC_DBD += devIocStats.dbd
 MY_IOC_LIBS += devIocStats
-Additional step: if there is a dbd file in MY_IOCApp\src, then you might need to add include "devIocStats.dbd" to it.
+```
+
+**Additional step:** if there is a dbd file in `MY_IOCApp\src`, then you might need to add include "devIocStats.dbd" to it.
 
 Finally rebuild the IOC (make clean uninstall followed by make)
 
@@ -690,13 +821,16 @@ Finally rebuild the IOC (make clean uninstall followed by make)
 
 ## Create an IOC ##
 
+```
 mkdir seqex
 cd seqex
 makebaseapp.pl -t ioc seqex
 makebaseapp.pl -i -t ioc seqex
+```
 
 ## Create additional files ##
 
+```
 cd seqexApp/db
 echo. 2> seqex.db
 cd ..
@@ -704,11 +838,13 @@ cd src
 echo. 2> sncProgram.st
 echo. 2> sncExample.stt
 echo. 2> sncExample.dbd
+```
 
 ## Modify the files ##
 
 ## seqexApp/db/seqex.db ##
 
+```
 record(ai, "$(user):aiExample")
 {
         field(DESC, "Analog input")
@@ -747,18 +883,25 @@ record(calc, "$(user):calcExample")
         field(LSV, "MINOR")
         field(LLSV, "MAJOR")
 }
+```
+
 ## seqexApp/db/Makefile ##
 
 Add:
 
+```
 DB += seqex.db
+```
 
 ## seqexApp/src/sncProgram.st ##
 
+```
 #include "../sncExample.stt"
+```
 
 ## seqexApp/src/sncExample.stt ##
 
+```
 program sncExample
 double v;
 assign v to "{user}:aiExample";
@@ -780,15 +923,19 @@ ss ss1 {
         } state low
         }
 }
+```
 
 ## seqexApp/src/sncExample.dbd ##
 
+```
 registrar(sncExampleRegistrar)
+```
 
 ## build.mak (if using ISIS build) or Makefile (if not) ##
 
 Add:
 
+```
 ifneq ($(SNCSEQ),)
         # Build sncExample
         sncExample_SNCFLAGS += +r
@@ -796,23 +943,32 @@ ifneq ($(SNCSEQ),)
         $(APPNAME)_SRCS += sncExample.stt
         $(APPNAME)_LIBS += seq pv
 endif
+```
 
 ## configure/RELEASE ##
 
 Make sure there is a uncommented line like below but with the correct path for your system:
 
+```
 SNCSEQ=PATH_TO_YOUR_SEQ_INSTALLATION
+```
 
 ## iocBoot/iocseqex/st.cmd ## 
 
 Uncomment and adjust the dbLoadrecords line, e.g:
 
 # Load our record instances
+
+```
 dbLoadRecords("db/seqex.db","user=yournameHost")
+```
+
 Uncomment and adjust the seq line, e.g.:
 
-# Start any sequence programs
+```
+## Start any sequence programs
 seq sncExample,"user=yourname3Host"
+```
 
 ## Build the IOC ##
 
