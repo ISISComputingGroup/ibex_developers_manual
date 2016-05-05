@@ -58,7 +58,7 @@ Information regarding the backend systems, including the block server, databases
 
 ## [Genie Python](Building-and-installing-genie_python) ##
 
-How to build and install Genie Python
+How to build and install Genie Python.
 
 ## Epics ##
 
