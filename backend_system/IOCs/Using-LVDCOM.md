@@ -4,6 +4,4 @@
 
 [Creating IOC wrapper VI](Creating-IOC-wrapper-VI)
 
-[LVDCOM auto generate xml](LVDCOM-auto-generate-xml)
-
 [LVDCOM IOC boot](LVDCOM-IOC-boot)
