@@ -10,22 +10,26 @@ High level overview of the project including architectural and design documents.
 
 Information regarding the backend systems, including the block server, databases, configurations, and IOCs. Also contains the getting started guide for setting up the backend.
 
-## [The GUI](The-GUI) ##
+## [The GUI](The-GUI)
 
 How to get started with the GUI along with development and testing guidelines. 
 
-## [Genie Python](Building-and-installing-genie_python) ##
+## [Genie Python](Building-and-installing-genie_python)
 
 How to build and install Genie Python.
 
-## [EPICS](EPICS) ##
+## [EPICS](EPICS)
 
 The basics of EPICS and links to additional training resources.
 
-## [Jenkins Build Server](Jenkins-Build-Server) ##
+## [IOCs](IOCs)
+
+Everything you could possibly want to know about IOCs and then some
+
+## [Jenkins Build Server](Jenkins-Build-Server)
 
 Information regarding the IBEX build server.
 
-## [Working with Git and GitHub](Working-with-git-and-github) ##
+## [Working with Git and GitHub](Working-with-git-and-github)
 
 Getting started with Git and GitHub, development workflows and useful common commands.
