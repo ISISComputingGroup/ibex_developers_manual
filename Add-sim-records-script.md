@@ -7,4 +7,4 @@ optional arguments:
    -o --output = name of output file
 ```
 
-By default, the new db file's name will match the input file prefixed by sim_.
+By default, the new db file's name will match the input file prefixed by `sim_.`
