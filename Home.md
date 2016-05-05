@@ -22,10 +22,6 @@ How to build and install Genie Python.
 
 The basics of EPICS and links to additional training resources.
 
-## [Nicos](Nicos) ##
-
-How to build and configure Nicos.
-
 ## [Jenkins Build Server](Jenkins-Build-Server) ##
 
 Information regarding the IBEX build server.
