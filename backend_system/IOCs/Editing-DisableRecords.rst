@@ -2,7 +2,7 @@ It would be convenient to be able to turn an IOC on/off by accessing a PV. We sh
 
 The work required is similar to that for adding RecordSimulation - we add an '''SDIS''' field to any records that access hardware (i.e. that are not "soft channel" records) and point this at a PV to control the mode 
    
-{{{
+
 record(ai, "$(P)CURRENT") 
 {
     field(SCAN, "1 second")
@@ -12,9 +12,9 @@ record(ai, "$(P)CURRENT")
     field(EGU,  "A")
     field(SDIS, "$(P)DISABLE")
 }
-}}} 
+ 
 
-{{{
+
 record(bo, "$(P)DISABLE") 
 {
   field(DESC, "Disable comms")
@@ -24,5 +24,5 @@ record(bo, "$(P)DISABLE")
   field(ZNAM, "COMMS ENABLED")
   field(ONAM, "COMMS DISABLED")
 }
-}}}
+
  

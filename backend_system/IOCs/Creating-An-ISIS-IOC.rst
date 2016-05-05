@@ -1,6 +1,3 @@
-{{{
-#!rst
-
 Note: if you are creating a StreamDevice start `here <https://trac.isis.rl.ac.uk/ICP/wiki/WritingAnISISStreamDevice>`_.
 
 All IOCs used at ISIS reside in the EPICS\\ioc directory.
@@ -177,6 +174,3 @@ Finally, before checking the this all into SVN, you will need to do the followin
 * Mark any interesting PVs in the db file and make sure they have unit fields (EGU) and a description (DESC)
 
 * Add simulation and disable records (see `here for more info <https://trac.isis.rl.ac.uk/ICP/wiki/add_sim_records>`_)
-    
-
-}}}

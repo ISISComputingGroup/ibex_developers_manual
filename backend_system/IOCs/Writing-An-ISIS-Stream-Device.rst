@@ -1,5 +1,5 @@
-{{{
-#!rst
+
+
 
 Writing an ISIS StreamDevice
 ============================
@@ -56,5 +56,5 @@ Delete the db file in Hameg_8123Sup and modify the Makefile so it not longer ref
 
 The next step is to create the IOC, the instructions are `here <https://trac.isis.rl.ac.uk/ICP/wiki/CreatingAnISISIOC>`_
 
-}}}
+
 

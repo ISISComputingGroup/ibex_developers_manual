@@ -1,5 +1,5 @@
-{{{
-#!rst
+
+
 
 DB Unit Checker
 ===============
@@ -67,4 +67,3 @@ The project currently contains the following base units:
 * step
 * V
 
-}}}

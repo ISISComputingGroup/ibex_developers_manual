@@ -49,9 +49,9 @@ Some suggested top level domains – we may not want to use them all
 
 == TE Domain ==
 Mostly free format - have developers fedid as second part, then whatever required. In many cases would want to suffix with above scheme to make final integration easier e.g.
-{{{
+
 TE:FAA59:TG:TS1:MOD:H2:TEMP
-}}}
+
 
 == BL Domain ==
 This needs to be followed by information about which beamline. For neutron instruments could use the MCR shutter port identifier (N1, N2, N3 etc.) – need to find out what they call the Muon beamline.
