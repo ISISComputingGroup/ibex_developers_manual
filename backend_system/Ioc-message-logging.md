@@ -6,7 +6,7 @@ Assuming that the log server is active, the IOC will automatically connect to th
 
 EPICS base includes a simple IOC log server that writes log messages to a text file. We have replaced this with our own server written in Java that has much more functionality.
 
-Our Java log server may connect to any number of IOCs. It processes incoming messages, formats them appropriately, and then dispatches them using a messaging service called [http://en.wikipedia.org/wiki/Java_Message_Service JMS (Java message service)]. 
+Our Java log server may connect to any number of IOCs. It processes incoming messages, formats them appropriately, and then dispatches them using a messaging service called [Java messaging service, JMS](http://en.wikipedia.org/wiki/Java_Message_Service).
 
 A JMS server receives these reformatted messages and forwards them on to any subscribers (e.g. Eclipse clients). 
 
