@@ -6,7 +6,7 @@
 
 High level overview of the project including architectural and design documents.
 
-## [The backend system](The-Backend-System) ##
+## [The Back-end System](The-Backend-System) ##
 
 Information regarding the backend systems, including the block server, databases, configurations, and IOCs. Also contains the **getting started guide** for setting up the backend.
 
