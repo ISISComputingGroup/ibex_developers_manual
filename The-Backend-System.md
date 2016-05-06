@@ -20,8 +20,6 @@ How to build and install Genie Python.
 
 Everything you could possibly want to know about IOCs and then some.
 
-[Creating IOCs](Creating-IOCs)
-
 # [Nicos](Nicos)
 
 How to build and configure Nicos.
