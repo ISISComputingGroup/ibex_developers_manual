@@ -12,7 +12,7 @@ Recent log messages can be viewed by clicking 'Console > Console Log'. The messa
 ### Configuration
 In the GUI, the user can access logging settings from the 'ISIS Logger' page in the preferences window.
 
-[[Image(log_pref.png)]]
+![Log Pref](GUI_development/images/eclipse/log_pref.png)
 
 The log directory is the root directory where all log files will be stored.
 
