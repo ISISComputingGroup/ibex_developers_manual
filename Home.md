@@ -14,10 +14,6 @@ Information regarding the back-end systems, including the block server, database
 
 How to **get started** with the GUI along with development and testing guidelines. 
 
-## [EPICS](EPICS)
-
-The basics of EPICS and links to additional training resources.
-
 ## [Project tools](Project-tools)
 
 Information on the project tooling: version control and continuous integration.
