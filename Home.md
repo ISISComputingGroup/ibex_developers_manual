@@ -26,6 +26,10 @@ The basics of EPICS and links to additional training resources.
 
 Information regarding the IBEX build server.
 
+## [Deployment on an Instrument Control PC](Deployment-on-an-Instrument-Control-PC)
+
+How to deploy IBEX and EPICS on an instrument control PC.
+
 ## [Working with Git and GitHub](Working-with-git-and-github)
 
 Getting started with Git and GitHub, development workflows and useful common commands.
