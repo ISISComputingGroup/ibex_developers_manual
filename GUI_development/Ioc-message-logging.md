@@ -103,7 +103,7 @@ The model plugin also provides an Eclipse preference page with a class that impl
 
 ## View Plugin
 
-![Log viewer](https://raw.githubusercontent.com/wiki/ISISComputingGroup/ibex_developers_manual/GUI_development/logviewer.png "Log viewer")
+![Log viewer](https://raw.githubusercontent.com/wiki/ISISComputingGroup/ibex_developers_manual/GUI_development/logViewer.png "Log viewer")
 
 ## Development
 
