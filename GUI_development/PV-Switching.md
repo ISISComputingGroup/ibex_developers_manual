@@ -20,7 +20,7 @@ This was further complicated by the large number of Observable, Observer, Writab
 
 The proposed solution was to remove the central PVAddressBook class and instead use a factory for creating PV Observables, which are passed the switching behaviour as a switcher class. Each of these switcher classes provides a different switching functionality and is switched using the extension point that is globally used for instrument switching in the GUI. 
 
-![Switching](images/pv_switching/new_switching.jpg)
+![Switching](GUI_development/images/pv_switching/new_switching.jpg)
  
 1. When an observable PV is required an instance of ObservableFactory is first created and passed an OnInstrumentSwitch enum to describe which switching behaviour is required
 
@@ -34,7 +34,7 @@ The proposed solution was to remove the central PVAddressBook class and instead 
 
 A similar process also occurs when switching writable PVs, as can be seen in the UML diagram below. The differences being that a WritableFactory is used, this can create a Writable that inherits from Switchable and can write values to PVs. Both the Switchable interface and the abstract PrefixChangingSwitcher were created so that the switching process is as similar as possible when dealing with Writables and Observables.
 
-![Writables](images/pv_switching/new_switching_writables.jpg)
+![Writables](GUI_development/images/pv_switching/new_switching_writables.jpg)
 
 ## Using the PV Switching<a name="UsingPvSwitching"></a>
 
