@@ -2,6 +2,10 @@
 
 [First time installing and building (Windows)](First-time-installing-and-building-(Windows))
 
+## [Genie Python](Building-and-installing-genie_python)
+
+How to build and install Genie Python.
+
 # System Components
 
 [The BlockServer](BlockServer)
