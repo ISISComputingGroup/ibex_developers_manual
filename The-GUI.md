@@ -18,6 +18,8 @@
 
 [Connecting a View to a PV](Connecting-a-View-to-a-PV)
 
+[Static Analysis](Static-analysis)
+
 [Class Diagrams for Observables, Observers, Writables and Writers](Refactoring-for-Observables-and-Writers)
 
 [PV Switching](PV-Switching)
