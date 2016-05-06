@@ -2,7 +2,7 @@ The server runs as a headless Eclipse application. The server is accessed from t
 
 Inside CSS there are perspectives for editing, monitoring and plotting scans.
 
-[[Image(client1.png)]]
+[Client 1](GUI_development/images/css/client1.png)
 
 The editor perspective allows scans to be created using a number of building blocks, the blocks are: loops; delays; sets; sub-scans; wait fors; log value; comments; and, Python script snippets.
 
@@ -13,12 +13,12 @@ Scans can also be created and submitted directly from the Python command line.
 
 The script can be “simulated” before it is run. For this, the script is unwound and each step is shown and the total duration is estimated. This allows the user to view each step of the scan.
 
-[[Image(client2.png)]]
+[Client 2](GUI_development/images/css/client2.png)
 
 The Scan Monitor is used to monitor the condition of the current scan and the queued and finished scans. It is possible to modify queued scripts.
 
-[[Image(client3.png)]]
+[Client 3](GUI_development/images/css/client3.png)
 
 The variables of the scan can be viewed using the Scan Plot.
 
-[[Image(client4.png)]]
+[Client 4](GUI_development/images/css/client4.png)
