@@ -4,13 +4,13 @@ Anyone doing a demo of IBEX should use these notes, so that
 
 * You are familiar with the scope of the demo (i.e. what should be covered)
 * You review it and rehearse it in advance (i.e. you are clear about what you will present)
-* You donít forget to mention any important aspects of the system
+* You don‚Äôt forget to mention any important aspects of the system
 
    * keep a copy of these notes in front of you as you do the demo
 
-* You donít forget where key files (e.g. demo scripts) are located, etc.
+* You don‚Äôt forget where key files (e.g. demo scripts) are located, etc.
 * Instrument scientists get a consistent picture irrespective of where & when the demo is performed.
-* If a question takes you ìoff pisteî, you can easily find your way back to the main thread of the demo.
+* If a question takes you ‚Äúoff piste‚Äù, you can easily find your way back to the main thread of the demo.
 * We can enhance the script in the light of experience (e.g. better answers to questions)
 
    * jot down any important points arising from any demos that you do and add them back into this document for the benefit of others.
@@ -97,12 +97,8 @@ Describe the DAE view
 
 * As previously noted, copies of status and information messages from the DAE are also routed via the IOC Log system.
 
-.. raw:: pdf
+## Blocks & Groups
 
-    PageBreak
-
-Blocks & Groups
----------------
 Blocks & groups in the new GUI work in the same way as they do in SECI.
 
 * Blocks and groups are displayed at the top (and centre-right) of the GUI window.
@@ -160,7 +156,7 @@ EPICS provides support for a wide range of devices.  For many devices we can sim
 * Adopting EPICS does **not** mean throwing away existing LabVIEW drivers.
 * We have created a communication interface, called lvDCOM, to enable EPICS to communicate with LabVIEW VIs.
 * Where a device has a complex or specially customised LabVIEW driver, lvDCOM allows us to continue using the LabVIEW VI.  Any data that the VI makes available to EPICS can be defined as a block and used in the normal manner.
-* Demonstrate an existing EPICS IOC/OPI: for example the Eurotherm IOC & OPI ñ demonstrate simple operation, ramping, calibration, etc.
+* Demonstrate an existing EPICS IOC/OPI: for example the Eurotherm IOC & OPI ‚Äì demonstrate simple operation, ramping, calibration, etc.
 * Demonstrate interaction between EPICS and a VI: for example <insert example here>
 * Demonstrate starting & stopping of IOCs.  Show how startup messages, etc. are captured in the message log.
 * Discuss settings files and their relation to IOCs and VIs.
