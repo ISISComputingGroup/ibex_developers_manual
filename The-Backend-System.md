@@ -2,9 +2,9 @@
 
 [First time installing and building (Windows)](First-time-installing-and-building-(Windows))
 
-## [Genie Python](Building-and-installing-genie_python)
+## [genie_python](Building-and-installing-genie_python)
 
-How to build and install Genie Python.
+How to build and install genie_python.
 
 # System Components
 
