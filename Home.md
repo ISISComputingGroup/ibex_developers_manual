@@ -18,6 +18,10 @@ How to **get started** with the GUI along with development and testing guideline
 
 The basics of EPICS and links to additional training resources.
 
+## [Developer tools](Developer-tools)
+
+Information on the project tooling: version control and continuous integration.
+
 ## [Jenkins Build Server](Jenkins-Build-Server)
 
 Information regarding the IBEX build server.
