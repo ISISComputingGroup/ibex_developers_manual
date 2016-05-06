@@ -3,9 +3,9 @@ This section of the wiki contains information about how to create and maintain I
 ## Creating an IOC ##
 [The Workflow - start here!](The-ISIS-IOC-Checklist)
 
-[IOC Documentation](http://epics.isis.rl.ac.uk/doxygen/main/)
-
 [Creating an ISIS StreamDevice IOC](Creating-an-ISIS-StreamDevice-IOC)
+
+[Using LVDCOM](Using-LVDCOM)
 
 [Editing disable records](Disable-records)
 
@@ -17,4 +17,6 @@ This section of the wiki contains information about how to create and maintain I
 
 [Record simulation](Record-Simulation)
 
-[Using LVDCOM](Using-LVDCOM)
+
+
+[IOC doxygen Documentation](http://epics.isis.rl.ac.uk/doxygen/main/)
