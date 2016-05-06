@@ -1,12 +1,12 @@
 # Contents #
-* [Useful links](#Useful-links)
-* [Architectural overview](#Architectural-overview)
-* [JMS server](#JMS-server)
-* [Alarm server](#Alarm-server)
-* [Alarm database](#Alarm-database)
-* [Eclipse clients](#Eclipse-clients)
-* [Default connection details](#Default-connection-details)
-* [To do list](#To-do-list)
+* [Useful links](#useful-links)
+* [Architectural overview](#architectural-overview)
+* [JMS server](#jms-server)
+* [Alarm server](#alarm-server)
+* [Alarm database](#alarm-database)
+* [Eclipse clients](#eclipse-clients)
+* [Default connection details](#default-connection-details)
+* [To do list](#to-do-list)
 
 # Useful links #
 * [Building the alarm server](https://trac.isis.rl.ac.uk/ICP/wiki/BuildingAlarmServerMySql)
