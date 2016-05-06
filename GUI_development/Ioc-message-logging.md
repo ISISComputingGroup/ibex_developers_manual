@@ -1,24 +1,4 @@
-= IOC Message Logging =
-
-== Contents ==
-* [#architecture Logging Architecture Overview]
-* [#logserver Log Server]
-  * [#functionality Functionality]
-  * [#development Development]
-  * [#building Building and Running]
-* [#jmsserver JMS Server]
-* [#devtools Development Tools]
-* [#database Database Server]
-* [#eclipse Eclipse Clients]
-  * [#eclipseModel Model Plugin]
-  * [#eclipseView View Plugin]
-  * [#eclipseDev Development]
-* [#format Log Message Format]
-* [#connection Default Connection Details]
-* [#todo To Do]
-
-[=#architecture]
-== Logging Architecture Overview ==
+# Logging Architecture Overview
 
 Each IOC has some functionality to dispatch any log messages it generates to a listening IOC log server, the address and port of which must be known to the IOC. 
 
@@ -34,18 +14,16 @@ The log server also saves all messages to a relational database (SQL). Messages 
 
 It is likely that the Log server, JMS server, and Database server will all live on the same physical machine.
 
-[[Image(iocLogArchitecture.png​)]]
+![IOC architectural view](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "IOC architectural view")
 
 
-[=#logserver]
-== Log Server ==
+# Log Server
 
-The log server is written in Java and may be found in the directory 'EPICS/ISIS/IocLogServer/'.
+The log server is written in Java and may be found in the directory `EPICS/ISIS/IocLogServer/`.
 
 Also included in this directory are an instance of Apache ActiveMQ (a JMS server implementation), some tools written in python to aid development, and some start-up and build scripts.
 
-[=#functionality]
-=== Functionality ===
+## Functionality
 
 Once the log server is started, it will automatically attempt to connect to the JMS server and the SQL database server (the connection details for each are currently hardcoded but will be moved to external config files in the future). 
 
@@ -55,34 +33,28 @@ The log server will then attempt to listen for IOC messages on a set of ports (a
 
 The connection to both the JMS server and the database are independently buffered so that if connection to either is lost, the log server will wait to re-establish connection before sending on any messages, so that no messages should be dropped. The log server will wait a few seconds after re-establishing connection to the JMS before sending any messages, in order to give JMS clients a chance to reconnect to the JMS server themselves.
 
-[=#development]
-=== Development ===
-To develop the log server, first run the script '/!IocLogServer/LogServer/make-eclipse-project.bat'. This will create Eclipse '.project' and '.classpath files' and a'.settings' folder. Next, create a new directory in '/!IocLogServer' called workspace. Open [https://www.eclipse.org/ Eclipse] and select this new folder as the workspace.
+## Development
+To develop the log server, first run the script `/IocLogServer/LogServer/make-eclipse-project.bat`. This will create Eclipse `.project` and `.classpath` files and a `.settings` folder. Next, create a new directory in `/IocLogServer` called workspace. Open [Eclipse](https://www.eclipse.org/) and select this new folder as the workspace.
 
 Import the log server project (File > Import > General > Existing Projects into Workspace > folder EPICS/ISIS/IocLogServer/base.
 
 To run the server from Eclipse, right click on the project folder, click: run as > run configurations. Set the main class as 'org.isis.logserver.server.IOCLogServer' and click 'Run'.
 
-[=#building]
-=== Building and Running ===
-The log server is built using [http://maven.apache.org/ Apache Maven]. An maven 'pom.xml' file is included in the project. To build, install maven on your computer and run the batch file 'build-log-server.bat' found in the directory EPICS/ISIS/IocLogServer/. This will create a runnable jar file.
+## Building and Running
+The log server is built using [Apache Maven](http://maven.apache.org/). A maven `pom.xml` file is included in the project. To build, install maven on your computer and run the batch file `build-log-server.bat` found in the directory EPICS/ISIS/IocLogServer/. This will create a runnable jar file.
 
-The server can be launched by running 'start-log-server.bat'.
+The server can be launched by running `start-log-server.bat`.
 
-To test the functionality, you should also launch the JMS server by running 'start-jms-server.bat'. You can test that message passing works correctly by using the demonstration IOC and demonstration JMS client detailed in the [#devtools Development Tools] section below.
+To test the functionality, you should also launch the JMS server by running `start-jms-server.bat`. You can test that message passing works correctly by using the demonstration IOC and demonstration JMS client detailed in the s development tools section below.
 
-See the [#database Database Server] section below for details on how to set up a test SQL database.
+See the database server section below for details on how to set up a test SQL database.
 
-Instructions to build the log server are included as part of the [http://jenkins.isis.rl.ac.uk/EPICS/ Jenkins] build script (EPICS/jenkins_build.bat)
+Instructions to build the log server are included as part of the [Jenkins](http://jenkins.isis.rl.ac.uk/EPICS/) build script (EPICS/jenkins_build.bat)
 
 The log server and JMS server should be started automatically when running the script /EPICS/start_inst.bat. The startup details are in the script EPICS/logserver/start_log_servers.bat.
 
-
-
-
-[=#jmsserver]
-== JMS Server ==
-The JMS server implementation used is [http://activemq.apache.org/ Apache ActiveMQ]. ActiveMQ comes bundled with the log server and a start-up script for it is included ('start-jms-server.bat'). No configuration is required for ActiveMQ; simply run the start-up script and it will be ready in a few seconds. The start-up script is also run as part of the IOC start-up script (EPICS/start_inst.bat).
+# JMS Server
+The JMS server implementation used is [Apache ActiveMQ](http://activemq.apache.org/). ActiveMQ comes bundled with the log server and a start-up script for it is included ('start-jms-server.bat'). No configuration is required for ActiveMQ; simply run the start-up script and it will be ready in a few seconds. The start-up script is also run as part of the IOC start-up script (EPICS/start_inst.bat).
 
 Message producers (the log server) and consumers (Eclipse-based clients) interact through the JMS by subscribing to a 'topic'. Any message that a producer sends to the topic is immediately forwarded to all consumers who are currently subscribed to the topic.
 
@@ -92,11 +64,7 @@ The Topic for IOC log messages is '/topic/iocLogs'.
 
 The default port for sending and receiving JMS messages on ActiveMQ is 61616.
 
-
-
-
-[=#devtools]
-== Development Tools ==
+# Development Tools
 In the subdirectory 'IocLogServer/dev-tools' are a number of python scripts to aid in development and debugging of the log server and eclipse clients that consume log messages.
 
 The first, 'jms_client.py', connects to the JMS server and receives any messages forwarded by it. This can be used to test if the log server is correctly forwarding on messages.
@@ -107,20 +75,20 @@ The second tool is 'ioc_message_simulator.py' which connects directly to the log
 
 These tools may be started using the batch files: 'start-jms-demo-client.bat' and 'start-ioc-demo.bat' respectively.
 
-Another tool that may be of use in analysing problems relating to the connection between two programs is [http://technet.microsoft.com/en-gb/sysinternals/bb897437.aspx TCPView]. This displays a list of active TCP connections including port numbers to and from processes on your machine.
+Another tool that may be of use in analysing problems relating to the connection between two programs is [TCPView](http://technet.microsoft.com/en-gb/sysinternals/bb897437.aspx). This displays a list of active TCP connections including port numbers to and from processes on your machine.
 
-[=#database]
-== Database Server ==
-You can use [http://www.mysql.com/products/workbench/ MySQL workbench] as a MySQL development server.
+# Database Server
+
+You can use [MySQL workbench](http://www.mysql.com/products/workbench/) as a MySQL development server.
 
 The file EPICS/ISIS/IocLogServer/log_mysql_schema.txt contains a sequence of SQL commands that will create the appropriate schema for use by the log server and clients.
 
-[=#eclipse]
-== Eclipse Clients ==
-The IOC log message handling in the Eclipse client consists of two main plugins: 'org.csstudio.isis.log' (model) and 'org.csstudio.isis.ui.log' (view). Additionally, the plugin 'org.csstudio.isis.product.model' contains the '!LogMessage' class that represents an individual log message, and the '!LogMessageFields' enumeration which enumerates all the fields in a log message as well as providing a display name and a database tag name for each field.
+# Eclipse Clients
 
-[=#eclipseModel]
-=== Model Plugin ===
+The IOC log message handling in the Eclipse client consists of two main plugins: `org.csstudio.isis.log` (model) and `org.csstudio.isis.ui.log` (view). Additionally, the plugin `org.csstudio.isis.product.model` contains the `LogMessage` class that represents an individual log message, and the `LogMessageFields` enumeration which enumerates all the fields in a log message as well as providing a display name and a database tag name for each field.
+
+## Model Plugin
+
 The log model plugin starts automatically when the Eclipse client is launched. On launch, it runs an instance of a JMS handler class which listens continuously for new messages from the JMS server. Any messages received are parsed (from their XML representation) into '!LogMessage' objects and passed on to any subscribers (typically view components).
 
 The model also provides for the facility to search a database for log messages. Searches may be performed by string matching on any log message field and may be constrained according to a start and end time.
@@ -129,24 +97,19 @@ Clients of the model (i.e., the view) may subscribe, receiving any new log messa
 
 The model plugin also provides an Eclipse preference page with a class that implements '!IWorkbenchPreferencePage'. This page allows the user to configure settings that control the connection to the JMS server and to the database server. These settings are saved to disk so are persistent between uses of the Eclipse client. Changes to these settings take effect immediately.
 
-[[Image(LogPreferences.png​)]]
+![Log preferences](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Log preferences")
 
-[=#eclipseView]
-=== View Plugin ===
+## View Plugin
 
 [[Image(logViewer.png​)]]
 
-[=#eclipseDev]
-=== Development ===
+## Development
 
-When launching the Eclipse client, it is useful to have the [#jmsserver JMS Server], the [#logserver Log Server], and an appropriately configured [#database MySQL Server] instance running. You should also set the appropriate settings options in the the log server preference page.
+When launching the Eclipse client, it is useful to have the JMS Server, the Log Server, and an appropriately configured MySQL Server instance running. You should also set the appropriate settings options in the the log server preference page.
 
 If the Eclipse client cannot find the JMS server, it will periodically re-attempt to connect to it, and print a console message saying so. If the log server is not running, the Eclipse client will show no indication (as it does not connect to the log server directly), however no new log messages will be dispatched by JMS or saved to the database. If the database is not running, attempting to perform a message search will not work and a warning message will be displayed.
 
-
-
-[=#format]
-== Log Message Format ==
+# Log Message Format
 
 A log message may contain the following fields
 
@@ -166,7 +129,7 @@ The message should always include opening and closing 'message' tags and may inc
 
 A typical message might look like:
 
-{{{
+```
 <message>
     <contents>Unable to access PV: 'PREFIX:IOC_NAME:PV_NAME'</contents>
     <severity>ERROR</severity>
@@ -174,10 +137,10 @@ A typical message might look like:
     <clientName>GALIL_06</clientName>
     <type>ioclog</type>
 </message>
-}}}
+```
 
-[=#connection]
-== Default Connection Details ==
+# Default Connection Details
+
 * Default IOC log port: 7004
 * IOC caput log port: 7011
 * Log server address: localhost
@@ -194,9 +157,10 @@ A typical message might look like:
 * SQL server username (read/write): msg_log
 * SQL server password (read/write): $msg_log
 
-[=#todo]
-== To Do ==
-=== Eclipse Client ===
+# To Do
+
+## Eclipse Client ##
+
 * Allow limit to be placed on number of results returned from DB search.
 * Allow searching by more than one message property.
 * Add setting for maximum number of cached messages to preference page.
@@ -204,16 +168,19 @@ A typical message might look like:
 * More intuitive way of switching between search and live message mode.
 * Allow custom filters to be added to live message stream. Only certain messages would then cause a new message alert to be displayed.
 
-=== Server ===
+## Server
+
 * Use maven instead of ant for the build.
 * Add static analysis to build
 * Add unit tests to build
 * Add log4j logging to build
 * Compile javadocs from build
 
-=== General ===
+## General
+
 * Establish some mechanism for dealing with duplicate message entries.
 
-=== Potential Additional Features ===
+## Potential Additional Features
+
 * Capability to listen to multiple JMS servers + query multiple SQL databases.
 
