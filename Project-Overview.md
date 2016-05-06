@@ -3,3 +3,5 @@
 [Architectural Design](High-Level-Architectural-Design)
 
 [Proposed Design Documents](Design Documents)
+
+[How to demonstrate IBEX](Demo-notes)
