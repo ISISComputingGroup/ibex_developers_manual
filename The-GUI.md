@@ -34,10 +34,6 @@
 
 [System/UI Testing](System-Testing-with-RCPTT)
 
-# Design
-
-[IOC message logging](Ioc-message-logging)
-
 # Eclipse
 
 [Common Eclipse Tasks](Common-Eclipse-Tasks)
