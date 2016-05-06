@@ -16,6 +16,10 @@ How to build and install Genie Python.
 
 [Configurations] (Configurations)
 
+## [EPICS](EPICS)
+
+The basics of EPICS and links to additional training resources.
+
 ## [IOCs](IOCs)
 
 Everything you could possibly want to know about IOCs and then some.
