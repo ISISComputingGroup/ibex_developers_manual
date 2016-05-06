@@ -14,7 +14,7 @@ The log server also saves all messages to a relational database (SQL). Messages 
 
 It is likely that the Log server, JMS server, and Database server will all live on the same physical machine.
 
-![IOC architectural view](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "IOC architectural view")
+![IOC architectural view](https://raw.githubusercontent.com/wiki/ISISComputingGroup/ibex_developers_manual/GUI_development/iocLogArchitecture.png "IOC architectural view")
 
 
 # Log Server
@@ -97,11 +97,13 @@ Clients of the model (i.e., the view) may subscribe, receiving any new log messa
 
 The model plugin also provides an Eclipse preference page with a class that implements '!IWorkbenchPreferencePage'. This page allows the user to configure settings that control the connection to the JMS server and to the database server. These settings are saved to disk so are persistent between uses of the Eclipse client. Changes to these settings take effect immediately.
 
-![Log preferences](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Log preferences")
+![Log preferences](https://raw.githubusercontent.com/wiki/ISISComputingGroup/ibex_developers_manual/GUI_development/LogPreferences.png "Log preferences")
+
+
 
 ## View Plugin
 
-![Log viewer](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Log viewer")
+![Log viewer](https://raw.githubusercontent.com/wiki/ISISComputingGroup/ibex_developers_manual/GUI_development/logviewer.png "Log viewer")
 
 ## Development
 
@@ -181,4 +183,3 @@ A typical message might look like:
 ## Potential Additional Features
 
 * Capability to listen to multiple JMS servers + query multiple SQL databases.
-
