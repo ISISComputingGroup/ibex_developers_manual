@@ -3,8 +3,6 @@ This section of the wiki contains information about how to create and maintain I
 ## Creating an IOC ##
 [The Workflow](The-ISIS-IOC-Checklist)
 
-[Creating IOCs](Creating-IOCs)
-
 [IOC Documentation](http://epics.isis.rl.ac.uk/doxygen/main/)
 
 [Creating an ISIS IOC](Creating-An-ISIS-IOC)
