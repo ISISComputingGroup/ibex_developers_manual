@@ -47,3 +47,5 @@
 [Eclipse RCP](Eclipse-RCP)
 
 [Logging](Eclipse-logging)
+
+[Preferences](Eclipse-preferences)
