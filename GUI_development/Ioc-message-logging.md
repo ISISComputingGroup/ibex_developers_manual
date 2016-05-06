@@ -101,7 +101,7 @@ The model plugin also provides an Eclipse preference page with a class that impl
 
 ## View Plugin
 
-[[Image(logViewer.png​)]]
+![Log viewer](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Log viewer")
 
 ## Development
 
@@ -144,11 +144,9 @@ A typical message might look like:
 * Default IOC log port: 7004
 * IOC caput log port: 7011
 * Log server address: localhost
-
 * JMS server address: localhost
 * JMS server port: 61616
 * JMS message topic: iocLogs
-
 * SQL server address: localhost
 * SQL server port: 3306
 * SQL server schema: msg_log
