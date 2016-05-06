@@ -7,7 +7,7 @@ We are using the [log4j2](http://logging.apache.org/log4j/2.x/manual/index.html)
 ## End Users
 Recent log messages can be viewed by clicking 'Console > Console Log'. The messages shown are those that are currently in the rolling log file (see below).
 
-![Log UI](log_ui.png)
+![Log UI](GUI_development/images/eclipse/log_ui.png)
 
 ### Configuration
 In the GUI, the user can access logging settings from the 'ISIS Logger' page in the preferences window.
