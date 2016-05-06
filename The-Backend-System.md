@@ -16,6 +16,8 @@ How to build and install Genie Python.
 
 [Configurations] (Configurations)
 
+[Run control](Run-control)
+
 ## [EPICS](EPICS)
 
 The basics of EPICS and links to additional training resources.
