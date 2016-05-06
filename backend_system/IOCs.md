@@ -5,6 +5,8 @@ This section of the wiki contains information about how to create and maintain I
 
 [Creating an ISIS StreamDevice IOC](Creating-an-ISIS-StreamDevice-IOC)
 
+[IOC message logging](Ioc-message-logging)
+
 [Using LVDCOM](Using-LVDCOM)
 
 [Disable records](Disable-records)
