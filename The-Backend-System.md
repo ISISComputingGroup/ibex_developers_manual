@@ -18,6 +18,8 @@ How to build and install genie_python.
 
 [Run control](Run-control)
 
+[Alarms](Alarms)
+
 ## [EPICS](EPICS)
 
 The basics of EPICS and links to additional training resources.
