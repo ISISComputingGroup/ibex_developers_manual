@@ -7,7 +7,7 @@ This section of the wiki contains information about how to create and maintain I
 
 [Using LVDCOM](Using-LVDCOM)
 
-[Editing disable records](Disable-records)
+[Disable records](Disable-records)
 
 [ISIS PV guide](ISIS-PV-Guide)
 
