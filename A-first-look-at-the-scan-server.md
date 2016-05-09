@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The GUI](The-GUI) > [CS Studio](GUI-CSS) > A first look at the scan server
+
 The server runs as a headless Eclipse application. The server is accessed from the clients via a TCP port.
 
 Inside CSS there are perspectives for editing, monitoring and plotting scans.
