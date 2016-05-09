@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The GUI](The-GUI) > Coding
+
 * [Coding Conventions](GUI-Coding-Conventions)
 
 * [Adding a Perspective](Adding-a-Button-to-the-Perspective-Switcher)
