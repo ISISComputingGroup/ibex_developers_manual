@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The GUI](The-GUI) > [Coding](GUI-Coding) > Static analysis
+
 We are currently making use of 3 static analysis tools to help ensure the quality of our code: [PMD](http://pmd.sourceforge.net/), [FindBugs](http://findbugs.sourceforge.net/), and [CheckStyle](http://checkstyle.sourceforge.net/). These particular tools are mostly intended for use with Java programs and as such our main use for them is the Eclipse GUI project, though they are also used on some Java code in the main EPICS project (specifically the IOC log server).
 
 All of these tools have maven plugins which allow the analyses to be run as part of the maven build process, with the results being output to an XML file. Additionally, they all have Jenkins plugins which can consume the XML results files, producing reports and graphs within Jenkins and allowing you to track code quality trends over time. The Jenkins reports list all the specific violations which can be categorised in a number of ways and are listed with file name and line number as well as a detailed description of the problem.
