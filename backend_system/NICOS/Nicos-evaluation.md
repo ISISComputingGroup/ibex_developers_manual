@@ -9,84 +9,20 @@ Feature                                                                         
 Accept multiple clients                                                               | Yes       |
 Serve up a list of available commands for the specified instrument over some protocol | No        | The current method of finding available commands is through calling a ListCommands() python method. This gives a human readable list and not enough info to construct a sensible client command list. (See further modifications)
 The commands are instrument specific scripts written by the instrument scientists and/or controls team, and are stored on the server | Yes |
-
-
- 
-  <td>&nbsp&nbsp&#9745</td>
-  <td></td>
- </tr>
- <tr>
-  <td>New commands can be added relatively quickly without requiring changes to the client</td> 
-  <td>&nbsp&nbsp&#9745</td>
-  <td>NICOS clients are dumb and only send text to the server that interprets any commands and sends a response. Means that no client updates are required</td>
- </tr>
- <tr>
-  <td>Accept and queue up jobs from clients and add them to the job queue</td> 
-  <td>&nbsp&nbsp&#9745</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Provide feedback on the status of the job queue</td> 
-  <td>&nbsp&nbsp&#9745</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Provide feedback on the status of the current job (% done, current line etc.)</td> 
-  <td>&nbsp&nbsp&#9746</td>
-  <td>Provides feedback on the current line but not % progress</td>
- </tr>
- <tr>
-  <td>Iterate through the job queue</td> 
-  <td>&nbsp&nbsp&#9745</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Execute the jobs, one at a time from the queue</td> 
-  <td>&nbsp&nbsp&#9745</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Allow the job queue to be edited (e.g. reordered, jobs skipped or repeated)</td> 
-  <td>&nbsp&nbsp&#9746</td>
-  <td>Jobs can be deleted individually and cleared (actually marks jobs to ‘block’ and thus be skipped)</td>
- </tr>
- <tr>
-  <td>Allow the current job to be suspended or aborted</td> 
-  <td>&nbsp&nbsp&#9745</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Allow individual jobs to be edited (excluding the current job?)</td> 
-  <td>&nbsp&nbsp&#9745</td>
-  <td>Jobs can be edited, including the current job, but only commands that have not been run before (e.g. not those previously run in loops)</td>
- </tr>
- <tr>
-  <td>Provide a description of what existing jobs consist of (to allow editing)</td> 
-  <td>&nbsp&nbsp&#9745</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Provide an estimate of how long a job will take</td> 
-  <td>&nbsp&nbsp&#9745</td>
-  <td>A minimum time estimate is given when the script is sent through a dry run but not when properly submitted</td>
- </tr>
- <tr>
-  <td>Provide the elapsed time for the current job</td> 
-  <td>&nbsp&nbsp&#9746</td>
-  <td>Logs of when scripts are started are available but not a simple command for elapsed time</td>
- </tr>
- <tr>
-  <td>Run a black-box script as a job (see submitted scripts section below</td> 
-  <td>&nbsp&nbsp&#9745</td>
-  <td></td>
- </tr> 
-<tr>
-  <td>Provide script validation, e.g. allow a dry run of a script or job</td> 
-  <td>&nbsp&nbsp&#9745</td>
-  <td>Jobs can be sent through dry runs but there is no validation of code when it is first sent to the server</td>
- </tr>
-</table>
-```
+New commands can be added relatively quickly without requiring changes to the client | Yes | NICOS clients are dumb and only send text to the server that interprets any commands and sends a response. Means that no client updates are required.
+Accept and queue up jobs from clients and add them to the job queue | Yes |
+Provide feedback on the status of the job queue | Yes |
+Provide feedback on the status of the current job (% done, current line etc.) | Partial | Provides feedback on the current line but not % progress.
+Iterate through the job queue | Yes |
+Execute the jobs, one at a time from the queue | Yes |
+Allow the job queue to be edited (e.g. reordered, jobs skipped or repeated) | No | Jobs can be deleted individually and cleared (actually marks jobs to ‘block’ and thus be skipped).
+Allow the current job to be suspended or aborted | Yes |
+Allow individual jobs to be edited (excluding the current job?) | Yes | Jobs can be edited, including the current job, but only commands that have not been run before (e.g. not those previously run in loops)
+Provide a description of what existing jobs consist of (to allow editing) | Yes |
+Provide an estimate of how long a job will take | Yes | A minimum time estimate is given when the script is sent through a dry run but not when properly submitted.
+Provide the elapsed time for the current job | No | Logs of when scripts are started are available but not a simple command for elapsed time.
+Run a black-box script as a job (see submitted scripts section below) | Yes | 
+Provide script validation, e.g. allow a dry run of a script or job | Yes | Jobs can be sent through dry runs but there is no validation of code when it is first sent to the server.
 
 # Submitted Scripts
 ```
