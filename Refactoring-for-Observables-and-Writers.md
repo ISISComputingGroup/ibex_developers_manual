@@ -14,23 +14,23 @@ NOTE: PairObservable is not depicted for clarity.
 Original
 --------
 
-.. image:: GUI_development/images/refactoring_for_observables_and_writers/observables_and_observers_pre_nov_2015.png
-    :scale: 100 %
-    :align: center
+![Observables and observers pre nov 2015](GUI_development/images/refactoring_for_observables_and_writers/observables_and_observers_pre_nov_2015.png)
+ 
+ 
     
 November 2015
 -------------
 
-.. image:: GUI_development/images/refactoring_for_observables_and_writers/observables_and_observers_nov_2015.png
-    :scale: 100 %
-    :align: center
+![Observables and observers nov 2015](GUI_development/images/refactoring_for_observables_and_writers/observables_and_observers_nov_2015.png)
+ 
+ 
     
 January 2016
 -------------
 
-.. image:: GUI_development/images/refactoring_for_observables_and_writers/observables_and_observers_jan_2016.png
-    :scale: 100 %
-    :align: center
+![Observables and observers jan 2016](GUI_development/images/refactoring_for_observables_and_writers/observables_and_observers_jan_2016.png)
+ 
+ 
 
 
 Observables
@@ -38,49 +38,47 @@ Observables
 Original
 --------
 
-.. image:: GUI_development/images/refactoring_for_observables_and_writers/observables_before.png
-   :height: 606 
-   :width: 449
-   :scale: 100 %
-   :align: center
+![Observables before](GUI_development/images/refactoring_for_observables_and_writers/observables_before.png)
+
+
+
 
 November 2015
 -------------
 
-.. image:: GUI_development/images/refactoring_for_observables_and_writers/observables_after.png
-   :height: 525 
-   :width: 438
-   :scale: 100 %
-   :align: center
+![Observables after](GUI_development/images/refactoring_for_observables_and_writers/observables_after.png)
+
+
+
+
    
 January 2016
 -------------
 
-.. image:: GUI_development/images/refactoring_for_observables_and_writers/observables_2016_01.png
-   :height: 525 
-   :width: 438
-   :scale: 100 %
-   :align: center
+![Observables Jan 2016](GUI_development/images/refactoring_for_observables_and_writers/observables_2016_01.png)
+
+
+
+
 
 Observers
 =========
 Original
 --------
 
-.. image:: GUI_development/images/refactoring_for_observables_and_writers/observers_before.png
-   :height: 606 
-   :width: 449
-   :scale: 100 %
-   :align: center
+![Observers before](GUI_development/images/refactoring_for_observables_and_writers/observers_before.png)
+
+
+
 
 November 2015
 -------------
 
-.. image:: GUI_development/images/refactoring_for_observables_and_writers/observers_after.png
-   :height: 525 
-   :width: 438
-   :scale: 100 %
-   :align: center
+![Observers after](GUI_development/images/refactoring_for_observables_and_writers/observers_after.png)
+
+
+
+
 
 After refactoring the two existing interfaces were combined into a single Observer interface, and ObservableAdapter was renamed.
 
@@ -89,29 +87,27 @@ Writables
 Original
 --------
 
-.. image:: GUI_development/images/refactoring_for_observables_and_writers/writables_before.png
-   :height: 606 
-   :width: 449
-   :scale: 100 %
-   :align: center
+![Writables before](GUI_development/images/refactoring_for_observables_and_writers/writables_before.png)
+
+
+
 
 November 2015
 -------------
 
-.. image:: GUI_development/images/refactoring_for_observables_and_writers/writables_after.png
-   :height: 525 
-   :width: 438
-   :scale: 100 %
-   :align: center
+![Writables after](GUI_development/images/refactoring_for_observables_and_writers/writables_after.png)
+
+
+
+
    
 April 2016
 -------------
 
-.. image:: GUI_development/images/refactoring_for_observables_and_writers/writables_april2016.png
-   :height: 404 
-   :width: 289
-   :scale: 100 %
-   :align: center
+![Writables Apr 2016](GUI_development/images/refactoring_for_observables_and_writers/writables_april2016.png)
+
+
+
    
 After refactoring, the ForwardingWritable is passed a converter, which can either convert value or do nothing.
 
@@ -120,18 +116,17 @@ Writers
 Original
 --------
 
-.. image:: GUI_development/images/refactoring_for_observables_and_writers/writers_before.png
-   :height: 606 
-   :width: 449
-   :scale: 100 %
-   :align: center
+![Writers before](GUI_development/images/refactoring_for_observables_and_writers/writers_before.png)
+
+
+
 
 November 2015
 -------------
 
-.. image:: GUI_development/images/refactoring_for_observables_and_writers/writers_after.png
-   :height: 525 
-   :width: 438
-   :scale: 100 %
-   :align: center
+![Writers after](GUI_development/images/refactoring_for_observables_and_writers/writers_after.png)
+
+
+
+
 
