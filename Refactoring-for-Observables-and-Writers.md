@@ -1,4 +1,5 @@
-================================================================
+> [Wiki](Home) > [The GUI](The-GUI) > [Coding](GUI-Coding) > Refactoring for observables and writers
+
 Class Diagrams for Observables, Observers, Writables and Writers
 ================================================================
 
