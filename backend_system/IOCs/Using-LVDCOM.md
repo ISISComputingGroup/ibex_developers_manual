@@ -1,7 +1,9 @@
-[Creating IOC wrapper VI](Creating-IOC-wrapper-VI)
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > Using LVDCOM
 
-[Connecting to remote VI](Connecting-to-remote-vi)
+* [Creating IOC wrapper VI](Creating-IOC-wrapper-VI)
 
-[Correct LV2010 registry](Correct-LV2010-registry)
+* [Connecting to remote VI](Connecting-to-remote-vi)
 
-[LVDCOM IOC boot](LVDCOM-IOC-boot)
+* [Correct LV2010 registry](Correct-LV2010-registry)
+
+* [LVDCOM IOC boot](LVDCOM-IOC-boot)
