@@ -4,21 +4,14 @@ This is based on the BackendRequirements page.
 
 # What it does
 
-```
-#!html
-<table border="1">
- <tr>
-  <td>Accept multiple clients</td>
-  <td>&nbsp&nbsp&#9745&nbsp&nbsp</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Serve up a list of available commands for the specified instrument over some protocol</td> 
-  <td>&nbsp&nbsp&#9746</td>
-  <td>The current method of finding available commands is through calling a ListCommands() python method. This gives a human readable list and not enough info to construct a sensible client command list. (See further modifications</td>
- </tr>
- <tr>
-  <td>The commands are instrument specific scripts written by the instrument scientists and/or controls team, and are stored on the server</td> 
+Feature                                                                               | Supported | Comments
+------------------------------------------------------------------------------------- | --------- | -------------------------------------
+Accept multiple clients                                                               | Yes       |
+Serve up a list of available commands for the specified instrument over some protocol | No        | The current method of finding available commands is through calling a ListCommands() python method. This gives a human readable list and not enough info to construct a sensible client command list. (See further modifications)
+The commands are instrument specific scripts written by the instrument scientists and/or controls team, and are stored on the server | Yes |
+
+
+ 
   <td>&nbsp&nbsp&#9745</td>
   <td></td>
  </tr>
