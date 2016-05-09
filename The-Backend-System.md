@@ -4,10 +4,6 @@
 
 How to install and build the backend system for the first time on Windows.
 
-## [genie_python](Building-and-installing-genie_python)
-
-How to build and install genie_python.
-
 # System Components
 
 * [The BlockServer](BlockServer)
@@ -21,6 +17,10 @@ How to build and install genie_python.
 * [Run control](Run-control)
 
 * [Alarms](Alarms)
+
+## [genie_python](Building-and-installing-genie_python)
+
+How to build and install genie_python.
 
 ## [EPICS](EPICS)
 
