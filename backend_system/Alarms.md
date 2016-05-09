@@ -56,7 +56,7 @@ These are all included in 'org.csstudio.isis.feature.css, so you shouldn't have 
 
 Currently the alarm handler functionality is added to the client through the plugin 'org.csstudio.isis.ui.alarm'. This simply provides a perspective, which contains the 'Alarm Tree' widget, to the perspective switcher.
 
-![Alarm system preferences dialog](https://raw.githubusercontent.com/wiki/ISISComputingGroup/ibex_developers_manual/backend_system/Alarm-preferences.png "Alarm system preferences dialog")
+![Alarm system preferences dialog](backend_system/Alarm-preferences.png "Alarm system preferences dialog")
 
 # Default connection details #
 
