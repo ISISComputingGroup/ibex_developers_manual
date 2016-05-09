@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The GUI](The-GUI) > [CS Studio](GUI-CSS) > Building the archive engine for MySQL
+
 # Setting up the !MySql database
 
 Either install a new instance of !MySql or use an existing database.
