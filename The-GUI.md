@@ -1,3 +1,5 @@
+> [Wiki](Home) > The GUI
+
 # [Getting Started](GUI-Getting-Started)
 
 How to get started with GUI development.
