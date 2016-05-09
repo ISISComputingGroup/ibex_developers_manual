@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [Nicos](Nicos) > Script server design
+
 # What it should do
 - Accept multiple clients
 - Serve up a list of available commands for the specified instrument over some protocol. The command should contain command parameters and a description, for example:
