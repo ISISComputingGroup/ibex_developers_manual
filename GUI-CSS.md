@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The GUI](The-GUI) > Control System Studio
+
 * [CS-Studio on GitHub](https://github.com/ControlSystemStudio)
 
 * [Using the archive engine with MySQL](Using-the-archive-engine-with-mysql)
