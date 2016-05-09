@@ -48,7 +48,7 @@ Decisions already made:
 
 A simple diagram of the design:
 
-![Script server design](DesignDocument.png "Script server design")
+![Script server design](backend_system/NICOS/new_switching_writables.jpg)
 
 Commands:
 
