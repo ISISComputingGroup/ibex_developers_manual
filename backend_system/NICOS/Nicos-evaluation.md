@@ -4,7 +4,7 @@ This is based on the BackendRequirements page.
 
 # What it does
 
-Feature                                                                               | Supported | Comments
+Feature                                                                               | Supported? | Comments
 ------------------------------------------------------------------------------------- | --------- | -------------------------------------
 Accept multiple clients                                                               | Yes       |
 Serve up a list of available commands for the specified instrument over some protocol | No        | The current method of finding available commands is through calling a ListCommands() python method. This gives a human readable list and not enough info to construct a sensible client command list. (See further modifications)
@@ -25,25 +25,12 @@ Run a black-box script as a job (see submitted scripts section below) | Yes |
 Provide script validation, e.g. allow a dry run of a script or job | Yes | Jobs can be sent through dry runs but there is no validation of code when it is first sent to the server.
 
 # Submitted Scripts
-```
-#!html
-<table border="1">
- <tr>
-  <td>Script server aware - created by a script generator</td>
-  <td>&nbsp&nbsp&#9746&nbsp&nbsp</td>
-  <td>There is no back-end support for this but could be implemented in front end</td>
- </tr>
- <tr>
-  <td>Script server aware - written by hand</td>
-  <td>&nbsp&nbsp&#9745&nbsp&nbsp</td>
-  <td>NICOS provides a number of commands that are able to pause midway and provide feedback (for example their own sleep method)</td>
- </tr>
- <tr>
-  <td>Black-box scripts - written by hand</td>
-  <td>&nbsp&nbsp&#9745&nbsp&nbsp</td>
-  <td>Any valid Python code can be run on the server, they can also be paused between lines (but not within lines)</td>
- </tr>
-```
+
+Feature | Supported? | Comments
+------- | ---------- | --------
+Script server aware - created by a script generator | No | There is no back-end support for this but could be implemented in front end.
+Script server aware - written by hand | Yes | NICOS provides a number of commands that are able to pause midway and provide feedback (for example their own sleep method).
+Black-box scripts - written by hand | Yes | Any valid Python code can be run on the server, they can also be paused between lines (but not within lines).
 
 # General NICOS notes
 NICOS uses a bespoke protocol across a TCP connection for communication between client and server. Scripts are sent to the server as pure python which are run on the server in a dedicated scripting thread.
