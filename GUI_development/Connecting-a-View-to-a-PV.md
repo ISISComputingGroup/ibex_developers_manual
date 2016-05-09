@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The GUI](The-GUI) > [Coding](GUI-Coding) > Connecting a view to a PV
+
 Connecting a View to a PV
 
 The basic arrangement for the mechanism for connecting a View to a PV is shown below:
