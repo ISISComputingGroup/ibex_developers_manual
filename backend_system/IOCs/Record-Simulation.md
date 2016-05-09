@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > Record simulation
+
 EPICS supports the concept of running IOC records in "simulation mode" - here rather than reading input/output from devices 
 according to the INP/OUT fields the record will bypass hardware and use an alternative value. We should only need to add this support to records that access hardware, other records should be able to work as normal on these supplied simulated values.
 
