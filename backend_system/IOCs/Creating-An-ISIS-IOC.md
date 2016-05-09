@@ -103,7 +103,7 @@ Next the db file needs to created. For the Hameg (and most devices) the db only 
         field(EGU, "V") 
     }
 
-devHameg_8123.proto is the name of the protocol file for the Hameg created `here <https://trac.isis.rl.ac.uk/ICP/wiki/WritingAnISISStreamDevice>`_.
+devHameg_8123.proto is the name of the protocol file for the Hameg created [here](Writing-An-ISIS-Stream-Device).
 
 The final step is to rationalise the st.cmd files for each IOC. There will be a default st.cmd for each IOC beneath the iocBoot directory, but it will require information adding such as information about the db files, protocol files, hardware connection etc.
 The final Hameg st.cmd looks like this (the bits added have been highlighted)::
