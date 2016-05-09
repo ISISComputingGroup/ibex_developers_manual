@@ -4,19 +4,9 @@
 
 How to install and build the backend system for the first time on Windows.
 
-# System Components
+# [System Components](System-components)
 
-* [The BlockServer](BlockServer)
-
-* [The DatabaseServer](The-DatabaseServer)
-
-* [The MySQL Database](The-MySQL-Database)
-
-* [Configurations] (Configurations)
-
-* [Run control](Run-control)
-
-* [Alarms](Alarms)
+Detailed description of the design and function of several components of the backend system
 
 ## [genie_python](Building-and-installing-genie_python)
 
