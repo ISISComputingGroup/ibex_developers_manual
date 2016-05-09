@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The GUI](The-GUI) > [CS Studio](GUI-CSS) > Building the alarm server for MySQL
+
 # Setting up the JMS and the MySql Database
 
 The Java Message Service is implemented using ActiveMQ
