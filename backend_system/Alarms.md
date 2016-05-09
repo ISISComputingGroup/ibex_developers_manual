@@ -9,8 +9,8 @@
 * [To do list](#to-do-list)
 
 # Useful links #
-* [Building the alarm server](https://trac.isis.rl.ac.uk/ICP/wiki/BuildingAlarmServerMySql)
-* [Using the alarm server](https://trac.isis.rl.ac.uk/ICP/wiki/UsingAlarmServerMySql)
+* [Building the alarm server](Building-the-alarm-server-for-mysql)
+* [Using the alarm server](Using-the-alarm-server-with-mysql)
 * [CSS book](http://cs-studio.sourceforge.net/docbook/ch14.html)
 
 # Architectural overview #
