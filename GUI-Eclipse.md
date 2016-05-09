@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The GUI](The-GUI) > Eclipse
+
 * [Common Eclipse Tasks](Common-Eclipse-Tasks)
 
 * [Common Eclipse Issues](Common Eclipse Issues)
