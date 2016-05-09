@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The GUI](The-GUI) > [Getting Started](GUI-Getting-Started) > Maven and Tycho
+
 The IBEX GUI is built using Tycho which is an extension of Maven designed for building Eclipse RCP products.
 
 This document provides a brief overview of both Maven and Tycho.
