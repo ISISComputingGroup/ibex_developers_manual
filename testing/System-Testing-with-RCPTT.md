@@ -1,4 +1,4 @@
-> [Wiki](Home) > [The GUI](The-GUI) > [Testing](GUI-Testing) > Introduction to unit testing
+> [Wiki](Home) > [The GUI](The-GUI) > [Testing](GUI-Testing) > System testing with RCPTT
 
 See [System Testing Proposals](System-Testing-Proposals) for a brief bit on the rationale behind the system tests.
 
