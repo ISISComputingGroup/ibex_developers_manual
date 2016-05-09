@@ -12,17 +12,7 @@ Testing setup for GUI development.
 
 # [Eclipse](GUI-Eclipse)
 
-* [Common Eclipse Tasks](Common-Eclipse-Tasks)
-
-* [Common Eclipse Issues](Common Eclipse Issues)
-
-* [Creating the IBEX Developer Version of Eclipse](Creating-the-IBEX-Developer-Version-of-Eclipse)
-
-* [Eclipse RCP](Eclipse-RCP)
-
-* [Logging](Eclipse-logging)
-
-* [Preferences](Eclipse-preferences)
+Working with the Eclipse IDE.
 
 # [Control System Studio (CS-Studio)](GUI-CSS)
 
