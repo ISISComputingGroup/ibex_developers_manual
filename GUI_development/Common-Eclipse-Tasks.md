@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The GUI](The-GUI) > [Eclipse](GUI-Eclipse) > Common Eclipse tasks
+
 ## Add A New Plugin
 
 1. In Eclipse IDE, File Menu > New > Plugin Project.
