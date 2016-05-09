@@ -1,14 +1,11 @@
-============
-Unit Testing
-============
+# Unit Testing
 
 To create unit tests for an Eclipse plug-in a Fragment Project is used. When creating a Fragment Project we assigned the plug-in we wish to test as a Host Plug-in.
 Eclipse automatically gives the Fragment access to the classes in the original plug-in.
 
 In the Fragment Project we create classes to test the classes in the original plug-in.
 
-A simple example
-----------------
+## A simple example
 
 Open the wizard for creating a standard plug-in in Eclipse (File->New->Plug-in Project) and complete the following steps (if values not specified then use the defaults):
 
@@ -22,16 +19,15 @@ Open the wizard for creating a standard plug-in in Eclipse (File->New->Plug-in P
 The will create the plug-in. Inside the src folder create a package called org.myexample.plugin.classes and add a class called StringManipulator.
 Add the following code to the class:
 
-.. code::
-
+```
     package org.myexample.plugin.classes;
-
     public class StringManipulator {
-        
+      
         public String addStrings(String one, String two) {
             return one;
         }
     }
+```
     
 Now to create the Fragment Project. Open the Fragment Project wizard under File->New->Other->Plug-in Development->Fragment Project and complete the following steps:
 
@@ -54,8 +50,7 @@ Add a class called "StringManipulatorTest" - the name **MUST** end in Test for t
 
 Okay let's create a test, add the following code to the StringManipulatorTest class:
 
-.. code::
-
+```
     package org.myexample.plugin.tests;
 
     import static org.junit.Assert.*;
@@ -77,57 +72,49 @@ Okay let's create a test, add the following code to the StringManipulatorTest cl
 
         }
     }
+```
     
 To run the test right-click on the Fragment Project and select Run As->JUnit Test. The test should run and fail like so:
 
-.. image:: images/an_introduction_to_unit_testing/failed_test.png
-    :height: 239
-    :width: 1204
-    :scale: 85 %
-    :align: center
-    
+![Failed test](GUI_development/images/failed_test.png)
+
 Clearly there is something wrong with the original code in addStrings, so let's fix that by changing:
 
-.. code::
-
+```
     public String addStrings(String one, String two) {
         return one;
     }
+```
 
 to:
 
-.. code::
-
+```
     public String addStrings(String one, String two) {
         return one + two;
     }
+```
 
 Now the test should pass if it is run again:
 
-.. image:: images/an_introduction_to_unit_testing/passed_test.png
-    :height: 236
-    :width: 1204
-    :scale: 85 %
-    :align: center
-    
+![Passed test](GUI_development/images/passed_test.png)    
+
 JUnit has many useful features, here are a select few.
 
 * other asserts such as assertTrue, assertArrayEquals,  assertNotEqual and assertNotNull
 
 * assert that an error is thrown:
 
-.. code::
-
+```
     @Test(expected=IndexOutOfBoundsException.class)
     public void raises_IndexOutOfBoundsException() {
         ArrayList emptyList = new ArrayList();
         Object o = emptyList.get(0);
     }
+```
 
 * set-up and teardown methods - these are code snippets that are run before and after **each** test:
 
-.. code::
-
+```
     private List<String> names;
 	
 	@Before
@@ -157,13 +144,13 @@ JUnit has many useful features, here are a select few.
 		assertEquals("Tom, Dick and Harry", ans);
 
 	}
+```
     
 Note: Each test should be independent of the other tests as there is no guarantee of the order they are run in.
 
 * BeforeClass and AfterClass - these are run once before the first test and after the last test in a class respectively:
 
-.. code::
-
+```
     @BeforeClass
     public static void oneTimeSetUp() {
         // Perhaps create a dummy file or something shared by more than one test
@@ -173,25 +160,24 @@ Note: Each test should be independent of the other tests as there is no guarante
     public static void oneTimeTearDown() {
         // Clean up
     }
+```
     
-Naming conventions for unit tests
----------------------------------
+## Naming conventions for unit tests
 
 Java methods are usually lower CamelCase (e.g getNameValue), but for some of the tests we have adopted the convention of using underscore spaced method names (e.g. does_two_plus_two_equal_four).
 This is probably easier to read that CamelCase, but it does upset CheckStyle; therefore, to tell CheckStyle to ignore the name format add a warning suppression to the top of the class:
 
-.. code::
-
+```
     @SuppressWarnings({ "checkstyle:magicnumber", "checkstyle:methodname" })
     public class StringManipulatorTest {
+```
     
 It may be worth adding the magic-number suppression too depending on the type of tests.
 
 The basic naming guideline is for the test name to explain what it is doing and perhaps what it expects, for example: invalid_user_name_throws_exception or getting_user_returns_user.
 Where possible don't include the method being tested name in the test name as that could change over time.
 
-Mockito
--------
+## Mockito
 
 Mockito is a framework for creating mock objects that can be substituted for real objects to make testing easier and more specific.
 For example: writing tests that don't rely on a database, file or network connection being present.
@@ -200,8 +186,7 @@ Like JUnit is can be used inside a Fragment Project after the dependency is adde
    
 An example of using Mockito would be to mock a database wrapper so that a real database is not required:
 
-.. code::
-
+```
     @Test
 	public void get_row_data() {
 		// Arrange
@@ -224,11 +209,11 @@ An example of using Mockito would be to mock a database wrapper so that a real d
 		// Assert
 		assertEquals(data, ans);
     }
+```
 
 For more detail on Mockito see the using_mockito_for_testing_in_ibex document.
 
-Code coverage
--------------
+## Code coverage
 
 It is useful to see what parts of a plug-in's code are used or not used by the unit tests. 
 If a piece of code is not used by the unit tests then that may mean that an extra test is required
@@ -237,26 +222,20 @@ Unit test code coverage can be examined inside Eclipse using EclEmma which can b
 Once EclEmma is installed the coverage of the unit tests can be examined. Right-click on the test project and select Coverage As->JUnit Test.
 This will run the tests and calculate the coverage, the results should look something like this:
 
-.. image:: images/an_introduction_to_unit_testing/coverage_result.png
-    :height: 697
-    :width: 910
-    :scale: 85 %
-    :align: center
+
+![Passed test](GUI_development/images/converge_result.png)  
     
 From the results it can be seen that 63.2% of the StringManipulator code is used by the unit tests. 
 The code that isn't used is highlighted in red - for this example we can see that we need to write a test that tests the reverseString method.
 
     
-Eclipse is complaining
-======================
+# Eclipse is complaining
 
-ClassNotFoundException
-----------------------
+## ClassNotFoundException
 
 Running the tests in Eclipse might crash with an error like:
 
-.. code::
-
+```
     Class not found org.myexample.plugin.tests.StringManipulatorTest
     java.lang.ClassNotFoundException: org.myexample.plugin.tests.StringManipulatorTest
         at java.net.URLClassLoader.findClass(Unknown Source)
@@ -264,6 +243,7 @@ Running the tests in Eclipse might crash with an error like:
         at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)
         at java.lang.ClassLoader.loadClass(Unknown Source)
         ...
+```
 
 This is a known bug and there is a workaround:
 
@@ -275,8 +255,7 @@ This is a known bug and there is a workaround:
 * On the original dialog, click "Apply" and then "Run"
 * Hopefully, the tests will now work and you should be able to re-run them in the normal way
 
-Eclipse is not picking up new tests
------------------------------------
+## Eclipse is not picking up new tests
 
 If Eclipse is not picking up changes when you add tests you may need to change the default output folder for tests for Maven to pick it up.
 
@@ -284,7 +263,6 @@ If Eclipse is not picking up changes when you add tests you may need to change t
 * Change the output folder to target/test-classes (you may need to create this folder first by clicking browse, selecting target and adding the test-classes folder)
 * If this does not work try deleting the target/test-classes folder first, if it existed already, and do a clean rebuild of the workspace
 
-IncompatibleClassChangeError
-----------------------------
+## IncompatibleClassChangeError
 
 If the tests are failing because of an IncompatibleClassChangeError error then the solution is to delete the bin and target folders for both the main plug-in and the corresponding test plug-in
