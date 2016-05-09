@@ -13,12 +13,14 @@
 
 * [Record simulation](Record-Simulation)
 
-# Conventions
+## Conventions ##
 
 * [ISIS PV guide](ISIS-PV-Guide)
 
 * [PV naming](PV-Naming)
 
 * [PV units](PV-Units)
+
+## Further reading ##
 
 * [IOC doxygen Documentation](http://epics.isis.rl.ac.uk/doxygen/main/)
