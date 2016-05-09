@@ -78,7 +78,7 @@ Okay let's create a test, add the following code to the StringManipulatorTest cl
     
 To run the test right-click on the Fragment Project and select Run As->JUnit Test. The test should run and fail like so:
 
-![Failed test](GUI_development/images/failed_test.png)
+![Failed test](GUI_development/Testing/images/an_introduction_to_unit_testing/failed_test.png)
 
 Clearly there is something wrong with the original code in addStrings, so let's fix that by changing:
 
@@ -98,7 +98,7 @@ to:
 
 Now the test should pass if it is run again:
 
-![Passed test](GUI_development/images/passed_test.png)    
+![Passed test](GUI_development/Testing/images/an_introduction_to_unit_testing/passed_test.png)    
 
 JUnit has many useful features, here are a select few.
 
@@ -221,11 +221,10 @@ It is useful to see what parts of a plug-in's code are used or not used by the u
 If a piece of code is not used by the unit tests then that may mean that an extra test is required
 
 Unit test code coverage can be examined inside Eclipse using EclEmma which can be installed via the Eclipse Marketplace (under the "Help" menu).
-Once EclEmma is installed the coverage of the unit tests can be examined. Right-click on the test project and select Coverage As->JUnit Test.
-This will run the tests and calculate the coverage, the results should look something like this:
+Once EclEmma is installed the coverage of the unit tests can be examined. Right-click on the test project and select Coverage As->JUnit Test. This will run the tests and calculate the coverage, the results should look something like this:
 
 
-![Passed test](GUI_development/images/converge_result.png)  
+![Coverage result](GUI_development/Testing/images/an_introduction_to_unit_testing/coverage_result.png)  
     
 From the results it can be seen that 63.2% of the StringManipulator code is used by the unit tests. 
 The code that isn't used is highlighted in red - for this example we can see that we need to write a test that tests the reverseString method.
