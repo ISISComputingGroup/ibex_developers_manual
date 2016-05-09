@@ -173,4 +173,4 @@ Finally, before checking the this all into SVN, you will need to do the followin
 
 * Mark any interesting PVs in the db file and make sure they have unit fields (EGU) and a description (DESC)
 
-* Add simulation and disable records (see `here for more info <https://trac.isis.rl.ac.uk/ICP/wiki/add_sim_records>`_)
+* Add [simulation records](Record-Simulation) and [disable records](Disable-records)
