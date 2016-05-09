@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The GUI](The-GUI) > [Coding](GUI-Coding) > Development workflow
+
 ## Quick overview of workflow
 
 1. **Create a branch for the ticket (based on master) via GitHub (developer)**
