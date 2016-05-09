@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The GUI](The-GUI) > [Eclipse](GUI-Eclipse) > Eclipse logging
+
 # Logging in the IBEX GUI (Eclipse Client)
 
 ## Log4j
