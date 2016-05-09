@@ -1,10 +1,6 @@
 # [Getting Started](GUI-Getting-Started)
 
-* [The Development Workflow](GUI-Development-Workflow)
-
-* [How to Build](Building-the-GUI)
-
-* [Maven and Tycho](Maven-and-Tycho)
+How to get started with GUI development.
 
 # [Coding](GUI-Coding)
 
