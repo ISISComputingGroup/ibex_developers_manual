@@ -1,4 +1,4 @@
-> [Wiki](Home) > [The GUI](The-GUI) > [Coding](GUI-Coding) > Development workflow
+> [Wiki](Home) > [The GUI](The-GUI) > [Getting Started](GUI-Getting-Started) > Development workflow
 
 ## Quick overview of workflow
 
