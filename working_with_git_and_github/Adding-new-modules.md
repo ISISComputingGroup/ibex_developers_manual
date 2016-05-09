@@ -1,3 +1,5 @@
+> [Wiki](Home) > [Project tools](Project-tools) > [Working with git and github](Working-with-git-and-github) > Adding new modules
+
 # Adding a new module
 
 ## initial import
