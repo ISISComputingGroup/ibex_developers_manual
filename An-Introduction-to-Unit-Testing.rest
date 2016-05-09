@@ -1,5 +1,3 @@
-> [Wiki](Home) > [The GUI](The-GUI) > [Testing](GUI-Testing) > Introduction to unit testing
-
 ============
 Unit Testing
 ============
