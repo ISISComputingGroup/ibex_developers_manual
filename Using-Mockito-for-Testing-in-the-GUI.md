@@ -1,15 +1,10 @@
-=================================
-Using Mockito for testing in IBEX
-=================================
-
 You should read the guide to testing in IBEX before reading this guide.
 
 This guide gives some basic advice on using Mockito for unit testing in IBEX. For more information on Mockito see http://mockito.org/.
 
 Please update this guide with tips or anything you find useful in Mockito.
 
-Test Doubles
-------------
+## Test Doubles
 
 Test doubles are objects that stand in for a real object, for the purposes of unit testing. Terminology varies but there are four usual types that are described:
 
@@ -21,13 +16,11 @@ Test doubles are objects that stand in for a real object, for the purposes of un
 
 * Mock - fake objects which know about which method calls they recieve
 
-See this article for more information - http://martinfowler.com/articles/mocksArentStubs.html. Mockito mostly helps with Stub and Mock doubles.
+See [this article](http://martinfowler.com/articles/mocksArentStubs.html) for more information. Mockito mostly helps with Stub and Mock doubles.
 
-Verifying Interactions
-----------------------
+## Verifying Interactions
 
-.. code::
-
+```
     import static org.mockito.Mockito.*;
 
     // mock creation
@@ -40,14 +33,13 @@ Verifying Interactions
     // selective, explicit, highly readable verification
     verify(mockedList).add("one");
     verify(mockedList).clear();
+```
 
 Here the List interface is mocked, and has some method calls made on it. The verify calls replace the usual assert calls in this unit test, and check the method calls were made. In this is example it is trivial to see they are called.
 
-Stubbing Method Calls
----------------------
+## Stubbing Method Calls
 
-.. code::
-
+```
     // you can mock concrete classes, not only interfaces
     LinkedList mockedList = mock(LinkedList.class);
 
@@ -59,20 +51,19 @@ Stubbing Method Calls
 
     // the following prints "null" because get(999) was not stubbed
     System.out.println(mockedList.get(999));
+```
     
 This time the concrete class LinkedList is mocked instead of an interface. The mocked object returns what is asked of it when the method call is made with identical arguments.
 
-IBEX Example
-------------
+## IBEX Example
 
 Below is a less trivial example, showing how the verification and stubbing can be used to check behaviour of an observable.
 
-In this example InitialiseOnSubscribeObservable takes another observable as its argument, gets the current value of that observable, and listens for changes. Here we stub the class that InitialiseOnSubscribeObservable is observing, to simplify the test. The only method call we care about is :code:`getValue()`.
+In this example InitialiseOnSubscribeObservable takes another observable as its argument, gets the current value of that observable, and listens for changes. Here we stub the class that InitialiseOnSubscribeObservable is observing, to simplify the test. The only method call we care about is `getValue()`.
 
-The InitialisableObserver is also mocked. As part of the test we want to check that it has its :code:`update()` method called with a specific set of arguments. We use :code:`times(1)` to specify we want the method called exactly once.
+The InitialisableObserver is also mocked. As part of the test we want to check that it has its `update()` method called with a specific set of arguments. We use `times(1)` to specify we want the method called exactly once.
 
-.. code::
-
+```
     @Test
     public void test_InitialiseOnSubscribeObservable_subscription() {
       //Arrange
@@ -104,41 +95,38 @@ The InitialisableObserver is also mocked. As part of the test we want to check t
       // A Unsubscriber is returned
       assertEquals(Unsubscriber.class, returned.getClass());
     }
+```
 
-Times Method is Called
-----------------------
+## Times Method is Called
 
 Options for checking how many times a particular method is called:
 
-* :code:`atLeast(int minNumber)` at least this many times
+* `atLeast(int minNumber)` at least this many times
 
-* :code:`atLeastOnce()` at least once
+* `atLeastOnce()` at least once
 
-* :code:`atMost(int maxNumber)` at most this many times
+* `atMost(int maxNumber)` at most this many times
 
-* :code:`never()` same as :code:`times(0)`
+* `never()` same as `times(0)`
 
-* :code:`times(int number)` exactly this number of times
+* `times(int number)` exactly this number of times
     
-Any Methods
------------
+## Any Methods
 
 When verifying method calls if the value of an argument is not important Mockito allows you to check that any object of a specific type was used as an argument instead.
 
-.. code::
-
+```
     // The initialisable observer has its update method called once
     verify(mockObserver, times(1)).update(value, any(Exception.class), anyBoolean());
+```
     
-For common types methods such as :code:`anyString()` are available, otherwise :code:`any(Object.class)` can be used. A null object will also be matched by using any.
+For common types methods such as `anyString()` are available, otherwise `any(Object.class)` can be used. A null object will also be matched by using any.
 
-Capturing Values on Method Calls
---------------------------------
+## Capturing Values on Method Calls
 
-If you want to capture the object called in a method, perhaps to check some value, then a captor can be used. See the code below for an example of how to do this. It is important to call :code:`MockitoAnnotations.initMocks(this);` in the test set up method, otherwise the captor is never initialised.
+If you want to capture the object called in a method, perhaps to check some value, then a captor can be used. See the code below for an example of how to do this. It is important to call `MockitoAnnotations.initMocks(this);` in the test set up method, otherwise the captor is never initialised.
 
-.. code::
-
+```
     @Captor ArgumentCaptor<Exception> exceptionCaptor;
     
     @Before
@@ -174,32 +162,30 @@ If you want to capture the object called in a method, perhaps to check some valu
 		verify(mockObserver, times(1)).onError(exceptionCaptor.capture());
 		assertEquals("conversion exception!", exceptionCaptor.getValue().getMessage());
 	}
+```
 
-Checking Order of Method Calls
-------------------------------
+## Checking Order of Method Calls
 
 Mockito can be used to check the order methods were called in.
 
-.. code::
-
+```
     InOrder inOrder = inOrder(firstMock, secondMock);
      
     inOrder.verify(firstMock).add("was called first");
     inOrder.verify(secondMock).add("was called second");
+```
     
-Spies
------
+## Spies
 
 Spies can be used to stub a method or verify calls on a real class. Needing to use a partial mock like this might be a symptom of problems with code though!
 
-.. code::
-
+```
     // These are equivalent    
     @Spy Foo spyOnFoo = new Foo("argument");
     Foo spyOnFoo = Mockito.spy(new Foo("argument"));
+```
 
-Tips and Advice
----------------
+## Tips and Advice
 
 * Use mocks to test interactions between a class and a particular interface
 
@@ -210,4 +196,3 @@ Tips and Advice
 * Do not mock simple classes or value objects - may as well use the real thing
 
 * Do not mock everything!
-
