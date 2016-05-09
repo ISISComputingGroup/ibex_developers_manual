@@ -1,6 +1,8 @@
-# Getting Started
+> [Wiki](Home) > The Backend System
 
-[First time installing and building (Windows)](First-time-installing-and-building-(Windows))
+# [Getting Started](First-time-installing-and-building-(Windows))
+
+How to install and build the backend system for the first time on Windows.
 
 ## [genie_python](Building-and-installing-genie_python)
 
@@ -8,17 +10,17 @@ How to build and install genie_python.
 
 # System Components
 
-[The BlockServer](BlockServer)
+* [The BlockServer](BlockServer)
 
-[The DatabaseServer](The-DatabaseServer)
+* [The DatabaseServer](The-DatabaseServer)
 
-[The MySQL Database](The-MySQL-Database)
+* [The MySQL Database](The-MySQL-Database)
 
-[Configurations] (Configurations)
+* [Configurations] (Configurations)
 
-[Run control](Run-control)
+* [Run control](Run-control)
 
-[Alarms](Alarms)
+* [Alarms](Alarms)
 
 ## [EPICS](EPICS)
 
