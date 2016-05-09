@@ -1,9 +1,8 @@
 > [Wiki](Home) > [Project tools](Project-tools) > [Working with git and github](Working-with-git-and-github) > Git cribs
 
-=====================================================
 Steps for Developing Code with existing Git Repos
 =====================================================
-----------------------------------------------------------------------------------
+
 Development work
 ----------------------------------------------------------------------------------
 * Navigate to the appropriate directory in Git Bash
@@ -18,7 +17,6 @@ Development work
 * If the branch is only in the local copy of the repo: ``git push -u origin [branch-name]``, otherwise ``git push origin [branch-name]``
 * Go to GitHub and create the pull request, don't forget a brief test plan
 
-----------------------------------------------------------------------------------
 Reviewing work for the GUI
 ----------------------------------------------------------------------------------
 * Navigate to the appropriate directory in Git Bash
@@ -32,7 +30,6 @@ Reviewing work for the GUI
 * Once the tests have been passed, go to GitHub and merge the pull request.
 * Check on the delete branch button on the merged page
 
-----------------------------------------------------------------------------------
 Reviewing work for the 'top' of EPICS (no other related changes)
 ----------------------------------------------------------------------------------
 * Navigate to the appropriate directory in Git Bash
@@ -43,7 +40,6 @@ Reviewing work for the 'top' of EPICS (no other related changes)
 * Once the tests have been passed, go to GitHub and merge the pull request
 * Check on the delete branch button on the merged page
 
-----------------------------------------------------------------------------------
 Reviewing work for the subModules of EPICS
 ----------------------------------------------------------------------------------
 * Navigate to the appropriate directory in Git Bash
@@ -59,7 +55,6 @@ Reviewing work for the subModules of EPICS
 * Commit the updated submodules, with the comment as "Update submodules": ``git commit -m "Update submodules"``
 * Push the changed submodules back to GitHub: ``git push --recurse-submodule=check``
 
-----------------------------------------------------------------------------------
 Updating the GUI
 ----------------------------------------------------------------------------------
 * Navigate to the appropriate directory in Git Bash
@@ -69,7 +64,6 @@ Updating the GUI
 * Import any new packages
 * Refresh the packages
 
-----------------------------------------------------------------------------------
 Updating EPICS
 ----------------------------------------------------------------------------------
 * Navigate to the appropriate directory in Git Bash
@@ -80,7 +74,6 @@ Updating EPICS
 * Occasionally add ``--init`` to the submodule update to get any new submodules
 * If you only want the head files for the submodules leave off the ``--merge`` from the submodule update
 
-------------------------------------------------------------------------------------------------
 Cleaning up local installations (allowing yourself to see the wood, or branches, for the trees)
 ------------------------------------------------------------------------------------------------
 * In Git Bash, browse to any repo that might need cleaning up (the GUI is a prime example for this)
@@ -89,22 +82,21 @@ Cleaning up local installations (allowing yourself to see the wood, or branches,
 * Check the list of branches: ``git branch -a``
 * Remove any out of date local branches: ``git branch -d [unused-local-branches]``
 
-=====================================================
 Steps for Developing Code with new Git Repos
 =====================================================
+
 This will only be applicable for new submodules on the whole, and needs completing by someone who knows this
 
-=====================================================
 Git Merge notes crib sheet
 =====================================================
 The basic outline of the git merge entries are:
 
-::
-
+```
   <<<< HEAD
   The code in the local branch
   =====
   The code in e.g. master
   >>>> master
+```
 
 If there are any common ancestors, there may be extra blocks in the area to merge.
