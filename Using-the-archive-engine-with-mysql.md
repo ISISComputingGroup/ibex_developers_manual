@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The GUI](The-GUI) > [CS Studio](GUI-CSS) > Using the archive engine with MySQL
+
 Inside the EPICS_PILOT repository, there are pre-built executables for the Archive Configuration Tool and the Archive Engine.
 
 # Creating a configuration
