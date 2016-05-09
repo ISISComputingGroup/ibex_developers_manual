@@ -1,4 +1,4 @@
-Note: if you are creating a StreamDevice start `here <https://trac.isis.rl.ac.uk/ICP/wiki/WritingAnISISStreamDevice>`_.
+Note: if you are creating a StreamDevice start [here](Writing-An-ISIS-Stream-Device).
 
 All IOCs used at ISIS reside in the EPICS\\ioc directory.
 
