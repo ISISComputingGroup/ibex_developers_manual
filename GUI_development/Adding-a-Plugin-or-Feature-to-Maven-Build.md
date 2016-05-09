@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The GUI](The-GUI) > [Coding](GUI-Coding) > Adding a plugin or feature to Maven
+
 There are essentially two steps: adding a POM file to the plug-in/feature and editing the parent POM to include the new file.
 
 ## Adding a POM file
