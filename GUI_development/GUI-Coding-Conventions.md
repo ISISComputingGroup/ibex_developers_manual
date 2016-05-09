@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The GUI](The-GUI) > [Coding](GUI-Coding) > Conventions
+
 Unless stated otherwise below we should follow the standard Java conventions where possible.
 
 ## Code Documentation ##
