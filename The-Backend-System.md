@@ -34,12 +34,6 @@ Everything you could possibly want to know about IOCs and then some.
 
 How to build and configure Nicos.
 
-# Useful tools
+# [Useful tools](Useful-tools)
 
-[CA snooper](CA-snooper)
-
-[ISIS modules for file handling](ISIS-modules-for-file-handling)
-
-[Check DB file script](Check-db-file)
-
-[Add sim records script](Add-sim-records-script)
+Links to some tools that have proven useful for the project.
