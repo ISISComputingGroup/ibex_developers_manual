@@ -1,7 +1,9 @@
-### Install Perl
+> [Wiki](Home) > [The Backend System](The-Backend-System) > First time installing and building (Windows)
+
+# Install Perl
 Download and install [Strawberry Perl](http://strawberryperl.com/)
 
-### Install Visual Studio 2010
+# Install Visual Studio 2010
 Install Visual Studio 2010 
 Install SDK 7.1 
 -The SDK may fail if you have these installed: 
@@ -14,35 +16,35 @@ Install:
 * Visual Studio 2010 SP1
 * Visual C++ 2010 SP1 Compiler Update for the Windows SDK 7.1
 
-### Install Visual Studio 2013
+# Install Visual Studio 2013
 Windows SDK 7 has compatibility issues with newer versions of Windows. In this case, Visual Studio 2013 may be used instead.
 
 During the installation of VS2013, under "Optional Features" make sure to include Microsoft Foundation Classes for C++.
 
 Additionally, download and install [this library](https://www.microsoft.com/en-us/download/details.aspx?id=40770).
 
-### Install CMake
+# Install CMake
 Install [CMake](https://cmake.org/download/) 
 
-### Install Java SDK
+# Install Java SDK
 Install the [Java SDK for Windows x64](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 
-### Install Maven 
+# Install Maven 
 Install [Maven](https://maven.apache.org/download.cgi) and follow the 'Windows tips' in [these instructions ](https://maven.apache.org/install.html) to set environment variables for the SDK with JAVA_HOME and maven in PATH
 
-### Install Git 
+# Install Git 
 Install Git from [here](https://git-scm.com/download/win). 
 * I chose `Checkout-as-is; commit unix style line-endings`
 
 Optionally you may wish to install [Tortoise Git](https://tortoisegit.org/) too, which provides useful tools for diffs and merging. 
 
-### Recursive clone from git
+# Recursive clone from git
 
 In `C:\Instrument\Apps\` run:
 
 `git clone --recursive https://github.com/ISISComputingGroup/EPICS.git`
 
-### Install MySQL
+# Install MySQL
 Install MySQL 5.6 from [here](https://dev.mysql.com/downloads/windows/installer/5.6.html)
 
 Select "server only" on first page of install wizard and change the data path to `C:\Instrument\Var\mysql`. Later, in the Advanced configuration settings, select the "server machine" option.
@@ -55,18 +57,18 @@ Once installed run the `config_mysql.bat` batch file in `C:\Instrument\Apps\EPIC
 
 Note: For running tests locally, make sure that you have run `create_test_account.bat` from `C:\Instrument\Apps\EPICS\SystemSetup\` as well.
 
-### Install genie_python
+# Install genie_python
 
 Run the `genie_python_install.bat` batch file located in `\\isis\inst$\Kits$\CompGroup\ICP\Client\genie_python`
 
-### Run build.bat
+# Run build.bat
 `cd` to `C:\Instrument\Apps\EPICS\` and run `build.bat`
 
-### Run setup_css.bat
+# Run setup_css.bat
 In `C:\Instrument\Apps\EPICS\CSS\master` run `setup_css.bat`
 this will create directories for the archive engine. in `.\css-win.x86_64`
 
-### Setting up a configurations directory
+# Setting up a configurations directory
 
 * Create the following folder structure: `C:\Instrument\Settings\config`
 
