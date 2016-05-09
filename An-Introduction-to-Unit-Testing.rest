@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The GUI](The-GUI) > [Testing](GUI-Testing) > Introduction to unit testing
+
 ============
 Unit Testing
 ============
@@ -288,4 +290,3 @@ IncompatibleClassChangeError
 ----------------------------
 
 If the tests are failing because of an IncompatibleClassChangeError error then the solution is to delete the bin and target folders for both the main plug-in and the corresponding test plug-in
-
