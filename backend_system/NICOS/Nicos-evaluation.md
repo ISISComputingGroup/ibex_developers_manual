@@ -45,9 +45,9 @@ There are a number of functionalities which are in NICOS but are not mentioned i
 
 - **Async Commands** - Code can also be asynchronously executed in the currently running script namespace (but outside of the script thread). This gives the ability to quickly change the instrument state on the fly but also brings up the potential for threads fighting for control. 
 
-== Opinions ==
+## Opinions
 
-=== Required NICOS Modifications ===
+### Required NICOS Modifications
 
 In contrast to other systems NICOS is very simple in the way it expects scripts to be inputted as it only requires pure python.  This means that there would be very little work required to start using the system. The following would need to be done at a minimum to get the system working:
 
@@ -57,7 +57,7 @@ In contrast to other systems NICOS is very simple in the way it expects scripts 
 
 - Add genie python commands to the available command list
 
-=== Further Modifications ===
+### Further Modifications
 - **Removal of unnecessary features** – Many of NICOS’ features are already implemented differently in our control system and will need to be removed or disabled within NICOS. This may prove difficult depending on how tightly coupled features are to the system, more analysis is required.
 
 - **Provide a programmatic interface for creating ‘server-aware’ commands** – There are commands within NICOS that allow more server control (such as the sleep command that allows pausing midway and reports on how long left to sleep) and a wrapper that does some error checking on commands. However, this may need to be expanded to make it easier for breakpoints and return information to be added to new commands. This could be done with a python object that new commands inherit from? To more accurately allow the server to simulate commands they will also need to be ‘server-aware’
