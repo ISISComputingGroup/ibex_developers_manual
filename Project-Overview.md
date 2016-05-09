@@ -1,3 +1,5 @@
+> [Wiki](Home) > **High Level Architectural Design**
+
 # [ICP/IBEX Project Overview](https://github.com/ISISComputingGroup/IBEX/wiki) #
 
 A short overview of the IBEX project, its vision and information on the main instruments it is supporting.
