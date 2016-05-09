@@ -80,11 +80,29 @@ To stop the instrument, exit from the IBEX client (if you are running it), then 
     
 Allow the `stop_inst` script a few moments to complete.
 
+## Set up motion set points 
 
-Further Information
+The details of the individual set points for any given device will depend on that device and how it is used on an instrument, but the general principles described here will apply.
 
-There is further installation related information on the following pages:
+### Background
+Most devices on ISIS instruments are moved using motors controlled by Galil motion controllers, therefore, configuring motion set points is largely a matter of configuring the Galils correctly.
 
-- [Initial Setup](https://trac.isis.rl.ac.uk/ICP/wiki/InitialSetup)
-- [Setup Motion Set Points](https://trac.isis.rl.ac.uk/ICP/wiki/SetupMotionSetPoints)
-- [Installation Troubleshooting](https://trac.isis.rl.ac.uk/ICP/wiki/InstallTroubleshoot)
+Key directories on the control server on the control server include
+
+* ``C:\Instrument\Settings\config\NDXxxxxx\configurations\galil``, which includes 
+    * ``README_galil_cmd.txt``, a documentation file describing how to configure a Galil controller
+    * ``galil1.cmd - galil<N>.cmd``, where <N> is the total number of Galil controllers on the instrument
+    * ``axes.cmd``, which relates the Sample Stack axes to Galil ports
+    * ``jaws.cmd``, which relates the axes of jaw sets to Galil ports
+    * ``motionsetpoints.cmd``, which relates the axes of moveable devices to Galil ports and to lookup tables (which define the set positions for the devices)
+    * ``sampleChanger.cmd``, which defines positions for the sample changer (the type used on LARMOR).
+* ``C:\Instrument\Settings\config\NDXxxxxx\configurations\motionSetPoints``, which includes 
+    * ``analyser.txt``, lookup file of x-y coordinates of set-points for LARMOR analyser
+    * ``beamstop.txt``, lookup file of x-y coordinates of set-points for LARMOR moving beamstop
+    * ``monitor3.txt``, lookup file of y coordinates of set-points for LARMOR analyser
+    * ``monitor4.txt``, lookup file of y coordinates of set-points for LARMOR analyser
+    * ``pinhole_selector.txt``, lookup file of x-y coordinates (in degrees) of set-points for IMAT pinhole device
+    * ``polariser.txt``, lookup file of x-y coordinates of set-points for LARMOR polariser
+    * ``sample.txt``, lookup file of x-y coordinates of set-points for LARMOR sample rack.
+    * ``sample_x.txt``, lookup file of x coordinate of set-points for LARMOR sample rack.
+    * ``sample_y.txt``, lookup file of y coordinate of set-points for LARMOR sample rack.
