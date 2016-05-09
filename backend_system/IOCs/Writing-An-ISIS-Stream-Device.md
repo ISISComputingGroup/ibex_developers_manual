@@ -54,7 +54,7 @@ Note: I have only included a very small section of the command set for this devi
 
 Delete the db file in Hameg_8123Sup and modify the Makefile so it not longer refers to it.
 
-The next step is to create the IOC, the instructions are `here <https://trac.isis.rl.ac.uk/ICP/wiki/CreatingAnISISIOC>`_
+The next step is to create the IOC, the instructions are [here](Creating-an-ISIS-StreamDevice-IOC)
 
 
 
