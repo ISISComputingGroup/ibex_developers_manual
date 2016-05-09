@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The GUI](The-GUI) > [CS Studio](GUI-CSS) > Programming tips and limitations
+
 These are a few things I have discovered while creating the table of motors and synoptic view.
 
 # Opening a new Opi
