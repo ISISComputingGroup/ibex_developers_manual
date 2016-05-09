@@ -10,3 +10,4 @@ All theses tasks that need to be completed for an IOC to be regarded as complete
 1. Record level simulation is provided (see [Record simulation](Record-Simulation))
 1. The IOC has a disable record (see [Disable records](Disable-records))
 
+There is a more detailed walkthrough for creating an IOC [here](Creating-An-ISIS-IOC) 
