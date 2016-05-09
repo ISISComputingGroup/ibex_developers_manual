@@ -1,4 +1,4 @@
-> [Wiki](Home) > **High Level Architectural Design**
+> [Wiki](Home) ▸ **High Level Architectural Design**
 
 # [ICP/IBEX Project Overview](https://github.com/ISISComputingGroup/IBEX/wiki) #
 
