@@ -1,3 +1,4 @@
+> [Wiki](Home) > [Project tools](Project-tools) > [Working with git and github](Working-with-git-and-github) > Getting started with git and github
 
 * Register with GitHub to create an account
 * Download and install [git client for Windows] (https://git-scm.com/download/win>) or [GitHub for Windows] (https://windows.github.com/) or [Tortoise Git] (https://tortoisegit.org/)
