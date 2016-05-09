@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The GUI](The-GUI) > [Eclipse](GUI-Eclipse) > Common Eclipse issues
+
 Sometimes the error messages that Eclipse gives are a little opaque, so here are some possible solutions for some of the more common issues.
 
 ### The type XXXXXXX cannot be resolved. It is indirectly referenced from required .class files ###
@@ -78,5 +80,4 @@ One useful thing to try is to use the run configuration to check all the correct
 * If there are no errors then click the "Run" button to see if it works
 
 If this does not work then good luck!
-
 
