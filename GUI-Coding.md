@@ -1,5 +1,3 @@
-
-
 * [Coding Conventions](GUI-Coding-Conventions)
 
 * [Adding a Perspective](Adding-a-Button-to-the-Perspective-Switcher)
