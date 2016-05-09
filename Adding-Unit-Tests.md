@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The GUI](The-GUI) > [Testing](GUI-Testing) > Adding tests
+
 For more detailed information see an_introduction_to_unit_testing.rst
 
 It is relatively simple to add unit tests for a plug-in in such a way that maven can run them as part of the build.
