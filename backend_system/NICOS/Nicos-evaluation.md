@@ -1,9 +1,10 @@
-= Evaluating NICOS as a potential script server backend =
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [Nicos](Nicos) > Nicos evaluation
 
 This is based on the BackendRequirements page.
 
-== What it does ==
-{{{
+# What it does
+
+```
 #!html
 <table border="1">
  <tr>
@@ -92,7 +93,7 @@ This is based on the BackendRequirements page.
   <td>Jobs can be sent through dry runs but there is no validation of code when it is first sent to the server</td>
  </tr>
 </table>
-}}}
+```
 
 # Submitted Scripts
 ```
