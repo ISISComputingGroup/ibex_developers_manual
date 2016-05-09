@@ -85,9 +85,6 @@ Further Information
 
 There is further installation related information on the following pages:
 
-- `Initial Setup <https://trac.isis.rl.ac.uk/ICP/wiki/InitialSetup>`_
-- `Setup Motion Set Points <https://trac.isis.rl.ac.uk/ICP/wiki/SetupMotionSetPoints>`_
-- `Installation Troubleshooting <https://trac.isis.rl.ac.uk/ICP/wiki/InstallTroubleshoot>`_
-
-
-}}}
+- [Initial Setup](https://trac.isis.rl.ac.uk/ICP/wiki/InitialSetup)
+- [Setup Motion Set Points](https://trac.isis.rl.ac.uk/ICP/wiki/SetupMotionSetPoints)
+- [Installation Troubleshooting](https://trac.isis.rl.ac.uk/ICP/wiki/InstallTroubleshoot)
