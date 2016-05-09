@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The GUI](The-GUI) > [Eclipse](GUI-Eclipse) > Eclipse preferences
+
 There are two sorts of settings. 
 
 System.getProperty("x") will read a setting supplied on the command line as -Dx=value. To set in Eclipse go to "Run/Run Configurations..." and add to the "VM arguments" on the Arguments tab
