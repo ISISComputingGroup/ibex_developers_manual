@@ -1,3 +1,5 @@
-[EPICS basics](EPICS-basics)
+> [Wiki](Home) > [The Backend System](The-Backend-System) > EPICS
 
-[EPICS training](EPICS-training)
+* [EPICS basics](EPICS-basics)
+
+* [EPICS training](EPICS-training)
