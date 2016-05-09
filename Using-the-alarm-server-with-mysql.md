@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The GUI](The-GUI) > [CS Studio](GUI-CSS) > Using the alarm server with MySQL
+
 Inside the EPICS_PILOT repository, there are pre-built executables for the Alarm Configuration Tool and the Alarm Server.
 
 Apache's ActiveMQ will need to be installed somewhere and be accessible. ActiveMQ provides the Java Message Service (JMS) used by CSS to communicate with the various parts of the system.
