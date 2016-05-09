@@ -1,7 +1,9 @@
-[Getting Started with Git] (Getting-started-with-Git-and-GitHub)
+> [Wiki](Home) > [Project tools](Project-tools) > Working with git and github
 
-[Git Workflow](Git-Cribs)
+* [Getting Started with Git] (Getting-started-with-Git-and-GitHub)
 
-[Useful Git Commands](Git Commands)
+* [Git Workflow](Git-Cribs)
 
-[Adding new modules](Adding new modules)
+* [Useful Git Commands](Git Commands)
+
+* [Adding new modules](Adding new modules)
