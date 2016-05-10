@@ -3,7 +3,8 @@
 # Introduction
 OPIs live in `ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources`
 
-Start CSS studio to create/edit an OPI (see `EPICS\CSS\master\start_css.bast`)
+Start CSS studio to create/edit an OPI (see `EPICS\CSS\master\start_css.bat`)
+
 Load in the project in `ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources`
 
 Create a new OPI with File -> New  BOY -> OPI File
