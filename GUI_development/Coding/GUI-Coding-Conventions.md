@@ -4,7 +4,7 @@ Unless stated otherwise below we should follow the standard Java conventions whe
 
 ## Code Documentation ##
 
-Classes and methods should be documented using the Javadoc syntax. For example:
+Classes and public methods should be documented using the Javadoc syntax. For example:
 
 ```java
 /**
