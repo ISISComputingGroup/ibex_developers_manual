@@ -43,29 +43,21 @@ public class CustomPizza extends Pizza {
 ## Checkstyle ##
 
 Code should be run through Checkstyle via Eclipse and corrected (within reason) before being committed.
-The Checkstyle plug-in can be installed via the Eclipse Marketplace.
+The Checkstyle plug-in is installed as part of the IBEX developer's version of Eclipse.
 
-There is a Checkstyle configuration file called checkstyle_config_eclipse.xml in the GUI repository that should be used inside Eclipse.
-It is more picky that the one used on Jenkins as it warns about 'magic numbers' and 'Java-docs'.
-Our Checkstyle configuration can be chosen in Eclipse via Preferences->Checkstyle
+The Checkstyle configuration file for Eclipse is more picky that the one used on Jenkins as it warns about 'magic numbers' and 'Java-docs'.
 
 By right-clicking on a file one can tell Checkstyle to check that file.
 
-Warnings that should be fixed where possible:
+Warnings must be fixed where possible.
 
-* Whitespace warnings (can be auto-fixed, see the Code Formatting section)
+Checkstyle has a suppress warning flag that tells it to ignore certain warning; warnings that are allowed to be suppressed are:
 
-* Missing Javadoc comments (particular the class one)
-
-Warnings that should be reviewed before committing:
-
-* Magic numbers - if it is related to a GUI layout then ignore, otherwise think about whether to fix it. Unfortunately Checkstyle can be a little overzealous sometimes...
+* Magic numbers - if it is related to a GUI layout then suppress them.
 
 * Name must match pattern - ignore GUI names that don't match the recommended pattern (e.g. gd_switchToCombo)
-
-Any other warnings can probably be ignored, but feel free to fix them if you want.
     
-Checkstyle also has a suppress warning flag that tells it to ignore certain warnings, for example:
+Suppression example:
 
 ```java
 @SuppressWarnings({"checkstyle:magicnumber", "checkstyle:localvariablename"})
@@ -77,7 +69,7 @@ public void getSecondsInHours(int hours) {
 
 ## Code Formatting ##
 
-For Java use the standard conventions built in to Eclipse. This can be set via Window->Preferences->Java->Code Style->Formatter; the one required is called "Eclipse [built-in]".
+For Java use the standard conventions built in to the IBEX developer's version of Eclipse. 
 
 An example of what it looks like:
 ```java
