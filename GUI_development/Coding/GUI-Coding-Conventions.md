@@ -60,7 +60,7 @@ Checkstyle has a suppress warning flag that tells it to ignore certain warning; 
 Suppression example:
 
 ```java
-@SuppressWarnings({"checkstyle:magicnumber", "checkstyle:localvariablename"})
+@SuppressWarnings({ "checkstyle:magicnumber", "checkstyle:localvariablename" })
 public void getSecondsInHours(int hours) {
     int seconds_per_hour = 60 * 60;    // Magic numbers and a bad variable name
     return hours * seconds_per_hour;
