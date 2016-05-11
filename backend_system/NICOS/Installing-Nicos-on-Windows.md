@@ -13,7 +13,7 @@ For the remainder of this wiki, when we refer to Python, it is Genie Python and 
 
 ## Clone the Nicos repository
 
-Navigate to the directory you want to use Nicos and run
+Navigate to the install directory for Nicos (e.g. C:\Instrument\Dev) and run
 
     git clone https://github.com/ISISComputingGroup/nicos-core.git
 
