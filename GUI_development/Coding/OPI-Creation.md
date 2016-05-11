@@ -5,7 +5,9 @@ OPIs live in `ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources`
 
 Start CSS studio to create/edit an OPI (see `EPICS\CSS\master\start_css.bat`)
 
-Load in the project in `ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources`: File -> Import -> General -> Existing Projects into Workspace
+Load in the project in `ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources`: File -> Import -> General -> Existing Projects into Workspace.
+
+Set the correct path for the Fonts and Colours files: Edit -> Preferences -> CSS Applications -> Display -> BOY. For the colour file choose `/resources/Share/isis_colours.def`; for the font file choose `/resources/Share/isis_fonts.def`.
 
 Create a new OPI with File -> New  BOY -> OPI File
 Change to the "OPI Editor" prespective to allow easier editing.
