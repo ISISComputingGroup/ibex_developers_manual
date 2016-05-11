@@ -5,7 +5,7 @@ OPIs live in `ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources`
 
 Start CSS studio to create/edit an OPI (see `EPICS\CSS\master\start_css.bat`)
 
-Load in the project in `ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources`
+Load in the project in `ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources`: File -> Import -> General -> Existing Projects into Workspace
 
 Create a new OPI with File -> New  BOY -> OPI File
 Change to the "OPI Editor" prespective to allow easier editing.
