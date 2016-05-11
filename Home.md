@@ -21,3 +21,7 @@ Information on the project tooling: version control and continuous integration.
 ## [Deployment](Deployment-on-an-Instrument-Control-PC)
 
 How to deploy IBEX and EPICS on an instrument control PC.
+
+## [Misc](Miscellaneous)
+
+Stuff that doesn't fit anywhere else yet, but will probably be moved
