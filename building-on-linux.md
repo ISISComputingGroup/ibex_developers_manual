@@ -62,3 +62,26 @@ cd build
 ./build.sh
 
 
+Did
+
+
+./install_python_modules.sh
+
+# Genie Python install
+GENIE_DIR="$INSTALL_DIR/genie_python/source"
+PACKAGE_DIR=`python -c "import site; print site.getsitepackages()[0]"`
+sudo cp -r "$GENIE_DIR" "$PACKAGE_DIR/genie_python"
+
+# TODO: Remove once fixed (hacks to make IBEX work on Linux)
+cd "$INSTALL_DIR/ibex_gui"
+PREFERENCE_SUPPLIER="./base/uk.ac.stfc.isis.ibex.preferences/src/uk/ac/stfc/isis/ibex/preferences/PreferenceSupplier.java"
+
+sed -i -- "/DEFAULT_EPICS_BASE_DIRECTORY/s|\".*\"|\"$INSTALL_DIR/EPICS/base/master/bin/linux-x86_64\"|" $PREFERENCE_SUPPLIER
+sed -i -- '/DEFAULT_PYTHON_INTERPRETER_PATH/s|".*"|"/usr/bin/python"|' $PREFERENCE_SUPPLIER
+sed -i -- "/DEFAULT_GENIE_PYTHON_DIRECTORY/s|\".*\"|\"$PACKAGE_DIR/genie_python\"|" $PREFERENCE_SUPPLIER
+sed -i -- "/DEFAULT_PYEPICS_DIRECTORY/s|\".*\"|\"$PACKAGE_DIR\"|" $PREFERENCE_SUPPLIER
+
+Run product
+
+
+
