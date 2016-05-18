@@ -31,6 +31,13 @@ One convention we have used is to define a macro within the opened OPI called PV
 
 here EURO would be a parameter passed from the synoptic and it is combined with P to create the prefix for all PVs referenced within the OPI screen
 
+### Other Standard Macro Names
+
+| Name | Meaning |
+| ---- | ------- |
+| PV_ROOT | Root for all PVs within an OPI |
+| IOC_NUM | When there are multiple IOC of the same type this is the number, always 2 digits, e.g. 01 |
+
 # Completing the OPI
 
 Add the IOC name with appropriate information, including macros to the xml file
