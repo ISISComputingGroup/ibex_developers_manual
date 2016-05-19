@@ -6,9 +6,79 @@
 1. Install vagrant (https://www.vagrantup.com/downloads.html)
 1. Clone repo (https://github.com/ISISComputingGroup/ibex_utils.git)
 1. cd .../ibexutils/linux_env
-1. vagrant up
+1. vagrant up (this may not work from the Windows command line, but it should work from the Git Bash)
 
-Should start a fresh vagrant machine (will take a while but is quicker second time round). With a gui you can log into.
+Should start a fresh vagrant machine (will take a while but is quicker second time round). With a gui you can log into. Login details are: `vagrant` (for username) and `vagrant` (for password).
+
+If you get the following error:
+```
+VT-x is disabled in the BIOS for all CPU modes (VERR_VMX_MSR_ALL_VMX_DISABLED).
+
+Result Code: 
+E_FAIL (0x80004005)
+Component: 
+ConsoleWrap
+Interface: 
+IConsole {872da645-4a9b-1727-bee2-5585105b9eed}
+```
+you should try entering your BIOS (power off your machine; restart and immediately press the `F2` key) and verify that virtualisation options are enabled. See also [this related post] (https://forums.virtualbox.org/viewtopic.php?f=6&t=77139).
+
+If you get the following error:
+```
+==> default: Errors were encountered while processing:
+==> default:  dictionaries-common
+==> default:  aspell
+==> default:  aspell-en
+==> default:  hunspell-en-us
+==> default:  libenchant1c2a:amd64
+==> default:  libwebkitgtk-3.0-0:amd64
+==> default:  empathy
+==> default:  mcp-account-manager-uoa
+==> default:  account-plugin-aim
+==> default:  account-plugin-jabber
+==> default:  account-plugin-salut
+==> default:  account-plugin-yahoo
+==> default:  gir1.2-webkit-3.0
+==> default:  apturl
+==> default:  enchant
+==> default:  gedit
+==> default:  librhythmbox-core8
+==> default:  gir1.2-rb-3.0
+==> default:  libyelp0
+==> default:  yelp
+==> default:  gnome-user-guide
+==> default:  zenity
+==> default:  nautilus-sendto-empathy
+==> default:  nautilus-share
+==> default:  rhythmbox
+==> default:  rhythmbox-mozilla
+==> default:  rhythmbox-plugin-cdrecorder
+==> default:  rhythmbox-plugin-magnatune
+==> default:  rhythmbox-plugin-zeitgeist
+==> default:  rhythmbox-plugins
+==> default:  software-center
+==> default:  ubuntu-release-upgrader-gtk
+==> default:  unity-control-center
+==> default:  ubuntu-desktop
+==> default:  ubuntu-docs
+==> default:  unity-control-center-signon
+==> default:  webaccounts-extension-common
+==> default:  xul-ext-webaccounts
+==> default:  shotwell
+==> default:  update-notifier
+==> default:  update-manager
+==> default:  indicator-bluetooth
+==> default: E: Sub-process /usr/bin/dpkg returned an error code (1)
+The SSH command responded with a non-zero exit status. Vagrant
+assumes that this means the command failed. The output for this command
+should be in the log above. Please read the output to determine what
+went wrong.
+```
+it may be that some packages failed to install within the virtual machine, but you still should be able to operate without them. In the same console where you started vagrant, type:
+* `vagrant halt`
+* `vagrant up`
+and the VM should start normally.
+
 
 ## Installing the client
 
