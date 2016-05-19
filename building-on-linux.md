@@ -75,8 +75,8 @@ should be in the log above. Please read the output to determine what
 went wrong.
 ```
 it may be that some packages failed to install within the virtual machine, but you still should be able to operate without them. In the same console where you started vagrant, type:
-* `vagrant halt`
-* `vagrant up`
+1. `vagrant halt`
+1. `vagrant up`
 
 and the VM should start normally.
 
