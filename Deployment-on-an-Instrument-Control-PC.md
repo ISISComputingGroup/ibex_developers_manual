@@ -1,8 +1,8 @@
 > [Wiki](Home) > Deployment
 
 # Contents
-- [Installing IBEX on an Instrument Control PC](#Installing-IBEX-on-an-Instrument-Control-PC)
-- [Making the Instrument Available from the GUI](#Making-the-Instrument-Available-from-the-GUI)
+- [Installing IBEX on an Instrument Control PC](#installing-ibex-on-an-instrument-control-pc)
+- [Making the Instrument Available from the GUI](#making-the-instrument-available-from-the-gui)
 
 #Installing IBEX on an Instrument Control PC
 
