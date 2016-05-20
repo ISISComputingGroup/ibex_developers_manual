@@ -19,5 +19,5 @@ How to **get started** with the GUI along with development and testing guideline
 Information on the project tooling: version control and continuous integration.
 
 ## [Deployment](Deployment-on-an-Instrument-Control-PC)
-
-How to deploy IBEX and EPICS on an instrument control PC, and add the instrument to the list of available instruments.
+- How to deploy IBEX and EPICS on an instrument control PC
+- How to add the instrument to the list of available instruments.
