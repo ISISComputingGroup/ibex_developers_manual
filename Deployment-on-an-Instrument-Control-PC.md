@@ -1,5 +1,9 @@
 > [Wiki](Home) > Deployment
 
+# Contents
+- [Installing IBEX on an Instrument Control PC](#Installing-IBEX-on-an-Instrument-Control-PC)
+- [Making the Instrument Available from the GUI](#Making-the-Instrument-Available-from-the-GUI)
+
 #Installing IBEX on an Instrument Control PC
 
 This document describes the steps necessary to install IBEX on an Instrument control PC.  In due course some, or all, of the steps may be superseded by an automated installation process (e.g. a .msi file).  Until then, this document is a useful reference.
