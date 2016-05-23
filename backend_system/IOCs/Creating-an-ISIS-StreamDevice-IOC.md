@@ -61,6 +61,18 @@ Note: I have only included a very small section of the command set for this devi
 
 Delete the db file in `Hameg_8123Sup` and modify the Makefile so it not longer refers to it.
 
+### Notes from When I did it (John)
+
+To create the support module, in an epics terminal.
+'''
+C:\Instrument\Apps\EPICS\support\mercury_ict\master>makeSupport.pl -A ..\..\asyn
+\master -B ..\..\..\base\master -t streamSCPI  mercury_ict
+'''
+
+And macro to group macros
+
+'''C:\Instrument\Apps\EPICS\configure\MASTER_RELEASE'''
+
 ## Creating the IOC
 
 All IOCs used at ISIS reside in the `EPICS\ioc\master` directory.
