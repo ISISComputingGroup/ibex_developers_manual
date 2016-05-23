@@ -35,8 +35,9 @@ All records should start `$(P)` for prefix which can be substituted at load time
 # Top Level domain
 
 Some suggested top level domains – we may not want to use them all
-|Prefix| Function |
-|---|---|
+
+| Prefix | Function |
+| --- | --- |
 | AC    | ISIS Accelerator/synchrotron related parameter |
 | CS    | Control system specific top level variables e.g. global IOC related variables |
 | TG    | ISIS Target related parameter |
