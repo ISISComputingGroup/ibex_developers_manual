@@ -15,3 +15,6 @@ An evaluation of Nicos and its suitability for integration into the IBEX project
 # [Script server design](Script-server-design)
 
 The design of the Nicos script server.
+
+# Developer notes
+- [Testing Nicos](testing-nicos)
