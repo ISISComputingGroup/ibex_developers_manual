@@ -45,7 +45,7 @@ You should now be able to run ```nmake``` successfully from the command line.
 
 Download the Windows source zip for **sip** from [here](https://www.riverbankcomputing.com/software/sip/download) and extract it to a local directory. Navigate to that directory and run the following command (using the same Python as is used for Genie e.g. `c:\Instrument\Apps\Python\python.exe`)
 
-    .../python.exe configure.py
+    ...\python.exe configure.py
 
 This will generate the necessary make file. 
 
@@ -67,11 +67,11 @@ If you receive the error `NMAKE : fatal error U1065: invalid option '-'` the env
 
 From the location of nicos-core, run the following
 
-    .../Python/scripts/pip.exe install -r requirements.txt
+    ...\Python\scripts\pip.exe install -r requirements.txt
 
 This will grab all of the required Python libraries for Nicos. Then run:
 
-    .../Python/scripts/pip.exe install --extra-index-url https://forge.frm2.tum.de/simple  nicos-pyctl
+    ...\Python\scripts\pip.exe install --extra-index-url https://forge.frm2.tum.de/simple  nicos-pyctl
 
 The installation for the Nicoslivewidget will fail. That's expected. Isabella and I tried hard to get the live widget to work to no avail. It means the live view will be unavailable when you launch the Nicos gui. As we don't intend to use that part of Nicos in IBEX, we've chosen to proceed without further attempts to resolve this issue.
 
@@ -79,11 +79,11 @@ The installation for the Nicoslivewidget will fail. That's expected. Isabella an
 
 Navigate to
 
-    .../nicos-core/bin
+    ...\nicos-core\bin
 
 and run
 
-    .../Python/python.exe nicos-demo
+    ...\Python\python.exe nicos-demo
 
 This will launch the Nicos demo, which is comprised of several services, including a server monitoring window and the main Nicos gui.
 
