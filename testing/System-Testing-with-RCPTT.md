@@ -68,7 +68,7 @@ Note that we started writing contexts containing procedures that could be useful
 ## Warnings and Gotchas
 
 * Add wait XXXX when the GUI will be reading/writing to PVs and may take some time to respond
-* The perspective switcher buttons do not get recorded properly, to manually switch just do e.g. `get-label "Log Plotter" | click`. Note that we started writing procedures for these actions in the `SwitchToViewProcedures" context, to maximise code reuse.
+* The perspective switcher buttons do not get recorded properly, to manually switch just do e.g. `get-label "Log Plotter" | click`. Note that we started writing procedures for these actions in the `SwitchToViewProcedures` context, to maximise code reuse.
 
 ## Running tests automatically
 
