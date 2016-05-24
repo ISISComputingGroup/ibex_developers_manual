@@ -7,8 +7,8 @@ In order to run the unit tests on Nicos, you first need to set up your Python pa
   - coverage (optional)
   - sphinx (for generating doc)
 
-This can be done simply by running `pip install [package-names]` from your `...\Python\scripts` directory.
+This can be done simply by running `pip install [package-names]` from your `...\Python\Scripts` directory.
 
-Now you can go ahead and run the tests. Go to `...\nicos-core\test` and run `...\Python\scripts\nosetests.exe`. Nose will detect all the tests in the directory and run them. Note that it is important to run it from the `test` directory or some tests will fail to do some relative imports.
+Now you can go ahead and run the tests. Go to `...\nicos-core\test` and run `...\Python\Scripts\nosetests.exe`. Nose will detect all the tests in the directory and run them. Note that it is important to run it from the `test` directory or some tests will fail to do some relative imports.
 
 Alternatively, you can run the tests in PyCharm by right clicking on the `test` directory and clicking `Run 'Nosetests in test'` or `Debug 'Nosetests in test'`.
