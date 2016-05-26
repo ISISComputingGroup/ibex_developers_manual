@@ -36,7 +36,7 @@ The log server will then attempt to listen for IOC messages on a set of ports (a
 The connection to both the JMS server and the database are independently buffered so that if connection to either is lost, the log server will wait to re-establish connection before sending on any messages, so that no messages should be dropped. The log server will wait a few seconds after re-establishing connection to the JMS before sending any messages, in order to give JMS clients a chance to reconnect to the JMS server themselves.
 
 ## Development
-To develop the log server, first run the script `/IocLogServer/LogServer/make-eclipse-project.bat`. This will create Eclipse `.project` and `.classpath` files and a `.settings` folder. Next, create a new directory in `/IocLogServer` called workspace. Open [Eclipse](https://www.eclipse.org/) and select this new folder as the workspace.
+To develop the log server, first run the script `/IocLogServer/LogServer/make-eclipse-project.bat`. This will create Eclipse `.project` and `.classpath` files and a `.settings` folder. Next, create a new directory in `/IocLogServer` called workspace. Open [Eclipse](https://www.eclipse.org/) and select this new folder as the workspace. (I have added my version of the project files into the project so you may no longer need to do this).
 
 Import the log server project (File > Import > General > Existing Projects into Workspace > folder EPICS/ISIS/IocLogServer/base.
 
@@ -47,7 +47,7 @@ The log server is built using [Apache Maven](http://maven.apache.org/). A maven 
 
 The server can be launched by running `start-log-server.bat`.
 
-To test the functionality, you should also launch the JMS server by running `start-jms-server.bat`. You can test that message passing works correctly by using the demonstration IOC and demonstration JMS client detailed in the s development tools section below.
+To test the functionality, you should also launch the JMS server by running `start-jms-server.bat`. You can test that message passing works correctly by using the demonstration IOC and demonstration JMS client detailed in the development tools section below.
 
 See the database server section below for details on how to set up a test SQL database.
 
