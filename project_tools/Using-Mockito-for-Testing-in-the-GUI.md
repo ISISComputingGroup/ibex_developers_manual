@@ -187,6 +187,26 @@ Spies can be used to stub a method or verify calls on a real class. Needing to u
     Foo spyOnFoo = Mockito.spy(new Foo("argument"));
 ```
 
+## DB Tests using Answer Example
+
+In RdbWritterTests (C:\Instrument\Apps\EPICS\ISIS\IocLogServer\master\LogServer\src\test\java\org\isis\logserver\rdb) there is an example of using an answer to perform a more complicated return. The answer works like this:
+
+```
+when(mockPreparedStatement.executeQuery()).thenAnswer(resultAndStatement.new ResultsSetAnswer());
+```
+I have chosen to implement the answer class as an inner class of another class but you don't have to. The answer looks like:
+
+```
+public class ResultsSetAnswer implements Answer<ResultSet> {
+        @Override
+        public ResultSet answer(InvocationOnMock invocation) throws Throwable {
+            openedResultsSet++;
+            return resultSet;
+        }
+    }
+```
+The reason I am using answer here is to keep the number of times I opened a results set upto date so this answer stores that info in its parent class.
+
 ## Tips and Advice
 
 * Use mocks to test interactions between a class and a particular interface
