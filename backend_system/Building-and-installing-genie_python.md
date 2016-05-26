@@ -1,5 +1,7 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > genie_python
 
+See also the [getting started guide](First-time-installing-and-building-(Windows))
+
 ### Building
 
 Note: these are essentially the same steps as used by the Jenkins build server.
