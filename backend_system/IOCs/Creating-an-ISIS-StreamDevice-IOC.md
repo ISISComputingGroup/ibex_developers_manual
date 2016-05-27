@@ -207,7 +207,7 @@ iocInit
 < $(IOCSTARTUP)/postiocinit.cmd
 ```
 
-Now is a good time to add everything into SVN. Once that is done it is time to build it and run it:
+Now is a good time to add everything into Git. Once that is done it is time to build it and run it:
 
 ```
 cd c:\Instrument\Apps\EPICS\ioc\HAMEG8123
