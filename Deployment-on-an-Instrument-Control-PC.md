@@ -6,17 +6,18 @@ This document describes the steps necessary to install IBEX on an Instrument con
 
 - Check that 7-Zip is installed on the PC.  If not, download the latest version from the 7-Zip web-site (http://www.7-zip.org/) and install it.
 - Check that Java is installed on the PC.  If not, download the latest JRE from the Java web-site (http://www.java.com/en/) and install it.  Make sure you choose the 64-bit version of Java.
-- Create directories on the local hard drive as follows:
-
-    mkdir C:\Instrument\Apps\EPICS
-    mkdir C:\Instrument\Apps\Python
-    mkdir C:\Instrument\Apps\Client
-    mkdir C:\Instrument\Settings\config
-    cd C:\Instrument
 
 - Checkout Config Directory
 
     [See the back-end getting started guide](First-time-installing-and-building-(Windows)#setting-up-a-configurations-directory)
+
+- Create directories on the local hard drive as follows:
+```
+mkdir C:\Instrument\Apps\EPICS
+mkdir C:\Instrument\Apps\Client
+mkdir C:\Instrument\Settings\config
+cd C:\Instrument
+```
 
 - Check that MySQL v5.6 is installed on the PC.  If not,
     - download the MySQL installer `mysql-installer-community-5.6.16.0` from `\\isis\inst$\Kits$\External\BuildServer(ndwvegas)` and install it.
