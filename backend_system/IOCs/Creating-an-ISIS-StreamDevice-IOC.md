@@ -14,17 +14,11 @@ mkdir Hameg_8123
 cd Hameg_8123
 ```
 
-Create a version directory:
-
-```
-mkdir 1-0
-```
-
+TODO: instructions on how to create a git repo
 
 Create a stream support module:
 
 ```
-cd 1-0
 makeSupport.pl -t streamSCPI Hameg_8123
 ```
 
