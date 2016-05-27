@@ -73,7 +73,7 @@ All IOCs used at ISIS reside in the `EPICS\ioc\master` directory.
 
 For this example we are using the Hameg 8123.
 
-First create the necessary directory structure and IOC boilerplate, starting from the `EPICS\ioc` directory:
+First create the necessary directory structure and IOC boilerplate, starting from the `EPICS\ioc` directory (we're going to create at least two IOCs):
 ```
 mkdir HAMEG8123
 cd HAMEG8123
