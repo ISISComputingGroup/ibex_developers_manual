@@ -1,6 +1,6 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > Creating an IOC Workflow
 
-All theses tasks that need to be completed for an IOC to be regarded as complete.
+All these tasks that need to be completed for an IOC to be regarded as complete.
 
 1. The IOC is created (via stream driver, lvDCOM or asyn etc.)
     * [StreamDevice Instructions](Creating-an-ISIS-StreamDevice-IOC)
