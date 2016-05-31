@@ -24,6 +24,7 @@
 ## Specific IOC Information
 
 * [Mecury iTC](MercuryiTC)
+* [Glalil/Motor and SetPoints](Motor-Galil-SetPoints)
 
 ## Further reading ##
 
