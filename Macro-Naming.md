@@ -22,7 +22,7 @@ Where there are multiple instances of a device within an IOC (e.g. SDTEST, GENES
 
 # Specific Macros that we might need to set
 
-There are some macros that need to be set which have specific names, and do not fit into the convention which it might be good to know about easily for setting up an IBEX system. Or which might highlight things that should be changed to conform.
+There are some macros that need to be set which have specific names, and do not fit into the convention which it might be good to know about easily for setting up an IBEX system. Or which might highlight things that should be changed to conform. The macros for SDTEST are not included as there are many of them to consider.
 
 | IOC | Macro | Description | Suggested Values |
 | --- | --- | --- | --- |
@@ -34,4 +34,8 @@ There are some macros that need to be set which have specific names, and do not 
 | HVCAEN_0n | HVCAENIPn | This is the IP address for the CAEN | |
 | FINS_0n | PLCIP | The IP address for the PLC | |
 | TPG300_0n | TTY | The COM port for the TPG 300 (should be changed to conform) | |
+| CONEXAGP_0n | MTRCTRL | ??? | |
+| SMC100_0n | MTRCTRL | ??? | |
+| ECLAB_0n | IPADDR | IP Address of the device | |
+
 
