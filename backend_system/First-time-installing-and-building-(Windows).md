@@ -94,6 +94,14 @@ git checkout NDXALF
 ```
 Note: The developer branch has been created to store useful configurations that may be shared amongst all developers.
 
+Note that if this is not a new instrument, or that if the instrument already has a branch in the configs git that rather than the steps above, the following should be undertaken, as the branch should already exist:
+```
+cd C:\Instrument\Settings\config
+git clone http://control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/inst.git NDXXXX
+cd NDXXXX
+git checkout NDXXXX
+```
+
 ### Building the GUI
 
 After following the above instructions please see [Building the GUI](Building-the-GUI).
