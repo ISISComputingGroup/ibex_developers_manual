@@ -22,6 +22,8 @@
 
 * [PV units](PV-Units)
 
+* [Macro naming](Macro-Naming)
+
 ## Specific IOC Information
 
 * [Mecury iTC](MercuryiTC)
