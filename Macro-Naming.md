@@ -24,9 +24,9 @@ Where there are multiple instances of a device within an IOC (e.g. SDTEST, GENES
 
 There are some macros that need to be set which have specific names, and do not fit into the convention which it might be good to know about easily for setting up an IBEX system. Or which might highlight things that should be changed to conform.
 
-| IOC | Macro | Description | Value for a developer/non-live system |
+| IOC | Macro | Description | Suggested Values |
 | --- | --- | --- | --- |
-| global | SIMULATE | This can be used to check whether or not you are a simulated instrument | 1 |
+| global | SIMULATE | This can be used to check whether or not you are a simulated instrument | 1 to simulate, 0 for a live system|
 | global | GALILNUMCRATES | The number of galil crates you have available | 1 |
 | ISISDAE01 | DAEDCOM | This is the DCOM port the DAE is using | 1 |
 | ISISDAE01 | DAEHOST | This is the IP address of the DAE host | localhost |
