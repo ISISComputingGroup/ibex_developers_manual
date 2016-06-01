@@ -53,27 +53,9 @@ In the xml file:
 * `value.macros.macro.name`: name of macro in OPI
 * `value.macro.macro.description`: description of macro value which appears in target details when user clicks on the macro
   
-# Developer Testing
+# Testing
 
-## Start the IOC
-
-Make sure the instrument is running with the `EPICS\start_inst.bat` command
-Open an epics terminal a list all running instruments with
-
-    console -M localhost -x
-
-To interact with an IOC use
-
-    console -M localhost <IOC_NAME>
-
-console will attempt to complete the name if you only give part of it and will give you possible options. Once in the console:
-* `ctrl-x` : starts and stops thw IOC
-* `crtl-e` `c` `.`: exits the console
-
-TO switch an IOC to simulation mode the default is
-
-    caput <IOC PV NAME>:SIM 1
-
+To start and interact with a testing IOC see [Running (and testing) IOC](Running-IOCs)
 
 
 
