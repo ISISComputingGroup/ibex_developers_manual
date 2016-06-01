@@ -30,7 +30,7 @@ There are some macros that need to be set which have specific names, and do not 
 | global | GALILNUMCRATES | The number of galil crates you have available | 1 |
 | ISISDAE01 | DAEDCOM | This is the DCOM port the DAE is using | 1 |
 | ISISDAE01 | DAEHOST | This is the IP address of the DAE host | localhost |
-| GALIL_0n | GALILADDR0n | This is the IP address of the Galils, but it can be useful to simulate | None |
+| GALIL_0n | GALILADDR0n | This is the IP address of the Galils, but it can be useful to simulate | None when simulating |
 | HVCAEN_0n | HVCANIPn | This is the IP address for the CAEN | |
 | FINS_0n | PLCIP | The IP address for the PLC | |
 | TPG300_0n | TTY | The COM port for the TPG 300 (should be changed to conform) | |
