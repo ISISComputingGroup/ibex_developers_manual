@@ -13,6 +13,7 @@
 
 * [Record simulation](Record-Simulation)
 
+* [Running (and testing) IOC](Running-IOCs)
 ## Conventions ##
 
 * [ISIS PV guide](ISIS-PV-Guide)
