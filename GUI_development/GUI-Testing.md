@@ -7,3 +7,5 @@
 * [Mockito](Using-Mockito-for-Testing-in-the-GUI)
 
 * [System/UI Testing](System-Testing-with-RCPTT)
+
+* [Test naming](Test-naming)
