@@ -46,3 +46,10 @@ e.g.
     GALIL_02__GALILADDR02=None
     GALIL_03__GALILADDR03=None
 
+# Reading a Compressed Hex PV
+
+Use the following to read a waveform PV of a compressed hexed string
+
+    caget -t -S <PV NaME>|uzhex
+
+(uzhex - think unzip hex)
