@@ -13,7 +13,7 @@ to both the active configuration on the instrument and other potential configura
 filewatcher to ensure that any manual changes to configurations are correctly handled. Below is an UML overview of the most 
 significant parts:
 
-![Full UML](blockserver/images/Block-Server-Configuration-Rules/full_uml.png)
+![Full UML](backend_system/blockserver/images/Block-Server-Configuration-Rules/full_uml.png)
 
 ----------------
 Channel Access
@@ -35,7 +35,7 @@ BlockServer, static PVs and dynamic PVs:
   currently a good assumption. All dynamic PVs are created by the ConfigListManager as they relate to the inactive configs/components
   that are listed in that class. A simple diagram of this relationship is shown below:
 
-![CA UML](blockserver/images/Block-Server-Configuration-Rules/channel_access_uml.png)
+![CA UML](backend_system/blockserver/images/Block-Server-Configuration-Rules/channel_access_uml.png)
    
 A simple example of both the static and dynamic PVs is located in inst_server\\BlockServer\\blockserver_docs\\resources\\pcaspy_example.
 
@@ -49,7 +49,7 @@ the IOCs. This class is a subclass of ConfigHolder which is used to hold the bas
 well as save/load them to disk. Most, if not all, of the individual get/set methods in the ConfigHolder are being replaced by catch-all
 get_config_details() and set_config_details(). A reduced description of the classes is given below:
 
-![Config Server UML](blockserver/images/Block-Server-Configuration-Rules/config_servers_uml.png)
+![Config Server UML](backend_system/blockserver/images/Block-Server-Configuration-Rules/config_servers_uml.png)
 	
 ----------------
 Configurations
@@ -63,7 +63,7 @@ The ConfigHolder also uses the methods from the static class ConfigurationFileMa
 including version control of configuration files. This FileManager class uses a ConfigurationXmlConverter object to help convert into 
 the xml used for saving and loading.
 
-![Configs UML](blockserver/images/Block-Server-Configuration-Rules/configs_uml.png)
+![Configs UML](backend_system/blockserver/images/Block-Server-Configuration-Rules/configs_uml.png)
 	
 ------------------
 Inactive Configs
@@ -87,7 +87,7 @@ the DELET_CONFIG or DELETE_COMP PVs there will be a check that the any active co
 configuration is safe to delete the corresponding PVs are unregistered and the files are removed from both the file system and version 
 control.
 
-![Config List UML](blockserver/images/Block-Server-Configuration-Rules/config_list_uml.png)
+![Config List UML](backend_system/blockserver/images/Block-Server-Configuration-Rules/config_list_uml.png)
 	
 --------------
 File Watcher
@@ -114,5 +114,5 @@ The event handlers will also handle files being deleted by:
 
 The ConfigFileWatcherManager can be paused and resumed when known modifications are being made to the file system.
 
-![Config List UML](blockserver/images/Block-Server-Configuration-Rules/file_watcher_uml.png)
+![Config List UML](backend_system/blockserver/images/Block-Server-Configuration-Rules/file_watcher_uml.png)
 	
