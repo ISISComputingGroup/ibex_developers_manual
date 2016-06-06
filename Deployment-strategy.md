@@ -50,11 +50,11 @@ All the processes that start or must be running when the start-inst script is ru
 
 Project is ready to be released not for a specific event, e.g. at the end of a sprint.
 
-1. Look at the released features in this branch [IBEX/wiki/DevReleaseNotes](https://github.com/ISISComputingGroup/IBEX/wiki/DevReleaseNotes) and find the most severe change.
+1. Look at the released features in this branch [IBEX/wiki/ReleaseNotes_Dev](https://github.com/ISISComputingGroup/IBEX/wiki/ReleaseNotes_Dev) and find the most severe change.
 1. Start a release branch so that the code is frozen
 1. Update the version number in the files ()
 1. Commit you changes and push.
-1. Create a released version in the [releases table]((https://github.com/ISISComputingGroup/IBEX/wiki/Releases) (including link to release notes)
+1. Create a released version in the [releases table](https://github.com/ISISComputingGroup/IBEX/wiki/Releases) (including link to release notes)
 1. Move the changes which have been merged into master from the dev page to the new release notes page for the version.
 1. Test
 1. Record and fix any bugs
