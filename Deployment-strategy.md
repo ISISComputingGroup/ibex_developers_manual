@@ -58,8 +58,7 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
 1. Move the changes which have been merged into master from the dev page to the new release notes page for the version.
 1. Test
 1. Record and fix any bugs
-1. Create a tag of the form  `VX.x.p`
-    git tag -a vX.x.p -m "Release version X.x.p"
+1. Create a tag of the form  VX.x.p `git tag -a vX.x.p -m "Release version X.x.p"`
 1. Push tags and branch
 1. Merge release branch back into master to capture any changes
 
