@@ -10,6 +10,7 @@ Development work
 * Make sure that the master branch is up to date (varies by repo)
 * Create a new branch: ``git checkout -b [branch-name]``
 * Do the development work in the most appropriate editor (e.g. Eclipse for the GUI, notepad++ for .db changes)
+* Update copyright notices on edited files to the current year
 * In Git Bash, add files to the branch and commit as appropriate
 * Ensure that the master branch is up to date: ``git pull origin master``
 * If the branch is only in the local copy of the repo: ``git rebase master``, otherwise ``git merge master``
