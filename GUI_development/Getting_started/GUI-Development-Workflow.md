@@ -6,6 +6,7 @@
     * Use the git issue number for the branch name followed by a brief description, e.g. Ticket780_SelectNewTarget
 1. **Clone the branch locally (developer)**
 1. **Modify the code (developer)**
+    * Update any copyright notices to the current year to read ``Copyright (C) <first year> - <current year> ...``
 1. **Push back the changes (developer)**
     * Make sure you have merged in any changes to master that have occurred since your ticket was created - makes reviewer's life easier
     * Please follow commenting guidelines below
