@@ -36,6 +36,12 @@ container.setPropertyValue('macros', macros)
 
 but the new macros only take effect when a new opi is loaded. If the new opi has the same name as the previous one, nothing is loaded and the new macros do not take effect. To force a reload, set 'opi_file' to the empty string then back to its old value.
 
+(Isabella: from within CSS scripts, it works by simply re-setting the 'opi_file' property with forcing the fire option set to true:
+
+`widgetController.setPropertyValue("opi_file", widgetController.getPropertyValue("opi_file"), true)`
+
+)
+
 When an opi is displayed in a linking container, scripts on the opi display widget do not get run because the display widget is not loaded. The contents of the display widget instead become children of the linking container. If you want a script to run in these circumstances it has to hang off one of the child widgets.
 
 # The CSS object model as viewed from Python
