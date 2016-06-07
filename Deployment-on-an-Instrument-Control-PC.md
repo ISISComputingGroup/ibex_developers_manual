@@ -106,3 +106,7 @@ Key directories on the control server on the control server include
     * ``sample.txt``, lookup file of x-y coordinates of set-points for LARMOR sample rack.
     * ``sample_x.txt``, lookup file of x coordinate of set-points for LARMOR sample rack.
     * ``sample_y.txt``, lookup file of y coordinate of set-points for LARMOR sample rack.
+
+## Record Release
+
+1. Record the release to the instrument (add to list in [Instrument Releases](https://github.com/ISISComputingGroup/IBEX/wiki#instrument-information))
