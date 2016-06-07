@@ -48,3 +48,9 @@ All the processes that start or must be running when the start-inst script is ru
     1. experiment details
     1. message logs
 
+The likely deployment is:
+* Most instrument will be running a previous release. 
+* Instrument which need the newest functionality, will be running the latest release.
+* Instruments that need to be patched mid-cycle will be running a [patch release], (https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Creating-a-release#patch-release). The patch release has just enough in it over an above a standard release that the instrument can run. 
+
+Ideally instruments are updated each time they have down time.
