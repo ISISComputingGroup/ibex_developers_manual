@@ -46,7 +46,7 @@ When an opi is displayed in a linking container, scripts on the opi display widg
 
 # The CSS object model as viewed from Python
 This is largely undocumented. The help in CSS/BOY says little and Google can find little.
-The only way I was able to find out how to manipulate the actions on a button was to view the java source on ][GitHub](https://github.com/ControlSystemStudio/cs-studio/tree/master/applications/plugins). The Python objects simply expose the public Java methods.
+The only way I was able to find out how to manipulate the actions on a button was to view the java source on [GitHub](https://github.com/ControlSystemStudio/cs-studio/tree/master/applications/plugins). The Python objects simply expose the public Java methods.
 
 # Changing actions
 The list of actions on a button is:
