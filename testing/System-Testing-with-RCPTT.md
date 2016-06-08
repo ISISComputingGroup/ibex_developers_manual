@@ -58,15 +58,23 @@ Note here the line `wait 10000` was added manually, this is required as the Bloc
 Finally, under 'All_Tests' choose 'Add Test Case' from the buttons on the right and add the newly created test. Add more tests here to run them one by one.
 
 ## Useful Concepts
-* Procedures: this is RCPTT's equivalent of functions. A procedure is a named block of code, which can receive arguments and therefore is useful for code reuse. See RCPTT documentation for details.
+* Procedures: this is RCPTT's equivalent of functions. A procedure is a named block of code, which can receive arguments and therefore is useful for code reuse. See RCPTT documentation for details. Defined like
+`proc "proc_name"[val argument1] { <body> }
 * Contexts: RCPTT has the concept of test contexts, an artefact that can be loaded/executed before a test case, which can be used for test setup. There are a few different types of contexts, each targeted to a specific type of action, like setting up the workspace or copying files into directories outside of the workspace. Contexts can also contain ECL code, and so can contain reusable sequences of commands to be executed on the UI before the actual test. Contexts containing ECL code can be used to simply group a number of related procedures, so the procedures are available for all tests using that context (this is equivalent to importing a module in Python). See RCPTT documentation for details.
 
 Note that we started writing contexts containing procedures that could be useful in a number of tests:
 * The `InstrumentStatusProcedures` context contains procedures related to switching/asserting the current status of the instrument
 * The `SwitchToViewProcedures` context contains procedures for switching perspective
 
-## Warnings and Gotchas
+## Tips, Warnings and Gotchas
 
+* Try to avoid waits (see next point). Instead look for a change in the UI and continue when the change happens. For example if waiting for a label to change use:
+```
+try -times 10 -delay 200 -command {
+    get-view Dashboard | get-control Any -index 1 | get-property "getChildren().Control[0].getText()" 
+	    | contains $text | verify-true
+}
+```
 * Add wait XXXX when the GUI will be reading/writing to PVs and may take some time to respond
 * The perspective switcher buttons do not get recorded properly, to manually switch just do e.g. `get-label "Log Plotter" | click`. Note that we started writing procedures for these actions in the `SwitchToViewProcedures` context, to maximise code reuse.
 
