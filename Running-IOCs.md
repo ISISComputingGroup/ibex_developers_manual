@@ -10,7 +10,7 @@ Either:
 * start the IOC through the console (ctrl + x)
 * start the IOC by running `runIOC.bat st.cmd` (in `iocBoot/Appdir`)
 
-## IOC in procServe using the Console
+## IOC in procServ using the Console
 
 Open an epics terminal a list all running instruments with
 
