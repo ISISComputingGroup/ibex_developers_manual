@@ -17,7 +17,7 @@ Development work
 * Fix any merge errors if required
 * If the branch is only in the local copy of the repo: ``git push -u origin [branch-name]``, otherwise ``git push origin [branch-name]``
 * Go to GitHub and create the pull request, don't forget a brief test plan
-* Bored of being asked for your username and password? Read [this](https://help.github.com/articles/caching-your-github-password-in-git/)
+* Bored of being asked for your username and password? Read [this](https://help.github.com/articles/caching-your-github-password-in-git/).
 
 Reviewing work for the GUI
 ----------------------------------------------------------------------------------
