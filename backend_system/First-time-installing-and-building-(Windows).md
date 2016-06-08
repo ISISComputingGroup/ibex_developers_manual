@@ -49,7 +49,7 @@ Install MySQL 5.6 from [here](https://dev.mysql.com/downloads/windows/installer/
 
 Select "server only" on first page of install wizard and change the data path to `C:\Instrument\Var\mysql`. Later, in the Advanced configuration settings, select the "server machine" option.
 
-Make sure you use the agreed password for the root directory. If you don't know what that password is you should be able to find it in `C:\Instrument\Apps\EPICS\CSS\master\ArchiveEngine\setup_mysql_database.txt`.
+Make sure you use the agreed password for the root directory. If you don't know what that password is you should be able to find it in `C:\Instrument\Apps\EPICS\CSS\master\ArchiveEngine\setup_mysql_database.txt`. Do not follow the instructions in this file.
 
 Do leave TCP/IP access enabled.
 
@@ -63,6 +63,7 @@ Run the `genie_python_install.bat` batch file located in `\\isis\inst$\Kits$\Com
 
 # Run build.bat
 `cd` to `C:\Instrument\Apps\EPICS\` and run `build.bat`
+Note that take some time and should end with a build complete message, if it hasn't seek help!
 
 # Run setup_css.bat
 In `C:\Instrument\Apps\EPICS\CSS\master` run `setup_css.bat`
