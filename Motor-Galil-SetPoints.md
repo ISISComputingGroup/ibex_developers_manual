@@ -38,4 +38,6 @@ If you want to see the monitor point on a synoptic. Create a synoptic with a com
 * M = 3
 * CHANNUM = ? (I set it to 3)
 * MM = MOT:MTR0601
+(check the `motionsetpoints.cmd` file to see what corresponds to what)
+
 
