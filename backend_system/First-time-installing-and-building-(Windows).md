@@ -21,7 +21,7 @@ Windows SDK 7 has compatibility issues with newer versions of Windows. In this c
 
 During the installation of VS2013, under "Optional Features" make sure to include Microsoft Foundation Classes for C++.
 
-Additionally, download and install [this library](https://www.microsoft.com/en-us/download/details.aspx?id=40770).
+Additionally, download and install [Multibyte MFC Library](https://www.microsoft.com/en-us/download/details.aspx?id=40770).
 
 # Install CMake
 Install [CMake](https://cmake.org/download/) 
