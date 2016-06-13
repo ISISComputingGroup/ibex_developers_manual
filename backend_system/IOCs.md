@@ -31,4 +31,5 @@
 
 ## Further reading ##
 
+* [EPICS record reference manual](http://www.aps.anl.gov/epics/EpicsDocumentation/AppDevManuals/RecordRef/Recordref-1.html)
 * [IOC doxygen Documentation](http://epics.isis.rl.ac.uk/doxygen/main/)
