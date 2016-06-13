@@ -55,7 +55,7 @@ Note: I have only included a very small section of the command set for this devi
 
 Delete the db file in `Hameg_8123Sup` and modify the Makefile so it not longer refers to it.
 
-### Notes from When I did it (John)
+### Helpful hints from previous developers
 
 To create the support module, in an epics terminal.
 '''
@@ -66,6 +66,15 @@ C:\Instrument\Apps\EPICS\support\mercury_ict\master>makeSupport.pl -A ..\..\asyn
 And macro to group macros
 
 '''C:\Instrument\Apps\EPICS\configure\MASTER_RELEASE'''
+
+You can also define macros in the file `globals.txt` at:
+
+```
+C:\Instrument\Settings\config\NDW1695\configurations\globals.txt
+```
+
+Each macro is separated on a new line and has the format `[IOC name]__[macro name]=[macro value]`. For example `LINKAM95_01__PORT=COM1`. Each time you add a new macro, don't forget to recompile the IOC!
+
 
 ## Creating the IOC
 
