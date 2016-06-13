@@ -47,11 +47,17 @@ In `C:\Instrument\Apps\` run:
 # Install MySQL
 Install MySQL 5.6 from [here](https://dev.mysql.com/downloads/windows/installer/5.6.html)
 
-Select "server only" on first page of install wizard and change the data path to `C:\Instrument\Var\mysql`. Later, in the Advanced configuration settings, select the "server machine" option.
+For "Choosing a Setup Type," select "Server only"
+On the next page, set the Data Directory to `C:\Instrument\Var\mysql`
 
-Make sure you use the agreed password for the root directory. If you don't know what that password is you should be able to find it in `C:\Instrument\Apps\EPICS\CSS\master\ArchiveEngine\setup_mysql_database.txt`. Do not follow the instructions in this file.
+After it installs you will get to the "Type and Networking" page, for the "Config Type" choose "Server Machine".
 
-Do leave TCP/IP access enabled.
+Leave TCP/IP access enabled.
+
+On the "Accounts and Roles" page make sure you use the agreed password for root. 
+If you don't know what that password is you should be able to find it in `C:\Instrument\Apps\EPICS\CSS\master\ArchiveEngine\setup_mysql_database.txt`. Do not follow the instructions in this file.
+
+Under "Windows Service" make sure "Start the MySQL Server at System Startup" is **checked**
 
 Once installed run the `config_mysql.bat` batch file in `C:\Instrument\Apps\EPICS\SystemSetup\`.
 
