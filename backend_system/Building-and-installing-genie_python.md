@@ -2,6 +2,16 @@
 
 See also the [getting started guide](First-time-installing-and-building-(Windows))
 
+### Development workflow
+
+0. If you haven't installed genie_python as part of Python on your system yet, read the [getting started guide](First-time-installing-and-building-(Windows))
+1. If you don't have a development version of genie_python already, clone the repo e.g. navigate to `C:\Instrument\Dev` and run command `git clone https://github.com/ISISComputingGroup/genie_python.git`
+2. Make the desired modifications to genie_python
+3. Create a backup of your existing `C:\Instrument\Apps\Python\Lib\site-packages\genie_python` directory
+4. Copy the new source files to `C:\Instrument\Apps\Python\Lib\site-packages\genie_python`
+5. Call the new functionality from your existing Python distribution
+6. Don't forget to restore the original distribution!
+
 ### Building
 
 Note: these are essentially the same steps as used by the Jenkins build server.
