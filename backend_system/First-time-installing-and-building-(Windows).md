@@ -34,7 +34,7 @@ Install [Maven](https://maven.apache.org/download.cgi) and follow the 'Windows t
 
 # Install Git 
 Install Git from [here](https://git-scm.com/download/win). 
-* I chose `Checkout-as-is; commit unix style line-endings`
+* Choose `Checkout-as-is; commit unix style line-endings`
 
 Optionally you may wish to install [Tortoise Git](https://tortoisegit.org/) too, which provides useful tools for diffs and merging. 
 
