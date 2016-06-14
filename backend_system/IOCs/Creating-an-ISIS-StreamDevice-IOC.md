@@ -73,9 +73,7 @@ You can also define macros in the file `globals.txt` at:
 C:\Instrument\Settings\config\NDW1695\configurations\globals.txt
 ```
 
-Each macro is separated on a new line and has the format `[IOC name]__[macro name]=[macro value]`. For example `LINKAM95_01__PORT=COM1`.
-
-Remember you will need to recompile your IOC any time you make changes to the db files or Makefiles, but you don't need to recompile e.g. when changes affect only the protocol or st.cmd file.
+Each macro is separated on a new line and has the format `[IOC name]__[macro name]=[macro value]`. For example `LINKAM95_01__PORT=COM1`. Each time you add a new macro to this file, don't forget to recompile the IOC! (Remember you need to recompile your IOC any time you make changes that affect the build files, e.g. the db files or Makefiles, but you don't need to recompile e.g. when changes affect only the protocol or st.cmd file)
 
 
 ## Creating the IOC
