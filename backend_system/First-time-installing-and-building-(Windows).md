@@ -67,11 +67,14 @@ Note: For running tests locally, make sure that you have run `create_test_accoun
 
 Run the `genie_python_install.bat` batch file located in `\\isis\inst$\Kits$\CompGroup\ICP\Client\genie_python`
 
-# Run build.bat
+# Build EPICS back-end
 `cd` to `C:\Instrument\Apps\EPICS\` and run `build.bat`
 Note that take some time and should end with a build complete message, if it hasn't seek help!
 
-# Run setup_css.bat
+Certain items will not be built when using VS2013, these are:
+*  Mk3Chopper support module and IOC - only builds with VS2010
+
+# Set up the CS-Studio archiver
 In `C:\Instrument\Apps\EPICS\CSS\master` run `setup_css.bat`
 this will create directories for the archive engine. in `.\css-win.x86_64`
 
