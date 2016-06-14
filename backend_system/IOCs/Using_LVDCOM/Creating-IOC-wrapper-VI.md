@@ -1,6 +1,6 @@
 # Creating an IOC wrapper for a VI using lvDCOM
 
-**NOTE:** Template XML and DB files can now be automatically generated from the VI - see [wiki:LVDCOMAutoGenerateXML here].
+**NOTE:** Template XML and DB files can now be automatically generated from the VI - [[see here|LVDCOM-auto-generate-xml]].
 
 For this example the Agilent 53220A Front Panel VI is used (C:\LabVIEW Modules\Drivers\Agilent 53220A).
 
