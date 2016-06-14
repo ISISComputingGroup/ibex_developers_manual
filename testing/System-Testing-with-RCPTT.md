@@ -19,7 +19,8 @@ Importing the system tests works in the same way as for the GUI. In Eclipse choo
 
 ## Configure the Application Under Test (AUT)
 
-In the bottom of the RCPTT window, under Applications, right click and add IBEX as the AUT. If you want to use a development version of the GUI the location will be something like `C:\Instrument\Dev\Client\ibex_gui\base\uk.ac.stfc.isis.ibex.client.product\target\products\ibex.product\win32\win32\x86_64`. You can also use a version from the build server instead, just point RCPTT at the folder containing the executable.
+In the bottom of the RCPTT window, under Applications, right click and add IBEX as the AUT. If you want to use a development version of the GUI the location will be something like `C:\Instrument\Dev\Client\ibex_gui\base\uk.ac.stfc.isis.ibex.client.product\target\products\ibex.product\win32\win32\x86_64`. If you have not done it before, you will have to build the client first by running `C:\Instrument\Dev\Client\ibex_gui\build\build.bat`
+You can also use a version from the build server instead, just point RCPTT at the folder containing the executable.
 
 The name should be filled out automatically as `uk.ac.stfc.isis.ibex.product.product`. Click 'Finish'.
 
