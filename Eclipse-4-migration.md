@@ -1,6 +1,7 @@
 Current Known issues:
 * Recommended synoptic code in config editor has been commented out
 * CTRL + ALT + P preference menu does not work 
+* It's all very slow
 
 Plugins that have either been modified to work (or at least not complain) with E4, CS-Studio 4.X and DIIRT or work without modification:
 
