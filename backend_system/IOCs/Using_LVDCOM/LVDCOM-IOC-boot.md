@@ -39,18 +39,27 @@ $(APPNAME)_SYS_LIBS_WIN32 += msxml2
 ## 2 Create the xml configuration file
 
 1. Open the VI in lab view.
-1. Go to Tools menu, Advanced, Export Strings... and uncheck the wizard option for "block diagram strings" and save the export results to a text file e.g. controls.txt (Note: you may need write access to the VI itself to do this, so might have to make a local copy of the VI first)
+1. Export strings from the labview panel (In different version of labview this is different)
+     1. 2010:  Go to Tools menu, Advanced, Export Strings... and uncheck the wizard option for "block diagram strings" and save the export results to a text file e.g. controls.txt (Note: you may need write access to the VI itself to do this, so might have to make a local copy of the VI first)
+     1. 2014: 
+         1. Menu -> Tools -> Advanced -> Export Strings... 
+         1. Then save file to (<device>/protocol/controls.txt)
+         1. Yes to "Export captions for controls without captions?"
+         1. No to "Export block diagram strings?"
 
-1. Generate a correct xml file, in an epics terminal
-
+1. Generate a corrected xml file. In an epics terminal run in the protocol directory:
 ```
-C:\Instrument\Apps\EPICS\ioc\master\ISISSTAT>C:\Instrument\Apps\EPICS\ISIS\lvDCOM\master\lvDCOMApp\src\fix_xml.cmd
-"Mercury-Front-Panel-1-Temp 1.txt" "Mercury-Front-Panel-1-Temp 1.xml"
-xsltproc C:\Instrument\Apps\EPICS\ISIS\lvDCOM\master\lvDCOMApp\src\lvstrings2input.xsl "Mercury-Front-Panel-1-Temp
-1.xml" > lvinput.xml
+C:\Instrument\Apps\EPICS\ISIS\lvDCOM\master\lvDCOMApp\src\fix_xml.cmd
+"controls.txt" "controls.xml"
+```
+1. Generate lvcom file:
+```
+xsltproc C:\Instrument\Apps\EPICS\ISIS\lvDCOM\master\lvDCOMApp\src\lvstrings2input.xsl "controls.xml" > lv_controls.xml
 ```
 
-1. edit TODOs in file, remove unneeded controls
+1. Edit lv_controls.xml
+    1. Do TODOs in file; path in vi needs path to llb containing the vi e.g. `C:/LabVIEW Modules/Drivers/Oxford Instruments/Mercury/Mercury - Temperature.llb/<name of vi>`
+    1. remove uneeded controls
 1. generate db file
 ```
 xsltproc C:\Instrument\Apps\EPICS\ISIS\lvDCOM\master\lvDCOMApp\src\lvinput2db.xsl lvinput.xml > mercury-front-panel
