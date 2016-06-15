@@ -1,6 +1,5 @@
 Current Known issues:
 * Recommended synoptic code in config editor has been commented out
-* Loopback doesn't seem to work
 * CTRL + ALT + P preference menu does not work 
 
 Plugins that have either been modified to work (or at least not complain) with E4, CS-Studio 4.X and DIIRT or work without modification:
@@ -26,5 +25,9 @@ Plugins that have either been modified to work (or at least not complain) with E
 * uk.ac.stfc.isis.ibex.ui.blocks.presentation
 * uk.ac.stfc.isis.ibex.ui.configserver
 * uk.ac.stfc.isis.ibex.ui.dashboard
+* uk.ac.stfc.isis.ibex.ui.dae
+* uk.ac.stfc.isis.ibex.ui.synoptic
+* uk.ac.stfc.isis.ibex.ui.synoptic.editor
 * uk.ac.stfc.isis.ibex.ui.widgets
+* uk.ac.stfc.isis.ibex.ui.validators
 
