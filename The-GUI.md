@@ -19,3 +19,7 @@ Working with the Eclipse IDE.
 # [Control System Studio (CS-Studio)](GUI-CSS)
 
 Notes on Control System Studio.
+
+# [Other](GUI-Other)
+
+Notes on all other elements related to the GUI.
