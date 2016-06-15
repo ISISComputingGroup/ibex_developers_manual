@@ -1,4 +1,4 @@
-Plugins that have been modified to work (or at least not complain) with E4, CS-Studio 4.X and DIIRT:
+Plugins that have eiterh been modified to work (or at least not complain) with E4, CS-Studio 4.X and DIIRT or work without modification:
 
 * uk.ac.stfc.isis.ibex.alarm
 * uk.ac.stfc.isis.ibex.configserver
