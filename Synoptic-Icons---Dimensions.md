@@ -1,5 +1,5 @@
 ### Icon Conventions
-* Icon image files have a maximum height of 100px and a width of (icon width + 20) including margins. 
+* Icon image files have a maximum height of 100px and a width of (icon width + 20px) including margins. 
 * The fill colour of the icons is 0xAAA19C. The border colour is black.
 * The icon background should be transparent.
 
@@ -15,11 +15,10 @@ To centre your new (or a pre-existing) icon, open the file in gimp and follow th
 * Crop the image with `Image > Autocrop Image`. This removes all empty space around the Icon.
 * The icon should now have a height of 100px or less. If this is not the case, scale it down under `Image > Scale Image`
 * Open `Image > Canvas Size`. Unlink Width and Height by clicking the little chain next to the number entry fields.
-* Set Height to 100 and width to (width + 20).
-* Click on `center` and finish by clicking `Resize`. The icon should now sit right in the centre of the image.
+* Set Height to 100px and width to (current width) + 20px.
+* Click on `center` and finish by clicking `Resize`. The icon should now sit right in the centre of the canvas. and have some margins around it.
 
 ### Non-Centred Icons
-If you don't want the icon to be centred in the synoptic window, give it the right dimensions by following the steps above, then:
-* Click and drag on the ruler above the canvas to produce a guideline. Position it at a vertical position of 50 px. This simulates where the beamline will appear relative to the icon in the synoptics view.
+If you don't want the icon to be centred on the beamline in the synoptics window: 
+* Click and drag on the ruler above the canvas to produce a guideline. Position it at a vertical position of 50 px (see ruler on left). This simulates where the beamline will appear relative to the icon in the synoptics view.
 * Select and move your Icon in the desired vertical position.
-
