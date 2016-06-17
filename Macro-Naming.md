@@ -34,8 +34,8 @@ There are some macros that need to be set which have specific names, and do not 
 | HVCAEN_0n | HVCAENIPn | This is the IP address for the CAEN | |
 | FINS_0n | PLCIP | The IP address for the PLC | |
 | TPG300_0n | TTY | The COM port for the TPG 300 (should be changed to conform) | |
-| CONEXAGP_0n | MTRCTRL | ??? | |
-| SMC100_0n | MTRCTRL | ??? | |
+| CONEXAGP_0n | MTRCTRL | The motor controller number, e.g. it's 08 %MYPVPREFIX%:MOT:MTR0805; note that GALIL IOCs take values 01-10 | |
+| SMC100_0n | MTRCTRL | The motor controller number, e.g. it's 08 %MYPVPREFIX%:MOT:MTR0805; note that GALIL IOCs take values 01-10 | |
 | ECLAB_0n | IPADDR | IP Address of the device | |
 
 
