@@ -1,4 +1,4 @@
-> [Wiki](Home) > [Deployment] > Deployment Strategy
+> [Wiki](Home) > [Deployment](Deployment) > Deployment Strategy
 
 ## TODO
 
