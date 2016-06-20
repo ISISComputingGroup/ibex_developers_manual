@@ -2,7 +2,7 @@
 
 * [Getting Started with Git] (Getting-started-with-Git-and-GitHub)
 
-* [Git Workflow](Git-Cribs)
+* [Git Workflow](Git-workflow)
 
 * [Useful Git Commands](Git Commands)
 
