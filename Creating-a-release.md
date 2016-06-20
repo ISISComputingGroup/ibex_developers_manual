@@ -9,7 +9,7 @@
 Project is ready to be released not for a specific event, e.g. at the end of a sprint.
 
 1. Look at the released features in this branch [IBEX/wiki/ReleaseNotes_Dev](https://github.com/ISISComputingGroup/IBEX/wiki/ReleaseNotes_Dev) and find the most significant level of change (i.e. is this cumulatively a major change, a minor change, or a patch?).
-1. Start a release branch so that the code is frozen
+1. Start a release branch so that the code is frozen (e.g. Release_v1.1.0)
 1. Update the version numbers:
     1. In `ibex_gui/base/uk.ac.stfc.isis.ibex.ui.help/plugin.xml` edit `Bundle-Version: 1.0.0.qualifier` to be `X.x.m.qualifier`
     1. In `EPICS\ioc\master\INSTETC\INSTETC-IOC-01App\Db\svn-revision.db.tmpl` edit `field(VAL, "1.0.0.$WCREV$")` to be `field(VAL, "X.x.m.$WCREV$")`
