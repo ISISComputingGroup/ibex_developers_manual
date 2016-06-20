@@ -13,6 +13,7 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
 1. Update the version numbers:
     1. In `ibex_gui/base/uk.ac.stfc.isis.ibex.ui.help/plugin.xml` edit `Bundle-Version: 1.0.0.qualifier` to be `X.x.m.qualifier`
     1. In `EPICS\ioc\master\INSTETC\INSTETC-IOC-01App\Db\svn-revision.db.tmpl` edit `field(VAL, "1.0.0.$WCREV$")` to be `field(VAL, "X.x.m.$WCREV$")`
+    1. In `EPICS\README.txt`, update the version number in the header. If nothing else, this creates a change for initiating a pull request.
     1. Add Genie Python file to update
 1. Commit you changes and push.
 1. Create a released version in the [releases table](https://github.com/ISISComputingGroup/IBEX/wiki/Releases) (including link to release notes)
