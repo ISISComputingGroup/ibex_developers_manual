@@ -20,3 +20,14 @@ GIVEN_[pre-conditions]_WHEN_[action]_THEN_[result]
 GIVEN, WHEN, and THEN are in capitals with the rest of the test name in lower case, words are separated by underscores.
 
 In some cases, there are no preconditions, or the preconditions are truly trivial (be wary of jumping to that conclusion though). In those cases given may be omitted.
+
+Where possible don't include the method being tested name in the test name as that could change over time.
+
+Given that java methods usually use CamelCase, it is useful to tell CheckStyle to ignore the name format add a warning suppression to the top of the class:
+
+```
+    @SuppressWarnings({ "checkstyle:magicnumber", "checkstyle:methodname" })
+    public class GIVEN_my_test_isnt_written_in_camel_case_WHEN_test_is_viewed_in_eclipse_THEN_checkstyle_does_not_issue_warning {
+```
+    
+It may be worth adding the magic-number suppression too depending on the type of tests.
