@@ -166,18 +166,7 @@ Note: Each test should be independent of the other tests as there is no guarante
     
 ## Naming conventions for unit tests
 
-Java methods are usually lower CamelCase (e.g getNameValue), but for some of the tests we have adopted the convention of using underscore spaced method names (e.g. does_two_plus_two_equal_four).
-This is probably easier to read that CamelCase, but it does upset CheckStyle; therefore, to tell CheckStyle to ignore the name format add a warning suppression to the top of the class:
-
-```
-    @SuppressWarnings({ "checkstyle:magicnumber", "checkstyle:methodname" })
-    public class StringManipulatorTest {
-```
-    
-It may be worth adding the magic-number suppression too depending on the type of tests.
-
-The basic naming guideline is for the test name to explain what it is doing and perhaps what it expects, for example: invalid_user_name_throws_exception or getting_user_returns_user.
-Where possible don't include the method being tested name in the test name as that could change over time.
+See [test naming](Test-naming).
 
 ## Mockito
 
