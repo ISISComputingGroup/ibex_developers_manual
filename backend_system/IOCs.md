@@ -5,6 +5,7 @@
 
     * [Creating an ISIS StreamDevice IOC](Creating-an-ISIS-StreamDevice-IOC)
     * [Creating an LvDCOM IOC](Creating-IOC-wrapper-VI)
+* [IOC Finishing Touches](IOC-Finishing-Touches)
 
 * [Disable records](Disable-records)
 
