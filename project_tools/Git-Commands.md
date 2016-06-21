@@ -26,6 +26,7 @@ git add -u                                    | Add all modified files to the st
 git mv [file-name] [folder]                   | Move a file to a new folder
                                               |
 git commit -m "[descriptive-message]"         | Commit the staged area with a descriptive message
+git commit -m "Jenkins retest this please" --allow-empty | Asks Jenkins to retest a pull request. `allow-empty` flag allows you to do it without any associated changes
                                               |
 git merge [branch-name]                       | Merge the changes from [branch] to the one you have currently checked out, typically master to your dev branch
 git submodule update --merge                  | Update all submodules and merge them
