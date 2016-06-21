@@ -31,7 +31,6 @@ If a macro can be set as part of the IOC (and can be reasonably set in the GUI) 
 <ioc_config xmlns:xi="http://www.w3.org/2001/XInclude">
 <config_part>
 <macros>
-<!-- check st-port.cmd for defaults -->
 <macro name="VI_TEMP_1" pattern="^[A-Z0-9]+$" description="Suffix of the vi temperature panel, usually '1' or blank for no controller." />
 <macro name="VI_TEMP_2" pattern="^[A-Z0-9]+$" description="Suffix of the vi temperature panel, usually '2' or blank for no controller." />
 <macro name="VI_TEMP_3" pattern="^[A-Z0-9]+$" description="Suffix of the vi temperature panel, usually '3' or blank for no controller." />
