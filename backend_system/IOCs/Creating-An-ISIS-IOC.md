@@ -34,7 +34,7 @@ Don't forgot to save it!
 Now it is time to edit the build.mak file in HAMEG8123-IOC-01App\\src - this is the master build file for all the HAMEG8123 IOCs.
 In notepad (or similar) add any require DBD files and LIBS to the respective listings. For example, for the Hameg it is necessary to add the DBDs for stream, asyn and the communication protocols::
 
-   ...
+   ```
    ## ISIS standard dbd ##
    $(APPNAME)_DBD += devSequencer.dbd
    $(APPNAME)_DBD += icpconfig.dbd
@@ -48,7 +48,7 @@ In notepad (or similar) add any require DBD files and LIBS to the respective lis
    $(APPNAME)_DBD += asyn.dbd
    $(APPNAME)_DBD += drvAsynSerialPort.dbd
    $(APPNAME)_DBD += drvAsynIPPort.dbd
-   ...
+   ```
 
 Likewise, the LIBs need to be added too::
 
