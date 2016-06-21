@@ -3,9 +3,8 @@
 ## Creating an IOC ##
 * [The Workflow - start here!](Creating-an-IOC-Workflow)
 
-* [Creating an ISIS StreamDevice IOC](Creating-an-ISIS-StreamDevice-IOC)
-
-* [Using LVDCOM](Using-LVDCOM)
+    * [Creating an ISIS StreamDevice IOC](Creating-an-ISIS-StreamDevice-IOC)
+    * [Creating an LvDCOM IOC](Creating-IOC-wrapper-VI)
 
 * [Disable records](Disable-records)
 
@@ -21,6 +20,10 @@
 * [PV units](PV-Units)
 
 * [Macro naming](Macro-Naming)
+
+## Other
+
+* [Using LVDCOM](Using-LVDCOM)
 
 ## Specific IOC Information
 
