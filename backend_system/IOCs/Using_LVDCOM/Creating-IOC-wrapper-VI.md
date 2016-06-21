@@ -47,17 +47,15 @@ This is a summary of [[more general LvDCOM instructions|LVDCOM-auto-generate-xml
          1. Then save file to (<device>/protocol/controls.txt)
          1. Yes to "Export captions for controls without captions?"
          1. No to "Export block diagram strings?"
-
 1. Generate a corrected xml file. In an epics terminal run in the protocol directory:
-```
-C:\Instrument\Apps\EPICS\ISIS\lvDCOM\master\lvDCOMApp\src\fix_xml.cmd
+   ```
+    C:\Instrument\Apps\EPICS\ISIS\lvDCOM\master\lvDCOMApp\src\fix_xml.cmd
 "controls.txt" "controls.xml"
-```
+    ```
 1. Generate lvcom file:
-```
-xsltproc C:\Instrument\Apps\EPICS\ISIS\lvDCOM\master\lvDCOMApp\src\lvstrings2input.xsl "controls.xml" > lv_controls.xml
-```
-
+    ```
+    xsltproc C:\Instrument\Apps\EPICS\ISIS\lvDCOM\master\lvDCOMApp\src\lvstrings2input.xsl "controls.xml" > lv_controls.xml
+    ```
 1. Edit lv_controls.xml (see below for example)
     1. Check the path is correct for the external interface, it should be:`<extint path="$(LVDCOM)/lvDCOMApp/src/extint/Main/Library/External Interface - Set Value.vi"/>`
     1. Path in vi element needs path to be vi in the llb containing the vi e.g. `C:/LabVIEW Modules/Drivers/Oxford Instruments/Mercury/Mercury - Temperature.llb/<name of vi>`
@@ -68,9 +66,9 @@ xsltproc C:\Instrument\Apps\EPICS\ISIS\lvDCOM\master\lvDCOMApp\src\lvstrings2inp
 # 3. Generate the DB File      
 
 1. generate db file from an epics terminal in protocol
-```
-xsltproc C:\Instrument\Apps\EPICS\ISIS\lvDCOM\master\lvDCOMApp\src\lvinput2db.xsl lv_controls.xml > ..\Db\controls.db
-```
+    ```
+    xsltproc C:\Instrument\Apps\EPICS\ISIS\lvDCOM\master\lvDCOMApp\src\lvinput2db.xsl lv_controls.xml > ..\Db\controls.db
+    ```
 1. Add db file to makefile in
 1. Edit the DB file. I found I wanted many `_RBV` to be `:RBV` and to get rid of some of the records (see below for example)
 
