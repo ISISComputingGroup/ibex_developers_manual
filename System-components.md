@@ -2,6 +2,8 @@
 
 * [The BlockServer](BlockServer)
 
+* [IOC message logging](Ioc-message-logging)
+
 * [The DatabaseServer](The-DatabaseServer)
 
 * [The MySQL Database](The-MySQL-Database)
