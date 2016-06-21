@@ -9,9 +9,13 @@
 Project is ready to be released not for a specific event, e.g. at the end of a sprint.
 
 1. Look at the released features in this branch [IBEX/wiki/ReleaseNotes_Dev](https://github.com/ISISComputingGroup/IBEX/wiki/ReleaseNotes_Dev) and find the most significant level of change (i.e. is this cumulatively a major change, a minor change, or a patch?).
-1. Start a release branch so that the code is frozen (e.g. `Release_v1.1.0`)
+1. Start a release branch so that the code is frozen (e.g. `Release_v1.1.0`). You will need a branch for
+    1. EPICS
+    1. genie_python
+    1. ibex_gui
 1. Update the version numbers:
-    1. In `ibex_gui/base/uk.ac.stfc.isis.ibex.ui.help/META-INF/MANIFEST.MF` edit `Bundle-Version: 1.0.0.qualifier` to be `X.x.m.qualifier`
+    1. In `ibex_gui/base/uk.ac.stfc.isis.ibex.product/META-INF/MANIFEST.MF` edit `Bundle-Version:...` to be `X.x.m.qualifier`
+    1. In `ibex_gui/base/uk.ac.stfc.isis.ibex.client.product/pom.xml` edit the `<version>` tag content to be `X.x.m-SNAPSHOT`
     1. In `EPICS\ioc\master\INSTETC\INSTETC-IOC-01App\Db\svn-revision.db.tmpl` edit `field(VAL, "1.0.0.$WCREV$")` to be `field(VAL, "X.x.m.$WCREV$")`
     1. In `EPICS\README.txt`, update the version number in the header. If nothing else, this creates a change for initiating a pull request.
     1. Add Genie Python file to update
