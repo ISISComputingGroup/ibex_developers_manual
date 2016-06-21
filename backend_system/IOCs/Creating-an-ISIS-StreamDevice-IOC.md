@@ -227,9 +227,8 @@ runIOC.bat st.cmd
 
 Hopefully, the IOC will start and the `dbl` command will list all the PVs.
 
-Finally, before checking the this all into SVN, you will need to do the following
+Before the IOC is complete you will need to finish the workflow to include:
 
-1. Mark any interesting PVs in the db file, with `info(INTEREST, "<LEVEL>")` where Level is HIGH, MEDIUM, LOW
-1. Mark any PVs that need to be archived with `info(archive, "VAL")`
-1. Make sure all PVs have unit fields (EGU) even if it is blank
-1. Make sure all PVs have a description (DESC)
+1. PVs of note are designated as interesting [PVs, are archive and have units. All Macros are documented.](IOC-Finishing-Touches)
+1. Record level simulation is provided (see [Record simulation](Record-Simulation))
+1. The IOC has a disable record (see [Disable records](Disable-records))
