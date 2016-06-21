@@ -19,6 +19,10 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
     1. In `EPICS\ioc\master\INSTETC\INSTETC-IOC-01App\Db\svn-revision.db.tmpl` edit `field(VAL, "1.0.0.$WCREV$")` to be `field(VAL, "X.x.m.$WCREV$")`
     1. In `EPICS\README.txt`, update the version number in the header. If nothing else, this creates a change for initiating a pull request.
 1. Commit you changes and push.
+1. Create a pull request in each of the 3 repos for the release branches. This will trigger builds on Jenkins:
+    1. [ibex_gui](http://epics-jenkins.isis.rl.ac.uk/job/ibex_gui_build_PRs)
+    1. [genie_python](http://epics-jenkins.isis.rl.ac.uk/job/genie_python_PR/)
+    1. [EPICS](http://epics-jenkins.isis.rl.ac.uk/job/EPICS_IOC_Windows7_x64_PR/)
 1. Create a released version in the [releases table](https://github.com/ISISComputingGroup/IBEX/wiki/Releases) (including link to release notes)
 1. Move the changes which have been merged into master from the dev page to the new release notes page for the version.
 1. Test
