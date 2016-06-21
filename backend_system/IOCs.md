@@ -5,8 +5,6 @@
 
 * [Creating an ISIS StreamDevice IOC](Creating-an-ISIS-StreamDevice-IOC)
 
-* [IOC message logging](Ioc-message-logging)
-
 * [Using LVDCOM](Using-LVDCOM)
 
 * [Disable records](Disable-records)
@@ -33,3 +31,4 @@
 
 * [EPICS record reference manual](http://www.aps.anl.gov/epics/EpicsDocumentation/AppDevManuals/RecordRef/Recordref-1.html)
 * [IOC doxygen Documentation](http://epics.isis.rl.ac.uk/doxygen/main/)
+* [IOC message logging](Ioc-message-logging)
