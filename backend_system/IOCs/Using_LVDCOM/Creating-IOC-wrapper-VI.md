@@ -2,7 +2,7 @@
 
 These are instructions for creating an IOC wrapper for a VI using lvDCOM. It assumes you want to create a "support" type module for lvdcom in ISIS. The Mercury ITC is an example where the below was followed and then an IOC was created using the this as a support module.
 
-## 1 Create ISIS IOC
+## 1. Create ISIS IOC
 
 I plan to make these into a template (so you will just need to run makeBaseApp.pl and not do the edits), but for now this is the manual way
 
@@ -37,7 +37,7 @@ and system library
 $(APPNAME)_SYS_LIBS_WIN32 += msxml2
 ```
 
-## 2 Create the xml configuration file
+## 2. Create the xml configuration file
 
 This is a summary of [[more general LvDCOM instructions|LVDCOM-auto-generate-xml]].
 
@@ -65,7 +65,7 @@ This is a summary of [[more general LvDCOM instructions|LVDCOM-auto-generate-xml
     1. remove unneeded controls or states of those controls (e.g. write for read only values)
     1. If the value is controlled by an event the `extint` value of set contols should be set to `"true"`. This will make it process the value. If one of the value is true you might as well set them all to be true the only advantage is if the are all false it does not need to load the external interface.
 
-# 3. Generate the DB File      
+## 3. Generate the DB File      
 
 1. generate db file from an epics terminal in protocol
     ```
@@ -81,12 +81,14 @@ This is a summary of [[more general LvDCOM instructions|LVDCOM-auto-generate-xml
     * Additional optional args to specify a DCOM ProgID for a compiled LabVIEW application and a different username + password for remote host if that is required. e.g `lvDCOMConfigure("ex1", "example", "$(TOP)/lvDCOMApp/src/examples/example_lvinput.xml", "ndxtestfaa", 6, "", "username", "password")`
 1. Add db load record
 
-## 4. Run the IOC
+## 5. Run the IOC
 
 Run the IOC as normal. The IOC should start with no errors and typing "dbl" will list the PVs. Note: unless the VI was already open it will not be visible. If it is not visible, stop the IOC, load the VI and restart the IOC
 
 
-## 5. Finish the Workflow
+## 6. Finish the Workflow
+
+Now return to the IOC workflow to finishing adding things like units, PVs of interest and macros.
 
 # Example XML control definitions
 
