@@ -26,6 +26,8 @@ The name should be filled out automatically as `uk.ac.stfc.isis.ibex.product.pro
 
 ## Create Some Tests
 
+**Don't forget to add new tests to the All_tests test suite so that it'll be run by Jenkins. More details later in the paragraph**
+
 Create a new 'Test Case'. Click the record button in the top right to start using IBEX and record some behaviour. Use `Shift+Alt+7` to switch to verification mode. In verification mode you can click on items to get access to their properties. The desired assertions can be selected.
 
 Below is an example of a recorded script to create a new block.
@@ -55,6 +57,8 @@ get-view Blocks | get-label "NEW_BLOCK:" | get-property caption | equals "NEW_BL
 ```
 
 Note here the line `wait 10000` was added manually, this is required as the BlockServer takes some time to respond to the request. Anything that depends purely on the GUI should not need to wait like this.
+
+**Note that `wait` has generally been superseded by `try -times 500 -delay 200 -command { ... }` so that the test is not blocked longer than necessary**
 
 Finally, under 'All_Tests' choose 'Add Test Case' from the buttons on the right and add the newly created test. Add more tests here to run them one by one.
 
