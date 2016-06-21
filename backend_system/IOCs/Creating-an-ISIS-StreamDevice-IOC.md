@@ -227,7 +227,8 @@ runIOC.bat st.cmd
 
 Hopefully, the IOC will start and the `dbl` command will list all the PVs.
 
-Finally, before checking the this all into SVN, you will need to do the following:
+Finally, before checking the this all into SVN, you will need to do the following
+
 1. Mark any interesting PVs in the db file, with `info(INTEREST, "<LEVEL>")` where Level is HIGH, MEDIUM, LOW
 1. Mark any PVs that need to be archived with `info(archive, "VAL")`
 1. Make sure all PVs have unit fields (EGU) even if it is blank
