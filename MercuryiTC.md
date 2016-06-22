@@ -38,4 +38,4 @@ To activate a card you must set the related IOC macro in globals.txt. The macro 
 * `TEMP` Current temperature
 * `TEMP:SP` Set point for temperature controller
 * `TEMP:SP:RV` Read back of the set temperature point
-* `NAME:RBV` Name associated with the card
+* `NAME` Name associated with the card
