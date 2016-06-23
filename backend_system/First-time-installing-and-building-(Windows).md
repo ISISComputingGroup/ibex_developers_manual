@@ -113,6 +113,15 @@ git clone http://control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/inst.git NDXX
 cd NDXXXX
 git checkout NDXXXX
 ```
+### Configure DAE for simulation mode on developer's computer
+
+* Open an administrator command prompt (right click on command prompt in start menu and click "run as administrator")
+* cd to     c:\Instrument\Apps\EPICS\ICP_Binaries\isisdae\x64\Release
+* Type:
+```
+    isisicp.exe /RegServer
+    isisdatasvr.exe /RegServer
+```
 
 ### Building the GUI
 
