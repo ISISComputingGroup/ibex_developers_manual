@@ -49,3 +49,5 @@ where `name` is the name of the macro,  pattern is the regex for the macro's val
 <xi:include href="../iocGALIL-IOC-01/config.xml"  />
 </ioc_config>
 ```
+
+Either a full make of the server, or running `make iocstartups` will then make the contents of these xml files available to the GUI (after restarting the instrument)
