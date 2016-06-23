@@ -122,6 +122,7 @@ git checkout NDXXXX
     isisicp.exe /RegServer
     isisdatasvr.exe /RegServer
 ```
+Unfortunately the /RegServer registration process doesn't report either success or failure. If, on later starting the ISISDAE IOC, you see lots of errors of the form "CoCreateInstanceEx (ISISICP) : Class not registered" then it means the /RegServer flag did not work. Try registering it again, you may not have been Administrator when you did it first time. 
 
 ### Building the GUI
 
