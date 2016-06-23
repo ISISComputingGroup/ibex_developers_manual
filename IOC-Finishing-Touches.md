@@ -24,7 +24,7 @@ All PVs should have if appropriate:
 
 Once done run from an epics terminal in your ioc's app db directory 
 
-    `python C:\Instrument\Apps\EPICS\ISIS\DbUnitChecker\master\db_checker.py`
+    python C:\Instrument\Apps\EPICS\ISIS\DbUnitChecker\master\db_checker.py
 
 To check it will not fail the build.
 
