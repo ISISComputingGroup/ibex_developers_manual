@@ -53,7 +53,7 @@ Reviewing work for the subModules of EPICS
 * Once the tests have been passed, go to GitHub and merge the pull request
 * Navigate to the 'top' EPICS module in Git Bash, note that these changes are undertaken in the master thread
 * Update the remote submodules to the latest version: ``git submodule update --remote --merge``
-* Add in the tested submodules: ``git add [tested merged submodules]``
+* Add in the tested submodules: ``git add [tested merged submodules]`` (example: ``git add ioc/master/`` to add ``EPICS-ioc``)
 * Commit the updated submodules, with the comment as "Update submodules": ``git commit -m "Update submodules"``
 * Push the changed submodules back to GitHub: ``git push --recurse-submodule=check``
 
