@@ -40,4 +40,12 @@ If a macro can be set as part of the IOC (and can be reasonably set in the GUI) 
 </ioc_config>
 ```
 
-where `name` is the name of the macro,  pattern is the regex for the macro's value and description is a plain text description which is shown to the user.
+where `name` is the name of the macro,  pattern is the regex for the macro's value and description is a plain text description which is shown to the user. 
+`config.xml` support xinclude so if you have several iocs with the same set of macros you don't need to repeat the file contents. Example GALIL02 (see below) uses GALIL01's config:
+
+```
+<?xml version="1.0" ?>
+<ioc_config xmlns:xi="http://www.w3.org/2001/XInclude">
+<xi:include href="../iocGALIL-IOC-01/config.xml"  />
+</ioc_config>
+```
