@@ -19,17 +19,22 @@ We are going to be using the following Jenkins builds:
 
 Before proceeding, ensure all changes have been incorporated into these builds.
 
-## genie_python
+## Client
 
 1. Go to `\\isis\Kits$\CompGroup\ICP\Client\`
-1. Create a zip file of the `genie_python` directory on your local disk. Zipping files is not mandatory to this process but will improve file transfer speeds dramatically.
+1. Copy the following folders to your local machine:
+    - genie_python
+    - EPICS_UTILS
+    - BUILDnnn where `nnn` corresponds to the build of IBEX you want to deploy
+1. Create a zip file containing the 3 folders. Zipping files is not mandatory to this process but will improve file transfer speeds dramatically.
 1. Remote desktop to NDXDEMO
 1. Copy the zip file to the folder `C:\Installers` **on NDXDEMO**. Clipboards are shared with remote desktop sessions so normal copy paste operations can be used.
-1. Unzip the genie_python archive
-1. Delete C:\Instrument\Apps\Python (or at least move/rename it)
-1. From `C:\Installers\genie_python` run `genie_python_install.bat`
+1. Unzip the archive
+1. Delete\move `C:\Instrument\Apps\Python` and `C:\Instrument\Apps\Client`
+1. From `C:\Installers\Buildnnn` run `install_client.bat`
 
 ## Install EPICS
+** This will install genie_python and IBEX **
 
 1. Go to `\\isis\Kits$\CompGroup\ICP\EPICS\EPICS_win7_x64`
 1. Find the folder corresponding to the build you want to deploy
@@ -39,9 +44,6 @@ Before proceeding, ensure all changes have been incorporated into these builds.
 1. Unzip the EPICS archive
 1. Delete C:\Instrument\Apps\EPICS (or at least move/rename it)
 1. From `C:\Installers\EPICS` run `install_to_inst.bat`
-
-## Install IBEX
-
 
 ## Start the Instrument
 
