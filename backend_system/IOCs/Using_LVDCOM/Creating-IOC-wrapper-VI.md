@@ -37,6 +37,17 @@ and system library
 $(APPNAME)_SYS_LIBS_WIN32 += msxml2
 ```
 
+Add the IOC to the makefile in `EPICS\ISIS\Makefile` e.g.
+
+```
+ifeq ($(HAVE_ATL),YES)  
+MODULES += lvDCOM Tektronix_DMM_4040
+MODULES += Tektronix_DMM_4050 Agilent_33220A Hameg_8123 Chipir_XYZ Agilent_3631A
+MODULES += CHIPIR_Collimator Chipir_LV_FP CHIPIR_Filter_Set HIFI_CRYOMAG
+MODULES += MERCURYiTC <device>
+endif
+```
+
 ## 2. Create the xml configuration file
 
 This is a summary of [[more general LvDCOM instructions|LVDCOM-auto-generate-xml]].
@@ -85,10 +96,17 @@ This is a summary of [[more general LvDCOM instructions|LVDCOM-auto-generate-xml
 
 Run the IOC as normal. The IOC should start with no errors and typing "dbl" will list the PVs. Note: unless the VI was already open it will not be visible. If it is not visible, stop the IOC, load the VI and restart the IOC
 
-
 ## 6. Finish the Workflow
 
 Now return to the IOC workflow to finishing adding things like units, PVs of interest and macros.
+Once the ISIS IOC works you should probably now create an IOC linked to this one in ioc follow a similar pattern to a support modules. Remember that if you do this add you new ioc to the Makefile so it does not build under linux, i.e. edit `EPICS\ioc\master\Makefile` add to the line:
+
+    ifneq ($(findstring linux,$(EPICS_HOST_ARCH)),)
+    DIRS_NOTBUILD += ISISDAE MK3CHOPPER STPS350 AG53220A STSR400 ECLAB
+    DIRS_NOTBUILD += DELFTARDUSTEP DELFTDCMAG GALIL MERCURY_ITC <ioc dir>
+    endif
+
+
 
 # Example XML control definitions
 
