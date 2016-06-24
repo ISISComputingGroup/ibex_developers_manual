@@ -14,7 +14,7 @@ mkdir Hameg_8123
 cd Hameg_8123
 ```
 
-TODO: instructions on how to create a git repo
+Get an admin to [create a git repository](Adding%20new%20modules).
 
 Create a stream support module:
 
