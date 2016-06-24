@@ -14,8 +14,8 @@ Note that the release process for IBEX is currently in flux and so some of these
 We are going to be using the following Jenkins builds:
 
 - [genie_python](http://epics-jenkins.isis.rl.ac.uk/job/genie_python/)
-- EPICS
-- IBEX
+- [EPICS](http://epics-jenkins.isis.rl.ac.uk/job/EPICS_IOC_Windows7_x64/2472/)
+- [IBEX](http://epics-jenkins.isis.rl.ac.uk/job/ibex_gui/)
 
 Before proceeding, ensure all changes have been incorporated into these builds.
 
