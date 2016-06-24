@@ -20,6 +20,7 @@ We are going to be using the following Jenkins builds:
 Before proceeding, ensure all changes have been incorporated into these builds.
 
 ## Client
+**This will install genie_python and IBEX**
 
 1. Go to `\\isis\Kits$\CompGroup\ICP\Client\`
 1. Copy the following folders to your local machine:
@@ -34,7 +35,6 @@ Before proceeding, ensure all changes have been incorporated into these builds.
 1. From `C:\Installers\Buildnnn` run `install_client.bat`
 
 ## Install EPICS
-** This will install genie_python and IBEX **
 
 1. Go to `\\isis\Kits$\CompGroup\ICP\EPICS\EPICS_win7_x64`
 1. Find the folder corresponding to the build you want to deploy
