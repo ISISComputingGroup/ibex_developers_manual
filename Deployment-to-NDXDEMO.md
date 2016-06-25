@@ -22,7 +22,7 @@ Before proceeding, ensure all changes have been incorporated into these builds.
 ## Client
 **This will install genie_python and IBEX**
 
-1. Go to `\\isis\Kits$\CompGroup\ICP\Client\`
+1. Go to `\\isis\inst$\Kits$\CompGroup\ICP\Client\` 
 1. Copy the following folders to your local machine:
     - genie_python
     - EPICS_UTILS
@@ -36,7 +36,7 @@ Before proceeding, ensure all changes have been incorporated into these builds.
 
 ## Install EPICS
 
-1. Go to `\\isis\Kits$\CompGroup\ICP\EPICS\EPICS_win7_x64`
+1. Go to `\\isis\inst$\Kits$\CompGroup\ICP\EPICS\EPICS_win7_x64`
 1. Find the folder corresponding to the build you want to deploy
 1. Create a zip file of that folder on your local disk. Zipping files is not mandatory to this process but will improve file transfer speeds dramatically.
 1. Remote desktop to NDXDEMO
