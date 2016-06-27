@@ -318,7 +318,54 @@ A typical child POM is shown below
 
 Basically it is very simple - it points at the parent POM to get most of its information.
 
-The packaging type is defined a eclipse-plugin. This is a packaging type defined by Tycho, Maven itself has no idea what this means. Other Tycho types used in IBEX are eclipse-feature for features and eclipse-test-plugin for fragment projects that define unit tests.
+The packaging type is defined a eclipse-plugin. This is a packaging type defined by Tycho, Maven itself has no idea what this means. Other Tycho types used in IBEX are eclipse-feature for features,eclipse-test-plugin for fragment projects that define unit tests and eclipse-repository for configuring builds.
+
+### Creating an application ###
+
+In IBEX we define a separate project called `uk.ac.stfc.isis.ibex.client.product` which defines how the product is built. It has a POM file of packaging type eclipse-repository.
+
+```xml
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+    <version>1.0.0-SNAPSHOT</version>
+  <artifactId>uk.ac.stfc.isis.ibex</artifactId>
+  <packaging>eclipse-repository</packaging>
+  <parent>
+  	<groupId>CSS_ISIS</groupId>
+  	<artifactId>uk.ac.stfc.isis.ibex.client.tycho.parent</artifactId>
+  	  <version>1.0.0-SNAPSHOT</version>
+  	<relativePath>../uk.ac.stfc.isis.ibex.client.tycho.parent</relativePath>
+  </parent>
+  
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-p2-director-plugin</artifactId>
+        <version>${tycho.version}</version>
+        <executions>
+          <execution>
+            <!-- install the product using the p2 director -->
+            <id>materialize-products</id>
+            <goals>
+              <goal>materialize-products</goal>
+            </goals>
+          </execution>
+          <execution>
+            <!-- create zip file with the installed product -->
+            <id>archive-products</id>
+            <goals>
+              <goal>archive-products</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+```
+
+The key area is the materialize-products section, this tells Tycho to actually create the product. Without this the build runs and checks everything is okay, but does not produce an executable.
 
 ## How to add a new plugin to the Maven build ##
 
