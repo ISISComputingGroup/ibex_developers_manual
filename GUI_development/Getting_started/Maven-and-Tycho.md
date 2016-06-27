@@ -291,4 +291,16 @@ The IBEX POM contains a lot of information, so here is a stripped down version t
 </project>
 
 ```
+Let's explain the various parts shown:
+* At the top we have the standard Maven boiler plate as discussed above
+* The properties section is used to define properties relevant to the build, in this case, the URLs for the various repositories we are using
+* The repositories section defined the version of Eclipse we are building against.
+* The build section defines the plugins that will be used to build the application. Most of the ones we used have been removed for clarity. The Tycho plugin entry tells Maven to download Tycho and use that to define the build
+* The modules section lists the locations of the POM files for the various projects that make up the application (remember that this is the parent POM)
 
+### A child POM ###
+A typical child POM is shown below
+
+```xml
+
+```
