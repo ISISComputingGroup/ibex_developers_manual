@@ -232,4 +232,63 @@ Profiles can be used for a number of things, such as specifying the JDK version 
 For more information see the [Maven website] (http://maven.apache.org/guides/introduction/introduction-to-profiles.html)
 
 ## Tycho ##
-To be written
+### What is it? ###
+Tycho is a set of Maven plugins and extensions for building Eclipse-based applications with Maven. Tycho allows Maven to support building bundles, fragments, features, P2 repositories, RCP applications etc.
+
+Tycho is used to build the IBEX GUI application that is deployed on the instruments.
+
+### The parent POM ###
+Maven allows a parent POM to be defined which contains references to the other POM files for the other projects that make up an application. This is used in the IBEX GUI because it allows the centralisation of the settings for building the application.
+
+The IBEX POM contains a lot of information, so here is a stripped down version to show the key points.
+
+```xml
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>CSS_ISIS</groupId>
+	<artifactId>uk.ac.stfc.isis.ibex.client.tycho.parent</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<tycho.version>0.20.0</tycho.version>
+		<tycho-repo.url>https://oss.sonatype.org/content/groups/public/</tycho-repo.url>
+		<kepler-repo.url>http://download.eclipse.org/releases/kepler</kepler-repo.url>
+		<kepler-updates-repo.url>http://download.eclipse.org/eclipse/updates/3.8</kepler-updates-repo.url>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<repositories>
+		<repository>
+			<id>kepler-updates</id>
+			<layout>p2</layout>
+			<url>${kepler-updates-repo.url}</url>
+		</repository>
+	</repositories>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho.version}</version>
+				<extensions>true</extensions>
+			</plugin>
+
+                <!-- Other plugins omitted such as unit testing and checkstyle -->
+		</plugins>
+	</build>
+
+	<modules>
+		<module>../uk.ac.stfc.isis.ibex.client.product</module>
+		<module>../uk.ac.stfc.isis.ibex.feature.base</module>
+		
+                <!-- Other plugins that make up IBEX would be listed here -->
+
+		<module>../uk.ac.stfc.isis.ibex.ui.mainmenu.tests</module>
+	</modules>
+</project>
+
+```
+
