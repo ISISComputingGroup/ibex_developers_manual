@@ -17,7 +17,7 @@ _Maven is a build automation tool used primarily for Java projects._
 ### What is a POM file? ###
 An XML file that describes the software project being built, its dependencies on other external modules and components, the build order, directories, and required plug-ins.
 
-In many ways it can be consider the equivalent of a Makefile as it defines how the project is built. Here is an example:
+In many ways it can be consider the equivalent of a C-style Makefile as it defines how the project is built. Here is an example:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
