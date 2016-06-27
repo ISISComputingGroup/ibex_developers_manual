@@ -319,3 +319,7 @@ A typical child POM is shown below
 Basically it is very simple - it points at the parent POM to get most of its information.
 
 The packaging type is defined a eclipse-plugin. This is a packaging type defined by Tycho, Maven itself has no idea what this means. Other Tycho types used in IBEX are eclipse-feature for features and eclipse-test-plugin for fragment projects that define unit tests.
+
+## How to add a new plugin to the Maven build ##
+
+https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Adding-a-Plugin-or-Feature-to-Maven-Build
