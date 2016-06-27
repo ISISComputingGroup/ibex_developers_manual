@@ -302,5 +302,20 @@ Let's explain the various parts shown:
 A typical child POM is shown below
 
 ```xml
-
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>uk.ac.stfc.isis.ibex.banner</artifactId>
+  <packaging>eclipse-plugin</packaging>
+  <parent>
+  	<groupId>CSS_ISIS</groupId>
+  	<artifactId>uk.ac.stfc.isis.ibex.client.tycho.parent</artifactId>
+  	<version>1.0.0-SNAPSHOT</version>
+  	<relativePath>../uk.ac.stfc.isis.ibex.client.tycho.parent</relativePath>
+  </parent>
+  <version>1.0.0-SNAPSHOT</version>
+</project>
 ```
+
+Basically it is very simple - it points at the parent POM to get most of its information.
+
+The packaging type is defined a eclipse-plugin. This is a packaging type defined by Tycho, Maven itself has no idea what this means. Other Tycho types used in IBEX are eclipse-feature for features and eclipse-test-plugin for fragment projects that define unit tests.
