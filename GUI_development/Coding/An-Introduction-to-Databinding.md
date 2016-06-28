@@ -105,7 +105,7 @@ public class Person extends ModelObject {
     }
 }
 ```
-Whenever a setter is called the firePropertyChange is called when informs all the listeners that the value has changed.
+Whenever a setter is called the firePropertyChange is called which informs all the listeners that the value has changed.
 Other than that it is a pretty standard Java class.
 
 ## Basic data-binding
