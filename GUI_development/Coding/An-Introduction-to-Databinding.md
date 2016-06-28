@@ -196,9 +196,9 @@ The binding of the name is a simple as it gets; an IObservableValue is create fo
 and these are bound together in the DataBindingContext object.
  
 For age, because it is an int it is possible to make the widget show an error message when is contains a value that is not an int 
-using ControlDeecorationSupport as shown.
+using ControlDecorationSupport as shown.
 
-If the UI is started then it possible to see the data-binding in action, by using the debugger it is possible to see that the 
+If the UI is started then it is possible to see the data-binding in action, by using the debugger it is possible to see that the 
 setName method is called every time a change is made to the widget text, i.e. every time a letter is added or removed.
 
 ## Validators
@@ -253,7 +253,7 @@ Binding bindValue2 = ctx.bindValue(WidgetProperties.text(SWT.Modify)
 ControlDecorationSupport.create(bindValue2, SWT.TOP | SWT.RIGHT); 
 
 ```
-This code create a label and text-box for the ID field of the Person class. 
+This code creates a label and text-box for the ID field of the Person class. 
 An instance of NumbersOnlyValidator is created and added to a UpdateValueStrategy object.
 The UpdateValueStrategy object defines how a data-binding responses to value changes - in this case it calls the validator before setting the value.
 The strategy is added as the third parameter of the bindValue method call, this is because the third parameter represents the strategy for updating the model based on the widget.
