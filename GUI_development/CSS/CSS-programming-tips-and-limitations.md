@@ -87,7 +87,7 @@ if PVUtil.getString(pvs[0])!=where:
 	pvs[0].setValue(where)
 ```
 
-So long as each opi has a different name, every time a new opi is loaded, the value will be different and so the script will run. 
+So long as each opi has a different name, every time a new opi is loaded, the value will be different and so the script will run. To make absolutely sure that the loc://where PV is unique, you can rename it as loc://where_$(DID), where $(DID) is a unique ID number assigned by CSS at runtime.
 
 NB The if test is required. The script must only change the name if it needs changing, otherwise the script runs endlessly, potentially bringing down CSS.
 
