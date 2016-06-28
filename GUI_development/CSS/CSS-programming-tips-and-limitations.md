@@ -79,11 +79,7 @@ actionList.add(action)
 In the synoptic view I have a hidden button with actions than can be reused.
 
 # Running a script on page load
-Isabella: at CLF we found the trick! In the script triggers, you specify `=1` and the script will run as the OPI loads! I know... I'm leaving the original doc content below for reference, as the alternative below was probably implemented in various OPIs.
-
-Old documentation:
-
-There is no way to specify that a script run when an opi is loaded. Instead scripts can only be triggered from PV changes. It is however possible to use a local PV to get the effect. Each page needs to have a script triggered from loc://where, which contains the following:
+There is no way to specify that a script run when an opi is loaded (Isabella: in theory it should work by having `=1` as a trigger PV, but for some reason it doesn't. We had it working like this at CLF). Instead scripts can only be triggered from PV changes. It is however possible to use a local PV to get the effect. Each page needs to have a script triggered from loc://where, which contains the following:
 
 ```
 where = display.getPropertyValue('name')
