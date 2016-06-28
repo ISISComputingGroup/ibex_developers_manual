@@ -7,10 +7,8 @@ See also the [getting started guide](First-time-installing-and-building-(Windows
 0. If you haven't installed genie_python as part of Python on your system yet, read the [getting started guide](First-time-installing-and-building-(Windows))
 1. If you don't have a development version of genie_python already, clone the repo e.g. navigate to `C:\Instrument\Dev` and run command `git clone https://github.com/ISISComputingGroup/genie_python.git`
 2. Make the desired modifications to genie_python
-3. Create a backup of your existing `C:\Instrument\Apps\Python\Lib\site-packages\genie_python` directory
-4. Copy the new source files to `C:\Instrument\Apps\Python\Lib\site-packages\genie_python`
-5. Call the new functionality from your existing Python distribution
-6. Don't forget to restore the original distribution!
+3. Run   build_python.bat - this will install a new version to c:\Instrument\Apps\Python-Build
+4. Call the new functionality by running c:\Instrument\Apps\Python-Build\genie_python.bat
 
 ### Building
 
@@ -32,7 +30,9 @@ The batch file does the following:
 
 * Copies the Scripts and site-packages directories into the clean Python installation
 
-* Zips the Python installation and bundles it with the install scripts etc. and copies it to the shared drive
+* Zips the Python installation and bundles it with the install scripts etc. 
+
+* if called with the "install" parameter, installs it to c:\Instrument\Apps\Python and also copies it to the shared drive
 
 ### Creating Python packages
 
@@ -53,7 +53,7 @@ For packages that we have modified it ourselves it is just necessary to create a
 
 ### Installing on the instruments
 
-On the instrument connect to the shared drive (\\isis\inst$\Kits$\CompGroup\ICP\Client\genie_python) and run the genie_python_install.bat file.
+On the instrument connect to the shared drive (\\\\isis\inst$\Kits$\CompGroup\ICP\Client\genie_python) and run the genie_python_install.bat file.
 
 ### Quickly deploy minor changes to instruments
 
