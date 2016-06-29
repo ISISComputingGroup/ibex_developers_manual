@@ -9,7 +9,7 @@ Here are the steps required in Eclipse:
 * Create a new Fragment Project
     * File > New > Project... > Plug-in Development > Fragment Project
     * Set the project name to \<the full name of the plug-in to test\>.tests
-    * Change the location to the repository rather than the workspace: xxx\ibex_gui\base\\<project_name> (don't forget the project name!!)
+    * Change the location to the repository rather than the workspace: xxx\ibex_gui\base\\\<project_name> (don't forget the project name!!)
     * Click "Next"
     * Make sure the Execution Environment points at the correct version of Java
     * Click the "Browse" button next to "Plug-in ID" 
