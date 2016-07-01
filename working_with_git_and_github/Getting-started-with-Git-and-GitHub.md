@@ -20,14 +20,10 @@ Or from TortoiseGit, select "Setting->Git" and select "global" and enter your de
 git config --global core.editor "start notepad++"
 ```
 
-* Set line-handling and passwords (on Windows):
+* Set line-handling and passwords:
 ```
 git config --global core.autocrlf true
 git config --global credential.helper wincred
 ```        
 
-* Set line-handling (on Linux):
-```
-git config --global core.autocrlf input
-```        
 
