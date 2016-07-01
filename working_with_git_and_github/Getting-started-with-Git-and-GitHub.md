@@ -3,6 +3,8 @@
 * Register with GitHub to create an account
 * Download and install [git client for Windows] (https://git-scm.com/download/win>) or [GitHub for Windows] (https://windows.github.com/) or [Tortoise Git] (https://tortoisegit.org/)
 
+(if asked, Choose `Checkout-as-is; commit unix style line-endings`)
+
 * Set you username and email address  via the command line:
 
 ```
@@ -18,7 +20,14 @@ Or from TortoiseGit, select "Setting->Git" and select "global" and enter your de
 git config --global core.editor "start notepad++"
 ```
 
-* Set line-handling (on Windows):
+* Set line-handling and passwords (on Windows):
 ```
 git config --global core.autocrlf true
+git config --global credential.helper wincred
 ```        
+
+* Set line-handling (on Linux):
+```
+git config --global core.autocrlf input
+```        
+
