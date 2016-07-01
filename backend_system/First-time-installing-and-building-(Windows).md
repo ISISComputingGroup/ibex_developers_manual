@@ -35,7 +35,7 @@ Install the [Java SDK for Windows x64](http://www.oracle.com/technetwork/java/ja
 Install [Maven](https://maven.apache.org/download.cgi) and follow the 'Windows tips' in [these instructions ](https://maven.apache.org/install.html) to set environment variables for the SDK with JAVA_HOME and maven in PATH
 
 # Install Git 
-Install Git [Getting-started-with-Git-and-GitHub]
+Install Git [Getting-started-with-Git-and-GitHub](Getting-started-with-Git-and-GitHub)
 
 # Recursive clone from git
 
