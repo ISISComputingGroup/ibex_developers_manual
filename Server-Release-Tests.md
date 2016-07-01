@@ -8,7 +8,7 @@ These are tests/checks that should be performed on the IBEX server after a relea
 
 ### LARMOR
 
-1. Ensure that the Chopers are not commented out in the configuration file
+1. Larmor has 3 mk3choppers, ensure that there are three Choppers enabled in the ioc/mk3chopper st.cmd file and that you can see three choppers connected in the GUI 
 
 ### IMAT
 
