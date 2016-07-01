@@ -47,6 +47,9 @@ cd C:\Instrument
 
 Note: If you run the `config_mysql.bat` script on an existing system YOU MAY LOSE HISTORICAL LOG DATA.
 
+- Record the release to the instrument (add to list in [Instrument Releases](https://github.com/ISISComputingGroup/IBEX/wiki#instrument-information))
+
+- Make sure these [tests are performed](server-release-tests), these are items we have missed in the past.
 
 ## Install IBEX Client
 
@@ -60,6 +63,9 @@ Note: If you run the `config_mysql.bat` script on an existing system YOU MAY LOS
 
 - You might find it convenient to create a desktop shortcut to use to launch the IBEX client.
 
+- If releasing to an instrument record the release to the instrument (add to list in [Instrument Releases](https://github.com/ISISComputingGroup/IBEX/wiki#instrument-information))
+
+- Make sure these [tests are performed](client-release-tests), these are items we have missed in the past.
 
 ## Start the Instrument
 
@@ -106,7 +112,3 @@ Key directories on the control server on the control server include
     * ``sample.txt``, lookup file of x-y coordinates of set-points for LARMOR sample rack.
     * ``sample_x.txt``, lookup file of x coordinate of set-points for LARMOR sample rack.
     * ``sample_y.txt``, lookup file of y coordinate of set-points for LARMOR sample rack.
-
-## Record Release
-
-1. Record the release to the instrument (add to list in [Instrument Releases](https://github.com/ISISComputingGroup/IBEX/wiki#instrument-information))
