@@ -1,4 +1,4 @@
-If you wish to clean up your area of all built/generated (i.e. not under version control) ready to do a complete rebuild, type:
+If you wish to clean up your area of all built/generated (i.e. not under version control) files ready to do a complete rebuild, type:
 ```
 git clean -fdx
 git submodule foreach "git clean -fdx"
