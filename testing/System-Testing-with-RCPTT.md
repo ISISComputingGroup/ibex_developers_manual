@@ -49,20 +49,27 @@ with [get-window "Edit Configuration"] {
     }
 }
 
-// Goes into instrument updating mode, so make sure we wait for this to finish
-wait 10000
-
 // Assert the new block exists
-get-view Blocks | get-label "NEW_BLOCK:" | get-property caption | equals "NEW_BLOCK: " | verify-true
+try -times 50 -delay 200 -command {
+    get-view Blocks | get-label "NEW_BLOCK:" | get-property caption | equals "NEW_BLOCK: " | verify-true
+}
 ```
 
-Note here the line `wait 10000` was added manually, this is required as the BlockServer takes some time to respond to the request. Anything that depends purely on the GUI should not need to wait like this.
-
-**Note that `wait` has generally been superseded by `try -times 500 -delay 200 -command { ... }` so that the test is not blocked longer than necessary**
+Note the `try` was added manually, this is required as the BlockServer takes some time to respond to the request. Anything that depends purely on the GUI should not need to wait like this. It is better to use a `try` than a `wait` so that the test is not blocked longer than necessary. The `try` will try to pass the command every `-delay` milliseconds it will try up to `-times` times.
 
 Finally, under 'All_Tests' choose 'Add Test Case' from the buttons on the right and add the newly created test. Add more tests here to run them one by one.
 
 ## Useful Concepts
+* IBEX Server State: Because the state of the IBEX server is changed by the GUI some tests are not repeatable. For example if the test create a config called test then the next time it is run then it will try to create test again and fail. To avoid this the `CleanIBEXServer` context is run. This will delete any configuration, synoptic or component which starts with a known prefix. It will also delete the data for the DAE. After this it restarts both the block server and DAE with a blank configuration. To make sure anything created in the test is also deleted use the `test_prefix` procedure to add the prefix to any names. For example:
+
+    ```
+    let [val synoptic_name [test_prefix "test_synoptic"]] {
+        ...
+        get-editbox -after [get-label "Name:"] | set-text $synoptic_name
+        ...
+    }
+    ```
+
 * Procedures: this is RCPTT's equivalent of functions. A procedure is a named block of code, which can receive arguments and therefore is useful for code reuse. See RCPTT documentation for details. Defined like
 `proc "proc_name"[val argument1] { <body> }`
 * Contexts: RCPTT has the concept of test contexts, an artefact that can be loaded/executed before a test case, which can be used for test setup. There are a few different types of contexts, each targeted to a specific type of action, like setting up the workspace or copying files into directories outside of the workspace. Contexts can also contain ECL code, and so can contain reusable sequences of commands to be executed on the UI before the actual test. Contexts containing ECL code can be used to simply group a number of related procedures, so the procedures are available for all tests using that context (this is equivalent to importing a module in Python). See RCPTT documentation for details.
@@ -74,12 +81,13 @@ Note that we started writing contexts containing procedures that could be useful
 ## Tips, Warnings and Gotchas
 
 * Try to avoid waits (see next point). Instead look for a change in the UI and continue when the change happens. For example if waiting for a label to change use:
-```
-try -times 10 -delay 200 -command {
-    get-view Dashboard | get-control Any -index 1 | get-property "getChildren().Control[0].getText()" 
+
+    ```
+    try -times 10 -delay 200 -command {
+        get-view Dashboard | get-control Any -index 1 | get-property "getChildren().Control[0].getText()" 
 	    | contains $text | verify-true
-}
-```
+    }
+    ```
 * Add wait XXXX when the GUI will be reading/writing to PVs and may take some time to respond
 * The perspective switcher buttons do not get recorded properly, to manually switch just do e.g. `get-label "Log Plotter" | click`. Note that we started writing procedures for these actions in the `SwitchToViewProcedures` context, to maximise code reuse.
 
