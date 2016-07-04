@@ -309,3 +309,7 @@ Finally, the last step is to add the plug-in we created to uk.ac.stfc.isis.ibex.
 ```   
    
 * Finally, start the GUI to check the new icon is shown
+
+### Troubleshooting
+
+If the perspective is not being shown in the switcher at the side it may be Eclipse being silly. Try clearing the workspace and resetting the target platform etc.
