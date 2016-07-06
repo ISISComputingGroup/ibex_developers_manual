@@ -31,10 +31,10 @@ If no instrument is specified, Nicos will run ```demo``` by default.
 
 There are at least two ways of specifying which instrument to run:
 * have an environmnent variable called ```INSTRUMENT``` containing the instrument's name: Nicos will then look for an instrument with that name under ```custom/```
-* have a ```nicos.conf``` file in the root ```nicos-core/``` directory, pointing at the instrument we wish to run. For example, to run the instrument ```IbexTestInstrument```, the file would contain:
+* have a ```nicos.conf``` file in the root ```nicos-core/``` directory, pointing at the instrument we wish to run. For example, to run the instrument ```IbexInstrument```, the file would contain:
 ```
 [nicos]
-instrument = IbexTestInstrument
+instrument = IbexInstrument
 ```
 
 Now, as we need the correct EPICS and CA environmnent variables to be set for running genie_python commands (and ultimately Nicos to run with all the other Ibex instrument processes), we need to launch Nicos processes through an EPICS terminal. This terminal already sets an ```INSTRUMENT``` environmnent variable, which gives us the option to simply have an instrument directory called ```custom/NDXXXX```, e.g. for ```NDXDEMO``` we would have ```custom/NDXDEMO/```.
