@@ -7,4 +7,4 @@ If a bug is discovered:
     1. If it is can be fixed for this cycle append the label "for current release"
     1. If it can not be fixed then add this bug to the release notes under Known Bugs
 
-Attached is a spreadsheet for the system tests.
+Use the [template for system testing](testing/manual_system_tests_template.xlsx).
