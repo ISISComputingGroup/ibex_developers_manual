@@ -13,9 +13,8 @@ For the remainder of this wiki, when we refer to Python, it is Genie Python and 
 
 ## Clone the Nicos repository
 
-Navigate to the install directory for Nicos (e.g. C:\Instrument\Dev) and run
-
-    git clone https://github.com/ISISComputingGroup/nicos-core.git
+The `nicos-core.git` repository is a submodule of the EPICS repository under `EPICS\ISIS\ScriptServer\nicos-core`.
+Make sure you have it in your system.
 
 ## Install C++ compiler for Python 2.7
 
