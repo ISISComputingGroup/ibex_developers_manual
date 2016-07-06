@@ -72,6 +72,7 @@ Adding the plugin directly to your configuration solves this.
 This is usually because a dependency is missing. See "I really cannot work out why the GUI won't start!" below.
 
 ### I really cannot work out why the GUI won't start! ###
+#### Also for runtime error "No application ID" ####
 
 Starting the GUI via Eclipse just doesn't seem to work and I cannot see why!
 
