@@ -312,4 +312,4 @@ Finally, the last step is to add the plug-in we created to uk.ac.stfc.isis.ibex.
 
 ### Troubleshooting
 
-If the perspective is not being shown in the switcher at the side it may be Eclipse being silly. Try clearing the workspace and resetting the target platform etc.
+If the perspective is not being shown in the switcher at the side it may be Eclipse being silly or you may not be running the right product. Be sure to re-run by going selecting the client product, rather than using the drop-down (which will run the same product as you used previously) Finally, try clearing the workspace and resetting the target platform etc.
