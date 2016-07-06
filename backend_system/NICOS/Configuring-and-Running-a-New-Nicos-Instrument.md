@@ -41,11 +41,4 @@ Now, as we need the correct EPICS and CA environmnent variables to be set for ru
 
 For testing purposes though, it's more convenient to have a ```nicos.conf``` file specifying the instrument to launch, even when running from an EPICS terminal.
 
-To run the instrument just need the daemon running (from the bin directory) in an epics terminal:
-
-     ..\..\..\Apps\Python\python.exe nicos-daemon
-
-To test it you might also want to start the front end with
-
-    ..\..\..\Apps\Python\python.exe nicos-gui
-
+Instructions on how to run Nicos can be found [here](Running-Nicos).
