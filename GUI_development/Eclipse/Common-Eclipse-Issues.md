@@ -6,9 +6,17 @@ Sometimes the error messages that Eclipse gives are a little opaque, so here are
 
 Possible solutions (in order of desperation):
 
-* Check the error message: you may need to add a dependency to the plugin that contains XXXXXXX. For example: if the error message is ```The type org.eclipse.ui.plugin.AbstractUIPlugin cannot be resolved. It is indirectly referenced from required .class files``` then the org.eclipse.ui plugin requires adding.
+* Check the error message: you may need to add a dependency to the plugin that contains XXXXXXX. For example: if the error message is ```The type org.eclipse.ui.plugin.AbstractUIPlugin cannot be resolved. It is indirectly referenced from required .class files``` then the org.eclipse.ui plugin requires adding.bundle to the required bundle in the manifest file of your plugin.
 * Delete the complaining plugin from the workspace and then re-import it.
 * Remove JRE System Library from the complaining plug-in's Java Build Path then re-add it.
+* This can also occur in similar cases to the **Invalid class hierarchy**.
+
+### Invalid class hierarchy ###
+
+* Make sure that you don't have any circular dependencies. That is package A imports package B imports package A.
+* If you have several layers of derived dependencies, particularly containing CSStudio or eclipse classes, make sure the correct bundles have been imported. Dependencies are not necessarily re-exported from the intermediate layers by default. There are two solutions:
+    * Add the base bundle to the list of dependencies of your new class via the manifest file
+    * Go through the classes you derive from. In their bundles go to the dependencies menu and click on the plugin you're deriving from. Click properties and check the box that says "Reexport this dependency". Once the intermediate layers all reexport their dependencies then it should become available to your class.
 
 
 ### Product XXXXXXXXXXX.product could not be found ###
