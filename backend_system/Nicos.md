@@ -8,7 +8,7 @@ How to install Nicos on Windows.
 
 How to run Nicos.
 
-# [Instrument Configuration](Configuring-and-Running-a-New-Nicos-Instrument)
+# [Instrument Configuration](Configuring-a-New-Nicos-Instrument)
 
 How to set up and configure a new Nicos instrument.
 

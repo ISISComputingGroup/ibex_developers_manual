@@ -1,4 +1,4 @@
-> [Wiki](Home) > [The Backend System](The-Backend-System) > [Nicos](Nicos) > Configuring and running a new Nicos instrument
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [Nicos](Nicos) > Configuring a new Nicos instrument
 
 Nicos instruments configurations are stored under ```nicos-core/custom/```. These configurations are designed to be very modular.
 
