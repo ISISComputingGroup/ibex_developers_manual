@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [System components](System-components) > BlockServer
+
 The BlockServer is **responsible** for:
 
 * Creating blocks
