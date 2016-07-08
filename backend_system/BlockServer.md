@@ -214,7 +214,7 @@ Note: This PV is currently used by the web dashboard
 
 **BLOCKSERVER:BUMPSTRIP_AVAILABLE**
 
-    Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:BUMPSTRIP_AVAILABLE
+    Command: caget %MYPVPREFIX%CS:BLOCKSERVER:BUMPSTRIP_AVAILABLE
     TODO: add description
 
 **BLOCKSERVER:GET_SCREENS**
