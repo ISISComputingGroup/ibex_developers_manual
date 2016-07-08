@@ -50,7 +50,7 @@ Read Commands
 Note: this used by genie_python for checking block names used in CSETs etc. are valid
 
     Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:BLOCKNAMES
-    Returns the block names as compressed and hexed JSON list(CHAR waveform)
+    Returns the block names as compressed and hexed JSON list (CHAR waveform)
 
 **BLOCKSERVER:BLOCK_DETAILS**
 
