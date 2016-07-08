@@ -23,9 +23,13 @@ git commit -m "Added an image to Using the Wiki page"
 git push
 ```
 
+### Adding or Editing Files
+
+To add or edit a file you again need to check out the Wiki and add manually, or edit and push existing documents. Documents should be stored with their associated pages.
+
 ### Adding breadcrumb trails
 
-The Wiki is largely unstrctured. To help provide navigation breadcrumb trails can be used. Insert the following at the top of the page:
+The Wiki is largely unstructured. To help provide navigation breadcrumb trails can be used. Insert the following at the top of the page:
 
 ```
 > [Wiki](Home) ▸ [[Level 1]] ▸ [[Level 2]] ▸ **Document Title**
