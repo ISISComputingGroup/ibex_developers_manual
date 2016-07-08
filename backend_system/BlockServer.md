@@ -52,6 +52,16 @@ Note: this used by genie_python for checking block names used in CSETs etc. are 
     Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:BLOCKNAMES
     Returns the block names as compressed and hexed JSON list(CHAR waveform)
 
+**BLOCKSERVER:BLOCK_DETAILS**
+
+    Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:BLOCK_DETAILS
+    TODO: add description
+
+**BLOCKSERVER:BLOCK_RULES**
+
+    Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:BLOCK_RULES
+    TODO: add description
+
 **BLOCKSERVER:GROUPS**
 Note: This PV is currently used by the web dashboard
 
@@ -62,6 +72,11 @@ Note: This PV is currently used by the web dashboard
           {"blocks": ["testblock3", "testblock4"], "name": "Different group", "component": null},
           {"blocks": [], "name": "NONE", "component": null}
          ]'
+
+**BLOCKSERVER:GROUP_RULES**
+
+    Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:GROUP_RULES
+    TODO: add description
 
 **BLOCKSERVER:CONFIGS**
 
