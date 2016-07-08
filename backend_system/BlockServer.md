@@ -425,7 +425,7 @@ Note: Used by the client(s) for "save" and "save as" for the current active conf
 
 **BLOCKSERVER:BUMPSTRIP_AVAILABLE:SP**
 
-    Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:BUMPSTRIP_AVAILABLE:SP
+    Command: caput %MYPVPREFIX%CS:BLOCKSERVER:BUMPSTRIP_AVAILABLE:SP
     TODO: add description
 
 **BLOCKSERVER:SET_SCREENS**
