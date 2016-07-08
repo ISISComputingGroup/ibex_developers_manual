@@ -431,14 +431,14 @@ Note: Used by the client(s) for "save" and "save as" for the current active conf
 **BLOCKSERVER:SET_SCREENS**
 
     Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:SET_SCREENS
-    Sets an XML list of available device screens descriptions.
+    Sets a compressed and hexed XML list of available device screens descriptions.
 
-    Returns "OK" or an error message.
+    Returns "OK" or an error message (compressed and hexed JSON).
 
 **SYNOPTICS:SET_DETAILS**
 
     Command: caput -S %MYPVPREFIX%CS:SYNOPTICS:SET_DETAILS abcdefabdcdefabcdef1234567890
-    Saves the synoptic with supplied compressed and hexed xml data, saving under the name specified in the xml.
+    Saves the synoptic with supplied compressed and hexed XML data, saving under the name specified in the XML.
 	
     Returns "OK" or an error message (compressed and hexed JSON).
 	
