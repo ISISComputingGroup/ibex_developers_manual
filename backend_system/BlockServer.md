@@ -186,19 +186,19 @@ Note: This PV is currently used by the web dashboard
     Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:CURR_CONFIG_CHANGED
     Returns 1 when the active configuration has been modified on the filesystem. Returns 0 otherwise. 
 
-**BLOCKSERVER:SYNOPTICS:NAMES**
+**SYNOPTICS:NAMES**
 
-    Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:SYNOPTICS:NAMES
+    Command: caget -S %MYPVPREFIX%CS:SYNOPTICS:NAMES
     Returns a list of the available synoptics formatted as compressed then hexed JSON (CHAR waveform)
 
-**BLOCKSERVER:SYNOPTICS:*synoptic_name*:GET**
+**SYNOPTICS:*synoptic_name*:GET**
 
-    Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:SYNOPTICS:*synoptic_name*:GET
+    Command: caget -S %MYPVPREFIX%CS:SYNOPTICS:*synoptic_name*:GET
     Returns a compressed and hexed string containing the XML for the specified synoptic (CHAR waveform)
 
-**BLOCKSERVER:SYNOPTICS:GET_DEFAULT**
+**SYNOPTICS:GET_DEFAULT**
 
-    Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:SYNOPTICS:GET_DEFAULT
+    Command: caget -S %MYPVPREFIX%CS:SYNOPTICS:GET_DEFAULT
     Returns a compressed and hexed string containing the XML for the current synoptic (CHAR waveform)
 		 
 --------------
@@ -371,16 +371,16 @@ Note: Used by the client(s) for "save" and "save as" for the current active conf
 
     Returns "OK" or an error message (compressed and hexed JSON).
 
-**BLOCKSERVER:SYNOPTICS:SET_DETAILS**
+**SYNOPTICS:SET_DETAILS**
 
-    Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:SYNOPTICS:SET_DETAILS abcdefabdcdefabcdef1234567890
+    Command: caput -S %MYPVPREFIX%CS:SYNOPTICS:SET_DETAILS abcdefabdcdefabcdef1234567890
     Saves the synoptic with supplied compressed and hexed xml data, saving under the name specified in the xml.
 	
     Returns "OK" or an error message (compressed and hexed JSON).
 	
-**BLOCKSERVER:SYNOPTICS:DELETE**
+**SYNOPTICS:DELETE**
 
-    Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:SYNOPTICS:DELETE abcdefabdcdefabcdef1234567890
+    Command: caput -S %MYPVPREFIX%CS:SYNOPTICS:DELETE abcdefabdcdefabcdef1234567890
 	Removes a synoptic from the BlockServer and filesystem. Requires a compressed and hexed JSON list of synoptics names to remove.
     If this is done in error the synoptic can be recovered from version control. For removing one synoptic only, create a list of one item.
 	
