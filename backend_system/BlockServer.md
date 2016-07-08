@@ -222,6 +222,11 @@ Note: This PV is currently used by the web dashboard
     Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:GET_SCREENS
     Returns a compressed and hexed string containing the XML for the list of the available device screens (OPI) descriptions (CHAR waveform)
 
+**BLOCKSERVER:SCREENS_SCHEMA**
+
+    Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:SCREENS_SCHEMA
+    Returns a compressed and hexed string containing the devices screens XML schema (CHAR waveform)
+
 **SYNOPTICS:NAMES**
 
     Command: caget -S %MYPVPREFIX%CS:SYNOPTICS:NAMES
@@ -245,7 +250,7 @@ Note: This PV is currently used by the web dashboard
 **SYNOPTICS:SCHEMA**
 
     Command: caget -S %MYPVPREFIX%CS:SYNOPTICS:SCHEMA
-    Returns a compressed and hexed string containing the synoptics XML schema
+    Returns a compressed and hexed string containing the synoptics XML schema (CHAR waveform)
 
 		 
 --------------
