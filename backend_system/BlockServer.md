@@ -242,7 +242,7 @@ Note: This PV is currently used by the web dashboard
     Command: caget -S %MYPVPREFIX%CS:SYNOPTICS:GET_DEFAULT
     Returns a compressed and hexed string containing the XML for the current synoptic (CHAR waveform)
 
-**SYNOPTICS:__BLANK__:GET**
+**SYNOPTICS:\__BLANK\__:GET**
 
     Command: caget -S %MYPVPREFIX%CS:SYNOPTICS:__BLANK__:GET
     TODO: add description
