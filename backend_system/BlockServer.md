@@ -433,7 +433,7 @@ Note: Used by the client(s) for "save" and "save as" for the current active conf
     Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:SET_SCREENS
     Sets an XML list of available device screens descriptions.
 
-    Returns "OK" or an error message (compressed and hexed JSON).
+    Returns "OK" or an error message.
 
 **SYNOPTICS:SET_DETAILS**
 
