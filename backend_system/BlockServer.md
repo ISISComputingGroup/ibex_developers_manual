@@ -220,7 +220,7 @@ Note: This PV is currently used by the web dashboard
 **BLOCKSERVER:GET_SCREENS**
 
     Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:GET_SCREENS
-    Returns a compressed and hexed string containing the XML for the list of the available device screens (OPI) descriptions (CHAR waveform)
+    Returns a compressed and hexed string containing the XML for the list of the available device screens descriptions (CHAR waveform)
 
 **BLOCKSERVER:SCREENS_SCHEMA**
 
