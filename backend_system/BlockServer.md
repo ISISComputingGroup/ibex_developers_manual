@@ -189,7 +189,12 @@ Note: This PV is currently used by the web dashboard
           "groups": [],
           "name": "",
 		  "description": ""
-         }'		
+         }'	
+
+**BLOCKSERVER:CONF_DESC_RULES**
+
+    Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:CONF_DESC_RULES
+    TODO: add description	
 
 **BLOCKSERVER:*component_pv*:DEPENDENCIES**
 
@@ -200,6 +205,22 @@ Note: This PV is currently used by the web dashboard
 
     Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:CURR_CONFIG_CHANGED
     Returns 1 when the active configuration has been modified on the filesystem. Returns 0 otherwise. 
+
+
+**BLOCKSERVER:SERVER_STATUS**
+
+    Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:SERVER_STATUS
+    TODO: add description
+
+**BLOCKSERVER:BUMPSTRIP_AVAILABLE**
+
+    Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:BUMPSTRIP_AVAILABLE
+    TODO: add description
+
+**BLOCKSERVER:GET_SCREENS**
+
+    Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:GET_SCREENS
+    Returns a compressed and hexed string containing the XML for the list of the available device screens (OPI) descriptions (CHAR waveform)
 
 **SYNOPTICS:NAMES**
 
@@ -215,6 +236,17 @@ Note: This PV is currently used by the web dashboard
 
     Command: caget -S %MYPVPREFIX%CS:SYNOPTICS:GET_DEFAULT
     Returns a compressed and hexed string containing the XML for the current synoptic (CHAR waveform)
+
+**SYNOPTICS:__BLANK__:GET**
+
+    Command: caget -S %MYPVPREFIX%CS:SYNOPTICS:__BLANK__:GET
+    TODO: add description
+
+**SYNOPTICS:SCHEMA**
+
+    Command: caget -S %MYPVPREFIX%CS:SYNOPTICS:SCHEMA
+    Returns a compressed and hexed string containing the synoptics XML schema
+
 		 
 --------------
 Write Commands
@@ -386,6 +418,18 @@ Note: Used by the client(s) for "save" and "save as" for the current active conf
 
     Returns "OK" or an error message (compressed and hexed JSON).
 
+**BLOCKSERVER:BUMPSTRIP_AVAILABLE:SP**
+
+    Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:BUMPSTRIP_AVAILABLE:SP
+    TODO: add description
+
+**BLOCKSERVER:SET_SCREENS**
+
+    Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:SET_SCREENS
+    Sets an XML list of available device screens descriptions.
+
+    Returns "OK" or an error message (compressed and hexed JSON).
+
 **SYNOPTICS:SET_DETAILS**
 
     Command: caput -S %MYPVPREFIX%CS:SYNOPTICS:SET_DETAILS abcdefabdcdefabcdef1234567890
@@ -400,6 +444,11 @@ Note: Used by the client(s) for "save" and "save as" for the current active conf
     If this is done in error the synoptic can be recovered from version control. For removing one synoptic only, create a list of one item.
 	
     Returns "OK" or an error message (compressed and hexed JSON).
+
+**SYNOPTICS:*synoptic_name*:SET**
+
+    Command: caput -S %MYPVPREFIX%CS:SYNOPTICS:*synoptic_name*:SET
+    TODO: add descriptions
 	
 -----------------
 Archiver Settings
