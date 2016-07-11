@@ -202,11 +202,6 @@ Note: This PV is currently used by the web dashboard
 
     Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:*component_pv*:DEPENDENCIES
     Returns a list of the configurations that contain the component specified in *component_pv*, formatted as compressed then hexed JSON (CHAR waveform)
-		 
-**BLOCKSERVER:CURR_CONFIG_CHANGED**
-
-    Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:CURR_CONFIG_CHANGED
-    Returns 1 when the active configuration has been modified on the filesystem. Returns 0 otherwise. 
 
 
 **BLOCKSERVER:SERVER_STATUS**
