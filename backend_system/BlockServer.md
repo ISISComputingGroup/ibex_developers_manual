@@ -413,13 +413,6 @@ Note: Used by the client(s) for "save" and "save as" for the current active conf
 
     Returns "OK" or an error message (compressed and hexed JSON).
 	
-**BLOCKSERVER:ACK_CURR_CHANGED**
-
-    Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:ACK_CUR_CHANGED
-	Resets the CURR_CONFIG_CHANGED PV to a 0.
-
-    Returns "OK" or an error message (compressed and hexed JSON).
-
 **BLOCKSERVER:BUMPSTRIP_AVAILABLE:SP**
 
     Command: caput %MYPVPREFIX%CS:BLOCKSERVER:BUMPSTRIP_AVAILABLE:SP
