@@ -70,6 +70,7 @@ Finally, under 'All_Tests' choose 'Add Test Case' from the buttons on the right 
     }
     ```
 
+* Updating the clean ibex script. The script to clean the server is stored in `RCPTT_Tests\cleanIBEXServer\cleanIBEXServer.py` but this is not run directly from the system tsts. Instead the `CleanIBEXServerFiles` context copied it to a known location. To update the context remove the current folder and then add in the cleanIBEXServer folder. This updates the file.
 * Procedures: this is RCPTT's equivalent of functions. A procedure is a named block of code, which can receive arguments and therefore is useful for code reuse. See RCPTT documentation for details. Defined like
 `proc "proc_name"[val argument1] { <body> }`
 * Contexts: RCPTT has the concept of test contexts, an artefact that can be loaded/executed before a test case, which can be used for test setup. There are a few different types of contexts, each targeted to a specific type of action, like setting up the workspace or copying files into directories outside of the workspace. Contexts can also contain ECL code, and so can contain reusable sequences of commands to be executed on the UI before the actual test. Contexts containing ECL code can be used to simply group a number of related procedures, so the procedures are available for all tests using that context (this is equivalent to importing a module in Python). See RCPTT documentation for details.
