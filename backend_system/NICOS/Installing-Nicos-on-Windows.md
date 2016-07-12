@@ -68,6 +68,8 @@ From the location of nicos-core, run the following
 
     ...\Python\scripts\pip.exe install -r requirements.txt
 
+*Last time this didn't work for me and I got the error `Fatal error in launcher: Unable to create process using '"'`. In this case running `...\Python\python.exe -m pip install -r requirements.txt` worked instead*
+
 This will grab all of the required Python libraries for Nicos. Then run:
 
     ...\Python\scripts\pip.exe install --extra-index-url https://forge.frm2.tum.de/simple  nicos-pyctl
