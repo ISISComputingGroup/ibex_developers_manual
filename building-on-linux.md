@@ -136,7 +136,8 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
         python-pip \
         python-tk \
         re2c \
-        swig
+        swig \
+        python-docutils
 ```
 
 clone epics repo
