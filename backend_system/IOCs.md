@@ -30,6 +30,7 @@
 
 * [Mecury iTC](MercuryiTC)
 * [Glalil/Motor and SetPoints](Motor-Galil-SetPoints)
+* [Barndoors and Momentum Slits on MUON Front End](Barndoors-and-Momentum-Slits-on-MUON-Front-End)
 
 ## Further reading ##
 
