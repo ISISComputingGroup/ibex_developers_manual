@@ -162,6 +162,12 @@ record(ao, "$(P)CHAN_A:TRIG_LVL:SP")
 
 `devHameg_8123.proto` is the name of the protocol file for the Hameg created here.
 
+The newly created db file needs to be added to the `Makefile` file in `HAMEG8123-IOC-01App\Db`:
+```
+#DB += xxx.db
+DB += <db_file_name>.db
+```
+
 The final step is to rationalise the st.cmd files for each IOC. There will be a default `st.cmd` for each IOC beneath the `iocBoot` directory, but it will require information adding such as information about the db files, protocol files, hardware connection etc. The final Hameg `st.cmd` looks like this (the bits added have been highlighted):
 
 ```
