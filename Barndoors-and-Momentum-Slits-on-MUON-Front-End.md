@@ -6,8 +6,8 @@ The momentum slits are controlled by giving a distance between the slits to a PV
 
 | PV  | Description |
 | --- | ------------|
-| <Instrument>:MOMENTUMSLITS | Momentum slit motor record, set to gap wanted |
-| <Instrument>:$(MTR) | Underlying motor record, set as a macro in the st.cmd file |
+| \<Instrument>MOMENTUMSLITS | Momentum slit motor record, set to gap wanted |
+| \<Instrument>$(MTR) | Underlying motor record, set as a macro in the st.cmd file |
 
 ## Barndoors
 
@@ -15,8 +15,8 @@ Barndoors can be opened different distances. The distance is no linearly connect
 
 | PV  | Description |
 | --- | ------------|
-| <Instrument>$(INST)BARNDOORS | Barndoors motor record for the instrument $INST. Set to gap wanted |
-| <Instrument>$(INST)$(MTR) | Underlying motor record for instrument $INST, set as a macro in the st.cmd file |
+| \<Instrument>$(INST)BARNDOORS | Barndoors motor record for the instrument $INST. Set to gap wanted |
+| \<Instrument>$(INST)$(MTR) | Underlying motor record for instrument $INST, set as a macro in the st.cmd file |
 
 ## Setup
 
