@@ -17,7 +17,7 @@ Edit the OPI not that some Macros are provided.
 ## Macros
 When an OPI is opened from the synopic (via OpiTargetView.java) you get at least the following macros automatically set:
 
-- `NAME`: the opt title, as defined by the synoptic component editor (e.g. "Slit 2")
+- `NAME`: the OPI title, as defined by the synoptic component editor (e.g. "Slit 2"). When setting up the OPI this acro should be in the Name property of the OPI.
 - `OPINAME`: name of the OPI file opened (e.g. Slit.opi)
 - `P`: the instrument pv prefix (e.g. IN:LARMOR:)
 Others macros may also be available, passed down from higher screens (also defined via the synoptic editor component)
