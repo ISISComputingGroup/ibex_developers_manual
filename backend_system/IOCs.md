@@ -15,6 +15,8 @@ Building a new IOC? Before you get started, take a look at the relevant [instrum
 
 * [Running (and testing) IOC](Running-IOCs)
 
+* [Emulating devices](Emulating-Devices)
+
 ## Conventions
 
 * [ISIS PV guide](ISIS-PV-Guide)
