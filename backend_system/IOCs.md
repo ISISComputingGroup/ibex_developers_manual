@@ -14,7 +14,8 @@ Building a new IOC? Before you get started, take a look at the relevant [instrum
 * [Record simulation](Record-Simulation)
 
 * [Running (and testing) IOC](Running-IOCs)
-## Conventions ##
+
+## Conventions
 
 * [ISIS PV guide](ISIS-PV-Guide)
 
