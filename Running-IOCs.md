@@ -54,7 +54,7 @@ Use the following to read a waveform PV of a compressed hexed string
 
 (uzhex - think unzip hex)
 
-# Trouble Shooting
+# Troubleshooting
 
 It is possible to put stream into a debug mode where everything sent and received is written to the console. To do this simply add to you st.cmd file (defined on your aysn port) :
 
