@@ -53,3 +53,14 @@ Use the following to read a waveform PV of a compressed hexed string
     caget -t -S <PV NaME>|uzhex
 
 (uzhex - think unzip hex)
+
+# Trouble Shooting
+
+It is possible to put stream into a debug mode where everything sent and received is written to the console. To do this simply add to you st.cmd file (defined on your aysn port) :
+
+```
+asynSetTraceMask("L0",-1,0x9) 
+asynSetTraceIOMask("L0",-1,0x2)
+```
+
+where <port> is the port name you used in the asyn setup eg `drvAsynSerialPortConfigure(<port>...`
