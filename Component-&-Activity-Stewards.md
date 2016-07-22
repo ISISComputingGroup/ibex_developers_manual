@@ -1,9 +1,10 @@
 This page lists the component & activity stewards.
 
 ## What is a component / activity steward?
-In a nutshell, a Component or Activity Steward is the individual responsible for the development and quality of a component or activity.  The role itself is [defined in more detail](#definitionSteward) below but, in essence, it means that the named individual is responsible for the "well-being" of a of a component or activity.
+In a nutshell, a Component or Activity Steward is the individual responsible for the development and quality of a component or activity.  The role itself is [defined in more detail](#definitionSteward) below but, in essence, it means that the named individual is responsible for the "well-being" of a component or activity.  Knowing who the relevant steward is means you have a first point of contact for finding out about that particular component or activity.
 
-## List of Components & Stewards
+## List of Components/Activities & Stewards
+The list of components/activities and stewards is not set in stone.  It will change over time.
 Component/Activity | Steward |
 ------------------ | ------- |
 Blockserver | Matt |
