@@ -12,6 +12,7 @@ Blockserver | Matt |
 Muon Front End | Kathryn |
 Script Server (NICOS) | Dom |
 IRIS & OSIRIS | David |
+ZOOM | Kathryn |
 
 <a name="definitionSteward"></a>
 ## Definition of the role of Component / Activity Steward
