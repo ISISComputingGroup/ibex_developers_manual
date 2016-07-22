@@ -5,6 +5,7 @@ In a nutshell, a Component or Activity Steward is the individual responsible for
 
 ## List of Components/Activities & Stewards
 The list of components/activities and stewards is not set in stone.  It will change over time.
+
 Component/Activity | Steward |
 ------------------ | ------- |
 Blockserver | Matt |
