@@ -20,7 +20,7 @@ The emulation framework can be found in [this repo](https://github.com/ISISCompu
 1. Modify the function `process` to give the correct return for the incoming data.
     1. The incoming data will be the command defined in the `out` field of the protocol file. It's the command you would expect to send to the actual device.
     1. Change the function to return the data you want subject to specific input.
-    1. TODO: Note that it's possible to modify the emulator on the fly as it's running in case you want to push it into a specific state. I haven't tried that yet. 
+    1. Note that it's possible to modify the emulator's state on the fly as it's running in case you want to push it into a specific state (as a backdoor). You can do this by connecting a telnet client like PuTTY to the running emulator, and any change in its state will be picked up by the IOC. 
 1. Run the emulator python file (preferably with genie_python).
     1. You will need to know the port the emulator is running on. If you just run the emulator as-is, it will pick a free port and report the port number from the console. Alternatively you can run `...\myNewDevice_emulator.py [PORT]` where `[PORT]` is the port number you want to run on.
 
