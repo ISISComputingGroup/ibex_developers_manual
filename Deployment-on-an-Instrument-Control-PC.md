@@ -55,7 +55,7 @@ Note: If you run the `config_mysql.bat` script on an existing system YOU MAY LOS
 
 - From a command prompt type the following (if your command prompt doesn't support UNC paths, use pushd instead of cd):
 
-    cd \\isis\inst$\Kits$\CompGroup\ICP\Client
+    `cd \\isis\inst$\Kits$\CompGroup\ICP\Client`
 
 - Inside this folder you will see a number of folders with names of the form `BUILDmmm`, where `mmm` is a 3 digit number.  Change directory to the build folder which contains the most recent successful clean build.  
 
