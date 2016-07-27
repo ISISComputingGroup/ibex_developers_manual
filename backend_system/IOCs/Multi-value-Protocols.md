@@ -2,7 +2,7 @@
 
 ## Dealing with multi-value streamdevice protocols
 
-It often happens that a single read query to a device returns multiple values, which we ultimately need to store in separate PVs. Similarly, sometimes a single write command requires multiple values. Below are some tips on how deal with multi-value read protocols, but the same kind of tricks can be applied to write protocols too.
+It often happens that a single read query to a device returns multiple values, which we ultimately need to store in separate PVs. Similarly, sometimes a single write command requires multiple values. Below are some tips on how to deal with multi-value read protocols, but the same kind of tricks can be applied to write protocols too.
 
 ### Passing the PV names as protocol parameters
 
