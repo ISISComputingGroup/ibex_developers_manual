@@ -19,6 +19,8 @@ Building a new IOC? Before you get started, take a look at the relevant [instrum
 
 ## Conventions
 
+* [IOC naming](IOC-Naming)
+
 * [ISIS PV guide](ISIS-PV-Guide)
 
 * [PV naming](PV-Naming)

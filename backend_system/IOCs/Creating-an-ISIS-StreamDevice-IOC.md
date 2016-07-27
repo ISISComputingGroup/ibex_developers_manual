@@ -82,7 +82,7 @@ All IOCs used at ISIS reside in the `EPICS\ioc\master` directory.
 
 For this example we are using the Hameg 8123.
 
-NOTE: in this example the IOC name is HAMEG8123. New IOCs names should be max 8 characters long and be in uppercase letters. The same name (with the same casing) should be used both for the top-level IOC directory under `EPICS\ioc\master` and in the `makeBaseApp` command, as in the example below.
+Please take note of the [IOC naming conventions](IOC-Naming). The same name (with the same casing) should be used both for the top-level IOC directory under `EPICS\ioc\master` and in the `makeBaseApp` command, as in the example below.
 
 First create the necessary directory structure and IOC boilerplate, starting from the `EPICS\ioc` directory (we're going to create at least two IOCs):
 ```
