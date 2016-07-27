@@ -7,6 +7,7 @@ Download and install [Strawberry Perl](http://strawberryperl.com/)
 
 # Install Visual Studio 2010
 Install Visual Studio 2010 
+
 Install SDK 7.1 
 -The SDK may fail if you have these installed: 
 * Microsoft Visual C++ 2010 x86 Redistributable
