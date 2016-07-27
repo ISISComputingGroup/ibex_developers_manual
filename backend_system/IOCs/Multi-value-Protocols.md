@@ -57,7 +57,7 @@ and the prefix can be pre-pended to the PV names inside the protocol:
 in "%f,%(\$1\$2)d,%(\$1\$3)d";}
 ```
 
-If the protocol returns many values, even this approach may result in too long `INP` fields. One solution would be to simply pass the prefix `$(P)` as an argument and hard-code the rest of the PV names inside the protocol, but we try to avoid this as much as possible as it intrudoces extra coupling between the protocol and the db file. Read on for other tricks!
+If the protocol returns many values, even this approach may result in too long `INP` fields. One solution would be to simply pass the prefix `$(P)` as an argument and hard-code the rest of the PV names inside the protocol, but we try to avoid this as much as possible as it introduces extra coupling between the protocol and the db file. Read on for other tricks!
 
 ### Reading into the inputs of a calc record
 
