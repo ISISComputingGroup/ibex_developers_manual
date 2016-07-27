@@ -4,7 +4,9 @@ These are instructions for creating an IOC wrapper for a VI using lvDCOM. It ass
 
 ## 1. Create ISIS IOC
 
-I plan to make these into a template (so you will just need to run makeBaseApp.pl and not do the edits), but for now this is the manual way
+I plan to make these into a template (so you will just need to run makeBaseApp.pl and not do the edits), but for now this is the manual way.
+
+Please take note of the [IOC naming convention](IOC-Naming) before proceeding.
 
 1. Create a public repository to work in called EPICS-<device>.
 1. In the `EPICS\ISIS` directory create a directory called <device>
