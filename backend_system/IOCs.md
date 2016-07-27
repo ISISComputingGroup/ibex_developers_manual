@@ -33,6 +33,7 @@ Building a new IOC? Before you get started, take a look at the relevant [instrum
 
 * [Using LVDCOM](Using-LVDCOM)
 * [Convert Record](convert-record)
+* [Multi-value Protocols Tricks](Multi-value-Protocols)
 
 ## Specific IOC Information
 
