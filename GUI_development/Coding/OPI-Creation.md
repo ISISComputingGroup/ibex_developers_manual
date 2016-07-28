@@ -53,7 +53,7 @@ In the xml file:
 * `value.macros.macro.name`: name of macro in OPI
 * `value.macro.macro.description`: description of macro value which appears in target details when user clicks on the macro
 
-You can specify which icon should appear in the synoptic with the file `ui/synoptic/component/icons/ComponentIcons.java`.
+You can specify which icon should appear in the synoptic with the file `ui/devicescreeens/ComponentIcons.java`.
 If you need to add new icons for the synoptic, these are under `uk.ac.stfc.isis.ibex.ui.devicescreens/icons` (both big icons for the actual synoptic and thumbnails for the synoptic editor).
 
   
