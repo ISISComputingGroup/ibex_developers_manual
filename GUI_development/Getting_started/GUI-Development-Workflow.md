@@ -13,6 +13,7 @@
 1. **Create a pull request (developer)**
     * Reference the git issue in the comments, for example: ```ISISComputingGroup/IBEX/issues/1016```
     * Assign the correct milestone
+    * Add a record of the changes to [Release Notes](https://github.com/ISISComputingGroup/IBEX/wiki/ReleaseNotes_Dev) under "Changes in software but still on a branch"
 1. **Review (reviewer)**
     * Assigne the pull request to yourself to indicate you are reviewing it
     * Check that the pull request has been built by Jenkins with no errors
@@ -20,6 +21,7 @@
     * If it is okay then move to the next step, otherwise inform the developer of the problem and add a comment to the pull request
 1. **Merge the changes (reviewer or developer)**
     * If it is a simple merge the reviewer can do it, otherwise ask the developer to do it
+    * Move the relevant entry in the [Release Notes](https://github.com/ISISComputingGroup/IBEX/wiki/ReleaseNotes_Dev) from "Changes in software but still on a branch" to "Changes merged into master"
 1. **Delete the branch (reviewer or developer)**
 1. **Close the ticket in Trac (reviewer or developer)**
 
