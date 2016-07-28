@@ -214,6 +214,7 @@ Notice that for my changes it says "Able to merge". This means that my changes d
 ![GitHub](GUI_development/images/gui_development_workflow/checked_pr.png)
 	
 * That is us done for now as the ticket now needs to be reviewed
+* Add a summary of your changes to the table under "Changes in software but still on a branch" in the [Release Notes](https://github.com/ISISComputingGroup/IBEX/wiki/ReleaseNotes_Dev). If your changes require modifications to files on some or all of the instruments to work correctly, document these in the relevant section.
 
 ## Reviewing a pull request
 
@@ -324,6 +325,7 @@ To https://github.com/ISISComputingGroup/ibex_gui.git
    06cecee..2aaaf10  master -> master
 ```
 * Now if you look at the pull request on GitHub it should say it has been merged and closed.
+* Move the changes documented in the [Release Notes](https://github.com/ISISComputingGroup/IBEX/wiki/ReleaseNotes_Dev) down into the table in the "Changes merged into master" section, as well as any required instrument-specific modifications related to the same ticket.
 
 ## Deleting the branch
 
