@@ -54,7 +54,7 @@ In the xml file:
 * `value.macro.macro.description`: description of macro value which appears in target details when user clicks on the macro
 
 You can specify which icon should appear in the synoptic with the file `ui/synoptic/component/icons/ComponentIcons.java`.
-If you need to add new icons for the synoptic, these are under `uk.ac.stfc.isis.ibex.ui.synoptic/icons` (both big icons for the actual synoptic and thumbnails for the synoptic editor).
+If you need to add new icons for the synoptic, these are under `uk.ac.stfc.isis.ibex.ui.devicescreens/icons` (both big icons for the actual synoptic and thumbnails for the synoptic editor).
 
   
 # Testing
