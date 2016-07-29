@@ -34,4 +34,6 @@ Next the EPICS build is copied over, the contents of `C:\Instrument\Settings\` a
 
 See [special notes on configuring Jenkins for the GUI tests](Adding-a-new-Windows-machine-to-Jenkins#jenkins_gui_tests).
 
+### Other
 
+* [Jenkins trouble shooting](trouble-shooting-jenkins)
