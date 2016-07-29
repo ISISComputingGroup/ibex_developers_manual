@@ -40,5 +40,6 @@ There are some macros that need to be set which have specific names, and do not 
 | SMC100_0n | MTRCTRL | The motor controller number, e.g. it's 08 in MOT:MTR0805; note that GALIL IOCs take values 01-10 | |
 | PIMOT_0n | MTRCTRL | The motor controller number, e.g. it's 08 in MOT:MTR0805; note that GALIL IOCs take values 01-10 | |
 | ECLAB_0n | IPADDR | IP Address of the device | |
+| LKSH336_0n | IPADDR | IP Address of the device | |
 
 
