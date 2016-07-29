@@ -4,7 +4,7 @@
 
 As well as the [macros used in PVs](PV-Naming#macros) there are other Macros that we should set as standard. When an IOC is acquired from another source they may use the same term for different items, we should probably do some fancy substitutions so that our macro setting locations (via the configurations editor in the GUI, or via globals.txt) remain consistent. These eventually take a format, which is easily seen in globals.txt, of IOC_0n__MACRO=value, where n is the indicator of which macro is under consideration. (Note, existing IOCs may not conform, and may need to be updated at some point.) 
 
-Once a macro has been set consider whether it should be added into the configuration so the user can set it. To do this see the instructions in [IOC Finishing Touches](IOC-Finishing-Touches)
+Once a macro has been set consider whether it should be added into the configuration so the user can set it. To do this see the instructions in [IOC Finishing Touches](IOC-Finishing-Touches).
 
 Where there are multiple instances of a device within an IOC (e.g. SDTEST, GENESYS) then a number should be added to the end of the macro to indicate which macro it is.
 
