@@ -14,6 +14,7 @@ Script Server (NICOS) | Dom |
 IRIS & OSIRIS | David |
 ZOOM | Kathryn |
 Device screens | Adrian |
+IOC Unit test framework | Isabella |
 
 <a name="definitionSteward"></a>
 ## Definition of the role of Component / Activity Steward
