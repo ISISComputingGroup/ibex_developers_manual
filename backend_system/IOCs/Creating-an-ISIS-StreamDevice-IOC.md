@@ -66,10 +66,11 @@ If the Makefile has a line that reads `DATA += $(patsubst ../%, %, $(wildcard ..
 ### Helpful hints from previous developers
 
 To create the support module, in an epics terminal.
-'''
+
+```
 C:\Instrument\Apps\EPICS\support\mercury_ict\master>makeSupport.pl -A ..\..\asyn
 \master -B ..\..\..\base\master -t streamSCPI  mercury_ict
-'''
+```
 
 And macro to group macros
 
