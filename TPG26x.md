@@ -15,7 +15,7 @@ Simulator PVs are:
 
 Set up the port with in the st.cmd and run the simulator. There are several backdoor command to set the internal state, telnet to the emulator and then issue:
 
-| Command | Arguement | Description |
+| Command | Argument | Description |
 | ---     | ---       | ---  |
 | emulator:set:pressureX | <pressure> | Set the pressure of sensor X (X 1 or 2) |
 | emulator:set:errorX | <error 0-6> | Set the error of sensor X (X 1 or 2) |
