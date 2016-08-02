@@ -177,7 +177,7 @@ The newly created db file needs to be added to the `Makefile` file in `HAMEG8123
 DB += <db_file_name>.db
 ```
 
-The final step is to rationalise the st.cmd files for each IOC. There will be a default `st.cmd` for each IOC beneath the `iocBoot` directory, but it will require information adding such as information about the db files, protocol files, hardware connection etc. The final Hameg `st.cmd` looks like this (the bits added have been highlighted):
+The final step is to rationalise the st.cmd files for each IOC. There will be a default `st.cmd` for each IOC beneath the `iocBoot` directory, but it will require information adding such as information about the db files, protocol files, hardware connection etc. The final Hameg `st.cmd` looks like this (the bits added have been highlighted) (NOTE: the macro `$(HAMEG8123)` is the same as defined in the `EPICS\configure\MASTER_RELEASE` file) :
 
 ```
 #!../../bin/windows-x64-debug/HAMEG8123-IOC-01
@@ -190,7 +190,7 @@ errlogInit2(65536, 256)
 
 < envPaths
 
-epicsEnvSet "STREAM_PROTOCOL_PATH" "$(SUPPORT)/Hameg_8123/1-0/Hameg_8123Sup"    #Added
+epicsEnvSet "STREAM_PROTOCOL_PATH" "$(HAMEG8123)/data"                          #Added
 epicsEnvSet "TTY" "$(TTY=\\\\\\\\.\\\\COM19)"                                   #Added
 
 cd ${TOP}
