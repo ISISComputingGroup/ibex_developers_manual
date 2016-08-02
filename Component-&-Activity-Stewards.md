@@ -15,6 +15,7 @@ IRIS & OSIRIS | David |
 ZOOM | Kathryn |
 Device screens | Adrian |
 IOC Unit test framework | Isabella |
+IBEX GUI | Thomas |
 
 <a name="definitionSteward"></a>
 ## Definition of the role of Component / Activity Steward
