@@ -55,6 +55,12 @@ Note: I have only included a very small section of the command set for this devi
 
 Delete the db file in `Hameg_8123Sup` and modify the Makefile so it not longer refers to it.
 
+Modify the Makefile in the same directory as the protocol file to have a line like:
+'''
+DATA += <protocol_file_name>
+'''
+If the Makefile has a line that reads `DATA += $(patsubst ../%, %, $(wildcard ../*.proto))`, delete it.
+
 ### Helpful hints from previous developers
 
 To create the support module, in an epics terminal.
