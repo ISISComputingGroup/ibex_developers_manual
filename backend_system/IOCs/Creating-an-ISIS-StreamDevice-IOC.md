@@ -72,9 +72,7 @@ C:\Instrument\Apps\EPICS\support\mercury_ict\master>makeSupport.pl -A ..\..\asyn
 \master -B ..\..\..\base\master -t streamSCPI  mercury_ict
 ```
 
-And macro to group macros
-
-'''C:\Instrument\Apps\EPICS\configure\MASTER_RELEASE'''
+And macro to group macros `C:\Instrument\Apps\EPICS\configure\MASTER_RELEASE`
 
 You can also define macros in the file `globals.txt` at:
 
