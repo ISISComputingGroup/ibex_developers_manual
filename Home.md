@@ -23,7 +23,7 @@ Information on the project tooling: version control and continuous integration.
 Deployment Information
 
 
-## [Component & Activity Stewards](Stewards)
+## [Component & Activity Stewards](Component-&-Activity-Stewards)
 
 Component & Activity Stewards: who looks after which components/activities
 
