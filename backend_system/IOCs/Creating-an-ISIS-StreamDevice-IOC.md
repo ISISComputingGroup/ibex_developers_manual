@@ -59,6 +59,7 @@ Modify the Makefile in the same directory as the protocol file to have a line li
 '''
 DATA += <protocol_file_name>
 '''
+
 If the Makefile has a line that reads `DATA += $(patsubst ../%, %, $(wildcard ../*.proto))`, delete it.
 
 ### Helpful hints from previous developers
