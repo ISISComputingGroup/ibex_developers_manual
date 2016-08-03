@@ -22,7 +22,7 @@ The emulation framework can be found in [this repo](https://github.com/ISISCompu
     1. Change the function to return the data you want subject to specific input.
     1. Note that it's possible to modify the emulator's state on the fly as it's running in case you want to push it into a specific state (as a backdoor). You can do this by connecting a telnet client like PuTTY to the running emulator, and any change in its state will be picked up by the IOC. 
 1. Run the emulator python file (preferably with genie_python).
-    1. You will need to know the port the emulator is running on. If you just run the emulator as-is, it will pick a free port and report the port number from the console. Alternatively you can run `...\myNewDevice_emulator.py [PORT]` where `[PORT]` is the port number you want to run on.
+    1. You will need to know the port the emulator is running on. If you just run the emulator as-is, it will pick a free port and report the port number from the console, and also print it to a local `.port` file. Alternatively you can run `...\myNewDevice_emulator.py [PORT]` where `[PORT]` is the port number you want to run on.
 
 Congratulations! Your emulator is now running. Give it a try by navigating to `http://localhost:[PORT]` in your web browser, substituting `[PORT]` for the port number. You should see the http GET request content echoed to the terminal
 
