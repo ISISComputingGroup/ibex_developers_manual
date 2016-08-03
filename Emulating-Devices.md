@@ -39,10 +39,21 @@ asynSetOption("$(DEVICE)", -1, "stop", "$(STOP=1)")
 asynOctetSetInputEos("$(DEVICE)", -1, "$(OEOS=\n)")
 ```
 
-comment out that block (`#`) and replace it with:
+Replace it with a macro defined by IBEX backend which comments it out when set
 
 ```
-drvAsynIPPortConfigure("$(DEVICE)", "localhost:[PORT]")
+$(IFNOTDEVSIM) drvAsynSerialPortConfigure("$(DEVICE)", "$(PORT)", 0, 0, 0, 0)
+$(IFNOTDEVSIM) asynSetOption("$(DEVICE)", -1, "baud", "$(BAUD=9600)")
+$(IFNOTDEVSIM) asynSetOption("$(DEVICE)", -1, "bits", "$(BITS=8)")
+$(IFNOTDEVSIM) asynSetOption("$(DEVICE)", -1, "parity", "$(PARITY=none)")
+$(IFNOTDEVSIM) asynSetOption("$(DEVICE)", -1, "stop", "$(STOP=1)")
+$(IFNOTDEVSIM) asynOctetSetInputEos("$(DEVICE)", -1, "$(OEOS=\n)")
+```
+
+and then add
+
+```
+$(IFDEVSIM) drvAsynIPPortConfigure("$(DEVICE)", "localhost:[PORT]")
 ```
 
 where again `[PORT]` is replaced with the port number we're running on. We could factor this out into a non-hard-coded macro in `globals.txt` but a lot of the time it's easier just to do it here.
