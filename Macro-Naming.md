@@ -21,6 +21,13 @@ Where there are multiple instances of a device within an IOC (e.g. SDTEST, GENES
 | OEOS | The end of line signal for output within asyn | Varies by device |
 | CALIB_PATH | The path to the folder containing calibration files for that IOC/function (e.g. resistance/temperature or current/magnetic field) | Varies by type of calibration |
 | CALIB_FILE | The name of the specific file in that folder to use | |
+| DEVSIM | Device should be simulated 1 - yes, 0 - no. (Provided by IBEX backend and can be set in the GUI) | 0 |
+| IFDEVSIM | Set to ' ' if device is being simulated; otherwise '#' (Provided by IBEX backend) |  |
+| IFNOTDEVSIM | Set to '#' if device is being simulated; otherwise ' ' (Provided by IBEX backend) |  |
+| RECSIM | IOC should simulate at the record level 1 - yes, 0 - no. (Provided by IBEX backend and can be set in the GUI) | 0 |
+| IFRECSIM | Set to ' ' if device is being record simulated; otherwise '#' (Provided by IBEX backend) |  |
+| IFNOTRECSIM | Set to '#' if device is being record simulated; otherwise ' ' (Provided by IBEX backend) |  |
+| DISABLE | Should communications be disabled 1 - yes, 0 - no. (Provided by IBEX backend and can be set in the GUI) | 0 |
 
 # Specific Macros that we might need to set
 
