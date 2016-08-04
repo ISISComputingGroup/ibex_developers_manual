@@ -2,6 +2,10 @@ The calibration files are anything that are equipment specific but not how to dr
 
     TODO create repo
 
+This repo should be clones with:
+
+    git clone <address> C:\Instrument\Settings\config\calib
+
 The reason these files are in a separate repository is that they have a different release cycle to the ibex backend (they can be updated mid experiment where we wouldn't want to release a whole new experiment backend). It might be possible to place them in the configuration branch for instruments but merging them across instruments would be tricky. They need to be shared because equipment is shared between experiments.
 
 ## Calibration Data within the Repo
