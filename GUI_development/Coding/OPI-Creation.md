@@ -26,17 +26,16 @@ One convention we have used is to define a macro within the opened OPI called PV
 
     <macros>
       <include_parent_macros>true</include_parent_macros>
-      <PV_ROOT>$(P)$(EURO)</PV_ROOT>
+      <PV_ROOT>$(P)$(EUROTHERM)</PV_ROOT>
     </macros>
 
-here EURO would be a parameter passed from the synoptic and it is combined with P to create the prefix for all PVs referenced within the OPI screen
+here EUROTHERM would be a parameter passed from the synoptic and it is combined with P to create the prefix for all PVs referenced within the OPI screen. The macro name should be something like the un-shortened device name, and its value would typically be the IOC name used in the PVs, e.g. EUROTHERM_01.
 
 ### Other Standard Macro Names
 
 | Name | Meaning |
 | ---- | ------- |
 | PV_ROOT | Root for all PVs within an OPI |
-| IOC_NUM | When there are multiple IOC of the same type this is the number, always 2 digits, e.g. 01 |
 
 # Completing the OPI
 
@@ -51,7 +50,7 @@ In the xml file:
 * `value.path`: the path to the opi file (relative to the resources folder)
 * `value.description`: description which is shown in target details
 * `value.macros.macro.name`: name of macro in OPI
-* `value.macro.macro.description`: description of macro value which appears in target details when user clicks on the macro
+* `value.macro.macro.description`: description of macro value which appears in target details when user clicks on the macro. For the macro that contains the IOC name, please provide an example of actual IOC name in brackets.
 
 You can specify which icon should appear in the synoptic with the file `ui/devicescreeens/ComponentIcons.java`.
 If you need to add new icons for the synoptic, these are under `uk.ac.stfc.isis.ibex.ui.devicescreens/icons` (both big icons for the actual synoptic and thumbnails for the synoptic editor).
