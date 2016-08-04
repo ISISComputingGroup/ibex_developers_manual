@@ -97,6 +97,11 @@ git checkout -b myfedid
 ```
 Any configs created through IBEX will now be stored on this branch
 
+These repositories can be web browsed via
+```
+http://control-svcs.isis.cclrc.ac.uk/git/
+```
+
 * It is possible to access the configurations of another developer or of an instrument by fetching the correct branch and switching to it, like so:
 ```
 git fetch
