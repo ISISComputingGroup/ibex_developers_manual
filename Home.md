@@ -27,6 +27,6 @@ Deployment Information
 
 Component & Activity Stewards: who looks after which components/activities
 
-## [Trouble Shooting Pages](toruble-shooting-pages)
+## [Trouble Shooting Pages](trouble-shooting-pages)
 
 Pages that link to trouble shooting of various kinds
