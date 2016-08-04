@@ -1,3 +1,5 @@
+> [Wiki](Home) > [Trouble Shooting Pages](trouble-shooting-pages) > Jenkins Trouble Shooting
+
 ## Ibex-Gui build failure
 
 ### Lack of randomness?
