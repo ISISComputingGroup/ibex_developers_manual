@@ -97,7 +97,7 @@ Key directories on the control server on the control server include
 
 * ``C:\Instrument\Settings\config\NDXxxxxx\configurations\galil``, which includes 
     * ``README_galil_cmd.txt``, a documentation file describing how to configure a Galil controller
-    * ``galil1.cmd - galil<N>.cmd``, where <N> is the total number of Galil controllers on the instrument
+    * ``galil1.cmd - galil<N>.cmd``, where `<N>` is the total number of Galil controllers on the instrument
     * ``axes.cmd``, which relates the Sample Stack axes to Galil ports
     * ``jaws.cmd``, which relates the axes of jaw sets to Galil ports
     * ``motionsetpoints.cmd``, which relates the axes of moveable devices to Galil ports and to lookup tables (which define the set positions for the devices)
