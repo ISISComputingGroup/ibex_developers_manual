@@ -49,9 +49,9 @@ These are easily fixed:
 
 * Delete the 'Consoles.getDefault().createConsole();' line
 
-* Open the MANIFEST.MF file in META_INF and select the 'Dependencies' tab; on that tab click the 'Add' button under 'Required Plug-ins'. From the list select uk.ac.stfc.isis.ibex.ui and click 'OK'
+* Open the MANIFEST.MF file in META_INF and select the 'Dependencies' tab; on that tab click the 'Add' button under 'Required Plug-ins'. From the list select uk.ac.stfc.isis.ibex.ui and click 'OK'. Add org.eclipse.ui and org.eclipse.core.runtime with the same method.
 
-* There are likely to be other dependencies missing, fix any other errors. Make sure to include 'org.eclipse.ui'.
+* There are likely to be other dependencies missing, fix any other errors.
 
 * Save all the changes.
 
