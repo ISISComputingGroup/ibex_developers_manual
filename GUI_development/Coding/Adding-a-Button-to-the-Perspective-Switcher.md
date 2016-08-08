@@ -1,5 +1,4 @@
-> [Wiki](Home) > [The GUI](The-GUI) > [Coding](GUI-Coding) > Adding a perspective
-
+> [Wiki](Home) > [The GUI](The-GUI) > [Coding](GUI-Coding) > Adding a perspectiveF
 ![Perspective Switcher](GUI_development/images/adding_a_button_to_the_perspective_switcher/IBEX_complete_perspective_switcher_highlighted.png)
 
 
@@ -14,7 +13,7 @@
 
 * The dialog should look like this:
 
-![Add Perspective](GUI_development/GUI_development/images/adding_a_button_to_the_perspective_switcher/eclipse_add_perspective_plugin1.png)
+![Add Perspective](GUI_development/images/adding_a_button_to_the_perspective_switcher/eclipse_add_perspective_plugin1.png)
 
 * Click 'Next'
 
@@ -52,7 +51,7 @@ These are easily fixed:
 
 * Open the MANIFEST.MF file in META_INF and select the 'Dependencies' tab; on that tab click the 'Add' button under 'Required Plug-ins'. From the list select uk.ac.stfc.isis.ibex.ui and click 'OK'
 
-* There are likely to be other dependencies missing, fix any other errors.
+* There are likely to be other dependencies missing, fix any other errors. Make sure to include 'org.eclipse.ui'.
 
 * Save all the changes.
 
