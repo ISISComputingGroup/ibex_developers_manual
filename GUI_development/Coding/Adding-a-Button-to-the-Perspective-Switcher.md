@@ -310,6 +310,19 @@ Finally, the last step is to add the plug-in we created to uk.ac.stfc.isis.ibex.
    
 * Finally, start the GUI to check the new icon is shown
 
+### Setting the Perspective to be invisible
+
+If you are creating the perspective for testing a new feature that you do not want displayed to the user by default then add the following code to your perspective class:
+```
+	@Override
+	public boolean isVisibleDefault() {
+		return false; 
+	}
+```
+by default this value is set to true and so perspectives are displayed.
+
+To subsequently display the perspective run IBEX and go to the perspective window (CTRL + ALT + P) then enable the checkbox in ISIS Perspectives. On the next restart of the GUI your perspective should be displayed.
+
 ### Troubleshooting
 
 If the perspective is not being shown in the switcher at the side it may be Eclipse being silly or you may not be running the right product. Be sure to re-run by going selecting the client product, rather than using the drop-down (which will run the same product as you used previously) Finally, try clearing the workspace and resetting the target platform etc.
