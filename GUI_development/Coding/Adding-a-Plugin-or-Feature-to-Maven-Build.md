@@ -18,8 +18,8 @@ There are essentially two steps: adding a POM file to the plug-in/feature and ed
   <parent>
     <groupId>CSS_ISIS</groupId>
     <version>1.0.0-SNAPSHOT</version>
-    <artifactId>org.csstudio.isis.tycho.parent</artifactId>
-    <relativePath>../org.csstudio.isis.tycho.parent</relativePath>
+    <artifactId>uk.ac.stfc.isis.ibex.client.tycho.parent</artifactId>
+    <relativePath>../uk.ac.stfc.isis.ibex.client.tycho.parent</relativePath>
   </parent>
   <version>1.0.0-SNAPSHOT</version>
 </project>
@@ -34,21 +34,21 @@ There are essentially two steps: adding a POM file to the plug-in/feature and ed
   <parent>
     <groupId>CSS_ISIS</groupId>
     <version>1.0.0-SNAPSHOT</version>
-    <artifactId>org.csstudio.isis.tycho.parent</artifactId>
-    <relativePath>../org.csstudio.isis.tycho.parent</relativePath>
+    <artifactId>uk.ac.stfc.isis.ibex.client.tycho.parent</artifactId>
+    <relativePath>../uk.ac.stfc.isis.ibex.client.tycho.parent</relativePath>
   </parent>
 </project>
 ``` 
 * In either case replace the YOUR_ITEM_NAME_HERE with the plug-in/feature name; example names:
 
-    * org.csstudio.isis.myplugin
-    * org.csstudio.isis.feature.myfeature
+    * uk.ac.stfc.isis.ibex.myplugin
+    * uk.ac.stfc.isis.ibex.ui.myfeature
     
 * Save the changes
 
 ## Adding a new POM file to the Parent POM
 
-* Open the pom.xml file in org.csstudio.isis.tycho.parent in Eclipse. It should look like this:
+* Open the pom.xml file in uk.ac.stfc.isis.ibex.client.tycho.parent in Eclipse. It should look like this:
 
 ![POM file](GUI_development/images/adding_a_plugin_or_feature_to_maven_build/parent_pom.png)
 
