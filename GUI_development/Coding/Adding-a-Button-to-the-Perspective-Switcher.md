@@ -1,4 +1,4 @@
-> [Wiki](Home) > [The GUI](The-GUI) > [Coding](GUI-Coding) > Adding a perspectiveF
+> [Wiki](Home) > [The GUI](The-GUI) > [Coding](GUI-Coding) > Adding a perspective
 ![Perspective Switcher](GUI_development/images/adding_a_button_to_the_perspective_switcher/IBEX_complete_perspective_switcher_highlighted.png)
 
 
@@ -36,6 +36,8 @@ Now the plug-in has been created:
 * The dialog should look something like this:
 
 ![Add a package](GUI_development/images/adding_a_button_to_the_perspective_switcher/eclipse_adding_a_package.png)
+
+Note: Package names should be in the format of uk.ac.stfc.isis.ibex.ui.packagename, not org.csstudio.isis.ui.packagename as shown in all images.
 
 We now need to add a Perspective class to the new package; the easiest way to do this is to copy and paste an existing one, for example: the one in uk.ac.stfc.isis.ibex.ui.scripting, and edit it.
 
