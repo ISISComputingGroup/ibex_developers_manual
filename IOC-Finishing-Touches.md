@@ -32,7 +32,7 @@ To check it will not fail the build.
 
 ## 4. Compliance with DBUnitChecker
 
-The build in Jenkins will fail if the rules of the [PV-Units](DBUnitChecker) script are not satisfied. You might as well check them before hand to save yourself time later.
+The build in Jenkins will fail if the rules of the [DBUnitChecker](PV-Units) script are not satisfied. You might as well check them before hand to save yourself time later.
 
 ## 5. Macros
 
