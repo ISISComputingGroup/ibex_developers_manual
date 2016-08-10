@@ -30,7 +30,11 @@ Once done run from an epics terminal in your ioc's app db directory
 
 To check it will not fail the build.
 
-## 4. Macros
+## 4. Compliance with DBUnitChecker
+
+The build in Jenkins will fail if the rules of the [PV-Units](DBUnitChecker) script are not satisfied. You might as well check them before hand to save yourself time later.
+
+## 5. Macros
 
 Macros where possible should follow the [standard names](Macro-Naming). If a macro can be set as part of the IOC (and can be reasonably set in the GUI) then a config file should be added to the run directory which contains a list of macros (i.e. `..\EPICS\ioc\master\<IOC Name>\iocBoot\<IOC Instance Name>\config.xml). The file is of the form:
 
