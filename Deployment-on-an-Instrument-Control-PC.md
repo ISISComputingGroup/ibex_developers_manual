@@ -67,6 +67,17 @@ Note: If you run the `config_mysql.bat` script on an existing system YOU MAY LOS
 
 - Make sure these [tests are performed](client-release-tests), these are items we have missed in the past.
 
+## Extra step for machines with no LabVIEW modules directory ##
+
+On most instruments there will be a c:\labview modules directory containing sample environment plus DAE programs. If you are installing EPICS on a non-instrument and need to start the DAE in simulation mode, then you needs to  
+
+    cd c:\Instrument\Apps\EPICS
+    create_icp_binaries
+    
+## Register DAE ##
+
+Register the isisicp.exe program (either in c:\labview modules\dae\... or ICP_Binaries\...) as per developer setup instructions
+
 ## Start the Instrument
 
 To start the instrument, open a command prompt and type the following:
