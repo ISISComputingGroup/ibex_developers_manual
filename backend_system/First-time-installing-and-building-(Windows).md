@@ -113,6 +113,12 @@ git clone http://control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/inst.git NDXX
 cd NDXXXX
 git checkout NDXXXX
 ```
+
+Now create the common configuration with
+```
+git clone http://spudulike@control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/common.git C:\Instrument\Settings\config\common
+```
+
 ### Configure DAE for simulation mode on developer's computer
 
 * Open an administrator command prompt (right click on command prompt in start menu and click "run as administrator")
