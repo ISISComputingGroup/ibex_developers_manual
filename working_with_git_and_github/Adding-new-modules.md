@@ -59,7 +59,9 @@ now make sure it builds. You'll probably need to update   configure/RELEASE to b
     make
     git status
 
-Then create/adjust .gitignore and .gitattributes  and check    make clean uninstall   all work. If everything OK, add new module to support/Makefile and to configure/MASTER_RELEASE
+Then create/adjust .gitignore and .gitattributes  and check    make clean uninstall   all work. 
+
+If everything OK, add new module to support/Makefile and to configure/MASTER_RELEASE
 
 ## Updating vendor branch
 
