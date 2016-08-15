@@ -35,6 +35,7 @@ Building a new IOC? Before you get started, take a look at the relevant [instrum
 * [Convert Record](convert-record)
 * [Multi-value Protocols Tricks](Multi-value-Protocols)
 * [IOC Utilities](IOC-Utilities)
+* [Removing or Renaming and IOC module ](Removing-or-Renaming-IOC-module)
 
 ## Specific IOC Information
 
