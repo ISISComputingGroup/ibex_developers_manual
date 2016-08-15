@@ -24,15 +24,13 @@ All PVs should have if appropriate:
 * Unit fields if representing a value (`EGU` field) which may be blank
     * Units must be in ...
 
-Once done run from an epics terminal in your ioc's app db directory 
+## 4. Compliance with DBUnitChecker
+
+The build in Jenkins will fail if the rules of the [DBUnitChecker](PV-Units) script are not satisfied. You might as well check them before hand to save yourself time later. From an epics terminal in your ioc's app db directory 
 
     python C:\Instrument\Apps\EPICS\ISIS\DbUnitChecker\master\db_checker.py
 
 To check it will not fail the build.
-
-## 4. Compliance with DBUnitChecker
-
-The build in Jenkins will fail if the rules of the [DBUnitChecker](PV-Units) script are not satisfied. You might as well check them before hand to save yourself time later.
 
 ## 5. Macros
 
