@@ -101,11 +101,10 @@ Run the IOC as normal. The IOC should start with no errors and typing "dbl" will
 ## 6. Finish the Workflow
 
 Now return to the IOC workflow to finishing adding things like units, PVs of interest and macros.
-Once the ISIS IOC works you should probably now create an IOC linked to this one in ioc follow a similar pattern to a support modules. Remember that if you do this add you new ioc to the Makefile so it does not build under linux, i.e. edit `EPICS\ioc\master\Makefile` add to the line:
+Once the ISIS IOC works you should probably now create an IOC linked to this one in ioc follow a similar pattern to a support modules. Remember that if you do this add your new ioc to the Makefile `IOCDIRS` and it does not build if there is no ATL so add it to this list too, i.e. edit `EPICS\ioc\master\Makefile` add to the line:
 
-    ifneq ($(findstring linux,$(EPICS_HOST_ARCH)),)
-    DIRS_NOTBUILD += ISISDAE MK3CHOPPER STPS350 AG53220A STSR400 ECLAB
-    DIRS_NOTBUILD += DELFTARDUSTEP DELFTDCMAG GALIL MERCURY_ITC <ioc dir>
+    ifneq ($(HAVE_ATL),YES)  
+    DIRS_NOTBUILD += ISISDAE MERCURY_ITC STPS350 AG53220A STSR400 DELFTSHEAR DELFTDCMAG DELFTARDUSTEP LVTEST
     endif
 
 
