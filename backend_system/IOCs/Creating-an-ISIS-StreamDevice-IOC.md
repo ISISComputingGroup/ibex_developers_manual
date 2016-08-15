@@ -63,6 +63,8 @@ DATA += <protocol_file_name>
 
 If the Makefile has a line that reads `DATA += $(patsubst ../%, %, $(wildcard ../*.proto))`, delete it.
 
+Now add the directory name to the support make file (`C:\Instrument\Apps\EPICS\support\Makefile`), ie to DIRS at the top. Also add dependencies if needed.
+
 ### Helpful hints from previous developers
 
 To create the support module, in an epics terminal.
@@ -241,6 +243,8 @@ runIOC.bat st.cmd
 ```
 
 Hopefully, the IOC will start and the `dbl` command will list all the PVs.
+
+Now it builds add a reference to the IOC make file in `C:\Instrument\Apps\EPICS\ioc\master\Makefile` add the directory name to `IOCDIRS`. If this gets to long split with `IOCDIR +=`
 
 Before the IOC is complete you will need to finish the workflow to include:
 
