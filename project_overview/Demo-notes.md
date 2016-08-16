@@ -61,7 +61,6 @@ Describe the Beam Status view
 ## IOC Log View
 
 Describe the IOC Log view
-
 * The IOC Log system provides a unified way of managing status and information messages from the devices attached to the instrument.
 * Copies of status and information messages from the DAE are also routed via the IOC Log system.
 * The IOC Log messages are primarily intended for diagnosing problems with attached devices.
@@ -110,25 +109,17 @@ Blocks & groups in the new GUI work in the same way as they do in SECI.
 ## Scripting
 
 In the new GUI, scripting is built-in.  You don't need a separate windows to run a script (although some users prefer to have a separate window).
-
 * Click on the Scripting button to display the Scripting view
-
    * point out the scripting area
-
 * The scripting language is Python
 * Python brings a number of advantages over Genie
-
    * *what are they? - we need to enumerate them*
-
 * Python equivalents of the most common Genie commands (e.g. cset) have been created
-
    * demonstrate that, for example, ``cset arg`` becomes ``cset(arg)``
    * it is not difficult to convert a Genie script into a Python script
    * display a *before (Genie)* and *after (Python)* script.  Emphasize how similar they are.
-
 * Any block (or PV) can be used in a Python script
 * Demonstrate running a Python script
-
    * use a script that you prepared earlier: **don't wing it!**
    * point out use of Genie-like commands where possible
    * show how to pull in data from blocks (or PVs)
@@ -140,7 +131,6 @@ In the new GUI, scripting is built-in.  You don't need a separate windows to run
 ## Device Support
 
 EPICS provides support for a wide range of devices.  For many devices we can simply download the appropriate driver from the EPICS web-site.  Because the source code for these drivers is available, we can, if necessary, adapt an EPICS driver for our specific purposes.
-
 * In EPICS, drivers & IOCs combine to provide control of devices attached an instrument.  In addition, we ue CSS to create OPIs (graphical user interfaces) for devices.  In combination, drivers, IOCs and OPIs provide the functionality of a LabVIEW VI.
 * We currently have EPICS drivers for Galil motor controllers, Eurotherms, Julabo water baths, CAEN, Kepco & Thurlby power supplies.  We also have controllers for PLCs, jaws-sets, sample changers, rotation stages and goniometers.
 * EPICS drivers and controllers for additional devices can be developed as required.
@@ -155,13 +145,11 @@ EPICS provides support for a wide range of devices.  For many devices we can sim
 ## Synoptic View or Instrument Overview
 
 The synoptic view provides an interactive overview of an instrument.
-
 * The synoptic view shows all the devices (or a defined sub-set of devices) attached to an instrument.
 * The synoptic view is configurable (via the Synoptic Editor).  Show how you can create different views for different instrument setups.
 * Incident neutrons are shown coming from the left.
 * Each device is represented by its own icon and a small number of key parameters.
 * Show how you can drill-down by clicking on each device icon to get more detail.
-
       * Clicking on a device icon displays the device UI, which will display additional controls and information that cannot easily be included on the top-level synoptic display
       * Device UIs are sometimes referred to as OPIs (OPIs are analogous to LabVIEW VI screens)
       * Demonstrate how some devices (e.g. motors) allow you to drill-down to deeper levels (beware: some of the deeper level screens can get very complex)
@@ -170,26 +158,21 @@ The synoptic view provides an interactive overview of an instrument.
 ## Motors View
 
 The motors view provides a convenient way to view the status of all the motors used on an instrument.
-
 * The motors view is very similar to the *Table of Motors* used in SECI by some instruments.
 * Each row corresponds to a single Galil motor controller.  The number of rows displayed will depend on the number of Galil controllers attached to the instrument.
 * The columns list the Galil controller ports (up to 8 ports per Galil)
 * Each entry in the table represents a single Galil controller port (one (or zero) motors per port)
-
       * Each entry identifies the motor by its unique ID number
       * Each entry displays the current value of the motor's position and its current set-point.
       * A grey entry represents an unused port (no motor is attached, or motor is switched off)
       * A pink entry represents a port in use: motor is attached, but stationary
       * A green entry represents an active port: motor is attached and is moving
-
 * Show how you can drill-down by clicking on each motor entry to get more detail.
 
 ## EPICS & Extensibility
 
 EPICS is a framework for creating *distributed* control systems.  The ability to have more than one PC controlling different parts of an instrument is inherent to EPICS.
-
 * The default position will continue to be that we will use a single PC to control all of the devices attached an instrument.
 * However, there are some situations where it is advantageous to have specialist items of equipment controlled by a separate PC.  For example
-
    * the interchangeable cameras on IMAT
    * the LARMOR spin-echo system
