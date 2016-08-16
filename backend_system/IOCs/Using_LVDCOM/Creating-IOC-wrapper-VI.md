@@ -90,6 +90,7 @@ This is a summary of [[more general LvDCOM instructions|LVDCOM-auto-generate-xml
     xsltproc C:\Instrument\Apps\EPICS\ISIS\lvDCOM\master\lvDCOMApp\src\lvinput2db.xsl lv_controls.xml > ..\Db\controls.db
     ```
 1. Add db file to `ISIS\<iocname>App\Db\Makefile`
+
    ```
    DB += controls.db
    ```
