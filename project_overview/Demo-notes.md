@@ -34,6 +34,15 @@ Provide the audience with a quick tour of the IBEX GUI
    * System Views - a number of different views of the system.  Some views are similar to SECI; others are new.
    * Clicking on the list of View buttons (on the left-hand side of the GUI window) changes the view
 
+* Highlight the IBEX menu
+
+   * IBEX - use to switch instrument, restore the default view or exit IBEX
+   * Configuration - use to edit configurations, load a new configuration or delete a configuration
+   * Synoptic - use to edit synoptics, load a new synoptic or delete a synoptic.
+   * IOC - use to start or stop IOCs
+   * Run Control - use to view and edit run-control settings
+   * Help - point out the About Box.  User should use it to report the server & client version numbers if they encounter problems.
+
 ## Dashboard
 
 The dashboard is very similar to the SECI dashboard
