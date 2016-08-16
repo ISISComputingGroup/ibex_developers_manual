@@ -5,14 +5,11 @@ Anyone doing a demo of IBEX should use these notes, so that
 * You are familiar with the scope of the demo (i.e. what should be covered)
 * You review it and rehearse it in advance (i.e. you are clear about what you will present)
 * You don’t forget to mention any important aspects of the system
-
    * keep a copy of these notes in front of you as you do the demo
-
 * You don’t forget where key files (e.g. demo scripts) are located, etc.
 * Instrument scientists get a consistent picture irrespective of where & when the demo is performed.
 * If a question takes you “off piste”, you can easily find your way back to the main thread of the demo.
 * We can enhance the script in the light of experience (e.g. better answers to questions)
-
    * jot down any important points arising from any demos that you do and add them back into this document for the benefit of others.
 
 ## Overview
@@ -20,7 +17,6 @@ Anyone doing a demo of IBEX should use these notes, so that
 Provide the audience with a quick tour of the IBEX GUI
 
 * Explain that the GUI is a client application
-
    * It displays data that is provided to it by server applications
    * The server applications are called IOCs (Input-Output Controllers)
    * IOCs are similar, in some respects, to LabVIEW VIs
@@ -28,14 +24,12 @@ Provide the audience with a quick tour of the IBEX GUI
    * The GUI can run on the control PC.  It can also run on other client PCs located elsewhere on the network.
 
 * Highlight the main areas of the GUI
-
    * Dashboard - very similar to the SECI dashboard
    * Blocks & Groups - again, very similar to SECI
    * System Views - a number of different views of the system.  Some views are similar to SECI; others are new.
    * Clicking on the list of View buttons (on the left-hand side of the GUI window) changes the view
 
 * Highlight the IBEX menu
-
    * IBEX - use to switch instrument, restore the default view or exit IBEX
    * Configuration - use to edit configurations, load a new configuration or delete a configuration
    * Synoptic - use to edit synoptics, load a new synoptic or delete a synoptic.
@@ -46,7 +40,6 @@ Provide the audience with a quick tour of the IBEX GUI
 ## Dashboard
 
 The dashboard is very similar to the SECI dashboard
-
 * It uses the same colour coding as the SECI dashboard
 * It displays the same status messages as the SECI dashboard
 * Information about the current experiment comes from the DAE set up (we'll touch on this later)
@@ -55,11 +48,9 @@ The dashboard is very similar to the SECI dashboard
 ## Beam Status
 
 Describe the Beam Status view
-
 * Clicking on the Beam Status button displays the Beam Status view
 * The Beam Status view always appears in the main display area
 * The Beam Status view comprises 3 panes
-
    * The main pane, taking up most of the display in the Beam Status graph.  It shows the Synchrotron current and the currents to TS1 and TS2.  You can toggle the display to show graphs for the last hour or last 24 hours.
    * The top right pane shows the ISIS MCR news.  It is just a simple scrolling window showing the published MCR news.
    * The lower right pane shows beam status details.  It consists of 3 sections: one for the Synchrotron, one for TS1 and one for TS2.  The sections are collapsible, so you can collapse any section that is of no interest to you.
@@ -75,7 +66,6 @@ Describe the IOC Log view
 * Copies of status and information messages from the DAE are also routed via the IOC Log system.
 * The IOC Log messages are primarily intended for diagnosing problems with attached devices.
 * The IOC Log view provides you with a convenient means of viewing those messages
-
       * Demonstrate how messages can be filtered and searched (by date/time, severity, etc.)
       * Messages are automatically saved to a log on the control PC
       * **N.B.** Messages are held in a log which is quite separate from experimental data
@@ -83,11 +73,9 @@ Describe the IOC Log view
 ## DAE View
 
 Describe the DAE view
-
 * The DAE view allows scientists to set up and control the operation of the DAE.
 * The DAE view is very similar to the DAE VI in SECI.
 * The DAE view comprises 6 tabs.
-
    * Run Summary
      Displays run summary information and any recent log messages.
    * Experiment Setup
@@ -106,7 +94,6 @@ Describe the DAE view
 ## Blocks & Groups
 
 Blocks & groups in the new GUI work in the same way as they do in SECI.
-
 * Blocks and groups are displayed at the top (and centre-right) of the GUI window.
 * Blocks & groups are part of your configuration.  You define blocks & groups by creating and editing configurations.
 * In EPICS, an IOC makes information about the status of a device available by publishing *process variables*.  In general, an IOC will use many process variables to fully describe the state of a device.  Typically, you won't be interested in all of these - just a sub-set.  Show how the GUI allows you to select which process variables that are of interest and to define these as *blocks*.
@@ -116,9 +103,7 @@ Blocks & groups in the new GUI work in the same way as they do in SECI.
 * Show how a set of defined blocks & groups can be saved as a configuration.
 * Show how a previously saved configuration can be re-loaded.
 * Explain what is saved in a configuration:
-
    * groups, blocks, links to settings files, synoptic view
-
 * Demonstrate sub-configurations
 * Demonstrate Management Mode.
 
