@@ -43,23 +43,20 @@ The dashboard is very similar to the SECI dashboard
 * Information about the current experiment comes from the DAE set up (we'll touch on this later)
 * Beam status information comes from the beam logger IOC
 
-Beam Status
+## Beam Status
 
 Describe the Beam Status view
 
 * Clicking on the Beam Status button displays the Beam Status view
 * The Beam Status view always appears in the main display area
-* The Beam Status view comprises 3 sections
+* The Beam Status view comprises 3 panes
 
-   * On the left hand side, the Beam Status area shows detailed beam status information
-
-      * The information is displayed in 3 collapsible sections, so you need only expand those which are of interest to you.
-      * Beam status information comes from the beam logger IOC, which replaces the old LabVIEW beam logger VI.
-      * The beam logger IOC is already serving beam status information to all instruments (not just those running EPICS)
-      * The beam logger IOC actually runs on the accelerator control system
-
-   * The Beam Status Graph tab simply displays the familiar ISIS Beam Status web-page
-   * MCR News tab simply displays the familiar ISIS MCR News web-page
+   * The main pane, taking up most of the display in the Beam Status graph.  It shows the Synchrotron current and the currents to TS1 and TS2.  You can toggle the display to show graphs for the last hour or last 24 hours.
+   * The top right pane shows the ISIS MCR news.  It is just a simple scrolling window showing the published MCR news.
+   * The lower right pane shows beam status details.  It consists of 3 sections: one for the Synchrotron, one for TS1 and one for TS2.  The sections are collapsible, so you can collapse any section that is of no interest to you.
+   * Beam status information comes from the beam logger IOC, which replaces the old LabVIEW beam logger VI.
+   * The beam logger IOC is already serving beam status information to all instruments (not just those running IBEX)
+   * The beam logger IOC actually runs on the accelerator control system
 
 ## IOC Log View
 
@@ -74,7 +71,7 @@ Describe the IOC Log view
       * Messages are automatically saved to a log on the control PC
       * **N.B.** Messages are held in a log which is quite separate from experimental data
 
-DAE View
+## DAE View
 
 Describe the DAE view
 
@@ -82,17 +79,17 @@ Describe the DAE view
 * The DAE view is very similar to the DAE VI in SECI.
 * The DAE view comprises 6 tabs.
 
-   Run Summary
+   * Run Summary
      Displays run summary information and any recent log messages.
-   Experiment Setup
+   * Experiment Setup
      <add description here>.
-   Run Information
+   * Run Information
      <add description here>.
-   Spectra Plots
+   * Spectra Plots
      <add description here>.
-   Diagnostics
+   * Diagnostics
      <add description here>.
-   Vetos
+   * Vetos
      <add description here>.
 
 * As previously noted, copies of status and information messages from the DAE are also routed via the IOC Log system.
@@ -102,11 +99,11 @@ Describe the DAE view
 Blocks & groups in the new GUI work in the same way as they do in SECI.
 
 * Blocks and groups are displayed at the top (and centre-right) of the GUI window.
-* The menu ribbon at the top of the Blocks & Groups area lets you define and configure your blocks and groups
+* Blocks & groups are part of your configuration.  You define blocks & groups by creating and editing configurations.
 * In EPICS, an IOC makes information about the status of a device available by publishing *process variables*.  In general, an IOC will use many process variables to fully describe the state of a device.  Typically, you won't be interested in all of these - just a sub-set.  Show how the GUI allows you to select which process variables that are of interest and to define these as *blocks*.
 * Once a PV has been defined as a block, show how it can be assigned to a group.
 * Make it clear that blocks are automatically logged (just as they are in SECI).  Note also that the logging of blocks is independent of the message log.
-* Show how blocks can be viewed in a StripChart - so the user can always view the history of a block.
+* Show how blocks can be viewed in the LogPlotter - so the user can always view the history of a block.
 * Show how a set of defined blocks & groups can be saved as a configuration.
 * Show how a previously saved configuration can be re-loaded.
 * Explain what is saved in a configuration:
@@ -118,11 +115,11 @@ Blocks & groups in the new GUI work in the same way as they do in SECI.
 
 ## Scripting
 
-In the new GUI, scripting (and graphing) is built-in.  You don't need separate windows for these.
+In the new GUI, scripting is built-in.  You don't need a separate windows to run a script (although some users prefer to have a separate window).
 
 * Click on the Scripting button to display the Scripting view
 
-   * point out the scripting area and the graphing area
+   * point out the scripting area
 
 * The scripting language is Python
 * Python brings a number of advantages over Genie
@@ -154,8 +151,8 @@ EPICS provides support for a wide range of devices.  For many devices we can sim
 * We currently have EPICS drivers for Galil motor controllers, Eurotherms, Julabo water baths, CAEN, Kepco & Thurlby power supplies.  We also have controllers for PLCs, jaws-sets, sample changers, rotation stages and goniometers.
 * EPICS drivers and controllers for additional devices can be developed as required.
 * Adopting EPICS does **not** mean throwing away existing LabVIEW drivers.
-* We have created a communication interface, called lvDCOM, to enable EPICS to communicate with LabVIEW VIs.
-* Where a device has a complex or specially customised LabVIEW driver, lvDCOM allows us to continue using the LabVIEW VI.  Any data that the VI makes available to EPICS can be defined as a block and used in the normal manner.
+   * We have created a communication interface, called lvDCOM, to enable EPICS to communicate with LabVIEW VIs.
+   * Where a device has a complex or specially customised LabVIEW driver, lvDCOM allows us to continue using the LabVIEW VI.  Any data that the VI makes available to EPICS can be defined as a block and used in the normal manner.
 * Demonstrate an existing EPICS IOC/OPI: for example the Eurotherm IOC & OPI – demonstrate simple operation, ramping, calibration, etc.
 * Demonstrate interaction between EPICS and a VI: for example <insert example here>
 * Demonstrate starting & stopping of IOCs.  Show how startup messages, etc. are captured in the message log.
