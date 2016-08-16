@@ -77,6 +77,11 @@ This is a summary of [[more general LvDCOM instructions|LVDCOM-auto-generate-xml
     1. Look at TODOs in this file
     1. remove unneeded controls or states of those controls (e.g. write for read only values)
     1. If the value is controlled by an event the `extint` value of set contols should be set to `"true"`. This will make it process the value. If one of the value is true you might as well set them all to be true the only advantage is if the are all false it does not need to load the external interface.
+1. Add protocol file to `ISIS/<iocname>App/protocol/Makefile` as
+
+    ```
+    DATA += lv_controls.xml
+    ```
 
 ## 3. Generate the DB File      
 
@@ -84,12 +89,15 @@ This is a summary of [[more general LvDCOM instructions|LVDCOM-auto-generate-xml
     ```
     xsltproc C:\Instrument\Apps\EPICS\ISIS\lvDCOM\master\lvDCOMApp\src\lvinput2db.xsl lv_controls.xml > ..\Db\controls.db
     ```
-1. Add db file to makefile in
+1. Add db file to `ISIS\<iocname>App\Db\Makefile`
+   ```
+   DB += controls.db
+   ```
 1. Edit the DB file. I found I wanted many `_RBV` to be `:RBV` and to get rid of some of the records (see below for example)
 
 ## 4. Edit to st.cmd
 
-1. Add `lvDCOMConfigure("lvfp", "frontpanel", "${TOP}/<app name>/protocol/lvinput.xml")` before load common record. 
+1. Add `lvDCOMConfigure("lvfp", "frontpanel", "${TOP}/data/lv_controls.xml")` before load common record. 
     * Main args are:  portName, configSection, configFile, host, options (see lvDCOMConfigure() documentation in lvDCOMDriver.cpp)
     * Additional optional args to specify a DCOM ProgID for a compiled LabVIEW application and a different username + password for remote host if that is required. e.g `lvDCOMConfigure("ex1", "example", "$(TOP)/lvDCOMApp/src/examples/example_lvinput.xml", "ndxtestfaa", 6, "", "username", "password")`
 1. Add db load record
