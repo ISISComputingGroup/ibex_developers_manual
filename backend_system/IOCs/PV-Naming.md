@@ -117,4 +117,5 @@ If a value can fluctuate, these refer to the current measured value of a quantit
 | P, I, D |     P, I, D values on e.g. eurotherm | |
 | TOF | Time of flight axis for a spectrum  | |
 | TIME | An absolute timestamp , preferably in ISO8601 format | |
+| FIELD | Magnetic field | |
 
