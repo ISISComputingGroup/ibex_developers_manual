@@ -57,6 +57,7 @@ The project currently contains the following base units:
 * m
 * minute
 * ohm
+* Oersted
 * %
 * photon
 * pixel
@@ -64,5 +65,6 @@ The project currently contains the following base units:
 * s
 * torr
 * step
+* T, mT, uT
 * V
 
