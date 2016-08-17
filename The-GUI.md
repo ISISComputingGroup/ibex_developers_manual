@@ -20,6 +20,10 @@ Working with the Eclipse IDE.
 
 Notes on Control System Studio.
 
+# [GUI Chats](GUI-Chats)
+
+Notes of GUI chats that have taken place.
+
 # [Other](GUI-Other)
 
 Notes on all other elements related to the GUI.
