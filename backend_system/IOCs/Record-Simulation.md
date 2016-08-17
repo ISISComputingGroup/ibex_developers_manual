@@ -7,6 +7,7 @@ Simulated values can either be a constant, or can be read/written to another PV 
 
 Though a simulated motor exists, it is probably still worth doing record simulation for e.g. jaws as it provides a convenient way to test GUIs without having to start additional IOCs
 
+There is a [script to help](Add-sim-records-script).
 First add the following record that will be used to indicate if simulation mode is being used
 
 ```
