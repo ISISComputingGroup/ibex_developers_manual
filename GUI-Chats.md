@@ -14,12 +14,13 @@ Java Collections, Iterators and Streams | David Keymer | Nov 2015
 Design Patterns in IBEX | Dominic Oram | Dec 2015
 Eclipse Extensions | Dominic Oram | Dec 2015
 Observables and Writables in IBEX (two parts) | Ian Bush | Dec 2015
+Final | Matt Clarke | Jan 2016
 Java Quiz | Matt Clarke | Jan 2016
 Testing with RCPTT (the basics) | Ian Bush | April 2016
 Maven and Tycho (two parts) | Matt Clarke | April 2016 
 Javadoc | Kathryn Baker | Aug 2016  
 
-All presentations should be uploaded to the SharePoint site [here](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Forms/AllItems.aspx?RootFolder=%2Fisis%2Fcomputing%2FICPdiscussions%2FGUI_Chat_Slides&FolderCTID=0x01200027AD8F05966A2748B3B04C98BB5B442B&View={F2C33C51-70E6-4343-B937-2C59A2568306}) or converted to a wiki page if more appropriate. It should also be reasonably assumed that the people who gave these presentations should know something about these subjects.
+All presentations should be uploaded to the SharePoint site [here](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Forms/AllItems.aspx?RootFolder=%2Fisis%2Fcomputing%2FICPdiscussions%2FGUI_Chat_Slides&FolderCTID=0x01200027AD8F05966A2748B3B04C98BB5B442B&View={F2C33C51-70E6-4343-B937-2C59A2568306}) and/or converted to a wiki page if more appropriate. It should also be reasonably assumed that the people who gave these presentations should know something about these subjects.
 
 ## Ideas for upcoming GUI Chats
 
