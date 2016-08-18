@@ -10,7 +10,7 @@ Data Binding (two parts) | Matt Clarke | Sept 2015
 Mockito | Ian Bush | Sept 2015
 Java Classes | Matt Clarke | Sept 2015
 Eclipse RCP (two parts) | Matt Clarke | Oct 2015
-Java Collections, Iterators and Streams | Matt Clarke | Nov 2015
+Java Collections, Iterators and Streams | David Keymer | Nov 2015
 Design Patterns in IBEX | Dominic Oram | Dec 2015
 Eclipse Extensions | Dominic Oram | Dec 2015
 Observables and Writables in IBEX (two parts) | Ian Bush | Dec 2015
