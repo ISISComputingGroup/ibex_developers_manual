@@ -9,9 +9,9 @@ Building a new IOC? Before you get started, take a look at the relevant [instrum
     * [Creating an LvDCOM IOC](Creating-IOC-wrapper-VI)
 * [IOC Finishing Touches](IOC-Finishing-Touches)
 
-* [Disable records](Disable-records)
-
 * [Record simulation](Record-Simulation)
+
+* [Disable records](Disable-records)
 
 * [Running (and testing) IOC](Running-IOCs)
 
