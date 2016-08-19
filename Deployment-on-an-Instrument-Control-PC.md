@@ -32,7 +32,7 @@ cd C:\Instrument
 
 ## Install EPICS
 
-- From a command prompt type the following (if your command prompt doesn't support UNC paths, use pushd instead of cd):
+- From a command prompt type the following (if your command prompt doesn't support UNC paths, use `pushd` instead of `cd`):
 
     `cd \\isis\inst$\Kits$\CompGroup\ICP\EPICS\EPICS_CLEAN_win7_x64`
 
