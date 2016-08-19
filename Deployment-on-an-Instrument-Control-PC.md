@@ -53,7 +53,7 @@ Note: If you run the `config_mysql.bat` script on an existing system YOU MAY LOS
 
 ## Install IBEX Client
 
-- From a command prompt type the following (if your command prompt doesn't support UNC paths, use pushd instead of cd):
+- From a command prompt type the following (if your command prompt doesn't support UNC paths, use `pushd` instead of `cd`):
 
     `cd \\isis\inst$\Kits$\CompGroup\ICP\Client`
 
