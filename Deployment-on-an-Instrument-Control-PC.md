@@ -42,10 +42,12 @@ cd C:\Instrument
 
 - Configure the archive engine:
 
+```
     cd c:\Instrument\Apps\EPICS\SystemSetup
     config_mysql
+```
 
-Note: If you run the `config_mysql.bat` script on an existing system YOU MAY LOSE HISTORICAL LOG DATA.
+Note: **BE CAREFUL.**  If you run the `config_mysql.bat` script on an existing system **YOU MAY LOSE HISTORICAL LOG DATA**.
 
 - Record the release to the instrument (add to list in [Instrument Releases](https://github.com/ISISComputingGroup/IBEX/wiki#instrument-information))
 
