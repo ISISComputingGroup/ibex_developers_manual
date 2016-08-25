@@ -12,6 +12,10 @@ This document describes the steps necessary to install IBEX on an Instrument con
 
     [See the back-end getting started guide](First-time-installing-and-building-(Windows)#setting-up-a-configurations-directory)
 
+- Checkout Calib Directory
+
+    [See the back-end getting started guide](First-time-installing-and-building-(Windows)#setting-up-a-calibrations-directory)
+
 - Create directories on the local hard drive as follows:
 ```
 mkdir C:\Instrument\Apps\EPICS
