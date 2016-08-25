@@ -119,7 +119,7 @@ Now create the common configuration with
 git clone http://spudulike@control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/common.git C:\Instrument\Settings\config\common
 ```
 
-# Create a calibration directory
+# Setting up a calibrations directory
 
 Run the following command from a Git-enabled command prompt (or modify target to run with Git Bash):
 
