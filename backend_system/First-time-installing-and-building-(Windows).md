@@ -119,7 +119,7 @@ Now create the common configuration with
 git clone http://spudulike@control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/common.git C:\Instrument\Settings\config\common
 ```
 
-### Create a calibration directory
+# Create a calibration directory
 
 Run the following command from a Git-enabled command prompt (or modify target to run with Git Bash):
 
@@ -129,7 +129,7 @@ git clone http://control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/common.git C:
 
 The purpose and function of the calibration files are described [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Calibration-Files).
 
-### Configure DAE for simulation mode on developer's computer
+# Configure DAE for simulation mode on developer's computer
 
 * Open an administrator command prompt (right click on command prompt in start menu and click "run as administrator")
 * cd to     c:\Instrument\Apps\EPICS\ICP_Binaries\isisdae\x64\Release
@@ -140,6 +140,6 @@ The purpose and function of the calibration files are described [here](https://g
 ```
 Unfortunately the /RegServer registration process doesn't report either success or failure. If, on later starting the ISISDAE IOC, you see lots of errors of the form "CoCreateInstanceEx (ISISICP) : Class not registered" then it means the /RegServer flag did not work. Try registering it again in case you were not Administrator when you tried it the first time. 
 
-### Building the GUI
+# Building the GUI
 
 After following the above instructions please see [Building the GUI](Building-the-GUI).
