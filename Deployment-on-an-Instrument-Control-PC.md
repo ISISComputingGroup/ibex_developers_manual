@@ -48,7 +48,7 @@ cd C:\Instrument
 - Configure the archive engine:
 
 ```
-    cd c:\Instrument\Apps\EPICS\SystemSetup
+    cd C:\Instrument\Apps\EPICS\SystemSetup
     config_mysql
 ```
 
@@ -78,18 +78,18 @@ Note: **BE CAREFUL.**  If you run the `config_mysql.bat` script on an existing s
 
 On most instruments there will be a `C:\labview modules` directory containing sample environment plus DAE programs. If you are installing EPICS on a non-instrument and need to start the DAE in simulation mode, then you need to  
 
-    cd c:\Instrument\Apps\EPICS
+    cd C:\Instrument\Apps\EPICS
     create_icp_binaries
     
 ## Register DAE
 
-Register the `isisicp.exe` program (either in `c:\labview modules\dae\...` or `ICP_Binaries\...`) as per developer setup instructions
+Register the `isisicp.exe` program (either in `C:\labview modules\dae\...` or `ICP_Binaries\...`) as per developer setup instructions
 
 ## Start the Instrument
 
 To start the instrument, open a command prompt and type the following:
 
-    cd c:\Instrument\Apps\EPICS
+    cd C:\Instrument\Apps\EPICS
     start_inst
     
 Allow the `start_inst` script a few moments to complete before starting the IBEX client.
@@ -99,7 +99,7 @@ Allow the `start_inst` script a few moments to complete before starting the IBEX
 
 To stop the instrument, exit from the IBEX client (if you are running it), then open a command prompt and type the following:
 
-    cd c:\Instrument\Apps\EPICS
+    cd C:\Instrument\Apps\EPICS
     stop_inst
     
 Allow the `stop_inst` script a few moments to complete.
