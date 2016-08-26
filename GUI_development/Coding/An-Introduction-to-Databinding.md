@@ -355,3 +355,19 @@ In this example, the Update strategy is initialised with POLICY_ON_REQUEST. This
 The models are updated when updateModels is called by the DataBindingContext which in this example is on a button click.
 
 Running this example in the debugger shows that the setName method is only called when the button is clicked rather than on every modification.
+
+## Binding a Java List to a List Control
+
+Most of this is taken care of by the databinding library via ListViewer and ObservableListContentProvider. Here is an example of it in action:
+
+```java
+ListViewer myViewer = new ListViewer(parent, SWT.BORDER | SWT.V_SCROLL | SWT.SINGLE);
+ObservableListContentProvider contentProvider = new ObservableListContentProvider();
+myViewer.setContentProvider(contentProvider);
+myViewer.setInput(BeanProperties.list("names").observe(myViewModel));
+
+// To get the List Control itself - it is org.eclipse.swt.widget.List not a standard Java List
+List myList = myViewer.getList();
+```
+
+ListViewer is a wrapper around the List control that provides extra functionality and ObservableListContentProvider make the databinding work.
