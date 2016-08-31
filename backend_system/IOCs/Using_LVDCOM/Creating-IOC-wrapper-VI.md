@@ -8,12 +8,12 @@ I plan to make these into a template (so you will just need to run makeBaseApp.p
 
 Please take note of the [IOC naming convention](IOC-Naming) before proceeding.
 
-1. Create a public repository to work in called EPICS-<device>.
-1. In the `EPICS\ISIS` directory create a directory called <device>
+1. Create a public repository to work in called EPICS-\<device>.
+1. In the `EPICS\ISIS` directory create a directory called \<device>
 1. Clone the repository into this directory and call that clone master
 1. Copy a standard makefile into this directory
 
-Create the IOC in master with
+Create the IOC in master with (from an EPICS terminal)
 
 ```
  makeBaseApp.pl –t ioc <myname>
@@ -42,12 +42,7 @@ $(APPNAME)_SYS_LIBS_WIN32 += msxml2
 Add the IOC to the makefile in `EPICS\ISIS\Makefile` e.g.
 
 ```
-ifeq ($(HAVE_ATL),YES)  
-MODULES += lvDCOM Tektronix_DMM_4040
-MODULES += Tektronix_DMM_4050 Agilent_33220A Hameg_8123 Chipir_XYZ Agilent_3631A
-MODULES += CHIPIR_Collimator Chipir_LV_FP CHIPIR_Filter_Set HIFI_CRYOMAG
-MODULES += MERCURYiTC <device>
-endif
+ATLDIRS += <device>
 ```
 
 ## 2. Create the xml configuration file
@@ -59,7 +54,7 @@ This is a summary of [[more general LvDCOM instructions|LVDCOM-auto-generate-xml
      1. 2010:  Go to Tools menu, Advanced, Export Strings... and uncheck the wizard option for "block diagram strings" and save the export results to a text file e.g. controls.txt (Note: you may need write access to the VI itself to do this, so might have to make a local copy of the VI first)
      1. 2014: 
          1. Menu -> Tools -> Advanced -> Export Strings... 
-         1. Then save file to (<device>/protocol/controls.txt)
+         1. Then save file to (\<device>/protocol/controls.txt)
          1. Yes to "Export captions for controls without captions?"
          1. No to "Export block diagram strings?"
 1. Generate a corrected xml file. In an epics terminal run in the protocol directory:
