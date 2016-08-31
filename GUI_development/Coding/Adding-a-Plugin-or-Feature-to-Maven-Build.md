@@ -1,6 +1,6 @@
 > [Wiki](Home) > [The GUI](The-GUI) > [Coding](GUI-Coding) > Adding a plugin or feature to Maven
 
-There are essentially two steps: adding a POM file to the plug-in/feature and editing the parent POM to include the new file.
+There are essentially two steps: adding a POM file to the plug-in/feature and editing the parent POM to include the new file. A plug-in is one small part of IBEx, such as the blocks view, and a feature is a large collection of plug-ins, such as CSS.
 
 ## Adding a POM file
 
