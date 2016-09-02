@@ -4,7 +4,7 @@ The dataweb service allows some information about each instrument to be viewed i
 
 ## The Overall Architecture
 
-![Architecture](/images/overall_architecture.png)
+![Architecture](dataweb/images/overall_architecture.png)
 
 The dataweb system consists of a number of parts running on each instrument:
 
