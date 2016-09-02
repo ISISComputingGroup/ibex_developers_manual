@@ -1,5 +1,5 @@
 ### The Configuration Rules ###
 
-[Configuration Rules](BlockServer-Configuration-Rules)
+[Configuration Rules](Configuration-Rules)
 
 [Calibration Files](Calibration-Files)
