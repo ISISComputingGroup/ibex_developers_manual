@@ -7,6 +7,7 @@ This document describes the steps necessary to install IBEX on an Instrument con
 - If you are using any serial devices with the system, don't forget to check that nport is installed, and configure the COM settings as standard (moxa 1 starts at COM5, moxa 2 at COM21, etc.)
 - Check that 7-Zip is installed on the PC.  If not, download the latest version from the 7-Zip web-site (http://www.7-zip.org/) and install it.
 - Check that Java is installed on the PC.  If not, download the latest JRE from the Java web-site (http://www.java.com/en/) and install it.  Make sure you choose the 64-bit version of Java.
+- Check that the LabVIEW modules are installed in `C:\labview modules`.  If the LabVIEW modules are not installed you can proceed, but there some extra steps you need to perform (see below)
 
 - Checkout Config Directory
 
@@ -47,7 +48,7 @@ cd C:\Instrument
 - Configure the archive engine:
 
 ```
-    cd c:\Instrument\Apps\EPICS\SystemSetup
+    cd C:\Instrument\Apps\EPICS\SystemSetup
     config_mysql
 ```
 
@@ -73,22 +74,22 @@ Note: **BE CAREFUL.**  If you run the `config_mysql.bat` script on an existing s
 
 - Make sure these [tests are performed](client-release-tests), these are items we have missed in the past.
 
-## Extra step for machines with no LabVIEW modules directory ##
+## Extra step for machines with no LabVIEW modules directory
 
-On most instruments there will be a c:\labview modules directory containing sample environment plus DAE programs. If you are installing EPICS on a non-instrument and need to start the DAE in simulation mode, then you needs to  
+On most instruments there will be a `C:\labview modules` directory containing sample environment plus DAE programs. If you are installing EPICS on a non-instrument and need to start the DAE in simulation mode, then you need to  
 
-    cd c:\Instrument\Apps\EPICS
+    cd C:\Instrument\Apps\EPICS
     create_icp_binaries
     
-## Register DAE ##
+## Register DAE
 
-Register the isisicp.exe program (either in c:\labview modules\dae\... or ICP_Binaries\...) as per developer setup instructions
+Register the `isisicp.exe` program (either in `C:\labview modules\dae\...` or `ICP_Binaries\...`) as per developer setup instructions
 
 ## Start the Instrument
 
 To start the instrument, open a command prompt and type the following:
 
-    cd c:\Instrument\Apps\EPICS
+    cd C:\Instrument\Apps\EPICS
     start_inst
     
 Allow the `start_inst` script a few moments to complete before starting the IBEX client.
@@ -98,7 +99,7 @@ Allow the `start_inst` script a few moments to complete before starting the IBEX
 
 To stop the instrument, exit from the IBEX client (if you are running it), then open a command prompt and type the following:
 
-    cd c:\Instrument\Apps\EPICS
+    cd C:\Instrument\Apps\EPICS
     stop_inst
     
 Allow the `stop_inst` script a few moments to complete.

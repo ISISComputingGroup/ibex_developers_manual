@@ -488,3 +488,14 @@ In the case of files being deleted the following will happen:
   control.
 
 Any log messages written by the file watcher will come from FILEWTCHR.
+
+--------------------------
+The Config Version Control
+--------------------------
+The BlockServer keeps the configurations git repository under `/Instrument/Settings/config/NDXXXX` up-to-date, adding and committing any changes at runtime. This is done through the `ConfigVersionControl` class, which simply delegates to the corresponding commands for either git or svn.
+
+NOTE: Files produced by system tests are treated differently: the `ConfigVersionControl` checks for files containing the system test prefix in their path, and will NOT add them to version control.
+
+When removing non-system-test files, deletion from the file system is taken care of by the version control library. System test files do not get forwarded to that library, so we have to delete them when we catch them instead.
+
+

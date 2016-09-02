@@ -140,6 +140,13 @@ The following steps will allow you to add an existing UI plugin to the perspecti
             "icons/foo.png");
     }
     ```
+1. If you want the perspective to be invisible by default, unless selected in the preferences Override the isVisibleDefault method from BasePersoective to return false:
+    ```java
+    @Override
+    public boolean isVisibleDefault() {
+        return false; 
+    }
+    ```
 1. In the plugin's, ``plugin.xml`` file, go to the extensions tab and add the following extensions:
 
   * ``org.eclipse.ui.views`` - add a new 'view' to this; point it at the ViewPart class.
