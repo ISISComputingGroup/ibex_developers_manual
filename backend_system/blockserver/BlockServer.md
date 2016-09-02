@@ -10,7 +10,7 @@ It can also be used to:
 
 * Start and stop IOCs via ProcServ
 
-See [BlockServer Structure](Block-Server-Structure) for further information.
+See [BlockServer Structure](BlockServer-Structure) for further information.
 
 ------------
 What it does
