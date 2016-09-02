@@ -192,7 +192,7 @@ public class View extends ViewPart {
 }
 ```
     
-The binding of the name is a simple as it gets; an IObservableValue is create for both the widget and the name in the Person class 
+The binding of the name is a simple as it gets; an IObservableValue is created for both the widget and the name in the Person class 
 and these are bound together in the DataBindingContext object.
  
 For age, because it is an int it is possible to make the widget show an error message when is contains a value that is not an int 
@@ -203,7 +203,7 @@ setName method is called every time a change is made to the widget text, i.e. ev
 
 ## Validators
 
-In the previous example, an warning was shown when the age entered was invalid - this is basic validation, it might be that more advanced validation is desired.
+In the previous example, a warning was shown when the age entered was invalid - this is basic validation, it might be that more advanced validation is desired.
 For example, it might that we want to ensure a string is only made up of digits.
 
 Create a new class called NumbersOnlyValidator and add the following code:
