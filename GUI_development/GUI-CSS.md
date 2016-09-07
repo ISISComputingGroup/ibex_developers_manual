@@ -1,4 +1,4 @@
-> [Wiki](Home) > [The GUI](The-GUI) > Control System Studio
+> [Wiki](Home) > [The GUI](The-GUI) > CS Studio
 
 * [CS-Studio on GitHub](https://github.com/ControlSystemStudio)
 
