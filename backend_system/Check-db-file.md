@@ -1,4 +1,4 @@
-> [Wiki](Home) > [Useful tools](Useful-tools) > Check db file script
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [Useful tools](Useful-tools) > Check db file script
 
 The check_db_file script checks that a db file conforms to the ISIS format. Usage:
 
