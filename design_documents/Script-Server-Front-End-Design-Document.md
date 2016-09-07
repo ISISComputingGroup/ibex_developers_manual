@@ -1,4 +1,4 @@
-> [Wiki](Home) ▸ [Project Overview](Project-Overview) ▸ [[Design Documents]] ▸ **Script Server Front End Design Document**
+> [Wiki](Home) > [Project overview](Project-Overview) > [[Design Documents]] > **Script server front end design document
 
 This document is designed to be read in conjunction with the equivalent [back-end design document](Script-Server-Back-End-Design-Document).
 
