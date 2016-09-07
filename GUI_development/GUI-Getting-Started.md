@@ -1,4 +1,4 @@
-> [Wiki](Home) > [The GUI](The-GUI) > Getting started
+> [Wiki](Home) > [The GUI](The-GUI) > Getting Started
 
 * [How to Build](Building-the-GUI)
 
