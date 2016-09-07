@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > Editing barnddoors and momentum slits on MUON Front End
+
 Muon front end is feeding three instruments. It controls the moment and number of neutrons to the experiments. Momentum is controller by a single momentum slit device connected to a Galil. The exposure for each of the three instruments are controlled separately by 3 barndoors. 
 
 ## Momentum Slits
