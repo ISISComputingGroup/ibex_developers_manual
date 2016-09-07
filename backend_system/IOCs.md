@@ -41,7 +41,7 @@ Building a new IOC? Before you get started, take a look at the relevant [instrum
 
 * [Barndoors and Momentum Slits on MUON Front End](Barndoors-and-Momentum-Slits-on-MUON-Front-End)
 * [Mecury iTC](MercuryiTC)
-* [Glalil/Motor and SetPoints](Motor-Galil-SetPoints)
+* [Galil/Motor and SetPoints](Motor-Galil-SetPoints)
 * [TPG26x](TPG26x)
 
 ## Further reading ##
