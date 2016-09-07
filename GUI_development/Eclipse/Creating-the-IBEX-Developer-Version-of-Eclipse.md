@@ -1,4 +1,4 @@
-> [Wiki](Home) > [The GUI](The-GUI) > [Eclipse](GUI-Eclipse) > Creating the IBEX Developer Version of Eclipse
+> [Wiki](Home) > [The GUI](The-GUI) > [Eclipse](GUI-Eclipse) > Creating the IBEX developer version of Eclipse
 
 This describes how to make a new version of the IBEX developer's version of Eclipse. If adding new plugins starting from the old version should be sufficent, but if upgrading the Eclipse version re-creating these steps may be easier.
 
