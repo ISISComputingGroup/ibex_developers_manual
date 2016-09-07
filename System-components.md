@@ -1,4 +1,4 @@
-> [Wiki](Home) > [The Backend System](The-Backend-System) > [System components](System-components)
+> [Wiki](Home) > [The Backend System](The-Backend-System) > System components
 
 * [The BlockServer](BlockServer)
 
