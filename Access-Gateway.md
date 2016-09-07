@@ -1,4 +1,4 @@
-> [Wiki](Home) > [The Backend System](The-Backend-System) > [System components](System-components) > [Access Gateway](Access-Gateway)
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [System components](System-components) > Access gateway
 
 ## Introduction
 
