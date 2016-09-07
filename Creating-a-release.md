@@ -1,4 +1,4 @@
-> [Wiki](Home) > [Deployment] > Creating a Release
+> [Wiki](Home) > [Deployment](Deployment) > Creating a release
 
 ## TODO
 
