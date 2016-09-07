@@ -1,4 +1,4 @@
-> [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > PV Naming
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > PV naming
 
 # EPICS PV Naming Scheme
 Suggestions for naming of PVs at ISIS. As of EPICS base 3.14.12 record names can be up to 60 characters long, but full PV name can be longer. 
