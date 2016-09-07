@@ -1,4 +1,4 @@
-> [Wiki](Home) > [Useful tools](Useful-tools) > Add sim records script
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [Useful tools](Useful-tools) > Add sim records script
 
 The add_sim_records script will automatically add simulation and disable records to a db file. Usage:
 
