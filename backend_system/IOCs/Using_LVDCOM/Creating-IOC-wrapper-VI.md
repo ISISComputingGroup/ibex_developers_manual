@@ -1,4 +1,4 @@
-> [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs)
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > Creating an LvDCOM IOC
 
 These are instructions for creating an IOC wrapper for a VI using lvDCOM. It assumes you want to create a "support" type module for lvdcom in ISIS. The Mercury ITC is an example where the below was followed and then an IOC was created using the this as a support module.
 
