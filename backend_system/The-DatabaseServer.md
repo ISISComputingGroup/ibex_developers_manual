@@ -1,4 +1,4 @@
-> [Wiki](Home) > [The Backend System](The-Backend-System) > [System components](System-components) > [The DatabaseServer](The-DatabaseServer) 
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [System components](System-components) > The DatabaseServer 
 
 The DatabaseServer is a Channel Access Server (CAS) written in Python using the [PCASpy](https://code.google.com/p/pcaspy/) module.
 
