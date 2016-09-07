@@ -1,4 +1,4 @@
-> [Wiki](Home) > [The GUI](The-GUI) > [Coding](GUI-Coding) > OPI Creation
+> [Wiki](Home) > [The GUI](The-GUI) > [Coding](GUI-Coding) > OPI creation
 
 # Introduction
 OPIs live in `ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources`
