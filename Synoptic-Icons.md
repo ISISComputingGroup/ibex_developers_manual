@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The GUI](The-GUI) > [Other](GUI-Other) > Synoptic icons
+
 ### Icon Conventions
 * Icon image files have a maximum height of 100px and a width of (icon width + 20px) including margins. 
 * The fill colour of the icons is 0xAAA19C. The border colour is black.
