@@ -1,3 +1,5 @@
+> [Wiki](Home) > [Project tools](Project-tools) > Java memory leak tools
+
 # Java Memory Profiling and Leak Detection
 
 ## JVisualVM
