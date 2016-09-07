@@ -1,4 +1,4 @@
-> [Wiki](Home) ▸ [[Design Documents]] ▸ **Hackathon - Opening an OPI Outside of a Synoptic**
+> [Wiki](Home) ▸ [Project Overview](Project-Overview) ▸ [[Design Documents]] ▸ **Hackathon - Opening an OPI Outside of a Synoptic**
 
 ## Vague Outline for the Hackathon for Ticket 1083
 
