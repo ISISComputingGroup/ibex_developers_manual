@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The GUI](The-GUI) > GUI chats
+
 # GUI Chats
 
 GUI chats occur on a semi-regular monthly basis within the group at ISIS. Although they were originally intended to be presentations focused on a specific part of the IBEX GUI they often cover other subjects that may be considered part of the backend.
