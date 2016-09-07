@@ -1,4 +1,4 @@
-> [Wiki](Home) > Deployment on an Instrument Control PC
+> [Wiki](Home) > [Deployment](Deployment) > Deployment on an Instrument Control PC
 
 This document describes the steps necessary to install IBEX on an Instrument control PC.  In due course some, or all, of the steps may be superseded by an automated installation process (e.g. a .msi file).  Until then, this document is a useful reference.
 
