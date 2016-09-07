@@ -1,4 +1,4 @@
-> [Wiki](Home) ▸ **High Level Architectural Design**
+> [Wiki](Home) > [Project Overview](Project-Overview) > **High Level Architectural Design**
 
 This document describes the high level design for IBEX. Eventually there should be outlines of the architectural design for each part of the high level design.
 
