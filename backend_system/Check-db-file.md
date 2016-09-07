@@ -1,3 +1,5 @@
+> [Wiki](Home) > [Useful tools](Useful-tools) > Check db file
+
 The check_db_file script checks that a db file conforms to the ISIS format. Usage:
 
 ```
