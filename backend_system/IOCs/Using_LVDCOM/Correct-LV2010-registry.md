@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > [Using LVDCOM](Using-LVDCOM) > Connecting to LV2010 registry
+
 # Fixing LabVIEW 2010's Registry settings to allow remote DCOM access
 
 It appears that when LabVIEW 2010 is installed it does not regisiter itself correctly in the Windows Registry. This means that it ignores any DCOM settings applied to it via dcomcnfg (see note below); as a result, it uses the general default settings instead.
