@@ -1,3 +1,5 @@
+> [Wiki](Home) ▸ [Project Overview](Project-Overview) ▸ **How to demonstrate IBEX**
+
 # Notes for demonstrating IBEX (the ISIS instrument control system)
 
 Anyone doing a demo of IBEX should use these notes, so that 
