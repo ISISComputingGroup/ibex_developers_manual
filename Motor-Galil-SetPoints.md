@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > Galil/motors setpoints
+
 # Motors, Galil and Set Points
 
 The Galil IOCs (01..08) enable IBEX to talk to motors for various purposes. To make it more user friendly the Galil IOC can be enhanced by adding set points which label set positions within the motors range.
