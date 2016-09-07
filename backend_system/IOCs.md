@@ -1,4 +1,4 @@
-> [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs)
+> [Wiki](Home) > [The Backend System](The-Backend-System) > IOCs
 
 ## Creating an IOC ##
 Building a new IOC? Before you get started, take a look at the relevant [instrument page](https://github.com/ISISComputingGroup/IBEX/wiki) to see if there's any useful information for the device you're about to write an IOC for. Otherwise, let's get going.
