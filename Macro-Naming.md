@@ -1,4 +1,4 @@
-> [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > Macro Naming
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > Macro naming
 
 # Macro Naming Scheme
 
