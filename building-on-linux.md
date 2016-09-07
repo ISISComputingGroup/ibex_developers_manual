@@ -1,3 +1,5 @@
+> [Wiki](Home) > [Project tools](Project-tools) > Building on linux
+
 # Building on Linux
 
 ## Creating a linux box on your desktop
