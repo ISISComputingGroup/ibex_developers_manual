@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [System components](System-components) > The MySQL database 
+
 # General Command Line Commands
 Using the MySQL Command Line Client
 
