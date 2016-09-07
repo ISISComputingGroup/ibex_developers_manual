@@ -1,4 +1,4 @@
-> [Wiki](Home) ▸ **Project Overview**
+> [Wiki](Home) > **Project Overview**
 
 # [ICP/IBEX Project Overview](https://github.com/ISISComputingGroup/IBEX/wiki) #
 
