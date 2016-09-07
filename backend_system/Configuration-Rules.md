@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [System components](System-components) > [Configurations](Configurations) > Configuration rules
+
 A record of the rules for the various parts of a configuration.
 
 ## Configurations ##
