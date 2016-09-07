@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > [Using LVDCOM](Using-LVDCOM) > Connecting to remote VI
+
 # Connecting an IOC to a VI on a different PC
 
 To connect to a lvDCOM IOC to a VI on a different PC is very straightforward.
