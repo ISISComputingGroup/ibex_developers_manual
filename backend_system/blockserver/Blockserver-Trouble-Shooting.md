@@ -1,4 +1,4 @@
-> [Wiki](Home) > [Trouble Shooting Pages](trouble-shooting-pages) > Blockserver Trouble Shooting
+> [Wiki](Home) > [Trouble-shooting](trouble-shooting-pages) > Blockserver trouble shooting
 
 ## Issue with the Config repository
 
