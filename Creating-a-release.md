@@ -16,6 +16,7 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
 1. Update the version numbers:
     1. GUI
         1. In `ibex_gui/base/uk.ac.stfc.isis.ibex.product/META-INF/MANIFEST.MF` edit `Bundle-Version:...` to be `X.x.m.qualifier`
+        1. In `ibex_gui/base/uk.ac.stfc.isis.ibex.product/pom.xml` edit the `<version>` tag content to be `X.x.m-SNAPSHOT`
         1. In `ibex_gui/base/uk.ac.stfc.isis.ibex.client.product/pom.xml` edit the `<version>` tag content (the one underneath `<modelVersion>`) to be `X.x.m-SNAPSHOT`
     1. EPICS
         1. In `EPICS\ioc\master\INSTETC\INSTETC-IOC-01App\Db\svn-revision.db.tmpl` edit `field(VAL, "1.0.0.$WCREV$")` to be `field(VAL, "X.x.m.$WCREV$")`
