@@ -55,6 +55,14 @@ For packages that we have modified it ourselves it is just necessary to create a
 
 On the instrument connect to the shared drive (\\\\isis\inst$\Kits$\CompGroup\ICP\Client\genie_python) and run the genie_python_install.bat file.
 
+Please check that Notepad++ is set to replace tabs with spaces - it saves a lot of bother later when writing scripts.
+
+### The location of instrument specific scripts
+
+Instrument specific scripts such as init_larmor.py should be kept in `C:\Instrument\Settings\config\NDXLARMOR\Python`. This means that they can then be versioned in git.
+
+As this folder is added to the Python path any other files put in this directory can also be imported into genie_python. Note that this is *NOT* done automatically it is still necessary to type `from my_instrument_scripts import my_function`. 
+
 ### Quickly deploy minor changes to instruments
 
 If changes have been made to the genie_python source (and tested!), it can be quicker just to copy the changed files onto the instrument directly rather than wait for the build server.
