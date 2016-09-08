@@ -59,11 +59,11 @@ Please check that Notepad++ is set to replace tabs with spaces - it saves a lot 
 
 ### The location of instrument specific scripts
 
-Instrument specific scripts such as init_larmor.py should be kept in `C:\Instrument\Settings\config\NDXLARMOR\Python`. This means that they can then be versioned in git.
+By default when setting an instrument the `init_default.py` file is loaded. This file checks for the existence of a folder called `C:\Instrument\Settings\config\NDX%INSTNAME%\Python` and adds this to the system path if it does. If this path exists and contains a file called `init_%INSTNAME%.py`, it will load it too.
 
-As this folder is added to the Python path any other files put in this directory can also be imported into genie_python. Note that this is *NOT* done automatically it is still necessary to type `from my_instrument_scripts import my_function`. 
+As this folder is added to the Python path any other files put in this directory can also be imported into genie_python. Note that this is *NOT* done automatically it is still necessary to type `from my_instrument_scripts import my_function`.
 
-Scripts relating to the operation of the instrument, e.g. larmor_scan_methods.py, should also be stored here. User scripts should not be stored here.
+Scripts relating to the operation of the instrument should be kept in `C:\Instrument\Settings\config\NDX%INSTNAME%\Python` too. This means that they can then be versioned in git.User scripts should not be stored here.
 
 ### Quickly deploy minor changes to instruments
 
