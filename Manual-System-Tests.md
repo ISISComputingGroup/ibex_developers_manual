@@ -1,4 +1,4 @@
-> [Wiki](Home) > [Deployment](Deployment) > [Manual System Tests](Manual-System-Tests)
+> [Wiki](Home) > [Deployment](Deployment) > Manual system tests
 
 Manual system tests should be performed as part of the release cycle and should be performed once a branch has been created.
 
