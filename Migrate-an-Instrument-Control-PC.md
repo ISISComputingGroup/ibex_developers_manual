@@ -14,8 +14,10 @@ Each instrument at ISIS is unique.  Although they share many similarities, there
 
 1. Meet with the scientist(s) to draw up a list of devices that are used on the instrument.  
    * It is important to determine which devices are permanent fixtures on the instrument and which are moveable (i.e. are shared with other instruments).
-   * Of the moveable devices, try to find out which are used frequently and which devices are used only rarely.  
+   * Of the moveable devices, try to find out which are used frequently and which devices are used only rarely.
+   * Identify devices (if any) that are unique to that instrument.
    * Also ask the scientists which devices they plan to use in the coming cycles (this will help to prioritise work during the preparation phase).
+   * Discuss with the scientist how they use these devices.  For example, do they need a GUI to view and set device parameters or will they do that via scripts?  Are some devices used for monitoring purposes only?
 1. Add the instrument to the list of instruments on the [IBEX Wiki](https://github.com/ISISComputingGroup/IBEX/wiki).
    1. Create a wiki page for the instrument (use the existing instrument pages as an example).
    1. Document the list of devices used on the instrument.  Identify which devices are already supported in IBEX and which will require support to be implemented.
@@ -27,7 +29,26 @@ Each instrument at ISIS is unique.  Although they share many similarities, there
 
 ## Preparation
 
-Prepare ...
+In the preparation phase, the team will create software components to support the devices identified during the planning phase.  Towards the end of the preparation phase, you should work with the team to create IBEX configurations and genie_python scripts that correspond to the SECI configs and Open-Genie scripts.
+
+1. Discuss the list of devices (identified in step 1 of the planning phase) with the team.  
+   * Some devices might already be supported; 
+   * some may be supported already, but will need that support to be extended 
+   * others will not be currently supported.  
+Agree with the team how support will be implemented (e.g. by creating or extending IOCs and OPIs, or by using lvDCOM to interface to LabVIEW).
+1. Discuss the time required to implement the required support (it might take several sprints)
+1. Create any tickets required to implement the necessary support.
+1. Identify when IBEX is likely to support the required devices (i.e. identify the first cycle after the required devices are supported in IBEX).
+1. As the target cycle approaches
+   1. set up a PC to test the new version of IBEX.
+      1. create IBEX configurations to correspond to their SECI equivalents
+      1. create genie-python scripts to correspond to their Open-Genie equivalents
+      1. test these configurations & scripts on the test PC
+      1. demonstrate the configurations & scripts to the instrument scientists and check that they are happy with the migrated configurations & scripts
+   1. arrange one or more training sessions with the scientists to help them understand how to 
+      1. use IBEX
+      1. create configurations & components
+      1. write genie_python scripts 
 
 ## Migration
 
