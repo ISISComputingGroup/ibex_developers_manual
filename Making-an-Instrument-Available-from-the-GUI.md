@@ -1,4 +1,4 @@
-> [Wiki](Home) > Making an Instrument Available from the GUI
+> [Wiki](Home) > [Deployment](Deployment) > Making an Instrument Available from the GUI
 
 # Making an Instrument Available from the GUI
 
