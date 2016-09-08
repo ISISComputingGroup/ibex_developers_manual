@@ -1,3 +1,5 @@
+> [Wiki](Home) > Component & activity stewards
+
 This page lists the component & activity stewards.
 
 ## What is a component / activity steward?
