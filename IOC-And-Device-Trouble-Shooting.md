@@ -1,3 +1,5 @@
+> [Wiki](Home) > [Trouble-shooting](trouble-shooting-pages) > IOC and device trouble shooting
+
 # It doesn't work What Should I Do?
 
 1. Connect over hyperterminal (see *Connect over hyperterminal*)
