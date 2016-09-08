@@ -1,4 +1,4 @@
-> [Wiki](Home) > [Deployment](Deployment) > (Deployment on an Instrument Control PC)[Deployment on an Instrument Control PC] > Change Windows Theme
+> [Wiki](Home) > [Deployment](Deployment) > [Deployment on an Instrument Control PC] (Deployment-on-an-Instrument-Control-PC)> Change Windows Theme
 
 To change from Windows Classic mode to a more modern look on a Windows 7 PC
 
