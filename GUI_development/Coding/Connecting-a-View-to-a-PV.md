@@ -95,7 +95,7 @@ Next we create an ObservableModel which allows us to bind controls on the View t
 ```java
 package org.csstudio.isis.title;
 
-public class ObservableTitleModel extends ModelObject{
+public class ObservableTitleModel extends ModelObject {
 
 }
 ```    
@@ -142,11 +142,11 @@ import org.csstudio.isis.model.ModelObject;
 public class ObservableTitleModel extends ModelObject{
     private String title;
     
-    public String getTitle(){
+    public String getTitle() {
         return title;
     }
     
-    public void setTitle(String value){
+    public void setTitle(String value) {
         firePropertyChange("title", this.title, this.title = value);
     }
 }
@@ -183,12 +183,12 @@ public class ObservableTitleModel extends ModelObject implements TitleModel {
     };
     
     @Override
-    public String getTitle(){
+    public String getTitle() {
         return title;
     }
     
     @Override
-    public void setTitle(String value){
+    public void setTitle(String value) {
         firePropertyChange("title", this.title, this.title = value);
     }
 }
@@ -206,7 +206,7 @@ public class ObservableTitleModel extends ModelObject implements TitleModel {
 ```
 * Now we add a constructor for that allows the wiring up of the BaseObserver and the TitleVariable:
 ```java
-public ObservableTitleModel(TitleVariable titleVar){
+public ObservableTitleModel(TitleVariable titleVar) {
     this.titleVar = titleVar;
     titleVar.titleRBV.subscribe(titleObserver);
 }
@@ -223,7 +223,7 @@ public class ObservableTitleModel extends ModelObject implements TitleModel {
     private String title;
     private final TitleVariable titleVar;
     
-    private final BaseObserver<String> titleObserver = new BaseObserver<String>(){
+    private final BaseObserver<String> titleObserver = new BaseObserver<String>() {
 
         @Override
         public void onValue(String value) {
@@ -242,16 +242,16 @@ public class ObservableTitleModel extends ModelObject implements TitleModel {
     };
     
     @Override
-    public String getTitle(){
+    public String getTitle() {
         return title;
     }
     
     @Override
-    public void setTitle(String value){
+    public void setTitle(String value) {
         firePropertyChange("title", this.title, this.title = value);
     }
     
-    public ObservableTitleModel(TitleVariable titleVar){
+    public ObservableTitleModel(TitleVariable titleVar) {
         this.titleVar = titleVar;
         titleVar.titleRBV.subscribe(titleObserver);
     }
@@ -465,7 +465,7 @@ private String title;
 private String titleSP;
 private final TitleVariable titleVar;
 
-private final BaseObserver<String> titleObserver = new BaseObserver<String>(){
+private final BaseObserver<String> titleObserver = new BaseObserver<String>() {
 ...
 ```
 Now we modify the getter and setter to use this variable for storing the new title before it is sent to the IOC:
@@ -624,7 +624,7 @@ public class ObservableTitleModel extends ModelObject implements TitleModel {
 
     private final TitleVariable titleVar;
     
-    public ObservableTitleModel(TitleVariable titleVar){
+    public ObservableTitleModel(TitleVariable titleVar) {
         this.titleVar = titleVar;
         //titleVar.titleRBV.subscribe(titleObserver);
     }
