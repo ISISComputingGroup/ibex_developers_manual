@@ -52,4 +52,15 @@ Agree with the team how support will be implemented (e.g. by creating or extendi
 
 ## Migration
 
-Migrate ...
+In the migration phase, IBEX will be physically installed and configured on the instrument control PC.  Experiments will switch over from being controlled with SECI to IBEX.
+
+1. Consult with the scientists and agree a date for the physical migration to take place.  This will most likely be a shutdown period between two cycles.  Allow two or three days for the migration to take place (you will need to time to install and configure IBEX and to test it with the migrated configurations and scripts).
+1. Before installing IBEX on the instrument control PC, make sure you have a full backup of the existing SECI system (including associated configs and scripts).
+1. Retain the existing SECI system (including associated configs and scripts) on the instrument control PC (in case you need to revert back).
+1. Check that there is sufficient space on the instrument control PC to install IBEX.
+1. Install and configure IBEX (as described in the [Deployment](Deployment) page).
+1. Install the IBEX configurations and genie-python scripts created during the preparation phase.
+1. Test the new IBEX installation
+1. Ask the scientists to confirm that the instrument is behaving as expected.
+
+
