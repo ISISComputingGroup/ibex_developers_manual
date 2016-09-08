@@ -63,6 +63,8 @@ Instrument specific scripts such as init_larmor.py should be kept in `C:\Instrum
 
 As this folder is added to the Python path any other files put in this directory can also be imported into genie_python. Note that this is *NOT* done automatically it is still necessary to type `from my_instrument_scripts import my_function`. 
 
+Scripts relating to the operation of the instrument, e.g. larmor_scan_methods.py, should also be stored here. User scripts should not be stored here.
+
 ### Quickly deploy minor changes to instruments
 
 If changes have been made to the genie_python source (and tested!), it can be quicker just to copy the changed files onto the instrument directly rather than wait for the build server.
