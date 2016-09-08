@@ -1,3 +1,4 @@
+> [Wiki](Home) > [Deployment](Deployment) > Upgrade java
 
 When java needs to be updated on the instrument:
 
