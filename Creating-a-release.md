@@ -14,10 +14,13 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
     1. genie_python
     1. ibex_gui
 1. Update the version numbers:
-    1. In `ibex_gui/base/uk.ac.stfc.isis.ibex.product/META-INF/MANIFEST.MF` edit `Bundle-Version:...` to be `X.x.m.qualifier`
-    1. In `ibex_gui/base/uk.ac.stfc.isis.ibex.client.product/pom.xml` edit the `<version>` tag content to be `X.x.m-SNAPSHOT`
-    1. In `EPICS\ioc\master\INSTETC\INSTETC-IOC-01App\Db\svn-revision.db.tmpl` edit `field(VAL, "1.0.0.$WCREV$")` to be `field(VAL, "X.x.m.$WCREV$")`
-    1. In `EPICS\README.txt`, update the version number in the header. If nothing else, this creates a change for initiating a pull request.
+    1. GUI
+        1. In `ibex_gui/base/uk.ac.stfc.isis.ibex.product/META-INF/MANIFEST.MF` edit `Bundle-Version:...` to be `X.x.m.qualifier`
+        1. In `ibex_gui/base/uk.ac.stfc.isis.ibex.client.product/pom.xml` edit the `<version>` tag content to be `X.x.m-SNAPSHOT`
+    1. EPICS
+        1. In `EPICS\ioc\master\INSTETC\INSTETC-IOC-01App\Db\svn-revision.db.tmpl` edit `field(VAL, "1.0.0.$WCREV$")` to be `field(VAL, "X.x.m.$WCREV$")`
+    1. Genie Python
+        1. `genie_python\source\version.py` edit `CURRENT_VERSION = "2.0.0"` to CURRENT_VERSION = "X.x.m"
 1. Commit you changes and push.
 1. Create a pull request in each of the 3 repos for the release branches. This will trigger builds on Jenkins:
     1. [ibex_gui](http://epics-jenkins.isis.rl.ac.uk/job/ibex_gui_build_PRs)
