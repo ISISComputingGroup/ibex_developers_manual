@@ -29,7 +29,7 @@ cd C:\Instrument
 - Check that MySQL v5.6 is installed on the PC.
    - If a different version of MySQL is already installed, you should consider removing it and installing MySQL v5.6.
    - If MySQL v5.6 is already installed, you might wish to consider removing it and doing a clean re-install.
-   - If you decide to remove a previous installation of MySQL, please ensure you fully remove it before installing MySQL v5.6.
+   - If you decide to remove a previous installation of MySQL (v5.6 or otherwise), please ensure you fully remove it before installing MySQL v5.6.
       - use the MySQL uninstaller from the Programs & Features control panel to remove MySQL
       - after uninstalling, confirm that no MySQL features remain listed in the Programs & Features control panel
    - If MySQL v5.6 is not already installed, or you are doing a clean re-install:
