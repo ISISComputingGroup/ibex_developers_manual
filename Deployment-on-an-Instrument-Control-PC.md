@@ -26,15 +26,21 @@ mkdir C:\Instrument\Settings\config
 cd C:\Instrument
 ```
 
-- Check that MySQL v5.6 is installed on the PC.  If not,
-    - download the MySQL installer `mysql-installer-community-5.6.16.0` from `\\isis\inst$\Kits$\External\BuildServer(ndwvegas)` and install it.
-    - during the MySQL installation process,
-        - use the password `isis@instdb99`
-        - select a "server only" installation
-        - change the data path to `C:\Instrument\var\mysql`
-        - choose "server machine" during configuration
-        - leave TCP/IP enabled
-    - You may need to re-boot after installing MySQL
+- Check that MySQL v5.6 is installed on the PC.
+   - If a different version of MySQL is already installed, you should consider removing it and installing MySQL v5.6.
+   - If MySQL v5.6 is already installed, you might wish to consider removing it and doing a clean re-install.
+   - If you decide to remove a previous installation of MySQL, please ensure you fully remove it before installing MySQL v5.6.
+      - use the MySQL uninstaller from the Programs & Features control panel to remove MySQL
+      - after uninstalling, confirm that no MySQL features remain listed in the Programs & Features control panel
+   - If MySQL v5.6 is not already installed, or you are doing a clean re-insyall:
+      - download the MySQL installer `mysql-installer-community-5.6.16.0` from `\\isis\inst$\Kits$\External\BuildServer(ndwvegas)` and install it.
+      - during the MySQL installation process,
+         - use the password `isis@instdb99`
+         - select a "server only" installation
+         - change the data path to `C:\Instrument\var\mysql`
+         - choose "server machine" during configuration
+         - leave TCP/IP enabled
+      - You may need to re-boot after installing MySQL
 
 ## Install EPICS
 
