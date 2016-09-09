@@ -107,7 +107,7 @@ Allow the `start_inst` script a few moments to complete before starting the IBEX
 To stop the instrument, exit from the IBEX client (if you are running it), then open a command prompt and type the following:
 
     cd C:\Instrument\Apps\EPICS
-    stop_inst
+    stop_ibex_server
     
 Allow the `stop_inst` script a few moments to complete.
 
