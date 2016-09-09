@@ -97,7 +97,7 @@ Register the `isisicp.exe` program (either in `C:\labview modules\dae\...` or `I
 To start the instrument, open a command prompt and type the following:
 
     cd C:\Instrument\Apps\EPICS
-    start_inst
+    start_ibex_server
     
 Allow the `start_inst` script a few moments to complete before starting the IBEX client.
 
