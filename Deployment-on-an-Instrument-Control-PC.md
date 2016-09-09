@@ -32,7 +32,7 @@ cd C:\Instrument
    - If you decide to remove a previous installation of MySQL, please ensure you fully remove it before installing MySQL v5.6.
       - use the MySQL uninstaller from the Programs & Features control panel to remove MySQL
       - after uninstalling, confirm that no MySQL features remain listed in the Programs & Features control panel
-   - If MySQL v5.6 is not already installed, or you are doing a clean re-insyall:
+   - If MySQL v5.6 is not already installed, or you are doing a clean re-install:
       - download the MySQL installer `mysql-installer-community-5.6.16.0` from `\\isis\inst$\Kits$\External\BuildServer(ndwvegas)` and install it.
       - during the MySQL installation process,
          - use the password `isis@instdb99`
