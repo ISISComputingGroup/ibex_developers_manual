@@ -93,6 +93,10 @@ On most instruments there will be a `C:\labview modules` directory containing sa
 
 Register the `isisicp.exe` program (either in `C:\labview modules\dae\...` or `ICP_Binaries\...`) as per developer setup instructions
 
+## If upgrading an existing instrument
+
+Step through the TODO list in the release notes.
+
 ## Start the Instrument
 
 To start the instrument, open a command prompt and type the following:
