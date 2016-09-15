@@ -116,6 +116,10 @@ To stop the instrument, exit from the IBEX client (if you are running it), then 
     
 Allow the `stop_ibex_server` script a few moments to complete.
 
+## Add instrument to list of known instruments
+
+Follow the instructions [here](Making an Instrument Available from the GUI).
+
 ## Set up motion set points 
 
 The details of the individual set points for any given device will depend on that device and how it is used on an instrument, but the general principles described here will apply.
