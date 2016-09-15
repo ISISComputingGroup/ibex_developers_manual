@@ -15,3 +15,21 @@ To get the value of a compressed, hexed PV (such as those on the blockserver) ty
 
 To send compressed, hexed values to a PV (such as those on the blockserver) type into an EPICS terminal:
 `for /f "tokens=*" %x in ('zhex VAL') do caput -S PV %x` where PV is as above and VAL is the data you wish to send
+
+## Console
+
+The console can be used to inspect output from an IOC. To use it, launch the IBEX server and then, from an EPICS terminal, run
+
+```
+console -M localhost [IOCNAME]
+```
+
+or, to look at an IOC remotely
+
+```
+console -M localhost -l [USERNAME] [IOCNAME]
+```
+
+where username is the local user on the instrument PC (e.g. `spudulike`).
+
+To stop/restart an IOC, press `CTRL+X` and to exit the console press `CTRL+E`, then `C`, then `.`.
