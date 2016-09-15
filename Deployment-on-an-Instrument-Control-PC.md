@@ -118,7 +118,7 @@ Allow the `stop_ibex_server` script a few moments to complete.
 
 ## Add instrument to list of known instruments
 
-Follow the instructions [here](Making an Instrument Available from the GUI).
+If the instrument is not on the list of known instruments already(i.e. for switching the GUI), follow the instructions [here](Making an Instrument Available from the GUI).
 
 ## Set up motion set points 
 
