@@ -1,6 +1,6 @@
 > [Wiki](Home) > [Deployment](Deployment) > Deployment on an Instrument Control PC
 
-This document describes the steps necessary to install IBEX on an Instrument control PC.  In due course some, or all, of the steps may be superseded by an automated installation process (e.g. a .msi file).  Until then, this document is a useful reference.
+This document describes the steps necessary to install IBEX on an Instrument control PC.  In due course some, or all, of the steps may be superseded by an automated installation process (e.g. a .msi file).  Until then, this document is a useful reference. If you are upgrading a release some steps will not be needed.
 
 ## Preparatory Steps
 
@@ -18,6 +18,15 @@ This document describes the steps necessary to install IBEX on an Instrument con
 - Checkout Calib Directory
 
     [See the back-end getting started guide](First-time-installing-and-building-(Windows)#setting-up-a-calibrations-directory)
+
+- Backup old directories
+    * Consider deleting old backups.
+    * Create `c:\instrument\backup\backup_YYYY_MM_DD` e.g. backup_2016_02_22
+    * Move `EPICS`, `Python` and `Client` into `c:\instrument\apps` to backup directory
+    * Copy the following directories to backup directory:
+        1. `c:\instrument\settings`
+        1. `c:\instrument\var\autosave`
+        1. `c:\instrument\var\mysql`
 
 - Create directories on the local hard drive as follows:
 ```
