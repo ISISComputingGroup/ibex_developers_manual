@@ -4,6 +4,7 @@ This document describes the steps necessary to install IBEX on an Instrument con
 
 ## Preparatory Steps
 
+- If needed take screen shots of running instrument (then got list of blocks, configurations, synoptics etc.).
 - Stop running instrument and GUI.
 - If you are using any serial devices with the system, don't forget to check that nport is installed, and configure the COM settings as standard (moxa 1 starts at COM5, moxa 2 at COM21, etc.)
 - Check that 7-Zip is installed on the PC.  If not, download the latest version from the 7-Zip web-site (http://www.7-zip.org/) and install it.
