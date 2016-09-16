@@ -74,7 +74,7 @@ cd C:\Instrument
 
 Note: **BE CAREFUL.**  If you run the `config_mysql.bat` script on an existing system **YOU MAY LOSE HISTORICAL LOG DATA**.
 
-- Make changes documented in Release notes between previous version and current version; You may wish to update the GUI before doing this (see [Releases](https://github.com/ISISComputingGroup/IBEX/wiki#releases]))
+- Make changes documented in Release notes between previous version and current version; You may wish to update the GUI before doing this (see [Releases](https://github.com/ISISComputingGroup/IBEX/wiki#releases))
 
 - Record the release to the instrument (add to list in [Instrument Releases](https://github.com/ISISComputingGroup/IBEX/wiki#instrument-information))
 
@@ -92,7 +92,7 @@ Note: **BE CAREFUL.**  If you run the `config_mysql.bat` script on an existing s
 
 - You might find it convenient to create a desktop shortcut to use to launch the IBEX client.
 
-- Make changes documented in Release notes between previous version and current version (see [Releases](https://github.com/ISISComputingGroup/IBEX/wiki#releases])). 
+- Make changes documented in Release notes between previous version and current version (see [Releases](https://github.com/ISISComputingGroup/IBEX/wiki#releases)). 
 
 - If releasing to an instrument record the release to the instrument (add to list in [Instrument Releases](https://github.com/ISISComputingGroup/IBEX/wiki#instrument-information))
 
