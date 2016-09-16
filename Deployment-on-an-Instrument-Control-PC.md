@@ -24,6 +24,7 @@ This document describes the steps necessary to install IBEX on an Instrument con
 mkdir C:\Instrument\Apps\EPICS
 mkdir C:\Instrument\Apps\Client
 mkdir C:\Instrument\Settings\config
+mkdir C:\scripts
 cd C:\Instrument
 ```
 
