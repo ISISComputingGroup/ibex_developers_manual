@@ -1,0 +1,6 @@
+> [Wiki](Home) > [Deployment](Deployment) > Manual system tests results
+
+Here you can find the results of the system tests performed as part of each release (most recent on top).
+
+* [Release 2.1.0 results](Release_2.1.0_manual_system_tests_outcome_Sep2016.xlsx) - September 2016
+

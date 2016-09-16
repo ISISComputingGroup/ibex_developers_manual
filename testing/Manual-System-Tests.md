@@ -14,3 +14,5 @@ Use the [template for system testing](testing/manual_system_tests_template.xlsx)
 Note that the spreadsheet has a Bugs sheet where we can take note of any bugs found during the system tests session, before actually creating tickets.
 
 When having multiple people running system tests in parallel we have found it useful to move the spreadsheet to a shared Google Sheet, so that multiple people can update it at the same time.
+
+Once the tests are completed, please add the spreadsheet containing the tests outcome [here](Manual-System-Tests-Results).
