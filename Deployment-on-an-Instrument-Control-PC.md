@@ -24,6 +24,7 @@ This document describes the steps necessary to install IBEX on an Instrument con
 - Backup old directories
     * Consider deleting old backups.
     * Create `D:\data\old\ibex_backup_YYYY_MM_DD` e.g. `ibex_backup_2016_02_22`
+       * **Note:** always create the backup folder in `D:\data\old`.  This makes it easy to delete the backup and recover the disk space when the backup is no longer required.
     * **_Move_** `EPICS`, `Python` and `Client` directories from `C:\instrument\apps` to backup directory
     * **_Copy_** the following directories to backup directory:
         1. `C:\instrument\settings`
