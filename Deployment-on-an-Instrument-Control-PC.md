@@ -23,9 +23,9 @@ This document describes the steps necessary to install IBEX on an Instrument con
 
 - Backup old directories
     * Consider deleting old backups.
-    * Create `c:\instrument\backup\backup_YYYY_MM_DD` e.g. backup_2016_02_22
-    * Move `EPICS`, `Python` and `Client` into `c:\instrument\apps` to backup directory
-    * Copy the following directories to backup directory:
+    * Create `d:\data\old\ibex_backup_YYYY_MM_DD` e.g. `ibex_backup_2016_02_22`
+    * **_Move_** `EPICS`, `Python` and `Client` from `c:\instrument\apps` to backup directory
+    * **_Copy_** the following directories to backup directory:
         1. `c:\instrument\settings`
         1. `c:\instrument\var\autosave`
         1. `c:\instrument\var\mysql`
