@@ -8,12 +8,18 @@ These items have hard-coded ports for ProcServ:
 | Database server | 9009 |
 | JSON Bourne server | 9012 |
 
-IOCs are assigned ports as part of the build process starting from 20000.
+Everything else (IOCs, Block Cache, archivers etc.) are assigned ports as part of the build process starting from 20000.
 
 ## Other Ports
 
+| Name | Port |
+|------|------|
+| Instrument Archiver web port | 4812 |
+| Block Archiver web port | 4813 |
+| JSON Bourne web port | 60000 |
+| Blockserver web port | 60001 |
+
 TODO: JMS
 
-TODO: Webservers
 
 
