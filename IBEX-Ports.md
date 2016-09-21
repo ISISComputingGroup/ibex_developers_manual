@@ -17,7 +17,7 @@ Everything else (IOCs, Block Cache, archivers etc.) are assigned ports as part o
 | Instrument Archiver web port | 4812 |
 | Block Archiver web port | 4813 |
 | JSON Bourne web port | 60000 |
-| Blockserver web port | 60001 |
+| Blockserver web port | 8008 |
 
 TODO: JMS
 
