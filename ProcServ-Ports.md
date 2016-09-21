@@ -4,6 +4,7 @@ These items have hard-coded ports for ProcServ:
 |------|------|
 | Blockserver | 9006 |
 | Database server | 9009 |
+| JSON Bourne server | 9012 |
 
 IOCs are assigned ports as part of the build process.
 
