@@ -6,6 +6,15 @@ This document describes the steps necessary to install IBEX on an Instrument con
 
 - If needed take screen shots of running instrument (then got list of blocks, configurations, synoptics etc.).
 - Stop running instrument and GUI.
+- Backup old directories
+    * Consider deleting old backups.
+    * Create `D:\data\old\ibex_backup_YYYY_MM_DD` e.g. `ibex_backup_2016_02_22`
+       * **Note:** always create the backup folder in `D:\data\old`.  This makes it easy to delete the backup and recover the disk space when the backup is no longer required.
+    * **_Move_** `EPICS`, `Python` and `Client` directories from `C:\instrument\apps` to backup directory
+    * **_Copy_** the following directories to backup directory:
+        1. `C:\instrument\settings`
+        1. `C:\instrument\var\autosave`
+        1. `C:\instrument\var\mysql`
 - If you are using any serial devices with the system, don't forget to check that nport is installed, and configure the COM settings as standard (moxa 1 starts at COM5, moxa 2 at COM21, etc.)
 - Check that 7-Zip is installed on the PC.  If not, download the latest version from the 7-Zip web-site (http://www.7-zip.org/) and install it.
 - Check that git is installed on the PC.  If not, download the latest version from the Git web-site (https://git-scm.com/download/win) and install it.
@@ -21,15 +30,7 @@ This document describes the steps necessary to install IBEX on an Instrument con
 
     [See the back-end getting started guide](First-time-installing-and-building-(Windows)#setting-up-a-calibrations-directory)
 
-- Backup old directories
-    * Consider deleting old backups.
-    * Create `D:\data\old\ibex_backup_YYYY_MM_DD` e.g. `ibex_backup_2016_02_22`
-       * **Note:** always create the backup folder in `D:\data\old`.  This makes it easy to delete the backup and recover the disk space when the backup is no longer required.
-    * **_Move_** `EPICS`, `Python` and `Client` directories from `C:\instrument\apps` to backup directory
-    * **_Copy_** the following directories to backup directory:
-        1. `C:\instrument\settings`
-        1. `C:\instrument\var\autosave`
-        1. `C:\instrument\var\mysql`
+
 
 - Create directories on the local hard drive as follows:
 ```
