@@ -1,4 +1,4 @@
-> [Wiki](Home) > Trouble-shooting
+> [Wiki](Home) > [Trouble-shooting](trouble-shooting-pages)
 
 [Jenkins](Jenkins-Trouble-Shooting)
 
@@ -6,4 +6,4 @@
 
 [IOC and device] (IOC-And-Device-Trouble-Shooting)
 
-[DAE] (DAE-Trouble-Shooting)
+[DAE](DAE-Trouble-Shooting)
