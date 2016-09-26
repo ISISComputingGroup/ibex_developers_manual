@@ -56,6 +56,7 @@ cd C:\Instrument
          - choose "server machine" during configuration
          - leave TCP/IP enabled
       - You may need to re-boot after installing MySQL
+- Check that the DAE is logging EPICS block (especially if this is the first time epics has been installed). See  [DAE troubleshooting](DAE-Trouble-Shooting) "No log files are produced ..."
 
 ## Install EPICS
 
