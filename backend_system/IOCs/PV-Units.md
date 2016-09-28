@@ -65,6 +65,6 @@ The project currently contains the following base units:
 * s
 * torr
 * step
-* T, mT, uT
+* T
 * V
 
