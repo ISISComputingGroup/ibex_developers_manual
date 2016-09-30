@@ -37,4 +37,4 @@ The GUI test currently run on NDWRENO. The test behaviour is different when Jenk
 
 In case NDWRENO goes offline the command to run the slave is also shown at [http://epics-jenkins.isis.rl.ac.uk/computer/ndwreno/](http://epics-jenkins.isis.rl.ac.uk/computer/ndwreno/).
 
-System tests need the RCPTT plugin this is downloaded from here (http://www.eclipse.org/rcptt/download/), currently on 2.1.0. Once downloaded extract them to C:\Jenkins\RCPTT_Runner (set in runner.cmd). The current version appears to need java 1.8 and because the instrument add the latest JDK you need to install JDK 1.8. 
+System tests need the RCPTT plugin this is downloaded from here (http://www.eclipse.org/rcptt/download/), currently on 2.1.0. Once downloaded extract them to C:\Jenkins\RCPTT_Runner (set in runner.cmd). The current version appears to need java 1.8 and because the instrument add the latest JDK you need to install JDK 1.8. The version of java that jenkins slave uses is set in `jenkins-clas.xml` in `c:\jenkins`.
