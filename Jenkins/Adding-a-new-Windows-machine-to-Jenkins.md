@@ -33,7 +33,7 @@ See the Jenkins [website](​https://wiki.jenkins-ci.org/display/JENKINS/Step+by
 <a name="jenkins_gui_tests"></a>
 ### Special Notes on Jenkins for GUI Tests
 
-The GUI test currently run on NDWRENO. The test behaviour is different when Jenkins is running as a service, so instead it is run as a command from a batch file. The batch file is located on the desktop for the user builder. On first start up this shows running in a console Window, but this is unintentionally hidden the the system tests.
+The GUI test currently run on NDWRENO. The test behaviour is different when Jenkins is running as a service, so instead it is run as a command from a batch file. The batch file is located on the desktop for the user builder. On first start up this shows running in a console Window, but this is unintentionally hidden the the system tests. (I am not sure that this is true anymore - John)
 
 In case NDWRENO goes offline the command to run the slave is also shown at [http://epics-jenkins.isis.rl.ac.uk/computer/ndwreno/](http://epics-jenkins.isis.rl.ac.uk/computer/ndwreno/).
 
