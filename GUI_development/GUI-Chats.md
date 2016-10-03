@@ -8,7 +8,7 @@ GUI chats occur on a semi-regular monthly basis within the group at ISIS. Althou
 
 Topic | Presenter | Date
 ----- | --------- | ----
-Data Binding (two parts) | Matt Clarke | Sept 2015
+Data Binding (two parts) (Contains info on MVVM) | Matt Clarke | Sept 2015
 Mockito | Ian Bush | Sept 2015
 Java Classes | Matt Clarke | Sept 2015
 Eclipse RCP (two parts) | Matt Clarke | Oct 2015
