@@ -22,13 +22,21 @@ The archive engine shown in the [high level design](High-Level-Architectural-Des
 
 The webserver is run as part of the BlockServer and provides all of the data on the current configuration in JSON format. This is the exact same data that is served on the GET_CURR_CONFIG_DETAILS PV. The webserver is currently serving the data on localhost:8008.
 
-### JSON Bourne
-
-This service is run as part of starting an instrument but is run in its own process. The program collates all the data from the other sources, such as putting the blocks and their values into the relevant groups as given by the configuration. This information is served as JSON to localhost:60000.
-
 ---
 
 ### On the Dataweb Server
 
-There are also parts of the system running on a central dataweb server, which provides external access. Currently a simple JS script takes the JSON created by JSON Bourne and provides a simple webpage for an external client to view. This can be accessed from http://dataweb.isis.rl.ac.uk/
+There are also parts of the system running on a central dataweb server, which provides external access. 
 
+### JSON Bourne
+
+The program collates all the data from the other sources, on all the EPICS instruments, such as putting the blocks and their values into the relevant groups as given by the configuration. This information is served as JSON to localhost:60000.
+
+### The Website
+
+Currently a simple JS script takes the JSON created by JSON Bourne and provides a simple webpage for an external client to view. This can be accessed from http://dataweb.isis.rl.ac.uk/
+
+## Deployment
+To add a new EPICS instrument to the web dashboard the following is required:
+* Add the instrument hostname to EPICS_INSTS within JSON_bourne\webserver.py
+* Add a link to the main page of the dataweb to IbexDataweb/default.html?Instrument=_hostname_
