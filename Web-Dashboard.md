@@ -38,6 +38,6 @@ Currently a simple JS script takes the JSON created by JSON Bourne and provides 
 
 ## Deployment
 To add a new EPICS instrument to the web dashboard the following is required:
-* Add the instrument hostname to EPICS_INSTS within JSON_bourne\webserver.py
-* Add a link to the main page of the dataweb to IbexDataweb/default.html?Instrument=_hostname_
+* Add the instrument hostname to NDX_INSTS or ALL_INSTS within JSON_bourne\webserver.py
+* Add a link to the main page of the dataweb to IbexDataweb/default.html?Instrument=_instname_
 * Restart JSON_bourne on extweb
