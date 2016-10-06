@@ -9,6 +9,8 @@ If a bug is discovered:
     1. If it is can be fixed for this cycle append the label "for current release"
     1. If it can not be fixed then add this bug to the release notes under Known Bugs
 
+Note down any strange/unexpected behaviours if they are not bugs and add that to the column in the template spreadsheet (this column may need adding). 
+
 Use the [template for system testing](testing/manual_system_tests_template.xlsx). This is not an exhaustive list: if you can think of additional tests, or improve the description of the existing ones, please feel free to improve the template.
 
 Note that the spreadsheet has a Bugs sheet where we can take note of any bugs found during the system tests session, before actually creating tickets.
