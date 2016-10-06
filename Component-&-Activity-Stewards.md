@@ -14,6 +14,7 @@ Blockserver | Matt |
 Muon Front End | Kathryn |
 Script Server (NICOS) | Dom |
 IRIS & OSIRIS | David |
+VESUVIO | David |
 ZOOM | Kathryn |
 Device screens | Adrian |
 IOC Unit test framework | Isabella |
