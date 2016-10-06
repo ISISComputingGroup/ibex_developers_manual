@@ -1,4 +1,4 @@
-Various Processes for Tasks and quick into into how they should work
+Various Processes for Tasks and quick info into how they should work
 
 ## Creation of Tickets
 
