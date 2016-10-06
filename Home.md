@@ -26,10 +26,13 @@ Information on the project tooling: version control and continuous integration.
 
 Deployment Information
 
-
 ## [Component & Activity Stewards](Component-&-Activity-Stewards)
 
 Component & Activity Stewards: who looks after which components/activities
+
+## [Processes](Processes)
+
+List of processes we wish to document
 
 ## [Trouble Shooting Pages](trouble-shooting-pages)
 
