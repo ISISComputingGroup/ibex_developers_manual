@@ -24,3 +24,6 @@ If you are adding a ticket to the ready column mid sprint. Please make sure it i
 
 Developers like quality time, on Friday afternoon a developer may choose a ticket that can be completed in a couple of hours. Good candidates are 0 time tickets from the backlog. NB These tickets are not a priority it is just for fun :-)
 
+# Discussion
+
+
