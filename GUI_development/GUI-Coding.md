@@ -17,3 +17,5 @@
 * [PV Switching](PV-Switching)
 
 * [OPI Creation](OPI-Creation)
+
+* [Converting OPIs from old to new style: tips and gotchas](Converting-to-New-Style-Tips-and-Gotchas)
