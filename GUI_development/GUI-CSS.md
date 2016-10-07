@@ -17,3 +17,5 @@
 * [OPI Creation](OPI-Creation)
 
 * [Debugging CSS](Debugging-CSS)
+
+* [Converting OPIs from old to new style: tips and gotchas](Converting-to-New-Style-Tips-and-Gotchas)
