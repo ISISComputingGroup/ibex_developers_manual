@@ -60,14 +60,8 @@ cd C:\Instrument
 
 ## Install EPICS
 
-- From a command prompt type the following (if your command prompt doesn't support UNC paths, use `pushd` instead of `cd`):
-
-    `cd \\isis\inst$\Kits$\CompGroup\ICP\EPICS\EPICS_CLEAN_win7_x64`
-
-- Inside the `EPICS_CLEAN_win7_x64` folder you will see a number of folders with names of the form `BUILD-nnn`, where `nnn` is a 3 digit number.  Change directory to the build folder which contains the most recent successful clean build.  
-
-- Inside the `BUILD-nnn` folder you will find a file called `install_to_inst.bat`.  Run the command `install_to_inst.bat`.  This will copy the contents of the above directory to `C:\Instrument\Apps\EPICS`.
-
+- From a command prompt type the following (if your command prompt doesn't support UNC paths, use `pushd` instead of `cd`): `cd \\isis\inst$\Kits$\CompGroup\ICP\Releases\X.x.m\EPICS` where `X.x.m` is the version you wish to install
+- Run `install_to_inst.bat` This will copy the contents of the above directory to `C:\Instrument\Apps\EPICS`.
 - Configure the archive engine:
 
 ```
@@ -85,12 +79,7 @@ Note: **BE CAREFUL.**  If you run the `config_mysql.bat` script on an existing s
 
 ## Install IBEX Client
 
-- From a command prompt type the following (if your command prompt doesn't support UNC paths, use `pushd` instead of `cd`):
-
-    `cd \\isis\inst$\Kits$\CompGroup\ICP\Client`
-
-- Inside this folder you will see a number of folders with names of the form `BUILDmmm`, where `mmm` is a 3 digit number.  Change directory to the build folder which contains the most recent successful clean build.  
-
+- From a command prompt type the following (if your command prompt doesn't support UNC paths, use `pushd` instead of `cd`): `cd \\isis\inst$\Kits$\CompGroup\ICP\Releases\X.x.m\Client` where `X.x.m` is the version you wish to install
 - Run the command `install_client.bat`.  This will copy the contents of the above directory to `C:\Instrument\Apps\Client`.  It will also install genie_python.
 
 - You might find it convenient to create a desktop shortcut to use to launch the IBEX client.
