@@ -30,5 +30,5 @@ This is from a problem see on IRIS.
         1. Block as `IN:<instument>:CS:SB:<block name>
         1. Other PVs `IN:<instrument>:<IOC>:PV.VAL` (these must be marked in the DB file with `info(archive, "VAL")`)
     1. Good blocks to choose might be SP and SP:RBVs in this case ploting the SP and SP:RBV showed that the SP had not be set in the machine. So run control hadn't been able to progress and it had hung.
-![log plotter image](troubleshooting\LogPlotter.png)
+![log plotter image](troubleshooting/LogPlotter.png)
 
