@@ -22,7 +22,7 @@ Please also make sure your OPI works well for colour blind users, following [the
 If you are converting an existing OPI from the old to the new style, be aware of [these tips and gotchas](Converting-to-New-Style-Tips-and-Gotchas).
 
 ## Macros
-When an OPI is opened from the synopic (via OpiTargetView.java) you get at least the following macros automatically set:
+When an OPI is opened from the synoptic (via OpiTargetView.java) you get at least the following macros automatically set:
 
 - `NAME`: the OPI title, as defined by the synoptic component editor (e.g. "Slit 2"). When setting up the OPI this acro should be in the Name property of the OPI.
 - `OPINAME`: name of the OPI file opened (e.g. Slit.opi)
