@@ -6,7 +6,7 @@ Some people are colour blind (to varying degrees).  About 7% of men and <1% of w
 This page provides some tips on designing displays that are suitable for people with normal vision and those with colour blindness.
 
 ## Tips
-1. Don't rely on colour alone to distinguish between elements of the display.  Combine colours with different shapes (with outlines, in black, say).
+1. Don't rely on colour alone to distinguish between elements of the display.  Combine colours with different shapes (with outlines, in black, say) or text.
 1. In graphs, combine colours with line styles (solid lines, dashed lines, alternative dots-dashes, etc.).
 1. Avoid colour combinations that colour-blind people find difficult to distinguish.
    1. [Colour Combinations](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Colour_Combinations.pptx) illustrates some poor and some good colour combinations.
