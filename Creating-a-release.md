@@ -29,8 +29,12 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
 1. Move the changes which have been merged into the release from the dev page to the new release notes page for the version.
 1. Test
 1. Record and fix any bugs
-1. Create a tag of the form  VX.x.p `git tag -a vX.x.p -m "Release version X.x.p"`
-1. Push tags and branch
+1. Create a release tag in the EPICS, ibex_gui and genie_python repositories. For each repo
+    1. Go to `[REPO_URL]/releases`, e.g. `https://github.com/ISISComputingGroup/ibex_gui/releases`
+    1. Click `Draft a new release`
+    1. Enter the tag version in the format `VX.x.p` and target the release branch
+    1. Enter the title `Release version X.x.p`
+    1. Add a link to the release notes in the description
 1. Merge release branch back into master to capture any changes
 
 ## Patch Release
