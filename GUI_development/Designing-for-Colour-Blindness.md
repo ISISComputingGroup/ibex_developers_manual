@@ -11,5 +11,5 @@ This page provides some tips on designing displays that are suitable for people 
 1. Avoid colour combinations that colour-blind people find difficult to distinguish.
    1. [Colour Combinations](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Colour_Combinations.pptx) illustrates some poor and some good colour combinations.
    1. As a simple rule (for red-green colour blindness): replace red with magenta or green with turquoise.
-1. Download the [ColorOracle](http://colororacle.org/index.html) tool.  It temporarily changes the colour balance of your screen to show how it appears to a colour blind person.  Use it when designing displays & graphs.
+1. Download the [ColorOracle](http://colororacle.org/index.html) tool.  It temporarily changes the colour balance of your screen to show how it appears to a colour blind person.  Use it when designing displays & graphs. NOTE: when running the ColorOracle exe file, a small icon will appear on your taskbar (next to the date and time); if it's not there, check your hidden icons.
 1. The [ColorOracle](http://colororacle.org/design.html) site has more comprehensive design advice.
