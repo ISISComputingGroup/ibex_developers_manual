@@ -8,6 +8,4 @@
 
 [DAE](DAE-Trouble-Shooting)
 
-[Experimental Runs](Experimental-Runs)
-
-This includes how log plotter can be used to look at old data.
+[Experimental Runs](Experimental-Runs) - This includes how log plotter can be used to look at old data.
