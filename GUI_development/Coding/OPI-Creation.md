@@ -14,8 +14,8 @@ Change to the "OPI Editor" prespective to allow easier editing.
 
 Edit the OPI not that some Macros are provided.
 
-## Consistency - Template Opi
-In order to promote consistency in look and feel between different OPIs, we have created a template opi in `ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources\template.opi`. Please follow the guidelines provided in this template, including ALL fonts and colours (is probably easiest to just copy the widgets from this template). If you're adding new widgets in your OPI which are not covered by this template, please add them to the template.
+## Consistency - Template OPI
+In order to promote consistency in look and feel between different OPIs, we have created a template OPI in `ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources\template.opi`. Please follow the guidelines provided in this template, including ALL fonts and colours (is probably easiest to just copy the widgets from this template). If you're adding new widgets in your OPI which are not covered by this template, please add them to the template.
 
 Please also make sure your OPI works well for colour blind users, following these guidelines {TODO: LINK}.
 
