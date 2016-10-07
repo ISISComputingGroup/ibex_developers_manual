@@ -19,7 +19,7 @@ In order to promote consistency in look and feel between different OPIs, we have
 
 Please also make sure your OPI works well for colour blind users, following [these guidelines](Designing-for-Colour-Blindness).
 
-If you are converting an existing OPI from the old to the new style, be aware of these tips and gotchas. (TODO: LINK)
+If you are converting an existing OPI from the old to the new style, be aware of [these tips and gotchas](Converting-to-New-Style-Tips-and-Gotchas).
 
 ## Macros
 When an OPI is opened from the synopic (via OpiTargetView.java) you get at least the following macros automatically set:
