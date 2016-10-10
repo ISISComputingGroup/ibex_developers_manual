@@ -20,4 +20,4 @@ For something like getFedId the binding code would look like:
 ctx.bindValue(WidgetProperties.text(SWT.Modify)
             .observe(txtId), BeanProperties.value("fedId").observe(person));
 ```
-The important point to note is the 'f' of "fedId" is lower-case. It will not work if it is upper-case
+The important point to note is the 'f' of "fedId" is lower-case. It will not work if it is upper-case.
