@@ -25,7 +25,7 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
     1. Update the `Branches to build > Branch specifier` field to `*/Release_X.x.m` where `X.x.m` is the appropriate release number.
     1. Click `Build now`
     1. The release builds will be created in `P:\Kits$\CompGroup\ICP\Releases\X.x.m`
-1. Create a released version in the [releases table](https://github.com/ISISComputingGroup/IBEX/wiki/Releases) (including link to release notes)
+1. Create a released version in the [releases table](https://github.com/ISISComputingGroup/IBEX/wiki#releases) (including link to release notes)
 1. Move the changes which have been merged into the release from the dev page to the new release notes page for the version.
 1. Test
 1. Record and fix any bugs
