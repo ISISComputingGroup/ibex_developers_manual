@@ -1,1 +1,1 @@
-Hello
+Start with [An introduction to databinding](An-Introduction-to-Databinding) if you are new to this.
