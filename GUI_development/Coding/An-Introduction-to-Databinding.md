@@ -1,5 +1,7 @@
 > [Wiki](Home) > [The GUI](The-GUI) > [Coding](GUI-Coding) > Data binding
 
+Note: there are some helpful tips to common mistakes at the bottom.
+
 ## Create the example plug-ins ##
 
 First create an Eclipse plug-in for the back-end:
