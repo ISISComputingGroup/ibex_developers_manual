@@ -2,7 +2,7 @@ Start with [An introduction to databinding](An-Introduction-to-Databinding) if y
 
 ### Missing getter or setter (or incorrectly named)
 
-The getter and setters (if the value can be set from the UI) must exist and be named correctly. For example: getName and setName.
+The getter and setters (if the value can be set from the UI) must exist and be named correctly. For example: getName and setName for BeanProperties.value("name")
 
 ### Incorrectly cased string in binding
 
