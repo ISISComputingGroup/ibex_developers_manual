@@ -1,6 +1,6 @@
 > [Wiki](Home) > [The GUI](The-GUI) > [Coding](GUI-Coding) > Data binding
 
-Note: there are some helpful tips to common errors/mistakes [here](Databinding:-common-mistakes)
+Note: there are some helpful tips to common errors/mistakes [here](Databinding---common-mistakes)
 
 ## Create the example plug-ins ##
 
