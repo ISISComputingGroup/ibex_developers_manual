@@ -14,9 +14,9 @@ ctx.bindValue(WidgetProperties.text(SWT.Modify)
             .observe(txtAge), BeanProperties.value("age").observe(person));
 ```
 
-This assumes there is a getter and setter called getAge and setAge.
+This assumes there is a getter and setter called `getAge` and `setAge`.
 
-For something like getFedId the binding code would look like:
+For something like `getFedId` the binding code would look like:
 
 ```java
 ctx.bindValue(WidgetProperties.text(SWT.Modify)
