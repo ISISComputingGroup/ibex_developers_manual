@@ -163,6 +163,12 @@ public class View extends ViewPart {
         GridData gdText = new GridData(SWT.LEFT, SWT.CENTER, true, false, 1, 1);
         gdText.minimumWidth = 100;
         txtName.setLayoutData(gdText);
+
+        Text txtReadName = new Text(parent, SWT.BORDER);
+        GridData gdReadText = new GridData(SWT.LEFT, SWT.CENTER, true, false, 1, 1);
+        gdReadText.minimumWidth = 100;
+        txtReadName.setLayoutData(gdReadText);
+        txtReadName.setEditable(false);
         
         Label lblAge = new Label(parent, SWT.NONE);
         lblAge.setText("Age: ");
@@ -179,6 +185,10 @@ public class View extends ViewPart {
         IObservableValue target = WidgetProperties.text(SWT.Modify).observe(txtName);
         IObservableValue model = BeanProperties.value("name").observe(person);
         ctx.bindValue(target, model); 
+
+        // Bind on one line
+        ctx.bindValue(WidgetProperties.text(SWT.Modify)
+                .observe(txtReadName), BeanProperties.value("Name").observe(person));
         
         // Use default validation - binding code on one line
         Binding bindValue = ctx.bindValue(WidgetProperties.text(SWT.Modify)
