@@ -15,7 +15,7 @@ Instead it was decided that the technology to communicate between the GUI and NI
 
 The Proxy is written in python (so as to be able to use pickled objects and JSON) and currently resides in a folder within the NICOS source code. 
 
-The first version of the proxy purely converted the pickled protocol into JSON and but used a similar low level socket protocol to communicate with any clients. This still exists in the HTTP client folder within the proxy, along with a simple command line client that can be used for testing.
+The first version of the proxy purely converted the pickled protocol into JSON and but used a similar low level socket protocol to communicate with any clients. This still exists in the client_connection/HTTP folder within the proxy, along with a simple command line client that can be used for testing.
 
 The second version used ActiveMQ queues for communication with client and so the structure looked something like this:
 
