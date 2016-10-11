@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [Nicos](Nicos) > ISIS Proxy
+
 # ISIS Proxy
 
 ## Motivation
@@ -18,6 +20,8 @@ The Proxy is written in python (so as to be able to use pickled objects and JSON
 The first version of the proxy purely converted the pickled protocol into JSON and but used a similar low level socket protocol to communicate with any clients. This still exists in the client_connection/HTTP folder within the proxy, along with a simple command line client that can be used for testing.
 
 The second version used ActiveMQ queues for communication with client and so the structure looked something like this:
+
+![NICOS Proxy Design](backend_system/NICOS/ProxyDesign.png)
 
 ## Future developments
 
