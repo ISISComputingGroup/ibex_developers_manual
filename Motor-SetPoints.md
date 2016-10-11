@@ -1,4 +1,4 @@
-> [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > Galil/motors setpoints
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > Motor setpoints
 
 # Motors, Galil and Set Points
 
