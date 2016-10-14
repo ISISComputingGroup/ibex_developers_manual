@@ -19,4 +19,4 @@ These are tests/checks that should be performed on the IBEX server after a relea
 
 ### All Instruments
 
-1. None
+1. Confirm that the web dashboard is working for the specific instrument (http://dataweb.isis.rl.ac.uk/)
