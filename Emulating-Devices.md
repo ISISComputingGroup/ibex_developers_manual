@@ -8,7 +8,7 @@ So you've created an IOC to talk to a device, and you want to test it: just borr
 
 However, we can try and get as close as possible at the development stage. We also might want to make minor changes to an IOC we know that works without all the effort of tracking down an actual piece of hardware. The above principle still applies, but we can still take steps to improve our odds.
 
-We write our emulators within the Plankton framework developed at ESS. The purpose of this page is not to replicate the full Plankton documentation, which can be found (here)[https://github.com/DMSC-Instrument-Data/plankton/blob/master/README.md], but to give quick pointers to common actions and describe how it all fits within IBEX.
+Our emulators are written within the Plankton framework developed at ESS. The purpose of this page is not to replicate the full Plankton documentation, which can be found (here)[https://github.com/DMSC-Instrument-Data/plankton/blob/master/README.md], but to give quick pointers to common actions and describe how it all fits within IBEX.
 
 Note: we initially wrote a few emulators using the basic framework introduced at CLF. Documentation for that framework can be found (here)[CLF-Emulators-Framework] until we decide to retire it.
 
