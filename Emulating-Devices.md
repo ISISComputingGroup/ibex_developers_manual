@@ -21,6 +21,7 @@ Our emulators can be found in [this submodule](https://github.com/ISISComputingG
 ### PyCharm setup tips
 
 To make your life easier when programming in PyCharm, you can make DeviceEmulator depend on Plankton, so that PyCharm can resolve references to the Plankton code.
+
 1. Within PyCharm rename the Plankton and DeviceEmulator python projects as `plankton` and `isis_emulators`, respectively:
 	1. In the tree, right-click on `master` > `Refactor` > `Rename` > `Rename project` > enter project name
 1. Open both project in the same window:
