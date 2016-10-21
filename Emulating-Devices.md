@@ -55,7 +55,7 @@ Congratulations! Your emulator is now running. You can test it by connecting to 
 
 ### The backdoor
 
-Note that it's possible to modify the device's state on the fly as it's running in case you want to push it into a specific state (as a backdoor). The backdoor can also be used to alter simulation paramters, e.g. to simulate a loss of connection or speed up the simulation time. Full documentation can be found [here for device access](https://github.com/DMSC-Instrument-Data/plankton/blob/master/docs/RemoteAccessDevices.md) and [here for simulation access](https://github.com/DMSC-Instrument-Data/plankton/blob/master/docs/RemoteAccessSimulation.md).
+It's possible to modify the device's state on the fly as it's running in case you want to push it into a specific state (as a backdoor). The backdoor can also be used to alter simulation paramters, e.g. to simulate a loss of connection or speed up the simulation time. Full documentation can be found [here for device access](https://github.com/DMSC-Instrument-Data/plankton/blob/master/docs/RemoteAccessDevices.md) and [here for simulation access](https://github.com/DMSC-Instrument-Data/plankton/blob/master/docs/RemoteAccessSimulation.md).
 
 The host and port for the backdoor are specified in the `-r` argument to `plankton.py`:
 
@@ -66,6 +66,8 @@ python plankton.py -p stream -r 127.0.0.1:10000 -a C:\Instrument\Apps\EPICS\supp
 NOTE: at the time of writing, you can't type `localhost` for the `-r` argument, but it should be fixed soon.
 
 The backdoor can be operated either via the command line through `control.py` or can be scripted, as described in the Plankton documentation.
+
+** NOTE **: The simulation command `disconnect_device` seems to simulate the device not responding to the port, which is different from a lost connection: the IOC reports `No reply from device within xxx ms`. When the emulator is actually stopped, with the simulation `stop` command, the IOC detects that there is really no connection and reports `Can't connect to localhost:<port>`.
 
 ## Connecting your IOC
 
