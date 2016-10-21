@@ -29,7 +29,7 @@ Note that it's possible to modify the emulator's state on the fly as it's runnin
 
 ## Connecting your IOC
 
-This section is the same as [here](Emulating-Devices#Connecting your IOC)
+This section is the same as [here](Emulating-Devices).
 
 ## GO!
 
