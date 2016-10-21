@@ -24,7 +24,7 @@ To make your life easier when programming in PyCharm, you can make DeviceEmulato
 
 1. Within PyCharm rename the Plankton and DeviceEmulator python projects as `plankton` and `isis_emulators`, respectively:
 	1. In the tree, right-click on `master` > `Refactor` > `Rename` > `Rename project` > enter project name
-1. Open both project in the same window:
+1. Open both projects in the same window:
 	1. `File` > `Open` > select project > `Open in current window` and tick `Add to currently opened projects`
 1. Make `isis_emulators` depend on `plankton`:
 	1. In the tree, select `master[isis_emulators]`
