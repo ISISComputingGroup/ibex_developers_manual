@@ -6,7 +6,7 @@ Note that new emulators should be written using the [Plankton framework](Emulati
 
 ## Get the framework
 
-The emulation framework can be found in [this repo](https://github.com/ISISComputingGroup/EPICS-DeviceEmulator) and should be synced to your local EPICS directory at `C:\Instrument\Apps\EPICS\support\deviceEmulator\master`.
+The emulation framework can be found in [this repo](https://github.com/ISISComputingGroup/EPICS-DeviceEmulator) and should be synced to your local EPICS directory at `C:\Instrument\Apps\EPICS\support\DeviceEmulator\master`.
 
 ## Set up a new emulator
 

@@ -16,7 +16,7 @@ Note: we initially wrote a few emulators using the basic framework introduced at
 
 The Plankton source code we're currently using can be found in [this submodule](https://github.com/ISISComputingGroup/EPICS-plankton) and should be synced to your local EPICS directory at `C:\Instrument\Apps\EPICS\support\plankton\master`. Note that is has a vendor branch for the original ESS source code.
 
-Our emulators can be found in [this submodule](https://github.com/ISISComputingGroup/EPICS-DeviceEmulator) and should be synced to your local EPICS directory at `C:\Instrument\Apps\EPICS\support\deviceEmulator\master`.
+Our emulators can be found in [this submodule](https://github.com/ISISComputingGroup/EPICS-DeviceEmulator) and should be synced to your local EPICS directory at `C:\Instrument\Apps\EPICS\support\DeviceEmulator\master`.
 
 ## PyCharm setup tips
 
