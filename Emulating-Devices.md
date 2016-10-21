@@ -20,7 +20,17 @@ Our emulators can be found in [this submodule](https://github.com/ISISComputingG
 
 ### PyCharm setup tips
 
-To make our life easier, within PyCharm we have named the Plankton and DeviceEmulator python projects as `plankton` and `isis_emulators`, respectively, and made `isis_emulators` depend on `plankton`. This means you should be able to have them both open in the same PyCharm window (open a new project, and when prompted, select `Open in current window` and tick the `Add to currently opened projects` check box) and PyCharm should resolve references to the Plankton code.
+To make your life easier when programming in PyCharm, you can make DeviceEmulator depend on Plankton, so that PyCharm can resolve references to the Plankton code.
+1. Within PyCharm rename the Plankton and DeviceEmulator python projects as `plankton` and `isis_emulators`, respectively:
+	1. In the tree, right-click on `master` > `Refactor` > `Rename` > `Rename project` > enter project name
+1. Open both project in the same window:
+	1. `File` > `Open` > select project > `Open in current window` and tick `Add to currently opened projects`
+1. Make `isis_emulators` depend on `plankton`:
+	1. In the tree, select `master[isis_emulators]`
+	1. `File` > `Settings` > `Project: isis_emulators` > `Project Dependencies`
+	1. Select `isis_emulators` on the left and tick the `plankton` check box on the right
+	1. Click OK
+1. Double-check that PyCharm hasn't added any of the .idea/ files to git automatically. If yes, unstage them.
 
 ## Set up a new emulator
 
