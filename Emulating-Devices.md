@@ -40,7 +40,7 @@ python plankton.py -p stream -a C:\Instrument\Apps\EPICS\support\DeviceEmulator\
 
 where we have picked port 57677 (see Plankton's doc for defaults).
 
-If testing the emulator via a telnet client such as PuTTY, please see the troubleshooting note below.
+Congratulations! Your emulator is now running. You can test it by connecting to it via a telnet client such as PuTTY (please see the troubleshooting note below).
 
 ### The backdoor
 
