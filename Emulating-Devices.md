@@ -18,7 +18,7 @@ The Plankton source code we're currently using can be found in [this submodule](
 
 Our emulators can be found in [this submodule](https://github.com/ISISComputingGroup/EPICS-DeviceEmulator) and should be synced to your local EPICS directory at `C:\Instrument\Apps\EPICS\support\DeviceEmulator\master`.
 
-## PyCharm setup tips
+### PyCharm setup tips
 
 To make our life easier, within PyCharm we have named the Plankton and DeviceEmulator python projects as `plankton` and `isis_emulators`, respectively, and made `isis_emulators` depend on `plankton`. This means you should be able to have them both open in the same PyCharm window (open a new project, and when prompted, select `Open in current window` and tick the `Add to currently opened projects` check box) and PyCharm should resolve references to the Plankton code.
 
