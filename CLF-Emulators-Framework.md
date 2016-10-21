@@ -10,7 +10,7 @@ The emulation framework can be found in [this repo](https://github.com/ISISCompu
 
 ## Set up a new emulator
 
-1. Create a copy of the directory `C:\Instrument\Apps\EPICS\support\deviceEmulator\example_emulator` for your new device, e.g. `myNewDevice_emulator`.
+1. Create a copy of the directory `C:\Instrument\Apps\EPICS\support\DeviceEmulator\master\clf_framework_emulators\example_emulator` for your new device, e.g. `myNewDevice_emulator`.
 1. Modify the function `process` to give the correct return for the incoming data.
     1. The incoming data will be the command defined in the `out` field of the protocol file. It's the command you would expect to send to the actual device.
     1. Change the function to return the data you want subject to specific input.
