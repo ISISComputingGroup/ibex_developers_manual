@@ -67,7 +67,7 @@ NOTE: at the time of writing, you can't type `localhost` for the `-r` argument, 
 
 The backdoor can be operated either via the command line through `control.py` or can be scripted, as described in the Plankton documentation.
 
-** NOTE **: The simulation command `disconnect_device` seems to simulate the device not responding to the port, which is different from a lost connection: the IOC reports `No reply from device within xxx ms`. When the emulator is actually stopped, with the simulation `stop` command, the IOC detects that there is really no connection and reports `Can't connect to localhost:<port>`.
+**NOTE**: The simulation command `disconnect_device` seems to simulate the device not responding to the port, which is different from a lost connection: the IOC reports `No reply from device within xxx ms`. When the emulator is actually stopped, with the simulation `stop` command, the IOC detects that there is really no connection and reports `Can't connect to localhost:<port>`.
 
 ## Connecting your IOC
 
