@@ -52,9 +52,9 @@ The host and port for the backdoor are specified in the `-r` argument to `plankt
 python plankton.py -p stream -r 127.0.0.1:10000 -a C:\Instrument\Apps\EPICS\support\DeviceEmulator\master -k plankton_emulators iris_cryo_valve -- --bind-address localhost --port 57677
 ```
 
-NOTE: at the time of writing, you can't type `localhost` in for the `-r` argument, but it should be fixed soon.
+NOTE: at the time of writing, you can't type `localhost` for the `-r` argument, but it should be fixed soon.
 
-The backdoor can be operated either via the command line through `control.py`, or can be scripted,k as described in the Plankton documentation.
+The backdoor can be operated either via the command line through `control.py` or can be scripted, as described in the Plankton documentation.
 
 ## Connecting your IOC
 
