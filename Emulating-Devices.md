@@ -24,7 +24,7 @@ To make our life easier, within PyCharm we have named the Plankton and DeviceEmu
 
 ## Set up a new emulator
 
-1. Create a subdirectory for your new emulator under `plankton_emulators/`.
+1. Create a subdirectory for your new emulator under `support/DeviceEmulator/master/plankton_emulators/`.
 1. Documentation for how to write a plankton emulator can be found [here](https://github.com/DMSC-Instrument-Data/plankton/blob/master/docs/Contributing.md), and you can refer to the examples in the plankton submodule, under `devices/` (e.g. `linkam_t95` for a full realistic emulator) and under `examples/` (e.g. `simple_device` for a basic emulator, and `example_motor` for a simple state machine).
 1. NOTE: the simple examples `simple_device` and `example_motor` have all the code in a single `__init__.py` file, but we should stick to a consistent tidy structure like that of the `linkam_t95` emulator, i.e. with separate files for the device itself, its states (if it's a state machine), and its interfaces.
 1. Don't forget to add `__init__.py` files in all of your folders!
