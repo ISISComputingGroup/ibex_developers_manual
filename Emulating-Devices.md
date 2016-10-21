@@ -32,7 +32,7 @@ To make our life easier, within PyCharm we have named the Plankton and DeviceEmu
 
 ## Run the emulator
 
-The emulator runs by launching the `plankton.py` file under `/support/plankton/master/`, as described [here](https://github.com/DMSC-Instrument-Data/plankton/blob/master/docs/AdapterSpecifics.md). Note that in our case, where the emulators live outside the Plankton source code, we need to specify where the emulators code is:
+The emulator runs by launching the `plankton.py` file under `/support/plankton/master/`, as described [here](https://github.com/DMSC-Instrument-Data/plankton/blob/master/docs/AdapterSpecifics.md). Note that in our case, where the emulators live outside the Plankton source code, we need to specify where the emulators code is, with the `-a` and `-k` arguments:
 
 ```
 python plankton.py -p stream -a C:\Instrument\Apps\EPICS\support\DeviceEmulator\master -k plankton_emulators iris_cryo_valve -- --bind-address localhost --port 57677
