@@ -10,7 +10,7 @@ However, we can try and get as close as possible at the development stage. We al
 
 Our emulators are written within the Plankton framework developed at ESS. The purpose of this page is not to replicate the full Plankton documentation, which can be found [here](https://github.com/DMSC-Instrument-Data/plankton/blob/master/README.md), but to give quick pointers to common actions and describe how it all fits within IBEX.
 
-Note: we initially wrote a few emulators using the basic framework introduced at CLF. Documentation for that framework can be found (here)[CLF-Emulators-Framework] until we decide to retire it.
+Note: we initially wrote a few emulators using the basic framework introduced at CLF. Documentation for that framework can be found [here](CLF-Emulators-Framework) until we decide to retire it.
 
 ## Get the framework
 
