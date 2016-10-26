@@ -28,10 +28,11 @@ Developers like quality time, on Friday afternoon a developer may choose a ticke
 
 ## Creation of tickets
 [KB] Would a flag specifying firm date be a better option, and specify the date in the ticket? If it is needed during a cycle then we might have a firm date, the date of the experiment, but really want to complete it in time for a release if at all possible, which might be a little while earlier.
+[JH] Like it I say yes, if noone objects i will do this after the current sprint.
 
 ## Backlog pruning
 [KB] I'm not sure a scientist propose flag is necessarily required, and could lead to a false priority based on "a scientist asked for that" compared to "a developer put that in to enable this new beam line to come on line"
+[JH] Unsure about this.
 
 ## Sprint Planning
 [KB] Is the suggestion here to work in units of half a day rather than days? So double all our standard estimates? I think I'm inclined to say yes, that isn't a bad idea, but I'm not sure what that would do to the calculations for availability
-
