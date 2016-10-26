@@ -6,11 +6,11 @@ Tickets should be created at need by developers as git issues using the waffle b
 
 ## Backlog Pruning
 
-Before the backlog pruning meeting product champions should add a proposed flag to tickets they would like to see in the next sprint. At the meeting we will look at these tickets as a priority and as many newly created tickets as we can. Proposed flags will then be added or removed depending on the general consensus. (Do we need a scientist propose flag too so these don't get lost?).
+Before the backlog pruning meeting product champions should add a 'proposal' label to tickets they would like to see in the next sprint. At the meeting we will look at these tickets as a priority and as many newly created tickets as we can. 'proposal' label will then be added or removed depending on the general consensus. (Do we need a scientist propose flag too so these don't get lost?).
 
 ## Sprint Planning
 
-At sprint planning we will *only* look at tickets with proposed flags. These will be selected in priority order and added to the ready column. Estimates will be added (should we start estimating in half days to avoid the 0.5 problem?). After sprint planning all proposed flags will be removed from all tickets.
+At sprint planning we will *only* look at tickets with 'proposal' label. These will be selected in priority order and added to the ready column. Estimates will be added (should we start estimating in half days to avoid the 0.5 problem?). After sprint planning all 'proposal' labels will be removed from all tickets.
 
 ## Movement of Tickets
 
