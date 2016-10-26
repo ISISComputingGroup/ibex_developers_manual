@@ -6,7 +6,9 @@ The new instrument must be added to the list of available instruments, so that u
 
 The content of the PV is a string in json format, compressed and hexed, for example:
 
-    [{"name": "LARMOR"}, {"name": "ALF"}, {"name": "DEMO"}, {"name": "IMAT"}, {"name": "MUONFE"}]
+```
+[{"pvPrefix": "IN:LARMOR:", "hostName": "NDXLARMOR", "name": "LARMOR"}, {"pvPrefix": "IN:ALF:", "hostName": "NDXALF", "name": "ALF"}, {"pvPrefix": "IN:DEMO:", "hostName": "NDXDEMO", "name": "DEMO"}, {"pvPrefix": "IN:IMAT:", "hostName": "NDXIMAT", "name": "IMAT"}, {"pvPrefix": "IN:MUONFE:", "hostName": "NDEMUONFE", "name": "MUONFE"}, {"pvPrefix": IN:ZOOM:", "hostName": "NDXZOOM", "name": "ZOOM"}, {"pvPrefix": "IN:LARMOR:", "hostName": "NDXLARMOR", "name": "IRIS"}]
+```
 	
 To add a new instrument to this list proceed as follows:
 
