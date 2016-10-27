@@ -7,7 +7,9 @@ Tickets should be created at need by developers as git issues using the waffle b
 ## Backlog Pruning
 
 Before the backlog pruning meeting product champions should add a 'proposal' label to tickets they would like to see in the next sprint. At the meeting we will look at these tickets as a priority and as many newly created tickets as we can. 'proposal' label will then be added or removed depending on the general consensus. (Do we need a scientist propose flag too so these don't get lost?).
+
 Filter for proposed tickets `is:open label:proposal`
+
 Filter for other tickets `is:open -label:proposal -label:"in progress" -label:"ready" -label:"review" -label:"completed" -label:"impeded"`
 
 ## Sprint Planning
