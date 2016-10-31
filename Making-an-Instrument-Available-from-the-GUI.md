@@ -15,7 +15,7 @@ The content of the PV is a string in json format, compressed and hexed, for exam
         {"name": "MUONFE", "hostName": "NDEMUONFE", "pvPrefix": "IN:MUONFE:"},
         {"name": "ZOOM", "hostName": "NDXZOOM", "pvPrefix": "IN:ZOOM:"},
         {"name": "IRIS", "hostName": "NDXIRIS", "pvPrefix": "IN:IRIS:"},
-    ]
+]
 ```
 	
 To add a new instrument to this list proceed as follows:
