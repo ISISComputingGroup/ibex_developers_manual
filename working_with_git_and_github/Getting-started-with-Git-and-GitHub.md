@@ -20,12 +20,16 @@ Or from TortoiseGit, select "Setting->Git" and select "global" and enter your de
 git config --global core.editor "start notepad++"
 ```
 
-* Set line-handling and passwords:
+* Set line-handling and passwords (Windows):
 ```
 git config --global core.autocrlf true
 git config --global credential.helper wincred
 ```        
-(note: on Linux you would want "core.autocrlf input"  instead)
+
+* Set line-handling and passwords (Linux):
+```
+git config --global core.autocrlf input
+```        
 
 * Check submodules have been pushed before allowing an update of the master index
 ```
