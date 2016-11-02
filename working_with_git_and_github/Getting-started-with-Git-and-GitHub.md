@@ -25,6 +25,7 @@ git config --global core.editor "start notepad++"
 git config --global core.autocrlf true
 git config --global credential.helper wincred
 ```        
+(note: on Linux you would want "core.autocrlf input"  instead)
 
 * Check submodules have been pushed before allowing an update of the master index
 ```
