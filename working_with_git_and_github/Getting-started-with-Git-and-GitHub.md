@@ -26,4 +26,8 @@ git config --global core.autocrlf true
 git config --global credential.helper wincred
 ```        
 
+* Check submodules have been pushed before allowing an update of the master index
+```
+git config --global push.recurseSubmodules check
+```
 
