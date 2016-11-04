@@ -50,7 +50,7 @@ Reviewing work for the subModules of EPICS
 * Build, make, update access to the code as necessary. If changing something in support, don't forget to make IOC entries as well
 * Test the changes
 * If the changes don't work, or you notice they break something else, talk to the developer and get it corrected
-* Once the tests have been passed, go to GitHub and merge the pull request
+* Once the tests have been passed, go to GitHub and merge the pull request and delete the branch
 * Get the merged pull request in repo: 
     * `git checkout master`
     * `git pull`
