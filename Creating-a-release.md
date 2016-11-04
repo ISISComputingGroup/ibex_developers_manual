@@ -7,6 +7,7 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
 1. Look at the released features in this branch [IBEX/wiki/ReleaseNotes_Dev](https://github.com/ISISComputingGroup/IBEX/wiki/ReleaseNotes_Dev) and find the most significant level of change (i.e. is this cumulatively a major change, a minor change, or a patch?).
 1. Start a release branch so that the code is frozen (e.g. `Release_v1.1.0`). You will need a branch for
     1. EPICS
+    1. EPICS-ioc (for version number update)
     1. genie_python
     1. ibex_gui
 1. Update the version numbers:
@@ -16,6 +17,7 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
         1. In `ibex_gui/base/uk.ac.stfc.isis.ibex.client.product/pom.xml` edit the `<version>` tag content (the one underneath `<modelVersion>`) to be `X.x.m-SNAPSHOT`
     1. EPICS
         1. In `EPICS\ioc\master\INSTETC\INSTETC-IOC-01App\Db\svn-revision.db.tmpl` edit `field(VAL, "1.0.0.$WCREV$")` to be `field(VAL, "X.x.m.$WCREV$")`
+        1. NB this has to be commited on a brnach in IOC and then this submodule commit has to be added to the EPICS release branch
     1. Genie Python
         1. `genie_python\source\version.py` edit `CURRENT_VERSION = "0.0.0"` to CURRENT_VERSION = "X.x.m"
 1. Commit you changes and push.
