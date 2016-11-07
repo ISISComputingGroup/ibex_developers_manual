@@ -53,3 +53,19 @@ The is a release when a change needs to be made between standard releases; i.e. 
     1. Only include the change you have made in the release notes
     1. Copy the release notes issues into the development page
 1. Merge the new code back into master
+
+
+## Adding late commits to the release Branch for EPICS
+
+1. Test and merge the change into master
+1. Create a release branch in the submodule (if it doesn't exist)
+    1. Navigate to EPICS in github
+    1. navigate to the submodule
+    1. Create new branch (this means it will be branched from the release point)
+1. Switch the branch of the submodule:  `git checkout Release_X.x.m`
+1. Pull the latest release branch:  `git pull`
+1. Merge in the ticket `git merge XXX`
+1. push that branch
+1. cd to EPICS
+1. checkout release branch and pull
+1. update submodule reference, commit and push.
