@@ -75,7 +75,13 @@ Note: **BE CAREFUL.**  If you run the `config_mysql.bat` script on an existing s
 
 - Record the release to the instrument (add to list in [Instrument Releases](https://github.com/ISISComputingGroup/IBEX/wiki#instrument-information))
 
-- Make sure these [tests are performed](server-release-tests), these are items we have missed in the past.
+- Make sure these [tests are performed](server-release-tests), these are items we have missed in the past. They may be performed along with the client tests.
+
+- Update the common calibration directory.
+    1. Do a git status to find out if files have been added or changed (if they have querry why this is and take appropriate action)
+    1. Git pull the latest version onto the system (if any file changes make a note so it can be sent to the instrument scientists so they know things have been changed) 
+
+- Send release notes and actions that you have performed to the instrument scientist so they know what has been updated (you may do this as part of the client install below).
 
 ## Install IBEX Client
 
@@ -89,6 +95,8 @@ Note: **BE CAREFUL.**  If you run the `config_mysql.bat` script on an existing s
 - If releasing to an instrument record the release to the instrument (add to list in [Instrument Releases](https://github.com/ISISComputingGroup/IBEX/wiki#instrument-information))
 
 - Make sure these [tests are performed](client-release-tests), these are items we have missed in the past.
+
+- Send release notes and actions that you have performed to the instrument scientist so they know what has been updated (you may do this as part of the client install below).
 
 ## Extra step for machines with no LabVIEW modules directory
 
