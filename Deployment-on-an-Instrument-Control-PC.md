@@ -14,7 +14,7 @@ This document describes the steps necessary to install IBEX on an Instrument con
     * **_Copy_** the following directories to backup directory:
         1. `C:\instrument\settings`
         1. `C:\instrument\var\autosave`
-        1. `C:\instrument\var\mysql`
+        1. `C:\instrument\var\mysql` (consider copying this check size first on IMAT it is in `C:\ProgramData\MySQL\MySQL Server 5.6\data\archive` [type in it is hidden])
 - If you are using any serial devices with the system, don't forget to check that nport is installed, and configure the COM settings as standard (moxa 1 starts at COM5, moxa 2 at COM21, etc.)
 - Check that 7-Zip is installed on the PC.  If not, download the latest version from the 7-Zip web-site (http://www.7-zip.org/) and install it.
 - Check that git is installed on the PC.  If not, download the latest version from the Git web-site (https://git-scm.com/download/win) and install it.
