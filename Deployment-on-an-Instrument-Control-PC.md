@@ -10,6 +10,8 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
 
 ## Preparatory Steps for Server
 
+- **upgrade** Note the current version number of the instrument (Help->About)
+
 - **upgrade** Take screen shots of running instrument. This ensures it is restarted as it was found and enables you easily to spot changes in config. Items to include: blocks, each perspective, configuration each tab, running ioc's available configs, components and synoptics
 
 - **upgrade** Stop running instrument `ibex_stop_server.bat`.
@@ -36,10 +38,10 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
 - **install** Check that the LabVIEW modules are installed in `C:\labview modules`.  If the LabVIEW modules are not installed you can proceed, but there some extra steps you need to perform (see below)
 
 - **install** Create directories on the local hard drive as follows:
-```
-mkdir C:\Instrument\Settings\config
-mkdir C:\scripts
-```
+    ```
+    mkdir C:\Instrument\Settings\config
+    mkdir C:\scripts
+    ```
 - **install** Checkout Common Calibration Directory
 
     [See the back-end getting started guide](First-time-installing-and-building-(Windows)#setting-up-a-calibrations-directory)
@@ -69,37 +71,37 @@ mkdir C:\scripts
 
 - From a command prompt type the following (if your command prompt doesn't support UNC paths, use `pushd` instead of `cd`): `cd \\isis\inst$\Kits$\CompGroup\ICP\Releases\X.x.m\EPICS` where `X.x.m` is the version you wish to install
 - Run `install_to_inst.bat` This will copy the contents of the above directory to `C:\Instrument\Apps\EPICS`.
-- Configure the archive engine:
+- **upgrade** Configure the archive engine:
 
-```
+    ```
     cd C:\Instrument\Apps\EPICS\SystemSetup
     config_mysql
-```
+    ```
 
-Note: **BE CAREFUL.**  If you run the `config_mysql.bat` script on an existing system **YOU MAY LOSE HISTORICAL LOG DATA**.
+    Note: **BE CAREFUL.**  If you run the `config_mysql.bat` script on an existing system **YOU WILL LOSE ALL HISTORICAL LOG DATA**.
 
-- Make changes documented in Release notes between previous version and current version; You may wish to update the GUI before doing this (see [Releases](https://github.com/ISISComputingGroup/IBEX/wiki#releases))
-
-- Record the release to the instrument (add to list in [Instrument Releases](https://github.com/ISISComputingGroup/IBEX/wiki#instrument-information))
+- Make changes documented in Release notes; You may wish to update the GUI before doing this (see [Releases](https://github.com/ISISComputingGroup/IBEX/wiki#releases))
 
 - Make sure these [tests are performed](server-release-tests), these are items we have missed in the past. They may be performed along with the client tests.
 
-- Send release notes and actions that you have performed to the instrument scientist so they know what has been updated (you may do this as part of the client install below).
+- Send release notes and actions that you have performed to the instrument scientist so they know what has been updated/installed (you may do this as part of the client install below).
+
+- Record the release to the instrument (add to list in [Instrument Releases](https://github.com/ISISComputingGroup/IBEX/wiki#instrument-information))
 
 ## Install IBEX Client
 
 - From a command prompt type the following (if your command prompt doesn't support UNC paths, use `pushd` instead of `cd`): `cd \\isis\inst$\Kits$\CompGroup\ICP\Releases\X.x.m\Client` where `X.x.m` is the version you wish to install
 - Run the command `install_client.bat`.  This will copy the contents of the above directory to `C:\Instrument\Apps\Client`.  It will also install genie_python.
 
-- You might find it convenient to create a desktop shortcut to use to launch the IBEX client.
+- Create a desktop shortcut to use to launch the IBEX client.
 
-- Make changes documented in Release notes between previous version and current version (see [Releases](https://github.com/ISISComputingGroup/IBEX/wiki#releases)). 
-
-- If releasing to an instrument record the release to the instrument (add to list in [Instrument Releases](https://github.com/ISISComputingGroup/IBEX/wiki#instrument-information))
+- Make changes documented in Release notes (see [Releases](https://github.com/ISISComputingGroup/IBEX/wiki#releases)). 
 
 - Make sure these [tests are performed](client-release-tests), these are items we have missed in the past.
 
-- Send release notes and actions that you have performed to the instrument scientist so they know what has been updated (you may do this as part of the client install below).
+- Send release notes and actions that you have performed to the instrument scientist so they know what has been updated 
+
+- If releasing to an instrument record the release to the instrument (add to list in [Instrument Releases](https://github.com/ISISComputingGroup/IBEX/wiki#instrument-information))
 
 ## Extra step for machines with no LabVIEW modules directory
 
