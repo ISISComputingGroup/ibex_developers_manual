@@ -6,7 +6,7 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
 
 - **install** Check that Java is installed on the PC.  If not, download the latest JRE from the Java web-site (http://www.java.com/en/) and install it.  Make sure you choose the 64-bit version of Java.
 - **install** If the PC is running the Windows Classic theme, switch it to a modern theme (e.g. Windows 7 Theme); the IBEX GUI looks better when using a modern theme.  To change the theme see [Change Windows Theme](Change Windows Theme).
-- **upgrade** Stop running GUI.
+- **upgrade** If this is not an instrument stop running GUI.
 
 ## Preparatory Steps for Server
 
