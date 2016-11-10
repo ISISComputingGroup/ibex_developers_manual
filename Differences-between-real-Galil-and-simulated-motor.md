@@ -6,6 +6,9 @@ Galil behavior:
 4. When motor reaches 50, motor will begin to decelerate to a stop (some overshoot)
 5. If motor has already reached 50, motor will begin to decelerate to a stop (some overshoot)
 
+This is consistent with the Galil docs for the "BL" and "FL" commands
+
+
 Simulated behavior:
 
 1. Set high limit (HLM) to 100
