@@ -1,47 +1,53 @@
 > [Wiki](Home) > [Deployment](Deployment) > Deployment on an Instrument Control PC
 
-This document describes the steps necessary to install IBEX on an Instrument control PC.  In due course some, or all, of the steps may be superseded by an automated installation process (e.g. a .msi file).  Until then, this document is a useful reference. If you are upgrading a release some steps will not be needed.
+This document describes the steps necessary to install/upgrade IBEX on an Instrument control PC.  In due course some, or all, of the steps may be superseded by an automated installation process (e.g. a .msi file).  Until then, this document is a useful reference. Steps for upgrading only are marked **upgrade**, streps for inital install are marked **install** other steps should be done for both.
 
-## Preparatory Steps
+## Preparatory Steps for Client and Server
 
-- If needed take screen shots of running instrument (then got list of blocks, configurations, synoptics etc.).
-- Stop running instrument and GUI.
-- Backup old directories
-    * Consider deleting old backups.
-    * Create `D:\data\old\ibex_backup_YYYY_MM_DD` e.g. `ibex_backup_2016_02_22`
-       * **Note:** always create the backup folder in `D:\data\old`.  This makes it easy to delete the backup and recover the disk space when the backup is no longer required.
-    * **_Move_** `EPICS`, `Python` and `Client` directories from `C:\instrument\apps` to backup directory
+- **install** Check that Java is installed on the PC.  If not, download the latest JRE from the Java web-site (http://www.java.com/en/) and install it.  Make sure you choose the 64-bit version of Java.
+- **install** If the PC is running the Windows Classic theme, switch it to a modern theme (e.g. Windows 7 Theme); the IBEX GUI looks better when using a modern theme.  To change the theme see [Change Windows Theme](Change Windows Theme).
+- **upgrade** Stop running GUI.
+
+## Preparatory Steps for Server
+
+- **upgrade** Take screen shots of running instrument. This ensures it is restarted as it was found and enables you easily to spot changes in config. Items to include: blocks, each perspective, configuration each tab, running ioc's available configs, components and synoptics
+
+- **upgrade** Stop running instrument `ibex_stop_server.bat`.
+
+- **upgrade** Backup old directories
+    * Delete backups older than the last backup.
+    * Create `C:\data\old\ibex_backup_YYYY_MM_DD` e.g. `ibex_backup_2016_02_22`
+    * **_Move_** `EPICS`, `EPICS_utils`, `Python` and `Client` directories from `C:\instrument\apps` to backup directory
     * **_Copy_** the following directories to backup directory:
         1. `C:\instrument\settings`
         1. `C:\instrument\var\autosave`
-        1. `C:\instrument\var\mysql` (consider copying this check size first on IMAT it is in `C:\ProgramData\MySQL\MySQL Server 5.6\data\archive` [type in it is hidden])
-- If you are using any serial devices with the system, don't forget to check that nport is installed, and configure the COM settings as standard (moxa 1 starts at COM5, moxa 2 at COM21, etc.)
-- Check that 7-Zip is installed on the PC.  If not, download the latest version from the 7-Zip web-site (http://www.7-zip.org/) and install it.
-- Check that git is installed on the PC.  If not, download the latest version from the Git web-site (https://git-scm.com/download/win) and install it.
-- Check that Java is installed on the PC.  If not, download the latest JRE from the Java web-site (http://www.java.com/en/) and install it.  Make sure you choose the 64-bit version of Java.
-- If the PC is running the Windows Classic theme, switch it to a modern theme (e.g. Windows 7 Theme); the IBEX GUI looks better when using a modern theme.  To change the theme see [Change Windows Theme](Change Windows Theme).
-- Check that the LabVIEW modules are installed in `C:\labview modules`.  If the LabVIEW modules are not installed you can proceed, but there some extra steps you need to perform (see below)
+        1. `C:\instrument\var\mysql` (only consider copying this check size first. On IMAT it is in `C:\ProgramData\MySQL\MySQL Server 5.6\data\archive` [type in it is hidden])
 
-- Checkout Config Directory
+- **upgrade** Update the Common Calibration directory.
+    1. Do a git status to find out if files have been added or changed (if they have querry why this is and take appropriate action)
+    1. Git pull the latest version onto the system (if any file changes make a note so it can be sent to the instrument scientists so they know things have been changed) 
 
-    [See the back-end getting started guide](First-time-installing-and-building-(Windows)#setting-up-a-configurations-directory)
+- **install** If you are using any serial devices with the system, don't forget to check that nport is installed, and configure the COM settings as standard (moxa 1 starts at COM5, moxa 2 at COM21, etc.)
 
-- Checkout Calib Directory
+- **install** Check that 7-Zip is installed on the PC.  If not, download the latest version from the 7-Zip web-site (http://www.7-zip.org/) and install it.
+
+- **install** Check that git is installed on the PC.  If not, download the latest version from the Git web-site (https://git-scm.com/download/win) and install it.
+
+- **install** Check that the LabVIEW modules are installed in `C:\labview modules`.  If the LabVIEW modules are not installed you can proceed, but there some extra steps you need to perform (see below)
+
+- **install** Create directories on the local hard drive as follows:
+```
+mkdir C:\Instrument\Settings\config
+mkdir C:\scripts
+```
+- **install** Checkout Common Calibration Directory
 
     [See the back-end getting started guide](First-time-installing-and-building-(Windows)#setting-up-a-calibrations-directory)
 
+- **install** Checkout Config Directory
+    [See the back-end getting started guide](First-time-installing-and-building-(Windows)#setting-up-a-configurations-directory)
 
-
-- Create directories on the local hard drive as follows:
-```
-mkdir C:\Instrument\Apps\EPICS
-mkdir C:\Instrument\Apps\Client
-mkdir C:\Instrument\Settings\config
-mkdir C:\scripts
-cd C:\Instrument
-```
-
-- Check that MySQL v5.6 is installed on the PC.
+- **install** Check that MySQL v5.6 is installed on the PC.
    - If a different version of MySQL is already installed, you should consider removing it and installing MySQL v5.6.
    - If MySQL v5.6 is already installed, you might wish to consider removing it and doing a clean re-install.
    - If you decide to remove a previous installation of MySQL (v5.6 or otherwise), please ensure you fully remove it before installing MySQL v5.6.
@@ -56,7 +62,8 @@ cd C:\Instrument
          - choose "server machine" during configuration
          - leave TCP/IP enabled
       - You may need to re-boot after installing MySQL
-- Check that the DAE is logging EPICS block (especially if this is the first time epics has been installed). See  [DAE troubleshooting](DAE-Trouble-Shooting) "No log files are produced ..."
+
+- **install** Check that the DAE is logging EPICS block (especially if this is the first time epics has been installed). See  [DAE troubleshooting](DAE-Trouble-Shooting) "No log files are produced ..."
 
 ## Install EPICS
 
@@ -76,10 +83,6 @@ Note: **BE CAREFUL.**  If you run the `config_mysql.bat` script on an existing s
 - Record the release to the instrument (add to list in [Instrument Releases](https://github.com/ISISComputingGroup/IBEX/wiki#instrument-information))
 
 - Make sure these [tests are performed](server-release-tests), these are items we have missed in the past. They may be performed along with the client tests.
-
-- Update the common calibration directory.
-    1. Do a git status to find out if files have been added or changed (if they have querry why this is and take appropriate action)
-    1. Git pull the latest version onto the system (if any file changes make a note so it can be sent to the instrument scientists so they know things have been changed) 
 
 - Send release notes and actions that you have performed to the instrument scientist so they know what has been updated (you may do this as part of the client install below).
 
