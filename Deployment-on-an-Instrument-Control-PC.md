@@ -82,9 +82,9 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
 
 - Install the Client (don't forget to finish the below).
 
-- Make changes documented in Release notes; You may wish to update the GUI before doing this (see [Releases](https://github.com/ISISComputingGroup/IBEX/wiki#releases))
+- Make changes documented in Release notes (see [Releases](https://github.com/ISISComputingGroup/IBEX/wiki#releases))
 
-- Make sure these [tests are performed](server-release-tests), these are items we have missed in the past. They may be performed along with the client tests.
+- Make sure these [tests are performed](server-release-tests), these are items we have missed in the past. Theses are different from the client tests.
 
 - **upgrade** Ensure that the screens shots you take match the updates system
 
