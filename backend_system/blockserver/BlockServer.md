@@ -494,6 +494,11 @@ The Config Version Control
 --------------------------
 The BlockServer keeps the configurations git repository under `/Instrument/Settings/config/NDXXXX` up-to-date, adding and committing any changes at runtime. This is done through the `ConfigVersionControl` class, which simply delegates to the corresponding commands for either git or svn.
 
+The configurations are only committed if the folder is on the correct branch. The rules for the correct branch are:
+* The master branch will never be automatically committed to
+* A branch starting with ND will only be committed to if it is the machine hostname (to avoid accidentally committing to real instruments)
+* Any other branch name is allowed. Developers tend to use fedIDs as branch names
+
 NOTE: Files produced by system tests are treated differently: the `ConfigVersionControl` checks for files containing the system test prefix in their path, and will NOT add them to version control.
 
 When removing non-system-test files, deletion from the file system is taken care of by the version control library. System test files do not get forwarded to that library, so we have to delete them when we catch them instead.
