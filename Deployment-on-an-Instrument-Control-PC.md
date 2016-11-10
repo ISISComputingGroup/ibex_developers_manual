@@ -80,9 +80,13 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
 
     Note: **BE CAREFUL.**  If you run the `config_mysql.bat` script on an existing system **YOU WILL LOSE ALL HISTORICAL LOG DATA**.
 
+- Install the Client (don't forget to finish the below).
+
 - Make changes documented in Release notes; You may wish to update the GUI before doing this (see [Releases](https://github.com/ISISComputingGroup/IBEX/wiki#releases))
 
 - Make sure these [tests are performed](server-release-tests), these are items we have missed in the past. They may be performed along with the client tests.
+
+- **upgrade** Ensure that the screens shots you take match the updates system
 
 - Send release notes and actions that you have performed to the instrument scientist so they know what has been updated/installed (you may do this as part of the client install below).
 
