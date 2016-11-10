@@ -7,6 +7,7 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
 1. Look at the released features in this branch [IBEX/wiki/ReleaseNotes_Dev](https://github.com/ISISComputingGroup/IBEX/wiki/ReleaseNotes_Dev) and find the most significant level of change (i.e. is this cumulatively a major change, a minor change, or a patch?).
 1. Start a release branch so that the code is frozen (e.g. `Release_v1.1.0`). You will need a branch for
     1. EPICS
+    1. EPICS-ioc (for version number update)
     1. genie_python
     1. ibex_gui
 1. Update the version numbers:
@@ -16,8 +17,9 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
         1. In `ibex_gui/base/uk.ac.stfc.isis.ibex.client.product/pom.xml` edit the `<version>` tag content (the one underneath `<modelVersion>`) to be `X.x.m-SNAPSHOT`
     1. EPICS
         1. In `EPICS\ioc\master\INSTETC\INSTETC-IOC-01App\Db\svn-revision.db.tmpl` edit `field(VAL, "1.0.0.$WCREV$")` to be `field(VAL, "X.x.m.$WCREV$")`
+        1. NB this has to be commited on a brnach in IOC and then this submodule commit has to be added to the EPICS release branch
     1. Genie Python
-        1. `genie_python\source\version.py` edit `CURRENT_VERSION = "2.0.0"` to CURRENT_VERSION = "X.x.m"
+        1. `genie_python\source\version.py` edit `CURRENT_VERSION = "0.0.0"` to CURRENT_VERSION = "X.x.m"
 1. Commit you changes and push.
 1. For the builds `ibex_gui_release`, `genie_python_release` and `EPICS_release`, do the following:
     1. Find the build in Jenkins
@@ -51,3 +53,19 @@ The is a release when a change needs to be made between standard releases; i.e. 
     1. Only include the change you have made in the release notes
     1. Copy the release notes issues into the development page
 1. Merge the new code back into master
+
+
+## Adding late commits to the release Branch for EPICS
+
+1. Test and merge the change into master
+1. Create a release branch in the submodule (if it doesn't exist)
+    1. Navigate to EPICS in github
+    1. navigate to the submodule
+    1. Create new branch (this means it will be branched from the release point)
+1. Switch the branch of the submodule:  `git checkout Release_X.x.m`
+1. Pull the latest release branch:  `git pull`
+1. Merge in the ticket `git merge XXX`
+1. push that branch
+1. cd to EPICS
+1. checkout release branch and pull
+1. update submodule reference, commit and push.

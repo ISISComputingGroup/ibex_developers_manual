@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [Nicos](Nicos) > ISIS Proxy
+
 # ISIS Proxy
 
 ## Motivation
@@ -17,8 +19,17 @@ The Proxy is written in python (so as to be able to use pickled objects and JSON
 
 The first version of the proxy purely converted the pickled protocol into JSON and but used a similar low level socket protocol to communicate with any clients. This still exists in the client_connection/HTTP folder within the proxy, along with a simple command line client that can be used for testing.
 
-The second version used ActiveMQ queues for communication with client and so the structure looked something like this:
+The second version uses ActiveMQ queues for communication with clients the structure of the connections is as follows, where red lines are ActiveMQ connections and Blue are low level socket connections:
+
+![NICOS Proxy Design](backend_system/NICOS/ProxyDesign.png)
+
+1. When a client starts up it will create a new temporary queue that will last the lifetime of the client.
+2. The client will then send a message down the known, fixed ss_admin queue (the contents of which is irrelevant) which contains in the reply-to section of the header a link to the temporary queue.
+3. The proxy will then establish a new connection with NICOS (unique to each client)
+4. The client will then be expected to send the information for logging into NICOS
+
+Subsequently all data sent from the client to the proxy will be through the ss_admin queue (with a reply-to link to the temp queue) and all information sent back from the proxy will be in this temp queue. For an example of this working see the example Java client (which can be easily run in eclipse) located in the STOMP client folder. 
 
 ## Future developments
 
-* STOMP/ActiveMQ allows messages to have a correlationID, which gives some idea of which messages from NICOS correspond to those sent from the client. This may or may not be useful for future depending on how fast messages take to process
+* ActiveMQ allows messages to have a correlationID, which gives some idea of which messages from NICOS correspond to those sent from the client. This may or may not be useful for future depending on how fast messages take to process

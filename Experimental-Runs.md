@@ -31,3 +31,10 @@ This is from a problem see on IRIS.
         1. Other PVs `IN:<instrument>:<IOC>:PV.VAL` (these must be marked in the DB file with `info(archive, "VAL")`)
     1. Good blocks to choose might be SP and SP:RBVs in this case ploting the SP and SP:RBV showed that the SP had not be set in the machine. So run control hadn't been able to progress and it had hung.
 ![log plotter image](troubleshooting/LogPlotter.png)
+
+# Experiment stuck in `Waiting` state after beginning a run
+
+This issue was encountered on Iris during the transition between Seci and Ibex. SECI was in a waiting state prior to shutdown, then IBEX was left in this waiting state. Usually SECI run control is transient i.e. set by Open GENIE and cleared on a SECI restart, so just restarting SECI would usually clear it. The is now a new PV that you can write to from IBEX to force a resync of run control
+
+    caput %MYPVPREFIX%CS:RC:SYNC:SP 1
+

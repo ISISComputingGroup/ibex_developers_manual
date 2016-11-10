@@ -6,11 +6,15 @@ Tickets should be created at need by developers as git issues using the waffle b
 
 ## Backlog Pruning
 
-Before the backlog pruning meeting product champions should add a proposed flag to tickets they would like to see in the next sprint. At the meeting we will look at these tickets as a priority and as many newly created tickets as we can. Proposed flags will then be added or removed depending on the general consensus. (Do we need a scientist propose flag too so these don't get lost?).
+Before the backlog pruning meeting product champions should add a 'proposal' label to tickets they would like to see in the next sprint. At the meeting we will look at these tickets as a priority and as many newly created tickets as we can. 'proposal' label will then be added or removed depending on the general consensus. (Do we need a scientist propose flag too so these don't get lost?).
+
+Filter for proposed tickets `is:open label:proposal`
+
+Filter for other tickets `is:open -label:proposal -label:"in progress" -label:"ready" -label:"review" -label:"completed" -label:"impeded"`
 
 ## Sprint Planning
 
-At sprint planning we will *only* look at tickets with proposed flags. These will be selected in priority order and added to the ready column. Estimates will be added (should we start estimating in half days to avoid the 0.5 problem?). After sprint planning all proposed flags will be removed from all tickets.
+At sprint planning we will *only* look at tickets with 'proposal' label. These will be selected in priority order and added to the ready column. Estimates will be added (should we start estimating in half days to avoid the 0.5 problem?). After sprint planning all 'proposal' labels will be removed from all tickets.
 
 ## Movement of Tickets
 
@@ -28,10 +32,11 @@ Developers like quality time, on Friday afternoon a developer may choose a ticke
 
 ## Creation of tickets
 [KB] Would a flag specifying firm date be a better option, and specify the date in the ticket? If it is needed during a cycle then we might have a firm date, the date of the experiment, but really want to complete it in time for a release if at all possible, which might be a little while earlier.
+[JH] Like it I say yes, if noone objects i will do this after the current sprint.
 
 ## Backlog pruning
 [KB] I'm not sure a scientist propose flag is necessarily required, and could lead to a false priority based on "a scientist asked for that" compared to "a developer put that in to enable this new beam line to come on line"
+[JH] Unsure about this.
 
 ## Sprint Planning
 [KB] Is the suggestion here to work in units of half a day rather than days? So double all our standard estimates? I think I'm inclined to say yes, that isn't a bad idea, but I'm not sure what that would do to the calculations for availability
-

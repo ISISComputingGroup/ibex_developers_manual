@@ -90,10 +90,11 @@ git clone http://control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/inst.git NDWX
 ```
 * Confirm that you now have the config file structure in place (components, configurations and synoptics directories)
 
-* Create a branch from master with an identifiable name (e.g. name or fed-id):
+* Create a branch from master with the machine name:
 ```
 cd NDWXXX/
-git checkout -b myfedid
+git checkout -b NDWXXXX
+git push --set-upstream origin NDWXXXX
 ```
 Any configs created through IBEX will now be stored on this branch
 

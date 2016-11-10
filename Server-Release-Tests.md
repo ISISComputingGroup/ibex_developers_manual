@@ -9,7 +9,7 @@ These are tests/checks that should be performed on the IBEX server after a relea
 
 ### LARMOR
 
-1. Larmor has 3 mk3choppers, ensure that there are three Choppers enabled in the ioc/mk3chopper st.cmd file and that you can see three choppers connected in the GUI 
+1. None
 
 ### IMAT
 
@@ -19,4 +19,4 @@ These are tests/checks that should be performed on the IBEX server after a relea
 
 ### All Instruments
 
-1. None
+1. Confirm that the web dashboard is working for the specific instrument (http://dataweb.isis.rl.ac.uk/)

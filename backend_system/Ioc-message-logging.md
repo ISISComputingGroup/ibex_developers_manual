@@ -67,7 +67,7 @@ The Topic for IOC log messages is '/topic/iocLogs'.
 The default port for sending and receiving JMS messages on ActiveMQ is 61616.
 
 # Development Tools
-In the subdirectory 'IocLogServer/dev-tools' are a number of python scripts to aid in development and debugging of the log server and eclipse clients that consume log messages.
+In the subdirectory '...\EPICS\ISIS\IocLogServer\master\dev-tools' are a number of python scripts to aid in development and debugging of the log server and eclipse clients that consume log messages.
 
 The first, 'jms_client.py', connects to the JMS server and receives any messages forwarded by it. This can be used to test if the log server is correctly forwarding on messages.
 

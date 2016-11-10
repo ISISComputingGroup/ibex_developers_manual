@@ -30,14 +30,14 @@ There are also parts of the system running on a central dataweb server, which pr
 
 ### JSON Bourne
 
-The program collates all the data from the other sources, on all the EPICS instruments, such as putting the blocks and their values into the relevant groups as given by the configuration. This information is served as JSON to localhost:60000.
+The program collates all the data from the other sources, on all the EPICS instruments, such as putting the blocks and their values into the relevant groups as given by the configuration. This information is served as JSON to localhost:60000. This runs as a service on the central server and lives in C:\JSON_Bourne.
 
 ### The Website
 
-Currently a simple JS script takes the JSON created by JSON Bourne and provides a simple webpage for an external client to view. This can be accessed from http://dataweb.isis.rl.ac.uk/
+Currently a simple JS script takes the JSON created by JSON Bourne and provides a simple webpage for an external client to view. This can be accessed from http://dataweb.isis.rl.ac.uk/. The code for the website, both the html and javascript are located in the central server at C:\inetpub\wwwroot\DataWeb\IbexDataweb.
 
 ## Deployment
 To add a new EPICS instrument to the web dashboard the following is required:
 * Add the instrument hostname to NDX_INSTS or ALL_INSTS within JSON_bourne\webserver.py
-* Add a link to the main page of the dataweb to IbexDataweb/default.html?Instrument=_instname_
-* Restart JSON_bourne on extweb
+* Add a link to the main page of the dataweb to IbexDataweb/default.html?instrument=_instname_. This can be done in the C:\inetpub\wwwroot\DataWeb\Dashboards\redirect.html
+* Restart JSON_bourne on extweb (It is running as a service)

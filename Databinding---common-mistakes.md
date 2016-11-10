@@ -23,3 +23,12 @@ ctx.bindValue(WidgetProperties.text(SWT.Modify)
             .observe(txtId), BeanProperties.value("fedId").observe(person));
 ```
 **The important point to note is the 'f' of "fedId" is lower-case. It will not work if it is upper-case.**
+
+### The getter or setter "silently" throws an exception
+
+If any code in the getter throws an unhandled exception then the binding won't work because the value cannot be read.
+If a setter throws an unhandled exception before the firing the property change then the listeners will not receive the change signal. Both result in the binding being broken.
+
+If a binding seems to work intermittently then there might be something in the getter or setter causing this, e.g. an object used in a getter that switches between being null and initialised based on something else.
+
+**The exceptions will appear in the console inside Eclipse and IBEX but won't cause an error pop-up to appear.**

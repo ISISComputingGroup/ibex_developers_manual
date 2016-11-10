@@ -6,25 +6,68 @@ So you've created an IOC to talk to a device, and you want to test it: just borr
 
 *The only way to know an IOC will work with an actual device is to use an actual device.*
 
- However, we can try and get as close as possible at the development stage. We also might want to make minor changes to an IOC we know that works without all the effort of tracking down an actual piece of hardware. The above principle still applies, but we can still take steps to improve our odds.
+However, we can try and get as close as possible at the development stage. We also might want to make minor changes to an IOC we know that works without all the effort of tracking down an actual piece of hardware. The above principle still applies, but we can still take steps to improve our odds.
 
-This page describes the process by which we can write an emulator that will run on our local machine and imitate an actual device. We'll be talking to a local IP port via a simple Telnet server.
+Our emulators are written within the Plankton framework developed at ESS. The purpose of this page is not to replicate the full Plankton documentation, which can be found [here](https://github.com/DMSC-Instrument-Data/plankton/blob/master/README.md), but to give quick pointers to common actions and describe how it all fits within IBEX.
+
+Note: we initially wrote a few emulators using the basic framework introduced at CLF. Documentation for that framework can be found [here](CLF-Emulators-Framework) until we decide to retire it.
 
 ## Get the framework
 
-The emulation framework can be found in [this repo](https://github.com/ISISComputingGroup/EPICS-DeviceEmulator) and should be synced to your local EPICS directory at `C:\Instrument\Apps\EPICS\support\deviceEmulator`.
+The Plankton source code we're currently using can be found in [this submodule](https://github.com/ISISComputingGroup/EPICS-plankton) and should be synced to your local EPICS directory at `C:\Instrument\Apps\EPICS\support\plankton\master`. Note that is has a vendor branch for the original ESS source code.
+
+Our emulators can be found in [this submodule](https://github.com/ISISComputingGroup/EPICS-DeviceEmulator) and should be synced to your local EPICS directory at `C:\Instrument\Apps\EPICS\support\DeviceEmulator\master`.
+
+### PyCharm setup tips
+
+To make your life easier when programming in PyCharm, you can make DeviceEmulator depend on Plankton, so that PyCharm can resolve references to the Plankton code.
+
+1. Within PyCharm rename the Plankton and DeviceEmulator python projects as `plankton` and `isis_emulators`, respectively:
+	1. In the tree, right-click on `master` > `Refactor` > `Rename` > `Rename project` > enter project name
+1. Open both projects in the same window:
+	1. `File` > `Open` > select project > `Open in current window` and tick `Add to currently opened projects`
+1. Make `isis_emulators` depend on `plankton`:
+	1. In the tree, select `master[isis_emulators]`
+	1. `File` > `Settings` > `Project: isis_emulators` > `Project Dependencies`
+	1. Select `isis_emulators` on the left and tick the `plankton` check box on the right
+	1. Click OK
+1. Double-check that PyCharm hasn't added any of the .idea/ files to git automatically. If yes, unstage them.
 
 ## Set up a new emulator
 
-1. Create a copy of the directory `C:\Instrument\Apps\EPICS\support\deviceEmulator\example_emulator` for your new device, e.g. `myNewDevice_emulator`.
-1. Modify the function `process` to give the correct return for the incoming data.
-    1. The incoming data will be the command defined in the `out` field of the protocol file. It's the command you would expect to send to the actual device.
-    1. Change the function to return the data you want subject to specific input.
-    1. Note that it's possible to modify the emulator's state on the fly as it's running in case you want to push it into a specific state (as a backdoor). You can do this by connecting a telnet client like PuTTY to the running emulator, and any change in its state will be picked up by the IOC. 
-1. Run the emulator python file (preferably with genie_python).
-    1. You will need to know the port the emulator is running on. If you just run the emulator as-is, it will pick a free port and report the port number from the console, and also print it to a local `.port` file. Alternatively you can run `...\myNewDevice_emulator.py [PORT]` where `[PORT]` is the port number you want to run on.
+1. Create a subdirectory for your new emulator under `support/DeviceEmulator/master/plankton_emulators/`.
+1. Documentation for how to write a plankton emulator can be found [here](https://github.com/DMSC-Instrument-Data/plankton/blob/master/docs/Contributing.md), and you can refer to the examples in the plankton submodule, under `devices/` (e.g. `linkam_t95` for a full realistic emulator) and under `examples/` (e.g. `simple_device` for a basic emulator, and `example_motor` for a simple state machine).
+1. NOTE: the simple examples `simple_device` and `example_motor` have all the code in a single `__init__.py` file, but we should stick to a consistent tidy structure like that of the `linkam_t95` emulator, i.e. with separate files for the device itself, its states (if it's a state machine), and its interfaces.
+1. Don't forget to add `__init__.py` files in all of your folders!
+1. At the time of writing, the Plankton `StreamAdapter.handle_error()` method does nothing. Please make sure your interface class deriving from `StreamAdapter` prints the content of the error, which makes it easier to understand what's going on (see for example the `iris_cryo_valve` emulator).
 
-Congratulations! Your emulator is now running. Give it a try by navigating to `http://localhost:[PORT]` in your web browser, substituting `[PORT]` for the port number. You should see the http GET request content echoed to the terminal
+## Run the emulator
+
+The emulator runs by launching the `plankton.py` file under `/support/plankton/master/`, as described [here](https://github.com/DMSC-Instrument-Data/plankton/blob/master/docs/AdapterSpecifics.md). Note that in our case, where the emulators live outside the Plankton source code, we need to specify where the emulators code is, with the `-a` and `-k` arguments:
+
+```
+python plankton.py -p stream -a C:\Instrument\Apps\EPICS\support\DeviceEmulator\master -k plankton_emulators iris_cryo_valve -- --bind-address localhost --port 57677
+```
+
+where we have picked port 57677 (see Plankton's doc for defaults).
+
+Congratulations! Your emulator is now running. You can test it by connecting to it via a telnet client such as PuTTY (please see the troubleshooting note below).
+
+### The backdoor
+
+It's possible to modify the device's state on the fly as it's running in case you want to push it into a specific state (as a backdoor). The backdoor can also be used to alter simulation paramters, e.g. to simulate a loss of connection or speed up the simulation time. Full documentation can be found [here for device access](https://github.com/DMSC-Instrument-Data/plankton/blob/master/docs/RemoteAccessDevices.md) and [here for simulation access](https://github.com/DMSC-Instrument-Data/plankton/blob/master/docs/RemoteAccessSimulation.md).
+
+The host and port for the backdoor are specified in the `-r` argument to `plankton.py`:
+
+```
+python plankton.py -p stream -r 127.0.0.1:10000 -a C:\Instrument\Apps\EPICS\support\DeviceEmulator\master -k plankton_emulators iris_cryo_valve -- --bind-address localhost --port 57677
+```
+
+NOTE: at the time of writing, you can't type `localhost` for the `-r` argument, but it should be fixed soon.
+
+The backdoor can be operated either via the command line through `control.py` or can be scripted, as described in the Plankton documentation.
+
+**NOTE**: The simulation command `disconnect_device` seems to simulate the device not responding to the port, which is different from a lost connection: the IOC reports `No reply from device within xxx ms`. When the emulator is actually stopped, with the simulation `stop` command, the IOC detects that there is really no connection and reports `Can't connect to localhost:<port>`.
 
 ## Connecting your IOC
 
@@ -60,10 +103,11 @@ where again `[PORT]` is replaced with the port number we're running on. We could
 
 ## GO!
 
-Start the IOC as normal by running `runIOC.bat st.cmd`. If everything's hooked up correctly, you should see the incoming and response data being echoed to the emulated device console. With any luck, that data should then be updated to your PVs.
+Start the IOC as normal by running `runIOC.bat st.cmd`. If everything's hooked up correctly, you should see a `Client connected` message in the emulated device console. At the time of writing, Plankton emulators don't echo requests from the client, but this should be implemented soon. With any luck, the data from the emulator should then be updated to your PVs.
 
 ## Troubleshooting
 
 We haven't done much with emulators yet, so not much has gone wrong, so please add to this section as you can.
 
 * Telnet server is running, but is not receiving any data from the IOC: Is your st.cmd correct? Try removing the 4 `< $(IOCSTARTUP)...` lines, and the `drvAsyn{IP,Serial}PortConfigure` lines and run `runIOC.bat st.cmd`. Are you getting any error or warning messages? Sort those out first.
+* When connecting to a Plankton emulator via a Telnet client such as PuTTY, beware that Telnet uses `\r\n` as a terminator. If your emulator interface has a different one (like for the `linkam_t95`), the protocol won't work. You could temporarily use the Telnet terminator instead. Note also that PuTTY sends some extra characters at the start of the communication, so the very first command you send probably won't work.
