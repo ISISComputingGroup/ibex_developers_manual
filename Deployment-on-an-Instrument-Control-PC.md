@@ -142,12 +142,12 @@ Allow the `stop_ibex_server` script a few moments to complete.
 If the instrument is not on the list of known instruments already (i.e. for switching the GUI), follow the instructions [here](Making an Instrument Available from the GUI).
 
 ## Add instrument to IBEX web dashboard
-To add a new EPICS instrument to the web dashboard the following is required on the extweb:
+To add a new EPICS instrument to the web dashboard you will need to remote desktop into NDAEXTWEB1 with your fedID credentials (you may need to request admin rights on your credentials) and do the following:
 * Add the instrument hostname to NDX_INSTS or ALL_INSTS within JSON_bourne\webserver.py
 * Add a link to the main page of the dataweb to IbexDataweb/default.html?instrument=_instname_. This can be done in the C:\inetpub\wwwroot\DataWeb\Dashboards\redirect.html
 * Restart JSON_bourne on extweb (It is running as a service)
 
-To do this you will need to remote desktop into NDAEXTWEB1 with your fedID credentials. You may need to request admin rights on your credentials.
+.
 
 ## Set up motion set points 
 
