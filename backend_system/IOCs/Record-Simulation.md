@@ -24,7 +24,7 @@ record(bo, "$(P)SIM")
 Add to the IOC in the db load:
 
 ```
-RECSIM=$(RECSIM=0),DISABLE=$(DISABLE=0)
+RECSIM=$(RECSIM=0)
 ```
 
 
