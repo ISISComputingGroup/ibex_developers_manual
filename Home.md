@@ -14,7 +14,7 @@ Information regarding the back-end systems, including the block server, database
 
 How to **get started** with the GUI along with development and testing guidelines. 
 
-## [Dataweb](dataweb\Web-Dashboard)
+## [Dataweb](Web-Dashboard)
 
 Information regarding the architecture of the instrument web pages.
 

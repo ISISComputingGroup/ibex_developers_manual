@@ -90,13 +90,13 @@ git clone http://control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/inst.git NDWX
 ```
 * Confirm that you now have the config file structure in place (components, configurations and synoptics directories)
 
-* Create a branch from master with the machine name:
+* Create a branch from master with the machine name (if on an instrument) or your fedid if on a dev machine:
 ```
 cd NDWXXX/
 git checkout -b NDWXXXX
 git push --set-upstream origin NDWXXXX
 ```
-Any configs created through IBEX will now be stored on this branch
+Any configs created through IBEX will now be stored on this branch (they will only be pushed remotely if you do a manual push first e.g. the last line above)
 
 These repositories can be web browsed via [http://control-svcs.isis.cclrc.ac.uk/git/](http://control-svcs.isis.cclrc.ac.uk/git/)
 

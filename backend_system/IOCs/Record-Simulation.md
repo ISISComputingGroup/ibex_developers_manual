@@ -21,6 +21,13 @@ record(bo, "$(P)SIM")
 }
 ```
 
+Add to the IOC in the db load:
+
+```
+RECSIM=$(RECSIM=0)
+```
+
+
 next you need to modify any records that talk to real hardware (i.e. those where DTYP is not "Soft Channel" or "Raw Soft Channel"). You add the SIML field (to tell the record whether it should run in simulation mode) and the SIOL fields (to tell it where to read/write values when in simulation mode). For example:
  
 ```

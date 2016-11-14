@@ -27,3 +27,9 @@ record(bo, "$(P)DISABLE")
   field(ONAM, "COMMS DISABLED")
 }
 ```
+
+Add to the IOC in the db load:
+
+```
+DISABLE=$(DISABLE=0)
+```
