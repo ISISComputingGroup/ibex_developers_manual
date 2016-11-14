@@ -39,11 +39,23 @@ Currently a simple JS script takes the JSON created by JSON Bourne and provides 
 ## Deployment
 To deploy on a real instrument see [Deployment](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Deployment-on-an-Instrument-Control-PC/_edit)
 
-To test on a developer machine:
-* Clone the repository at https://github.com/ISISComputingGroup/JSON_bourne
+## Development/Testing
+
+Clone the repository at https://github.com/ISISComputingGroup/JSON_bourne
+
+To test the blockserver webserver:
+* Start your instrument
+* Navigate to localhost:8008 in a browser
+
+To test JSON_Bourne:
+* Run webserver.py
+* Navigate in a browser to http://localhost:60000/?callback=parseObject&Instrument=_instrument name_&
+
+To test the website on a developer machine:
 * Open default.html with the variable of ?Instrument=_instrument name_ e.g. go to file://JSON_bourne/default.html?Instrument=larmor in a browser to view larmor's dashboard
 
 To be able to see your instrument as well:
 * Add your instrument to the ALL_INSTS dictionary in webserver.py
+* Run your instrument
 * Run webserver.py
 * Open default.html with the variable of ?Instrument=_name that you entered into dict_
