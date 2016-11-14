@@ -26,7 +26,7 @@ The webserver is run as part of the BlockServer and provides all of the data on 
 
 ### On the Dataweb Server
 
-There are also parts of the system running on a central dataweb server, which provides external access. 
+There are also parts of the system running on a central dataweb server (hostname NDAEXTWEB1), which provides external access.
 
 ### JSON Bourne
 
@@ -37,7 +37,13 @@ The program collates all the data from the other sources, on all the EPICS instr
 Currently a simple JS script takes the JSON created by JSON Bourne and provides a simple webpage for an external client to view. This can be accessed from http://dataweb.isis.rl.ac.uk/. The code for the website, both the html and javascript are located in the central server at C:\inetpub\wwwroot\DataWeb\IbexDataweb.
 
 ## Deployment
-To add a new EPICS instrument to the web dashboard the following is required:
-* Add the instrument hostname to NDX_INSTS or ALL_INSTS within JSON_bourne\webserver.py
-* Add a link to the main page of the dataweb to IbexDataweb/default.html?instrument=_instname_. This can be done in the C:\inetpub\wwwroot\DataWeb\Dashboards\redirect.html
-* Restart JSON_bourne on extweb (It is running as a service)
+To deploy on a real instrument see [Deployment](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Deployment-on-an-Instrument-Control-PC/_edit)
+
+To test on a developer machine:
+* Clone the repository at https://github.com/ISISComputingGroup/JSON_bourne
+* Open default.html with the variable of ?Instrument=_instrument name_ e.g. go to file://JSON_bourne/default.html?Instrument=larmor in a browser to view larmor's dashboard
+
+To be able to see your instrument as well:
+* Add your instrument to the ALL_INSTS dictionary in webserver.py
+* Run webserver.py
+* Open default.html with the variable of ?Instrument=_name that you entered into dict_
