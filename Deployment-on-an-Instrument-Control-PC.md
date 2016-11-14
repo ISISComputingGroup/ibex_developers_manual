@@ -145,9 +145,15 @@ If the instrument is not on the list of known instruments already (i.e. for swit
 To add a new EPICS instrument to the web dashboard you will need to remote desktop into NDAEXTWEB1 with your fedID credentials (you may need to request admin rights on your credentials) and do the following:
 * Add the instrument hostname to NDX_INSTS or ALL_INSTS within JSON_bourne\webserver.py
 * Add a link to the main page of the dataweb to IbexDataweb/default.html?instrument=_instname_. This can be done in the C:\inetpub\wwwroot\DataWeb\Dashboards\redirect.html
-* Restart JSON_bourne on extweb (It is running as a service)
+* Restart JSON_bourne on extweb (It is running as a service).
 
-.
+## Deploying on NDXDEMO
+
+When deploying on NDXDEMO you must make sure to allow all external machines to write to the instrument's PVs. To do this open EPICS\support\AccessSecurity\master\default.acf and locate the block of code where `ASG(GWEXT)` is defined and remove the following lines:
+
+    {
+        HAG(instmachine)
+    }
 
 ## Set up motion set points 
 
