@@ -8,12 +8,12 @@ The momentum slits are controlled by giving a distance between the slits to a PV
 
 | PV  | Description |
 | --- | ------------|
-| \<Instrument>MOMENTUMSLITS | Momentum slit motor record, set to gap wanted |
+| \<Instrument>MSLITS | Momentum slit motor record, set to gap wanted, for block readback use .RBV field |
 | \<Instrument>$(MTR) | Underlying motor record, set as a macro in the st.cmd file |
 
 ## Barndoors
 
-Barndoors can be opened different distances. The distance is no linearly connected to the voltage of the feedback from the motor. The aim is to provide 3 pvs which can be set the distance the barn doors should be opened by. The conversion is given in the conversion file. The file contains three columns Voltage EMU, MUSR and HIFI. A similar conversion is done in Eutorthem and Danfysik. We also need a readback PV. There is currently some Gallil code to control the value but using a straight motor record might be better, if it can be made to work.
+Barndoors can be opened different distances. The distance is no linearly connected to the voltage of the feedback from the motor. The aim is to provide 3 pvs which can be set the distance the barn doors should be opened by. The conversion is given in the conversion file. The file contains three columns Voltage EMU, MUSR and HIFI. A similar conversion is done in Eurotherm and Danfysik. We also need a readback PV. There is currently some Galil code to control the value but using a straight motor record might be better, if it can be made to work.
 
 | PV  | Description |
 | --- | ------------|
