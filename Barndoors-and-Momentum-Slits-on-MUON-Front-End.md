@@ -4,7 +4,7 @@ Muon front end is feeding three instruments. It controls the moment and number o
 
 ## Momentum Slits
 
-The momentum slits are controlled by giving a distance between the slits to a PV. This then converts this to a distance to feed into the motor record. The distance sent to the motor is exactly half the distance from the PV. The setting for the motor are created from the lab view settings (created during commissioning). This is converted using Gareths utility. 
+The momentum slits are controlled by giving a distance between the slits to a PV. This then converts this to a distance to feed into the motor record. The distance sent to the motor is exactly half the distance from the PV. The setting for the motor are created from the lab view settings (created during commissioning). This is converted using Gareth's utility. 
 
 | PV  | Description |
 | --- | ------------|
