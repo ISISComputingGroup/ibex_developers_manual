@@ -45,6 +45,7 @@ Building a new IOC? Before you get started, take a look at the relevant [instrum
 * [Mecury iTC](MercuryiTC)
 * [TPG26x](TPG26x)
 * [Julabo](Julabo)
+* [Danfysik](Danfysik)
 
 ## Further reading ##
 
