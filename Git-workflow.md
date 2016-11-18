@@ -62,8 +62,12 @@ Reviewing work for the subModules of EPICS
 * Commit the updated submodules, with the comment as "Update submodules": ``git commit -m "Update submodules"``
 * Push the changed submodules back to GitHub: ``git push --recurse-submodule=check``
 
-NB This does something else
-* Update the remote submodules to the latest version: ``git submodule update --remote --merge``
+Updating all Submodules
+------------------------
+
+The following command used to be used in the project I leave it here for the minute. I believe that when run from the EPICS directory it updates all submodules by merging in the last commit from origin. This feels like you could have problems if your submodule is on a different branch
+
+    git submodule update --remote --merge
 
 Updating the GUI
 ----------------------------------------------------------------------------------
