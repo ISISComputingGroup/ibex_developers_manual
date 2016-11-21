@@ -30,6 +30,13 @@ The second version uses ActiveMQ queues for communication with clients the struc
 
 Subsequently all data sent from the client to the proxy will be through the ss_admin queue (with a reply-to link to the temp queue) and all information sent back from the proxy will be in this temp queue. For an example of this working see the example Java client (which can be easily run in eclipse) located in the STOMP client folder. 
 
+## Security
+
+To ensure that an unauthorised user cannot run scripts on your machine there is a credentials system on ActiveMQ. Only users with the correct credentials can send/receive messages on the ss_admin queue and thus run scripts. As default the proxy in version control will not work due to this. To fix make sure all of the following passwords are the same:
+* The _CHANGEME_ password in ISIS/IocLogServer/ActiveMQ/activemq.xml
+* The _ACTIVEMQ\_PASS_ in ISIS\_script\_server/client\_connection/Stomp/client\_listener.py
+* The _PASSWORD_ in Stomp/test\_client/src/Client.java
+
 ## Future developments
 
 * ActiveMQ allows messages to have a correlationID, which gives some idea of which messages from NICOS correspond to those sent from the client. This may or may not be useful for future depending on how fast messages take to process
