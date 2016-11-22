@@ -14,9 +14,11 @@ Note this version of Eclipse can be found at ``\\isis\inst$\Kits$\CompGroup\ICP\
 * From Help -> Install New Software add a repository with the name ObjectAid UML Explorer and URL http://www.objectaid.com/update, then install ObjectAid Class Diagram only (uncheck the other 3 options)
 * From Help -> Eclipse Marketplace install Eclipse Checkstyle Plug-in
 * Configure Checkstyle, Window -> Preferences -> Checkstyle, select New, Internal Configuration then import the IBEX Checkstyle file (found in the root of base\uk.ac.stfc.isis.ibex.client.tycho.parent) NOTE - This is why we can't use EPF exports, the Checkstyle configurations get lost
-* Set this checkstyle to be the default
+* Set the IBEX checkstyle to be the default
 * From Help -> Eclipse Marketplace install Unnecessary Code Detector
 * Configure Unnecessary Code Detector, Window -> Preferences -> UCDetector, change the 'Active mode' to 'Unused only [built-in]'
+* From Help -> Eclipse Marketplace install JAutodoc
+* Configure JAutodoc, Window -> Preferences -> Java -> JAutodoc. Change the visibility to be public and package then add the standard IBEX header (copied from a pre-existing code) 
 * Run an update from Help -> Check for Updates
 
 Save actions
@@ -24,7 +26,7 @@ Save actions
 
 * From Window -> Preferences -> Java -> Editor -> Save Actions choose Perform the selection actions on save, then Format source code (Format edited lines), Organize imports, Additional actions
 * In Window -> Preferences -> Java -> Compiler -> Errors/Warning -> Annotations -> Unhandled Token in ``@SupressWarnings`` set to ignore
-* From Window -> Preferences -> Java -> Organize Imports set the 'Number of static imports' to 2
+* From Window -> Preferences -> Java -> Code Style -> Organize Imports set the 'Number of static imports' to 2
 
 Formatting
 ----------
