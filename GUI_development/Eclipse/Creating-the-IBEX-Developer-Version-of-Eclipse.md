@@ -13,7 +13,8 @@ Note this version of Eclipse can be found at ``\\isis\inst$\Kits$\CompGroup\ICP\
 * From Help -> Eclipse Marketplace install EclEmma
 * From Help -> Install New Software add a repository with the name ObjectAid UML Explorer and URL http://www.objectaid.com/update, then install ObjectAid Class Diagram only (uncheck the other 3 options)
 * From Help -> Eclipse Marketplace install Eclipse Checkstyle Plug-in
-* Configure Checkstyle, Window -> Preferences -> Checkstyle, select New, Internal Configuration then import the IBEX Checkstyle file (found in the root of the git repository for the UI) NOTE - This is why we can't use EPF exports, the Checkstyle configurations get lost
+* Configure Checkstyle, Window -> Preferences -> Checkstyle, select New, Internal Configuration then import the IBEX Checkstyle file (found in the root of base\uk.ac.stfc.isis.ibex.client.tycho.parent) NOTE - This is why we can't use EPF exports, the Checkstyle configurations get lost
+* Set this checkstyle to be the default
 * From Help -> Eclipse Marketplace install Unnecessary Code Detector
 * Configure Unnecessary Code Detector, Window -> Preferences -> UCDetector, change the 'Active mode' to 'Unused only [built-in]'
 * Run an update from Help -> Check for Updates
