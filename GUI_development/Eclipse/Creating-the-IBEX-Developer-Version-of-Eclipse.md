@@ -11,7 +11,7 @@ Note this version of Eclipse can be found at ``\\isis\inst$\Kits$\CompGroup\ICP\
 * Modify eclipse/plugins/org.eclipse.platform_4.5.0.v20150603-2000/splash.bmp (replacing 4.5.0... with the current version number) to make clear this is the IBEX version of Eclipse
 * From Help -> Eclipse Marketplace install RCP Testing Tool
 * From Help -> Eclipse Marketplace install EclEmma
-* From Help -> Install New Software add a repository with the name ObjectAid UML Explorer and URL http://www.objectaid.net/update, then install ObjectAid Class Diagram only (uncheck the other 3 options)
+* From Help -> Install New Software add a repository with the name ObjectAid UML Explorer and URL http://www.objectaid.com/update, then install ObjectAid Class Diagram only (uncheck the other 3 options)
 * From Help -> Eclipse Marketplace install Eclipse Checkstyle Plug-in
 * Configure Checkstyle, Window -> Preferences -> Checkstyle, select New, Internal Configuration then import the IBEX Checkstyle file (found in the root of the git repository for the UI) NOTE - This is why we can't use EPF exports, the Checkstyle configurations get lost
 * From Help -> Eclipse Marketplace install Unnecessary Code Detector
