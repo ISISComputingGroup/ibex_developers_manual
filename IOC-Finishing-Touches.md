@@ -41,18 +41,26 @@ Macros where possible should follow the [standard names](Macro-Naming). If a mac
 ```
 <?xml version="1.0" ?>
 <ioc_config xmlns:xi="http://www.w3.org/2001/XInclude">
-<config_part>
-<macros>
-<macro name="VI_TEMP_1" pattern="^[A-Z0-9]+$" description="Suffix of the vi temperature panel, usually '1' or blank for no controller." />
-<macro name="VI_TEMP_2" pattern="^[A-Z0-9]+$" description="Suffix of the vi temperature panel, usually '2' or blank for no controller." />
-<macro name="VI_TEMP_3" pattern="^[A-Z0-9]+$" description="Suffix of the vi temperature panel, usually '3' or blank for no controller." />
-<macro name="VI_TEMP_4" pattern="^[A-Z0-9]+$" description="Suffix of the vi temperature panel, usually '4' or blank for no controller." />
-</macros>
-</config_part>
+ <config_part>
+  <ioc_desc>SKF Chopper</ioc_desc>
+  <ioc_details>SKF Choppers</ioc_details>
+  <macros>
+    <macro name="VI_TEMP_1" pattern="^[A-Z0-9]+$" description="Suffix of the vi temperature panel, usually '1' or blank for no controller." />
+    <macro name="VI_TEMP_2" pattern="^[A-Z0-9]+$" description="Suffix of the vi temperature panel, usually '2' or blank for no controller." />
+    <macro name="VI_TEMP_3" pattern="^[A-Z0-9]+$" description="Suffix of the vi temperature panel, usually '3' or blank for no controller." />
+    <macro name="VI_TEMP_4" pattern="^[A-Z0-9]+$" description="Suffix of the vi temperature panel, usually '4' or blank for no controller." />
+  </macros>
+ </config_part>
 </ioc_config>
 ```
 
-where `name` is the name of the macro,  pattern is the regex for the macro's value and description is a plain text description which is shown to the user. 
+where
+> `macro` describes a macro setable by a user. containing `name`, is the name of the macro;  `pattern`, the regex for the macro's value; and `description`, a plain text description which is shown to the user. 
+
+> `ioc_desc` is a short description of the IOC e.g Lakeshore 218 fro LKSH218
+
+> `ioc_details` is more details about the IOC, e.g. link to docs.
+
 `config.xml` support xinclude so if you have several iocs with the same set of macros you don't need to repeat the file contents. Example GALIL02 (see below) uses GALIL01's config:
 
 ```

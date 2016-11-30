@@ -58,4 +58,5 @@ To be able to see your instrument as well:
 * Add your instrument to the ALL_INSTS dictionary in webserver.py
 * Run your instrument
 * Run webserver.py
+* Edit display\_blocks.js to look at http://localhost rather than http://dataweb.isis.rl.ac.uk
 * Open default.html with the variable of ?Instrument=_name that you entered into dict_
