@@ -2,7 +2,7 @@ The inhibitor is a configurable IOC which will inhibit the setting of values dep
 
 The following states and transitions are possible for a two state inhibiter. This describes motor movement `M` and detector `D` on or off but the same diagram is applicable for two groups of PVs with two states:
 
-![state diagram](backend_system\inhibitor\state_diagram.gif)
+![state diagram](backend_system/inhibitor/state_diagram.gif)
 
 Where
 - Darklines: Initial set of transitions
