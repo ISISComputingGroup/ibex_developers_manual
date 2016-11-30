@@ -316,6 +316,7 @@ Finally, the last step is to add the plug-in we created to uk.ac.stfc.isis.ibex.
 
 * In the plugin xml for your new perspective add the following:
 
+```xml
     <extension
          point="org.eclipse.ui.bindings">
       <key
@@ -328,6 +329,7 @@ Finally, the last step is to add the plug-in we created to uk.ac.stfc.isis.ibex.
          </parameter>
       </key>
     </extension>
+```
 
 * Run the GUI and hit ALT + SHIFT + _chosen char_ and confirm that the perspective is switched to.
 
