@@ -59,7 +59,7 @@ These are easily fixed:
 
 The errors should now have disappeared, but there are a few more things to do:
 
-* Change the value returned by the name function to be what you want shown on the Perspective Switcher
+* Change the value returned by the name function to be what you want shown on the Perspective Switcher. Put an ampersand before the character that you want to use as the perspective shortcut making sure that the chosen character is not in use already. (More on this later)
 
 * Add a new icon (we will leave that as it is for now and fix it later!)
 
@@ -310,6 +310,28 @@ Finally, the last step is to add the plug-in we created to uk.ac.stfc.isis.ibex.
 ```   
    
 * Finally, start the GUI to check the new icon is shown
+
+
+### Adding a keyboard shortcut
+
+* In the plugin xml for your new perspective add the following:
+
+```xml
+    <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="uk.ac.stfc.isis.ibex.ui.perspectives.commands.SwitchPerspective"
+            schemeId="IBEX_key_scheme"
+            sequence="Alt+Shift+_char chosen earlier_">
+         <parameter
+               id="uk.ac.stfc.isis.ibex.ui.perspectives.commands.perspectiveID"
+               value="_your perspective id_">
+         </parameter>
+      </key>
+    </extension>
+```
+
+* Run the GUI and hit ALT + SHIFT + _chosen char_ and confirm that the perspective is switched to.
 
 ### Setting the Perspective to be invisible
 
