@@ -18,4 +18,4 @@
 
 * [Experimental Database](Experimental-Database)
 
-* [Limiter](Limiter)
+* [Inhibiter](Inhibiter)
