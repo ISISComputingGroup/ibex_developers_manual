@@ -8,7 +8,7 @@ Where
 - Solid Lines: Initial set of transitions
 - Dotted Lines: Transitions for the future
 
-The easiest case to write (and where we will start) is for transitions to states where one or none of the groups is on (i.e. motors and detector off or either on but no both). If the system is requested to switch both groups on then the request is ignored. If the system is started with both movement and power then the system should issue errors but should not change the state of the system until the system enters a safe state(it is assumed the user know what they are doing).
+The easiest case to write (and where we will start) is for transitions *to* states where one or none of the groups is on (i.e. motors and detector both off, or motor on & detector off, or motor off & detector on, but not motors and detector both on [it can transition from this state]). If the system is requested to switch both groups on then the request is ignored. If the system is started with both movement and power then the system should issue errors but should not change the state of the system until the system enters a safe state(it is assumed the user know what they are doing).
 
 There are other modes that may be useful in the future and the system should not rule these out explicitly but should not code for them either. These modes would be for instance:
 
