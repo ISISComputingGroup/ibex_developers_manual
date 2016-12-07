@@ -17,4 +17,4 @@ Check to see if you have any errors similar to the following:
 [2016-11-07 16:04:49] CoCreateInstanceEx (ISISICP) : Class not registered
 ```
 
-If so, you haven't registered your `isisicp.dae` program with the registry. Follow the steps to [Configure DAE for simulation mode on developer's computer](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/First-time-installing-and-building-(Windows)
+If so, you haven't registered your `isisicp.dae` program with the registry. Follow the steps to [Configure DAE for simulation mode on developer's computer](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/First-time-installing-and-building-(Windows))
