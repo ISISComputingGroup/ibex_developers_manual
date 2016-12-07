@@ -9,7 +9,7 @@ Close items that might be using the file, especially command line consoles in th
 ### Share
 If it is through a share the file lock will not appear in here. In this case look at the share information <update where that is here> then kill the share. It may reconnect so just do the operation quickly.
 
-### Instrument state keeps 'Processing' but always goes back to 'Unknown'
+## Instrument state keeps 'Processing' but always goes back to 'Unknown'
 
 Check to see if you have any errors similar to the following:
 
