@@ -9,4 +9,12 @@ Close items that might be using the file, especially command line consoles in th
 ### Share
 If it is through a share the file lock will not appear in here. In this case look at the share information <update where that is here> then kill the share. It may reconnect so just do the operation quickly.
 
+### Instrument state keeps 'Processing' but always goes back to 'Unknown'
 
+Check to see if you have any errors similar to the following:
+
+```
+[2016-11-07 16:04:49] CoCreateInstanceEx (ISISICP) : Class not registered
+```
+
+If so, you haven't registered your `isisicp.dae` program with the registry. Follow the steps to [Configure DAE for simulation mode on developer's computer](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/First-time-installing-and-building-(Windows)#Configure-DAE-for-simulation-mode-on-developer's-computer)
