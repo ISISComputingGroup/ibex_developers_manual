@@ -10,4 +10,6 @@ There are essentially two steps: adding a POM file to the plug-in/feature and ed
 
 * Right click the new plugin, select 'Convert to Maven Project'
 
-* Edit the 'tycho.parent' pom.xml file to include the new plugin.
+* Open the plugin `uk.ac.stfc.isis.ibex.client.tycho.parent`
+
+* Under 'Modules' click 'Add', and check your new plugin to add it to the project.
