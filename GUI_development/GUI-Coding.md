@@ -1,4 +1,4 @@
-> [Wiki](Home) > [The GUI](The-GUI) > Coding
+> [Wiki](Home) > [The GUI](The-GUI) > [Coding][GUI-Coding]
 
 * [Coding Conventions](GUI-Coding-Conventions)
 
