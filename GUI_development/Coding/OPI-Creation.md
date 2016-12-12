@@ -60,7 +60,7 @@ In the xml file:
 * `value.macro.macro.description`: description of macro value which appears in target details when user clicks on the macro. For the macro that contains the IOC name, please provide an example of actual IOC name in brackets.
 
 You can specify which icon should appear in the synoptic with the file `ui/devicescreeens/ComponentIcons.java`.
-If you need to add new icons for the synoptic, these are under `uk.ac.stfc.isis.ibex.ui.devicescreens/icons` (both big icons for the actual synoptic and thumbnails for the synoptic editor).
+If you need to add new icons for the synoptic, these are under `uk.ac.stfc.isis.ibex.ui.devicescreens/icons` (both big icons for the actual synoptic and thumbnails for the synoptic editor). Please follow [these guidelines](Synoptic-Icons) when creating new synoptic icons.
 
   
 # Testing
