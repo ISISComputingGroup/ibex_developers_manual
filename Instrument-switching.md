@@ -11,4 +11,4 @@ This extension point is setup in `uk.ac.stfc.isis.ibex.instrument/target/MANIFES
 
 The instrument handler is responsible for calling this method on each registered plugin. It does this in the method `uk.ac.stfc.isis.ibex.instrument.Instrument.setInstrumentForAllPlugins` in the private method `updateExtendingPlugins`. Notice that it call all preSetInstruments methods before setInstrument.
 
-To sign up to this event the plugin must create a class which implements the interface `uk.ac.stfc.isis.ibex.instrument.InstrumentInfoReceiver`. This will be instantiated when the instrument is switched to. This class is registered in the plugin's extensions (this is similar to the perspectives see ).
+To sign up to this event the plugin must create a class which implements the interface `uk.ac.stfc.isis.ibex.instrument.InstrumentInfoReceiver`. This will be instantiated when the instrument is switched to. This class is registered in the plugin's extensions (this is similar to the perspectives see Adding-a-Button-to-the-Perspective-Switcher#adding-the-perspective-and-view-to-the-gui).
