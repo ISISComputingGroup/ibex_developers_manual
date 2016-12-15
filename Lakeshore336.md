@@ -1,6 +1,10 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > Lakeshore 336
 
-The Lakeshore 336 is a temperature controller that has four input temperature readings and two heater outputs. The user can configure which heater output is paired up with which input.
+The Lakeshore 336 is a temperature controller that has four input temperature readings (A, B, C, D) and two heater outputs (1, 2). The user can configure which heater output is paired up with which input.
+
+This means that the temperature setpoint `TEMP1:SP` (and `TEMP1:SP:RBV`) could could be matched to any of the temperature readings `TEMP_A`, `TEMP_B`, `TEMP_C` or `TEMP_D` depending on how the device is setup, and the user can change this dynamically.
+This of course breaks our naming convention the blocks rely on to work. So the IOC has some extra PVs to deal with this, so the user can either rely on the names `TEMP_A`, `TEMP_A:SP`, `TEMP_A:SP:RBV`, or on the names `TEMP1`, `TEMP1:SP`, `TEMP1:SP:RBV`.
+
 
 ## IOC Setup
 When connecting to the real device, the IOC requires its IP address, but the software installed on the device has a bug and does not return the correct IP address. Its network name, however, is correct.
@@ -17,5 +21,5 @@ The device has actually four outputs, two of one type and two of another type, a
 
 Now, some PVs (typically mbbi/mbbo) have their definition split in two files: the common fields in the common file, and the type-specific fields in the type-specific file.
 
-So for example, this is the case for the PV $(P):HEATER$(OUT):RANGE, which we're using: part of it is in lakeshore336output.template (for the fields common to both output types) and part in lakeshore336loop.template (for the fields specific to the output type we're using). The file lakeshore336analog.template still contains the fields specific to the other output type, it's just that there the PV appears with a different name because this file didn't go through our PV renaming!
+So for example, this is the case for the PV `$(P):HEATER$(OUT):RANGE`, which we're using: part of it is in lakeshore336output.template (for the fields common to both output types) and part in lakeshore336loop.template (for the fields specific to the output type we're using). The file lakeshore336analog.template still contains the fields specific to the other output type, it's just that there the PV appears with a different name because this file didn't go through our PV renaming!
 
