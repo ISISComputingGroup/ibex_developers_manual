@@ -2,7 +2,7 @@
 
 The Lakeshore 336 is a temperature controller that has four input temperature readings (A, B, C, D) and two heater outputs (1, 2). The user can configure which heater output is paired up with which input.
 
-This means that the temperature setpoint `TEMP1:SP` (and `TEMP1:SP:RBV`) could could be matched to any of the temperature readings `TEMP_A`, `TEMP_B`, `TEMP_C` or `TEMP_D` depending on how the device is setup, and the user can change this dynamically.
+This means that the temperature setpoint `TEMP1:SP` (and `TEMP1:SP:RBV`) could be matched to any of the temperature readings `TEMP_A`, `TEMP_B`, `TEMP_C` or `TEMP_D` depending on how the device is setup, and the user can change this dynamically.
 This of course breaks our naming convention the blocks rely on to work. So the IOC has some extra PVs to deal with this, so the user can either rely on the names `TEMP_A`, `TEMP_A:SP`, `TEMP_A:SP:RBV`, or on the names `TEMP1`, `TEMP1:SP`, `TEMP1:SP:RBV`.
 
 
