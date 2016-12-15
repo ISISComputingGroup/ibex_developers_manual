@@ -21,5 +21,5 @@ The device has actually four outputs, two of one type and two of another type, a
 
 Now, some PVs (typically mbbi/mbbo) have their definition split in two files: the common fields in the common file, and the type-specific fields in the type-specific file.
 
-So for example, this is the case for the PV `$(P):HEATER$(OUT):RANGE`, which we're using: part of it is in lakeshore336output.template (for the fields common to both output types) and part in lakeshore336loop.template (for the fields specific to the output type we're using). The file lakeshore336analog.template still contains the fields specific to the other output type, it's just that there the PV appears with a different name because this file didn't go through our PV renaming!
+So for example, this is the case for the PV `$(P):HEATER$(OUT):RANGE`: part of it is in lakeshore336output.template (for the fields common to both output types) and part in lakeshore336loop.template (for the fields specific to the output type we're using). The file lakeshore336analog.template still contains the fields specific to the other output type, it's just that there the PV appears with a different name because this file didn't go through our PV renaming!
 
