@@ -16,7 +16,7 @@ The script generator takes a table of rows where each row translates into a do_s
 
 ### Script Generator Settings:
 
-   - _Order_ - Drop-down for the order in which to collect data via TRANS and SANS. (see the graphic below illustrating the expected running order based on different settings) The options are:
+   - _Order_ - Drop-down for the order in which to collect data via TRANS and SANS. (see the graphic at the bottom of this page illustrating the expected running order based on different settings) The options are:
      -  _All TRANS first_ - All TRANS data collection will be completed first.
      - _Alternate - TRANS first_ - Data collection alternates between TRANS and SANS, starting on TRANS firstly.
      -  _All SANS first_ - All SANS data collection will be completed first.
