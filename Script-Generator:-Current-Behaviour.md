@@ -41,4 +41,5 @@ The script generator takes a table of rows where each row translates into a do_s
 Below is a graphic illustrating the expected running order for different settings on an example table with 2 rows and 2 loops per sample.
 
 S(A)=SANS(sample A), T(B)=TRANS(sample B) and so on...
+
 ![Running Order](GUI_development/images/script_generator/script_running_order.jpg)
