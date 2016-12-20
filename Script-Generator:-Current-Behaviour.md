@@ -23,7 +23,7 @@ The script generator takes a table of rows where each row translates into a do_s
      - _Alternate - SANS first_ - Data collection alternates between TRANS and SANS, starting on SANS firstly.
    - _Do SANS_ - The number of times to collect SANS data. Loops through the SANS values in the table this number of times.
    - _Do TRANS_ - The number of times to collect TRANS data. Loops through the TRANS values in the table this number of times.
-   - _Loop over each run?_ - When enabled, the script will loop n times over each sample before moving on to the next one, rather than looping over all samples n times (n being the number specified under the Do SANS/TRANS parameters)
+   - _Loop over each run?_ - When enabled, the script will loop n times over each sample before moving on to the next one, rather than looping over all samples in sequence n times (n being the number specified under the Do SANS/TRANS parameters). See the graphic at the bottom of this page.
    - _A1, S1 Setting_ - The size of the aperture (small, medium, large)
    - _Sample Geometry_ - What the sample is placed in. Options are: disc, cylindrical, flat plate, single crystal. 
    - _Sample Height_ - The height of the sample container in millimetres.
