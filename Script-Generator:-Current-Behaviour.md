@@ -1,6 +1,6 @@
 ### Overview
 
-The behaviour of the IBEX script generator plugin is modelled after the existing script generator which can generate OpenGenie Scripts for SANS2D and LOQ, and genie_python scripts for LARMOR. 
+The behaviour of the IBEX script generator plugin is modelled after the existing script generator which can generate OpenGenie Scripts for SANS2D and LOQ, and genie_python scripts for LARMOR. [Download](GUI_development/resources/scriptgen.zip)
 
 The script generator takes a table of rows where each row translates into a do_sans and do_trans instruction. The amount of times and the order in which these are run is determined by the rest of the settings.
 
