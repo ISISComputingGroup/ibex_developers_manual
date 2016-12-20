@@ -1,4 +1,4 @@
-> [Wiki](Home) > [The GUI](The-GUI) > Coding
+> [Wiki](Home) > [The GUI](The-GUI) > [Coding][GUI-Coding]
 
 * [Coding Conventions](GUI-Coding-Conventions)
 
@@ -13,6 +13,8 @@
 * [Static Analysis](Static-analysis)
 
 * [Class Diagrams for Observables, Observers, Writables and Writers](Refactoring-for-Observables-and-Writers)
+
+* [Instrument Switching](Instrument switching)
 
 * [PV Switching](PV-Switching)
 
