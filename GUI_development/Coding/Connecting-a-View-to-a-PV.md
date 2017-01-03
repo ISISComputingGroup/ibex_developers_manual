@@ -36,33 +36,29 @@ Now the Plug-in is created we can create an Observable:
 
 * Create a new Class called TitleVariable, this will be the class that holds the connection to the PV
 
-* We require TitleVariable to inherit from Instrument Variables, so open the code file for TitleVariable and modify the code like so:
+* First we will need to create an observable factory to get our observable, in this case the PV should be updated when the instrument switches so add the following as a field.
+```java
+private final ObservableFactory obsFactory = new ObservableFactory(OnInstrumentSwitch.SWITCH);
+```
+
+* Next we get the specific variable for the PV the observable for the PV:
 ```java
 package org.csstudio.isis.title;
 
-public class TitleVariable extends InstrumentVariables {
-
-}
-``` 
-* The InstrumentVariables will have a red error indicator, so hover over it and select "Import 'InstrumentVariables' (org.csstudio.isis.instrument)" from the drop-down
-
-* Now the error will have jumped to TitleVariable, this time hover over this and select "Add constructor 'TitleVariable(Channels channels)'" from the drop-down
-
-* Next we add the observable for the PV:
-```java
-package org.csstudio.isis.title;
-
-import org.csstudio.isis.epics.observing.InitialiseOnSubscribeObservable;
+import uk.ac.stfc.isis.ibex.epics.observing.ForwardingObservable;
+import uk.ac.stfc.isis.ibex.epics.switching.ObservableFactory;
+import uk.ac.stfc.isis.ibex.epics.switching.OnInstrumentSwitch;
 import org.csstudio.isis.instrument.Channels;
-import org.csstudio.isis.instrument.InstrumentVariables;
 import org.csstudio.isis.instrument.channels.CharWaveformChannel;
+import uk.ac.stfc.isis.ibex.instrument.InstrumentUtils;
 
 public class TitleVariable extends InstrumentVariables {
     
-    public final InitialiseOnSubscribeObservable<String> titleRBV = reader(new CharWaveformChannel(), "DAE:TITLE");
+    private final ObservableFactory obsFactory = new ObservableFactory(OnInstrumentSwitch.SWITCH);
+    public final ForwardingObservable<String> titleRBV = 
+            obsFactory.getSwitchableObservable(new CharWaveformChannel(), InstrumentUtils.addPrefix("DAE:TITLE"));
 
-    public TitleVariable(Channels channels) {
-        super(channels);
+    public TitleVariable() {
     }
 
 } 
