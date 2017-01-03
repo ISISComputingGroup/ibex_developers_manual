@@ -52,7 +52,7 @@ import org.csstudio.isis.instrument.Channels;
 import org.csstudio.isis.instrument.channels.CharWaveformChannel;
 import uk.ac.stfc.isis.ibex.instrument.InstrumentUtils;
 
-public class TitleVariable extends InstrumentVariables {
+public class TitleVariable {
     
     private final ObservableFactory obsFactory = new ObservableFactory(OnInstrumentSwitch.SWITCH);
     public final ForwardingObservable<String> titleRBV = 
@@ -391,19 +391,23 @@ For this example we will start by adding a writeable PV for writing to the title
 ```java
 package org.csstudio.isis.title;
 
-import org.csstudio.isis.epics.observing.InitialiseOnSubscribeObservable;
+import uk.ac.stfc.isis.ibex.epics.observing.ForwardingObservable;
 import org.csstudio.isis.epics.writing.Writable;
 import org.csstudio.isis.instrument.Channels;
-import org.csstudio.isis.instrument.InstrumentVariables;
 import org.csstudio.isis.instrument.channels.CharWaveformChannel;
+import uk.ac.stfc.isis.ibex.instrument.InstrumentUtils;
 
-public class TitleVariable extends InstrumentVariables {
+public class TitleVariable {
     
-    public final InitialiseOnSubscribeObservable<String> titleRBV = reader(new CharWaveformChannel(), "DAE:TITLE");
-    public final Writable<String> titleSP = writable(new CharWaveformChannel(), "DAE:TITLE:SP");
+    private final ObservableFactory obsFactory = new ObservableFactory(OnInstrumentSwitch.SWITCH);
+    public final ForwardingObservable<String> titleRBV = 
+            obsFactory.getSwitchableObservable(new CharWaveformChannel(), InstrumentUtils.addPrefix("DAE:TITLE"));
 
-    public TitleVariable(Channels channels) {
-        super(channels);
+    private final WritableFactory writeFactory = new WritableFactory(OnInstrumentSwitch.SWITCH);
+    public final Writable<String> titleSP = 
+            writeFactory.getSwitchableWritable(new CharWaveformChannel(), InstrumentUtils.addPrefix("DAE:TITLE:SP"));
+
+    public TitleVariable() {
     }
 }
 ```
