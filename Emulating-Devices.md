@@ -101,6 +101,12 @@ $(IFDEVSIM) drvAsynIPPortConfigure("$(DEVICE)", "localhost:[PORT]")
 
 where again `[PORT]` is replaced with the port number we're running on. We could factor this out into a non-hard-coded macro in `globals.txt` but a lot of the time it's easier just to do it here.
 
+Enabling and disabling IFDEVSIM can be done via the IBEX GUI if the whole IBEX system is running. Otherwise, if you are just testing one IOC then it can be enabled in the globals.txt file (C:\Instrument\Settings\config\NDW1373\configurations\globals.txt) in one's configuration folder like so:
+
+```
+JULABO_01__DEVSIM=1
+```
+
 ## GO!
 
 Start the IOC as normal by running `runIOC.bat st.cmd`. If everything's hooked up correctly, you should see a `Client connected` message in the emulated device console. At the time of writing, Plankton emulators don't echo requests from the client, but this should be implemented soon. With any luck, the data from the emulator should then be updated to your PVs.
