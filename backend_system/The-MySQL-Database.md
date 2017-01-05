@@ -36,3 +36,11 @@ select * from table_name;
 * experimentteams
 * role
 * user
+
+# Configuration
+
+The mysql database runs as a service; details can be accessed by running `services.msc`. It will show in the properties of the service where the configuration file is. In general this should be in `C:\Instrument\var\mysql\my.ini` (however on some systems it is in `c:\ProgramData\MySQL\MySQL Server 5.6\my.ini`). The contents of this file should be for the `server_type=3` this sets up the memory etc to be of an acceptable value. The most telling parameter in this file for memory management is probably `innodb_buffer_pool_size=512M`.
+
+To restart mysql right click on the service and click restart. Note that a running IBEX instrument seems to have some problems with this; so will also need to be restarted (block server said `Error executing command on database: Unable to get connection from pool: `).
+
+
