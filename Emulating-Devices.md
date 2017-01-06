@@ -46,7 +46,7 @@ The host and port for the backdoor are specified in the `-r` argument at startup
 lewis -p stream -r 127.0.0.1:10000 -a C:\Instrument\Apps\EPICS\support\DeviceEmulator\master -k lewis_emulators iris_cryo_valve -- --bind-address localhost --port 57677
 ```
 
-NOTE: at the time of writing, you can't type `localhost` for the `-r` argumen.
+NOTE: at the time of writing, you can't type `localhost` for the `-r` argument.
 
 The backdoor can be operated either via the command line through `lewis-control` or can be scripted, as described in the Lewis documentation.
 
