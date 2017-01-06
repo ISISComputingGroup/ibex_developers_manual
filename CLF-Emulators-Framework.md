@@ -2,7 +2,7 @@
 
 This page describes the process by which we can write an emulator that will run on our local machine and imitate an actual device, using the CLF framework. We'll be talking to a local IP port via a simple Telnet server.
 
-Note that new emulators should be written using the [Plankton framework](Emulating-Devices) instead.
+Note that new emulators should be written using the [Lewis framework](Emulating-Devices) instead.
 
 ## Get the framework
 
