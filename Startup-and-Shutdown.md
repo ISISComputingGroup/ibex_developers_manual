@@ -9,11 +9,12 @@ In addition to this it can be on an instrument but switched off because SECI is 
 
 The system will provide IOCs for SECI (2) if a file called `startup.txt` is in the ICP Config Root. ICP Config Root defaults to `C:/Instrument/Settings/config/<COMPUTERNAME>/configurations` but may be overridden in `icpconfighost.txt` in `C:/Instrument/Settings/config`.
 
-On a system reboot IBEX should start but only if it was running when the machine was shut down. Whether IBEX was running is recorded by the contents of a file (<add file path>) - this will be done as part of ticket [#1950](https://github.com/ISISComputingGroup/IBEX/issues/1950)
+On a system reboot IBEX should start but only if it was running when the machine was shut down. Whether IBEX was running is recorded by the contents of a file (<add file path>) - this will be done as part of ticket [#1950](https://github.com/ISISComputingGroup/IBEX/issues/1950). The reboot behaviour is achieved by placing start_ibex_server script in the startup directory.
 
-If IBEX is running and IBEX is requested to start then IBEX should restart itself (this should have minimal data loss).
-If SECI is running and IBEX is requested to start then IBEX should kill it on start and remove the file which claims it is the only running control software.
-If full IBEX is running and SECI starts it will kill IBEX using the stop IBEX using the script - this ticket [#1951](https://github.com/ISISComputingGroup/IBEX/issues/1951).
+Start behaviour:
+* If IBEX is running and IBEX is requested to start then IBEX should restart itself (this should have minimal data loss).
+* If SECI is running and IBEX is requested to start then IBEX should kill it on start and remove the file which claims it is the only running control software.
+* If full IBEX is running and SECI starts it will kill IBEX using the stop IBEX server script - this ticket [#1951](https://github.com/ISISComputingGroup/IBEX/issues/1951).
 
 ## Process on Start (not definitive see actual scripts)
 
