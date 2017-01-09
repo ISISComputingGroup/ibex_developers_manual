@@ -1,8 +1,27 @@
-## Start
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [System components](System-components) > [Startup and Shutdown](Startup-and-Shutdown)
+
+This page shows the behaviour expected for IBEX or starting and stopping. There are two different modes in which IBEX can run:
+
+1. Full: As the instrument control, which archiving, configruations, logging etc
+2. MiniInst: As a provider of IOCs which are used by SECI
+
+In addition to this it can be on an instrument but switched off because SECI is running.
+
+The system will provide IOCs for SECI (2) if a file called `startup.txt` is in the ICP Config Root. ICP Config Root defaults to `C:/Instrument/Settings/config/<COMPUTERNAME>/configurations` but may be overridden in `icpconfighost.txt` in `C:/Instrument/Settings/config`.
+
+On a system reboot IBEX should start but only if it was running when the machine was shut down. Whether IBEX was running is recorded by the contents of a file (<add file path>) - this will be done as part of ticket [#1950](https://github.com/ISISComputingGroup/IBEX/issues/1950). The reboot behaviour is achieved by placing start_ibex_server script in the startup directory.
+
+Start behaviour:
+* If IBEX is running and IBEX is requested to start then IBEX should restart itself (this should have minimal data loss).
+* If SECI is running and IBEX is requested to start then IBEX should kill it on start and remove the file which claims it is the only running control software.
+* If full IBEX is running and SECI starts it will kill IBEX using the stop IBEX server script - this ticket [#1951](https://github.com/ISISComputingGroup/IBEX/issues/1951).
+
+## Process on Start (not definitive see actual scripts)
 
 Start is initiated from `C:\Instrument\Apps\EPICS\start_ibex_server.bat`. It:
 
 1. Stop the ibex server (see below)
+1. Put start file in place [#1950](https://github.com/ISISComputingGroup/IBEX/issues/1950)
 1. Runs ca repeater bat
     1. Kills old carepeater tasks
     1. Starts a new task in procserve
@@ -23,11 +42,11 @@ Start is initiated from `C:\Instrument\Apps\EPICS\start_ibex_server.bat`. It:
 1. [full only] start the script server (if not on an instrument)
 1. [mini only] Start and enable auto start on IOC in startup.txt list
 
-
-## Stop 
+## Process on Stop (not definitive see actual scripts)
 
 Initiated from start or `C:\Instrument\Apps\EPICS\stop_ibex_server.bat`. It stops the following
 
+1. Remove start file [#1950](https://github.com/ISISComputingGroup/IBEX/issues/1950)
 1. IOCs in startup.txt
 1. Conserver
 1. IOC Log Server
