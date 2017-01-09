@@ -19,7 +19,7 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
         1. In `EPICS\ioc\master\INSTETC\INSTETC-IOC-01App\Db\svn-revision.db.tmpl` edit `field(VAL, "1.0.0.$WCREV$")` to be `field(VAL, "X.x.m.$WCREV$")`
         1. NB this has to be commited on a brnach in IOC and then this submodule commit has to be added to the EPICS release branch
     1. Genie Python
-        1. `genie_python\source\version.py` edit `CURRENT_VERSION = "0.0.0"` to CURRENT_VERSION = "X.x.m"
+        1. `genie_python\source\version.py` edit `VERSION = "0.0.0.qualifier"` to VERSION = "X.x.m.xxxxxxx" where xxxxxxx is the SHA hash of the commit
 1. Commit you changes and push.
 1. For the builds `ibex_gui_release`, `genie_python_release` and `EPICS_release`, do the following:
     1. Find the build in Jenkins
