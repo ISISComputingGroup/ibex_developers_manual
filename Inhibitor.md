@@ -17,11 +17,7 @@ There are other modes that may be useful in the future and the system should not
 
 ## Disabling a group
 
-A request can be ignored by disabling the record. It is not clear how to do this and we will look at doing this as part of the work. Idea are 
-
-1. setting and monitoring the disable field on the record to point at a new inhibitor controller record; this does mean the disable of the original IOC won't work but this is only used in testing.
-1. replacing the record with a calc which will only forward the request based on the inhibitor say so
-1. Monitoring and setting the value to 0 (or X).
+A request can be ignored by setting the .DISP field of each relevant record in a group. This disallows external writes to these records but allows readbacks to continue. The PV addresses for the records in a disable group should be saved on the instrument as a configuration file. The DISP field does not allow linking to other records and thus should be written to directly from SNL.
 
 ## Implementation
 
