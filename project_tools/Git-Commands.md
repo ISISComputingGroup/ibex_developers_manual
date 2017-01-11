@@ -34,6 +34,8 @@ git submodule update --remote                 | Update the submodule references 
 git submodule update                          | Update your local submodules to those referenced on the remote system
 git rebase master                             | USE ONLY ON LOCAL BRANCHES - reapply your changes to the most recently pulled master
 git submodule update --init                   | 'clear out' any submodules with new commits
+git submodule status <path>                   | status of the submodule(s) at this moment, e.g. what the current checkout commit of the submodule is
+git submodule status --cached <path>          | status of the submodule(s) as they appear in the index, e.g. the expected commit associated with EPICS working copy
                                               |
 git push -u origin [branch-name]              | Push a new branch to the origin
 git push origin [branch-name]                 | Push a branch to the origin
