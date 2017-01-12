@@ -1,5 +1,27 @@
 Various Processes for Tasks and quick info into how they should work
 
+## Ticket Types
+
+wf - means workflow and is how waffle decides on which column the ticket is in
+
+Type   | Meaning
+------ | -------
+bug    | A bug in the system reported by either a user or developer
+# (number) | Estimate on how long in story points the ticket will take to develop (no review)
+rework | ticket has been through at least one review (with ready developer has changes to make, with inprogress developer is working, with review developer has finished changes and they need reviewing
+under review | ticket is currently being reviewed
+urgent | ticket is urgent and should be rushed through the system
+wontfix | ticket will not be fixed 
+duplicate | this ticket is a duplicate of a different ticket and will not be fixed (usual other ticket is referenced)
+fixed | Ticket has been fixed (added at end of sprint only)
+for current release | Ticket is needed for the current release and should be prioritised (allows us to keep track of whether a release can be made)
+proposal | It is proposed that the ticket should be in the next sprint (removed each sprint)
+ready (wf) | ticket is in the current sprint and can be worked on
+in progress (wf) | Ticket is currently in progress
+review (wf) | Ticket is done and should be review by someone
+completed (wf) | ticket is complete
+impeded (wf) | ticket is in progress but can not be completed because of something else. Reason for impediment should be added to the ticket. This should not be for long.
+
 ## Creation of Tickets
 
 Tickets should be created at need by developers as git issues using the waffle board. Initially they should *not* have a milestone attached to them unless they are needed for a definite date and this is the LATEST that they could possible be started. If you are doing this ensure that there is enough time for testing; bugs fixing etc.
