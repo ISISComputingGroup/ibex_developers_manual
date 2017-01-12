@@ -7,3 +7,6 @@
 
 - [Sharepoint discussion site](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions)
 
+## Links
+
+- [IBEX wiki](https://github.com/ISISComputingGroup/IBEX/wiki)
