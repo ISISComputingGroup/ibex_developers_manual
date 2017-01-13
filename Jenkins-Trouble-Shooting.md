@@ -27,3 +27,7 @@ C:\Jenkins\workspace\System_Tests\Results\runner-workspace\.metadata\.log.
 ```
 
 In this log it couldn't read open a given jar file. This appeared to be a problem with the version of RCPPT. So ran manually on reno and fixed the problems.
+
+## Build Agent is OffLine
+
+Remote desktop to the machine in question and start the Jenkins service using services.msc.
