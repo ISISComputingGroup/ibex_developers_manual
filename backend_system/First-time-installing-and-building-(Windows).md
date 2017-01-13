@@ -55,7 +55,7 @@ After it installs you will get to the "Type and Networking" page, for the "Confi
 Leave TCP/IP access enabled.
 
 On the "Accounts and Roles" page make sure you use the agreed password for root. 
-If you don't know what that password is you should be able to find it in `C:\Instrument\Apps\EPICS\CSS\master\ArchiveEngine\setup_mysql_database.txt`. Do not follow the instructions in this file.
+If you don't know what that password is you should be able to find it on the passwords page.
 
 Under "Windows Service" make sure "Start the MySQL Server at System Startup" is **checked**
 
