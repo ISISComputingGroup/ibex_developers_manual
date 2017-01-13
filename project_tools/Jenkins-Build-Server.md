@@ -36,4 +36,4 @@ See [special notes on configuring Jenkins for the GUI tests](Adding-a-new-Window
 
 ### Other
 
-* [Jenkins trouble shooting](trouble-shooting-jenkins)
+* [Jenkins trouble shooting](Jenkins-Trouble-Shooting)
