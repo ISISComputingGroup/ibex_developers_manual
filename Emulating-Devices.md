@@ -34,7 +34,24 @@ lewis -p stream -a C:\Instrument\Apps\EPICS\support\DeviceEmulator\master -k lew
 
 where we have picked port 57677 (see Lewis's doc for defaults). Note that the lewis executable is located in `C:\Instrument\Apps\Python\Scripts`, at time of writing we don't add the directory to our standard EPICS environment PATH variables, so you may need to provide a fully qualified file path.
 
-Congratulations! Your emulator is now running. You can test it by connecting to it via a telnet client such as PuTTY (please see the troubleshooting note below).
+Congratulations! Your emulator is now running. You can test it by connecting to it via a telnet client such as PuTTY (please see the troubleshooting note below) or with a simple Python script like so:
+
+```python
+import socket
+
+OUT_TERMINATOR = "\r"
+
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.connect(("127.0.0.1", 57677))
+
+while True:
+    cmd = raw_input()
+    s.sendall(cmd + OUT_TERMINATOR)
+    data = s.recv(4096)  # Needs to be longer than the returned message
+    print data
+
+s.close()
+```
 
 ### The backdoor
 
