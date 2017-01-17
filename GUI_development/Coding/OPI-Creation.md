@@ -21,6 +21,8 @@ Please also make sure your OPI works well for colour blind users, following [the
 
 If you are converting an existing OPI from the old to the new style, be aware of [these tips and gotchas](Converting-to-New-Style-Tips-and-Gotchas).
 
+There is a script called `check_opi_format.py` in `C:\Instrument\Dev\ibex_gui\base\uk.ac.stfc.isis.ibex.opis` that can help you check certain aspects of a new OPI. This script does not replace checking the OPI visually, but should help catch some style errors in OPIs.
+
 ## Macros
 When an OPI is opened from the synoptic (via OpiTargetView.java) you get at least the following macros automatically set:
 
