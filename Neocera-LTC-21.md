@@ -11,7 +11,7 @@ QHEAT?; | heater percentage
 QOUT?<channel>; | Output config (note different returns for analogue and heater)
 QPID?<channel>; | Queres PID (note different returns for analogue and heater)
 QSETP?<channel>; | Setpoint and units
-QSAMP?<channel>; | temp an dunit
+QSAMP?<channel>; | Temperature and unit
 SHCONT%.0f; | Heater output control
 SACONT%.0f; | Analogue control
 SPID<channel>,%.2f,%.2f,%.2f,%.2f,%.2f; | Set PID etc
