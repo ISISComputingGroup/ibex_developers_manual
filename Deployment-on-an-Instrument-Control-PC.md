@@ -61,7 +61,7 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
    - If MySQL v5.6 is not already installed, or you are doing a clean re-install:
       - download the MySQL installer `mysql-installer-community-5.6.16.0` from `\\isis\inst$\Kits$\External\BuildServer(ndwvegas)` and install it.
       - during the MySQL installation process,
-         - use the password `isis@instdb99`
+         - use the password specified on the passwords page
          - select a "server only" installation
          - change the data path to `C:\Instrument\var\mysql`
          - choose "server machine" during configuration
