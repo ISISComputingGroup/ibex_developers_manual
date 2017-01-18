@@ -40,4 +40,5 @@ If you see a “Plugin execution not covered by lifecycle configuration” error
 
 ## Troubleshooting ##
 
-If the GUI loads up but items are the wrong size, you may need to change your display resolution and/or font scaling factor. The exact settings that you need vary from computer to computer.
+If the GUI loads up but items are the wrong size, you may need to change your display settings. The exact settings that you need may vary from computer to computer. This is a common issue on Windows 10 machines due to the OS' scaling setting for text, icons etc. that is meant to ensure they do not look too small on high screen resolutions. 
+Generally a resolution of 1920 x 1080 with a scaling factor of 100% should look correct on standard screens. You can increase both of those settings slightly if you feel like the display elements look uncomfortably small.
