@@ -95,6 +95,8 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
 
 - Make sure these [tests are performed](client-release-tests), these are items we have missed in the past.
 
+- If you installed the server [test this too](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Deployment-on-an-Instrument-Control-PC)
+
 - Send release notes and actions that you have performed to the instrument scientist so they know what has been updated 
 
 - If releasing to an instrument record the release to the instrument (add to list in [Instrument Releases](https://github.com/ISISComputingGroup/IBEX/wiki#instrument-information))
