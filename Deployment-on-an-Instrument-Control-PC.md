@@ -50,8 +50,9 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
     [See the back-end getting started guide](First-time-installing-and-building-(Windows)#setting-up-a-configurations-directory)
 
 - **install** Check that MySQL v5.6 is installed on the PC.
-   - If a different version of MySQL is already installed, you should consider removing it and installing MySQL v5.6.
-   - If MySQL v5.6 is already installed, you might wish to consider removing it and doing a clean re-install.
+   - If MySQL is already installed, locate the current data directory and make sure that any pre-existing data is backed up.
+   - If a different version of MySQL is already installed, you should remove it and install MySQL v5.6.
+   - If MySQL v5.6 is already installed, it is recommended that you remove it and do a clean re-install.
    - If you decide to remove a previous installation of MySQL (v5.6 or otherwise), please ensure you fully remove it before installing MySQL v5.6.
       - use the MySQL uninstaller from the Programs & Features control panel to remove MySQL
       - after uninstalling, confirm that no MySQL features remain listed in the Programs & Features control panel
