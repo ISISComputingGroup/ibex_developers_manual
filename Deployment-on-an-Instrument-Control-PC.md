@@ -66,8 +66,6 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
          - leave TCP/IP enabled
       - You may need to re-boot after installing MySQL
 
-- **install** Check that the DAE is logging EPICS block (especially if this is the first time epics has been installed). See  [DAE troubleshooting](DAE-Trouble-Shooting) "No log files are produced ..."
-
 ## Install EPICS
 
 - From a command prompt type the following (if your command prompt doesn't support UNC paths, use `pushd` instead of `cd`): `cd \\isis\inst$\Kits$\CompGroup\ICP\Releases\X.x.m\EPICS` where `X.x.m` is the version you wish to install
@@ -86,6 +84,8 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
 - Make changes documented in Release notes (see [Releases](https://github.com/ISISComputingGroup/IBEX/wiki#releases))
 
 - Make sure these [tests are performed](server-release-tests), these are items we have missed in the past. Theses are different from the client tests.
+
+- **install** Check that the DAE is logging EPICS block (especially if this is the first time epics has been installed). See  [DAE troubleshooting](DAE-Trouble-Shooting) "No log files are produced ..."
 
 - **upgrade** Ensure that the screens shots you take match the updates system
 
