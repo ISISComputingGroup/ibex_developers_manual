@@ -23,6 +23,11 @@ If you are converting an existing OPI from the old to the new style, be aware of
 
 There is a script called `check_opi_format.py` in `C:\Instrument\Dev\ibex_gui\base\uk.ac.stfc.isis.ibex.opis` that can help you check certain aspects of a new OPI. This script does not replace checking the OPI visually, but should help catch some style errors in OPIs. This will iterate over all OPIs in the `C:\Instrument\Dev\ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources` directory, and write logs to the `C:\Instrument\Dev\ibex_gui\base\uk.ac.stfc.isis.ibex.opis\check_OPI_format_logs` directory.
 
+Usage examples:
+- `python check_opi_format` - Default behaviour, will iterate through `.opi` files in the `C:\Instrument\Dev\ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources` directory
+- `python check_opi_format Eurotherm.opi` - Will check a single file in the default directory which is `C:\Instrument\Dev\ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources`.
+- `python check_opi_format Lakeshore336.opi C:\Instrument\Dev\ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources\Lakeshore336` - Will check a single file in the specified directory.
+
 ## Macros
 When an OPI is opened from the synoptic (via OpiTargetView.java) you get at least the following macros automatically set:
 
