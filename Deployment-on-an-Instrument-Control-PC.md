@@ -6,7 +6,6 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
 
 - **install** Check that Java is installed on the PC.  If not, download the latest JRE from the Java web-site (http://www.java.com/en/) and install it.  Make sure you choose the 64-bit version of Java.
 - **install** If the PC is running the Windows Classic theme, switch it to a modern theme (e.g. Windows 7 Theme); the IBEX GUI looks better when using a modern theme.  To change the theme see [Change Windows Theme](Change Windows Theme).
-- **upgrade** If this is not an instrument stop running GUI.
 
 ## Preparatory Steps for Server
 
@@ -23,7 +22,10 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
     * **_Copy_** the following directories to backup directory:
         1. `C:\instrument\settings`
         1. `C:\instrument\var\autosave`
-        1. `C:\instrument\var\mysql` (only consider copying this check size first. On IMAT it is in `C:\ProgramData\MySQL\MySQL Server 5.6\data\archive` [type in it is hidden])
+    * Consider copy db files (check the size >5GB don't bother, unless the database is going to be changed). If you decide to then 
+        1. Stop the mysql service (run in admin mode services.msc, find the mysql56 service and stop it)
+        1. Copy `C:\instrument\var\mysql` to backup directory
+        1. Start the service
 
 - **upgrade** Update the Common Calibration directory.
     1. Do a git status to find out if files have been added or changed (if they have querry why this is and take appropriate action)
@@ -81,7 +83,10 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
 
 ## Install IBEX Client
 
+- Stop the client if it is running
+
 - From a command prompt type the following (if your command prompt doesn't support UNC paths, use `pushd` instead of `cd`): `cd \\isis\inst$\Kits$\CompGroup\ICP\Releases\X.x.m\Client` where `X.x.m` is the version you wish to install
+
 - Run the command `install_client.bat`.  This will copy the contents of the above directory to `C:\Instrument\Apps\Client`.  It will also install genie_python.
 
 - Create a desktop shortcut to use to launch the IBEX client.
