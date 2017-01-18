@@ -70,7 +70,7 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
 
 - From a command prompt type the following (if your command prompt doesn't support UNC paths, use `pushd` instead of `cd`): `cd \\isis\inst$\Kits$\CompGroup\ICP\Releases\X.x.m\EPICS` where `X.x.m` is the version you wish to install
 - Run `install_to_inst.bat` This will copy the contents of the above directory to `C:\Instrument\Apps\EPICS`.
-- **upgrade** Configure the archive engine:
+- **install** Configure the archive engine:
 
     ```
     cd C:\Instrument\Apps\EPICS\SystemSetup
