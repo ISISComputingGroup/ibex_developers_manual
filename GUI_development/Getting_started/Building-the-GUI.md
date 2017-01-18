@@ -37,3 +37,7 @@ If you see a “Plugin execution not covered by lifecycle configuration” error
 1. Run the build.bat file
 1. Wait for a few minutes while it builds
 1. After the build finishes it can be found in `\base\uk.ac.stfc.isis.ibex.client.product\target\products\`
+
+## Troubleshooting ##
+
+If the GUI loads up but items are the wrong size, you need to ensure that your screen resolution is set to 1920x1080 or less and also ensure that your font scaling is set to 100%. This issue seems to occur mostly on windows 10.
