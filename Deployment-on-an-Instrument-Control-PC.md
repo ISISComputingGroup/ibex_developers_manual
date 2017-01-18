@@ -79,20 +79,6 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
 
     Note: **BE CAREFUL.**  If you run the `config_mysql.bat` script on an existing system **YOU WILL LOSE ALL HISTORICAL LOG DATA**.
 
-- Install the Client (don't forget to finish the below).
-
-- Make changes documented in Release notes (see [Releases](https://github.com/ISISComputingGroup/IBEX/wiki#releases))
-
-- Make sure these [tests are performed](server-release-tests), these are items we have missed in the past. Theses are different from the client tests.
-
-- **install** Check that the DAE is logging EPICS block (especially if this is the first time epics has been installed). See  [DAE troubleshooting](DAE-Trouble-Shooting) "No log files are produced ..."
-
-- **upgrade** Ensure that the screens shots you take match the updates system
-
-- Send release notes and actions that you have performed to the instrument scientist so they know what has been updated/installed (you may do this as part of the client install below).
-
-- Record the release to the instrument (add to list in [Instrument Releases](https://github.com/ISISComputingGroup/IBEX/wiki#instrument-information))
-
 ## Install IBEX Client
 
 - From a command prompt type the following (if your command prompt doesn't support UNC paths, use `pushd` instead of `cd`): `cd \\isis\inst$\Kits$\CompGroup\ICP\Releases\X.x.m\Client` where `X.x.m` is the version you wish to install
@@ -138,6 +124,10 @@ To stop the instrument, exit from the IBEX client (if you are running it), then 
     
 Allow the `stop_ibex_server` script a few moments to complete.
 
+## Deployment tests
+
+- Make sure these [tests are performed](server-release-tests), these are items we have missed in the past. Theses are different from the client tests.
+
 ## Add instrument to list of known instruments
 
 If the instrument is not on the list of known instruments already (i.e. for switching the GUI), follow the instructions [here](Making an Instrument Available from the GUI).
@@ -147,6 +137,18 @@ To add a new EPICS instrument to the web dashboard you will need to remote deskt
 * Add the instrument hostname to NDX_INSTS or ALL_INSTS within JSON_bourne\webserver.py
 * Add a link to the main page of the dataweb to IbexDataweb/default.html?instrument=_instname_. This can be done in the C:\inetpub\wwwroot\DataWeb\Dashboards\redirect.html
 * Restart JSON_bourne on extweb (It is running as a service).
+
+## Release documentation
+
+- Make changes documented in Release notes (see [Releases](https://github.com/ISISComputingGroup/IBEX/wiki#releases))
+
+- **install** Check that the DAE is logging EPICS block (especially if this is the first time epics has been installed). See  [DAE troubleshooting](DAE-Trouble-Shooting) "No log files are produced ..."
+
+- **upgrade** Ensure that the screens shots you take match the updates system
+
+- Send release notes and actions that you have performed to the instrument scientist so they know what has been updated/installed (you may do this as part of the client install below).
+
+- Record the release to the instrument (add to list in [Instrument Releases](https://github.com/ISISComputingGroup/IBEX/wiki#instrument-information))
 
 ## Deploying on NDXDEMO
 
