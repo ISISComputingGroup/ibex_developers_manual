@@ -10,7 +10,7 @@ Type   | Meaning
 **bug**    | A bug in the system reported by either a user or developer
 **# (number)** | Estimate on how long in story points the ticket will take to develop not including review time
 **rework** | Ticket has been through at least one review (with *ready* developer has changes to make, with *in progress* developer is working on it, with *review* developer has finished changes and they need re-reviewing
-under review | Ticket is currently being reviewed
+**under review** | Ticket is currently being reviewed
 **urgent** | Ticket is urgent and should be rushed through the system
 **wontfix** | Ticket will not be fixed, it is not needed or too complicated.
 **duplicate** | Ticket is a duplicate of a different ticket and will not be fixed (usually other ticket is referenced)
