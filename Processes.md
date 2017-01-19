@@ -6,7 +6,7 @@ wf - means workflow and is how waffle decides on which column the ticket is in
 
 Type   | Meaning
 ------ | -------
-awaiting | Tickets that are awaiting hardware to be ready before it can be completed
+awaiting | Tickets that are awaiting hardware, access etc. before it can be done. These tickets should be left on the backlog and pulled into the sprint when ready. Not the same as impeded.
 bug    | A bug in the system reported by either a user or developer
 # (number) | Estimate on how long in story points the ticket will take to develop not including review time
 rework | Ticket has been through at least one review (with *ready* developer has changes to make, with *in progress* developer is working on it, with *review* developer has finished changes and they need re-reviewing
@@ -14,7 +14,6 @@ under review | Ticket is currently being reviewed
 urgent | Ticket is urgent and should be rushed through the system
 wontfix | Ticket will not be fixed, it is not needed or too complicated.
 duplicate | Ticket is a duplicate of a different ticket and will not be fixed (usually other ticket is referenced)
-fixed | Ticket has been fixed (added at end of sprint only)
 for current release | Ticket is needed for the current release and should be prioritised (allows us to keep track of whether a release can be made)
 proposal | It is proposed that the ticket should be in the next sprint (removed each sprint)
 ready (wf) | Ticket is in the current sprint and can be worked on
@@ -22,6 +21,7 @@ in progress (wf) | Ticket is currently in progress
 review (wf) | Ticket is done and should be review by someone
 completed (wf) | Ticket is complete
 impeded (wf) | Ticket is in progress but can not be completed because of something else. Reason for impediment should be added to the ticket. This should not be for long.
+fixed (wf) | Ticket has been fixed (added at end of sprint only and by the person running the sprint)
 
 ## Creation of Tickets
 
