@@ -14,7 +14,7 @@ Type   | Meaning
 **urgent** | Ticket is urgent and should be rushed through the system
 **wontfix** | Ticket will not be fixed, it is not needed or too complicated.
 **duplicate** | Ticket is a duplicate of a different ticket and will not be fixed (usually other ticket is referenced)
-for current release | Ticket is needed for the current release and should be prioritised (allows us to keep track of whether a release can be made)
+**for current release** | Ticket is needed for the current release and should be prioritised (allows us to keep track of whether a release can be made)
 **proposal** | It is proposed that the ticket should be in the next sprint (removed each sprint)
 **ready (wf)** | Ticket is in the current sprint and can be worked on
 **in progress (wf)** | Ticket is currently in progress
