@@ -120,4 +120,6 @@ We haven't done much with emulators yet, so not much has gone wrong, so please a
 * `An error occurred:
 The setup 'default' you tried to load does not specify a valid device type, but
 the device module 'neocera_ltc21' provides multiple device types so that no mean
-ingful default can be deduced.`. Add device to `__init__` file of package so it can be imported.
+ingful default can be deduced.`. Possible solutions:
+    - Add device to `__init__` file of package so it can be imported.
+    - Ensure that the initial state is one of the states returned by get_state_handlers.
