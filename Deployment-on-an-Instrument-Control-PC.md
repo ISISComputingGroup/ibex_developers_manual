@@ -4,6 +4,10 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
 
 ## Preparatory Steps for Client and Server
 
+- As early as possible email the group to let us know of the upgrade. This includes starting point (e.g. v2.2.0) and what is going to be released. This will allow people to comment or add special instructions for various machines if they have forgotten to add them to the IBEX page.
+
+- Inform the instrument scientist that you are going to upgrade the instrument in 5 minutes so that they are not suprised when you remote desktop to the instrument.
+
 - **install** Check that Java is installed on the PC.  If not, download the latest JRE from the Java web-site (http://www.java.com/en/) and install it.  Make sure you choose the 64-bit version of Java.
 - **install** If the PC is running the Windows Classic theme, switch it to a modern theme (e.g. Windows 7 Theme); the IBEX GUI looks better when using a modern theme.  To change the theme see [Change Windows Theme](Change Windows Theme).
 
