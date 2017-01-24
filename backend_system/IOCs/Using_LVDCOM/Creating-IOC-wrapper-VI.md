@@ -93,9 +93,12 @@ This is a summary of [[more general LvDCOM instructions|LVDCOM-auto-generate-xml
 
 ## 4. Edit to st.cmd
 
-1. Add `lvDCOMConfigure("lvfp", "frontpanel", "${TOP}/data/lv_controls.xml")` before load common record. 
-    * Main args are:  portName, configSection, configFile, host, options (see lvDCOMConfigure() documentation in lvDCOMDriver.cpp)
+1. Add `lvDCOMConfigure("lvfp", "frontpanel", "${TOP}/data/lv_controls.xml", "$(LVDCOM_HOST="")", $(LVDCOM_OPTIONS=1))` before load common record. 
+    * Main args are:  portName, configSection, configFile, host, options [http://epics.isis.stfc.ac.uk/doxygen/lvDCOM/lvDCOMInterface_8h.html#abc97e5fb937c746684ce45dea3586291](see lvDCOMConfigure() documentation in lvDCOMDriver.cpp)
     * Additional optional args to specify a DCOM ProgID for a compiled LabVIEW application and a different username + password for remote host if that is required. e.g `lvDCOMConfigure("ex1", "example", "$(TOP)/lvDCOMApp/src/examples/example_lvinput.xml", "ndxtestfaa", 6, "", "username", "password")`
+    * Ideally there are macros for (don't forget to add these to the config.xml):
+        * LVDCOM_HOST: sets the host by altering a macro which can be set in the config; default to "" so that by default it runs on localhost. 
+        * LVDCOM_OPTIONS: whether vi should be started; default to 1 warn if idle.
 1. Add db load record
 
 ## 5. Run the IOC
