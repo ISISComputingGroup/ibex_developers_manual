@@ -4,6 +4,7 @@
 
 Project is ready to be released not for a specific event, e.g. at the end of a sprint.
 
+1. Update GUI Java JRE to the latest version (See [Jenkins Build Server `Jenkins builds will bundle the JRE with the client`](Jenkins-Build-Server))
 1. Look at the released features in this branch [IBEX/wiki/ReleaseNotes_Dev](https://github.com/ISISComputingGroup/IBEX/wiki/ReleaseNotes_Dev) and find the most significant level of change (i.e. is this cumulatively a major change, a minor change, or a patch?).
 1. Start a release branch so that the code is frozen (e.g. `Release_v1.1.0`). You will need a branch for
     1. EPICS
