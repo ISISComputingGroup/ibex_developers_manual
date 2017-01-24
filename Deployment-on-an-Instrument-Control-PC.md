@@ -80,7 +80,7 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
     ```
 
     Note: **BE CAREFUL.**  If you run the `config_mysql.bat` script on an existing system **YOU WILL LOSE ALL HISTORICAL LOG DATA**.
-- **upgrade** reapply any hotfixes which are not included in the current release but have been made to the instrument (see notes column wiki#instrument-information)
+- **upgrade** reapply any hotfixes which are not included in the current release but have been made to the instrument [see notes column in instrument releases table](wiki#instrument-information)
 
 ## Install IBEX Client
 
