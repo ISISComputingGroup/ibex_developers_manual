@@ -11,6 +11,7 @@ These are tests/checks that should be performed on the IBEX server after a relea
     1. `git fetch`
     1. `git status`
     1. Ensure that the message says `up-to-date with 'origin/<Instrument Name>'`.
+1. Confirm that the web dashboard is working for the specific instrument (http://dataweb.isis.rl.ac.uk/)
 
 ### LARMOR
 
@@ -20,8 +21,3 @@ These are tests/checks that should be performed on the IBEX server after a relea
 
 1. None
 
-## Tests that should be done
-
-### All Instruments
-
-1. Confirm that the web dashboard is working for the specific instrument (http://dataweb.isis.rl.ac.uk/)
