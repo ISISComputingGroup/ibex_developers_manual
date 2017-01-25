@@ -6,7 +6,7 @@
 Download and install [Strawberry Perl](http://strawberryperl.com/)
 
 # Install Visual Studio 2010
-Install Visual Studio 2010 
+Install Visual Studio 2010
 
 Install SDK 7.1 
 -The SDK may fail if you have these installed: 
@@ -16,7 +16,7 @@ Install SDK 7.1
 If these do exist on your computer you need to uninstall them before installing the SDK.
 
 Install: 
-* Visual Studio 2010 SP1
+* [Visual Studio 2010 SP1](https://www.microsoft.com/en-gb/download/details.aspx?id=23691)
 * Visual C++ 2010 SP1 Compiler Update for the Windows SDK 7.1
 
 # Install Visual Studio 2013
@@ -55,7 +55,7 @@ After it installs you will get to the "Type and Networking" page, for the "Confi
 Leave TCP/IP access enabled.
 
 On the "Accounts and Roles" page make sure you use the agreed password for root. 
-If you don't know what that password is you should be able to find it in `C:\Instrument\Apps\EPICS\CSS\master\ArchiveEngine\setup_mysql_database.txt`. Do not follow the instructions in this file.
+If you don't know what that password is you should be able to find it on the passwords page.
 
 Under "Windows Service" make sure "Start the MySQL Server at System Startup" is **checked**
 
@@ -69,10 +69,12 @@ Run the `genie_python_install.bat` batch file located in `\\isis\inst$\Kits$\Com
 
 # Build EPICS back-end
 `cd` to `C:\Instrument\Apps\EPICS\` and run `build.bat`
-Note that take some time and should end with a build complete message, if it hasn't seek help!
+Note that take some time and should end with building the documentation.
 
 Certain items will not be built when using VS2013, these are:
 *  Mk3Chopper support module and IOC - only builds with VS2010
+
+If you see `Error 2: file not found`, you may not have installed the correct windows SDK or visual studio version. Check for `rc.exe` in `C:\Program Files (x86)\Windows Kits\10\bin\x86\` (as appropriate for your system). If you don't have `rc.exe`, try installing the windows SDK appropriate for your operating system.
 
 # Set up the CS-Studio archiver
 In `C:\Instrument\Apps\EPICS\CSS\master` run `setup_css.bat`
@@ -135,6 +137,12 @@ The purpose and function of the calibration files are described [here](https://g
     isisdatasvr.exe /RegServer
 ```
 Unfortunately the /RegServer registration process doesn't report either success or failure. If, on later starting the ISISDAE IOC, you see lots of errors of the form "CoCreateInstanceEx (ISISICP) : Class not registered" then it means the /RegServer flag did not work. Try registering it again in case you were not Administrator when you tried it the first time. 
+
+# Setting up nicos
+
+Nicos needs some local passwords setting; to do this look at:
+
+https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/ISIS-Proxy#security
 
 # Building the GUI
 

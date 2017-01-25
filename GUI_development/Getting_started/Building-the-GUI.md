@@ -29,9 +29,17 @@ These are the steps needed to run the GUI via Eclipse:
 
 **Important Note:** you will need JDK 1.8 or higher installed to launch the IBEX GUI succesfully. You may be able to use JDK 1.7, but you wil need to change the JDK compliance level in Eclipse from 1.8 -> 1.7, else the GUI will not launch.
 
+If you see a “Plugin execution not covered by lifecycle configuration” error, you will need to go into eclipse preferences and ignore this category of error.
+
 ## Building via Maven ##
 
 1. From the command line, navigate to the build directory in the IBEX code
 1. Run the build.bat file
 1. Wait for a few minutes while it builds
 1. After the build finishes it can be found in `\base\uk.ac.stfc.isis.ibex.client.product\target\products\`
+
+## Troubleshooting ##
+
+If the GUI loads up but items are the wrong size, you may need to change your display settings. The exact settings that you need may vary from computer to computer. This is a common issue on Windows 10 machines due to the OS' scaling setting for text, icons etc. that is meant to ensure they do not look too small on high screen resolutions. 
+
+Generally a resolution of 1920 x 1080 with a scaling factor of 100% should look correct on standard screens. You can increase both of those settings slightly if you feel like the display elements look uncomfortably small.

@@ -37,7 +37,12 @@ The program collates all the data from the other sources, on all the EPICS instr
 Currently a simple JS script takes the JSON created by JSON Bourne and provides a simple webpage for an external client to view. This can be accessed from http://dataweb.isis.rl.ac.uk/. The code for the website, both the html and javascript are located in the central server at C:\inetpub\wwwroot\DataWeb\IbexDataweb.
 
 ## Deployment
-To deploy on a real instrument see [Deployment](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Deployment-on-an-Instrument-Control-PC#add-instrument-to-ibex-web-dashboard)
+To deploy on a new instrument see [Deployment](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Deployment-on-an-Instrument-Control-PC#add-instrument-to-ibex-web-dashboard)
+
+To update the production version of the dashboard:
+* Remote desktop into NDAEXTWEB1 with your fedID credentials (you may need to request admin rights on your credentials)
+* Update the code in C:\JSON_Bourne and C:\inetpub\wwwroot\DataWeb\IbexDataweb
+* Restart JSON_bourne (it is running as a service)
 
 ## Development/Testing
 

@@ -4,9 +4,12 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
 
 ## Preparatory Steps for Client and Server
 
+- As early as possible email the group to let us know of the upgrade. This includes starting point (e.g. v2.2.0) and what is going to be released. This will allow people to comment or add special instructions for various machines if they have forgotten to add them to the IBEX page.
+
+- Inform the instrument scientist that you are going to upgrade the instrument in 5 minutes so that they are not suprised when you remote desktop to the instrument.
+
 - **install** Check that Java is installed on the PC.  If not, download the latest JRE from the Java web-site (http://www.java.com/en/) and install it.  Make sure you choose the 64-bit version of Java.
 - **install** If the PC is running the Windows Classic theme, switch it to a modern theme (e.g. Windows 7 Theme); the IBEX GUI looks better when using a modern theme.  To change the theme see [Change Windows Theme](Change Windows Theme).
-- **upgrade** If this is not an instrument stop running GUI.
 
 ## Preparatory Steps for Server
 
@@ -23,7 +26,10 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
     * **_Copy_** the following directories to backup directory:
         1. `C:\instrument\settings`
         1. `C:\instrument\var\autosave`
-        1. `C:\instrument\var\mysql` (only consider copying this check size first. On IMAT it is in `C:\ProgramData\MySQL\MySQL Server 5.6\data\archive` [type in it is hidden])
+    * Consider copy db files (check the size >5GB don't bother, unless the database is going to be changed). If you decide to then 
+        1. Stop the mysql service (run in admin mode services.msc, find the mysql56 service and stop it)
+        1. Copy `C:\instrument\var\mysql` to backup directory
+        1. Start the service
 
 - **upgrade** Update the Common Calibration directory.
     1. Do a git status to find out if files have been added or changed (if they have querry why this is and take appropriate action)
@@ -50,28 +56,27 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
     [See the back-end getting started guide](First-time-installing-and-building-(Windows)#setting-up-a-configurations-directory)
 
 - **install** Check that MySQL v5.6 is installed on the PC.
-   - If a different version of MySQL is already installed, you should consider removing it and installing MySQL v5.6.
-   - If MySQL v5.6 is already installed, you might wish to consider removing it and doing a clean re-install.
+   - If MySQL is already installed, locate the current data directory and make sure that any pre-existing data is backed up.
+   - If a different version of MySQL is already installed, you should remove it and install MySQL v5.6.
+   - If MySQL v5.6 is already installed, it is recommended that you remove it and do a clean re-install.
    - If you decide to remove a previous installation of MySQL (v5.6 or otherwise), please ensure you fully remove it before installing MySQL v5.6.
       - use the MySQL uninstaller from the Programs & Features control panel to remove MySQL
       - after uninstalling, confirm that no MySQL features remain listed in the Programs & Features control panel
    - If MySQL v5.6 is not already installed, or you are doing a clean re-install:
       - download the MySQL installer `mysql-installer-community-5.6.16.0` from `\\isis\inst$\Kits$\External\BuildServer(ndwvegas)` and install it.
       - during the MySQL installation process,
-         - use the password `isis@instdb99`
+         - use the password specified on the passwords page
          - select a "server only" installation
          - change the data path to `C:\Instrument\var\mysql`
          - choose "server machine" during configuration
          - leave TCP/IP enabled
       - You may need to re-boot after installing MySQL
 
-- **install** Check that the DAE is logging EPICS block (especially if this is the first time epics has been installed). See  [DAE troubleshooting](DAE-Trouble-Shooting) "No log files are produced ..."
-
 ## Install EPICS
 
 - From a command prompt type the following (if your command prompt doesn't support UNC paths, use `pushd` instead of `cd`): `cd \\isis\inst$\Kits$\CompGroup\ICP\Releases\X.x.m\EPICS` where `X.x.m` is the version you wish to install
 - Run `install_to_inst.bat` This will copy the contents of the above directory to `C:\Instrument\Apps\EPICS`.
-- **upgrade** Configure the archive engine:
+- **install** Configure the archive engine:
 
     ```
     cd C:\Instrument\Apps\EPICS\SystemSetup
@@ -79,22 +84,14 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
     ```
 
     Note: **BE CAREFUL.**  If you run the `config_mysql.bat` script on an existing system **YOU WILL LOSE ALL HISTORICAL LOG DATA**.
-
-- Install the Client (don't forget to finish the below).
-
-- Make changes documented in Release notes (see [Releases](https://github.com/ISISComputingGroup/IBEX/wiki#releases))
-
-- Make sure these [tests are performed](server-release-tests), these are items we have missed in the past. Theses are different from the client tests.
-
-- **upgrade** Ensure that the screens shots you take match the updates system
-
-- Send release notes and actions that you have performed to the instrument scientist so they know what has been updated/installed (you may do this as part of the client install below).
-
-- Record the release to the instrument (add to list in [Instrument Releases](https://github.com/ISISComputingGroup/IBEX/wiki#instrument-information))
+- **upgrade** reapply any hotfixes which are not included in the current release but have been made to the instrument [see notes column in instrument releases table](wiki#instrument-information)
 
 ## Install IBEX Client
 
+- Stop the client if it is running
+
 - From a command prompt type the following (if your command prompt doesn't support UNC paths, use `pushd` instead of `cd`): `cd \\isis\inst$\Kits$\CompGroup\ICP\Releases\X.x.m\Client` where `X.x.m` is the version you wish to install
+
 - Run the command `install_client.bat`.  This will copy the contents of the above directory to `C:\Instrument\Apps\Client`.  It will also install genie_python.
 
 - Create a desktop shortcut to use to launch the IBEX client.
@@ -102,6 +99,10 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
 - Make changes documented in Release notes (see [Releases](https://github.com/ISISComputingGroup/IBEX/wiki#releases)). 
 
 - Make sure these [tests are performed](client-release-tests), these are items we have missed in the past.
+
+- If you installed the server [test this too](server-release-tests)
+
+- **upgrade** Ensure that the screens shots you take match the updates system
 
 - Send release notes and actions that you have performed to the instrument scientist so they know what has been updated 
 
@@ -137,6 +138,10 @@ To stop the instrument, exit from the IBEX client (if you are running it), then 
     
 Allow the `stop_ibex_server` script a few moments to complete.
 
+## Deployment tests
+
+- Make sure these [tests are performed](server-release-tests), these are items we have missed in the past. Theses are different from the client tests.
+
 ## Add instrument to list of known instruments
 
 If the instrument is not on the list of known instruments already (i.e. for switching the GUI), follow the instructions [here](Making an Instrument Available from the GUI).
@@ -146,6 +151,18 @@ To add a new EPICS instrument to the web dashboard you will need to remote deskt
 * Add the instrument hostname to NDX_INSTS or ALL_INSTS within JSON_bourne\webserver.py
 * Add a link to the main page of the dataweb to IbexDataweb/default.html?instrument=_instname_. This can be done in the C:\inetpub\wwwroot\DataWeb\Dashboards\redirect.html
 * Restart JSON_bourne on extweb (It is running as a service).
+
+## Release documentation
+
+- Make changes documented in Release notes (see [Releases](https://github.com/ISISComputingGroup/IBEX/wiki#releases))
+
+- **install** Check that the DAE is logging EPICS block (especially if this is the first time epics has been installed). See  [DAE troubleshooting](DAE-Trouble-Shooting) "No log files are produced ..."
+
+- **upgrade** Ensure that the screens shots you take match the updates system
+
+- Send release notes and actions that you have performed to the instrument scientist so they know what has been updated/installed (you may do this as part of the client install below).
+
+- Record the release to the instrument (add to list in [Instrument Releases](https://github.com/ISISComputingGroup/IBEX/wiki#instrument-information))
 
 ## Deploying on NDXDEMO
 

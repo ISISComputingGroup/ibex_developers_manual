@@ -4,6 +4,7 @@
 
 Project is ready to be released not for a specific event, e.g. at the end of a sprint.
 
+1. Update GUI Java JRE to the latest version (See [Jenkins Build Server `Jenkins builds will bundle the JRE with the client`](Jenkins-Build-Server))
 1. Look at the released features in this branch [IBEX/wiki/ReleaseNotes_Dev](https://github.com/ISISComputingGroup/IBEX/wiki/ReleaseNotes_Dev) and find the most significant level of change (i.e. is this cumulatively a major change, a minor change, or a patch?).
 1. Start a release branch so that the code is frozen (e.g. `Release_v1.1.0`). You will need a branch for
     1. EPICS
@@ -19,7 +20,7 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
         1. In `EPICS\ioc\master\INSTETC\INSTETC-IOC-01App\Db\svn-revision.db.tmpl` edit `field(VAL, "1.0.0.$WCREV$")` to be `field(VAL, "X.x.m.$WCREV$")`
         1. NB this has to be commited on a brnach in IOC and then this submodule commit has to be added to the EPICS release branch
     1. Genie Python
-        1. `genie_python\source\version.py` edit `CURRENT_VERSION = "0.0.0"` to CURRENT_VERSION = "X.x.m"
+        1. `genie_python\source\version.py` edit `VERSION = "0.0.0.qualifier"` to VERSION = "X.x.m.xxxxxxx" where xxxxxxx is the SHA hash of the commit
 1. Commit you changes and push.
 1. For the builds `ibex_gui_release`, `genie_python_release` and `EPICS_release`, do the following:
     1. Find the build in Jenkins

@@ -5,8 +5,6 @@ Suggestions for naming of PVs at ISIS. As of EPICS base 3.14.12 record names can
 
 Basic idea is to describe function in the PV name, not hardware/technology - the PV name is the purpose of a channel and is abstracted from the underlying hardware; an individual IOC name can however reflect technology/hardware/implementation. Note: do not use the `:` character in an IOC name.
 
-For multiple devices, follow device name with 1, 2  etc. (should we use `MOTOR1`, `MOTOR_1` or `MOTOR:1:` ?) Probably `MOTOR1` . We could try fixed formatting the number e.g. MOTOR01, but then if we have less than 10 we are adding an unnecessary 0 and if we get more than 100 the rule is broken. So no zero prefixing is probably simplest. 
-
 All characters in names should be uppercase. We will use `:` as hierarchy separator, `_` to delimit distinct characters in device name
 
 Basic scheme format is `Domain:subdomain:technicalarea:device:subdevice:signal`
@@ -16,6 +14,10 @@ PV names are restricted to alphanumerical, plus `_` and `:` so `[A-Z0-9_:]*` Ite
 PV names must start with a letter and must not end with `_` for now (maybe adopt NSLS2 convention of trailing `_` = private names?)
 
 We can create a separate PV name to describe actual hardware type 
+
+# IOCs with multiple devices
+
+For multiple devices, use a 2-letter prefix followed by an unpadded number (e.g. CH1). Note that this rule is not strict; there are a number of IOCs that don't follow it (e.g. Eurotherms: A01)
 
 # Signal Qualifiers
 These are added after a signal to indicate it is a setpoint etc. So for the TEMP signal

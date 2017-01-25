@@ -1,6 +1,6 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [Useful tools](Useful-tools) > Add sim records script
 
-The add_sim_records script will automatically add simulation and disable records to a db file. Usage:
+The add_sim_records script (located in EPICS/ISIS/DbChecker/master) will automatically add simulation and disable records to a db file. Usage:
 
 ```
 python.exe add_sim_records.py db_file.db 

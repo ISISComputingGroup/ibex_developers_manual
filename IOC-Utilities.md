@@ -4,7 +4,7 @@ There are a number of IOC shell utilities defined in `C:\Instrument\Apps\EPICS\s
 
 ## calc
 
-Performs an arithmetic operation on an expression and return the value to a specific environment variable:
+Performs an arithmetic operation on an expression and return the integer value to a specific environment variable:
 
 `calc("ENV1","1+1",1,2)`
 
@@ -20,6 +20,14 @@ My best guess is that the expression is evaluated using the `calcPerform` method
 The options are detailed in `ioccalc.cpp` in the utilities directory.
 
 Examples can be seen in the Galil and McLennan motor records.
+
+## dcalc
+
+As calc, but returns a double value. The 4th argument is for the number of decimal places, not the value length.
+
+`dcalc("ENV1","0.1*0.2",1,2)`
+
+An example can be seen in the Eurotherm IOC, file `st-timing.cmd`.
 
 ## stringtest
 

@@ -21,6 +21,13 @@ Please also make sure your OPI works well for colour blind users, following [the
 
 If you are converting an existing OPI from the old to the new style, be aware of [these tips and gotchas](Converting-to-New-Style-Tips-and-Gotchas).
 
+There is a script called `check_opi_format.py` in `C:\Instrument\Dev\ibex_gui\base\uk.ac.stfc.isis.ibex.opis` that can help you check certain aspects of a new OPI. This script does not replace checking the OPI visually, but should help catch some style errors in OPIs. This will iterate over all OPIs in the `C:\Instrument\Dev\ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources` directory, and write logs to the `C:\Instrument\Dev\ibex_gui\base\uk.ac.stfc.isis.ibex.opis\check_OPI_format_logs` directory.
+
+Usage examples:
+- `python check_opi_format` - Default behaviour, will iterate through `.opi` files in the `C:\Instrument\Dev\ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources` directory
+- `python check_opi_format Eurotherm.opi` - Will check a single file in the default directory which is `C:\Instrument\Dev\ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources`.
+- `python check_opi_format Lakeshore336.opi C:\Instrument\Dev\ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources\Lakeshore336` - Will check a single file in the specified directory.
+
 ## Macros
 When an OPI is opened from the synoptic (via OpiTargetView.java) you get at least the following macros automatically set:
 
@@ -60,7 +67,7 @@ In the xml file:
 * `value.macro.macro.description`: description of macro value which appears in target details when user clicks on the macro. For the macro that contains the IOC name, please provide an example of actual IOC name in brackets.
 
 You can specify which icon should appear in the synoptic with the file `ui/devicescreeens/ComponentIcons.java`.
-If you need to add new icons for the synoptic, these are under `uk.ac.stfc.isis.ibex.ui.devicescreens/icons` (both big icons for the actual synoptic and thumbnails for the synoptic editor).
+If you need to add new icons for the synoptic, these are under `uk.ac.stfc.isis.ibex.ui.devicescreens/icons` (both big icons for the actual synoptic and thumbnails for the synoptic editor). Please follow [these guidelines](Synoptic-Icons) when creating new synoptic icons.
 
   
 # Testing

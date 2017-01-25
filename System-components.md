@@ -1,4 +1,4 @@
-> [Wiki](Home) > [The Backend System](The-Backend-System) > System components
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [System components](System-components)
 
 * [The BlockServer](BlockServer)
 
@@ -17,3 +17,7 @@
 * [Access Gateway](Access-Gateway)
 
 * [Experimental Database](Experimental-Database)
+
+* [Inhibitor](Inhibitor)
+
+* [Statup and Shutdown](Startup-and-Shutdown)

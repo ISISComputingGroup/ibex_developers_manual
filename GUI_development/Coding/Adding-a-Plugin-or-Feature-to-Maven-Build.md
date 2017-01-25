@@ -2,58 +2,14 @@
 
 There are essentially two steps: adding a POM file to the plug-in/feature and editing the parent POM to include the new file. A plug-in is one small part of IBEx, such as the blocks view, and a feature is a large collection of plug-ins, such as CSS.
 
-## Adding a POM file
+## Create the plugin
 
-* In Eclipse, add a file called pom.xml to the top-level of the plug-in/feature
+* Right click in eclipse in the list of plugins
 
-* Open the file in Eclipse and switch to the pom.xml tab
+* Create a new plugin, naming it suitably
 
-* Paste the following if it is a plug-in:
+* Right click the new plugin, select 'Convert to Maven Project'
 
-```xml
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <artifactId>YOUR_ITEM_NAME_HERE</artifactId>
-  <packaging>eclipse-plugin</packaging>
-  <parent>
-    <groupId>CSS_ISIS</groupId>
-    <version>1.0.0-SNAPSHOT</version>
-    <artifactId>uk.ac.stfc.isis.ibex.client.tycho.parent</artifactId>
-    <relativePath>../uk.ac.stfc.isis.ibex.client.tycho.parent</relativePath>
-  </parent>
-  <version>1.0.0-SNAPSHOT</version>
-</project>
-```
-* Or paste the following if it is a feature:
+* Open the plugin `uk.ac.stfc.isis.ibex.client.tycho.parent`
 
-```xml
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <artifactId>YOUR_ITEM_NAME_HERE</artifactId>
-  <packaging>eclipse-feature</packaging>
-  <parent>
-    <groupId>CSS_ISIS</groupId>
-    <version>1.0.0-SNAPSHOT</version>
-    <artifactId>uk.ac.stfc.isis.ibex.client.tycho.parent</artifactId>
-    <relativePath>../uk.ac.stfc.isis.ibex.client.tycho.parent</relativePath>
-  </parent>
-</project>
-``` 
-* In either case replace the YOUR_ITEM_NAME_HERE with the plug-in/feature name; example names:
-
-    * uk.ac.stfc.isis.ibex.myplugin
-    * uk.ac.stfc.isis.ibex.ui.myfeature
-    
-* Save the changes
-
-## Adding a new POM file to the Parent POM
-
-* Open the pom.xml file in uk.ac.stfc.isis.ibex.client.tycho.parent in Eclipse. It should look like this:
-
-![POM file](GUI_development/images/adding_a_plugin_or_feature_to_maven_build/parent_pom.png)
-
-* Click the 'Add' button under the Modules section
-
-* In the new dialog select your plug-in/feature by checking the check-box
-* Click 'OK'
-* The next time a build is triggered the new plug-in/feature will be included in it
+* Under 'Modules' click 'Add', and check your new plugin to add it to the project.
