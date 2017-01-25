@@ -86,6 +86,24 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
     Note: **BE CAREFUL.**  If you run the `config_mysql.bat` script on an existing system **YOU WILL LOSE ALL HISTORICAL LOG DATA**.
 - **upgrade** reapply any hotfixes which are not included in the current release but have been made to the instrument [see notes column in instrument releases table](wiki#instrument-information)
 
+- **install** If the machine has no LabVIEW modules directory (c:\LabVIEW Modules) containing sample environment plus DAE programs. Install that now with:
+
+    If you are installing EPICS on a non-instrument and need to start the DAE in simulation mode, then you need to  
+	
+        ```
+        cd C:\Instrument\Apps\EPICS
+        create_icp_binaries
+		```    
+		
+    Register the DAE `isisicp.exe` program (either in `C:\labview modules\dae\...` or `ICP_Binaries\...`) as per developer setup instructions
+
+		
+- **install** If the instrument is not on the list of known instruments already (i.e. for switching the GUI), follow the instructions [here](Making an Instrument Available from the GUI).
+- **install** To add a new EPICS instrument to the web dashboard you will need to remote desktop into NDAEXTWEB1 with your fedID credentials (you may need to request admin rights on your credentials) and do the following:
+    * Add the instrument hostname to NDX_INSTS or ALL_INSTS within JSON_bourne\webserver.py
+    * Add a link to the main page of the dataweb to IbexDataweb/default.html?instrument=_instname_. This can be done in the C:\inetpub\wwwroot\DataWeb\Dashboards\redirect.html
+    * Restart JSON_bourne on extweb (It is running as a service).
+	
 ## Install IBEX Client
 
 - Stop the client if it is running
@@ -96,82 +114,45 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
 
 - Create a desktop shortcut to use to launch the IBEX client.
 
-- Make changes documented in Release notes (see [Releases](https://github.com/ISISComputingGroup/IBEX/wiki#releases)). 
-
-- Make sure these [tests are performed](client-release-tests), these are items we have missed in the past.
-
-- If you installed the server [test this too](server-release-tests)
-
-- **upgrade** Ensure that the screens shots you take match the updates system
-
-- Send release notes and actions that you have performed to the instrument scientist so they know what has been updated 
-
-- If releasing to an instrument record the release to the instrument (add to list in [Instrument Releases](https://github.com/ISISComputingGroup/IBEX/wiki#instrument-information))
-
-## Extra step for machines with no LabVIEW modules directory
-
-On most instruments there will be a `C:\labview modules` directory containing sample environment plus DAE programs. If you are installing EPICS on a non-instrument and need to start the DAE in simulation mode, then you need to  
-
-    cd C:\Instrument\Apps\EPICS
-    create_icp_binaries
-    
-## Register DAE
-
-Register the `isisicp.exe` program (either in `C:\labview modules\dae\...` or `ICP_Binaries\...`) as per developer setup instructions
-
-## Start the Instrument
-
-To start the instrument, open a command prompt and type the following:
-
-    cd C:\Instrument\Apps\EPICS
-    start_ibex_server
-    
-Allow the `start_ibex_server` script a few moments to complete before starting the IBEX client.
-
-
-## Stop the Instrument
-
-To stop the instrument, exit from the IBEX client (if you are running it), then open a command prompt and type the following:
-
-    cd C:\Instrument\Apps\EPICS
-    stop_ibex_server
-    
-Allow the `stop_ibex_server` script a few moments to complete.
+- Make changes documented in Release notes (see [Releases](https://github.com/ISISComputingGroup/IBEX/wiki#releases)). NB these are for *both* server and client and may be pertinent for a new install.
 
 ## Deployment tests
 
-- Make sure these [tests are performed](server-release-tests), these are items we have missed in the past. Theses are different from the client tests.
+- Make sure these [client tests are performed](client-release-tests), these are items we have missed in the past.
 
-## Add instrument to list of known instruments
-
-If the instrument is not on the list of known instruments already (i.e. for switching the GUI), follow the instructions [here](Making an Instrument Available from the GUI).
-
-## Add instrument to IBEX web dashboard
-To add a new EPICS instrument to the web dashboard you will need to remote desktop into NDAEXTWEB1 with your fedID credentials (you may need to request admin rights on your credentials) and do the following:
-* Add the instrument hostname to NDX_INSTS or ALL_INSTS within JSON_bourne\webserver.py
-* Add a link to the main page of the dataweb to IbexDataweb/default.html?instrument=_instname_. This can be done in the C:\inetpub\wwwroot\DataWeb\Dashboards\redirect.html
-* Restart JSON_bourne on extweb (It is running as a service).
-
-## Release documentation
-
-- Make changes documented in Release notes (see [Releases](https://github.com/ISISComputingGroup/IBEX/wiki#releases))
+- Make sure these [server tests are performed](server-release-tests), these are items we have missed in the past. Theses are different from the client tests.
 
 - **install** Check that the DAE is logging EPICS block (especially if this is the first time epics has been installed). See  [DAE troubleshooting](DAE-Trouble-Shooting) "No log files are produced ..."
 
 - **upgrade** Ensure that the screens shots you take match the updates system
 
-- Send release notes and actions that you have performed to the instrument scientist so they know what has been updated/installed (you may do this as part of the client install below).
+## Release documentation
 
-- Record the release to the instrument (add to list in [Instrument Releases](https://github.com/ISISComputingGroup/IBEX/wiki#instrument-information))
+- Send release notes and actions that you have performed to the instrument scientist so they know what has been updated/installed. This includes any updates to common configuration/calibration files.
 
-## Deploying on NDXDEMO
+- Record the release to the instrument (add to list in [Instrument Releases](https://github.com/ISISComputingGroup/IBEX/wiki#instrument-information)).
 
-When deploying on NDXDEMO you must make sure to allow all external machines to write to the instrument's PVs. To do this open EPICS\support\AccessSecurity\master\default.acf and locate the block of code where `ASG(GWEXT)` is defined and remove the following lines:
+## Start and stop
 
-    {
-        HAG(instmachine)
-    }
+* Start, open a command prompt and type the following:
 
+    cd C:\Instrument\Apps\EPICS
+    start_ibex_server
+    
+   Allow the `start_ibex_server` script a few moments to complete before starting the IBEX client.
+
+
+* Stop the Instrument
+
+	Exit from the client
+    Open a command prompt and type the following:
+
+    cd C:\Instrument\Apps\EPICS
+    stop_ibex_server
+    
+    Allow the `stop_ibex_server` script a few moments to complete.
+
+	
 ## Set up motion set points 
 
 The details of the individual set points for any given device will depend on that device and how it is used on an instrument, but the general principles described here will apply.
