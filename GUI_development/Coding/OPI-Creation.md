@@ -21,13 +21,14 @@ Please also make sure your OPI works well for colour blind users, following [the
 
 If you are converting an existing OPI from the old to the new style, be aware of [these tips and gotchas](Converting-to-New-Style-Tips-and-Gotchas).
 
-There is a script called `check_opi_format.py` in `C:\Instrument\Dev\ibex_gui\base\uk.ac.stfc.isis.ibex.opis` that can help you check certain aspects of a new OPI. This script does not replace checking the OPI visually, but should help catch some style errors in OPIs. This will iterate over all OPIs in the `C:\Instrument\Dev\ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources` directory, and write logs to the `C:\Instrument\Dev\ibex_gui\base\uk.ac.stfc.isis.ibex.opis\check_OPI_format_logs` directory.
+There is a script called `check_opi_format.py` in `C:\Instrument\Dev\ibex_gui\base\uk.ac.stfc.isis.ibex.opis` that can help you check certain aspects of a new OPI. This script does not replace checking the OPI visually, but should help catch some style errors in OPIs. This will iterate over all OPIs in the `C:\Instrument\Dev\ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources` directory, and write logs to the `C:\Instrument\Dev\ibex_gui\base\uk.ac.stfc.isis.ibex.opis\check_OPI_format_logs` directory by default. Other behaviours are described below:
 
-Usage examples:
-- `python check_opi_format` - Default behaviour, will iterate through `.opi` files in the `C:\Instrument\Dev\ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources` directory
-- `python check_opi_format Eurotherm.opi` - Will check a single file in the default directory which is `C:\Instrument\Dev\ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources`.
-- `python check_opi_format Lakeshore336.opi C:\Instrument\Dev\ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources\Lakeshore336` - Will check a single file in the specified directory.
-- `python check_opi_format Lakeshore336.opi C:\Instrument\Dev\ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources\Lakeshore336 .\my_logs_directory\` - Will check a single file in the specified directory and save the logs in the specified directory.
+Usage:
+`python check_opi_format.py [-h] [-file FILE] [-directory DIRECTORY] [-logs_directory LOGS_DIRECTORY] [-extension EXTENSION]`
+
+e.g. 
+`python check_opi_format.py -directory resources/Lakeshore336 -file Lakeshore336.opi -logs_directory my_logs_directory`
+will scan a single OPI in `resources/Lakeshore336/Lakeshore336.opi` and save the logs in `/my_logs_directory/`
 
 ## Macros
 When an OPI is opened from the synoptic (via OpiTargetView.java) you get at least the following macros automatically set:
