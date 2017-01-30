@@ -3,7 +3,7 @@
 The add_sim_records script (located in EPICS/ISIS/DbChecker/master) will automatically add simulation and disable records to a db file. Usage:
 
 ```
-python.exe add_sim_records.py db_file.db 
+python.exe c:\Instrument\Apps\EPICS\ISIS\DbChecker\master\add_sim_records.py db_file.db 
 
 optional arguments:
    -o --output = name of output file
