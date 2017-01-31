@@ -42,4 +42,11 @@ If you want to see the monitor point on a synoptic. Create a synoptic with a com
 * MM = MOT:MTR0601
 (check the `motionsetpoints.cmd` file to see what corresponds to what)
 
+## Alternative move command
 
+This was done particularly for the muon barndoors. They do not move the "motor" by sending pulses from the
+galil, rather there is a program running in the galil that changes the bias voltage and then readback is done
+via a galil analogue output line. To allow control of this via the galil, it is now possible to change the command
+used by the galil for setting the motor - this is done using a PV like  $(P)MOTMTR0101_MOVE_CMD   and a %f within this
+string will be replaced with the requested position. A real galil would have this internally doing something like "PRA=%f" for "position relative axis A" - this can bet set to any valid galil command sequence.  
+  
