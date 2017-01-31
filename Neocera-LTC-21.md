@@ -18,14 +18,14 @@ QISTATE? | What is the operating mode; reply is numeric monitor (0)/control (1)/
 SCONT | set into control mode
 SMON | set into monitor mode
 QHEAT? | heater power; numeric return is percentage of full scale
-QOUT?<channel> | Output config (note different returns for analogue and heater)
-QPID?<channel> | Query PID settings (note different returns for analogue and heater)
-QSETP?<channel> | Querry setpoint; return temperature with units
-QSAMP?<channel> | Query Temperature; returns temperature with unit
-SHCONT<control enum> | Set heater output control; AUTO P (0)/AUTO PI(1)/AUTO PID (2)/PID (3)/TABLE(4)/DEFAULT (5)
-SACONT<control enum> | Set analogue control; PID (3)/TABLE(4)/DEFAULT (5)/MONITOR (6)
-SPID<channel>,<P>,<I>,<D>,<Manual percent term>,(<Power limit> or <Gain>.<Offset>) | Set PID and other setting for heater set power limit for analog set gain ad offset
-SETP<channel>,<temp> | Set the setpoint for the given channel
+QOUT?\<channel\> | Output config (note different returns for analogue and heater)
+QPID?\<channel\> | Query PID settings (note different returns for analogue and heater)
+QSETP?\<channel\> | Querry setpoint; return temperature with units
+QSAMP?\<channel\> | Query Temperature; returns temperature with unit
+SHCONT\<control enum\> | Set heater output control; AUTO P (0)/AUTO PI(1)/AUTO PID (2)/PID (3)/TABLE(4)/DEFAULT (5)
+SACONT\<control enum\> | Set analogue control; PID (3)/TABLE(4)/DEFAULT (5)/MONITOR (6)
+SPID\<channel\>,\<P\>,\<I\>,\<D\>,\<Manual percent term\>,(\<Power limit\> or \<Gain\>.\<Offset\>) | Set PID and other setting for heater set power limit for analog set gain ad offset
+SETP\<channel\>,\<temp\> | Set the setpoint for the given channel
 
 
-where <channel> is 1 - Heater and 2 - Analog
+where \<channel\> is 1 - Heater and 2 - Analog
