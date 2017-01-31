@@ -8,7 +8,7 @@ Support modules may have a slightly longer name if need be, but if truncated ple
 
 For example:
 
-Keithley2400 - this name is fine as is for a support module, but maybe KTHLY or KTHL2400 as IOC name etc. 
+Keithley2400 - this name is fine as is for a support module, but maybe KTHLY or KTHL2400 as IOC name etc. depending on if you will have an IOC that can talk to multiple keithley models (i.e. link in multiple support modules) or not 
  
 
 
