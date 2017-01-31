@@ -3,10 +3,10 @@
 Neocera is a temperature controller. It has two outputs (i.e. set points with output current) one connected to a heater (output 1) and one connected to an analogue circuit (output 2). It also has two temperature sensors which can be connected to either of the outputs. 
 The system has four control modes; only two of which are accessible from the IOC. The modes are:
 
-    1. Monitor: temperature is monitored but the heater is never switched on
-    1. Control: Temperature is controlled using the heater for outputs/setpoints which exist
-    1. Off: Display is off not really sure how to access this mode
-    1. Autotune: unit is auto tuning the PID settings.
+1. Monitor: temperature is monitored but the heater is never switched on
+1. Control: Temperature is controlled using the heater for outputs/setpoints which exist
+1. Off: Display is off not really sure how to access this mode
+1. Autotune: unit is auto tuning the PID settings.
 
 ## Commands currently Supported
 
