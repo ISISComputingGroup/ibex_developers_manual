@@ -95,10 +95,8 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
 
     If you are installing EPICS on a non-instrument and need to start the DAE in simulation mode, then you need to  
 	
-        ```
         cd C:\Instrument\Apps\EPICS
         create_icp_binaries
-		```    
 		
     Register the DAE `isisicp.exe` program (either in `C:\labview modules\dae\...` or `ICP_Binaries\...`) as per developer setup instructions
 
