@@ -6,10 +6,13 @@ The test description should be read and what should happen should be noted. If t
 
 If a bug is discovered:
 
-1. Create a ticket (if there isn't one already)
-1. Decide on how important/easy to fix this bug is
-    1. If it is can be fixed for this cycle append the label "for current release"
-    1. If it can not be fixed then add this bug to the release notes under Known Bugs
+1. Record it on the bugs sheet. 
+1. If you know it is ticketed then add a ticket, record the ticket number and  if it needs to be fixed for the release then add label "for release". If you are not sure then wait. 
+
+After testing is done consider all bugs and decide whether:
+1. create a ticket - if so then append the label "for release" if for this release otherwise leave
+1. ignore - write why it is ignorable
+1. fix - if it is a documentation error and can be fixed now.
 
 Use the [template for system testing](testing/manual_system_tests_template.xlsx). This is not an exhaustive list: if you can think of additional tests, or improve the description of the existing ones, please feel free to improve the template.
 
