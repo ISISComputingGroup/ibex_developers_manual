@@ -94,10 +94,12 @@ git clone http://control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/inst.git NDWX
 
 * Create a branch from master with the machine name (if on an instrument) or your fedid if on a dev machine:
 ```
-cd NDWXXX/
-git checkout -b NDWXXXX
+cd NDXXX/
+git checkout -b NDXXXX
 rename 'Python\init_inst_name.py' to 'Python\init_<Inst name>.py'
-git add Python\init_<Inst name>.py
+git add Python\init_<Inst name (lowercase e.g. iristest1)>.py
+git rm Python\init_inst_name.py
+git commit -m"create initial python"
 git push --set-upstream origin NDWXXXX
 ```
 Any configs created through IBEX will now be stored on this branch (they will only be pushed remotely if you do a manual push first e.g. the last line above)
