@@ -80,14 +80,15 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
     * Z:
     * cd X.x.m\EPICS
 - Run `install_to_inst.bat` This will copy the contents of the above directory to `C:\Instrument\Apps\EPICS`.
-- **install** Configure the archive engine:
+- **install** Configure the database schemas engine. 
+    * Note: **BE CAREFUL.**  If you run the `config_mysql.bat` script on an existing system **YOU WILL LOSE ALL HISTORICAL DATA**.:
 
     ```
     cd C:\Instrument\Apps\EPICS\SystemSetup
     config_mysql
     ```
 
-    Note: **BE CAREFUL.**  If you run the `config_mysql.bat` script on an existing system **YOU WILL LOSE ALL HISTORICAL LOG DATA**.
+
 - **upgrade** reapply any hotfixes which are not included in the current release but have been made to the instrument [see notes column in instrument releases table](wiki#instrument-information)
 
 - **install** If the machine has no LabVIEW modules directory (c:\LabVIEW Modules) containing sample environment plus DAE programs. Install that now with:
