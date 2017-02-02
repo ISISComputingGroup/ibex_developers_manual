@@ -93,7 +93,7 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
 
 - **install** If the machine has no LabVIEW modules directory (c:\LabVIEW Modules) containing sample environment plus DAE programs. Install that now with:
 
-    If you are installing EPICS on a non-instrument and need to start the DAE in simulation mode, then you need to  
+    If you are installing EPICS on a non-instrument and need to start the DAE in simulation mode, then you need to (in an epics terminal):  
 	
         cd C:\Instrument\Apps\EPICS
         create_icp_binaries
