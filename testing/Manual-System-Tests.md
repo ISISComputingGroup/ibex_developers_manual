@@ -10,6 +10,7 @@ If a bug is discovered:
 1. If you know it is ticketed then add a ticket, record the ticket number and  if it needs to be fixed for the release then add label "for release". If you are not sure then wait. 
 
 After testing is done consider all bugs and decide whether:
+
 1. create a ticket - if so then append the label "for release" if for this release otherwise leave
 1. ignore - write why it is ignorable
 1. fix - if it is a documentation error and can be fixed now.
