@@ -96,6 +96,8 @@ git clone http://control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/inst.git NDWX
 ```
 cd NDWXXX/
 git checkout -b NDWXXXX
+rename 'Python\init_inst_name.py' to 'Python\init_<Inst name>.py'
+git add Python\init_<Inst name>.py
 git push --set-upstream origin NDWXXXX
 ```
 Any configs created through IBEX will now be stored on this branch (they will only be pushed remotely if you do a manual push first e.g. the last line above)
