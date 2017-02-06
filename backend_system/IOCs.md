@@ -31,6 +31,7 @@ Building a new IOC? Before you get started, take a look at the relevant [instrum
 
 ## Other
 
+* [Creating a MODBUS IOC](MODBUS-IOC) 
 * [Using LVDCOM](Using-LVDCOM)
 * [Convert Record](convert-record)
 * [Multi-value Protocols Tricks](Multi-value-Protocols)
