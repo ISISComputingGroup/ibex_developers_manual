@@ -90,20 +90,23 @@ The system exposes some PVs for controlling operation, and getting feedback for 
 
 PV Name      | Access | Description
 `RAND`       | R      | A random number for testing that the server is responsive
-`MSG`        | R      | A human readable message describing the current collision status - this *could* be added to the spangle banner
+`MSG`        | R      | A human readable message describing the current collision status. This *could* be added to the spangle banner.
 `NAMES`      | R      | A list of the names read from `config.py`
-`MODE`       | R/W    | A 3-bit binary number of the operating mode (see `OperatingMode` class): bit 0 = `AUTO_STOP`, bit 1 = `AUTO_LIMIT`, bit 2 = close the program
-`AUTO_STOP`  | R/W    | Automatically issue a `.STOP` command to any moving motors, when a collision is detected. If 0, no `.STOP` commands will be sent.
-`AUTO_LIMIT` | R/W    | Automatically send new limits to all motors whenever new dynamic limits are calculated. If 0, the limits from `config.py` are sent instead.
+`MODE`       | R/W    | A 3-bit binary number of the operating mode (see `OperatingMode` class): bit 0 = `AUTO_STOP`, bit 1 = `AUTO_LIMIT`, bit 2 = close the program. Writing to this PV will cause the dynamic limits to be recalculated.
+`AUTO_STOP`  | R/W    | Automatically issue a `.STOP` command to any moving motors, when a collision is detected. If 0, no `.STOP` commands will be sent. Writing to this PV will cause the dynamic limits to be recalculated.
+`AUTO_LIMIT` | R/W    | Automatically send new limits to all motors whenever new dynamic limits are calculated. If 0, the limits from `config.py` are sent instead. Writing to this PV will cause the dynamic limits to be recalculated.
 `SAFE`       | R      | Value is 0 if any collisions have occurred, otherwise 1.
 `HI_LIM`     | R      | A list of the upper dynamic limits for each motor axis.
 `LO_LIM`     | R      | A list of the lower dynamic limits for each motor axis.
 `TRAVEL`     | R      | A list of the distance to the closest dynamic limit for each motor axis. If the axis is at either of its limits, this will be 0. ***I'm not sure if this is useful to anyone***
 `TRAV_F`     | R      | A list of the distance from the current position to the upper limit for each motor axis.
 `TRAV_R`     | R      | A list of the distance from the current position to the lower limit for each motor axis. Should always be a negative number.
-
-
-
+`COLLIDED`   | R      | A list of values for each body. Value will be 1 is a collision has been detected on that body.
+`OVERSIZE`   | R/W    | The additional distance added to the faces of each bodies, to make collisions easier to detect. `COARSE` is also updated so that the relationship `4 * OVERSIZE = COARSE` is maintained. Writing to this PV will cause the dynamic limits to be recalculated.
+`COARSE`     | R/W    | The initial coarse step used when seeking limits. `OVERSIZE` is also updated so that the relationship `4 * OVERSIZE = COARSE` is maintained. Writing to this PV will cause the dynamic limits to be recalculated.
+`FINE`       | R/W    | The fine step used when seeking limits. Writing to this PV will cause the dynamic limits to be recalculated.
+`TIME`       | R      | The time taken to calculate the last set of dynamic limits
+`CALC`       | W      | Writing any number to this PV will cause the dynamic limits to be recalculated.
 
 
 ## A title...
