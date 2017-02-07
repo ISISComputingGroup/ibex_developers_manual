@@ -41,14 +41,17 @@ The system comprises four main parts:
 3. PV server
 4. Graphic visualiser
 
-Additionally the instrument geometry configuration is loaded in from `config.py`.
+Additionally the instrument geometry configuration must be described, and is loaded in from `config.py`.
+
+### A Note on Dial *vs* User Coordinates
+The system uses the *dial* versions of the readback and limit PVs (`DVAL`, `DRBV`, `DHLM`, `DLLM`) to protect the collision detection algorithm from changes in the user coordinate system. See [EPICS Motor Record](http://www.aps.anl.gov/bcda/synApps/motor/R6-9/motorRecord.htm).
 
 ### Collision Detector
 
-The collision detector is responsible for stopping motion if a collision occurs. The collision detector must be executed frequently, to stop collisions as promptly as possible. The collision detector runs in a separate thread, to allow it to operate independent to the main program, and provides a `CollisionDetector.collisions` list for interfacing with the rest of the program.
+The collision detector is responsible for stopping motion if a collision occurs. The collision detector must be executed frequently, to stop collisions as promptly as possible. The collision detector runs in a separate thread, to allow it to operate independently to the main program, and provides a `CollisionDetector.collisions` list for interfacing with the rest of the program.
 
 The system uses the [Open Dynamics Engine (ODE)](http://www.ode.org/) to calculate whether any bodies have collided, using the function `collide`. A list of `GeomBox` objects are created, one for each body, each containing an `ode.GeomBox` object. The `ode.Collide` function is used to determine whether each pair of geometries has collided. The `config.ignore` list ensures that only the geometries of interest are analysed, reducing the computational load. 
-*Maybe a "collisions of interest" list would be more useful??*
+***Maybe a "collisions of interest" list would be more useful??***
 
 When a collision is detected, the system sends a `.STOP` message to each motor that is currently moving, using Genie python.
 
@@ -86,41 +89,41 @@ Once an appropriate step size has been found, the magnitude of the move need not
 
 The system exposes some PVs for controlling operation, and getting feedback for the user through `pv_server.py`. The [pcaspy](https://pcaspy.readthedocs.io/en/latest/tutorial.html) module is used to achieve this, similarly to the BlockServer.
 
-***There is no access security in the EPICS sense. However, writing to read only PVs is ignored by the driver.***
+There is no access security in the EPICS sense. However, writing to read only PVs is ignored by the driver.
 
 PV Name      | Access | Description
 :--- | :--- | :---
-`RAND`       | R      | A random number for testing that the server is responsive
-`MSG`        | R      | A human readable message describing the current collision status. This *could* be added to the spangle banner.
-`NAMES`      | R      | A list of the names read from `config.py`
-`MODE`       | R/W    | A 3-bit binary number of the operating mode (see `OperatingMode` class): bit 0 = `AUTO_STOP`, bit 1 = `AUTO_LIMIT`, bit 2 = close the program. Writing to this PV will cause the dynamic limits to be recalculated.
-`AUTO_STOP`  | R/W    | Automatically issue a `.STOP` command to any moving motors, when a collision is detected. If 0, no `.STOP` commands will be sent. Writing to this PV will cause the dynamic limits to be recalculated.
 `AUTO_LIMIT` | R/W    | Automatically send new limits to all motors whenever new dynamic limits are calculated. If 0, the limits from `config.py` are sent instead. Writing to this PV will cause the dynamic limits to be recalculated.
-`SAFE`       | R      | Value is 0 if any collisions have occurred, otherwise 1.
+`AUTO_STOP`  | R/W    | Automatically issue a `.STOP` command to any moving motors, when a collision is detected. If 0, no `.STOP` commands will be sent. Writing to this PV will cause the dynamic limits to be recalculated.
+`CALC`       | W      | Writing any number to this PV will cause the dynamic limits to be recalculated.
+`COARSE`     | R/W    | The initial coarse step used when seeking limits. `OVERSIZE` is also updated so that the relationship `4 * OVERSIZE = COARSE` is maintained. Writing to this PV will cause the dynamic limits to be recalculated.
+`COLLIDED`   | R      | A list of values for each body. Value will be 1 is a collision has been detected on that body.
+`FINE`       | R/W    | The fine step used when seeking limits. Writing to this PV will cause the dynamic limits to be recalculated.
 `HI_LIM`     | R      | A list of the upper dynamic limits for each motor axis.
 `LO_LIM`     | R      | A list of the lower dynamic limits for each motor axis.
-`TRAVEL`     | R      | A list of the distance to the closest dynamic limit for each motor axis. If the axis is at either of its limits, this will be 0. ***I'm not sure if this is useful to anyone***
+`MODE`       | R/W    | A 3-bit binary number of the operating mode (see `OperatingMode` class): bit 0 = `AUTO_STOP`, bit 1 = `AUTO_LIMIT`, bit 2 = close the program. Writing to this PV will cause the dynamic limits to be recalculated.
+`MSG`        | R      | A human readable message describing the current collision status. This *could* be added to the spangle banner. Typical messages include `No collisions detected.`, `Collision expected in 0.9s - 1.0s`, `Collision on Name1, Name2` 
+`NAMES`      | R      | A list of the names read from `config.py`
+`OVERSIZE`   | R/W    | The additional distance added to the faces of each bodies, to make collisions easier to detect. `COARSE` is also updated so that the relationship `4 * OVERSIZE = COARSE` is maintained. Writing to this PV will cause the dynamic limits to be recalculated.
+`RAND`       | R      | A random number for testing that the server is responsive
+`SAFE`       | R      | Value is 0 if any collisions have occurred, otherwise 1.
+`TIME`       | R      | The time taken to calculate the last set of dynamic limits
 `TRAV_F`     | R      | A list of the distance from the current position to the upper limit for each motor axis.
 `TRAV_R`     | R      | A list of the distance from the current position to the lower limit for each motor axis. Should always be a negative number.
-`COLLIDED`   | R      | A list of values for each body. Value will be 1 is a collision has been detected on that body.
-`OVERSIZE`   | R/W    | The additional distance added to the faces of each bodies, to make collisions easier to detect. `COARSE` is also updated so that the relationship `4 * OVERSIZE = COARSE` is maintained. Writing to this PV will cause the dynamic limits to be recalculated.
-`COARSE`     | R/W    | The initial coarse step used when seeking limits. `OVERSIZE` is also updated so that the relationship `4 * OVERSIZE = COARSE` is maintained. Writing to this PV will cause the dynamic limits to be recalculated.
-`FINE`       | R/W    | The fine step used when seeking limits. Writing to this PV will cause the dynamic limits to be recalculated.
-`TIME`       | R      | The time taken to calculate the last set of dynamic limits
-`CALC`       | W      | Writing any number to this PV will cause the dynamic limits to be recalculated.
+`TRAVEL`     | R      | A list of the distance to the closest dynamic limit for each motor axis. If the axis is at either of its limits, this will be 0. ***I'm not sure if this is useful to anyone***
 
 
 ### Graphic Visualiser
-The visualiser is started with the main program, and can be found in `render.py`. 
+The visualiser is started with the main program, and can be found in `render.py`.
+
+The visualiser runs in its own thread, and iterates every 50 ms to draw each frame. It updates the graphic by monitoring the `.DRBV` PVs of each axis, and through a `RenderParams` object containing the soft limits, the collision status, and the duration of the most recent limit calculation. ***Could make it talk to the collision detection thread directly for collision info***
 
 ![Screenshot](https://raw.githubusercontent.com/wiki/ISISComputingGroup/ibex_developers_manual/collision_detection/images/ScreenShot.png)
 
 
-## A title...
 
 ### Op modes
 
-### A note on dial *vs* user coords
 
 ### Describing Instrument Geometry
 
