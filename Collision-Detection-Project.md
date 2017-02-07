@@ -113,7 +113,7 @@ PV Name      | Access | Description
 ### Graphic Visualiser
 The visualiser is started with the main program, and can be found in `render.py`. 
 
-***Screenshot***
+![Screenshot](https://raw.githubusercontent.com/wiki/ISISComputingGroup/ibex_developers_manual/collision_detection/images/ScreenShot.png)
 
 
 ## A title...
