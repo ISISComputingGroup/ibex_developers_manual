@@ -30,6 +30,7 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
     1. The release builds will be created in `P:\Kits$\CompGroup\ICP\Releases\X.x.m`
 1. Create a released version in the [releases table](https://github.com/ISISComputingGroup/IBEX/wiki#releases) (including link to release notes)
 1. Move the changes which have been merged into the release from the dev page to the new release notes page for the version.
+1. Update the [user manual](https://github.com/ISISComputingGroup/ibex_user_manual/wiki) with any relevant changes
 1. Test
 1. Record and fix any bugs
 1. Create a release tag in the EPICS, ibex_gui and genie_python repositories. For each repo
