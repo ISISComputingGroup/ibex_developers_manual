@@ -17,6 +17,8 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
 
 - **upgrade** Take screen shots of running instrument. This ensures it is restarted as it was found and enables you easily to spot changes in config. Items to include: blocks, each perspective, configuration each tab, running ioc's available configs, components and synoptics
 
+- **upgrade** Record any open labview VI which are running.
+
 - **upgrade** Stop running instrument `ibex_stop_server.bat`.
 
 - **upgrade** Backup old directories
@@ -124,6 +126,8 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
 - Make changes documented in Release notes (see [Releases](https://github.com/ISISComputingGroup/IBEX/wiki#releases)). NB these are for *both* server and client and may be pertinent for a new install.
 
 ## Deployment tests
+
+- *upgrade* Restart any VIs which were running
 
 - Make sure these [client tests are performed](client-release-tests), these are items we have missed in the past.
 
