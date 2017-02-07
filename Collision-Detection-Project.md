@@ -31,7 +31,7 @@ The system interfaces with the IBEX server using EPICS via the Channel Access pr
  
 For collision detection, the system uses the Open Dynamics Engine, through the python module `pyode`.
  
-The system also produces a visual rendering of the system, for diagnostic and development purposes. This uses the `pyopengl` bindings, which need `glut.dll` and `glut32.dll`, which are included in the repository and can be found [here](ftp://ftp.sgi.com/opengl/glut/glut3.html)
+The system also produces a visual rendering of the system, for diagnostic and development purposes. This uses `pygame` and the `pyopengl` bindings, and needs `glut.dll` and `glut32.dll`, which are included in the repository and can be found [here](ftp://ftp.sgi.com/opengl/glut/glut3.html).
  
 ## System Overview
 
@@ -108,6 +108,12 @@ PV Name      | Access | Description
 `FINE`       | R/W    | The fine step used when seeking limits. Writing to this PV will cause the dynamic limits to be recalculated.
 `TIME`       | R      | The time taken to calculate the last set of dynamic limits
 `CALC`       | W      | Writing any number to this PV will cause the dynamic limits to be recalculated.
+
+
+### Graphic Visualiser
+The visualiser is started with the main program, and can be found in `render.py`. 
+
+***Screenshot***
 
 
 ## A title...
