@@ -153,23 +153,23 @@ Space | Reset to initial view
 
 The geometry of the instrument is described in `config.py`. Generally the content of this file is a set of parameter lists, indexed against either the bodies in the mechanical system, or the motion axes. The various parameters are:
 
-Parameter       | Indexed on | Description
-:---            | :---       | :---
+Parameter        | Indexed on | Description
+:---             | :---       | :---
 `colors`         | Axis       | A list of RGB tuples used when drawing the limits and current position of each axis, where `(1, 1, 1)` is white. The colours can be re-used in `geometries`. Red `(1, 0, 0)` ought not be used as bodies are drawn in red if they have collided.
-`geometries`    | Body       | A list of `dict` containing the `name` and `size`, and optionally `color`, and `position` parameters of the body. For moving bodies, the `position` is not required, as it will be overridden whenever the system moves. The `color` defaults to white.
-`moves`         | Body       | A list of functions which take a list of position values, and return a `Transformation` to describe the new position of each mechanical body. Alternatively (and more efficiently) a function which moves everything and yields `Transformation`s at each step, which can then be iterated over in the same way as the list.
+`geometries`     | Body       | A list of `dict` containing the `name` and `size`, and optionally `color`, and `position` parameters of the body. For moving bodies, the `position` is not required, as it will be overridden whenever the system moves. The `color` defaults to white.
+`moves`          | Body       | A list of functions which take a list of position values, and return a `Transformation` to describe the new position of each mechanical body. Alternatively (and more efficiently) a function which moves everything and yields `Transformation`s at each step, which can then be iterated over in the same way as the list.
 which are mechanically connected - we don't care if the carriage collides with it's slide. As this list can be long for a complicated moving system, this is best generated using a nested `for` loop. *** This could be changed to use a "of interest" list instead for a simpler config - but the default would be to ignore that body completely***
 `pvs`           | Axis       | A list of motor PVs for each axis. The order of these PVs is the order of the position values given to `moves`.
 `hardlimits`    | Axis       | The end limits of each axis of motion. Nominally the end of travel, though tighter limits can be imposed. The dynamically calculated limits are always within these values. 
-`ignore`        |            | A list of `geometries` index pairs which are not of interest. This is useful for bodies 
-`coarse`        |            | The initial coarse limit seek step, which can be overridden by PV.
-`fine`          |            | The initial fine limit seek step, which can be overridden by PV (but probably never needs to change from 0.5).
-`oversize`      |            | The initial oversize parameter to apply to the bodies, which can be overriden by PV. The relationship `oversize = coarse / 4` should be maintained. ***Could remove this from config.py, as it can be calculated at the start of the program.***
+`ignore`        | N/A        | A list of `geometries` index pairs which are not of interest. This is useful for bodies 
+`coarse`        | N/A        | The initial coarse limit seek step, which can be overridden by PV.
+`fine`          | N/A        | The initial fine limit seek step, which can be overridden by PV (but probably never needs to change from 0.5).
+`oversize`      | N/A        | The initial oversize parameter to apply to the bodies, which can be overriden by PV. The relationship `oversize = coarse / 4` should be maintained. ***Could remove this from config.py, as it can be calculated at the start of the program.***
 
 
-***Move config.control_pv to the pv_server***
-***Make config.py aware of the current instrument context - BUT what if we want to observe an instrument elsewhere?***
-***Load config.py from the appropriate instrument configuration***
+***Move config.control_pv to the pv_server***  
+***Make config.py aware of the current instrument context - BUT what if we want to observe an instrument elsewhere?***  
+***Load config.py from the appropriate instrument configuration***  
 
 
 
