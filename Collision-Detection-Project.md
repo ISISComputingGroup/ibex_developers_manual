@@ -89,6 +89,7 @@ The system exposes some PVs for controlling operation, and getting feedback for 
 ***There is no access security in the EPICS sense. However, writing to read only PVs is ignored by the driver.***
 
 PV Name      | Access | Description
+:--- | :--- | :---
 `RAND`       | R      | A random number for testing that the server is responsive
 `MSG`        | R      | A human readable message describing the current collision status. This *could* be added to the spangle banner.
 `NAMES`      | R      | A list of the names read from `config.py`
