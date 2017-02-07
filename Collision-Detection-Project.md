@@ -25,7 +25,7 @@ The system resides within the [EPICS-inst_servers](https://github.com/ISISComput
  
 This project assumes a development environment with a configured IBEX installation.
 
-The system has been developed using PyCharm. For development purposes, the environment variables from the standard EPICS `config_env.bat` and from ***
+The system has been developed using PyCharm. For development purposes, the environment variables from the standard EPICS `config_env.bat` and from `start_collision_detection_cmd.bat` should be set in the PyCharm run configuration, with the script target set to `main.py`.
  
 The system interfaces with the IBEX server using EPICS via the Channel Access protocol. Genie python is used for simple setting and getting of PVs, and the python `ca` module is used to monitor changes in PVs. 
  
@@ -51,10 +51,8 @@ The system uses the *dial* versions of the readback and limit PVs (`DVAL`, `DRBV
 The collision detector is responsible for stopping motion if a collision occurs. The collision detector must be executed frequently, to stop collisions as promptly as possible. The collision detector runs in a separate thread, to allow it to operate independently to the main program, and provides a `CollisionDetector.collisions` list for interfacing with the rest of the program.
 
 The system uses the [Open Dynamics Engine (ODE)](http://www.ode.org/) to calculate whether any bodies have collided, using the function `collide`. A list of `GeomBox` objects are created, one for each body, each containing an `ode.GeomBox` object. The `ode.Collide` function is used to determine whether each pair of geometries has collided. The `config.ignore` list ensures that only the geometries of interest are analysed, reducing the computational load. 
-***Maybe a "collisions of interest" list would be more useful??***
 
 When a collision is detected, the system sends a `.STOP` message to each motor that is currently moving, using Genie python.
-
 
 ### Limit Calculator
 
@@ -70,16 +68,16 @@ modeled size = actual size + 2S
 ```
 Assuming a head on collision and considering only linear movement of the seeking axis, a collision of the real world system occurs once the model has collided by at least `2S`. Furthermore, taking two objects with an actual size of zero, and a modeled size of `2S`, a "head-on" collision is maintained for `4S`. 
 
-***A picture would be useful***
+***A diagram would be useful***
 
 In the case of an inclined collision, the collision will persist for longer as the collision path through the centre of the object increases with angle. 
 
-***A picture would be useful***
+***A diagram would be useful***
 
 In the case of a glancing collision, whereby the collision of the model does not infer a collision of the real world system, a collision of the model may or may not be detected, but the real-world system will never be at risk.
 Therefore any search step of `4S` or less will detect a real-world collision. 
 
-***A picture would be useful***
+***A diagram would be useful***
 
 For movements which involve rotation however, the search step must be chosen to ensure that no point on the body moves by more than `4S` in any direction. To achieve this, the system calculates the positions of each vertex of the body at each step. The magnitude of the move is calculated, and if greater than `4S`, the search step can be reduced. The magnitude of the move is re-calculated and the step reduced until the step is less than or equal to `4S`. 
 
@@ -110,13 +108,13 @@ PV Name      | Access | Description
 `TIME`       | R      | The time taken to calculate the last set of dynamic limits
 `TRAV_F`     | R      | A list of the distance from the current position to the upper limit for each motor axis.
 `TRAV_R`     | R      | A list of the distance from the current position to the lower limit for each motor axis. Should always be a negative number.
-`TRAVEL`     | R      | A list of the distance to the closest dynamic limit for each motor axis. If the axis is at either of its limits, this will be 0. ***I'm not sure if this is useful to anyone***
+`TRAVEL`     | R      | A list of the distance to the closest dynamic limit for each motor axis. If the axis is at either of its limits, this will be 0. 
 
 
 ### Graphic Visualiser
 The visualiser is started with the main program, and can be found in `render.py`.
 
-The visualiser runs in its own thread, and iterates every 50 ms to draw each frame. It updates the graphic by monitoring the `.DRBV` PVs of each axis, and through a `RenderParams` object containing the soft limits, the collision status, and the duration of the most recent limit calculation. ***Could make it talk to the collision detection thread directly for collision info***
+The visualiser runs in its own thread, and iterates every 50 ms to draw each frame. It updates the graphic by monitoring the `.DRBV` PVs of each axis, and through a `RenderParams` object containing the soft limits, the collision status, and the duration of the most recent limit calculation. 
 
 ![Screenshot](https://raw.githubusercontent.com/wiki/ISISComputingGroup/ibex_developers_manual/collision_detection/images/ScreenShot.png)
 
@@ -160,30 +158,8 @@ Parameter        | Indexed on | Description
 `moves`          | Body       | A list of functions which take a list of position values, and return a `Transformation` to describe the new position of each mechanical body. Alternatively (and more efficiently) a function which moves everything and yields `Transformation`s at each step, which can then be iterated over in the same way as the list.
 `pvs`           | Axis       | A list of motor PVs for each axis. The order of these PVs is the order of the position values given to `moves`.
 `hardlimits`    | Axis       | The end limits of each axis of motion. Nominally the end of travel, though tighter limits can be imposed. The dynamically calculated limits are always within these values. 
-`ignore`        | N/A        | A list of `geometries` index pairs which are not of interest. This is useful for bodies which are mechanically connected - we don't care if the carriage collides with it's slide. As this list can be long for a complicated moving system, this is best generated using a nested `for` loop. *** This could be changed to use a "of interest" list instead for a simpler config - but the default would be to ignore that body completely***
+`ignore`        | N/A        | A list of `geometries` index pairs which are not of interest. This is useful for bodies which are mechanically connected - we don't care if the carriage collides with it's slide. As this list can be long for a complicated moving system, this is best generated using a nested `for` loop. 
 `coarse`        | N/A        | The initial coarse limit seek step, which can be overridden by PV.
 `fine`          | N/A        | The initial fine limit seek step, which can be overridden by PV (but probably never needs to change from 0.5).
-`oversize`      | N/A        | The initial oversize parameter to apply to the bodies, which can be overriden by PV. The relationship `oversize = coarse / 4` should be maintained. ***Could remove this from config.py, as it can be calculated at the start of the program.***
-
-
-***Move config.control_pv to the pv_server***  
-***Make config.py aware of the current instrument context - BUT what if we want to observe an instrument elsewhere?***  
-***Load config.py from the appropriate instrument configuration***  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+`oversize`      | N/A        | The initial oversize parameter to apply to the bodies, which can be overriden by PV. The relationship `oversize = coarse / 4` should be maintained. 
 
