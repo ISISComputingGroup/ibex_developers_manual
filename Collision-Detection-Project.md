@@ -120,10 +120,17 @@ The visualiser runs in its own thread, and iterates every 50 ms to draw each fra
 
 ![Screenshot](https://raw.githubusercontent.com/wiki/ISISComputingGroup/ibex_developers_manual/collision_detection/images/ScreenShot.png)
 
+#### Keyboard Controls
+The program can be controlled through the visualisation window in the same way as setting the `MODE` PV.
 
+Key | Function
+:---|:---
+1   | `AUTO_STOP` on.
+2   | `AUTO_STOP` off.
+3   | `AUTO_LIMIT` on.
+4   | `AUTO_LIMIT` off.
 
-### Op modes
-
+***the flyabout keys***
 
 ### Describing Instrument Geometry
 
