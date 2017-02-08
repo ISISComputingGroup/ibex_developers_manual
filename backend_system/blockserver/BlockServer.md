@@ -99,8 +99,8 @@ Note: This PV is currently used by the web dashboard
 
 **BLOCKSERVER:ALL_COMPONENT_DETAILS**
 
-    Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:COMPS
-    Returns a list of the components available, including descriptions and the pv associated with the configuration, as compressed then hexed JSON (CHAR waveform)
+    Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:ALL_COMPONENT_DETAILS
+    Returns a list of the available components with all their details, as if reading e.g. the current configuration. Read as compressed then hexed JSON (CHAR waveform)
         [{
             "blocks": [{"log_rate": 30, "log_deadband": 0.0, "component": null, "runcontrol": false, "visible": true, "pv": "TE:NDLT882:DAE:BEAMCURRENT", "name": "BEAMCURR", "highlimit": 0.0, "log_periodic": true, "lowlimit": 0.0, "local": true}], 
             "groups": [{"component": null, "blocks": ["BEAMCURR"], "name": "NONE"}], 
@@ -118,7 +118,8 @@ Note: This PV is currently used by the web dashboard
             "description": "ping",
             "component_iocs": [{"macros": [], "pvs": [], "name": "CRYVALVE_01", "autostart": false, "pvsets": [], "component": null, "restart": true, "simlevel": "none"}],
             "components": [], "history": ["2017-02-08 16:30:40"], "synoptic": "", "name": "TEST_COMP1"
-        }, ...]
+        }
+        , ...]
 
 **BLOCKSERVER:GET_RC_OUT**
 
