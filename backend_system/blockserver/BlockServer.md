@@ -109,7 +109,8 @@ Note: This PV is currently used by the web dashboard
             "component_iocs": [{"macros": [], "pvs": [{"name": "NEW_PV", "value": "NEW_VALUE"}], "name": "GALIL_01", "autostart": false, "pvsets": [], "component": null, "restart": false, "simlevel": "recsim"}],
             "components": [],
             "history": ["2017-02-08 16:34:15"],
-            "synoptic": "", "name": "TEST_COMP2" 
+            "synoptic": "", 
+            "name": "TEST_COMP2" 
         },
         {
             "blocks": [],
@@ -117,7 +118,9 @@ Note: This PV is currently used by the web dashboard
             "iocs": [{"macros": [], "pvs": [], "name": "CRYVALVE_01", "autostart": false, "pvsets": [], "component": null, "restart": true, "simlevel": "none"}],
             "description": "ping",
             "component_iocs": [{"macros": [], "pvs": [], "name": "CRYVALVE_01", "autostart": false, "pvsets": [], "component": null, "restart": true, "simlevel": "none"}],
-            "components": [], "history": ["2017-02-08 16:30:40"], "synoptic": "", "name": "TEST_COMP1"
+            "components": [], "history": ["2017-02-08 16:30:40"], 
+            "synoptic": "", 
+            "name": "TEST_COMP1"
         }
         , ...]
 
