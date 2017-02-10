@@ -1,5 +1,13 @@
 Various Processes for Tasks and quick info into how they should work
 
+## What to do when you need to fix something on an Instrument
+
+1. Fix the bug
+1. Record the bug as a ticket; with solution done
+1. Note the bug next to the instrument on the main IBEX page
+1. If the bug is likely to effect other instruments inform the icp team using the group email
+1. If the bug will seriously effect instrument scientists consult the PM
+
 ## Ticket Types
 
 wf - means workflow and is how waffle decides on which column the ticket is in
