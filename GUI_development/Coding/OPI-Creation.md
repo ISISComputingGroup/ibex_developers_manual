@@ -76,5 +76,18 @@ If you need to add new icons for the synoptic, these are under `uk.ac.stfc.isis.
 
 To start and interact with a testing IOC see [Running (and testing) IOC](Running-IOCs)
 
+# Debugging: No scrollbars
+
+Check if you have stray widgets. An example of a stray widget might have:
+
+```
+<x>-2147483647</x>
+<y>2147483496</y>
+```
+
+If you have a stray widget, it may prevent scrollbars from appearing on your OPI. It might be possible to solve the issue by selecting and copying the elements to a new OPI. You can then diff the old version and the copied version using the following tools:
+- XML sorter e.g. [https://xmlsorter.codeplex.com/](https://xmlsorter.codeplex.com/)
+- Diff tool e.g. notepad++, winmerge
+
 
 
