@@ -2,7 +2,7 @@
 
 ## Original Behavior
 
-Presently, experiments are executed using Genie Python scripts, which command the various axes of motion, as well as the DAE system. Care must be taken to ensure that the motion axes are not allowed to collide with each other, or other parts of the instrument. This means that "soft" limits must be placed on each axis of motion, as determined by the instrument scientist and the equipment present on the instrument.
+Presently, experiments are executed using Genie Python scripts, which command the various axes of motion, as well as the DAE system and other instrument systems. Care must be taken to ensure that the motion axes are not allowed to collide with each other, or other parts of the instrument. This means that "soft" limits must be placed on each axis of motion, based on the equipment present on the instrument and determined by the instrument scientist.
  
 There are certain instrument configurations and situations where setting these "soft" limits does not allow the full range of motion required, or where the limits on multiple axes become interdependent. In this case, it would be useful to re-calculate the "soft" limits dynamically, in order to improve equipment safety whilst also giving the scientists greater freedom.
  
@@ -25,7 +25,7 @@ The system resides within the [EPICS-inst_servers](https://github.com/ISISComput
  
 This project assumes a development environment with a configured IBEX installation.
 
-The system has been developed using PyCharm. For development purposes, the environment variables from the standard EPICS `config_env.bat` and from `start_collision_detection_cmd.bat` should be set in the PyCharm run configuration, with the script target set to `main.py`.
+The system has been developed in PyCharm. For development purposes, the environment variables from the standard EPICS `config_env.bat` and from `start_collision_detection_cmd.bat` should be set in the PyCharm run configuration, with the script target set to `main.py`.
  
 The system interfaces with the IBEX server using EPICS via the Channel Access protocol. Genie python is used for simple setting and getting of PVs, and the python `ca` module is used to monitor changes in PVs. 
  
