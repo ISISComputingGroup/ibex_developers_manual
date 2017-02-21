@@ -64,24 +64,22 @@ This works on the assumption that most collisions behave like a [rectangular fun
 
 If the geometries of the computer model are sufficiently larger than the real-world system, the search step can be optimised.
 
-![Oversized model](https://raw.githubusercontent.com/wiki/ISISComputingGroup/ibex_developers_manual/collision_detection/images/Oversize.PNG)
-
 For a given increase in size `S` applied to each face of the box:
 ```
 modeled size = actual size + 2S
 ```
+
+![Oversized model](https://raw.githubusercontent.com/wiki/ISISComputingGroup/ibex_developers_manual/collision_detection/images/Oversize.PNG)
+
 Assuming a head on collision and considering only linear movement of the seeking axis, a collision of the real world system occurs once the model has collided by at least `2S`. Furthermore, taking two objects with an actual size of zero, and a modeled size of `2S`, a "head-on" collision is maintained for `4S`. 
 
-***A diagram would be useful***
 
 In the case of an inclined collision, the collision will persist for longer as the collision path through the centre of the object increases with angle. 
 
-***A diagram would be useful***
 
 In the case of a glancing collision, whereby the collision of the model does not infer a collision of the real world system, a collision of the model may or may not be detected, but the real-world system will never be at risk.
 Therefore any search step of `4S` or less will detect a real-world collision. 
 
-***A diagram would be useful***
 
 For movements which involve rotation however, the search step must be chosen to ensure that no point on the body moves by more than `4S` in any direction. To achieve this, the system calculates the positions of each vertex of the body at each step. The magnitude of the move is calculated, and if greater than `4S`, the search step can be reduced. The magnitude of the move is re-calculated and the step reduced until the step is less than or equal to `4S`. 
 
