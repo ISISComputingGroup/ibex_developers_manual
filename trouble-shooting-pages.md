@@ -13,3 +13,5 @@
 [Eclipse](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Common%20Eclipse%20Issues)
 
 [Other](Other-Troubleshooting)
+
+[GUI: Memory "leaks"](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Debugging-memory-leaks-in-the-IBEX-GUI)
