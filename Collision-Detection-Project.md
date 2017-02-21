@@ -64,7 +64,7 @@ This works on the assumption that most collisions behave like a [rectangular fun
 
 If the geometries of the computer model are sufficiently larger than the real-world system, the search step can be optimised.
 
-![Oversized model](https://raw.githubusercontent.com/wiki/ISISComputingGroup/ibex_developers_manual/collision_detection/images/Oversize.png)
+![Oversized model](https://raw.githubusercontent.com/wiki/ISISComputingGroup/ibex_developers_manual/collision_detection/images/Oversize.PNG)
 
 For a given increase in size `S` applied to each face of the box:
 ```
