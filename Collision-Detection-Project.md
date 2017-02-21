@@ -55,6 +55,7 @@ The system uses the [Open Dynamics Engine (ODE)](http://www.ode.org/) to calcula
 
 When a collision is detected, the system sends a `.STOP` message to each motor that is currently moving, using Genie python.
 
+
 ### Limit Calculator
 
 The system dynamically calculates limits by stepping each motor through its range of motion, and checking for collisions, using the `auto_seek_limits` function. This can be approached as a sequential search, where `collide` is evaluated at each step along the range of motion. Each direction is searched first with a coarse step, then with a fine step. 
