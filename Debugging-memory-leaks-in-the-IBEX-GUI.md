@@ -26,7 +26,7 @@
 
 - A GUI with a memory leak will also fluctuate in the short term, but will also have a long term trend upwards while the issue is being reproduced.
 
-## Diagnosis
+## Diagnosis 1
 
 - Go under Sampler -> Memory and look at which objects are using up a lot of heap space. Note that this is only the object, **not** any of the objects that it owns!
 
@@ -41,3 +41,19 @@ will **not** make `MemoryLeak` show up as a large object!
 - Under "monitor" you can create a Heap Dump. This is a file with information about all the objects that were loaded at the time. You might find this useful or not depending on your problem.
 
 - Don't bother trying to "compute retained sizes": The IBEX program is too large and will cause the profiler itself to crash with an `OutOfMemoryException`.
+
+## Diagnosis 2
+
+- Once you have a few candidate objects from above which you think are suspicious, use the eclipse debugger to inspect them at runtime. If you find that they're very big / contain a lot of items, then your problem has been located. If not, then rinse and repeat Diagnosis 1.
+
+## Fixing
+
+Once you've diagnosed *where* the memory leak is, you need to fix it. This may not be obvious at first! There's not really any generic help that can be given here.
+
+## Notes
+
+- The java garbage collector is responsible for cleaning up dereferenced objects. If your objects aren't being freed when you click the `Perform GC` button in java visual VM, then you still have references to them somewhere.
+
+- Some things need to be closed before/on garbage collection, for example sockets. Java's `finalize()` method is called just before the object is GC'd, and can be used to close anything that needs closing.
+
+- Good luck :)
