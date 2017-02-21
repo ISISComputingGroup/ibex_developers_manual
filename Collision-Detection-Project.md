@@ -69,10 +69,9 @@ For a given increase in size `S` applied to each face of the box:
 modeled size = actual size + 2S
 ```
 
-![Oversized model](https://raw.githubusercontent.com/wiki/ISISComputingGroup/ibex_developers_manual/collision_detection/images/Oversize.PNG)
-
 Assuming a head on collision and considering only linear movement of the seeking axis, a collision of the real world system occurs once the model has collided by at least `2S`. Furthermore, taking two objects with an actual size of zero, and a modeled size of `2S`, a "head-on" collision is maintained for `4S`. 
 
+![Oversized model](https://raw.githubusercontent.com/wiki/ISISComputingGroup/ibex_developers_manual/collision_detection/images/Oversize.PNG)
 
 In the case of an inclined collision, the collision will persist for longer as the collision path through the centre of the object increases with angle. 
 
