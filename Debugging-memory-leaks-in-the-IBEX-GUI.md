@@ -1,5 +1,7 @@
 # Debugging memory leaks in the IBEX GUI
 
+This page is currently heavily based on https://github.com/ISISComputingGroup/IBEX/issues/2017. Please update this as we gain more experience!
+
 ## Symptoms
 
 - Java memory leaks cause high CPU usage rather than the more intuitive high memory usage. The IBEX GUI is limited to a heap size of 500MB by default. When the heap gets close to it's maximum size, the garbage collector goes crazy trying to recover memory wherever it can, and therefore uses a lot of CPU.
