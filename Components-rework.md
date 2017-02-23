@@ -14,5 +14,6 @@ Same format for read & write
 
 Tickets:
 - GUI: Separate Editing and Reading Configs
+- GUI: turn EditableConfiguration into EditingModel
 - GUI: Make Configuration- and (new)Component-class inherit from common superclass
 - Create PV in blockserver with native only configs
