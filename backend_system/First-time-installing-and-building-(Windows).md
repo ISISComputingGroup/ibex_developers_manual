@@ -6,7 +6,7 @@
 Download and install [Strawberry Perl](http://strawberryperl.com/)
 
 # Install Visual Studio 2010
-Install Visual Studio 2010 
+Install Visual Studio 2010
 
 Install SDK 7.1 
 -The SDK may fail if you have these installed: 
@@ -16,7 +16,7 @@ Install SDK 7.1
 If these do exist on your computer you need to uninstall them before installing the SDK.
 
 Install: 
-* Visual Studio 2010 SP1
+* [Visual Studio 2010 SP1](https://www.microsoft.com/en-gb/download/details.aspx?id=23691)
 * Visual C++ 2010 SP1 Compiler Update for the Windows SDK 7.1
 
 # Install Visual Studio 2013
@@ -55,7 +55,7 @@ After it installs you will get to the "Type and Networking" page, for the "Confi
 Leave TCP/IP access enabled.
 
 On the "Accounts and Roles" page make sure you use the agreed password for root. 
-If you don't know what that password is you should be able to find it in `C:\Instrument\Apps\EPICS\CSS\master\ArchiveEngine\setup_mysql_database.txt`. Do not follow the instructions in this file.
+If you don't know what that password is you should be able to find it on the passwords page.
 
 Under "Windows Service" make sure "Start the MySQL Server at System Startup" is **checked**
 
@@ -94,8 +94,12 @@ git clone http://control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/inst.git NDWX
 
 * Create a branch from master with the machine name (if on an instrument) or your fedid if on a dev machine:
 ```
-cd NDWXXX/
-git checkout -b NDWXXXX
+cd NDXXX/
+git checkout -b NDXXXX
+rename 'Python\init_inst_name.py' to 'Python\init_<Inst name>.py'
+git add Python\init_<Inst name (lowercase e.g. iristest1)>.py
+git rm Python\init_inst_name.py
+git commit -m"create initial python"
 git push --set-upstream origin NDWXXXX
 ```
 Any configs created through IBEX will now be stored on this branch (they will only be pushed remotely if you do a manual push first e.g. the last line above)
@@ -137,6 +141,12 @@ The purpose and function of the calibration files are described [here](https://g
     isisdatasvr.exe /RegServer
 ```
 Unfortunately the /RegServer registration process doesn't report either success or failure. If, on later starting the ISISDAE IOC, you see lots of errors of the form "CoCreateInstanceEx (ISISICP) : Class not registered" then it means the /RegServer flag did not work. Try registering it again in case you were not Administrator when you tried it the first time. 
+
+# Setting up nicos
+
+Nicos needs some local passwords setting; to do this look at:
+
+https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/ISIS-Proxy#security
 
 # Building the GUI
 

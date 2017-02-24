@@ -1,27 +1,35 @@
 Various Processes for Tasks and quick info into how they should work
 
+## What to do when you need to fix something on an Instrument
+
+1. Fix the bug
+1. Record the bug as a ticket; with solution done
+1. Note the bug next to the instrument on the main IBEX page
+1. If the bug is likely to effect other instruments inform the icp team using the group email
+1. If the bug will seriously effect instrument scientists consult the PM
+
 ## Ticket Types
 
 wf - means workflow and is how waffle decides on which column the ticket is in
 
 Type   | Meaning
 ------ | -------
-awaiting | Tickets that are awaiting hardware to be ready before it can be completed
-bug    | A bug in the system reported by either a user or developer
-# (number) | Estimate on how long in story points the ticket will take to develop not including review time
-rework | Ticket has been through at least one review (with *ready* developer has changes to make, with *in progress* developer is working on it, with *review* developer has finished changes and they need re-reviewing
-under review | Ticket is currently being reviewed
-urgent | Ticket is urgent and should be rushed through the system
-wontfix | Ticket will not be fixed, it is not needed or too complicated.
-duplicate | Ticket is a duplicate of a different ticket and will not be fixed (usually other ticket is referenced)
-fixed | Ticket has been fixed (added at end of sprint only)
-for current release | Ticket is needed for the current release and should be prioritised (allows us to keep track of whether a release can be made)
-proposal | It is proposed that the ticket should be in the next sprint (removed each sprint)
-ready (wf) | Ticket is in the current sprint and can be worked on
-in progress (wf) | Ticket is currently in progress
-review (wf) | Ticket is done and should be review by someone
-completed (wf) | Ticket is complete
-impeded (wf) | Ticket is in progress but can not be completed because of something else. Reason for impediment should be added to the ticket. This should not be for long.
+**awaiting** | Tickets where it is hard to determine when they will be done because they are awaiting hardware, access etc. These tickets should be left on the backlog and pulled into the current sprint when ready. **Not the same as impeded**.
+**bug**    | A bug in the system reported by either a user or developer
+**# (number)** | Estimate on how long in story points the ticket will take to develop not including review time
+**rework** | Ticket has been through at least one review (with *ready* developer has changes to make, with *in progress* developer is working on it, with *review* developer has finished changes and they need re-reviewing
+**under review** | Ticket is currently being reviewed
+**urgent** | Ticket is urgent and should be rushed through the system
+**wontfix** | Ticket will not be fixed, it is not needed or too complicated.
+**duplicate** | Ticket is a duplicate of a different ticket and will not be fixed (usually other ticket is referenced)
+**for current release** | Ticket is needed for the current release and should be prioritised (allows us to keep track of whether a release can be made)
+**proposal** | It is proposed that the ticket should be in the next sprint (removed each sprint)
+**ready (wf)** | Ticket is in the current sprint and can be worked on
+**in progress (wf)** | Ticket is currently in progress
+**review (wf)** | Ticket is done and should be review by someone
+**completed (wf)** | Ticket is complete
+**impeded (wf)** | Ticket is in progress but can not be completed because of something else. Reason for impediment should be added to the ticket. This should not be for long.
+**fixed (wf)** | Ticket has been fixed (added at end of sprint only and by the person running the sprint)
 
 ## Creation of Tickets
 
@@ -37,7 +45,7 @@ Filter for other tickets `is:open -label:proposal -label:"in progress" -label:"r
 
 ## Sprint Planning
 
-At sprint planning we will *only* look at tickets with 'proposal' label. These will be selected in and added to the ready column or milestone; Estimates will be added. These will then be looked at to slim down to the number of points we usually manage in a sprint. After sprint planning all 'proposal' labels will be removed from all tickets.
+At sprint planning we will *only* look at tickets with 'proposal' label. These will be selected in and added to the ready column or milestone; estimates will be added. These will then be looked at to slim down to the number of points we usually manage in a sprint. After sprint planning all 'proposal' labels will be removed from all tickets.
 
 ## Movement of Tickets
 

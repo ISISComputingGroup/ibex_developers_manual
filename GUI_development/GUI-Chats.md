@@ -37,3 +37,4 @@ Idea | Proposer | Proposed Speaker
 How to make a UI with SWT | Dominic Oram | Thomas Lohnert
 How threads are used in IBEX | Dominic Oram | ?
 Java 8 | Dominic Oram | ?
+MVVM Pattern | Thomas Lohnert | Dominic Oram

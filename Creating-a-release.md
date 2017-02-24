@@ -4,20 +4,21 @@
 
 Project is ready to be released not for a specific event, e.g. at the end of a sprint.
 
+1. Update GUI Java JRE to the latest version (See [Jenkins Build Server `Jenkins builds will bundle the JRE with the client`](Jenkins-Build-Server))
 1. Look at the released features in this branch [IBEX/wiki/ReleaseNotes_Dev](https://github.com/ISISComputingGroup/IBEX/wiki/ReleaseNotes_Dev) and find the most significant level of change (i.e. is this cumulatively a major change, a minor change, or a patch?).
-1. Start a release branch so that the code is frozen (e.g. `Release_v1.1.0`). You will need a branch for
-    1. EPICS
-    1. EPICS-ioc (for version number update)
-    1. genie_python
-    1. ibex_gui
+1. Start a release branch so that the code is frozen (e.g. `Release_1.1.0`). You will need a branch for
+    1. [EPICS](https://github.com/ISISComputingGroup/EPICS)
+    1. [EPICS-ioc](https://github.com/ISISComputingGroup/EPICS-IOC) (for version number update)
+    1. [genie_python](https://github.com/ISISComputingGroup/genie_python)
+    1. [ibex_gui](https://github.com/ISISComputingGroup/ibex_gui)
 1. Update the version numbers:
     1. GUI
         1. In `ibex_gui/base/uk.ac.stfc.isis.ibex.product/META-INF/MANIFEST.MF` edit `Bundle-Version:...` to be `X.x.m.qualifier`
         1. In `ibex_gui/base/uk.ac.stfc.isis.ibex.product/pom.xml` edit the `<version>` tag content to be `X.x.m-SNAPSHOT`
         1. In `ibex_gui/base/uk.ac.stfc.isis.ibex.client.product/pom.xml` edit the `<version>` tag content (the one underneath `<modelVersion>`) to be `X.x.m-SNAPSHOT`
     1. EPICS
-        1. In `EPICS\ioc\master\INSTETC\INSTETC-IOC-01App\Db\svn-revision.db.tmpl` edit `field(VAL, "1.0.0.$WCREV$")` to be `field(VAL, "X.x.m.$WCREV$")`
-        1. NB this has to be commited on a brnach in IOC and then this submodule commit has to be added to the EPICS release branch
+        1. In `EPICS\ioc\master\INSTETC\INSTETC-IOC-01App\Db\svn-revision.db.tmpl` edit `field(VAL, "0.0.0.$WCREV$")` to be `field(VAL, "X.x.m.$WCREV$")`
+        1. NB this has to be committed on a branch in IOC and then this submodule commit has to be added to the EPICS release branch
     1. Genie Python
         1. `genie_python\source\version.py` edit `VERSION = "0.0.0.qualifier"` to VERSION = "X.x.m.xxxxxxx" where xxxxxxx is the SHA hash of the commit
 1. Commit you changes and push.
@@ -29,6 +30,7 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
     1. The release builds will be created in `P:\Kits$\CompGroup\ICP\Releases\X.x.m`
 1. Create a released version in the [releases table](https://github.com/ISISComputingGroup/IBEX/wiki#releases) (including link to release notes)
 1. Move the changes which have been merged into the release from the dev page to the new release notes page for the version.
+1. Update the [user manual](https://github.com/ISISComputingGroup/ibex_user_manual/wiki) with any relevant changes
 1. Test
 1. Record and fix any bugs
 1. Create a release tag in the EPICS, ibex_gui and genie_python repositories. For each repo

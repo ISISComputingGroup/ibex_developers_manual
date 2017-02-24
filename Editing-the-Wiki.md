@@ -23,6 +23,9 @@ git commit -m "Added an image to Using the Wiki page"
 git push
 ```
 
+You can then add the image in markdown using the URL: 
+`https://raw.githubusercontent.com/wiki/ISISComputingGroup/ibex_developers_manual/images/using_the_wiki/test.png`
+
 ### Adding or Editing Files
 
 To add or edit a file you again need to check out the Wiki and add manually, or edit and push existing documents. Documents should be stored with their associated pages.

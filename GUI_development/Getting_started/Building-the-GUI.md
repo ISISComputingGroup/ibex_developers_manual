@@ -37,3 +37,18 @@ If you see a “Plugin execution not covered by lifecycle configuration” error
 1. Run the build.bat file
 1. Wait for a few minutes while it builds
 1. After the build finishes it can be found in `\base\uk.ac.stfc.isis.ibex.client.product\target\products\`
+
+## Troubleshooting ##
+
+If the GUI loads up but items are the wrong size, you may need to change your display settings. The exact settings that you need may vary from computer to computer. This is a common issue on Windows 10 machines due to the OS' scaling setting for text, icons etc. that is meant to ensure they do not look too small on high screen resolutions. 
+
+Generally a resolution of 1920 x 1080 with a scaling factor of 100% should look correct on standard screens. You can increase both of those settings slightly if you feel like the display elements look uncomfortably small.
+
+## Eclipse troubleshooting ##
+
+Sometimes eclipse will tell you that you have errors when you open it. The following operations (may) help.
+- Refresh, clean and build all projects. Select all projects, press F5 to refresh, then go to `Project -> Clean` to clean all projects.
+- Go to `Run -> Run Configurations -> Plugins` and press "Add required plugins". You can now validate/apply your choice.
+- In `uk.ac.stfc.isis.ibex.targetplatform`, open `uk.ac.stfc.isis.ibex.targetplatform.target` and click "set as target platform". 
+- If you have done all these steps and it still doesn't work, there is more troubleshooting information [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Common-Eclipse-Issues).
+- If all else fails, delete all the projects from eclipse's workspace and reimport them.

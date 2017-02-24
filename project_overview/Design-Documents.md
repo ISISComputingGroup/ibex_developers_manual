@@ -9,3 +9,5 @@
 ### GUI
 
 [Hackathon - Opening an OPI Outside of a Synoptic](Hackathon---Opening-an-OPI-Outside-of-a-Synoptic)
+
+[Configuration & Component Architecture](Configuration-and-Component-Architecture)

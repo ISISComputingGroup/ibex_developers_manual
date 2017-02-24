@@ -20,6 +20,7 @@ For information on configuring Jeknins see [Adding a new Windows machine to Jenk
 * The Tycho build is run, which is slightly different to building within Eclipse. This can be run locally by running the `build/build.bat` file that is checked out with the client.
 * The Tycho build also runs the unit tests
 * Jenkins additionally runs CheckStyle and shows a fail build if there is an increase
+* Jenkins builds will bundle the JRE with the client. The version of the JRE bundled is located at `\\isis\inst$\Kits$\CompGroup\ICP\ibex_client_jre`. This should be updated occasionally.
 * If successful The builds are output to `\\isis\inst$\Kits$\CompGroup\ICP\Client`, including an installer.
 
 ### genie_python
@@ -36,4 +37,4 @@ See [special notes on configuring Jenkins for the GUI tests](Adding-a-new-Window
 
 ### Other
 
-* [Jenkins trouble shooting](trouble-shooting-jenkins)
+* [Jenkins trouble shooting](Jenkins-Trouble-Shooting)

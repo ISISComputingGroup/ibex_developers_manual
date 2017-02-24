@@ -88,5 +88,9 @@ One useful thing to try is to use the run configuration to check all the correct
     
 * If there are no errors then click the "Run" button to see if it works
 
-If this does not work then good luck!
+Sometimes eclipse will tell you that you have errors in various projects when you open it. The following operations (may) help.
+- Refresh, clean and build all projects. Select all projects, press F5 to refresh, then go to `Project -> Clean` to clean all projects.
+- Go to `Run -> Run Configurations -> Plugins` and press "Add required plugins". You can now validate/apply your choice.
+- In `uk.ac.stfc.isis.ibex.targetplatform`, open `uk.ac.stfc.isis.ibex.targetplatform.target` and click "set as target platform". 
+- If all else fails, delete all the projects from eclipse's workspace and reimport them.
 

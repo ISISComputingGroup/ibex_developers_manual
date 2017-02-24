@@ -34,7 +34,24 @@ lewis -p stream -a C:\Instrument\Apps\EPICS\support\DeviceEmulator\master -k lew
 
 where we have picked port 57677 (see Lewis's doc for defaults). Note that the lewis executable is located in `C:\Instrument\Apps\Python\Scripts`, at time of writing we don't add the directory to our standard EPICS environment PATH variables, so you may need to provide a fully qualified file path.
 
-Congratulations! Your emulator is now running. You can test it by connecting to it via a telnet client such as PuTTY (please see the troubleshooting note below).
+Congratulations! Your emulator is now running. You can test it by connecting to it via a telnet client such as PuTTY (please see the troubleshooting note below) or with a simple Python script like so:
+
+```python
+import socket
+
+OUT_TERMINATOR = "\r"
+
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.connect(("127.0.0.1", 57677))
+
+while True:
+    cmd = raw_input()
+    s.sendall(cmd + OUT_TERMINATOR)
+    data = s.recv(4096)  # Needs to be longer than the returned message
+    print data
+
+s.close()
+```
 
 ### The backdoor
 
@@ -100,3 +117,10 @@ We haven't done much with emulators yet, so not much has gone wrong, so please a
 
 * Telnet server is running, but is not receiving any data from the IOC: Is your st.cmd correct? Try removing the 4 `< $(IOCSTARTUP)...` lines, and the `drvAsyn{IP,Serial}PortConfigure` lines and run `runIOC.bat st.cmd`. Are you getting any error or warning messages? Sort those out first.
 * When connecting to a Lewis emulator via a Telnet client such as PuTTY, beware that Telnet uses `\r\n` as a terminator. If your emulator interface has a different one (like for the `linkam_t95`), the protocol won't work. You could temporarily use the Telnet terminator instead. Note also that PuTTY sends some extra characters at the start of the communication, so the very first command you send probably won't work.
+* `An error occurred:
+The setup 'default' you tried to load does not specify a valid device type, but
+the device module 'neocera_ltc21' provides multiple device types so that no mean
+ingful default can be deduced.`. Possible solutions:
+    - Add device to `__init__` file of package so it can be imported.
+    - Ensure that the initial state is one of the states returned by get_state_handlers.
+* When I try to launch `lewis.exe` I get the error `Fatal error in launcher: Unable to create process using '"'`. When you build Python on Windows, the Python path is baked into the `lewis.exe` exectuable. If you subsequently say move `Python-build` to `Python` then the path will be incorrect and the executable doesn't know where to launch from. You can either open the executable in a text editor and change the path by hand or instead explicitly point it at the Python executable by running `..\Python.exe lewis.exe ...`

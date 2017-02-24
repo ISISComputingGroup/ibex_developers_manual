@@ -28,6 +28,10 @@ Where there are multiple instances of a device within an IOC (e.g. SDTEST, GENES
 | IFRECSIM | Set to ' ' if device is being record simulated; otherwise '#' (Provided by IBEX backend) |  |
 | IFNOTRECSIM | Set to '#' if device is being record simulated; otherwise ' ' (Provided by IBEX backend) |  |
 | DISABLE | Should communications be disabled 1 - yes, 0 - no. (Provided by IBEX backend and can be set in the GUI) | 0 |
+| LVDCOM_HOST | The host of the LVDcom vi (see [Creating IOC wrapper VI](Creating-IOC-wrapper-VI)). | "" |
+| LVDCOM_OPTIONS | LVDcom options for starting the vi (see [Creating IOC wrapper VI](Creating-IOC-wrapper-VI)). | 6 |
+| LVDCOM_USER | LVDcom user; not to be added to `config.xml`. It can be set only through the local globals.txt (see [Creating IOC wrapper VI](Creating-IOC-wrapper-VI)). | "" |
+| LVDCOM_PASS | LVDcom passphrase; not to be added to `config.xml`. It can be set only through the local globals.txt (see [Creating IOC wrapper VI](Creating-IOC-wrapper-VI)). | "" |
 
 # Specific Macros that we might need to set
 
