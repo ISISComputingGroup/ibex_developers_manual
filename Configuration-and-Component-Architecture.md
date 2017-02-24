@@ -10,6 +10,7 @@ We propose the following changes:
 - Make `EditableConfiguration` inherit from `Configuration`, simply adding setters for the elements contained in the config. Create a new `ConfigEditingModel` that holds the configuration and handles all editing logic.
 
 UML of the proposed new architecture:
+
 ![a](design_documents\images\Configuration-and-Component-Architecture\config_architecture.png)
 
 ## Blockserver Interactions
