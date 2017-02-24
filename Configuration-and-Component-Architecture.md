@@ -9,6 +9,9 @@ We propose the following changes:
 - Currently, both components and configurations are instances of `Configuration`. Create a `Component`-class, which along with `Configuration` inherits from a common abstract superclass.
 - Make `EditableConfiguration` inherit from `Configuration`, simply adding setters for the elements contained in the config. Create a new `ConfigEditingModel` that holds the configuration and handles all editing logic.
 
+UML of the proposed new architecture:
+![](design_documents\images\Configuration-and-Component-Architecture\config_architecture.png)
+
 ## Blockserver Interactions
 We distinguish between the following two types of interaction:
 
