@@ -11,7 +11,7 @@ We propose the following changes:
 
 UML of the proposed new architecture:
 
-![a](design_documents/images/Configuration-and-Component-Architecture/config_architecture.png)
+![UML](design_documents/images/Configuration-and-Component-Architecture/config_architecture.png)
 ## Blockserver Interactions
 We distinguish between the following two types of interaction:
 
