@@ -1,0 +1,26 @@
+# Configurations & Components
+
+Going forward, we intend to streamline the interactions between the GUI and the Blockserver regarding configurations and components, particularly making a clearer distinction between reading and editing a configuration, as well as reworking the underlying class architecture in the GUI.
+
+## Blockserver Interactions
+We distinguish between the following two types of interaction:
+
+#### Use Case 1: Reading a configuration
+For example when switching to a different active configuration, or displaying config information on the dataweb. What we read from the Blockserver:
+
+One PV containing a configuration in it's entirety, i.e. all elements(iocs, blocks, groups ...) native to the configuration as well as ones imported from components.
+There currently are PVs holding this information. No changes required.
+
+#### Use case 2: Editing a configuration
+
+What we read/write to the Blockserver:
+
+- The configuration to edit including only its native elements plus the names of added components. This is the current write behaviour. We propose to add a read PV with the same information to unify the data formats in this interaction.
+- Additionally, read the full information of all components on the instrument. This is currently stored in the `:ALL_COMPONENT_DETAILS` PV.
+
+The new EditingModel (see above) is then responsible for matching this information up as needed.
+
+Tickets:
+- GUI: Separate Editing and Reading Configs (create and read from native-only PV when editing configs)
+- GUI: turn EditableConfiguration into EditingModel
+- GUI: Make Configuration- and (new)Component-class inherit from common superclass
