@@ -33,7 +33,3 @@ The new ConfigEditingModel (see above) is then responsible for matching this inf
 Required changes:
 Add "native-only" config PVs to read from when editing configurations.
 
-Tickets:
-- GUI: Separate Editing and Reading Configs (create and read from native-only PV when editing configs)
-- GUI: turn EditableConfiguration into EditingModel
-- GUI: Make Configuration- and (new)Component-class inherit from common superclass
