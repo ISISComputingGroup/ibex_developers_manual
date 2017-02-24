@@ -1,3 +1,6 @@
+> [Wiki](Home) > [Project overview](Project-Overview) > [Design documents](Design-Documents) > Configuration and Component Architecture
+
+
 Going forward, we intend to streamline the interactions between the GUI and the Blockserver regarding configurations and components, particularly making a clearer distinction between reading and editing a configuration, as well as reworking the underlying class architecture in the GUI.
 
 ## GUI Class Architecture
