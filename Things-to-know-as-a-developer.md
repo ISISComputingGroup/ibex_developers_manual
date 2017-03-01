@@ -1,3 +1,3 @@
 # Java paid features
 
-_Insert information here_
+See https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Java-paid-features
