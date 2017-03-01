@@ -1,5 +1,9 @@
 > [Wiki](Home) > [Deployment](Deployment) > Creating a release
 
+## Things to know as a developer (java paid features etc)
+
+https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Java-paid-features
+
 ## Standard Release
 
 Project is ready to be released not for a specific event, e.g. at the end of a sprint.
