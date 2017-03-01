@@ -1,7 +1,6 @@
 > [Wiki](Home) > [Deployment](Deployment) > Creating a release
 
-## Things to know as a developer (java paid features etc)
-
+## Ensure we are not using any java paid features
 https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Java-paid-features
 
 ## Standard Release
