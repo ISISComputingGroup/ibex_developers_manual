@@ -43,7 +43,7 @@ Here are the steps required in Eclipse:
 * Edit the plug-in pom.xml file
     * Select the pom.xml file
     * Open the pom.xml tab
-    * Change the packaging to eclipse-test-plugin
+    * Change/add the packaging to eclipse-test-plugin
     * Remove the build section
     * Remove the groupID and version entries outside of parent
     * Save it
