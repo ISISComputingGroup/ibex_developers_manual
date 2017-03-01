@@ -104,7 +104,10 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
 
 		
 - **install** If the instrument is not on the list of known instruments already (i.e. for switching the GUI), follow the instructions [here](Making an Instrument Available from the GUI).
-- **install** To add a new EPICS instrument to the web dashboard you will need to do the following:
+
+## Update the web dashboard
+
+To add a new EPICS instrument to the web dashboard you will need to do the following:
     * Add the instrument hostname to NDX_INSTS or ALL_INSTS within webserver.py on the master branch of (https://github.com/ISISComputingGroup/JSON_bourne)
     * Remote desktop into NDAEXTWEB1 with your fedID credentials (you may need to request admin rights on your credentials)
     * Update the code at C:\JSON Bourne to be the same as that in the repository
