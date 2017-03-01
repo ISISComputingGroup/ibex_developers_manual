@@ -2,6 +2,9 @@
 
 *You can get more information on the development workflow [here](Git-workflow)*.
 
+# Things to know as a developer
+See https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Things-to-know-as-a-developer
+
 # Install Perl
 Download and install [Strawberry Perl](http://strawberryperl.com/)
 
