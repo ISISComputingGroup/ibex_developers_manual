@@ -18,3 +18,7 @@ Check to see if you have any errors similar to the following:
 ```
 
 If so, you haven't registered your `isisicp.dae` program with the registry. Follow the steps to [Configure DAE for simulation mode on developer's computer](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/First-time-installing-and-building-(Windows)#configure-dae-for-simulation-mode-on-developers-computer)
+
+## Instrument Page not Working on Web Dashboard
+
+Check that the instrument is in the list of Instruments in https://github.com/ISISComputingGroup/JSON_bourne/blob/master/webserver.py and that the version on NDAEXTWEB1 is up-to-date.
