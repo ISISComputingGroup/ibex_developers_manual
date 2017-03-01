@@ -48,7 +48,7 @@ In `C:\Instrument\Apps\` run:
 `git clone --recursive https://github.com/ISISComputingGroup/EPICS.git`
 
 # Install MySQL
-Use the installer in \\isis\inst$\Kits$\External\BuildServer(ndwvegas) to install the latest version of MySQL.
+Use the installer in `\\isis\inst$\Kits$\External\BuildServer(ndwvegas)` to install the latest version of MySQL.
 
 For "Choosing a Setup Type," select "Server only"
 On the next page, set the Data Directory to `C:\Instrument\Var\mysql`
