@@ -32,7 +32,7 @@ JavaFX is a software platform for creating and delivering desktop applications, 
 JRockit is an alternative JVM for Oracle middleware applications.  The JRockit JDK is a development toolkit for creating applications which use the JRockit JVM.  At the present time (March 2017), IBEX does not use JRockit.<br>
 **Note:** JRockit JDK is free to use.  However, applications developed using the JRockit JDK may attract a run-time license fee.  Therefore, we should not use JRockit in IBEX.
 
-With the exception of those features designated as [Commercial Features](#noteCommFeat) (see below), Java SE can be used for free internally to run applications and may be redistributed in accordance with the [Oracle Binary Code License Agreement for the JAVA SE Platform Products](http://www.oracle.com/technetwork/java/javase/documentation/otn-bcl-02april2013-1966219.pdf) (the “Java BCLA”) - this version of the JAVA BCLA dates from 02-April-2013.
+With the exception of those features designated as [Commercial Features](#noteCommFeat), Java SE can be used for free internally to run applications and may be redistributed in accordance with the [Oracle Binary Code License Agreement for the JAVA SE Platform Products](http://www.oracle.com/technetwork/java/javase/documentation/otn-bcl-02april2013-1966219.pdf) (the “Java BCLA”) - this version of the JAVA BCLA dates from 02-April-2013.
 
 ### Oracle Java SE Advanced & Oracle Java SE Advanced Desktop Product Edition
 
@@ -75,6 +75,8 @@ JRockit Flight Recorder | JRockit JDK
 JRockit Mission Control Console observability | JRockit JDK, JRockit Real Time, JRockit Mission Control
 JRockit Mission Control Memory Leak Detector observability | JRockit JDK, JRockit Real Time, JRockit Mission Control 
 JRockit Real Time, Deterministic GC | JRockit JDK, JRockit Real Time, JRockit Mission Control 
+
+Note: Full details of [Java Commercial Features](http://www.oracle.com/technetwork/java/javase/terms/products/index.html)
 
 ### Using Commercial Features of Java SE
 
