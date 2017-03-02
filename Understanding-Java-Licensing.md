@@ -14,7 +14,11 @@ Java SE comes in three different product editions. Each product edition provides
 1. Oracle Java SE Advanced & Oracle Java SE Advanced Desktop
 1. Oracle Java SE Suite
 
-It is important to understand that Oracle does _**not**_ provide installation programs that correspond directly to these 3 product editions. Depending on which of the products you have licensed, you will need to download one or more installer packages.  Regardless of which product edition you intend to use, you must agree to the terms of the relevant product license.
+All three product editions contain a mix of free-to-use and free-to-distribute features _**and**_ [Commercial Features](#noteCommFeat).  If you only use free-to-use and free-to-distribute features, you do not incur a license fee.  And, of course, if you use Commercial Features, you do incur a license fee.
+
+It is also important to understand that Oracle does _**not**_ provide installation programs that correspond directly to these 3 product editions. Depending on which of the products you have licensed, you will need to download one or more installer packages.  Regardless of which product edition you intend to use, you must agree to the terms of the relevant product license.
+
+Taking these two points into consideration, understanding which features of the various Java SE product editions we use is essential to determining whether ISIS is liable to pay a license fee for its use of Java in IBEX.
 
 ### Java SE Product Edition
 
