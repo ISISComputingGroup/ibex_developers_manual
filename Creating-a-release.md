@@ -1,7 +1,7 @@
 > [Wiki](Home) > [Deployment](Deployment) > Creating a release
 
-## Ensure we are not breaking the license terms of Java
-https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Understanding-Java-Licensing
+## Understanding Java Licensing
+Make sure you [understand how Java is licensed](Understanding-Java-Licensing), so that we do not inadvertently make ISIS liable for licensing fees.
 
 ## Standard Release
 
