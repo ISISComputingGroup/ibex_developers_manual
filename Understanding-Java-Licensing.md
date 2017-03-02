@@ -77,25 +77,19 @@ JRockit Real Time, Deterministic GC | JRockit JDK, JRockit Real Time, JRockit Mi
 
 ### Using Commercial Features of Java SE
 
-According to the [Java command line options](http://docs.oracle.com/javase/7/docs/technotes/tools/windows/java.html) page:
-```
--XX:+UnlockCommercialFeatures
-Use this flag to actively unlock the use of commercial features. Commercial features are the 
-products Oracle Java SE Advanced or Oracle Java SE Suite, as defined at the Java SE Products 
-web page.
+According to the [Java command line options](http://docs.oracle.com/javase/7/docs/technotes/tools/windows/java.html) page:<br>
+``-XX:+UnlockCommercialFeatures``<br>
+Use this flag to actively unlock the use of commercial features. Commercial features are the products Oracle Java SE Advanced or Oracle Java SE Suite, as defined at the Java SE Products web page.
 
-If this flag is not specified, then the default is to run the Java Virtual Machine without the 
-commercial features being available. After they are enabled, it is not possible to disable 
-their use at runtime.
-```
+If this flag is not specified, then the default is to run the Java Virtual Machine without the commercial features being available. After they are enabled, it is not possible to disable their use at runtime.
 
 In this and other Oracle documentation (see next comment), it is made very clear that you cannot run commercial features of Java without specifying the ``-XX:+UnlockCommercialFeatures`` option on the command line.  
 
 The key word in the above quote is "actively".  You have to actively choose to use the commercial features of Java.  Obviously, if you do choose to use commercial features of Java, then you need to ensure that you pay the appropriate license fee.
 
-### Commercial Features of Java SE: IBEX Policy
+### IBEX Policy Regarding Commercial Features of Java SE 
 
-In developing IBEX, our policy is **NOT TO USE COMMERCIAL FEATURES** of Java SE.  Therefore, we should never use the ``-XX:+UnlockCommercialFeatures`` command line option.
+In developing IBEX, our policy is **TO NOT USE COMMERCIAL FEATURES** of Java SE.  Therefore, we should never use the ``-XX:+UnlockCommercialFeatures`` command line option.
 
 ## Reference Material
 * [Java Licensing](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Forms/AllItems.aspx?RootFolder=%2Fisis%2Fcomputing%2FICPdiscussions%2FJava%20Licensing&FolderCTID=0x01200027AD8F05966A2748B3B04C98BB5B442B&View={F2C33C51-70E6-4343-B937-2C59A2568306}) folder on ICP Discussions site.
