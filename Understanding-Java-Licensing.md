@@ -38,7 +38,7 @@ With the exception of those features designated as [Commercial Features](#noteCo
 
 Java SE Advanced and Java SE Advanced Desktop product editions are both supersets of Java SE.  They include  additional features for so-called "mission critical enterprise client and server deployments of Java", as well as Java-based applications and solutions from independent software vendors (ISVs).
 
-The Java SE Advanced and Java SE Advanced Desktop product editions both include Commercial Features.  IBEX does not need to use any of the additional features (commercial or otherwise) provided by Java SE Advanced and Java SE Advanced Desktop.  Therefore, we should not use these product editions.
+The Java SE Advanced and Java SE Advanced Desktop product editions both include Commercial Features.  IBEX does not need to use any of the additional features (commercial or otherwise) provided by Java SE Advanced and Java SE Advanced Desktop.  Therefore, we should not use them.
 
 ### Oracle Java SE Suite Product Edition
 
