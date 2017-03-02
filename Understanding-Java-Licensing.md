@@ -4,7 +4,7 @@
 
 In December 2016, Oracle announced that they would be taking steps to ensure customers using commercial features of Java paid the appropriate license fee (see [The Register](http://www.theregister.co.uk/2016/12/16/oracle_targets_java_users_non_compliance/) article).  This announcement has caused some confusion.  The purpose of this page is to clarify Java Licensing for IBEX developers.
 
-For a complete understanding of Java Licensing terms & conditions consult Oracle's [Java SE and Java Embedded Products](http://www.oracle.com/technetwork/java/javase/terms/products/index.html) page.
+This page merely summarises the key points we, the IBEX development team, need to understand about Java licensing.  For a complete understanding of Java Licensing terms & conditions consult Oracle's [Java SE and Java Embedded Products](http://www.oracle.com/technetwork/java/javase/terms/products/index.html) page.
 
 ## Java SE Product Editions
 
