@@ -46,6 +46,57 @@ Java SE Suite is a superset of Oracle Java SE Advanced.  In addition to Java SE 
 
 The Java SE Suite product editions includes Commercial Features.  We should not use it in IBEX.
 
+### Installation Packages for Java SE Product Editions
+Oracle does not provide installation programs that correspond directly to various Java SE product editions described above. Depending on the products licensed, one or more of the following individual packages must be downloaded:
+
+* JRE (Server or regular packages)
+* JDK
+* Java Advanced Management Console
+* Microsoft Windows Installer (MSI) Enterprise JRE Installer
+* JavaFX Runtime
+* JRockit JDK
+* JRockit Mission Control
+
+For the purpose of developing IBEX, the only installer packages we need be concerned about are the first two, the JRE and the JDK.  We do not use features provided by the other installer packages, so there is no need to download them.
+
+## Commercial Features of Java SE Product Editions
+
+All of the Java SE product edition included one or more commercial features.  The table below lists each of the commercial features and the product editions that contain those commercial features.
+
+Commercial Feature | Product Editions containing the Commercial Feature 
+------------------ | -------------------------------------------------- 
+JRE Usage Tracking | JRE (version 7+, 8+)
+Java Flight Recorder | JDK (versions 7u40+, 8+)
+Java Mission Control | JDK (versions 7u40+, 8+) Java Mission Control
+Java Advanced Management Console | (versions JDK 8u20+), Java Advanced Management Console
+MSI Enterprise JRE Installer | JDK (versions 8u20+), MSI Enterprise JRE Installer
+JRockit Flight Recorder | JRockit JDK 
+JRockit Mission Control Console observability | JRockit JDK, JRockit Real Time, JRockit Mission Control
+JRockit Mission Control Memory Leak Detector observability | JRockit JDK, JRockit Real Time, JRockit Mission Control 
+JRockit Real Time, Deterministic GC | JRockit JDK, JRockit Real Time, JRockit Mission Control 
+
+### Using Commercial Features of Java SE
+
+According to the [Java command line options](http://docs.oracle.com/javase/7/docs/technotes/tools/windows/java.html) page:
+```
+-XX:+UnlockCommercialFeatures
+Use this flag to actively unlock the use of commercial features. Commercial features are the 
+products Oracle Java SE Advanced or Oracle Java SE Suite, as defined at the Java SE Products 
+web page.
+
+If this flag is not specified, then the default is to run the Java Virtual Machine without the 
+commercial features being available. After they are enabled, it is not possible to disable 
+their use at runtime.
+```
+
+In this and other Oracle documentation (see next comment), it is made very clear that you cannot run commercial features of Java without specifying the ``-XX:+UnlockCommercialFeatures`` option on the command line.  
+
+The key word in the above quote is "actively".  You have to actively choose to use the commercial features of Java.  Obviously, if you do choose to use commercial features of Java, then you need to ensure that you pay the appropriate license fee.
+
+### Commercial Features of Java SE: IBEX Policy
+
+In developing IBEX, our policy is **NOT TO USE COMMERCIAL FEATURES** of Java SE.  Therefore, we should never use the ``-XX:+UnlockCommercialFeatures`` command line option.
+
 ## Reference Material
 * [Java Licensing](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Forms/AllItems.aspx?RootFolder=%2Fisis%2Fcomputing%2FICPdiscussions%2FJava%20Licensing&FolderCTID=0x01200027AD8F05966A2748B3B04C98BB5B442B&View={F2C33C51-70E6-4343-B937-2C59A2568306}) folder on ICP Discussions site.
 * [Oracle Binary Code License Agreement for the JAVA SE Platform Products (02-April-2013)](http://www.oracle.com/technetwork/java/javase/documentation/otn-bcl-02april2013-1966219.pdf)
