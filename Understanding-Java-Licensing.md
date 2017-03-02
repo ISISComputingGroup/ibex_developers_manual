@@ -86,7 +86,7 @@ According to the [Java command line options](http://docs.oracle.com/javase/7/doc
 Oracle documentation makes it very clear that we cannot run commercial features of Java without specifying 
 the ``-XX:+UnlockCommercialFeatures`` option on the command line.  
 
-The key word in the above quote is "actively".  We have to actively choose to use the commercial features of Java.  Obviously, if we do choose to use commercial features of Java, then we need to ensure that ISIS pays the appropriate license fee.  Choosing to use commercial features of Java, therefore, requires prior approval to purchase the appropriate Java SE license.
+The key word in the above quote is "actively".  We have to actively choose to use the commercial features of Java.  Obviously, if we do choose to use commercial features of Java, then ISIS becomes liable to pay a license fee.  Therefore, choosing to use commercial features of Java, implies that we seek prior approval to purchase the appropriate Java SE license.
 
 ### IBEX Policy Regarding Commercial Features of Java SE 
 
