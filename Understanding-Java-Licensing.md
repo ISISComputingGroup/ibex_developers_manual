@@ -77,13 +77,11 @@ JRockit Real Time, Deterministic GC | JRockit JDK, JRockit Real Time, JRockit Mi
 
 ### Using Commercial Features of Java SE
 
-According to the [Java command line options](http://docs.oracle.com/javase/7/docs/technotes/tools/windows/java.html) page:<br>
-``-XX:+UnlockCommercialFeatures``<br>
-Use this flag to actively unlock the use of commercial features. Commercial features are the products Oracle Java SE Advanced or Oracle Java SE Suite, as defined at the Java SE Products web page.
+According to the [Java command line options](http://docs.oracle.com/javase/7/docs/technotes/tools/windows/java.html) page:  <br> 
+``-XX:+UnlockCommercialFeatures``: Use this flag to actively unlock the use of commercial features. Commercial features are the products Oracle Java SE Advanced or Oracle Java SE Suite, as defined at the Java SE Products web page.  If this flag is not specified, then the default is to run the Java Virtual Machine without the commercial features being available. After they are enabled, it is not possible to disable their use at runtime.
 
-If this flag is not specified, then the default is to run the Java Virtual Machine without the commercial features being available. After they are enabled, it is not possible to disable their use at runtime.
-
-In this and other Oracle documentation (see next comment), it is made very clear that you cannot run commercial features of Java without specifying the ``-XX:+UnlockCommercialFeatures`` option on the command line.  
+Oracle documentation makes it very clear that you cannot run commercial features of Java without specifying 
+the ``-XX:+UnlockCommercialFeatures`` option on the command line.  
 
 The key word in the above quote is "actively".  You have to actively choose to use the commercial features of Java.  Obviously, if you do choose to use commercial features of Java, then you need to ensure that you pay the appropriate license fee.
 
