@@ -31,7 +31,7 @@ The Java SE Product Edition includes the following components:
 
 The JRE provides a Java Virtual Machine (JVM), the standard class libraries and other components to run applications written in the Java programming language.  The JDK is a superset of the JRE, and contains everything in the JRE, plus tools such as compilers and debuggers for development.
 
-JavaFX is a software platform for creating and delivering desktop applications, as well as rich internet applications (RIAs) that can run across a wide variety of devices. JavaFX is intended to replace Swing as the standard GUI library for Java SE, but both will be included for the foreseeable future.  At the present time (March 2017), IBEX does not use JavaFX.
+JavaFX is a software platform for creating and delivering desktop applications, as well as rich internet applications (RIAs) that can run across a wide variety of devices. JavaFX is intended to replace Swing as the standard GUI library for Java SE, but both are likely to be included for the foreseeable future.  At the present time (March 2017), IBEX does not use JavaFX.
 
 JRockit is an alternative JVM for Oracle middleware applications.  The JRockit JDK is a development toolkit for creating applications which use the JRockit JVM.  At the present time (March 2017), IBEX does not use JRockit.<br>
 **Note:** JRockit JDK is free to use.  However, applications developed using the JRockit JDK may attract a run-time license fee.  Therefore, we should not use JRockit in IBEX.
