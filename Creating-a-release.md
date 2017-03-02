@@ -1,7 +1,7 @@
 > [Wiki](Home) > [Deployment](Deployment) > Creating a release
 
-## Ensure we are not using any java paid features
-https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Java-paid-features
+## Ensure we are not breaking the license terms of Java
+https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Understanding-Java-Licensing
 
 ## Standard Release
 
