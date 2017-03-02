@@ -114,4 +114,4 @@ the ``-XX:+UnlockCommercialFeatures`` command line option.
 ## Reference Material
 * [Java Licensing](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Forms/AllItems.aspx?RootFolder=%2Fisis%2Fcomputing%2FICPdiscussions%2FJava%20Licensing&FolderCTID=0x01200027AD8F05966A2748B3B04C98BB5B442B&View={F2C33C51-70E6-4343-B937-2C59A2568306}) folder on ICP Discussions site.
 * [Oracle Binary Code License Agreement for the JAVA SE Platform Products (02-April-2013)](http://www.oracle.com/technetwork/java/javase/documentation/otn-bcl-02april2013-1966219.pdf)
-* #1915
+* [Ticket: #1915](https://github.com/ISISComputingGroup/IBEX/issues/1915)
