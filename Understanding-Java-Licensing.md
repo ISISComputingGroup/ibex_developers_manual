@@ -76,7 +76,7 @@ JRockit Mission Control Console observability | JRockit JDK, JRockit Real Time, 
 JRockit Mission Control Memory Leak Detector observability | JRockit JDK, JRockit Real Time, JRockit Mission Control 
 JRockit Real Time, Deterministic GC | JRockit JDK, JRockit Real Time, JRockit Mission Control 
 
-Note: Full details of [Java Commercial Features](http://www.oracle.com/technetwork/java/javase/terms/products/index.html)
+**Note:** Full details of [Java Commercial Features](http://www.oracle.com/technetwork/java/javase/terms/products/index.html)
 
 ### Using Commercial Features of Java SE
 
