@@ -2,6 +2,7 @@
 
 When java needs to be updated on the instrument:
 
+1. Ensure you understand [java's licensing](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Understanding-Java-Licensing)
 1. Find the current version of java to use
 1. Download that version (it has been tested with this version not the latest version) from
     http://www.oracle.com/technetwork/java/archive-139210.html

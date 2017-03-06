@@ -32,3 +32,7 @@ If a setter throws an unhandled exception before the firing the property change 
 If a binding seems to work intermittently then there might be something in the getter or setter causing this, e.g. an object used in a getter that switches between being null and initialised based on something else.
 
 **The exceptions will appear in the console inside Eclipse and IBEX but won't cause an error pop-up to appear.**
+
+### The binding works but the initial value is not put in the widget
+
+When the binding first happens it will call the getter to set the widget properties to whatever is in the model. If this doesn't happen the getter is probably non-existent or misspent. 
