@@ -49,10 +49,11 @@ In `C:\Instrument\Apps\` run:
 
 # Install MySQL
 Use the installer in `\\isis\inst$\Kits$\External\BuildServer(ndwvegas)` to install the latest version of MySQL:
-    - Install the MySQL Installer from the msi. This should be done with admin privileges. **NB: You are installing the installer, not MySQL itself**
-    - Run the MySQL installer, again with admin privileges
-    - Click "Add" to add a new product
-    - Select the latest version of MySQL server 64-bit. This will be the one offered by default
+
+- Install the MySQL Installer from the msi. This should be done with admin privileges. **NB: You are installing the installer, not MySQL itself**
+- Run the MySQL installer, again with admin privileges
+- Click "Add" to add a new product
+- Select the latest version of MySQL server 64-bit. This will be the one offered by default
 
 For "Choosing a Setup Type," select "Server only"
 On the next page, set the Data Directory to `C:\Instrument\Var\mysql`
