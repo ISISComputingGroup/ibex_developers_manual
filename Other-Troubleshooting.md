@@ -22,3 +22,7 @@ If so, you haven't registered your `isisicp.dae` program with the registry. Foll
 ## Instrument Page not Working on Web Dashboard
 
 Check that the instrument is in the list of Instruments in https://github.com/ISISComputingGroup/JSON_bourne/blob/master/webserver.py and that the version on NDAEXTWEB1 is up-to-date.
+
+## `cmake error: could not load cache` seen during build
+
+Try deleting any `CMakeCache.txt` files in the appropriate directory
