@@ -36,6 +36,7 @@ To ensure that an unauthorised user cannot run scripts on your machine there is 
 * The _CHANGEME_ password in ..\EPICS\ISIS\ActiveMQ\master\conf\activemq.xml
 * The _ACTIVEMQ\_PASS_ in ISIS/ScriptServer/nicos-core/master/ISIS\_script\_server/client\_connection/Stomp/client\_listener.py
 * The _PASSWORD_ in Stomp/test\_client/src/Client.java
+* The _PASSWORD_ in `...ibex_gui\base\uk.ac.stfc.isis.ibex.nicos\src\uk\Nicos.java`
 
 ## Future developments
 
