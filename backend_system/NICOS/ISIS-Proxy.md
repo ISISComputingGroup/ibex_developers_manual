@@ -33,9 +33,9 @@ Subsequently all data sent from the client to the proxy will be through the ss_a
 ## Security
 
 To ensure that an unauthorised user cannot run scripts on your machine there is a credentials system on ActiveMQ. Only users with the correct credentials can send/receive messages on the ss_admin queue and thus run scripts. As default the proxy in version control will not work due to this. To fix make sure all of the following passwords are the same:
-* The _CHANGEME_ password in ..\EPICS\ISIS\ActiveMQ\master\conf\activemq.xml
-* The _ACTIVEMQ\_PASS_ in ISIS/ScriptServer/nicos-core/master/ISIS\_script\_server/client\_connection/Stomp/client\_listener.py
-* The _PASSWORD_ in Stomp/test\_client/src/Client.java
+* The _CHANGEME_ password in `...EPICS\ISIS\ActiveMQ\master\conf\activemq.xml`
+* The _ACTIVEMQ\_PASS_ in `...EPICSISIS/ScriptServer/nicos-core/master/ISIS\_script\_server/client\_connection/Stomp/client\_listener.py`
+* The _PASSWORD_ in `Stomp/test\_client/src/Client.java`
 * The _PASSWORD_ in `...ibex_gui\base\uk.ac.stfc.isis.ibex.nicos\src\uk\Nicos.java`
 
 ## Future developments
