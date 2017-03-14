@@ -24,7 +24,7 @@ BlockServer, static PVs and dynamic PVs:
 
 * Static PVs are created in a dictionary at startup and are intercepted by subclassing the Driver class and implementing the read()
   and write() methods. Most of the PVs the BlockServer uses are written like this and the method is well documented in the pcaspy 
-  documentation_. 
+  documentation_. Note that if you are monitoring this PV for changes, you need to call setParam() followed by updatePVs() in the blockserver to propagate this change to the monitors. You can check whether this is working properly by putting a `camonitor` on the PV in question and checking that it automatically updates when the PV value is changed.
 
 .. _documentation: http://pcaspy.readthedocs.org/en/latest/
 
