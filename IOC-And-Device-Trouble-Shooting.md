@@ -39,3 +39,15 @@ where <port> is the port name you used in the asyn setup eg `drvAsynSerialPortCo
 This will include the terminator character, if you don't see it it is not being sent or received.
 If no reply is given this will include a message "No reply from device in XXXms"
 
+# Lost autosave values
+
+This is based on ticket: https://github.com/ISISComputingGroup/IBEX/issues/2180
+
+Possible symptoms include:
+
+- Autosaved values mysteriously changing when the IOC is restarted
+    - This includes Galils not retaining their position
+- Errors of the form `[DATE] dbFindRecord for 'MY_PV.FIELD' failed
+- Autosave files containing just a header and `<END>` tag
+
+This has been observed primarily on Galils since they create custom monitor sets but it is feasible the issue could be seen elsewhere. The Galils pass macros to their monitor sets. If no macros are passed (e.g. if `GALILADDR0n` is not set) then no monitor will be created and no values will be saved. This will mean the device (e.g. the motor) will start with its default values. If the macro is reintroduced then those default values will become the new autosave values. The previous values can be recovered by restoring a previous autosave file (e.g. copy `GALIL_02_settings.sav_170309-144116` to `GALIL_02_settings.sav` and restart the IOC).
