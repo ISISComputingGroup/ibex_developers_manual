@@ -65,3 +65,8 @@ Jobs:
 - If the job is configured correctly the Job Manager can query the status of the job
 
 **This means there is no state shared between jobs – do we want this?**
+
+# Security
+
+There are two levels of security. Logging into the script server and logging into NICOS. Logging onto the script server allows you to put commands onto the queue. 
+Both passwords and usernames should be readable by the GUI via PVs secured in the block server. In the future we can have users with different levels those that can write to the system can access a different user account to those who don't.
