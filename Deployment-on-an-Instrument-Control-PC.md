@@ -130,8 +130,9 @@ To add a new EPICS instrument to the web dashboard you will need to do the follo
 - Pin the IBEX client to the taskbar
     * Unpin any previous IBEX icon.
     * Open IBEX and wait until it has fully started
-    * Pin IBEX to the taskbar (right click -> Pin to taskbar)
+    * Pin IBEX to the taskbar (right click on the IBEX client in the taskbar -> Pin to taskbar)
     * Check that you cannot open multiple clients by clicking on the taskbar icon again once IBEX is open
+    * Check that you _can_ open multiple clients by right-clicking on the taskbar icon and selecting "ibex-client"
 
 - Make changes documented in Release notes (see [Releases](https://github.com/ISISComputingGroup/IBEX/wiki#releases)). NB these are for *both* server and client and may be pertinent for a new install.
 
