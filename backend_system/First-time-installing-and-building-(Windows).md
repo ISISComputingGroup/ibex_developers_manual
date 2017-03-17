@@ -48,10 +48,16 @@ In `C:\Instrument\Apps\` run:
 `git clone --recursive https://github.com/ISISComputingGroup/EPICS.git`
 
 # Install MySQL
-Use the installer in `\\isis\inst$\Kits$\External\BuildServer(ndwvegas)` to install the latest version of MySQL:
+*This will require a rebooting the system - you have been warned :-)*
+*Install first time*
+    Use the installer in `\\isis\inst$\Kits$\External\BuildServer(ndwvegas)` to install the latest version of MySQL:
 
-- Install the MySQL Installer from the msi. This should be done with admin privileges. **NB: You are installing the installer, not MySQL itself**
-- Run the MySQL installer, again with admin privileges
+   - Install the MySQL Installer from the msi. This should be done with admin privileges. **NB: You are installing the installer, not MySQL itself**
+
+- Run the MySQL installer, again with admin privileges (from run menu type mysql installer)
+- *upgrade* Click remove and select the currently installed `MySql Server`, execute and yes.
+- *upgrade* On `Remove data folder ...` click No
+- *upgrade* Next and reboot as advised
 - Click "Add" to add a new product
 - Select the latest version of MySQL server 64-bit. This will be the one offered by default
 
