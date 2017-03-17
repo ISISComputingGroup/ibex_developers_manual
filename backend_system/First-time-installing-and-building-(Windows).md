@@ -78,9 +78,10 @@ In `C:\Instrument\Apps\` run:
     - run as admin `services.msc` and set the user to `NETWORK SERVICES` (set the password to blank to do this)
     - Restart the service
 This is where I am, but it needs thinking about I am not sure I want to do this on a machine.
-#- Click through the pages and set the following:
-#    - For "Choosing a Configuration Type," select "Server Machine"
-#    - Use the password from the password page
+```
+- Click through the pages and set the following:
+   - For "Choosing a Configuration Type," select "Server Machine"
+   - Use the password from the password page
 
 On the next page, set the Data Directory to `C:\Instrument\Var\mysql`
 
@@ -96,6 +97,7 @@ Under "Windows Service" make sure "Start the MySQL Server at System Startup" is 
 Once installed run the `config_mysql.bat` batch file in `C:\Instrument\Apps\EPICS\SystemSetup\`.
 
 Note: For running tests locally, make sure that you have run `create_test_account.bat` from `C:\Instrument\Apps\EPICS\SystemSetup\` as well.
+```
 
 # Install genie_python
 
