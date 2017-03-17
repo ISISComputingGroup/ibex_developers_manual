@@ -53,15 +53,27 @@ In `C:\Instrument\Apps\` run:
     Use the installer in `\\isis\inst$\Kits$\External\BuildServer(ndwvegas)` to install the latest version of MySQL:
 
    - Install the MySQL Installer from the msi. This should be done with admin privileges. **NB: You are installing the installer, not MySQL itself**
+- *upgrade* Check the installer version it should be 1.x if it isn't
+    - start wmic as an admin
+    - run `product where name="MySQL Installer for Windows - Community" call uninstall` if this does not match the name find its name using `product get name`
+    - then start from scratch
 
 - Run the MySQL installer, again with admin privileges (from run menu type mysql installer)
 - *upgrade* Click remove and select the currently installed `MySql Server`, execute and yes.
 - *upgrade* On `Remove data folder ...` click No
 - *upgrade* Next and reboot as advised
 - Click "Add" to add a new product
-- Select the version of MySQL server 64-bit shown in the current dev notes (https://github.com/ISISComputingGroup/IBEX/wiki/ReleaseNotes_Dev).
+- Select the version of MySQL server 64-bit shown in the current [dev notes](https://github.com/ISISComputingGroup/IBEX/wiki/ReleaseNotes_Dev) and execute.
+    - If the version is older than the one you want to install
+        - click *Catalog* to update it
+        - Execute
+        - Do not upgrade the installer
+        - Next and Finish
+    - If the version is newer then you need to remove the current GA filter in the filter box
+- Click through the pages and set the following:
+    - For "Choosing a Configuration Type," select "Server Machine"
+    - Use the password from the password page
 
-For "Choosing a Setup Type," select "Server only"
 On the next page, set the Data Directory to `C:\Instrument\Var\mysql`
 
 After it installs you will get to the "Type and Networking" page, for the "Config Type" choose "Server Machine".
