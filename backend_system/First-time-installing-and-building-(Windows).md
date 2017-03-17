@@ -71,9 +71,16 @@ In `C:\Instrument\Apps\` run:
         - Do not upgrade the installer
         - Next and Finish
     - If the version is newer then you need to remove the current GA filter in the filter box
-- Click through the pages and set the following:
-    - For "Choosing a Configuration Type," select "Server Machine"
-    - Use the password from the password page
+- Do not configure you instance (I think) exit.
+- Configure mysql (from an admin windows)
+    - upgrade you schema with `"C:\Program Files\MySQL\MySQL Server 5.7\bin\mysql_upgrade" -u root -p --force`
+    - Setup a service `"C:\Program Files\MySQL\MySQL Server 5.6\bin\mysqld" --install MySQL57 --defaults-file="C:\Instrument\Var\mysql\my.ini"`
+    - run as admin `services.msc` and set the user to `NETWORK SERVICES` (set the password to blank to do this)
+    - Restart the service
+This is where I am, but it needs thinking about I am not sure I want to do this on a machine.
+#- Click through the pages and set the following:
+#    - For "Choosing a Configuration Type," select "Server Machine"
+#    - Use the password from the password page
 
 On the next page, set the Data Directory to `C:\Instrument\Var\mysql`
 
