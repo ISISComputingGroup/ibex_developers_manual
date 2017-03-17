@@ -59,7 +59,7 @@ In `C:\Instrument\Apps\` run:
 - *upgrade* On `Remove data folder ...` click No
 - *upgrade* Next and reboot as advised
 - Click "Add" to add a new product
-- Select the latest version of MySQL server 64-bit. This will be the one offered by default
+- Select the version of MySQL server 64-bit shown in the current dev notes (https://github.com/ISISComputingGroup/IBEX/wiki/ReleaseNotes_Dev).
 
 For "Choosing a Setup Type," select "Server only"
 On the next page, set the Data Directory to `C:\Instrument\Var\mysql`
