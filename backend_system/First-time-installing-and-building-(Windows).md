@@ -56,6 +56,7 @@ In `C:\Instrument\Apps\` run:
 - *upgrade* Check the installer version it should be 1.x if it isn't
     - start wmic as an admin
     - run `product where name="MySQL Installer for Windows - Community" call uninstall` if this does not match the name find its name using `product get name`
+    - press Y to uninstall
     - then start from scratch
 
 - Run the MySQL installer, again with admin privileges (from run menu type mysql installer)
