@@ -48,9 +48,22 @@ In `C:\Instrument\Apps\` run:
 `git clone --recursive https://github.com/ISISComputingGroup/EPICS.git`
 
 # Install MySQL
-*This will require a rebooting the system - you have been warned :-)*
+
 *Install first time*
-    Use the installer in `\\isis\inst$\Kits$\External\BuildServer(ndwvegas)` to install the latest version of MySQL:
+
+- Copy the installer from `\\isis\inst$\Kits$\External\BuildServer(ndwvegas)\mysql-installer-community-X.X.X.0.msi` to your local machine.
+- Create a command windows as an admin
+- cd to where you copied it to
+- Run in that window; with passwords replaced by standard password
+    `msiexec.exe /qb- /l*vx MySQL.log REBOOT=ReallySuppress UILevel=67 ALLUSERS=2 CONSOLEARGS="install server;5.7.17;x64:*:type=config;openfirewall=true;generallog=true;binlog=true;datadir=""C:\Instrument\var\mysql"";serverid=1;enable_tcpip=true;port=3306;rootpasswd=<password>:type=user;username=root;password=<password>;role=DBManager -silent" /I mysql-installer-community-5.7.17.0.msi`
+- Update `C:\Instrument\Var\mysql\my.ini` to include after `[mysqld]` the lines
+    ```
+    # turn off the performance schema
+    performance_schema=OFF
+    ````
+
+
+*Upgrade*
 
    - Install the MySQL Installer from the msi. This should be done with admin privileges. **NB: You are installing the installer, not MySQL itself**
 - *upgrade* Check the installer version it should be 1.x if it isn't
