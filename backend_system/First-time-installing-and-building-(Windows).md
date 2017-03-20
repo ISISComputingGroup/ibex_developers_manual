@@ -56,23 +56,26 @@ In `C:\Instrument\Apps\` run:
 - cd to where you copied it to
 - Run in that window; with passwords replaced by standard password
     `msiexec.exe /qb- /l*vx MySQL.log REBOOT=ReallySuppress UILevel=67 ALLUSERS=2 CONSOLEARGS="install server;5.7.17;x64:*:type=config;openfirewall=true;generallog=true;binlog=true;datadir=""C:\Instrument\var\mysql"";serverid=1;enable_tcpip=true;port=3306;rootpasswd=<password>:type=user;username=root;password=<password>;role=DBManager -silent" /I mysql-installer-community-5.7.17.0.msi`
-- Update `C:\Instrument\Var\mysql\my.ini` to include after `[mysqld]` the lines
-    ```
-    # turn off the performance schema
-    performance_schema=OFF
-    ````
+- Ensure that you have `C:\Instrument\Var\mysql\my.ini` from the master version.
 
+- **Install only not upgrade** run the `config_mysql.bat` batch file in `C:\Instrument\Apps\EPICS\SystemSetup\`.
+- **Install only not upgrade** For running tests locally, make sure that you have run `create_test_account.bat` from `C:\Instrument\Apps\EPICS\SystemSetup\` as well.
 
 *Upgrade*
 
 - open MySQL installer under administrator account
-  - If prompted to upgrade installer click "Yes" (Ignore windows error about not running corectly)
+  - If prompted to upgrade installer click "Yes" (Ignore windows error about not running correctly)
   - upgrade the catalogue (update catalogue)
-  - rmove 5.6.X MySQL server
+  - remove 5.6.X MySQL server
 - do not delete data
 - yes to remove MySQL installer
 - yes reboot
+- copy the mysql.ini file from the upgrade directory (`C:\Instrument\Apps\EPICS\misc\upgrade\master\current`) to `C:\Instrument\Var\mysql\my.ini`
+- Install the new version 5.7 as for first time install. But (this is now guess work):
+    - after it has finished upgrade the database using `"C:\Program Files\MySQL\MySQL Server 5.7\bin\mysql_upgrade" -u root -p --force` only do this if you can not access any files in the database, it may do this as part of the instalation process, our version got stuck when it couldn't start the service, this will be fixed by using the new my.ini file. 
 
+I don't think this is needed but don't delete yet:
+```
    - Install the MySQL Installer from the msi. This should be done with admin privileges. **NB: You are installing the installer, not MySQL itself**
 - *upgrade* Check the installer version it should be 1.x if it isn't
     - start wmic as an admin
@@ -99,7 +102,7 @@ In `C:\Instrument\Apps\` run:
     - run as admin `services.msc` and set the user to `NETWORK SERVICES` (set the password to blank to do this)
     - Restart the service
 This is where I am, but it needs thinking about I am not sure I want to do this on a machine.
-```
+
 - Click through the pages and set the following:
    - For "Choosing a Configuration Type," select "Server Machine"
    - Use the password from the password page
@@ -115,9 +118,6 @@ If you don't know what that password is you should be able to find it on the pas
 
 Under "Windows Service" make sure "Start the MySQL Server at System Startup" is **checked**
 
-Once installed run the `config_mysql.bat` batch file in `C:\Instrument\Apps\EPICS\SystemSetup\`.
-
-Note: For running tests locally, make sure that you have run `create_test_account.bat` from `C:\Instrument\Apps\EPICS\SystemSetup\` as well.
 ```
 
 # Install genie_python
