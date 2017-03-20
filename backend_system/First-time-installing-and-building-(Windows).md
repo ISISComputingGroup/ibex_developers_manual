@@ -65,6 +65,14 @@ In `C:\Instrument\Apps\` run:
 
 *Upgrade*
 
+- open MySQL installer under administrator account
+  - If prompted to upgrade installer click "Yes" (Ignore windows error about not running corectly)
+  - upgrade the catalogue (update catalogue)
+  - rmove 5.6.X MySQL server
+- do not delete data
+- yes to remove MySQL installer
+- yes reboot
+
    - Install the MySQL Installer from the msi. This should be done with admin privileges. **NB: You are installing the installer, not MySQL itself**
 - *upgrade* Check the installer version it should be 1.x if it isn't
     - start wmic as an admin
