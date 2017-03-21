@@ -55,24 +55,27 @@ In `C:\Instrument\Apps\` run:
 - Create a command windows as an admin
 - cd to where you copied it to
 - Run in that window; with passwords replaced by standard password
-    `msiexec.exe /qb- /l*vx MySQL.log REBOOT=ReallySuppress UILevel=67 ALLUSERS=2 CONSOLEARGS="install server;5.7.17;x64:*:type=config;openfirewall=true;generallog=true;binlog=true;datadir=""C:\Instrument\var\mysql"";serverid=1;enable_tcpip=true;port=3306;rootpasswd=<password>:type=user;username=root;password=<password>;role=DBManager -silent" /I mysql-installer-community-5.7.17.0.msi`
+    `msiexec.exe /qb- /l*vx MySQL.log REBOOT=ReallySuppress UILevel=67 ALLUSERS=2 CONSOLEARGS="install server;5.7.17;x64:*:type=config;openfirewall=true;generallog=true;binlog=true;datadir=""C:\Instrument\var\mysql"";serverid=1;enable_tcpip=true;port=3306;rootpasswd=<password>:type=user;username=root;password=<password>;role=DBManagerY" /I mysql-installer-community-5.7.17.0.msi`
 - Ensure that you have `C:\Instrument\Var\mysql\my.ini` from the master version.
 
 - **Install only not upgrade** run the `config_mysql.bat` batch file in `C:\Instrument\Apps\EPICS\SystemSetup\`.
 - **Install only not upgrade** For running tests locally, make sure that you have run `create_test_account.bat` from `C:\Instrument\Apps\EPICS\SystemSetup\` as well.
 
 *Upgrade*
+- mysql -u root -p --execute="SET GLOBAL innodb_fast_shutdown=0"
+- mysqladmin -u root -p shutdown (stops down service)
 
 - open MySQL installer under administrator account
   - If prompted to upgrade installer click "Yes" (Ignore windows error about not running correctly)
-  - upgrade the catalogue (update catalogue)
-  - remove 5.6.X MySQL server
-- do not delete data
+  - remove 5.6.X MySQL server but *do not delete data*
 - yes to remove MySQL installer
 - yes reboot
-- copy the mysql.ini file from the upgrade directory (`C:\Instrument\Apps\EPICS\misc\upgrade\master\current`) to `C:\Instrument\Var\mysql\my.ini`
-- Install the new version 5.7 as for first time install. But (this is now guess work):
-    - after it has finished upgrade the database using `"C:\Program Files\MySQL\MySQL Server 5.7\bin\mysql_upgrade" -u root -p --force` only do this if you can not access any files in the database, it may do this as part of the instalation process, our version got stuck when it couldn't start the service, this will be fixed by using the new my.ini file. 
+- copy the mysql.ini file from the set up directory (`...EPICS\SystemSetup`) to `C:\Instrument\Var\mysql\my.ini`
+- Install the new version as for first time install. But when it gets to starting service while it is waiting (spinning character)
+    - open an new window command window
+    - upgrade the database using `"C:\Program Files\MySQL\MySQL Server 5.7\bin\mysql_upgrade" -u root -p --force`
+    - restart the windows service
+    - the installation should now finish
 
 I don't think this is needed but don't delete yet:
 ```
