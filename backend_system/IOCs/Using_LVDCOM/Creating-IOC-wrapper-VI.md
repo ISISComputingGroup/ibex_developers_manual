@@ -62,8 +62,7 @@ This is a summary of [[more general LvDCOM instructions|LVDCOM-auto-generate-xml
          1. No to "Export block diagram strings?"
 1. Generate a corrected xml file. In an epics terminal run in the protocol directory:
    ```
-    C:\Instrument\Apps\EPICS\ISIS\lvDCOM\master\lvDCOMApp\src\fix_xml.cmd
-"controls.txt" "controls.xml"
+    C:\Instrument\Apps\EPICS\ISIS\lvDCOM\master\lvDCOMApp\src\fix_xml.cmd "controls.txt" "controls.xml"
     ```
 1. Generate lvcom file:
     ```
