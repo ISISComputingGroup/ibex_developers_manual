@@ -39,10 +39,13 @@ and system library
 $(APPNAME)_SYS_LIBS_WIN32 += msxml2
 ```
 
-Add the IOC to the makefile in `EPICS\ISIS\Makefile` e.g.
+Add the IOC to the makefile in `EPICS\ioc\master\Makefile` e.g.
 
 ```
-ATLDIRS += <device>
+## modules not to build if no Windows ATL present (depends on Visual Studio compiler)  
+ifneq ($(HAVE_ATL),YES)  
+DIRS_NOTBUILD += ISISDAE MERCURY_ITC STPS350 AG53220A STSR400 DELFTSHEAR DELFTDCMAG DELFTARDUSTEP LVTEST SCIMAG3D HIFIMAG + <iocname>
+endif
 ```
 
 ## 2. Create the xml configuration file
