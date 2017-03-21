@@ -8,3 +8,4 @@
 - [Upgrade Java](Upgrade-java)
 - [Manual System Tests](Manual-system-tests)
 - [Manual System Tests Results](Manual-System-Tests-Results)
+- [Installing and upgrading MySQL](Installing-and-Upgrading-MySQL)
