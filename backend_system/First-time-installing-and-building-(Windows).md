@@ -54,14 +54,30 @@ In `C:\Instrument\Apps\` run:
 - Copy the installer from `\\isis\inst$\Kits$\External\BuildServer(ndwvegas)\mysql-installer-community-X.X.X.0.msi` to your local machine.
 - Create a command windows as an admin
 - cd to where you copied it to
-- Run in that window; with passwords replaced by standard password
+- Run in that window; with passwords replaced by standard password and versions by current version.
     `msiexec.exe /qb- /l*vx MySQL.log REBOOT=ReallySuppress UILevel=67 ALLUSERS=2 CONSOLEARGS="install server;5.7.17;x64:*:type=config;openfirewall=true;generallog=true;binlog=true;datadir=""C:\Instrument\var\mysql"";serverid=1;enable_tcpip=true;port=3306;rootpasswd=<password>:type=user;username=root;password=<password>;role=DBManagerY" /I mysql-installer-community-5.7.17.0.msi`
-- Ensure that you have `C:\Instrument\Var\mysql\my.ini` from the master version.
+- Ensure that you have `C:\Instrument\Var\mysql\my.ini` from the set up directory (`...EPICS\SystemSetup`).
+- If this doesn't work, i.e. the installer is installed but mysql is not (it does not appear in program files) then instead (I have not yet done this so this may need some evaluation). This happened on IRISTest but not Demo:
+    - run the "mysql installer" in admin mode
+    - install the correct version of mysql
+    - configure mysql accepting defaults
+    - stop the service
+    - move the data files from `c:\program data\mysql...data` to `C:\Instrument\Var\mysql\data`
+    - Create a new service: `"C:\Program Files\MySQL\MySQL Server 5.6\bin\mysqld" --install MySQL56 --defaults-file="C:\Instrument\Var\mysql\my.ini"
+    - Set the user running the service: LogOn tab -> This account to NETWORK SERVICE no password (this removes the notes and when you click start adds them back in)
+    - Start the service
 
 - **Install only not upgrade** run the `config_mysql.bat` batch file in `C:\Instrument\Apps\EPICS\SystemSetup\`.
 - **Install only not upgrade** For running tests locally, make sure that you have run `create_test_account.bat` from `C:\Instrument\Apps\EPICS\SystemSetup\` as well.
 
-*Upgrade*
+*Upgrade 5.6.x to 5.6.X*
+
+- run the mysql installer as admin
+- update the installer if needed
+- click upgrade
+- upgrade the product
+
+*Upgrade between 5.6 and 5.7*
 - mysql -u root -p --execute="SET GLOBAL innodb_fast_shutdown=0"
 - mysqladmin -u root -p shutdown (stops down service)
 
@@ -76,7 +92,7 @@ In `C:\Instrument\Apps\` run:
     - restart the windows service
     - the installation should now finish
 
-I don't think this is needed but don't delete yet:
+The above process seems flakey I am leaving the below until we can find a process which works:
 ```
    - Install the MySQL Installer from the msi. This should be done with admin privileges. **NB: You are installing the installer, not MySQL itself**
 - *upgrade* Check the installer version it should be 1.x if it isn't
