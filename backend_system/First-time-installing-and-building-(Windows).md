@@ -72,7 +72,6 @@ In `C:\Instrument\Apps\` run:
 - yes reboot
 - copy the mysql.ini file from the set up directory (`...EPICS\SystemSetup`) to `C:\Instrument\Var\mysql\my.ini`
 - Install the new version as for first time install. But when it gets to starting service while it is waiting (spinning character)
-    - open an new window command window
     - upgrade the database using `"C:\Program Files\MySQL\MySQL Server 5.7\bin\mysql_upgrade" -u root -p --force`
     - restart the windows service
     - the installation should now finish
