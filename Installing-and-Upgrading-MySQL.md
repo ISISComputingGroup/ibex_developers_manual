@@ -1,4 +1,6 @@
-*Install first time*
+> [Wiki](Home) > [Deployment](Deployment) >[Installing and upgrading MySQL](Installing-and-Upgrading-MySQL)
+
+# Install first time
 
 - Copy the installer from `\\isis\inst$\Kits$\External\BuildServer(ndwvegas)\mysql-installer-community-X.X.X.0.msi` to your local machine.
 - Create a command windows as an admin
@@ -19,14 +21,15 @@
 - **Install only not upgrade** run the `config_mysql.bat` batch file in `C:\Instrument\Apps\EPICS\SystemSetup\`.
 - **Install only not upgrade** For running tests locally, make sure that you have run `create_test_account.bat` from `C:\Instrument\Apps\EPICS\SystemSetup\` as well.
 
-*Upgrade 5.6.x to 5.6.X*
+# Upgrade 5.6.x to 5.6.X
 
 - run the mysql installer as admin
 - update the installer if needed
 - click upgrade
 - upgrade the product
 
-*Upgrade between 5.6 and 5.7*
+# Upgrade between 5.6 and 5.7
+
 - mysql -u root -p --execute="SET GLOBAL innodb_fast_shutdown=0"
 - mysqladmin -u root -p shutdown (stops down service)
 
@@ -40,6 +43,9 @@
     - upgrade the database using `"C:\Program Files\MySQL\MySQL Server 5.7\bin\mysql_upgrade" -u root -p --force`
     - restart the windows service
     - the installation should now finish
+
+
+# Other
 
 The above process seems flakey I am leaving the below until we can find a process which works:
 ```
