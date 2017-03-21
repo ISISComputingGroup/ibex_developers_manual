@@ -5,7 +5,7 @@
 - Copy the installer from `\\isis\inst$\Kits$\External\BuildServer(ndwvegas)\mysql-installer-community-X.X.X.0.msi` to your local machine.
 - Create a command windows as an admin
 - cd to where you copied it to
-- Run in that window; with passwords replaced by standard password and versions by current version.
+- Run in that window; with passwords replaced by standard password and versions (5.7.17) by current version.
     `msiexec.exe /qb- /l*vx MySQL.log REBOOT=ReallySuppress UILevel=67 ALLUSERS=2 CONSOLEARGS="install server;5.7.17;x64:*:type=config;openfirewall=true;generallog=true;binlog=true;datadir=""C:\Instrument\var\mysql"";serverid=1;enable_tcpip=true;port=3306;rootpasswd=<password>:type=user;username=root;password=<password>;role=DBManagerY" /I mysql-installer-community-5.7.17.0.msi`
 - Ensure that you have `C:\Instrument\Var\mysql\my.ini` from the set up directory (`...EPICS\SystemSetup`).
 - If this doesn't work, i.e. the installer is installed but mysql is not (it does not appear in program files) then instead (I have not yet done this so this may need some evaluation). This happened on IRISTest but not Demo:
