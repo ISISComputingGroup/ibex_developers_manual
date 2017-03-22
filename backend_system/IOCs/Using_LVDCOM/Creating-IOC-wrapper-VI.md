@@ -101,9 +101,9 @@ This is a summary of [[more general LvDCOM instructions|LVDCOM-auto-generate-xml
     * Ideally there are macros for (don't forget to add these to the config.xml):
         * LVDCOM_HOST: sets the host by altering a macro which can be set in the config; default to "" so that by default it runs on localhost. 
         * LVDCOM_OPTIONS: whether vi should be started; default to 1 warn if idle.
-1. Add db load record
         * LVDCOM_PROGID: DCOM ProgID, required if connecting to a compiled LabVIEW application (Default '')
         * Don't add username and password users can set these in gloabls.txt
+1. Add db load record
 
 ## 5. Run the IOC
 
