@@ -142,7 +142,7 @@ The final Hameg st.cmd looks like this (the bits added have been highlighted)::
     < $(IOCSTARTUP)/postiocinit.cmd
  
 
-Now is a good time to add everything into SVN. Once that is done it is time to build it and run it::
+Now is a good time to add everything into Git. Once that is done it is time to build it and run it::
 
     cd c:\Instrument\Apps\EPICS\ioc\HAMEG8123
     make
@@ -152,7 +152,7 @@ Now is a good time to add everything into SVN. Once that is done it is time to b
 Hopefully, the IOC will start and the 'dbl' command will list all the PVs.
 
 
-Finally, before checking the this all into SVN, you will need to do the following:
+Finally, before checking the this all into Git, you will need to do the following:
 
 * Mark any interesting PVs in the db file and make sure they have unit fields (EGU) and a description (DESC)
 
