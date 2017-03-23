@@ -111,7 +111,7 @@ Run the IOC as normal. The IOC should start with no errors and typing "dbl" will
 
 ## 6. Finish the Workflow
 
-Now return to the IOC workflow to finishing adding things like units, PVs of interest and macros.
+Now return to the IOC workflow to apply [finishing touches](IOC-Finishing-Touches) like units, PVs of interest and macros.
 Once the ISIS IOC works you should probably now create an IOC linked to this one in ioc follow a similar pattern to a support modules. Remember that if you do this add your new ioc to the Makefile `IOCDIRS` and it does not build if there is no ATL so add it to this list too, i.e. edit `EPICS\ioc\master\Makefile` add to the line:
 
     ifneq ($(HAVE_ATL),YES)  
