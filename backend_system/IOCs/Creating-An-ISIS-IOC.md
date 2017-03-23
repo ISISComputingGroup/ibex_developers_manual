@@ -152,8 +152,10 @@ Now is a good time to add everything into Git. Once that is done it is time to b
 Hopefully, the IOC will start and the 'dbl' command will list all the PVs.
 
 
-Finally, before checking the this all into Git, you will need to do the following:
+Finally, before checking the this all into Git, you will need to apply the [finishing touches](IOC-Finishing-Touches):
 
 * Mark any interesting PVs in the db file and make sure they have unit fields (EGU) and a description (DESC)
 
 * Add [simulation records](Record-Simulation) and [disable records](Disable-records)
+
+* Add relevant macros to the `config.xml`.
