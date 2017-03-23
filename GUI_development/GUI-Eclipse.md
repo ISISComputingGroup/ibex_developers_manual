@@ -1,6 +1,6 @@
 > [Wiki](Home) > [The GUI](The-GUI) > Eclipse
 
-* [Eclipse 3.X vs Java 8]
+* [Eclipse 3.X vs Java 8](Eclipse-3.X-vs-Java-8)
 
 * [Common Eclipse Tasks](Common-Eclipse-Tasks)
 
