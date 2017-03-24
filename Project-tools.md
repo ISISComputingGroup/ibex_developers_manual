@@ -15,3 +15,7 @@ Creation of Linux machine on your desktop using Vagrant and Virtual Box
 ## [Tools for looking at Java memory Especially Leaks](java-memory-leak-tools)
 
 Tools which can help profile and find memory leaks in a java application.
+
+## [Network sniffing](Network-sniffing)
+
+To see packets to and from the machine simply install wireshark and use. To look at packets on localhost. Install npcap (https://nmap.org/npcap/) and wireshark together
