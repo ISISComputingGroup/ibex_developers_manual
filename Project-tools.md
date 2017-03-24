@@ -18,4 +18,4 @@ Tools which can help profile and find memory leaks in a java application.
 
 ## [Network sniffing](Network-sniffing)
 
-To see packets to and from the machine simply install wireshark and use. To look at packets on localhost. Install npcap (https://nmap.org/npcap/) and wireshark together
+To see packets to and from the machine simply install wireshark and use. To look at packets on localhost. Install npcap (https://nmap.org/npcap/) with compatible for winpcap. Then afterwards install wireshark it should recognise ncap.
