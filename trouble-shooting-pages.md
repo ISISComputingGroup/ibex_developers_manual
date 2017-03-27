@@ -14,4 +14,4 @@
 
 [Other](Other-Troubleshooting)
 
-[GUI] (GUI)
+[GUI](GUI)
