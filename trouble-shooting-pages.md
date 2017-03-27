@@ -14,4 +14,4 @@
 
 [Other](Other-Troubleshooting)
 
-[GUI: Memory "leaks"](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Debugging-memory-leaks-in-the-IBEX-GUI)
+[GUI] (GUI)
