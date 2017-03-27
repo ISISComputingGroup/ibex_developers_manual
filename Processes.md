@@ -55,6 +55,18 @@ Developers should pick up a ticket as close to the top of the Ready column as th
 
 If you are adding a ticket to the ready column mid sprint. Please make sure it is added in priority order with estimates attached and unless there is a good reason clear it at standup.
 
+## Regular Demos of IBEX to Scientists
+
+The regular 4-week Sprint Review is not the ideal forum for demonstrating new developments in IBEX to scientists. Instead, we will demonstrate each new release of IBEX prior to its deployment to groups of instrument scientists (or, when appropriate, to individual instrument scientists).  Demos will be arranged as follows:
+1. Developers pair off to demonstrate IBEX to each group of instrument scientists.  
+1. One member of each pair takes the initiative to contact the scientists to arrange the demo.  
+1. Ideally, arrange the the demo to happen out of cycle and near the end of a sprint (that’s what is most convenient to both scientists & developers), but demos can be held at other times, if necessary.
+1. Choose a convenient location to perform the demo (e.g. in the instrument cabin or a scientist's office (if there is room), or a meeting room)
+1. Demo all the changes since the last release (or previous demo), with emphasis on those items of most relevance to the instrument
+1. Gather and share feedback (e.g. on instrument wiki pages)
+
+Over time we can change the pairs, so that everybody gets exposed to different instruments & instrument scientists.
+
 ## Friday Quality Time
 
 Developers like quality time, on Friday afternoon a developer may choose max 2 ticket that can be completed in a couple of hours. Good candidates are 0 time tickets from the backlog. NB These tickets are not a priority it is just for fun :-)
