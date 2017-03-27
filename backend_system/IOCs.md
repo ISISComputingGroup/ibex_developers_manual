@@ -4,7 +4,7 @@
 Building a new IOC? Before you get started, take a look at the relevant [instrument page](https://github.com/ISISComputingGroup/IBEX/wiki) to see if there's any useful information for the device you're about to write an IOC for. Otherwise, let's get going.
 
 * [The Workflow - start here!](Creating-an-IOC-Workflow)
-
+    * [Some Design thoughts for a serial/Ethernet IOC]
     * [Creating an ISIS StreamDevice IOC](Creating-an-ISIS-StreamDevice-IOC)
     * [Creating an LvDCOM IOC](Creating-IOC-wrapper-VI)
 * [IOC Finishing Touches](IOC-Finishing-Touches)
