@@ -14,7 +14,7 @@
 
 * [Class Diagrams for Observables, Observers, Writables and Writers](Refactoring-for-Observables-and-Writers)
 
-* [Instrument Switching](Instrument switching)
+* [Instrument Switching](Instrument-switching)
 
 * [PV Switching](PV-Switching)
 
