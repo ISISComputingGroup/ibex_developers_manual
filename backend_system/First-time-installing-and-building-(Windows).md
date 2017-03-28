@@ -8,6 +8,9 @@ See https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Things-to-
 # Install Perl
 Download and install [Strawberry Perl](http://strawberryperl.com/)
 
+# Install WiX toolset (used for building MSI installer files)
+Latest stable version from http://wixtoolset.org/releases/
+
 # Install Visual Studio 2010
 Install Visual Studio 2010
 
