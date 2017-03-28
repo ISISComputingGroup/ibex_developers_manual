@@ -19,5 +19,21 @@ or just
 
     git submodule update
 
-The main difference is that --merge will leave you on any local branch you have switched to and attempt to merge in changes, whereas leaving it off will switch you from a branch to a new detached HEAD just put you on a 
-See [[Things-to-know-as-a-developer]] for speeding up a build
+The main difference is that --merge will leave you on any local branch you have switched to/working on and attempt to merge in new changes, whereas leaving off --merge will switch you from your branch to a new detached HEAD on master. 
+
+Now build IBEX in the usual way. See [[Things-to-know-as-a-developer]] for speeding up a build.
+
+If you get errors, the most likely causes are:
+1. A file was renamed, but EPICS has not updated its Makefile dependency rules and is still looking for the old one
+2. A directory was renamed/deleted, but the original directory is still on your computer because it was not empty
+
+For 1. a "make clean uninstall" in the directory concerned should be enough
+For 2. You need to go to the directory and do a "git status" and remove any "untracked files" that shouldn't be there. The "git clean" command can be used for this, "git clean -fd" will remove all untracked files and directories. "git clean -fdx" will additionally remove files ignored by .gitignore (such as compiler build output)
+
+In many cases problems will be isolated to a particular module and you do not need to build everything again. If you are about to go home and want to set off a complete rebuild then you can do the following (assuming you have no untracked files you are working on and have forgotten to add to git)
+
+    git clean -fdx
+    git submodule foreach "git clean -fdx"
+
+this simulates a clean checkout (its actually what Jenkins does too) 
+   
