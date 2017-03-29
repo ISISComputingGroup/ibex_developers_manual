@@ -2,6 +2,10 @@
 
 See https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Understanding-Java-Licensing
 
+# Update my Instrument
+
+[Developer Updating](Developer-Updating)
+
 # Make my Build Faster but less Safe
 
     Turn of the check release flag (DO NOT CHECK THIS CHANGE IN)
