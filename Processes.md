@@ -67,6 +67,8 @@ The regular 4-week Sprint Review is not the ideal forum for demonstrating new de
 
 Over time we can change the pairs, so that everybody gets exposed to different instruments & instrument scientists.
 
+Use the [sprint/release demos](https://github.com/ISISComputingGroup/IBEX/wiki/Timetable-for-sprint-demos) page to plan each round of demos..
+
 ## Friday Quality Time
 
 Developers like quality time, on Friday afternoon a developer may choose max 2 ticket that can be completed in a couple of hours. Good candidates are 0 time tickets from the backlog. NB These tickets are not a priority it is just for fun :-)
