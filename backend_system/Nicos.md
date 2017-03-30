@@ -4,7 +4,7 @@
 
 How to install Nicos on Windows.
 
-# [Running Nicos] (Running-Nicos)
+# [Running Nicos](Running-Nicos)
 
 How to run Nicos.
 
