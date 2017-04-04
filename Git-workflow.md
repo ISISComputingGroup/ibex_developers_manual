@@ -99,7 +99,7 @@ Cleaning up local installations (allowing yourself to see the wood, or branches,
 Steps for Developing Code with new Git Repos
 =====================================================
 
-This will only be applicable for new submodules on the whole, and needs completing by someone who knows this
+See [Adding-new-modules]. If reviewing this you will need to checkout the branch on main EPICS and do `git submodule update --init` to initialise the newly created submodule into the tree. Everything else is as normal.
 
 Git Merge notes crib sheet
 =====================================================
