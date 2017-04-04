@@ -3,8 +3,8 @@
 A list of random, but useful git commands
 =====================================================
 
-Git command                                   | What it does
---------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------
+Git command                                   | What it does 
+--------------------------------------------- | ----------------------------------------------------------
 git checkout [branch-name]                    | Checkout a branch that already exists (local or remote)
 git checkout -b [branch-name]                 | Create and checkout a branch locally
 git checkout master                           | Checkout the master branch
@@ -14,20 +14,20 @@ git pull                                      | Get the latest copy of the repo
 git pull origin master                        | Get the latest master from the origin
 git checkout -- [file-name]                   | Revert file-name to the version in the repo
 git remote update                             | update the information from the origin
-                                              |
+ \-                                       | -
 git branch -a                                 | List all branches locally and origin
 git branch -d [branch]                        | Delete a branch
 git remote prune origin                       | Remove listings of closed branches
-                                              |
+ \-                                       | -
 git add [file-name]                           | Add a file to the staging area for committing
 git add \*.[type]                             | Add all files of type to the staging area for committing
 git add -u                                    | Add all modified files to the staging area for committing
-                                              |
+ \-                                           | -
 git mv [file-name] [folder]                   | Move a file to a new folder
-                                              |
+ \-                                           | -
 git commit -m "[descriptive-message]"         | Commit the staged area with a descriptive message
 git commit -m "Jenkins retest this please" --allow-empty | Asks Jenkins to retest a pull request. `allow-empty` flag allows you to do it without any associated changes
-                                              |
+ \-                                           | -
 git merge [branch-name]                       | Merge the changes from [branch] to the one you have currently checked out, typically master to your dev branch
 git submodule update --merge                  | Update all submodules and merge them
 git submodule update --remote                 | Update the submodule references on the remote system to the current commits
@@ -36,41 +36,41 @@ git rebase master                             | USE ONLY ON LOCAL BRANCHES - rea
 git submodule update --init                   | 'clear out' any submodules with new commits
 git submodule status <path>                   | status of the submodule(s) at this moment, e.g. what the current checkout commit of the submodule is
 git submodule status --cached <path>          | status of the submodule(s) as they appear in the index, e.g. the expected commit associated with EPICS working copy
-                                              |
+ \-                                           | -
 git push -u origin [branch-name]              | Push a new branch to the origin
 git push origin [branch-name]                 | Push a branch to the origin
-                                              |
+ \-                                           | -
 git status                                    | Get the status information
 git status -s                                 | Get a summarised status, note that M means Modified, ?? Mean untracked
-                                              |
+ \-                                           | -
 git clean -f                                  | Remove unstaged files
 git clean -f -d                               | Remove unstaged files and directories
-                                              |
+ \-                                           | -
 git ls-remote --get-url                       | Get the remote URL of a repository
-                                              |
+ \-                                           | -
 git stash                                     | Put all current modifications onto a stack
 git stash apply                               | Apply the changes from the last stash
 git stash drop stash@{0}                      | Drop the most recent stash from the stack
 git stash pop                                 | Apply and drop the most recent stash from the stack
 git stash branch [branch-name]                | Creates a new branch from the commit when the branch was stashed, applies the stash, and if successful drops the stash
 git stash clear                               | Delete all stashes
-                                              |
+ \-                                           | -
 git rm [file-name]                            | Remove a file from the staging area
-                                              |
+ \-                                           | -
 git log                                       | View the commit history
 git log -[n]                                  | Limit the number of entries shown by the log
 git log -p                                    | Show the diffs as well as the log
 git log --stat                                | Abbreviated stats for each commit
-                                              |
+ \-                                           | -
 git commit --amend                            | Allows you to amend you last commit (missing files, or alter message)
-                                              |
+ \-                                           | -
 git reset HEAD [file-name]                    | Unstage a file
 git reset --hard [sha]                        | Reset the branch to a specific checkout
 git reset -- soft HEAD ~                      | Reverse the commit to the previous one
 git reset HEAD ~                              | unstage all files
-                                              |
+ \-                                           | -
 git log -1 HEAD                               | Get the commit info for the most recent commit
-                                              |
+ \-                                           | -
 git config -l --global  |  grep http          | Check for global proxies
 git config -l  |  grep http                   | Check for local proxies
 git config --global --unset-all http.proxy    | Remove http proxies from global config
