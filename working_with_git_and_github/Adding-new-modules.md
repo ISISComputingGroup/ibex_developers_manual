@@ -1,16 +1,46 @@
 > [Wiki](Home) > [Project tools](Project-tools) > [Working with git and github](Working-with-git-and-github) > Adding new modules
 
-# Adding a new module
+There are two use cases for adding a submodule:
 
-## initial import
-In this example we will use the EPICS-danfysik8000 repository
+1. When the code is new, e.g. for a support module for a new device (Marked with **New** below)
+1. When importing code from a 3rd Party (Marked with **3rd party** below)
 
-First create a new GitHub repository - all EPICS modules should have an "EPICS-" prefix. Use the "new repository" button on https://github.com/ISISComputingGroup but make sure you create a blank repository i.e. without a README, licence or .gitignore file  Also decide on public or private repository, if you create it private one you can easily make it public later, but there is a limit on how many private repositories we can have at any one time. Also go into "add teams and collaborators" and add the ICP-Write group to write access to the repository
+## 1 Create submodule in GitHub
 
-Software imported from outside should use a "vendor branch" so new versions are easy to merge in. First create new git repository in a directory on your computer away from your epics area, we'll add it to epics as a submodule later.
+Create a new GitHub repository using the "new repository" button on https://github.com/ISISComputingGroup. The naming conventions are:
+    *  EPICS submodules should have an "EPICS-" prefix, e.g. for support modules. 
 
-    mkdir danfysik8000
-    cd danfysik8000
+**3rd Party** Create a blank repository i.e. without a README, licence or .gitignore file. 
+**New** Create with a readme. Use ISIS .gitignore files.
+
+Decide on public or private repository, if you create it private one you can easily make it public later, but there is a limit on how many private repositories we can have at any one time. Repositories should be private if we do not wish to share the code.
+
+Click `Create Repository`
+
+Once created add team to it.
+    - Select Settings tab
+    - Collaborators & Teams (left)
+    - Teams and add ICP-Write group with write access to the repository
+    - If it is a private repository add ICP-Read as read only access.
+
+## 2 Get the repository
+
+Move to a new branch in the EPICS dirtory for your ticket. Create a directory root for the submodule, e.g. for danfysik in support
+
+    cd EPICS/support
+    mkdir danfysikMps8000
+
+Add a Makefile in the directory, copy it from e.g. ../calc/Makefile  Then add the makefile to git in the normal way.
+Now is probably a good moment to create a macro for the repository in `...EPICS\configure\MASTER_RELEASE` (don't forget to add this too). Also adjust the Makefile in the parent directory to include the new module, e.g. add to `SUPPDIRS` in `...EPICS\support\Makefile`.
+
+
+## 3a *3rdParty* Initial import
+
+Software imported from outside should use a "vendor branch" so new versions are easy to merge in. Create new git repository called master:
+
+    cd EPICS/support/danfysik8000
+    mkdir master
+    cd master
     git init
 
 Often unpacking the code on Linux is preferred as there are less line endings issues. A vendor branch should contain unchanged original code i.e. don't add our own readme or .gitignore etc here, do that on master  However remove binaries from the unpacked original code if they have been left in and are not relevant
@@ -29,39 +59,50 @@ then create the vendor branch
     git push origin vendor
     git push --tags
 
-now move back to master and make local changes
+Create a branch for your ticket:
 
-    git checkout master
+    git checkout TicketXXX_description
 
-and create readme.md to say where we got the code originally from. You can also add an initial .gitattributes and .gitignore
+Make local changes. Create a readme.md to say where we got the code originally from and add an initial .gitattributes and .gitignore (often using a copy from an older repo).
+When you create the pull request it can be created from this branch to master.
 
-## Adding module as submodule
+Maake sure it builds. You'll probably need to update `configure/RELEASE` to be like e.g. `../calc/master/configure/RELEASE`. Also check the Makefile for both *App and *app targets as well as iocBoot and iocboot - on windows this results in a double match due to case insensitivity, so remove the the *app and iocboot
 
-create a directory root for the submodule
+## 3b *New* Initial import
 
-    cd EPICS/support
-    mkdir danfysikMps8000
-    git add danfysikMps8000
-    git commit -m "Add danfysikMps8000"
+Clone the repository in to the correct directory with the directory name master:
 
-Then add new repository as a local directory called "master"
+    cd EPICS/support/danfysik8000
+	git clone https://github.com/ISISComputingGroup/<repo name>.git master
 
-    cd danfysikMps8000
+Create a branch for your ticket
+
+    git checkout TicketXXX_description
+
+Create a readme.md to say what the module does and and add an initial .gitattributes and .gitignore (often using a copy from an older repo).
+When do the pull request is created on ts branch.
+
+## 4 Adding module as submodule
+
+Now add the new repository as a submodule:
+
+    cd EPICS/support/danfysik8000
     git submodule add https://github.com/ISISComputingGroup/EPICS-danfysikMps8000.git master
 
-You'll need a Makefile in the directory containing "master", copy it from e.g. ../calc/Makefile  Then add the files
+Add the files generated by adding the submodule
 
-    git add .gitmodules support/danfysikMps8000/Makefile support/danfysikMps8000/master
+	cd EPICS
+    git add .gitmodules
     git commit -m "Add danfysikMps8000 submodule"
 
-now make sure it builds. You'll probably need to update   configure/RELEASE to be like e.g. ../calc/master/configure/RELEASE   Also check the Makefile for both *App and *app targets as well as iocBoot and iocboot - on windows this results in a double match due to case insensitivity, so remove the the *app and iocboot
 
+Next make sure that the whole thing builds from the parent level.
     make
     git status
 
-Then create/adjust .gitignore and .gitattributes  and check    make clean uninstall   all work. 
+Adjust `.gitignore` and `.gitattributes` to make sure they don't contain file that you have just built. Check `make clean uninstall` works. 
 
-If everything OK, add new module to support/Makefile and to configure/MASTER_RELEASE
+Once all the changes are done then create a pull request in the usual way for the new code in EPICS and the new module.
 
 ## Updating vendor branch
 
@@ -85,13 +126,11 @@ to add new and remove deleted files. Then commit and tag the changes
     git push origin vendor
     git push --tags
 
-Now you need to go back to master and merge in new version of vendor code
+Now you need to go back to your ticket branch and merge in new version of vendor code
 
-    git checkout master
+    git checkout TicketXXX_
     git pull
     git merge vendor_1_12
 
 And resolve conflicts before committing
-
-
 
