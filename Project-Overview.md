@@ -8,7 +8,7 @@ A short overview of the IBEX project, its vision and information on the main ins
 
 Documents demonstrating the high-level architectural design of the project components
 
-# [Proposed Design Documents](Design Documents) #
+# [Proposed Design Documents](Design-Documents) #
 
 Documents for proposed designs of project extensions
 
