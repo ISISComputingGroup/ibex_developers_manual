@@ -14,147 +14,100 @@ To help dedbug the PVObserver and lower levels you can build a version of the GU
 7) The logs can be filtered using a python program below (this program is very rough, don't forget to change the date)
 8) This can be combined with Wireshark to analysis traffic if needed
 
-Example log output
+Example log output from disconnection to reconnection
 
 ```
-*2017-03-27 10:37:33.476 [pool-2-thread-2] INFO  com.cosylab.epics.caj.impl.CATransport - Ticket2162: unknown - CATransport processRead start
-*2017-03-27 10:37:33.476 [pool-2-thread-2] INFO  com.cosylab.epics.caj.impl.CATransport - Ticket2162: unknown - CATransport handle response
-*2017-03-27 10:37:33.476 [pool-2-thread-2] INFO  com.cosylab.epics.caj.impl.CATransport - Ticket2162: unknown - CATransport handle response
-*2017-03-27 10:37:33.476 [pool-2-thread-2] INFO  com.cosylab.epics.caj.impl.CATransport - Ticket2162: unknown - CATransport handle response
-*2017-03-27 10:37:33.476 [pool-2-thread-2] INFO  com.cosylab.epics.caj.impl.CATransport - Ticket2162: unknown - CATransport handle response
-*2017-03-27 10:37:33.476 [pool-2-thread-2] INFO  com.cosylab.epics.caj.impl.CATransport - Ticket2162: unknown - CATransport handle response
-*2017-03-27 10:37:33.476 [pool-2-thread-2] INFO  com.cosylab.epics.caj.impl.CATransport - Ticket2162: unknown - CATransport handle response
-*2017-03-27 10:37:33.476 [pool-2-thread-2] INFO  com.cosylab.epics.caj.impl.CATransport - Ticket2162: unknown - CATransport processRead end
-*2017-03-27 10:37:33.473 [pool-3-thread-1] INFO  org.epics.pvmanager.PVDirector - Ticket2162: TE:NDW1407:EUROTHRM_01:A01:TEMP:SP - PVDirector connected or exception event true
-*2017-03-27 10:37:33.475 [pool-2-thread-4] INFO  com.cosylab.epics.caj.impl.handlers.CreateChannelResponse - Ticket2162: TE:NDW1407:EUROTHRM_01:A01:TEMP:SP - CreateChannel connect complete
-*2017-03-27 10:37:33.477 [pool-3-thread-1] INFO  org.epics.pvmanager.PVReaderImpl - Ticket2162: TE:NDW1407:EUROTHRM_01:A01:TEMP:SP - PVReaderImpl connection
-*2017-03-27 10:37:33.477 [pool-2-thread-4] INFO  com.cosylab.epics.caj.impl.CATransport - Ticket2162: TE:NDW1407:EUROTHRM_01:A01:TEMP:SP - CAResponseHandler id (18 is connection, 23 response) 18
-*2017-03-27 10:37:33.477 [pool-2-thread-4] INFO  com.cosylab.epics.caj.impl.CATransport - Ticket2162: TE:NDW1407:EUROTHRM_01:A01:TEMP - CAResponseHandler id (18 is connection, 23 response) 18
-*2017-03-27 10:37:33.477 [pool-2-thread-4] INFO  com.cosylab.epics.caj.CAJChannel - Ticket2162: TE:NDW1407:EUROTHRM_01:A01:TEMP - CAJChannel connect complete changegov.aps.jca.Channel$ConnectionState[DISCONNECTED=1]
-*2017-03-27 10:37:33.477 [pool-2-thread-4] INFO  com.cosylab.epics.caj.CAJChannel - Ticket2162: TE:NDW1407:EUROTHRM_01:A01:TEMP - CAJChannel connect changegov.aps.jca.Channel$ConnectionState[CONNECTED=2]
-*2017-03-27 10:37:33.477 [pool-2-thread-4] INFO  org.epics.pvmanager.MultiplexedChannelHandler - Ticket2162: TE:NDW1407:EUROTHRM_01:A01:TEMP - MultiplexChannelHandler connect changeJCAConnection [connected: true writeConnected: false channel: CAJChannel = { name = TE:NDW1407:EUROTHRM_01:A01:TEMP, connectionState = CONNECTED }]
-*2017-03-27 10:37:33.477 [pool-2-thread-4] INFO  org.epics.pvmanager.ConnectionCollector - Ticket2162: TE:NDW1407:EUROTHRM_01:A01:TEMP - ConnectionCollector connect changetrue
-*2017-03-27 10:37:33.477 [pool-2-thread-4] INFO  org.epics.pvmanager.ConnectionCollector - Ticket2162: TE:NDW1407:EUROTHRM_01:A01:TEMP - ConnectionCollector connect changefalse
-*2017-03-27 10:37:33.477 [pool-3-thread-1] INFO  org.epics.pvmanager.PVDirector - Ticket2162: TE:NDW1407:CS:SB:TEMP1:SP - PVDirector connected or exception event true
-*2017-03-27 10:37:33.477 [pool-3-thread-1] INFO  org.epics.pvmanager.PVReaderImpl - Ticket2162: TE:NDW1407:CS:SB:TEMP1:SP - PVReaderImpl connection
-*2017-03-27 10:37:33.477 [pool-2-thread-4] INFO  com.cosylab.epics.caj.impl.handlers.CreateChannelResponse - Ticket2162: TE:NDW1407:EUROTHRM_01:A01:TEMP - CreateChannel connect complete
-*2017-03-27 10:37:33.478 [pool-2-thread-4] INFO  com.cosylab.epics.caj.impl.CATransport - Ticket2162: unknown - CATransport processRead end
+:NDW1407:CS:SB:TEMP1 = 13:52:47.265000: CAJChannel connect changegov.aps.jca.Channel$ConnectionState[DISCONNECTED=1]
+:NDW1407:CS:SB:TEMP1 = 13:52:47.265000: MultiplexChannelHandler connect changeJCAConnection [connected: false writeConnected: false channel: CAJChannel = { name = TE:NDW1407:CS:SB:TEMP1, connectionState = DISCONNECTED }]
+:NDW1407:CS:SB:TEMP1 = 13:52:47.265000: ConnectionCollector connect changefalse
+:NDW1407:CS:SB:TEMP1 = 13:52:47.266000: PVDirector connected or exception event false
+:NDW1407:CS:SB:TEMP1 = 13:52:47.266000: PVReaderImpl connection
+:NDW1407:CS:SB:TEMP1 = 13:52:47.266000: PVManagerObservable connection false
+:NDW1407:CS:SB:TEMP1 = 13:52:47.266000: DisplayBlock connection false
+:NDW1407:CS:SB:TEMP1 = 13:52:47.266000: ChannelSearchManager Moved channel search to timer with delay 32
+:NDW1407:CS:SB:TEMP1 = 13:52:47.276000: CAJChannel generate search request
+:NDW1407:CS:SB:TEMP1 = 13:52:47.276000: Search requests generate search request
+:NDW1407:CS:SB:TEMP1 = 13:52:47.276000: ChannelSearchManager request sent? true
+:NDW1407:CS:SB:TEMP1 = 13:52:47.309000: ChannelSearchManager Moved channel search to timer with delay 64
+                 all = 13:52:47.309000: ChannelSearchManager no work to do not restarting timer. period32
+:NDW1407:CS:SB:TEMP1 = 13:52:47.319000: CAJChannel generate search request
+:NDW1407:CS:SB:TEMP1 = 13:52:47.319000: Search requests generate search request
+:NDW1407:CS:SB:TEMP1 = 13:52:47.319000: ChannelSearchManager request sent? true
+:NDW1407:CS:SB:TEMP1 = 13:52:47.366000: PVReaderImpl valueChange
+:NDW1407:CS:SB:TEMP1 = 13:52:47.366000: PVManagerObservable valueChange false
+:NDW1407:CS:SB:TEMP1 = 13:52:47.383000: ChannelSearchManager Moved channel search to timer with delay 128
+                 all = 13:52:47.383000: ChannelSearchManager no work to do not restarting timer. period64
+:NDW1407:CS:SB:TEMP1 = 13:52:47.393000: CAJChannel generate search request
+:NDW1407:CS:SB:TEMP1 = 13:52:47.393000: Search requests generate search request
+:NDW1407:CS:SB:TEMP1 = 13:52:47.393000: ChannelSearchManager request sent? true
+:NDW1407:CS:SB:TEMP1 = 13:52:47.521000: ChannelSearchManager Moved channel search to timer with delay 256
+                 all = 13:52:47.521000: ChannelSearchManager no work to do not restarting timer. period128
+:NDW1407:CS:SB:TEMP1 = 13:52:47.531000: CAJChannel generate search request
+:NDW1407:CS:SB:TEMP1 = 13:52:47.531000: Search requests generate search request
+:NDW1407:CS:SB:TEMP1 = 13:52:47.531000: ChannelSearchManager request sent? true
+:NDW1407:CS:SB:TEMP1 = 13:52:47.787000: ChannelSearchManager Moved channel search to timer with delay 512
+                 all = 13:52:47.787000: ChannelSearchManager no work to do not restarting timer. period256
+:NDW1407:CS:SB:TEMP1 = 13:52:47.797000: CAJChannel generate search request
+:NDW1407:CS:SB:TEMP1 = 13:52:47.797000: Search requests generate search request
+:NDW1407:CS:SB:TEMP1 = 13:52:47.797000: ChannelSearchManager request sent? true
+:NDW1407:CS:SB:TEMP1 = 13:52:48.309000: ChannelSearchManager Moved channel search to timer with delay 1024
+                 all = 13:52:48.309000: ChannelSearchManager no work to do not restarting timer. period512
+:NDW1407:CS:SB:TEMP1 = 13:52:48.319000: CAJChannel generate search request
+:NDW1407:CS:SB:TEMP1 = 13:52:48.319000: Search requests generate search request
+:NDW1407:CS:SB:TEMP1 = 13:52:48.319000: ChannelSearchManager request sent? true
+:NDW1407:CS:SB:TEMP1 = 13:52:49.343000: ChannelSearchManager Moved channel search to timer with delay 2048
+                 all = 13:52:49.343000: ChannelSearchManager no work to do not restarting timer. period1024
+:NDW1407:CS:SB:TEMP1 = 13:52:49.353000: CAJChannel generate search request
+:NDW1407:CS:SB:TEMP1 = 13:52:49.353000: Search requests generate search request
+:NDW1407:CS:SB:TEMP1 = 13:52:49.353000: ChannelSearchManager request sent? true
+:NDW1407:CS:SB:TEMP1 = 13:52:51.401000: ChannelSearchManager Moved channel search to timer with delay 4096
+                 all = 13:52:51.401000: ChannelSearchManager no work to do not restarting timer. period2048
+:NDW1407:CS:SB:TEMP1 = 13:52:51.411000: CAJChannel generate search request
+:NDW1407:CS:SB:TEMP1 = 13:52:51.411000: Search requests generate search request
+:NDW1407:CS:SB:TEMP1 = 13:52:51.411000: ChannelSearchManager request sent? true
+:NDW1407:CS:SB:TEMP1 = 13:52:55.508000: ChannelSearchManager Moved channel search to timer with delay 8192
+                 all = 13:52:55.508000: ChannelSearchManager no work to do not restarting timer. period4096
+:NDW1407:CS:SB:TEMP1 = 13:52:55.518000: CAJChannel generate search request
+:NDW1407:CS:SB:TEMP1 = 13:52:55.518000: Search requests generate search request
+:NDW1407:CS:SB:TEMP1 = 13:52:55.518000: ChannelSearchManager request sent? true
+                 all = 13:52:58.123000: ChannelSearchManager no work to do not restarting timer. period16384
+:NDW1407:CS:SB:TEMP1 = 13:53:03.711000: ChannelSearchManager Moved channel search to timer with delay 16384
+                 all = 13:53:03.711000: ChannelSearchManager no work to do not restarting timer. period8192
+:NDW1407:CS:SB:TEMP1 = 13:53:03.721000: CAJChannel generate search request
+:NDW1407:CS:SB:TEMP1 = 13:53:03.721000: Search requests generate search request
+:NDW1407:CS:SB:TEMP1 = 13:53:03.721000: ChannelSearchManager request sent? true
+                 all = 13:53:05.425000: ChannelSearchManager no work to do not restarting timer. period32
+                 all = 13:53:05.788000: ChannelSearchManager no work to do not restarting timer. period128
+                 all = 13:53:06.224000: ChannelSearchManager no work to do not restarting timer. period256
+                 all = 13:53:08.641000: ChannelSearchManager no work to do not restarting timer. period128
+:NDW1407:CS:SB:TEMP1 = 13:53:20.534000: ChannelSearchManager Moved channel search to timer with delay 32768
+                 all = 13:53:20.534000: ChannelSearchManager no work to do not restarting timer. period16384
+:NDW1407:CS:SB:TEMP1 = 13:53:20.830000: CAJChannel generate search request
+:NDW1407:CS:SB:TEMP1 = 13:53:20.830000: Search requests generate search request
+:NDW1407:CS:SB:TEMP1 = 13:53:20.831000: ChannelSearchManager request sent? true
+                 all = 13:53:38.603000: ChannelSearchManager no work to do not restarting timer. period32
+                 all = 13:53:39.815000: ChannelSearchManager no work to do not restarting timer. period64
+                 all = 13:53:39.954000: ChannelSearchManager no work to do not restarting timer. period128
+                 all = 13:53:46.211000: ChannelSearchManager no work to do not restarting timer. period16384
+                 all = 13:53:50.802000: ChannelSearchManager no work to do not restarting timer. period256
+:NDW1407:CS:SB:TEMP1 = 13:54:10.818000: CAJChannel generate search request
+:NDW1407:CS:SB:TEMP1 = 13:54:10.818000: Search requests generate search request
+:NDW1407:CS:SB:TEMP1 = 13:54:10.819000: ChannelSearchManager request sent? false
+                 all = 13:54:11.286000: ChannelSearchManager no work to do not restarting timer. period512
+:NDW1407:CS:SB:TEMP1 = 13:54:43.587000: CAJChannel generate search request
+:NDW1407:CS:SB:TEMP1 = 13:54:43.587000: Search requests generate search request
+:NDW1407:CS:SB:TEMP1 = 13:54:43.587000: ChannelSearchManager request sent? true
+:NDW1407:CS:SB:TEMP1 = 13:54:43.589000: CAResponseHandler id (18 is connection, 23 response, 1 reconnect) 22
+:NDW1407:CS:SB:TEMP1 = 13:54:43.589000: CAResponseHandler id (18 is connection, 23 response, 1 reconnect) 18
+:NDW1407:CS:SB:TEMP1 = 13:54:43.591000: CAResponseHandler id (18 is connection, 23 response, 1 reconnect) 22
+:NDW1407:CS:SB:TEMP1 = 13:54:43.591000: CAResponseHandler id (18 is connection, 23 response, 1 reconnect) 18
+:NDW1407:CS:SB:TEMP1 = 13:54:43.591000: CAJChannel connect complete changegov.aps.jca.Channel$ConnectionState[DISCONNECTED=1]
+:NDW1407:CS:SB:TEMP1 = 13:54:43.591000: CATransport resubscribe subscriptions request
+:NDW1407:CS:SB:TEMP1 = 13:54:43.591000: CATransport resubscribe subscriptions request
+:NDW1407:CS:SB:TEMP1 = 13:54:43.591000: CAJChannel connect changegov.aps.jca.Channel$ConnectionState[CONNECTED=2]
+:NDW1407:CS:SB:TEMP1 = 13:54:43.591000: MultiplexChannelHandler connect changeJCAConnection [connected: true writeConnected: false channel: CAJChannel = { name = TE:NDW1407:CS:SB:TEMP1, connectionState = CONNECTED }]
 ```
-
-and filtered
-```
-             unknown = 10:37:33.476000: CATransport processRead start
-             unknown = 10:37:33.476000: CATransport handle response
-             unknown = 10:37:33.476000: CATransport handle response
-             unknown = 10:37:33.476000: CATransport handle response
-             unknown = 10:37:33.476000: CATransport handle response
-             unknown = 10:37:33.476000: CATransport handle response
-             unknown = 10:37:33.476000: CATransport handle response
-             unknown = 10:37:33.476000: CATransport processRead end
-OTHRM_01:A01:TEMP:SP = 10:37:33.473000: PVDirector connected or exception event true
-OTHRM_01:A01:TEMP:SP = 10:37:33.475000: CreateChannel connect complete
-OTHRM_01:A01:TEMP:SP = 10:37:33.477000: PVReaderImpl connection
-OTHRM_01:A01:TEMP:SP = 10:37:33.477000: CAResponseHandler id (18 is connection, 23 response) 18
-EUROTHRM_01:A01:TEMP = 10:37:33.477000: CAResponseHandler id (18 is connection, 23 response) 18
-EUROTHRM_01:A01:TEMP = 10:37:33.477000: CAJChannel connect complete changegov.aps.jca.Channel$ConnectionState[DISCONNECTED=1]
-EUROTHRM_01:A01:TEMP = 10:37:33.477000: CAJChannel connect changegov.aps.jca.Channel$ConnectionState[CONNECTED=2]
-EUROTHRM_01:A01:TEMP = 10:37:33.477000: MultiplexChannelHandler connect changeJCAConnection [connected: true writeConnected: false channel: CAJChannel = { name = TE:NDW1407:EUROTHRM_01:A01:TEMP, connectionState = CONNECTED }]
-EUROTHRM_01:A01:TEMP = 10:37:33.477000: ConnectionCollector connect changetrue
-EUROTHRM_01:A01:TEMP = 10:37:33.477000: ConnectionCollector connect changefalse
-W1407:CS:SB:TEMP1:SP = 10:37:33.477000: PVDirector connected or exception event true
-W1407:CS:SB:TEMP1:SP = 10:37:33.477000: PVReaderImpl connection
-EUROTHRM_01:A01:TEMP = 10:37:33.477000: CreateChannel connect complete
-             unknown = 10:37:33.478000: CATransport processRead end
-```
-
-
 
 # Python to analysis the logs:
 
-```
-import os
-import re
-from datetime import datetime
-
-
-TICKET="Ticket2162:"
-SEVERE="SEVERE:"
-SEVERE_LINE_START = "{0} {1}".format(SEVERE, TICKET)
-
-class LogLine():
-    def __init__(self, time, pv, message):
-        self.time = time
-        self.message = message.strip()
-        self.pv = pv.strip()
-    def __repr__(self):
-        dateTimeString = datetime.strftime(self.time, "%H:%M:%S")
-        return "{time}: {message}".format(time=dateTimeString, message=self.message)
-
-
-def parse_severe_line(previous_line, line):
-
-
-    # Mar 22, 2017 12:04:24 PM org.epics.pvmanager.SourceDesiredRateDecoupler sendDesiredRateEvent
-    pattern = r"(.* (?:AM|PM)).*"
-    match = re.match(pattern, previous_line)
-    dateString, = match.groups()
-    dateTime = datetime.strptime(dateString, '%b %d, %Y %I:%M:%S %p')
-
-    # SEVERE: Ticket2162: TE:NDW1407:CS:IOC:INSTETC_01:DEVIOS:TOD - PVDirector event connected true
-
-    match = re.match(SEVERE_LINE_START + "(.*) - (.*)", line)
-    if match is None:
-        exit("ERROR: servere message not match {0}".format(line))
-
-    pv, message = match.groups()
-
-    return LogLine(dateTime, pv, message)
-
-
-def parse_normal_line(line):
-    # *2017-03-22 12:04:24.556 [PVMgr Worker 3] INFO  org.epics.pvmanager.PVReaderImpl - Ticket2162: TE:NDW1407:CS:BLOCKSERVER:PVS:ACTIVE - PVReaderImpl valueChange
-
-    pattern = r"\*(.*) \[.* " + TICKET + r"(.*) - (.*)"
-    match = re.match(pattern, line)
-    time_string, pv, message = match.groups()
-
-    dateTime = datetime.strptime(time_string, r"%Y-%m-%d %H:%M:%S.%f")
-
-    return LogLine(dateTime, pv, message)
-
-
-if __name__ == "__main__":
-    WANTEDPV = ["TE:NDW1407:CS:SB:TEMP1", "unknown"]
-
-    pvChanges = []
-    previous_line = ""
-    filepath = r"C:\tmp\change_pv_name.txt"
-    month = "2017-03"
-    day = "27"
-    filedir = r"C:\Instrument\runtime-ibex.product\logs" + "\\" + month
-    filepaths = [os.path.join(filedir, filepath) for filepath in os.listdir(filedir) if month + "-" + day in filepath]
-    filepaths.append(r"C:\Instrument\runtime-ibex.product\logs\isis.log")
-
-    for filepath in filepaths:
-        print("Reading: {0}".format(filepath))
-        for line in file(filepath):
-
-            if TICKET in line:
-                if line.startswith(SEVERE):
-                    pvChange = parse_severe_line(previous_line, line)
-                else:
-                    pvChange = parse_normal_line(line)
-
-                pvChanges.append(pvChange)
-            previous_line = line
-
-    print("PVS:")
-    for pv_name in set([x.pv for x in pvChanges]):
-        print("    {0}".format(pv_name))
-    print("\n\n")
-
-    print("Timeline for {0}".format(WANTEDPV))
-    for pvChange in pvChanges:
-        #if pvChange.pv in WANTEDPV:
-            print("{0:>20} = {1}".format(pvChange.pv.strip()[-20:], pvChange))
-```
+See ...ibex_utils\ibex_log_parser\parse.py
