@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The GUI](The-GUI) > [CS Studio](GUI-CSS) > [PV Connection Layer](PV-Connection-Layer)
+
 This is what I think I know about how the layers under PVMAnagerObservable work to reconnect to a PV. This was part of the [logging ticket](https://github.com/ISISComputingGroup/IBEX/issues/2162) and led to a logging build [PV Manager and Observers Logging](PV-Manager-and-Observers-Logging).
 
 On disconnect the log is:
