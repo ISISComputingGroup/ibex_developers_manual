@@ -112,7 +112,7 @@ Then we reconnect the IOC and we get:
 :NDW1407:CS:SB:TEMP1 = 13:54:43.591000: DisplayBlock connection true
 ```
 
-The GUI gets a  access rights (22) then a connection (18). I have seen it get a version number too not sure whether this is only on first connect. Then we register for value changes I think.
+The GUI gets access rights (22) then a connection (18). I have seen it get a version number too not sure whether this is only on first connect. Then we register for value changes I think.
 
 ```
 :NDW1407:CS:SB:TEMP1 = 13:54:43.591000: CreateChannel connect complete
@@ -141,7 +141,7 @@ The GUI gets a  access rights (22) then a connection (18). I have seen it get a 
 ```
 
 
-So I think the way it works is that there is a ladder of timers which send a search response for requested PVs onto the network (max delay appears to be 132s). If a connection is estabished the search is no longer requested if it isn't then it is moved down a ladder. Once the IOC replies the handshake is done and a connection is established the timing for this seems short so I don't think this is the problem.
+So I think the way it works is that there is a ladder of timers which send a search response for requested PVs onto the network (max delay appears to be 132s). If a connection is established the search is no longer requested if it isn't then it is moved down the ladder. Once the IOC replies the handshake is done and a connection is established the timing for this seems short so I don't think this is the problem.
 
 The logic of sending the search request seems complicated maybe the problem is in here (ChannelSearchManager.timeout) or maybe if there are many items in this list it fills up the send buffer so it takes a while for it to reconnect along with the delay.
 Also we found that if the system gets to many responses it tell the system to stop sending flow control (CATransport.enableFlowControl). This may also cause a problem if this search is ignored because flow control is on and then it has to wait to send it again. Maybe this along with the large number of PVs might explain slow re-connection. I have created another ticket for someone else to look.
