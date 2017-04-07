@@ -1,18 +1,19 @@
 To help dedbug the PVObserver and lower levels you can build a version of the GUI which includes logging and the code for PV manager.
 
-1) Checkout [csstudio repository](https://github.com/ISISComputingGroup/CSStudio_3_3)
-2) Switch to the Logging_for_PV_connections branch
+1. Checkout [csstudio repository](https://github.com/ISISComputingGroup/CSStudio_3_3) to somewhere accessable (probably c:\instrument\Dev)
+1. Switch to the Logging_for_PV_connections branch
     - NB the JCA and caj code has been copied from the caj and jca project to org.csstudio.platform.libs.epics and the jar deleted in this project. If you need to update this code create a new copy.
-3) Switch the gui branch to Logging_for_PV_connections 
-4) Clean and build. 
-5) Run with the following plugins from the workspace instead of the P2 repository:
+1. Switch the gui branch to Logging_for_PV_connections 
+1. Import all projects (including nested projects) from this directory into Eclipse 
+1. Clean and build - not all projects will build but all the ones needed should build.
+1. Run with the following plugins from the workspace instead of the P2 repository. To do this select Run -> Run configuration. On the plug-ins tab type the plugin name and deselect target platform and select workspace:
     - org.csstudio.logging
     - org.csstudio.platform.libs.epics
     - org.csstudio.utilities.pvmanager
     - org.csstudio.utilities.pvmanager.epics
-6) This will now print out debug statements all containing the text Ticket2162
-7) The logs can be filtered using a python program below (this program is very rough, don't forget to change the date)
-8) This can be combined with Wireshark to analysis traffic if needed
+1. This will now print out debug statements all containing the text Ticket2162
+1. The logs can be filtered using a python program below (this program is very rough, don't forget to change the date)
+1. This can be combined with Wireshark to analysis traffic if needed
 
 Example log output from disconnection to reconnection
 
