@@ -13,7 +13,7 @@ To help dedbug the PVObserver and lower levels you can build a version of the GU
     - org.csstudio.utilities.pvmanager.epics
 1. This will now print out debug statements all containing the text Ticket2162
 1. The logs can be filtered using a python program below (this program is very rough, don't forget to change the date)
-1. This can be combined with Wireshark to analysis traffic if needed
+1. This can be combined with Wireshark (see [Network traffic](Network-traffic)) to analysis traffic if needed
 
 Example log output from disconnection to reconnection
 
