@@ -13,6 +13,7 @@ git submodule foreach --recursive "git reset --hard"
 If appropriate, you can then do an update from the main git repository to get any recent changes:
 ```
 git pull
+git submodule init
 git submodule sync
 git submodule update
 ```
