@@ -1,13 +1,15 @@
 > [Wiki](Home) > [Trouble-shooting](trouble-shooting-pages) > IOC and device trouble shooting
 
-# It doesn't work What Should I Do?
+# General tips
+
+## It doesn't work What Should I Do?
 
 1. Connect over hyperterminal (see *Connect over hyperterminal*)
 1. Check command set is correct (look at documentation)
 1. Start the IOC and check it is not in SIM mode
 1. Set the IOC mask (see *What is Passing between the IOC and the *Stream* Device*)
 
-# Connect over hyperterminal
+## Connect over hyperterminal
 
 Start hyper-terminal set up connection to device. Find a command that is returns something or that changes something on the display. Run that command look for the change. Try
 1. Reading
@@ -25,7 +27,7 @@ If it doesn't work check:
 
 If this doesn't work check the moxa logging (see data over the moxa connection). If this doesn't work there is a device that can be plugged into a serial port to intercept all traffic.
 
-# What is Passing between the IOC and the *Stream* Device
+## What is Passing between the IOC and the *Stream* Device
 
 It is possible to put stream into a debug mode where everything sent and received is written to the console. To do this simply add to you st.cmd file (defined on your aysn port) :
 
@@ -39,7 +41,9 @@ where <port> is the port name you used in the asyn setup eg `drvAsynSerialPortCo
 This will include the terminator character, if you don't see it it is not being sent or received.
 If no reply is given this will include a message "No reply from device in XXXms"
 
-# Lost autosave values (especially on Galils)
+# Autosave
+
+## Lost autosave values (especially on Galils)
 
 This is based on ticket: https://github.com/ISISComputingGroup/IBEX/issues/2180
 
@@ -51,3 +55,13 @@ Possible symptoms include:
 - Autosave files containing just a header and `<END>` tag
 
 This has been observed primarily on Galils since they create custom monitor sets but it is feasible the issue could be seen elsewhere. The Galils pass macros to their monitor sets. If no macros are passed (e.g. if `GALILADDR0n` is not set) then no monitor will be created and no values will be saved. This will mean the device (e.g. the motor) will start with its default values. If the macro is reintroduced then those default values will become the new autosave values. The previous values can be recovered by restoring a previous autosave file (e.g. copy `GALIL_02_settings.sav_170309-144116` to `GALIL_02_settings.sav` and restart the IOC).
+
+# Motors
+
+## Limit switches not active at the limit position
+
+https://github.com/ISISComputingGroup/IBEX/issues/2174
+
+In the motor record (`C:\Instrument\Apps\EPICS\support\motor\master\motorApp\MotorSrc\motorRecord.cc`) the limit flag is only activated if the motor's limit switch bit is active and motor's command direction (CDIR) is correct. Correct in this context means that the motor is moving out of range. That is, the motor is moving in a positive direction past an upper limit or in a negative direction past the lower limit. The command direction is only set when a command (e.g. home, move) is sent. If the IOC is restarted, the value isn't saved (and cannot be auto saved) so the limit flag behaviour will depend on the initial value of the command direction.
+
+In summary, being at the limit position is insufficient to cause the limit flag to be active. This is expected behaviour, though can be slightly unintuitive at first.
