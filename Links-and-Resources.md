@@ -13,3 +13,4 @@
 ## Links
 
 - [IBEX wiki](https://github.com/ISISComputingGroup/IBEX/wiki)
+- [IBEX User Manual](https://github.com/ISISComputingGroup/ibex_user_manual/wiki)
