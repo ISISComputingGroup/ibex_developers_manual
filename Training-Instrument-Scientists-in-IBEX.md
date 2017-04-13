@@ -1,3 +1,5 @@
+> [Wiki](Home) > [Processes](Processes) > [Training Instrument Scientists in IBEX](Training-Instrument-Scientists-in-IBEX)
+
 The plan is to run regular instrument scientist training courses so that they can become familiar with IBEX. Often the course will be before we migrate instruments to IBEX. The process is below the steps are not necessarily in order:
 
 1. Check from general training tickets on the backlog. They may suggest people who need to be invited and alterations to training material that need to be made.
