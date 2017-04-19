@@ -30,7 +30,9 @@ The plan is to run regular instrument scientist training courses so that they ca
     
     **XXX**
     ```
-1. Wait for replies then organise a calendar invite in a room
+1. Wait for replies then organise a calendar invite
+    1. I have booked 3hrs in total usually in CR21 or CR25
+    1. Try to book the room 15 minutes beforhand to setup.
 1. Organise laptops from facilities
 1. Update the training material (link on [links and resources](links-and-resources))
 1. Create a number of VMs with IBEX installed for scientists to play with
