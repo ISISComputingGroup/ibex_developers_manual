@@ -15,3 +15,5 @@
 [Other](Other-Troubleshooting)
 
 [GUI](GUI)
+
+[Database](Database-Troubleshooting)
