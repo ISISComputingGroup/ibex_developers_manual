@@ -79,6 +79,7 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
     * Z:
     * cd X.x.m\EPICS
 - Run `install_to_inst.bat` This will copy the contents of the above directory to `C:\Instrument\Apps\EPICS`.
+- If using the net user command delete the directory with `net use Z: /delete`
 - **install** Configure the database schemas engine. 
     * Note: **BE CAREFUL.**  If you run the `config_mysql.bat` script on an existing system **YOU WILL LOSE ALL HISTORICAL DATA**.:
 
