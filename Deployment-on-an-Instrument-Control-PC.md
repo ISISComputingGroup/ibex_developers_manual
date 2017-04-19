@@ -39,8 +39,6 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
 
 - **install** If you are using any serial devices with the system, don't forget to check that nport is installed, and configure the COM settings as standard (moxa 1 starts at COM5, moxa 2 at COM21, etc.)
 
-- **install** Check that 7-Zip is installed on the PC.  If not, download the latest version from the 7-Zip web-site (http://www.7-zip.org/) and install it.
-
 - **install** Check that git is installed on the PC.  If not, download the latest version from the Git web-site (https://git-scm.com/download/win) and install it.
 
 - **install** Check that the LabVIEW modules are installed in `C:\labview modules`.  If the LabVIEW modules are not installed you can proceed, but there some extra steps you need to perform (see below)
