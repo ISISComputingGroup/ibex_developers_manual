@@ -59,7 +59,8 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
    - If MySQL is already installed, locate the current data directory and make sure that any pre-existing data is backed up.
    - If a different version of MySQL is already installed, you should remove it and install the correct version of MySQL as listed on the release notes. Note that versions 3.2 and before all used v5.6.
    - If MySQL is not already installed, or you are doing a clean re-install:
-      - download the MySQL installer `mysql-installer-community-5.6.16.0` from `\\isis\inst$\Kits$\External\BuildServer(ndwvegas)` and install it. This will need to be done with admin privileges
+      - download the MySQL installer `mysql-installer-community-5.6.35.0` from `\\isis\inst$\Kits$\External\BuildServer(ndwvegas)`. This will need to be done with admin privileges
+      - create a folder at `C:\ProgramData\MySQL\MySQL Server 5.6`, the installer needs a conflict with a pre-existing directory to prompt you to name a new directory.
       - run the MySQL installer, again with admin privileges
       - click "Add" to add a new product
       - select the latest version of MySQL, 64-bit. This will be the one offered by default.
