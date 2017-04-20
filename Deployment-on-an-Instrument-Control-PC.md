@@ -70,6 +70,7 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
          - change the data path to `C:\Instrument\var\mysql`
          - choose "server machine" during configuration
          - leave TCP/IP enabled
+         - leave it configured as a windows service
       - You may need to re-boot after installing MySQL
 
 ## Install EPICS
