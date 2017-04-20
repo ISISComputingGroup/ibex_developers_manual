@@ -103,6 +103,8 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
 		
 - **install** If the instrument is not on the list of known instruments already (i.e. for switching the GUI), follow the instructions [here](Making an Instrument Available from the GUI).
 
+- **install** Close the original terminal from which you installed. If you try to boot IBEX from this terminal it will not be able to find python.
+
 ## Update the web dashboard
 
 To add a new EPICS instrument to the web dashboard you will need to do the following:
