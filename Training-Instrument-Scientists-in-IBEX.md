@@ -36,3 +36,5 @@ The plan is to run regular instrument scientist training courses so that they ca
 1. Organise laptops from facilities
 1. Update the training material (link on [links and resources](links-and-resources))
 1. Create a number of VMs with IBEX installed for scientists to play with
+
+During the talk make sure the talking is shared so it is clear it is a group that is supporting the application.
