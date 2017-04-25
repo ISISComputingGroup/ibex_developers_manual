@@ -8,4 +8,5 @@ Database disc space is taken up by tables stored in `C:\Instrument\Var\mysql\dat
 
 Enter the password found on the passwords page.
 
-Tunctate the message log table with: `truncate table msg_log.message;`
+Truncate the message log table with: `truncate table msg_log.message;`
+Truncate the sample archive table with: `truncate table archive.sample;`
