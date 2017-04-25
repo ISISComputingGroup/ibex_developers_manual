@@ -18,7 +18,8 @@ Check to see if you have any errors similar to the following:
 ```
 
 If so, you haven't registered your `isisicp.exe` program with the registry. Follow the steps to [Configure DAE for simulation mode on developer's computer](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/First-time-installing-and-building-(Windows)#configure-dae-for-simulation-mode-on-developers-computer)
-If you have done this it may be that the isisicp.exe program is too old. There is a version that does not contain a certain call which is needed by IBEX. Ask a SECI specialist to update the program.
+
+If you have done this it may be that the isisicp.exe program is too old. There is a version that does not contain a function which is needed by IBEX. Ask a SECI specialist to update the program.
 
 ## Instrument Page not Working on Web Dashboard
 
