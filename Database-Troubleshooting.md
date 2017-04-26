@@ -9,7 +9,7 @@ First create a sql dump of the two largest schemas:
     "c:\Program Files\MySQL\MySQL Server 5.7\bin\mysqldump.exe" -u root -p msg_log > msg_log_<date>.sql
     "c:\Program Files\MySQL\MySQL Server 5.7\bin\mysqldump.exe" -u root -p archive > archive_<date>.sql
 
-From a command prompt:
+Check the files look right and move them to long term storage. Then from a command prompt:
 
     "c:\Program Files\MySQL\MySQL Server 5.7\bin\mysql.exe" -u root -p
 
