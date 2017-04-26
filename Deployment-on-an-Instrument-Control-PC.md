@@ -186,6 +186,8 @@ To add a new EPICS instrument to the web dashboard you will need to do the follo
 	
 ## Set up motion set points 
 
+**(install)** 
+
 The details of the individual set points for any given device will depend on that device and how it is used on an instrument, but the general principles described here will apply.
 
 ### Background
