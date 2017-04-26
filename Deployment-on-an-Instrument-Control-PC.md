@@ -96,6 +96,7 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
     1. update the installer if needed
     1. click upgrade
     1. upgrade the product
+    * If the automatic update does not find the latest version, you can also find installers for mysql at `\\isis\inst$\Kits$\External\BuildServer(ndwvegas)\`
 
 - **upgrade** reapply any hotfixes which are not included in the current release but have been made to the instrument [see notes column in instrument releases table](https://github.com/ISISComputingGroup/IBEX/wiki#instrument-information)
 
