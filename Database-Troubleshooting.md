@@ -14,6 +14,7 @@ From a command prompt:
     "c:\Program Files\MySQL\MySQL Server 5.7\bin\mysql.exe" -u root -p
 
 Truncate the message log tables with: 
+
     truncate table msg_log.message;
     truncate table archive.sample;
 
