@@ -6,12 +6,12 @@ Database disc space is taken up by tables stored in `C:\Instrument\Var\mysql\dat
 
 First create a sql dump of the two largest schemas:
 
-    "c:\Program Files\MySQL\MySQL Server 5.7\bin\mysqldump.exe" -u root -p msg_log > msg_log_<date>.sql
-    "c:\Program Files\MySQL\MySQL Server 5.7\bin\mysqldump.exe" -u root -p archive > archive_<date>.sql
+    "c:\Program Files\MySQL\MySQL Server 5.6\bin\mysqldump.exe" -u root -p msg_log > msg_log_<date>.sql
+    "c:\Program Files\MySQL\MySQL Server 5.6\bin\mysqldump.exe" -u root -p archive > archive_<date>.sql
 
 Check the files look right and move them to long term storage. Then from a command prompt:
 
-    "c:\Program Files\MySQL\MySQL Server 5.7\bin\mysql.exe" -u root -p
+    "c:\Program Files\MySQL\MySQL Server 5.6\bin\mysql.exe" -u root -p
 
 Truncate the message log tables with: 
 
