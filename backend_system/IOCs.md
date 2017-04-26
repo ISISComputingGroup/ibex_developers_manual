@@ -37,6 +37,7 @@ Building a new IOC? Before you get started, take a look at the relevant [instrum
 * [Multi-value Protocols Tricks](Multi-value-Protocols)
 * [IOC Utilities](IOC-Utilities)
 * [Removing or Renaming an IOC module ](Removing-or-Renaming-IOC-module)
+* [IOC Testing framework](IOC-Testing-Framework)
 
 ## Specific IOC Information
 
