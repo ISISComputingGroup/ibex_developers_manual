@@ -40,6 +40,7 @@ Agree with the team how support will be implemented (e.g. by creating or extendi
 1. Create any tickets required to implement the necessary support.
 1. Identify when IBEX is likely to support the required devices (i.e. identify the first cycle after the required devices are supported in IBEX).
 1. Tell Facilities IT (Anthony Shuttle) that an instrument is due to be migrated and ask them to put the instrument on a sub-network.  This is required so that we can use TCP/IP to communicate with the Galils.  Facilities IT will need notice of about 4-6 weeks.
+1. Check the computer that IBEX will be installed on ensuring that it has enough hard disk space.
 1. As the target cycle approaches
    1. set up a PC to test the new version of IBEX.
       1. create IBEX configurations to correspond to their SECI equivalents
