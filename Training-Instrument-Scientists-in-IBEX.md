@@ -2,7 +2,7 @@
 
 The plan is to run regular instrument scientist training courses so that they can become familiar with IBEX. Often the course will be before we migrate instruments to IBEX. The process is below the steps are not necessarily in order:
 
-1. Check from general training tickets on the backlog. They may suggest people who need to be invited and alterations to training material that need to be made.
+1. Check for general training tickets on the backlog. They may suggest people who need to be invited and alterations to training material that need to be made.
 1. Contact instrument scientists with an invite with a suggested date. The email I sent last was
     ```
     Hi **XXX, XXX, XXX**
