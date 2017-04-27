@@ -14,8 +14,11 @@ The plan is to run regular instrument scientist training courses so that they ca
 >    2.	IBEX
 >
 >         a. Main
+>
 >         b. Dashboard
+>
 >         c. Blocks
+>
 >         d. System views (Alarm, DAE, Device Screens, Experiment Details, Logs, Log Plotter, Motors, Synoptics)
 >    3.	Configurations
 >    4.	Scripting
