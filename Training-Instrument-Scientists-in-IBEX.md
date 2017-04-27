@@ -12,10 +12,10 @@ The plan is to run regular instrument scientist training courses so that they ca
 > In similar sessions we have had a hands on tour of IBEX using simulated instruments with slides The session can be tailored to your needs and we can spend more or less time on each part. Last time it took a couple of hours to run the session. The summary from last time was:
 >    1.	General Introduction
 >    2.	IBEX
->        a.	Main
->        b.	Dashboard
->        c.	Blocks
->        d.	System views (Alarm, DAE, Device Screens, Experiment Details, Logs, Log Plotter, Motors, Synoptics)
+>         a. Main
+>         b. Dashboard
+>         c. Blocks
+>         d. System views (Alarm, DAE, Device Screens, Experiment Details, Logs, Log Plotter, Motors, Synoptics)
 >    3.	Configurations
 >    4.	Scripting
 >    
