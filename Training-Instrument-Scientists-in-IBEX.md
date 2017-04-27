@@ -27,6 +27,7 @@ The plan is to run regular instrument scientist training courses so that they ca
 > If you have any question please don’t hesitate to ask otherwise please let me know of dates that would be good.
 >    
 > Cheers,
+>
 > **XXX**
 
 1. Wait for replies then organise a calendar invite
