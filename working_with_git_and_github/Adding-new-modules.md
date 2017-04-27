@@ -107,7 +107,7 @@ Software imported from outside should use a "vendor branch" so new versions are 
     ````
 1. Next make sure that the whole thing builds from the parent level.
     ````
-    make
+    make danfysikMps8000
     git status
     ````
 1. Adjust `.gitignore` and `.gitattributes` to make sure they don't contain file that you have just built. Check `make clean uninstall` works. 
