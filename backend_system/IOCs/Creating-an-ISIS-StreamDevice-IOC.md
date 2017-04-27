@@ -9,7 +9,7 @@ First, set up the Support Module (Using the Hameg 8123 as an example.):
 Make the main directory:
 
 ```
-cd C:\EPICS\support
+cd ...EPICS\support
 mkdir Hameg_8123
 cd Hameg_8123
 ```
@@ -19,6 +19,7 @@ Get an admin to [create a git repository](Adding%20new%20modules).
 Create a stream support module:
 
 ```
+cd ...EPICS\support\Hameg_8123\master
 makeSupport.pl -t streamSCPI Hameg_8123
 ```
 
