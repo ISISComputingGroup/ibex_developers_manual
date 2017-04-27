@@ -89,7 +89,7 @@ Software imported from outside should use a "vendor branch" so new versions are 
 
     git checkout TicketXXX_description
 
-1. Create a readme.md to say what the module does 
+1. Edit/Create a readme.md to say what the module does 
 1. Add an initial .gitattributes and .gitignore (often using a copy from an older repo).
 
 ## 4 Adding module as submodule
