@@ -34,6 +34,7 @@ Reviewing work for the GUI
 
 Reviewing work for the 'top' of EPICS (no other related changes)
 ----------------------------------------------------------------------------------
+* Check the list of files to be merged on the GitHub PR page - if one of them is .gitmodules then the PR **should not be merged** needs to be amended/recreated. 
 * Navigate to the appropriate directory in Git Bash
 * Update the repo: ``git remote update``
 * Checkout the branch with the changes to review: ``git checkout [branch-name]``
@@ -44,7 +45,6 @@ Reviewing work for the 'top' of EPICS (no other related changes)
 
 Reviewing work for the subModules of EPICS
 ----------------------------------------------------------------------------------
-* Check the list of files to be merged on the GitHub PR page - if one of them is .gitmodules then the PR **should not be merged** needs to be amended/recreated. 
 * Navigate to the appropriate directory in Git Bash
 * Update the repo: ``git remote update``
 * Checkout the branch with the changes to review: ``git checkout [branch-name]``
