@@ -5,7 +5,10 @@ These are tests/checks that should be performed on the IBEX client after a relea
 ### All Instruments
 
 1. (After installing both the server and the client) Start the IBEX client. Connect to an instrument. Check Menu -> Help -> About. The client number should be the version you just released and should match that on the page (https://github.com/ISISComputingGroup/IBEX/wiki#instrument-information)
-1. Make sure genie python works both from the GUI and when launched from the `genie_python.bat` shortcut under `C:/Instrument/Apps/Python` (e.g. try a `g.get_blocks()` command).
+1. Make sure genie python works both from the GUI and when launched from the `genie_python.bat` shortcut under `C:/Instrument/Apps/Python`
+    1. Verify that no issues arise on starting a scripting window (e.g. `init_[INST]` is loaded correctly)
+    1. Genie is available via the `g` prefix: try `g.get_blocks()`
+    1. Instrument scripts are available via the `inst` prefix. DO NOT use one of the existing instrument scripts as it could trigger unwanted changes on the instrument. Create a test script in `C:\Instrument\Settings\config\NDX[INST]\Python\inst` and run that.
 
 ### LARMOR
 
