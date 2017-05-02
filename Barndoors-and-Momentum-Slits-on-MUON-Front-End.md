@@ -22,4 +22,4 @@ Barndoors can be opened different distances. The distance is no linearly connect
 
 ## Setup
 
-The barndoors and momentum slits are part of the gallil motor set up and are per instrument. To set them up copy `...\EPICS\support\barndoors\master\settings\*.cmd` to `C:\Instrument\Settings\config\NDW1407\configurations\galil`
+The barndoors and momentum slits are part of the gallil motor set up and are per instrument. To set them up copy `...\EPICS\support\motorExtensions\master\settings\barndoors\*.cmd` to `C:\Instrument\Settings\config\NDW1407\configurations\galil`
