@@ -18,6 +18,7 @@ Each instrument at ISIS is unique.  Although they share many similarities, there
    * Identify devices (if any) that are unique to that instrument.
    * Also ask the scientists which devices they plan to use in the coming cycles (this will help to prioritise work during the preparation phase).
    * Discuss with the scientist how they use these devices.  For example, do they need a GUI to view and set device parameters or will they do that via scripts?  Are some devices used for monitoring purposes only?
+   * Ask if they use 5-digit or 8-digit run numbers.  If they use 5-digit run numbers, the control server will need an upgrade to the ICP program.  Not many instrument should still be using 5-digit run numbers.
 1. Add the instrument to the list of instruments on the [IBEX Wiki](https://github.com/ISISComputingGroup/IBEX/wiki).
    1. Create a wiki page for the instrument (use the existing instrument pages as an example).
    1. Document the list of devices used on the instrument.  Identify which devices are already supported in IBEX and which will require support to be implemented.
@@ -40,6 +41,7 @@ Agree with the team how support will be implemented (e.g. by creating or extendi
 1. Create any tickets required to implement the necessary support.
 1. Identify when IBEX is likely to support the required devices (i.e. identify the first cycle after the required devices are supported in IBEX).
 1. Tell Facilities IT (Anthony Shuttle) that an instrument is due to be migrated and ask them to put the instrument on a sub-network.  This is required so that we can use TCP/IP to communicate with the Galils.  Facilities IT will need notice of about 4-6 weeks.
+1. If the instrument still uses 5-digit run numbers, update the ICP program to the latest version.
 1. Check the computer that IBEX will be installed on ensuring that it has enough hard disk space.
 1. As the target cycle approaches
    1. set up a PC to test the new version of IBEX.
