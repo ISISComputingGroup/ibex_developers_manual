@@ -26,7 +26,9 @@ Equation to work out the half width using similar triangle:
 
 (y/2 - b/2 ) / (s-j) = (h/2 - b/2) / (s - c)
 
-gap = b + (h - b) * (s-j) / (s-c)
+y = b + (h - b) * (s-j) / (s-c)
+
+and similarly for the width.
 
 ## Setup
 
