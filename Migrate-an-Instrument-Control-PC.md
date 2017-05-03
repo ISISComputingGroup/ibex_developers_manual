@@ -18,7 +18,7 @@ Each instrument at ISIS is unique.  Although they share many similarities, there
    * Identify devices (if any) that are unique to that instrument.
    * Also ask the scientists which devices they plan to use in the coming cycles (this will help to prioritise work during the preparation phase).
    * Discuss with the scientist how they use these devices.  For example, do they need a GUI to view and set device parameters or will they do that via scripts?  Are some devices used for monitoring purposes only?
-   * Ask if they use 5-digit or 8-digit run numbers.  If they use 5-digit run numbers, the control server will need an upgrade to the ICP program.  Not many instrument should still be using 5-digit run numbers.
+   * Ask the scientists if they use 5-digit or 8-digit run numbers.  Not many instruments still use 5-digit run numbers.  If they do use 5-digit run numbers, explain that they need to switch to 8-digit run numbers during the migration.  The control server will need an upgrade to the ICP program to enable 8-digit run numbers.  
 1. Add the instrument to the list of instruments on the [IBEX Wiki](https://github.com/ISISComputingGroup/IBEX/wiki).
    1. Create a wiki page for the instrument (use the existing instrument pages as an example).
    1. Document the list of devices used on the instrument.  Identify which devices are already supported in IBEX and which will require support to be implemented.
