@@ -20,7 +20,7 @@ x | Width at sample | user set |
 y | Height at sample | user set |
 
 This diagram shows the setup for one jaw set.
- ![Polaris Jaws Diagram](backend_system\IOCs\polaris_jaws.png)
+ ![Polaris Jaws Diagram](backend_system/IOCs/polaris_jaws.png)
 
 Equation to work out the half width using similar triangle:
 
