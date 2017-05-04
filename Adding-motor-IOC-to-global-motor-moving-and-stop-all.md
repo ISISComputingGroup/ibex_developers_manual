@@ -16,4 +16,4 @@ If your IOC is called SMC100_01 then the ISIS standard startup creates a few use
 * $(IFIOC) will have value "IFIOC_SMC100_01"
 So the item   $(IFIOC)= , (the space before the comma is important) will expand to   IFIOC_SMC100_01= ,  for use within the DB file
  
-As motion is across multiple IOCs, splitting each IOC into a different calc record is was the safest approach at the time to avoid possible misses, so each IOC needs to load motorUtil.db and map to a different calc record input to avoid clashes of values. The mechanism is independent of what table of motors position the ioc occupies, though it might look like that was true from the way the galil is implemented. 
+As motion is across multiple IOCs, splitting each IOC into a different calc record input is was the safest approach at the time to avoid possible misses, so each IOC needs to load motorUtil.db and map to a different calc record input to avoid clashes of values. The mechanism is independent of what table of motors position the ioc occupies, though it might look like that was true from the way the galil is implemented. 
