@@ -8,7 +8,7 @@
 
 * [The MySQL Database](The-MySQL-Database)
 
-* [Configurations] (Configurations)
+* [Configurations](Configurations)
 
 * [Run control](Run-control)
 
