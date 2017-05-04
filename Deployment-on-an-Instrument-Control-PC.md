@@ -77,8 +77,8 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
 
 ## Install EPICS
 
-- From a command prompt type the following (if your command prompt doesn't support UNC paths, use `pushd` instead of `cd`): `cd \\isis\inst$\Kits$\CompGroup\ICP\Releases\X.x.m\EPICS` where `X.x.m` is the version you wish to install.
-    * If this doesn't connect use:
+- From a command prompt type the following (if your command prompt doesn't support UNC paths, use `pushd` instead of `cd`): `cd \\isis\inst$\Kits$\CompGroup\ICP\Releases\X.x.m\EPICS` where `X.x.m` is the version you wish to install. <br>
+If this doesn't connect use:
       ```
       net use Z: \\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\Releases  /user:CLRC\<fed id>`
       Z:
