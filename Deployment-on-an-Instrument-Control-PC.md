@@ -79,9 +79,11 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
 
 - From a command prompt type the following (if your command prompt doesn't support UNC paths, use `pushd` instead of `cd`): `cd \\isis\inst$\Kits$\CompGroup\ICP\Releases\X.x.m\EPICS` where `X.x.m` is the version you wish to install.
     * If this doesn't connect use:
-    * `net use Z: \\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\Releases  /user:CLRC\<fed id>`
-    * Z:
-    * cd X.x.m\EPICS
+      ```
+      net use Z: \\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\Releases  /user:CLRC\<fed id>`
+      Z:
+      cd X.x.m\EPICS
+      ```
 - Run `install_to_inst.bat` This will copy the contents of the above directory to `C:\Instrument\Apps\EPICS`.
 - If using the net user command delete the directory with `net use Z: /delete`
 - **install** Configure the database schemas engine. 
