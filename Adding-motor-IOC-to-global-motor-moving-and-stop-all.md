@@ -7,8 +7,8 @@ To add "in motion" support, the same file must be included, but it will need to 
 Inside motorUtil.db add the new IOC (you need one entry per ioc independent of how many things it controls) to the $(P)_FAN dfanout record. Ignore how the Galils are done - that way is historic. We will take the example of the SMC100 motion IOC.
 
 * locate an unused calc record input in $(P)CS:MOT:_MOVING1 - in this case we will use input "A" 
-* Add a line like $(IFIOC_SMC100_01=#)  field(OUTA, "$(PVPREFIX)CS:MOT:_MOVING1.A CA")   to the dfanout record
-* Add a line like     dbLoadRecords("$(MOTOR)/db/motorUtil.db","P=$(MYPVPREFIX)$(IOCNAME):,$(IFIOC)= ,PVPREFIX=$(MYPVPREFIX)")    to your IOC startup
+* Add a line like **$(IFIOC_SMC100_01=#)  field(OUTA, "$(PVPREFIX)CS:MOT:_MOVING1.A CA")**   to the dfanout record
+* Add a line like     **dbLoadRecords("$(MOTOR)/db/motorUtil.db","P=$(MYPVPREFIX)$(IOCNAME):,$(IFIOC)= ,PVPREFIX=$(MYPVPREFIX)")**    to your IOC startup
 * make sure you have the line    **motorUtilInit("$(MYPVPREFIX)$(IOCNAME):")** somewhere after iocInit() in st.cmd
 
 If your IOC is called SMC100_01 then the ISIS standard startup creates a few useful macros for you: 
