@@ -180,58 +180,61 @@ The newly created db file needs to be added to the `Makefile` file in `HAMEG8123
 DB += <db_file_name>.db
 ```
 
-The final step is to rationalise the st.cmd files for each IOC. There will be a default `st.cmd` for each IOC beneath the `iocBoot` directory, but it will require information adding such as information about the db files, protocol files, hardware connection etc. The final Hameg `st.cmd` looks like this (the bits added have been highlighted) (NOTE: the macro `$(HAMEG8123)` is the same as defined in the `EPICS\configure\MASTER_RELEASE` file) :
+The final step is to rationalise the st.cmd files for each IOC. There will be a default `st.cmd` for each IOC which will call a common file in the 01 directory. The top files for IOC-YY should look like the following (XXXX is the name of the IOC):
 
 ```
-#!../../bin/windows-x64-debug/HAMEG8123-IOC-01
+#!../../bin/windows-x64/XXXX-IOC-YY
 
-## You may have to change HAMEG8123-IOC-01 to something else
+## You may have to change XXXX to something else
 ## everywhere it appears in this file
-
-# Increase this if you get <<TRUNCATED>> or discarded messages warnings in your errlog output
-errlogInit2(65536, 256)
 
 < envPaths
 
-epicsEnvSet "STREAM_PROTOCOL_PATH" "$(HAMEG8123)/data"                          #Added
-epicsEnvSet "TTY" "$(TTY=\\\\\\\\.\\\\COM19)"                                   #Added
-
-cd ${TOP}
-
 ## Register all support components
-dbLoadDatabase "dbd/HAMEG8123-IOC-01.dbd"
-HAMEG8123_IOC_01_registerRecordDeviceDriver pdbbase
+dbLoadDatabase "${TOP}/dbd/XXXX-IOC-YY.dbd"
+XXXX_IOC_YY_registerRecordDeviceDriver pdbbase
 
-##ISIS## Run IOC initialisation
+## calling common command file in ioc 01 boot dir
+< ${TOP}/iocXXXX-IOC-01/st-common.cmd
+
+```
+
+The a common file, `st-common.cmd` should look like (NOTE: the support files location is a macro defined in the `EPICS\configure\MASTER_RELEASE` file):
+
+```
+epicsEnvSet "STREAM_PROTOCOL_PATH" "$(AMINT2L)/data"
+
+##ISIS## Run IOC initialisation 
 < $(IOCSTARTUP)/init.cmd
 
-drvAsynSerialPortConfigure("L0", "$(TTY)", 0, 0, 0, 0)                          #Added
-asynSetOption("L0", -1, "baud", "9600")                                         #Added
-asynSetOption("L0", -1, "bits", "8")                                            #Added
-asynSetOption("L0", -1, "parity", "none")                                       #Added
-asynSetOption("L0", -1, "stop", "1")                                            #Added
-asynOctetSetInputEos("L0", -1, "\r")                                            #Added
-asynOctetSetOutputEos("L0", -1, "\r")                                           #Added
+# For dev sim devices
+$(IFDEVSIM) drvAsynIPPortConfigure("L0", "localhost:$(EMULATOR_PORT=)")
 
-## Load record instances
+## For real device use:
+$(IFNOTDEVSIM) $(IFNOTRECSIM) drvAsynSerialPortConfigure("L0", "$(PORT=NO_PORT_MACRO)", 0, 0, 0, 0)
+$(IFNOTDEVSIM) $(IFNOTRECSIM) asynSetOption("L0", -1, "baud", "$(BAUD=9600)")
+$(IFNOTDEVSIM) $(IFNOTRECSIM) asynSetOption("L0", -1, "bits", "$(BITS=7)")
+$(IFNOTDEVSIM) $(IFNOTRECSIM) asynSetOption("L0", -1, "parity", "$(PARITY=even)")
+$(IFNOTDEVSIM) $(IFNOTRECSIM) asynSetOption("L0", -1, "stop", "$(STOP=1)")
 
-##ISIS## Load common DB records
+##ISIS## Load common DB records 
 < $(IOCSTARTUP)/dbload.cmd
 
 ## Load our record instances
-dbLoadRecords("db/devHameg_8123.db","P=$(MYPVPREFIX)$(IOCNAME):, PORT=L0")      #Added
+dbLoadRecords("db/devAMINT2L.db","P=$(MYPVPREFIX)$(IOCNAME):, PORT=L0, RECSIM=$(RECSIM=0), DISABLE=$(DISABLE=0)")
 
-##ISIS## Stuff that needs to be done after all records are loaded but before iocInit is called
+##ISIS## Stuff that needs to be done after all records are loaded but before iocInit is called 
 < $(IOCSTARTUP)/preiocinit.cmd
 
-cd ${TOP}/iocBoot/${IOC}
+cd "${TOP}/iocBoot/${IOC}"
 iocInit
 
 ## Start any sequence programs
-#seq sncxxx,"user=Host"
+#seq sncxxx,"user=hgv27692Host"
 
-##ISIS## Stuff that needs to be done after iocInit is called e.g. sequence programs
+##ISIS## Stuff that needs to be done after iocInit is called e.g. sequence programs 
 < $(IOCSTARTUP)/postiocinit.cmd
+
 ```
 
 Now is a good time to add everything into Git. Once that is done it is time to build it and run it:
