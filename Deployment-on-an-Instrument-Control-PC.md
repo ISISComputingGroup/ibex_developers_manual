@@ -156,6 +156,8 @@ To add a new EPICS instrument to the web dashboard you will need to do the follo
 
 ## Deployment tests
 
+- Check that Java Auto Update is disabled (see https://www.java.com/en/download/help/java_update.xml#sched).
+
 - *upgrade* Restart any VIs which were running
 
 - Make sure these [client tests are performed](client-release-tests), these are items we have missed in the past.
