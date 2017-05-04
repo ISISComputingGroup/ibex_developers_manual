@@ -130,8 +130,8 @@ To add a new EPICS instrument to the web dashboard you will need to do the follo
 - From a command prompt type the following (if your command prompt doesn't support UNC paths, use `pushd` instead of `cd`): `cd \\isis\inst$\Kits$\CompGroup\ICP\Releases\X.x.m\Client` where `X.x.m` is the version you wish to install.
     * If this doesn't connect use:
     * `net use Z: \\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\Releases  /user:CLRC\<fed id>`
-    * Z:
-    * cd X.x.m\Clients
+    * `Z:`
+    * `cd X.x.m\Clients`
 
 - Run the command `install_client.bat`.  This will copy the contents of the above directory to `C:\Instrument\Apps\Client`.  It will also install genie_python.
 
@@ -145,6 +145,12 @@ To add a new EPICS instrument to the web dashboard you will need to do the follo
     * Check that if you open multiple client instances by right-clicking on the taskbar icon and selecting "ibex-client", then the icons for each instance of the client stack on top of each other.
 
 - Make changes documented in Release notes (see [Releases](https://github.com/ISISComputingGroup/IBEX/wiki#releases)). NB these are for *both* server and client and may be pertinent for a new install.
+
+## Install Wiring Tables
+
+- *Migrating an instrument:* Copy wiring tables from `C:\Instrument\Tables` and `C:\labview modules\dae` to  `C:\Instrument\Settings\config\NDXxxxxx\configurations\tables`
+
+- *New instrument:* Install the wiring tables in  `C:\Instrument\Settings\config\NDXxxxxx\configurations\tables`
 
 ## Deployment tests
 
