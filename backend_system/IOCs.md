@@ -8,6 +8,7 @@ Building a new IOC? Before you get started, take a look at the relevant [instrum
     * [Creating an ISIS StreamDevice IOC](Creating-an-ISIS-StreamDevice-IOC)
     * [Creating an LvDCOM IOC](Creating-IOC-wrapper-VI)
 * [IOC Finishing Touches](IOC-Finishing-Touches)
+    * Additional for motors [Adding motor IOC to global motor moving and stop all](/Adding-motor-IOC-to-global-motor-moving-and-stop-all)
 
 * [Record simulation](Record-Simulation)
 
