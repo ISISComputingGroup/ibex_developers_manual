@@ -150,7 +150,9 @@ To add a new EPICS instrument to the web dashboard you will need to do the follo
 
 ## Install Wiring Tables
 
-- *Migrating an instrument:* Copy wiring tables from `C:\Instrument\Tables` and `C:\labview modules\dae` to  `C:\Instrument\Settings\config\NDXxxxxx\configurations\tables`
+- *Migrating an instrument:* 
+   * Move (as distinct from copy) wiring tables from `C:\Instrument\Tables` and `C:\labview modules\dae` to `C:\Instrument\Settings\config\NDXxxxxx\configurations\tables`
+   * If the scientist wishes to continue to use SECI for a period, inform the scientist that wiring tables have moved.  SECI can browse to the new location.
 
 - *New instrument:* Install the wiring tables in  `C:\Instrument\Settings\config\NDXxxxxx\configurations\tables`
 
