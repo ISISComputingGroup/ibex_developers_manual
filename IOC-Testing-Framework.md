@@ -62,4 +62,13 @@ The section labelled `For testing framework only` uses the `$(TESTDEVSIM)` macro
 The '$(TESTDEVSIM)' macro shouldn't appear for configuration in the IBEX GUI.
 
 
+# Notes for update
+
+Use of iocinit
+
+Run epics terminal `cd support\IocTestFramework\master`:
+
+```
+python run_tests.py -pf %MYPVPREFIX%  -d amint2l -p C:\Instrument\Apps\EPICS\ioc\master\AMINT2L\iocBoot\iocAMINT2L-IOC-01 -e C:\Instrument\Apps\Python\Scripts\lewis.exe -pf %MYPVPREFIX% -ea C:\Instrument\Apps\EPICS\support\DeviceEmulator\master -ek lewis_emulators -ic
+```
 
