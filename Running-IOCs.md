@@ -56,5 +56,5 @@ Use the following to read a waveform PV of a compressed hexed string
 
 # Troubleshooting
 
-[See IOC and device Troubleshooting] (IOC-And-Device-Trouble-Shooting)
+[See IOC and device Troubleshooting](IOC-And-Device-Trouble-Shooting)
 
