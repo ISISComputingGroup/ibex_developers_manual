@@ -174,6 +174,8 @@ record(ao, "$(P)CHAN_A:TRIG_LVL:SP")
 
 `devHameg_8123.proto` is the name of the protocol file for the Hameg created here.
 
+Note that the db file should conform to the naming standards detailed in [PV-Naming](PV-Naming), and that ANY value which might be read and set as a block must have a `:SP` as well as a non post-fixed name entry.
+
 The newly created db file needs to be added to the `Makefile` file in `HAMEG8123-IOC-01App\Db`:
 ```
 #DB += xxx.db
