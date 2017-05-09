@@ -12,6 +12,7 @@ Component/Activity | Steward |
 ------------------ | ------- |
 Blockserver | Matt |
 Muon Front End | Kathryn |
+Riken Front End | Kathryn |
 Script Server (NICOS) | Dom |
 IRIS & OSIRIS | David |
 VESUVIO | David |
