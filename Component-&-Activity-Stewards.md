@@ -21,6 +21,9 @@ Device screens | Adrian |
 IOC Unit test framework | Isabella |
 IBEX GUI | Thomas |
 EMMA | Chris
+ENGIN-X | Gareth
+GEM | TBD
+MERLIN | TBD
 
 <a name="definitionSteward"></a>
 ## Definition of the role of Component / Activity Steward
