@@ -6,8 +6,9 @@ Where: Polaris
 When: 15/05/2017
 Version: 3.2.1
 Description: GUI could no longer control the DAE tab. User writes
+
     ```
-Summary: "IBEX - DAE Control Program: Run Summary/Experiment Setup etc. frozen"
+    Summary: "IBEX - DAE Control Program: Run Summary/Experiment Setup etc. frozen"
 
     After ending Polaris run 98766 (from a script) the "DAE Control Program" pane 
     did not give back proper control of the instrument.
