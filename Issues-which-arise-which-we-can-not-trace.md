@@ -19,4 +19,5 @@ Summary: "IBEX - DAE Control Program: Run Summary/Experiment Setup etc. frozen"
     box, but the "Apply changes" button was not active (I had restarted the chopper 
     so needed to re-enable the veto).    
 ```
+
 Work around: Restart the GUI.
