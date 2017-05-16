@@ -1,3 +1,5 @@
+> [Wiki](Home) > [Trouble-shooting](trouble-shooting-pages) > [Issues which arise which we can not trace](Issues-which-arise-which-we-can-not-trace)
+
 This page contains issues which we have had at some point and are unsure what the cause is. If we capture them here we can group them and work out what the causes and likely hoods are. Please follow the template:
 
 ## DAE Control from GUI problem
