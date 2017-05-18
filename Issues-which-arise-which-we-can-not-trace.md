@@ -25,3 +25,9 @@ Description: GUI could no longer control the DAE tab. User writes
     so needed to re-enable the veto).    
 
 Work around: Restart the GUI.
+
+## Two "edit block" controls
+
+Seen 3 times within an hour while testing a related ticket (#2264)
+
+![untitled](https://cloud.githubusercontent.com/assets/24375813/26206489/e297ca46-3bdc-11e7-96fb-550a46618d16.png)
