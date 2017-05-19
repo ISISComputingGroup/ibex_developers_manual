@@ -41,7 +41,7 @@ At sprint planning we will *only* look at tickets with 'proposal' label. These w
 
 ## Movement of Tickets
 
-Developers should pick up a ticket as close to the top of the Ready column as they can (i.e. don't pick a ticket assigned to someone else). Assign the ticket to yourself and move it to in progress. When the ticket is done move it to the top of the review column (unless it is high priority in that case move it to the bottom). Then pick a ticket to review from the bottom of the review column. Review the ticket and move it either to the review complete or add the rework label and move it back to the top of the ready column (it is a courtesy to inform the person you have done this).
+Developers should pick up a ticket as close to the top of the Ready column as they can (i.e. don't pick a ticket assigned to someone else). Assign the ticket to yourself and move it to in progress. When the ticket is done move it to the top of the review column (unless it is high priority in that case move it to the bottom). Then pick a ticket to review from the bottom of the review column. Review the ticket and move it either to the review complete or add the rework label and move it back to the top of the ready column (it is a courtesy to inform the person you have done this). You must do a review when you move any ticket to the review column even if it is a rework. (A rework ticket review counts as a review).
 
 ## Adding tickets Mid Sprint
 
