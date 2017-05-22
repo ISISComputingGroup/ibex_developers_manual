@@ -75,7 +75,7 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
          - leave TCP/IP enabled
          - leave it configured as a windows service
       - You may need to re-boot after installing MySQL
-      - In the installer make sure that you click the spanner icon and turn of update of catalogue.
+      - In the installer make sure that you click the spanner icon and turn off update of catalogue.
 
 ## Install EPICS
 
