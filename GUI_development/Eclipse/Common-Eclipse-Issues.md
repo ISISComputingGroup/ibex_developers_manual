@@ -94,3 +94,8 @@ Sometimes eclipse will tell you that you have errors in various projects when yo
 - In `uk.ac.stfc.isis.ibex.targetplatform`, open `uk.ac.stfc.isis.ibex.targetplatform.target` and click "set as target platform". 
 - If all else fails, delete all the projects from eclipse's workspace and reimport them.
 
+#### The GUI starts but looks strange and some items (e.g. menu bar, perspective buttons) are missing ####
+
+This can happen if the wrong ".product" file is run and not all plugins are defined in the application.
+
+* Make sure you *only* run ibex.product in uk.ac.stfc.isis.ibex.*client*.product *not* any other ".product" file in the workspace e.g. uk.ac.stfc.isis.ibex.product
