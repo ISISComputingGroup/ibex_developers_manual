@@ -22,7 +22,7 @@ To have a PV automatically archived add the following to the PV record
 
 If you want a PV to appear in the alarm view (and there should be at least one per IOC so that it can show disconnected) then add:
 
-    info(alarm, "<name of IOC>")
+    info(alarm, "<name of IOC no _0X>")
 
 ## 4. PVs Have Essential Fields
 
