@@ -23,7 +23,7 @@ IBEX GUI | Thomas |
 EMMA | Chris
 ENGIN-X | Gareth
 GEM | TBD
-MERLIN | TBD
+MERLIN | David
 
 <a name="definitionSteward"></a>
 ## Definition of the role of Component / Activity Steward
