@@ -18,7 +18,13 @@ To have a PV automatically archived add the following to the PV record
 
     info(archive, "VAL")
 
-## 3. PVs Have Essential Fields
+## 3. Alarm PVs
+
+If you want a PV to appear in the alarm view (and there should be at least one per IOC so that it can show disconnected) then add:
+
+    info(alarm, "<name of IOC>")
+
+## 4. PVs Have Essential Fields
 
 All PVs should have if appropriate:
 
@@ -26,7 +32,7 @@ All PVs should have if appropriate:
 * Unit fields if representing a value (`EGU` field) which may be blank
     * Units must be in ...
 
-## 4. Compliance with DBUnitChecker
+## 5. Compliance with DBUnitChecker
 
 The build in Jenkins will fail if the rules of the [DBUnitChecker](PV-Units) script are not satisfied. You might as well check them before hand to save yourself time later. From an epics terminal in your ioc's app db directory 
 
@@ -34,7 +40,7 @@ The build in Jenkins will fail if the rules of the [DBUnitChecker](PV-Units) scr
 
 To check it will not fail the build.
 
-## 5. Macros
+## 6. Macros
 
 Macros where possible should follow the [standard names](Macro-Naming). If a macro can be set as part of the IOC (and can be reasonably set in the GUI) then a config file should be added to the run directory which contains a list of macros (i.e. `..\EPICS\ioc\master\<IOC Name>\iocBoot\<IOC Instance Name>\config.xml). The file is of the form:
 
