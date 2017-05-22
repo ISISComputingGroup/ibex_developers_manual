@@ -12,6 +12,10 @@ These are tests/checks that should be performed on the IBEX server after a relea
     1. `git status`
     1. Ensure that the message says `up-to-date with 'origin/<Instrument Name>'`.
 1. Confirm that the web dashboard is working for the specific instrument (http://dataweb.isis.rl.ac.uk/)
+1. Ensure that the mysql catalogue is not being updated:
+    1. Start the mysql installer (start menu search for mysql installer - Community)
+    1. Click on the spanner icon
+    1. Ensure that the box `Should MySQL Installer update its catalog periodically?` is unticked
 
 ### LARMOR
 
