@@ -22,7 +22,7 @@ IOC Unit test framework | Isabella |
 IBEX GUI | Thomas |
 EMMA | Chris
 ENGIN-X | Gareth
-GEM | TBD
+GEM | John & Tom
 MERLIN | David
 
 <a name="definitionSteward"></a>
