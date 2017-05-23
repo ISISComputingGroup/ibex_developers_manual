@@ -69,4 +69,5 @@ Jobs:
 # Security
 
 There are two levels of security. Logging into the script server and logging into NICOS. Logging onto the script server allows you to put commands onto the queue. 
-Both passwords and usernames should be readable by the GUI via PVs secured in the block server. In the future we can have users with different levels those that can write to the system can access a different user account to those who don't.
+Both tokens and usernames should be readable by the GUI via PVs secured in the block server. These PVs will be readable only by clients with write access to the server. The token should be auto-generated on start/restart of the script server and obfuscated by hashing and salting.
+In the future we can have users with different levels those that can write to the system can access a different user account to those who don't.
