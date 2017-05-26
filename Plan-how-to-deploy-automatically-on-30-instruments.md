@@ -51,6 +51,30 @@ The long-term goal is to support only Ibex and fully retire SECI. We recognise t
 
 ## Discussion notes
 
+*Based on meeting from 24th May*
+
+The ideal solution for deploying to 30 instruments would be to have a clean Windows 7 VM image that we update with the latest version of Ibex when we want to do a deployment. The existing VMs would then simply be re-imaged to the new version at each deploy, avoiding the need for installation of various pieces of software.
+
+There are several concerns with this approach:
+
+- Given we'll be 'deploying' the whole OS and accompanying software, how long will it take for each instrument?
+- Can we deploy multiple instruments simultaneously? *Presumably if they're all on the same Windows Server, the limiting factor is the disk write speed so deploying multiple instruments will take a similar amount of time in serial versus parallel.*
+- How do we retain the ability to keep running SECI?
+- What if scientists have put information on the VM that they don't realise will be wiped at the next deployment?
+
+With regard to the last question, the proposed solution is to keep the existing VM for SECI and have an identically named VM for Ibex. Only one would be run at a time to avoid conflicts.
+
+One issue that must be addressed to achieve the above solution is to decouple machine-specific information from the VM. The plan would be to store all machine-specific information in Git (e.g. Ibex settings) or on separate managed data drives (e.g. C:\data) which would be symbolically linked to the VMs. This is already the case for much of the data but would need to be extended. Care would need to be taken in a number of cases:
+    - LabView Modules: Currently most of the information in this directory is instrument agnostic, but the .ini files specifically are different for each instrument. We would need to point the VIs that we control via LvDCOM to use .ini files that are somewhere off the VM, probably in the instrument settings. The LabView modules distributed on the Ibex VM could also be stripped eventually to only include the VIs we need.
+    - ISISICP: This program communicates with the DAE and retains information common to SECI and Ibex (e.g. run number). This would need to be placed in a shared space so that the information between the two systems does not go out of sync.
+
+It was noted multiple times that the long-term goal is to stop using SECI. When this becomes practical, the old VM containing SECI can be safely deleted. Until then, the SECI VM should have windows automatic updates enabled so it is updated on startup during the infrequent times it is used. This should limit the amount of additional support work needed to maintain it. In addition, a timeline should be agreed with instrument scientists for each instrument to drop SECI. Otherwise we are likely to find it continuing to be used indefinitely.
+
+## Outstanding questions
+
+- In the solution where Ibex and SECI are on different VMs, how easy would it be for an **instrument scientist** to switch between them? I presume we don't want to give them admin access to VMs so they'd have to call the support team. That raises two issues:
+    - Will that generate too many extra calls to support?
+    - Will everyone who might have the support phone have the ability to do the switch
 
 
 ## Plan of attack
