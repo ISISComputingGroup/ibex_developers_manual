@@ -70,6 +70,8 @@ One issue that must be addressed to achieve the above solution is to decouple ma
 
 It was noted multiple times that the long-term goal is to stop using SECI. When this becomes practical, the old VM containing SECI can be safely deleted. Until then, the SECI VM should have windows automatic updates enabled so it is updated on startup during the infrequent times it is used. This should limit the amount of additional support work needed to maintain it. In addition, a timeline should be agreed with instrument scientists for each instrument to drop SECI. Otherwise we are likely to find it continuing to be used indefinitely.
 
+A first step for implementing this method would be to set up a VM that will work on ZOOM. As this is a new instrument, this can be done without worrying about legacy SECI integration. It was suggested that this be the model for all instruments, and that the current system continue until instruments are ready to switch fully. There is a significant concern with this proposal that many instruments will be highly reluctant to lose their safety net and we'll be stuck with the current system for the foreseeable future.
+
 ## Outstanding questions
 
 - In the solution where Ibex and SECI are on different VMs, how easy would it be for an **instrument scientist** to switch between them? I presume we don't want to give them admin access to VMs so they'd have to call the support team. That raises two issues:
@@ -77,6 +79,7 @@ It was noted multiple times that the long-term goal is to stop using SECI. When 
     - Will everyone who might have the support phone have the ability to do the switch
 - How do we handle post-installation tasks in the proposed solution?
 - How do we do hotfixes in the proposed solution?
+- Will we use the multi-VM solution, or leave hybrid systems as is? In the case of the latter, how do we cope with the unsustainable deployment workload associated with hybrid systems?
 
 ## Plan of attack
 
