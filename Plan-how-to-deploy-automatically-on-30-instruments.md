@@ -81,6 +81,12 @@ A first step for implementing this method would be to set up a VM that will work
 - How do we do hotfixes in the proposed solution?
 - Will we use the multi-VM solution, or leave hybrid systems as is? In the case of the latter, how do we cope with the unsustainable deployment workload associated with hybrid systems? In the short-term, we will have created significant additional work which will take a long time to yield any return. We could at least automate more of the current deployment procedure.
 
-## Plan of attack
-
 ## Next steps
+
+- [ ] Invite Ibex team to review this document
+- [ ] Collate feedback
+- [ ] Populate plan of attack
+- [ ] Verify plan of attack
+- [ ] Create tickets
+
+## Plan of attack
