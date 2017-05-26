@@ -75,7 +75,8 @@ It was noted multiple times that the long-term goal is to stop using SECI. When 
 - In the solution where Ibex and SECI are on different VMs, how easy would it be for an **instrument scientist** to switch between them? I presume we don't want to give them admin access to VMs so they'd have to call the support team. That raises two issues:
     - Will that generate too many extra calls to support?
     - Will everyone who might have the support phone have the ability to do the switch
-
+- How do we handle post-installation tasks in the proposed solution?
+- How do we do hotfixes in the proposed solution?
 
 ## Plan of attack
 
