@@ -79,7 +79,7 @@ A first step for implementing this method would be to set up a VM that will work
     - Will everyone who might have the support phone have the ability to do the switch
 - How do we handle post-installation tasks in the proposed solution?
 - How do we do hotfixes in the proposed solution?
-- Will we use the multi-VM solution, or leave hybrid systems as is? In the case of the latter, how do we cope with the unsustainable deployment workload associated with hybrid systems?
+- Will we use the multi-VM solution, or leave hybrid systems as is? In the case of the latter, how do we cope with the unsustainable deployment workload associated with hybrid systems? In the short-term, we will have created significant additional work which will take a long time to yield any return. We could at least automate more of the current deployment procedure.
 
 ## Plan of attack
 
