@@ -45,6 +45,10 @@ These are the general properties we expect the proposed solution to have:
 
 The long-term goal is to support only Ibex and fully retire SECI. We recognise that owing to ongoing instrument requirements, this is not feasible in the short term. Instruments converted from SECI to Ibex must be able to roll back to Seci and a retirement plan agreed with the scientists. However, we should attempt to expedite this process, particularly on those instruments that have been running Ibex for more than a cycle and are comfortable with the new system.
 
+## Current deployment architecture
+
+![Deployment architecture](architectural_design/images/High-Level-Architectural-Design/deployment_architecture.png)
+
 ## Discussion notes
 
 ## Plan of attack
