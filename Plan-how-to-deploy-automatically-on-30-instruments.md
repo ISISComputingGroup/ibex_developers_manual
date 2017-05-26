@@ -88,7 +88,7 @@ The basic plan of attack is to create a prototype Ibex-only VM and deploy to ZOO
 
 ## Next steps
 
-- [ ] Invite Ibex team to review this document
+- [X ] Invite Ibex team to review this document
 - [ ] Collate feedback
 - [ ] Populate plan of attack
 - [ ] Verify plan of attack
