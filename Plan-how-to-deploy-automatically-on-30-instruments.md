@@ -80,6 +80,11 @@ A first step for implementing this method would be to set up a VM that will work
 - How do we handle post-installation tasks in the proposed solution?
 - How do we do hotfixes in the proposed solution?
 - Will we use the multi-VM solution, or leave hybrid systems as is? In the case of the latter, how do we cope with the unsustainable deployment workload associated with hybrid systems? In the short-term, we will have created significant additional work which will take a long time to yield any return. We could at least automate more of the current deployment procedure.
+- How long will deploying the VM take in the proposed solution? Is it manageable given the time constraints?
+- Can shared systems and data be fully decoupled from the Ibex/SECI VMs so they can be placed in a shared directory?
+
+## Plan of attack
+The basic plan of attack is to create a prototype Ibex-only VM and deploy to ZOOM. This will give useful information about the speed and ease of deployment before proceeding further. A more detailed plan moving forwards will be generated once this document has been reviewed.
 
 ## Next steps
 
@@ -88,6 +93,3 @@ A first step for implementing this method would be to set up a VM that will work
 - [ ] Populate plan of attack
 - [ ] Verify plan of attack
 - [ ] Create tickets
-
-## Plan of attack
-TBC
