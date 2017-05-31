@@ -104,6 +104,11 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
 
 - **upgrade** reapply any hotfixes which are not included in the current release but have been made to the instrument [see notes column in instrument releases table](https://github.com/ISISComputingGroup/IBEX/wiki#instrument-information)
 
+- upgrade the configuration
+    1. check the configuration directory in git (git status) sort out any changes
+    1. run in an epics terminal `python misc\upgrade\master\upgrade.py`
+    1. check the changes to the configuration using git (git status) commit the changes.
+
 - **install** If the machine has no LabVIEW modules directory (c:\LabVIEW Modules) containing sample environment plus DAE programs. Install that now with:
 
     If you are installing EPICS on a non-instrument and need to start the DAE in simulation mode, then you need to (in an epics terminal):  
