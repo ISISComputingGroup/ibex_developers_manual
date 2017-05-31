@@ -53,7 +53,7 @@ For packages that we have modified it ourselves it is just necessary to create a
 
 ### Installing on the instruments
 
-On the instrument connect to the shared drive (\\\\isis\inst$\Kits$\CompGroup\ICP\Client\genie_python) and run the genie_python_install.bat file.
+On the instrument connect to the shared drive (\\\\isis\inst$\Kits$\CompGroup\ICP\genie_python\\[latest version]) and run the genie_python_install.bat file.
 
 Please check that Notepad++ is set to replace tabs with spaces - it saves a lot of bother later when writing scripts.
 
