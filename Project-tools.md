@@ -19,3 +19,7 @@ Tools which can help profile and find memory leaks in a java application.
 ## [Network traffic](Network-traffic)
 
 Tools for helping network traffic issues
+
+## [Config Upgrader](Config-Upgrader)
+
+Tools for upgrading the config
