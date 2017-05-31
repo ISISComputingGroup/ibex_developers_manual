@@ -4,8 +4,8 @@ The config upgrader will upgrade a config to include all the latest changes. Thi
 
 The script looks for a version number in the configuration directory and take the config from there to the latest config using upgrade steps. To run it in an EPICS terminal use:
 
-    cd ...EPICS\misc\upgrade\master
-    python upgrade.py
+    cd ...\EPICS
+    python misc\upgrade\master\upgrade.py
 
 Log files are written to `...\Var\logs\upgrade`.
 
