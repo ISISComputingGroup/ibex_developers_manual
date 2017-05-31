@@ -7,7 +7,7 @@ The script looks for a version number in the configuration directory and take th
     cd ...\EPICS
     python misc\upgrade\master\upgrade.py
 
-Log files are written to `...\Var\logs\upgrade`.
+Log files are written to `...\Var\logs\upgrade`. You will then need to use git to commit any changes. 
 
 ## Adding an upgrade Step
 
