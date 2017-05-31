@@ -11,7 +11,7 @@ Log files are written to `...\Var\logs\upgrade`.
 
 ## Adding an upgrade Step
 
-To add an upgrade step create first create an upgrade class in `...EPICS\misc\upgrade\master\src`. This class should derive from class `UpgradeStep` and have a single function `def perform(self, file_access, logger):` of the form
+To add an upgrade step create an upgrade class in `...EPICS\misc\upgrade\master\src`. This class should derive from class `UpgradeStep` and have a single function `def perform(self, file_access, logger):` so it should be of the form:
 
 ```
 class UpgradeStepFromXpxpx(UpgradeStep):
@@ -40,12 +40,22 @@ Next the step needs to be added to the upgrade list. This is found in `upgrade.p
 UPGRADE_STEPS = [
     ("3.2.1", UpgradeStepFrom3p2p1()),
     ("3.2.1.1", UpgradeStepFrom3p2p1p1()),
-    ("3.2.1.2", UpgradeStepNoOp),
+    ("3.2.1.2", UpgradeStepNoOp()),
     ("3.3.0", None)
 ]
 ```
 
-Add the entry in replacing the `None` with your class, then add a new version label and None. The version label should be of the form "X.X.x.m" where `X.X.x` is from the last production build and `m` is the next number. The `("3.2.1.2", UpgradeStepNoOp)` line is a way of getting from a development configuration to a production build without doing anything.
+Add the entry in replacing the `None` with your class, then add a new version label and None. The version label should be of the form "X.X.x.m" where `X.X.x` is from the last production build and `m` is the next number. The `("3.2.1.2", UpgradeStepNoOp)` line is a way of getting from a development configuration to a production build without doing anything. E.g.
+
+```
+UPGRADE_STEPS = [
+    ("3.2.1", UpgradeStepFrom3p2p1()),
+    ("3.2.1.1", UpgradeStepFrom3p2p1p1()),
+    ("3.2.1.2", UpgradeStepNoOp()),
+    ("3.3.0", MyNewUpgradeStep()),
+    ("3.3.0.1", None
+]
+```
 
 You are now ready to code the perform function to do the upgrade, please use tests. The file system is isolated from the code using file_access and logging should use logger. 
 
@@ -88,7 +98,7 @@ to
 UPGRADE_STEPS = [
     ("3.2.1", UpgradeStepFrom3p2p1()),
     ("3.2.1.1", UpgradeStepNoOp()),
-    ("3.3.0", UpgradeStepNoOp),
+    ("3.3.0", UpgradeStepNoOp()),
     ("3.4.0", None)
 ]
 ```
