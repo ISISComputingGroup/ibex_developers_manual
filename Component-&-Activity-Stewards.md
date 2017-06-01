@@ -24,6 +24,7 @@ EMMA | Chris
 ENGIN-X | Gareth
 GEM | John & Tom
 MERLIN | David
+Delay tickets | John
 
 <a name="definitionSteward"></a>
 ## Definition of the role of Component / Activity Steward
