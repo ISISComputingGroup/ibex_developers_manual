@@ -197,7 +197,7 @@ dbLoadDatabase "${TOP}/dbd/XXXX-IOC-YY.dbd"
 XXXX_IOC_YY_registerRecordDeviceDriver pdbbase
 
 ## calling common command file in ioc 01 boot dir
-< ${TOP}/iocXXXX-IOC-01/st-common.cmd
+< ${TOP}/iocBoot/iocXXXX-IOC-01/st-common.cmd
 
 ```
 
