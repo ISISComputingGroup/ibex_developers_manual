@@ -11,32 +11,9 @@ Download and install [Strawberry Perl](http://strawberryperl.com/)
 # Install WiX toolset (used for building MSI installer files)
 Latest stable version from http://wixtoolset.org/releases/
 
-# Install Visual Studio 2010
-Install Visual Studio 2010
+# Install Visual Studio
 
-Install SDK 7.1 
--The SDK may fail if you have these installed: 
-* Microsoft Visual C++ 2010 x86 Redistributable
-* Microsoft Visual C++ 2010 x64 Redistributable
-
-If these do exist on your computer you need to uninstall them before installing the SDK.
-
-Install: 
-* [Visual Studio 2010 SP1](https://www.microsoft.com/en-gb/download/details.aspx?id=23691)
-* Visual C++ 2010 SP1 Compiler Update for the Windows SDK 7.1
-
-# Install Visual Studio 2013
-Windows SDK 7 has compatibility issues with newer versions of Windows. In this case, Visual Studio 2013 may be used instead.
-
-During the installation of VS2013, under "Optional Features" make sure to include Microsoft Foundation Classes for C++.
-
-Additionally, download and install the [Multibyte MFC Library](https://www.microsoft.com/en-us/download/details.aspx?id=40770).
-
-# Install Visual Studio 2017
-
-Download installer from installer page https://my.visualstudio.com using your stfc email address.
-Choose Desktop development with C++
-from the right check: Windows 10 SDK and MFC and ATL support
+See  [Install Visual Studio](Install-Visual-Studio)
 
 # Install CMake
 Install [CMake](https://cmake.org/download/) 
