@@ -32,9 +32,9 @@ During the installation of VS2013, under "Optional Features" make sure to includ
 
 Additionally, download and install the [Multibyte MFC Library](https://www.microsoft.com/en-us/download/details.aspx?id=40770).
 
-# Install Visual Studio 2013
+# Install Visual Studio 2017
 
-Download installer from msdn licence page ...
+Download installer from installer page https://my.visualstudio.com using your stfc email address.
 Choose Desktop development with C++
 from the right check: Windows 10 SDK and MFC and ATL support
 
