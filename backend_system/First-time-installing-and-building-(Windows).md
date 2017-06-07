@@ -56,7 +56,7 @@ See [Installing and upgrading MySQL](Installing-and-Upgrading-MySQL)
 
 # Install genie_python
 
-Run the `genie_python_install.bat` batch file located in `\\isis\inst$\Kits$\CompGroup\ICP\Client\genie_python`
+Run the `genie_python_install.bat` batch file located in `\\isis\inst$\Kits$\CompGroup\ICP\genie_python\BUILD-<highest number>` 
 
 # Build EPICS back-end
 `cd` to `C:\Instrument\Apps\EPICS\` and run `build.bat`
