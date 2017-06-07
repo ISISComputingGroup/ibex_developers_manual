@@ -51,3 +51,5 @@ The feeling is that the GUI is easy to patch and re-release if necessary and wil
 One aspect of the system we don't currently test much are the OPIs. These should also be tested in the future using automated system tests. This is now feasible given the improvements to automatic emulator port assignment. This would provide less return than new tests in the IOC test framework, particular given the ease of changes to OPIs on-the-fly in the event of a bug.
 
 ## Plan of attack
+- We have discussed a number of issues around sprint planning. These will be considered in subsequent sprints
+- [Ticket #2377](https://github.com/ISISComputingGroup/IBEX/issues/2377) has been created for a stand down to continue automating our existing manual tests. The impact of this will be reviewed at a retrospective.
