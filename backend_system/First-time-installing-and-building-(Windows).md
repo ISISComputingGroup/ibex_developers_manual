@@ -32,6 +32,12 @@ During the installation of VS2013, under "Optional Features" make sure to includ
 
 Additionally, download and install the [Multibyte MFC Library](https://www.microsoft.com/en-us/download/details.aspx?id=40770).
 
+# Install Visual Studio 2013
+
+Download installer from msdn licence page ...
+Choose Desktop development with C++
+from the right check: Windows 10 SDK and MFC and ATL support
+
 # Install CMake
 Install [CMake](https://cmake.org/download/) 
 
