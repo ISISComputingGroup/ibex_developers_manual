@@ -8,7 +8,7 @@ See https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Understand
 
 # Make my Build Faster but less Safe
 
-    Turn of the check release flag (DO NOT CHECK THIS CHANGE IN)
+    Turn off the check release flag (DO NOT CHECK THIS CHANGE IN)
 
     Line 46 of `...EPICS\base\master\configure\CONFIG_COMMON`
 
