@@ -15,13 +15,13 @@ Here are the basic steps to follow:
 ```
 record(scalcout, "$(P)MANAGERMODE")
 {
-	field(ASG, "READONLY")
+    field(ASG, "READONLY")
     field(DESC, "Non-zero if manager is required for this IOC")
     field(PINI, "YES")
-	field(INPA, "$(PVPREFIX)CS:MANAGER CP")
-	field(BB, "$(ASG)")
+    field(INPA, "$(PVPREFIX)CS:MANAGER CP")
+    field(BB, "$(ASG)")
     field(CALC, "A = 0 && BB = 'MANAGER'")
-	field(OOPT, "Every Time")
+    field(OOPT, "Every Time")
 }
 ```
 - Note that you will need to pass in `$(PVPREFIX)` from your `st.cmd` for this to work!
