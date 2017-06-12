@@ -89,7 +89,9 @@ Feedback primarily came from 3 sources: Chris, Kathryn, and an open discussion i
 
 One of the main points of confusion is between the use of VMs and VHDs, and the flexibility of system we can create by intelligently using each of them. VMs would contain the operating system and would need to be read only. VHDs would be used to create read/write areas and would be linked symbolically into the VM.
 
-The plan for Zoom seems to have broad support. The system would be comprised of something like the following:
+The dual VM proposal has not received broad support in the aftermath of the meeting owing to a large degree of overhead in maintenance and the difficulty of switching systems when a support member is not present.
+
+The plan for Ibex-only systems (e.g. Zoom) seems to have broad support. The system would be comprised of something like the following:
 
 - A VM containing the OS and essential system software (including IBEX dependencies like MySQL).
 - A VHD containing instrument data (including var). This is how it exists at the moment
@@ -98,7 +100,9 @@ The plan for Zoom seems to have broad support. The system would be comprised of 
 
 There also needs to be a decision on where to keep LabView modules. What we would need for sole Ibex compatibility (i.e. a system that no longer has SECI) is a cut down folder of those VIs we need for Ibex. Those VIs would be directed to read their settings from configuration files stored in the standard Ibex settings directory (which may need adding to version control).
 
-The overall goal is to move all instruments to this model, which will require a realistic timeline to be set for removal of SECI from existing systems, at which point they could move to a ZOOM-style architecture. In the mean time, there is not a great deal to be gained from a partial architectural migration which would only add risk and complexity. **However**, significant time and reproducibility could be gained from automating many of the existing deployment steps. I would therefore propose the creation of 2 tickets:
+The overall goal is to move all instruments to this model, which will require a realistic timeline to be set for removal of SECI from existing systems, at which point they could move to a ZOOM-style architecture. 
+
+For existing SECI+Ibex instruments, there are significant risks and challenges involved in trying to migrate to this kind of architecture owing to the difficulty of separating the read-only and read/write components of SECI. This separation would be time consuming, high risk, and with little benefit in the long term since we intend to migrate away from SECI entirely. **However** on these systems significant time and reproducibility could be gained from automating many of the existing deployment steps. I would therefore propose the creation of 2 tickets:
 
 1. Automate as much of the deployment process as possible (which coincidentally was Tom's original ticket)
 2. Create a VM + multiple VHD architecture with Ibex for NDXZOOM to prove the concept of a simplified architecture on an Ibex-only systems.
