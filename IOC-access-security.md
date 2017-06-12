@@ -10,6 +10,21 @@ Here are the basic steps to follow:
 - For instrument specific DB records, it is ok to hard-code the ASG (for example, `field(ASG, "MANAGER")`)
 - For general IOCs, the access security group should be defined as a macro (e.g. `field(ASG, "$(ASG=DEFAULT)")`). Giving the `ASG` macro a default value of `DEFAULT` will mean that existing instruments using this IOC will be unaffected.
 - The `ASG` macro can then be supplied from an `st.cmd`, or a `globals.txt` as appropriate. The two useful values for the ASG macro for setting up access security are `DEFAULT` (acts as normal) and `MANAGER` (with access security).
+- OPIs that might be protected by access security should have the access security widget in them. This can be copy-pasted from the template OPI.
+- The access security widget in the OPI depends on a PV provided from the IOC in the following way:
+```
+record(scalcout, "$(P)MANAGERMODE")
+{
+	field(ASG, "READONLY")
+    field(DESC, "Non-zero if manager is required for this IOC")
+    field(PINI, "YES")
+	field(INPA, "$(PVPREFIX)CS:MANAGER CP")
+	field(BB, "$(ASG)")
+    field(CALC, "A = 0 && BB = 'MANAGER'")
+	field(OOPT, "Every Time")
+}
+```
+- Note that you will need to pass in `$(PVPREFIX)` from your `st.cmd` for this to work!
 
 _(If you need a "real world" example, the jaw set on Polaris has been set up using access security.)_
 
