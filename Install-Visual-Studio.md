@@ -25,9 +25,9 @@ Additionally, download and install the [Multibyte MFC Library](https://www.micro
 
 Download installer from installer page https://my.visualstudio.com using your stfc email address.
 Choose Desktop development with C++
-from the right check: Windows 10 SDK and MFC and ATL support
+from the right check: the most recent Windows 10 SDK and MFC and ATL support
 
-#Installing a new Version of Visual Studio
+# Installing a new Version of Visual Studio
 
 If you are on a new version of visual studio (2019?) then you will need to upgrade various files to take this into account. Below is a list of things we needed to do when upgrading to 2017 your list may be different.
 
