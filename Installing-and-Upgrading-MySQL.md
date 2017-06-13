@@ -2,7 +2,26 @@
 
 # Install first time
 
-- Copy the installer from `\\isis\inst$\Kits$\External\BuildServer(ndwvegas)\mysql-installer-community-X.X.X.0.msi` to your local machine.
+- Download the latest mysql  community installer from [mysql site](https://dev.mysql.com/downloads/mysql/)
+- Create the folder tree `C:\ProgramData\MySQL\MySQL Server 5.7` (this will cause the installer to ask you to enter a data directory)
+- Run the community installer as admin and do the following:
+    - Licence page: accept licence
+    - Server type: select server only (Development is good if you want mysql workbench but will require more checks later)
+    - Path Conflict: Set the data dir to `C:\Instrument\var\mysql` (If this page doesn't appear go back to creatig the folder tree)
+    - Installation: click execute
+    - Product Config: next
+    - Type and Network: Server (dev is also acceptable), other defaults are fine
+    - Account: Use the password from the passwords page
+    - Windows Service: Accept defaults
+    - Plugin and Extensions: defaults (no document database)
+    - Apply Server Config: execute
+- Now reopen installer
+    - click the spanner icon and turn off update of catalogue
+
+
+***** Edited down to here ****
+
+
 - Create a command windows as an admin
 - cd to where you copied it to
 - Run in that window; with passwords replaced by standard password and versions (5.7.17) by current version.
