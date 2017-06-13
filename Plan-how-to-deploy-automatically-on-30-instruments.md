@@ -1,5 +1,3 @@
-# Plan how to deploy automatically on 30 instruments
-
 ## Preface
 
 This document is related to Ibex issue [#2152](https://github.com/ISISComputingGroup/IBEX/issues/2152) and the content is from the subsequent discussion on 24th May 2017
@@ -74,14 +72,14 @@ A first step for implementing this method would be to set up a VM that will work
 
 ## Outstanding questions
 
-- In the solution where Ibex and SECI are on different VMs, how easy would it be for an **instrument scientist** to switch between them? I presume we don't want to give them admin access to VMs so they'd have to call the support team. That raises two issues:
-    - Will that generate too many extra calls to support?
-    - Will everyone who might have the support phone have the ability to do the switch
-- How do we handle post-installation tasks in the proposed solution?
-- How do we do hotfixes in the proposed solution?
-- Will we use the multi-VM solution, or leave hybrid systems as is? In the case of the latter, how do we cope with the unsustainable deployment workload associated with hybrid systems? In the short-term, we will have created significant additional work which will take a long time to yield any return. We could at least automate more of the current deployment procedure.
-- How long will deploying the VM take in the proposed solution? Is it manageable given the time constraints?
-- Can shared systems and data be fully decoupled from the Ibex/SECI VMs so they can be placed in a shared directory?
+1. In the solution where Ibex and SECI are on different VMs, how easy would it be for an **instrument scientist** to switch between them? I presume we don't want to give them admin access to VMs so they'd have to call the support team. That raises two issues:
+    1. Will that generate too many extra calls to support?
+    1. Will everyone who might have the support phone have the ability to do the switch
+1. How do we handle post-installation tasks in the proposed solution?
+1. How do we do hotfixes in the proposed solution?
+1. Will we use the multi-VM solution, or leave hybrid systems as is? In the case of the latter, how do we cope with the unsustainable deployment workload associated with hybrid systems? In the short-term, we will have created significant additional work which will take a long time to yield any return. We could at least automate more of the current deployment procedure.
+1. How long will deploying the VM take in the proposed solution? Is it manageable given the time constraints?
+1. Can shared systems and data be fully decoupled from the Ibex/SECI VMs so they can be placed in a shared directory?
 
 ## Feedback and plan of attack
 
