@@ -29,19 +29,21 @@ will enable ASYN_TRACE_ERROR and ASYN_TRACE_FLOW on port "L0" but just for addre
 If  ASYN_TRACEIO_DRIVER has been enabled, then this mask determines the format of the output produced. The default is ASYN_TRACEIO_NODATA so the count of bytes transferred is reported, but the bytes themselves are not printed.
 
 * 0x0  (ASYN_TRACEIO_NODATA) - print count of bytes transferred, but not bytes themselves
-* 0x1  (ASYN_TRACEIO_ASCII)  - Print with a "%s" style format
-* 0x2  (ASYN_TRACEIO_ESCAPE) - Calls epicsStrPrintEscaped() to display characters.
-* 0x4  (ASYN_TRACEIO_HEX)    - Print hexadecimal values of each byte with " %2.2x".
+* 0x1  (ASYN_TRACEIO_ASCII)  - Print bytes with a "%s" style format
+* 0x2  (ASYN_TRACEIO_ESCAPE) - Calls epicsStrPrintEscaped() to display bytes
+* 0x4  (ASYN_TRACEIO_HEX)    - Print hexadecimal values of each byte with " %2.2x"
+
+So
 
 `asynSetTraceIOMask("L0",-1,0x2)`
 
-would enable ASYN_TRACEIO_ESCAPE printing of bytes read/written
+would enable ASYN_TRACEIO_ESCAPE style printing of all bytes read/written by the asyn driver
 
 ## Additional trace information
 
-This mask determines the information printed at the start of each message
+This mask determines the information printed at the start of each message above. The default is ASYN_TRACEINFO_TIME which just adds a timestamp
 
-* 0x1  (ASYN_TRACEINFO_TIME)   prints the date and time of the message 
+* 0x1  (ASYN_TRACEINFO_TIME)   prints the date and time of the message (default)
 * 0x2  (ASYN_TRACEINFO_PORT)   prints [port,addr,reason], where port is the port name, addr is the asyn address, and reason is pasynUser->reason. These are the 3 pieces of "addressing" information in asyn.
 * 0x4  (ASYN_TRACEINFO_SOURCE) prints the file name and line number, i.e. [__FILE__,__LINE__] where the asynPrint or asynPrintIO statement occurs.
 * 0x8  (ASYN_TRACEINFO_THREAD)  prints the thread name, thread ID and thread priority, i.e. [epicsThreadGetNameSelf(), epicsThreadGetIdSelf(), epicsThreadGetPrioritySelf()].
