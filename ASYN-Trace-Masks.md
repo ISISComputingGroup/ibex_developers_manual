@@ -48,4 +48,10 @@ This mask determines the information printed at the start of each message above.
 * 0x4  (ASYN_TRACEINFO_SOURCE) prints the file name and line number, i.e. [__FILE__,__LINE__] where the asynPrint or asynPrintIO statement occurs.
 * 0x8  (ASYN_TRACEINFO_THREAD)  prints the thread name, thread ID and thread priority, i.e. [epicsThreadGetNameSelf(), epicsThreadGetIdSelf(), epicsThreadGetPrioritySelf()].
 
+## Logging to file
+
+By default the trace output is sent to the epics error log (which by default echoes to console too), but it can instead be sent to file e.g.
+
+`asynSetTraceFile("L0",-1,"temp.log")`
+
 
