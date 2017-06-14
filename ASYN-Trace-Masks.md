@@ -1,10 +1,10 @@
 # ASYN trace facility 
 
-For asyn based drivers, such as stream device, additional information printing can be enabled on a port via commands from the ioc shell. 
+For asyn based drivers, such as stream device, additional information printing can be enabled on a port via commands from the ioc shell. The commands let you see what bytes are being sent and received, and also the flow of control/logic.
 
 ## The ASYN trace mask
 
-This is set to 0x1 (ASYN_TRACE_ERROR) by default, the following additional values
+This determines what you see and is set to 0x1 (ASYN_TRACE_ERROR) by default. The following additional values
 can be ORed together and optionally set:
 
 * 0x1   (ASYN_TRACE_ERROR)    - Print error messages (default)
@@ -18,7 +18,7 @@ If L0 if your asyn port, then
 
 `asynSetTraceMask("L0",-1,0x9)`
 
-will enable ASYN_TRACE_ERROR and ASYN_TRACEIO_DRIVER for all addresses (-1) on port "L0" which is a good place to start for debugging. You may also want to add ASYN_TRACE_FLOW but this can print a bit too much depending on the driver and you loose the IO device messages amongst them. 
+will enable ASYN_TRACE_ERROR and ASYN_TRACEIO_DRIVER for all addresses (-1) on port "L0" which is a good place to start for debugging. You may also want to use ASYN_TRACE_FLOW but this can print a bit too much depending on the driver and you may loose your IO device messages amongst them. If you want to try this separately then e.g. 
 
 `asynSetTraceMask("L0",0,0x11)`
 
@@ -26,9 +26,9 @@ will enable ASYN_TRACE_ERROR and ASYN_TRACE_FLOW on port "L0" but just for addre
 
 ## ASYN traceIO mask
 
-If  ASYN_TRACEIO_DRIVER has been enabled, then this mask determines the format of the output produced. The default is ASYN_TRACEIO_NODATA so the count of bytes transferred is reported, but the bytes themselves are not printed.
+If  ASYN_TRACEIO_DRIVER  has been enabled, then this mask determines the format of the output produced when reporting I/O. The default is ASYN_TRACEIO_NODATA so the count of bytes transferred is reported, but the bytes themselves are not printed.
 
-* 0x0  (ASYN_TRACEIO_NODATA) - print count of bytes transferred, but not bytes themselves
+* 0x0  (ASYN_TRACEIO_NODATA) - Print count of bytes transferred, but not bytes themselves
 * 0x1  (ASYN_TRACEIO_ASCII)  - Print bytes with a "%s" style format
 * 0x2  (ASYN_TRACEIO_ESCAPE) - Calls epicsStrPrintEscaped() to display bytes
 * 0x4  (ASYN_TRACEIO_HEX)    - Print hexadecimal values of each byte with " %2.2x"
@@ -37,11 +37,11 @@ So
 
 `asynSetTraceIOMask("L0",-1,0x2)`
 
-would enable ASYN_TRACEIO_ESCAPE style printing of all bytes read/written by the asyn driver
+would enable ASYN_TRACEIO_ESCAPE style printing of all bytes read/written by the asyn driver via port "L0", which is a good place to start
 
 ## Additional trace information
 
-This mask determines the information printed at the start of each message above. The default is ASYN_TRACEINFO_TIME which just adds a timestamp
+This mask determines the information printed at the start of each message above. The default is ASYN_TRACEINFO_TIME which just adds a timestamp, normally this is sufficient but it can be changed by calling  asynSetTraceInfoMask  with a combination of flags:
 
 * 0x1  (ASYN_TRACEINFO_TIME)   prints the date and time of the message (default)
 * 0x2  (ASYN_TRACEINFO_PORT)   prints [port,addr,reason], where port is the port name, addr is the asyn address, and reason is pasynUser->reason. These are the 3 pieces of "addressing" information in asyn.
