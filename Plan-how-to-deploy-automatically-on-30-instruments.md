@@ -110,5 +110,5 @@ For existing SECI+Ibex instruments, there are significant risks and challenges i
 - [X] Invite Ibex team to review this document
 - [X] Collate feedback
 - [X] Populate plan of attack
-- [ ] Verify plan of attack
-- [ ] Create tickets
+- [X] Verify plan of attack
+- [X] Create tickets
