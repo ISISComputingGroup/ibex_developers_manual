@@ -54,14 +54,14 @@ To test the blockserver webserver:
 
 To test JSON_Bourne:
 * Run webserver.py
-* Navigate in a browser to http://localhost:60000/?callback=parseObject&Instrument=_instrument name_&
+* Navigate in a browser to http://localhost:60000/?callback=parseObject&Instrument=<instrument-name>
 
 To test the website on a developer machine:
-* Open default.html with the variable of ?Instrument=_instrument name_ e.g. go to file://JSON_bourne/default.html?Instrument=larmor in a browser to view larmor's dashboard
+* Open default.html with the variable of ?Instrument=<instrument-name> e.g. go to `file://JSON_bourne/default.html?Instrument=larmor` in a browser to view larmor's dashboard
 
 To be able to see your instrument as well:
-* Add your instrument to the ALL_INSTS dictionary in webserver.py
+* Add your instrument to the ALL_INSTS dictionary in `webserver.py`
 * Run your instrument
-* Run webserver.py
+* Run `webserver.py`
 * Edit display\_blocks.js to look at http://localhost rather than http://dataweb.isis.rl.ac.uk
 * Open default.html with the variable of ?Instrument=_name that you entered into dict_
