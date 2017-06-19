@@ -50,7 +50,7 @@ Clone the repository at https://github.com/ISISComputingGroup/JSON_bourne
 
 To test the blockserver webserver:
 * Start your instrument
-* Navigate to localhost:8008 in a browser
+* Navigate to `localhost:8008` in a browser
 
 To test JSON_Bourne:
 * Run webserver.py
