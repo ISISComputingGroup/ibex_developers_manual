@@ -3,16 +3,15 @@
 # Introduction
 OPIs live in `ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources`
 
-Start CSS studio to create/edit an OPI (see `EPICS\CSS\master\start_css.bat`)
+ - Start CSS studio to create/edit an OPI (see `EPICS\CSS\master\start_css.bat`)
+ - Load in the project in `ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources`: File -> Import -> General -> Existing Projects into Workspace.
 
-Load in the project in `ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources`: File -> Import -> General -> Existing Projects into Workspace.
+ - Set the correct path for the Fonts and Colours files: Edit -> Preferences -> CSS Applications -> Display -> BOY. For the colour file choose `/resources/Share/isis_colours.def`; for the font file choose `/resources/Share/isis_fonts.def`.
 
-Set the correct path for the Fonts and Colours files: Edit -> Preferences -> CSS Applications -> Display -> BOY. For the colour file choose `/resources/Share/isis_colours.def`; for the font file choose `/resources/Share/isis_fonts.def`.
-
-Create a new OPI with File -> New  BOY -> OPI File
-Change to the "OPI Editor" prespective to allow easier editing.
-
-Edit the OPI not that some Macros are provided.
+ - Create a new OPI with File -> New  BOY -> OPI File
+ - Change to the "OPI Editor" perspective to allow easier editing.
+ - Edit the OPI. 
+ - Also add an entry to the `opi_info.xml` file which can be found in `resources\opi_info.xml`. Note that some Macros are provided (See below).
 
 ## Consistency - Template OPI
 In order to promote consistency in look and feel between different OPIs, we have created a template OPI in `ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources\template.opi`. Please follow the guidelines provided in this template, including ALL fonts and colours (is probably easiest to just copy the widgets from this template). If you're adding new widgets in your OPI which are not covered by this template, please add them to the template.
