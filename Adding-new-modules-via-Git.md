@@ -31,10 +31,10 @@ There are two use cases for adding a submodule:
 
 1. Move to a new branch in the EPICS directory for your ticket. 
 1. Create a directory root for the submodule, e.g. for danfysik in support
-
+```
     cd EPICS/support
     mkdir danfysikMps8000
-
+```
 1. Add a Makefile in the directory, copy it from e.g. ../calc/Makefile  
 1. Create a macro for the repository in `...EPICS\configure\MASTER_RELEASE` 
 1. Adjust the Makefile in the parent directory to include the new module, e.g. add to `SUPPDIRS` in `...EPICS\support\Makefile`.
@@ -45,33 +45,33 @@ There are two use cases for adding a submodule:
 Software imported from outside should use a "vendor branch" so new versions are easy to merge in. 
 
 1. Create new git repository called master:
-
+```
     cd EPICS/support/danfysik8000
     mkdir master
     cd master
     git init
-
+```
 1. Unpack the initial vendor code. Often unpacking the code on Linux is preferred as there are less line endings issues.
 1. If it unpacks to something like 1-11/... then move everything up a level. You want the top level directory to contain the usual EPICS configure and *App directory layout. 
 1. Delete any files that are not source files or directories e.g. O.Common, O.linux-x86 , top level bin and lib, db that might have got left in.  
 1. Delete any .svn directories and files that end in a ~ (temporary files). Then add the files and push to GitHub
- 
+ ```
     git add .
     git commit -m "Imported danfysik 8000 version 1.11"
     git remote add origin https://github.com/ISISComputingGroup/EPICS-danfysik8000.git
     git push -u origin master
-
+```
 1. Create the vendor branch
-
+```
     git checkout -b vendor
     git tag -a vendor_1_11 -m "Tag of danfysik 8000 import version 1.11"
     git push origin vendor
     git push --tags
-
+```
 1. Switch to the branch for your ticket (When you create the pull request it can be created from this branch to master):
-
+```
     git checkout TicketXXX_description
-
+```
 1. Make local changes. 
     - Create a readme.md to say where we got the code originally from 
     - Add an initial .gitattributes and .gitignore (often using a copy from an older repo).
@@ -81,14 +81,14 @@ Software imported from outside should use a "vendor branch" so new versions are 
 ## 3b *New* Initial import
 
 1. Clone the repository in to the correct directory with the directory name master:
-
+```
     cd EPICS/support/danfysik8000
     git clone https://github.com/ISISComputingGroup/<repo name>.git master
-
+```
 1. Switch to the branch for your ticket (When you create the pull request it can be created from this branch to master):
-
+```
     git checkout TicketXXX_description
-
+```
 1. Edit/Create a readme.md to say what the module does 
 1. Add an initial .gitattributes and .gitignore (often using a copy from an older repo).
 
@@ -117,30 +117,30 @@ Once all the changes are done then create a pull request in the usual way for th
 ## Updating vendor branch
 
 First checkout the vendor branch and remove all files
-
+```
     git checkout vendor
     rm -fr *
-
+```
 Then unpack the new code into the directory in the same was as above. You'll have files added, removed and changed to handle. Type  git status  and remove unwanted files like like binaries and temporary files as described above. Then type  
-
+``
     git add -u .
-
+```
 This will add changed files. Again check with a   git status  that all is looking right before using 
-
+```
     git add .
-
+```
 to add new and remove deleted files. Then commit and tag the changes
-
+```
     git commit -m "Imported danfysik 8000 version 1.12"
     git tag -a vendor_1_12 -m "Tag of danfysik 8000 import version 1.12"
     git push origin vendor
     git push --tags
-
+```
 Now you need to go back to your ticket branch and merge in new version of vendor code
-
+```
     git checkout TicketXXX_
     git pull
     git merge vendor_1_12
-
-And resolve conflicts before committing
+```
+And resolve conflicts before committing.
 
