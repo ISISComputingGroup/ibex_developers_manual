@@ -56,4 +56,12 @@ By default the trace output is sent to the epics error log (which by default ech
 
 `asynSetTraceFile("L0",-1,"temp.log")`
 
+# Getting (VERY VERBOSE) output from stream device.
+
+In your `st.cmd`, add the following line:
+
+`var streamDebug 1`
+
+This will turn on debug logging from stream device which is very verbose.
+
 
