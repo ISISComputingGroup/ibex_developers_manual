@@ -65,3 +65,6 @@ To be able to see your instrument as well:
 * Run `webserver.py`
 * Edit display\_blocks.js to look at http://localhost rather than http://dataweb.isis.rl.ac.uk
 * Open default.html with the variable of ?Instrument=_name that you entered into dict_
+
+## Future Development Ideas
+* We need to improve the unit test coverage of this project. It would be worth looking into the [requests-mock](https://pypi.python.org/pypi/requests-mock) library as this would make it very easy to test server code which makes HTTP requests.
