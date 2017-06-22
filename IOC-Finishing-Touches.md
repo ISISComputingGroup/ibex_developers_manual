@@ -18,6 +18,17 @@ To have a PV automatically archived add the following to the PV record
 
     info(archive, "VAL")
 
+This will archive the value of the `VAL` field once per second. The general form is 
+
+    info(archive, "<period> <field>")
+
+Where
+
+    * period (defaults to 1): 
+        * when +ve - scan the value every period seconds
+        * when -ve - monitor the value the value is the deadband for the system
+    * field: the field to monitor on the record
+
 ## 3. Alarm PVs
 
 If you want a PV to appear in the alarm view (and there should be at least one per IOC so that it can show disconnected) then add:
