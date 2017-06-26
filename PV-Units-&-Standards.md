@@ -12,7 +12,7 @@ Current error checks are:
 - All units must conform to unit standards (see below)
 - PVs that are labelled as interesting must have description fields
 - The names of PVs that are labelled as interesting must be capitialised and contain only `A-Z 0-9 _ :`
-- `calc`, `calcout`, and `transform` records that are marked as interesting must be have their access security group (`ASG`) set to `READONLY`.
+- `calc` records that are marked as interesting must be have their access security group (`ASG`) set to `READONLY`.
 
 Current warning are:
 
