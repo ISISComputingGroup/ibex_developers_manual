@@ -26,7 +26,7 @@ Building a new IOC? Before you get started, take a look at the relevant [instrum
 
 * [PV naming](PV-Naming)
 
-* [PV units & standards](PV-Units)
+* [PV units & standards](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/PV-Units-&-Standards)
 
 * [Macro naming](Macro-Naming)
 
