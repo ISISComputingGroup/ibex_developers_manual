@@ -64,7 +64,7 @@ JMS does not buffer topic messages so any consumer who is not connected to the J
 
 The Topic for IOC log messages is '/topic/iocLogs'.
 
-The default port for sending and receiving JMS messages on ActiveMQ is 61616.
+The default port for sending and receiving JMS messages on ActiveMQ is 61616. However, we have switched to using 39990 to keep it in the fixed port range and avoid clashes.
 
 # Development Tools
 In the subdirectory '...\EPICS\ISIS\IocLogServer\master\dev-tools' are a number of python scripts to aid in development and debugging of the log server and eclipse clients that consume log messages.
@@ -149,7 +149,7 @@ A typical message might look like:
 * IOC caput log port: 7011
 * Log server address: localhost
 * JMS server address: localhost
-* JMS server port: 61616
+* JMS server port: 39990
 * JMS message topic: iocLogs
 * SQL server address: localhost
 * SQL server port: 3306
