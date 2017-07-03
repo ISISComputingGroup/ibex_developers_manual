@@ -59,23 +59,9 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
     [See the back-end getting started guide](First-time-installing-and-building-(Windows)#setting-up-a-configurations-directory)
 
 - **install** Check that the version of MySQL installed corresponds to the version required for the release
-   - If MySQL is already installed, locate the current data directory and make sure that any pre-existing data is backed up.
-   - If a different version of MySQL is already installed, you should remove it and install the correct version of MySQL as listed on the release notes. Note that versions 3.2 and before all used v5.6.
-   - If MySQL is not already installed, or you are doing a clean re-install:
-      - download the MySQL installer `mysql-installer-community-5.6.35.0` from `\\isis\inst$\Kits$\External\BuildServer(ndwvegas)`. This will need to be done with admin privileges
-      - create a folder at `C:\ProgramData\MySQL\MySQL Server 5.6`, the installer needs a conflict with a pre-existing directory to prompt you to name a new directory.
-      - run the MySQL installer, again with admin privileges
-      - click "Add" to add a new product
-      - select the latest version of MySQL, 64-bit. This will be the one offered by default.
-      - during the MySQL installation process,
-         - use the password specified on the passwords page
-         - select a "server only" installation
-         - change the data path to `C:\Instrument\var\mysql`
-         - choose "server machine" during configuration
-         - leave TCP/IP enabled
-         - leave it configured as a windows service
-      - You may need to re-boot after installing MySQL
-      - In the installer make sure that you click the spanner icon and turn off update of catalogue.
+   - If MySQL is already installed, locate the current data directory and make sure that any pre-existing data is backed up. (See [Installing and upgrading MySQL](Installing-and-Upgrading-MySQL))
+   - If a different version of MySQL is already installed, you should upgrade to the correct version of MySQL (See [Installing and upgrading MySQL](Installing-and-Upgrading-MySQL))
+   - If mysql is not installed then install it. (See [Installing and upgrading MySQL](Installing-and-Upgrading-MySQL))
 
 ## Install EPICS
 
