@@ -13,7 +13,17 @@ PV names are restricted to alphanumerical, plus `_` and `:` so `[A-Z0-9_:]*` Ite
 
 PV names must start with a letter and must not end with `_` for now (maybe adopt NSLS2 convention of trailing `_` = private names?)
 
-We can create a separate PV name to describe actual hardware type 
+We can create a separate PV name to describe actual hardware type.
+
+Having followed the [IOC-Naming](OC-Naming) the PV will be:
+
+    PR:INSTXXCR:DEVICEXX_NN:PVNAME
+
+ - PR (max 2): Instrument prefix TE - test, IN - Instrument
+ - INST__CR (max 8): Instrument name max 8 characters, if longer then last 2 characters are replaced with a CR16
+ - DEVICEXX_99 (max 11): Name of the device with the device index after it. Device index is a two digit number
+ - PVNAME (max 36): PV name
+
 
 # IOCs with multiple devices
 
