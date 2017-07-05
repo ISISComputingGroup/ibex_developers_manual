@@ -11,7 +11,7 @@ It was decided that a proxy client should be written to sit between IBEX and NIC
 * Libraries to handle pickled objects in JAVA exist but are underdeveloped
 * Low level socket communication is not something that the GUI currently does
 
-Instead it was decided that the technology to communicate between the GUI and NICOS (via the proxy) would be JSON being transferred over ActiveMQ queues. Both of these technologies are already used extensively elsewhere in IBEX. The log messages use an ActiveMQ queue to send messages back to the client and JSON is used to communicate between the blockserver and GUI (using the well established GSON library)
+Instead it was decided that the technology to communicate between the GUI and NICOS (via the proxy) would be JSON being transferred over [ActiveMQ queues](ActiveMQ). Both of these technologies are already used extensively elsewhere in IBEX. The log messages use an ActiveMQ queue to send messages back to the client and JSON is used to communicate between the blockserver and GUI (using the well established GSON library)
 
 ## Implementation
 
