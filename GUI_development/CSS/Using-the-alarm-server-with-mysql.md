@@ -4,7 +4,7 @@ Inside the EPICS_PILOT repository, there are pre-built executables for the Alarm
 
 Apache's ActiveMQ will need to be installed somewhere and be accessible. ActiveMQ provides the Java Message Service (JMS) used by CSS to communicate with the various parts of the system.
 
-[ActiveMQ](http://activemq.apache.org/)
+[ActiveMQ](ActiveMQ)
 
 # Creating a configuration
 
