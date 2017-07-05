@@ -19,3 +19,7 @@ EDIT THE SECTION TO READ
     CHECK_RELEASE_NO = noCheckRelease
     CHECK_RELEASE_WARN = warnRelease
 
+# Make Notepad++ Highlight DB Syntax
+
+In Notepad++ Menu -> Language -> Define Your Language
+Then import the file `...EPICS\editors\Notepad++\userDefineLang.xml`
