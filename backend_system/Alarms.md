@@ -25,7 +25,7 @@ The alarm server reads the configuration from the database and continuously moni
 For each instrument, there will be a single instance of the alarm server, JMS server and database server, probably all on the same machine.
 
 # JMS server #
-The JMS server implementation used is Apache ActiveMQ, an instance of which is started up along with the IOC log server. See the [IOC log](Ioc-message-logging) page for details.
+The JMS server implementation used is Apache [ActiveMQ](ActiveMQ), an instance of which is started up along with the IOC log server. See the [IOC log](Ioc-message-logging) page for details.
 
 # Alarm Server #
 The alarm server can be found in EPICS/ISIS/AlarmServer. Currently it is a pre-built version. It would be useful to have a version with source code that can be modified in Eclipse and built as part of the Jenkins build. Only the plugin 'org.csstudio.alarm.beast.server' would be needed.
