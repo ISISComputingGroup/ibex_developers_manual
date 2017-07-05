@@ -23,7 +23,7 @@ It is likely that the Log server, JMS server, and Database server will all live 
 
 The log server is written in Java and may be found in the directory `EPICS/ISIS/IocLogServer/`.
 
-Also included in this directory are an instance of Apache ActiveMQ (a JMS server implementation), some tools written in python to aid development, and some start-up and build scripts.
+Also included in this directory are an instance of Apache [ActiveMQ](ActiveMQ) (a JMS server implementation), some tools written in python to aid development, and some start-up and build scripts.
 
 ## Functionality
 
