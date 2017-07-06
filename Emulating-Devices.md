@@ -71,41 +71,12 @@ The backdoor can be operated either via the command line through `lewis-control`
 
 ## Connecting your IOC
 
-So, we've got our emulator running, now we need to get our IOC talking to it. Go to `st.cmd` for your IOC and find where the serial port communication is configured, for instance:
+So, we've got our emulator running, now we need to get our IOC talking to it. For this to work it needs to use the standard st.cmd setup so it works with the IOC testing framework. Then in your `globals.txt` do the following:
 
-```
-drvAsynSerialPortConfigure("$(DEVICE)", "$(PORT)", 0, 0, 0, 0)
-asynSetOption("$(DEVICE)", -1, "baud", "$(BAUD=9600)")
-asynSetOption("$(DEVICE)", -1, "bits", "$(BITS=8)")
-asynSetOption("$(DEVICE)", -1, "parity", "$(PARITY=none)")
-asynSetOption("$(DEVICE)", -1, "stop", "$(STOP=1)")
-asynOctetSetInputEos("$(DEVICE)", -1, "$(OEOS=\n)")
-```
+ - Add a line to set the IOC into dev sim `<IOC name>__DEVSIM=1` (this can go in the configuration)
+ - Set the port it should be communicating on (must be free) `<IOC name>__EMULATOR_PORT=57677`
 
-Replace it with a macro defined by IBEX backend which comments it out when set
-
-```
-$(IFNOTDEVSIM) drvAsynSerialPortConfigure("$(DEVICE)", "$(PORT)", 0, 0, 0, 0)
-$(IFNOTDEVSIM) asynSetOption("$(DEVICE)", -1, "baud", "$(BAUD=9600)")
-$(IFNOTDEVSIM) asynSetOption("$(DEVICE)", -1, "bits", "$(BITS=8)")
-$(IFNOTDEVSIM) asynSetOption("$(DEVICE)", -1, "parity", "$(PARITY=none)")
-$(IFNOTDEVSIM) asynSetOption("$(DEVICE)", -1, "stop", "$(STOP=1)")
-$(IFNOTDEVSIM) asynOctetSetInputEos("$(DEVICE)", -1, "$(OEOS=\n)")
-```
-
-and then add
-
-```
-$(IFDEVSIM) drvAsynIPPortConfigure("$(DEVICE)", "localhost:[PORT]")
-```
-
-where again `[PORT]` is replaced with the port number we're running on. We could factor this out into a non-hard-coded macro in `globals.txt` but a lot of the time it's easier just to do it here.
-
-Enabling and disabling IFDEVSIM can be done via the IBEX GUI if the whole IBEX system is running. Otherwise, if you are just testing one IOC then it can be enabled in the globals.txt file in one's configuration folder (`C:\Instrument\Settings\config\NDWXXX\configurations\globals.txt`) like so:
-
-```
-JULABO_01__DEVSIM=1
-```
+IOC name is the name of the ioc e.g. `EUROTHRM_01`
 
 ## GO!
 
