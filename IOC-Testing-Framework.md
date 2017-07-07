@@ -10,61 +10,49 @@ Instructions for running the tests, adding new tests etc. are provided in the RE
 
 # The IOCs
 The IOCs need to have their st.cmd or st-common.cmd editing to enable them to work with the testing framework.
-Here is an example st-common.cmd from the Julabo:
+Here is an example st-common.cmd from the AMINT2L:
 
 ```
-epicsEnvSet "STREAM_PROTOCOL_PATH" "$(JULABO)/julaboApp/protocol"
+epicsEnvSet "STREAM_PROTOCOL_PATH" "$(AMINT2L)/data"
 
-cd ${TOP}
-
-##ISIS## Run IOC initialisation
+##ISIS## Run IOC initialisation 
 < $(IOCSTARTUP)/init.cmd
 
-## For testing framework only:
-$(TESTDEVSIM) epicsEnvSet "IFDEVSIM" " "
-$(TESTDEVSIM) epicsEnvSet "IFNOTDEVSIM" "#" 
-$(TESTDEVSIM) epicsEnvSet "RECSIM" "0"
-$(TESTRECSIM) epicsEnvSet "IFDEVSIM" "#"
-$(TESTRECSIM) epicsEnvSet "IFNOTDEVSIM" " " 
-$(TESTRECSIM) epicsEnvSet "RECSIM" "1"
-
-## For emulator use:
-$(IFDEVSIM) epicsEnvShow("EMULATOR_PORT") 
-$(IFDEVSIM) drvAsynIPPortConfigure("L0", "localhost:$(EMULATOR_PORT)")
+# For dev sim devices
+$(IFDEVSIM) drvAsynIPPortConfigure("L0", "localhost:$(EMULATOR_PORT=)")
 
 ## For real device use:
-$(IFNOTDEVSIM) drvAsynSerialPortConfigure("L0", "$(PORT)", 0, 0, 0, 0)
-$(IFNOTDEVSIM) asynSetOption("L0", -1, "baud", "4800")
-$(IFNOTDEVSIM) asynSetOption("L0", -1, "bits", "7")
-$(IFNOTDEVSIM) asynSetOption("L0", -1, "parity", "even")
-$(IFNOTDEVSIM) asynSetOption("L0", -1, "stop", "1")
-
-## Load record instances
+$(IFNOTDEVSIM) $(IFNOTRECSIM) drvAsynSerialPortConfigure("L0", "$(PORT=NO_PORT_MACRO)", 0, 0, 0, 0)
+$(IFNOTDEVSIM) $(IFNOTRECSIM) asynSetOption("L0", -1, "baud", "$(BAUD=9600)")
+$(IFNOTDEVSIM) $(IFNOTRECSIM) asynSetOption("L0", -1, "bits", "$(BITS=8)")
+$(IFNOTDEVSIM) $(IFNOTRECSIM) asynSetOption("L0", -1, "parity", "$(PARITY=none)")
+$(IFNOTDEVSIM) $(IFNOTRECSIM) asynSetOption("L0", -1, "stop", "$(STOP=1)")
 
 ##ISIS## Load common DB records 
 < $(IOCSTARTUP)/dbload.cmd
 
+############################
 ## Load our record instances
-dbLoadRecords("$(DB_FILE)","P=$(MYPVPREFIX)$(IOCNAME):, PORT=L0, RECSIM=$(RECSIM=0), DISABLE=$(DISABLE=0)")
+############################
+
+dbLoadRecords("$(AMINT2L)/db/amint2l.db","P=$(MYPVPREFIX)$(IOCNAME):, PORT=L0, RECSIM=$(RECSIM=0), DISABLE=$(DISABLE=0), ADDR=$(ADDR)")
 
 ##ISIS## Stuff that needs to be done after all records are loaded but before iocInit is called 
 < $(IOCSTARTUP)/preiocinit.cmd
 
-cd ${TOP}/iocBoot/${IOC}
+cd "${TOP}/iocBoot/${IOC}"
 iocInit
 
 ## Start any sequence programs
+#seq sncxxx,"user=hgv27692Host"
 
 ##ISIS## Stuff that needs to be done after iocInit is called e.g. sequence programs 
 < $(IOCSTARTUP)/postiocinit.cmd
 ```
-The section labelled `For testing framework only` uses the `$(TESTDEVSIM)` macro to enable the IOC to be run in the correct mode for testing. The macro specifying the port number to use is generated within the testing framework, it will be a random free port number.
-The '$(TESTDEVSIM)' macro shouldn't appear for configuration in the IBEX GUI.
 
+The IOC testing framework will set the EMULATOR_PORT; it will also set the macros `IFTESTDEVSIM` and `IFNOTTESTDEVSIM` (as of beam stop merge). The code for this is in `EPICS\iocstartup\ioctesting.cmd`. This file sets these macros and also loads the file $(ICPVARDIR)/tmp/test_config.txt which the testing frame work will add extra macros to.
 
 # Notes for update
-
-Use of iocinit
 
 Run epics terminal `cd support\IocTestFramework\master`:
 
