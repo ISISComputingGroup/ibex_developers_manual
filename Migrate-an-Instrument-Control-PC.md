@@ -36,6 +36,9 @@ In the preparation phase, the team will create software components to support th
    * Some devices might already be supported; 
    * some may be supported already, but will need that support to be extended 
    * others will not be currently supported.  
+   * look at the lab view:
+       * to identify non-standard behaviour
+       * to identify rough size of the command set
 Agree with the team how support will be implemented (e.g. by creating or extending IOCs and OPIs, or by using lvDCOM to interface to LabVIEW).
 1. Discuss the time required to implement the required support (it might take several sprints)
 1. Create any tickets required to implement the necessary support.
