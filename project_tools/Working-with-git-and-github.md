@@ -4,7 +4,7 @@
 
 * [Git Workflow](Git-workflow)
 
-* [Useful Git Commands](Git Commands)
+* [Useful Git Commands](Git-Commands)
 
 * [Adding new modules](Adding new modules)
 
