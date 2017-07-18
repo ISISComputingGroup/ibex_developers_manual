@@ -10,6 +10,6 @@
 
 * [Cleaning your system](Git-Cleanup)
 
-* [something](New-Local-Git-Repository)
+* [Adding a new local git repository](New-Local-Git-Repository)
 
 * [Common cross repository tasks using Repo Tools](git-hub-repo-tools)
