@@ -99,6 +99,7 @@ We haven't done much with emulators yet, so not much has gone wrong, so please a
 
 * Telnet server is running, but is not receiving any data from the IOC: Is your st.cmd correct? Try removing the 4 `< $(IOCSTARTUP)...` lines, and the `drvAsyn{IP,Serial}PortConfigure` lines and run `runIOC.bat st.cmd`. Are you getting any error or warning messages? Sort those out first.
 * When connecting to a Lewis emulator via a Telnet client such as PuTTY, beware that Telnet uses `\r\n` as a terminator. If your emulator interface has a different one (like for the `linkam_t95`), the protocol won't work. You could temporarily use the Telnet terminator instead. Note also that PuTTY sends some extra characters at the start of the communication, so the very first command you send probably won't work.
+* Note that lewis can't deal with not having a termination character. If your device doesn't use a termination character then you will have to temporarily use one while talking to the emulator.
 * `An error occurred:
 The setup 'default' you tried to load does not specify a valid device type, but
 the device module 'neocera_ltc21' provides multiple device types so that no mean
