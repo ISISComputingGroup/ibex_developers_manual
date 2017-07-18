@@ -8,4 +8,6 @@
 
 * [Adding new modules](Adding-new-modules-via-Git)
 
+* [Cleaning your system](Git-Cleanup)
+
 * [Common cross repository tasks using Repo Tools](git-hub-repo-tools)
