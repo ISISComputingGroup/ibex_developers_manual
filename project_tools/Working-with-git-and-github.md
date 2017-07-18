@@ -1,6 +1,6 @@
 > [Wiki](Home) > [Project tools](Project-tools) > Working with git and github
 
-* [Getting Started with Git] (Getting-started-with-Git-and-GitHub)
+* [Getting Started with Git](Getting-started-with-Git-and-GitHub)
 
 * [Git Workflow](Git-workflow)
 
