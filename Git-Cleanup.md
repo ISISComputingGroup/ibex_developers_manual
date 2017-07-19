@@ -19,6 +19,6 @@ If appropriate, you can then do an update from the main git repository to get an
 git pull
 git submodule init
 git submodule sync
-git submodule update
+git submodule update --merge
 ```
 
