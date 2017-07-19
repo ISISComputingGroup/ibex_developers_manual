@@ -4,7 +4,7 @@ git clean -fdx
 git submodule foreach "git clean -fdx"
 ```
 
-The above is very similar to doing a "make clean uninstall" but much faster. Note that if you have created a new file and not yet added it to version control, it will go too, so you may want to use "git status" first to check.
+The above is very similar to doing a "make clean uninstall" but much faster. **WARNING**: if you have created a new file and not yet added it to version control, it will get deleted too, so you may want to use "git status" first to check.
  
 If you also wish to discard all uncommitted changes to any files in all directories, type:
 ```
