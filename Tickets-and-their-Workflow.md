@@ -29,7 +29,7 @@ Tickets should be created at need by developers as git issues using the waffle b
 
 ## Backlog Pruning
 
-Before the backlog pruning meeting people should add the 'proposal' label to tickets they would like to see in the next sprint; all the tickets that must be in and a maximum of 2 per person. At the meeting we will look at these tickets as a priority and as many newly created tickets as we can. 'proposal' label will then be added or removed depending on the general consensus.
+Before the backlog pruning meeting people should move tickets to the 'proposal' column they would like to see in the next sprint; all the tickets that must be in and a maximum of 2 extras per person. At the meeting we will look at these tickets discuss what they are and then rank their importance.
 
 Filter for proposed tickets `is:open label:proposal`
 
@@ -37,7 +37,14 @@ Filter for other tickets `is:open -label:proposal -label:"in progress" -label:"r
 
 ## Sprint Planning
 
-At sprint planning we will *only* look at tickets with 'proposal' label. These will be selected in and added to the ready column or milestone; estimates will be added. These will then be looked at to slim down to the number of points we usually manage in a sprint. After sprint planning all 'proposal' labels will be removed from all tickets.
+At sprint planning we:
+
+1. Look at any newly propose tickets and rank them
+2. Estimate the top ticket on the list
+3. Add its value to the current sprint (possibly by dragging)
+4. If we have points left in the sprint go to 2
+
+After sprint planning the ready column will be ordered.
 
 ## Movement of Tickets
 
