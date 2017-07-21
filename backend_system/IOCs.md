@@ -39,7 +39,7 @@ Building a new IOC? Before you get started, take a look at the relevant [instrum
 * [IOC Utilities](IOC-Utilities)
 * [Removing or Renaming an IOC module ](Removing-or-Renaming-IOC-module)
 * [IOC Testing framework](IOC-Testing-Framework)
-* [Creating soft motors to control hard motors](Creating-soft-motors-to-control-hard-motors)
+* [Creating soft motors to control real motors](Creating-soft-motors-to-control-real-motors)
 
 ## Specific IOC Information
 
