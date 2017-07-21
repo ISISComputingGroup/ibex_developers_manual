@@ -39,3 +39,4 @@ How threads are used in IBEX | Dominic Oram | ?
 Java 8 | Dominic Oram | ?
 MVVM Pattern | Thomas Lohnert | Dominic Oram
 Flake8 | Matt Clarke | Sam Jackson
+Emulators and IOC testing | . | Tom Willemsen
