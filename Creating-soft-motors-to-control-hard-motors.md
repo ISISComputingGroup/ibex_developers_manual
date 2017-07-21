@@ -66,7 +66,7 @@ There are several fields that need to be considered. The most important fields i
  - The `STOO` field writes out a bit indicating if the user has requested the motors stop, this needs to be transformed to both the underlying motors.
  - The `DINP` field reads in a bit indicating if the underlying motors have stopped moving, this needs to read from both the underlying motors.
 
-The former two fields can be linked directly to a single [`transform`](https://wiki-ext.aps.anl.gov/epics/index.php/RRM_3-14_Transform) record. A `transform` record can handle both the conversion to and from the soft motor's coordinate system. In the above example, the fields `CLCF` and `CLCG` transform the raw `motor` positions to the soft `motor` positions. `CLCH` and CLCI` compute the inverse transform from soft `motor`s to the underlying `motor`s.
+The former two fields can be linked directly to a single [`transform`](https://wiki-ext.aps.anl.gov/epics/index.php/RRM_3-14_Transform) record. A `transform` record can handle both the conversion to and from the soft motor's coordinate system. In the above example, the fields `CLCF` and `CLCG` transform the raw `motor` positions to the soft motor positions. `CLCH` and `CLCI` compute the inverse transform from soft motors to the underlying`motors.
 
 For the latter two fields, two additional records are required if the axes of the soft motors are defined by a combination of the underlying motors. These should output a combination of the states from both underlying motors. For example:
 ```
