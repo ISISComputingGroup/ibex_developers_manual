@@ -66,7 +66,9 @@ There are several fields that need to be considered. The most important fields i
  - The `STOO` field writes out a bit indicating if the user has requested the motors stop, this needs to be transformed to both the underlying motors.
  - The `DINP` field reads in a bit indicating if the underlying motors have stopped moving, this needs to read from both the underlying motors.
 
-The former two fields can be linked directly to a single `transform` record. A `transform` record can handle both the conversion to and from the soft motor's coordinate system. For the latter two fields, two additional records are required if the axes of the soft motors are defined by a combination of the underlying motors. These should output a combination of the states from both underlying motors. For example:
+The former two fields can be linked directly to a single [`transform`](https://wiki-ext.aps.anl.gov/epics/index.php/RRM_3-14_Transform) record. A `transform` record can handle both the conversion to and from the soft motor's coordinate system.
+
+For the latter two fields, two additional records are required if the axes of the soft motors are defined by a combination of the underlying motors. These should output a combination of the states from both underlying motors. For example:
 ```
 record(transform, "$(P)ARM:MOTORS:STOP") {
     
@@ -94,6 +96,7 @@ record(calc, "$(P)ARM:MOTORS:DMOV") {
 ```
 
 ## Known issues
+ - For the `DMOV` record the `MDEL` field needed to be defined as `-1` to avoid a race condition where the pulse from `1-0-1` would happen so fast that the soft motors would get stuck in the moving state forever.
 
 
 
