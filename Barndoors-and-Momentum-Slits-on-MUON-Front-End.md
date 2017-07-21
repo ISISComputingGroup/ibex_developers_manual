@@ -23,3 +23,5 @@ Barndoors can be opened different distances. The distance is no linearly connect
 ## Setup
 
 The barndoors and momentum slits are part of the galil motor set up and are per instrument. There is an example at `...\EPICS\support\motorExtensions\master\settings\barndoors\*.cmd` copt this to `C:\Instrument\Settings\config\<instrument host name>\configurations\galil`
+
+Remember to add an address to the IOC in the IBEX GUI for the Galil IOC. If you're testing locally you still need to set it but it can just be `127.0.0.1`
