@@ -1,0 +1,59 @@
+# Introduction
+
+Starting from the July 2017 cycle, we are migrating IBEX from running on the Eclipse 3 platform to running on the Eclipse 4 platform. Initial investigation by Dominic Oram indicates that this is going to require significant time investment from the team.
+
+# Selected platform
+
+The goal of the project is to run IBEX on an Eclipse 4.x platform. Notably the current stable release of CSS is 4.4.3, which runs on Eclipse Mars (4.5), hence we have used this as our target platform as well as our development environment
+
+# The compatibility layer and preliminary migration
+
+Eclipse 4 supports running Eclipse 3.x applications using the "compatibility" layer. In Eclipse 4.5, this is built into the tooling and so doesn't require any code changes to activate. The required plugins just need to be activated as part of the run configuration. Eclipse does an OK job at handling this automatically but has a tendency to either pull in too much if optional dependencies are included, or too little if they are not.
+
+As part of the branch `Ticket2376_E4_Compatibility`, the code will build on the Eclipse 4 platform. However, I have not had much luck successfully launching IBEX in it's current form:
+
+- Including all plugins in a workspace along with required plugins (and optional) results in an application that will not launch
+- Including `*.ui.dashboard` and everything it needs (40 other IBEX plugins) results in an application that does make it to launch eventually (it struggles) but all of the plugins fail to initialise and there are many visual issues. Notably in this format, the current **views do not have fixed size**.
+
+Owing to this investigation, and discussions with John and Kevin, I have chosen to create a brand new application based on the Eclipse 4 application model using the existing code as a base.
+
+# E4 application prototype, July 2017 sprint
+
+As part of the first stage of the application migration, I have created a branch `Ticket2376_E4_prototype_migrated`. To run it, follow the usual steps (more or less)
+
+- Import all of the IBEX plugins in base into your workspace
+- Set the target platform
+- Open 'uk.ac.stfc.isis.ibex.e4.client.product', 'ibex.product'
+- Click "Launch an Eclipse application"
+
+Many of the application's views have been mocked using screenshots of the current system. These are 'cartoonified' to make them look less realistic to avoid confusion. The views that have been converted so far are the dashboard and the beam status view.
+
+There are a few technical aspects that are worth noting that will affect future migration steps.
+
+## The dashboard is coupled to the script generator
+
+I discovered this while importing the minimal plugins for the dashboard. There is an architectural error in having it rely on the script generator. The dependency comes from `...ibex.ui.widgets`. This dependency should ideally be resolved.
+
+## Don't forget `features.xml`.
+
+At the moment, the plugins required for the build are defined in the `feature` plugins. We don't have to change these very often on master because we don't often add new plugins. However, we will do it very frequently on this branch. So that the run configuration is valid, when you add a new plugin, make sure to add it and any dependencies to the `feautre.xml` file. You shouldn't ever need to edit the included plugins via the `Run configurations` menu.
+
+## Don't use `jre6.fragment`, it's a trap!
+
+There's a CSStudio plugin called `jre6.fragment`. Despite appearances, it is an RAP, not and RCP plugin. If you include it, many of the views won't load properly. In some cases, I've had to add new imports into the target platform to get around this limitation. If you ask the "Run configurations" menu to add required plugins though, it will add it and your application will no longer run properly. You have been warned!
+
+## TODOs
+
+I've gotten into the habit of using `TODOs` in Eclipse to identify bits of work that I haven't yet gotten around to or rely on later stages of migration. They can be listed by opening up the Eclipse "Tasks" window. The current `TODOs` are:
+
+- `BeamStatusView.java`: The PVs haven't been connected to the beam status view because the archiver doesn't connect properly yet
+- 'BeamStatusView.java`: Using the `showToolbar(false)` command doesn't actually hide the toolbar in the beam status view. I've tried working around this but ran out of time. We should sort it out eventually but I've left it for the time being. We may want to change that entire part eventually to just be two databrowsers in different tabs rather than embedding the graph in a separate view. That relies on a later bit of work though.
+- Perspective switching: I've written a basic perspective switcher `uk.ac.stfc.isis.ibex.e4.ui.perspectiveswitcher`. It does what we need it to for now but later on we should switch to using snippets rather than shared elements to build our perspectives. The reason is that shared elements retain changes to their size between perspectives which sounds nice but can lead to very weird behaviour. I think it's best avoided. Similarly, snippets will be necessary to do things like restoring default views of a perspective. In all, we shouldn't have to hard code our perspectives, so it would be better managed via an extension point.
+
+# The challenge: CSS integration with IBEX on Eclipse 4
+
+One problem I faced with migrating the beam status view is that CSS views are still written in an Eclipse 3 way (i.e. using the Eclipse 3.x API and inheritance rather than dependency injection). This makes it difficult to use a CSS view in our Eclipse 4 application model. In particular, calls to the Eclipse 3.x API (e.g. `getSite()`) may return `null`s that inhibit initialisation. I **don't** currently have a fix for this issue. We **will** need one. It'll be needed for the Alarms view and OPIs for instance which are rather crucial. Our feeling is that this issue must have been solved at some point by somebody, it doesn't seem like a unique issue.
+
+# Useful people to talk to
+
+Nick Battam at Diamond has been very helpful. He has also recommended we speak to Will Rogers, as he's done a lot of Eclipse 4 work in CSStudio.
