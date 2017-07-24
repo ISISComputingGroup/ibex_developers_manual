@@ -24,8 +24,8 @@ This will archive the value of the `VAL` field once per second. The general form
 
 Where
 
-    * period (defaults to 1):  *the next two lines are not correct talk with Freddie about what it actually means*
-        * when +ve - scan the value every period seconds
+    * period (defaults to 1):
+        * when +ve - sign up to monitor the pv use the period field to determine typical delay between samples in seconds 
         * when -ve - monitor the value the value is the deadband for the system
     * field: the field to monitor on the record
 
