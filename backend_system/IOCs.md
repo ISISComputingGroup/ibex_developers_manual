@@ -18,7 +18,7 @@ Building a new IOC? Before you get started, take a look at the relevant [instrum
 
 * [Emulating devices](Emulating-Devices)
 
-* [Add logging](Logging-from-the_archive)
+* [Add logging](Logging-from-the-archive)
 
 ## Conventions
 
