@@ -25,7 +25,7 @@ Many fields accept a formatted pv value this is written as follows:
 This is similar to the python format and using the same syntax except the variable name is replaced with the pvname and the colon is replaced with a pipe. The converter and format are both options. The converter will allow you to perform a conversion this is either `s` from string representation, `r` from representation (__rep__). The format are as the python formatter (see [python docs](https://docs.python.org/2/library/string.html#format-string-syntax)). Examples:
 
 -  `{this_pv}` - is the pv of the current record
--  `{IN:LARMOR:SIMPLE:VALUE1|f10.6}` - the pv `IN:LARMOR:SIMPLE:VALUE1` is formatted as a float with 10 character and 6dp
+-  `{IN:LARMOR:SIMPLE:VALUE1|10.6f}` - the pv `IN:LARMOR:SIMPLE:VALUE1` is formatted as a float with 10 character and 6dp
 -  `{this_pv!s|10s}` - the current pv converted using the string representation and then given a width of 10
 
 ### `LOG_trigger`
@@ -57,7 +57,7 @@ If you want header lines in your log then use this field. Header lines are order
 
 The value of the field is the header you want in the file. An empty value will produce a blank line. If you include a PV value it will be the value that PV had when the logging starts. To add a PV use the standard PV format. 
 
-Example: `info(LOG_header1, "Temperature {this_pv|f10.6}")` First header line is "Temperature XXX" where XXX is the pv that the field is in format as float with 10 width and 6dp
+Example: `info(LOG_header1, "Temperature {this_pv|10.6f}")` First header line is "Temperature XXX" where XXX is the pv that the field is in format as float with 10 width and 6dp
 
 ### `LOG_column_headerX`
 
