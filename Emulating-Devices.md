@@ -19,7 +19,7 @@ Lewis is included as an installed module in genie_python.
 ## Set up a new emulator
 
 1. Create a subdirectory for your new emulator under `support/DeviceEmulator/master/lewis_emulators/`.
-1. Documentation for how to write a Lewis emulator can be found [here](http://lewis.readthedocs.io/en/latest/developer_guide/contributing.html), and you can refer to the examples in the Lewis library (i.e. `C:\Instrument\Apps\Python\Lib\site-packages\lewis\devices` and `...\examples`).
+1. Documentation for how to write a Lewis emulator can be found [here](http://lewis.readthedocs.io/en/latest/developer_guide/writing_devices.html), and you can refer to the examples in the Lewis library (i.e. `C:\Instrument\Apps\Python\Lib\site-packages\lewis\devices` and `...\examples`).
 1. NOTE: the simple examples `simple_device` and `example_motor` have all the code in a single `__init__.py` file, but we should stick to a consistent tidy structure like that of the `linkam_t95` emulator, i.e. with separate files for the device itself, its states (if it's a state machine), and its interfaces.
 1. Don't forget to add `__init__.py` files in all of your folders!
 1. At the time of writing, the Lewis `StreamAdapter.handle_error()` method does nothing. Please make sure your interface class deriving from `StreamAdapter` prints the content of the error, which makes it easier to understand what's going on (see for example the `iris_cryo_valve` emulator).
