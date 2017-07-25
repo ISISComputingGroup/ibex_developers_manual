@@ -14,7 +14,7 @@ For the changes to logging to take effect you must have built and run the IOC an
 
 For a PV to appear either in a header line or a column, or for it to trigger a log the pv must be archived. The rate of archive must be at least as small as the maximum scan period; otherwise values might be missed. To add it to the archive use the usual notion (see [finishing touches](IOC-Finishing-Touches#2-archive-pvs) ).
 
-Example: PV changing a maximum of once every 0.1s use `info(archive, "VAL 0.1")`
+Example: PV changing a maximum of once every 0.1s use `info(archive, "0.1 VAL")`
 
 ### Formatted PV Value
 
