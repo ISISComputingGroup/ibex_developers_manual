@@ -2,17 +2,19 @@
 
 An IOC can be made to log values to a file based on the value of a PV. Consider whether you IOC needs to do this. 
 
-To add logging to an IOC you need to add info fields to your records. The logging is based on a logging PV; when the logging pv switches off (1 to 0) then the period for which it was on will be written into a file in `c:\logs`. To define what is in the log file add an info filed of the form:
+To add logging to an IOC you need to add info fields to your records. The logging is based on a logging PV; when the logging pv switches off (1 to 0) then the period for which it was on will be written into a file in `c:\logs`. To define what is in the log file add an info field of the form:
 
        info(<info field name>, <value>)
 
 The value will always have `this_pv` substituted with the pv name of the record the info field is in. 
 
+For the changes to logging to take effect you must have built and run the IOC and then restarted the archiver access process. If you have changed or added the archive log rate then the instrument archiver (ARINST) must have been restarted since the IOC was run.
+
 ### Archive setting
 
-For a PV to appear either in a header line or a column, or for it to be a trigger it must be archived. The rate of archive must be at least as small as the maximum of the logging period and the scan period; otherwise values might be missed. To add it to the archive use the usual notion (see [finishing touches](IOC-Finishing-Touches#2-archive-pvs) ).
+For a PV to appear either in a header line or a column, or for it to trigger a log the pv must be archived. The rate of archive must be at least as small as the maximum scan period; otherwise values might be missed. To add it to the archive use the usual notion (see [finishing touches](IOC-Finishing-Touches#2-archive-pvs) ).
 
-Example: For a log period of 0.5 and a maximum change of 0.1s use `info(archive, "VAL 0.1")`
+Example: PV changing a maximum of once every 0.1s use `info(archive, "VAL 0.1")`
 
 ### Formatted PV Value
 
