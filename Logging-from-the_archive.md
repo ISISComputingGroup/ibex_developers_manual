@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > [Logging from the archive](Logging-from-the_archive)
+
 An IOC can be made to log values to a file based on the value of a PV. Consider whether you IOC needs to do this. 
 
 To add logging to an IOC you need to add info fields to your records. The logging is based on a logging PV; when the logging pv switches off (1 to 0) then the period for which it was on will be written into a file in `c:\logs`. To define what is in the log file add an info filed of the form:
