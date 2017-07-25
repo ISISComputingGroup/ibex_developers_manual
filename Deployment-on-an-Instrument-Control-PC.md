@@ -218,3 +218,8 @@ Key directories on the control server on the control server include
     * ``sample.txt``, lookup file of x-y coordinates of set-points for LARMOR sample rack.
     * ``sample_x.txt``, lookup file of x coordinate of set-points for LARMOR sample rack.
     * ``sample_y.txt``, lookup file of y coordinate of set-points for LARMOR sample rack.
+
+## Adding nagios checks
+
+nagios is the instrument monitoring system, this will not affect operation but adding the instrument to nagios will generate notifications of issues. This requires editing configuration files on the "varanus" server, but the procedure is probably going to be simplified when it moves to a new system. For the moment contact Freddie    
+
