@@ -6,7 +6,7 @@ The testing is limited to a certain extent because it won't be testing the IOCs 
 
 It is also possible to use the framework to test the IOC in record simulation mode if a Lewis emulator is not available, but is should be noted that provides a less complete simulation.
 
-Instructions for running the tests, adding new tests etc. are provided in the README file for the repository.
+Instructions for running the tests, adding new tests etc. are provided in the README file for the [repository](https://github.com/ISISComputingGroup/EPICS-IOC_Test_Framework).
 
 # The IOCs
 The IOCs need to have their st.cmd or st-common.cmd editing to enable them to work with the testing framework.
