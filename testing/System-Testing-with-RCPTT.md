@@ -92,6 +92,17 @@ Note that we started writing contexts containing procedures that could be useful
     }
     ```
 * Add wait XXXX when the GUI will be reading/writing to PVs and may take some time to respond
+* The catch block in a try command is not called for each time. Therefore if you want to use the catch to tidy something up you will have to do the following:
+    ```
+    try -times 10 -delay 200 -command {
+        try -command {
+             // Open a dialog
+             // Do a test
+        } catch {
+             // Close the dialog
+        }
+    }
+    ```
 * The perspective switcher buttons do not get recorded properly, to manually switch just do e.g. `get-label "Log Plotter" | click`. Note that we started writing procedures for these actions in the `SwitchToViewProcedures` context, to maximise code reuse.
 * If the test fail locally in clean Ibex server context check either the log file in `C:\Instrument\CleanIBEXServerFiles\cleanIBEXServer\cleanIBEXServer.log` or look at the exit error from the process and match it to the script in `C:\Instrument\CleanIBEXServerFiles\cleanIBEXServer\cleanIBEXServer.py` (this file is copied during the tests from the context).
 
