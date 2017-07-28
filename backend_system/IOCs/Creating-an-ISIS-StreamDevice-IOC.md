@@ -242,7 +242,7 @@ iocInit
 Now is a good time to add everything into Git. Once that is done it is time to build it and run it:
 
 ```
-cd c:\Instrument\Apps\EPICS\ioc\HAMEG8123
+cd c:\Instrument\Apps\EPICS\ioc\master\HAMEG8123
 make
 cd iocBoot\iocHAMEG8123-IOC-01
 runIOC.bat st.cmd
