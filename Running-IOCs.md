@@ -7,7 +7,7 @@
 Either:
 
 * start the IOC through the GUI. 
-  * If this is a new IOC you should run the `EPICS\build_ioc_startups.py` first.
+  * If this is a new IOC you will need to run 'make iocstartups' in the EPICS folder for the IOC to be displayed in the GUI.
 * start the IOC through the console (ctrl + x)
 * start the IOC by running `runIOC.bat st.cmd` (in `iocBoot/Appdir`)
 
