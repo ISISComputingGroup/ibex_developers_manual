@@ -100,6 +100,7 @@ Note that we started writing contexts containing procedures that could be useful
              // Do a test
         } catch {
              // Close the dialog
+             // Reraise error e.g. verify-true False
         }
     }
     ```
