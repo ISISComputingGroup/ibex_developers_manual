@@ -17,8 +17,8 @@ getFrequency {
 Potentially you could have both a real  getFrequency()  and a dummy getFrequencyTest() function in the protocol file and then control with one was used by writing   getFrequency$(TEST=)   in the DB file and setting   TEST=Test   with dbLoadRecords() 
 
 To enable support for the echo driver in a Makefile:
-* Add  asynEcho  to $(APPNAME)_LIBS
-* Add  drvAsynEcho.dbd  to $(APPNAME)_DBD
+* Add  **asynEcho** to $(APPNAME)_LIBS
+* Add  **drvAsynEcho.dbd**  to $(APPNAME)_DBD
 
 And then in st.cmd use e.g.:
 `` 
