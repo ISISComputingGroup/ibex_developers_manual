@@ -21,8 +21,10 @@ To enable support for the echo driver in a Makefile:
 * Add  **drvAsynEcho.dbd**  to $(APPNAME)_DBD
 
 And then in st.cmd use e.g.:
+
 `` 
 echoDriverInit(“L0”, 0.1, 0, 0)
 ``
+
 Where L0 is the asyn port name and 0.1 is, in this case, how long to take to return a reply. The other options allow selecting noautoconnect or multi-device if required
 
