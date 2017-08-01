@@ -18,7 +18,7 @@ Key points relating to formatting:
 
 ### Docstring format
 
-Based mostly on the [Google style](https://google.github.io/styleguide/pyguide.html).
+This is also a deviation from PEP8, our format is based mostly on the [Google style](https://google.github.io/styleguide/pyguide.html).
 See below for usage examples, but some key points to follow are:
 
 * Docstrings start and end with triple double-quotes
