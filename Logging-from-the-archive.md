@@ -10,6 +10,8 @@ The value will always have `this_pv` substituted with the pv name of the record 
 
 For the changes to logging to take effect you must have built and run the IOC and then restarted the archiver access process. If you have changed or added the archive log rate then the instrument archiver (ARINST) must have been restarted since the IOC was run.
 
+There is some [trouble shooting information](IOC-And-Device-Trouble-Shooting#logging).
+
 ### Archive setting
 
 For a PV to appear either in a header line or a column, or for it to trigger a log the pv must be archived. The rate of archive must be at least as small as the maximum scan period; otherwise values might be missed. To add it to the archive use the usual notion (see [finishing touches](IOC-Finishing-Touches#2-archive-pvs) ).
