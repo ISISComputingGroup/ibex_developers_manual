@@ -16,10 +16,12 @@ def my_function():
     This does something mysterious.
 
     Here is where more details are written. It can take up multiple lines and so on.
+    blah blah blah.
 ```
-* Arguments are introduced following "Args:"
 
+#### Examples
 
+With usage examples:
 
 ```python
 def waitfor_runstate(state, maxwaitsecs=3600, onexit=False):
@@ -38,4 +40,47 @@ def waitfor_runstate(state, maxwaitsecs=3600, onexit=False):
         Wait for a run to exit the paused state:
         >>> waitfor_runstate("pause", onexit=True)
     """
+```
+
+With return values:
+
+```python
+def get_number_periods():
+    """
+    Get the number of software periods.
+
+    Returns:
+        int: the number of periods
+    """
+```
+
+```python
+def get_blocknames(self):
+    """ 
+    Get all the blocknames including those in the components.
+
+    Returns:
+        list : The names of all the blocks
+    """
+```
+
+With exceptions:
+
+```python
+def an_example_function(param1, param2=None, *args, **kwargs):
+    """
+    This is an example of a function.
+
+    Args:
+        param1 (int): the first parameter
+        param2 (string, optional): the second parameter. Defaults to None.
+            Subsequent line(s) of description should be indented
+        *args: variable length argument list
+        **kwargs: arbitrary keyword arguments
+
+    Returns:
+        bool: True if successful, False otherwise.
+
+    Raises:
+        ValueError: if param2 is equal to param1
 ```
