@@ -96,13 +96,11 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
     1. check the changes to the configuration using git (git status) commit the changes.
 
 - **install** If the machine has no LabVIEW modules directory (c:\LabVIEW Modules) containing sample environment plus DAE programs. Install that now with:
-
-    If you are installing EPICS on a non-instrument and need to start the DAE in simulation mode, then you need to (in an epics terminal):  
 	
         cd C:\Instrument\Apps\EPICS
         create_icp_binaries
 		
-    Register the DAE `isisicp.exe` program (either in `C:\labview modules\dae\...` or `ICP_Binaries\...`) as per developer setup instructions
+    Register the DAE as per the instructions in [the getting started guide](First-time-installing-and-building-(Windows)#configure-dae-for-simulation-mode-on-developers-computer)
 
 		
 - **install** If the instrument is not on the list of known instruments already (i.e. for switching the GUI), follow the instructions [here](Making an Instrument Available from the GUI).
