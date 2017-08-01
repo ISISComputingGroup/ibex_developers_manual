@@ -1,6 +1,20 @@
 # Python Conventions
 
-* Use [PEP8](https://www.python.org/dev/peps/pep-0008/) for coding styles
+### Code style
+We try to follow [PEP8](https://www.python.org/dev/peps/pep-0008/) for coding styles where possible.
+ 
+A clear exception is when it comes to line length; PEP8 suggests a line length limit of 79 characters, but PyCharm defaults to 120. We follow PyCharm on this.
+
+PyCharm warns on many deviations from PEP8, please don't ignore it.
+
+Key points relating to formatting:
+
+* Use 4 spaces per indentation level
+* Spaces are the preferred indentation method not tabs
+* Surround top-level function and class definitions with two blank lines
+* Method definitions inside a class are surrounded by a single blank line
+* Class names should normally use the CapWords convention
+* Function/method names should be lowercase, with words separated by underscores as necessary to improve readability. 
 
 ### Docstring format
 
@@ -11,7 +25,13 @@ See below for usage examples, but some key points to follow are:
 * Newline after opening `"""`
 * First line of text should be a one sentence description followed by a full-stop and a new line. More details can then follow
 * Args can have their suggested type declared in brackets. This is optional, but preferred in code a user may encounter, for example: in genie_python
-* R
+
+Google style suggests that argument descriptions start with a capital and end with a full-stop.
+```python
+    Args:
+        state (string): The state to wait for (e.g. "paused").
+```
+We don't currently follow this, but if someone wants to go through all the code and change this then feel free. Please remember to update the examples below too.
 
 #### Examples
 
