@@ -7,7 +7,7 @@ A clear exception is when it comes to line length; PEP8 suggests a line length l
 
 **PyCharm warns on many deviations from PEP8, please don't ignore it.**
 
-Key points relating to formatting:
+Key points relating to general code formatting:
 
 * Use 4 spaces per indentation level
 * Spaces are the preferred indentation method not tabs
