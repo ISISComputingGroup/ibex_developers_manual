@@ -1,7 +1,7 @@
 # Python Conventions
 
 ### Coding style
-We try to follow [PEP8](https://www.python.org/dev/peps/pep-0008/) for coding styles where possible.
+We try to follow [PEP8](https://www.python.org/dev/peps/pep-0008/) for coding style where possible or suitable.
  
 A clear exception is when it comes to line length; PEP8 suggests a line length limit of 79 characters, but PyCharm defaults to 120. We follow PyCharm on this.
 
