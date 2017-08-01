@@ -35,51 +35,6 @@ We don't currently follow this, but if someone wants to go through all the code 
 
 #### Examples
 
-With usage examples:
-
-```python
-def waitfor_runstate(state, maxwaitsecs=3600, onexit=False):
-    """
-    Wait for a particular instrument run state.
-
-    Args:
-        state (string): the state to wait for (e.g. "paused")
-        maxwaitsecs (int, optional): the maximum time to wait for the state before carrying on
-        onexit (bool, optional): wait for runstate to change from the specified state
-
-    Examples:
-        Wait for a run to enter the paused state:
-        >>> waitfor_runstate("pause")
-
-        Wait for a run to exit the paused state:
-        >>> waitfor_runstate("pause", onexit=True)
-    """
-```
-
-With return values:
-
-```python
-def get_number_periods():
-    """
-    Get the number of software periods.
-
-    Returns:
-        int: the number of periods
-    """
-```
-
-```python
-def get_blocknames(self):
-    """ 
-    Get all the blocknames including those in the components.
-
-    Returns:
-        list : the names of all the blocks
-    """
-```
-
-With exceptions:
-
 ```python
 def an_example_function(param1, param2=None, *args, **kwargs):
     """
@@ -102,5 +57,44 @@ def an_example_function(param1, param2=None, *args, **kwargs):
 
     Raises:
         ValueError: if param2 is equal to param1
+    """
+```
+
+```python
+def waitfor_runstate(state, maxwaitsecs=3600, onexit=False):
+    """
+    Wait for a particular instrument run state.
+
+    Args:
+        state (string): the state to wait for (e.g. "paused")
+        maxwaitsecs (int, optional): the maximum time to wait for the state before carrying on
+        onexit (bool, optional): wait for runstate to change from the specified state
+
+    Examples:
+        Wait for a run to enter the paused state:
+        >>> waitfor_runstate("pause")
+
+        Wait for a run to exit the paused state:
+        >>> waitfor_runstate("pause", onexit=True)
+    """
+```
+
+```python
+def get_number_periods():
+    """
+    Get the number of software periods.
+
+    Returns:
+        int: the number of periods
+    """
+```
+
+```python
+def get_blocknames(self):
+    """ 
+    Get all the blocknames including those in the components.
+
+    Returns:
+        list : the names of all the blocks
     """
 ```
