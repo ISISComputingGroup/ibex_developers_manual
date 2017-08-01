@@ -5,7 +5,7 @@ We try to follow [PEP8](https://www.python.org/dev/peps/pep-0008/) for coding st
  
 A clear exception is when it comes to line length; PEP8 suggests a line length limit of 79 characters, but PyCharm defaults to 120. We follow PyCharm on this.
 
-PyCharm warns on many deviations from PEP8, please don't ignore it.
+**PyCharm warns on many deviations from PEP8, please don't ignore it.**
 
 Key points relating to formatting:
 
