@@ -80,4 +80,5 @@ def an_example_function(param1, param2=None, *args, **kwargs):
 
     Raises:
         ValueError: if param2 is equal to param1
+    """
 ```
