@@ -9,15 +9,7 @@ See below for usage examples, but some key points to adhere to:
 
 * Docstrings start and end with triple double-quotes
 * Newline after opening `"""`
-* First line of text should be a one sentence description followed by a full-stop and a new line. More details can then follow, for example:
-```python
-def my_function():
-    """
-    This does something mysterious.
-
-    Here is where more details are written. It can take up multiple lines and so on.
-    blah blah blah.
-```
+* First line of text should be a one sentence description followed by a full-stop and a new line. More details can then follow
 
 #### Examples
 
@@ -70,6 +62,11 @@ With exceptions:
 def an_example_function(param1, param2=None, *args, **kwargs):
     """
     This is an example of a function.
+
+    Here is where more details are written. It can take up multiple lines and so on.
+    blah blah blah.It can take up multiple lines and so on.
+    blah blah blah.It can take up multiple lines and so on.
+    blah blah blah.
 
     Args:
         param1 (int): the first parameter
