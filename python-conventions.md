@@ -4,12 +4,14 @@
 
 ### Docstring format
 
-Based on the [Google style](https://google.github.io/styleguide/pyguide.html).
-See below for usage examples, but some key points to adhere to:
+Based mostly on the [Google style](https://google.github.io/styleguide/pyguide.html).
+See below for usage examples, but some key points to follow are:
 
 * Docstrings start and end with triple double-quotes
 * Newline after opening `"""`
 * First line of text should be a one sentence description followed by a full-stop and a new line. More details can then follow
+* Args can have their suggested type declared in brackets. This is optional, but preferred in code a user may encounter, for example: in genie_python
+* R
 
 #### Examples
 
@@ -52,7 +54,7 @@ def get_blocknames(self):
     Get all the blocknames including those in the components.
 
     Returns:
-        list : The names of all the blocks
+        list : the names of all the blocks
     """
 ```
 
@@ -69,7 +71,7 @@ def an_example_function(param1, param2=None, *args, **kwargs):
     blah blah blah.
 
     Args:
-        param1 (int): the first parameter
+        param1 (int): the first parameter.
         param2 (string, optional): the second parameter. Defaults to None.
             Subsequent line(s) of description should be indented
         *args: variable length argument list
