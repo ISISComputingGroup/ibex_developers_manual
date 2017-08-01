@@ -23,3 +23,7 @@ EDIT THE SECTION TO READ
 
 In Notepad++ Menu -> Language -> Define Your Language
 Then import the file `...EPICS\editors\Notepad++\userDefineLang.xml`
+
+# Python conventions
+
+See [Python Conventions](python-conventions) for more information
