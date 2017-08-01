@@ -100,7 +100,7 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
         cd C:\Instrument\Apps\EPICS
         create_icp_binaries
 		
-    Register the DAE as per the instructions in [the getting started guide](First-time-installing-and-building-(Windows)#configure-dae-for-simulation-mode-on-developers-computer)
+    Register the DAE as per the instructions in [the getting started guide](First-time-installing-and-building-(Windows)#configure-dae-for-simulation-mode-on-developers-computer).
 
 		
 - **install** If the instrument is not on the list of known instruments already (i.e. for switching the GUI), follow the instructions [here](Making an Instrument Available from the GUI).
