@@ -53,8 +53,8 @@ class CapsWordName(object):
         The single underscore warns people using this class that this method 
         is not part of the API, so may change and should be used with care.
 
-        Python doesn't really have private variables or methods:
-            'We are all consenting adults here'
+        It doesn't say you should not use it though.
+        Python does not really have the concept of private.
         """
         return 123456       
 
