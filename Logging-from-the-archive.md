@@ -88,7 +88,7 @@ Example: `info(LOG_period_seconds, "0.5")` produces a time series in half second
 The period of the log can be set based on the value of a PV when the logging is started. This allows the IOC to control the period of the log. The value is the PV that is being used to set the logging period if it is blank the current record is used. It should be noted that if the PV is not changing more often than the value then the value will not change more often. This is an alternative to `LOG_period_seconds`.
 
 Examples: 
-    - `info(LOG_period_seconds, "TE:INST:SIMPLE:PERIOD")` produces a time series with an interval set by the pv 
+    - `info(LOG_period_pv, "TE:INST:SIMPLE:PERIOD")` produces a time series with an interval set by the pv 
 TE:INST:SIMPLE:PERIOD.
-    - `info(LOG_period_seconds, "")` produces a time series with an interval set by the pv record containing this
+    - `info(LOG_period_pv, "")` produces a time series with an interval set by the pv record containing this
 
