@@ -1,5 +1,5 @@
 # Python Conventions
-```python
+```
 >>> import this
 ```
 ### Coding style
