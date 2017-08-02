@@ -42,7 +42,8 @@ class CapsWordName(object):
 
         for i in range(max):
             if i % 2 == 0:
-                # i is even. Starts with lowercase because i is a variable name
+                # i is even. 
+                # Previous line starts with lowercase because i is a variable name.
                 total += i
 
         return total
