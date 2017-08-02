@@ -48,10 +48,13 @@ class CapsWordName(object):
 
         return total
 
-    def _this_method_is_weakly_private(self):
+    def _this_method_is_non_public(self):
         """
         The single underscore warns people using this class that this method 
         is not part of the API, so may change and should be used with care.
+
+        Python doesn't really have private variables or methods:
+            'We are all consenting adults here'
         """
         return 123456       
 
