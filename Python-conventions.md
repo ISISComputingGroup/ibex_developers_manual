@@ -1,5 +1,7 @@
 # Python Conventions
-
+```python
+>>> import this
+```
 ### Coding style
 We try to follow [PEP8](https://www.python.org/dev/peps/pep-0008/) for coding style where possible or suitable.
  
