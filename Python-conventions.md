@@ -16,7 +16,45 @@ Key points relating to general code formatting:
 * Surround top-level function and class definitions with two blank lines
 * Method definitions inside a class are surrounded by a single blank line
 * Class names should normally use the CapWords convention
-* Function/method names should be lowercase, with words separated by underscores as necessary to improve readability. 
+* Function/method names should be lowercase, with words separated by underscores as necessary to improve readability
+* Comments should have a space after the # and start with a capital letter (unless it is a variable name)
+* Files should have one blank line at the end
+
+```python
+import os
+
+
+class CapsWordName(object):
+    def method_that_has_underscores(self, x, y=None):
+        """
+        See docstring guide below.
+        """
+        if y is not None:
+            x += y
+        return x
+
+    def one_blank_line_before_next_method(self, max):
+        """
+        See docstring guide below.
+        """
+        # This comment starts with a capital letter
+        total = 0        
+
+        for i in range(max):
+            if i % 2 == 0:
+                # i is even. Starts with lowercase because i is a variable name
+                total += i
+
+        return total
+
+    def _this_method_is_weakly_private(self):
+        """
+        The single underscore warns people using this class that this method is not part of the API, 
+        so may change and should be used with care.
+        """
+        return 123456       
+
+```
 
 ### Docstring format
 
