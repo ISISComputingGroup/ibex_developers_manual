@@ -49,8 +49,8 @@ class CapsWordName(object):
 
     def _this_method_is_weakly_private(self):
         """
-        The single underscore warns people using this class that this method is not part of the API, 
-        so may change and should be used with care.
+        The single underscore warns people using this class that this method 
+        is not part of the API, so may change and should be used with care.
         """
         return 123456       
 
