@@ -28,3 +28,12 @@ Check that the instrument is in the list of Instruments in https://github.com/IS
 ## `cmake error: could not load cache` seen during build
 
 Try deleting any `CMakeCache.txt` files in the appropriate directory
+
+# Unable to communicate with MOXA ports
+
+We encountered this issue in August 2017 on HRPD. Neither SECI nor IBEX could communicate with the MOXA. We solved the problem on the fly by remapping the ports from COM blocks 5-20 to 21-36. NPort Administrator had several ports in the former block marked as in use in spite of no devices being active. The ultimate fix was to clear out the offending registry value:
+
+1. Click start → Run → type regedit and click OK button
+1. Navigate to `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\COM Name Arbiter`
+1. Now on the right panel, you can see the key `ComDB`. Right-click it and click modify
+1. In value Data section select all and delete reset to zero
