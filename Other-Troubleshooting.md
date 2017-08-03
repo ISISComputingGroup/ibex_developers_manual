@@ -37,3 +37,4 @@ We encountered this issue in August 2017 on HRPD. Neither SECI nor IBEX could co
 1. Navigate to `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\COM Name Arbiter`
 1. Now on the right panel, you can see the key `ComDB`. Right-click it and click modify
 1. In value Data section select all and delete reset to zero
+1. Restart the machine if needed (to do this remotely use the command `shutdown -r -t 0`
