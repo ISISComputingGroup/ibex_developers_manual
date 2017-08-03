@@ -48,6 +48,7 @@ Building a new IOC? Before you get started, take a look at the relevant [instrum
 
 * [Barndoors and Momentum Slits on MUON Front End](Barndoors-and-Momentum-Slits-on-MUON-Front-End)
 * [Polaris Jaws](Polaris-Jaws)
+* [EnginX Jaws](EnginX-Jaws)
 * [Motors and SetPoints](Motor-SetPoints)
 * [Lakeshore 336](Lakeshore336)
 * [Mecury iTC](MercuryiTC)
