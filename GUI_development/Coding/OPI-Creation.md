@@ -88,5 +88,16 @@ If you have a stray widget, it may prevent scrollbars from appearing on your OPI
 - XML sorter e.g. [https://xmlsorter.codeplex.com/](https://xmlsorter.codeplex.com/)
 - Diff tool e.g. notepad++, winmerge
 
+# Data browser Graph Creation
 
+To make a databrowser graph on an OPI:
+
+1. In CSS go to the data browser perspective
+1. Click button "Add new databrowser plot" which is graph with a plus on in the tool bar
+1. Right click -> Add a PV/PVs
+1. PV should start with `$(PV_ROOT)` and end in `.VAL`, e.g. `$(PV_ROOT)POS.VAL`
+1. Alter colours, remove/add title and legend, rename axis
+1. Save in the resources folder, probably in a subfolder for the device (extension will be added automatically as .plt)
+1. Add a `Data Browser` monitor to your opi
+1. In properties in file set the file you have created
 
