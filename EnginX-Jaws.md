@@ -6,13 +6,28 @@ The limits of the Jaws (taken from the limits on the controls in the labview) ar
 
 <table>
   <tr>
-    <td colspan="2">Jaws 1</td>
-    <td colspan="2">Jaws 2</td>
+    <td></td>
+    <td colspan="2">Jaws 1 and 2</td>
     <td colspan="2">Jaws 3</td>
   </tr>
   <tr>
+    <td></td>
     <td>Low</td><td>High</td>
     <td>Low</td><td>High</td>
-    <td>Low</td><td>High</td>
+  </tr>
+  <tr>
+    <td>H Gap</td>
+    <td>0.2</td><td>82</td>
+    <td>0.5</td><td>10</td>
+  </tr>
+  <tr>
+    <td>V Gap</td>
+    <td>0.2</td><td>82</td>
+    <td>0.5</td><td>25</td>
+  </tr>
+  <tr>
+    <td>North & South & East & West</td>
+    <td>-4.5</td><td>41</td>
+    <td>N/A</td><td>N/A</td>
   </tr>
 </table>
