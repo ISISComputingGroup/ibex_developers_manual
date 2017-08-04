@@ -8,7 +8,7 @@ High level overview of the project including architectural and design documents.
 
 ## [The Back-end System](The-Backend-System) ##
 
-Information regarding the back-end systems, including the block server, databases, configurations, and IOCs. Also contains the **getting started guide** for setting up the back-end.
+Information regarding the back-end systems, including the block server, databases, configurations, and IOCs. Also contains the **[getting started guide](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/First-time-installing-and-building-(Windows))** for setting up the back-end.
 
 ## [The GUI](The-GUI)
 
