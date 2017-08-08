@@ -1,6 +1,6 @@
 > [Wiki](Home) > [The GUI](The-GUI) > [Coding](GUI-Coding) > Conventions
 
-Unless stated otherwise below we should follow the standard Java conventions where possible.
+Unless stated otherwise below we should follow the standard Java conventions for style where possible.
 
 ## Code Documentation ##
 
@@ -40,6 +40,37 @@ public class CustomPizza extends Pizza {
 }
 ```
 
+## Code Formatting ##
+
+For Java use the standard conventions built in to the IBEX developer's version of Eclipse. 
+
+An example of what it looks like:
+```java
+void foo2() {
+    if (true) {
+        return;
+    }
+
+    if (true) {
+        return;
+    } else if (false) {
+        return;
+    } else {
+        return;
+    }
+}
+```
+In Eclipse, a quick way to auto-format the code correctly is to use Ctrl+Shift+F.
+
+## Code Comments ##
+
+Comments should have a space between the // and the text, and start with a capital letter:
+```java
+// This is a good comment
+    
+//this is a bad comment
+```
+
 ## Checkstyle ##
 
 Code should be run through Checkstyle via Eclipse and corrected (within reason) before being committed.
@@ -66,28 +97,6 @@ public void getSecondsInHours(int hours) {
     return hours * seconds_per_hour;
 }
 ```
-
-## Code Formatting ##
-
-For Java use the standard conventions built in to the IBEX developer's version of Eclipse. 
-
-An example of what it looks like:
-```java
-void foo2() {
-    if (true) {
-        return;
-    }
-
-    if (true) {
-        return;
-    } else if (false) {
-        return;
-    } else {
-        return;
-    }
-}
-```
-In Eclipse, a quick way to auto-format the code correctly is to use Ctrl+Shift+F.
 
 ## Getters and Setters ##
 
@@ -122,15 +131,7 @@ class Point {
     public void setVisible(boolean visible) { this.visible = visible; }
 }
 ```    
-## Code Comments ##
 
-Comments should have a space between the // and the text, and start with a capital letter:
-```java
-// This is a good comment
-    
-//this is a bad comment
-```
-   
 ## Use Data-binding ##
 
 For connecting UI elements to data from the back-end use data-binding. 
