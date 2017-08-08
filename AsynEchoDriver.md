@@ -1,21 +1,21 @@
 Asyn provides an echo driver that will return on a read what was last provided by a write. This can
 be used for some very basic stream device testing / simulation e.g. if the real function is
 
-``
+```
 getFrequency {
     out "FREQ?"; in "%f";
 }
-``
+```
 
 Then by connecting the device to the echo driver you could write
 
-``
+```
 Terminator = ETX;
 
 getFrequency {
     out "10.0"; in "%f";
 }
-``
+```
 
 Note, you must have a terminator otherwise the echo driver gets confused and won't work.
 
