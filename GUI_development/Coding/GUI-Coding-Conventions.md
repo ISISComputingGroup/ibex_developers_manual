@@ -97,8 +97,21 @@ public void getSecondsInHours(int hours) {
     return hours * seconds_per_hour;
 }
 ```
+## Naming conventions ##
 
-## Getters and Setters ##
+## General ##
+
+* Class names are CamelCase and usually nouns, e.g. `FileReader` not `ReadsFile`
+
+* Method names are Mixed Case (also known as Lower CamelCase), e.g. `sayHello`
+
+* Package names are lowercase, e.g. `uk.ac.stfc.isis.dae`
+
+* Variable names are Mixed Case
+
+* Constants are uppercase spaced by underscores, e.g. `SECONDS_PER_FORTNIGHT`
+
+### Getters and Setters ###
 
 Where possible getters and setters should follow the JavaBeans convention, namely:
 
