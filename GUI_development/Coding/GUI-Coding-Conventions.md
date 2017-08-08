@@ -1,8 +1,10 @@
 > [Wiki](Home) > [The GUI](The-GUI) > [Coding](GUI-Coding) > Conventions
 
+# Style Conventions #
+
 Unless stated otherwise below we should follow the standard Java conventions for style where possible.
 
-## Code Documentation ##
+## Code documentation ##
 
 Classes and public methods should be documented using the Javadoc syntax. For example:
 
@@ -40,7 +42,7 @@ public class CustomPizza extends Pizza {
 }
 ```
 
-## Code Formatting ##
+## Code formatting ##
 
 For Java use the standard conventions built in to the IBEX developer's version of Eclipse. 
 
@@ -62,7 +64,7 @@ void foo2() {
 ```
 In Eclipse, a quick way to auto-format the code correctly is to use Ctrl+Shift+F.
 
-## Code Comments ##
+## Code comments ##
 
 Comments should have a space between the // and the text, and start with a capital letter:
 ```java
@@ -99,7 +101,7 @@ public void getSecondsInHours(int hours) {
 ```
 ## Naming conventions ##
 
-## General ##
+### General ###
 
 * Class names are CamelCase and usually nouns, e.g. `FileReader` not `ReadsFile`
 
@@ -145,9 +147,24 @@ class Point {
 }
 ```    
 
-## Use Data-binding ##
+# Coding Conventions and Guidelines #
+
+A mix of IBEX specific and general Java coding conventions and guidelines.
+
+### Use data-binding ###
 
 For connecting UI elements to data from the back-end use data-binding. 
 It seems that if data-binding and more traditional SWT wiring up is used (e.g. AddPropertyChangeListener) then the data-binding will stop working*, so always using data-binding should avoid this problem.
 
 *This does need more investigation to find out why it occurs
+
+### Single Responsibility Principal (SRP) ###
+
+### Avoid super methods ###
+
+### Avoid super classes ###
+
+### Don't mess with finalizers ###
+It is extremely rare to need to override Object.finalize.
+
+Tip: Don't do it. If you absolutely must, first read and understand Effective Java Item 7, "Avoid Finalizers," very carefully, and then don't do it.
