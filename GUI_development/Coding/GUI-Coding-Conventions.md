@@ -156,13 +156,28 @@ A mix of IBEX specific and general Java coding conventions and guidelines.
 For connecting UI elements to data from the back-end use data-binding. 
 It seems that if data-binding and more traditional SWT wiring up is used (e.g. AddPropertyChangeListener) then the data-binding will stop working*, so always using data-binding should avoid this problem.
 
-*This does need more investigation to find out why it occurs
+*This does need more investigation to find out why it occurs.
 
 ### Single Responsibility Principal (SRP) ###
+Every class should have a single responsibility: it should have a single purpose in the system, and there should be one reason to change it.
 
-### Avoid super methods ###
+### Avoid god classes ###
+This somewhat reiterates what was stated in the SRP - usually a class should only be responsible for one thing.
+A class with many methods and many responsibilities is usually a bad thing.
 
-### Avoid super classes ###
+### Avoid long methods ###
+Methods that are long can be difficult to understand for other people (or the author six months later). Try to split them out to multiple methods.
+
+### Methods and functions are good ###
+Q: How many times should one write the same code before splitting it out into its own method?
+A: Once ;)
+
+Using methods/functions makes code easier to write, read and test.
+
+### Avoid duplication of code ###
+Repeated code is bad!
+
+Break it out into a separate method or class.
 
 ### Don't mess with finalizers ###
 It is extremely rare to need to override Object.finalize.
