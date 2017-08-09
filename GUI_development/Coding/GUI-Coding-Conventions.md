@@ -207,6 +207,7 @@ A. High-level modules should not depend on low-level modules. Both should depend
 B. Abstractions should not depend on details. Details should depend on abstractions.
 ```
 Makes for more loosely coupled code, and can make unit testing easier.
+
 Easier to explain with an example:
 
 ```java
