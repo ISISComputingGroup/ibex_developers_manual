@@ -185,6 +185,7 @@ Using methods/functions makes code easier to write, read and test. There is no l
 
 ### Avoid duplication of code ###
 Repeated code is bad!
+Repeated code is bad!
 
 Break it out into a separate method or class.
 
