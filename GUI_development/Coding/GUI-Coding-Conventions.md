@@ -211,7 +211,7 @@ Makes for more loosely coupled code, and can make unit testing easier.
 Easier to explain with an example:
 
 ```java
-// Without DIP
+// Without DIP - requires changes to AddressFinder if we decide to use a NoSQL database.
 public class AddressFinder {
     private SqlConnection connection;
 
@@ -225,7 +225,7 @@ public class AddressFinder {
 ``` 
 
 ```java
-// With DIP
+// With DIP - AddressFinder doesn't need to change if we swap to a NoSQL (if NoSQL implements DbConnection)
 public interface DbConnection {
     void open;
     ...
