@@ -195,12 +195,20 @@ Break it out into a separate method or class.
 ### Don't mess with finalizers ###
 It is extremely rare to need to override Object.finalize.
 
-Google Tip: Don't do it. If you absolutely must, first read and understand Effective Java Item 7, "Avoid Finalizers," very carefully, and then don't do it.
+Google Tip: Don't do it. If you absolutely must, first read and understand Effective Java Item 7, "Avoid Finalizers" very carefully, and then don't do it.
 
-### Return an empty list or map not null ###
-For methods that return lists/maps/sets etc. don't return null. It is cleaner to return an empty instance as the calling code does not need to check for null.
+### Return a empty collection, not null ###
+For methods that return arrays/lists/maps/sets etc. don't return null. It is cleaner to return an empty instance as the calling code does not need to check for null.
 
-### Favour interfaces over concrete classes ###
+```java
+// Avoids this extra check
+if (cars != null && cars.contains("mustang") {
+   ...
+}
+```
+See Effective Java Item 43 "Return empty arrays or collections, not nulls"
+
+### Favour interfaces over concrete classes (DIP) ###
 Also known as the [Dependency Inversion Principle](https://en.wikipedia.org/wiki/Dependency_inversion_principle):
 ```
 A. High-level modules should not depend on low-level modules. Both should depend on abstractions.
@@ -248,3 +256,30 @@ public class AddressFinder {
     ...
 }
 ```
+### Refer to objects by their interfaces ###
+Follows on from DIP. It is preferable to have variables and parameters be typed by their interface.
+
+For example:
+
+```java
+// Prefer this kind of variable declaration
+List<String> name = ArrayList<String>();
+
+// Over this
+ArrayList<String> name = ArrayList<String>();
+
+// Prefer this kind of method signature
+public List<String> filterListByName(List<String> data) {
+
+// Over this
+public ArrayList<String> filterListByName(ArrayList<String> data) {
+```
+
+See Effective Java Item 52 "Refer to objects by their interfaces"
+
+### Prefer StringBuilder for string concatenation ###
+Using `+` is fine for, say, joining two or three short strings but it is inefficient for larger numbers of strings and longer strings. Use StringBuilder instead.
+
+See Effective Java Item 51 "Beware the performance of string concatenation"
+
+
