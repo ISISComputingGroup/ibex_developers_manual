@@ -103,19 +103,21 @@ public void getSecondsInHours(int hours) {
 
 ### General ###
 
+In general we use the standard Java naming conventions, e.g.:
+
 * Class names are CamelCase and usually nouns, e.g. `FileReader` not `ReadsFile`
 
 * Method names are Mixed Case (also known as Lower CamelCase), e.g. `sayHello`
 
 * Package names are lowercase, e.g. `uk.ac.stfc.isis.dae`
 
-* Variable names are Mixed Case
+* Variable names are Mixed Case, e.g. `calculateMeanSpeed`
 
 * Constants are uppercase spaced by underscores, e.g. `SECONDS_PER_FORTNIGHT`
 
 ### Getters and Setters ###
 
-Where possible getters and setters should follow the JavaBeans convention, namely:
+Getters and Setters should follow the JavaBeans convention, namely:
 
 * **Getter** - starts with "get"
     
@@ -151,10 +153,17 @@ class Point {
 
 A mix of IBEX specific and general Java coding conventions and guidelines.
 
+### GUI code must use a View Model ###
+
+This maintains a separation between pure GUI code and the back-end. It also makes it easier for us to test our code.
+See the previous GUI Chat slides for more information.
+
+Some legacy code does not have a View Model, this is on the list to fix.
+
 ### Use data-binding ###
 
-For connecting UI elements to data from the back-end use data-binding. 
-It seems that if data-binding and more traditional SWT wiring up is used (e.g. AddPropertyChangeListener) then the data-binding will stop working*, so always using data-binding should avoid this problem.
+For connecting UI elements to data from the View Model use data-binding. 
+It seems that if a  mix of data-binding and more traditional SWT wiring up is used (e.g. AddPropertyChangeListener) then the data-binding will stop working*, so always using data-binding should avoid this problem.
 
 *This does need more investigation to find out why it occurs.
 
@@ -182,4 +191,7 @@ Break it out into a separate method or class.
 ### Don't mess with finalizers ###
 It is extremely rare to need to override Object.finalize.
 
-Tip: Don't do it. If you absolutely must, first read and understand Effective Java Item 7, "Avoid Finalizers," very carefully, and then don't do it.
+Google Tip: Don't do it. If you absolutely must, first read and understand Effective Java Item 7, "Avoid Finalizers," very carefully, and then don't do it.
+
+### Return an empty list or map not null ###
+For methods that return lists/maps/sets etc. don't return null. It is cleaner to return an empty instance as the calling code does not need to check for null.
