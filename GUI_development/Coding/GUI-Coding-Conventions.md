@@ -181,6 +181,7 @@ Methods that are long can be difficult to understand for other people (or the au
 
 ### Methods and functions are good ###
 Q: How many times should one write the same code before splitting it out into its own method?
+
 A: Once ;)
 
 Using methods/functions makes code easier to write, read and test. There is no lower limit to how short a method can be if it helps with overall comprehension.
