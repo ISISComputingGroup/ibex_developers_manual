@@ -162,7 +162,7 @@ See the previous GUI Chat slides for more information.
 
 Some legacy code does not have a View Model, this is on the list to fix.
 
-### Use data-binding ###
+### Use data-binding for GUI items ###
 
 For connecting UI elements to data from the View Model use data-binding. 
 It seems that if a  mix of data-binding and more traditional SWT wiring up is used (e.g. AddPropertyChangeListener) then the data-binding will stop working*, so always using data-binding should avoid this problem.
