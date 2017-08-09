@@ -1,5 +1,7 @@
 > [Wiki](Home) > [The GUI](The-GUI) > [Coding](GUI-Coding) > Conventions
 
+Contains the style and coding conventions of the IBEX GUI.
+
 # Style Conventions #
 
 Unless stated otherwise below we should follow the standard Java conventions for style where possible.
@@ -167,7 +169,7 @@ It seems that if a  mix of data-binding and more traditional SWT wiring up is us
 
 *This does need more investigation to find out why it occurs.
 
-### Single Responsibility Principal (SRP) ###
+### Single Responsibility Principle (SRP) ###
 Every class should have a single responsibility: it should have a single purpose in the system, and there should be one reason to change it.
 
 ### Avoid god classes ###
@@ -183,10 +185,11 @@ A: Once ;)
 
 Using methods/functions makes code easier to write, read and test. There is no lower limit to how short a method can be if it helps with overall comprehension.
 
-### Avoid duplication of code ###
+### Don't Repeat Yourself (DRY) ###
 Repeated code is bad!
 Repeated code is bad!
 
+Break it out into a separate method or class.
 Break it out into a separate method or class.
 
 ### Don't mess with finalizers ###
@@ -196,3 +199,51 @@ Google Tip: Don't do it. If you absolutely must, first read and understand Effec
 
 ### Return an empty list or map not null ###
 For methods that return lists/maps/sets etc. don't return null. It is cleaner to return an empty instance as the calling code does not need to check for null.
+
+### Favour interfaces over concrete classes ###
+Also known as the [Dependency Inversion Principle](https://en.wikipedia.org/wiki/Dependency_inversion_principle):
+```
+A. High-level modules should not depend on low-level modules. Both should depend on abstractions.
+B. Abstractions should not depend on details. Details should depend on abstractions.
+```
+Makes for more loosely coupled code, and can make unit testing easier.
+Easier to explain with an example:
+
+```java
+// Without DIP
+public class AddressFinder {
+    private SqlConnection connection;
+
+    public AddressFinder(SqlConnection con) {
+        connection = con;
+        connection.open();
+    }
+    
+    ...
+}
+``` 
+
+```java
+// With DIP
+public interface DbConnection {
+    void open;
+    ...
+}
+
+public SqlConnection implements DbConnection {
+    public void open() {
+    ...
+    }
+}
+
+public class AddressFinder {
+    private DbConnection connection;
+
+    public AddressFinder(DbConnection con) {
+        connection = con;
+        connection.open();
+    }
+    
+    ...
+}
+```
