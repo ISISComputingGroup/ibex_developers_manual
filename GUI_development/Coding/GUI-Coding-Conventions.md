@@ -202,7 +202,7 @@ Google Tip: Don't do it. If you absolutely must, first read and understand Effec
 For methods that return arrays/lists/maps/sets etc. don't return null. It is cleaner to return an empty instance as the calling code does not need to check for null.
 
 ```java
-// Avoids this extra check
+// Avoids this extra check in the caller
 if (cars != null && cars.contains("mustang") {
    ...
 }
