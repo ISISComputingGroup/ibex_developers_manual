@@ -53,13 +53,15 @@ I've gotten into the habit of using `TODOs` in Eclipse to identify bits of work 
 
 Nick Battam at Diamond has been very helpful. He has also recommended we speak to Will Rogers, as he's done a lot of Eclipse 4 work in CSStudio.
 
-# Using an Eclipse 3.x CSS view in IBEX
+# E4 application groundwork and early steps, August 2017 sprint
+
+## Using an Eclipse 3.x CSS view in IBEX
 
 The Application model in `uk.ac.stfc.isis.ibex.e4.client` defines the structure of the application. In a pure E4 application, when parts are created we use annotations and dependency injection to define when and how the views are constructed. That's different from Eclipse 3.x which used parts derived from `ViewPart` that call `createPartControl` instead of using the annotation `@PartConstruct`. Further, even if we do manage to build the view with some clever function calls, the RCP model is unavailable to us and we get lots of exceptions (e.g. `getSite()` returns `null`).
 
 To use a CSS view, or something derived from it, in Eclipse 4, create a shared part element in the application model. Give it the ID of the view you want to use (e.g. `uk.ac.stfc.isis.ibex.ui.alarm.AlarmView`) and in `Class URI` use `bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView`. When you use that shared element in your perspective, it will build and run as if it were in Eclipse 3.x.
 
-# Hiding unwanted UI elements
+## Hiding unwanted UI elements
 
 The way Eclipse RCP works, if you include certain plugins (often denoted with the suffix `ui`) in your application, it will add certain elements to the UI, whether you want it to or not! Sometimes you can't avoid adding these plugins because they're required for something else you want to use. To get rid of them, hide them from the application model:
 
