@@ -1,6 +1,6 @@
 > [Wiki](Home) > [The GUI](The-GUI) > [Coding](GUI-Coding) > Conventions
 
-Contains the style and coding conventions of the IBEX GUI.
+Contains the style and coding conventions for the IBEX GUI.
 
 # Style Conventions #
 
@@ -194,9 +194,13 @@ Break it out into a separate method or class.
 Break it out into a separate method or class.
 
 ### Don't mess with finalizers ###
-It is extremely rare to need to override Object.finalize.
+From the Google Java Style Guide:
 
-Google Tip: Don't do it. If you absolutely must, first read and understand Effective Java Item 7, "Avoid Finalizers" very carefully, and then don't do it.
+```
+It is extremely rare to override Object.finalize.
+
+Tip: Don't do it. If you absolutely must, first read and understand Effective Java Item 7, "Avoid Finalizers," very carefully, and then don't do it.
+```
 
 ### Return a empty collection, not null ###
 For methods that return arrays/lists/maps/sets etc. don't return null. It is cleaner to return an empty instance as the calling code does not need to check for null.
