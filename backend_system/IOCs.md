@@ -58,6 +58,7 @@ Building a new IOC? Before you get started, take a look at the relevant [instrum
 * [Danfysik](Danfysik)
 * [Neocera LTC-21](Neocera-LTC-21)
 * [Instron stress rig](Instron-stress-rig)
+* [SDTest](SDTest)
 
 ## Further reading ##
 
