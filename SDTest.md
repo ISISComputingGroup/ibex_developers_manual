@@ -6,29 +6,29 @@ The SDTEST IOCs allow us to set up communications with an arbitrary device on-th
 
 Each SDTest IOC supports communication with 8 separate devices on 8 ports. Macros should be suffixed by the device number in the range `1` to `8` inclusive (e.g. `PORT1`):
 
-`PORT`: 
-`BAUD`:
-`BITS`:
-`PARITY`:
-`STOP`:
-`CLOCAL`:
-`CRTSCTS`:
-`IXON`:
-`IXOFF`:
-`OEOS`:
-`IEOS`:
-`NAME`:
-`SCAN`:
-`GETOUT`:
-`GETIN`:
-`SETOUTA`:
-`SETOUTB`:
-`SETOUTC`:
-`SETIN`:
-`INITOUT`:
-`INITIN`:
-`INITP`:
-`PROTO`:
+- `PORT`: 
+- `BAUD`:
+- `BITS`:
+- `PARITY`:
+- `STOP`:
+- `CLOCAL`:
+- `CRTSCTS`:
+- `IXON`:
+- `IXOFF`:
+- `OEOS`:
+- `IEOS`:
+- `NAME`:
+- `SCAN`:
+- `GETOUT`:
+- `GETIN`:
+- `SETOUTA`:
+- `SETOUTB`:
+- `SETOUTC`:
+- `SETIN`:
+- `INITOUT`:
+- `INITIN`:
+- `INITP`:
+- `PROTO`:
 
 
 # Simple setup
