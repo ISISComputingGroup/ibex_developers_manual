@@ -1,6 +1,35 @@
 # Introduction
 
+The SDTEST IOCs allow us to set up communications with an arbitrary device on-the-fly. This often happens if an instrument acquires a bit of equipment to achieve a short term goal. We should try and ensure that if a device is to be used long-term that we find out about it early enough to provide a dedicated IOC, or deliver it as soon as practical.
+
 # Macros
+
+Each SDTest IOC supports communication with 8 separate devices on 8 ports. Macros should be suffixed by the device number in the range `1` to `8` inclusive (e.g. `PORT1`):
+
+`PORT`: 
+`BAUD`:
+`BITS`:
+`PARITY`:
+`STOP`:
+`CLOCAL`:
+`CRTSCTS`:
+`IXON`:
+`IXOFF`:
+`OEOS`:
+`IEOS`:
+`NAME`:
+`SCAN`:
+`GETOUT`:
+`GETIN`:
+`SETOUTA`:
+`SETOUTB`:
+`SETOUTC`:
+`SETIN`:
+`INITOUT`:
+`INITIN`:
+`INITP`:
+`PROTO`:
+
 
 # Simple setup
 
