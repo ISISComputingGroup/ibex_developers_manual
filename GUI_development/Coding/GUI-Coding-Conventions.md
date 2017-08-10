@@ -182,7 +182,7 @@ public class Book {
     }
 
     // Might add additional information relating to the book = principal reason for change
-    // For example: getISBN
+    // For example: getISBN()
 
     // Violation:
     // If we decide to print it in a different format = another reason to change
