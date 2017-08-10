@@ -6,32 +6,31 @@ The SDTEST IOCs allow us to set up communications with an arbitrary device on-th
 
 Each SDTest IOC supports communication with 8 separate devices on 8 ports. Macros should be suffixed by the device number in the range `1` to `8` inclusive (e.g. `PORT1`):
 
-- `PORT`: 
-- `BAUD`:
-- `BITS`:
-- `PARITY`:
-- `STOP`:
-- `CLOCAL`:
-- `CRTSCTS`:
-- `IXON`:
-- `IXOFF`:
-- `OEOS`:
-- `IEOS`:
-- `NAME`:
-- `SCAN`:
-- `GETOUT`:
-- `GETIN`:
-- `SETOUTA`:
-- `SETOUTB`:
-- `SETOUTC`:
-- `SETIN`:
-- `INITOUT`:
-- `INITIN`:
-- `INITP`:
-- `PROTO`:
+- `PORT`: Communications port (e.g. COM1)
+- `BAUD`: Baud rate (default: 9600)
+- `BITS`: Message bits (default: 8)
+- `PARITY`: Message parity (default: none)
+- `STOP`: Number of stop bits (default: 1)
+- `CLOCAL`: Output flow control using DSR signal (Y/N, default: Y)
+- `CRTSCTS`: Hardware flow control (Y/N, default: N)
+- `IXON`: Software flow control for output (Y/N, default: N)
+- `IXOFF`: Software flow control for input (Y/N, default: N)
+- `OEOS`: Output terminator (default: \r\n)
+- `IEOS`: Input terminator (default: \r\n)
+- `NAME`: Name of the device
+- `SCAN`: Scan rate
+- `GETOUT`: Command for getting the readback
+- `GETIN`: Format of the readback
+- `SETOUTA`: Command for setpoint
+- `SETOUTB`: Secondary setpoint value
+- `SETOUTC`: Tertiary setpoint value
+- `SETIN`: Format of the setpoint
+- `INITOUT`: Initialisation command
+- `INITIN`: Format of init response
+- `INITP`: Send an initialisation command (default: NO)
+- `PROTO`: Path to custom protocol file, (default: SDTEST-default.proto)
 
-
-# Simple setup
+Note that typically 
 
 # Example
 
