@@ -261,7 +261,8 @@ public class AddressFinder {
 ``` 
 
 ```java
-// With DIP - AddressFinder doesn't need to change if we swap to a NoSQL (if NoSQL implements DbConnection)
+// With DIP - AddressFinder doesn't need to change if we swap to NoSQL
+// provided that NoSQLConnection implements DbConnection too
 public interface DbConnection {
     void open;
     ...
