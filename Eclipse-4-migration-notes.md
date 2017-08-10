@@ -49,11 +49,23 @@ I've gotten into the habit of using `TODOs` in Eclipse to identify bits of work 
 - `BeamStatusView.java`: The PVs haven't been connected to the beam status view because the archiver doesn't connect properly yet
 - 'BeamStatusView.java`: Using the `showToolbar(false)` command doesn't actually hide the toolbar in the beam status view. I've tried working around this but ran out of time. We should sort it out eventually but I've left it for the time being. We may want to change that entire part eventually to just be two databrowsers in different tabs rather than embedding the graph in a separate view. That relies on a later bit of work though.
 - Perspective switching: I've written a basic perspective switcher `uk.ac.stfc.isis.ibex.e4.ui.perspectiveswitcher`. It does what we need it to for now but later on we should switch to using snippets rather than shared elements to build our perspectives. The reason is that shared elements retain changes to their size between perspectives which sounds nice but can lead to very weird behaviour. I think it's best avoided. Similarly, snippets will be necessary to do things like restoring default views of a perspective. In all, we shouldn't have to hard code our perspectives, so it would be better managed via an extension point.
-
-# The challenge: CSS integration with IBEX on Eclipse 4
-
-One problem I faced with migrating the beam status view is that CSS views are still written in an Eclipse 3 way (i.e. using the Eclipse 3.x API and inheritance rather than dependency injection). This makes it difficult to use a CSS view in our Eclipse 4 application model. In particular, calls to the Eclipse 3.x API (e.g. `getSite()`) may return `null`s that inhibit initialisation. I **don't** currently have a fix for this issue. We **will** need one. It'll be needed for the Alarms view and OPIs for instance which are rather crucial. Our feeling is that this issue must have been solved at some point by somebody, it doesn't seem like a unique issue.
-
 # Useful people to talk to
 
 Nick Battam at Diamond has been very helpful. He has also recommended we speak to Will Rogers, as he's done a lot of Eclipse 4 work in CSStudio.
+
+# Using an Eclipse 3.x CSS view in IBEX
+
+The Application model in `uk.ac.stfc.isis.ibex.e4.client` defines the structure of the application. In a pure E4 application, when parts are created we use annotations and dependency injection to define when and how the views are constructed. That's different from Eclipse 3.x which used parts derived from `ViewPart` that call `createPartControl` instead of using the annotation `@PartConstruct`. Further, even if we do manage to build the view with some clever function calls, the RCP model is unavailable to us and we get lots of exceptions (e.g. `getSite()` returns `null`).
+
+To use a CSS view, or something derived from it, in Eclipse 4, create a shared part element in the application model. Give it the ID of the view you want to use (e.g. `uk.ac.stfc.isis.ibex.ui.alarm.AlarmView`) and in `Class URI` use `bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView`. When you use that shared element in your perspective, it will build and run as if it were in Eclipse 3.x.
+
+# Hiding unwanted UI elements
+
+The way Eclipse RCP works, if you include certain plugins (often denoted with the suffix `ui`) in your application, it will add certain elements to the UI, whether you want it to or not! Sometimes you can't avoid adding these plugins because they're required for something else you want to use. To get rid of them, hide them from the application model:
+
+1. Make sure model spy is active. The feature `uk.ac.stfc.isis.ibex.feature.spies` should be included in `uk.ac.stfc.isis.ibex.feature.base`.
+1. Open `ibex.product` in `uk.ac.stfc.isis.ibex.e4.client.product` and click `Synchronize` to make sure all relevant plugins have been activated in the run configuration
+1. Launch the application
+1. Press `Ctrl+Shift+F9` to access the application spies
+1. Find the model spy and navigate to the element you want to hide
+1. Add the element to `Application.e4xmi` in `uk.ac.stfc.isis.ibex.e4.client` and untick the `To Be Rendered` and `Visible` checkboxes
