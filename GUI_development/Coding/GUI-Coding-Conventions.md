@@ -172,6 +172,29 @@ It seems that if a  mix of data-binding and more traditional SWT wiring up is us
 ### Single Responsibility Principle (SRP) ###
 Every class should have a single responsibility: it should have a single purpose in the system, and there should be one reason to change it.
 
+```java
+public class Book {
+    ...
+    
+    // Fine: Method relating to the 'book'
+    public String getAuthor(String s) {
+        ...
+    }
+
+    // Might add additional information relating to the book = principal reason for change
+    // For example: getISBN
+
+    // Violation:
+    // If we decide to print it in a different format = another reason to change
+    // Better to have a separate 'printer' class
+    public void printCurrentPage() {
+        ...
+    }
+}
+
+```
+
+
 ### Avoid god classes ###
 This somewhat reiterates what was stated in the SRP - usually a class should only be responsible for one thing.
 A class with many methods and many responsibilities is usually a bad thing.
