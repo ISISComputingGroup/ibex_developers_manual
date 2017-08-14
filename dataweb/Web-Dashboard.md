@@ -54,7 +54,7 @@ To test the blockserver webserver:
 
 To test JSON_Bourne:
 * Run webserver.py
-* Navigate in a browser to http://localhost:60000/?callback=parseObject&Instrument=<instrument-name>&
+* Navigate in a browser to http://localhost:60000/?callback=parseObject&Instrument=&
 
 To test the website on a developer machine:
 * Open default.html with the variable of ?Instrument=instrument-name e.g. go to `file://JSON_bourne/default.html?Instrument=larmor` in a browser to view larmor's dashboard
