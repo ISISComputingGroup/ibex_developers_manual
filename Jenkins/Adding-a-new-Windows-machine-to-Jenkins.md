@@ -10,6 +10,8 @@ These are instructions for adding a new Windows machine as a node to be used by 
 
 * Add the builders password as a environment variable (system variable) called BUILDERPW
 
+* Nicos requires a specific version of Visual Studio from [here](https://www.microsoft.com/en-us/download/details.aspx?id=44266)
+
 ### Adding to Jenkins
 
 * Go to ​http://epics-jenkins.isis.rl.ac.uk/computer/ and log in to Jenkins
