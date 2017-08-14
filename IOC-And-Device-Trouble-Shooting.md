@@ -47,6 +47,13 @@ If no reply is given this will include a message "No reply from device in XXXms"
 
 See [[ASYN-Trace-Masks]] for more details on specifying trace masks  
 
+## Is the MOXA seeing anything?
+
+It is sometime useful to see if the moxa is seeing any traffic. If you are in the cabin you can look at the flashing lights (remember to take away 4 to convert from com number to port number). There is one light for send and one for receive both should flash.
+
+If you want to do it remotely then you can by using the moxa web page. The address is on the [nagios page (standard log on)](https://varanus.isis.cclrc.ac.uk/nagios/). Look at Hosts -> MOXA_<Instrument name> the IP address is at top of the page in the middle. Enter the IP in a web browser and enter password from password page.
+Then Monitor -> Asyn shows received and sent byte count.
+
 ## Environment Variable not getting set from MASTER_RELEASE
 
 Varibles are transferred from `...EPICS\configure\MASTER_RELEASE` to `...EPICS\ioc\master\<IOCNAME>\iocBoot\<IOCNAME>\envPaths` when the ioc is made. You will have to delete the file to get the newest macros in and the paths have to exist.
