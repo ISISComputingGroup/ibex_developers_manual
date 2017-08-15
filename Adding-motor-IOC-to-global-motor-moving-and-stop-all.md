@@ -10,6 +10,7 @@ Inside motorUtil.db add the new IOC (you need one entry per ioc independent of h
 * Add a line like **$(IFIOC_SMC100_01=#)  field(OUTA, "$(PVPREFIX)CS:MOT:_MOVING1.A CA")**   to the dfanout record
 * Add a line like     **dbLoadRecords("$(MOTOR)/db/motorUtil.db","P=$(MYPVPREFIX)$(IOCNAME):,$(IFIOC)= ,PVPREFIX=$(MYPVPREFIX)")**    to your IOC startup
 * Make sure you have the line    **motorUtilInit("$(MYPVPREFIX)$(IOCNAME):")** somewhere after iocInit() in st.cmd
+* Make sure that the _MOVING1 field that you are writing to is included in the CALC of the $(P)CS:MOT:_MOVING1 record (located in INSTETC.db)
 
 If your IOC is called SMC100_01 then the ISIS standard startup creates a few useful macros for you: 
 * $(IFIOC_SMC100_01) will have value " "
