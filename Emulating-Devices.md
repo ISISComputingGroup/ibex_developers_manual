@@ -110,3 +110,4 @@ ingful default can be deduced.`. Possible solutions:
 * I want to log something how do I do that?
     1. include `@has_log` at the top of the class (don't forget to `from lewis.core.logging import has_log`)
     1. use self.log.info(message), self.log.warning(message), self.log.error(message), etc
+* When I try to run a device I get the error `Failed to find protocol stream...`. This is due to one of the imports in the stream_interface not being valid. Check that they are all correct.
