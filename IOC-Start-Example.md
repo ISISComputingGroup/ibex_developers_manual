@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) >[IOC Startup Example](IOC-Start-Example)
+
 The following gives an example of a normal start of SIMPLE IOC running in proc serve with the instrument running. The following splits out all the bits:
 
 ```
