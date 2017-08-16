@@ -1,3 +1,477 @@
+The following gives an example of a normal start of SIMPLE IOC running in proc serve with the instrument running. The following splits out all the bits:
+
+```
+[2017-08-16 13:53:52] @@@ Restarting child "SIMPLE"
+[2017-08-16 13:53:52] @@@    (as C:\windows\system32\cmd.exe)
+[2017-08-16 13:53:52] @@@ The PID of new child "SIMPLE" is: 7280
+[2017-08-16 13:53:52] @@@ @@@ @@@ @@@ @@@
+```
+header which shows what has started
+
+```
+[2017-08-16 13:53:54] #!../../bin/windows-x64/simple
+[2017-08-16 13:53:54] ## You may have to change simple to something else
+[2017-08-16 13:53:54] ## everywhere it appears in this file
+[2017-08-16 13:53:54] < envPaths
+```
+start of st.cmd file
+
+```
+[2017-08-16 13:53:54] epicsEnvSet("IOC","iocsimple")
+[2017-08-16 13:53:54] epicsEnvSet("TOP","C:/Instrument/Apps/EPICS/ISIS/SimpleIoc/master")
+[2017-08-16 13:53:54] epicsEnvSet("ACCESSSECURITY","C:/Instrument/Apps/EPICS/support/AccessSecurity/master")
+...<snip> ...
+[2017-08-16 13:53:54] epicsEnvSet("IOCSTARTUP","C:/Instrument/Apps/EPICS/iocstartup")
+[2017-08-16 13:53:54] epicsEnvSet("ICPBINARYDIR","C:/Instrument/Apps/EPICS/ICP_Binaries")
+```
+
+macros which are defined in `EPICS\configure\MASTER_RELEASE` and point to support modules that may be used by the IOC
+
+```
+[2017-08-16 13:53:54] cd C:/Instrument/Apps/EPICS/ISIS/SimpleIoc/master
+[2017-08-16 13:53:54] ## Register all support components
+[2017-08-16 13:53:54] dbLoadDatabase "dbd/simple.dbd"
+[2017-08-16 13:53:54] simple_registerRecordDeviceDriver pdbbase
+[2017-08-16 13:53:54] < C:/Instrument/Apps/EPICS/iocstartup/init.cmd
+```
+More st.cmd and then load inital init which sets up configuration info:
+
+```
+[2017-08-16 13:53:54] icpconfigLoad
+[2017-08-16 13:53:54] icpconfigLoad: ioc "SIMPLE" group "SIMPLE" options 0x0 host "NDW1798"
+[2017-08-16 13:53:54] icpconfigLoad: config base (ICPCONFIGBASE) is "C:/Instrument/Settings/config"
+[2017-08-16 13:53:54] icpconfigLoad: config root (ICPCONFIGROOT) is "C:/Instrument/Settings/config/NDW1798/configurations"
+[2017-08-16 13:53:54] icpconfigLoad: * $(SIMULATE)="0" ({initial default})
+[2017-08-16 13:53:54] icpconfigLoad: * $(IFSIM)="#" ({initial default})
+[2017-08-16 13:53:54] icpconfigLoad: * $(IFNOTSIM)=" " ({initial default})
+[2017-08-16 13:53:54] icpconfigLoad: * $(SIMSFX)="" ({initial default})
+[2017-08-16 13:53:54] icpconfigLoad: * $(DISABLE)="0" ({initial default})
+[2017-08-16 13:53:54] icpconfigLoad: * $(IFDISABLE)="#" ({initial default})
+[2017-08-16 13:53:54] icpconfigLoad: * $(IFNOTDISABLE)=" " ({initial default})
+[2017-08-16 13:53:54] icpconfigLoad: * $(DEVSIM)="0" ({initial default})
+[2017-08-16 13:53:54] icpconfigLoad: * $(IFDEVSIM)="#" ({initial default})
+[2017-08-16 13:53:54] icpconfigLoad: * $(IFNOTDEVSIM)=" " ({initial default})
+[2017-08-16 13:53:54] icpconfigLoad: * $(RECSIM)="0" ({initial default})
+[2017-08-16 13:53:54] icpconfigLoad: * $(IFRECSIM)="#" ({initial default})
+[2017-08-16 13:53:54] icpconfigLoad: * $(IFNOTRECSIM)=" " ({initial default})
+[2017-08-16 13:53:54] icpconfigLoad: * $(ICPCONFIGDIR)="C:/Instrument/Settings/config/NDW1798/configurations/configurations/Instron" ({initial default})
+```
+defaults
+```
+[2017-08-16 13:53:54] icpconfigLoad: last configuration was "Instron" (C:/Instrument/Settings/config/NDW1798/configurations/configurations/Instron)
+[2017-08-16 13:53:54] icpconfigLoad: configuration "Instron"
+[2017-08-16 13:53:54] icpconfigLoad: loading 0 component(s) for "/configurations/Instron"
+[2017-08-16 13:53:54] icpconfigLoad: Loading default macros for "/configurations/Instron"
+[2017-08-16 13:53:54] icpconfigLoad: Loading IOC sim level "/configurations/Instron"
+[2017-08-16 13:53:54] icpconfigLoad: Loading IOC macros for "/configurations/Instron"
+[2017-08-16 13:53:54] icpconfigLoad: Loading IOC PVs for "/configurations/Instron"
+[2017-08-16 13:53:54] icpconfigLoad: Loading IOC PV sets for "/configurations/Instron"
+[2017-08-16 13:53:54] Cannot open directory: C:/Instrument/Settings/config/NDW1798/configurations/configurations/Instron/files
+[2017-08-16 13:53:54] icpconfigLoad: Found 0 files for "/configurations/Instron"
+```
+Last configuration loaded
+```
+[2017-08-16 13:53:54] icpconfigLoad: loading old macro file "C:/Instrument/Settings/config/NDW1798/configurations/globals.txt"
+[2017-08-16 13:53:54] icpconfigLoad: * $(GALILNUMCRATES)="1" 
+```
+`globals.txt` macros.
+
+```
+[2017-08-16 13:53:54] # define a macro with the same name as the IOC name and a blank value. This means we can use a line like
+[2017-08-16 13:53:54] #  $(IFIOC_GALIL_01=#) to have something that is only executed in GALIL_01 IOC
+
+[2017-08-16 13:53:54] # and you can pass to db file via A=1,$(IFIOC)= ,A=2
+
+[2017-08-16 13:53:54] # used when loading motorUtils and motors moving
+
+[2017-08-16 13:53:54] epicsEnvSet("IFIOC", "IFIOC_SIMPLE")
+
+[2017-08-16 13:53:54] epicsEnvSet("IFIOC_SIMPLE", " ")
+
+[2017-08-16 13:53:54] < C:/Instrument/Apps/EPICS/iocstartup/asyn.cmd
+
+[2017-08-16 13:53:54] ## defaults for asyn drivers
+
+[2017-08-16 13:53:54] ## Global default is to trace only errors
+
+[2017-08-16 13:53:54] ## 0=none,0x1=err,0x2=IO_device,0x4=IO_filter,0x8=IO_driver,0x10=flow,0x20=warning
+
+[2017-08-16 13:53:54] asynSetTraceMask("", -1, 0x1)
+
+[2017-08-16 13:53:54] asyn.cmd line 5: Command asynSetTraceMask not found.
+
+[2017-08-16 13:53:54] ## Global default to send trace output to errlog (missing 3rd arg passes NULL as that parameter)
+
+[2017-08-16 13:53:54] asynSetTraceFile("", -1)
+
+[2017-08-16 13:53:54] asyn.cmd line 8: Command asynSetTraceFile not found.
+
+[2017-08-16 13:53:54] ## Global default is to print escaped ascii for any IO_* trace specified above
+
+[2017-08-16 13:53:54] ## 0=none,1=ascii,2=esc,4=hex
+
+[2017-08-16 13:53:54] asynSetTraceIOMask("", -1, 0x2)
+
+[2017-08-16 13:53:54] asyn.cmd line 12: Command asynSetTraceIOMask not found.
+```
+async defaults
+
+```
+[2017-08-16 13:53:54] < C:/Instrument/Apps/EPICS/iocstartup/ioctesting.cmd
+
+[2017-08-16 13:53:54] # If in test dev sim mode set up values
+
+[2017-08-16 13:53:54] epicsEnvSet TESTDEVSIM "#"
+
+[2017-08-16 13:53:54] # epicsEnvSet "DEVSIM" "1"
+
+[2017-08-16 13:53:54] # epicsEnvSet "RECSIM" "0"
+
+[2017-08-16 13:53:54] # stringiftest("DEVSIM", "yes", 2)
+
+[2017-08-16 13:53:54] # stringiftest("RECSIM", "", 2)
+
+[2017-08-16 13:53:54] # < C:/Instrument/Var/tmp/test_config.txt
+
+[2017-08-16 13:53:54] # If in test rec sim mode
+
+[2017-08-16 13:53:54] epicsEnvSet TESTRECSIM "#"
+
+[2017-08-16 13:53:54] # epicsEnvSet "DEVSIM" "0"
+
+[2017-08-16 13:53:54] # epicsEnvSet "RECSIM" "1"
+
+[2017-08-16 13:53:54] # stringiftest("DEVSIM", "", 2)
+
+[2017-08-16 13:53:54] # stringiftest("RECSIM", "yes", 2)
+
+[2017-08-16 13:53:54] # < C:/Instrument/Var/tmp/test_config.txt
+
+[2017-08-16 13:53:54] ## Create the emulator port macro and set it to either the one given or a spare port:
+
+[2017-08-16 13:53:54] # freeIPPort(SPARE_PORT)
+
+[2017-08-16 13:53:54] # epicsEnvSet "EMULATOR_PORT" 
+
+[2017-08-16 13:53:54] # epicsEnvShow("EMULATOR_PORT") 
+```
+Set up macros for ioc test framework (including loading macros from the temp file if needed)
+
+```
+[2017-08-16 13:53:54] ## Load record instances
+
+[2017-08-16 13:53:54] < C:/Instrument/Apps/EPICS/iocstartup/dbload.cmd
+
+[2017-08-16 13:53:54] #dbLoadRecords("$(TIMESTAMPRECORD)/db/timestamp.db","P=$(MYPVPREFIX)$(IOCNAME):")
+
+[2017-08-16 13:53:54] dbLoadRecords("C:/Instrument/Apps/EPICS/support/devIocStats/master/db/iocAdminSoft.db","IOC=TE:NDW1798:CS:IOC:SIMPLE:DEVIOS")
+
+[2017-08-16 13:53:54] #dbLoadRecords("$(ASUBFUNCTIONS)/db/iocExit.db","P=$(MYPVPREFIX),Q=CS:IOC:$(IOCNAME):,IOCNAME=$(IOCNAME)")
+
+[2017-08-16 13:53:54] < C:/Instrument/Apps/EPICS/iocstartup/autosave.cmd
+
+[2017-08-16 13:53:54] ## start autosave.cmd
+
+[2017-08-16 13:53:54] save_restoreSet_Debug(0)
+
+[2017-08-16 13:53:54] # status-PV prefix, so save_restore can find its status PV's.
+
+[2017-08-16 13:53:54] #epicsEnvSet("ASPREFIX","$(MYPVPREFIX)CS:IOC:$(IOCNAME):AS:")
+
+[2017-08-16 13:53:54] epicsEnvSet("ASPREFIX","TE:NDW1798:AS:SIMPLE:")
+
+[2017-08-16 13:53:54] save_restoreSet_status_prefix("TE:NDW1798:AS:SIMPLE:")
+
+[2017-08-16 13:53:54] # Ok to save/restore save sets with missing values (no CA connection to PV)?  
+
+[2017-08-16 13:53:54] save_restoreSet_IncompleteSetsOk(1)
+
+[2017-08-16 13:53:54] # Save dated backup files?
+
+[2017-08-16 13:53:54] save_restoreSet_DatedBackupFiles(1)
+
+[2017-08-16 13:53:54] # Number of sequenced backup files to write
+
+[2017-08-16 13:53:54] save_restoreSet_NumSeqFiles(1)
+
+[2017-08-16 13:53:54] # Time interval between sequenced backups
+
+[2017-08-16 13:53:54] save_restoreSet_SeqPeriodInSeconds(300)
+
+[2017-08-16 13:53:54] # specify where save files should be - use a different directory if in simulation mode
+
+[2017-08-16 13:53:54] mkdir("C:/Instrument/Var/autosave/SIMPLE") 
+
+[2017-08-16 13:53:54] set_savefile_path("C:/Instrument/Var/autosave", "SIMPLE")
+
+[2017-08-16 13:53:54] ## specify what save files should be restored.  Note these files must be
+
+[2017-08-16 13:53:54] ## in the directory specified in set_savefile_path(), or, if that function
+
+[2017-08-16 13:53:54] ## has not been called, from the directory current when iocInit is invoked
+
+[2017-08-16 13:53:54] ## example: set_pass0_restoreFile("autosave_geiger.sav")
+
+[2017-08-16 13:53:54] ## restore positions at pass 0 so not passed to hardware
+
+[2017-08-16 13:53:54] ##
+
+[2017-08-16 13:53:54] ## Use     epicsEnvSet("AUTOSAVEREQ","#")   if you do not have any req files to load
+
+[2017-08-16 13:53:54]  set_pass0_restoreFile("SIMPLE_positions.sav")
+
+[2017-08-16 13:53:54]  set_pass0_restoreFile("SIMPLE_settings.sav")
+
+[2017-08-16 13:53:54] # restore settings at pass 1 so passed to hardware
+
+[2017-08-16 13:53:54]  set_pass1_restoreFile("SIMPLE_settings.sav")
+
+[2017-08-16 13:53:54] # these values are obtained from info fields in DB files via makeAutosaveFiles() / makeAutosaveFileFromDbInfo()
+
+[2017-08-16 13:53:54] set_pass0_restoreFile("SIMPLE_info_positions.sav")
+
+[2017-08-16 13:53:54] set_pass0_restoreFile("SIMPLE_info_settings.sav")
+
+[2017-08-16 13:53:54] set_pass1_restoreFile("SIMPLE_info_settings.sav")
+
+[2017-08-16 13:53:54] #save_restoreSet_CAReconnect(1)
+
+[2017-08-16 13:53:54] # specify directories in which to to search for included request files
+
+[2017-08-16 13:53:54] set_requestfile_path("C:/Instrument/Apps/EPICS/ISIS/SimpleIoc/master/iocBoot/iocsimple", "")
+
+[2017-08-16 13:53:54] # Autosave status PVs - P must be same as used in save_restoreSet_status_prefix() above
+
+[2017-08-16 13:53:54] dbLoadRecords("C:/Instrument/Apps/EPICS/support/autosave/master/asApp/Db/save_restoreStatus.db", "P=TE:NDW1798:AS:SIMPLE:")
+
+[2017-08-16 13:53:54] ## end autosave.cmd
+```
+setup autosave.
+
+```
+[2017-08-16 13:53:54] dbLoadRecords("db/simple.db","P=TE:NDW1798:SIMPLE:")
+```
+IOC db load of records
+
+```
+[2017-08-16 13:53:54] < C:/Instrument/Apps/EPICS/iocstartup/preiocinit.cmd
+
+[2017-08-16 13:53:54] #
+
+[2017-08-16 13:53:54] # write process variable and IOC startup information to database 
+
+[2017-08-16 13:53:54] #
+
+[2017-08-16 13:53:54] pvdump
+
+[2017-08-16 13:53:54] pvdump: ioc name is "SIMPLE" pid 11856
+
+[2017-08-16 13:53:54] pvdump: MySQL write of 129 PVs with 33 info entries, plus 307 macros took 0.092 seconds
+
+[2017-08-16 13:53:54] #
+
+[2017-08-16 13:53:54] # set up IOC access security
+
+[2017-08-16 13:53:54] #
+
+[2017-08-16 13:53:54] asSetFilename("C:/Instrument/Apps/EPICS/support/AccessSecurity/master/default.acf")
+
+[2017-08-16 13:53:54] asSetSubstitutions("P=TE:NDW1798:,ACF_IH1=localhost,ACF_IH2=localhost,ACF_IH3=localhost,ACF_IH4=localhost")
+
+[2017-08-16 13:53:54] #
+
+[2017-08-16 13:53:54] # log to server address EPICS_IOC_LOG_INET listening on port EPICS_IOC_LOG_PORT 
+
+[2017-08-16 13:53:54] #
+
+[2017-08-16 13:53:54] epicsEnvSet("EPICS_IOC_LOG_INET", "localhost")
+
+[2017-08-16 13:53:54] iocLogInit()
+
+[2017-08-16 13:53:54] log client: connected to log server at "127.0.0.1:7004"
+
+[2017-08-16 13:53:54] cd C:/Instrument/Apps/EPICS/ISIS/SimpleIoc/master/iocBoot/iocsimple
+
+[2017-08-16 13:53:54] iocInit
+
+[2017-08-16 13:53:54] sevr=info Starting iocInit
+
+[2017-08-16 13:53:54] ############################################################################
+
+[2017-08-16 13:53:54] ## EPICS R3.15.5
+
+[2017-08-16 13:53:54] ## EPICS Base built Jul 10 2017
+
+[2017-08-16 13:53:54] ############################################################################
+
+[2017-08-16 13:53:54] sevr=info reboot_restore: entry for file 'SIMPLE_positions.sav'
+
+[2017-08-16 13:53:54] sevr=info reboot_restore: Found filename 'SIMPLE_positions.sav' in restoreFileList.
+
+[2017-08-16 13:53:54] sevr=info *** restoring from 'C:/Instrument/Var/autosave/SIMPLE/SIMPLE_positions.sav' at initHookState 6 (before record/device init) ***
+
+[2017-08-16 13:53:54] sevr=info save_restore: Can't open file 'C:/Instrument/Var/autosave/SIMPLE/SIMPLE_positions.sav'.
+
+[2017-08-16 13:53:54] sevr=info save_restore: Trying backup file 'C:/Instrument/Var/autosave/SIMPLE/SIMPLE_positions.savB'
+
+[2017-08-16 13:53:54] sevr=info save_restore: Can't open file 'C:/Instrument/Var/autosave/SIMPLE/SIMPLE_positions.savB'.
+
+[2017-08-16 13:53:54] sevr=info save_restore: Can't figure out which seq file is most recent,
+
+[2017-08-16 13:53:54] sevr=info save_restore: so I'm just going to start with 'C:/Instrument/Var/autosave/SIMPLE/SIMPLE_positions.sav0'.
+
+[2017-08-16 13:53:54] sevr=info save_restore: Trying backup file 'C:/Instrument/Var/autosave/SIMPLE/SIMPLE_positions.sav0'
+
+[2017-08-16 13:53:54] sevr=info save_restore: Can't open file 'C:/Instrument/Var/autosave/SIMPLE/SIMPLE_positions.sav0'.
+
+[2017-08-16 13:53:54] sevr=info save_restore: Can't find a file to restore from...sevr=info save_restore: ...last tried 'C:/Instrument/Var/autosave/SIMPLE/SIMPLE_positions.sav0'. I give up.
+
+[2017-08-16 13:53:54] save_restore: **********************************
+
+[2017-08-16 13:53:54] 
+
+[2017-08-16 13:53:54] sevr=info save_restore: Can't open save file.sevr=info reboot_restore: entry for file 'SIMPLE_settings.sav'
+
+[2017-08-16 13:53:54] sevr=info reboot_restore: Found filename 'SIMPLE_settings.sav' in restoreFileList.
+
+[2017-08-16 13:53:54] sevr=info *** restoring from 'C:/Instrument/Var/autosave/SIMPLE/SIMPLE_settings.sav' at initHookState 6 (before record/device init) ***
+
+[2017-08-16 13:53:54] sevr=info save_restore: Can't open file 'C:/Instrument/Var/autosave/SIMPLE/SIMPLE_settings.sav'.
+
+[2017-08-16 13:53:54] sevr=info save_restore: Trying backup file 'C:/Instrument/Var/autosave/SIMPLE/SIMPLE_settings.savB'
+
+[2017-08-16 13:53:54] sevr=info save_restore: Can't open file 'C:/Instrument/Var/autosave/SIMPLE/SIMPLE_settings.savB'.
+
+[2017-08-16 13:53:54] sevr=info save_restore: Can't figure out which seq file is most recent,
+
+[2017-08-16 13:53:54] sevr=info save_restore: so I'm just going to start with 'C:/Instrument/Var/autosave/SIMPLE/SIMPLE_settings.sav0'.
+
+[2017-08-16 13:53:54] sevr=info save_restore: Trying backup file 'C:/Instrument/Var/autosave/SIMPLE/SIMPLE_settings.sav0'
+
+[2017-08-16 13:53:54] sevr=info save_restore: Can't open file 'C:/Instrument/Var/autosave/SIMPLE/SIMPLE_settings.sav0'.
+
+[2017-08-16 13:53:54] sevr=info save_restore: Can't find a file to restore from...sevr=info save_restore: ...last tried 'C:/Instrument/Var/autosave/SIMPLE/SIMPLE_settings.sav0'. I give up.
+
+[2017-08-16 13:53:54] save_restore: **********************************
+
+[2017-08-16 13:53:54] 
+
+[2017-08-16 13:53:54] sevr=info save_restore: Can't open save file.sevr=info reboot_restore: entry for file 'SIMPLE_info_positions.sav'
+
+[2017-08-16 13:53:54] sevr=info reboot_restore: Found filename 'SIMPLE_info_positions.sav' in restoreFileList.
+
+[2017-08-16 13:53:54] sevr=info *** restoring from 'C:/Instrument/Var/autosave/SIMPLE/SIMPLE_info_positions.sav' at initHookState 6 (before record/device init) ***
+
+[2017-08-16 13:53:54] sevr=info reboot_restore: done with file 'SIMPLE_info_positions.sav'
+
+[2017-08-16 13:53:54] 
+
+[2017-08-16 13:53:54] sevr=info reboot_restore: entry for file 'SIMPLE_info_settings.sav'
+
+[2017-08-16 13:53:54] sevr=info reboot_restore: Found filename 'SIMPLE_info_settings.sav' in restoreFileList.
+
+[2017-08-16 13:53:54] sevr=info *** restoring from 'C:/Instrument/Var/autosave/SIMPLE/SIMPLE_info_settings.sav' at initHookState 6 (before record/device init) ***
+
+[2017-08-16 13:53:54] sevr=info reboot_restore: done with file 'SIMPLE_info_settings.sav'
+
+[2017-08-16 13:53:54] 
+
+[2017-08-16 13:53:54] sevr=info reboot_restore: entry for file 'SIMPLE_settings.sav'
+
+[2017-08-16 13:53:54] sevr=info reboot_restore: Found filename 'SIMPLE_settings.sav' in restoreFileList.
+
+[2017-08-16 13:53:54] sevr=info *** restoring from 'C:/Instrument/Var/autosave/SIMPLE/SIMPLE_settings.sav' at initHookState 7 (after record/device init) ***
+
+[2017-08-16 13:53:54] sevr=info save_restore: Can't open file 'C:/Instrument/Var/autosave/SIMPLE/SIMPLE_settings.sav'.
+
+[2017-08-16 13:53:54] sevr=info save_restore: Trying backup file 'C:/Instrument/Var/autosave/SIMPLE/SIMPLE_settings.savB'
+
+[2017-08-16 13:53:54] sevr=info save_restore: Can't open file 'C:/Instrument/Var/autosave/SIMPLE/SIMPLE_settings.savB'.
+
+[2017-08-16 13:53:54] sevr=info save_restore: Can't figure out which seq file is most recent,
+
+[2017-08-16 13:53:54] sevr=info save_restore: so I'm just going to start with 'C:/Instrument/Var/autosave/SIMPLE/SIMPLE_settings.sav0'.
+
+[2017-08-16 13:53:54] sevr=info save_restore: Trying backup file 'C:/Instrument/Var/autosave/SIMPLE/SIMPLE_settings.sav0'
+
+[2017-08-16 13:53:54] sevr=info save_restore: Can't open file 'C:/Instrument/Var/autosave/SIMPLE/SIMPLE_settings.sav0'.
+
+[2017-08-16 13:53:54] sevr=info save_restore: Can't find a file to restore from...sevr=info save_restore: ...last tried 'C:/Instrument/Var/autosave/SIMPLE/SIMPLE_settings.sav0'. I give up.
+
+[2017-08-16 13:53:54] save_restore: **********************************
+
+[2017-08-16 13:53:54] 
+
+[2017-08-16 13:53:54] sevr=info save_restore: Can't open save file.sevr=info reboot_restore: entry for file 'SIMPLE_info_settings.sav'
+
+[2017-08-16 13:53:54] sevr=info reboot_restore: Found filename 'SIMPLE_info_settings.sav' in restoreFileList.
+
+[2017-08-16 13:53:54] sevr=info *** restoring from 'C:/Instrument/Var/autosave/SIMPLE/SIMPLE_info_settings.sav' at initHookState 7 (after record/device init) ***
+
+[2017-08-16 13:53:54] sevr=info reboot_restore: done with file 'SIMPLE_info_settings.sav'
+
+[2017-08-16 13:53:54] 
+
+[2017-08-16 13:53:54] icpconfigLoad: setPVValuesStatic setting 0 pvs (pre iocInit)
+
+[2017-08-16 13:53:54] sevr=info Duplicated host 'localhost' in HAG 'instmachine'
+
+[2017-08-16 13:53:54] sevr=info Duplicated host 'localhost' in HAG 'instmachine'
+
+[2017-08-16 13:53:54] sevr=info Duplicated host 'localhost' in HAG 'instmachine'
+
+[2017-08-16 13:53:54] sevr=info Duplicated host 'localhost' in HAG 'instmachine'
+
+[2017-08-16 13:53:55] cas warning: Configured TCP port was unavailable.
+
+[2017-08-16 13:53:55] cas warning: Using dynamically assigned TCP port 60745,
+
+[2017-08-16 13:53:55] cas warning: but now two or more servers share the same UDP port.
+
+[2017-08-16 13:53:55] cas warning: Depending on your IP kernel this server may not be
+
+[2017-08-16 13:53:55] cas warning: reachable with UDP unicast (a host's IP in EPICS_CA_ADDR_LIST)
+
+[2017-08-16 13:53:55] sevr=info iocRun: All initialization complete
+
+[2017-08-16 13:53:55] icpconfigLoad: setPVValues setting 0 pvs (post iocInit)
+
+[2017-08-16 13:53:55] < C:/Instrument/Apps/EPICS/iocstartup/postiocinit.cmd
+
+[2017-08-16 13:53:55] # enable caPutLog to logger on localhost
+
+[2017-08-16 13:53:55] # pass 0 to log value changes, pass 1 to log all puts, 2 logs all puts with no filtering on same PV
+
+[2017-08-16 13:53:55] caPutLogInit "localhost" "1"
+
+[2017-08-16 13:53:55] log client: connected to log server at "127.0.0.1:7011"
+
+[2017-08-16 13:53:55] sevr=info caPutLog: successfully initialized
+
+[2017-08-16 13:53:55] # Handle autosave 'commands' contained in loaded databases.
+
+[2017-08-16 13:53:55] # file naming needs to agree with autosave.cmd
+
+[2017-08-16 13:53:55] makeAutosaveFileFromDbInfo("SIMPLE_info_settings","autosaveFields")
+
+[2017-08-16 13:53:55] makeAutosaveFileFromDbInfo("SIMPLE_info_positions","autosaveFields_pass0")
+
+[2017-08-16 13:53:55] create_monitor_set("SIMPLE_info_positions.req", 5, "")
+
+[2017-08-16 13:53:55] create_monitor_set("SIMPLE_info_settings.req", 30, "")
+
+[2017-08-16 13:53:55] sevr=info SIMPLE_info_positions.sav: 63 of 63 PV's connected
+
+[2017-08-16 13:53:55] sevr=info 
+
+[2017-08-16 13:53:56] sevr=info SIMPLE_info_settings.sav: 1 of 1 PV's connected
+
+[2017-08-16 13:53:56] sevr=info 
+```
+
+Initialise and run
+
+# Full Log
 ```
 [2017-08-16 13:53:52] @@@ Restarting child "SIMPLE"
 [2017-08-16 13:53:52] @@@    (as C:\windows\system32\cmd.exe)
