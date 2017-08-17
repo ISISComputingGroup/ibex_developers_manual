@@ -3,6 +3,4 @@ Delayed tickets are tickets that we thought were important enough to be in a spr
 - [2202](https://github.com/ISISComputingGroup/IBEX/issues/2202)
 - [2207](https://github.com/ISISComputingGroup/IBEX/issues/2207)
 - [2205](https://github.com/ISISComputingGroup/IBEX/issues/2205)
-- [2103](https://github.com/ISISComputingGroup/IBEX/issues/2103)
-- [2315](https://github.com/ISISComputingGroup/IBEX/issues/2315)
 
