@@ -11,7 +11,7 @@ lines and replace them by the lines that were in MASTER_RELEASE that are needed 
 ```
 ASYN=$(SUPPORT)/asyn/master
 ```
-To determine what you need to add, look at the Makefile to see what DBD and library files are used and then add the relevant definitions to allow these to be located.
+To determine what you need to add, look at the Makefile to see what DBD and library files are used and then add the relevant definitions to allow these to be located. If you get it wrong / miss something, it will just break the build due to a missing file, it will not introduce a subtle bug. And we can migrate in stages, no need to do all at once. 
 
 If the module you are changing is using AREA_DETECTOR or EPISC_V4 then things a little more complicated, I'll add extended notes at a later point.
   
