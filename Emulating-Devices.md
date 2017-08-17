@@ -91,7 +91,7 @@ If we have a pre-existing VI it might be useful to connect it to an emulator to 
 4. Run the com2tcp.py script found in https://github.com/ISISComputingGroup/EPICS-DeviceEmulator/ to create a connection between one COM port and Lewis e.g. `python com2tcp.py 57677 COM12`
 5. Connect the VI to the COM port that you haven't run com2tcp.py on
 
-If the above is not working check that the baud rates/stop bits etc. set in the VI, NPort and com2tcp are all the same.
+If the above is not working check that the baud rates/stop bits etc. set in the VI, NPort and com2tcp are all the same. otherwise look in NI MAX and confirm that the COM ports are showing up under devices and interfaces on the left, if they are not you may need to update NI MAX. Also note that the port you want to set in the driver VI is the one highlighted below (which can occasionally differ from the actual COM port)
 
 ## Troubleshooting
 
