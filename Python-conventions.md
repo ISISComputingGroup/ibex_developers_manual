@@ -13,7 +13,6 @@ Key points relating to general code formatting:
 
 * Use 4 spaces per indentation level
 * Spaces are the preferred indentation method not tabs
-* White space around operators/arithmetic etc.
 * Surround top-level function and class definitions with two blank lines
 * Method definitions inside a class are surrounded by a single blank line
 * Class names should normally use the CapWords convention
