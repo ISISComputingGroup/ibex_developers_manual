@@ -4,12 +4,17 @@ See also the [getting started guide](First-time-installing-and-building-(Windows
 
 ### Development workflow
 
-0. If you haven't installed genie_python as part of Python on your system yet, read the [getting started guide](First-time-installing-and-building-(Windows))
+1. If you haven't installed genie_python as part of Python on your system yet, read the [getting started guide](First-time-installing-and-building-(Windows))
 1. If you don't have a development version of genie_python already, clone the repo e.g. navigate to `C:\Instrument\Dev` and run command `git clone https://github.com/ISISComputingGroup/genie_python.git`
-2. Make the desired modifications to genie_python
-3. Open `build_python.bat` and comment out line `252` about building the MSI
-3. Run `build_python.bat` - this will install a new version to c:\Instrument\Apps\Python-Build
-4. Call the new functionality by running c:\Instrument\Apps\Python-Build\genie_python.bat
+1. Update genie_python
+    1. Quick update (for changes to `genie_python` source only, useful 95% of the time):
+        1. Copy the `.py` files in your `genie_python` development directory (e.g. `C:\Instrument\Dev\genie_python\source`)
+        1. Paste them into `C:\Instrument\Apps\Python\Lib\site-packages\genie_python`
+        1. You're done! The changes will be available next time you start `genie_python`.
+    1. Full build:
+        1. Open `build_python.bat` and comment out line `252` about building the MSI
+        1. Run `build_python.bat` - this will install a new version to c:\Instrument\Apps\Python-Build
+        1. Call the new functionality by running c:\Instrument\Apps\Python-Build\genie_python.bat
 
 ### Building
 
