@@ -95,6 +95,22 @@ record(calc, "$(P)ARM:MOTORS:DMOV") {
 }
 ```
 
+## Testing using the IocTestFramework
+The beamstop uses galil controllers for the underlying motors. Galils do not have an emulator in the IOC test framework. Instead galils have a simulation mode which can be turned on which can be used as a sort of pseudo-emulator. When experimenting with running a galil controller though the IOC test framework I found I needed to be careful of the following things:
+
+ - That the flags enabling simulation mode have been turn on at some point during the galil startup. Specifically the following macros should be set:
+```
+  epicsEnvSet SIMULATE "1"
+  epicsEnvSet IFSIM " "
+  epicsEnvSet IFNOTSIM "#"
+```
+ - That the autosave feature of the galil device is turned off. If this is not dsiabled then it is possible for previous device state to interfere with the state of the tests. For example the limits from a previous galil run might be saved which may affect whether the test can successfully move to a given position.
+
+ - That the device is run in dev sim mode, but without any lewis emulator. The example command for the beamstop in the `run_all_tests.bat` is:
+```
+call %PYTHON% "%EPICS_KIT_ROOT%\support\IocTestFramework\master\run_tests.py" -pf %MYPVPREFIX%  -d xybeamstop -p %EPICS_KIT_ROOT%\ioc\master\GALIL\iocBoot\iocGALIL-IOC-01
+```
+ 
 ## Known issues
  - For the `DMOV` record the `MDEL` field needed to be defined as `-1` to avoid a race condition where the pulse from `1-0-1` would happen so fast that the soft motors would get stuck in the moving state forever.
 
