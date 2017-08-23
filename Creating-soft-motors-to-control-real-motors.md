@@ -112,7 +112,5 @@ call %PYTHON% "%EPICS_KIT_ROOT%\support\IocTestFramework\master\run_tests.py" -p
 ```
  
 ## Known issues
- - For the `DMOV` record the `MDEL` field needed to be defined as `-1` to avoid a race condition where the pulse from `1-0-1` would happen so fast that the soft motors would get stuck in the moving state forever.
-
-
+ - For the `DMOV` record the monitor deadband (`MDEL`) field needed to be defined as `-1` to avoid a race condition where the pulse from `1-0-1` would happen so fast that the soft motors would get stuck in the moving state forever. I also found I needed to set a delay on the motors (`DLY`) and a scan of about 1 second to prevent the soft motors missing the stop pulse from one or both motors.
 
