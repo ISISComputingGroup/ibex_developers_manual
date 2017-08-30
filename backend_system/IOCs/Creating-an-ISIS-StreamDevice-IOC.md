@@ -66,26 +66,6 @@ If the Makefile has a line that reads `DATA += $(patsubst ../%, %, $(wildcard ..
 
 Now add the directory name to the support make file (`C:\Instrument\Apps\EPICS\support\Makefile`), ie to DIRS at the top. Also add dependencies if needed.
 
-### Helpful hints from previous developers
-
-To create the support module, in an epics terminal.
-
-```
-C:\Instrument\Apps\EPICS\support\mercury_ict\master>makeSupport.pl -A ..\..\asyn
-\master -B ..\..\..\base\master -t streamSCPI  mercury_ict
-```
-
-Add macro to group macros `C:\Instrument\Apps\EPICS\configure\MASTER_RELEASE`
-
-You can also define macros in the file `globals.txt` at:
-
-```
-C:\Instrument\Settings\config\NDW1695\configurations\globals.txt
-```
-
-Each macro is separated on a new line and has the format `[IOC name]__[macro name]=[macro value]`. For example `LINKAM95_01__PORT=COM1`. Each time you add a new macro to this file, don't forget to recompile the IOC! (In general you need to recompile your IOC any time you make changes that affect the build files, e.g. the db files or Makefiles, but you don't need to recompile e.g. when changes affect only the protocol or st.cmd file)
-
-
 ## Creating the IOC
 
 All IOCs used at ISIS reside in the `EPICS\ioc\master` directory.
