@@ -6,3 +6,5 @@ You don't have to use the full 8 characters, use the smallest number that form a
 
 Support modules may have a slightly longer name if need be, but if truncated please follow guidelines above.
 
+If an IOC is *truly* instrument specific (i.e. there is absolutely no chance that this equipment will ever be used on any other instrument), the first three letters of the IOC name can indicate the instrument. E.g. EGX for Engin-X or RKN for Riken.
+
