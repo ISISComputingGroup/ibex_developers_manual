@@ -1,4 +1,4 @@
-**I Think this page is historical use this [page for preference](Creating-an-ISIS-StreamDevice-IOC) **
+**I Think this page is historical use this [page for preference](Creating-an-ISIS-StreamDevice-IOC)**
 
 Note: if you are creating a StreamDevice start [here](Creating-an-ISIS-StreamDevice-IOC).
 
