@@ -7,6 +7,10 @@ Building a new IOC? Before you get started, take a look at the relevant [instrum
     * [Some Design thoughts for a serial/Ethernet IOC](Some-Design-thoughts-for-a-serial-or-Ethernet-IOC)
     * [Creating an ISIS StreamDevice IOC](Creating-an-ISIS-StreamDevice-IOC)
     * [Creating an LvDCOM IOC](Creating-IOC-wrapper-VI)
+1. You can now flesh out your IOC to work. I would encourage you to do this in a TDD style (if not write the tests afterwards). Use:
+    * [IOC Testing framework](IOC-Testing-Framework)
+    * [Emulating devices](Emulating-Devices)
+
 1. [IOC Finishing Touches](IOC-Finishing-Touches)
     * Additional for motors [Adding motor IOC to global motor moving and stop all](/Adding-motor-IOC-to-global-motor-moving-and-stop-all)
 
@@ -15,8 +19,6 @@ Building a new IOC? Before you get started, take a look at the relevant [instrum
 1. [Disable records](Disable-records)
 
 1. [Running (and testing) IOC](Running-IOCs)
-
-1. [Emulating devices](Emulating-Devices)
 
 1. [Add logging](Logging-from-the-archive)
 
