@@ -111,7 +111,7 @@ def waitfor_runstate(state, maxwaitsecs=3600, onexit=False):
 
     Args:
         state (string): the state to wait for (e.g. "paused")
-        maxwaitsecs (int, optional): the maximum time to wait for the state before carrying on
+        maxwaitsecs (int, optional): the maximum time to wait before carrying on
         onexit (bool, optional): wait for runstate to change from the specified state
 
     Examples:
