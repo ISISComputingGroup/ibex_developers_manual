@@ -234,8 +234,4 @@ Hopefully, the IOC will start and the `dbl` command will list all the PVs.
 
 Now it builds add a reference to the IOC make file in `C:\Instrument\Apps\EPICS\ioc\master\Makefile` add the directory name to `IOCDIRS`. If this gets to long split with `IOCDIR +=`
 
-Before the IOC is complete you will need to finish the workflow to include:
-
-1. PVs of note are designated as interesting [PVs, are archive and have units. All Macros are documented.](IOC-Finishing-Touches)
-1. Record level simulation is provided (see [Record simulation](Record-Simulation))
-1. The IOC has a disable record (see [Disable records](Disable-records))
+Before the IOC is complete you will need to finish all the [relevant workflow steps](IOCs#creating-an-ioc)
