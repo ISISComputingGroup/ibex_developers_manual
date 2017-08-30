@@ -172,8 +172,10 @@ The final step is to rationalise the st.cmd files for each IOC. There will be a 
 
 < envPaths
 
+cd "${TOP}"
+
 ## Register all support components
-dbLoadDatabase "${TOP}/dbd/XXXX-IOC-YY.dbd"
+dbLoadDatabase "dbd/XXXX-IOC-YY.dbd"
 XXXX_IOC_YY_registerRecordDeviceDriver pdbbase
 
 ## calling common command file in ioc 01 boot dir
