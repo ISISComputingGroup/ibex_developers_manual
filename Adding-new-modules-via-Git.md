@@ -105,8 +105,9 @@ Software imported from outside should use a "vendor branch" so new versions are 
     git add .gitmodules
     git commit -m "Add danfysikMps8000 submodule"
     ````
-1. Next make sure that the whole thing builds from the parent level.
+1. Next make sure that the whole thing builds from the support level.
     ````
+    cd ..\EPICS\support
     make danfysikMps8000
     git status
     ````
