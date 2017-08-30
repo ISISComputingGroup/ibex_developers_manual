@@ -3,22 +3,22 @@
 ## Creating an IOC ##
 Building a new IOC? Before you get started, take a look at the relevant [instrument page](https://github.com/ISISComputingGroup/IBEX/wiki) to see if there's any useful information for the device you're about to write an IOC for. Otherwise, let's get going. If you have problems see [See IOC and device Troubleshooting](IOC-And-Device-Trouble-Shooting).
 
-* [The Workflow - start here!](Creating-an-IOC-Workflow)
+1. [The Workflow - step 1!](Creating-an-IOC-Workflow)
     * [Some Design thoughts for a serial/Ethernet IOC](Some-Design-thoughts-for-a-serial-or-Ethernet-IOC)
     * [Creating an ISIS StreamDevice IOC](Creating-an-ISIS-StreamDevice-IOC)
     * [Creating an LvDCOM IOC](Creating-IOC-wrapper-VI)
-* [IOC Finishing Touches](IOC-Finishing-Touches)
+1. [IOC Finishing Touches](IOC-Finishing-Touches)
     * Additional for motors [Adding motor IOC to global motor moving and stop all](/Adding-motor-IOC-to-global-motor-moving-and-stop-all)
 
-* [Record simulation](Record-Simulation)
+1. [Record simulation](Record-Simulation)
 
-* [Disable records](Disable-records)
+1. [Disable records](Disable-records)
 
-* [Running (and testing) IOC](Running-IOCs)
+1. [Running (and testing) IOC](Running-IOCs)
 
-* [Emulating devices](Emulating-Devices)
+1. [Emulating devices](Emulating-Devices)
 
-* [Add logging](Logging-from-the-archive)
+1. [Add logging](Logging-from-the-archive)
 
 ## Conventions
 
