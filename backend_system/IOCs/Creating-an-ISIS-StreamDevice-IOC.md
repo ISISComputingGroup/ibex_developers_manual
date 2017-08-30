@@ -14,7 +14,7 @@ mkdir Hameg_8123
 cd Hameg_8123
 ```
 
-Get an admin to [create a git repository](Adding%20new%20modules).
+Get an admin to [create a git repository](Adding-new-modules-via-Git).
 
 Create a stream support module:
 
