@@ -161,6 +161,15 @@ An array indicator:
 </param>
 ```
 
+Push a button when a value is set:
+
+```
+<param name="South_X" type="float64">
+  <read method="GCV" target="South X"/>
+  <set method="SCV" extint="false" target="South X" post_button="Set South X" post_button_wait="true" />
+</param>
+```
+
 # Example records
 
 A numeric indicator:
