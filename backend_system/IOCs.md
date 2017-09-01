@@ -22,6 +22,8 @@ Building a new IOC? Before you get started, take a look at the relevant [instrum
 
 1. [Add logging](Logging-from-the-archive)
 
+1. Add any manuals used to the [manuals dir and list](Manuals)
+
 ## Conventions
 
 * [IOC naming](IOC-Naming)
