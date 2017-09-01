@@ -1,6 +1,6 @@
 This page links the IOC to the manual.
 
-Manuals are stored on the share, it is not always clear that they can be shared so they are just for our group. The directory name is <Company making item>__<Specific use>.
+Manuals are stored on the share, it is not always clear that they can be shared so they are just for our group. The directory name is `<Company making item>__<Specific use>`.
 
 
 IOC | Description | Manual Directory
