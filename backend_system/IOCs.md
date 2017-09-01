@@ -49,6 +49,8 @@ Building a new IOC? Before you get started, take a look at the relevant [instrum
 * [Typical start up log for an ioc](IOC-Start-Example)
 ## Specific IOC Information
 
+[Manuals](Manuals)
+
 * [Barndoors and Momentum Slits on MUON Front End](Barndoors-and-Momentum-Slits-on-MUON-Front-End)
 * [Polaris Jaws](Polaris-Jaws)
 * [EnginX Jaws](EnginX-Jaws)
