@@ -2,6 +2,8 @@
 
 Contains the style and coding conventions for the IBEX GUI.
 
+**New conventions should not be added to this document without first being discussed at a 'Code Chat'.**
+
 # Style Conventions #
 
 Unless stated otherwise below we should follow the standard Java conventions for style where possible.
