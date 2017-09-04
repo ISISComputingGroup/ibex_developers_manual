@@ -177,7 +177,7 @@ def get_blocknames(self):
 
 #### Use the Python 3 style print function
 ```python
-print("Hello, World")
+print('Hello, World')
 ```
 AVOID using the Python 2 style print function.
 
@@ -196,3 +196,9 @@ print('Name: {user.name}, Age: {user.age}, Sex: {user.sex}'.format(user=usr))
 print('Name: {}, Age: {:.2f}'.format('Eric', 12.3456789))
 ```
 AVOID using the older `%` formatter or concatenating strings with `+`.
+
+#### Use os.path.join to create file paths from strings
+```python
+os.path.join('directory', 'subdirectory1', 'subdirectory2')
+```
+AVOID combining strings with '\', '\\' or '/'
