@@ -1,4 +1,3 @@
-# Python Conventions
 **New conventions should not be added to this document without first being discussed at a 'Code Chat'.**
 
 ```
