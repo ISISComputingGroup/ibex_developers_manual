@@ -173,5 +173,14 @@ def get_blocknames(self):
     """
 ```
 
-###Code conventions
+### Code conventions
+
+#### Use the Python 3 style print function
+```python
+print("Hello, World")
+```
+Avoid using the Python 2 style print function:
+```python
+print "Hello, World"
+```
 
