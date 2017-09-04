@@ -111,8 +111,9 @@ def a_function_that_returns_none(param1):
     """
     This function does not return anything.
 
-    Python returns None for functions that don't explicitly return anything. As PyCharm automatically
-    creates a return tag in the docstring we leave it in and put None.
+    Python returns None for functions that don't explicitly return anything. 
+    As PyCharm automatically creates a return tag in the docstring we leave 
+    it in and put None.
     
     Args:
         param1: Some input value.
