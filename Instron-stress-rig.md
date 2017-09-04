@@ -28,7 +28,7 @@ The stress rig driver uses the following DB files:
 
 The protocol is defined in `C:\Instrument\Apps\EPICS\support\instron\master\instronSup` (see https://github.com/ISISComputingGroup/EPICS-instron/blob/master/instronSup/devinstron.proto)
 
-# Gotchas
+# Gotchas / Unusual things
 - Every "write" command (commands starting with C or P) must be preceded by `P909,1` (switch to computer control mode) and `C904,0` (disable watchdog). For convenience there is the `setControlModeCom` function in the protocol file which does these for you.
 - Every "write" command (commands starting with C or P) must be followed by `P909,0` (switch to front panel control mode)
 - We have had issues with PVs dropping off to zero while being read from the stress rig. To solve this, use a `:RAW` record which does a read, and monitor it using `CP` from another record. This fixes the issue of getting zeroes.
