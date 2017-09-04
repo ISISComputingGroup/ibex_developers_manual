@@ -30,8 +30,10 @@ The protocol is defined in `C:\Instrument\Apps\EPICS\support\instron\master\inst
 
 # Gotchas / Unusual things
 - Every "write" command (commands starting with C or P) must be preceded by `P909,1` (switch to computer control mode) and `C904,0` (disable watchdog). For convenience there is the `setControlModeCom` function in the protocol file which does these for you.
+  * If you forget to do this, the rig's hydraulics will trip, requiring a physical button push to reset them
 - Every "write" command (commands starting with C or P) must be followed by `P909,0` (switch to front panel control mode)
 - We have had issues with PVs dropping off to zero while being read from the stress rig. To solve this, use a `:RAW` record which does a read, and monitor it using `CP` from another record. This fixes the issue of getting zeroes.
+  * Might be a bug in EPICS and/or the interface between the VISA driver and EPICS. At the moment the above solution seems to be the easiest way to cure the symptoms.
 - PVs in the stress rig don't scan by themselves typically, they are triggered from one of two read loops:
   * `READ_SLOW` scans at 1 Second interval
   * `READ_VAR` reads at a rate that can be varied by the user
