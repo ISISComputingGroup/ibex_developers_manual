@@ -201,4 +201,4 @@ AVOID using the older `%` formatter or concatenating strings with `+`.
 ```python
 os.path.join('directory', 'subdirectory1', 'subdirectory2')
 ```
-AVOID combining strings with '\', '\\' or '/'
+AVOID combining strings with '\\', '\\\\' or '/'
