@@ -75,7 +75,9 @@ Google style suggests that argument descriptions start with a capital and end wi
     Args:
         state (string): The state to wait for (e.g. "paused").
 ```
-We don't currently follow this, but if someone wants to go through all the code and change this then feel free. Please remember to update the examples below too.
+We have decided to follow Google on this; however, some older docstrings may not match this, so please adjust them as you come across them.
+
+PyCharm can be set to auto-generate Google style dostrings via `File --> Settings --> Tools --> Python Integrated Tools`
 
 #### Examples
 
@@ -90,17 +92,17 @@ def an_example_function(param1, param2=None, *args, **kwargs):
     blah blah blah.
 
     Args:
-        param1 (int): the first parameter.
-        param2 (string, optional): the second parameter. Defaults to None.
-            Subsequent line(s) of description should be indented
-        *args: variable length argument list
-        **kwargs: arbitrary keyword arguments
+        param1 (int): The first parameter.
+        param2 (string, optional): The second parameter. Defaults to None.
+            Subsequent line(s) of description should be indented.
+        *args: Variable length argument list.
+        **kwargs: Arbitrary keyword arguments.
 
     Returns:
         bool: True if successful, False otherwise.
 
     Raises:
-        ValueError: if param2 is equal to param1
+        ValueError: If param2 is equal to param1.
     """
 ```
 
@@ -110,16 +112,16 @@ def waitfor_runstate(state, maxwaitsecs=3600, onexit=False):
     Wait for a particular instrument run state.
 
     Args:
-        state (string): the state to wait for (e.g. "paused")
-        maxwaitsecs (int, optional): the maximum time to wait before carrying on
-        onexit (bool, optional): wait for runstate to change from the specified state
+        state (string): The state to wait for (e.g. "paused").
+        maxwaitsecs (int, optional): The maximum time to wait before carrying on.
+        onexit (bool, optional): Wait for runstate to change from the specified state.
 
     Examples:
         Wait for a run to enter the paused state:
-        >>> waitfor_runstate("pause")
+        >>> waitfor_runstate("paused")
 
         Wait for a run to exit the paused state:
-        >>> waitfor_runstate("pause", onexit=True)
+        >>> waitfor_runstate("paused", onexit=True)
     """
 ```
 
@@ -129,7 +131,7 @@ def get_number_periods():
     Get the number of software periods.
 
     Returns:
-        int: the number of periods
+        int: The number of periods.
     """
 ```
 
@@ -139,6 +141,6 @@ def get_blocknames(self):
     Get all the blocknames including those in the components.
 
     Returns:
-        list : the names of all the blocks
+        list : The names of all the blocks.
     """
 ```
