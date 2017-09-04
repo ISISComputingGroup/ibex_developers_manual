@@ -35,4 +35,5 @@ The protocol is defined in `C:\Instrument\Apps\EPICS\support\instron\master\inst
 - PVs in the stress rig don't scan by themselves typically, they are triggered from one of two read loops:
   * `READ_SLOW` scans at 1 Second interval
   * `READ_VAR` reads at a rate that can be varied by the user
+  * In the `READ_VAR` loop the `.1 Second` option has been removed, this is too fast for the rig to handle
 - If something works in LabVIEW but not in EPICS, or vice-versa, NI Input/Output trace (NI Spy) can be very useful to compare the traffic and spot any differences.
