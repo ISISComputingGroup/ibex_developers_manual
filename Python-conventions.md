@@ -172,3 +172,6 @@ def get_blocknames(self):
         list : The names of all the blocks.
     """
 ```
+
+###Code conventions
+
