@@ -71,3 +71,21 @@ The way Eclipse RCP works, if you include certain plugins (often denoted with th
 1. Press `Ctrl+Shift+F9` to access the application spies
 1. Find the model spy and navigate to the element you want to hide
 1. Add the element to `Application.e4xmi` in `uk.ac.stfc.isis.ibex.e4.client` and untick the `To Be Rendered` and `Visible` checkboxes
+
+## Migrating an E3 perspective in a couple of easy steps
+
+1. Open the Application.e4xmi from `uk.ac.stfc.isis.ibex.e4.client`
+1. Go to `Snippets`
+1. Click `Add` to add a new perspective
+1. Set the perspective up using an existing migrated perspective as a template
+    1. Set a sensible ID
+    1. Give it a label
+    1. Set the icon
+    1. Add controls. This should be a hierarchy of part sash containers. You can see how it should be set up from the existing perspectives. Don't forget to set the container data where appropriate; it sets the relative size of sibling components.
+1. Add the perspective-specific parts
+    1. In the alarms perspective, you'll see one part in the final part sash container called alarms. Do the same thing in your new perspective, but give it an appropriate name
+    1. Change the ID of your new part to the ID of the view class you want the perspective to open
+1. Add the dependency of the view you've added to the `plugin.xml` in the `...e4.client` plugin
+1. Add the new dependency to `...feature.base`
+1. Open IBEX
+1. Check the new perspective scales appropriately and change the layout accordingly if needed
