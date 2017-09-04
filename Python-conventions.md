@@ -107,6 +107,22 @@ def an_example_function(param1, param2=None, *args, **kwargs):
 ```
 
 ```python
+def a_function_that_returns_none(param1):
+    """
+    This function does not return anything.
+
+    Python returns None for functions that don't explicitly return anything. As PyCharm automatically
+    creates a return tag in the docstring we leave it in and put None.
+    
+    Args:
+        param1: Some input value.
+
+    Returns: 
+        None.
+    """
+```
+
+```python
 def waitfor_runstate(state, maxwaitsecs=3600, onexit=False):
     """
     Wait for a particular instrument run state.
