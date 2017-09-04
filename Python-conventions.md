@@ -179,8 +179,20 @@ def get_blocknames(self):
 ```python
 print("Hello, World")
 ```
-AVOID using the Python 2 style print function:
-```python
-print "Hello, World"
-```
+AVOID using the Python 2 style print function.
 
+#### Use format to construct strings from values
+```python
+# Single value
+print('Name: {}'.format('Eric'))
+
+# Multiple values
+print('Name: {}, Age: {}'.format('Eric', 21))
+
+# With a class
+print('Name: {user.name}, Age: {user.age}, Sex: {user.sex}'.format(user=usr))
+
+# Limit to two decimal points
+print('Name: {}, Age: {:.2f}'.format('Eric', 12.3456789))
+```
+AVOID using the older `%` formatter or concatenating strings with `+`.
