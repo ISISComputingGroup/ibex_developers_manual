@@ -93,10 +93,13 @@ class ExampleClass:
         """
         This is an example of a method.
 
-        Here is where more details are written. It can take up multiple lines and so on.
-        blah blah blah.It can take up multiple lines and so on.
+        Here is where more details are written. It can take up multiple lines 
+        and so on. blah blah blah.It can take up multiple lines and so on.
         blah blah blah.It can take up multiple lines and so on.
         blah blah blah.
+
+        Note:
+            self is not included in the 'Args' section.
 
         Args:
             param1 (int): The first parameter.
