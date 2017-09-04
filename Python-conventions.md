@@ -82,28 +82,35 @@ PyCharm can be set to auto-generate Google style dostrings via `File --> Setting
 #### Examples
 
 ```python
-def an_example_function(param1, param2=None, *args, **kwargs):
+class ExampleClass:
     """
-    This is an example of a function.
+    This is a class docstring.
 
-    Here is where more details are written. It can take up multiple lines and so on.
-    blah blah blah.It can take up multiple lines and so on.
-    blah blah blah.It can take up multiple lines and so on.
-    blah blah blah.
-
-    Args:
-        param1 (int): The first parameter.
-        param2 (string, optional): The second parameter. Defaults to None.
-            Subsequent line(s) of description should be indented.
-        *args: Variable length argument list.
-        **kwargs: Arbitrary keyword arguments.
-
-    Returns:
-        bool: True if successful, False otherwise.
-
-    Raises:
-        ValueError: If param2 is equal to param1.
+    There should be a newline between this docstring and the following method.
     """
+
+    def an_example_method(self, param1, param2=None, *args, **kwargs):
+        """
+        This is an example of a method.
+
+        Here is where more details are written. It can take up multiple lines and so on.
+        blah blah blah.It can take up multiple lines and so on.
+        blah blah blah.It can take up multiple lines and so on.
+        blah blah blah.
+
+        Args:
+            param1 (int): The first parameter.
+            param2 (string, optional): The second parameter. Defaults to None.
+                Subsequent line(s) of description should be indented.
+            *args: Variable length argument list.
+            **kwargs: Arbitrary keyword arguments.
+
+        Returns:
+            bool: True if successful, False otherwise.
+
+        Raises:
+            ValueError: If param2 is equal to param1.
+        """
 ```
 
 ```python
