@@ -179,7 +179,7 @@ def get_blocknames(self):
 ```python
 print("Hello, World")
 ```
-Avoid using the Python 2 style print function:
+AVOID using the Python 2 style print function:
 ```python
 print "Hello, World"
 ```
