@@ -27,10 +27,8 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
         1. `genie_python\source\version.py` edit `VERSION = "0.0.0.qualifier"` to VERSION = "X.x.m.xxxxxxx" where xxxxxxx is the SHA hash of the commit
 1. Commit you changes and push.
 1. For the builds `ibex_gui_release`, `genie_python_release` and `EPICS_release`, do the following:
-    1. Find the build in Jenkins
-    1. Go into the build configuration (configure button in left-hand panel)
-    1. Update the `Branches to build > Branch specifier` field to `*/Release_X.x.m` where `X.x.m` is the appropriate release number.
-    1. Click `Build now`
+    1. Find the release build pipeline in Jenkins
+    1. Click "Scan repository". It should find the new release branch and queue a build.
     1. The release builds will be created in `P:\Kits$\CompGroup\ICP\Releases\X.x.m`
 1. Create a released version in the [releases table](https://github.com/ISISComputingGroup/IBEX/wiki#releases) (including link to release notes)
 1. Update the versions of MySQL and Java being deployed associated with the release in the release notes.
