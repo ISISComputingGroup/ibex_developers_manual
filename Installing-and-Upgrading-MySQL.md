@@ -36,7 +36,7 @@ Experimental:
 - mysql -u root -p --execute="SET GLOBAL innodb_fast_shutdown=0"
 - mysqladmin -u root -p shut
 down (stops down service)
-- copy mysql data base data files
+- backup mysql data base data files
 
 - open MySQL installer under administrator account
   - If prompted to upgrade installer click "Yes" (Ignore windows error about not running correctly)
