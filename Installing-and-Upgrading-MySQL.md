@@ -6,6 +6,7 @@
 - Create the folder tree `C:\ProgramData\MySQL\MySQL Server 5.7` (this will cause the installer to ask you to enter a data directory)
 - Run the community installer as admin and do the following:
     - Licence page: accept licence
+    - Type and Networking: Standalone MySqlServer
     - Server type: select server only (Development is good if you want mysql workbench but will require more checks later)
     - Path Conflict: Set the data dir to `C:\Instrument\var\mysql` (If this page doesn't appear go back to creatig the folder tree)
     - Installation: click execute
