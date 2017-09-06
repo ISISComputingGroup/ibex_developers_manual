@@ -7,6 +7,7 @@
 - Run the community installer as admin and do the following:
     - Licence page: accept licence
     - Server type: select server only (Development is good if you want mysql workbench but will require more checks later)
+        - If selecting an older version choose custom
     - Path Conflict: Set the data dir to `C:\Instrument\var\mysql` (If this page doesn't appear go back to creatig the folder tree)
     - Installation: click execute
     - Product Config: next
