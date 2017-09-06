@@ -7,7 +7,6 @@
 - Run the community installer as admin and do the following:
     - Licence page: accept licence
     - Server type: select server only (Development is good if you want mysql workbench but will require more checks later)
-        - If selecting an older version choose custom
     - Path Conflict: Set the data dir to `C:\Instrument\var\mysql` (If this page doesn't appear go back to creatig the folder tree)
     - Installation: click execute
     - Product Config: next
@@ -33,15 +32,18 @@
 
 Experimental:
 
+- `cd C:\Program Files\MySQL\MySQL Server 5.6\bin`
 - mysql -u root -p --execute="SET GLOBAL innodb_fast_shutdown=0"
-- mysqladmin -u root -p shutdown (stops down service)
+- mysqladmin -u root -p shut
+down (stops down service)
+- copy mysql data base data files
 
 - open MySQL installer under administrator account
   - If prompted to upgrade installer click "Yes" (Ignore windows error about not running correctly)
   - remove 5.6.X MySQL server but *do not delete data*
 - yes to remove MySQL installer
 - yes reboot (if asked)
-- copy the mysql.ini file from the set up directory (`...EPICS\SystemSetup`) to `C:\Instrument\Var\mysql\my.ini`
+- copy the my_for_5.7.ini file from the set up directory (`...EPICS\SystemSetup`) to `C:\Instrument\Var\mysql\my.ini`
 - Install the new version as for first time install. But when it gets to starting service while it is waiting (spinning character)
     - upgrade the database using `"C:\Program Files\MySQL\MySQL Server 5.7\bin\mysql_upgrade" -u root -p --force`
     - restart the windows service
