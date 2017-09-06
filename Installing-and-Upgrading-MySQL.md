@@ -39,7 +39,7 @@ down (stops down service)
 - backup mysql data base data files
 
 - open MySQL installer under administrator account
-  - If prompted to upgrade installer click "Yes" (Ignore windows error about not running correctly)
+  - If prompted to upgrade installer click "No" (Ignore windows error about not running correctly)
   - remove 5.6.X MySQL server but *do not delete data*
 - yes to remove MySQL installer
 - yes reboot (if asked)
