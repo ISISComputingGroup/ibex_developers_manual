@@ -18,6 +18,7 @@
     - Apply Server Config: execute
 - Now reopen installer
     - click the spanner icon and turn off update of catalogue
+- Record the [installed software](https://github.com/ISISComputingGroup/IBEX/wiki/installed-software)
 
 - **Install only not upgrade** run the `config_mysql.bat` batch file in `C:\Instrument\Apps\EPICS\SystemSetup\`.
 - **Install only not upgrade** For running tests locally, make sure that you have run `create_test_account.bat` from `C:\Instrument\Apps\EPICS\SystemSetup\` as well.
@@ -28,6 +29,7 @@
 - update the installer if needed
 - click upgrade
 - upgrade the product
+- Record the [installed software](https://github.com/ISISComputingGroup/IBEX/wiki/installed-software)
 
 # Upgrade between 5.6 and 5.7
 
