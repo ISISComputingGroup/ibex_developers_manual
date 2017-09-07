@@ -8,7 +8,7 @@
     - Licence page: accept licence
     - Type and Networking: Standalone MySqlServer
     - Server type: select server only (Development is good if you want mysql workbench but will require more checks later)
-    - Path Conflict: Set the data dir to `C:\Instrument\var\mysql` (If this page doesn't appear go back to creatig the folder tree)
+    - Path Conflict: Set the data dir to `C:\Instrument\var\mysql` (If this page doesn't appear go back to creating the folder tree)
     - Check requirements: click execute
     - Installation: click execute
     - Product Config: next
