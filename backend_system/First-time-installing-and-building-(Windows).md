@@ -61,10 +61,17 @@ this will create directories for the archive engine. in `.\css-win.x86_64`
 
 * Navigate to the config folder
 
+* Enable git credential store
+```
+git config --global credential.helper wincred
+```
+
 * Via a git client clone the repository from 'http://spudulike@control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/inst.git' to a directory with your machine name, like so:
 ```
-git clone http://control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/inst.git NDWXXX
+git clone http://spudulike@control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/inst.git NDWXXX
 ```
+ (when prompted, give spudulike password)
+
 * Confirm that you now have the config file structure in place (components, configurations and synoptics directories)
 
 * Create a branch from master with the machine name (if on an instrument) or your fedid if on a dev machine:
