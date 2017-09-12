@@ -61,17 +61,17 @@ this will create directories for the archive engine. in `.\css-win.x86_64`
 
 * Navigate to the config folder
 
-* Enable git credential store and set a username, on a developer machine use your own name rather than "spudulike" of course, on an instrument replace NDXxxx with the real instrument name  
+* Enable git credential store and set a username, on a developer machine use your own name rather than "spudulike" of course, on an instrument replace NDXXXX with the real instrument name  
 ```
 git config --global core.autocrlf true
 git config --global credential.helper wincred
 git config --global user.name "spudulike"
-git config --global user.email "spudulike@ndxXXX.isis.cclrc.ac.uk"
+git config --global user.email "spudulike@ndxxxx.isis.cclrc.ac.uk"
 ```
 
 * Via a git client clone the repository from 'http://spudulike@control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/inst.git' to a directory with your machine name, like so:
 ```
-git clone http://spudulike@control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/inst.git NDWXXX
+git clone http://spudulike@control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/inst.git NDXXXX
 ```
  (when prompted, give spudulike password)
 
@@ -79,13 +79,13 @@ git clone http://spudulike@control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/ins
 
 * Create a branch from master with the machine name (if on an instrument) or your fedid if on a dev machine:
 ```
-cd NDXXX/
+cd NDXXXX/
 git checkout -b NDXXXX
 rename 'Python\init_inst_name.py' to 'Python\init_<Inst name>.py'
 git add Python\init_<Inst name (lowercase e.g. iristest1)>.py
 git rm Python\init_inst_name.py
 git commit -m"create initial python"
-git push --set-upstream origin NDWXXXX
+git push --set-upstream origin NDXXXX
 ```
 Any configs created through IBEX will now be stored on this branch (they will only be pushed remotely if you do a manual push first e.g. the last line above)
 
