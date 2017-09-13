@@ -70,4 +70,10 @@ In the migration phase, IBEX will be physically installed and configured on the 
 1. Test the new IBEX installation
 1. Ask the scientists to confirm that the instrument is behaving as expected.
 
+# How to review
 
+To check an instrument migration/deployment as a reviewer:
+- Ensure the instrument page has been updated and is showing the correct version that the instrument is running.
+- Check with the person that originally did the ticket that they have contacted the instrument scientist.
+- If the instrument is up, have a look around their configurations and synoptics and check that they are sensible.
+- Ensure there are no outstanding tickets blocking the instrument migration.
