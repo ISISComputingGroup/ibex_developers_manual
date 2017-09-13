@@ -1,3 +1,5 @@
+# Migration
+
 Under seci, configurations are stored as XML in the following location: `\\NDXxxxxxx\c$\Program Files (x86)\STFC ISIS Facility\SECI\Configurations`. You will need to log in using an admin password if you are accessing an instrument machine remotely.
 
 Settings for individual devices are typically in the following location (example for a Eurotherm):
@@ -6,3 +8,10 @@ Settings for individual devices are typically in the following location (example
 Some devices have settings in `\\NDXxxxxx\c$\LABVIEW MODULES\Instrument`
 
 GALILs are more complicated.
+
+# Review
+
+To check an instrument migration as a reviewer:
+- Ensure the instrument page has been updated and is showing the correct version that the instrument is running.
+- Check with the person that originally did the ticket that they have contacted the instrument scientist.
+- If the instrument is up, have a look around their configurations and synoptics and check that they are sensible.
