@@ -21,6 +21,8 @@
     - click the spanner icon and turn off update of catalogue
 - Record the [installed software](https://github.com/ISISComputingGroup/IBEX/wiki/installed-software)
 
+- Copy `my.ini` (if `my_for_5.7.ini` exists use this instead) from `EPICS\SystemSetup` to `c:\instrument\var\mysql` and restart the MySQL service to pick up the new settings
+
 - **Install only not upgrade** run the `config_mysql.bat` batch file in `C:\Instrument\Apps\EPICS\SystemSetup\`.
 - **Install only not upgrade** For running tests locally, make sure that you have run `create_test_account.bat` from `C:\Instrument\Apps\EPICS\SystemSetup\` as well.
 
