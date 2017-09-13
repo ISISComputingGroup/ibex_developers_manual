@@ -49,6 +49,8 @@ I've gotten into the habit of using `TODOs` in Eclipse to identify bits of work 
 - `BeamStatusView.java`: The PVs haven't been connected to the beam status view because the archiver doesn't connect properly yet
 - 'BeamStatusView.java`: Using the `showToolbar(false)` command doesn't actually hide the toolbar in the beam status view. I've tried working around this but ran out of time. We should sort it out eventually but I've left it for the time being. We may want to change that entire part eventually to just be two databrowsers in different tabs rather than embedding the graph in a separate view. That relies on a later bit of work though.
 - Perspective switching: I've written a basic perspective switcher `uk.ac.stfc.isis.ibex.e4.ui.perspectiveswitcher`. It does what we need it to for now but later on we should switch to using snippets rather than shared elements to build our perspectives. The reason is that shared elements retain changes to their size between perspectives which sounds nice but can lead to very weird behaviour. I think it's best avoided. Similarly, snippets will be necessary to do things like restoring default views of a perspective. In all, we shouldn't have to hard code our perspectives, so it would be better managed via an extension point.
+- Right click on block menu is in something I touched but is probably best done as part of the blocks migration
+-  
 # Useful people to talk to
 
 Nick Battam at Diamond has been very helpful. He has also recommended we speak to Will Rogers, as he's done a lot of Eclipse 4 work in CSStudio.
@@ -89,3 +91,22 @@ The way Eclipse RCP works, if you include certain plugins (often denoted with th
 1. Add the new dependency to `...feature.base`
 1. Open IBEX
 1. Check the new perspective scales appropriately and change the layout accordingly if needed
+
+## Menu Items
+
+To create a menu item:
+
+1. Create a command in `Commands` in application
+1. Create a menu item in the application model "windows and dialogue" > "Main menu" and use the command you have just created
+1. Add the command to a command category if applicable (I am not sure why but it might be useful later)
+1. Add a handler in which handles the command just created which is the same one used before the migration: 
+    1. Change the handler to not inherit from AbstractHandler
+    1. Replace `@overide` on the execute method with a `@Execute` you will probably also want the shell injected to display stuff e.g.
+        ```
+        @Execute
+        public void execute(Shell shell)
+        ```
+    1. Add an method and label @CanExecute this should return true if the command can be executed
+
+
+
