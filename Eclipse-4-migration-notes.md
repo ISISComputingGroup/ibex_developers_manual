@@ -101,7 +101,7 @@ To create a menu item:
 1. Add the command to a command category if applicable (I am not sure why but it might be useful later)
 1. Add a handler in which handles the command just created which is the same one used before the migration: 
     1. Change the handler to not inherit from AbstractHandler
-    1. Replace `@overide` on the execute method with a `@Execute` you will probably also want the shell injected to display stuff e.g.
+    1. Replace `@override` on the execute method with a `@Execute` you will probably also want the shell injected to display stuff e.g.
         ```
         @Execute
         public void execute(Shell shell)
