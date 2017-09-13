@@ -11,3 +11,5 @@ Various Processes or tasks and info into how they should work. Remember rules ca
 - [Friday Quality Time](Friday-Quality-Time) 
 
 - [Training Instrument Scientists in IBEX](Training-Instrument-Scientists-in-IBEX)
+
+- [Priority](Prioritisation)
