@@ -29,6 +29,10 @@ User Interface Heuristics | Thomas Lohnert | Nov 2016
 How to Read ISIS LabVIEW Drivers | Kathryn Baker | Nov 2016
 MVVM Pattern | Dominic Oram | Feb 2017
 Collision Detection | Jon Elmer | Feb 2017
+IOC Testing Framework & Emulators | Tom Willemsen | Jul 2017
+Motion Control Axis Testing | Dominic Oram | Jul 2017
+Pythonic vs Non-Pythonic | Matt Clarke | Sep 2017
+Python Style Checking & Flake8 | Samuel Jackson | Sep 2017
 
 All presentations should be uploaded to the SharePoint site [here](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Forms/AllItems.aspx?RootFolder=%2Fisis%2Fcomputing%2FICPdiscussions%2FGUI_Chat_Slides&FolderCTID=0x01200027AD8F05966A2748B3B04C98BB5B442B&View={F2C33C51-70E6-4343-B937-2C59A2568306}) and/or converted to a wiki page if more appropriate. It should also be reasonably assumed that the people who gave these presentations should know something about these subjects.
 
@@ -39,5 +43,3 @@ Idea | Proposer | Proposed Speaker
 How to make a UI with SWT | Dominic Oram | Thomas Lohnert
 How threads are used in IBEX | Dominic Oram | ?
 Java 8 | Dominic Oram | ?
-Flake8 | Matt Clarke | Sam Jackson
-Emulators and IOC testing | . | Tom Willemsen
