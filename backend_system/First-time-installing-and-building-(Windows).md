@@ -136,3 +136,7 @@ https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/ISIS-Proxy#sec
 # Building the GUI
 
 After following the above instructions please see [Building the GUI](Building-the-GUI).
+
+# VNC
+
+If you are supporting instruments it may be useful to download a VNC client. We have not settled on one that we all use but I have used tighVNC (just the client) which is available [here](http://www.tightvnc.com/)
