@@ -1,3 +1,5 @@
+> [Wiki](Home) > [Processes](Processes) > [Prioritisation of tickets](Prioritisation-of-Tickets)
+
 These are notes on prioritisation this is not an ordered list yet:
 
  - Stops Instrument running
