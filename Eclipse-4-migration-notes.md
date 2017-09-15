@@ -123,6 +123,8 @@ Launching the E4 application is very similar to the launching the E3 application
 - Click `Synchronize`
 - Click `Launch Eclipse application` or equivalent for debug
 
+If you are still experiencing errors, you may still need to set up your new workspace for IBEX development. See [this page](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Creating-the-IBEX-Developer-Version-of-Eclipse) for instructions.
+
 ## Don't forget your data sources?
 
 As of 15th September 2017, the data source definitions are not contained in the GUI. The expectation is that we will fix that soon. Until then, you need the following files:
