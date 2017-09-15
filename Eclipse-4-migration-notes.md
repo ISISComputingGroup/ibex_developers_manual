@@ -152,6 +152,5 @@ As of 15th September 2017, the data source definitions are not contained in the 
 </ca>
 ```
 
-
-
+If you don't have the datasources file, you won't be able to connect to any PVs. Without the ca file, you may still be able to connect to some PVs, but only certain ones. We've observed that the configuration dialogs won't load without it.
 
