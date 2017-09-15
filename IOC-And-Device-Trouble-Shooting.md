@@ -83,6 +83,16 @@ In the motor record (`C:\Instrument\Apps\EPICS\support\motor\master\motorApp\Mot
 
 In summary, being at the limit position is insufficient to cause the limit flag to be active. This is expected behaviour, though can be slightly unintuitive at first.
 
+## Readbacks from device keep twitching
+
+This may be because of variances in the signal returned from the motor. This is true, for example, on the jaws set on Merlin. It also causes the motor status label on the bumpstrip to keep switching. Note that leaving it in this state can increase dramatically the amount of information sent to the archiver.
+
+To fix, use caput for the relevant PV in the motor record:
+
+`IN:[INST]:MOT:MTR0n0m.MDEL`: Sets the motor deadband. This will stop the position readback from oscillating
+`IN:[INST]:MOT:MTR0n0m.ADEL`: Sets the archiver deadband. This will stop values being written to the archiver unless the value changes by more than the deadband value
+`IN:[INST]:MOT:MTR0n0m_EDEL_SP`: Sets the encoder deadband. No readbacks will be updated unless the encoder varies by this amount.
+
 # Logging
 
 ## I Changed the logging setting but it uses old settings
