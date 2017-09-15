@@ -108,5 +108,50 @@ To create a menu item:
         ```
     1. Add an method and label @CanExecute this should return true if the command can be executed
 
+## Setting up your E4 workspace
+
+This is largely the same as setting up your E3 workspace. It's best to create a separate workspace for your E3 & E4 development.
+
+Launching the E4 application is very similar to the launching the E3 application as detailed in the getting started guide.
+
+- Create a new workspace
+- Import all of the plugins from `C:\Instrument\Dev\ibex_gui\base`
+- Change your run configuration to clear the workspace on launch. Unless you do this in E4 applications, changes to the code are not always propagated to the build
+    - Open the run configurations dialog
+    - With "ibex.product" selected under "Eclipse Application" in the left-hand nav bar, go to the "Main" tab
+    - Make sure the "Clear" box is ticked with the radio button set to "workspace"
+    - Under the "Configuration" tab, select "Clear the configuration area before launching"
+    - Click "Apply" then close the dialog
+- Set the target platform. If it's covered in red, select each source followed by "Update" and "Reload". Once that's done, click "Set target platform"
+- Go to the `...e4.client.product` plugin.
+- Open `ibex.product`
+- Click `Synchronize`
+- Click `Launch Eclipse application` or equivalent for debug
+
+## Don't forget your data sources?
+
+As of 15th September 2017, the data source definitions are not contained in the GUI. The expectation is that we will fix that soon. Until then, you need the following files:
+
+- `C:\Users\[fedID]\.diirt\datasources\datasources.xml`
+
+```
+<?xml version='1.0' encoding='UTF-8'?>
+<dataSources version="1">
+    <compositeDataSource defaultDataSource="ca" />
+</dataSources>
+```
+
+- `C:\Users\[fedID]\.diirt\datasources\**ca**\ca.xml`
+
+```
+<?xml version='1.0' encoding='UTF-8'?>
+<ca version="1">
+    <jcaContext pureJava="true" addr_list="" auto_addr_list="true" connection_timeout="30.0"
+                beacon_period="15.0" repeater_port="5065" server_port="5064"
+                max_array_bytes="5000000" />
+</ca>
+```
+
+
 
 
