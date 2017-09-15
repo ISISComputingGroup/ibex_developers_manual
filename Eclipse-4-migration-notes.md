@@ -141,7 +141,7 @@ As of 15th September 2017, the data source definitions are not contained in the 
 </dataSources>
 ```
 
-- `C:\Users\[fedID]\.diirt\datasources\**ca**\ca.xml`
+- `C:\Users\[fedID]\.diirt\datasources\ca\ca.xml`
 
 ```
 <?xml version='1.0' encoding='UTF-8'?>
