@@ -1,6 +1,7 @@
 > [Wiki](Home) > [The GUI](The-GUI) > [Coding](GUI-Coding) > Data binding
 
-Note: there are some helpful tips to common errors/mistakes [here](Databinding---common-mistakes)
+Note: there are some helpful tips to common errors/mistakes [here](Databinding---common-mistakes).
+Note: an explanation of how to connect a view to a PV is [here](Connecting-a-View-to-a-PV)
 
 ## Create the example plug-ins ##
 
