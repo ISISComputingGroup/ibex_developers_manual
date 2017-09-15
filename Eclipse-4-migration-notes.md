@@ -19,12 +19,7 @@ Owing to this investigation, and discussions with John and Kevin, I have chosen 
 
 # E4 application prototype, July 2017 sprint
 
-As part of the first stage of the application migration, I have created a branch `Ticket2376_E4_prototype_migrated`. To run it, follow the usual steps (more or less)
-
-- Import all of the IBEX plugins in base into your workspace
-- Set the target platform
-- Open 'uk.ac.stfc.isis.ibex.e4.client.product', 'ibex.product'
-- Click "Launch an Eclipse application"
+As part of the first stage of the application migration, I have created a branch `Ticket2376_E4_prototype_migrated`. To run it, set up a new E4 workspace as per [these instructions](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Eclipse-4-migration-notes#setting-up-your-e4-workspace).
 
 Many of the application's views have been mocked using screenshots of the current system. These are 'cartoonified' to make them look less realistic to avoid confusion. The views that have been converted so far are the dashboard and the beam status view.
 
