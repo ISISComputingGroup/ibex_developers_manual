@@ -49,6 +49,7 @@ The project currently contains the following base units:
 * count
 * degree
 * eV
+* frame
 * hour
 * Hz
 * inch
@@ -56,10 +57,12 @@ The project currently contains the following base units:
 * K
 * L
 * m
+* min
 * minute
 * ohm
 * Oersted
 * %
+* Pa
 * photon
 * pixel
 * radian
