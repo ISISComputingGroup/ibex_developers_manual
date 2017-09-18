@@ -1,10 +1,10 @@
-> [Wiki](Home) > [The GUI](The-GUI) > GUI chats
+> [Wiki](Home) > [The GUI](The-GUI) > Code chats
 
-# GUI Chats
+# Code Chats
 
-GUI chats occur on a semi-regular monthly basis within the group at ISIS. Although they were originally intended to be presentations focused on a specific part of the IBEX GUI they often cover other subjects that may be considered part of the backend.
+Code chats occur on a semi-regular monthly basis within the group at ISIS. Although they were originally intended to be presentations focused on a specific part of the IBEX GUI they often cover other subjects that may be considered part of the backend.
 
-## Previous GUI Chats
+## Previous Code Chats
 
 Topic | Presenter | Date
 ----- | --------- | ----
@@ -36,10 +36,11 @@ Python Style Checking & Flake8 | Samuel Jackson | Sep 2017
 
 All presentations should be uploaded to the SharePoint site [here](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Forms/AllItems.aspx?RootFolder=%2Fisis%2Fcomputing%2FICPdiscussions%2FGUI_Chat_Slides&FolderCTID=0x01200027AD8F05966A2748B3B04C98BB5B442B&View={F2C33C51-70E6-4343-B937-2C59A2568306}) and/or converted to a wiki page if more appropriate. It should also be reasonably assumed that the people who gave these presentations should know something about these subjects.
 
-## Ideas for upcoming GUI Chats
+## Ideas for upcoming Code Chats
 
 Idea | Proposer | Proposed Speaker
 ---- | -------- | ----------------
 How to make a UI with SWT | Dominic Oram | Thomas Lohnert
 How threads are used in IBEX | Dominic Oram | ?
 Java 8 | Dominic Oram | ?
+Eclipse 4 | Thomas Lohnert | ?
