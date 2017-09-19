@@ -77,3 +77,4 @@ To check an instrument migration/deployment as a reviewer:
 - Check with the person that originally did the ticket that they have contacted the instrument scientist.
 - If the instrument is up, have a look around their configurations and synoptics and check that they are sensible.
 - Ensure there are no outstanding tickets blocking the instrument migration.
+- Ensure that blocks point at e.g. `...X` rather than `...X:SP:RBV` (unless it's clear that the block needs to point at the setpoint readback)
