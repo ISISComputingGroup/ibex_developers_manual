@@ -3,6 +3,7 @@ Current Known issues:
 * CTRL + ALT + P preference menu does not work 
 * It's all very slow
 * Status bar is left justified?
+* Menu bar items do not work (other than configuration related ones)
 
 Plugins that have either been modified to work (or at least not complain) with E4, CS-Studio 4.X and DIIRT or work without modification:
 
