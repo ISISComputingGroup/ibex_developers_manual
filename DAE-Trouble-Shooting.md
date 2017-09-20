@@ -333,3 +333,7 @@ MODN: 0 to 7
 
 ### Error pop up: `*** ICP failed to start - your DAE may be switched OFF or is missing cards ***`
 The DAE unit may be switched off. This is particularly likely during shut down. Change the DAE into simulation mode as described above.
+
+### Blocks not being added to Nexus file
+This should not occur but has when a database was missing our extra column in the archive. If the sample table in the archive is missing a sample_id, run the following. Note that it can take a while on a database with a large number of rows in that table.
+``` "c:\programs files\wherever...\Mysql.exe" -u root -p  --execute="ALTER TABLE sample ADD COLUMN sample_id BIGINT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'Sample id'" archive```
