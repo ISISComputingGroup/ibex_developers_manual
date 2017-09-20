@@ -42,7 +42,7 @@ All PVs should have if appropriate:
 * Description (`DESC` field)
 * Unit fields if representing a value (`EGU` field) which may be blank
     * Units must be in ...
-* Precision (`PREC`) - is this set correctly for what a user/technician requires 
+* Precision (`PREC`) for records with floating point numbers - is this set correctly for what a user/technician requires 
 
 ## 5. Compliance with DBUnitChecker
 
