@@ -9,6 +9,7 @@ These are tests/checks that should be performed on the IBEX client after a relea
     1. Verify that no issues arise on starting a scripting window (e.g. `init_[INST]` is loaded correctly)
     1. Genie is available via the `g` prefix: try `g.get_blocks()`
     1. Instrument scripts are available via the `inst` prefix. **DO NOT** use one of the existing instrument scripts as it could trigger unwanted changes on the instrument. Create a test script in `C:\Instrument\Settings\config\NDX[INST]\Python\inst` and run that.
+1. View the current config make sure it looks sensible.
 
 ### LARMOR
 
