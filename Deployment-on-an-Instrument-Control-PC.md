@@ -16,7 +16,12 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
 
 - **upgrade** Note the current version number of the instrument (Help->About)
 
-- **upgrade** Take screen shots of running instrument. This ensures it is restarted as it was found and enables you easily to spot changes in config. Items to include: blocks, each perspective, configuration each tab, running ioc's available configs, components and synoptics
+- **upgrade** Take screen shots of running instrument. This ensures it is restarted as it was found and enables you easily to spot changes in config. Items to include: 
+    1. blocks
+    1. each perspective 
+    1. current configuration each tab
+    1. running ioc's available configs
+    1. other configurations and components and synoptics
 
 - **upgrade** Record any open labview VI which are running.
 
