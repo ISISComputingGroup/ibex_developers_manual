@@ -8,3 +8,9 @@ Settings for individual devices are typically in the following location (example
 Some devices have settings in `\\NDXxxxxx\c$\LABVIEW MODULES\Instrument`
 
 GALILs are more complicated.
+
+# Seci "automatic" blocks
+
+SECI used to create an `_Status.txt` file for you "free of charge", it looks like a block but you didn't need to add it. All it contained was the run state. When migrating an instrument's configuration, check with the scientists if they need a block defined for the run state.
+
+If so, point it at the `DAE:RUNSTATE_STR` process variable and add it as "monitor with deadband" rather than periodic change
