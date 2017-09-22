@@ -87,6 +87,9 @@ git rm Python\init_inst_name.py
 git commit -m"create initial python"
 git push --set-upstream origin NDXXXX
 ```
+
+(Note, the init_inst_name python file should have underscores rather than dashes if the machine name contains dashes. So `NDWTEST-BLAH` would have the init file `init_ndwtest_blah.py`).
+
 Any configs created through IBEX will now be stored on this branch (they will only be pushed remotely if you do a manual push first e.g. the last line above)
 
 These repositories can be web browsed via [http://control-svcs.isis.cclrc.ac.uk/git/](http://control-svcs.isis.cclrc.ac.uk/git/)
