@@ -34,12 +34,13 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
     * **_Copy_** the following directories to backup directory:
         1. `C:\instrument\settings`
         1. `C:\instrument\var\autosave`
-    * Consider copy db files (check the size >5GB don't bother, unless the database is going to be changed). If you decide to then 
+    * Clear up database using [Database-Troubleshooting]
+    * Back up db if db is changing: 
         1. Stop the mysql service:
              1. `mysql -u root -p --execute="SET GLOBAL innodb_fast_shutdown=0"`
              1. `mysqladmin -u root -p shutdown` (stops down service)
         1. Copy `C:\instrument\var\mysql` to backup directory
-        1. Start the service
+        1. Start the service "MySQL57" in services.
 
 - **upgrade** Update the Common Calibration directory.
     1. Do a git status to find out if files have been added or changed (if they have querry why this is and take appropriate action)
