@@ -39,6 +39,7 @@ In the preparation phase, the team will create software components to support th
    * look at the lab view:
        * to identify non-standard behaviour
        * to identify rough size of the command set
+   * Create a checklist with all devices and there major functions so they can be checked during migration
 Agree with the team how support will be implemented (e.g. by creating or extending IOCs and OPIs, or by using lvDCOM to interface to LabVIEW).
 1. Discuss the time required to implement the required support (it might take several sprints)
 1. Create any tickets required to implement the necessary support.
@@ -48,8 +49,8 @@ Agree with the team how support will be implemented (e.g. by creating or extendi
 1. Check the computer that IBEX will be installed on ensuring that it has enough hard disk space.
 1. As the target cycle approaches
    1. set up a PC to test the new version of IBEX.
-      1. create IBEX configurations to correspond to their SECI equivalents
-      1. create genie-python scripts to correspond to their Open-Genie equivalents
+      1. create IBEX configurations to correspond to their SECI equivalents (add to checklist)
+      1. create genie-python scripts to correspond to their Open-Genie equivalents (add to checklist)
       1. test these configurations & scripts on the test PC
       1. demonstrate the configurations & scripts to the instrument scientists and check that they are happy with the migrated configurations & scripts
    1. arrange one or more training sessions with the scientists to help them understand how to 
@@ -67,7 +68,7 @@ In the migration phase, IBEX will be physically installed and configured on the 
 1. Check that there is sufficient space on the instrument control PC to install IBEX.
 1. On the agreed date, install and configure IBEX (as described in the [Deployment](Deployment) page).
 1. Install the IBEX configurations and genie-python scripts created during the preparation phase.
-1. Test the new IBEX installation
+1. Test the new IBEX installation using the checklist generated in planning
 1. Ask the scientists to confirm that the instrument is behaving as expected.
 
 # How to review
