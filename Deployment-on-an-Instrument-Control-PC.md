@@ -34,7 +34,7 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
     * **_Copy_** the following directories to backup directory:
         1. `C:\instrument\settings`
         1. `C:\instrument\var\autosave`
-    * Clear up database using [Database-Troubleshooting]
+    * Clear up database using [Database Troubleshooting Reducing database disc space](Database-Troubleshooting#Reducing database disc space)
     * Back up db if db is changing: 
         1. Stop the mysql service:
              1. `mysql -u root -p --execute="SET GLOBAL innodb_fast_shutdown=0"`
