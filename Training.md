@@ -29,7 +29,7 @@ Make sure you review the training course materials.  Have any new features been 
 If you have decided to use the CDF suite, you need to tell RAL Space (i.e. Andrew Caldwell) the names of each of the delegates, so that they can arrange access (e.g. swipe passes) to the Atlas building.  RAL Space need 2-weeks notice to do this.  A simple spreadsheet naming each delegate, their e-mail and indicating if the individual is a member of ISIS staff is sufficient.
 
 ### E-mail course joining instructions to all delegates
-1-2 weeks before the training course is due to run, send an e-mail to all delegates, telling them how to join the course.  Make sure you tell them 
+1-2 weeks before the training course is due to run, send an e-mail to all delegates, telling them how to join the course.  Make sure you tell them: 
    * where the course is being held (building, room number)
    * which day(s) the course is running
    * start time, finish time (e.g. if the course is due to start at 9:00AM, tell delegates to arrive at 8:45AM, so that the inevitable late-comers don't disrupt things too much).
