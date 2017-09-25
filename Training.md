@@ -1,7 +1,11 @@
 From time-to-time, we run IBEX and genie_python training courses.  This page collects information that you will need to organise and run the IBEX and genie_python train courses.
 
 ## When should we run IBEX and genie_python train courses?
-There is never an ideal time to run IBEX and genie_python train courses.  Running training courses during cycle is difficult, because scientists are usually heavily involved with their instruments.  Running training courses out of cycle is difficult, because scientists use the opportunity to take holidays, attend conferences, catch up on other work ...  The best compromise is to run IBEX and genie_python train courses during the shutdown, shortly before the start of a new cycle.  Why shortly before the start of a new cycle?  Because, people tend to forget what they have learned unless they have an opportunity to put it into practice.  So, as a rule of thumb, try to schedule the course 2-3 weeks before the start of cycle.  You could also run the courses during the week before cycle, but you might need this time to make final adjustments to instruments, so try to avoid this time if possible.
+There is never an ideal time to run IBEX and genie_python train courses.  Running training courses during cycle is difficult, because scientists are usually heavily involved with their instruments.  Running training courses out of cycle is difficult, because scientists use the opportunity to take holidays, attend conferences, catch up on other work ...  
+
+The best compromise is to run IBEX and genie_python train courses during the shutdown, shortly before the start of a new cycle.  Why shortly before the start of a new cycle?  Because, people tend to forget what they have learned unless they have an opportunity to put it into practice.  So, as a rule of thumb, try to schedule the course 2-3 weeks before the start of cycle.  You could also run the courses during the week before cycle, but you might need this time to make final adjustments to instruments, so try to avoid this time if possible.
+
+Because training has to be synchronised with ISSI cycle, you need to think about planning training sessions well in advance - 3-6 months in advance.
 
 ## Planning the IBEX and genie_python training courses
 This section summarises the steps you will need to consider when planning the IBEX and genie_python training courses.
