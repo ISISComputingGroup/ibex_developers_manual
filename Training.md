@@ -8,7 +8,7 @@ This section summarises the steps you will need to consider when planning the IB
 ### Check with the Mantid team
 The Mantid team regularly run a Mantid course and an Introduction to  Python courses.  Check with the Mantid team to discover their plans.  You can often collaborate of training activities.  It is very useful if the Mantid team can deliver the Introduction to  Python course, prior to the genie_python with IBEX course.
 ### Select a date for the training
-As noted above, select a date for the training 2-3 weeks ahead of the cycle.  You may need to select 2 or 3 dates and only make a final decision when you know availability of the venue.
+As noted above, select a date for the training 2-3 weeks ahead of the cycle.  You may need to select 2 or 3 dates and only make a final decision when you know availability of the venue.  You might also need to book a day or so either side of your chosen date, to allow for set-up and clear-up before/after the course.
 ### Advertise the training course
 Tell instrument scientists and visiting scientists of the proposed dates for the training course and invite them to sign up to attend.  Scientists will typically need 2-3 months advance notice, so make sure you tell them early.  Make sure you tell scientists to respond by a cut-off date - otherwise, it can be tricky trying to squeeze people in if they respond only 2-3 days before the course is due to run.
 ### Decide which training venue to use
@@ -27,5 +27,18 @@ Make sure you review the training course materials.  Have any new features been 
 
 ### Send Delegate list to CDF
 If you have decided to use the CDF suite, you need to tell RAL Space (i.e. Andrew Caldwell) the names of each of the delegates, so that they can arrange access (e.g. swipe passes) to the Atlas building.  RAL Space need 2-weeks notice to do this.  A simple spreadsheet naming each delegate, their e-mail and indicating if the individual is a member of ISIS staff is sufficient.
+
+### E-mail course joining instructions to all delegates
+1-2 weeks before the training course is due to run, send an e-mail to all delegates, telling them how to join the course.  Make sure you tell them 
+   * where the course is being held (building, room number)
+   * which day(s) the course is running
+   * start time, finish time (e.g. if the course is due to start at 9:00AM, tell delegates to arrive at 8:45AM, so that the inevitable late-comers don't disrupt things too much).
+   * any other joining instructions (e.g. who to call if they get lost)
+
+### Check the venue & facilities
+A day or two before the course runs, visit the venue to make sure everything is ready.  You do not want to be trying to sort out problems 5 minutes before the course is due to start.  Things to check are:
+   * are the desks arranged as you want them?
+   * are the audio-visual system (e.g. projector) working correctly?
+   * are the laptops/workstations properly setup and working?
 
 
