@@ -6,6 +6,75 @@ Starting from the July 2017 cycle, we are migrating IBEX from running on the Ecl
 
 The goal of the project is to run IBEX on an Eclipse 4.x platform. Notably the current stable release of CSS is 4.4.3, which runs on Eclipse Mars (4.5), hence we have used this as our target platform as well as our development environment
 
+# Getting started
+
+## Setting up your E4 workspace
+
+This is largely the same as setting up your E3 workspace. It's best to create a separate workspace for your E3 & E4 development.
+
+Launching the E4 application is very similar to the launching the E3 application as detailed in the getting started guide.
+
+- Create a new workspace
+- Import all of the plugins from `C:\Instrument\Dev\ibex_gui\base`
+- Change your run configuration to clear the workspace on launch. Unless you do this in E4 applications, changes to the code are not always propagated to the build
+    - Open the run configurations dialog
+    - With "ibex.product" selected under "Eclipse Application" in the left-hand nav bar, go to the "Main" tab
+    - Make sure the "Clear" box is ticked with the radio button set to "workspace"
+    - Under the "Configuration" tab, select "Clear the configuration area before launching"
+    - Click "Apply" then close the dialog
+- Set the target platform. If it's covered in red, select each source followed by "Update" and "Reload". Once that's done, click "Set target platform"
+- Go to the `...e4.client.product` plugin.
+- Open `ibex.product`
+- Click `Synchronize`
+- Click `Launch Eclipse application` or equivalent for debug
+
+If you are still experiencing errors, you may still need to set up your new workspace for IBEX development. See [this page](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Creating-the-IBEX-Developer-Version-of-Eclipse) for instructions.
+
+## Don't forget your data sources
+
+As of 15th September 2017, the data source definitions are not contained in the GUI. The expectation is that we will fix that soon. Until then, you need the following files:
+
+- `C:\Users\[fedID]\.diirt\datasources\datasources.xml`
+
+```
+<?xml version='1.0' encoding='UTF-8'?>
+<dataSources version="1">
+    <compositeDataSource defaultDataSource="ca" />
+</dataSources>
+```
+
+- `C:\Users\[fedID]\.diirt\datasources\ca\ca.xml`
+
+```
+<?xml version='1.0' encoding='UTF-8'?>
+<ca version="1">
+    <jcaContext pureJava="true" addr_list="" auto_addr_list="true" connection_timeout="30.0"
+                beacon_period="15.0" repeater_port="5065" server_port="5064"
+                max_array_bytes="5000000" />
+</ca>
+```
+
+If you don't have the datasources file, you won't be able to connect to any PVs. Without the ca file, you may still be able to connect to some PVs, but only certain ones. We've observed that the configuration dialogs won't load without it.
+
+## Migrating an E3 perspective in a couple of easy steps
+
+1. Open the Application.e4xmi from `uk.ac.stfc.isis.ibex.e4.client`
+1. Go to `Snippets`
+1. Click `Add` to add a new perspective
+1. Set the perspective up using an existing migrated perspective as a template
+    1. Set a sensible ID
+    1. Give it a label
+    1. Set the icon
+    1. Add controls. This should be a hierarchy of part sash containers. You can see how it should be set up from the existing perspectives. Don't forget to set the container data where appropriate; it sets the relative size of sibling components.
+1. Add the perspective-specific parts
+    1. In the alarms perspective, you'll see one part in the final part sash container called alarms. Do the same thing in your new perspective, but give it an appropriate name
+    1. Change the ID of your new part to the ID of the view class you want the perspective to open
+1. Add the dependency of the view you've added to the `plugin.xml` in the `...e4.client` plugin
+1. Add the new dependency to `...feature.base`
+1. Open IBEX
+1. Check the new perspective scales appropriately and change the layout accordingly if needed
+
+
 # The compatibility layer and preliminary migration
 
 Eclipse 4 supports running Eclipse 3.x applications using the "compatibility" layer. In Eclipse 4.5, this is built into the tooling and so doesn't require any code changes to activate. The required plugins just need to be activated as part of the run configuration. Eclipse does an OK job at handling this automatically but has a tendency to either pull in too much if optional dependencies are included, or too little if they are not.
@@ -69,23 +138,6 @@ The way Eclipse RCP works, if you include certain plugins (often denoted with th
 1. Find the model spy and navigate to the element you want to hide
 1. Add the element to `Application.e4xmi` in `uk.ac.stfc.isis.ibex.e4.client` and untick the `To Be Rendered` and `Visible` checkboxes
 
-## Migrating an E3 perspective in a couple of easy steps
-
-1. Open the Application.e4xmi from `uk.ac.stfc.isis.ibex.e4.client`
-1. Go to `Snippets`
-1. Click `Add` to add a new perspective
-1. Set the perspective up using an existing migrated perspective as a template
-    1. Set a sensible ID
-    1. Give it a label
-    1. Set the icon
-    1. Add controls. This should be a hierarchy of part sash containers. You can see how it should be set up from the existing perspectives. Don't forget to set the container data where appropriate; it sets the relative size of sibling components.
-1. Add the perspective-specific parts
-    1. In the alarms perspective, you'll see one part in the final part sash container called alarms. Do the same thing in your new perspective, but give it an appropriate name
-    1. Change the ID of your new part to the ID of the view class you want the perspective to open
-1. Add the dependency of the view you've added to the `plugin.xml` in the `...e4.client` plugin
-1. Add the new dependency to `...feature.base`
-1. Open IBEX
-1. Check the new perspective scales appropriately and change the layout accordingly if needed
 
 ## Menu Items
 
@@ -103,51 +155,5 @@ To create a menu item:
         ```
     1. Add an method and label @CanExecute this should return true if the command can be executed
 
-## Setting up your E4 workspace
 
-This is largely the same as setting up your E3 workspace. It's best to create a separate workspace for your E3 & E4 development.
-
-Launching the E4 application is very similar to the launching the E3 application as detailed in the getting started guide.
-
-- Create a new workspace
-- Import all of the plugins from `C:\Instrument\Dev\ibex_gui\base`
-- Change your run configuration to clear the workspace on launch. Unless you do this in E4 applications, changes to the code are not always propagated to the build
-    - Open the run configurations dialog
-    - With "ibex.product" selected under "Eclipse Application" in the left-hand nav bar, go to the "Main" tab
-    - Make sure the "Clear" box is ticked with the radio button set to "workspace"
-    - Under the "Configuration" tab, select "Clear the configuration area before launching"
-    - Click "Apply" then close the dialog
-- Set the target platform. If it's covered in red, select each source followed by "Update" and "Reload". Once that's done, click "Set target platform"
-- Go to the `...e4.client.product` plugin.
-- Open `ibex.product`
-- Click `Synchronize`
-- Click `Launch Eclipse application` or equivalent for debug
-
-If you are still experiencing errors, you may still need to set up your new workspace for IBEX development. See [this page](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Creating-the-IBEX-Developer-Version-of-Eclipse) for instructions.
-
-## Don't forget your data sources?
-
-As of 15th September 2017, the data source definitions are not contained in the GUI. The expectation is that we will fix that soon. Until then, you need the following files:
-
-- `C:\Users\[fedID]\.diirt\datasources\datasources.xml`
-
-```
-<?xml version='1.0' encoding='UTF-8'?>
-<dataSources version="1">
-    <compositeDataSource defaultDataSource="ca" />
-</dataSources>
-```
-
-- `C:\Users\[fedID]\.diirt\datasources\ca\ca.xml`
-
-```
-<?xml version='1.0' encoding='UTF-8'?>
-<ca version="1">
-    <jcaContext pureJava="true" addr_list="" auto_addr_list="true" connection_timeout="30.0"
-                beacon_period="15.0" repeater_port="5065" server_port="5064"
-                max_array_bytes="5000000" />
-</ca>
-```
-
-If you don't have the datasources file, you won't be able to connect to any PVs. Without the ca file, you may still be able to connect to some PVs, but only certain ones. We've observed that the configuration dialogs won't load without it.
 
