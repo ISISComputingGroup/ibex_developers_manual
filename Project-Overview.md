@@ -16,6 +16,6 @@ Documents for proposed designs of project extensions
 
 Some notes on what to show someone when demonstrating IBEX for the first time
 
-# [Non-Device Channel Access Programs]
+# [Non-Device Channel Access Programs](Backbone-of-Ibex-Server)
 
 List of programs which are accessed as Channel Access, i.e. the backbone of the ibex servers.
