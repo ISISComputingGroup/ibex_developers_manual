@@ -72,5 +72,5 @@ $(APPNAME)_LIBS += seqDev seq pv
 
 Whenever an edit is made to the `fsm.st` file, rebuild the support module:
 ```
-Cd …EPICS\support\HFMAGPSU\master
+cd …EPICS\support\HFMAGPSU\master
 make
