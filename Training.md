@@ -7,6 +7,12 @@ The best compromise is to run IBEX and genie_python train courses during the shu
 
 Because training has to be synchronised with ISIS cycles, you need to think about planning training sessions well in advance - 3-6 months in advance.
 
+## Training materials
+
+- [Mantid](https://www.mantidproject.org/Documentation)
+- [IBEX](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/links-and-resources)
+- [genie_python](https://github.com/ISISComputingGroup/ibex_user_manual/wiki/genie_python-and-IBEX-%28Introduction%29)
+
 ## Planning the IBEX and genie_python training courses
 This section summarises the steps you will need to consider when planning the IBEX and genie_python training courses.
 ### Check with the Mantid team
