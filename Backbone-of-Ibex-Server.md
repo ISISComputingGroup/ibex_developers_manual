@@ -1,3 +1,5 @@
+> [Wiki](Home) > Project overview > [Major Components in Ibex Server](Major-Components-in-Ibex-Server)
+
 This is a table of the programs forming the backbone of IBEX server. Useful for reference:
 
 Name | Console Name | Type | What it does
