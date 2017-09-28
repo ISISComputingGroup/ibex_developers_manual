@@ -19,7 +19,8 @@ If you will be reading or changing PV values, the following must be included in 
 ```
 #include "seqPVmacros.h"
 ```
-A copy of `seqPVmacros.h` can be found [here.](https://github.com/ISISComputingGroup/EPICS-motor/blob/7080600a752478f9fa23301a7e99d7ea081df453/motorApp/NewportSrc/seqPVmacros.h) and should be in the folder alongside the `.st` file.
+A copy of `seqPVmacros.h` can be found [here](https://github.com/ISISComputingGroup/EPICS-motor/blob/7080600a752478f9fa23301a7e99d7ea081df453/motorApp/NewportSrc/seqPVmacros.h) and should be in the folder alongside the `fsm.st` file.
+
 Create an  `fsm.dbd` file, which contains the following:
 ```
 registrar(fsmRegistrar)
