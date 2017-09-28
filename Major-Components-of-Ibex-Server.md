@@ -1,4 +1,4 @@
-> [Wiki](Home) > Project overview > [Major Components of Ibex Server](Major-Components-of-Ibex-Server)
+> [Wiki](Home) > [Project overview](Project-overview) > [Major Components of Ibex Server](Major-Components-of-Ibex-Server)
 
 This is a table of the programs forming the backbone of IBEX server. Useful for reference:
 
