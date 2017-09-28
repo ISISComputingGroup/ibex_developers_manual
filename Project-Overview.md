@@ -1,4 +1,4 @@
-> [Wiki](Home) > Project overview
+> [Wiki](Home) > [Project overview](Project-overview)
 
 # [ICP/IBEX Project Overview](https://github.com/ISISComputingGroup/IBEX/wiki) #
 
@@ -16,6 +16,6 @@ Documents for proposed designs of project extensions
 
 Some notes on what to show someone when demonstrating IBEX for the first time
 
-# [Non-Device Channel Access Programs](Backbone-of-Ibex-Server)
+# [Major Components of Ibex Server](Major-Components-of-Ibex-Server)
 
 List of programs which are accessed as Channel Access, i.e. the backbone of the ibex servers.
