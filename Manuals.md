@@ -8,3 +8,4 @@ Manuals are stored on the share, it is not always clear that they can be shared 
 IOC | Description | Manual Directory
 --- | -----       | -----
 HLG | Helium Level Gauge | Cryogenics_Ltd__Helium_Level_Gauge
+LKSH460 | Lakeshore Gauss Metre (460) | Lakeshore__Gauss_Meter 
