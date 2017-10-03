@@ -9,7 +9,7 @@ Block Archive | ARBLOCK | Java | Archives (in mysql db) blocks set in a configur
 Instrument Archive | ARINST | Java | Archives (in mysql db) pvs with archive property
 Database server | DBSVR | Python | PVs for items stored in the data base, e.g. ioc pv info, experiment details
 Proc Serve Control | PSCTRL | Epics IOC | Control proc serves  (start, stop and status)
-Active MQ | JMS | Java | ActiveMQ used to transmit log line
+[Active MQ](ActiveMQ) | JMS | Java | ActiveMQ used to transmit log line
 a | SCRIPTSERVER | | 
 a | NICOSDAEMON | |
 a | EXPDB | |
