@@ -18,8 +18,9 @@ a | ISISDAE_01 | |
 a | RUNCTRL_01 | |
 a | BLOCKCACHE | |
 a | ALARM | |
-a |  ARACCESS | | 
+a | ARACCESS | | 
 a | INSTETC_01 | |
+Block Gateway | GWBLOCK | EPICS Gateway | Aliases the dynamically created block PVs e.g. CS:SB:FURNACE_TEMP to the underlying PV e.g. EUROTHRM_01:A01:TEMP
+External Gateway | GWEXT | EPICS Gateway | Gateway to allow access to PVs from outside localhost
 
-
-I am not sure about CAREP, GWBLOCK, GWEXT
+I am not sure about CAREP
