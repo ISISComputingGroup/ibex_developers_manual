@@ -116,6 +116,7 @@ I've gotten into the habit of using `TODOs` in Eclipse to identify bits of work 
 - Perspective switching: I've written a basic perspective switcher `uk.ac.stfc.isis.ibex.e4.ui.perspectiveswitcher`. It does what we need it to for now but later on we should switch to using snippets rather than shared elements to build our perspectives. The reason is that shared elements retain changes to their size between perspectives which sounds nice but can lead to very weird behaviour. I think it's best avoided. Similarly, snippets will be necessary to do things like restoring default views of a perspective. In all, we shouldn't have to hard code our perspectives, so it would be better managed via an extension point.
 - Right click on block menu is in something I touched but is probably best done as part of the blocks migration
 - Reenable detecor diagnostics on tab changes PV is DAE:DIAG:ENABLE:FOR
+- Log plotter within OPIs do not work. They need the changes to CSStudio from this pull request (https://github.com/ISISComputingGroup/CSStudio_3_3/pull/2/files). Currently the e4 gui just points at download.csstudio.org so doesn't have this change.
 
 # Useful people to talk to
 
