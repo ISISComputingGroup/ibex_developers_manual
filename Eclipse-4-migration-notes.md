@@ -70,7 +70,7 @@ If you don't have the datasources file, you won't be able to connect to any PVs.
     1. In the alarms perspective, you'll see one part in the final part sash container called alarms. Do the same thing in your new perspective, but give it an appropriate name
     1. Change the ID of your new part to the ID of the view class you want the perspective to open
 1. Add the dependency of the view you've added to the `plugin.xml` in the `...e4.client` plugin
-1. Add the new dependency to `...feature.base`
+1. Add the new dependency to `...feature.xml` (in `uk.ac.stfc.isis.ibex.feature.base`)
 1. Open IBEX
 1. Check the new perspective scales appropriately and change the layout accordingly if needed
 
