@@ -119,6 +119,7 @@ I've gotten into the habit of using `TODOs` in Eclipse to identify bits of work 
 - Log plotter within OPIs do not work. They need the changes to CSStudio from this pull request (https://github.com/ISISComputingGroup/CSStudio_3_3/pull/2/files). Currently the e4 gui just points at download.csstudio.org so doesn't have this change.
 - Minimising views causes some very odd behaviour, we should capture what we actually want to happen and implement it.
 - Perspectives currently cannot be hidden in the preferences. This is used for the NICOS perspective and the Script Generator.
+- Verify that scripts within OPIs work properly. E.g. the HVCAEN is throwing errors.
 
 # Useful people to talk to
 
