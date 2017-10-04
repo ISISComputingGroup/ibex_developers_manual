@@ -117,6 +117,8 @@ I've gotten into the habit of using `TODOs` in Eclipse to identify bits of work 
 - Right click on block menu is in something I touched but is probably best done as part of the blocks migration
 - Reenable detecor diagnostics on tab changes PV is DAE:DIAG:ENABLE:FOR
 - Log plotter within OPIs do not work. They need the changes to CSStudio from this pull request (https://github.com/ISISComputingGroup/CSStudio_3_3/pull/2/files). Currently the e4 gui just points at download.csstudio.org so doesn't have this change.
+- Minimising views causes some very odd behaviour, we should capture what we actually want to happen and implement it.
+- Perspectives currently cannot be hidden in the preferences. This is used for the NICOS perspective and the Script Generator.
 
 # Useful people to talk to
 
