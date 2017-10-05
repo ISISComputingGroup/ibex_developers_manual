@@ -1,11 +1,11 @@
 TODOs For Eclipse 4 migration:
 
-* Recommended synoptic code in config editor has been commented out
-* CTRL + ALT + P preference menu does not work 
-* Switching perspectives is quite slow.
-* Status bar is left justified?
-* Menu bar items do not work (other than configuration related ones)
-* To change the version for the about menu you must change it in e4.client/pom.xml
+- Recommended synoptic code in config editor has been commented out
+- CTRL + ALT + P preference menu does not work 
+- Switching perspectives is quite slow.
+- Status bar is left justified?
+- Menu bar items do not work (other than configuration related ones)
+- To change the version for the about menu you must change it in e4.client/pom.xml
 - `BeamStatusView.java`: The PVs haven't been connected to the beam status view because the archiver doesn't connect properly yet
 - 'BeamStatusView.java`: Using the `showToolbar(false)` command doesn't actually hide the toolbar in the beam status view. I've tried working around this but ran out of time. We should sort it out eventually but I've left it for the time being. We may want to change that entire part eventually to just be two databrowsers in different tabs rather than embedding the graph in a separate view. That relies on a later bit of work though.
 - Perspective switching: I've written a basic perspective switcher `uk.ac.stfc.isis.ibex.e4.ui.perspectiveswitcher`. It does what we need it to for now but later on we should switch to using snippets rather than shared elements to build our perspectives. The reason is that shared elements retain changes to their size between perspectives which sounds nice but can lead to very weird behaviour. I think it's best avoided. Similarly, snippets will be necessary to do things like restoring default views of a perspective. In all, we shouldn't have to hard code our perspectives, so it would be better managed via an extension point.
