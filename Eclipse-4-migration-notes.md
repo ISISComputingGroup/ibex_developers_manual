@@ -109,17 +109,7 @@ There's a CSStudio plugin called `jre6.fragment`. Despite appearances, it is an 
 
 ## TODOs
 
-I've gotten into the habit of using `TODOs` in Eclipse to identify bits of work that I haven't yet gotten around to or rely on later stages of migration. They can be listed by opening up the Eclipse "Tasks" window. The current `TODOs` are:
-
-- `BeamStatusView.java`: The PVs haven't been connected to the beam status view because the archiver doesn't connect properly yet
-- 'BeamStatusView.java`: Using the `showToolbar(false)` command doesn't actually hide the toolbar in the beam status view. I've tried working around this but ran out of time. We should sort it out eventually but I've left it for the time being. We may want to change that entire part eventually to just be two databrowsers in different tabs rather than embedding the graph in a separate view. That relies on a later bit of work though.
-- Perspective switching: I've written a basic perspective switcher `uk.ac.stfc.isis.ibex.e4.ui.perspectiveswitcher`. It does what we need it to for now but later on we should switch to using snippets rather than shared elements to build our perspectives. The reason is that shared elements retain changes to their size between perspectives which sounds nice but can lead to very weird behaviour. I think it's best avoided. Similarly, snippets will be necessary to do things like restoring default views of a perspective. In all, we shouldn't have to hard code our perspectives, so it would be better managed via an extension point.
-- Right click on block menu is in something I touched but is probably best done as part of the blocks migration
-- Reenable detecor diagnostics on tab changes PV is DAE:DIAG:ENABLE:FOR
-- Log plotter within OPIs do not work. They need the changes to CSStudio from this pull request (https://github.com/ISISComputingGroup/CSStudio_3_3/pull/2/files). Currently the e4 gui just points at download.csstudio.org so doesn't have this change.
-- Minimising views causes some very odd behaviour, we should capture what we actually want to happen and implement it.
-- Perspectives currently cannot be hidden in the preferences. This is used for the NICOS perspective and the Script Generator.
-- Verify that scripts within OPIs work properly. E.g. the HVCAEN is throwing errors.
+I've gotten into the habit of using `TODOs` in Eclipse to identify bits of work that I haven't yet gotten around to or rely on later stages of migration. They can be listed by opening up the Eclipse "Tasks" window. The current `TODOs` are on the page [Eclipse 4 Migration TODOs](Eclipse-4-Migration-TODOs).
 
 # Useful people to talk to
 
