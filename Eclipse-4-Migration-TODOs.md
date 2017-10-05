@@ -2,7 +2,7 @@ TODOs For Eclipse 4 migration:
 
 * Recommended synoptic code in config editor has been commented out
 * CTRL + ALT + P preference menu does not work 
-* It's all very slow
+* Switching perspectives is quite slow.
 * Status bar is left justified?
 * Menu bar items do not work (other than configuration related ones)
 * To change the version for the about menu you must change it in e4.client/pom.xml
