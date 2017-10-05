@@ -19,3 +19,6 @@ TODOs For Eclipse 4 migration:
 - DAE perspectives need scrollbars
 - DAE detector diagnostics are not being enabled properly
 - Colour scheme is only read once when Motors view is initialised (cannot be changed afterwards)
+- Switching to the scripting perspective is very slow. It's probably no better than e3 but there should be some feedback to the user that the perspective is being opened.
+- The scripting perspective does not switch instruments properly
+- The way the scripting perspective is created is confusing and messy, we should try and fix it 
