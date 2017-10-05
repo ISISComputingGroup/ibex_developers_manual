@@ -22,3 +22,5 @@ TODOs For Eclipse 4 migration:
 - Switching to the scripting perspective is very slow. It's probably no better than e3 but there should be some feedback to the user that the perspective is being opened.
 - The scripting perspective does not switch instruments properly
 - The way the scripting perspective is created is confusing and messy, we should try and fix it 
+- At the moment the log plotter branch will only display the empty view, need to actually display a plotter with a PV
+- Need to sort out the access to the log plotter from OPIs and Blocks
