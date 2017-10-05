@@ -15,3 +15,4 @@ TODOs For Eclipse 4 migration:
 - Minimising views causes some very odd behaviour, we should capture what we actually want to happen and implement it.
 - Perspectives currently cannot be hidden in the preferences. This is used for the NICOS perspective and the Script Generator.
 - Verify that scripts within OPIs work properly. E.g. the HVCAEN is throwing errors.
+- Get genie_python talking to PVs. Currently it is getting `null` as it's `CA_ADDR_LIST` which causes issues.
