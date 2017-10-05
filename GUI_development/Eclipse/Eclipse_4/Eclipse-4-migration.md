@@ -1,10 +1,4 @@
-Current Known issues:
-* Recommended synoptic code in config editor has been commented out
-* CTRL + ALT + P preference menu does not work 
-* It's all very slow
-* Status bar is left justified?
-* Menu bar items do not work (other than configuration related ones)
-* To change the version for the about menu you must change it in e4.client/pom.xml
+Current Known issues: see [Eclipse 4 Migration TODOs](Eclipse-4-Migration-TODOs)
 
 Plugins that have either been modified to work (or at least not complain) with E4, CS-Studio 4.X and DIIRT or work without modification:
 
