@@ -18,3 +18,4 @@ TODOs For Eclipse 4 migration:
 - Get genie_python talking to PVs. Currently it is getting `null` as it's `CA_ADDR_LIST` which causes issues.
 - DAE perspectives need scrollbars
 - DAE detector diagnostics are not being enabled properly
+- Colour scheme is only read once when Motors view is initialised (cannot be changed afterwards)
