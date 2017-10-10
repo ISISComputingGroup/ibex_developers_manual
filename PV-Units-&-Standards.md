@@ -24,7 +24,7 @@ The checker is run at the end of a build on Jenkins and unit tests are failed if
 Unit Standards
 --------------
 
-If the unit has a standard alphanumeric unit symbol that has been used. In the case where the usual symbol is not alphanumeric e.g. degree (°), angstrom (Å), the unit is written in full, lower case and singular.
+If the unit has a standard alphanumeric unit symbol that has been used. In the case where the usual symbol is not alphanumeric e.g. degree (°), angstrom (Å), the unit is written in full, lower case and singular. The unit may be shortened because CSS will only display 8 characters worth of unit so `degree/s^2` is to long.
 
 Standard prefixes, [T|G|M|k|m|u|n|p|f], are accepted before all units.
 
@@ -47,7 +47,7 @@ The project currently contains the following base units:
 * C
 * cm
 * count
-* degree
+* degree or deg for short
 * eV
 * frame
 * hour
@@ -68,7 +68,7 @@ The project currently contains the following base units:
 * radian
 * s
 * torr
-* step
+* step or stp for short
 * T
 * V
 
