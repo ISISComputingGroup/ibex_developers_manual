@@ -74,3 +74,6 @@ The following changes should be applied to each of the workstations individually
 - Rename the instrument config folder in `C:\Instrument\Settings\config` to match the machine name
 - Rename the `init_inst_name.py` file in `C:\Instrument\Settings\config\[machine name]\Python\inst` to match the instrument name
 - Start the IBEX server and switch to the local instrument
+- Set the DAE to point at existing TCB and table files if it doesn't already
+- Make sure you can successfully start the instrument
+- Stop the IBEX server (else it won't work properly for the next person who logs in)
