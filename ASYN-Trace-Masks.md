@@ -58,7 +58,7 @@ By default the trace output is sent to the epics error log (which by default ech
 
 # Getting (VERY VERBOSE) output from stream device.
 
-In your `st.cmd`, add the following line:
+In your `st.cmd`, or at the EPICS prompt fomr a console session, use:
 
 `var streamDebug 1`
 
