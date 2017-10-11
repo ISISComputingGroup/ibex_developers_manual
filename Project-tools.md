@@ -24,6 +24,11 @@ Tools for helping network traffic issues
 
 Tools for upgrading the config
 
+## [Config Checker](Config-Checker)
+
+Tools for checking the current configurations are correct
+
+
 ## [Test Machines](Test-Machines)
 
 ## [Standards & Conventions](Standards-&-Conventions)
