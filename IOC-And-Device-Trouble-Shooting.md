@@ -2,6 +2,13 @@
 
 # General tips
 
+## checking stream device/asyn serial port settings
+
+At the IOC command prompt, type:
+```
+dbior("drvAsyn",2)
+```
+
 ## It doesn't work What Should I Do?
 
 1. Connect over hyperterminal (see *Connect over hyperterminal*)
