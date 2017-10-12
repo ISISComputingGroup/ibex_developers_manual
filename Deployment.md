@@ -11,3 +11,4 @@
 - [Installing and upgrading MySQL](Installing-and-Upgrading-MySQL)
 - [Disaster Recovery Testing](Disaster-Recovery-Testing)
 - [Virtual System Creation](Virtual-System-Creation)
+- [Autostart IBEX on Computer Restart](Autostart-IBEX-on-Computer-Restart)
