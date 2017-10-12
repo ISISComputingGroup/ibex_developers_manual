@@ -123,7 +123,7 @@ First checkout the vendor branch and remove all files
     rm -fr *
 ```
 Then unpack the new code into the directory in the same was as above. You'll have files added, removed and changed to handle. Type  git status  and remove unwanted files like like binaries and temporary files as described above. Then type  
-``
+```
     git add -u .
 ```
 This will add changed files. Again check with a   git status  that all is looking right before using 
