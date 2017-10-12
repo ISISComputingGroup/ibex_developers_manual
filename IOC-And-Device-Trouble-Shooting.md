@@ -100,6 +100,18 @@ To fix, use caput for the relevant PV in the motor record:
 `IN:[INST]:MOT:MTR0n0m.ADEL`: Sets the archiver deadband. This will stop values being written to the archiver unless the value changes by more than the deadband value
 `IN:[INST]:MOT:MTR0n0m_EDEL_SP`: Sets the encoder deadband. No readbacks will be updated unless the encoder varies by this amount.
 
+## McLennan OPI controls all red
+
+- Does the panel on the front of the controller display a letter?
+    - `r`
+        - Can happen owing to a communication issue when the IOC starts if the baud rate/stop bits aren't set correctly
+    - `t`
+        - Tracking abort. Usually happens if the encoder resolution is incorrect. Is the `ERES` macro fraction the right way around?
+    - `n`
+        - Observed once on Merlin after the McLennan had been idle for a long time. Only happened after homing the motor. Restarting the controller (with the IOC stopped) fixed the issue
+    - No
+        - Try restarting the IOC, then move the motor through a significant operation (a home or jog to limit). Sometimes restarting the IOC is enough, sometimes the move causes the underlying issue to reveal itself (see `n` above)
+
 # Logging
 
 ## I Changed the logging setting but it uses old settings
