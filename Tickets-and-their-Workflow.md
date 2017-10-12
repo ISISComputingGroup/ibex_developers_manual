@@ -12,6 +12,7 @@ Type   | Meaning
 **rework** | Ticket has been through at least one review (with *ready* developer has changes to make, with *in progress* developer is working on it, with *review* developer has finished changes and they need re-reviewing
 **under review** | Ticket is currently being reviewed
 **urgent** | Ticket is urgent and should be rushed through the system
+**support** | Ticket has been generated in response to a support issue for an instrument scientist or instrument problem. These are unscheduled and reactive tickets, but it is useful to keep track of time spent.
 **wontfix** | Ticket will not be fixed, it is not needed or too complicated.
 **duplicate** | Ticket is a duplicate of a different ticket and will not be fixed (usually other ticket is referenced)
 **for current release** | Ticket is needed for the current release and should be prioritised (allows us to keep track of whether a release can be made)
