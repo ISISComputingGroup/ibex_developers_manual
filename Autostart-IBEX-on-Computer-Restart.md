@@ -17,7 +17,7 @@ To make the ibex server restart when the computer restart do the following:
     1. Action: Start a program
     1. Start a program: 
         1. Program script is `cmd`
-        1. Add arguments is `/c "C:\Instrument\Apps\EPICS\start_ibex_server.bat 2>&1 C:\Instrument\var\logs\startup.log`
+        1. Add arguments is `/c "C:\Instrument\Apps\EPICS\start_ibex_server.bat 2>&1 > C:\Instrument\var\logs\startup.log`
         1. StartIn `C:\Instrument\Apps\EPICS`
     1. Finish: Click "Open the Properties dialog for this task when I click Finish"
     1. Enter credentials for user running ibex server
