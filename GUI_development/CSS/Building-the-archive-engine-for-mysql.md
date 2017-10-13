@@ -112,4 +112,4 @@ To add to epics server:
 1. Download the build from CSS. 
 1. Place it in a folder called `css_archvive_engine`
 1. Zip the folder and call it `css_archive_engine-win.x86_64.zip`
-1. Copy this to ICP Binaries on internal server
+1. Copy this to ICP Binaries on to internal server
