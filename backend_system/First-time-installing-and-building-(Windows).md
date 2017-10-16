@@ -55,7 +55,7 @@ If you see `Error 2: file not found`, you may not have installed the correct win
 In `C:\Instrument\Apps\EPICS\CSS\master` run `setup_css.bat`
 this will create directories for the archive engine. in `.\css-win.x86_64`
 
-# Setting up a configurations directory
+# Setting up the configurations & scripting directory
 
 * Create the following folder structure: `C:\Instrument\Settings\config`
 
