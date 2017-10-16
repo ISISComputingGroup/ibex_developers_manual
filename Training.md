@@ -11,6 +11,7 @@ Because training has to be synchronised with ISIS cycles, you need to think abou
 
 - [Mantid](https://www.mantidproject.org/Documentation)
 - [IBEX](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/links-and-resources)
+    - There is a slide at the end of the material called "Reference card". This is supposed to provide a brief reference of the major IBEX features. Print off a copy for each delegate.
 - [genie_python](https://github.com/ISISComputingGroup/ibex_user_manual/wiki/genie_python-and-IBEX-%28Introduction%29)
 
 ## Planning the IBEX and genie_python training courses
@@ -49,7 +50,11 @@ If you have decided to use the CDF suite, you need to tell RAL Space (i.e. Andre
 
 #### General
 
-A day or two before the course runs, visit the venue to make sure everything is ready.  You do not want to be trying to sort out problems 5 minutes before the course is due to start.  Things to check are:
+- At least a week before the course, book any tea or coffee requirements with catering https://www.stfccatering.co.uk/. Typically we book:
+    - Coffee/tea (80%/20%) for 9am and 1pm. Usually we include some biscuits and a bottle of water
+    - We typically don't book lunch since most people leave to do other things over the break. Consider asking people whether they want lunch
+    - You will need a project code to book with catering. Ask one of the managers (e.g. Kevin Woods, Nick Draper, Tom Griffin) to provide one if you need it.
+- A day or two before the course runs, visit the venue to make sure everything is ready.  You do not want to be trying to sort out problems 5 minutes before the course is due to start.  Things to check are:
    * are the desks arranged as you want them?
    * are the audio-visual system (e.g. projector) working correctly?
    * are the laptops/workstations properly setup and working?
