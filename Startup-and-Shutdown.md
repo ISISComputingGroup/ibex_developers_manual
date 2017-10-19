@@ -18,6 +18,8 @@ Start behaviour:
 
 ## Process on Start (not definitive see actual scripts)
 
+There is a startup script `ibex_system_boot.bat`, this can be installed as a startup program, if IBEX server was previously started it restarts it otherwise it does nothing. It is detected by the presence of `c:\instrument\var\tmp\ibex_running.txt`.
+
 Start is initiated from `C:\Instrument\Apps\EPICS\start_ibex_server.bat`. It:
 
 1. Stop the ibex server (see below)
