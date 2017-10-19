@@ -49,8 +49,8 @@ public class CustomPizza extends Pizza {
 For Getters it is okay to skip the first sentence and do the following as it saves repetition:
 ```java
 /**
-* @return true if the block is enabled
-*/
+ * @return true if the block is enabled
+ */
 public boolean getEnabled() {
     return enabled;
 }
