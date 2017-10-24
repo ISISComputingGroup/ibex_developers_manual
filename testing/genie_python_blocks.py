@@ -41,7 +41,7 @@ def genie_python_blocks_test():
                     assert False
                     
     def assert_from_user_input(question):  
-        assert (raw_input("{}? (Y/N)".format(question)).lower()+"n")[0]=="y"
+        assert (raw_input("{}? (Y/N) ".format(question)).lower()+"n")[0]=="y"
         
 
     print "Test required blocks exist"
@@ -73,4 +73,6 @@ def genie_python_blocks_test():
     assert_from_user_input("Does the data above look sensible for TEST_BLOCK_NUM")
     g.cshow(str_block_name)
     assert_from_user_input("Does the data above look sensible for TEST_BLOCK_STR")
+    
+    print "TESTS COMPLETED SUCCESSFULLY"
     
