@@ -67,6 +67,7 @@ def genie_python_blocks_test():
     
     g.cset(num_block_name, highlimit+1.0)
     assert_from_user_input("Is TEST_BLOCK_NUM displaying outside its run control limit")
+    g.cset(num_block_name, starting_value)
     
     print "Test show block data"
     g.cshow(num_block_name)
