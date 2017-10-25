@@ -1,4 +1,4 @@
-> [Wiki](Home) > [Trouble-shooting](trouble-shooting-pages) > [GUI](GUI)
+[Wiki](Home) > [Trouble-shooting](trouble-shooting-pages) > [GUI](GUI)
 
 Troublshooting the GUI not eclipse.
 
