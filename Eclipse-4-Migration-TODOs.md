@@ -15,6 +15,13 @@ TODOs For Eclipse 4 migration:
 - Minimising views causes some very odd behaviour, we should capture what we actually want to happen and implement it.
 - Perspectives currently cannot be hidden in the preferences. This is used for the NICOS perspective and the Script Generator.
 - Verify that scripts within OPIs work properly. E.g. the HVCAEN is throwing errors.
+    - Another example. Start a Eurotherm in RECSIM mode. The error messages on the OPI don't work and the console appears with messages of the form:
+```
+2017-10-25 14:42:26 ERROR: Error from pv connection layer: 
+java.lang.IllegalArgumentException: Data source loc for loc://TE:NDW1695:EUROTHRM_01:A07_ramp_file_type("ramp") was not configured.
+2017-10-25 14:42:26 ERROR: Error from pv connection layer: 
+java.lang.IllegalArgumentException: Data source loc for loc://TE:NDW1695:EUROTHRM_01:A07_calibration_file_type("calibration") was not configured.
+```
 - Get genie_python talking to PVs. Currently it is getting `null` as it's `CA_ADDR_LIST` which causes issues.
 - DAE perspectives need scrollbars
 - DAE detector diagnostics are not being enabled properly
