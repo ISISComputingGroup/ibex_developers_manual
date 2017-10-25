@@ -163,9 +163,9 @@ class Point {
 }
 ```    
 
-# Coding Conventions and Guidelines #
+# Coding Conventions #
 
-A mix of IBEX specific and general Java coding conventions and guidelines.
+A mix of IBEX specific and general Java coding conventions.
 
 ### GUI code must use a View Model ###
 
