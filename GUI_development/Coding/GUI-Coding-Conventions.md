@@ -181,7 +181,6 @@ It seems that if a  mix of data-binding and more traditional SWT wiring up is us
 
 *This does need more investigation to find out why it occurs.
 
-
 ### Don't mess with finalizers ###
 From the Google Java Style Guide:
 
@@ -201,28 +200,6 @@ if (cars != null && cars.contains("mustang") {
 }
 ```
 See Effective Java Item 43 "Return empty arrays or collections, not nulls"
-
-
-### Refer to objects by their interfaces ###
-Follows on from DIP. It is preferable to have variables and parameters be typed by their interface.
-
-For example:
-
-```java
-// Prefer this kind of variable declaration
-List<String> name = ArrayList<String>();
-
-// Over this
-ArrayList<String> name = ArrayList<String>();
-
-// Prefer this kind of method signature
-public List<String> filterListByName(List<String> data) {
-
-// Over this
-public ArrayList<String> filterListByName(ArrayList<String> data) {
-```
-
-See Effective Java Item 52 "Refer to objects by their interfaces"
 
 ### Prefer StringBuilder for string concatenation ###
 Using `+` is fine for, say, joining two or three short strings but it is inefficient for larger numbers of strings and longer strings. Use StringBuilder instead.
