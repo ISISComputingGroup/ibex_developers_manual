@@ -7,3 +7,5 @@ Troublshooting the GUI not eclipse.
 [PV Manager and Observers](PV-Manager-and-Observers)
 
 [Log Files](Log-Files) are a good place to start looking.
+
+[IOC Start/Stop List not showing](IOC-Start/Stop-List-not-showing)
