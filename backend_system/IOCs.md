@@ -65,6 +65,7 @@ Building a new IOC? Before you get started, take a look at the relevant [instrum
 * [Neocera LTC-21](Neocera-LTC-21)
 * [Instron stress rig](Instron-stress-rig)
 * [SDTest](SDTest)
+* [SCM](SCM)
 
 ## Further reading ##
 
