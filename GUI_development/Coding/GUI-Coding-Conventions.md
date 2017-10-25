@@ -181,52 +181,6 @@ It seems that if a  mix of data-binding and more traditional SWT wiring up is us
 
 *This does need more investigation to find out why it occurs.
 
-### Single Responsibility Principle (SRP) ###
-Every class should have a single responsibility: it should have a single purpose in the system, and there should be one reason to change it.
-
-```java
-public class Book {
-    ...
-    
-    // Fine: Method relating to the 'book'
-    public String getAuthor(String s) {
-        ...
-    }
-
-    // Might add additional information relating to the book = principal reason for change
-    // For example: getISBN()
-
-    // Violation:
-    // If we decide to print it in a different format = another reason to change
-    // Better to have a separate 'printer' class
-    public void printCurrentPage() {
-        ...
-    }
-}
-
-```
-
-
-### Avoid god classes ###
-This somewhat reiterates what was stated in the SRP - usually a class should only be responsible for one thing.
-A class with many methods and many responsibilities is usually a bad thing.
-
-### Avoid long methods ###
-Methods that are long can be difficult to understand for other people (or the author six months later). Try to split them out to multiple methods.
-
-### Methods and functions are good ###
-Q: How many times should one write the same code before splitting it out into its own method?
-
-A: Once ;)
-
-Using methods/functions makes code easier to write, read and test. There is no lower limit to how short a method can be if it helps with overall comprehension.
-
-### Don't Repeat Yourself (DRY) ###
-Repeated code is bad!
-Repeated code is bad!
-
-Break it out into a separate method or class.
-Break it out into a separate method or class.
 
 ### Don't mess with finalizers ###
 From the Google Java Style Guide:
@@ -248,55 +202,7 @@ if (cars != null && cars.contains("mustang") {
 ```
 See Effective Java Item 43 "Return empty arrays or collections, not nulls"
 
-### Favour interfaces over concrete classes (DIP) ###
-Also known as the [Dependency Inversion Principle](https://en.wikipedia.org/wiki/Dependency_inversion_principle):
-```
-A. High-level modules should not depend on low-level modules. Both should depend on abstractions.
-B. Abstractions should not depend on details. Details should depend on abstractions.
-```
-Makes for more loosely coupled code, and can make unit testing easier.
 
-Easier to explain with an example:
-
-```java
-// Without DIP - requires changes to AddressFinder if we decide to use a NoSQL database.
-public class AddressFinder {
-    private SqlConnection connection;
-
-    public AddressFinder(SqlConnection con) {
-        connection = con;
-        connection.open();
-    }
-    
-    ...
-}
-``` 
-
-```java
-// With DIP - AddressFinder doesn't need to change if we swap to NoSQL
-// provided that NoSQLConnection implements DbConnection too
-public interface DbConnection {
-    void open;
-    ...
-}
-
-public SqlConnection implements DbConnection {
-    public void open() {
-    ...
-    }
-}
-
-public class AddressFinder {
-    private DbConnection connection;
-
-    public AddressFinder(DbConnection con) {
-        connection = con;
-        connection.open();
-    }
-    
-    ...
-}
-```
 ### Refer to objects by their interfaces ###
 Follows on from DIP. It is preferable to have variables and parameters be typed by their interface.
 
