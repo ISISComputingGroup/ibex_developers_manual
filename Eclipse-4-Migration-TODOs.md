@@ -32,3 +32,4 @@ java.lang.IllegalArgumentException: Data source loc for loc://TE:NDW1695:EUROTHR
 - The way the scripting perspective is created is confusing and messy, we should try and fix it 
 - At the moment the log plotter branch will only display the empty view, need to actually display a plotter with a PV
 - Need to sort out the access to the log plotter from OPIs and Blocks
+- The script generator perspective has only been partially migrated. The different parts are not linked by an underlying model so the functionality will not work. The layout has not been updated to scale correctly. There are several buttons from the original view which no longer appear in the perspective.
