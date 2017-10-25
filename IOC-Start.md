@@ -6,4 +6,4 @@ If the IOC Start/Stop list is blank when the instrument is running then there is
 
 should not be producing errors (pressing return creates blank lines)
 
-Next check that the [database is up](mysql-troubleshooting).
+Next check that the [database is up](Database-Troubleshooting).
