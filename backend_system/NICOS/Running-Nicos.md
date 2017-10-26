@@ -1,6 +1,15 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [Nicos](Nicos) > Running Nicos
 
-Nicos is set to start/stop running as part of the entire instrument in the `start_inst.bat` file.
+Nicos is set to start/stop running as part of the instrument in the `start_ibex_server_full.bat` file, but the code is commented out for now to speed things up as the script server is not ready for use. To start Nicos with the IBEX server, simply uncomment the lines:
+```
+ if "%ISIS_INSTRUMENT%" == "1" (
+    @echo NICOS Script Server not ready to start on real instrument
+ ) else (
+    if not "%COMPUTERNAME%" == "NDWRENO" (
+	    call %STARTINSTDIR%ISIS\ScriptServer\nicos-core\master\start_script_server.bat
+	)
+ )
+```
 
 If you want to start/stop the Nicos script server (i.e. the Nicos daemon) in isolation you have two options:
 * You can use the `start_nicos_daemon.bat` and `stop_nicos_daemon.bat` files in the root Nicos directory. This will start the Nicos process within procServ. Note that Nicos needs in its root directory a file called `nicos.conf` to know which instrument settings to use (instrument settings are located in `custom/`); the startup bat script will generate this file for you.
