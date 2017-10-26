@@ -1,4 +1,4 @@
-> [Wiki](Home) > [Project tools](Project-tools) > Jenkins build server
+> [Wiki](Home) > [Project tools](Project-tools) > [Jenkins build server](Jenkins-Build-Server)
 
 There is a Jenkins Build Server located at [http://epics-jenkins.isis.rl.ac.uk/](http://epics-jenkins.isis.rl.ac.uk/).
 
@@ -35,6 +35,24 @@ Next the EPICS build is copied over, the contents of `C:\Instrument\Settings\` a
 
 See [special notes on configuring Jenkins for the GUI tests](Adding-a-new-Windows-machine-to-Jenkins#jenkins_gui_tests).
 
-### Other
+## Setting up a Pipeline Build
+
+Pipeline builds are created by adding a Jenkinsfile to you root directory and then pointing Jenkins at your repository.
+
+### Jenkins File
+
+Defines all the steps there is much documentation on line. Start from a previous file which does something similar and edit. Here is an example [in the ibex gui](https://github.com/ISISComputingGroup/ibex_gui/blob/master/Jenkinsfile). In it the label is the label of the node on which it is to run. The labels are set by editing the node configuration in jenkins. Everything else should be [googleable](www.google.com).
+
+Once this is set up create a new pipeline build in Jenkins.
+ 
+1. In jenkins click "New Item"
+2. Name the porject and select Pipeline
+3. Under pipeline from SCM select `Git`
+    1. Then add the repository url in and the credentials as ISISBuildServer
+    1. Set the branch if needed
+
+This should now build.
+
+## Other
 
 * [Jenkins trouble shooting](Jenkins-Trouble-Shooting)
