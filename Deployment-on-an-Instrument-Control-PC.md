@@ -148,6 +148,9 @@ To add a new EPICS instrument to the web dashboard you will need to do the follo
 
 - *New instrument:* Install the wiring tables in  `C:\Instrument\Settings\config\NDXxxxxx\configurations\tables`
 
+## Post-release actions
+- Run the script in `C:\Instrument\Apps\EPICS\misc\upgrade\master\install_scripts\instrument_upgrade.bat`. Follow any prompts which are given.
+
 ## Deployment tests
 
 - Check that [Java Auto Update](https://www.java.com/en/download/help/java_update.xml#sched) is disabled (i.e. make sure the "Check for Updates Automatically" checkbox is unchecked).
