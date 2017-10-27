@@ -14,9 +14,9 @@ The dataweb system consists of a number of parts running on each instrument:
 
 The archive engine shown in the [high level design](High-Level-Architectural-Design) produces internal webpages that provides live data on various PVs in HTML format:
 
-* INST (located at http://localhost:4812/group?name=INST) gives data on the PVs associated with the DAE etc.
-* BLOCKS (located at http://localhost:4813/group?name=BLOCKS) gives data on the current status of all block PVs
-* DATAWEB (located at http://localhost:4813/group?name=DATAWEB) gives data on hidden blocks
+* INST (located at http://localhost:4812/group?name=INST&format=json) gives data on the PVs associated with the DAE etc.
+* BLOCKS (located at http://localhost:4813/group?name=BLOCKS&format=json) gives data on the current status of all block PVs
+* DATAWEB (located at http://localhost:4813/group?name=DATAWEB&format=json) gives data on hidden blocks
 
 ### The WebServer
 
