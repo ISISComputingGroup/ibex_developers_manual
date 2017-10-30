@@ -2,6 +2,8 @@
 
 # Windows Server 2012 R2
 
+*This appears to work but doesn't because the user does not have interactive mode permissions. There is a ticket to sort this out*
+
 To make the ibex server restart when the computer restart do the following:
 
 1. Ensure that the user who will run IBEX server has "log on as batch job" rights
