@@ -66,6 +66,11 @@ To be able to see your instrument as well:
 * Edit display\_blocks.js to look at http://localhost rather than http://dataweb.isis.rl.ac.uk
 * Open default.html with the variable of ?Instrument=_name that you entered into dict_
 
+If you need to update the archive engine then you will need to:
+
+1. Run create_icp_binaries.bat
+1. `make clean uninstall install` in `..\EPICS\CSS\master`
+
 ## Future Development Ideas
 * We need to improve the unit test coverage of this project. It would be worth looking into the [requests-mock](https://pypi.python.org/pypi/requests-mock) library as this would make it very easy to test server code which makes HTTP requests.
 
