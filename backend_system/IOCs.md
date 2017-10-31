@@ -66,6 +66,7 @@ Building a new IOC? Before you get started, take a look at the relevant [instrum
 * [Instron stress rig](Instron-stress-rig)
 * [SDTest](SDTest)
 * [SMC](SMC)
+* [Galil](Galil)
 
 ## Further reading ##
 
