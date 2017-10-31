@@ -6,7 +6,13 @@ This page contains information and references regarding the operation and mainte
 
 Useful information about the Galil can be found on the following pages:
 
-
+(IOC-And-Device-Trouble-Shooting)
+(Differences-between-real-Galil-and-simulated-motor)
+(Migrating-Galil-motors-from-SECI-to-IBEX)
+(Motor-SetPoints)
+(Barndoors-and-Momentum-Slits-on-MUON-Front-End)
+(Creating-soft-motors-to-control-real-motors)
+(Migrating-instrument-configurations)
 
 # Technical information
 
