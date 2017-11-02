@@ -60,6 +60,7 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
 - **install** Checkout Common Calibration Directory
 
     [See the back-end getting started guide](First-time-installing-and-building-(Windows)#setting-up-a-calibrations-directory)
+    **NOTE** If updating a mini-inst there may be a directory here which is not linked to git, the contents of the globals.txt are likely to be helpful in configuring the system under IBEX and should be noted before undertaking the checkout.
 
 - **install** Checkout Config Directory
     [See the back-end getting started guide](First-time-installing-and-building-(Windows)#setting-up-a-configurations-directory)
