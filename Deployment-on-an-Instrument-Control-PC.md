@@ -1,14 +1,14 @@
 > [Wiki](Home) > [Deployment](Deployment) > Deployment on an Instrument Control PC
 
-This document describes the steps necessary to install/upgrade IBEX on an Instrument control PC.  In due course some, or all, of the steps may be superseded by an automated installation process (e.g. a .msi file).  Until then, this document is a useful reference. Steps for upgrading only are marked **upgrade**, streps for inital install are marked **install** other steps should be done for both.
+This document describes the steps necessary to install/upgrade IBEX on an Instrument control PC.  In due course, some, or all, of the steps may be superseded by an automated installation process (e.g. a .msi file).  Until then, this document is a useful reference. Steps for upgrading only are marked **upgrade**, steps for initial install are marked **install** other steps should be done for both. For a mini inst install (SECI instrument using an IOC) only undertake those steps marked **mini-inst** and [configure](Configure-Mini-Inst) it in the appropriate manner.
 
 ## Preparatory Steps for Client and Server
 
 - As early as possible email the group to let us know of the upgrade. This includes starting point (e.g. v2.2.0) and what is going to be released. This will allow people to comment or add special instructions for various machines if they have forgotten to add them to the IBEX page.
 
-- Inform the instrument scientist that you are going to upgrade the instrument in 5 minutes so that they are not suprised when you remote desktop to the instrument.
+- Inform the instrument scientist that you are going to upgrade the instrument in 5 minutes so that they are not surprised when you remote desktop to the instrument.
 
-- **install** Check that Java is installed on the PC.  If not, download the latest JRE from the Java web-site (http://www.java.com/en/) and install it.  Make sure you choose the 64-bit version of Java.  See also [Upgrade Java](Upgrade-java).
+- **install** Check that Java is installed on the PC.  If not, download the latest JRE from the Java website (http://www.java.com/en/) and install it.  Make sure you choose the 64-bit version of Java.  See also [Upgrade Java](Upgrade-java).
 
 - **install** If the PC is running the Windows Classic theme, switch it to a modern theme (e.g. Windows 7 Theme); the IBEX GUI looks better when using a modern theme.  To change the theme see [Change Windows Theme](Change Windows Theme).
 
@@ -16,14 +16,14 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
 
 - **upgrade** Note the current version number of the instrument (Help->About)
 
-- **upgrade** Take screen shots of running instrument. This ensures it is restarted as it was found and enables you easily to spot changes in config. Items to include: 
+- **upgrade** Take screenshots of running instrument. This ensures it is restarted as it was found and enables you easily to spot changes in config. Items to include: 
     1. blocks
     1. each perspective 
     1. current configuration each tab
-    1. running ioc's available configs
+    1. running IOC's available configs
     1. other configurations and components and synoptics
 
-- **upgrade** Record any open labview VI which are running.
+- **upgrade** Record any open LabVIEW VI which are running.
 
 - **upgrade** Stop running instrument `ibex_stop_server.bat`.
 
@@ -43,12 +43,12 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
         1. Start the service "MySQL57" in services.
 
 - **upgrade** Update the Common Calibration directory.
-    1. Do a git status to find out if files have been added or changed (if they have querry why this is and take appropriate action)
+    1. Do a git status to find out if files have been added or changed (if they have query why this is and take appropriate action)
     1. Git pull the latest version onto the system (if any file changes make a note so it can be sent to the instrument scientists so they know things have been changed) 
 
 - **install** If you are using any serial devices with the system, don't forget to check that nport is installed, and configure the COM settings as standard (moxa 1 starts at COM5, moxa 2 at COM21, etc.)
 
-- **install** Check that git is installed on the PC.  If not, download the latest version from the Git web-site (https://git-scm.com/download/win) and install it.
+- **install** Check that git is installed on the PC.  If not, download the latest version from the Git website (https://git-scm.com/download/win) and install it.
 
 - **install** Check that the LabVIEW modules are installed in `C:\labview modules`.  If the LabVIEW modules are not installed you can proceed, but there some extra steps you need to perform (see below)
 
@@ -67,19 +67,19 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
 - **install** Check that the version of MySQL installed corresponds to the version required for the release
    - If MySQL is already installed, locate the current data directory and make sure that any pre-existing data is backed up. (See [Installing and upgrading MySQL](Installing-and-Upgrading-MySQL))
    - If a different version of MySQL is already installed, you should upgrade to the correct version of MySQL (See [Installing and upgrading MySQL](Installing-and-Upgrading-MySQL))
-   - If mysql is not installed then install it. (See [Installing and upgrading MySQL](Installing-and-Upgrading-MySQL))
+   - If MySQL is not installed then install it. (See [Installing and upgrading MySQL](Installing-and-Upgrading-MySQL))
 
 ## Install EPICS
 
-- From a command prompt type the following (if your command prompt doesn't support UNC paths, use `pushd` instead of `cd`): `cd \\isis\inst$\Kits$\CompGroup\ICP\Releases\X.x.m\EPICS` where `X.x.m` is the version you wish to install.
+- **install**, **upgrade** and **mini-inst** From a command prompt type the following (if your command prompt doesn't support UNC paths, use `pushd` instead of `cd`): `cd \\isis\inst$\Kits$\CompGroup\ICP\Releases\X.x.m\EPICS` where `X.x.m` is the version you wish to install.
    * If this doesn't connect use:
       ```
       net use Z: \\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\Releases  /user:CLRC\<fed id>
       Z:
       cd X.x.m\EPICS
       ```
-- Run `install_to_inst.bat` This will copy the contents of the above directory to `C:\Instrument\Apps\EPICS`.
-- If using the net user command delete the directory with `net use Z: /delete`
+- **install**, **upgrade** and **mini-inst** Run `install_to_inst.bat` This will copy the contents of the above directory to `C:\Instrument\Apps\EPICS`.
+- **install**, **upgrade** and **mini-inst** If using the net user command delete the directory with `net use Z: /delete`
 - **install** Configure the database schemas engine. 
     * Note: **BE CAREFUL.**  If you run the `config_mysql.bat` script on an existing system **YOU WILL LOSE ALL HISTORICAL DATA**.:
 
@@ -159,7 +159,7 @@ To add a new EPICS instrument to the web dashboard you will need to do the follo
 
 - Make sure these [client tests are performed](client-release-tests), these are items we have missed in the past.
 
-- Make sure these [server tests are performed](server-release-tests), these are items we have missed in the past. Theses are different from the client tests.
+- Make sure these [server tests are performed](server-release-tests), these are items we have missed in the past. These are different from the client tests.
 
 - **install** Check that the DAE is logging EPICS block (especially if this is the first time epics has been installed). See  [DAE troubleshooting](DAE-Trouble-Shooting) "No log files are produced ..."
 
@@ -196,7 +196,7 @@ To add a new EPICS instrument to the web dashboard you will need to do the follo
 
 **(install)** 
 
-The details of the individual set points for any given device will depend on that device and how it is used on an instrument, but the general principles described here will apply.
+The details of the individual setpoints for any given device will depend on that device and how it is used on an instrument, but the general principles described here will apply.
 
 ### Background
 Most devices on ISIS instruments are moved using motors controlled by Galil motion controllers, therefore, configuring motion set points is largely a matter of configuring the Galils correctly.
@@ -208,7 +208,7 @@ Key directories on the control server on the control server include
     * ``galil1.cmd - galil<N>.cmd``, where `<N>` is the total number of Galil controllers on the instrument
     * ``axes.cmd``, which relates the Sample Stack axes to Galil ports
     * ``jaws.cmd``, which relates the axes of jaw sets to Galil ports
-    * ``motionsetpoints.cmd``, which relates the axes of moveable devices to Galil ports and to lookup tables (which define the set positions for the devices)
+    * ``motionsetpoints.cmd``, which relates the axes of movable devices to Galil ports and to lookup tables (which define the set positions for the devices)
     * ``sampleChanger.cmd``, which defines positions for the sample changer (the type used on LARMOR).
 * ``C:\Instrument\Settings\config\NDXxxxxx\configurations\motionSetPoints``, which includes 
     * ``analyser.txt``, lookup file of x-y coordinates of set-points for LARMOR analyser
@@ -221,7 +221,7 @@ Key directories on the control server on the control server include
     * ``sample_x.txt``, lookup file of x coordinate of set-points for LARMOR sample rack.
     * ``sample_y.txt``, lookup file of y coordinate of set-points for LARMOR sample rack.
 
-## Adding nagios checks
+## Adding Nagios checks
 
-nagios is the instrument monitoring system, this will not affect operation but adding the instrument to nagios will generate notifications of issues. This requires editing configuration files on the "varanus" server, but the procedure is probably going to be simplified when it moves to a new system. For the moment contact Freddie    
+nagios is the instrument monitoring system, this will not affect operation but adding the instrument to Nagios will generate notifications of issues. This requires editing configuration files on the "varanus" server, but the procedure is probably going to be simplified when it moves to a new system. For the moment contact Freddie    
 
