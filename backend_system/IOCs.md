@@ -49,24 +49,10 @@ Building a new IOC? Before you get started, take a look at the relevant [instrum
 * [Creating soft motors to control real motors](Creating-soft-motors-to-control-real-motors)
 * [Complexity of LabVIEW Drivers](Complexity-of-LabVIEW-Drivers)
 * [Typical start up log for an ioc](IOC-Start-Example)
+
 ## Specific IOC Information
 
-[Manuals](Manuals)
-
-* [Barndoors and Momentum Slits on MUON Front End](Barndoors-and-Momentum-Slits-on-MUON-Front-End)
-* [Polaris Jaws](Polaris-Jaws)
-* [EnginX Jaws](EnginX-Jaws)
-* [Motors and SetPoints](Motor-SetPoints)
-* [Lakeshore 336](Lakeshore336)
-* [Mecury iTC](MercuryiTC)
-* [TPG26x](TPG26x)
-* [Julabo](Julabo)
-* [Danfysik](Danfysik)
-* [Neocera LTC-21](Neocera-LTC-21)
-* [Instron stress rig](Instron-stress-rig)
-* [SDTest](SDTest)
-* [SMC](SMC)
-* [Galil](Galil)
+For information on specific IOCs see [Specific Device IOC](Specific-Device-IOC)
 
 ## Further reading ##
 
