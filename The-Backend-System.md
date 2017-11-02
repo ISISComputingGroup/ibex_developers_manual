@@ -16,9 +16,13 @@ How to build and install genie_python.
 
 The basics of EPICS and links to additional training resources.
 
-## [IOCs](IOCs)
+## [Creating and Basics of IOCs](IOCs)
 
-Everything you could possibly want to know about IOCs and then some.
+Everything you could possibly want to know about IOCs in general, creation and conventions.
+
+## [Specific Device IOC](Specific-Device-IOC)
+
+Information about specific IOCs e.g. Extra information about how the Julabo works.
 
 # [Nicos](Nicos)
 
