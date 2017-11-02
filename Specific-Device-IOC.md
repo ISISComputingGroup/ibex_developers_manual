@@ -4,66 +4,64 @@ These are details relating to a specific device IOC. The IOC can appear in multi
 
 [Manuals](Manuals) - index of manuals on the shared drive.
 
-## Choppers
+### Choppers
 
-## Cryogenics
+### Cryogenics
 
-## Gas Handling Systems
+### Gas Handling Systems
 
-## Imaging Cameras
+### Imaging Cameras
 
-# Jaws and slits
+### Jaws and slits
 
 * [Polaris Jaws](Polaris-Jaws)
 * [EnginX Jaws](EnginX-Jaws)
 * [Barndoors and Momentum Slits on MUON Front End](Barndoors-and-Momentum-Slits-on-MUON-Front-End)
 
-# Loading rigs
+### Loading rigs
 
-# Magnets
+* [Instron stress rig](Instron-stress-rig)
 
-# Monitors
+### Magnets
 
-# Motion Control (including motors)
+### Monitors
+
+### Motion Control (including motors)
 
 * [Motors and SetPoints](Motor-SetPoints)
 * [Galil](Galil)
+* [SMC](SMC)
 
-# Mulitmeters
+### Mulitmeters
 
-# Power Supplies
+* [Keithley 2400](Keithley-2400)
+
+### Power Supplies
 
 * [Danfysik](Danfysik)
 
-# Pressure Monitors
+### Pressure Monitors
 
 * [TPG26x](TPG26x)
 
-# Sample changers
+### Sample changers
 
-# Sample stacks and goniometers
+### Sample stacks and goniometers
 
-# Temperature controllers
+### Temperature controllers
 
 * [Lakeshore 336](Lakeshore336)
 * [Mecury iTC](MercuryiTC)
 * [Julabo](Julabo)
 * [Neocera LTC-21](Neocera-LTC-21)
 
-# Water baths
+### Water baths
 
 * [Julabo](Julabo)
 
-# Other
+### Other
 
-
-
-
-
-
-
-* [Instron stress rig](Instron-stress-rig)
 * [SDTest](SDTest)
-* [SMC](SMC)
 
-* [Keithley 2400](Keithley-2400)
+
+
