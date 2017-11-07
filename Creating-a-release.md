@@ -43,6 +43,10 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
     1. Enter the title `Release version X.x.p`
     1. Add a link to the release notes in the description
 1. Merge release branch back into master to capture any changes
+1. Consider which instruments need this release:
+    * Breaking release: upgrade everyone
+    * Big improvement:  upgrade everyone if there is a big improvement that everyone will benefit from
+    * Standard release: upgrade instruments that need updates and all those that are in the current group [release list](instrument-release-groups)
 
 ## Patch Release
 
