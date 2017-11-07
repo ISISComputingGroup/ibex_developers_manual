@@ -46,7 +46,7 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
 1. Consider which instruments need this release:
     * Breaking release: upgrade everyone
     * Big improvement:  upgrade everyone if there is a big improvement that everyone will benefit from
-    * Standard release: upgrade instruments that need updates and all those that are in the current group [release list](instrument-release-groups)
+    * Standard release: upgrade instruments that need updates and all those that are in the current group [release list](instrument-release-groups). Note on the release ticket which instruments need to be released to using checkboxes.
 
 ## Patch Release
 
