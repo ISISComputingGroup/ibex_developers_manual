@@ -38,3 +38,9 @@ This issue was encountered on Iris during the transition between Seci and Ibex. 
 
     caput %MYPVPREFIX%CS:RC:SYNC:SP 1
 
+# Experimental Files not being Archived and so not Appearing in the Journal
+
+At the end of a run log file should be transferred from `C:\data` to the archive. For this to happen the files should be marked read only, then when the run ends it is copied thanks to a script in `<normal user>\Documents\Configurations\COMMON\end_of_run.cmd`. 
+If this has failed:
+
+* Make sure the network location d:\data\<cycle> is accessible. This can need connecting to manually after a restart.
