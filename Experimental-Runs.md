@@ -44,3 +44,5 @@ At the end of a run log file should be transferred from `C:\data` to the archive
 If this has failed:
 
 * Make sure the network location d:\data\<cycle> is accessible. This can need connecting to manually after a restart, i.e. open the folder in explorer.
+
+To archive files end a run.
