@@ -2,7 +2,7 @@
 
 An IOC can be made to log values to a file based on the value of a PV. Consider whether you IOC needs to do this. 
 
-To add logging to an IOC you need to add info fields to your records. The logging is based on a logging PV. There are currently two versions of the logging. A continuous logging which when the logging pv is on values will be written to the file and an pn end which when the logging pv switches off (1 to 0) then the period for which it was on will be written into a file in `c:\logs`. There are two because I am concerned that the continuous logger may miss values if they arrive at the database late; at some point this should be checked out and maybe the on end logging removed or made optional. 
+To add logging to an IOC you need to add info fields to your records. The logging is based on a logging PV. There are currently two versions of the logging. A continuous logging which when the logging pv is on values will be written to the file and an pn end which when the logging pv switches off (1 to 0) then the period for which it was on will be written into the file. There are two because I am concerned that the continuous logger may miss values if they arrive at the database late; at some point this should be checked out and maybe the on end logging removed or made optional. The logging files will appear in `c:\logs\<ioc name>\<ioc name>_<logging start date-time><_continuous if continuous>.dat`
 
 To define what is in the log file add an info field of the form:
 
