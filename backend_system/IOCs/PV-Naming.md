@@ -15,7 +15,7 @@ PV names must start with a letter and must not end with `_` for now (maybe adopt
 
 We can create a separate PV name to describe actual hardware type.
 
-Having followed the [IOC-Naming](OC-Naming) the PV will be:
+Having followed the [IOC-Naming](IOC-Naming) the PV will be:
 
     PR:INSTXXCR:DEVICEXX_NN:PVNAME
 
