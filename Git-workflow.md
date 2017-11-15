@@ -84,9 +84,8 @@ Updating EPICS
 * Navigate to the appropriate directory in Git Bash
 * Make sure you are in the master directory
 * Get the latest version: ``git pull``
-* Get the latest submodules to be used with the system: ``git submodule update --merge``
+* Get the latest submodules to be used with the system: ``git submodule update --init --merge``
 * Rebuild as appropriate
-* Occasionally add ``--init`` to the submodule update to get any new submodules
 * If you only want the head files for the submodules leave off the ``--merge`` from the submodule update
 
 Cleaning up local installations (allowing yourself to see the wood, or branches, for the trees)
