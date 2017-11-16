@@ -7,16 +7,16 @@ There are two use cases for adding a submodule:
 
 ## 1 Create submodule in GitHub
 
-1. Create a new GitHub repository using the "new repository" button on https://github.com/ISISComputingGroup. The naming conventions are:
+1. Create a new GitHub repository using the "new repository" button on https://github.com/ISISComputingGroup. Name it and fill in a description. The naming conventions are:
 
     *  EPICS submodules should have an "EPICS-" prefix, e.g. for support modules. 
 
-2. Start choice:
+1. Decide on public or private repository, if you create it private one you can easily make it public later, but there is a limit on how many private repositories we can have at any one time. Repositories should be private if we do not wish to share the code.
+
+1. Start choice:
     * **3rd Party** Create a blank repository i.e. without a README, licence or .gitignore file. 
 
-    * **New** Create with a readme. Use ISIS .gitignore files.
-
-1. Decide on public or private repository, if you create it private one you can easily make it public later, but there is a limit on how many private repositories we can have at any one time. Repositories should be private if we do not wish to share the code.
+    * **New** Create a repository with a readme, but no .gitignore or licence. When it is created Use ISIS .gitignore files.
 
 1. Click `Create Repository`
 
