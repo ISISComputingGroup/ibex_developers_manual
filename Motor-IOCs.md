@@ -1,6 +1,12 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > Motor IOCs
 
-* [Galil specific instructions](Galil)
+The motors currently used at ISIS are:
+* [Galil](Galil) - This is the most widely used motor type.
+* [SMC](SMC)
+* Linmot
+* Mclennan
+* Beckhoff
+
 
 * [Motor Setpoints](Motor-SetPoints)
 
