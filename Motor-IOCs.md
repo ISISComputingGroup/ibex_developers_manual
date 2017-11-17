@@ -8,6 +8,7 @@ The motors currently used at ISIS are:
 * Mclennan
 * Beckhoff
 
+## Other info
 
 * [Motor Setpoints](Motor-SetPoints)
 
