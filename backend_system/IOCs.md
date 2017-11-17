@@ -38,6 +38,7 @@ Building a new IOC? Before you get started, take a look at the relevant [instrum
 
 ## Other
 
+* [Motor IOCs](Motor-IOCs)
 * [Libraries to include](IOC-Libraries-to-include-with-order)
 * [Creating a MODBUS IOC](MODBUS-IOC) 
 * [Using LVDCOM](Using-LVDCOM)
@@ -46,7 +47,6 @@ Building a new IOC? Before you get started, take a look at the relevant [instrum
 * [IOC Utilities](IOC-Utilities)
 * [Removing or Renaming an IOC module ](Removing-or-Renaming-IOC-module)
 * [IOC Testing framework](IOC-Testing-Framework)
-* [Creating soft motors to control real motors](Creating-soft-motors-to-control-real-motors)
 * [Complexity of LabVIEW Drivers](Complexity-of-LabVIEW-Drivers)
 * [Typical start up log for an ioc](IOC-Start-Example)
 
