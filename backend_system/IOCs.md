@@ -38,6 +38,7 @@ Building a new IOC? Before you get started, take a look at the relevant [instrum
 
 ## Other
 
+* [Motor IOCs](Motor-IOC)
 * [Libraries to include](IOC-Libraries-to-include-with-order)
 * [Creating a MODBUS IOC](MODBUS-IOC) 
 * [Using LVDCOM](Using-LVDCOM)
