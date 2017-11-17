@@ -8,7 +8,7 @@ For most motor IOCs the motor record itself is pulled in from `support\motor\mas
 
 ## Physical Hardware
 
-![Physical hardware](architectural_design/images/Client-Architectural-Design/client_architecture.png)
+![Physical hardware](motors/hardware_structure.png)
 
 In general one motor controller will control a number of different axes (the actual motors themselves). Each axis will most likely give some feedback to the controller, the most common types of feedback are:
 * Encoder: This is some form of external device that is measuring where the axis actually is. This is normally fed back to the controller in _steps_, the motor record will convert this to a distance using a supplied resolution.
