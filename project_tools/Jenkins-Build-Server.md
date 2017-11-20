@@ -46,7 +46,7 @@ Defines all the steps there is much documentation on line. Start from a previous
 Once this is set up create a new pipeline build in Jenkins.
  
 1. In jenkins click "New Item"
-2. Name the porject and select Pipeline
+2. Name the project and select Pipeline
 3. Under pipeline from SCM select `Git`
     1. Then add the repository url in and the credentials as ISISBuildServer
     1. Set the branch if needed
