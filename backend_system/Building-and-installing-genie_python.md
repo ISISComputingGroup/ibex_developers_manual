@@ -40,6 +40,14 @@ The batch file does the following:
 
 * if called with the "install" parameter, installs it to c:\Instrument\Apps\Python and also copies it to the shared drive
 
+### Developing
+
+As well as writing units test for genie_python you can write system tests. These are located in the [genie_python_system_tests repository]( https://github.com/ISISComputingGroup/genie_python_system_tests). On your local machine run the run_tests.py; on the jenkins machine it will install the latest version of Ibex server and genie and run the tests.
+
+To use a new config add it to the configs directory, it must start with `rcptt_` so it will be ignored by git in IBEX. In the setup of the test ensure that the config is loaded. 
+
+To run a test in pycharm make sure you set the environment to be the same as your epics environment for the variable: `ICPCONFIGROOT`, `EPICS_CA_MAX_ARRAY_BYTES`, `EPICS_CA_ADDR_LIST` and `EPICS_CA_AUTO_ADDR_LIST`.
+
 ### Creating Python packages
 
 Some of the packages we want to use do not come with an installer that is suitable for an automated build (e.g. PyQt) or are packages we have modified to meet our needs.
