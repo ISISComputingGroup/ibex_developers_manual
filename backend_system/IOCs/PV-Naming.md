@@ -131,3 +131,6 @@ If a value can fluctuate, these refer to the current measured value of a quantit
 | TIME | An absolute timestamp , preferably in ISO8601 format | |
 | FIELD | Magnetic field | |
 | PRESSURE | Pressure | |
+| FREQ | Frequency of a chopper | Hz |
+| PHAS | Phase of a chopper | us |
+| PHAS_ERR | Error in the phase | us |
