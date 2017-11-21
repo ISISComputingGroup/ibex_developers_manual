@@ -6,6 +6,7 @@ This page contains information and references regarding the operation and mainte
 
 Useful information about the Galil can be found on the following pages:
 
+- [Motors Trouble Shooting](Motors-Trouble-Shooting)
 - [IOC And Device Trouble Shooting](IOC-And-Device-Trouble-Shooting)
 - [Differences between real Galil and simulated motor](Differences-between-real-Galil-and-simulated-motor)
 - [Migrating Galil motors from SECI to IBEX](Migrating-Galil-motors-from-SECI-to-IBEX)
@@ -73,3 +74,7 @@ Threads 0 and 1 are reserved for homing operations. As described above, thread 0
 Threads 2-8 are available for other operations but beware of conflicts. For example, the LET oscillating collimator is currently set to run on thread 2 by default.
 
 By default, the Galil IOC will stop all running threads when it restarts. If you wish for active threads to keep running, then the upload program cannot have changed since the previous launch and the quiet_start parameter must be set in `GalilController` as described above.
+
+# Trouble Shooting
+
+See [Motors Trouble Shooting](Motors-Trouble-Shooting)
