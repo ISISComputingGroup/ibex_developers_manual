@@ -1,4 +1,4 @@
-> [Wiki](Home) > [Trouble-shooting](trouble-shooting-pages) > [Motors](Motors-Trouble-Shooting)
+> [Wiki](Home) > [Trouble-shooting](trouble-shooting-pages) > [Motors Trouble Shooting](Motors-Trouble-Shooting)
 
 ## General
 
