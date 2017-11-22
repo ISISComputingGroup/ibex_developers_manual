@@ -4,63 +4,54 @@ These are details relating to a specific device IOC. The IOC can appear in multi
 
 [Manuals](Manuals) - index of manuals on the shared drive.
 
-### Choppers
+[Choppers](Choppers)
 
-### Cryogenics
+[Cryogenics](Cryogenics)
 
-### Gas Handling Systems
+[Gas Handling Systems](Gas-Handling-Systems)
 
-### Imaging Cameras
+[Imaging Cameras](Imaging-Cameras)
 
-### Jaws and slits
-
+[Jaws and Slits](Jaws-and-slits)
 * [Polaris Jaws](Polaris-Jaws)
 * [EnginX Jaws](EnginX-Jaws)
 * [Barndoors and Momentum Slits on MUON Front End](Barndoors-and-Momentum-Slits-on-MUON-Front-End)
 
-### Loading rigs
-
+[Loading Rigs](Loading-Rigs)
 * [Instron stress rig](Instron-stress-rig)
 
-### Magnets
+[Magnets](Magnets)
 
-### Monitors
+[Monitors](Monitors)
 
-### Motion Control (including motors)
-
+[Motion Control (including motors)](Motion-Control)
 * [Motors and SetPoints](Motor-SetPoints)
 * [Galil](Galil)
 * [SMC](SMC)
 
-### Mulitmeters
-
+[Mulitmeters](Mulitmeters)
 * [Keithley 2400](Keithley-2400)
 
-### Power Supplies
-
+[Power Supplies](Power-Supplies)
 * [Danfysik](Danfysik)
 
-### Pressure Monitors
-
+[Pressure Monitors](Pressure-Monitors)
 * [TPG26x](TPG26x)
 
-### Sample changers
+[Sample Changers](Sample-Changers)
 
-### Sample stacks and goniometers
+[Sample Stacks and Goniometers](Stacks-and-Gonios)
 
-### Temperature controllers
-
+[Temperature Controllers](Temperature-Controllers)
 * [Lakeshore 336](Lakeshore336)
 * [Mecury iTC](MercuryiTC)
 * [Julabo](Julabo)
 * [Neocera LTC-21](Neocera-LTC-21)
 
-### Water baths
-
+[Water Baths](Water-Baths)
 * [Julabo](Julabo)
 
-### Other
-
+[Other](Other)
 * [SDTest](SDTest)
 
 
