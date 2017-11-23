@@ -23,7 +23,7 @@ If you are converting an existing OPI from the old to the new style, be aware of
 There is a script called `check_opi_format.py` in `C:\Instrument\Dev\ibex_gui\base\uk.ac.stfc.isis.ibex.opis` that can help you check certain aspects of a new OPI. This script does not replace checking the OPI visually, but should help catch some style errors in OPIs. This will iterate over all OPIs in the `C:\Instrument\Dev\ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources` directory, and write logs to the `C:\Instrument\Dev\ibex_gui\base\uk.ac.stfc.isis.ibex.opis\check_OPI_format_logs` directory by default. Other behaviours are described below:
 
 Usage:
-`python check_opi_format.py [-h] [-file FILE] [-directory DIRECTORY] [-logs_directory LOGS_DIRECTORY] [-extension EXTENSION]`
+`python check_opi_format.py [-h] [-file FILE] [-directory DIRECTORY] [-logs_directory LOGS_DIRECTORY]`
 
 e.g. 
 `python check_opi_format.py -directory resources/Lakeshore336 -file Lakeshore336.opi -logs_directory my_logs_directory`
