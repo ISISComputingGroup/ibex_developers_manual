@@ -12,3 +12,4 @@
 - [Disaster Recovery Testing](Disaster-Recovery-Testing)
 - [Virtual System Creation](Virtual-System-Creation)
 - [Autostart IBEX on Computer Restart](Autostart-IBEX-on-Computer-Restart)
+- [Quick Deploy](Quick-Deploy) (e.g. for Demo and R78)
