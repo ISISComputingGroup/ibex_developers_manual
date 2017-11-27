@@ -9,3 +9,4 @@ IOC | Description | Manual Directory
 --- | -----       | -----
 HLG | Helium Level Gauge | Cryogenics_Ltd__Helium_Level_Gauge
 LKSH460 | Lakeshore Gauss Metre (460) | Lakeshore__Gauss_Meter 
+SAMSM300 | Sample changer based on the SM300 | SM_Motion_control__SM300
