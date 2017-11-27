@@ -147,5 +147,5 @@ If you are supporting instruments it may be useful to download a VNC client. We 
 
 Create, usually in c:\instrument\dev the following utilities:
 
-    * https://github.com/ISISComputingGroup/IBEX_device_generator
-    * https://github.com/ISISComputingGroup/ibex_utils.git
+* https://github.com/ISISComputingGroup/IBEX_device_generator
+* https://github.com/ISISComputingGroup/ibex_utils.git
