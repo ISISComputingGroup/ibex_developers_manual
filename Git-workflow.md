@@ -6,17 +6,17 @@ Steps for Developing Code with existing Git Repos
 Development work
 ----------------------------------------------------------------------------------
 * Navigate to the appropriate directory in Git Bash
-* Checkout the master branch (if not already in the master branch)
-* Make sure that the master branch is up to date (varies by repo)
+* Checkout the master branch (if not already in the master branch) `git checkout master`
+* Make sure that the master branch is up to date (varies by repo) `git pull`
 * Create a new branch: ``git checkout -b [branch-name]``
 * Do the development work in the most appropriate editor (e.g. Eclipse for the GUI, notepad++ for .db changes)
 * Update copyright notices on edited files to the current year to read ``Copyright (C) <first year> - <current year> ...``
-* In Git Bash, add files to the branch and commit as appropriate
-* Ensure that the master branch is up to date: ``git pull origin master``
-* If the branch is only in the local copy of the repo: ``git rebase master``, otherwise ``git merge master``
-* Fix any merge errors if required
-* If the branch is only in the local copy of the repo: ``git push -u origin [branch-name]``, otherwise ``git push origin [branch-name]``
-* Go to GitHub and create the pull request, don't forget a brief test plan
+* In Git Bash, add files to the branch (`git add <file>`, or `git add -u` to add all modified files, or `git add -A` to add all changed files) and commit (`git commit -m "commit message"`) as appropriate
+* Ensure that the master branch is up to date: ``git fetch``
+* Merge in the latest master: `git merge origin/master`
+* Fix any merge errors (if required)
+* Push changes using `git push` (if this is the first time the branch is being pushed, use `git push -u origin [branch-name]`)
+* Go to GitHub and create the pull request, don't forget a test plan
 * Bored of being asked for your username and password? Read [this](https://help.github.com/articles/caching-your-github-password-in-git/).
 
 Reviewing work for the GUI
