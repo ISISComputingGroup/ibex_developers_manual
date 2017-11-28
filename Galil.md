@@ -75,6 +75,11 @@ Threads 2-8 are available for other operations but beware of conflicts. For exam
 
 By default, the Galil IOC will stop all running threads when it restarts. If you wish for active threads to keep running, then the upload program cannot have changed since the previous launch and the quiet_start parameter must be set in `GalilController` as described above.
 
+## Things that we know run on separate Galil threads:
+
+- Oscillating collimator. LET, MERLIN.  Thread number defaults to 2, but can be set via PV
+- Fermi chopper lift. EMMA. Thread number fixed to 5
+
 # Trouble Shooting
 
 See [Motors Trouble Shooting](Motors-Trouble-Shooting)
