@@ -8,7 +8,7 @@ For most motor IOCs the motor record itself is pulled in from `support\motor\mas
 
 ## IOC Structure
 
-## Physical Hardware
+# Physical Hardware
 
 ![Physical hardware](motors/hardware_structure.JPG)
 
@@ -16,6 +16,10 @@ In general one motor controller will control a number of different axes (the act
 * Encoder: This is some form of external device that is measuring where the axis actually is. This is normally fed back to the controller in _steps_, the motor record will convert this to a distance using a supplied resolution.
 * Limits: A binary signal that tells the controller that the motor has reached the edge of it's travel. There will be a high and a low limit for each direction of travel.
 * Home: A binary signal that tells the controller when the axis is at a known _home_ position.
+
+# Software structure
+
+All motor IOCs have a macro called `MTRCTRL` which defines the controller number. The controller number is used to [create the PVs for each axis](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/PV-Naming#the-ininstmot-sub-domain) and gives the row where each axis will appear on the table of motors. 
 
 ## Motors used at ISIS
 The motors currently used at ISIS are:
