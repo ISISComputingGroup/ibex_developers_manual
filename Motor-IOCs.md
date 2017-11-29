@@ -21,6 +21,18 @@ In general one motor controller will control a number of different axes (the act
 
 All motor IOCs have a macro called `MTRCTRL` which defines the controller number. The controller number is used to [create the PVs for each axis](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/PV-Naming#the-ininstmot-sub-domain) and gives the row where each axis will appear on the table of motors. 
 
+Motors will tend to have a subset of the following *.cmd files for loading dbs:
+
+| Filename | Description | Location |
+| --- | --- | --- |
+| st.cmd | Should be very simple, only loading the st-common.cmd | One in each iocBoot folder for each IOC |
+| st-common.cmd | The main cmd for the IOC | A single version in the first IOC |
+| st-ctrl.cmd | Creates IF macros for which controller we're loading | A single version in the first IOC |
+| st-max-axis.cmd | Calculates the maximum axis we need to load | A single file in the first IOC |
+| st-axis.cmd | Loads each individual axis | A single file in the first IOC |
+| st-motor.cmd | Loads the actual db files for each individual axis | A single file in the first IOC |
+| galilXX.cmd | Sets up the physical connection for a Galil | A file for each galil in `configurations\galil` |
+
 ## Motors used at ISIS
 The motors currently used at ISIS are:
 * [Galil](Galil) - This is the most widely used motor type.
