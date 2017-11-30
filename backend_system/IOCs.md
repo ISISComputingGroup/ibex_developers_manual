@@ -44,7 +44,7 @@ Building a new IOC? Before you get started, take a look at the relevant [instrum
 * [Using LVDCOM](Using-LVDCOM)
 * [Convert Record](convert-record)
 * [Multi-value Protocols Tricks](Multi-value-Protocols)
-* [IOC Utilities](IOC-Utilities)
+* [IOC Utilities](IOC-Utilities) includes general templates
 * [Removing or Renaming an IOC module ](Removing-or-Renaming-IOC-module)
 * [IOC Testing framework](IOC-Testing-Framework)
 * [Complexity of LabVIEW Drivers](Complexity-of-LabVIEW-Drivers)
