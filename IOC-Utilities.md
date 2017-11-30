@@ -1,5 +1,42 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > IOC utilities
 
+The utilities comprise of useful IOC db templates and IOC shell utilities.
+
+## DB Templates
+
+### Unit Setter
+
+This copies units from a pv and sets them on a different pv. E.g.
+
+    file $(UTILITIES)/db/unit_setter.template { 
+      pattern 
+        {P,    FROM, TO}
+    
+        {"\$(P)", "UNITS", "READING"}
+        {"\$(P)", "UNITS", "SP"}
+	
+    }
+
+This will copy units from the value of the pv `$(P)UNITS` to `$(P)READING` and `$(P)SP`.
+
+### Error Setting
+
+Creates a raw pv that can be written to by a stream protocol and then transfer the stream protocols pv error and value to the real pv.
+
+For example:
+
+    file $(UTILITIES)/db/error_setter.template {
+        pattern {P, STREAM_PV, PV_NAME}
+    
+        {"\$(P)", "FREQ:REF", "FREQ:SP:RBV"}
+        {"\$(P)", "FREQ:REF", "FREQ"}
+
+    }
+
+In this example the PV `FREQ:REF` reads the values from a status and then set the values, via the protocol file, in the `FREQ:SP:RBV:RAW.A` pv. This value and any error that occurs in the `FREQ:REF` is the nset on the `FREQ:SP:RBV` pv. This allows you to easily show a disconnected error in PVs that are set from the protocol file.
+
+## Shell Utilities
+
 There are a number of IOC shell utilities defined in `C:\Instrument\Apps\EPICS\support\utilities` which can be used in an IOC shell to help startup IOCs. The doxygen docs are here http://epics.isis.rl.ac.uk/doxygen/main/support/utilities/.
 
 ## calc
