@@ -115,4 +115,6 @@ If you have to read strings as well as numbers, you can always use an `scalcout`
 
 Another way is to read the entire input as a string into a `string` record, and then use various `scalcout` or `asub` records to parse the individual bits and pieces. An example of this usage can be found in the Linkam95 IOC. 
 
+### Other considerations
 
+The error on disconnection is not passed through from stream and so you may consider doing this via the error setter; see [IOC Utilities](IOC-Utilities#error-setting) for details.
