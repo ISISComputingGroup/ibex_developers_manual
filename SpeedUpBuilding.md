@@ -1,4 +1,4 @@
-On windows it takes some tome to do the checkRelease part of the build, which in our case is duplicated work as we use a MASTER_RELEASE file. 
+On windows it takes some time to do the checkRelease part of the build, which in our case is duplicated work as we use a MASTER_RELEASE file. 
 
 
 To disable this turn off the check release flag (DO NOT CHECK THIS CHANGE IN). Edit line 46 of `...EPICS\base\master\configure\CONFIG_COMMON` to read
