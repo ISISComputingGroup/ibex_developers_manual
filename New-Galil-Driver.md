@@ -8,18 +8,11 @@ in ioc/master/GALIL there is a file  utils/SetupR3Axis.bat  that will initialise
 
 * turning motors on/off using motor record PREM/POST fields no longer works, you need to set e.g. MTR0101_AUTOONOFF_CMD to "On" (this has been adjusted in SetupR3Axis.bat)
 * GalilStartController() has lost the "display code" argument, so you need to move the "Thread mask" argument (ususally "3" for us) one position earlier
-* Unsolicited messages are currently using UDP, I need to look at adding TCP support
+* Home position is always 0, PVs like MTR0101_HOMEVAL_SP and MTR0101_PHOME_CMD have been removed 
 
-## Not currently working
+## TODO
 
-* Profiles and kinematic axes
-* running GalilTest IOC from support/galil/master (may not be fixed)
-* Galil unsolicited messages over TCP
-
-
-
-
-
- 
-
+* Unsolicited messages are currently using UDP only, I need to look at adding TCP support
+* Loading the Profile and kinematic axes DBs cause streams of errors 
+* Running GalilTest IOC from support/galil/master does not work (may not fix)
   
