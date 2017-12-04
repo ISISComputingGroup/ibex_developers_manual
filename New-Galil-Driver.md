@@ -1,4 +1,4 @@
-This page covers initial testing of the new Galil driver, this driver does not use the Galil provided DLL and so should work with all Visual Studio versions. The code is now submitted for review as a PR yet, but as some developers as unable to talk to the Galil reliably at all it may be useful in its current state. Please let @FreddieAkeroyd know of any issues you see.
+This page covers initial testing of the new Galil driver, this driver does not use the Galil provided DLL and so should work with all Visual Studio versions. The code is not submitted for review as a PR yet, but as some developers are unable to talk to the Galil reliably at all it may be useful in its current state. Please let @FreddieAkeroyd know of any issues you see.
 
 To use the new driver you need to switch both your support/galil/master and ioc/master submodules onto the "update_to_3_4" branch and remake support/galil/master and ioc/master/GALIL.
 
@@ -6,8 +6,8 @@ in ioc/master/GALIL there is a file  utils/SetupR3Axis.bat  that will initialise
  
 ## Changes from previous driver versions
 
-* turning motors on/off using motor record PREM/POST fields no longer works, you need to set e.g. MTR0101_AUTOONOFF_CMD to "On" (this has been adjusted in SetupR3Axis.bat)
-* GalilStartController() has lost the "display code" argument, so you need to move the "Thread mask" argument (ususally "3" for us) one position earlier
+* turning motors on using the motor record PREM field no longer works (the on state is now tested before PREM is run) so you need to set MTR0101_AUTOONOFF_CMD etc. to "On" (this has been adjusted in SetupR3Axis.bat)
+* GalilStartController() has lost the "display code" argument, so you need to move the "Thread mask" argument (ususally "3" for us) one position earlier in your local settings/galil/galil*.cmd files 
 * Home position is now always set to 0, so PVs like MTR0101_HOMEVAL_SP and MTR0101_PHOME_CMD have been removed 
 
 ## TODO
