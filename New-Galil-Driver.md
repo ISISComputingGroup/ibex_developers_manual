@@ -2,7 +2,7 @@ This page covers initial testing of the new Galil driver, this driver does not u
 
 To use the new driver you need to switch both your support/galil/master and ioc/master submodules onto the "update_to_3_4" branch and remake support/galil/master and ioc/master/GALIL.
 
-in ioc/master/GALIL there is a file  utils/SetupR3Axis.bat  that will initialise the Galil in the ibex office with appropriate parameters so you can move it, run it after you have started the ioc/master/GALIL ioc
+in ioc/master/GALIL there is a file  utils/SetupR3Axis.bat  that will initialise the Galil in the ibex office with appropriate parameters so you can move it, run it after you have started the ioc/master/GALIL ioc (likely you will only need to run it once as things should then get autosaved locally and applied subsequently)
  
 ## Changes from previous driver versions
 
