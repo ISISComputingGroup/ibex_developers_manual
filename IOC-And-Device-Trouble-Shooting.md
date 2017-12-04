@@ -69,7 +69,7 @@ Then Monitor -> Asyn shows received and sent byte count.
 
 Varibles are transferred from `...EPICS\configure\MASTER_RELEASE` to `...EPICS\ioc\master\<IOCNAME>\iocBoot\<IOCNAME>\envPaths` when the ioc is made. You will have to delete the file to get the newest macros in and the paths have to exist.
 
-## I get a `UDF` alarm on by `bi` record that's getting its value from a calcout
+## I get a `UDF` alarm on by `bi` record that's getting its value from a `calcout`
 
 This was observed whilst programming the GEMORC IOC. We had records like so:
 
