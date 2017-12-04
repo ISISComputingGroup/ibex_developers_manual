@@ -7,7 +7,7 @@ in ioc/master/GALIL there is a file  utils/SetupR3Axis.bat  that will initialise
 ## Changes from previous driver
 
 * turning motors on using the motor record PREM field no longer works (the on state is now tested before PREM is run) so you need to set MTR0101_AUTOONOFF_CMD etc. to "On" (this has been adjusted in SetupR3Axis.bat)
-* GalilStartController() has lost the "display code" argument, so you need to move the "Thread mask" argument (ususally "3" for us) one position earlier in your local settings/galil/galil*.cmd files 
+* GalilStartController() has lost the "display code" argument, so you need to move the "Thread mask" argument (ususally value "3" for us) one position earlier in your local settings/galil/galil*.cmd files 
 * Home position is now always set to 0, so PVs like MTR0101_HOMEVAL_SP and MTR0101_PHOME_CMD have been removed 
 
 ## TODO
