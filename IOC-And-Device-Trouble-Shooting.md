@@ -69,6 +69,28 @@ Then Monitor -> Asyn shows received and sent byte count.
 
 Varibles are transferred from `...EPICS\configure\MASTER_RELEASE` to `...EPICS\ioc\master\<IOCNAME>\iocBoot\<IOCNAME>\envPaths` when the ioc is made. You will have to delete the file to get the newest macros in and the paths have to exist.
 
+## I get a `UDF` alarm on by `bi` record that's getting its value from a calcout
+
+This was observed whilst programming the GEMORC IOC. We had records like so:
+
+```
+record(calc, "$(P)CALC")
+{
+	field(INPA, "$(P)LONGIN1")
+	field(INPB, "$(P)LONGIN2")
+	field(CALC, "A+B==0")	
+	field(OUT, "$(P)BI")
+}
+
+record(bi, "$(P)BI")
+{
+	field(ZNAM, "No")
+	field(ONAM, "Yes")
+}
+```
+
+The result was a `UDF` alarm on the `bi` because the `RVAL` wasn't being updated in line with the `VAL`. We tried a lot of things to sort this. In the end we changed the `OUT` field of the `CALC` to a `FLNK` and added the following field to the `bi`: `field(INP, "$(P)CALC")`. We don't know why this solution worked over the many others we tried.
+
 # Autosave
 
 ## Lost autosave values (especially on Galils)
