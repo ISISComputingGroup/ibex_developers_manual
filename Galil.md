@@ -19,14 +19,14 @@ Useful information about the Galil can be found on the following pages:
 
 ## Startup
 
-For each Galil crate in use on the IOC, you should have a corresponding `Galiln.cmd` file in `C:\Instrument\Settings\config\NDW1836\configurations\galil`. For example, if I am using galil crate 1, I have a file called `Galil1.cmd`
+For each Galil crate in use on the IOC, you should have a corresponding `Galilnn.cmd` file in `C:\Instrument\Settings\config\NDW1836\configurations\galil`. For example, if I am using galil crate 1, I have a file called `Galil01.cmd`
 
 The file should contain 3 sets of commands:
 
 ## configure galil crate 1
 
 ```
-GalilCreateController("Galil", "$(GALILADDR01)", 20)
+GalilCreateController("Galil", "$(GALILADDR)", 20)
 ```
 
 This initiates the Galil controller program. It takes the following arguments:
