@@ -7,11 +7,11 @@
 - Run the community installer as admin and do the following:
     - Licence page: accept licence
     - Type and Networking: Standalone MySqlServer
-    - Server type: select server only (Development is good if you want mysql workbench but will require more checks later)
     - Path Conflict: Set the data dir to `C:\Instrument\var\mysql` (If this page doesn't appear go back to creating the folder tree)
     - Check requirements: click execute
     - Installation: click execute
     - Product Config: next
+    - Type and Network: select server only (Development is good if you want mysql workbench but will require more checks later)
     - Type and Network: Server (dev is also acceptable), other defaults are fine
     - Account: Use the password from the passwords page
     - Windows Service: Accept defaults
@@ -21,7 +21,7 @@
     - click the spanner icon and turn off update of catalogue
 - Record the [installed software](https://github.com/ISISComputingGroup/IBEX/wiki/installed-software)
 
-- Copy `my_for_5.7.ini` from `EPICS\SystemSetup` to `c:\instrument\var\mysql\my.ini` and restart the MySQL service to pick up the new settings
+- Copy `my.ini` from `EPICS\SystemSetup` to `c:\instrument\var\mysql\my.ini` and restart the MySQL service to pick up the new settings
 
 - **Install only not upgrade** run the `config_mysql.bat` batch file in `C:\Instrument\Apps\EPICS\SystemSetup\`.
 - **Install only not upgrade** For running tests locally, make sure that you have run `create_test_account.bat` from `C:\Instrument\Apps\EPICS\SystemSetup\` as well.
