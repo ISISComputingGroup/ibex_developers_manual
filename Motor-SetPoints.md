@@ -12,19 +12,7 @@ The locations in the source are:
 
 ## Setup
 
-First you must set in your global macros (`C:\Instrument\Settings\config\<instrument name>\configurations\globals.txt`) the following macros:
-
-    SIMULATE=1
-    GALILNUMCRATES=6
-    GALIL_01__GALILADDR01=None
-    GALIL_02__GALILADDR02=None
-    GALIL_03__GALILADDR03=None
-    GALIL_04__GALILADDR04=None 
-    GALIL_05__GALILADDR05=None
-    GALIL_06__GALILADDR06=None
-    GALIL_07__GALILADDR07=None
-
-This set a simulation mode on 6 crates of motors. You will need all 6 crates because motion setpoints are only available for GALIL_06.
+First you must create a configuration which starts GALIL_06 in DEVSIM with MTRCTRL set to 6. (motion setpoints are only available for GALIL_06).
 
 Copy from NDXdemo the galil and motionsSetPoint configuration from `\\ndxdemo\c$\Instrument\Settings\config\NDXDEMO\configurations\galil` then move MotionSetPoint from the dir out into the configuration root.
 
