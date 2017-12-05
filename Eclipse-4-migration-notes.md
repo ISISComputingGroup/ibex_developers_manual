@@ -154,4 +154,9 @@ To create a menu item:
     1. Add an method and label @CanExecute this should return true if the command can be executed
 1. Remove the menu item from the extension to avoid the errors like "[main] ERROR org.eclipse.ui.workbench - uk.ac.stfc.isis.ibex.ui.mainmenu.managermode.ManagerModeHandler cannot be cast to org.eclipse.core.commands.IHandler" 
 
+# E4 migration continuation, November 2017 Sprint
+
+## Adding a CSS editor to a view
+
+When adding a CSS editor to a view (such as a DataBrowser), it will search the current application model for a part with id `org.eclipse.ui.editorss` to attach it to. You can create a placeholder in the desired place pointing at a shared element in which you want to display the databrowser. [This guide for re-using editor parts](https://openchrom.wordpress.com/2016/05/19/editor-3-x4-x-org-eclipse-ui-editorss/) contains instructions and screenshots for every needed step.
 
