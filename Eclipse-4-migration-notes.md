@@ -158,5 +158,5 @@ To create a menu item:
 
 ## Adding a CSS editor to a view
 
-When adding a CSS editor to a view (such as a DataBrowser), it will search the current application model for a part with id `org.eclipse.ui.editorss` to attach it to. You can create a placeholder in the desired place pointing at a shared element in which you want to display the databrowser. [This guide for re-using editor parts](https://openchrom.wordpress.com/2016/05/19/editor-3-x4-x-org-eclipse-ui-editorss/) contains instructions and screenshots for every needed step.
+When adding a CSS editor to a view (such as a DataBrowser), it will search the current application model for a part with id `org.eclipse.ui.editorss` to attach it to. You can create a placeholder in the desired place pointing at a shared element in which you want to display the databrowser. [This guide for re-using editor parts](https://openchrom.wordpress.com/2016/05/19/editor-3-x4-x-org-eclipse-ui-editorss/) contains instructions and screenshots for all the necessary steps.
 
