@@ -13,15 +13,15 @@ GALIL_03 -> `192.168.1.203`
 
 # GALIL macros
 
-For each GALIL IOC that you need to use, you need to set the corresponding GALILADDRx macro.
+For each GALIL IOC that you need to use, you need to set the GALILADDR and MTRCTRL macros. The MTRCTRL macro will set where the motor appears in the table of motors and the GALILADDR sets the IP.
 
-e.g. if you are setting up `GALIL_02`, the `GALILADDR02` macro should be set to `192.168.1.202` and all other macros should be left blank.
+e.g. if you are setting up `GALIL_02`, the `GALILADDR` macro should be set to `192.168.1.202` and MTRCTRL will probably be set to 2.
 
 # GALIL configuration file
 
-In the `configurations/galil` directory, you need to create `galilx.cmd` files. These files define the behaviour of a galil controller in terms of the homing modes and other settings.
+In the `configurations/galil` directory, you need to create `galilxx.cmd` files. These files define the behaviour of a galil controller in terms of the homing modes and other settings.
 
-For example, if you were setting up galil 2 on POLARIS, you would create `\\Ndxpolaris\c$\Instrument\Settings\config\NDXPOLARIS\configurations\galil\galil2.cmd`
+For example, if you were setting up galil 2 on POLARIS, you would create `\\Ndxpolaris\c$\Instrument\Settings\config\NDXPOLARIS\configurations\galil\galil02.cmd`
 
 The contents of this file looks like the following:
 
@@ -30,12 +30,12 @@ The contents of this file looks like the following:
 
 ## passed parameters
 ##   GCID - galil crate software index. Numbering starts at 0 - will always be 0 if there is one to one galil crate <-> galil IOC mapping  
-##   GALILADDR02 - address of this galil
+##   GALILADDR - address of this galil
 
 ## see README_galil_cmd.txt for usage of commands below
 
-#G21X3Config($(GCID),"$(GALILADDR02)",8,2100,2000) 
-GalilCreateController("Galil", "$(GALILADDR02)", 20)
+#G21X3Config($(GCID),"$(GALILADDR)",8,2100,2000) 
+GalilCreateController("Galil", "$(GALILADDR)", 20)
 
 #G21X3NameConfig($(GCID),"A",0,0,0,0,0,1,"",0,0,"",1,0)
 #G21X3NameConfig($(GCID),"B",0,0,0,0,0,1,"",0,0,"",1,0)
