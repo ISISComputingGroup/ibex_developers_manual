@@ -40,16 +40,16 @@ There are some macros that need to be set which have specific names, and do not 
 | IOC | Macro | Description | Suggested Values |
 | --- | --- | --- | --- |
 | global | SIMULATE | This can be used to check whether or not you are a simulated instrument | `1` to simulate, `0` for a live system|
-| global | GALILNUMCRATES | The number of galil crates you have available | `1` |
 | ISISDAE01 | DAEDCOM | This is the DCOM port the DAE is using | `1` |
 | ISISDAE01 | DAEHOST | This is the IP address of the DAE host | `localhost` |
-| GALIL_0n | GALILADDR0n | This is the IP address of the Galils, but it can be useful to simulate | `None` when simulating |
+| GALIL_0n | GALILADDR | This is the IP address of the Galil | `None` when simulating |
 | HVCAEN_0n | HVCAENIPn | This is the IP address for the CAEN | |
 | FINS_0n | PLCIP | The IP address for the PLC | |
 | TPG300_0n | TTY | The COM port for the TPG 300 (should be changed to conform) | |
-| CONEXAGP_0n | MTRCTRL | The motor controller number, e.g. it's 08 in :MOT:MTR0805; note that GALIL IOCs take values 01-10 | |
-| SMC100_0n | MTRCTRL | The motor controller number, e.g. it's 08 in MOT:MTR0805; note that GALIL IOCs take values 01-10 | |
-| PIMOT_0n | MTRCTRL | The motor controller number, e.g. it's 08 in MOT:MTR0805; note that GALIL IOCs take values 01-10 | |
+| GALIL_0n | MTRCTRL | The motor controller number, e.g. it's 08 in :MOT:MTR0805 | |
+| CONEXAGP_0n | MTRCTRL | The motor controller number, e.g. it's 08 in :MOT:MTR0805 | |
+| SMC100_0n | MTRCTRL | The motor controller number, e.g. it's 08 in MOT:MTR0805 | |
+| PIMOT_0n | MTRCTRL | The motor controller number, e.g. it's 08 in MOT:MTR0805 | |
 | ECLAB_0n | IPADDR | IP Address of the device | |
 | LKSH336_0n | IPADDR | IP Address of the device | |
 
