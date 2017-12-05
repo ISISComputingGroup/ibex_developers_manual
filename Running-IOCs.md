@@ -42,17 +42,17 @@ The globals.txt is file is held in `C:\Instrument\Settings\config\NDW1407\config
 
 e.g.
 
-    SIMULATE=1
-    GALILNUMCRATES=6
-    GALIL_01__GALILADDR01=None
-    GALIL_02__GALILADDR02=None
-    GALIL_03__GALILADDR03=None
+    GALIL_01__GALILADDR=130.246.51.169
+    GALIL_01__MTRCTRL=2
+    GALIL_03__MTRCTRL=3
+    GALIL_03__DEVSIM=1
+    EGXCOLIM_01__RECSIM=1
 
 # Reading a Compressed Hex PV
 
 Use the following to read a waveform PV of a compressed hexed string
 
-    caget -t -S <PV NaME>|uzhex
+    caget -t -S <PV NAME>|uzhex
 
 (uzhex - think unzip hex)
 
