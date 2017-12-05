@@ -4,7 +4,7 @@ To support "stop all" you just need to load $(MOTOR)/db/motorUtil.db into the IO
 
 To add "in motion" support, the same file must be included, but it will need to be first edited to add support for that IOC to push its status.
 
-Inside motorUtil.db add the new IOC (you need one entry per ioc independent of how many things it controls) to the $(P)_FAN dfanout record. Ignore how the Galils are done - that way is historic. We will take the example of the SMC100 motion IOC.
+Inside motorUtil.db add the new IOC (you need one entry per ioc independent of how many things it controls) to the $(P)_FAN dfanout record. We will take the example of the SMC100 motion IOC.
 
 * Locate an unused calc record input in $(P)CS:MOT:_MOVING1 - in this case we will use input "A" 
 * Add a line like **$(IFIOC_SMC100_01=#)  field(OUTA, "$(PVPREFIX)CS:MOT:_MOVING1.A CA")**   to the dfanout record
@@ -17,4 +17,4 @@ If your IOC is called SMC100_01 then the ISIS standard startup creates a few use
 * $(IFIOC) will have value "IFIOC_SMC100_01"
 So the item   $(IFIOC)= , (the space before the comma is important) will expand to   IFIOC_SMC100_01= ,  for use within the DB file
  
-As motion is across multiple IOCs, splitting each IOC into a different calc record input was the safest approach at the time to avoid possible misses, so each IOC needs to load motorUtil.db and map to a different calc record input to avoid clashes of values. The mechanism is independent of what table of motors position the IOC occupies, though it might look like that was true from the way the galil is implemented. 
+As motion is across multiple IOCs, splitting each IOC into a different calc record input was the safest approach at the time to avoid possible misses, so each IOC needs to load motorUtil.db and map to a different calc record input to avoid clashes of values. The mechanism is independent of what table of motors position the IOC occupies. 
