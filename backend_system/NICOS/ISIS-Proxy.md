@@ -1,6 +1,9 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [Nicos](Nicos) > ISIS Proxy
 
+
 # ISIS Proxy
+
+### _Note: as of 06/12/17, the latest version of NICOS using ZeroMQ has been merged into our Script Server repository. This eliminates the need for an ISIS Proxy. Thus, the information on this page is now outdated._
 
 ## Motivation
 
