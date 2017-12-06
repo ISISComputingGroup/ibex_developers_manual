@@ -31,8 +31,11 @@ get_R {
 # Blocks
 
 The following blocks need to be set up:
+
 `keithley2420_resistance_2` -> `TE:NDWxxxx:PARS:USER:R2`
+
 `keithley2420_resistance_1` -> `TE:NDWxxxx:PARS:USER:R1`
+
 `keithley2420_voltage` -> `TE:NDWxxxx:PARS:USER:R0`
 
 Set up precisions and units:
