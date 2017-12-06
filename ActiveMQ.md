@@ -4,7 +4,7 @@
 
 * [The Alarm Server](Alarms)
 * [The IOC Log Server](Ioc-message-logging)
-* [The Script Server Proxy](ISIS-Proxy)
+* [The Script Server Proxy](ISIS-Proxy) _(OUTDATED: Nicos has been updated to use ZeroMQ. These changes have been merged into our latest ISIS Nicos repository, which eliminates the need for an ISIS proxy.)_
 
 The GUI also hooks into ActiveMQ to read/write to all these components. Previously a version of ActiveMQ was bundled with each of these backend components. However, this was modified to be a single instance that is run through procserv when the instrument is first started. 
 
