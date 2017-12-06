@@ -1,0 +1,1 @@
+Prototype digital drive Fermi chopper controller made by Forschungszentrum Jülich (FZJ).  A single "one-off" device unlikely to be used anywhere other than on MAPS.
