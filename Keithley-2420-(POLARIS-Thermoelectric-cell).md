@@ -1,4 +1,4 @@
-Polaris occasionally use a Keithley to do a thermoelectric cell measurement.
+Polaris occasionally use a Keithley to do a thermoelectric cell measurement. Originally this was from https://github.com/ISISComputingGroup/IBEX/issues/2801
 
 Currently, doing this measurement requires a few hacks to get it going. These are documented below:
 
