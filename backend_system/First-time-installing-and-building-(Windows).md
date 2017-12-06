@@ -131,6 +131,8 @@ Unfortunately the /RegServer registration process doesn't report either success 
 
 # Setting up nicos
 
+_**(Outdated as of 06/12/17 - now using ZeroMQ integrated into latest version of NICOS)**_
+
 Nicos needs some local passwords setting; to do this look at:
 
 https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/ISIS-Proxy#security
