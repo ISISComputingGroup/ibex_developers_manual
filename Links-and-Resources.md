@@ -12,6 +12,7 @@
 
 - [EPICS Channel access explained](http://www.aps.anl.gov/epics/docs/CAproto.html)
 
+- [HDF5 Viewer for Nexus files](https://www.hdfgroup.org/downloads/hdfview#obtain)
 ## Links
 
 - [IBEX wiki](https://github.com/ISISComputingGroup/IBEX/wiki)
