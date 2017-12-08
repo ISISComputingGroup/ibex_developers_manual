@@ -35,3 +35,4 @@ java.lang.IllegalArgumentException: Data source loc for loc://TE:NDW1695:EUROTHR
     - The different parts are not linked by an underlying model so the functionality will not work. 
     - The layout has not been updated to scale correctly. 
     - There are several buttons from the original view which no longer appear in the perspective.
+- The synoptic perspective does not display correctly if it is opened too soon after the GUI is started.
