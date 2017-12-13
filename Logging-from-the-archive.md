@@ -1,10 +1,10 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > [Logging from the archive](Logging-from-the-archive)
 
-An IOC can be made to log values to a file based on the value of a PV. Consider whether you IOC needs to do this. 
+An IOC can be made to log PV values to a file based on the value of a trigger PV. Consider whether you IOC needs to do this. 
 
-To add logging to an IOC you need to add info fields to your records. The logging is based on a logging PV. There are currently two versions of the logging which run simultaneously. 
-- Continuous logging which writes values to the file as long as the PV is on
-- On End logging, which when the logging PV switches off (1 to 0) will write the log for the period for which it was on into the file. 
+To add logging to an IOC you need to add [certain info fields](#the-info-fields) to its records. The logging is based on a trigger PV. There are currently two versions of the logging which run simultaneously. 
+- Continuous logging which writes values to the file in regular intervals as long as the PV is on
+- On End logging, which when the trigger PV switches off (1 to 0) will write the log for the period for which it was on into the file. 
 
 There are two because I am concerned that the continuous logger may miss values if they arrive at the database late; at some point this should be checked out and maybe the on end logging removed or made optional. The logging files will appear in `c:\logs\<ioc name>\<ioc name>_<logging start date-time><_continuous if continuous>.dat`
 
