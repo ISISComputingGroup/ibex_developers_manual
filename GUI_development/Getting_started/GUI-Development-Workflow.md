@@ -15,7 +15,7 @@
     * Assign the correct milestone
     * Add a record of the changes to [Release Notes](https://github.com/ISISComputingGroup/IBEX/wiki/ReleaseNotes_Dev) under "Changes in software but still on a branch"
 1. **Review (reviewer)**
-    * Assigne the pull request to yourself to indicate you are reviewing it
+    * Assign the pull request to yourself to indicate you are reviewing it and label`under review`
     * Check that the pull request has been built by Jenkins with no errors
     * Check that the ticket fixes the associated issue
     * If it is okay then move to the next step, otherwise inform the developer of the problem and add a comment to the pull request
