@@ -25,7 +25,6 @@ java.lang.IllegalArgumentException: Data source loc for loc://TE:NDW1695:EUROTHR
 - Get genie_python talking to PVs. Currently it is getting `null` as it's `CA_ADDR_LIST` which causes issues.
 - DAE perspectives need scrollbars
 - DAE detector diagnostics are not being enabled properly
-- Colour scheme is only read once when Motors view is initialised (cannot be changed afterwards)
 - Switching to the scripting perspective is very slow. It's probably no better than e3 but there should be some feedback to the user that the perspective is being opened.
 - The scripting perspective does not switch instruments properly
 - The way the scripting perspective is created is confusing and messy, we should try and fix it 
