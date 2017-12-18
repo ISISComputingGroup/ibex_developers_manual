@@ -29,8 +29,8 @@ java.lang.IllegalArgumentException: Data source loc for loc://TE:NDW1695:EUROTHR
 - Switching to the scripting perspective is very slow. It's probably no better than e3 but there should be some feedback to the user that the perspective is being opened.
 - The scripting perspective does not switch instruments properly
 - The way the scripting perspective is created is confusing and messy, we should try and fix it 
-- At the moment the log plotter branch will only display the empty view, need to actually display a plotter with a PV
-- Need to sort out the access to the log plotter from OPIs and Blocks
+- Need to sort out the access to the log plotter from OPIs
+- Opening to the log plotter via the block context menu does not automatically highlight the log plotter perspective button. Ideally, the active perspective and the perspectives view should be synchronized via databinding
 - The script generator perspective has only been partially migrated. 
     - The different parts are not linked by an underlying model so the functionality will not work. 
     - The layout has not been updated to scale correctly. 
