@@ -1,7 +1,7 @@
 TODOs For Eclipse 4 migration:
 
 - Recommended synoptic code in config editor has been commented out
-- CTRL + ALT + P preference menu does not work 
+- CTRL + ALT + P preference menu does not work. The `preferencePages` extension point is not available anymore in E4. Someone developed a plugin which provides a preference page extension point for E4 applications which can be found [here](https://github.com/opcoach/e4Preferences)
 - Switching perspectives is quite slow.
 - Status bar is left justified?
 - Menu bar items do not work (other than configuration related ones)
