@@ -10,6 +10,7 @@ Seci is installed on the instrument at `C:\Program Files (x86)\STFC ISIS Facilit
 The configurations are in the same folder.
 
 # Updating SECI on an instrument
+1. Stop SECI if it is running
 1. Copy 'C:\Program Files (x86)\STFC ISIS Facility\SECI\SeciUserInterface.exe.config` to somewhere safe.
 1. Uninstall SECI via control panel
 1. Run the latest version of the installer
