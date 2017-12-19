@@ -11,3 +11,4 @@ HLG | Helium Level Gauge | Cryogenics_Ltd__Helium_Level_Gauge
 LKSH460 | Lakeshore Gauss Metre (460) | Lakeshore__Gauss_Meter 
 SAMSM300 | Sample changer based on the SM300 | SM_Motion_control__SM300
 FZJDDFCH | FZJ Digital Drive Fermi Chopper | FZJ__Digital_Drive_Fermi_Chopper
+SKFMB350 | SKF Chopper MB350 | SKF_Magnetic_Bearing_Spindle_Controller_MB350PC_series
