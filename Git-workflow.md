@@ -30,7 +30,7 @@ Reviewing work for the GUI
 * Test the changes
 * If the changes don't work, or you notice they break something else, talk to the developer and get it corrected
 * Once the tests have been passed, go to GitHub and merge the pull request.
-* Check on the delete branch button on the merged page
+* Click on the delete branch button on the merged page
 
 Reviewing work for the 'top' of EPICS (no other related changes)
 ----------------------------------------------------------------------------------
@@ -41,7 +41,7 @@ Reviewing work for the 'top' of EPICS (no other related changes)
 * Test the changes, don't forget makes if required
 * If the changes don't work, or you notice they break something else, talk to the developer and get it corrected
 * Once the tests have been passed, go to GitHub and merge the pull request
-* Check on the delete branch button on the merged page
+* Click on the delete branch button on the merged page
 
 Reviewing work for the subModules of EPICS
 ----------------------------------------------------------------------------------
