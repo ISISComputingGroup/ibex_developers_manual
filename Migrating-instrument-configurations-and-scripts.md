@@ -14,3 +14,13 @@ GALILs are more complicated.
 SECI used to create an `_Status.txt` file for you "free of charge", it looks like a block but you didn't need to add it. All it contained was the run state. When migrating an instrument's configuration, check with the scientists if they need a block defined for the run state.
 
 If so, point it at the `DAE:RUNSTATE_STR` process variable and add it as "monitor with deadband" rather than periodic change
+
+# Where to find instrument scripts
+
+First, it's best to ask instrument scientists which scripts they want migrated. Typically they will have built up lots of Open Genie scripts over the years, not all of which are still in use.
+
+Scripts can generally be found in the following locations:
+
+- `C:\scripts`
+    - This will sometimes contain a symbolic link into a shared drive that may also contain scripts
+- `C:\Users\[standard user]\Documents\Configurations\COMMON\gcl\[instrument name]_routines.gcl`
