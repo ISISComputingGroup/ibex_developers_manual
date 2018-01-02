@@ -88,6 +88,12 @@ If you have a stray widget, it may prevent scrollbars from appearing on your OPI
 - XML sorter e.g. [https://xmlsorter.codeplex.com/](https://xmlsorter.codeplex.com/)
 - Diff tool e.g. notepad++, winmerge
 
+# Writing to char waveform PVs
+
+CSS text input fields can write to char waveform PVs but needs to be set up in a special way. If you don't do this, the `NORD` field of the waveform will not be set correctly on write and the PV value will only be written successfully if NORD already has a large enough value.
+- Postfix the PV name with ` {"longString":true}` (note the space before the JSON). The final value in "PV Name" should look similar to the following: `$(PV_ROOT):ARBITRARY:SP {"longString":true}`
+- Ensure "Format Type" is "String"
+
 # Data browser Graph Creation
 
 To make a databrowser graph on an OPI:
