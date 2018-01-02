@@ -13,7 +13,7 @@ Building a new IOC? Before you get started, take a look at the relevant [instrum
     * [Emulating devices](Emulating-Devices)
 
 1. [IOC Finishing Touches](IOC-Finishing-Touches)
-    * Additional for motors [Adding motor IOC to global motor moving and stop all](/Adding-motor-IOC-to-global-motor-moving-and-stop-all)
+    * Additional for motors [Adding motor IOC to global motor moving and stop all](Adding-motor-IOC-to-global-motor-moving-and-stop-all)
 
 1. [Record simulation](Record-Simulation)
 
