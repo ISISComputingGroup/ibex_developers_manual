@@ -23,4 +23,4 @@ Scripts can generally be found in the following locations:
 
 - `C:\scripts`
     - This will sometimes contain a symbolic link into a shared drive that may also contain scripts
-- `C:\Users\[standard user]\Documents\Configurations\COMMON\gcl\[instrument name]_routines.gcl`
+- `C:\Users\[standard_user]\Documents\Configurations\COMMON\gcl\[instrument_name]_routines.gcl`
