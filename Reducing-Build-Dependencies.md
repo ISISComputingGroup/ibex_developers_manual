@@ -15,7 +15,11 @@ To determine what you need to add:
 * look at the Makefile to see what DBD and library files are used when building an IOC and then add the relevant definitions to allow these to be located. See the _LIB and _DBD macros 
 * Look at DB template substitution files to see where DB files are included from, you'll need any macros from here too
 * Check st.cmd for use of such macros e.g. $(ACCESSSECURITY) and add these too
- 
+
+For the first step you can use the script in `ibex_utils/developer_support_script` which will add the lines to RELEASE based on libs and dbd files in you build.mak which it knows about. This script can be run multiple times. To run use:
+
+    python build_dependencies.py <ioc directory>
+
 If you get it wrong / miss something, it will usually just break the build due to a missing file; however if you miss a macro used in st.cmd it will not be noticed until the IOC is run. So you will need to run the IOC up in simulation mode and check for any warnings about undefined macros or commands. 
 
 If the module you are changing is using AREA_DETECTOR or EPISC_V4 then things a little more complicated, I'll add extended notes at a later point.
