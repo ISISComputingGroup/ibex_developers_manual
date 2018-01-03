@@ -36,7 +36,7 @@ public class CustomPizza extends Pizza {
      * @param topping the topping to add
      * @return true if the topping was added
      */
-    public boolean AddTopping(Topping topping) {
+    public boolean addTopping(Topping topping) {
         if (toppingList.size() < MAX_TOPPINGS) {
             toppingList.add(topping);
             return true;
