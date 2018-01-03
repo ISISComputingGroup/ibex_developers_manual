@@ -42,3 +42,6 @@ https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/EPICS-basics#A
 
 https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Access-Gateway
 
+# Past approaches / future extensions
+
+In future it may be desirable to implement a "baton" system which allows users to request exclusive access to an instrument. There was a small amount of front-end code related to this removed in [this commit](https://github.com/ISISComputingGroup/ibex_gui/pull/615/commits/f3ea01d0cb4d192d5b6f22990540718c650bb8c2). The back end for this was never implemented.
