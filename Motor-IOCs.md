@@ -40,6 +40,7 @@ The motors currently used at ISIS are:
 * Linmot
 * McLennan
 * Beckhoff
+* [SM300](SM300)
 
 ## Other info
 
