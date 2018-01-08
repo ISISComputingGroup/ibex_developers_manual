@@ -6,8 +6,7 @@ TODOs For Eclipse 4 migration:
 - Status bar is left justified?
 - To change the version for the about menu you must change it in e4.client/pom.xml
 - `BeamStatusView.java`: The PVs haven't been connected to the beam status view because the archiver doesn't connect properly yet
-- `BeamStatusView.java`: Using the `showToolbar(false)` command doesn't actually hide the toolbar in the beam status view. I've tried working around this but ran out of time. We should sort it out eventually but I've left it for the time being. We may want to change that entire part eventually to just be two databrowsers in different tabs rather than embedding the graph in a separate view. That relies on a later bit of work though.
-- The MCR news and stats panel haven't been added to the Beam Status perspective. As per the Experiment Details perspective, these should ideally be in separate parts
+- `BeamStatusView.java`: We may want to change that entire part eventually to just be two databrowsers in different tabs rather than embedding the graph in a separate view.
 - Right click on block menu is in something I touched but is probably best done as part of the blocks migration
 - Reenable detecor diagnostics on tab changes PV is DAE:DIAG:ENABLE:FOR
 - Log plotter within OPIs do not work. They need the changes to CSStudio from this pull request (https://github.com/ISISComputingGroup/CSStudio_3_3/pull/2/files). Currently the e4 gui just points at download.csstudio.org so doesn't have this change.
