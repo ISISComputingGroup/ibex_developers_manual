@@ -7,7 +7,6 @@ TODOs For Eclipse 4 migration:
 - To change the version for the about menu you must change it in e4.client/pom.xml
 - `BeamStatusView.java`: The PVs haven't been connected to the beam status view because the archiver doesn't connect properly yet
 - `BeamStatusView.java`: We may want to change that entire part eventually to just be two databrowsers in different tabs rather than embedding the graph in a separate view.
-- Right click on block menu is in something I touched but is probably best done as part of the blocks migration
 - Reenable detecor diagnostics on tab changes PV is DAE:DIAG:ENABLE:FOR
 - Log plotter within OPIs do not work. They need the changes to CSStudio from this pull request (https://github.com/ISISComputingGroup/CSStudio_3_3/pull/2/files). Currently the e4 gui just points at download.csstudio.org so doesn't have this change.
 - Minimising views causes some very odd behaviour, we should capture what we actually want to happen and implement it.
