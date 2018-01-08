@@ -4,7 +4,6 @@ TODOs For Eclipse 4 migration:
 - CTRL + ALT + P preference menu does not work. The `preferencePages` extension point is not available anymore in E4. Someone developed a plugin which provides a preference page extension point for E4 applications which can be found [here](https://github.com/opcoach/e4Preferences)
 - Switching perspectives is quite slow.
 - Status bar is left justified?
-- Menu bar items do not work (other than configuration related ones)
 - To change the version for the about menu you must change it in e4.client/pom.xml
 - `BeamStatusView.java`: The PVs haven't been connected to the beam status view because the archiver doesn't connect properly yet
 - `BeamStatusView.java`: Using the `showToolbar(false)` command doesn't actually hide the toolbar in the beam status view. I've tried working around this but ran out of time. We should sort it out eventually but I've left it for the time being. We may want to change that entire part eventually to just be two databrowsers in different tabs rather than embedding the graph in a separate view. That relies on a later bit of work though.
