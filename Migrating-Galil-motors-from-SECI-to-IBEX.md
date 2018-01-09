@@ -11,6 +11,12 @@ GALIL_02 -> `192.168.1.202`
 GALIL_03 -> `192.168.1.203`
 ...
 
+An IP address needs to be assigned to the Galil controller, you need to do this via a serial connection using e.g. hyperterminal. After setting an appropriate IP address you also need to "burn" the information into non-volatile memory or else the IP address will be lost of power cycle. For example:
+```
+IA 192,168,1,201
+BN    
+```
+
 # GALIL macros
 
 For each GALIL IOC that you need to use, you need to set the GALILADDR and MTRCTRL macros. The MTRCTRL macro will set where the motor appears in the table of motors and the GALILADDR sets the IP.
