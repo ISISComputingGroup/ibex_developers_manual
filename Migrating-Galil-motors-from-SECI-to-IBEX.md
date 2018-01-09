@@ -16,6 +16,7 @@ An IP address needs to be assigned to the Galil controller, you need to do this 
 IA 192,168,1,201
 BN    
 ```
+To see the current IP address you can type either    IA?    or    TH
 
 # GALIL macros
 
