@@ -20,7 +20,6 @@ java.lang.IllegalArgumentException: Data source loc for loc://TE:NDW1695:EUROTHR
 java.lang.IllegalArgumentException: Data source loc for loc://TE:NDW1695:EUROTHRM_01:A07_calibration_file_type("calibration") was not configured.
 ```
 - Get genie_python talking to PVs. Currently it is getting `null` as it's `CA_ADDR_LIST` which causes issues.
-- DAE perspectives need scrollbars
 - DAE detector diagnostics are not being enabled properly
 - Switching to the scripting perspective is very slow. It's probably no better than e3 but there should be some feedback to the user that the perspective is being opened.
 - The scripting perspective does not switch instruments properly
