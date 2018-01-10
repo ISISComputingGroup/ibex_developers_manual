@@ -32,3 +32,4 @@ java.lang.IllegalArgumentException: Data source loc for loc://TE:NDW1695:EUROTHR
     - There are several buttons from the original view which no longer appear in the perspective.
 - The synoptic perspective does not display correctly if it is opened too soon after the GUI is started.
 - The label showing the current configuration needs to be readded
+- Closing IBEX via menu does not trigger preShutdown actions
