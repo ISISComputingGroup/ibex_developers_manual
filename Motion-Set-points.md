@@ -1,0 +1,1 @@
+The motion setpoints directory allows the creation of points where a motor should stop.
