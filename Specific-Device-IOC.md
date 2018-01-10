@@ -20,7 +20,7 @@ These are the list of categories for an IOC. The IOC can appear in multiple cate
 
 [Monitors](Monitors)
 
-[Motion Control (including motors, motion setpoints, sample changer and other motor extensions)](Motor-IOCs)
+[Motion Control (including motors)](Motor-IOCs)
 
 [Mulitmeters](Mulitmeters)
 
