@@ -7,6 +7,8 @@ Make sure you [understand how Java is licensed](Understanding-Java-Licensing), s
 
 Project is ready to be released not for a specific event, e.g. at the end of a sprint.
 
+### Pre Testing
+
 1. Update GUI Java JRE to the latest version (See [Jenkins Build Server `Jenkins builds will bundle the JRE with the client`](Jenkins-Build-Server))
 1. Look at the released features in this branch [IBEX/wiki/ReleaseNotes_Dev](https://github.com/ISISComputingGroup/IBEX/wiki/ReleaseNotes_Dev) and find the most significant level of change (i.e. is this cumulatively a major change, a minor change, or a patch?).
 1. Update the upgrade script to include the latest version (this is done on master). Steps to do this are in [Config Upgrader in section *creating a production upgrade script*](Config-Upgrader#creating-a-production-upgrade-script) 
@@ -34,8 +36,12 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
 1. Update the versions of MySQL and Java being deployed associated with the release in the release notes.
 1. Move the changes which have been merged into the release from the dev page to the new release notes page for the version.
 1. Update the [user manual](https://github.com/ISISComputingGroup/ibex_user_manual/wiki) with any relevant changes
+
+### Testing
 1. Test
 1. Record and fix any bugs
+
+### Post Testing
 1. Create a release tag in the EPICS, ibex_gui and genie_python repositories. For each repo
     1. Go to `[REPO_URL]/releases`, e.g. `https://github.com/ISISComputingGroup/ibex_gui/releases`
     1. Click `Draft a new release`
