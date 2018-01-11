@@ -3,6 +3,18 @@
 ## Understanding Java Licensing
 Make sure you [understand how Java is licensed](Understanding-Java-Licensing), so that we do not inadvertently make ISIS liable for licensing fees.
 
+## Release tickets
+
+Text for release ticket:
+
+    As a developer I want an IBEX release so I can install it on the instrument machines for the start of machine physics on 26th.
+    
+    Acceptance Criteria:
+    
+    - [ ] [Pre Testing Steps](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Creating-a-release#pre-testing)
+    - [ ] [Testing steps](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Creating-a-release#testing)
+    - [ ] [Post Testing](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Creating-a-release#post-testing)
+
 ## Standard Release
 
 Project is ready to be released not for a specific event, e.g. at the end of a sprint.
