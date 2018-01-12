@@ -20,7 +20,7 @@ Launching the E4 application is very similar to the launching the E3 application
     - Open the run configurations dialog
     - With "ibex.product" selected under "Eclipse Application" in the left-hand nav bar, go to the "Main" tab
     - Make sure the "Clear" box is ticked with the radio button set to "workspace"
-    - Under the "Configuration" tab, select "Clear the configuration area before launching"
+    - Under the "Configuration" tab, select "Clear the configuration area before launching". _Note that this will lead to certain properties not persisting between IBEX instances as they should, e.g. remembering the last selected instrument._
     - Click "Apply" then close the dialog
 - Set the target platform. If it's covered in red, select each source followed by "Update" and "Reload". Once that's done, click "Set target platform"
 - Go to the `...e4.client.product` plugin.
