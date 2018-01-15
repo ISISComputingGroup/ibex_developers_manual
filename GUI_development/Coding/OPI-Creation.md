@@ -111,4 +111,6 @@ To make a databrowser graph on an OPI:
 
 If it's required to activate a tab from a synoptic via a macro: (See SKF G5 Chopper OPI as an example.)
 
-1. 
+1. Put macro in local PV
+1. Create script that reads value
+1. Set active tab on tab container using `setActiveTabIndex`
