@@ -107,3 +107,8 @@ To make a databrowser graph on an OPI:
 1. Add a `Data Browser` monitor to your opi
 1. In properties in file set the file you have created
 
+# Activate tab
+
+If it's required to activate a tab from a synoptic via a macro: (See SKF G5 Chopper OPI as an example.)
+
+1. 
