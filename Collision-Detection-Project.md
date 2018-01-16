@@ -29,7 +29,7 @@ The system has been developed in PyCharm. For development purposes, the environm
  
 The system interfaces with the IBEX server using EPICS via the Channel Access protocol. Genie python is used for simple setting and getting of PVs, and the python `ca` module is used to monitor changes in PVs. 
  
-For collision detection, the system uses the Open Dynamics Engine, through the python module `pyode`.
+For collision detection, the system uses the Open Dynamics Engine, through the python module `pyode`. A wheel for which is located at https://www.lfd.uci.edu/~gohlke/pythonlibs/#ode 
  
 The system also produces a visual rendering of the system, for diagnostic and development purposes. This uses `pygame` and the `pyopengl` bindings, and needs `glut.dll` and `glut32.dll`, which are included in the repository and can be found [here](ftp://ftp.sgi.com/opengl/glut/glut3.html).
  
