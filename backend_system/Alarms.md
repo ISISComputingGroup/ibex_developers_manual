@@ -62,7 +62,7 @@ Currently the alarm handler functionality is added to the client through the plu
 
 # Default connection details #
 
-* JMS server address: failover:(tcp://localhost:61616)
+* JMS server address: failover:(tcp://localhost:39990)
 * SQL server address: jdbc:mysql://localhost/ALARM
 * SQL server username (read/write): alarm
 * SQL server password (read/write): $alarm
