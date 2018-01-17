@@ -22,13 +22,7 @@ Next start your instrument (or restart if it is already running).
 
 Look at the motors perspective to see if they are all pink (all rows should be up to and including 6).
 
-This will also set up motion set points using the command file ```C:\Instrument\Settings\config\NDW1407\configurations\galil\motionsetpoints.cmd```. For instance ```NDW1407:HGV27692:LKUP:MON3:POSN:SP``` is the set point for the Position monitor 3 (note however that this line is commented out in the original file from NDXDEMO).
-
-If you want to see the monitor point on a synoptic. Create a synoptic with a component of type "movingmonitor" with the component target name of "In Out Monitor". To use monitor 3 which is currently set up for motor MTR0601 the macros should be set to:
-* M = 3
-* CHANNUM = ? (I set it to 3)
-* MM = MOT:MTR0601
-(check the `motionsetpoints.cmd` file to see what corresponds to what)
+To setup the motion setpoints see [Motion Set points](Motion-Set-points)
 
 ## Alternative move command
 
