@@ -90,7 +90,7 @@ The following changes should be applied to each of the workstations individually
 - Make sure that you can successfully start a scripting session
 - Stop the IBEX server (else it won't work properly for the next person who logs in)
 
-We may be able to automate all of those steps. For the time being the first three can be accomplished via a script. The following was a non-generic script that I used this time. I haven't refined it yet in anticipation that we can do something more comprehensive with AutoIt in the future.
+We may be able to automate all of those steps. For the time being the first three can be accomplished via a script. The following was a non-generic script that I used for the January 2018 training. I haven't refined it yet in anticipation that we can do something more comprehensive with AutoIt+Python in the future.
 
 ```
 import shutil
