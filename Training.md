@@ -85,7 +85,49 @@ The following changes should be applied to each of the workstations individually
 
 - Rename the instrument config folder in `C:\Instrument\Settings\config` to match the machine name
 - Rename the `init_inst_name.py` file in `C:\Instrument\Settings\config\[machine name]\Python\inst` to match the instrument name
-- Start the IBEX server and switch to the local instrument
-- Set the DAE to point at existing TCB and table files if it doesn't already
-- Make sure you can successfully start the instrument
+- Delete the `.settings` directory in `C:\Instrument\Apps\Client\configuration`. This will empty the IBEX preference store and notably make sure it starts up pointing at the local instrument rather than the machine it was cloned from.
+- Make sure you can successfully start a run
+- Make sure that you can successfully start a scripting session
 - Stop the IBEX server (else it won't work properly for the next person who logs in)
+
+We may be able to automate all of those steps. For the time being the first three can be accomplished via a script. The following was a non-generic script that I used this time.
+
+```
+import shutil
+import os
+import socket
+
+
+def delete_stored_gui_settings():
+    shutil.rmtree(os.path.join("C:\\", "Instrument", "Apps", "Client", "configuration", ".settings"))
+
+
+def rename_config_folder():
+    root_config_folder = os.path.join("C:\\", "Instrument", "Settings", "config")
+    possible_config_folders = [os.path.join(root_config_folder, "DESKTOP-NP89I4S"),
+                               os.path.join(root_config_folder, "DESKTOP-NT4N3KQ")]
+    config_folder = [p for p in possible_config_folders if os.path.exists(p)][0]
+    shutil.move(config_folder, os.path.join(root_config_folder, socket.gethostname()))
+
+
+def rename_script_module_initializer():
+    script_folder = os.path.join("C:\\", "Instrument", "Settings", "config", socket.gethostname(), "Python")
+    files_to_delete = [
+        os.path.join(script_folder, "init_desktoc9.py"),
+        os.path.join(script_folder, "init_deskto24.py"),
+        os.path.join(script_folder, "init_desktoc9.pyc"),
+        os.path.join(script_folder, "init_deskto24.pyc"),
+    ]
+    for f in files_to_delete:
+        if os.path.exists(f):
+            os.remove(f)
+    possible_init_paths = [os.path.join(script_folder, "init_desktop_np89i4s.py"),
+                           os.path.join(script_folder, "init_desktop_nt4n3kq.py")]
+    init_path = [p for p in possible_init_paths if os.path.exists(p)][0]
+    shutil.move(init_path, os.path.join(script_folder, "init_{}.py".format(socket.gethostname().lower())))
+
+
+delete_stored_gui_settings()
+rename_config_folder()
+rename_script_module_initializer()
+```
