@@ -18,6 +18,14 @@ The Instron stress rig is a National Instruments GPIB device. It requires some s
   * After the GPIB box has been turned on for a short time (e.g. 1 minute) the driver (LabVIEW or IOC) should be ready to connect.
   * GPIB box LEDs - PWR should be orange, LNK 10/100 should be green. Other LEDs will be flickering depending on connection. Box might have a slightly dodgy connection (not sure about this, but check it) so ensure the LEDs are as described.
 
+# Rigs
+
+There are two rigs: 50kN and 100kN.
+
+To turn on the actuator for the 100kN rig, there are three buttons on the front labelled "O", "I", "II". Press these in order to enable the actuator.
+
+To turn on the actuator for the 50kN rig, Press and hold the "Hydraulics on" button for at least 10 seconds. You should apparently hear the hydraulic system engage. Then press actuator "off", "low", "high" (in order) to enable the actuator.
+
 # Driver
 
 The stress rig driver uses the following DB files:
