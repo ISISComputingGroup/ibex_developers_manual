@@ -17,6 +17,7 @@ The Instron stress rig is a National Instruments GPIB device. It requires some s
   * Turn back on the GPIB box. 
   * After the GPIB box has been turned on for a short time (e.g. 1 minute) the driver (LabVIEW or IOC) should be ready to connect.
   * GPIB box LEDs - PWR should be orange, LNK 10/100 should be green. Other LEDs will be flickering depending on connection.
+  * GPIB box might have a slightly dodgy connection. Check LEDs are as above.
 
 # Driver
 
