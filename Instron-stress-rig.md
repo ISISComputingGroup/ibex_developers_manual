@@ -24,7 +24,7 @@ There are two rigs: 50kN and 100kN.
 
 To turn on the actuator for the 100kN rig, there are three buttons on the front labelled "O", "I", "II". Press these in order to enable the actuator.
 
-To turn on the actuator for the 50kN rig, Press and hold the "Hydraulics on" button for at least 10 seconds. You should apparently hear the hydraulic system engage. Then press actuator "off", "low", "high" (in order) to enable the actuator.
+To turn on the actuator for the 50kN rig, Press and hold the "Hydraulics on" button for at least 10 seconds. You should hear the hydraulic system engage (also, the hydraulic lines will change position slightly). Then press actuator "off", "low", "high" (in order) to enable the actuator.
 
 # Driver
 
