@@ -26,6 +26,14 @@ To turn on the actuator for the 100kN rig, there are three buttons on the front 
 
 To turn on the actuator for the 50kN rig, Press and hold the "Hydraulics on" button for at least 10 seconds. You should hear the hydraulic system engage (also, the hydraulic lines will change position slightly). Then press actuator "off", "low", "high" (in order) to enable the actuator.
 
+# Hardware debugging
+
+- If the hydraulics on the rigs keep tripping off and the rig returns a status of "oil too hot"
+
+Check if the cooling water circuit for TS1 south side is turned on. If not, the instron's oil might heat up too much which causes the hydraulics to trip when moving the rig. This happens regardless of whether IOC, LabVIEW, or manual control is used to move the actuator. Additional symptoms are a rig status of "HYD. PUMP SHUTDOWN" and the red status light on the control panel being solidly on (and not being able to clear it).
+
+If the cooling water is off, there is a circulation pump that can be used to run the rig in low-force mode: ask the scientists.
+
 # Driver
 
 The stress rig driver uses the following DB files:
