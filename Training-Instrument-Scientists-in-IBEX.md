@@ -1,44 +1,138 @@
 > [Wiki](Home) > [Processes](Processes) > [Training Instrument Scientists in IBEX](Training-Instrument-Scientists-in-IBEX)
 
-The plan is to run regular instrument scientist training courses so that they can become familiar with IBEX. Often the course will be before we migrate instruments to IBEX. The process is below the steps are not necessarily in order:
+From time-to-time, we run IBEX and genie_python training courses.  This page collects information that you will need to organise and run the IBEX and genie_python train courses.
 
-1. Check for general training tickets on the backlog. They may suggest people who need to be invited and alterations to training material that need to be made.
-1. Contact instrument scientists with an invite with a suggested date. The email I sent last was
+## When should we run IBEX and genie_python train courses?
+There is never an ideal time to run IBEX and genie_python train courses.  Running training courses during cycle is difficult, because scientists are usually heavily involved with their instruments.  Running training courses out of cycle is difficult, because scientists use the opportunity to take holidays, attend conferences, catch up on other work ...  
 
->Hi **XXX, XXX, XXX**
->    
-> As you know we are migrating or have migrated your instruments to IBEX. To help you use the new system we would like to invite you to some training with IBEX. If you would like to come can you suggest some dates when you are free; maybe something in the week of the **XXXXX**. If there is anyone else you think should come please let me know so I can invite them too.
->  
-> In similar sessions we have had a hands on tour of IBEX using simulated instruments with slides The session can be tailored to your needs and we can spend more or less time on each part. Last time it took a couple of hours to run the session. The summary from last time was:
->    1.	General Introduction
->    2.	IBEX
->
->         a. Main
->
->         b. Dashboard
->
->         c. Blocks
->
->         d. System views (Alarm, DAE, Device Screens, Experiment Details, Logs, Log Plotter, Motors, Synoptics)
->    3.	Configurations
->    4.	Scripting
->    
-> I have attached the slides that we used last time. They are no longer completely accurate and will be updated to reflect the improvements we have made in IBEX. 
->    
-> The other option is to give you early access to the simulated instruments so that you can try out things before you come 
-    and use it more as a Q&A session; let me know if you would prefer this.
->    
-> If you have any question please don’t hesitate to ask otherwise please let me know of dates that would be good.
->    
-> Cheers,
->
-> **XXX**
+The best compromise is to run IBEX and genie_python train courses during the shutdown, shortly before the start of a new cycle.  Why shortly before the start of a new cycle?  Because, people tend to forget what they have learned unless they have an opportunity to put it into practice.  So, as a rule of thumb, try to schedule the course 2-3 weeks before the start of cycle.  You could also run the courses during the week before cycle, but you might need this time to make final adjustments to instruments, so try to avoid this time if possible.
 
-1. Wait for replies then organise a calendar invite
-    1. I have booked 3hrs in total, usually in CR21 or CR25
-    1. Try to book the room 15 minutes beforehand to setup.
-1. Organise laptops from facilities
-1. Update the [training material](links-and-resources)
-1. Create a number of VMs with IBEX installed for scientists to play with
+Because training has to be synchronised with ISIS cycles, you need to think about planning training sessions well in advance - 3-6 months in advance.
 
-During the talk make sure the talking is shared so it is clear it is a group that is supporting the application.
+## Training materials
+
+- [Mantid](https://www.mantidproject.org/Documentation)
+- [IBEX](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/links-and-resources)
+    - There is a slide at the end of the material called "Reference card". This is supposed to provide a brief reference of the major IBEX features. Print off a copy for each delegate.
+- [genie_python](https://github.com/ISISComputingGroup/ibex_user_manual/wiki/genie_python-and-IBEX-%28Introduction%29)
+
+## Planning the IBEX and genie_python training courses
+This section summarises the steps you will need to consider when planning the IBEX and genie_python training courses.
+### Check with the Mantid team
+The Mantid team regularly run a Mantid course and an Introduction to  Python courses.  Check with the Mantid team to discover their plans.  You can often collaborate of training activities.  It is very useful if the Mantid team can deliver the Introduction to  Python course, prior to the genie_python with IBEX course.
+### Select a date for the training
+As noted above, select a date for the training 2-3 weeks ahead of the cycle.  You may need to select 2 or 3 dates and only make a final decision when you know availability of the venue.  You might also need to book a day or so either side of your chosen date, to allow for set-up and clear-up before/after the course.
+### Advertise the training course
+Tell instrument scientists and visiting scientists of the proposed dates for the training course and invite them to sign up to attend.  Scientists will typically need 2-3 months advance notice, so make sure you tell them early.  Make sure you tell scientists to respond by a cut-off date - otherwise, it can be tricky trying to squeeze people in if they respond only 2-3 days before the course is due to run.
+1. During this step check for general training tickets on the backlog because this may suggest people who need to be invited. 
+
+### Decide which training venue to use
+Recent training courses have been presented in R80 (rooms CR16 & CR17) and in the Central Design Facility (CDF) suite in the Atlas Building.  The CDF is a dedicated training and collaborative design facility, operated by RAL Space.  If you wish to use the CDF, you need to book it with RAL Space.
+
+To book the CDF Suite:
+* Contact Andrew Caldwell at RAL Space.  Andrew administers CDF activities.  Tell him which days you'd like to run the training.  Andrew will tell you if those days are available.
+* Contact Chris Gibbins.  Chris is the IT guy for the CDF.  Chris can help you install IBEX and genie_python images on the dedicated PCs in the CDF suite.
+
+To use CR16 & CR17 in R80
+* Book CR16 & CR17 via Outlook.  These rooms are heavily used, so you need to book early to get the dates you want.
+* Contact Facilities IT to arrange to have laptops made available to the training delegates.  You will also need to coordinate with Facilities IT to get IBEX & genie_python installed on each laptop.
+
+### Review the training course materials
+Make sure you review the training course materials.  Have any new features been added to IBEX or genie_python that might require a change to the course content or are their training tickets on the backlog which should be considered?  if so, update the course.  It is a good idea to run through the course materials even if there have been no significant changes - just to re-familiarise yourself with the course contents.
+
+### Send Delegate list to CDF
+If you have decided to use the CDF suite, you need to tell RAL Space (i.e. Andrew Caldwell) the names of each of the delegates, so that they can arrange access (e.g. swipe passes) to the Atlas building.  RAL Space need 2-weeks notice to do this.  A simple spreadsheet naming each delegate, their e-mail and indicating if the individual is a member of ISIS staff is sufficient.
+
+### E-mail course joining instructions to all delegates
+1-2 weeks before the training course is due to run, send an e-mail to all delegates, telling them how to join the course.  Make sure you tell them: 
+   * where the course is being held (building, room number)
+   * which day(s) the course is running
+   * start time, finish time (e.g. if the course is due to start at 9:00AM, tell delegates to arrive at 8:45AM, so that the inevitable late-comers don't disrupt things too much).
+   * any other joining instructions (e.g. who to call if they get lost)
+
+### Set up and check the venue & facilities
+
+#### General
+
+- At least a week before the course, book any tea or coffee requirements with catering https://www.stfccatering.co.uk/. Typically we book:
+    - Coffee/tea (80%/20%) for 9am and 1pm. Usually we include some biscuits and a bottle of water
+    - We typically don't book lunch since most people leave to do other things over the break. Consider asking people whether they want lunch
+    - You will need a project code to book with catering. Ask one of the managers (e.g. Kevin Woods, Nick Draper, Tom Griffin) to provide one if you need it.
+- A day or two before the course runs, visit the venue to make sure everything is ready.  You do not want to be trying to sort out problems 5 minutes before the course is due to start.  Things to check are:
+   * are the desks arranged as you want them?
+   * are the audio-visual system (e.g. projector) working correctly?
+   * are the laptops/workstations properly setup and working?
+
+#### CDF specific
+
+The workstations at the CDF are generated by cloning a template machine. The source machine will need setting up a few days before to allow time for cloning. Contact Chris Gibbins a week before the training course to arrange a suitable time. The template machine will need the following software installed:
+
+- [MySQL](https://www.mysql.com/downloads/)
+    - Visual c++ redistributable. MySQL may manage to install this itself. Otherwise you'll need to download and install it manually. Be sure to get the architecture that matches MySQL (presumably 64-bit)
+- [Notepad++](https://notepad-plus-plus.org/)
+- [Java](https://java.com/en/download/)
+- [Git](https://git-scm.com/download/win)
+- IBEX (server + client)
+- [Mantid](http://download.mantidproject.org/) (if appropriate)
+- [Mantid training data](https://sourceforge.net/projects/mantid/files/Sample%20Data/TrainingCourseData.zip/download)
+- IBEX training configurations
+    - Clone using `git clone http://spudulike@control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/inst.git [MACHINE_NAME]`
+    - Switch to branch `NDXTRAIN`
+
+Before cloning the machine, it is helpful to apply the following settings to avoid having to do it individually:
+
+- Change the resolution from 4K to 1080p
+- Set the DAE to use appropriate TCB, wiring, spectra and detector tables from the configs. Verify you can start a run on the base machine
+- Set notepad++ to [replace tabs with spaces](https://stackoverflow.com/questions/455037/convert-tabs-to-spaces-in-notepad)
+
+The following changes should be applied to each of the workstations individually:
+
+- Rename the instrument config folder in `C:\Instrument\Settings\config` to match the machine name
+- Rename the `init_inst_name.py` file in `C:\Instrument\Settings\config\[machine name]\Python\inst` to match the instrument name
+- Delete the `.settings` directory in `C:\Instrument\Apps\Client\configuration`. This will empty the IBEX preference store and notably make sure it starts up pointing at the local instrument rather than the machine it was cloned from.
+- Make sure you can successfully start a run
+- Make sure that you can successfully start a scripting session
+- Stop the IBEX server (else it won't work properly for the next person who logs in)
+
+We may be able to automate all of those steps. For the time being the first three can be accomplished via a script. The following was a non-generic script that I used for the January 2018 training. I haven't refined it yet in anticipation that we can do something more comprehensive with AutoIt+Python in the future.
+
+```
+import shutil
+import os
+import socket
+
+
+def delete_stored_gui_settings():
+    shutil.rmtree(os.path.join("C:\\", "Instrument", "Apps", "Client", "configuration", ".settings"))
+
+
+def rename_config_folder():
+    root_config_folder = os.path.join("C:\\", "Instrument", "Settings", "config")
+    possible_config_folders = [os.path.join(root_config_folder, "DESKTOP-NP89I4S"),
+                               os.path.join(root_config_folder, "DESKTOP-NT4N3KQ")]
+    config_folder = [p for p in possible_config_folders if os.path.exists(p)][0]
+    shutil.move(config_folder, os.path.join(root_config_folder, socket.gethostname()))
+
+
+def rename_script_module_initializer():
+    script_folder = os.path.join("C:\\", "Instrument", "Settings", "config", socket.gethostname(), "Python")
+    files_to_delete = [
+        os.path.join(script_folder, "init_desktoc9.py"),
+        os.path.join(script_folder, "init_deskto24.py"),
+        os.path.join(script_folder, "init_desktoc9.pyc"),
+        os.path.join(script_folder, "init_deskto24.pyc"),
+    ]
+    for f in files_to_delete:
+        if os.path.exists(f):
+            os.remove(f)
+    possible_init_paths = [os.path.join(script_folder, "init_desktop_np89i4s.py"),
+                           os.path.join(script_folder, "init_desktop_nt4n3kq.py")]
+    init_path = [p for p in possible_init_paths if os.path.exists(p)][0]
+    shutil.move(init_path, os.path.join(script_folder, "init_{}.py".format(socket.gethostname().lower())))
+
+
+delete_stored_gui_settings()
+rename_config_folder()
+rename_script_module_initializer()
+```
+
