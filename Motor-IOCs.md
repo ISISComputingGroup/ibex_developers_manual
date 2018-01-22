@@ -1,6 +1,6 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > Motor IOCs
 
-The basis of the motor IOCs at ISIS is the [motor record](http://www.aps.anl.gov/bcda/synApps/motor/), which aims to provide a generic interface to all motors regardless of make or model. The motor record is a single PV that contains a number of fields for things like motor speed, position, encoder readback etc. Note that this is very different to the way other IOCs would normally be set up, where each of these values would be it's own PV. 
+The basis of the motor IOCs at ISIS is the [motor record](https://www3.aps.anl.gov/bcda/synApps/motor/index.html), which aims to provide a generic interface to all motors regardless of make or model. The motor record is a single PV that contains a number of fields for things like motor speed, position, encoder readback etc. Note that this is very different to the way other IOCs would normally be set up, where each of these values would be it's own PV. 
 
 Naming conventions for motor PVs are also different in that all motors are of the form `%PVPREFIX%MOT:MTR0101` where the first number gives the controller and the second gives the axis. These controller/axis numbers are what dictates the axis position in the table of motors.
 
