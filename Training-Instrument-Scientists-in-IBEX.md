@@ -9,6 +9,10 @@ The best compromise is to run IBEX and genie_python train courses during the shu
 
 Because training has to be synchronised with ISIS cycles, you need to think about planning training sessions well in advance - 3-6 months in advance.
 
+## Recording that a Person would like to attend the next Training Session
+
+We record people who would like to attend the next training session by listing then on a ticket entitled "TRAINING: Invites for next session"
+
 ## Training materials
 
 - [Mantid](https://www.mantidproject.org/Documentation)
@@ -24,7 +28,7 @@ The Mantid team regularly run a Mantid course and an Introduction to  Python cou
 As noted above, select a date for the training 2-3 weeks ahead of the cycle.  You may need to select 2 or 3 dates and only make a final decision when you know availability of the venue.  You might also need to book a day or so either side of your chosen date, to allow for set-up and clear-up before/after the course.
 ### Advertise the training course
 Tell instrument scientists and visiting scientists of the proposed dates for the training course and invite them to sign up to attend.  Scientists will typically need 2-3 months advance notice, so make sure you tell them early.  Make sure you tell scientists to respond by a cut-off date - otherwise, it can be tricky trying to squeeze people in if they respond only 2-3 days before the course is due to run.
-1. During this step check for general training tickets on the backlog because this may suggest people who need to be invited. 
+1. During this step check for general training tickets on the backlog because any people who need to be invited will be listed here. 
 
 ### Decide which training venue to use
 Recent training courses have been presented in R80 (rooms CR16 & CR17) and in the Central Design Facility (CDF) suite in the Atlas Building.  The CDF is a dedicated training and collaborative design facility, operated by RAL Space.  If you wish to use the CDF, you need to book it with RAL Space.
