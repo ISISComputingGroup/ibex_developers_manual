@@ -11,7 +11,7 @@ The settings directory should be in `c:\Instrument\Settings`, it contains (each 
         - Python: Instrument specific python modules (TODO create a page)
         - configurations directory
 
-# configurations directory
+# Configurations directory
 
 The configurations directory has the settings for the instrument in. 
 
