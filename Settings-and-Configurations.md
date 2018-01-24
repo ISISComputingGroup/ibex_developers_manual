@@ -49,7 +49,7 @@ Directories:
 
 - galil: configures the galil [Galil](Galil) and extenstions
 - mclen: configures McLennan motors [McLennan](McLennan) and extenstions
-- sm300_01: configures the SM300_01 motor extenstions
+- sm300_01: configures the [SM300_01](SM300) motor extenstions
 - motionSetPoints: setpoint look up files
 
 Common extensions:
