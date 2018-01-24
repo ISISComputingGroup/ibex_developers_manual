@@ -26,7 +26,7 @@ It contains some files:
 
 The user configuration is items we expect an instrument scientist to change using the GUI. These include the
  - [configurations: contains configurations](Configuration-Rules)
- - components: contains the components which can be included in a configuration
+ - [components: contains the components which can be included in a configuration](Configuration-Rules#components)
  - synoptics: graphical representation of the instrument
  - device: device screens
 
