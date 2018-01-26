@@ -50,7 +50,11 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
 1. Update the [user manual](https://github.com/ISISComputingGroup/ibex_user_manual/wiki) with any relevant changes
 
 ### Testing
-1. Test
+On NDXDEMO:
+1. Navigate to the `ibex_utils` folder and pull the latest changes from git
+1. Check `instrument_deploy.bat` contains the correct version number for the current release. If so, run it
+1. Follow the instructions on the command line interface. If you are unsure whether a step needs to performed, ask someone from the team.
+1. Run through the [manual system tests](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/testing/manual_system_tests_template.xlsx)
 1. Record and fix any bugs
 
 ### Post Testing
