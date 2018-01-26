@@ -54,6 +54,7 @@ On NDXDEMO:
 1. Navigate to the `ibex_utils` folder and pull the latest changes from git
 1. Check `instrument_deploy.bat` contains the correct version number for the current release. If so, run it
 1. Follow the instructions on the command line interface. If you are unsure whether a step needs to performed, ask someone from the team.
+1. Run `create_icp_binaries.bat` in the EPICS directory. If the instrument never makes it out of "Processing" with the ISISDAE IOC throwing errors that read "CoCreateInstanceEx (ISISICP) : The system cannot find the path specified", this is how you fix it.
 1. Run through the [manual system tests](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/testing/manual_system_tests_template.xlsx)
 1. Record and fix any bugs
 
