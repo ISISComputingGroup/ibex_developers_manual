@@ -56,3 +56,7 @@ The protocol is defined in `C:\Instrument\Apps\EPICS\support\instron\master\inst
   * `READ_VAR` reads at a rate that can be varied by the user
   * In the `READ_VAR` loop the `.1 Second` option has been removed, this is too fast for the rig to handle
 - If something works in LabVIEW but not in EPICS, or vice-versa, NI Input/Output trace (NI Spy) can be very useful to compare the traffic and spot any differences.
+- The waveform generator does not like recieving setpoints in quick succession. This can cause a fault with the following symptoms:
+  * The "remote" light on the hardware control panels remains lit
+  * The hardware control panel crashes (it may display that it's in two control channels simultaneously - this is usually impossible
+  * The hydraulics will trip.
