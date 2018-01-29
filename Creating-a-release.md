@@ -29,6 +29,7 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
     1. [EPICS-ioc](https://github.com/ISISComputingGroup/EPICS-IOC) (for version number update)
     1. [genie_python](https://github.com/ISISComputingGroup/genie_python)
     1. [ibex_gui](https://github.com/ISISComputingGroup/ibex_gui)
+    1. For EPICS submodules you may be able to use `git submodule foreach "git checkout master;git pull;git checkout -b Release_1.1.1; git push -u origin Release_1.1.1"` to create the release branches.
 1. Update the version numbers:
     1. GUI
         1. In `ibex_gui/base/uk.ac.stfc.isis.ibex.product/META-INF/MANIFEST.MF` edit `Bundle-Version:...` to be `X.x.m.qualifier`
