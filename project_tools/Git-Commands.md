@@ -77,3 +77,11 @@ git config --global --unset-all http.proxy    | Remove http proxies from global 
 git config --global --unset-all https.proxy   | Remove https proxies from global config
 git config --unset-all http.proxy             | Remove http proxies from local config
 git config --unset-all https.proxy            | Remove https proxies from local config
+
+## Remove/Move tags
+
+`git tag` list tags
+`git tag -d <tagname>` remove the tag locally
+`git push origin :refs/tags/<tagname>` push the removed tag to remote
+`git tag <tagname> <commitId>` create the new tag pointing at the right place
+`git push origin <tagname>` push the new tag to the repo
