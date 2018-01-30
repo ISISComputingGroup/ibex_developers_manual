@@ -66,7 +66,7 @@ On NDXDEMO:
     1. Enter the tag version in the format `VX.x.p` and target the release branch
     1. Enter the title `Release version X.x.p`
     1. Add a link to the release notes in the description
-1. Merge release branch back into master to capture any changes
+1. Make sure any changes on the release branch are merged back onto master (except version numbering)
 1. Consider which instruments need this release:
     * Breaking release: upgrade everyone
     * Big improvement:  upgrade everyone if there is a big improvement that everyone will benefit from
