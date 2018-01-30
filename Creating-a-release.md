@@ -29,6 +29,7 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
     1. [EPICS-ioc](https://github.com/ISISComputingGroup/EPICS-IOC) (for version number update)
     1. [genie_python](https://github.com/ISISComputingGroup/genie_python)
     1. [ibex_gui](https://github.com/ISISComputingGroup/ibex_gui)
+    1. For EPICS submodules you may be able to use `git submodule foreach "git checkout master;git pull;git checkout -b Release_1.1.1; git push -u origin Release_1.1.1"` to create the release branches.
 1. Update the version numbers:
     1. GUI
         1. In `ibex_gui/base/uk.ac.stfc.isis.ibex.product/META-INF/MANIFEST.MF` edit `Bundle-Version:...` to be `X.x.m.qualifier`
@@ -50,7 +51,12 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
 1. Update the [user manual](https://github.com/ISISComputingGroup/ibex_user_manual/wiki) with any relevant changes
 
 ### Testing
-1. Test
+On NDXDEMO:
+1. Navigate to the `ibex_utils` folder and pull the latest changes from git
+1. Check `instrument_deploy.bat` contains the correct version number for the current release. If so, run it
+1. Follow the instructions on the command line interface. If you are unsure whether a step needs to performed, ask someone from the team.
+1. Run `create_icp_binaries.bat` in the EPICS directory. If the instrument never makes it out of "Processing" with the ISISDAE IOC throwing errors that read "CoCreateInstanceEx (ISISICP) : The system cannot find the path specified", this is how you fix it.
+1. Run through the [manual system tests](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/testing/manual_system_tests_template.xlsx)
 1. Record and fix any bugs
 
 ### Post Testing

@@ -13,3 +13,5 @@ Various Processes or tasks and info into how they should work. Remember rules ca
 - [Training Instrument Scientists in IBEX](Training-Instrument-Scientists-in-IBEX)
 
 - [Prioritisation of tickets](Prioritisation-of-Tickets)
+
+- [Umbrella Tickets](Umbrella-Tickets) Creation of an umbrella/epic tickets or spins inside an umbrella/epic ticket

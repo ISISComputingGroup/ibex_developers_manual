@@ -16,6 +16,23 @@ The Instron stress rig is a National Instruments GPIB device. It requires some s
   * If you need to calibrate the rig, the following sequence on the console should be used: "Load channel: setup" -> "cal" -> "cal" -> "auto" -> "go" (if you are unsure about this ask the scientists)
   * Turn back on the GPIB box. 
   * After the GPIB box has been turned on for a short time (e.g. 1 minute) the driver (LabVIEW or IOC) should be ready to connect.
+  * GPIB box LEDs - PWR should be orange, LNK 10/100 should be green. Other LEDs will be flickering depending on connection. Box might have a slightly dodgy connection (not sure about this, but check it) so ensure the LEDs are as described.
+
+# Rigs
+
+There are two rigs: 50kN and 100kN.
+
+To turn on the actuator for the 100kN rig, there are three buttons on the front labelled "O", "I", "II". Press these in order to enable the actuator.
+
+To turn on the actuator for the 50kN rig, Press and hold the "Hydraulics on" button for at least 10 seconds. You should hear the hydraulic system engage (also, the hydraulic lines will change position slightly). Then press actuator "off", "low", "high" (in order) to enable the actuator.
+
+# Hardware debugging
+
+- If the hydraulics on the rigs keep tripping off and the rig returns a status of "oil too hot"
+
+Check if the cooling water circuit for TS1 south side is turned on. If not, the instron's oil might heat up too much which causes the hydraulics to trip when moving the rig. This happens regardless of whether IOC, LabVIEW, or manual control is used to move the actuator. Additional symptoms are a rig status of "HYD. PUMP SHUTDOWN" and the red status light on the control panel being solidly on (and not being able to clear it).
+
+If the cooling water is off, there is a circulation pump that can be used to run the rig in low-force mode: ask the scientists.
 
 # Driver
 
@@ -39,3 +56,7 @@ The protocol is defined in `C:\Instrument\Apps\EPICS\support\instron\master\inst
   * `READ_VAR` reads at a rate that can be varied by the user
   * In the `READ_VAR` loop the `.1 Second` option has been removed, this is too fast for the rig to handle
 - If something works in LabVIEW but not in EPICS, or vice-versa, NI Input/Output trace (NI Spy) can be very useful to compare the traffic and spot any differences.
+- The waveform generator does not like recieving setpoints in quick succession. This can cause a fault with the following symptoms (see also https://github.com/ISISComputingGroup/IBEX/issues/2802):
+  * The "remote" light on the hardware control panels remains lit
+  * The hardware control panel crashes (it may display that it's in two control channels simultaneously - this is usually impossible
+  * The hydraulics will trip.

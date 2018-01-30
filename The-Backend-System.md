@@ -31,3 +31,7 @@ How to build and configure Nicos.
 # [Useful tools](Useful-tools)
 
 Links to some tools that have proven useful for the project.
+
+# [Settings and Configurations](Settings-and-Configurations)
+
+How is an instrument configured and what is stored in the settings directory (c:\Instrument\Settings).

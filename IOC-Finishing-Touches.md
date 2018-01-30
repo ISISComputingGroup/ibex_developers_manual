@@ -11,6 +11,7 @@ To have a PV appear in the interest list in IBEX Configurations add the followin
 where level is HIGH, MEDIUM, LOW.
 
 For records that are of no "interest" do not add an interest info field. For example: intermediate CALC records, SIM records etc.
+Any calc record which are interesting need `field(ASG, "READONLY")` adding some they can not be set by accident.
 
 ## 2. Archive PVs
 

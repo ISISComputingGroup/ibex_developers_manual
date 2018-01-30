@@ -4,3 +4,4 @@
 * [Mecury iTC](MercuryiTC)
 * [Julabo](Julabo)
 * [Neocera LTC-21](Neocera-LTC-21)
+* [Triton](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Triton)
