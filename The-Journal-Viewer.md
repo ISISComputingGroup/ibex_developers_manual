@@ -2,7 +2,10 @@ _(Work in progress)_
 
 # Overview
 
-Contains information on the IBEX journal viewer 
+Contains information on the IBEX journal viewer. This feature is intended to provide users with easy access to the journal data via a view integrated into the IBEX client, that shows a table with data from journal files for the current instrument and cycle. This solution is implemented completely independently of pre-existing journal viewers and consists of:
+- A MySQL database containing run information
+- A journal parser that populates the database with data read from XML journal files in the machine's `C:\Data\` directory
+- An IBEX perspective reading and displaying data from the database.
 
 ## Setup journal parser on dev machine
 
