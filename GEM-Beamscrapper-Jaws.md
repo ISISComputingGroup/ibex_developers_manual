@@ -57,3 +57,4 @@ The offset / motor resolution in IBEX uses `(MRES * x) + OFF` when reading, ther
 Jaw | New Offset | New Motor Resolution
 South | `-SECI_OFF * SECI_MRES` | `SECI_MRES`
 N, E, W | `SECI_OFF * SECI_MRES` | `-SECI_MRES`
+
