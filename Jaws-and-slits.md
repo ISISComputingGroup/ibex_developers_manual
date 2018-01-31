@@ -2,5 +2,5 @@
 
 * [Polaris Jaws](Polaris-Jaws)
 * [EnginX Jaws](EnginX-Jaws)
-* [GEM Beamscrapper Jaws](GEM-Jaws)
+* [GEM Beamscrapper Jaws](GEM-Beamscrapper-Jaws)
 * [Barndoors and Momentum Slits on MUON Front End](Barndoors-and-Momentum-Slits-on-MUON-Front-End)
