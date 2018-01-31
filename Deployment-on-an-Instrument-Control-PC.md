@@ -3,15 +3,28 @@
 This document describes the steps necessary to install/upgrade IBEX on an Instrument control PC.  Most of these steps are superseded the install script (but we are not quite ready to commit to this).  This document is the reference for deployment. 
 Steps are marked with **bold** prefixes to indicate the following:
 - **deploy** step to be done when using the deploy script
-- **ND** steps not to be done when using the deploy script
 - **upgrade** steps to be done when upgrading 
 - **install** steps should be done only for install
 - **mini-inst** only these steps should be done for installation of a mini inst server. After installation [configure](Configure-Mini-Inst) it in the appropriate manner.
 - unlabelled steps should be done except for installing a mini inst.
 
+# Steps using the deployment script
 ## Preparatory Steps for Client and Server
 
-- As early as possible email the group to let us know of the upgrade. This includes starting point (e.g. v2.2.0) and what is going to be released. This will allow people to comment or add special instructions for various machines if they have forgotten to add them to the IBEX page.
+- Inform the instrument scientist that you are going to upgrade the instrument in 5 minutes so that they are not surprised when you remote desktop to the instrument. Wait 5 minutes.
+
+- TODO put upgrade in accessible place. For the minute use the one in <public share>/installation_and_upgrade (NB Java upgrade is also in here if needed).
+- Ensure the instrument is running
+- Ensure all command lines to EPICS are closed
+- Run `C:\Instrument\installation_and_upgrade\instrument_deploy.bat`
+    - Apart from the next points just follow instructions
+    - Be warned the upgrade runs in 3 steps and so will claim to have finished the upgrade 3 times
+    - After backup of EPICS step do database disc space clear using [Database Troubleshooting Reducing database disc space](Database-Troubleshooting#Reducing-database-disc-space)
+
+
+
+# Steps using Manual Steps
+## Preparatory Steps for Client and Server
 
 - Inform the instrument scientist that you are going to upgrade the instrument in 5 minutes so that they are not surprised when you remote desktop to the instrument.
 
@@ -41,7 +54,7 @@ Steps are marked with **bold** prefixes to indicate the following:
     * **_Copy_** the following directories to backup directory:
         1. `C:\instrument\settings`
         1. `C:\instrument\var\autosave`
-    * Clear up database using [Database Troubleshooting Reducing database disc space](Database-Troubleshooting#Reducing database disc space)
+    * Clear up database using [Database Troubleshooting Reducing database disc space](Database-Troubleshooting#Reducing-database-disc-space)
     * Back up db if db is changing: 
         1. Stop the mysql service:
              1. `mysql -u root -p --execute="SET GLOBAL innodb_fast_shutdown=0"`
