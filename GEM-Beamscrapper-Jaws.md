@@ -55,6 +55,7 @@ To do these calibrations an additional soft motor record has been placed between
 The offset / motor resolution in IBEX uses `(MRES * x) + OFF` when reading, therefore the new offset motor resolution in IBEX are:
 
 Jaw | New Offset | New Motor Resolution
+---- | -------| ------ 
 South | `-SECI_OFF * SECI_MRES` | `SECI_MRES`
 N, E, W | `SECI_OFF * SECI_MRES` | `-SECI_MRES`
 
