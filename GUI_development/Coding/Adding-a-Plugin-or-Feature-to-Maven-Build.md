@@ -8,7 +8,7 @@ There are essentially two steps: adding a POM file to the plug-in/feature and ed
 
 * Create a new plugin, naming it suitably
 
-* Right click the new plugin, select 'Convert to Maven Project'
+* Right click the new plugin, select `Configure > Convert to Maven Project`
 
 * Open the plugin `uk.ac.stfc.isis.ibex.client.tycho.parent`
 
