@@ -13,7 +13,7 @@ First create a sql dump of the two largest schemas:
     "c:\Program Files\MySQL\MySQL Server 5.7\bin\mysqldump.exe" -u root -p msg_log > "c:\data\old\ibex_backup_YYYY_MM_DD\msg_log.sql"
     "c:\Program Files\MySQL\MySQL Server 5.7\bin\mysqldump.exe" -u root -p archive > "c:\data\old\ibex_backup_YYYY_MM_DD\archive.sql"
 
-Check the files look right and move them to long term storage (`\\isis\inst$\backups$\stage-deleted\<inst>`). Then from a command prompt:
+Check the files look right and move them to a directory called ibex_db_backup_YYYY_MM_DD and move the folder to long term storage (`\\isis\inst$\backups$\stage-deleted\<inst>`). Then from a command prompt:
 
     "c:\Program Files\MySQL\MySQL Server 5.7\bin\mysql.exe" -u root -p
 
@@ -21,4 +21,5 @@ Truncate the message log tables with:
 
     truncate table msg_log.message;
     truncate table archive.sample;
+    exit
 
