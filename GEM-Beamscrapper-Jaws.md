@@ -59,3 +59,4 @@ Jaw | New Offset | New Motor Resolution
 South | `-SECI_OFF * SECI_MRES` | `SECI_MRES`
 N/E/W | `SECI_OFF * SECI_MRES` | `-SECI_MRES`
 
+Tolerance and limits have been included in IBEX, the homing has not.
