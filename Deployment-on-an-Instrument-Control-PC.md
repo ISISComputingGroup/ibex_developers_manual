@@ -1,6 +1,13 @@
 > [Wiki](Home) > [Deployment](Deployment) > Deployment on an Instrument Control PC
 
-This document describes the steps necessary to install/upgrade IBEX on an Instrument control PC.  In due course, some, or all, of the steps may be superseded by an automated installation process (e.g. a .msi file).  Until then, this document is a useful reference. Steps for upgrading only are marked **upgrade**, steps for initial install are marked **install** other steps should be done for both. For a mini inst install (SECI instrument using an IOC) only undertake those steps marked **mini-inst** and [configure](Configure-Mini-Inst) it in the appropriate manner.
+This document describes the steps necessary to install/upgrade IBEX on an Instrument control PC.  Most of these steps are superseded the install script (but we are not quite ready to commit to this).  This document is the reference for deployment. 
+Steps are marked with **bold** prefixes to indicate the following:
+- **deploy** step to be done when using the deploy script
+- **ND** steps not to be done when using the deploy script
+- **upgrade** steps to be done when upgrading 
+- **install** steps should be done only for install
+- **mini-inst** only these steps should be done for installation of a mini inst server. After installation [configure](Configure-Mini-Inst) it in the appropriate manner.
+- unlabelled steps should be done except for installing a mini inst.
 
 ## Preparatory Steps for Client and Server
 
@@ -8,7 +15,7 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
 
 - Inform the instrument scientist that you are going to upgrade the instrument in 5 minutes so that they are not surprised when you remote desktop to the instrument.
 
-- **install** Check that Java is installed on the PC.  If not, download the latest JRE from the Java website (http://www.java.com/en/) and install it.  Make sure you choose the 64-bit version of Java.  See also [Upgrade Java](Upgrade-java).
+- **install** Check that Java is installed on the PC.  If not, download the latest JRE from the Java website (http://www.java.com/en/) and install it.  Make sure you choose the 64-bit version of Java.  See also [Upgrade Java](Upgrade-java). The version should be that based on the release notes.
 
 - **install** If the PC is running the Windows Classic theme, switch it to a modern theme (e.g. Windows 7 Theme); the IBEX GUI looks better when using a modern theme.  To change the theme see [Change Windows Theme](Change Windows Theme).
 
