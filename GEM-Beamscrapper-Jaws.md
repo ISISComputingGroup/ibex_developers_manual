@@ -45,8 +45,8 @@ The calibration curves under IBEX have been simplified to:
 
 Jaw | Offset | Read Calibration Curve | Write Calibration Curve
 ---- | -------| ------ | ----------
-North | 2710 | `1.025*x` | `0.975*x`
-South | 1530 | `1.025*x` | `0.975*x`
+North | 2710 | `1.025*x` | `x / 1.025`
+South | 1530 | `1.025*x` | `x / 1.025`
 East  | 2200 | 	`-0.13376 + 0.07169 * x  + 0.03331 * x**2` | `(-0.07169 + sqrt(0.07169**2 + 4 * 0.03331 *(0.13376 + x))) / (2*0.03331)`
 West  | 2200 | 	`-0.13376 + 0.07169 * x  + 0.03331 * x**2` | `(-0.07169 + sqrt(0.07169**2 + 4 * 0.03331 *(0.13376 + x))) / (2*0.03331)`
 
