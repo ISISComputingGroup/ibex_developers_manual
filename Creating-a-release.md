@@ -51,13 +51,7 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
 1. Update the [user manual](https://github.com/ISISComputingGroup/ibex_user_manual/wiki) with any relevant changes
 
 ### Testing
-On NDXDEMO:
-1. Navigate to the `ibex_utils` folder and pull the latest changes from git
-1. Check `instrument_deploy.bat` contains the correct version number for the current release. If so, run it
-1. Follow the instructions on the command line interface. If you are unsure whether a step needs to performed, ask someone from the team.
-1. Run `create_icp_binaries.bat` in the EPICS directory. If the instrument never makes it out of "Processing" with the ISISDAE IOC throwing errors that read "CoCreateInstanceEx (ISISICP) : The system cannot find the path specified", this is how you fix it.
-1. Run through the [manual system tests](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/testing/manual_system_tests_template.xlsx)
-1. Record and fix any bugs
+One or more people should do [manual system tests, using this page](Manual-system-tests).
 
 ### Post Testing
 1. Create a release tag in the EPICS, ibex_gui and genie_python repositories. For each repo
@@ -66,7 +60,7 @@ On NDXDEMO:
     1. Enter the tag version in the format `VX.x.p` and target the release branch
     1. Enter the title `Release version X.x.p`
     1. Add a link to the release notes in the description
-1. Merge release branch back into master to capture any changes
+1. Make sure any changes on the release branch are merged back onto master (except version numbering)
 1. Consider which instruments need this release:
     * Breaking release: upgrade everyone
     * Big improvement:  upgrade everyone if there is a big improvement that everyone will benefit from
