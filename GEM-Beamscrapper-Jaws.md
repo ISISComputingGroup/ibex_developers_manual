@@ -16,6 +16,7 @@ West  | 2200 | 	`(-0.12038 + 0.06452 * x  + 0.02998 * x**2)/0.9` | `(x - 0.1*x)`
 Where there are two equations the first equation calculates the x used in the second equation where there are two.
 
 The calibration/offset values are used as below:
+
 Read/Write | Axis | Equation
 ---------- | ---- | --------
 Write | South | `OFF + (x / calibration)`
