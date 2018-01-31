@@ -11,7 +11,7 @@ Because training has to be synchronised with ISIS cycles, you need to think abou
 
 ## Recording that a Person would like to attend the next Training Session
 
-We record people who would like to attend the next training session by listing then on a ticket entitled "TRAINING: Invites for next session"
+We record people who would like to attend the next training session by listing them on a ticket entitled "TRAINING: Invites for next session"
 
 ## Training materials
 
