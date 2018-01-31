@@ -4,7 +4,7 @@ The GEM "Beamscraper" jaw set is unique to GEM. The four blades move independent
 
 ## Control under SECI
 
-LinMot calibration: 0.01953125 mm/steps (Mistakenly labelled as steps/mm in the VI)
+LinMot motor resolution: 0.01953125 mm/steps (Mistakenly labelled as steps/mm in the VI)
 
 Jaw | Offset | Read Calibration Curve | Write Calibration Curve
 ---- | -------| ------ | ----------
@@ -15,14 +15,14 @@ West  | 2200 | 	`(-0.12038 + 0.06452 * x  + 0.02998 * x**2)/0.9` | `(x - 0.1*x)`
 
 Where there are two equations the first equation calculates the x used in the second equation where there are two.
 
-The calibration/offset values are used as below:
+The motor resolution/offset values are used as below:
 
 Read/Write | Axis | Equation
 ---------- | ---- | --------
-Write | South | `OFF + (x / calibration)`
-Write | N/E/W | `OFF - (x / calibration)`
-Read | South | `(x - OFF) * calibration)`
-Read | South | `(OFF - x) * calibration)`
+Write | South | `OFF + (x / MRES)`
+Write | N/E/W | `OFF - (x / MRES)`
+Read | South | `(x - OFF) * MRES)`
+Read | South | `(OFF - x) * MRES)`
 
 Where x has been calculated from the calibration curves above.
 
@@ -40,3 +40,20 @@ West | 0.1 | 12.5
 East | 0.1 | 12.5
 
 ## Control under IBEX
+
+The calibration curves under IBEX have been simplified to:
+
+Jaw | Offset | Read Calibration Curve | Write Calibration Curve
+---- | -------| ------ | ----------
+North | 2710 | `1.025*x` | `0.975*x`
+South | 1530 | `1.025*x` | `0.975*x`
+East  | 2200 | 	`-0.13376 + 0.07169 * x  + 0.03331 * x**2` | `(-0.07169 + sqrt(0.07169**2 + 4 * 0.03331 *(0.13376 + x))) / (2*0.03331)`
+West  | 2200 | 	`-0.13376 + 0.07169 * x  + 0.03331 * x**2` | `(-0.07169 + sqrt(0.07169**2 + 4 * 0.03331 *(0.13376 + x))) / (2*0.03331)`
+
+To do these calibrations an additional soft motor record has been placed between the conventional jaws db and the real motor, such as described [here](Creating-soft-motors-to-control-real-motors). Note that for the linear calibration curve is actually incorrect in the VI as `1 / 1.025 != 0.975`. Therefore in IBEX `1.025` and `1 / 1.025` are used for reading and writing respectively.
+
+The offset / motor resolution in IBEX uses `(MRES * x) + OFF` when reading, therefore the new offset motor resolution in IBEX are:
+
+Jaw | New Offset | New Motor Resolution
+South | `-SECI_OFF * SECI_MRES` | `SECI_MRES`
+N, E, W | `SECI_OFF * SECI_MRES` | `-SECI_MRES`
