@@ -41,7 +41,8 @@ To deploy on a new instrument see [Deployment](https://github.com/ISISComputingG
 
 To update the production version of the dashboard:
 * Remote desktop into NDAEXTWEB1 with IBEX builder
-* Update the code in C:\JSON_Bourne and C:\inetpub\wwwroot\DataWeb\IbexDataweb
+* Update C:\JSON_Bourne with the JSON_bourne python code
+* Update C:\inetpub\wwwroot\DataWeb\IbexDataweb with the html and javascript for the webpage and the overview page
 * Restart JSON_bourne (it is running as a service)
 
 ## Development/Testing
