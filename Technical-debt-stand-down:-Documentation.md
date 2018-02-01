@@ -9,8 +9,12 @@ This page describes the work done as part of the documentation stand down on 2nd
 
 As a user I would like the documentation to be good so that I use it as a resource when I want to find out information.
 
-- Pages affected:
-    - [Home](home)
+### Pages affected
+- [Home](home)
+- ...
+
+### Acceptance criteria
+- New documentation is great
 
 # Completed work
 
