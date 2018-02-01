@@ -17,11 +17,3 @@ These are tests/checks that should be performed on the IBEX server after a relea
     1. Click on the spanner icon
     1. Ensure that the box `Should MySQL Installer update its catalog periodically?` is unticked
 
-### LARMOR
-
-1. None
-
-### IMAT
-
-1. None
-
