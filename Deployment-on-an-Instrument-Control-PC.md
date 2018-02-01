@@ -13,7 +13,7 @@ Steps are marked with **bold** prefixes to indicate the following:
 
 - Inform the instrument scientist that you are going to upgrade the instrument in 5 minutes so that they are not surprised when you remote desktop to the instrument. Wait 5 minutes.
 
-- Ensure the instrument was in a setup state (i.e. not "running") and IBEX server is not running
+- Ensure the instrument is running and in a setup state (e.g. so you can take suitable screenshots)
 - Ensure all command lines to EPICS are closed
 - Look in `C:\Program Files\MySQL` if `MySQL Server 5.7` and `MySQL Server 5.6` exists and `MySQL Server 5.6` is empty apart from bin then delete the directory `MySQL Server 5.6`
 - Run `<public share>\installation_and_upgrade\instrument_deploy.bat`
