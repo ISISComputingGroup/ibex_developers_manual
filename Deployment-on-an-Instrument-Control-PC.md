@@ -20,6 +20,7 @@ Steps are marked with **bold** prefixes to indicate the following:
     - Apart from the next points just follow instructions
     - Be warned the upgrade runs in 3 steps and so will claim to have finished the upgrade 3 times
     - After backup of EPICS step do database disc space clear using [Database Troubleshooting Reducing database disc space](Database-Troubleshooting#Reducing-database-disc-space)
+    - Ensure that after the upgrade configuration that galil mtrctrl macro has been set especially if the ip addresses are set in globals.txt
 
 
 
