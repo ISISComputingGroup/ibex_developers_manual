@@ -15,6 +15,7 @@ Steps are marked with **bold** prefixes to indicate the following:
 
 - Ensure the instrument is running
 - Ensure all command lines to EPICS are closed
+- Look in `C:\Program Files\MySQL` if `MySQL Server 5.7` and `MySQL Server 5.6` exists and `MySQL Server 5.6` is empty apart from bin then delete the directory `MySQL Server 5.6`
 - Run `<public share>\installation_and_upgrade\instrument_deploy.bat`
     - Apart from the next points just follow instructions
     - Be warned the upgrade runs in 3 steps and so will claim to have finished the upgrade 3 times
