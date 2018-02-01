@@ -132,12 +132,11 @@ Steps are marked with **bold** prefixes to indicate the following:
 
 ## Update the web dashboard
 
-To add a new EPICS instrument to the web dashboard you will need to do the following:
-- Add the instrument hostname to NDX_INSTS or ALL_INSTS within webserver.py on the master branch of (https://github.com/ISISComputingGroup/JSON_bourne)
-- Remote desktop into NDAEXTWEB1 with your fedID credentials (you may need to request admin rights on your credentials)
-- Update the code at C:\JSON Bourne to be the same as that in the repository
-- Add a link to the main page of the dataweb to IbexDataweb/default.html?instrument=_instname_. This can be done in the C:\inetpub\wwwroot\DataWeb\Dashboards\redirect.html
-- Restart JSON_bourne on extweb (It is running as a service).
+- **install** Add the instrument hostname to NDX_INSTS or ALL_INSTS within webserver.py on the master branch of (https://github.com/ISISComputingGroup/JSON_bourne)
+- **install** Remote desktop into NDAEXTWEB1 with IBEX Builder
+- **install** Update the code at C:\JSON Bourne to be the same as that in the repository
+- **install** Add a link to the main page of the dataweb to IbexDataweb/default.html?instrument=_instname_. This can be done in the C:\inetpub\wwwroot\DataWeb\Dashboards\redirect.html
+- **install** Restart JSON_bourne on extweb (It is running as a service).
 	
 ## Install IBEX Client
 
