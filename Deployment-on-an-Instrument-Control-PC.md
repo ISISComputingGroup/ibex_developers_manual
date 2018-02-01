@@ -13,10 +13,9 @@ Steps are marked with **bold** prefixes to indicate the following:
 
 - Inform the instrument scientist that you are going to upgrade the instrument in 5 minutes so that they are not surprised when you remote desktop to the instrument. Wait 5 minutes.
 
-- TODO put upgrade in accessible place. For the minute use the one in `<public share>/installation_and_upgrade` (NB Java upgrade is also in here if needed).
 - Ensure the instrument is running
 - Ensure all command lines to EPICS are closed
-- Run `C:\Instrument\installation_and_upgrade\instrument_deploy.bat`
+- Run `<public share>\installation_and_upgrade\instrument_deploy.bat`
     - Apart from the next points just follow instructions
     - Be warned the upgrade runs in 3 steps and so will claim to have finished the upgrade 3 times
     - After backup of EPICS step do database disc space clear using [Database Troubleshooting Reducing database disc space](Database-Troubleshooting#Reducing-database-disc-space)
