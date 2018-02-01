@@ -10,7 +10,7 @@ This page describes the work done as part of the documentation stand down on 2nd
 As a user I would like the documentation to be good so that I use it as a resource when I want to find out information.
 
 - Pages affected:
-    - [Technical debt stand down: Documentation]
+    - [Technical debt stand down: Documentation](Technical-debt-stand-down:-Documentation)
 
 # Completed work
 
