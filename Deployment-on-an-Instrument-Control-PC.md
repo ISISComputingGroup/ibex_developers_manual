@@ -13,7 +13,7 @@ Steps are marked with **bold** prefixes to indicate the following:
 
 - Inform the instrument scientist that you are going to upgrade the instrument in 5 minutes so that they are not surprised when you remote desktop to the instrument. Wait 5 minutes.
 
-- TODO put upgrade in accessible place. For the minute use the one in <public share>/installation_and_upgrade (NB Java upgrade is also in here if needed).
+- TODO put upgrade in accessible place. For the minute use the one in `<public share>/installation_and_upgrade` (NB Java upgrade is also in here if needed).
 - Ensure the instrument is running
 - Ensure all command lines to EPICS are closed
 - Run `C:\Instrument\installation_and_upgrade\instrument_deploy.bat`
