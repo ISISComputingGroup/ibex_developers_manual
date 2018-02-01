@@ -72,6 +72,16 @@ If you need to update the archive engine then you will need to:
 1. Run create_icp_binaries.bat
 1. `make clean uninstall install` in `..\EPICS\CSS\master`
 
+## Troubleshooting
+
+## General Investigation
+
+First look at the log to ensure that there are no issues. The log is held in `C:\JSON_Bourne\log`
+
+## Restart the service
+
+As admin open the services and restart the json bourne service.
+
 ## Future Development Ideas
 * We need to improve the unit test coverage of this project. It would be worth looking into the [requests-mock](https://pypi.python.org/pypi/requests-mock) library as this would make it very easy to test server code which makes HTTP requests.
 
