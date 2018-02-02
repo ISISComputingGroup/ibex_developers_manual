@@ -1,6 +1,6 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > Barndoors and momentum slits on MUON Front End
 
-Muon front end is feeding three instruments. It controls the moment and number of neutrons to the experiments. Momentum is controller by a single momentum slit device connected to a Galil. The exposure for each of the three instruments are controlled separately by 3 barndoors. 
+The Muon front end feeds three instruments (MUSR,EMU and HIFI). It controls the moment and number of neutrons to the experiments.  Momentum is controlled by a single momentum slit device connected to a Galil motor controller.  The exposure for each of the three instruments is controlled separately by 3 barndoor-type slits, also each connected to a Galil.
 
 ## Momentum Slits
 
@@ -13,7 +13,7 @@ The momentum slits are controlled by giving a distance between the slits to a PV
 
 ## Barndoors
 
-Barndoors can be opened different distances. The distance is no linearly connected to the voltage of the feedback from the motor. The aim is to provide 3 pvs which can be set the distance the barn doors should be opened by. The conversion is given in the conversion file. The file contains three columns Voltage EMU, MUSR and HIFI. A similar conversion is done in Eurotherm and Danfysik. We also need a readback PV. There is currently some Galil code to control the value but using a straight motor record might be better, if it can be made to work.
+Barndoors can be opened to different distances. The distance is no linearly connected to the voltage of the feedback from the motor. The aim is to provide 3 pvs which can be set the distance the barn doors should be opened by. The conversion is given in the conversion file. The file contains three columns Voltage EMU, MUSR and HIFI. A similar conversion is done in Eurotherm and Danfysik. We also need a readback PV. There is currently some Galil code to control the value but using a straight motor record might be better, if it can be made to work.
 
 | PV  | Description |
 | --- | ------------|

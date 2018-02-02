@@ -8,5 +8,5 @@ In the future, we may use an autosave-like mechanism to apply snapshots of motor
 
 # Dangers
 
-Mixing autosave with IOCs that load a dynamic number of axes/sensors can be dangerous. If the IOC is accidentally started with a macro that makes the IOC load no axes, autosave will save a file containing no values. When the IOC is subsequently restarted with the correct macros, it will read the autosave file (which has no values in it). This causes the IOC to "lose" it's previously saved values. This was seen in https://github.com/ISISComputingGroup/IBEX/issues/2180.
+Mixing autosave with IOCs that load a dynamic number of axes/sensors can be dangerous. If the IOC is accidentally started with a macro that makes the IOC load no axes, autosave will save a file containing no values. When the IOC is subsequently restarted with the correct macros, it will read the autosave file (which has no values in it). This causes the IOC to "lose" its previously saved values. This was seen in https://github.com/ISISComputingGroup/IBEX/issues/2180.
 

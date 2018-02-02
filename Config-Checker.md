@@ -32,7 +32,7 @@ Here are some possible resolutions to some failures. Not all possible failures a
 | ------ | ----  |
 | Config version is wrong | Check why config version and server version are different. Run upgrade script. |
 | There should not be more than one 'config_version.txt' file in the repository. | Remove extra version.txt file. |
-| Component <blah> contained unexpected files in it's directory | Check with the scientist whether we can move these files to a `data/old` directory or similar. |
+| Component <blah> contained unexpected files in its directory | Check with the scientist whether we can move these files to a `data/old` directory or similar. |
 | Component <blah> did not contain the required config file <blah> | Check if this config actually loads in IBEX. If not, remove or move to `data/old`. |
 
 
