@@ -22,7 +22,7 @@ We use Git for version control of the codebase. If you're not familiar with it, 
 - [Our Github resources/cribsheets](Working-with-git-and-github)
 - [Github's own Git tutorial](https://try.github.io/levels/1/challenges/2)
 
-# Familiarisation 
+# Familiarising EPICS
 
 While that's installing, get to know the IBEX components. Get to know EPICS. It's the software environment that IBEX uses to control the ISIS instruments. 
 
@@ -36,8 +36,16 @@ There is much to learn about EPICS and it can be difficult to know what you're l
 
 - [Powerpoint EPICS overview](https://epics.anl.gov/docs/USPAS2014/1-Monday/EPICS_Intro.pdf)
 - [Training Course](https://epics.anl.gov/docs/USPAS2014.php)
+- [Database Principles (what's a record? And more)](https://epics.anl.gov/docs/USPAS2014/2-Tuesday/Database-1.pdf)
+- [Database Principles II (with examples)](https://epics.anl.gov/docs/USPAS2014/2-Tuesday/Database-2.pdf)
+
+## Control System Studio
+
+We use CSS to create graphical user interfaces for the instrument controllers. Here's an overview and get started guide.
+
 - [Overview of CS-Studio (our controller GUI creation software)](https://epics.anl.gov/docs/USPAS2014/1-Monday/CSS_1_Overview.pdf)
 - [Intro to using CS-Studio](www.aps.anl.gov/epics/docs/USPAS2014/1-Monday/CSS_2_First_Steps.pdf)
+
 
 
 
