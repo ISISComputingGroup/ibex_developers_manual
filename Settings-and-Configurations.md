@@ -58,3 +58,22 @@ Common extensions:
  - [sample changer](Sample-Changers) (works for galil, McLennan and sm300)
  - [Barn doors and Momentum slits](Barndoors-and-Momentum-Slits-on-MUON-Front-End)
  - [larmor Beamstop](Larmor-Beamstop) (galil)
+
+### Version Control
+
+The configuration directory is backed up into git. This is done by the (Blockserver)[BlockServer#the-file-watcher--config-version-control].
+
+Each instrument stores the configurations in their own branch in this repository, these branches are named the same as the instrument machine.
+
+The repository is stored in /isis/git on control-svcs.isis.cclrc.ac.uk see (here)[http://control-svcs.isis.cclrc.ac.uk/git/]
+
+The config file of the repository must contain
+
+    [http]
+        receivepack = true
+
+or pushes will not work
+
+Cloning is via something like
+ 
+    git clone http://control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/common.git
