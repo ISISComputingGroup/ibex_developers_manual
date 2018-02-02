@@ -1,8 +1,6 @@
-These are created in /isis/git on control-svcs.isis.cclrc.ac.uk see
+These are created in /isis/git on control-svcs.isis.cclrc.ac.uk see [here](https://control-svcs.isis.cclrc.ac.uk/git/)
 
-    http://control-svcs.isis.cclrc.ac.uk/git/
-
-make sure you add   
+When creating a new repository make sure you add   
 
     [http]
         receivepack = true

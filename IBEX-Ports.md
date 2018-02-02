@@ -18,8 +18,8 @@ Everything else (IOCs, Block Cache, archivers etc.) are assigned ports as part o
 | Block Archiver web port | 4813 |
 | JSON Bourne web port | 60000 |
 | Blockserver web port | 8008 |
-
-TODO: JMS
+| Script Server (ActiveMQ STOMP port) | 39991 |
+| JMS (ActiveMQ openwire port) | 39990 |
 
 
 

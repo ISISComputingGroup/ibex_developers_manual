@@ -1,9 +1,5 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System)
 
-## [New Starter Guide](New-Starter-Guide)
-
-Start here if you are new to EPICS and IBEX.
-
 ## [Building the Backend](First-time-installing-and-building-(Windows))
 
 How to install and build the backend system for the first time on Windows.
