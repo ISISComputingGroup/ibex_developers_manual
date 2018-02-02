@@ -3,6 +3,9 @@ This page describes the work done as part of the documentation stand down on 2nd
 # Work in progress
 
 ## Updating info for new starters
+- Developer: Eilidh
+- Reviewer: None
+- Current status: In progress
 
 As a new member of the IBEX team, I'd like accessible and comprehensive info on getting started with EPICS/IBEX. 
 
