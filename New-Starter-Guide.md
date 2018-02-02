@@ -1,6 +1,8 @@
-Welcome to the team!
+## Welcome to the team!
 
 This page is designed to be used as a comprehensive reference to getting started with EPICS. Written by new starters, for new starters. It's a collection of useful resources which will speed up your onboarding and get you developing. 
+
+## Using the Developer Wiki
 
 There are many how-to guides in this developer Wiki. If you're searching for a particular nugget of information and there doesn't seem to be any information on it, double check results in the 'Wikis' tab:
 
