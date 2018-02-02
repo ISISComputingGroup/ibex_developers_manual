@@ -17,7 +17,7 @@ This page is designed to be used as a comprehensive reference to getting started
 
 ## Using the Developer Wiki
 
-There are many how-to guides in the Developer's manual. If you're searching for a particular nugget of information and there doesn't seem to be any information on it, double check results in the 'Wikis' tab:
+There are many how-to guides in the Developer's manual. If you're searching for a particular nugget of information and can't find the relevant page, double check the results in the 'Wikis' tab:
 
 
 ![Wiki Search Results](https://raw.githubusercontent.com/ISISComputingGroup/ibex_developers_manual/master/images/wiki_halp.png)
