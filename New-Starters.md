@@ -1,6 +1,6 @@
 ## Welcome!
 
-This page is designed to be used as a comprehensive reference to getting started with EPICS. Written by new starters, for new starters. It's a collection of useful resources which will speed up your onboarding and get you developing. 
+This page is designed to be used as a comprehensive reference to getting started in the Instrument Controls team. Written by new starters, for new starters. It's a collection of useful resources which will speed up your onboarding and get you developing. 
 
 ## Using the Developer Wiki
 
