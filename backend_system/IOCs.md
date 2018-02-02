@@ -17,7 +17,7 @@ If you're not creating a StreamDevice IOC or you you would like to know how an I
     * [IOC Testing framework](IOC-Testing-Framework)
     * [Emulating devices](Emulating-Devices)
 
-If you used the script to create your IOC an empty emulator and IOC tests will have been created for you.
+    If you used the script to create your IOC an empty emulator and IOC tests will have been created for you.
 
 1. [IOC Finishing Touches](IOC-Finishing-Touches)
     * Additional for motors [Adding motor IOC to global motor moving and stop all](Adding-motor-IOC-to-global-motor-moving-and-stop-all)
