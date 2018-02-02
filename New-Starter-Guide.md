@@ -2,9 +2,11 @@ Welcome to the team!
 
 This page is designed to be used as a comprehensive reference to getting started with EPICS. Written by new starters, for new starters. It's a collection of useful resources which will speed up your onboarding and get you developing. 
 
-There are many how-to guides in this developer Wiki. If you're searching for a particular nugget of information and there doesn't seem to be any information on it, double check the 'Wiki' tab:
+There are many how-to guides in this developer Wiki. If you're searching for a particular nugget of information and there doesn't seem to be any information on it, double check results in the 'Wikis' tab:
+
 
 ![Wiki Search Results](https://raw.githubusercontent.com/ISISComputingGroup/ibex_developers_manual/master/images/wiki_halp.png)
+
 
 # Getting Set Up
 
@@ -30,7 +32,12 @@ While that's installing, get to know the IBEX components. Get to know EPICS. It'
 
 ## Learning EPICS
 
-There is much to learn about EPICS and it can be difficult to know what you're looking for. 
+There is much to learn about EPICS and it can be difficult to know what you're looking for. Here are some overviews:
+
+- [Powerpoint EPICS overview](https://epics.anl.gov/docs/USPAS2014/1-Monday/EPICS_Intro.pdf)
+- [Training Course](https://epics.anl.gov/docs/USPAS2014.php)
+- [Overview of CS-Studio (our controller GUI creation software)](https://epics.anl.gov/docs/USPAS2014/1-Monday/CSS_1_Overview.pdf)
+- [Intro to using CS-Studio](www.aps.anl.gov/epics/docs/USPAS2014/1-Monday/CSS_2_First_Steps.pdf)
 
 
 
