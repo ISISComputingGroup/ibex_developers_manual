@@ -16,7 +16,7 @@ First off you're going to need all the developer tools we use, a copy of the exi
 
 - [Installing the Backend System](The-Backend-System)
 
-### *It's just a goat. 
+*It's just a goat. 
 
 ### Extras
 
