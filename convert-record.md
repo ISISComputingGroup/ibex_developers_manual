@@ -15,7 +15,7 @@ The convert records will load calibration data when it is initialised. To reload
 
     caput %MYPVPREFIX%<record name>.INIT 1
 
-## Tip, Tricks and Gotchas
+## Tips, Tricks and Gotchas
 
 1. The record will linearly interpolate the value this includes at either end of the record so make sure you set `DRVH` and `DRVL` if you want to avoid this.
 1. Make sure your calibration (in the way in the direction you are using it) has only one value per input otherwise it is not always clear what the answer will be. For example in the barn doors I have two calibration file one represents the gap for a given response (this includes inwards and outwards swing which have the same gap measurement) and one file which is just inward swing for when I am converting a gap to a motor movement.

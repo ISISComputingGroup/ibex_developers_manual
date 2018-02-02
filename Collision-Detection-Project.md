@@ -45,7 +45,7 @@ The system comprises four main parts:
 Additionally the instrument geometry configuration must be described, and is loaded in from `config.py`.
 
 ### A Note on Dial *vs* User Coordinates
-The system uses the *dial* versions of the readback and limit PVs (`DVAL`, `DRBV`, `DHLM`, `DLLM`) to protect the collision detection algorithm from changes in the user coordinate system. See [EPICS Motor Record](http://www.aps.anl.gov/bcda/synApps/motor/R6-9/motorRecord.htm).
+The system uses the *dial* versions of the readback and limit PVs (`DVAL`, `DRBV`, `DHLM`, `DLLM`) to protect the collision detection algorithm from changes in the user coordinate system. See [EPICS Motor Record](https://www3.aps.anl.gov/bcda/synApps/motor/R6-9/motorRecord.html).
 
 ### Collision Detector
 
