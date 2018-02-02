@@ -62,7 +62,8 @@ Note: this used by genie_python for checking block names used in CSETs etc. are 
 **BLOCKSERVER:BLOCK_RULES**
 
     Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:BLOCK_RULES
-    TODO: add description
+    Returns the rules for naming blocks. Specifically, a regex that new blocks must match and specific blocknames which are disallowed are returned.
+    Example JSON: {"regex": "^[a-zA-Z]\\w*$", "regexMessage": "Block name must start with a letter and only contain letters, numbers and underscores", "disallowed": ["lowlimit", "highlimit", "runcontrol", "wait"]}
 
 **BLOCKSERVER:GROUPS**
 Note: This PV is currently used by the web dashboard
