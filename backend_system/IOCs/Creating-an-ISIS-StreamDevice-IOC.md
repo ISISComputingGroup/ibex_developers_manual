@@ -1,5 +1,7 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > Creating an ISIS StreamDevice IOC
 
+The easiest way to create a StreamDevice is to use the script (here)[https://github.com/ISISComputingGroup/IBEX_device_generator] but if for some reason you want to create it manually the instructions are as follows:
+
 ## Create a StreamDevice support module
 
 Note: The support module is put in the `EPICS\support` directory, but the actual IOC(s) are put in the `EPICS\ioc\master` directory
