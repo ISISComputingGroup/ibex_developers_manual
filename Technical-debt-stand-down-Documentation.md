@@ -12,7 +12,7 @@ The IOC pages are messy, I will tidy them up
 
 
 ## Create a spell checking utility for the wikis
-- Developer: Adrian
+- Developer: Adrian/Tom
 - Reviewer: None
 - Current status: In progress
 
