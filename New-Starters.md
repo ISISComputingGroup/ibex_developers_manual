@@ -16,14 +16,25 @@ First off you're going to need all the developer tools we use, a copy of the exi
 
 - [Installing the Backend System](The-Backend-System)
 
-*It's just a goat. 
-
-### Extras
+### Git
 
 We use Git for version control of the codebase. If you're not familiar with it, learn it!
 
 - [Our Github resources/cribsheets](Working-with-git-and-github)
 - [Github's own Git tutorial](https://try.github.io/levels/1/challenges/2)
+
+### Useful shortcuts
+
+It's handy to create desktop shortcuts for frequently used links:
+
+- EPICSTerm (The terminal window where IOCs are built and run)
+- start_ibex_server
+- stop_ibex_server
+
+These are found in `C:\Instrument\Apps\EPICS`
+
+
+*it's just a goat. 
 
 ## Familiarising EPICS
 
@@ -33,7 +44,7 @@ While that's installing, get to know the IBEX components. Get to know EPICS. It'
 - [Information for User Scientists](https://github.com/ISISComputingGroup/IBEX/wiki)
 - [User Guide to IBEX](https://github.com/ISISComputingGroup/ibex_user_manual/wiki)
 
-## Learning EPICS
+## EPICS Introduction
 
 There is much to learn about EPICS and it can be difficult to know what you're looking for. Here are some overviews:
 
@@ -42,7 +53,7 @@ There is much to learn about EPICS and it can be difficult to know what you're l
 - [Database Principles (what's a record? And more)](https://epics.anl.gov/docs/USPAS2014/2-Tuesday/Database-1.pdf)
 - [Database Principles II (with examples)](https://epics.anl.gov/docs/USPAS2014/2-Tuesday/Database-2.pdf)
 
-### Extra EPICS
+### EPICS++
 
 - [State Notation Language 1](https://epics.anl.gov/docs/USPAS2014/2-Tuesday/SNL_1_EPICSAutomation.pdf) [State Notation Language 2](https://epics.anl.gov/docs/USPAS2014/2-Tuesday/SNL_2_Sequencer.pdf)
 - [ASYN/Stream Device overview](https://epics.anl.gov/docs/USPAS2014/2-Tuesday/SNL_2_Sequencer.pdf)
@@ -52,7 +63,7 @@ There is much to learn about EPICS and it can be difficult to know what you're l
 
 We use CSS to create Operator Interfaces (OPIs - GUIs, essentially) for the instrument controllers. Here's an overview and get started guide.
 
-- [Overview of CS-Studio (our controller GUI creation software)](https://epics.anl.gov/docs/USPAS2014/1-Monday/CSS_1_Overview.pdf)
+- [Overview of CS-Studio](https://epics.anl.gov/docs/USPAS2014/1-Monday/CSS_1_Overview.pdf)
 - [Intro to using CS-Studio](www.aps.anl.gov/epics/docs/USPAS2014/1-Monday/CSS_2_First_Steps.pdf)
 
 ## Input/Output Controller Resources
@@ -61,9 +72,3 @@ When building an IOC, emulator, or writing tests, much can be learned by looking
 
 - [Protocol Files and Record Types](http://epics.web.psi.ch/software/streamdevice/doc/protocol.html) - Excellent reference for when you're mixing up your %d's and %f's.
 - [Sequencer - State Notation in IOCs](http://www-csr.bessy.de/control/SoftDist/sequencer/Tutorial.html#pv-names-using-program-parameters) - All about implementing a state machine into an IOC, if needed.
-
-
-- Getting set up
-- Getting started with EPICs
-- Useful online resources
-- Further reading?
