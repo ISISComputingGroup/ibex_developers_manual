@@ -2,12 +2,12 @@ This page describes the work done as part of the documentation stand down on 2nd
 
 # Work in progress
 
-## Script to change titles
+## IOC creation tidy up
 - Developer: Dom
 - Reviewer: None
 - Current status: In progress
 
-As a new member of the IBEX team, I'd like to be able to easily change a page title and have all the associated links to that page also update.
+The IOC pages are messy, I will tidy them up
 
 ## Updating info for new starters
 - Developer: Eilidh
