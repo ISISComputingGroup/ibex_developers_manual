@@ -58,13 +58,11 @@ As an instrument scientist I would like to know how to move between SECI and IBE
 
 Move work in progress here when it's ready for review.
 
+# Completed work
+
 ## Updating info for new starters
 - Developer: Eilidh
 - Reviewer: Tom
 - Current status: Ready for review: [Page Link](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/New-Starters) . Linked from [Dev Manual](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki) under 'New Starters'.
 
 As a new member of the IBEX team, I'd like accessible and comprehensive info on getting started with EPICS/IBEX. 
-
-# Completed work
-
-Move reviewed work here once complete.
