@@ -10,11 +10,11 @@ There are many how-to guides in this developer Wiki. If you're searching for a p
 ![Wiki Search Results](https://raw.githubusercontent.com/ISISComputingGroup/ibex_developers_manual/master/images/wiki_halp.png)
 
 
-# Getting Set Up
+## Getting Set Up
 
 First off you're going to need all the developer tools we use, a copy of the existing codebase, and genie_python, our Python library. Head to [Building the Backend](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/The-Backend-System) for everything you need to install.
 
-## Extras
+### Extras
 
 We use Git for version control of the codebase. If you're not familiar with it, learn it!
 
