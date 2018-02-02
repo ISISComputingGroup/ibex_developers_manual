@@ -65,15 +65,4 @@ The configuration directory is backed up into git. This is done by the [Blockser
 
 Each instrument stores the configurations in their own branch in this repository, these branches are named the same as the instrument machine.
 
-The repository is stored in /isis/git on control-svcs.isis.cclrc.ac.uk see [here](http://control-svcs.isis.cclrc.ac.uk/git/)
-
-The config file of the repository must contain
-
-    [http]
-        receivepack = true
-
-or pushes will not work
-
-Cloning is via something like
- 
-    git clone http://control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/common.git
+The repository is stored in a [local repository](New-Local-Git-Repository).
