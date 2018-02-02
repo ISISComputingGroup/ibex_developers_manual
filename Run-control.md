@@ -1,6 +1,6 @@
-> [Wiki](Home) > [The Backend System](The-Backend-System) > [System components](System-components) > Run control
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [System components](System-components) > [Run Control](Run-control)
 
-Run control is implemented purely in EPICS. A DB file support/RunControl/runcontrol.db can be loaded into any IOC and given the name of each PV that needs this feature. It defines a few PVs for this:
+Run control is implemented purely in EPICS. A DB file support/RunControl/runcontrol.db can be loaded into any IOC and given the name of each PV that needs this feature. It defines a few PVs for this:
 
 ```
 $(PV):RC:LOW

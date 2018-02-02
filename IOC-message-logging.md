@@ -1,4 +1,4 @@
-> [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > IOC message logging
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > [IOC message logging](IOC-message-logging)
 
 # Logging Architecture Overview
 
