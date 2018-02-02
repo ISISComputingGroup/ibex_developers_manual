@@ -20,6 +20,10 @@ I'm writing this as a general purpose unit test framework for the wikis so that 
 - The test can be run on individual files or the whole wiki
 - The spell checker supports RST and markdown format (i.e. can be used on developer and user manual)
 
+# Ready for review
+
+Move work in progress here when it's ready for review.
+
 # Completed work
 
-Move work in progress sections here once complete
+Move reviewed work here once complete.
