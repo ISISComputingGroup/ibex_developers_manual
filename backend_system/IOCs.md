@@ -9,7 +9,6 @@ If you're building a new StreamDevice IOC you can use the script [here](https://
 
 ## Manually
 If you're not creating a StreamDevice IOC or you you would like to know how an IOC could be created manually see:
-* [Some Design thoughts for a serial/Ethernet IOC](Some-Design-thoughts-for-a-serial-or-Ethernet-IOC)
 * [Creating an ISIS StreamDevice IOC](Creating-an-ISIS-StreamDevice-IOC)
 * [Creating an LvDCOM IOC](Creating-IOC-wrapper-VI)
 
@@ -57,6 +56,7 @@ If you used the script to create your IOC an empty emulator and IOC tests will h
 * [IOC Testing framework](IOC-Testing-Framework)
 * [Complexity of LabVIEW Drivers](Complexity-of-LabVIEW-Drivers)
 * [Typical start up log for an ioc](IOC-Start-Example)
+* [Some Design thoughts for a serial/Ethernet IOC](Some-Design-thoughts-for-a-serial-or-Ethernet-IOC)
 
 # Specific IOC Information
 
