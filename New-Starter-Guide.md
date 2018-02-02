@@ -12,8 +12,8 @@ First off you're going to need all the developer tools we use and a copy of the 
 
 We use Git for version control of the codebase. If you're not familiar with it, learn it!
 
-- (Working with Git and Github)[Working-with-git-and-github]
-- (Github's own Git tutorial)[https://try.github.io/levels/1/challenges/2]
+- [Working with Git and Github](Working-with-git-and-github)
+- [Github's own Git tutorial](https://try.github.io/levels/1/challenges/2)
 
 
 
