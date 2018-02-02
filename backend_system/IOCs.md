@@ -13,7 +13,7 @@ If you're not creating a StreamDevice IOC or you you would like to know how an I
 * [Creating an LvDCOM IOC](Creating-IOC-wrapper-VI)
 
 ## Fleshing out the IOC
-1. You can now flesh out your IOC to work. I would encourage you to do this in a TDD style (if not write the tests afterwards) and make sure you follow the [conventions](IOCs#conventions). Use:
+1. You can now flesh out your IOC to work. I would encourage you to do this in a TDD style (if not write the tests afterwards) and make sure you follow the [conventions](IOCs#conventions). To write in a TDD style use:
     * [IOC Testing framework](IOC-Testing-Framework)
     * [Emulating devices](Emulating-Devices)
 If you used the script to create your IOC an empty emulator and IOC tests will have been created for you.
