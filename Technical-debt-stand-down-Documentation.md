@@ -42,6 +42,13 @@ Complete the page Major-Components-of-Ibex-Server.
 
 As a user I would like a more complete glossary for terms I may not have come across before. 
 
+## Moving between SECI and IBEX user manual page
+- Developer: Freddie
+- Reviewer: None
+- Current status: In progress
+
+As an instrument scientist I would like to know how to move between SECI and IBEX
+
 # Ready for review
 
 Move work in progress here when it's ready for review.
