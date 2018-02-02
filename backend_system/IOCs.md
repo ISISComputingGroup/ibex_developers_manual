@@ -1,19 +1,19 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [Creating and Basics of IOCs](IOCs)
 
-## Creating an IOC ##
+# Creating an IOC #
 
 Building a new IOC? Before you get started, take a look at the relevant [instrument page](https://github.com/ISISComputingGroup/IBEX/wiki) to see if there's any useful information for the device you're about to write an IOC for. Otherwise, let's get going. If you have problems see [See IOC and device Troubleshooting](IOC-And-Device-Trouble-Shooting).
 
-# Automatically #
+## Automatically
 If you're building a new StreamDevice IOC you can use the script [here](https://github.com/ISISComputingGroup/IBEX_device_generator).
 
-# Manually #
+## Manually
 If you're not creating a StreamDevice IOC or you you would like to know how an IOC could be created manually see:
     * [Some Design thoughts for a serial/Ethernet IOC](Some-Design-thoughts-for-a-serial-or-Ethernet-IOC)
     * [Creating an ISIS StreamDevice IOC](Creating-an-ISIS-StreamDevice-IOC)
     * [Creating an LvDCOM IOC](Creating-IOC-wrapper-VI)
 
-# Fleshing out the IOC #
+## Fleshing out the IOC
 1. You can now flesh out your IOC to work. I would encourage you to do this in a TDD style (if not write the tests afterwards) and make sure you follow the [conventions](IOCs#conventions). Use:
     * [IOC Testing framework](IOC-Testing-Framework)
     * [Emulating devices](Emulating-Devices)
@@ -32,7 +32,7 @@ If you used the script to create your IOC an empty emulator and IOC tests will h
 
 1. Add any manuals used to the [manuals dir and list](Manuals)
 
-## Conventions
+# Conventions
 
 * [IOC naming](IOC-Naming)
 
@@ -44,7 +44,7 @@ If you used the script to create your IOC an empty emulator and IOC tests will h
 
 * [Macro naming](Macro-Naming)
 
-## Other
+# Other
 
 * [Motor IOCs](Motor-IOCs)
 * [Libraries to include](IOC-Libraries-to-include-with-order)
@@ -58,11 +58,11 @@ If you used the script to create your IOC an empty emulator and IOC tests will h
 * [Complexity of LabVIEW Drivers](Complexity-of-LabVIEW-Drivers)
 * [Typical start up log for an ioc](IOC-Start-Example)
 
-## Specific IOC Information
+# Specific IOC Information
 
 For information on specific IOCs see [Specific Device IOC](Specific-Device-IOC)
 
-## Further reading ##
+# Further reading ##
 
 * [EPICS record reference manual](http://www.aps.anl.gov/epics/EpicsDocumentation/AppDevManuals/RecordRef/Recordref-1.html)
 * [IOC doxygen Documentation](http://epics.isis.rl.ac.uk/doxygen/main/)
