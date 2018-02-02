@@ -11,6 +11,14 @@ As a developer, I would like the wiki to be spell checked so that I can be confi
 
 I'm writing this as a general purpose unit test framework for the wikis so that we can add additional tests later on.
 
+## Major components Page Completion
+
+- Developer: John
+- Reviewer: None
+- Current status: In progress
+
+Complete the page Major-Components-of-Ibex-Server.
+
 ### Pages affected
 - None directly
 
