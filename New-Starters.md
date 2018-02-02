@@ -12,7 +12,7 @@ There are many how-to guides in this developer Wiki. If you're searching for a p
 
 ## Getting Set Up
 
-First off you're going to need all the developer tools we use, a copy of the existing codebase, and genie_python, our Python library. 
+First off you're going to need all the developer tools we use, a copy of the existing codebase, and the Eclipse GUI for IBEX.
 
 [First time installing and building EPICS](First-time-installing-and-building-(Windows))
 [Installing genie_python](Building-and-installing-genie_python)
