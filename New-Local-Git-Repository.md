@@ -1,4 +1,4 @@
-These are created in /isis/git on control-svcs.isis.cclrc.ac.uk see [here](control-svcs.isis.cclrc.ac.uk)
+These are created in /isis/git on control-svcs.isis.cclrc.ac.uk see [here](https://control-svcs.isis.cclrc.ac.uk/git/)
 
 When creating a new repository make sure you add   
 
