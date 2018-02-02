@@ -45,3 +45,7 @@ Information about running IBEX and genie_python training courses
 ## [Other Links and Resources](links-and-resources)
 
 Page of links and resources not in this wiki
+
+## [Glossary](Glossary)
+
+Glossary of terms
