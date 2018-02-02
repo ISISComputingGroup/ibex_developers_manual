@@ -97,5 +97,7 @@ We use CSS to create Operator Interfaces (OPIs - GUIs, essentially) for the inst
 - [Waffle Board](https://waffle.io/ISISComputingGroup/IBEX) - Work tickets
 - [Slack Channel](https://ibex-icp.slack.com/messages/C055HTCCU/) - Office-related chat
 - [ISIS Sharepoint](https://www.facilities.rl.ac.uk/isis/default.aspx) - Shared ISIS documents, manuals, meeting minutes etc
+- [Oracle Login](https://sso.ssc.rcuk.ac.uk/sso/pages/login.jsp) - Book leave, create timesheets
+- [Flexi Time](http://flexiral.stfc.ac.uk/) - If you're on Flexi time and need to view/edit your work history
 
 
