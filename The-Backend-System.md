@@ -1,6 +1,8 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System)
 
-## [Getting Started](First-time-installing-and-building-(Windows))
+## [New Starter Guide](New-Starter-Guide)
+
+## [Building the backend](First-time-installing-and-building-(Windows))
 
 How to install and build the backend system for the first time on Windows.
 
