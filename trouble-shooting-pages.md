@@ -16,7 +16,7 @@
 
 [Other](Other-Troubleshooting)
 
-[GUI](GUI)
+[GUI](GUI-Troubleshooting)
 
 [Database](Database-Troubleshooting)
 
