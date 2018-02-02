@@ -50,7 +50,7 @@ As a user I would like a more complete glossary for terms I may not have come ac
 ## Moving between SECI and IBEX user manual page
 - Developer: Freddie
 - Reviewer: None
-- Current status: In progress
+- Current status: Ready for review at https://github.com/ISISComputingGroup/ibex_user_manual/wiki/Switching-Between-IBEX-and-SECI
 
 As an instrument scientist I would like to know how to move between SECI and IBEX
 
