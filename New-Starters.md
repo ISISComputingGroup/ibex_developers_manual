@@ -90,7 +90,7 @@ When building an IOC, emulator, or writing tests, much can be learned by looking
 We use CSS to create Operator Interfaces (OPIs - GUIs, essentially) for the instrument controllers. Here's an overview and get started guide.
 
 - [Overview of CS-Studio](https://epics.anl.gov/docs/USPAS2014/1-Monday/CSS_1_Overview.pdf)
-- [Intro to using CS-Studio](www.aps.anl.gov/epics/docs/USPAS2014/1-Monday/CSS_2_First_Steps.pdf)
+- [Intro to using CS-Studio](http://www.aps.anl.gov/epics/docs/USPAS2014/1-Monday/CSS_2_First_Steps.pdf)
 
 ## Office Admin Links
 
