@@ -2,6 +2,10 @@ This page describes the work done as part of the documentation stand down on 2nd
 
 # Work in progress
 
+## Updating info for new starters
+
+As a new member of the IBEX team, I'd like accessible and comprehensive info on getting started with EPICS/IBEX. 
+
 ## Create a spell checking utility for the wikis
 - Developer: Adrian
 - Reviewer: None
