@@ -1,16 +1,23 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [Creating and Basics of IOCs](IOCs)
 
-
 ## Creating an IOC ##
+
 Building a new IOC? Before you get started, take a look at the relevant [instrument page](https://github.com/ISISComputingGroup/IBEX/wiki) to see if there's any useful information for the device you're about to write an IOC for. Otherwise, let's get going. If you have problems see [See IOC and device Troubleshooting](IOC-And-Device-Trouble-Shooting).
 
-1. Create the boiler plate IOC
+# Automatically #
+If you're building a new StreamDevice IOC you can use the script [here](https://github.com/ISISComputingGroup/IBEX_device_generator).
+
+# Manually #
+If you're not creating a StreamDevice IOC or you you would like to know how an IOC could be created manually see:
     * [Some Design thoughts for a serial/Ethernet IOC](Some-Design-thoughts-for-a-serial-or-Ethernet-IOC)
     * [Creating an ISIS StreamDevice IOC](Creating-an-ISIS-StreamDevice-IOC)
     * [Creating an LvDCOM IOC](Creating-IOC-wrapper-VI)
+
+# Fleshing out the IOC #
 1. You can now flesh out your IOC to work. I would encourage you to do this in a TDD style (if not write the tests afterwards) and make sure you follow the [conventions](IOCs#conventions). Use:
     * [IOC Testing framework](IOC-Testing-Framework)
     * [Emulating devices](Emulating-Devices)
+If you used the script to create your IOC an empty emulator and IOC tests will have been created for you.
 
 1. [IOC Finishing Touches](IOC-Finishing-Touches)
     * Additional for motors [Adding motor IOC to global motor moving and stop all](Adding-motor-IOC-to-global-motor-moving-and-stop-all)
