@@ -35,6 +35,13 @@ Complete the page Major-Components-of-Ibex-Server.
 - The test can be run on individual files or the whole wiki
 - The spell checker supports RST and markdown format (i.e. can be used on developer and user manual)
 
+## Updating Glossary in User Manual
+- Developer: Aidan
+- Reviewer: None
+- Current status: In progress
+
+As a user I would like a more complete glossary for terms I may not have come across before. 
+
 # Ready for review
 
 Move work in progress here when it's ready for review.
