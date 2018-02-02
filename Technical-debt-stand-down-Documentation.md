@@ -42,6 +42,9 @@ Complete the page Major-Components-of-Ibex-Server.
 
 As a user I would like a more complete glossary for terms I may not have come across before. 
 
+### Pages affected
+- [Glossary Page](https://github.com/ISISComputingGroup/ibex_user_manual/wiki/Glossary)
+
 ## Moving between SECI and IBEX user manual page
 - Developer: Freddie
 - Reviewer: None
