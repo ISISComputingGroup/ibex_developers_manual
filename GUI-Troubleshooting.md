@@ -6,6 +6,6 @@ Troublshooting the GUI not eclipse.
 
 [PV Manager and Observers](PV-Manager-and-Observers-Logging)
 
-[Log Files](Log-Files) are a good place to start looking.
+The log files are a good place to start, they are stored in `...\Instrument\Apps\Client\workspace\logs`.
 
 [IOC Start/Stop List not showing](IOC-Start/Stop-List-not-showing)
