@@ -10,21 +10,21 @@ There are many how-to guides in this developer Wiki. If you're searching for a p
 ![Wiki Search Results](https://raw.githubusercontent.com/ISISComputingGroup/ibex_developers_manual/master/images/wiki_halp.png)
 
 
-# Getting Set Up
+## Getting Set Up
 
 First off you're going to need all the developer tools we use, a copy of the existing codebase, and genie_python, our Python library. 
 
 [First time installing and building EPICS](First-time-installing-and-building-(Windows))
 [Installing genie_python](Building-and-installing-genie_python)
 
-## Extras
+### Extras
 
 We use Git for version control of the codebase. If you're not familiar with it, learn it!
 
 - [Our Github resources/cribsheets](Working-with-git-and-github)
 - [Github's own Git tutorial](https://try.github.io/levels/1/challenges/2)
 
-# Familiarising EPICS
+## Familiarising EPICS
 
 While that's installing, get to know the IBEX components. Get to know EPICS. It's the software environment that IBEX uses to control the ISIS instruments. 
 
@@ -40,6 +40,12 @@ There is much to learn about EPICS and it can be difficult to know what you're l
 - [Training Course](https://epics.anl.gov/docs/USPAS2014.php)
 - [Database Principles (what's a record? And more)](https://epics.anl.gov/docs/USPAS2014/2-Tuesday/Database-1.pdf)
 - [Database Principles II (with examples)](https://epics.anl.gov/docs/USPAS2014/2-Tuesday/Database-2.pdf)
+
+### Extra EPICS
+
+- [State Notation Language 1](https://epics.anl.gov/docs/USPAS2014/2-Tuesday/SNL_1_EPICSAutomation.pdf)[State Notation Language 2](https://epics.anl.gov/docs/USPAS2014/2-Tuesday/SNL_2_Sequencer.pdf)
+- [ASYN/Stream Device overview](https://epics.anl.gov/docs/USPAS2014/2-Tuesday/SNL_2_Sequencer.pdf)
+- [YouTube Videos covering the epics.gov.anl slideshows](https://epics.anl.gov/docs/APS2015.php)
 
 ## Control System Studio
 
