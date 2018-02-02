@@ -8,7 +8,7 @@ Building a new IOC? Before you get started, take a look at the relevant [instrum
     * [Some Design thoughts for a serial/Ethernet IOC](Some-Design-thoughts-for-a-serial-or-Ethernet-IOC)
     * [Creating an ISIS StreamDevice IOC](Creating-an-ISIS-StreamDevice-IOC)
     * [Creating an LvDCOM IOC](Creating-IOC-wrapper-VI)
-1. You can now flesh out your IOC to work. I would encourage you to do this in a TDD style (if not write the tests afterwards). Make sure you follow the [conventions listed on this page](IOCs#Conventions) Use:
+1. You can now flesh out your IOC to work. I would encourage you to do this in a TDD style (if not write the tests afterwards). Make sure you use the conventions listed below. Use:
     * [IOC Testing framework](IOC-Testing-Framework)
     * [Emulating devices](Emulating-Devices)
 
