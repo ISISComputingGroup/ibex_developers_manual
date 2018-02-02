@@ -59,8 +59,8 @@ We use CSS to create Operator Interfaces (OPIs - GUIs, essentially) for the inst
 
 When building an IOC, emulator, or writing tests, much can be learned by looking at existing IOCs. However, there are several places to find good sources for learning and referencing. 
 
-- [Protocol Files and Record Types](http://epics.web.psi.ch/software/streamdevice/doc/protocol.html)
-* Great reference for when you're mixing up your %d's and %f's.
+- [Protocol Files and Record Types](http://epics.web.psi.ch/software/streamdevice/doc/protocol.html) - Excellent reference for when you're mixing up your %d's and %f's.
+- [Sequencer - State Notation in IOCs](http://www-csr.bessy.de/control/SoftDist/sequencer/Tutorial.html#pv-names-using-program-parameters) - All about implementing a state machine into an IOC, if needed.
 
 
 - Getting set up
