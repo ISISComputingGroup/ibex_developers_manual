@@ -61,11 +61,11 @@ Common extensions:
 
 ### Version Control
 
-The configuration directory is backed up into git. This is done by the (Blockserver)[BlockServer#the-file-watcher--config-version-control].
+The configuration directory is backed up into git. This is done by the [Blockserver](BlockServer#the-file-watcher--config-version-control).
 
 Each instrument stores the configurations in their own branch in this repository, these branches are named the same as the instrument machine.
 
-The repository is stored in /isis/git on control-svcs.isis.cclrc.ac.uk see (here)[http://control-svcs.isis.cclrc.ac.uk/git/]
+The repository is stored in /isis/git on control-svcs.isis.cclrc.ac.uk see [here](http://control-svcs.isis.cclrc.ac.uk/git/)
 
 The config file of the repository must contain
 
