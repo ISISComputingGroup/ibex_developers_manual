@@ -62,7 +62,8 @@ Note: this used by genie_python for checking block names used in CSETs etc. are 
 **BLOCKSERVER:BLOCK_RULES**
 
     Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:BLOCK_RULES
-    TODO: add description
+    Returns the rules for naming blocks. Specifically, a regex that new blocks must match and specific blocknames which are disallowed are returned.
+    Example JSON: {"regex": "^[a-zA-Z]\\w*$", "regexMessage": "Block name must start with a letter and only contain letters, numbers and underscores", "disallowed": ["lowlimit", "highlimit", "runcontrol", "wait"]}
 
 **BLOCKSERVER:GROUPS**
 Note: This PV is currently used by the web dashboard
@@ -483,51 +484,9 @@ When log_periodic is true the block will be scanned at the rate given in "log_ra
 When log_periodic is false the block value will be archived whenever the block changes by the deadband given in "log_deadband". The "log_rate" is ignored.
 	
 -----------------
-The File Watcher
+The File Watcher / Config version control
 -----------------
 
-The BlockServer also contains a file watcher to aid in the modification of configurations by hand. Although this modification will not happen often it is important that it is 
-handled properly so that necessary changes are made in the client. When any modifications are made to files within the configuration or component directories the file watcher will
-pick up on it and the following will happen:
+The file watcher has been removed in https://github.com/ISISComputingGroup/EPICS-inst_servers/pull/139
 
-* If the file is not defined by a schema it is considered unrelated to configurations and so an INFO message is logged about the file being modified and no further action is taken.
-
-* If the modified file is part of a configuration the file watcher will first check that all required xml files are present, check the modification against the schema and then 
-  attempt to load the configuration into a dummy holder. If any of these actions fail an error will be logged to the client. Otherwise the relevant PVs will be updated with the new
-  information.
-
-* If the modified file is part of the active configuration, including within a component used by the configuration, and it passes the above tests the CURR_CONFIG_CHANGED PV is set 
-  to 1. The GET_CURR_CONFIG_DETAILS PV is not updated with the new information and the client is therefore expected to reload the configuration for changes to take effect.
-
-In the case of files being deleted the following will happen:
-
-* If the file is considered unrelated to configurations it will be deleted as normal, including being deleted in version control.
-
-* If only part of a configuration is deleted an error will be logged and the file will be restored from version control.
-
-* If a whole component folder is deleted and it is relied upon by other configurations an error is logged and the component is recovered from version control.
-
-* If the default component is deleted an error is logged and it is restored from version control.
-
-* If the active configuration is deleted an error is logged and it is restored from version control.
-
-* If a whole configuration folder is deleted (or a component that is not relied upon) the relevant PVs will be updated and the configuration (or component) will be deleted from version
-  control.
-
-Any log messages written by the file watcher will come from FILEWTCHR.
-
---------------------------
-The Config Version Control
---------------------------
-The BlockServer keeps the configurations git repository under `/Instrument/Settings/config/NDXXXX` up-to-date, adding and committing any changes at runtime. This is done through the `ConfigVersionControl` class, which simply delegates to the corresponding commands for either git or svn.
-
-The configurations are only committed if the folder is on the correct branch. The rules for the correct branch are:
-* The master branch will never be automatically committed to
-* A branch starting with ND will only be committed to if it is the machine hostname (to avoid accidentally committing to real instruments)
-* Any other branch name is allowed. Developers tend to use fedIDs as branch names
-
-NOTE: Files produced by system tests are treated differently: the `ConfigVersionControl` checks for files containing the system test prefix in their path, and will NOT add them to version control.
-
-When removing non-system-test files, deletion from the file system is taken care of by the version control library. System test files do not get forwarded to that library, so we have to delete them when we catch them instead.
-
-
+Instead, we now have a much simpler system. A background python thread running as part of the blockserver checks if there are any uncommitted changes at a set interval. If it sees any changes, it does the equivalent of a `git add -A`, `git commit`, `git push`. This means that we get a backup at 5 minute intervals of the configuration area
