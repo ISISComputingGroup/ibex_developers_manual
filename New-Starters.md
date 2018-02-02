@@ -1,16 +1,16 @@
 # Welcome!
 
-### Contents
-
 1. [Using the Developer Wiki](#using-the-developer-wiki)
 2. [Getting Set Up](#getting-set-up)
     1. [Git](#git)
     2. [Creating Useful Shortcuts](#creating-useful-shortcuts)
 3. [Familiarising IBEX](#familiarising-ibex)
 4. [EPICS Introduction](#epics-introduction)
-    1. [Further EPICS](#epics++)
-5. [Input/Output Controller Resources](#input/output-controller-resources)
+    1. [Further EPICS](#epics-introduction)
+5. [Input/Output Controller (IOC) Resources](#input-output-controller-resources)
 6. [Control System Studio](#control-system-studio)
+7. [Office Admin Links](#office-admin-links)
+
 
 
 This page is designed to be used as a comprehensive reference to getting started in the Instrument Controls team. Written by new-ish starters, for the newest starters. It's a collection of useful resources which will speed up your onboarding and get you developing. 
@@ -58,7 +58,7 @@ While that's installing, get to know the IBEX components. Get to know EPICS. It'
 - [Information for User Scientists](https://github.com/ISISComputingGroup/IBEX/wiki)
 - [User Guide to IBEX](https://github.com/ISISComputingGroup/ibex_user_manual/wiki)
 
-***
+
 
 ## EPICS Introduction
 
@@ -69,14 +69,14 @@ There is much to learn about EPICS and it can be difficult to know what you're l
 - [Database Principles (what's a record? And more)](https://epics.anl.gov/docs/USPAS2014/2-Tuesday/Database-1.pdf)
 - [Database Principles II (with examples)](https://epics.anl.gov/docs/USPAS2014/2-Tuesday/Database-2.pdf)
 
-### EPICS++
+### Further EPICS
 
 - [State Notation Language 1](https://epics.anl.gov/docs/USPAS2014/2-Tuesday/SNL_1_EPICSAutomation.pdf) [State Notation Language 2](https://epics.anl.gov/docs/USPAS2014/2-Tuesday/SNL_2_Sequencer.pdf)
 - [ASYN/Stream Device overview](https://epics.anl.gov/docs/USPAS2014/2-Tuesday/SNL_2_Sequencer.pdf)
 - [YouTube Videos covering the epics.gov.anl slideshows](https://epics.anl.gov/docs/APS2015.php)
 
 
-## Input/Output Controller Resources
+## Input Output Controller Resources
 
 When building an IOC, emulator, or writing tests, much can be learned by looking at existing IOCs. However, there are several places to find good sources for learning and referencing. 
 
@@ -91,5 +91,11 @@ We use CSS to create Operator Interfaces (OPIs - GUIs, essentially) for the inst
 
 - [Overview of CS-Studio](https://epics.anl.gov/docs/USPAS2014/1-Monday/CSS_1_Overview.pdf)
 - [Intro to using CS-Studio](www.aps.anl.gov/epics/docs/USPAS2014/1-Monday/CSS_2_First_Steps.pdf)
+
+## Office Admin Links
+
+- [Waffle Board](https://waffle.io/ISISComputingGroup/IBEX) - Work tickets
+- [Slack Channel](https://ibex-icp.slack.com/messages/C055HTCCU/) - Office-related chat
+- [ISIS Sharepoint](https://www.facilities.rl.ac.uk/isis/default.aspx) - Shared ISIS documents, manuals, meeting minutes etc
 
 
