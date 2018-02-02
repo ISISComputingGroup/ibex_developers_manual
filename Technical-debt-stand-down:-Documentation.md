@@ -2,19 +2,23 @@ This page describes the work done as part of the documentation stand down on 2nd
 
 # Work in progress
 
-## Do a thing
+## Create a spell checking utility for the wikis
 - Developer: Adrian
 - Reviewer: None
 - Current status: In progress
 
-As a user I would like the documentation to be good so that I use it as a resource when I want to find out information.
+As a developer, I would like the wiki to be spell checked so that I can be confident in the high quality of language use in the documentation.
+
+I'm writing this as a general purpose unit test framework for the wikis so that we can add additional tests later on.
 
 ### Pages affected
-- [Home](home)
-- ...
+- None directly
 
 ### Acceptance criteria
-- New documentation is great
+- Spell checker provides a test report for mis-spelled words in the wiki, along with their location
+- There are no false positives reported by the spell checker. Common project specific words will be ignored
+- The test can be run on individual files or the whole wiki
+- The spell checker supports RST and markdown format (i.e. can be used on developer and user manual)
 
 # Completed work
 
