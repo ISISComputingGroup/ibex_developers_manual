@@ -2,13 +2,6 @@ This page describes the work done as part of the documentation stand down on 2nd
 
 # Work in progress
 
-## IOC creation tidy up
-- Developer: Dom
-- Reviewer: None
-- Current status: In progress
-
-The IOC pages are messy, I will tidy them up
-
 ## Major components Page Completion
 
 - Developer: John
@@ -35,6 +28,13 @@ As a user I would like a more complete glossary for terms I may not have come ac
 As an instrument scientist I would like to know how to move between SECI and IBEX
 
 # Ready for review
+
+## IOC creation tidy up
+- Developer: Dom
+- Reviewer: None
+- Current status: Ready for review mostly updated https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/IOCs and removed a few redundant pages here and there.
+
+The IOC pages are messy, I will tidy them up
 
 ## Create a spell checking utility for the wikis
 - Developer: Adrian/Tom
