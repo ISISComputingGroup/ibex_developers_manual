@@ -1,4 +1,4 @@
-# Welcome
+# Welcome to IBEX!
 
 1. [Using the Developer Wiki](#using-the-developer-wiki)
 2. [Getting Set Up](#getting-set-up)
