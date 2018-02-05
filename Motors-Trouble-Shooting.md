@@ -29,4 +29,4 @@ If it isn't connected try to ping the control address. If this isn't alive check
 
 ### The Galil reports being at home when it is at a limit, not at the limit switch
 
-Ensure the limit_as_home flag is correctly set, see (here)[Galil#configure-galil-crate-1]
+Ensure the limit_as_home flag is correctly set, see [here](Galil#configure-galil-crate-1)
