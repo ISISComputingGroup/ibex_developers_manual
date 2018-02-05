@@ -20,14 +20,14 @@ As a user I would like a more complete glossary for terms I may not have come ac
 ### Pages affected
 - [Glossary Page](https://github.com/ISISComputingGroup/ibex_user_manual/wiki/Glossary)
 
+# Ready for review
+
 ## Moving between SECI and IBEX user manual page
 - Developer: Freddie
-- Reviewer: None
+- Reviewer: Dom
 - Current status: Ready for review at https://github.com/ISISComputingGroup/ibex_user_manual/wiki/Switching-Between-IBEX-and-SECI
 
 As an instrument scientist I would like to know how to move between SECI and IBEX
-
-# Ready for review
 
 ## IOC creation tidy up
 - Developer: Dom
