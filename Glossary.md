@@ -37,7 +37,7 @@ Block Archive
 -------------
 Archives block values using the [CSS Archive Engine](#archive-engine) and restarts whenever block definitions and/or the configuration changes. 
 
-[BlockServer](backend_system/blockserver/BlockServer)
+[BlockServer](BlockServer)
 -------------
 A [Channel Access](#channel-access-(ca)) Server (CAS) that allows [blocks](#block) to be configured and [configurations](#configuration) to be created and loaded.
 
@@ -99,7 +99,7 @@ ConServer
 -----
 "**C**ontrol **S**ystem **S**tudio is an [Eclipse](#eclipse)-based collection of tools to monitor and operate large scale control systems, such as the ones in the accelerator community. It's a product of the collaboration between different laboratories and universities."
 
-[Database Server](backend_system/the-databaseserver)
+[Database Server](the-databaseserver)
 -----------------
 
 DataWeb
@@ -121,7 +121,7 @@ Emulator
 --------
 A software implementation of hardware.  Usually used to help write and test an [IOC](#ioc) and [OPI](#opi).  See [Emulating-Devices](Emulating-Devices) for more information.
 
-[EPICS](EPICS/EPICS)
+[EPICS](EPICS)
 -------
 **E**xperimental **P**hysics and **I**ndustrial **C**ontrol **S**ystem.  A client/server control system using [Channel Access](#channel-access-(ca)) as its communication protocol, forming a distributed real-time database of machine values ([PVs](#pv)).
 It is a collection of software tools collaboratively developed which can be integrated to provide a comprehensive and scalable control system.
@@ -199,7 +199,7 @@ MySQL
 -----
 
 
-[Nicos](backend_system/Nicos)
+[Nicos](Nicos)
 -------
 A network-based control system.  Some elements of it are used in the [script server](#script-server).  See [homepage](http://cdn.frm2.tum.de/fileadmin/stuff/services/ITServices/nicos-2.0/dirhtml/) for more information.
 
@@ -298,7 +298,7 @@ Virtual Machine
 ---------------
 An entire computer system running, without its own dedicated hardware, as software on a host computer.  Each of the ISIS control machines (NDX...) is a virtual machine, as well as many other servers used as part of the development process.
 
-[Web Dashboard](dataweb/Web-Dashboard)
+[Web Dashboard](Web-Dashboard)
 ---------------
 
 ZeroMQ
