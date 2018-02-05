@@ -6,9 +6,9 @@ This page describes the work done as part of the documentation stand down on 2nd
 
 - Developer: John
 - Reviewer: None
-- Current status: In progress
+- Current status: For review
 
-Complete the page Major-Components-of-Ibex-Server.
+Moved to [System-components](System-components)
 
 ## Updating Glossary in User Manual
 - Developer: Aidan
