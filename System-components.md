@@ -18,12 +18,12 @@ CA Repeater | CAREP | Executable | A epics CA repeater that is started before al
 Inst etc | INSTETC_01 |  Epics IOC | PVs which are for instrument level, e.g. motors moving and security pvs
 Instrument Archive | ARINST | Java | Archives (in mysql db) pvs with archive property see [CSS-Archive-Engine](CSS-Archive-Engine)
 [IOC Message Logger](IOC-message-logging) | IOCLOG | Java | Collects messages sent by any IOC, logs it in the database and put it on the JMS message queue
-ISIS DAE | ISISDAE_01 | Epics IOC | Controls the ISIS ICP program which collects data.
+ISIS DAE | ISISDAE_01 | Epics IOC | Controls the ISIS ICP program which collects data
 [MySQL](The-MySQL-Database) | runs as a service | Service | My SqlDatabase is used for persisting data
 [Nicos](Nicos) | NICOSDAEMON | Python | Process which runs and queues python scripts on an instrument
 Proc Serve Control | PSCTRL | Epics IOC | Control proc serves  (start, stop and status)
 [Run Control](Run-control) | RUNCTRL_01 | Epics IOC | Add run control to blocks
-[Script server (Interface to Nicos)](Nicos) | SCRIPTSERVER | Python | Script server is a proxy in front of nicos to allow communication with it.
+[Script server (Interface to Nicos)](Nicos) | SCRIPTSERVER | Python | Script server is a proxy in front of nicos to allow communication with it
 
 
 All components are started via [Statup and Shutdown](Startup-and-Shutdown)
