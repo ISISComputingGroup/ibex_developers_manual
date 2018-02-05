@@ -16,7 +16,7 @@ Test doubles are objects that stand in for a real object, for the purposes of un
 
 * Stub - an object that provides a canned answer to a method call
 
-* Mock - fake objects which know about which method calls they recieve
+* Mock - fake objects which know about which method calls they receive
 
 See [this article](http://martinfowler.com/articles/mocksArentStubs.html) for more information. Mockito mostly helps with Stub and Mock doubles.
 
@@ -205,7 +205,7 @@ public class ResultsSetAnswer implements Answer<ResultSet> {
         }
     }
 ```
-The reason I am using answer here is to keep the number of times I opened a results set upto date so this answer stores that info in its parent class.
+The reason I am using answer here is to keep the number of times I opened a results set up to date so this answer stores that info in its parent class.
 
 ## Tips and Advice
 
