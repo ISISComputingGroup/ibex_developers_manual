@@ -11,6 +11,9 @@ ACF
 ----------
 A messaging system that is used in a number of places throughout IBEX.  Specifically, [The Alarm Server](Alarms) and [The IOC Log Server](Ioc-message-logging).  See [ActiveMQ Homepage](http://activemq.apache.org/) for more information on the technology.
 
+Alarm
+-----
+
 Archive Engine
 --------------
 A [CSS](#css) component that archives [PV](#pv) values.  Implemented in [IBEX](#ibex) in the [Block Archive](#block-archive) and [Instrument Archive](#instrument-archive)
@@ -27,13 +30,16 @@ A method of changing the internal parameters of an emulator to mimic the behavio
 -----------
 Slits used on each of the Muon instruments to control the neutron flux to the sample.  Each "jaw" pivots on one edge, much like a door on a hinge.
 
+Block
+-----
+
 Block Archive
 -------------
 Archives block values using the [CSS Archive Engine](#archive-engine) and restarts whenever block definitions and/or the configuration changes. 
 
-BlockServer
------------
-
+[BlockServer](backend_system/blockserver/BlockServer)
+-------------
+A [Channel Access](#channel-access-(ca)) Server (CAS) that allows [blocks](#block) to be configured and [configurations](#configuration) to be created and loaded.
 
 Branch
 ------
@@ -48,7 +54,7 @@ Files which contain information about how pieces of sample environment equipment
 
 Channel Access (CA)
 -------------------
-A Protocol that defines how [PV](#pv) data is transferred between a server and client in an [EPICS](#epics) control system.
+A protocol that defines how [PV](#pv) data is transferred between a server and client in an [EPICS](#epics) control system.
 
 [Chopper](Choppers)
 -------
@@ -56,7 +62,7 @@ A device, usually a spinning disc of thick metal with a narrow slot, which allow
 
 [CLF](https://www.clf.stfc.ac.uk/Pages/home.aspx)
 -----
-**C**entral **L**aser **F**acility.  A department at RAL that also uses the [EPICS](EPICS) control system.
+**C**entral **L**aser **F**acility.  A department at RAL that also uses the [EPICS](#epics) control system.
 
 [Code Chats](Code-Chats)
 ------------
@@ -82,6 +88,9 @@ A Python script to highlight potential issues with current configurations when a
 ----------------
 A Python script to upgrade current configurations to be compatible with new versions of [IBEX](#ibex).
 
+Configuration
+-------------
+
 ConServer
 ---------
 
@@ -89,6 +98,12 @@ ConServer
 [CSS](http://controlsystemstudio.org/)
 -----
 "**C**ontrol **S**ystem **S**tudio is an [Eclipse](#eclipse)-based collection of tools to monitor and operate large scale control systems, such as the ones in the accelerator community. It's a product of the collaboration between different laboratories and universities."
+
+[Database Server](backend_system/the-databaseserver)
+-----------------
+
+DataWeb
+-------
 
 DB File
 -------
@@ -100,15 +115,15 @@ Dial values
 
 [Eclipse](http://www.eclipse.org/)
 ---------
-An IDE and collection of tools for development of GUIs.  [CSS](#css) and the IBEX client are based on it.
+An IDE and collection of tools for development of [GUIs](#gui).  [CSS](#css) and the [IBEX](#ibex) client are based on it.
 
 Emulator
 --------
 A software implementation of hardware.  Usually used to help write and test an [IOC](#ioc) and [OPI](#opi).  See [Emulating-Devices](Emulating-Devices) for more information.
 
-[EPICS](EPICS)
+[EPICS](EPICS/EPICS)
 -------
-**E**xperimental **P**hysics and **I**ndustrial **C**ontrol **S**ystem.  A client/server control system using [Channel Access](#channel-access) as its communication protocol, forming a distributed real-time database of machine values ([PVs](#pv)).
+**E**xperimental **P**hysics and **I**ndustrial **C**ontrol **S**ystem.  A client/server control system using [Channel Access](#channel-access-(ca)) as its communication protocol, forming a distributed real-time database of machine values ([PVs](#pv)).
 It is a collection of software tools collaboratively developed which can be integrated to provide a comprehensive and scalable control system.
 
 Field
@@ -123,9 +138,22 @@ Genie-Python
 ------------
 An implementation of the [OpenGenie](http://www.opengenie.org) scripting language in Python, or at least its commands specific to instrument control.  Documentation [here](http://shadow.nd.rl.ac.uk/genie_python/sphinx/genie_python.html).
 
+GIT
+---
+
+Github
+------
+
+GUI
+---
+**G**raphical **U**ser **I**nterface.  AKA "[The GUI](The-GUI)" or [IBEX](#ibex) Client.  A program which provides a graphical method of interacting with the [IBEX](#ibex) Server.
+
 IBEX
 ----
 The new ISIS instrument control system.  Primarily based on [EPICS](#epics) as the underlying technology.
+
+Inhibitor
+---------
 
 Instrument Archive
 ------------------
@@ -134,6 +162,18 @@ Archives [PV](#pv) values using the [CSS Archive Engine](#archive-engine) which 
 IOC
 ---
 **I**nput**O**utput**C**ontroller.  A process which reads and writes [PVs](#pv).  Often interfaces with hardware (e.g. sample environment equipment) to enable it to be controlled remotely.
+
+Java
+----
+
+Jenkins
+-------
+
+Journal Viewer
+--------------
+
+Journal Parser
+--------------
 
 [LabVIEW](http://www.ni.com/labview/)
 ---------
@@ -159,13 +199,17 @@ MySQL
 -----
 
 
-[Nicos](http://cdn.frm2.tum.de/fileadmin/stuff/services/ITServices/nicos-2.0/dirhtml/)
+[Nicos](backend_system/Nicos)
 -------
-A network-based control system.  Some elements of it are used in the [script server](#script-server).
+A network-based control system.  Some elements of it are used in the [script server](#script-server).  See [homepage](http://cdn.frm2.tum.de/fileadmin/stuff/services/ITServices/nicos-2.0/dirhtml/) for more information.
 
 OPI
 ---
 **Op**erator **I**nterface.  A file used in [CSS](#css) to enable a user to interact with an IOC graphically.
+
+Perspective
+-----------
+
 
 Plugin
 ------
@@ -177,7 +221,7 @@ ProcServ
 
 PV
 --
-**P**rocess **V**ariable.  A named piece of data and the primary object of the [Channel Access Protocol](#channel-access), often associated with a piece of equipment (e.g. status, readback, setpoint, parameter).
+**P**rocess **V**ariable.  A named piece of data and the primary object of the [Channel Access Protocol](#channel-access-(ca)), often associated with a piece of equipment (e.g. status, readback, setpoint, parameter).
 
 PVLIST
 ------
@@ -224,10 +268,14 @@ A template for creating [DB files](#db-file) using [macros](#macro).
 
 Synoptic
 --------
-
+A graphical representation of an ISIS beamline, showing permanent components as well as Sample Environment equipment.  It is shown in a [perspective](#perspective) view in the [IBEX](#ibex) client.
 
 Ticket
 ------
+
+
+Umbrella Ticket
+---------------
 
 
 User Values
@@ -249,6 +297,9 @@ VI
 Virtual Machine
 ---------------
 An entire computer system running, without its own dedicated hardware, as software on a host computer.  Each of the ISIS control machines (NDX...) is a virtual machine, as well as many other servers used as part of the development process.
+
+[Web Dashboard](dataweb/Web-Dashboard)
+---------------
 
 ZeroMQ
 ------
