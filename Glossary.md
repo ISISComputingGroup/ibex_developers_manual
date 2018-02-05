@@ -5,7 +5,7 @@ Glossary
 
 ACF
 ---
-**A**ccess **C**ontrol **F**ile.  A file used by the [Gateway](#Gateway) which contains rules for access.
+**A**ccess **C**ontrol **F**ile.  A file used by the [Gateway](#gateway) which contains rules for access.
 
 [ActiveMQ](ActiveMQ)
 ----------
@@ -13,7 +13,7 @@ A messaging system that is used in a number of places throughout IBEX.  Specific
 
 Archive Engine
 --------------
-A [CSS](#CSS) component that archives [PV](#PV) values.  Implemented in [IBEX](#IBEX) in the [Block Archive](#Block Archive) and [Instrument Archive](#Instrument Archive)
+A [CSS](#css) component that archives [PV](#pv) values.  Implemented in [IBEX](#ibex) in the [Block Archive](#block-archive) and [Instrument Archive](#instrument-archive)
 
 [Autosave](Autosave)
 ----------
@@ -29,7 +29,7 @@ Slits used on each of the Muon instruments to control the neutron flux to the sa
 
 Block Archive
 -------------
-Archives block values using the [CSS Archive Engine](#Archive Engine) and restarts whenever block definitions and/or the configuration changes. 
+Archives block values using the [CSS Archive Engine](#archive-engine) and restarts whenever block definitions and/or the configuration changes. 
 
 BlockServer
 -----------
@@ -40,7 +40,7 @@ Branch
 
 [CALab](https://www.helmholtz-berlin.de/zentrum/locations/it/software/exsteuer/calab/index_en.html)
 -----
-**C**hannel **A**ccess **Lab**oratory.  A library which enables [EPICS](#EPICS) and [LabVIEW](#LabVIEW) to communicate with each other.
+**C**hannel **A**ccess **Lab**oratory.  A library which enables [EPICS](#epics) and [LabVIEW](#labview) to communicate with each other.
 
 [Calibration Files](Calibration-Files)
 -------------------
@@ -48,7 +48,7 @@ Files which contain information about how pieces of sample environment equipment
 
 Channel Access (CA)
 -------------------
-A Protocol that defines how [PV](#PV) data is transferred between a server and client in an [EPICS](#EPICS) control system.
+A Protocol that defines how [PV](#pv) data is transferred between a server and client in an [EPICS](#epics) control system.
 
 [Chopper](Choppers)
 -------
@@ -76,11 +76,11 @@ Component
 
 [Config-Checker](Config-Checker)
 ----------------
-A Python script to highlight potential issues with current configurations when a new version of [IBEX](#IBEX) is installed.
+A Python script to highlight potential issues with current configurations when a new version of [IBEX](#ibex) is installed.
 
 [Config-Upgrader](Config-Upgrader)
 ----------------
-A Python script to upgrade current configurations to be compatible with new versions of [IBEX](#IBEX).
+A Python script to upgrade current configurations to be compatible with new versions of [IBEX](#ibex).
 
 ConServer
 ---------
@@ -88,11 +88,11 @@ ConServer
 
 [CSS](http://controlsystemstudio.org/)
 -----
-"**C**ontrol **S**ystem **S**tudio is an [Eclipse](#Eclipse)-based collection of tools to monitor and operate large scale control systems, such as the ones in the accelerator community. It's a product of the collaboration between different laboratories and universities."
+"**C**ontrol **S**ystem **S**tudio is an [Eclipse](#eclipse)-based collection of tools to monitor and operate large scale control systems, such as the ones in the accelerator community. It's a product of the collaboration between different laboratories and universities."
 
 DB File
 -------
-A file containing the definition of [PVs](#PV) for a specific [IOC](#IOC) using [records](#Record). 
+A file containing the definition of [PVs](#pv) for a specific [IOC](#ioc) using [records](#record). 
 
 Dial values
 -----------
@@ -100,15 +100,15 @@ Dial values
 
 [Eclipse](http://www.eclipse.org/)
 ---------
-An IDE and collection of tools for development of GUIs.  [CSS](#CSS) and the IBEX client are based on it.
+An IDE and collection of tools for development of GUIs.  [CSS](#css) and the IBEX client are based on it.
 
 Emulator
 --------
-A software implementation of hardware.  Usually used to help write and test an [IOC](#IOC) and [OPI](#OPI).  See [Emulating-Devices](Emulating-Devices) for more information.
+A software implementation of hardware.  Usually used to help write and test an [IOC](#ioc) and [OPI](#opi).  See [Emulating-Devices](Emulating-Devices) for more information.
 
 [EPICS](EPICS)
 -------
-**E**xperimental **P**hysics and **I**ndustrial **C**ontrol **S**ystem.  A client/server control system using [Channel Access](#Channel Access) as its communication protocol, forming a distributed real-time database of machine values ([PVs](#PV)).
+**E**xperimental **P**hysics and **I**ndustrial **C**ontrol **S**ystem.  A client/server control system using [Channel Access](#channel-access) as its communication protocol, forming a distributed real-time database of machine values ([PVs](#pv)).
 It is a collection of software tools collaboratively developed which can be integrated to provide a comprehensive and scalable control system.
 
 Field
@@ -125,23 +125,23 @@ An implementation of the [OpenGenie](http://www.opengenie.org) scripting languag
 
 IBEX
 ----
-The new ISIS instrument control system.  Primarily based on [EPICS](#EPICS) as the underlying technology.
+The new ISIS instrument control system.  Primarily based on [EPICS](#epics) as the underlying technology.
 
 Instrument Archive
 ------------------
-Archives [PV](#PV) values using the [CSS Archive Engine](#Archive Engine) which have the ARCHIVE [Field](#Field) set in their [Record](#Record).  
+Archives [PV](#pv) values using the [CSS Archive Engine](#archive-engine) which have the ARCHIVE [Field](#field) set in their [Record](#record).  
 
 IOC
 ---
-**I**nput**O**utput**C**ontroller.  A process which reads and writes [PVs](#PV).  Often interfaces with hardware (e.g. sample environment equipment) to enable it to be controlled remotely.
+**I**nput**O**utput**C**ontroller.  A process which reads and writes [PVs](#pv).  Often interfaces with hardware (e.g. sample environment equipment) to enable it to be controlled remotely.
 
 [LabVIEW](http://www.ni.com/labview/)
 ---------
-**Lab**oratory**V**irtual**I**nstrument**E**ngineering**W**orkbench.  A graphical programming language in which the device drivers for [SECI](#SECI) are written.
+**Lab**oratory**V**irtual**I**nstrument**E**ngineering**W**orkbench.  A graphical programming language in which the device drivers for [SECI](#seci) are written.
 
 [LeWIS](https://github.com/DMSC-Instrument-Data/lewis)
 -------
-**Le**t's **W**rite **I**ntricate **S**imulators.  A Python framework for producing and running [emulators](#Emulator).  See [Emulating-Devices](Emulating-Devices) for more information.
+**Le**t's **W**rite **I**ntricate **S**imulators.  A Python framework for producing and running [emulators](#emulator).  See [Emulating-Devices](Emulating-Devices) for more information.
 
 Macro
 -----
@@ -149,7 +149,7 @@ Macro
 
 Mini-Inst
 ---------
-A term used to describe an instrument which uses components from both the [SECI](#SECI) and [IBEX](#IBEX) control systems.  For example, an [IOC](#IOC) wrapped with a [VI](#VI) on a [SECI](#SECI) instrument (using [CALab](#CALab)).
+A term used to describe an instrument which uses components from both the [SECI](#seci) and [IBEX](#ibex) control systems.  For example, an [IOC](#ioc) wrapped with a [VI](#vi) on a [SECI](#seci) instrument (using [CALab](#calab)).
 
 [Momentum Slits](Barndoors-and-Momentum-Slits-on-MUON-Front-End)
 ----------------
@@ -161,11 +161,11 @@ MySQL
 
 [Nicos](http://cdn.frm2.tum.de/fileadmin/stuff/services/ITServices/nicos-2.0/dirhtml/)
 -------
-A network-based control system.  Some elements of it are used in the [script server](#Script Server).
+A network-based control system.  Some elements of it are used in the [script server](#script-server).
 
 OPI
 ---
-**Op**erator **I**nterface.  A file used in [CSS](#CSS) to enable a user to interact with an IOC graphically.
+**Op**erator **I**nterface.  A file used in [CSS](#css) to enable a user to interact with an IOC graphically.
 
 Plugin
 ------
@@ -177,19 +177,19 @@ ProcServ
 
 PV
 --
-**P**rocess **V**ariable.  A named piece of data and the primary object of the [Channel Access Protocol](#Channel Access), often associated with a piece of equipment (e.g. status, readback, setpoint, parameter).
+**P**rocess **V**ariable.  A named piece of data and the primary object of the [Channel Access Protocol](#channel-access), often associated with a piece of equipment (e.g. status, readback, setpoint, parameter).
 
 PVLIST
 ------
-A file used by the [Gateway](#Gateway) which specifies which rules to follow that are defined in the [ACF](#ACF).
+A file used by the [Gateway](#gateway) which specifies which rules to follow that are defined in the [ACF](#acf).
 
 Record
 ------
-Used to define a [PV](#PV) in a [DB File](#DB File).
+Used to define a [PV](#pv) in a [DB File](#db-file).
 
 Release
 -------
-The version of [IBEX](#IBEX) to be deployed.
+The version of [IBEX](#ibex) to be deployed.
 
 Repository ("Repo")
 -------------------
@@ -200,15 +200,15 @@ Script Server
 
 SECI
 ----
-**S**ample **E**nvironment **C**ontrol **I**nterface.  The current instrument control system, currently being replaced by IBEX.  Written in C# and incorporating [LabVIEW](#LabVIEW) drivers for the sample environment equipment.  User manual [here](http://www.facilities.rl.ac.uk/isis/projects/uip/UserManuals/Forms/AllItems.aspx).
+**S**ample **E**nvironment **C**ontrol **I**nterface.  The current instrument control system, currently being replaced by IBEX.  Written in C# and incorporating [LabVIEW](#labview) drivers for the sample environment equipment.  User manual [here](http://www.facilities.rl.ac.uk/isis/projects/uip/UserManuals/Forms/AllItems.aspx).
 
 Sequencer
 ---------
-An [EPICS](#EPICS) module to provide support for [SNL](#SNL) files.
+An [EPICS](#epics) module to provide support for [SNL](#snl) files.
 
 SNL
 ---
-**S**tate **N**otation **L**anguage.  A "C-like" language to enable [State Machines](#State Machine) to be written which can then be integrated into [IOCs](#IOC).
+**S**tate **N**otation **L**anguage.  A "C-like" language to enable [State Machines](#state-machine) to be written which can then be integrated into [IOCs](#ioc).
 
 Soft Motor
 ----------
@@ -216,11 +216,11 @@ An software implementation of a motor axis to enable conversion between two coor
 
 State Machine
 -------------
-A software design in which a program executes _only_ its well-defined states with strict rules governing the changes between them.  Written in [SNL](#SNL) in this case.
+A software design in which a program executes _only_ its well-defined states with strict rules governing the changes between them.  Written in [SNL](#snl) in this case.
 
 Substitution File
 -----------------
-A template for creating [DB files](#DB File) using [macros](#Macro).
+A template for creating [DB files](#db-file) using [macros](#macro).
 
 Synoptic
 --------
@@ -236,15 +236,15 @@ User Values
 
 Vagrant
 -------
-A tool for building and managing [virtual machine](#Virtual Machine) environments.  See [homepage](https://www.vagrantup.com) for more information.
+A tool for building and managing [virtual machine](#virtual-machine) environments.  See [homepage](https://www.vagrantup.com) for more information.
 
 Virtual Box
 -----------
-A tool for running [virtual machines](#Virtual Machine).
+A tool for running [virtual machines](#virtual-machine).
 
 VI
 --
-**V**irtual **I**nstrument.  A [LabVIEW](#LabVIEW) program, usually a device driver for interacting with sample environment equipment.
+**V**irtual **I**nstrument.  A [LabVIEW](#labview) program, usually a device driver for interacting with sample environment equipment.
 
 Virtual Machine
 ---------------
@@ -252,4 +252,4 @@ An entire computer system running, without its own dedicated hardware, as softwa
 
 ZeroMQ
 ------
-Another messaging broker that is used in [NICOS](#Nicos)
+Another messaging broker that is used in [NICOS](#nicos)
