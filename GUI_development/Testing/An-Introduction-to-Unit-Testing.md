@@ -3,8 +3,7 @@
 # Unit Testing
 
 To create unit tests for an Eclipse plug-in a Fragment Project is used. When creating a Fragment Project we assigned the plug-in we wish to test as a Host Plug-in.
-Eclipse automatically gives the Fragment access to the classes in the original plug-in.
-
+Eclipse automatically gives the Fragment access to the classes in the original plug-if
 In the Fragment Project we create classes to test the classes in the original plug-in.
 
 ## A simple example
@@ -38,7 +37,7 @@ Now to create the Fragment Project. Open the Fragment Project wizard under File-
 * Under "Host Plug-in" click the "Browse" button and select the original plug-in
 * Click "Finish"
 
-Eclipse will now create the Fragment Project. We need to manually add the JUnit plug-in as a dependency for the Frgament Project, to do this:
+Eclipse will now create the Fragment Project. We need to manually add the JUnit plug-in as a dependency for the Fragment Project, to do this:
 
 * Open the MANIFEST.MF file
 * Select the "Dependencies" tab
