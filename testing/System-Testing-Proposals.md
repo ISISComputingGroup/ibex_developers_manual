@@ -14,7 +14,7 @@ To use Eclipse RCPTT for a full system test the steps would be:
 
 ### Notes on RCPTT
 
-This used to be called Q7, and was formely a closed source product. Now everything, including the test runner for automating running the tests is open source.
+This used to be called Q7, and was formerly a closed source product. Now everything, including the test runner for automating running the tests is open source.
 
 ## Alternative UI Testing Tools
 
