@@ -9,7 +9,7 @@ Name | Console Name | Type | What it does
 [Archive access](Logging-from-the-archive) | ARACCESS | python | Creates log files based on the archive
 Block Archive | ARBLOCK | Java | Archives (in mysql db) blocks set in a configuration (restarted when blocks change) see [CSS-Archive-Engine](CSS-Archive-Engine)
 Block Cache | BLOCKCACHE | Python | Program which caches block values for
-Block Gateway | GWBLOCK | EPICS Gateway | Aliases the dynamically created block PVs e.g. CS:SB:FURNACE_TEMP to the underlying PV e.g. EUROTHRM_01:A01:TEMP see [Block server](BlockServer#What it does)
+Block Gateway | GWBLOCK | EPICS Gateway | Aliases the dynamically created block PVs e.g. CS:SB:FURNACE_TEMP to the underlying PV e.g. EUROTHRM_01:A01:TEMP see [Block server](BlockServer#what-it-does)
 [Block server](BlockServer) | BLOCKSRV | Python | Manages configurations and blocks associated with them see [Settings-and-Configurations](Settings-and-Configurations)
 CA Repeater | CAREP | Executable | A epics CA repeater that is started before all other processes
 [Database server](The-DatabaseServer) | DBSVR | Python | PVs for items stored in the data base, e.g. ioc pv info, experiment details
