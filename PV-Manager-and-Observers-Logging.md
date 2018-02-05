@@ -1,6 +1,6 @@
-To help dedbug the PVObserver and lower levels you can build a version of the GUI which includes logging and the code for PV manager.
+To help debug the PVObserver and lower levels you can build a version of the GUI which includes logging and the code for PV manager.
 
-1. Checkout [csstudio repository](https://github.com/ISISComputingGroup/CSStudio_3_3) to somewhere accessable (probably c:\instrument\Dev)
+1. Checkout [csstudio repository](https://github.com/ISISComputingGroup/CSStudio_3_3) to somewhere accessible (probably c:\instrument\Dev)
 1. Switch to the Logging_for_PV_connections branch
     - NB the JCA and caj code has been copied from the caj and jca project to org.csstudio.platform.libs.epics and the jar deleted in this project. If you need to update this code create a new copy.
 1. Switch the gui branch to Logging_for_PV_connections 
