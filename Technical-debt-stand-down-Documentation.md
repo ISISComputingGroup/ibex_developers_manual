@@ -5,7 +5,7 @@ This page describes the work done as part of the documentation stand down on 2nd
 ## Major components Page Completion
 
 - Developer: John
-- Reviewer: None
+- Reviewer: Dom
 - Current status: For review
 
 Moved to [System-components](System-components)
