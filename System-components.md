@@ -17,7 +17,7 @@ CA Repeater | CAREP | Executable | A epics CA repeater that is started before al
 [External/Access Gateway](Access-Gateway) | GWEXT | EPICS Gateway | Gateway to allow access to PVs from outside localhost
 Inst etc | INSTETC_01 |  Epics IOC | PVs which are for instrument level, e.g. motors moving and security pvs
 Instrument Archive | ARINST | Java | Archives (in mysql db) pvs with archive property see [CSS-Archive-Engine](CSS-Archive-Engine)
-[IOC Message Logger](IOC-message-logging) | IOCLOG | Java | Collects messages sent by any IOC and log it in the database and put it on the JMS message queue
+[IOC Message Logger](IOC-message-logging) | IOCLOG | Java | Collects messages sent by any IOC, logs it in the database and put it on the JMS message queue
 ISIS DAE | ISISDAE_01 | Epics IOC | Controls the ISIS ICP program which collects data.
 [MySQL](The-MySQL-Database) | runs as a service | Service | My SqlDatabase is used for persisting data
 [Nicos](Nicos) | NICOSDAEMON | Python | Process which runs and queues python scripts on an instrument
