@@ -7,7 +7,7 @@ Name | Console Name | Type | What it does
 [Block server](BlockServer) | BLOCKSRV | Python | Manages configurations and blocks associated with them
 Block Archive | ARBLOCK | Java | Archives (in mysql db) blocks set in a configuration (restarted when blocks change) see [CSS-Archive-Engine](CSS-Archive-Engine)
 Instrument Archive | ARINST | Java | Archives (in mysql db) pvs with archive property see [CSS-Archive-Engine](CSS-Archive-Engine)
-Database server | DBSVR | Python | PVs for items stored in the data base, e.g. ioc pv info, experiment details
+[Database server](The-DatabaseServer) | DBSVR | Python | PVs for items stored in the data base, e.g. ioc pv info, experiment details
 Proc Serve Control | PSCTRL | Epics IOC | Control proc serves  (start, stop and status)
 [Active MQ](ActiveMQ) | JMS | Java | ActiveMQ used to transmit log line
 [Script server (Interface to Nicos)](Nicos) | SCRIPTSERVER | Python | Script server is a proxy in front of nicos to allow communication with it.
