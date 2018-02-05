@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [System Components](System-components)
+
 This is a table of the major components of IBEX server.
 
 Name | Console Name | Type | What it does
