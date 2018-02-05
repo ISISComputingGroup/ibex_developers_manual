@@ -26,3 +26,7 @@ Positions of the motor can be restored/set without setting an offset. These can 
 This is not shown well in the OPI it just has weird values. Look in the log file to check near `GalilCreateController` it says `sevr=info Connected to XXX t 1000 -mg 0, DMC2280 Rev 1.0o-CM, 46949, IHB IHD` not `sevr=major connect: 5004 OPEN ERROR.  Galil::Galil() failed to open Ethernet host`
 
 If it isn't connected try to ping the control address. If this isn't alive check, via the serial cable, the Galil address. The command for this is `IA?`.
+
+### The Galil reports being at home when it is at a limit, not at the limit switch
+
+Ensure the limit_as_home flag is correctly set, see [here](Galil#configure-galil-crate-1)

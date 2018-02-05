@@ -30,7 +30,7 @@ These are instructions for adding a new Windows machine as a node to be used by 
 
 * This should launch a Java window from which, select File, Install as Windows Service
 
-See the Jenkins [website](​https://wiki.jenkins-ci.org/display/JENKINS/Step+by+step+guide+to+set+up+master+and+slave+machines) for more information.
+See the Jenkins [website](https://wiki.jenkins-ci.org/display/JENKINS/Step+by+step+guide+to+set+up+master+and+slave+machines) for more information.
 
 <a name="jenkins_gui_tests"></a>
 ### Special Notes on Jenkins for GUI Tests

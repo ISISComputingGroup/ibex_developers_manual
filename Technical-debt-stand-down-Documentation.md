@@ -2,20 +2,13 @@ This page describes the work done as part of the documentation stand down on 2nd
 
 # Work in progress
 
-## IOC creation tidy up
-- Developer: Dom
-- Reviewer: None
-- Current status: In progress
-
-The IOC pages are messy, I will tidy them up
-
 ## Major components Page Completion
 
 - Developer: John
 - Reviewer: None
-- Current status: In progress
+- Current status: For review
 
-Complete the page Major-Components-of-Ibex-Server.
+Moved to [System-components](System-components)
 
 ## Updating Glossary in User Manual
 - Developer: Aidan
@@ -27,14 +20,14 @@ As a user I would like a more complete glossary for terms I may not have come ac
 ### Pages affected
 - [Glossary Page](https://github.com/ISISComputingGroup/ibex_user_manual/wiki/Glossary)
 
-## Moving between SECI and IBEX user manual page
-- Developer: Freddie
-- Reviewer: None
-- Current status: Ready for review at https://github.com/ISISComputingGroup/ibex_user_manual/wiki/Switching-Between-IBEX-and-SECI
-
-As an instrument scientist I would like to know how to move between SECI and IBEX
-
 # Ready for review
+
+## IOC creation tidy up
+- Developer: Dom
+- Reviewer: None
+- Current status: Ready for review mostly updated https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/IOCs and removed a few redundant pages here and there.
+
+The IOC pages are messy, I will tidy them up
 
 ## Create a spell checking utility for the wikis
 - Developer: Adrian/Tom
@@ -59,3 +52,10 @@ There are lots of improvements and optimisations that can still be made to the l
 - Current status: Ready for review: [Page Link](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/New-Starters) . Linked from [Dev Manual](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki) under 'New Starters'.
 
 As a new member of the IBEX team, I'd like accessible and comprehensive info on getting started with EPICS/IBEX. 
+
+## Moving between SECI and IBEX user manual page
+- Developer: Freddie
+- Reviewer: Dom
+- Current status: Ready for review at https://github.com/ISISComputingGroup/ibex_user_manual/wiki/Switching-Between-IBEX-and-SECI
+
+As an instrument scientist I would like to know how to move between SECI and IBEX

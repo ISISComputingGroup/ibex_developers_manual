@@ -41,5 +41,5 @@ The figures are made in the freely available [yEd](https://www.yworks.com/produc
 
 ### Nexus Files and Data
 
-Nexus files are created on run end and hold the spectra data and the block values. The block values are present if logging is enabled on the block. Once the logging is enabled the values get written to the archive database. There is a thread which pulls this data from the mysql into the sqllite database. On end of run the nexus file is created fro the sqllite database.
+Nexus files are created on run end and hold the spectra data and the block values. The block values are present if logging is enabled on the block. Once the logging is enabled the values get written to the archive database. There is a thread which pulls this data from the MySQL into the SQLite database. On end of run the nexus file is created fro the SQLite database.
 

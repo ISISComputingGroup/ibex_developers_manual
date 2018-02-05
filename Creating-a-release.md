@@ -65,7 +65,7 @@ One or more people should do [manual system tests, using this page](Manual-syste
 1. Consider which instruments need this release:
     * Breaking release: upgrade everyone
     * Big improvement:  upgrade everyone if there is a big improvement that everyone will benefit from
-    * Standard release: upgrade instruments that need updates and all those that are in the current group [release list](instrument-release-groups). Note on the release ticket which instruments need to be released to using checkboxes.
+    * Standard release: upgrade instruments that need updates, i.e. they need a newly released feature, and all those that are in the current release group, see [column in instruments table](https://github.com/ISISComputingGroup/IBEX/wiki#instrument-information). Note on the release ticket which instruments need to be released to using checkboxes (one for start and one for finish).
 
 ## Patch Release
 
