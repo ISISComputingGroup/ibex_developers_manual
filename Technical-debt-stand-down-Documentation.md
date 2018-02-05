@@ -2,14 +2,6 @@ This page describes the work done as part of the documentation stand down on 2nd
 
 # Work in progress
 
-## Major components Page Completion
-
-- Developer: John
-- Reviewer: Dom
-- Current status: For review
-
-Moved to [System-components](System-components)
-
 ## Updating Glossary in User Manual
 - Developer: Aidan
 - Reviewer: None
@@ -59,3 +51,11 @@ As a new member of the IBEX team, I'd like accessible and comprehensive info on 
 - Current status: Ready for review at https://github.com/ISISComputingGroup/ibex_user_manual/wiki/Switching-Between-IBEX-and-SECI
 
 As an instrument scientist I would like to know how to move between SECI and IBEX
+
+## Major components Page Completion
+
+- Developer: John
+- Reviewer: Dom
+- Current status: For review
+
+Moved to [System-components](System-components)
