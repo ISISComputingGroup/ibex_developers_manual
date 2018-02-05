@@ -4,7 +4,7 @@ This is a table of the major components of IBEX server.
 
 Name | Console Name | Type | What it does
 ---  | ------------ | ----- | ------------
-[Active MQ](ActiveMQ) | JMS | Java | ActiveMQ used to transmit log line
+[Active MQ](ActiveMQ) | JMS | Java | ActiveMQ used to transmit log and alarm data
 [Alarm server](Alarms) | ALARM | Java | Serves alarms which appear in the alarms perspective
 [Archive access](Logging-from-the-archive) | ARACCESS | python | Creates log files based on the archive
 Block Archive | ARBLOCK | Java | Archives (in mysql db) blocks set in a configuration (restarted when blocks change) see [CSS-Archive-Engine](CSS-Archive-Engine)
