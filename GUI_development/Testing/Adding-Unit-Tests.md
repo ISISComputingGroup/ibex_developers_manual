@@ -29,42 +29,7 @@ Here are the steps required in Eclipse:
 * Add tests to the class
     * Add org.junit and org.mockito (if required) to the 'Required Plug-ins', under the Dependencies tab for the manifest
 
-* Convert the new plug-in to a Maven project
-    * Right-click on the plug-in and select Configure > Convert to Maven Project
-    * Click "Finish"
-    
-* Add the new plug-in to the Parent POM
-    * Select the pom.xml file in uk.ac.stfc.isis.ibex.client.tycho.parent
-    * On the overview tab click "Add..." under the Modules section
-    * Select the new plug-in from the list
-    * Enable the "Update POM parent section in selected projects" option and click "OK"
-    * Save it
-    
-* Edit the plug-in pom.xml file
-    * Select the pom.xml file
-    * Open the pom.xml tab
-    * Change/add the packaging to eclipse-test-plugin
-    * Remove the build section
-    * Remove the groupID and version entries outside of parent
-    * Save it
+* Add the test plug-in to the Maven build by [following these steps](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Adding-a-Plugin-or-Feature-to-Maven-Build)
     
 * Running the Maven build should now also run the tests
-
-## Example POM
-
-An example test plug-in POM:
-
-```
-    <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-      <modelVersion>4.0.0</modelVersion>
-      <artifactId>tychodemo.bundle.tests</artifactId>
-      <packaging>eclipse-test-plugin</packaging>
-      <parent>
-            <groupId>tychodemo</groupId>
-            <artifactId>parent</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-            <relativePath>../tychodemo.parent</relativePath>
-      </parent>
-    </project>
-```
 
