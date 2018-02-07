@@ -8,7 +8,7 @@ PV switching occurs when a user in IBEX changes from viewing one instrument to a
 
 This was originally done in IBEX by maintaining a PVAddressBook class that kept a map of all PV-connected observables that had been registered with it and reset their prefixes when the instrument was changed. This created a number of issues:
 
-* Some PVs might not need to be switched (e.g. the beamstatus), this was solved by bypassing the PVAddressBook and creating PVs in other plugins
+* Some PVs might not need to be switched (e.g. the beam status), this was solved by bypassing the `PVAddressBook` and creating PVs in other plugins
 
 * There was no way to remove PVs from this address book, which led to an ever increasing map, and subsequent channel access connection attempts, when configurations or instruments were changed
 
@@ -32,13 +32,13 @@ The proposed solution was to remove the central PVAddressBook class and instead 
 
 1. Before providing the new Observable object the factory will register it with the relevant Switcher class, each of which holds a list of all Switchable objects that it is required to switch. The Switchable Observable is also provided with a reference to the switcher so that it can remove itself from the relevant list if it is closed for any reason.
 
-1. When the instrument is changed the InstrumentSwitchers class will call the switchInstruments method on each of the switchers, which will then go on to perform the relevant switching behaviour. E.g. Changing a Switchable’s source, closing it or doing nothing.
+1. When the instrument is changed the InstrumentSwitchers class will call the `switchInstruments` method on each of the switchers, which will then go on to perform the relevant switching behaviour. E.g. Changing a Switchable’s source, closing it or doing nothing.
 
 A similar process also occurs when switching writable PVs, as can be seen in the UML diagram below. The differences being that a WritableFactory is used, this can create a Writable that inherits from Switchable and can write values to PVs. Both the Switchable interface and the abstract PrefixChangingSwitcher were created so that the switching process is as similar as possible when dealing with Writables and Observables.
 
 ![Writables](GUI_development/images/pv_switching/new_switching_writables.jpg)
 
-## Using the PV Switching<a name="UsingPvSwitching"></a>
+## [Using the PV Switching](UsingPvSwitching)
 
 The inner workings of the switching code need not be understood to create PVs that switch with the instrument. Only steps 1 and 3 in the previous list need be performed by a class that wants a new PV. Specifically the following code must be used
 ```java
