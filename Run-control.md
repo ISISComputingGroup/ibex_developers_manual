@@ -18,9 +18,9 @@ $(P):CS:RC:OUT:LIST     names of PVs out of range (space separated in char wavef
 
 CA monitors can be posted on either `CNT` or `LIST`, `CNT` is guaranteed to see all transitions, `LIST` will be up to date but may not see all transitions
 
-(`LIST` is actually a set which can be added to/removed from via PVs; it is called generically via aSub records so provides a general mechanism for keeping a more readable list of things if we need it).
+(`LIST` is actually a set which can be added to/removed from via PVs; it is called generically via aSub records so provides a general mechanism for keeping a more readable list of things if we need it).
 
-Run testRunControl from iocBoot for an example. You need to start INSTETC first if you wish to use the above CS variables.
+Run `testRunControl` from `iocBoot` for an example. You need to start `INSTETC` first if you wish to use the above CS variables.
 
 To do run control on SECI blocks a separate IOC ioc/RUNCTRL will be used. This will need to be restarted by the blockserver as appropriate and the blockserver will also need to (re)write a startup file for it containing lines like:
 
