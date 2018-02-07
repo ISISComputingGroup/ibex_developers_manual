@@ -27,7 +27,7 @@ These are the steps needed to run the GUI via Eclipse:
 1. Expand the target platform folder (labelled as ``uk.ac.stfc.isis.ibex.targetplatform``), double click on the target file and choose "Set as Target Platform". This may take some time as parts of CS-Studio and DAWN are downloaded. It may also be required to update the Locations in use should some packages appear to be missing.
 1. To run the application from within Eclipse: open "ibex.product" from the ``uk.ac.stfc.isis.ibex.client.product`` folder, select "Launch an Eclipse application"
 
-**Important Note:** you will need JDK 1.8 or higher installed to launch the IBEX GUI succesfully. You may be able to use JDK 1.7, but you will need to change the JDK compliance level in Eclipse from 1.8 -> 1.7, else the GUI will not launch.
+**Important Note:** you will need JDK 1.8 or higher installed to launch the IBEX GUI successfully. You may be able to use JDK 1.7, but you will need to change the JDK compliance level in Eclipse from 1.8 -> 1.7, else the GUI will not launch.
 
 **If you see a “Plugin execution not covered by lifecycle configuration” error, you will need to go into eclipse preferences and ignore this category of error.**
 
