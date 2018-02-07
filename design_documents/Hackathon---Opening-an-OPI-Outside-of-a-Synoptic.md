@@ -93,7 +93,7 @@ A schema will also be required. It could look something like:
 
 ```
 
-The PVs and logic should be implemented in such a way as to be optional, so if, say, the ESS didn’t want the functionality it would be easy to exclude. The way the synoptics are handled is an example of how to do this.
+The PVs and logic should be implemented in such a way as to be optional, so if, say, the ESS didn't want the functionality it would be easy to exclude. The way the synoptics are handled is an example of how to do this.
 
 The XML for the synoptic may need to change to allow device screens to be specified – this will need to be coordinated with the GUI side (see Task 5 in Section 3).
 
