@@ -25,17 +25,17 @@ select * from table_name;
 # The Tables
 
 ### iocdb
-* ioc - the list of all IOCs
-* iocenv - lists the environment variables for each IOC
-* iocrt - shows which IOCs are running
-* pvinfo - information about each PV
-* pvs - the list of PVs and their type
+* `ioc` - the list of all IOCs
+* `iocenv` - lists the environment variables for each IOC
+* `iocrt` - shows which IOCs are running
+* `pvinfo` - information about each PV
+* `pvs` - the list of PVs and their type
 
 ### exp_data
-* experiment
-* experimentteams
-* role
-* user
+* `experiment`
+* `experimentteams`
+* `role`
+* `user`
 
 # Configuration
 
