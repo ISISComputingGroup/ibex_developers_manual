@@ -94,7 +94,7 @@ Add the following settings to the "Launching" tab under "Program Arguments" and 
     -consoleLog -root mytestalarm -pluginCustomization full_path/alarm_settings.ini
 ```
 
-There is an example ini file in org.csstudio.alarm.beast.server called plugin_cutomization.ini.
+There is an example ini file in org.csstudio.alarm.beast.server called plugin_customization.ini.
 
 Alternatively, leave the "Program Arguments" blank and pass the arguments via the command line.
 
