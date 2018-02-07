@@ -16,7 +16,7 @@ Positions of the motor can be restored/set without setting an offset. These can 
     ```
 1. Open the motor details opi for given motor
 1. Click on `Set` in `Calibration` area
-1. Set the `User` `MoveAbs` to the value from the querry above
+1. Set the `User` `MoveAbs` to the value from the query above
 1. Click on `Use` in `Calibration` area
 
 ## Galil
@@ -35,6 +35,6 @@ Ensure the limit_as_home flag is correctly set, see [here](Galil#configure-galil
 
 There is a Galil specific PV called `MTRXXXX_AUTOONOFF_CMD` which controls whether an axis automatically powers up when given a move. The default setting is Off, it should be set to On.
 
-### The axis will not move away from a limit, a message gets put in the log of "move failed, wlp active" or "Wrong limit protect stop motor"
+### The axis will not move away from a limit, a message gets put in the log of "move failed, `wlp` active" or "Wrong limit protect stop motor"
 
 There is a Galil specific PV called `MTRXXXX_WLP_CMD` which controls whether an axis treats both limits as high and low. The default setting is On, it should be set to Off.
