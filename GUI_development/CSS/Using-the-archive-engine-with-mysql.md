@@ -8,7 +8,7 @@ The Archive Configuration Tool bundle includes two batch files: one for retrievi
 
 The mysql_settings.ini file contains the database settings and may need to be altered depending on your setup.
 
-There is a demostration configuration file called icap_test_config.xml which can be used as a starting point for your own configuration. 
+There is a demonstration configuration file called icap_test_config.xml which can be used as a starting point for your own configuration. 
 
 Alternatively, you can use the get_config.bat file to retrieve the current settings, the bat file will need to be edited to set the correct engine name to retrieve.
 
