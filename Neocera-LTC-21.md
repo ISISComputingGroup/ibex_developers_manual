@@ -20,7 +20,7 @@ SMON | set into monitor mode
 QHEAT? | heater power; numeric return is percentage of full scale
 QOUT?\<channel\> | Output config (note different returns for analogue and heater)
 QPID?\<channel\> | Query PID settings (note different returns for analogue and heater)
-QSETP?\<channel\> | Querry setpoint; return temperature with units
+QSETP?\<channel\> | Query setpoint; return temperature with units
 QSAMP?\<channel\> | Query Temperature; returns temperature with unit
 SHCONT\<control enum\> | Set heater output control; AUTO P (0)/AUTO PI(1)/AUTO PID (2)/PID (3)/TABLE(4)/DEFAULT (5)
 SACONT\<control enum\> | Set analogue control; PID (3)/TABLE(4)/DEFAULT (5)/MONITOR (6)
