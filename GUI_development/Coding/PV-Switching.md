@@ -34,7 +34,7 @@ The proposed solution was to remove the central PVAddressBook class and instead 
 
 1. When the instrument is changed the InstrumentSwitchers class will call the `switchInstruments` method on each of the switchers, which will then go on to perform the relevant switching behaviour. E.g. Changing a `Switchable`'s source, closing it or doing nothing.
 
-A similar process also occurs when switching writable PVs, as can be seen in the UML diagram below. The differences being that a `WritableFactory` is used, this can create a Writable that inherits from Switchable and can write values to PVs. Both the `Switchable` interface and the abstract `PrefixChangingSwitcher` were created so that the switching process is as similar as possible when dealing with `Writables` and `Observables`
+A similar process also occurs when switching writable PVs, as can be seen in the UML diagram below. The differences being that a `WritableFactory` is used, this can create a Writable that inherits from `Switchable` and can write values to PVs. Both the `Switchable` interface and the abstract `PrefixChangingSwitcher` were created so that the switching process is as similar as possible when dealing with `Writables` and `Observables`
 
 ![Writables](GUI_development/images/pv_switching/new_switching_writables.jpg)
 
