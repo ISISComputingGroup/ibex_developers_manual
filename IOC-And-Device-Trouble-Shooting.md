@@ -91,7 +91,7 @@ record(bi, "$(P)BI")
 
 The result was a `UDF` alarm on the `bi` because the `RVAL` wasn't being updated in line with the `VAL`. We tried a lot of things to sort this. In the end we changed the `OUT` field of the `CALC` to a `FLNK` and added the following field to the `bi`: `field(INP, "$(P)CALC")`. We don't know why this solution worked over the many others we tried.
 
-## IOC Crashes on debug the expection in "Unhandled exception at ... : Stack cookie instrumentation code detected a stack-based buffer overrun."
+## IOC Crashes on debug the exception in "Unhandled exception at ... : Stack cookie instrumentation code detected a stack-based buffer overrun."
 
 This is caused when something bad happens to the stack. There are many underlying causes to this, in my case it was that the IOC had loaded a dll which used an incorrect version of visual studio in its build. The dlls that are loaded (with their paths) can be seen in debug -> Windows -> Modules in VS. To check if it is this error delete the offending dll and try the process again. To fix the error convert the IOC to use build dependencies instead of the master release list, instructions are in [Reducing Build Dependencies](Reducing-Build-Dependencies)
 
