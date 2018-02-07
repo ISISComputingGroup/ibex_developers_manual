@@ -95,7 +95,7 @@ Sub domain is full instrument name e.g GEM. If we wish to distinguish the instru
 # The IN:{INST}:CS sub domain
 
 - `IN:{INST}:CS:IOC:*`: Variables describing running IOCs provided by the IOC themselves
-- `IN:{INST}:CS:IOC:{IOCNAME}:AS:*`: Austosave PVs for IOC {IOCNAME}
+- `IN:{INST}:CS:IOC:{IOCNAME}:AS:*`: Autosave PVs for IOC {IOCNAME}
 - `IN:{INST}:CS:IOC:{IOCNAME}:DEVIOS:*`: DevIOStats PVs for IOC {IOCNAME}
 - `IN:{INST}:CS:IOC:{IOCNAME}:MOT:*`: Motion specific PVs e.g. `allstop` from `motorUtils`
 - `IN:{INST}:CS:IOC:{IOCNAME}:PS:*`: ProcServCtrl PVs for IOC {IOCNAME}
