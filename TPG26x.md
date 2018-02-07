@@ -8,10 +8,10 @@ Simulator PVs are:
 
 | Name | Description |
 | ---  | ---  |
-| SIM            | 1 to switch simulation on, 0 off |
-| SIM:UNITS      | 1-3 for the different units |
-| SIM:X:PRESSURE | To set the pressure readback (X is 1 or 2) |
-| SIM:X:ERROR    | To set the error, 0 - 6; 0 is no error (X is 1 or 2) |
+| `SIM `           | 1 to switch simulation on, 0 off |
+| `SIM:UNITS `     | 1-3 for the different units |
+| `SIM:X:PRESSURE` | To set the pressure readback (X is 1 or 2) |
+| `SIM:X:ERROR `   | To set the error, 0 - 6; 0 is no error (X is 1 or 2) |
 
 ## Emulator
 
@@ -19,7 +19,7 @@ Set up the port with in the st.cmd and run the simulator. There are several back
 
 | Command | Argument | Description |
 | ---     | ---       | ---  |
-| emulator:set:pressureX | <pressure> | Set the pressure of sensor X (X 1 or 2) |
-| emulator:set:errorX | <error 0-6> | Set the error of sensor X (X 1 or 2) |
-| emulator:set:units | <error 1-3> | Set the units |
+| `emulator:set:pressureX` | <pressure> | Set the pressure of sensor X (X 1 or 2) |
+| `emulator:set:errorX` | <error 0-6> | Set the error of sensor X (X 1 or 2) |
+| `emulator:set:units` | <error 1-3> | Set the units |
 
