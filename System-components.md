@@ -13,7 +13,7 @@ Block Gateway | GWBLOCK | EPICS Gateway | Aliases the dynamically created block 
 [Block server](BlockServer) | BLOCKSRV | Python | Manages configurations and blocks associated with them see [Settings-and-Configurations](Settings-and-Configurations)
 CA Repeater | CAREP | Executable | A epics CA repeater that is started before all other processes. This repeats UDP broadcasts to CA clients on the same machine
 [Database server](The-DatabaseServer) | DBSVR | Python | PVs for items stored in the data base, e.g. ioc pv info, experiment details
-[Experiment DB](Experimental-Database) | EXPDB | Python | PVs for the experimental database which contains users and runnumbers
+[Experiment DB](Experimental-Database) | EXPDB | Python | PVs for the experimental database which contains users and run numbers
 [External/Access Gateway](Access-Gateway) | GWEXT | EPICS Gateway | Gateway to allow access to PVs from outside localhost
 Inst etc | INSTETC_01 |  Epics IOC | PVs which are for instrument level, e.g. motors moving and security pvs
 Instrument Archive | ARINST | Java | Archives (in mysql db) pvs with archive property see [CSS-Archive-Engine](CSS-Archive-Engine)
@@ -26,4 +26,4 @@ Proc Serve Control | PSCTRL | Epics IOC | Control proc serves  (start, stop and 
 [Script server (Interface to Nicos)](Nicos) | SCRIPTSERVER | Python | Script server is a proxy in front of nicos to allow communication with it
 
 
-All components are started via [Statup and Shutdown](Startup-and-Shutdown)
+All components are started via [Startup and Shutdown](Startup-and-Shutdown)
