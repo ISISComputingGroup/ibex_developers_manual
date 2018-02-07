@@ -9,7 +9,7 @@ It contains various slots into each slot a variety of devices can be placed. For
 Types of daughter boards are:
  * temperature sensor
  * Heater
- * Auxilary board (general purpose and stepper motors)
+ * Auxiliary board (general purpose and stepper motors)
  * Pressure sensor
  * Cryogen
  * GPIB board (communications)
