@@ -31,6 +31,6 @@ from the right check: the most recent Windows 10 SDK and MFC and ATL support
 
 If you are on a new version of visual studio (2019?) then you will need to upgrade various files to take this into account. Below is a list of things we needed to do when upgrading to 2017 your list may be different.
 
-## Setup the enviornment
+## Setup the environment
 
 The visual studio compiler environment variables are set up from `...\EPICS\base\master\startup\win32.bat` this calls into the visual studio variable set up. Add your version to this.
