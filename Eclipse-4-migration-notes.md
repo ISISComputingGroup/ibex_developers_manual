@@ -109,7 +109,7 @@ There's a CSStudio plugin called `jre6.fragment`. Despite appearances, it is an 
 
 ## To-dos
 
-I've gotten into the habit of using `TODOs` in Eclipse to identify bits of work that I haven't yet gotten around to or rely on later stages of migration. They can be listed by opening up the Eclipse "Tasks" window. The current `TODOs` are on the page [Eclipse 4 Migration TODOs](Eclipse-4-Migration-TODOs).
+I've gotten into the habit of using `TODOs` in Eclipse to identify bits of work that I haven't yet gotten around to or rely on later stages of migration. They can be listed by opening up the Eclipse "Tasks" window. The current `TODOs` are on the page [Eclipse 4 Migration `TODOs`](Eclipse-4-Migration-TODOs).
 
 # Useful people to talk to
 
