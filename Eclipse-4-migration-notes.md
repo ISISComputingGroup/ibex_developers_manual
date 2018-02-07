@@ -107,7 +107,7 @@ At the moment, the plugins required for the build are defined in the `feature` p
 
 There's a CSStudio plugin called `jre6.fragment`. Despite appearances, it is an RAP, not and RCP plugin. If you include it, many of the views won't load properly. In some cases, I've had to add new imports into the target platform to get around this limitation. If you ask the "Run configurations" menu to add required plugins though, it will add it and your application will no longer run properly. You have been warned!
 
-## TODOs
+## To-dos
 
 I've gotten into the habit of using `TODOs` in Eclipse to identify bits of work that I haven't yet gotten around to or rely on later stages of migration. They can be listed by opening up the Eclipse "Tasks" window. The current `TODOs` are on the page [Eclipse 4 Migration TODOs](Eclipse-4-Migration-TODOs).
 
