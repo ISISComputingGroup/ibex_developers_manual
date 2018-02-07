@@ -12,7 +12,7 @@ The Alarm Configuration Tool bundle includes two batch files: one for retrieving
 
 The alarm_server_settings.ini file contains the database and JMS settings and may need to be altered depending on your setup.
 
-There is a demostration configuration file called alarm_config.xml which can be used as a starting point for your own configuration. 
+There is a demonstration configuration file called alarm_config.xml which can be used as a starting point for your own configuration. 
 
 Alternatively, you can use the get_config.bat file to retrieve the current settings, the bat file will need to be edited to set the correct root name to retrieve.
 
