@@ -1,6 +1,6 @@
 > [Wiki](Home) > [The GUI](The-GUI) > [Coding](GUI-Coding) > PV switching
 
-If you are only interested in how to create PVs in IBEX with proper switching behaviour go to [Using the PV Switching](#Using-The-PV-Switching).
+If you are only interested in how to create PVs in IBEX with proper switching behaviour go to "Using the PV Switching".
 
 ## Background ##
 
@@ -28,13 +28,13 @@ The proposed solution was to remove the central PVAddressBook class and instead 
 
 1. On initialisation the factory will then query the InstrumentSwitchers class for the specific Switcher class that handles that type of switching
 
-1. The original class that wanted the PV will subsequently ask the factory for PVs, providing the channel type and PV address. This will be provided as a SwitchableObservable that can be subscribed to for value changes.
+1. The original class that wanted the PV will subsequently ask the factory for PVs, providing the channel type and PV address. This will be provided as a `SwitchableObservable` that can be subscribed to for value changes.
 
-1. Before providing the new Observable object the factory will register it with the relevant Switcher class, each of which holds a list of all Switchable objects that it is required to switch. The Switchable Observable is also provided with a reference to the switcher so that it can remove itself from the relevant list if it is closed for any reason.
+1. Before providing the new Observable object the factory will register it with the relevant Switcher class, each of which holds a list of all `Switchable` objects that it is required to switch. The `SwitchableObservable` is also provided with a reference to the switcher so that it can remove itself from the relevant list if it is closed for any reason.
 
-1. When the instrument is changed the InstrumentSwitchers class will call the `switchInstruments` method on each of the switchers, which will then go on to perform the relevant switching behaviour. E.g. Changing a Switchable’s source, closing it or doing nothing.
+1. When the instrument is changed the InstrumentSwitchers class will call the `switchInstruments` method on each of the switchers, which will then go on to perform the relevant switching behaviour. E.g. Changing a `Switchable`'s source, closing it or doing nothing.
 
-A similar process also occurs when switching writable PVs, as can be seen in the UML diagram below. The differences being that a WritableFactory is used, this can create a Writable that inherits from Switchable and can write values to PVs. Both the Switchable interface and the abstract PrefixChangingSwitcher were created so that the switching process is as similar as possible when dealing with Writables and Observables.
+A similar process also occurs when switching writable PVs, as can be seen in the UML diagram below. The differences being that a `WritableFactory` is used, this can create a Writable that inherits from Switchable and can write values to PVs. Both the `Switchable` interface and the abstract `PrefixChangingSwitcher` were created so that the switching process is as similar as possible when dealing with `Writables` and `Observables`
 
 ![Writables](GUI_development/images/pv_switching/new_switching_writables.jpg)
 
