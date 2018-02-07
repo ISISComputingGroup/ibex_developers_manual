@@ -104,7 +104,7 @@ The beamstop uses galil controllers for the underlying motors. Galils do not hav
   epicsEnvSet IFSIM " "
   epicsEnvSet IFNOTSIM "#"
 ```
- - That the autosave feature of the galil device is turned off. If this is not dsiabled then it is possible for previous device state to interfere with the state of the tests. For example the limits from a previous galil run might be saved which may affect whether the test can successfully move to a given position.
+ - That the autosave feature of the galil device is turned off. If this is not disabled then it is possible for previous device state to interfere with the state of the tests. For example the limits from a previous galil run might be saved which may affect whether the test can successfully move to a given position.
 
  - That the device is run in dev sim mode, but without any lewis emulator. The example command for the beamstop in the `run_all_tests.bat` is:
 ```
