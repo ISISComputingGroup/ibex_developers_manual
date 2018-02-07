@@ -6,7 +6,7 @@
 
 Build stops with:
     
-    Failed to execute goal org.eclipse.tycho:tycho-surefire-plugin:0.20.0:test (default-test) on project uk.ac.stfc.isis.ibex.targets.tests: An unexpected error occured (return code 13). See log for details. -> [Help 1]
+    Failed to execute goal org.eclipse.tycho:tycho-surefire-plugin:0.20.0:test (default-test) on project uk.ac.stfc.isis.ibex.targets.tests: An unexpected error occurred (return code 13). See log for details. -> [Help 1]
 
 In log file 
 
