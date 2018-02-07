@@ -2,12 +2,12 @@ This page covers initial testing of the new Galil driver, this driver does not u
 
 To use the new driver you need to switch both your support/galil/master and ioc/master submodules onto the "update_to_3_4" branch and remake support/galil/master and ioc/master/GALIL.
 
-in ioc/master/GALIL there is a file  utils/SetupR3Axis.bat  that will initialise the Galil in the ibex office with appropriate parameters so you can move it, run it after you have started the ioc/master/GALIL ioc (likely you will only need to run it once as things should then get autosaved locally and applied subsequently)
+in `ioc/master/GALIL` there is a file  `utils/SetupR3Axis.bat`  that will initialise the Galil in the ibex office with appropriate parameters so you can move it, run it after you have started the `ioc/master/GALIL` ioc (likely you will only need to run it once as things should then get autosaved locally and applied subsequently)
  
 ## Changes from previous driver
 
-* turning motors on using the motor record PREM field no longer works (the on state is now tested before PREM is run) so you need to set MTR0101_AUTOONOFF_CMD etc. to "On" (this has been adjusted in SetupR3Axis.bat)
-* GalilStartController() has lost the "display code" argument, so you need to move the "Thread mask" argument (ususally value "3" for us) one position earlier in your local settings/galil/galil*.cmd files 
+* turning motors on using the motor record PREM field no longer works (the on state is now tested before PREM is run) so you need to set MTR0101_AUTOONOFF_CMD etc. to "On" (this has been adjusted in `SetupR3Axis.bat`)
+* GalilStartController() has lost the "display code" argument, so you need to move the "Thread mask" argument (usually value "3" for us) one position earlier in your local settings/galil/galil*.cmd files 
 * Home position is now always set to 0, so PVs like MTR0101_HOMEVAL_SP and MTR0101_PHOME_CMD have been removed 
 
 ## TODO
