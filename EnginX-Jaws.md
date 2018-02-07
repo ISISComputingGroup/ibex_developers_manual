@@ -37,4 +37,4 @@ The calibration for Jaws 3 are currently:
 Gap| SP -> Motor | Motor -> SP
 --- | --------- | -----
 Horizontal | -0.0776*x*x + 1.9001*x + 8.9105 | 0.0434*x*x - 0.4519*x + 0.8232
-Veritcal | 0.0138*x*x + 0.4146*x + 1.1885 | -0.0358*x*x + 2.0167*x - 2.0091
+Vertical | 0.0138*x*x + 0.4146*x + 1.1885 | -0.0358*x*x + 2.0167*x - 2.0091
