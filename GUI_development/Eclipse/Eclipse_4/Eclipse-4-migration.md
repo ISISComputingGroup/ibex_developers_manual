@@ -1,4 +1,4 @@
-Current Known issues: see [Eclipse 4 Migration to dos](Eclipse-4-Migration-TODOs)
+Current Known issues: see [Eclipse 4 Migration to dos](Eclipse-4-Migration-to-dos)
 
 Plugins that have either been modified to work (or at least not complain) with E4, CS-Studio 4.X and DIIRT or work without modification:
 
