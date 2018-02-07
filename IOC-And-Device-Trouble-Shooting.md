@@ -38,7 +38,7 @@ If it doesn't work check:
 
 If this doesn't work check the moxa logging (see data over the moxa connection). If this doesn't work there is a device that can be plugged into a serial port to intercept all traffic.
 
-## It won't work in the IOC initially, but with no changes works after connecting to hyperterimnal
+## It won't work in the IOC initially, but with no changes works after connecting to hyperterminal
 
 If the IOC doesn't work on startup, but does after using hyperterminal, at a command prompt run a `mode com1` on the appropriate com port (example is for COM1) before and after running hyperterminal. If there is a change that isn't duplicated by starting the IOC, then there is possibly a setting missing in asyn.
 
