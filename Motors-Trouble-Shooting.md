@@ -30,3 +30,11 @@ If it isn't connected try to ping the control address. If this isn't alive check
 ### The Galil reports being at home when it is at a limit, not at the limit switch
 
 Ensure the limit_as_home flag is correctly set, see [here](Galil#configure-galil-crate-1)
+
+### The axis will not move, a message gets put in the log of "Begin not valid with motor off"
+
+There is a Galil specific PV called `MTRXXXX_AUTOONOFF_CMD` which controls whether an axis automatically powers up when given a move. The default setting is Off, it should be set to On.
+
+### The axis will not move away from a limit, a message gets put in the log of "move failed, wlp active" or "Wrong limit protect stop motor"
+
+There is a Galil specific PV called `MTRXXXX_WLP_CMD` which controls whether an axis treats both limits as high and low. The default setting is On, it should be set to Off.
