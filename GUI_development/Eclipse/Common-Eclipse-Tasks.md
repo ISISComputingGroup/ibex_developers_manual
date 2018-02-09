@@ -153,7 +153,7 @@ The following steps will allow you to add an existing UI plugin to the perspecti
     * ``org.eclipse.ui.perspectiveExtensions`` - add a new ``perspectiveExtension`` to this; set the ``targetId`` as that of the perspective extension above.
     * Add a new ``view`` to this ``perspectiveExtension``; set the relative to be ``org.csstudio.isis.ui.perspectives.PerspectiveSwitcher``.
     * ``org.csstudio.isis.ui.perspectives`` - add a new 'contribution to this; the class should be the plugin's ``Perspective`` class.
-1. In the same ``plugin.xml`` file, go to the build tab and make sure "plugin.xml" is checked. If not, some aspects (e.g. the preferenceInitializer) may not work in the application once built.
+1. In the same ``plugin.xml`` file, go to the build tab and make sure "plugin.xml" is checked. If not, some aspects (e.g. the `preferenceInitializer`) may not work in the application once built.
 
 Once you've added everything, the ``plugin.xml`` file should look like:
 ```xml
