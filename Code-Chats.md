@@ -50,6 +50,7 @@ All presentations should be uploaded to the SharePoint site [here](https://www.f
 
 Topic | Presenter | Date
 ----- | --------- | ----
+Galil Motors | Kathryn Baker | Feb 2018
 AutoIt | Chris Moreton-Smith | Feb 2018
 
 ## Proposed Future Code Chats
