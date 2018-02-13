@@ -2,4 +2,4 @@
 
 * [SDTest](SDTest)
 
-* [https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/COORD-IOC](COORD)
+* [COORD (co-ordinator) IOC](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/COORD-IOC)
