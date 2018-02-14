@@ -1,5 +1,10 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [Creating and Basics of IOCs](IOCs)
 
+# Before Creating an IOC #
+
+Remember, EPICS is a collaboration! Why create an IOC when you can just use one that's already out there? If the device is not ISIS specific before creating an IOC check whether it is listed [here](https://epics.anl.gov/modules/manufacturer.php) and email the mailing list [here](https://epics.anl.gov/tech-talk/index.php).
+
+
 # Creating an IOC #
 
 Building a new IOC? Before you get started, take a look at the relevant [instrument page](https://github.com/ISISComputingGroup/IBEX/wiki) to see if there's any useful information for the device you're about to write an IOC for. Otherwise, let's get going. If you have problems see [See IOC and device Troubleshooting](IOC-And-Device-Trouble-Shooting).
