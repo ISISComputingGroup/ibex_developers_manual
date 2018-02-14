@@ -20,7 +20,7 @@ This page records notes made during Sprint Retrospective meetings (most recent m
 
 1. Identify IOCs we can contribute back to EPICS Community
    * We have quite a collection of IOCs now.  Some could be of value to others.
-   * Identify IOCs that would be useful to others.  Work out the best way to package them up for distribution.
+   * Identify IOCs that would be useful to others.  Work out the best way to package them up for distribution. DO to organise a meeting to discuss further.
 
 1. Deployment
    * We left deployment until the last minute, mainly because we were waiting for GEM & SANDALS tickets to be completed.
@@ -31,7 +31,7 @@ This page records notes made during Sprint Retrospective meetings (most recent m
    * We should investigate ways to speed up the build.  Consider as a topic for stand-down day.
 
 1. Identify Motion Control Tickets
-   * create a motion control label in GitHub to allow the Motion Control group to easily identify tickets of interest to them.
+   * create a motion control label in GitHub to allow the Motion Control group to easily identify tickets of interest to them - DO to action
 
 1. Shadow Instrument Scientists
    * Individual members should shadow instrument scientists for  time-to-time - to watch them using IBEX and to learn how it could be improved, to better support the things they need to do.
