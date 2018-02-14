@@ -7,6 +7,13 @@ Simulated values can either be a constant, or can be read/written to another PV 
 
 Though a simulated motor exists, it is probably still worth doing record simulation for e.g. jaws as it provides a convenient way to test GUIs without having to start additional IOCs
 
+There are several cases where recsim doesn't work properly (or not without significant extra work):
+- Records with `PINI="YES"` - initialisation runs before channel access is active which causes issues.
+- I/O interrupt records.
+- Records that get pushed to from a protocol file.
+- Records that get their values pushed from another DB record.
+- MBBI/MBBO records - Soft channel device support doesn't populate `RVAL`, it is possible to work around this in some simple cases but often the benefit of adding recsim to these records is not worth the time to get it to work.
+
 There is a [script to help](Add-sim-records-script).
 First add the following record that will be used to indicate if simulation mode is being used
 
