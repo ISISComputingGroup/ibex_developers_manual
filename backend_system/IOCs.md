@@ -2,7 +2,7 @@
 
 # Before Creating an IOC #
 
-Remember, EPICS is a collaboration! Why create an IOC when you can just use one that's already out there? If the device is not ISIS specific before creating an IOC check whether it is listed [here](https://epics.anl.gov/modules/manufacturer.php) and email the mailing list [here](https://epics.anl.gov/tech-talk/index.php).
+Remember, EPICS is a collaboration! Why create an IOC when you can just use one that's already out there? If the device is not ISIS specific, before thinking about creating an IOC check whether it is listed [here](https://epics.anl.gov/modules/manufacturer.php) and, if not, email the mailing list [here](https://epics.anl.gov/tech-talk/index.php).
 
 
 # Creating an IOC #
