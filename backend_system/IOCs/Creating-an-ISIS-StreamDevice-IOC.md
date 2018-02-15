@@ -191,7 +191,7 @@ XXXX_IOC_YY_registerRecordDeviceDriver pdbbase
 
 ```
 
-The a common file, `st-common.cmd` should look like (NOTE: the support files location is a macro defined in the `EPICS\configure\MASTER_RELEASE` file):
+The a common file, `st-common.cmd` should look like (NOTE: the support files location is a macro defined in the `<IOC_DIR>\configure\RELEASE` file):
 
 ```
 epicsEnvSet "STREAM_PROTOCOL_PATH" "$(AMINT2L)/data"
