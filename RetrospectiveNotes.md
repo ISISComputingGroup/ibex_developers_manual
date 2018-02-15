@@ -1,7 +1,7 @@
 > [Wiki](Home) > [Project overview](Project-Overview) > Notes from Retrospectives
 
 # Notes from Retrospectives
-<a name="topOfPage"></a>
+<a name="top"></a>
 
 This page records notes made during Sprint Retrospective meetings (most recent meeting at the top)
 
@@ -9,12 +9,12 @@ This page records notes made during Sprint Retrospective meetings (most recent m
 #### Date of Sprint Retrospective: 14-02-2018
 
 1. Testing API Changes
-   * we made a change to genie_python (changed enums) but did not create unit tests to test the changes.  This came back to bite us.
+   * we made a change to genie_python (changed enumerated types) but did not create unit tests to test the changes.  This came back to bite us.
    * we had a similar issue with #2942 - changes to DB records had impacts elsewhere, which caught us out.
    * Lesson: make sure there are tests that test your changes.
 
 1. SM300 Motor
-   * We estimated 8 points for this (thinking it was a big ticket).  In reality, it required much more effort than 8 pts.
+   * We estimated 8 points for this (thinking it was a big ticket).  In reality, it required much more effort than 8 parts.
    * Creating a motor_record was more complex than we expected.
    * we didn't really have a good understanding of SM300 motors
 
@@ -36,4 +36,4 @@ This page records notes made during Sprint Retrospective meetings (most recent m
 1. Shadow Instrument Scientists
    * Individual members should shadow instrument scientists for  time-to-time - to watch them using IBEX and to learn how it could be improved, to better support the things they need to do.
 
-[Return to top of page](#topOfPage)
+[Return to top of page](#top)
