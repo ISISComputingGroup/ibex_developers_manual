@@ -357,3 +357,9 @@ CRPT (Current Run Parameter Table) memory is a large in-memory structure used to
 ### End of run script not working
 
 See https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Experimental-Runs#experimental-files-not-being-archived-and-so-not-appearing-in-the-journal
+
+### No frames/beam current registered by the DAE
+
+Try switching the timing source to "Internal test clock" and starting a run. If counts are received in this state, it means that the DAE isn't receiving timing pulses from the central source. If that's the case, it needs attention from the electronics group (e.g. Simon Moorby).
+
+Don't forget to switch the timing source back when you're done!
