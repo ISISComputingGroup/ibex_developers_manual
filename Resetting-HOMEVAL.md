@@ -14,9 +14,9 @@ The readback will currently be in error by the HOMEVAL we have just added, you c
 
 This could likey be accomplished programatically by:
 
-writing 1 to MTR0101.SET   (this enters calibration mode)
-writing the previous motor position to MTR0101
-writing 0 to MTR0101.SET   (this leaves calibration mode and redefines motor position in hardware)
+* writing 1 to MTR0101.SET   (this enters calibration mode)
+* writing the previous motor position to MTR0101
+* writing 0 to MTR0101.SET   (this leaves calibration mode and redefines motor position in hardware)
 
 
 
