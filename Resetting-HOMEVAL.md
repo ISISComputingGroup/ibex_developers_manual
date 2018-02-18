@@ -10,24 +10,13 @@ First Steps:
 The readback and limits will currently be in error by the HOMEVAL we have just added. You will need to manually reset the limits, but for the position you can either rehome the axis or redefine the current axis position to be what it was before (i.e. the RBV value you initially recorded above). To redefine in the GUI:
  
 * Change calibration mode from "use" to "set" (leave offset as "frozen")
-* Enter the previous motor user position in the move absolute box
+* Enter the previously recorded motor RBV user position in the move absolute box
 * Change calibration mode from "set" back to "use"
 
-This final set could likey be accomplished programatically by:
+This final sequence could be accomplished programatically by:
 
 * writing 1 to MTR0101.SET   (this enters calibration mode)
-* writing the previously recorded RBV motor position to MTR0101.VAL
-* writing 0 to MTR0101.SET   (this leaves calibration mode and redefines motor position in hardware)
+* writing the previously recorded RBV motor position to MTR0101.VAL (loads new position into hardware)
+* writing 0 to MTR0101.SET   (this leaves calibration mode)
 
-And then setting (or adjusting) any limits (HLM/LLM)
-
- 
-
-
- 
-
- 
-
-
-
-  
+Then setting (or adjusting) of any limits (HLM/LLM) should be performed  
