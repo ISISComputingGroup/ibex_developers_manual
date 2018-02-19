@@ -13,7 +13,7 @@ The readback and limits will currently be in error by the HOMEVAL we have just a
 * Enter the previously recorded motor RBV user position in the move absolute box
 * Change calibration mode from "set" back to "use"
 
-This final sequence could be accomplished programatically by:
+This final sequence could be accomplished programmatically by:
 
 * writing 1 to MTR0101.SET   (this enters calibration mode)
 * writing the previously recorded RBV motor position to MTR0101.VAL (loads new position into hardware)
