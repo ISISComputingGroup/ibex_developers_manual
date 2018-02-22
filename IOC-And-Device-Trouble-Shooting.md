@@ -42,6 +42,11 @@ If this doesn't work check the moxa logging (see data over the moxa connection).
 
 If the IOC doesn't work on startup, but does after using hyperterminal, at a command prompt run a `mode com1` on the appropriate com port (example is for COM1) before and after running hyperterminal. If there is a change that isn't duplicated by starting the IOC, then there is possibly a setting missing in asyn.
 
+## It did work and then freezes ##
+
+This may be due to a low control issue e.g. Xon/Xoff has been incorrectly specified and some binary character
+happens to mat Xoff. You should see asyn still sending characater when yoiu enable trace, but non getting through. If you run the "dbior" command at level 2 you may see "waiting as seen Xoff"  
+
 ## What is Passing between the IOC and the *Stream* Device
 
 It is possible to put stream into a debug mode where everything sent and received is written to the console. To do this simply add to you st.cmd file (defined on your aysn port) :
