@@ -58,5 +58,6 @@ AutoIt | Chris Moreton-Smith | Mar 2018
 
 Idea | Proposer | Proposed Speaker
 ---- | -------- | ----------------
-Java 8 | Dominic Oram | ?
 Jenkins | David Keymer | ?
+Sharing IOCs | Dominic Oram | ?
+Java 8 | Dominic Oram | ?
