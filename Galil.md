@@ -44,7 +44,7 @@ GalilCreateAxis("Galil","B",0,"",1)
 These lines create the axis controllers. It takes the following arguments:
 - Port name: Same as above
 - Axis name: The name of the axis in the controller (the galil labels axes A-H)
-- Limit as home: Set to zero if the axis has a home switch, one if it homes to one of the limits.
+- Limit as home: Set to zero if the axis has a home switch that it homes to, one if it homes in any other way.
 - Enables string: A comma separated list of digital ports to use for enabling/disabling motors. (Not currently used at ISIS)
 - Switch type: Whether the ports specified on the enables string enable or disable the motor. (Not currently used at ISIS)
 
