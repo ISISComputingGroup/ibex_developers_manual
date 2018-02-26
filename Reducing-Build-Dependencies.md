@@ -24,5 +24,7 @@ If you get it wrong / miss something, it will usually just break the build due t
 
 If the module you are changing is using AREA_DETECTOR or EPISC_V4 then things a little more complicated, I'll add extended notes at a later point.
   
+after any change to RELEASE do a "make clean uninstall" followed by "make" to check
+
 Something I mean to look more closely at for ideas is http://epics-sumo.sourceforge.net/
 
