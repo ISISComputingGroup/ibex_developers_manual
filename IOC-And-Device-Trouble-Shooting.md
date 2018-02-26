@@ -44,8 +44,8 @@ If the IOC doesn't work on startup, but does after using hyperterminal, at a com
 
 ## It did work and then freezes ##
 
-This may be due to a low control issue e.g. Xon/Xoff has been incorrectly specified and some binary character
-happens to mat Xoff. You should see asyn still sending characater when yoiu enable trace, but non getting through. If you run the "dbior" command at level 2 you may see "waiting as seen Xoff"  
+This may be due to a low control issue e.g. `Xon`/`Xoff` has been incorrectly specified and some binary character
+happens to match `Xoff`. You should see asyn still sending character when you enable trace, but non getting through. If you run the `dbior` command at level 2 you may see `waiting as seen Xoff`.
 
 ## What is Passing between the IOC and the *Stream* Device
 
