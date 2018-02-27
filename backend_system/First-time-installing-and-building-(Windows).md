@@ -69,6 +69,11 @@ git config --global user.name "spudulike"
 git config --global user.email "spudulike@ndxxxx.isis.cclrc.ac.uk"
 ```
 
+* Enable default recursive check
+```
+git config push.recurseSubmodules check
+```
+
 * Via a git client clone the repository from 'http://spudulike@control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/inst.git' to a directory with your machine name, like so:
 ```
 git clone http://spudulike@control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/inst.git NDXXXX
