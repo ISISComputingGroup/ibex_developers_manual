@@ -2,6 +2,4 @@
 
 IBEX interacts with the NICOS back-end using pre-defined commands that are sent to the NICOS daemon via ZeroMQ. These are formatted in JSON as [`command`, [`arg_1`, ... , `arg_n`] ].
 
-You can find the available commands in 
-
-`C:\Instrument\Apps\EPICS\ISIS\ScriptServer\nicos-core\master\nicos\services\daemon\handler.py`
+You can find the available commands in `EPICS\ISIS\ScriptServer\nicos-core\master\nicos\services\daemon\handler.py`
