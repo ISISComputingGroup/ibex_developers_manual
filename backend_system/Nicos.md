@@ -30,3 +30,4 @@ The design of the Nicos script server.
 
 # Developer notes
 - [Testing Nicos](testing-nicos)
+- [Nicos commands](NICOS-commands)
