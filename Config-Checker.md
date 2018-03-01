@@ -1,6 +1,6 @@
 # Setup
 
-Clone the repository from `https://github.com/ISISComputingGroup/ConfigChecker`.
+Clone the repository from [`https://github.com/ISISComputingGroup/ConfigChecker`](https://github.com/ISISComputingGroup/ConfigChecker).
 
 To set up the config checker to run locally on all instruments:
 1. Run `run_tests.bat`
