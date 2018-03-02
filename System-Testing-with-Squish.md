@@ -19,5 +19,7 @@ Get a licence key (there are 5 floating licences that can be used by 2 people)
     1. Menu File -> Open Test Suite ..
     1. Open the root of the git clone you just made this will open all tests suites in the window
 1. Set the Application under test (AUT)
+    1. Ensure that the client has been built with build.bat
     1. Edit -> Server Settings -> Manage AUTs ...
-    1. 
+    1. Select Mapped AUTs and click Add...
+    1. Locate the executable from the built eclipse project (e.g. ibex-client in `ibex_gui\bas\uk.ac.stfc.ibex.client.product\target\products\ibex.product\win32\win32\x86_64\ibex_gui.exe`
