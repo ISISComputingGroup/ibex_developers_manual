@@ -53,5 +53,5 @@ To change java that squish is using:
     cd squish directory
     "bin/squishconfig" --java="C:\Program Files\Java\jdk<jdk version>\jre\bin"
 
-This fixes the issue "Internal Error: don't know where to log: Squish for Java has not been configured for the current user yet. Please configure the (Java Runtime Environment) used for executing the AUT (Application Under Test) in the Squish IDE via Edit > Preferences > Squish > .... (Or use SQUISH_DIR/bin/squishconfig --java=path_to_jre. Replace "path_to_jre" as required.) (Starting application)"
+This fixes the issue "Internal Error: don't know where to log: Squish for Java has not been configured for the current user yet. Please configure the (Java Runtime Environment) used for executing the AUT (Application Under Test) in the Squish IDE via Edit > Preferences > Squish > .... (Or use `SQUISH_DIR/bin/squishconfig --java=path_to_jre`. Replace "path_to_jre" as required.) (Starting application)"
 
