@@ -17,6 +17,8 @@ Type   | Meaning
 **duplicate** | Ticket is a duplicate of a different ticket and will not be fixed (usually other ticket is referenced)
 **for current release** | Ticket is needed for the current release and should be prioritised (allows us to keep track of whether a release can be made)
 **proposal** | It is proposed that the ticket should be in the next sprint (removed each sprint)
+**training** | Ticket is easy and not urgent, therefore suitable for new starters
+**motion control** | Ticket may be of interest to the motion control hardware team. Tickets are relevant if they change how we interact with a motion control device or change the workflow for commissioning motion
 **ready (wf)** | Ticket is in the current sprint and can be worked on
 **in progress (wf)** | Ticket is currently in progress
 **review (wf)** | Ticket is done and should be review by someone
