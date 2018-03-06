@@ -85,6 +85,26 @@ By default, the Galil IOC will stop all running threads when it restarts. If you
 - Oscillating collimator. LET, MERLIN.  Thread number defaults to 2, but can be set via PV
 - Fermi chopper lift. EMMA. Thread number fixed to 5
 
+## Assigning IP addresses
+
+The IP address of a Galil can only be established using a serial connection. This must be set up.
+  
+For a Galil DMC 2280, there are no problems
+1) Enter the command IA n1,n2,n3,n4 e.g. IA 192,168,1,201
+2) Enter the command BN to burn permanently into Galil
+  
+For a Galil DMC 4280, the firmware will not retain the IP address. As a result a trick must be used :
+1) The IP address can not be burnt into the Galil. As a result, a program must be saved into the Galil that assigns the IP address when the Galil is powered up. For the IA command, use the appropriate IP address desired.
+2) Send the following program to the Galil
+`#AUTO
+DH0
+IA 192,168,1,201
+EN`
+3) Once entered, the program must be saved into the Galil permanently.
+4) Issue command BP (for burn program)
+5) Power cycle and the Galil should be available on the network.
+6) Please note : do not overwrite the permanent program resident in the Galil. It can be overwritten as long as it is not made permanent. Other programs, such as homing routines can be downloaded into the device but should not be burnt in.
+
 # Trouble Shooting
 
 See [Motors Trouble Shooting](Motors-Trouble-Shooting)
