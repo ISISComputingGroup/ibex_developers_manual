@@ -94,12 +94,14 @@ For a Galil DMC 2280, there are no problems
 2) Enter the command BN to burn permanently into Galil
   
 For a Galil DMC 4280, the firmware will not retain the IP address. As a result a trick must be used :
-1) The IP address can not be burnt into the Galil. As a result, a program must be saved into the Galil that assigns the IP address when the Galil is powered up. For the IA command, use the appropriate IP address desired.
-2) Send the following program to the Galil
-> #AUTO
-> DH0
-> IA 192,168,1,201
-> EN
+1) The IP address can not be burnt into the Galil. As a result, a program must be saved into the Galil that assigns the IP address when the Galil is powered up. It must also turn off the DHCP setting as we use a private network for the Galils.
+2) Send the following program to the Galil (For the IA command, use the appropriate IP address desired.):
+```
+#AUTO
+DH0
+IA 192,168,1,201
+EN
+```
 3) Once entered, the program must be saved into the Galil permanently.
 4) Issue command BP (for burn program)
 5) Power cycle and the Galil should be available on the network.
