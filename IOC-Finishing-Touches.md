@@ -38,7 +38,7 @@ If you want a PV to appear in the alarm view (and there should be at least one p
 
 ## 4. Autosave PVs
 
-PVs can be autosaved so that they save their values and are reloaded when the IOC starts. To do this mark the field with the following info line:
+PVs can be autosaved so that they save their values and are reloaded when the IOC starts. The value is set before the record is initialised so is only processed using this value if `PINI` is Yes; although waveform records do this differently and will process the record.To do this mark the field with the following info line:
 
     info(autosaveFields, "VAL")
 
