@@ -12,4 +12,4 @@ Mixing autosave with IOCs that load a dynamic number of axes/sensors can be dang
 
 # How to Add
 
-To add autosave to a field see [Autosave PVs in finishing touches](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/IOC-Finishing-Touches#4-autosave-pvs).
+To add autosave to a field see [autosave PVs in finishing touches](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/IOC-Finishing-Touches#4-autosave-pvs).
