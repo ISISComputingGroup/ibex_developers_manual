@@ -15,3 +15,5 @@ Various Processes or tasks and info into how they should work. Remember rules ca
 - [Prioritisation of tickets](Prioritisation-of-Tickets)
 
 - [Umbrella Tickets](Umbrella-Tickets) Creation of an umbrella/epic tickets or spins inside an umbrella/epic ticket
+
+- [Dependency Update](Dependency-updates)
