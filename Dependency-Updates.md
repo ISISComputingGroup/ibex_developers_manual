@@ -4,7 +4,16 @@ After a release all of the dependencies of the system should be considered for u
 
 [Link to the dependencies on the release notes](https://github.com/ISISComputingGroup/IBEX/wiki/ReleaseNotes_Dev#dependencies)
 
-# PyDev plugin
+# GUI Dependencies
+
+## PyDev plugin
+
+### eclipse 3
+The pydev plugin in eclipse 3 version is stuck at the current version because pydev later than this need eclipse 4 I think.
+
+### eclipse 4
+
+The different versions of the plugins are found at [http://www.pydev.org/update_sites/](http://www.pydev.org/update_sites/)
 
 
 
