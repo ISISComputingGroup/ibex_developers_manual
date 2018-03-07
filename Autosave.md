@@ -10,3 +10,6 @@ In the future, we may use an autosave-like mechanism to apply snapshots of motor
 
 Mixing autosave with IOCs that load a dynamic number of axes/sensors can be dangerous. If the IOC is accidentally started with a macro that makes the IOC load no axes, autosave will save a file containing no values. When the IOC is subsequently restarted with the correct macros, it will read the autosave file (which has no values in it). This causes the IOC to "lose" its previously saved values. This was seen in https://github.com/ISISComputingGroup/IBEX/issues/2180.
 
+# How to Add
+
+To add autosave to a field see [Autosave PVs in finishing touches](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/IOC-Finishing-Touches#4-autosave-pvs).
