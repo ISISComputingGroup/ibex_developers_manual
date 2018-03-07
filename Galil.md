@@ -14,6 +14,7 @@ Useful information about the Galil can be found on the following pages:
 - [Barndoors and Momentum Slits on MUON Front End](Barndoors-and-Momentum-Slits-on-MUON-Front-End)
 - [Creating soft motors to control real motors](Creating-soft-motors-to-control-real-motors)
 - [Migrating instrument configurations](Migrating-instrument-configurations)
+- [Galil default parameters](Galil-default-parameters)
 
 # Technical information
 
