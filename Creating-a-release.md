@@ -14,8 +14,7 @@ Text for release ticket:
     - [ ] [Pre Testing Steps](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Creating-a-release#pre-testing)
     - [ ] [Testing steps](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Creating-a-release#testing)
     - [ ] [Post Testing](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Creating-a-release#post-testing)
-    - [ ] Create a ticket to update dependencies to latest versions and test:
-        - dependencies link: https://github.com/ISISComputingGroup/IBEX/wiki/ReleaseNotes_Dev#dependencies
+    - [ ] [Create a ticket to update dependencies to latest versions and test](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Dependency-updates)
 
 ## Standard Release
 
