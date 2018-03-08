@@ -44,12 +44,14 @@ Run the `genie_python_install.bat` batch file located in `\\isis\inst$\Kits$\Com
 
 # Build EPICS back-end
 `cd` to `C:\Instrument\Apps\EPICS\` and run `build.bat`
-Note that take some time and should end with building the documentation.
+Note that this will take some time and should end with building the documentation.
 
 Certain items will not be built when using VS2013, these are:
 *  Mk3Chopper support module and IOC - only builds with VS2010
 
 If you see `Error 2: file not found`, you may not have installed the correct windows SDK or visual studio version. Check for `rc.exe` in `C:\Program Files (x86)\Windows Kits\10\bin\x86\` (as appropriate for your system). If you don't have `rc.exe`, try installing the windows SDK appropriate for your operating system.
+
+Whilst this is building you can independently start [Building the GUI](Building-the-GUI).
 
 # Set up the CS-Studio archiver
 In `C:\Instrument\Apps\EPICS\CSS\master` run `setup_css.bat`
