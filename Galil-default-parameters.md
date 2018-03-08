@@ -12,11 +12,12 @@ The Galil IOC has a number of (quite obscure) parameters. The ISIS defaults for 
 | ERROR LIMIT   | The position error to turn the motor off at | Don't Care | Same | Doesn't do anything when above PV not set |
 | WLP           | Stops the motor from moving when it hits any limit | On | Off | Provides a safety net during commissioning but means you cannot move off a limit when running |
 | AUTOONOFF     | Automatically turns the motor on for a move and off when complete | On | Off when the motor needs to be constantly energised e.g. it will fall under gravity | Better to turn the motor off when not in use |
-| ONDELAY       | If AUTOONOFF set, how long to wait after a move command before turning on | 0.2 | 0 | We can't think of a reason to wait? |
+| ONDELAY       | If AUTOONOFF set, how long to wait after the motor is turned on to begin a move | 0.2 | 0 | Used to make sure the amp is ready for the move. Generally we do not need to wait. |
 | OFFDELAY       | If AUTOONOFF set, how long to wait after stopped before turning off | 0.2 | 2 | Should wait some time if you're doing correction moves immediately |
 | ON_CMD | If on will leave the motor on at all times | Off | Off when the motor needs to be constantly energised e.g. it will fall under gravity (Make sure the AUTOONOFF is Off) | Better to turn the motor off when not in use |
 | K1, K2, K3, FV, FC, FA, FN, ZP, ZN, CT, AF | Used for ceramic motors | 0 | Change if ceramic | This is the Galil's default when not ceramic motors |
-| IL, TL | Used for ceramic motors | 9.998 | Change if ceramic | This is the Galil's default when not ceramic motors |
+| FV, FA | Changes the output voltages based on the acceleration/velocity | 0 | Change if required | Most axes in ISIS do not require this |
+| IL, TL | Used for setting limits on the integrator and torque | 9.998 | Change if required | Most axes at ISIS do not need a limit so set the highest possible |
 | CP | Used for ceramic motors | 65535 | Change if ceramic | This is the Galil's default when not ceramic motors |
 | VBAS | The minimum speed the motor should go at (NOTE THAT ACCEL IS CALCULATED BASED ON THIS) | 0 | Same | Most motors should be happy at any speed below maximum |
 | BDST | The distance to move to correct for backlash | 0 | Same | Most axes shouldn't need to correct |
