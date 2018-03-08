@@ -86,6 +86,7 @@ git clone http://spudulike@control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/ins
 ```
 cd NDXXXX/
 git checkout -b NDXXXX
+rename Python\init_inst_name.py Python\init_<Inst name (lowercase e.g. iristest1)>.py
 git add Python\init_<Inst name (lowercase e.g. iristest1)>.py
 git rm Python\init_inst_name.py
 git commit -m"create initial python"
