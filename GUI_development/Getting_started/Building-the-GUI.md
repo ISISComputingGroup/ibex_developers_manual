@@ -16,7 +16,7 @@ Create a directory for where you want your IBEX GUI to reside (e.g. `C:\Instrume
 
 ### Eclipse IBEX Developer's Edition
 
-If you are working on the IBEX GUI please use the IBEX Eclipse editor, which is available, within ISIS, via a zip file at `\\isis\inst$\Kits$\CompGroup\ICP\Developer Tools`, simply unzip the the file to your chosen location for Eclipse and use the provided workspace. You can choose to download Eclipse directly from ​http://www.eclipse.org/downloads/packages/eclipse-rcp-and-rap-developers/mars1, but you will need to alter settings to get the correct defaults for formatting.
+If you are working on the IBEX GUI please use the IBEX Eclipse editor, which is available, within ISIS, via a zip file at `\\isis\inst$\Kits$\CompGroup\ICP\Developer Tools`, simply unzip the the latest version folder to your chosen location for Eclipse and use the provided workspace. You can choose to download Eclipse directly from ​http://www.eclipse.org/downloads/packages/eclipse-rcp-and-rap-developers/mars1, but you will need to alter settings to get the correct defaults for formatting.
 
 ### Building
 
