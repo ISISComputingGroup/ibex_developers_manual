@@ -1,7 +1,7 @@
 The Galil IOC has a number of (quite obscure) parameters. The ISIS defaults for these are stated here. Parameters that are not on this list either vary so much per axis that a sensible default is hard to reach or are happy at the motor record default.
 
 | Parameter     | Description | Default (Commissioning) | Default (Running) | Reasoning  |
-| ------------- |------------ | ----------------------- | ----------------- |----------- |
+|:------------- |------------ | ----------------------- | ----------------- |----------- |
 | ESTALLTIME    | Throws an error when the encoder has not moved after specified time | 1 | Small enough to catch errors when they occur | Give some slack so that doesn't throw errors, tighten when required |
 | EDEL          | In motion if encoder has moved by this amount | 2*ERES | Could be increased if motor is particularly jittery | A motor shouldn't be jittering by more than 1 encoder step |
 | JAH           | When on the axis will jog a specified amount after a home | No | Same | We don't want to do this at ISIS |
