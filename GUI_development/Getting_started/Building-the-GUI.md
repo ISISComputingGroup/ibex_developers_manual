@@ -29,7 +29,10 @@ These are the steps needed to run the GUI via Eclipse:
 
 **Important Note:** you will need JDK 1.8 or higher installed to launch the IBEX GUI successfully. You may be able to use JDK 1.7, but you will need to change the JDK compliance level in Eclipse from 1.8 -> 1.7, else the GUI will not launch.
 
-**If you see a “Plugin execution not covered by lifecycle configuration” error, you will need to go into eclipse preferences and ignore this category of error.**
+### If you see a “Plugin execution not covered by lifecycle configuration” error
+1. From the menu bar choose: Window->Preferences
+1. Expand Maven and choose Errors/Warnings
+1. Set "Plugin execution not covered by lifecycle configuration" to Warning or Ignore
 
 ## Building via Maven ##
 
