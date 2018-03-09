@@ -36,10 +36,10 @@ Get a licence key (there are 5 floating licences that can be used by 2 people)
 
 1. Click File -> New test Suite ...
 1. New Test Suite:
-    1. Create a sensible name, Suite_<what>_tests
+    1. Create a sensible name, `suite_<what>_tests`
     1. Make the test suite path the same as the system testing folder
 1. Language: Make sure it is python
-1. Select the application as ibex-eclipse
+1. Select the application as eclipse (the ibex client in E4 was called eclipse)
 1. Finish
 1. Edit the test suite settings (select test suite in test suites tab. Then click on icon with blue spanner)
     1. Edit Object Map to be `..\objects.map`
