@@ -49,7 +49,8 @@ Get a licence key (there are 5 floating licences that can be used by 2 people)
 A test contains one test case.
 
 1. Find the suite the test should be in
-1. Click "Create new test case" 
+1. Click "Create new test case" (icon document with a plus in Test Suites tab)
+1. Change name to `tst_<what the test does>`
 1. A test suite should start:
     ```
     # -*- coding: utf-8 -*-
