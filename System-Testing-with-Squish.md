@@ -43,6 +43,13 @@ Get a licence key (there are 5 floating licences that can be used by 2 people)
 1. Finish
 1. Edit the test suite settings (select test suite in test suites tab. Then click on icon with blue spanner)
     1. Edit Object Map to be `..\objects.map`
+
+# Creating a new Test
+
+A test contains one test case.
+
+1. Find the suite the test should be in
+1. Click "Create new test case" 
 1. A test suite should start:
     ```
     # -*- coding: utf-8 -*-
