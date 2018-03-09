@@ -164,3 +164,12 @@ To regenerate log files set the date in the `c:\Logs\LOG_last_active_time` to th
 ## I want to Generate a Log file from some PVs Now
 
 This can be done between two dates see `...EPICS\ISIS\inst_servers\master\ArchiverAccess\log_file_generator.py` as an example.
+
+## which process owns a serial port
+
+From an administrator (i.e. gamekeeper) prompt, run the sysinternals handle command like:
+
+      handle.exe -a | findstr "Serial pid:"
+
+This will print a list of PIDs and any mayches to a serial port allocated, take the pid number above the relevant \Device\Serial  line 
+
