@@ -69,6 +69,7 @@ Hints, tips and gotchas for writing tests:
 * Use `set_text_field` to set a text field because it deletes its contents before adding the new value.
 * Use `menu` module to access menus because if a menu is interrupted then you want it to try again at the top level menu.
 * Use `generate_config_name` to generate a config name so that it will be ignored by git and cleaned up by the system test
+* If you open a dialogue capture it using a context manager. You could consider adding an option for OK and Cancel.
 
 # Other 
 
