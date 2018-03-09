@@ -1,4 +1,4 @@
-> [Wiki](Home) > [The GUI](The-GUI) > [Testing](GUI-Testing) > System testing with RCPTT
+> [Wiki](Home) > [The GUI](The-GUI) > [Testing](GUI-Testing) > [System testing with Squish](System-Testing-with-Squish)
 
 # Set Up
 
@@ -43,6 +43,32 @@ Get a licence key (there are 5 floating licences that can be used by 2 people)
 1. Finish
 1. Edit the test suite settings (select test suite in test suites tab. Then click on icon with blue spanner)
     1. Edit Object Map to be `..\objects.map`
+1. A test suite should start:
+    ```
+    # -*- coding: utf-8 -*-
+    import sys
+    import os
+    path = os.path.abspath(os.path.dirname(findFile("scripts", "test_running.py")))
+    sys.path.append(path)
+
+    from test_running import start_test
+    <other imports> 
+    
+    def main():
+    
+        # Given application
+        start_test()
+    
+        <rest of test>
+    ```
+
+# Writing tests
+
+Hints, tips and gotchas for writing tests:
+
+* Use `set_text_field` to set a text field because it deletes its contents before adding the new value.
+* Use `menu` module to access menus because if a menu is interrupted then you want it to try again at the top level menu.
+* Use `generate_config_name` to generate a config name so that it will be ignored by git and cleaned up by the system test
 
 # Other 
 
