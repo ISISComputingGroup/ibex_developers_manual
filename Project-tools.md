@@ -28,6 +28,9 @@ Tools for upgrading the config
 
 Tools for checking the current configurations are correct
 
+## [Config IOC Finder](Config-IOC-Finder)
+
+Tool for finding either IOCs on instruments or instruments with a given IOC.
 
 ## [Test Machines](Test-Machines)
 
