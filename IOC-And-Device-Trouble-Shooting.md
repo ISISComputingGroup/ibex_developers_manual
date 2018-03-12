@@ -167,9 +167,11 @@ This can be done between two dates see `...EPICS\ISIS\inst_servers\master\Archiv
 
 ## which process owns a serial port
 
-From an administrator (i.e. gamekeeper) prompt, run the sysinternals handle command like:
+From an administrator (i.e. gamekeeper) prompt, run the `sysinternals` handle command like:
 
-      handle.exe -a | findstr "Serial pid:"
+```
+handle.exe -a | findstr "Serial pid:"
+```
 
-This will print a list of PIDs and any mayches to a serial port allocated, take the pid number above the relevant \Device\Serial  line 
+This will print a list of PIDs and any matches to a serial port allocated, take the pid number above the relevant \Device\Serial  line 
 
