@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > [Motor IOCs](Motor-IOCs) > [Galil](Galil) > [Galil default parameters](Galil-default-parameters)
+
 The Galil IOC has a number of (quite obscure) parameters. The ISIS defaults for these are stated here. Parameters that are not on this list either vary so much per axis that a sensible default is hard to reach or are happy at the motor record default.
 
 | Parameter     | Description | Default (Commissioning) | Default (Running) | Reasoning  |
