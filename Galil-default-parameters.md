@@ -7,7 +7,7 @@ The Galil IOC has a number of (quite obscure) parameters. The ISIS defaults for 
 | ESTALLTIME    | Throws an error when the encoder has not moved after specified time | 1 | Small enough to catch errors when they occur | Give some slack so that doesn't throw errors, tighten when required |
 | EDEL          | In motion if encoder has moved by this amount | 2*ERES | Could be increased if motor is particularly jittery | A motor shouldn't be jittering by more than 1 encoder step |
 | JAH           | When on the axis will jog a specified amount after a home | No | Same | We don't want to do this at ISIS |
-| JAH_VAL       | The amount to job after home | Don't Care | Same | Doesn't do anything when above PV not set |
+| JAH_VAL       | The amount to jog after home | Don't Care | Same | Doesn't do anything when above PV not set |
 | EGUAFTLIMIT   | The distance between a limit switch and a hard stop | 0.001 | Increased if a large deceleration would be bad | A very small amount will definitely stop the axis |
 | HOMEVAL       | What position to send the device after a home | 0 | Same | [Home is defined as zero across ISIS](https://github.com/ISISComputingGroup/IBEX/issues/2471) |
 | OFFONERRORLIMIT | Turns the motor off when position error is greater than specified | Off | Same | Would be useful if the IOC sent a new position on start up but currently doesn't |
