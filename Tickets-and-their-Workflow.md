@@ -38,6 +38,24 @@ Filter for proposed tickets `is:open label:proposal`
 
 Filter for other tickets `is:open -label:proposal -label:"in progress" -label:"ready" -label:"review" -label:"completed" -label:"impeded"`
 
+## Sprint Review
+
+Demo of tickets that have been done in this sprint.
+
+Prep:
+
+1. On the day create a power point file on the share with title slide and a template slide with Done, Mention and Demo.
+1. Send slack announcing where it is and asking people to add themselves
+1. Update demo using `instrument_install_latest_build_only.bat` script in ibex utils
+1. Announce that demo is available for creating demos on
+
+During:
+
+- Go through each persons slide and get them to demo and mention tickets they have done.
+- Generally discuss any issues and goodness in the code.
+
+Often the meeting is followed by the retrospective.
+
 ## Sprint Planning
 
 At sprint planning we:
