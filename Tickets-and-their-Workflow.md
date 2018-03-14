@@ -46,8 +46,10 @@ Prep:
 
 1. On the day create a power point file on the share with title slide and a template slide with Done, Mention and Demo.
 1. Send slack announcing where it is and asking people to add themselves
-1. Update demo using `instrument_install_latest_build_only.bat` script in ibex utils
-1. Announce that demo is available for creating demos on
+1. Update demo:
+    1. run `instrument_install_latest_build_only.bat` 
+    1. then in epics run `create_icp_binaries.bat`
+    1. Announce that demo is available for creating demos on
 
 During:
 
