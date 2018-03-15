@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [System Components](System-components) > [DAE and the ICP](DAE-and-the-ICP) > [Dae Spectra Updating Problem](Dae-Spectra-Updating-Problem)
+
 There has been a long running problem with spectra stopping updating after a certain amount of time 
 [issue 2750](https://github.com/ISISComputingGroup/IBEX/issues/2750) this has not been reproducible on developer test machines, the only clue came recently when the related detector diagnostics display stopped and reported a message that looked a bit like thread termination. The proposed solution has been to add additional exception handling on the assumption that a windows structured exception rather than a C++ std::exception is the cause. To handle these non-C++ exceptions, the following has been done:
 
