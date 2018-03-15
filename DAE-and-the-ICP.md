@@ -4,7 +4,8 @@
 
 The Data Acquisition Electronics (DAE) is the physical hardware that reads the neutron events out of the detectors. IBEX communicates with this hardware via the Instrument Control Program (ICP)
 
-For Troubleshooting the DAE see [here](DAE-Trouble-Shooting).
+- For Troubleshooting the DAE see [here](DAE-Trouble-Shooting).
+- For details on [dae spectra updating problem](Dae-Spectra-Updating-Problem)
 
 ## Running the DAE in Parallel
 
