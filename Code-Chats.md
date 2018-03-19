@@ -52,7 +52,8 @@ All presentations should be uploaded to the SharePoint site [here](https://www.f
 
 Topic | Presenter | Date
 ----- | --------- | ----
-AutoIt | Chris Moreton-Smith | Mar 2018
+AutoIt | Chris Moreton-Smith | Apr 2018
+Nicos | Dominic Oram | Apr 2018
 
 ## Proposed Future Code Chats
 
