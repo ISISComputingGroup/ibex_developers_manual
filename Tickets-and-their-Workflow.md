@@ -25,6 +25,7 @@ Type   | Meaning
 **completed (wf)** | Ticket is complete
 **impeded (wf)** | Ticket is in progress but can not be completed because of something else. Reason for impediment should be added to the ticket. This should not be for long.
 **fixed (wf)** | Ticket has been fixed (added at end of sprint only and by the person running the sprint)
+**rerequest** | Instrument scientist has requested a ticket and it has been request by another instrument scientist in the past. A comment should record who asked with a +1.
 
 ## Creation of Tickets
 
