@@ -5,6 +5,25 @@
 
 This page records notes made during Sprint Retrospective meetings (most recent meeting at the top)
 
+## Sprint_2018_02_15
+#### Date of Sprint Retrospective: 14-03-2018
+
+1. Build Performance
+   * builds are now much faster.
+   * there is still room for improvement.
+
+1. Windows 10 testing
+   * Windows 7 will be supported by Microsoft for only two more years.
+   * over time, instrument machines will migrate to Windows 10 (probably the new LTS version of Windows 10)
+   * we need to be prepared for this
+   * also need to consider what happens to SECI during this time period
+
+1. Prune the Backlog
+   * we agreed the backlog should be pruned.  Be ruthless about it! (we can always re-open tickets if we are too ruthless).
+
+1. In coming sprints we will prioritise Script Server work, then E4 migration and then support for LSS scripting & graphing (because scripting & graphing will benefit from the Script Server and E4 work).
+   * Kevin will follow up with Andrew Caruana to get more details of LSS scripting requirements.
+
 ## Sprint_2018_01_18
 #### Date of Sprint Retrospective: 14-02-2018
 
