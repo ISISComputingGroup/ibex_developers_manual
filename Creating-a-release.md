@@ -49,7 +49,8 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
     1. The release builds will be created in `P:\Kits$\CompGroup\ICP\Releases\X.x.m`
 1. Create a released version in the [releases table](https://github.com/ISISComputingGroup/IBEX/wiki#releases) (including link to release notes)
 1. Update the versions of MySQL and Java being deployed associated with the release in the release notes.
-1. Move the changes which have been merged into the release from the dev page to the new release notes page for the version.
+1. Move the changes which have been merged into the release from the dev page to the new release notes page for the version. 
+1. Add relevant changes to a scientist demo release page and link to [sprint demos page](https://github.com/ISISComputingGroup/IBEX/wiki/Timetable-for-sprint-demos).
 1. Update the [user manual](https://github.com/ISISComputingGroup/ibex_user_manual/wiki) with any relevant changes
 1. Visit each instrument and check for change which are not summarised on the [IBEX wiki](https://github.com/ISISComputingGroup/IBEX/wiki#instrument-information). Do this by running git status in the EPICs directory and looking at the diff.
 
