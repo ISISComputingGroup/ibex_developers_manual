@@ -18,7 +18,7 @@ For more details, see [#2741](https://github.com/ISISComputingGroup/IBEX/issues/
 
 # Delay is wrong
 
-The delay setpoint can be wrong if the high byte and low byte of the setpoint are recieved in the wrong order. The observed behaviour in this state is that the setpoint readback will appear to be correct, but the actual delay will home in on a different (incorrect) value. Resending the delay setpoint in the correct order fixes this state.
+The delay setpoint can be wrong if the high byte and low byte of the setpoint are received in the wrong order. The observed behaviour in this state is that the setpoint readback will appear to be correct, but the actual delay will home in on a different (incorrect) value. Resending the delay setpoint in the correct order fixes this state.
 
 This problem is mitigated in the driver by having a state machine which keeps the actual delay and the delay setpoint in sync.
 
