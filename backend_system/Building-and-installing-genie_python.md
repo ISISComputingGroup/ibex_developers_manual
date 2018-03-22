@@ -14,6 +14,7 @@ See also the [getting started guide](First-time-installing-and-building-(Windows
     1. Full build:
         1. Open `build_python.bat` and comment out line `252` about building the MSI
         1. Run `build_python.bat` - this will install a new version to c:\Instrument\Apps\Python-Build
+        1. Copy the newly built Python folder from `C:\Instrument\Dev\genie_python\package_builder\genie_python` to `C:\Instrument\Apps\` (backup or delete the old one)
         1. Call the new functionality by running c:\Instrument\Apps\Python-Build\genie_python.bat
 
 ### Building
