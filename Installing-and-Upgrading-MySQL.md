@@ -6,14 +6,13 @@
 - Create the folder tree `C:\ProgramData\MySQL\MySQL Server 5.7` (this will cause the installer to ask you to enter a data directory)
 - Run the community installer as admin and do the following:
     - Licence page: accept licence
-    - Type and Networking: Standalone MySqlServer
+    - Choosing a Setup Type: Server only (use Developer Default for developer machine)
     - Path Conflict: Set the data dir to `C:\Instrument\var\mysql` (If this page doesn't appear go back to creating the folder tree)
     - Check requirements: click execute
     - Installation: click execute
     - Product Config: next
-    - Type and Network: select server only (Development is good if you want mysql workbench but will require more checks later)
-    - Type and Network: Server (dev is also acceptable), other defaults are fine
-    - Account: Use the password from the passwords page
+    - Type and Network: select server machine (Development is also fine I think this is overwritten when using the standard mysql.ini), other defaults are fine
+    - Accounts and roles: Use the password from the passwords page
     - Windows Service: Accept defaults
     - Plugin and Extensions: defaults (no document database)
     - Apply Server Config: execute
