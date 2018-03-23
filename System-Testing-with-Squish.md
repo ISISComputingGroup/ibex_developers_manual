@@ -40,6 +40,10 @@ Get a licence key (there are 5 floating licences that can be used by 2 people)
 1. Add to `C:\Squish\etc` the key `GlobalScriptDirs = "C:\\Jenkins\\workspace\\squish_ui_system_tests\\global_scripts"`
 1. Add applications under test to the server setup as above using the IDE
 1. Switch off screen saver and power saving
+1. Next remote desktop from another machine as the user stated in the password doc
+    - We have tried making this autologon but it get stuck at the policy screen
+    - We don't need VNC this seems to do the job without a problem
+1. Then disconnect the session (i.e. don't log out)
 
 # Creating a new Test Suite
 
