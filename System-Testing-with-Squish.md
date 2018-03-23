@@ -1,6 +1,6 @@
 > [Wiki](Home) > [The GUI](The-GUI) > [Testing](GUI-Testing) > [System testing with Squish](System-Testing-with-Squish)
 
-# Set Up
+# Set Up for local server
 
 Get a licence key (there are 5 floating licences that can be used by 2 people)
 
@@ -31,6 +31,15 @@ Get a licence key (there are 5 floating licences that can be used by 2 people)
 1. Other application setting
     1. Under Edit > Preferences
     1. Under Squish-> Test Creation select Python as the default language
+
+# Setup For Build Server
+
+1. Install all the things needed for an instrument (Git, MySql, Java)
+1. Install Jenkins build system but run it from a command line.
+1. Install squish as above.
+1. Add to `C:\Squish\etc` the key `GlobalScriptDirs = "C:\\Jenkins\\workspace\\squish_ui_system_tests\\global_scripts"`
+1. Add applications under test to the server setup as above using the IDE
+1. Switch off screen saver and power saving
 
 # Creating a new Test Suite
 
