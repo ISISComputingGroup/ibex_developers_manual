@@ -67,6 +67,10 @@ Possible solution:
 This might be difficult to find as an error, and it may not exist for other developers - even on the same branch!
 Adding the plugin directly to your configuration solves this.
 
+### Plugins compile fine but dependencies cause errors at runtime ###
+
+If you can run the application fine but are seeing a `java.lang.NoClassDefFoundError` at runtime, try re-setting the target platform, synchronizing `client.product`, and doing a clean.
+
 ### Menu items are missing ###
 
 This is usually because a dependency is missing. See "I really cannot work out why the GUI won't start!" below.
