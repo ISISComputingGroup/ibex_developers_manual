@@ -52,7 +52,7 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
 1. Move the changes which have been merged into the release from the dev page to the new release notes page for the version. 
 1. Add relevant changes to a scientist demo release page and link to [sprint demos page](https://github.com/ISISComputingGroup/IBEX/wiki/Timetable-for-sprint-demos).
 1. Update the [user manual](https://github.com/ISISComputingGroup/ibex_user_manual/wiki) with any relevant changes
-1. Visit each instrument and check for change which are not summarised on the [IBEX wiki](https://github.com/ISISComputingGroup/IBEX/wiki#instrument-information). Do this by running git status in the EPICs directory and looking at the diff.
+1. Visit each instrument on which code will be released and check for changes which have been made which are not summarised on the [IBEX wiki](https://github.com/ISISComputingGroup/IBEX/wiki#instrument-information). Do this by running `git status` in the EPICs directory and looking at the diff and comparing with those changes.
 
 ### Testing
 One or more people should do [manual system tests, using this page](Manual-system-tests).
