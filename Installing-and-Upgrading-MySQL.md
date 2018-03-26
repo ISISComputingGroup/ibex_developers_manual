@@ -2,7 +2,10 @@
 
 # Install first time
 
-- Download the latest mysql community installer (correct version) from [mysql site](https://dev.mysql.com/downloads/mysql/)
+- Download the latest mysql community installer from [mysql site](https://dev.mysql.com/downloads/mysql/)
+    - Scroll down to recommended download in GA Release, click Go To Download Page
+    - Scroll down to GA Release again and choose one of the two downloads (both are 32bit installers), the smaller one will download as it installs, the larger one downloads everything before starting.
+    - Scroll past Login and Sign Up, and just click "No thanks, just start my download" which will finally download the installer.
 - Create the folder tree `C:\ProgramData\MySQL\MySQL Server 5.7` (this will cause the installer to ask you to enter a data directory)
 - Run the community installer as admin and do the following:
     - Licence page: accept licence
