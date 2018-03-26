@@ -44,3 +44,8 @@ The mysql database runs as a service; details can be accessed by running `servic
 To restart mysql right click on the service and click restart. Note that a running IBEX instrument seems to have some problems with this; so will also need to be restarted (block server said `Error executing command on database: Unable to get connection from pool: `).
 
 
+# Change Password:
+
+Update the sql server password using: "c:\Program Files\MySQL\MySQL Server 5.7\bin\mysqladmin.exe" -u root -p password
+It will then prompt for the old password followed by the new password which is found in the passwords doc.
+
