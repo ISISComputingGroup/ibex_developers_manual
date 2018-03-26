@@ -9,9 +9,9 @@
 - Create the folder tree `C:\ProgramData\MySQL\MySQL Server 5.7` (this will cause the installer to ask you to enter a data directory)
 - Run the community installer as admin and do the following:
     - Licence page: accept licence
-    - Choosing a Setup Type: Server only (use Developer Default for developer machine)
+    - Choosing a Setup Type: Server only (use Developer Default for developer machine, the MySQL Workbench is useful)
     - Path Conflict: Set the data dir to `C:\Instrument\var\mysql` (If this page doesn't appear go back to creating the folder tree)
-    - Check requirements: click execute
+    - Check requirements: click execute (don't worry if there are Python dependencies we will install Python later for something else anyway, just ignore it)
     - Installation: click execute
     - Product Config: next
     - Type and Network: select server machine (Development is also fine I think this is overwritten when using the standard mysql.ini), other defaults are fine
