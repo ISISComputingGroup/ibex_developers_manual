@@ -2,4 +2,6 @@
 
 * [SDTest](SDTest)
 
-* [COORD (coordinator) IOC](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/COORD-IOC)
+* [COORD (coordinator) IOC](COORD-IOC)
+
+* [Gamry](Gamry)
