@@ -27,11 +27,12 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
 1. Look at the released features in this branch [IBEX/wiki/ReleaseNotes_Dev](https://github.com/ISISComputingGroup/IBEX/wiki/ReleaseNotes_Dev) and find the most significant level of change (i.e. is this cumulatively a major change, a minor change, or a patch?).
 1. Update the [upgrade script](https://github.com/ISISComputingGroup/EPICS-upgrade/blob/master/upgrade.py) to include the latest version (this is done on master). Steps to do this are in [Config Upgrader in section *creating a production upgrade script*](Config-Upgrader#creating-a-production-upgrade-script) 
 1. Start a release branch so that the code is frozen (e.g. `Release_1.1.0`). You will need a branch for
-    1. [EPICS](https://github.com/ISISComputingGroup/EPICS)
-    1. [EPICS-ioc](https://github.com/ISISComputingGroup/EPICS-IOC) (for version number update)
     1. [genie_python](https://github.com/ISISComputingGroup/genie_python)
     1. [ibex_gui](https://github.com/ISISComputingGroup/ibex_gui)
-    1. For EPICS submodules you may be able to use `git submodule foreach "git checkout master;git pull;git checkout -b Release_1.1.1; git push -u origin Release_1.1.1"` to create the release branches.
+    1. [EPICS](https://github.com/ISISComputingGroup/EPICS)
+    1. For EPICS submodules you should use:
+        1. `git submodule update` which sets all the repos to there pinned version
+        1. `git submodule foreach "git checkout -b Release_X.x.x; git push -u origin Release_X.x.x"` this creates a branch at the current checked out version for each repo and pushes it.
 1. Update the version numbers:
     1. GUI
         1. In `ibex_gui/base/uk.ac.stfc.isis.ibex.product/META-INF/MANIFEST.MF` edit `Bundle-Version:...` to be `X.x.m.qualifier`
