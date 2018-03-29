@@ -39,3 +39,7 @@ Tool for finding either IOCs on instruments or instruments with a given IOC.
 ## [Archive access](Archive-access)
 
 Tools for getting data from the archive database.
+
+## [Build Arch](Build-Arch)
+
+Build under a given architecture
