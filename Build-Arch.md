@@ -6,4 +6,6 @@ Build a directory under a given architecture instead of the default. This will s
 
 e.g. build_arch windows-x64-static
 
-Architectures allowed are given my the files in .... TODO
+Architectures allowed are given my the files in `EPICS/base/master/configure/os/CONFIG.<architecture>.Common`
+
+NB You must build `EPICS/base` in the given architecture first.
