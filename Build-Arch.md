@@ -1,6 +1,6 @@
 > [Wiki](Home) > [Project tools](Project-tools) > [Build Arch](Build-Arch)
 
-Build a directory under a given architecture instead of the default. This will switch the archtiecture temporarily to a given state for building. You can build multiple architectures within the same tree of EPICS (it will be built into `bin/<architecture>`). Run:
+Build a directory under a given architecture instead of the default. This will switch the architecture temporarily to a given state for building. You can build multiple architectures within the same tree of EPICS (it will be built into `bin/<architecture>`). Run:
  
     build_arch <architctrue>
 
