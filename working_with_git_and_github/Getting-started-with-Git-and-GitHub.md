@@ -5,6 +5,8 @@
 
 (if asked, Choose `Checkout-as-is; commit unix style line-endings`)
 
+During setup ensure you have selected "**Use Git from the Windows Command Prompt**". Checking the others will lead to IOC Make errors later down the line. 
+
 * Set you username and email address  via the command line:
 
 ```
