@@ -13,7 +13,7 @@ There are several cases where recsim doesn't work properly (or not without signi
 - Records that get pushed to from a protocol file.
 - Records that get their values pushed from another DB record.
 - MBBI/MBBO records - Soft channel device support doesn't populate `RVAL`, it is possible to work around this in some simple cases but often the benefit of adding recsim to these records is not worth the time to get it to work.
-- Records with an AsynInt/AsynFloat datatype. See for example the AG3631A current pv.
+- Records with an AsynInt/AsynFloat data type. See for example the AG3631A current pv.
 
 There is a [script to help](Add-sim-records-script).
 First add the following record that will be used to indicate if simulation mode is being used
