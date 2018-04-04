@@ -55,7 +55,7 @@ Steps are marked with **bold** prefixes to indicate the following:
 
 - **upgrade** Record any open LabVIEW VI which are running.
 
-- **upgrade** Stop running instrument `ibex_stop_server.bat`.
+- **upgrade** Stop running instrument `stop_ibex_server.bat`.
 
 - **upgrade** Backup old directories
     * Delete backups older than the last backup.
