@@ -28,6 +28,7 @@ Each instrument at ISIS is unique.  Although they share many similarities, there
    1. Ask the scientists for copies of the active configs and scripts.  
    1. Add the list of active configs and scripts to the instrument wiki page.
    1. Find out if there are any dependencies on Block name. For example do Mantid analysis scripts use them?
+   1. Ask the scientists if they want to be involved in the script and/config conversion process.  Some scientists are happy to simply have their scripts & configs converted; other scientists like to be involved (e.g. not to have "verbatim" conversions of their scripts, but to request modifications during the conversion process).
 
 ## Preparation
 
