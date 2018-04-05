@@ -51,7 +51,11 @@ caput %MYPVPREFIX%PARS:USER:R0.EGU volt
 
 # Script
 
-The following script was run to push values from the IOC into blocks. Save into instrument scripts directory
+The following script was run to push values from the IOC into blocks. Save into instrument scripts directory.
+
+For the next experiment, they would like the thermoelectric cell to run intermittently. It should be left in voltage mode when not in use. The following modifications need to be made to the script below to allow this measurement to run:
+- In `__exit__`, set the measurement mode back to voltage.
+- Show the instrument scientists how to wrap certain parts of their script using this context manager.
 
 ```
 from time import sleep
