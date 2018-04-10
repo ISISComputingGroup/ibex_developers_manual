@@ -16,3 +16,37 @@ in `ioc/master/GALIL` there is a file  `utils/SetupR3Axis.bat`  that will initia
 * Loading the Profile and kinematic axes DBs cause streams of errors 
 * Running GalilTest IOC from support/galil/master does not work (may not fix)
   
+## Test Strategy (Assuming testing on EMMA)
+
+To confirm that the new driver works we will need to do the following.
+
+## Before testing
+- [ ] Copy the autosave files
+- [ ] Note down all current motor positions (ideally in raw steps)
+
+### General Tests
+
+For comparison, use the old driver to take the following data on an axis:
+- [ ] Home the device  
+- [ ] Run it to the upper physical limit, measure how long this takes
+- [ ] Note the position of the upper limit
+- [ ] Re-home, measure how long this takes
+- [ ] Run to lower limit and note the lower limit position
+
+Upon switching to new driver
+- [ ] Power cycle the galil
+- [ ] Reapply the motor positions as previously noted 
+
+Under the new driver:
+- [ ] Repeat the above, confirm the values are the same (to within 0.1 mm for distances and 1 second for time)
+- [ ] Confirm the GUI shows high and low limits engaged when the physical switches are activated
+- [ ] Home one of axes 1-4 and confirm it runs to forward limit then home. Confirm the GUI displays home
+- [ ] Home axis 5 and confirm it runs straight to home. Confirm the GUI displays home
+- [ ] Home one of 7-8 and confirm nothing happens. Confirm the GUI displays home
+- [ ] Confirm that you can move the chopper lifter in and out of the beam
+- [ ] Attempt to move an axis beyond it's physical limit, confirm that it stops
+- [ ] Set soft limits on an axis, confirm that you cannot go outside them
+
+### Tests specific to areas the new driver has changed
+- [ ] Turn on WLP, physically press a limit switch and confirm that you cannot move the motor in either direction
+- [ ] Set both soft limits to zero, confirm that you can move
