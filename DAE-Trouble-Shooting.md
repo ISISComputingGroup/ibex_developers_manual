@@ -373,3 +373,93 @@ Other things to to check in this state are:
 - [ ] data/transfer lights on a DAEII, flickering & transfer lights inactive not a good sign.  Could be the link to the PC if transfer lights are not showing activity.
 - [ ] If frame/raw counts are not showing up, a good diagnostic is to put the DAE into "Internal Test Clock".  If this works and frames appear, it is likely that there may be a problem with a Time of Flight signal (this often affects more than one beamline.
 
+## Simulation mode DAE complains about missing cards
+
+From an issue in Ticket https://github.com/ISISComputingGroup/IBEX/issues/3099 - example traceback:
+
+```
+[2018-04-09 15:26:49] sevr=major  setDCEventMode: Unknown detector card 3
+
+[2018-04-09 15:26:49]  setDCCardMode: Unknown detector card 3
+
+[2018-04-09 15:26:49]  setDCEventMode: Unknown detector card 4
+
+[2018-04-09 15:26:49]  setDCCardMode: Unknown detector card 4
+
+[2018-04-09 15:26:49]  setDCEventMode: Unknown detector card 5
+
+[2018-04-09 15:26:49]  setDCCardMode: Unknown detector card 5
+
+[2018-04-09 15:26:49]  setDCEventMode: Unknown detector card 6
+
+[2018-04-09 15:26:49]  setDCCardMode: Unknown detector card 6
+
+[2018-04-09 15:26:49]  setDCEventMode: Unknown detector card 7
+
+[2018-04-09 15:26:49]  setDCCardMode: Unknown detector card 7
+
+[2018-04-09 15:26:49]  setDCEventMode: Unknown detector card 8
+
+[2018-04-09 15:26:49]  setDCCardMode: Unknown detector card 8
+
+[2018-04-09 15:26:49]  setDCEventMode: Unknown detector card 9
+
+[2018-04-09 15:26:49]  setDCCardMode: Unknown detector card 9
+
+[2018-04-09 15:26:49]  setDCEventMode: Unknown detector card 10
+
+[2018-04-09 15:26:49]  setDCCardMode: Unknown detector card 10
+
+[2018-04-09 15:26:49]  Cannot find card for crate 3
+
+[2018-04-09 15:26:49]  Unknown detector card 3
+
+[2018-04-09 15:26:49]  Cannot find card for crate 4
+
+[2018-04-09 15:26:49]  Unknown detector card 4
+
+[2018-04-09 15:26:49]  Cannot find card for crate 5
+
+[2018-04-09 15:26:49]  Unknown detector card 5
+
+[2018-04-09 15:26:49]  Cannot find card for crate 6
+
+[2018-04-09 15:26:49]  Unknown detector card 6
+
+[2018-04-09 15:26:49]  Cannot find card for crate 7
+
+[2018-04-09 15:26:49]  Unknown detector card 7
+
+[2018-04-09 15:26:49]  Cannot find card for crate 8
+
+[2018-04-09 15:26:49]  Unknown detector card 8
+
+[2018-04-09 15:26:49]  Cannot find card for crate 9
+
+[2018-04-09 15:26:49]  Unknown detector card 9
+
+[2018-04-09 15:26:49]  Cannot find card for crate 10
+
+[2018-04-09 15:26:49]  Unknown detector card 10
+
+[2018-04-09 15:26:49]  Attempt to use missing detector card/crate 3
+
+[2018-04-09 15:26:49]  Attempt to use missing detector card/crate 4
+
+[2018-04-09 15:26:49]  Attempt to use missing detector card/crate 5
+
+[2018-04-09 15:26:49]  Attempt to use missing detector card/crate 6
+
+[2018-04-09 15:26:49]  Attempt to use missing detector card/crate 7
+
+[2018-04-09 15:26:49]  Attempt to use missing detector card/crate 8
+
+[2018-04-09 15:26:49]  Attempt to use missing detector card/crate 9
+
+[2018-04-09 15:26:49]  Attempt to use missing detector card/crate 10
+
+[2018-04-09 15:26:49] : Exception occurred.
+```
+
+The issue here is that the default simulated DAE has 2 detector cards in it, but the real DAE has more cards. I've edited `isisicp.properties` to create more cards so it should now work. Note this is not an ibex issue - it will also affect DAE simulation mode under SECI.
+
