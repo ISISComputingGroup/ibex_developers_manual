@@ -6,6 +6,14 @@
 1. Navigate to `C:\Instrument\Apps\Python\package_builder`
 1. Run `dev_build_python.bat`
 
+### First time
+
+The first time you set up `genie_python`, assuming you've never installed it previously, you'll need to set up an ipython profile. 
+
+1. From `C:\Instrument\Apps\Python`, run `python.exe .\scripts\ipython.exe profile create`
+1. Copy `ipython_config.py` from the `package_builder` directory to `C:\users\[fedid]\.ipython\profile_default\.`
+
+
 ### Development workflow
 
 1. Make sure you have a development version of `genie_python` set up as described above.
