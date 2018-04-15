@@ -463,3 +463,6 @@ From an issue in Ticket https://github.com/ISISComputingGroup/IBEX/issues/3099 -
 
 The issue here is that the default simulated DAE has 2 detector cards in it, but the real DAE has more cards. I've edited `isisicp.properties` to create more cards so it should now work. Note this is not an ibex issue - it will also affect DAE simulation mode under SECI.
 
+## DAE3 does not start 
+
+DAE3 is new ethernet based acquisition electronics on ZOOM and MARI, it used ISISICP and looks like DAE2 for most purposes. If everythign remains in processing, it may be that the arp network entries did not get created - these should be done as a system time boot task. Do "arp -a" and see if there is an entry for 192.168.1.101 etc.  If not, run set_dae3_arp.bat in c:\labview modules\dae as as administrator
