@@ -20,3 +20,4 @@
 - [Waffle board for Issues](https://waffle.io/ISISComputingGroup/IBEX)
 - [Stream Protocol Page](http://epics.web.psi.ch/software/streamdevice/doc/)
 - [genie_python reference](http://shadow.nd.rl.ac.uk/genie_python/sphinx/genie_python.html)
+- [nagios](https://varanus.nd.rl.ac.uk/nagios/)
