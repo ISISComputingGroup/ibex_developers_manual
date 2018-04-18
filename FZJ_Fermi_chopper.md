@@ -29,3 +29,11 @@ For more details, see [#2628](https://github.com/ISISComputingGroup/IBEX/issues/
 Occasionally the device will get confused and reset its gate width to a semi-random value. Resending the gate width causes it to pick up the correct value again.
 
 This problem is mitigated in the driver by having a state machine which keeps the gate width and gate width readback in sync.
+
+# Drive turns off unexpectedly
+
+There are safety checks in the IOC. 
+- If the electronics temperatures or motor temperatures go above 45 Celsius.
+- If the auto zero voltages are out of range
+- If the actual chopper speed is above 606Hz
+- If the magnetic bearing is off while the chopper is at speed
