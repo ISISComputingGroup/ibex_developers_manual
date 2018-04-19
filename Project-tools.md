@@ -20,17 +20,14 @@ Tools which can help profile and find memory leaks in a java application.
 
 Tools for helping network traffic issues
 
-## [Config Upgrader](Config-Upgrader)
+## Config Tools
 
-Tools for upgrading the config
-
-## [Config Checker](Config-Checker)
-
-Tools for checking the current configurations are correct
-
-## [Config IOC Finder](Config-IOC-Finder)
-
-Tool for finding either IOCs on instruments or instruments with a given IOC.
+* ### [Config Upgrader](Config-Upgrader)
+    Tools for upgrading the config
+* ### [Config Checker](Config-Checker)
+    Tools for checking the current configurations are correct
+* ### [Config IOC Finder](Config-IOC-Finder)
+    Tool for finding either IOCs on instruments or instruments with a given IOC.
 
 ## [Test Machines](Test-Machines)
 
@@ -43,3 +40,5 @@ Tools for getting data from the archive database.
 ## [Build Arch](Build-Arch)
 
 Build under a given architecture
+
+## [Remote Debugging from Visual Studio](Remote-Debugging-from-Visual-Studio)
