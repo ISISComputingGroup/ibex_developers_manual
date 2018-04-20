@@ -6,7 +6,7 @@ Remote debugging allows you to debug in visual studio c and c# applications runn
 1. Set the tool to allow no authentication (Tools->Options No Authentication)
 1. Run VS on your local machine
 1. Select Debug -> Attach to Process
-1. Set Connection Type Remote(no authentication) and use the server name in connetion target
+1. Set Connection Type Remote(no authentication) and use the server name in connection target
 1. Select the process from the list
     1. If you need to catch an error in ioc startup, start the ioc with `runIOC.bat aaa` this will cause it to start up with running st.cmd. 
     1. Once you are connected and have break points setup then type `< st.cmd` to boot the ioc
