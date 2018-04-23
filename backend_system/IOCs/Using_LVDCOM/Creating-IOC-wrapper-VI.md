@@ -96,9 +96,12 @@ This is a summary of [[more general LvDCOM instructions|http://epics.isis.stfc.a
 ## 4. Edit to st.cmd
 
 1. Add `lvDCOMConfigure("lvfp", "frontpanel", "${TOP}/data/lv_controls.xml", "$(LVDCOM_HOST=)", $(LVDCOM_OPTIONS=1), "$(LVDCOM_PROGID=)", "$(LVDCOM_USER=)", "$(LVDCOM_PASS=)")` before load common record. (see [lvDCOMConfigure documentation](http://epics.isis.stfc.ac.uk/doxygen/lvDCOM/lvDCOMDriver_8cpp.html#a90fdd61917374a2fed5dd1e2ba6da62b)). Remember to add these macros to `config.xml`:
-    * LVDCOM_HOST: sets the host by altering a macro which can be set in the config; default to "" so that by default it runs on localhost. 
-    * LVDCOM_OPTIONS: whether vi should be started; default to 1 warn if idle.
-    * LVDCOM_PROGID: DCOM ProgID, required if connecting to a compiled LabVIEW application (Default '')
+
+    ```
+    <macro name="LVDCOM_OPTIONS" pattern="^\d?\d?$" description="Options that define how the VI is started. Add selected options together to make the final value. 1 - warn if idle, 2 - start if idle, 4 - stop VIs if started on exit, 8 - stop VI on exit. (Default 1)" />
+    <macro name="LVDCOM_HOST" pattern="^.*$" description="Host on which the vi is running, blank for localhost (Default '')" />
+    <macro name="LVDCOM_PROGID" pattern="^.*$" description="DCOM ProgID, required if connecting to a compiled LabVIEW application (Default '')" />
+    ```
     * Don't add username and password, users can set these in gloabls.txt
 1. Add db load record
 
