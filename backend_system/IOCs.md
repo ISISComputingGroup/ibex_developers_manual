@@ -25,7 +25,9 @@ If you're not creating a StreamDevice IOC or you you would like to know how an I
     If you used the script to create your IOC an empty emulator and IOC tests will have been created for you.
 
 1. [IOC Finishing Touches](IOC-Finishing-Touches)
-    * Additional for motors [Adding motor IOC to global motor moving and stop all](Adding-motor-IOC-to-global-motor-moving-and-stop-all)
+    * Additional for motors:
+        1. [Adding motor IOC to global motor moving and stop all](Adding-motor-IOC-to-global-motor-moving-and-stop-all)
+        1. [Add support for motor extras, e.g. axes](Add-support-for-motor-extras)    
 
 1. [Record simulation](Record-Simulation)
 
