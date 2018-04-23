@@ -35,7 +35,7 @@ If you're not creating a StreamDevice IOC or you you would like to know how an I
 
 1. [Add logging](Logging-from-the-archive)
 
-1. Add any manuals used to the [manuals dir and list](Manuals)
+1. Add any manuals used to the [manuals directory](Manuals)
 
 # Conventions
 
