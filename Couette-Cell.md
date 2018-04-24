@@ -5,3 +5,5 @@ A couette-cell is a device for measuring properties of fluids see (https://www.i
 1. Go to a position (either relative to the current position or an absolute position
 1. Spin at a constant velocity
 1. Move between two positions (in this mode the readbacks will stop working because the mcleanan is busy)
+
+This is currently an LVDCOM device.
