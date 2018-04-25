@@ -12,20 +12,23 @@ The goal of the project is to run IBEX on an Eclipse 4.x platform. Notably the c
 
 This is largely the same as setting up your E3 workspace. It's best to create a separate workspace for your E3 & E4 development.
 
+The e4 work is based on the the "master_E4" branch that you will need to swap to. It is worth doing a "git clean -fdx" afterwards, but make sure there is no uncommitted work as you will lose it.
+
 Launching the E4 application is very similar to the launching the E3 application as detailed in the getting started guide.
 
 - Create a new workspace
 - Import all of the plugins from `C:\Instrument\Dev\ibex_gui\base`
+- Set the target platform. If it's covered in red, select each source followed by "Update" and "Reload". Once that's done, click "Set target platform"
+- Clean project
+- Open `ibex.product`
+- Click `Synchronize`
 - Change your run configuration to clear the workspace on launch. Unless you do this in E4 applications, changes to the code are not always propagated to the build
     - Open the run configurations dialog
     - With "ibex.product" selected under "Eclipse Application" in the left-hand nav bar, go to the "Main" tab
     - Make sure the "Clear" box is ticked with the radio button set to "workspace"
     - Under the "Configuration" tab, select "Clear the configuration area before launching". _Note that this will lead to certain properties not persisting between IBEX instances as they should, e.g. remembering the last selected instrument._
     - Click "Apply" then close the dialog
-- Set the target platform. If it's covered in red, select each source followed by "Update" and "Reload". Once that's done, click "Set target platform"
 - Go to the `...e4.client.product` plugin.
-- Open `ibex.product`
-- Click `Synchronize`
 - Click `Launch Eclipse application` or equivalent for debug
 
 If you are still experiencing errors, you may still need to set up your new workspace for IBEX development. See [this page](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Creating-the-IBEX-Developer-Version-of-Eclipse) for instructions.
