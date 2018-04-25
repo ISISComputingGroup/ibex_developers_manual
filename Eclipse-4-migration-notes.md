@@ -20,8 +20,8 @@ Launching the E4 application is very similar to the launching the E3 application
 - Import all of the plugins from `C:\Instrument\Dev\ibex_gui\base`
 - Set the target platform. If it's covered in red, select each source followed by "Update" and "Reload". Once that's done, click "Set target platform"
 - Clean project
-- Open `ibex.product`
-- Click `Synchronize`
+- Open `ibex.product` in e4.client.product
+- Click `Synchronize` in the `Testing` section
 - Change your run configuration to clear the workspace on launch. Unless you do this in E4 applications, changes to the code are not always propagated to the build
     - Open the run configurations dialog
     - With "ibex.product" selected under "Eclipse Application" in the left-hand nav bar, go to the "Main" tab
