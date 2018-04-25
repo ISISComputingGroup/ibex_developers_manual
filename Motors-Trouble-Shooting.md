@@ -38,3 +38,11 @@ There is a Galil specific PV called `MTRXXXX_AUTOONOFF_CMD` which controls wheth
 ### The axis will not move away from a limit, a message gets put in the log of "move failed, `wlp` active" or "Wrong limit protect stop motor"
 
 There is a Galil specific PV called `MTRXXXX_WLP_CMD` which controls whether an axis treats both limits as high and low. The default setting is On, it should be set to Off.
+
+### Something is Weird I want Maximum Debugging
+
+Maximum debugging can be achieved by adding to your st.cmd:
+
+    epicsEnvSet("GALIL_DEBUG_FILE", "galil_debug.txt")
+
+This will generate a file containing all the commands sent and received from the galil.
