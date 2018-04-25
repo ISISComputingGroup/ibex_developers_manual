@@ -22,14 +22,17 @@ Launching the E4 application is very similar to the launching the E3 application
 - Clean project
 - Open `ibex.product` in e4.client.product
 - Click `Synchronize` in the `Testing` section
+- Go to the `...e4.client.product` plugin.
+- Click `Launch Eclipse application` or equivalent for debug
+- you may need to lauch a couple of time initially, the first launch failing due to checkstyle
+- once you have run eclipse, you can set the run confiuguration as below
 - Change your run configuration to clear the workspace on launch. Unless you do this in E4 applications, changes to the code are not always propagated to the build
     - Open the run configurations dialog
     - With "ibex.product" selected under "Eclipse Application" in the left-hand nav bar, go to the "Main" tab
     - Make sure the "Clear" box is ticked with the radio button set to "workspace"
     - Under the "Configuration" tab, select "Clear the configuration area before launching". _Note that this will lead to certain properties not persisting between IBEX instances as they should, e.g. remembering the last selected instrument._
     - Click "Apply" then close the dialog
-- Go to the `...e4.client.product` plugin.
-- Click `Launch Eclipse application` or equivalent for debug
+- you can remove some of the errors shown by going to: window -> preferences -> maven -> error/warnings and setting "plugin ... lifecycle configuration" to "ignore" 
 
 If you are still experiencing errors, you may still need to set up your new workspace for IBEX development. See [this page](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Creating-the-IBEX-Developer-Version-of-Eclipse) for instructions.
 
