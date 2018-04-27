@@ -24,8 +24,8 @@ Launching the E4 application is very similar to the launching the E3 application
 - Click `Synchronize` in the `Testing` section
 - Go to the `...e4.client.product` plugin.
 - Click `Launch Eclipse application` or equivalent for debug
-- you may need to lauch a couple of time initially, the first launch failing due to checkstyle
-- once you have run eclipse, you can set the run confiuguration as below
+- you may need to launch a couple of time initially, the first launch failing due to checkstyle
+- once you have run eclipse, you can set the run configuration as below
 - Change your run configuration to clear the workspace on launch. Unless you do this in E4 applications, changes to the code are not always propagated to the build
     - Open the run configurations dialog
     - With "ibex.product" selected under "Eclipse Application" in the left-hand nav bar, go to the "Main" tab
