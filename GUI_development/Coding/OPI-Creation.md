@@ -114,3 +114,16 @@ If it's required to activate a tab from a synoptic via a macro: (See SKF G5 Chop
 1. Put macro in local PV
 1. Create script that reads value
 1. Set active tab on tab container using `setActiveTabIndex`
+
+# Create a Local Enum
+
+Create a local pv in an opi with labels (From Tech talk article not tested).
+
+    loc://demo<VEnum>(2, "A", "B", "C", "D")
+
+If you cannot use an actual enum PV because there are too many labels, and you can't use a local enum PV because that doesn't allow changes to the enum labels, then don't use an enum PV. Instead, on the combo box, un-check the option to get "Items from PV" and directly enter the items, as many as you want.
+Or set the items from a script:
+
+    from org.csstudio.display.builder.runtime.script import ScriptUtil
+    combo = ScriptUtil.findWidgetByName(widget, "Name Of My Combo")
+    combo.setItems( [ "Ene", "Mene", "Muh" ] )
