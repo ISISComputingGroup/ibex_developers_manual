@@ -123,7 +123,8 @@ Create a local pv in an opi with labels (From Tech talk article not tested).
 
 If you cannot use an actual enum PV because there are too many labels, and you can't use a local enum PV because that doesn't allow changes to the enum labels, then don't use an enum PV. Instead, on the combo box, un-check the option to get "Items from PV" and directly enter the items, as many as you want.
 Or set the items from a script:
-
+```
     from org.csstudio.display.builder.runtime.script import ScriptUtil
     combo = ScriptUtil.findWidgetByName(widget, "Name Of My Combo")
     combo.setItems( [ "Ene", "Mene", "Muh" ] )
+```
