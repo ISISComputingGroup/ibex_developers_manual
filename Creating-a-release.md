@@ -62,7 +62,7 @@ One or more people should do [manual system tests, using this page](Manual-syste
 1. Create a release tag in the EPICS, ibex_gui and genie_python repositories. For each repo
     1. Go to `[REPO_URL]/releases`, e.g. `https://github.com/ISISComputingGroup/ibex_gui/releases`
     1. Click `Draft a new release`
-    1. Enter the tag version in the format `VX.x.p` and target the release branch
+    1. Enter the tag version in the format `vX.x.p` and target the release branch
     1. Enter the title `Release version X.x.p`
     1. Add a link to the release notes in the description
 1. Make sure any changes on the release branch are merged back onto master (except version numbering)
