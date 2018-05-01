@@ -25,3 +25,9 @@ Items **NOT** within the repository
 
 1. `motion set points` - calibration for motion set points e.g. sample changers. These probably do not belong in the repository (after debate) because they will be changed on an instrument but if this is pushed to another instrument the offsets do not make any sense. Some motion set points might be applicable we shall wait and see.
 
+## Updating Calibration File on Instruments
+
+If the common calibration file change and they need updating on all instruments then you can run the [calibration update script which can be found in ibex utils](https://github.com/ISISComputingGroup/ibex_utils/blob/master/installation_and_upgrade/calibration_files_updater.py)
+
+
+
