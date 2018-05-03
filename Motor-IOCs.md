@@ -42,6 +42,13 @@ The motors currently used at ISIS are:
 * Beckhoff
 * [SM300](SM300)
 
+## Common motor extras
+
+* [General Jaws](Jaws)
+* [Barndoors and Momentum Slits on MUON Front End](Barndoors-and-Momentum-Slits-on-MUON-Front-End)
+* Axes
+* Motion Setpoints
+
 ## Other info
 
 * [Motor Setpoints](Motor-SetPoints)
