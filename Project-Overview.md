@@ -20,6 +20,6 @@ Some notes on what to show someone when demonstrating IBEX for the first time
 
 Notes from Sprint Retrospective meetings are recorded here.
 
-# [Decision Log](Decision Log)
+# [Decision Log](Decision-Log)
 
 A place to write down decisions made.
