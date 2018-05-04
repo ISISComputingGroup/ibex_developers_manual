@@ -29,5 +29,12 @@ Items **NOT** within the repository
 
 If the common calibration file change and they need updating on all instruments then you can run the [calibration update script which can be found in ibex utils](https://github.com/ISISComputingGroup/ibex_utils/blob/master/installation_and_upgrade/calibration_files_updater.py)
 
+## Calibration file format
 
+### ISIS
+TODO Tom to add
+
+### Lankeshore
+
+Examples of the lakeshore format can be found on the [lakeshore site](https://www.lakeshore.com/Documents/ZipReadme.pdf).
 
