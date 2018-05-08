@@ -34,7 +34,7 @@ If the common calibration file change and they need updating on all instruments 
 ### ISIS
 TODO Tom to add
 
-### Lankeshore
+### Lakeshore
 
 Examples of the lakeshore format can be found on the [lakeshore site](https://www.lakeshore.com/Documents/ZipReadme.pdf).
 
