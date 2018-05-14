@@ -99,6 +99,11 @@ Hints, tips and gotchas for writing tests:
 * Use `generate_config_name` to generate a config name so that it will be ignored by git and cleaned up by the system test
 * If you open a dialogue capture it using a context manager. You could consider adding an option for OK and Cancel.
 
+# Creating/Reviewing a Test when I don't have a Licence
+
+If you have done some GUI work but don't have a licence for squish and need to write a test. Then find someone who does have a licence and pair with them for that part of the ticket.
+For a review, check the code and functionality then merge the ticket and let the build server do the testing.
+
 # Other 
 
 ### Change Java that squish is using
