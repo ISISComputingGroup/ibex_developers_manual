@@ -39,6 +39,13 @@ The system also produces a visual rendering of the system, for diagnostic and de
 - https://github.com/ISISComputingGroup/IBEX/issues/3141: Technical debt outstanding following the completion of #2936
 - https://github.com/ISISComputingGroup/IBEX/issues/3126: Required enhancement to allow configuration of the system to work with different instruments without hard coding.
 - https://github.com/ISISComputingGroup/IBEX/issues/2040: A list of suggested enhancements which have been moved to this wiki
+
+## Instrument configurations
+
+### ZOOM
+ZOOM is running the system to detect collisions on its detector and trolley axes (`MTR0501`, `MTR0507`). These move linearly along the same axis. The measurements were provided by Dominic Oram and are shown in the schematic in [ticket 2936](https://github.com/ISISComputingGroup/IBEX/issues/2936).
+
+The system was deployed here in May 2018 with the intention of reducing the number of times the bump strips are triggered by the two components getting too close. Resetting the bump strips requires a manual reset, so catching it with the system beforehand reduces work for the instrument scientists. Motion control have stated that no damage will result from the system not stopping the motors.
  
 ## System Overview
 
