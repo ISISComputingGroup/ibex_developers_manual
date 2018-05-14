@@ -47,7 +47,8 @@ It is possible to remote desktop to the squish server but when you disconnect yo
 1. Next remote desktop from another machine as the user stated in the password doc
     - We have tried making this autologon but it get stuck at the policy screen
     - We don't need VNC this seems to do the job without a problem
-1. Then disconnect the session (i.e. don't log out)
+1. Then disconnect the session using the shortcut on the desktop
+1. Leave the machine with an attached screen. I think this is needed to set the resolution when leaving remote desktop.
 
 # Creating a new Test Suite
 
@@ -113,3 +114,7 @@ This fixes the issue:
 ```
 "Internal Error: don't know where to log: Squish for Java has not been configured for the current user yet. Please configure the (Java Runtime Environment) used for executing the AUT (Application Under Test) in the Squish IDE via Edit > Preferences > Squish > .... (Or use `SQUISH_DIR/bin/squishconfig --java=path_to_jre`. Replace "path_to_jre" as required.) (Starting application)"
 ```
+
+### Restart after a Power Cut
+
+After a power cut you will need to log into the machine via RDP and then disconnect using the shortcut on the desktop.
