@@ -1,5 +1,6 @@
 > [Wiki](Home) > [Processes](Processes) > [Friday Quality Time](Friday-Quality-Time) 
 
-Developers like quality time, on Friday afternoon a developer may choose max 2 ticket that can be completed in a couple of hours. Good candidates are 0 time tickets from the backlog. NB These tickets are not a priority it is just for fun :-)
+We are no longer going to have Friday tickets; this means we will be stricter about what tickets get to the backlog. However each sprint we will allocate 1 day of time where developers can choose tickets they would like to do; if you are adding tickets at this point it must be checked with one other person to agree it is a good idea.
 
-Before doing one of these tickets developers must do a review before they work on the ticket instead of after.
+During that day you will pick a ticket as normal and then get it done by 3pm. If you complete a ticket then review another one as normal. At 3pm we will have a brief meeting to show off what we have done. The rest of the day is to finish pushing through the tickets so normal development can continue on the following day.
+
