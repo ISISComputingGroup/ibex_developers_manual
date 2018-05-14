@@ -32,6 +32,10 @@ Get a licence key (there are 5 floating licences that can be used by 2 people)
     1. Under Edit > Preferences
     1. Under Squish-> Test Creation select Python as the default language
 
+# RDP to Server
+
+It is possible to remote desktop to the squish server but when you disconnect you must use the "Disconnect from RDP" shotcut on the desktop.
+
 # Setup For Build Server
 
 1. Install all the things needed for an instrument (Git, MySql, Java)
