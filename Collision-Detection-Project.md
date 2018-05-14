@@ -32,6 +32,13 @@ The system interfaces with the IBEX server using EPICS via the Channel Access pr
 For collision detection, the system uses the Open Dynamics Engine, through the python module `pyode`. A wheel for which is located at https://www.lfd.uci.edu/~gohlke/pythonlibs/#ode 
  
 The system also produces a visual rendering of the system, for diagnostic and development purposes. This uses `pygame` and the `pyopengl` bindings, and needs `glut.dll` and `glut32.dll`, which are included in the repository and can be found [here](ftp://ftp.sgi.com/opengl/glut/glut3.html).
+
+## Related tickets
+
+- https://github.com/ISISComputingGroup/IBEX/issues/2936: Code refactor and contains significant discussion about the role, scope, and future development of the system as of May 2018.
+- https://github.com/ISISComputingGroup/IBEX/issues/3141: Technical debt outstanding following the completion of #2936
+- https://github.com/ISISComputingGroup/IBEX/issues/3126: Required enhancement to allow configuration of the system to work with different instruments without hard coding.
+- https://github.com/ISISComputingGroup/IBEX/issues/2040: A list of suggested enhancements which have been moved to this wiki
  
 ## System Overview
 
@@ -166,3 +173,16 @@ Parameter        | Indexed on | Description
 `fine`          | N/A        | The initial fine limit seek step, which can be overridden by PV (but probably never needs to change from 0.5).
 `oversize`      | N/A        | The initial oversize parameter to apply to the bodies, which can be overriden by PV. The relationship `oversize = coarse / 4` should be maintained. 
 
+## Suggested enhancements
+
+Originally taken from https://github.com/ISISComputingGroup/IBEX/issues/2040
+
+- [ ]  Change the `config.ignore` list to a "collisions of interest" list to make it shorter and easier to write out - but the default would be to ignore that body completely if `config.py` was wrong
+- [x]  Add some diagrams to the "Limit Calculator" section of the Wiki page.
+- [ ]  Find out if the `TRAVEL` PV will ever be useful to anyone.
+- [ ]  Make the collision detection thread talk to the visualiser thread for updating the collision status of bodies (making them turn red more promptly).
+- [ ]  Remove `config.oversize`, and calculate the correct value for oversize in `main.py`.
+- [ ]  Remove `config.control_pv` as it shoudln't need to cahnge based on the instrument's configuration (see *).
+- [ ]  * Make the program aware of its current instrument context - load the current PV from the environment variables at startup, and work out the full motor/control PVs appropriately.
+- [ ]  Load the configuration from an appropriate location based on the instrument configuration (ask the BlockServer)
+- [ ]  Calculate the oversize of the models based on the stopping distances of the motors in the system
