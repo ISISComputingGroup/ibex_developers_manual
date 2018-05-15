@@ -7,3 +7,4 @@
 * [Julabo](Julabo)
 * [Neocera LTC-21](Neocera-LTC-21)
 * [Triton](Triton)
+* [Eurotherm](Eurotherm)
