@@ -189,7 +189,7 @@ Originally taken from https://github.com/ISISComputingGroup/IBEX/issues/2040
 - [ ]  Find out if the `TRAVEL` PV will ever be useful to anyone.
 - [ ]  Make the collision detection thread talk to the visualiser thread for updating the collision status of bodies (making them turn red more promptly).
 - [ ]  Remove `config.oversize`, and calculate the correct value for oversize in `main.py`.
-- [ ]  Remove `config.control_pv` as it shoudln't need to cahnge based on the instrument's configuration (see *).
+- [ ]  Remove `config.control_pv` as it shouldn't need to change based on the instrument's configuration (see *).
 - [ ]  * Make the program aware of its current instrument context - load the current PV from the environment variables at startup, and work out the full motor/control PVs appropriately.
 - [ ]  Load the configuration from an appropriate location based on the instrument configuration (ask the BlockServer)
 - [ ]  Calculate the oversize of the models based on the stopping distances of the motors in the system
