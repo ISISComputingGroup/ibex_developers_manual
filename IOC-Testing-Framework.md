@@ -57,6 +57,6 @@ The IOC testing framework will set the EMULATOR_PORT; it will also set the macro
 Run epics terminal `cd support\IocTestFramework\master`:
 
 ```
-python run_tests.py -pf %MYPVPREFIX%  -d amint2l -p C:\Instrument\Apps\EPICS\ioc\master\AMINT2L\iocBoot\iocAMINT2L-IOC-01 -e C:\Instrument\Apps\Python\Scripts\lewis.exe -pf %MYPVPREFIX% -ea C:\Instrument\Apps\EPICS\support\DeviceEmulator\master -ek lewis_emulators -ic
+python run_tests.py -pf %MYPVPREFIX%  -tm ccd100  -e C:\Instrument\Apps\Python\Scripts\lewis.exe
 ```
 
