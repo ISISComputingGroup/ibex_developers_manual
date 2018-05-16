@@ -1,7 +1,6 @@
 The eurotherm is one of the most common temperature controllers at ISIS. Most beamlines have at least one eurotherm if not more.
 
-# Protocol
+# Gotchas
 
-The eurotherm protocol has variable terminators, but also depends on it's timeouts for the device to operate properly.
-
-If the timeouts in the protocol are increased, the device will go into alarm states whenever setpoints are sent and the device will not work properly (also, the IOC will appear to take a long time to start because it sends lots of commands at startup).
+- If the protocol timeouts are increased too much the IOC will go into alarm states as some scans depend on the timeout. Do not increase the timeout beyond the tested value in the protocol file!
+- The eurotherm protocol uses variable terminators.
