@@ -89,3 +89,7 @@ If changes have been made to the genie_python source (and tested!), it can be qu
 
 The genie_python source can be found in C:\Instrument\Apps\Python\Lib\site-packages\genie_python.
 Restarting genie_python will pick up the changes.
+
+### Troubleshooting
+
+See the [genie_python troubleshooting guide](genie_python-Troubleshooting).
