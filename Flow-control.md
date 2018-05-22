@@ -6,21 +6,29 @@ Flow control comes in two varieties, [hardware](https://en.wikipedia.org/wiki/Fl
 
 ## Hardware flow control 
 
-Set using
+Set *off* (probably the most used)
 
-```
-$(IFNOTDEVSIM) $(IFNOTRECSIM) asynSetOption("$(ASERIAL)",0,"crtscts","Y")
-```
+    $(IFNOTDEVSIM) $(IFNOTRECSIM) asynSetOption("L0", 0, "clocal", "Y")
+    $(IFNOTDEVSIM) $(IFNOTRECSIM) asynSetOption("L0",0,"crtscts","N")
+
+Set *on* using
+
+    $(IFNOTDEVSIM) $(IFNOTRECSIM) asynSetOption("L0", 0, "clocal", "N")
+    $(IFNOTDEVSIM) $(IFNOTRECSIM) asynSetOption("L0",0,"crtscts","Y")
 
 in the device's `st.cmd`. To turn this off set it to `N` or remove the line completely. Under windows there is a further option to set it to `D` which ensures the hardware lines are floating (this is usually unnecessary).
 
 ## Software flow control 
 
-Set using
+In the device's `st.cmd`:
 
-```
-$(IFNOTDEVSIM) $(IFNOTRECSIM) asynSetOption("$(ASERIAL)",0,"ixon","Y") 
-$(IFNOTDEVSIM) $(IFNOTRECSIM) asynSetOption("$(ASERIAL)",0,"ixoff","Y") 
-```
+Set *off* using
 
-in the device's `st.cmd`. To turn this off set it to `N` or remove the line completely.
+    $(IFNOTDEVSIM) $(IFNOTRECSIM) asynSetOption("L0",0,"ixon","N") 
+    $(IFNOTDEVSIM) $(IFNOTRECSIM) asynSetOption("L0",0,"ixoff","N") 
+
+Set *on* using
+
+    $(IFNOTDEVSIM) $(IFNOTRECSIM) asynSetOption("L0",0,"ixon","Y") 
+    $(IFNOTDEVSIM) $(IFNOTRECSIM) asynSetOption("L0",0,"ixoff","Y") 
+
