@@ -31,7 +31,7 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
     1. [ibex_gui](https://github.com/ISISComputingGroup/ibex_gui)
     1. [EPICS](https://github.com/ISISComputingGroup/EPICS)
     1. For EPICS submodules you should use:
-        1. `git submodule update` which sets all the repos to there pinned version
+        1. `git submodule update` which sets all the repos to their pinned version
         1. `git submodule foreach "git checkout -b Release_X.x.x; git push -u origin Release_X.x.x"` this creates a branch at the current checked out version for each repo and pushes it.
 1. Update the version numbers:
     1. GUI
