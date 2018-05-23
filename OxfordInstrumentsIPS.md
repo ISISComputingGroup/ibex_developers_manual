@@ -8,6 +8,16 @@ The circuit diagram of a cryogenic magnet with a switch heater looks something l
 
 ![Cryomagnet](cryomagnet_circuit_diagram.PNG)
 
+The basic idea of operation in persistent mode is as follows:
+- If the switch heater is turned off, the magnet can be set to a particular current/field by the IPS
+- Once the magnet is set to that current/field, the switch heater can be turned off.
+  * This closes the superconducting switch
+  * Because of how cryomagnets behave, you now get a "persistent" current which flows around the superconducting loop formed by the magnet and the switch.
+  * Persistent currents are an advantage because they allow much greater stability than a power supply
+- Now that there is a persistent current flowing around the magnet/switch, the IPS can be ramped down
+  * This has the advantage that it saves power & cryogens
+
+**GOLDEN RULE OF OPERATING THE IPS: Only turn the switch heater on if PSU current == Magnet current**
 
 # State machine
 
