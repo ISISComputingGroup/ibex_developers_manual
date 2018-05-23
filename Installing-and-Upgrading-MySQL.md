@@ -30,7 +30,7 @@
 
 # Upgrade 5.6.x to 5.6.X or 5.7.x to 5.7.X (where 5.X is the same version)
 
-- run the mysql installer as admin
+- run the mysql installer community as admin (find in the start menu)
 - update the installer if needed
 - click upgrade
 - upgrade the product
