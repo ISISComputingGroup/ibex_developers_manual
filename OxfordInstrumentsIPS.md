@@ -6,8 +6,7 @@ The Oxford instruments IPS is a cryogenic magnet power supply. **This device can
 
 The circuit diagram of a cryogenic magnet with a switch heater looks something like the following:
 
-(insert diagram here)
-
+![Cryomagnet](cryomagnet_circuit_diagram.png)
 
 
 # State machine
