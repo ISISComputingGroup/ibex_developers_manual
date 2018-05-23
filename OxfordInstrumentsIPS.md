@@ -1,0 +1,42 @@
+# IPS
+
+The Oxford instruments IPS is a cryogenic magnet power supply. **This device can cause a magnet to [quench](https://en.wikipedia.org/wiki/Superconducting_magnet#Magnet_quench) if it sends commands while the magnet is in the wrong state! Please be careful when modifying this driver, especially if modifying the state machine.**
+
+# Basic cryomagnet operation
+
+The circuit diagram of a cryogenic magnet with a switch heater looks something like the following:
+
+(insert diagram here)
+
+
+
+# State machine
+
+The IOC implements the following state machine in SNL:
+
+- At field
+  * This is the state where the magnet is at a particular field (either persistent or not), and is not ramping to anywhere.
+  * The activity of the IPS should be "hold" - this instructs the IPS to maintain it's current output at the present level.
+
+- Set PSU to match magnet
+  * The state machine always sets the IPS to explicitly match the current in the magnet, regardless of whether the current is already matched. This is only technically needed if the magnet was in persistent mode previously, but it doesn't do any harm to set it explicitly anyway.
+  * The activity of the IPS is "Ramp to Setpoint"
+
+- Wait for voltage to stabilize
+  * Once the PSU is at the required current, wait for the voltage to be stable. We define stable as 5 successive readings which are all within 1.0V of each other.
+
+- Turn switch heater on and wait
+  * This state puts the activity back to "Hold"
+  * It also instructs the switch heater to turn on and then waits for the heater to warm up
+
+- Set PSU output
+  * At this stage in the state machine, we can begin the ramp to the target field
+
+- [PERSISTENT MODE ONLY] Switch off heater
+  * Once the magnet has reached the target field, it is safe to switch off the switch heater again
+  * We wait for the switch to cool back down again (and become superconducting) before moving onto the next state
+
+- [PERSISTENT MODE ONLY] Ramp down PSU
+  * The heater is now OFF (the switch is superconducting), so the PSU is free to ramp down without affecting the field produced by the magnet
+  * Set the IPS activity to "Ramp to Zero" and wait for the supplied current to drop to zero
+  * At the end of this state, the magnet is set to "persistent" mode.
