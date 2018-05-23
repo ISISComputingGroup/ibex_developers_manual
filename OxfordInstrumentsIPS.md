@@ -1,6 +1,8 @@
 # IPS
 
-The Oxford instruments IPS is a cryogenic magnet power supply. **This device can cause a magnet to [quench](https://en.wikipedia.org/wiki/Superconducting_magnet#Magnet_quench) if it sends commands while the magnet is in the wrong state! Please be careful when modifying this driver, especially if modifying the state machine.**
+The Oxford instruments IPS is a cryogenic magnet power supply. **This device can cause a magnet to [quench](https://en.wikipedia.org/wiki/Superconducting_magnet#Magnet_quench) if it sends commands while the magnet is in the wrong state! Please be careful when modifying this driver, especially if modifying the state machine.** In particular, the two most obvious states which must be avoided are:
+1. PSU current != Magnet current and switch heater on
+1. Ramping the Magnet current too fast
 
 # Basic cryomagnet operation
 
