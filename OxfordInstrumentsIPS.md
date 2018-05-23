@@ -53,3 +53,10 @@ The IOC implements the following state machine in SNL:
   * The heater is now OFF (the switch is superconducting), so the PSU is free to ramp down without affecting the field produced by the magnet
   * Set the IPS activity to "Ramp to Zero" and wait for the supplied current to drop to zero
   * At the end of this state, the magnet is set to "persistent" mode.
+
+# IOC notes
+
+- The IOC does not enter it's state machine until a setpoint is set.
+  * If a ramp was in progress at the time the IOC was started, the ramp will continue, but no further action will occur (for example, the magnet won't be set to persistent mode and the heater status won't be changed).
+  * This is done so that there are no assumptions made about the state of the IPS which might be invalid
+  * To continue setting the field to the desired value after an IOC restart, simply resend the setpoint
