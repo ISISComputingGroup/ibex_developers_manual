@@ -16,8 +16,10 @@ The basic idea of operation in persistent mode is as follows:
   * This closes the superconducting switch
   * Because of how cryomagnets behave, you now get a "persistent" current which flows around the superconducting loop formed by the magnet and the switch.
   * Persistent currents are an advantage because they allow much greater stability than a power supply
+  * When in persistent mode the IPS can be ramped down and the persistent current within the magnet will keep generating a field.
 - Now that there is a persistent current flowing around the magnet/switch, the IPS can be ramped down
   * This has the advantage that it saves power & cryogens
+  * Must set the IPS back to the same current as the magnet before turning the switch heater back on!
 
 **GOLDEN RULE OF OPERATING THE IPS: Only turn the switch heater on if PSU current == Magnet current**
 
