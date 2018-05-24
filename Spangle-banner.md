@@ -22,6 +22,7 @@ In the settings area, create `C:\Instrument\Settings\config\NDWxxxx\configuratio
 ```
 <?xml version="1.0" ?>
 <banner xmlns="http://epics.isis.rl.ac.uk/schema/banner/1.0" xmlns:blk="http://epics.isis.rl.ac.uk/schema/banner/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <items>
     <item>
         <name>DAE Simulation mode</name>
         <pv>DAE:SIM_MODE</pv>
@@ -32,5 +33,6 @@ In the settings area, create `C:\Instrument\Settings\config\NDWxxxx\configuratio
         <pv>CS:MANAGER</pv>
         <local>true</local>
     </item>
+  </items>
 </banner>
 ```
