@@ -37,7 +37,7 @@ Motors will tend to have a subset of the following *.cmd files for loading dbs:
 The motors currently used at ISIS are:
 * [Galil](Galil) - This is the most widely used motor type.
 * [SMC](SMC)
-* Linmot
+* [Linmot](Linmot)
 * [McLennan](McLennan)
 * Beckhoff
 * [SM300](SM300)
