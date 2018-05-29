@@ -95,6 +95,7 @@ The following changes should be applied to each of the workstations individually
 - Rename the instrument config folder in `C:\Instrument\Settings\config` to match the machine name
 - Rename the `init_inst_name.py` file in `C:\Instrument\Settings\config\[machine name]\Python\inst` to match the instrument name
 - Delete the `.settings` directory in `C:\Instrument\Apps\Client\configuration`. This will empty the IBEX preference store and notably make sure it starts up pointing at the local instrument rather than the machine it was cloned from.
+- Change the PV prefixes on the PVs associated with the Eurotherm component in the training synoptic to match each training machine
 - Make sure you can successfully start a run
 - Make sure that you can successfully start a scripting session
 - Stop the IBEX server (else it won't work properly for the next person who logs in)
