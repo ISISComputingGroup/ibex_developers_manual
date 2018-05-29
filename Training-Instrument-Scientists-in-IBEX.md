@@ -22,10 +22,15 @@ We record people who would like to attend the next training session by listing t
 
 ## Planning the IBEX and genie_python training courses
 This section summarises the steps you will need to consider when planning the IBEX and genie_python training courses.
+
 ### Check with the Mantid team
 The Mantid team regularly run a Mantid course and an Introduction to  Python courses.  Check with the Mantid team to discover their plans.  You can often collaborate of training activities.  It is very useful if the Mantid team can deliver the Introduction to  Python course, prior to the genie_python with IBEX course.
+
 ### Select a date for the training
 As noted above, select a date for the training 2-3 weeks ahead of the cycle.  You may need to select 2 or 3 dates and only make a final decision when you know availability of the venue.  You might also need to book a day or so either side of your chosen date, to allow for set-up and clear-up before/after the course.
+
+Typically we run the introduction as 9:00-12:00, and Introduction to `genie_python` as 13:00-17:00. This has worked well in the past. We have experimented with balancing the time as 9:00-12:30 and 13:00-17:00 but it made the morning feel long and the afternoon feel short.
+
 ### Advertise the training course
 Tell instrument scientists and visiting scientists of the proposed dates for the training course and invite them to sign up to attend.  Scientists will typically need 2-3 months advance notice, so make sure you tell them early.  Make sure you tell scientists to respond by a cut-off date - otherwise, it can be tricky trying to squeeze people in if they respond only 2-3 days before the course is due to run.
 1. During this step check for general training tickets on the backlog because any people who need to be invited will be listed here. 
