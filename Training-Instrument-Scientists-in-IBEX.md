@@ -31,7 +31,7 @@ Tell instrument scientists and visiting scientists of the proposed dates for the
 1. During this step check for general training tickets on the backlog because any people who need to be invited will be listed here. 
 
 ### Decide which training venue to use
-Recent training courses have been presented in R80 (rooms CR16 & CR17) and in the Central Design Facility (CDF) suite in the Atlas Building.  The CDF is a dedicated training and collaborative design facility, operated by RAL Space.  If you wish to use the CDF, you need to book it with RAL Space.
+Recent training courses have been presented in R80 (rooms CR16 & CR17) and in the Central Design Facility (CDF) suite in the Atlas Building.  The CDF is a dedicated training and collaborative design facility, operated by RAL Space.  If you wish to use the CDF, you need to book it with RAL Space. The CDF currently has 14 work stations. Historically, attendance has fluctuated between `<50%` and `100%` of those who sign up. It is possible to pair program on the training course. Feedback on this has been mixed so it is best not to overbook courses.
 
 To book the CDF Suite:
 * Contact Andrew Caldwell at RAL Space.  Andrew administers CDF activities.  Tell him which days you'd like to run the training.  Andrew will tell you if those days are available.
