@@ -2,7 +2,7 @@
 
 # Source Code
 
-We have our own fork of the CSS source code at https://github.com/ISISComputingGroup/cs-studio. This should be kept up to date with the code at https://github.com/ControlSystemStudio and only be used to branch from when modifying CSS for our own purposes. Modifying CSS should be done in discussion with the Core CS-Studio Developers and once any modifications have passed our review every effort should be made to merge them with the original.
+We have our own fork of the CSS source code [here](https://github.com/ISISComputingGroup/cs-studio). This should be kept up to date with the original code [here](https://github.com/ControlSystemStudio) and only be used to branch from when modifying CSS for our own purposes. Modifying CSS should be done in discussion with the Core CS-Studio Developers and once any modifications have passed our review every effort should be made to merge them with the original.
 
 # Archive Engine
 
