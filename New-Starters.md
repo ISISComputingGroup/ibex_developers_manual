@@ -91,6 +91,7 @@ We use a number of parts of CSS in our GUI (Alarms, Databrowser etc.). Most of t
 
 - [Overview of CS-Studio](https://epics.anl.gov/docs/USPAS2014/1-Monday/CSS_1_Overview.pdf)
 - [Intro to using CS-Studio](http://www.aps.anl.gov/epics/docs/USPAS2014/1-Monday/CSS_2_First_Steps.pdf)
+- [Creating OPIs](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/OPI-Creation)
 
 ## Office Admin Links
 
