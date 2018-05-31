@@ -38,7 +38,7 @@ These are added after a signal to indicate it is a setpoint etc. So for the TEMP
 
 Note:  RBV suffix can be used more generally e.g. For P,I,D values you could have `...:P` and `...:P:RBV`
 
-Note: For comparison, the SNS are using [camel case](http://en.wikipedia.org/wiki/CamelCase) i.e.  Temp, !TempSet and TempRB 
+Note: For comparison, the SNS are using [camel case](http://en.wikipedia.org/wiki/CamelCase) i.e.  `Temp`, `TempSet` and `TempRB`
 
 # Macros
 
@@ -78,7 +78,7 @@ This needs to be followed by information about which beamline. For neutron instr
 Should be followed by the hall identifier. We could use `HA:TS1:*` etc, or be more general for possible  use with any building e.g. `HA:R55:* `
 
 # IN Domain
-Sub domain is full instrument name e.g GEM. If we wish to distinguish the instrument “front end” from the rest, could use `*:FE` subdomain
+Sub domain is full instrument name e.g GEM. If we wish to distinguish the instrument “front end” from the rest, could use `*:FE` sub-domain
 
 - `IN:GEM:*`: Prefix for all variables related to GEM instrument
 - `IN:GEM:SB:*`: Where to record short SECI block (short/friendly) names if we use them
@@ -89,15 +89,15 @@ Sub domain is full instrument name e.g GEM. If we wish to distinguish the instru
 - `IN:GEM:CHOP:FERMI:*`
 - `IN:GEM:SE:*`: Sample environment not covered elsewhere
 - `IN:GEM:DET:*`: Detector related variables
-- `IN:GEM:FE:*`: Instrument “front end” equipment
+- `IN:GEM:FE:*`: Instrument “fro``nt end” equipment
 - `IN:GEM:DAE:*`: Data acquisition electronics related PVs
 
 # The IN:{INST}:CS sub domain
 
 - `IN:{INST}:CS:IOC:*`: Variables describing running IOCs provided by the IOC themselves
-- `IN:{INST}:CS:IOC:{IOCNAME}:AS:*`: Austosave PVs for IOC {IOCNAME}
+- `IN:{INST}:CS:IOC:{IOCNAME}:AS:*`: Autosave PVs for IOC {IOCNAME}
 - `IN:{INST}:CS:IOC:{IOCNAME}:DEVIOS:*`: DevIOStats PVs for IOC {IOCNAME}
-- `IN:{INST}:CS:IOC:{IOCNAME}:MOT:*`: Motion specific PVs e.g. allstop from motorUtils
+- `IN:{INST}:CS:IOC:{IOCNAME}:MOT:*`: Motion specific PVs e.g. `allstop` from `motorUtils`
 - `IN:{INST}:CS:IOC:{IOCNAME}:PS:*`: ProcServCtrl PVs for IOC {IOCNAME}
 - `IN:{INST}:CS:GATEWAY:EXTERNAL:*`: Gateway special PVs for the external gateway
 - `IN:{INST}:CS:GATEWAY:BLOCKSERVER:*`: Gateway special PVs for the blockserver gateway

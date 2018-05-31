@@ -57,7 +57,7 @@ Configurations
 
 The ConfigHolder class does most of the implementation for the specifics of editing a configuration making sure that all parts of the 
 configuration follow the correct rules. It holds a Configuration object which does very little other than contain all the relevant 
-configuration details. There are also small container classes to hold seperate Blocks, Groups, IOCs and MetaData.
+configuration details. There are also small container classes to hold separate Blocks, Groups, IOCs and MetaData.
 
 The ConfigHolder also uses the methods from the static class ConfigurationFileManager, which deal with the specifics of the file system
 including version control of configuration files. This FileManager class uses a ConfigurationXmlConverter object to help convert into 

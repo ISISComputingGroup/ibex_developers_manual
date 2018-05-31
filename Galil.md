@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > [Motor IOCs](Motor-IOCs) > [Galil](Galil)
+
 # Introduction
 
 This page contains information and references regarding the operation and maintenance of the Galil IOC
@@ -14,6 +16,7 @@ Useful information about the Galil can be found on the following pages:
 - [Barndoors and Momentum Slits on MUON Front End](Barndoors-and-Momentum-Slits-on-MUON-Front-End)
 - [Creating soft motors to control real motors](Creating-soft-motors-to-control-real-motors)
 - [Migrating instrument configurations](Migrating-instrument-configurations)
+- [Galil default parameters](Galil-default-parameters)
 
 # Technical information
 
@@ -41,7 +44,12 @@ GalilCreateAxis("Galil","A",0,"",1)
 GalilCreateAxis("Galil","B",0,"",1)
 ```
 
-These lines create the axis controllers. For a list of parameters, refer to "GalilCreateAxis" in `[Galil submodule]\GalilSup\src\GalilController.cpp`
+These lines create the axis controllers. It takes the following arguments:
+- Port name: Same as above
+- Axis name: The name of the axis in the controller (the galil labels axes A-H)
+- Limit as home: Set to zero if the axis has a home switch that it homes to, one if it homes in any other way.
+- Enables string: A comma separated list of digital ports to use for enabling/disabling motors. (Not currently used at ISIS)
+- Switch type: Whether the ports specified on the enables string enable or disable the motor. (Not currently used at ISIS)
 
 ```
 GalilStartController("Galil","$(GALIL)/gmc/galil_Default_Header.gmc;$(GALIL)/gmc/galil_Home_Dummy_Do_Nothing.gmc!$(GALIL)/gmc/galil_Home_Dummy_Do_Nothing.gmc!$(GALIL)/gmc/galil_Home_Dummy_Do_Nothing.gmc!$(GALIL)/gmc/galil_Home_Dummy_Do_Nothing.gmc!$(GALIL)/gmc/galil_Home_Dummy_Do_Nothing.gmc!$(GALIL)/gmc/galil_Home_Dummy_Do_Nothing.gmc!$(GALIL)/gmc/galil_Home_Dummy_Do_Nothing.gmc!$(GALIL)/gmc/galil_Home_Dummy_Do_Nothing.gmc;$(GALIL)/gmc/galil_Default_Footer.gmc!$(GALIL)/gmc/galil_Oscillating_Collimator_Merlin.gmc",0,0,3)
@@ -79,6 +87,28 @@ By default, the Galil IOC will stop all running threads when it restarts. If you
 
 - Oscillating collimator. LET, MERLIN.  Thread number defaults to 2, but can be set via PV
 - Fermi chopper lift. EMMA. Thread number fixed to 5
+
+## Assigning IP addresses
+
+The IP address of a Galil can only be established using a serial connection. This must be set up.
+  
+For a Galil DMC 2280, there are no problems
+1) Enter the command IA n1,n2,n3,n4 e.g. IA 192,168,1,201
+2) Enter the command BN to burn permanently into Galil
+  
+For a Galil DMC 4280, the firmware will not retain the IP address. As a result a trick must be used :
+1) The IP address can not be burnt into the Galil. As a result, a program must be saved into the Galil that assigns the IP address when the Galil is powered up. It must also turn off the DHCP setting as we use a private network for the Galils.
+2) Send the following program to the Galil (For the IA command, use the appropriate IP address desired.):
+```
+#AUTO
+DH0
+IA 192,168,1,201
+EN
+```
+3) Once entered, the program must be saved into the Galil permanently.
+4) Issue command BP (for burn program)
+5) Power cycle and the Galil should be available on the network.
+6) Please note : do not overwrite the permanent program resident in the Galil. It can be overwritten as long as it is not made permanent. Other programs, such as homing routines can be downloaded into the device but should not be burnt in.
 
 # Trouble Shooting
 

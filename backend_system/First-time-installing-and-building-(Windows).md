@@ -40,16 +40,18 @@ See [Installing and upgrading MySQL](Installing-and-Upgrading-MySQL)
 
 # Install genie_python
 
-Run the `genie_python_install.bat` batch file located in `\\isis\inst$\Kits$\CompGroup\ICP\genie_python\BUILD-<highest number>` 
+See [Building and installing genie_python](Building-and-Installing-genie_python)
 
 # Build EPICS back-end
 `cd` to `C:\Instrument\Apps\EPICS\` and run `build.bat`
-Note that take some time and should end with building the documentation.
+Note that this will take some time and should end with building the documentation.
 
 Certain items will not be built when using VS2013, these are:
 *  Mk3Chopper support module and IOC - only builds with VS2010
 
 If you see `Error 2: file not found`, you may not have installed the correct windows SDK or visual studio version. Check for `rc.exe` in `C:\Program Files (x86)\Windows Kits\10\bin\x86\` (as appropriate for your system). If you don't have `rc.exe`, try installing the windows SDK appropriate for your operating system.
+
+Whilst this is building you can independently start [Building the GUI](Building-the-GUI).
 
 # Set up the CS-Studio archiver
 In `C:\Instrument\Apps\EPICS\CSS\master` run `setup_css.bat`
@@ -69,6 +71,11 @@ git config --global user.name "spudulike"
 git config --global user.email "spudulike@ndxxxx.isis.cclrc.ac.uk"
 ```
 
+* Enable default recursive check
+```
+git config push.recurseSubmodules check
+```
+
 * Via a git client clone the repository from 'http://spudulike@control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/inst.git' to a directory with your machine name, like so:
 ```
 git clone http://spudulike@control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/inst.git NDXXXX
@@ -81,6 +88,7 @@ git clone http://spudulike@control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/ins
 ```
 cd NDXXXX/
 git checkout -b NDXXXX
+rename Python\init_inst_name.py Python\init_<Inst name (lowercase e.g. iristest1)>.py
 git add Python\init_<Inst name (lowercase e.g. iristest1)>.py
 git rm Python\init_inst_name.py
 git commit -m"create initial python"

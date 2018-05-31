@@ -36,7 +36,15 @@ If you want a PV to appear in the alarm view (and there should be at least one p
 
     info(alarm, "<name of IOC no _0X>")
 
-## 4. PVs Have Essential Fields
+## 4. Autosave PVs
+
+PVs can be autosaved so that they save their values and are reloaded when the IOC starts. The value is set before the record is initialised so is only processed using this value if `PINI` is Yes; although waveform records do this differently and will process the record.To do this mark the field with the following info line:
+
+    info(autosaveFields, "VAL")
+
+The second argument is the field which is autosaved within the record.
+
+## 5. PVs Have Essential Fields
 
 All PVs should have if appropriate:
 
@@ -45,7 +53,7 @@ All PVs should have if appropriate:
     * Units must be in ...
 * Precision (`PREC`) for records with floating point numbers - is this set correctly for what a user/technician requires 
 
-## 5. Compliance with DBUnitChecker
+## 6. Compliance with DBUnitChecker
 
 The build in Jenkins will fail if the rules of the [DBUnitChecker](PV-Units) script are not satisfied. You might as well check them before hand to save yourself time later. From an epics terminal in your ioc's app db directory 
 
@@ -53,7 +61,7 @@ The build in Jenkins will fail if the rules of the [DBUnitChecker](PV-Units) scr
 
 To check it will not fail the build.
 
-## 6. Macros
+## 7. Macros
 
 Macros where possible should follow the [standard names](Macro-Naming). If a macro can be set as part of the IOC (and can be reasonably set in the GUI) then a config file should be added to the run directory which contains a list of macros (i.e. `..\EPICS\ioc\master\<IOC Name>\iocBoot\<IOC Instance Name>\config.xml). The file is of the form:
 

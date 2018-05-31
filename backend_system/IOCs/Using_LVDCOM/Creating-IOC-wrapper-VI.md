@@ -71,9 +71,9 @@ This is a summary of [[more general LvDCOM instructions|http://epics.isis.stfc.a
 1. Edit lv_controls.xml (see below for example)
     1. Check the path is correct for the external interface, it should be:`<extint path="$(LVDCOM)/lvDCOMApp/src/extint/Main/Library/External Interface - Set Value.vi"/>`
     1. Path in vi element needs path to be vi in the llb containing the vi e.g. `C:/LabVIEW Modules/Drivers/Oxford Instruments/Mercury/Mercury - Temperature.llb/<name of vi>`
-    1. Look at TODOs in this file
+    1. Look at to dos in this file
     1. Remove unneeded controls or states of those controls (e.g. write for read only values)
-    1. If the value is controlled by an event the `extint` value of set contols should be set to `"true"`. This will make it process the value. If one of the value is true you might as well set them all to be true the only advantage is if the are all false it does not need to load the external interface.
+    1. If the value is controlled by an event the `extint` value of set controls should be set to `"true"`. This will make it process the value. If one of the value is true you might as well set them all to be true the only advantage is if the are all false it does not need to load the external interface.
 1. Add protocol file to `ISIS/<iocname>App/protocol/Makefile` as
 
     ```
@@ -96,9 +96,12 @@ This is a summary of [[more general LvDCOM instructions|http://epics.isis.stfc.a
 ## 4. Edit to st.cmd
 
 1. Add `lvDCOMConfigure("lvfp", "frontpanel", "${TOP}/data/lv_controls.xml", "$(LVDCOM_HOST=)", $(LVDCOM_OPTIONS=1), "$(LVDCOM_PROGID=)", "$(LVDCOM_USER=)", "$(LVDCOM_PASS=)")` before load common record. (see [lvDCOMConfigure documentation](http://epics.isis.stfc.ac.uk/doxygen/lvDCOM/lvDCOMDriver_8cpp.html#a90fdd61917374a2fed5dd1e2ba6da62b)). Remember to add these macros to `config.xml`:
-    * LVDCOM_HOST: sets the host by altering a macro which can be set in the config; default to "" so that by default it runs on localhost. 
-    * LVDCOM_OPTIONS: whether vi should be started; default to 1 warn if idle.
-    * LVDCOM_PROGID: DCOM ProgID, required if connecting to a compiled LabVIEW application (Default '')
+
+    ```
+    <macro name="LVDCOM_OPTIONS" pattern="^\d?\d?$" description="Options that define how the VI is started. Add selected options together to make the final value. 1 - warn if idle, 2 - start if idle, 4 - stop VIs if started on exit, 8 - stop VI on exit. (Default 1)" />
+    <macro name="LVDCOM_HOST" pattern="^.*$" description="Host on which the vi is running, blank for localhost (Default '')" />
+    <macro name="LVDCOM_PROGID" pattern="^.*$" description="DCOM ProgID, required if connecting to a compiled LabVIEW application (Default '')" />
+    ```
     * Don't add username and password, users can set these in gloabls.txt
 1. Add db load record
 

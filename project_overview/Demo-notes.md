@@ -133,7 +133,7 @@ In the new GUI, scripting is built-in.  You don't need a separate windows to run
 ## Device Support
 
 EPICS provides support for a wide range of devices.  For many devices we can simply download the appropriate driver from the EPICS web-site.  Because the source code for these drivers is available, we can, if necessary, adapt an EPICS driver for our specific purposes.
-* In EPICS, drivers & IOCs combine to provide control of devices attached an instrument.  In addition, we ue CSS to create OPIs (graphical user interfaces) for devices.  In combination, drivers, IOCs and OPIs provide the functionality of a LabVIEW VI.
+* In EPICS, drivers & IOCs combine to provide control of devices attached an instrument.  In addition, we use CSS to create OPIs (graphical user interfaces) for devices.  In combination, drivers, IOCs and OPIs provide the functionality of a LabVIEW VI.
 * We currently have EPICS drivers for Galil motor controllers, Eurotherms, Julabo water baths, CAEN, Kepco & Thurlby power supplies.  We also have controllers for PLCs, jaws-sets, sample changers, rotation stages and goniometers.
 * EPICS drivers and controllers for additional devices can be developed as required.
 * Adopting EPICS does **not** mean throwing away existing LabVIEW drivers.

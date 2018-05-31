@@ -65,3 +65,9 @@ logger.warn("A minor issue has occurred...");
 ```
 
 The logger has a separate method for each level of logging listed above.
+
+## Turning on Extra debug logging
+
+Sometimes we may want the ability to log very fine events, however leaving this turned on permanently could be an issue with disk space. 
+
+The solution is to use `LoggerUtils.logIfExtraDebug(logger, message)`. This only logs if the environment variable `IBEX_GUI_EXTRA_DEBUG` was set to `1` *at the time the GUI was started*.

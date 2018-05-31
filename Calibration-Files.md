@@ -25,3 +25,35 @@ Items **NOT** within the repository
 
 1. `motion set points` - calibration for motion set points e.g. sample changers. These probably do not belong in the repository (after debate) because they will be changed on an instrument but if this is pushed to another instrument the offsets do not make any sense. Some motion set points might be applicable we shall wait and see.
 
+## Updating Calibration File on Instruments
+
+If the common calibration file change and they need updating on all instruments then you can run the [calibration update script which can be found in ibex utils](https://github.com/ISISComputingGroup/ibex_utils/blob/master/installation_and_upgrade/calibration_files_updater.py)
+
+## Calibration file format
+
+### ISIS
+
+To set units to `C`:
+```
+# units:C
+1.20927230303971000000,1.50736314598516000000
+1.29965829974167000000,1.52132663750615000000
+1.40140216241767000000,1.53731669735489000000
+1.59677148943797000000,1.56816244669350000000
+```
+
+To set units to `K`:
+```
+# units:K
+1.20927230303971000000,1.50736314598516000000
+1.29965829974167000000,1.52132663750615000000
+1.40140216241767000000,1.53731669735489000000
+1.59677148943797000000,1.56816244669350000000
+```
+
+If the header line is not present, K is assumed.
+
+### Lakeshore
+
+Examples of the lakeshore format can be found on the [lakeshore site](https://www.lakeshore.com/Documents/ZipReadme.pdf).
+

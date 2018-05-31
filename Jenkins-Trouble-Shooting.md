@@ -6,7 +6,7 @@
 
 Build stops with:
     
-    Failed to execute goal org.eclipse.tycho:tycho-surefire-plugin:0.20.0:test (default-test) on project uk.ac.stfc.isis.ibex.targets.tests: An unexpected error occured (return code 13). See log for details. -> [Help 1]
+    Failed to execute goal org.eclipse.tycho:tycho-surefire-plugin:0.20.0:test (default-test) on project uk.ac.stfc.isis.ibex.targets.tests: An unexpected error occurred (return code 13). See log for details. -> [Help 1]
 
 In log file 
 
@@ -33,3 +33,7 @@ In this log it couldn't read open a given jar file. This appeared to be a proble
 Remote desktop to the machine in question and start the Jenkins slave service using services.msc. 
 
 If the service fails to start have a look in `C:\Jenkins` at `jenkins-slave.wrapper.log` it shows what the command line is. Run the command line and see the error then fix it. If it is the path to java this is set in `jenkins-slave.xml`. If you have some time you might try and couple this to the system path so that we no longer need the path in here.
+
+## Java is out of date
+
+If the wrong java path is set then the slave will not start. Update the path to the correct version of java in `...\Jenkins\jenkins-slave.xml`.

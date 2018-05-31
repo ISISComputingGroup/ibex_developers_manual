@@ -74,3 +74,4 @@ Whenever an edit is made to the `fsm.st` file, rebuild the support module:
 ```
 cd …EPICS\support\HFMAGPSU\master
 make
+```

@@ -2,18 +2,20 @@
 
 # Install first time
 
-- Download the latest mysql community installer (correct version) from [mysql site](https://dev.mysql.com/downloads/mysql/)
+- Download the latest mysql community installer from [mysql site](https://dev.mysql.com/downloads/mysql/)
+    - Scroll down to recommended download in GA Release, click Go To Download Page
+    - Scroll down to GA Release again and choose one of the two downloads (both are 32bit installers), the smaller one will download as it installs, the larger one downloads everything before starting.
+    - Scroll past Login and Sign Up, and just click "No thanks, just start my download" which will finally download the installer.
 - Create the folder tree `C:\ProgramData\MySQL\MySQL Server 5.7` (this will cause the installer to ask you to enter a data directory)
 - Run the community installer as admin and do the following:
     - Licence page: accept licence
-    - Type and Networking: Standalone MySqlServer
+    - Choosing a Setup Type: Server only (use Developer Default for developer machine, the MySQL Workbench is useful)
     - Path Conflict: Set the data dir to `C:\Instrument\var\mysql` (If this page doesn't appear go back to creating the folder tree)
-    - Check requirements: click execute
+    - Check requirements: click execute (don't worry if there are Python dependencies we will install Python later for something else anyway, just ignore it)
     - Installation: click execute
     - Product Config: next
-    - Type and Network: select server only (Development is good if you want mysql workbench but will require more checks later)
-    - Type and Network: Server (dev is also acceptable), other defaults are fine
-    - Account: Use the password from the passwords page
+    - Type and Network: select server machine (Development is also fine I think this is overwritten when using the standard mysql.ini), other defaults are fine
+    - Accounts and roles: Use the password from the passwords page
     - Windows Service: Accept defaults
     - Plugin and Extensions: defaults (no document database)
     - Apply Server Config: execute
@@ -28,7 +30,7 @@
 
 # Upgrade 5.6.x to 5.6.X or 5.7.x to 5.7.X (where 5.X is the same version)
 
-- run the mysql installer as admin
+- run the mysql installer community as admin (find in the start menu)
 - update the installer if needed
 - click upgrade
 - upgrade the product

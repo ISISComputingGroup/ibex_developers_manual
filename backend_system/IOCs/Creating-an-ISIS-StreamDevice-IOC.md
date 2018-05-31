@@ -1,5 +1,11 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > Creating an ISIS StreamDevice IOC
 
+## Before you begin
+
+Is the a support module already available? Check https://epics.anl.gov/modules/manufacturer.php. If it's not listed there, email tech talk https://epics.anl.gov/tech-talk/.
+
+## First step
+
 The easiest way to create a StreamDevice is to use the script [here](https://github.com/ISISComputingGroup/IBEX_device_generator) but if for some reason you want to create it manually the instructions are as follows:
 
 ## Create a StreamDevice support module
@@ -185,7 +191,7 @@ XXXX_IOC_YY_registerRecordDeviceDriver pdbbase
 
 ```
 
-The a common file, `st-common.cmd` should look like (NOTE: the support files location is a macro defined in the `EPICS\configure\MASTER_RELEASE` file):
+The a common file, `st-common.cmd` should look like (NOTE: the support files location is a macro defined in the `<IOC_DIR>\configure\RELEASE` file):
 
 ```
 epicsEnvSet "STREAM_PROTOCOL_PATH" "$(AMINT2L)/data"
@@ -197,7 +203,7 @@ epicsEnvSet "STREAM_PROTOCOL_PATH" "$(AMINT2L)/data"
 $(IFRECSIM) drvAsynSerialPortConfigure("L0", "$(PORT=NUL)", 0, 1, 0, 0)
 
 # For dev sim devices
-$(IFDEVSIM) drvAsynIPPortConfigure("L0", "localhost:$(EMULATOR_PORT=)")
+$(IFDEVSIM) drvAsynIPPortConfigure("L0", "localhost:$(EMULATOR_PORT=57677)")
 
 ## For real device use:
 $(IFNOTDEVSIM) $(IFNOTRECSIM) drvAsynSerialPortConfigure("L0", "$(PORT=NO_PORT_MACRO)", 0, 0, 0, 0)

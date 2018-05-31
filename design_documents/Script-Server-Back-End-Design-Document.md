@@ -5,7 +5,7 @@ This document should be read alongside the [front-end design document](Script-Se
 ## What it should do
 * Accept multiple clients
 * Serve up a list of available commands for the specified instrument over some protocol. The command should contain command parameters and a description, for example:
-   * Name: set_ei
+   * Name: `set_ei`
    * Parameters: incident energy (double)
    * Description: Positions the choppers to allow the specified incident energy through
 * The commands are instrument specific scripts written by the instrument scientists and/or controls team, and are stored on the server
@@ -46,7 +46,7 @@ Different types of script:
 
 Decisions already made:
 
-* Scripts, commands and jobs will be written and run in CPython
+* Scripts, commands and jobs will be written and run in `CPython`
 
 A simple diagram of the design:
 

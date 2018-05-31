@@ -1,11 +1,16 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [Creating and Basics of IOCs](IOCs)
 
+# Before Creating an IOC #
+
+Remember, EPICS is a collaboration! Why create an IOC when you can just use one that's already out there? If the device is not ISIS specific, before thinking about creating an IOC check whether it is listed [here](https://epics.anl.gov/modules/manufacturer.php) and, if not, email the mailing list [here](https://epics.anl.gov/tech-talk/index.php).
+
+
 # Creating an IOC #
 
 Building a new IOC? Before you get started, take a look at the relevant [instrument page](https://github.com/ISISComputingGroup/IBEX/wiki) to see if there's any useful information for the device you're about to write an IOC for. Otherwise, let's get going. If you have problems see [See IOC and device Troubleshooting](IOC-And-Device-Trouble-Shooting).
 
 ## Automatically
-If you're building a new StreamDevice IOC you can use the script [here](https://github.com/ISISComputingGroup/IBEX_device_generator).
+If you're building a new StreamDevice IOC you can use the [IOC Generator script for info see the wiki](https://github.com/ISISComputingGroup/IBEX_device_generator).
 
 ## Manually
 If you're not creating a StreamDevice IOC or you you would like to know how an IOC could be created manually see:
@@ -20,7 +25,9 @@ If you're not creating a StreamDevice IOC or you you would like to know how an I
     If you used the script to create your IOC an empty emulator and IOC tests will have been created for you.
 
 1. [IOC Finishing Touches](IOC-Finishing-Touches)
-    * Additional for motors [Adding motor IOC to global motor moving and stop all](Adding-motor-IOC-to-global-motor-moving-and-stop-all)
+    * Additional for motors:
+        1. [Adding motor IOC to global motor moving and stop all](Adding-motor-IOC-to-global-motor-moving-and-stop-all)
+        1. [Add support for motor extras, e.g. axes](Add-support-for-motor-extras)    
 
 1. [Record simulation](Record-Simulation)
 
@@ -30,7 +37,7 @@ If you're not creating a StreamDevice IOC or you you would like to know how an I
 
 1. [Add logging](Logging-from-the-archive)
 
-1. Add any manuals used to the [manuals dir and list](Manuals)
+1. Add any manuals used to the [manuals directory](Manuals)
 
 # Conventions
 

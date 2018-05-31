@@ -6,6 +6,8 @@
 
 * [Mockito](Using-Mockito-for-Testing-in-the-GUI)
 
-* [System/UI Testing](System-Testing-with-RCPTT)
+* System/UI Testing
+    * [with RCPTT](System-Testing-with-RCPTT)
+    * [with Squish](System-Testing-with-Squish)
 
 * [Test naming](Test-naming)

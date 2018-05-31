@@ -55,7 +55,7 @@ s.close()
 
 ### The backdoor
 
-It's possible to modify the device's state on the fly as it's running in case you want to push it into a specific state (as a backdoor). The backdoor can also be used to alter simulation paramters, e.g. to simulate a loss of connection or speed up the simulation time. Full documentation can be found [here for device access](http://lewis.readthedocs.io/en/latest/user_guide/remote_access_devices.html) and [here for simulation access](http://lewis.readthedocs.io/en/latest/user_guide/remote_access_simulation.html).
+It's possible to modify the device's state on the fly as it's running in case you want to push it into a specific state (as a backdoor). The backdoor can also be used to alter simulation parameters, e.g. to simulate a loss of connection or speed up the simulation time. Full documentation can be found [here for device access](http://lewis.readthedocs.io/en/latest/user_guide/remote_access_devices.html) and [here for simulation access](http://lewis.readthedocs.io/en/latest/user_guide/remote_access_simulation.html).
 
 The host and port for the backdoor are specified in the `-r` argument at startup:
 
@@ -103,8 +103,7 @@ We haven't done much with emulators yet, so not much has gone wrong, so please a
 * Note that lewis can't deal with not having a termination character. If your device doesn't use a termination character then you will have to temporarily use one while talking to the emulator.
 * `An error occurred:
 The setup 'default' you tried to load does not specify a valid device type, but
-the device module 'neocera_ltc21' provides multiple device types so that no mean
-ingful default can be deduced.`. Possible solutions:
+the device module 'neocera_ltc21' provides multiple device types so that no meaningful default can be deduced.`. Possible solutions:
     - Add device to `__init__` file of package so it can be imported.
     - Ensure that the initial state is one of the states returned by get_state_handlers.
 * When I try to launch `lewis.exe` I get the error `Fatal error in launcher: Unable to create process using '"'`. When you build Python on Windows, the Python path is baked into the `lewis.exe` exectuable. If you subsequently say move `Python-build` to `Python` then the path will be incorrect and the executable doesn't know where to launch from. You can either open the executable in a text editor and change the path by hand or instead explicitly point it at the Python executable by running `..\Python.exe lewis.exe ...`

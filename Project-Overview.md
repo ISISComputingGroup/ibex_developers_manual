@@ -6,16 +6,20 @@ A short overview of the IBEX project, its vision and information on the main ins
 
 # [Architectural Design](High-Level-Architectural-Design) #
 
-Documents demonstrating the high-level architectural design of the project components
+Documents demonstrating the high-level architectural design of the project components.
 
 # [Proposed Design Documents](Design-Documents) #
 
-Documents for proposed designs of project extensions
+Documents for proposed designs of project extensions.
 
 # [How to demonstrate IBEX](Demo-notes) #
 
 Some notes on what to show someone when demonstrating IBEX for the first time
 
-# [Major Components of Ibex Server](Major-Components-of-Ibex-Server)
+# [Notes from Retrospectives](RetrospectiveNotes) #
 
-List of programs which are accessed as Channel Access, i.e. the backbone of the ibex servers.
+Notes from Sprint Retrospective meetings are recorded here.
+
+# [Decision Log](Decision-Log)
+
+A place to write down decisions made.

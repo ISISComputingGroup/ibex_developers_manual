@@ -1,30 +1,30 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > genie_python
 
-See also the [getting started guide](First-time-installing-and-building-(Windows))
+### Setting up a repository
+
+1. From a git-enabled command line, run `git clone https://github.com/ISISComputingGroup/genie_python.git C:\Instrument\Apps\Python`
+1. Navigate to `C:\Instrument\Apps\Python\package_builder`
+1. Run `dev_build_python.bat`
+
+### First time
+
+The first time you set up `genie_python`, assuming you've never installed it previously, you'll need to set up an ipython profile. 
+
+1. From `C:\Instrument\Apps\Python`, run `python.exe .\scripts\ipython.exe profile create`
+1. Copy `ipython_config.py` from the `package_builder` directory to `C:\users\[fedid]\.ipython\profile_default\.`
+
 
 ### Development workflow
 
-1. If you haven't installed genie_python as part of Python on your system yet, read the [getting started guide](First-time-installing-and-building-(Windows))
-1. If you don't have a development version of genie_python already, clone the repo e.g. navigate to `C:\Instrument\Dev` and run command `git clone https://github.com/ISISComputingGroup/genie_python.git`
-1. Update genie_python
-    1. Quick update (for changes to `genie_python` source only, useful 95% of the time):
-        1. Copy the `.py` files in your `genie_python` development directory (e.g. `C:\Instrument\Dev\genie_python\source`)
-        1. Paste them into `C:\Instrument\Apps\Python\Lib\site-packages\genie_python`
-        1. You're done! The changes will be available next time you start `genie_python`.
-    1. Full build:
-        1. Open `build_python.bat` and comment out line `252` about building the MSI
-        1. Run `build_python.bat` - this will install a new version to c:\Instrument\Apps\Python-Build
-        1. Call the new functionality by running c:\Instrument\Apps\Python-Build\genie_python.bat
+1. Make sure you have a development version of `genie_python` set up as described above.
+1. Create a branch for your changes as per the [standard development workflow](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Git-workflow).
+1. Apply changes to the `genie_python` source at `C:\Instrument\Apps\Python\Lib\site-packages\genie_python`, remembering to commit any changes to your branch.
+1. If you need any extra libraries, or change `genie_python` dependencies, add them to `common_build_python.bat` and rerun `dev_build_python.bat` to make them available in your distribution.
+1. You can run the `genie_python` unit tests at any time with `C:\Instrument\Apps\Python\python.exe C:\Instrument\Apps\Python\Lib\site-packages\genie_python\run_tests.py`. Alternatively, from an EPICS terminal with the current working directory as `C:\Instrument\Apps\Python\Lib\site-packages\genie_python` you can simply run `python run_tests.py`.
 
-### Building
+### Building notes
 
-Note: these are essentially the same steps as used by the Jenkins build server.
-
-Clone the source from https://github.com/ISISComputingGroup/genie_python.git
-
-The process for building the product is automated; it just requires the build_python.bat file in the package_builder folder to be run.
-
-The batch file does the following:
+The batch file `common_build_python.bat` used by the developer and Jenkins build script does the following:
 
 * Copies locally the Python packages where we have strict requirements on versions (e.g. NumPy) or created ourselves from a remote location (\\\\isis\\inst$\\Kits$\\CompGroup\\ICP\\genie_python_dependencies)
 
@@ -32,13 +32,17 @@ The batch file does the following:
 
 * Installs all the required 3rd party packages. Some of the packages are stored locally as executables, some are zip files and some are downloaded
 
+* Copies startup scripts from the `package_builder` directory into the installation
+
+Jenkins only:
+
 * Copies genie_python from the local directory in the virtual environment
 
-* Copies the Scripts and site-packages directories into the clean Python installation
+* Copies site-packages directories into the clean Python installation
 
 * Zips the Python installation and bundles it with the install scripts etc. 
 
-* if called with the "install" parameter, installs it to c:\Instrument\Apps\Python and also copies it to the shared drive
+* Copies the installation to the shared drive
 
 ### Developing
 
@@ -85,3 +89,7 @@ If changes have been made to the genie_python source (and tested!), it can be qu
 
 The genie_python source can be found in C:\Instrument\Apps\Python\Lib\site-packages\genie_python.
 Restarting genie_python will pick up the changes.
+
+### Troubleshooting
+
+See the [genie_python troubleshooting guide](genie_python-Troubleshooting).

@@ -14,7 +14,7 @@ Java SE comes in three different product editions. Each product edition provides
 1. Oracle Java SE Advanced & Oracle Java SE Advanced Desktop
 1. Oracle Java SE Suite
 
-All three product editions contain a mix of free-to-use & free-to-distribute features _**and**_ [Commercial Features](#noteCommFeat).  If you only use free-to-use and free-to-distribute features, you do not incur a license fee.  And, of course, if you use Commercial Features, you do incur a license fee.
+All three product editions contain a mix of free-to-use & free-to-distribute features _**and**_ [Commercial Features](#features).  If you only use free-to-use and free-to-distribute features, you do not incur a license fee.  And, of course, if you use Commercial Features, you do incur a license fee.
 
 It is also important to understand that Oracle does _**not**_ provide installation programs that correspond directly to these 3 product editions. Depending on which of the products you have licensed, you will need to download one or more installer packages.  Regardless of which product edition you intend to use, you must agree to the terms of the relevant product license.
 
@@ -36,7 +36,7 @@ JavaFX is a software platform for creating and delivering desktop applications, 
 JRockit is an alternative JVM for Oracle middleware applications.  The JRockit JDK is a development toolkit for creating applications which use the JRockit JVM.  At the present time (March 2017), IBEX does not use JRockit.<br>
 **Note:** JRockit JDK is free to use.  However, applications developed using the JRockit JDK may attract a run-time license fee.  Therefore, we should not use JRockit in IBEX.
 
-With the exception of those features designated as [Commercial Features](#noteCommFeat), Java SE can be used for free internally to run applications and may be redistributed in accordance with the [Oracle Binary Code License Agreement for the JAVA SE Platform Products](http://www.oracle.com/technetwork/java/javase/documentation/otn-bcl-02april2013-1966219.pdf) (the “Java BCLA”) - this version of the JAVA BCLA dates from 02-April-2013.
+With the exception of those features designated as [Commercial Features](#features), Java SE can be used for free internally to run applications and may be redistributed in accordance with the [Oracle Binary Code License Agreement for the JAVA SE Platform Products](http://www.oracle.com/technetwork/java/javase/documentation/otn-bcl-02april2013-1966219.pdf) (the “Java BCLA”) - this version of the JAVA BCLA dates from 02-April-2013.
 
 ### Oracle Java SE Advanced & Oracle Java SE Advanced Desktop Product Edition
 
@@ -63,7 +63,7 @@ Oracle does not provide installation programs that correspond directly to variou
 
 For the purpose of developing IBEX, the only installer packages we need be concerned about are the first two, the JRE and the JDK.  We do not use features provided by the other installer packages, so there is no need to download them.
 
-<a name="noteCommFeat"></a>
+<a name="features"></a>
 ## Commercial Features of Java SE Product Editions
 
 All of the Java SE product edition included one or more commercial features.  The table below lists each of the commercial features and the product editions that contain those commercial features.

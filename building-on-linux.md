@@ -108,7 +108,7 @@ I am currently on a windows machine so it is useful to have a virtual machine on
 
 ## Building it
 
-Install prerequsits (this for the backend and front end so not all of these are needed for the client)
+Install prerequisites (this for the backend and front end so not all of these are needed for the client)
 ```
 sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
         build-essential \
@@ -147,7 +147,7 @@ clone epics repo
 
     git clone https://github.com/ISISComputingGroup/ibex_gui.git
 
-alter perfernce supplier to be linux aware (there is an extra path in here to which needs to be updates for epics utils)
+alter preference supplier to be linux aware (there is an extra path in here to which needs to be updates for epics utils)
 ```
 cd "$INSTALL_DIR/ibex_gui"
 PREFERENCE_SUPPLIER="./base/uk.ac.stfc.isis.ibex.preferences/src/uk/ac/stfc/isis/ibex/preferences/PreferenceSupplier.java"

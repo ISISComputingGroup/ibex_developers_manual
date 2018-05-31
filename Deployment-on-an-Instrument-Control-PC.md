@@ -8,21 +8,30 @@ Steps are marked with **bold** prefixes to indicate the following:
 - **mini-inst** only these steps should be done for installation of a mini inst server. After installation [configure](Configure-Mini-Inst) it in the appropriate manner.
 - unlabelled steps should be done except for installing a mini inst.
 
-# Steps using the deployment script
+# Steps using the install/deployment script
 ## Preparatory Steps for Client and Server
 
 - Inform the instrument scientist that you are going to upgrade the instrument in 5 minutes so that they are not surprised when you remote desktop to the instrument. Wait 5 minutes.
+- Look in `C:\Program Files\MySQL` if `MySQL Server 5.7` and `MySQL Server 5.6` exists and `MySQL Server 5.6` is empty apart from bin then delete the directory `MySQL Server 5.6`
+- Make sure that the public share has the most recent version of the install and upgrade information from Git (i.e. do git pull).
 
+#### install
+- Run `<public share>\ibex_utils\installation_and_upgrade\instrument_install.bat` 
+    - It will look for the highest version number in the release folder as a source.
+    - If you want to install a non-default release you need to set the `SUFFIX` variable in the batch file. For example with `x.y.z` being the current release and `hotfix` being the suffix, it will look for the folder `Releases/x.y.z-hotfix`
+    - Follow the instructions on the command line. 
+- After the script has successfully finished and the IBEX server has been started, run `instrument_test.bat` in the same folder and follow the instructions.
+
+#### upgrade
 - Ensure the instrument is running and in a setup state (e.g. so you can take suitable screenshots)
 - Ensure all command lines to EPICS are closed
-- Look in `C:\Program Files\MySQL` if `MySQL Server 5.7` and `MySQL Server 5.6` exists and `MySQL Server 5.6` is empty apart from bin then delete the directory `MySQL Server 5.6`
 - Run `<public share>\installation_and_upgrade\instrument_deploy.bat`
-    - Apart from the next points just follow instructions
+    - It will look for the highest version number in the release folder as a source.
+    - If you want to install a non-default release you need to set the `SUFFIX` variable in the batch file. For example with `x.y.z` being the current release and `hotfix` being the suffix, it will look for the folder `Releases/x.y.z-hotfix`
+    - Apart from the below points, just follow instructions
     - Be warned the upgrade runs in 3 steps and so will claim to have finished the upgrade 3 times
     - After backup of EPICS step do database disc space clear using [Database Troubleshooting Reducing database disc space](Database-Troubleshooting#Reducing-database-disc-space)
     - Ensure that after the upgrade configuration that galil mtrctrl macro has been set especially if the ip addresses are set in globals.txt
-
-
 
 # Steps using Manual Steps
 ## Preparatory Steps for Client and Server
@@ -31,7 +40,7 @@ Steps are marked with **bold** prefixes to indicate the following:
 
 - **install** Check that Java is installed on the PC.  If not, download the latest JRE from the Java website (http://www.java.com/en/) and install it.  Make sure you choose the 64-bit version of Java.  See also [Upgrade Java](Upgrade-java). The version should be that based on the release notes.
 
-- **install** If the PC is running the Windows Classic theme, switch it to a modern theme (e.g. Windows 7 Theme); the IBEX GUI looks better when using a modern theme.  To change the theme see [Change Windows Theme](Change Windows Theme).
+- **install** If the PC is running the Windows Classic theme, switch it to a modern theme (e.g. Windows 7 Theme); the IBEX GUI looks better when using a modern theme.  To change the theme see [Change Windows Theme](Change-Windows-Theme).
 
 ## Preparatory Steps for Server
 
@@ -46,7 +55,7 @@ Steps are marked with **bold** prefixes to indicate the following:
 
 - **upgrade** Record any open LabVIEW VI which are running.
 
-- **upgrade** Stop running instrument `ibex_stop_server.bat`.
+- **upgrade** Stop running instrument `stop_ibex_server.bat`.
 
 - **upgrade** Backup old directories
     * Delete backups older than the last backup.
@@ -126,7 +135,7 @@ Steps are marked with **bold** prefixes to indicate the following:
     Register the DAE as per the instructions in [the getting started guide](First-time-installing-and-building-(Windows)#configure-dae-for-simulation-mode-on-developers-computer).
 
 		
-- **install** If the instrument is not on the list of known instruments already (i.e. for switching the GUI), follow the instructions [here](Making an Instrument Available from the GUI).
+- **install** If the instrument is not on the list of known instruments already (i.e. for switching the GUI), follow the instructions [here](Making-an-Instrument-Available-from-the-GUI).
 
 - **install** Close the original terminal from which you installed. If you try to boot IBEX from this terminal it will not be able to find python.
 

@@ -6,7 +6,7 @@ Inside CSS there are perspectives for editing, monitoring and plotting scans.
 
 ![Client 1](GUI_development/images/css/client1.png)
 
-The editor perspective allows scans to be created using a number of building blocks, the blocks are: loops; delays; sets; sub-scans; wait fors; log value; comments; and, Python script snippets.
+The editor perspective allows scans to be created using a number of building blocks, the blocks are: loops; delays; sets; sub-scans; wait for; log value; comments; and, Python script snippets.
 
 The scripts are constructed using “drag and drop” and the values are set via the Properties window.
 The finished scripts are submitted to the script server for processing.

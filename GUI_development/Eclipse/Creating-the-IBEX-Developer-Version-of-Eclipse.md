@@ -1,13 +1,13 @@
 > [Wiki](Home) > [The GUI](The-GUI) > [Eclipse](GUI-Eclipse) > Creating the IBEX developer version of Eclipse
 
-This describes how to make a new version of the IBEX developer's version of Eclipse. If adding new plugins starting from the old version should be sufficent, but if upgrading the Eclipse version re-creating these steps may be easier.
+This describes how to make a new version of the IBEX developer's version of Eclipse. If adding new plugins starting from the old version should be sufficient, but if upgrading the Eclipse version re-creating these steps may be easier.
 
 Note this version of Eclipse can be found at ``\\isis\inst$\Kits$\CompGroup\ICP\Developer Tools``.
 
 ## Download and install plugins
 
 * Download the latest version of Eclipse for RCP and RAP developers from https://www.eclipse.org/downloads/, unzip somewhere appropriate and start Eclipse
-* Set the workspace to ../workspace (or anothe suitable relative path)
+* Set the workspace to ../workspace (or another suitable relative path)
 * Modify eclipse/plugins/org.eclipse.platform_4.5.0.v20150603-2000/splash.bmp (replacing 4.5.0... with the current version number) to make clear this is the IBEX version of Eclipse
 * From Help -> Eclipse Marketplace install RCP Testing Tool
 * From Help -> Eclipse Marketplace install EclEmma

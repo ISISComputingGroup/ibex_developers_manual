@@ -17,12 +17,15 @@ Type   | Meaning
 **duplicate** | Ticket is a duplicate of a different ticket and will not be fixed (usually other ticket is referenced)
 **for current release** | Ticket is needed for the current release and should be prioritised (allows us to keep track of whether a release can be made)
 **proposal** | It is proposed that the ticket should be in the next sprint (removed each sprint)
+**training** | Ticket is easy and not urgent, therefore suitable for new starters
+**motion control** | Ticket may be of interest to the motion control hardware team. Tickets are relevant if they change how we interact with a motion control device or change the workflow for commissioning motion
 **ready (wf)** | Ticket is in the current sprint and can be worked on
 **in progress (wf)** | Ticket is currently in progress
 **review (wf)** | Ticket is done and should be review by someone
 **completed (wf)** | Ticket is complete
 **impeded (wf)** | Ticket is in progress but can not be completed because of something else. Reason for impediment should be added to the ticket. This should not be for long.
 **fixed (wf)** | Ticket has been fixed (added at end of sprint only and by the person running the sprint)
+**re-request** | Instrument scientist has requested a ticket and it has been request by another instrument scientist in the past. A comment should record who asked with a +1.
 
 ## Creation of Tickets
 
@@ -30,11 +33,31 @@ Tickets should be created at need by developers as git issues using the waffle b
 
 ## Backlog Pruning
 
-Before the backlog pruning meeting people should move tickets to the 'proposal' column they would like to see in the next sprint; all the tickets that must be in and a maximum of 2 extras per person. At the meeting we will look at these tickets discuss what they are and then rank their importance.
+Before the backlog pruning meeting people should move tickets to the 'proposal' column they would like to see in the next sprint; all the tickets that must be in and a maximum of 2 extras per person. At the meeting we will look at these tickets discuss what they are and then rank their importance. The importance will be done by printing the tickets out and then ordering then in a "play your cards right" fashion. To prepare the print out: list issues, copy and paste into notepad++, replace `(#\d\d\d\d).*` with `\1\n\n\n\n`, copy to word, alter font to big and make sure it is 2 per page and print.
 
 Filter for proposed tickets `is:open label:proposal`
 
 Filter for other tickets `is:open -label:proposal -label:"in progress" -label:"ready" -label:"review" -label:"completed" -label:"impeded"`
+
+## Sprint Review
+
+Demo of tickets that have been done in this sprint.
+
+Prep:
+
+1. On the day create a power point file on the share with title slide and a template slide with Done, Mention and Demo.
+1. Send slack announcing where it is and asking people to add themselves
+1. Update demo:
+    1. run `instrument_install_latest_build_only.bat` 
+    1. then in epics run `create_icp_binaries.bat`
+    1. Announce that demo is available for creating demos on
+
+During:
+
+- Go through each persons slide and get them to demo and mention tickets they have done.
+- Generally discuss any issues and goodness in the code.
+
+Often the meeting is followed by the retrospective.
 
 ## Sprint Planning
 
@@ -49,7 +72,12 @@ After sprint planning the ready column will be ordered.
 
 ## Movement of Tickets
 
-Developers should pick up a ticket as close to the top of the Ready column as they can (i.e. don't pick a ticket assigned to someone else). Assign the ticket to yourself and move it to in progress. When the ticket is done move it to the top of the review column (unless it is high priority in that case move it to the bottom). Then pick a ticket to review from the bottom of the review column. Review the ticket and move it either to the review complete or add the rework label and move it back to the top of the ready column (it is a courtesy to inform the person you have done this). You must do a review when you move any ticket to the review column even if it is a rework. (A rework ticket review counts as a review).
+Developers should pick up a ticket as close to the top of the Ready column as they can (i.e. don't pick a ticket assigned to someone else). 
+
+1. Assign the ticket to yourself and move it to in progress. 
+2. When the ticket is done move it to the top of the review column (unless it is high priority in that case move it to the bottom). 
+3. Pick a ticket to review from the bottom of the review column. Review the ticket and move it either to the review complete or add the rework label and move it back to the top of the ready column (it is a courtesy to inform the person you have done this). You must do a review when you move any ticket to the review column even if it is a rework. (A rework ticket review counts as a review).
+4. If changes are merged into master, add the ticket to the [Release Notes](https://github.com/ISISComputingGroup/IBEX/wiki/ReleaseNotes_Dev).
 
 Sometimes you may want to split a larger ticket into smaller tickets to do this see [Umbrella Tickets](Umbrella-Tickets).
 

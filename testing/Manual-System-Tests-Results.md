@@ -8,3 +8,4 @@ Here you can find the results of the system tests performed as part of each rele
 * [Release 3.2.0 results](testing/manual_system_tests_results/Release_3.2.0_manual_system_tests_outcome_April_2017.xlsx) - April 2017
 * [Release 4.0.0 results](testing/manual_system_tests_results/Release_4.0.0_manual_system_tests_outcome_September_2017.xlsx) - September 2017
 * [Release 4.2.0 results](testing/manual_system_tests_results/Release_4.2.0_manual_system_tests_outcome_January_2018.xlsx) - January 2018
+* [Release 4.4.0 results](testing/manual_system_tests_results/Release_4.4.0_manual_system_tests_outcome.xlsx) - May 2018

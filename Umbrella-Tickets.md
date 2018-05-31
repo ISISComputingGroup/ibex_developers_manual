@@ -2,7 +2,7 @@ Umbrella tickets (or Epics in agile speak) are over arching tickets which contai
 
 ## Case 1 Before working on an original ticket it is clear it should be split
 
-* Create a smaller ticket it should be named <TICKET NUMBER>-1: <Ticket purpose>
+* Create a smaller ticket it should be named `<TICKET NUMBER>-1`: `<Ticket purpose>`
 * Estimate the ticket
 * Assign the ticket to yourself
 * Reference the ticket in the original ticket and reduce its estimate by the estimate of this ticket. If this makes the ticket negative by more than 1 then talk about it with a member of the team.
@@ -13,7 +13,7 @@ Umbrella tickets (or Epics in agile speak) are over arching tickets which contai
 
 * Create the umbrella ticket with the original estimate of the ticket minus the estimate of the present ticket. If this makes the ticket negative by more than 1 then talk about it with a member of the team.
 * Name this ticket the same as the original
-* Rename the original tickets as <TICKET NUMBER>-1: <Ticket purpose>
+* Rename the original tickets as `<TICKET NUMBER>-1`: `<Ticket purpose>`
 * Set the estimate on the original ticket
 * Spin out any new tickets as in case 1
 * Inform Kevin that you have created an umbrella ticket so he can track the new tickets

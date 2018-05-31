@@ -78,7 +78,7 @@ There is much to learn about EPICS and it can be difficult to know what you're l
 
 ## Input Output Controller Resources
 
-When building an IOC, emulator, or writing tests, much can be learned by looking at existing IOCs. However, there are several places to find good sources for learning and referencing. 
+When building an IOC, emulator, or writing tests, much can be learned by looking at existing IOCs. However, there are also several places online to find good sources for learning and referencing. 
 
 - [Protocol Files and Record Types](http://epics.web.psi.ch/software/streamdevice/doc/protocol.html) - Excellent reference for when you're mixing up your %d's and %f's. Bookmark this one!
 - [Sequencer - State Notation in IOCs](http://www-csr.bessy.de/control/SoftDist/sequencer/Tutorial.html#pv-names-using-program-parameters) - All about implementing a state machine into an IOC, if needed.

@@ -1,4 +1,4 @@
-TODOs For Eclipse 4 migration:
+To dos For Eclipse 4 migration:
 
 - Recommended synoptic code in config editor has been commented out
 - CTRL + ALT + P preference menu does not work. The `preferencePages` extension point is not available anymore in E4. Someone developed a plugin which provides a preference page extension point for E4 applications which can be found [here](https://github.com/opcoach/e4Preferences)
@@ -7,7 +7,7 @@ TODOs For Eclipse 4 migration:
 - To change the version for the about menu you must change it in e4.client/pom.xml
 - `BeamStatusView.java`: The PVs haven't been connected to the beam status view because the archiver doesn't connect properly yet
 - `BeamStatusView.java`: We may want to change that entire part eventually to just be two databrowsers in different tabs rather than embedding the graph in a separate view.
-- Reenable detecor diagnostics on tab changes PV is DAE:DIAG:ENABLE:FOR
+- Reenable detector diagnostics on tab changes PV is DAE:DIAG:ENABLE:FOR
 - Log plotter within OPIs do not work. They need the changes to CSStudio from this pull request (https://github.com/ISISComputingGroup/CSStudio_3_3/pull/2/files). Currently the e4 gui just points at download.csstudio.org so doesn't have this change.
 - Minimising views causes some very odd behaviour, we should capture what we actually want to happen and implement it.
 - Perspectives currently cannot be hidden in the preferences. This is used for the NICOS perspective and the Script Generator.

@@ -72,3 +72,6 @@ The project currently contains the following base units:
 * T
 * V
 
+## Usage
+
+To use the DB Unit checker script, see [IOC Finishing Touches](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/IOC-Finishing-Touches#6-compliance-with-dbunitchecker).

@@ -3,7 +3,7 @@
 # What it should do
 - Accept multiple clients
 - Serve up a list of available commands for the specified instrument over some protocol. The command should contain command parameters and a description, for example:
-   - Name: set_ei
+   - Name: `set_ei`
    - Parameters: incident energy (double)
    - Description: Positions the choppers to allow the specified incident energy through
 - The commands are instrument specific scripts written by the instrument scientists and/or controls team, and are stored on the server
@@ -44,11 +44,11 @@ Different types of script:
 
 Decisions already made:
 
-- Scripts, commands and jobs will be written and run in CPython
+- Scripts, commands and jobs will be written and run in `CPython`
 
 A simple diagram of the design:
 
-![Script server design](backend_system/NICOS/BackendDesign.png)
+![Script server design](backend_system/NICOS/Backend_Design.png)
 
 Commands:
 
@@ -70,7 +70,7 @@ Jobs:
 
 There are two levels of security. Logging into the script server and logging into NICOS. Logging onto the script server allows you to put commands onto the queue. 
 
-Both tokens and usernames should be readable by the GUI via PVs secured in the block server. These PVs will be readable only by clients with write access to the server. The token should be auto-generated on start/restart of the script server and obfuscated by hashing and salting.
+Both tokens and user names should be readable by the GUI via PVs secured in the block server. These PVs will be readable only by clients with write access to the server. The token should be auto-generated on start/restart of the script server and obfuscated by hashing and salting.
 
 It should not be possible to access the proxy from any location other than localhost.
 

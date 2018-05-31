@@ -8,4 +8,4 @@ The problem to be solved is how to use autosave as part of a configuration which
 1. If the Galil power cycles (it is on UPS) then the last known position should be restored so scientists do not have to rehome
 
 Idea is to save things into an autosave file but only autosave manually for settings. Different config would use different autosave files.
-Things like the galil position that are continously saved are saved to a different file and loaded in a normal fashion.
+Things like the galil position that are continuously saved are saved to a different file and loaded in a normal fashion.

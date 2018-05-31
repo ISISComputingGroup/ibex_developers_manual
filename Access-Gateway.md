@@ -2,7 +2,7 @@
 
 ## Introduction
 
-There are two files involved in the gateway, an ACF and a PVLIST. When the start_gateways.bat is run it copies the default files, appends any custom rules for the server stored in settins\config\serverName\AccessSecurity, and uses the standard macro expander for IBEX.
+There are two files involved in the gateway, an ACF and a PVLIST. When the start_gateways.bat is run it copies the default files, appends any custom rules for the server stored in settings\config\serverName\AccessSecurity, and uses the standard macro expander for IBEX.
 
 The ACF is the rules for the access, while the pvlist specifies which rules to follow for what.
 

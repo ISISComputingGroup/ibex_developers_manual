@@ -1,4 +1,4 @@
-> [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > Lakeshore 336
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [Temperature Controllers](Temperature-Controllers) > [Lakeshore 336](Lakeshore336)
 
 The Lakeshore 336 is a temperature controller that has four input temperature readings (A, B, C, D) and two heater outputs (1, 2). The user can configure which heater output is paired up with which input.
 

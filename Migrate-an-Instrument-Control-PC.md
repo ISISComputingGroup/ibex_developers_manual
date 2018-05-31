@@ -28,6 +28,7 @@ Each instrument at ISIS is unique.  Although they share many similarities, there
    1. Ask the scientists for copies of the active configs and scripts.  
    1. Add the list of active configs and scripts to the instrument wiki page.
    1. Find out if there are any dependencies on Block name. For example do Mantid analysis scripts use them?
+   1. Ask the scientists if they want to be involved in the script and/config conversion process.  Some scientists are happy to simply have their scripts & configs converted; other scientists like to be involved (e.g. not to have "verbatim" conversions of their scripts, but to request modifications during the conversion process).
 
 ## Preparation
 
@@ -46,6 +47,7 @@ Agree with the team how support will be implemented (e.g. by creating or extendi
 1. Create any tickets required to implement the necessary support.
 1. Identify when IBEX is likely to support the required devices (i.e. identify the first cycle after the required devices are supported in IBEX).
 1. Tell Facilities IT (Anthony Shuttle) that an instrument is due to be migrated and ask them to put the instrument on a sub-network.  This is required so that we can use TCP/IP to communicate with the Galils.  Facilities IT will need notice of about 4-6 weeks.
+   * before contacting Anthony, check how many network ports will be needed.  Anthony needs to know.
 1. If the instrument still uses 5-digit run numbers, update the ICP program to the latest version.
 1. Check the computer that IBEX will be installed on ensuring that it has enough hard disk space.
 1. As the target cycle approaches

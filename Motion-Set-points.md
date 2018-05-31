@@ -2,7 +2,7 @@ Motion set points allow you to label set positions for a motor, current either 1
 
 1. St file called `motionsetpoints.cmd` which sets up the db file which is stored in the configuration under the motor name:
     - galil is `Settings\config\<host name>\configurations\galil`
-    - mcleanan is `Settings\config\<host name>\configurations\mcleanan`
+    - mclennan is `Settings\config\<host name>\configurations\mcleanan`
     - sm300 is `Settings\config\<host name>\configurations\<sm300 ioc name e.g. SM300_01>`
 1. The positions which are referenced from the st file. are stoed in  `Settings\config\<host name>\configurations\motionSetPoints`
 
@@ -37,7 +37,7 @@ The lookup motion setpoint file has the following format:
     ...
     <label> <coord 1> <coord 2>
 
-Field are seperated by spaces. The fields are:
+Field are separated by spaces. The fields are:
 
     - `label` is the text label for the setpoint
     - `coord 1` is the set point for the first/only motor

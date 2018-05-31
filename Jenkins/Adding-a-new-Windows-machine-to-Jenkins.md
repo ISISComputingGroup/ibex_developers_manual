@@ -32,6 +32,12 @@ These are instructions for adding a new Windows machine as a node to be used by 
 
 See the Jenkins [website](https://wiki.jenkins-ci.org/display/JENKINS/Step+by+step+guide+to+set+up+master+and+slave+machines) for more information.
 
+* Notes from John to integrate
+
+1. Download the slave jar from http://<jenkins>/jnlpJars/agent.jar
+1. Place in `C:\Jenkins`
+1. Run the java web start line when in node
+
 <a name="jenkins_gui_tests"></a>
 ### Special Notes on Jenkins for GUI Tests
 

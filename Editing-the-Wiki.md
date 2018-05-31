@@ -1,3 +1,5 @@
+> [Wiki](Home) >[Editing the Wiki](Editing-the-Wiki)
+
 ### Markdown
 Markdown is the preferred format for Wiki pages as it supports useful features like code highlighting. Other similar document types are available, for example ReST or MediaWiki may be useful if moving documentation from other sources.
 

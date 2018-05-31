@@ -352,8 +352,117 @@ This should not occur but has when a database was missing our extra column in th
 
 ### Not enough CRPT memory
 
-CRPT (Current Run Parameter Table) memory is a large in-memory structure used to store information about the run, including histogramed data. Data is read from the DAE into CRPT memory and then written to file, in event mode CRPT memory is where events are histogrammed on the fly during collecting to provide real-time spectra. If you get a CRPT size error, it means the product of (number of periods) * (number of spectra) * (number of time channels) is too big. If you are in histogram mode you either need to reduce one of these variables or get the CRPT size increased (icp_config.xml) but remember this is real memory that the ICP will claim at startup. If you are in event mode and get a CRPT error, it may mean you have misconfigured the time regime you plan to use for the on-the-fly rebinning e.g. you are trying to rebin events at event mode resolution not at a coarser resolution. The event mode / histogram mode choice and which time regime to use is governed by the wiring tables.
+CRPT (Current Run Parameter Table) memory is a large in-memory structure used to store information about the run, including histogrammed data. Data is read from the DAE into CRPT memory and then written to file, in event mode CRPT memory is where events are histogrammed on the fly during collecting to provide real-time spectra. If you get a CRPT size error, it means the product of (number of periods) * (number of spectra) * (number of time channels) is too big. If you are in histogram mode you either need to reduce one of these variables or get the CRPT size increased (icp_config.xml) but remember this is real memory that the ICP will claim at startup. If you are in event mode and get a CRPT error, it may mean you have misconfigured the time regime you plan to use for the on-the-fly rebinning e.g. you are trying to rebin events at event mode resolution not at a coarser resolution. The event mode / histogram mode choice and which time regime to use is governed by the wiring tables.
 
 ### End of run script not working
 
 See https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Experimental-Runs#experimental-files-not-being-archived-and-so-not-appearing-in-the-journal
+
+### No frames/beam current registered by the DAE
+
+Try switching the timing source to "Internal test clock" and starting a run. If counts are received in this state, it means that the DAE isn't receiving timing pulses from the central source. If that's the case, it needs attention from the electronics group (e.g. Simon Moorby).  Note, this may occur on more than one beam line so keep an ear open for any other reports.
+
+Don't forget to switch the timing source back when you're done!
+
+Other things to to check in this state are:
+
+- [ ] Visit the beamline - (possibly with electronics is suspecting a hardware problem).
+   Software usually doesn't just stop normally when other things are working  - right? :smile: 
+- [ ] Most importantly, ask the scientists if anything happened around the time of the problem, in a recent case they mentioned someone had moved a cable on an ADC (although this was not the problem!).
+- [ ] Look at the lights on the ADC or detector input module cards on the DAE. If no lights flickering, there is no data coming in and this is a good indicator that the HT might be off (a few lights might mean shutter closed or beam off).
+- [ ] data/transfer lights on a DAEII, flickering & transfer lights inactive not a good sign.  Could be the link to the PC if transfer lights are not showing activity.
+- [ ] If frame/raw counts are not showing up, a good diagnostic is to put the DAE into "Internal Test Clock".  If this works and frames appear, it is likely that there may be a problem with a Time of Flight signal (this often affects more than one beamline.
+
+## Simulation mode DAE complains about missing cards
+
+From an issue in Ticket https://github.com/ISISComputingGroup/IBEX/issues/3099 - example traceback:
+
+```
+[2018-04-09 15:26:49] sevr=major  setDCEventMode: Unknown detector card 3
+
+[2018-04-09 15:26:49]  setDCCardMode: Unknown detector card 3
+
+[2018-04-09 15:26:49]  setDCEventMode: Unknown detector card 4
+
+[2018-04-09 15:26:49]  setDCCardMode: Unknown detector card 4
+
+[2018-04-09 15:26:49]  setDCEventMode: Unknown detector card 5
+
+[2018-04-09 15:26:49]  setDCCardMode: Unknown detector card 5
+
+[2018-04-09 15:26:49]  setDCEventMode: Unknown detector card 6
+
+[2018-04-09 15:26:49]  setDCCardMode: Unknown detector card 6
+
+[2018-04-09 15:26:49]  setDCEventMode: Unknown detector card 7
+
+[2018-04-09 15:26:49]  setDCCardMode: Unknown detector card 7
+
+[2018-04-09 15:26:49]  setDCEventMode: Unknown detector card 8
+
+[2018-04-09 15:26:49]  setDCCardMode: Unknown detector card 8
+
+[2018-04-09 15:26:49]  setDCEventMode: Unknown detector card 9
+
+[2018-04-09 15:26:49]  setDCCardMode: Unknown detector card 9
+
+[2018-04-09 15:26:49]  setDCEventMode: Unknown detector card 10
+
+[2018-04-09 15:26:49]  setDCCardMode: Unknown detector card 10
+
+[2018-04-09 15:26:49]  Cannot find card for crate 3
+
+[2018-04-09 15:26:49]  Unknown detector card 3
+
+[2018-04-09 15:26:49]  Cannot find card for crate 4
+
+[2018-04-09 15:26:49]  Unknown detector card 4
+
+[2018-04-09 15:26:49]  Cannot find card for crate 5
+
+[2018-04-09 15:26:49]  Unknown detector card 5
+
+[2018-04-09 15:26:49]  Cannot find card for crate 6
+
+[2018-04-09 15:26:49]  Unknown detector card 6
+
+[2018-04-09 15:26:49]  Cannot find card for crate 7
+
+[2018-04-09 15:26:49]  Unknown detector card 7
+
+[2018-04-09 15:26:49]  Cannot find card for crate 8
+
+[2018-04-09 15:26:49]  Unknown detector card 8
+
+[2018-04-09 15:26:49]  Cannot find card for crate 9
+
+[2018-04-09 15:26:49]  Unknown detector card 9
+
+[2018-04-09 15:26:49]  Cannot find card for crate 10
+
+[2018-04-09 15:26:49]  Unknown detector card 10
+
+[2018-04-09 15:26:49]  Attempt to use missing detector card/crate 3
+
+[2018-04-09 15:26:49]  Attempt to use missing detector card/crate 4
+
+[2018-04-09 15:26:49]  Attempt to use missing detector card/crate 5
+
+[2018-04-09 15:26:49]  Attempt to use missing detector card/crate 6
+
+[2018-04-09 15:26:49]  Attempt to use missing detector card/crate 7
+
+[2018-04-09 15:26:49]  Attempt to use missing detector card/crate 8
+
+[2018-04-09 15:26:49]  Attempt to use missing detector card/crate 9
+
+[2018-04-09 15:26:49]  Attempt to use missing detector card/crate 10
+
+[2018-04-09 15:26:49] : Exception occurred.
+```
+
+The issue here is that the default simulated DAE has 2 detector cards in it, but the real DAE has more cards. I've edited `isisicp.properties` to create more cards so it should now work. Note this is not an ibex issue - it will also affect DAE simulation mode under SECI.
+
+## DAE3 does not start 
+
+DAE3 is new ethernet based acquisition electronics on ZOOM and MARI, it used ISISICP and looks like DAE2 for most purposes. If everything remains in processing, it may be that the `arp` network entries did not get created - these should be done as a system time boot task. Do `arp -a` and see if there is an entry for 192.168.1.101 etc.  If not, run `set_dae3_arp.bat` in `c:\labview modules\dae` as as administrator

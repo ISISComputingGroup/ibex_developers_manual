@@ -38,9 +38,14 @@ If it doesn't work check:
 
 If this doesn't work check the moxa logging (see data over the moxa connection). If this doesn't work there is a device that can be plugged into a serial port to intercept all traffic.
 
-## It won't work in the IOC initially, but with no changes works after connecting to hyperterimnal
+## It won't work in the IOC initially, but with no changes works after connecting to hyperterminal
 
 If the IOC doesn't work on startup, but does after using hyperterminal, at a command prompt run a `mode com1` on the appropriate com port (example is for COM1) before and after running hyperterminal. If there is a change that isn't duplicated by starting the IOC, then there is possibly a setting missing in asyn.
+
+## It did work and then freezes ##
+
+This may be due to a low control issue e.g. `Xon`/`Xoff` has been incorrectly specified and some binary character
+happens to match `Xoff`. You should see asyn still sending character when you enable trace, but non getting through. If you run the `dbior` command at level 2 you may see `waiting as seen Xoff`.
 
 ## What is Passing between the IOC and the *Stream* Device
 
@@ -91,7 +96,7 @@ record(bi, "$(P)BI")
 
 The result was a `UDF` alarm on the `bi` because the `RVAL` wasn't being updated in line with the `VAL`. We tried a lot of things to sort this. In the end we changed the `OUT` field of the `CALC` to a `FLNK` and added the following field to the `bi`: `field(INP, "$(P)CALC")`. We don't know why this solution worked over the many others we tried.
 
-## IOC Crashes on debug the expection in "Unhandled exception at ... : Stack cookie instrumentation code detected a stack-based buffer overrun."
+## IOC Crashes on debug the exception in "Unhandled exception at ... : Stack cookie instrumentation code detected a stack-based buffer overrun."
 
 This is caused when something bad happens to the stack. There are many underlying causes to this, in my case it was that the IOC had loaded a dll which used an incorrect version of visual studio in its build. The dlls that are loaded (with their paths) can be seen in debug -> Windows -> Modules in VS. To check if it is this error delete the offending dll and try the process again. To fix the error convert the IOC to use build dependencies instead of the master release list, instructions are in [Reducing Build Dependencies](Reducing-Build-Dependencies)
 
@@ -159,3 +164,14 @@ To regenerate log files set the date in the `c:\Logs\LOG_last_active_time` to th
 ## I want to Generate a Log file from some PVs Now
 
 This can be done between two dates see `...EPICS\ISIS\inst_servers\master\ArchiverAccess\log_file_generator.py` as an example.
+
+## which process owns a serial port
+
+From an administrator (i.e. gamekeeper) prompt, run the `sysinternals` handle command like:
+
+```
+handle.exe -a | findstr "Serial pid:"
+```
+
+This will print a list of PIDs and any matches to a serial port allocated, take the pid number above the relevant \Device\Serial  line 
+
