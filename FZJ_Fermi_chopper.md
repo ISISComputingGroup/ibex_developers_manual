@@ -1,4 +1,4 @@
-# FZJ fermi chopper, as used on MERLIN
+# FZJ fermi chopper, as used on MERLIN and MAPS
 
 This device has a relatively complex IOC due to some communication issues we have had with the chopper. The following things are non-standard:
 - Custom checksum algorithm in stream device. This is specific to this fermi chopper.
@@ -37,3 +37,9 @@ There are safety checks in the IOC.
 - If the auto zero voltages are out of range
 - If the actual chopper speed is above 606Hz
 - If the magnetic bearing is off while the chopper is at speed
+
+# Crate does not respond / crate responds to 10% of messages
+
+- This was seen on MAPS:
+  * Cannot communicate using VISA under EPICS
+  * If chopper crate and instrument PC are power cycled, may need to run labview driver once before epics can talk. We are still not sure why this is.
