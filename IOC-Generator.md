@@ -18,7 +18,18 @@ These instance methods are grouped into classes:
  - emulator_utils (emulation)
  - gui_utils (opi template creation)
 
-## Support_utils
+## support_utils
+
+### create_submodule
+
+Creates the top level directory in C:\Instrument\Apps\EPICS\support\, adds a makefile and tries to create a new git repo.
+
+### apply_support_dir_template
+
+Requires the directories made by create_submodule.
+This will call a Perl script which generates the .db and .proto files for the support module.
+The Perl script is C:\Instrument\Apps\EPICS\support\asyn\master\bin\windows-x64\makeSupport.pl.
+The Perl script uses the templates in C:\Instrument\Apps\EPICS\support\asyn\master\templates\streamSCPI\_NAME_Sup.
 
 
 ## ioc_utils
