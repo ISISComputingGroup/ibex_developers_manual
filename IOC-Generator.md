@@ -9,7 +9,10 @@ Use these [instructions](https://github.com/ISISComputingGroup/IBEX_device_gener
 # How to edit it/how it works/file locations
 
 Clone the [repository](https://github.com/ISISComputingGroup/IBEX_device_generator) into C:\Instrument\Dev.
-The program starts in IBEX_device_generator.py, so start there.
+
+This program makes git branches and pushes to the remote repo, you can stop this by adding a return statement at the start of each method in git_utils (including the RepoWrapper constructor).
+
+The program starts in IBEX_device_generator.py, so we'll start there.
 generate_device calls create_component for each component you might want, passing in an instance method.
 These instance methods are grouped into classes:
  - support_utils (generic IOC config)
@@ -19,6 +22,8 @@ These instance methods are grouped into classes:
  - gui_utils (opi template creation)
 
 ## support_utils
+
+Makes files in C:\Instrument\Apps\EPICS\support
 
 ### create_submodule
 
@@ -34,6 +39,7 @@ The Perl script uses the templates in C:\Instrument\Apps\EPICS\support\asyn\mast
 
 ## ioc_utils
 
+Makes files in C:\Instrument\Apps\EPICS\ioc\master
 
 ## ioc_test_framework_utils
 
@@ -43,3 +49,5 @@ The Perl script uses the templates in C:\Instrument\Apps\EPICS\support\asyn\mast
 
 
 ## gui_utils
+
+Generates an opi template for the IOC.
