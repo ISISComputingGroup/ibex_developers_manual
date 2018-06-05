@@ -10,7 +10,7 @@ Remember, EPICS is a collaboration! Why create an IOC when you can just use one 
 Building a new IOC? Before you get started, take a look at the relevant [instrument page](https://github.com/ISISComputingGroup/IBEX/wiki) to see if there's any useful information for the device you're about to write an IOC for. Otherwise, let's get going. If you have problems see [See IOC and device Troubleshooting](IOC-And-Device-Trouble-Shooting).
 
 ## Automatically
-If you're building a new StreamDevice IOC you can use the [IOC Generator script](https://github.com/ISISComputingGroup/IBEX_device_generator) for developer info see the [wiki](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/IOC-Generator).
+If you're building a new StreamDevice IOC you can use the [IOC Generator script](https://github.com/ISISComputingGroup/IBEX_device_generator), for developer info see the [wiki](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/IOC-Generator).
 
 ## Manually
 If you're not creating a StreamDevice IOC or you you would like to know how an IOC could be created manually see:
