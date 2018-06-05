@@ -143,7 +143,7 @@ Steps are marked with **bold** prefixes to indicate the following:
 
 - **install** Add the instrument hostname to NDX_INSTS or ALL_INSTS within webserver.py on the master branch of (https://github.com/ISISComputingGroup/JSON_bourne)
 
-- **install** Remote desktop into NDAEXTWEB1 with IBEX Builder
+- **install** Remote desktop into external web server (see password page for username and password)
 
 - **install** Update the code at C:\JSON Bourne to be the same as that in the repository
 
