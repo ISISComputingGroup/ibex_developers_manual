@@ -40,7 +40,7 @@ Currently a simple JS script takes the JSON created by JSON Bourne and provides 
 To deploy on a new instrument see [Deployment](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Deployment-on-an-Instrument-Control-PC#add-instrument-to-ibex-web-dashboard)
 
 To update the production version of the dashboard:
-* Remote desktop into NDAEXTWEB1 with IBEX builder
+* Remote desktop into external webserver (for username and password see password page)
 * Update C:\JSON_Bourne with the JSON_bourne python code
 * Update C:\inetpub\wwwroot\DataWeb\IbexDataweb with the html and javascript for the webpage and the overview page
 * Restart JSON_bourne (it is running as a service)
