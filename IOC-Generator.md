@@ -25,6 +25,8 @@ These instance methods are grouped into classes:
 
 Makes files in C:\Instrument\Apps\EPICS\support
 
+Templates for support module: C:\Instrument\Apps\EPICS\support\asyn\master\templates\streamSCPI
+
 ### create_submodule
 
 Creates the top level directory in C:\Instrument\Apps\EPICS\support\, adds a makefile and tries to create a new git repo.
@@ -40,6 +42,8 @@ The Perl script uses the templates in C:\Instrument\Apps\EPICS\support\asyn\mast
 ## ioc_utils
 
 Makes files in C:\Instrument\Apps\EPICS\ioc\master
+
+Template for ioc configuration: C:\Instrument\Apps\EPICS\base\master\templates\makeBaseApp\top
 
 ## ioc_test_framework_utils
 
