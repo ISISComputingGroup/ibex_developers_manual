@@ -26,7 +26,7 @@ The webserver is run as part of the BlockServer and provides all of the data on 
 
 ### On the Dataweb Server
 
-There are also parts of the system running on a central dataweb server (hostname NDAEXTWEB1), which provides external access.
+There are also parts of the system running on a central dataweb server (for hostname see password page), which provides external access.
 
 ### JSON Bourne
 
