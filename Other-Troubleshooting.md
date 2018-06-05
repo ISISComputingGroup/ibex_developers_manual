@@ -23,7 +23,7 @@ If you have done this it may be that the isisicp.exe program is too old. Older v
 
 ## Instrument Page not Working on Web Dashboard
 
-Check that the instrument is in the list of Instruments in https://github.com/ISISComputingGroup/JSON_bourne/blob/master/webserver.py and that the version on NDAEXTWEB1 is up-to-date.
+Check that the instrument is in the list of Instruments in https://github.com/ISISComputingGroup/JSON_bourne/blob/master/webserver.py and that the version on web server is up-to-date.
 
 ## `cmake error: could not load cache` seen during build
 
