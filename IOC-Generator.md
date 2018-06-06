@@ -48,6 +48,7 @@ Makes files in C:\Instrument\Apps\EPICS\ioc\master
 
 Templates for ioc configuration: C:\Instrument\Apps\EPICS\base\master\templates\makeBaseApp\top
 These templates are **generated from** templates in: C:\Instrument\Apps\EPICS\base\master\src\template\base\top
+Run make in C:\Instrument\Apps\EPICS\base\master\src to regenerate the templates.
 
 ## ioc_test_framework_utils
 
