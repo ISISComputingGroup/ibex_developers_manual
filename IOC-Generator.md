@@ -26,6 +26,8 @@ These instance methods are grouped into classes:
 Makes files in C:\Instrument\Apps\EPICS\support
 
 Templates for support module: C:\Instrument\Apps\EPICS\support\asyn\master\templates\streamSCPI
+These templates are **generated from** templates in: C:\Instrument\Apps\EPICS\support\asyn\master\makeSupport\streamSCPI
+
 
 ### create_submodule
 
@@ -37,13 +39,15 @@ Requires the directories made by create_submodule.
 This will call a Perl script which generates the .db and .proto files for the support module.
 The Perl script is C:\Instrument\Apps\EPICS\support\asyn\master\bin\windows-x64\makeSupport.pl.
 The Perl script uses the templates in C:\Instrument\Apps\EPICS\support\asyn\master\templates\streamSCPI\_NAME_Sup.
+These templates are **generated from** templates in: C:\Instrument\Apps\EPICS\support\asyn\master\makeSupport\streamSCPI\_NAME_Sup
 
 
 ## ioc_utils
 
 Makes files in C:\Instrument\Apps\EPICS\ioc\master
 
-Template for ioc configuration: C:\Instrument\Apps\EPICS\base\master\templates\makeBaseApp\top
+Templates for ioc configuration: C:\Instrument\Apps\EPICS\base\master\templates\makeBaseApp\top
+These templates are **generated from** templates in: C:\Instrument\Apps\EPICS\base\master\src\template\base\top
 
 ## ioc_test_framework_utils
 
