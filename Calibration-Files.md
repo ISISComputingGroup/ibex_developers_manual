@@ -35,7 +35,16 @@ If the common calibration file change and they need updating on all instruments 
 
 To set units to `C`:
 ```
-# units:C
+# ISIS calibration
+# {
+#    "sensor_type": "K-type",
+#    "format_version": "1",
+#    "conversion_date": "2018/06/07",
+#    "column1_name": "Temperature",
+#    "column1_units": "C",
+#    "column2_name": "Voltage",
+#    "column2_units": "mV"
+# }
 1.20927230303971000000,1.50736314598516000000
 1.29965829974167000000,1.52132663750615000000
 1.40140216241767000000,1.53731669735489000000
@@ -44,14 +53,31 @@ To set units to `C`:
 
 To set units to `K`:
 ```
-# units:K
+# ISIS calibration
+# {
+#    "sensor_type": "K-type",
+#    "format_version": "1",
+#    "conversion_date": "2018/06/07",
+#    "column1_name": "Temperature",
+#    "column1_units": "K",
+#    "column2_name": "Voltage",
+#    "column2_units": "mV"
+# }
 1.20927230303971000000,1.50736314598516000000
 1.29965829974167000000,1.52132663750615000000
 1.40140216241767000000,1.53731669735489000000
 1.59677148943797000000,1.56816244669350000000
 ```
 
-If the header line is not present, K is assumed.
+There is a set of DB records in readascii's DB area that will push any metadata from the file into an epics record. This script has a configurable property name (so you can extract any metadata property from the file) and a configurable default (if the metadata didn't exist or wasn't valid).
+
+Call it using lines similar to the following in the `st.cmd`
+
+```
+dbLoadRecords("$(ReadASCII)/db/get_metadata.db","DIR=$(P)TEMP,CAL=$(P)CAL:RBV,OUT=$(P)TEMP,OUTF=EGU,NAME=column1_units,DEFAULT=K")
+dbLoadRecords("$(ReadASCII)/db/get_metadata.db","DIR=$(P)TEMP,CAL=$(P)CAL:RBV,OUT=$(P)TEMP:SP,OUTF=EGU,NAME=column1_units,DEFAULT=K")
+dbLoadRecords("$(ReadASCII)/db/get_metadata.db","DIR=$(P)TEMP,CAL=$(P)CAL:RBV,OUT=$(P)TEMP:SP:RBV,OUTF=EGU,NAME=column1_units,DEFAULT=K")
+```
 
 ### Lakeshore
 
