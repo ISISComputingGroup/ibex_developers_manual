@@ -79,6 +79,22 @@ dbLoadRecords("$(ReadASCII)/db/get_metadata.db","DIR=$(P)TEMP,CAL=$(P)CAL:RBV,OU
 dbLoadRecords("$(ReadASCII)/db/get_metadata.db","DIR=$(P)TEMP,CAL=$(P)CAL:RBV,OUT=$(P)TEMP:SP:RBV,OUTF=EGU,NAME=column1_units,DEFAULT=K")
 ```
 
+### Justification for ISIS format
+
+Freddie, Kathryn, John, Kevin and Tom had a meeting to discuss calibration formats. The meeting decided the following:
+- Files will be a two-column format to facilitate using the existing epics `cvt` record
+- Any metadata will be stored in a commented block at the top of the file (the comment delimiter is `#`)
+- The files will start with some identifiable magic bytes. I have chosen `# ISIS calibration`
+- Metadata will be stored as a JSON structure
+- The metadata will allow the following core information to be stored
+  * Sensor type
+  * Conversion date
+  * File format version
+  * Name and units of each column
+  * Any arbitrary metadata should be able to be added later
+
+As part of implementation, it was decided in a discussion between John and Tom that the JSON namespace should be a flat dictionary. The advantage of using this approach is that the same script can extract any arbitrary metadata from the file, by providing the key to the dictionary.
+
 ### Lakeshore
 
 Examples of the lakeshore format can be found on the [lakeshore site](https://www.lakeshore.com/Documents/ZipReadme.pdf).
