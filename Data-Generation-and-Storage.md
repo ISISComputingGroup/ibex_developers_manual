@@ -42,7 +42,7 @@ We went through each data type thinking about how long it needed to be stored fo
 * *Easy access storage*: data the users can access without help.
 * *Other storage*: form of storage which would not necessarily be easy to access without out help
 
-* forever as a time period means store for 2 years and then revist this decision when we know how bug the data is and problems involved.
+* forever as a time period means store for 2 years and then revisit this decision when we know how big the data is and problems involved.
 
 Data type | Storage on instrument | Easy access storage | Other storage | justification
 --------  | --------------------- | ------------------- | ------------- | -------------
