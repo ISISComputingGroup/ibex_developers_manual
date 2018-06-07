@@ -24,11 +24,11 @@ Data is produced by various parts of the IBEX infrastructure.
 
 # Current Data Volumes
 
-We monitored 6 instruments over 19 days in cycle. We found that the daily various is not huge and therefore we can look at the averages of data captured per day. Of the various types of data the largest was conserver logs, ioc logs, mysql-archive, msg-logs and mysql files.
+We monitored 6 instruments over 19 days in cycle. We found that the daily variation is not huge and therefore we can look at the averages of data captured per day. Of the various types of data the largest was conserver logs, ioc logs, mysql-archive, msg-logs and mysql files.
 
 IMAT was the biggest user collecting less than 400MB/day.
 
-# Descions
+# Decisions
 
 ## Data rates recolection
 
@@ -36,7 +36,7 @@ The data collection experiment was flawed because we are logging extra data this
 
 ## Data storage
 
-We went through each data type thinking about how long it needed to be stored for the answers. We categorised these are:
+We went through each data type thinking about how long it needed to be stored for the answers. We categorised these as:
 
 * *Storage on instrument*: data is not deleted from the instrument until after this period 
 * *Easy access storage*: data the users can access without help.
@@ -44,7 +44,7 @@ We went through each data type thinking about how long it needed to be stored fo
 
 * forever as a time period means store for 2 years and then revisit this decision when we know how big the data is and problems involved.
 
-Data type | Storage on instrument | Easy access storage | Other storage | justification
+Data type | Storage on instrument | Easy access storage | Other storage | Justification
 --------  | --------------------- | ------------------- | ------------- | -------------
 Autosave  | 2 cycles              | 1 year              | not needed    | Useful but only in the short term to redo settings and possibly see long term drifts
 config    | -                     |  -                  | -             | These do not increase in size rapidly so do not need clearing out
