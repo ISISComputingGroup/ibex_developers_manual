@@ -1,55 +1,29 @@
-# The IBEX Project #
+# The IBEX Project
 
 [Editing the Wiki](Editing-the-Wiki)
 
-## [Project overview](Project-Overview) ##
+## Project 
 
-High level overview of the project including architectural and design documents.
+- [Project overview](Project-Overview): High level overview of the project including architectural and design documents.
+- [Project Ideas](Project-Ideas): List of project ideas for the future or to ask SAG, this is lower level ideas not as high level as future [ideas](https://github.com/ISISComputingGroup/IBEX/wiki/Future-Ideas).
 
-## [The Back-end System](The-Backend-System) ##
+## Components of the System
 
-Information regarding the back-end systems, including the block server, databases, configurations, and IOCs. Also contains the **[getting started guide](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/First-time-installing-and-building-(Windows))** for setting up the back-end.
+- [IBEX Server](The-Backend-System): Information regarding the back-end systems, including the block server, databases, configurations, and IOCs. Also contains the **[getting started guide](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/First-time-installing-and-building-(Windows))** for setting up the back-end.
+- [IBEX GUI](The-GUI): The GUI along with development and testing guidelines (Including how to **get started**). 
+- [Dataweb](Web-Dashboard): Information regarding the architecture of the instrument web pages.
+- [Project tools](Project-tools): Information on the project tooling, version control and continuous integration.
 
-## [The GUI](The-GUI)
+## Processes
 
-How to **get started** with the GUI along with development and testing guidelines. 
+- [Project Processes](Processes): List of processes we wish to document
+- [Deployment](Deployment): Deployment Information
+- [Component & Activity Stewards](Component-&-Activity-Stewards): Component & Activity Stewards: who looks after which components/activities
 
-## [Dataweb](Web-Dashboard)
+## Resources
 
-Information regarding the architecture of the instrument web pages.
-
-## [Project tools](Project-tools)
-
-Information on the project tooling: version control and continuous integration.
-
-## [Deployment](Deployment)
-
-Deployment Information
-
-## [Component & Activity Stewards](Component-&-Activity-Stewards)
-
-Component & Activity Stewards: who looks after which components/activities
-
-## [Processes](Processes)
-
-List of processes we wish to document
-
-## [Trouble Shooting Pages](trouble-shooting-pages)
-
-Pages that link to trouble shooting of various kinds
-
-## [Training](Training)
-
-Information about running IBEX and genie_python training courses
-
-## [Other Links and Resources](links-and-resources)
-
-Page of links and resources not in this wiki
-
-## [New Starters](New-Starters)
-
-Resources for new team members
-
-## [Glossary](Glossary)
-
-Glossary of terms
+- [Training](Training): Information about running IBEX and genie_python training courses
+- [New Starters](New-Starters): Resources for new team members
+- [Glossary](Glossary): Glossary of terms
+- [Other Links and Resources](links-and-resources): Page of links and resources not in this wiki
+- [Trouble Shooting Pages](trouble-shooting-pages): Pages that link to trouble shooting of various kinds
