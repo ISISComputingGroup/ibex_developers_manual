@@ -8,6 +8,8 @@ Add ideas to the relevant sections.
 
 # Questions to ask SAG
 
+SAG Meeting 16-05-2018: [Meeting notes](https://www.facilities.rl.ac.uk/isis/projects/icap/Meetings/Notes%20from%20IBEX%20Scientific%20Advisory%20Group%20Meeting_2018_05_16.docx)
+
 ## Nightly Build
 
 ### Question 
