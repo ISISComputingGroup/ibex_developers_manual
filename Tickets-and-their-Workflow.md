@@ -61,11 +61,14 @@ Often the meeting is followed by the retrospective.
 
 ## Sprint Planning
 
+Sprint planning prep:
+1. Repoint any tickets in progress.
+
 At sprint planning we:
 
-1. Look at any newly propose tickets and rank them
+1. Look at any newly propose tickets and tickets in the ready column that have not yet been started and rank them
 2. Estimate the top ticket on the list
-3. Add its value to the current sprint (possibly by dragging)
+3. Add its value to the current sprint
 4. If we have points left in the sprint go to 2
 
 After sprint planning the ready column will be ordered.
