@@ -54,3 +54,17 @@ The likely deployment is:
 * Instruments that need to be patched mid-cycle will be running a [patch release], (https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Creating-a-release#patch-release). The patch release has just enough in it over an above a standard release that the instrument can run. 
 
 Ideally instruments are updated each time they have down time.
+
+# Justification
+
+## Of phased release
+
+We do not want to update all instruments at one time because if there is a bug then we have to patch all instruments and support them all in one go.
+We do not physically have enough time to do a release on every instrument each cycle
+We don't want instruments to get too far behind current release because they would most likely encounter bugs when upgrading multiple versions.
+
+## Of keeping all IOCs etc in one release
+
+It is hard to be certain that various parts of the system do not effect the IOC. They depend on modules and more generally epics base. So we would need to system test the components in the various combinations at various releases.
+
+
