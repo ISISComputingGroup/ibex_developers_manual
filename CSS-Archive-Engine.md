@@ -6,7 +6,7 @@ The Archive Engine is part of CSS and is used to archive PV values. Note that mo
 
 The code for the Archive Engine is [here](https://github.com/ControlSystemStudio/cs-studio/tree/master/applications/archive). We have our own fork of this [here](https://github.com/ISISComputingGroup/cs-studio) but in general the two should be in sync as much as possible as [discussed](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/GUI-CSS#source-code).
 
-We have a built version of the ArchiveEngine at `\\shadow.isis.cclrc.ac.uk\ICP_Binaries$\CSS` which gets copied into `EPICS\CSS\master\css-win.x86_64` during the build. The built version is manually updated to keep it in line with the cs-studio version, see https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/CSS-Archive-Engine#Updating-the-Archive-Engine.
+We have a built version of the ArchiveEngine at `\\shadow.isis.cclrc.ac.uk\ICP_Binaries$\CSS` which gets copied into `EPICS\CSS\master\css-win.x86_64` during the build. The built version is manually updated to keep it in line with the cs-studio version, see [updating the archive engine](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/CSS-Archive-Engine#updating-the-archive-engine).
 
 We actually run two archive engines on each instrument:
 
