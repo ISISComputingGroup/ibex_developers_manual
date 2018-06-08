@@ -6,7 +6,7 @@ We have our own fork of the CSS source code [here](https://github.com/ISISComput
 
 # Archive Engine
 
-The Archive Engine is part of CSS and is used to archive PV values. Note that most facilities use the [Archive Appliance] (https://slacmshankar.github.io/epicsarchiver_docs/index.html) as the Archive Engine (specifically MySQL) was found to be slow at millions of PVs. As we don't have that many PVs we have stuck with the Archive Engine.
+The Archive Engine is part of CSS and is used to archive PV values. Note that most facilities use the [Archive Appliance](https://slacmshankar.github.io/epicsarchiver_docs/index.html) as the Archive Engine (specifically MySQL) was found to be slow at millions of PVs. As we don't have that many PVs we have stuck with the Archive Engine.
 
 * [Building the archive engine for MySQL](Building-the-archive-engine-for-mysql)
 
