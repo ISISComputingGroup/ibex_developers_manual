@@ -6,12 +6,12 @@ The Archive Engine is part of CSS and is used to archive PV values. Note that mo
 
 The code for the Archive Engine is [here](https://github.com/ControlSystemStudio/cs-studio/tree/master/applications/archive). We have our own fork of this [here](https://github.com/ISISComputingGroup/cs-studio) but in general the two should be in sync as much as possible as [discussed](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/GUI-CSS#source-code).
 
-We have a built version of the ArchiveEngine at `\\shadow.isis.cclrc.ac.uk\ICP_Binaries$\CSS` which gets copied into `EPICS\CSS\master\css-win.x86_64` during the build. The built version is manually updated to keep it in line with the cs-studio version, see #Updating-the-Archive-Engine.
+We have a built version of the ArchiveEngine at `\\shadow.isis.cclrc.ac.uk\ICP_Binaries$\CSS` which gets copied into `EPICS\CSS\master\css-win.x86_64` during the build. The built version is manually updated to keep it in line with the cs-studio version, see https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/CSS-Archive-Engine#Updating-the-Archive-Engine.
 
 We actually run two archive engines on each instrument:
 
 1. Block archive, this just archives blocks and is restarted whenever the configuration (and blocks) change.
-1. Instrument archive, this is just started once and archives all PVs marked with the archive info setting which are in the database. See #configuration
+1. Instrument archive, this is just started once and archives all PVs marked with the archive info setting which are in the database. See [configuration](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/CSS-Archive-Engine#configuration).
 
 To run these archive engines there are two batch files in `EPICS\CSS\master\ArchiveEngine` called `start_block_archiver` and `start_inst_archiver`. They can also both be accessed via procserv as **ARBLOCK** and **ARINST**.
 
