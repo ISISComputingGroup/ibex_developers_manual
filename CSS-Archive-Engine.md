@@ -11,7 +11,7 @@ We have a built version of the ArchiveEngine at `\\shadow.isis.cclrc.ac.uk\ICP_B
 We actually run two archive engines on each instrument:
 
 1. Block archive, this just archives blocks and is restarted whenever the configuration (and blocks) change.
-1. Instrument archive, this is just started once and archives all PVs marked with the archive info setting which are in the database. See #Configuration
+1. Instrument archive, this is just started once and archives all PVs marked with the archive info setting which are in the database. See #configuration
 
 To run these archive engines there are two batch files in `EPICS\CSS\master\ArchiveEngine` called `start_block_archiver` and `start_inst_archiver`. They can also both be accessed via procserv as **ARBLOCK** and **ARINST**.
 
