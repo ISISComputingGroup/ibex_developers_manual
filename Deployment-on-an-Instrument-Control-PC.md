@@ -1,6 +1,6 @@
 > [Wiki](Home) > [Deployment](Deployment) > Deployment on an Instrument Control PC
 
-This document describes the steps necessary to install/upgrade IBEX on an Instrument control PC.  Most of these steps are superseded the install script (but we are not quite ready to commit to this).  This document is the reference for deployment. 
+This document describes the steps necessary to install/upgrade IBEX on an Instrument control PC.  Most of these steps are superseded by the install script (but we are not quite ready to commit to this).  This document is the reference for deployment. 
 Steps are marked with **bold** prefixes to indicate the following:
 - **deploy** step to be done when using the deploy script
 - **upgrade** steps to be done when upgrading 
@@ -31,7 +31,7 @@ Steps are marked with **bold** prefixes to indicate the following:
     - Apart from the below points, just follow instructions
     - Be warned the upgrade runs in 3 steps and so will claim to have finished the upgrade 3 times
     - After backup of EPICS step do database disc space clear using [Database Troubleshooting Reducing database disc space](Database-Troubleshooting#Reducing-database-disc-space)
-    - Ensure that after the upgrade configuration that galil mtrctrl macro has been set especially if the ip addresses are set in globals.txt
+    - Ensure that after the upgrade configuration that galil mtrctrl macro has been set especially if the IP addresses are set in globals.txt
 
 # Steps using Manual Steps
 ## Preparatory Steps for Client and Server
@@ -45,6 +45,10 @@ Steps are marked with **bold** prefixes to indicate the following:
 ## Preparatory Steps for Server
 
 - **upgrade** Note the current version number of the instrument (Help->About)
+
+- **install** Check that the following hardware requirements are fullfilled:
+  - The hardware has 8GB of memeory.
+  - The hardware has at least 30GB of free disk space.
 
 - **upgrade** Take screenshots of running instrument. This ensures it is restarted as it was found and enables you easily to spot changes in config. Items to include: 
     1. blocks
@@ -73,7 +77,7 @@ Steps are marked with **bold** prefixes to indicate the following:
         1. Start the service "MySQL57" in services.
 
 - **upgrade** Update the Common Calibration directory.
-    1. Do a git status to find out if files have been added or changed (if they have query why this is and take appropriate action)
+    1. Do a git status to find out if files have been added or changed (if they have a query why this is and take appropriate action)
     1. Git pull the latest version onto the system (if any file changes make a note so it can be sent to the instrument scientists so they know things have been changed) 
 
 - **install** If you are using any serial devices with the system, don't forget to check that nport is installed, and configure the COM settings as standard (moxa 1 starts at COM5, moxa 2 at COM21, etc.)
@@ -143,7 +147,7 @@ Steps are marked with **bold** prefixes to indicate the following:
 
 - **install** Add the instrument hostname to NDX_INSTS or ALL_INSTS within webserver.py on the master branch of (https://github.com/ISISComputingGroup/JSON_bourne)
 
-- **install** Remote desktop into external web server (see password page for username and password)
+- **install** Remote desktop into the external web server (see password page for username and password)
 
 - **install** Update the code at C:\JSON Bourne to be the same as that in the repository
 
@@ -189,7 +193,7 @@ Steps are marked with **bold** prefixes to indicate the following:
 
 - Check that [Java Auto Update](https://www.java.com/en/download/help/java_update.xml#sched) is disabled (i.e. make sure the "Check for Updates Automatically" checkbox is unchecked).
 
-- *upgrade* Restart any VIs which were running
+- **upgrade** Restart any VIs which were running
 
 - Make sure these [client tests are performed](client-release-tests), these are items we have missed in the past.
 
@@ -203,7 +207,7 @@ Steps are marked with **bold** prefixes to indicate the following:
 
 - Send release notes and actions that you have performed to the instrument scientist so they know what has been updated/installed. This includes any updates to common configuration/calibration files.
 
-- Record the release to the instrument (add to list in [Instrument Releases](https://github.com/ISISComputingGroup/IBEX/wiki#instrument-information)).
+- Record the release of the instrument (add to list in [Instrument Releases](https://github.com/ISISComputingGroup/IBEX/wiki#instrument-information)).
 
 ## Start and stop
 
