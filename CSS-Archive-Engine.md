@@ -2,7 +2,7 @@
 
 # Archive Engine
 
-The Archive Engine is part of CSS and is used to archive PV values. Note that most facilities use the [Archive Appliance](https://slacmshankar.github.io/epicsarchiver_docs/index.html) as the Archive Engine (specifically MySQL) was found to be slow at millions of PVs. As we don't have that many PVs we have continued to use the Archive Engine.
+The Archive Engine is part of CSS and is used to archive PV values, the manual for which is [here](http://cs-studio.sourceforge.net/docbook/ch11.html). Note that most facilities use the [Archive Appliance](https://slacmshankar.github.io/epicsarchiver_docs/index.html) as the Archive Engine (specifically MySQL) was found to be slow at millions of PVs. As we don't have that many PVs we have continued to use the Archive Engine.
 
 The code for the Archive Engine is [here](https://github.com/ControlSystemStudio/cs-studio/tree/master/applications/archive). We have our own fork of this [here](https://github.com/ISISComputingGroup/cs-studio) but in general the two should be in sync as much as possible as [discussed](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/GUI-CSS#source-code).
 
@@ -17,64 +17,27 @@ To run these archive engines there are two batch files in `EPICS\CSS\master\Arch
 
 Each Archive Engine can be accessed via a web browser when running. This is what the [web dashboard](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Web-Dashboard) is based on.
 
-# Prerequisites
+## Prerequisites
 
 The archive engine stores values in a MySQL database. To set the database up see [here](Installing-and-Upgrading-MySQL).
 
 Create the database using the mysql_schema.txt in `...EPICS\CSS\master\ArchiveEngine` which originates from `org.csstudio.archive.rdb\dbd`
 
-# Configuration
+## Configuration
 
+To change properties of the archive engine in general such as which database it is pointing to and the channel access settings you can modify `mysql_settings_*.ini` in `EPICS\CSS\master\ArchiveEngine`.
 
+The archive engine gets its configuration for what PVs to archive and how (i.e. frequency or monitoring) from the same database that it archives values to. Rather than editing this directly the easiest way to modify it is using the [Archive Configuration Tool](http://cs-studio.sourceforge.net/docbook/ch11.html#idm140164570515184). 
 
-# The Archive Configuration Tool
-The startup for `arinst` and `arblock` create configs for the archive engine which look like:
+Various examples of the xml format used for the tool are in `EPICS\CSS\master\ArchiveEngine`. They can be manually imported/exported using the get/set batch scripts in `EPICS\CSS\master\ArchiveEngine`. The way this xml is created differs for the instrument and block archivers:
 
-```
-    <engineconfig>
-        <group>
-             <name>Testing</name>
-                 <channel>
-                     <name>test:rand</name>
-                     <period>1.0</period>
-                     <monitor/>
-                 </channel>
-        </group>
-    </engineconfig>
-```
+### Instrument Archive
 
-There are settings in mysql_settings_block.ini in `EPICS\CSS\master\ArchiveEngine` and similar for the instrument archiver. If running from Eclipse set these in org.csstudio.archive.config.rdb and open ArchiveConfigTool.product.
+For setting which PVs to archive you can add an info field into the relevant db. For example `info(archive, "0.1 VAL")` will archive the VAL field every 0.1 seconds. When the IOC is first started this info field data gets put into the ioc [database](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Database-Schemas#ioc-database). The `CSS\master\ArchiveEngine\make_archive_xml.py` script then converts this into xml for the Archive Config Tool to put into the archive engine database.
 
-Add the following settings to the "Launching" tab under "Program Arguments" and run as a normal RCP application:
+### Block Archive
 
-```
-    -engine my_engine -pluginCustomization full_path_here\my_settings.ini -config full_path_here\my_config.xml -import
-```
-
-Or export the configuration tool without the "Program Arguments" and pass everything as command line args.
-
-Note: in Eclipse, export means creating a standalone executable file.
-
-List of args:
-
-```
-    -engine my_engine        : Engine Name
-    -config my_config.xml    : XML Engine config file
-    -export                  : export configuration as XML
-    -import                  : import configuration from XML
-    -delete_config           : Delete existing engine config
-    -description 'My Engine' : Engine Description
-    -host my.host.org        : Engine Host
-    -port 4812               : Engine Port
-    -replace_engine          : Replace existing engine config, or stop?
-    -steal_channels          : Steal channels from other engine
-    -rdb_url jdbc:...        : RDB URL
-    -rdb_user user           : RDB User
-    -rdb_password password   : RDB Password
-    -rdb_schema schema       : RDB schema (table prefix), ending in '.'
-```
-
-When replacing an existing configuration on the server it is necessary to add `-replace_engine -steal_channels`
+The configuration for logging blocks is created and set by the [Blockserver](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/BlockServer).
 
 # Updating the Archive Engine
 
@@ -89,7 +52,6 @@ As our version of the Archive Engine is no different to CSS we can just copy the
 
 In some cases we may want to build the archive engine ourselves. For example, if we want to edit the code. To do this:
 
-# The Archive Engine
 
 In Eclipse, go to org.csstudio.archive.engine and open `ArchiveEngine.product`.
 
@@ -139,16 +101,4 @@ If you are creating your own CS-Studio application, then you probably need to do
 
 * Run as a normal RCP application.
 
-# Creating a configuration
-
-The Archive Configuration Tool bundle includes two batch files: one for retrieving the current configuration; and, one for setting a new configuration.
-
-The mysql_settings.ini file contains the database settings and may need to be altered depending on your setup.
-
-There is a demonstration configuration file called icap_test_config.xml which can be used as a starting point for your own configuration. 
-
-Alternatively, you can use the get_config.bat file to retrieve the current settings, the bat file will need to be edited to set the correct engine name to retrieve.
-
-To send a configuration to the database, use the set_config.bat file.
-
-This file will need to be edited to point at the correct engine (currently set to icap_test_engine) and to use the correct configuration file (currently set to icap_test_config.xml).
+There are settings in mysql_settings_block.ini in `EPICS\CSS\master\ArchiveEngine` and similar for the instrument archiver. If running from Eclipse set these in org.csstudio.archive.config.rdb and open ArchiveConfigTool.product.
