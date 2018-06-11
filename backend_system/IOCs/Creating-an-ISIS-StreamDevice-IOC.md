@@ -62,17 +62,44 @@ resetCounts {
 
 Note: I have only included a very small section of the command set for this device for brevity.
 
-Delete the db file in `Hameg_8123Sup` and modify the Makefile so it not longer refers to it.
 
-Modify the Makefile in the same directory as the protocol file to have a line like:
+
+Now add the directory name to the support make file (`C:\Instrument\Apps\EPICS\support\Makefile`), ie to DIRS at the top. Also add dependencies if needed.
+
+Next the db file needs to created. The db file should now be stored with the proto file in `hameg8123Sup` to aid portability. For the Hameg the part of the db file looks like this:
+```
+record(ai, "$(P)CHAN_A:TRIG_LVL")
+{
+    field(SCAN, "1 second")
+    field(DTYP, "stream")
+    field(INP,  "@Hameg_8123.proto getTriggerLevel(A) $(PORT)")
+    field(PREC, "3")
+    field(EGU,  "V")
+}
+
+record(ao, "$(P)CHAN_A:TRIG_LVL:SP")
+{
+    field(DTYP, "stream")
+    field(OUT,  "@Hameg_8123.proto setTriggerLevel(A) $(PORT)")
+    field(PREC, "3")
+    field(EGU, "V")
+}
+```
+
+`Hameg_8123.proto` is the name of the protocol file for the Hameg created here.
+
+Note that the db file should conform to the naming standards detailed in [PV-Naming](PV-Naming), and that ANY value which might be read and set as a block must have a `:SP` as well as a non post-fixed name entry.
+
+
+Modify the Makefile in the same directory as the protocol and db files to have lines like:
 
 ```
+DB += <db_file_name>.db
 DATA += <protocol_file_name>
 ```
 
 If the Makefile has a line that reads `DATA += $(patsubst ../%, %, $(wildcard ../*.proto))`, delete it.
 
-Now add the directory name to the support make file (`C:\Instrument\Apps\EPICS\support\Makefile`), ie to DIRS at the top. Also add dependencies if needed.
 
 ## Creating the IOC
 
@@ -138,36 +165,7 @@ $(APPNAME)_LIBS += utilities
 $(APPNAME)_LIBS += stream
 $(APPNAME)_LIBS += pcre
 $(APPNAME)_LIBS += asyn
-```
-
-Next the db file needs to created. For the Hameg (and most devices) the db only need to be stored in `HAMEG8123-IOC-01App\Db`. For the Hameg the part of the db file looks like this:
-```
-record(ai, "$(P)CHAN_A:TRIG_LVL")
-{
-    field(SCAN, "1 second")
-    field(DTYP, "stream")
-    field(INP,  "@devHameg_8123.proto getTriggerLevel(A) $(PORT)")
-    field(PREC, "3")
-    field(EGU,  "V")
-}
-
-record(ao, "$(P)CHAN_A:TRIG_LVL:SP")
-{
-    field(DTYP, "stream")
-    field(OUT,  "@devHameg_8123.proto setTriggerLevel(A) $(PORT)")
-    field(PREC, "3")
-    field(EGU, "V")
-}
-```
-
-`devHameg_8123.proto` is the name of the protocol file for the Hameg created here.
-
-Note that the db file should conform to the naming standards detailed in [PV-Naming](PV-Naming), and that ANY value which might be read and set as a block must have a `:SP` as well as a non post-fixed name entry.
-
-The newly created db file needs to be added to the `Makefile` file in `HAMEG8123-IOC-01App\Db`:
-```
-#DB += xxx.db
-DB += <db_file_name>.db
+$(APPNAME)_LIBS += calc
 ```
 
 The final step is to rationalise the st.cmd files for each IOC. There will be a default `st.cmd` for each IOC which will call a common file in the 01 directory. The top files for IOC-YY should look like the following (XXXX is the name of the IOC):
