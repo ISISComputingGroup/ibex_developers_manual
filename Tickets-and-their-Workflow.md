@@ -62,7 +62,7 @@ Often the meeting is followed by the retrospective.
 ## Sprint Planning
 
 Sprint planning prep:
-1. Repoint any tickets in progress.
+1. Re-point any tickets in progress.
 
 At sprint planning we:
 
