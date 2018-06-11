@@ -73,6 +73,6 @@ Not talked about at the meeting but Chris said the data volumes don't seem huge 
 Final actions:
 
 1. Investigate the GUI workspace and see if we need to do anything with this.
-1. Create separate labview log whose only current place is in mysql-msglogs and treat it like an IOC log.
+1. Create a separate labview log for messages that current are written to the mysql-msglog and treat it like an IOC log.
 1. Collect a new sample of data over the next cycle. (Collect weekly but for more instruments)
 1. Agree above things to do on shutdown create tickets to implement and automate these
