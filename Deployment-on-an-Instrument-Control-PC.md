@@ -46,9 +46,11 @@ Steps are marked with **bold** prefixes to indicate the following:
 
 - **upgrade** Note the current version number of the instrument (Help->About)
 
-- **install** Check that the following hardware requirements are fullfilled:
-  - The hardware has 8GB of memeory.
+- **install** Check that the following hardware requirements are fulfilled:
+  - The hardware has 8GB of RAM.
   - The hardware has at least 30GB of free disk space.
+
+- **upgrade** Check that the hardware has 8GB of RAM.
 
 - **upgrade** Take screenshots of running instrument. This ensures it is restarted as it was found and enables you easily to spot changes in config. Items to include: 
     1. blocks
