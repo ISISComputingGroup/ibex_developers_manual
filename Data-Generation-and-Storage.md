@@ -30,7 +30,7 @@ IMAT was the biggest user collecting less than 400MB/day.
 
 # Decisions
 
-## Data rates recolection
+## Collecting Data Rates Again
 
 The data collection experiment was flawed because we are logging extra data this cycle because of the data being logged on MDEL instead of ADEL and not yet including the reducing of ioc logging when a pv is in an error state. **Action** log data usage over the next cycle.
 
@@ -51,7 +51,7 @@ config    | -                     |  -                  | -             | These 
 logs-ioc/ nicos and genie python | 1 cycle | 2 cycles | forever | these are a primary source of information and can be used to analysis problems in the data which is held for 10 years. So we should keep
 logs-conserver | 1 cycle        | 0 | 0 | These hold marginally more info than the ioc logs but that extra info is not interesting and the ioc logs are easier to access
 mysql-msg_log | 1 cycle | 0 | 0 | Sub set of the ioc logs
-mysql-archive | 1 cycle | 2 cycles | forever | Experiements can be across multiple cycles so keep access for scientists for 2 cycles off the instrument. Afterwards store where it is hard to get to we only get asked for this information ~twice a year.
+mysql-archive | 1 cycle | 2 cycles | forever | Experiments can be across multiple cycles so keep access for scientists for 2 cycles off the instrument. Afterwards store where it is hard to get to we only get asked for this information ~twice a year.
 mysql (all others) | - | - | - | Data can be reconstructed and does not grow
 
 
@@ -73,6 +73,6 @@ Not talked about at the meeting but Chris said the data volumes don't seem huge 
 Final actions:
 
 1. Investigate the GUI workspace and see if we need to do anything with this.
-1. Create separate labview log whose only current place is in mysql-mslogs and treat it like an IOC log.
+1. Create separate labview log whose only current place is in mysql-msglogs and treat it like an IOC log.
 1. Collect a new sample of data over the next cycle. (Collect weekly but for more instruments)
 1. Agree above things to do on shutdown create tickets to implement and automate these
