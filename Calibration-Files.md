@@ -69,7 +69,7 @@ To set units to `K`:
 1.59677148943797000000,1.56816244669350000000
 ```
 
-There is a set of DB records in readascii's DB area that will push any metadata from the file into an epics record. This script has a configurable property name (so you can extract any metadata property from the file) and a configurable default (if the metadata didn't exist or wasn't valid).
+There is a set of DB records in DB area of ReadAscii that will push any metadata from the file into an epics record. This script has a configurable property name (so you can extract any metadata property from the file) and a configurable default (if the metadata didn't exist or wasn't valid).
 
 Call it using lines similar to the following in the `st.cmd`
 
