@@ -41,8 +41,8 @@ To deploy on a new instrument see [Deployment](https://github.com/ISISComputingG
 
 To update the production version of the dashboard:
 * Remote desktop into external webserver (for username and password see password page)
-* Update C:\JSON_Bourne with the JSON_bourne python code
-* Update C:\inetpub\wwwroot\DataWeb\IbexDataweb with the html and javascript for the webpage and the overview page
+* Open a git bash terminal in C:\JSON_Bourne and switch to the [release branch](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Creating-a-release)
+* Run the deploy batch script
 * Restart JSON_bourne (it is running as a service)
 
 ## Development/Testing
