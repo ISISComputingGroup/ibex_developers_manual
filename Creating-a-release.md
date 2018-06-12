@@ -33,6 +33,7 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
     1. For EPICS submodules you should use:
         1. `git submodule update` which sets all the repos to their pinned version
         1. `git submodule foreach "git checkout -b Release_X.x.x; git push -u origin Release_X.x.x"` this creates a branch at the current checked out version for each repo and pushes it.
+    1. [JSON_bourne](https://github.com/ISISComputingGroup/JSON_bourne). First check if changes have been made as JSON_bourne is rarely edited.
 1. Update the version numbers:
     1. GUI
         1. In `ibex_gui/base/uk.ac.stfc.isis.ibex.product/META-INF/MANIFEST.MF` edit `Bundle-Version:...` to be `X.x.m.qualifier`
@@ -59,7 +60,7 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
 One or more people should do [manual system tests, using this page](Manual-system-tests).
 
 ### Post Testing
-1. Create a release tag in the EPICS, ibex_gui and genie_python repositories. For each repo
+1. Create a release tag in the EPICS, ibex_gui, genie_python and JSON_bourne repositories. For each repo
     1. Go to `[REPO_URL]/releases`, e.g. `https://github.com/ISISComputingGroup/ibex_gui/releases`
     1. Click `Draft a new release`
     1. Enter the tag version in the format `vX.x.p` and target the release branch
