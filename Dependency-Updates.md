@@ -7,7 +7,6 @@ After a release all of the dependencies of the system should be considered for u
 
 # GUI Dependencies
 
-
 ## PyDev plugin
 
 ### eclipse 3
@@ -17,5 +16,19 @@ The pydev plugin in eclipse 3 version is stuck at the current version because py
 
 The different versions of the plugins are found at [http://www.pydev.org/update_sites/](http://www.pydev.org/update_sites/)
 
+## Active MQ
 
+To update activeMQ in epics:
+  - Add the activeMQ directory to `...\EPICS\ISIS\ActiveMQ\master`
+  - Remove the old activeMQ directoey
+  - Update the config to include anything new in the new version
+  - Update `start-jms-server.bat` to point at the new version of apache
 
+To update activeMQ in the GUI:
+  - Remove `base/uk.ac.stfc.isis.ibex.activemq/lib/activemq-all-5.4.2.jar`
+  - Add new jar from download to `base/uk.ac.stfc.isis.ibex.activemq/lib`
+  - Edit manifest (runtime class path)git ad
+  - Edit the project class path (right click properties -> Java Build Path)
+      - Remove the old jar (Remove)
+      - Add the new ("Add jar" and select the new jar)
+      - on order and export tick the box to export it for other projects
