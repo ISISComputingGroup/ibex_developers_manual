@@ -31,6 +31,7 @@ Get a licence key (there are 5 floating licences that can be used by 2 people)
 1. Other application setting
     1. Under Edit > Preferences
     1. Under Squish-> Test Creation select Python as the default language
+1. To get access to global scripts right click in squish -> global scripts pane -> add -> global scripts directory and select the global scripts directory in the repository root.
 
 # RDP to Server
 
