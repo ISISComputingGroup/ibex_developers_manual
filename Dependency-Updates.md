@@ -20,9 +20,11 @@ The different versions of the plugins are found at [http://www.pydev.org/update_
 
 To update activeMQ in epics:
   - Add the activeMQ directory to `...\EPICS\ISIS\ActiveMQ\master`
-  - Remove the old activeMQ directoey
+  - Remove the old activeMQ directory
   - Update the config to include anything new in the new version
   - Update `start-jms-server.bat` to point at the new version of apache
+  - Update the jar in `EPICS\ISIS\IocLogServer\master\LogServer\lib`
+  - Update the `pom.xml` and `.classpath` to include the new version number
 
 To update activeMQ in the GUI:
   - Remove `base/uk.ac.stfc.isis.ibex.activemq/lib/activemq-all-5.4.2.jar`
@@ -32,3 +34,16 @@ To update activeMQ in the GUI:
       - Remove the old jar (Remove)
       - Add the new ("Add jar" and select the new jar)
       - on order and export tick the box to export it for other projects
+
+## MYSql Connector/J
+
+Java my sql connector.
+
+To update IOCLog:
+  - Update the jar in `EPICS\ISIS\IocLogServer\master\LogServer\lib`
+  - Update the `pom.xml` and `.classpath` to include the new version number
+
+To update GUI in `base/uk.ac.stfc.isis.ibex.databases`:
+  - Remove `mysql-connector-java-X.X.X-bin.jar`
+  - Add new connector to `/lib`
+  - Remove old lib and add new lib in the `Manifest` on the `Runtime` tab in the `Classpath` part.
