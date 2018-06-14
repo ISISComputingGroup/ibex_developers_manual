@@ -1,6 +1,6 @@
 Install a version of visual studio. 2010 is used by most developers unless you are on windows 10 in which case install 2017.
 
-# Install [Visual Studio 2010](https://my.visualstudio.com/Downloads?q=visual%20studio%202010&pgroup=)
+# Install Visual Studio 2010
 Install Visual Studio 2010
 
 Install SDK 7.1 
@@ -11,8 +11,10 @@ Install SDK 7.1
 If these do exist on your computer you need to uninstall them before installing the SDK.
 
 Install: 
-* [Visual Studio 2010 SP1](https://www.microsoft.com/en-gb/download/details.aspx?id=23691)
+* [Visual Studio 2010 SP1](https://my.visualstudio.com/Downloads?q=visual%20studio%202010&pgroup=)
 * Visual C++ 2010 SP1 Compiler Update for the Windows SDK 7.1
+
+N.B.:The free version of Visual Studio 2010, Visual Studio 2010 Express isn't supported by the IBEX build process.
 
 # Install Visual Studio 2013
 Windows SDK 7 has compatibility issues with newer versions of Windows. In this case, Visual Studio 2013 may be used instead.
