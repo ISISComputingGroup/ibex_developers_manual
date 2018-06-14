@@ -1,6 +1,6 @@
 Install a version of visual studio. 2010 is used by most developers unless you are on windows 10 in which case install 2017.
 
-# Install Visual Studio 2010
+# Install [Visual Studio 2010](https://my.visualstudio.com/Downloads?q=visual%20studio%202010&pgroup=)
 Install Visual Studio 2010
 
 Install SDK 7.1 
