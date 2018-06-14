@@ -43,7 +43,7 @@ The configuration for logging blocks is created and set by the [Blockserver](htt
 
 As our version of the Archive Engine is no different to CSS we can just copy their builds to get the latest version. To do this:
 
-1. Download the build from [CSS](https://ics-web.sns.ornl.gov/css/nightly/). 
+1. Download the build from [CSS](https://ics-web.sns.ornl.gov/css/updates/apps/). 
 1. Place it in a folder called `css_archvive_engine`
 1. Zip the folder and call it `css_archive_engine-win.x86_64.zip`
 1. Copy this to ICP Binaries on to internal server
@@ -51,6 +51,10 @@ As our version of the Archive Engine is no different to CSS we can just copy the
 ## Editing the Archive Engine
 
 In some cases we may want to build the archive engine ourselves. For example, if we want to edit the code. To do this:
+
+1. Clone the repository from https://github.com/ISISComputingGroup/cs-studio
+1. In Eclipse `Import->General->Projects from Folder or Archive` and import the `cs-studio\applications\archive` directory. It may prompt you to install some tycho plug ins and restart eclipse.
+1. Create a target platform and add the latest CSS version specified [here](http://controlsystemstudio.org/controlsystemstudio/current.html) as a 
 
 
 In Eclipse, go to org.csstudio.archive.engine and open `ArchiveEngine.product`.
@@ -73,32 +77,3 @@ By using the MySQL command line it should be possible to see the database fillin
     mysql> use archive;
     mysql> select * from sample;
 ```
-
-# Connecting from CS-Studio GUI
-If you are using a pre-built package, say from the SNS, then in a running instance, go to "Edit->Preferences->CSS Applications->Trends->Data Browser" and add your server.
-
-If you are creating your own CS-Studio application, then you probably need to do something like the following:
-
-* Include org.csstudio.archive.reader.rdb and its dependencies in your CS-Studio product.
-
-* Create an ini file called plugin_customization.ini and add it to your "product" workspace. It will need to contain something like the following:
-
-```
-    org.csstudio.archive.reader.rdb/url=jdbc:mysql://localhost/archive
-    org.csstudio.archive.reader.rdb/user=report
-    org.csstudio.archive.reader.rdb/password=$report
-    org.csstudio.archive.reader.rdb/schema=
-
-    org.csstudio.trends.databrowser2/url=jdbc:mysql://localhost/archive
-    org.csstudio.trends.databrowser2/archives=RDB|1|jdbc:mysql://localhost/archive
-```
-
-* In the main product file (for example: CSS_ISIS.product) click on the "Launching" tab under "Program Arguments" put:
-
-```
-    -engine my_engine
-```
-
-* Run as a normal RCP application.
-
-There are settings in mysql_settings_block.ini in `EPICS\CSS\master\ArchiveEngine` and similar for the instrument archiver. If running from Eclipse set these in org.csstudio.archive.config.rdb and open ArchiveConfigTool.product.
