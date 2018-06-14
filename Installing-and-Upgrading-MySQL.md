@@ -2,7 +2,7 @@
 
 # Install first time
 
-- Download the latest mysql community installer from [mysql site](https://dev.mysql.com/downloads/mysql/)
+- Download version 5.7.X of the mysql community installer from [mysql site](https://dev.mysql.com/downloads/mysql/5.7.html#downloads)
     - Scroll down to recommended download in GA Release, click Go To Download Page
     - Scroll down to GA Release again and choose one of the two downloads (both are 32bit installers), the smaller one will download as it installs, the larger one downloads everything before starting.
     - Scroll past Login and Sign Up, and just click "No thanks, just start my download" which will finally download the installer.
