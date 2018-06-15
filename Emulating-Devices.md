@@ -69,6 +69,8 @@ The backdoor can be operated either via the command line through `lewis-control`
 
 **NOTE**: The simulation command `disconnect_device` seems to simulate the device not responding to the port, which is different from a lost connection: the IOC reports `No reply from device within xxx ms`. When the emulator is actually stopped, with the simulation `stop` command, the IOC detects that there is really no connection and reports `Can't connect to localhost:<port>`.
 
+**NOTE**: The backdoor does not give access to private variables, so anything prefixed with `_` can not be changed in this way, or through the backdoor in python scripts.
+
 ## Connecting your IOC
 
 So, we've got our emulator running, now we need to get our IOC talking to it. For this to work it needs to use the standard st.cmd setup so it works with the IOC testing framework. Then in your `globals.txt` do the following:
@@ -111,3 +113,5 @@ the device module 'neocera_ltc21' provides multiple device types so that no mean
     1. include `@has_log` at the top of the class (don't forget to `from lewis.core.logging import has_log`)
     1. use self.log.info(message), self.log.warning(message), self.log.error(message), etc
 * When I try to run a device I get the error `Failed to find protocol stream...`. This is due to one of the imports in the stream_interface not being valid. Check that they are all correct.
+* When I try to access a variable that I know exists in my emulator, I get an error saying that variable does not exist?
+    1. The lewis backdoor does not give access to private variables, so anything prefixed with `_` cannot be changed in this way.
