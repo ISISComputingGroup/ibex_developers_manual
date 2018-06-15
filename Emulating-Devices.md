@@ -60,7 +60,7 @@ It's possible to modify the device's state on the fly as it's running in case yo
 The host and port for the backdoor are specified in the `-r` argument at startup:
 
 ```
-lewis -p "stream: {bind_address: localhost, port: 57677}" -r 127.0.0.1:10000 -a C:\Instrument\Apps\EPICS\support\DeviceEmulator\master -k lewis_emulators iris_cryo_valve
+C:\instrument\apps\python\python.exe C:\Instrument\apps\python\scripts\lewis.exe -p "stream: {bind_address: localhost, port: 57677}" -r 127.0.0.1:10000 -a C:\Instrument\Apps\EPICS\support\DeviceEmulator\master -k lewis_emulators iris_cryo_valve
 ```
 
 NOTE: at the time of writing, you can't type `localhost` for the `-r` argument.
