@@ -29,7 +29,7 @@ Lewis is included as an installed module in genie_python.
 To run from the command line, use
 
 ```
-lewis -p "stream: {bind_address: localhost, port: 57677}" -a C:\Instrument\Apps\EPICS\support\DeviceEmulator\master -k lewis_emulators iris_cryo_valve
+C:\instrument\apps\python\python.exe C:\Instrument\apps\python\scripts\lewis.exe -p "stream: {bind_address: localhost, port: 57677}" -r 127.0.0.1:10000 -a C:\Instrument\Apps\EPICS\support\DeviceEmulator\master -k lewis_emulators iris_cryo_valve
 ```
 
 where we have picked port 57677 (see Lewis's doc for defaults). Note that the lewis executable is located in `C:\Instrument\Apps\Python\Scripts`, at time of writing we don't add the directory to our standard EPICS environment PATH variables, so you may need to provide a fully qualified file path.
@@ -60,7 +60,7 @@ It's possible to modify the device's state on the fly as it's running in case yo
 The host and port for the backdoor are specified in the `-r` argument at startup:
 
 ```
-C:\instrument\apps\python\python.exe C:\Instrument\apps\python\scripts\lewis.exe -p "stream: {bind_address: localhost, port: 57677}" -r 127.0.0.1:10000 -a C:\Instrument\Apps\EPICS\support\DeviceEmulator\master -k lewis_emulators iris_cryo_valve
+-lewis -p "stream: {bind_address: localhost, port: 57677}" -r 127.0.0.1:10000 -a C:\Instrument\Apps\EPICS\support\DeviceEmulator\master -k lewis_emulators iris_cryo_valve
 ```
 
 NOTE: at the time of writing, you can't type `localhost` for the `-r` argument.
