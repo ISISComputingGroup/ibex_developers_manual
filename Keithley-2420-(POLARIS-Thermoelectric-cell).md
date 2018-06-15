@@ -11,7 +11,7 @@ Currently, doing this measurement requires a few hacks to get it going. These ar
 
 - Currently the Keithley IOC sends some commands at initialization that cause problems for this measurement, so need to remove/comment out `PINI` and `SCAN` fields in the DB
 - The `MEAS` command in the protocol is a generic measure command - to force it to use a particular mode, the `get_V` and `get_R` commands will need to be changed to match the following:
-
+   - The Keithley 2400 IOC has implemented this protocol
 ```
 # /// Read the voltage from the data string. Format is %f (V), %f (I), %f (R), %f (Timestamp), %f (Status)
 get_V {
@@ -27,6 +27,7 @@ get_R {
    in "%*f,%*f,%f";
 }
 ```
+
 
 # Blocks
 
