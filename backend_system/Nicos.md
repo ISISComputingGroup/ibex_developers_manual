@@ -31,3 +31,11 @@ The design of the Nicos script server.
 # Developer notes
 - [Testing Nicos](testing-nicos)
 - [Nicos commands](NICOS-commands)
+
+
+# Repository
+
+- Git repo is at `git://trac.frm2.tum.de/home/repos/git/frm2/nicos/nicos-core.git`
+- [Documentation](http://cdn.frm2.tum.de/fileadmin/stuff/services/ITServices/nicos-2.0/dirhtml/)
+
+Don't try to merge their repository with ours - they have mangled email addresses in their history which github won't accept. Instead, copy-paste the entire codebase into the `vendor` branch of our repository, and then merge the vendor branch with our master branch.
