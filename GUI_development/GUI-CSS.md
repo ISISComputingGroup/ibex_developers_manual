@@ -8,11 +8,7 @@ To build any part of CSS see the product that we have forked [here](https://gith
 
 # Archive Engine
 
-The Archive Engine is part of CSS and is used to archive PV values. Note that most facilities use the [Archive Appliance](https://slacmshankar.github.io/epicsarchiver_docs/index.html) as the Archive Engine (specifically MySQL) was found to be slow at millions of PVs. As we don't have that many PVs we have continued to use the Archive Engine.
-
-* [Building the archive engine for MySQL](Building-the-archive-engine-for-mysql)
-
-* [Using the archive engine with MySQL](Using-the-archive-engine-with-mysql)
+The Archive Engine is part of CSS and is used to archive PV values. Note that most facilities use the [Archive Appliance](https://slacmshankar.github.io/epicsarchiver_docs/index.html) as the Archive Engine (specifically MySQL) was found to be slow at millions of PVs. As we don't have that many PVs we have continued to use the Archive Engine. For more details see [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/CSS-Archive-Engine)
 
 # Alarm Server
 
