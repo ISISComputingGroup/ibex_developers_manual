@@ -4,7 +4,7 @@ Motion set points allow you to label set positions for a motor, current either 1
     - galil is `Settings\config\<host name>\configurations\galil`
     - mclennan is `Settings\config\<host name>\configurations\mcleanan`
     - sm300 is `Settings\config\<host name>\configurations\<sm300 ioc name e.g. SM300_01>`
-1. The positions which are referenced from the st file. are stoed in  `Settings\config\<host name>\configurations\motionSetPoints`
+1. The positions which are referenced from the st file. are stored in  `Settings\config\<host name>\configurations\motionSetPoints`
 
 The  `motionsetpoints.cmd` contains the following lines:
 
