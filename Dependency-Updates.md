@@ -16,6 +16,20 @@ The pydev plugin in eclipse 3 version is stuck at the current version because py
 
 The different versions of the plugins are found at [http://www.pydev.org/update_sites/](http://www.pydev.org/update_sites/)
 
+## General Procedure
+
+### GUI
+
+  - Remove old library file
+  - Add library to `/lib`
+  - Remove old lib and add new lib in the `Manifest` on the `Runtime` tab in the `Classpath` part.
+  - If the old library was marked on order and export tick the box to export it for other projects
+
+### IN module
+
+  - Update the jar in `EPICS\ISIS\IocLogServer\master\LogServer\lib`
+  - Update the `pom.xml` and `.classpath` to include the new version number  
+
 ## Active MQ
 
 To update activeMQ in epics:
@@ -23,27 +37,17 @@ To update activeMQ in epics:
   - Remove the old activeMQ directory
   - Update the config to include anything new in the new version
   - Update `start-jms-server.bat` to point at the new version of apache
-  - Update the jar in `EPICS\ISIS\IocLogServer\master\LogServer\lib`
-  - Update the `pom.xml` and `.classpath` to include the new version number
+  - Update the Log server modules in `EPICS\ISIS\IocLogServer\master\LogServer`
 
-To update activeMQ in the GUI:
-  - Remove `base/uk.ac.stfc.isis.ibex.activemq/lib/activemq-all-5.4.2.jar`
-  - Add new jar from download to `base/uk.ac.stfc.isis.ibex.activemq/lib`
-  - Edit manifest (runtime class path)git ad
-  - Edit the project class path (right click properties -> Java Build Path)
-      - Remove the old jar (Remove)
-      - Add the new ("Add jar" and select the new jar)
-      - on order and export tick the box to export it for other projects
+Update activeMQ in the GUI in `base/uk.ac.stfc.isis.ibex.activemq` (you need to export the library)
 
 ## MYSql Connector/J
 
-Java my sql connector.
+- To update IOCLog in EPICS `EPICS\ISIS\IocLogServer\master\LogServer`
+- To update GUI in `base/uk.ac.stfc.isis.ibex.databases`
 
-To update IOCLog:
-  - Update the jar in `EPICS\ISIS\IocLogServer\master\LogServer\lib`
-  - Update the `pom.xml` and `.classpath` to include the new version number
+## Joda Time
 
-To update GUI in `base/uk.ac.stfc.isis.ibex.databases`:
-  - Remove `mysql-connector-java-X.X.X-bin.jar`
-  - Add new connector to `/lib`
-  - Remove old lib and add new lib in the `Manifest` on the `Runtime` tab in the `Classpath` part.
+- To update IOCLog in EPICS `EPICS\ISIS\IocLogServer\master\LogServer`
+- To update GUI in `base/uk.ac.stfc.isis.ibex.epics`
+
