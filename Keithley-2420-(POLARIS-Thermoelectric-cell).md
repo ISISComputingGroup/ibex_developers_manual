@@ -6,6 +6,7 @@ Currently, doing this measurement requires a few hacks to get it going. These ar
 
 - Keithley needs to have it's current source range set high enough.
   * Source -> I -> Right arrow -> range up (until desired range is displayed)
+- It is helpful to connect a test resistor to the Keithley to get sensible values back
 
 # IOC setup
 
@@ -80,10 +81,10 @@ def _get_voltage():
     :return: The voltage (volts)
     """
 
-    g.set_pv("{}:V.PROC".format(IOC), 1, is_local=True)
+    g.set_pv("{}:V:RAW.PROC".format(IOC), 1, is_local=True)
     sleep(1)
 
-    result = g.get_pv("{}:V".format(IOC), is_local=True)
+    result = g.get_pv("{}:V:RAW".format(IOC), is_local=True)
 
     if result is None:
         raise IOError("Couldn't get voltage. Check the IOC is running ({})".format(IOC))
@@ -97,10 +98,10 @@ def _get_resistance():
     :return: The resistance (ohms)
     """
 
-    g.set_pv("{}:R.PROC".format(IOC), 1, is_local=True)
+    g.set_pv("{}:R:RAW.PROC".format(IOC), 1, is_local=True)
     sleep(1)
 
-    result = g.get_pv("{}:R".format(IOC), is_local=True)
+    result = g.get_pv("{}:R:RAW".format(IOC), is_local=True)
 
     if result is None:
         raise IOError("Couldn't get resistance. Check the IOC is running ({})".format(IOC))
@@ -173,11 +174,11 @@ def experiment(loop_condition, currents, measurement_delay):
     :param measurement_delay: A time delay in seconds between setting the current and taking a measurement
     """
 
-    _set_mode(KeithleySourceModes.CURRENT)
-
     g.set_pv("{}:RES:MODE:SP".format(IOC), 0, is_local=True)
 
     while loop_condition():
+        print("looping")
+        _set_mode(KeithleySourceModes.CURRENT)
         g.set_pv("{}:OUTPUT:MODE:SP".format(IOC), 1, is_local=True)
         sleep(0.1)
         _set_current(0)
@@ -190,6 +191,10 @@ def experiment(loop_condition, currents, measurement_delay):
             sleep(measurement_delay)
             resistance = _get_resistance()
             g.cset("keithley2420_resistance_{}".format(index), resistance)
+
+    g.set_pv("{}:OUTPUT:MODE:SP".format(IOC), 0, is_local=True)
+    _set_current(0)
+    _set_mode(KeithleySourceModes.VOLTAGE)
 
 
 class ThermoElectricCell(object):
