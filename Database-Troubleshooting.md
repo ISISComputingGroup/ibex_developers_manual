@@ -23,9 +23,9 @@ Truncate the message log tables with:
     truncate table archive.sample;
     exit
 
-## Moving the datafiles
+## Moving the Table Data Files
 
-If the datafile were created in the wrong place they can be moved using the following.
+If the tables data file were created in the wrong place they can be moved using the following.
 
     1. Open services.msc
     1. Ensure that the process is running under `NETWORK SERVICE` and copy the command line
