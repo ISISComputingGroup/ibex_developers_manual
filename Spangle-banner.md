@@ -2,9 +2,9 @@
 
 *Note: the following will apply once https://github.com/ISISComputingGroup/IBEX/issues/3010 is merged*
 
-The spangle banner in the GUI looks at a set of PVs and displays them at all times, regardless of the current configuration. The set of PVs to serve is contained in the blockserver, in a PV called `TE:NDW1799:CS:BLOCKSERVER:BANNER_DESCRIPTION`. Use 
+The spangle banner in the GUI looks at a set of PVs and displays them at all times, regardless of the current configuration. The set of PVs to serve is contained in the blockserver, in a PV called `TE:NDWxxxx:CS:BLOCKSERVER:BANNER_DESCRIPTION`. Use 
 ```
-caget -t -S TE:NDW1799:CS:BLOCKSERVER:BANNER_DESCRIPTION | uzhex
+caget -t -S %MYPVPREFIX%CS:BLOCKSERVER:BANNER_DESCRIPTION | uzhex
 [{"local": "false", "pv": "DAE:SIM_MODE", "name": "DAE Simulation mode"}, ...]
 ```
 
