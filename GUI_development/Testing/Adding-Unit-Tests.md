@@ -11,7 +11,7 @@ Here are the steps required in Eclipse:
     * Set the project name to \<the full name of the plug-in to test\>.tests
     * Change the location to the repository rather than the workspace: xxx\ibex_gui\base\\\<project_name> (don't forget the project name!!)
     * Click "Next"
-    * Make sure the Execution Environment points at the correct version of Java (currently JavaSE-1.7)
+    * Make sure the Execution Environment points at the correct version of Java (currently JavaSE-1.7 for E3, and JavaSE-1.8 for E4)
     * Click the "Browse" button next to "Plug-in ID" 
     * Select the plug-in to test and click "OK"
     * Finish
