@@ -28,6 +28,7 @@ These are the steps needed to run the GUI via Eclipse:
 1. To run the application from within Eclipse: open "ibex.product" from the ``uk.ac.stfc.isis.ibex.client.product`` folder, select "Launch an Eclipse application"
 
 **Important Note:** you will need JDK 1.8 or higher installed to launch the IBEX GUI successfully. You may be able to use JDK 1.7, but you will need to change the JDK compliance level in Eclipse from 1.8 -> 1.7, else the GUI will not launch.
+
 **Additional Important Note:** you will need JDK 1.8 or higher installed to launch the E4 IBEX GUI successfully.
 
 ### If you see a “Plugin execution not covered by lifecycle configuration” error
