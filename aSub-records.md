@@ -69,5 +69,72 @@ epicsRegisterFunction(function_name);
 ```
 
 # Escaping to C++
+### Create a c/c++ header file
 
-# C++ code
+In support module/library_name.h:
+```
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+extern long function_name_impl(aSubRecord *prec);
+extern long another_function_name_impl(aSubRecord *prec);
+
+#ifdef __cplusplus
+}
+#endif
+
+```
+
+### Reference the header file from the C code
+In C code which is called by the EPICS records, call the C++ functions which will be parsing the data:
+```
+#include <stdlib.h>
+#include <registryFunction.h>
+#include <aSubRecord.h>
+#include <epicsExport.h>
+
+#include "library_name.h"
+
+static long function_name(aSubRecord *prec) 
+{
+	return function_name_impl(prec);
+}
+
+epicsRegisterFunction(function_name); 
+```
+Note that C and C++ functions cannot share the same name.
+
+### Reference the header file from C++
+
+Create a C++ file (which cannot share the same name as the C file), with extension `.cpp`.
+
+```
+#include <string.h>
+#include <stdlib.h>
+#include <registryFunction.h>
+#include <aSubRecord.h>
+#include <menuFtype.h>
+#include <errlog.h>
+#include <epicsString.h>
+#include <epicsExport.h>
+
+#include <string>
+#include <vector>
+#include <sstream>
+#include <iostream>
+
+#include "library_name.h"
+
+long function_name_impl(aSubRecord *prec) 
+{
+    /* Returns the first input value back */
+    prec->vala = prec->a;
+    return 0; /* process output links */
+}
+
+```
+
+`prec` has been passed through here as a reference to the aSub record. Changes made to this variable will influence the values in EPICS PVs.
+
+### Add the C++ header file to the support module makefile
