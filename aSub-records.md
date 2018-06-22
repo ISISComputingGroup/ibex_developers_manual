@@ -164,3 +164,8 @@ long function_name_impl(aSubRecord *prec)
 `prec` has been passed through here as a reference to the aSub record. Changes made to this variable will influence the values in EPICS PVs.
 
 ### Add the C++ header file to the support module makefile
+
+# Where to find examples?
+- Fermi Chopper
+- Keithley 2700
+- Keyence TM-3001P
