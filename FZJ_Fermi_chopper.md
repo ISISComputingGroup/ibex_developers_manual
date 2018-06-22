@@ -32,7 +32,7 @@ This problem is mitigated in the driver by having a state machine which keeps th
 
 # Set speed command gets ignored
 
-
+Seen on MERLIN. The crate ignored a command to set the speed. Mitigated by having a state machine which keeps the speed setpoint readback and the speed setpoint in sync with each other. Also made more obvious by putting run control on the chopper speed on MERLIN as part of their `set_ei` script.
 
 # Drive turns off unexpectedly
 
