@@ -3,7 +3,35 @@ aSub records are useful when the output of a device is too complicated to be rea
 
 
 # DB records
+Define some aSub records which may look like:
+```
+record(aSub, "$(P)STATUS:PARSE")
+{
+    field(DESC, "Parses the measurement values output")
 
+    field(SNAM, "keyence_status_parse")
+    field(INPA, "$(P)STATUS:RAW")
+    field(FTA, "STRING")
+    field(NOA, "1")
+
+    field(OUTA, "$(P)STATUS PP")
+    field(FTVA, "STRING")
+
+}
+
+record(stringin, "$(P)STATUS:RAW")
+{
+    field(DESC, "Reads from the device")
+    field(DTYP, "stream")
+    field(INP, "@kynctm3k.proto get_HELLO_WORLD $(PORT)")
+    field(SCAN, "1 second")
+    field(FLNK, "$(P)STATUS:PARSE")
+}
+
+record(stringin, "$(P)STATUS")
+{
+}
+```
 
 
 # Build files
