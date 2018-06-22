@@ -7,9 +7,7 @@ Define some aSub records which may look like:
 ```
 record(aSub, "$(P)STATUS:PARSE")
 {
-    field(DESC, "Parses the measurement values output")
-
-    field(SNAM, "keyence_status_parse")
+    field(SNAM, "function_name")
     field(INPA, "$(P)STATUS:RAW")
     field(FTA, "STRING")
     field(NOA, "1")
@@ -23,7 +21,7 @@ record(stringin, "$(P)STATUS:RAW")
 {
     field(DESC, "Reads from the device")
     field(DTYP, "stream")
-    field(INP, "@kynctm3k.proto get_HELLO_WORLD $(PORT)")
+    field(INP, "...")
     field(SCAN, "1 second")
     field(FLNK, "$(P)STATUS:PARSE")
 }
