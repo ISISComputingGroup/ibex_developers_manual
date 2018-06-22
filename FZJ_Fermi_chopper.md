@@ -30,11 +30,20 @@ Occasionally the device will get confused and reset its gate width to a semi-ran
 
 This problem is mitigated in the driver by having a state machine which keeps the gate width and gate width readback in sync.
 
+# Set speed command gets ignored
+
+
+
 # Drive turns off unexpectedly
 
-There are safety checks in the IOC. 
+Firstly, check in the "advanced" tab of the OPI - any of the following will cause the device to spin down:
+- Interlock open (the scientists know how to reset this)
+- Crate or electronics temperatures too hot (above 45C)
+- A few other (less common) conditions indicated by red interlock LEDs on the OPI
+
+In addition to the above, there are safety checks in the IOC which will cause the IOC to request a spin down:
 - If the electronics temperatures or motor temperatures go above 45 Celsius.
-- If the auto zero voltages are out of range
+- If the auto zero voltages are out of range (absolute value higher than 3 volts)
 - If the actual chopper speed is above 606Hz
 - If the magnetic bearing is off while the chopper is at speed
 
@@ -43,3 +52,7 @@ There are safety checks in the IOC.
 - This was seen on MAPS:
   * Cannot communicate using VISA under EPICS
   * If chopper crate and instrument PC are power cycled, may need to run labview driver once before epics can talk. We are still not sure why this is.
+
+# Crate does not respond to status command
+
+On MAPS, the crate's communications layer can fail, causing the device to ignore the standard polling command (`#0000000$`). To recover from this state, send the shortened command `0$` repeatedly until you get a response. The IOC should automatically do this whenever it detects no response to the standard command.
