@@ -43,6 +43,15 @@ UTILITIES=$(SUPPORT)/utilities/master
 ASUBFUNCTIONS=$(SUPPORT)/asubFunctions/master
 ```
 
+The **IOC** makefile will now need to be updated with the files that have just been produced
+
+```
+$(APPNAME)_DBD += LIBRARY_NAME.dbd
+
+$(APPNAME)_LIBS += LIBRARY_NAME
+```
+Here, `$(APPNAME)` _is_ a macro, and `LIBRARY_NAME` will need to be replaced with the name of the support module that was just created.
+
 
 # C code
 Need to define a C function which will be called by the aSub record:
