@@ -4,6 +4,8 @@ aSub records are useful when the output of a device is too complicated to be rea
 
 # DB records
 
+
+
 # Build files
 Declare a `.dbd` file with the names of all the functions declared in the `C` file which will be called by EPICS.
 
@@ -11,6 +13,14 @@ Declare a `.dbd` file with the names of all the functions declared in the `C` fi
 function(function_name)
 function(another_function_name)
 [...]
+```
+
+In the make file references need to be added for the `.dbd` file and the `C` code:
+
+```
+DBD += dbd_filename.dbd
+
+$(APPNAME)_SRCS_DEFAULT += c_sources.c
 ```
 
 # C code
