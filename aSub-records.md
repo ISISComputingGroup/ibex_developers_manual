@@ -18,10 +18,31 @@ function(another_function_name)
 In the make file references need to be added for the `.dbd` file and the `C` code:
 
 ```
-DBD += dbd_filename.dbd
+LIBRARY_IOC = APPNAME
+DBD += appname.dbd
 
-$(APPNAME)_SRCS_DEFAULT += c_sources.c
+APPNAME_DBD += asyn.dbd
+APPNAME_DBD += asubFunctions.dbd
+
+APPNAME_SRCS += c_sources.c
+
+APPNAME_LIBS += $(EPICS_BASE_IOC_LIBS)
+APPNAME_LIBS += asyn utilities
+APPNAME_LIBS += asubFunctions
 ```
+Where `APPNAME` is to be replaced with the name of the new support module being built.
+
+In the support/{...}/configure/RELEASE file reference all libraries which will be required to compile the new support module.
+
+For example, a minimum set required will be:
+```
+ASYN=$(SUPPORT)/asyn/master
+ONCRPC=$(SUPPORT)/oncrpc/master
+SNCSEQ=$(SUPPORT)/seq/master
+UTILITIES=$(SUPPORT)/utilities/master
+ASUBFUNCTIONS=$(SUPPORT)/asubFunctions/master
+```
+
 
 # C code
 Need to define a C function which will be called by the aSub record:
