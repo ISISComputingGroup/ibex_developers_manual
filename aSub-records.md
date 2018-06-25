@@ -8,11 +8,11 @@ Circumstances where you may need to use aSub records include:
 - You need to interact with files from within an IOC (first consider whether [autosave](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Autosave) or [ReadASCII](https://github.com/ISISComputingGroup/EPICS-ReadASCII) cover the functionality you need)
 
 ### Examples
-- Fermi Chopper (`EPICS/ioc/master/FERMCHOP`)
+- `FZJ Fermi Chopper` (`EPICS/ioc/master/FERMCHOP`)
   * This contains five scripts: Two to parse sets of status packets from a device, two to choose values to send to a device, and one to check that a command is allowed to be sent at the current time.
-- Keithley 2700 (`EPICS/support/Keithley_2700/master`)
+- `Keithley 2700` (`EPICS/support/Keithley_2700/master`)
   * This contains a script to parse buffer readings from a device and put them into the appropriate DB records.
-- Keyence TM-3001P
+- `Keyence TM-3001P`
   * This contains scripts to parse complex response strings from a device.
 - ReadASCII metadata (`EPICS/support/ReadASCII/master`)
   * This contains scripts to read metadata from a filepath provided in EPICS DB records.
