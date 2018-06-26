@@ -71,3 +71,9 @@ On MAPS, the crate's communications layer can fail, causing the device to ignore
 ### IOC command logic
 
 There is logic in the IOC to prevent sending commands which would put the chopper into a disallowed state. For example, it is not permitted to send "switch drive on and run" if the magnetic bearings are off. Check the IOC log - there should be entries saying either "...sending command to device..." or "...refusing to send command to device...".
+
+# Chopper veto stuck on
+
+### Veto cable not properly plugged in
+
+Ask DAE experts to unplug and re-plug in the veto cable.
