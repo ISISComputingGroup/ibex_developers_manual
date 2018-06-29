@@ -19,6 +19,7 @@ dbior("drvAsyn",2)
 1. Check command set is correct (look at documentation)
 1. Start the IOC and check it is not in SIM mode
 1. Set the IOC mask (see *What is Passing between the IOC and the *Stream* Device*)
+1. If you don't think records are processing correctly, try setting the `TPRO` (trace processing) field of the relevant records to a non-zero value. This will print a message to the IOC log whenever the record processes.
 
 ## Connect over hyperterminal
 
