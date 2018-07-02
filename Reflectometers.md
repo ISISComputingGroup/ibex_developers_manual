@@ -4,6 +4,6 @@ The aim of the reflectometer project is to allow users of the reflectometers to 
 
 ## Experiment to perform
 
-The reflectometery experiment is described in part in the [mantid documentation](http://docs.mantidproject.org/v3.12.0/techniques/ISIS_Reflectometry.html). The important things to know are:
+The reflectometry experiment is described in part in the [mantid documentation](http://docs.mantidproject.org/v3.12.0/techniques/ISIS_Reflectometry.html). The important things to know are:
 
 1. 
