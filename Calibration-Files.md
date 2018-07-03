@@ -31,7 +31,20 @@ If the common calibration file change and they need updating on all instruments 
 
 ## Calibration file format
 
-### ISIS
+1. First lines starts with `# ISIS calibration`
+1. Header block which is a JSON dictionary with `#` before each line. Dictionary entries are:
+    - `sensor_type`: string of the sensor type
+    - `format_version`: string of the format number, can be float. For this version must be 1.
+    - `conversion_date`: date for conversion as string in `YYYY/MM/DD`
+    - `column1_name`: (String) name of the first column
+    - `column1_units`: (String) units of the first column [should match epics units conventions](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/PV-Units-&-Standards#unit-standards)
+    - `column2_name`: (String) name of the second column
+    - `column2_units`: (String) name of the second column [should match epics units conventions](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/PV-Units-&-Standards#unit-standards)
+1. Tables of data in two columns separated by a comma
+    - First column is floats representing temperature
+    - Second column is floats representing reading from sensor
+
+### Examples
 
 To set units to `C`:
 ```
@@ -87,10 +100,10 @@ Freddie, Kathryn, John, Kevin and Tom had a meeting to discuss calibration forma
 - The files will start with some identifiable magic bytes. I have chosen `# ISIS calibration`
 - Metadata will be stored as a JSON structure
 - The metadata will allow the following core information to be stored
-  * Sensor type
-  * Conversion date
-  * File format version
-  * Name and units of each column
+  * Sensor type so that we know what the sensor plugged in should be
+  * Conversion date so that conversion errors can be traced
+  * File format version so that we can change the format later
+  * Name and units of each column so that we know what the data represents
   * Any arbitrary metadata should be able to be added later
 
 As part of implementation, it was decided in a discussion between John and Tom that the JSON namespace should be a flat dictionary. The advantage of using this approach is that the same script can extract any arbitrary metadata from the file, by providing the key to the dictionary.
