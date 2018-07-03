@@ -24,6 +24,8 @@ The checker is run at the end of a build on Jenkins and unit tests are failed if
 Unit Standards
 --------------
 
+The unit standards apply to both DB files and [calibration files](Calibration-Files).
+
 If the unit has a standard alphanumeric unit symbol that has been used. In the case where the usual symbol is not alphanumeric e.g. degree (°), angstrom (Å), the unit is written in full, lower case and singular. The unit may be shortened because CSS will only display 8 characters worth of unit so `degree/s^2` is to long.
 
 Standard prefixes, [T|G|M|k|m|u|n|p|f], are accepted before all units.
@@ -32,7 +34,7 @@ Units can be constructed from a number of 'base' units using a space, forwardsla
 
 For PVs where the units are contestable, for example NUMSPECTRA, a blank units field is acceptable. This will give a warning, but not a failure, when a test is run and so can be discussed at a later date.
 
-The units within the support/optics/ path are not checked as they contained a number of ambiguities and are rarely used.
+The units within the `support/optics/` path are not checked as they contained a number of ambiguities and are rarely used.
 
 Supported Units
 ---------------
