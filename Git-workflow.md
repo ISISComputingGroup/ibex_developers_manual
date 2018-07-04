@@ -8,7 +8,7 @@ Development work
 * Navigate to the appropriate directory in Git Bash
 * Checkout the master branch (if not already in the master branch) `git checkout master`
 * Make sure that the master branch is up to date (varies by repo) `git pull`
-* Create a new branch: ``git checkout -b [branch-name]``
+* Create a new branch: ``git checkout -b [branch-name]`` where `branch-name` is `TicketXXX_some_description` 
 * Do the development work in the most appropriate editor (e.g. Eclipse for the GUI, notepad++ for .db changes)
 * Update copyright notices on edited files to the current year to read ``Copyright (C) <first year> - <current year> ...``
 * In Git Bash, add files to the branch (`git add <file>`, or `git add -u` to add all modified files, or `git add -A` to add all changed files) and commit (`git commit -m "commit message"`) as appropriate
