@@ -39,6 +39,8 @@ If you're not creating a StreamDevice IOC or you you would like to know how an I
 
 1. Add any manuals used to the [manuals directory](Manuals)
 
+1. [Add IOC to EPICS hardware support list](Add-ioc-to-epics-hardware-list)
+
 # Conventions
 
 * [IOC naming](IOC-Naming)
