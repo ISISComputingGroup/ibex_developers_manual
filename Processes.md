@@ -8,7 +8,9 @@ Various Processes or tasks and info into how they should work. Remember rules ca
 
 - [Regular Demos of IBEX to Scientists](Regular-Demos-of-IBEX-to-Scientists) 
 
-- [Friday Quality Time](Friday-Quality-Time) 
+- Special Days
+    - [Friday Quality Time](Friday-Quality-Time) 
+    - [Technical Debt Stand-down](Technical-Debt-Stand-down)
 
 - [Training Instrument Scientists in IBEX](Training-Instrument-Scientists-in-IBEX)
 
