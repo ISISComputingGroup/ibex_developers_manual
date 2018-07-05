@@ -27,6 +27,7 @@ GEM | John & Tom |
 MERLIN | David |
 [Delay tickets](Delayed-tickets) | John |
 CSS & Phoebus | Dom |
+EPICS base and support modules | Freddie |
 
 <a name="definitionSteward"></a>
 ## Definition of the role of Component / Activity Steward
