@@ -10,21 +10,22 @@ The list of components/activities and stewards is not set in stone.  It will cha
 
 Component/Activity | Steward |
 ------------------ | ------- |
-Blockserver | Matt |
+Blockserver | |
 Muon Front End | Kathryn |
 Riken Front End | Kathryn |
 Script Server (NICOS) | Dom |
 IRIS & OSIRIS | David |
 VESUVIO | David |
 ZOOM | Kathryn |
-Device screens | Adrian |
-IOC Unit test framework | Isabella |
+Device screens | |
+IOC Unit test framework | Tom |
+Graphing | Tom |
 IBEX GUI | Thomas |
-EMMA | Chris
-ENGIN-X | Gareth
-GEM | John & Tom
-MERLIN | David
-[Delay tickets](Delayed-tickets) | John
+EMMA | Chris |
+ENGIN-X | Gareth |
+GEM | John & Tom |
+MERLIN | David |
+[Delay tickets](Delayed-tickets) | John |
 
 <a name="definitionSteward"></a>
 ## Definition of the role of Component / Activity Steward
