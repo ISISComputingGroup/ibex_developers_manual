@@ -38,29 +38,7 @@ If you are still experiencing errors, you may still need to set up your new work
 
 ## Don't forget your data sources
 
-As of 15th September 2017, the data source definitions are not contained in the GUI. The expectation is that we will fix that soon. Until then, you need the following files:
-
-- `C:\Users\[fedID]\.diirt\datasources\datasources.xml`
-
-```
-<?xml version='1.0' encoding='UTF-8'?>
-<dataSources version="1">
-    <compositeDataSource defaultDataSource="ca" />
-</dataSources>
-```
-
-- `C:\Users\[fedID]\.diirt\datasources\ca\ca.xml`
-
-```
-<?xml version='1.0' encoding='UTF-8'?>
-<ca version="1">
-    <jcaContext pureJava="true" addr_list="" auto_addr_list="true" connection_timeout="30.0"
-                beacon_period="15.0" repeater_port="5065" server_port="5064"
-                max_array_bytes="5000000" />
-</ca>
-```
-
-If you don't have the datasources file, you won't be able to connect to any PVs. Without the ca file, you may still be able to connect to some PVs, but only certain ones. We've observed that the configuration dialogs won't load without it.
+This is no longer needed as of https://github.com/ISISComputingGroup/IBEX/issues/3311
 
 ## Migrating an E3 perspective in a couple of easy steps
 
