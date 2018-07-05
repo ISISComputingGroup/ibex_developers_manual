@@ -37,6 +37,10 @@ Tools for helping network traffic issues
 
 Tools for getting data from the archive database.
 
+## [Archiver rate](archive-rates)
+
+Tool for finding the archiver rate on a machine.
+
 ## [Build Arch](Build-Arch)
 
 Build under a given architecture
