@@ -19,3 +19,7 @@
 ### Reflectometers
 
 [Reflectometers](Reflectometers)
+
+### Graphing
+
+[Graphing](Graphing)
