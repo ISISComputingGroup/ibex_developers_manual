@@ -8,32 +8,43 @@ This is needed just for the current run.
 
 ## Implementation Plan
 
-Initial create one set of pvs which capture a graph (it would be worth investigating whether this can be one Epics 4 pv):
+Initial create one set of pvs which capture a graph (it would be worth investigating whether this can be one Epics 4 pv) but with the view that there will be multiple of these:
 
 - Title PV
 - x axis name PV
 - y axis name PV
 - chart enabled PV
-- 4 series:
+- Data series (configurable number):
     - series enabled PV
     - name of series PV
-    - x values waveform PV
-    - y values waveform PV
+    - x values waveform PV (configurable max size)
+    - y values waveform PV (configurable max size)
+
+NB configurable here means like the number of user pvs. The PVs might live in the same place as the user pvs.
 
 In the GUI display the above graph on an OPI at the point the chart becomes enabled.
 
 Extend gennie_python with the following commands:
 
-- `create_graph(title)`
-- `close_graph()`
-- `set_titles(title, xaxis, yaxis)`
-- `append_point(series_num=0, x_value, y_value)`
-- `empty_series(series_num=0)`
-- `extend_points(series_num=0, x_valuex, y_values)`)
+- `graphs[graph_index]`: gets the `graph` object at index
 
-**Think about making this like a python list**
+Properties and methods on the graph object:
 
-TODO: Reasons why
+- `xlabel(label)`: set the x axis label
+- `ylabel(label)`: set the y axis label
+- `title(tile)`: set the graph title
+- `show()`: set enabled true
+- `hide()`: set enabled to False
+- `plot(x_values, y_values, series=0)`: set the PVs to the given values
+- `append_point(x_value, y_value, series_index=0)`: append a point to an existing series
+- `clear_series(series_index=0)`: remove all points from a series
+- `show_series(series_index=0)`: show series
+- `hide_series(series_index=0)`: hide series
+- `series_name(name, series_index=0)`: set the name of a series
+
+## Decision
+
+
 
 TODO: Extension to mat plot lib
 
