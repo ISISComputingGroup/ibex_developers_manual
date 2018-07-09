@@ -44,6 +44,17 @@ Properties and methods on the graph object:
 
 ## Decision
 
+This issue has two parts the plotting of the data and the creation of that data.
+
+### Plotting of the data
+
+The plotting could be done client side or server side, just the image is sent to the client. The choice is client side plotting because it allows individual users to pan and zoom data. We also need to choose between exposing it in an OPI, using some other java component, using Mat plot lib.
+
+*Suspended because of further requirements*
+
+The data used to create the plots could be created server side or client 
+
+1. Storin
 
 
 TODO: Extension to mat plot lib
