@@ -1,10 +1,22 @@
 The user has a requirement to graph data within the IBEX interface.
 
-### Use case scanning
+### Use case 1: Scanning
 
 The experiment runs through a series of positions, after it reaches before it moves it changes period, then moves the motors then collects data. The user wants to plot the integral of a spectra against position. After each point is plotted the whole graph needs to be fitted to a Gaussian and this fit shown in the graph (possibly with the maximum).
 
 This is needed just for the current run. 
+
+### Use case 2: Field v Current
+
+In muon experiments, scientists like to monitor the strength of the magnetic field as a function of the current. Here is a screenshot of a VI ![Field v Amps](https://user-images.githubusercontent.com/34268759/42496162-19d9a072-841d-11e8-9497-c4d23799bb57.png) 
+
+showing 3 graphs which plot field against current.
+
+### Use case 3: Counts v Current
+
+In muon experiments, scientists like to monitor the muon count rates as a function of the current. Here is a screenshot of a graph ![Count Rates v Current](https://user-images.githubusercontent.com/34268759/42496176-23dcf1b4-841d-11e8-8797-3f89788ae3c2.jpg)
+
+which plots muon count rates for each of the 3 muon instruments (HIFI, MUSR, EMU) against current.
 
 ## Implementation Plan
 
