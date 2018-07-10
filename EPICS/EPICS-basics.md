@@ -394,7 +394,7 @@ ASG(DEFAULT) {
 }
 ```
 
-For more information, see [Access Security](#Access-Security).
+For more information, see [Access Security](#EPICS-Access-Security).
 
 Start the gateway with the following command (replacing `IP_OF_INST` and `IP_OF_GATE` with the correct IP addresses):
 
