@@ -24,7 +24,7 @@ In the first case (for INTER, CRISP, SURF), the detector slides up and down on a
 
 In the second case (for POLREF, OFFSPEC), the detector sits on a bench, that can be angled, driven up/down, and slide closer/further from the sample, which allows the detector to actually move along a radius around the sample.
 
-The devices on the beamline fall into two categories which can be described as **tracking** and **affecting** the beam path. All equipment has to track the beam path, whereas only some devices (such as supermirrors) affect the beampath by introducing an angle. This means that an offset needs to be added to the height and angle of each piece of equipment downstream to remain centered and perpendicular to the beam. In practice, everything is affected by engineering errors which need to be accounted for.
+The devices on the beamline fall into two categories which can be described as **tracking** and **affecting** the beam path. All equipment has to track the beam path, whereas only some equipment (such as supermirrors, or the sample itself) affect the beampath by introducing an angular offset. This means that an offset needs to be added to the height and angle of each piece of equipment downstream to remain centered in and perpendicular to the beam. In practice, everything is also affected by engineering errors which need to be accounted for.
 
 ## Questions
 
