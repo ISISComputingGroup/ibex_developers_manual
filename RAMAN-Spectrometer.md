@@ -1,6 +1,8 @@
 Details for the B&W Tek i-Raman Plus spectrometer which is to be used on [HRPD](https://github.com/ISISComputingGroup/IBEX/wiki/HRPD-Instrument-Details).
 
-These notes relate to issue [#3302](https://github.com/ISISComputingGroup/IBEX/issues/3302)
+These notes relate to issue [#3302](https://github.com/ISISComputingGroup/IBEX/issues/3302).
+
+The SDK can be found on private ISIS share.
 
 ### Minute for meeting on 2018-07-10
 
