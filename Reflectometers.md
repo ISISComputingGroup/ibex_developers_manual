@@ -14,7 +14,17 @@ The reflectometry experiment is described in part in the [mantid documentation](
 
 ## Setup
 
-I will create a diagram for this at some point but I don't understand it well enough yet.
+Generally, the idea is to position the detector at **theta** around the **sample point** (= the coordinates of the beam at a fixed distance x from the detector). We make a distinction between two types of reflectometry instruments based on beamline equipment and the way their detector is positioned.
+
+(diagram 1 goes here)
+
+In the first case (for INTER, CRISP, SURF), the detector slides up and down on a height stage and can be angled to be perpendicular to the incident beam. This means the distance between sample and detector actually varies slightly, however the beam path on these instruments is relatively short so the resultant error is tolerable.
+
+(diagram 2 goes here)
+
+In the second case (for POLREF, OFFSPEC), the detector sits on a bench, that can be angled, driven up/down, and slide closer/further from the sample, which allows the detector to actually move along a radius around the sample.
+
+The devices on the beamline fall into two categories which can be described as **tracking** and **affecting** the beam path. All equipment has to track the beam path, whereas only some devices (such as supermirrors) affect the beampath by introducing an angle. This means that an offset needs to be added to the height and angle of each piece of equipment downstream to remain centered and perpendicular to the beam. In practice, everything is affected by engineering errors which need to be accounted for.
 
 ## Questions
 
