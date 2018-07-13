@@ -6,7 +6,25 @@ These notes relate to issue [#3302](https://github.com/ISISComputingGroup/IBEX/i
 
 The SDK can be found on the private ISIS share.
 
+### Minute for meeting on 2018-07-13 in HRPD
+Present: Rory Potter, David Keymer, Dominic Fortes, Alexandra Gibbs.
+
+* Found out the model code and USB type of the device (documented above).
+* Dom showed us how he takes a reading using the proprietary software, BWSpec. The steps he would go through are as follows:
+    1. He first sets the length of time he wants the integration to be done.
+    1. He first takes a single "dark" spectra reading. 
+    1. He then sets the laser power and the number of integrations to be done.
+    1. He then tells the spectrometer to "acquire" which takes in the readings.
+* Using BWSpec, you can take multiple integrations. Dom suggested that the software does something clever with these multiple integrations. The manual suggests that the software just overlays the data points collected from each reading. Clarifying what happens from a data collection point of view and how many integrations get written to the output file will be needed.
+* The reason Dom want to integrate with IBEX is so that he can take readings using the spectrometer using a script in between times when the beam is active.
+* Dom is happy with just some buttons to tell the spectrometer to scan. In the future, he would like to see a 2d scatter graph, like in the BWSpec software, while readings are being taken.
+* I communicated our concern about the USB connection with him and explained that we can try to use a USB to ethernet adapter. Kathryn and Freddie have suggested that we could run a separate PC connected to the device which runs the IOC - like with the Tritons. I will talk to Chris about the options we have communicating with the device.
+* The device number is not mentioned in the SDK list of devices supported. This may cause problems.
+* The device being USB should allow us to use the USB3.0 specific functions in the SDK.
+* Dom will send over a copy of the CSV file he wants the data to be written to for analysing using the proprietary  software BWIQ.
+
 ### Minute for meeting on 2018-07-10
+Present: Rory Potter, David Keymer, John Holt, Dominic Fortes, Silvia Capelli.
 
 * Silvia Capelli, who works on SXD, attended the meeting with an interest in using the spectrometer on SXD (SXD is currently on SECI).
 * Rory Potter has been given a USB stick with the manual and SDK for the spectrometer.
