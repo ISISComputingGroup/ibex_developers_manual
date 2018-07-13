@@ -1,5 +1,7 @@
 Details for the B&W Tek i-Raman Plus spectrometer which is to be used on [HRPD](https://github.com/ISISComputingGroup/IBEX/wiki/HRPD-Instrument-Details).
 
+The  B&W Tek i-Raman Plus spectrometer in HRPD is a model BWS465-532S. Dom claims that the spectrometer is USB2.0. The model page suggests that it is USB3.0/2.0 compatible.
+
 These notes relate to issue [#3302](https://github.com/ISISComputingGroup/IBEX/issues/3302).
 
 The SDK can be found on the private ISIS share.
