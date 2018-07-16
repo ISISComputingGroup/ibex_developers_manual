@@ -44,6 +44,7 @@ If you are still experiencing errors, you may still need to set up your new work
 1. Set the perspective up using an existing migrated perspective as a template
     1. Set a sensible ID
     1. Give it a label
+    1. If you want your perspective to be invisible toggle the visible checkbox
     1. Set the icon
     1. Add controls. This should be a hierarchy of part sash containers. You can see how it should be set up from the existing perspectives. Don't forget to set the container data where appropriate; it sets the relative size of sibling components.
 1. Add the perspective-specific parts
@@ -54,7 +55,6 @@ If you are still experiencing errors, you may still need to set up your new work
 1. Synchronize `ibex.product` (in `...e4.client.product`)
 1. Open IBEX
 1. Check the new perspective scales appropriately and change the layout accordingly if needed
-1. If you want your perspective to be invisible toggle the visible checkbox
 
 # The compatibility layer and preliminary migration
 
