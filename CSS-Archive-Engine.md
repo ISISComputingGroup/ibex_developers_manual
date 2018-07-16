@@ -50,30 +50,4 @@ As our version of the Archive Engine is no different to CSS we can just copy the
 
 ## Editing the Archive Engine
 
-In some cases we may want to build the archive engine ourselves. For example, if we want to edit the code. To do this:
-
-1. Clone the repository from https://github.com/ISISComputingGroup/cs-studio
-1. In Eclipse `Import->General->Projects from Folder or Archive` and import the `cs-studio\applications\archive` directory. It may prompt you to install some tycho plug ins and restart eclipse.
-1. Create a target platform and add the latest CSS version specified [here](http://controlsystemstudio.org/controlsystemstudio/current.html) as a 
-
-
-In Eclipse, go to org.csstudio.archive.engine and open `ArchiveEngine.product`.
-
-Add the following settings to the "Launching" tab under "Program Arguments" and run as a normal RCP application:
-
-```
-    -engine my_engine -pluginCustomization full_path_here\my_settings.ini
-```
-
-The CS-Studio manual says that the port is required for consistency tests but I have found this to cause problems.
-
-Alternatively, leave the "Program Arguments" blank and edit the plugin_customization.ini in the project to contain the settings.
-
-If creating a standalone executable, leave "Program Arguments" blank and use command line arguments instead. 
-
-By using the MySQL command line it should be possible to see the database filling up (it appears the update rate is ~30 seconds, so you might  not see any changes initially).
-
-```
-    mysql> use archive;
-    mysql> select * from sample;
-```
+In some cases we may want to build the archive engine ourselves. For example, if we want to edit the code. To do this follow the instructions laid out [here](https://github.com/ISISComputingGroup/org.csstudio.sns)
