@@ -2,11 +2,9 @@
 
 * [Coding Conventions](GUI-Coding-Conventions)
 
-* [Adding a Perspective](Adding-a-Button-to-the-Perspective-Switcher)
+* [Data-Binding](An-Introduction-to-Databinding)
 
 * [Adding Plug-ins and Features to the Build](Adding-a-Plugin-or-Feature-to-Maven-Build)
-
-* [Data-Binding](An-Introduction-to-Databinding)
 
 * [Connecting a View to a PV](Connecting-a-View-to-a-PV)
 
@@ -21,3 +19,11 @@
 * [OPI Creation](OPI-Creation)
 
 * [Converting OPIs from old to new style: tips and gotchas](Converting-to-New-Style-Tips-and-Gotchas)
+
+### Eclipse 3
+
+* [Adding a Perspective](Adding-a-Button-to-the-Perspective-Switcher)
+
+### Eclipse 4
+
+* [Adding a Perspective](Adding-a-Button-to-the-Perspective-Switcher-E4)
