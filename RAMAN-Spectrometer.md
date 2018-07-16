@@ -8,7 +8,9 @@ The SDK can be found on the private ISIS share.
 
 ### USB interface
 
-Talked with Chris about how to interface with the device. He suggests we start with a USB anywhere box to see if we can talk to it over Ethernet using the control software, BWSpec. We will go down in a couple of weeks when Dom is back to test interfacing with the device.
+Talked with Chris about how to interface with the device. He suggests we start with a USB-to-anywhere adapter box to see if we can talk to it over Ethernet using the control software, BWSpec. We will go down in a couple of weeks when Dom is back to test interfacing with the device. 
+
+If this does not work, we will have to have a separate machine running the IOC for the device. However, we may want to run the IOC on a separate machine if we want the spectrometer to be portable. On the other hand, the spectrometer is used in HRPD off the beamline so it may be their property.
 
 ### Minute for meeting on 2018-07-13 in HRPD
 Present: Rory Potter, David Keymer, Dominic Fortes, Alexandra Gibbs.
