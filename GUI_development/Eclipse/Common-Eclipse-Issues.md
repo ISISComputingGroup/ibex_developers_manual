@@ -103,3 +103,11 @@ Sometimes eclipse will tell you that you have errors in various projects when yo
 This can happen if the wrong ".product" file is run and not all plugins are defined in the application.
 
 * Make sure you *only* run ibex.product in uk.ac.stfc.isis.ibex.**client**.product *not* any other ".product" file in the workspace e.g. uk.ac.stfc.isis.ibex.product
+
+### I can't see changes in a new branch
+
+Sometimes when you check out a new branch in the ibex GUI repository, you won't see any changes in the GUI. You can fix this by following the steps below:
+
+1. In Eclipse, remove all the projects from the workspace and close Eclipse.
+1. Then, while checked out to the branch you want to see the changes on, perform a `git clean -fdx && git reset HEAD --hard` to reset the git repository. This will remove any changes you have made to the branch.
+1. Restart Eclipse and repeat the steps to get the GUI working from [Building the GUI](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Building-the-GUI).
