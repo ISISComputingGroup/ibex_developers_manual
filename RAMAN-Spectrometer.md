@@ -6,6 +6,10 @@ These notes relate to issue [#3302](https://github.com/ISISComputingGroup/IBEX/i
 
 The SDK can be found on the private ISIS share.
 
+### USB interface
+
+Talked with Chris about how to talk to the device and he suggests we start with a USB anywhere box to see if we can talk to it over ethernet using the proprietary Control software BWSpec. We will go down in a couple of weeks when Dom is back to test interfacing with the device.
+
 ### Minute for meeting on 2018-07-13 in HRPD
 Present: Rory Potter, David Keymer, Dominic Fortes, Alexandra Gibbs.
 
@@ -21,7 +25,7 @@ Present: Rory Potter, David Keymer, Dominic Fortes, Alexandra Gibbs.
 * I communicated our concern about the USB connection with him and explained that we can try to use a USB to ethernet adapter. Kathryn and Freddie have suggested that we could run a separate PC connected to the device which runs the IOC - like with the Tritons. I will talk to Chris about the options we have communicating with the device.
 * The device number is not mentioned in the SDK list of devices supported. This may cause problems.
 * The device being USB should allow us to use the USB3.0 specific functions in the SDK.
-* Dom will send over a copy of the CSV file he wants the data to be written to for analysing using the proprietary  software BWIQ.
+* Dom will send over a copy of the CSV file he wants the data to be written to for analysing using the proprietary software BWIQ.
 
 ### Minute for meeting on 2018-07-10
 Present: Rory Potter, David Keymer, John Holt, Dominic Fortes, Silvia Capelli.
