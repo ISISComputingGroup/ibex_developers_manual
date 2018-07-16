@@ -36,10 +36,6 @@ Launching the E4 application is very similar to the launching the E3 application
 
 If you are still experiencing errors, you may still need to set up your new workspace for IBEX development. See [this page](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Creating-the-IBEX-Developer-Version-of-Eclipse) for instructions.
 
-## Don't forget your data sources
-
-This is no longer needed as of https://github.com/ISISComputingGroup/IBEX/issues/3311
-
 ## Migrating an E3 perspective in a couple of easy steps
 
 1. Open the Application.e4xmi from `uk.ac.stfc.isis.ibex.e4.client`
@@ -58,7 +54,7 @@ This is no longer needed as of https://github.com/ISISComputingGroup/IBEX/issues
 1. Synchronize `ibex.product` (in `...e4.client.product`)
 1. Open IBEX
 1. Check the new perspective scales appropriately and change the layout accordingly if needed
-
+1. If you want your perspective to be invisible toggle the visible checkbox
 
 # The compatibility layer and preliminary migration
 
