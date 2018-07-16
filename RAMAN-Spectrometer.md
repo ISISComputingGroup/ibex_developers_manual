@@ -8,7 +8,7 @@ The SDK can be found on the private ISIS share.
 
 ### USB interface
 
-Talked with Chris about how to talk to the device and he suggests we start with a USB anywhere box to see if we can talk to it over ethernet using the proprietary Control software BWSpec. We will go down in a couple of weeks when Dom is back to test interfacing with the device.
+Talked with Chris about how to interface with the device. He suggests we start with a USB anywhere box to see if we can talk to it over Ethernet using the control software, BWSpec. We will go down in a couple of weeks when Dom is back to test interfacing with the device.
 
 ### Minute for meeting on 2018-07-13 in HRPD
 Present: Rory Potter, David Keymer, Dominic Fortes, Alexandra Gibbs.
