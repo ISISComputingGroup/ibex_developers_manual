@@ -20,10 +20,4 @@
 
 * [Converting OPIs from old to new style: tips and gotchas](Converting-to-New-Style-Tips-and-Gotchas)
 
-### Eclipse 3
-
-* [Adding a Perspective](Adding-a-Button-to-the-Perspective-Switcher)
-
-### Eclipse 4
-
-* [Adding a Perspective](Adding-a-Button-to-the-Perspective-Switcher-E4)
+* [Adding a Perspective (Eclipse 3)](Adding-a-Button-to-the-Perspective-Switcher)
