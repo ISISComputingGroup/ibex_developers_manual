@@ -9,7 +9,7 @@ The reflectometry experiment is described in part in the [mantid documentation](
 1. The data needed to be retrieved is neutron count vs Q.
 1. The [momentum transfer](https://en.wikipedia.org/wiki/Momentum_transfer) is characterised from Q = 4π / λ sin θ 
 1. The wavelength is proportional to the time of flight. So to get a large range of q the scientists stitch together spectra from multiple angles.
-1. There are other experiments that can be performed where off-specular alignments are used. Also where the rock the sample.
+1. There are other experiments that can be performed where off-specular alignments are used. Also where the sample is rocked.
 1. When thinking about alignments, there is a path through the experiment set by the super mirror, sample point, analyser angle and detector position. Everything else can be aligned to this path but does not control that path. 
 
 ## Setup
@@ -24,12 +24,26 @@ In the first case (for INTER, CRISP, SURF), the detector slides up and down on a
 
 In the second case (for POLREF, OFFSPEC), the detector sits on a bench, that can be angled, driven up/down, and slide closer/further from the sample, which allows the detector to actually move along a radius around the sample.
 
-The devices on the beamline fall into two categories which can be described as **tracking** and **affecting** the beam path. All equipment has to track the beam path, whereas only some equipment (such as supermirrors, or the sample itself) affect the beampath by introducing an angular offset. This means that an offset needs to be added to the height and angle of each piece of equipment downstream to remain centered in and perpendicular to the beam. In practice, everything is also affected by engineering errors which need to be accounted for.
+The devices on the beamline either effect the direction of the beam, **active**, or do not **passive**. A slit which blocks the beam is passive because it does change the beams direction. Equipment will usually track the beam path; it might not during initial alignment or for some unusual experiments. This means that an offset needs to be added to the position and angle of each piece of equipment after a path change so that it remains centred and perpendicular/parrallel to the beam. 
+
+Beamline equipment can be in the beam or not depending on the mode; e.g. some experiments use a super mirror others don't. Once the beamline equipment has been moved to its tracking position the variables that are used to set the values need to be read back to account for engineering errors. For instance:
+
+1. The angle theta is set
+1. This sets the detector height
+1. The detector will move to this position
+1. The readback should then be read
+1. The theta for the readback (not the setpoint) is then used to calculate the theta of the device
 
 ## Questions
 
-1. (John) Is the notional sample point x position fixes?
+1. (John) Is the ideal sample point x position fixes?
+    - Yes. The beam coming in will hit any presample active components and the height of the sample point is the point at which the beam reaches this x coordinate.
 1. (John) I think each mode of operation sets up fixed rules and relations and this is what we need to capture.
 1. (John) We need to calculate both the positions based on composite parameters and composite parameters based on the positions of the components, is this right?
+    - Yes, it would be strange not to have this readback
     1. (John) What happens if the beam having hit the super mirror does not hit the sample axis?
+        - apart from pathological cases, beam going straight up or backwards, there is always a point that the sample acis is hit
     1. (John) What happens if the detector is not looking at the sample point?
+1. (John) Does the beam always go forwards? 
+1. (John) Are there any corrections to the idealised model, at that level?
+1. (John) What does an analyser do to the beam? Is it an active component? How does it affect the measurement of theta>
