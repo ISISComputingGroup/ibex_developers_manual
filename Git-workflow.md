@@ -15,7 +15,7 @@ Development work
 * Note: if master has updated, 
     * ensure that the master branch is up to date: ``git fetch``
     * Merge in the latest master: `git merge origin/master`
-* Fix any merge errors (if required)
+    * Fix any merge errors (if required)
 * Push changes using `git push` (if this is the first time the branch is being pushed, use `git push -u origin [branch-name]`)
 * Go to GitHub and create the pull request, don't forget a test plan
 * Bored of being asked for your username and password? Read [this](https://help.github.com/articles/caching-your-github-password-in-git/).
