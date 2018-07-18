@@ -12,8 +12,9 @@ Development work
 * Do the development work in the most appropriate editor (e.g. Eclipse for the GUI, notepad++ for .db changes)
 * Update copyright notices on edited files to the current year to read ``Copyright (C) <first year> - <current year> ...``
 * In Git Bash, add files to the branch (`git add <file>`, or `git add -u` to add all modified files, or `git add -A` to add all changed files) and commit (`git commit -m "commit message"`) as appropriate
-* Ensure that the master branch is up to date: ``git fetch``
-* Merge in the latest master: `git merge origin/master`
+* Note: if master has updated, 
+    * ensure that the master branch is up to date: ``git fetch``
+    * Merge in the latest master: `git merge origin/master`
 * Fix any merge errors (if required)
 * Push changes using `git push` (if this is the first time the branch is being pushed, use `git push -u origin [branch-name]`)
 * Go to GitHub and create the pull request, don't forget a test plan
