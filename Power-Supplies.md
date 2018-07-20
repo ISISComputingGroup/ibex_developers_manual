@@ -4,4 +4,4 @@
 
 * [Oxford Instruments IPS](OxfordInstrumentsIPS)
 
-* [Thurlby Thandar TTI-PLP](Thurlby-Thandar-:-TTI-PLP-Power-Supply)
+* [Thurlby Thandar TTI-PLP](Thurlby-Thandar-TTI-PLP-Power-Supply)
