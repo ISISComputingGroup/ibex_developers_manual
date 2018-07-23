@@ -28,7 +28,8 @@ Truncate the message log tables with:
 If the tables data file were created in the wrong place they can be moved using the following.
 
     1. Open services.msc
-    1. Ensure that the process is running under `NETWORK SERVICE` and copy the command line
+    1. Ensure that the mysql service is running under `NETWORK SERVICE` and copy the command line
+    1. Stop mysql service
     1. Open command line in admin mode
     1. Remove the old service: `"C:\Program Files\MySQL\MySQL Server 5.7\bin\mysqld" --remove MySQL57`
     1. Move the data file from `C:\ProgramData\MySQL\data` to `C:\Instrument\Var\mysql\data`
