@@ -39,7 +39,7 @@ The motors currently used at ISIS are:
 * [SMC](SMC)
 * [Linmot](Linmot)
 * [McLennan](McLennan)
-* Beckhoff
+* [Beckhoff](Beckhoff)
 * [SM300](SM300)
 
 ## Common motor extras
