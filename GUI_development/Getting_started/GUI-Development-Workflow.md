@@ -62,7 +62,7 @@ $ git branch -a
   remotes/origin/master
 ```
 
-* In the console enter the following command to change to a working copy of the E4 (latest) revision of the GUI
+* In the console enter `git checkout master_E4` to change to a working copy of the E4 (latest) revision of the GUI
 
 ```
 user@MACHINE /c/Instrument/Dev/ibex_gui/base (master)
