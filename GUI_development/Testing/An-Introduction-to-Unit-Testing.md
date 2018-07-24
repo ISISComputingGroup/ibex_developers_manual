@@ -2,8 +2,8 @@
 
 # Unit Testing
 
-To create unit tests for an Eclipse plug-in a Fragment Project is used. When creating a Fragment Project we assigned the plug-in we wish to test as a Host Plug-in.
-Eclipse automatically gives the Fragment access to the classes in the original plug-if
+To create unit tests for an Eclipse plug-in a Fragment Project is used. When creating a Fragment Project we assign the plug-in we wish to test as a Host Plug-in.
+Eclipse automatically gives the Fragment access to the classes in the original plug-in.
 In the Fragment Project we create classes to test the classes in the original plug-in.
 
 ## A simple example
