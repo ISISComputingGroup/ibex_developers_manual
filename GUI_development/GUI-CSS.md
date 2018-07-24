@@ -12,7 +12,7 @@ The Archive Engine is part of CSS and is used to archive PV values. Note that mo
 
 # Alarm Server
 
-The Alarm Server is part of CSS and alerts the GUI to any PV alarm changes. There is also an CSS Alarm View that we use as part of our GUI.
+The Alarm Server is part of CSS and alerts the GUI to any PV alarm changes. There is also a CSS Alarm View that we use as part of our GUI.
 
 * [Building the alarm server for MySQL](Building-the-alarm-server-for-mysql)
 
