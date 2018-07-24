@@ -41,13 +41,13 @@ Notes:
 * In the console enter the following (paste the address from the previous step) to create a local copy of the repository:
 
 ```
-mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ (master)
+user@MACHINE /c/Instrument/Dev/ (master)
 $ git clone https://github.com/ISISComputingGroup/ibex_gui.git
 ```
 
 * Now enter the ibex_gui directory:
 ```
-mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (master)
+user@MACHINE /c/Instrument/Dev/ibex_gui/base (master)
 $ cd ibex_gui
 ```   
 * The command line shows in brackets which branch you are on - probably master at this time
@@ -55,13 +55,28 @@ $ cd ibex_gui
 * Use the git branch command to list the available branches:
 
 ```
-mjc23@NDW1373 /c/CodeWorkspaces/GitHub/ibex_gui/base (master)
+user@MACHINE /c/Instrument/Dev/ibex_gui/base (master)
 $ git branch -a
 * master
   remotes/origin/HEAD -> origin/master
   remotes/origin/master
 ```
 
+* In the console enter the following command to change to a working copy of the E4 (latest) revision of the GUI
+
+```
+user@MACHINE /c/Instrument/Dev/ibex_gui/base (master)
+$ git checkout master_E4
+Checking out files: 100% (994/994), done.
+Switched to a new branch 'master_E4'
+Branch 'master_E4' set up to track remote branch 'master_E4' from 'origin'.
+```
+
+* The branch name in brackets after the working directory should change to `master_E4`:
+```
+user@MACHINE /c/Instrument/Dev/ibex_gui/base (master_E4)
+$
+```
 ## Creating a branch
 
 * Go to the IBEX GUI GitHub repository https://github.com/ISISComputingGroup/ibex_gui
