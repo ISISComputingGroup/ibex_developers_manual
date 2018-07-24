@@ -42,7 +42,7 @@ These are the steps needed to run the E4 GUI via Eclipse:
 5. Expand the target platform folder (labelled as ``uk.ac.stfc.isis.ibex.targetplatform``), double click on the target file and choose "Set as Target Platform". This may take some time as parts of CS-Studio and DAWN are downloaded. It may also be required to update the Locations in use should some packages appear to be missing.
 6. Then select Project->Clean from the menu bar.
 9. To run the application from within Eclipse: open "ibex.product" from the ``uk.ac.stfc.isis.ibex.e4.client.product`` folder, select "Launch an Eclipse application". The first time you do this, it will fail.
-10. Next, From the menu bar choose Run->Run configurations and select "ibex.product" from the lefthand list.
+10. Next, From the menu bar choose Run->Run configurations and select "ibex.product" from the lefthand list under "Eclipse Application".
 11. In the "Main" tab tick the "Clear" tick box and in the "Configuration" tab tick the "Clear the configuration area before launching" tick box. Click "Apply" and select "Run".
 13. When a dialogue box asking if you want to clear the run-time workspace data click "Yes". This dialogue box will appear every time you run the E4 build of IBEX from within Eclipse.
 
