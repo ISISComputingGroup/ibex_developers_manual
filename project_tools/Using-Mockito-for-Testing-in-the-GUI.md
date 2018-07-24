@@ -37,7 +37,7 @@ See [this article](http://martinfowler.com/articles/mocksArentStubs.html) for mo
     verify(mockedList).clear();
 ```
 
-Here the List interface is mocked, and has some method calls made on it. The verify calls replace the usual assert calls in this unit test, and check the method calls were made. In this is example it is trivial to see they are called.
+Here the List interface is mocked, and has some method calls made on it. The verify calls replace the usual assert calls in this unit test, and check the method calls were made. In this example it is trivial to see they are called.
 
 ## Stubbing Method Calls
 
