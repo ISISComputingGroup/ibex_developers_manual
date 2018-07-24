@@ -22,19 +22,6 @@ If you are working on the IBEX GUI please use the IBEX Eclipse editor, which is 
 
 These are the steps needed to run the GUI via Eclipse:
 
-1. Start Eclipse IDE and select the workspace and use "Browse" to create and select a new workspace folder (example name: ibex_workspace)
-1. From the menu bar choose: File->Import->General->Existing Projects into Workspace. Choose "Select root directory" and browse to where the IBEX code was cloned to, Eclipse should automatically select everything so click "Finish" to add them to the project
-1. Expand the target platform folder (labelled as ``uk.ac.stfc.isis.ibex.targetplatform``), double click on the target file and choose "Set as Target Platform". This may take some time as parts of CS-Studio and DAWN are downloaded. It may also be required to update the Locations in use should some packages appear to be missing.
-1. To run the application from within Eclipse: open "ibex.product" from the ``uk.ac.stfc.isis.ibex.client.product`` folder, select "Launch an Eclipse application"
-
-**Important Note:** you will need JDK 1.8 or higher installed to launch the IBEX GUI successfully. You may be able to use JDK 1.7, but you will need to change the JDK compliance level in Eclipse from 1.8 -> 1.7, else the GUI will not launch.
-
-**Additional Important Note:** you will need JDK 1.8 or higher installed to launch the **E4** IBEX GUI successfully.
-
-### Building the E4 version of the GUI
-
-These are the steps needed to run the E4 GUI via Eclipse:
-
 1. First, create a new workspace (example name: ibex_workspace_E4).
 2. Then `git checkout master_E4` from where the IBEX code was cloned to.
 3. Start Eclipse IDE and select the workspace and use "Browse" to create and select the new workspace folder.
@@ -47,6 +34,10 @@ These are the steps needed to run the E4 GUI via Eclipse:
 13. When a dialogue box asking if you want to clear the run-time workspace data click "Yes". This dialogue box will appear every time you run the E4 build of IBEX from within Eclipse.
 
 IBEX should now build but there will probably be some errors. You can clear them following the procedure below.
+
+**Important Note:** you will need JDK 1.8 or higher installed to launch the IBEX GUI successfully. You may be able to use JDK 1.7, but you will need to change the JDK compliance level in Eclipse from 1.8 -> 1.7, else the GUI will not launch.
+
+**Additional Important Note:** you will need JDK 1.8 or higher installed to launch the **E4** IBEX GUI successfully.
 
 ### If you see a “Plugin execution not covered by lifecycle configuration” error
 1. From the menu bar choose: Window->Preferences
