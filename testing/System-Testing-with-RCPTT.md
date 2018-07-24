@@ -1,4 +1,4 @@
-> [Wiki](Home) > [The GUI](The-GUI) > [Information about Eclipse E3](E3-Dcoumentation) > [System/UI Testing with RCPTT](System-Testing-with-RCPTT)
+> [Wiki](Home) > [The GUI](The-GUI) > [Information about Eclipse E3](E3-Dcoumentation) > [System testing with RCPTT](System-Testing-with-RCPTT)
 
 See [System Testing Proposals](System-Testing-Proposals) for a brief bit on the rationale behind the system tests.
 
