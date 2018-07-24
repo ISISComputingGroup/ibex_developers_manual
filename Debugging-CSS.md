@@ -14,7 +14,7 @@ My experience in ECLIPSE is that breakpoints will work in 3rd party CSS code, pr
 
 ## Source on GitHub
 
-As mentioned in the attached issue, we currently use an old version of CSS. How do you know whether it has been changed in the source repo? Fortunately CSS is all open source. Unfortunately, the repo structure is quite hard to navigate. For instance, the package `org.csstudio.security.ui` is located [here](https://github.com/ControlSystemStudio/cs-studio/tree/master/core/utility/utility-plugins/org.csstudio.security.ui):
+As was the case in the attached issue, we might not be using the most up to date version of CSS. How do you know whether it has been changed in the source repo? Fortunately CSS is all open source. Unfortunately, the repo structure is quite hard to navigate. For instance, the package `org.csstudio.security.ui` is located [here](https://github.com/ControlSystemStudio/cs-studio/tree/master/core/utility/utility-plugins/org.csstudio.security.ui):
 
 `https://github.com/ControlSystemStudio/cs-studio/tree/master/core/utility/utility-plugins/org.csstudio.security.ui`
 
