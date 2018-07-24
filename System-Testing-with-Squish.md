@@ -35,7 +35,7 @@ Get a licence key (there are 5 floating licences that can be used by 2 people)
 
 # RDP to Server
 
-It is possible to remote desktop to the squish server but when you disconnect you must use the "Disconnect from RDP" shortcut on the desktop.
+It is possible to remote desktop to the squish server but when you disconnect you must use the "Disconnect from RDP" shortcut on the desktop. To do this you must be an Admin on the desktop I believe only John and Kathryn are currently admins.
 
 # Setup For Build Server
 
