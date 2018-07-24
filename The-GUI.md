@@ -1,4 +1,4 @@
-> [Wiki](Home) > The GUI
+> [Wiki](Home) > [The GUI](The-GUI)
 
 - [Getting Started](GUI-Getting-Started): How to get started with GUI development. Includes setting up your development environment and the development workflow.
 - [Coding](GUI-Coding): Coding workflows and conventions for GUI development.
