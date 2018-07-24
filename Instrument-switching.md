@@ -2,8 +2,9 @@
 
 Instrument switching in the GUI uses an extension point. This means that the switch can take place in a central place but then each plugin which is interested can sign up to the switching event. This keeps a separation between the plugins and the instrument switching module; i.e. a plugin can be removed without changing the instrument switching code.
 
+The instrument switching in E4 is performed through the E3 compatibility layer, as E4 has no native support for extension points. The equivalent behaviour in E4 is provided through services, which might be a necessary transition as services and extensions points are not cross-compatible.
 
-This extension point is setup in `uk.ac.stfc.isis.ibex.instrument/target/MANIFEST.MF` (see the extension Points tab). This sets up the name of the extension point and the schema. The schema is in `/uk.ac.stfc.isis.ibex.instrument/schema/uk.ac.stfc.isis.ibex.instrument.info.exsd` (click Schema on previous page). This defines the methods that should be fulfilled by the plugin that want to sign up to this extension. In this case there are three methods:
+This extension point is setup in `uk.ac.stfc.isis.ibex.instrument/META-INF/MANIFEST.MF` (see the extension Points tab). This sets up the name of the extension point and the schema. The schema is in `/uk.ac.stfc.isis.ibex.instrument/schema/uk.ac.stfc.isis.ibex.instrument.info.exsd` (click Schema on previous page). This defines the methods that should be fulfilled by the plugin that want to sign up to this extension. In this case there are three methods:
 
    `preSetInstrument` - this will be called before the instrument is switched. This is useful for closing resources using the old instrument.
    `setInstrument` - this will be called to set the instrument and should actually perform the change.
