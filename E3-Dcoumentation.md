@@ -17,6 +17,7 @@ These are the steps needed to run the GUI via Eclipse:
 # [Testing](GUI-Testing)
 * [System/UI testing with RCPTT](System-Testing-with-RCPTT)
 # [Eclipse](GUI-Eclipse)
+* [Eclipse 3.X vs Java 8](Eclipse-3.X-vs-Java-8)
 # [Control System Studio (CS-Studio)](GUI-CSS)
 # [GUI Chats](GUI-Chats)
 # [Other](GUI-Other)
