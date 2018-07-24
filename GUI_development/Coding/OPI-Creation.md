@@ -65,9 +65,9 @@ In the xml file:
 * `value.path`: the path to the opi file (relative to the resources folder)
 * `value.description`: description which is shown in target details
 * `value.macros.macro.name`: name of macro in OPI
-* `value.macro.macro.description`: description of macro value which appears in target details when user clicks on the macro. For the macro that contains the IOC name, please provide an example of actual IOC name in brackets.
+* `value.macro.macro.description`: description of macro value which appears in target details when user clicks on the macro. For a macro that contains the IOC name please provide an example with the actual IOC name in brackets.
 
-You can specify which icon should appear in the synoptic with the file `uk.ac.stfc.isis.ibex.ui.devicescreeens/ComponentIcons.java`.
+You can specify which icon should appear in the synoptic with the file `uk.ac.stfc.isis.ibex.ui.devicescreens/ComponentIcons.java`.
 If you need to add new icons for the synoptic, these are under `uk.ac.stfc.isis.ibex.ui.devicescreens/icons` (both big icons for the actual synoptic and thumbnails for the synoptic editor). Please follow [these guidelines](Synoptic-Icons) when creating new synoptic icons.
 
   
