@@ -58,7 +58,7 @@ IBEX should now build but there will probably be some errors. You can clear them
 1. From the command line, navigate to the `build` directory in the IBEX code (one directory under the root).
 1. Run the build.bat file
 1. Wait for a few minutes while it builds
-1. After the build finishes it can be found in `\base\uk.ac.stfc.isis.ibex.client.product\target\products\`
+1. After the build finishes it can be found in `\base\uk.ac.stfc.isis.ibex.e4.client.product\target\products\ibex.product\`
 
 ## Troubleshooting ##
 
