@@ -14,7 +14,7 @@ Open the wizard for creating a standard plug-in in Eclipse (File->New->Plug-in P
 * Click "Next"
 * Uncheck "Generate an activator, a Java class that controls the plug-in's life cycle"
 * Uncheck "This plug-in will make contributions to the UI"
-* Put "No" for "Would you like to create a 3.x rich client application?"
+* Put "No" for "Would you like to create a rich client application?"
 * Click "Finish"
 
 The will create the plug-in. Inside the src folder create a package called org.myexample.plugin.classes and add a class called StringManipulator.
