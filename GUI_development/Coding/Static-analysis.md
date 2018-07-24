@@ -92,6 +92,6 @@ For both PMD and FindBugs, there are certain rules which, while generally sensib
 
 The tools may be run as part of a maven build by including them as plugins in the project's pom.xml. In the case of the Eclipse GUI, each plugin is included in the 'tycho.parent' pom.xml file, and is therefore used in every other project (Eclipse plugin) during the build.
 
-* [FindBugs maven plugin](http://mojo.codehaus.org/findbugs-maven-plugin/)
+* [FindBugs maven plugin](https://gleclaire.github.io/findbugs-maven-plugin/index.html)
 * [CheckStyle maven plugin](http://maven.apache.org/plugins/maven-checkstyle-plugin/)
 * [PMD maven plugin ](http://maven.apache.org/plugins/maven-pmd-plugin/)
