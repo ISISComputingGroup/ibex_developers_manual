@@ -14,6 +14,7 @@ These are the steps needed to run the GUI via Eclipse:
 1. To run the application from within Eclipse: open "ibex.product" from the ``uk.ac.stfc.isis.ibex.client.product`` folder, select "Launch an Eclipse application"
 
 # [Coding](GUI-Coding)
+* [Adding a perspective](Adding-a-Button-to-the-Perspective-Switcher)
 # [Testing](GUI-Testing)
 * [System/UI testing with RCPTT](System-Testing-with-RCPTT)
 # [Eclipse](GUI-Eclipse)
