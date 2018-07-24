@@ -8,4 +8,4 @@
 - [GUI Chats](GUI-Chats): Notes of GUI chats that have taken place.
 - [Other](GUI-Other): Notes on all other elements related to the GUI.
 
-- [Information about Eclipse E3](E3-Dcoumentation)
+- [Information about Eclipse E3](E3-Documentation)
