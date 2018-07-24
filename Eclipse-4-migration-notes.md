@@ -36,25 +36,9 @@ Launching the E4 application is very similar to the launching the E3 application
 
 If you are still experiencing errors, you may still need to set up your new workspace for IBEX development. See [this page](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Creating-the-IBEX-Developer-Version-of-Eclipse) for instructions.
 
-## Migrating an E3 perspective in a couple of easy steps
+# Migrating an existing E3 perspective
 
-1. Open the Application.e4xmi from `uk.ac.stfc.isis.ibex.e4.client`
-1. Go to `Snippets`
-1. Click `Add` to add a new perspective
-1. Set the perspective up using an existing migrated perspective as a template
-    1. Set a sensible ID
-    1. Give it a label
-    1. If you want your perspective to be invisible toggle the visible checkbox
-    1. Set the icon
-    1. Add controls. This should be a hierarchy of part sash containers. You can see how it should be set up from the existing perspectives. Don't forget to set the container data where appropriate; it sets the relative size of sibling components.
-1. Add the perspective-specific parts
-    1. In the alarms perspective, you'll see one part in the final part sash container called alarms. Do the same thing in your new perspective, but give it an appropriate name
-    1. Change the ID of your new part to the ID of the view class you want the perspective to open
-1. Add the dependency of the view you've added to the `plugin.xml` in the `...e4.client` plugin
-1. Add the new dependency to `...feature.xml` (in `uk.ac.stfc.isis.ibex.feature.base`)
-1. Synchronize `ibex.product` (in `...e4.client.product`)
-1. Open IBEX
-1. Check the new perspective scales appropriately and change the layout accordingly if needed
+See [Migrating or adding a button to the E4 perspective switcher](Migrating-or-adding-a-button-to-the-E4-perspective-switcher).
 
 # The compatibility layer and preliminary migration
 
