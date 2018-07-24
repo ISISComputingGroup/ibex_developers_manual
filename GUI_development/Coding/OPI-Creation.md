@@ -14,7 +14,7 @@ OPIs live in `ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources`
  - Also add an entry to the `opi_info.xml` file which can be found in `resources\opi_info.xml`. Note that some Macros are provided (See below).
 
 ## Consistency - Template OPI
-In order to promote consistency in look and feel between different OPIs, we have created a template OPI in `ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources\template.opi`. Please follow the guidelines provided in this template, including ALL fonts and colours (is probably easiest to just copy the widgets from this template). If you're adding new widgets in your OPI which are not covered by this template, please add them to the template.
+In order to promote consistency in look and feel between different OPIs, we have created a template OPI in `ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources\template.opi`. Please follow the guidelines provided in this template, including ALL fonts and colours (it's probably easiest to just copy the widgets from this template). If you're adding new widgets in your OPI which are not covered by this template, please add them to the template.
 
 Please also make sure your OPI works well for colour blind users, following [these guidelines](Designing-for-Colour-Blindness).
 
