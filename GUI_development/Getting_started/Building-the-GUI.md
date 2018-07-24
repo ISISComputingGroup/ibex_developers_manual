@@ -44,6 +44,15 @@ IBEX should now build but there will probably be some errors. You can clear them
 1. Expand Maven and choose Errors/Warnings
 1. Set "Plugin execution not covered by lifecycle configuration" to Warning or Ignore
 
+### Configuring Eclipse to show current Git repository and branch in the Package Explorer
+
+e.g. `uk.ac.stfc.isis.ibex.targetplatform [ibex_gui_e4 master_E4]`
+
+1. Select all plugins (ctrl-a)
+1. Right-click on any one plugin and select `Team -> Share Project`
+1. Click `Finish`
+1. The repository and branch names should now be displayed after each plugin as above
+
 ## Building via Maven ##
 
 1. From the command line, navigate to the `build` directory in the IBEX code (one directory under the root).
