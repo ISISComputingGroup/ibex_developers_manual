@@ -43,8 +43,9 @@ It is possible to remote desktop to the squish server but when you disconnect yo
 1. Install Jenkins build system but run it from a command line.
 1. Add the script for running the command to the startup.
 1. Install squish as above.
-1. Add to `C:\Squish\etc\paths.ini` the key `GlobalScriptDirs = "C:\\Jenkins\\workspace\\squish_ui_system_tests\\global_scripts"`
+1. Add to `C:\Users\<user>\AppData\Roaming\froglogic\Squish\ver1` the key `GlobalScriptDirs = "C:\\Jenkins\\workspace\\squish_ui_system_tests\\global_scripts"`
 1. Add applications under test to the server setup as above using the IDE
+1. Check that the global script directory has been set.
 1. Switch off screen saver and power saving
 1. Next remote desktop from another machine as the user stated in the password doc
     - We have tried making this autologon but it get stuck at the policy screen
