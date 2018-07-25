@@ -9,18 +9,18 @@
 | CONEXAGP            | On | Off | ? | [3139](https://github.com/ISISComputingGroup/IBEX/issues/3139) |
 | CONTROLSVCS         |  |  |  |  |
 | COORD               |  |  |  |  |
-| COUETTE             |  |  |  |  |
+| COUETTE             | LVDCOM | LVDCOM | IOC |  |
 | CRYVALVE            |  |  |  |  |
 | CYBAMAN             |  |  |  |  |
-| DELFTARDUSTEP       |  |  |  |  |
+| DELFTARDUSTEP       | LVDCOM | LVDCOM | IOC |  |
 | DELFTBPMAG          |  |  |  |  |
 | DELFTDCMAG          |  |  |  |  |
-| DELFTSHEAR          |  |  |  |  |
+| DELFTSHEAR          | LVDCOM | LVDCOM | IOC |  |
 | DFKPS               | Off | Off | VIs | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | ECLAB               |  |  |  |  |
 | EGXCOLIM            |  |  |  |  |
 | EUROTHRM            | Off | Off | VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
-| FERMCHOP            | Off | Off | IOC | [3212](https://github.com/ISISComputingGroup/IBEX/issues/3212) |
+| FERMCHOP            | Off | Off | IOC | **Verify in manual** |
 | FINS                |  |  |  |  |
 | FZJDDFCH            | IP | IP | IOC |  |
 | GALIL               | IP | IP | IOC |  |
@@ -53,8 +53,8 @@
 | MK2CHOPR            |  |  |  |  |
 | MK3CHOPR            |  |  |  |  |
 | NANODAC             |  |  |  |  |
-| NEOCERA             |  |  |  |  |
-| PDR2000             |  |  |  |  |
+| NEOCERA             | On | Off | Manual and VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
+| PDR2000             | Off | Off | VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | PIMOT               | On | Off | ? | [3139](https://github.com/ISISComputingGroup/IBEX/issues/3139) |
 | PSCTRL              |  |  |  |  |
 | RKNDIO              |  |  |  |  |
@@ -64,23 +64,23 @@
 | SAMPOS              |  |  |  |  |
 | SCHNDR              | On | Off | ? | [3139](https://github.com/ISISComputingGroup/IBEX/issues/3139) |
 | SCIMAG3D            |  |  |  |  |
-| SDTEST              |  |  |  |  |
-| SECI2IBEX           |  |  |  |  |
-| SKFCHOPPER          |  |  |  |  |
-| SKFMB350            |  |  |  |  |
+| SDTEST              | Macro | Macro | IOC |  |
+| SECI2IBEX           | LVDCOM | LVDCOM | IOC |  |
+| SKFCHOPPER          | IP | IP | IOC |  |
+| SKFMB350            | Off | Off | VI (manual?) | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | SM300               | Off | Off | VI | [3139](https://github.com/ISISComputingGroup/IBEX/issues/3139) |
 | SMC100              | On | Off | Manual | [3139](https://github.com/ISISComputingGroup/IBEX/issues/3139) |
-| SP2XX               |  |  |  |  |
+| SP2XX               | Off | Off | Manual and VI |  |
 | SPINFLIPPER306015   |  |  |  |  |
-| SPRLG               |  |  |  |  |
-| STPS350             |  |  |  |  |
-| STSR400             |  |  |  |  |
+| SPRLG               | Off | Off | Manual and VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
+| STPS350             | LVDCOM | LVDCOM | IOC |  |
+| STSR400             | LVDCOM | LVDCOM | IOC |  |
 | TDK_LAMBDA_GENESYS  | Off | Off | Manual | [3139](https://github.com/ISISComputingGroup/IBEX/issues/3139) |
-| TEKAFG3XXX          |  |  |  |  |
-| TEKDMM40X0          |  |  |  |  |
-| TEKMSO4104B         |  |  |  |  |
-| TPG26x              |  |  |  |  |
-| TPG300              |  |  |  |  |
+| TEKAFG3XXX          | VXI-11 | VXI-11 | IOC |  |
+| TEKDMM40X0          | Off | Off | Manual and VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
+| TEKMSO4104B         | VXI-11 | VXI-11 | IOC |  |
+| TPG26x              | Off | Off | VI (manual?) | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
+| TPG300              | Off | Off | VI (manual?) | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | TRITON              |  |  |  |  |
 | TTIEX355P           |  |  |  |  |
 | **IOC**        | **Software <br/> flow control** | **Hardware <br/> flow control** | **Reference document <br/> (VI/manual)** | **Ticket** |
