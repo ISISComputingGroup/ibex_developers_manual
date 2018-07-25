@@ -62,19 +62,19 @@ $ git branch -a
   remotes/origin/master
 ```
 
-* In the console enter `git checkout master_E4` to change to a working copy of the E4 (latest) revision of the GUI
+* In the console enter `git checkout master` to change to a working copy of the E4 (latest) revision of the GUI
 
 ```
 user@MACHINE /c/Instrument/Dev/ibex_gui/base (master)
-$ git checkout master_E4
+$ git checkout master
 Checking out files: 100% (994/994), done.
-Switched to a new branch 'master_E4'
-Branch 'master_E4' set up to track remote branch 'master_E4' from 'origin'.
+Switched to a new branch 'master'
+Branch 'master' set up to track remote branch 'master' from 'origin'.
 ```
 
-* The branch name in brackets after the working directory should change to `master_E4`:
+* The branch name in brackets after the working directory should change to `master`:
 ```
-user@MACHINE /c/Instrument/Dev/ibex_gui/base (master_E4)
+user@MACHINE /c/Instrument/Dev/ibex_gui/base (master)
 $
 ```
 ## Creating a branch
