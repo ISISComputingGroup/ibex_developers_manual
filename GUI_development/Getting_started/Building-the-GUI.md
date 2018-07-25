@@ -23,7 +23,7 @@ If you are working on the IBEX GUI please use the IBEX Eclipse editor, which is 
 These are the steps needed to run the GUI via Eclipse:
 
 1. First, create a new workspace (example name: ibex_workspace_E4).
-2. Then `git checkout master_E4` from where the IBEX code was cloned to.
+2. Then `git checkout master` from where the IBEX code was cloned to (if it's a fresh clone, it should already be on this branch).
 3. Start Eclipse IDE and select the workspace and use "Browse" to create and select the new workspace folder.
 4. From the menu bar choose File->Import->General->Existing Projects into Workspace. Choose "Select root directory" and browse to where the IBEX code was cloned to, Eclipse should automatically select everything so click "Finish" to add them to the project
 5. Expand the target platform folder (labelled as ``uk.ac.stfc.isis.ibex.targetplatform``), double click on the target file and choose "Set as Target Platform". This may take some time as parts of CS-Studio and DAWN are downloaded. It may also be required to update the Locations in use should some packages appear to be missing.
@@ -46,7 +46,7 @@ IBEX should now build but there will probably be some errors. You can clear them
 
 ### Configuring Eclipse to show current Git repository and branch in the Package Explorer
 
-e.g. `uk.ac.stfc.isis.ibex.targetplatform [ibex_gui_e4 master_E4]`
+e.g. `uk.ac.stfc.isis.ibex.targetplatform [ibex_gui_e4 master]`
 
 1. Select all plugins (ctrl-a)
 1. Right-click on any one plugin and select `Team -> Share Project`
