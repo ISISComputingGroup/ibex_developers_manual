@@ -12,7 +12,7 @@ The goal of the project is to run IBEX on an Eclipse 4.x platform. Notably the c
 
 This is largely the same as [setting up your E3 workspace](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Building-the-GUI). It's best to create a separate workspace for your E3 & E4 development.
 
-The e4 work is based on the the "master_E4" branch that you will need to swap to. It is worth doing a "git clean -fdx" afterwards, but make sure there is no uncommitted work as you will lose it.
+The e4 work is based on the the "master" branch that you will need to swap to. It is worth doing a "git clean -fdx" afterwards, but make sure there is no uncommitted work as you will lose it.
 
 Launching the E4 application is very similar to the launching the E3 application as detailed in the getting started guide.
 
