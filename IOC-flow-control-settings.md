@@ -2,7 +2,7 @@
 |--------------|-----------------------|-----------------------|--------------------------------|--------|
 | AG3631A             |  |  |  |  |
 | AG33220A            | IP | IP | IOC | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
-| AG53220A            | N/A | N/A | VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
+| AG53220A            | IP | IP | VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | AMINT2L             | Off | Off | VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | BKHOFF              | IP | IP | IOC | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | CCD100              | Off | Off | VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
@@ -23,7 +23,7 @@
 | FERMCHOP            | Off | Off | IOC | [3212](https://github.com/ISISComputingGroup/IBEX/issues/3212) |
 | FINS                |  |  |  |  |
 | FZJDDFCH            | IP | IP | IOC |  |
-| GALIL               |  |  |  |  |
+| GALIL               | IP | IP | IOC |  |
 | GAMRY               | Off | Off | None | [3139](https://github.com/ISISComputingGroup/IBEX/issues/3139) |
 | GEMORC              |  |  |  |  |
 | HAMEG8123           |  |  |  |  |
@@ -38,16 +38,16 @@
 | IPS                 |  |  |  |  |
 | ISISDAE             |  |  |  |  |
 | ITC503              |  |  |  |  |
-| JULABO              |  |  |  |  |
+| JULABO              | Off | Off | VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | KEPCO               | On | Off | VI | [3139](https://github.com/ISISComputingGroup/IBEX/issues/3139) |
 | KHLY2400            |  |  |  |  |
 | KHLY2700            |  |  |  |  |
-| KYNCTM3K            |  |  |  |  |
-| LINKAM95            |  |  |  |  |
+| KYNCTM3K            | Off | Off | Manual | **Not Done** |
+| LINKAM95            | Off | Off | VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | LINMOT              | Off | Off | Manual and VI | [3139](https://github.com/ISISComputingGroup/IBEX/issues/3139) |
-| LKSH218             |  |  |  |  |
+| LKSH218             | Off | Off | VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | LKSH336             |  |  |  |  |
-| LKSH460             |  |  |  |  |
+| LKSH460             | Off | Off | VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | MCLEN               | On | Off | ? | [3139](https://github.com/ISISComputingGroup/IBEX/issues/3139) |
 | MERCURY_ITC         |  |  |  |  |
 | MK2CHOPR            |  |  |  |  |
