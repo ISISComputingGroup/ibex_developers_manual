@@ -1,5 +1,5 @@
 | IOC          | Software <br/> flow control | Hardware <br/> flow control | Reference document <br/> (VI/manual) | Ticket |
-|--------------|-----------------------|-----------------------|--------------------------------|--------|
+|:------------:|:---------------------:|:---------------------:|:------------------------------:|:------:|
 | AG3631A             |  |  |  |  |
 | AG33220A            | IP | IP | IOC | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | AG53220A            | IP | IP | VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
