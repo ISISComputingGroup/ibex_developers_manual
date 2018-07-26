@@ -1,69 +1,69 @@
 | IOC          | Software <br/> flow control | Hardware <br/> flow control | Reference document <br/> (VI/manual) | Ticket |
 |:------------:|:---------------------:|:---------------------:|:------------------------------:|:------:|
-| AG3631A             |  |  |  |  |
+| AG3631A             | Off | Off | Manual | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | AG33220A            | TCP | TCP | IOC | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | AG53220A            | TCP | TCP | VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | AMINT2L             | Off | Off | VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | BKHOFF              | TCP | TCP | IOC | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | CCD100              | Off | Off | VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | CONEXAGP            | On | Off | ? | [3139](https://github.com/ISISComputingGroup/IBEX/issues/3139) |
-| CONTROLSVCS         |  |  |  |  |
-| COORD               |  |  |  |  |
+| CONTROLSVCS         | Not serial? |  |  |  |
+| COORD               | Not serial? |  |  |  |
 | COUETTE             | LVDCOM | LVDCOM | IOC |  |
-| CRYVALVE            |  |  |  |  |
-| CYBAMAN             |  |  |  |  |
+| CRYVALVE            | Off | Off | VI and docs | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
+| CYBAMAN             | Off | Off | VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | DELFTARDUSTEP       | LVDCOM | LVDCOM | IOC |  |
 | DELFTBPMAG          |  |  |  |  |
-| DELFTDCMAG          |  |  |  |  |
+| DELFTDCMAG          | Off | Off | VI |  |
 | DELFTSHEAR          | LVDCOM | LVDCOM | IOC |  |
 | DFKPS               | Off | Off | VIs | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | ECLAB               | N/A | N/A | IOC |  |
-| EGXCOLIM            |  |  |  |  |
+| EGXCOLIM            | LVDCOM | LVDCOM | IOC |  |
 | EUROTHRM            | Off | Off | VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | FERMCHOP            | Off | Off | IOC | **Verify in manual** |
 | FINS                | N/A | N/A | IOC |  |
 | FZJDDFCH            | TCP | TCP | IOC |  |
 | GALIL               | TCP | TCP | IOC |  |
 | GAMRY               | Off | Off | None | [3139](https://github.com/ISISComputingGroup/IBEX/issues/3139) |
-| GEMORC              | Off | Off | VI |  |
-| HAMEG8123           | CHIpir |  |  |  | 
+| GEMORC              | Off | Off | VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
+| HAMEG8123           | Off | Off | VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) | 
 | HIFIMAG             | LVDCOM | LVDCOM | IOC |  |
 | HLG                 |  |  |  |  |
 | HVCAEN              | N/A | N/A | IOC |  |
-| IEG                 |  |  |  |  |
-| ILM200              |  |  |  |  |
-| INHIBITR            |  |  |  |  |
-| INSTETC             |  |  |  |  |
-| INSTRON             |  |  |  |  |
+| IEG                 | Off | Off | Manual and VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
+| ILM200              | Off | Off | Manual | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
+| INHIBITR            | N/A | N/A | IOC |  |
+| INSTETC             | N/A | N/A | IOC |  |
+| INSTRON             | TCP | TCP | IOC |  |
 | IPS                 |  |  |  |  |
 | ISISDAE             | N/A | N/A | IOC |  |
 | ITC503              |  |  |  |  |
 | JULABO              | Off | Off | VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | KEPCO               | On | Off | VI | [3139](https://github.com/ISISComputingGroup/IBEX/issues/3139) |
-| KHLY2400            | Off | Off | VI/Manual <br/> (was macro) |  |
-| KHLY2700            | Off | Off | VI/Manual <br/> (was macro) |  |
-| KYNCTM3K            | Off | Off | Manual | **Not Done** |
+| KHLY2400            | **Macro** | **Macro** | VI/Manual <br/> (was macro) |  |
+| KHLY2700            | **Macro** | **Macro** | VI/Manual <br/> (was macro) |  |
+| KYNCTM3K            | Off | Off | Manual | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | LINKAM95            | Off | Off | VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | LINMOT              | Off | Off | Manual and VI | [3139](https://github.com/ISISComputingGroup/IBEX/issues/3139) |
 | LKSH218             | Off | Off | VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | LKSH336             | TCP | TCP | IOC |  |
 | LKSH460             | Off | Off | VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | MCLEN               | On | Off | ? | [3139](https://github.com/ISISComputingGroup/IBEX/issues/3139) |
-| MERCURY_ITC         |  |  |  |  |
+| MERCURY_ITC         | LVDCOM | LVDCOM | IOC |  |
 | MK2CHOPR            |  |  |  |  |
 | MK3CHOPR            |  |  |  |  |
-| NANODAC             |  |  |  |  |
+| NANODAC             | TCP | TCP | IOC |  |
 | NEOCERA             | On | Off | Manual and VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | PDR2000             | Off | Off | VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | PIMOT               | On | Off | ? | [3139](https://github.com/ISISComputingGroup/IBEX/issues/3139) |
-| PSCTRL              |  |  |  |  |
-| RKNDIO              |  |  |  |  |
-| RKNPS               |  |  |  |  |
-| ROTSC               |  |  |  |  |
-| RUNCTRL             |  |  |  |  |
-| SAMPOS              |  |  |  |  |
+| PSCTRL              | Not serial? |  |  |  |
+| RKNDIO              | Off | Off | IOC |  |
+| RKNPS               | Off | Off | Danfysik 8k VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
+| ROTSC               | Off | Off | Manual and VIs <br/> (HRPD and POLARIS) | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
+| RUNCTRL             | Not serial? |  |  |  |
+| SAMPOS              | LVDCOM | LVDCOM | IOC |  |
 | SCHNDR              | On | Off | ? | [3139](https://github.com/ISISComputingGroup/IBEX/issues/3139) |
-| SCIMAG3D            |  |  |  |  |
+| SCIMAG3D            | LVDCOM | LVDCOM | IOC |  |
 | SDTEST              | Macro | Macro | IOC |  |
 | SECI2IBEX           | LVDCOM | LVDCOM | IOC |  |
 | SKFCHOPPER          | IP | IP | IOC |  |
