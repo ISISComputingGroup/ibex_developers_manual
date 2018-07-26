@@ -70,14 +70,22 @@ In Specular mode the point detector is used whereas in off specular the 1D detec
 
 ## Questions
 
-1. (John) Is the ideal sample point x position fixes?
+1. Is the ideal sample point x position fixes?
     - Yes. The beam coming in will hit any presample active components and the height of the sample point is the point at which the beam reaches this x coordinate.
-1. (John) I think each mode of operation sets up fixed rules and relations and this is what we need to capture.
-1. (John) We need to calculate both the positions based on composite parameters and composite parameters based on the positions of the components, is this right?
+1. I think each mode of operation sets up fixed rules and relations and this is what we need to capture.
+1. We need to calculate both the positions based on composite parameters and composite parameters based on the positions of the components, is this right?
     - Yes, it would be strange not to have this readback
-    1. (John) What happens if the beam having hit the super mirror does not hit the sample axis?
+    1. What happens if the beam having hit the super mirror does not hit the sample axis?
         - apart from pathological cases, beam going straight up or backwards, there is always a point that the sample acis is hit
-    1. (John) What happens if the detector is not looking at the sample point?
-1. (John) Does the beam always go forwards? 
-1. (John) Are there any corrections to the idealised model, at that level?
-1. (John) What does an analyser do to the beam? Is it an active component? How does it affect the measurement of theta>
+    1. What happens if the detector is not looking at the sample point?
+        - Nothing, but a warning in this case would be useful.
+1. Does the beam always go forwards?
+    - Yes, on reflectometers the beam always goes forward. 
+1. Are there any corrections to the idealised model, at that level?
+    - No
+1. What does an analyser do to the beam? Is it an active component? How does it affect the measurement of theta?
+    - Yes it is an active component on some beam lines (depends on type). It doesn't effect the measurement of theta; although if you are calculating the readback the outgoing beam goes to the analyser not the detector.
+1. How are slits measured (along the arc or along there length)?
+    - In the end it doesn't really matter but they are measured along their length.
+1. Room coordinates are these ok as we defined them?
+    - Maybe, they should be the same as Mantid default.
