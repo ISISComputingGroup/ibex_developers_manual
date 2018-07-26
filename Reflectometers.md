@@ -34,6 +34,40 @@ Beamline equipment can be in the beam or not depending on the mode; e.g. some ex
 1. The readback should then be read
 1. The theta for the readback (not the setpoint) is then used to calculate the theta of the device
 
+### Equipment on the beam
+
+#### Poleriser/Super Mirror
+
+An active component before the sample which changes the angle of the incoming beam
+
+#### Slit
+
+Slits are passive components that can sit anywhere along the beam line. A slits centre is measured from the beam's path.
+
+#### Analyser
+
+An active component placed after the sample which will split the beam. Some forms on analysers change the beam path horizontally some vertically. In the case of vertically they should be treated like mirrors with an angle.
+
+#### Detector
+
+A detector is a passive component that sits at the end of the beam line. There are at least two common types point and 1 D detectors.
+
+## Experimetnal Modes
+
+### Modes
+
+- nr mode: just a straight reflection from the ideal sample point. Used for solids and liquids with solids, i.e. things that can be rotated and are not effected by gravity
+- liquids nr: The sample if kept flag and the super mirror is used to make the specular condition correct.
+- polerised nr: set the poleriser at a given angle then run in nr mode but with a different incoming beam angle
+- polerisation analysis: as with nr mode but now after the sample point the beam is split into two and the detector moves to see either beam. 2* Theta is still the angle between the incoming and outgoing beam at the sample point.
+- disabled: all components are free of geometry constraints and can be used independently.
+
+### Off Specular vs Specular
+
+In Specular mode the point detector is used whereas in off specular the 1D detector is used.
+
+
+
 ## Questions
 
 1. (John) Is the ideal sample point x position fixes?
