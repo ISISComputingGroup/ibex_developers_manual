@@ -1,12 +1,12 @@
 | IOC          | Software <br/> flow control | Hardware <br/> flow control | Reference document <br/> (VI/manual) | Ticket |
 |:------------:|:---------------------:|:---------------------:|:------------------------------:|:------:|
 | AG3631A             | Off | Off | Manual | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
-| AG33220A            | TCP | TCP | IOC | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
-| AG53220A            | TCP | TCP | VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
+| AG33220A            | TCP | TCP | IOC |  |
+| AG53220A            | TCP | TCP | VI |  |
 | AMINT2L             | Off | Off | VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
-| BKHOFF              | TCP | TCP | IOC | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
+| BKHOFF              | TCP | TCP | IOC |  |
 | CCD100              | Off | Off | VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
-| CONEXAGP            | On | Off | ? | [3139](https://github.com/ISISComputingGroup/IBEX/issues/3139) |
+| CONEXAGP            | On | Off | IOC | [3139](https://github.com/ISISComputingGroup/IBEX/issues/3139) |
 | CONTROLSVCS         | Not a real device |  |  |  |
 | COORD               | Not a real device |  |  |  |
 | COUETTE             | LVDCOM | LVDCOM | IOC |  |
@@ -17,10 +17,10 @@
 | DELFTDCMAG          | Off | Off | VI |  |
 | DELFTSHEAR          | LVDCOM | LVDCOM | IOC |  |
 | DFKPS               | Off | Off | VIs | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
-| ECLAB               | N/A | N/A | IOC |  |
+| ECLAB               | Not a real device |  |  |  |
 | EGXCOLIM            | LVDCOM | LVDCOM | IOC |  |
 | EUROTHRM            | Off | Off | VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
-| FERMCHOP            | Off | Off | IOC |  |
+| FERMCHOP            | Off | Off | Manual and IOC |  |
 | FINS                | N/A | N/A | IOC |  |
 | FZJDDFCH            | TCP | TCP | IOC |  |
 | GALIL               | TCP | TCP | IOC |  |
@@ -48,21 +48,21 @@
 | LKSH218             | Off | Off | VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | LKSH336             | TCP | TCP | IOC |  |
 | LKSH460             | Off | Off | VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
-| MCLEN               | On | Off | ? | [3139](https://github.com/ISISComputingGroup/IBEX/issues/3139) |
+| MCLEN               | On | Off | IOC | [3139](https://github.com/ISISComputingGroup/IBEX/issues/3139) |
 | MERCURY_ITC         | LVDCOM | LVDCOM | IOC |  |
 | MK2CHOPR            | Off | Off | Manual and VI |  |
 | MK3CHOPR            | Remote procedure calls - not serial |  |  |  |
 | NANODAC             | TCP | TCP | IOC |  |
 | NEOCERA             | On | Off | Manual and VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | PDR2000             | Off | Off | VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
-| PIMOT               | On | Off | ? | [3139](https://github.com/ISISComputingGroup/IBEX/issues/3139) |
+| PIMOT               | On | Off | IOC | [3139](https://github.com/ISISComputingGroup/IBEX/issues/3139) |
 | PSCTRL              | Not a real device |  |  |  |
 | RKNDIO              | Off | Off | IOC |  |
 | RKNPS               | Off | Off | Danfysik 8k VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | ROTSC               | Off | Off | Manual and VIs <br/> (HRPD and POLARIS) | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | RUNCTRL             | Not a real device |  |  |  |
 | SAMPOS              | LVDCOM | LVDCOM | IOC |  |
-| SCHNDR              | On | Off | ? | [3139](https://github.com/ISISComputingGroup/IBEX/issues/3139) |
+| SCHNDR              | On | Off | IOC | [3139](https://github.com/ISISComputingGroup/IBEX/issues/3139) |
 | SCIMAG3D            | LVDCOM | LVDCOM | IOC |  |
 | SDTEST              | Macro | Macro | IOC |  |
 | SECI2IBEX           | LVDCOM | LVDCOM | IOC |  |
