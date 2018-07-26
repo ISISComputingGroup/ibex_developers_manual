@@ -7,6 +7,8 @@ A technical debt stand-down day is a day devoted to fixing technical debt in the
     - Tech debt tickets
     - Block server exception handling
     - Deployment/release process
+        - Automatically add release numbers based on the name of the release branch
+        - On install if only one component is release then fall back to later components e.g. if only 4.4.1 GUI is available install 4.4.0 server and genie_python
     - Bugs
     - Emulator/IOC tests
     - Excess logging
