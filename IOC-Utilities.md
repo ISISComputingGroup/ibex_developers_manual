@@ -83,6 +83,26 @@ parameters
 1. `operation` - set the first bit for verbose mode
 1. `rhs` - does nothing
 
+The operation argument is given as a decimal represenation of binary flags:
+
+| Operation       | Flag  |
+|:---------------:|:-----:|
+| Verbose         | `0x1` |
+| length > 0      | `0x2` |
+| lhs == rhs      | `0x4` |
+| Inverse output  | `0x8` |
+
+To get the operation that you require, add the flag value in decimal. For example, to check if a string has finite length, your operation would be `2`. However, if you would like your flag to check if a string has a zero length, then add the inverse flag value `8`, meaning your operation would be `10 (8+2)`. To add a log for this operation, add the verbose flag of value `1`, so the total value is `11`.
+
+For debugging purposes it is advisable to add the verbose/logging flag of value `1` to your operation.
+
+### Example 
+From the DKFPS IOC:
+```
+stringiftest("POLAR" "$(POLARITY="BIPOLAR")" 5 "BIPOLAR")
+```
+The operation value is `5`, or `4+1`, so this checks the lhs (`$(POLARITY)`, which defaults to `"BIPOLAR"`) equals the right hand side `"BIPOLAR"`, and puts the result in the `$(POLAR)`.
+
 ## setIOCName
 
 TODO
