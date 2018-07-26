@@ -16,11 +16,11 @@ The reflectometry experiment is described in part in the [mantid documentation](
 
 Generally, the idea is to position the detector at **theta** around the **sample point** (= the coordinates of the beam at a fixed distance x from the detector). We make a distinction between two types of reflectometry instruments based on beamline equipment and the way their detector is positioned.
 
-![TS1 and TS2 nr mode](reflectometers\TS1_and_TS2_nr_mode.png)
+![TS1 and TS2 nr mode](reflectometers/TS1_and_TS2_nr_mode.png)
 
 In the first case (for INTER, CRISP, SURF), the detector slides up and down on a height stage and can be angled to be perpendicular to the incident beam. This means the distance between sample and detector actually varies slightly, however the beam path on these instruments is relatively short so the resultant error is tolerable.
 
-(diagram 2 goes here)
+![Polerisation mode](reflectometers/polerised_mode.png)
 
 In the second case (for POLREF, OFFSPEC), the detector sits on a bench, that can be angled, driven up/down, and slide closer/further from the sample, which allows the detector to actually move along a radius around the sample.
 
