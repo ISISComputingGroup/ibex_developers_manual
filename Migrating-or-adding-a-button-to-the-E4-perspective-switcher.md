@@ -22,3 +22,16 @@
 ## Creating a brand new E4 perspective
 
 Making a brand new E4 perspective would probably look similar to the steps above, minus the E3 steps. However, a new E4 perspective has yet to been attempted.
+
+## Hiding Perspectives
+
+Perspectives can be hidden by adding perspective IDs to the Eclipse preference store at the preference key `uk.ac.stfc.isis.ibex.preferences/perspectives_not_shown` (at `/uk.ac.stfc.isis.ibex.e4.client/plugin_customization.ini`). e.g. 
+
+```
+uk.ac.stfc.isis.ibex.preferences/perspectives_not_shown=uk.ac.stfc.isis.ibex.client.e4.product.perspective.scriptGenerator
+```
+Note: Multiple perspectives can be hidden using a comma separated list of perspective IDs. e.g.
+
+```
+uk.ac.stfc.isis.ibex.preferences/perspectives_not_shown=uk.ac.stfc.isis.ibex.client.e4.product.perspective.scriptGenerator,uk.ac.stfc.isis.ibex.client.e4.product.perspective.dae
+```
