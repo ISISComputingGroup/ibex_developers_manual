@@ -28,16 +28,16 @@
 | GEMORC              | Off | Off | VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | HAMEG8123           | Off | Off | VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) | 
 | HIFIMAG             | LVDCOM | LVDCOM | IOC |  |
-| HLG                 | Off | Off | Manual |  |
+| HLG                 | Off | Off | Manual | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | HVCAEN              | N/A | N/A | IOC |  |
 | IEG                 | Off | Off | Manual and VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | ILM200              | Off | Off | Manual | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | INHIBITR            | N/A | N/A | IOC |  |
 | INSTETC             | N/A | N/A | IOC |  |
 | INSTRON             | TCP | TCP | IOC |  |
-| IPS                 | Off | Off | Manual |  |
+| IPS                 | Off | Off | Manual | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | ISISDAE             | N/A | N/A | IOC |  |
-| ITC503              | Off | Off | Manual |  |
+| ITC503              | Off | Off | Manual | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | JULABO              | Off | Off | VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | KEPCO               | On | Off | VI | [3139](https://github.com/ISISComputingGroup/IBEX/issues/3139) |
 | KHLY2400            | **Macro** | **Macro** | VI/Manual |  |
@@ -50,7 +50,7 @@
 | LKSH460             | Off | Off | VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | MCLEN               | On | Off | IOC | [3139](https://github.com/ISISComputingGroup/IBEX/issues/3139) |
 | MERCURY_ITC         | LVDCOM | LVDCOM | IOC |  |
-| MK2CHOPR            | Off | Off | Manual and VI |  |
+| MK2CHOPR            | Off | Off | Manual and VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | MK3CHOPR            | Remote procedure calls - not serial |  |  |  |
 | NANODAC             | TCP | TCP | IOC |  |
 | NEOCERA             | On | Off | Manual and VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
@@ -71,7 +71,7 @@
 | SM300               | Off | Off | VI | [3139](https://github.com/ISISComputingGroup/IBEX/issues/3139) |
 | SMC100              | On | Off | Manual | [3139](https://github.com/ISISComputingGroup/IBEX/issues/3139) |
 | SP2XX               | Off | Off | Manual and VI |  |
-| SPINFLIPPER306015   | Unknown |  |  |  |
+| SPINFLIPPER306015   | Off | Off | Manual | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | SPRLG               | Off | Off | Manual and VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | STPS350             | LVDCOM | LVDCOM | IOC |  |
 | STSR400             | LVDCOM | LVDCOM | IOC |  |
