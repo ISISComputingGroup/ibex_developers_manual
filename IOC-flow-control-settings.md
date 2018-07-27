@@ -14,7 +14,7 @@
 | CYBAMAN             | Off | Off | VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | DELFTARDUSTEP       | LVDCOM | LVDCOM | IOC |  |
 | DELFTBPMAG          | Unknown |  |  |  |
-| DELFTDCMAG          | Off | Off | VI |  |
+| DELFTDCMAG          | Unknown | Unknown |  |  |
 | DELFTSHEAR          | LVDCOM | LVDCOM | IOC |  |
 | DFKPS               | Off | Off | VIs | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | ECLAB               | N/A | N/A |  |  |
