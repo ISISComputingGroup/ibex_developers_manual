@@ -13,7 +13,7 @@
 | CRYVALVE            | Off | Off | VI and docs | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | CYBAMAN             | Off | Off | VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | DELFTARDUSTEP       | LVDCOM | LVDCOM | IOC |  |
-| DELFTBPMAG          | TALK TO FREDDIE |  |  |  |
+| DELFTBPMAG          | Unknown |  |  |  |
 | DELFTDCMAG          | Off | Off | VI |  |
 | DELFTSHEAR          | LVDCOM | LVDCOM | IOC |  |
 | DFKPS               | Off | Off | VIs | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
@@ -40,8 +40,8 @@
 | ITC503              | Off | Off | Manual |  |
 | JULABO              | Off | Off | VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | KEPCO               | On | Off | VI | [3139](https://github.com/ISISComputingGroup/IBEX/issues/3139) |
-| KHLY2400            | **Macro** | **Macro** | VI/Manual <br/> (was macro) |  |
-| KHLY2700            | **Macro** | **Macro** | VI/Manual <br/> (was macro) |  |
+| KHLY2400            | **Macro** | **Macro** | VI/Manual |  |
+| KHLY2700            | **Macro** | **Macro** | VI/Manual |  |
 | KYNCTM3K            | Off | Off | Manual | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | LINKAM95            | Off | Off | VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | LINMOT              | Off | Off | Manual and VI | [3139](https://github.com/ISISComputingGroup/IBEX/issues/3139) |
@@ -71,7 +71,7 @@
 | SM300               | Off | Off | VI | [3139](https://github.com/ISISComputingGroup/IBEX/issues/3139) |
 | SMC100              | On | Off | Manual | [3139](https://github.com/ISISComputingGroup/IBEX/issues/3139) |
 | SP2XX               | Off | Off | Manual and VI |  |
-| SPINFLIPPER306015   | TALK TO FREDDIE |  |  |  |
+| SPINFLIPPER306015   | Unknown |  |  |  |
 | SPRLG               | Off | Off | Manual and VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | STPS350             | LVDCOM | LVDCOM | IOC |  |
 | STSR400             | LVDCOM | LVDCOM | IOC |  |
