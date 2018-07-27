@@ -7,8 +7,8 @@
 | BKHOFF              | TCP | TCP | IOC |  |
 | CCD100              | Off | Off | VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | CONEXAGP            | On | Off | IOC | [3139](https://github.com/ISISComputingGroup/IBEX/issues/3139) |
-| CONTROLSVCS         | Not a real device |  |  |  |
-| COORD               | Not a real device |  |  |  |
+| CONTROLSVCS         | N/A | N/A |  |  |
+| COORD               | N/A | N/A |  |  |
 | COUETTE             | LVDCOM | LVDCOM | IOC |  |
 | CRYVALVE            | Off | Off | VI and docs | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | CYBAMAN             | Off | Off | VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
@@ -17,7 +17,7 @@
 | DELFTDCMAG          | Off | Off | VI |  |
 | DELFTSHEAR          | LVDCOM | LVDCOM | IOC |  |
 | DFKPS               | Off | Off | VIs | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
-| ECLAB               | Not a real device |  |  |  |
+| ECLAB               | N/A | N/A |  |  |
 | EGXCOLIM            | LVDCOM | LVDCOM | IOC |  |
 | EUROTHRM            | Off | Off | VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | FERMCHOP            | Off | Off | Manual and IOC |  |
@@ -56,11 +56,11 @@
 | NEOCERA             | On | Off | Manual and VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | PDR2000             | Off | Off | VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | PIMOT               | On | Off | IOC | [3139](https://github.com/ISISComputingGroup/IBEX/issues/3139) |
-| PSCTRL              | Not a real device |  |  |  |
+| PSCTRL              | N/A | N/A |  |  |
 | RKNDIO              | Off | Off | IOC |  |
 | RKNPS               | Off | Off | Danfysik 8k VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | ROTSC               | Off | Off | Manual and VIs <br/> (HRPD and POLARIS) | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
-| RUNCTRL             | Not a real device |  |  |  |
+| RUNCTRL             | N/A | N/A |  |  |
 | SAMPOS              | LVDCOM | LVDCOM | IOC |  |
 | SCHNDR              | On | Off | IOC | [3139](https://github.com/ISISComputingGroup/IBEX/issues/3139) |
 | SCIMAG3D            | LVDCOM | LVDCOM | IOC |  |
