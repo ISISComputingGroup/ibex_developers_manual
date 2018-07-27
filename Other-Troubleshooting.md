@@ -40,3 +40,12 @@ We encountered this issue in August 2017 on HRPD. Neither SECI nor IBEX could co
 1. Restart the machine if needed (to do this remotely use the command `shutdown -r -t 0`
 
 A similar (but I think unrelated) problem was found in June 2018 on ZOOM. Some ports in a MOXA were found to not communicate with a Julabo. According to both the lights on the MOXA and the MOXA's web interface there was data being transmitted both to and from the device. However, when transmitting to the device (either via hyperterminal or IOC) no actual data was received. Restarting the MOXA had no affect. The problem was ultimately not resolved, the julabos were moved to different ports.
+
+# Can't build any IOCS
+
+```
+process_begin: CreateProcess(NULL, echo Generating runIOC.bat, ...) failed.
+make (e=2): The system cannot find the file specified.
+```
+
+Check if `git/bin` is on your path. If it is, then make will think you are on linux and then the build will fail
