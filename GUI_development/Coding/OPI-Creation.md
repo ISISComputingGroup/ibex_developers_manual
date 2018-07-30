@@ -10,7 +10,8 @@ OPIs live in `ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources`
 
  - Create a new OPI with File -> New  BOY -> OPI File
  - Change to the "OPI Editor" perspective to allow easier editing.
- - Edit the OPI. 
+ - You need to use "OPI Editor" to edit your files, **not** "Display Editor". The later creates a display builder file and not an OPI.
+ - Edit the OPI.
  - Also add an entry to the `opi_info.xml` file which can be found in `resources\opi_info.xml`. Note that some Macros are provided (See below).
 
 ## Consistency - Template OPI
