@@ -17,6 +17,7 @@ Useful information about the Galil can be found on the following pages:
 - [Creating soft motors to control real motors](Creating-soft-motors-to-control-real-motors)
 - [Migrating instrument configurations](Migrating-instrument-configurations)
 - [Galil default parameters](Galil-default-parameters)
+- [Galil homing routines](https://github.com/ISISComputingGroup/EPICS-galil/tree/master/GalilSup/Db)
 
 # Technical information
 
