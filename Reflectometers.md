@@ -24,7 +24,7 @@ In the second case (for POLREF, OFFSPEC), the detector sits on a bench, that can
 
 ![Polerisation mode](reflectometers/polerised_mode.png)
 
-The devices on the beamline either effect the direction of the beam, **active**, or do not **passive**. A slit which blocks the beam is passive because it does change the beams direction. Equipment will usually track the beam path; it might not during initial alignment or for some unusual experiments. This means that an offset needs to be added to the position and angle of each piece of equipment after a path change so that it remains centred and perpendicular/parrallel to the beam. 
+Devices on the beamline are classed as active or passive: **active** devices affect the direction of the beam; **passive** devices do not.  A slit which blocks the beam is passive because it does change the beam direction. Equipment will usually track the beam path; it might not during initial alignment or for some unusual experiments. This means that an offset needs to be added to the position and angle of each piece of equipment after a path change so that it remains centred and perpendicular/parrallel to the beam. 
 
 Beamline equipment can be in the beam or not depending on the mode; e.g. some experiments use a super mirror others don't. Once the beamline equipment has been moved to its tracking position the variables that are used to set the values need to be read back to account for engineering errors. For instance:
 
