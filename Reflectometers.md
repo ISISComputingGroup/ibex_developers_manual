@@ -20,9 +20,9 @@ Generally, the idea is to position the detector at **theta** around the **sample
 
 In the first case (for INTER, CRISP, SURF), the detector slides up and down on a height stage and can be angled to be perpendicular to the incident beam. This means the distance between sample and detector actually varies slightly, however the beam path on these instruments is relatively short so the resultant error is tolerable.
 
-![Polerisation mode](reflectometers/polerised_mode.png)
-
 In the second case (for POLREF, OFFSPEC), the detector sits on a bench, that can be angled, driven up/down, and slide closer/further from the sample, which allows the detector to actually move along a radius around the sample.
+
+![Polerisation mode](reflectometers/polerised_mode.png)
 
 The devices on the beamline either effect the direction of the beam, **active**, or do not **passive**. A slit which blocks the beam is passive because it does change the beams direction. Equipment will usually track the beam path; it might not during initial alignment or for some unusual experiments. This means that an offset needs to be added to the position and angle of each piece of equipment after a path change so that it remains centred and perpendicular/parrallel to the beam. 
 
