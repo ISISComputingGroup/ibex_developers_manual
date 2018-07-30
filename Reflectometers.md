@@ -36,17 +36,17 @@ Beamline equipment can be in the beam or not depending on the mode; e.g. some ex
 
 ### Equipment on the beam
 
-#### Poleriser/Super Mirror
+#### Polariser/Super Mirror
 
 An active component before the sample which changes the angle of the incoming beam
 
 #### Slit
 
-Slits are passive components that can sit anywhere along the beam line. A slits centre is measured from the beam's path.
+Slits are passive components that can sit anywhere along the beam line. The centre of a slit is measured from the beam's path.
 
 #### Analyser
 
-An active component placed after the sample which will split the beam. Some forms on analysers change the beam path horizontally some vertically. In the case of vertically they should be treated like mirrors with an angle.
+An active component placed after the sample which will split the beam. Some forms of analysers change the beam path horizontally, some vertically. In the vertical case they should be treated like mirrors with an angle.
 
 #### Detector
 
@@ -58,8 +58,8 @@ A detector is a passive component that sits at the end of the beam line. There a
 
 - nr mode: just a straight reflection from the ideal sample point. Used for solids and liquids with solids, i.e. things that can be rotated and are not effected by gravity
 - liquids nr: The sample if kept flag and the super mirror is used to make the specular condition correct.
-- polerised nr: set the poleriser at a given angle then run in nr mode but with a different incoming beam angle
-- polerisation analysis: as with nr mode but now after the sample point the beam is split into two and the detector moves to see either beam. 2* Theta is still the angle between the incoming and outgoing beam at the sample point.
+- polarised nr: set the polariser at a given angle then run in nr mode but with a different incoming beam angle
+- polarisation analysis: as with nr mode but now after the sample point the beam is split into two and the detector moves to see either beam. 2* Theta is still the angle between the incoming and outgoing beam at the sample point.
 - disabled: all components are free of geometry constraints and can be used independently.
 
 ### Off Specular vs Specular
