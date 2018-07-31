@@ -1,0 +1,23 @@
+Controls the new PSUs that are going to be used on the Muon Front End.
+
+### Status of the device
+
+The status of the device is encoded in 32 bits. The status of the device depending on which bits are turned on. See page 30 of the manual. 
+
+It returns its status as a string of 8 hexadecimal characters. Each character is directed into its own mbbiDirect PV from which the individual bits can be accessed.
+
+### Faults
+
+Currently (2018-07-31) there is a single binary input PV that is '1' if there is a fault and '0' if not. 
+
+A fault corresponds to one of the ones below with the bit corresponding to them in the device's internal status:
+- Fault condition (bit #1)
+- Mains fault (bit #21)
+- Earth Leakage (bit #22)
+- Earth Fuse (bit #23
+- Regulation Fault (bit #24)
+- DCCT fault (bit #30)
+
+### Errors
+
+The device has no error state but will return error codes if it cannot process the command you have given it. The list of error codes can be found on page 49 of the manual. Currently, the IOC captures the last error code as a string and displays it in the OPI.
