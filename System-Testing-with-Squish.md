@@ -18,7 +18,7 @@ Get a licence key (there are 5 floating licences that can be used by 2 people)
     1. Install
 1. Clone the current tests to your machine (dev is where I put mine)
     ```
-    git clone  https://github.com/ISISComputingGroup/ui_system_tests_trial
+    git clone  https://github.com/ISISComputingGroup/System_Tests_UI_E4.git
     ```
 1. Open the test suites in the IDE
     1. Menu File -> Open Test Suite ..
