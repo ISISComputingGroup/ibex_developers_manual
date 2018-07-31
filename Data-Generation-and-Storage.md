@@ -63,16 +63,32 @@ Not talked about at the meeting but Chris said the data volumes don't seem huge 
 
 1. For autosave and logs-other delete all files older than 1 year. These are not big files so can be kept on the instrument.
 1. For logs-conserver and mysql-msglog delete the data
-1. For logs-ioc, logs-nicos and logs-genie move all files to the archive for saving
+1. For logs-ioc, logs-nicos and logs-genie move all files to the off-data drive for long term saving
 1. For my-sql archive
     1. Dump the schema to csv files with relevant table names.
     1. Create a central database server (one time job)
     1. Empty central database schema of data
     1. Import dumped tables to central database server (ids of all will need changing because of multiple sources)
 
+We then need some on-going actions to ensure the critical machine can continue running:
+
+1. Define a data size for each area of data for each instrument and an action to take when the area get too large. Run a process on the machine which will check on the size every hour. At 90% of size send an email. Suggested size and action:
+
+Data type |  What to do if size is to big
+--------  | ------------------- 
+Autosave  | delete oldest files 
+config    | email if bigger than 1GB 
+logs-ioc, nicos and genie python | delete oldest files
+logs-conserver | delete oldest files
+mysql-msg_log | Create a ticket to think about this.
+mysql-archive | Create a ticket to think about this.
+mysql (all others) | Create a ticket to think about this.
+
 Final actions:
 
 1. Investigate the GUI workspace and see if we need to do anything with this.
+1. Investigate options for database critical size
 1. Create a separate labview log for messages that current are written to the mysql-msglog and treat it like an IOC log.
 1. Collect a new sample of data over the next cycle. (Collect weekly but for more instruments)
 1. Agree above things to do on shutdown create tickets to implement and automate these
+1. Agree critical things to do all the time and create tickets to implement these
