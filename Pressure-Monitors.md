@@ -3,3 +3,5 @@
 * [TPG26x](TPG26x)
 
 * [CCD100](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/CCD100)
+
+* [Omega IBTHX](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Omega_IBTHX)
