@@ -47,8 +47,6 @@ Often these files are calculated from xml files using the sample changer support
 
 # OPI
 
-If you want to see the monitor point on a synoptic. Create a synoptic with a component of type "movingmonitor" with the component target name of "In Out Monitor". To use monitor 3 which is currently set up for motor MTR0601 the macros should be set to:
-* M = 3
-* CHANNUM = ? (I set it to 3)
-* MM = MOT:MTR0601
-(check the `motionsetpoints.cmd` file to see what corresponds to what)
+There are two motion set point OPIs:
+* Motion Set Point (Few): For setpoints with only 3 or 4 positions
+* Motion Set Point: For setpoints with many positions
