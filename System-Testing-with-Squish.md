@@ -27,7 +27,7 @@ Get a licence key (there are 5 floating licences that can be used by 2 people)
     1. Ensure that the client has been built with build.bat
     1. Edit -> Server Settings -> Manage AUTs ...
     1. Select Mapped AUTs and click Add...
-    1. Locate the executable from the built eclipse project (e.g. ibex-client in `ibex_gui\bas\uk.ac.stfc.ibex.client.product\target\products\ibex.product\win32\win32\x86_64\ibex_gui.exe`
+    1. Locate the executable from the built eclipse project (e.g. ibex-client in `ibex_gui\base\uk.ac.stfc.isis.ibex.e4.client.product\target\products\ibex.product\win32\win32\x86_64`
 1. Other application setting
     1. Under Edit > Preferences
     1. Under Squish-> Test Creation select Python as the default language
