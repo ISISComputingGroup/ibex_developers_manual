@@ -72,7 +72,7 @@ Not talked about at the meeting but Chris said the data volumes don't seem huge 
 
 We then need some on-going actions to ensure the critical machine can continue running:
 
-1. Define a data size for each area of data for each instrument and an action to take when the area get too large. Run a process on the machine which will check on the size every hour. At 90% of size send an email. Suggested size and action:
+1. Define a data size for each area of data for each instrument and an action to take when the area get too large. Run a process on the machine which will check on the size every hour. At 90% of size send an email. Suggested actions:
 
 Data type |  What to do if size is to big
 --------  | ------------------- 
