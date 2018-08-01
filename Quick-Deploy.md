@@ -4,4 +4,6 @@ Use the deployment script for a quick deploy. It is found in [Ibex Utils](https:
 
 Script is `installation_and_upgrade/instrument_install_latest_build_only.bat`.
 
-On demo you must then run create ICP binaries
+On demo (and any instrument which has labview modules but needs icp binaries) you must then run:
+
+ ...\EPICS\create_icp_binaries.bat
