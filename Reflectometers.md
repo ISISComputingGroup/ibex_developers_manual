@@ -58,16 +58,15 @@ A detector is a passive component that sits at the end of the beam line. There a
 
 ### Modes
 
-- nr mode: just a straight reflection from the ideal sample point. Used for solids and liquids with solids, i.e. things that can be rotated and are not effected by gravity
-- liquids nr: The sample if kept flag and the super mirror is used to make the specular condition correct.
-- polarised nr: set the polariser at a given angle then run in nr mode but with a different incoming beam angle
-- polarisation analysis: as with nr mode but now after the sample point the beam is split into two and the detector moves to see either beam. 2* Theta is still the angle between the incoming and outgoing beam at the sample point.
-- disabled: all components are free of geometry constraints and can be used independently.
+- Neutron Reflection (NR) mode: just a straight reflection from the ideal sample point. Used for solids and liquids with solids, i.e. things that can be rotated and are not effected by gravity
+- Liquids NR: Since liquids cannot be angled, the super mirror is instead used to angle the incoming beam at the sample and make the specular condition correct for different theta.
+- Polarised NR: Like NR, but with a polarising supermirror in the beam path set to a given angle, which changes the angle of the incoming beam at the sample point.
+- Polarisation Analysis (PA) mode: Like NR but now after the sample point, the beam is split into two by an analyser and the detector moves to see either beam. 2* Theta is still the angle between the incoming and outgoing beam at the sample point.
+- Disabled: All beamline components are unlinked from one another's geometry constraints and can be moved independently.
 
 ### Off Specular vs Specular
 
 In Specular mode the point detector is used whereas in off specular the 1D detector is used.
-
 
 
 ## Questions
