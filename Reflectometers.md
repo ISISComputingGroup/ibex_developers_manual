@@ -54,7 +54,7 @@ An active component placed after the sample which will split the beam. Some form
 
 A detector is a passive component that sits at the end of the beam line. There are at least two common types point and 1 D detectors.
 
-## Experimetnal Modes
+## Experimental Modes
 
 ### Modes
 
