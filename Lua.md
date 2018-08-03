@@ -28,7 +28,7 @@ As well as being able to read/write PVs there is also some asyn integration into
 so you can read/write/set asyn parameters 
 from lua command line or script record, or even talk to a device by creating an asyn IP port
 and sending strings. See the documentation directory in lua support module  and the 
-exampel scripts directory in iocBoot
+example scripts directory in iocBoot
 
 To use 
   
