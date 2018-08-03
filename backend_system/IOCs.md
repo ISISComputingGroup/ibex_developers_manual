@@ -68,6 +68,7 @@ If you're not creating a StreamDevice IOC or you you would like to know how an I
 * [Complexity of LabVIEW Drivers](Complexity-of-LabVIEW-Drivers)
 * [Typical start up log for an ioc](IOC-Start-Example)
 * [Some Design thoughts for a serial/Ethernet IOC](Some-Design-thoughts-for-a-serial-or-Ethernet-IOC)
+* [Reducing build dependencies for older iocs](Reducing-Build-Dependencies)
 
 # Specific IOC Information
 
