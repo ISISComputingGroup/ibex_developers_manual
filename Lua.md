@@ -1,10 +1,9 @@
-Lua scripting
-
 I've added the EPICS Lua support module to our build system. Lua is a scripting language
 designed to be embedded, it has a small footprint and is reasonably powerful. It would
 provide an alternative to jumping through hoops in st.cmd syntax but also provides a 
 few other options. All iocsh commands are imported into lua and so you can do things
 like:
+
 '''
 for index=1,10,1
 do
@@ -12,10 +11,13 @@ do
     iocsh.dbLoadRecords("test.db", string.format("P=xxx:,Q=%d", index))
 end
 '''
+
 You execute files from st.cmd using:
+
 '''
 luash("file.lua")
 '''
+
 or just typing "luash" puts you into an interactive lua shell.
 
 The lua script record is like a calcout record but can execute lua script. It might be
