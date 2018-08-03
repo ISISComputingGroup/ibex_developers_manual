@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [Creating and Basics of IOCs](IOCs) >[Reducing build dependencies](Reducing-Build-Dependencies)
+
 This is a page describing how to reduce dependencies in our EPICS build. Currently we have a MASTER_RELEASE file at the top level that, though convenient, means the build system does a lot of cross-checking for things it doesn't need, disabling checkRelease can speed this up.  
 
 A simple way to reduce dependencies is to remove the 
