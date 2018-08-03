@@ -4,19 +4,19 @@ provide an alternative to jumping through hoops in st.cmd syntax but also provid
 few other options. All iocsh commands are imported into lua and so you can do things
 like:
 
-'''
+```
 for index=1,10,1
 do
     print(string.format("Loading instance: %d", index))
     iocsh.dbLoadRecords("test.db", string.format("P=xxx:,Q=%d", index))
 end
-'''
+```
 
 You execute files from st.cmd using:
 
-'''
+```
 luash("file.lua")
-'''
+```
 
 or just typing "luash" puts you into an interactive lua shell.
 
@@ -32,8 +32,8 @@ exampel scripts directory in iocBoot
 
 To use 
   
-'''
+```
 add    LUA=$(SUPPORT)/lua/master     to configure/RELEASE
 add    luaSupport.dbd                to the IOC Makefile DBD list
 add    lua   and   asyn              to the IOC Makefile   _LIBS    list
-'''
+```
