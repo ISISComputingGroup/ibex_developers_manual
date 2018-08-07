@@ -68,6 +68,24 @@ A detector is a passive component that sits at the end of the beam line. There a
 
 In Specular mode the point detector is used whereas in off specular the 1D detector is used.
 
+### Components in a mode
+
+Table of our understanding for each mode what is in the beam and what is tracking the beam. States are:
+
+- O: Out of the beam
+- I: In the beam but not tracking it
+- T: In the beam and tracking it
+
+Mode      | S1 | Poleriser | S2 | sample stack | ideal sample point | S3 | analyser | S4 | Detector
+---       | --- | -----    |  --- | ----       | ----               | --- | ---     | --- | ----
+NR        | T  | O         | T  | I            | T                  | T  | O        | T  | T  
+polerised | T  | T         | T  | I            | T                  | T  | O        | T  | T  
+
+
+In sim language
+
+Mode | S1 Height above beam |  Poleriser angle and height above 
+
 
 ## Questions
 
