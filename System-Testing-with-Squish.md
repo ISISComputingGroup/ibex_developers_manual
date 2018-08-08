@@ -97,6 +97,11 @@ Hints, tips and gotchas for writing tests:
 * Use `menu` module to access menus because if a menu is interrupted then you want it to try again at the top level menu.
 * Use `generate_config_name` to generate a config name so that it will be ignored by git and cleaned up by the system test
 * If you open a dialogue capture it using a context manager. You could consider adding an option for OK and Cancel.
+* If you need to select a perspective button the object picker will set it using the index (`occurrence`) however these buttons might change their positions it is better to select them based on their text. To do this:
+    1. Open the object map.
+    1. Click on the button object definition (you can use the search at the top to find it).
+    1. In the properties tab change `occurrence` to `text` and the value to the text on the button.
+    1. Save it and check it works by clicking highlight object; button should flash red.
 
 # Creating/Reviewing a Test when I don't have a Licence
 
