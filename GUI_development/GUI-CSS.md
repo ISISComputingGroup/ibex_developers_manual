@@ -26,7 +26,7 @@ OPIs are the main way that users interact with an IOC. They are GUIs created in 
 
 * [OPI Programming tips and limitations](CSS-programming-tips-and-limitations)
 
-* [Converting OPIs from old to new style: tips and gotchas](Converting-to-New-Style-Tips-and-Gotchas)
+* [Converting OPIs from old to new style: tips and gotchas](Converting-OPI-to-New-Style-Tips-and-Gotchas)
 
 # Other
 
