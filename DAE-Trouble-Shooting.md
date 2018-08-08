@@ -461,7 +461,13 @@ From an issue in Ticket https://github.com/ISISComputingGroup/IBEX/issues/3099 -
 [2018-04-09 15:26:49] : Exception occurred.
 ```
 
-The issue here is that the default simulated DAE has 2 detector cards in it, but the real DAE has more cards. I've edited `isisicp.properties` to create more cards so it should now work. Note this is not an ibex issue - it will also affect DAE simulation mode under SECI.
+The issue here is that the default simulated DAE has 2 detector cards in it, but the real DAE has more cards. To fix edit `isisicp.properties` in Labview modules to create more cards. Note this is not an ibex issue - it will also affect DAE simulation mode under SECI. The number of cards on each crate is given by the maximum missing card for the crate (see log), more crates can be added as well as cards. An example from wish with 3 crates, 10, 10 and 12 card per crate is:
+
+```
+isisicp.simulation.detcards.crate0.number = 10
+isisicp.simulation.detcards.crate1.number = 10
+isisicp.simulation.detcards.crate2.number = 12
+```
 
 ## DAE3 does not start 
 
