@@ -51,7 +51,7 @@ The HIFI Cryomag | Eilidh Southren | Nov 2017
 Python 2 vs. Python 3 | David Keymer | Dec 2017
 The RB Numbering System | Matt Clarke | Dec 2017
 
-# 2018
+### 2018
 Topic | Presenter | Date
 ----- | --------- | ----
 System Testing with Squish | Adrian Potter | Jan 2018
