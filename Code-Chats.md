@@ -34,6 +34,8 @@ User Interface Heuristics | Thomas Lohnert | Nov 2016
 How to Read ISIS LabVIEW Drivers | Kathryn Baker | Nov 2016
 
 ### 2017
+Topic | Presenter | Date
+----- | --------- | ----
 MVVM Pattern | Dominic Oram | Feb 2017
 Collision Detection | Jon Elmer | Feb 2017
 IOC Testing Framework & Emulators | Tom Willemsen | Jul 2017
@@ -50,6 +52,8 @@ Python 2 vs. Python 3 | David Keymer | Dec 2017
 The RB Numbering System | Matt Clarke | Dec 2017
 
 # 2018
+Topic | Presenter | Date
+----- | --------- | ----
 System Testing with Squish | Adrian Potter | Jan 2018
 Threading | Tom Willemsen | Jan 2018
 Galil Motors | Kathryn Baker | Feb 2018
