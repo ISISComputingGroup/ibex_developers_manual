@@ -4,7 +4,7 @@ Controls the new PSUs that are going to be used on the Muon Front End.
 
 The status of the device is encoded in 32 bits. The status of the device depending on which bits are turned on. See page 30 of the manual. 
 
-It returns its status as a string of 8 hexadecimal characters. Each character is directed into its own mbbiDirect PV from which the individual bits can be accessed.
+The device returns its status as an 8 digit 0-padded hexadecimal number. Each digit is directed into its own mbbiDirect PV from which the individual bits can be accessed.
 
 ### Faults
 
