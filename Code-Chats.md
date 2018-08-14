@@ -5,6 +5,7 @@
 Code chats occur on a semi-regular monthly basis within the group at ISIS. Although they were originally intended to be presentations focused on a specific part of the IBEX GUI they often cover other subjects that may be considered part of the backend.
 
 ## Previous Code Chats
+### 2015
 
 Topic | Presenter | Date
 ----- | --------- | ----
@@ -16,6 +17,10 @@ Java Collections, Iterators and Streams | David Keymer | Nov 2015
 Design Patterns in IBEX | Dominic Oram | Dec 2015
 Eclipse Extensions | Dominic Oram | Dec 2015
 Observables and Writables in IBEX (two parts) | Ian Bush | Dec 2015
+
+### 2016
+Topic | Presenter | Date
+----- | --------- | ----
 Final | Matt Clarke | Jan 2016
 Java Quiz | Matt Clarke | Jan 2016
 Checkstyle Quiz | Dominic Oram | Jan 2016
@@ -27,6 +32,8 @@ Synchronized & Volatile | Thomas Lohnert | Aug 2016
 RCPTT - Tips and Tricks | Dominic Oram | Aug 2016
 User Interface Heuristics | Thomas Lohnert | Nov 2016
 How to Read ISIS LabVIEW Drivers | Kathryn Baker | Nov 2016
+
+### 2017
 MVVM Pattern | Dominic Oram | Feb 2017
 Collision Detection | Jon Elmer | Feb 2017
 IOC Testing Framework & Emulators | Tom Willemsen | Jul 2017
@@ -41,6 +48,8 @@ The DAE | Freddie Akeroyd | Nov 2017
 The HIFI Cryomag | Eilidh Southren | Nov 2017
 Python 2 vs. Python 3 | David Keymer | Dec 2017
 The RB Numbering System | Matt Clarke | Dec 2017
+
+# 2018
 System Testing with Squish | Adrian Potter | Jan 2018
 Threading | Tom Willemsen | Jan 2018
 Galil Motors | Kathryn Baker | Feb 2018
