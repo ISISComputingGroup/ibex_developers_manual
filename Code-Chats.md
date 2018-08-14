@@ -69,11 +69,12 @@ All presentations should be uploaded to the SharePoint site [here](https://www.f
 
 Topic | Presenter | Date
 ----- | --------- | ----
+Java 8 | Tom Willemsen | Sep 2018
+
 ## Proposed Future Code Chats
 
 Idea | Proposer | Proposed Speaker
 ---- | -------- | ----------------
 Jenkins | David Keymer | ?
 Sharing IOCs | Dominic Oram | ?
-Java 8 | Dominic Oram | ?
 CEDA placement: MOLES Reskin | Thomas Lohnert | Thomas Lohnert
