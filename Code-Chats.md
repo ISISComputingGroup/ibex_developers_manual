@@ -76,3 +76,4 @@ Idea | Proposer | Proposed Speaker
 Jenkins | David Keymer | ?
 Sharing IOCs | Dominic Oram | ?
 Java 8 | Dominic Oram | ?
+CEDA placement: MOLES Reskin | Thomas Lohnert | Thomas Lohnert
