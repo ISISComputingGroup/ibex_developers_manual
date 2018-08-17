@@ -78,3 +78,23 @@ Idea | Proposer | Proposed Speaker
 Jenkins | David Keymer | ?
 Sharing IOCs | Dominic Oram | ?
 CEDA placement: MOLES Reskin | Thomas Lohnert | Thomas Lohnert
+
+
+## Cake Rota
+Person | Date
+------ | ----
+Thomas | Aug 18
+Dom |
+Freddie |
+Tom |
+Michal |
+Alistair |
+Patrik |
+Liam |
+John |
+David |
+Richard |
+Jack |
+Rory |
+Gareth |
+Kathryn |
