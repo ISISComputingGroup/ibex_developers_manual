@@ -71,7 +71,7 @@ Topic | Presenter | Date
 ----- | --------- | ----
 Java 8 | Tom Willemsen | Sep 2018
 
-## Proposed Future Code Chats
+### Proposed Future Code Chats
 
 Idea | Proposer | Proposed Speaker
 ---- | -------- | ----------------
