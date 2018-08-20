@@ -15,11 +15,14 @@ To run this IOC you will need to install the DAQMX binaries - available on the n
 ### RB2 mode change
 
 - RB2 is a power supply that can be put into three distinct modes: BEND1 (beam goes one way), BEAM2 (the other way), and SEPTUM (beam splits both ways). RB2, although one physical supply, has two control boards. The first control board (called "RB2" in our system) supplies current for either BEND1, BEND2, or half of SEPTUM mode. The second control board ("RB2-2" in our system) is *only* used in SEPTUM mode and supplies the other half of the current.
-  * We check that BOTH RB2 and RB2-2 are powered off before allowing an RB2 mode change to take place.
+- We check that BOTH RB2 and RB2-2 are powered off before allowing an RB2 mode change to take place.
 
 ### Port 3/4 changeover
 
-- The port 3/4 changeover sequence is similar in that certain power supplies must be OFF before the 
+- The port 3/4 changeover sequence is similar in that RQ18, 19 and 20 power supplies must be OFF before the  sequence can complete. There are three sets of rotary switches that each have 3 positions - Ports 3, 4, and 5 (port 5 does not exist - it is a dummy port).
+- These switches redirect power supplies to different magnets based on the mode. RQ 18, 19 and 20 get redirected to RQ 21, 22 and 23 respectively. The underlying power supply stays the same. The switches are controlled by the PLC which drives the changeover logic.
+- It is possible for these switches to get out of sync with each other - see debugging section below
+- The switches are located behind a grille, in a corner between port 3 and 4, near some servers and HV power supplies. There are LEDs to say which mode each switch is currently in, which are visible through the grille. To access the switches physically you need a permit - contact Tim Carter.
 
 # Debugging
 
