@@ -38,7 +38,7 @@ The motors currently used at ISIS are:
 * [Galil](Galil) - This is the most widely used motor type.
 * [SMC](SMC)
 * [Linmot](Linmot)
-* [McLennan](McLennan)
+* [McLennan](McLennan-motors)
 * [Beckhoff](Beckhoff)
 * [SM300](SM300)
 
