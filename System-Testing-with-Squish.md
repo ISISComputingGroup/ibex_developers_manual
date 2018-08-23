@@ -141,3 +141,12 @@ when starting the GUI.
 ### Restart after a Power Cut
 
 After a power cut you will need to log into the machine via RDP and then disconnect using the shortcut on the desktop.
+
+### Error in tests
+
+To tack the error we find in squish please add any errors you see to this chart. Remove the error when you think it is fixed:
+
+Frequency | Error 
+----  | -----
+1     | When getting blocks it failed to get all children of one of the components. `ValueError: need more than 0 values to unpack. C:\Jenkins\workspace\System_Tests_Squish\suite_configuration_tests\tst_can_add_edit_and_delete_block_to_current_config\test.py: 73
+C:\Jenkins\workspace\System_Tests_Squish\global_scripts\instrument_blocks.py: 25`
