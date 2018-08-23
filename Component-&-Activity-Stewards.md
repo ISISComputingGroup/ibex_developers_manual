@@ -23,6 +23,8 @@ IBEX GUI | Thomas |
 [Delay tickets](Delayed-tickets) | John |
 CSS & Phoebus | Dom |
 EPICS base and support modules | Freddie |
+LOQ | Alistair
+TOSCA | Rory
 
 <a name="definitionSteward"></a>
 ## Definition of the role of Component / Activity Steward
