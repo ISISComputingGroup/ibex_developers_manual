@@ -6,6 +6,8 @@ These are the list of categories for an IOC. The IOC can appear in multiple cate
 
 [Cryogenics](Cryogenics)
 
+[DAQ](Daq)
+
 [Gas and liquid handling systems](Gas-And-Liquid-Handling-Systems)
 
 [Imaging Cameras](Imaging-Cameras)
