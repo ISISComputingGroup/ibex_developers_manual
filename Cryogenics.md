@@ -59,7 +59,7 @@ The 2T 3D vector magnet is manufactured by Scientific Magnetics (i.e. not Oxford
    * we interface with these via lvDCOM (See [#1398](https://github.com/ISISComputingGroup/IBEX/issues/1398))
 
 ### Helium Level Gauge
-Does what is says on the tin - measures the level of helium in a cryostat.
+Does what it says on the tin - measures the level of helium in a cryostat.
    * support for Cryogenics Ltd He Level Gauge  - See [#2350](https://github.com/ISISComputingGroup/IBEX/issues/2350)
 
 ### Other related tickets:
