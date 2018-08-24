@@ -148,4 +148,4 @@ To tack the error we find in squish please add any errors you see to this chart.
 
 Frequency | Error 
 ----  | -----
-1     | When getting blocks it failed to get all children of one of the components. `ValueError: need more than 0 values to unpack. ... tst_can_add_edit_and_delete_block_to_current_config\test.py: 73, instrument_blocks.py: 25`
+2     | When getting blocks it failed to get all children of one of the components. `ValueError: need more than 0 values to unpack. ... tst_can_add_edit_and_delete_block_to_current_config\test.py: 73, instrument_blocks.py: 25`
