@@ -6,6 +6,7 @@ IOC for devices connected with cryogenic.
 * [Triton](Triton)
 
 ## Information about Low Temperature Devices
+Use the information below determine which tickets/IOCs relate to various types of low temperature device.  For example, if you are asked to add a Variox cryostat to a configuration, look for Variox below to see that you need to use two IOCs (one for the ITC, one for the ILM).
 
 ### Closed Cycle Refrigerators (CCRs)
 These are controlled using Eurotherms.  No need to communicate directly with the CCR itself.
@@ -61,6 +62,9 @@ The 2T 3D vector magnet is manufactured by Scientific Magnetics (i.e. not Oxford
 ### Helium Level Gauge
 Does what it says on the tin - measures the level of helium in a cryostat.
    * support for Cryogenics Ltd He Level Gauge  - See [#2350](https://github.com/ISISComputingGroup/IBEX/issues/2350)
+
+The Oxford Instruments Intelligent Level Meter (ILM) (see [#1390](https://github.com/ISISComputingGroup/IBEX/issues/1390)) is also a type of He level gauge.
+
 
 ### Other related tickets:
 * See [#1286](https://github.com/ISISComputingGroup/IBEX/issues/1286)
