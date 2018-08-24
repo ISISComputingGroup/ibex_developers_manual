@@ -63,6 +63,6 @@ Does what it says on the tin - measures the level of helium in a cryostat.
    * support for Cryogenics Ltd He Level Gauge  - See [#2350](https://github.com/ISISComputingGroup/IBEX/issues/2350)
 
 ### Other related tickets:
-See [#1286](https://github.com/ISISComputingGroup/IBEX/issues/1286)
-See [#1287](https://github.com/ISISComputingGroup/IBEX/issues/1287)
-See [#1392](https://github.com/ISISComputingGroup/IBEX/issues/1392)
+* See [#1286](https://github.com/ISISComputingGroup/IBEX/issues/1286)
+* See [#1287](https://github.com/ISISComputingGroup/IBEX/issues/1287)
+* See [#1392](https://github.com/ISISComputingGroup/IBEX/issues/1392)
