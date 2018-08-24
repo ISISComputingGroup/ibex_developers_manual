@@ -19,8 +19,7 @@ These are manufactured by Oxford Instruments (OI).  They are controlled by 2 dev
    * Intelligent Level Meter (ILM) (See [#1390](https://github.com/ISISComputingGroup/IBEX/issues/1390))
 
 ### ISISStat
-Controlled by a Mercury ITC
-See [#1199](https://github.com/ISISComputingGroup/IBEX/issues/1199)
+Controlled by a Mercury ITC (See [#1199](https://github.com/ISISComputingGroup/IBEX/issues/1199))
 
 A Mercury ITC may or may not be the same thing as an Oxford Instruments ITC. <br>
 (**Can someone please clarify: is there any difference between a Mercury ITC and an OI ITC?**)
