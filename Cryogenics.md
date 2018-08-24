@@ -52,11 +52,12 @@ The 9T Chopper magnet is controlled by 3 devices:
    * Intelligent Power Supply (IPS) [#1391](https://github.com/ISISComputingGroup/IBEX/issues/1391)
    * Intelligent Temperature Controller (ITC) (See [#1389](https://github.com/ISISComputingGroup/IBEX/issues/1389), [#3189](https://github.com/ISISComputingGroup/IBEX/issues/3189))
    * Intelligent Level Meter (ILM) (See [#1390](https://github.com/ISISComputingGroup/IBEX/issues/1390))
+
 See also [#2765](https://github.com/ISISComputingGroup/IBEX/issues/2765)
 
 ### 2T 3D Vector magnet 
 The 2T 3D vector magnet is manufactured by Scientific Magnetics (i.e. not Oxford Instruments) so it does not use ILM, IPS, ITC.  It has its own control system for which the manufacturer has provided LabVIEW VIs:
-   * we interface with these via lvDCOM [#1398](https://github.com/ISISComputingGroup/IBEX/issues/1398)
+   * we interface with these via lvDCOM (See [#1398](https://github.com/ISISComputingGroup/IBEX/issues/1398))
 
 ### Other related tickets:
 See [#1286](https://github.com/ISISComputingGroup/IBEX/issues/1286)
