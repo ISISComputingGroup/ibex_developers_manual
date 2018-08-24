@@ -58,6 +58,10 @@ See also [#2765](https://github.com/ISISComputingGroup/IBEX/issues/2765)
 The 2T 3D vector magnet is manufactured by Scientific Magnetics (i.e. not Oxford Instruments) so it does not use ILM, IPS, ITC.  It has its own control system for which the manufacturer has provided LabVIEW VIs:
    * we interface with these via lvDCOM (See [#1398](https://github.com/ISISComputingGroup/IBEX/issues/1398))
 
+### Helium Level Gauge
+Does what is says on the tin - measures the level of helium in a cryostat.
+   * support for Cryogenics Ltd He Level Gauge  - See [#2350](https://github.com/ISISComputingGroup/IBEX/issues/2350)
+
 ### Other related tickets:
 See [#1286](https://github.com/ISISComputingGroup/IBEX/issues/1286)
 See [#1287](https://github.com/ISISComputingGroup/IBEX/issues/1287)
