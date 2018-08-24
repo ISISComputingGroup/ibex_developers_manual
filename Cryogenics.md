@@ -36,7 +36,7 @@ Triton dilution fridges are "parasitic" devices.  They need to be used in conjun
       - controlled via Eurotherm (see above)
       - See also [#2886](https://github.com/ISISComputingGroup/IBEX/issues/2886), [#2915](https://github.com/ISISComputingGroup/IBEX/issues/2915)
 
-**Note:** it may be possible to run a Triton dilution fridge is a non-parasitic fashion, but we haven't encountered this situation (yet).  In practice, the Triton IOC might actually be indifferent to parasitic and non-
+**Note:** it may be possible to run a Triton dilution fridge in a non-parasitic fashion, but we haven't encountered this situation (yet).  In practice, the Triton IOC might actually be indifferent to parasitic and non-
 parasitic modes of operation. 
 
 ### 7.5T magnet
