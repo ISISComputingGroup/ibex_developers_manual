@@ -2,10 +2,22 @@
 
 The DAE, when in event mode, can serve up an [AreaDetector](https://github.com/areaDetector/ADCore) image as a live view of the neutron data. This can be viewed using an ImageJ plugin or as an Intensity plot in CSS.
 
-## Simulating the live view
+Using the liveview device screen you should be able to add a view with the DET macro as 1 or 2
 
-Currently the live view, or a simulation, isn't in the standard DAE IOC. An area detector simulation exists [here](https://github.com/areaDetector/ADSimDetector) or, with a couple of ISIS specific modifications [here](https://github.com/ISISComputingGroup/EPICS-areaDetector/tree/master/ADSimDetector). To run this:
-* Run the IOC located [here](https://github.com/ISISComputingGroup/EPICS-areaDetector/tree/master/ADSimDetector/iocs/simDetectorIOC/iocBoot/iocSimDetector). Note: the default `IOCEXE` path in `runIOC.bat` created by `make` does not work for areaDetector. You need to replace "%IOCDIRNAME:~3%" with "simDetectorApp"
-* Start 'taking' data with `caput %MYPVPREFIX%DAE:cam1:Acquire 1`
-* Data should now be available on `%MYPVPREFIX%DAE:image1:ArrayData`
-* You can control the data update rate by writing to `%MYPVPREFIX%DAE:cam1:AcquireTime` (the DAE itself tends to update every ~1 second)
+You need to run the DAE in event mode, this will need an event mode wiring table and also defining a second time regime in the time channels section. 
+ 
+Livewview PVs have a root at %MYPVPREFIX%DAE:AD1 and %MYPVPREFIX%DAE:AD2 for the two detector case
+
+You first need to tell it the spectra to use for the liveview
+
+caput %MYPVPREFIX%DAE:AD1:INTG:SPEC:START:SP 11
+caput %MYPVPREFIX%DAE:AD1:SizeX 80
+caput %MYPVPREFIX%DAE:AD1:SizeY 80
+
+will tell it to start from spectrum 11 and use consecutive spectra as an 80x80 grid
+
+Liveview is disabled by default, it is enabled with
+
+caput %MYPVPREFIX%DAE:AD1:INTG:ENABLE:SP 1
+
+depending on the number of spectra, MAX_ARRAY_BYTES may need adjusting
