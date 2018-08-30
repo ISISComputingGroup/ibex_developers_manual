@@ -16,7 +16,7 @@
 * [CSS book](http://cs-studio.sourceforge.net/docbook/ch14.html)
 
 # Architectural overview #
-The architecture of the alarm system as used in CSStudio is presented in detail in [Chapter 14](http://cs-studio.sourceforge.net/docbook/ch14.html) of the CSS book. The implementation used by ISIS is very similar though a few features which we do not need have been removed. Overall, the architecture is very similar to that of the [wiki:IOCLog IOC log message system]. 
+The architecture of the alarm system as used in CSStudio is presented in detail in [Chapter 14](http://cs-studio.sourceforge.net/docbook/ch14.html) of the CSS book. The implementation used by ISIS is very similar though a few features which we do not need have been removed. Overall, the architecture is very similar to that of the [IOC log](Ioc-message-logging). 
 
 The configuration of an alarm system, that is, the set of PVs which are to be monitored, is stored in a relational database. The configuration can be a flat list of PVs or the PVs can be formed into a hierarchy with systems and sub-systems.
 
