@@ -16,3 +16,7 @@ If the issue persists, do a `git status` in your local config repository, and if
 If your instrument appears to start but the GUI shows `NDWxxxx is UNKNOWN`, check what the current configuration is (in the bottom right of the GUI). If it shows `Current configuration: ` rather than `Current configuration: unknown`, you need to go into the configurations menu and choose a configuration (or create one).
 
 This can happen if the configurations are edited on the filesystem - the blockserver then looks for the last configuration, can't find it, so goes into this state.
+
+## Restarting the blockserver  
+
+Since the blockserver is essentially and IOC, it can be stopped and restarted in the same way. See [this page](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Running-IOCs) for more details on restarting.  
