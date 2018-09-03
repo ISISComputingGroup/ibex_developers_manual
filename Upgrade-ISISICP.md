@@ -1,6 +1,6 @@
 > [Wiki](Home) > [Deployment](Deployment) > [Deployment on an Instrument Control PC](Deployment-on-an-Instrument-Control-PC) > [Upgrade ISISICP](Upgrade-ISISICP)
 
-1. Check isisicp and isisdatasvr processes are not running. You cannot kill them if ISISDAE-IOC-01 is running so you need to stop this separately (and stop procserv restarting them) or run stop_ibex_server  
+1. Check `isisicp` and `isisdatasvr` processes are not running. You cannot kill them if ISISDAE-IOC-01 is running so you need to stop this separately (and stop procserv restarting them) or run stop_ibex_server  
 1. Backup existing installation: copy to `c:\data\old\isisdae_backup_YYY_MM_DD`
     - `c:\LabVIEW Modules\dae`
     - `c:\data\recovery.run`
