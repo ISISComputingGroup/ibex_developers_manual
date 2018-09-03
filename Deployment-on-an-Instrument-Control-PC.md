@@ -32,6 +32,7 @@ Steps are marked with **bold** prefixes to indicate the following:
     - Be warned the upgrade runs in 3 steps and so will claim to have finished the upgrade 3 times
     - After backup of EPICS step do database disc space clear using [Database Troubleshooting Reducing database disc space](Database-Troubleshooting#Reducing-database-disc-space)
     - Ensure that after the upgrade configuration that galil mtrctrl macro has been set especially if the IP addresses are set in globals.txt
+    - Do not remove any SECI icons from the task list if this is not the first time install
 
 # Steps using Manual Steps
 ## Preparatory Steps for Client and Server
