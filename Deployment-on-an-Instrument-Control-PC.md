@@ -34,7 +34,11 @@ Steps are marked with **bold** prefixes to indicate the following:
     - After backup of EPICS do the [upgrade ISISICP](Upgrade-ISISICP)
     - Ensure that after the upgrade configuration that galil mtrctrl macro has been set especially if the IP addresses are set in globals.txt
     - Do not remove any SECI icons from the task list if this is not the first time install
+    - Ignore the section about copying ibex_system_boot.bat to ProgramData and so the step below instead
 
+## Creating IBEX auto-startup 
+- Go to start -> all programs and right click on the startup folder and select “open”
+- In the directory do new -> shortcut and browse to c:\instrument\apps\epics and choose ibex_system_boot.bat
 
 # Steps using Manual Steps
 ## Preparatory Steps for Client and Server
