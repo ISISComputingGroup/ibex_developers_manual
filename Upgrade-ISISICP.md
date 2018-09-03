@@ -12,7 +12,7 @@
       cd c:\LabVIEW Modules\dae
       update_inst.cmd
    ```
-This can take a while. You will get various messages. The following are OK:
+This can take a while (several minutes). You will get various messages. The following are OK:
 1. access denied messages for `ss.ini`
 1. If it can't replace the file `isisicp_extMC.dll` as it is open
 1. messages about establishing working folders for projects
