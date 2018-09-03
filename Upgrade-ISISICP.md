@@ -4,7 +4,7 @@
 1. Backup existing installation: copy to `c:\data\old\isisdae_backup_YYY_MM_DD`
     - `c:\LabVIEW Modules\dae`
     - `c:\data\recovery.run`
-    - `c:\data\selog.* (.sq3 .sq3-shm and .sh3-wal files)`
+    - `c:\data\selog.*` (.sq3 .sq3-shm and .sh3-wal files)
 
 1. Open a command window
 1. Run:
@@ -25,7 +25,7 @@ As printed to screen at the end of script, open a command terminal as administra
    register_programs.cmd
    ```
 
-Now delete `c:\data\selog.* (.sq3 .sq3-shm and .sh3-wal files)`
+Now delete `c:\data\selog.*` (.sq3 .sq3-shm and .sh3-wal files)
 
 The following is a log from update_inst going OK
 ```
