@@ -1,4 +1,4 @@
-> [Wiki](Home) > [Deployment](Deployment) > Deployment on an Instrument Control PC
+> [Wiki](Home) > [Deployment](Deployment) > [Deployment on an Instrument Control PC](Deployment-on-an-Instrument-Control-PC)
 
 This document describes the steps necessary to install/upgrade IBEX on an Instrument control PC.  Most of these steps are superseded by the install script (but we are not quite ready to commit to this).  This document is the reference for deployment. 
 Steps are marked with **bold** prefixes to indicate the following:
