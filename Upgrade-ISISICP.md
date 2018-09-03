@@ -1,10 +1,10 @@
 > [Wiki](Home) > [Deployment](Deployment) > [Deployment on an Instrument Control PC](Deployment-on-an-Instrument-Control-PC) > [Upgrade ISISICP](Upgrade-ISISICP)
 
-1. Check isisicp and isisdatasvr processes are not running. You cannot kill them if ISISDAE-IOC-01 is running so you need to stop this separately (and stop procserv restarting) or run stop_ibex_server  
+1. Check isisicp and isisdatasvr processes are not running. You cannot kill them if ISISDAE-IOC-01 is running so you need to stop this separately (and stop procserv restarting them) or run stop_ibex_server  
 1. Backup existing installation: copy to `c:\data\old\isisdae_backup_YYY_MM_DD`
     - `c:\LabVIEW Modules\dae`
     - `c:\data\recovery.run`
-    - c:\data\selog.* (.sq3 .sq3-shm and .sh3-wal files)
+    - `c:\data\selog.* (.sq3 .sq3-shm and .sh3-wal files)`
 
 1. Open a command window
 1. Run:
@@ -14,19 +14,18 @@
    ```
 This can take a while. You will get various messages. The following are OK:
 1. access denied messages for `ss.ini`
-1. If it can't replace the file isisicp_extMC.dll as it is open
+1. If it can't replace the file `isisicp_extMC.dll` as it is open
 1. messages about establishing working folders for projects
 
-1. Run again from the same directory (you need to do `cd ..` to get back to the dae directory)
-1. Should be quicker this time
-1. As printed to screen at endf of script, Open a command terminal as administrator
-1. Run
+Run again from the same directory (you need to do `cd ..` to get back to the dae directory). It should be quicker this time
+
+As printed to screen at the end of script, open a command terminal as administrator (gamekeepr) and run
    ```
    cd "c:\labview modules\dae"
    register_programs.cmd
    ```
 
-Now delete c:\data\selog.* (.sq3 .sq3-shm and .sh3-wal files)
+Now delete `c:\data\selog.* (.sq3 .sq3-shm and .sh3-wal files)`
 
 The following is a log from update_inst going OK
 ```
