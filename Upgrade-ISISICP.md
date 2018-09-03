@@ -1,3 +1,5 @@
+> [Wiki](Home) > [Deployment](Deployment) > [Deployment on an Instrument Control PC](Deployment-on-an-Instrument-Control-PC) > [Upgrade ISISICP](Upgrade-ISISICP)
+
 1. Check isisicp is not running
 1. Copy to `c:\data\old\isisdae_backup_YYY_MM_DD`
     - `c:\LabVIEW Modules\dae`
