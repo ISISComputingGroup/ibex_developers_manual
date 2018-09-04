@@ -36,6 +36,9 @@ Steps are marked with **bold** prefixes to indicate the following:
     - Do not remove any SECI icons from the task list if this is not the first time install
     - Ignore the section about copying ibex_system_boot.bat to ProgramData and so the step below instead
     - Answer `y` to everything apart from start GUI.
+After install:
+    1. Run the E4 client and pin the icon
+    1. Copy `c:\data\old\client back` to `c:\instrument\apps`
 
 ## Creating IBEX auto-startup 
 - Go to start -> all programs and right click on the startup folder and select “open”
