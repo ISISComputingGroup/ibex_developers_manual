@@ -5,7 +5,7 @@ These are tests/checks that should be performed on the IBEX server after a relea
 ### All Instruments
 
 1. Start an IBEX client. Connect to the instrument. Check Menu -> Help -> About. The Server number should be the version you just released and should match that on the page (https://github.com/ISISComputingGroup/IBEX/wiki#instrument-information)
-1. Setup or find a block which is logging itself. Ensure that a log file with this block value in appears in `c:\data\*.log`. If this doesn't happen see [DAE troubleshooting](DAE-Trouble-Shooting)
+
 1. Ensure that the configuration is being pushd. 
     1. go to settings dir in git bash (/c/Instrument/Settings/config/\<Instrument\>)
     1. `git fetch`
@@ -17,3 +17,5 @@ These are tests/checks that should be performed on the IBEX server after a relea
     1. Click on the spanner icon
     1. Ensure that the box `Should MySQL Installer update its catalog periodically?` is unticked
 
+### Instruments which are having their first IBEX installation
+1. Setup or find a block which is logging itself. Ensure that a log file with this block value in appears in `c:\data\*.log`. If this doesn't happen see [DAE troubleshooting](DAE-Trouble-Shooting)
