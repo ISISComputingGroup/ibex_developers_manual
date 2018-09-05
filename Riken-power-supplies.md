@@ -4,6 +4,10 @@
 
 ![](https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/images/riken_changeover.PNG?raw=true)
 
+# Documentation
+
+See \\...\shares\ISIS_Experimental_Controls\Manuals\RIKEN_power_supplies\riken psu controls - issue C.ppt
+
 # Macros
 
 The PSUs are set up in daisy chains. Macros are prefixed with (for example) `CHAIN1_`. Each chain of PSUs is talking on a completely independent COM port.
