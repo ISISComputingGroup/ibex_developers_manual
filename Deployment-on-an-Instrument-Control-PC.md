@@ -23,7 +23,7 @@ Steps are marked with **bold** prefixes to indicate the following:
 - After the script has successfully finished and the IBEX server has been started, run `instrument_test.bat` in the same folder and follow the instructions.
 
 #### upgrade
-- Ensure the instrument is running and in a setup state (e.g. so you can take screenshots of blocks, running VIs, etc.)
+- Ensure the instrument is running and in a setup state (e.g. so you can take screenshots of blocks, motors, running VIs, etc.)
 - Ensure all command lines to EPICS are closed
 - Shutdown IBEX and do do the [upgrade ISISICP](Upgrade-ISISICP)
 - Run `<public share>\installation_and_upgrade\instrument_deploy.bat`
