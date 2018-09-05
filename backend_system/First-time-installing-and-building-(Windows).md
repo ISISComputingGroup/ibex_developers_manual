@@ -151,7 +151,10 @@ After following the above instructions please see [Building the GUI](Building-th
 
 # VNC
 
-If you are supporting instruments it may be useful to download a VNC client. We have not settled on one that we all use but I have used tighVNC (just the client) which is available [here](http://www.tightvnc.com/)
+If you are supporting instruments it may be useful to download a VNC client. We have not settled on one that we all use but we have used:
+
+ - tighVNC (just the client) which is available [here](http://www.tightvnc.com/)
+ - VNC Viewer (just the client) which is available [here](https://www.realvnc.com/en/connect/download/viewer/)
 
 # Utilities
 
