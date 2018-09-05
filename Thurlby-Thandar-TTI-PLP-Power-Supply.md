@@ -1,4 +1,4 @@
-> [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [Thurlby Thandar TTI-PLP](Thurlby-Thandar-TTI-PLP-Power-Supply)
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [Power Supplies](Power-Supplies) > [Thurlby Thandar TTI-PLP](Thurlby-Thandar-TTI-PLP-Power-Supply)
 
 The Thurlby Thandar TTI PLP power supply series is a simple generic bench power.
 
