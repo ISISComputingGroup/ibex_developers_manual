@@ -1,1 +1,1 @@
-[QModMaster](https://sourceforge.net/projects/qmodmaster/) is a useful piece of software to prob Modbus devices.
+- [QModMaster](https://sourceforge.net/projects/qmodmaster/) is a useful piece of software to probe Modbus devices much like Putty with serial devices over ethernet.
