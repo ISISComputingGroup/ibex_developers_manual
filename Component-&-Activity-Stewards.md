@@ -18,7 +18,8 @@ Riken Front End | Kathryn |
 Script Server (NICOS) | Dom |
 OSIRIS | David |
 ZOOM | Kathryn |
-Graphing | Tom |
+Graphing/Scripting | Tom |
+Script Generator | Tom |
 IBEX GUI | Thomas |
 [Delay tickets](Delayed-tickets) | John |
 CSS & Phoebus | Dom |
