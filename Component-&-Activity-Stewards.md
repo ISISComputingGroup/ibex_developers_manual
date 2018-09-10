@@ -25,6 +25,7 @@ CSS & Phoebus | Dom |
 EPICS base and support modules | Freddie |
 LOQ | Alistair
 TOSCA | Rory
+INES | John
 
 <a name="definitionSteward"></a>
 ## Definition of the role of Component / Activity Steward
