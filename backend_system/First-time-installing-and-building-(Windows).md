@@ -63,7 +63,7 @@ this will create directories for the archive engine. in `.\css-win.x86_64`
 
 * Navigate to the config folder
 
-* Enable git credential store and set a username, on a developer machine use your own name rather than "spudulike" of course, on an instrument replace NDXXXX with the real instrument name  
+* Enable git credential store and set a username, on a developer machine use your own name rather than "spudulike" of course, on a developer machine replace NDXXXX with the name of your computer, on an instrument use the real instrument name  
 ```
 git config --global core.autocrlf true
 git config --global credential.helper wincred
