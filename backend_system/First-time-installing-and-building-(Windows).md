@@ -158,10 +158,10 @@ If you are supporting instruments it may be useful to download a VNC client. We 
 
 # Utilities
 
-Create, usually in c:\instrument\dev the following utilities:
+Git clone (usually in c:\Instrument\Dev) the following utilities:
 
-* https://github.com/ISISComputingGroup/IBEX_device_generator
-* https://github.com/ISISComputingGroup/ibex_utils.git
+`git clone https://github.com/ISISComputingGroup/IBEX_device_generator.git`
+`git clone https://github.com/ISISComputingGroup/ibex_utils.git`
 
 # NI DAQ
 
