@@ -147,10 +147,7 @@ After a power cut you will need to log into the machine via RDP and then disconn
 To tack the error we find in squish please add any errors you see to this chart. Remove the error when you think it is fixed:
 
 Frequency | Test | Error 
-    ----  | ----- | ------
+----  | ----- | ------
 3         | tst_can_add_edit_and_delete_block_to_current_config | When getting blocks it failed to get all children of one of the components. `ValueError: need more than 0 values to unpack. ... tst_can_add_edit_and_delete_block_to_current_config\test.py: 73, instrument_blocks.py: 25`
-1         | tst_can_create_lots_of_blank_configs | `RuntimeError: Error in activateItem() invocation: Menu not visible and/or enabled
-Called from:
-C:\Jenkins\workspace\System_Tests_Squish\suite_configuration_tests\tst_can_create_lots_of_blank_configs\test.py: 20
-`
+1         | tst_can_create_lots_of_blank_configs | `RuntimeError: Error in activateItem() invocation: Menu not visible and/or enabled Called from: C:\Jenkins\workspace\System_Tests_Squish\suite_configuration_tests\tst_can_create_lots_of_blank_configs\test.py: 20`
 
