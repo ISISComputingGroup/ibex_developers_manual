@@ -137,14 +137,6 @@ The purpose and function of the calibration files are described [here](https://g
 ```
 Unfortunately the /RegServer registration process doesn't report either success or failure. If, on later starting the ISISDAE IOC, you see lots of errors of the form "CoCreateInstanceEx (ISISICP) : Class not registered" then it means the /RegServer flag did not work. Try registering it again in case you were not Administrator when you tried it the first time. 
 
-# Setting up nicos
-
-_**(Outdated as of 06/12/17 - now using ZeroMQ integrated into latest version of NICOS)**_
-
-Nicos needs some local passwords setting; to do this look at:
-
-https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/ISIS-Proxy#security
-
 # Building the GUI
 
 After following the above instructions please see [Building the GUI](Building-the-GUI).
