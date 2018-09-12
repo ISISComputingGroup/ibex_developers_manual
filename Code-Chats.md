@@ -2,9 +2,12 @@
 
 # Code Chats
 
-Code chats occur on a semi-regular monthly basis within the group at ISIS. Although they were originally intended to be presentations focused on a specific part of the IBEX GUI they often cover other subjects that may be considered part of the backend.
+Code chats occur on a semi-regular monthly basis within the group at ISIS. Although they were originally intended to be presentations focused on a specific part of the IBEX GUI they often cover other subjects that may be considered part of the backend, or talk about general coding practices.
 
 ## Previous Code Chats
+
+The presentation slides for previous code chats are [available here](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Forms/AllItems.aspx?RootFolder=%2Fisis%2Fcomputing%2FICPdiscussions%2FGUI_Chat_Slides&FolderCTID=0x01200027AD8F05966A2748B3B04C98BB5B442B&View={F2C33C51-70E6-4343-B937-2C59A2568306}). 
+
 ### 2015
 
 Topic | Presenter | Date
