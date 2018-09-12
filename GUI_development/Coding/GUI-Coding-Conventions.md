@@ -222,4 +222,27 @@ Optional<String> mightNotExist = Optional.empty();
 String str = mightNotExist.orElse(null);
 ```
 
+### Streams
+
+Streams should be used where they make an algorithm clearer.
+
+When using streams, put each operation on it's own line.
+
+Good:
+```java
+public Stream<String> getNames() {
+    return getThings()
+        .map(thing -> thing.getName())
+        .filter(name -> name != "")
+        .sorted();
+}
+```
+
+Bad:
+```java
+public Stream<String> getNames() {
+    return getThings().map(thing -> thing.getName()).filter(name -> name != "").sorted();
+}
+```
+
 
