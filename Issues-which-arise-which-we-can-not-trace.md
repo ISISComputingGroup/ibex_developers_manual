@@ -25,3 +25,9 @@ Description: GUI could no longer control the DAE tab. User writes
     so needed to re-enable the veto).    
 
 Work around: Restart the GUI.
+
+# Cannot start scripting console
+
+Scripting console has disappeared from GUI and pressing "new python console" does not bring one back. Seen on IMAT. Not sure what workflow they used to get into this state...
+
+Workaround: restart the GUI
