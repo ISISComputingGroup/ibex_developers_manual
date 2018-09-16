@@ -24,5 +24,6 @@ Stop and restart the Performance Logs and Alerts service (only if it is running)
 Stop and restart the Windows Management Instrumentation service (this should always be running)
 ```
 
+If all this fails, you may have to reboot
 
 
