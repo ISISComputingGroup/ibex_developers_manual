@@ -26,4 +26,10 @@ Stop and restart the Windows Management Instrumentation service (this should alw
 
 If all this fails, you may have to reboot
 
+You can check WMI is working remotely by using the WMIC from your own computer e.g. to check ndxvesuvio
+```
+wmic /node:"ndxvesuvio" /user:"ndxvesuvio\the_admin_account" os get name
+```
+Replacing  the_admin_account  with our usual admin account
+
 
