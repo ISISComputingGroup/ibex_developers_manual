@@ -1,6 +1,12 @@
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [Power Supplies](Power-Supplies) > [Riken power supplies](Riken-power-supplies)
+
 # Setup
 
 ![](https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/images/riken_changeover.PNG?raw=true)
+
+# Documentation
+
+See \\...\shares\ISIS_Experimental_Controls\Manuals\RIKEN_power_supplies\riken psu controls - issue C.ppt
 
 # Macros
 
@@ -40,3 +46,19 @@ RB2 mode change:
 
 Port changeover:
 - The port changeover depends on three rotary switches which are located in the corner between ports 3 and 4 (near some HV power supplies). These switches can, and often do, get out of sync with each other. To fix this state, the misbehaving switch has to be manually forced back into place. The switches are interlocked and you will need a permit to access them. Contact Tim Carter in the first instance.
+
+# Magnet troubleshooting (from a document by James Lord; original document on manuals shared drive)
+
+### RQ19 (also known as RQ22)
+This magnet supply (Ports 3,4) has an internal reversing switch but no motor to drive it. So if the computer asks for the polarity to change, the control board tries to move the switch but nothing further happens until someone manually changes it – it won’t even accept a request to go back to the polarity it was at before. Normally a polarity change is only required if port 3 or 4 is being switched between positive and negative muons, so this would be at an experiment change over in working hours.
+The inst.set_beamline() command is set up to detect if this magnet needs its polarity changing, and will not set any new values – it will return an error similar to that if RB2 had been in the wrong mode. Instead, ask the electrical engineers to turn the supply off, open it up, change the polarity switch, close and turn on the mains power again. Then re-run inst.set_beamline(…,polarity=x,…). This time it will complete successfully as the supply is already set to the required polarity.
+You might want to change over the polarity switch at a convenient time while positive muons are going to only ports 1 or 2, in anticipation of changing to using negative muons in port 3 or 4 over a weekend. inst.set_beamline() doesn’t care about the polarity of power supplies that it is not using, and that are supposed to be off. There is no need to execute any commands at the time the supply is changed over, just use inst.set_beamline(ports=4,decay=True,polarity=-1,…) once you are ready to use the negative muons.
+
+### RB2
+Sometimes RB2-2 reads back implausible numbers such as 75000A. RB2 may also be wrong by a factor of 2. This is often because the IOC (or all of IBEX) has been restarted and the calibration factors for the power supply have been reset to default (which now corresponds to SEPTUM). You might also see this if the RB2 mode has been changed without telling IBEX.
+- Run inst.set_RB2_mode(mode,”CAL”) with the mode that RB2 is in now.
+- Run inst.set_beamline() to re-send the setpoints.
+Note that this procedure may briefly change the value of RB2, so it is best to pause any runs in progress. The restart of IBEX itself would not have affected the magnets.
+
+### RQ2 and RB1
+These supplies sometimes don’t turn back on after a polarity change. Usually re-running inst.set_beamline() re-sends the setpoints and they start working eventually.

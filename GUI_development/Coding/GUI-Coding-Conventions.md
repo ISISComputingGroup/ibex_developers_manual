@@ -190,8 +190,8 @@ It is extremely rare to override Object.finalize.
 Tip: Don't do it. If you absolutely must, first read and understand Effective Java Item 7, "Avoid Finalizers," very carefully, and then don't do it.
 ```
 
-### Return a empty collection, not null ###
-For methods that return arrays/lists/maps/sets etc. don't return null. It is cleaner to return an empty instance as the calling code does not need to check for null.
+### Return a empty collection or stream, not null ###
+For methods that return arrays/lists/maps/sets/streams etc. don't return null. It is cleaner to return an empty instance as the calling code does not need to check for null.
 
 ```java
 // Avoids this extra check in the caller
@@ -205,5 +205,44 @@ See Effective Java Item 43 "Return empty arrays or collections, not nulls"
 Using `+` is fine for, say, joining two or three short strings but it is inefficient for larger numbers of strings and longer strings. Use StringBuilder instead.
 
 See Effective Java Item 51 "Beware the performance of string concatenation"
+
+### Prefer `Optional` over `null`
+
+New APIs should not return null to indicate a missing value. Instead, return an Optional wrapping the value which may not exist. Where external code returns null to indicate a missing value, this should be wrapped in an optional as soon as reasonable.
+
+To convert a maybe-null value to an optional, use:
+```java
+String s = null;
+Optional<String> stringWhichMightNotExist = Optional.ofNullable(s);
+```
+
+To convert an Optional to a maybe-null value, use:
+```java
+Optional<String> mightNotExist = Optional.empty();
+String str = mightNotExist.orElse(null);
+```
+
+### Streams
+
+Streams should be used where they make an algorithm clearer.
+
+When using streams, put each operation on it's own line.
+
+Good:
+```java
+public Stream<String> getNames() {
+    return getThings()
+        .map(thing -> thing.getName())
+        .filter(name -> name != "")
+        .sorted();
+}
+```
+
+Bad:
+```java
+public Stream<String> getNames() {
+    return getThings().map(thing -> thing.getName()).filter(name -> name != "").sorted();
+}
+```
 
 

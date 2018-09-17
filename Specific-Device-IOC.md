@@ -1,6 +1,6 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC)
 
-These are the list of categories for an IOC. The IOC can appear in multiple categories if it is relevant. There are details relating to specific device IOCs listed from within the categories where applicable. Most IOC control a device which has a [manuals](Manuals).
+These are the list of categories for an IOC. The IOC can appear in multiple categories if it is relevant. There are details relating to specific device IOCs listed from within the categories where applicable. Most IOC control a device which has [manuals](Manuals).
 
 [Choppers](Choppers)
 
@@ -17,6 +17,8 @@ These are the list of categories for an IOC. The IOC can appear in multiple cate
 [Loading Rigs](Loading-Rigs)
 
 [Magnets](Magnets)
+
+[Modbus](Modbus)
 
 [Monitors](Monitors)
 
@@ -39,7 +41,3 @@ These are the list of categories for an IOC. The IOC can appear in multiple cate
 [Water Baths](Water-Baths)
 
 [Other](Other)
-
-
-
-

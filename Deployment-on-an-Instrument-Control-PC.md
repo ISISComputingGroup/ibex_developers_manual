@@ -1,4 +1,4 @@
-> [Wiki](Home) > [Deployment](Deployment) > Deployment on an Instrument Control PC
+> [Wiki](Home) > [Deployment](Deployment) > [Deployment on an Instrument Control PC](Deployment-on-an-Instrument-Control-PC)
 
 This document describes the steps necessary to install/upgrade IBEX on an Instrument control PC.  Most of these steps are superseded by the install script (but we are not quite ready to commit to this).  This document is the reference for deployment. 
 Steps are marked with **bold** prefixes to indicate the following:
@@ -23,8 +23,9 @@ Steps are marked with **bold** prefixes to indicate the following:
 - After the script has successfully finished and the IBEX server has been started, run `instrument_test.bat` in the same folder and follow the instructions.
 
 #### upgrade
-- Ensure the instrument is running and in a setup state (e.g. so you can take suitable screenshots)
+- Ensure the instrument is running and in a setup state (e.g. so you can take screenshots of blocks, motors, running VIs, etc.)
 - Ensure all command lines to EPICS are closed
+- Shutdown IBEX and do do the [upgrade ISISICP](Upgrade-ISISICP)
 - Run `<public share>\installation_and_upgrade\instrument_deploy.bat`
     - It will look for the highest version number in the release folder as a source.
     - If you want to install a non-default release you need to set the `SUFFIX` variable in the batch file. For example with `x.y.z` being the current release and `hotfix` being the suffix, it will look for the folder `Releases/x.y.z-hotfix`
@@ -32,6 +33,16 @@ Steps are marked with **bold** prefixes to indicate the following:
     - Be warned the upgrade runs in 3 steps and so will claim to have finished the upgrade 3 times
     - After backup of EPICS step do database disc space clear using [Database Troubleshooting Reducing database disc space](Database-Troubleshooting#Reducing-database-disc-space)
     - Ensure that after the upgrade configuration that galil mtrctrl macro has been set especially if the IP addresses are set in globals.txt
+    - Do not remove any SECI icons from the task list if this is not the first time install
+    - Ignore the section about copying ibex_system_boot.bat to ProgramData and so the step below instead
+    - Answer `y` to everything apart from start GUI.
+After install:
+    1. Run the E4 client and pin the icon
+    1. Copy `c:\data\old\client back` to `c:\instrument\apps`
+
+## Creating IBEX auto-startup 
+- Go to start -> all programs and right click on the startup folder and select “open”
+- In the directory do new -> shortcut and browse to c:\instrument\apps\epics and choose ibex_system_boot.bat
 
 # Steps using Manual Steps
 ## Preparatory Steps for Client and Server

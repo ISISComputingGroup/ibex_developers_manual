@@ -63,7 +63,7 @@ this will create directories for the archive engine. in `.\css-win.x86_64`
 
 * Navigate to the config folder
 
-* Enable git credential store and set a username, on a developer machine use your own name rather than "spudulike" of course, on an instrument replace NDXXXX with the real instrument name  
+* Enable git credential store and set a username, on a developer machine use your own name rather than "spudulike" of course, on a developer machine replace NDXXXX with the name of your computer, on an instrument use the real instrument name  
 ```
 git config --global core.autocrlf true
 git config --global credential.helper wincred
@@ -137,28 +137,25 @@ The purpose and function of the calibration files are described [here](https://g
 ```
 Unfortunately the /RegServer registration process doesn't report either success or failure. If, on later starting the ISISDAE IOC, you see lots of errors of the form "CoCreateInstanceEx (ISISICP) : Class not registered" then it means the /RegServer flag did not work. Try registering it again in case you were not Administrator when you tried it the first time. 
 
-# Setting up nicos
-
-_**(Outdated as of 06/12/17 - now using ZeroMQ integrated into latest version of NICOS)**_
-
-Nicos needs some local passwords setting; to do this look at:
-
-https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/ISIS-Proxy#security
-
 # Building the GUI
 
 After following the above instructions please see [Building the GUI](Building-the-GUI).
 
 # VNC
 
-If you are supporting instruments it may be useful to download a VNC client. We have not settled on one that we all use but I have used tighVNC (just the client) which is available [here](http://www.tightvnc.com/)
+If you are supporting instruments it may be useful to download a VNC client. We have not settled on one that we all use but we have used:
+
+ - tighVNC (just the client) which is available [here](http://www.tightvnc.com/)
+ - VNC Viewer (just the client) which is available [here](https://www.realvnc.com/en/connect/download/viewer/)
 
 # Utilities
 
-Create, usually in c:\instrument\dev the following utilities:
+Git clone (usually in c:\Instrument\Dev) the following utilities:
 
-* https://github.com/ISISComputingGroup/IBEX_device_generator
-* https://github.com/ISISComputingGroup/ibex_utils.git
+```
+git clone https://github.com/ISISComputingGroup/IBEX_device_generator.git
+git clone https://github.com/ISISComputingGroup/ibex_utils.git
+```
 
 # NI DAQ
 
