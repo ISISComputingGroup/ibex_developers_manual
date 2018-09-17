@@ -36,7 +36,9 @@ GalilCreateController("Galil", "$(GALILADDR)", 20)
 This initiates the Galil controller program. It takes the following arguments:
 
 - Port name
-- Address: This is typically the macro to the address of the crate and will correspond to the macro name used in the IOC setup for this Galil.
+- Address: This is typically the macro to the address of the crate and will correspond to the macro name used in the IOC setup for this Galil. This can be:
+    1. An IP address of the form `XXX.XXX.XXX.XXX`, e.g. `192.168.0.1`
+    1. An serial port of the form `<com port> <speed>`, e.g. `COM23 38400`
 - Update period: The number of ms between polls of the Galil. If this number is set to be negative then the Galil will use synchronous rather than asynchronous polling by default
 - Quiet start: If set to 1, the Galil program will check on startup whether any new code is waiting to be uploaded to the Galil. If not, it will leave any existing control programs running. If set to 0 (or defaulted as in this case) then all threads will be restarted along with the IOC. This is especially relevant for the LET oscillating collimator
  
