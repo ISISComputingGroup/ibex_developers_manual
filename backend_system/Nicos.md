@@ -14,13 +14,13 @@ How to run Nicos.
 
 How to set up and configure a new Nicos instrument.
 
+# [Script server design](Script-server-design)
+
+The original design document for what a script server at ISIS would be required to do.
+
 # [Initial evaluation](Nicos-evaluation)
 
 An evaluation of Nicos and its suitability for integration into the IBEX project.
-
-# [Script server design](Script-server-design)
-
-The design of the Nicos script server.
 
 # Developer notes
 - [Testing Nicos](testing-nicos)
