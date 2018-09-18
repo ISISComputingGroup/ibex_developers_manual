@@ -18,12 +18,6 @@ How to set up and configure a new Nicos instrument.
 
 An evaluation of Nicos and its suitability for integration into the IBEX project.
 
-# [ISIS Proxy](ISIS-Proxy)
-
-_**(Outdated as of 06/12/17 - now using ZeroMQ integrated into latest version of NICOS)**_
-
-A description of the proxy that has been written to convert NICOS protocol into something more IBEX friendly.
-
 # [Script server design](Script-server-design)
 
 The design of the Nicos script server.
