@@ -1,6 +1,6 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [Nicos](Nicos) > Configuring a new Nicos instrument
 
-Nicos instruments configurations are stored under ```nicos-core/custom/```. These configurations are designed to be very modular.
+Nicos instruments configurations are stored under ```nicos-facility/inst-name/```. These configurations are designed to be very modular.
 
 ## Configuring an Instrument
 
@@ -16,7 +16,7 @@ An instrument requiring the Nicos daemon must have, as a minimum, a ```setups/``
 
 A Nicos instrument can then have any number of additional setup files in the ```setups``` directory, each specifying a set of devices and commands that the daemon is configured to recognise (see for example Nicos ```demo```). A setup file called ```system.py``` if present, is always loaded. Here we can define a ```modules``` section, listing the file names of the modules that should be included. Command files can be located in:
 * ```nicos-core/nicos/commands``` in the case of generic Nicos commands
-* the instrument's own ```lib/``` directory in the case of instrument-specific commands
+* the instrument's own directory in the case of instrument-specific commands
 
 More documentation on the setup files is available [here] (http://cdn.frm2.tum.de/fileadmin/stuff/services/ITServices/nicos-master/dirhtml/setups/#setups).
 
@@ -30,14 +30,15 @@ To run the Nicos GUI, the instrument must have a ```guiconfig.py``` file in the 
 If no instrument is specified, Nicos will run ```demo``` by default.
 
 There are at least two ways of specifying which instrument to run:
-* have an environment variable called ```INSTRUMENT``` containing the instrument's name: Nicos will then look for an instrument with that name under ```custom/```
-* have a ```nicos.conf``` file in the root ```nicos-core/``` directory, pointing at the instrument we wish to run. For example, to run the instrument ```IbexInstrument```, the file would contain:
+* have an environment variable called ```INSTRUMENT``` containing the instrument's facility and name in the format ```_facility_._name_: Nicos will then look for an instrument with that name under ```facility/```
+* have a ```nicos.conf``` file in the root ```nicos-core/``` directory, pointing at the instrument and facility we wish to run. For example, to run the instrument ```ibex``` in ```nicos_isis```, the file would contain:
 ```
 [nicos]
-instrument = IbexInstrument
+instrument = ibex
+setup_package = nicos_isis
 ```
 
-Now, as we need the correct EPICS and CA environment variables to be set for running genie_python commands (and ultimately Nicos to run with all the other Ibex instrument processes), we need to launch Nicos processes through an EPICS terminal. This terminal already sets an ```INSTRUMENT``` environment variable, which gives us the option to simply have an instrument directory called ```custom/NDXXXX```, e.g. for ```NDXDEMO``` we would have ```custom/NDXDEMO/```.
+Now, as we need the correct EPICS and CA environment variables to be set for running genie_python commands (and ultimately Nicos to run with all the other Ibex instrument processes), we need to launch Nicos processes through an EPICS terminal. This terminal already sets an ```INSTRUMENT``` environment variable, and so the ```start_script_server.bat``` will override this to be the ISIS default.
 
 For testing purposes though, it's more convenient to have a ```nicos.conf``` file specifying the instrument to launch, even when running from an EPICS terminal.
 
