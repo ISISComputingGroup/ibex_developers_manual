@@ -26,4 +26,8 @@ depending on the number of spectra, MAX_ARRAY_BYTES may need adjusting
 
 ## 1D detector with TOF axis giving 2D view
 
-In this case Y is the spectrum number and X is the time of flight bin. SizeY is the number of spectra in the 1D detector, SizeX is (number_of_time_channels + 1) and starting spectrum is (number_of_time_channels + 1) * (number_of_dae_spectra_to_skip_to_get_to_1D_detector_spectra).
+In this case Y is the spectrum number and X is the time of flight bin. 
+
+* SizeY is the number of spectra in the 1D detector
+* SizeX is (number_of_time_channels + 1)
+* SPEC:START:SP is (number_of_time_channels + 1) * (number_of_dae_spectra_to_skip_to_get_to_1D_detector_spectra).
