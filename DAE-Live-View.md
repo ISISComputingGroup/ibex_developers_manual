@@ -31,3 +31,8 @@ In this case Y is the spectrum number and X is the time of flight bin.
 * SizeY is the number of spectra in the 1D detector
 * SizeX is (number_of_time_channels + 1)
 * SPEC:START:SP is (number_of_time_channels + 1) * (number_of_dae_spectra_to_skip_to_get_to_1D_detector_spectra).
+
+You then need to put the live view into "TOFChannel" rather than "TOFSummed" mode with:
+```
+caput %MYPVPREFIX%DAE:AD1:INTG:DATAMODE:SP 1
+```
