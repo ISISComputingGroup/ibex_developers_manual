@@ -2,4 +2,4 @@
 
 * [Synoptic Icons](Synoptic-Icons)
 * [Designing for Colour Blindness](Designing-for-Colour-Blindness)
-* [Icon Licences](Icon Licences)
+* [Icon Licences](Icon-Licences)
