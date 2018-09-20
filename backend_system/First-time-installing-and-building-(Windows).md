@@ -128,10 +128,10 @@ The purpose and function of the calibration files are described [here](https://g
 
 # Configure DAE for simulation mode on developer's computer
 
-* Make sure ISISDAE-IOC-01.exe and ISISICP.exe processes are not running
-* run    create_icp_binaries.bat    in  c:\Instrument\Apps\EPICS   to get the latest version 
+* Make sure **ISISDAE-IOC-01.exe** and **ISISICP.exe** processes are not running
+* run    **create_icp_binaries.bat**   in  **c:\Instrument\Apps\EPICS**   to get the latest version 
 * Open an administrator command prompt (right click on command prompt in start menu and click "run as administrator")
-* cd to     c:\Instrument\Apps\EPICS\ICP_Binaries\isisdae\x64\Release
+* cd to     **c:\Instrument\Apps\EPICS\ICP_Binaries\isisdae\x64\Release**
 * Type:
 ```
     isisicp.exe /RegServer
