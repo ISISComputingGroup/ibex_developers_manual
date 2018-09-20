@@ -126,7 +126,7 @@ git clone http://control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/common.git C:
 
 The purpose and function of the calibration files are described [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Calibration-Files).
 
-# Configure DAE for simulation mode on developer's computer
+# Configure DAE for simulation mode on developer's computer / Register ISISICP
 
 * Make sure **ISISDAE-IOC-01.exe** and **ISISICP.exe** processes are not running
 * run    **create_icp_binaries.bat**   in  **c:\Instrument\Apps\EPICS**   to get the latest version 
