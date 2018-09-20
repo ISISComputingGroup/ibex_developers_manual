@@ -128,6 +128,8 @@ The purpose and function of the calibration files are described [here](https://g
 
 # Configure DAE for simulation mode on developer's computer
 
+* Make sure ISISDAE-IOC-01.exe and ISISICP.exe processes are not running
+* run    create_icp_binaries.bat    in  c:\Instrument\Apps\EPICS   to get the latest version 
 * Open an administrator command prompt (right click on command prompt in start menu and click "run as administrator")
 * cd to     c:\Instrument\Apps\EPICS\ICP_Binaries\isisdae\x64\Release
 * Type:
@@ -135,7 +137,7 @@ The purpose and function of the calibration files are described [here](https://g
     isisicp.exe /RegServer
     isisdatasvr.exe /RegServer
 ```
-Unfortunately the /RegServer registration process doesn't report either success or failure. If, on later starting the ISISDAE IOC, you see lots of errors of the form "CoCreateInstanceEx (ISISICP) : Class not registered" then it means the /RegServer flag did not work. Try registering it again in case you were not Administrator when you tried it the first time. 
+Unfortunately the /RegServer registration process doesn't report either success or failure. If, on later starting the ISISDAE IOC, you see lots of errors of the form "CoCreateInstanceEx (ISISICP) : Class not registered" then it means the /RegServer flag did not work. Try registering it again in case you were not Administrator when you tried it the first time. If you get messages about missing method/functions etc. it may mean a previous isisicp.exe registered successfully, but the newer one didn't - just try again as administrator
 
 # Building the GUI
 
