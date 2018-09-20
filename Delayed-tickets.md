@@ -13,4 +13,3 @@ Delayed tickets are tickets that we thought were important enough to be in a spr
 
 ## Tom cares about
 
-- [3216](https://github.com/ISISComputingGroup/IBEX/issues/3216)
