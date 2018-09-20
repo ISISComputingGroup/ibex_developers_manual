@@ -1,0 +1,16 @@
+# Updating NICOS Versions in IBEX
+The (read-only copy) of the NICOS repository is at `git://trac.frm2.tum.de/home/repos/git/frm2/nicos/nicos-core.git`. We keep a submodule that points to this repo as part of EPICS base, to update the version IBEX uses you need only go to the submodule, pull the version you want and then follow the instructions as per [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Git-workflow#reviewing-work-for-the-submodules-of-epics).
+
+There is some general NICOS documentation [here](https://forge.frm2.tum.de/nicos/doc/nicos-master/)
+
+# Developing NICOS
+
+NICOS is stored at FRM using a git/[gerrit system](https://www.gerritcodereview.com/). Some of their processes are documented at [here](https://forge.frm2.tum.de/wiki/projects:nicos:index). Previous attempts to fork their repository failed as they have some mangled email addresses in their history so instead it is recommended to follow their process for putting changes into core. To make changes to their repo you will first need to request write access by emailing the FRM team.
+
+Gerrit in general is a wrapper around git and uses very different workflows as those used in IBEX and github in general. To give you some idea from the gerrit documentation:
+
+```
+As Gerrit implements the entire SSH and Git server stack within its own process space, Gerrit maintains complete control over how the repository is updated, and what responses are sent to the git push client invoked by the end-user, or by repo upload. This allows Gerrit to provide magical refs, such as refs/for/* for new change submission and refs/changes/* for change replacement. When a push request is received to create a ref in one of these namespaces Gerrit performs its own logic to update the database, and then lies to the client about the result of the operation. A successful result causes the client to believe that Gerrit has created the ref, but in reality Gerrit hasn’t created the ref at all.
+```
+
+The FRM guide to getting set up with Gerrit is at https://forge.frm2.tum.de/wiki/services:gerrit:using_git_gerrit. Once set-up the workflow for adding new work to NICOS is to create one commit with all work and push it to Gerrit using `git push origin HEAD:refs/for/master`. Any changes that come from reviews should be added to the same commit using `git commit -amend`. As hinted in the above paragraph, this isn't actually one commit but only looks like it to the user. You can see changes that have been made (including when commits have been amended as patch sets) at for example https://forge.frm2.tum.de/review/#/c/18861/4. To checkout a specific commit you should use the commands specified in the download section of that page (the commit hash mentioned on the page is a lie).
