@@ -7,5 +7,5 @@ $(P)DAE:SPEC:$(PERIOD):$(SPEC):Y
 $(P)DAE:SPEC:$(PERIOD):$(SPEC):YC
 $(P)DAE:SPEC:$(PERIOD):$(SPEC):C
 ```
-Where SPEC is the spectrum number, PERIOD the period, X is the time-of-flight axis values, Y is the counts / microsecond, YC is just counts, and C is total counts for that spectrum (summed over all time-of-flight bins) 
+Where SPEC is the spectrum number, PERIOD the period, X is the time-of-flight axis values, Y is the counts / microsecond (i.e. divided by bin width), YC is just counts, and C is total counts for that spectrum (summed over all time-of-flight bins) 
   
