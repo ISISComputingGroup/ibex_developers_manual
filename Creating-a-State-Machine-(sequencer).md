@@ -1,30 +1,40 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > Creating a State Machine
 
+## Contents
+- [Introduction](#introduction)
+- [Create State File](#create-state-file)
+    - [Call State file from IOC](#call-state-file-from-ioc)
+- [Start any sequence programs](#start-any-sequence-programs)
+    - [Notes](#notes)
+- [Passing macros into the sequencer](#passing-macros-into-the-sequencer)
+
 ## Introduction
-Does your IOC require definitive states? If the logic of your IOC will go beyond calc fields you may wish to implement a Finite State Machine. 
+Does your IOC require definitive states? If the logic of your IOC will go beyond calc fields, you may wish to implement a Finite State Machine. 
 
 EPICS supports State Machine creation with a set of [Sequencer tools.](http://www-csr.bessy.de/control/SoftDist/sequencer/index.html) The state file, which controls the states the system can be in and the transitions between them, is written in C-based State Notation Language.
 This is a how-to guide to create and implement a state machine into your IOC.
 
 ## Create State File 
 
-Enter the support directory of your IOC, e.g:
+Enter the support directory of your IOC, e.g.:
 ```
 C:\Instrument\Apps\EPICS\support\HFMAGPSU\master\HFMAGPSUSup
 ```
 Create a state file in this directory (e.g. fsm.st).
 The EPICS manual for SNL files can be found [here.](http://www-csr.bessy.de/control/SoftDist/sequencer/index.html)
 
-If you will be reading or changing PV values, the following must be included in your `fsm.st` file
+If you are reading or changing PV values, the following must be included in your `fsm.st` file
 ```
 #include "seqPVmacros.h"
 ```
 A copy of `seqPVmacros.h` can be found [here](https://github.com/ISISComputingGroup/EPICS-motor/blob/7080600a752478f9fa23301a7e99d7ea081df453/motorApp/NewportSrc/seqPVmacros.h) and should be in the folder alongside the `fsm.st` file.
 
-Create an  `fsm.dbd` file, which contains the following:
+Create a `fsm.dbd` file, which contains the following:
 ```
 registrar(fsmRegistrar)
 ```
+Make sure that your `.dbd` file has a different name to the IOC `.dbd` file. Otherwise, your IOC `.dbd` file will be overwritten.
+
 Edit the `Makefile` in this folder, to reference your new `.dbd` and `.st` files and add the libraries needed for them.
 ```
 TOP=..
@@ -44,6 +54,7 @@ HFMAGPSU_LIBS += $(EPICS_BASE_IOC_LIBS)
 #=======================================
 include $(TOP)/configure/RULES
 ```
+
 ### Call State file from IOC
 Enter IOC folder, e.g.
 ```
@@ -59,7 +70,7 @@ seq fsm, "P=$(P)"
 ```
 In the above example, we are passing the name of the IOC through to the `fsm.st` file so we can reference PVs in it with `{P}:`.
 
-Enter the IOC source folder (e.g ``HFMAGPSU-IOC-01App\src``)
+Enter the IOC source folder (e.g. ``HFMAGPSU-IOC-01App\src``)
 
 Edit `build.mak` to ensure the needed libraries are included:
 ```
@@ -70,8 +81,26 @@ $(APPNAME)_LIBS += seqDev seq pv
 ```
 ### Notes
 
-Whenever an edit is made to the `fsm.st` file, rebuild the support module:
+Whenever you make an edit  to the `fsm.st` file, rebuild the support module:
 ```
 cd …EPICS\support\HFMAGPSU\master
 make
 ```
+
+## Passing macros into the sequencer
+
+You can pass macros into your sequencer by including them in brackets after you define the program. E.g.
+
+```
+program keithley_2001 ("P, channels")
+```
+
+Here `P` and `channels` are passed as macros to the state machine. You pass these to the state machine in the `st.cmd` file when calling the state machine. E.g.
+
+```
+seq keithley_2001, "P=$(MYPVPREFIX)$(IOCNAME):, channels=10"
+```
+
+To access these macros in your state machine, create a variable to hold your macro, e.g. `char *P` for the macro `P`, and call `macValueGet` on your macro, e.g. `P =  macValueGet("P")`, within your state machine to allow you to use the macro "P" within your code as the variable "P".
+
+Note that the macros you pass into the state machine **must** match up with those in your `.db` files. Otherwise your state machine will not be able to assign variables to PVs and the state machine won't run.
