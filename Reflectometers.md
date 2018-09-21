@@ -86,6 +86,11 @@ In sim language
 
 Mode | S1 Height above beam |  Poleriser angle and height above 
 
+## Calculating Height of an Item Above Straight Through Beam
+
+The height of an item along the beam can be calculated based of the incoming angle. This diagram shows how this works.
+
+![Image](reflectometers/Non-smallangleapprox.png)
 
 ## Questions
 
@@ -108,3 +113,4 @@ Mode | S1 Height above beam |  Poleriser angle and height above
     - In the end it doesn't really matter but they are measured along their length.
 1. Room coordinates are these ok as we defined them?
     - Maybe, they should be the same as Mantid default.
+
