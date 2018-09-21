@@ -12,3 +12,5 @@ It would be nice to add all IOCs to the EPICS list so that other facilities do n
     - Contact Email: `ISISEPICS@stfc.ac.uk`
     - Link URL: blank until licences are sorted out
     - Link Text: blank until licences are sorted out
+
+NB Make sure that the support module [has a licence files](https://github.com/ISISComputingGroup/IBEX_device_generator/blob/master/templates/support/LICENCE)
