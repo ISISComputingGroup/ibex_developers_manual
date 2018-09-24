@@ -84,7 +84,7 @@ polerised | T  | T         | T  | I            | T                  | T  | O    
 
 In sim language
 
-Mode | S1 Height above beam |  Poleriser angle and height above 
+Mode | S1 Height above beam |  Polariser angle and height above 
 
 ## Calculating Height of an Item Above Straight Through Beam
 
