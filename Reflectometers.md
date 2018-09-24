@@ -76,7 +76,7 @@ Table of our understanding for each mode what is in the beam and what is trackin
 - I: In the beam but not tracking it
 - T: In the beam and tracking it
 
-Mode      | S1 | Poleriser | S2 | sample stack | ideal sample point | S3 | analyser | S4 | Detector
+Mode      | S1 | Polariser | S2 | sample stack | ideal sample point | S3 | analyser | S4 | Detector
 ---       | --- | -----    |  --- | ----       | ----               | --- | ---     | --- | ----
 NR        | T  | O         | T  | I            | T                  | T  | O        | T  | T  
 polerised | T  | T         | T  | I            | T                  | T  | O        | T  | T  
