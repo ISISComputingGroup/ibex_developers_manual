@@ -6,6 +6,8 @@
 1. Navigate to `C:\Instrument\Apps\Python\package_builder`
 1. Run `dev_build_python.bat`
 
+> Note: You cannot run `dev_build_python.bat` from an EPICS terminal
+
 ### First time
 
 The first time you set up `genie_python`, assuming you've never installed it previously, you'll need to set up an ipython profile. 
