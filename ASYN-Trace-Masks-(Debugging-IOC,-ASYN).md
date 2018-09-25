@@ -1,5 +1,14 @@
 For asyn based drivers, such as stream device, additional information printing can be enabled on a port via commands from the ioc shell. The commands let you see what bytes are being sent and received, and also the flow of control/logic.
 
+## I just want to see commands and responses as raw bytes
+
+The two commands you need are:
+
+```
+asynSetTraceIOMask("L0", -1, 0x2)
+asynSetTraceMask("L0", -1, 0x9)
+```
+
 ## ASYN trace mask
 
 This determines what you see and is set to 0x1 (ASYN_TRACE_ERROR) by default. The following additional values
