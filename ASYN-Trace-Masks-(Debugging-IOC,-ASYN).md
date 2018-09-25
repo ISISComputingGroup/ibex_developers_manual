@@ -1,6 +1,6 @@
 For asyn based drivers, such as stream device, additional information printing can be enabled on a port via commands from the ioc shell. The commands let you see what bytes are being sent and received, and also the flow of control/logic.
 
-## I just want to see commands and responses printed out to the screen
+## Print commands and responses to screen
 
 The two commands you need are:
 
