@@ -57,7 +57,9 @@ RB2 mode change:
 Port changeover:
 - The port changeover depends on three rotary switches which are located in the corner between ports 3 and 4 (near some HV power supplies). These switches can, and often do, get out of sync with each other. To fix this state, the misbehaving switch has to be manually forced back into place. The switches are interlocked and you will need a permit to access them. Contact Tim Carter in the first instance.
 
-# Magnet troubleshooting (from a document by James Lord; original document on manuals shared drive)
+# Magnet troubleshooting 
+
+This section is from a document by James Lord; the original document on the manuals shared drive
 
 ### RQ19 (also known as RQ22)
 This magnet supply (Ports 3,4) has an internal reversing switch but no motor to drive it. So if the computer asks for the polarity to change, the control board tries to move the switch but nothing further happens until someone manually changes it – it won’t even accept a request to go back to the polarity it was at before. Normally a polarity change is only required if port 3 or 4 is being switched between positive and negative muons, so this would be at an experiment change over in working hours.
