@@ -35,6 +35,16 @@ To run this IOC you will need to install the DAQMX binaries - available on the n
 ### Whole chain of PSUs won't talk
 - Double check that the moxa port is set to RS-422 mode. **This setting needs to be done in the moxa itself (via the webpage) - IBEX can't do it!**
 
+### Individual PSU won't talk at all
+
+Check the comms cable - it can become loose. It is inside the danfysik unit, you will need the power supplies section to take the front off.
+
+### Individual PSU won't talk sensibly / I get interleaved replies / I get delayed replies
+
+This can happen, we are not sure why. The PSU seems to get into a communications mode where it is using a different terminator (I think it's terminator when it gets into this state is `\n\r\n\r\n\r`, and no, that isn't a typo...).
+
+The only (known) way to get out of this state is to power-cycle the power supply at it's main switch.
+
 ### Changeover sequence won't start - PLC indicates "waiting for IBEX to respond".
 
 IBEX will only let the changeover sequence proceed if it gets "off" readings WITHOUT ALARMS from the power supplies it cares about. For RB2 mode change these are "RB2" and "RB2-2", for port 3/4 change these are RQ18, RQ19 and RQ20.
