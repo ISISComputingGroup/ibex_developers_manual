@@ -1,4 +1,4 @@
-> [Wiki](Home) > [Project overview](Project-Overview) > [Notes from Retrospectives](RetrospectiveNotes) > [Retrospective Notes 2018.03.14](Retrospective_Notes_2018.03.14)
+> [Wiki](Home) > [Project overview](Project-Overview) > [Notes from Retrospectives](Retrospective-Notes) > [Retrospective Notes 2018.03.14](Retrospective-Notes-2018.03.14)
 
 ## Sprint_2018_02_15
 #### Date of Sprint Retrospective: 14-03-2018
