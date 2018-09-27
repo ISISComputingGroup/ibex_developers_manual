@@ -16,3 +16,6 @@
 1. Add Readme to all submodules explaining purpose, these can link to documents in module especially for standard epics docs. This is so everyone knows what things do. It would also be good to remove old code submodules that are not needed and generate dependency lists.
     - Added to [tech debt idea page](Technical-Debt-Stand-down)
 1. Finally looked at cycle problems slack channel. This is not a good method of recording these let think of something else.
+1. `Friday Days` and `Tech Debt Days` both still important if we have time in the sprint
+1. Story points, is it ok? Yes broadly it seems like a good estimation tool.
+1. Another Nicos dev? Tom said yes.
