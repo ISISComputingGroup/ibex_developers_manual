@@ -76,6 +76,7 @@ In the xml file:
 You can specify which icon should appear in the synoptic with the file `uk.ac.stfc.isis.ibex.ui.devicescreens/ComponentIcons.java`.
 If you need to add new icons for the synoptic, these are under `uk.ac.stfc.isis.ibex.ui.devicescreens/icons` (both big icons for the actual synoptic and thumbnails for the synoptic editor). Please follow [these guidelines](Synoptic-Icons) when creating new synoptic icons.
 
+The final step should be to send the OPI to the instrument scientists. If they don't approve it that is fine but it is good to get their response.
   
 # Testing
 
