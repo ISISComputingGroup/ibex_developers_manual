@@ -14,6 +14,9 @@ OPIs live in `ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources`
  - Edit the OPI.
  - Also add an entry to the `opi_info.xml` file which can be found in `resources\opi_info.xml`. Note that some Macros are provided (See below).
 
+## OPI Editor vs Display editor
+When editing an existing OPI or creating a new one, it is important to use OPI editor over Display editor, as the display editor is not currently compatible with the rest of IBEX. If you have opened an OPI and can't find the ISIS colour and font schemes, this possibly indicates that you are using the wrong toolset. You may also find that the file extension is being changed to a .bob file when the file is saved in a Display editor window. Re-opening the file in an OPI editor window (right click OPI -> Open With -> OPI Editor) may solve these issues.
+
 ## Consistency - Template OPI
 In order to promote consistency in look and feel between different OPIs, we have created a template OPI in `ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources\template.opi`. Please follow the guidelines provided in this template, including ALL fonts and colours (it's probably easier to just copy the widgets from this template). If you're adding new widgets in your OPI which are not covered by this template, please add them to the template.
 
