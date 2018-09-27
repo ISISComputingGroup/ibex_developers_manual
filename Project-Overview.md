@@ -16,7 +16,7 @@ Documents for proposed designs of project extensions.
 
 Some notes on what to show someone when demonstrating IBEX for the first time
 
-# [Notes from Retrospectives](RetrospectiveNotes) #
+# [Notes from Retrospectives](Retrospective-Notes) #
 
 Notes from Sprint Retrospective meetings are recorded here.
 
