@@ -41,6 +41,8 @@ If you're not creating a StreamDevice IOC or you you would like to know how an I
 
 1. [Add IOC to EPICS hardware support list](Add-ioc-to-epics-hardware-list)
 
+1. [Create an OPI](OPI-Creation) and send it to instrument scientists for approval.
+
 # Conventions
 
 * [IOC naming](IOC-Naming)
