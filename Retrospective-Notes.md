@@ -1,4 +1,4 @@
-> [Wiki](Home) > [Project overview](Project-Overview) > [Notes from Retrospectives](RetrospectiveNotes)
+> [Wiki](Home) > [Project overview](Project-Overview) > [Notes from Retrospectives](Retrospective-Notes)
 
 This page records notes made during Sprint Retrospective meetings (most recent meeting at the top)
 
