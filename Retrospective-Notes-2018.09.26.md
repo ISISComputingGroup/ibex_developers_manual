@@ -1,4 +1,4 @@
-> [Wiki](Home) > [Project overview](Project-Overview) > [Notes from Retrospectives](RetrospectiveNotes) > [Retrospective Notes 2018.09.26](Retrospective-Notes-2018.09.26)
+> [Wiki](Home) > [Project overview](Project-Overview) > [Notes from Retrospectives](Retrospective-Notes) > [Retrospective Notes 2018.09.26](Retrospective-Notes-2018.09.26)
 
 1. Want to put Tools in one place. [John: maybe 2 - deployed and non-deployed]. Examples are
         - config checker
