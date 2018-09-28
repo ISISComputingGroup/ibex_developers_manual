@@ -13,8 +13,8 @@ The  `motionsetpoints.cmd` contains the following lines:
 1. Load Records:
     * *For 1D setpoint not using an axis macros* `dbLoadRecords("$(MOTIONSETPOINTS)/db/motionSetPoints.db","P=<motion set point prefix>,TARGET_PV1=<motor prefix>,TARGET_RBV1=<motor prefix>.RBV,TARGET_DONE=<motor prefix>.DMOV,TOL=<tolerance>,LOOKUP=LOOKUPFILE<X>")`
     * *For 2D setpoint not using an axis macro* `dbLoadRecords("$(MOTIONSETPOINTS)/db/motionSetPoints.db","P=<motion set point prefix>,TARGET_PV1=<motor prefix>,TARGET_RBV1=<motor prefix>.RBV,TARGET_PV2=<motor prefix2>,TARGET_RBV2=<motor prefix2>.RBV,TARGET_DONE=<motor prefix>.DMOV,TARGET_DONE2=<motor prefix2>.DMOV,TOL=<tolerance>,LOOKUP=LOOKUPFILE<X>")`
-    * *For 1D setpoints using an axis* `dbLoadRecords("$(MOTIONSETPOINTS)/db/motionSetPoints.db","P=<motion set point prefix>,NAME1=<name1>,AXIS1=<axis1>,TOL=<tolerance>,LOOKUP=LOOKUPFILE<X>)`
-    * *For 2D setpoints using axes* `dbLoadRecords("$(MOTIONSETPOINTS)/db/motionSetPoints.db","P=<motion set point prefix>,NAME1=<name1>,AXIS1=<axis1>,NAME2=<name2>,AXIS2=<axis2>,TOL=<tolerance>,LOOKUP=LOOKUPFILE<X>)`
+    * *For 1D setpoints using an axis* `dbLoadRecords("$(MOTIONSETPOINTS)/db/motionSetPoints.db","P=<motion set point prefix>,NAME1=<name1>,AXIS1=<axis1>,TOL=<tolerance>,LOOKUP=LOOKUPFILE<X>")`
+    * *For 2D setpoints using axes* `dbLoadRecords("$(MOTIONSETPOINTS)/db/motionSetPoints.db","P=<motion set point prefix>,NAME1=<name1>,AXIS1=<axis1>,NAME2=<name2>,AXIS2=<axis2>,TOL=<tolerance>,LOOKUP=LOOKUPFILE<X>")`
 
 Where:
 * `X` - enumeration of lookup files, e.g. 1, 2
@@ -24,9 +24,9 @@ Where:
 * `motor prefix2` -the prefix of the second motor e.g. `$(MYPVPREFIX)MOT:MTR0601`, `$(MYPVPREFIX)MOT:ANALYSER:THETA` 
 * `tolerance` - tolerance with which the position has to comply with the positions in the lookup file
 * `axis1` - the axis to use for the first/only motor e.g. `$(MYPVPREFIX)MOT:SAMPLE:LIN`
-* `name1` -  the name of axis 1, defaults to `axis1` e.g. linear
+* `name1` -  the name of axis 1, e.g. "linear" (defaults to `axis1`)
 * `axis2` - the axis to use for the second motor e.g. `$(MYPVPREFIX)MOT:SAMPLE:ROT`
-* `name2` -  the name of axis 2, defaults to `axis2` e.g. rotational
+* `name2` -  the name of axis 2, e.g. "rotational" (defaults to `axis2`)
 
 For examples see Larmor, Demo or SANDALS.
 
