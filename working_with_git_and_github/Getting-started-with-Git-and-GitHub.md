@@ -38,3 +38,7 @@ git config --global core.autocrlf input
 git config --global push.recurseSubmodules check
 ```
 
+* You may now need to consider
+```
+https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/First-time-installing-and-building-(Windows)
+```
