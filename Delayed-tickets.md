@@ -13,3 +13,7 @@ Delayed tickets are tickets that we thought were important enough to be in a spr
 
 ## Tom cares about
 
+## Gareth cares about
+
+- [2964](https://github.com/ISISComputingGroup/IBEX/issues/2964)
+
