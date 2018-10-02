@@ -19,7 +19,7 @@ A technical debt stand-down day is a day devoted to fixing technical debt in the
         - Add readmes to submodules in the server 
         - Remove unneeded submodules.
         - Create automated dependency map
-        - Put all tools in one place
+        - Put all tools in one place (See [duplicated code](Code-Duplication))
         - Think about moving ISIS things to support
 
 People pick up tickets when they get in often working in pairs. There is an extra standup at 4pm to discuss what has been done. This is the moment to choose to either:
