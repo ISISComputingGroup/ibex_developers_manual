@@ -1,4 +1,4 @@
-> [Wiki](Home) > [The GUI](The-GUI) > [CS Studio](GUI-CSS) > OPI Programming tips and limitations
+> [Wiki](Home) > [The GUI](The-GUI) > [CS Studio](GUI-CSS) > [OPI Programming tips and limitations](OPI-programming-tips-and-limitations)
 
 These are a few things I have discovered while creating the table of motors and synoptic view.
 
