@@ -8,20 +8,21 @@ Motion set points allow you to label set positions for a motor, current either 1
 
 The  `motionsetpoints.cmd` contains the following lines:
 
-1. Point at motion setpoint config: `epicsEnvSet "LOOKUPFILE<X>" "$(ICPCONFIGROOT)/motionSetPoints/<motion setpoint file>"`
-1. Configure setpoints `motionSetPointsConfigure("LOOKUPFILE<X>","LOOKUPFILE<X>")`
-1. Load Records:
+1. **Point at motion setpoint config:** `epicsEnvSet "LOOKUPFILE<X>" "$(ICPCONFIGROOT)/motionSetPoints/<motion setpoint file>"`
+1. **Configure setpoints:** `motionSetPointsConfigure("LOOKUPFILE<X>","LOOKUPFILE<X>")`
+1. **Load Records:**
     * *For 1D setpoint not using an axis macros* `dbLoadRecords("$(MOTIONSETPOINTS)/db/motionSetPoints.db","P=<motion set point prefix>,TARGET_PV1=<motor prefix>,TARGET_RBV1=<motor prefix>.RBV,TARGET_DONE=<motor prefix>.DMOV,TOL=<tolerance>,LOOKUP=LOOKUPFILE<X>")`
     * *For 2D setpoint not using an axis macro* `dbLoadRecords("$(MOTIONSETPOINTS)/db/motionSetPoints.db","P=<motion set point prefix>,TARGET_PV1=<motor prefix>,TARGET_RBV1=<motor prefix>.RBV,TARGET_PV2=<motor prefix2>,TARGET_RBV2=<motor prefix2>.RBV,TARGET_DONE=<motor prefix>.DMOV,TARGET_DONE2=<motor prefix2>.DMOV,TOL=<tolerance>,LOOKUP=LOOKUPFILE<X>")`
     * *For 1D setpoints using an axis* `dbLoadRecords("$(MOTIONSETPOINTS)/db/motionSetPoints.db","P=<motion set point prefix>,NAME1=<name1>,AXIS1=<axis1>,TOL=<tolerance>,LOOKUP=LOOKUPFILE<X>")`
     * *For 2D setpoints using axes* `dbLoadRecords("$(MOTIONSETPOINTS)/db/motionSetPoints.db","P=<motion set point prefix>,NAME1=<name1>,AXIS1=<axis1>,NAME2=<name2>,AXIS2=<axis2>,TOL=<tolerance>,LOOKUP=LOOKUPFILE<X>")`
+1. **A blank line at the end**
 
 Where:
 * `X` - enumeration of lookup files, e.g. 1, 2
 * `motion setpoint file` - the lookup motion setpoint file
-* `motion set point prefix` - the prefix you want for the motion setpoint, e.g. `$(MYPVPREFIX)LKUP:MON3:`, `$(MYPVPREFIX)LKUP:SAMPLE`, `$(MYPVPREFIX)LKUP:ANALYSER`
-* `motor prefix` - the prefix of the first/only motor e.g. $(MYPVPREFIX)MOT:MTR0601
-* `motor prefix2` -the prefix of the second motor e.g. `$(MYPVPREFIX)MOT:MTR0601`, `$(MYPVPREFIX)MOT:ANALYSER:THETA` 
+* `motion set point prefix` - the prefix you want to create for the motion setpoint, e.g. `$(MYPVPREFIX)LKUP:MON3:`, `$(MYPVPREFIX)LKUP:SAMPLE:`, `$(MYPVPREFIX)LKUP:ANALYSER:` **(ending in a colon)**
+* `motor prefix` - the prefix of the first/only motor e.g. `$(MYPVPREFIX)MOT:MTR0601`
+* `motor prefix2` - the prefix of the second motor e.g. `$(MYPVPREFIX)MOT:MTR0601`, `$(MYPVPREFIX)MOT:ANALYSER:THETA` 
 * `tolerance` - tolerance with which the position has to comply with the positions in the lookup file
 * `axis1` - the axis to use for the first/only motor e.g. `$(MYPVPREFIX)MOT:SAMPLE:LIN`
 * `name1` -  the name of axis 1, e.g. "linear" (defaults to `axis1`)
