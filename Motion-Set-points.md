@@ -20,7 +20,7 @@ The  `motionsetpoints.cmd` contains the following lines:
 Where:
 * `X` - enumeration of lookup files, e.g. 1, 2
 * `motion setpoint file` - the lookup motion setpoint file
-* `motion set point prefix` - the prefix you want to create for the motion setpoint, e.g. `$(MYPVPREFIX)LKUP:MON3:`, `$(MYPVPREFIX)LKUP:SAMPLE:`, `$(MYPVPREFIX)LKUP:ANALYSER:` **(ending in a colon)**
+* `motion set point prefix` - the prefix you want to create for the motion setpoint, e.g. `$(MYPVPREFIX)LKUP:MON3:`, `$(MYPVPREFIX)LKUP:SAMPLE:`, `$(MYPVPREFIX)LKUP:ANALYSER:` (ending in a colon)
 * `motor prefix` - the prefix of the first/only motor e.g. `$(MYPVPREFIX)MOT:MTR0601`
 * `motor prefix2` - the prefix of the second motor e.g. `$(MYPVPREFIX)MOT:MTR0601`, `$(MYPVPREFIX)MOT:ANALYSER:THETA` 
 * `tolerance` - tolerance with which the position has to comply with the positions in the lookup file
