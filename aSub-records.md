@@ -58,6 +58,8 @@ function(another_function_name)
 [...]
 ```
 
+>__**NOTE: Make sure there is a newline at the end of this file**__
+
 In the same directory as your C source code and the DBD file, adjust the makefile to reference the newly created `.dbd` and `.c` files, as well as adding necessary dependencies. It should look something like the following:
 
 ```
