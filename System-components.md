@@ -22,6 +22,7 @@ Instrument Archive | ARINST | Java | Archives (in mysql db) pvs with archive pro
 [MySQL](The-MySQL-Database) | runs as a service | Service | My SqlDatabase is used for persisting data
 [Nicos](Nicos) | NICOSDAEMON | Python | Process which runs and queues python scripts on an instrument
 Proc Serve Control | PSCTRL | Epics IOC | Control proc serves  (start, stop and status)
+[Reflectometry Server](Reflectometers) | REFL | pcaspy | Complex reflectometry motion
 [Run Control](Run-control) | RUNCTRL_01 | Epics IOC | Add run control to blocks
 [Script server (Interface to Nicos)](Nicos) | SCRIPTSERVER | Python | Script server is a proxy in front of nicos to allow communication with it
 
