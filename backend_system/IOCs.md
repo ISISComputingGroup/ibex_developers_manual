@@ -63,7 +63,7 @@ If you're not creating a StreamDevice IOC or you you would like to know how an I
 * [Creating a MODBUS IOC](MODBUS-IOC) 
 * [Using LVDCOM](Using-LVDCOM)
 * [Convert Record](convert-record)
-* [Multi-value Protocols Tricks](Multi-value-Protocols)
+* [Stream Device Tips and Tricks](Stream-Device-Tips-and-Tricks)
 * [IOC Utilities](IOC-Utilities) includes general templates
 * [Removing or Renaming an IOC module ](Removing-or-Renaming-IOC-module)
 * [IOC Testing framework](IOC-Testing-Framework)
