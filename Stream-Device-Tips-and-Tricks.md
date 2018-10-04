@@ -14,7 +14,7 @@ Instead of using `%s` as your formatter, you need to use a character set, e.g. `
 
 **Record**
 
-```C
+```
 record(waveform, "$(P)SCAN:BUFF"){
     field(DESC, "Reads value from the buffer")
     field(DTYP, "stream")
@@ -25,7 +25,7 @@ record(waveform, "$(P)SCAN:BUFF"){
 ```
 
 **Protocol function**
-```C
+```
 read_buffer {
     separator=",";
     out ":DATA:DATA?";
@@ -101,7 +101,6 @@ If the protocol returns many values, even this approach may result in too long `
 If you can't fit all the PV names in a single INP field, you can redirect them to the input fields of a `calc` record instead. We need a trigger PV which calls the protocol, and a buffer `calc` record to temporarily store the parsed values. The final PVs can then fetch their values from the `calc` record:
 
 ```
-
 ## Trigger the read protocol. Parsed values are stored in a buffer calc PV.
 record(bi, "$(P)READ_DO") {
   field(DTYP, "stream")
