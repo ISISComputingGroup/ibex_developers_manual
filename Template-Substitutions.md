@@ -1,7 +1,5 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > Template Substitution
 
-## DB Template Substitution
-
 Template substitution allows you to take a database template file and substitute the macros in it for a list of chosen values. This is used for example to create the same set of records for `North`, `East`, `South`, and `West` jaw blades.
 
 This requires two files: a `.template` and a `.substitutions` file
