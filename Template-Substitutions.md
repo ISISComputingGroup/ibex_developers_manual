@@ -27,4 +27,4 @@ file <FILEPATH_2> {
 
 This will create M sets of records, with each of the N macros replaced with what is specified in each row. Note that you need to substitute every macro that occurs in the `.template` file, otherwise the substitution procedure will fail. If it's something you don't want to replace (e.g. the PV Prefix) you can just replace it with itself.
 
-See [IOC Utilities](IOC-Utilities) for some practical examples.
+See [IOC Utilities](IOC-Utilities#db-templates) for some practical examples.
