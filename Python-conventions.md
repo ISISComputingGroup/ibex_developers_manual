@@ -80,6 +80,14 @@ We have decided to follow Google on this; however, some older docstrings may not
 
 PyCharm can be set to auto-generate Google style dostrings via `File --> Settings --> Tools --> Python Integrated Tools`
 
+PyCharm also supports the ability to specify types in the docstring. This includes being able to write objects class names, for example: 
+```python
+    Returns:
+           Group (block.Block): A block object containing information on all blocks in the group.
+````
+
+This is useful because it will syntax highlight potential type errors before you even debug, as well as allow you to quickly perform introspection on objects of that type in you code (Ctrl-Left Click).
+
 #### Examples
 
 ```python
