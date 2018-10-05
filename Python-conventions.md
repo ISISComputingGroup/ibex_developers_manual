@@ -83,7 +83,7 @@ PyCharm can be set to auto-generate Google style dostrings via `File --> Setting
 PyCharm also supports the ability to specify types in the docstring. This includes being able to write objects class names, for example: 
 ```python
     Returns:
-           Group (block.Block): A block object containing information on all blocks in the group.
+           Group (block.Block): A block object containing a groups block information.
 ````
 
 This is useful because it will syntax highlight potential type errors before you even debug, as well as allow you to quickly perform introspection on objects of that type in you code (Ctrl-Left Click).
