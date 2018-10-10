@@ -73,7 +73,7 @@ The backdoor can be operated either via the command line through `lewis-control`
 
 ## Connecting your IOC
 
-So, we've got our emulator running, now we need to get our IOC talking to it. For this to work it needs to use the standard st.cmd setup so it works with the IOC testing framework. Then in your `globals.txt` do the following:
+We've got our emulator running, now we need to get our IOC talking to it. For this to work it needs to use the standard st.cmd setup so it works with the IOC testing framework. Then in your `globals.txt` do the following:
 
  - Add a line to set the IOC into dev sim `<IOC name>__DEVSIM=1` (this can go in the configuration)
  - Set the port it should be communicating on (must be free) `<IOC name>__EMULATOR_PORT=57677`
