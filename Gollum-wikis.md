@@ -10,6 +10,7 @@ This seems to work better.
 
 Installation instructions:
 - Install jRuby (note: it MUST be jRuby, the C implementations of ruby don't work correctly on windows). You will probably want the exe-x64 download.
+  * When running through the installer, do not select "configure path for me" as this might mess with our EPICS path.
 - In the `jRuby/bin` directory run `gem install gollum`
 - Ensure the `python2` command is accessible on your PATH
 - Run `python2 -m pip install docutils==0.14` (or a later version if you desire). This includes the rest2html script which gollum uses to render restructured text.
