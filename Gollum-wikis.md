@@ -14,5 +14,6 @@ Installation instructions:
 - In the `jRuby/bin` directory run `gem install gollum`
 - Ensure the `python2` command is accessible on your PATH
 - Run `python2 -m pip install docutils==0.14` (or a later version if you desire). This includes the rest2html script which gollum uses to render restructured text.
-- Run `jRuby\bin\gollum <location of wiki>` to run the gollum webserver
+- Clone the user manual using `git clone https://github.com/ISISComputingGroup/ibex_user_manual.wiki.git C:/Instrument/user_manual`
+- Run `jRuby\bin\gollum C:/Instrument/user_manual` to run the gollum webserver
 - Navigate to [http://localhost:4567/Home](http://localhost:4567/Home) - this should display the wiki
