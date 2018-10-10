@@ -2,7 +2,12 @@ Gollum is a ruby package used to display github wikis on the web.
 
 # On linux
 
-This theoretically works but we have had issues in the past getting pages to render correctly (on shadow).
+- Runs on shadow as user Gollum, in `/home/gollum`
+- Some time after system updates run, `Ruby Gems` needs a rebuild. Try `/tmp/ibex.log`   may need to run e.g. `gem pristine nokogiri --version 1.6.8`
+
+  * Should run this as user Gollum
+
+This theoretically works but we have had issues getting pages to render correctly (on shadow).
 
 # On Windows
 
