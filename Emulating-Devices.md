@@ -2,7 +2,7 @@
 
 ## Introduction
 
-So you've created an IOC to talk to a device, and you want to test it: just borrow an actual piece of hardware and test with that. What if that's not possible? 
+You've created an IOC to talk to a device, and you want to test it: just borrow an actual piece of hardware and test with that. What if that's not possible? 
 
 *The only way to know an IOC will work with an actual device is to use an actual device.*
 
