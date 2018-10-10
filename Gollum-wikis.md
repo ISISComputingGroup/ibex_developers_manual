@@ -9,7 +9,7 @@ This theoretically works but we have had issues in the past getting pages to ren
 This seems to work better. 
 
 Installation instructions:
-- Install jRuby (note: it MUST be jRuby, the C implementations of ruby don't work correctly on windows)
+- Install jRuby (note: it MUST be jRuby, the C implementations of ruby don't work correctly on windows). You will probably want the exe-x64 download.
 - In the `jRuby/bin` directory run `gem install gollum`
 - Ensure the `python2` command is accessible on your PATH
 - Run `python2 -m pip install docutils==0.14` (or a later version if you desire). This includes the rest2html script which gollum uses to render restructured text.
