@@ -1,0 +1,17 @@
+Gollum is a ruby package used to display github wikis on the web.
+
+# On linux
+
+This theoretically works but we have had issues in the past getting pages to render correctly (on shadow).
+
+# On Windows
+
+This seems to work better. 
+
+Installation instructions:
+- Install jRuby (note: it MUST be jRuby, the C implementations of ruby don't work correctly on windows)
+- In the `jRuby/bin` directory run `gem install gollum`
+- Ensure the `python2` command is accessible on your PATH
+- Run `python2 -m pip install docutils==0.14` (or a later version if you desire). This includes the rest2html script which gollum uses to render restructured text.
+- Run `jRuby\bin\gollum <location of wiki>` to run the gollum webserver
+- Navigate to [http://localhost:4567/Home](http://localhost:4567/Home) - this should display the wiki
