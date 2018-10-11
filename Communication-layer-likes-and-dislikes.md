@@ -49,4 +49,4 @@ Where no data needs to be returned, a device could generate an "ACK" or "OK" or 
 
 ### Unsolicited messages
 
-We prefer not to recieve unsolicited messages. It is better for a driver to explicitly ask for a parameter each time the driver wants to read it.
+We prefer not to receive unsolicited messages. It is better for a driver to explicitly ask for a parameter each time the driver wants to read it.
