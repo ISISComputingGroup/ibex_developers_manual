@@ -89,7 +89,7 @@ Person | Date
 ------ | ----
 Thomas | Aug 18
 Dom | Sep 18
-Freddie |
+Freddie | Oct 18
 Tom |
 Michal |
 Alistair |
