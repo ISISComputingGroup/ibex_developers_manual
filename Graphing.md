@@ -36,7 +36,7 @@ NB configurable here means like the number of user pvs. The PVs might live in th
 
 In the GUI display the above graph on an OPI at the point the chart becomes enabled.
 
-Extend gennie_python with the following commands:
+Extend genie_python with the following commands:
 
 - `graphs[graph_index]`: gets the `graph` object at index
 
@@ -66,7 +66,7 @@ The plotting could be done client side or server side, just the image is sent to
 
 The data used to create the plots could be created server side or client 
 
-1. Storin
+1. Storing
 
 
 TODO: Extension to mat plot lib
