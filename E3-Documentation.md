@@ -1,4 +1,4 @@
-> [Wiki](Home) > [The GUI](The-GUI) > [Information about Eclipse E3](E3-Dcoumentation)
+> [Wiki](Home) > [The GUI](The-GUI) > [Information about Eclipse E3](E3-Documentation)
 
 This page contains information about the IBEX GUI as it was under eclipse 3. This information should be kept in the relevant heading until such time that we have retired the Eclipse 3 GUI. Heading link back to current page so it can be compared to E4 if needed.
 
