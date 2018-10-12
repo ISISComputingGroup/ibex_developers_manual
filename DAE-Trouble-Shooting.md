@@ -475,4 +475,4 @@ DAE3 is new ethernet based acquisition electronics on ZOOM and MARI, it used ISI
 
 ## Error code 112
 
-If there is an erro code 12 it means that the data volume is full and it can not start the isisicp program.
+If there is an error code 112 reported in the log it means that the disk (data volume) is full and it can not start the isisicp program.
