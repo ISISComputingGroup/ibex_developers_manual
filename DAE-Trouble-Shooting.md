@@ -472,3 +472,7 @@ isisicp.simulation.detcards.crate2.number = 12
 ## DAE3 does not start 
 
 DAE3 is new ethernet based acquisition electronics on ZOOM and MARI, it used ISISICP and looks like DAE2 for most purposes. If everything remains in processing, it may be that the `arp` network entries did not get created - these should be done as a system time boot task. Do `arp -a` and see if there is an entry for 192.168.1.101 etc.  If not, run `set_dae3_arp.bat` in `c:\labview modules\dae` as as administrator
+
+## Error code 112
+
+If there is an erro code 12 it means that the data volume is full and it can not start the isisicp program.
