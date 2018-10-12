@@ -1,0 +1,11 @@
+## control-svcs.isis.cclrc.ac.uk
+
+To logon see usual username/password page
+
+The machine runs various services, such as epics gateways. These run under the "epics" userid so 
+```
+sudo su - epics
+```
+and give your "isissupport" password when prompted
+
+Depending on what you need to do, you may need to modify system init scripts to start services at boot time.  
