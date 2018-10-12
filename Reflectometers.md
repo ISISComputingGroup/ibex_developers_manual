@@ -9,7 +9,7 @@ The aim of the reflectometer project is to allow users of the reflectometers to 
 The reflectometry experiment is described in part in the [mantid documentation](http://docs.mantidproject.org/v3.12.0/techniques/ISIS_Reflectometry.html) and in [more detail for POLREF](https://github.com/ISISComputingGroup/IBEX/wiki/Reflectometry-at-Isis). The important things to know from this and other are:
 
 1. The data needed to be retrieved is neutron count vs Q.
-1. The [momentum transfer](https://en.wikipedia.org/wiki/Momentum_transfer) is characterised from Q = 4π / λ sin θ 
+1. The [momentum transfer](https://en.wikipedia.org/wiki/Momentum_transfer) is characterised from `Q = 4π / λ sin θ` 
 1. The wavelength is proportional to the time of flight. So to get a large range of q the scientists stitch together spectra from multiple angles.
 1. There are other experiments that can be performed where off-specular alignments are used. Also where the sample is rocked.
 1. When thinking about alignments, there is a path through the experiment set by the super mirror, sample point, analyser angle and detector position. Everything else can be aligned to this path but does not control that path. 
