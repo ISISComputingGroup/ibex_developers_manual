@@ -1,6 +1,6 @@
 If you want a minimal ICP with no real DAE support then:
 
-In c:\labview modules\dae\isisicp.properties    add the line
+In c:/labview modules/dae/isisicp.properties    add the line
 ```    
 isisicp.simulation.detcards.shared = false
 ```
