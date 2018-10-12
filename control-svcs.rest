@@ -1,4 +1,4 @@
-## control-svcs.isis.cclrc.ac.uk
+control-svcs.isis.cclrc.ac.uk
 
 To logon see usual username/password page
 
