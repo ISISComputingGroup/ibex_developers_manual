@@ -85,7 +85,7 @@ parameters
 1. `operation` - set the first bit for verbose mode
 1. `rhs` - does nothing
 
-The operation argument is given as a decimal represenation of binary flags:
+The operation argument is given as a decimal representation of binary flags:
 
 | Operation       | Flag  |
 |:---------------:|:-----:|
