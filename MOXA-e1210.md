@@ -21,5 +21,5 @@
 * There is a crude DEVSIM/lewis emulator, but support for modbus in the lewis framework is minimal.
    * The workaround here is to include a line in the modbus interface to allow the device to hook in and access the data banks. See the modbus_interface.py in the moxa e1210 lewis emulator for an example.
    * This means that, unlike a stream interface device, the data will be held within the interface.
-   * Any commands that the device will need to excecute will need to be called directly through the backdoor
+   * Any commands that the device will need to execute will need to be called directly through the backdoor
    * These commands will need to access the data through self.interface, rather than accessing the data directly on the device.
