@@ -26,6 +26,6 @@ This data accumulates over one second until a timekeeper PV activates and sends 
 
 To recover the amount of time which was spent outside of the stable boundary, multiply the number of samples collected by the time each sample represents, (1/sample frequency). This value is exposed in a PV for a nagios alarm to monitor.
 
-The stability boundaris are defined as:
+The stability boundaries are defined as:
 1. Voltage stability: `V_lower_limit < V_measured < V_upper_limit`
 1. Current stability: `I_measured <= (I_stable + I_limit)`
