@@ -24,7 +24,7 @@ In the first case (for INTER, CRISP, SURF), the detector slides up and down on a
 
 In the second case (for POLREF, OFFSPEC), the detector sits on a bench, that can be angled, driven up/down, and slide closer/further from the sample, which allows the detector to actually move along a radius around the sample.
 
-![Polerisation mode](reflectometers/polerised_mode.png)
+![Polarisation mode](reflectometers/polarised_mode.png)
 
 Devices on the beamline are classed as active or passive: **active** devices affect the direction of the beam; **passive** devices do not.  A slit which blocks the beam is passive because it does change the beam direction. Equipment will usually track the beam path; it might not during initial alignment or for some unusual experiments. This means that an offset needs to be added to the position and angle of each piece of equipment after a path change so that it remains centred and perpendicular/parallel to the beam. 
 
@@ -58,7 +58,7 @@ A detector is a passive component that sits at the end of the beam line. There a
 
 ### Modes
 
-- Neutron Reflection (NR) mode: just a straight reflection from the ideal sample point. Used for solids and liquids with solids, i.e. things that can be rotated and are not effected by gravity
+- Neutron Reflection (NR) mode: just a straight reflection from the ideal sample point. Used for solids and liquids with solids, i.e. things that can be rotated and are not affected by gravity
 - Liquids NR: Since liquids cannot be angled, the super mirror is instead used to angle the incoming beam at the sample and make the specular condition correct for different theta.
 - Polarised NR: Like NR, but with a polarising supermirror in the beam path set to a given angle, which changes the angle of the incoming beam at the sample point.
 - Polarisation Analysis (PA) mode: Like NR but now after the sample point, the beam is split into two by an analyser and the detector moves to see either beam. 2* Theta is still the angle between the incoming and outgoing beam at the sample point.
@@ -79,7 +79,7 @@ Table of our understanding for each mode what is in the beam and what is trackin
 Mode      | S1 | Polariser | S2 | sample stack | ideal sample point | S3 | analyser | S4 | Detector
 ---       | --- | -----    |  --- | ----       | ----               | --- | ---     | --- | ----
 NR        | T  | O         | T  | I            | T                  | T  | O        | T  | T  
-polerised | T  | T         | T  | I            | T                  | T  | O        | T  | T  
+polarised | T  | T         | T  | I            | T                  | T  | O        | T  | T  
 
 
 In sim language
@@ -90,17 +90,17 @@ Mode | S1 Height above beam |  Polariser angle and height above
 
 The height of an item along the beam can be calculated based of the incoming angle. This diagram shows how this works.
 
-![Image](reflectometers/Non-smallangleapprox.png)
+![Image](reflectometers/Non-small_angle_approx.png)
 
 ## Questions
 
 1. Is the ideal sample point x position fixes?
-    - Yes. The beam coming in will hit any presample active components and the height of the sample point is the point at which the beam reaches this x coordinate.
+    - Yes. The beam coming in will hit any pre-sample active components and the height of the sample point is the point at which the beam reaches this x coordinate.
 1. I think each mode of operation sets up fixed rules and relations and this is what we need to capture.
 1. We need to calculate both the positions based on composite parameters and composite parameters based on the positions of the components, is this right?
     - Yes, it would be strange not to have this readback
     1. What happens if the beam having hit the super mirror does not hit the sample axis?
-        - apart from pathological cases, beam going straight up or backwards, there is always a point that the sample acis is hit
+        - apart from pathological cases, beam going straight up or backwards, there is always a point that the sample axis is hit
     1. What happens if the detector is not looking at the sample point?
         - Nothing, but a warning in this case would be useful.
 1. Does the beam always go forwards?
