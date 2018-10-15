@@ -51,7 +51,7 @@ After install:
 
 - **install** Check that Java is installed on the PC.  If not, download the latest JRE from the Java website (http://www.java.com/en/) and install it.  Make sure you choose the 64-bit version of Java.  See also [Upgrade Java](Upgrade-java). The version should be that based on the release notes.
 
-- **install** If the PC is running the Windows Classic theme, switch it to a modern theme (e.g. Windows 7 Theme); the IBEX GUI looks better when using a modern theme.  To change the theme see [Change Windows Theme](Change-Windows-Theme).
+- **install** If the PC is running the Windows Classic theme, switch it to a modern theme, Windows 7 Theme + Grey Background (220,220,220 in RGB); the IBEX GUI looks better when using a modern theme.  To change the theme see [Change Windows Theme](Change-Windows-Theme).
 
 ## Preparatory Steps for Server
 
