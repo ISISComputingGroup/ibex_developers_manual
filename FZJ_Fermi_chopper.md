@@ -42,7 +42,7 @@ There are a variety of hardware & software conditions that can cause the chopper
 ### Hardware / firmware conditions
 Firstly, check in the "advanced" tab of the OPI - any of the following will cause the device to spin down:
 - Interlock open (the scientists know how to reset this)
-  * Note, the interlock only has to report "open" for a moment for the chopper to spin down. If the vacuum guage is faulty, it may trip the interlock momentarily, which will cause the chopper to spin down but when subsequently looking at the OPI the interlock will appear OK.
+  * Note, the interlock only has to report "open" for a moment for the chopper to spin down. If the vacuum guage is faulty, it may trip the interlock momentarily, which will cause the chopper to spin down but when subsequently looking at the OPI the interlock will appear OK. If this is the case then contact the chopper group as this is a hardware fault and is not something we can compensate for in software.
 - Electronics or motor temperatures too hot (not sure where the firmware limit is - may be 50C according to manual but this is not clear) 
 - A few other (less common) conditions indicated by red interlock LEDs on the OPI
 
