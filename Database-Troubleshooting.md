@@ -1,5 +1,13 @@
 > [Wiki](Home) > [Trouble-shooting](trouble-shooting-pages) > [Database](Database-Troubleshooting)
 
+## What is generating all the data?
+
+It is likely ADEL fields on some records are causing a lot of logging. You can run e.g.
+```
+python utils\archive_rates.py --host=ndximat
+```
+To see which PVs are doing this
+
 ## Is the Database Up
 
 Look for mysqld.exe task running in task manager or for the service MQSQLXX (currently 57) running. If it is not running log files are in `...var\mysql\Data\XXX.err`. To start it as an admin start the services from the start menu then start the MYSQLXX service.
