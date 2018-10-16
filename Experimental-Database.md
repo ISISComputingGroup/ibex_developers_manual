@@ -7,73 +7,19 @@ The experimental database keeps track of:
 1. users in the team  (`user`)
 1. roles in the team  (`role`)
 
-The data is loaded from an external XML script.
+The data is populated centrally from the [Experiment Database Populator](https://github.com/ISISComputingGroup/ExperimentDatabasePopulator) which is run on control-svcs.
+
+## Architecture
+
+The experiment database populator is a Python 3 program that is designed to run centrally and periodically update instrument databases. It does the following: 
+* Monitors 'CS:INSTLIST' for instruments that are scheduled
+* Gathers 200 days worth of data from the web services hosted by business apps (Using the credentials stored in a git repository on the local share).
+* Reformats the data slightly to match the structure of the instrument databases
+* Pushes to the instrument database (Using the credentials stored in a git repository on the local share).
+* Repeats every hour
 
 ## Testing
 
-The loading can be tested from the experimental database loader:
-
-`console -M localhost EXPDB`
-
-This has a menu press `M` to see the menu.
-
-Set the experimental data file path with `F` (there are some test files in `ISIS\ExperimentalDatabase\master\DatabaseController\tests\testxml.xml`)
-
-And update with `U`.
-
-## XML Format Example
-
-```
-<Experiments>
-	<Experiment>
-		<PI>
-		  <Name>John</Name>
-		  <Organisation>Science and Technology Facilities Council</Organisation>
-		</PI>
-		<Local>
-		  <Name>Dr Timothy Charlton</Name>
-		  <Organisation />
-		</Local>
-		<Others />
-		<StartDate>2015-03-19T08:00:00Z</StartDate>
-		<Duration>1</Duration>
-		<RB>1530009</RB>
-	  </Experiment>
-	<Experiment>
-		<PI>
-		  <Name>Dr Timothy Charlton</Name>
-		  <Organisation>Science and Technology Facilities Council</Organisation>
-		</PI>
-		<Local>
-		  <Name>Dr Timothy Charlton</Name>
-		  <Organisation />
-		</Local>
-		<Others />
-		<StartDate>2015-04-19T08:00:00Z</StartDate>
-		<Duration>1</Duration>
-		<RB>1530008</RB>
-	  </Experiment>
-
-	<Experiment>
-		<PI>
-		  <Name>Dr Timothy Charlton</Name>
-		  <Organisation>Science and Technology Facilities Council</Organisation>
-		</PI>
-		<Local>
-		  <Name>A</Name>
-		  <Organisation />
-		</Local>
-		<Others>
-		  <User>
-		    <Name>New</Name>
-		    <Organisation>New Org</Organisation>
-		  </User>
-		</Others>
-		<StartDate>2015-04-29T08:00:00Z</StartDate>
-		<Duration>2</Duration>
-		<RB>1530010</RB>
-	  </Experiment>
-	  
- </Experiments>
- 
-```
+* The populator has unit tests that are run in [jenkins](http://epics-jenkins.isis.rl.ac.uk/job/Experiment_Database_Populator/). 
+* The `DEBUG` flag can be set in the main file to push instrument data to your local experiment database.
+* A system test is included that will check the data gathered from the website is the same as that on the instruments. This is mainly useful for comparison to the old system.
