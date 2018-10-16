@@ -8,13 +8,13 @@ The content of the PV is a string in json format, compressed and hexed, for exam
 
 ```
 [
-        {"name": "LARMOR", "hostName": "NDXLARMOR", "pvPrefix": "IN:LARMOR:"},
-        {"name": "ALF", "hostName": "NDXALF", "pvPrefix": "IN:ALF:"},
-        {"name": "DEMO", "hostName": "NDXDEMO", "pvPrefix": "IN:DEMO:"},
-        {"name": "IMAT", "hostName": "NDXIMAT", "pvPrefix": "IN:IMAT:"},
-        {"name": "MUONFE", "hostName": "NDEMUONFE", "pvPrefix": "IN:MUONFE:"},
-        {"name": "ZOOM", "hostName": "NDXZOOM", "pvPrefix": "IN:ZOOM:"},
-        {"name": "IRIS", "hostName": "NDXIRIS", "pvPrefix": "IN:IRIS:"},
+        {"name": "LARMOR", "hostName": "NDXLARMOR", "pvPrefix": "IN:LARMOR:", "isScheduled": true},
+        {"name": "ALF", "hostName": "NDXALF", "pvPrefix": "IN:ALF:", "isScheduled": true},
+        {"name": "DEMO", "hostName": "NDXDEMO", "pvPrefix": "IN:DEMO:", "isScheduled": false},
+        {"name": "IMAT", "hostName": "NDXIMAT", "pvPrefix": "IN:IMAT:", "isScheduled": true},
+        {"name": "MUONFE", "hostName": "NDEMUONFE", "pvPrefix": "IN:MUONFE:", "isScheduled": false},
+        {"name": "ZOOM", "hostName": "NDXZOOM", "pvPrefix": "IN:ZOOM:", "isScheduled": true},
+        {"name": "IRIS", "hostName": "NDXIRIS", "pvPrefix": "IN:IRIS:", "isScheduled": true},
 ]
 ```
 	
@@ -24,3 +24,5 @@ To add a new instrument to this list proceed as follows:
 1. Check the current PV value from an EPICS terminal: `caget -t -S CS:INSTLIST|uzhex`
 1. Write a new value to the PV with the new instrument appended. To write a new compressed and hexed value to PV there is a utility Python script `C:\Instrument\Apps\EPICS\ISIS\inst_servers\master\scripts\set_instrument_list.py`, add the instrument to the dictionary in this script.
 1. Verify that all the instruments are picked up by the GUI (e.g. there are no parsing errors): `IBEX -> Switch Instrument` and that they have the correct alarm server and configuration loaded.
+1. Verify that the webdashboard for the instruments still works
+1. Verify that the [ExperimentDetailsPopulator](Experimental-Database) has updated with the new list
