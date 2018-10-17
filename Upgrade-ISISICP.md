@@ -19,7 +19,7 @@ This can take a while (several minutes). You will get various messages. The foll
 
 Run again from the same directory (you need to do `cd ..` to get back to the dae directory). It should be quicker this time
 
-As printed to screen at the end of script, open a command terminal as administrator (gamekeepr) and run
+As printed to screen at the end of script, open a command terminal as administrator (gamekeeper) and run
    ```
    cd "c:\labview modules\dae"
    register_programs.cmd
