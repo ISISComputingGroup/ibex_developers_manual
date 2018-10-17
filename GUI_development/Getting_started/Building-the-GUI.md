@@ -30,7 +30,7 @@ These are the steps needed to run the GUI via Eclipse:
 6. You will most likely have a pop up to notify you of errors and warnings. Some errors are related to Checkstyle. To fix these you must first navigate to Window->Preferences->Checkstyle. Click New and change the type to External Configuration. You then need to select the checkstyle template located as ``c:\Instruments\Dev\ibex_gui\base\uk.ac.stfc.isi.ibex.client.tycho.parent\checkstyle.xml``. Click Ok and then set the new style as the default. The remaining errors can be safely ignored by going to: Window->Preferences->Maven->Error/warnings and setting "plugin execution... " to Ignore.
 7. Then select Project->Clean from the menu bar.
 8. To run the application from within Eclipse: open "ibex.product" from the ``uk.ac.stfc.isis.ibex.e4.client.product`` folder, select "Launch an Eclipse application". The first time you do this, it will fail.
-9. Next, From the menu bar choose Run->Run configurations and select "ibex.product" from the lefthand list under "Eclipse Application".
+9. Next, From the menu bar choose Run->Run configurations and select "ibex.product" from the left hand list under "Eclipse Application".
 10. In the "Main" tab tick the "Clear" tick box and in the "Configuration" tab tick the "Clear the configuration area before launching" tick box. Click "Apply" and select "Run".
 11. When a dialogue box asking if you want to clear the run-time workspace data click "Yes". This dialogue box will appear every time you run the E4 build of IBEX from within Eclipse.
 
