@@ -8,10 +8,11 @@ To have a PV appear in the interest list in IBEX Configurations add the followin
 
     info(INTEREST, "<LEVEL>")
 
-where level is HIGH, MEDIUM, LOW.
+where the level is HIGH, MEDIUM, LOW.
 
-For records that are of no "interest" do not add an interest info field. For example: intermediate CALC records, SIM records etc.
-Any calc record which are interesting need `field(ASG, "READONLY")` adding some they can not be set by accident.
+For records that are of no "interest" do not add an interest info field. For example, intermediate CALC records, SIM records etc.
+
+Any calc record which is interesting needs `field(ASG, "READONLY")` added so it cannot be set by accident.
 
 ## 2. Archive PVs
 
@@ -26,7 +27,7 @@ This will archive the value of the `VAL` field once per second. The general form
 Where
 
     * period (defaults to 1):
-        * when +ve - sign up to monitor the pv use the period field to determine typical delay between samples in seconds 
+        * when +ve - sign up to monitor the pv use the period field to determine a typical delay between samples in seconds 
         * when -ve - monitor the value the value is the deadband for the system
     * field: the field to monitor on the record
 
@@ -38,7 +39,7 @@ If you want a PV to appear in the alarm view (and there should be at least one p
 
 ## 4. Autosave PVs
 
-PVs can be autosaved so that they save their values and are reloaded when the IOC starts. The value is set before the record is initialised so is only processed using this value if `PINI` is Yes; although waveform records do this differently and will process the record.To do this mark the field with the following info line:
+PVs can be autosaved so that they save their values and are reloaded when the IOC starts. The value is set before the record is initialised so is only processed using this value if `PINI` is Yes; although waveform records do this differently and will process the record. To do this mark the field with the following info line:
 
     info(autosaveFields, "VAL")
 
@@ -55,7 +56,7 @@ All PVs should have if appropriate:
 
 ## 6. Compliance with DBUnitChecker
 
-The build in Jenkins will fail if the rules of the [DBUnitChecker](PV-Units) script are not satisfied. You might as well check them before hand to save yourself time later. From an epics terminal in your ioc's app db directory 
+The build in Jenkins will fail if the rules of the [DBUnitChecker](PV-Units) script are not satisfied. You might as well check them beforehand to save yourself time later. From an epics terminal in your ioc's app db directory 
 
     python C:\Instrument\Apps\EPICS\ISIS\DbUnitChecker\master\db_checker.py -i .
 
@@ -82,13 +83,13 @@ Macros where possible should follow the [standard names](Macro-Naming). If a mac
 ```
 
 where
-> `macro` describes a macro setable by a user. containing `name`, is the name of the macro;  `pattern`, the regex for the macro's value; and `description`, a plain text description which is shown to the user. 
+> `macro` describes a macro settable by a user. containing `name`, is the name of the macro;  `pattern`, the regex for the macro's value; and `description`, a plain text description which is shown to the user. 
 
 > `ioc_desc` is a short description of the IOC e.g Lakeshore 218 fro LKSH218
 
 > `ioc_details` is more details about the IOC, e.g. link to docs.
 
-`config.xml` support xinclude so if you have several iocs with the same set of macros you don't need to repeat the file contents. Example GALIL02 (see below) uses GALIL01's config:
+`config.xml` support include so if you have several iocs with the same set of macros you don't need to repeat the file contents. Example GALIL02 (see below) uses GALIL01's config:
 
 ```
 <?xml version="1.0" ?>
@@ -97,4 +98,4 @@ where
 </ioc_config>
 ```
 
-Either a full make of the server, or running `make iocstartups` will then make the contents of these xml files available to the GUI (after restarting the instrument)
+Either a full make of the server or running `make iocstartups` will then make the contents of these XML files available to the GUI (after restarting the instrument)
