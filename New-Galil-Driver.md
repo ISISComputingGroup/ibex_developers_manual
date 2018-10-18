@@ -46,6 +46,7 @@ Under the new driver:
 - [ ] Confirm that you can move the chopper lifter in and out of the beam
 - [ ] Attempt to move an axis beyond it's physical limit, confirm that it stops
 - [ ] Set soft limits on an axis, confirm that you cannot go outside them
+- [ ] Move the galil over to serial comms as per the procedure in https://github.com/ISISComputingGroup/IBEX/issues/3546 and confirm it still communicates
 
 ### Tests specific to areas the new driver has changed
 - [ ] Turn on WLP, physically press a limit switch and confirm that you cannot move the motor in either direction
