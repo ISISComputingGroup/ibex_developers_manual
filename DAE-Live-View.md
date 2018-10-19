@@ -15,8 +15,6 @@ You first need to tell it the spectra to use for the live view e.g.
 caput %MYPVPREFIX%DAE:AD1:INTG:SPEC:START:SP 11
 caput %MYPVPREFIX%DAE:AD1:INTG:SPEC:SIZEX:SP 80
 caput %MYPVPREFIX%DAE:AD1:INTG:SPEC:SIZEY:SP 80
-caput %MYPVPREFIX%DAE:AD1:SizeX 80
-caput %MYPVPREFIX%DAE:AD1:SizeY 80
 ```
 will tell it to start from spectrum 11 and use consecutive spectra in an 80x80 grid. Note that `SPEC:SIZEX` and `SizeX` should be set the same at this point, `SizeX` can be smaller and binning etc done here but we are going to use a region of interest later instead so just make them the same. 
 
