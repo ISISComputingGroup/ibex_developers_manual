@@ -16,7 +16,7 @@ caput %MYPVPREFIX%DAE:AD1:INTG:SPEC:START:SP 11
 caput %MYPVPREFIX%DAE:AD1:INTG:SPEC:SIZEX:SP 80
 caput %MYPVPREFIX%DAE:AD1:INTG:SPEC:SIZEY:SP 80
 ```
-will tell it to start from spectrum 11 and use consecutive spectra in an 80x80 grid. Note that `SPEC:SIZEX` and `SizeX` should be set the same at this point, `SizeX` can be smaller and binning etc done here but we are going to use a region of interest later instead so just make them the same. 
+will tell it to start from spectrum 11 and use consecutive spectra in an 80x80 grid. Setting `SPEC:SIZEX` sets the underlying area detector `SizeX` and `MaxSizeX`. Though `SizeX` can be smaller, we do binning and size changes etc using a region of interest plugin later so they should always be the same here. 
 
 Live view is disabled by default, it is enabled with
 ```
