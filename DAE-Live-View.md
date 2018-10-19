@@ -24,12 +24,19 @@ caput %MYPVPREFIX%DAE:AD1:INTG:ENABLE:SP 1
 ```
 depending on the number of spectra, MAX_ARRAY_BYTES may need adjusting
 
+## Live view in histogram mode
+
+It is possible to use liveview in histogram mode, but this is slower and puts more load on the DAE unless a separate integrating detector card is used (such as on LOQ or SANS2D). Use the parameters to define spectrum numbers etc. as above and then enable this way with:
+```  
+caput %MYPVPREFIX%DAE:AD1:INTG:SPEC:MODE:SP 1
+```
+
 ## 1D detector with TOF axis giving 2D view
 
 In this case Y is the spectrum number and X is the time of flight bin. 
 
-* `SizeY` is the number of spectra in the 1D detector
-* `SizeX` is (number_of_time_channels + 1)
+* `SIZEY` is the number of spectra in the 1D detector
+* `SIZEX` is (number_of_time_channels + 1)
 * `SPEC:START:SP` is (number_of_time_channels + 1) * (number_of_dae_spectra_to_skip_to_get_to_1D_detector_spectra).
 
 You then need to put the live view into "TOFChannel" rather than "TOFSummed" mode with:
