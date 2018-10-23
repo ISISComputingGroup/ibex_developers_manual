@@ -1,6 +1,5 @@
 The Keithley 2400 is a multimeter, there are various Keithleys with different models numbers which do different tasks.
 
-
 ## Troubleshooting
 
 ### Termination character
