@@ -16,11 +16,11 @@ Inter has a script generator called MaxScript. It has fallen out of use because 
 
 The Inter script generator can also display the script in a "tree" view - this collapses each run into a short recognisable string, and the details can be seen by expanding out the tree item.
 
-The Inter script generator provides a time estimate.
+The Inter script generator provides some time estimation.
 
 ### Loq
 
-LOQ uses a script generator "written by Matt Clarke in VB or C#". The scientists have expressed a desire for the script generator to be fairly simple from a user's perspective. However, their script generator is broadly
+LOQ uses a script generator "written by Matt Clarke in VB or C#". The scientists have expressed a desire for the script generator to be simple from a user's perspective.
 
 # Commonalities of old systems / feature requests for new system
 
