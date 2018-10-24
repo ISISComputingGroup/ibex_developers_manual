@@ -25,6 +25,6 @@ Where
 
 [dp]: http://mathurl.com/ycpzu8wu.png
 
-[delta-temp]: http://mathurl.com/ybhhevlc.png
+[delta-temp]: http://mathurl.com/ybcns6ud.png
 
-[delta-time]: http://mathurl.com/yb2nge5k.png
+[delta-time]: http://mathurl.com/y8lccdz7.png
