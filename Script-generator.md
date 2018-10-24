@@ -2,7 +2,13 @@
 
 ### Muons
 
-The muons have at least 3 different script generators. All of these are fundamentally table-based systems with varying degrees of functionality
+The muons have at least 3 different script generators. All of these are fundamentally table-based systems with varying degrees of functionality on the side.
+
+MACS is probably the most interesting muon script generator. Brief overview of functionality:
+- Define a loop over temperature or field, counting at each point
+- Sends commands to OpenGENIE as it goes - means that scripts can be edited (up to the point when they have started running)
+- Allows users to run arbitrary commands before and after each row is executed
+- Includes some time estimation
 
 ### Inter
 
@@ -26,40 +32,66 @@ Most of the existing script generators are table based. Some have additional alt
 
 All of the script generators I've seen have essentially been setting a small number (2-10) of parameters and then performing some kind of run. The functions to set parameters and do the runs are different for each beamline, so each beamline will need to be able to configure this. It would be advantageous for a scientist to be able to configure this by themselves, without necessarily requiring input from computing.
 
+### Parameter checking
+
+All of the scientists have brought up a desire for parameters to be checked for implausible values (e.g. setting a dilution fridge to furnace temperatures). Many of the existing script generators already do this.
+
 ### Output
 
-All of the existing script generators generate a plain text file. However, the overwhelming consensus is that a new script generator should be able to talk to the script server directly, without needing to explicitly generate and then load a script. However, the *option* to explicitly generate and load a script is still important.
+All of the existing script generators generate a plain text file. However, the overwhelming consensus is that a script written using the new generator should be able to be executed "in one click", without requiring copying/saving a script and loading it explicitly.
+
+However, the *option* to explicitly generate and load a script is still important, as some users like to edit the generated script before it is sent.
 
 ### Feedback
 
-All of the scientists that have been involved in this discussion at all have agreed that feedback from the script server to the GUI is important. Notably, rows should be greyed out in some way once the script server has finished executing that script.
+Scientists have expressed a desire for live feedback visible in the script generator while the script is running. For example, rows should be greyed out once that part of the script has been executed.
 
-A "nice to have" feature would be to have a dynamically updating countdown of estimated remaining script time. This might be more or less fine grained depending on the implementation.
+### Time estimation
+
+Some of the existing script generators already do some form of time estimation - given instrument-specific assumptions. This is a feature that is quite heavily requested by all the different groups.
+
+### Dry runs
+
+Some scientists have expressed an interest in dry runs/simulated runs of scripts to detect errors. None of the existing script generators that I've seen contain this functionality.
 
 # Suggested implementations
 
+All of the implementations below assume that the NICOS script server will be used as the back-end, when the script generator is running on an instrument. Using the script server is logical as it already allows for queuing/re-ordering/editing scripts in a queue on an instrument.
+
 ### Approach 1
 
-One suggestion to implement the script generator is an eclipse application that can be run either within the IBEX GUI (as a perspective: similar to all the other perspectives) or standalone. Within the plugin, the script generator would be implemented as an MVVM stack in a similar style to the rest of the GUI, with the NICOS script server acting as the backend (if it is available).
+One suggestion to implement the script generator as a Java eclipse application that can be run either within the IBEX GUI or standalone. This plugin would be implemented as an MVVM stack in a similar style to the rest of the GUI.
 
-The advantages that I can see with this approach are that:
+Advantages:
 - It facilitates integration within the GUI while not being too difficult to package as a standalone application.
 - We can re-use some of the NICOS code from the GUI
 - It is a UI technology which IBEX developers already use and are already familiar with
 
-Some of the disadvantages are:
+Disadvantages:
 - Using Eclipse RCP might constrain us unnecessarily
 - It might be easier to work with generating python code in python itself
 
 ### Approach 2
 
-Another suggestion would be to implement the script server as a standalone Python program (using tkinter or a similar UI framework). As above this would be implemented as an MVVM stack.
+Another suggestion would be to implement the script generator as a standalone Python program (using tkinter or a similar UI framework). As above this would be implemented as an MVVM stack.
 
-Advantages are:
+Advantages:
 - It might be easier to interface with Nicos as nicos is written in Python
 - It may be easier to generate python code using python than java (for example, access to the `ast` module)
 
-Disadvantages are:
+Disadvantages:
 - IBEX developers are not currently familiar with Python UI toolkits. This would be another technology to learn.
 - Some of the NICOS functionality which we've implemented in the GUI would need to be reimplemented in Python
 - It would be more difficult or perhaps impossible to later integrate this into the main GUI
+
+### Approach 3
+
+Approach 3 would be to attempt to adapt one of the existing script generators, and retrofit script server support to it and add any other features that are requested.
+
+Advantages:
+- Some functionality is already implemented in the other script generators.
+
+Disadvantages:
+- The quality of the existing code is unknown
+- The existing script generators are written in technologies which we're not necessarily familiar with, or which may be obsolete
+- It is unknown how generic/extensible the existing script generators are. Most of the examples that I've seen are fairly specific to a small number of beamlines.
