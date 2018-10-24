@@ -14,7 +14,7 @@ The Inter script generator provides a time estimate.
 
 ### Loq
 
-LOQ uses a script generator "written by Matt Clarke in VB or C#". The scientists have expressed a desire for the script generator to be fairly simple from a user's perspective.
+LOQ uses a script generator "written by Matt Clarke in VB or C#". The scientists have expressed a desire for the script generator to be fairly simple from a user's perspective. However, their script generator is broadly
 
 # Commonalities
 
@@ -35,3 +35,31 @@ All of the existing script generators generate a plain text file. However, the o
 All of the scientists that have been involved in this discussion at all have agreed that feedback from the script server to the GUI is important. Notably, rows should be greyed out in some way once the script server has finished executing that script.
 
 A "nice to have" feature would be to have a dynamically updating countdown of estimated remaining script time. This might be more or less fine grained depending on the implementation.
+
+# Suggested implementations
+
+### Approach 1
+
+One suggestion to implement the script generator is an eclipse application that can be run either within the IBEX GUI (as a perspective: similar to all the other perspectives) or standalone. Within the plugin, the script generator would be implemented as a usual MVVM stack, with either the script server acting as the backend (if it is available).
+
+The advantages that I can see with this approach are that:
+- It facilitates integration within the GUI while not being too difficult to package as a standalone application.
+- We can re-use some of the NICOS code from the GUI
+- It is a UI technology which IBEX developers already use and are already familiar with
+
+Some of the disadvantages are:
+- Using Eclipse RCP might constrain us unnecessarily
+- It might be easier to work with generating python code in python itself
+
+### Approach 2
+
+Another suggestion would be to implement the script server as a standalone Python program (using tkinter or a similar UI framework). As above this would be implemented as an MVVM stack
+
+Advantages are:
+- It might be easier to interface with Nicos as nicos is written in Python
+- It may be easier to generate python code using python than java (for example, access to the `ast` module)
+
+Disadvantages are:
+- IBEX developers are not currently familiar with Python UI toolkits. This would be another technology to learn.
+- Some of the NICOS functionality which we've implemented in the GUI would need to be reimplemented in Python
+- It would be more difficuly
