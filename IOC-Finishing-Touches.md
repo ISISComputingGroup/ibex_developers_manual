@@ -56,7 +56,7 @@ All PVs should have if appropriate:
 
 ## 6. Compliance with DBUnitChecker
 
-The build in Jenkins will fail if the rules of the [DBUnitChecker](PV-Units) script are not satisfied. You might as well check them beforehand to save yourself time later. From an epics terminal in your ioc's app db directory 
+The build in Jenkins will fail if the rules of the [DBUnitChecker](PV-Units-&-Standards) script are not satisfied. You might as well check them beforehand to save yourself time later. From an epics terminal in your ioc's app db directory 
 
     python C:\Instrument\Apps\EPICS\ISIS\DbUnitChecker\master\db_checker.py -i .
 
