@@ -13,7 +13,7 @@ Please take note of the [IOC naming convention](IOC-Naming) before proceeding.
 1. Clone the repository into this directory and call that clone master
 1. Copy a standard makefile into this directory
 
-Create the IOC in master with (from an EPICS terminal)
+Create the IOC in EPICS\IOC\master with (from an EPICS terminal)
 
 ```
  makeBaseApp.pl –t ioc <myname>
