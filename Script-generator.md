@@ -1,4 +1,4 @@
-# Existing script generators that we know about
+# Existing script generators
 
 ### Muons
 
@@ -40,7 +40,7 @@ A "nice to have" feature would be to have a dynamically updating countdown of es
 
 ### Approach 1
 
-One suggestion to implement the script generator is an eclipse application that can be run either within the IBEX GUI (as a perspective: similar to all the other perspectives) or standalone. Within the plugin, the script generator would be implemented as a usual MVVM stack, with either the script server acting as the backend (if it is available).
+One suggestion to implement the script generator is an eclipse application that can be run either within the IBEX GUI (as a perspective: similar to all the other perspectives) or standalone. Within the plugin, the script generator would be implemented as an MVVM stack in a similar style to the rest of the GUI, with the NICOS script server acting as the backend (if it is available).
 
 The advantages that I can see with this approach are that:
 - It facilitates integration within the GUI while not being too difficult to package as a standalone application.
@@ -53,7 +53,7 @@ Some of the disadvantages are:
 
 ### Approach 2
 
-Another suggestion would be to implement the script server as a standalone Python program (using tkinter or a similar UI framework). As above this would be implemented as an MVVM stack
+Another suggestion would be to implement the script server as a standalone Python program (using tkinter or a similar UI framework). As above this would be implemented as an MVVM stack.
 
 Advantages are:
 - It might be easier to interface with Nicos as nicos is written in Python
@@ -62,4 +62,4 @@ Advantages are:
 Disadvantages are:
 - IBEX developers are not currently familiar with Python UI toolkits. This would be another technology to learn.
 - Some of the NICOS functionality which we've implemented in the GUI would need to be reimplemented in Python
-- It would be more difficuly
+- It would be more difficult or perhaps impossible to later integrate this into the main GUI
