@@ -12,7 +12,18 @@ Where
 
 ![delta-time]
 
+![dn]
+
+![dp]
+
+
+[//]: # (URLs for latex images)
+
 [drift-calculation]: http://mathurl.com/y77q3ex2.png
+
+[dn]: http://mathurl.com/ydykpgb5.png
+
+[dp]: http://mathurl.com/ycpzu8wu.png
 
 [delta-temp]: http://mathurl.com/ybhhevlc.png
 
