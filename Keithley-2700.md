@@ -1,5 +1,3 @@
-# Keithely 2700
-
 This is a multimeter used on HIFI to measure the temperature (via measured resistance values) at diffrerent points on the cryomagnets. It also calculates the temperature drift between measurements, in part to check the stability of the magnet. 
 
 ### Drift
