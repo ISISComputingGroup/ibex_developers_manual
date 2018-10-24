@@ -18,6 +18,8 @@ The Inter script generator can also display the script in a "tree" view - this c
 
 The Inter script generator provides some time estimation.
 
+Inter script generator is available at: `\\isis\shares\ISIS_Experimental_Controls\external_code\inter script generator` (copied from https://github.com/jonasgitt/ScriptMax with required DLLs and extra files added). Launch via the Qt IDE (download latest version from web; takes a while). I haven't been able to build it successfully to an exe, but only spent half an hour on it.
+
 ### Loq
 
 LOQ uses a script generator "written by Matt Clarke in VB or C#". The scientists have expressed a desire for the script generator to be simple from a user's perspective.
