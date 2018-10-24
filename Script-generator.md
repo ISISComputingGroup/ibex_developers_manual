@@ -22,7 +22,7 @@ The Inter script generator provides a time estimate.
 
 LOQ uses a script generator "written by Matt Clarke in VB or C#". The scientists have expressed a desire for the script generator to be fairly simple from a user's perspective. However, their script generator is broadly
 
-# Commonalities
+# Commonalities of old systems / feature requests for new system
 
 ### Spreadsheet / table based
 
