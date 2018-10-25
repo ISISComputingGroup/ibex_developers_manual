@@ -14,10 +14,11 @@ Please take note of the [IOC naming convention](IOC-Naming) before proceeding.
 1. Copy a standard makefile into this directory
 
 Create the IOC in EPICS\IOC\master with (from an EPICS terminal)
+1. In the `EPICS\IOC\master` directory create a directory called \<iocname>
 
 ```
- makeBaseApp.pl –t ioc <myname>
- makeBaseApp.pl –i –t ioc <myname>
+ makeBaseApp.pl –t ioc <iocname>
+ makeBaseApp.pl –i –t ioc <iocname>
 ```
 
 Edit `mynameApp/src/build.mak` add dbd file
