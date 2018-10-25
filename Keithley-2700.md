@@ -2,7 +2,7 @@ This is a multimeter used on HIFI to measure the temperature (via measured resis
 
 ### Drift
 
-The calculation used to calculate the drift uses information from the previous scan (including the previous calculated drift) and the information from the new scan. 
+The calculation used to calculate the drift uses information from the previous scan (including the previously calculated drift) and the information from the new scan. 
 
 ![drift-calculation]
 
