@@ -4,7 +4,7 @@
 
 The muons have at least 3 different script generators. All of these are fundamentally table-based systems with varying degrees of functionality on the side.
 
-MACS is probably the most interesting muon script generator. Brief overview of functionality:
+MACS is probably the most interesting muon script generator. A brief overview of functionality:
 - Define a loop over temperature or field, counting at each point
 - Sends commands to OpenGENIE as it goes - means that scripts can be edited (up to the point when they have started running)
 - Allows users to run arbitrary commands before and after each row is executed
@@ -84,7 +84,7 @@ Advantages:
 Disadvantages:
 - IBEX developers are not currently familiar with Python UI toolkits. This would be another technology to learn.
 - Some of the NICOS functionality which we've implemented in the GUI would need to be reimplemented in Python
-- It would be more difficult or perhaps impossible to later integrate this into the main GUI
+- It would be more difficult or perhaps impossible to integrate this into the main GUI later
 
 ### Approach 3
 
@@ -95,5 +95,5 @@ Advantages:
 
 Disadvantages:
 - The quality of the existing code is unknown
-- The existing script generators are written in technologies which we're not necessarily familiar with, or which may be obsolete
+- The existing script generators are written in technologies which were not necessarily familiar with, or which may be obsolete
 - It is unknown how generic/extensible the existing script generators are. Most of the examples that I've seen are fairly specific to a small number of beamlines.
