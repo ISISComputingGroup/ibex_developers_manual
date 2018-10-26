@@ -9,4 +9,4 @@ To fix this you can complete the following steps:
 3. From the Import view select `Existing Projects into Workspace` and click Next.
 4. Browse to your resources directory and click Finish.
 
-The project files will now be correctly loaded. Often you need to restart CS Studio in order to fully update the menus.
+The project files will now be correctly loaded and it is recommended you restart CS Studio at this point to update the GUI menus.
