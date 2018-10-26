@@ -12,6 +12,8 @@ MACS is probably the most interesting muon script generator. A brief overview of
 - Sends commands to OpenGENIE via the SECI API as it goes - means that scripts can be edited (up to the point when they have started running). This is similar in spirit to nicos script server.
 - Includes some basic time estimation (it displays the total count time of everything in the script window)
 
+Tom has a copy of MACS, but this can only run out of cycle and on a real instrument.
+
 ### Inter
 
 Inter has a script generator called MaxScript. It has fallen out of use because it is not easy to integrate with the SECI system. Scientists from Inter expressed the desire for the script generator to be able to talk to the script server directly, with feedback (for example, greying out completed rows where a row represents an experimental measurement).
