@@ -469,12 +469,12 @@ isisicp.simulation.detcards.crate1.number = 10
 isisicp.simulation.detcards.crate2.number = 12
 ```
 
-If you have defined   isisisp.datadae.use = true     in isisicp.properties   then you need to make sure the setector card referred to in data_dae.xml  is created by above. If this is a pure setup/test machine rather than a real instrument, you may just want to set     isisisp.datadae.use = false  
+If you have defined `isisisp.datadae.use = true` in `isisicp.properties` then you need to make sure the detector card referred to in data_dae.xml  is created by above. If this is a pure setup/test machine rather than a real instrument, you may just want to set `isisisp.datadae.use = false`
  
 ## DAE3 does not start 
 
-DAE3 is new ethernet based acquisition electronics on ZOOM and MARI, it used ISISICP and looks like DAE2 for most purposes. If everything remains in processing, it may be that the `arp` network entries did not get created - these should be done as a system time boot task. Do `arp -a` and see if there is an entry for 192.168.1.101 etc.  If not, run `set_dae3_arp.bat` in `c:\labview modules\dae` as as administrator
+DAE3 is new ethernet based acquisition electronics on ZOOM and MARI, it used `ISISICP` and looks like DAE2 for most purposes. If everything remains in processing, it may be that the `arp` network entries did not get created - these should be done as a system time boot task. Do `arp -a` and see if there is an entry for 192.168.1.101 etc.  If not, run `set_dae3_arp.bat` in `c:\labview modules\dae` as as administrator
 
 ## Error code 112
 
-If there is an error code 112 reported in the log it means that the disk (data volume) is full and it can not start the isisicp program.
+If there is an error code 112 reported in the log it means that the disk (data volume) is full and it can not start the `isisicp` program.
