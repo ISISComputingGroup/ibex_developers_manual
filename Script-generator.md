@@ -66,7 +66,7 @@ All of the implementations below assume that the NICOS script server will be use
 
 ### Approach 1
 
-One suggestion to implement the script generator as a Java eclipse application that can be run either within the IBEX GUI or standalone. This plugin would be implemented as an MVVM stack in a similar style to the rest of the GUI.
+One suggestion to implement the script generator as a Java eclipse plugin that can be run either within the IBEX GUI or standalone. This plugin would be implemented as an MVVM stack in a similar style to the rest of the GUI.
 
 Advantages:
 - It facilitates integration within the GUI while not being too difficult to package as a standalone application.
@@ -92,12 +92,12 @@ Disadvantages:
 
 ### Approach 3
 
-Approach 3 would be to attempt to adapt one of the existing script generators, and retrofit script server support to it and add any other features that are requested.
+Approach 3 would be to attempt to adopt and adapt one of the existing script generators, and retrofit script server support to it and add any other features that are requested.
 
 Advantages:
 - Some functionality is already implemented in the other script generators.
 
 Disadvantages:
-- The quality of the existing code is unknown
+- The quality of the existing code is largely unknown
 - The existing script generators are written in technologies which were not necessarily familiar with, or which may be obsolete
-- It is unknown how generic/extensible the existing script generators are. Most of the examples that I've seen are fairly specific to a small number of beamlines.
+- It is unknown how generic/extensible the existing script generators are. Most are fairly specific to a small number of beamlines.
