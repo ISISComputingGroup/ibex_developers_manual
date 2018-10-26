@@ -2,14 +2,15 @@
 
 ### Muons
 
-The muons have at least 3 different script generators. All of these are fundamentally table-based systems with varying degrees of functionality on the side.
+The muons have at least 3 different script generators. All of these are fundamentally table-based systems with varying degrees of additional functionality on the side.
 
 MACS is probably the most interesting muon script generator. A brief overview of functionality:
-- Define a loop over temperature or field, counting at each point
-- Also has two types of scans: linear and logarithmic
-- Sends commands to OpenGENIE as it goes - means that scripts can be edited (up to the point when they have started running)
-- Allows users to run arbitrary commands before and after each row is executed
-- Includes some time estimation
+- Keeps a table-based view of operations on the screen. An "Operation" could be:
+  * A run at a single combination of temperature/field
+  * A scan over temperature or field (in three modes), counting at each point. These scans can be defined as linear or logarithmic.
+  * An arbitrary block set to an arbitrary value
+- Sends commands to OpenGENIE via the SECI API as it goes - means that scripts can be edited (up to the point when they have started running). This is similar in spirit to nicos script server.
+- Includes some basic time estimation (it displays the total count time of everything in the script window)
 
 ### Inter
 
