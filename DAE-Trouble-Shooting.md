@@ -470,7 +470,16 @@ isisicp.simulation.detcards.crate2.number = 12
 ```
 
 If you have defined `isisisp.datadae.use = true` in `isisicp.properties` then you need to make sure the detector card referred to in data_dae.xml  is created by above. If this is a pure setup/test machine rather than a real instrument, you may just want to set `isisisp.datadae.use = false`
+
+## DAE exception messages
+
+If you get an error in you IOC log like:
+
+[2018-10-26 17:33:37] sevr=major Win32StructuredException code 0xc0000005 pExpCode 0xc0000005 pExpAddress 0000000000000000
+[2018-10-26 17:33:37] 2018/10/26 17:33:36.741 IN:DEMO:DAE:AD1:INTG:TMIN:SP devAsynFloat64 pPvt->result.status=3, process error isisdaeDriver:writeFloat64: status=0, function=184, name=INTG_TMIN, value=0.000000, error=Win32StructuredException code 0xc0000005 pExpCode 0xc0000005 pExpAddr
  
+One cause would be the IOC is trying to call a function in the ISISICP that it can't find. If the ISISICP has been updated, but   /RegServer  has not been run, then new functions added there will not be visible. See https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/First-time-installing-and-building-(Windows)
+  
 ## DAE3 does not start 
 
 DAE3 is new ethernet based acquisition electronics on ZOOM and MARI, it used `ISISICP` and looks like DAE2 for most purposes. If everything remains in processing, it may be that the `arp` network entries did not get created - these should be done as a system time boot task. Do `arp -a` and see if there is an entry for 192.168.1.101 etc.  If not, run `set_dae3_arp.bat` in `c:\labview modules\dae` as as administrator
