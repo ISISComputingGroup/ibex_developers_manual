@@ -6,6 +6,7 @@ The muons have at least 3 different script generators. All of these are fundamen
 
 MACS is probably the most interesting muon script generator. A brief overview of functionality:
 - Define a loop over temperature or field, counting at each point
+- Also has two types of scans: linear and logarithmic
 - Sends commands to OpenGENIE as it goes - means that scripts can be edited (up to the point when they have started running)
 - Allows users to run arbitrary commands before and after each row is executed
 - Includes some time estimation
