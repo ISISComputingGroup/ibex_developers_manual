@@ -4,7 +4,7 @@ A technical debt stand-down day is a day devoted to fixing technical debt in the
 
 1. Choose a day where most people are free
 1. Choose a topic: examples
-    - Squish tests
+    - Squish tests [#3707](https://github.com/ISISComputingGroup/IBEX/issues/3707)
     - Eclipse/CSS interaction
     - Tech debt tickets
     - Block server exception handling
