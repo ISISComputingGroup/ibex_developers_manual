@@ -475,8 +475,10 @@ If you have defined `isisisp.datadae.use = true` in `isisicp.properties` then yo
 
 If you get an error in you IOC log like:
 
+```
 [2018-10-26 17:33:37] sevr=major Win32StructuredException code 0xc0000005 pExpCode 0xc0000005 pExpAddress 0000000000000000
 [2018-10-26 17:33:37] 2018/10/26 17:33:36.741 IN:DEMO:DAE:AD1:INTG:TMIN:SP devAsynFloat64 pPvt->result.status=3, process error isisdaeDriver:writeFloat64: status=0, function=184, name=INTG_TMIN, value=0.000000, error=Win32StructuredException code 0xc0000005 pExpCode 0xc0000005 pExpAddr
+```
  
 One cause would be the IOC is trying to call a function in the ISISICP that it can't find. If the ISISICP has been updated, but   /RegServer  has not been run, then new functions added there will not be visible. See https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/First-time-installing-and-building-(Windows)
   
