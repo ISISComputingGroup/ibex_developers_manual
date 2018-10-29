@@ -1,4 +1,4 @@
-> [Wiki](Home) > [Deployment](Deployment) > Making an Instrument Available from the GUI
+> [Wiki](Home) > [Deployment](Deployment) > [Making an Instrument Available from the GUI](Making-an-Instrument-Available-from-the-GUI)
 
 The new instrument must be added to the list of available instruments so that users can control it from the Ibex GUI. The list of available instruments is stored in a PV called `CS:INSTLIST`, which runs on the beam status IOC, and is therefore independent of any specific instrument.
 
