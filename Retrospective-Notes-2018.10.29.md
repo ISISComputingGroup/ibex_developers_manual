@@ -9,7 +9,7 @@ Generally slow sprint because of holidays. Please announce holidays to Kevin whe
     * No fine for the moment, but change process for setting it to include a review before running.
 * Review column > 10 items, ok?
     * Maybe because there were many tickets for release. Rory to monitor it for next time.
-* Remove old Jenkin's jobs?
+* Remove old Jenkins jobs?
     * Yes, Freddie to check that nothing is extra is captured in the old jobs and to back up then remove
 * Remove E3 client and RCPTT?
     * John to check that it hasn't been run on any instrument and then create a ticket to delete jobs after backup of Jenkins and move it to client folder (instead of `client_E3`)
@@ -21,6 +21,6 @@ Generally slow sprint because of holidays. Please announce holidays to Kevin whe
     * Check the [list](Drop-in-Sessions#drop-in-session-principles-1)
     * Monitor success, has been asked for in and out of cycle by scientists
     * Ask Mantid team what they do
-* More demoing
+* More demonstrating
     * Yes, please start powerpoint and review earlier
 
