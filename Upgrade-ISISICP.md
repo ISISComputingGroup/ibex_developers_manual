@@ -12,21 +12,21 @@
       cd c:\LabVIEW Modules\dae
       update_inst.cmd
    ```
-This can take a while (several minutes). You will get various messages. The following are OK:
-1. access denied messages for `ss.ini`
-1. If it can't replace the file `isisicp_extMC.dll` as it is open
-1. messages about establishing working folders for projects
-
-Run again from the same directory (you need to do `cd ..` to get back to the dae directory). It should be quicker this time
-
-As printed to screen at the end of script, open a command terminal as administrator (gamekeeper) and run
+  This can take a while (several minutes). You will get various messages. The following are OK:
+    * access denied messages for `ss.ini`
+    * If it can't replace the file `isisicp_extMC.dll` as it is open
+    * messages about establishing working folders for projects
+1. Run again from the same directory (you need to do `cd ..` to get back to the dae directory). It should be quicker this time
+1. As printed to screen at the end of script, open a command terminal as administrator (gamekeeper) and run
    ```
    cd "c:\labview modules\dae"
    register_programs.cmd
    ```
+1. Now delete `c:\data\selog.*` (.sq3 .sq3-shm and .sh3-wal files)
+1. Finally run journal parser installation
 
-Now delete `c:\data\selog.*` (.sq3 .sq3-shm and .sh3-wal files)
 
+# Example log
 The following is a log from update_inst going OK
 ```
 C:\LabVIEW Modules\dae>update_inst.cmd
