@@ -1,6 +1,6 @@
 > [Wiki](Home) > [Deployment](Deployment) > [Deployment on an Instrument Control PC](Deployment-on-an-Instrument-Control-PC) > [Upgrade ISISICP](Upgrade-ISISICP)
 
-** If you are doing this for ZOOM then talk with Freddie first it needs the up-to-date DAE3 version of the program **
+**If you are doing this for ZOOM then talk with Freddie first it needs the up-to-date DAE3 version of the program**
 
 1. Check `isisicp` and `isisdatasvr` processes are not running. You cannot kill them if ISISDAE-IOC-01 is running so you need to stop this separately (and stop procserv restarting them) or run stop_ibex_server  
 1. Backup existing installation: copy the following to `c:\data\old\isisdae_backup_YYY_MM_DD`:
