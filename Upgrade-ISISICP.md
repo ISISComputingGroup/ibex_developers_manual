@@ -25,7 +25,7 @@
    register_programs.cmd
    ```
 1. Now delete `c:\data\selog.*` (.sq3 .sq3-shm and .sh3-wal files)
-1. Finally run journal parser installation
+1. Finally run journal parser installation, found at `<public share>\journalparser_static_new\install.bat`
 
 
 # Example log
