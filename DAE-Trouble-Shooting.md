@@ -489,3 +489,7 @@ DAE3 is new ethernet based acquisition electronics on ZOOM and MARI, it used `IS
 ## Error code 112
 
 If there is an error code 112 reported in the log it means that the disk (data volume) is full and it can not start the `isisicp` program.
+
+## DAE Type mismatch error
+
+If you get an error from ISISICP `*** ISISICP STARTUP FAILED (DAE type mistmatch)***` it means you are running `isisicp` program with the wrong sort of dae ie 2 when you have 3. You need to source the correct version of the code for your type of DAE.
