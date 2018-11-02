@@ -1,4 +1,4 @@
-# FZJ fermi chopper, as used on MERLIN and MAPS
+# FZJ fermi chopper, as used on MERLIN, MAPS and MARI
 
 This device has a relatively complex IOC due to some communication issues we have had with the chopper. The following things are non-standard:
 - Custom checksum algorithm in stream device. This is specific to this fermi chopper.
