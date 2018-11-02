@@ -35,7 +35,7 @@ At 600Hz, the chopper exhibits strange behaviour:
 
 For more details, see [#2741](https://github.com/ISISComputingGroup/IBEX/issues/2741)
 
-# Chopper won't phase correctly / delay is fluctuating wildly
+# Won't phase correctly / delay is fluctuating
 
 ### Synchrotron off
 
