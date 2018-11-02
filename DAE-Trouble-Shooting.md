@@ -20,7 +20,7 @@ Also once observed on LARMOR, accompanied by the following error messages contin
 This was resolved by powercycling the DAE followed by stopping the visa server and running `resman`. (Ask Freddy or Gareth to find out more)
 
 ### No log files are produced in `c:\data` even though blocks are set to log.
-The reason may be because cp hasn't been set to look for epics. In `C:\LabVIEW Modules\dae\isisicp.properties` set `isisicp.epicsdb.use = true` to log the epic's blocks
+The reason may be because cp hasn't been set to look for epics. In `C:\LabVIEW Modules\dae\isisicp.properties` set `isisicp.epicsdb.use = true` to log the epic's blocks. You will need to restart the `isisicp` process for this to take effect. To do this, just end the `isisicp` process in task manager.
 
 ### DAE doesn't seem to be connected/I want to run without a DAE connected
 The DAE can be set to run in simulation mode, this must be unset before data will be collected. To set the mode edit the xml file in `C:\LabVIEW Modules\dae\icp_config.xml` set the simulate property to 1 to simulate 0 to use hardware.
