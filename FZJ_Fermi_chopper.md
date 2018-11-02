@@ -35,6 +35,12 @@ At 600Hz, the chopper exhibits strange behaviour:
 
 For more details, see [#2741](https://github.com/ISISComputingGroup/IBEX/issues/2741)
 
+# Chopper won't phase correctly / delay is fluctuating wildly
+
+### Synchrotron off
+
+The phase delay of the chopper is a delay between the synchrotron pulse and the phase of the chopper. If the synchrotron is not running these numbers will be essentially random - this is nothing to worry about.
+
 # Drive turns off unexpectedly
 
 There are a variety of hardware & software conditions that can cause the chopper to spin down.
