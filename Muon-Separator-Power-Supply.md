@@ -29,3 +29,5 @@ To recover the amount of time which was spent outside of the stable boundary, mu
 The stability boundaries are defined as:
 1. Voltage stability: `V_lower_limit < V_measured < V_upper_limit`
 1. Current stability: `I_measured <= (I_stable + I_limit)`
+
+**N.B**: When the stability limits are set so that the signal is always unstable, then the unstable time will sometimes not equal the buffer size due to data loss. This will be a large problem if the frequency is larger than the number of elements.
