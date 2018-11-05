@@ -46,7 +46,7 @@ The motors currently used at ISIS are:
 
 * [General Jaws](Jaws)
 * [Barndoors and Momentum Slits on MUON Front End](Barndoors-and-Momentum-Slits-on-MUON-Front-End)
-* Axes
+* [Axis](Axis) - a user defined axis which puts a layer of indirection between the user and the low level motor
 * [Motion Setpoints](Motion-Set-points)
 
 ## Other info
