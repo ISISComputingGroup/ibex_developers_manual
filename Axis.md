@@ -15,7 +15,7 @@ More examples can be found motion [set points directory](https://github.com/ISIS
 
 The parameters needed are:
 
-`P` - prefix of the axis
-`AXIS` - name of the axis
-`mAXIS` - underlying motor from the table of motors
+* `P` - prefix of the axis
+* `AXIS` - name of the axis
+* `mAXIS` - underlying motor from the table of motors
 
