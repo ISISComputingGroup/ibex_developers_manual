@@ -16,21 +16,25 @@ Look for mysqld.exe task running in task manager or for the service MQSQLXX (cur
 
 Database disc space is taken up by tables stored in `C:\Instrument\Var\mysql\data` the space can be regained by truncating the table. This could lose the data and will certainly remove it from the database so be careful. At various stages you will be prompted for the database password it is on the passwords page.
 
-First create a sql dump of the two largest schemas:
+Run the script in:
 
-    "c:\Program Files\MySQL\MySQL Server 5.7\bin\mysqldump.exe" -u root -p msg_log > "c:\data\old\ibex_backup_YYYY_MM_DD\msg_log.sql"
-    "c:\Program Files\MySQL\MySQL Server 5.7\bin\mysqldump.exe" -u root -p archive > "c:\data\old\ibex_backup_YYYY_MM_DD\archive.sql"
+```
+<public share>\ibex_utils\installation_and_upgrade\truncate_database.bat
+```
 
-Check the files look right and move them to a directory called ibex_db_backup_YYYY_MM_DD and move the folder to long term storage (`\\isis\inst$\backups$\stage-deleted\<inst>`). Then from a command prompt:
+If you wish to do this manually:
 
-    "c:\Program Files\MySQL\MySQL Server 5.7\bin\mysql.exe" -u root -p
+1. First create a sql dump of the database:
+    ```
+    "c:\Program Files\MySQL\MySQL Server 5.7\bin\mysqldump.exe" -u root -p --all-databases --single-transaction --result-file=c:\data\old\ibex_backup_YYYY_MM_DD\ibex_db_sqldump_YYYY_MM_DD.sql
+    ```
+1. Check the file looks right and move it to the long term storage folder (`\\isis\inst$\backups$\stage-deleted\<inst>`). 
+1. Truncate the tables with:
+    ```
+    "c:\Program Files\MySQL\MySQL Server 5.7\bin\mysql.exe" -u root -p --execute "truncate table msg_log.message;truncate table archive.sample"
+    ```
 
-Truncate the message log tables with: 
-
-    truncate table msg_log.message;
-    truncate table archive.sample;
-    exit
-
+NB Originally this was the message and sample tables bumped to a directory in here, if you are looking for older data.
 ## Moving the Table Data Files
 
 If the tables data file were created in the wrong place they can be moved using the following.
