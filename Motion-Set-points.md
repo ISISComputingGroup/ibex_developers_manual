@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > [Motor IOCs](Motor-IOCs) > [Motion Setpoints](Motion-Set-points)
+
 Motion set points allow you to label set positions for a motor, current either 1 axis or 2 axes. The code for this is in support in the directory [motionSetPoints](https://github.com/ISISComputingGroup/EPICS-motionSetPoints). The configuration for a motion set point is in to parts:
 
 1. St file called `motionsetpoints.cmd` which sets up the db file which is stored in the configuration under the motor name:
