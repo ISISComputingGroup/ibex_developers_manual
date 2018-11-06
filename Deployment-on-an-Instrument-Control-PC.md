@@ -20,12 +20,13 @@ Steps are marked with **bold** prefixes to indicate the following:
     - It will look for the highest version number in the release folder as a source.
     - If you want to install a non-default release you need to set the `SUFFIX` variable in the batch file. For example with `x.y.z` being the current release and `hotfix` being the suffix, it will look for the folder `Releases/x.y.z-hotfix`
     - Follow the instructions on the command line. 
+- If needed, shutdown IBEX and [upgrade the ISISICP](Upgrade-ISISICP). Remember to run the journal parser installation  - this can take some time.
 - After the script has successfully finished and the IBEX server has been started, run `instrument_test.bat` in the same folder and follow the instructions.
 
 #### upgrade
 - Ensure the instrument is running and in a setup state (e.g. so you can take screenshots of blocks, motors, running VIs, etc.)
 - Ensure all command lines to EPICS are closed
-- Shutdown IBEX and do do the [upgrade ISISICP](Upgrade-ISISICP)
+- Shutdown IBEX and [upgrade the ISISICP](Upgrade-ISISICP)
 - Run `<public share>\installation_and_upgrade\instrument_deploy.bat`
     - It will look for the highest version number in the release folder as a source.
     - If you want to install a non-default release you need to set the `SUFFIX` variable in the batch file. For example with `x.y.z` being the current release and `hotfix` being the suffix, it will look for the folder `Releases/x.y.z-hotfix`
