@@ -9,6 +9,27 @@ This device has a relatively complex IOC due to some communication issues we hav
 - There is logic in the DB records to prevent sending a speed setpoint that is equal to the current speed setpoint readback.
 - There is (equipment) safety logic in the IOC. For more details see below.
 
+# Logs
+
+The logs for the fermi chopper are kept in `C:\Instrument\var\logs\ioc\FERMCHOP_01-<date>`. These logs contain the following information:
+- All commands that are used to start the driver. Whenever the driver restarts, there will be a large block of `epicsEnvSet` commands. The startup process is finished when an `epics>` prompt comes up in the log.
+- Communication conditions and problems, for example unexpected replies from the chopper. These messages may include parts of the raw (hexadecimal) response from the chopper.
+- Information about the chopper state (e.g. interlock statuses, temperatures out of range) **when they transition between valid/invalid states**. These messages are prefixed with `Chopper status: `
+- Information about actions that the driver is taking to ensure the settings stay correct. There is a state machine that detects when the chopper forgets it's settings and resends the correct settings. These messages are prefixed with `Keep SP and RBV in sync`.
+- Messages regarding whether certain commands were accepted by the driver. These messages are prefixed with `commandCheck`. The driver will reject commands (and print a message in the log) if:
+  * The user attempts to spin up the chopper with the bearings off
+  * The user attempts to resend a "spin-up" command while the chopper is set and spinning at 600Hz. This is a mitigation for the 600Hz issue experienced on Merlin, details further down this page.
+  * The user attempts to switch off the magnetic bearings while the actual chopper speed is >10Hz.
+  * When the driver sends a command successfully, it will also print a message in the log with the numeric command that it has send. The translation for these numeric commands is 
+    * 1: Switch drive on/stop mode
+    * 2: Switch drive off
+    * 3: Switch drive on/run mode
+    * 4: Switch mag bearings on
+    * 5: Switch mag bearings off
+    * 6: Use MERLIN large chopper parameters
+    * 7: Use MARI chopper parameters
+    * 8: Use MERLIN small chopper parameters
+
 # Unexpected Delay / Speed / Gate Width settings
 
 ### Delay: high and low byte ordering
