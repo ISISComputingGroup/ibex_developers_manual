@@ -12,7 +12,7 @@ This device has a relatively complex IOC due to some communication issues we hav
 # Diagnostic logs
 
 The logs for the fermi chopper are kept in `C:\Instrument\var\logs\ioc\FERMCHOP_01-<date>`. These logs contain the following information:
-- All commands that are used to start the driver. Whenever the driver restarts, there will be a large block of `epicsEnvSet` commands. The startup process is finished when an `epics>` prompt comes up in the log.
+- All commands that are used to start the driver. Whenever the driver first starts, there will be a large block of `epicsEnvSet` commands. The startup process is finished when an `epics>` prompt comes up in the log (there will be lots of commands in between - these can be ignored)
 - Communication conditions and problems, for example unexpected replies from the chopper. These messages may include parts of the raw (hexadecimal) response from the chopper.
 - Information about the chopper state (e.g. interlock statuses, temperatures out of range) **when they transition between valid/invalid states**. These messages are prefixed with `Chopper status: `
 - Information about actions that the driver is taking to ensure the settings stay correct. There is a state machine that detects when the chopper forgets it's settings and resends the correct settings. These messages are prefixed with `Keep SP and RBV in sync`.
