@@ -68,11 +68,11 @@ GalilStartController("Galil","$(GALIL)/gmc/galil_Default_Header.gmc;$(GALIL)/gmc
 
 ```
 
-Typically the only line you will need to pay careful attention to is the last (non-commented) line. This defines the homing modes of the various galils. The structure of this line is that it has a standard header (`$(GALIL)/db/galil_Default_Header.gmc;`), followed by 8 homing modes, followed by a standard footer (`$(GALIL)/gmc/galil_Default_Footer.gmc`).
+Typically the only line you will need to pay careful attention to is the last (non-commented) line. This defines the homing modes of the various galils. The structure of this line is that it has a standard header (`$(GALIL)/db/galil_Default_Header.gmc;`), followed by 8 homing modes (regardless of the number of physical axes present - use `galil_Home_Dummy_Do_Nothing.gmc` for non-existent axes), followed by a standard footer (`$(GALIL)/gmc/galil_Default_Footer.gmc`).
 
-The homing modes available under IBEX can be seen in `C:\Instrument\Apps\EPICS\support\galil\master\gmc`. You should select the homing mode under IBEX which corresponds to the homing mode under SECI, which can be found using the VI in `\\ndxINSTRUMENT\C$\LABVIEW MODULES\Drivers\Galil DMC2280\Galil - System Functions.llb`. Open up the `Galil - Setup Dialog.vi` and run the VI. You should now be able to see the "Home method" for all the various Galils/Axes. 
+The homing modes available under IBEX can be seen in `C:\Instrument\Apps\EPICS\support\galil\master\gmc` and explanations of each are in `readme.md` in the same directory. You should select the homing mode under IBEX which corresponds to the homing mode under SECI, which can be found using the VI in `\\ndxINSTRUMENT\C$\LABVIEW MODULES\Drivers\Galil DMC2280\Galil - System Functions.llb`. Open up the `Galil - Setup Dialog.vi` and run the VI. You should now be able to see the "Home method" for all the various Galils/Axes. 
 
-If you're unsure which homing method to use, check with the instrument scientists what the expected behaviour is.
+If you're still unsure which homing method to use, check with the instrument scientists what the expected behaviour is.
 
 # Copy across the motor setup
 
