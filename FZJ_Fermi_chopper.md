@@ -9,7 +9,7 @@ This device has a relatively complex IOC due to some communication issues we hav
 - There is logic in the DB records to prevent sending a speed setpoint that is equal to the current speed setpoint readback.
 - There is (equipment) safety logic in the IOC. For more details see below.
 
-# Logs
+# Diagnostic logs
 
 The logs for the fermi chopper are kept in `C:\Instrument\var\logs\ioc\FERMCHOP_01-<date>`. These logs contain the following information:
 - All commands that are used to start the driver. Whenever the driver restarts, there will be a large block of `epicsEnvSet` commands. The startup process is finished when an `epics>` prompt comes up in the log.
