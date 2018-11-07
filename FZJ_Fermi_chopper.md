@@ -24,8 +24,8 @@ The logs for the fermi chopper are kept in `C:\Instrument\var\logs\ioc\FERMCHOP_
     * 1: Switch drive on/stop mode
     * 2: Switch drive off
     * 3: Switch drive on/run mode
-    * 4: Switch mag bearings on
-    * 5: Switch mag bearings off
+    * 4: Switch magnetic bearings on
+    * 5: Switch magnetic bearings off
     * 6: Use MERLIN large chopper parameters
     * 7: Use MARI chopper parameters
     * 8: Use MERLIN small chopper parameters
