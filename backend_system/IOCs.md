@@ -29,15 +29,15 @@ If you're not creating a StreamDevice IOC or you you would like to know how an I
         1. [Adding motor IOC to global motor moving and stop all](Adding-motor-IOC-to-global-motor-moving-and-stop-all)
         1. [Add support for motor extras, e.g. axes](Add-support-for-motor-extras)    
 
-1. [Record simulation](Record-Simulation)
-
-1. [Disable records](Disable-records)
+1. [Record simulation](Record-Simulation) and [Disable records](Disable-records)
 
 1. [Running (and testing) IOC](Running-IOCs)
 
 1. [Add logging](Logging-from-the-archive)
 
 1. Add any manuals used to the [manuals directory](Manuals)
+
+1. Add a page about the device in the correct categories in [Specific Device IOC](Specific-Device-IOC)
 
 1. [Add IOC to EPICS hardware support list](Add-ioc-to-epics-hardware-list)
 
