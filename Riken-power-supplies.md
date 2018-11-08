@@ -10,7 +10,23 @@ See \\...\shares\ISIS_Experimental_Controls\Manuals\RIKEN_power_supplies\riken p
 
 # Macros
 
-The PSUs are set up in daisy chains. Macros are prefixed with (for example) `CHAIN1_`. Each chain of PSUs is talking on a completely independent COM port.
+The PSUs are set up in daisy chains. Macros are prefixed with (for example) `CHAIN1_`. Each chain of PSUs is talking on a completely independent COM port. This is configured using the `CHAIN1_PORT` macro.
+
+For each power supply, the macros will be in the following format:
+```
+CHAIN1_ADR1=1
+CHAIN1_ID1=RQ1
+CHAIN1_FRV1=2
+CHAIN1_FRI1=625/99990
+CHAIN1_FWI1=9999/625
+```
+
+Where:
+- `ADR` is the address on the daisy chain of the power supply
+- `ID` is the human-friendly name of the power supply
+- `FRV` is a scaling factor applied when reading voltage
+- `FRI` is a scaling factor applied when reading current
+- `FWI` is a scaling factor applied when writing current (note, for some power supplies this can be completely different from the reading scale factor)
 
 Additionally, the IOC talks to DAQ MX to do some changeover logic, which is implemented in SNL inside the IOC.
 
