@@ -21,6 +21,8 @@ CHAIN1_FRI1=625/99990
 CHAIN1_FWI1=9999/625
 ```
 
+Because there are a huge number of macros, they cannot be set in the gui: they must be set via globals.txt
+
 Where:
 - `ADR` is the address on the daisy chain of the power supply
 - `ID` is the human-friendly name of the power supply
