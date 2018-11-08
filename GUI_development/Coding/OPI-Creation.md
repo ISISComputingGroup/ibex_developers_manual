@@ -74,7 +74,7 @@ In the xml file:
 * `value.macro.macro.description`: description of macro value which appears in target details when user clicks on the macro. For a macro that contains the IOC name please provide an example with the actual IOC name in brackets.
 
 You can specify which icon should appear in the synoptic with the file `uk.ac.stfc.isis.ibex.ui.devicescreens/ComponentIcons.java`.
-If you need to add new icons for the synoptic, these are under `uk.ac.stfc.isis.ibex.ui.devicescreens/icons` (both big icons for the actual synoptic and thumbnails for the synoptic editor). Please follow [these guidelines](Synoptic-Icons) when creating new synoptic icons.
+If you need to add new icons for the synoptic, these are under `uk.ac.stfc.isis.ibex.ui.devicescreens/icons` (both big icons for the actual synoptic and thumbnails for the synoptic editor). Please follow [these guidelines](Synoptic-Icons) when creating new synoptic icons and ensure thumbnail icons have a `_tb` suffix (i.e., `icon_tb.png`). 
 
 The final step should be to send the OPI to the instrument scientists. If they don't approve it that is fine but it is good to get their response.
   
