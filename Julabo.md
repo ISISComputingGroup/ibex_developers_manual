@@ -1,6 +1,14 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > [Julabo](Julabo)
 
-Julabo is a temperature control unit. There are many different versions. The commands are slightly different I have made a record in [this spreadsheet](backend_system/IOCs/julabo_commands.xlsx).
+Julabo is a temperature control unit. There are many different versions. The commands for each model are slightly different. When migrating an instrument, care must be taken to check exactly which command set it is using under SECI and to configure an equivalent command set in IBEX. A spreadsheet of labview settings against command set is in [this spreadsheet](backend_system/IOCs/julabo_commands.xlsx).
+
+The IOC copes with these variations in commands by making 4 commands configurable via macros:
+- `READ_POWER_CMD_NUMBER` configures the command used to read power. This macro should be the 2-digit number at the end of the read power command in the spreadsheet above (for the relevant model of julabo).
+- `READ_EXT_TEMP_CMD_NUMBER`
+- `READ_HIGH_LIM_CMD_NUMBER`
+- `READ_LOW_LIM_CMD_NUMBER`
+
+Note - if the commands are wrong they may still reply, but report the wrong numbers! For example `IN_PV_02` can mean "read external temperature" or "read heater power" depending on the model of Julabo used. Do not assume that because there are numbers coming back they are necessarily the right numbers!
 
 In general they control the temperature by pumping a fluid from a temperature controller bath to the sample and back. It is possible to connect an external sensor to the unit and have it control the temperature from this sensor or have it control itself from the internal bath temperature.
 
