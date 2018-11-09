@@ -40,7 +40,7 @@ After install:
     1. Copy `c:\data\old\client back` to `c:\instrument\apps`
 
 ## Creating IBEX auto-startup 
-- Go to the `Startup` folder (which is contained inside the `AppData` folder).
+- Go to the `Startup` folder (which is contained inside the user's `AppData\Roaming\Microsoft\Windows\Start Menu\Programs` folder).
 - In this directory do new -> shortcut and browse to c:\instrument\apps\epics and choose ibex_system_boot.bat
 
 # Steps using Manual Steps
