@@ -1,7 +1,5 @@
 > [Wiki](Home) > [Deployment](Deployment) > [Migrate an Instrument Control PC](Migrate-an-Instrument-Control-PC) > Creating a new IBEX configuration
 
-# Create a new IBEX configuration
-
 1. Navigate to `C:\Instrument\Settings\NDXxxxx` in a git bash terminal on an IBEX developer's machine (i.e. not an instrument)
 1. Note the current branch you are on, usually this is will be the name of the machine you are working on, e.g. `NDXxxxx`
 1. Review and commit any changes you have on your current branch
