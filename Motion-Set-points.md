@@ -12,11 +12,14 @@ The  `motionsetpoints.cmd` contains the following lines:
 
 1. **Point at motion setpoint config:** `epicsEnvSet "LOOKUPFILE<X>" "$(ICPCONFIGROOT)/motionSetPoints/<motion setpoint file>"`
 1. **Configure setpoints:** `motionSetPointsConfigure("LOOKUPFILE<X>","LOOKUPFILE<X>")`
-1. **Load Records:**
+1. **Load Motion Setpoint Records:**
     * *For 1D setpoint not using an axis macros* `dbLoadRecords("$(MOTIONSETPOINTS)/db/motionSetPoints.db","P=<motion set point prefix>,TARGET_PV1=<motor prefix>,TARGET_RBV1=<motor prefix>.RBV,TARGET_DONE=<motor prefix>.DMOV,TOL=<tolerance>,LOOKUP=LOOKUPFILE<X>")`
     * *For 2D setpoint not using an axis macro* `dbLoadRecords("$(MOTIONSETPOINTS)/db/motionSetPoints.db","P=<motion set point prefix>,TARGET_PV1=<motor prefix>,TARGET_RBV1=<motor prefix>.RBV,TARGET_PV2=<motor prefix2>,TARGET_RBV2=<motor prefix2>.RBV,TARGET_DONE=<motor prefix>.DMOV,TARGET_DONE2=<motor prefix2>.DMOV,TOL=<tolerance>,LOOKUP=LOOKUPFILE<X>")`
     * *For 1D setpoints using an axis* `dbLoadRecords("$(MOTIONSETPOINTS)/db/motionSetPoints.db","P=<motion set point prefix>,NAME1=<name1>,AXIS1=<axis1>,TOL=<tolerance>,LOOKUP=LOOKUPFILE<X>")`
     * *For 2D setpoints using axes* `dbLoadRecords("$(MOTIONSETPOINTS)/db/motionSetPoints.db","P=<motion set point prefix>,NAME1=<name1>,AXIS1=<axis1>,NAME2=<name2>,AXIS2=<axis2>,TOL=<tolerance>,LOOKUP=LOOKUPFILE<X>")`
+1. **Load _In Position_ records:** This is a `dbLoadRecordLoop` instruction (one for each `dbLoadRecords` above), which loads an extra `db` file for one setpoint per iteration, which contains a record for indicating whether the motor is at this particular setpoint. The line should look as the corresponding line from above, except:
+    - replace `dbLoadRecords("$(MOTIONSETPOINTS)/db/motionSetPoints.db"` with `dbLoadRecordsLoop("$(MOTIONSETPOINTS)/db/inPos.db"`
+    - add the loop arguments at the end (currently hardcoded), e.g.: `LOOKUP=LOOKUPFILE<X>, "NUMPOS", 0, 30)`
 1. **A blank line at the end**
 
 Where:
