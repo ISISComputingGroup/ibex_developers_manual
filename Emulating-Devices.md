@@ -115,3 +115,4 @@ the device module 'neocera_ltc21' provides multiple device types so that no mean
 * When I try to run a device I get the error `Failed to find protocol stream...`. This is due to one of the imports in the stream_interface not being valid. Check that they are all correct.
 * When I try to access a variable that I know exists in my emulator, I get an error saying that variable does not exist?
     1. The lewis backdoor does not give access to private variables, so anything prefixed with `_` cannot be changed in this way.
+* If you are using `CmdBuilder` be aware that you should use `.eos()` before `.build()`, _especially_ if you have commands that 'overlap'. And example of this would be on the Keithley 2700, which has a buffer auto clear setting command, `TRAC:CLE:AUTO`, and a buffer clear command, `TRAC:CLE`. `.eos()` essentially tells the built regex to match the exact command string, rather than some of it.
