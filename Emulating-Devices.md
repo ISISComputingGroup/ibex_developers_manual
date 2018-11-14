@@ -89,7 +89,7 @@ Start the IOC as normal by running `runIOC.bat st.cmd`. If everything's hooked u
 If we have a pre-existing VI it might be useful to connect it to an emulator to test the emulator functionality is as expected. If the VI talks TCP then just ensure that the port it is talking to is the one that Lewis is served on. If the VI is attempting to talk to a serial connection this is a bit harder and you must do the following:
 1. Find a MOXA box
 2. Create a physical loopback on the MOXA by connecting one port into another using one male serial cable connected to one female serial cable (a plain network cable won't do)
-3. Use NPort to connect to these two ports, noting which COM ports correspond to the loopback
+3. Use NPort (which can be found under `\kits$\CompGroup\Utilities`) to connect to these two ports, noting which COM ports correspond to the loopback
 4. Run the com2tcp.py script found in https://github.com/ISISComputingGroup/EPICS-DeviceEmulator/ to create a connection between one COM port and Lewis e.g. `python com2tcp.py 57677 COM12`
 5. Connect the VI to the COM port that you haven't run com2tcp.py on
 
