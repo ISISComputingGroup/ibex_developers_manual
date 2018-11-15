@@ -58,7 +58,7 @@ record(ao, "$(P)CURRENT:SP")
     field(EGU, "A")
     field(PREC, "3")
     field(SIML, "$(P)SIM")
-    field(SIOL, "$(P)SIM:CURRENT:SP")
+    field(SIOL, "$(P)SIM:CURRENT:SP PP")
 }
 
 record(ai, "$(P)CURRENT:SP:RBV") 
@@ -88,3 +88,5 @@ alias("$(P)SIM:CURRENT","$(P)SIM:CURRENT:SP")
 
 alias("$(P)SIM:CURRENT","$(P)SIM:CURRENT:SP:RBV")
 ```
+
+To link the simulation to a record that is passively scanning you should add `field(FLNK, "SOFT_CHANNEL")` to the simulation record.
