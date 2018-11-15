@@ -90,7 +90,7 @@ Person | Date
 Thomas | Aug 18
 Dom | Sep 18
 Freddie | Oct 18
-Tom |
+Tom | Nov 18
 Michal |
 Alistair |
 Patrik |
