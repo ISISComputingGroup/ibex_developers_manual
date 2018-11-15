@@ -75,6 +75,7 @@ In the migration phase, IBEX will be physically installed and configured on the 
 1. Test the new IBEX installation using the checklist generated in planning
 1. Transfer beamline parameters from `c:\LabVIEW Modules\Common\Experiment Parameters\Beamline Parameters.xml` to experimental parameters in IBEX.
 1. Ask the scientists to confirm that the instrument is behaving as expected.
+1. Add the instrument and release version of IBEX to the Instrument Information table on the [IBEX wiki page](https://github.com/ISISComputingGroup/IBEX/wiki).
 
 # How to review
 
