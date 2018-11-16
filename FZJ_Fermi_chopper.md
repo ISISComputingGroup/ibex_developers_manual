@@ -105,3 +105,9 @@ There is logic in the IOC to prevent sending commands which would put the choppe
 ### Veto cable not properly plugged in
 
 Ask DAE experts to unplug and re-plug in the veto cable.
+
+# Chopper run control settings incorrect
+
+### Configurations have been reloaded
+
+The `set_ei` script (at least on Merlin) puts the chopper under run control. If a config is reloaded then these settings will be lost. To recover, simply re-run `set_ei`.
