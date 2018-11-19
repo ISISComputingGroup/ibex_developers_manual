@@ -10,3 +10,4 @@
 * [Eurotherm](Eurotherm)
 * [ITC 503](ITC-503)
 * [Induction furnace](Induction-furnace)
+* [OMEGA OME-Wise](OMEGA-OME-Wise)
