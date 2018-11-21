@@ -4,9 +4,9 @@ Julabo is a temperature control unit. There are many different versions. The com
 
 The IOC copes with these variations in commands by making 4 commands configurable via macros:
 - `READ_POWER_CMD_NUMBER` configures the command used to read power. This macro should be the 2-digit number at the end of the read power command in the spreadsheet above (for the relevant model of julabo).
-- `READ_EXT_TEMP_CMD_NUMBER`
-- `READ_HIGH_LIM_CMD_NUMBER`
-- `READ_LOW_LIM_CMD_NUMBER`
+- `READ_EXT_TEMP_CMD_NUMBER` - syntax as above but for reading external temperature
+- `READ_HIGH_LIM_CMD_NUMBER` - syntax as above but for reading the high limit from the julabo
+- `READ_LOW_LIM_CMD_NUMBER` - syntax as above but for reading the low limit from the julabo
 
 Note - if the commands are wrong they may still reply, but report the wrong numbers! For example `IN_PV_02` can mean "read external temperature" or "read heater power" depending on the model of Julabo used. Do not assume that because there are numbers coming back they are necessarily the right numbers!
 
