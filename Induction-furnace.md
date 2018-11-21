@@ -16,4 +16,10 @@ The device supports two serial protocols:
 
 - If the device is powered off, it will reply with (semi-consistent) junk on the serial line.
 - The start/stop buttons are just shortcuts for setting the PSU fan, power supply output, oscillation on or off.
+- Usually running an experiment follows the following workflow:
+  * Input a setpoint
+  * Start furnace
+  * [Change setpoints as required]
+  * Stop furnace
+  * Most parameters on the "advanced" screen do not need to be changed for most experiments.
 
