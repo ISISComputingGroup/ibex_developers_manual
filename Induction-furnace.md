@@ -12,3 +12,8 @@ The device supports two serial protocols:
 - One via the Arduino USB port at 115200 baud. This gives extra debug information but as it is USB we can't use it with a moxa.
 - One via an additional external RS232 connection at 9600 baud. This is the connection which the IOC uses. Note that there are some differences in the protocols, so it is not possible to swap the IBEX driver onto the other connection without modifying the protocol file. Notably, the USB connection will give unsolicited messages containing debug information. We should not need to use this in general to control the device.
 
+# Hardware notes
+
+- If the device is powered off, it will reply with (semi-consistent) junk on the serial line.
+- The start/stop buttons are just shortcuts for setting the PSU fan, power supply output, oscillation on or off.
+
