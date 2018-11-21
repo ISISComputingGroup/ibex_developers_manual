@@ -7,6 +7,8 @@ The IOC copes with these variations in commands by making 4 commands configurabl
 - `READ_EXT_TEMP_CMD_NUMBER` - syntax as above but for reading external temperature
 - `READ_HIGH_LIM_CMD_NUMBER` - syntax as above but for reading the high limit from the julabo
 - `READ_LOW_LIM_CMD_NUMBER` - syntax as above but for reading the low limit from the julabo
+- `OEOS` - the output terminator. Needs slashes escaping, so set to `\\r\\n` for a CR LF terminator.
+- `IEOS` - the input terminator. Needs slashes escaping, so set to `\\r\\n` for a CR LF terminator.
 
 Note - if the commands are wrong they may still reply, but report the wrong numbers! For example `IN_PV_02` can mean "read external temperature" or "read heater power" depending on the model of Julabo used. Do not assume that because there are numbers coming back they are necessarily the right numbers!
 
