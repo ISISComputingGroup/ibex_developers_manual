@@ -14,6 +14,10 @@ This repo should be cloned with:
 
 The reason these files are in a separate repository is that they have a different release cycle to the ibex backend (they can be updated mid experiment where we wouldn't want to release a whole new experiment backend). It might be possible to place them in the configuration branch for instruments but merging them across instruments would be tricky. They need to be shared because equipment is shared between experiments.
 
+### Local calibration files
+
+There is the option to use a local calibration directory instead of the common one. This is intended for calibration files which will only ever be used on the local instrument, and usually only temporarily - all other files should be added to the common repository through the calibration file controller. This is set on a per-IOC basis via macro and is currently implemented for Eurotherm and Danfysik IOCs. The directory for local calibration files is `/config/<inst name>/calib/`
+
 ## Calibration Data within the Repo
 
 1. `temp_sensors` - temperature sensor calibration files
