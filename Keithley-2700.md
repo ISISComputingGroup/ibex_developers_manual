@@ -4,6 +4,18 @@ It is used on HIFI to measure the temperature at different points on the cryomag
 
 The component in use on HIFI measures 20 channels, 101-110 and 201-210, and each of these channels can use a separate calibration file for interpolating the temperatures.
 
+### Setting up the Device 
+
+Plug the device into the mains, and into a MOXA via its RS-232 port on the back. 
+
+Pressing the power button (lower left on the front panel) should make it turn on and beep. 
+
+Make sure that it is set up to use RS-232 - press (don't hold) the shift key and press the enter key on the front panel. Make sure RS-232 is set to ON. 
+
+Make sure that the Keithley is using its rear measurement inputs. `REAR` should be displayed on the right edge of the display. If not, press the button on the right edge of the front panel, labeled _Front/Rear Inputs_. 
+
+Test that you can now talk to it by connecting to it via PuTTY or something similar, and sending it `*IDN?` and make sure you get the device name back.
+
 ### Drift
 
 The calculation used to calculate the drift uses information from the previous scan (including the previously calculated drift) and the information from the new scan. 
