@@ -19,6 +19,14 @@ Ethernet is a commonly used and well-supported transport layer at ISIS.
 
 USB devices are difficult to implement for ISIS, and we prefer not to have to use USB wherever possible
 
+### Manufacturer software / DLLs
+
+We prefer not to use these interfaces, however in some cases we may be able to work with these types of interfaces.
+
+### Modbus
+
+Modbus is more difficult for us than ascii protocols but we can deal with this if absolutely necessary.
+
 # Protocol
 
 ### Termination characters
