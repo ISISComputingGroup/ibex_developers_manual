@@ -12,9 +12,6 @@ The list of components/activities and stewards is not set in stone.  It will cha
 
 Component/Activity | Steward |
 ------------------ | ------- |
-Blockserver | |
-Muon Front End | Kathryn |
-Riken Front End | Kathryn |
 Script Server (NICOS) | Dom |
 OSIRIS | David |
 ZOOM | Kathryn |
@@ -26,7 +23,7 @@ CSS & Phoebus | Dom |
 EPICS base and support modules | Freddie |
 LOQ | Alistair
 TOSCA | Rory
-INES | John
+INES | Thomas
 Reflectometry | John and Thomas
 MARI | Tom
 LET | David
