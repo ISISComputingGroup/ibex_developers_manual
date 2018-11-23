@@ -12,7 +12,7 @@ Pressing the power button (lower left on the front panel) should make it turn on
 
 Make sure that it is set up to use RS-232 - press (don't hold) the shift key and press the enter key on the front panel. Make sure RS-232 is set to ON. 
 
-Make sure that the Keithley is using its rear measurement inputs. `REAR` should be displayed on the right edge of the display. If not, press the button on the right edge of the front panel, labeled _Front/Rear Inputs_. 
+Make sure that the Keithley is using its rear measurement inputs. `REAR` should be displayed on the right edge of the display. If not, press the button on the right edge of the front panel, labelled _Front/Rear Inputs_. 
 
 Test that you can now talk to it by connecting to it via PuTTY or something similar, and sending it `*IDN?` and make sure you get the device name back.
 
