@@ -28,6 +28,8 @@ We have been given a (potentially out of date) version of the arduino code, whic
   * [Change setpoints as required]
   * Stop furnace
   * Most parameters on the "advanced" screen do not need to be changed except by expert users
+- This furnace can raise the sample temperature very quickly (e.g. 30s to change by 100s of degrees). When setting up blocks to log temperature, ensure that it is set to "monitor with deadband" rather than "periodic scan for change", otherwise the heating curve may be missed in the data file and result in confusing output.
+  * The temperature stability of the furnace is approximately 0.1 - 1.0C depending on temperature and sample. This can be used as a deadband (check with the user what accuracy is required in log files)
 
 The furnace can reach very high temperatures, however depending on the melting temperature of the sample holder, the safe maximum temperature can vary:
 -Aluminium (max 500 C)
