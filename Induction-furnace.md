@@ -10,7 +10,13 @@ Serial command set is on manuals shared drive.
 
 The device supports two serial protocols:
 - One via the Arduino USB port at 115200 baud. This gives extra debug information but as it is USB we can't use it with a moxa.
-- One via an additional external RS232 connection at 9600 baud. This is the connection which the IOC uses. Note that there are some differences in the protocols, so it is not possible to swap the IBEX driver onto the other connection without modifying the protocol file. Notably, the USB connection will give unsolicited messages containing debug information. We should not need to use this in general to control the device.
+- One via an additional external RS232 connection at 9600 baud. This is the connection which the IOC uses. 
+
+Note: there are some differences in the protocols, so it is not possible to swap the IBEX driver onto the USB connection without modifying the protocol file. Notably, the USB connection will give unsolicited messages containing debug information. We should not need to use the USB connection to control the device.
+
+# Arduino code
+
+We have been given a (potentially out of date) version of the arduino code, which is on the share. This can be used as a reference point if needed, but we should not in general need to use it or modify it in any way.
 
 # Hardware notes
 
@@ -18,8 +24,18 @@ The device supports two serial protocols:
 - The start/stop buttons are just shortcuts for setting the PSU fan, power supply output, oscillation on or off.
 - Usually running an experiment follows the following workflow:
   * Input a setpoint
-  * Start furnace
+  * Start furnace (this will set up several of the parameters on the "advanced" screen automatically - this is done in the hardware)
   * [Change setpoints as required]
   * Stop furnace
-  * Most parameters on the "advanced" screen do not need to be changed for most experiments.
+  * Most parameters on the "advanced" screen do not need to be changed except by expert users
+
+The furnace can reach very high temperatures, however depending on the melting temperature of the sample holder, the safe maximum temperature can vary:
+-Aluminium (max 500 C)
+-Steel (max 1000 C)
+-Graphite (max 1600 C)
+-Quartz (max 1500 C)
+-Single crystal sapphire (max 1600C)
+
+Where "safe" refers to the sample holder not melting (it has been confirmed that this is not a personnel safety risk, merely an inconvenient clean-up if it does melt).
+
 
