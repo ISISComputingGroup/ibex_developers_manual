@@ -28,6 +28,9 @@ LOQ | Alistair
 TOSCA | Rory
 INES | John
 Reflectometry | John and Thomas
+MARI | Tom
+LET | David
+SURF | Thomas
 
 <a name="definitionSteward"></a>
 ## Definition of the role of Component / Activity Steward
