@@ -1,6 +1,6 @@
 ## DBLoadRecordsLoop and DBLoadRecordLoop
 
-You can load Db reocrds in a loop using `dbLoadRecordsLoop`.
+You can load Db records in a loop using `dbLoadRecordsLoop`.
 
 ```
 # example usage of dbLoadRecordsLoop() and iocshCmdLoop() etc
