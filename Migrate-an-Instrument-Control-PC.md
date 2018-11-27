@@ -55,6 +55,7 @@ Agree with the team how support will be implemented (e.g. by creating or extendi
       1. [Create a new branch for IBEX configurations](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Creating-a-new-branch-for-IBEX-configurations)
       1. create IBEX configurations to correspond to their SECI equivalents (add to checklist)
       1. create genie-python scripts to correspond to their Open-Genie equivalents (add to checklist)
+            - ideally these are created with the instrument scientist
       1. test these configurations & scripts on the test PC
       1. demonstrate the configurations & scripts to the instrument scientists and check that they are happy with the migrated configurations & scripts
    1. arrange one or more training sessions with the scientists to help them understand how to 
