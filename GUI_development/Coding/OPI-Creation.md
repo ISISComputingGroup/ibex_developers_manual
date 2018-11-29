@@ -136,3 +136,11 @@ Or set the items from a script:
     combo = ScriptUtil.findWidgetByName(widget, "Name Of My Combo")
     combo.setItems( [ "Ene", "Mene", "Muh" ] )
 ```
+
+# Enable and disable controls
+
+If the enablement state of a widget (i.e. `enabled`) is controlled as part of GUI logic, it can be made more obvious on the OPI by also controlling its `transparent` property.
+
+See `\base\uk.ac.stfc.isis.ibex.opis\resources\mercuryiTC\enablement_of_settings.py` for examples of setting properties based on the value of a PV.
+
+Initial investigations centred on alternating the background colour of the control between e.g. `ISIS_Textbox_Readonly_Background` and `ISIS_Textbox_Background`.  However, although the logic and syntax were sound, the OPI didn't faithfully reproduce the requested colours.
