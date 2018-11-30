@@ -12,6 +12,7 @@
         * [Reference the header file from C++](#reference-the-header-file-from-c)
         * [Add the C source file to the support module Makefile](#add-the-c-source-file-to-the-support-module-makefile)
 * [aSub Record Function Tips and Tricks](#asub-record-function-tips-and-tricks)
+    * [GoogleTest unit tests](#GoogleTest-unit-tests)
     * [Error catching](#error-catching)
     * [Defensive Type Checking](#defensive-type-checking)
     * [Reading from a waveform of Strings](#reading-from-a-waveform-of-strings)
@@ -227,6 +228,10 @@ APPNAME_SRCS += c_source.c cpp_source.cpp
 # aSub Record Function Tips and Tricks
 
 It is advised that when writing an aSub record, you escape to C++ as soon as possible so that you can use the C++ standard libraries and error handling capacity to improve the robustness of your IOC to errors arising from the aSub record.
+
+## GoogleTest unit tests
+
+GoogleTest can be used to write unit tests for you aSub functions. Details on how to set up GoogleTest to compile under EPICS can be found [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Setting-up-GoogleTest-to-work-with-EPICS-build-process).
 
 ## Error catching
 
