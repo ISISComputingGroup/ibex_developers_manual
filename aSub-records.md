@@ -11,6 +11,7 @@
         * [Reference the header file from the C code](#reference-the-header-file-from-the-c-code)
         * [Reference the header file from C++](#reference-the-header-file-from-c)
         * [Add the C source file to the support module Makefile](#add-the-c-source-file-to-the-support-module-makefile)
+* [aSub Record Function Tips and Tricks](#asub-record-function-tips-and-tricks)
 
 # Introduction
 
@@ -216,4 +217,44 @@ The makefile should now contain a line that looks like:
 
 ```
 APPNAME_SRCS += c_source.c cpp_source.cpp
+```
+
+# aSub Record Function Tips and Tricks
+
+It is advised that when writing an aSub record, you escape to C++ as soon as possible so that you can use the C++ standard library and error handling capacity to improve the robustness of your IOC to errors arrising from the aSub record.
+
+## Error catching
+
+To reduce the chances of the IOC crashing due to an exception being, it is best pratice to wrap the logic of your function in a `try-catch` block to log these exceptions and return a non-zero value. E.g. to catch a stand
+```C++
+try {
+    // Your code here
+}
+catch (std::exception& e) {
+    errlogSevPrintf(errlogMajor, "%s exception: %s", prec->name, e.what());
+    return 1;
+}
+```
+
+## Defensive Type Checking
+
+As any field of the aSub record can be written to, it is best practice to check types of input and output fields before reading and writing. 
+
+To check that the type of the input field `a` is a `STRING`, use
+
+```C++
+if (prec->fta != menuFtypeSTRING)
+    {
+        errlogSevPrintf(errlogMajor, "%s incorrect input argument type A", prec->name);
+        return 1;
+    }
+```
+To check that the type of the output field `a` is of type `STRING` use
+
+```C++
+if (prec->ftva != menuFtypeSTRING)
+    {
+        errlogSevPrintf(errlogMajor, "%s incorrect output argument type A", prec->name);
+        return 1;
+    }
 ```
