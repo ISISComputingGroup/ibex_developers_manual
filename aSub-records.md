@@ -14,6 +14,8 @@
 * [aSub Record Function Tips and Tricks](#asub-record-function-tips-and-tricks)
     * [Error catching](#error-catching)
     * [Defensive Type Checking](#defensive-type-checking)
+    * [Reading from a waveform of Strings](#reading-from-a-waveform-of-strings)
+    * [Decoupling writing logic from the asub record pointer](#decoupling-writing-logic-from-the-asub-record-pointer)
 
 # Introduction
 
@@ -260,3 +262,55 @@ if (prec->ftva != menuFtypeSTRING)
         return 1;
     }
 ```
+
+## Reading from a waveform of strings
+
+If you need to read from a waveform of strings, then you need to be extra careful with types. The best way we have found is to read the waveform into a `vector<std::string>` in the following way:
+
+```C++
+std::vector<std::string> args;
+for (unsigned int i = 0; i < prec->noa; ++i) {
+    std::string s(((epicsOldString*)(prec->a))[i], sizeof(epicsOldString));
+    args.push_back(s);
+}
+```
+
+This takes into account that the type of each element of the waveform is not a `char*` but a` epicsOldString`.
+
+## Decoupling writing logic from the aSub record pointer
+
+You may find it useful to decouple the logic of writing to the output fields of the aSub record from the main aSub record it self. This makes it easier to test how you write to the aSub record without needing a pointer to a real aSub record. You can encapsulate the values you need in a `struct`.
+
+```C++
+struct aSubOutputParameters{
+    void* outputPointer;
+    epicsEnum16 outputType;
+
+    // Struct constructors
+    aSubOutputParameters() {}
+    aSubOutputParameters(void* output_pointer, epicsEnum16 output_type)
+    : outputPointer(output_pointer), outputType(output_type) {}
+};
+```
+You can then use this `struct` to create a map which associates a value (a integer channel number in the example below) to the specific aSub ouput data that value corresponds to.
+
+```C++
+std::map<int, aSubOutputParameters> asub_channel_output(aSubRecord *prec) {
+    std::map<int, aSubOutputParameters> channel_outputs;
+    
+    channel_outputs.insert(std::pair<int, aSubOutputParameters>(1,   aSubOutputParameters(prec->vala, prec->ftva)));
+    channel_outputs.insert(std::pair<int, aSubOutputParameters>(2,   aSubOutputParameters(prec->valb, prec->ftvb)));
+    channel_outputs.insert(std::pair<int, aSubOutputParameters>(3,   aSubOutputParameters(prec->valc, prec->ftvc)));
+    channel_outputs.insert(std::pair<int, aSubOutputParameters>(4,   aSubOutputParameters(prec->vald, prec->ftvd)));
+    channel_outputs.insert(std::pair<int, aSubOutputParameters>(5,   aSubOutputParameters(prec->vale, prec->ftve)));
+    channel_outputs.insert(std::pair<int, aSubOutputParameters>(6,   aSubOutputParameters(prec->valf, prec->ftvf)));
+    channel_outputs.insert(std::pair<int, aSubOutputParameters>(7,   aSubOutputParameters(prec->valg, prec->ftvg)));
+    channel_outputs.insert(std::pair<int, aSubOutputParameters>(8,   aSubOutputParameters(prec->valh, prec->ftvh)));
+    channel_outputs.insert(std::pair<int, aSubOutputParameters>(9,   aSubOutputParameters(prec->vali, prec->ftvi)));
+    channel_outputs.insert(std::pair<int, aSubOutputParameters>(10,  aSubOutputParameters(prec->valj, prec->ftvj)));
+
+    return channel_outputs;
+}
+```
+
+When testing you need to mock out the created `struct` and the `asub_channel_output` map rather than the whole aSub record.
