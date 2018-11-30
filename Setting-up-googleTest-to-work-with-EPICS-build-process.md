@@ -1,7 +1,7 @@
 This is a guide to set up googleTest with EPICS at ISIS. This allows you to write C++ unit tests for your C/C++ code in an IOC.
 
 ## Contents
-* [GoogleTest](#googletest)
+* [googleTest](#googletest)
 * [Release file](#Release-file)
 * [Building the test runner](#building-the-test-runner)
 * [Running your tests](#running-your-tests)
@@ -9,7 +9,7 @@ This is a guide to set up googleTest with EPICS at ISIS. This allows you to writ
 * [Adding tests to Jenkins](#adding-tests-to-Jenkins)
 
 
-## GoogleTest
+## googleTest
 
 You will need to have the `googleTest` support submodule and built the master branch. This will create a `gtest.lib` which you can link against.
 
