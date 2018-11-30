@@ -12,6 +12,8 @@
         * [Reference the header file from C++](#reference-the-header-file-from-c)
         * [Add the C source file to the support module Makefile](#add-the-c-source-file-to-the-support-module-makefile)
 * [aSub Record Function Tips and Tricks](#asub-record-function-tips-and-tricks)
+    * [Error catching](#error-catching)
+    * [Defensive Type Checking](#defensive-type-checking)
 
 # Introduction
 
@@ -221,11 +223,11 @@ APPNAME_SRCS += c_source.c cpp_source.cpp
 
 # aSub Record Function Tips and Tricks
 
-It is advised that when writing an aSub record, you escape to C++ as soon as possible so that you can use the C++ standard library and error handling capacity to improve the robustness of your IOC to errors arrising from the aSub record.
+It is advised that when writing an aSub record, you escape to C++ as soon as possible so that you can use the C++ standard library and error handling capacity to improve the robustness of your IOC to errors arising from the aSub record.
 
 ## Error catching
 
-To reduce the chances of the IOC crashing due to an exception being, it is best pratice to wrap the logic of your function in a `try-catch` block to log these exceptions and return a non-zero value. E.g. to catch a stand
+To reduce the chances of the IOC crashing due to an exception being, it is best practice to wrap the logic of your function in a `try-catch` block to log these exceptions and return a non-zero value. E.g. to catch a stand
 ```C++
 try {
     // Your code here
