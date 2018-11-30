@@ -72,6 +72,7 @@ If you're not creating a StreamDevice IOC or you you would like to know how an I
 * [Some Design thoughts for a serial/Ethernet IOC](Some-Design-thoughts-for-a-serial-or-Ethernet-IOC)
 * [Reducing build dependencies for older iocs](Reducing-Build-Dependencies)
 * [Template Substitutions](Template-Substitutions)
+* [Creating a State Machine](Creating-a-State-Machine-(Sequencer))
 
 # Specific IOC Information
 
