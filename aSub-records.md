@@ -1,10 +1,25 @@
+# Contents
+* [Introduction](#introduction)
+    * [Examples](#examples)
+* [IOC Files](#IOC-files)
+    * [DB records](#db-records)
+    * [Build Files](#build-files)
+* [Writing an aSub Function](#writing-an-asub-function)
+    * [C Code](#C-code)
+    * [Escaping to C++](#escaping-to-C)
+        * [Create a C/C++ header file](#create-a-cc-header-file)
+        * [Reference the header file from the C code](#reference-the-header-file-from-the-c-code)
+        * [Reference the header file from C++](#reference-the-header-file-from-c)
+        * [Add the C source file to the support module Makefile](#add-the-c-source-file-to-the-support-module-makefile)
+
 # Introduction
+
 EPICS aSub records are a powerful tool that allows you to write arbitrary C or C++ code that interacts with EPICS DB records.
 
 Circumstances where you may need to use aSub records include:
 - A device responds with a very complex status string which is too complex to decode using streamdevice
 - There are complex checks required before a command can be sent to a device, or complex logic required to interpret the state of a device.
-- The device responds with completely different responses based on it's physical configuration, and the IOC needs to handle all possible circumstances
+- The device responds with completely different responses based on its physical configuration, and the IOC needs to handle all possible circumstances
 - You need to interact with files from within an IOC (first consider whether [autosave](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Autosave) or [ReadASCII](https://github.com/ISISComputingGroup/EPICS-ReadASCII) cover the functionality you need)
 
 ### Examples
@@ -17,8 +32,9 @@ Circumstances where you may need to use aSub records include:
 - ReadASCII metadata (`EPICS/support/ReadASCII/master`)
   * This contains scripts to read metadata from a filepath provided in EPICS DB records.
 
+# IOC files
 
-# DB records
+## DB records
 Define some aSub records which may look like:
 ```
 record(stringin, "$(P)STATUS:RAW")
@@ -48,7 +64,7 @@ record(stringin, "$(P)STATUS")
 ```
 
 
-# Build files
+## Build files
 
 Create a `.dbd` file with the names of all the functions declared in the `C` file which will be called by EPICS. Your DBD file should look like the following:
 
@@ -96,9 +112,11 @@ $(APPNAME)_LIBS += LIBRARY_NAME
 
 Here, `$(APPNAME)` _is_ a macro, and `LIBRARY_NAME` will need to be replaced with the names of the library and DBD file that you have created above.
 
-You will also need to ensure that the support module location is mentioned in `ioc/{iocname}/configure/RELEASE`. However for most IOCs this should already be the case, as they will get their stream protocol from that location.
+You will also need to ensure that the support module location is mentioned in `ioc/{iocname}/configure/RELEASE`. However, for most IOCs, this should already be the case, as they will get their stream protocol from that location.
 
-# C code
+# Writing an aSub Function
+
+## C code
 
 Define a C function which will be called by the aSub record. This must have the same name as the `SNAM` field in EPICS DB. You also need to tie this function in to the epics database with a call to `epicsRegisterFunction`. At this stage your C source file should look like the following:
 
@@ -117,7 +135,7 @@ static long function_name(aSubRecord *prec)
 epicsRegisterFunction(function_name);
 ```
 
-# Escaping to C++
+## Escaping to C++
 
 Note: escaping to C++ is not strictly necessary, it is possible to implement the logic in C. However it is often easier to work with C++ due to it's larger standard library and [boost](https://www.boost.org/).
 
@@ -125,7 +143,7 @@ Note: escaping to C++ is not strictly necessary, it is possible to implement the
 
 In the same directory as the `C` source code file, create a header (`.h` extension) like the following:
 
-```C
+```C++
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -192,7 +210,7 @@ long function_name_impl(aSubRecord *prec)
 
 The function takes one argument, `prec`, which is as a pointer to the EPICS aSub record. Changes made to `prec` will set the value of the corresponding EPICS fields once the aSub function returns (return 0 to indicate success, or 1 to indicate failure).
 
-### Add the C++ source file to the support module makefile.
+### Add the C++ source file to the support module Makefile.
 
 The makefile should now contain a line that looks like:
 
