@@ -15,7 +15,8 @@
     * [Error catching](#error-catching)
     * [Defensive Type Checking](#defensive-type-checking)
     * [Reading from a waveform of Strings](#reading-from-a-waveform-of-strings)
-    * [Decoupling writing logic from the asub record pointer](#decoupling-writing-logic-from-the-asub-record-pointer)
+    * [Decoupling from the aSub record pointer](#decoupling-from-the-asub-record-pointer)
+    * [Parsing functions as arguments](#parsing-functions-as-arguments)
 
 # Introduction
 
@@ -225,7 +226,7 @@ APPNAME_SRCS += c_source.c cpp_source.cpp
 
 # aSub Record Function Tips and Tricks
 
-It is advised that when writing an aSub record, you escape to C++ as soon as possible so that you can use the C++ standard library and error handling capacity to improve the robustness of your IOC to errors arising from the aSub record.
+It is advised that when writing an aSub record, you escape to C++ as soon as possible so that you can use the C++ standard libraries and error handling capacity to improve the robustness of your IOC to errors arising from the aSub record.
 
 ## Error catching
 
@@ -277,7 +278,7 @@ for (unsigned int i = 0; i < prec->noa; ++i) {
 
 This takes into account that the type of each element of the waveform is not a `char*` but a` epicsOldString`.
 
-## Decoupling writing logic from the aSub record pointer
+## Decoupling from the aSub record pointer
 
 You may find it useful to decouple the logic of writing to the output fields of the aSub record from the main aSub record it self. This makes it easier to test how you write to the aSub record without needing a pointer to a real aSub record. You can encapsulate the values you need in a `struct`.
 
@@ -313,4 +314,15 @@ std::map<int, aSubOutputParameters> asub_channel_output(aSubRecord *prec) {
 }
 ```
 
-When testing you need to mock out the created `struct` and the `asub_channel_output` map rather than the whole aSub record.
+When testing you need to create mock versions of the `asub_channel_output` map rather than the whole aSub record.
+
+## Parsing functions as arguments
+
+If you find yourself needing to pass a function as an argument, you can do so using:
+
+1. `boost::function<return_value (arguments)> func` (remember to include `boost/function.hpp`)
+1. `std::function<return_value (arguments)> func` (remember to include `functional, C++11 and later only)
+1. Using a `template<typename F>` and passing the function as a parameter `F func`. **N.B.**: Types are checked at runtime not complie time when using templates (more details [here](https://stackoverflow.com/questions/1174169/function-passed-as-template-argument)).
+1. Function pointers - try to use the above safer ways first.
+
+This technique can be useful if you have multiple aSub functions that are similar apart from the logic to parse a value from the waveform. You can then pass a different functions as arguments to a base aSub record function to generate your aSub record functions.
