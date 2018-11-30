@@ -13,7 +13,7 @@ This is a guide to set up googleTest with EPICS at ISIS. This allows you to writ
 
 You will need to have the `googleTest` support submodule and built the master branch. This will create a `gtest.lib` which you can link against.
 
-More information on googleTest can be found at https://github.com/abseil/googletest. We are using version 1.8.x currrently at ISIS.
+More information on googleTest can be found at https://github.com/abseil/googletest. We are using version 1.8.x currently at ISIS.
 
 Good places to start on how to write tests using googleTest is [here](https://github.com/abseil/googletest/blob/master/googletest/docs/primer.md). 
 
@@ -69,19 +69,18 @@ SRC_DIRS += #path to your tests directory
 
 ## Running your tests
 
-Include a copy of the following batch file in your top directory to run all your tests. It will create XML reports on your tests in `test-reports` directory at the top level.
+Include a copy of the following batch file in your top directory to run all your tests. It will create XML reports on your tests in `test-reports` directory at the top level. Replace `IOCNAME` by the name of your IOC.
 
 ```batch
 :: Run all tests
 @echo off
 SET TOP="."
-SET IOCName = "IOC_NAME"
 
 SET Tests_failed=%errorlevel%
 
 :: run tests
 # Change the directory depending on if you have a src sub directory
-call %IOCName%Sup\src\O.windows-x64\runner.exe --gtest_output=xml:%TOP%\test-reports\TEST-%IOCName%.xml
+call IOCNameSup\src\O.windows-x64\runner.exe --gtest_output=xml:%TOP%\test-reports\TEST-IOCName.xml
 
 exit /B %Tests_failed%
 ```
@@ -110,4 +109,4 @@ if %errorlevel% neq 0 (
 )
 ```
 
-Make sure that Jenkins has been configured to look for xUnit test reports and that you have the `xunit` jenkins plugin installed.
+Make sure that Jenkins has been configured to look for xUnit test reports and that you have the `xunit` Jenkins plugin installed.
