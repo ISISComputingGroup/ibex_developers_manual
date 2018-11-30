@@ -15,7 +15,11 @@ You will need to have the `googleTest` support submodule and built the master br
 
 More information on googleTest can be found at https://github.com/abseil/googletest. We are using version 1.8.x currrently at ISIS.
 
-Good places to start on how to write tests using googleTest is https://github.com/abseil/googletest/blob/master/googletest/docs/primer.md.
+Good places to start on how to write tests using googleTest is [here](https://github.com/abseil/googletest/blob/master/googletest/docs/primer.md). 
+
+More advanced usage (including `ASSERT_THROWS`, `ASSERT_NO_THROW` and `ASSERT_DOUBLE_EQ`) can be found [here](https://github.com/abseil/googletest/blob/master/googletest/docs/advanced.md). 
+
+Examples can be found [here](https://github.com/abseil/googletest/blob/master/googletest/docs/samples.md).
 
 ## Release file
 
