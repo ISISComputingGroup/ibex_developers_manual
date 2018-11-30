@@ -78,7 +78,6 @@ SET TOP="."
 
 SET Tests_failed=%errorlevel%
 
-:: run tests
 :: Change the directory depending on if you have a src sub directory
 call IOCNameSup\src\O.windows-x64\runner.exe --gtest_output=xml:%TOP%\test-reports\TEST-IOCName.xml
 
