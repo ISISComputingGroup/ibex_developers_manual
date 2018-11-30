@@ -13,6 +13,10 @@ This is a guide to set up googleTest with EPICS at ISIS. This allows you to writ
 
 You will need to have the `googleTest` support submodule and built the master branch. This will create a `gtest.lib` which you can link against.
 
+More information on googleTest can be found at https://github.com/abseil/googletest. We are using version 1.8.x currrently at ISIS.
+
+Good places to start on how to write tests using googleTest is https://github.com/abseil/googletest/blob/master/googletest/docs/primer.md.
+
 ## Release file
 
 Remember to add the path to the Google Test support module in your IOC support module Release file.
