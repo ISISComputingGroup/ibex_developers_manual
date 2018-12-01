@@ -22,6 +22,10 @@ What this message means is that you are correctly depending on javax.xml.bind in
 
 This is another class which is no longer available by default - the solution is the same as above, list it as an explicit dependency. I have not seen classloader conflicts with this class, but that's not to say they couldn't possibly occur.
 
+### org.apache.batik
+
+This is not part of the new module system, but newer versions of eclipse that are required to run java 10 bundle a dependency on org.apache.batik at version `1.10`. CS-Studio has a dependency on version `1.7`, and by default the build will choose the bigger version number, which causes IBEX to be unable to launch as it can't find the version CS-Studio wants at runtime. The solution is to pin the version of these plugins in the `feature.xml` to 1.7. This problem may go away if we update CS-Studio versions.
+
 # ECJ configuration
 
 There was a bug in older versions of the `tycho-compiler-plugin` which prevented dependencies from overriding modules even if those modules were not visible. This bug has since been fixed. To tell the build to use a newer version of the compiler, add the following to the `pom.xml` in `client.tycho.parent` (you may need to bump version numbers - check maven central for the latest versions):
