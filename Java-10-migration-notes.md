@@ -57,3 +57,7 @@ There was a bug in older versions of the `tycho-compiler-plugin` which prevented
 # Eclipse
 
 Both the Tycho eclipse version and the eclipse version in the target platform should be as recent as possible. Anything under eclipse 4.8 is unlikely to work.
+
+# Maven
+
+To get better (more verbose) error output out of maven, edit `build.bat` and add the switches `-e -X` in the call to maven. 
