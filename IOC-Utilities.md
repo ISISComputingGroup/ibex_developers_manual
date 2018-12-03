@@ -35,7 +35,7 @@ For example:
 
     }
 
-In this example the PV `FREQ:REF` reads the values from a status and then set the values, via the protocol file, in the `FREQ:SP:RBV:RAW.A` pv. This value and any error that occurs in the `FREQ:REF` is the nset on the `FREQ:SP:RBV` pv. This allows you to easily show a disconnected error in PVs that are set from the protocol file.
+In this example the PV `FREQ:REF` reads the values from a status and then set the values, via the protocol file, in the `FREQ:SP:RBV:RAW.A` pv. This value and any error that occurs in the `FREQ:REF` is then set on the `FREQ:SP:RBV` pv. This allows you to easily show a disconnected error in PVs that are set from the protocol file.
 
 ## Shell Utilities
 
