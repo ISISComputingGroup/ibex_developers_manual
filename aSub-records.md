@@ -298,7 +298,7 @@ struct aSubOutputParameters{
     : outputPointer(output_pointer), outputType(output_type) {}
 };
 ```
-You can then use this `struct` to create a map which associates a value (a integer channel number in the example below) to the specific aSub ouput data that value corresponds to.
+You can then use this `struct` to create a map which associates a value (a integer channel number in the example below) to the specific aSub output data that value corresponds to.
 
 ```C++
 std::map<int, aSubOutputParameters> asub_channel_output(aSubRecord *prec) {
@@ -327,7 +327,7 @@ If you find yourself needing to pass a function as an argument, you can do so us
 
 1. `boost::function<return_value (arguments)> func` (remember to include `boost/function.hpp`)
 1. `std::function<return_value (arguments)> func` (remember to include `functional, C++11 and later only)
-1. Using a `template<typename F>` and passing the function as a parameter `F func`. **N.B.**: Types are checked at runtime not complie time when using templates (more details [here](https://stackoverflow.com/questions/1174169/function-passed-as-template-argument)).
+1. Using a `template<typename F>` and passing the function as a parameter `F func`. **N.B.**: Types are checked at runtime not compile time when using templates (more details [here](https://stackoverflow.com/questions/1174169/function-passed-as-template-argument)).
 1. Function pointers - try to use the above safer ways first.
 
 This technique can be useful if you have multiple aSub functions that are similar apart from the logic to parse a value from the waveform. You can then pass a different functions as arguments to a base aSub record function to generate your aSub record functions.
