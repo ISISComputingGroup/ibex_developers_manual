@@ -35,4 +35,4 @@ iocshCmdLoop("< st\$(I).cmd", "Q=Hello\$(I)", "I", 1, 2)
 
 More details can be found at http://epics.isis.stfc.ac.uk/doxygen/main/support/utilities/dbLoadRecordsFuncs_8cpp.html#a32071967b99f42356b1e04b06746cc73.
 
-**N.B.**: IF you need to parameterise your macro names, you will need to use a template and not a `dbLoadRecordsList` or `dbLoadRecordsLoop`.
+**N.B.**: If you need to parameterise your macro names, you will need to use a template and not a `dbLoadRecordsList` or `dbLoadRecordsLoop`.
