@@ -12,10 +12,10 @@ The Keithley 2001 is a digital multimeter.
 
 * The IOC is configured to only read DC voltage using the `VOLT:DC` measurement functions. This is the default behaviour of the device after the reset command, `*RST`, has been sent.
 
-* The OPI is designed to allow to view readings, view error messages and code, and reset the error status of the device.
+* The OPI is designed to allow to view readings, view error messages and code, and reset the IOC in case the IOC gets into an error state.
 
 ## Troubleshooting
 
-* If there are any problems, restarting the IOC should reset the Keithley 2001 to a set of known default setting.
+* If there are any problems, try clicking the "Reset IOC" button on the OPI.
 
 * If the device is not scanning on any channels, check that the IOC macros have been set in either the client or in `globals.txt`.
