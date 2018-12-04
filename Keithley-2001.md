@@ -4,7 +4,7 @@ The Keithley 2001 is a digital multimeter.
 
 *  To configure the IOC, the user needs to set `ACTIVATE_CHAN_%d` macros to `1` in the client or `globals.txt`. In the macro, `%d` is a two-digit, zero-padded number between 1 and 10, e.g. `01`, `05` or `10`.
 
-* If one channel is activated, then the device reads the value using a single-shot protocol. If more than one channel is active, it scans through all of these channels quickly intern.
+* If one channel is activated, then the device reads the value using a single-shot protocol. If more than one channel is active, it scans through all of these channels quickly intern with a delay. The delay between scans is specified by the `SCAN_DELAY` macro in seconds.
 
 ## Limitations of the IOC
 
