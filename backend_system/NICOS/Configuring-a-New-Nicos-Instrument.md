@@ -30,7 +30,7 @@ To run the Nicos GUI, the instrument must have a ```guiconfig.py``` file in the 
 If no instrument is specified, Nicos will run ```demo``` by default.
 
 There are at least two ways of specifying which instrument to run:
-* have an environment variable called ```INSTRUMENT``` containing the instrument's facility and name in the format ```_facility_._name_: Nicos will then look for an instrument with that name under ```facility/```
+* have an environment variable called ```INSTRUMENT``` containing the instrument's facility and name in the format ```_facility_._name_```: Nicos will then look for an instrument with that name under ```facility/```
 * have a ```nicos.conf``` file in the root ```nicos-core/``` directory, pointing at the instrument and facility we wish to run. For example, to run the instrument ```ibex``` in ```nicos_isis```, the file would contain:
 ```
 [nicos]
