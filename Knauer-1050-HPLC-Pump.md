@@ -40,4 +40,4 @@ If the device is set to local mode and the gradients are correctly set, then a r
 
 # Implementation
 
-In order to use a single set point to control multiple proto commands a Multi-Bit Binary Output is used to process a fan out that points to the desired command. With the pump control this has a further forward link. A template for this structure can be seen here.
+In order to use a single set point to control multiple proto commands a Multi-Bit Binary Output is used to process a fan out that points to the desired command. With the pump control this has a further forward link. A template for this structure is available in EPICS -> support -> utilities.
