@@ -4,6 +4,8 @@ Documentation is available for the pump at `\\ISIS\Shares\ISIS_Experimental_Cont
 
 # Specifications
 
+### Pump heads
+
 The 1050 was designed to provide exceptionally precise and reliable solvent delivery for a wide range of HPLC applications. The pump can be fitted with either a 10 or 50 ml/min pump heads that will be RFID recognised for auto set-up. Depending on the head used there are maximum flow rates, pressures and accuracies:
 
 |                        | 10 ml/min                                 | 50 ml/min                               |
@@ -13,3 +15,20 @@ The 1050 was designed to provide exceptionally precise and reliable solvent deli
 |                        |                                           | 150 bar (15 MPa, 2 200 psi) < 50 ml/min |
 | Flow rate accuracy     | deviation ≤ 1 %                           | deviation ≤ 1 %                         |
 | Flow rate precision    | RSD ≤ 0.1 %                               | RSD ≤ 0.3 %                             |
+
+### Remote/Local modes
+
+The pump starts in `LOCAL` mode, and when in this state you are able to access the devices front panel and make changes as well as remotely poll the device status. The device can be set into `REMOTE` mode using the `TOGGLE:REMOTE:SP` record, and this will result in the device accepting remote instructions but it will lock the devices front panel.
+
+### Gradient Controls
+
+The device can (if the correct pump head is installed) make use of 4 channels (A, B, C and D). These gradients can be set using the `CON:X:SP` (replacing X with the desired channel). However the sum of these gradients must be equal to 100%. If not correctly set then you will be unable to start the pump until this is resolved.
+
+### Pressure Limits
+
+The high and low pressure limits can be set using the `PRESS:LIM:LOW:SP` and `PRESS:LIM:HIGH:SP` records. If a limit is reached during a ramp then the pump will stop.
+
+### Flow Rate/Min
+
+The devices desired flow rate per minute can be set using the `FLOW:SP` record.
+
