@@ -1,6 +1,6 @@
 - Some instruments never want more than one scripts running simultaneously
   - This is the "default" case for more than one instrument
-- Some instruments want to run multiple control scrips in parallel:
+- Some instruments want to run multiple control scripts in parallel:
   - LARMOR for example run a script that flips polarisation alongside a user script. Similar workflow on Vesuvio.
 - There is a use case for one "control" script and one "visualisation" script simultaneously
   - the visualisation script can be purely read-only
@@ -32,7 +32,7 @@
 
 - load_script still loads script locally, but when I execute this function it should run on the script server?
 
-- Nicos has a comamand for `list_commands`. We've currently only made it aware of g_p commands
+- Nicos has a command for `list_commands`. We've currently only made it aware of g_p commands
 
 - Use standard python? e.g. `def main(): ... main()`
 
