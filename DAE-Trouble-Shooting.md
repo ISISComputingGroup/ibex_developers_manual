@@ -493,3 +493,14 @@ If there is an error code 112 reported in the log it means that the disk (data v
 ## DAE Type mismatch error
 
 If you get an error from ISISICP `*** ISISICP STARTUP FAILED (DAE type mistmatch)***` it means you are running `isisicp` program with the wrong sort of dae ie 2 when you have 3. You need to source the correct version of the code for your type of DAE.
+
+## isisicp.exe keeps allocating 4GB of memory and then releasing it
+
+It may be https://github.com/ISISComputingGroup/IBEX/issues/3701 - you just need to change the archive array table type to MEDIUMBLOB.
+
+Run these commands to modify the DB in place:
+
+```
+USE archive;
+ALTER TABLE sample MODIFY COLUMN array_val MEDIUMBLOB;
+```
