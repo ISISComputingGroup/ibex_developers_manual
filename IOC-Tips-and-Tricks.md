@@ -39,7 +39,7 @@ More details can be found at http://epics.isis.stfc.ac.uk/doxygen/main/support/u
 
 ## Toggle multiple PV's from a single set-point
 
-Sometimes you might want to have a single record set point that processes multiple records. An example of this would be for a device that requires different commands to be sent for Start and Stop. Rather than having to process two destinctly different records for each command you can use this template to toggle these from a single record.
+Sometimes you might want to have a single record set point that processes multiple records. An example of this would be for a device that requires different commands to be sent for Start and Stop. Rather than having to process two distinctly different records for each command you can use this template to toggle these from a single record:
 
 ```
 record(bi, "$(P)TOG:RECORD:SP") {
@@ -83,3 +83,5 @@ record(bo, "$(P)_RECORD2:SP") {
 	field(OUT, "@device.proto set_record2() $(PORT)")
 }
 ```
+
+This takes the set points binary value, shifts it by +1 in a calc record which allows for it to be mapped with the forward link outputs of the fanout record, these forward links are then processed. This can be easily extended with additional forward links or sequence records. An example of this is implemented in the Knauer 1050 HPLC pump.
