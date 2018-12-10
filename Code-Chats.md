@@ -94,7 +94,6 @@ Dom | Sep 18
 Freddie | Oct 18
 Tom | Nov 18
 Liam | Nov 18
-Michal |
 Alistair |
 John |
 David |
@@ -102,3 +101,4 @@ Jack |
 Rory |
 Gareth |
 Kathryn |
+Michal |
