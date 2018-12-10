@@ -36,3 +36,50 @@ iocshCmdLoop("< st\$(I).cmd", "Q=Hello\$(I)", "I", 1, 2)
 More details can be found at http://epics.isis.stfc.ac.uk/doxygen/main/support/utilities/dbLoadRecordsFuncs_8cpp.html#a32071967b99f42356b1e04b06746cc73.
 
 **N.B.** If you need to parameterise your macro names, you will need to use a template and not a `dbLoadRecordsList` or `dbLoadRecordsLoop`.
+
+## Toggle multiple PV's from a single set-point
+
+Sometimes you might want to have a single record set point that processes multiple records. An example of this would be for a device that requires different commands to be sent for Start and Stop. Rather than having to process two destinctly different records for each command you can use this template to toggle these from a single record.
+
+```
+record(bi, "$(P)TOG:RECORD:SP") {
+	field(DESC, "Toggle record set point")
+	
+	field(ZNAM, "Record1")
+	field(ONAM, "Record2")
+	info(INTEREST, "HIGH")
+}
+
+# Add 1 to the value of the toggle set point to map the fanout 
+# foward link index.
+record(calcout, "$(P)_TOG:CALC:RECORD") {
+	field(INPA, "$(P)TOG:RECORD:SP CP")
+	
+	field(CALC, "A+1")
+	
+	field(OUT, "$(P)_TOG:RECORD.SELN PP")
+}
+
+record(fanout, "$(P)_TOG:RECORD") {
+	field(SELM, "Specified")
+	
+	field(LNK1, "$(P)_RECORD1:SP PP")
+	field(LNK2, "$(P)_RECORD2:SP PP")
+}
+
+record(bo, "$(P)_RECORD1:SP") {
+	field(DESC, "Process record1")
+	field(DTYP, "stream")
+	field(SCAN, "Passive")
+	
+	field(OUT, "@device.proto set_record1() $(PORT)")
+}
+
+record(bo, "$(P)_RECORD2:SP") {
+	field(DESC, "Process record2")
+	field(DTYP, "stream")
+	field(SCAN, "Passive")
+	
+	field(OUT, "@device.proto set_record2() $(PORT)")
+}
+```
