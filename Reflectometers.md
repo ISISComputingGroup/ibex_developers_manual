@@ -94,6 +94,8 @@ The height of an item along the beam can be calculated based of the incoming ang
 
 ## Questions
 
+### Answered
+
 1. Is the ideal sample point x position fixes?
     - Yes. The beam coming in will hit any pre-sample active components and the height of the sample point is the point at which the beam reaches this x coordinate.
 1. I think each mode of operation sets up fixed rules and relations and this is what we need to capture.
@@ -113,4 +115,12 @@ The height of an item along the beam can be calculated based of the incoming ang
     - In the end it doesn't really matter but they are measured along their length.
 1. Room coordinates are these ok as we defined them?
     - Maybe, they should be the same as Mantid default.
+
+### Unanswered
+
+1. Currently, the theta readback displays the angle to the detector but if the detector is set to be above the beam the readback is still to the detector and so the theta sp and readback do not agree. What should we do:
+    1. Don't allow displacement relative to the beam to be set on components which interface with Theta
+    1. Use the difference between the beam intercept and the position for the setpoint and add this to the read back position
+    1. Do nothing this is the correct behaviour and is telling the instrument scientist they are not measuring what they think they are
+
 
