@@ -33,9 +33,11 @@ Type   | Meaning
 
 Tickets should be created at need by developers as git issues using the waffle board. Initially they should *not* have a milestone attached to them unless they are needed for a definite date and this is the LATEST that they could possible be started. If you are doing this ensure that there is enough time for testing; bugs fixing etc. If the ticket is created for a scientist don't forget to note this in the ticket.
 
-## Backlog Pruning
+## Backlog Preparation
 
-Before the backlog pruning meeting people should move tickets to the 'proposal' column they would like to see in the next sprint; all the tickets that must be in and a maximum of 2 extras per person. At the meeting we will look at these tickets discuss what they are and then rank their importance. The importance will be done by printing the tickets out and then ordering then in a "play your cards right" fashion. To prepare the print out: list issues, copy and paste into notepad++, replace `(#\d\d\d\d).*` with `\1\n\n`, copy to word, alter font to 40 for titles and big and 72 for numbers make sure it is 2 per page and print.
+Before the backlog pruning meeting people should move tickets to the 'proposal' column they would like to see in the next sprint; all the tickets that must be in and a maximum of 2 extras per person. At the meeting we will look at these tickets discuss what they are and then rank their importance. The importance will be done by printing the tickets out and then ordering then in a "play your cards right" fashion. 
+
+To prepare the print out: list issues with label `proposal`, copy and paste into notepad++, replace `(#\d\d\d\d).*` with `\1\n\n`, copy to word, alter font to 40 for titles and big and 72 for numbers make sure it is 2 per page and print.
 
 Filter for proposed tickets `is:open label:proposal`
 
