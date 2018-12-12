@@ -61,3 +61,7 @@ The first stop will stop the motor as part of the normal operation and the 2nd a
 
 ## I've booted up a McLennan and can't get it moving
 Try using the macros for an axis other than 1 (2 or 3) in the ibex GUI. The axis to be driven by the buttons on the front panel are set by a position dial inside the driver, so these might not work with the motor you need to control.
+
+## Creep Speed CS for home to datum
+
+Quick note on this learnt from SECI; It appears that the SC command which set the speed for HD (home to datum) may be limited in it range. We don't think it can be set faster than the normal speed and maybe be limited to 400. Investigate when and if we need this.
