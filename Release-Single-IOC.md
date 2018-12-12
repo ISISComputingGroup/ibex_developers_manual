@@ -10,6 +10,6 @@ We may want to release a single IOC to an instrument but not release a whole bui
     - from `...Kits$\CompGroup\ICP\EPICS\EPICS_CLEAN_win7_x64\BUILD-275\EPICS\ioc\master`
     - to `...Kits$\CompGroup\ICP\Releases\Build275_Knaur_pump\ioc\master`
 1. Copy these file on to the instrument.
-1. Run in a epics terminal in EPICS `build_ioc_startups.py`
+1. Run in a epics terminal in EPICS `utils\build_ioc_startups.py`
     - If this fails it can be because there is a duplicate IOC.  The error message is rubbish!
 1. Restart the IBEX server.
