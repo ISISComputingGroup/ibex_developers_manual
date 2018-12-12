@@ -48,7 +48,7 @@ Agree with the team how support will be implemented (e.g. by creating or extendi
 1. Identify when IBEX is likely to support the required devices (i.e. identify the first cycle after the required devices are supported in IBEX).
 1. Tell Facilities IT (Anthony Shuttle) that an instrument is due to be migrated and ask them to put the instrument on a sub-network.  This is required so that we can use TCP/IP to communicate with the Galils.  Facilities IT will need notice of about 4-6 weeks.
    * before contacting Anthony, check how many network ports will be needed.  Anthony needs to know.
-1. If the instrument still uses 5-digit run numbers, update the ICP program to the latest version.
+1. If the instrument still uses [ICP program v1300 or below see summary page](http://beamlog.nd.rl.ac.uk/inst_summary.xml), update the ICP program to the latest version.
 1. Check the computer that IBEX will be installed on ensuring that it has enough hard disk space.
 1. As the target cycle approaches
    1. set up a PC to test the new version of IBEX.
