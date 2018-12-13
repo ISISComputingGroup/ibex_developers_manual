@@ -28,6 +28,28 @@ Use the SCPI command `TRAC:DATA:SEL? <intX>,<intY>` where `intX` is the starting
 
 This is how the protocol file works, and you can also send these commands via a remote connection client like PuTTY. See the Keithley 2700 manual for a full list of supported SCPI commands. 
 
+#### Buffer Reading Logic
+
+In the `COUNT:CALC` record in `keithley2700.db` there is a long logic statement designed to catch all cases when attempting to read from the buffer. The statement is: 
+
+`(A>=B)?(A-B):((A=0)?(C-B):A)`
+
+Where: 
+* A = the next *free* buffer location.
+* B = the buffer index to begin reading from.
+* C = the size (length) of the buffer.
+
+It calculates the number of readings to retrieve from the buffer. 
+
+The typical case is when `A>=B`. In this case, the we want to retrieve from the starting index in the buffer up to the next free location (not inclusive). i.e. we start at index 0, the next *free* location is 2, so we retrieve 2-0 = 2 readings from the buffer, starting from index 0. 
+
+When 'A<B' it means that either the buffer is full but there are still unretrieved readings, where A reports 0 (since that is the next location it would write to after clearing the buffer), or that the buffer has cleared and begun storing a new set of readings.
+
+In the first case, we retrieve a count of `C-B` readings, which will give the number from the starting index position (B) to the end of the buffer. e.g. if the buffer length (C) is 10, and the starting index (B) is 8, we get 10-8 = 2 buffer readings to retrieve (at indices 8 and 9, since the buffer is 0-indexed). 
+In the second case, we have failed to retrieve the readings at the end of the buffer. This is becasue when the device begins writing a new set of readings it first clears the full buffer. In this case, we can only read the new set of readings, the count of which is A, starting from index 0.
+
+
+
 ### Drift
 
 The calculation used to calculate the drift uses information from the previous scan (including the previously calculated drift) and the information from the new scan. 
