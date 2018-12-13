@@ -1,4 +1,5 @@
-# Steps using Manual Steps
+# Steps using Manual Steps (These should not normally be used to do a "standard deployment" but may be useful if you are doing a strange deploy)
+
 ## Preparatory Steps for Client and Server
 
 - Inform the instrument scientist that you are going to upgrade the instrument in 5 minutes so that they are not surprised when you remote desktop to the instrument.
