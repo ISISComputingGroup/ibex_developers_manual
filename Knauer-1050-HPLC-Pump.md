@@ -20,7 +20,7 @@ The 1050 was designed to provide exceptionally precise and reliable solvent deli
 
 ### Remote/Local modes
 
-The pump starts in `LOCAL` mode, and when in this state you are able to access the devices front panel and make changes as well as remotely poll the device status. The device can be set into `REMOTE` mode using the `TOGGLE:REMOTE:SP` record, and this will result in the device accepting remote instructions but it will lock the devices front panel.
+The pump starts in `Local` mode, and when in this state you are able to access the devices front panel and make changes as well as remotely poll the device status. The device can be set into `Remote` mode using the `REMOTE_MODE:SP` record, and this will result in the device accepting remote instructions but it will lock the devices front panel. `Local` mode can be restored with the `LOCAL_MODE:SP` record. 
 
 ### Gradient Controls
 
