@@ -43,3 +43,7 @@ After install:
 - Go to the `Startup` folder (which is contained inside the user's `AppData\Roaming\Microsoft\Windows\Start Menu\Programs` folder).
 - In this directory do new -> shortcut and browse to c:\instrument\apps\epics and choose ibex_system_boot.bat
 
+
+# Manual deploy instructions
+
+Moved to https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/OLD-Manual-deployment-instructions-(not-for-normal-use)
