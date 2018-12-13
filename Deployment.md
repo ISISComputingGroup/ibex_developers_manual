@@ -15,3 +15,4 @@
 - [Autostart IBEX on Computer Restart](Autostart-IBEX-on-Computer-Restart)
 - [Quick Deploy](Quick-Deploy) (e.g. for Demo and R78)
 - [Upgrade ISISICP](Upgrade-ISISICP)
+- [Modifying Plugins on a Deployed Client](Modifying-Plugins-on-a-Deployed-Client)
