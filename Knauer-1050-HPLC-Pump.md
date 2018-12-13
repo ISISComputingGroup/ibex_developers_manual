@@ -36,10 +36,4 @@ The devices desired flow rate per minute can be set using the `FLOW:SP` record.
 
 ### Ramp Control
 
-If the device is set to local mode and the gradients are correctly set, then a ramp can begin. To start a ramp the `TOGGLE:PUMP:SP` can be used to start or stop a ramp. It should be noted that if a run has be issued via the devices front panel while in local mode, the remote command for stop can still be issued.
-
-# GOTCHAS
-
-# Implementation
-
-In order to use a single set point to control multiple proto commands a Multi-Bit Binary Output is used to process a fan out that points to the desired command. With the pump control this has a further forward link. A template for this structure is available in EPICS -> support -> utilities.
+If the device is set to remote mode and the gradients are correctly set, then a ramp can begin. To start a ramp the `PUMP:START:SP` can be used to start a ramp and `PUMP:STOP:SP` will stop the ramp. It should be noted that if a run has be issued via the devices front panel while in local mode, the remote command for stop can still be issued.
