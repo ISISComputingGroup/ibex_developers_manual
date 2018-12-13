@@ -1,4 +1,6 @@
-# Steps using Manual Steps (These should not normally be used to do a "standard deployment" but may be useful if you are doing a strange deploy)
+# Steps using Manual Steps 
+
+Note: These should not normally be used to do a "standard" deployment but may be useful if you are doing a strange deployment on a non-standard machines. These instructions may not have been kept up to date with the latest deployment script. If possible, use the instructions here instead: https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Deployment-on-an-Instrument-Control-PC
 
 ## Preparatory Steps for Client and Server
 
