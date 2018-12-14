@@ -46,7 +46,7 @@ The typical case is when `A>=B`. In this case, the we want to retrieve from the 
 When 'A<B' it means that either the buffer is full but there are still unretrieved readings, where A reports 0 (since that is the next location it would write to after clearing the buffer), or that the buffer has cleared and begun storing a new set of readings.
 
 In the first case, we retrieve a count of `C-B` readings, which will give the number from the starting index position (B) to the end of the buffer. e.g. if the buffer length (C) is 10, and the starting index (B) is 8, we get 10-8 = 2 buffer readings to retrieve (at indices 8 and 9, since the buffer is 0-indexed). 
-In the second case, we have failed to retrieve the readings at the end of the buffer. This is becasue when the device begins writing a new set of readings it first clears the full buffer. In this case, we can only read the new set of readings, the count of which is A, starting from index 0.
+In the second case, we have failed to retrieve the readings at the end of the buffer. This is because when the device begins writing a new set of readings it first clears the full buffer. In this case, we can only read the new set of readings, the count of which is A, starting from index 0.
 
 
 
