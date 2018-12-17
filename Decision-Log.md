@@ -11,3 +11,5 @@ A place to record decisions:
 4. Manual config upgrades should no be added to the upgrade script not added as a text note to the dev release notes. This means that they should be included in the code so can be reviewed. We may need to version these steps so that we don't get manual upgrade steps overflowing releases. This is to prevent them getting lost.
 
 5. `Google test` was chosen for the cxx testing framework over `cxx test` because it is actively developed, unlike cxx test which is a branch that was created for Mantid but no longer used, and it builds on windows.
+
+6. Decided that if a motor is moving when it goes uncommunicative it should remain as moving. This is because this is the current behaviour so will be expected and it is not clear if it is moving or stopped if you can not communicate. In either case, there should be communication alarm on the PVs.
