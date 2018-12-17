@@ -45,4 +45,9 @@ Maximum debugging can be achieved by adding to your st.cmd:
 
     epicsEnvSet("GALIL_DEBUG_FILE", "galil_debug.txt")
 
-This will generate a file containing all the commands sent and received from the galil.
+This will generate a file containing all the commands sent and received from the Galil.
+
+### No communication with Galil even on restart of IOC
+
+If in doubt it is best to plug a serial cable directly into the control box and see if you can see anything. When connected correctly it should give a colon, `:`, after pressing return.
+If you get a `>` this means that it has got into an internal configuration mode which you can't get out of without rebooting the Galil. This has been seen when communicating with 4000 series through the ethernet cable.
