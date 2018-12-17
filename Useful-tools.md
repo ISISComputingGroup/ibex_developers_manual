@@ -26,10 +26,15 @@ The console can be used to inspect output from an IOC. To use it, launch the IBE
 console -M localhost [IOCNAME]
 ```
 
-or, to look at an IOC remotely
+The IOCs available can be listed using
+```
+console -M localhost -x
+```
+
+To look at an IOC remotely
 
 ```
-console -M localhost -l [USERNAME] [IOCNAME]
+console -M [MACHINE_NAME] -l [USERNAME] [IOCNAME]
 ```
 
 where username is the local user on the instrument PC (e.g. `spudulike`).
