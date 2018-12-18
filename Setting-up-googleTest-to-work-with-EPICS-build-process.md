@@ -7,6 +7,7 @@ This is a guide to set up googleTest with EPICS at ISIS. This allows you to writ
 * [Running your tests](#running-your-tests)
 * [Adding a target to run tests](#Adding-a-target-to-run-tests)
 * [Adding tests to Jenkins](#adding-tests-to-Jenkins)
+* [Sample Test](#sample-test)
 
 
 ## googleTest
@@ -110,7 +111,7 @@ if %errorlevel% neq 0 (
 
 Make sure that Jenkins has been configured to look for xUnit test reports and that you have the `xunit` Jenkins plugin installed.
 
-## Sample test file
+## Sample Test
 
 The following below is a sample test file
 
