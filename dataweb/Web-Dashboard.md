@@ -63,7 +63,7 @@ To test the website on a developer machine:
 * Open default.html with the variable of ?Instrument=instrument-name e.g. go to `file:///C:/Instrument/Dev/JSON_bourne/front_end/default.html?Instrument=larmor` in a browser to view larmor's dashboard. Note that the path is dependant on where you have created the local JSON_bourne repository.
 
 To be able to see your instrument as well:
-* Add your instrument to the inst_list dictionary in the `InstList` class in `web_scrapper_manager.py`
+* Add your instrument to the inst_list dictionary in the `InstList` class in `web_scrapper_manager.py` (eg. `inst_list = {"my_device":"localhost"}`
 * Run your instrument
 * Run `webserver.py`
 * Edit display\_blocks.js to look at http://localhost rather than http://dataweb.isis.rl.ac.uk
