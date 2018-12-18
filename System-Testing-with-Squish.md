@@ -61,7 +61,7 @@ It is possible to remote desktop to the squish server but when you disconnect yo
 1. Select the application as eclipse (the ibex client in E4 was called eclipse)
 1. Finish
 1. Edit the test suite settings (select test suite in test suites tab. Then click on icon with blue spanner)
-    1. Edit Object Map to be `..\objects.map`
+    1. Edit Object Map to be `..\objects.map`. You may not be able to do this from the Squish client depending on your version, in which case you can directly edit `suite.conf` in `/<System tests folder>/suite_<something>_tests/` (it should say `OBJECTMAP=..\objects.map`)
 1. Add a new step in the build pipeline for the new test suite (same as the others). I have kept then as separate steps so they can be easily timed.
 
 # Creating a new Test
