@@ -109,3 +109,18 @@ if %errorlevel% neq 0 (
 ```
 
 Make sure that Jenkins has been configured to look for xUnit test reports and that you have the `xunit` Jenkins plugin installed.
+
+## Sample test file
+
+The following below is a sample test file
+
+```C++
+#include "gtest/gtest.h"
+
+namespace {
+    TEST(Sample, this_is_a_sample_test){
+        ASSERT_EQ(1+1, 2);
+    }
+} // namespace
+
+```
