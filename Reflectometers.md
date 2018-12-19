@@ -122,5 +122,8 @@ The height of an item along the beam can be calculated based of the incoming ang
     1. Don't allow displacement relative to the beam to be set on components which interface with Theta
     1. Use the difference between the beam intercept and the position for the setpoint and add this to the read back position
     1. Do nothing this is the correct behaviour and is telling the instrument scientist they are not measuring what they think they are
+1. Will you want to do individual moves while another move is going on?
+1. Do we need to reflect SP of motors into Reflectometry server
+1. Can we have the dance sript.
 
 
