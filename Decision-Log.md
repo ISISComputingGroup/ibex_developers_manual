@@ -13,3 +13,7 @@ A place to record decisions:
 5. `Google test` was chosen for the cxx testing framework over `cxx test` because it is actively developed, unlike cxx test which is a branch that was created for Mantid but no longer used, and it builds on windows.
 
 6. Decided that if a motor is moving when it goes uncommunicative it should remain as moving. This is because this is the current behaviour so will be expected and it is not clear if it is moving or stopped if you can not communicate. In either case, there should be communication alarm on the PVs.
+
+7. Decided to split genie commands into two sets basic and extended. This keeps the simplest commands in a place where users can find them and means they will not have a large choice. Extended commands are for experts and are in a separate module. This will be accessed via `g.ext` users can import this in the usual way if desired.
+
+8. `Genie_python` should be able to deal with PVs but the names of the PVs are not guaranteed they are advanced users only. Commands utilising PVs should have comments stating that it is an extended command and that the PV name may not be stable and that it is better to use a block. Ideally these commands should be placed in the advanced package.
