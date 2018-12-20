@@ -78,3 +78,8 @@ Where
 [delta-temp]: http://mathurl.com/ybcns6ud.png
 
 [delta-time]: http://mathurl.com/y8lccdz7.png
+
+
+### Unit Tests
+
+The device utilises [googletest](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Setting-up-googleTest-to-work-with-EPICS-build-process) to test the drift functionality. It does this using real-world recorded values from a previous run. The tests can be found in the support directory for the keithley, in `Keithley_2700Sup\tests` and can be run using `make test` from the top level support directory, or using `run_tests.bat` for slightly more coloutful output.
