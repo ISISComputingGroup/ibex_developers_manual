@@ -5,5 +5,5 @@ System for moving gasses and liquids on the beam line
 - [IEG system](IEG-system)
 - [Knauer 1050 HPLC Pump](Knauer-1050-HPLC-Pump)
 - [WPI SP2XX Syringe Pump](WPI-SP2XX-Syringe-Pump)
-
+- [JASCO HPLC Pump](JASCO-HPLC-Pump)
 
