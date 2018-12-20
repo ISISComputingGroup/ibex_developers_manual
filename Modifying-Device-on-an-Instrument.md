@@ -1,4 +1,4 @@
-> [Wiki](Home) > [Processes](Processes) > [Modifying/setting up a device on an instruemtn](Modifying-Device-on-an-Instrument)
+> [Wiki](Home) > [Processes](Processes) > [Modifying/setting up a device on an instrument](Modifying-Device-on-an-Instrument)
 
 When visiting an instrument to modify or setup a device we should:
 
