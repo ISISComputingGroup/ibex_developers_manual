@@ -31,51 +31,7 @@ Type   | Meaning
 
 ## Creation of Tickets
 
-Tickets should be created at need by developers as git issues using the waffle board. Initially they should *not* have a milestone attached to them unless they are needed for a definite date and this is the LATEST that they could possible be started. If you are doing this ensure that there is enough time for testing; bugs fixing etc. If the ticket is created for a scientist don't forget to note this in the ticket.
-
-## Backlog Preparation
-
-Before the backlog pruning meeting people should move tickets to the 'proposal' column they would like to see in the next sprint; all the tickets that must be in and a maximum of 2 extras per person. At the meeting we will look at these tickets discuss what they are and then rank their importance. The importance will be done by printing the tickets out and then ordering then in a "play your cards right" fashion. 
-
-To prepare the print out: list issues with label `proposal`, copy and paste into notepad++, replace `(#\d\d\d\d).*` with `\1\n\n`, copy to word, alter font to 40 for titles and big and 72 for numbers make sure it is 2 per page and print.
-
-Filter for proposed tickets `is:open label:proposal`
-
-Filter for other tickets `is:open -label:proposal -label:"in progress" -label:"ready" -label:"review" -label:"completed" -label:"impeded"`
-
-## Sprint Review
-
-Demo of tickets that have been done in this sprint.
-
-Prep:
-
-1. On the day create a power point file on the share with title slide and a template slide with Done, Mention and Demo.
-1. Send slack announcing where it is and asking people to add themselves
-1. Update demo:
-    1. run `instrument_install_latest_build_only.bat` 
-    1. then in epics run `create_icp_binaries.bat`
-    1. Announce that demo is available for creating demos on
-
-During:
-
-- Go through each persons slide and get them to demo and mention tickets they have done.
-- Generally discuss any issues and goodness in the code.
-
-Often the meeting is followed by the retrospective.
-
-## Sprint Planning
-
-Sprint planning prep:
-1. Re-point any tickets in progress.
-
-At sprint planning we:
-
-1. Look at any newly propose tickets and tickets in the ready column that have not yet been started and rank them
-2. Estimate the top ticket on the list
-3. Add its value to the current sprint
-4. If we have points left in the sprint go to 2
-
-After sprint planning the ready column will be ordered.
+Tickets should be created at need by developers as git issues using the waffle board. Initially, they should *not* have a milestone attached to them unless they are needed for a definite date and this is the LATEST that they could possibly be started. If you are doing this ensure that there is enough time for testing; bugs fixing etc. If the ticket is created for a scientist don't forget to note this in the ticket.
 
 ## Movement of Tickets
 
@@ -98,3 +54,10 @@ Sometimes you may want to split a larger ticket into smaller tickets to do this 
 ## Adding tickets Mid Sprint
 
 If you are adding a ticket to the ready column mid sprint. Please make sure it is added in priority order with estimates attached and unless there is a good reason clear it at standup.
+
+## Meeting where we manipulate tickets
+
+    - [Backlog Preperation](Backlog-Preperation)
+    - [Sprint Review](Sprint-Review)
+    - [Sprint Planning](Sprint-Planning)
+    - [Sprint Retrospective](Sprint-Retrospective)
