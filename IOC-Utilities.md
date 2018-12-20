@@ -8,7 +8,7 @@ Below are available utility templates for [substitution](Template-Substitutions)
 
 ### Unit Setter
 
-This copies units from a pv and sets them on a different pv. E.g.
+This copies units from a PV and sets them on a different PV. E.g.
 
     file $(UTILITIES)/db/unit_setter.template { 
       pattern 
@@ -19,11 +19,11 @@ This copies units from a pv and sets them on a different pv. E.g.
 	
     }
 
-This will copy units from the value of the pv `$(P)UNITS` to `$(P)READING` and `$(P)SP`.
+This will copy units from the value of the PV `$(P)UNITS` to `$(P)READING` and `$(P)SP`.
 
 ### Error Setting
 
-Creates a raw pv that can be written to by a stream protocol and then transfer the stream protocols pv error and value to the real pv.
+Creates a raw PV that can be written to by a stream protocol and then transfer the stream protocols PV error and value to the real PV.
 
 For example:
 
@@ -35,11 +35,19 @@ For example:
 
     }
 
-In this example the PV `FREQ:REF` reads the values from a status and then set the values, via the protocol file, in the `FREQ:SP:RBV:RAW.A` pv. This value and any error that occurs in the `FREQ:REF` is then set on the `FREQ:SP:RBV` pv. This allows you to easily show a disconnected error in PVs that are set from the protocol file.
+In this example, the PV `FREQ:REF` reads the values from a status and then set the values, via the protocol file, in the `FREQ:SP:RBV:RAW.A` PV. This value and any error that occurs in the `FREQ:REF` is then set on the `FREQ:SP:RBV` PV. This allows you to easily show a disconnected error in PVs that are set from the protocol file.
+
+### Calibration Range
+
+Calculates the maximum and minimum values of a selected calibration file. You can load this db with macros using 
+```
+dbLoadRecords("$(UTILITIES)/db/calibration_range.db","P=$(P),BDIR=TEMP.BDIR,TDIR=TEMP.TDIR,SPEC=TEMP.SPEC,HIGH_PV=TEMP:RANGE:OVER.B,LOW_PV=TEMP:RANGE:UNDER.B")
+```
+Where `TEMP` is a `cvt` record which uses the calibration file. The max value is outputted to `HIGH_PV` and the minimum to `LOW_PV`.
 
 ## Shell Utilities
 
-There are a number of IOC shell utilities defined in `C:\Instrument\Apps\EPICS\support\utilities` which can be used in an IOC shell to help startup IOCs. The doxygen docs are here http://epics.isis.rl.ac.uk/doxygen/main/support/utilities/.
+There are some IOC shell utilities defined in `C:\Instrument\Apps\EPICS\support\utilities` which can be used in an IOC shell to help startup IOCs. The doxygen docs are here http://epics.isis.rl.ac.uk/doxygen/main/support/utilities/.
 
 ## calc
 
