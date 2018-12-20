@@ -2,7 +2,7 @@
 
 ### Icon Conventions
 * Thumbnail icon image files have height of 28px and a width of 28px including margins.
-* Synoptic icon image files have a maximum height of 100px and a width of (icon width + 20px) including margins for synoptic icons.
+* Synoptic icon image files have a maximum height of 100px and a width of (icon width + 20px) including margins.
 * The icon image should be a `.png` file.
 * The fill colour of the icons is 0xAAA19C. The border colour is black.
 * The icon background should be transparent.
