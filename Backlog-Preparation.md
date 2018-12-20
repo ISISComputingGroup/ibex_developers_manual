@@ -1,4 +1,4 @@
-> [Wiki](Home) > [Processes](Processes) > [Backlog Preperation](Backlog-Preperation)
+> [Wiki](Home) > [Processes](Processes) > [Backlog Preparation](Backlog-Preparation)
 
 Backlog preparation is the meeting where we decide on most of the candidate tickets for a sprint and rank them by importance.
 
