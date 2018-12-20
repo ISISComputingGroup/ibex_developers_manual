@@ -124,6 +124,6 @@ The height of an item along the beam can be calculated based of the incoming ang
     1. Do nothing this is the correct behaviour and is telling the instrument scientist they are not measuring what they think they are
 1. Will you want to do individual moves while another move is going on?
 1. Do we need to reflect SP of motors into Reflectometry server
-1. Can we have the dance sript.
+1. Can we have the dance script.
 
 
