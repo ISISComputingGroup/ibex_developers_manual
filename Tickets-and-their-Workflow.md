@@ -57,7 +57,7 @@ If you are adding a ticket to the ready column mid sprint. Please make sure it i
 
 ## Meeting where we manipulate tickets
 
-    - [Backlog Preperation](Backlog-Preperation)
+    - [Backlog Preparation](Backlog-Preparation)
     - [Sprint Review](Sprint-Review)
     - [Sprint Planning](Sprint-Planning)
     - [Sprint Retrospective](Sprint-Retrospective)
