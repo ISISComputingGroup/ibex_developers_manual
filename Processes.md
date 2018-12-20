@@ -4,6 +4,8 @@ Various Processes or tasks and info into how they should work. Remember rules ca
 
 - [Modifying Code on an instrument](Modifying-Code-on-an-instrument)
 
+- [Modifying/setting up a device on an instruemtn](Modifying-Device-on-an-Instrument)
+
 - [Tickets and their Workflow](Tickets-and-their-Workflow)
     - [Backlog Preparation](Backlog-Preparation)
     - [Sprint Review](Sprint-Review)
