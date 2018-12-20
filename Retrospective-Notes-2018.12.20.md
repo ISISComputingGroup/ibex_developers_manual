@@ -16,7 +16,7 @@
 * Hard to track progress through projects.
     * We should investigate story mapping to illustrate the stories we are working on and their progress
 * Hard when you go down to an instrument to decide whether a device is connected properly. Talked about cable mapping tools and getting electronics to fill in forms
-    * Decided to start recording it whenever we go down to an instrument on IOC specific pages. [* John to add to processes]
+    * Decided to start recording it whenever we go down to an instrument on IOC specific pages. 
 
 # SAD
 
