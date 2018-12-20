@@ -1,8 +1,8 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [System components](System-components) > [Configurations](Configurations) > Calibration files
 
-The calibration files are anything that are equipment specific but not how to drive it, they are settings which are common to all instruments. The test for whether a file belongs in this repository is as follows. Imagine changing a file on an instrument; the change should be reflected to the other instruments thus improving their results. There will be some grey areas for instance the barn doors on Muon Front end. It is unlikely these calibration setting will be used elsewhere but they could be, and if they were changed it wouldn't effect anything else so this is a good place to put them.
+The calibration files are anything that is equipment specific but not how to drive it; they are settings which are common to all instruments. The test for whether a file belongs in this repository is as follows. Imagine changing a file on an instrument; the change should be reflected on the other instruments thus improving their results. There will be some grey areas, for instance, the barn doors on Muon Front end. It is unlikely these calibration setting will be used elsewhere but they could be, and if they were changed it wouldn't effect anything else, so this is a good place to put them.
 
-A prime example of this are the temperature sensors which have a calibration of current to temperature. If a mistake is found in the calibration it should be corrected and pushed to other instruments.
+A prime example of this are the temperature sensors which have a calibration of current to temperature. If a mistake is found in the calibration, it should be corrected and pushed to other instruments.
 
 These files live in a separate repository at:
 
@@ -12,7 +12,7 @@ This repo should be cloned with:
 
     git clone http://control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/common.git C:\Instrument\Settings\config\common
 
-The reason these files are in a separate repository is that they have a different release cycle to the ibex backend (they can be updated mid experiment where we wouldn't want to release a whole new experiment backend). It might be possible to place them in the configuration branch for instruments but merging them across instruments would be tricky. They need to be shared because equipment is shared between experiments.
+The reason these files are in a separate repository is that they have a different release cycle to the ibex backend (they can be updated mid-experiment where we wouldn't want to release a whole new experiment backend). It might be possible to place them in the configuration branch for instruments but merging them across instruments would be tricky. They need to be shared because the equipment is shared between experiments.
 
 ### Local calibration files
 
@@ -27,26 +27,26 @@ There is the option to use a local calibration directory instead of the common o
 
 Items **NOT** within the repository
 
-1. `motion set points` - calibration for motion set points e.g. sample changers. These probably do not belong in the repository (after debate) because they will be changed on an instrument but if this is pushed to another instrument the offsets do not make any sense. Some motion set points might be applicable we shall wait and see.
+1. `motion set points` - calibration for motion set points, e.g. sample changers. These probably do not belong in the repository (after the debate) because they will be changed on an instrument, but if this is pushed to another instrument, the offsets do not make any sense. Some motion set points might be applicable we shall wait and see.
 
 ## Updating Calibration File on Instruments
 
-If the common calibration file change and they need updating on all instruments then you can run the [calibration update script which can be found in ibex utils](https://github.com/ISISComputingGroup/ibex_utils/blob/master/installation_and_upgrade/calibration_files_updater.py)
+If the common calibration file change and they need updating on all instruments, then you can run the [calibration update script which can be found in ibex utils](https://github.com/ISISComputingGroup/ibex_utils/blob/master/installation_and_upgrade/calibration_files_updater.py)
 
 ## Calibration file format
 
-1. First lines starts with `# ISIS calibration`
+1. First lines start's with `# ISIS calibration`.
 1. Header block which is a JSON dictionary with `#` before each line. Dictionary entries are:
-    - `sensor_type`: string of the sensor type
-    - `format_version`: string of the format number, can be float. For this version must be 1.
-    - `conversion_date`: date for conversion as string in `YYYY/MM/DD`
-    - `column1_name`: (String) name of the first column
+    - `sensor_type`: a string of the sensor type
+    - `format_version`: a string of the format number, can be a float. For this version must be 1.
+    - `conversion_date`: date for conversion as a string in `YYYY/MM/DD`.
+    - `column1_name`: (String) name of the first column.
     - `column1_units`: (String) units of the first column [should match epics units conventions](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/PV-Units-&-Standards#unit-standards)
     - `column2_name`: (String) name of the second column
     - `column2_units`: (String) name of the second column [should match epics units conventions](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/PV-Units-&-Standards#unit-standards)
 1. Tables of data in two columns separated by a comma
-    - First column is floats representing temperature
-    - Second column is floats representing reading from sensor
+    - The first column comprises floats representing temperature.
+    - The second column comprises floats representing reading from the sensor.
 
 ### Examples
 
@@ -110,9 +110,14 @@ Freddie, Kathryn, John, Kevin and Tom had a meeting to discuss calibration forma
   * Name and units of each column so that we know what the data represents
   * Any arbitrary metadata should be able to be added later
 
-As part of implementation, it was decided in a discussion between John and Tom that the JSON namespace should be a flat dictionary. The advantage of using this approach is that the same script can extract any arbitrary metadata from the file, by providing the key to the dictionary.
+As part of the implementation, it was decided in a discussion between John and Tom that the JSON namespace should be a flat dictionary. The advantage of using this approach is that the same script can extract any arbitrary metadata from the file, by providing the key to the dictionary.
 
 ### Lakeshore
 
 Examples of the lakeshore format can be found on the [lakeshore site](https://www.lakeshore.com/Documents/ZipReadme.pdf).
 
+### Out of range in the calibration file
+
+If you above or below the maximum or minimum values in the calibration file, IBEX will interpolate beyond or below these values. Please be sure that you have selected the correct calibration file for your sensor and the sensor range. Readings beyond the calibration range may not be as accurate as those within.
+
+The Eurotherm OPI alerts the user when you are above or below the maximum or minimum values in the calibration file. This is achieve using an IOC utility.
