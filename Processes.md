@@ -5,6 +5,10 @@ Various Processes or tasks and info into how they should work. Remember rules ca
 - [Modifying Code on an instrument](Modifying-Code-on-an-instrument)
 
 - [Tickets and their Workflow](Tickets-and-their-Workflow)
+    - [Backlog Preperation](Backlog-Preperation)
+    - [Sprint Review](Sprint-Review)
+    - [Sprint Planning](Sprint-Planning)
+    - [Sprint Retrospective](Sprint-Retrospective)
 
 - [Regular Demos of IBEX to Scientists](Regular-Demos-of-IBEX-to-Scientists) 
 
