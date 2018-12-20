@@ -1,6 +1,6 @@
 > [Wiki](Home) > [Trouble-shooting](trouble-shooting-pages) > IOC and device trouble shooting
 
-*After diagnosing the problem* If you needed to go down to the instrument please correct/update any connection information to [Specific Device IOC page](Specific-Device-IOC).
+**After diagnosing the problem** If you needed to go down to the instrument please correct/update any connection information to [Specific Device IOC page](Specific-Device-IOC).
 
 # General tips
 
