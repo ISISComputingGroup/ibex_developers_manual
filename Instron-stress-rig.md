@@ -5,7 +5,7 @@ The Instron stress rig is a National Instruments GPIB device. It requires some s
 - The Ethernet GPIB box requires a driver for the LabVIEW driver. This can be installed from `\\isis\installs\Installs\Applications\LabVIEW\GPIB-ENET bits\GPIB Software`.
   - Note, **the version of GPIB MUST be 2.7 (from the share above), later versions WILL NOT WORK WITH THE STRESS RIG**
 - Run the installer as an administrator, accept the defaults. It will unzip, then install. It takes a while to install.
-- You then need to set up the ENET box, Gareth or Freddie can show you how to set this up
+- You then need to map the ENET box, Gareth or Freddie can show you how to set this up. Usually this means going into NI-MAX and finding devices - it should come up (otherwise, you may have to enter it's IP address manually).
 - LabVIEW vi located at : `C:\LabVIEW Modules\Instruments\ENGINX\Stress Rig\Stress Rig - System Functions.llb\Stress Rig - 100 kN Stress Rig.vi`
 - On running the vi, you will get some dialogs – just ok through them. The indicators should then be updating.
 - If you can't get the labview to talk at all, the stress rig might need to be power cycled. @GDH-ISIS and @FreddieAkeroyd know how to do this. The basic instructions are below:
@@ -18,6 +18,10 @@ The Instron stress rig is a National Instruments GPIB device. It requires some s
   * Turn back on the GPIB box. 
   * After the GPIB box has been turned on for a short time (e.g. 1 minute) the driver (LabVIEW or IOC) should be ready to connect.
   * GPIB box LEDs - PWR should be orange, LNK 10/100 should be green. Other LEDs will be flickering depending on connection. Box might have a slightly dodgy connection (not sure about this, but check it) so ensure the LEDs are as described.
+
+### Troubleshooting note
+
+The stress rig on ENGIN-X is mapped from both ENGINX and ENGINX_SETUP. **Only one of these computers should talk to the stress rig at a time!** If you get strange comms issues, check that the "other" computer is not also trying to talk at the same time.
 
 # Rigs
 
