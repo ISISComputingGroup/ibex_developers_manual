@@ -35,7 +35,7 @@ If the common calibration file change and they need updating on all instruments,
 
 ## Calibration file format
 
-1. First lines start's with `# ISIS calibration`.
+1. First lines start with `# ISIS calibration`.
 1. Header block which is a JSON dictionary with `#` before each line. Dictionary entries are:
     - `sensor_type`: a string of the sensor type
     - `format_version`: a string of the format number, can be a float. For this version must be 1.
