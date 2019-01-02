@@ -9,7 +9,7 @@
 
 ### During meeting
 
-1. Look at any newly proposed tickets and tickets in the ready column that have not yet been started and rank them as per [backlog preperation](Backlog-Preparation).
+1. Look at any newly proposed tickets and tickets in the ready column that have not yet been started and rank them as per [backlog preparation](Backlog-Preparation).
 2. Estimate the top ticket on the list
 3. Add its value to the current sprint
 4. If we have points left in the sprint go back to 2
