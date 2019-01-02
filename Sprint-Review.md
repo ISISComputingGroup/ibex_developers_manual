@@ -2,7 +2,7 @@
 
 Demo of tickets that have been done in this sprint.
 
-### Preperation
+### Preparation
 
 1. On the day create a powerpoint file on the share with a title slide and a template slide with Done, Mention and Demo.
 1. Send slack announcing where it is and asking people to add themselves
