@@ -43,3 +43,5 @@ These are the list of categories for an IOC. The IOC can appear in multiple cate
 [Water Baths](Water-Baths)
 
 [Other](Other)
+
+[Partially Supported Devices](Partially-Supported-Devices)
