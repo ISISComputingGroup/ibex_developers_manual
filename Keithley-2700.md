@@ -6,7 +6,7 @@ The component in use on HIFI measures 20 channels, 101-110 and 201-210, and each
 
 ### Setting up the Device 
 
-> **NOTE** The IOC does work with a MOXA, but the legacy VI does _not_. If you intend to run it with a VI, it bust be done via a USB to serial RS232 adapter straight into your machine.
+> **NOTE** The IOC does work with a MOXA, but the legacy VI does _not_. If you intend to run it with a VI, it bust be done via a USB to RS232 adapter straight into your machine.
 
 Plug the device into the mains, and into a MOXA via its RS-232 port on the back. 
 
