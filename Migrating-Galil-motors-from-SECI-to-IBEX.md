@@ -70,7 +70,7 @@ GalilStartController("Galil","$(GALIL)/gmc/galil_Default_Header.gmc;$(GALIL)/gmc
 
 Typically the only line you will need to pay careful attention to is the last (non-commented) line. This defines the homing modes of the various galils. The structure of this line is that it has a standard header (`$(GALIL)/db/galil_Default_Header.gmc;`), followed by 8 homing modes regardless of the number of physical axes present (use `galil_Home_Dummy_Do_Nothing.gmc` for non-existent axes), followed by a standard footer (`$(GALIL)/gmc/galil_Default_Footer.gmc`).  Pay close attention to the positions of the `!` and `;` characters.
 
-This last line can be made clearer by setting each of the homing modes as an environment variable, and referencing these in the call to `GalilStartController`. An example of this can be found in the galil01 file for LOQ:
+This last line can be made clearer by setting each of the homing modes as an environment variable, and referencing these in the call to `GalilStartController`. An example of this can be found in the `galil01.cmd` file of LOQ:
 
 ```
 
