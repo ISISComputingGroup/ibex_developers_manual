@@ -92,6 +92,13 @@ The height of an item along the beam can be calculated based of the incoming ang
 
 ![Image](reflectometers/Non-small_angle_approx.png)
 
+## Items to Document
+
+### Theta beam path calculation
+
+The theta beam line parameter and its associated component is special because it depends on other item(s) in the beamline. All other components are independent. For read-back, the "angle" of the component is set based on the incoming beam and the angle from the point where the incoming beam hits the sample axis to where a specified component is. For example, on CRISP it is the angle to the detector. This means if the detectors moves it must signal back to the Theta component that it has moved. *TODO* Write done what happens when the given component is not on the beam path.
+In disabled mode, the incoming beam is no longer altered and this means changing theta would have no effect on the component it is pointing at, e.g. changing Theta would not alter the position of the detector. To fix this (and a question will be asked about this) there is a special route to force an incoming beam path to be set. This should allow the component defining theta to move when theta is changed.
+
 ## Questions
 
 ### Answered
