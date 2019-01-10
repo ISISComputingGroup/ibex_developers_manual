@@ -22,6 +22,7 @@ Steps are marked with **bold** prefixes to indicate the following:
     - Follow the instructions on the command line. 
 - If needed, shutdown IBEX and [upgrade the ISISICP](Upgrade-ISISICP). Remember to run the journal parser installation  - this can take some time.
 - After the script has successfully finished and the IBEX server has been started, run `instrument_test.bat` in the same folder and follow the instructions.
+- If not already set, change the Windows theme to "Windows 7" in the "Aero Themes" section.  Also change the background to solid light grey.
 
 #### upgrade
 - Ensure the instrument is running and in a setup state (e.g. so you can take screenshots of blocks, motors, running VIs, etc.)
