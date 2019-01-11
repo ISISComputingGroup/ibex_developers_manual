@@ -1,4 +1,4 @@
-> [Wiki](Home) > [Project overview](Project-Overview) > Design documents
+> [Wiki](Home) > [Project overview](Project-Overview) > [Design documents](Design-Documents)
 
 ### Script Server
 
