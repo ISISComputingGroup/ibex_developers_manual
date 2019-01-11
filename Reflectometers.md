@@ -64,6 +64,8 @@ A detector is a passive component that sits at the end of the beam line. There a
 - Polarisation Analysis (PA) mode: Like NR but now after the sample point, the beam is split into two by an analyser and the detector moves to see either beam. 2* Theta is still the angle between the incoming and outgoing beam at the sample point.
 - Disabled: All beamline components are unlinked from one another's geometry constraints and can be moved independently.
 
+Note: When adding theta into a mode it is expected that you will add the items that define theta to the mode too. This way when you change theta the beamline parameter that sets the component to for theta will move automatically. If you do not do this your readback for theta will be different to you theta value. However we have not put an automatic check on this because it may be desired bahivour (We can add a check in the future).
+
 ### Off Specular vs Specular
 
 In Specular mode the point detector is used whereas in off specular the 1D detector is used.
