@@ -1,3 +1,5 @@
+> [Wiki](Home) > [Project overview](Project-Overview) > [Design documents](Design-Documents) > Muon Active Compensation](Muon-Active-Compensation)
+
 A new opportunity for a small project with a deadline of the 1st of February 2019 was added by the Muon scientists to provide active compensation to the Muon beam-steering magnets on the south side (EMU, MUSR and HIFI).
 This page contains the notes from a meeting trying to scope the requirements. This should capture the basics of the requirements, whoever takes the project on should verify that the requirements are complete.
 
