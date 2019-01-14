@@ -43,7 +43,7 @@ The new current to send is calculated as: <br>
 The following quantities are:
    * **Mc** = (**M** - **O**) . _**C**_ is the corrected field - turns measured field in the basis of the magnetometer into fields produced by the magnet in the basis of the magnets.
    * **Mc** - **S**  is the difference between the current field and required field
-   * (**Mc** - **S**) . **P** p  is the change required in the current for this iteration (in current version may need to multiple through by time between samples).
+   * (**Mc** - **S**) . **P** * p  is the change required in the current for this iteration (in current version may need to multiply through by time between samples).
 
 **Notes:**
    1. ARGUS appears to use different magnetic field components, labelled LR, UD and FB.  How do these differ from L, T and V?
