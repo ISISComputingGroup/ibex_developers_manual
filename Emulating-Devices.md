@@ -114,3 +114,10 @@ the device module 'neocera_ltc21' provides multiple device types so that no mean
 * When I try to access a variable that I know exists in my emulator, I get an error saying that variable does not exist?
     1. The lewis backdoor does not give access to private variables, so anything prefixed with `_` cannot be changed in this way.
 * If you are using `CmdBuilder` be aware that you should use `.eos()` before `.build()`, _especially_ if you have commands that 'overlap'. And example of this would be on the Keithley 2700, which has a buffer auto clear setting command, `TRAC:CLE:AUTO`, and a buffer clear command, `TRAC:CLE`. `.eos()` essentially tells the built regex to match the exact command string, rather than some of it.
+
+#### When using an emulator with a VI
+
+* If you are having problems getting data into or out of your emulator when using a VI, it could be a comms issue.
+  * Check the baud rate and other serial parameters if using serial
+  * Double check the port that your VI is connected to
+* The VI may be polling/looping too fast for your emulator. Some VIs are written to go flat out as fast as possible. This may be faster than your python emulator can handle. If you are getting no data from/into the VI, try slowing it down and increasing its loop delays. e.g. the VI controlling the Keithley 2700 was looping every 2ms, and when data was inserted into the emulated device buffer, the VI showed no change. This is because the loop was too fast for the data to be processed properly by the emulator and then VI. The delay was increased to 20ms (still extremely fast for the intended purpose), and the VI and emulator worked (make sure that the increased delay is not unreasonable and the device can still be expected to work properly).
