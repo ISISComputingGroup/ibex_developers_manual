@@ -16,6 +16,10 @@ Types of daughter boards are:
 
 In the future we may want to develop a full epics IOC for it and there is a possible Diamond IPC driver at  http://controls.diamond.ac.uk/downloads/support/OxInstCryojet/ currently there is an LvDCOM driver.
 
+# Communications
+
+The device should be talked to via serial at a baud rate of 57600. This is variable on the front panel, but **only while the device is in local mode.**
+
 ## Driver
 
 Currently the driver only measures and sets the following:
