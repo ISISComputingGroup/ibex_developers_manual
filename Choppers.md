@@ -4,3 +4,4 @@
 * [FZJDDFCH FZJ Digital Drive Fermi Chopper](FZJ_DD_Fermi_chopper)
 * [FZJ Fermi Chopper](FZJ_Fermi_chopper)
 * [MK3 Chopper](MK3-Chopper)
+* [Astrium Chopper](Astrium-Chopper)
