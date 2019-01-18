@@ -11,9 +11,9 @@ This device has a relatively complex IOC due to some communication issues we hav
 
 ### Fermi chopper parameters
 
-**MERLIN:** Merlin can use both "Merlin small parameters" and "Merlin large parameters" (I believe this depends on which rotor is installed)
-**MARI:** Uses "Merlin large parameters" (the "HET/MARI" parameters I believe refer to a very old configuration of the hardware, before the chopper on MARI was upgraded to be more like MERLIN's)
-**MAPS:** The hardware on MAPS does not support changing parameters - they are fixed.
+- **MERLIN:** Merlin can use both "Merlin small parameters" and "Merlin large parameters" (I believe this depends on which rotor is installed)
+- **MARI:** Uses "Merlin large parameters" (the "HET/MARI" parameters I believe refer to a very old configuration of the hardware, before the chopper on MARI was upgraded to be more like MERLIN's)
+- **MAPS:** The hardware on MAPS does not support changing parameters - they are fixed.
 
 # Diagnostic logs
 
