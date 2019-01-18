@@ -1,5 +1,9 @@
 Controls the new PSUs that are going to be used on the Muon Front End.
 
+# Communications
+
+Comms are via an ascii protocol over RS-422/485 via back of device. Manual is misleading, must use `CR` terminator only (*not* `CR LF`).
+
 ### Status of the device
 
 The status of the device is encoded in 32 bits. The status of the device depending on which bits are turned on. See page 30 of the manual. 
