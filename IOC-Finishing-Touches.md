@@ -99,3 +99,9 @@ where
 ```
 
 Either a full make of the server or running `make iocstartups` will then make the contents of these XML files available to the GUI (after restarting the instrument)
+
+**Useful regex for macros**
+
+> `^-?[0-9]+\.?[0-9]*$`: float with sign
+> `^[0-9]+\.?[0-9]*$`: float no sign
+> `^[0-9]+$`: integer no sign
