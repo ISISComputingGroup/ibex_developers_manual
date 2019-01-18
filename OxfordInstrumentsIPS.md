@@ -69,6 +69,6 @@ There are various IPS units here is a list of the ones we know the settings for 
 
 Setting | Description | IN Labview  | T7 Magnet () | T9 Magnet (LOQ)
 ------- | ----------- | ------------ |------------ | ---------------
-STABILITY_VOLTAGE | 5 voltages are compared and they must differ by less than this to be declared stable | hard coded | 0.1 | 0.1
-MAX_FIELD | Maximum field | PS0MaxField(2.2K) and PS0MaxField(4.2K) | 7.0 | 9.0
-MAX_SWEEP_RATE | Maximum rate of change of the field in B/min |  PS0MaxSweep(4.2K) and PS0MaxSweep(2.2K) | 0.399 | 0.3990
+`STABILITY_VOLTAGE` | 5 voltages are compared and they must differ by less than this to be declared stable | hard coded | 0.1 | 0.1
+`MAX_FIELD` | Maximum field | `PS0MaxField(2.2K)` and `PS0MaxField(4.2K)` | 7.0 | 9.0
+`MAX_SWEEP_RATE` | Maximum rate of change of the field in B/min |  `PS0MaxSweep(4.2K)` and `PS0MaxSweep(2.2K)` | 0.399 | 0.3990
