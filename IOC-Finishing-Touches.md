@@ -83,11 +83,15 @@ Macros where possible should follow the [standard names](Macro-Naming). If a mac
 ```
 
 where
-> `macro` describes a macro settable by a user. containing `name`, is the name of the macro;  `pattern`, the regex for the macro's value; and `description`, a plain text description which is shown to the user. 
-
-> `ioc_desc` is a short description of the IOC e.g Lakeshore 218 fro LKSH218
-
-> `ioc_details` is more details about the IOC, e.g. link to docs.
+- `macro` describes a macro settable by a user. 
+    - containing `name`, is the name of the macro;  
+    - `pattern`, the regex for the macro's value; Useful regex for macros:
+        - `^-?[0-9]+\.?[0-9]*$`: float with sign
+        - `^[0-9]+\.?[0-9]*$`: float no sign
+        - `^[0-9]+$`: integer no sign
+    - `description`, a plain text description which is shown to the user. 
+- `ioc_desc` is a short description of the IOC e.g Lakeshore 218 fro LKSH218
+- `ioc_details` is more details about the IOC, e.g. link to docs.
 
 `config.xml` support include so if you have several iocs with the same set of macros you don't need to repeat the file contents. Example GALIL02 (see below) uses GALIL01's config:
 
@@ -100,8 +104,3 @@ where
 
 Either a full make of the server or running `make iocstartups` will then make the contents of these XML files available to the GUI (after restarting the instrument)
 
-**Useful regex for macros**
-
-> `^-?[0-9]+\.?[0-9]*$`: float with sign
-> `^[0-9]+\.?[0-9]*$`: float no sign
-> `^[0-9]+$`: integer no sign
