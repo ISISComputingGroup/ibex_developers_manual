@@ -9,6 +9,12 @@ This device has a relatively complex IOC due to some communication issues we hav
 - There is logic in the DB records to prevent sending a speed setpoint that is equal to the current speed setpoint readback.
 - There is (equipment) safety logic in the IOC. For more details see below.
 
+### Fermi chopper parameters
+
+**MERLIN:** Merlin can use both "Merlin small parameters" and "Merlin large parameters" (I believe this depends on which rotor is installed)
+**MARI:** Uses "Merlin large parameters" (the "HET/MARI" parameters I believe refer to a very old configuration of the hardware, before the chopper on MARI was upgraded to be more like MERLIN's)
+**MAPS:** The hardware on MAPS does not support changing parameters - they are fixed.
+
 # Diagnostic logs
 
 The logs for the fermi chopper are kept in `C:\Instrument\var\logs\ioc\FERMCHOP_01-<date>`. These logs contain the following information:
