@@ -7,3 +7,5 @@
 * [Thurlby Thandar TTI-PLP](Thurlby-Thandar-TTI-PLP-Power-Supply)
 
 * [Riken power supplies](Riken-power-supplies)
+
+* [NGPS](NGPS-PSU)
