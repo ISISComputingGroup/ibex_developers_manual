@@ -38,7 +38,7 @@ The IOC implements the following state machine in SNL:
   * The activity of the IPS is "Ramp to Setpoint"
 
 - Wait for voltage to stabilize
-  * Once the PSU is at the required current, wait for the voltage to be stable. We define stable as 5 successive readings which are all within 1.0V of each other.
+  * Once the PSU is at the required current, wait for the voltage to be stable. We define stable as 5 successive readings which are all within a *stability voltage* of each other. The stability voltage is set as a macro `STABILITY_VOLTAGE` which defaults to 0.1V.
 
 - Turn switch heater on and wait
   * This state puts the activity back to "Hold"
