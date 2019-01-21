@@ -109,7 +109,7 @@ There is a LabVIEW VI in `LABVIEW MODULES\Drivers\Galil DMC2280\Galil - EPICS.ll
 
 - a) If you are confident using source safe on an instrument then update as normal.
 - b) otherwise:
-    - 1. Remote desktop to NDXDEMO
+    - 1. Remote desktop to DEMO
     - 1. Open Microsoft Visual SourceSafe from start
         - If the main interface doesn't appear (looks like a file browser make sure that the share can be read.
     - 1. Find in the interface the `Galil - EPICS.llb` under `labview\labview Modeuls\Driver\Galil DMC2280`
