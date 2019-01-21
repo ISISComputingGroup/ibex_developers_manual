@@ -88,7 +88,7 @@ The following quantities are:
         - No, we expect to get oscillation but at the 1 mG level because of the fiddle factor.
 
 ## In Operation ##
-   * There is a requirement that "Zero field system control needs to be continuous, in the mathematical function sense of not having steps in, when configurations change or control is interrupted.".  How is this requirement currently achieved? (It may better to run the zero-field controller on a separate device (e.g. a Raspberry Pi).  This approach would eliminate the risk of interruption should IBEX be halted or the control PC re-booted.) What is this requirement in practice?
+   * There is a requirement that Zero field system control needs to be continuous, in the mathematical function sense of not having steps in, when configurations change or control is interrupted.".  How is this requirement currently achieved? (It may better to run the zero-field controller on a separate device (e.g. a Raspberry Pi).  This approach would eliminate the risk of interruption should IBEX be halted or the control PC re-booted.) What is this requirement in practice?
         - **Unanswered**
    * Presumably, magnetic fields should not change too rapidly.  Which implies that the currents should not change too rapidly.  Is there maximum (or even minimum) permissible rate of change for the currents?  Is there a maximum permissible change (i.e. step size), positive or negative, in the value of the current?  How frequently should currents be updated?  
         - **Unanswered**
