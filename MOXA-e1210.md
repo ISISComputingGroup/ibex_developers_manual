@@ -11,6 +11,19 @@
    * The [original ticket](https://github.com/ISISComputingGroup/IBEX/issues/3269) for this hardware does not require a functional counter, so this hasn't been taken any further
 
 
+# Conversion of integer values to floating points
+
+Some models in the ioLogik e12XX line provide floating point values. These include the e1240 which outputs a voltage; and the e1262 which outputs a temperature. These are encoded as unsigned integers in two consecutive registers. To combine these values into one floating point number using python one can follow [this stack overflow answer](https://stackoverflow.com/a/35603706):
+
+```
+import struct
+register_values = (26214, 16878)
+packed_string = struct.pack('HH', *register_values) # HH defines two unsigned ints.
+                                                    # *register_values treats the values as a void
+unpacked_float = struct.unpack('f', packed_string)[0]
+print(unpacked_float) # Value should be 30.5. This is a Celcius measurement taken with an e1262.
+```
+
 # Emulation and testing
 
 * This is a modbus device, which adds complications when testing and emulating.
