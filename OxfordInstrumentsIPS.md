@@ -67,7 +67,7 @@ The IOC implements the following state machine in SNL:
 
 There are various IPS units here is a list of the ones we know the settings for (Lab view settings are in `...LabVIEW Modules\Oxford Software\TESLTRON.INI`):
 
-Setting | Description | IN Labview  | T7 Magnet () | T9 Magnet (LOQ)
+Setting | Description | IN Labview  | 7T Magnet | 9T Chopper Magnet (LET)
 ------- | ----------- | ------------ |------------ | ---------------
 `STABILITY_VOLTAGE` | 5 voltages are compared and they must differ by less than this to be declared stable | hard coded | 0.1 | 0.1
 `MAX_FIELD` | Maximum field | `PS0MaxField(2.2K)` and `PS0MaxField(4.2K)` | 7.0 | 9.0
