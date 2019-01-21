@@ -23,13 +23,13 @@ The process of setting the zero field up is:
     - Place a portable probe at the sample position
     - Set the field to 0
     - Update the offsets so that the portable probe measures 0.
-        - It is ok to autosave these values they are the same for every config
+        - It is OK to auto save these values they are the same for every config
         - The offset values should be under manager mode
     - This is performed regularly
 
 On different instruments there is slightly different equipment:
 
-- EMU, Argos, Chronus
+- EMU, Argus, Chronus
     - Magnetometer: flux gate (has lower maximum field than the hall probes) connected to a CDAQ
     - Magnets: Conventional magnets attached to Kepco power supplies
     - Manual probe: LS201 hall probe
@@ -38,7 +38,7 @@ On different instruments there is slightly different equipment:
     - Magnets: Superconducting, shim values set from 0 field are used as offsets in these magnets
     - Manual probe: ? not sure but we are not converting this now
 
-The zero-field controller operates in one of two required modes (dead reconning will not be required):
+The zero-field controller operates in one of two required modes (dead reckoning will not be required):
    * Manual
    * Auto-Feedback
 
@@ -59,7 +59,7 @@ There appear to be 3 variants of the MUON zero-field controller:
 ## Zero-Field Controller Feedback Loop ##
 The zero-field controller feedback loop uses the following inputs:
    * **M** – measured magnetic field (it has three components: longitudinal (L), transverse (T) & vertical (V))
-       - in IBEX this should use x, y, z
+       - in IBEX this should use X, Y, Z, with Z being along the beam
    * **O** – Offset (to compensate for sensor placement)
    * _**C**_ – calibration matrix (the inverse the measurements were taken in calibrate)
    * **S** – setpoints requested
@@ -78,8 +78,8 @@ The following quantities are:
    * (**Mc** - **S**) . **P** * p  is the change required in the current for this iteration (in current version may need to multiply through by time between samples).
 
 **Notes:**
-   1. ARGUS appears to use different magnetic field components, labelled LR, UD and FB.  How do these differ from L, T and V?
-       - A single set would be good x,y,z as described above.
+   1. ARGUS appears to use different magnetic field components, labelled LR (left-right), UD (up-down) and FB (forwards-backwards).  How do these differ from L, T and V?
+       - A single set would be good X, Y, Z as described above.
    1. The offset value, O, appears to be a constant.  Why is this?
        - It is an approximation
    1. Are there limits on the input & output values?  If so, what are they?  If these limits are breached, what should happen?
@@ -95,4 +95,4 @@ The following quantities are:
 
 ## Testing ##
 
-We will test on the instrument. It should take about an hour but needs to be placed on the shutdown worklist (Peter will sort this out when needed).
+We will test on the instrument. This needs to be placed on the shutdown work list (Peter will sort this out when needed).
