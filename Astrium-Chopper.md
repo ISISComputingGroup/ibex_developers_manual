@@ -6,7 +6,7 @@ Note that these controllers are to be retired end of 2019.
 
 ## Software Architecture ##
 
-The IOC for the Astrium choppers works similarly to that of the [Mk3](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/MK3-Chopper) in that it uses a .NET C# DLL to communicate with the servers running the chopper control programs. ![](images/Astrium.SVG)
+The IOC for the Astrium choppers works similarly to that of the [Mk3](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/MK3-Chopper) in that it uses a .NET C# DLL to communicate with the servers running the chopper control programs. [[https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/image/Astrium.svg]]
 
 ## Hardware quirks ##
 
