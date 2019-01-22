@@ -6,9 +6,19 @@ Note that these controllers are to be retired end of 2019.
 
 ## Software Architecture ##
 
-The IOC for the Astrium choppers works similarly to that of the [Mk3](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/MK3-Chopper) in that it uses a .NET C# DLL to communicate with the servers running the chopper control programs. [[https://github.com/ISISComputingGroup/ibex_developers_manual/tree/master/images/Astrium.svg]]
+The IOC for the Astrium choppers works similarly to that of the [Mk3](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/MK3-Chopper) in that it uses a .NET C# DLL to communicate with the servers running the chopper control programs. The architecture can be described as:
+
+![](https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/images/Astrium.svg)
+
+The red part of this diagram is written in C++/CLI to communicate with the .NET AstriumComms.dll and builds to another dll called Astrium.dll, which lives in the support directory. The green part is the asyn driver that communicates with Astrium.dll. StreamDevice is then used to communicate with this driver so as to leverage the formatting abilities of protocol files.
 
 ## Hardware quirks ##
+
+* Sending a calibrate when the device has already been calibrated causes the chopper to get into a state that must be physically restarted to fix. Disallowing this is implemented into the IOC.
+* When a frequency is set the device multiplies it by 10 e.g. sending 1Hz to the device will cause the chopper to run at 10Hz
+* There is a resonance that means the chopper cannot run at 180Hz, this is reflected in the control scripts on LET
+* There is a resume command in the C# dll. This does nothing.
+* The frequency SP_RBV from the device always reads zero.
 
 **Chopper 1 (NCS016)**
 
