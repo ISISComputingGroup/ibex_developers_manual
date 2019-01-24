@@ -1,8 +1,14 @@
 # Existing script generators
 
-### Muons
+### MkScript
 
-The muons have at least 3 different script generators. All of these are fundamentally table-based systems with varying degrees of additional functionality on the side.
+Used by south side muons and MARI
+
+### MuonScript
+
+Used by south side muons
+
+### MACS
 
 MACS is probably the most interesting muon script generator. A brief overview of functionality:
 - Keeps a table-based view of operations on the screen. An "Operation" could be:
