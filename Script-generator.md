@@ -88,6 +88,10 @@ The script generator should be able to load/save scripts in it's own format. In 
 - custom formats (e.g. ENGINX)
 - Raw python code
 
+### Readability
+
+There is broad consensus that the generated scripts should be human readable, to facilitate a workflow where they may generate the skeleton of the script using the script generator and then edit it to suit some more advanced requirements for a more complex experiment.
+
 # Suggested implementations
 
 All of the implementations below assume that the NICOS script server will be used as the back-end, when the script generator is running on an instrument. Using the script server is logical as it already allows for queuing/re-ordering/editing scripts in a queue on an instrument.
