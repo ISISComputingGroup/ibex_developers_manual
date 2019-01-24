@@ -78,6 +78,7 @@ Some of the existing script generators already support "scanning" a parameter (t
 
 There is slightly less consensus about nested loops - some groups see these as very useful, while others would prefer this "advanced" functionality to be handled by writing the python themselves.
 
+Logarithmic scans (as opposed to linear) are important for the Muon group, but there was not substantial interest from other groups.
 
 ### Loading scripts
 
