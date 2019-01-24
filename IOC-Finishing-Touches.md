@@ -62,9 +62,9 @@ The build in Jenkins will fail if the rules of the [DBUnitChecker](PV-Units-&-St
 
 To check it will not fail the build.
 
-## 7. Macros
+## 7. Macros and Details
 
-Macros where possible should follow the [standard names](Macro-Naming). If a macro can be set as part of the IOC (and can be reasonably set in the GUI) then a config file should be added to the run directory which contains a list of macros (i.e. `..\EPICS\ioc\master\<IOC Name>\iocBoot\<IOC Instance Name>\config.xml). The file is of the form:
+Macros where possible should follow the [standard names](Macro-Naming). If a macro can be set as part of the IOC (and can be reasonably set in the GUI) then a config file should be added to the run directory which contains a list of macros (i.e. `..\EPICS\ioc\master\<IOC Name>\iocBoot\<IOC Instance Name>\config.xml`). The file is of the form:
 
 ```
 <?xml version="1.0" ?>
@@ -83,6 +83,8 @@ Macros where possible should follow the [standard names](Macro-Naming). If a mac
 ```
 
 where
+- `ioc_desc` is a short description of the IOC e.g Lakeshore 218 for LKSH218
+- `ioc_details` is more details about the IOC, e.g. link to docs.
 - `macro` describes a macro settable by a user. 
     - containing `name`, is the name of the macro;  
     - `pattern`, the regex for the macro's value; Useful regex for macros:
@@ -90,8 +92,6 @@ where
         - `^[0-9]+\.?[0-9]*$`: float no sign
         - `^[0-9]+$`: integer no sign
     - `description`, a plain text description which is shown to the user. 
-- `ioc_desc` is a short description of the IOC e.g Lakeshore 218 fro LKSH218
-- `ioc_details` is more details about the IOC, e.g. link to docs.
 
 `config.xml` support include so if you have several iocs with the same set of macros you don't need to repeat the file contents. Example GALIL02 (see below) uses GALIL01's config:
 
