@@ -36,6 +36,8 @@ There is a clear need for the script generator to be highly configurable. Common
 - `cset` a block
 - run an arbitrary instrument script (with parameters)
 
+There is also a need for "hooks" into which the instrument scientists can insert arbitrary code. For example, if the script generator (/server) are told to stop, some instruments may want to simply terminate execution of all code, whereas others may want to perform some "cleanup" (for example, setting the beamline back to a known state).
+
 ### Offline mode
 
 Being able to use the script generator offline (in advance) as well as alongside/integrated with IBEX is important.
