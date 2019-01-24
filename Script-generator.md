@@ -42,7 +42,7 @@ Being able to use the script generator offline (in advance) as well as alongside
 
 ### Spreadsheet / table based
 
-Most of the existing script generators are table based. Some have additional alternative means of displaying equivalent information (such as a tree view)
+Most of the existing script generators are table based. Some have additional alternative means of displaying equivalent information (such as a tree view). At a SAG meeting, there was broad consensus that a table-based UI would be appropriate.
 
 ### Parameters
 
