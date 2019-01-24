@@ -30,6 +30,10 @@ LOQ uses a script generator "written by Matt Clarke in VB or C#". The scientists
 
 # Commonalities of old systems / feature requests for new system
 
+### Offline mode
+
+Being able to use the script generator offline (in advance) as well as alongside/integrated with IBEX is important.
+
 ### Spreadsheet / table based
 
 Most of the existing script generators are table based. Some have additional alternative means of displaying equivalent information (such as a tree view)
@@ -40,7 +44,7 @@ All of the script generators I've seen have essentially been setting a small num
 
 ### Parameter checking
 
-All of the scientists have brought up a desire for parameters to be checked for implausible values (e.g. setting a dilution fridge to furnace temperatures). Many of the existing script generators already do this.
+All of the scientists have brought up a desire for parameters to be checked for implausible values (e.g. setting a dilution fridge to furnace temperatures). Many of the existing script generators already do this. Where the limits come from should be user-configurable.
 
 ### Output
 
@@ -48,7 +52,7 @@ All of the existing script generators generate a plain text file. However, the o
 
 However, the *option* to explicitly generate and load a script is still important, as some users like to edit the generated script before it is sent.
 
-### Feedback
+### Execution Feedback
 
 Scientists have expressed a desire for live feedback visible in the script generator while the script is running. For example, rows should be greyed out once that part of the script has been executed.
 
@@ -59,6 +63,8 @@ Some of the existing script generators already do some form of time estimation -
 ### Dry runs
 
 Some scientists have expressed an interest in dry runs/simulated runs of scripts to detect errors. None of the existing script generators that I've seen contain this functionality.
+
+At a SAG meeting, the scientists suggested a graph of time (or rather, counts) against arbitrary parameters so that they can check the the graph looks as they expect.
 
 # Suggested implementations
 
