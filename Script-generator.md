@@ -30,6 +30,12 @@ LOQ uses a script generator "written by Matt Clarke in VB or C#". The scientists
 
 # Commonalities of old systems / feature requests for new system
 
+### Configurable
+
+There is a clear need for the script generator to be highly configurable. Common actions that scientists want to take are:
+- `cset` a block
+- run an arbitrary instrument script (with parameters)
+
 ### Offline mode
 
 Being able to use the script generator offline (in advance) as well as alongside/integrated with IBEX is important.
@@ -65,6 +71,21 @@ Some of the existing script generators already do some form of time estimation -
 Some scientists have expressed an interest in dry runs/simulated runs of scripts to detect errors. None of the existing script generators that I've seen contain this functionality.
 
 At a SAG meeting, the scientists suggested a graph of time (or rather, counts) against arbitrary parameters so that they can check the the graph looks as they expect.
+
+### Scans
+
+Some of the existing script generators already support "scanning" a parameter (that is, setting a parameter to a value and taking a measurement at each step. There is broad consensus that this is useful functionality.
+
+There is slightly less consensus about nested loops - some groups see these as very useful, while others would prefer this "advanced" functionality to be handled by writing the python themselves.
+
+
+### Loading scripts
+
+The script generator should be able to load/save scripts in it's own format. In addition, several groups expressed interest in loading from other formats, for example:
+- Excel
+- csv
+- custom formats (e.g. ENGINX)
+- Raw python code
 
 # Suggested implementations
 
