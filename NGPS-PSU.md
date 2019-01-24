@@ -2,7 +2,13 @@ Controls the new PSUs that are going to be used on the Muon Front End.
 
 # Communications
 
-Comms are via an ascii protocol over RS-422/485 via back of device. Manual is misleading, must use `CR` terminator only (*not* `CR LF`).
+### Serial comms
+
+See comments on https://github.com/ISISComputingGroup/IBEX/issues/3447 for details of what was tried. Short version is that a USB-422/485 adapter plugged into a laptop works but a moxa does not.
+
+### Ethernet comms
+
+Will need a firewall box.
 
 ### Status of the device
 
