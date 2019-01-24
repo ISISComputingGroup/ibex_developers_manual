@@ -135,3 +135,15 @@ Disadvantages:
 - The quality of the existing code is largely unknown
 - The existing script generators are written in technologies which were not necessarily familiar with, or which may be obsolete
 - It is unknown how generic/extensible the existing script generators are. Most are fairly specific to a small number of beamlines.
+
+### Approach 4
+
+The script generator could be written as a web application, enabling it to be used both from within the user interface and externally. 
+
+Advantages:
+- The script generator can be accessed from anywhere without needing to be downloaded
+
+Disadvantages:
+- The IBEX team as a whole do not have significant expertise in web technologies
+- It is not clear how this would interface with the NICOS script server (and what the security implications of doing this would be)
+- Running the application in a web browser may constrain us unnecessarily.
