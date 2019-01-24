@@ -23,3 +23,7 @@ At the meeting, we will look at these tickets discuss what they are and then ran
 1. Decide on rank on importance and urgency and add to pile
 1. Order tickets by priority starting with important and urgent
 
+### After the Meeting
+
+1. Collect tickets in order and write order into slack
+1. Look at any IOC tickets and get someone to do an analysis of difficulty.
