@@ -50,7 +50,7 @@ All of the script generators I've seen have essentially been setting a small num
 
 ### Parameter checking
 
-All of the scientists have brought up a desire for parameters to be checked for implausible values (e.g. setting a dilution fridge to furnace temperatures). Many of the existing script generators already do this. Where the limits come from should be user-configurable.
+All of the scientists have brought up a desire for parameters to be checked for implausible values (e.g. setting a dilution fridge to furnace temperatures). Many of the existing script generators already do this. How the limits are defined should be configurable by instrument scientists.
 
 ### Output
 
