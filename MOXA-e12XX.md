@@ -10,6 +10,17 @@
    * PVs exist which _should_ interact with this functionality, but this is not tested as I couldn't get the device to enter this mode
    * The [original ticket](https://github.com/ISISComputingGroup/IBEX/issues/3269) for this hardware does not require a functional counter, so this hasn't been taken any further
 
+# Finding a moxa e1200 series device on the network
+
+Moxa provides a tool, `ioSearch`, to find 12xx series devices which have DHCP allocated IPs on the network. For this to work you must be using a computer which is on the same subnet as the device. `ioSearch` is found in the manuals share under `<manuals share>\MOXA E1200 Series\moxa-iologik-e1200-series-iosearch-utility-v2.0.0.zip`. Extract this file and run the installer. When starting the program, UAC will ask for administrator privileges.
+
+## Using the IP locate tool
+Once loaded, click 'start search' in the top-right of the dialogue which opens. This will begin the search for any device on your subnet in the e1200 series. One can target only the specific model your are looking for by deselecting other models.
+
+Once the search is completed, the IP addresses of any devices found will be displayed in the table. To perform another search, click the leftmost icon from the row of icons at the top of the screen. Once you have found the device you are looking for, you may access its web interface either by typing its IP address into a web browser or clicking the device's name in the list on the left hand side of the screen.
+
+# Enabling DHCP
+By default, the device should be connected using DHCP. If this is not the case, DHCP can be enabled through the device's web interface. First, go to `Network settings > Ethernet connection` from the menu in the web interface. Then select DHCP on the IP configuration drop-down box. The default static IP is written on the side of the device.
 
 # Conversion of integer values to floating points
 
