@@ -20,17 +20,17 @@ MACS is probably the most interesting muon script generator. A brief overview of
 
 Tom has a copy of MACS, but this can only run out of cycle and on a real instrument.
 
-### Inter
+### INTER
 
-Inter has a script generator called MaxScript. It has fallen out of use because it is not easy to integrate with the SECI system. Scientists from Inter expressed the desire for the script generator to be able to talk to the script server directly, with feedback (for example, greying out completed rows where a row represents an experimental measurement).
+INTER has a script generator called MaxScript. It has fallen out of use because it is not easy to integrate with the SECI system. Scientists from Inter expressed the desire for the script generator to be able to talk to the script server directly, with feedback (for example, greying out completed rows where a row represents an experimental measurement).
 
-The Inter script generator can also display the script in a "tree" view - this collapses each run into a short recognisable string, and the details can be seen by expanding out the tree item.
+The INTER script generator can also display the script in a "tree" view - this collapses each run into a short recognisable string, and the details can be seen by expanding out the tree item.
 
-The Inter script generator provides some time estimation.
+The INTER script generator provides some time estimation.
 
-Inter script generator is available at: `\\isis\shares\ISIS_Experimental_Controls\external_code\inter script generator` (copied from https://github.com/jonasgitt/ScriptMax with required DLLs and extra files added). Launch via the Qt IDE (download latest version from web; takes a while). I haven't been able to build it successfully to an exe, but only spent half an hour on it.
+INTER script generator is available at: `\\isis\shares\ISIS_Experimental_Controls\external_code\inter script generator` (copied from https://github.com/jonasgitt/ScriptMax with required DLLs and extra files added). Launch via the Qt IDE (download latest version from web; takes a while). I haven't been able to build it successfully to an exe, but only spent half an hour on it.
 
-### Loq
+### LOQ
 
 LOQ uses a script generator "written by Matt Clarke in VB or C#". The scientists have expressed a desire for the script generator to be simple from a user's perspective.
 
@@ -92,7 +92,7 @@ Logarithmic scans (as opposed to linear) are important for the Muon group, but t
 
 The script generator should be able to load/save scripts in it's own format. In addition, several groups expressed interest in loading from other formats, for example:
 - Excel
-- csv
+- CSV
 - custom formats (e.g. ENGINX)
 - Raw python code
 
