@@ -44,11 +44,11 @@ currents of the power supplies. This IOC should do this also.
 
 On different instruments there is slightly different equipment:
 
-- EMU, MuSR, Argus, Chronus
+- EMU, MuSR, ARGUS, CHRONUS
     - Magnetometer: flux gate (has lower maximum field than the hall probes) connected to a NI 9125 cDAQ
     - Magnets: Conventional magnets attached to Kepco power supplies
     - Manual probe: ? not sure but we are not converting this now
-- HiFi
+- HIFI
     - Magnetometer: Group 3 hall probes connected to a DTM161
     - Magnets: Superconducting, shim values set from 0 field are used as offsets in these magnets
     - Manual probe: LS201 hall probe
