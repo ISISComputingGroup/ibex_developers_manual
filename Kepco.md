@@ -3,7 +3,7 @@
 Kepcos are power supplies coming in various sizes and models. The two major differences are analogue (they have analogue dials at the front) and digital (digital readbacks). They run in two modes:
 
 1. Voltage Mode
-    - Setting  voltage will mean the KEPCO will supply that voltage as long as it is not above the magnitude of the set current
+    - Setting  voltage will mean the KEPCO will supply that voltage as long as it is not above the magnitude of the set current. E.g. If the resistance is low then to reach the desired voltage a current larger than the setpoint will be needed, the KEPCO will refuse to allow this.
 1. Current Mode
     - Setting a current will mean the KEPCO will supply the given current as long as it is not above the magnitude of the set voltage.
 
