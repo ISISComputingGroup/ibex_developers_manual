@@ -47,6 +47,7 @@ On different instruments there is slightly different equipment:
 - EMU, MuSR, ARGUS, CHRONUS
     - Magnetometer: flux gate (has lower maximum field than the hall probes) connected to a NI 9125 cDAQ
     - Magnets: Conventional magnets attached to Kepco power supplies
+       - which model of Kepco?
     - Manual probe: ? not sure but we are not converting this now
 - HIFI
     - Magnetometer: Group 3 hall probes connected to a DTM161
