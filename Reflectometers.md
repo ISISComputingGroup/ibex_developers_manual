@@ -134,5 +134,6 @@ In disabled mode, the incoming beam is no longer altered and this means changing
 1. Will you want to do individual moves while another move is going on?
 1. Do we need to reflect SP of motors into Reflectometry server
 1. Can we have the dance script.
-
-
+1. Does it matter whether you can change parameters on components parked out of the beam? (e.g. SM Angle in NR Mode)
+1. CRISP: What is the position for S4? (found it in mantid IDF, but values differ from those in VI - assumption is VI is correct)
+1. Coordinates: according to IDFs, ZYX on `INTER`, `SURF`, `OFFSPEC` is XZY on `CRISP`, `POLREF`. We use the former. Is this a problem?
