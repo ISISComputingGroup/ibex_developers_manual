@@ -124,6 +124,7 @@ Another suggestion would be to implement the script generator as a standalone Py
 Advantages:
 - It might be easier to interface with Nicos as nicos is written in Python
 - It may be easier to generate python code using python than java (for example, access to the `ast` module)
+- Python is a technology which IBEX developers already know and use (minus caveat about UI toolkits below)
 
 Disadvantages:
 - IBEX developers are not currently familiar with Python UI toolkits. This would be another technology to learn.
