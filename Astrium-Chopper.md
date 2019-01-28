@@ -16,7 +16,7 @@ The red part of this diagram is written in C++/CLI to communicate with the .NET 
 
 * Sending a calibrate when the device has already been calibrated causes the chopper to get into a state that must be physically restarted to fix. Disallowing this is implemented into the IOC.
 * When a frequency is set the device multiplies it by 10 e.g. sending 1Hz to the device will cause the chopper to run at 10Hz
-* There is a resonance that means the chopper cannot run at 180Hz, this is reflected in the control scripts on LET
+* There is a resonance that means the chopper cannot run at 180Hz, this is reflected in the control scripts on LET and in the IOC itself.
 * There is a resume command in the C# dll. This does nothing.
 * The frequency SP_RBV from the device always reads zero.
 
