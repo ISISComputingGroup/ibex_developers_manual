@@ -6,7 +6,8 @@ Documentation is available for the pump at `\\ISIS\shares\ISIS_Experimental_Cont
 
 ## Connection Details
 
-| RS-232C Specifications |         |
+# RS-232C Specifications 
+
 |---------------|------------------|
 |     Baud rate | 4800 Baud        |
 |     Stop bits | 2 bit            |
