@@ -1,10 +1,12 @@
-> [Wiki](Home) > [Project overview](Project-Overview) > Design documents
+> [Wiki](Home) > [Project overview](Project-Overview) > [Design documents](Design-Documents) > [Reflectometers](Reflectometers)
 
 The aim of the reflectometer project is to allow users of the reflectometers to have a common and easy experience to set the position of items on the beam line. The setup is fairly complex because of there are multiple items that need to be coordinated to make a measurement. This page should give an overview of what is going on and the user cases that are needed.
 
 Related Pages:
 
 - [Setup and science behind the experiment](Reflectometers-Science)
+- [Reflectometers Beam Height Calculation](Reflectometers-Beam-Height-Calc)
+- [Reflectometry IOC](Reflectometry-IOC)
 
 ### Components in a mode
 
@@ -24,11 +26,6 @@ In sim language
 
 Mode | S1 Height above beam |  Polariser angle and height above 
 
-## Calculating Height of an Item Above Straight Through Beam
-
-The height of an item along the beam can be calculated based of the incoming angle. This diagram shows how this works.
-
-![Image](reflectometers/Non-small_angle_approx.png)
 
 ## Items to Document
 
