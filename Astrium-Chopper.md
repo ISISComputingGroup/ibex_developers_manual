@@ -20,13 +20,18 @@ The red part of this diagram is written in C++/CLI to communicate with the .NET 
 * There is a resume command in the C# dll. This does nothing.
 * The frequency SP_RBV from the device always reads zero.
 
-**Chopper 1 (NCS016)**
+## Chopper 1 (NCS016) ##
 
 If the control program on the chopper PC is restarted for any reason, a reset will need to be performed before the chopper can be calibrated (which is also needed after a program restart).  This is done with a physical toggle switch on the monitoring system crate in the top of the left-hand cabinet.  (Fault LED 8 on the same card will be illuminated showing the error).
 
 This cabinet is normally locked and so an instrument scientist will need to be contacted to gain access.
 
+### Photograph of the actual crate
 
-**Chopper 5 (NCS017)**
+![](https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/images/Astrium%20Monitoring%20Crate.JPG)
+
+The toggle switch is labelled _quit failure_ and LED 8 can be seen to the right of the potentiometer labelled _adjust threshold_.
+
+## Chopper 5 (NCS017) ##
 
 It is believed that the reset is not required on this system.
