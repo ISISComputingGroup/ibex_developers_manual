@@ -22,9 +22,14 @@ Notes:
 
 The device has the ability to control a number of parameters for a pump:
 
-- Flowrate (in mL/min)
-- Pressure Maximum and Minimum (in kg/cm^2)
+- Flowrate (in mL/min): `FLOWRATE:SP`
+- Pressure Maximum and Minimum (in kg/cm^2): `PRSSURE:MAX:SP`, `PRESSURE:MIN:SP`
 -- Setting these values will result in an error output and stop the pump if exceeded during a executed program.
+- Components (A, B, and, C in %): `COMP:{}:SP`.
+
+The user can then start the pump by using the `START:SP` record. The pump can be stopped using the `STOP:SP`
+
+The user can also select a timed run for either a set time or volume. The user must first set a time `TIME:RUN:SP` (in seconds) or volume `TIME:VOL:SP` (in mL). Then a pump can begin by using the `TIMED:SP` record.
 
 NB: The devices display screen does not show current pump status information when in operation.
 
