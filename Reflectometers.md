@@ -57,6 +57,8 @@ In disabled mode, the incoming beam is no longer altered and this means changing
     - In the end it doesn't really matter but they are measured along their length.
 1. Room coordinates are these ok as we defined them?
     - Maybe, they should be the same as Mantid default.
+1. Coordinates: according to IDFs, ZYX on `INTER`, `SURF`, `OFFSPEC` is XZY on `CRISP`, `POLREF`. We use the former. Is this a problem?
+    - Convention from `INTER` etc. is correct.
 
 ### Unanswered
 
@@ -69,4 +71,3 @@ In disabled mode, the incoming beam is no longer altered and this means changing
 1. Can we have the dance script.
 1. Does it matter whether you can change parameters on components parked out of the beam? (e.g. SM Angle in NR Mode)
 1. CRISP: What is the position for S4? (found it in mantid IDF, but values differ from those in VI - assumption is VI is correct)
-1. Coordinates: according to IDFs, ZYX on `INTER`, `SURF`, `OFFSPEC` is XZY on `CRISP`, `POLREF`. We use the former. Is this a problem?
