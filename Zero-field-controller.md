@@ -70,7 +70,7 @@ All five muon instruments: ARGUS, CHRONUS, EMU, HIFI and MuSR use a zero-field c
 There appear to be 3 variants of the MUON zero-field controller:
    1. EMU and MuSR both use one variant of the MUON zero-field controller.  This variant can be found in the folder `C:\LabVIEW Modules\Muon Magnets\Zero Field Controller`.
    1. ARGUS and CHRONUS both use a second variant of the MUON zero-field controller.  This variant can be found in the folder `C:\LabVIEW Modules\Instruments\ARGUS\Zero Field Controller`.  This variant is similar to the one used by EMU and MuSR.
-   1. HIFI has its own unique MUON zero-field controller. This variant is included in the Group 3 Hall probe VI at `C:\LabVIEW Modules\Instruments\HIFI\Group3 Hall probe`. The behaviour of this VI needs to be validated. Note that this includes extra co-efficients to allow for the shape of the gradients between the two sets of hall probes.
+   1. HIFI has its own unique MUON zero-field controller. This variant is included in the Group 3 Hall probe VI at `C:\LabVIEW Modules\Instruments\HIFI\Group3 Hall probe`. The behaviour of this VI needs to be validated. Note that this includes extra coefficients to allow for the shape of the gradients between the two sets of hall probes.
 
 ## Zero-Field Controller Feedback Loop ##
 The zero-field controller feedback loop uses the following inputs:
