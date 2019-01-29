@@ -33,7 +33,7 @@ The process of setting the zero field up is:
          - The system is noisy if the RMS value > 5
     - Plot the noise fields against time
     - This is performed once or twice a cycle
-currents of the power supplies. This IOC should do this also.
+    - NB Coefficients should not be set automatically; Scietists will take these numbers and save them later.
 1. Measure offsets (to compensate for the stray field gradients):
     - Place a portable probe at the sample position
     - Set the field to 0
@@ -59,7 +59,17 @@ The zero-field controller operates in one of two required modes (dead reckoning 
    * Auto-Feedback
 
 #### Manual Mode ####
-In Manual mode, the user must adjust the currents manually to achieve the desired magnetic field.  
+In Manual mode, the user must adjust the currents manually to achieve the desired magnetic field.
+The typical use case is:
+
+- Set Auto feedback mode
+- Take muon measurements in zero field
+- Set Manual mode – this maintains the same currents as have just been used in auto, so the field remains zero (for now)
+- Apply a moderate field with the instrument’s main magnet (this could be above the maximum of the fluxgate magnetometer, but small enough that the stray field we’ve compensated off would be significant)
+- Take muon measurements in this exact applied field.
+- Turn off the main magnet. The field will be back to near zero (possible offsets due to the external interfering fields having changed recently, or remanent magnetisation somewhere)
+- Re-set Auto Mode. The feedback resumes starting with the currents that were in use in Manual, and smoothly reaches a good zero value.
+- Take more zero field measurements.
 
 #### Auto-Feedback Mode ####
 In Auto-Feedback mode, the user specifies the desired field (in `mG`) and a feedback loop continually adjusts the current supplied by the PSUs to achieve and maintain the desired magnetic field.  
@@ -77,9 +87,9 @@ The zero-field controller feedback loop uses the following inputs:
    * **M** – measured magnetic field (it has three components: longitudinal (L), transverse (T) & vertical (V))
        - in IBEX this should use X, Y, Z, with Z being along the beam
    * **O** – Offset (to compensate for sensor placement)
-   * _**C**_ – calibration matrix (the inverse the measurements were taken in calibrate)
+   * _**C**_ – orientation matrix, derived from engineering drawing, this the direction of the field produced by each coil and because the coils are at right angles has +1, -1 and 0 as its components.
    * **S** – setpoints requested
-   * **P** – sensitivity of the coil to current change (is this also measured in calibrate?)
+   * **P** – magnetic field produced by a coil for a current. Measured in `A/mG` using the calibration procedure.
    * p – proportional value (feedback fiddle factor)
    * **I** – current on magnets
    * **I'** - new current to send
@@ -93,6 +103,22 @@ The following quantities are:
    * **Mc** - **S**  is the difference between the current field and required field
    * (**Mc** - **S**) . **P** * p  is the change required in the current for this iteration (in current version may need to multiply through by time between samples).
 
+### Maximum Current
+
+The process enforces maximum limits on the currents. These are set by the instrument scientist based on 
+
+1. the current likely to be needed to compensate any feasible stray field
+1. the current that would hit the voltage limit on the Kepco before its current limit, if the coils have high enough resistance
+1. the maximum desired power dissipation of the coils
+1. not wanting to exceed the magnetometer full scale. Each axis has its own limit. 
+
+Higher currents are `clamped` to this maximum with the appropriate polarity and ARE then sent to the PSU! But there should be a warning as well. In Auto, the clamped value is used as the basis for calculations next time.
+
+### Maximum Field
+
+When overloaded by a high field, the fluxgate magnetometer can read any random value on all three axes which might look like it's in range and may have the opposite sign to the actual field. Moderate overloads leave the reading close to the limit. The VI attempts to detect fields at or close to the limits and says `sensor overload` if this happens: typically the main magnet coil is still on or there’s a fault with the sensor.
+
+
 **Notes:**
    1. ARGUS appears to use different magnetic field components, labelled LR (left-right), UD (up-down) and FB (forwards-backwards).  How do these differ from L, T and V?
        - A single set would be good X, Y, Z as described above.
@@ -101,15 +127,19 @@ The following quantities are:
    1. Are there limits on the input & output values?  If so, what are they?  If these limits are breached, what should happen?
         - The maximum current and voltage values are set as part of the initialisation file, and values beyond those limits are not sent to the PSU
    1. Is the above expression guaranteed to converge?  What if it doesn't?  How does the current zero-field controller guard against non-convergence?
-        - No, we expect to get oscillation but at the 1 mG level because of the fiddle factor.
+        - No, we expect to get noise but at the 1 mG level. The singal is declared stabel at the 10mG level
 
 ## In Operation ##
    * There is a requirement that Zero field system control needs to be continuous, in the mathematical function sense of not having steps in, when configurations change or control is interrupted.".  How is this requirement currently achieved? (It may better to run the zero-field controller on a separate device (e.g. a Raspberry Pi).  This approach would eliminate the risk of interruption should IBEX be halted or the control PC re-booted.) What is this requirement in practice?
-        - **Unanswered**
+        - Preserving the zero on restart: the usual use-case for this is switching (either way) between a dilution fridge configuration and a cryostat configuration which happens to use the dilution insert as a centre stick. The sample remains in position and cold (1.4K to 10K) throughout and we want to avoid a spike in the applied field which might upset a sensitive magnetic or superconducting state. Being able to preserve zero field through an IBEX crash or computer reboot, and thus avoid having to repeat a time consuming sequence of field/temperature steps to prepare a sample, is also useful assuming everything else in IBEX can be got running.
    * Presumably, magnetic fields should not change too rapidly.  Which implies that the currents should not change too rapidly.  Is there maximum (or even minimum) permissible rate of change for the currents?  Is there a maximum permissible change (i.e. step size), positive or negative, in the value of the current?  How frequently should currents be updated?  
-        - **Unanswered**
+        - There is no enforced maximum rate of change. The calculated new currents are applied immediately – the field change itself may be limited by the inductance of the coils and the Kepcos briefly hitting the voltage limits as a result. Similarly in manual, a new current entered should be applied immediately. In practice in a real experiment there might be a large step on initially zeroing the field for a new sample/cryostat but subsequently going back into Auto will only be a small change.
    * The system should be monitored for the currents overloading and this should be fed back to the user
 
 ## Testing ##
 
 We will test on the instrument. This needs to be placed on the shutdown work list (Peter will sort this out when needed).
+
+## Implemetation ##
+
+The calibration step may be best implemented as a script that the scientists can then own.
