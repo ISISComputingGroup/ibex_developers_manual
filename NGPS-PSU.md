@@ -8,7 +8,7 @@ See comments on https://github.com/ISISComputingGroup/IBEX/issues/3447 for detai
 
 ### Ethernet comms
 
-Will need a firewall box.
+See details of setup here: https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Muon-NGS-Power-Supply-Firewall
 
 ### Status of the device
 
