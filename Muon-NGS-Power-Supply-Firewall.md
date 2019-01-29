@@ -2,11 +2,12 @@ The three NGS power supplies for the muon front end are controlled via TCPIP but
 
 From top to bottom the supplies are
 
-Supply  Internal IP     gateway           external port
-SEPTUMA  192.168.10.10    192.168.10.1     10001
-SPARE  192.168.10.11    192.168.10.1     10002
-SEPTUMA  192.168.10.12    192.168.10.1     10003
+Supply | Internal IP  |   gateway     |      external port
+--------------------------------------------------------
+SEPTUMA | 192.168.10.10  |  192.168.10.1  |   10001
+SPARE | 192.168.10.11  |  192.168.10.1   |  10002
+SEPTUMA | 192.168.10.12 |   192.168.10.1  |   10003
 
-Swapping a power supply
+# Swapping a power supply
 
 If the spare is used, you could eithr change its IP address to that of the replaced supply (no IOC changes required) or change the port number used by the IOC
