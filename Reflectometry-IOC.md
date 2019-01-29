@@ -8,11 +8,11 @@ IBEX IOC sits on top of:
 
 The IOC is composed of layers:
 
-- **Beamline Parameters:** In this layer the user is specifying where they want a component to lie in relation to the beam. The user will specify theta for instance this will then set the geometry component related to theta. They will also read changed in the geometry components and report a readback of the positions on the actual beamline. The beamline parameters are calculated in a strict order so that the path of the beam is correct. The order and parametrs will depend on the mode selected. 
+- **Beamline Parameters:** In this layer the user is specifying where they want a component to lie in relation to the beam. The user will specify theta for instance this will then set the geometry component related to theta. They will also read changed in the geometry components and report a readback of the positions on the actual beamline. The beamline parameters are calculated in a strict order so that the path of the beam is correct. The order and parameters will depend on the mode selected. 
 
 - **Geometry Components:** In this layer the beam path is calculated. The beamline parameters set the positions from above and the composite driving layers sets the parameters from below.
 
-- **Composite Driving Layer:** This layer pushes values from the parameters into composite PVs. They also push the readbacks up to the geomtery layer.
+- **Composite Driving Layer:** This layer pushes values from the parameters into composite PVs. They also push the readbacks up to the geometry layer.
 
 The whole system is coordinated by the Beamline object.
 
