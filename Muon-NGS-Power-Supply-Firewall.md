@@ -2,11 +2,11 @@ The three NGS power supplies for the muon front end are controlled via TCPIP but
 
 From top to bottom the supplies are
 
-|Supply | Internal IP  |   gateway     |      external port|
+|Supply | Internal IP  |   gateway     |      external port| external IP |
 |------ | ------------- | -----------| ---------------------|
-|SEPTUMA | 192.168.10.10  |  192.168.10.1  |   10001|
-|SPARE | 192.168.10.11  |  192.168.10.1   |  10002|
-|SEPTUMC | 192.168.10.12 |   192.168.10.1  |   10003|
+|SEPTUMA | 192.168.10.10  |  192.168.10.1  |   10001| firewall IP |
+|SPARE | 192.168.10.11  |  192.168.10.1   |  10002| firewall IP |
+|SEPTUMC | 192.168.10.12 |   192.168.10.1  |   10003| firewall IP |
 
 # Swapping a power supply
 
