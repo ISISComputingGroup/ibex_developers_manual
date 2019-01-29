@@ -25,7 +25,7 @@ The device has the ability to control a number of parameters for a pump:
 - Flowrate (in mL/min): `FLOWRATE:SP`
 - Pressure Maximum and Minimum (in kg/cm^2): `PRSSURE:MAX:SP`, `PRESSURE:MIN:SP`
 -- Setting these values will result in an error output and stop the pump if exceeded during a executed program.
-- Components (A, B, and, C in %): `COMP:{}:SP`.
+- Composition (A, B, and, C in %): `COMP:{}:SP`.
 
 The user can then start the pump by using the `START:SP` record. The pump can be stopped using the `STOP:SP`
 
