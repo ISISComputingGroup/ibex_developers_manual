@@ -26,7 +26,7 @@ These are the list of categories for an IOC. The IOC can appear in multiple cate
 
 [Miscellaneous motion control](Miscellaneous-Motion-Control)
 
-[Mulitmeters](Mulitmeters)
+[Multimeters](Multimeters)
 
 [Power Supplies](Power-Supplies)
 
