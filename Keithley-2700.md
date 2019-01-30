@@ -56,6 +56,8 @@ In the second case, we have failed to retrieve the readings at the end of the bu
 
 The calculation used to calculate the drift uses information from the previous scan (including the previously calculated drift) and the information from the new scan. 
 
+> NOTE: the code contains a logic statement `if ((!isnan(temp_change_over_time)) && (isnan(previous_drift)))` which states that if the temp change over time exists (∆temp/∆time) and the previous drift does NOT exist (i.e. this is the first reading) then the new drift is just (∆temp/∆time) multiplied with the time constant. Otherwise, it is also summed with the previous drift factor
+
 ![drift-calculation]
 
 Where 
