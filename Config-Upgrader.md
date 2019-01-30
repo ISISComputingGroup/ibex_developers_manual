@@ -53,7 +53,7 @@ UPGRADE_STEPS = [
     ("3.2.1.1", UpgradeStepFrom3p2p1p1()),
     ("3.2.1.2", UpgradeStepNoOp()),
     ("3.3.0", MyNewUpgradeStep()),
-    ("3.3.0.1", None
+    ("3.3.0.1", None)
 ]
 ```
 
