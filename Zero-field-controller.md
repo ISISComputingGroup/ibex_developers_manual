@@ -33,7 +33,7 @@ The process of setting the zero field up is:
          - The system is noisy if the RMS value > 5
     - Plot the noise fields against time
     - This is performed once or twice a cycle
-    - NB Coefficients should not be set automatically; Scietists will take these numbers and save them later.
+    - NB Coefficients should not be set automatically; scientists will take these numbers and save them later.
 1. Measure offsets (to compensate for the stray field gradients):
     - Place a portable probe at the sample position
     - Set the field to 0
@@ -65,9 +65,9 @@ The typical use case is:
 - Set Auto feedback mode
 - Take muon measurements in zero field
 - Set Manual mode – this maintains the same currents as have just been used in auto, so the field remains zero (for now)
-- Apply a moderate field with the instrument’s main magnet (this could be above the maximum of the fluxgate magnetometer, but small enough that the stray field we’ve compensated off would be significant)
+- Apply a moderate field with the instrument’s main magnet (this could be above the maximum of the flux gate magnetometer, but small enough that the stray field we’ve compensated off would be significant)
 - Take muon measurements in this exact applied field.
-- Turn off the main magnet. The field will be back to near zero (possible offsets due to the external interfering fields having changed recently, or remanent magnetisation somewhere)
+- Turn off the main magnet. The field will be back to near zero (possible offsets due to the external interfering fields having changed recently, or remnant magnetisation somewhere)
 - Re-set Auto Mode. The feedback resumes starting with the currents that were in use in Manual, and smoothly reaches a good zero value.
 - Take more zero field measurements.
 
@@ -127,7 +127,7 @@ When overloaded by a high field, the fluxgate magnetometer can read any random v
    1. Are there limits on the input & output values?  If so, what are they?  If these limits are breached, what should happen?
         - The maximum current and voltage values are set as part of the initialisation file, and values beyond those limits are not sent to the PSU
    1. Is the above expression guaranteed to converge?  What if it doesn't?  How does the current zero-field controller guard against non-convergence?
-        - No, we expect to get noise but at the 1 mG level. The singal is declared stabel at the 10mG level
+        - No, we expect to get noise but at the 1 mG level. The signal is declared stable at the 10mG level
 
 ## In Operation ##
    * There is a requirement that Zero field system control needs to be continuous, in the mathematical function sense of not having steps in, when configurations change or control is interrupted.".  How is this requirement currently achieved? (It may better to run the zero-field controller on a separate device (e.g. a Raspberry Pi).  This approach would eliminate the risk of interruption should IBEX be halted or the control PC re-booted.) What is this requirement in practice?
@@ -140,6 +140,6 @@ When overloaded by a high field, the fluxgate magnetometer can read any random v
 
 We will test on the instrument. This needs to be placed on the shutdown work list (Peter will sort this out when needed).
 
-## Implemetation ##
+## Implementation ##
 
 The calibration step may be best implemented as a script that the scientists can then own.
