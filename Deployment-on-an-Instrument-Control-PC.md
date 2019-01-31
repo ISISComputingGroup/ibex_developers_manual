@@ -27,7 +27,8 @@ Steps are marked with **bold** prefixes to indicate the following:
 #### upgrade
 - Ensure the instrument is running and in a setup state (e.g. so you can take screenshots of blocks, motors, running VIs, etc.)
 - Ensure all command lines to EPICS are closed
-- Shutdown IBEX and [upgrade the ISISICP](Upgrade-ISISICP)
+- Shutdown IBEX
+- [Upgrade the ISISICP](Upgrade-ISISICP)
   - Do not do this step for release 5.2
 - Run `<public share>\installation_and_upgrade\instrument_deploy.bat`
     - It will look for the highest version number in the release folder as a source.
