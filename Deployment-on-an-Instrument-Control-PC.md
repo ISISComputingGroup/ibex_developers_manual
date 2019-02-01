@@ -38,7 +38,7 @@ Steps are marked with **bold** prefixes to indicate the following:
     - Do not remove any SECI icons from the task list if this is not the first time install
     - Ignore the section about copying ibex_system_boot.bat to ProgramData and so the step below instead
     - Answer `y` to everything apart from start GUI.
-    - Python issues mean we should exit the script before install IBEX server and move the python directory to old and restart
+    - Python issues mean we should exit the script before install IBEX server and move the Apps/Python directory to Data/old and restart
     - The upgrade config part of the script will not run you should do this after the install
 After install:
     1. Run the E4 client and pin the icon
