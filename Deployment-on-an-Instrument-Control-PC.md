@@ -39,9 +39,10 @@ Steps are marked with **bold** prefixes to indicate the following:
     - Ignore the section about copying ibex_system_boot.bat to ProgramData and so the step below instead
     - Answer `y` to everything apart from start GUI.
     - Python issues mean we should exit the script before install IBEX server and move the python directory to old and restart
+    - The upgrade config part of the script will not run you should do this after the install
 After install:
     1. Run the E4 client and pin the icon
-    1. Copy `c:\data\old\client back` to `c:\instrument\apps`
+    1. Run the upgrade config script in admin mode
 
 ## Creating IBEX auto-startup 
 - Go to the `Startup` folder (which is contained inside the user's `AppData\Roaming\Microsoft\Windows\Start Menu\Programs` folder).
