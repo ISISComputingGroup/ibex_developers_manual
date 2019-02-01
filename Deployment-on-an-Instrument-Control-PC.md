@@ -40,6 +40,7 @@ Steps are marked with **bold** prefixes to indicate the following:
     - Answer `y` to everything apart from start GUI.
     - Python issues mean we should exit the script before install IBEX server and move the Apps/Python directory to Data/old and restart
     - The upgrade config part of the script will not run you should do this after the install
+
 After install:
     1. Run the E4 client and pin the icon
     1. Run the upgrade config script in admin mode
