@@ -20,6 +20,9 @@ Where there are multiple instances of a device within an IOC (e.g. SDTEST, GENES
 | STOP | The number of stop bits used by the serial interface | Varies by device |
 | IEOS | The end of line signal for input within asyn | Varies by device |
 | OEOS | The end of line signal for output within asyn | Varies by device |
+| SOFTFLOWCNTL | Software (xon/xoff) flow control within asyn | Varies by device |
+| HWFLOWCNTL | Hardware (crtscts) flow control within asyn | Varies by device |
+| OEOS | The end of line signal for output within asyn | Varies by device |
 | CALIB_PATH | The path to the folder containing calibration files for that IOC/function (e.g. resistance/temperature or current/magnetic field) | Varies by type of calibration |
 | CALIB_FILE | The name of the specific file in that folder to use | |
 | DEVSIM | Device should be simulated 1 - yes, 0 - no. (Provided by IBEX backend and can be set in the GUI) | 0 |
