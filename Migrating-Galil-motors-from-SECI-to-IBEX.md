@@ -115,7 +115,7 @@ There is a LabVIEW VI in `LABVIEW MODULES\Drivers\Galil DMC2280\Galil - EPICS.ll
     - 3. Find in the interface the `Galil - EPICS.llb` under `labview\labview Modeuls\Driver\Galil DMC2280`
     - 4. Right click and then select `Get Latest version`
     - 5. OK on get dialogue
-    - 6. Copy this updated file to the instrument you are migrating
+    - 6. Copy only the file `Galil - EPICS.llb` to the instrument you are migrating
 
 Open this VI, put the computer name as `IN` and the username as `(INSTNAME):MOT`. This should generate a load of caput commands that look like `caput IN:(INSTNAME):MOT:MTR0101.(FIELD) (value)`
 
