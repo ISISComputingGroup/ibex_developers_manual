@@ -46,7 +46,7 @@ After install:
     1. Run the upgrade config script in admin mode
 
 ## Creating IBEX auto-startup 
-- Go to the `Startup` folder (which is contained inside the user's `AppData\Roaming\Microsoft\Windows\Start Menu\Programs` folder).
+- Go to the user `Startup` folder (which is C:\Users\spudulike\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup).
 - In this directory do new -> shortcut and browse to c:\instrument\apps\epics and choose ibex_system_boot.bat
 
 
