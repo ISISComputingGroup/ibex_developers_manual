@@ -68,6 +68,7 @@ In disabled mode, the incoming beam is no longer altered and this means changing
     1. Do nothing this is the correct behaviour and is telling the instrument scientist they are not measuring what they think they are
 1. Will you want to do individual moves while another move is going on?
 1. Do we need to reflect SP of motors into Reflectometry server
-1. Can we have the dance script.
+1. Can we have the dance script?
 1. Does it matter whether you can change parameters on components parked out of the beam? (e.g. SM Angle in NR Mode)
 1. CRISP: What is the position for S4? (found it in mantid IDF, but values differ from those in VI - assumption is VI is correct)
+1. What do we need to do that will improve the scan library to make it useable for reflectometry, especially on INTER?
