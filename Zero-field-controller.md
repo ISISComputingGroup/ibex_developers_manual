@@ -142,4 +142,5 @@ We will test on the instrument. This needs to be placed on the shutdown work lis
 
 ## Implementation ##
 
-The calibration step may be best implemented as a script that the scientists can then own.
+1. The calibration step may be best implemented as a script that the scientists can then own.
+1. Thoughts on implementing offsets from James: In “manual” offset calibration we need a simple way to vary the offsets and have the already-running zero field IOC take them into account (it will be in Auto Feedback mode). Perhaps this will be numbers we can adjust on an OPI. Typing g.set_pv(‘IN:MUONZF:OFFSET_X’,123.4) each time would be way too tedious. We then might want to save these values for future use perhaps by editing a .ini file, editing IOC macros, or similar (managers only). Or just press a “Save offsets” button?
