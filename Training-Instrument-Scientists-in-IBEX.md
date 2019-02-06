@@ -66,7 +66,7 @@ If you have decided to use the CDF suite, you need to tell RAL Space (i.e. Andre
 - At least a week before the course, book any tea or coffee requirements with catering https://www.stfccatering.co.uk/. Typically we book:
     - Coffee/tea (80%/20%) for 9am and 1pm. Usually we include some biscuits and a bottle of water
     - We typically don't book lunch since most people leave to do other things over the break. Consider asking people whether they want lunch
-    - You will need a project code to book with catering. Ask one of the managers (e.g. Kevin Woods, Nick Draper, Tom Griffin) to provide one if you need it.
+    - You will need a project code to book with catering. Ask one of the managers (e.g. Freddie Akeroyd) to provide one if you need it.
 - A day or two before the course runs, visit the venue to make sure everything is ready.  You do not want to be trying to sort out problems 5 minutes before the course is due to start.  Things to check are:
    * are the desks arranged as you want them?
    * are the audio-visual system (e.g. projector) working correctly?
