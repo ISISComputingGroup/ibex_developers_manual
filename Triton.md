@@ -5,8 +5,8 @@
 The Triton software runs on a dedicated PC that follows each fridge around. The IBEX control system makes a connection over TCP to issue commands to that software.
 
 Settings:
-- Hostname : Triton hostnames are available in a readme file in the LabVIEW driver directory.  Alternatively ask someone from the cryogenics group or for the definitive answer, type `hostname` at a prompt on the Triton control PC.
-- TCP port : 33576
+1. Hostname : Triton hostnames are available in a readme file in the LabVIEW driver directory.  Alternatively ask someone from the cryogenics group or for the definitive answer, type `hostname` at a prompt on the Triton control PC.
+1. TCP port : 33576
 
 * If communication cannot be established and the you are certain that the correct hostname has been entered, then try the IP address instead.  This can be determined by typing `ipconfig` at a command prompt on the Triton control PC and looking for the "IPv4 Address" in the output. 
 * Not all the Triton computers respond to a ping.
