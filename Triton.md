@@ -15,6 +15,18 @@ Settings:
 
 There are various generations of Triton systems in use at ISIS. There are sometimes differences in the protocol between different versions of the software (see for example IBEX issue #3030).
 
+# Configuration
+
+The Triton IOC reads it's configuration (sensor <-> name mapping) from the triton control PC. However, the name <-> channel mapping is hard-coded in the triton IOC, which expects the following mapping:
+- Stage 1 (PT1) : J-T heat exchanger
+- Stage 2 (PT2) : 4K heat exchanger
+- Sorb : Sorb
+- Stil : Stil
+- Mixing chamber : mixing chamber
+- Cooling channel : **not used by IOC**
+
+We have a ticket https://github.com/ISISComputingGroup/IBEX/issues/3993 to discuss whether this is actually a valid assumption as we have seen some fridges leave PT1 and PT2 undefined and link the "Cooling channel" to the 4K Heat Exchanger.
+
 # Gotchas
 
 - Oxford software running on the remote PC can occasionally crash. If this happens, you need to VNC to the remote computer using the credentials on the passwords page and manually restart the software.
