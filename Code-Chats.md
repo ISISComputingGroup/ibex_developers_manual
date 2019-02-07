@@ -66,7 +66,7 @@ Nicos | Dominic Oram | Apr 2018
 SScanSS | Stephen Nneji | Aug 2018
 Reflectometry | John Holt | Aug 2018
 Java 8 | Tom Willemsen | Sep 2018
-Introduction to Beckhoff Motors | Simon Cooper | Oct 2018
+Introduction to Beckhoff Motors (Layers, Onions and Ogres) | Simon Cooper | Oct 2018
 Experience as a new starter | Aaron Long | Nov 2018
 ? | ? | Dec 2018
 Technical debt: Configurations | Thomas Löhnert | Dec 2018
