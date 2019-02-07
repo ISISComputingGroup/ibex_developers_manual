@@ -48,4 +48,4 @@ When trying to use Make to build IOCs you might encounter an Error 2. The failin
 process_begin: CreateProcess(NULL, echo Generating runIOC.bat, ...) failed.
 make (e=2): The system cannot find the file specified.
 ```
-This can be a result of having an enviornmental path for git that points to `git/bin`. If it is, then make will think you are on linux and then the build will fail. You must change this to be `git/cmd` to point at the Windows binaries.
+This can be a result of having an environment path for git that points to `git/bin`. If it is, then make will think you are on linux and then the build will fail. You must change this to be `git/cmd` to point at the Windows binaries.
