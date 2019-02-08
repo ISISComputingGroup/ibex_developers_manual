@@ -1,5 +1,3 @@
-This is currently a stub as the information is added and later formatted
-
 Home methods
 - Home call script
 - None
