@@ -27,3 +27,4 @@
 - [Glossary](Glossary): Glossary of terms
 - [Other Links and Resources](links-and-resources): Page of links and resources not in this wiki
 - [Trouble Shooting Pages](trouble-shooting-pages): Pages that link to trouble shooting of various kinds
+- [Galil homing routines as used in SECI](seci-galil-home): A page explaining the homing methods for Gails under SECI
