@@ -51,3 +51,9 @@ This will generate a file containing all the commands sent and received from the
 
 If in doubt it is best to plug a serial cable directly into the control box and see if you can see anything. When connected correctly it should give a colon, `:`, after pressing return.
 If you get a `>` this means that it has got into an internal configuration mode which you can't get out of without rebooting the Galil. This has been seen when communicating with 4000 series through the ethernet cable.
+
+### Differences between SECI and IBEX
+
+Check out [this spreadsheet](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/galil%20gotchas.xlsx) for information on speeds, accelerations, homing, and random extra bits of code that might be needed before/after moves, on startup, when homing.
+
+Check out [this page](Homing-Galils-under-SECI) if you need to see what the SECI homing routines do.
