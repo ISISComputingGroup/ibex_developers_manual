@@ -122,6 +122,7 @@ Open this VI, put the computer name as `IN` and the username as `(INSTNAME):MOT`
 Copy these caput commands into a batch file, open an EPICS terminal and run that batch file. This will apply the settings to the Galil under IBEX. These settings should then be autosaved but **you must wait at least 15s after applying the value before restarting the IOC if you need to restart the IOC**.
 
 Now test both the homing and positions to make sure they are the same as in Labview. This appears not to work correctly with absolute encoders so double check these axes see [ticket 2985](https://github.com/ISISComputingGroup/IBEX/issues/2985). If the home offset was set in Labview you need to home if you switch from Labview to IBEX. If you think this is going to be an issue for the scientists then you should consider leaving the HOMEVAL set to the value and set the offset to zero for a cycle while they get used to IBEX. Be aware though this will mean that on home this causes the bench to drift.
+Do be sure to check [this spreadsheet](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/galil%20gotchas.xlsx) to see if there are any odd behaviours, such as programs to run. This is also an opportunity to check that differences won't be highlighted by the homing routines. There is more information available on the [SECI homing routines](Homing-Galils-under-SECI)
 
 # Set up any axes / jaws / barndoors files.
 
