@@ -42,6 +42,7 @@ In the preparation phase, the team will create software components to support th
        * to identify non-standard behaviour
        * to identify rough size of the command set
    * Create a checklist with all devices and there major functions so they can be checked during migration
+   * There is some possible guidance for motion issues in [this spreadsheet](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/galil%20gotchas.xlsx)
 Agree with the team how support will be implemented (e.g. by creating or extending IOCs and OPIs, or by using lvDCOM to interface to LabVIEW).
 1. Discuss the time required to implement the required support (it might take several sprints)
 1. Create any tickets required to implement the necessary support.
