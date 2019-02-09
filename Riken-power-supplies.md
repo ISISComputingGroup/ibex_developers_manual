@@ -44,7 +44,7 @@ To run this IOC you will need to install the DAQMX binaries - available on the n
 ### Port 3/4 changeover
 
 - The port 3/4 changeover sequence is similar in that RQ18, 19 and 20 power supplies must be OFF before the  sequence can complete. There are three sets of rotary switches that each have 3 positions - Ports 3, 4, and 5 (port 5 does not exist - it is a dummy port).
-- These switches redirect power supplies to different magnets based on the mode. RQ 18, 19 and 20 get redirected to RQ 21, 22 and 23 respectively. The underlying power supply stays the same. The switches are controlled by the PLC which drives the changeover logic.
+- These switches redirect power supplies to different magnets based on the mode. RQ 18, 19 and 20 get redirected to RQ 21, 22 and 23 respectively. The underlying power supply stays the same. The switches are controlled by the PLC which drives the changeover logic. **Note: currently the driver does not "disable" the power supplies for the "other" mode. For example, RQ18 and RQ21 will always read the same, regardless of the state of the changeover switches. Addressing this is part of https://github.com/ISISComputingGroup/IBEX/issues/3490**
 - It is possible for these switches to get out of sync with each other - see debugging section below
 - The switches are located behind a grille, in a corner between port 3 and 4, near some servers and HV power supplies. There are LEDs to say which mode each switch is currently in, which are visible through the grille. To access the switches physically you need a permit - contact Tim Carter.
 
