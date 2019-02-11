@@ -15,7 +15,7 @@ Home call script
 None
 1. Send `SH` and `BG`
 1. Wait for the move in progress to be false
-1. If there is a home offset, `PR` to the home offset*motor steps, send `SH` and `BG`, wait for the move in progress to be false
+1. If there is a home offset, `PR` to the home offset * motor steps, send `SH` and `BG`, wait for the move in progress to be false
 1. Send `ST`
 1. Wait for the move in progress to be false
 1. If motor is set to de-energise after move, send `MO`
@@ -26,7 +26,7 @@ Home Signal
 1. Set speed to home speed
 1. Send `HM`, `SH` and `BG`
 1. Wait for the move in progress to be false
-1. If there is a home offset, `PR` to the home offset*motor steps, send `SH` and `BG`, wait for the move in progress to be false
+1. If there is a home offset, `PR` to the home offset * motor steps, send `SH` and `BG`, wait for the move in progress to be false
 1. Send `ST`
 1. Wait for the move in progress to be false
 1. If motor is set to de-energise after move, send `MO`
@@ -37,7 +37,7 @@ Reverse Limit
 1. If the reverse limit is true, `JG` at home speed, send `SH` and `BG`, wait until the limit switch is off, `ST`, wait for move in progress to be false
 1. Set `JG` to minus the home speed, send `SH` and `BG`
 1. Wait for the move in progress to be false
-1. If there is a home offset, `PR` to the absolute of the home offset*motor steps, send `SH` and `BG`, wait for the move in progress to be false
+1. If there is a home offset, `PR` to the absolute of the home offset * motor steps, send `SH` and `BG`, wait for the move in progress to be false
 1. Send `ST`
 1. Wait for the move in progress to be false
 1. If motor is set to de-energise after move, send `MO`
@@ -48,7 +48,7 @@ Forward Limit
 1. If the forward limit is true, `JG` at minus the home speed, send `SH` and `BG`, wait until the limit switch is off, `ST`, wait for move in progress to be false
 1. Set `JG` to home speed, send `SH` and `BG`
 1. Wait for the move in progress to be false
-1. If there is a home offset, `PR` to the absolute of minus the home offset*motor steps, send `SH` and `BG`, wait for the move in progress to be false
+1. If there is a home offset, `PR` to the absolute of minus the home offset * motor steps, send `SH` and `BG`, wait for the move in progress to be false
 1. Send `ST`
 1. Wait for the move in progress to be false
 1. If motor is set to de-energise after move, send `MO`
