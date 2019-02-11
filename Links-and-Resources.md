@@ -22,3 +22,4 @@
 - [genie_python reference](http://shadow.nd.rl.ac.uk/genie_python/sphinx/genie_python.html)
 - [nagios](https://varanus.nd.rl.ac.uk/nagios/)
 - [EPICS WIKI](https://wiki-ext.aps.anl.gov/epics/index.php/RRM_3-14)
+- [Current program version, servers and settings](http://beamlog.nd.rl.ac.uk/inst_summary.xml)
