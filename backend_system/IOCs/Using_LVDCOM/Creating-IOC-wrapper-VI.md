@@ -73,7 +73,7 @@ This is a summary of [[more general LvDCOM instructions|http://epics.isis.stfc.a
 1. Edit lv_controls.xml (see below for example)
     1. Check the path is correct for the external interface, it should be:`<extint path="$(LVDCOM)/lvDCOMApp/src/extint/Main/Library/External Interface - Set Value.vi"/>`
     1. Path in vi element needs path to be vi in the llb containing the vi e.g. `C:/LabVIEW Modules/Drivers/Oxford Instruments/Mercury/Mercury - Temperature.llb/<name of vi>`
-    1. Look at to dos in this file
+    1. Look at TODO's in this file
     1. Remove unneeded controls or states of those controls (e.g. write for read only values)
     1. If the value is controlled by an event the `extint` value of set controls should be set to `"true"`. This will make it process the value. If one of the value is true you might as well set them all to be true the only advantage is if the are all false it does not need to load the external interface.
 1. Add protocol file to `ISIS/<iocname>App/protocol/Makefile` as
