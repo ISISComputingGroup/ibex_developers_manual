@@ -243,6 +243,6 @@ record(waveform, "$(P)ARRAY_IND")
 }
 ```
 
-#Troubleshooting
+# Troubleshooting
 
 If you are getting file not found errors in your IOC when writing to PVs this will be because the path to the external interface in the generated xml is incorrect.
