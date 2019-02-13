@@ -71,7 +71,7 @@ This is a summary of [[more general LvDCOM instructions|http://epics.isis.stfc.a
     xsltproc C:\Instrument\Apps\EPICS\ISIS\lvDCOM\master\lvDCOMApp\src\lvstrings2input.xsl "controls.xml" > lv_controls.xml
     ```
 1. Edit lv_controls.xml (see below for example)
-    1. Check the path is correct for the external interface, it should be:`<extint path="$(LVDCOM)/lvDCOMApp/src/extint/Main/Library/External Interface - Set Value.vi"/>`
+    1. Check the path is correct for the external interface, it should be:`<extint path="$(LVDCOM=$(TOP))/lvDCOMApp/src/extint/Main/Library/External Interface - Set Value.vi"/>`
     1. Path in vi element needs path to be vi in the llb containing the vi e.g. `C:/LabVIEW Modules/Drivers/Oxford Instruments/Mercury/Mercury - Temperature.llb/<name of vi>`
     1. Look at TODO's in this file
     1. Remove unneeded controls or states of those controls (e.g. write for read only values)
@@ -243,3 +243,6 @@ record(waveform, "$(P)ARRAY_IND")
 }
 ```
 
+#Troubleshooting
+
+If you are getting file not found errors in your IOC when writing to PVs this will be because the path to the external interface in the generated xml is incorrect.
