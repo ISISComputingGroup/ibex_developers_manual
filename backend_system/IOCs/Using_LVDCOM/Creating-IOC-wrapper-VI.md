@@ -247,4 +247,4 @@ record(waveform, "$(P)ARRAY_IND")
 
 If you are getting file not found errors in your IOC when writing to PVs this will be because the path to the external interface in the generated xml is incorrect.
 
-You can also use the   dbior   command from the IOC prompt to print out the lvDCOM settings currently in use
+You can also use the   **dbior**   command from the IOC prompt to print out the lvDCOM settings currently in use
