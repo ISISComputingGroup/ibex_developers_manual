@@ -7,6 +7,7 @@ Related Pages:
 - [Setup and science behind the experiment](Reflectometers-Science)
 - [Reflectometers Beam Height Calculation](Reflectometers-Beam-Height-Calc)
 - [Reflectometry IOC](Reflectometry-IOC)
+- [Reflectometry Testing](Reflectometry-Testing)
 
 ### Components in a mode
 
