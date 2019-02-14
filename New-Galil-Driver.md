@@ -21,33 +21,33 @@ in `ioc/master/GALIL` there is a file  `utils/SetupR3Axis.bat`  that will initia
 To confirm that the new driver works we will need to do the following.
 
 ## Before testing
-- [ ] Copy the autosave files
-- [ ] Note down all current motor positions (ideally in raw steps)
+- [x] Copy the autosave files
+- [x] Note down all current motor positions (ideally in raw steps)
 
 ### General Tests
 
 For comparison, use the old driver to take the following data on an axis:
-- [ ] Home the device  
-- [ ] Run it to the upper physical limit, measure how long this takes
-- [ ] Note the position of the upper limit
-- [ ] Re-home, measure how long this takes
-- [ ] Run to lower limit and note the lower limit position
+- [x] Home the device  
+- [x] Run it to the upper physical limit, measure how long this takes
+- [x] Note the position of the upper limit
+- [x] Re-home, measure how long this takes
+- [x] Run to lower limit and note the lower limit position
 
-Upon switching to new driver
-- [ ] Power cycle the galil
+Upon switching to new driver 
+- [ ] Power cycle the galil **Not tried**
 - [ ] Reapply the motor positions as previously noted 
 
 Under the new driver:
-- [ ] Repeat the above, confirm the values are the same (to within 0.1 mm for distances and 1 second for time)
-- [ ] Confirm the GUI shows high and low limits engaged when the physical switches are activated
-- [ ] Home one of axes 1-4 and confirm it runs to forward limit then home. Confirm the GUI displays home
-- [ ] Home axis 5 and confirm it runs straight to home. Confirm the GUI displays home
-- [ ] Home one of 7-8 and confirm nothing happens. Confirm the GUI displays home
-- [ ] Confirm that you can move the chopper lifter in and out of the beam
-- [ ] Attempt to move an axis beyond it's physical limit, confirm that it stops
-- [ ] Set soft limits on an axis, confirm that you cannot go outside them
-- [ ] Move the galil over to serial comms as per the procedure in https://github.com/ISISComputingGroup/IBEX/issues/3546 and confirm it still communicates
+- [x] Repeat the above, confirm the values are the same (to within 0.1 mm for distances and 1 second for time)
+- [x] Confirm the GUI shows high and low limits engaged when the physical switches are activated
+- [x] Home one of axes 1-4 and confirm it runs to forward limit then home. Confirm the GUI displays home
+- [ ] Home axis 5 and confirm it runs straight to home. Confirm the GUI displays home **Home routine did nothing**
+- [x] Home one of 7-8 and confirm nothing happens. Confirm the GUI displays home **No movement occurs but the motor counts/encoder counts are reset to zero. This is the same behaviour in both drivers**
+- [ ] Confirm that you can move the chopper lifter in and out of the beam **Not tried due to unsure state of the lifter**
+- [x] Attempt to move an axis beyond it's physical limit, confirm that it stops
+- [x] Set soft limits on an axis, confirm that you cannot go outside them
+- [ ] Move the galil over to serial comms as per the procedure in https://github.com/ISISComputingGroup/IBEX/issues/3546 and confirm it still communicates **Could not connect to the com port**
 
 ### Tests specific to areas the new driver has changed
-- [ ] Turn on WLP, physically press a limit switch and confirm that you cannot move the motor in either direction
-- [ ] Set both soft limits to zero, confirm that you can move
+- [ ] Turn on WLP, physically press a limit switch and confirm that you cannot move the motor in either direction **WLP now appears to not work**
+- [x] Set both soft limits to zero, confirm that you can move. **Movement is possible but all motor fields go into an alarm state**
