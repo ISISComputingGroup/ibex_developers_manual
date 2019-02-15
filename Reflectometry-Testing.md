@@ -33,7 +33,27 @@ After aligning with the laser:
 
 1. Perform a shadow scan (this is only possible if your sample absorbs/scatters neutrons silicon does not). I could not do this with the sample I has.
 
-1. Perform a shallow bounce scan. Set theta to a small angle (0.25) then tilt phi to find the peak in intensity. Start with widish slits otherwise you will not see anything. Command is `scan("PHI", 0.22, 0.28, count=21, frames=200)`
+1. Perform a shallow bounce scan. Set theta to a small angle (0.25) then tilt phi to find the peak in intensity. Start with widish slits otherwise you will not see anything. NB that the offset in CRISP defined in "Define offsets" is applied before sending it to the motor so when comparing to CRISP don't forget to manipulate this correctly.
+    1. `scan("PHI", 0.22, 0.28, count=21, frames=200)`
+    1. ![Phi scan showing a peak at 0.250](reflectometer\phi_scan.png).
+    1. Move the table to be at the peak of this scan (this should be done by fitting)
 
+1. Perform a sample height dscan, this should peak at the height and be symetric.
+    1. `scan("HEIGHT", 0.22, 0.28, count=21, frames=200)`
+    1. Move the table to be at the height given by the peak in this scan
+
+1. Now repeat until happy that the results are not changing.
+1. Set the offset so that the user value is 0
+1. Now perform a phi scan (on CRISP with the silicon block you don't see anything)
+
+
+
+# Troubleshooting
+
+Make sure the spectrum 1 look like
+Make sure the spectrum 2 look like
+Large spike at low time of flight is prompt spike it should not dominate spectra 1 or 3. 
+
+Do a theta scan without the sample or super mirror in the way. Does it look correct if not stop and think.
 
 
