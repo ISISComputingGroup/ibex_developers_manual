@@ -17,7 +17,7 @@ Copy scan.py from LOQ to CRISP to allow in IBEX plotting. Sort out a crisp packa
 Ideally, this code should be in `crisp_inst.py` but I haven't put it there yet this is to load in the scanning library:
 
 ```
-from general.Scans.Scans import *
+from instrument.crisp.scans import scan
 ```
 
 ### Theta scan
@@ -38,7 +38,7 @@ After aligning with the laser:
 1. Perform a shadow scan (this is only possible if your sample absorbs/scatters neutrons silicon does not). I could not do this with the sample I has.
 
 1. Perform a shallow bounce scan. Set theta to a small angle (0.25) then tilt phi to find the peak in intensity. Start with widish slits otherwise you will not see anything. NB that the offset in CRISP defined in "Define offsets" is applied before sending it to the motor so when comparing to CRISP don't forget to manipulate this correctly.
-    1. `scan("PHI", 0.22, 0.28, count=21, frames=200)`
+    1. `scan("PHI", 0.21, 0.285, count=21, frames=100, fit=Gaussian)`
     1. ![Phi scan showing a peak at 0.250](reflectometers/phi_scan.png).
     1. Move the table to be at the peak of this scan (this should be done by fitting)
 
