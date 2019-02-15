@@ -9,7 +9,10 @@ Scan in sample and align beam in SECI.
 Copy scan.py from LOQ to CRISP to allow in IBEX plotting. Sort out a crisp package and alter the init so that it loads it.
 
 **Issue** I can not see how to reload my changed code while developing my scan except to restart the scripting window (which is non-ideal).
+
 **Issue** The fitting does not work at the moment so graphs will not display correct fits.
+
+**Issue** The errors do not work correctly they are just square root of value
 
 Ideally, this code should be in `crisp_inst.py` but I haven't put it there yet this is to load in the scanning library:
 
