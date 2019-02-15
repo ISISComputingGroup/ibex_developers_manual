@@ -24,7 +24,7 @@ After the final align of the beam you should perform a theta scan to ensure that
 scan("THETA", -0.05, 0.05, count=21, frames=100, fit=Gaussian)
 ```
 
-which produces ![Theta scan showing a peak at 0.0](reflectometer\theta_scan.png).
+which produces ![Theta scan showing a peak at 0.0](reflectometer/theta_scan.png).
 
 
 ### Sample alignment
@@ -35,7 +35,7 @@ After aligning with the laser:
 
 1. Perform a shallow bounce scan. Set theta to a small angle (0.25) then tilt phi to find the peak in intensity. Start with widish slits otherwise you will not see anything. NB that the offset in CRISP defined in "Define offsets" is applied before sending it to the motor so when comparing to CRISP don't forget to manipulate this correctly.
     1. `scan("PHI", 0.22, 0.28, count=21, frames=200)`
-    1. ![Phi scan showing a peak at 0.250](reflectometer\phi_scan.png).
+    1. ![Phi scan showing a peak at 0.250](reflectometer/phi_scan.png).
     1. Move the table to be at the peak of this scan (this should be done by fitting)
 
 1. Perform a sample height dscan, this should peak at the height and be symetric.
