@@ -4,6 +4,21 @@
 
 Documentation is available for the pump at `\\ISIS\Shares\ISIS_Experimental_Controls\Manuals\knauer 1050 HPLC`
 
+# Connection Details
+  
+|      RS-232C Specifications  |   |
+|---------------|------------------|
+|     Baud rate | 4800 Baud        |
+|     Stop bits | 2 bit            |
+|        Parity | None             |
+|   Data length | 8 bit            |
+|  Flow control | Xon/Xoff control |
+
+Notes:
+ - Communication command is terminated with CR.
+ - Communication return is terminated with CR and LF. 
+
+
 # Specifications
 
 ### Pump heads
