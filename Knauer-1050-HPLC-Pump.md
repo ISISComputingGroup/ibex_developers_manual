@@ -8,11 +8,11 @@ Documentation is available for the pump at `\\ISIS\Shares\ISIS_Experimental_Cont
   
 |      RS-232C Specifications  |   |
 |---------------|------------------|
-|     Baud rate | 4800 Baud        |
-|     Stop bits | 2 bit            |
+|     Baud rate | 115200; 38400, 19200, 9600 Baud       |
+|     Stop bits | 1 bit            |
 |        Parity | None             |
 |   Data length | 8 bit            |
-|  Flow control | Xon/Xoff control |
+|  Flow control | Hardware |
 
 Notes:
  - Communication command is terminated with CR.
