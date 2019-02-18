@@ -16,7 +16,7 @@ Documentation is available for the pump at `\\ISIS\Shares\ISIS_Experimental_Cont
 
 Notes:
  - Communication command is terminated with CR.
- - Communication return is terminated with CR and LF. 
+ - Communication return is terminated with CR. 
 
 
 # Specifications
