@@ -1,3 +1,8 @@
+
+
+Note: the text below applies to the implementation in [#3503](https://github.com/ISISComputingGroup/IBEX/issues/3503). This has **not** been merged as it required restarting the user interface to reload the last saved layout.
+
+
 # Layout persistence
 
 In the user interface, as of ticket 3503, perspective layouts are saved. The location of the save files is:
