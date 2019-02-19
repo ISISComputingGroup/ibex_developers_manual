@@ -35,20 +35,22 @@ The 1050 was designed to provide exceptionally precise and reliable solvent deli
 
 ### Remote/Local modes
 
-The pump starts in `Local` mode, and when in this state you are able to access the devices front panel and make changes as well as remotely poll the device status. The device can be set into `Remote` mode using the `REMOTE_MODE:SP` record, and this will result in the device accepting remote instructions but it will lock the devices front panel. `Local` mode can be restored with the `LOCAL_MODE:SP` record. 
+The pump starts in `LOCAL` mode, and when in this state you are able to access the devices front panel and make changes as well as remotely poll the device status. The device mode can be toggled into `REMOTE` mode using the `MODE:SP` record, and this will result in the device accepting remote instructions but it will lock the devices front panel.
 
 ### Gradient Controls
 
-The device can (if the correct pump head is installed) make use of 4 channels (A, B, C and D). These gradients can be set using the `CON:X:SP` (replacing X with the desired channel). However the sum of these gradients must be equal to 100%. If not correctly set then you will be unable to start the pump until this is resolved.
+The device can pump with a composition of 4 components, A, B, C and, D. These gradients can be set using the `COMP:X:SP` (replacing X with the desired component). However the sum of these gradients must be equal to 100%. If not correctly set then you will be unable to start the pump until this is resolved.
 
 ### Pressure Limits
 
-The high and low pressure limits can be set using the `PRESS:LIM:LOW:SP` and `PRESS:LIM:HIGH:SP` records. If a limit is reached during a ramp then the pump will stop.
+The high and low pressure limits can be set using the `PRESSURE:MIN:SP` and `PRESSURE:MAX:SP` records. If a limit is reached during a pump then the pump will stop.
 
 ### Flow Rate/Min
 
-The devices desired flow rate per minute can be set using the `FLOW:SP` record.
+The devices desired flow rate per minute can be set using the `FLOWRATE:SP` record.
 
-### Ramp Control
+### Pump Control
 
-If the device is set to remote mode and the gradients are correctly set, then a ramp can begin. To start a ramp the `PUMP:START:SP` can be used to start a ramp and `PUMP:STOP:SP` will stop the ramp. It should be noted that if a run has be issued via the devices front panel while in local mode, the remote command for stop can still be issued.
+The user can set the pump to run for either a set time/volume, or a continuous pump. These can be set using `STOP:SP`, `START:SP`, and, `TIMED:SP`. 
+
+To specify a run time the `TIME:SP` record can be used, and to set a desired volume the `TIME:VOL:SP` record can be used.
