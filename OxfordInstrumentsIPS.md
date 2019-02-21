@@ -77,7 +77,7 @@ Setting | Description | IN Labview  | 7T Magnet | 9T Chopper Magnet (LET)
 
 # Troubleshooting
 
-### Magnet won't go to field which has been set
+### Magnet won't go to field which has been set - "Activity" is "Clamped"
 
 Check on the "Advanced" tab of the OPI whether the IPS reports it's status as "clamped". If so, the state machine will be unable to proceed because being "clamped" means that the IPS will stay at it's current output indefinitely. To get out of this state, it is best to get out of the "clamped" state via the front panel.
 
