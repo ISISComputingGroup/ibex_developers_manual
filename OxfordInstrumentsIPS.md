@@ -74,3 +74,11 @@ Setting | Description | IN Labview  | 7T Magnet | 9T Chopper Magnet (LET)
 `MAX_SWEEP_RATE` | Maximum rate of change of the field in B/min |  `PS0MaxSweep(4.2K)` and `PS0MaxSweep(2.2K)` | 0.399 | 0.3990
 
 [1] - Limited by hardware. The IPS is configured to reject any setpoints above 8.8T.
+
+# Troubleshooting
+
+### Magnet won't go to field which has been set
+
+Check on the "Advanced" tab of the OPI whether the IPS reports it's status as "clamped". If so, the state machine will be unable to proceed because being "clamped" means that the IPS will stay at it's current output indefinitely. To get out of this state, it is best to get out of the "clamped" state via the front panel.
+
+Note: You *may* be able to get out of a clamped state remotely with `caput %MYPVPREFIX%IPS_01:ACTIVITY:SP <desired activity>`, but the old LabVIEW driver did not do this and it is not exposed as a user-facing option in the EPICS driver.
