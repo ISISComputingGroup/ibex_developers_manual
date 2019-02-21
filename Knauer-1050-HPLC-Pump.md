@@ -53,4 +53,4 @@ The devices desired flow rate per minute can be set using the `FLOWRATE:SP` reco
 
 The user can set the pump to run for either a set time/volume, or a continuous pump. These can be set using `STOP:SP`, `START:SP`, and, `TIMED:SP`. 
 
-To specify a run time the `TIME:SP` record can be used, and to set a desired volume the `TIME:VOL:SP` record can be used.
+To specify a run time the `TIME:SP` record can be used, and to set a desired volume the `VOL:SP` record can be used.
