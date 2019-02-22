@@ -32,6 +32,8 @@ These are the list of categories for an IOC. The IOC can appear in multiple cate
 
 [Pressure Monitors](Pressure-Monitors)
 
+[Polarisers & Analysers](Polarisers-and-Analysers)
+
 [Rheometers](Rheometers)
 
 [Sample Changers](Sample-Changers)
