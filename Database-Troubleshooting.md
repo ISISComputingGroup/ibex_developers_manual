@@ -28,7 +28,7 @@ If you wish to do this manually:
     ```
     "c:\Program Files\MySQL\MySQL Server 5.7\bin\mysqldump.exe" -u root -p --all-databases --single-transaction --result-file=c:\data\old\ibex_backup_YYYY_MM_DD\ibex_db_sqldump_YYYY_MM_DD.sql
     ```
-1. Check the file looks right and move it to the long term storage folder (`\\isis\inst$\backups$\stage-deleted\<inst>`). 
+1. Check the file looks right (i.e. the dump is of an appropriate size ~ a few GB) and move it to the long term storage folder (`\\isis\inst$\backups$\stage-deleted\<inst>`). 
 1. Truncate the tables with:
     ```
     "c:\Program Files\MySQL\MySQL Server 5.7\bin\mysql.exe" -u root -p --execute "truncate table msg_log.message;truncate table archive.sample"
