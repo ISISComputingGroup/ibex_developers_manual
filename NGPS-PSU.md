@@ -31,3 +31,8 @@ A fault corresponds to one of the ones below with the bit corresponding to them 
 ### Errors
 
 The device has no error state but will return error codes if it cannot process the command you have given it. The list of error codes can be found on page 49 of the manual. Currently, the IOC captures the last error code as a string and displays it in the OPI.
+
+If the device is talking slowly i.e. getting lots of command mismatches, only doing writes when on trace then it may need a route deleting. As admin run:
+```
+route delete 130.246.52.0
+```
