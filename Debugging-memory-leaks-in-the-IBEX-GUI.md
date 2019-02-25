@@ -58,4 +58,6 @@ Once you've diagnosed *where* the memory leak is, you need to fix it. This may n
 
 - Some things need to be closed before/on garbage collection, for example sockets. Java's `finalize()` method is called just before the object is GC'd, and can be used to close anything that needs closing.
 
+- The JVisualVM can also be connected to a client running on an instrument machine through JMX on port 3333.
+
 - Good luck :)
