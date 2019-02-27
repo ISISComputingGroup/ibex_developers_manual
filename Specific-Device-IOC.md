@@ -44,6 +44,8 @@ These are the list of categories for an IOC. The IOC can appear in multiple cate
 
 [Water Baths](Water-Baths)
 
+[Croygenic Inc. Systems](Croygenic-Inc-Systems) e.g. HIFI Cryomag
+
 [Other](Other)
 
 [Partially Supported Devices](Partially-Supported-Devices)
