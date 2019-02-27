@@ -12,7 +12,7 @@ See also some of the comments in https://github.com/ISISComputingGroup/IBEX/issu
 
 The communication protocol has several gotchas:
 - There is no outbound terminator
-- The inbound terminator is `:`, but this character can also be sent as part of some messages (e.g. getFilename)
-- The code on the remote PC uses regexes to parse messages, sending it a message which it doesn't like will cause it to crash and forcibly disconnect the driver
+- The inbound terminator is `:`, but this character can also be sent as part of some messages (e.g. `getFilename`)
+- The code on the remote PC uses regular expressions to parse messages, sending it a message which it doesn't like will cause it to crash and forcibly disconnect the driver
 - Must wait for a reply between each message - Sending messages too fast without waiting for replies will cause crashes on the remote end
-- In general any exception in the comms layer on the remote end will cause a disconnect
+- In general any exception in the communication layer on the remote end will cause a disconnect
