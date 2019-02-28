@@ -70,10 +70,16 @@ There are various IPS units here is a list of the ones we know the settings for 
 Setting | Description | IN Labview  | 7T Magnet | 9T Chopper Magnet (LET)
 ------- | ----------- | ------------ |------------ | ---------------
 `STABILITY_VOLTAGE` | 5 voltages are compared and they must differ by less than this to be declared stable | hard coded | 0.1 | 0.1
-`MAX_FIELD` | Maximum field | `PS0MaxField(2.2K)` and `PS0MaxField(4.2K)` | 7.0 | 8.8 [1]
+`MAX_FIELD` | Maximum field | `PS0MaxField(2.2K)` and `PS0MaxField(4.2K)` | 7.0 [1] | 8.8 [2]
 `MAX_SWEEP_RATE` | Maximum rate of change of the field in B/min |  `PS0MaxSweep(4.2K)` and `PS0MaxSweep(2.2K)` | 0.399 | 0.3990
 
-[1] - Limited by hardware. The IPS is configured to reject any setpoints above 8.8T.
+[1] - The limit may be lower on some beamlines due to the construction of their sample area. Below are known cases:
+
+Beamline | Maximum field |
+------- | ----------- |
+ZOOM | 5.5T |
+
+[2] - Limited by hardware. The IPS is configured to reject any setpoints above 8.8T.
 
 # Troubleshooting
 
