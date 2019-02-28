@@ -144,3 +144,9 @@ If the enablement state of a widget (i.e. `enabled` property) is controlled as p
 See `\base\uk.ac.stfc.isis.ibex.opis\resources\mercuryiTC\enablement_of_controls.py` for examples of setting properties based on the value of a PV.
 
 Initial investigations centred on alternating the background colour of the control between e.g. `ISIS_Textbox_Readonly_Background` and `ISIS_Textbox_Background`.  However, although the logic and syntax were sound, the OPI didn't faithfully reproduce the requested colours.
+
+# Using OPI rules and external scripts
+
+When implementing display logic for OPI's (such as toggling an objects visibility based on a PV value) our standards are: 
+1. Rules take preference over scripts for trivial logic
+1. Scripts if needed should be an external file
