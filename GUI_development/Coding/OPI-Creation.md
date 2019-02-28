@@ -147,6 +147,6 @@ Initial investigations centred on alternating the background colour of the contr
 
 # Using OPI rules and external scripts
 
-When implementing display logic for OPI's (such as toggling an objects visibility based on a PV value) our standards are: 
+When implementing display logic for OPIs (such as toggling an objects visibility based on a PV value) our standards are: 
 1. Rules take preference over scripts for trivial logic
 1. Scripts if needed should be an external file
