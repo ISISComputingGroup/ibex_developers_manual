@@ -139,4 +139,3 @@ If a value can fluctuate, these refer to the current measured value of a quantit
 | FLOWRATE | The flow rate of a pump | (SI prefix) + L |
 | START | For a device with a singular operation (Ramp, Pump etc.,) but a complex initialisation this can be used to start the operation (using a sequenced record etc.,) | |
 | STOP | For a device with a singular operation (Ramp, Pump etc.,) but a complex shutdown this can be used to stop the operation (using a sequenced record etc.,) | |
-| TIMED | For a device with a timed singular operation (Ramp for x, Pump for x etc.,) but a complex initialisation this can be used to begin a timed operation (using a sequenced record etc.,) | |
