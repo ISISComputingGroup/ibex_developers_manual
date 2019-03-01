@@ -6,3 +6,5 @@ This program is running on the `imat-messina-detect` pc, it reads the humidity v
 - Double click on `start_rhcontroller.bat`
 
 This will create a new window with the program running inside it, this window can then be minimised
+
+(NOTE: this was a temporary workaround and will be replaced by a proper WinDDE client solution #4065)
