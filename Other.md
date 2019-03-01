@@ -9,3 +9,5 @@
 * [Moxa e1210](moxa-e1210)
 
 * [Zero field controller](Zero-field-controller)
+
+* [Humidity Controller](Humidity-Controller)
