@@ -37,3 +37,5 @@ add    LUA=$(SUPPORT)/lua/master     to configure/RELEASE
 add    luaSupport.dbd                to the IOC Makefile DBD list
 add    lua   and   asyn              to the IOC Makefile   _LIBS    list
 ```
+
+There is an example of a lua script used in the DETADC ioc.
