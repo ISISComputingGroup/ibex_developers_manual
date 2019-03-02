@@ -76,7 +76,7 @@ For more details, see [#2741](https://github.com/ISISComputingGroup/IBEX/issues/
 
 ### Synchrotron off
 
-The phase delay of the chopper is a delay between the synchrotron pulse and the phase of the chopper. If the synchrotron is not running these numbers will be essentially random - this is nothing to worry about.
+The phase delay of the chopper is a delay between the synchrotron pulse and the the chopper being in a specific position. If the synchrotron is not running the delay will appear to fluctuate wildly as there is no reference synchrotron pulse. This should rectify itself without intervention and the chopper will re-phase once the synchrotron timing pulse comes back online.
 
 # Drive turns off unexpectedly
 
