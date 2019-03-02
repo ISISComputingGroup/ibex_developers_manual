@@ -1,7 +1,7 @@
-# FZJ fermi chopper, as used on MERLIN, MAPS and MARI
+# FZJ fermi chopper (used on MERLIN, MAPS, MARI)
 
 This device has a relatively complex IOC due to some communication issues we have had with the chopper. The following things are non-standard:
-- Custom checksum algorithm in stream device. This is specific to this fermi chopper.
+- Custom checksum algorithm in stream device. This is specific to this style of fermi chopper.
 - `aSub` record to parse a response string from the hardware.
 - `aSub` record to decide how to send the speed setpoint to the device
 - `aSub` record to decide whether a given command is allowed to be sent
@@ -9,11 +9,21 @@ This device has a relatively complex IOC due to some communication issues we hav
 - There is logic in the DB records to prevent sending a speed setpoint that is equal to the current speed setpoint readback.
 - There is (equipment) safety logic in the IOC. For more details see below.
 
-### Fermi chopper parameters
+# Settings
 
-- **MERLIN:** Merlin can use both "Merlin small parameters" and "Merlin large parameters" (I believe this depends on which rotor is installed)
-- **MARI:** Uses "Merlin large parameters" (the "HET/MARI" parameters I believe refer to a very old configuration of the hardware, before the chopper on MARI was upgraded to be more like MERLIN's)
-- **MAPS:** The hardware on MAPS does not support changing parameters - they are fixed.
+Depending on which specific fermi chopper system is being used, there are slight variations in the communications protocol of the choppers. The expected settings are:
+
+| Beamline | `INST` macro | `MHZ` macro | Drive parameters |
+| --- | --- | --- | --- |
+| MERLIN | merlin | 50.4 | "Merlin small parameters" or "Merlin large parameters" (*) |
+| MARI | merlin (**) | 50.4 | "Merlin large parameters" (***) |
+| MAPS | maps | 18.0 | _The controller on MAPS does not support changing parameters_ |
+
+(*) I believe this choice depends on which physical rotor is installed into the chopper
+
+(**) The controller on MARI is identical to MERLIN's from a communications perspective - hence re-using merlin's communications code.
+
+(***) I believe the "HET/MARI" parameters refer to a very old version of the hardware, before the chopper was upgraded to be more like Merlin's.
 
 # Diagnostic logs
 
