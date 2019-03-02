@@ -80,7 +80,7 @@ Firstly, check in the "advanced" tab of the OPI - any of the following will caus
 - A few other (less common) conditions indicated by red interlock LEDs on the OPI
 
 ### Software conditions
-There are (equipment) safety checks in the IOC which will cause the IOC to request a spin down:
+There are (equipment) safety checks in the IOC which will cause the IOC to request a spin down. Hitting any of these conditions will cause a message to be logged containing the words `this will cause the chopper to spin_down` - this can be searched for in the log file if it is believed that the IBEX driver has caused the chopper to spin down.
 - If the electronics temperatures or motor temperatures go above 45 Celsius. 
   * **Electronics overheats occur somewhat frequently on Merlin, especially during hot weather.**
   * Need to wait for create to cool sufficiently and then spin the chopper back up as normal.
