@@ -4,6 +4,8 @@ IOC for devices connected with cryogenic.
 
 * [Cryogenics_Ltd Helium Level Gauge](Cryogenics-Ltd-Helium-Level-Gauge)
 * [Triton](Triton)
+* [ITC 503](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/ITC-503)
+* [Mercury iTC](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/MercuryiTC)
 
 ## Information about Low Temperature Devices
 Use the information below determine which tickets/IOCs relate to various types of low temperature device.  For example, if you are asked to add a Variox cryostat to a configuration, look for Variox below to see that you need to use two IOCs (one for the ITC, one for the ILM).
