@@ -78,6 +78,10 @@ For more details, see [#2741](https://github.com/ISISComputingGroup/IBEX/issues/
 
 The phase delay of the chopper is a delay between the synchrotron pulse and the the chopper being in a specific position. If the synchrotron is not running the delay will appear to fluctuate wildly as there is no reference synchrotron pulse. This should rectify itself without intervention and the chopper will re-phase once the synchrotron timing pulse comes back online.
 
+### Won't phase correctly (unknown causes)
+
+Occasionally the chopper will get into a state where it can't phase correctly. The symptom is that the phase readback fluctuates wildly and never settles on the phase setpoint. We are unsure of the root cause. Sending the chopper to a different speed setpoint and then back to the original setpoint seems to let the chopper phase correctly.
+
 # Drive turns off unexpectedly
 
 There are a variety of hardware & software conditions that can cause the chopper to spin down.
