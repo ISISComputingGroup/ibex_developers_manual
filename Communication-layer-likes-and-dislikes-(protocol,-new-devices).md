@@ -1,4 +1,4 @@
-This page documents an "idealised" communication protocol for communicating with new sample environment drivers at ISIS. It is intended as a useful starting point if new protocols are being developed from scratch, and as a set of nice-to-haves for new equipment being purchased.
+This page documents an "idealised" communication protocol for communicating with new sample environment drivers at ISIS. It is intended as a useful starting point if new protocols are being developed from scratch and as a set of nice-to-haves for new equipment being purchased.
 
 # Transport layer
 
@@ -11,21 +11,23 @@ This is the most common transport layer at ISIS. Serial settings are flexible in
 - Stop bits: 1
 - Flow control: Off
 
+RS232 is preferable, RS422 and RS485 are avoided as much as possible. Note that distances can be extreme if higher baud rates are required.
+
 ### Ethernet
 
-Ethernet is a commonly used and well-supported transport layer at ISIS.
+Ethernet is a commonly used and well-supported transport layer at ISIS using RJ45 ports. Any other port type is to be avoided.
 
 ### USB
 
-USB devices are difficult to implement for ISIS, and we prefer not to have to use USB wherever possible
+USB devices are difficult to implement for ISIS, and we prefer not to have to use USB wherever possible.
 
 ### Manufacturer software / DLLs
 
-We prefer not to use these interfaces, however in some cases we may be able to work with these types of interfaces.
+We prefer not to use these interfaces, however, in some cases, we may be able to work with these types of interfaces.
 
 ### Modbus
 
-Modbus is more difficult for us than ascii protocols but we can deal with this if absolutely necessary.
+Modbus is more difficult for us than ASCII protocols but we can deal with this if absolutely necessary.
 
 # Protocol
 
@@ -35,7 +37,7 @@ It is very helpful for devices to terminate their messages with a unique set of 
 
 ### Readability/encoding
 
-Commands to a device are ideally human readable, so that they can be used via terminal emulators. Many protocols use an ASCII encoding.
+Commands to a device are ideally human-readable so that they can be used via terminal emulators. Many protocols use an ASCII encoding.
 
 For example, a temperature controller might implement commands similar to the following:
 
