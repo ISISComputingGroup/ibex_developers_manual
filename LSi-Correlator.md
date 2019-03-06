@@ -62,5 +62,5 @@ There is also a vendor-supplied example script to use with the API, `ExampleMain
     - This is an issue, as the vendor software performs analysis on the raw data
 1. In order to use the vendor's analysis tools, we would have to reverse engineer the XML save format used
 1. We need to understand if we want to use the vendor's analysis tools in the vendor software or not.
-   - If we want to use the vendor's analysis tools, "we" should ask the vendor for the XML specification
+   - If we want to use the vendor's analysis tools, we should ask the vendor for the XML specification
    - If we do not need to use the vendor's analysis tools, we will need to get a specification for the data analysis required on the data from the device
