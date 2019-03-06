@@ -40,3 +40,7 @@ console -M [MACHINE_NAME] -l [USERNAME] [IOCNAME]
 where username is the local user on the instrument PC (e.g. `spudulike`).
 
 To stop/restart an IOC, press `CTRL+X` and to exit the console press `CTRL+E`, then `C`, then `.`.
+
+## Modbus
+
+[QModMaster](https://sourceforge.net/projects/qmodmaster/) is a useful piece of software to probe Modbus devices much like Putty is used with serial/Ethernet connected devices.
