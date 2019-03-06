@@ -40,6 +40,8 @@ These are the list of categories for an IOC. The IOC can appear in multiple cate
 
 [Sample Stacks and Goniometers](Stacks-and-Gonios)
 
+[Sensors](Sensors)
+
 [Temperature Controllers](Temperature-Controllers)
 
 [Water Baths](Water-Baths)
