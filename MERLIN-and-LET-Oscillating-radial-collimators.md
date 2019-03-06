@@ -1,4 +1,4 @@
-> [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [Miscellaneous motion control](Miscellaneous-Motion-Control) > [Merlin Oscillating Radial Collimator](Merlin-Oscillating-radial-collimator)
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [Miscellaneous motion control](Miscellaneous-Motion-Control) > [MERLIN and LET Oscillating Radial Collimators](MERLIN-LET-Oscillating-radial-collimators)
 
 The oscillating radial collimator on MERLIN is similar but not quite the same as the one on LET.
 
