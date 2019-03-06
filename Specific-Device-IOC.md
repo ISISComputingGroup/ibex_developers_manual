@@ -18,8 +18,6 @@ These are the list of categories for an IOC. The IOC can appear in multiple cate
 
 [Magnets](Magnets)
 
-[Modbus](Modbus)
-
 [Monitors](Monitors)
 
 [Motors](Motor-IOCs)
