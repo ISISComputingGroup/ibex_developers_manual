@@ -45,7 +45,7 @@ There is also a vendor-supplied example script to use with the API, `ExampleMain
 1. I can run a Python script demonstrating the collection & plotting (e.g. with matplotlib) of data from the LSi Correlator. Also demonstrate how to start a (neutron) run and how to generate a suitable run title.
 
     - The LSi-provided script can run and return some data (all zeroes as the correlator was not connected to a laser box).
-    - This data could be plotted with matplotlib, but it's not clear whether the raw data from the correlator is useful to plot on its own. Are the actual values of interest obtained after the vendor's software has done some analysis?
+    - This data can be plotted with matplotlib, but it's not clear whether the raw data from the correlator is useful to plot on its own. Are the actual values of interest obtained after the vendor's software has done some analysis?
     - The script was run within genie python, which sugests that it is possible to have the LSi correlator API called from a normal instrument script (after the dependencies have been added to genie python).
     - The run title cannot be changed from within the python API. The API and the vendor software are largely indpendent.
     - The python API can not be used to start a run which was set up in the vendor software
