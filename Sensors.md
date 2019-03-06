@@ -1,3 +1,3 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC)
 
-[Keyence LK-G](Keyence LK-G)
+[Keyence LK-G](KeyenceLKG)
