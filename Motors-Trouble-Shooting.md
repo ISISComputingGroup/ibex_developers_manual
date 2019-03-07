@@ -54,7 +54,7 @@ If you get a `>` this means that it has got into an internal configuration mode 
 
 ### Galil position is not stable at setpoint
 
-If a Galil is particularly worn, or carries an unusually heavy load, it may not stay where it is after going to a setpoint but sag down slightly. In those cases it might help to turn the "auto de-energise" setting on the Galil off. This setting decides whether the Galil automatically powers off when stationary or not. Note that if this is turned off, the Galil will just stay in whichever state it was last, so you may have to manually switch the power on the Galil back on again, otherwise it will not move.
+If a Galil is particularly worn, or carries an unusually heavy load, it may not stay where it is after going to a setpoint but sag down slightly. In those cases it might help to turn the "auto de-energise" setting on the Galil off (the PV is `MTRXXXX_AUTOONOFF_CMD`). This setting decides whether the Galil automatically powers off when stationary or not. Note that if this is turned off, the Galil will just stay in whichever state it was last (pv to check: `MTRXXXX_ON_STATUS`), so you may have to manually switch the power on the Galil back on again (pv to set: `MTRXXXX_ON_CMD`), otherwise it will not move.
 
 **Do check with the instrument scientists before you change this.** If a motor is always powered when it is not meant to be, it may overheat.
 
