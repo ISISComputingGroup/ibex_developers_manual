@@ -58,6 +58,8 @@ If a Galil is particularly worn, or carries an unusually heavy load, it may not 
 
 **Do check with the instrument scientists before you change this.** If a motor is always powered when it is not meant to be, it may overheat.
 
+### Galil is not correctly setting accelerations
+The motor record calculates acceleration in quite a different way than used to under SECI. Check that you have set acceleration correctly given that it is defined as **seconds to get between VBAS and VELO** (this means we normally want VBAS to be set to zero.
 
 ### Differences between SECI and IBEX
 
