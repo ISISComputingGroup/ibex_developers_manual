@@ -10,7 +10,7 @@ You can then take a heap dump (button top right) and this can show where all the
 
 You can also look at what functions are using what resources by using the sampler or the profiler and using CPU/memory sampling or profiling.
 
-The JVisualVM can also be connected to a client running on an instrument machine through JMX on port 3333.
+The JVisualVM can also be connected to a client running on an instrument machine through JMX, the JMX port to use is dynamic and can be found by looking through the logs of the specific client.
 
 ## Memory Analyzer
 
