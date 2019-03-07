@@ -16,3 +16,11 @@ The communication protocol has several gotchas:
 - The code on the remote PC uses regular expressions to parse messages, sending it a message which it doesn't like will cause it to crash and forcibly disconnect the driver
 - Must wait for a reply between each message - Sending messages too fast without waiting for replies will cause crashes on the remote end
 - In general any exception in the communication layer on the remote end will cause a disconnect
+
+# Starting the emulator
+
+The emulator for the spin flipper is not a standard lewis emulator. It is a script provided by the developer which acts as a server. It can be started listening on the emulator port 57677 using this command:
+
+```
+python C:\Instrument\Apps\EPICS\support\DeviceEmulator\master\other_emulators\mezei_flipper\flipper_emulator.py --port 57677
+```
