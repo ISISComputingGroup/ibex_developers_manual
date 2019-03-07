@@ -52,6 +52,13 @@ This will generate a file containing all the commands sent and received from the
 If in doubt it is best to plug a serial cable directly into the control box and see if you can see anything. When connected correctly it should give a colon, `:`, after pressing return.
 If you get a `>` this means that it has got into an internal configuration mode which you can't get out of without rebooting the Galil. This has been seen when communicating with 4000 series through the ethernet cable.
 
+### Galil position is not stable at setpoint
+
+If a Galil is particularly worn, or carries an unusually heavy load, it may not stay where it is after going to a setpoint but sag down slightly. In those cases it might help to turn the "auto de-energise" setting on the Galil off. This setting decides whether the Galil automatically powers off when stationary or not. Note that if this is turned off, the Galil will just stay in whichever state it was last, so you may have to manually switch the power on the Galil back on again, otherwise it will not move.
+
+**Do check with the instrument scientists before you change this.** If a motor is always powered when it is not meant to be, it may overheat.
+
+
 ### Differences between SECI and IBEX
 
 Check out [this spreadsheet](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/galil%20gotchas.xlsx) for information on speeds, accelerations, homing, and random extra bits of code that might be needed before/after moves, on startup, when homing.
