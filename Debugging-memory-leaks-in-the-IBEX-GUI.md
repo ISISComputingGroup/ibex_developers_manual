@@ -28,6 +28,16 @@ This page is currently heavily based on https://github.com/ISISComputingGroup/IB
 
 - A GUI with a memory leak will also fluctuate in the short term, but will also have a long term trend upwards while the issue is being reproduced.
 
+## Setup to monitor a remote client
+
+- Look in the log file for the client that you want to remotely monitor
+
+- When the client first starts it will print `JMX url:` followed by a url that looks a bit like `service:jmx:rmi://machine/stub/rO0ABXNyAC5qYXZheC5tYW5hZ2V...`
+
+- Add a JMX connection in the java visual VM and copy in the whole url
+
+- **WARNING: using this interface you can do harm to the client and thus running experiments! Therefore you should only look at the monitoring graphs and use the sampler. For anything else you must inform the user that it may cause issues** 
+
 ## Diagnosis 1
 
 - Go under Sampler -> Memory and look at which objects are using up a lot of heap space. Note that this is only the object, **not** any of the objects that it owns!
@@ -57,7 +67,5 @@ Once you've diagnosed *where* the memory leak is, you need to fix it. This may n
 - The java garbage collector is responsible for cleaning up dereferenced objects. If your objects aren't being freed when you click the `Perform GC` button in java visual VM, then you still have references to them somewhere.
 
 - Some things need to be closed before/on garbage collection, for example sockets. Java's `finalize()` method is called just before the object is GC'd, and can be used to close anything that needs closing.
-
-- The JVisualVM can also be connected to a client running on an instrument machine through JMX, the port used for JMX is dynamic and can be found by looking through the client logs.
 
 - Good luck :)
