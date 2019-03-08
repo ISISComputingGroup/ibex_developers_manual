@@ -114,6 +114,10 @@ The widget can be removed using `group.removeChildByName('NewLabel')`
 
 Note that for dynamically create widgets that do not normally have click actions (e.g. the grouping containers that I use to fake transparent buttons), it seems to be impossible to hook an action to a left click but it is possible to add them to the right click menu.
 
+# Threading
+
+Bear in mind that both scripts and rules run *in the GUI thread* this can lead to unresponsiveness if you are doing a lot of work in them. You can write multithreaded scripts, see the jaws_display.opi for an example of this. 
+
 # Utilities
 
 Seven utility classes are provided, but there seems to be no way to get to some of them in the online help other than to know their names and search for them:
