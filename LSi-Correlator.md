@@ -57,7 +57,7 @@ There is also a vendor-supplied example script to use with the API, `ExampleMain
     - See conclusions
 
 ### Conclusions
-1. It is possible to use the Python API to get unprocessed data off the device.
+1. It is possible to use the Python API to get both unprocessed and 'correlated' data off the device.
    - We can add this to Ibex this by either calling the API from instrument scripts, or by using `pydevsup` or `PCASpy` to make an IOC-like device.
 1. It is **not** possible to use python to start a run which has been set up in the vendor software (LSi Correlator Acquisition Software)
     - This is an issue, as the vendor software performs analysis on the raw data
