@@ -116,7 +116,7 @@ Note that for dynamically create widgets that do not normally have click actions
 
 # Threading
 
-Bear in mind that both scripts and rules run *in the GUI thread* this can lead to unresponsiveness if you are doing a lot of work in them. You can write multithreaded scripts, see the jaws_display.opi for an example of this. 
+Bear in mind that both scripts and rules run **in the GUI thread** this can lead to unresponsiveness if you are doing a lot of work in them. You can write multithreaded scripts, see the jaws_display.opi for an example of this. 
 
 # Utilities
 
