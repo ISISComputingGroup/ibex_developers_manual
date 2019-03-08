@@ -21,6 +21,8 @@ Various dependencies have changed to be compatible with MySQL 8. As a minimum, y
 - `EPICS-CSS`
 - `GUI`
 
+You will need either the branch for `Ticket3506` or master at a point after `Ticket3506` is merged.
+
 ### 5. Ensure that your version of CSS (and it's archive/alarm tools) is up to date.
 
 - From `C:\instrument\apps\epics` run `create_icp_binaries.bat`
