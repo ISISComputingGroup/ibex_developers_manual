@@ -19,6 +19,7 @@ Various dependencies have changed to be compatible with MySQL 8. As a minimum, y
 - `EPICS-PVDump`
 - `EPICS-IocLogServer`
 - `EPICS-CSS`
+- `GUI`
 
 ### 5. Ensure that your version of CSS (and it's archive/alarm tools) is up to date.
 
