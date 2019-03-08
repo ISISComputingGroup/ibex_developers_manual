@@ -20,3 +20,9 @@
 1. Add estimates to tickets and move into ready
 1. Set all tickets milestones on new tickets.
 1. Advertise list of tickets on IBEX slack channel
+
+### Releases
+
+1. Check the [milestones](https://github.com/ISISComputingGroup/IBEX/milestones) for upcoming releases (also noted in the [Pending Tasks](https://github.com/ISISComputingGroup/IBEX/wiki/Pending-Tasks)).
+1. Check the dates listed in the milestone description.  Adjust dates, if necessary.
+1. Add tickets to Create and Deploy the release.
