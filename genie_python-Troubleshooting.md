@@ -16,3 +16,7 @@ The following is written to the log when a virtual circuit disconnects from the 
 ```
 
 The time stamp on these are for the first `get_pv` call or equivalent after a disconnect.
+
+### Problems importing a dependency
+
+Have you pulled and [rebuilt](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Building-and-installing-genie_python) the latest version of the repository under `\Apps\Python` ?
