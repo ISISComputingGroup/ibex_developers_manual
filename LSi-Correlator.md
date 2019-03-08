@@ -45,9 +45,10 @@ There is also a vendor-supplied example script to use with the API, `ExampleMain
 1. I can run a Python script demonstrating the collection & plotting (e.g. with matplotlib) of data from the LSi Correlator. Also demonstrate how to start a (neutron) run and how to generate a suitable run title.
 
     - The LSi-provided script can run and return some data (all zeroes as the correlator was not connected to a laser box).
-    - This data can be plotted with matplotlib, but it's not clear whether the raw data from the correlator is useful to plot on its own. Are the actual values of interest obtained after the vendor's software has done some analysis?
-    - The script was run within genie python, which suggests that it is possible to have the LSi correlator API called from a normal instrument script (after the dependencies have been added to genie python).
-    - The run title cannot be changed from within the python API. The API and the vendor software are largely independent.
+    - This data can be plotted with matplotlib
+    - We should clarify that the correlated data the python API gives us is actually what the instrument scientists want.
+    - The script was run within genie python, so we should be able to call the API from a normal instrument script (after the dependencies have been added to genie python).
+    - The run title in the vendor software cannot be changed from within the python API. The API and the vendor software are largely independent.
     - The python API can not be used to start a run which was set up in the vendor software
 
 1. I have created appropriate documentation explaining how to use the LSi Correlator API.
@@ -61,6 +62,4 @@ There is also a vendor-supplied example script to use with the API, `ExampleMain
 1. It is **not** possible to use python to start a run which has been set up in the vendor software (LSi Correlator Acquisition Software)
     - This is an issue, as the vendor software performs analysis on the raw data
 1. In order to use the vendor's analysis tools, we would have to reverse engineer the XML save format used
-1. We need to understand if we want to use the vendor's analysis tools in the vendor software or not.
-   - If we want to use the vendor's analysis tools, we should ask the vendor for the XML specification
-   - If we do not need to use the vendor's analysis tools, we will need to get a specification for the data analysis required on the data from the device
+1. We need to clarify that the correlated data from the python API is the 'correct' data that instrument scientists want
