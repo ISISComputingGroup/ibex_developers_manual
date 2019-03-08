@@ -10,7 +10,15 @@ You can then take a heap dump (button top right) and this can show where all the
 
 You can also look at what functions are using what resources by using the sampler or the profiler and using CPU/memory sampling or profiling.
 
-The JVisualVM can also be connected to a client running on an instrument machine through JMX, the JMX port to use is dynamic and can be found by looking through the logs of the specific client.
+# Setup JVisualVM to monitor a remote client
+
+- Look in the log file for the client that you want to remotely monitor
+
+- When the client first starts it will print `JMX url:` followed by a url that looks a bit like `service:jmx:rmi://machine/stub/rO0ABXNyAC5qYXZheC5tYW5hZ2V...`
+
+- Add a JMX connection in the java visual VM and copy in the whole url
+
+- **WARNING: using this interface you can do harm to the client and thus running experiments! Therefore you should only look at the monitoring graphs and use the sampler. For anything else you must inform the user that it may cause issues** 
 
 ## Memory Analyzer
 
