@@ -150,3 +150,5 @@ Initial investigations centred on alternating the background colour of the contr
 When implementing display logic for OPIs (such as toggling an objects visibility based on a PV value) our standards are: 
 1. Rules take preference over scripts for trivial logic
 1. Scripts if needed should be an external file
+
+Bear in mind that both scripts and rules run *in the GUI thread* this can lead to unresponsiveness if you are doing a lot of work in them. You can write multithreaded scripts, see the jaws_display.opi for an example of this. 
