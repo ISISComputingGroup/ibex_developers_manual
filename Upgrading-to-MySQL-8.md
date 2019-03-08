@@ -27,7 +27,9 @@ Various dependencies have changed to be compatible with MySQL 8. As a minimum, y
 - From `C:\instrument\apps\epics\css\master` remove `css-win.x86_64`
 - From `C:\instrument\apps\epics\css\master` run `setup_css.bat`
 
-### 6. Run this script and pray
+### 6. Install MySQL8 as a service
+
+Save the following as a batch file somewhere on your computer and then run it **as administrator**. When prompted for passwords, enter the MySQL root password.
 
 ```
 sc stop MYSQL80 > nul
@@ -80,3 +82,14 @@ exit /B 0
 ### 7. Check that the MySQL service has installed and is started (and set to automatically start)
 
 Go to services.msc and verify that there is an entry for `MYSQL80` which is running and set to auto-start. It's command line should be `C:\Instrument\Apps\mysql\bin\mysqld.exe --datadir=C:/Instrument/var/mysql/data MYSQL80`
+
+### 8. Run `make iocstartups` from top level EPICS
+
+From `C:\instrument\apps\epics\`, run `config_env.bat && make iocstartups`
+
+### 9. Start IBEX server
+
+As verification that the install is correct, check the following:
+- Log messages can be searched for from the GUI
+- Alarms appear in the alarms view
+- The list of IOCs is populated, and running IOCs come up as running in the list
