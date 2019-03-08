@@ -15,6 +15,12 @@ The convert records will load calibration data when it is initialised. To reload
 
     caput %MYPVPREFIX%<record name>.INIT 1
 
+## Spline hack
+
+A hack is being introduced into `csmbase` and the convert record to allow developers to use bespoke conversion routines along with (1D) lookup tables. The way this is currently implemented is to write a conversion function (in C or C++) in the support directory and name it `User1DTableSub`. It must be named this due to a limitation in the convert record wherein a developer cannot specify _both_ a user defined subroutine name _and_ and a lookup table. Hence the way that the function is located by the convert record is to search the epics function registry for a function called `User1DTableSub`.
+
+This is currently only in use with the Keithley 2700 as used for the HIFI Cryomag. The user defined subroutine uses the `gsl` library's cubic spline implementation to interpolate from a resistance measurement provided by a 4 wire carbon RTD to a temperature in Kelvin (in the range 0-200 or so).  
+
 ## Tips, Tricks and Gotchas
 
 1. The record will linearly interpolate the value this includes at either end of the record so make sure you set `DRVH` and `DRVL` if you want to avoid this.
