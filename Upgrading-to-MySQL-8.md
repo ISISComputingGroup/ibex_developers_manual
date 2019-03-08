@@ -16,10 +16,10 @@ You should end up with a path to MySQL that looks like `C:\Instrument\Apps\mysql
 
 Various dependencies have changed to be compatible with MySQL 8. As a minimum, you will need updated versions of:
 - `EPICS top`
-- `EPICS-PVDump`
+- `EPICS-PVDump` (needs rebuilding as well)
 - `EPICS-IocLogServer`
 - `EPICS-CSS`
-- `GUI`
+- `GUI` (needs rebuilding as well)
 
 You will need either the branch for `Ticket3506` or master at a point after `Ticket3506` is merged.
 
