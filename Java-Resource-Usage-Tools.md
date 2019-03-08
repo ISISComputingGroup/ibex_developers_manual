@@ -10,7 +10,7 @@ You can then take a heap dump (button top right) and this can show where all the
 
 You can also look at what functions are using what resources by using the sampler or the profiler and using CPU/memory sampling or profiling.
 
-# Setup JVisualVM to monitor a remote client
+### Setup JVisualVM to monitor a remote client
 
 - Look in the log file for the client that you want to remotely monitor
 
