@@ -23,7 +23,7 @@ Depending on which specific fermi chopper system is being used, there are slight
 
 (**) The controller on MARI is identical to MERLIN's from a communications perspective - hence re-using merlin's communications code.
 
-(***) I believe the "HET/MARI" parameters refer to a very old version of the hardware, before the chopper was upgraded to be more like Merlin's.
+(***) I believe the "HET/MARI" parameters refer to a very old version of the hardware, before the chopper was upgraded to be more like Merlin's. Chopper group may be able to give a more definitive answer.
 
 # Diagnostic logs
 
