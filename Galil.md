@@ -23,7 +23,7 @@ Useful information about the Galil can be found on the following pages:
 
 ## Startup
 
-For each Galil crate in use on the IOC, you should have a corresponding `Galilnn.cmd` file in `C:\Instrument\Settings\config\*machine_name*\configurations\galil`. For example, if I am using galil crate 1, I have a file called `Galil01.cmd`
+For each Galil crate in use on the IOC, you should have a corresponding `Galilnn.cmd` file in `C:\Instrument\Settings\config\*machine_name*\configurations\galil`. For example, if I am using galil crate 1 on LARMOR, I have a file called `Galil01.cmd` in `C:\Instrument\Settings\config\NDXLARMOR\configurations\galil`
 
 The file should contain 3 sets of commands:
 
