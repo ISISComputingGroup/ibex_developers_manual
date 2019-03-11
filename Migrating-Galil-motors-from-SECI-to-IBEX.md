@@ -105,14 +105,14 @@ If you're still unsure which homing method to use, check with the instrument sci
 
 # Copy across the motor setup
 
-There is a LabVIEW VI in `LABVIEW MODULES\Drivers\Galil DMC2280\Galil - EPICS.llb` that will generate a series of `caput` commands to copy the Labview configuration into EPICS. This will need to be updated before it runs; to do this either
+There is a LabVIEW VI in `C:\LABVIEW MODULES\Drivers\Galil DMC2280\Galil - EPICS.llb` that will generate a series of `caput` commands to copy the Labview configuration into EPICS. This will need to be updated before it runs; to do this either
 
 - a) If you are confident using source safe on an instrument then update as normal.
 - b) otherwise:
     - 1. Remote desktop to DEMO
     - 2. Open Microsoft Visual SourceSafe from start
         - If the main interface doesn't appear (looks a bit like an old file browser) make sure that the share can be opened in an file explorer.
-    - 3. Find in the interface the `Galil - EPICS.llb` under `labview\labview Modeuls\Driver\Galil DMC2280`
+    - 3. Find in the interface the `Galil - EPICS.llb` under `C:\LABVIEW MODULES\Drivers\Galil DMC2280\`
     - 4. Right click and then select `Get Latest version`
     - 5. OK on get dialogue
     - 6. Copy only the file `Galil - EPICS.llb` to the instrument you are migrating
