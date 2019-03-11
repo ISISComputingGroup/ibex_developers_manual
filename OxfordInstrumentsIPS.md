@@ -62,6 +62,7 @@ The IOC implements the following state machine in SNL:
   * If a ramp was in progress at the time the IOC was started, the ramp will continue, but no further action will occur (for example, the magnet won't be set to persistent mode and the heater status won't be changed).
   * This is done so that there are no assumptions made about the state of the IPS which might be invalid
   * To continue setting the field to the desired value after an IOC restart, simply resend the setpoint
+- There are user facing records `FIELD:USER` and `FIELD:USER:SP` which should be used for blocks. This field readback will choose whether to display either the persistent field or the power supply field depending on whether the switch heater is on or not. The setpoint is an alias to `FIELD:SP`.
 
 # Settings
 
