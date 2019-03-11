@@ -23,7 +23,7 @@ Useful information about the Galil can be found on the following pages:
 
 ## Startup
 
-For each Galil crate in use on the IOC, you should have a corresponding `Galilnn.cmd` file in `C:\Instrument\Settings\config\NDW1836\configurations\galil`. For example, if I am using galil crate 1, I have a file called `Galil01.cmd`
+For each Galil crate in use on the IOC, you should have a corresponding `Galilnn.cmd` file in `C:\Instrument\Settings\config\*machine_name*\configurations\galil`. For example, if I am using galil crate 1, I have a file called `Galil01.cmd`
 
 The file should contain 3 sets of commands:
 
@@ -73,7 +73,7 @@ The largest and most frequently changed of these arguments is the code file. It 
 ```
 
 - Header: Sets initial conditions on the Galil and initiates the homing programs on thread 1
-- Body: This should be an 8 element list of exclamation mark separated values. Each element is a path to the homing routine used for each axis in sequence A-H.
+- Body: This should be an 8 element list of exclamation mark separated values. Each element is a path to the homing routine used for each axis in sequence A-H. A description of each homing routine can be found at [Galil homing routines](https://github.com/ISISComputingGroup/EPICS-galil/tree/master/GalilSup/Db)
 - Footer: Additional code executed after homing programs have started
 
 As you can see above, we have two programs in the footer, separated by exclamation marks.
