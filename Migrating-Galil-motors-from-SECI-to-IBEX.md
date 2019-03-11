@@ -108,13 +108,13 @@ If you're still unsure which homing method to use, check with the instrument sci
 There is a LabVIEW VI in `C:\LABVIEW MODULES\Drivers\Galil DMC2280\Galil - EPICS.llb` that will generate a series of `caput` commands to copy the Labview configuration into EPICS. This will need to be updated before it runs; to do this either
 
 - a) If you are confident using source safe on an instrument then update as normal.
-- b) otherwise:
+- b) Otherwise:
     - 1. Remote desktop to DEMO
     - 2. Open Microsoft Visual SourceSafe from start
-        - If the main interface doesn't appear (looks a bit like an old file browser) make sure that the share can be opened in an file explorer.
-    - 3. Find in the interface the `Galil - EPICS.llb` under `C:\LABVIEW MODULES\Drivers\Galil DMC2280\`
+        - If the main interface doesn't appear (looks a bit like an old file browser) make sure that the share can be opened in file explorer.
+    - 3. Find in the interface the file `Galil - EPICS.llb` under `Ray Of Light LabVIEW Modules\Drivers\Galil DMC2280\`
     - 4. Right click and then select `Get Latest version`
-    - 5. OK on get dialogue
+    - 5. Click OK on get dialogue
     - 6. Copy only the file `Galil - EPICS.llb` to the instrument you are migrating
 
 Open this VI, put the computer name as `IN` and the username as `(INSTNAME):MOT`. This should generate a load of caput commands that look like `caput IN:(INSTNAME):MOT:MTR0101.(FIELD) (value)`
