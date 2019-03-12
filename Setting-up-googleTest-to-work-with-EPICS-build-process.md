@@ -24,7 +24,7 @@ Examples can be found [here](https://github.com/abseil/googletest/blob/master/go
 
 ## Release file
 
-Remember to add the path to the Google Test support module in your IOC support module Release file.
+Remember to add the path to the Google Test support module in your support module Release file.
 
 ```
 GTEST=$(SUPPORT)/googletest/master
