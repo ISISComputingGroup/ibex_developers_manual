@@ -37,7 +37,7 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
 1. Update the version numbers:
     1. GUI
         1. In `/uk.ac.stfc.isis.ibex.e4.client/plugin.xml` in `Overview` tab set `Version: ` to be `X.x.m`
-        1. In `/uk.ac.stfc.isis.ibex.e4.client/pom.xml` edit the `<version>` tag (not in parent) content to be `X.x.m`
+        1. In `/uk.ac.stfc.isis.ibex.e4.client/pom.xml` edit the `<version>` tag (not in parent) content to be `X.x.m` (This tag may not be present and so will have to be added see e.g. [here](https://github.com/ISISComputingGroup/ibex_gui/compare/master...Release_5.2.1))
     1. EPICS
         1. In `EPICS\ioc\master\INSTETC\INSTETC-IOC-01App\Db\svn-revision.db.tmpl` edit `field(VAL, "0.0.0.$WCREV$")` to be `field(VAL, "X.x.m.$WCREV$")`
         1. NB this has to be committed on a branch in IOC and then this submodule commit has to be added to the EPICS release branch
