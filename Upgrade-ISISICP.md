@@ -19,6 +19,8 @@
     * If it can't replace the file `isisicp_extMC.dll` as it is open
     * messages about establishing working folders for projects
 1. Run again from the same directory (you need to do `cd ..` to get back to the dae directory). It should be quicker this time
+1. If this is a DAE3 machine then:
+    1. copy the `x64` directory from latest svn folder from `\\isis\inst$\Kits$\CompGroup\ICP\isisdae_dae3` into `c:\LabVIEW Modules\dae\service` this updates files in `x64` from dae2
 1. As printed to screen at the end of script, open a command terminal as administrator (gamekeeper) and run
    ```
    cd "c:\labview modules\dae"
