@@ -27,8 +27,9 @@
    register_programs.cmd
    ```
 1. Now delete `c:\data\selog.*` (.sq3 .sq3-shm and .sh3-wal files)
-1. Finally run journal parser installation, found at `<public share>\journalparser_static_new\install.bat`
-
+1. Finally run journal parser installation, found at `<public share>\journalparser_static_new`
+   - *Either* run `install.bat` to install it an migrate all old journal files
+   - *or* run `install_no_migrate.bat` to install it without copying old journal files
 
 # Example log
 The following is a log from update_inst going OK
