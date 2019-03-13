@@ -11,4 +11,4 @@ Prototype digital drive Fermi chopper controller made by Forschungszentrum Jüli
 
 # Connection
 
-Connected to a computer on the network which is looked after by the chopper group.
+Connected to a computer on the network which is looked after by the chopper group. If this computer is not pingable, contact the chopper group to restart it (the chopper needs to be stopped before restarting the control PC).
