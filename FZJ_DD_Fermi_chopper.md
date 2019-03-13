@@ -6,3 +6,7 @@ Prototype digital drive Fermi chopper controller made by Forschungszentrum Jüli
 - The manual does not match the command set. For example, the order of responses in the long response packet is incorrect and several of the commands simply don't exist. The best (most up-to-date) place to get the command syntax from is the Julich VIs which are running on the chopper control machine (David has a copy of these).
 - Be careful about renaming/removing PVs, this IOC is used by a CaLAB wrapper and that will need to be updated if the PV names change.
 - Errors on all PVs are propagated from a single source so may not accurately reflect which command(s) have gone wrong
+
+# Connection
+
+Connected to a computer on the network which is looked after by the chopper group.
