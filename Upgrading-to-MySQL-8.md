@@ -25,7 +25,7 @@ Various dependencies have changed to be compatible with MySQL 8. As a minimum, y
 
 You will need either the branch for `Ticket3506` or master at a point after `Ticket3506` is merged.
 
-### 5. Ensure that your version of CSS (and it's archive/alarm tools) is up to date.
+### 5. Ensure that your version of CSS (and its archive/alarm tools) is up to date.
 
 - From `C:\instrument\apps\epics` run `create_icp_binaries.bat`
 - From `C:\instrument\apps\epics\css\master` remove `css-win.x86_64`
@@ -85,7 +85,7 @@ exit /B 0
 
 ### 7. Check that the MySQL service has installed and is started (and set to automatically start)
 
-Go to services.msc and verify that there is an entry for `MYSQL80` which is running and set to auto-start. It's command line should be `C:\Instrument\Apps\mysql\bin\mysqld.exe --datadir=C:/Instrument/var/mysql/data MYSQL80`
+Go to services.msc and verify that there is an entry for `MYSQL80` which is running and set to auto-start. Its command line should be `C:\Instrument\Apps\mysql\bin\mysqld.exe --datadir=C:/Instrument/var/mysql/data MYSQL80`
 
 ### 8. Run `make iocstartups` from top level EPICS
 
