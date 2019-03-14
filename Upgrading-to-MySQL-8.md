@@ -4,6 +4,8 @@ MySQL version 8 is somewhat different to MySQL 5.7. I will aim to document the t
 
 If the installer asks whether you want to remove old data directories, click "yes". Note that this will totally nuke any data that you have stored in your database!
 
+There is no need to uninstall the MySQL installer, so don't tick the "Yes, uninstall the MySQL Installer" tickbox.
+
 ### 2. Download MySQL 8.0 (zip, not installer)
 
 Go to [the MySQL download page](https://dev.mysql.com/downloads/mysql/) and download the latest stable version of mysql 8.0 as a zip file
