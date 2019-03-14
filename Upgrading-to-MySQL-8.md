@@ -91,6 +91,8 @@ Go to services.msc and verify that there is an entry for `MYSQL80` which is runn
 
 From `C:\instrument\apps\epics\`, run `config_env.bat && make iocstartups`
 
+Note: a few errors of the form "No such file or directory" are acceptable, this will be fixed as of https://github.com/ISISComputingGroup/IBEX/issues/4080
+
 ### 9. Start IBEX server
 
 As verification that the install is correct, check the following:
