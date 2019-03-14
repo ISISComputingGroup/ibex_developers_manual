@@ -6,6 +6,16 @@ Internally it uses several pieces of hardware - a Julabo, a power supply etc but
 
 Serial command set is on manuals shared drive.
 
+# Blocks
+
+This furnace can change temperature **extremely** quickly (e.g. 30seconds to ramp from room temperature to ~800C ). When setting up blocks to log temperature, ensure that it is set to "monitor with deadband" rather than "periodic scan for change", otherwise the heating curve may be missed in the data file and result in confusing output.
+
+The temperature stability of the furnace is approximately 0.1 - 1.0C depending on temperature and sample. This can be used as a deadband (check with the user what accuracy is required in log files).
+
+Two temperatures are measured, users will probably want to log both:
+- Furnace temperature (thermocouple 1): This is what the PID controller controls on.
+- Sample temperature (thermocouple 2): This is a separate thermocouple attached to the sample. It may read several hundred degrees less than the furnace temperature when the furnace is in operation.
+
 # Protocol
 
 The device supports two serial protocols:
@@ -28,16 +38,17 @@ We have been given a (potentially out of date) version of the arduino code, whic
   * [Change setpoints as required]
   * Stop furnace
   * Most parameters on the "advanced" screen do not need to be changed except by expert users
-- **This furnace can change temperature extremely quickly (e.g. 30seconds to ramp from room temperature to ~800C ). When setting up blocks to log temperature, ensure that it is set to "monitor with deadband" rather than "periodic scan for change"**, otherwise the heating curve may be missed in the data file and result in confusing output.
-  * The temperature stability of the furnace is approximately 0.1 - 1.0C depending on temperature and sample. This can be used as a deadband (check with the user what accuracy is required in log files)
 
-The furnace can reach very high temperatures, however depending on the melting temperature of the sample holder, the safe maximum temperature can vary:
--Aluminium (max 500 C)
--Steel (max 1000 C)
--Graphite (max 1600 C)
--Quartz (max 1500 C)
--Single crystal sapphire (max 1600C)
+# Temperature limits
 
-Where "safe" refers to the sample holder not melting (it has been confirmed that this is not a personnel safety risk, merely an inconvenient clean-up if it does melt).
+The furnace can reach very high temperatures, however depending on the melting temperature of the sample holder, the safe maximum temperature varies:
+| Material | Max T (C) |
+| Aluminium | 500 |
+| Steel | 1000 |
+| Graphite | 1600 |
+| Quartz | 1500 |
+| Single crystal sapphire | 1600 |
+
+Where "safe" refers to the sample holder not melting (it has been confirmed that this is not a personnel safety risk, merely an inconvenient clean-up if it does melt). **These limits are now enforced by the furnace controller, so the IOC merely needs to set the appropriate sample holder material.**
 
 
