@@ -8,7 +8,9 @@ There is no need to uninstall the MySQL installer, so don't tick the "Yes, unins
 
 ### 2. Download MySQL 8.0 (zip, not installer)
 
-Go to [the MySQL download page](https://dev.mysql.com/downloads/mysql/) and download the latest stable version of mysql 8.0 as a zip file
+Go to [the MySQL download page](https://dev.mysql.com/downloads/mysql/) and download the latest stable version of mysql 8.0 as a zip file.
+
+Alternatively, version `8.0.15` is in the kits area under `..\CompGroup\ICP\MySQL`.
 
 ### 3. Unzip MySQL 8 to `C:\Instrument\Apps\mysql`
 
