@@ -98,5 +98,6 @@ Note: a few errors of the form "No such file or directory" are acceptable, this 
 As verification that the install is correct, check the following:
 - Log messages can be searched for from the GUI
 - Alarms appear in the alarms view
+- The instrument and block archiver webpages are accessible and contain correct values
 - The list of IOCs is populated, and running IOCs come up as running in the list
 - Do a run, verify that block values appear in `C:\data\xxx00000.log`
