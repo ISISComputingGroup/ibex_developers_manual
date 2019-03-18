@@ -97,7 +97,7 @@ Note: a few errors of the form "No such file or directory" are acceptable, this 
 
 ### 9. Start IBEX server
 
-As verification that the install is correct, check the following:
+As verification that the install is correct, check any of the following:
 - Log messages can be searched for from the GUI
 - Alarms appear in the alarms view
 - The instrument and block archiver webpages are accessible and contain correct values
