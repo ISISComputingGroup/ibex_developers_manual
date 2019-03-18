@@ -51,8 +51,6 @@ move C:\Instrument\var\mysql C:\instrument\var\mysql-old
 mkdir C:\Instrument\var\mysql
 mkdir C:\Instrument\var\mysql\data
 
-mkdir "C:\ProgramData\MySQL"
-mkdir "C:\ProgramData\MySQL\MySQL Server 8.0"
 copy /y "C:\instrument\apps\epics\systemsetup\my.ini" "C:\instrument\apps\mysql\my.ini"
 
 ping -n 5 127.0.0.1 >nul
