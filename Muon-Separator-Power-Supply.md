@@ -31,3 +31,22 @@ The stability boundaries are defined as:
 1. Current stability: `I_measured <= (I_stable + I_limit)`
 
 **N.B**: When the stability limits are set so that the signal is always unstable, then the unstable time will sometimes not equal the buffer size due to data loss. This will be a large problem if the frequency is larger than the number of elements.
+
+## Moving average Filtering
+After installing the separator software on MUONFE, we found interference on the voltage input. To counter this, a filtering scheme was developed, described in the python notebooks here: https://github.com/ISISComputingGroup/separator-signal-analysis
+
+This takes a moving average of two adjacent points, although a different stride length (number of indicees between 
+the two points) of 20 was also considered. The stride length is currently a constant (1) in the c++ source, and the python test libraries
+
+An aSub record to perform this is now referenced in the separator's voltage db file. The data flow for voltage now looks like:
+
+1. Raw data `$(P)DAQ:VOLT:_RAW`
+1. Calibration `$(P)_APPLYVOLTCALIB`
+    - Calibrated data `$(P)CALIBRATE:VOLT`
+1. Filtering `$(P)_APPLYVOLTFILTER`
+    - Filtered Data `$(P)FILTERED:VOLT`
+
+To remove the filtering from the data flow, change the INAA field of `_STABILITYCHECK` in the separator stability db file to point at `$(P)CALIBRATE:VOLT`.
+
+### Data loss at large stride lengths
+As a consequence of performing a moving average, the shape of voltage input data is reduced by the stride length. This means that there will be fewer data points than the (unfiltered) current data, so the assumption of the separator stability calculation that there are the same number of points for both current and voltage is no longer valid. It was decided that a stride length of 1 does not 'stretch out' the voltage trace enough to break the assumption. A longer stride length (e.g. 20) would be a significant source of error and need to be addressed.
