@@ -35,7 +35,7 @@ The stability boundaries are defined as:
 ## Moving average Filtering
 After installing the separator software on MUONFE, we found interference on the voltage input. To counter this, a filtering scheme was developed, described in the python notebooks here: https://github.com/ISISComputingGroup/separator-signal-analysis
 
-This takes a moving average of two adjacent points, although a different stride length (number of indicees between 
+This takes a moving average of two adjacent points, although a different stride length (number of indices between 
 the two points) of 20 was also considered. The stride length is currently a constant (1) in the c++ source, and the python test libraries
 
 An aSub record to perform this is now referenced in the separator's voltage db file. The data flow for voltage now looks like:
