@@ -1,7 +1,15 @@
 > [Wiki](Home) > [Deployment](Deployment) >[Installing and upgrading MySQL](Installing-and-Upgrading-MySQL)
 
-# Install first time
+# Install (mysql version 8.0)
 
+Follow the steps set out in [upgrade mysql to version 8.0](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Upgrading-to-MySQL-8), skipping the step to uninstall MySQL 5.7 if this is a first time install as opposed to an upgrade.
+
+
+# Install (mysql version 5.7)
+
+**These instructions should only be used if you really intend to install 5.7**. Since [ticket 3506](https://github.com/ISISComputingGroup/IBEX/issues/3506), we are using MySQL 8.0 by default, and so we should no longer need these instructions: 
+
+```
 - Download version 5.7.X of the mysql community installer from [mysql site](https://dev.mysql.com/downloads/mysql/5.7.html#downloads)
     - Scroll down to recommended download in GA Release, click Go To Download Page
     - Scroll down to GA Release again and choose one of the two downloads (both are 32bit installers), the smaller one will download as it installs, the larger one downloads everything before starting.
@@ -66,3 +74,5 @@ This may just be an issue with the installer rather than with MySQL itself. Ther
 1. Once complete, run the MySQL Community Installer from the start menu
 1. Click on the "Catalog..." button. Follow the prompts to download the latest MySQL product catalog.
 1. Once that is done, click on the "Upgrade" button on the MySQL installer home page. Here you can manually select the version you would like to install.
+
+```
