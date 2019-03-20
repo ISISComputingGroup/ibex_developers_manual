@@ -83,6 +83,17 @@ Where
 
 [delta-time]: http://mathurl.com/y8lccdz7.png
 
+### Interpolation
+
+The Keithley utilises the convert record to interpolate a tmeperature from a resistance reading. It uses a Spline fit to do this, implemented in `User1DTableSub.c` in the support directory. 
+
+The setup part of this function includes an in-place swap of the data points in the y axis. This is becasue `csmbase` automatically sorts both axis of data points into ascending order, but maintains the links between an x data point and a y data point for use in the convert record's built in interpolation functions. 
+
+After reading the calibration table, `csm` calls `coordinate_sort()` and `coordinate_update_backlinks()` on the x and y arrays. This calls `qsort` and puts them in ascending order (of value). `csm` relies on the index (stored in a struct with the actual data point) to determine which element in one array corresponds to the correct element in the other array, meaning that an array can be reordered without any problems arising because of this. 
+
+Because the user defined `User1DTableSub` does not utilise the `csm` back end (and therefore the datapoint links) the original order of the y axis must be preserved, so it is swapped back again in the in-place swap. 
+
+For a more thorough explanation, see `coordinate_sort()` and `coordinate_update_backlinks()` and the doc comments in `csmbase.c` (found in `C:\Instrument\Apps\EPICS\support\csm\master\csmApp`)
 
 ### Unit Tests
 
