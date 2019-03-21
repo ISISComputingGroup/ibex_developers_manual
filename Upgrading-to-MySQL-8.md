@@ -33,6 +33,8 @@ You will need either the branch for `Ticket3506` or master at a point after `Tic
 - From `C:\instrument\apps\epics\css\master` remove `css-win.x86_64`
 - From `C:\instrument\apps\epics\css\master` run `setup_css.bat`
 
+If you can't run `create_icp_binaries` because of permission issues, copy the `CSS` folder from `\\olympic\Babylon5\Scratch\Tom Willemsen` into `C:\Instrument\Apps\EPICS\icp_binaries` and then proceed with the other two steps as usual.
+
 ### 6. Install MySQL8 as a service
 
 Save the following as a batch file somewhere on your computer and then run it **as administrator**. When prompted for passwords, enter the MySQL root password.
