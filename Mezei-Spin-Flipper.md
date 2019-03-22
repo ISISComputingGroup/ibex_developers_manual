@@ -16,6 +16,9 @@ The communication protocol has several gotchas:
 - The code on the remote PC uses regular expressions to parse messages, sending it a message which it doesn't like will cause it to crash and forcibly disconnect the driver
 - Must wait for a reply between each message - Sending messages too fast without waiting for replies will cause crashes on the remote end
 - In general any exception in the communication layer on the remote end will cause a disconnect
+- Sending the controller a command to turn on the analyser if the analyser is not present will cause the remote software to crash
+- The Amplitude should be limited to 3A to avoid burning out the coils
+- Sending a positive value for delta-T will cause a remote software crash
 
 # Starting the emulator
 
