@@ -1,6 +1,6 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [Cryogenics](Cryogenics) > [Triton](Triton)
 
-# Triton (dilution fridge)
+# Connection
 
 The Triton software runs on a dedicated PC that follows each fridge around. The IBEX control system makes a connection over TCP to issue commands to that software.
 
