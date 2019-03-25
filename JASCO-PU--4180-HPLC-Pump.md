@@ -32,3 +32,7 @@ The user can then start the pump by using the `START:SP` record. The pump can be
 The user can also select a timed run for either a set time or volume. The user must first set a time `TIME:RUN:SP` (in seconds) or volume `TIME:VOL:SP` (in mL). Then a pump can begin by using the `TIMED:SP` record.
 
 NB: The devices display screen does not show current pump status information when in operation.
+
+# Troubleshooting
+
+It has been observed that the pump can be in some state where the components will not correctly change when the `set_component` command is sent. This is thought to occur when the device has a local manual component mode set on the device. In testing one way this was resolved was by manually sending the `8 pump set` command, which corresponds to reset and rerun of the program. You can then stop the pump and it should have cleared this state and you can use the IOC as per usual. 
