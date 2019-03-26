@@ -9,3 +9,7 @@ The implementation for IBEX uses an lvDCOM solution. The IOC connects to a VI in
 ## Running the IOC
 
 The NIMA Trough IOC is not compatible with versions of the VI that are older than 2019-02-15. Ensure you update and VI drivers you have locally from source safe. Updated drivers should be available on DEMO.
+
+## Units for Area
+
+While by default the area is in cm^2, it can be changed in the NIMA Trough Labview GUI. To avoid confusion with units, as we cannot pass this through the interface, the `EGU` field has been intentionally left blank.
