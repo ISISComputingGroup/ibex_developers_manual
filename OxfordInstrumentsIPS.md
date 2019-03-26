@@ -99,12 +99,12 @@ Note: You *may* be able to get out of a clamped state remotely with `caput %MYPV
 
 ### Magnet won't go to field - sweep rate readback is zero
 
-Set the magnet to a non-zero sweep rate (you will need to be in manager mode to do this). If unsure of suitable sweep rates consult the instrument scientists or cryogenics. The IPS itself will limit the sweep rate to safe values in hardware.
+Set the magnet to a non-zero sweep rate (you will need to be in manager mode to do this). Maximum permissible sweep rates are listed in the table above. If unsure, consult the instrument scientists or cryogenics. The IPS itself should limit the sweep rate to safe values in hardware.
 
 ### Magnet won't respond to any setpoints
 
-Check remote mode in enabled.
+Check remote mode is enabled.
 
 ### Magnet system status reports something other than "normal" - e.g. "quenched" or "fault"
 
-This indicates a hardware fault. Inform instrument scientists that the magnet has a problem and has likely gone to zero field (even if it still claims to be producing a field). Consult cryogenics for help.
+This indicates a hardware fault. Inform instrument scientists that the magnet has a problem and has likely gone to zero field (even if the IPS still claims to be producing a non-zero field). Consult cryogenics for help.
