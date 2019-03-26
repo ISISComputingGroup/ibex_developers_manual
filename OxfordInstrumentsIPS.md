@@ -6,6 +6,13 @@ The Oxford instruments IPS is a cryogenic magnet power supply. **This device can
 1. PSU current != Magnet current and switch heater on
 1. Ramping the Magnet current too fast
 
+When configuring the IOC, suggested blocks to create are:
+
+| Name | PV | Description |
+| --- | --- | --- |
+| Field | `FIELD:USER` | This is a composite field block that will choose to display either the persistent field or the power supply field, depending on the status of the switch heater |
+| Magnet_status | `STS:SYSTEM:FAULT` | This is a status readback from the hardware. Should always be "Normal" (Enum: 0). **It is recommended to put run control on this being 0 (set limits -0.5 to 0.5), otherwise it can be difficult for the scientists to see that there is a problem.** |
+
 # Basic cryomagnet operation
 
 The circuit diagram of a cryogenic magnet with a switch heater looks something like the following:
@@ -89,3 +96,15 @@ ZOOM | 5.5T |
 Check on the "Advanced" tab of the OPI whether the IPS reports it's status as "clamped". If so, the state machine will be unable to proceed because being "clamped" means that the IPS will stay at it's current output indefinitely. To get out of this state, it is best to get out of the "clamped" state via the front panel.
 
 Note: You *may* be able to get out of a clamped state remotely with `caput %MYPVPREFIX%IPS_01:ACTIVITY:SP <desired activity>`, but the old LabVIEW driver did not do this and it is not exposed as a user-facing option in the EPICS driver.
+
+### Magnet won't go to field - sweep rate readback is zero
+
+Set the magnet to a non-zero sweep rate (you will need to be in manager mode to do this). If unsure of suitable sweep rates consult the instrument scientists or cryogenics. The IPS itself will limit the sweep rate to safe values in hardware.
+
+### Magnet won't respond to any setpoints
+
+Check remote mode in enabled.
+
+### Magnet system status reports something other than "normal" - e.g. "quenched" or "fault"
+
+This indicates a hardware fault. Inform instrument scientists that the magnet has a problem and has likely gone to zero field (even if it still claims to be producing a field). Consult cryogenics for help.
