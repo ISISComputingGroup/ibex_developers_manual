@@ -51,7 +51,7 @@ record(bi, "$(P)TOG:RECORD:SP") {
 }
 
 # Add 1 to the value of the toggle set point to map the fanout 
-# foward link index.
+# forward link index.
 record(calcout, "$(P)_TOG:CALC:RECORD") {
 	field(INPA, "$(P)TOG:RECORD:SP CP")
 	
@@ -84,4 +84,4 @@ record(bo, "$(P)_RECORD2:SP") {
 }
 ```
 
-This takes the set points binary value, shifts it by +1 in a calc record which allows for it to be mapped with the forward link outputs of the fanout record, these forward links are then processed. This can be easily extended with additional forward links or sequence records. An example of this is implemented in the Knauer 1050 HPLC pump.
+This takes the set points binary value, shifts it by +1 in a calc record which allows for it to be mapped with the forward link outputs of the fanout record, these forward links are then processed. This can be easily extended with additional forward links or sequence records.
