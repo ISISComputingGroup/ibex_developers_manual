@@ -32,4 +32,5 @@ optional arguments:
   --host HOST           Host to get data from defaults to localhost
   --filename_template FILENAME_TEMPLATE, -f FILENAME_TEMPLATE
                         Filename template to use for the log file.
+  --default_field       The field to add to a pv if it has no field. The default is `val` so all PVs will be found in an instrument archive. This means that to access the blocks or the central control archives you need to set this to `""` .
 ```
