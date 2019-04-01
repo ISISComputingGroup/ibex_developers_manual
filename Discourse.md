@@ -20,6 +20,6 @@ Discourse uses SMTP to deliver emails. The SMTP settings are in the file `/var/d
 
 Troubleshooting can be done with `./discourse-doctor` which runs a few diagnostics and may help you understand the root cause of an SMTP issue.
 
-# HTTPS
+### HTTPS
 
-Discourse is set up to use a HTTPS certificate from [let's encrypt](https://letsencrypt.org/). This just uses an email address saved in the `/containers/app.yml` file under the key `LETSENCRYPT_ACCOUNT_EMAIL`.
+Discourse is set up to use a HTTPS certificate from [let's encrypt](https://letsencrypt.org/). This just uses an email address saved in the `/containers/app.yml` file under the key `LETSENCRYPT_ACCOUNT_EMAIL`. When the certificate needs to be renewed, if the email registered in that file is no longer valid/useable, then change it and run `./launcher rebuild app`, this should send a new verification email to the new email address.
