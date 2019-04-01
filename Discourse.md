@@ -19,3 +19,7 @@ The discourse files are located in the `/var/discourse/` folder. To start discou
 Discourse uses SMTP to deliver emails. The SMTP settings are in the file `/var/discourse/containers/app.yml`. After editing this file, use `./launcher rebuild app` to rebuild discourse (this won't wipe the database, but will cause ~15 minutes of downtime).
 
 Troubleshooting can be done with `./discourse-doctor` which runs a few diagnostics and may help you understand the root cause of an SMTP issue.
+
+# HTTPS
+
+Discourse is set up to use a HTTPS certificate from [let's encrypt](https://letsencrypt.org/). This just uses an email address saved in the `/containers/app.yml` file under the key `LETSENCRYPT_ACCOUNT_EMAIL`.
