@@ -12,7 +12,7 @@ usage: log_file_generator.py [-h] --point_count POINT_COUNT --start_time
                              header_and_pvs [header_and_pvs ...]
 
 Create a log file from the archive. E.g. python
-ArchiverAccess\log_file_generator.py --start_time 2018-01-10T09:00:00
+log_file_generator.py --start_time 2018-01-10T09:00:00
 --point_count 1000 --delta_time 1 --host ndximat --filename_template
 log{start_time}.csv MOT0101 IN:IMAT:MOT:MTR0101.RBV MOT0102
 IN:IMAT:MOT:MTR0102.RBV
