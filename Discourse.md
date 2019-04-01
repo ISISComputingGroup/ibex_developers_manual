@@ -8,7 +8,7 @@ Is possible with the domain above, but you must have been added explicitly. Curr
 
 # Administration
 
-The first port of call should be the discourse documentation/Q&A site: https://meta.discourse.org/
+The first port of call should be the discourse documentation/Q&A site: https://meta.discourse.org/ and the install instructions at https://github.com/discourse/discourse/blob/master/docs/INSTALL-cloud.md
 
 ### Starting/stopping discourse
 
