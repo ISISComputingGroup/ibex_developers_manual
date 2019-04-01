@@ -34,6 +34,30 @@ Additionally, the IOC talks to DAQ MX to do some changeover logic, which is impl
 
 To run this IOC you will need to install the DAQMX binaries - available on the national instruments website (it is a rather large installer so it is not installed by default).
 
+A minimal globals.txt file which can boot the IOC and connect to the emulator contains:
+```
+RKNPS_01__CHAIN1_PORT=COM5
+RKNPS_01__EMULATOR_PORT1=57677
+RKNPS_01__EMULATOR_PORT2=57678
+RKNPS_01__EMULATOR_PORT3=57679
+RKNPS_01__EMULATOR_PORT4=57680
+
+# GEC 200 volts 500 amps (but scales as 625A)
+RKNPS_01__CHAIN1_ADR1=001
+RKNPS_01__CHAIN1_ID1=RQ1
+RKNPS_01__CHAIN1_FRV1=2
+RKNPS_01__CHAIN1_FRI1=625/99990
+RKNPS_01__CHAIN1_FWI1=9999/625
+
+# GEC 200 volts 500 amps
+RKNPS_01__CHAIN1_ADR2=002
+RKNPS_01__CHAIN1_ID2=RB1
+RKNPS_01__CHAIN1_FRV2=2
+RKNPS_01__CHAIN1_FRI2=500/99990
+RKNPS_01__CHAIN1_FWI2=9999/500
+
+```
+
 # Hardware notes / Changeover sequences
 
 ### RB2 mode change
