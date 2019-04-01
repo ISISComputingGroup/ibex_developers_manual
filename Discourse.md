@@ -22,4 +22,6 @@ Troubleshooting can be done with `./discourse-doctor` which runs a few diagnosti
 
 ### HTTPS
 
-Discourse is set up to use a HTTPS certificate from [let's encrypt](https://letsencrypt.org/). This just uses an email address saved in the `/containers/app.yml` file under the key `LETSENCRYPT_ACCOUNT_EMAIL`. When the certificate needs to be renewed, if the email registered in that file is no longer valid/useable, then change it and run `./launcher rebuild app`, this should send a new verification email to the new email address.
+Discourse can use a HTTPS certificate from [let's encrypt](https://letsencrypt.org/). Edit the `/containers/app.yml` uncommenting the lines relevant to SSL near the top of the file.
+
+Note: this currently doesn't work as Let's encrypt doesn't like the DNS response from our servers.
