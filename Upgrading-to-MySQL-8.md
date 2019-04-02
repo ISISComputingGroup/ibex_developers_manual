@@ -19,13 +19,13 @@ You should end up with a path to MySQL that looks like `C:\Instrument\Apps\mysql
 ### 4. Ensure relevant submodules are up to date and rebuilt if necessary
 
 Various dependencies have changed to be compatible with MySQL 8. As a minimum, you will need updated versions of:
-- `EPICS top`
-- `EPICS-PVDump` (needs rebuilding as well)
-- `EPICS-IocLogServer`
-- `EPICS-CSS`
-- `GUI` (needs rebuilding as well)
+- `EPICS top` (`C:\instrument\apps\epics`)
+- `EPICS-PVDump` (`C:\instrument\apps\epics\support\pvdump\master`, also needs rebuilding)
+- `EPICS-IocLogServer` (`C:\instrument\apps\epics\isis\ioclogserver\master`)
+- `EPICS-CSS` (`C:\instrument\apps\epics\css\master`)
+- `GUI` (also needs rebuilding)
 
-You will need either the branch for `Ticket3506` or master at a point after `Ticket3506` is merged.
+You will need the `master` branch of these repositories, pulled after ~18th March 2019.
 
 ### 5. Ensure that your version of CSS (and its archive/alarm tools) is up to date.
 
