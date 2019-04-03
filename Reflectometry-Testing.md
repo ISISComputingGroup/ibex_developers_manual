@@ -66,6 +66,6 @@ Did many scans comparing SECI and IBEX see `ISIS_Experimental_Controls\Reflectom
 
 ## CRISP Blind Test
 
-[Experiment script](reflectometry_blind_script)
-[Experiment script output](reflectometry_blind_script_output)
+- [Experiment script](reflectometry_blind_script)
+- [Experiment script output](reflectometry_blind_script_output)
 
