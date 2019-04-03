@@ -102,4 +102,46 @@ TODO: I think we need a parameter driver and then we can more easily separate Sl
 This is the coordinating object for the system, it performs the correct movements based on the beamline parameters and mode which is currently active. There are a number of modes which need to be supported in the system; for example NR mode, polarised, disabled etc. There is also a natural ordering of beamline parameters and components when it comes to calculations, i.e. the polarising mirror and all calculation to do with it should be done before the sample point calculations. The architecture is that a beamline object holds the order of both the components and beamline parameters. The composite drivers do not have a natural order but these are also contained by the beamline object. It makes sure that all calculations are done in the order in which they are held. The mode dictates which parameters are active in the calculation and pre-sets for some of those beamline parameters.
 The following is a subsection of the configuration showing beamline parameters at the top, components in the middle and drivers at the bottom. 
 
+ ![beamline diagram](reflectometers/Beamline.png)
+
+#### Whole Beamline Move
+
+When move for the whole beam line is activated the new positions of the motors are calculated using the following procedure. 
+
+1. Each of the sample parameter are considered in turn, going down the beam. 
+2. The beamline parameter is "moved to" if it has changed or if it is in the mode and a previous beamline parameter in this mode has changed.
+3. When the beamline parameter is "moved to" the result of the calculation will be passed down to the component it controls.
+    1. At this point the set point readback value will read the same as the set point
+    1.The component will then recalculate the beam path and instruct those components down beam to recalculate their beam paths.
+4. Once all beamline parameters have finished calculating along with new component positions all the composite driving layer calculates the slowest movement and performs the move at that speed for all components.
+
+#### Single Beamline Parameter Move
+
+When a single beamline parameter is set and moved on its own then:
+
+If the beamline parameters is in the current mode:
+
+1. Each beamline parameter in the mode is considered in turn, going down the beam starting from the beamline parameter which just moved.
+2. If the parameters is in the mode the beamline parameters moves to it last set point (i.e. the one in the set point readback). This will pass down the calculation to the component it controls.
+3. Then we are back to above.
+
+If it is not in the mode:
+
+1. That beamline parameters sends its move to the component it controls.
+2. Then the beamline is recalculated
+3. Motors are then moved
+
+#### Changing the Mode
+
+When the mode is changed to (not disable mode) the following happens:
+1. In beamline parameter order each pre-set is applied to the set-point.
+    1. This include setting whether the components are in the beam or not
+2. The beamline parameters in the mode just set are used as the mode parameters.
+
+#### Disabled Mode
+
+Disabled mode is special because in this mode the movements are relative to the positions when the mode was entered into. This is done by disabling the beam calculation for each component. Only theta related parameters should be in the current mode. 
+
+
+
 
