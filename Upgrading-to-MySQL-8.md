@@ -103,3 +103,7 @@ As verification that the install is correct, check any of the following:
 - The [instrument](http://localhost:4812/group?name=INST) and [block](http://localhost:4813/group?name=BLOCKS) archiver webpages are accessible and contain correct values
 - The list of IOCs is populated, and running IOCs come up as running in the list
 - Do a run, verify that block values appear in `C:\data\xxx00000.log`
+
+### 10. Build.bat errors
+
+If when running build.bat you get `No rule to make` errors in `support/MySQL/master`, go to that directory and run `make clean uninstall && make`
