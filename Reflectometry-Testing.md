@@ -1,6 +1,6 @@
 > [Wiki](Home) > [Project overview](Project-Overview) > [Design documents](Design-Documents) > [Reflectometers](Reflectometers) > [Reflectometry Testing](Reflectometry-Testing)
 
-This is a record of some of the things I have tried and done on CRISP in Feb 2019.
+## CRISP in Feb 2019.
 
 ### Setup
 
@@ -60,4 +60,12 @@ Large spike at low time of flight is prompt spike it should not dominate spectra
 
 Do a theta scan without the sample or super mirror in the way. Does it look correct if not stop and think.
 
+## CRISP in March 2019.
+
+Did many scans comparing SECI and IBEX see `ISIS_Experimental_Controls\Reflectometry\Ticket3462`.
+
+## CRISP Blind Test
+
+[Experiment script](reflectometry_blind_script)
+[Experiment script output](reflectometry_blind_script_output)
 
