@@ -40,8 +40,6 @@ The reflectometry IOC is composed of layers:
 
 The whole system is coordinated by the Beamline object.
 
-The user will interact with the IOC through beamline parameters.
-
 ### Beamline Parameters
 
 Beamline parameters store something a user wishes to set. They can have blocks pointed at them or the GUI components. Each contains:
@@ -61,7 +59,7 @@ Types of parameter:
 - `InBeamParameter`: a parameter which controls whether a component is in or out of the beam. Some components can be parked out of the beam so they don't change its path e.g. the super mirror
 - `SlitGapParameter`: a parameter which changes the gap of a slit set. This does not talk to a component but directly to the underlying PV. It is also used within the footprint calculator.
 
-### Component
+### Geomtry Component
 
 A component represents a point of interaction on the beamline; for example, a slit set or mirror. They form the relationship between:
 
@@ -81,6 +79,27 @@ The types of component currently are:
     - The readback calculates the angle to the beam intercept of another component. Note that if that component has a beam offset it will not be the position of the component but the position without the offset. The component used is the first component which is in the beam on its list in its configuration. For a beam line may contain an analyser followed by a detector if the analyser is in the beam it will be the angle to the analyser otherwise it is the angle to the detector. 
     - The setpoint works in the same way as the `ReflectingComponent` except that it will update the beam path of disabled components which define its angle.
 
+### Composite Driving Layer
 
+The composite driving layer set the PV values which will make the moves happen. 
+
+The layer consists of Drivers which take values from components and push these values into PV wrapper and take readback value and push them into the components. There are various types are:
+
+- `DisplacementDrivers`: Set the position of the motor based on the displacement, this includes moving to a parked value if the component is out of the beam
+- `AngleDriver`: Set the position of the motor based on the angle.
+
+The PV wrapper objects are:
+
+- `PVWrapper`: read from and write to a single PV
+- `MotorPVWrapper`: read and write to a motor pv
+- `AxisPVWrapper`: read and write to an axis
+- `VerticalJawsPVWrapper`: read and write to a jaw set
+
+TODO: I think we need a parameter driver and then we can more easily separate SlitGapParameter from their pv wrappers.
+
+### Beamline Object
+
+This is the coordinating object for the system, it performs the correct movements based on the beamline parameters and mode which is currently active. There are a number of modes which need to be supported in the system; for example NR mode, polarised, disabled etc. There is also a natural ordering of beamline parameters and components when it comes to calculations, i.e. the polarising mirror and all calculation to do with it should be done before the sample point calculations. The architecture is that a beamline object holds the order of both the components and beamline parameters. The composite drivers do not have a natural order but these are also contained by the beamline object. It makes sure that all calculations are done in the order in which they are held. The mode dictates which parameters are active in the calculation and pre-sets for some of those beamline parameters.
+The following is a subsection of the configuration showing beamline parameters at the top, components in the middle and drivers at the bottom. 
 
 
