@@ -22,7 +22,7 @@ Do this when you know that you can safely ignore them, for example, you need a b
 
 ## No rule to make target
 
-This means a Makefile is trying to build something for which an external dependency has been listed and this dependency does not exist and it cannot find a way to generate it. This can be a type/error in the Makefile itself, but if you have just done an update of many submodules it may mean that one of the auto-generated epics dependencies for the failing module refers to items in another module that now no longer exist. If for example the boost C++ library is updated, MySQL or ISISDAE may fail to build as they use headers from boost that may have been rearranged. If you "make clean uninstall" the failing module it should rebuild everything (including dependencies) and then work. You could also just remove the *.d files (which are auto-generated dependencies) and then make again.
+This means a Makefile is trying to build something for which an external dependency has been listed and this dependency does not exist and it cannot find a way to generate it. This can be a typo/error in the Makefile itself, but if you have just done an update of many submodules it may mean that one of the auto-generated epics dependencies for the failing module refers to items in another module that now no longer exist. If for example the boost C++ library is updated, MySQL or ISISDAE may fail to build as they use headers from boost that may have been rearranged. If you "make clean uninstall" the failing module it should rebuild everything (including dependencies) and then work. You could also just remove the *.d files (which are auto-generated dependencies) and then make again.
       
 # Make Notepad++ Highlight DB Syntax
 
