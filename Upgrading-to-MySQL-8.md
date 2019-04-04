@@ -90,6 +90,10 @@ exit /B 0
 
 Go to services.msc and verify that there is an entry for `MYSQL80` which is running and set to auto-start. Its command line should be `C:\Instrument\Apps\mysql\bin\mysqld.exe --datadir=C:/Instrument/var/mysql/data MYSQL80`
 
+
+**If this is a first time installation of the IBEX system, return to [the setup guide](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/First-time-installing-and-building-(Windows))**
+**and continue with the next steps before returning here.**
+
 ### 8. Run `make iocstartups` from top level EPICS
 
 From `C:\instrument\apps\epics\`, run `config_env.bat && make iocstartups`
