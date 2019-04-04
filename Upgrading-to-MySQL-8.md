@@ -38,7 +38,7 @@ If you can't run `create_icp_binaries` because of permission issues, copy the `C
 
 ### 6. Install MySQL8 as a service
 
-Save the following as a batch file somewhere on your computer and then run it **as administrator**. When prompted for passwords, enter the MySQL root password. The MySQL root password is stored on the ISIS sharepoint, which you will need access to. 
+Save the following as a batch file somewhere on your computer and then run it **as administrator**. It is advised to launch this from within a command prompt so you can debug potential errors as it runs. When prompted for passwords, enter the MySQL root password. The MySQL root password is stored on the ISIS sharepoint, which you will need access to. 
 
 ```
 sc stop MYSQL80 > nul
@@ -85,6 +85,8 @@ config_mysql.bat
 
 exit /B 0
 ```
+
+The MySQL service will fail to setup if you are trying to install MySQL version 8 using a MySQL version 5 my.ini file. This will occur if the EPICS TOP repository is not up to date (see step 4.). To fix this, navigate to `C:\Instrument\Apps\EPICS\` and run `git pull`.
 
 ### 7. Check that the MySQL service has installed and is started (and set to automatically start)
 
