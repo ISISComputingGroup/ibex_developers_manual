@@ -38,7 +38,7 @@ If you can't run `create_icp_binaries` because of permission issues, copy the `C
 
 ### 6. Install MySQL8 as a service
 
-Save the following as a batch file somewhere on your computer and then run it **as administrator**. When prompted for passwords, enter the MySQL root password.
+Save the following as a batch file somewhere on your computer and then run it **as administrator**. When prompted for passwords, enter the MySQL root password. The MySQL root password is stored on the ISIS sharepoint, which you will need access to. 
 
 ```
 sc stop MYSQL80 > nul
