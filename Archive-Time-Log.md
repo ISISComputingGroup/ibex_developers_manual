@@ -1,4 +1,4 @@
-> [Wiki](Home) > [Project tools](Project-tools) > [Archive access](Archive-access)
+> [Wiki](Home) > [Project tools](Project-tools) > [Archive Time Log](Archive-Time-Log)
 
 There is a tool for generating data from the archive database. This tool is run with:
 
