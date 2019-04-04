@@ -2,7 +2,7 @@
 
 ### Setting up a repository
 
-1. From a git-enabled command line, run `git clone https://github.com/ISISComputingGroup/genie_python.git C:/Instrument/Apps/Python`
+1. Check whether `C:\Instrument\Apps\Python` already exists. If it does, from a git-enabled command line, `cd C:\Instrument\Apps\Python` and perform a `git pull`. If it does not exist, from a git-enabled command line, run `git clone https://github.com/ISISComputingGroup/genie_python.git C:/Instrument/Apps/Python`.
 1. Navigate to `C:\Instrument\Apps\Python\package_builder`
 1. Run `dev_build_python.bat`
 
