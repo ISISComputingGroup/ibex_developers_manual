@@ -1,9 +1,9 @@
 > [Wiki](Home) > [Project tools](Project-tools) > [Archive Time Log](Archive-Time-Log)
 
-There is a tool for generating data from the archive database. This tool is run with:
+There is a tool for generating a log of data from the archive database at given points in time. This tool is run with:
 
     cd ...\EPICS\ISIS\inst_servers\master\scripts
-    python \log_file_generator.py
+    python log_file_generator.py
 
 ```
 usage: log_file_generator.py [-h] --point_count POINT_COUNT --start_time
