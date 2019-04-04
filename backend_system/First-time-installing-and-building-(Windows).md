@@ -30,6 +30,8 @@ Install Git [Getting-started-with-Git-and-GitHub](Getting-started-with-Git-and-G
 
 # Recursive clone from git
 
+Navigate to `C:\Instrument\Apps\` and check whether the EPICS directory already exists. If so, remove the EPICS directory before continuing.
+  
 In `C:\Instrument\Apps\` run:
 
 `git clone --recursive https://github.com/ISISComputingGroup/EPICS.git`
