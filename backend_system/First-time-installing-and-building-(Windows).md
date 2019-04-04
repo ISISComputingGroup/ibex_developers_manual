@@ -120,7 +120,7 @@ git checkout NDXXXX
 
 # Setting up a calibrations directory
 
-Run the following command from a Git-enabled command prompt (or modify target to run with Git Bash):
+If the `C:\Instrument\Settings\config\common` directory already exists, cd into it and do a `git pull` on master. Else run the following command from a Git-enabled command prompt (or modify target to run with Git Bash):
 
 ```
 git clone http://control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/common.git C:\Instrument\Settings\config\common
