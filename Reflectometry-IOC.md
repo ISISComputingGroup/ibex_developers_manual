@@ -6,7 +6,7 @@
 
 As described in the physics [Reflectometers Science](Reflectometers-Science) we need to calculate where a beamline is set and track it with multiple components. The user workflows we need to support are:
 
-1. Delayed move (the user is doing an ad-hoc move of the beamline and they want to think about the value before committing to the move):
+1. Delayed move (the user is doing a move of the beamline and they want to think about the value before committing to the move):
     1. Set a parameter
     1. Ensure the value is correct by reading it
     1. Move to the set value either:
@@ -21,13 +21,13 @@ As described in the physics [Reflectometers Science](Reflectometers-Science) we 
     1. If a parameter setpoint is changed but not moved to (default colour yellow)
     1. If a parameter is based on a motor which is moving (default colour green)
     1. If a setpoint readback and readback are different from each other and not moving (default colour red)
-    1. If a setpoint and setpoint readback are different and setpoint is not changed (default colour red)
+    1. If a setpoint and setpoint readback are different and the setpoint is not changed (default colour red)
         1. TBD we are not sure we don't just want to copy values up from lower components.
 
 ### Design Details
 
 Reflectometry IOC sits on top of:
-- **Composites Layer:** This layer help group together motors into composites which can be relabelled. For example, in the slits the North and South jaw motors can be composited to make the vertical gap and vertical centre. Doing this can be helpful because these are reused in other parts of the system. Most of these components are written; the bench is the component we haven’t tackled yet. 
+- **Composites Layer:** This layer help group together motors into composites which can be relabelled. For example, in the slits, the North and South jaw motors can be composited to make the vertical gap and vertical centre. Doing this can be helpful because these are reused in other parts of the system. Most of these components are written; the bench is the component we haven’t tackled yet. 
 - **Motor Driver Layer:** This layer is responsible for communicating with the galil and other motors.  This is complete.
 
 The reflectometry IOC is composed of layers:
@@ -46,20 +46,20 @@ Beamline parameters store something a user wishes to set. They can have blocks p
 
 - Name: name of the parameter
 - Read back: the value as calculated from the motors
-- Set point: when set the reflectometry will move to this value
-- Set point read-back: the last value that was requested
-- Set point and no move: if this is set the set point is stored but the reflectometer does not move to it
+- Setpoint: when set the reflectometry will move to this value
+- Setpoint read-back: the last value that was requested
+- Setpoint and no move: if this is set the set point is stored but the reflectometer does not move to it
 - Move: makes the reflectometry to the set point 
 - Changed: set when the set point no move has been set but not moved to
 
-Types of parameter:
+Types of beamline parameter:
 
 - `AngleParameter`: a parameter which controls the angle of a component
 - `TrackingPosition`: a parameter which controls a linear position relative to the beam intercept. E.g. How from the beam a slit should be, the position is measured along the movement axis
 - `InBeamParameter`: a parameter which controls whether a component is in or out of the beam. Some components can be parked out of the beam so they don't change its path e.g. the super mirror
 - `SlitGapParameter`: a parameter which changes the gap of a slit set. This does not talk to a component but directly to the underlying PV. It is also used within the footprint calculator.
 
-### Geomtry Component
+### Geometry Component
 
 A component represents a point of interaction on the beamline; for example, a slit set or mirror. They form the relationship between:
 
@@ -74,7 +74,7 @@ The types of component currently are:
 
 - `Component`: Component manages the distance between the beam and the component without affecting the beam (e.g. a slit).
 - `TiltingComponent`: Component manages the angle and distance between the incoming beam and the component without affecting the beam (e.g. a slit with a rotation stage).
-- `ReflectingComponent`: Component manages the angle and distance between the incoming beam and the component, outgoing beam is reflected from this angle (assume infitely long reflector at angle and distance from the incoming beam)
+- `ReflectingComponent`: Component manages the angle and distance between the incoming beam and the component, outgoing beam is reflected from this angle (assume infinitely long reflector at angle and distance from the incoming beam)
 - `ThetaComponent`: Component manages the angle between the incoming beam and the outgoing beam at the sample position. 
     - The readback calculates the angle to the beam intercept of another component. Note that if that component has a beam offset it will not be the position of the component but the position without the offset. The component used is the first component which is in the beam on its list in its configuration. For a beam line may contain an analyser followed by a detector if the analyser is in the beam it will be the angle to the analyser otherwise it is the angle to the detector. 
     - The setpoint works in the same way as the `ReflectingComponent` except that it will update the beam path of disabled components which define its angle.
@@ -106,28 +106,28 @@ The following is a subsection of the configuration showing beamline parameters a
 
 #### Whole Beamline Move
 
-When move for the whole beam line is activated the new positions of the motors are calculated using the following procedure. 
+When move for the whole beamline is activated the new positions of the motors are calculated using the following procedure. 
 
-1. Each of the sample parameter are considered in turn, going down the beam. 
+1. Each of the sample parameters is considered in turn, going down the beam. 
 2. The beamline parameter is "moved to" if it has changed or if it is in the mode and a previous beamline parameter in this mode has changed.
 3. When the beamline parameter is "moved to" the result of the calculation will be passed down to the component it controls.
     1. At this point the set point readback value will read the same as the set point
-    1.The component will then recalculate the beam path and instruct those components down beam to recalculate their beam paths.
+    1. The component will then recalculate the beam path and instruct those components down beamline to recalculate their beam paths.
 4. Once all beamline parameters have finished calculating along with new component positions all the composite driving layer calculates the slowest movement and performs the move at that speed for all components.
 
 #### Single Beamline Parameter Move
 
 When a single beamline parameter is set and moved on its own then:
 
-If the beamline parameters is in the current mode:
+If the beamline parameter is in the current mode:
 
 1. Each beamline parameter in the mode is considered in turn, going down the beam starting from the beamline parameter which just moved.
-2. If the parameters is in the mode the beamline parameters moves to it last set point (i.e. the one in the set point readback). This will pass down the calculation to the component it controls.
+2. If the parameter is in the mode the beamline parameter moves to its last set point (i.e. the one in the set point readback). This will pass down the calculation to the component it controls.
 3. Then we are back to above.
 
 If it is not in the mode:
 
-1. That beamline parameters sends its move to the component it controls.
+1. That beamline parameter sends its move to the component it controls.
 2. Then the beamline is recalculated
 3. Motors are then moved
 
@@ -135,13 +135,11 @@ If it is not in the mode:
 
 When the mode is changed to (not disable mode) the following happens:
 1. In beamline parameter order each pre-set is applied to the set-point.
-    1. This include setting whether the components are in the beam or not
+    1. This includes setting whether the components are in the beam or not
 2. The beamline parameters in the mode just set are used as the mode parameters.
 
 #### Disabled Mode
 
 Disabled mode is special because in this mode the movements are relative to the positions when the mode was entered into. This is done by disabling the beam calculation for each component. Only theta related parameters should be in the current mode. 
-
-
 
 
