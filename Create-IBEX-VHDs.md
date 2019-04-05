@@ -12,6 +12,12 @@
        1. I had to click help first
    1. Select location of VHD
 1. Open mapped drive copy the following:
+    1. Copy EPICS
+    1. Copy Client
+    1. Copy EPICS UTILS
+    1. Copy Python
+    1. Copy ICP Binaries into EPICS
+    1. Copy MySql
 
 
 
