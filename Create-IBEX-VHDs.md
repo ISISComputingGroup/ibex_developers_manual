@@ -19,4 +19,7 @@
     1. Copy Python
     1. Copy ICP Binaries into EPICS
     1. Copy MySql
-
+1. Close the CHD and copy back
+    1. Right click on drive on left at the bottom
+    1. Detach VHD
+    1. Copy file back to source
