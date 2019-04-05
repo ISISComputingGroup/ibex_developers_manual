@@ -34,8 +34,6 @@ To rebuild the submodules run `git submodule update --init --recursive --remote`
 - From `C:\instrument\apps\epics\css\master` remove `css-win.x86_64`
 - From `C:\instrument\apps\epics\css\master` run `setup_css.bat`
 
-If you can't run `create_icp_binaries` because of permission issues, copy the `CSS` folder from `\\olympic\Babylon5\Scratch\Tom Willemsen` into `C:\Instrument\Apps\EPICS\icp_binaries` and then proceed with the other two steps as usual.
-
 ### 6. Install MySQL8 as a service
 
 Save the following as a batch file somewhere on your computer and then run it **as administrator**. It is advised to launch this from within a command prompt so you can debug potential errors as it runs. When prompted for passwords, enter the MySQL root password. The MySQL root password is stored on the ISIS sharepoint, which you will need access to. 
