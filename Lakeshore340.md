@@ -1,6 +1,6 @@
 # Lakeshore 340
 
-The lakeshore 340 is an old, obsolete device used by LET to monitor the temperature of a sample when it is being cooled by a dilution fridge inside the 9T magnet.
+The lakeshore 340 is a device used by LET to monitor the temperature of a sample when it is being cooled by a dilution fridge inside the 9T magnet.
 
 This lakeshore has four measurement channels, each of which exposes a temperature and a raw measurement (usually a resistance from a thermocouple). The device supports multiple independent temperature control loops, however we only use one of these loops.
 
