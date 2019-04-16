@@ -100,6 +100,8 @@ TODO: I think we need a parameter driver and then we can more easily separate Sl
 
 ### Beamline Object
 
+The Beamline object is assembled in a python configuration file that lives in `<INST>/configurations/refl/config.py`. There is an example configuration file in the private Experiment Controls share area. It assumes motors 0101 - 0108 are reserved for height and angle of the components defined in this file, and that there are 4 jawsets titled `JAWS1` - `JAWS4` running.
+
 This is the coordinating object for the system, it performs the correct movements based on the beamline parameters and mode which is currently active. The mode dictates which parameters are active in the calculation and preset values for any parameters. There are a number of modes which need to be supported in the system; for example NR mode, polarised, disabled etc. There is also a natural ordering of beamline parameters and components when it comes to calculations due to the direction of the beam, i.e. parameters for components closer to the source should be calculated before those further away as the latter have to be calculated relative to the changed beam path. For example the polarising mirror and all calculation to do with it should be done before the sample point calculations. The architecture is that a beamline object holds the order of both the components and beamline parameters. The composite drivers do not have a natural order but these are also contained by the beamline object. It makes sure that all calculations are done in the order in which they are held. The following is a subsection of the configuration showing beamline parameters at the top, components in the middle and drivers at the bottom.
 
  ![beamline diagram](reflectometers/Beamline.png)
