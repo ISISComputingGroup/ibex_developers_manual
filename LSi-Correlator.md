@@ -68,3 +68,54 @@ There is also a vendor-supplied example script to use with the API, `ExampleMain
 
 To test that the python API functions in the same way as the vendor software, a DLS experiment (a run with the vendor software) was repeated several times using both the vendor software and the python API. Ideally, the correlation functions produced using both these methods will be indistinguishable within an experimental noise.
 
+The test procedure is:
+1. In the vendor software, perform a run with 5 repeats of 20 seconds each.
+1. After the runs have completed, export each of the data sets to CSV in the data analysis tab.
+1. To perform the same experiment from the python API, run this script (replacing for appopriate file paths, IPs...):
+
+```
+import sys
+sys.path.append( path_to_LSI Python API)
+
+import LSI.LSI_Param as pr
+from  LSICorrelator import LSICorrelator
+import time
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Replace for IP of correlator. Can be seen in the vendor software
+obj=LSICorrelator("X.X.X.X", "4.0.0.3")
+
+obj.setCorrelationType(pr.CorrelationType.AUTO)
+obj.setNormalization(pr.Normalization.COMPENSATED)
+obj.setMeasurementDuration(20)
+obj.setSwapChannels(pr.SwapChannels.ChA_ChB)
+obj.setSamplingTimeMultiT(pr.SamplingTimeMultiT.ns12_5)
+obj.setTransferRate(pr.TransferRate.ms100)
+obj.setOverloadLimit(20)
+obj.setOverloadTimeInterval(400)
+
+deltat=0.0524288
+
+obj.configure()
+
+for i in range(5):
+    print "Measurement "+str(i+1)
+    obj.start()
+
+    while obj.MeasurementOn():
+    
+       time.sleep(0.5)
+       obj.update()
+       timeTr=np.arange(len(obj.TraceChA))*deltat
+       TrA= np.asarray(obj.TraceChA)/(1000*deltat)
+       TrB= np.asarray(obj.TraceChB)/(1000*deltat)
+       
+    # Save the data acquired with the python API
+    np.savez(path_to_data+"pydata{}.npz".format(i), TrA=TrA, TrB=TrB, timeTr=timeTr, Lags=obj.Lags, Corr=obj.Correlation)
+    
+# This will not properly close the connection
+obj.close()
+```
+
+This script is a modified version of `ExampleMainCorrelator.py` provided with the vendor software
