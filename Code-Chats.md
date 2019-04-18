@@ -82,6 +82,10 @@ All presentations should be uploaded to the SharePoint site [here](https://www.f
 
 Topic | Presenter | Date
 ----- | --------- | ----
+Cryogenics | Tom | May 2019
+Queued State Machine | Kathryn | ?
+Beckhoff Code Camp Recap | Dom | ?
+ACCU Conference Recap | Michal / Jack | ?
 
 ### Proposed Future Code Chats
 
