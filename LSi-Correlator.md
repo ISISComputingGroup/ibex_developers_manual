@@ -63,3 +63,8 @@ There is also a vendor-supplied example script to use with the API, `ExampleMain
     - This is an issue, as the vendor software performs analysis on the raw data
 1. In order to use the vendor's analysis tools, we would have to reverse engineer the XML save format used
 1. We need to clarify that the correlated data from the python API is the 'correct' data that instrument scientists want
+
+## Python API vs vendor software
+
+To test that the python API functions in the same way as the vendor software, a DLS experiment (a run with the vendor software) was repeated several times using both the vendor software and the python API. Ideally, the correlation functions produced using both these methods will be indistinguishable within an experimental noise.
+
