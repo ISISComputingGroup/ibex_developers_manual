@@ -71,7 +71,7 @@ To test that the python API functions in the same way as the vendor software, a 
 The test procedure is:
 1. In the vendor software, perform a run with 5 repeats of 20 seconds each.
 1. After the runs have completed, export each of the data sets to CSV in the data analysis tab.
-1. To perform the same experiment from the python API, run this script (replacing for appopriate file paths, IPs...):
+1. To perform the same experiment from the python API, run this script (replacing for appropriate file paths, IPs...):
 
 ```
 import sys
