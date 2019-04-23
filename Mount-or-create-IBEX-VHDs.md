@@ -4,22 +4,25 @@
 
 - TODO Chris
 
+## Mount a VHD
+
+1. Open `cmd` in `O3` mode
+1. `diskmgmt.msc`
+1. Click Action -> Attach VHD
+    - I had to click help first
+1. Select location of VHD
+
 ## Add IBEX Apps to VHD
 
-1. Mount IBEX VHD
-   1. Open `cmd` in `O3` mode
-   1. `diskmgmt.msc`
-   1. Click Action -> Attach VHD
-       1. I had to click help first
-   1. Select location of VHD
-1. Open mapped drive copy the following:
+1. Mount the VHD (see [above](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Create-IBEX-VHDs/_edit#mount-a-vhd))
+1. Open mapped drive and copy the following:
     1. Copy EPICS
     1. Copy Client
     1. Copy EPICS UTILS
     1. Copy Python
     1. Copy ICP Binaries into EPICS
     1. Copy MySql
-1. Close the CHD and copy back
+1. Close the VHD and copy back
     1. Right click on drive on left at the bottom
     1. Detach VHD
     1. Copy file back to source
