@@ -16,4 +16,4 @@
 - [Quick Deploy](Quick-Deploy) (e.g. for Demo and R78)
 - [Upgrade ISISICP](Upgrade-ISISICP)
 - [Modifying Plugins on a Deployed Client](Modifying-Plugins-on-a-Deployed-Client)
-- [Create IBEX VHDs](Create-IBEX-VHDs)
+- [Mount or create IBEX VHDs](Mount-or-create-IBEX-VHDs)
