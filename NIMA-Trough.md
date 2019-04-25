@@ -10,6 +10,10 @@ The implementation for IBEX uses an lvDCOM solution. The IOC connects to a VI in
 
 The NIMA Trough IOC is not compatible with versions of the VI that are older than 2019-02-15. Ensure you update and VI drivers you have locally from source safe. Updated drivers should be available on DEMO.
 
+## Simulation
+
+When not connected to a physical device the NIMA Trough VI has an example data file (graph plot) and will respond to record processing. This allows you to observe some of the state and field behaviour. For example, you can process opening the barriers, and the VI will indicate the barriers are opening.
+
 # Troubleshooting
 
 ## Unable to start a run
