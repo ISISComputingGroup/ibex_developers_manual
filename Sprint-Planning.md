@@ -3,9 +3,10 @@
 ### Preparation
 
 1. Re-point any tickets in progress.
-1. Look at any IOC tickets and get someone to do an analysis of difficulty
+1. Look at any IOC tickets and get someone to do an analysis of the difficulty
 1. Prepare any extra tickets added to proposals in the same manner as for [backlog preparation](Backlog-Preparation).
 1. Prepare paper tickets for any tickets in progress but not started. User the filter `is:open -label:proposal -label:"in progress" label:"ready" -label:"review" -label:"completed" -label:"impeded"`
+1. Prepare paper tickets for any pending tasks.
 
 ### During meeting
 
