@@ -13,3 +13,14 @@ We may want to release a single IOC to an instrument but not release a whole bui
 1. Run in a epics terminal in EPICS `utils\build_ioc_startups.py`
     - If this fails it can be because there is a duplicate IOC.  The error message is rubbish!
 1. Restart the IBEX server.
+1. Test the IOC boots and connects
+
+## Troubleshooting
+
+### IOC does not Start
+
+Look at the IOC log this should give you a clue. If there is no log message in the IOC log, i.e. it just appears to be restarting itself. Start the IOC from the command line. If you then get a pop-up message box with:
+
+    "xxx.dll" not found 
+
+This means that a function has been added to a module that this IOC relies on to work. Locate the function and the module it belongs to then copy over this module and try again. This can now affect not just your IOC but others that rely on this new module; Make sure that this is what you want.
