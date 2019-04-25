@@ -45,6 +45,7 @@ Developers should pick up a ticket as close to the top of the Ready column as th
         - Add a step to the upgrade script (usually when it is a simple change which effects a single instrument)
         - Go onto the instrument and add the change (be *very* sure it will not effect anything)
     - Add summary to the [Dev Release Notes](https://github.com/ISISComputingGroup/IBEX/wiki/ReleaseNotes_Dev) in the section `Changes in software but still on a branch`.
+    - Try to get an informal review to check for glaring problems.
     - Move the ticket to the top of the review column (unless it is high priority in that case move it to the bottom). 
 3. Pick a ticket to review from the bottom of the review column. Review the ticket and move it either to the review complete or add the rework label and move it back to the top of the ready column (it is a courtesy to inform the person you have done this). You must do a review when you move any ticket to the review column even if it is a rework. (A rework ticket review counts as a review).
 4. If changes are merged into master, add the ticket to the [Dev Release Notes](https://github.com/ISISComputingGroup/IBEX/wiki/ReleaseNotes_Dev).
