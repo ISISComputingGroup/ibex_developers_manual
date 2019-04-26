@@ -18,8 +18,11 @@ See  [Install Visual Studio](Install-Visual-Studio)
 # Install CMake
 Install [CMake](https://cmake.org/download/) 
 
-# Install Java SDK
-Install the [Java SDK for Windows x64](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+# Install Java JDK
+
+Install **OpenJDK 8** from https://adoptopenjdk.net/releases.html#x64_win (the MSI installer is fine, tick all the boxes when it asks you which components to install)
+
+Do not install an Oracle JDK.
 
 # Install Maven 
 Install [Maven](https://maven.apache.org/download.cgi) and follow the 'Windows tips' in [these instructions ](https://maven.apache.org/install.html) to set environment variables for the SDK with JAVA_HOME and maven in PATH
