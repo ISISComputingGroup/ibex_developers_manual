@@ -86,13 +86,12 @@ ACCU Conference Recap | Michal / Jack | April 2019
 Queued State Machine | Kathryn | April 2019
 Cryogenics | Tom | May 2019
 Beckhoff Code Camp Recap | Dom | May 2019
-Custom GUI Layouts | Thomas | June 2019?
 
 ### Proposed Future Code Chats
 
 Idea | Proposed Speaker
 ---- | ----------------
-Sharing IOCs | ?
+Custom GUI Layouts | Thomas
 
 
 ## Cake Rota
