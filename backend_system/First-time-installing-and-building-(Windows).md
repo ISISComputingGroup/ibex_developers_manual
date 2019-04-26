@@ -20,7 +20,7 @@ Install [CMake](https://cmake.org/download/)
 
 # Install Java JDK
 
-Install **OpenJDK 8** from https://adoptopenjdk.net/releases.html#x64_win (the MSI installer is fine, tick all the boxes when it asks you which components to install)
+Install **OpenJDK 8 hotspot** from https://adoptopenjdk.net/releases.html#x64_win (the MSI installer is fine, tick all the boxes when it asks you which components to install)
 
 Do not install an Oracle JDK.
 
