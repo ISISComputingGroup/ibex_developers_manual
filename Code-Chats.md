@@ -83,9 +83,10 @@ All presentations should be uploaded to the SharePoint site [here](https://www.f
 Topic | Presenter | Date
 ----- | --------- | ----
 ACCU Conference Recap | Michal / Jack | April 2019
+Queued State Machine | Kathryn | April 2019
 Cryogenics | Tom | May 2019
-Queued State Machine | Kathryn | ?
-Beckhoff Code Camp Recap | Dom | ?
+Beckhoff Code Camp Recap | Dom | May 2019
+Custom GUI Layouts | Thomas | June 2019?
 
 ### Proposed Future Code Chats
 
