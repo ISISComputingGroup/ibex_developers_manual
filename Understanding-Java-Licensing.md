@@ -1,6 +1,12 @@
 > [Wiki](Home) > [Deployment](Deployment) > [Creating a release](Creating a release) > Understanding Java Licensing
 
-# Understanding Java Licensing
+# Understanding Java Licensing - OpenJDK
+
+The OpenJDK is what we use on the IBEX project. The OpenJDK is available under the GNU General Public License (GPL). The license is included in the JDK directory, for reference if required.
+
+# Understanding Java Licensing - Oracle JDK
+
+**Note: we should not normally need an oracle JDK. This information is left here for completeness.**
 
 In December 2016, Oracle announced that they would be taking steps to ensure customers using commercial features of Java paid the appropriate license fee (see [The Register](http://www.theregister.co.uk/2016/12/16/oracle_targets_java_users_non_compliance/) article).  This announcement has caused some confusion.  The purpose of this page is to clarify Java Licensing for IBEX developers.
 
