@@ -19,6 +19,7 @@ The red part of this diagram is written in C++/CLI to communicate with the .NET 
 * There is a resonance that means the chopper cannot run at 180Hz, this is reflected in the control scripts on LET and in the IOC itself.
 * There is a resume command in the C# dll. This does nothing.
 * The frequency SP_RBV from the device always reads zero.
+* Sending a frequency setpoint may cause the frequency setpoint to be "corrupted" (the chopper will report that it is phasing to one value, but actually phase to an entirely different value). This is mitigated in the driver by resending the phase any time the frequency is set.
 
 ## Chopper 1 (NCS016) ##
 
