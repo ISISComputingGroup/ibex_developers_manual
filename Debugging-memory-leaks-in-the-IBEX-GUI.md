@@ -12,7 +12,7 @@ This page is currently heavily based on https://github.com/ISISComputingGroup/IB
 
 ## Tools
 
-- Java visual VM (`C:\Program Files\Java\jdk1.8.0_73\bin\jvisualvm.exe` for example)
+- Java visual VM (download the GPL-licensed binary from https://visualvm.github.io/download.html )
 
 - Eclipse debugger
 
