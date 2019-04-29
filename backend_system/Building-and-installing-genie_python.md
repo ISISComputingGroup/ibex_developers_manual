@@ -77,6 +77,8 @@ On the instrument connect to the shared drive (\\\\isis\inst$\Kits$\CompGroup\IC
 
 Please check that Notepad++ is set to replace tabs with spaces - it saves a lot of bother later when writing scripts.
 
+On some computer you may have to [set the core type that the `open blas` library uses](genie_python-Troubleshooting#genie_python-rashes-on-start-underlying-python-works-but-fails-on-import-numpy).
+
 ### The location of instrument specific scripts
 
 By default when setting an instrument the `init_default.py` file is loaded. This file checks for the existence of a folder called `C:\Instrument\Settings\config\NDX%INSTNAME%\Python` and adds this to the system path if it does. If this path exists and contains a file called `init_%INSTNAME%.py`, it will load it too.
