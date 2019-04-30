@@ -63,7 +63,11 @@ The host and port for the backdoor are specified in the `-r` argument at startup
 
 NOTE: at the time of writing, you can't type `localhost` for the `-r` argument.
 
-The backdoor can be operated either via the command line through `lewis-control` or can be scripted, as described in the Lewis documentation.
+Once the emulator is running, the backdoor can be operated either via the command line through `lewis-control`:
+```
+C:\instrument\apps\python\python.exe C:\Instrument\apps\python\scripts\lewis-control.exe -r 127.0.0.1:10000 device "backdoor command" "arguments"
+```
+or can be scripted, as described in the Lewis documentation.
 
 **NOTE**: The simulation command `disconnect_device` seems to simulate the device not responding to the port, which is different from a lost connection: the IOC reports `No reply from device within xxx ms`. When the emulator is actually stopped, with the simulation `stop` command, the IOC detects that there is really no connection and reports `Can't connect to localhost:<port>`.
 
