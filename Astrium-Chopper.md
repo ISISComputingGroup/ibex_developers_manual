@@ -36,3 +36,9 @@ The toggle switch is labelled _quit failure_ and LED 8 can be seen to the right 
 ## Chopper 5 (NCS017) ##
 
 It is believed that the reset is not required on this system.
+
+## Troubleshooting
+
+# Building Issues
+
+If you're having trouble building the Astrium chopper with error messages relating to the Boost library, you need to update visual studio 2017 (15.9.21 works) as there is a compiler bug in earlier versions of VS.
