@@ -291,15 +291,6 @@ Write Commands
     Loads the specified configuration. Requires a compressed and hexed JSON string. This automatically restarts the blocks gateway and updates the archiver
 
     Returns "OK" or an error message (compressed and hexed JSON).
-
-**BLOCKSERVER:SAVE_CONFIG**
-Note: Used by the client(s) for "save" and "save as" for the current active configuration
-
-    Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:SAVE_CONFIG abcdefabdcdefabcdef1234567890
-    Saves the current active configuration under the specified name. Requires a compressed and hexed JSON string.
-    The active configuration's name will be changed to the new name.
-
-    Returns "OK" or an error message (compressed and hexed JSON).
     
 **BLOCKSERVER:CLEAR_CONFIG**
 
