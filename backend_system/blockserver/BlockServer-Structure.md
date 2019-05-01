@@ -22,7 +22,7 @@ BlockServer, static PVs and dynamic PVs:
   and write() methods. Most of the PVs the BlockServer uses are written like this and the method is well documented in the pcaspy 
   documentation_. Note that if you are monitoring this PV for changes, you need to call setParam() followed by updatePVs() in the blockserver to propagate this change to the monitors. You can check whether this is working properly by putting a `camonitor` on the PV in question and checking that it automatically updates when the PV value is changed.
 
-.. _documentation: http://pcaspy.readthedocs.org/en/latest/
+Documentation: http://pcaspy.readthedocs.org/en/latest/
 
 * Dynamic PVs are more complex and are required for serving PVs for each inactive configuration, the names of which are not known
   until startup. To do this we have created our own pcaspy server called CAServer that can be found in 
@@ -37,44 +37,20 @@ A simple example of both the static and dynamic PVs is located in inst_server\\B
 
 # Configuration Servers
 
-There are two Configuration Server Manager classes. The ActiveConfigHolder class holds the currently configuration and deals with the
-JSON communication between the BlockServer PVs and what modifications to make for the configuration. It also controls the running of 
-the IOCs. This class is a subclass of ConfigHolder which is used to hold the basic details about the configurations as
-well as save/load them to disk. Most, if not all, of the individual get/set methods in the ConfigHolder are being replaced by catch-all
-get_config_details() and set_config_details(). A reduced description of the classes is given below:
+There are two Configuration Server Manager classes. The ActiveConfigHolder class holds the currently configuration and deals with the JSON communication between the BlockServer PVs and what modifications to make for the configuration. It also controls the running of the IOCs. This class is a subclass of ConfigHolder which is used to hold the basic details about the configurations as well as save/load them to disk. Most, if not all, of the individual get/set methods in the ConfigHolder are being replaced by catch-all get_config_details() and set_config_details(). A reduced description of the classes is given below:
 
 ![Config Server UML](backend_system/blockserver/images/Block-Server-Configuration-Rules/config_servers_uml.png)
 	
 # Configurations
 
-The ConfigHolder class does most of the implementation for the specifics of editing a configuration making sure that all parts of the 
-configuration follow the correct rules. It holds a Configuration object which does very little other than contain all the relevant 
-configuration details. There are also small container classes to hold separate Blocks, Groups, IOCs and MetaData.
+The ConfigHolder class does most of the implementation for the specifics of editing a configuration making sure that all parts of the configuration follow the correct rules. It holds a Configuration object which does very little other than contain all the relevant configuration details. There are also small container classes to hold separate Blocks, Groups, IOCs and MetaData.
 
 The ConfigHolder also uses the methods from the static class ConfigurationFileManager, which deal with the specifics of the file system
 including version control of configuration files. This FileManager class uses a ConfigurationXmlConverter object to help convert into 
 the xml used for saving and loading.
 
-![Configs UML](backend_system/blockserver/images/Block-Server-Configuration-Rules/configs_uml.png)
-	
-# Inactive Configs
+# Setting a new configuration
 
-The ConfigListManager class is responsible for the details of all of the configurations, both the active one and the inactive ones, 
-on the file system. When the BlockServer is first started this class will search through the configurations folder and do the following
-for each config:
+When the GUI sets a new configuration, whether by editing the current configuration or by loading a configuration from disk, the configuration is first saved into an inactive configuration object and then loaded into the active configuration. This means that there is only one code path for changing the current configuration.
 
-1. Check folders hold the expected files
-2. Check the xml files against the schema (using the static ConfigurationSchemaChecker class)
-3. Load the files into a dummy InactiveConfigHolder
-4. Create a PV name based on the configuration name but ensuring only valid chars
-5. Create a PV for the configuration that gives all data on it
-6. For each component the configurations that contain it are noted in a dictionary
-
-When modifications are made to configurations through the BlockServer PVs these steps are repeated for the modified configuration.
-
-The ConfigListManager is also responsible for ensuring that configurations are correctly deleted. When a configuration is deleted via 
-the DELET_CONFIG or DELETE_COMP PVs there will be a check that the any active configurations/components are not being deleted. If the 
-configuration is safe to delete the corresponding PVs are unregistered and the files are removed from both the file system and version 
-control.
-
-![Config List UML](backend_system/blockserver/images/Block-Server-Configuration-Rules/config_list_uml.png)
+When loading a new configuration, the blockserver will decide which iocs need to be started or restarted based on the differences in attributes of the current configuration and the new configuration. Likewise, it will only restart other services (block cache, run control, etc) if necessary.
