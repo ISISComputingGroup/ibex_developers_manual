@@ -4,9 +4,7 @@
 
 This document is intended to outline the internal structure of the BlockServer for reference by future developers. Please be aware that the BlockServer is a work in progress and as such this document is liable to change.
 
-----------
-Overview
-----------
+# Overview
 
 The BlockServer's main responsibility is to look after configurations and their associated files. It can be used to read/write
 to both the active configuration on the instrument and other potential configurations in the filesystem. It also contains a
@@ -15,9 +13,7 @@ significant parts:
 
 ![Full UML](backend_system/blockserver/images/Block-Server-Configuration-Rules/full_uml.png)
 
-----------------
-Channel Access
-----------------
+# Channel Access
 
 The BlockServer uses the pcaspy Python module to implement channel access. There are two main means of implementing PVs in the
 BlockServer, static PVs and dynamic PVs:
@@ -39,9 +35,7 @@ BlockServer, static PVs and dynamic PVs:
    
 A simple example of both the static and dynamic PVs is located in inst_server\\BlockServer\\blockserver_docs\\resources\\pcaspy_example.
 
------------------------
-Configuration Servers
------------------------
+# Configuration Servers
 
 There are two Configuration Server Manager classes. The ActiveConfigHolder class holds the currently configuration and deals with the
 JSON communication between the BlockServer PVs and what modifications to make for the configuration. It also controls the running of 
@@ -51,9 +45,7 @@ get_config_details() and set_config_details(). A reduced description of the clas
 
 ![Config Server UML](backend_system/blockserver/images/Block-Server-Configuration-Rules/config_servers_uml.png)
 	
-----------------
-Configurations
-----------------
+# Configurations
 
 The ConfigHolder class does most of the implementation for the specifics of editing a configuration making sure that all parts of the 
 configuration follow the correct rules. It holds a Configuration object which does very little other than contain all the relevant 
@@ -65,9 +57,7 @@ the xml used for saving and loading.
 
 ![Configs UML](backend_system/blockserver/images/Block-Server-Configuration-Rules/configs_uml.png)
 	
-------------------
-Inactive Configs
-------------------
+# Inactive Configs
 
 The ConfigListManager class is responsible for the details of all of the configurations, both the active one and the inactive ones, 
 on the file system. When the BlockServer is first started this class will search through the configurations folder and do the following
@@ -88,31 +78,3 @@ configuration is safe to delete the corresponding PVs are unregistered and the f
 control.
 
 ![Config List UML](backend_system/blockserver/images/Block-Server-Configuration-Rules/config_list_uml.png)
-	
---------------
-File Watcher
---------------
-
-The BlockServer also contains a File Watcher to ensure that any by-hand modifications made to configurations are done correctly and are
-passed on to the client. On startup the BlockServer will create a ConfigFileWatcherManager object, which is passed an instance of the
-ConfigListManager class. The ConfigFileWatcherManager will then create two ConfigFileEventHandler objects, one for configurations and 
-another for the components. 
-
-When a file is modified the Event Handlers will:
-
-1. Check files against the schema
-2. Load the files into a dummy InactiveConfigHolder
-3. Update the PVs in the ConfigListManager (using a lock as the handler is on a different thread). The ConfigListManager must then pass
-   this up to the BlockServer object to modify the CONFIGS/COMPS PVs.
-4. Update version control with the modifications
-
-The event handlers will also handle files being deleted by:
-
-1. Recovering the deleted folder from version control
-2. Check that part of a config hasn't been deleted
-3. Call for the configuration to be deleted via the ConfigListManager
-
-The ConfigFileWatcherManager can be paused and resumed when known modifications are being made to the file system.
-
-![Config List UML](backend_system/blockserver/images/Block-Server-Configuration-Rules/file_watcher_uml.png)
-	
