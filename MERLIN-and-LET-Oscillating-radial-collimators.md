@@ -18,5 +18,5 @@ To restart this is sometimes tricky try the following:
 1. The `Mode` should now read `Homing` then `Oscillating` and the current angle should start changing. 
     - this was fairly quick (less than 1 minute)
 
-Hardware quirks:
+# Hardware quirks:
 - The thread will die if zero is sent for distance and velocity. The driver must ensure that distance and velocity are not sent at IOC start.
