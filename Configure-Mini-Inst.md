@@ -1,7 +1,9 @@
-> [Wiki](Home) > [Deployment](Deployment) > [Deployment on an Instrument Control PC](Deployment-on-an-Instrument-Control-PC) > Configure Mini Inst
+> [Wiki](Home) > [Deployment](Deployment) > [Deployment on an Instrument Control PC](Deployment-on-an-Instrument-Control-PC) 
+> Configure Mini Inst
 
-As well as installing the EPICS aspects of the instrument, the directory `C:\Instrument\Settings\config\NDXxxxxx\configurations\`.
+To install a mini inst, you need to install the EPICS backend and add the following in the `\NDXxxxxx\configurations\` area.
 
-Inside that directory create
-- startup.txt which contains a list of the IOCs to start (use the IOC name as in the IOCs list)
-- globals.txt with the macro values relating to the IOCs in startup.txt
+- `startup.txt`: contains a list of the IOCs to start (use the IOC name as in the IOCs list)
+- `globals.txt`: add macro values you want the IOCs in `startup.txt` to start up with. To do this, add a line per macro of the format `<IOC_name>__<macro_name>=<macro_value>`
+
+You can start up the mini inst using the normal `start_ibex_server`. It will look for the `startup.txt` and start up the mini inst instead of the full IBEX server if it exists.
