@@ -101,3 +101,14 @@ The PV naming conventions are described on the [PV naming](PV-Naming) page.
         field(SCAN, "1 second")
     }
     ```
+
+1. For a value(s) which the user wants to review before changing then press a set button:
+    - `XXX` - read back
+    - `XXX:SP` - set the value immediately
+    - `XXX:SP:RBV` - the value that the device has as a setpoint
+    - `XXX:SP_NO_ACTION` - don't set the value but wait (this is a temporary value if you restart the IOC it is lost, consider putting autosave on it)
+    - `XXX:ACTION` - when written to with any value take the SP_NO_MOVE and send it to the device
+    - `XXX:ACTION:SP` - when written to with any value take the SP_NO_MOVE and send it to the device
+    - `XXX:CHANGED` - are the setpoint on device and current setpoint different? It is an enum:
+        - `NO` there is no change to apply
+        - `YES` there is a change to apply
