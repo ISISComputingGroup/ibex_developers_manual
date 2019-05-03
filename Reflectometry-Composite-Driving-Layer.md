@@ -9,9 +9,14 @@ The layer consists of drivers which take setpoint values from components and pus
 
 There are various PV wrapper types which handle the mapping of parameters to the correct PVs based on different conventions. These are:
 - PVWrapper: base wrapper that has all the utility functions (e.g. monitors and change listeners) but will not point at a real PV
-- MotorPVWrapper: read and write to a motor pv
+- MotorPVWrapper: read and write to a motor PV
 - AxisPVWrapper: read and write to an axis
 - VerticalJawsPVWrapper: read and write to a jaw set without a height stage (height defined by vertical centre)
 
 
-TODO: I think we need a parameter driver and then we can more easily separate SlitGapParameter from their pv wrappers.
+TODO: I think we need a parameter driver and then we can more easily separate SlitGapParameter from their PV wrappers.
+
+
+### Engineering Offset
+
+TODO
