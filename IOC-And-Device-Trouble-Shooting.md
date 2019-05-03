@@ -103,6 +103,14 @@ The result was a `UDF` alarm on the `bi` because the `RVAL` wasn't being updated
 
 This is caused when something bad happens to the stack. There are many underlying causes to this, in my case it was that the IOC had loaded a dll which used an incorrect version of visual studio in its build. The dlls that are loaded (with their paths) can be seen in debug -> Windows -> Modules in VS. To check if it is this error delete the offending dll and try the process again. To fix the error convert the IOC to use build dependencies instead of the master release list, instructions are in [Reducing Build Dependencies](Reducing-Build-Dependencies)
 
+## Log shows `currentTime::getCurrentTime(): XXX sec time discontinuity detected`
+
+The log for all IOCs shows the message:
+
+    currentTime::getCurrentTime(): XXX sec time discontinuity detected
+
+It is caused by the time going backwards due to a correction; the underlying cause is unknown. However, this seems to disappear once the host machine is restarted.
+
 # Autosave
 
 ## Lost autosave values (especially on Galils)
