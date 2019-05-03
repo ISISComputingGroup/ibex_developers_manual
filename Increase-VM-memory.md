@@ -19,12 +19,12 @@ the `/admin` should ideally be used as it is possible to have more than one conc
 The space taken by the running VM on the C: drive will be increased by the amount of extra memory allocated to the machine.  So, for example if the machine was 8GB going to 14GB it will take up another 6GB on the system drive.  Ensure that the expansion will not take the C: drive below the minimum of 20GB.
 
 The running VM memory size can be seen from Hyper-V manager.  Start this by clicking on 
-![image](https://user-images.githubusercontent.com/3035405/56803634-165b5200-681b-11e9-97f1-8ce2f8784b1c.png) on the toolbar.
+![](https://raw.githubusercontent.com/ISISComputingGroup/ibex_developers_manual/master/images/vm-memory-hyper-v-icon.png) on the toolbar.
 
 ### Shut down the VM to be modified (NDXDETECT1)
 Normally there will only be one NDX VM running but in this example there are actually two, we will only increase the memory size for the first one.  On the Hyper-V manager window, right click on the VM and select `Connect...` as shown (or double click). This will open a console window on NDXDETECT1.
 
-![image](https://user-images.githubusercontent.com/3035405/56976828-b858a280-6b6b-11e9-84bf-645a4393caf8.png)
+![](https://raw.githubusercontent.com/ISISComputingGroup/ibex_developers_manual/master/images/vm-memory-connect-to-vm.png)
 
 If necessary log on to the instrument as `.\spudulike`, password as normal.  Open a console (`Command Prompt`) window and type
 
@@ -37,10 +37,10 @@ If you normally use `Start->Run...` to run commands, please type "cmd" and creat
 ### Change the startup/maximum memory setting for the VM in Hyper-V manager to 14GB
 When the machine has shut down, right click again in Hyper-V manager as before, but this time select `Settings...` The dialogue shown below will appear.
 
-![image](https://user-images.githubusercontent.com/3035405/56978279-1044d880-6b6f-11e9-8a25-4e6877953e36.png)
+![](https://raw.githubusercontent.com/ISISComputingGroup/ibex_developers_manual/master/images/vm-memory-change-memory.png)
 
   Navigate to expand the "Processor" settings and select "NUMA".  Click once on the "Use Hardware Topology"
-![image](https://user-images.githubusercontent.com/3035405/56978068-9a407180-6b6e-11e9-8345-13f6a07cd585.png)
+![](https://raw.githubusercontent.com/ISISComputingGroup/ibex_developers_manual/master/images/vm-memory-use-hardware-topology.png)
  button.  The numbers above may change a bit (but likely will not), in either case, select the "Maximum amount of Memory" and copy the figure here.  On the "Hardware" pane on left hand side, select "Memory." Paste the figure you just copied into the box for "Startup RAM:" and click `Apply`.   As long as this completes without error the job is done.  Close the window, right click as before on the VM but this time choose `Start`.  Check that the system boots OK, the console window will show the boot process.  Ensure that the system is running as it should.  You can check in task manager (on the performance tab) to see that the physical memory has now expanded.
 
 ### Endnote
