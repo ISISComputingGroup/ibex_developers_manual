@@ -58,7 +58,8 @@ All PVs should have if appropriate:
 
 The build in Jenkins will fail if the rules of the [DBUnitChecker](PV-Units-&-Standards) script are not satisfied. You might as well check them beforehand to save yourself time later. From an epics terminal: 
 ```
-python C:\Instrument\Apps\EPICS\ISIS\DbUnitChecker\master\run_tests.py -i <directory to check>
+cd C:\Instrument\Apps\EPICS\ISIS\DbUnitChecker\master
+python run_tests.py -i <directory to check>
 ```
 To check it will not fail the build.
 
