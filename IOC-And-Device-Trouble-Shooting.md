@@ -107,7 +107,9 @@ This is caused when something bad happens to the stack. There are many underlyin
 
 The log for all IOCs shows the message:
 
-    currentTime::getCurrentTime(): XXX sec time discontinuity detected
+```
+currentTime::getCurrentTime(): XXX sec time discontinuity detected
+```
 
 It is caused by the time going backwards due to a correction; the underlying cause is unknown. However, this seems to disappear once the host machine is restarted.
 
