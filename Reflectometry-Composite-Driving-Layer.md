@@ -26,4 +26,10 @@ Engineering offsets correct the value sent to a PV because of inaccuracies in th
 
 Note that in this case, the zero motor position is no longer necessarily zero, while this does not affect the maths, users will probably want to ensure that in the straight-through case the motor is zero.
 
-The configuration for this is 
+The configuration for this is to add an engineering offset object to the IOCDriver as an argument this will do the following:
+
+1. Convert readbacks from the IOC PVWrapper to the uncorrected value 
+1. Convert set-point readbacks from the IOC PVWrapper to the uncorrected value
+1. Convert set-points from the component to the value that needs setting
+1. Convert the initialised set-point from the motor to be the value that needs setting
+    1. This is hard because it is the inverse of an nxn matrix potentially.
