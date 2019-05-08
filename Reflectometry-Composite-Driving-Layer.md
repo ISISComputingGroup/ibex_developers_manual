@@ -32,4 +32,4 @@ The configuration for this is to add an engineering offset object to the IOCDriv
 1. Convert set-point readbacks from the IOC PVWrapper to the uncorrected value
 1. Convert set-points from the component to the value that needs setting
 1. Convert the initialised set-point from the motor to be the value that needs setting
-    1. This is hard because it is the inverse of an nxn matrix potentially.
+    1. This is hard because it is the inverse of an `nxn` matrix potentially.
