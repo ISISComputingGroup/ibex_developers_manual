@@ -42,3 +42,5 @@ It is believed that the reset is not required on this system.
 ### Build Issues
 
 If you're having trouble building the Astrium chopper with error messages relating to the Boost library, you need to update visual studio 2017 (15.9.21 works) as there is a compiler bug in earlier versions of VS.
+
+If you're getting `fatal error LNK1104: cannot open file 'MSCOREE.lib'` you need to add WindowsSDK 10.0.15063.xxx (or possibly ALL available Windows SDKs that Visual studio has available, but try the one mentioned first). Run the Visual Studio Installer, Select modify, and scroll through the sidebar and/or the 'Individual Components' tab looking for Windows SDK versions. I (Liam, with Tom's help) ended up installing 50GB+ of extra packages to get this to work. If you solve the issue in a more streamlined way (i.e. _only_ installing the above version of the SDK, rahter than everything) _please_ update this troubleshooting tip. 
