@@ -24,3 +24,20 @@ Interlock and power status can be testing by setting status PV: `%MYPVPREFIX%DFK
 
 Interlock and power status can be testing by setting status PV: `%MYPVPREFIX%DFKPS_0X:SIM:STATUS`. To switch the power off it must be a binary value with 2 digit set (e.g. 2) for the interlock it must be any value which is greater than 3 digit (e.g. 4). The value 6 would trigger both.
 
+## Connecting to an 8500 series through serial
+
+The serial standard (RS232, 422 OR 485) used by a danfysik 8500 series is determined by the position of a jumper on the control board. This may need to be put in place for a new power supply.
+
+As the MCR network uses RS422, the jumper position will need to be changed if the PSU was previously controlled by the MCR.
+
+Only change the **remote line**. The local line changes how the PSU communicates with its front panel.
+
+The steps to change the serial standard to RS232:
+
+1. Contact a technician responsible for the PSU. They will open the control panel for you (behind the built-in display).
+1. Move the jumper from either `ST10` or `ST11` to position `ST9` (RS232 only).
+   - The position of the jumper is illustrated in figure 13 of the 8500 series user manual on the manuals share
+   - Which jumpers to short circuit `(S/C)` or leave as open circuit `(O/C)` are given in table 12.
+   - Do not change the jumpers listed in table 11.
+
+Note: There are two 8500 series which required a null modem on the 25-way connector. 
