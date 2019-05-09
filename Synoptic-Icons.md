@@ -12,11 +12,14 @@
 
 [GIMP](http://www.gimp.org/) is a powerful, free image editing program that can be used to create icons for Synoptics.
 
-(An alternative is [Inkscape](https://inkscape.org/) which is a vector graphics editor and possibly more suited to icon creation and editing)
+(An alternative is [Inkscape](https://inkscape.org/) which is a vector graphics editor and possibly more suited to icon creation and editing.  Please see the [Basic Tutorial](https://inkscape.org/en/doc/tutorials/basic/tutorial-basic.html) for an introduction to the program.)
 
 First, create a new file and find the "Layers"-window in the GIMP taskbar under `Windows > Dockable Dialogs > Layers`. Delete the background layer from the list. Create a new layer by right-clicking the layers window or from the `Layer` tab in the taskbar. Make sure the Layer Fill Type is set to "Transparency". Draw your Icon on this layer.
 
-You can specify which icon should appear in the synoptic with the file `uk.ac.stfc.isis.ibex.ui.devicescreens/ComponentIcons.java`. If you need to add new icons for the synoptic, these are under `uk.ac.stfc.isis.ibex.ui.devicescreens/icons` (both big icons for the actual synoptic and thumbnails for the synoptic editor). Please follow these guidelines when creating new synoptic icons (e.g. `icon.png`) and ensure thumbnail icon have a `_tb` suffix (e.g., `icon_tb.png`).
+You can specify which icon should appear in the synoptic with the file `uk.ac.stfc.isis.ibex.ui.devicescreens/ComponentIcons.java`.  The case name in the switch statement should match the `<type>` key for the device in `opi_info.xml`.  e.g. `<type>PUMP</type>` and ```case PUMP:
+                return "pump";``` where the returned value is the icon's base filename.
+
+If you need to add new icons for the synoptic, these are under `uk.ac.stfc.isis.ibex.ui.devicescreens/icons` (both full size icons for the actual synoptic and thumbnails for the synoptic editor and device screens perspective). Please follow these guidelines when creating new synoptic icons (e.g. `icon.png`) and ensure thumbnail icons have a `_tb` suffix (e.g., `icon_tb.png`).
 
 ### Centred Icons
 To centre your new (or a pre-existing) icon, open the file in gimp and follow these steps:
