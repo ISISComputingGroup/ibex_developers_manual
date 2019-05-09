@@ -42,7 +42,7 @@ These are the list of categories for an IOC. The IOC can appear in multiple cate
 
 [Temperature Controllers](Temperature-Controllers)
 
-[Water Baths](Water-Baths)
+[Water\Oil Baths](Water-Baths)
 
 [Cryogenic Inc. Systems](Cryogenic-Inc-Systems) e.g. HIFI Cryomag
 
