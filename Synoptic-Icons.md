@@ -10,7 +10,9 @@
 ### Creating Icons
 (Note: this page will not discuss the creative process involved in creating an icon)
 
-[GIMP](http://www.gimp.org/) is a powerful, free image editing program that can be used to create icons for Synoptics. 
+[GIMP](http://www.gimp.org/) is a powerful, free image editing program that can be used to create icons for Synoptics.
+
+(An alternative is [Inkscape](https://inkscape.org/) which is a vector graphics editor and possibly more suited to icon creation and editing)
 
 First, create a new file and find the "Layers"-window in the GIMP taskbar under `Windows > Dockable Dialogs > Layers`. Delete the background layer from the list. Create a new layer by right-clicking the layers window or from the `Layer` tab in the taskbar. Make sure the Layer Fill Type is set to "Transparency". Draw your Icon on this layer.
 
