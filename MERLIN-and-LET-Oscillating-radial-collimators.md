@@ -20,4 +20,3 @@ To restart this is sometimes tricky try the following:
 
 # Hardware quirks:
 - The thread will die if zero is sent for distance and velocity. The driver must ensure that distance and velocity are not sent at IOC start.
-- Only the oscillation angle (not frequency) can be changed on-the-fly. To change the frequency the collimator must be physically stopped and restarted. I believe this is a limitation of the GMC code.
