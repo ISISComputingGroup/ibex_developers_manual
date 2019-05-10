@@ -13,3 +13,5 @@
 * [Humidity Controller](Humidity-Controller)
 
 * [LSi Correlator](LSi-Correlator)
+
+* [OBIS Laser Remote](OBIS-Remote)
