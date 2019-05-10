@@ -12,6 +12,7 @@ Steps are marked with **bold** prefixes to indicate the following:
 ## Preparatory Steps for Client and Server
 
 - Inform the instrument scientist that you are going to upgrade the instrument in 5 minutes so that they are not surprised when you remote desktop to the instrument. Wait 5 minutes.
+- Visit each instrument on which code will be released and check for changes which have been made which are not summarised on the [IBEX wiki](https://github.com/ISISComputingGroup/IBEX/wiki#instrument-information). Do this by running `git status` in the EPICs directory and looking at the diff and comparing with those changes.
 - Make sure that the public share has the most recent version of the install and upgrade information from Git (i.e. do git pull).
 
 #### install
