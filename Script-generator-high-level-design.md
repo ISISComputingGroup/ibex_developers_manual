@@ -4,8 +4,8 @@ Meeting to discuss this happened. Summary of the main points that were discussed
 
 A high level design to use **Eclipse RCP** was agreed. We will build this in two configurations:
 - As a perspective in the IBEX GUI, similar to other existing perspectives
-- As a standalone application
-Note that these two configurations will be using the same code (except for build-specific files).
+- As a standalone application <br>
+**Note:** these two configurations will be using the same code (except for build-specific files).
 
 The following general design points were agreed:
 - The GUI will be written in Java (eclipse rcp). It should have minimal logic in it other than pure display logic
