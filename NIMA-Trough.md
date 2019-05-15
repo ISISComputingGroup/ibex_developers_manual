@@ -18,7 +18,11 @@ When not connected to a physical device the NIMA Trough VI has an example data f
 
 ## Unable to start a run
 
-The NIMA Trough GUI can perform 3 runs, and each is individually saved to a file. Once these 3 files have been written too, you are unable to begin further runs. A pop-up on the NIMA Trough warns you that files must be deleted in order to continue recording runs. From the IOC perspective though you will simply be unable to begin a run, and there is no warning that the number of runs has been reached, but the pop-up on the NIMA Trough interface should be clear. If you are unable to begin runs from the IOC it's worth checking the NIMA Trough GUI to ensure there are free files available to write to.
+The NIMA Trough GUI can perform 3 runs, and each is individually saved to a file. Once these 3 files have been written too, you are unable to begin further runs. A pop-up on the NIMA Trough warns you that files must be deleted in order to continue recording runs. This is shown below with the 3 runs tab highlighted in red:
+
+![NIMA Trough runs full](https://imgur.com/z15Gz3k)
+
+From the IOC perspective though you will simply be unable to begin a run, and there is no warning that the number of runs has been reached, but the pop-up on the NIMA Trough interface should be clear. If you are unable to begin runs from the IOC it's worth checking the NIMA Trough GUI to ensure there are free files available to write to.
 
 ## Units for Area
 
