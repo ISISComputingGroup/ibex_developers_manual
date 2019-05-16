@@ -55,6 +55,8 @@ If you're not creating a StreamDevice IOC or you you would like to know how an I
 
 * [Macro naming](Macro-Naming)
 
+* [IOC Startup](IOC-Startup)
+
 # Other
 
 * [aSub records](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/aSub-records)
