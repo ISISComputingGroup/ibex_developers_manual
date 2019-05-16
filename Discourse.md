@@ -22,6 +22,8 @@ Troubleshooting can be done with `./discourse-doctor` which runs a few diagnosti
 
 ### HTTPS
 
-Discourse can use a HTTPS certificate from [let's encrypt](https://letsencrypt.org/). Edit the `/containers/app.yml` uncommenting the lines relevant to SSL near the top of the file.
+Discourse can use a HTTPS certificate from [let's encrypt](https://letsencrypt.org/). However, this doesn't work as our forum is not available externally, so we have used our own certificates instead, installed as per the documentation at https://meta.discourse.org/t/advanced-setup-only-allowing-ssl-https-for-your-discourse-docker-setup/13847
 
-Note: this currently doesn't work as Let's encrypt doesn't like the DNS response from our servers.
+### Server logs
+
+SSH into the server and use `./launcher logs app` to view logs, or `./launcher enter app` to "enter" the docker container, at which point you can debug the internals of discourse.
