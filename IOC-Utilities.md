@@ -4,7 +4,7 @@ The utilities comprise of useful IOC db templates and IOC shell utilities.
 
 ## DB Templates
 
-Below are available utility templates for [substitution](Template-Substitutions).
+Below are available utility templates for [substitution](Template-Substitutions). In order to allow Make to build these, you need to add the following to your `Device/master/configure/RELEASE` file: `UTILITIES=$(SUPPORT)/utilities/master`.
 
 ### Unit Setter
 
