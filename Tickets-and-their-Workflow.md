@@ -2,7 +2,7 @@
 
 ## Ticket Types
 
-wf - means workflow and is how waffle decides on which column the ticket is in
+wf - means workflow and is how the IBEX Project Board decides on which column the ticket is in
 
 Type   | Meaning
 ------ | -------
@@ -31,7 +31,7 @@ Type   | Meaning
 
 ## Creation of Tickets
 
-Tickets should be created at need by developers as git issues using the waffle board. Initially, they should *not* have a milestone attached to them unless they are needed for a definite date and this is the LATEST that they could possibly be started. If you are doing this ensure that there is enough time for testing; bugs fixing etc. If the ticket is created for a scientist don't forget to note this in the ticket.
+Tickets should be created at need by developers as git issues using the IBEX project Board. Initially, they should *not* have a milestone attached to them unless they are needed for a definite date and this is the LATEST that they could possibly be started. If you are doing this ensure that there is enough time for testing; bugs fixing etc. If the ticket is created for a scientist don't forget to note this in the ticket.
 
 ## Movement of Tickets
 
