@@ -21,3 +21,7 @@ A place to record decisions:
 9. An ENGIN-X scientist asked for access to the exp_details database to create reports detailing RB numbers and users on the instrument. They were given read-only access but warned that we didn't guarantee the schema or the lifetime of the data and it would be better to go through the BusApps API.
 
 10. Create upper case aliases of all blocks and use these in genie_python. This avoids the extra look up of current block names and the communication problem we have seen. The downside is there are more aliases created by and used in the block server and gateway but because there are usually fewer than 100 blocks this performance downside should not matter. The added advantage is that the blockserver is removed as a dependency in `caget`/`caset`.
+
+11. Setting a device to remote mode can and should be done on IOC start and at no other time, except as an explicit PV, i.e. not on mistmatch. This is an exception to the rule the device should not be changed on IOC start, this is to enable instrument scientists to set parameters on a device after IOC start. IOC start is seen as a deliberate enough event that it is not done by accident. We do not want to set it at other time in case a user has deliberately locked out the IOC. This has reduced the number of support calls for SECI and will be useful for the future.
+    - Advised by Kathryn, present John, Alistair and Tom
+    - 2019/05/16
