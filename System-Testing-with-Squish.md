@@ -27,7 +27,7 @@ Get a licence key (there are 5 floating licences that can be used by 2 people)
     1. Ensure that the client has been built with build.bat
     1. Edit -> Server Settings -> Manage AUTs ...
     1. Select Mapped AUTs and click Add...
-    1. Locate the executable from the built eclipse project (e.g. ibex-client in `ibex_gui\base\uk.ac.stfc.isis.ibex.e4.client.product\target\products\ibex.product\win32\win32\x86_64`)
+    1. Locate the executable from the built (built using the build.bat maven script) eclipse project (e.g. ibex-client in `ibex_gui\base\uk.ac.stfc.isis.ibex.e4.client.product\target\products\ibex.product\win32\win32\x86_64`)
 1. To get access to global scripts right click in squish -> global scripts pane -> add -> global scripts directory and select the global scripts directory in the repository root.
 
 # RDP to Server
