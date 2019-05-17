@@ -4,7 +4,11 @@ http://ibex-forum.isis.stfc.ac.uk/
 
 # SSH access
 
-Is possible with the domain above, but you must have been added explicitly. Currently Tom W and Freddie have these permissions. You will also need root access to administer discourse.
+Is possible with the domain above, but you must have been added explicitly. Currently the following have access:
+* Tom W 
+* Freddie 
+* Dom 
+You will also need root access to administer discourse.
 
 # Administration
 
@@ -12,7 +16,7 @@ The first port of call should be the discourse documentation/Q&A site: https://m
 
 ### Starting/stopping discourse
 
-The discourse files are located in the `/var/discourse/` folder. To start discourse, go to that folder and use the command `./launcher start app`. To stop, type `./launcher stop app`.
+The discourse files are located in the `/var/discourse/` folder. To start discourse, go to that folder and use the command `sudo ./launcher start app`. To stop, type `sudo ./launcher stop app`.
 
 ### SMTP
 
