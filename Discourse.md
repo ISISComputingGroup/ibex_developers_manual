@@ -12,7 +12,7 @@ The first port of call should be the discourse documentation/Q&A site: https://m
 
 ### Starting/stopping discourse
 
-The discourse files are located in the `/var/discourse/` folder. To start discourse, go to that folder and use the command `./launcher run app`. To stop, type `./launcher stop app`.
+The discourse files are located in the `/var/discourse/` folder. To start discourse, go to that folder and use the command `./launcher start app`. To stop, type `./launcher stop app`.
 
 ### SMTP
 
