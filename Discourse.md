@@ -8,6 +8,7 @@ Is possible with the domain above, but you must have been added explicitly. Curr
 * Tom W 
 * Freddie 
 * Dom 
+
 You will also need root access to administer discourse.
 
 # Administration
