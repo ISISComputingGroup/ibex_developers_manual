@@ -10,4 +10,5 @@ When Java needs to be updated on the instrument:
    - Do not use a copy downloaded from the internet as it may not have been tested with IBEX
 1. Run the installer and install all components. The install menu should look like this:
 ![](https://raw.githubusercontent.com/ISISComputingGroup/ibex_developers_manual/master/images/openjdk_install_prompt.PNG)
-1. Make sure you run the instrument, either now or before you finish, so that any firewall question can be resolved as yes allow through the firewall.
+1. Make sure you run the instrument, either now or before you finish
+   - Answer any firewall questions "yes, allow through the firewall".
