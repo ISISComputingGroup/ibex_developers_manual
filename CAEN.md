@@ -5,7 +5,7 @@ A high voltage power supply normally used for detector electronics.
 They are communicated with using Ethernet using an IOC originally developed at the Canadian Lightsource.
 
 ### Communicating with multiple CAENs
-A single IOC can communicate with up to 8 CAEN crates.
+A single IOC can communicate with up to 8 CAEN crates, this appears to be a limit in the CAEN library as it defines MAX_CRATES as 8 in the library header and has a "too many connections" error code listed in its potential error codes. 
 
 To do this the crates must be added into the `st.cmd` as so:
 
