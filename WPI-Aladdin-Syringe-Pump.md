@@ -17,7 +17,7 @@ Documentation is available for the pump at `C:\LabVIEW Modules\Drivers\WPI Aladd
 
 Command Syntax:
  - Communication command is terminated with <CR>.
- - Communication return sarts with <STX> and is terminated with <ETX>. 
+ - Communication return starts with <STX> and is terminated with <ETX>. 
 
 
 # Specifications
