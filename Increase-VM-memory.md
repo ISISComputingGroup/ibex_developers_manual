@@ -1,21 +1,21 @@
 > [Wiki](Home) > [Deployment](Deployment) > [Virtual System Creation](Virtual-System-Creation) > [Increase VM memory](Increase-VM-Memory)
 
-### Increasing guest VM memory to 14GB on the NDHDETECT instrument server.
+### Increasing guest VM memory to 14GB (using `NDHDETECT` as an example).
 The basic steps are as below:
 1) log onto the server (via the local Administrator account).
 2) Check that there will still be a minimum of at least 20GB free space on the server C: drive after the increase.
-3) Shut down the VM (NDXDETECT1 in this case).
+3) Shut down the VM (`NDXDETECT1` in this case).
 4) Change the startup/maximum memory setting for the VM in Hyper-V manager to 14GB.
 5) Restart the VM and check that the memory has indeed increased (and that all still works).
 
 ### Log onto the server
-All administration of the Hyper-V system and system settings should be done from the local "Administrator" account for the server (NDHDETECT\Administrator).  The password is in the usual place and the remote desktop log on should be done explicitly to ensure that the log on is not to another account by explicitly asking for a prompt. i.e.
+All administration of the Hyper-V system and system settings should be done from the local "Administrator" account for the server (NDH machine), in this case this would be `NDHDETECT\Administrator`.  The password is in the usual place and the remote desktop log on should be done explicitly via the below command to ensure that the log on is not to another account by explicitly asking for a prompt. i.e.
 
 `mstsc /v:ndhdetect /admin /prompt`
 
 the `/admin` should ideally be used as it is possible to have more than one concurrent log on on a server and it is always good to be able to get back to the same session (there is only one /admin session).
 
-### Check there will be sufficient free disk space on the C: Drive
+### Check there will be sufficient free disk space on the C: Drive of the instrument server
 The space taken by the running VM on the C: drive will be increased by the amount of extra memory allocated to the machine.  So, for example if the machine was 8GB going to 14GB it will take up another 6GB on the system drive.  Ensure that the expansion will not take the C: drive below the minimum of 20GB.
 
 The running VM memory size can be seen from Hyper-V manager.  Start this by clicking on 
