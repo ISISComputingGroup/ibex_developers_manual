@@ -19,6 +19,9 @@ Command Syntax:
  - Communication command is terminated with <CR>.
  - Communication return starts with <STX> and is terminated with <ETX>. 
 
+Command float formatting:
+
+The device requires strict formatting on its floats. The output value must fit 5 characters and be within the range `9999. to .9999`.
 
 # Specifications
 
