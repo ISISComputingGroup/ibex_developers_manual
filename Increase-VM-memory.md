@@ -16,7 +16,7 @@ All administration of the Hyper-V system and system settings should be done from
 the `/admin` should ideally be used as it is possible to have more than one concurrent log on on a server and it is always good to be able to get back to the same session (there is only one /admin session).
 
 ### Check there will be sufficient free disk space on the C: Drive of the instrument server
-The space taken by the running VM on the NDH's C: drive will be increased by the amount of extra memory allocated to the machine.  So, for example if the machine was 8GB going to 14GB it will take up another 6GB on the system drive.  Ensure that the expansion will not take the free space on the C: drive below the minimum of 20GB.
+The space taken by the running VM on the NDH machine's C: drive will be increased by the amount of extra memory allocated to the machine.  So, for example if the machine was 8GB going to 14GB it will take up another 6GB on the system drive.  Ensure that the expansion will not take the free space on the C: drive below the minimum of 20GB.
 
 The running VM memory size can be seen from Hyper-V manager.  Start this by clicking on 
 ![](https://raw.githubusercontent.com/ISISComputingGroup/ibex_developers_manual/master/images/vm-memory-hyper-v-icon.png) on the toolbar.
