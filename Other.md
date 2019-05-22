@@ -14,4 +14,4 @@
 
 * [LSi Correlator](LSi-Correlator)
 
-* [OBIS Laser Remote](OBIS-Remote)
+* [Coherent OBIS Laser Remote](Coherent-OBIS-Laser-Remote)
