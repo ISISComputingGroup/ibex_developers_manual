@@ -42,7 +42,7 @@ The steps to change the serial standard to RS232:
 
 Note: There are two 8500 series which required a null modem on the 25-way connector. 
 
-# LOQ/SANS2D Goudsmit magnet
+## LOQ/SANS2D Goudsmit magnet
 
 - This magnet is driven by a 750A power supply, but can only actually take ~600A. The scientists have asked us to apply a limit of 738666 ppm on this Danfysik (which corresponds to a current of 554A)
   * This is true on both LOQ and SANS2D (as of May 2019)
