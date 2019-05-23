@@ -14,3 +14,5 @@ The device itself has a large amount of functionality, however the IOC (and corr
 - Set and read the maximum temperature setpoint
 - Reads the heater output as a percentage
 - Set and read maximum heater power as a percentage
+
+Terminators are `CR LF`
