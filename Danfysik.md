@@ -2,7 +2,7 @@
 
 A way of controlling power supplies for magnets.
 
-Current three models supported: 8800, 8000 and XXXX
+Current three models supported: 8800, 8000 and 8500
 
 All can be in calibrated or uncalibrated mode. Calibration is done within the IOC and enabled via macro. Additionally there is a macro to switch to a local calibration repository instead of the default common one. (see [Calibration Files](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Calibration-Files) for more info)
 
@@ -20,7 +20,7 @@ Set current %MYPVPREFIX%DFKPS_01:SIM:RAW
 
 Interlock and power status can be testing by setting status PV: `%MYPVPREFIX%DFKPS_0X:SIM:STATUS`. To switch the power on put a `!` as the first character to turn the interlock on place a `!` as the 10th character.
 
-### 8800/XXXX
+### 8800/8500
 
 Interlock and power status can be testing by setting status PV: `%MYPVPREFIX%DFKPS_0X:SIM:STATUS`. To switch the power off it must be a binary value with 2 digit set (e.g. 2) for the interlock it must be any value which is greater than 3 digit (e.g. 4). The value 6 would trigger both.
 
