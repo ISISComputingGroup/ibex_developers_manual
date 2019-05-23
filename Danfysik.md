@@ -44,7 +44,7 @@ Note: There are two 8500 series which required a null modem on the 25-way connec
 
 ## LOQ/SANS2D Goudsmit magnet
 
-- This magnet is driven by a 750A power supply, but can only actually take ~600A. The scientists have asked us to apply a limit of 738666 ppm on this Danfysik (which corresponds to a current of 554A)
+- This magnet is driven by a 750A power supply, but can only actually take ~600A. The scientists have asked us to apply a limit of 738666 parts per million on this Danfysik (which corresponds to a current of 554A)
   * This is true on both LOQ and SANS2D (as of May 2019)
 - The magnet is calibrated. Calibration tables are start with `Goudsmit_magnet` and are located in `C:\Instrument\Settings\config\common\magnets`
 - The magnet can be run in transverse or solenoid modes. As far as IBEX is concerned, this corresponds to a change of calibration files.
