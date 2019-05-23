@@ -29,7 +29,9 @@ The device has the ability to control a number of parameters for a pump:
 
 The user can then start the pump by using the `START:SP` record. The pump can be stopped using the `STOP:SP`
 
-The user can also select a timed run for either a set time or volume. The user must first set a time `TIME:RUN:SP` (in seconds) or volume `TIME:VOL:SP` (in mL). Then a pump can begin by using the `TIMED:SP` record.
+The user can also select a timed run for either a set time or volume. The user must first set a time `TIME:RUN:SP` (in seconds) or volume `TIME:VOL:SP` (in mL). Then a pump can begin by using the `TIMED:SP` record. 
+
+Note that the Jasco IOC only allows one of these two values to be modifiable at a time (which then sets the other) - which method is used needs to be explicitly set via `TIME:CALC:SP`. This is to avoid race conditions i.e. if a user sets both `TIME:VOL:SP`and `TIME:RUN:SP` at the same time (for example via caLab or scripting) they could not be sure which one wins.
 
 NB: The devices display screen does not show current pump status information when in operation.
 
