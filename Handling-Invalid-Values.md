@@ -27,7 +27,7 @@ For each type of invalid value (described above), IBEX will behave according to 
 ## Communication Errors:
 In this situation IBEX cannot read a value from a device.  In practice, this means EPICS will signal a `[what-is-the-name-of-the alarm?]` alarm on a PV.  On encountering a `[what-is-the-name-of-the alarm?]` alarm, IBEX will behave as follows:
 ### IBEX GUI
-1. In the dashboard, blocks will display the text "N/A" and be surrounded by a red border
+1. In the dashboard, blocks will display the text "N/A" and be surrounded by a purple border
 1. In OPIs (which display PVs, not blocks), readback fields will display the last-known-good-value and be surrounded by a purple border.  On hovering the mouse over a readback field, IBEX will display a pop-up box showing the PV name, the last-known-good-value and the alarm status.
 
 ### Log & Data Files
