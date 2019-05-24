@@ -15,7 +15,7 @@ RS232 is preferable, RS422 and RS485 are avoided as much as possible. Note that 
 
 ### Ethernet
 
-Ethernet is a commonly used and well-supported transport layer at ISIS using RJ45 ports. Any other port type is to be avoided.
+Ethernet is a commonly used and well-supported transport layer at ISIS using RJ45 ports. Any other port type is to be avoided. It is also preferable that devices use DHCP to find their IP address rather than a static IP.
 
 ### USB
 
