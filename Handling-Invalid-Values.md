@@ -34,11 +34,14 @@ In this situation IBEX cannot read a value from a device.  In practice, this mea
 1. In the NeXus data file, blocks will be logged with their last-known-good-value and the alarm status.
 1. In the IBEX archive, PVs will be logged with their last-known-good-value and the alarm status.
 
+Applications or scripts which process log & data files are responsible for checking the alarm status of a block or PV and taking appropriate action.
+
 #### genie_python
 In genie_python, `cget` is used to obtain the value of a block or PV.  `cget` always 
 1. returns the value of a block or PV
 1. returns the alarm status of the block or PV
-1. prints a warning message if the alarm status is not `[no-alarm]`.
+1. prints a warning message if there is an alarm on the block or PV.
+
 It is the responsibility of the script author to check the alarm status and take any subsequent actions required.
 
 #### Web Dashboard
