@@ -25,10 +25,10 @@ All calibration algorithms have a range of validity - if the "raw" sensor value 
 For each type of invalid value (described above), IBEX will behave according to the conventions described below.  There are specific conventions for different features of IBEX - the dashboard area of the IBEX GUI (i.e. the IBEX client), log files, genie_python, the Web Dashboard.
 
 ## Communication Errors:
-In this situation IBEX cannot read a value from a device.  In practice, this means EPICS will signal a `[what-is-the-name-of-the alarm?]` alarm on a PV.  On encountering an `INVALID` alarm, IBEX will behave as follows:
+In this situation IBEX cannot read a value from a device.  In practice, this means EPICS will signal an `INVALID` alarm on a PV.  On encountering an `INVALID` alarm, IBEX will behave as follows:
 #### IBEX GUI
 1. In the dashboard, blocks will display the text "N/A" and be surrounded by a purple border
-1. In OPIs (which display PVs, not blocks), readback fields will display the last-known-good-value and be surrounded by a purple border.  On hovering the mouse over a readback field, IBEX will display a pop-up box showing the PV name, the last-known-good-value and the alarm status.
+1. In OPIs, readback fields (which display PVs, not blocks) will display the last-known-good-value and be surrounded by a purple border.  On hovering the mouse over a readback field, IBEX will display a pop-up box showing the PV name, the last-known-good-value and the alarm status.
 
 #### Log & Data Files
 1. In the NeXus data file, blocks will be logged with their last-known-good-value and the alarm status.
