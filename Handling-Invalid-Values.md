@@ -26,22 +26,22 @@ For each type of invalid value (described above), IBEX will behave according to 
 
 ## Communication Errors:
 In this situation IBEX cannot read a value from a device.  In practice, this means EPICS will signal a `[what-is-the-name-of-the alarm?]` alarm on a PV.  On encountering an `INVALID` alarm, IBEX will behave as follows:
-### IBEX GUI
+#### IBEX GUI
 1. In the dashboard, blocks will display the text "N/A" and be surrounded by a purple border
 1. In OPIs (which display PVs, not blocks), readback fields will display the last-known-good-value and be surrounded by a purple border.  On hovering the mouse over a readback field, IBEX will display a pop-up box showing the PV name, the last-known-good-value and the alarm status.
 
-### Log & Data Files
+#### Log & Data Files
 1. In the NeXus data file, blocks will be logged with their last-known-good-value and the alarm status.
 1. In the IBEX archive, PVs will be logged with their last-known-good-value and the alarm status.
 
-### genie_python
+#### genie_python
 In genie_python, `cget` is used to obtain the value of a block or PV.  `cget` always 
 1. returns the value of a block or PV
 1. returns the alarm status of the block or PV
 1. prints a warning message if the alarm status is not `[no-alarm]`.
 It is the responsibility of the script author to check the alarm status and take any subsequent actions required.
 
-### Web Dashboard
+#### Web Dashboard
 1. In the web dashboard, blocks will display the text "INVALID" and be surrounded by a red border
 
 ## Calibration Errors
