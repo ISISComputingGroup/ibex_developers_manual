@@ -57,5 +57,4 @@ NaN, which means "not a number", is a concept used in computing to represent an 
 1. In arithmetical expressions, NaNs behave as follows:
    * `anything + NaN = NaN` - i.e. NaNs propagate through arithmetical operations
    * all comparisons involving NaNs return `FALSE` (except the != operator, which returns `TRUE`)
-
 Any code reading data files containing NaNs will need to take appropriate action on encountering a NaN
