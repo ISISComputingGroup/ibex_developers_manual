@@ -1,9 +1,12 @@
-From time-to-time, IBEX encounters problems determining the value of a PV (e.g. because of a communication error on a device).  The purpose of this page is to set out the conventions used by IBEX to indicate to the user that the value of a PV or block should be considered invalid.  Blocks are, essentially, aliases for PVs.  Therefore, if the value of a PV cannot be determined, the value of a corresponding block is equally invalid.
+From time-to-time, IBEX encounters problems determining the value of a PV (e.g. because of a communication error on a device).  The purpose of this page is to set out the conventions used by IBEX to indicate to the user that the value of a PV or block should be considered invalid.
+
+Blocks are, essentially, aliases for PVs.  Therefore, if the value of a PV cannot be determined, the value of a corresponding block is equally invalid.
 
 # Situations Giving Rise to Invalid Values
 The following situations can cause process variables (PVs) to be considered invalid.
 * communication error between a device and IBEX
-* a device generates a value which is outside valid range of a calibration algorithm
+* a device generates a value which is outside valid range of a calibration algorithm.
+
 There may be other situations which can cause process variables (PVs) to be considered invalid.  If so, define them here.
 
 ## Communication Errors
