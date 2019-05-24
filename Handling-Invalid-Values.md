@@ -22,7 +22,7 @@ All calibration algorithms have a range of validity - if the "raw" sensor value 
 1. the alarm status of the PV is changed to `[can-we-invent-a-calibration-alarm?]`
 
 # IBEX Conventions for Invalid Values
-For each type of invalid value (described) above, IBEX will behave according to the conventions described below.  There are specific conventions for different features of IBEX - the dashboard area of the IBEX GUI (i.e. the IBEX client), log files, genie_python, the Web Dashboard.
+For each type of invalid value (described above), IBEX will behave according to the conventions described below.  There are specific conventions for different features of IBEX - the dashboard area of the IBEX GUI (i.e. the IBEX client), log files, genie_python, the Web Dashboard.
 
 ## Communication Errors:
 In this situation IBEX cannot read a value from a device.  In practice, this means EPICS will signal a `[what-is-the-name-of-the alarm?]` alarm on a PV.  On encountering a `[what-is-the-name-of-the alarm?]` alarm, IBEX will behave as follows:
