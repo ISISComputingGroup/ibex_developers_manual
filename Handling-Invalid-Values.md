@@ -12,7 +12,7 @@ There may be other situations which can cause process variables (PVs) to be cons
 ## Communication Errors
 When EPICS detects a communication error with a device, it does two things:
 1. the PV continues to hold the last-known value
-1. the alarm status of the PV is changed to `[what-is-the-name-of-the alarm?]`
+1. the alarm status of the PV is changed to `INVALID`
 
 ## Calibration Errors
 Some devices return "raw" values from sensors.  Such values have to be converted into meaningful physical values via some kind of calibration algorithm (in most cases, the algorithm is merely a simple linear conversion or a table lookup plus linear interpolation).  For example, a Eurotherm returns the raw voltage returned from a thermocouple, which is converted into a temperature using a lookup table.
