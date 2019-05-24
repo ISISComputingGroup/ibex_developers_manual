@@ -57,5 +57,5 @@ However, there are several reasons for not choosing NaN for this purpose:
 1. Some devices use NaN to signal that a value has not been defined or initialised.  Strictly speaking this is an abuse of the IEEE-754 standard.  Nevertheless, because some device manufacturers have adopted this convention, it means that there is a risk of confusion - if a device returns NaN does it mean that the value was never intialised, or has it become invalid (having previously been valid)?
 1. In arithmetical expressions, NaNs behave as follows:
    * `anything + NaN = NaN` - i.e. NaNs propagate through arithmetical operations
-   * all comparisons involving NaNs return `FALSE` (except the != operator, which returns `TRUE`).
+   * all comparisons involving NaNs return `FALSE` (except the `!=` operator, which returns `TRUE`).
 1. If NaNs appear in data or log files, then any code reading such files might need modification to take appropriate action on encountering a NaN.
