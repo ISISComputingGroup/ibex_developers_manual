@@ -1,3 +1,6 @@
+There are 2 independent CP2800 Compressors on HIFI_CRYOMAG. These provide high pressure helium gas to 2 independent pulse tube cold heads via a valve which allows high pressure gas in and low pressure gas out. The valve is driven by the control circuits in the compressors.
+Each cold head has 2 stages, with the hot end of stage 2 linked to the cold end of stage 1. The 1st stages of the cold heads get to around 40K and are used to cool the thermal shields surrounding the magnet coils. The 2nd stages cool the coils to around 4K, just below the superconducting threshold. 
+
 ### Command data packet
 
 This gist is that a command looking something like `<STX> <ADR> <CMD_RSP> <DATA> <CKSUM1> <CKSUM2> <CR>` is sent.
