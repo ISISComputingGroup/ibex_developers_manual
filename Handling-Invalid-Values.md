@@ -56,5 +56,5 @@ NaN, which means "not a number", is a concept used in computing to represent an 
 1. Some devices use NaN to signal that a value has not been defined or initialised.  Strictly speaking this is an abuse of the IEEE-754 standard.  Nevertheless, because some device manufacturers have adopted this convention, it means that there is a risk of confusion - if a value returns NaN does it mean that the value is unitialised, or has it become invalid (having been previously valid)?
 1. In arithmetical expressions, NaNs behave as follows:
    * `anything + NaN = NaN` - i.e. NaNs propagate through arithmetical operations
-   * all comparisons involving NaNs return `FALSE` (except the != operator, which returns `TRUE`)
-Any code reading data files containing NaNs will need to take appropriate action on encountering a NaN
+   * all comparisons involving NaNs return `FALSE` (except the != operator, which returns `TRUE`).
+Any code reading data files containing NaNs will need to take appropriate action on encountering a NaN.
