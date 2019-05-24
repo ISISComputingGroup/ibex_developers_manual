@@ -11,7 +11,7 @@ This is the most common transport layer at ISIS. Serial settings are flexible in
 - Stop bits: 1
 - Flow control: Off
 
-RS232 is preferable, RS422 and RS485 are avoided as much as possible. Note that distances can be extreme if higher baud rates are required.
+RS232 is preferable, RS422 and RS485 are avoided as far as reasonable. Note that distances can be extreme if higher baud rates are required.
 
 ### Ethernet
 
