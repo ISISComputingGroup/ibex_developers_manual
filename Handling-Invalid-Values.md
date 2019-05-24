@@ -53,7 +53,7 @@ IBEX has adopted the conventions defined above.  Other systems and devices have 
 ### Why haven't we used NaN?
 NaN, which means "not a number", is a concept used in computing to represent an undefined or unrepresentable value.  There are several reasons for not choosing NaN to signal an invalid value:
 1. Specifically, NaN is defined by the IEEE-754 standard and applies only to floating-point numbers.  There is no concept of NaN for integer-valued variables.  Nor is there an equivalent concept for string-valued variables.
-1. Some devices use NaN to signal that a value has not been defined or initialised.  Strictly speaking this is an abuse of the IEEE-754 standard.  Nevertheless, because some device manufacturers have adopted this convention, it means that there is a risk of confusion - if a value returns NaN does it mean that the value is unitialised, or has it become invalid (having been previously valid)?
+1. Some devices use NaN to signal that a value has not been defined or initialised.  Strictly speaking this is an abuse of the IEEE-754 standard.  Nevertheless, because some device manufacturers have adopted this convention, it means that there is a risk of confusion - if a value returns NaN does it mean that the value is not initialised, or has it become invalid (having been previously valid)?
 1. In arithmetical expressions, NaNs behave as follows:
    * `anything + NaN = NaN` - i.e. NaNs propagate through arithmetical operations
    * all comparisons involving NaNs return `FALSE` (except the != operator, which returns `TRUE`).
