@@ -26,7 +26,7 @@ Various dependencies have changed to be compatible with MySQL 8. As a minimum, y
 - `GUI` (also needs rebuilding)
 
 You will need the `master` branch of these repositories, pulled after ~18th March 2019.
-To rebuild the submodules run `git submodule update --init --recursive --remote`.
+To update the submodules run `git submodule update --init --recursive --remote` from top level epics.
 
 ### 5. Ensure that your version of CSS (and its archive/alarm tools) is up to date.
 
