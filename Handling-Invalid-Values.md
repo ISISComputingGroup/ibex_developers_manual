@@ -9,7 +9,6 @@ The following situations can cause process variables (PVs) to be considered inva
 * communication error between a device and IBEX
 * device reports that a value is invalid (i.e. over range)
 
-
 There may be other situations which can cause process variables (PVs) to be considered invalid.  If so, define them here.
 
 ## Communication Errors
@@ -25,7 +24,7 @@ All calibration algorithms have a range of validity - if the "raw" sensor value 
 1. the alarm status of the PV is changed to `[can-we-invent-a-calibration-alarm?]`
 
 # IBEX Conventions for Invalid Values
-For each type of invalid value (described above), IBEX will behave according to the conventions described below.  There are specific conventions for different features of IBEX - the dashboard area of the IBEX GUI (i.e. the IBEX client), log files, genie_python, the Web Dashboard.
+For each type of invalid value (described above), IBEX will behave according to the conventions described below.  There are specific conventions for different features of IBEX - the dashboard area of the IBEX GUI (i.e. the IBEX client), log files, genie_python, run control, the Web Dashboard.
 
 ## Communication Errors:
 In this situation IBEX cannot read a value from a device.  In practice, this means EPICS will signal an `INVALID` alarm on a PV.  On encountering an `INVALID` alarm, IBEX will behave as follows:
@@ -47,8 +46,11 @@ In genie_python, `cget` is used to obtain the value of a block or PV.  `cget` al
 
 It is the responsibility of the script author to check the alarm status and take any subsequent actions required.
 
+#### Run Control
+1. If a block has run control applied to it and that block goes into alarm (even invalid alarm) then the run control will not stop data collection if the last-known-good-value was within the run control limits.
+
 #### Web Dashboard
-1. In the web dashboard, blocks will display the text "INVALID" and be surrounded by a red border
+1. In the web dashboard, blocks will display the text "INVALID".
 
 ## Calibration Errors
 At the current time, there is no agreed convention.
