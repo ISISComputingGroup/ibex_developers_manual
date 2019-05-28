@@ -47,7 +47,9 @@ In genie_python, `cget` is used to obtain the value of a block or PV.  `cget` al
 It is the responsibility of the script author to check the alarm status and take any subsequent actions required.
 
 #### Run Control
-1. If a block has run control applied to it and that block goes into alarm (even invalid alarm) then the run control will not stop data collection if the last-known-good-value was within the run control limits.
+1. If a block has run control applied to it and that block goes into alarm (including `INVALID` alarm) then 
+   * if the last-known-good-value was within the run control limits, data collection will continue
+   * if the last-known-good-value was outside the run control limits, data collection will not resume until the alarm is cleared.
 
 #### Web Dashboard
 1. In the web dashboard, blocks will display the text "INVALID".
