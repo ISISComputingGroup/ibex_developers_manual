@@ -1,3 +1,6 @@
+> [Wiki](Home) > [Project Ideas](Project-Ideas)
+
+
 Add ideas to the relevant sections.
 
 # Ideas for the Project
