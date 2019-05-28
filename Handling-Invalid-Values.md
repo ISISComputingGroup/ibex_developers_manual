@@ -8,7 +8,7 @@ Blocks are, essentially, aliases for PVs.  Therefore, if the value of a PV canno
 The following situations can cause process variables (PVs) to be considered invalid.
 * communication error between a device and IBEX
 * device reports that a value is invalid (i.e. over range)
-* a device generates a value which is outside valid range of a calibration algorithm.
+
 
 There may be other situations which can cause process variables (PVs) to be considered invalid.  If so, define them here.
 
