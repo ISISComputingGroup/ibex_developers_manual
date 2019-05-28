@@ -1,3 +1,5 @@
+> [Wiki](Home) > [Project Ideas](Project-Ideas) > [Proposal for handling invalid values in IBEX](Handling-Invalid-Values)
+
 From time-to-time, IBEX encounters problems determining the value of a PV (e.g. because of a communication error on a device).  The purpose of this page is to set out the conventions used by IBEX to indicate to the user that the value of a PV or block should be considered invalid.
 
 Blocks are, essentially, aliases for PVs.  Therefore, if the value of a PV cannot be determined, the value of a corresponding block is equally invalid.
