@@ -162,6 +162,7 @@ Git clone (usually in c:\Instrument\Dev) the following utilities:
 ```
 git clone https://github.com/ISISComputingGroup/IBEX_device_generator.git
 git clone https://github.com/ISISComputingGroup/ibex_utils.git
+git clone https://github.com/ISISComputingGroup/ConfigChecker.git
 ```
 
 # NI DAQ
