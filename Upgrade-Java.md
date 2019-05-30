@@ -12,3 +12,8 @@ When Java needs to be updated on the instrument:
 ![](https://raw.githubusercontent.com/ISISComputingGroup/ibex_developers_manual/master/images/openjdk_install_prompt.PNG)
 1. Make sure you run the instrument, either now or before you finish
    - Answer any firewall questions "yes, allow through the firewall".
+
+Additional optional steps for developer installations:
+
+1. To build CS-Studio from source, you will need JavaFX binaries. These can be patched onto the AdoptOpenJDK installation. Download the latest binaries from https://github.com/SkyLandTW/OpenJFX-binary-windows/releases and follow the instructions on that page to patch your JDK. At the time of writing these binaries are available under the GPL; please check that the license is still appropriate before you install.
+1. You may wish to install the java Visual VM. This used to be bundled with oracle java, but is no longer present in OpenJDK. You can download a GPL-licensed version of the visual VM from https://visualvm.github.io/
