@@ -24,6 +24,8 @@ Install **OpenJDK 8 hotspot** from https://adoptopenjdk.net/releases.html#x64_wi
 
 Do not install an Oracle JDK.
 
+You may wish to install some optional java components [as detailed here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Upgrade-Java#additional-optional-steps-for-developer-installations-not-required-on-instruments).
+
 # Install Maven 
 Install [Maven](https://maven.apache.org/download.cgi) and follow the 'Windows tips' in [these instructions ](https://maven.apache.org/install.html) to set environment variables for the SDK with JAVA_HOME and maven in PATH
 It is recommended to install Maven into `C:\Tools\`
