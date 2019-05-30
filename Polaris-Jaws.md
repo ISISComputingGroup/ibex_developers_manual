@@ -1,4 +1,4 @@
-> [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > [Polaris Jaws](Polaris-Jaws)
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [Jaws and Slits](Jaws-and-slits) > [Polaris Jaws](Polaris-Jaws)
 
 Polaris jaws are a set of 5 jaws which work in concert to limit the beam of neutrons reaching the sample. Jaws 1-4 are instrument user controlled and work together in a pyramid shape to reduce the beam size in stages. The gap in each jaw set is set based on its distance from the sample. There are documents stored in [sharepoint](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/POLARIS/polarisCalculations.zip). The 5 jaws are ordered 1 nearest the beam and 5 nearest the sample. 
 Jaw set 5 is under on instrument scientist control. To change these settings the user must put the GUI into management mode. 
@@ -18,17 +18,6 @@ w | Width of Collimator | 82.2 |
 h | Height of Collimator | 79.4 | 
 x | Width at sample | user set |
 y | Height at sample | user set |
-
-This diagram shows the setup for one jaw set.
- ![Polaris Jaws Diagram](backend_system/IOCs/polaris_jaws.png)
-
-Equation to work out the half width using similar triangle:
-
-(y/2 - b/2 ) / (s-j) = (h/2 - b/2) / (s - c)
-
-y = b + (h - b) * (s-j) / (s-c)
-
-and similarly for the width.
 
 ## Setup
 
