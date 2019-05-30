@@ -1,6 +1,6 @@
 > [Wiki](Home) > [Deployment](Deployment) > Upgrade java
 
-When Java needs to be updated on the instrument:
+## When Java needs to be updated on the instrument:
 
 1. Before you start, ensure you understand [Java's licensing](Understanding-Java-Licensing).
 1. Determine which new version of Java should be installed.
@@ -13,7 +13,7 @@ When Java needs to be updated on the instrument:
 1. Make sure you run the instrument, either now or before you finish
    - Answer any firewall questions "yes, allow through the firewall".
 
-Additional optional steps for developer installations:
+## Additional optional steps for developer installations (not required on instruments):
 
 1. To build CS-Studio from source, you will need JavaFX binaries. These can be patched onto the AdoptOpenJDK installation. Download the latest binaries from https://github.com/SkyLandTW/OpenJFX-binary-windows/releases and follow the instructions on that page to patch your JDK. At the time of writing these binaries are available under the GPL; please check that the license is still appropriate before you install.
 1. You may wish to install the java Visual VM. This used to be bundled with oracle java, but is no longer present in OpenJDK. You can download a GPL-licensed version of the visual VM from https://visualvm.github.io/
