@@ -66,3 +66,7 @@ The motor record calculates acceleration in quite a different way than used to u
 Check out [this spreadsheet](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/galil%20gotchas.xlsx) for information on speeds, accelerations, homing, and random extra bits of code that might be needed before/after moves, on startup, when homing.
 
 Check out [this page](Homing-Galils-under-SECI) if you need to see what the SECI homing routines do.
+
+### The limits are both made
+
+This occurs when power is cut to the limits. The main cause for this is that the safety system has been engaged as this will cut power to the whole rack of Galils. However, there could be other reasons such as in the [IMAT Lens Adjustment](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/IMAT-Lens-Adjustment)
