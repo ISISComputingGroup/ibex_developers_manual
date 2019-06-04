@@ -504,3 +504,7 @@ Run these commands to modify the DB in place:
 USE archive;
 ALTER TABLE sample MODIFY COLUMN array_val MEDIUMBLOB;
 ```
+
+## Instrument stuck in `WAITING` state
+
+We have observed on a couple of occasions that the DAE got stuck in `WAITING` despite no blocks being outside of runcontrol limits. The cause is yet unclear but in the meantime a restart of the runcontrol IOC seems to fix the issue.
