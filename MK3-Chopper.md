@@ -10,3 +10,8 @@ The IOC connects from the driver to the Mk3BridgeLib.dll (in support) using a c 
 
 This can currently only been built in VS2010 because the solution file is 2010.
 
+# Troubleshooting
+
+## User cannot set Frequency
+
+When trying to set a frequency if the frequency readback does not change start by looking at the log file. If the file read `Current User Demand Delay Too Large for Angle , Direction & Speed` it means that the phase for the chopper is too large for the current frequency. I believe that the phase must be smaller than `1/frequency` e.g. for the instrument running at 50Hz it needs to be smaller than 20,000us. 
