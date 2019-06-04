@@ -12,8 +12,8 @@ j2 | Jaw 2 position | 8072 mm |  Distance from moderator
 j3 | Jaw 3 position | 12072 mm |  Distance from moderator
 j4 | Jaw 4 position | 15450 mm |  Distance from moderator
 j5 | Jaw 5 position | 17235 mm |  Distance from moderator
-j5 | Jaw 5 position | 19691 mm |  Distance from moderator
-s | Sample position | 19691 mm | Distance from moderator
+j6 | Jaw 6 position | 19691 mm |  Distance from moderator
+s | Sample position | 19691 mm | Note that the sample is assumed to be at the final jawset
 w | Width of moderator | user set | 
 h | Height of moderator | user set | 
 x | Width at sample | user set |
