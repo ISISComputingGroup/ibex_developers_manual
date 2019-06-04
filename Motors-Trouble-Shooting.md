@@ -37,7 +37,7 @@ There is a Galil specific PV called `MTRXXXX_AUTOONOFF_CMD` which controls wheth
 
 ### The axis will not move, a message gets put in the log of "move begin failure axis X after XXX seconds: ... [Decelerating or stopped by FWD limit switch or soft limit FL]"
 
-This can mean it has hit a limit switch (look at the limit switch status). If it has hit a soft limit it means that the motor steps have hit the hi/low limit set in the motor record. This may be fine or it maybe that the motor/encoder are out of sync. The solution to this is to home it. (If you can't home it, talk with the instrument scientist and make sure they get a homing routine set up. For the moment you can set the raw motor steps on the detailed motor panel by clicking set then entering raw motor steps to be what you want, then clicking use). 
+This can mean it has hit a limit switch (look at the limit switch status). If it has hit a soft limit it means that the motor steps have hit the hi/low limit set in the motor record. This may be fine or it maybe that the motor/encoder are out of sync. If you would like the motor to resync back to the encoder automatically then you can set e.g. MTR0101_MOT_ENC_SYNC_TOL_SP to a non-zero value which is the max EGU they are allowed to differ by. Rehoming the axis will also fix it. (If you can't home it, talk with the instrument scientist and make sure they get a homing routine set up. For the moment you can set the raw motor steps on the detailed motor panel by clicking set then entering raw motor steps to be what you want, then clicking use). 
 
 ### The axis will not move away from a limit, a message gets put in the log of "move failed, `wlp` active" or "Wrong limit protect stop motor"
 
