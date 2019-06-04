@@ -6,6 +6,10 @@ To connect to the server the IOC instantiates a remote object of type IBeamLine 
 
 The IOC connects from the driver to the Mk3BridgeLib.dll (in support) using a c interface. The Mk3BridgeLib uses the Chopper C# object which uses the skeleton lib.
 
+# User Control
+
+The user can only start/stop/park and unpark the mk3chopper using the panel on the chopper itself. It also has to be put into remote mode before any commands can be sent to it.
+
 # Notes
 
 This can currently only been built in VS2010 because the solution file is 2010.
