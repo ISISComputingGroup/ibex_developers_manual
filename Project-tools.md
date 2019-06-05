@@ -12,6 +12,7 @@
 * [Build Arch](Build-Arch): Build under a given architecture
 * [Remote Debugging from Visual Studio](Remote-Debugging-from-Visual-Studio)
 * [JMS-Log creation tool](Ioc-message-logging#development-tools): Tool to create ioc log messages.
+* [PSRemoting to copy files to everywhere](PSRemoting)
 
 ### Archive Tools
 
