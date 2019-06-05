@@ -113,6 +113,10 @@ EN
 5) Power cycle and the Galil should be available on the network.
 6) Please note : do not overwrite the permanent program resident in the Galil. It can be overwritten as long as it is not made permanent. Other programs, such as homing routines can be downloaded into the device but should not be burnt in.
 
+# Syncing encoder and motor steps
+
+It can be useful to sync the motor steps to the encoder steps before each move. This is especially true with an absolute encoder where a power cycle of a Galil controller can change the motor steps to 0 but not the encoder steps because this makes the soft limits stop the motion at strange places. To do this the PV `<MOT:MTR0X0X>_MOT_ENC_SYNC_TOL_SP` should be set to a non zero value, when the difference differs by more than this tolerance the motor steps will be resynced. If the encoder is not absolute you should be cautious when doing this, the encoder and motor steps should not get out of sync so don't do it without recording the reason somewhere.
+
 # Trouble Shooting
 
 See [Motors Trouble Shooting](Motors-Trouble-Shooting)
