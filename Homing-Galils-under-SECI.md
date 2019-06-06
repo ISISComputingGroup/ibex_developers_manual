@@ -1,3 +1,5 @@
+> [Wiki](Home) > [Galils Under SECI](galils-under-seci)
+
 Home methods
 - Home call script
 - None
