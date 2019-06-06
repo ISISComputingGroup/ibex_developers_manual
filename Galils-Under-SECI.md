@@ -1,0 +1,1 @@
+- [Galil homing routines as used in SECI](Homing-Galils-under-SECI): A page explaining the homing methods for Galils under SECI
