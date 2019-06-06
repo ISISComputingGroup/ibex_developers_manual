@@ -1,5 +1,5 @@
 > [Wiki](Home) > [Deployment](Deployment) > [Deployment on an Instrument Control PC](Deployment-on-an-Instrument-Control-PC) 
-> Configure Mini Inst
+> [Configure Mini Inst](Configure-Mini-Inst)
 
 To install a mini inst, you need to install the EPICS backend and add the following in the `\NDXxxxxx\configurations\` area.
 
