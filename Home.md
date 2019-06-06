@@ -28,5 +28,5 @@
 - [Glossary](Glossary): Glossary of terms
 - [Other Links and Resources](links-and-resources): Page of links and resources not in this wiki
 - [Trouble Shooting Pages](trouble-shooting-pages): Pages that link to trouble shooting of various kinds
-- [Galil homing routines as used in SECI](Homing-Galils-under-SECI): A page explaining the homing methods for Galils under SECI
+- [Galils Under SECI](galils-under-seci): Pages that link to information on control of Galils under SECI
 - [Python shared scripts](https://github.com/ISISNeutronMuon/InstrumentScripts/wiki): Start of an area to share scripts between instruments
