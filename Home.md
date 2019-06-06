@@ -9,8 +9,9 @@
 
 ## Components of the System
 
-- [IBEX Server](The-Backend-System): Information regarding the back-end systems, including the block server, databases, configurations, and IOCs. Also contains the **[getting started guide](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/First-time-installing-and-building-(Windows))** for setting up the back-end.
 - [IBEX GUI](The-GUI): The GUI along with development and testing guidelines (Including how to **get started**). 
+- [IBEX Server](The-Backend-System): Information regarding the back-end systems, including the block server, databases, configurations, and IOCs. Also contains the **[getting started guide](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/First-time-installing-and-building-(Windows))** for setting up the back-end.
+- [IBEX Mini-inst Server](Configure-Mini-Inst): The mini-inst is an ibex server which only runs a fixed and small number of IOCs and processes (usually without a block server or archiver)
 - [Dataweb](Web-Dashboard): Information regarding the architecture of the instrument web pages.
 - [Project tools](Project-tools): Information on the project tooling, version control and continuous integration.
 
