@@ -1,4 +1,5 @@
-> [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > [Motor IOCs](Motor-IOCs) > [McLennan](McLennan-motors)
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC)
+ > [Motor IOCs](Motor-IOCs) > [McLennan](McLennan-motors)
 
 The McLennan motor is a controller that support multiple independent motors.
 
