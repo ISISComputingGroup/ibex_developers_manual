@@ -2,29 +2,27 @@
 
 The McLennan motor is a controller that support multiple independent motors.
 
+## Behaviour
+
 ### Velocity
 The McLennan motor velocity is set with the *VELO***n** IOC macros. The value set is in `mm/second`. The motor resolution is set with the *MRES***n** IOC macros and as in units of `mm/step`. The velocity value set on the device will be the velocity divided by the motor resolution, and will be in units of `step/second`.
 
 ### Acceleration
 Acceleration is far less intuitive than velocity. The acceleration value on the device is the acceleration in units of `step/s^2`. It is calculated as the IOC macro values of velocity divided by the product of the motor resolution and acceleration. The IOC macro acceleration is therefore the number of seconds under linear acceleration to reach maximum speed.
 
-### Setting the motor offset
-*Note that this applies equally to other motor types.*
-
-Sometimes it is desirable to change the reported position of the motor without it physically moving, effectively changing the origin of the axis. This can be achieved through EPICS by applying an offset to the reported motor position. In order to apply a fixed offset:
-
-1. Start the motor IOC
-1. Go into the `Motors` perspective in the client
-1. Bring up the OPI for the desired motor by double clicking the relevant square in the table
-1. Click on `More details...`
-1. In the `Calibration` section, switch `Cal` from `use` to `set`
-1. Either
-    1. Change the `Off` field to apply an offset to the current position
-    1. Change the current position directly by changing the `MoveAbs` `User` field in the `Drive` section
-1. **Don't forget** to switch the `Cal` field back to `Use` once you're done or the motor won't move.
+### Setting the motor position/offset
+See [Set the raw position of the motor without moving it](Set-the-raw-position-of-the-motor-without-moving-it)
 
 ### Homing
-The McLennan driver is currently set so that it will execute a constant velocity (`CV`) move to the next limit switch at a velocity equal to the base velocity. The base velocity is set to match the main velocity set via the IOC macros at startup. This can be edited in the motor details panel.
+
+There are 4 homing modes on the McLenan set via the home macro. The choice of mode depends on the motor, all but 0 are controlled by some SNL. Modes are:
+
+* 0: Send a home signal to the controller.
+* 1: Do a reverse constant velocity move until limit switch is hit, but do not zero the motor (this is deprecated)
+* 2: Send a home signal to the controller and then zero the motor
+* 3: Do a reverse constant velocity move until limit switch is hit then zero the motor
+
+The velocity of the constant velocity move is set to be a 1/10 of the normal velocity unless the macro is set to change it.
 
 ### Configuring axes
 When configuring a particular axis, an `axes.cmd` file is required in `C:\Instrument\Settings\config\[INSTMACHINE]\configurations\mclennan`. See the the [motion control](https://github.com/ISISComputingGroup/IBEX/wiki/Motion-Control) pages for additional details. It is often desirable to set up a number of axes depending which controller, and which axis is in use. There are specific environment variables set up to let you do this. The following example shows a stretching rig set up on `MOT0201` and a linear sample changer on `MOT0101`:
@@ -43,11 +41,11 @@ Note that the equivalent `IFNOT...` environment variables also exist but are typ
 
 Also note that the two environment variables combine as an `and` operation when used in this form. That is, the line will only execute if both conditions are met. There is currently no way to combine the environment variable with an `or` operator.
 
-## Reset on move
+### Reset on move
 
 The IBEX McLennan driver is set to send a reset command on any request to move. This is intended to clear errors (e.g. tracking abort) and avoid the need for power cycling that would clear the position.
 
-## Reset on stop
+### Reset on stop
 
 The IBEX McLennan driver sends the following sequence of commands when a stop is requested:
 
@@ -59,9 +57,20 @@ STOP
 
 The first stop will stop the motor as part of the normal operation and the 2nd and 3rd command will have no effect. If the motor enters an error state during a move, the first stop will have no effect and the 2nd and 3rd command will stop it. The first command is necessary since the 2nd and 3rd commands will not cause it to stop under normal operation. 
 
-## I've booted up a McLennan and can't get it moving
-Try using the macros for an axis other than 1 (2 or 3) in the ibex GUI. The axis to be driven by the buttons on the front panel are set by a position dial inside the driver, so these might not work with the motor you need to control.
-
-## Creep Speed CS for home to datum
+### Creep Speed CS for home to datum
 
 Quick note on this learnt from SECI; It appears that the SC command which set the speed for HD (home to datum) may be limited in it range. We don't think it can be set faster than the normal speed and maybe be limited to 400. Investigate when and if we need this.
+
+## Setup, Trouble Shooting and Usage
+
+### Setting up the unit
+
+When starting the unit:
+
+1. Start the controller
+1. Start/restart the IOC (so that it can send the motor and encoder resolutions to the controller)
+1. Home the device
+
+### I've booted up a McLennan and can't get it moving
+Try using the macros for an axis other than 1 (2 or 3) in the ibex GUI. The axis to be driven by the buttons on the front panel are set by a position dial inside the driver, so these might not work with the motor you need to control.
+
