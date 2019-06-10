@@ -7,7 +7,7 @@ The experimental database keeps track of:
 1. users in the team  (`user`)
 1. roles in the team  (`role`)
 
-The data is populated centrally from the [Experiment Database Populator](https://github.com/ISISComputingGroup/ExperimentDatabasePopulator) which is run on control-svcs.
+The data is populated centrally from the [Experiment Database Populator](https://github.com/ISISComputingGroup/ExperimentDatabasePopulator) (alternatively named RB number populator) which is run on control-svcs.
 
 ## Architecture
 
@@ -23,3 +23,7 @@ The experiment database populator is a Python 3 program that is designed to run 
 * The populator has unit tests that are run in [jenkins](http://epics-jenkins.isis.rl.ac.uk/job/Experiment_Database_Populator/). 
 * The `DEBUG` flag can be set in the main file to push instrument data to your local experiment database.
 * A system test is included that will check the data gathered from the website is the same as that on the instruments. This is mainly useful for comparison to the old system.
+
+## Deployment
+
+The populator is installed on the linux server control-svcs. This can be accessed using the credentials in the usual place. The program is installed under `/home/epics/RB_number_populator` and is being run as a service called rb_number_populator. Logs for the program are written into `/home/epics/RB_number_populator/logs`.
