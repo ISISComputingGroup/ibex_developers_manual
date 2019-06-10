@@ -1,6 +1,6 @@
 > [Wiki](Home) > [Galils Under SECI](galils-under-seci)
 
-# Move for GPHI on CRISP from 0 to 2.4
+# Move for GPHI on CRISP
 
 This is based on a theoretical move from 0 to 2.4, it is assumed that the encoder and motor are 'equal'.
 
