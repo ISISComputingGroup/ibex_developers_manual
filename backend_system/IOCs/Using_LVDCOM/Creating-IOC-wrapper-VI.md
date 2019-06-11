@@ -104,7 +104,7 @@ This is a summary of [[more general LvDCOM instructions|http://epics.isis.stfc.a
     <macro name="LVDCOM_HOST" pattern="^.*$" description="Host on which the vi is running, blank for localhost (Default '')" />
     <macro name="LVDCOM_PROGID" pattern="^.*$" description="DCOM ProgID, required if connecting to a compiled LabVIEW application (Default '')" />
     ```
-    * Don't add username and password, users can set these in gloabls.txt
+    * Don't add username and password, users can set these in globals.txt
 1. Add db load record
 
 ## 5. Run the IOC
