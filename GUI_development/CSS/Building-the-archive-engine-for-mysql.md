@@ -109,7 +109,7 @@ If you are creating your own CS-Studio application, then you probably need to do
 
 To add to epics server:
 
-1. Download the build from CSS. 
+1. Get the latest build off the build server (e.g. `E:\Jenkins\workspace\ControlSystemStudio\org.csstudio.sns\repository\target\products\archive-engine\win32\win32\x86_64\archive-engine-4.5.0`)
 1. Place it in a folder called `css_archvive_engine`
 1. Zip the folder and call it `css_archive_engine-win.x86_64.zip`
 1. Copy this to ICP Binaries on to internal server
