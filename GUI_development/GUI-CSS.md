@@ -4,7 +4,7 @@
 
 We have our own fork of the CSS source code [here](https://github.com/ISISComputingGroup/cs-studio). This should be kept up to date with the original code [here](https://github.com/ControlSystemStudio) and only be used to branch from when modifying CSS for our own purposes. Modifying CSS should be done in discussion with the Core CS-Studio Developers and once any modifications have passed our review every effort should be made to merge them with the original.
 
-To build any part of CSS see the product that we have forked [here](https://github.com/ISISComputingGroup/org.csstudio.sns)
+CSS is built via jenkins. Clone [this repository](https://github.com/ISISComputingGroup/isis_css_top) recursively and build using `build.bat`.
 
 # Archive Engine
 
