@@ -16,7 +16,7 @@ The experiment database populator is a Python 3 program that is designed to run 
 * Gathers 200 days worth of data from the web services hosted by business apps (Using the credentials stored in a git repository on the local share).
 * Reformats the data slightly to match the structure of the instrument databases
 * Pushes to the instrument database (Using the credentials stored in a git repository on the local share).
-* Repeats every hour
+* Optionally repeats every hour
 
 ## Testing
 
@@ -26,4 +26,4 @@ The experiment database populator is a Python 3 program that is designed to run 
 
 ## Deployment
 
-The populator is installed on the linux server control-svcs. This can be accessed using the credentials in the usual place. The program is installed under `/home/epics/RB_number_populator` and is being run as a service called rb_number_populator. Logs for the program are written into `/home/epics/RB_number_populator/logs`.
+The populator is installed on the linux server control-svcs. This can be accessed using the credentials in the usual place. The program is installed under `/home/epics/RB_num_populator` and is being run as a cron job every hour. Logs for the program are written into `/home/epics/RB_number_populator/logs`.
