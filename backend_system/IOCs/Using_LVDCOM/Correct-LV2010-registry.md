@@ -14,4 +14,4 @@ Without the correction to the Registry, connecting to the machine from a remote 
 
 1. Under `HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{LabVIEW GUID from step 1}`, add a string called `!AppId` and set the value to the `AppId` from above.
 
-1. Open dcomcnfg as Adminstrator, locate LabVIEW and click properties. Under Identity, set it to launching user then click OK.
+1. Open dcomcnfg as Administrator, locate LabVIEW and click properties. Under Identity, set it to launching user then click OK.
