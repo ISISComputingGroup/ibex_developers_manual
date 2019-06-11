@@ -51,3 +51,23 @@ Update activeMQ in the GUI in `base/uk.ac.stfc.isis.ibex.activemq` (you need to 
 - To update IOCLog in EPICS `EPICS\ISIS\IocLogServer\master\LogServer`
 - To update GUI in `base/uk.ac.stfc.isis.ibex.epics`
 
+# CS-Studio
+
+### GUI
+
+Our CS-Studio GUI dependencies are located on a share at `\\shadow.isis.cclrc.ac.uk\icp_p2$\css_gui_dependencies` (which is accessible via a webpage at `http://shadow.nd.rl.ac.uk/ICP_P2/css_gui_dependencies/`. To update the CS-Studio components that the GUI uses:
+- `git clone --recursive https://github.com/ISISComputingGroup/isis_css_top.git`
+- Make relevant changes to the code, make sure submodules get pinned to new versions using same workflow as in EPICS top.
+- Trigger a build on Jenkins
+- After the build is complete go to the build server and copy the entire isis_css_top tree to the share
+- Subsequent GUI builds will pick up the new dependencies
+- Test that your changes work correctly!
+
+### Archive engines / alarm servers
+
+- The build uses the same process as above
+- Once build is done, the products are in `org.csstudio.sns\repository\products`
+- Copy the zip files for alarm server, alarm config tool, archive engine and archive config tool to `\\shadow.isis.cclrc.ac.uk\icp_binaries$\CSS`, renaming the directories to match the existing names if necessary
+- The changes will be picked up after doing `create_icp_binaries` and then `css\master\setup_css.bat`
+
+
