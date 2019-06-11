@@ -5,9 +5,9 @@ A list of random, but useful git commands
 
 Git command                                   | What it does 
 --------------------------------------------- | ----------------------------------------------------------
-git checkout [branch-name]                    | Checkout a branch that already exists (local or remote)
-git checkout -b [branch-name]                 | Create and checkout a branch locally
-git checkout master                           | Checkout the master branch
+`git checkout [branch-name]`                  | Checkout a branch that already exists (local or remote)
+`git checkout -b [branch-name]`               | Create and checkout a branch locally
+`git checkout master`                         | Checkout the master branch
 git clone [url] [dir]                         | Clone a repo from url to a directory
 git fetch origin                              | Update and pull from origin
 git pull                                      | Get the latest copy of the repo
