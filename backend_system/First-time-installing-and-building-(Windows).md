@@ -95,9 +95,9 @@ git clone http://spudulike@control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/ins
 ```
 cd NDXXXX/
 git checkout -b NDXXXX
-rename Python\init_inst_name.py Python\init_<Inst name (lowercase e.g. iristest1)>.py
-git add Python\init_<Inst name (lowercase e.g. iristest1)>.py
-git rm Python\init_inst_name.py
+rename Python/init_inst_name.py Python/init_<Inst name (lowercase e.g. iristest1)>.py
+git add Python/init_<Inst name (lowercase e.g. iristest1)>.py
+git rm Python/init_inst_name.py
 git commit -m"create initial python"
 git push --set-upstream origin NDXXXX
 ```
@@ -128,7 +128,8 @@ git checkout NDXXXX
 If the `C:\Instrument\Settings\config\common` directory already exists, cd into it and do a `git pull` on master. Else run the following command from a Git-enabled command prompt (or modify target to run with Git Bash):
 
 ```
-git clone http://control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/common.git C:\Instrument\Settings\config\common
+git clone http://control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/common.git C:/Instrument/Settings/config/common
+
 ```
 
 The purpose and function of the calibration files are described [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Calibration-Files).
