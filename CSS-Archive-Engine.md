@@ -43,7 +43,7 @@ The configuration for logging blocks is created and set by the [Blockserver](htt
 
 As our version of the Archive Engine is no different to CSS we can just copy their builds to get the latest version. To do this:
 
-1. Download the build from [CSS](https://ics-web.sns.ornl.gov/css/updates/apps/). 
+1. Get the latest build of CSS archive engine from build server (in e.g. `E:\Jenkins\workspace\ControlSystemStudio\org.csstudio.sns\repository\target\products`)
 1. Place it in a folder called `css_archvive_engine`
 1. Zip the folder and call it `css_archive_engine-win.x86_64.zip`
 1. Copy this to ICP Binaries on to internal server
