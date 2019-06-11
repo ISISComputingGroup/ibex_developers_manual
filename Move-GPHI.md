@@ -34,7 +34,7 @@ This was based on the settings for GPHI  on CRISP, which are as follows:
 | Init | | Corrections = 0 <br>Setpoint = 2.4 <br>Position = 0 |
 | Send Setup | <pre>g_spG = -3840 <br>PRG = 0 <br>DPG = 0 <br>MTG = -2 <br>ACG = 4096 <br>DCG = 4096 <br>SPG = 2048 <br>CEG = 0 | |
 | Setpoint | <pre>PT = 1 <br>PAG = -3840 | |
-| Begin Motion 3 | <pre>SHG <br>BGG | |
+| Begin Motion 3 | <pre>SHG <br>BGG</pre> | |
 | Wait for Stop 3 | | Position = 2.4 |
 | Setpoint + Correction | <pre>PRG = 0 <br>DPG = -3840 <br>PAG = -3840 <br>ACG = 409 <br>DCG = 409 <br>SPG = 204 | Corrections = 1 |
 | Begin Motion 4 | <pre>SHG <br>BGG | |
