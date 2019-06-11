@@ -52,7 +52,7 @@ happens to match `Xoff`. You should see asyn still sending character when you en
 
 ## What is Passing between the IOC and the *Stream* Device
 
-It is possible to put stream into a debug mode where everything sent and received is written to the console. To do this simply add to you st.cmd file (defined on your aysn port) :
+It is possible to put stream into a debug mode where everything sent and received is written to the console. To do this simply add to you st.cmd file (defined on your asyn port) :
 
 ```
 asynSetTraceMask("L0",-1,0x9) 
