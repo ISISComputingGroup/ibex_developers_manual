@@ -10,6 +10,8 @@
 
 * [DB changes script](https://github.com/ISISComputingGroup/DbChanges)
 
+* [Powershell Remote](PS-Remote)
+
 ## Caget, caput, zhex and uzhex
 
 To get the value of a compressed, hexed PV (such as those on the blockserver) type into an EPICS terminal:
