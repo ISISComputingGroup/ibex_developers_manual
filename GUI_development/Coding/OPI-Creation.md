@@ -72,6 +72,7 @@ In the xml file:
 * `value.description`: description which is shown in target details
 * `value.macros.macro.name`: name of macro in OPI
 * `value.macro.macro.description`: description of macro value which appears in target details when user clicks on the macro. For a macro that contains the IOC name please provide an example with the actual IOC name in brackets.
+* `value.macros.macro.default`: default macro value.  This will be placed into the appropriate cell of the macro table if one isn't already present.
 
 Please follow [these guidelines](Synoptic-Icons) when specifying and creating new synoptic icons for the OPI.
 
