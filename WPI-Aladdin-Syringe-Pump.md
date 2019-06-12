@@ -2,7 +2,7 @@
 
 # Documentation
 
-Documentation is available for the pump at `C:\LabVIEW Modules\Drivers\WPI Aladdin-1000 Syringe Pump`
+Documentation is available for the pump at `\\isis\shares\ISIS_Experimental_Controls\Manuals\WPI__Aladdin_1000_syringe_pump`
 
 # Connection Details
   
