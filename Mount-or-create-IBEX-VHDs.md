@@ -32,9 +32,13 @@ There are some things which are cross disks, e.g. the database is a service but 
 
 # VHD Creation
 
-## Create empty VHD
+## Create empty VHDs
 
-- TODO Chris
+1. Copy the three empty vhdx files (`empty_apps.vhdx`, `empty_var.vhdx`,`empty_settings.vhdx`) to a local disk (from CompGroup\chris) and rename to
+`apps.vhdx`, `var.vhdx` and `settings.vhdx`.
+2. These are pre-configured to be 30GB each.
+3. Fill them following the steps below and then copy back to the same place appending the release version to each disk. e.g.
+   `apps_5.1.2.vhdx`.
 
 ## Mount a VHD
 
