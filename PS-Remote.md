@@ -22,4 +22,4 @@ Once the above setup has been done you can use powershell remote as follows:
 1. Start a Powershell terminal (does not need to be admin)
 2. Run `$cred=get-credential` you will see a pop up box asking for you to input some credentials
 3. Input the credentials for an instrument admin account (remember to put in an instrument machine as the domain but this can be any instrument machine, the credentials will still work for remote access as long as the machine has the same administrator account)
-4. Run `Invoke-Command -Credential $cred  __instrument_machine__{ _command_ }`
+4. Run `Invoke-Command -Credential $cred  instrument_machine { command }`
