@@ -19,7 +19,7 @@ TODO: I think we need a parameter driver and then we can more easily separate Sl
 
 ### Engineering Offset
 
-Engineering offsets correct the value sent to a PV because of inaccuracies in the engineering. For instance, if we set theta to 0.3 we will be setting the height of the jaw so that the jaws centre is in the middle of the beam. However, because of the inaccuracies in the height stage, we need to add a correction to the geometry of 0.1mm. The best place to do this is at the point at which the value is sent to the driver. The form of the corrections can multiple but we will start by catering for:
+Engineering offsets correct the value sent to a PV because of inaccuracies in the engineering. For instance, if we set theta to 0.3 we will be setting the height of the jaw so that the jaws centre is in the middle of the beam. However, because of needing to tilt the jaws and the centre of roation not being in the middle of the jaws, we need to add a correction to the geometry of 0.1mm. The best place to do this is at the point at which the value is sent to the driver. The form of the corrections can multiple but we will start by catering for:
 
 1. pure function based on the value and values of other components
 1. an interpolated table based on a set point
@@ -29,7 +29,7 @@ Note that in this case, the zero motor position is no longer necessarily zero, w
 The configuration for this is to add an engineering offset object to the IOCDriver as an argument this will do the following:
 
 1. Convert readbacks from the IOC PVWrapper to the uncorrected value 
-1. Convert set-point readbacks from the IOC PVWrapper to the uncorrected value
-1. Convert set-points from the component to the value that needs setting
-1. Convert the initialised set-point from the motor to be the value that needs setting
-    1. This is hard because it is the inverse of an `nxn` matrix potentially.
+1. Convert set-points from the component to the correct value that get sent to the PV
+1. On initialisation to convert PV to set-point value to be initialised
+    1. This is hard because to calculate the value you need a beamline parameter value which is not yet set because it is being calculated. To avoid this we introduce the constraint that engineering corrections may only be functions of an autosaved beamline parameter or the motor position/pv on which the driver is based.
+
