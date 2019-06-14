@@ -508,3 +508,7 @@ ALTER TABLE sample MODIFY COLUMN array_val MEDIUMBLOB;
 ## Instrument stuck in `WAITING` state
 
 We have observed on a couple of occasions that the DAE got stuck in `WAITING` despite no blocks being outside of runcontrol limits. The cause is yet unclear but in the meantime a restart of the `RUNCTRL_01` IOC seems to fix the issue.
+
+## ISISDAE reports `time regimes 1 and 2 are incompatible`
+
+Time regimes are incompatible when their starts differ by a non-integer number.
