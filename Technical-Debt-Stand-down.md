@@ -14,7 +14,7 @@ Try to make sure all tickets by the end of the day are in a good state.
 ### Ideas for Topics
 
 
-- Emmulator for the compressors
+- Emulator for the compressors
 - Alarming
    * Web does the same GUI
    * Remove invalid alarm
