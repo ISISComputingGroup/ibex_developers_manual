@@ -26,7 +26,9 @@ Additionally, download and install the [Multibyte MFC Library](https://www.micro
 # Install Visual Studio 2017
 
 Download installer (Visual Studio **Community** 2017 exe) from installer page https://my.visualstudio.com using your stfc email address.
-During install, choose Desktop development with C++ and from the right checkboxes: the most recent Windows 10 SDK, Windows 8.1 SDK, and MFC and ATL support
+During install, choose Desktop development with C++ and from the right checkboxes: 
+* The most recent Windows 10 SDK, Windows 8.1 SDK, and MFC and ATL support
+* Windows Universal CRT SDK
 If these boxes aren't visible on the right it is most likely because you are trying to install professional rather than community.
 # Installing a new Version of Visual Studio
 
