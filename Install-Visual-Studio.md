@@ -29,6 +29,7 @@ Download installer (Visual Studio **Community** 2017 exe) from installer page ht
 During install, choose Desktop development with C++ and from the right checkboxes: 
 * The most recent Windows 10 SDK, Windows 8.1 SDK, and MFC and ATL support
 * Windows Universal CRT SDK
+
 If these boxes aren't visible on the right it is most likely because you are trying to install professional rather than community.
 # Installing a new Version of Visual Studio
 
