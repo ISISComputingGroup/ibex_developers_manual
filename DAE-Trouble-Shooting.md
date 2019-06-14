@@ -373,7 +373,7 @@ Other things to to check in this state are:
 - [ ] data/transfer lights on a DAEII, flickering & transfer lights inactive not a good sign.  Could be the link to the PC if transfer lights are not showing activity.
 - [ ] If frame/raw counts are not showing up, a good diagnostic is to put the DAE into "Internal Test Clock".  If this works and frames appear, it is likely that there may be a problem with a Time of Flight signal (this often affects more than one beamline.
 
-## Simulation mode DAE complains about missing cards
+### Simulation mode DAE complains about missing cards
 
 From an issue in Ticket https://github.com/ISISComputingGroup/IBEX/issues/3099 - example traceback:
 
@@ -471,7 +471,7 @@ isisicp.simulation.detcards.crate2.number = 12
 
 If you have defined `isisisp.datadae.use = true` in `isisicp.properties` then you need to make sure the detector card referred to in data_dae.xml  is created by above. If this is a pure setup/test machine rather than a real instrument, you may just want to set `isisisp.datadae.use = false`
 
-## DAE exception messages
+### DAE exception messages
 
 If you get an error in you IOC log like:
 
@@ -482,19 +482,19 @@ If you get an error in you IOC log like:
  
 One cause would be the IOC is trying to call a function in the ISISICP that it can't find. If the ISISICP has been updated, but   /RegServer  has not been run, then new functions added there will not be visible. See https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/First-time-installing-and-building-(Windows)
   
-## DAE3 does not start 
+### DAE3 does not start 
 
 DAE3 is new ethernet based acquisition electronics on ZOOM and MARI, it used `ISISICP` and looks like DAE2 for most purposes. If everything remains in processing, it may be that the `arp` network entries did not get created - these should be done as a system time boot task. Do `arp -a` and see if there is an entry for 192.168.1.101 etc.  If not, run `set_dae3_arp.bat` in `c:\labview modules\dae` as as administrator
 
-## Error code 112
+### Error code 112
 
 If there is an error code 112 reported in the log it means that the disk (data volume) is full and it can not start the `isisicp` program.
 
-## DAE Type mismatch error
+### DAE Type mismatch error
 
 If you get an error from ISISICP `*** ISISICP STARTUP FAILED (DAE type mistmatch)***` it means you are running `isisicp` program with the wrong sort of dae ie 2 when you have 3. You need to source the correct version of the code for your type of DAE.
 
-## isisicp.exe keeps allocating 4GB of memory and then releasing it
+### isisicp.exe keeps allocating 4GB of memory and then releasing it
 
 It may be https://github.com/ISISComputingGroup/IBEX/issues/3701 - you just need to change the archive array table type to MEDIUMBLOB.
 
@@ -505,10 +505,10 @@ USE archive;
 ALTER TABLE sample MODIFY COLUMN array_val MEDIUMBLOB;
 ```
 
-## Instrument stuck in `WAITING` state
+### Instrument stuck in `WAITING` state
 
 We have observed on a couple of occasions that the DAE got stuck in `WAITING` despite no blocks being outside of runcontrol limits. The cause is yet unclear but in the meantime a restart of the `RUNCTRL_01` IOC seems to fix the issue.
 
-## ISISDAE reports `time regimes 1 and 2 are incompatible`
+### ISISDAE reports `time regimes 1 and 2 are incompatible`
 
 Time regimes are incompatible when their starts differ by a non-integer number.
