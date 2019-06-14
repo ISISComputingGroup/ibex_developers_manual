@@ -58,7 +58,7 @@ Certain items will not be built when using VS2013, these are:
 
 If you see `Error 2: file not found`, you may not have installed the correct windows SDK or visual studio version. Check for `rc.exe` in `C:\Program Files (x86)\Windows Kits\10\bin\x86\` (as appropriate for your system). If you don't have `rc.exe`, try installing the windows SDK appropriate for your operating system.
 
-If you still have build errors (especially realting to seabreeze or astrium choppers, [look here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Astrium-Chopper#build-issues)
+If you still have build errors (especially realting to seabreeze or astrium choppers, [look at the troubleshooting here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Astrium-Chopper#build-issues)
 
 Whilst this is building you can independently start [Building the GUI](Building-the-GUI).
 
