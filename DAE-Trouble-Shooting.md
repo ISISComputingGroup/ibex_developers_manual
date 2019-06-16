@@ -511,4 +511,4 @@ We have observed on a couple of occasions that the DAE got stuck in `WAITING` de
 
 ### ISISDAE reports `time regimes 1 and 2 are incompatible`
 
-Time regimes are incompatible when their starts differ by a non-integer number.
+Time regimes are incompatible when their starts differ by a non-integer number of microseconds, but sometimes rounding errors may lead to this happening in other circumstances. This check is actually no longer required and has been removed in ISISICP SVN revisions 2010 and above. 
