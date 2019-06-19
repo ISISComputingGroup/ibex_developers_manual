@@ -64,7 +64,7 @@ where <port> is the port name you used in the asyn setup eg `drvAsynSerialPortCo
 This will include the terminator character, if you don't see it it is not being sent or received.
 If no reply is given this will include a message "No reply from device in XXXms"
 
-See [Aysn trace mask](ASYN-Trace-Masks-(Debugging-IOC,-ASYN)) for more details on specifying trace masks  
+See [Asyn trace mask](ASYN-Trace-Masks-(Debugging-IOC,-ASYN)) for more details on specifying trace masks  
 
 ## Is the MOXA seeing anything?
 
