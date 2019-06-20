@@ -29,11 +29,10 @@ At the meeting, we will look at these tickets discuss what they are and then ran
 1. Look at any IOC tickets and get someone to do an analysis of difficulty.
 
 
-
-### To print out tickets from script
+### To print out tickets from the script
 
 Set the word printing to 
-![printer settings word](processes\printer_settings_word.png)
+![printer settings word](processes/printer_settings_word.png)
 
-Set the print propeties setting to:
-![printer settings printer](processes\printer_settings_printer.png)
+Set the print properties setting to:
+![printer settings printer](processes/printer_settings_printer.png)
