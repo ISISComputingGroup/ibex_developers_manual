@@ -5,15 +5,18 @@ Backlog preparation is the meeting where we decide on most of the candidate tick
 ### Preparation
 
 1. Announce at standup that people should move tickets to proposal
-1. Before the backlog pruning meeting people should move tickets to the 'proposal' column they would like to see in the next sprint; all the tickets that must be in and a maximum of 2 extras per person. 
-1. Print out the tickets so that they can be ordered in the meeting. To do this
-    - list issues with label `proposal` in github
-    - copy and paste into notepad++
-    - replace `(#\d\d\d\d).*` with `\1\n\n`
-    - replace single digits on a line with nothing
-    - copy to word
-    - alter font to 40 for titles and big and 72 for numbers make sure it is 2 per page 
-    - print and cut
+1. Before the backlog pruning meeting, people should add the label 'proposal' to the proposed tickets that they would like to see in the next sprint; all the tickets that must be in and a maximum of 2 extras per person. 
+1. Print out the tickets so that they can be ordered in the meeting. To do this run:
+
+    ```
+    cd ibex_utils\repo-tool\scripts
+    %PYTHON% proposal_printing.py
+    ```
+    1.  You will need a github token. Create this on the github user settings page. In Developer settings -> Personal access tokens and generate a token. 
+    1. To print open the word document and use the word printing settings
+       ![printer settings word](processes/printer_settings_word.png)
+    1. and set the print properties setting to:
+       ![printer settings printer](processes/printer_settings_printer.png)
 
 ### During the meeting
 
@@ -31,8 +34,3 @@ At the meeting, we will look at these tickets discuss what they are and then ran
 
 ### To print out tickets from the script
 
-Set the word printing to 
-![printer settings word](processes/printer_settings_word.png)
-
-Set the print properties setting to:
-![printer settings printer](processes/printer_settings_printer.png)
