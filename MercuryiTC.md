@@ -31,7 +31,7 @@ Currently, the driver only measures and sets the following:
 
 #### Setup
 
-To activate a card you must set the related IOC macro in globals.txt. The macro sets the final part of the front panel name. The front panels are called `Mercury - Front Panel <I> - Temp <N>.vi` where <I> is the Mercury index (also the IOC index) and <N> is the card index 1 for the first temperatue card, 2 for the second etc. The following macros set the <I> for the 4 possible IOC slot:
+To activate a card you must set the related IOC macro. The macro sets the final part of the front panel name. The front panels are called `Mercury - Front Panel <I> - Temp <N>.vi` where <I> is the Mercury index (also the IOC index) and <N> is the card index 1 for the first temperatue card, 2 for the second etc. The following macros set the <I> for the 4 possible IOC slot:
 
 | Macro | Usual Value | IOC Name | 
 | ----  | ----------- | -------- | 
@@ -45,17 +45,17 @@ To activate a card you must set the related IOC macro in globals.txt. The macro 
 #### Important PVs
 
 * `TEMP` Current temperature
-* `TEMP:SP` Set point for temperature controller
+* `TEMP:SP` Setpoint for temperature controller
 * `TEMP:SP:RV` Read back of the set temperature point
 * `NAME` Name associated with the card
 
 ### He Level
 
-The helium level can be monitored by setting the macro VI_LEVEL_1 to point at the the correct vi in a similar fashion to the temperature.
+The helium level can be monitored by setting the macro VI_LEVEL_1 to point at the correct vi in a similar fashion to the temperature.
 
-## Example
+### Example
 
-Front panel on the Mercury is
+In this example the front panel on the Mercury look:
 
 ![front panel showing 6 areas](backend_system/IOCs/MercuryITc/front_panel.jpg)
 
@@ -72,3 +72,7 @@ This also has a pressure gauge which we currently can't read remotely.
 For info here is a detailed temp loop:
 
 ![detailed front board](backend_system/IOCs/MercuryITc/detailed_temp_board.jpg)
+
+## OPI
+
+The OPI has macros that relate to the macros set at the IOC level.
