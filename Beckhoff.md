@@ -25,7 +25,7 @@ Beckhoff code can be run as a simulated system on a developer machine by doing t
 
 Beckhoff provides an `automation interface` which can do any of the things you can do in the Twincat XAE automatically through DCOM. A C# (Beckhoff do not fully support a Python interface 😢) program (`AutomationTools`) has been written to leverage this interface in the following way to write integration tests for the Beckhoff:
 
-![Overview](beckhoff/Beckhoff Overview.png)
+![Overview](beckhoff/beckhoff_overview.png)
 
 1. Jenkins will pull the Beckhoff PLC code from github
 2. `build.bat` is run to first build the `AutomationTools` themselves then to build the PLC code using the `automation interface`. This build will also create a `*.tpy` file, which outlines how to connect to the PLC and can be used to configure the IOC itself.
