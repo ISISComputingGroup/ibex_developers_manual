@@ -1,4 +1,28 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [Sensors](Sensors)
 
+# Documentation
+
+Documentation is available for the pump at `\\ISIS\Shares\ISIS_Experimental_Controls\Manuals\Keyence__LK-G`
+
+# Connection Details
+
+|      RS-232C Specifications  |   |
+|---------------|------------------|
+|     Baud rate | 115200; 57600, 38400, 19200, 9600 Baud       |
+|     Stop bits | 1 bit            |
+|        Parity | None             |
+|   Data length | 8 bit            |
+|  Flow control | None        |
+| Data delimiter | CR |
+
+
+# Specifications
+
 The Keyence LK-G Series are modular High-speed, High-accuracy
 CCD Laser Displacement Sensor devices.
+
+## Mode control
+
+This device has two modes : Communication (Set-up) and Measure. Fields on the device, such as the head measurement mode or measurement offsets can only be set when the device is in set-up mode. Measurements can only be made when the device is in measure mode.
+
+To keep the process of scripting and user control simple, the device is put into measurement mode and will switch to communication mode (at the protocol level) when a set point is changed.
