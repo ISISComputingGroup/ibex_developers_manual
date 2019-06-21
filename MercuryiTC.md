@@ -46,7 +46,7 @@ To activate a card you must set the related IOC macro in globals.txt. The macro 
 
 ### He Level
 
-The helium level can be monitored by setting the macro VI_LEVEL_1 to point at the the correct vi in a similar fasion to the temperature.
+The helium level can be monitored by setting the macro VI_LEVEL_1 to point at the the correct vi in a similar fashion to the temperature.
 
 ## Example
 
