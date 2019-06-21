@@ -18,6 +18,11 @@ In the future, we may want to develop a full epics IOC for it and there is a pos
 
 The device should be talked to via serial at a baud rate of 57600. This is variable on the front panel, but **only while the device is in local mode.**
 
+The screens look like:
+
+![Comms general](backend_system/IOCs/MercuryITc/comms1.jpg)
+![Comms detailed](backend_system/IOCs/MercuryITc/comms2.jpg)
+
 ## Driver
 
 Currently, the driver only measures and sets the following:
@@ -63,3 +68,7 @@ This mercury has 3 temperature sensors, Sample_Rod, VTI_DB6 and PT2_DB7, the VTI
 The temperature controls are on the 1st and 2nd temperature and so on the first and second tab on the mercury device screen. NB the device screen also needs these macros set.
 
 This also has a pressure gauge which we currently can't read remotely.
+
+For info here is a detailed temp loop:
+
+![detailed front board](backend_system/IOCs/MercuryITc/detailed_temp_board.jpg)
