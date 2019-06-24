@@ -21,7 +21,7 @@ Beckhoff code can be run as a simulated system on a developer machine by doing t
 4. You now have a simulated beckhoff PLC running on your PC. This behaves the same as real hardware and so all development can be done against it. You could now also run an IOC up talking to this local PLC.
 5. To see what is happening inside this PLC in more detail, and to change values, you can use the login button ![Login](beckhoff/Login.PNG)
 
-### Continous Integration
+### Continuous Integration
 
 Beckhoff provides an `automation interface` which can do any of the things you can do in the Twincat XAE automatically through DCOM. A C# (Beckhoff do not fully support a Python interface 😢) program (`AutomationTools`) has been written to leverage this interface in the following way to write integration tests for the Beckhoff:
 
