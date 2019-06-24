@@ -93,9 +93,9 @@ ZOOM | 5.5T |
 
 ### Magnet won't go to field which has been set - "Activity" is "Clamped"
 
-Check on the "Advanced" tab of the OPI whether the IPS reports it's status as "clamped". If so, the state machine will be unable to proceed because being "clamped" means that the IPS will stay at it's current output indefinitely. To get out of this state, it is best to get out of the "clamped" state via the front panel.
+Check on the "Advanced" tab of the OPI whether the IPS reports it's status as "clamped". If so, the state machine will be unable to proceed because being "clamped" means that the IPS will stay at it's current output indefinitely. "Clamped" mode is usually used by cryogenics when setting up the magnet, it is potentially undesirable to do this remotely without checking with them first.
 
-Note: You *may* be able to get out of a clamped state remotely with `caput %MYPVPREFIX%IPS_01:ACTIVITY:SP <desired activity>`, but the old LabVIEW driver did not do this and it is not exposed as a user-facing option in the EPICS driver.
+Note: You *may* be able to get out of a clamped state remotely with `caput %MYPVPREFIX%IPS_01:ACTIVITY:SP Hold`, but the old LabVIEW driver did not do this and it is not exposed as a user-facing option in the EPICS driver. **You should double check that this is ok with cryogenics before executing this command! It is potentially dangerous if the magnet has not been fully set up.**
 
 ### Magnet won't go to field - sweep rate readback is zero
 
