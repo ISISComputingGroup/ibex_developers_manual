@@ -4,17 +4,15 @@ Run
 ```
 TestSerialPort.exe --help
 ```
-for options. 
-
-write string and see reply
+for options. To write a string and print reply
 ```
 testserialport com5 "stuff_to_write" "\r\n"
 ```
-write string and see reply, also log all serial events
+To write string, see reply and also log all serial events (as per WIN32 SetCommMask())
 ```
 testserialport com5 "stuff_to_write" "\r\n" --eventmask=0x1ff
 ```
-See serial port status
+To see serial port status (need to have stopped IOC)
 ```
 testserialport com5 --noread --report=5
 ```
