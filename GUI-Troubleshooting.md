@@ -14,7 +14,7 @@ Next check that the [database is up](Database-Troubleshooting).
 
 ## Target Platform Errors
 
-In some cases when you recieve a `Resolving Target Definition` error, this can relate to some cached files that need to be refreshed and repeatedly performing the loop of `Clean project > Set as Target Platform > Reload` between 3-10 times can fix this issue. Set as Target Platform and Reload are located on the target view, located at `uk.ac.stfc.isis.ibex.targetplatform.target`.
+In some cases when you receive a `Resolving Target Definition` error, this can relate to some cached files that need to be refreshed and repeatedly performing the loop of `Clean project > Set as Target Platform > Reload` between 3-10 times can fix this issue. Set as Target Platform and Reload are located on the target view, located at `uk.ac.stfc.isis.ibex.targetplatform.target`.
 
 ## Other issues
 
