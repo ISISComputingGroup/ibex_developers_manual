@@ -44,6 +44,7 @@ The whole system is coordinated by the [Beamline object](Reflectometry-Beamline-
 
 The values that the user sets on the reflectometry IOC only ever get transferred downward between the layers. This is true of setpoints and set-point readbacks. The only time this is violated is on start-up where the state is read from the underlying hardware for initial values. This means if a user sets a motor position it will not be reflected in the setpoint and the next time the reflectometry IOC is moved it will set it back to its original position even if it hasn't been changed. 
 Readbacks flow in the opposite direction they are always read from the lower levels and set upwards. To help identify where set points and readbacks are not the same indicators on the GUI will be set.
+This is controversial but is signed off as per [ticket 4307](https://github.com/ISISComputingGroup/IBEX/issues/4307).
 
 ## Other Concepts
 
