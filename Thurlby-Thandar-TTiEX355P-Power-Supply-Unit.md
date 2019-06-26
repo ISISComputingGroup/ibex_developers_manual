@@ -12,9 +12,11 @@ Documentation is available for the pump at `"\\ISIS\shares\ISIS_Experimental_Con
 |   Data length | 2 bit            |
 |  Flow control | Xon/Xoff control |
 
-# Notes:
-    -Communication command is terminated with CR and LF.
-    -Communication return is terminated with CR. 
+**Notes:**
+*    Communication command is terminated with CR and LF.
+*    Communication return is terminated with CR. 
+
+## Operation
 
 The Thurlby Thandar TTI PLP power supply series is a simple programmable bench power supply.
 
