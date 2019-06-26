@@ -6,6 +6,6 @@ To enable this option you need to change the mode of the moxa port from "Real CO
 
 Port 1 of the MOXA is served at IP port 4001, so to connect with asyn you would use something like:
 ```
-drvAsynIPPortConfigure("L0", "130.246.49.42:4003 COM", 0, 0, 0, 0)
+drvAsynIPPortConfigure("L0", "130.246.49.42:4001 COM", 0, 0, 0, 0)
 ```
 The "COM" after the address:port indicates the RFC 2217 mode, this mode means that asynSetOption() will work as before and there is no need to set baud etc. via the moxa web page. 
