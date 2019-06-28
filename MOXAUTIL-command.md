@@ -1,4 +1,4 @@
-The moxautil command will allow you to control a moxa box in a limited way. Type:
+The `moxautil` command will allow you to control a moxa box in a limited way. Type:
 ```
 moxautil.exe --help
 ```
