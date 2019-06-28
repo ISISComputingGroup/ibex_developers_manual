@@ -11,9 +11,11 @@ To prevent duplication, the GUI perspective depends wholly on the standalone app
 | Standalone app build directories | `base/uk.ac.isis.scriptgenerator/*` |
 
 ## To build
+
+### Eclipse
 To build and run the app through eclipse, the script generator product is found in `base\uk.ac.stfc.isis.scriptgenerator.client.product`. The instructions for setting up eclipse and loading the target platform (necessary for the script generator) are found in the instructions for the [main IBEX GUI setup](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Building-the-GUI)
 
-
+### Maven
 To build the standalone app through maven run `build\build_script_generator.bat`
 
 There is a Jenkins pipeline which will build the script generator with every new commit to the IBEX GUI master branch.
