@@ -36,7 +36,6 @@ There are two use cases for adding a submodule:
     mkdir danfysikMps8000
 ```
 1. Add a Makefile in the directory, copy it from e.g. ../calc/Makefile  
-1. Create a macro for the repository in `...EPICS\configure\MASTER_RELEASE` 
 1. Adjust the Makefile in the parent directory to include the new module, e.g. add to `SUPPDIRS` in `...EPICS\support\Makefile`.
 1. Add all changes to git.
 
