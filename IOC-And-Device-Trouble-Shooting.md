@@ -66,6 +66,13 @@ If no reply is given this will include a message "No reply from device in XXXms"
 
 See [Asyn trace mask](ASYN-Trace-Masks-(Debugging-IOC,-ASYN)) for more details on specifying trace masks  
 
+To stop printing these commands to the log use:
+
+```
+asynSetTraceMask("L0",-1,0x0) 
+asynSetTraceIOMask("L0",-1,0x0)
+```
+
 ## Is the MOXA seeing anything?
 
 It is sometime useful to see if the moxa is seeing any traffic. If you are in the cabin you can look at the flashing lights (remember to take away 4 to convert from com number to port number). There is one light for send and one for receive both should flash.
