@@ -496,9 +496,11 @@ If you get an error from ISISICP `*** ISISICP STARTUP FAILED (DAE type mistmatch
 
 ### isisicp.exe keeps allocating 4GB of memory and then releasing it
 
-It may be https://github.com/ISISComputingGroup/IBEX/issues/3701 - you just need to change the archive array table type to MEDIUMBLOB.
+It may be https://github.com/ISISComputingGroup/IBEX/issues/3701 - you just need to change the archive array table type to MEDIUMBLOB.  Due to a bug in the C++/MySQL connector, each time the database is read, a LONGBLOB's worth of memory (4GB) is allocated and then released.  By changing to MEDIUMBLOB (16MB), a much smaller amount is used.
 
-Run these commands to modify the DB in place:
+In `C:\Instrument\Apps\MySQL\bin>`, run `mysql.exe -u root -p` and enter the MySQL root password when prompted.
+
+Then run these commands to modify the DB in place:
 
 ```
 USE archive;
