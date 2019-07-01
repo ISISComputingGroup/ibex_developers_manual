@@ -24,7 +24,7 @@ to:
 ```
 uk.ac.stfc.isis.ibex.preferences/perspectives_not_shown=
 ```
-
+This change should not be committed to master until the script generator is ready to be deployed to users
 
 ## Maven build
 To build the standalone app through maven run `build\build_script_generator.bat`
