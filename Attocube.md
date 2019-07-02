@@ -22,6 +22,8 @@ This is not meant to be an extensive documentation of the protocol, I merely und
 | Index       | 4 byte integer, LSB first | Normally the axis that you're reading/writing to |
 | Correlation Number      | 4 byte integer, LSB first | Used to match up the response, the driver will increment this for each packet |
 
+### Set
+
 When a set is sent to the controller it will look like:
 
 | Information | Type                      | Description |
@@ -30,6 +32,8 @@ When a set is sent to the controller it will look like:
 | Data | Array of 4 byte integers, LSB first | The data to actually write. |
 
 The response will just be a header with the acknowledgement opcode.
+
+### Get
 
 When a get is sent to the controller it will just be a header with the get opcode. The response will be:
 
