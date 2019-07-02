@@ -29,7 +29,9 @@ When a set is sent to the controller it will look like:
 | Header      | As above. | As above. |
 | Data | Array of 4 byte integers, LSB first | The data to actually write. |
 
-When a get is responded to by the controller it will look like:
+The response will just be a header with the acknowledgement opcode.
+
+When a get is sent to the controller it will just be a header with the get opcode. The response will be:
 
 | Information | Type                      | Description |
 |-------------|---------------------------|-------------|
