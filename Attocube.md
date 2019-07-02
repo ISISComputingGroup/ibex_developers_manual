@@ -38,7 +38,9 @@ When a get is responded to by the controller it will look like:
 | Data | Array of 4 byte integers, LSB first | The data to read from the specified memory address. |
 
 So an example of communications may be:
+
 To controller: `10 00 00 00 01 00 00 00 15 04 00 00 02 00 00 00 8b 00 00 00`
+
 Reply: `18 00 00 00 03 00 00 00 15 04 00 00 02 00 00 00 8b 00 00 00 00 00 00 00 ca 00 00 00`
 
 Here the IOC is getting the value of memory address `0x0415` on axis 0, which is the position of the axis. It receives a value of 202 steps.
