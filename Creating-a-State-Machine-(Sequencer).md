@@ -46,9 +46,9 @@ DATA += devHFMAGPSU.proto
 DBD += fsm.dbd
 
 # Sequence file
-SRCS += fsm.st
+HFMAGPSU_SRCS += fsm.st
 LIBRARY_IOC = HFMAGPSU
-HFMAGPSU_LIBS += seqDev seq pv
+HFMAGPSU_LIBS += seq pv
 HFMAGPSU_LIBS += $(EPICS_BASE_IOC_LIBS)
 
 #=======================================
@@ -77,7 +77,7 @@ Edit `build.mak` to ensure the needed libraries are included:
 # Add all the support libraries needed by this IOC
 ## ISIS standard libraries ##
 
-$(APPNAME)_LIBS += seqDev seq pv
+$(APPNAME)_LIBS += seq pv
 ```
 ### Notes
 
