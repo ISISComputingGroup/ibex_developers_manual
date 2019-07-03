@@ -55,6 +55,12 @@ HFMAGPSU_LIBS += $(EPICS_BASE_IOC_LIBS)
 include $(TOP)/configure/RULES
 ```
 
+Be sure to include the library location for seq in the support `RELEASE` file.
+```
+# Macros required for basic ioc/stream device
+SNCSEQ=$(SUPPORT)/seq/master
+```
+
 ### Call State file from IOC
 Enter IOC folder, e.g.
 ```
