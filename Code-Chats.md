@@ -90,7 +90,7 @@ Topic | Presenter | Date
 ----- | --------- | ----
 Controls at the ESS | Michael Hart | July 2019
 Datastreaming | Jack Harper | July 2019
-Where data is kept at ISIS | Chris | August 2019
+How data moves at ISIS | Chris | August 2019
 
 ### Proposed Future Code Chats
 
