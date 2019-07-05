@@ -10,7 +10,11 @@ to reboot the server or
 ```
 moxautil.exe --ip=130.246.49.42 --alive
 ```
-To check an IP is alive and really a moxa. The command also support:
+To check an IP is alive and really a moxa. 
+
+## Interrogate Specific ports 
+
+The command also supports interrogating individual ports:
 ```
 moxautil.exe --ip=130.246.49.42 --port=1 --resetport --password=themoxapassword
 ```
