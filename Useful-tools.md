@@ -12,6 +12,8 @@
 
 * [Powershell Remote](PS-Remote)
 
+* [Moxa Utils](MOXAUTIL-command)
+
 ## Caget, caput, zhex and uzhex
 
 To get the value of a compressed, hexed PV (such as those on the blockserver) type into an EPICS terminal:
