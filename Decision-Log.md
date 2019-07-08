@@ -25,3 +25,7 @@ A place to record decisions:
 11. Setting a device to remote mode should **not** be done on IOC start. There should be a clear indication on the OPI that it is in remote mode (where possible) and a button to set it into remote mode. There should also be an alarm on the PV but not at IOC level when the device is in local mode. It was thought that instrument scientists did not know that IOCs were restarting (e.g. when the updated a config for collimator) and so would be surprised at the change in the device.
     - Advised by Kathryn, present John, Alistair
     - 2019/05/16
+
+12. If a setpoint on a device has a range set by the device it should be set up by using DRVH and DRVL. This is in preference to not caping it and letting the device ignore wrong values. The last choice is to add another record on top which intercepts the value and records an error and sends the capped value. The reason is that we would like to capture the range of the device without adding the complication of another record. This is also a similar behaviour to SECI. Finally, we could, in the future, check the value set in a `cset` against these values.
+    - Present, John, Tom, Aaron, David and Freddie
+    - 2019/07/05
