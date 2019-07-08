@@ -26,6 +26,6 @@ A place to record decisions:
     - Advised by Kathryn, present John, Alistair
     - 2019/05/16
 
-12. If a setpoint on a device has a range set by the device it should be set up by using DRVH and DRVL. This is in preference to not caping it and letting the device ignore wrong values. The last choice is to add another record on top which intercepts the value and records an error and sends the capped value. The reason is that we would like to capture the range of the device without adding the complication of another record. This is also a similar behaviour to SECI. Finally, we could, in the future, check the value set in a `cset` against these values.
+12. If a setpoint on a device has a range set by the device it should be set up by using DRVH and DRVL. This is in preference to not capping it and letting the device ignore wrong values. The last choice is to add another record on top which intercepts the value and records an error and sends the capped value. The reason is that we would like to capture the range of the device without adding the complication of another record. This is also a similar behaviour to SECI. Finally, we could, in the future, check the value set in a `cset` against these values.
     - Present, John, Tom, Aaron, David and Freddie
     - 2019/07/05
