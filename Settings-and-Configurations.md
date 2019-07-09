@@ -39,7 +39,7 @@ Configuration files for the DAE.
 
 ### Configuration of devices and extensions
 
-These are directories which configure devices which would be too complicated for macro configuration. For example the Galil configuration with the need to setup the controller, homeing routines etc. Historically this was named after a category of device, e.g. galil. This allow configuration of devices as a whole. They can also be named after an IOC which allow configuration of a single IOC, e.g SM300_01. 
+These are directories which configure devices which would be too complicated for macro configuration. For example the Galil configuration with the need to setup the controller, homing routines etc. Historically this was named after a category of device, e.g. galil. This allow configuration of devices as a whole. They can also be named after an IOC which allow configuration of a single IOC, e.g SM300_01. 
 
 The extensions are items which extend an IOC for example a motion setpoints which allow a motor to stop at labelled positions. These are configured from the IOC configuration directory and may need optional extra configuration directories.
 
