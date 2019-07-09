@@ -19,7 +19,7 @@ Table of our understanding for each mode what is in the beam and what is trackin
 
 Mode      | S1 | Polariser | S2 | sample stack | ideal sample point | S3 | analyser | S4 | Detector
 ---       | --- | -----    |  --- | ----       | ----               | --- | ---     | --- | ----
-NR        | T  | O         | T  | I            | T                  | T  | O        | T  | T  
+NR (Neutron reflecting)        | T  | O         | T  | I            | T                  | T  | O        | T  | T  
 polarised | T  | T         | T  | I            | T                  | T  | O        | T  | T  
 
 
