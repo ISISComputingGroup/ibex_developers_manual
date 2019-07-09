@@ -105,3 +105,16 @@ where
 
 Either a full make of the server or running `make iocstartups` will then make the contents of these XML files available to the GUI (after restarting the instrument)
 
+## 8. PV Limits
+
+If a limit on a set point is well defined (i.e., given by a device manual) then the fields `DRVH` "Drive High" and `DRVL` "Drive Low" should be used to constrain the PV set point. The behaviour of these fields is that if a limit is 10.0 and a user inputs 11.0, then the PV will constrain the input to 10.0 and process that value. Records that use limits should also be robustly tested to ensure the behave as expected. An example test:
+
+```
+    @parameterized.expand([
+        ("lt_low_limit", CURR_LOW_LIMIT-1, "low_limit", CURR_LOW_LIMIT),
+        ("gt_high_limit", CURR_HIGH_LIMIT+1, "high_limit", CURR_HIGH_LIMIT)])
+    @skip_if_recsim("Behaviour cannot be simulated in Recsim")
+    def test_WHEN_voltage_setpoint_is_set_outside_max_limits_THEN_setpoint_within(self, case, case_value, limit, limit_value):
+        self.ca.set_pv_value("CURRENT:SP", case_value)
+        self.ca.assert_that_pv_is("CURRENT:SP", limit_value)
+```
