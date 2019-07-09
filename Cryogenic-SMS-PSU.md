@@ -23,7 +23,7 @@ If all runs smoothly, the magnet will get up to the field you specify.
 
 #### Pausing
 
-The PSU can pause in the middle of a ramp. This stops rmap generator activity in the PSU and immediately responds with an acknowledge message. Subsequent ramp status queries will inform the IOC that the PSU is paused and holding at a certain current/field strength.
+The PSU can pause in the middle of a ramp. This stops ramp generator activity in the PSU and immediately responds with an acknowledge message. Subsequent ramp status queries will inform the IOC that the PSU is paused and holding at a certain current/field strength.
 
 #### Ramping Through 0
 
