@@ -18,3 +18,19 @@ It is meant to be thoroughly tested against the VI in every capacity that the VI
 It initialises and waits in a `Ready` state, depending on things like switch status, temperatures, magnet mode, settle times, etc. `Ready` means that it is ready to drive its field (up or down). It is dangerous to ramp the magnet too fast, so the IOC uses 'ramp tables' which contain field strength-ramp rate pairs. i.e. the magnet can safely ramp up to the field strength at the ramp rate associated with it. Any higher and you risk quenching.
 
 To prevent a quench, the IOC will, upon setting a setpoint, calculate the steps required to safely ramp to the new setpoint. It will then send pairs of values, one ramp rate and one ramp set point, which will start the PSU ramp. The ramp set point is always sent as a new mid setpoint (unless it is doing a ramp to 0). 
+
+If all runs smoothly, the magnet will get up to the field you specify.
+
+#### Pausing
+
+The PSU can pause in the middle of a ramp. This stops rmap generator activity in the PSU and immediately responds with an acknowledge message. Subsequent ramp status queries will inform the IOC that the PSU is paused and holding at a certain current/field strength.
+
+#### Ramping Through 0
+
+The field can switch polarity, depending on the direction of the current driving it. The PSU keeps track of this using a 'direction' which is either +, -, or 0. 0 is only used for Low Field Option mode, see the manual's Appendix N for more. 
+
+When the polarity is switched, i.e. when driving the field from 3T to -3T, the PSU will first ramp to 0, then switch polarity (this shorts the terminals and causes a voltage excursion for 5ms), then carry as it would normally and select appropriate ramp rates as it drives the magnet up to field. 
+
+### Quenching
+
+The magnet can quench if it is ramped too aggressively, or if its temperature drifts too high. If the PSU detects a quench, it report that it thinks the magnet has quenched. The IOC will interpret this and halt all queued actions. It will stay in this state until the IOC is restarted. 
