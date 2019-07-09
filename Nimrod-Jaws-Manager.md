@@ -21,4 +21,4 @@ y | Height at sample | user set |
 
 ## Setup
 
-The control files for the nimrod jaws are part of the gallil motor set up and are per instrument. There is an example in `...\EPICS\support\motorExtensions\master\settings\nimrod_jaws\*.cmd` which would need to be copied to `C:\Instrument\Settings\config\<instrument host name>\configurations\galil`. IOC System tests also exist for the logic.
+The control files for the nimrod jaws are part of the galil motor set up and are per instrument. There is an example in `...\EPICS\support\motorExtensions\master\settings\nimrod_jaws\*.cmd` which would need to be copied to `C:\Instrument\Settings\config\<instrument host name>\configurations\galil`. IOC System tests also exist for the logic.
