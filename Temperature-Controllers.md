@@ -8,7 +8,7 @@
 * [Lakeshore 336](Lakeshore336)
 * [Lakeshore 340](Lakeshore340)
 * [Lakeshore 460](Lakeshore460)
-* [Mecury iTC](MercuryiTC)
+* [Mercury iTC](MercuryiTC)
 * [Neocera LTC-21](Neocera-LTC-21)
 * [OMEGA OME-Wise](OMEGA-OME-Wise)
 * [Triton](Triton)
