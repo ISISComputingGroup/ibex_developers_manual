@@ -8,4 +8,4 @@ Occasionally, the process which ingests ISIS data into the ICAT catalogue stops 
 
 Unfortunately, the server that runs the ingestion process is managed by SCD and we have no control over it (although it is on the ISIS network).  There are various NAGIOS checks provided by SCD that we run on our server which notify the relevant people of any problems.
 
-There is an ICAT/TopCAT entry in the dropdown box on the [error reporting page](http://sparrowhawk.nd.rl.ac.uk/footprints/) that can be used to submit a problem, or the SCD team can be contacted directly via their [email address](mailto:isisdata@stfc.ac.uk).
+There is an ICAT/TopCAT entry in the category dropdown box on the [error reporting page](http://sparrowhawk.nd.rl.ac.uk/footprints/) that can be used to submit a problem (will be forwarded to Computing Group), or the SCD team can be contacted directly via their [email address](mailto:isisdata@stfc.ac.uk).
