@@ -1,6 +1,6 @@
 > [Wiki](Home) > Accelerator Information
 
-This information is fed from an IOC running on a machine on the accelerator network (merckx.isis.rl.ac.uk). The IOC is set to run on boot time and is auto-restarted if it is not present, it will also auto-restart if it receives too many errors.
+This information is fed from an IOC running on a machine on the accelerator network (merckx.isis.rl.ac.uk). This is a VMS machine with the EPICS distribution from (https://github.com/FreddieAkeroyd/EPICS-VMS). The IOC is set to run on boot time and is auto-restarted if it is not present, it will also auto-restart if it receives too many errors.
 
 You can log onto this machine using details on usual access page
 
