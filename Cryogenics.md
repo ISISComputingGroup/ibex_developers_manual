@@ -72,3 +72,11 @@ The Oxford Instruments Intelligent Level Meter (ILM) (see [#1390](https://github
 * See [#1286](https://github.com/ISISComputingGroup/IBEX/issues/1286)
 * See [#1287](https://github.com/ISISComputingGroup/IBEX/issues/1287)
 * See [#1392](https://github.com/ISISComputingGroup/IBEX/issues/1392)
+
+# Note about Oxford Instruments ITC/ILM/IPS controllers
+
+These controllers used to be run in a rack with a single serial connection under SECI (this used an ISIS isobus expander crate to split the signals). This is because, in SECI, there was only one process which talked to all of the pieces of equipment (in various combinations).
+
+In IBEX, support for the individual devices has been written into separate IOCs to increase the flexibility of the drivers. Under Windows, this means that they cannot talk to the same COM port (because each IOC has exclusive access to the port). Therefore, under IBEX, separate connections from the moxa to each bit of kit are required.
+
+The kit takes 25-way serial cables.
