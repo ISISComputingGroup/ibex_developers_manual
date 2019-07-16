@@ -12,7 +12,7 @@ An external stop will interrupt the state machine and go to the Stop state.
 | Idle | | Send Setup Params |
 | Send Setup Params | Set motor position to encoder position <br><br> Send motor parameters | Begin motion speed zero |
 | Begin motion speed zero | "JG" at minimum of Axis Setup Speed (from the setup information) and the Present Motion Speed (from the control on the VI - defaults to zero and is populated to +/- the Axis Setup Speed) <br><br> "SH" <br><br> If this is a servo motor `"CP = -1"` <br><br> "BG" | Set Jog Speed |
-| Set Jog Speed | If state hasn't been changed by an external factor (e.g. a stop) OR Present Motion Speed has changed, then "JG" at the minimum of the Axis Setup Speed and the Present Motion Speed | If any of the stop sceanrios have been met OR a move is not in progress --> Stop, otherwise --> Jog Speed |
+| Set Jog Speed | If state hasn't been changed by an external factor (e.g. a stop) OR Present Motion Speed has changed, then "JG" at the minimum of the Axis Setup Speed and the Present Motion Speed | If any of the stop scenarios have been met OR a move is not in progress --> Stop, otherwise --> Jog Speed |
 | Stop | "ST" | Wait Until Stop |
 | Wait Until Stop | | Move in progress = True --> Wait Until Stop <br><br> Move in progress = False --> Power Off |
 | Power Off | If De-energise = True, "MO" <br><br> Send Motor Params Init | End |
