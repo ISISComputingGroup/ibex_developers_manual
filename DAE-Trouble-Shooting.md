@@ -23,7 +23,9 @@ This was resolved by powercycling the DAE followed by stopping the visa server a
 The reason may be because cp hasn't been set to look for epics. In `C:\LabVIEW Modules\dae\isisicp.properties` set `isisicp.epicsdb.use = true` to log the epic's blocks. You will need to restart the `isisicp` process for this to take effect. To do this, just end the `isisicp` process in task manager.
 
 ### DAE doesn't seem to be connected/I want to run without a DAE connected
-The DAE can be set to run in simulation mode, this must be unset before data will be collected. To set the mode edit the xml file in `C:\LabVIEW Modules\dae\icp_config.xml` set the simulate property to 1 to simulate 0 to use hardware.
+The DAE can be set to run in simulation mode, this must be unset before data will be collected. To set the mode run `g.set_dae_simulation_mode(True)` or `g.set_dae_simulation_mode(False)` to unset.
+
+To change the simulation mode manually, in `icp_config.xml` change the simulate property to 1 (or 0 if turning off simulation mode). `icp_config.xml` can be found in either the "LabVIEW modules" or "ICP Binaries" directory. Stop the DAE IOC from the console, then kill the ISISICP process. Finally, restart the DAE IOC from the console.
 
 ### Log file for labview modules DA
 
