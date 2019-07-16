@@ -2,7 +2,7 @@ These are used to power the HIFI Cryomag. There are four, one (higher max curren
 
 Magnet cool downs typically take several days, warm ups take a similar length of time. It usually sits at 3-4K, the temperature is monitored by a [Keithley 2700](Keithley-2700). 
 
-They care connected via USB to serial RS-232 directly to the NDXHIFI_CRYOMAG PC. 
+They are connected via USB to serial RS-232 directly to the NDXHIFI_CRYOMAG PC. 
 
 All commands have a longhand and a shorthand version which can be found in the manual on our network share. The emulator has been made such that it can deal with the longhand or the shorthand, since it must be tested against the VI for compatibility, and the VI uses shorthand commands (vs the IOC which, in its current state in July 2019, uses longhand. This is likely to change).
 
