@@ -71,6 +71,10 @@ The following command used to be used in the project I leave it here for the min
 
     git submodule update --remote --merge
 
+A different command, which will get the latest versions of all submodules from github (without merging in any local commits) is:
+
+    git submodule update --init --recursive --remote
+
 Updating the GUI
 ----------------------------------------------------------------------------------
 * Navigate to the appropriate directory in Git Bash
