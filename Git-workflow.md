@@ -30,7 +30,7 @@ Reviewing work for the GUI
 * Refresh the packages
 * Test the changes
 * If the changes don't work, or you notice they break something else, talk to the developer and get it corrected
-* Once the tests have been passed, go to GitHub and merge the pull request.
+* Once the tests have been passed, go to GitHub and merge the pull request. There will need to be at least one "approving" review before the merge button is enabled - as the reviewer, you can add your review by clicking on "files changed" and then "review changes".
 * Click on the delete branch button on the merged page
 
 Reviewing work for the 'top' of EPICS (no other related changes)
@@ -41,7 +41,7 @@ Reviewing work for the 'top' of EPICS (no other related changes)
 * Checkout the branch with the changes to review: ``git checkout [branch-name]``
 * Test the changes, don't forget makes if required
 * If the changes don't work, or you notice they break something else, talk to the developer and get it corrected
-* Once the tests have been passed, go to GitHub and merge the pull request
+* Once the tests have been passed, go to GitHub and merge the pull request. On most repositories, there will need to be at least one "approving" review before the merge button is enabled - as the reviewer, you can add your review by clicking on "files changed" and then "review changes".
 * Click on the delete branch button on the merged page
 
 Reviewing work for the subModules of EPICS
