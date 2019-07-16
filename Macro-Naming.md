@@ -44,7 +44,7 @@ There are some macros that need to be set which have specific names, and do not 
 | IOC | Macro | Description | Suggested Values |
 | --- | --- | --- | --- |
 | global | SIMULATE | This can be used to check whether or not you are a simulated instrument | `1` to simulate, `0` for a live system|
-| ISISDAE01 | DAEDCOM | This is the DCOM port the DAE is using | `1` |
+| ISISDAE01 | DAEDCOM | This is whether ISISDAE uses DCOM to talk to isisicp, or loads ISISICP internally. | `1` is normal and recommended on instrument, `0` is if you do not want to run isisicp e.g. dcom problems on MUONFE |
 | ISISDAE01 | DAEHOST | This is the IP address of the DAE host | `localhost` |
 | GALIL_0n | GALILADDR | This is the IP address of the Galil | `None` when simulating |
 | HVCAEN_0n | HVCAENIPn | This is the IP address for the CAEN | |
