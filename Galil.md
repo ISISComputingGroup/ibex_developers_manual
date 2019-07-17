@@ -63,7 +63,7 @@ This starts the Galil controller. It takes the following arguments:
 - Port name: As before
 - Code file: The code to be uploaded to the Galil
 - Burn program: Whether to burn the program to EEPROM
-- Display code: Whether to display the code being uploaded
+- Display code: Whether to display the code being uploaded (1 displays code currently on controller, 2 displays code put on the controller, 3 both)
 - Thread mask: Which threads we expect to be running after code has been delivered (e.g. `7`, `1+2+4` for threads 0, 1, and 2)
 
 The largest and most frequently changed of these arguments is the code file. It uses semi colons and exclamation marks to demarcate different sections of the Galil code. It is arranged as:
