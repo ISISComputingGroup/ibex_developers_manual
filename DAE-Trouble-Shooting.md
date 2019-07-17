@@ -516,3 +516,11 @@ We have observed on a couple of occasions that the DAE got stuck in `WAITING` de
 ### ISISDAE reports `time regimes 1 and 2 are incompatible`
 
 Time regimes are incompatible when their starts differ by a non-integer number of microseconds, but sometimes rounding errors may lead to this happening in other circumstances. This check is actually no longer required and has been removed in ISISICP SVN revisions 2010 and above. 
+
+### ISISICP writes a corrupted journal file
+
+THe symptom is that `C:\data\journal_<cycle_number>.xml` will not be valid xml, it will be truncated at some point. We believe this happens when there are too many blocks set to log into the journal in a particular configuration.
+
+After switching back to a configuration with fewer blocks, the journal file can be (carefully!) manually edited to remove the corrupt entry. Once this is done, runs should go back into the journal as normal (however, runs done while in the configuration with too many blocks will be lost from the journal).
+
+Freddie may also have a patched version of the isisicp that fixes this issue.
