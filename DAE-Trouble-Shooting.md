@@ -524,3 +524,7 @@ The symptom is that `C:\data\journal_<cycle_number>.xml` will not be valid xml, 
 After switching back to a configuration with fewer blocks, the journal file can be (carefully!) manually edited to remove the corrupt entry. Once this is done, runs should go back into the journal as normal (however, runs done while in the configuration with too many blocks will be lost from the journal).
 
 Freddie may also have a patched version of the isisicp that fixes this issue.
+
+### My blocks aren't being written to a run title properly
+
+See the documentation in the [user manual](https://github.com/ISISComputingGroup/ibex_user_manual/wiki/Add-blocks-to-run-title)
