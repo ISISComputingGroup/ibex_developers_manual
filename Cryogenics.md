@@ -30,11 +30,19 @@ A Mercury ITC may or may not be the same thing as an Oxford Instruments ITC. <br
 ### Oxford Flow through Cryostats
 We have not yet encountered one of these (when we do, please update this section).
 
+### Oxford Flow through Cryostats
+We have not yet encountered one of these (when we do, please update this section).
+
+### Mercury Heliox (He3 sorbtion refrigerators)
+
+See [mercury heliox](Mercury-Heliox)
+
 ### Triton Dilution Fridge
 Triton dilution fridges are "parasitic" devices.  They need to be used in conjunction with a cryostat or CCR which provides the initial cooling down to a low temperature.  The dilution fridge then provides the final stage of cooling, down to a very low temperature.  Triton dilution fridges can be used with, either
-   * Variox (Blue) Cryostats
-      - controlled via ILM & ITC (see above)
-   * CCRs
+   * Variox (Blue) Cryostats, which can be controlled by either:
+      - ILM & ITC503 (see above)
+      - Mercury ITC (a newer model of ITC - it uses a separate driver)
+   * CCRs (note: dilution fridges are not run in CCRs at ISIS for technical cryogenic reasons - but in theory they could be).
       - controlled via Eurotherm (see above)
       - See also [#2886](https://github.com/ISISComputingGroup/IBEX/issues/2886), [#2915](https://github.com/ISISComputingGroup/IBEX/issues/2915)
 
@@ -60,6 +68,10 @@ See also [#2765](https://github.com/ISISComputingGroup/IBEX/issues/2765)
 ### 2T 3D Vector magnet 
 The 2T 3D vector magnet is manufactured by Scientific Magnetics (i.e. not Oxford Instruments) so it does not use ILM, IPS, ITC.  It has its own control system for which the manufacturer has provided LabVIEW VIs:
    * we interface with these via lvDCOM (See [#1398](https://github.com/ISISComputingGroup/IBEX/issues/1398))
+
+### HIFI cryomagnet
+
+See [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Cryogenic-Inc-Systems) and [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Cryogenic-SMS-PSU)
 
 ### Helium Level Gauge
 Does what it says on the tin - measures the level of helium in a cryostat.
