@@ -71,7 +71,7 @@ The 2T 3D vector magnet is manufactured by Scientific Magnetics (i.e. not Oxford
 
 ### HIFI cryomagnet
 
-See [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Cryogenic-Inc-Systems) and [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Cryogenic-SMS-PSU)
+See [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Cryogenic-Inc-Systems), [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Cryogenic-SMS-PSU) and [here](https://github.com/ISISComputingGroup/IBEX/wiki/HIFI_CRYOMAG-Instrument-Details)
 
 ### Helium Level Gauge
 Does what it says on the tin - measures the level of helium in a cryostat.
