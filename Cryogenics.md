@@ -30,7 +30,7 @@ A Mercury ITC may or may not be the same thing as an Oxford Instruments ITC. <br
 ### Oxford Flow through Cryostats
 We have not yet encountered one of these (when we do, please update this section).
 
-### Mercury Heliox (He3 sorbtion refrigerators)
+### Mercury Heliox (He3 sorption refrigerator)
 
 See [mercury heliox](Mercury-Heliox)
 
