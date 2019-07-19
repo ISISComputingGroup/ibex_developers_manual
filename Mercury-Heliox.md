@@ -1,6 +1,8 @@
 # Oxford Instruments Mercury Heliox
 
-The mercury Heliox systems are a type of refrigerator which cools using Helium-3. Using this technique, temperatures of around ~300mK can be achieved. The heliox systems, like dilution fridges, are parasitic, which means they must sit in an outer cryostat which provides the initial stage of cooling to low temperature (a few degrees Kelvin) before the heliox provides the final stage of cooling. This outer cryostat is usually controlled by a standard Mercury ITC controller, but in theory a heliox could be run in a CCR or an ITC503-based cryostat.
+The mercury Heliox systems are a type of refrigerator which cools using Helium-3. Using this technique, temperatures of around ~300mK can be achieved. 
+
+The heliox systems, like dilution fridges, are parasitic, which means they must sit in an outer cryostat which provides the initial stage of cooling to low temperature (a few degrees Kelvin) before the heliox provides the final stage of cooling (to ~300mK). The outer cryostat is usually controlled by a standard Mercury ITC controller.
 
 # Command set
 
