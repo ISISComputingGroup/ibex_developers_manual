@@ -6,9 +6,9 @@ IOC for devices connected with cryogenic.
 * [Triton](Triton)
 * [ITC 503](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/ITC-503)
 * [Mercury iTC](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/MercuryiTC)
+* [mercury heliox](Mercury-Heliox)
 
-## Information about Low Temperature Devices
-Use the information below determine which tickets/IOCs relate to various types of low temperature device.  For example, if you are asked to add a Variox cryostat to a configuration, look for Variox below to see that you need to use two IOCs (one for the ITC, one for the ILM).
+# Cryostats (T>1K)
 
 ### Closed Cycle Refrigerators (CCRs)
 These are controlled using Eurotherms.  No need to communicate directly with the CCR itself.
@@ -17,36 +17,54 @@ These are controlled using Eurotherms.  No need to communicate directly with the
 These are controlled using Eurotherms.  No need to communicate directly with the Cryostat itself.
 
 ### Variox (Blue) Cryostats
-These are manufactured by Oxford Instruments (OI).  They are controlled by 2 devices: 
-   * Intelligent Temperature Controller (ITC) (See [#1389](https://github.com/ISISComputingGroup/IBEX/issues/1389), [#3189](https://github.com/ISISComputingGroup/IBEX/issues/3189))
-   * Intelligent Level Meter (ILM) (See [#1390](https://github.com/ISISComputingGroup/IBEX/issues/1390))
+These are manufactured by Oxford Instruments (OI).  They can be controlled by either: 
+   * Oxford Instruments ITC503 (See [#1389](https://github.com/ISISComputingGroup/IBEX/issues/1389), [#3189](https://github.com/ISISComputingGroup/IBEX/issues/3189)) + Oxford Instruments ILM200 (See [#1390](https://github.com/ISISComputingGroup/IBEX/issues/1390))
+
+or 
+   * Oxford Instruments Mercury ITC (with level meter expansion card)
+
+or
+   * Oxford Instruments Mercury ITC + standalone level meter such as an Oxford Instruments ILM200
 
 ### ISISStat
+
 Controlled by a Mercury ITC (See [#1199](https://github.com/ISISComputingGroup/IBEX/issues/1199))
 
-A Mercury ITC may or may not be the same thing as an Oxford Instruments ITC. <br>
-(**Can someone please clarify: is there any difference between a Mercury ITC and an OI ITC?**)
+Note: a "Mercury ITC" and an "ITC503" are two different devices (with different drivers). They are both manufactured by Oxford Instruments and control the temperature of a cryostat. The Mercury ITC is the newer model, the ITC503 is the older model. Mercury ITC controllers can take various expansion boards, which I do not believe ITC503 controllers are capable of.
+
+Our support for Mercury ITC units is not yet fully complete:
+* See [#1286](https://github.com/ISISComputingGroup/IBEX/issues/1286)
+* See [#1287](https://github.com/ISISComputingGroup/IBEX/issues/1287)
+* See [#1392](https://github.com/ISISComputingGroup/IBEX/issues/1392)
 
 ### Oxford Flow through Cryostats
+
 We have not yet encountered one of these (when we do, please update this section).
+
+# Low temperature inserts (T<1K)
+
+All of the inserts in this category are run in a "parasitic" fashion - i.e. they sit inside an outer cryostat which provides cooling to low temperature, and then the insert provides the final stage of cooling to very low temperature.
+
+The outer cryostat for these inserts can be either a blue cryostat (see above for details) or a cryomagnet (see below for details)
 
 ### Mercury Heliox (He3 sorption refrigerator)
 
-See [mercury heliox](Mercury-Heliox)
+This insert is capable of reaching temperatures of ~300mK. The heliox and the outer cryostat use separate physical controllers, which need separate moxa connections and EPICS drivers.
+
+For further details see [mercury heliox](Mercury-Heliox)
 
 ### Triton Dilution Fridge
-Triton dilution fridges are "parasitic" devices.  They need to be used in conjunction with a cryostat or CCR which provides the initial cooling down to a low temperature.  The dilution fridge then provides the final stage of cooling, down to a very low temperature.  Triton dilution fridges can be used with, either
-   * Variox (Blue) Cryostats, which can be controlled by either:
-      - ILM & ITC503 (see above)
-      - Mercury ITC (a newer model of ITC - it uses a separate driver)
-   * CCRs (note: dilution fridges are not run in CCRs at ISIS for technical cryogenic reasons - but in theory they could be).
-      - controlled via Eurotherm (see above)
-      - See also [#2886](https://github.com/ISISComputingGroup/IBEX/issues/2886), [#2915](https://github.com/ISISComputingGroup/IBEX/issues/2915)
 
-**Note:** it may be possible to run a Triton dilution fridge in a non-parasitic fashion, but we haven't encountered this situation (yet).  In practice, the Triton IOC might actually be indifferent to parasitic and non-
-parasitic modes of operation. 
+Triton systems are dilution refrigerators capable of reaching ~30mK. They are controlled by a dedicated PC which sits in a rack. Cryogenics group do a significant amount of setup with these controllers when they arrive on a beamline.
+
+See [Triton](Triton) for further details about the triton system
+
+# Cryomagnets (superconducting magnets)
+
+Most of the magnets in this section can be used instead of a cryostat when using a "parasitic" cooling insert (e.g. heliox, triton). This is because the magnets must be cooled to low temperatures anyway so that they superconduct, so they also act as the outer cryostat.
 
 ### 7.5T magnet
+
 The 7.5T magnet is controlled by 3 devices:
    * Intelligent Power Supply (IPS) (See [#1391](https://github.com/ISISComputingGroup/IBEX/issues/1391))
    * Intelligent Temperature Controller (ITC) (See [#1389](https://github.com/ISISComputingGroup/IBEX/issues/1389), [#3189](https://github.com/ISISComputingGroup/IBEX/issues/3189))
@@ -54,33 +72,57 @@ The 7.5T magnet is controlled by 3 devices:
 
 See also [#2593](https://github.com/ISISComputingGroup/IBEX/issues/2593)
 
-### 9T chopper magnet 
-The 9T Chopper magnet is controlled by 3 devices:
-   * Intelligent Power Supply (IPS) [#1391](https://github.com/ISISComputingGroup/IBEX/issues/1391)
-   * Intelligent Temperature Controller (ITC) (See [#1389](https://github.com/ISISComputingGroup/IBEX/issues/1389), [#3189](https://github.com/ISISComputingGroup/IBEX/issues/3189))
-   * Intelligent Level Meter (ILM) (See [#1390](https://github.com/ISISComputingGroup/IBEX/issues/1390))
+For details including configuration settings, see [OxfordInstrumentsIPS](OxfordInstrumentsIPS)
 
-See also [#2765](https://github.com/ISISComputingGroup/IBEX/issues/2765)
+See note at the bottom of this page for differences between IBEX and SECI in terms of how this device must be connected.
+
+### 9T "chopper" magnet 
+
+This system appears to IBEX exactly like the 7.5T magnet discussed above, but with a different maximum field. It is currently dedicated to LET. 
+
+Please see the documentation and notes linked above for further details.
 
 ### 2T 3D Vector magnet 
-The 2T 3D vector magnet is manufactured by Scientific Magnetics (i.e. not Oxford Instruments) so it does not use ILM, IPS, ITC.  It has its own control system for which the manufacturer has provided LabVIEW VIs:
-   * we interface with these via lvDCOM (See [#1398](https://github.com/ISISComputingGroup/IBEX/issues/1398))
+
+The 2T 3D vector magnet is manufactured by Scientific Magnetics. It has its own control system for which the manufacturer has provided LabVIEW VIs. We interface with these via lvDCOM (See [#1398](https://github.com/ISISComputingGroup/IBEX/issues/1398)).
+
+This is primarily used on SANS and reflectometry beamlines.
 
 ### HIFI cryomagnet
 
+This is a dedicated system permanently installed on HiFi.
+
 See [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Cryogenic-Inc-Systems), [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Cryogenic-SMS-PSU) and [here](https://github.com/ISISComputingGroup/IBEX/wiki/HIFI_CRYOMAG-Instrument-Details)
+
+### "Birmingham" 17T magnet
+
+This is a cryomagnet owned by the University of Birmingham, which occasionally travels to various scattering facilities, including ISIS.
+
+IBEX does not have support for this device at present. Ticket [#4523](https://github.com/ISISComputingGroup/IBEX/issues/4523) contains some details about this device.
+
+# Special/combination systems
+
+### E18 dilution fridge/magnet combination
+
+This system is a combination of a triton dilution fridge (see above) and a 4T cryomagnet driven by a Mercury IPS. Note: similar to the distinction between an old-style Oxford instruments IPS and a Mercury IPS, the Mercury IPS is the newer model. It is a physically different device to the old-style IPS, but performs the same task.
+
+Note: this system has not yet been run in IBEX (July 2019). According to the manual, a mercury IPS may have an interface compatible with the older style IPS devices (which are used to run the 7.5T and 9T magnets mentioned above), but this is completely untested at present.
+
+For details of the Mercury IPS, see [MercuryIPS](MercuryIPS)
+
+For further details about this system, see [#4339](https://github.com/ISISComputingGroup/IBEX/issues/4339)
+
+# Level meters
 
 ### Helium Level Gauge
 Does what it says on the tin - measures the level of helium in a cryostat.
    * support for Cryogenics Ltd He Level Gauge  - See [#2350](https://github.com/ISISComputingGroup/IBEX/issues/2350)
 
-The Oxford Instruments Intelligent Level Meter (ILM) (see [#1390](https://github.com/ISISComputingGroup/IBEX/issues/1390)) is also a type of He level gauge.
+### Oxford Instruments Intelligent Level Meter (ILM200)
 
+This is another type of level meter, manufactured by Oxford instruments. It is often used in conjunction with ITC503 temperature controllers.
 
-### Other related tickets:
-* See [#1286](https://github.com/ISISComputingGroup/IBEX/issues/1286)
-* See [#1287](https://github.com/ISISComputingGroup/IBEX/issues/1287)
-* See [#1392](https://github.com/ISISComputingGroup/IBEX/issues/1392)
+See note at the bottom of this page for differences between IBEX and SECI in terms of how this device must be connected.
 
 # Note about Oxford Instruments ITC/ILM/IPS controllers
 
