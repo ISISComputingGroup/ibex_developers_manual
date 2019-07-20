@@ -78,7 +78,7 @@ See note at the bottom of this page for differences between IBEX and SECI in ter
 
 ### 9T "chopper" magnet 
 
-This system appears to IBEX exactly like the 7.5T magnet discussed above, but with a different maximum field. It is currently dedicated to LET. 
+This system appears to IBEX exactly like the 7.5T magnet discussed above, but with a different maximum field. It is currently dedicated to LET (but not permanently installed). 
 
 Please see the documentation and notes linked above for further details.
 
