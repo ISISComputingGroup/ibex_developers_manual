@@ -100,6 +100,8 @@ This is a cryomagnet owned by the University of Birmingham, which occasionally t
 
 IBEX does not have support for this device at present. Ticket [#4523](https://github.com/ISISComputingGroup/IBEX/issues/4523) contains some details about this device.
 
+From a brief look at the command set and manual, it appears that all of the magnet control logic occurs in the Birmingham computer, and we simply send it ascii-formatted commands to go to a field. In theory this may be controllable via SDTEST (although a dedicated driver would of course be better).
+
 # Special/combination systems
 
 ### E18 dilution fridge/magnet combination
