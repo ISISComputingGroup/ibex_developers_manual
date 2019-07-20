@@ -106,17 +106,11 @@ IBEX does not have support for this device at present. Ticket [#4523](https://gi
 
 From a brief look at the command set and manual, it appears that all of the magnet control logic occurs in the Birmingham computer, and we simply send it ascii-formatted commands to go to a field. In theory this may be controllable via SDTEST (although a dedicated driver would of course be better).
 
-# Special/combination systems
-
 ### E18 dilution fridge/magnet combination
 
-This system is a combination of a triton dilution fridge (see above) and a 4T cryomagnet driven by a Mercury IPS. Note: similar to the distinction between an old-style Oxford instruments IPS and a Mercury IPS, the Mercury IPS is the newer model. It is a physically different device to the old-style IPS, but performs the same task.
+This system is a combination of a Oxford Instruments [triton dilution fridge](Triton) and a 4T cryomagnet driven by a Mercury IPS. Similar to the distinction between an old-style Oxford instruments ITC503 and a Mercury ITC, the Mercury IPS is the newer model. It is a physically different device to the old-style IPS, but performs the same task.
 
-Note: this system has not yet been run in IBEX (July 2019). According to the manual, a mercury IPS may have an interface compatible with the older style IPS devices (which are used to run the 7.5T and 9T magnets mentioned above), but this is completely untested at present.
-
-For details of the Mercury IPS, see [MercuryIPS](MercuryIPS)
-
-For further details about this system, see [#4339](https://github.com/ISISComputingGroup/IBEX/issues/4339)
+For details of the Mercury IPS, see [MercuryIPS](MercuryIPS). Some further details are also in [#4339](https://github.com/ISISComputingGroup/IBEX/issues/4339).
 
 # Level meters
 
