@@ -106,7 +106,7 @@ From a brief look at the command set and manual, it appears that all of the magn
 
 ### E18 dilution fridge/magnet combination
 
-This system is a combination of a Oxford Instruments [triton dilution fridge](Triton) and a 4T cryomagnet driven by a Mercury IPS. Similar to the distinction between an old-style Oxford instruments ITC503 and a Mercury ITC, the Mercury IPS is the newer model. It is a physically different device to the old-style IPS, but performs the same task.
+This system is a combination of a Oxford Instruments [triton dilution fridge](Triton) and a 4T cryomagnet driven by a [Mercury IPS](MercuryIPS). Similar to the distinction between an old-style Oxford instruments ITC503 and a Mercury ITC, the Mercury IPS is the newer model. It is a physically different device to the old-style IPS, but performs the same task.
 
 For details of the Mercury IPS, see [MercuryIPS](MercuryIPS). Some further details are also in [#4339](https://github.com/ISISComputingGroup/IBEX/issues/4339).
 
