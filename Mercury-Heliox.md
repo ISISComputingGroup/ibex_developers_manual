@@ -2,7 +2,7 @@
 
 The mercury Heliox systems are a type of refrigerator which cools using Helium-3. Using this technique, temperatures of around ~300mK can be achieved. 
 
-The heliox systems, like dilution fridges, are parasitic, which means they must sit in an outer cryostat which provides the initial stage of cooling to low temperature (a few degrees Kelvin) before the heliox provides the final stage of cooling (to ~300mK). The outer cryostat is usually controlled by a standard Mercury ITC controller.
+The heliox systems, like dilution fridges, are parasitic, which means they must sit in an outer cryostat or cryomagnet which provides the initial stage of cooling to low temperature (a few degrees Kelvin) before the heliox provides the final stage of cooling (to ~300mK). The outer cryostat is usually controlled by a standard Mercury ITC controller.
 
 # Command set
 
