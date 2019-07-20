@@ -2,11 +2,15 @@
 
 IOC for devices connected with cryogenic.
 
-* [Cryogenics_Ltd Helium Level Gauge](Cryogenics-Ltd-Helium-Level-Gauge)
-* [Triton](Triton)
-* [ITC 503](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/ITC-503)
-* [Mercury iTC](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/MercuryiTC)
-* [mercury heliox](Mercury-Heliox)
+* [ISIS Eurotherm controllers](Eurotherm)
+* [Cryogenics Ltd Helium Level Gauge](Cryogenics-Ltd-Helium-Level-Gauge)
+* [Oxford Instruments Triton](Triton)
+* [Oxford Instruments Mercury heliox](Mercury-Heliox)
+* [Oxford Instruments Mercury ITC](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/MercuryiTC)
+* [Oxford Instruments ITC503](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/ITC-503)
+* [Oxford Instruments (mercury) IPS](MercuryIPS)
+* [Oxford Instruments (old-style) IPS](OxfordInstrumentsIPS)
+* [Cryogenics Inc. SMS PSU](Cryogenic-SMS-PSU)
 
 # Cryostats (T>1K)
 
