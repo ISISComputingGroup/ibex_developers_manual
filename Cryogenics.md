@@ -122,6 +122,8 @@ Does what it says on the tin - measures the level of helium in a cryostat.
 
 This is another type of level meter, manufactured by Oxford instruments. It is often used in conjunction with ITC503 temperature controllers. It has two channels which can be set up to independently measure Helium and Nitrogen levels.
 
+Note: the ILM200 only physically measures the levels every 30 minutes, so if looking at the log plotter, there will be steps rather than a smooth downward curve - this is expected.
+
 See note at the bottom of this page for differences between IBEX and SECI in terms of how this device must be connected.
 
 # Note about Oxford Instruments ITC/ILM/IPS controllers
