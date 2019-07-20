@@ -70,13 +70,11 @@ Most of the magnets in this section can be used instead of a cryostat when using
 ### 7.5T magnet
 
 The 7.5T magnet is controlled by 3 devices:
-   * Intelligent Power Supply (IPS) (See [#1391](https://github.com/ISISComputingGroup/IBEX/issues/1391))
-   * Intelligent Temperature Controller (ITC) (See [#1389](https://github.com/ISISComputingGroup/IBEX/issues/1389), [#3189](https://github.com/ISISComputingGroup/IBEX/issues/3189))
+   * [Intelligent Power Supply (IPS)](OxfordInstrumentsIPS) (See [#1391](https://github.com/ISISComputingGroup/IBEX/issues/1391)). It could also be controlled by a [Mercury IPS](MercuryIPS) but cryogenics group are not using this option at present due to hardware issues with the Mercury IPS.
+   * [Intelligent Temperature Controller (ITC503)](ITC-503) (See [#1389](https://github.com/ISISComputingGroup/IBEX/issues/1389), [#3189](https://github.com/ISISComputingGroup/IBEX/issues/3189)). A [Mercury ITC](MercuryiTC) may be used as a fallback if the ITC503 controller fails, but this is not usual. 
    * Intelligent Level Meter (ILM) (See [#1390](https://github.com/ISISComputingGroup/IBEX/issues/1390))
 
-See also [#2593](https://github.com/ISISComputingGroup/IBEX/issues/2593)
-
-For details including configuration settings, see [OxfordInstrumentsIPS](OxfordInstrumentsIPS)
+For details including configuration settings, see [OxfordInstrumentsIPS](OxfordInstrumentsIPS).
 
 See note at the bottom of this page for differences between IBEX and SECI in terms of how this device must be connected.
 
