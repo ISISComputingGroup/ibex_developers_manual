@@ -9,7 +9,7 @@ The heliox systems, like dilution fridges, are parasitic, which means they must 
 The Heliox systems are physically based on the mercury ITC temperature controllers, but they do not use the same command set and cannot be controlled by the same drivers. The mercury heliox systems have their own driver.
 
 The devices use an SCPI-like command syntax. There are two approaches to getting data using this protocol:
-- Ask for everything in one go, e.g. `STAT:DEV:HelioxX`. This will return a huge status string containig every measurement under that category (~30 items). This approach is used by the labview driver (although it only actually looks at the data for a few measurements). It is also useful for enumerating the valid pieces of data that you can ask for individually.
+- Ask for everything in one go, e.g. `STAT:DEV:HelioxX`. This will return a huge status string containing every measurement under that category (~30 items). This approach is used by the labview driver (although it only actually looks at the data for a few measurements). It is also useful for enumerating the valid pieces of data that you can ask for individually.
 - Ask for one thing at a time, e.g. `STAT:DEV:HelioxX:TEMP:SIG:TEMP`. This will only return the one measurement which we asked for. The IOC will initially attempt to use this approach but keep a protocol file for the above commands available, until we can do a hardware test to check which approach is better.
 
 # Channels
