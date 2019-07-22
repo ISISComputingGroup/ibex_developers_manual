@@ -90,13 +90,13 @@ The 2T 3D vector magnet is manufactured by Scientific Magnetics. It has its own 
 
 This is primarily used on SANS and reflectometry beamlines.
 
-### HIFI cryomagnet
+### 5T HIFI cryomagnet
 
 This is a dedicated system permanently installed on HiFi.
 
 See [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Cryogenic-Inc-Systems), [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Cryogenic-SMS-PSU) and [here](https://github.com/ISISComputingGroup/IBEX/wiki/HIFI_CRYOMAG-Instrument-Details)
 
-### "Birmingham" 17T magnet
+### 17T "Birmingham" magnet
 
 This is a cryomagnet owned by the University of Birmingham, which occasionally travels to various scattering facilities, including ISIS.
 
@@ -104,7 +104,7 @@ IBEX does not have support for this device at present. Ticket [#4523](https://gi
 
 From a brief look at the command set and manual, it appears that all of the magnet control logic occurs in the Birmingham computer, and we simply send it ascii-formatted commands to go to a field. In theory this may be controllable via SDTEST (although a dedicated driver would of course be better).
 
-### E18 dilution fridge/magnet combination
+### 4T "E18" dilution fridge/magnet combination
 
 This system is a combination of a Oxford Instruments [triton dilution fridge](Triton) and a 4T cryomagnet driven by a [Mercury IPS](MercuryIPS). Similar to the distinction between an old-style Oxford instruments ITC503 and a Mercury ITC, the Mercury IPS is the newer model. It is a physically different device to the old-style IPS, but performs the same task.
 
