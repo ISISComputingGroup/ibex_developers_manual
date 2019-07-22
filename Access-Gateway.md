@@ -136,6 +136,6 @@ More information can be found at:
 
 [8.7 Channel Access Security](http://www.aps.anl.gov/epics/base/R3-14/12-docs/AppDevGuide/node9.html#SECTION00970000000000000000) - Access Security details for channel access
 
-[caputRecorder 1.5.1](http://www.aps.anl.gov/bcda/synApps/caputRecorder/caputRecorder.html) - useful examples for the security groups
+[caputRecorder 1.4](https://epics.anl.gov/bcda/synApps/caputRecorder/caputRecorder.html) - useful examples for the security groups
 
 [Gateway Users Guide](http://www.aps.anl.gov/epics/EpicsDocumentation/ExtensionsManuals/Gateway/Gateway.html)
