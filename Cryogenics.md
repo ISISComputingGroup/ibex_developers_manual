@@ -90,7 +90,7 @@ The 2T 3D vector magnet is manufactured by Scientific Magnetics. It has its own 
 
 This is primarily used on SANS and reflectometry beamlines.
 
-### 5T HIFI cryomagnet
+### 5T HIFI magnet
 
 This is a dedicated system permanently installed on HiFi.
 
