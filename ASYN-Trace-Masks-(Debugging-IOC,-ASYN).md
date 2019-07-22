@@ -15,6 +15,8 @@ Note: if the device's messages are longer than 80 characters, you should increas
 asynSetTraceIOTruncateSize("L0", -1, 1024)
 ```
 
+Where 1024 is the maximum message length you expect - could be increased if your device requires it.
+
 ## ASYN trace mask
 
 This determines what you see and is set to 0x1 (ASYN_TRACE_ERROR) by default. The following additional values
