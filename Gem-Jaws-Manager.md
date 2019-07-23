@@ -1,8 +1,8 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [Jaws and Slits](Jaws-and-slits) > [Gem Jaws](Gem-Jaws-Manager)
 
-Gem jaws are a set of 5 jaws which work in concert to limit the beam of neutrons reaching the sample (see [Jaws Manager](Jaws-Managers)). The 5 jaws are ordered 1 nearest the beam and 5 nearest the sample. 
+Gem jaws are a set of 5 jaws which work in concert to limit the beam of neutrons reaching the sample (see the [Jaws Manager](Jaws-Managers) page). The 5 jaws are ordered 1 nearest the beam and 5 nearest the sample. 
 
-The parameters are (with reference to the diagram in [Jaws Manager](Jaws-Managers)):
+The parameters are (use [Jaws Manager](Jaws-Managers) for reference):
 
 Letter | Parameter | Value | Notes
 --- | --------- | ----- | -----
