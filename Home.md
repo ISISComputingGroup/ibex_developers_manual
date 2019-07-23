@@ -25,7 +25,7 @@
 
 ## Resources
 
-- [Training](Training): Information about running IBEX and genie_python training courses
+- [Training](Training-Instrument-Scientists-in-IBEX): Information about running IBEX and genie_python training courses
 - [New Starters](New-Starters): Resources for new team members
 - [Glossary](Glossary): Glossary of terms
 - [Other Links and Resources](links-and-resources): Page of links and resources not in this wiki
