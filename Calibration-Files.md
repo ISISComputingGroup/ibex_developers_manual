@@ -114,7 +114,7 @@ As part of the implementation, it was decided in a discussion between John and T
 
 ### Lakeshore
 
-Examples of the lakeshore format can be found on the [lakeshore site](https://www.lakeshore.com/Documents/ZipReadme.pdf).
+Examples of the lakeshore format can be found on the [lakeshore site](https://www.lakeshore.com/resources/product-information).
 
 ### Out of range in the calibration file
 
