@@ -65,6 +65,8 @@ This boolean must then stay true continuously for 120 seconds. If it does, then 
 
 When a regeneration is triggered, the existing labview driver simply sends a temperature setpoint of zero. There is logic to do something much more complicated, but it is "commented out" in an `if False` statement.
 
+It appears to me as though the setpoint is never set back to the previous value in the labview code. There is lots of code relating to this, but it appears to all be hard-coded to False.
+
 # Labview driver oddities
 
 The following notes apply to the labview driver:
