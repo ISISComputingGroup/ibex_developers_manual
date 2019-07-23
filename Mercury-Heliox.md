@@ -43,7 +43,27 @@ In effect I think this means that the users lose temperature control while a reg
 
 ### Detecting when a regeneration is required
 
-TODO (ticket 4549)
+The following is how the existing labview driver detects whether a regeneration is required:
+
+A regeneration is captured by a boolean with the following inputs:
+- Mode = "Low Temp"
+- And Heliox temperature > 0.4K
+- And He3 Sorb heater in automatic mode
+- And He3 Sorb heater percent heat < 0.2%
+- And no comms errors within the last 120 seconds
+- And one or both of:
+  * Either:
+    * Rate of change of temperature over the last 200 seconds > 0.0005K/min (calculated by line of best fit)
+    * AND variance of temperature over the last 200 seconds > 0.0005K
+    * AND (Heliox temperature - TSet) > 0.25K
+  * Or:
+    * (Heliox temperature - TSet) > 0.05K continuously for 600 seconds
+
+This boolean must then stay true continuously for 120 seconds. If it does, then a regeneration is triggered.
+
+### Regeneration logic
+
+When a regeneration is triggered, the existing labview driver simply resends the existing temperature setpoint. There is logic to do something much more complicated, but it is "commented out" in an `if False` statement.
 
 # Labview driver oddities
 
