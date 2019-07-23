@@ -63,7 +63,7 @@ This boolean must then stay true continuously for 120 seconds. If it does, then 
 
 ### Regeneration logic
 
-When a regeneration is triggered, the existing labview driver simply resends the existing temperature setpoint. There is logic to do something much more complicated, but it is "commented out" in an `if False` statement.
+When a regeneration is triggered, the existing labview driver simply sends a temperature setpoint of zero. There is logic to do something much more complicated, but it is "commented out" in an `if False` statement.
 
 # Labview driver oddities
 
