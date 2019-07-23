@@ -18,11 +18,11 @@ The mercury ITC driver essentially reads data from 5 distinct channels:
 
 | Channel name | Notes |
 | --- | --- |
-| HEL | This is the "main" heliox control channel. According to the OI manual this is the only channel which we should need to use to control the heliox's temperature. In the IOC and Labview driver, this is the only channel on which we allow setting setpoints |
-| He3Sorb | Dedicated channel for the (helium-3) sorption cooling stage. Monitoring only. | 
-| He4Pot | Dedicated channel for the (helium-4) 1K-pot cooling stage. Monitoring only. | 
-| HeHigh | Monitoring only. Currently unsure of purpose. | 
-| HeLow | Monitoring only. Currently unsure of purpose. | 
+| `HelioxX:HEL` | This is the "main" heliox control channel. According to the OI manual this is the only channel which we should need to use to control the heliox's temperature. In the IOC and Labview driver, this is the only channel on which we allow setting setpoints |
+| `He3Sorb:TEMP` | Dedicated channel for the (helium-3) sorption cooling stage. Monitoring only. | 
+| `He4Pot:TEMP` | Dedicated channel for the (helium-4) 1K-pot cooling stage. Monitoring only. | 
+| `HeHigh:TEMP` | Monitoring only. Currently unsure of purpose. | 
+| `HeLow:TEMP` | Monitoring only. Currently unsure of purpose. | 
 
 # Regeneration
 
@@ -43,11 +43,7 @@ In effect I think this means that the users lose temperature control while a reg
 
 ### Detecting when a regeneration is required
 
-TODO
-
-### IOC implementation notes
-
-TODO
+TODO (ticket 4549)
 
 # Labview driver oddities
 
