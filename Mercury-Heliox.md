@@ -25,7 +25,7 @@ The mercury ITC driver essentially reads data from 5 distinct channels:
 | Channel name | Physical sensor location | Notes |
 | --- | --- | --- |
 | `HelioxX:HEL` | He3 Pot |This is the "main" heliox control channel. According to the OI manual this is the only channel which we should need to use to control the heliox's temperature. In the IOC and Labview driver, this is the only channel on which we allow setting setpoints |
-| `He3Sorb:TEMP` | He3 Sorption pump | Dedicated channel for the (helium-3) sorption cooling stage. Monitoring only. | 
+| `He3Sorb:TEMP` | He3 Sorption pump | Dedicated channel for the (helium-3) sorption pump. Monitoring only. Note: the He3 sorption pump and the He3 Pot are not the same! | 
 | `He4Pot:TEMP` | He4 Pot | Dedicated channel for the (helium-4) 1K-pot cooling stage. Monitoring only. | 
 | `HeHigh:TEMP` | ??? | Monitoring only. Currently unsure of purpose. | 
 | `HeLow:TEMP` | ??? | Monitoring only. Currently unsure of purpose. | 
