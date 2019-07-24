@@ -18,7 +18,7 @@ Imaging Cameras
 
 [Magnets](Magnets)
 
-[Monitors](Monitors)
+Monitors
 
 [Motors](Motor-IOCs)
 
@@ -36,7 +36,7 @@ Imaging Cameras
 
 [Sample Changers](Sample-Changers)
 
-[Sample Stacks and Goniometers](Stacks-and-Gonios)
+Sample Stacks and Goniometers
 
 [Sensors](Sensors)
 
