@@ -7,6 +7,8 @@ The layer consists of drivers which take setpoint values from components and pus
 - `DisplacementDrivers`: Set the position of the motor based on the displacement, this includes moving to a parked value if the component is out of the beam
 - `AngleDriver`: Set the position of the motor based on the angle.
 
+both are derived from a common base `IocDriver`.
+
 There are various PV wrapper types which handle the mapping of parameters to the correct PVs based on different conventions. These are:
 - PVWrapper: base wrapper that has all the utility functions (e.g. monitors and change listeners) but will not point at a real PV
 - MotorPVWrapper: read and write to a motor PV
@@ -16,6 +18,14 @@ There are various PV wrapper types which handle the mapping of parameters to the
 
 TODO: I think we need a parameter driver and then we can more easily separate SlitGapParameter from their PV wrappers.
 
+### Synchronisation
+
+To enable synchronisation of axes this layer:
+
+- can report the minimum time taken for individual IOC driver to finish a move
+- can be told to make a move in a given duration. 
+
+The user can turn this off in the configuration file. In which case the time reported to finish a move is 0, and the axis's speed is not changed on move.
 
 ### Engineering Offset
 
