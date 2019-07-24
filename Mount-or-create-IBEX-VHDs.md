@@ -1,4 +1,4 @@
-> [Wiki](Home) > [Deployment](Deployment) > [Create IBEX VHDs](Create-IBEX-VHDs)
+> [Wiki](Home) > [Deployment](Deployment) > [Mount or create IBEX VHDs](Mount-or-create-IBEX-VHDs)
 
 # Deployment
 
