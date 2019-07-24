@@ -5,7 +5,7 @@
 * [Working with Git and GitHub](Working-with-git-and-github): Getting started with Git and GitHub, development workflows and useful common commands.
 
 * [Linux Virtual Machine](building-on-linux): Creation of Linux machine on your desktop using Vagrant and Virtual Box
-* [Tools for looking at Java resource usage Especially Leaks](java-memory-leak-tools): Tools which can help profile java resource usage.
+* [Tools for looking at Java resource usage Especially Leaks](Java-Resource-Usage-Tools): Tools which can help profile java resource usage.
 * [Network traffic](Network-traffic): Tools for helping network traffic issues
 * [Test Machines](Test-Machines)
 * [Standards & Conventions](Standards-&-Conventions)
