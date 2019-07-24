@@ -57,7 +57,7 @@ A regeneration is captured by a boolean with the following inputs:
 - And He3 Sorb heater in automatic mode
 - And He3 Sorb heater percent heat < 0.2%
 - And no comms errors within the last 120 seconds
-- And auto-recondense enabled on front panel
+- And auto-recondense enabled on labview front panel
 - And one or both of:
   * Either:
     * Rate of change of temperature over the last 200 seconds > 0.0005K/min (calculated by line of best fit)
