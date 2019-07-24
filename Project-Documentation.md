@@ -5,7 +5,7 @@ We have three wikis:
 1. [IBEX wiki](https://github.com/ISISComputingGroup/IBEX/wiki)
 1. [IBEX user manual](https://github.com/ISISComputingGroup/ibex_user_manual/wiki)
     - [on shadow](http://shadow.nd.rl.ac.uk/ibex_user_manual/Home)
-1. [IBEX developer wiki](wiki)
+1. [IBEX developer wiki](Home)
 
 ## IBEX wiki
 
