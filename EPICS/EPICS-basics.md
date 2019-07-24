@@ -122,7 +122,6 @@ The IOC should start. Type dbl to print a list of PVs. If the PVs are not there 
 If you start a new command line and set the paths as above if it will be possible to use caput, caget etc. If you edit the records, you may need to run make again - just stop the IOC, type make and then restart the IOC.
 
 # Creating a random number generator IOC #
-Largely based on the tutorial found [here](https://pubweb.bnl.gov/~mdavidsaver/epics-doc/epics-devsup.html).
 
 Run Win32.bat from `$EPICS_BASE\startup`.
 
