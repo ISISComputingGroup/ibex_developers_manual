@@ -12,4 +12,5 @@
 * [Neocera LTC-21](Neocera-LTC-21)
 * [OMEGA OME-Wise](OMEGA-OME-Wise)
 * [Triton](Triton)
+* [Mercury Heliox](Mercury-Heliox)
 
