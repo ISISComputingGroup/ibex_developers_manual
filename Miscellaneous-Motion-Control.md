@@ -8,5 +8,5 @@ Items attached to motion but are not [motors](Motor-IOCs).
 * [Motion Setpoints](Motion-Set-points)
 * [Motor Setpoints](Motor-SetPoints)
 * [MERLIN and LET Oscillating Radial Collimators](MERLIN-and-LET-Oscillating-radial-collimators)
-* [Gem Oscillating Radial Collimator](Gem-Oscillating-radial-collimator)
+* Gem Oscillating Radial Collimator
 * [Reflectometry IOC](Reflectometry-IOC)
