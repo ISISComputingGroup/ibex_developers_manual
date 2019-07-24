@@ -17,7 +17,7 @@ When configuring the IOC, suggested blocks to create are:
 
 The circuit diagram of a cryogenic magnet with a switch heater looks something like the following:
 
-![Cryomagnet](cryomagnet_circuit_diagram.PNG)
+![Cryomagnet](backend_system/IOCs/OxfordInstrumentsIPS/cryomagnet_circuit_diagram.PNG)
 
 The basic idea of operation in persistent mode is as follows:
 - If the switch heater is turned off, the magnet can be set to a particular current/field by the IPS
