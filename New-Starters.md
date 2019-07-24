@@ -34,7 +34,7 @@ First off you're going to need all the developer tools we use, a copy of the exi
 We use Git for version control of the codebase. If you're not familiar with it, learn it!
 
 - [Our Github resources/cribsheets](Working-with-git-and-github)
-- [Github's own Git tutorial](https://try.github.io/levels/1/challenges/2)
+- [Github's own Git tutorials](https://try.github.io/)
 
 ### Creating Useful Shortcuts
 
