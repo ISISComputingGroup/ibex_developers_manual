@@ -23,6 +23,8 @@ As described in the physics background page ([Reflectometers Science](Reflectome
     1. If a setpoint readback and readback are different from each other and not moving (default colour red)
     1. If a setpoint and setpoint readback are different and the setpoint is not changed (default colour red)
         1. TBD - we are not sure, we don't just want to copy values up from lower components.
+1. Synchronised moves: To avoid clash conditions it is desirable that most axes move together so that they reach their final destinations at the same time. This means setting the velocity of the axis before a move is started. There is no initial requirement to actively monitor the motors themselves to ensure continual crash avoidance, e.g. in the event of a motor stall.
+    - a caveat on this is that some axes should not be synchronised. Either because the motor velocities should not be changed (piezo motors) or they take a long time and have no clash conditions (e.g. multi-detector heights).
 
 ## Design Details
 
