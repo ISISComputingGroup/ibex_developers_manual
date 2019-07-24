@@ -11,5 +11,5 @@ The regular 4-week Sprint Review is not the ideal forum for demonstrating new de
 
 Over time we can change the pairs, so that everybody gets exposed to different instruments & instrument scientists.
 
-Use the [sprint/release demos](https://github.com/ISISComputingGroup/IBEX/wiki/Timetable-for-sprint-demos) page to plan each round of demos..
+Use the [sprint/release demos](https://github.com/ISISComputingGroup/IBEX/wiki/Timetable-for-Instrument-demos) page to plan each round of demos..
 
