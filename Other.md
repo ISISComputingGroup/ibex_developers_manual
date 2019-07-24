@@ -2,7 +2,7 @@
 
 * [SDTest](SDTest)
 
-* [COORD (coordinator) IOC](COORD-IOC)
+* COORD (coordinator) IOC
 
 * [Gamry](Gamry)
 
