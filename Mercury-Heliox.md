@@ -4,7 +4,13 @@ The mercury Heliox systems are a type of refrigerator which cools using Helium-3
 
 The heliox systems, like dilution fridges, are parasitic, which means they must sit in an outer cryostat or cryomagnet which provides the initial stage of cooling to low temperature (a few degrees Kelvin) before the heliox provides the final stage of cooling (to ~300mK). The outer cryostat is usually controlled by a standard Mercury ITC controller.
 
-# Command set
+# Communications
+
+### Settings
+
+The Mercury can be physically configured to use serial, ethernet or GPIB as it's transport layer. As ISIS, we use serial. The serial settings can be changed on the physical device, but we typically use 57600 baud as this is usually an acceptable compromise of transmission speed against line length restrictions. If there is a very long connection from the moxa to the heliox unit, and there is noise on the line, it may be useful to reduce the baud rate to see if this helps.
+
+### Command set
 
 The Heliox systems are physically based on the mercury ITC temperature controllers, but they do not use the same command set and cannot be controlled by the same drivers. The mercury heliox systems have their own driver.
 
@@ -12,7 +18,7 @@ The devices use an SCPI-like command syntax. There are two approaches to getting
 - Ask for everything in one go, e.g. `STAT:DEV:HelioxX`. This will return a huge status string containing every measurement under that category (~30 items). This approach is used by the labview driver (although it only actually looks at the data for a few measurements). It is also useful for enumerating the valid pieces of data that you can ask for individually.
 - Ask for one thing at a time, e.g. `STAT:DEV:HelioxX:TEMP:SIG:TEMP`. This will only return the one measurement which we asked for. The IOC will initially attempt to use this approach but keep a protocol file for the above commands available, until we can do a hardware test to check which approach is better.
 
-# Channels
+### Channels
 
 The mercury ITC driver essentially reads data from 5 distinct channels:
 
