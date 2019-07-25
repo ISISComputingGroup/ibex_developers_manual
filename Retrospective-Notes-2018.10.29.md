@@ -18,7 +18,7 @@ Generally slow sprint because of holidays. Please announce holidays to Kevin whe
     * Yes, Liam to write a ticket
 * Drop in sessions?
     * Last one good with Ron
-    * Check the [list](Drop-in-Sessions#drop-in-session-principles-1)
+    * Check the [list](https://github.com/ISISComputingGroup/IBEX/wiki/Instrument-Control-Drop-in-Session)
     * Monitor success, has been asked for in and out of cycle by scientists
     * Ask Mantid team what they do
 * More demonstrating
