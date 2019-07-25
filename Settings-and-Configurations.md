@@ -54,7 +54,7 @@ Directories:
 
 Common extensions:
  - [motion setpoints](Motor-SetPoints) (works for galil, McLennan and sm300)
- - [axes](Motor-Axes) (works for galil, McLennan and sm300)
+ - [axes](axis) (works for galil, McLennan and sm300)
  - [sample changer](Sample-Changers) (works for galil, McLennan and sm300)
  - [Barn doors and Momentum slits](Barndoors-and-Momentum-Slits-on-MUON-Front-End)
  - [larmor Beamstop](Larmor-Beamstop) (galil)
