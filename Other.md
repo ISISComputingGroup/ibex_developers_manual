@@ -6,7 +6,7 @@
 
 * [Gamry](Gamry)
 
-* [Moxa e1210](moxa-e12XX)
+* [Moxa e12XX](moxa-e12XX)
 
 * [Zero field controller](Zero-field-controller)
 
