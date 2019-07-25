@@ -18,6 +18,6 @@
 
 * [OPI Creation](OPI-Creation)
 
-* [Converting OPIs from old to new style: tips and gotchas](Converting-OPI-to-New-Style-Tips-and_Gotchas)
+* [Converting OPIs from old to new style: tips and gotchas](Converting-OPI-to-New-Style-Tips-and-Gotchas)
 
 * [Adding a Perspective](Adding-a-button-to-the-perspective-switcher-(Eclipse-4))
