@@ -96,6 +96,8 @@ This is a dedicated system permanently installed on HiFi.
 
 See [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Cryogenic-Inc-Systems), [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Cryogenic-SMS-PSU) and [here](https://github.com/ISISComputingGroup/IBEX/wiki/HIFI_CRYOMAG-Instrument-Details)
 
+This magnet does *not* act as an outer cryostat for any other sample environment that may be used.
+
 ### 17T "Birmingham" magnet
 
 This is a cryomagnet owned by the University of Birmingham, which occasionally travels to various scattering facilities, including ISIS.
