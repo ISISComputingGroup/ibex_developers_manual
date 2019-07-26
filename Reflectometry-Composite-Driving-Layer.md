@@ -36,10 +36,51 @@ Engineering offsets correct the value sent to a PV because of inaccuracies in th
 
 Note that in this case, the zero motor position is no longer necessarily zero, while this does not affect the maths, users will probably want to ensure that in the straight-through case the motor is zero.
 
-The configuration for this is to add an engineering offset object to the IOCDriver as an argument this will do the following:
+The configuration for this is to add an engineering offset object to the IOCDriver. The engineering offset object will do the following:
 
 1. Convert readbacks from the IOC PVWrapper to the uncorrected value 
 1. Convert set-points from the component to the correct value that get sent to the PV
 1. On initialisation to convert PV to set-point value to be initialised
-    1. This is hard because to calculate the value you need a beamline parameter value which is not yet set because it is being calculated. To avoid this we introduce the constraint that engineering corrections may only be functions of an autosaved beamline parameter or the motor position/pv on which the driver is based.
+    1. This is hard because to calculate the value you need a beamline parameter value which is not yet set because it is being calculated. To avoid this we introduce the constraint that engineering corrections may only be functions of an autosaved beamline parameter or the motor position/PV on which the driver is based.
+
+### User Function Engineering Correction
+
+To apply a user function engineering correction yo an axis we must first define the function in the configuration file. In this example case, we have a function which depends on a single beamline parameter, `theta`:
+
+```
+def my_correction(value, theta):
+   ...
+   return calulated_offse
+```
+
+When called by the reflectometry IOC this function will be given:
+
+-`value` which is the position that would be sent to the axis if the correction was 0
+-`theta` which is the value of the first beamline parameter set in `UserFunctionCorrection`
+
+If there are more beamline parameters set in `UserFunctionCorrection` these would be additional arguments. The function should return a correction which will be added onto the value before being sent to the PV.
+The next step is to add the engineering correction to the IOC driver. We show the definition of the theta beamline parameter to make it clear what the arguments are:
+
+```
+theta_param_angle = add_parameter(AngleParameter("THETA", theta_comp))
+
+...
+
+add_driver(DisplacementDriver(
+    component, 
+    PVWrapper, 
+    engineering_correction=UserFunctionCorrection(my_correction, theta_param_angle))
+```
+
+The `UserFunctionCorrection` takes:
+
+- `user_correction_function`: reference to the function to use
+- beamline parameters: 0 or more beamline parameters whose set point readback values should be passed to the `user_correction_function`
+
+If you wish to write your own `engineering_correction` you must:
+
+1. **either** inherit from `SymmetricEngineeringCorrection`: then override `correction(self, setpoint)` which returns the correction to apply based on the setpoint
+1. **or** inherit from `EngineeringCorrection`: then override 
+    - `to_axis(self, setpoint)`: given a setpoint return the correct value to send to the axis
+    - `from_axis(self, value, setpoint)`: given the `value` read from the axis and `setpoint` for the axis return the `value` without the correction
 
