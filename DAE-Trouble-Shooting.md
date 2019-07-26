@@ -528,3 +528,7 @@ Freddie may also have a patched version of the isisicp that fixes this issue.
 ### My blocks aren't being written to a run title properly
 
 See the documentation in the [user manual](https://github.com/ISISComputingGroup/ibex_user_manual/wiki/Add-blocks-to-run-title)
+
+### Exception in ICP log
+
+If the ICP is showing an error in the form of `NeXusEventCallback: [Warning] (NeXusEventCallback<class DAE2DetCardPolicy>::allFrameCallback) Invalid DAE time value` this indicates a hardware problem and you should get in touch with the electronics group.
