@@ -39,14 +39,14 @@ NB: The devices display screen does not show current pump status information whe
 
 There are three known issues with the pump that have been confirmed by JASCO. They have detailed the potential issues and the work around that is associated with them. The design of the pumps driver should mitigate them, but this information should help in the event these are encountered during support:
 
-## Pump stops responding
+#### Pump stops responding
 
 This issue involves the pump being hard locked, and completely unresponsive. No data will be returned from the device, and the front panel will be unresponsive. The only way to resolve this is to power cycle the device. This is caused by the `flowrate set` command being executed at the same moment as a program step (such as setting component values).
 
-## Pump freezes with 'Program busy'
+#### Pump freezes with 'Program busy'
 
 This issue involves the pump freezing and not interpreting commands briefly, and can result in commands being skipped. This is caused by the `fileno set` (Set a program file number) being executed while the run status is in `Initial` or `Run`. When the program file is opened other commands not related to creating a time program will not be accepted. You must ensure the program is closed after setting the time program.
 
-## Composition control is locked
+#### Composition control is locked
 
 This issue involves the composition being locked into a manual mode, where no compositions will be accepted remotely, and the single channel (100% A, B, C, or, D) can only be switched using the front panel. This occurs when a time program has not been written correctly. For example, if the maximum number of lines in a program (64) has been exceeded or not closed. This should be resolved by first ensuring the file is closed, using `1 fileno set`, and then performing a re-run program using initial conditions `8 pump set`. Note that you might want to ensure you have a flow rate of 0 to ensure no liquid is pumped while troubleshooting.
