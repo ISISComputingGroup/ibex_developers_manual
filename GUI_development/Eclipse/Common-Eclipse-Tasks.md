@@ -125,7 +125,7 @@ public class FooDisplay extends Canvas
 
 ## Add A New Perspective
 
-Instructions on adding a new perspective can be found [here](Adding-a-button-to-the-perspective-switcher-(Eclipse-4)).
+Instructions on adding a new perspective can be found [here](Adding-a-Button-to-the-Perspective-Switcher).
 
 Add A Preference Page
 ---------------------
