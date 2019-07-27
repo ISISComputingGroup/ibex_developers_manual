@@ -1,4 +1,4 @@
-# Oxford Instruments Mercury Heliox
+# Oxford Instruments Mercury Heliox ("sorb")
 
 The mercury Heliox systems are a type of refrigerator which cools using Helium-3. Using this technique, temperatures of around ~300mK can be achieved. 
 
