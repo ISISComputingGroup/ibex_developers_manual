@@ -4,6 +4,25 @@ The mercury Heliox systems are a type of refrigerator which cools using Helium-3
 
 The heliox systems, like dilution fridges, are parasitic, which means they must sit in an outer cryostat or cryomagnet which provides the initial stage of cooling to low temperature (a few degrees Kelvin) before the heliox provides the final stage of cooling (to ~300mK). The outer cryostat is usually controlled by a standard Mercury ITC controller.
 
+### Physical process - background
+
+A sorption cooling stage works by evaporative cooling of Helium-3. To understand the process, consider the following picture:
+
+![sorb](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqf5VjJBduvFOF5nAdidL7jrvjya_KWlkOdLr1t0zJmUv0cm9S)
+
+The components, which are interesting for us are:
+- Helium-3 pot. The sample is mounted to the bottom of this.
+- Helium-4 pot (also called "1K pot").
+- Sorption pump
+
+The Helium-3 pot and the sorption pump form a closed system. Helium-3 can move between these two areas, but cannot escape. This is done because Helium-3 is extremely expensive, so pumping it away would be very wasteful.
+
+The sorption pump is a "pump" in the sense that it can control the pressure of the Helium-3 surrounding it. The physical process that achieves this is adsorption of Helium-3 onto the material (charcoal) in the pump. The pumping efficiency (and hence pressure) of the pump is changed by controlling it's temperature. The lower the temperature, the more Helium-3 the pump will adsorb per unit time. If the pump is warmed to ~30K, it will release all of the previously adsorbed Helium-3.
+
+The Helium-3 pot is where the lowest temperatures (~260mK) are achieved. In this pot, Helium-3 is cools by evaporation. The rate of evaporation of Helium-3 (i.e. the cooling power) is changed by varying the temperature of the sorption pump (and therefore the vapour pressure above the Helium-3 in this pot).
+
+The Helium-4 pot is used to recondense Helium-3 back into a liquid after being released by the sorption pump (to release Helium-3, the sorption pump is warmed to 30K, and Helium-3 is a gas at this temperature).
+
 # Communications
 
 ### Settings
@@ -22,13 +41,15 @@ The devices use an SCPI-like command syntax. There are two approaches to getting
 
 The mercury ITC driver essentially reads data from 5 distinct channels:
 
-| Channel name | Physical sensor location | Notes |
-| --- | --- | --- |
-| `HelioxX:HEL` | He3 Pot | This is the "main" heliox control channel. According to the OI manual this is the only channel which we should need to use to control the heliox's temperature. In the IOC and Labview driver, this is the only channel on which we allow setting setpoints. It is a hardware alias of either `HeHigh` or `HeLow` depending on temperature (see below). |
-| `He3Sorb:TEMP` | He3 Sorption pump | Dedicated channel for the (helium-3) sorption pump. Monitoring only. Note: the He3 sorption pump and the He3 Pot are not the same! | 
-| `He4Pot:TEMP` | He4 Pot | Dedicated channel for the (helium-4) 1K-pot cooling stage. Monitoring only. Note: the way that ISIS run the Mercury Heliox systems means that this channel will read a constant value all the time, as there is no actual hardware present on the heliox to read this. This hardware would only be present if a single Mercury ITC unit was used to control both the main cryostat and the sorption stage. | 
-| `HeHigh:TEMP` | He3 Pot | Monitoring only. This is a "high" (~2-80K) temperature thermocouple, used for measuring the temperature of the He3 Pot when the temperature is in it's range of validity. This channel will give invalid temperatures if the heliox is running at "low" temperature. | 
-| `HeLow:TEMP` | He3 Pot | Monitoring only. This is a "low" (~0.2-2K) temperature thermocouple, used for measuring the temperature of the He3 Pot when the temperature is in it's range of validity. This channel will give invalid temperatures if the heliox is running at "high" temperature. | 
+| Physical sensor location | Channel name on LET heliox | Channel name on Muon heliox | Notes |
+| --- | --- | --- | --- |
+| He3 Pot | `HelioxX:HEL` | `HelioxX:HEL` | This is the "main" heliox control channel. According to the OI manual this is the only channel which we should need to use to control the heliox's temperature. In the IOC and Labview driver, this is the only channel on which we allow setting setpoints. It is a hardware alias of either `HeHigh` or `HeLow` depending on temperature (see below). |
+| He3 Sorption pump | `He3Sorb:TEMP` | ? | Dedicated channel for the (helium-3) sorption pump. Monitoring only. Note: the He3 sorption pump and the He3 Pot are not the same! | 
+| He4 Pot | `He4Pot:TEMP` | ? | Dedicated channel for the (helium-4) 1K-pot cooling stage. Monitoring only. Note: the way that ISIS run the Mercury Heliox systems means that this channel will read a constant value all the time, as there is no actual hardware present on the heliox to read this. This hardware would only be present if a single Mercury ITC unit was used to control both the main cryostat and the sorption stage. | 
+| He3 Pot | `HeHigh:TEMP` | ? | Monitoring only. This is a "high" (~2-80K) temperature thermocouple, used for measuring the temperature of the He3 Pot when the temperature is in it's range of validity. This channel will give invalid temperatures if the heliox is running at "low" temperature. | 
+| He3 Pot | `HeLow:TEMP` | ? | Monitoring only. This is a "low" (~0.2-2K) temperature thermocouple, used for measuring the temperature of the He3 Pot when the temperature is in it's range of validity. This channel will give invalid temperatures if the heliox is running at "high" temperature. | 
+
+Because the channel names vary between the Muon Heliox and the LET heliox, they must be supplied as IOC macros.
 
 # Regeneration
 
