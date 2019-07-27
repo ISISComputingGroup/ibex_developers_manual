@@ -17,9 +17,9 @@ The components, which are interesting for us are:
 
 The Helium-3 pot and the sorption pump form a closed system. Helium-3 can move between these two areas, but cannot escape. This is done because Helium-3 is extremely expensive, so pumping it away would be very wasteful.
 
-The sorption pump is a "pump" in the sense that it can control the pressure of the Helium-3 surrounding it. The physical process that achieves this is adsorption of Helium-3 onto the material (charcoal) in the pump. The pumping efficiency (and hence pressure) of the pump is changed by controlling it's temperature. The lower the temperature, the more Helium-3 the pump will adsorb per unit time. If the pump is warmed to ~30K, it will release all of the previously adsorbed Helium-3.
+The sorption pump is a "pump" in the sense that it can control the pressure of the Helium-3 surrounding it. The physical process that achieves this is adsorption of Helium-3 onto the material (charcoal) in the pump. The pumping efficiency (i.e. pressure) of the pump can be changed by controlling it's temperature. The lower the temperature, the more Helium-3 the pump will adsorb per unit time. If the pump is warmed to ~30K, it will release all of the previously adsorbed Helium-3.
 
-The Helium-3 pot is where the lowest temperatures (~260mK) are achieved. In this pot, Helium-3 is cools by evaporation. The rate of evaporation of Helium-3 (i.e. the cooling power) is changed by varying the temperature of the sorption pump (and therefore the vapour pressure above the Helium-3 in this pot).
+The Helium-3 pot is where the lowest temperatures (~260mK) are achieved. In this pot, Helium-3 cools by evaporation. The rate of evaporation of Helium-3 (i.e. the cooling power) is changed by varying the temperature of the sorption pump (and therefore the vapour pressure above the Helium-3 in this pot).
 
 The Helium-4 pot is used to recondense Helium-3 back into a liquid after being released by the sorption pump (to release Helium-3, the sorption pump is warmed to 30K, and Helium-3 is a gas at this temperature).
 
