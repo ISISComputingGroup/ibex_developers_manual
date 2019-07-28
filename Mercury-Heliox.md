@@ -8,7 +8,7 @@ The heliox systems, like dilution fridges, are parasitic, which means they must 
 
 A sorption cooling stage works by evaporative cooling of Helium-3. To understand the process, consider the following picture:
 
-![sorb](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqf5VjJBduvFOF5nAdidL7jrvjya_KWlkOdLr1t0zJmUv0cm9S)
+![sorb](https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/images/heliox.png?raw=true)
 
 The components which are interesting for us are:
 - Helium-3 pot. The sample is mounted to the bottom of this.
