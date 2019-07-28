@@ -44,12 +44,23 @@ The mercury ITC driver essentially reads data from 5 distinct channels:
 | Physical sensor location | Channel name on LET heliox | Channel name on Muon heliox | Notes |
 | --- | --- | --- | --- |
 | He3 Pot | `HelioxX` | `HelioxX` | This is the "main" heliox control channel. According to the OI manual this is the only channel which we should need to use to control the heliox's temperature. In the IOC and Labview driver, this is the only channel on which we allow setting setpoints. It is a hardware alias of either `HeHigh` or `HeLow` depending on temperature (see below). |
-| He3 Sorption pump | `He3Sorb` | ? | Dedicated channel for the (helium-3) sorption pump. Monitoring only. Note: the He3 sorption pump and the He3 Pot are not the same! | 
-| He4 Pot | `He4Pot` | ? | Dedicated channel for the (helium-4) 1K-pot cooling stage. Monitoring only. Note: the way that ISIS run the Mercury Heliox systems means that this channel will read a constant value all the time, as there is no actual hardware present on the heliox to read this. This hardware would only be present if a single Mercury ITC unit was used to control both the main cryostat and the sorption stage. | 
-| He3 Pot | `HeHigh` | ? | Monitoring only. This is a "high" (~2-80K) temperature thermocouple, used for measuring the temperature of the He3 Pot when the temperature is in it's range of validity. This channel will give invalid temperatures if the heliox is running at "low" temperature. | 
-| He3 Pot | `HeLow` | ? | Monitoring only. This is a "low" (~0.2-2K) temperature thermocouple, used for measuring the temperature of the He3 Pot when the temperature is in it's range of validity. This channel will give invalid temperatures if the heliox is running at "high" temperature. | 
+| He3 Sorption pump | `He3Sorb` | `MB1_He3_Sorb` | Dedicated channel for the (helium-3) sorption pump. Monitoring only. Note: the He3 sorption pump and the He3 Pot are not the same! | 
+| He4 Pot | `He4Pot` | `DB6_He4Pot` | Dedicated channel for the (helium-4) 1K-pot cooling stage. Monitoring only. Note: the way that ISIS run the Mercury Heliox systems means that this channel will read a constant value all the time, as there is no actual hardware present on the heliox to read this. This hardware would only be present if a single Mercury ITC unit was used to control both the main cryostat and the sorption stage. | 
+| He3 Pot | `HeHigh` | `DB8_He3_Pot_Low` | Monitoring only. This is a "high" (~2-80K) temperature thermocouple, used for measuring the temperature of the He3 Pot when the temperature is in it's range of validity. This channel will give invalid temperatures if the heliox is running at "low" temperature. | 
+| He3 Pot | `HeLow` | `DB7_He3_Pot_CRN` | Monitoring only. This is a "low" (~0.2-2K) temperature thermocouple, used for measuring the temperature of the He3 Pot when the temperature is in it's range of validity. This channel will give invalid temperatures if the heliox is running at "high" temperature. | 
 
 Because the channel names vary between the Muon Heliox and the LET heliox, they must be supplied as IOC macros.
+
+If a new heliox turns up on another beamline, the following is the process to figure out the required channel names:
+- Connect to the device via your favorite terminal emulator (hterm/putty/hyperterm/etc).
+- Issue the command `READ:SYS:CAT` (terminated with a line feed, `\n`)
+- This will respond with a string like `STAT:SYS:CAT:DEV:<device 1 id>:<device 1 type>:DEV:<device 2 id>:<device 2 type>:...`. 
+  * The IDs should look something like `DB1.H1` (meaning: daughter board 1, heater 1)
+  * The device type could be one of `TEMP` (temperature), `PRES` (pressure), `HTR` (heater) or `AUX` (auxilary output).
+- For each of the devices in the catalog response, issue the command `READ:DEV:<device id>`:<device type>:NICK (terminated with a line feed)
+- The device will respond with a string that looks like `STAT:DEV:MB1.T1:TEMP:NICK:MB1_He3_Sorb`
+- The last part of this response (`MB1_He3_Sorb` in this example) is the string that the IOC will need as a macro
+- If it's not immediately obvious which channel name corresponds to which item in the table above, consult cryogenics for advice about how the channels have been named.
 
 # Regeneration
 
