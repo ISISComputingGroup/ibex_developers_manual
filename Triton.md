@@ -43,7 +43,7 @@ The Triton IOC reads it's configuration (sensor <-> name mapping) from the trito
 - Mixing chamber : mixing chamber
 - Cooling channel : **not read or used by IOC**
 
-We have a ticket https://github.com/ISISComputingGroup/IBEX/issues/3993 to discuss whether this is actually a valid assumption as we have seen some fridges leave PT1 and PT2 undefined and link the "Cooling channel" to the 4K Heat Exchanger.
+As of https://github.com/ISISComputingGroup/IBEX/issues/3993 this mapping should have been set on all of the fridges by cryogenics section.
 
 # Gotchas
 
