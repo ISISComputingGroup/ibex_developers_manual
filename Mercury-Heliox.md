@@ -52,7 +52,7 @@ The mercury ITC driver essentially reads data from 5 distinct channels:
 Because the channel names vary between the Muon Heliox and the LET heliox, they must be supplied as IOC macros.
 
 If a new heliox turns up on another beamline, the following is the process to figure out the required channel names:
-- Connect to the device via your favorite terminal emulator (hterm/putty/hyperterm/etc).
+- Connect to the device via your favourite terminal emulator (hterm/putty/hyperterm/etc).
 - Issue the command `READ:SYS:CAT` (terminated with a line feed, `\n`)
 - This will respond with a string like `STAT:SYS:CAT:DEV:<device 1 id>:<device 1 type>:DEV:<device 2 id>:<device 2 type>:...`. 
   * The IDs should look something like `DB1.H1` (meaning: daughter board 1, heater 1)
