@@ -59,7 +59,7 @@ asynSetTraceMask("L0",-1,0x9)
 asynSetTraceIOMask("L0",-1,0x2)
 ```
 
-where <port> is the port name you used in the asyn setup eg `drvAsynSerialPortConfigure(<port>...`
+where <port> is the port name you used in the asyn setup eg `drvAsynSerialPortConfigure(<port>...)`
 
 This will include the terminator character, if you don't see it it is not being sent or received.
 If no reply is given this will include a message "No reply from device in XXXms"
