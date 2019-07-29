@@ -532,3 +532,7 @@ See the documentation in the [user manual](https://github.com/ISISComputingGroup
 ### Exception in ICP log
 
 If the ICP is showing an error in the form of `NeXusEventCallback: [Warning] (NeXusEventCallback<class DAE2DetCardPolicy>::allFrameCallback) Invalid DAE time value` this indicates a hardware problem and you should get in touch with the electronics group.
+
+### A `measurement.nxs` file is being written to the `C:\data` area
+
+This file is written by the ISISICP on some instruments if they have defined a non-zero "measurement ID". It is intended to be used for correlating runs. The presence of the file itself is nothing to worry about.
