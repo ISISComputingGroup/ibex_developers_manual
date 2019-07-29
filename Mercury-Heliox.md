@@ -111,3 +111,15 @@ It appears to me as though the setpoint is never set back to the previous value 
 
 The following notes apply to the labview driver:
 - The driver does not work with labview 2018. It works with 2014 - I am not sure in which intermediate version it stops working. The symptom is that it never even tries to send bytes to a serial port. I think it is crashing while trying to get a subVI by reference but I am not completely sure about this.
+
+# Troubleshooting
+
+### No comms to device but I'm sure the serial settings are correct
+
+The symptom is that the device acts as if it's not there - you will see serial writes going out but nothing coming back. This can happen if the device is left in local mode (for example, after a cryogen fill). 
+
+I am not aware of a remote command to set the device back into remote mode, so you will need to walk up to the physical mercury controller. It has a touch screen with a small `l` in the bottom-left of the touch screen. If it is shown in blue, tap it once. It should turn orange, which indicates the device is now in remote. Check you now have comms.
+
+### I can read the main temperature but not any channels
+
+Check channel assignments are correct - see table above and instructions for finding out channel names if unknown.
