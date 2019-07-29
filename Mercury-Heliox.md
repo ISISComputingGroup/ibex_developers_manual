@@ -76,7 +76,7 @@ A regeneration follows the following physical process:
 - Once all of the helium 3 has recondensed, the sorption pump is cooled back down. This causes it to start "pumping" and therefore cooling of the He3 Pot resumes.
 - This process will take approximately 30-90 minutes depending on the starting temperature of the heliox.
 
-The heliox typically needs a regeneration after 8-12 hours of cooling. This depends on the sample and the external heat load.
+The heliox typically needs a regeneration after 24-48 hours of cooling. I think this depends on the sample and the external heat load.
 
 In effect, this means that the users lose temperature control while a regeneration is in progress. TODO: do the scientists know this or will they be surprised by this behaviour? Are regenerations typically done automatically or manually or does this depend on the scientist/experiment?
 
