@@ -50,6 +50,10 @@ If the IOC doesn't work on startup, but does after using hyperterminal, at a com
 This may be due to a low control issue e.g. `Xon`/`Xoff` has been incorrectly specified and some binary character
 happens to match `Xoff`. You should see asyn still sending character when you enable trace, but non getting through. If you run the `dbior` command at level 2 you may see `waiting as seen Xoff`.
 
+## The device is sensitive to input commands
+
+Some devices has sensitivity to the rate at which you poll them. Typically the devices manual will detail appropriate command spacing, and the ability to use `wait [time in ms];` after `in` or `out` commands in the protocol file is available. However, it is important to ensure your records and their types and error handling have been correctly defined. For instance in the event of a type error, since this is handled outside of the protocol file, it will bypass any structures you have in place to slow polling rates.
+
 ## What is Passing between the IOC and the *Stream* Device
 
 It is possible to put stream into a debug mode where everything sent and received is written to the console. To do this simply add to you st.cmd file (defined on your asyn port) :
