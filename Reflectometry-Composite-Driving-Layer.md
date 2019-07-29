@@ -43,6 +43,65 @@ The configuration for this is to add an engineering offset object to the IOCDriv
 1. On initialisation to convert PV to set-point value to be initialised
     1. This is hard because to calculate the value you need a beamline parameter value which is not yet set because it is being calculated. To avoid this we introduce the constraint that engineering corrections may only be functions of an autosaved beamline parameter or the motor position/PV on which the driver is based.
 
+## Types of Engineering Corrections
+
+### No Correction
+
+Doesn't perform any correction. Is useful when you want to define a correction but have it do nothing.
+
+### Constant Correction
+
+Add a constant on to the value, probably better to redefine zero on the axis. Add this into the configuration file to the driver:
+
+```
+add_driver(DisplacementDriver(
+    component, 
+    PVWrapper, 
+    engineering_correction=ConstantCorrection(value))
+```
+
+where value is the amount you want to add onto the axis when setting a set point.
+
+### Interpolated Data Correction
+
+This will perform a correction based on a table loaded from disc. It will perform linear interpolation between the points in the datafile to derive the correction. Outside of the table of data no correction is set. To use this add to the configuration:
+
+```
+theta_param_angle = add_parameter(AngleParameter("THETA", theta_comp))
+
+...
+
+add_driver(DisplacementDriver(
+    component, 
+    PVWrapper, 
+    engineering_correction=InterpolateGridDataCorrection(filename, theta_param_angle))
+```
+
+In this example, `theta_param_angle` is being used as the interpolation variable. The filename in the name of a file in the configuration directory (`C:\Instrument\Settings\config\<instrument>\configurations\refl\`) which contains the points. The format is:
+
+```
+Theta, correction
+1.0, 1.2
+1.01, 3.4
+...
+2.5, 4.6
+```
+Where the header `Theta, correction` matches with the name of the beamline parameter (first argument in `XXXParameter`). If you want to use the value sent to the displacement driver instead use `DRIVER` in the header.
+
+If you want to do multi-dimension interpolation then your `InterpolateGridDataCorrection` object should have all beamline values in it that are needed, e.g.:
+
+```
+InterpolateGridDataCorrection(filename, theta_param_angle, sm_angle_param))
+```
+
+and the data file should have a similar header:
+
+```
+Theta, driver, smangle, correction
+1.0, 0.1, -2.3, 1.2
+...
+```
+
 ### User Function Engineering Correction
 
 To apply a user function engineering correction yo an axis we must first define the function in the configuration file. In this example case, we have a function which depends on a single beamline parameter, `theta`:
@@ -77,10 +136,11 @@ The `UserFunctionCorrection` takes:
 - `user_correction_function`: reference to the function to use
 - beamline parameters: 0 or more beamline parameters whose set point readback values should be passed to the `user_correction_function`
 
+### User Specified
+
 If you wish to write your own `engineering_correction` you must:
 
 1. **either** inherit from `SymmetricEngineeringCorrection`: then override `correction(self, setpoint)` which returns the correction to apply based on the setpoint
 1. **or** inherit from `EngineeringCorrection`: then override 
     - `to_axis(self, setpoint)`: given a setpoint return the correct value to send to the axis
     - `from_axis(self, value, setpoint)`: given the `value` read from the axis and `setpoint` for the axis return the `value` without the correction
-
