@@ -21,7 +21,7 @@ It contains some files:
 - globals.txt: overriding definition of macros for IOCs
 - last_config.txt: last loaded config in IBEX
 - rc_setting.cmd: commands to load in runcontrol
-- banner.xml: customised displays an buttons for the GUI banner
+- banner.xml: customised displays and buttons for the GUI banner
 - custom_records.db: records specific to the instrument which are loaded by INSTETC
 
 ## User configuration
