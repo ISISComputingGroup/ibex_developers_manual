@@ -82,8 +82,6 @@ In effect, this means that the users lose temperature control while a regenerati
 
 ### Detecting when a regeneration is required
 
-The following is how the existing labview driver detects whether a regeneration is required:
-
 A regeneration is captured by a boolean with the following inputs:
 - Mode = "Low Temp"
 - And Heliox temperature > 0.4K
@@ -99,13 +97,15 @@ A regeneration is captured by a boolean with the following inputs:
   * Or:
     * (Heliox temperature - TSet) > 0.05K continuously for 600 seconds
 
-This boolean must then stay true continuously for 120 seconds. If it does, then a regeneration is triggered.
+This boolean must then stay true continuously for 120 seconds. If it does, then a regeneration is triggered in the labview. Under IBEX, the value of the boolean will be displayed on the OPI but no action will be taken.
 
 ### Regeneration logic
 
 When a regeneration is triggered, the existing labview driver simply sends a temperature setpoint of zero. There is logic to do something much more complicated, but it is "commented out" in an `if False` statement.
 
 It appears to me as though the setpoint is never set back to the previous value in the labview code. There is a lot of code relating to this, but it is all disabled.
+
+Under IBEX we currently only allow manual regenerations. The same conditions as above are displayed on an indicator on the IBEX OPI, but no action is taken. This is because the scientists don't trust the current regeneration conditions and so they have not been hooked up. We would need to book lots of time with the heliox to try and work out a better set of detection conditions if this logic were to be used in future.
 
 # Labview driver oddities
 
