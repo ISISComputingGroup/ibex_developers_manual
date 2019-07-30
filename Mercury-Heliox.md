@@ -123,3 +123,14 @@ I am not aware of a remote command to set the device back into remote mode, so y
 ### I can read the main temperature but not any channels
 
 Check channel assignments are correct - see table above and instructions for finding out channel names if unknown.
+
+### Regeneration starts but never finishes
+
+The Heliox detects whether a regeneration has "finished" by checking whether the temperature of the Helium-3 pot is smaller than a threshold. From testing, I believe the threshold is somewhere around 1.7K. The outer cryostat should be capable of achieving 1.6K or better. The Helium-3 pot won't go colder than the outer cryostat while regenerating, so if the outer cryostat is at a higher temperature than about 1.7K the regeneration will appear to hang and never finish. 
+
+The outer cryostat could be warmer than expected for various reasons:
+- Try gently increasing the needle valve percentage on the outer cryostat (e.g. from 6% to 8%) and check how the temperature responds. 
+  * If it gets much colder, it may solve the issue.
+  * If it gets marginally colder or does not respond, or you have to adjust the needle valve beyond 10% or so, check with cryogenics group. There may be a leak or a cryogenic issue with the equipment meaning it is unable to reach the lowest temperatures.
+  * If it gets warmer, gently decrease the flow of He. The minimum attainable temperature is a minimum on a curve, and it is possible that reducing the flow of He can get the cryostat colder.
+  * If none of the above works or you are unsure, consult cryogenics section and explain that the outer cryostat is too warm to allow the heliox to finish a regeneration.
