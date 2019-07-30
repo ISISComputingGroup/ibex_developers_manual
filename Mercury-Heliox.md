@@ -134,3 +134,11 @@ The outer cryostat could be warmer than expected for various reasons:
   * If it gets marginally colder or does not respond, or you have to adjust the needle valve beyond 10% or so, check with cryogenics group. There may be a leak or a cryogenic issue with the equipment meaning it is unable to reach the lowest temperatures.
   * If it gets warmer, gently decrease the flow of He. The minimum attainable temperature is a minimum on a curve, and it is possible that reducing the flow of He can get the cryostat colder.
   * If none of the above works or you are unsure, consult cryogenics section and explain that the outer cryostat is too warm to allow the heliox to finish a regeneration.
+
+### Temperature control unstable
+
+The temperature control is known to be unstable at:
+- Very close to base temperature, i.e. TSet < 300mK. This is because even the tiniest of heater changes cause a large change in temperature when this close to base temperature
+- Near the "low temperature"/"high temperature" threshold, which is around 1.6K. This is a result of the Heliox changing it's mode of operation around this threshold
+
+There is nothing the driver does in either SECI or IBEX which can affect these stabilities. Consult cryogenics to check outer cryostat performance, PID parameters, flow rates etc.
