@@ -17,7 +17,7 @@ The way that the PVs are displayed in the GUI depends on the alarm state of the 
 *Note: the following will apply once https://github.com/ISISComputingGroup/IBEX/issues/3562 is merged*
 
 This ticket introduces the ability to add custom buttons, as well as the original items which display a PV. For displays, a new parameter has been added:
-- `width`: the width of the item in pixels when displayed in the GUI
+- `width`: the width of the item in pixels when displayed in the GUI (limited to between 10 and 500)
 
 Buttons have the following parameters:
 - `name`: the name of the item to display as text on the button in the GUI
@@ -26,9 +26,9 @@ Buttons have the following parameters:
 - `pvValue`: the value that the button writes to the PV (must be an integer)
 - `textColour`: the colour of the text on the button as a hex colour, for example `#e0e0e0`
 - `buttonColour`: the colour of the button
-- `fontSize`: the font size of the text on the button
-- `width`: the width of the button in pixels
-- `height`: the height of the button in  pixels
+- `fontSize`: the font size of the text on the button (maximum of 16)
+- `width`: the width of the button in pixels (limited to between 10 and 1000)
+- `height`: the height of the button in  pixels (limited to between 10 and 35)
 
 # Configuration
 
