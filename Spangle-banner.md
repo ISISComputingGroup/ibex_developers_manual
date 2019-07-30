@@ -1,6 +1,5 @@
 # Spangle banner (GUI)
 
-*Note: the following will apply once https://github.com/ISISComputingGroup/IBEX/issues/3010 is merged*
 
 The spangle banner in the GUI looks at a set of PVs and displays them at all times, regardless of the current configuration. The set of PVs to serve is contained in the blockserver, in a PV called `TE:NDWxxxx:CS:BLOCKSERVER:BANNER_DESCRIPTION`. Use 
 ```
@@ -14,6 +13,22 @@ This description is served as hexed compressed JSON. The items in the list are:
 - `pv` the PV to look at
 
 The way that the PVs are displayed in the GUI depends on the alarm state of the PV.
+
+*Note: the following will apply once https://github.com/ISISComputingGroup/IBEX/issues/3562 is merged*
+
+This ticket introduces the ability to add custom buttons, as well as the original items which display a PV. For displays, a new parameter has been added:
+- `width`: the width of the item in pixels when displayed in the GUI
+
+Buttons have the following parameters:
+- `name`: the name of the item to display as text on the button in the GUI
+- `pv`: the PV that the button writes to
+- `local`: whether the GUI should prepend the local instrument's PV prefix
+- `pvValue`: the value that the button writes to the PV (must be an integer)
+- `textColour`: the colour of the text on the button as a hex colour, for example `#e0e0e0`
+- `buttonColour`: the colour of the button
+- `fontSize`: the font size of the text on the button
+- `width`: the width of the button in pixels
+- `height`: the height of the button in  pixels
 
 # Configuration
 
@@ -32,6 +47,54 @@ In the settings area, create `C:\Instrument\Settings\config\NDWxxxx\configuratio
         <name>Manager mode</name>
         <pv>CS:MANAGER</pv>
         <local>true</local>
+    </item>
+  </items>
+</banner>
+```
+
+*Note: the following will apply once https://github.com/ISISComputingGroup/IBEX/issues/3562 is merged*
+
+Once this ticket is merged, all instruments should have a `C:\Instrument\Settings\config\NDWxxxx\configurations\banner.xml`, and the stop motors button will have been moved from the GUI code into `banner.xml`. A typical example of this file is as follows:
+```xml
+<?xml version="1.0" ?>
+<banner xmlns="http://epics.isis.rl.ac.uk/schema/banner/1.0" xmlns:blk="http://epics.isis.rl.ac.uk/schema/banner/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <items>
+    <item>
+      <button>
+        <name>Stop All Motors</name>
+        <pv>CS:MOT:STOP:ALL</pv>
+        <local>true</local>
+        <pvValue>1</pvValue>
+        <textColour>#000000</textColour>
+        <buttonColour>#e0e0e0</buttonColour>
+        <fontSize>9</fontSize>
+        <width>100</width>
+        <height>25</height>
+      </button>
+    </item>
+    <item>
+      <display>
+        <name>Motors are</name>
+        <pv>CS:MOT:MOVING:STR</pv>
+        <local>true</local>
+        <width>170</width>
+      </display>
+    </item>
+    <item>
+      <display>
+        <name>DAE Simulation mode</name>
+        <pv>DAE:SIM_MODE</pv>
+        <local>true</local>
+        <width>250</width>
+      </display>
+    </item>
+    <item>
+      <display>
+        <name>Manager mode</name>
+        <pv>CS:MANAGER</pv>
+        <local>true</local>
+        <width>250</width>
+      </display>
     </item>
   </items>
 </banner>
