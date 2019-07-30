@@ -30,6 +30,8 @@ Buttons have the following parameters:
 - `width`: the width of the button in pixels (limited to between 10 and 1000)
 - `height`: the height of the button in  pixels (limited to between 10 and 35)
 
+See the `xml` example below for the full structure. The order that the items are placed in the `xml` determines the order that they are placed in the GUI. The items in the GUI are aligned right, so the item at the top of `banner.xml` will be displayed on the furthest right, and the second item will be to the left of that, and so on.
+
 # Configuration
 
 In the settings area, create `C:\Instrument\Settings\config\NDWxxxx\configurations\banner.xml` with the following example structure:
