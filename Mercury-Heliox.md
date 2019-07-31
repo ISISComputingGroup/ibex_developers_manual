@@ -139,6 +139,10 @@ The outer cryostat could be warmer than expected for various reasons:
 
 The temperature control is known to be unstable at:
 - Very close to base temperature, i.e. TSet < 300mK. This is because even the tiniest of heater changes cause a large change in temperature when this close to base temperature
-- Near the "low temperature"/"high temperature" threshold, which is around 1.6K. This is a result of the Heliox changing it's mode of operation around this threshold
+- Near the "low temperature"/"high temperature" threshold, which is approximately 1.5-1.7K. This is a result of the Heliox changing it's mode of operation around this threshold.
+
+Example ramp (260mK-1.8K in steps of 20mK) demonstrating these instabilities (notice significant overshoot below 300mK and large instabilities from 1.5-1.7K):
+
+![](https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/images/mercury_heliox_ramp_example.PNG?raw=true)
 
 There is nothing the driver does in either SECI or IBEX which can affect these stabilities. Consult cryogenics to check outer cryostat performance, PID parameters, flow rates etc.
