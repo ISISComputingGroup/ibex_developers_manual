@@ -77,6 +77,10 @@ If you're not creating a StreamDevice IOC or you you would like to know how an I
 * [Creating a State Machine](Creating-a-State-Machine-(Sequencer))
 * [Limited range on PV](PV-with-a-limited-range)
 
+# Dubugging IOCs
+
+Debug builds of IOCs are built in jenkins and can be deployed to instruments, see [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Deploying-a-DEBUG-build-IOC).
+
 # Specific IOC Information
 
 For information on specific IOCs see [Specific Device IOC](Specific-Device-IOC)
