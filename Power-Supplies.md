@@ -4,7 +4,7 @@
 
 * [Danfysik](Danfysik)
 
-* [Oxford Instruments IPS](OxfordInstrumentsIPS)
+* [Oxford Instruments IPS](Oxford-Instruments-IPS)
 
 * [Oxford Instruments Mercury IPS](MercuryIPS)
 
