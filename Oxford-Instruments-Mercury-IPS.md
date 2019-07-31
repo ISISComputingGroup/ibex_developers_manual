@@ -8,7 +8,7 @@ Note: although the Mercury IPS is the successor to the "old" IPS, cryogenics pre
 
 # Hardware quirks
 
-- The following faults can be seen when operating the magnet fully from the front panel, but it is likely that software will also run into the same conditions:
+The following faults can be seen when operating the magnet fully from the front panel, but it is likely that software will also run into the same conditions:
   * The firmware will sometimes crash/freeze. To reset it, the whole power supply needs to be power-cycled. This is obviously undesirable for a magnet power supply, and cryogenics are chasing OI about this issue. It's not clear whether this issue is general to all Mercury IPS units or whether we have one faulty unit.
   * The switch heater occasionally reports that it's ON when it's actually OFF
   * The power supply reports a voltage of ~9000V which is incorrect (a sensible voltage for this power supply would be around ~8V while ramping)
