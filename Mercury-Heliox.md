@@ -34,7 +34,7 @@ The Mercury can be physically configured to use serial, ethernet or GPIB as it's
 The Heliox systems are physically based on the mercury ITC temperature controllers, but they do not use the same command set and cannot be controlled by the same drivers. The mercury heliox systems have their own driver.
 
 The devices use an SCPI-like command syntax. There are two approaches to getting data using this protocol:
-- Ask for everything in one go, e.g. `STAT:DEV:HelioxX`. This will return a huge status string containing every measurement under that category (~30 items). This approach is used by the labview driver (although it only actually looks at the data for a few measurements). It is also useful for enumerating the valid pieces of data that you can ask for individually.
+- Ask for everything in one go, e.g. `STAT:DEV:HelioxX`. This will return a huge status string containing every measurement under that category (~30 items). This approach is used by the LabVIEW driver (although it only actually looks at the data for a few measurements). It is also useful for enumerating the valid pieces of data that you can ask for individually.
 - Ask for one thing at a time, e.g. `STAT:DEV:HelioxX:TEMP:SIG:TEMP`. This will only return the one measurement which we asked for. This approach is what the IOC uses.
 
 ### Channels
@@ -43,7 +43,7 @@ The mercury ITC driver essentially reads data from 5 distinct channels:
 
 | Physical sensor location | Channel name on LET heliox | Channel name on Muon heliox | Notes |
 | --- | --- | --- | --- |
-| He3 Pot | `HelioxX` | `HelioxX` | This is the "main" heliox control channel. According to the OI manual this is the only channel which we should need to use to control the heliox's temperature. In the IOC and Labview driver, this is the only channel on which we allow setting setpoints. It is a hardware alias of either `HeHigh` or `HeLow` depending on temperature (see below). |
+| He3 Pot | `HelioxX` | `HelioxX` | This is the "main" heliox control channel. According to the OI manual this is the only channel which we should need to use to control the heliox's temperature. In the IOC and LabVIEW driver, this is the only channel on which we allow setting setpoints. It is a hardware alias of either `HeHigh` or `HeLow` depending on temperature (see below). |
 | He3 Sorption pump | `He3Sorb` | `MB1_He3_Sorb` | Dedicated channel for the (helium-3) sorption pump. Monitoring only. Note: the He3 sorption pump and the He3 Pot are not the same! | 
 | He4 Pot | `He4Pot` | `DB6_He4Pot` | Dedicated channel for the (helium-4) 1K-pot cooling stage. Monitoring only. Note: the way that ISIS run the Mercury Heliox systems means that this channel will read a constant value all the time, as there is no actual hardware present on the heliox to read this. This hardware would only be present if a single Mercury ITC unit was used to control both the main cryostat and the sorption stage. | 
 | He3 Pot (high sensor) | `HeHigh` | `DB7_He3_Pot_CRN` | Monitoring only. This is a "high" (~2-80K) temperature thermocouple, used for measuring the temperature of the He3 Pot when the temperature is in it's range of validity. This channel will give invalid temperatures if the heliox is running at "low" temperature. | 
@@ -52,11 +52,11 @@ The mercury ITC driver essentially reads data from 5 distinct channels:
 Because the channel names vary between the Muon Heliox and the LET heliox, they must be supplied as IOC macros.
 
 If a new heliox turns up on another beamline, the following is the process to figure out the required channel names:
-- Connect to the device via your favourite terminal emulator (hterm/putty/hyperterm/etc).
+- Connect to the device via your favourite terminal emulator (HTerm/PuTTY/HyperTerminal/etc).
 - Issue the command `READ:SYS:CAT` (terminated with a line feed, `\n`)
 - This will respond with a string like `STAT:SYS:CAT:DEV:<device 1 id>:<device 1 type>:DEV:<device 2 id>:<device 2 type>:...`. 
   * The IDs should look something like `DB1.H1` (meaning: daughter board 1, heater 1)
-  * The device type could be one of `TEMP` (temperature), `PRES` (pressure), `HTR` (heater) or `AUX` (auxilary output).
+  * The device type could be one of `TEMP` (temperature), `PRES` (pressure), `HTR` (heater) or `AUX` (auxiliary output).
 - For each of the devices in the catalog response, issue the command `READ:DEV:<device id>:<device type>:NICK` (terminated with a line feed)
 - The device will respond with a string that looks like `STAT:DEV:MB1.T1:TEMP:NICK:MB1_He3_Sorb`
 - The last part of this response (`MB1_He3_Sorb` in this example) is the string that the IOC will need as a macro
@@ -69,7 +69,7 @@ If a new heliox turns up on another beamline, the following is the process to fi
 Sorption cooling stages can only dissipate a finite amount of energy before they must be "regenerated". This is contrast to dilution cooling, which can be run (essentially) continuously.
 
 A regeneration follows the following physical process:
-- Regeneration is started either manually (by the user) or automatically by the IOC/labview driver if that option is selected
+- Regeneration is started either manually (by the user) or automatically by the IOC/LabVIEW driver if that option is selected
 - The He3 sorption pump is warmed significantly (to about 30K).
 - This heat causes the pump to release all of the Helium-3 stored in it.
 - At the same time, the 1K pot is run, which causes the helium-3 to recondense when it comes into contact with the 1K pot
@@ -88,7 +88,7 @@ A regeneration is captured by a boolean with the following inputs:
 - And He3 Sorb heater in automatic mode
 - And He3 Sorb heater percent heat < 0.2%
 - And no comms errors within the last 120 seconds
-- And auto-recondense enabled on labview front panel
+- And auto-recondense enabled on VI front panel
 - And one or both of:
   * Either:
     * Rate of change of temperature over the last 200 seconds > 0.0005K/min (calculated by line of best fit)
@@ -97,20 +97,20 @@ A regeneration is captured by a boolean with the following inputs:
   * Or:
     * (Heliox temperature - TSet) > 0.05K continuously for 600 seconds
 
-This boolean must then stay true continuously for 120 seconds. If it does, then a regeneration is triggered in the labview. Under IBEX, the value of the boolean will be displayed on the OPI but no action will be taken.
+This boolean must then stay true continuously for 120 seconds. If it does, then a regeneration is triggered in the VI. Under IBEX, the value of the boolean will be displayed on the OPI but no action will be taken.
 
 ### Regeneration logic
 
-When a regeneration is triggered, the existing labview driver simply sends a temperature setpoint of zero. There is logic to do something much more complicated, but it is "commented out" in an `if False` statement.
+When a regeneration is triggered, the existing LabVIEW driver simply sends a temperature setpoint of zero. There is logic to do something much more complicated, but it is "commented out" in an `if False` statement.
 
-It appears to me as though the setpoint is never set back to the previous value in the labview code. There is a lot of code relating to this, but it is all disabled.
+It appears to me as though the setpoint is never set back to the previous value in the LabVIEW code. There is a lot of code relating to this, but it is all disabled.
 
 Under IBEX we currently only allow manual regenerations. The same conditions as above are displayed on an indicator on the IBEX OPI, but no action is taken. This is because the scientists don't trust the current regeneration conditions and so they have not been hooked up. We would need to book lots of time with the heliox to try and work out a better set of detection conditions if this logic were to be used in future.
 
-# Labview driver oddities
+# LabVIEW driver oddities
 
-The following notes apply to the labview driver:
-- The driver does not work with labview 2018. It works with 2014 - I am not sure in which intermediate version it stops working. The symptom is that it never even tries to send bytes to a serial port. I think it is crashing while trying to get a subVI by reference but I am not completely sure about this.
+The following notes apply to the LabVIEW driver:
+- The driver does not work with LabVIEW 2018. It works with versions from 2010 to 2014 - I am not sure in which intermediate version it stops working. The symptom is that it never even tries to send bytes to a serial port. I think it is crashing while trying to get a subVI by reference but I am not completely sure about this.
 
 # Troubleshooting
 
