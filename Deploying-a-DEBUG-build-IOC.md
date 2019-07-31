@@ -9,4 +9,4 @@ DEBUG DLL builds are kept in `EPICS_DEBUG_CLEAN_win7_x64` in the usual kits depl
 
 When you start the IOC it should now start the debug build you have copied over.  
 
-Note: there is also a EPICS_STATIC_DEBUG_CLEAN_win7_x64 build - this would only require copying the single EXE and pdb file as all DLLs are bundled into the EXE in a static build; however static builds have sometimes behaved differently to DLL builds in the past and so the above DLL option is a better test of the eventual mechanism, though trying a static EXE may be enough for diagnostics. The files here will be in   windows-x64-static-debug
+Note: there is also a EPICS_STATIC_DEBUG_CLEAN_win7_x64 build - this would only require copying the single EXE and pdb file as all DLLs are bundled into the EXE in a static build; however static builds have sometimes behaved differently to DLL builds in the past and so the above DLL option is a better test of the eventual mechanism, though trying a static EXE may be enough for diagnostics. The files here will be in a   windows-x64-static-debug    directory
