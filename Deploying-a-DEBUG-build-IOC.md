@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > Debug Builds
+
 DEBUG builds are kept in `EPICS_STATIC_DEBUG_CLEAN_win7_x64` in the usual kits deployment area. If you wish to deploy only a single IOC in debug mode rather than replace the installation with the above debug build then:
 
 1. Double-click on the **`dllCopy.bat`** file in the `iocBoot` area of the IOC you want to deploy on kits, this will copy the dependent DLLs to the IOC kits area.
