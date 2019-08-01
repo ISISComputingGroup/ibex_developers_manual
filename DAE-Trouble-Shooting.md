@@ -536,3 +536,9 @@ If the ICP is showing an error in the form of `NeXusEventCallback: [Warning] (Ne
 ### A `measurement.nxs` file is being written to the `C:\data` area
 
 This file is written by the ISISICP on some instruments if they have defined a non-zero "measurement ID". It is intended to be used for correlating runs. The presence of the file itself is nothing to worry about.
+
+### No Data file being Written/Run number not Increasing/Taking data in Simulation Mode
+
+If you want to take non-neutron data using the being/end run controls you *MUST* remember to take run control off so that it is in running state for some of that run. Otherwise, the run number will not be increased and the data will not be saved. This has happened after placing the DAE in simulation mode where the user did not care about collecting neutron data but wanted to log pressures.
+
+
