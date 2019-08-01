@@ -23,7 +23,11 @@ TODO: I think we need a parameter driver and then we can more easily separate Sl
 To enable synchronisation of axes this layer:
 
 - can report the minimum time taken for individual IOC driver to finish a move
-- can be told to make a move in a given duration. 
+- can be told to make a move in a given duration.
+
+When calculating the time for each axis to finish a move, the backlash distance and speed is taken into account to try to be accurate even if the backlash distance makes up a considerable part of the total move duration for the axis ([ticket](https://github.com/ISISComputingGroup/IBEX/issues/4541)). There are two limitations with the system:
+- The acceleration time of the motors is not taken into account, so calculations will be slightly inaccurate
+- When starting a move from within backlash range the speed cannot be controlled, so unless the backlash speed is very slow and is the limiting factor on the entire move, this motor will finish its move earlier than the others.
 
 The user can turn this off in the configuration file. In which case the time reported to finish a move is 0, and the axis's speed is not changed on move.
 
