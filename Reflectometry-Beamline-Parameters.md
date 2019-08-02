@@ -45,3 +45,4 @@ In some cases, autosaving parameters is necessary. Example:
 
 Theta is defined by the angle between the sample point and the next component it is angled to (e.g. the point detector). However, the detector itself can also have an offset parameter that moves it to a given position relative to the beam. On intialisation we only have one value for the height of the detector, however we cannot tell which portion of that height comes from theta and which portion comes from the detector offset parameter without saving one of the two values.
 
+![Init Theta](reflectometers/sp_inits.png)
