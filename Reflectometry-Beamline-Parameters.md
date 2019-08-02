@@ -30,3 +30,18 @@ For example, on CRISP it is the angle to the detector which is in the beam. If b
 ## Theta Setpoint Calculation
 
 The setpoint for theta is special because all it does is change the beam path it does not affect any underlying PVs. However in disabled mode, the incoming beam is no longer altered and this means changing theta would have no effect on the component it is pointing at, e.g. changing Theta would not alter the position of the detector. To fix this there is a special route to force an incoming beam path to be set. This should allow the component defining theta to move when theta is changed.
+
+
+## Parameter Initialisation
+
+When starting the IOC, the beamline parameter values are initialised. The intended behaviour is that if you restart the reflectometry IOC, it should come back exactly in the state you left it in.
+
+- Readback values are set to their real current values based on the physical motor positions, i.e. they behave the same as they do at any given moment in time the reflectometry IOC is up.
+- Setpoints are initialised in one of two ways, based on what the parameters have their `autosave` attribute set to.
+   - If `autosave=False`, it will initialise the setpoint based on motor value, i.e. it will be the same as the readback value. This is the default behaviour.
+   - If `autosave=True`, the setpoints will be initialised to a value read from a file in the `Instrument\Var` area. If this affects the beam path (e.g. the autosaved value is the supermirror angle), parameters of components further along the beam path will be computed to be correct given the real motor position and the altered beam path. A parameter's autosave value is updated in the file every time that parameter is moved.
+
+In some cases, autosaving parameters is necessary. Example:
+
+Theta is defined by the angle between the sample point and the next component it is angled to (e.g. the point detector). However, the detector itself can also have an offset parameter that moves it to a given position relative to the beam. On intialisation we only have one value for the height of the detector, however we cannot tell which portion of that height comes from theta and which portion comes from the detector offset parameter without saving one of the two values.
+
