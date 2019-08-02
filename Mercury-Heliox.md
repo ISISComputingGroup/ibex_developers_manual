@@ -95,7 +95,7 @@ A regeneration is captured by a boolean with the following inputs:
     * AND variance of temperature over the last 200 seconds > 0.0005K
     * AND (Heliox temperature - TSet) > 0.25K
   * Or:
-    * (Heliox temperature - TSet) > 0.05K continuously for 600 seconds
+    * (Heliox temperature - TSet) > 0.05K continuously for 600 seconds. This is the 'course check', where 600s is the 'course time'.
 
 This boolean must then stay true continuously for 120 seconds. If it does, then a regeneration is triggered in the VI. Under IBEX, the value of the boolean will be displayed on the OPI but no action will be taken.
 
