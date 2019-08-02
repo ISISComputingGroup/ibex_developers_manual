@@ -537,8 +537,6 @@ If the ICP is showing an error in the form of `NeXusEventCallback: [Warning] (Ne
 
 This file is written by the ISISICP on some instruments if they have defined a non-zero "measurement ID". It is intended to be used for correlating runs. The presence of the file itself is nothing to worry about.
 
-### No Data file being Written/Run number not Increasing/Taking data in Simulation Mode
+### Gap in time in journal file for run start and end (so may think No Data has been written)
 
-If you want to take non-neutron data using the being/end run controls you *MUST* remember to take run control off so that it is in running state for some of that run. Otherwise, the run number will not be increased and the data will not be saved. This has happened after placing the DAE in simulation mode where the user did not care about collecting neutron data but wanted to log pressures.
-
-
+If the instrument is in a WAITING state for the entire run, then the end_time as written in the nexus file/journal will be the same as the start time. The ICP interprets end time as end of neutron data collection, so if this never starts it remains the same as the start time and run duration is 0. All sample environment data will be collected OK in a WAITING state.
