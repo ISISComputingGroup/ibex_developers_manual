@@ -35,6 +35,29 @@ Note that the Jasco IOC only allows one of these two values to be modifiable at 
 
 NB: The devices display screen does not show current pump status information when in operation.
 
+# Additional commands not in the manual
+
+The following status command has been confirmed by JASCO and is used in the IOC driver, although it is not documented in the manual:
+
+command : { status load p }
+A status value is a bitwise OR.
+
+Bit0=0: Pump off
+Bit0=1: Pump on
+Bit1=1: Program hold
+(Bit2-3: Reserved)
+Bit4-5=1: Program stop
+Bit4-5=2: Initial run
+Bit4-5=3: Program run
+
+Data value is returned as follows:
+ 0: Pump off
+ 1: Pump on (Program stop)
+33: Initial run (Initial run, Pump on)
+49: Program run (Program run, Pump on)
+51: Program hold (Program run, Pump on, Program hold)
+
+
 # Troubleshooting
 
 There are three known issues with the pump that have been confirmed by JASCO. They have detailed the potential issues and the work around that is associated with them. The design of the pumps driver should mitigate them, but this information should help in the event these are encountered during support:
