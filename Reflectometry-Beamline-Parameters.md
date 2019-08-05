@@ -34,14 +34,14 @@ The setpoint for theta is special because all it does is change the beam path it
 
 ## Parameter Initialisation
 
-When starting the IOC, the beamline parameter values are initialised. The intended behaviour is that if you restart the reflectometry IOC, it should come back exactly in the state you left it in.
+When starting the IOC, the beamline parameter values are initialized. The intended behaviour is that if you restart the reflectometry IOC, it should come back exactly in the state you left it in.
 
 - Readback values are set to their real current values based on the physical motor positions, i.e. they behave the same as they do at any given moment in time the reflectometry IOC is up.
-- Setpoints are initialised in one of two ways, based on what the parameters have their `autosave` attribute set to.
+- Setpoints are initialized in one of two ways, based on what the parameters have their `autosave` attribute set to.
    - If `autosave=False`, it will initialise the setpoint based on motor value, i.e. it will be the same as the readback value. This is the default behaviour.
-   - If `autosave=True`, the setpoints will be initialised to a value read from a file in the `Instrument\Var` area. If this affects the beam path (e.g. the autosaved value is the supermirror angle), parameters of components further along the beam path will be computed to be correct given the real motor position and the altered beam path. A parameter's autosave value is updated in the file every time that parameter is moved.
+   - If `autosave=True`, the setpoints will be initialized to a value read from a file in the `Instrument\Var` area. If this affects the beam path (e.g. the autosaved value is the supermirror angle), parameters of components further along the beam path will be computed to be correct given the real motor position and the altered beam path. A parameter's autosave value is updated in the file every time that parameter is moved.
 
-In some cases, autosaving parameters is necessary. Example:
+In some cases, autosaved parameters are necessary. Example:
 
 ![Init Theta](reflectometers/sp_inits.png)
 
