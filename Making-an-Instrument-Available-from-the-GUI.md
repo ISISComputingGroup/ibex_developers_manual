@@ -25,4 +25,3 @@ To add a new instrument to this list proceed as follows:
 1. Run the script.
 1. Verify that all the instruments are picked up by the GUI (e.g. there are no parsing errors): `IBEX -> Switch Instrument` and that they have the correct alarm server and configuration loaded.
 1. Verify that the web dashboard for the instruments still works
-1. Verify that the [ExperimentDetailsPopulator](Experimental-Database) has updated with the new list
