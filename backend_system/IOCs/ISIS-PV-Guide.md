@@ -7,7 +7,7 @@ The PV naming conventions are described on the [PV naming](PV-Naming) page.
 1. For a slow changing value (e.g. a temperature), there needs to be a current value readback, a setpoint and a setpoint readback:
 
     ```
-    record(ai, "$(P)TEMPERATURE") 
+    record(ai, "$(P)TEMP") 
     {
         field(SCAN, "1 second")
         field(DTYP, "stream")
@@ -16,7 +16,7 @@ The PV naming conventions are described on the [PV naming](PV-Naming) page.
         field(EGU,  "K")
     }
     
-    record(ao, "$(P)TEMPERATURE:SP") 
+    record(ao, "$(P)TEMP:SP") 
     {
         field(DTYP, "stream")
         field(OUT,  "@devEuro.proto setTempSetpoint $(PORT)")
@@ -24,7 +24,7 @@ The PV naming conventions are described on the [PV naming](PV-Naming) page.
         field(EGU, "K") 
     }
     
-    record(ai, "$(P)TEMPERATURE:SP:RBV") 
+    record(ai, "$(P)TEMP:SP:RBV") 
     {
         field(SCAN, "1 second")
         field(DTYP, "stream")
