@@ -71,4 +71,4 @@ A `jaws.cmd` for one jaw set only consisting of vertical blades:
 $(IFIOC_GALIL_01) dbLoadRecords("$(JAWS)/db/jaws_vertical.db","P=$(MYPVPREFIX)MOT:,JAWS=JAWS1:,mXN=MTR0101,mXS=MTR0102")
 ```
 
-Note: We do not currently suppport horizontal only jaws.
+Note: We do not currently support horizontal only jaws.
