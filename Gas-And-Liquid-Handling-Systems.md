@@ -10,6 +10,7 @@ System for moving gasses and liquids on the beam line
 - [Watson-Marlow 323 Peristaltic Pump](Watson-Marlow-323-Peristaltic-Pump)
 - [WPI Aladdin Syringe Pump](WPI-Aladdin-Syringe-Pump)
 - [WPI SP2XX Syringe Pump](WPI-SP2XX-Syringe-Pump)
+- [MKS PR4000B](MKS_PR4000B)
 
 
 
