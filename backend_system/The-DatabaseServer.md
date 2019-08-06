@@ -26,8 +26,8 @@ The names of the beamline and sample parameter PVs are read from a database.
         '{"TPG300_01": 
             {"running": False,
 			"macros": [
-				{"name": "COMPORT", "description": "Port used to communicate", "pattern": "COM[0-9]+"},
-				{"name": "TESTMACRO", "description": "A macro I invented for testing", "pattern": ".*"}]
+				{"name": "COMPORT", "description": "Port used to communicate", "pattern": "COM[0-9]+", "hasDefault": "NO"},
+				{"name": "TESTMACRO", "description": "A macro I invented for testing", "pattern": ".*", "defaultValue": "someValue", "hasDefault": "YES"}]
 			"pvsets": [
 				{"name": "Motor Limits", "description": "Motor high and low limits"},
 				{"name": "Test Set", "description": "An example pv set"}]
@@ -35,7 +35,7 @@ The names of the beamline and sample parameter PVs are read from a database.
           "SIMPLE": 
             {"running": True,
 			"macros": [
-				{"name": "TESTMACRO", "description": "A macro I invented for testing", "pattern": ".*"}]
+				{"name": "TESTMACRO", "description": "A macro I invented for testing", "pattern": ".*", "hasDefault": "UNKNOWN"}]
 			"pvsets": [
 				{"name": "Test Set", "description": "An example pv set"}]
 			},
