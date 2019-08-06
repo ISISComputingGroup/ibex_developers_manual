@@ -67,19 +67,23 @@ To check it will not fail the build.
 
 Macros where possible should follow the [standard names](Macro-Naming). If a macro can be set as part of the IOC (and can be reasonably set in the GUI) then a config file should be added to the run directory which contains a list of macros (i.e. `..\EPICS\ioc\master\<IOC Name>\iocBoot\<IOC Instance Name>\config.xml`). The file is of the form:
 
-```
+```xml
 <?xml version="1.0" ?>
 <ioc_config xmlns:xi="http://www.w3.org/2001/XInclude">
- <config_part>
-  <ioc_desc>SKF Chopper</ioc_desc>
-  <ioc_details>SKF Choppers</ioc_details>
-  <macros>
-    <macro name="VI_TEMP_1" pattern="^[A-Z0-9]+$" description="Suffix of the vi temperature panel, usually '1' or blank for no controller." />
-    <macro name="VI_TEMP_2" pattern="^[A-Z0-9]+$" description="Suffix of the vi temperature panel, usually '2' or blank for no controller." />
-    <macro name="VI_TEMP_3" pattern="^[A-Z0-9]+$" description="Suffix of the vi temperature panel, usually '3' or blank for no controller." />
-    <macro name="VI_TEMP_4" pattern="^[A-Z0-9]+$" description="Suffix of the vi temperature panel, usually '4' or blank for no controller." />
-  </macros>
- </config_part>
+<config_part>
+<ioc_desc>Eurotherm temperature controller</ioc_desc>
+<macros>
+  <macro name="PORT" pattern="^COM[0-9]+$" description="Serial COM Port" hasDefault="NO" />
+  <macro name="BAUD" pattern="^[0-9]+$" description="Serial communication baud rate, defaults to 9600." defaultValue="9600" hasDefault="YES" />
+  <macro name="BITS" pattern="^[0-9]$" description="Serial communication number of bits, defaults to 7." defaultValue="7" hasDefault="YES" />
+  <macro name="PARITY" pattern="^(even)|(odd)|(none)$" description="Serial communication parity, defaults to even." defaultValue="even" hasDefault="YES" />
+  <macro name="STOP" pattern="^[0-9]$" description="Serial communication stop bit, defaults to 1." defaultValue="1" hasDefault="YES" />
+
+  <macro name="ADDR_1" pattern="^[0-9]{1,2}$" description="Address for the 1st Eurotherm on this port e.g. 01. Blank for do not use." hasDefault="UNKNOWN" />
+
+  <macro name="LOCAL_CALIB" pattern="^(yes)|(no)$" description="Use local instrument calibration directory instead of common one? Default is no." defaultValue="no" hasDefault="YES" />
+</macros>
+</config_part>
 </ioc_config>
 ```
 
@@ -92,11 +96,13 @@ where
         - `^-?[0-9]+\.?[0-9]*$`: float with sign
         - `^[0-9]+\.?[0-9]*$`: float no sign
         - `^[0-9]+$`: integer no sign
-    - `description`, a plain text description which is shown to the user. 
+    - `description`, a plain text description which is shown to the user.
+    - `defaultValue`, the default value of the macro, if it exists (this attribute is not required)
+    - `hasDefault`, if the macro has a default, either `"YES"`, `"NO"`, or `"UNKNOWN"`
 
 `config.xml` support include so if you have several iocs with the same set of macros you don't need to repeat the file contents. Example GALIL02 (see below) uses GALIL01's config:
 
-```
+```xml
 <?xml version="1.0" ?>
 <ioc_config xmlns:xi="http://www.w3.org/2001/XInclude">
 <xi:include href="../iocGALIL-IOC-01/config.xml"  />
@@ -109,7 +115,7 @@ Either a full make of the server or running `make iocstartups` will then make th
 
 If a limit on a set point is well defined (i.e., given by a device manual) then the fields `DRVH` "Drive High" and `DRVL` "Drive Low" should be used to constrain the PV set point. The behaviour of these fields is that if a limit is 10.0 and a user inputs 11.0, then the PV will constrain the input to 10.0 and process that value. Records that use limits should also be robustly tested to ensure the behave as expected. An example test:
 
-```
+```python
     @parameterized.expand([
         ("lt_low_limit", CURR_LOW_LIMIT-1, "low_limit", CURR_LOW_LIMIT),
         ("gt_high_limit", CURR_HIGH_LIMIT+1, "high_limit", CURR_HIGH_LIMIT)])
