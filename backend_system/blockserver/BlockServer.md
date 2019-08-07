@@ -252,6 +252,11 @@ Note: This PV is currently used by the web dashboard
     Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:SCREENS_SCHEMA
     Returns a compressed and hexed string containing the devices screens XML schema (CHAR waveform)
 
+**BLOCKSERVER:CURR_CONFIG_NAME**
+
+    Command: caget %MYPVPREFIX%CS:BLOCKSERVER:CURR_CONFIG_NAME
+    Returns a string containing the name of the current configuration (CHAR waveform)
+
 **SYNOPTICS:NAMES**
 
     Command: caget -S %MYPVPREFIX%CS:SYNOPTICS:NAMES
