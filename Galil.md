@@ -21,6 +21,13 @@ Useful information about the Galil can be found on the following pages:
 
 # Technical information
 
+## Manuals
+
+There are many manuals in the usual place:
+
+- manc2xxx.pdf: contains basic commands for the Galil
+- dmc2280\man2100.pdf: contains some extended commands
+
 ## Startup
 
 For each Galil crate in use on the IOC, you should have a corresponding `Galilnn.cmd` file in `C:\Instrument\Settings\config\*machine_name*\configurations\galil`. For example, if I am using galil crate 1 on LARMOR, I have a file called `Galil01.cmd` in `C:\Instrument\Settings\config\NDXLARMOR\configurations\galil`
