@@ -20,7 +20,7 @@ The Galil IOC has a number of (quite obscure) parameters. The ISIS defaults for 
 | K1, K2, K3, FV, FC, FA, FN, ZP, ZN, CT, AF | Used for ceramic motors | 0 | Change if ceramic | This is the Galil's default when not ceramic motors |
 | FV, FA | Changes the output voltages based on the acceleration/velocity | 0 | Change if required | Most axes in ISIS do not require this |
 | IL, TL | Used for setting limits on the integrator and torque | 9.998 | Change if required | Most axes at ISIS do not need a limit so set the highest possible |
-| CP | Used for ceramic motors | 65535 | Change if ceramic | This is the Galil's default when not ceramic motors |
+| CP | Used for ceramic motors but effects all motors. At the end of a move if the motor is within this value of the setpoint then the motor is switched off | -1.0 | Change if ceramic | -ve turns off the motor-off command (Can be set via the engineering view) |
 | VBAS | The minimum speed the motor should go at (NOTE THAT ACCEL IS CALCULATED BASED ON THIS) | 0 | Same | Most motors should be happy at any speed below maximum |
 | BDST | The distance to move to correct for backlash | 0 | Same | Most axes shouldn't need to correct |
 | BVEL | The velocity to move when correcting for backlash | Don't care | Same | Doesn't do anything when BDST not set |
