@@ -25,8 +25,8 @@ Useful information about the Galil can be found on the following pages:
 
 There are many manuals in the usual place:
 
-- manc2xxx.pdf: contains basic commands for the Galil
-- dmc2280\man2100.pdf: contains some extended commands
+- `manc2xxx.pdf`: contains basic commands for the Galil
+- `dmc2280\man2100.pdf`: contains some extended commands
 
 ## Startup
 
