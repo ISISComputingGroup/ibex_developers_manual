@@ -33,7 +33,7 @@ Ensure the limit_as_home flag is correctly set, see [here](Galil#configure-galil
 
 ### The axis will not move, a message gets put in the log of "Begin not valid with motor off"
 
-There is a Galil specific PV called `MTRXXXX_AUTOONOFF_CMD` which controls whether an axis automatically powers up when given a move. The default setting is Off, it should be set to On.
+There is a Galil specific PV called `MTRXXXX_AUTOONOFF_CMD` which controls whether an axis automatically powers up when given a move (found at the bottom of the motor details OPI). This should normally be `On` so that the motor energises before a move and switches off after a move. In some cases, the motor axis needs to be energised for the whole time, when the axis is under great load or the motor is old. In this case, the auto de-energise should be `No` the energised state should be `energise`. The "motor off deadband" should also be set to a negative number, -1, so that the motor does not turn itself off after a move, this is found in the engineering screen, `Motor off deadband`. If you don't set this to -ve it may not deenergise the motor but this will be unreliable, we think when you don't have an encoder it won't deenergise the motor. There is a warning that reads `Motor off deadband is not small enough, motor may deenergise after move.` which will show in this later case.
 
 ### The axis will not move, a message gets put in the log of "move begin failure axis X after XXX seconds: ... [Decelerating or stopped by FWD limit switch or soft limit FL]"
 
