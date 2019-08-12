@@ -540,3 +540,13 @@ This file is written by the ISISICP on some instruments if they have defined a n
 ### Gap in time in journal file for run start and end (so may think No Data has been written)
 
 If the instrument is in a WAITING state for the entire run, then the end_time as written in the nexus file/journal will be the same as the start time. The ICP interprets end time as end of neutron data collection, so if this never starts it remains the same as the start time and run duration is 0. All sample environment data will be collected OK in a WAITING state.
+
+### Simulated DAE does into VETOING after a PAUSE/RESUME
+
+The symptom is that, when you do a begin the instrument will go into running and look happy, but after you do a pause/resume it will permanently be in vetoing (until the run is ended and the next run is started).
+
+This is a bug in the ISISICP as it does not simulate hardware period properly.
+
+Resolution:
+- Ensure period mode is not "hardware" (use software)
+- Kill and restart `isisicp.exe` (need to do this as the simulated isisicp can't change period modes correctly without restarting)
