@@ -2,7 +2,7 @@ The following is a list of libraries to include and their order for different re
 
 # In general
 1. seq and pv should be listed last as any module may add sequencer support at some point
-1. calc now depends on sscan so must be listed before sscan
+1. calc now depends on sscan so must be listed before sscan (it also depends on seq and pv too)
 
 # specific rules
 
