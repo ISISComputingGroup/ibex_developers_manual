@@ -5,39 +5,43 @@ The Instron stress rig is a National Instruments GPIB device. It requires some s
 - The Ethernet GPIB box requires a driver for the LabVIEW driver. This can be installed from `\\isis\installs\Installs\Applications\LabVIEW\GPIB-ENET bits\GPIB Software`.
   - Note, **the version of GPIB MUST be 2.7 (from the share above), later versions WILL NOT WORK WITH THE STRESS RIG**
 - Run the installer as an administrator, accept the defaults. It will unzip, then install. It takes a while to install.
-- You then need to map the ENET box, Gareth or Freddie can show you how to set this up. Usually this means going into NI-MAX and finding devices - it should come up (otherwise, you may have to enter it's IP address manually).
-- LabVIEW vi located at : `C:\LabVIEW Modules\Instruments\ENGINX\Stress Rig\Stress Rig - System Functions.llb\Stress Rig - 100 kN Stress Rig.vi`
-- On running the vi, you will get some dialogs – just ok through them. The indicators should then be updating.
-- If you can't get the labview to talk at all, the stress rig might need to be power cycled. The basic instructions are below:
-  * Turn off the stress rig PC (white/beige pc located under the stress rig)
-  * Turn off the GPIB box (this looks similar to a router, located under the stress rig near to the stress rig PC)
-  * Wait a few seconds
-  * Turn on the stress rig PC
-  * Wait several minutes. The stress rig will go through a self-test phase. You need to wait for this process to be complete.
-  * If you need to calibrate the rig, the following sequence on the console should be used: "Load channel: setup" -> "cal" -> "cal" -> "auto" -> "go" (if you are unsure about this ask the scientists)
-  * Turn back on the GPIB box. 
-  * After the GPIB box has been turned on for a short time (e.g. 1 minute) the driver (LabVIEW or IOC) should be ready to connect.
-  * GPIB box LEDs - PWR should be orange, LNK 10/100 should be green. Other LEDs will be flickering depending on connection. Box might have a slightly dodgy connection (not sure about this, but check it) so ensure the LEDs are as described.
+- You then need to map the ENET box. Usually this means going into NI-MAX and finding devices - it should come up (otherwise, you may have to find and enter it's IP address manually).
+- The driver should now be able to communicate (if not, see troubleshooting section below)
 
-### Troubleshooting note
-
-The stress rig on ENGIN-X is mapped from both ENGINX and ENGINX_SETUP. **Only one of these computers should talk to the stress rig at a time!** If you get strange comms issues, check that the "other" computer is not also trying to talk at the same time.
-
-# Rigs
+# Getting the rigs set up
 
 There are two rigs: 50kN and 100kN.
 
 To turn on the actuator for the 100kN rig, there are three buttons on the front labelled "O", "I", "II". Press these in order to enable the actuator.
 
-To turn on the actuator for the 50kN rig, Press and hold the "Hydraulics on" button for at least 10 seconds. You should hear the hydraulic system engage (also, the hydraulic lines will change position slightly). Then press actuator "off", "low", "high" (in order) to enable the actuator.
+To turn on the actuator for the 50kN rig, Press and hold the "Hydraulics on" button for at least 10 seconds. You should hear the hydraulic system engage (also, the hydraulic lines will change position slightly as pressurised gas enters the system). Then press actuator "off", "low", "high" (in order) to enable the actuator.
 
 # Hardware debugging
 
-- If the hydraulics on the rigs keep tripping off and the rig returns a status of "oil too hot"
+### Hydraulics keep tripping off and status is "oil too hot"
 
 Check if the cooling water circuit for TS1 south side is turned on. If not, the instron's oil might heat up too much which causes the hydraulics to trip when moving the rig. This happens regardless of whether IOC, LabVIEW, or manual control is used to move the actuator. Additional symptoms are a rig status of "HYD. PUMP SHUTDOWN" and the red status light on the control panel being solidly on (and not being able to clear it).
 
 If the cooling water is off, there is a circulation pump that can be used to run the rig in low-force mode: ask the scientists.
+
+### General comms failures / stress rig in invalid state
+
+This can be triggered by sending commands the stress rig doesn't like, or sending valid commands too quickly. Sometimes the control panel of the stress rig will claim it is simultaneously in two control modes (which is impossible).
+
+The stress rig can be power cycled using the process below (note: if unsure, check with scientists first, as it may need recalibrating after this process)
+- Turn off the stress rig PC (white/beige pc located under the stress rig)
+- Turn off the GPIB box (this looks similar to a router, located under the stress rig near to the stress rig PC)
+- Wait a few seconds
+- Turn on the stress rig PC
+- Wait several minutes. The stress rig will go through a self-test phase. You need to wait for this process to be complete.
+- If you need to calibrate the rig, the following sequence on the console should be used: "Load channel: setup" -> "cal" -> "cal" -> "auto" -> "go" (if you are unsure about this ask the scientists)
+- Turn back on the GPIB box. 
+- After the GPIB box has been turned on for a short time (e.g. 1 minute) the driver (LabVIEW or IOC) should be ready to connect.
+- GPIB box LEDs - PWR should be orange, LNK 10/100 should be green. Other LEDs will be flickering depending on connection. Box might have a slightly dodgy connection (not sure about this, but check it) so ensure the LEDs are as described.
+
+### Weird comms issues
+
+The stress rig on ENGIN-X is mapped from both ENGINX and ENGINX_SETUP. **Only one of these computers should talk to the stress rig at a time!** If you get strange comms issues, check that the "other" computer is not also trying to talk at the same time.
 
 # Driver
 
@@ -48,7 +52,7 @@ The stress rig driver uses the following DB files:
 - `controls_waveform.db` - provides the PVs dealing with the waveform generator
 - `logging.db` - provides the PVs to do with logging to a file
 
-The protocol is defined in `C:\Instrument\Apps\EPICS\support\instron\master\instronSup` (see https://github.com/ISISComputingGroup/EPICS-instron/blob/master/instronSup/devinstron.proto)
+The protocol is defined in [`C:\Instrument\Apps\EPICS\support\instron\master\instronSup`](https://github.com/ISISComputingGroup/EPICS-instron/blob/master/instronSup/devinstron.proto)
 
 # Gotchas / Unusual things
 - Every "write" command (commands starting with C or P) must be preceded by `P909,1` (switch to computer control mode) and `C904,0` (disable watchdog). For convenience there is the `setControlModeCom` function in the protocol file which does these for you.
