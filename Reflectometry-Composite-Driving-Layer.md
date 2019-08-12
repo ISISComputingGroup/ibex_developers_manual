@@ -114,9 +114,11 @@ If we take the above example we mark these four points on a graph:
 
 ![4 points for a 2D example map](reflectometers/Interpolated2DExample.png)
 
-The point A (0,0) is equidistance from all points so is the average of all points, thus the correction is 33/4.
-The point b (10,0) is halfway between the two right-hand points so the correction is 15.
-The point C is outside of the shape made by the points and so its correction is 0.
+At point:
+
+- A (0,0) = 8.25. Point is equidistance from all points so is the average of all points.
+- B (10,0) = 15. Point is halfway between the two right-hand points so is average of righthand points.
+- C (12,3) =0. Point is outside of the area made by the points and so its correction is 0.
 
 The algorithm used is the linear version of [griddata from `scipy`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.griddata.html).
 
