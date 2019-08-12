@@ -98,13 +98,27 @@ If you want to do multi-dimension interpolation then your `InterpolateGridDataCo
 InterpolateGridDataCorrection(filename, theta_param_angle, sm_angle_param))
 ```
 
-and the data file should have a similar header:
+and the data file should have a similar header and data:
 
 ```
-Theta, driver, smangle, correction
-1.0, 0.1, -2.3, 1.2
-...
+Theta, smangle, correction
+-10, 10, 1
+10, 10, 10
+-10, -10, 2
+10, -10, 20
 ```
+
+The data points do not have to form a square. 
+
+If we take the above example we mark these four points on a graph:
+
+![4 points for a 2D example map](reflectometers/Interpolated2DExample.png)
+
+The point A (0,0) is equidistance from all points so is the average of all points, thus the correction is 33/4.
+The point b (10,0) is halfway between the two right-hand points so the correction is 15.
+The point C is outside of the shape made by the points and so its correction is 0.
+
+The algorithm used is the linear version of [griddata from `scipy`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.griddata.html).
 
 ### User Function Engineering Correction
 
@@ -144,7 +158,7 @@ The `UserFunctionCorrection` takes:
 
 If you wish to write your own `engineering_correction` you must:
 
-1. **either** inherit from `SymmetricEngineeringCorrection`: then override `correction(self, setpoint)` which returns the correction to apply based on the setpoint
-1. **or** inherit from `EngineeringCorrection`: then override 
+1. **either** inherit from `SymmetricEngineeringCorrection`: this used when the same correction is added when setting a value on an axis as is subtracted when getting a value from an axis. To set the correction override `correction(self, setpoint)` which returns the correction to add based on the setpoint.
+1. **or** inherit from `EngineeringCorrection`: this allows different correction to be used when setting and getting value to and from the axis. The following must be overridden:
     - `to_axis(self, setpoint)`: given a setpoint return the correct value to send to the axis
     - `from_axis(self, value, setpoint)`: given the `value` read from the axis and `setpoint` for the axis return the `value` without the correction
