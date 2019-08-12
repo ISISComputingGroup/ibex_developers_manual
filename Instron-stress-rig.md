@@ -8,7 +8,7 @@ The Instron stress rig is a National Instruments GPIB device. It requires some s
 - You then need to map the ENET box, Gareth or Freddie can show you how to set this up. Usually this means going into NI-MAX and finding devices - it should come up (otherwise, you may have to enter it's IP address manually).
 - LabVIEW vi located at : `C:\LabVIEW Modules\Instruments\ENGINX\Stress Rig\Stress Rig - System Functions.llb\Stress Rig - 100 kN Stress Rig.vi`
 - On running the vi, you will get some dialogs – just ok through them. The indicators should then be updating.
-- If you can't get the labview to talk at all, the stress rig might need to be power cycled. @GDH-ISIS and @FreddieAkeroyd know how to do this. The basic instructions are below:
+- If you can't get the labview to talk at all, the stress rig might need to be power cycled. The basic instructions are below:
   * Turn off the stress rig PC (white/beige pc located under the stress rig)
   * Turn off the GPIB box (this looks similar to a router, located under the stress rig near to the stress rig PC)
   * Wait a few seconds
@@ -63,5 +63,5 @@ The protocol is defined in `C:\Instrument\Apps\EPICS\support\instron\master\inst
 - If something works in LabVIEW but not in EPICS, or vice-versa, NI Input/Output trace (NI Spy) can be very useful to compare the traffic and spot any differences.
 - The waveform generator does not like receiving setpoints in quick succession. This can cause a fault with the following symptoms (see also https://github.com/ISISComputingGroup/IBEX/issues/2802):
   * The "remote" light on the hardware control panels remains lit
-  * The hardware control panel crashes (it may display that it's in two control channels simultaneously - this is usually impossible
+  * The hardware control panel crashes (it may display that it's in two control channels simultaneously - this is usually impossible)
   * The hydraulics will trip.
