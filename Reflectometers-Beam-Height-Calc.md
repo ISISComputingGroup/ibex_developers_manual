@@ -6,4 +6,4 @@ In a [reflectometry instrument](Reflectometers) the height above the straight th
 
 If there are two angles use the following calculation:
 
-![Image](reflectometers/Non_small_angle_approx_2_angles.png.png)
+![Image](reflectometers/Non_small_angle_approx_2_angles.png)
