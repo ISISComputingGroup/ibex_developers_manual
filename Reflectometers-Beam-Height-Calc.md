@@ -3,3 +3,7 @@
 In a [reflectometry instrument](Reflectometers) the height above the straight through beam can be calculated using the following diagram. It is based on the incoming angle of that beam. 
 
 ![Image](reflectometers/Non-small_angle_approx.png)
+
+If there are two angles use the following calculation:
+
+![Image](reflectometers/Non_small_angle_approx_2_angles.png.png)
