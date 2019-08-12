@@ -2,8 +2,8 @@
 
 The Instron stress rig is a National Instruments GPIB device. It requires some special setup to get going:
 
-- The Ethernet GPIB box requires a driver for the LabVIEW driver. This can be installed from `\\isis\installs\Installs\Applications\LabVIEW\GPIB-ENET bits\GPIB Software`.
-  - Note, **the version of GPIB MUST be 2.7 (from the share above), later versions WILL NOT WORK WITH THE STRESS RIG**
+- The Ethernet GPIB box requires an NI `488.2` (GPIB) driver. This can be installed from `\\isis\installs\Installs\Applications\LabVIEW\GPIB-ENET bits\GPIB Software`.
+  - Note, **the version of GPIB MUST be 2.7 (from the share above), later versions WILL NOT WORK WITH THE STRESS RIG!** This is due to some kind of licensing handshake in newer versions of NI `488.2` (GPIB) of which older hardware (such as the stress rig) does not understand.
 - Run the installer as an administrator, accept the defaults. It will unzip, then install. It takes a while to install.
 - You then need to map the ENET box. Usually this means going into NI-MAX and finding devices - it should come up (otherwise, you may have to find and enter it's IP address manually).
 - The driver should now be able to communicate (if not, see troubleshooting section below)
