@@ -116,8 +116,8 @@ If we take the above example we mark these four points on a graph:
 
 At point:
 
-- A (0,0) = 8.25. Point is equidistance from all points so is the average of all points.
-- B (10,0) = 15. Point is halfway between the two right-hand points so is average of righthand points.
+- A (0,0) = 8.25. Point is equidistant from all points so is the average of all points.
+- B (10,0) = 15. Point is halfway between the two right-hand points so is average of right-hand points.
 - C (12,3) =0. Point is outside of the area made by the points and so its correction is 0.
 
 The algorithm used is the linear version of [griddata from `scipy`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.griddata.html).
