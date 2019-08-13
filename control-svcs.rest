@@ -1,8 +1,8 @@
 control-svcs.isis.cclrc.ac.uk
 
-To logon see usual username/password page
+To log on, see usual username/password page
 
-The machine runs various services, such as epics gateways. These run under the "epics" userid so 
+The machine runs various services, such as epics gateways. These run under the "epics" user id so 
 ```
 sudo su - epics
 ```
