@@ -160,7 +160,7 @@ The `UserFunctionCorrection` takes:
 
 If you wish to write your own `engineering_correction` you must:
 
-1. **either** inherit from `SymmetricEngineeringCorrection`: this used when the same correction is added when setting a value on an axis as is subtracted when getting a value from an axis. To set the correction override `correction(self, setpoint)` which returns the correction to add based on the setpoint.
+1. **either** inherit from `SymmetricEngineeringCorrection`: this used when the same correction is added when setting a value on an axis as is subtracted when getting a value from an axis. To set the correction override `correction(self, setpoint)` which returns the correction to add/subtract based on the setpoint.
 1. **or** inherit from `EngineeringCorrection`: this allows different correction to be used when setting and getting value to and from the axis. The following must be overridden:
     - `to_axis(self, setpoint)`: given a setpoint return the correct value to send to the axis
     - `from_axis(self, value, setpoint)`: given the `value` read from the axis and `setpoint` for the axis return the `value` without the correction
