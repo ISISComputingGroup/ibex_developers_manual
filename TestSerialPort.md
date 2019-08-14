@@ -20,7 +20,7 @@ To see serial port status (need to have stopped IOC)
 ```
 testserialport com5 --noread --report=5
 ```
-The command uses escaped characters as per printf/epicsStrnRawFromEscaped e.g. for eurotherm
+The command uses escaped characters as per printf/epicsStrnRawFromEscaped e.g. for eurotherm the Stream device \\x04 would be written as \\004
 ```
 testserialport COM7 "\0040011PV" "\005" "\003" --eventmask=0x1ff
 ```
