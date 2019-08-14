@@ -24,3 +24,4 @@ The command uses escaped characters as per printf/epicsStrnRawFromEscaped e.g. f
 ```
 testserialport COM7 "\0040011PV" "\005" "\003" --eventmask=0x1ff
 ```
+The command line --option uses CLI11 so with visual studio 2010 you will only be able to pass the positional arguments mentioned above
