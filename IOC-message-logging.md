@@ -51,7 +51,7 @@ To test the functionality, you should also launch the JMS server by running `sta
 
 See the database server section below for details on how to set up a test SQL database.
 
-Instructions to build the log server are included as part of the [Jenkins](http://jenkins.isis.rl.ac.uk/EPICS/) build script (EPICS/jenkins_build.bat)
+Instructions to build the log server are included as part of the [Jenkins](http://epics-jenkins.isis.rl.ac.uk/) build script ([EPICS/jenkins_build.bat](https://github.com/ISISComputingGroup/EPICS/blob/cad660a01a2c8e648a37372ad6e11deb26e7eb1e/jenkins_build.bat))
 
 The log server and JMS server should be started automatically when running the script /EPICS/start_inst.bat. The startup details are in the script EPICS/logserver/start_log_servers.bat.
 

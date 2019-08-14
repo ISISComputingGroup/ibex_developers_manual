@@ -15,11 +15,18 @@ Useful information about the Galil can be found on the following pages:
 - [Motor SetPoints](Motor-SetPoints)
 - [Barndoors and Momentum Slits on MUON Front End](Barndoors-and-Momentum-Slits-on-MUON-Front-End)
 - [Creating soft motors to control real motors](Creating-soft-motors-to-control-real-motors)
-- [Migrating instrument configurations](Migrating-instrument-configurations)
+- [Migrating instrument configurations](Migrating-instrument-configurations-and-scripts)
 - [Galil default parameters](Galil-default-parameters)
 - [Galil homing routines](https://github.com/ISISComputingGroup/EPICS-galil/tree/master/GalilSup/Db)
 
 # Technical information
+
+## Manuals
+
+There are many manuals in the usual place:
+
+- `manc2xxx.pdf`: contains basic commands for the Galil
+- `dmc2280\man2100.pdf`: contains some extended commands
 
 ## Startup
 
@@ -63,7 +70,7 @@ This starts the Galil controller. It takes the following arguments:
 - Port name: As before
 - Code file: The code to be uploaded to the Galil
 - Burn program: Whether to burn the program to EEPROM
-- Display code: Whether to display the code being uploaded
+- Display code: Whether to display the code being uploaded (1 displays code currently on controller, 2 displays code put on the controller, 3 both)
 - Thread mask: Which threads we expect to be running after code has been delivered (e.g. `7`, `1+2+4` for threads 0, 1, and 2)
 
 The largest and most frequently changed of these arguments is the code file. It uses semi colons and exclamation marks to demarcate different sections of the Galil code. It is arranged as:

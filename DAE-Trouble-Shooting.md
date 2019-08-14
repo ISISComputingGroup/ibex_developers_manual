@@ -23,7 +23,9 @@ This was resolved by powercycling the DAE followed by stopping the visa server a
 The reason may be because cp hasn't been set to look for epics. In `C:\LabVIEW Modules\dae\isisicp.properties` set `isisicp.epicsdb.use = true` to log the epic's blocks. You will need to restart the `isisicp` process for this to take effect. To do this, just end the `isisicp` process in task manager.
 
 ### DAE doesn't seem to be connected/I want to run without a DAE connected
-The DAE can be set to run in simulation mode, this must be unset before data will be collected. To set the mode edit the xml file in `C:\LabVIEW Modules\dae\icp_config.xml` set the simulate property to 1 to simulate 0 to use hardware.
+The DAE can be set to run in simulation mode, this must be unset before data will be collected. To set the mode run `g.set_dae_simulation_mode(True)` or `g.set_dae_simulation_mode(False)` to unset.
+
+To change the simulation mode manually, in `icp_config.xml` change the simulate property to 1 (or 0 if turning off simulation mode). `icp_config.xml` can be found in either the "LabVIEW modules" or "ICP Binaries" directory. Stop the DAE IOC from the console, then kill the ISISICP process. Finally, restart the DAE IOC from the console.
 
 ### Log file for labview modules DA
 
@@ -496,9 +498,11 @@ If you get an error from ISISICP `*** ISISICP STARTUP FAILED (DAE type mistmatch
 
 ### isisicp.exe keeps allocating 4GB of memory and then releasing it
 
-It may be https://github.com/ISISComputingGroup/IBEX/issues/3701 - you just need to change the archive array table type to MEDIUMBLOB.
+It may be https://github.com/ISISComputingGroup/IBEX/issues/3701 - you just need to change the archive array table type to MEDIUMBLOB.  Due to a bug in the C++/MySQL connector, each time the database is read, a LONGBLOB's worth of memory (4GB) is allocated and then released.  By changing to MEDIUMBLOB (16MB), a much smaller amount is used.
 
-Run these commands to modify the DB in place:
+In `C:\Instrument\Apps\MySQL\bin>`, run `mysql.exe -u root -p` and enter the MySQL root password when prompted.
+
+Then run these commands to modify the DB in place:
 
 ```
 USE archive;
@@ -512,3 +516,37 @@ We have observed on a couple of occasions that the DAE got stuck in `WAITING` de
 ### ISISDAE reports `time regimes 1 and 2 are incompatible`
 
 Time regimes are incompatible when their starts differ by a non-integer number of microseconds, but sometimes rounding errors may lead to this happening in other circumstances. This check is actually no longer required and has been removed in ISISICP SVN revisions 2010 and above. 
+
+### ISISICP writes a corrupted journal file
+
+The symptom is that `C:\data\journal_<cycle_number>.xml` will not be valid xml, it will be truncated at some point. We believe this happens when there are too many blocks set to log into the journal in a particular configuration.
+
+After switching back to a configuration with fewer blocks, the journal file can be (carefully!) manually edited to remove the corrupt entry. Once this is done, runs should go back into the journal as normal (however, runs done while in the configuration with too many blocks will be lost from the journal).
+
+Freddie may also have a patched version of the isisicp that fixes this issue.
+
+### My blocks aren't being written to a run title properly
+
+See the documentation in the [user manual](https://github.com/ISISComputingGroup/ibex_user_manual/wiki/Add-blocks-to-run-title)
+
+### Exception in ICP log
+
+If the ICP is showing an error in the form of `NeXusEventCallback: [Warning] (NeXusEventCallback<class DAE2DetCardPolicy>::allFrameCallback) Invalid DAE time value` this indicates a hardware problem and you should get in touch with the electronics group.
+
+### A `measurement.nxs` file is being written to the `C:\data` area
+
+This file is written by the ISISICP on some instruments if they have defined a non-zero "measurement ID". It is intended to be used for correlating runs. The presence of the file itself is nothing to worry about.
+
+### Gap in time in journal file for run start and end (so may think No Data has been written)
+
+If the instrument is in a WAITING state for the entire run, then the end_time as written in the nexus file/journal will be the same as the start time. The ICP interprets end time as end of neutron data collection, so if this never starts it remains the same as the start time and run duration is 0. All sample environment data will be collected OK in a WAITING state.
+
+### Simulated DAE does into VETOING after a PAUSE/RESUME
+
+The symptom is that, when you do a begin the instrument will go into running and look happy, but after you do a pause/resume it will permanently be in vetoing (until the run is ended and the next run is started).
+
+This is a bug in the ISISICP as it does not simulate hardware period properly.
+
+Resolution:
+- Ensure period mode is not "hardware" (use software)
+- Kill and restart `isisicp.exe` (need to do this as the simulated isisicp can't change period modes correctly without restarting)

@@ -142,6 +142,10 @@ when starting the GUI.
 
 After a power cut you will need to log into the machine via RDP and then disconnect using the shortcut on the desktop.
 
+### Diagnosing Error Screenshots
+
+Screen shooting on error should be turned on in `start_test` in `test_running.py`. The screen shots are placed on the squish server in `... Jenkins\workspace\System_Tests_Squish\suite_configuration_tests\<test name>\errorImages` the will only be from the last build.
+
 ### Error in tests
 
 To tack the error we find in squish please add any errors you see to this chart. Remove the error when you think it is fixed:

@@ -85,7 +85,7 @@ Where
 
 ### Interpolation
 
-The Keithley utilises the convert record to interpolate a temperature from a resistance reading. It uses a Spline fit to do this, implemented in `User1DTableSub.c` in the support directory. 
+The Keithley utilises the [convert record](Convert-Record) to interpolate a temperature from a resistance reading. It uses a Spline fit to do this, implemented in `User1DTableSub.c` in the support directory. 
 
 The setup part of this function includes an in-place swap of the data points in the y axis. This is because `csmbase` automatically sorts both axis of data points into ascending order, but maintains the links between an x data point and a y data point for use in the convert record's built in interpolation functions. 
 

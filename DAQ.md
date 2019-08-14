@@ -2,7 +2,7 @@
 
 # Individual devices
 
-- [Muon Separator Power Supply](muon-separator-psu)
+- [Muon Separator Power Supply](muon-separator-power-supply)
 
 # General
 

@@ -37,12 +37,12 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
 1. Update the version numbers:
     1. GUI
         1. In `/uk.ac.stfc.isis.ibex.e4.client/plugin.xml` in `Overview` tab set `Version: ` to be `X.x.m`
-        1. In `/uk.ac.stfc.isis.ibex.e4.client/pom.xml` edit the `<version>` tag (not in parent) content to be `X.x.m` (This tag may not be present and so will have to be added see e.g. [here](https://github.com/ISISComputingGroup/ibex_gui/compare/master...Release_5.2.1))
+        1. In `/uk.ac.stfc.isis.ibex.e4.client/pom.xml` edit the `<version>` tag (not in parent) content to be `X.x.m` (This tag may not be present and so will have to be added see as in [this](https://github.com/ISISComputingGroup/ibex_gui/compare/master...Release_5.2.1) example)
     1. EPICS
         1. In `EPICS\ioc\master\INSTETC\INSTETC-IOC-01App\Db\svn-revision.db.tmpl` edit `field(VAL, "0.0.0.$WCREV$")` to be `field(VAL, "X.x.m.$WCREV$")`
         1. NB this has to be committed on a branch in IOC and then this submodule commit has to be added to the EPICS release branch
     1. Genie Python
-        1. `...\Python\Lib\site-packages\genie_python\version.py` edit `VERSION = "0.0.0.qualifier"` to VERSION = "X.x.m.xxxxxxx" where xxxxxxx is the SHA hash of the commit
+        1. `...\Python\Lib\site-packages\genie_python\version.py` edit `VERSION = "0.0.0.qualifier"` to VERSION = "X.x.m.xxxx" where xxxx is the SHA hash of the commit
 1. Commit your changes and push.
 1. For the builds `ibex_gui_release`, `genie_python_release` and `EPICS_release`, do the following:
     1. Find the release build pipeline in Jenkins

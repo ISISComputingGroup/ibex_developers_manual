@@ -33,6 +33,8 @@ During install, choose Desktop development with C++ and from the right checkboxe
 If these boxes aren't visible on the right it is most likely because you are trying to install professional rather than community.
 # Installing a new Version of Visual Studio
 
+If you are installing Visual Studio Community 2019, Windows Universal CRT SDK is listed under the "Compilers, build tools and runtimes" section of the "Individual components tab at the top.
+
 If you are on a new version of visual studio (2019?) then you will need to upgrade various files to take this into account. Below is a list of things we needed to do when upgrading to 2017 your list may be different.
 
 ## Setup the environment

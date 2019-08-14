@@ -85,3 +85,19 @@ Git command                                   | What it does
 1. `git push origin :refs/tags/<tagname>` push the removed tag to remote
 1. `git tag <tagname> <commitId>` create the new tag pointing at the right place
 1. `git push origin <tagname>` push the new tag to the repo
+
+## Set local branch to be the same as remote
+
+To set the local master branch to be the same as remote do:
+
+```
+git fetch origin
+git reset --hard origin/master
+```
+
+This can be in response to  the error:
+
+```
+remote: error: GH006: Protected branch update failed for refs/heads/master.
+remote: error: At least 1 approving review is required by reviewers with write access.
+```

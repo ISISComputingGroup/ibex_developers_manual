@@ -34,7 +34,7 @@ First off you're going to need all the developer tools we use, a copy of the exi
 We use Git for version control of the codebase. If you're not familiar with it, learn it!
 
 - [Our Github resources/cribsheets](Working-with-git-and-github)
-- [Github's own Git tutorial](https://try.github.io/levels/1/challenges/2)
+- [Github's own Git tutorials](https://try.github.io/)
 
 ### Creating Useful Shortcuts
 
@@ -100,7 +100,7 @@ As a new starter you should add your name and picture to the training [slides](h
 - [IBEX Project Board](https://github.com/ISISComputingGroup/IBEX/projects/1) - Work tickets
 - [Slack Channel](https://ibex-icp.slack.com/messages/C055HTCCU/) - Office-related chat
 - [ISIS Sharepoint](https://www.facilities.rl.ac.uk/isis/default.aspx) - Shared ISIS documents, manuals, meeting minutes etc
-- [Oracle Login](https://sso.ssc.rcuk.ac.uk/sso/pages/login.jsp) - Book leave, create timesheets
+- [Oracle Login](https://portal.ssc.rcuk.ac.uk/) - Book leave, create timesheets
 - [Flexi Time](http://flexiral.stfc.ac.uk/) - If you're on Flexi time and need to view/edit your work history
 
 

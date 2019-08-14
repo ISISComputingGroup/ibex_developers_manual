@@ -32,10 +32,10 @@ Where there are multiple instances of a device within an IOC (e.g. SDTEST, GENES
 | IFRECSIM | Set to ' ' if device is being record simulated; otherwise '#' (Provided by IBEX backend) |  |
 | IFNOTRECSIM | Set to '#' if device is being record simulated; otherwise ' ' (Provided by IBEX backend) |  |
 | DISABLE | Should communications be disabled 1 - yes, 0 - no. (Provided by IBEX backend and can be set in the GUI) | 0 |
-| LVDCOM_HOST | The host of the LVDcom vi (see [Creating IOC wrapper VI](Creating-IOC-wrapper-VI)). | "" |
-| LVDCOM_OPTIONS | LVDcom options for starting the vi (see [Creating IOC wrapper VI](Creating-IOC-wrapper-VI)). | 6 |
-| LVDCOM_USER | LVDcom user; not to be added to `config.xml`. It can be set only through the local globals.txt (see [Creating IOC wrapper VI](Creating-IOC-wrapper-VI)). | "" |
-| LVDCOM_PASS | LVDcom passphrase; not to be added to `config.xml`. It can be set only through the local globals.txt (see [Creating IOC wrapper VI](Creating-IOC-wrapper-VI)). | "" |
+| LVDCOM_HOST | The host of the LVDcom vi (see [Creating IOC wrapper VI](Creating-IOC-wrapper-VI) for more). | "" |
+| LVDCOM_OPTIONS | LVDcom options for starting the vi (see [Creating IOC wrapper VI](Creating-IOC-wrapper-VI) for more). | 6 |
+| LVDCOM_USER | LVDcom user; not to be added to `config.xml`. It can be set only through the local globals.txt (see [Creating IOC wrapper VI](Creating-IOC-wrapper-VI) for more). | "" |
+| LVDCOM_PASS | LVDcom passphrase; not to be added to `config.xml`. It can be set only through the local globals.txt (see [Creating IOC wrapper VI](Creating-IOC-wrapper-VI) for more). | "" |
 
 # Specific Macros that we might need to set
 
@@ -44,7 +44,7 @@ There are some macros that need to be set which have specific names, and do not 
 | IOC | Macro | Description | Suggested Values |
 | --- | --- | --- | --- |
 | global | SIMULATE | This can be used to check whether or not you are a simulated instrument | `1` to simulate, `0` for a live system|
-| ISISDAE01 | DAEDCOM | This is the DCOM port the DAE is using | `1` |
+| ISISDAE01 | DAEDCOM | This is whether ISISDAE uses DCOM to talk to isisicp, or loads ISISICP internally. | `1` is normal and recommended on instrument, `0` is if you do not want to run isisicp e.g. dcom problems on MUONFE |
 | ISISDAE01 | DAEHOST | This is the IP address of the DAE host | `localhost` |
 | GALIL_0n | GALILADDR | This is the IP address of the Galil | `None` when simulating |
 | HVCAEN_0n | HVCAENIPn | This is the IP address for the CAEN | |

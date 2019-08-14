@@ -22,6 +22,17 @@ BlockServer, static PVs and dynamic PVs:
   and write() methods. Most of the PVs the BlockServer uses are written like this and the method is well documented in the pcaspy 
   documentation_. Note that if you are monitoring this PV for changes, you need to call setParam() followed by updatePVs() in the blockserver to propagate this change to the monitors. You can check whether this is working properly by putting a `camonitor` on the PV in question and checking that it automatically updates when the PV value is changed.
 
+PVs created in this manner do not have an alarm severity field `.SEVR` like they automatically do in EPICS. If such a field is necessary, for example for displaying the PV in the GUI banner, then it can be added manually. For example, to make a PV constantly have `NO_ALARM`, add the following to `initial_dbs` in `block_server.py`:
+```python
+BlockserverPVNames.PV_NAME_SEVR: {'type': 'enum', 'count': 1, 'value': PV_NAME_SEVR_VALUE, "enums": ["NO_ALARM"]}
+```
+where `PV_NAME_SEVR` is the PV address with `.SEVR` on the end, and `PV_NAME_SEVR_VALUE` is the value of the enum, 0 in this case as there is only one defined. Add
+```python
+elif reason == BlockserverPVNames.PV_NAME_SEVR:
+    value = PV_NAME_SEVR_VALUE
+```
+to `read` and `self.setParam(BlockserverPVNames.PV_NAME_SEVR, PV_NAME_SEVR_VALUE)` to the appropriate monitor update method so that the alarm value is given when something (e.g. the GUI) tries to get the alarm severity.
+
 Documentation: http://pcaspy.readthedocs.org/en/latest/
 
 * Dynamic PVs are more complex and are required for serving PVs for each inactive configuration, the names of which are not known

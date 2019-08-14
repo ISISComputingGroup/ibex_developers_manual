@@ -1,9 +1,9 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [Datastreaming](Datastreaming)
 
 # The Datastreaming Project
-The datastreaming system is being built as part of in-kind work to ESS. It will be the system that the ESS uses to take data and write it to file (basically their equivalent to the [ICP](DAE-and-the-ICP)). The system may also replace the ICP at ISIS in the future.
+The datastreaming system is being built as part of in-kind work to ESS. It will be the system that the ESS uses to take data and write it to file - basically their equivalent to the [ICP](DAE-and-the-ICP). The system may also replace the ICP at ISIS in the future.
 
-In general the system works by passing both neutron and SE data into [Kafka](https://kafka.apache.org/) and having clients that either view data live (like Mantid) or write the data to file, additional information can be found [here](http://accelconf.web.cern.ch/AccelConf/icalepcs2017/papers/tupha029.pdf) and [here](https://iopscience.iop.org/article/10.1088/1742-6596/1021/1/012013/pdf). 
+In general the system works by passing both neutron and SE data into [Kafka](https://kafka.apache.org/) and having clients that either view data live (like Mantid) or write the data to file, additional information can be found [here](http://accelconf.web.cern.ch/AccelConf/icalepcs2017/papers/tupha029.pdf) and [here](https://iopscience.iop.org/article/10.1088/1742-6596/1021/1/012013). 
 
 # Datastreaming at ISIS
 Part of our in-kind contribution to datastreaming is to test the system in production at ISIS. Currently it is being tested in the following way:

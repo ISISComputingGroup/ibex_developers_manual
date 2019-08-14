@@ -70,7 +70,7 @@ Short meetings and presentations held within the group to discuss various aspect
 
 Collision Detection
 -------------------
-A method for detecting collisions between moving beamline components by simulating the requested move beforehand.  See [Collision Detection Project](Collision-Detection-Project.md) for more information.  
+A method for detecting collisions between moving beamline components by simulating the requested move beforehand.  See [Collision Detection Project](Collision-Detection-Project) for more information.  
 
 Commit
 ------

@@ -1,4 +1,4 @@
-> [Wiki](Home) > [The GUI](The-GUI) > [Coding][GUI-Coding]
+> [Wiki](Home) > [The GUI](The-GUI) > [Coding](GUI-Coding)
 
 * [Coding Conventions](GUI-Coding-Conventions)
 
@@ -18,6 +18,6 @@
 
 * [OPI Creation](OPI-Creation)
 
-* [Converting OPIs from old to new style: tips and gotchas](Converting-to-New-Style-Tips-and-Gotchas)
+* [Converting OPIs from old to new style: tips and gotchas](Converting-OPI-to-New-Style-Tips-and-Gotchas)
 
-* [Adding a Perspective](Adding-a-button-to-the-perspective-switcher-(Eclipse-4))
+* [Adding a Perspective](Adding-a-Button-to-the-Perspective-Switcher)

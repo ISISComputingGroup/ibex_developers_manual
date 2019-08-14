@@ -21,6 +21,8 @@ It contains some files:
 - globals.txt: overriding definition of macros for IOCs
 - last_config.txt: last loaded config in IBEX
 - rc_setting.cmd: commands to load in runcontrol
+- banner.xml: customised displays and buttons for the GUI banner
+- custom_records.db: records specific to the instrument which are loaded by INSTETC
 
 ## User configuration
 
@@ -39,7 +41,7 @@ Configuration files for the DAE.
 
 ### Configuration of devices and extensions
 
-These are directories which configure devices which would be too complicated for macro configuration. For example the Galil configuration with the need to setup the controller, homeing routines etc. Historically this was named after a category of device, e.g. galil. This allow configuration of devices as a whole. They can also be named after an IOC which allow configuration of a single IOC, e.g SM300_01. 
+These are directories which configure devices which would be too complicated for macro configuration. For example the Galil configuration with the need to setup the controller, homing routines etc. Historically this was named after a category of device, e.g. galil. This allow configuration of devices as a whole. They can also be named after an IOC which allow configuration of a single IOC, e.g SM300_01. 
 
 The extensions are items which extend an IOC for example a motion setpoints which allow a motor to stop at labelled positions. These are configured from the IOC configuration directory and may need optional extra configuration directories.
 
@@ -48,13 +50,13 @@ The pattern for both device configuration and extensions configuration is that t
 Directories:
 
 - galil: configures the galil [Galil](Galil) and extensions
-- mclen: configures McLennan motors [McLennan](McLennan) and extensions
+- mclen: configures McLennan motors [McLennan]McLennan-motors) and extensions
 - sm300_01: configures the [SM300_01](SM300) motor extensions 
 - motionSetPoints: setpoint look up files
 
 Common extensions:
  - [motion setpoints](Motor-SetPoints) (works for galil, McLennan and sm300)
- - [axes](Motor-Axes) (works for galil, McLennan and sm300)
+ - [axes](axis) (works for galil, McLennan and sm300)
  - [sample changer](Sample-Changers) (works for galil, McLennan and sm300)
  - [Barn doors and Momentum slits](Barndoors-and-Momentum-Slits-on-MUON-Front-End)
  - [larmor Beamstop](Larmor-Beamstop) (galil)

@@ -15,7 +15,7 @@ For information on configuring Jeknins see [Adding a new Windows machine to Jenk
 
 ### Client
 
-* The [`ibex_gui`](http://epics-jenkins.isis.rl.ac.uk/job/ibex_gui_build_PRs/) build uses the `master` branch for the [IBEX GUI](https://github.com/ISISComputingGroup/ibex_gui)
+* The [`ibex_gui`](http://epics-jenkins.isis.rl.ac.uk/job/ibex_gui_pipeline/) build uses the `master` branch for the [IBEX GUI](https://github.com/ISISComputingGroup/ibex_gui)
 * The `ibex_gui_build_PRs` builds all the PRs for the `ibex_gui` branch
 * The Tycho build is run, which is slightly different to building within Eclipse. This can be run locally by running the `build/build.bat` file that is checked out with the client.
 * The Tycho build also runs the unit tests

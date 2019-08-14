@@ -62,7 +62,7 @@ If you're not creating a StreamDevice IOC or you you would like to know how an I
 * [aSub records](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/aSub-records)
 * [Motor IOCs](Motor-IOCs)
 * [Libraries to include](IOC-Libraries-to-include-with-order)
-* [Creating a MODBUS IOC](MODBUS-IOC) 
+* Creating a MODBUS IOC (page removed at some point)
 * [Using LVDCOM](Using-LVDCOM)
 * [Convert Record](convert-record)
 * [Stream Device Tips and Tricks](Stream-Device-Tips-and-Tricks)
@@ -75,6 +75,11 @@ If you're not creating a StreamDevice IOC or you you would like to know how an I
 * [Reducing build dependencies for older iocs](Reducing-Build-Dependencies)
 * [Template Substitutions](Template-Substitutions)
 * [Creating a State Machine](Creating-a-State-Machine-(Sequencer))
+* [Limited range on PV](PV-with-a-limited-range)
+
+# Debugging IOCs
+
+Debug builds of IOCs are built in jenkins and can be deployed to instruments, see [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Deploying-a-DEBUG-build-IOC).
 
 # Specific IOC Information
 

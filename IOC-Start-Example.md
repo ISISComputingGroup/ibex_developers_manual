@@ -36,7 +36,7 @@ macros which are defined in `EPICS\configure\MASTER_RELEASE` and point to suppor
 [2017-08-16 13:53:54] simple_registerRecordDeviceDriver pdbbase
 [2017-08-16 13:53:54] < C:/Instrument/Apps/EPICS/iocstartup/init.cmd
 ```
-More st.cmd and then load inital init which sets up configuration info:
+More st.cmd and then load initial init which sets up configuration info:
 
 ```
 [2017-08-16 13:53:54] icpconfigLoad

@@ -1,4 +1,4 @@
-> [Wiki](Home) > [The Backend System](The-Backend-System) > [System components](System-components) > [Configurations](Configurations) > Calibration files
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [System components](System-components) > [Settings and Configurations](Settings-and-Configurations) > Calibration files
 
 The calibration files are anything that is equipment specific but not how to drive it; they are settings which are common to all instruments. The test for whether a file belongs in this repository is as follows. Imagine changing a file on an instrument; the change should be reflected on the other instruments thus improving their results. There will be some grey areas, for instance, the barn doors on Muon Front end. It is unlikely these calibration setting will be used elsewhere but they could be, and if they were changed it wouldn't effect anything else, so this is a good place to put them.
 
@@ -114,7 +114,7 @@ As part of the implementation, it was decided in a discussion between John and T
 
 ### Lakeshore
 
-Examples of the lakeshore format can be found on the [lakeshore site](https://www.lakeshore.com/Documents/ZipReadme.pdf).
+Examples of the lakeshore format can be found on the [lakeshore site](https://www.lakeshore.com/resources/product-information).
 
 ### Out of range in the calibration file
 

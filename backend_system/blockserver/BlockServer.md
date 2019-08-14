@@ -15,7 +15,7 @@ See [BlockServer Structure](BlockServer-Structure) for further information.
 ------------
 What it does
 ------------
-The BlockServer is a Channel Access Server (CAS) written in Python using the [PCASpy](https://code.google.com/p/pcaspy/) module.
+The BlockServer is a Channel Access Server (CAS) written in Python using the [PCASpy](https://code.google.com/archive/p/pcaspy/) module.
 It provides a number of PVs that allow the blocks to be configured (see below) and configurations to be created and loaded.
 The blocks are PV aliases created using the blocks gateway - a standard channel access gateway running on localhost (127.0.0.1). When a configuration is loaded or the blocks changed then the BlockServer regenerates the PV file for the gateway. 
 
@@ -60,11 +60,11 @@ Note: this used by genie_python for checking block names used in CSETs etc. are 
     TODO: add description
 
 **BLOCKSERVER:BLOCK_RULES**
-
+```
     Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:BLOCK_RULES
     Returns the rules for naming blocks. Specifically, a regex that new blocks must match and specific blocknames which are disallowed are returned.
     Example JSON: {"regex": "^[a-zA-Z]\\w*$", "regexMessage": "Block name must start with a letter and only contain letters, numbers and underscores", "disallowed": ["lowlimit", "highlimit", "runcontrol", "wait"]}
-
+```
 **BLOCKSERVER:GROUPS**
 Note: This PV is currently used by the web dashboard
 
@@ -251,6 +251,11 @@ Note: This PV is currently used by the web dashboard
 
     Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:SCREENS_SCHEMA
     Returns a compressed and hexed string containing the devices screens XML schema (CHAR waveform)
+
+**BLOCKSERVER:CURR_CONFIG_NAME**
+
+    Command: caget %MYPVPREFIX%CS:BLOCKSERVER:CURR_CONFIG_NAME
+    Returns a string containing the name of the current configuration (CHAR waveform)
 
 **SYNOPTICS:NAMES**
 

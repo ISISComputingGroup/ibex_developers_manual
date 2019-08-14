@@ -68,6 +68,7 @@ The project currently contains the following base units:
 * photon
 * pixel
 * radian
+* rpm
 * s
 * torr
 * step or stp for short

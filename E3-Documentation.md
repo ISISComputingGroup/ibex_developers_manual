@@ -93,5 +93,5 @@ Once you've added everything, the ``plugin.xml`` file should look like:
 If you have followed the above steps and correctly extended all the extension points, a button for your plugin will be automatically added to the perspective switcher.
 
 # [Control System Studio (CS-Studio)](GUI-CSS)
-# [GUI Chats](GUI-Chats)
+# [GUI Chats](Code-Chats)
 # [Other](GUI-Other)

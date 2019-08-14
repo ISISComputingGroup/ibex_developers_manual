@@ -2,11 +2,11 @@
 
 * [SDTest](SDTest)
 
-* [COORD (coordinator) IOC](COORD-IOC)
+* COORD (coordinator) IOC
 
 * [Gamry](Gamry)
 
-* [Moxa e1210](moxa-e1210)
+* [Moxa e12XX](moxa-e12XX)
 
 * [Zero field controller](Zero-field-controller)
 

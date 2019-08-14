@@ -1,8 +1,8 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [Jaws and Slits](Jaws-and-slits) > [Nimrod Jaws](Nimrod-Jaws-Manager)
 
-Nimrod jaws are a set of 6 jaws which work in concert to limit the beam of neutrons reaching the sample (see [Jaws Manager](Jaws-Managers)). The 6 jaws are ordered 1 nearest the beam and 6 nearest the sample. 
+Nimrod jaws are a set of 6 jaws which work in concert to limit the beam of neutrons reaching the sample (see [Jaws Manager](Jaws-Managers) for more). The 6 jaws are ordered 1 nearest the beam and 6 nearest the sample. 
 
-The parameters are (with reference to the diagram in [Jaws Manager](Jaws-Managers)):
+The parameters, with reference to the diagram in [Jaws Manager](Jaws-Managers), are:
 
 Letter | Parameter | Value | Notes
 --- | --------- | ----- | -----
@@ -21,4 +21,4 @@ y | Height at sample | user set |
 
 ## Setup
 
-The control files for the nimrod jaws are part of the gallil motor set up and are per instrument. There is an example in `...\EPICS\support\motorExtensions\master\settings\nimrod_jaws\*.cmd` which would need to be copied to `C:\Instrument\Settings\config\<instrument host name>\configurations\galil`. IOC System tests also exist for the logic.
+The control files for the nimrod jaws are part of the galil motor set up and are per instrument. There is an example in `...\EPICS\support\motorExtensions\master\settings\nimrod_jaws\*.cmd` which would need to be copied to `C:\Instrument\Settings\config\<instrument host name>\configurations\galil`. IOC System tests also exist for the logic.

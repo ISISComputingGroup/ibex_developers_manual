@@ -4,9 +4,9 @@
 
 * [Danfysik](Danfysik)
 
-* [Oxford Instruments IPS](OxfordInstrumentsIPS)
+* [Oxford Instruments IPS](Oxford-Instruments-IPS)
 
-* [Oxford Instruments Mercury IPS](MercuryIPS)
+* [Oxford Instruments Mercury IPS](Oxford-Instruments-Mercury-IPS)
 
 * [Thurlby Thandar TTI-PLP](Thurlby-Thandar-TTI-PLP-Power-Supply)
 
@@ -15,3 +15,5 @@
 * [NGPS](NGPS-PSU)
 
 * [Kepco](Kepco)
+
+* [Cryogenic SMS PSU](Cryogenic-SMS-PSU)

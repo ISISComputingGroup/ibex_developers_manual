@@ -5,14 +5,14 @@
 * [Working with Git and GitHub](Working-with-git-and-github): Getting started with Git and GitHub, development workflows and useful common commands.
 
 * [Linux Virtual Machine](building-on-linux): Creation of Linux machine on your desktop using Vagrant and Virtual Box
-* [Tools for looking at Java resource usage Especially Leaks](java-memory-leak-tools): Tools which can help profile java resource usage.
+* [Tools for looking at Java resource usage Especially Leaks](Java-Resource-Usage-Tools): Tools which can help profile java resource usage.
 * [Network traffic](Network-traffic): Tools for helping network traffic issues
 * [Test Machines](Test-Machines)
 * [Standards & Conventions](Standards-&-Conventions)
 * [Build Arch](Build-Arch): Build under a given architecture
 * [Remote Debugging from Visual Studio](Remote-Debugging-from-Visual-Studio)
 * [JMS-Log creation tool](Ioc-message-logging#development-tools): Tool to create ioc log messages.
-* [PSRemoting to copy files to everywhere](PSRemoting)
+* [PSRemoting to copy files to everywhere](PS-Remote)
 
 ### Archive Tools
 

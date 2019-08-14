@@ -15,6 +15,7 @@ Try to make sure all tickets by the end of the day are in a good state.
 
 
 - Emulator for the compressors
+- Add to IOC numbers so that all IOCs have at least 2
 - Alarming
    * Web does the same GUI
    * Remove invalid alarm

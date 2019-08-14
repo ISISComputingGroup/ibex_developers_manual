@@ -7,3 +7,5 @@
 * [CCD100](CCD100)
 
 * [Omega IBTHX](Omega_IBTHX)
+
+* [MKS PR4000B](MKS_PR4000B)

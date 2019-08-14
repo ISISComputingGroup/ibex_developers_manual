@@ -20,9 +20,9 @@ The experiment database populator is a Python 3 program that is designed to run 
 
 ## Testing
 
+* If it is the first time running the populator you will need to install Python 3 (any distribution should do) and ensure that you pip install the requirements listed in `requirements.txt`
 * The populator has unit tests that are run in [jenkins](http://epics-jenkins.isis.rl.ac.uk/job/Experiment_Database_Populator/). 
 * The `DEBUG` flag can be set in the main file to push instrument data to your local experiment database.
-* A system test is included that will check the data gathered from the website is the same as that on the instruments. This is mainly useful for comparison to the old system.
 
 ## Deployment
 

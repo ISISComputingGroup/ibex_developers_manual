@@ -1,4 +1,4 @@
-> [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [Gas and liquid handling systems](Gas-And-Liquid-Handling-Systems) > [JASCO HPLC Pump](JASCO-HPLC-Pump)
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [Gas and liquid handling systems](Gas-And-Liquid-Handling-Systems) > [JASCO HPLC Pump](JASCO-PU--4180-HPLC-Pump)
 
 # Documentation
 
@@ -35,6 +35,40 @@ Note that the Jasco IOC only allows one of these two values to be modifiable at 
 
 NB: The devices display screen does not show current pump status information when in operation.
 
+# Additional commands not in the manual
+
+The following status command has been confirmed by JASCO and is used in the IOC driver, although it is not documented in the manual:
+```
+command : { status load p }
+A status value is a bitwise OR.
+
+Bit0=0: Pump off
+Bit0=1: Pump on
+Bit1=1: Program hold
+(Bit2-3: Reserved)
+Bit4-5=1: Program stop
+Bit4-5=2: Initial run
+Bit4-5=3: Program run
+
+Data value is returned as follows:
+ 0: Pump off
+ 1: Pump on (Program stop)
+33: Initial run (Initial run, Pump on)
+49: Program run (Program run, Pump on)
+51: Program hold (Program run, Pump on, Program hold)
+```
 # Troubleshooting
 
-It has been observed that the pump can be in some state where the components will not correctly change when the `set_component` command is sent. This is thought to occur when the device has a local manual component mode set on the device. In testing one way this was resolved was by manually sending the `8 pump set` command, which corresponds to reset and rerun of the program. You can then stop the pump and it should have cleared this state and you can use the IOC as per usual. 
+There are three known issues with the pump that have been confirmed by JASCO. They have detailed the potential issues and the work around that is associated with them. The design of the pumps driver should mitigate them, but this information should help in the event these are encountered during support:
+
+#### Pump stops responding
+
+This issue involves the pump being hard locked, and completely unresponsive. No data will be returned from the device, and the front panel will be unresponsive. The only way to resolve this is to power cycle the device. This is caused by the `flowrate set` command being executed at the same moment as a program step (such as setting component values).
+
+#### Pump freezes with 'Program busy'
+
+This issue involves the pump freezing and not interpreting commands briefly, and can result in commands being skipped. This is caused by the `fileno set` (Set a program file number) being executed while the run status is in `Initial` or `Run`. When the program file is opened other commands not related to creating a time program will not be accepted. You must ensure the program is closed after setting the time program.
+
+#### Composition control is locked
+
+This issue involves the composition being locked into a manual mode, where no compositions will be accepted remotely, and the single channel (100% A, B, C, or, D) can only be switched using the front panel. This occurs when a time program has not been written correctly. For example, if the maximum number of lines in a program (64) has been exceeded or not closed. This should be resolved by first ensuring the file is closed, using `1 fileno set`, and then performing a re-run program using initial conditions `8 pump set`. Note that you might want to ensure you have a flow rate of 0 to ensure no liquid is pumped while troubleshooting.

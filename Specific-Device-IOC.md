@@ -10,7 +10,7 @@ These are the list of categories for an IOC. The IOC can appear in multiple cate
 
 [Gas and liquid handling systems](Gas-And-Liquid-Handling-Systems)
 
-[Imaging Cameras](Imaging-Cameras)
+Imaging Cameras
 
 [Jaws and Slits](Jaws-and-slits)
 
@@ -18,7 +18,7 @@ These are the list of categories for an IOC. The IOC can appear in multiple cate
 
 [Magnets](Magnets)
 
-[Monitors](Monitors)
+Monitors
 
 [Motors](Motor-IOCs)
 
@@ -36,7 +36,7 @@ These are the list of categories for an IOC. The IOC can appear in multiple cate
 
 [Sample Changers](Sample-Changers)
 
-[Sample Stacks and Goniometers](Stacks-and-Gonios)
+Sample Stacks and Goniometers
 
 [Sensors](Sensors)
 
