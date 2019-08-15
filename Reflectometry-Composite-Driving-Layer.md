@@ -129,7 +129,7 @@ To apply a user function engineering correction yo an axis we must first define 
 ```
 def my_correction(value, theta):
    ...
-   return calulated_offse
+   return calulated_offset
 ```
 
 When called by the reflectometry IOC this function will be given:
