@@ -210,8 +210,8 @@ long function_name_impl(aSubRecord *prec)
 {
     /*
      * Returns the first input value back, assuming both have been 
-     * declared as LONG in the db file you can check fta and 
-     * ftva fields to confirm this 
+     * declared as LONG in the db file. You can check the fta and 
+     * ftva fields to confirm the data types 
      */
     *(epicsInt32*)prec->vala = *(epicsInt32*)prec->a;
     return 0; /* process output links */
