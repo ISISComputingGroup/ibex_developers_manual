@@ -209,8 +209,9 @@ Create a C++ source file (`.cpp` extension, cannot share the same name as the `.
 long function_name_impl(aSubRecord *prec) 
 {
     /*
-     * Returns the first input value back, assuming both have been declared as LONG in the db file
-     * you can check fta and ftva fields to confirm this 
+     * Returns the first input value back, assuming both have been 
+     * declared as LONG in the db file you can check fta and 
+     * ftva fields to confirm this 
      */
     *(epicsInt32*)prec->vala = *(epicsInt32*)prec->a;
     return 0; /* process output links */
