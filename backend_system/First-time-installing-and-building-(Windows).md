@@ -172,6 +172,7 @@ git clone https://github.com/ISISComputingGroup/ConfigChecker.git
 
 # NI DAQ
 
-Some IOCs depends on DAQMX binaries from national instruments. Go to http://sine.ni.com/psp/app/doc/p/id/psp-268 and download the latest DAQMX drivers. When installing, ensure you check the box to install DAQMX.
+Some IOCs depends on DAQMX binaries from national instruments. Go to http://sine.ni.com/psp/app/doc/p/id/psp-268 or if not go here https://www.ni.com/en-gb/support/downloads/drivers/download.ni-daqmx.html#311818
+and download the latest DAQMX drivers. When installing, ensure you check the box to install DAQMX.
 
 If you do not do this step, you will be unable to run certain IOCs (e.g. riken power supplies, muon separator), and consequently some of their tests will fail.
