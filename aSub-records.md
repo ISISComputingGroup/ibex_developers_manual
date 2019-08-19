@@ -338,9 +338,9 @@ This technique can be useful if you have multiple aSub functions that are simila
 
 ## Tips
 
-* LONG in epics DB world is 32 bit, while the C long type is 32bit on Windows and 64bit on Linux. When casting from aSub you should use the epicsInt32 type and not "long"
+* LONG in epics DB world is 32 bit, while the C long type is 32bit on Windows and 64bit on Linux. When casting from aSub you should use the `epicsInt32` type and not "long"
 * Do not assign directly to aSub record argument such as "prec->vala = result". Rather copy into the pre-allocated space as shown below 
-* Remember all aSub arguments are arrays of the type even if the type is an array, so epicsOldString*
+* Remember all aSub arguments are arrays of the type even if the type is an array, so `epicsOldString*`
 ```
 epicsInt32 i = *(epicsInt32*)prec->a;
 epicsOldString* result = (epicsOldString*)prec->vala;
