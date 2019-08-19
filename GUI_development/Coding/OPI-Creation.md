@@ -81,7 +81,7 @@ The final step should be to send the OPI to the instrument scientists. If they d
 # Testing
 
 To start and interact with a testing IOC see [Running (and testing) IOC](Running-IOCs)
-The easiest way to test this is to run IBEX-gui through the eclipse editor. Create a device screen and use this to test The device screen can be refreshed (right click -> refresh) to display the latest changes made in CSS editor.
+The easiest way to test this is to run IBEX-gui through the eclipse editor. Create a device screen and use this to test. The device screen can be refreshed (right click -> refresh) to display the latest changes made in CSS editor.
 
 # Debugging: No scrollbars
 
