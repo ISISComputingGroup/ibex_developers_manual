@@ -32,7 +32,7 @@ Start is initiated from `C:\Instrument\Apps\EPICS\start_ibex_server.bat`. It:
     1. Starts a new conserver
 1. If startup.txt exists in config runs start_ibex_server_mini else runs start_ibex_server_full.bat
 1. [full only] update iocs db
-1. [full only] start ioc log server
+1. [full only] start ioc log server (if logs cannot be loaded, you may not have permission to view the files, this can happen if you accidentally started the server in admin mode in the past. This can be fixed by either changing the folder's permissions or deleting its configs)
 1. [full only] start the alarm server
 1. start the gateways
 1. start the procserver for the iocs (call `iocstartup\procserv.bat`)
