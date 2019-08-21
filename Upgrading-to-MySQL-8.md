@@ -12,7 +12,7 @@ Go to [the MySQL download page](https://dev.mysql.com/downloads/mysql/) and down
 
 Alternatively, version `8.0.15` is in the kits area under `<kits area on share>\CompGroup\ICP\MySQL`.
 
-### 3. Unzip MySQL 8 to `C:\Instrument\Apps\mysql`
+### 3. Unzip the inner folder of MySQL 8 to `C:\Instrument\Apps\mysql`
 
 You should end up with a path to MySQL that looks like `C:\Instrument\Apps\mysql\bin\mysql.exe`
 
