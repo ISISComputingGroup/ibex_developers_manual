@@ -101,15 +101,16 @@ Idea | Proposed Speaker
 ## Cake Rota
 Person | Date
 ------ | ----
-Thomas | Aug 18
-Dom | Sep 18
-Freddie | Oct 18
-Tom | Nov 18
-Liam | Nov 18
-Alistair | Dec 18
-John | Mar 19
-David | Apr 19
-Kathryn | May 19
-Jack | June 19
-Aaron | July 19
-Michal |
+Tom | Sep '19
+Thomas |
+David |
+Alistair |
+Chris C |
+Kathryn |
+James |
+Freddie |
+Aaron |
+Jack |
+John |
+Dom |
+Chris MS |
