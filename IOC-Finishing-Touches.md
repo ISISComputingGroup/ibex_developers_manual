@@ -35,7 +35,7 @@ Where
 
 If you want a PV to appear in the alarm view (and there should be at least one per IOC so that it can show disconnected) then add:
 
-    info(alarm, "<name of IOC no _0X>")
+    info(alarm, "<name of IOC (not including _0X)>")
 
 ## 4. Autosave PVs
 
