@@ -37,9 +37,7 @@ This is currently being run on the ndw1926 node on Jenkins. A quirk of using thi
 
 There are currently two IOCs that we have to communicate with Beckhoffs.
 
-### tcIOC
-
-This IOC was originally written at LIGO and is in a stable state. It's more targeted at the use of Beckhoffs as generic PLCs and has little motion support. It constructs db records by examining the PLC project on the controller and communicates with it using ADS (Beckhoff's own protocol). More detail can be found at https://github.com/ISISComputingGroup/EPICS-tcIoc.
+### [tcIoc](tcIOC)
 
 ### MCAG
 
