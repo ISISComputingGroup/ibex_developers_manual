@@ -33,10 +33,10 @@ If you wish to do this manually:
     ```
     "c:\Program Files\MySQL\MySQL Server 5.7\bin\mysql.exe" -u root -p --execute "truncate table msg_log.message;truncate table archive.sample"
     ```
-or on instrument machines, 
-```
-"c:\Instrument\Apps\MySQL\bin\mysql.exe" -u root -p --execute "truncate table msg_log.message;truncate table archive.sample"
-```
+    or on instrument machines, 
+    ```
+    "c:\Instrument\Apps\MySQL\bin\mysql.exe" -u root -p --execute "truncate table msg_log.message;truncate table archive.sample"
+    ```
 
 NB Originally this was the message and sample tables bumped to a directory in here, if you are looking for older data.
 ## Moving the Table Data Files
