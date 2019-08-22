@@ -109,7 +109,7 @@ where
 </ioc_config>
 ```
 
-Either a full make of the server or running `make iocstartups` will then make the contents of these XML files available to the GUI (after restarting the instrument)
+Either a full make of the server or running `make iocstartups` from the EPICS folder will then make the contents of these XML files available to the GUI (after restarting the instrument)
 
 ## 8. PV Limits
 
