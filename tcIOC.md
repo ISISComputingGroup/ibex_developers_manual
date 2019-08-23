@@ -12,7 +12,7 @@ We added motor support to tcIOC so that we could use it to control motors in the
 
 * If tcIOC was converted to an `asyn` driver then the motor could talk to this asyn port rather than communicate across CA
 * If the interesting variables in the PLC code change name so must the IOC, we could get around this by tagging in the comments of the PLC code with which variables are the interesting ones
-* The number of axes is hardcoded within the IOC this can be solved by tcIOC creating the required number of motor records when it parses the tpy file
+* The number of axes is hardcoded within the IOC this can be solved by tcIOC creating the required number of motor records when it parses the `.tpy` file
 
 # Troubleshooting
 
