@@ -81,5 +81,5 @@ If you are using RS232 then you need to enable software flow control on the gali
 ```
 Error downloading code model DMC2280 Rev 1.0o-CM, address COM6 38400 msg 1011 TIMEOUT ERROR.
 ```
-xon/xoff is enabled via a jumper on the Galil
+xon/xoff is enabled via a dip switch on the Galil
 
