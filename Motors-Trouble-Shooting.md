@@ -74,3 +74,12 @@ Check out [this page](Homing-Galils-under-SECI) if you need to see what the SECI
 ### The limits are both made
 
 This occurs when power is cut to the limits. The main cause for this is that the safety system has been engaged as this will cut power to the whole rack of Galils. However, there could be other reasons such as in the [IMAT Lens Adjustment](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/IMAT-Lens-Adjustment)
+
+### error downloading homing program
+
+If you are using RS232 then you need to enable software flow control on the galil or you will get messages like
+```
+Error downloading code model DMC2280 Rev 1.0o-CM, address COM6 38400 msg 1011 TIMEOUT ERROR.
+```
+xon/xoff is enabled via a jumper on the Galil
+
