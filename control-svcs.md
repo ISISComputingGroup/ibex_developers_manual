@@ -12,7 +12,12 @@ Depending on what you need to do, you may need to modify system init scripts to 
 
 # Webserver is down
 
-If the webserver serving [http://control-svcs.isis.cclrc.ac.uk/](http://control-svcs.isis.cclrc.ac.uk/) is down, it can be restarted with the following standard commands (these commands are also used to start/auto-restart any other linux service, substituting `httpd` with the name of the appropriate service):
+Log onto control services and check if the webserver service is running using
+```
+sudo systemctl status httpd
+```
+
+If it is down, it can be restarted with the following standard commands (these commands are also used to start/auto-restart any other linux service, substituting `httpd` with the name of the appropriate service):
 ```
 sudo systemctl start httpd
 sudo systemctl enable httpd
@@ -22,3 +27,5 @@ If you need to stop the service first use
 ```
 sudo systemctl stop httpd
 ```
+
+The logs are located in `/var/log/httpd` which may be useful for troubleshooting if a simple restart does not solve the issue.
