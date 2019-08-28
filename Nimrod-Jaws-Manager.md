@@ -25,7 +25,7 @@ The control files for the nimrod jaws are part of the galil motor set up and are
 
 ## Jaw centres
 
-The jaws on NIMROD are not centred with respect to the beam, i.e. all jaws being at a centre of (0, 0) will not actually let the beam through.
+The jaws on NIMROD are not centred with respect to the beam, i.e. all jaws being at a centre of (0, 0) will not actually let the beam through. This is due to some of the jaw sets being mounted off-centre during installation.
 
 The expected centres of each jaw set are:
 
@@ -37,3 +37,5 @@ The expected centres of each jaw set are:
 | 4 | 0.159 | -1.460 |
 | 5 | -0.303 | -0.801 |
 | 6 | -0.378 | -9.507 |
+
+The numbers above correspond to the jaws being centred around the beam in "real" coordinates as opposed to motor coordinates.
