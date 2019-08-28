@@ -22,3 +22,18 @@ y | Height at sample | user set |
 ## Setup
 
 The control files for the nimrod jaws are part of the galil motor set up and are per instrument. There is an example in `...\EPICS\support\motorExtensions\master\settings\nimrod_jaws\*.cmd` which would need to be copied to `C:\Instrument\Settings\config\<instrument host name>\configurations\galil`. IOC System tests also exist for the logic.
+
+## Jaw centres
+
+The jaws on NIMROD are not centred with respect to the beam, i.e. all jaws being at a centre of (0, 0) will not actually let the beam through.
+
+The expected centres of each jaw set are:
+
+| Jaw set | Horizontal | Vertical |
+| -- | -- | -- |
+| 1 | -0.135 | -1.5 |
+| 2 | -0.126 | -1.457 |
+| 3 | -0.205 | -9.634 |
+| 4 | 0.159 | -1.460 |
+| 5 | -0.303 | -0.801 |
+| 6 | -0.378 | -9.507 |
