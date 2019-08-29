@@ -24,4 +24,5 @@ The command uses escaped characters as per `printf/epicsStrnRawFromEscaped` e.g.
 ```
 testserialport COM7 "\0040011PV" "\005" "\003" --eventmask=0x1ff
 ```
-The command line --option uses CLI11 so with visual studio 2010 you will only be able to pass the positional arguments mentioned above
+
+This program is built using VS2017 and so will not be on the instruments as standard. To use it on a deployment built with VS2010 you will to copy a static VS2017 build from jenkins.
