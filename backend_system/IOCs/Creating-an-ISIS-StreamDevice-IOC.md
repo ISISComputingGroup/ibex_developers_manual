@@ -90,6 +90,8 @@ record(ao, "$(P)CHAN_A:TRIG_LVL:SP")
 
 Note that the db file should conform to the naming standards detailed in [PV-Naming](PV-Naming), and that ANY value which might be read and set as a block must have a `:SP` as well as a non post-fixed name entry.
 
+Also note that ALL streamdevice PVs must have the field `DTYP` set to `"stream"`, otherwise they will not correctly communicate.
+
 
 Modify the Makefile in the same directory as the protocol and db files to have lines like:
 
