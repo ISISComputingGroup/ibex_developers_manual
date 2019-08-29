@@ -63,7 +63,7 @@ There are three known issues with the pump that have been confirmed by JASCO. Th
 
 #### Pump stops responding
 
-This issue involves the pump being hard locked, and completely unresponsive. No data will be returned from the device, and the front panel will be unresponsive. The only way to resolve this is to power cycle the device. This is caused by the `flowrate set` command being executed at the same moment as a program step (such as setting component values).
+This issue involves the pump being hard locked, and completely unresponsive. No data will be returned from the device, and the front panel will be unresponsive. The only way to resolve this is to power cycle the device. This is caused by the `flowrate set` command being executed at the same moment as a program step (such as setting component values). A script is available in the IOC directory called `exercise_jasco4180.py` that can be used to test if the device crashes under use. The driver has been designed to be resilient against this crash and should always successfully finish. This can be used to ensure new driver changes do not introduce device breaking bugs.
 
 #### Pump freezes with 'Program busy'
 
