@@ -12,7 +12,7 @@ To interact with the device (an Arduino Uno) you need to follow the following st
 
 2. Next, update the drivers for the device. 
     - To do this connect the device via USB.
-    - Then got to device manager.
+    - Then open device manager as administrator.
     - Select `Ports (COM & LPT)`.
     - Select the port the device is plugged into.
     - Right-click on the device port and select `update driver`. 
