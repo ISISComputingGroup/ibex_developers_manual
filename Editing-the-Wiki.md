@@ -15,9 +15,27 @@ git clone https://github.com/ISISComputingGroup/ibex_developers_manual.wiki.git
 
 Pages can be organised into folders, but only by checking the Wiki out, arranging as desired, and checking everything back in.
 
+### Adding DrawIO Diagram
+
+Create new diagram
+
+1. Visit [DrawIO](https://www.draw.io/) choose `device`
+1. Create New Diagram, select type etc.
+1. Edit diagram until you are happy
+1. choose `File` -> `Export` -> `Png...`
+1. Then make sure `Include a copy of my diagram` is ticked
+1. Select `github`, then the repo (you may have to show more sources)
+1. Type commit comment
+
+In wiki add to markdown using:
+
+    ![alternative text](images/<image name>.png)
+
+To edit this just open that png in `draw.io`.
+
 ### Adding Images
 
-To add images you need to check out the Wiki and add them manually. The images should go in their own folder, for example an image for this page would need to go in `/images/using_the_wiki/`.
+To add images you need to check out the Wiki and add them manually. The images should go in their own folder, for example, an image for this page would need to go in `/images/using_the_wiki/`.
 
 ```shell
 git add images/using_the_wiki/test.png
@@ -25,8 +43,9 @@ git commit -m "Added an image to Using the Wiki page"
 git push
 ```
 
-You can then add the image in markdown using the URL: 
-`https://raw.githubusercontent.com/wiki/ISISComputingGroup/ibex_developers_manual/images/using_the_wiki/test.png`
+You can then add the image in markdown using the URL `images/using_the_wiki/test.png`:
+
+    ![alternative text](images/using_the_wiki/test.png)
 
 ### Adding or Editing Files
 
