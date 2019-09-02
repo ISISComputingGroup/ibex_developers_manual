@@ -1,4 +1,4 @@
-> [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [Gas and liquid handling systems](Gas-And-Liquid-Handling-Systems) > [Edwards Turbo Instrument Controller]
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [Gas and liquid handling systems](Gas-And-Liquid-Handling-Systems) > [Edwards Turbo Instrument Controller](Edwards-Turbo-Instrument-Controller)
 # Device notes
 
 The edwards turbo instrument controller is a relatively straightforward turbo pump controller. In addition to the turbo pump controls, it also has three measurement gauges which can be read back into the OPI. Each gauge can be disabled via macros to prevent disconnected errors appearing.
