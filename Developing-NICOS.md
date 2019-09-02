@@ -16,7 +16,7 @@ The FRM guide to getting set up with Gerrit is [here](https://forge.frm2.tum.de/
 Once set-up the workflow for adding new work to NICOS is:
 * Create one commit with all changes 
 * Push it to Gerrit using `git push origin HEAD:refs/for/master` (the FRM guide shows you how to put this in your git config)
-* Changes will be reviewed in the FRM Gerrit system (https://forge.frm2.tum.de/review/#/q/status:open)
+* Changes will be reviewed in the FRM Gerrit system (https://forge.frm2.tum.de/review/q/status:open)
 * Any changes that come from reviews should be added to the same commit using `git commit -amend`
 
 As hinted in the above paragraph, this isn't actually one commit but only looks like it to the user. You can see changes that have been made (including when commits have been amended as patch sets) on the review, for example [here](https://forge.frm2.tum.de/review/#/c/18861/4). To checkout a specific commit you should use the commands specified in the download section of that page (the commit hash mentioned on the page is a lie).
