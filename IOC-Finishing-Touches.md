@@ -125,6 +125,13 @@ If a limit on a set point is well defined (i.e., given by a device manual) then 
         self.ca.assert_that_pv_is("CURRENT:SP", limit_value)
 ```
 
-## 9. Add IOC to EPICS hardware list
+## 9. Directories added to Makefiles
+Type
+```
+make checkdirs
+```
+at EPICS top level and make sure it completes ok
+ 
+## 10. Add IOC to EPICS hardware list
 
 Once the IOC is reviewed and tested with hardware, [add it to the EPICS hardware list](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Add-ioc-to-epics-hardware-list)
