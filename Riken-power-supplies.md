@@ -89,6 +89,10 @@ This can happen, we are not sure why. The PSU seems to get into a communications
 
 The only (known) way to get out of this state is to power-cycle the power supply at it's main switch.
 
+### I get intermittent communications failures on various PVs, accross all of the power supplies
+
+There is a short wait in the protocol file (10ms) between each command to try to overcome this problem. If it re-occurs, the delay may need increasing slightly. If it is increased, the scan rate may need to be decreased so that the serial line can cope with the overall message rate.
+
 ### Changeover sequence won't start - PLC indicates "waiting for IBEX to respond".
 
 IBEX will only let the changeover sequence proceed if it gets "off" readings WITHOUT ALARMS from the power supplies it cares about. For RB2 mode change these are "RB2" and "RB2-2", for port 3/4 change these are RQ18, RQ19 and RQ20.
