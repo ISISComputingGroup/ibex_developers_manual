@@ -33,6 +33,9 @@ Beckhoff provides an `automation interface` which can do any of the things you c
 
 This is currently being run on the ndw1926 node on Jenkins. A quirk of using this DCOM interface is that the Jenkins slave must be run as an interactive user and thus not as a service. To do this there is a bat file that should run on startup inside `C:\Users\ibexbuilder\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup`.
 
+## Networking
+Beckhoffs are connected to NDX machines via private networks, in much the same way as the Galils. By convention Beckhoffs live in the `192.168.1.22X` range. 
+
 ## IOC(s)
 
 There are currently two IOCs that we have to communicate with Beckhoffs.
