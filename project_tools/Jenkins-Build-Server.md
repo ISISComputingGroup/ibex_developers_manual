@@ -2,7 +2,7 @@
 
 There is a Jenkins Build Server located at [http://epics-jenkins.isis.rl.ac.uk/](http://epics-jenkins.isis.rl.ac.uk/).
 
-For information on configuring Jeknins see [Adding a new Windows machine to Jenkins](Adding-a-new-Windows-machine-to-Jenkins).
+For information on configuring Jenkins see [Adding a new Windows machine to Jenkins](Adding-a-new-Windows-machine-to-Jenkins).
 
 ## What is built
 
