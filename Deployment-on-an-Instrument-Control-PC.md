@@ -37,12 +37,7 @@ Steps are marked with **bold** prefixes to indicate the following:
     - Be warned the upgrade runs in 3 steps and so will claim to have finished the upgrade 3 times
     - Do not remove any SECI icons from the task list if this is not the first time install
     - Ignore the section about copying ibex_system_boot.bat to ProgramData and so the step below instead
-    - Answer `y` to everything apart from start GUI.
-    - Python issues mean we should exit the script before install IBEX server and move the Apps/Python directory to Data/old and restart
-    - The upgrade config part of the script will not run you should do this after the install
-    - After install:
-    1. Run the E4 client and pin the icon
-    1. Run the upgrade config script in admin mode
+    - might need to do python -m pip install kafka-python
 
 ## Creating IBEX auto-startup 
 - Go to the user `Startup` folder (which is C:\Users\spudulike\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup).
