@@ -37,7 +37,7 @@ Steps are marked with **bold** prefixes to indicate the following:
     - Be warned the upgrade runs in 3 steps and so will claim to have finished the upgrade 3 times
     - Do not remove any SECI icons from the task list if this is not the first time install
     - Ignore the section about copying ibex_system_boot.bat to ProgramData and so the step below instead
-    - might need to do python -m pip install kafka-python
+    - might need to do `python -m pip install kafka-python`
 
 ## Creating IBEX auto-startup 
 - Go to the user `Startup` folder (which is C:\Users\spudulike\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup).
