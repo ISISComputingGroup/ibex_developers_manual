@@ -29,6 +29,8 @@ This means a Makefile is trying to build something for which an external depende
 In Notepad++ Menu -> Language -> Define Your Language
 Then import the file `...EPICS\editors\Notepad++\userDefineLang.xml`
 
+Alternatively, download VSCode and install the epics extension.
+
 # Python conventions
 
 See [Python Conventions](python-conventions) for more information
