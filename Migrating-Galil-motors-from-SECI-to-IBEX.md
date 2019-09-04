@@ -110,7 +110,7 @@ There is a LabVIEW VI in `C:\LABVIEW MODULES\Drivers\Galil DMC2280\Galil - EPICS
 - a) If you are confident using source safe on an instrument then update as normal.
 - b) Otherwise:
     - 1. Remote desktop to DEMO
-    - 2. Open Microsoft Visual SourceSafe from start
+    - 2. Open Microsoft Visual SourceSafe from start by right-clicking, selecting run-as, and using the [**domain** account which is detailed on the passwords page](http://www.facilities.rl.ac.uk/isis/computing/instruments/Lists/Access/AllItems.aspx).
         - If the main interface doesn't appear (looks a bit like an old file browser) make sure that the share can be opened in file explorer.
     - 3. Find in the interface the file `Galil - EPICS.llb` under `Ray Of Light LabVIEW Modules\Drivers\Galil DMC2280\`
     - 4. Right click and then select `Get Latest version`
