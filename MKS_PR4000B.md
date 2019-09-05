@@ -14,9 +14,9 @@ It has a couple of simple aSub records for converting the string representation 
 
 ## Serial settings
 
-The two MKS PR4000B units on NIMROD use different serial settings:
+The two MKS PR4000B units on NIMROD's gas panel use different serial settings.
 
-| - |Unit 1 (left) - MKSPR4KB_01 | Unit 2 (right) - MKSPR4KB_02 |
+| - | Unit 1 (left) - MKSPR4KB_01 | Unit 2 (right) - MKSPR4KB_02 |
 | --- | --- | --- |
 | Baud | 9600 | 9600 |
 | Bits | 7 | 7 |
