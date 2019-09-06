@@ -14,7 +14,7 @@ It has a couple of simple aSub records for converting the string representation 
 
 ## Serial settings
 
-The two MKS PR4000B units on NIMROD's gas panel use different serial settings.
+The two MKS PR4000B units on NIMROD's gas panel use different serial settings. Settings are as per the table/photo below
 
 | - | Unit 1 (left) - MKSPR4KB_01 | Unit 2 (right) - MKSPR4KB_02 |
 | --- | --- | --- |
@@ -22,3 +22,6 @@ The two MKS PR4000B units on NIMROD's gas panel use different serial settings.
 | Bits | 7 | 7 |
 | Parity | even | odd |
 | Stop | 2 | 2 |
+| Null modem required | No | No |
+
+![](https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/images/nimrod_gas_panel.png?raw=true)
