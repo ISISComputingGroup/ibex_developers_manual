@@ -16,6 +16,7 @@ The first piece of equipment to use this is likely to be the Triton dilution fri
 1. On the instrument control NDX computer, go to the IBEX configuration menu and set the "Remote PV prefix" for the IOC to the prefix of the remote machine (e.g. `ME:<name of equipment>:`)
 
 # Architecture:
+![architecture of the remote IOC](images\remoteIOCArchitecture.png)
 
 ### Setting configuration parameters (macros, pv sets, etc)
 
