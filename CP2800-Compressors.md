@@ -14,3 +14,15 @@ This gist is that a command looking something like `<STX> <ADR> <CMD_RSP> <DATA>
 ### SMDP Converter 
 
 CP2800 communications use a format converter `%!`, used to remove escape characters from commands sent to the device. Details of this can be found in the CP2800 manuals folder in the controls group manuals share in the file `Sycon Multi Drop Protocol II`. 
+
+### Error codes
+The machine can send the following error codes:
+
+|Code|Error                                                                                              |
+|----|---------------------------------------------------------------------------------------------------|
+| 0  | No Error                                                                                          |
+| 1  |IC2 bus failure. Cycle power if this occurs. If this persists, contact factory.                    |
+| 2  |5V power too high - occurs if power is above 5.25V. Contact factory                                |
+| 3  |5V power too high - occurs if power is below 4.75V. Contact factory                                |
+| 4  |Compressor is in lockout mode due to too many errors in a certain time. Cannot restart until a code is enterred. Contact factory                                                                                          |
+| 5  |Order of phase power is wrong. Rewire the compressor input by switching around 2 of the power wires|
