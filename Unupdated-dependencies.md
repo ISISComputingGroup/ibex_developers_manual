@@ -2,7 +2,7 @@ This page lists some dependencies which we are not updating for various reasons:
 
 # Python
 
-Note: update to python 3 is being handled seperately
+Note: update to python 3 is being handled as a separate chunk of work
 
 | Dependency | Our version | Available version | Reason |
 | --- | --- | --- | --- |
