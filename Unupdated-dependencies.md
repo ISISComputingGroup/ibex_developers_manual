@@ -6,12 +6,12 @@ Note: update to python 3 is being handled as a separate chunk of work
 
 | Dependency | Our version | Available version | Reason |
 | --- | --- | --- | --- |
-| Python 2 | 2.7.15 | 2.7.16 | Change only affects Mac OSX - no reason to update |
-| iPython | 5.8.0 | 7.8.0 | Newer version requires python 3 |
-| GitPython | 2.1.14 | 3.0.1 | Newer version requires python 3 |
-| matplotlib | 2.2.4 | 3.1.1 | Newer version requires python 3 |
-| scipy | 1.2.2 | 1.3.1 | Newer version requires python 3 |
-| numpy | 1.16.5 | 1.17.2 | Newer version requires python 3 |
+| `Python 2` | 2.7.15 | 2.7.16 | Change only affects Mac OSX - no reason to update |
+| `iPython` | 5.8.0 | 7.8.0 | Newer version requires python 3 |
+| `GitPython` | 2.1.14 | 3.0.1 | Newer version requires python 3 |
+| `matplotlib` | 2.2.4 | 3.1.1 | Newer version requires python 3 |
+| `scipy` | 1.2.2 | 1.3.1 | Newer version requires python 3 |
+| `numpy` | 1.16.5 | 1.17.2 | Newer version requires python 3 |
 
 # GUI
 
