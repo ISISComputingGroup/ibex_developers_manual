@@ -36,6 +36,9 @@ The basic idea of operation in persistent mode is as follows:
 
 The IOC implements the following state machine in SNL:
 
+- Initial state
+  * The state that the state machine starts in
+  * The machine can get stuck in this state if the field PV is not processed
 - At field
   * This is the state where the magnet is at a particular field (either persistent or not), and is not ramping to anywhere.
   * The activity of the IPS should be "hold" - this instructs the IPS to maintain it's current output at the present level.
