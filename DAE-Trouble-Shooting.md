@@ -550,3 +550,8 @@ This is a bug in the ISISICP as it does not simulate hardware period properly.
 Resolution:
 - Ensure period mode is not "hardware" (use software)
 - Kill and restart `isisicp.exe` (need to do this as the simulated isisicp can't change period modes correctly without restarting)
+
+### Control program unable to communicate with DAE3
+
+If there are lots of read timeouts, but writes work, the this could be a firewall issue. Try disabling the firewall on the DAE network (this is the network that is not the "domain" network on an instrument). There should be firewall rules to allow programs access, but something may have gone wrong
+   
