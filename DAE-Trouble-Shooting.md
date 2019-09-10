@@ -551,7 +551,7 @@ Resolution:
 - Ensure period mode is not "hardware" (use software)
 - Kill and restart `isisicp.exe` (need to do this as the simulated isisicp can't change period modes correctly without restarting)
 
-### Control program unable to communicate with DAE3
+### Control program unable to read from DAE3
 
-If there are lots of read timeouts, but writes work, the this could be a firewall issue. Try disabling the firewall on the DAE network (this is the network that is not the "domain" network on an instrument). There should be firewall rules to allow programs access, but something may have gone wrong
+If there are lots of read timeouts, but writes work, then this could be a firewall issue. Try disabling the firewall on the DAE private (192.168.*) network (this is the network that is not the "domain" network on an instrument, often it is called "public"). There should be firewall rules to allow programs access, but something may have gone wrong with them
    
