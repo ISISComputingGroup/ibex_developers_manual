@@ -102,6 +102,8 @@ Note: a few errors of the form "No such file or directory" are acceptable, this 
 
 ### 9. Start IBEX server
 
+Start the server by running `start_ibex_server.bat`
+
 As verification that the install is correct, check any of the following:
 - Log messages can be searched for from the GUI
 - Alarms appear in the alarms view
