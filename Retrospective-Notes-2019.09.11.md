@@ -26,7 +26,7 @@ However, we should improve our communication when it comes to this sort of issue
   * We do well at stopping conversations getting too long and technical
   * Sometimes there are lots of small tasks which are not worth talking too much about at standup
   * What we can do is to elaborate more on how far we are through certain tickets 
-  * We should focus specifically on the **fine grain** of what we have achieved yesterday and what we want to achieve today e.g. how far are we through a ticket, not that we are just working on it
+  * We should focus specifically on the **fine-grain** of what we have achieved yesterday and what we want to achieve today e.g. how far are we through a ticket, not that we are just working on it
   * We should talk about blockages more
 * Can we try to share blockages even if we are no longer blocked?
   * Yes it may be helpful for others so they can easily know who to come to if they get blocked by the same thing
@@ -41,4 +41,8 @@ However, we should improve our communication when it comes to this sort of issue
 # At SAG can we emphasize emergency jobs if they are large?
 
 This has already happened at the SAG meeting earlier in the day before this retrospective
+
+# After/during sprint retrospective should we note down and work out ways to implement what we have discussed?
+
+This is already being done in these notes.
 
