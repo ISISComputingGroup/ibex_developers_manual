@@ -2,6 +2,7 @@
 
 ## When Java needs to be updated on the instrument:
 
+(Please note if you are following this link from here https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/First-time-installing-and-building-(Windows) then you do not need to worry about this section. )
 1. Before you start, ensure you understand [Java's licensing](Understanding-Java-Licensing).
 1. Determine which new version of Java should be installed.
 1. If oracle java is on the system uninstall it
