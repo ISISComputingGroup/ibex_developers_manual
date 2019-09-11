@@ -41,7 +41,7 @@ If you are on a new version of visual studio (2019?) then you will need to upgra
 
 The visual studio compiler environment variables are set up from `...\EPICS\base\master\startup\win32.bat` this calls into the visual studio variable set up. Add your version to this.
 
-## Converting Tabs to Spaces
+# Converting Tabs to Spaces
 
 To convert tabs to spaces inside of Visual Studio go to
 
