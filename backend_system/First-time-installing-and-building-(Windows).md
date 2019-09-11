@@ -30,7 +30,7 @@ You may wish to install some optional java components [as detailed here](https:/
 Install [Maven](https://maven.apache.org/download.cgi) and follow the 'Windows tips' in [these instructions ](https://maven.apache.org/install.html) to set environment variables for the SDK with JAVA_HOME and maven in PATH
 It is recommended to install Maven into `C:\Tools\`
 
-The Windows Tips from the above link say you should add maven to the PATH in the user variables. If it does not recognise mvn -v afterwards, then try to add it to the list of variables in PATH in System variables.
+The Windows Tips from the above link says you should add maven to the PATH in the user variables. If it does not recognise mvn -v afterwards, then try to add it to the list of variables in PATH in System variables.
 
 # Install Git 
 Install Git [Getting-started-with-Git-and-GitHub](Getting-started-with-Git-and-GitHub)
