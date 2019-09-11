@@ -16,6 +16,6 @@
 ## Additional optional steps for developer installations (not required on instruments):
 
 1. To build CS-Studio from source, you will need JavaFX binaries. These can be patched onto the AdoptOpenJDK installation. Download the latest binaries from https://github.com/SkyLandTW/OpenJFX-binary-windows/releases and follow the instructions on that page to patch your JDK. Please check that the license is still appropriate before you install.
-1. You may wish to install the java Visual VM. This used to be bundled with oracle java, but is no longer present in OpenJDK. You can download a GPL-licensed version of the visual VM from https://visualvm.github.io/
+1. If you will be debugging lots of java applications you may wish to install the java Visual VM. This used to be bundled with oracle java, but is no longer present in OpenJDK. You can download a GPL-licensed version of the visual VM from https://visualvm.github.io/
 
 The binaries listed above are also copied in `\\isis\inst$\Kits$\CompGroup\ICP\Java_utils`.
