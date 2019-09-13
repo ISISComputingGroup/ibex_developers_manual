@@ -1,3 +1,5 @@
+> [Wiki](Home) > [Trouble-shooting](trouble-shooting-pages) > [SECI](SECI-Troubleshooting)
+
 Items we wish to capture for troubleshooting SECI.
 
 ### Motor stops before Limit for no Reason (has had IBEX on)
