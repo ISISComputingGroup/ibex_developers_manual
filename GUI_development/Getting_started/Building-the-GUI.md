@@ -49,6 +49,7 @@ IBEX should now build but there will probably be some errors. You can clear them
 
 e.g. `uk.ac.stfc.isis.ibex.targetplatform [ibex_gui_e4 master]`
 
+Not for new starters: this should already have been done by eclipse so unless you do not see `[ibex_gui_e4 master]` next to the name of a plugin/package you do not need to do any of the following.
 1. Select all plugins (ctrl-a)
 1. Right-click on any one plugin and select `Team -> Share Project`
 1. Click `Finish`
@@ -56,7 +57,7 @@ e.g. `uk.ac.stfc.isis.ibex.targetplatform [ibex_gui_e4 master]`
 
 ## Building via Maven ##
 
-1. From the command line, navigate to the `build` directory in the IBEX code (one directory under the root).
+1. From the command line, navigate to the `build` directory in the IBEX code (one directory under the root, which should be ibex_gui).
 1. Run the build.bat file
 1. Wait for a few minutes while it builds
 1. After the build finishes it can be found in `\base\uk.ac.stfc.isis.ibex.e4.client.product\target\products\ibex.product\`
