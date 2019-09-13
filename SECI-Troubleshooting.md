@@ -1,4 +1,4 @@
-> [Wiki](Home) > [Trouble-shooting](trouble-shooting-pages) > [SECI](SECI-Troubleshooting)
+> [Wiki](Home) > [Trouble-shooting](trouble-shooting-pages) > [SECI Troubleshooting](SECI-Troubleshooting)
 
 Items we wish to capture for troubleshooting SECI.
 
