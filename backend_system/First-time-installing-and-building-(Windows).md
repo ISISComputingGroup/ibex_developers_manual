@@ -87,6 +87,16 @@ git config --global user.email "spudulike@ndxxxx.isis.cclrc.ac.uk"
 git config --global push.recurseSubmodules check
 ```
 
+Note that if this is not a new instrument, or that if the instrument already has a branch in the configs git, the following should be undertaken, as the branch should already exist:
+```
+cd C:\Instrument\Settings\config
+git clone http://control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/inst.git NDXXXX
+cd NDXXXX
+git checkout NDXXXX
+```
+
+If this is a new instrument or if it does not have a branch in the configs git, do the following instead:
+
 * Via a git client clone the repository from 'http://spudulike@control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/inst.git' to a directory with your machine name, like so:
 ```
 git clone http://spudulike@control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/inst.git NDXXXX
@@ -118,14 +128,6 @@ git fetch
 git checkout NDXALF
 ```
 Note: The developer branch has been created to store useful configurations that may be shared amongst all developers.
-
-Note that if this is not a new instrument, or that if the instrument already has a branch in the configs git that rather than the steps above, the following should be undertaken, as the branch should already exist:
-```
-cd C:\Instrument\Settings\config
-git clone http://control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/inst.git NDXXXX
-cd NDXXXX
-git checkout NDXXXX
-```
 
 # Setting up a calibrations directory
 
