@@ -26,4 +26,7 @@ The experiment database populator is a Python 3 program that is designed to run 
 
 ## Deployment
 
-The populator is installed on the linux server control-svcs. This can be accessed using the credentials in the usual place. The program is installed under `/home/epics/RB_num_populator` and is being run as a `cron` job every hour. Logs for the program are written into `/home/epics/RB_number_populator/logs`.
+The populator is installed on the linux server control-svcs. This can be accessed using the credentials in the usual place. The program is installed under `/home/epics/RB_num_populator` and is being run as a `cron` job every hour. Logs for the program are written into `/home/epics/RB_number_populator/logs`. Output from the cron job, which will show if the program is not working, is written to `/tmp/rb_num_pop.out`. So see cron job details you need to su to epics and type `crontab -l` but they are likely
+```
+20 * * * * sh /home/epics/RB_num_populator/rb_number_populator.sh > /tmp/rb_num_pop.out 2>&1
+```
