@@ -54,3 +54,14 @@ If the tables data file were created in the wrong place they can be moved using 
 1. Set the user running the service: LogOn tab -> This account to `NETWORK SERVICE` no password (this removes the notes and when you click start adds them back in)
 1. Start the service
 
+# Database fails to start I need to Recreate it
+
+The commands for recreating the database are in the ibex [install script in the task `_install_latest_mysql8`](https://github.com/ISISComputingGroup/ibex_utils/blob/master/installation_and_upgrade/ibex_install_utils/install_tasks.py) this is the source. The rough steps are:
+
+1. Stop mysqld processes
+1. Move the database `../instrument/var/mysql` to `old`
+1. Recreate the database files: `mysqld.exe --datadir="c:/instrument/var/mysql/data" --initialize-insecure --console --log-error-verbosity=3`
+1. Start the mysql service.
+1. Set the database password with: `mysql.exe -u root -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '<password>';FLUSH privileges;"`
+1. Run the schema setup in an epics terminal: `instrument\EPICS\systemsetup\config_mysql.bat`
+1. Restart the epics server
