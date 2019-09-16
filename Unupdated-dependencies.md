@@ -17,7 +17,7 @@ Note: update to python 3 is being handled as a separate chunk of work
 
 | Dependency | Our version | Available version | Reason |
 | --- | --- | --- | --- |
-| CS-Studio | [Specific commit](https://github.com/ISISComputingGroup/isis_css_top) | [master (4.6 testing)](https://github.com/ControlSystemStudio/cs-studio/) | Although CS-Studio itself builds correctly under Java 11, diirt does not, which makes it impossible to build a consistent set of update sites for use by the GUI. Note that although the GUI builds using Java 11, **the CS-Studio update site is built using Java 8**. |
+| CS-Studio | [Specific git commits halfway between 4.5 and 4.6](https://github.com/ISISComputingGroup/isis_css_top) | [master (4.6 testing)](https://github.com/ControlSystemStudio/cs-studio/) | Although CS-Studio itself builds correctly under Java 11, diirt does not, which makes it impossible to build a consistent set of update sites for use by the GUI. Note that although the GUI builds using Java 11, **the CS-Studio update site is built using Java 8**. |
 | Java (JDK) | 11.0.4 | 12 | JDK 12 is not an LTS version and will quickly become unsupported. At the time of writing (Sept 2019), 11.0.4 is the latest LTS version. |
 
 # System
