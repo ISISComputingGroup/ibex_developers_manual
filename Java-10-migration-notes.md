@@ -8,7 +8,7 @@ In Java versions >9, there is a new module system. Certain packages are now not 
 
 These frequently come up on sites like stackoverflow and the eclipse forums as a solution to "class not found" problems. It's a trap, and we shouldn't use these flags, as they will no longer be valid in a later java version. Instead, the correct solution is to explicitly add dependencies (via `targetplatform`, `feature.xml` and `MANIFEST.MF`) ourselves and **not** rely on the modules that come in the JDK.
 
-### javax.xml.bind (and classloader conflicts)
+### `javax.xml.bind` (and classloader conflicts)
 
 This is one of the modules which is unavailable by default. However, after adding it as an explicit dependency, you may see classloader conflicts. These will be characterised by a message like:
 
@@ -18,11 +18,11 @@ Cannot cast class jrt:/javax.xml.bind to bundleclass:/javax.xml.bind
 
 What this message means is that you are correctly depending on javax.xml.bind in one place (where is says 'bundleclass:/', this is an explicit dependency) but not in another. Where it loads a class from core java you will see `jrt:/<classname>`. You need to go to the class that claims it was loaded from core java, and ensure it has a correct explicit dependency. It is also worth ensuring `javax.xml` and `javax.xml.bind` dependencies are as high up as possible in the `MANIFEST.MF` dependency list.
 
-### javax.activation
+### `javax.activation`
 
 This is another class which is no longer available by default - the solution is the same as above, list it as an explicit dependency. I have not seen classloader conflicts with this class, but that's not to say they couldn't possibly occur.
 
-### org.apache.batik
+### `org.apache.batik`
 
 This is not part of the new module system, but newer versions of eclipse that are required to run java 10 bundle a dependency on org.apache.batik at version `1.10`. CS-Studio has a dependency on version `1.7`, and by default the build will choose the bigger version number, which causes IBEX to be unable to launch as it can't find the version CS-Studio wants at runtime. The solution is to pin the version of these plugins in the `feature.xml` to 1.7. This problem may go away if we update CS-Studio versions.
 
