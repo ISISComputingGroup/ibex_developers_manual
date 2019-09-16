@@ -17,6 +17,7 @@ Note: update to python 3 is being handled as a separate chunk of work
 
 | Dependency | Our version | Available version | Reason |
 | --- | --- | --- | --- |
+| CS-Studio | [Specific commit](https://github.com/ISISComputingGroup/isis_css_top) | [master (4.6 testing)](https://github.com/ControlSystemStudio/cs-studio/) | Although CS-Studio itself builds correctly under Java 11, diirt does not, which makes it impossible to build a consistent set of update sites for use by the GUI. |
 
 # System
 
