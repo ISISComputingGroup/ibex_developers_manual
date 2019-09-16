@@ -24,6 +24,7 @@ Note: update to python 3 is being handled as a separate chunk of work
 
 | Dependency | Our version | Available version | Reason |
 | --- | --- | --- | --- |
+| Java | 8 | 11 (LTS) or 12 | The "System" java is used to run CS-Studio components such as the archive engine and alarm server. These components will not run on Java 11 until we can build all of CSS on java 11 - see GUI section above.
 
 # EPICS
 
