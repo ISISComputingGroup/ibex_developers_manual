@@ -1,8 +1,8 @@
 The following are some rough notes from a trial migration of IBEX to java 10.
 
-# Java 9 module system
+### Java 9 module system
 
-In Java versions >9, there is a new module system. Certain packages are now not visible by default. This can cause errors in various areas of the GUI.
+In Java versions >9, there is a new module system. Certain packages are now not visible by default. This can cause errors in various areas of the GUI. Generally the solution is to supply an explicit dependency (via the target platform and appropriate `MANIFEST.MF` files) for the appropriate API.
 
 ### The `--add-modules` and `--add-opens` flags
 
@@ -30,7 +30,11 @@ This is not part of the new module system, but newer versions of eclipse that ar
 
 This is a package for XML DOM manipulation. Unfortunately it can be loaded from both the java standard library and an explicit dependency - for things to work properly we want the JDK version to be loaded in preference to the external one. To resolve this, ensure that the JDK is above "maven dependencies" in any dependency lists (in particular, on the project build path).
 
-# ECJ configuration
+### `org.omg.CORBA`
+
+This package is an indirect dependency of CS-Studio (although it has been removed from their very latest version). This package is **not** available from the JDK, even with command-line JDK options. However, JARs implementing this API are available from the JACORB project. This project does not offer a P2 site so we have built our own. The build configuration is [here](https://github.com/ISISComputingGroup/jacorb) and it gets deployed to [here](http://shadow.nd.rl.ac.uk/ICP_P2/jacorb/).
+
+### ECJ
 
 There was a bug in older versions of the `tycho-compiler-plugin` which prevented dependencies from overriding modules even if those modules were not visible. This bug has since been fixed. To tell the build to use a newer version of the compiler, add the following to the `pom.xml` in `client.tycho.parent` (you may need to bump version numbers - check maven central for the latest versions):
 
@@ -62,10 +66,14 @@ There was a bug in older versions of the `tycho-compiler-plugin` which prevented
 </plugin>
 ```
 
-# Eclipse
+### Eclipse
 
-Both the Tycho eclipse version and the eclipse version in the target platform should be as recent as possible. Anything under eclipse 4.8 is unlikely to work.
+Both the Tycho eclipse version and the eclipse version in the target platform should be as recent as possible. Anything under eclipse 4.8 is unlikely to work. For java 11, anything older than eclipse 2019-06 is unlikely to work.
 
-# Maven
+### Maven
 
-To get better (more verbose) error output out of maven, edit `build.bat` and add the switches `-e -X` in the call to maven. 
+To get better (more verbose) error output out of maven, edit `build.bat` and add the switches `-e -X` in the call to maven. You may find it beneficial to redirect this to file, as your console buffer is unlikely to be big enough to hold all of the build output with these flags.
+
+### Tycho
+
+There are a variety of tycho bugs that prevent compilations from succeeding on java 11, most of these have been resolved in Tycho 1.4.0, which is the version we should be using.
