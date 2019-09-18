@@ -74,6 +74,27 @@ Both the Tycho eclipse version and the eclipse version in the target platform sh
 
 To get better (more verbose) error output out of maven, edit `build.bat` and add the switches `-e -X` in the call to maven. You may find it beneficial to redirect this to file, as your console buffer is unlikely to be big enough to hold all of the build output with these flags.
 
-### Tycho
+### Parent POM: Tycho versions
 
 There are a variety of tycho bugs that prevent compilations from succeeding on java 11, most of these have been resolved in Tycho 1.4.0, which is the version we should be using.
+
+### Parent POM: eclipse versions
+
+As well as the Tycho bugs described above, various parts of the eclipse build process will not work unless the parent POM (i.e. `uk.ac.stfc.isis.client.tycho.parent\pom.xml` and `uk.ac.stfc.isis.scriptgenerator.tycho.parent\pom.xml`) must have eclipse versions >= 4.10 defined, for example:
+
+```
+<photon-repo.url>http://download.eclipse.org/releases/photon</photon-repo.url>
+<photon-updates-repo.url>http://download.eclipse.org/eclipse/updates/4.10</photon-updates-repo.url>
+```
+
+Lower versions, for example 4.8, will appear to work but give hard-to-debug dependency conflicts in the maven build. These conflicts will change depending on exactly how the build is set up. This seems to be because earlier eclipse versions break out of resolving a dependency cycle too early, which can lead to some dependencies looking like they can't be resolved even though they are in all of the appropriate POMs/Manifests. An example error is given below:
+
+```
+[ERROR] Cannot resolve project dependencies:
+[ERROR]   Software being installed: scriptgenerator.product 1.0.0.qualifier
+[ERROR]   Only one of the following can be installed at once: [org.eclipse.equinox.launcher 1.5.200.v20180922-1751, org.eclipse.equinox.launcher 1.5.0.v20180512-1130]
+[ERROR]   Cannot satisfy dependency: org.eclipse.equinox.executable.feature.group 3.8.0.v20180518-2029 depends on: org.eclipse.equinox.p2.iu; org.eclipse.equinox.launcher [1.5.0.v20180512-1130,1.5.0.v20180512-1130]
+[ERROR]   Cannot satisfy dependency: scriptgenerator.product 1.0.0.qualifier depends on: org.eclipse.equinox.p2.iu; org.eclipse.equinox.executable.feature.group 0.0.0
+[ERROR]   Cannot satisfy dependency: scriptgenerator.product 1.0.0.qualifier depends on: org.eclipse.equinox.p2.iu; uk.ac.stfc.isis.scriptgenerator.feature.base.feature.group [1.0.0,1.0.1)
+[ERROR]   Cannot satisfy dependency: uk.ac.stfc.isis.scriptgenerator.feature.base.feature.group 1.0.0.SNAPSHOT depends on: org.eclipse.equinox.p2.iu; org.eclipse.equinox.launcher [1.5.200.v20180922-1751,1.5.200.v20180922-1751]
+```
