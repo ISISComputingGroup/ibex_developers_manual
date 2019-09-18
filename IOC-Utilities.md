@@ -6,7 +6,21 @@ The utilities comprise of useful IOC db templates and IOC shell utilities.
 
 Below are available utility templates for [substitution](Template-Substitutions). In order to allow Make to build these, you need to add the following to your `Device/master/configure/RELEASE` file: `UTILITIES=$(SUPPORT)/utilities/master`.
 
-### Unit Setter
+### Field setter
+This copies the specified field from a PV and sets it on a different PV. E.g.
+
+    file $(UTILITIES)/db/field_setter.template { 
+      pattern 
+        {P,    FROM, TO, FIELD}
+    
+        {"\$(P)", "UNITS", "READING", "EGU"}
+        {"\$(P)", "UNITS", "SP", "EGU"}
+	
+    }
+
+This copies `$(P)UNITS.EGU` to `$(P)READING.EGU` and `$(P)SP.EGU`. This template copies the value of a field from one PV to the same field on another. In the example given, this is the `EGU` field.
+
+### Unit setter
 
 This copies units from a PV and sets them on a different PV. E.g.
 
