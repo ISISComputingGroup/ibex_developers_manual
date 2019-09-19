@@ -11,6 +11,8 @@ This gist is that a command looking something like `<STX> <ADR> <CMD_RSP> <DATA>
 - `CKSUM1,2` are checksum characters for the message.
 - `CR` is a carriage return.
 
+The reference manual for the communications is the 'data dictionary' on the CP2800 manuals share.
+
 ### SMDP Converter 
 
 CP2800 communications use a format converter `%!`, used to remove escape characters from commands sent to the device. Details of this can be found in the CP2800 manuals folder in the controls group manuals share in the file `Sycon Multi Drop Protocol II`. 
