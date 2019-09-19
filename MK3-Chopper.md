@@ -8,7 +8,7 @@ The IOC connects from the driver to the Mk3BridgeLib.dll (in support) using a c 
 
 # User Control
 
-The user can only start/stop/park and unpark the mk3chopper using the panel on the chopper itself. It also has to be put into remote mode before any commands can be sent to it.
+The user can only start/stop/park and unpark the mk3chopper using the panel on the chopper itself. It also has to be put into remote mode before any commands can be sent to it. [This is limited by the hardware control but may be expanded by the chopper group at some point. Email has been sent to them Sep 2019](https://github.com/ISISComputingGroup/IBEX/issues/4389)
 
 # Notes
 
