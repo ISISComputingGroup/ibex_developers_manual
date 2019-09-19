@@ -97,6 +97,8 @@ Topic | Presenter | Date
 
 Idea | Proposed Speaker
 ---- | ----------------
+Java 11 | ?
+
 
 
 ## Cake Rota
