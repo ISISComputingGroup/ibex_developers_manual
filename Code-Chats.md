@@ -98,7 +98,7 @@ Topic | Presenter | Date
 Idea | Proposed Speaker
 ---- | ----------------
 Java 11 | ?
-
+EPICS 7 | Freddie
 
 
 ## Cake Rota
