@@ -555,3 +555,11 @@ Resolution:
 
 If there are lots of read timeouts, but writes work, then this could be a firewall issue. Try disabling the firewall on the DAE private (192.168.*) network (this is the network that is not the "domain" network on an instrument, often it is called "public"). There should be firewall rules to allow programs access, but something may have gone wrong with them
    
+### Beam current in Dashboard oscillating
+
+The beam current in the dashboard is not read from the accelerator, but is calculated from the DAE which records the total amount of proton charge received so far. The software reads the DAE charge value, then reads again after a certain amount of time, and then the difference between these plus the time gap allow an effective beam current to be calculated. By effective I mean it will include running at a slow chopper speed as well as vetos, so with a 25Hz chopper on TS1 you will expect to see roughly half the TS1 accelerator delivered value.
+
+If the DAE beam current is oscillating but the accelerator is constant, then this can be due to issues with the time or charge component of the calculation. If it is oscillating rapidly, it may be due to some reads taking longer and meaning the "time" value used in the calculation does not correspond to the charges used. Look for DAE read timeouts, or sometimes if a lot of spectra are being displayed in the GUI this can slow down DAE proton reads.
+
+If the DAE beam current is incorrect for a period of time rather than rapid oscillations, this is more likely to be due to either vetos or the DAE syncing to the wrong accelerator pulse. HRPD run at 10Hz and were seeing a DAE beam current going to zero for a period of time and then returning to normal. TS1 runs at 50Hz, but 1 pulse in 5 (10Hz) does to TS2 and if you sync your 10Hz chopper to the missing pulse you will not see any data. It looked like on HRPD this syncing was shifting and occasionally latching onto the empty pulse for a period of time.
+        
