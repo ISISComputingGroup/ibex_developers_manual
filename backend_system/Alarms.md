@@ -36,7 +36,7 @@ There is also a script (procserv_start.bat) to start that alarm server wrapped i
 
 # Alarm database #
 
-The alarm server directory, EPICS/ISIS/AlarmServer, contains a sub-directory, dbd, which contains SQL files that can be used to create the appropriate tables (for MySQL, Oracle, and Postgres) in a SQL database for use by the alarm system. Note these files are also contained in the CSS source code, in the plugin org.csstudio.alarm.beast.
+The alarm server directory, `EPICS/CSS/master/AlarmServer` contains SQL files that can be used to create the appropriate tables (for MySQL, Oracle, and Postgres) in a SQL database for use by the alarm system. Note these files are also contained in the CSS source code, in the plugin org.csstudio.alarm.beast.
 
 It is also necessary to set up the appropriate database user accounts for the server and for the clients ( see [default connection details](#default-connection-details) below).
 
