@@ -19,7 +19,7 @@ Note: update to python 3 is being handled as a separate chunk of work
 | --- | --- | --- | --- |
 | CS-Studio | [Specific git commits](https://github.com/ISISComputingGroup/isis_css_top) | [master (4.6)](https://github.com/ControlSystemStudio/cs-studio/) | Although CS-Studio itself builds correctly under Java 11, diirt does not, which makes it impossible to build a consistent set of update sites for use by the GUI. Note that although the GUI builds using Java 11, **the CS-Studio update site is built using Java 8**. |
 | Java (JDK) | 11.0.4 | 12 | JDK 12 is not an LTS version and will quickly become unsupported. At the time of writing (Sept 2019), 11.0.4 is the latest LTS version. |
-| Eclipse framework | 2019-06 (4.12) | 2019-09 (4.13) | 4.13 was released mid-way through the dependency updates; it's not clear that it would benefit us greatly at this stage, and given that it is so net may be unstable for a short time. The main changes in 4.13 relate to support for Java 13, which we are not using. |
+| Eclipse framework | 2019-06 (4.12) | 2019-09 (4.13) | 4.13 was released mid-way through the dependency updates; it's not clear that it would benefit us greatly at this stage, and given that it is so new it may be unstable for a short time. The main changes in 4.13 relate to support for Java 13, which we are not using. |
 | PyDEV | 5.9.2 | 7.3.0 | Versions 6.0 onwards have a bug which causes the python console to disappear when we press reset layout in the GUI. |
 
 # System
