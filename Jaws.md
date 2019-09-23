@@ -76,3 +76,11 @@ Note: We do not currently support horizontal only jaws.
 ## Alias Jaws
 
 In some cases the jaws logic is performed by the controller itself. Noticeably for the [Beckhoff](Beckhoff#building-and-simulating-the-code). In this case there will be normal motor axes of the form `MOT:MTR0X0X` that describe the centres and gaps. The alias jaws `db` and `cmd` will load aliases for these so they look like conventional jaws.
+
+## Archive deadbands
+
+On jaw sets which have fluctuating positions, it was seen that the databases were getting filled up with updates from the jaws. To stop this happening, the archive deadband (`ADEL`) field is copied from the underlying motor to the jaw.
+
+For the jaws positions that depend on more than one jaw blade (the centres and gaps), it was decided that the archive deadband should be taken from one of the jaws only. They follow this convention:
+ * **Vertical** (`VCENT`, `VGAP`) positions take `ADEL` from the **North** jaw motor
+ * **Horizontal** (`HCENT`, `HGAP`) positions take `ADEL` from the **East** jaw motor
