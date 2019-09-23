@@ -31,7 +31,12 @@ The console can be used to inspect output from an IOC. To use it, launch the IBE
 ```
 console -M localhost [IOCNAME]
 ```
-
+and then if you see 
+```
+[Enter `^Ec?' for help]
+[-- MOTD -- IOC console for IOCNAME]
+```
+then press Ctrl+X to start the IOC.
 The IOCs available can be listed using
 ```
 console -M localhost -x
