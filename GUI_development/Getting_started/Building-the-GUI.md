@@ -14,9 +14,9 @@ Create a directory for where you want your IBEX GUI to reside (e.g. `C:\Instrume
 
 ## Building via Eclipse ##
 
-### Eclipse IBEX Developer's Edition
+### Eclipse
 
-If you are working on the IBEX GUI please use the IBEX Eclipse editor, which is available, within ISIS, via a zip file which can be found by pasting `\\isis\inst$\Kits$\CompGroup\ICP\Developer Tools` into a file explorer, simply unzip the the latest version folder to your chosen location for Eclipse and use the provided workspace. You can choose to download Eclipse directly from http://www.eclipse.org/downloads/packages/eclipse-rcp-and-rap-developers/mars1, but you will need to alter settings to get the correct defaults for formatting.
+You must use a version of eclipse >= 2019-06, earlier versions will fail to build the client. An appropriate version is available at `\\isis\inst$\Kits$\CompGroup\ICP\Developer Tools`, simply unzip the the latest version folder to your chosen location for Eclipse and use the provided workspace. You can choose to download Eclipse directly from [the eclipse website](http://www.eclipse.org/downloads/packages/), choose the package for "RCP and RAP developers".
 
 ### Building
 
@@ -57,6 +57,8 @@ Not for new starters: this should already have been done by eclipse so unless yo
 
 ## Building via Maven ##
 
+1. Ensure your maven version is >= 3.6.0, excluding 3.6.1 as that version has a bug
+1. Double check that your maven is the correct version by running `mvn -v` in a new command window. Older versions will give you very hard to diagnose build errors
 1. From the command line, navigate to the `build` directory in the IBEX code (one directory under the root, which should be ibex_gui).
 1. Run the build.bat file
 1. Wait for a few minutes while it builds
