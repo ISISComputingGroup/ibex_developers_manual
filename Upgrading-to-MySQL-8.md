@@ -10,7 +10,7 @@ There is no need to uninstall MySQL Workbench or the MySQL installer, so don't t
 
 Go to [the MySQL download page](https://dev.mysql.com/downloads/mysql/) and download the latest stable version of mysql 8.0 as a zip file.
 
-Alternatively, version `8.0.15` is in the kits area under `<kits area on share>\CompGroup\ICP\MySQL`.
+Alternatively, there is a version in the kits area under `<kits area on share>\CompGroup\ICP\MySQL`. Pick the version with the largest major/minor/patch versions if there are multiple versions available.
 
 ### 3. Unzip the inner folder of MySQL 8 to `C:\Instrument\Apps\mysql`
 
