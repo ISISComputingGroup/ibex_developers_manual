@@ -1,9 +1,14 @@
 > [Wiki](Home) > [The GUI](The-GUI) > [Eclipse](GUI-Eclipse) > Creating the IBEX developer version of Eclipse
 
-This describes how to make a new version of the IBEX developer's version of Eclipse. If adding new plugins starting from the old version should be sufficient, but if upgrading the Eclipse version re-creating these steps may be easier.
+The recommended IBEX developer version of Eclipse can be found at `\\isis\inst$\Kits$\CompGroup\ICP\Developer Tools`.
 
-Note this version of Eclipse can be found at ``\\isis\inst$\Kits$\CompGroup\ICP\Developer Tools``.
+# Old instructions (no longer in use)
 
+We are no longer using these instructions as several plugins are no longer relevant to the project (for example, RCPTT) or do not support modern versions of java/eclipse (e.g. checkstyle).
+
+The instructions are left here in case they are useful for a future "IBEX developer eclipse" with bundled plugins.
+
+```
 ## Download and install plugins
 
 * Download the latest version of Eclipse for RCP and RAP developers from https://www.eclipse.org/downloads/, unzip somewhere appropriate and start Eclipse
@@ -65,3 +70,4 @@ Finally
 * Tidy up - check for paths tied to your own user account and either remove the offending line or delete the file
 * Zip up both the workspace and the eclipse folder, to get all plugins and settings
 
+```
