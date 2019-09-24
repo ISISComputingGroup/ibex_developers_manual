@@ -21,4 +21,4 @@ General:
 
 HRPD: 
 
-- Port: serial cable needs to be pluged into the RH 9 pin port labelled "J" not the 25 pin one labelled "H"
+- Port: serial cable needs to be plugged into the RH 9 pin port labelled "J" not the 25 pin one labelled "H"
