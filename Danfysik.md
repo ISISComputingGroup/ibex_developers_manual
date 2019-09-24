@@ -6,7 +6,7 @@ Current three models supported: 8800, 8000 and 8500. The [RIKEN](https://github.
 
 All can be in calibrated or uncalibrated mode. Calibration is done within the IOC and enabled via macro. Additionally there is a macro to switch to a local calibration repository instead of the default common one. (see [Calibration Files](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Calibration-Files) for more info)
 
-All can be unipolar or bipolar.
+All can be unipolar or bipolar (controlled by the `POLARITY` macro).
 
 ## Testing
 
