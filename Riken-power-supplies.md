@@ -10,7 +10,7 @@ There is some documentation on the physical setup at `\\...\shares\ISIS_Experime
 
 # Macros
 
-The PSUs are set up in daisy chains. Macros are prefixed with (for example) `CHAIN1_`. Each chain of PSUs is talking on a completely independent COM port. This is configured using the `CHAIN1_PORT` macro.
+The RIKEN power supplies are controlled by a number of daisy chained [Danfysik](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Danfysik) PSUs. Macros are prefixed with (for example) `CHAIN1_`. Each chain of PSUs is talking on a completely independent COM port. This is configured using the `CHAIN1_PORT` macro.
 
 For each power supply, the macros will be in the following format:
 ```
