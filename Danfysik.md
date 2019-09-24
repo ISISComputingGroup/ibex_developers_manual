@@ -2,7 +2,7 @@
 
 A way of controlling power supplies for magnets.
 
-Current three models supported: 8800, 8000 and 8500
+Current three models supported: 8800, 8000 and 8500. The [RIKEN](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Riken-power-supplies) power supplies are also controlled by Danfysiks but these are a special case.
 
 All can be in calibrated or uncalibrated mode. Calibration is done within the IOC and enabled via macro. Additionally there is a macro to switch to a local calibration repository instead of the default common one. (see [Calibration Files](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Calibration-Files) for more info)
 
