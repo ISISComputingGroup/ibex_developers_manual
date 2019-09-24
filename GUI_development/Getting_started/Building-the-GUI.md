@@ -23,16 +23,15 @@ You must use a version of eclipse >= 2019-06, earlier versions will fail to buil
 These are the steps needed to run the GUI via Eclipse:
 
 1. First, create a new workspace (example name: ibex_workspace_E4).
-2. Then `git checkout master` from where the IBEX code was cloned to (if it's a fresh clone, it should already be on this branch).
-3. Start Eclipse IDE and select the workspace and use "Browse" to create and select the new workspace folder.
-4. From the menu bar choose File->Import->General->Existing Projects into Workspace. Choose "Select root directory" and browse to where the IBEX code was cloned to, Eclipse should automatically select everything so click "Finish" to add them to the project
-5. Expand the target platform folder (labelled as ``uk.ac.stfc.isis.ibex.targetplatform``), double click on the target file and choose "Set as Target Platform". This may take some time as parts of CS-Studio and DAWN are downloaded. It may also be required to update the Locations in use should some packages appear to be missing. 
-6. You will most likely have a pop up to notify you of errors and warnings. Some errors are related to Checkstyle. To fix these you must first navigate to Window->Preferences->Checkstyle. If you see a check configuration called IBEX checks already existing, you can skip to step 7. Click New and change the type to External Configuration. You then need to select the checkstyle template located as ``<install_directory>ibex_gui\base\uk.ac.stfc.isis.ibex.client.tycho.parent\checkstyle.xml``. Set the name to the one as written in the .checkstyle file in the same directory as the checkstyle.xml, at time of writing this is `IBEX Checks'. Click Ok and then set the new style as the default. The remaining errors can be safely ignored by going to: Window->Preferences->Maven->Error/warnings and setting "plugin execution... " to Ignore.
-7. Then select Project->Clean from the menu bar.
-8. To run the application from within Eclipse: open "ibex.product" from the ``uk.ac.stfc.isis.ibex.e4.client.product`` folder, select "Launch an Eclipse application".
-9. Next, From the menu bar choose Run->Run configurations and select "ibex.product" from the left hand list under "Eclipse Application".
-10. In the "Main" tab tick the "Clear" tick box and in the "Configuration" tab tick the "Clear the configuration area before launching" tick box. Click "Apply" and select "Run".
-11. When a dialogue box asking if you want to clear the run-time workspace data click "Yes". This dialogue box will appear every time you run the E4 build of IBEX from within Eclipse.
+1. Then `git checkout master` from where the IBEX code was cloned to (if it's a fresh clone, it should already be on this branch).
+1. Start Eclipse IDE and select the workspace and use "Browse" to create and select the new workspace folder.
+1. From the menu bar choose File->Import->General->Existing Projects into Workspace. Choose "Select root directory" and browse to where the IBEX code was cloned to, Eclipse should automatically select everything so click "Finish" to add them to the project
+1. Expand the target platform folder (labelled as ``uk.ac.stfc.isis.ibex.targetplatform``), double click on the target file and choose "Set as Target Platform". This may take some time as parts of CS-Studio and DAWN are downloaded. It may also be required to update the Locations in use should some packages appear to be missing. 
+1. Then select Project->Clean from the menu bar.
+1. To run the application from within Eclipse: open "ibex.product" from the ``uk.ac.stfc.isis.ibex.e4.client.product`` folder, select "Launch an Eclipse application".
+1. Next, From the menu bar choose Run->Run configurations and select "ibex.product" from the left hand list under "Eclipse Application".
+1. In the "Main" tab tick the "Clear" tick box and in the "Configuration" tab tick the "Clear the configuration area before launching" tick box. Click "Apply" and select "Run".
+1. When a dialogue box asking if you want to clear the run-time workspace data click "Yes". This dialogue box will appear every time you run the E4 build of IBEX from within Eclipse.
 
 IBEX should now build but there will probably be some errors. You can clear them following the procedure below.
 
