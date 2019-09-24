@@ -11,6 +11,14 @@ Eurotherms can be calibrated by selecting a calibration file in the OPI (`None.t
 
 # Connections
 
-There are many different models of eurotherm with mutliple connections. This is a guide only:
+There are many different models of eurotherm so they may have different connections. 
 
-HRPD: serial cable needs to be pluged into the RH 9 pin port labelled "J" not the 25 pin one labelled "H"
+General:
+
+- Connection: Serial 9 Pin
+- Null terminator?: Unknown
+- Gender?: Unknown
+
+HRPD: 
+
+- Port: serial cable needs to be pluged into the RH 9 pin port labelled "J" not the 25 pin one labelled "H"
