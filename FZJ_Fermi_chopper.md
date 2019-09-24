@@ -82,6 +82,10 @@ The phase delay of the chopper is a delay between the synchrotron pulse and the 
 
 Occasionally the chopper will get into a state where it can't phase correctly. The symptom is that the phase readback fluctuates wildly and never settles on the phase setpoint. We are unsure of the root cause. Sending the chopper to a different speed setpoint and then back to the original setpoint seems to let the chopper phase correctly.
 
+When plotting the phase using the instrument archive, you may see a "beating" pattern like below. Here the amplitude of the oscillation is ~30us, a typical phase window would be ~10us so this will result in the DAE vetoing a percentage of frames based on the chopper being "out of phase" at that time.
+
+![](https://user-images.githubusercontent.com/24375813/65411237-4156cb80-dde4-11e9-90e7-a4da69d88e9d.png)
+
 # Drive turns off unexpectedly
 
 There are a variety of hardware & software conditions that can cause the chopper to spin down.
@@ -125,6 +129,10 @@ There is logic in the IOC to prevent sending commands which would put the choppe
 ### Veto cable not properly plugged in
 
 Ask DAE experts to unplug and re-plug in the veto cable.
+
+### Chopper phase fluctuating causing intermittent veto
+
+If you are getting a fluctuating fermi chopper veto, e.g. it is vetoing 50% of frames, it may be because the phase is fluctuating in and out of range. [See section above about delay fluctuating](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/FZJ_Fermi_chopper#wont-phase-correctly--delay-is-fluctuating) for possible resolutions.
 
 # Chopper run control settings incorrect
 
