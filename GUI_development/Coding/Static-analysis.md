@@ -4,8 +4,6 @@ We are currently making use of 3 static analysis tools to help ensure the qualit
 
 All of these tools have maven plugins which allow the analyses to be run as part of the maven build process, with the results being output to an XML file. Additionally, they all have Jenkins plugins which can consume the XML results files, producing reports and graphs within Jenkins and allowing you to track code quality trends over time. The Jenkins reports list all the specific violations which can be categorised in a number of ways and are listed with file name and line number as well as a detailed description of the problem.
 
-**These tools also have plugins for Eclipse, which allow you to view their results of their analyses within the Eclipse IDE**. To install them, open the Eclipse marketplace (Help > Eclipse Marketplace) and search for the plugins (they should be the first result in each case).
-
 # Checkstyle
 
 Checkstyle is designed to enforce a set of highly configurable coding standards. It supports a very large number of rules including ones relating to naming conventions, annotations, javadoc comments, poor coding practices, etc. That rules that Checkstyle will check for violations of may be configured in an XML file. 
