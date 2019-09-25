@@ -10,6 +10,8 @@ However, we can try and get as close as possible at the development stage. We al
 
 Our emulators are written within the Lewis framework developed at ESS. The purpose of this page is not to replicate the full Lewis documentation, which can be found [here](http://lewis.readthedocs.io/en/latest/), but to give quick pointers to common actions and describe how it all fits within IBEX.
 
+Due to some staff turnover Lewis is now maintained by ISIS and ESS collaboratively. Dom has access to pushing release versions of Lewis to pypi. 
+
 ## Get the framework
 
 Lewis is included as an installed module in genie_python.
