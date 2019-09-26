@@ -18,6 +18,10 @@ and give your "isissupport" password when prompted
 
 Depending on what you need to do, you may need to modify system init scripts to start services at boot time.  
 
+# Whole VM is down
+
+The best bet at diagnosing/fixing this is to download VM Manager console. If you ask facilities IT they should be able to help you do this.
+
 # Webserver is down
 
 Log onto control services and check if the webserver service is running using
