@@ -1,6 +1,6 @@
 control-svcs.isis.cclrc.ac.uk
 
-To log on, see usual username/password page
+To log on use an SSH client such as Putty and see usual username/password page for credentials.
 
 The machine runs various services, including: 
 * EPICS gateways for running data between the halls
