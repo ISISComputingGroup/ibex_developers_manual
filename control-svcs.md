@@ -2,7 +2,15 @@ control-svcs.isis.cclrc.ac.uk
 
 To log on, see usual username/password page
 
-The machine runs various services, such as epics gateways. These run under the "epics" user id so 
+The machine runs various services, including: 
+* EPICS gateways for running data between the halls
+* ArchiveEngine for storing central data for beam currents etc. 
+* Git repositories for storing configs etc. (see https://control-svcs.isis.cclrc.ac.uk/git/)
+* [Experiment database populator](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Experimental-Database)
+
+None of these services are crucial for running instruments to continue taking data.
+
+These run under the "epics" user id so 
 ```
 sudo su - epics
 ```
