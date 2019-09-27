@@ -8,6 +8,11 @@ Implemented before we documented on the wiki, readme says
 >
 > https://www.bio-logic.net/softwares/oem-package/
 
+The underlying [oem package]((https://www.bio-logic.net/softwares/oem-package/)) seems to support these devices so the driver may too:
+
+- SP50/SP-150/SP-200/SP-240/SP-300,
+- VSP/VSP-300, VMP3/VMP-300,
+- MPG-2 series, HCP-803/HCP-1005
 
 The device supports multiple technique but out driver only support the following (new techniques can be implemented on request):
 
