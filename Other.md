@@ -15,3 +15,5 @@
 * [LSi Correlator](LSi-Correlator)
 
 * [Coherent OBIS Laser Remote](Coherent-OBIS-Laser-Remote)
+
+* [SP300 Potentiostat](SP300-Potentiostat)
