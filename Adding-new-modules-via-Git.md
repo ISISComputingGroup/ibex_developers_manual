@@ -24,7 +24,7 @@ There are two use cases for adding a submodule:
 
     - Select Settings tab
     - Collaborators & Teams (left)
-    - Teams and add ICP-Write group with write access to the repository
+    - Under "Teams" click "Add a team" and add ICP-Write group with write access to the repository
     - If it is a private repository add ICP-Read as read only access.
 
 ## 2 Get the repository
