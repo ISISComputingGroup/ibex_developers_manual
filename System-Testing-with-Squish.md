@@ -173,4 +173,4 @@ R6034 An application has made an attempt to load the C runtime library incorrect
 
 This issue is due to us loading the `uuid` library in Python. This library loads a conflicted C runtime library and means tests aren't able to run completely correctly.
 
-Solution is to Rename `C:\Squish\python\msvcr90.dll` to `msvcr90_off.dll`, which removes the conflicting dependency version. 
+Solution is to Rename `C:\Squish\python\msvcr90.dll` to `msvcr90_off.dll`, which removes the conflicting dependency version. See ticket [#4773](https://github.com/ISISComputingGroup/IBEX/issues/4773) for more details.
