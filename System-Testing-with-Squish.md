@@ -156,3 +156,21 @@ Frequency | Test | Error
 2         | tst_can_create_lots_of_blank_configs | `RuntimeError: Error in activateItem() invocation: Menu not visible and/or enabled Called from: C:\Jenkins\workspace\System_Tests_Squish\suite_configuration_tests\tst_can_create_lots_of_blank_configs\test.py: 20`
 2         | tst_can_add_edit_and_delete_block_to_current_config | `RuntimeError: Property read failed: exception: java.lang.reflect.InvocationTargetException () org.eclipse.swt.SWTException: Widget is disposed`  `Called from: C:\Jenkins\workspace\System_Tests_Squish\suite_configuration_tests\tst_can_add_edit_and_delete_block_to_current_config\test.py: 74`
 1         | tst_user_names_can_be_set | `LookupError: Object ':Experiment Details_Text' not found. Could not match properties:    isvisible for object name: ':Experiment Details_Text' Called from: C:\Jenkins\workspace\System_Tests_Squish\suite_experiment_details_tests\tst_user_names_can_be_set\test.py: 19 C:\Jenkins\workspace\System_Tests_Squish\global_scripts\experiment_details.py: 19`
+
+# Troubleshooting
+
+### Squish fails to run tests with an error in the C runtime library
+
+Error is:
+
+```
+Runtime Error! 
+
+Program: C:\Squish\lib\_squishrunner.exe 
+
+R6034 An application has made an attempt to load the C runtime library incorrectly. Please contact the application's support team for more information.
+```
+
+This issue is due to us loading the `uuid` library in Python. This library loads a conflicted C runtime library and means tests aren't able to run completely correctly.
+
+Solution is to Rename `C:\Squish\python\msvcr90.dll` to `msvcr90_off.dll`, which removes the conflicting dependency version. 
