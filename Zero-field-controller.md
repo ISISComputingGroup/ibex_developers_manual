@@ -93,6 +93,7 @@ The zero-field controller feedback loop uses the following inputs:
    * p – proportional value (feedback fiddle factor)
    * **I** – current on magnets
    * **I'** - new current to send
+
 Quantities in bold are vector quantities.  Quantities in italic, bold are matrix quantities.
 
 The new current to send is calculated as: <br>
