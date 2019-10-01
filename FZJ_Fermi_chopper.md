@@ -82,7 +82,7 @@ The phase delay of the chopper is a delay between the synchrotron pulse and the 
 
 Occasionally the chopper will get into a state where it can't phase correctly. The symptom is that the phase readback fluctuates wildly and never settles on the phase setpoint. We are unsure of the root cause. Sending the chopper to a different speed setpoint and then back to the original setpoint seems to let the chopper phase correctly.
 
-When plotting the phase using the instrument archive, you may see a "beating" pattern like below. Here the amplitude of the oscillation is ~30us, a typical phase window would be ~10us so this will result in the DAE vetoing a percentage of frames based on the chopper being "out of phase" at that time.
+When plotting the phase using the instrument archive, you may see a "beating" pattern like below. Here the amplitude of the oscillation is ~30us, a typical phase window would be ~10us so this will result in the DAE vetoing a percentage of frames based on the chopper being "out of phase" at that time. As of [#4764](https://github.com/ISISComputingGroup/IBEX/issues/4764) the `set_ei` method on MERLIN will attempt to correct for this.
 
 ![](https://user-images.githubusercontent.com/24375813/65411237-4156cb80-dde4-11e9-90e7-a4da69d88e9d.png)
 
