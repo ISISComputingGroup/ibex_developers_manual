@@ -41,3 +41,7 @@ add    lua   and   asyn              to the IOC Makefile   _LIBS    list
 There is an example of a lua script used in the DETADC ioc.
 
 There is a powerpoint about lua here: https://indico.cern.ch/event/766611/contributions/3438291/attachments/1856812/3050126/Lang-Lua_Integrating_Scripting_Language.pdf
+
+## Style Guide
+
+We are using the style guide from LuaRocks as documented in https://github.com/luarocks/lua-style-guide#conditional-expressions
