@@ -38,7 +38,7 @@ add    luaSupport.dbd                to the IOC Makefile DBD list
 add    lua   and   asyn              to the IOC Makefile   _LIBS    list
 ```
 
-There is an example of a lua script used in the DETADC ioc.
+There are examples of a lua script used in the DETADC, Attocube and OERCONE iocs.
 
 There is a powerpoint about lua here: https://indico.cern.ch/event/766611/contributions/3438291/attachments/1856812/3050126/Lang-Lua_Integrating_Scripting_Language.pdf
 
