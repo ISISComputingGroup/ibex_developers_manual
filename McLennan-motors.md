@@ -75,3 +75,16 @@ When starting the unit:
 ### I've booted up a McLennan and can't get it moving
 Try using the macros for an axis other than 1 (2 or 3) in the ibex GUI. The axis to be driven by the buttons on the front panel are set by a position dial inside the driver, so these might not work with the motor you need to control.
 
+### Homes are very slow
+
+*In homing modes other than 2*, the mclennan homes via SNL and uses `JVEL` as it's speed. `JVEL` defaults to `VELO/10` if not set, so try increasing the jog speed and see if this speeds up homes
+
+*In homing mode 2*, the mclennan uses an internal homing routine. This uses the "creep speed" which IBEX currently does not set (see https://github.com/ISISComputingGroup/IBEX/issues/4815 ). If you need to make homing faster, do the following:
+- Set `JVEL` to an appropriate speed for homing via IBEX configuration macros
+- Ensure it is propagated down to motor record, look in motor details OPI
+- Disconnect IOC and connect a terminal emulator (e.g. putty, hterm, hyperterm) to the device
+- Issue `<axis number>QA\r\n` (e.g. `1QA\r\n` for axis 1) to print the current settings of the motor
+- Look for Jog speed
+- Issue `<axis number>SC<jog speed>\r\n` with the jog speed you just looked up
+- Reconnect the IOC and check that homes now work appropriately. 
+
