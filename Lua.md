@@ -15,6 +15,8 @@ end
 You execute files from st.cmd using:
 
 ```
+epicsEnvSet("LUA_PATH", "${UTILITIES}/lua")
+epicsEnvSet("LUA_SCRIPT_PATH","${TOP}/iocBoot/${IOC}")
 luash("file.lua")
 ```
 
