@@ -1,6 +1,6 @@
-> [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs)
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC)
 
-The SKF MB350 chopper is a fermi chopper located on the EMMA beamline It was previously used on the LET beamline.  The chopper is mounted on a lifting mechanism detailed [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Fermi-Chopper-Lifter).
+The SKF MB350 chopper is a fermi chopper located on the EMMA beamline and was previously used on the LET beamline.  The chopper is mounted on a lifting mechanism detailed [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Fermi-Chopper-Lifter).
 
 It's possible that the controller may need to be reset (press `RESET` button on front panel) after power-on or other condition.  The display will show `INHIBIT` in this case and `READY` after resetting.  The indicator marked `READY` on the OPI will be initially unlit and then lit afterwards.
 
