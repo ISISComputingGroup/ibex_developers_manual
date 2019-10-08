@@ -1,6 +1,8 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs)
 
-The SKF MB350 chopper is a fermi chopper located on the EMMA beamline It was previously used on the LET beamline.
+The SKF MB350 chopper is a fermi chopper located on the EMMA beamline It was previously used on the LET beamline.  The chopper is mounted on a lifting mechanism detailed [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Fermi-Chopper-Lifter).
+
+It's possible that the controller may need to be reset (press `RESET` button on front panel) after power-on or other condition.  The display will show `INHIBIT` in this case and `READY` after resetting.  The indicator marked `READY` on the OPI will be initially unlit and then lit afterwards.
 
 # Physical setup
 
@@ -54,7 +56,7 @@ The driver for this chopper has a couple of peculiarities:
 
 ## Serial breaks 
 
-The device requires the changes in https://github.com/ISISComputingGroup/EPICS-asyn/pull/6 and the following lines in it's st.cmd:
+The device requires the changes in https://github.com/ISISComputingGroup/EPICS-asyn/pull/6 and the following lines in its st.cmd:
 
 ```
 $(IFNOTDEVSIM) $(IFNOTRECSIM) asynSetOption("L0", -1, "break_duration", "20")
