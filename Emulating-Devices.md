@@ -32,7 +32,7 @@ To run from the command line, use
 C:\instrument\apps\python\python.exe C:\Instrument\apps\python\scripts\lewis.exe -p "stream: {bind_address: localhost, port: 57677}" -r 127.0.0.1:10000 -a C:\Instrument\Apps\EPICS\support\DeviceEmulator\master -k lewis_emulators iris_cryo_valve
 ```
 
-where we have picked port 57677 (see Lewis's doc for defaults). Note that the lewis executable is located in `C:\Instrument\Apps\Python\Scripts`, at time of writing we don't add the directory to our standard EPICS environment PATH variables, so you may need to provide a fully qualified file path.
+where we have picked port 57677 (see Lewis's doc for defaults). Note that the lewis executable is located in `C:\Instrument\Apps\Python\Scripts`.
 
 Congratulations! Your emulator is now running. You can test it by connecting to it via a telnet client such as PuTTY (please see the troubleshooting note below) or with a simple Python script like so:
 
