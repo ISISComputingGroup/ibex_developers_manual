@@ -17,7 +17,8 @@ Git command                                   | What it does
  \-                                       | -
 `git branch -a`                               | List all branches locally and origin
 `git branch -d [branch]`                      | Delete a branch
-`git remote prune origin`                     | Remove listings of closed branches
+`git remote prune origin`                     | Remove listings of deleted remote branches. Delete remote branches will still appear when you do git branch -a unless you use this command before.
+`git remote prune origin --dry-run`           | Shows what deleted remote branches would be removed by using git remote prune origin. Only shows what would be removed, does remove anything.
  \-                                       | -
 `git add [file-name]`                         | Add a file to the staging area for committing
 `git add \*.[type]`                           | Add all files of type to the staging area for committing
