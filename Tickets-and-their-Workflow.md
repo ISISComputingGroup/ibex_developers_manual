@@ -23,7 +23,7 @@ Type   | Meaning
 **in progress (wf)** | Ticket is currently in progress
 **review (wf)** | Ticket is done and should be review by someone
 **completed (wf)** | Ticket is complete
-**impeded (wf)** | Ticket is in progress but cannot be completed because of something else. Reason for impediment should be added to the ticket. This should not be for long.
+**impeded (wf)** | Ticket is in progress but cannot be completed because of something else. The reason for impediment should be added to the ticket. This should not be for long.
 **fixed (wf)** | Ticket has been fixed (added at end of sprint only and by the person running the sprint)
 **re-request** | Instrument scientist has requested a ticket and it has been requested by another instrument scientist in the past. A comment should record who asked with a +1.
 **Needs pair review** | If a ticket is complicated or has many changes, the ticket should be reviewed by a pair of developers, not just one. Ideally one of the reviewers will already be familiar with the affected area of the code (to help with knowledge sharing). This label can be added at any time. It may be ignored for review of rework unless otherwise stated. |
@@ -43,12 +43,12 @@ Developers should pick up a ticket as close to the top of the Ready column as th
     - Create a pull request
     - If the config needs updating either:
         - Add a change to the config updating script (usually if it affects multiple config/instruments)
-        - Add a step to the upgrade script (usually when it is a simple change which effects a single instrument)
+        - Add a step to the upgrade script (usually when it is a simple change which affects a single instrument)
         - Go onto the instrument and add the change (be *very* sure it will not affect anything)
     - Add summary to the [Dev Release Notes](https://github.com/ISISComputingGroup/IBEX/wiki/ReleaseNotes_Dev) in the section `Changes in software but still on a branch`.
     - Try to get an informal review to check for glaring problems.
-    - Move the ticket to the top of the review column (unless it is high priority, in that case, move it to the bottom). 
-3. Pick a ticket to review from the bottom of the review column. Review the ticket and move it either to the review complete or add the rework label and move it back to the top of the ready column (it is a courtesy to inform the person you have done this). You must do a review when you move any ticket to the review column even if it is a rework. (A rework ticket review counts as a review).
+    - Either on the ticket under the Projects section use the drop-down menu to move the ticket to the review column or manually move the ticket to the bottom of the review column (unless it is of high priority, in that case, move it to the top). 
+3. Pick a ticket to review from the top of the review column. Review the ticket and move it either to the review complete or add the rework label and move it back to the top of the ready column (you should inform the assignee that it is back in rework so they know how to prioritise their work). You must do a review when you move any ticket to the review column even if it is a rework. (A rework ticket review counts as a review).
 4. If changes are merged into master, move the ticket to the [Master Release Notes](https://github.com/ISISComputingGroup/IBEX/wiki/ReleaseNotes_Master).
 
 Sometimes you may want to split a larger ticket into smaller tickets to do this see [Umbrella Tickets](Umbrella-Tickets).
