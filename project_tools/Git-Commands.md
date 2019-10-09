@@ -13,7 +13,7 @@ Git command                                   | What it does
 `git pull`                                    | Get the latest copy of the repo
 `git pull origin master`                      | Get the latest master from the origin
 `git checkout -- [file-name]`                 | Revert file-name to the version in the repo
-`git remote update`                           | update the information from the origin
+`git remote update`                           | Updates all of your local branches that are set to track remote ones, does not merge any commits.
  \-                                       | -
 `git branch -a`                               | List all branches locally and origin
 `git branch -d [branch]`                      | Delete a branch
