@@ -99,8 +99,8 @@ Updating EPICS
 Cleaning up local installations (allowing yourself to see the wood, or branches, for the trees)
 ------------------------------------------------------------------------------------------------
 * In Git Bash, browse to any repo that might need cleaning up (the GUI is a prime example for this)
-* Update the repo: ``git remote update``
-* Remove local listings of closed branches: ``git remote prune origin``
+* Update all local branches set to track remote branches (does not merge any changes) : ``git remote update``
+* Remove local listings of closed branches (can use --dry-run argument just to see what listings would be removed): ``git remote prune origin``
 * Check the list of branches: ``git branch -a``
 * Remove any out of date local branches: ``git branch -d [unused-local-branches]``
 
