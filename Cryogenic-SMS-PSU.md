@@ -13,6 +13,10 @@ Commands can reply with a myriad of options. Some of these are time stamped, som
 An emulator is being developed for this currently (July 2019) which will be one of the most accurate emulators that the IBEX Project will have made. This is because the Muon Group need to be sure that the new software will work and _not_ quench a superconducting cryomagnet and cost STFC upwards of £1 million to repair/replace it.  
 It is meant to be thoroughly tested against the VI in every capacity that the VI can interact with it (and more), and tested against the IOC to check for equivalent control. This means that it needs to do ramping, reply with correct status messages, mock a quench, mock a trip, mock fault states, emergency ramp, and much, much more. Fortunately you can run lewis _X_ times faster than real time, meaning that week-long ramps can be run at 100x speed so that IOC tests don't take weeks to finish. 
 
+### IOC
+
+An IOC is currently (Oct 2019) being developed for this PSU, named CRYOSMS.
+
 ### Operation
 
 It initialises and waits in a `Ready` state, depending on things like switch status, temperatures, magnet mode, settle times, etc. `Ready` means that it is ready to drive its field (up or down). It is dangerous to ramp the magnet too fast, so the IOC uses 'ramp tables' which contain field strength-ramp rate pairs. i.e. the magnet can safely ramp up to the field strength at the ramp rate associated with it. Any higher and you risk quenching.
