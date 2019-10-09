@@ -3,6 +3,8 @@
 Steps for Developing Code with existing Git Repos
 =====================================================
 
+If you are not sure what a git command does, you can take a look at https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Git-Commands
+
 Development work
 ----------------------------------------------------------------------------------
 * Navigate to the appropriate directory in Git Bash
