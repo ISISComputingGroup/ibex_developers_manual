@@ -1,6 +1,6 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [Power Supplies](Power-Supplies) > [Danfysik](Danfysik)
 
-A way of controlling power supplies for magnets.
+A type of power supply for magnets.
 
 Current three models supported: 8800, 8000 and 8500. The [RIKEN](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Riken-power-supplies) power supplies are also controlled by Danfysiks but these are a special case.
 
