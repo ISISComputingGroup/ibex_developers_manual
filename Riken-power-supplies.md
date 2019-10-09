@@ -10,7 +10,9 @@ There is some documentation on the physical setup at `\\...\shares\ISIS_Experime
 
 # Macros
 
-The RIKEN power supplies are controlled by a number of daisy chained [Danfysik](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Danfysik) PSUs. Macros are prefixed with (for example) `CHAIN1_`. Each chain of PSUs is talking on a completely independent COM port. This is configured using the `CHAIN1_PORT` macro.
+The RIKEN power supplies are controlled by a number of daisy chained [Danfysik](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Danfysik) PSUs. Daisy chained PSUs are connected to each other in a chain with one PSU at the end connecting to the MOXA. This is done because on RIKEN a large number of PSUs are needed that would require a large number of RJ-45 ports otherwise, so daisy chaining is used to connect multiple PSUs to just one port. 
+
+Macros are prefixed with (for example) `CHAIN1_`. Each chain of PSUs is talking on a completely independent COM port. This is configured using the `CHAIN1_PORT` macro.
 
 For each power supply, the macros will be in the following format:
 ```
