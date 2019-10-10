@@ -4,7 +4,11 @@ If you are setting up a development environment for the first time, it is recomm
 
 The following instructions have been migrated from Trac to GitHub and some steps may no longer be appropriate for the IBEX project.
 
+
 # Building EPICS with VS2012 Express on a 64-bit Windows #
+
+This section is an old way of installing EPICS brand new. Not relevant to ISIS anymore since EPICS comes already installed if you follow [Building the backend](Building-the-backend)
+
 1. Download and install Visual Studio Express 2012 for Windows Desktop
 1. Download and install Strawberry Perl (64 bit version) to `C:\strawberry\`
 1. Download, unzip and copy GNU Make for Windows to `C:\gnuwin32`
