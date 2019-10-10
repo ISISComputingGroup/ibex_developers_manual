@@ -6,7 +6,7 @@ Before asking for a flash review we should consider the size and urgency of the 
 
 When we flash review we are still adding code to the codebase no matter how small, thus our reviewing should be as rigorous and considered as normal reviews.
 
-This rigor does not take away from the benefit of flash reviews as our process (using the slack channel) brings it to the attention of people quickly and allows us to skip the normal movement of tickets in the project board etc. meaning it is still faster.
+This rigour does not take away from the benefit of flash reviews as our process (using the slack channel) brings it to the attention of people quickly and allows us to skip the normal movement of tickets in the project board etc. meaning it is still faster.
 
 We seem quite happy with our flash review process, but we should still be careful to not overuse it by carefully choosing when to ask for a flash review or not.
 
