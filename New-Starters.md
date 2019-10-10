@@ -27,7 +27,7 @@ There are many how-to guides in the Developer's manual. If you're searching for 
 
 First off you're going to need all the developer tools we use, a copy of the existing codebase, and the Eclipse GUI for IBEX*.
 
-- [Installing the Backend System](First time installing and building (Windows))
+- [Installing the Backend System](First-time-installing-and-building-(Windows))
 
 ### Git
 
