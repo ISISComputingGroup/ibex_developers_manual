@@ -54,8 +54,6 @@ While that's installing, get to know the IBEX components. Get to know EPICS. It'
 
 - [The Backend System](The-Backend-System)
 - [Information for User Scientists](https://github.com/ISISComputingGroup/IBEX/wiki)
-- [User Guide to IBEX](https://github.com/ISISComputingGroup/ibex_user_manual/wiki)
-
 
 
 ## EPICS Introduction
@@ -82,7 +80,6 @@ When building an IOC, emulator, or writing tests, much can be learned by looking
 - [Sequencer - State Notation in IOCs](http://www-csr.bessy.de/control/SoftDist/sequencer/Tutorial.html#pv-names-using-program-parameters) - All about implementing a state machine into an IOC, if needed.
 
 
-
 ## Control System Studio
 
 We use a number of parts of CSS in our GUI (Alarms, Databrowser etc.). Most of these resources require little developer interaction apart from creating Operator Interfaces (OPIs - GUIs, essentially) for the instrument controllers. Here's an overview and get started guide.
@@ -90,6 +87,13 @@ We use a number of parts of CSS in our GUI (Alarms, Databrowser etc.). Most of t
 - [Overview of CS-Studio](https://epics.anl.gov/docs/USPAS2014/1-Monday/CSS_1_Overview.pdf)
 - [Intro to using CS-Studio](http://www.aps.anl.gov/epics/docs/USPAS2014/1-Monday/CSS_2_First_Steps.pdf)
 - [Creating OPIs](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/OPI-Creation)
+
+## Other resources
+
+Other wiki resources that you might want to check if you need to find out some information needed for your work:
+
+- [User Guide to IBEX](https://github.com/ISISComputingGroup/ibex_user_manual/wiki)
+
 
 ## Office Admin Links
 
