@@ -61,6 +61,8 @@ Pages to skim over. Read in detail only when needed:
 - [Data Generation and Storage](Data-Generation-and-Storage)
 - [Information for User Scientists](https://github.com/ISISComputingGroup/IBEX/wiki)
 
+Every section after his line contains reference information that you do not necessarily have to read before you do your first ticket, but it is where you should take a look when you find out you need to learn new things in order to do your work.
+
 ## EPICS Introduction
 
 There is much to learn about EPICS and it can be difficult to know what you're looking for. You do not have to read these resources until you get to writing your first IOC. Here are some overviews:
