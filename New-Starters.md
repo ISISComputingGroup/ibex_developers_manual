@@ -63,7 +63,7 @@ Pages to skim over. Read in detail only when needed:
 
 ## EPICS Introduction
 
-There is much to learn about EPICS and it can be difficult to know what you're looking for. Here are some overviews:
+There is much to learn about EPICS and it can be difficult to know what you're looking for. You do not have to read these resources until you get to writing your first IOC. Here are some overviews:
 
 - Old but still good overview - [https://epics.anl.gov/docs/GSWE.php](https://epics.anl.gov/docs/GSWE.php)
 - More recent overview [http://www.aps.anl.gov/epics/docs/training.php](http://www.aps.anl.gov/epics/docs/training.php) in particular [http://www.aps.anl.gov/epics/docs/USPAS2014.php](http://www.aps.anl.gov/epics/docs/USPAS2014.php)
