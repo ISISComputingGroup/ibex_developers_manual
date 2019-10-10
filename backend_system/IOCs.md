@@ -16,6 +16,7 @@ If you're building a new StreamDevice IOC you can use the [IOC Generator script]
 If you're not creating a StreamDevice IOC or you you would like to know how an IOC could be created manually see:
 * [Creating an ISIS StreamDevice IOC](Creating-an-ISIS-StreamDevice-IOC)
 * [Creating an LvDCOM IOC](Creating-IOC-wrapper-VI)
+* [Creating a simple IOC](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/EPICS-basics#creating-a-simple-ioc)
 
 ## Fleshing out the IOC
 1. You can now flesh out your IOC to work. I would encourage you to do this in a TDD style (if not write the tests afterwards) and make sure you follow the [conventions](IOCs#conventions). To write in a TDD style use:
