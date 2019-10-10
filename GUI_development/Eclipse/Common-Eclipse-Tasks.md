@@ -7,7 +7,7 @@
 1. For location, select the base source code folder, e.g., ``C:\Instrument\Dev\Client\base\uk.ac.stfc.isis.ibex.foo``, rather than the default option (which will probably be the workspace).
 1. Click next.
 1. Make sure 'Generate an activator, a Java...' is checked.
-1. If this is to be a UI plugin, check 'This plug-in will make contributions to the UI. This will cause the Activator to extend ``AbstractUIPlugin`` rather than ``BundleActivator``. Plugins that contribute to the UI in any way such as by adding a preference page or menu item, need to be UI plugins
+1. If this is to be a UI plugin, check 'This plug-in will make contributions to the UI'. This will cause the Activator to extend ``AbstractUIPlugin`` rather than ``BundleActivator``. Plugins that contribute to the UI in any way such as by adding a preference page or menu item, need to be UI plugins
 1. Click finish.
 1. In the plugin ``uk.ac.stfc.isis.ibex.feature.base``, open ``feature.xml`` and go to the 'Plug-ins' tab. Add your new plugin to the plug-ins list.
 
