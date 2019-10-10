@@ -45,9 +45,7 @@ It's handy to create desktop shortcuts for frequently used links:
 - stop_ibex_server
 
 These are found in `C:\Instrument\Apps\EPICS`
-
-
-*it's just a goat. 
+ 
 
 
 ## Familiarising IBEX
