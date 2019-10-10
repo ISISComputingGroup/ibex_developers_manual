@@ -65,8 +65,8 @@ Pages to skim over. Read in detail only when needed:
 
 There is much to learn about EPICS and it can be difficult to know what you're looking for. Here are some overviews:
 
-- [Old but still good overview](https://epics.anl.gov/docs/GSWE.php)
-- [More recent overview http://www.aps.anl.gov/epics/docs/training.php in particular http://www.aps.anl.gov/epics/docs/USPAS2014.php]
+- Old but still good overview - [https://epics.anl.gov/docs/GSWE.php](https://epics.anl.gov/docs/GSWE.php)
+- More recent overview [http://www.aps.anl.gov/epics/docs/training.php](http://www.aps.anl.gov/epics/docs/training.php) in particular [http://www.aps.anl.gov/epics/docs/USPAS2014.php](http://www.aps.anl.gov/epics/docs/USPAS2014.php)
 - [Powerpoint EPICS overview](https://epics.anl.gov/docs/USPAS2014/1-Monday/EPICS_Intro.pdf)
 - [Training Course](https://epics.anl.gov/docs/USPAS2014.php)
 - [Database Principles (what's a record? And more)](https://epics.anl.gov/docs/USPAS2014/2-Tuesday/Database-1.pdf)
