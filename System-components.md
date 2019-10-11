@@ -20,7 +20,7 @@ Instrument Archive | ARINST | Java | Archives (in mysql db) pvs with archive pro
 [IOC Message Logger](IOC-message-logging) | IOCLOG | Java | Instrument level software that collects messages sent by any IOC, logs it in the database and put it on the JMS message queue. 
 [ISIS DAE](DAE-and-the-ICP) | ISISDAE_01 | Epics IOC | Controls the ISIS ICP program which collects data. It is an IOC-like needed because ICP can not talk over Channel Access.
 [MySQL](The-MySQL-Database) | runs as a service | Service | My SqlDatabase is used for persisting data
-[Nicos](Nicos) | NICOSDAEMON | Python | Process which runs and queues users's python scripts on an instrument
+[Nicos](Nicos) | NICOSDAEMON | Python | Process which runs and queues users' python scripts on an instrument
 Proc Serve Control | PSCTRL | Epics IOC | Control proc serves  (start, stop and status). A wrapper that makes starting and stopping IOCs much easier.
 [Reflectometry Server](Reflectometers) | REFL | pcaspy | Complex reflectometry motion
 [Run Control](Run-control) | RUNCTRL_01 | Epics IOC | Add run control to blocks. Run Control is a feature of IBEX that allows users to configure the instrument so when a PV is out of a certain range, neutron data is not being gathered. Needed because neutron data has an extremely large volume and sometimes that data would not be needed so it is better to not pollute the Nexus files with it.
