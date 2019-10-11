@@ -20,3 +20,4 @@ To restart this is sometimes tricky try the following:
 
 # Hardware quirks:
 - The thread will die if zero is sent for distance and velocity. The driver must ensure that distance and velocity are not sent at IOC start.
+- The oscillation will stop if the galil is power cycled. To restart the oscillation, the galil driver will need to be restarted to reupload the oscillation code, and then the collimator restarted as usual via it's OPI.
