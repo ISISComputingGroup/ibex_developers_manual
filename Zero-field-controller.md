@@ -19,6 +19,16 @@ On different instruments there is slightly different equipment:
     - Magnets: Superconducting, shim values set from 0 field are used as offsets in these magnets
     - Manual probe: LS201 hall probe
 
+## Existing MUON zero-field controller ##
+All five muon instruments: ARGUS, CHRONUS, EMU, HIFI and MuSR use a zero-field controller, implemented as a collection of LabVIEW VIs.
+
+There appear to be 3 variants of the MUON zero-field controller:
+   1. EMU and MuSR both use one variant of the MUON zero-field controller.  This variant can be found in the folder `C:\LabVIEW Modules\Muon Magnets\Zero Field Controller`.
+   1. ARGUS and CHRONUS both use a second variant of the MUON zero-field controller.  This variant can be found in the folder `C:\LabVIEW Modules\Instruments\ARGUS\Zero Field Controller`.  This variant is similar to the one used by EMU and MuSR.
+   1. HIFI has its own unique MUON zero-field controller. This variant is included in the Group 3 Hall probe VI at `C:\LabVIEW Modules\Instruments\HIFI\Group3 Hall probe`. The behaviour of this VI needs to be validated. Note that this includes extra coefficients to allow for the shape of the gradients between the two sets of hall probes.
+
+### Operation
+
 The zero-field controller operates in one of two required modes (dead reckoning will not be required):
    * Manual
    * Auto-Feedback
@@ -74,14 +84,6 @@ In Auto-Feedback mode, the user specifies the desired field (in `mG`) and a feed
         - The offset values should be under manager mode
     - This is performed regularly
 
-## Existing MUON zero-field controller ##
-All five muon instruments: ARGUS, CHRONUS, EMU, HIFI and MuSR use a zero-field controller, implemented as a collection of LabVIEW VIs.
-
-There appear to be 3 variants of the MUON zero-field controller:
-   1. EMU and MuSR both use one variant of the MUON zero-field controller.  This variant can be found in the folder `C:\LabVIEW Modules\Muon Magnets\Zero Field Controller`.
-   1. ARGUS and CHRONUS both use a second variant of the MUON zero-field controller.  This variant can be found in the folder `C:\LabVIEW Modules\Instruments\ARGUS\Zero Field Controller`.  This variant is similar to the one used by EMU and MuSR.
-   1. HIFI has its own unique MUON zero-field controller. This variant is included in the Group 3 Hall probe VI at `C:\LabVIEW Modules\Instruments\HIFI\Group3 Hall probe`. The behaviour of this VI needs to be validated. Note that this includes extra coefficients to allow for the shape of the gradients between the two sets of hall probes.
-
 ## Zero-Field Controller Feedback Loop ##
 The zero-field controller feedback loop uses the following inputs:
    * **M** – measured magnetic field (it has three components: longitudinal (L), transverse (T) & vertical (V))
@@ -130,7 +132,7 @@ When overloaded by a high field, the fluxgate magnetometer can read any random v
    1. Is the above expression guaranteed to converge?  What if it doesn't?  How does the current zero-field controller guard against non-convergence?
         - No, we expect to get noise but at the 1 mG level. The signal is declared stable at the 10mG level
 
-## In Operation ##
+## Requirements ##
    * There is a requirement that Zero field system control needs to be continuous, in the mathematical function sense of not having steps in, when configurations change or control is interrupted.".  How is this requirement currently achieved? (It may better to run the zero-field controller on a separate device (e.g. a Raspberry Pi).  This approach would eliminate the risk of interruption should IBEX be halted or the control PC re-booted.) What is this requirement in practice?
         - Preserving the zero on restart: the usual use-case for this is switching (either way) between a dilution fridge configuration and a cryostat configuration which happens to use the dilution insert as a centre stick. The sample remains in position and cold (1.4K to 10K) throughout and we want to avoid a spike in the applied field which might upset a sensitive magnetic or superconducting state. Being able to preserve zero field through an IBEX crash or computer reboot, and thus avoid having to repeat a time consuming sequence of field/temperature steps to prepare a sample, is also useful assuming everything else in IBEX can be got running.
    * Presumably, magnetic fields should not change too rapidly.  Which implies that the currents should not change too rapidly.  Is there maximum (or even minimum) permissible rate of change for the currents?  Is there a maximum permissible change (i.e. step size), positive or negative, in the value of the current?  How frequently should currents be updated?  
