@@ -147,34 +147,22 @@ When overloaded by a high field, the fluxgate magnetometer can read any random v
 1. In Auto mode the field is declared “stable” if the corrected field is within some value (e.g. 10mG: perhaps set as a macro) of the setpoint, otherwise “Changing”. (PV for this status)
 1. In either mode and regardless of any alarms above, it then reads back the actual output current and voltage from the Kepcos and fills more PVs. (Option – put the output current PVs into alarm if the actual current is not close to the setpoint)
 
-### Notes:
-* The calibration step may be best implemented as a script that the scientists can then own.
+### Notes from instrument scientist (who wrote the original zero-field VI):
+* The calibration step may be best implemented as a script that the scientists can then own. [See [ticket #4839](https://github.com/ISISComputingGroup/IBEX/issues/4839)
 * Thoughts on implementing offsets from James: In “manual” offset calibration we need a simple way to vary the offsets and have the already-running zero field IOC take them into account (it will be in Auto Feedback mode). Perhaps this will be numbers we can adjust on an OPI. Typing g.set_pv(‘IN:MUONZF:OFFSET_X’,123.4) each time would be way too tedious. We then might want to save these values for future use perhaps by editing a .ini file, editing IOC macros, or similar (managers only). Or just press a “Save offsets” button?
-* Direct PV writes to the Kepco current are allowed only in manual mode and only up to the configured maximum current.
-
-* The calibration values are initialised from .ini files, macros, etc but have PVs that the calibration script can read or write, with writes taking effect on the next pass through the feedback loop. The OPI should present these as adjustable values – especially the values of O where up/down buttons would be useful. The maximum currents should be available as read-only PVs.
-
-* The timing is important (in Auto mode). The delay from reading the magnetometers to writing to the Kepcos should be kept as steady as possible,  as should that from writing to the next magnetometer reading. The loop should also be reasonably fast – aim at around 2 loops per second. The calibration procedure checks this and the value of the feedback factor p is set accordingly. Do not attempt to compensate for varying time delays by adding additional factors into the maths!
-
-* There will be a “mode” PV that scripts can set to “auto” or “manual”. It may help to have a single PV to summarise the field-is-stable and alarm status (as a string value as well as perhaps going into alarm itself).
-
 * The calibrations should not auto-save anything at all without the instrument scientist saying so! It should be possible to calibrate and then run with those calibrated values, without saving them, such that the old values return after a restart of IBEX or a reload of a configuration. (Example – one-off user kit which has a stray field of its own which also needs correcting.) Saving values into one of our standard configurations should need manager level credentials just like any other changes to it. If the calibration is in a script it would have to open the .ini file explicitly and write the values – or perhaps print them to the scripting console for the instrument scientist to copy/paste into the ini file.
-
+* The calibration values are initialised from .ini files, macros, etc but have PVs that the calibration script can read or write, with writes taking effect on the next pass through the feedback loop. The OPI should present these as adjustable values – especially the values of O where up/down buttons would be useful. The maximum currents should be available as read-only PVs.
 * Most of the calibration factors are per-instrument and so should be stored somewhere global, or in the “instrument_base” configuration component which presumably loads the IOC.
-
 * The offsets **_O_** (3 values for X,Y,Z) are changed more often and might vary between SE. Is it possible to set default values of **_O_** for the instrument and then any SE configuration which needs a different value can over-ride it?
-
 * On MUSR (and CHRONUS) there are separate sets of calibration factors for the instrument in its longitudinal and transverse orientations. MUSR has a switch, fed into the Field point box, which indicates the orientation.
-
+* Direct PV writes to the Kepco current are allowed only in manual mode and only up to the configured maximum current.
+* The timing is important (in Auto mode). The delay from reading the magnetometers to writing to the Kepcos should be kept as steady as possible,  as should that from writing to the next magnetometer reading. The loop should also be reasonably fast – aim at around 2 loops per second. The calibration procedure checks this and the value of the feedback factor p is set accordingly. Do not attempt to compensate for varying time delays by adding additional factors into the maths!
 * The last-written currents (**_I_**) are kept regardless of mode and updated by the feedback loop or writes to the PVs.
-
+* There will be a “mode” PV that scripts can set to “auto” or “manual”. It may help to have a single PV to summarise the field-is-stable and alarm status (as a string value as well as perhaps going into alarm itself).
 * On change from Manual to Auto the value of I is simply picked up and used.  On change from Auto to Manual it will simply stop writing values to the Kepco unless the user writes to the current PV.
-
 * On IOC start up I’d suggest try to read the Kepco setpoints (if possible) or the output currents, initialise the last-written variable (I) to this value, and then go into Manual. A subsequent change back to Auto will not cause a significant bump assuming the field was zero before the shutdown and the stray fields have not changed much while the IOC was stopped.
-
 * IOC shutdown should leave the currents on: no special action need be taken.
 
 ## Testing ##
 
-We will test on the instrument. This needs to be placed on the shutdown work list (Peter will sort this out when needed).
-
+* We will test on the instrument. This needs to be placed on the shutdown work list (Peter will sort this out when needed).
