@@ -143,5 +143,13 @@ We will test on the instrument. This needs to be placed on the shutdown work lis
 
 ## Implementation ##
 
+**Suggested operation of auto-feedback IOC:**
+1. On a regular timescale the IOC will read the three axes of the magnetometer. It should then fill in PVs for the raw field and corrected field Mc = (M-O) * C.
+1. The magnetometer values should be checked for overload, if so the PVs should go into an alarm state and the feedback is (temporarily) disabled.  [Separate IOC for reading magnetometer and calculating fields]
+1. If in Auto mode and the field is “good” it should then calculate the new currents based on the previous current setpoints, the corrected field and the setpoint. Then check the currents against the limits and if so, clamp the current to the limit value and put the PV into alarm state. It then writes these to the Kepcos (regardless of limit status).
+1. In Auto mode the field is declared “stable” if the corrected field is within some value (e.g. 10mG: perhaps set as a macro) of the setpoint, otherwise “Changing”. (PV for this status)
+1. In either mode and regardless of any alarms above, it then reads back the actual output current and voltage from the Kepcos and fills more PVs. (Option – put the output current PVs into alarm if the actual current is not close to the setpoint)
+
+Further thoughts:
 1. The calibration step may be best implemented as a script that the scientists can then own.
 1. Thoughts on implementing offsets from James: In “manual” offset calibration we need a simple way to vary the offsets and have the already-running zero field IOC take them into account (it will be in Auto Feedback mode). Perhaps this will be numbers we can adjust on an OPI. Typing g.set_pv(‘IN:MUONZF:OFFSET_X’,123.4) each time would be way too tedious. We then might want to save these values for future use perhaps by editing a .ini file, editing IOC macros, or similar (managers only). Or just press a “Save offsets” button?
