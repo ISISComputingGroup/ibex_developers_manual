@@ -4,7 +4,7 @@
 
 See [Other Troubleshooting -> instrument page not working on web dashboard](Other-Troubleshooting#instrument-page-not-working-on-web-dashboard)
 
-Also once observed on LARMOR, accompanied by the following error messages continuously being logged to `C:\data\log\icp-<date>.log`:
+This issue has been observed on LARMOR and TOSCA, accompanied by the following error messages continuously being logged to `C:\data\log\icp-<date>.log`:
 
 ```
 2017-04-13 20:52:14  NIVISA: Error "Could not perform operation because of I/O error." (code 0xbfff003e) returned from "viMoveIn32"  while transferring 1001 items at VME address 0x18000fa4
@@ -17,7 +17,7 @@ Also once observed on LARMOR, accompanied by the following error messages contin
 2017-04-13 20:52:17  This is a VXI DAE
 ```
 
-This was resolved by powercycling the DAE followed by stopping the visa server and running `resman`. (Ask Freddy or Gareth to find out more)
+This was resolved by powercycling the DAE followed by stopping the visa server and running `resman`. (Ask Freddy to find out more)
 
 ### No log files are produced in `c:\data` even though blocks are set to log.
 The reason may be because cp hasn't been set to look for epics. In `C:\LabVIEW Modules\dae\isisicp.properties` set `isisicp.epicsdb.use = true` to log the epic's blocks. You will need to restart the `isisicp` process for this to take effect. To do this, just end the `isisicp` process in task manager.
