@@ -29,9 +29,7 @@ There appear to be 3 variants of the MUON zero-field controller:
 
 ### Operation
 
-The zero-field controller operates in one of two required modes (dead reckoning will not be required):
-   * Manual
-   * Auto-Feedback
+The zero-field controller operates in one of two required modes, **_manual_** and **_auto-feedback_** (dead reckoning will not be required).
 
 #### Manual Mode ####
 In Manual mode, the user must adjust the currents manually to achieve the desired magnetic field.
