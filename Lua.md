@@ -58,4 +58,6 @@ Place the luacheck.exe file in a useful place e.g. Program Files and add that lo
 
 Restart any command lines you have open, and then you can run `luacheck file.lua` against a Lua file.
 
-For more detailed instructions on the use of luacheck see the [luacheck documentation](https://luacheck.readthedocs.io/en/stable/)
+For more detailed instructions on the use of luacheck see the [luacheck documentation](https://luacheck.readthedocs.io/en/stable/).
+
+The [luacheck GitHub page](https://github.com/mpeterv/luacheck/tree/76bb56736702e8651537b2a9c10ae55ab7dc1d5d) also has information for how to use luacheck in your favourite editor.
