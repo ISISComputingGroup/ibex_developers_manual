@@ -292,7 +292,7 @@ Write Commands
 
 **BLOCKSERVER:LOAD_CONFIG**
 
-    Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:LOAD_CONFIG abcdefabdcdefabcdef1234567890
+    Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:LOAD_CONFIG config1234567890
     Loads the specified configuration. Requires a compressed and hexed JSON string. This automatically restarts the blocks gateway and updates the archiver
 
     Returns "OK" or an error message (compressed and hexed JSON).
@@ -307,14 +307,14 @@ Write Commands
 
 **BLOCKSERVER:START_IOCS**
 
-    Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:START_IOCS abcdefabdcdefabcdef1234567890
+    Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:START_IOCS config1234567890
     Starts the specified IOC or IOCs. Requires compressed and hexed JSON list of IOCS.
 
     Returns "OK" or an error message (compressed and hexed JSON).
 
 **BLOCKSERVER:STOP_IOCS**
 
-    Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:STOP_IOCS abcdefabdcdefabcdef1234567890
+    Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:STOP_IOCS config1234567890
     Stops the specified IOC or IOCS. Requires compressed and hexed JSON list of IOCS.
 
     Returns "OK" or an error message (compressed and hexed JSON).
@@ -322,14 +322,14 @@ Write Commands
 **BLOCKSERVER:RESTART_IOCS**
 
 
-    Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:RESTART_IOCS abcdefabdcdefabcdef1234567890
+    Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:RESTART_IOCS config1234567890
     Restarts the specified IOC or IOCs. Requires compressed and hexed JSON list of IOCS.
 
     Returns "OK" or an error message (compressed and hexed JSON).
 
 **BLOCKSERVER:SET_RC_PARS**
 
-    Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:SET_RC_PARS abcdefabdcdefabcdef1234567890
+    Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:SET_RC_PARS config1234567890
     Edits the run-control settings on a block or blocks. Requires compressed and hexed JSON dictionary of dictionaries with the following parameters:
         name - the name of the block
         LOW - the lowlimit
@@ -343,7 +343,7 @@ Write Commands
 
 **BLOCKSERVER:SET_CURR_CONFIG_DETAILS**
 
-    Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:SET_CURR_CONFIG_DETAILS abcdefabdcdefabcdef1234567890
+    Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:SET_CURR_CONFIG_DETAILS config1234567890
     Sets the current configuration to the setting specified. Requires compressed and hexed JSON dictionary.
     Example JSON (dehexed and decompressed):
         '{"iocs":
@@ -368,7 +368,7 @@ Write Commands
 
 **BLOCKSERVER:SAVE_NEW_CONFIG**
 
-	Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:SAVE_NEW_CONFIG abcdefabdcdefabcdef1234567890
+	Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:SAVE_NEW_CONFIG config1234567890
 	Saves a configuration to XML without affecting the current active configuration.
 	This will give an error if trying to overwrite the current active configuration but will allow overwriting of other saved configurations.
 	Requires compressed and hexed JSON dictionary.
@@ -396,7 +396,7 @@ Write Commands
 
 **BLOCKSERVER:SAVE_NEW_COMPONENT**
 
-	Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:SAVE_NEW_COMPONENT abcdefabdcdefabcdef1234567890
+	Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:SAVE_NEW_COMPONENT config1234567890
 	Saves a component to XML without affecting the current configuration.
 	This will give an error if trying to overwrite components of the current active configuration.
 	Requires compressed and hexed JSON dictionary.
@@ -423,7 +423,7 @@ Write Commands
 		 
 **BLOCKSERVER:DELETE_CONFIGS**
 
-    Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:DELETE_CONFIGS abcdefabdcdefabcdef1234567890
+    Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:DELETE_CONFIGS config1234567890
     Removes a configuration or configurations from the BlockServer and filesystem. Requires a compressed and hexed JSON list of configuration names to remove.
     If this is done in error the configuration can be recovered from version control. For removing one configuration only, create a list of one item.
 
@@ -431,7 +431,7 @@ Write Commands
 	
 **BLOCKSERVER:DELETE_COMPONENTS**
 
-    Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:DELETE_COMPONENTS abcdefabdcdefabcdef1234567890
+    Command: caput -S %MYPVPREFIX%CS:BLOCKSERVER:DELETE_COMPONENTS config1234567890
     Removes a component or components from the BlockServer and filesystem. Requires a compressed and hexed JSON list of component names to remove.
     If this is done in error the component can be recovered from version control. For removing one component only, create a list of one item.
 
@@ -451,14 +451,14 @@ Write Commands
 
 **SYNOPTICS:SET_DETAILS**
 
-    Command: caput -S %MYPVPREFIX%CS:SYNOPTICS:SET_DETAILS abcdefabdcdefabcdef1234567890
+    Command: caput -S %MYPVPREFIX%CS:SYNOPTICS:SET_DETAILS config1234567890
     Saves the synoptic with supplied compressed and hexed XML data, saving under the name specified in the XML.
 	
     Returns "OK" or an error message (compressed and hexed JSON).
 	
 **SYNOPTICS:DELETE**
 
-    Command: caput -S %MYPVPREFIX%CS:SYNOPTICS:DELETE abcdefabdcdefabcdef1234567890
+    Command: caput -S %MYPVPREFIX%CS:SYNOPTICS:DELETE config1234567890
 	Removes a synoptic from the BlockServer and filesystem. Requires a compressed and hexed JSON list of synoptics names to remove.
     If this is done in error the synoptic can be recovered from version control. For removing one synoptic only, create a list of one item.
 	
