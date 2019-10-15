@@ -76,3 +76,9 @@ For info here is a detailed temp loop:
 ## OPI
 
 The OPI has macros that relate to the macros set at the IOC level.
+
+## Troubleshooting
+
+### Mecury doesn't communicate 
+
+One issue we have seen is that when the Mecury is transferred between instruments, or during some initial configuration, a user will change values like the Baud rate. It's good practice to check the devices settings (baud rate etc) and the one on the set-up dialog for the Mecury VI to ensure parity between them.
