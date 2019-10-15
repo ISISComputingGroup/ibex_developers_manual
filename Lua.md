@@ -72,6 +72,8 @@ OR install luacheck by itself:
 - Restart any command lines you have open.
 - Luacheck is now installed
 
+## Using luacheck:
+
 Post-install step:
 - Set luacheck config:
     - Create a new file .luacheckrc in %LOCALAPPDATA%\Luacheck as this is where luacheck looks for config files
