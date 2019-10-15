@@ -140,10 +140,11 @@ When overloaded by a high field, the fluxgate magnetometer can read any random v
 
 ## Implementation ##
 **Suggested operation of magnetometer IOC:** (see [ticket #4838](https://github.com/ISISComputingGroup/IBEX/issues/4838) for more details]
-1. On a regular timescale the IOC will read the three axes of the magnetometer. It should then fill in PVs for the raw field and corrected field: `Mc = (M-O) * C`, as well as its magnitude: `Magnitude = sqrt(corrected_X_field^2 + corrected_Y_field^2 + corrected_z_field^2)`.
+1. On a regular timescale the IOC will read the three axes of the magnetometer. It should then fill in PVs for the **raw field** and **corrected field**: `Mc = (M-O) * C`, as well as its **magnitude**: `Magnitude = sqrt(corrected_X_field^2 + corrected_Y_field^2 + corrected_z_field^2)`.
+1. The PVs should go into alarm if the magnetometer is overloaded.
 
 **Suggested operation of auto-feedback IOC:** (Flowchart to show this procedure currently being worked on...)
-1. The magnetometer values should be checked for overload, if so the PVs should go into an alarm state and the feedback is (temporarily) disabled.
+1. The magnetometer values should be checked for overload, if so the feedback is (temporarily) disabled.
 1. If in Auto mode and the field is “good” it should then calculate the new currents based on the previous current setpoints, the corrected field and the setpoint. Then check the currents against the limits and if so, clamp the current to the limit value and put the PV into alarm state. It then writes these to the Kepcos (regardless of limit status).
 1. In Auto mode the field is declared “stable” if the corrected field is within some value (e.g. 10mG: perhaps set as a macro) of the setpoint, otherwise “Changing”. (PV for this status)
 1. In either mode and regardless of any alarms above, it then reads back the actual output current and voltage from the Kepcos and fills more PVs. (Option – put the output current PVs into alarm if the actual current is not close to the setpoint)
