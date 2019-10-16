@@ -24,7 +24,7 @@ OR install luacheck by itself:
 
 Post-install step:
 - Set luacheck config:
-    - Create a new file .luacheckrc in %LOCALAPPDATA%\Luacheck as this is where luacheck looks for config files
+    - Create a new file `.luacheckrc` in `%LOCALAPPDATA%\Luacheck` as this is where luacheck looks for config files
     - Add the below information to the file to set the config
 ```
 stds.epics_lib = {
