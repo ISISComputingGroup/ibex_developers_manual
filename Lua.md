@@ -58,23 +58,21 @@ We are using the style guide from LuaRocks as documented in https://github.com/l
 
 For installation, usage and troubleshooting see the [luacheck page](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/LuaCheck)
 
-## Tips and tricks for weird behaviour in Lua
+## Issues with Epics Lua
 
-### My variable looks as if it is set to one thing and then changes (e.g. to func_meta)
+Whilst during the conversion of the oercone ioc to lua we came across a few issues with the epics lua library.
 
-We believe this may be due to being in interactive mode. Lua's namespace is declared in chunks, in regular lua a chunk can be the whole file (except in the cases of functions and control structures such as do end, if and for). However, in interactive mode a chunk is one line. 
+The process for resolving names in epics lua starts with looking for a variable with that name, if it does not find one it looks in the running EPICS environment and then if it cannot find anything there it looks for a matching function name.
 
-So the variable may have fallen out of scope because the chunk has ended.
+This is great so that we can access macros easily by instead of doing `$(MYMACRO)` from cmd we can just do `MYMACRO`. However, we cannot stipulate a default. There is a lua utility function we have written, `getMacroValue(options)`, which expects to be called like this `getMacroValue{macro="MYMACRO", default="VAL"}` or `getMacroValue{macro="MYMACRO"}`.
 
-You may be able to alleviate this issue by declaring your variable without a value before it is used and then initialising it on a separate line.
+There is a strange issue due to the way epics lua runs lua scripts that sometimes a local variable will drop out of scope, seemingly for no reason. We expect variables to be local and are thus kept to the namespace of the lua script itself, we do not want to use global variables for no reason.
 
-For example your variable currently may be:
-```
-local pvprefix = getMacroValue{macro="MYPVPREFIX}
-```
+You may see that a variable was once the value you expect and then changes to something like `func_meta: 008...`. This is because the variable name has dropped out of scope and epics lua attempts to look for a macro and fails, so then looks for a function and returns the func_meta string.
 
-Change this to:
-```
-local pvprefix
-pvprefix = getMacroValue{macro="MYPVPREFIX}
-```
+We have a couple of options for a solution:
+
+- Don't use variables but set macros using `iocsh.epicsEnvSet("MACRONAME", "MACROVALUE")` and then get this by calling `getMacroValue{macro="MACRONAME", default="DEFAULTVAL"}`.
+- Only use global variables.
+
+Both of these solutions are not nice. The other things is that epics lua sets your macros as global variables automatically. I would hope that this global scope is contained within the lua shell itself. If it is, setting global variables ourselves is not a big issue. However, if it is not, both the epics lua setting global variables and us setting global variables are security and concurrency issues.
