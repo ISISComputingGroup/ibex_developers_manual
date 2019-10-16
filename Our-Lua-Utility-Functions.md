@@ -59,7 +59,7 @@ $(IFNOTDEVSIM) $(IFNOTRECSIM) asynSetOption("$(DEVICE)", -1, "stop", "$(STOP=1)"
 Set the hardware flow control for when it is off or on. 
 
 - device: String, the name of the asyn port.
-- flowControlOn: Boolean, true if hardware flow control is on.
+- `flowControlOn`: Boolean, true if hardware flow control is on.
 
 ### `setSoftwareFlowControl(device, flowControlOn)`
 
