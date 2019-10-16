@@ -1,6 +1,6 @@
 ## Using our Lua utility functions
 
-Currently we have four functions available as utilities for booting iocs using lua: getMacroValue, setAsynOptions, setHardwareFlowControl, setSoftwareFlowControl.
+Currently we have four functions available as utilities for booting iocs using lua: `getMacroValue`, `setAsynOptions`, `setHardwareFlowControl`, `setSoftwareFlowControl`.
 
 To be able to use these you need to add this to the top of your lua file:
 
@@ -12,7 +12,7 @@ local setAsynOptions = utils.setAsynOptions
 local setHardwareFlowControl = utils.setHardwareFlowControl
 local setSoftwareFlowControl = utils.setSoftwareFlowControl
 ```
-### getMacroValue(options)
+### `getMacroValue(options)`
 
 Getting a macro from the environment. If the macro cannot be retrieved from the environment the default options value is returned. If there is no default given and the macro cannot be retrieved an error is raised.
 
@@ -22,7 +22,7 @@ Getting a macro from the environment. If the macro cannot be retrieved from the 
 Example call: `getMacroValue{macro="RECSIM", default="0"}`
 CMD equivalent: `$(RECSIM=0)`
 
-### setAsynOptions(device, port, baud, bits, parity, stop)
+### `setAsynOptions(device, port, baud, bits, parity, stop)`
 
 For a real device configure the asyn serial port and set the baud, bits, parity and stop options for it.
 
@@ -71,6 +71,6 @@ Sets the software flow control for when it is off or on.
 ## Adding to our Lua utility functions
 
 Things to do:
-- Add your function to the globals set in std.utils in the .luacheckrc file both locally and on the [luacheck page](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/LuaCheck) page for others to use (the plan is to have a .luacheckrc on github, but first it needs to be worked out how to edit the luacheck.path correctly to point at it)
+- Add your function to the globals set in `std.utils` in the `.luacheckrc` file both locally and on the [luacheck page](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/LuaCheck) page for others to use (the plan is to have a `.luacheckrc` on github, but first it needs to be worked out how to edit the `luacheck.path` correctly to point at it)
 - Add documentation in this page (the plan is to have documentation closer to the code, but that also needs to be worked out first)
 - Add it to the imports in "Using our Lua utility functions" section above
