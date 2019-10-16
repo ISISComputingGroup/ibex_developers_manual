@@ -45,7 +45,7 @@ if (not isRecsim and not isDevsim) then
 ...
 ```
 
-CMD eqivalent: 
+CMD equivalent: 
 ```
 $(IFNOTDEVSIM) $(IFNOTRECSIM) drvAsynSerialPortConfigure("$(DEVICE)", "$(PORT=NO_PORT_MACRO)", 0, 0, 0, 0)
 $(IFNOTDEVSIM) $(IFNOTRECSIM) asynSetOption("$(DEVICE)", -1, "baud", "$(BAUD=9600)")
