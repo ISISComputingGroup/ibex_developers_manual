@@ -57,3 +57,21 @@ We are using the style guide from LuaRocks as documented in https://github.com/l
 ## LuaCheck
 
 For installation, usage and troubleshooting see the [luacheck page](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/LuaCheck)
+
+## Tips and tricks for weird behaviour in Lua
+
+### My variable looks as if it is set to one thing and then changes (e.g. to func_meta)
+
+We believe this may be due to being in interactive mode. Lua's namespace is declared in chunks, in regular lua a chunk can be the whole file (except in the cases of functions and control structures such as do end, if and for). However, in interactive mode a chunk is one line. 
+
+So the variable may have fallen out of scope because the chunk has ended.
+
+You may be able to alleviate this issue by declaring your variable without a value before it is used and then initialising it on a separate line.
+
+For example your variable currently may be: `local pvprefix = getMacroValue{macro="MYPVPREFIX}`
+
+Change this to:
+```
+local pvprefix
+pvprefix = getMacroValue{macro="MYPVPREFIX}
+```
