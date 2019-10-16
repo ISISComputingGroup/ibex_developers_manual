@@ -68,7 +68,10 @@ So the variable may have fallen out of scope because the chunk has ended.
 
 You may be able to alleviate this issue by declaring your variable without a value before it is used and then initialising it on a separate line.
 
-For example your variable currently may be: `local pvprefix = getMacroValue{macro="MYPVPREFIX}`
+For example your variable currently may be:
+```
+local pvprefix = getMacroValue{macro="MYPVPREFIX}
+```
 
 Change this to:
 ```
