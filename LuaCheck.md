@@ -36,7 +36,7 @@ stds.utils = {
 std = "min+epics_lib+utils"
 ```
 
-Note: If you add any functions to our utilities you must add the name of the function to the globals set in std.utils in the .luacheckrc file. Please also add it to our list here, or to one on the repository if we have added it to the repo by then.
+Note: If you add any functions to our utilities you must add the name of the function to the globals set in std.utils in the `.luacheckrc` file. Please also add it to our list here, or to one on the repository if we have added it to the repo by then.
 
 Basic usage: `luacheck file.lua`
 
