@@ -66,7 +66,7 @@ Set the hardware flow control for when it is off or on.
 Sets the software flow control for when it is off or on.
 
 - device: String, the name of the asyn port
-- flowControlOn: Boolean, true if software flow control is on.
+- `flowControlOn`: Boolean, true if software flow control is on.
 
 ## Adding to our Lua utility functions
 
