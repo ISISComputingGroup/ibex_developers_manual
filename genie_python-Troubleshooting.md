@@ -28,3 +28,12 @@ If `genie_python` crashes on start with a windows error but the underlying Pytho
     OPENBLAS_CORETYPE=Haswell
 
 This is set within the system environment on the PC; currently, this fix is only needed on `RIKENFE` and `MUONFE`.
+
+## Can't find Python 3
+
+If you get an error message similar to
+
+```
+*** Cannot find GENIE-PYTHON 3 - some things are not likely to work ***
+```
+on running `config_env.bat`, you need to ensure you have **both** python 2 and python 3 available on your system.
