@@ -143,7 +143,9 @@ When overloaded by a high field, the fluxgate magnetometer can read any random v
 1. On a regular timescale the IOC will read the three axes of the magnetometer. It should then fill in PVs for the **raw field** and **corrected field**: `Mc = (M-O) * C`, as well as its **magnitude**: `Magnitude = sqrt(corrected_X_field^2 + corrected_Y_field^2 + corrected_z_field^2)`.
 1. The PVs should go into alarm if the magnetometer is overloaded.
 
-**Suggested operation of auto-feedback IOC:** (See flowchart below)
+**Suggested operation of auto-feedback IOC:** (see [ticket #4855](https://github.com/ISISComputingGroup/IBEX/issues/4855) for more details]
+
+Flowchart of procedure:
 
 ![Flowchart](https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/images/Muon_Zero-Field_Auto-Feedback_Procedure_Flowchart.png))
 
