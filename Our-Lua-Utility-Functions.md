@@ -24,7 +24,7 @@ CMD equivalent: `$(RECSIM=0)`
 
 ### `setAsynOptions(device, port, baud, bits, parity, stop)`
 
-Note: This automatically sets asyn address port to -1. If you need to set it differently please use the calls iocsh.drAsynSerialPortConfigure and iocsh.asynSetOption in your script.
+Note: This automatically sets asyn address port to -1. If you need to set it differently please use the calls `iocsh.drvAsynSerialPortConfigure` and `iocsh.asynSetOption` in your script.
 
 For a real device configure the asyn serial port and set the baud, bits, parity and stop options for it.
 
