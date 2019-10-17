@@ -26,14 +26,9 @@ Post-install step:
 - Set luacheck config:
     - Create a new file `.luacheckrc` in `%LOCALAPPDATA%\Luacheck` as this is where luacheck looks for config files
     - Add the below information to the file to set the config
+
 ```
-stds.epics_lib = {
-    read_globals = {"iocsh", "asyn", "client", "driver", "epics"}
-}
-stds.utils = {
-    globals = {"getMacroValue", "setAsynOptions", "setHardwareFlowControl", "setSoftwareFlowControl"}
-}
-std = "min+epics_lib+utils"
+ignore = {"111", "112", "113"}
 ```
 
 Note: If you add any functions to our utilities you must add the name of the function to the globals set in std.utils in the `.luacheckrc` file. Please also add it to our list here, or to one on the repository if we have added it to the repo by then.
