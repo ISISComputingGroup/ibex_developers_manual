@@ -143,7 +143,7 @@ When overloaded by a high field, the fluxgate magnetometer can read any random v
 1. On a regular timescale the IOC will read the three axes of the magnetometer. It should then fill in PVs for the **raw field** and **corrected field**: `Mc = (M-O) * C`, as well as its **magnitude**: `Magnitude = sqrt(corrected_X_field^2 + corrected_Y_field^2 + corrected_z_field^2)`.
 1. The PVs should go into alarm if the magnetometer is overloaded.
 
-**Suggested operation of auto-feedback IOC:** (Flowchart to show this procedure currently being worked on...)
+**Suggested operation of auto-feedback IOC:** (See [Flowchart](https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/images/Muon_Zero-Field_Auto-Feedback_Procedure_Flowchart.png))
 1. The magnetometer values should be checked for overload, if so the feedback is (temporarily) disabled.
 1. If in Auto mode and the field is “good” it should then calculate the new currents based on the previous current setpoints, the corrected field and the setpoint. Then check the currents against the limits and if so, clamp the current to the limit value and put the PV into alarm state. It then writes these to the Kepcos (regardless of limit status).
 1. In Auto mode the field is declared “stable” if the corrected field is within some value (e.g. 10mG: perhaps set as a macro) of the setpoint, otherwise “Changing”. (PV for this status)
