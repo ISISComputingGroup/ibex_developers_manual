@@ -170,4 +170,4 @@ When overloaded by a high field, the fluxgate magnetometer can read any random v
 
 ## Testing ##
 
-* We will test on the instrument. This needs to be placed on the shutdown work list (Peter will sort this out when needed).
+* We will test on the instrument. This needs to be placed on the shutdown work list (Peter will sort this out when needed).  See [ticket #4840](https://github.com/ISISComputingGroup/IBEX/issues/4840) for details.
