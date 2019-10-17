@@ -73,5 +73,5 @@ You may see that a variable was once the value you expect and then changes to so
 Fortunately, if we have a multiline chunk such as in a function we can use local variables. Thus to limit the amount of global variables we have to use we have decided to surround our lua code in functions. There are two caveats to this:
 
 - The functions themselves become global variables, so we must take care to not give the same names to functions in the same iocBoot.
-    - I suggest if we have a main function for each lua file we give it the name `<filename>_main` e.g. for st: `st_main` or for st-common: `stcommon_main`.
+    - I suggest if we have a main function for each lua file we give it the name `<iocname>_<filename>_main` e.g. for the oercone devices st.lua: `oercone_st_main` and it's st-common.lua: `oercone_stcommon_main`.
 - Our package.path setup and [lua utility](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Our-Lua-Utility-Functions) imports MUST occur outside of the function but also MUST be declared as local variables.
