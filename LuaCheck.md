@@ -26,12 +26,11 @@ Post-install step:
 - Set luacheck config:
     - Create a new file `.luacheckrc` in `%LOCALAPPDATA%\Luacheck` as this is where luacheck looks for config files
     - Add the below information to the file to set the config
+    - Note: This ignores setting, mutating and accessing undefined global variables. We are doing this because epics Lua uses an interactive Lua shell which requires us to use global variables in a different way to regular Lua.
 
 ```
 ignore = {"111", "112", "113"}
 ```
-
-Note: If you add any functions to our utilities you must add the name of the function to the globals set in std.utils in the `.luacheckrc` file. Please also add it to our list here, or to one on the repository if we have added it to the repo by then.
 
 Basic usage: `luacheck file.lua`
 
