@@ -24,6 +24,8 @@ CMD equivalent: `$(RECSIM=0)`
 
 ### `setAsynOptions(device, port, baud, bits, parity, stop)`
 
+Note: This automatically sets asyn address port to -1. If you need to set it differently please use the calls iocsh.drAsynSerialPortConfigure and iocsh.asynSetOption in your script.
+
 For a real device configure the asyn serial port and set the baud, bits, parity and stop options for it.
 
 - device: String, the name of the asyn port
@@ -56,12 +58,16 @@ $(IFNOTDEVSIM) $(IFNOTRECSIM) asynSetOption("$(DEVICE)", -1, "stop", "$(STOP=1)"
 
 ### `setHardwareFlowControl(device, flowControlOn)`
 
+Note: This automatically sets asyn address port to -1. If you need to set it differently please use the call iocsh.asynSetOption in your script the way you want.
+
 Set the hardware flow control for when it is off or on. 
 
 - device: String, the name of the asyn port.
 - `flowControlOn`: Boolean, true if hardware flow control is on.
 
 ### `setSoftwareFlowControl(device, flowControlOn)`
+
+Note: This automatically sets asyn address port to -1. If you need to set it differently please use the call iocsh.asynSetOption in your script the way you want.
 
 Sets the software flow control for when it is off or on.
 
@@ -71,6 +77,5 @@ Sets the software flow control for when it is off or on.
 ## Adding to our Lua utility functions
 
 Things to do:
-- Add your function to the globals set in `std.utils` in the `.luacheckrc` file both locally and on the [luacheck page](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/LuaCheck) page for others to use (the plan is to have a `.luacheckrc` on github, but first it needs to be worked out how to edit the `luacheck.path` correctly to point at it)
 - Add documentation in this page (the plan is to have documentation closer to the code, but that also needs to be worked out first)
 - Add it to the imports in "Using our Lua utility functions" section above
