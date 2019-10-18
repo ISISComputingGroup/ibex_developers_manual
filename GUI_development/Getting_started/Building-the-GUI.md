@@ -52,6 +52,9 @@ Not for new starters: this should already have been done by eclipse so unless yo
 1. Click `Finish`
 1. The repository and branch names should now be displayed after each plugin as above
 
+## Installing the git hooks ##
+As part of https://github.com/ISISComputingGroup/IBEX/issues/4786 a git hook was put into the gui repository. To install this hook you must run `build/install_pre_commit_hook.bat`.
+
 ## Building via Maven ##
 
 1. Ensure your maven version is >= 3.6.0, excluding 3.6.1 as that version has a bug
@@ -75,3 +78,5 @@ Sometimes eclipse will tell you that you have errors when you open it. The follo
 - In `uk.ac.stfc.isis.ibex.targetplatform`, open `uk.ac.stfc.isis.ibex.targetplatform.target` and click "set as target platform". 
 - If you have done all these steps and it still doesn't work, there is more troubleshooting information [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Common-Eclipse-Issues).
 - If all else fails, delete all the projects from eclipse's workspace and reimport them.
+
+
