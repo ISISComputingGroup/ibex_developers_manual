@@ -86,9 +86,10 @@ Setting | Description | IN Labview  | 7T Magnet | 9T Chopper Magnet (LET)
 
 [1] - The limit may be lower on some beamlines due to the construction of their sample area. Below are known cases:
 
-Beamline | Maximum field |
-------- | ----------- |
-ZOOM | 5.5T |
+| Beamline | Maximum field |
+| ------- | ----------- |
+| ZOOM | 5.5T |
+| MERLIN | 2.0T |
 
 [2] - Limited by hardware. The IPS is configured to reject any setpoints above 8.8T.
 
