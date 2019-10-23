@@ -13,4 +13,24 @@ You can start up the mini inst using the normal `start_ibex_server` and stop it 
 
 If you update a configuration in [globals.txt](https://github.com/ISISComputingGroup/ibex_user_manual/wiki/Create-and-Manage-Configurations#editing-a-global-setting) then don't forget to restart the IOC. This can be done either by running `start_ibex_server` but it is more efficient to console to the IOC and restart it using `ctrl+x`.
 
+### Adding Devices
+
+If you want to run an IOC in a mini-inst then:
+
+1. Add the device name to the "startup.txt" (`C:\Instrument\Settings\config\NDX<instrument>\configurations\startup.txt`)
+   - e.g. JSCO4180_01
+1. Then set macros in "globals.txt" (`C:\Instrument\Settings\config\NDX<instrument>\configurations\globals.txt`)
+   - e.g. JSCO4180_01__PORT=COM13
+1. Run `make iocstartups` in the epics terminal. This adds the device to the allowed running devices.
+1. Start IBEX server as normal `start_ibex_server.bat`
+1. If you are running the IOC to allow a Vi in SECI to communicate then configure that vi (usually the pv prefix)
+   - e.g. Run `C:\LabVIEW Modules\Drivers\Jasco PU-4180 HPLC Pump\Jasco HPLC Pump - System.llb` - Initialisation File change IOC Root to `IN:CRISP:JSCO4180_01:`
+1. Run the Vi
+
+
+
+
+
+
+
 
