@@ -14,7 +14,7 @@ Note that currently, we require **both** python 2 and python 3 to be installed o
 
 ### Python 3
 
-1. Check whether `C:\Instrument\Apps\Python3` already exists. If it does, from a git-enabled command line, `cd C:\Instrument\Apps\Python3` and perform a `git pull`. If it does not exist, from a git-enabled command line, run `git clone https://github.com/ISISComputingGroup/genie_python.git C:/Instrument/Apps/Python`.
+1. Check whether `C:\Instrument\Apps\Python3` already exists. If it does, from a git-enabled command line, `cd C:\Instrument\Apps\Python3` and perform a `git pull`. If it does not exist, from a git-enabled command line, run `git clone https://github.com/ISISComputingGroup/genie_python.git C:/Instrument/Apps/Python3`.
 1. Navigate to `C:\Instrument\Apps\Python3\package_builder`
 1. Run `dev_build_python.bat 3`
 
