@@ -16,7 +16,8 @@ Documentation is available for the pump at `\\ISIS\shares\ISIS_Experimental_Cont
 
 Notes:
  - Communication command is terminated with CR.
- - Communication return is terminated with CR and LF. 
+ - Communication return is terminated with CR and LF.
+ - When connecting the pump to the MOXA, be sure to use a different port from the Knauer pump.  This will allow the Knauer to use its own port as the one for the Jasco will be locked by its IOC (which runs continuously).
 
 # Pump Control
 
