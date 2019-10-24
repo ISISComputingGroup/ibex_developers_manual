@@ -38,6 +38,6 @@ Each 'action', or step in a script is represented in the GUI as a row. Each cell
 
 ![](https://raw.githubusercontent.com/ISISComputingGroup/ibex_developers_manual/master/images/scriptgen.png)
 
-The parameter values are stored as strings in the underlying action. These strings are passed to the python process for validation, and to insert them into the output script.
+The parameter values are stored as strings in the underlying action. These strings are passed to the python process for validation, and to insert them into the output script. When the value of an underlying cell is updated, the GUI is notified by firing a property change (`actions`).
 
 To change the type of action represented in the table, the singleton drops the current table and replaces it with a new one constructed using the new action type.
