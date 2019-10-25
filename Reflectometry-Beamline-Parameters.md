@@ -9,7 +9,7 @@ Beamline parameters store something a user wishes to set. They can have blocks o
 - Setpoint and no move: if this is set the setpoint is stored but not applied to the motor until the next time a move is triggered on this parameter.
 - Move: moves this parameter to the setpoint
 - Changed: true if the setpoint has been changed via setpoint no move, and has not yet been applied to the motor.
-
+- RBV at Setpoint: Whether the RBV is at the given setpoint within a tolerance
 
 Types of beamline parameter:
 
@@ -17,6 +17,14 @@ Types of beamline parameter:
 - `TrackingPosition`: a parameter which controls a linear position relative to the incoming beam intercept. E.g. How far from the beam a slit should be, the position is measured along the movement axis. This is useful e.g. for scanning over this parameter for alignment.
 - `InBeamParameter`: a parameter which controls whether a component is in or out of the beam. Some components can be parked out of the beam so they don't change its path e.g. the super mirror
 - `SlitGapParameter`: a parameter which changes the gap of a slit set. Since this does not care about tracking the beam path, it does not talk to a geometry component, but directly to the underlying jaws PV. It is also used within the footprint calculator.
+
+Common Argument for setting up beamline parameters (e.g. `TrackingPosition("PDOffset", point_detector_comp, autosave=True, rbv_to_sp_tolerance=0.005`):
+
+- `name`: The name of the beamline parameter, also the identifier of the PV in uppercase, i.e. name is `det_offset` PV would be `<instrument prefix>REFL:PARAM:DET_OFFSET`
+- `<dependency>` (i.e. 'component'/'angled_component'/'pv_wrapper'): usually the component this beamline parameter is accessing (but can be the PV wrapper)
+- `description`: short description of the pv
+- `autosave`: when true the parameter is autosaved on change
+- `rbv_to_sp_tolerance`: The tolerance between the read back value and set point before a pv is displayed with a red background, defaults to 0.002.
 
 ## Theta Readback Calculation
 
