@@ -137,5 +137,6 @@ If a value can fluctuate, these refer to the current measured value of a quantit
 | ERROR | Device error output | Integer or String values |
 | COMP | A component for a given composition gradient. Common on high performance liquid chromatography devices. | |
 | FLOWRATE | The flow rate of a pump | (SI prefix) + L |
+| RAMPRATE | The ramp rate of a variable | (SI unit of variable)/s |
 | START | For a device with a singular operation (Ramp, Pump etc.,) but a complex initialisation this can be used to start the operation (using a sequenced record etc.,) | |
 | STOP | For a device with a singular operation (Ramp, Pump etc.,) but a complex shutdown this can be used to stop the operation (using a sequenced record etc.,) | |
