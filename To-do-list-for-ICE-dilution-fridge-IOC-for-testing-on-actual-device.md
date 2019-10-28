@@ -1,0 +1,1 @@
+- ask scientists how they want their setpoints initialized. LabView software has them initialized from the value records only at startup. Should it be the same in EPICS? Currently initialized as undefined.
