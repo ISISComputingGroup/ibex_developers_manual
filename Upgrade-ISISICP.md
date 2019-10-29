@@ -58,5 +58,5 @@ c:\LabVIEW Modules\dae>
 1. install the new DAE software as above
 1. edit icp_config.xml and change DAEType from 1 to 3
 1. Before you run DAE3 for first time you will need to run `set_dae3_arp.bat` in `labview modules\dae` as an administrator
-1. You will also need to add `set_dae3_arp.bat` to be run as administrator at system startup
+1. You will also need to add `set_dae3_arp.bat` to be run as administrator at system startup. To do this run the task scheduler as administrator and then import the `DAE3_arp_boot_task.xml` boot task file.
 1. Also check firewall settings 
