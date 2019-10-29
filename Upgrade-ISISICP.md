@@ -10,7 +10,7 @@
 
 1. Confirm the type of DAE you have - look in c:\labview modues\dae\icp_config.xml, if DAEType is 1 you have a DAE2, if it is 3 you have a DAE3. If you install the wrong type, it will just fail to start and complain in the ICP log file.
 1. Go to \\isis\inst$\Kits$\CompGroup\ICP\ISISICP and into the directory for the DAE type you have
-1 . Go into the latest build directory and double click on update_inst.cmd
+1. Go into the latest build directory and double click on update_inst.cmd
    This can take a while (several minutes). You will get various messages. The following are OK:
     * If it can't replace the file `isisicp_extMC.dll` as it is open
 1. As printed to screen at the end of script, open a command terminal as administrator (gamekeeper) and run
