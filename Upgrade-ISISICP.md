@@ -54,6 +54,7 @@ c:\LabVIEW Modules\dae>
 
 # changing DAE type (DAE2 -> DAE3)
 
+1. If DAE3 is new to this computer, it may not have the "Microsoft Visual C++ 2015 redistributable" installed. Check in the installed program list, if it is missing run vc_redist.x64.exe in \\isis\inst$\Kits$\CompGroup\ICP\ISISICP\VS2015   
 1. install the new DAE software as above
 1. edit icp_config.xml and change DAEType from 1 to 3
  
