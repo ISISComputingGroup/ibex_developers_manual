@@ -55,5 +55,5 @@ c:\LabVIEW Modules\dae>
 # changing DAE type (DAE2 -> DAE3)
 
 1. install the new DAE software as above
-1. edit icp_config.xml and change C DAEType from 1 to 3
+1. edit icp_config.xml and change DAEType from 1 to 3
  
