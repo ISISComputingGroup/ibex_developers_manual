@@ -22,9 +22,9 @@ An `Action` is the base building block that the script generator will use to bui
 
 As an example, consider a class that looks something like:
 
-```
+```python
 class DoRun(Action):
-    def run(temperature, field, uamps):
+    def run(self, temperature: float, field: float, uamps: float):
         g.cset("temperature", temperature)
         g.cset("field", field)
         g.begin()
@@ -32,10 +32,9 @@ class DoRun(Action):
         g.end()
 
     def parameters_valid(temperature, field, uamps):
-        return 0.1 <= temperature <= 300 and -5 <= field 5
-
-    def parameter_types():
-        return [float, float, float]
+        if 0.1 <= temperature <= 300 and -5 <= field <= 5:
+            return "Please set a valid temperature and field"
+        return None
 ```
 (this is not necessarily the final API)
 
