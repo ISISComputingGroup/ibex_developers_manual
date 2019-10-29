@@ -29,3 +29,6 @@ A place to record decisions:
 12. If a setpoint on a device has a range set by the device it should be set up by using DRVH and DRVL. This is in preference to not capping it and letting the device ignore wrong values. The last choice is to add another record on top which intercepts the value and records an error and sends the capped value. The reason is that we would like to capture the range of the device without adding the complication of another record. This is also a similar behaviour to SECI. Finally, we could, in the future, check the value set in a `cset` against these values.
     - Present, John, Tom, Aaron, David and Freddie
     - 2019/07/05
+
+13. It was decided that as part of the motion system on ZOOM a tablet or some other handheld device will be used [see] (https://github.com/ISISComputingGroup/IBEX/issues/2937). This is required as scientists would like to be able to move axes whilst they are inside the light curtain. All safety issues on this will be handled by a deadman's handle built into the device. In further discussions [here](https://github.com/ISISComputingGroup/IBEX/issues/4238) it was decided that the trying to move the IBEX GUI to something touch friendly would be hard and instead a new cut-down GUI should be produced in Phoebus.
+    - Present: Thomas, Dom, Kathryn
