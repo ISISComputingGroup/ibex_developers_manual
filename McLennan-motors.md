@@ -93,9 +93,9 @@ Try using the macros for an axis other than 1 (2 or 3) in the ibex GUI. The axis
 The office McLanan need the following:
 
 1. No Null terminator or gender changer
-1. BAUD 9600
-1. BITS 8
-1. AXIS 3 yes (all others no)
-1. MODE1 CLOSED
-1. ACCL3 10
-1. VELO3 0.5
+1. `BAUD` 9600
+1. `BITS` 8
+1. `AXIS 3` yes (all others no)
+1. `MODE3` CLOSED
+1. `ACCL3` 10
+1. `VELO3` 0.5
