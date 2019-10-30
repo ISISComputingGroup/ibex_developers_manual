@@ -48,7 +48,7 @@ When this magnet was last installed on ZOOM, one of the slit axes was used for t
 
 This is a motorised valve which is controlled via an analogue output from a Galil on SECI instruments (POLREF at least) and a Thurlby-Thandar Instruments EX355P benchtop PSU on IBEX instruments (LARMOR and ZOOM at least).  There are two front panel VIs for this purpose, one for each scenario: `Vector-control-v16isis.vi` for the TTi-EX355P controlled valve and `Vector-control-v16isis-Galil-Valve.vi` for analogue output controlled valve.  Both are in the SourceSafe location mentioned above: `\LabVIEW Modules\Drivers\Scientific Instruments\3D Magnet\Source Code\`.
 
-If the PSU is to be used, it's possible to check the communication to it via its own VI (located in SourceSafe here: `\LabVIEW Modules\Drivers\Thurlby EX355P`), once it has been configured with the correct port from the `settings.txt` file mentioned above.
+If the PSU is to be used, first it will need to be configured via its own setup VI located in `\LabVIEW Modules\Drivers\Thurlby EX355P\TH EX355P - System Functions.llb\TH EX355P - Setup Dialog.vi`, with the port from the `settings.txt` file mentioned above.  It will then be possible to check the communication to the PSU via its own front panel VI here: `\LabVIEW Modules\Drivers\Thurlby EX355P\TH EX355P - System Functions.llb\TH EX355P - Front Panel 1.vi`.  This VI and the main magnet VI cannot be run simultaneously.
 
 ### Lakeshore 336 Temperature Controller
 
@@ -57,4 +57,7 @@ The Lakeshore 336 is an Ethernet device and should therefore be connected to the
 ### Miscellaneous Information
 
 * The system takes approximately 3 days to reach base temperature
-* ![Schematic of system](https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/images/Scientific%20Magnetics%203D%20Vector%20Magnet%20System.png)
+
+### Schematic of system
+
+![Schematic of system](https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/images/Scientific%20Magnetics%203D%20Vector%20Magnet%20System.png)
