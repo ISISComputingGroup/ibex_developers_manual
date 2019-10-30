@@ -15,12 +15,25 @@ There is a manufacturer supplied VI and an LVDCOM IOC. A copy of the manufacture
 
 ## MOXA NPort
 
-The magnet control rack has its own dedicated MOXA NPort 5616 due to the number of devices it uses.  When the system is moved between instruments, this MOXA is added to the NPort configuration on the local control machine and the NDX IP address is added to the "accessible IPs list" via the administration webpage (and subsequently removed when the magnet is finished with).  Currently, the settings of the dedicated MOXA are:
+The magnet control rack has its own dedicated MOXA NPort 5616 due to the number of devices it uses.  When the system is moved between instruments, this MOXA is added to the NPort configuration on the local control machine and its ports assigned to COM101-COM116 (so as not to interfere with common equipment).  The control machine IP address should be added to the "accessible IPs list" of the MOXA via the administration webpage (and subsequently removed when the magnet is finished with).  Currently, the settings of the dedicated MOXA are:
 
-* IP address : 130.246.37.108 (Need to check DHCP reserved)
+* IP address : 130.246.37.108
 * Port 1 : SMC X PSU
 * Port 2 : SMC Y PSU
 * Port 3 : SMC Z PSU
 * Port 4 : Cryocon 32 temperature controller
 * Port 5 : Helium level meter
 * Port 6 : TTi EX355P PSU (for needle valve)
+
+## Rotation Stage
+
+Standard unit controlled by a Galil axis on both SECI and IBEX instruments.  Details:
+
+* +- 370 degrees
+* Motor with encoder
+* **_No_** limit switches  **NB** Do not wrap around too many times or cables will be damaged.
+* Home position defined by an index pulse on the encoder
+
+When this magnet was last installed on ZOOM, one of the slit axes was used for the rotation stage as there are no spare cables in the sample area.  A batch file exists in the `configurations\galil` directory of the `settings` area to set the required PV values for the axis (edit if different axis is used), and a corresponding batch file in the `user\users\ZOOM` directory of the 'U-drive' will reinstate the settings for the slit axis when the magnet rotation stage is removed.
+
+**NB** There are plans to install additional cabling into the ZOOM sample area to connect extra motion stages, so this _borrowing_ of an axis may not be needed any longer.  Check before altering PV values.
