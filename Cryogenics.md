@@ -88,7 +88,7 @@ Please see the documentation and notes linked above for further details.
 
 This is primarily used on SANS and reflectometry beamlines.
 
-The 2T 3D vector magnet is manufactured by Scientific Magnetics. It has its own control system for which the manufacturer has provided LabVIEW VIs. We interface with these via lvDCOM (See [#1398](https://github.com/ISISComputingGroup/IBEX/issues/1398)).
+The 2T 3D vector magnet is manufactured by Scientific Magnetics. It has its own control system for which the manufacturer has provided LabVIEW VIs. We interface with these via lvDCOM (See [#1398](https://github.com/ISISComputingGroup/IBEX/issues/1398)).  Detailed information [here](2T-3D-Vector-magnet).
 
 When this magnet was last installed on ZOOM, one of the slit axes was used for the rotation stage as there are no spare cables in the sample area.  A batch file exists in the `configurations\galil` directory of the `settings` area to set the required PV values for the axis (edit if different axis is used), and a corresponding batch file in the `user\users\ZOOM` directory of the 'U-drive' will reinstate the settings for the slit axis when the magnet rotation stage is removed.
 
