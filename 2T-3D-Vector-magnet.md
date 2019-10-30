@@ -24,13 +24,14 @@ The magnet control rack has a small Ethernet switch inside to provide network ac
 
 The rack has its own dedicated MOXA NPort 5616 due to the number of devices it uses.  When the system is moved between instruments, this MOXA is added to the NPort configuration on the local control machine and its ports assigned to COM101-COM116 (so as not to interfere with common equipment).  The control machine IP address should be added to the "accessible IPs list" of the MOXA via the administration webpage (and subsequently removed when the magnet is finished with).  Currently, the settings of the dedicated MOXA are:
 
-* IP address : DHCP reserved and visible on front screen when connected to ISIS network
-* Port 1 : SMC X PSU
-* Port 2 : SMC Y PSU
-* Port 3 : SMC Z PSU
-* Port 4 : Cryocon 32 temperature controller
-* Port 5 : Helium level meter
-* Port 6 : TTi EX355P PSU (when required for needle valve control)
+IP address : DHCP reserved and visible on front screen when connected to ISIS network
+
+* Port 1 / COM101 : SMC X PSU
+* Port 2 / COM102 : SMC Y PSU
+* Port 3 / COM103 : SMC Z PSU
+* Port 4 / COM104 : Cryocon 32 temperature controller
+* Port 5 / COM105 : Helium level meter
+* Port 6 / COM106 : TTi EX355P PSU (when required for needle valve control)
 
 ### Rotation Stage
 
