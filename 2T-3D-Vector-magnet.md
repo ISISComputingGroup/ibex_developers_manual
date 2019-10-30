@@ -3,8 +3,8 @@
 # Scientific Magnetics 2T 3D Vector Magnet
 
 The system comprises: 
-* Temperature controllers (including an optional Lakeshore 336)
-* Temperature monitor (Cryocon 14 Ethernet device)
+* Temperature controllers (optional Lakeshore 336)
+* Temperature monitor (Cryocon 14, Ethernet device)
 * 3 power supplies (one for each axis)
 * Helium level gauge
 * Rotation stage (controlled separately by a Galil axis)
