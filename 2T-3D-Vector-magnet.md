@@ -57,4 +57,4 @@ The Lakeshore 336 is an Ethernet device and should therefore be connected to the
 ### Miscellaneous Information
 
 * The system takes approximately 3 days to reach base temperature
-* [Schematic](https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/images/Scientific%20Magnetics%203D%20Vector%20Magnet%20System.png)
+* ![Schematic of system](images/Scientific%20Magnetics%203D%20Vector%20Magnet%20System.png)
