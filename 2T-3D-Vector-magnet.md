@@ -23,7 +23,7 @@ The magnet control rack has a small Ethernet switch inside to provide network ac
 
 The rack has its own dedicated MOXA NPort 5616 due to the number of devices it uses.  When the system is moved between instruments, this MOXA is added to the NPort configuration on the local control machine and its ports assigned to COM101-COM116 (so as not to interfere with common equipment).  The control machine IP address should be added to the "accessible IPs list" of the MOXA via the administration webpage (and subsequently removed when the magnet is finished with).  Currently, the settings of the dedicated MOXA are:
 
-* IP address : 130.246.37.108
+* IP address : DHCP reserved and visible on front screen when connected to ISIS network
 * Port 1 : SMC X PSU
 * Port 2 : SMC Y PSU
 * Port 3 : SMC Z PSU
@@ -57,3 +57,4 @@ The Lakeshore 336 is an Ethernet device and should therefore be connected to the
 ### Miscellaneous Information
 
 * The system takes approximately 3 days to reach base temperature
+* [Schematic](https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/images/Scientific%20Magnetics%203D%20Vector%20Magnet%20System.png)
