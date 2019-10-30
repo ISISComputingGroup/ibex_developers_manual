@@ -13,9 +13,13 @@ The system comprises:
 
 There is a manufacturer supplied VI and an LVDCOM IOC. A copy of the manufacturer's VI is located on the C: drive on LARMOR, in `C:\LabVIEW Modules\Drivers\Scientific Instruments\3D Magnet\Source Code\Vector-control-v16isis.vi`.  This VI has been used on LARMOR and ZOOM and it uses the TTi PSU for needle valve control.  When the magnet was originally used on POLREF, an analogue output from the Galil was used.
 
+## Ethernet Switch
+
+The magnet control rack has a small Ethernet switch inside to provide network access to the Lakeshore 336 and MOXA (see below).  This will need to be connected to the ISIS network to enable remote control of the magnet.
+
 ## MOXA NPort
 
-The magnet control rack has its own dedicated MOXA NPort 5616 due to the number of devices it uses.  When the system is moved between instruments, this MOXA is added to the NPort configuration on the local control machine and its ports assigned to COM101-COM116 (so as not to interfere with common equipment).  The control machine IP address should be added to the "accessible IPs list" of the MOXA via the administration webpage (and subsequently removed when the magnet is finished with).  Currently, the settings of the dedicated MOXA are:
+The rack has its own dedicated MOXA NPort 5616 due to the number of devices it uses.  When the system is moved between instruments, this MOXA is added to the NPort configuration on the local control machine and its ports assigned to COM101-COM116 (so as not to interfere with common equipment).  The control machine IP address should be added to the "accessible IPs list" of the MOXA via the administration webpage (and subsequently removed when the magnet is finished with).  Currently, the settings of the dedicated MOXA are:
 
 * IP address : 130.246.37.108
 * Port 1 : SMC X PSU
