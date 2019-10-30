@@ -3,7 +3,8 @@
 # Scientific Magnetics 2T 3D Vector Magnet
 
 The system comprises: 
-* Temperature controllers (including a Lakeshore 336)
+* Temperature controllers (including an optional Lakeshore 336)
+* Temperature monitor (Cryocon 14 Ethernet device)
 * 3 power supplies (one for each axis)
 * Helium level gauge
 * Rotation stage (controlled separately by a Galil axis)
@@ -29,7 +30,7 @@ The rack has its own dedicated MOXA NPort 5616 due to the number of devices it u
 * Port 3 : SMC Z PSU
 * Port 4 : Cryocon 32 temperature controller
 * Port 5 : Helium level meter
-* Port 6 : TTi EX355P PSU (for needle valve)
+* Port 6 : TTi EX355P PSU (when required for needle valve control)
 
 ### Rotation Stage
 
