@@ -63,7 +63,7 @@ Triton systems are dilution refrigerators capable of reaching ~30mK. They are co
 
 See [Triton](Triton) for further details about the triton system
 
-# Cryomagnets (superconducting magnets)
+# Cryomagnets (cryogenically cooled superconducting magnets)
 
 Most of the magnets in this section can be used instead of a cryostat when using a "parasitic" cooling insert (e.g. heliox, triton). This is because the magnets must be cooled to low temperatures anyway so that they superconduct, so they also act as the outer cryostat.
 
@@ -86,9 +86,9 @@ Please see the documentation and notes linked above for further details.
 
 ### 2T 3D Vector magnet 
 
-The 2T 3D vector magnet is manufactured by Scientific Magnetics. It has its own control system for which the manufacturer has provided LabVIEW VIs. We interface with these via lvDCOM (See [#1398](https://github.com/ISISComputingGroup/IBEX/issues/1398)).
-
 This is primarily used on SANS and reflectometry beamlines.
+
+The 2T 3D vector magnet is manufactured by Scientific Magnetics. It has its own control system for which the manufacturer has provided LabVIEW VIs. We interface with these via lvDCOM (See [#1398](https://github.com/ISISComputingGroup/IBEX/issues/1398)).
 
 When this magnet was last installed on ZOOM, one of the slit axes was used for the rotation stage as there are no spare cables in the sample area.  A batch file exists in the `configurations\galil` directory of the `settings` area to set the required PV values for the axis (edit if different axis is used), and a corresponding batch file in the `user\users\ZOOM` directory of the 'U-drive' will reinstate the settings for the slit axis when the magnet rotation stage is removed.
 
