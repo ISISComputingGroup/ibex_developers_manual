@@ -88,3 +88,14 @@ Try using the macros for an axis other than 1 (2 or 3) in the ibex GUI. The axis
 - Issue `<axis number>SC<jog speed>\r\n` with the jog speed you just looked up
 - Reconnect the IOC and check that homes now work appropriately. 
 
+## Office McLenan Settings
+
+The office McLanan need the following:
+
+1. No Null terminator or gender changer
+1. BAUD 9600
+1. BITS 8
+1. AXIS 3 yes (all others no)
+1. MODE1 CLOSED
+1. ACCL3 10
+1. VELO3 0.5
