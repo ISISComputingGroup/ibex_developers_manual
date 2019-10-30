@@ -11,7 +11,7 @@ The system comprises:
 
 ### VI
 
-There is a manufacturer supplied VI and an LVDCOM IOC.  There are two versions of the manufacturer's VI and both are stored in SourceSafe at the following location: `\LabVIEW Modules\Drivers\Scientific Instruments\3D Magnet\Source Code\`.  This VI has been used on LARMOR and ZOOM and uses the TTi PSU for needle valve control.  When the magnet was originally used on POLREF, an analogue output from the Galil was used.
+There is a manufacturer supplied VI and our own LVDCOM IOC.  There are two versions of the manufacturer's VI and both are stored in SourceSafe at the following location: `\LabVIEW Modules\Drivers\Scientific Instruments\3D Magnet\Source Code\`.  One VI has been used on LARMOR and ZOOM and uses the TTi PSU for needle valve control, and the other on POLREF when an analogue output from the Galil was used.  See below for more information.
 
 The settings for the manufacturer VI are stored (and can be edited) in the plain text file: `settings.txt`.  The COM ports are defined in the first section of the file, but it shouldn't be necessary to change these.
 
@@ -51,6 +51,8 @@ This is a motorised valve which is controlled via an analogue output from a Gali
 If the PSU is to be used, it's possible to check the communication to it via its own VI (located in SourceSafe here: `\LabVIEW Modules\Drivers\Thurlby EX355P`), once it has been configured with the correct port from the `settings.txt` file mentioned above.
 
 ### Lakeshore 336 Temperature Controller
+
+The Lakeshore 336 is an Ethernet device and should therefore be connected to the switch in the magnet control rack.  Its hostname can be found in a settings menu accessed from the front panel.  Communications can be checked by pinging the hostname, or more thoroughly by configuring its VI or IOC/OPI.
 
 ### Miscellaneous Information
 
