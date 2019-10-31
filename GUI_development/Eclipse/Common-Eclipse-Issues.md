@@ -2,6 +2,10 @@
 
 Sometimes the error messages that Eclipse gives are a little opaque, so here are some possible solutions for some of the more common issues.
 
+### plugin execution not covered by lifecycle configuration
+
+Go to window -> preferences -> Maven -> Errors/Warnings. Change "Plugin execution not covered by lifecycle configuration" to ignore in the drop down.
+
 ### The type XXXXXXX cannot be resolved. It is indirectly referenced from required .class files ###
 
 Possible solutions (in order of desperation):
