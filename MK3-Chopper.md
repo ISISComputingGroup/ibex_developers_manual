@@ -14,7 +14,7 @@ The user can only start/stop/park and unpark the mk3chopper using the panel on t
 
 This can currently only been built in VS2010 because the solution file is 2010.
 
-If you just want to build it on your computer with a newer version of visual studio than VS2010, use visual studio open the sln file in the mk3chopper support module and upgrade it to your version. DO NOT COMMIT THESE CHANGES.
+If you just want to build it on your computer with a newer version of visual studio than VS2010, use visual studio open the `.sln` file in the mk3chopper support module and upgrade it to your version. DO NOT COMMIT THESE CHANGES.
 
 # Troubleshooting
 
