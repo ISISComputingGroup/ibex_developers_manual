@@ -14,6 +14,10 @@ We added motor support to tcIOC so that we could use it to control motors in the
 * If the interesting variables in the PLC code change name so must the IOC, we could get around this by tagging in the comments of the PLC code with which variables are the interesting ones
 * The number of axes is hardcoded within the IOC this can be solved by tcIOC creating the required number of motor records when it parses the `.tpy` file
 
+# Releasing the IOC
+
+Currently the IOC is not in the normal EPICS release build as it requires VS 2010. To deploy it to an instrument you will need to copy from `build_area_on_share\EPICS\newbuildtest\*\EPICS\support\tcIoc\master` and `build_area_on_share\EPICS\newbuildtest\*\EPICS\ioc\master`. If you're deploying this on CRISP you can test it by running the TWINCAT IOC with appropriate settings (see globals.txt) then confirming that `MOT:MTR0701.RBV` has a realistic value. 
+
 # Troubleshooting
 
 ## The IOC reads from the PLC but does not reliably write
