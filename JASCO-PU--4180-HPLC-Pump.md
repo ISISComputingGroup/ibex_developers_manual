@@ -76,6 +76,6 @@ This issue involves the composition being locked into a manual mode, where no co
 
 #### Target runtime calculation logic
 
-[#4720](https://github.com/ISISComputingGroup/IBEX/issues/4720)
+Work was completed on the JASCO to update its calculation logic for pump runtime in [#4720](https://github.com/ISISComputingGroup/IBEX/issues/4720). This flow diagram illustrates this:
 
-![test](images/jasco_runtime_logic_flow.png)
+![Runtime calculation logic](https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/images/jasco_runtime_logic_flow.png)
