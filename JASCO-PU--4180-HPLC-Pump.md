@@ -73,3 +73,9 @@ This issue involves the pump freezing and not interpreting commands briefly, and
 #### Composition control is locked
 
 This issue involves the composition being locked into a manual mode, where no compositions will be accepted remotely, and the single channel (100% A, B, C, or, D) can only be switched using the front panel. This occurs when a time program has not been written correctly. For example, if the maximum number of lines in a program (64) has been exceeded or not closed. This should be resolved by first ensuring the file is closed, using `1 fileno set`, and then performing a re-run program using initial conditions `8 pump set`. Note that you might want to ensure you have a flow rate of 0 to ensure no liquid is pumped while troubleshooting.
+
+#### Target runtime calculation logic
+
+[#4720](https://github.com/ISISComputingGroup/IBEX/issues/4720)
+
+![](jasco_runtime_logic_flow.png)
