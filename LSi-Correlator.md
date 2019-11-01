@@ -70,7 +70,9 @@ There is also a vendor-supplied example script to use with the API, `ExampleMain
 1. The python script was set up using the parameters given on [the wiki](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/LSi-Correlator#python-api-vs-vendor-software)
 1. `obj.Correlation` and `obj.Lags` are the values of interest to the scientists
 1. Python API still needs modifying for python 3 and to make sure the connections are terminated correctly after each set of repetitions
-1. The scientists also want to be able to save metadata along with the data from the DLS, see #4918
+1. The scientists also want to be able to save metadata along with the data from the DLS
+
+Next steps are written in ticket [4918](https://github.com/ISISComputingGroup/IBEX/issues/4918)
 
 ## Python API vs vendor software
 
