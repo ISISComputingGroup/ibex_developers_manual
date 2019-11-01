@@ -78,4 +78,4 @@ This issue involves the composition being locked into a manual mode, where no co
 
 [#4720](https://github.com/ISISComputingGroup/IBEX/issues/4720)
 
-![](jasco_runtime_logic_flow.png)
+![](images/jasco_runtime_logic_flow.png)
