@@ -73,7 +73,7 @@ Adding the plugin directly to your configuration solves this.
 
 ### Plugins compile fine but dependencies cause errors at runtime ###
 
-If you can run the application fine but are seeing a `java.lang.NoClassDefFoundError` at runtime, try re-setting the target platform, synchronizing `client.product`, and doing a clean.
+If you can run the application fine but are seeing a `java.lang.NoClassDefFoundError` at runtime, try re-setting the target platform, synchronizing `client.product` (under "testing" in the product overview), and doing a clean.
 
 ### Menu items are missing ###
 
