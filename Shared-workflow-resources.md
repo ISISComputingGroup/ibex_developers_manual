@@ -25,5 +25,10 @@ Run in an EPICS terminal.
 Relies on the make_ioc script above.
 Makes an IOC and then ask the user if they want to run tests.
 
+Usage: 
+- The same as make_ioc script but with a third parameter pointing towards the test
+- `make_test_ioc oercone OERCONE oercone`
+- `make_test_ioc oercone OERCONE oercone.OerconeTests.test_WHEN_device_is_started_THEN_it_is_not_disabled`
+
 Found in ibex_utils/workflow_support_scripts.
 To make it easy to use add the ibex_utils/workflow_support_scripts folder to your PATH.
