@@ -32,3 +32,4 @@
 - [Trouble Shooting Pages](trouble-shooting-pages): Pages that link to trouble shooting of various kinds
 - [Galils Under SECI](galils-under-seci): Pages that link to information on control of Galils under SECI
 - [Python shared scripts](https://github.com/ISISNeutronMuon/InstrumentScripts/wiki): Start of an area to share scripts between instruments
+- [Shared utility script](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Shared-utility-scripts): An area to document any utility scripts for us to use
