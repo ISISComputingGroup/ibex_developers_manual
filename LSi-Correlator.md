@@ -64,6 +64,14 @@ There is also a vendor-supplied example script to use with the API, `ExampleMain
 1. In order to use the vendor's analysis tools, we would have to reverse engineer the XML save format used
 1. We need to clarify that the correlated data from the python API is the 'correct' data that instrument scientists want
 
+## Conclusions of October experiments
+
+1. Data taken from the python API are equivalent to the vendor's software
+1. The python script was set up using the parameters given on [the wiki](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/LSi-Correlator#python-api-vs-vendor-software)
+1. `obj.Correlation` and `obj.Lags` are the values of interest to the scientists
+1. Python API still needs modifying for python 3 and to make sure the connections are terminated correctly after each set of repetitions
+1. The scientists also want to be able to save metadata along with the data from the DLS, see #4918
+
 ## Python API vs vendor software
 
 To test that the python API functions in the same way as the vendor software, a DLS experiment (a run with the vendor software) was repeated several times using both the vendor software and the python API. Ideally, the correlation functions produced using both these methods will be indistinguishable within an experimental noise.
