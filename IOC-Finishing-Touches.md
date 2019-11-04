@@ -88,7 +88,7 @@ Macros where possible should follow the [standard names](Macro-Naming). If a mac
 ```
 
 where
-- `ioc_desc` is a short description of the IOC e.g Lakeshore 218 for LKSH218
+- `ioc_desc` is a short description of the IOC e.g Lakeshore 218 for LKSH218. This field is shown alongside the IOC name in the GUI when adding or editing IOCs.
 - `ioc_details` is more details about the IOC, e.g. link to docs.
 - `macro` describes a macro settable by a user. 
     - containing `name`, is the name of the macro;  
