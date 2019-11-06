@@ -16,7 +16,7 @@ We added motor support to tcIOC so that we could use it to control motors in the
 
 # Releasing the IOC
 
-Currently the IOC is not in the normal EPICS release build as it requires VS 2010. To deploy it to an instrument you will need to copy from `build_area_on_share\EPICS\newbuildtest\*\EPICS\support\tcIoc\master` and `build_area_on_share\EPICS\newbuildtest\*\EPICS\ioc\master`. If you're deploying this on CRISP you can test it by running the TWINCAT IOC with appropriate settings (see globals.txt) then confirming that `MOT:MTR0701.RBV` has a realistic value. 
+Currently the IOC is not in the normal EPICS release build as it requires VS 2010. To deploy it to an instrument you will need to copy from `build_area_on_share\EPICS\newbuildtest\*\EPICS\support\tcIoc\master` and `build_area_on_share\EPICS\newbuildtest\*\EPICS\ioc\master\TWINCAT`. If you're deploying this on CRISP you can test it by running the TWINCAT IOC with appropriate settings (see globals.txt) then confirming that `MOT:MTR0701.RBV` has a realistic value. 
 
 # Troubleshooting
 
