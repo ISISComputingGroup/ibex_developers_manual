@@ -11,9 +11,34 @@ Basic scheme format is `Domain:subdomain:technicalarea:device:subdevice:signal`
 
 PV names are restricted to alphanumerical, plus `_` and `:` so `[A-Z0-9_:]*` Items that might have multiple instances must not end with a number as this would be confused with a 01,02 etc suffix used to enumerate multiple instances. 
 
-PV names must start with a letter and must not end with `_` for now (maybe adopt NSLS2 convention of trailing `_` = private names?)
+### Private names
 
-We can create a separate PV name to describe actual hardware type.
+Sometimes we have a need to define PVs which are only used internally by the IOC, and never by outside programs. These "private" names will use a leading underscore on the first logically private element of a hierarchy.
+
+For example:
+
+```
+# Usual temperature setpoint record
+record(ao, "$(P)TEMP:SP") 
+{
+    ...
+}
+
+# Some calculation that does something to the setpoint before it is sent to the device
+record(calc, "$(P)TEMP:SP:_CALC")
+{
+    field(CALC, "...")
+    ...
+}
+
+# A record which actually writes to the device (after the calculation has been performed)
+record(ao, "$(P)TEMP:SP:_RAW") 
+{
+    ...
+}
+```
+
+### Naming convention
 
 Having followed the [IOC-Naming](IOC-Naming) the PV will be:
 
