@@ -2,7 +2,7 @@
 
 Various Processes or tasks and info into how they should work. Remember rules can be bent or broken but think about why you are doing that.
 
-- [Modifying Code on an instrument](Modifying-Code-on-an-instrument)
+- [Modifying Code on an instrument or Fixing bugs on an Instrument](Modifying-Code-on-an-instrument)
 
 - [Modifying/setting up a device on an instrument](Modifying-Device-on-an-Instrument)
 
