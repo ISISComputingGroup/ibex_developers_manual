@@ -1,5 +1,11 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [Cryogenics](Cryogenics) > [Triton](Triton)
 
+# Naming
+
+Technically, "Triton" refers to the gas handling apparatus. This is what IBEX and SECI talk to. When setting up a triton, scientists may refer to it as a "Kelvinox". This is the technical name for the dilution insert, which is controlled by the triton gas handling apparatus.
+
+To avoid confusion: all dilution fridges currently in use at ISIS are controlled by Triton gas handling systems, with one exception: the ICE fridge used on the muon beamlines.
+
 # Connection
 
 The Triton software runs on a dedicated PC that follows each fridge around. The IBEX control system makes a connection over TCP to issue commands to that software.
