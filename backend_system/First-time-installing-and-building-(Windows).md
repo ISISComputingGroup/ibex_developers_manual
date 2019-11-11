@@ -1,6 +1,7 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > First time installing and building (Windows)
 
 *You can get more information on the development workflow [here](Git-workflow)*.
+If any of the websites listed here do not work, contact another developer to get an alternate solution.
 
 # Things to know as a developer
 See https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Things-to-know-as-a-developer
