@@ -29,7 +29,7 @@ The device requires strict formatting on its floats. The output value must fit 5
 
 Multiple pumps can be daisy chained together and controlled via a single IOC. Each pump has an address which can be set using the `ID:SP` record. By default (and in a single pump configuration) this is `00`.
 
-A given pump can have it's own unique address defined. So two pumps might not have the same address. Typically pumps are labeled with a sticker `00`, `01` etc. that will indicate this. If you ever need to change this the pump has an  method that will allow you to define this (refer to the manuals section on the `ADR` method).
+A given pump can have it's own unique address defined. So two pumps might not have the same address. Typically pumps are labelled with a sticker `00`, `01` etc. that will indicate this. If you ever need to change this the pump has an  method that will allow you to define this (refer to the manuals section on the `ADR` method).
 
 ### Volume Units
 
