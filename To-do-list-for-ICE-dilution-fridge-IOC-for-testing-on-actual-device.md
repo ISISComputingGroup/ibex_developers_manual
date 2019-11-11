@@ -1,3 +1,4 @@
 - ask scientists how they want their setpoints initialized. LabView software has them initialized from the value records only at startup. Should it be the same in EPICS? Currently initialized as undefined.
 - ask about unit of MC Cernox and MC RuO
 - ask about what is cmode and scan related to temp setpoint in lakeshore. Ask if cmode can be float
+- establish what is the exact command the device replies with when you want to get the mimic valve values.
