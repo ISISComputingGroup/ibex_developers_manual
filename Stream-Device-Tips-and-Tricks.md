@@ -154,3 +154,7 @@ Another way is to read the entire input as a string into a `string` record, and 
 ### Other considerations
 
 The error on disconnection is not passed through from stream and so you may consider doing this via the error setter; see [IOC Utilities](IOC-Utilities#error-setting) for details.
+
+Useful links:
+
+https://paulscherrerinstitute.github.io/StreamDevice/index.html
