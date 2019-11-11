@@ -17,3 +17,8 @@ CAENx527ConfigureCreate "hv1", "_IP_ADDR2_"
 ```
 
 When `CAENx527DbLoadRecords` is called it will then create PVs of the form `hv0:_SLOT_:_CHANNEL_`
+
+### Troubleshooting
+If you run `dbl` and get mainly standard support IOC PVs check that comms have been established to the given IP address
+
+If you log in to the console and cannot get an EPICS prompt, the whole console/procserv must be restarted, as typically the `Ctrl-X` option does not work in this situation either
