@@ -2,3 +2,4 @@
 - ask about unit of MC Cernox and MC RuO
 - ask about what is cmode and scan related to temp setpoint in lakeshore. Ask if cmode can be float
 - establish what is the exact command the device replies with when you want to get the mimic valve values.
+- ask what the unit for the mimic pressures is exactly.
