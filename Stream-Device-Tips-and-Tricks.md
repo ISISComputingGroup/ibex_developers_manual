@@ -42,7 +42,7 @@ It often happens that a single read query to a device returns multiple values, w
 
 ### Passing the PV names as protocol parameters
 
-Here is an example where a single status read query returns three different values, which correspond to three different PVs. The first PV triggers the protocol, and in doing so passes the name of the second and third PVs as arguments to the protocol:
+Here is an example of record redirection, where a single status read query returns three different values, which correspond to three different PVs. The first PV triggers the protocol, and in doing so passes the name of the second and third PVs as arguments to the protocol:
 
 ```
 ## Read the status value 1. This also populates the status value 2 and 3.
@@ -93,6 +93,8 @@ and the prefix can be pre-pended to the PV names inside the protocol:
 ...
 in "%f,%(\$1\$2)d,%(\$1\$3)d";}
 ```
+
+You need to keep in mind that PVs that are using this method can not be tested in RecSim. This is because with this method only one PV has a SCAN and INP field, while the other updated records do not have these fields. Therefore, they can not be updated unless the protocol method is called. But in RecSim the protocol is not used at all, so these PVs can not be set in RecSim.
 
 If the protocol returns many values, even this approach may result in too long `INP` fields. One solution would be to pass the prefix `$(P)` as an argument and hard-code the rest of the PV names inside the protocol, but we try to avoid this as much as possible as it introduces extra coupling between the protocol and the db file. Read on for other tricks!
 
