@@ -14,6 +14,7 @@ The first piece of equipment to use this is likely to be the Triton dilution fri
 1. Run `call C:\Instrument\Apps\EPICS\ISIS\inst_servers\master\start_remote_ioc_server.bat` on the remote PC to start the remote IOC server.
 1. Run `caput -S %MYPVPREFIX%REMIOC:INSTRUMENT IN:<local instrument>:` to configure the remote ioc server to point at the relevant instrument
 1. On the instrument control NDX computer, go to the IBEX configuration menu and set the "Remote PV prefix" for the IOC to the prefix of the remote machine (e.g. `ME:<name of equipment>:`)
+1. To see the needed field in the GUI set `ALLOW_REMOTE_PV_PREFIX_CHANGE` to true. (`uk.ac.stfc.isis.ibex.ui.configserver/src/uk/ac/stfc/isis/ibex/ui/configserver/editing/iocs/dialog/EditPanel.java`)
 
 # Architecture:
 ![architecture of the remote IOC](https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/images/remoteIOCArchitecture.png)
