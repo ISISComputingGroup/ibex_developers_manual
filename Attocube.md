@@ -9,7 +9,7 @@ The Attocube ANC350 Piezo controller is currently supported in IBEX. The control
 The controller does not come with Ethernet enabled as standard, it must be purchased separately (the hardware is there but the firmware needs it unlocked). Before a new Attocube is installed ensure in good time that the Ethernet control has been purchased. It will either be enabled at the factory or you will be provided a code to enable it. You can enter this code by connecting via USB and using the `daisy` software provided by Attocube on purchase of a controller. This software can also be used to set the IP address and subnet mask. Unfortunately the device uses a static IP, as such you will need to get an IP registered for the hall (talk to Chris about this). This software is in the usual place where we store manuals.
 
 # The Driver
-The driver was originally written by [Observatory Sciences](http://www.observatorysciences.co.uk/downloads_attocube_drivers.php). It is quite an old style EPICS motor controller but is functional. It communicates with the device using is a relatively simple binary format, documented below:
+The driver was originally written by Observatory Sciences, but is now officialy being maintained by us. It is quite an old style EPICS motor controller but is functional. It communicates with the device using is a relatively simple binary format, documented below:
 
 ## The Protocol
 This is not meant to be an extensive documentation of the protocol, I merely understood enough to implement a [basic emulator](https://github.com/ISISComputingGroup/EPICS-DeviceEmulator/tree/master/lewis_emulators/attocube_anc350). Each packet sent between the device and IOC contains a header with the following information:
