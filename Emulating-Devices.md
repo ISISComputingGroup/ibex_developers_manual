@@ -113,6 +113,8 @@ the device module 'neocera_ltc21' provides multiple device types so that no mean
     - Add device to `__init__` file of package so it can be imported.
     - Ensure that the initial state is one of the states returned by get_state_handlers.
 * When I try to launch `lewis.exe` I get the error `Fatal error in launcher: Unable to create process using '"'`. When you build Python on Windows, the Python path is baked into the `lewis.exe` executable. If you subsequently say move `Python-build` to `Python` then the path will be incorrect and the executable doesn't know where to launch from. You can either open the executable in a text editor and change the path by hand or instead explicitly point it at the Python executable by running `..\Python.exe lewis.exe ...`
+* When I try to print something from the device emulator, nothing happens. Why?
+Print statements in the device emulator can not print anything to a console when they are ran as part of the IocTestFramework.
 * I want to log something how do I do that?
     1. include `@has_log` at the top of the class (don't forget to `from lewis.core.logging import has_log`)
     1. use self.log.info(message), self.log.warning(message), self.log.error(message), etc
