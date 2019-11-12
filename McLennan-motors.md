@@ -16,7 +16,7 @@ See [Set the raw position of the motor without moving it](Set-the-raw-position-o
 
 ### Homing
 
-There are 4 homing modes on the McLenan set via the home macro. The choice of mode depends on the motor, all but 0 are controlled by some SNL. Modes are:
+There are 4 homing modes on the McLennan set via the home macro. The choice of mode depends on the motor, all but 0 are controlled by some SNL. Modes are:
 
 * 0: Send a home signal to the controller.
 * 1: Do a reverse constant velocity move until limit switch is hit, but do not zero the motor (this is deprecated)
@@ -76,18 +76,17 @@ When starting the unit:
 
 Try using the macros for an axis other than 1 (2 or 3) in the ibex GUI. The axis to be driven by the buttons on the front panel are set by a position dial inside the driver, so these might not work with the motor you need to control.
 
-Additionally if it moves a short distance and stops it may be going into Tracking abort. This happens when the encoder and motor resolutions are incorrect/incompatible. The first thing to do is to restart the McLenan and then the IOC so that the values are resent. If this does not fix it then check the settings are correct. 
+Additionally if it moves a short distance and stops it may be going into Tracking abort. This happens when the encoder and motor resolutions are incorrect/incompatible. The first thing to do is to restart the McLennan and then the IOC so that the values are resent. If this does not fix it then check the settings are correct. 
 
-### McLenan moves but doesn't stop at desired position
+### McLennan moves but doesn't stop at desired position
 
-If the McLenan moves but does not stop at the position you requested it could be that the encoder and motor resolutions have not been sent to the controller. This must be done whenever the unit is restarted and is done by restarting the IOC.
-imilar
+If the McLennan moves but does not stop at the position you requested it could be that the encoder and motor resolutions have not been sent to the controller. This must be done whenever the unit is restarted and is done by restarting the IOC.
 
 ### Homes are very slow
 
-*In homing modes other than 2*, the mclennan homes via SNL and uses `JVEL` as it's speed. `JVEL` defaults to `VELO/10` if not set, so try increasing the jog speed and see if this speeds up homes
+*In homing modes other than 2*, the McLennan homes via SNL and uses `JVEL` as it's speed. `JVEL` defaults to `VELO/10` if not set, so try increasing the jog speed and see if this speeds up homes
 
-*In homing mode 2*, the mclennan uses an internal homing routine. This uses the "creep speed" which IBEX currently does not set (see https://github.com/ISISComputingGroup/IBEX/issues/4815 ). If you need to make homing faster, do the following:
+*In homing mode 2*, the McLennan uses an internal homing routine. This uses the "creep speed" which IBEX currently does not set (see https://github.com/ISISComputingGroup/IBEX/issues/4815 ). If you need to make homing faster, do the following:
 - Set `JVEL` to an appropriate speed for homing via IBEX configuration macros
 - Ensure it is propagated down to motor record, look in motor details OPI
 - Disconnect IOC and connect a terminal emulator (e.g. putty, hterm, hyperterm) to the device
@@ -96,9 +95,9 @@ imilar
 - Issue `<axis number>SC<jog speed>\r\n` with the jog speed you just looked up
 - Reconnect the IOC and check that homes now work appropriately. 
 
-## Office McLenan Settings
+## Office McLennan Settings
 
-The office McLenan need the following:
+The office McLennan need the following:
 
 1. No Null terminator or gender changer (if using a straight-through male-female cable from a PC)
 1. `BAUD` 9600
