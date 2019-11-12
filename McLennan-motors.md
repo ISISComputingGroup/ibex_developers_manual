@@ -73,7 +73,15 @@ When starting the unit:
 1. Home the device
 
 ### I've booted up a McLennan and can't get it moving
+
 Try using the macros for an axis other than 1 (2 or 3) in the ibex GUI. The axis to be driven by the buttons on the front panel are set by a position dial inside the driver, so these might not work with the motor you need to control.
+
+Additionally if it moves a short distance and stops it may be going into Tracking abort. This happens when the encoder and motor resolutions are incorrect/incompatible. The first thing to do is to restart the McLenan and then the IOC so that the values are resent. If this does not fix it then check the settings are correct. 
+
+### McLenan moves but doesn't stop at desired position
+
+If the McLenan moves but does not stop at the position you requested it could be that the encoder and motor resolutions have not been sent to the controller. This must be done whenever the unit is restarted and is done by restarting the IOC.
+imilar
 
 ### Homes are very slow
 
@@ -90,7 +98,7 @@ Try using the macros for an axis other than 1 (2 or 3) in the ibex GUI. The axis
 
 ## Office McLenan Settings
 
-The office McLanan need the following:
+The office McLenan need the following:
 
 1. No Null terminator or gender changer (if using a straight-through male-female cable from a PC)
 1. `BAUD` 9600
