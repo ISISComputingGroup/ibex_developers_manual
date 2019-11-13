@@ -15,7 +15,7 @@ The following general design points were agreed:
 
 # The `ActionDefinition` class
 
-An `Action` is the base building block that the script generator will use to build up scripts. It is essentially a wrapper around a python function that can tell us:
+An `ActionDefinition` is the base building block that the script generator will use to build up scripts. It is essentially a wrapper around a python function that can tell us:
 - Whether a given set of inputs is valid
 - The types of the parameters
 - Possibly other metadata in future
