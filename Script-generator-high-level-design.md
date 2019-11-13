@@ -11,7 +11,7 @@ The following general design points were agreed:
 - The GUI will be written in Java (eclipse rcp). It should have minimal logic in it other than pure display logic
 - It will talk to a python process embedded in the GUI, whose responsibility it is to generate a python script based on the input that a user has provided
   * Py4j is already included in our GUI build and allows for Java-Python communication
-  * We need this process to be implemented in Python because it needs to be able to run arbitrary user-supplied python parameter validators (see also "The `Action` class", below).
+  * We need this process to be implemented in Python because it needs to be able to run arbitrary user-supplied python parameter validators (see also "The `ActionDefinition` class", below).
 
 # The `ActionDefinition` class
 
@@ -46,9 +46,9 @@ There are two main types of user interfaces that support slightly different work
 
 ### Table based (part of MVP)
 
-This interface is a simple table. It is configured for one (and only one) type of `Action`. It configures it's columns to match the parameters of the action.
+This interface is a simple table. It is configured for one (and only one) type of `ActionDefinition`. It configures it's columns to match the parameters of the action.
 
-For example, for the `Action` defined above, the table in the script generator would look like this:
+For example, for the `ActionDefinition` given above, the table in the script generator would look like this:
 
 | temperature | field | uamps |
 | --- | --- | --- |
