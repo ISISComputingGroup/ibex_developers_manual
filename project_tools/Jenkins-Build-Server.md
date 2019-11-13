@@ -18,7 +18,7 @@ For information on configuring Jenkins see [Adding a new Windows machine to Jenk
 * The [`ibex_gui`](http://epics-jenkins.isis.rl.ac.uk/job/ibex_gui_pipeline/) build uses the `master` branch for the [IBEX GUI](https://github.com/ISISComputingGroup/ibex_gui)
 * The `ibex_gui_build_PRs` builds all the PRs for the `ibex_gui` branch
 * The Tycho build is run, which is slightly different to building within Eclipse. This can be run locally by running the `build/build.bat dev_python.bat` file that is checked out with the client.
-  * `build/build.bat copy_python.bat` is called in the build server but this copies python into the gui, but we want to use the new genie python as devs
+  * `build/build.bat copy_python.bat` is called in the build server but this copies python into the gui, but we want to use the new genie python as developers
 * The Tycho build also runs the unit tests
 * Jenkins additionally runs CheckStyle and shows a fail build if there is an increase
 * Jenkins builds will bundle the JRE with the client. The version of the JRE bundled is located at `\\isis\inst$\Kits$\CompGroup\ICP\ibex_client_jre`. This should be updated occasionally.
