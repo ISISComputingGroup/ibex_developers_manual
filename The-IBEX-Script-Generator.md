@@ -41,3 +41,8 @@ Each 'action', or step in a script is represented in the GUI as a row. Each cell
 The parameter values are stored as strings in the underlying action. These strings are passed to the python process for validation, and to insert them into the output script. When the value of an underlying cell is updated, the GUI is notified by firing a property change (`actions`).
 
 To change the type of action represented in the table, the singleton drops the current table and replaces it with a new one constructed using the new action type.
+
+## Importing Configs from user-supplied `ActionDefinition`s
+The `ActionDefinitions` are supplied by instrument scientists in [this form](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Script-generator-high-level-design#the-actiondefinition-class). All the python modules containing an `ActionDefinition` in a subdirectory are imported and stored in a `ConfigWrapper` class, which is accessed through a py4j interface in the GUI model. 
+
+These are loaded in to the GUI using a py4j interface, which 
