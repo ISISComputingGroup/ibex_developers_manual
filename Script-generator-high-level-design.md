@@ -13,7 +13,7 @@ The following general design points were agreed:
   * Py4j is already included in our GUI build and allows for Java-Python communication
   * We need this process to be implemented in Python because it needs to be able to run arbitrary user-supplied python parameter validators (see also "The `Action` class", below).
 
-# The `Action` class
+# The `ActionDefinition` class
 
 An `Action` is the base building block that the script generator will use to build up scripts. It is essentially a wrapper around a python function that can tell us:
 - Whether a given set of inputs is valid
@@ -23,7 +23,7 @@ An `Action` is the base building block that the script generator will use to bui
 As an example, consider a class that looks something like:
 
 ```python
-class DoRun(Action):
+class DoRun(ActionDefinition):
     def run(self, temperature: float, field: float, uamps: float):
         g.cset("temperature", temperature)
         g.cset("field", field)
