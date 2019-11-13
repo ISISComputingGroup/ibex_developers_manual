@@ -38,7 +38,7 @@ class DoRun(ActionDefinition):
 ```
 (this is not necessarily the final API)
 
-We would probably define some default "Actions", but instrument scientists would be responsible for writing and maintaining their own instrument-specific actions (in a similar way to the current instrument scripts).
+We would probably supply some default `ActionsDefinition`s, but instrument scientists would be responsible for writing and maintaining their own instrument-specific actions (in a similar way to the current instrument scripts).
 
 # User interface
 
