@@ -43,6 +43,6 @@ The parameter values are stored as strings in the underlying action. These strin
 To change the type of action represented in the table, the singleton drops the current table and replaces it with a new one constructed using the new action type.
 
 ## Importing Configs from user-supplied `ActionDefinition`s
-The `ActionDefinitions` are supplied by instrument scientists in [this form](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Script-generator-high-level-design#the-actiondefinition-class). All the python modules containing an `ActionDefinition` in a subdirectory are imported and stored in a `ConfigWrapper` class, which is accessed through a py4j interface in the GUI model. 
+The `ActionDefinitions` are supplied by instrument scientists in [this form](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Script-generator-high-level-design#the-actiondefinition-class). All the python modules containing an `ActionDefinition` in a subdirectory are imported and stored in a `ConfigWrapper` class. Using an instrument scientist supplied `ActionDefinition`, a `Config` class is created containing the`ActionDefinition` with helper methods like `getParameters` and `parametersValid` to expose the parameters used in the action and the validation method. These `Config` classes are collected by the `ConfigWrapper`, which is then passed through the py4j interface to the GUI code.
 
-These are loaded in to the GUI using a py4j interface, which 
+Once in the GUI, `ActionParameters` are made using the parameters used in the `ActionDefinition`, and this is used to make a table in the script generator.
