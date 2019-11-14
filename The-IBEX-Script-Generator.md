@@ -45,4 +45,7 @@ To change the type of action represented in the table, the singleton drops the c
 ## Importing Configs from user-supplied `ActionDefinition`s
 The `ActionDefinitions` are supplied by instrument scientists in [this form](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Script-generator-high-level-design#the-actiondefinition-class). All the python modules containing an `ActionDefinition` in a subdirectory are imported and stored in a `ConfigWrapper` class. Using an instrument scientist supplied `ActionDefinition`, a `Config` class is created containing the `ActionDefinition` with helper methods like `getParameters` and `parametersValid` to expose the parameters used in the action and their validation. These `Config` classes are collected by the `ConfigWrapper`, which is then passed through the py4j interface to the GUI code.
 
-Once in the GUI, the script generator table is created by generating `ActionParameters` from the 
+Once in the GUI, the script generator table is created by generating `ActionParameters` from the parameter names exposed through the Configs class.
+
+
+![](https://raw.githubusercontent.com/ISISComputingGroup/ibex_developers_manual/master/images/scriptgen_configs.png)
