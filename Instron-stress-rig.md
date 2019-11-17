@@ -43,6 +43,16 @@ The stress rig can be power cycled using the process below (note: if unsure, che
 
 The stress rig on ENGIN-X is mapped from both ENGINX and ENGINX_SETUP. **Only one of these computers should talk to the stress rig at a time!** If you get strange comms issues, check that the "other" computer is not also trying to talk at the same time.
 
+### Hydraulics won't re-enable after panic stop
+
+A panic stop sends the `C23,0` command to the stress rig. To quote from the instron manual:
+
+> If this command is sent with the Off parameter, actuator manifold pressure is turned Off immediately, and the Actuator On button is disabled.
+
+To re-enable the actuator (hydraulics control), first check that the cause of the panic stop is no longer an issue. Then you may need to send the command `C23,1` to the stress rig via the arbitary command interface on the stress rig OPI once the rig is back in a safe state. 
+
+If the above command fails, restarting the hardware and then the IOC should boot the stress rig back up with the actuator enabled.
+
 # Driver
 
 The stress rig driver uses the following DB files:
