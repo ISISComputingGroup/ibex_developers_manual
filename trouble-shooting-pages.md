@@ -34,3 +34,4 @@
 
 [SECI](SECI-Troubleshooting)
 
+[Where are the log files](Log file location)
