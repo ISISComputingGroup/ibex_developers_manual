@@ -49,7 +49,7 @@ A panic stop sends the `C23,0` command to the stress rig. To quote from the inst
 
 > If this command is sent with the Off parameter, actuator manifold pressure is turned Off immediately, and the Actuator On button is disabled.
 
-To re-enable the actuator (hydraulics control), first check that the cause of the panic stop is no longer an issue. Then you may need to send the command `C23,1` to the stress rig via the arbitary command interface on the stress rig OPI once the rig is back in a safe state. 
+To re-enable the actuator (hydraulics control), first check that the cause of the panic stop is no longer an issue. Then you may need to send the command `C23,1` to the stress rig via the arbitrary command interface on the stress rig OPI once the rig is back in a safe state. 
 
 If the above command fails, restarting the hardware and then the IOC should boot the stress rig back up with the actuator enabled.
 
