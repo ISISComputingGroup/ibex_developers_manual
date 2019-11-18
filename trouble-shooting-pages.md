@@ -17,5 +17,4 @@
 * [Mini-inst](Mini-inst-Troubleshooting)
 * [Issues which arise which we can not trace](Issues-which-arise-which-we-can-not-trace) If you can not find the cause of an issue record it on this page and we can maybe start spotting common causes or likely hood.
 * [SECI](SECI-Troubleshooting)
-
-[Where are the log files](Log-file-location)
+* [Where are the log files](Log-file-location)
