@@ -2,7 +2,17 @@
 
 The aim of the reflectometer project is to allow users of the reflectometers to have a common and easy experience to set the position of items on the beam line. The setup is fairly complex because of there are multiple items that need to be coordinated to make a measurement. This page should give an overview of what is going on and the user cases that are needed.
 
-Related Pages:
+The image below shows a schematic of the inside of the block house for a typical reflectometer.
+
+![Reflectometer Schematic](reflectometers/refl_beamline_setup.png)
+
+- The beam travels from the neutron target on the left to the detector on the right, bouncing off a sample along the way.
+- Theta is the main parameter we care about in reflectometry experiments.
+- Different experiments may require different beamline setups which may affect the beam path. (e.g. adding a mirror in this instance)
+- Whenever the beam path is modified, we want equipment to automatically track the beam as appropriate for the currently active configuration. Coordinating motion at the beamline level in this way is the primary purpose of our reflectometry system.
+
+
+Related pages for more detail:
 
 - [Setup and science behind the experiment](Reflectometers-Science)
 - [Reflectometers Beam Height Calculation](Reflectometers-Beam-Height-Calc)
