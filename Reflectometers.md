@@ -4,7 +4,7 @@ The aim of the reflectometer project is to allow users of the reflectometers to 
 
 The image below shows a schematic of the inside of the block house for a typical reflectometer.
 
-![Reflectometer Schematic](reflectometers/refl_beamline_setup.png)
+![Reflectometer Schematic](reflectometers/refl_beamline_setup.PNG)
 
 - The beam travels from the neutron target on the left to the detector on the right, bouncing off a sample along the way.
 - Theta is the main parameter we care about in reflectometry experiments.
