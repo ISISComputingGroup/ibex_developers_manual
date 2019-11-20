@@ -119,7 +119,7 @@ There is a LabVIEW VI in `C:\LABVIEW MODULES\Drivers\Galil DMC2280\Galil - EPICS
 
 Open this VI, put the computer name as `IN` and the username as `(INSTNAME):MOT`. This should generate a load of caput commands that look like `caput IN:(INSTNAME):MOT:MTR0101.(FIELD) (value)`
 
-Copy these caput commands into a batch file, open an EPICS terminal and run that batch file. This will apply the settings to the Galil under IBEX. These settings should then be autosaved but **you must wait at least 15s after applying the value before restarting the IOC if you need to restart the IOC**.
+Copy these caput commands into a batch file, open an EPICS terminal and run that batch file. This will apply the settings to the Galil under IBEX. These settings should then be autosaved but **you must wait at least 30s after applying the value before restarting the IOC if you need to restart the IOC**.
 
 Now test both the homing and positions to make sure they are the same as in Labview. This appears not to work correctly with absolute encoders so double check these axes see [ticket 2985](https://github.com/ISISComputingGroup/IBEX/issues/2985). If the home offset was set in Labview you need to home if you switch from Labview to IBEX. If you think this is going to be an issue for the scientists then you should consider leaving the HOMEVAL set to the value and set the offset to zero for a cycle while they get used to IBEX. Be aware though this will mean that on home this causes the bench to drift.
 
