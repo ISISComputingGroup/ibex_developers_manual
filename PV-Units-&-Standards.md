@@ -51,6 +51,7 @@ The project currently contains the following base units:
 * count
 * degree or deg for short
 * eV
+* event
 * frame
 * hour
 * Hz
