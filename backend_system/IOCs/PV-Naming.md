@@ -13,7 +13,7 @@ PV names are restricted to alphanumerical, plus `_` and `:` so `[A-Z0-9_:]*` Ite
 
 ### Private names
 
-Sometimes we have a need to define PVs which are only used internally by the IOC, and never by outside programs. These "private" names will use a leading underscore on the first logically private element of a hierarchy.
+Sometimes we have a need to define PVs which are only used internally by the IOC, and never by outside programs. These "private" names will use a leading underscore on the last logically private element of a hierarchy.
 
 For example:
 
