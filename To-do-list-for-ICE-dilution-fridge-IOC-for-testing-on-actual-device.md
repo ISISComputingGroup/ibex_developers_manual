@@ -4,3 +4,4 @@
 - establish what is the exact command the device replies with when you want to get the mimic valve values.
 - ask what the unit for the mimic pressures and proportional valves is exactly.
 - ask what the INFO? string is and how it is terminated
+- ask more what descriptions scientists want for PVs for things in the mimic panel.
