@@ -1,7 +1,7 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > Debug Builds
 
 DEBUG DLL builds are kept in `EPICS_DEBUG_CLEAN_win7_x64` in the usual kits deployment area. If you wish to deploy only a single IOC in debug mode rather than replace the whole installation with the above debug build then:
-
+1. You need to build the dllCopy.bat by running ```make dllCopy.bat``` in the ioc boot area.
 1. Double-click on the **`dllCopy.bat`** file in the `iocBoot` area of the IOC you want to deploy on kits, this will copy the dependent DLL and `.pdb` files to the {ioc}/bin/windows-x64-debug directory
 1. Backup the `{ioc}/bin/windows-x64` directory on the target computer to be tested.
 1. Copy the `.EXE` and all `.DLL`/`.pdb` files from the `kits/{ioc}/bin/windows-x64-debug` directory to the `bin/windows-x64` of the target IOC.
