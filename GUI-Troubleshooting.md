@@ -23,7 +23,7 @@ We have seen some cases of JAXB causing issues with the GUI building. Since Ecli
 1. In the project explorer delete all the plugins (Do not delete the files from disk)
 1. Select "Import Existing Projects" and select the GUI base folder
 1. Open the `uk.ac.stfc.isis.ibex.targetplatform` file
-1. After the project has been imported click "Set Target Platform" in the top right
+1. After the project has been imported click the "reload" button and then "Set Target Platform" in the top right. Note that these two buttons do not do the same thing and it necessary to press them both in order.
 
 This seems to be the best way to resolve this. If you have persistent issues with JAXB and this method not working, please inform the team as we would like to investigate.
 
@@ -33,6 +33,7 @@ If Eclipse gets very confused with the project build, you might want to complete
 
 - `.m2` (contains downloaded dependencies)
 - `.p2`
+- `.eclipse`
 
 ## Other issues
 
