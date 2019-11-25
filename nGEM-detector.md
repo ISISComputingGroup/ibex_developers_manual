@@ -10,7 +10,9 @@ For a clean setup on laptop (skip relevant steps if previously configured)
 * edit copycmd.bat in support/ngem-bbtx/master/utils to set ARCHIVE location for files to be copied to
 * put notes on running both shortcuts on reboot and location of copycmd.bat into a README/NOTES file on desktop
 
+The is an nGEM.opi file, on INES this has just need installed as a device screen.
 
+INES has some simple python commands to set the START/STOP pvs for the detector. The detector IOC picks up the run number for ines to add to data files as its prefix is also IN:INES  
 
 
 
