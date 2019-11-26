@@ -5,3 +5,4 @@
 - ask what the unit for the mimic pressures and proportional valves is exactly.
 - ask what the INFO? string is and how it is terminated
 - ask more what descriptions scientists want for PVs for things in the mimic panel.
+- ask about PV4 and other invisible controls in LabVIEW mimic, such as 1k pump, HE3 pump and roots pump
