@@ -31,6 +31,18 @@ When calculating the time for each axis to finish a move, the backlash distance 
 
 The user can turn this off in the configuration file. In which case the time reported to finish a move is 0, and the axis's speed is not changed on move.
 
+Synchronisation in the configuration files defaults to `true` but can be set with:
+
+```
+DisplacementDriver( ... , synchronised=False)
+```
+
+or
+
+```
+AngleDriver( ... , synchronised=False)
+```
+
 ### Engineering Offset
 
 Engineering offsets correct the value sent to a PV because of inaccuracies in the engineering. For instance, if we set theta to 0.3 we will be setting the height of the jaw so that the jaws centre is in the middle of the beam. However, because of needing to tilt the jaws and the centre of rotation not being in the middle of the jaws, we need to add a correction to the geometry of 0.1mm. The best place to do this is at the point at which the value is sent to the driver. The form of the corrections can multiple but we will start by catering for:
