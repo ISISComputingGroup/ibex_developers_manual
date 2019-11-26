@@ -35,6 +35,10 @@ If Eclipse gets very confused with the project build, you might want to complete
 - `.p2`
 - `.eclipse`
 
+## Client at startup produces a log with Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+
+You may have built with Java 11 but are running with Java 8 make sure the path is set correctly without Java 8 on it and that you are using the correct version at run time.
+
 ## Other issues
 
 [Memory "leaks"](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Debugging-memory-leaks-in-the-IBEX-GUI)
