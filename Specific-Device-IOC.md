@@ -10,7 +10,7 @@ These are the list of categories for an IOC. The IOC can appear in multiple cate
 
 [Gas and liquid handling systems](Gas-And-Liquid-Handling-Systems)
 
-Imaging Cameras
+[Imaging Cameras](imaging-cameras)
 
 [Jaws and Slits](Jaws-and-slits)
 
