@@ -23,7 +23,7 @@
     1. Set all tickets milestones on new tickets.
     1. Set label from proposal to ready and add to ready column in correct order
 1. For tickets that weren't in sprint take top 6 and add to bucket
-1. Remove all proposal labels
+1. Remove all proposal labels (and tickets from planning board)
 
 ### Releases
 
