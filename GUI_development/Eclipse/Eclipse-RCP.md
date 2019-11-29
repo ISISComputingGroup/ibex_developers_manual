@@ -4,4 +4,4 @@ We have two books which should serve as a reasonable introduction to the Eclipse
 
 ### E4 and compatibility views (e.g. `org.eclipse.ui.console`)
 
-Although we run an E4 product, we are able to load E3-style plugins via the eclipse compatibility layer. Howvever, any UI element referred to via the compatibility layer must be defined as a shared element in the client E4XMI, not defined in a snippet as this does not work correctly with certain UI actions - for example, resetting layouts.
+Although we run an E4 product, we are able to load E3-style plugins via the eclipse compatibility layer. However, any UI element referred to via the compatibility layer must be defined as a shared element in the client E4XMI, not defined in a snippet as this does not work correctly with certain UI actions - for example, resetting layouts.
