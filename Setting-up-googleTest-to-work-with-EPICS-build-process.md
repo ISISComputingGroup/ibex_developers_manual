@@ -43,7 +43,7 @@ runner_SRCS += run_all_tests.cc
 runner_LIBS += gtest
 ```
 
-where `run_all_tests.cc` is a file containing the following lines
+Where `run_all_tests.cc` is a file containing the following lines. Make sure to also add all libs needed for the files being tested.
 
 ```C++
 #include "gtest/gtest.h"
