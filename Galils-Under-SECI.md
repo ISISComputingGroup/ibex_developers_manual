@@ -7,3 +7,10 @@
 
 # Specific Examples
 - [Move for `GPHI` on CRISP from 0 to 2.4](move-gphi): A page using the move information above to predict the values being sent for a move of `GPHI` which behaves very differently between SECI and IBEX
+
+# Other:
+
+Motor Setup Pane
+
+   - Correct Motion ticket box: will make the driver retry the motion if the position is not within the deadband of the set point; up to 10 times.
+
