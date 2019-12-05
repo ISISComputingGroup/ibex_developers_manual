@@ -8,6 +8,7 @@ This is a guide to set up googleTest with EPICS at ISIS. This allows you to writ
 * [Adding a target to run tests](#Adding-a-target-to-run-tests)
 * [Adding tests to Jenkins](#adding-tests-to-Jenkins)
 * [Sample Test](#sample-test)
+* [Notes](#Notes)
 
 
 ## googleTest
@@ -125,3 +126,6 @@ namespace {
 } // namespace
 
 ```
+
+## Notes
+We are currently using an outdated version of google tests, so some features shown in tutorials and documentation will not work as they have since been renamed. For example, we need to use `INSTANTIATE_TEST_CASE_P` instead of `INSTANTIATE_TEST_SUITE_P`, `SetUpTestCase()` instead of `SetUpTestSuite()` and `TearDownTestCase()` instead of `TearDownTestSuite()`.
