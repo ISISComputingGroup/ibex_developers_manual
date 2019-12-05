@@ -85,3 +85,11 @@ record(bo, "$(P)_RECORD2:SP") {
 ```
 
 This takes the set points binary value, shifts it by +1 in a calc record which allows for it to be mapped with the forward link outputs of the fanout record, these forward links are then processed. This can be easily extended with additional forward links or sequence records.
+
+## Processing of calc records
+
+There are two major ways in which your calc records can be processed:
+
+1)The first way is to either use a forward link or have the name of your calc record in the OUT field of another PV, followed by the PP flag. In this way, the calc record will not be processed when the IOC starts. This way is better for when the other PV is a setpoint, since you want the calc record to process only when the setpoint is explicitly set, not also when the IOC starts and when the setpoint is initialized.
+
+2)The other way is to have the PV that should trigger the processing of the calc record in the an INP field of the calc record, followed by the CP MS flags. The CP flag enables monitoring of that PV, and then the MS flag means any alarm of that PV will propagate to the calc record. The calc record will be processed every time the other PV is processed, including when the IOC starts. This way is better for when the other PV is a readback, because you want the calc to be processed each time the readback changes.
