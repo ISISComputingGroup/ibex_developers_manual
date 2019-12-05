@@ -128,4 +128,5 @@ namespace {
 ```
 
 ## Notes
-We are currently using an outdated version of google tests, so some features shown in tutorials and documentation will not work as they have since been renamed. For example, we need to use `INSTANTIATE_TEST_CASE_P` instead of `INSTANTIATE_TEST_SUITE_P`, `SetUpTestCase()` instead of `SetUpTestSuite()` and `TearDownTestCase()` instead of `TearDownTestSuite()`.
+We are currently using an outdated version of google tests, so some features shown in tutorials and documentation will not work as they have since been renamed.
+For example, we need to use `INSTANTIATE_TEST_CASE_P` instead of `INSTANTIATE_TEST_SUITE_P`, `SetUpTestCase()` instead of `SetUpTestSuite()` and `TearDownTestCase()` instead of `TearDownTestSuite()`.
