@@ -35,6 +35,10 @@ Beamline equipment can be in the beam or not depending on the mode; e.g. some ex
 1. The readback should then be read
 1. The theta for the readback (not the setpoint) is then used to calculate the theta of the device
 
+## Liquid Samples
+
+For liquid samples the sample angle must remain fixed at the natural angle of the beam, i.e. level with the floor. Instead of tilting the sample you use the super mirror. The angle of super mirror should be related to the theta that is being measured. To calculate this using the above picture you want the incoming beam to make an angle with the sample (which is at and angle of theta) which is the same as the natural angle. E.g. `natural angle = 2 x super mirror angle + theta`.
+
 ### Equipment on the beam
 
 #### Polariser/Super Mirror
