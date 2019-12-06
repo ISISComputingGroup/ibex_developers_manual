@@ -37,3 +37,7 @@ Where:
    - max(measured_field) is the largest component of the 3 scaled (but not offset or matrix multiplied) input field strenghts.
    - magnetometer_range is the scaling factor used in the magnetometer range scaling
    - 4.5 is a constant taken from the EMU VI. This value may be different for other magnetometers.
+
+## Process order
+
+A requirement of this IOC is to maintain as consistent a time as possible between measuring the data and performing calculations using it. To achieve this, no records in this IOC scan. Instead, each record forward links to the next record to be processed in order. This is outlined below:
