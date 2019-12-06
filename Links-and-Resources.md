@@ -10,6 +10,8 @@
 
 - [Sharepoint discussion site](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions)
 
+- [Instrument password sharepoint site](http://www.facilities.rl.ac.uk/isis/computing/instruments/Instrument%20Documents/Forms/AllItems.aspx)
+
 - [EPICS Channel access explained](http://www.aps.anl.gov/epics/docs/CAproto.html)
 
 - [HDF5 Viewer for Nexus files](https://www.hdfgroup.org/downloads/hdfview#obtain)
