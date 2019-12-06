@@ -41,3 +41,5 @@ Where:
 ## Process order
 
 A requirement of this IOC is to maintain as consistent a time as possible between measuring the data and performing calculations using it. To achieve this, no records in this IOC scan. Instead, each record forward links to the next record to be processed in order. This is outlined below:
+
+![](https://raw.githubusercontent.com/ISISComputingGroup/ibex_developers_manual/master/images/magnetometer_daq.png)
