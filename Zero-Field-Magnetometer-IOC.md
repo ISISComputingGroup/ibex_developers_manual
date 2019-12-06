@@ -2,7 +2,7 @@
 
 The magnetometer reads magnetic field strengths from the beamline. This IOC takes the magnetometer signal, applies corrections and performs a check to make sure that the magnetometer has not been overloaded.
 
-The corrected field strengths are exposed as PVs  when the sequencer controlling the auto-feedback of the zero field is 
+This IOC is designed to be used in conjunction with a sequencer IOC, which uses the field values to calculate corrections needed to maintain a magnetic field strength. When a new field value is reqiured, the sequencer will process the `$(P)TAKEDATA` PV of this IOC. When the new field values are available, this IOC processes `$(PVPREFIX):ZFCNTRL_01:INPUTS_UPDATED.PROC`, which it expects to allow the sequencer IOC to continue its calculations. This PV can be changed by setting the `$(SQNCR)` macro.
 
 ## Corrections applied to the input fields
 
@@ -27,3 +27,13 @@ The maths which defines these operations is described in finer detail [here](htt
    - The corrected field strengths are written directly to the PVs `$(P)X:CORRECTEDFIELD` from the aSub record.
    - The aSub record also calculates the magnitude of the corrected field and places it in `$(P)FIELDSTRENGTH`.
 
+## Overload
+
+High field values will overload the magnetometer, which is detected in this IOC. The overload condition for the EMU magnetometer is:
+
+`max(measured_field) > magnetometer_range * 4.5`
+
+Where:
+   - max(measured_field) is the largest component of the 3 scaled (but not offset or matrix multiplied) input field strenghts.
+   - magnetometer_range is the scaling factor used in the magnetometer range scaling
+   - 4.5 is a constant taken from the EMU VI. This value may be different for other magnetometers.
