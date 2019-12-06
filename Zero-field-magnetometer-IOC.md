@@ -21,7 +21,7 @@ The maths which defines these operations is described in finer detail [here](htt
    - The multiplication iteslf is done as an aSub record. This allows us to use the libraries available to us through GSL.
    - Set up using GSL vector and matrix structures, performing the matrix multiplication is a relatively straightforward call to a vector/matrix multiplication BLAS routine in GSL.
    - The documentation for GSL data structures used is [here](https://www.gnu.org/software/gsl/doc/html/vectors.html).
-   - The GSL documentation for BLAS routines is lacking (see [documenatation](https://www.gnu.org/software/gsl/doc/html/blas.html)). To get more in-depth information about the arguments used I would look up the routine in the [BLAS documentation](http://www.netlib.org/blas/).
+   - The GSL documentation for BLAS routines is lacking (see [documentation](https://www.gnu.org/software/gsl/doc/html/blas.html)). To get more in-depth information about the arguments used I would look up the routine in the [BLAS documentation](http://www.netlib.org/blas/).
 
 4. Output
    - The corrected field strengths are written directly to the PVs `$(P)X:CORRECTEDFIELD` from the aSub record.
