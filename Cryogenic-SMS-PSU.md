@@ -15,9 +15,25 @@ It is meant to be thoroughly tested against the VI in every capacity that the VI
 
 ### IOC
 
-An IOC is currently (Nov 2019) being developed for this PSU, named CRYOSMS. In order to prevent users from negligently sending commands to the PSU which could damage the cryomagnet (e.g. manually setting an incorrect ramp rate, sending values in wrong units), this IOC has a very non-standard communication system. Users are able to enter values into a large number of PVs as normal, however no use-facing setpoint PVs send commands to the device. Instead, writes triggered by users are sent to an asyn Port Driver, which handles the complex logic associated with ramping, handling quenches, etc. and feeds back values into a set of PVs with the HIDDEN access security group. Users are completely unable to interact or even view the contents of these PVs, the most they can do is confirm their existence. Finally, these hidden PVs send commands to the PSU through streamDevice, which is necessary due to the difficult syntax of certain responses. For reads from the device, the user-facing PVs interact directly with the PSU through streamDevice.
+An IOC is currently (Dec 2019) being developed for this PSU, named CRYOSMS. In order to prevent users from negligently sending commands to the PSU which could damage the cryomagnet (e.g. manually setting an incorrect ramp rate, sending values in wrong units), this IOC has a very non-standard communication system. Users are able to enter values into a large number of PVs as normal, however no use-facing setpoint PVs send commands to the device. Instead, writes triggered by users are sent to an asyn Port Driver, which handles the complex logic associated with ramping, handling quenches, etc. and feeds back values into a set of PVs with the HIDDEN access security group. Users are completely unable to interact or even view the contents of these PVs, the most they can do is confirm their existence. Finally, these hidden PVs send commands to the PSU through streamDevice, which is necessary due to the difficult syntax of certain responses. For reads from the device, the user-facing PVs interact directly with the PSU through streamDevice.
 
 ### Operation
+
+The IOC will handle initialisation in asyn, where it will check various macros do determine whether certain modes should be enabled/disabled:
+
+All writes to the device will be disabled in any of these situations:
+* `T_TO_A` not supplied
+* `MAX_CURR` not supplied
+* `ALLOW_PERSIST` is on, but any of the subsequently required variables (`FAST_FILTER_VALUE`, `FILTER_VALUE`, `NPP`, `FAST_PERSISTENT_SETTLETIME`, `FAST_RATE`) are missing
+* `USE_SWITCH` is on, but any of the subsequently required variables (`SWITCH_TEMP_PV`, `SWITHCH_HIGH`, `SWITCH_LOW`, `SWITCH_STABLE_NUMBER`, `HEATER_TOLERANCE`, `SWITCH_TIMEOUT`, `SWITCH_TEMP_TOLERANCE`, `HEATER_OUT`) are missing
+* `USE_MAGNET_TEMP` is on, but any of the subsequently required variables (`MAGNET_TEMP_PV`, `MAX_MAGNET_TEMP`, `MIN_MAGNET_TEMP`) are missing
+* `COMP_OFF_ACT` is on, but any of the subsequently required variables (`NO_OF_COMP`, `MIN_NO_OF_COMP`, `COMP_1_STAT_PV`, `COMP_2_STAT_PV`) are missing
+
+Additionally, the asyn driver will initialise various variables and send several commandss to the PSU based on user provided macros:
+* The Tesla-Amps conversion rate will be set to `T_TO_A`
+* The maximum allowed current will be set to `MAX_CURR`
+* The maximum allowed voltage will be set to `MAX_VOLT`
+* The heater output will be set to `HEATER_OUT`
 
 It initialises and waits in a `Ready` state, depending on things like switch status, temperatures, magnet mode, settle times, etc. `Ready` means that it is ready to drive its field (up or down). It is dangerous to ramp the magnet too fast, so the IOC uses 'ramp tables' which contain field strength-ramp rate pairs. i.e. the magnet can safely ramp up to the field strength at the ramp rate associated with it. Any higher and you risk quenching.
 
