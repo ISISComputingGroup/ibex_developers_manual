@@ -17,7 +17,7 @@ This issue has been observed on LARMOR and TOSCA, accompanied by the following e
 2017-04-13 20:52:17  This is a VXI DAE
 ```
 
-This was resolved by powercycling the DAE followed by stopping the visa server and running `resman`. (Ask Freddy to find out more)
+This was resolved by powercycling the DAE followed by stopping the visa server and running `resman`. Instructions how to reset the DAE can be found in [these slides](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/ISISICP%20and%20DAE.pptx). Ask Freddy to find out more
 
 ### No log files are produced in `c:\data` even though blocks are set to log.
 The reason may be because cp hasn't been set to look for epics. In `C:\LabVIEW Modules\dae\isisicp.properties` set `isisicp.epicsdb.use = true` to log the epic's blocks. You will need to restart the `isisicp` process for this to take effect. To do this, just end the `isisicp` process in task manager.
