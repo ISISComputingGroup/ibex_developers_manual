@@ -43,7 +43,29 @@ Additionally, the asyn driver will initialise various variables and send several
 |`MAX_VOLT`|Set the maximum voltage for the system||
 |`WRITE_UNIT`|Which unit to write to the PSU in|Amps|
 |`DISPLAY_UNIT`|Which unit will be used when displaying the value from the PSU|Gauss|
-|`RAMP_FILE`|||
+|`RAMP_FILE`|Location of file containing ramp rates||
+|`ALLOW_PERSIST`|Whether or not to allow settin of persistent values|No|
+|`USE_SWITCH`|Whether or not to monitor and set switches on and off|No|
+|`SWITCH_TEMP_PV`|PV address of switch temperature||
+|`SWITCH_HIGH`|The value at which the switch will be considered warm|3.7|
+|`SWITCH_LOW`|The value at which the switch will be considered cold|3.65|
+|`SWITCH_STABLE_NUMBER|The number of readings past a threshold needed before the switch can be considered warm/cold|10|
+|`HEATER_TOLERANCE`|The tolerance between the magnet and lead currents before considering them as close enough to allow the leads to warm|0.2|
+|`SWITCH_TIMEOUT`|The time to allow for the switch to warm or cold after turning the heater on/off before considering there to be an error situation|300|
+|`SWITCH_TEMP_TOLERANCE`|_needs clarification_||
+|`HEATER_OUT`|The heater output to be used||
+|`USE_MAGNET_TEMP`|Whether to act if the Magnet Temperature is out of range|No|
+|`MAGNET_TEMP_PV`|The PV address of the magnet temperature||
+|`MAX_MAGNET_TEMP`|Maximum allowed temperature of magnet|5.5|
+|`MIN_MAGNET_TEMP`|Temperature below which there is potentially an error reading temperature from the magnet|1|
+|`COMP_OFF_ACT`|Whether to act if magnet temperature is out of range|No|
+|`NO_OF_COMP`|Number of compressors in the system|2|
+|`COMP_1_STAT_PV`|The PV address for the status of the first compressor||
+|`COMP_2_STAT_PV`|The PV address for the status of the second compressor||
+|`FAST_RATE`|The ramp rate to use for the fast ramps|0.5|
+|`FAST_PERSISTENT_SETTLETIME`|The number of seconds to settle after a ramp fast to persist|5|
+|`PERSISTENT_SETTLETIME`|The number of seconds to settle after a ramp to persist|60|
+
 
 It initialises and waits in a `Ready` state, depending on things like switch status, temperatures, magnet mode, settle times, etc. `Ready` means that it is ready to drive its field (up or down). It is dangerous to ramp the magnet too fast, so the IOC uses 'ramp tables' which contain field strength-ramp rate pairs. i.e. the magnet can safely ramp up to the field strength at the ramp rate associated with it. Any higher and you risk quenching.
 
