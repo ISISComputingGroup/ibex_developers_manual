@@ -34,6 +34,7 @@ Additionally, the asyn driver will initialise various variables and send several
 * The maximum allowed current will be set to `MAX_CURR`
 * The maximum allowed voltage will be set to `MAX_VOLT`
 * The heater output will be set to `HEATER_OUT`
+* The ramp rate will be set to an appropriate value read from `RAMP_FILE` based on the current value of the field
 
 ## Macros:
 |Macro|Description|Defaults|
