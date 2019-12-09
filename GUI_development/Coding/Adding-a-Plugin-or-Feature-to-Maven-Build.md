@@ -33,7 +33,7 @@ An example of what the plug-in POM should look like:
       <artifactId>tychodemo.bundle.tests</artifactId>
       <packaging>eclipse-plugin</packaging>
       <parent>
-            <groupId>tychodemo</groupId>
+            <groupId>CSS_ISIS</groupId>
             <artifactId>parent</artifactId>
             <version>1.0.0-SNAPSHOT</version>
             <relativePath>../tychodemo.parent</relativePath>
