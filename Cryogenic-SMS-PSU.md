@@ -35,6 +35,16 @@ Additionally, the asyn driver will initialise various variables and send several
 * The maximum allowed voltage will be set to `MAX_VOLT`
 * The heater output will be set to `HEATER_OUT`
 
+## Macros:
+|Macro|Description|Defaults|
+|-----|-----------|--------|
+|`MAX_CURR`|Define the maximum current that is allowed||
+|`T_TO_A`|The conversion value between Tesla and Amps for the system||
+|`MAX_VOLT`|Set the maximum voltage for the system||
+|`WRITE_UNIT`|Which unit to write to the PSU in|Amps|
+|`DISPLAY_UNIT`|Which unit will be used when displaying the value from the PSU|Gauss|
+|`RAMP_FILE`|
+
 It initialises and waits in a `Ready` state, depending on things like switch status, temperatures, magnet mode, settle times, etc. `Ready` means that it is ready to drive its field (up or down). It is dangerous to ramp the magnet too fast, so the IOC uses 'ramp tables' which contain field strength-ramp rate pairs. i.e. the magnet can safely ramp up to the field strength at the ramp rate associated with it. Any higher and you risk quenching.
 
 To prevent a quench, the IOC will, upon setting a setpoint, calculate the steps required to safely ramp to the new setpoint. It will then send pairs of values, one ramp rate and one ramp set point, which will start the PSU ramp. The ramp set point is always sent as a new mid setpoint (unless it is doing a ramp to 0). 
