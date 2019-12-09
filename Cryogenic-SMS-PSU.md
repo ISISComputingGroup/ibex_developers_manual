@@ -29,7 +29,7 @@ All writes to the device will be disabled in any of these situations:
 * `USE_MAGNET_TEMP` is on, but any of the subsequently required variables (`MAGNET_TEMP_PV`, `MAX_MAGNET_TEMP`, `MIN_MAGNET_TEMP`) are missing
 * `COMP_OFF_ACT` is on, but any of the subsequently required variables (`NO_OF_COMP`, `MIN_NO_OF_COMP`, `COMP_1_STAT_PV`, `COMP_2_STAT_PV`) are missing
 
-Additionally, the asyn driver will initialise various variables and send several commandss to the PSU based on user provided macros:
+Additionally, the asyn driver will initialise various variables and send several commands to the PSU based on user provided macros:
 * The Tesla-Amps conversion rate will be set to `T_TO_A`
 * The maximum allowed current will be set to `MAX_CURR`
 * The maximum allowed voltage will be set to `MAX_VOLT`
@@ -43,7 +43,7 @@ Additionally, the asyn driver will initialise various variables and send several
 |`MAX_VOLT`|Set the maximum voltage for the system||
 |`WRITE_UNIT`|Which unit to write to the PSU in|Amps|
 |`DISPLAY_UNIT`|Which unit will be used when displaying the value from the PSU|Gauss|
-|`RAMP_FILE`|
+|`RAMP_FILE`|||
 
 It initialises and waits in a `Ready` state, depending on things like switch status, temperatures, magnet mode, settle times, etc. `Ready` means that it is ready to drive its field (up or down). It is dangerous to ramp the magnet too fast, so the IOC uses 'ramp tables' which contain field strength-ramp rate pairs. i.e. the magnet can safely ramp up to the field strength at the ramp rate associated with it. Any higher and you risk quenching.
 
