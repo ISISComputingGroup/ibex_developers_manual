@@ -65,7 +65,9 @@ Additionally, the asyn driver will initialise various variables and send several
 |`FAST_RATE`|The ramp rate to use for the fast ramps|0.5|
 |`FAST_PERSISTENT_SETTLETIME`|The number of seconds to settle after a ramp fast to persist|5|
 |`PERSISTENT_SETTLETIME`|The number of seconds to settle after a ramp to persist|60|
-
+|`FILTER_VALUE`|The value to use to filter the target reached calculation|0.1|
+|`FAST_FILTER_VALUE`|The value to use to filter the target reached calculation when ramping fast to a target|1|
+|`NPP`|The npp value when calculating whether or not the target has been reached||
 
 It initialises and waits in a `Ready` state, depending on things like switch status, temperatures, magnet mode, settle times, etc. `Ready` means that it is ready to drive its field (up or down). It is dangerous to ramp the magnet too fast, so the IOC uses 'ramp tables' which contain field strength-ramp rate pairs. i.e. the magnet can safely ramp up to the field strength at the ramp rate associated with it. Any higher and you risk quenching.
 
