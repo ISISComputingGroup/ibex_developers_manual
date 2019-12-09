@@ -45,7 +45,7 @@ Additionally, the asyn driver will initialise various variables and send several
 |`WRITE_UNIT`|Which unit to write to the PSU in|Amps|
 |`DISPLAY_UNIT`|Which unit will be used when displaying the value from the PSU|Gauss|
 |`RAMP_FILE`|Location of file containing ramp rates||
-|`ALLOW_PERSIST`|Whether or not to allow settin of persistent values|No|
+|`ALLOW_PERSIST`|Whether or not to allow setting of persistent values|No|
 |`USE_SWITCH`|Whether or not to monitor and set switches on and off|No|
 |`SWITCH_TEMP_PV`|PV address of switch temperature||
 |`SWITCH_HIGH`|The value at which the switch will be considered warm|3.7|
@@ -68,7 +68,7 @@ Additionally, the asyn driver will initialise various variables and send several
 |`PERSISTENT_SETTLETIME`|The number of seconds to settle after a ramp to persist|60|
 |`FILTER_VALUE`|The value to use to filter the target reached calculation|0.1|
 |`FAST_FILTER_VALUE`|The value to use to filter the target reached calculation when ramping fast to a target|1|
-|`NPP`|The npp value when calculating whether or not the target has been reached||
+|`NPP`|The `npp` value when calculating whether or not the target has been reached||
 
 It initialises and waits in a `Ready` state, depending on things like switch status, temperatures, magnet mode, settle times, etc. `Ready` means that it is ready to drive its field (up or down). It is dangerous to ramp the magnet too fast, so the IOC uses 'ramp tables' which contain field strength-ramp rate pairs. i.e. the magnet can safely ramp up to the field strength at the ramp rate associated with it. Any higher and you risk quenching.
 
