@@ -71,12 +71,16 @@ This interface is a simple table. It is configured for one (and only one) type o
 
 For example, for the `ActionDefinition` given above, the table in the script generator would look like this:
 
-| temperature | field | uamps |
-| --- | --- | --- |
-| 50.0 | -1 | 100 |
-| 80.0 | 2 | 100 |
+| temperature | field | uamps | Validity |
+| --- | --- | --- | --- |
+| 50.0 | -1 | 100 | ✘ |
+| 80.0 | 2 | 100 | ✔ |
 
 Each row in the table corresponds to exactly one `Action`. The type of action must be the same for all rows (otherwise, the columns would no longer make sense).
+
+A row will be highlighted red if invalid and have a heavy cross mark against it in the validity column. If the row is valid it will be the regular table colour with a validity column cell that is green and has a heavy tick mark.
+
+A user is able to get the reason for invalidity (provided by the config) by hovering over the row or by clicking the 'Get Invalidity Errors' button.
 
 ### List/tree view (not part of MVP, but likely to be requested in future)
 
