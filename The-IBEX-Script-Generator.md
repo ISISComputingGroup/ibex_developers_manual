@@ -49,3 +49,7 @@ Once in the GUI, the script generator table is created by generating `ActionPara
 
 
 ![](https://raw.githubusercontent.com/ISISComputingGroup/ibex_developers_manual/master/images/scriptgen_configs.png)
+
+## Checking the validity and generating python scripts
+
+Generator classes are used to check validity and generate scripts. They use the config's supplied `run` and `parameters_valid` methods to check validity and generate scripts. 
