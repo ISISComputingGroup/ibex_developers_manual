@@ -32,3 +32,7 @@ A place to record decisions:
 
 13. It was decided that as part of the motion system on ZOOM a tablet or some other handheld device will be used [see] (https://github.com/ISISComputingGroup/IBEX/issues/2937). This is required as scientists would like to be able to move axes whilst they are inside the light curtain. All safety issues on this will be handled by a deadman's handle built into the device. In further discussions [here](https://github.com/ISISComputingGroup/IBEX/issues/4238) it was decided that the trying to move the IBEX GUI to something touch friendly would be hard and instead a new cut-down GUI should be produced in Phoebus.
     - Present: Thomas, Dom, Kathryn
+
+14. It was decided that as part of the parameter limits [ticket](https://github.com/ISISComputingGroup/IBEX/issues/4168) for the script generator we will pass all parameters as strings from java to python and handle them in the python code by providing a decorator to pass casting operations to e.g. `@cast_parameters_to(temperature=float, field=str, uamps=float)`. This will allow them to define their own casting operations to deal with funny edge cases in a nice way. It also reduces the amount of edge cases we may find with py4j handling the difference between python and java class.
+   - Present: James, Tom, Alistair
+   - 09/12/2019
