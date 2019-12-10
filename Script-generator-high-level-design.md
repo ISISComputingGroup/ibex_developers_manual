@@ -23,22 +23,43 @@ An `ActionDefinition` is the base building block that the script generator will 
 As an example, consider a class that looks something like:
 
 ```python
+from action_interface import ActionDefinition, cast_parameters_to
+
+def mytype(string_input: str) -> float:
+    if string_input == "default":
+        return 0.0
+    else:
+        return float(string_input)
+
+
 class DoRun(ActionDefinition):
-    def run(self, temperature: float, field: float, uamps: float):
+
+    @cast_parameters_to(temperature=float, field=float, uamps=mytype)
+    def run(self, temperature: float=0.0, field: float=0.0, uamps: float=0.0):
         g.cset("temperature", temperature)
         g.cset("field", field)
         g.begin()
         g.waitfor_uamps(uamps)
         g.end()
 
-    def parameters_valid(temperature, field, uamps):
-        if 0.1 <= temperature <= 300 and -5 <= field <= 5:
-            return "Please set a valid temperature and field"
-        return None
+    @cast_parameters_to(temperature=float, field=float, uamps=mytype)
+    def parameters_valid(self, temperature: float=0.0, field: float=0.0, uamps: float=0.0):
+        errors: str = ""
+        if not 0.1 <= temperature <= 300:
+            errors += "Temperature outside range\n"
+        if not -5 <= field < 5:
+            errors += "Field outside range"
+        if not -20 <= uamps <=32:
+            errors += "uamps outside of range"
+        if errors != "":
+            return errors
+        return None    
 ```
 (this is not necessarily the final API)
 
 We would probably supply some default `ActionsDefinition`s, but instrument scientists would be responsible for writing and maintaining their own instrument-specific actions (in a similar way to the current instrument scripts).
+
+Currently, a default value has to be provided for every argument of `parameters_valid` and `run` due to the way we are passing kwargs. The parameters that are passed are all currently strings and must be converted to whatever type the user wants. We are providing a decorator `cast_parameters_to` to allow scientists to easily cast parameters and also define their own converters (see example `mytype` above). The custom converters means they can handle edge cases they are expecting from users.
 
 # User interface
 
