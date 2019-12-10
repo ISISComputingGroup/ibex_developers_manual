@@ -71,6 +71,8 @@ C:\instrument\apps\python\python.exe C:\Instrument\apps\python\scripts\lewis-con
 ```
 or can be scripted, as described in the Lewis documentation.
 
+**NOTE**: If an argument is a string that contains words separated by white space characters, then you need to use "'argument'" instead of "argument", since otherwise the command line will not interpret it correctly and crash with a SyntaxError.
+
 **NOTE**: The simulation command `disconnect_device` seems to simulate the device not responding to the port, which is different from a lost connection: the IOC reports `No reply from device within xxx ms`. When the emulator is actually stopped, with the simulation `stop` command, the IOC detects that there is really no connection and reports `Can't connect to localhost:<port>`.
 
 **NOTE**: The backdoor does not give access to private variables, so anything prefixed with `_` can not be changed in this way, or through the backdoor in python scripts.
