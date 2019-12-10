@@ -25,6 +25,7 @@ In some cases when you receive a `Resolving Target Definition` error, this can r
 We have seen some cases of JAXB causing issues with the GUI building. Since Eclipse builds in parallel a race condition can arise between building CSS (which expects some XML classes in the standard library) and the rest of the GUI (which has XML outside of the standard library due to using Java 11). If you have a load of JAXB issues, try the following:
 
 1. In the project explorer delete all the plugins (Do not delete the files from disk)
+1. Restart Eclipse
 1. Select "Import Existing Projects" and select the GUI base folder
 1. Open the `uk.ac.stfc.isis.ibex.targetplatform` file
 1. After the project has been imported click the "reload" button and then "Set Target Platform" in the top right. Note that these two buttons do not do the same thing and it necessary to press them both in order.
