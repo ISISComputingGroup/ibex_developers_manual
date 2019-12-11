@@ -1,7 +1,7 @@
 - ask scientists how they want their setpoints initialized. LabView software has them initialized from the value records only at startup. Should it be the same in EPICS? Currently initialized as undefined.
 - ask about unit of MC Cernox and MC RuO
-- ask about what is cmode and scan related to temp setpoint in lakeshore. Ask if cmode can be float
 - check data bits, parity bits and stop bits
+- ADD INFO ABOUT TEMP CHANNELS TO ice DILUTION FRIDGE WIKI PAGE
 - establish what is the exact command the device replies with when you want to get the mimic valve values, ICECube documentation has them listed in order like in the protocol file.
 - ask what the unit for the mimic pressures and proportional valves is exactly.
 - ask what the INFO? string is and how it is terminated
