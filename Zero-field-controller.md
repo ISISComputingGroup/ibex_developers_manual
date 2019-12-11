@@ -171,6 +171,25 @@ Flowchart of procedure:
 * On IOC start up I’d suggest try to read the Kepco setpoints (if possible) or the output currents, initialise the last-written variable (I) to this value, and then go into Manual. A subsequent change back to Auto will not cause a significant bump assuming the field was zero before the shutdown and the stray fields have not changed much while the IOC was stopped.
 * IOC shutdown should leave the currents on: no special action need be taken.
 
-## Testing ##
+# EPICS implementation details
 
-* We will test on the instrument. This needs to be placed on the shutdown work list (Peter will sort this out when needed).  See [ticket #4840](https://github.com/ISISComputingGroup/IBEX/issues/4840) for details.
+# Macros
+
+| Macro | Description |
+| --- | --- |
+| `OUTPUT_X_MIN` | Minimum allowable current setpoint (in Amps) to send to the power supply on the X axis |
+| `OUTPUT_X_MAX` | Maximum allowable current setpoint (in Amps) to send to the power supply on the X axis | 
+| `OUTPUT_Y_MIN` | As for X axis |
+| `OUTPUT_Y_MAX` | As for X axis | 
+| `OUTPUT_Z_MIN` | As for X axis |
+| `OUTPUT_Z_MAX` | As for X axis | 
+| `PSU_X` | A fully qualified PV prefix for the power supply controlling the X coil. The `ZFCNTRL` ioc expects to be able to append the following PV names to this prefix: `CURRENT`, `CURRENT:SP`, `CURRENT:SP:RBV`, `VOLTAGE` |
+| `PSU_Y` | As for X axis |
+| `PSU_Z` | As for X axis |
+| `MAGNETOMETER_TRIGGER` | A PV which is processed by the zero field controller IOC when it the magnetometer should take new data. The controller IOC expects the magnetometer to process `$(P)ZFCNTRL_01:INPUTS_UPDATED` when the readings have been taken, and will detect a read error if this does not occur within 5 seconds.
+| `MAGNETOMETER_X` | The fully qualified PV for the (corrected) X field reading from the magnetometer. This value should have been read after `MAGNETOMETER_TRIGGER` was processed, but before the magnetometer processes `$(P)ZFCNTRL_01:INPUTS_UPDATED` |
+| `MAGNETOMETER_Y` | As for X axis |
+| `MAGNETOMETER_Z` | As for X axis | 
+| `MAGNETOMETER_OVERLOAD` | This PV should be 1 (true) if the magnetometer is overloaded and false otherwise. It should be updated along with `MAGNETOMETER_X`, `MAGNETOMETER_Y` and `MAGNETOMETER_Z` and reflect the status of the most recent reading. |
+
+The Zero field control logic is implemented as it's own standalone IOC, `ZFCNTRL_01`.
