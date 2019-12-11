@@ -14,7 +14,7 @@ The ICE dilution fridge itself is controlled through a LabView VI running on a P
 
 Settings:
 
-1. COM port : 33576
+1. COM port : 57677
 
 1. Baud rate: 9600
 
