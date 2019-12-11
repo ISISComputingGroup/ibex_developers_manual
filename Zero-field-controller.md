@@ -173,23 +173,23 @@ Flowchart of procedure:
 
 # EPICS implementation details
 
-# Macros
+## Macros
 
-| Macro | Description |
-| --- | --- |
-| `OUTPUT_X_MIN` | Minimum allowable current setpoint (in Amps) to send to the power supply on the X axis |
-| `OUTPUT_X_MAX` | Maximum allowable current setpoint (in Amps) to send to the power supply on the X axis | 
-| `OUTPUT_Y_MIN` | As for X axis |
-| `OUTPUT_Y_MAX` | As for X axis | 
-| `OUTPUT_Z_MIN` | As for X axis |
-| `OUTPUT_Z_MAX` | As for X axis | 
-| `PSU_X` | A fully qualified PV prefix for the power supply controlling the X coil. The `ZFCNTRL` ioc expects to be able to append the following PV names to this prefix: `CURRENT`, `CURRENT:SP`, `CURRENT:SP:RBV`, `VOLTAGE` |
-| `PSU_Y` | As for X axis |
-| `PSU_Z` | As for X axis |
-| `MAGNETOMETER_TRIGGER` | A PV which is processed by the zero field controller IOC when it the magnetometer should take new data. The controller IOC expects the magnetometer to process `$(P)ZFCNTRL_01:INPUTS_UPDATED` when the readings have been taken, and will detect a read error if this does not occur within 5 seconds.
-| `MAGNETOMETER_X` | The fully qualified PV for the (corrected) X field reading from the magnetometer. This value should have been read after `MAGNETOMETER_TRIGGER` was processed, but before the magnetometer processes `$(P)ZFCNTRL_01:INPUTS_UPDATED` |
-| `MAGNETOMETER_Y` | As for X axis |
-| `MAGNETOMETER_Z` | As for X axis | 
-| `MAGNETOMETER_OVERLOAD` | This PV should be 1 (true) if the magnetometer is overloaded and false otherwise. It should be updated along with `MAGNETOMETER_X`, `MAGNETOMETER_Y` and `MAGNETOMETER_Z` and reflect the status of the most recent reading. |
+| Macro | Description | Example |
+| --- | --- | --- |
+| `OUTPUT_X_MIN` | Minimum allowable current setpoint (in Amps) to send to the power supply on the X axis. | `-10` |
+| `OUTPUT_X_MAX` | Maximum allowable current setpoint (in Amps) to send to the power supply on the X axis. | `10` |
+| `OUTPUT_Y_MIN` | As for X axis | `-10` |
+| `OUTPUT_Y_MAX` | As for X axis | `10` |
+| `OUTPUT_Z_MIN` | As for X axis | `-10` |
+| `OUTPUT_Z_MAX` | As for X axis | `10` |
+| `PSU_X` | A fully qualified PV prefix for the power supply controlling the X coil. The `ZFCNTRL` ioc expects to be able to append the following PV names to this prefix: `CURRENT`, `CURRENT:SP`, `CURRENT:SP:RBV`, `VOLTAGE` | `IN:INST:KEPCO_01` |
+| `PSU_Y` | As for X axis | `IN:INST:KEPCO_02` |
+| `PSU_Z` | As for X axis | `IN:INST:KEPCO_03` |
+| `MAGNETOMETER_TRIGGER` | A PV which is processed by the zero field controller IOC when it the magnetometer should take new data. The controller IOC expects the magnetometer to process `$(P)ZFCNTRL_01:INPUTS_UPDATED` when the readings have been taken, and will detect a read error if this does not occur within 5 seconds. |  `IN:INST:ZFMAGFLD_01:TAKEDATA.PROC` |
+| `MAGNETOMETER_X` | The fully qualified PV for the (corrected) X field reading from the magnetometer. This value should have been read after `MAGNETOMETER_TRIGGER` was processed, but before the magnetometer processes `$(P)ZFCNTRL_01:INPUTS_UPDATED` | `IN:INST:ZFMAGFLD_01:CORRECTEDFIELD:X` |
+| `MAGNETOMETER_Y` | As for X axis | `IN:INST:ZFMAGFLD_01:CORRECTEDFIELD:Y` |
+| `MAGNETOMETER_Z` | As for X axis | `IN:INST:ZFMAGFLD_01:CORRECTEDFIELD:Z` |
+| `MAGNETOMETER_OVERLOAD` | This PV should be 1 (true) if the magnetometer is overloaded and false otherwise. It should be updated along with `MAGNETOMETER_X`, `MAGNETOMETER_Y` and `MAGNETOMETER_Z` and reflect the status of the most recent reading. |  `IN:INST:ZFMAGFLD_01:OVERLOADED` |
 
 The Zero field control logic is implemented as it's own standalone IOC, `ZFCNTRL_01`.
