@@ -1,24 +1,32 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [Cryogenics](Cryogenics) > [ICE Dilution Fridge](ICE Dilution Fridge)
 
-# Naming
+# Introduction
 
-Technically, "Triton" refers to the gas handling apparatus. This is what IBEX and SECI talk to. When setting up a triton, scientists may refer to it as a "Kelvinox". This is the technical name for the dilution insert, which is controlled by the triton gas handling apparatus.
+This dilution fridge is made by a company called ICE and is not longer supported.
 
-To avoid confusion: all dilution fridges currently in use at ISIS are controlled by Triton gas handling systems, with one exception: the ICE fridge used on the muon beamlines.
+This dilution fridge can not be compared to the Triton dilution fridge, and is the only one not controlled by Triton gas handling systems.
+
+There is only one ICE dilution fridge which is used on MUSR mainly. It is available for EMU and I believe there is an expectation that it will be an option for the RIKEN beam lines also.
 
 # Connection
 
-The Triton software runs on a dedicated PC that follows each fridge around. The IBEX control system makes a connection over TCP to issue commands to that software.
+The ICE dilution fridge itself is controlled through a LabView VI running on a PC called ICECube. That PC runs Windows XP and should absolutely not go on the ISIS network. That PC runs the VI that contains the complicated logic for making dilution happen. That PC is then controlled by an IOC running under IBEX, which raplaces a much simpler VI found at C:\LabVIEW Modules\Drivers\ICEOxford\ICECube . The IOC talks to ICECube over a serial connection.
 
 Settings:
-1. Hostname : For the definitive answer, type `hostname` at a command prompt on the Triton control PC.  The list of Triton hostnames is available on the sharepoint.
-1. TCP port : 33576
 
-* If communication cannot be established and you are certain that the correct hostname has been entered, then try the IP address instead.  This can be determined by typing `ipconfig` at a command prompt on the Triton control PC and looking for "IPv4 Address" in the output. 
-* Not all the Triton computers respond to a ping.
-* Only one connection can be made at any time, additional connections are refused.
+1. COM port : 33576
 
-There are various generations of Triton systems in use at ISIS. There are sometimes differences in the protocol between different versions of the software (see for example IBEX issue #3030).
+1. Baud rate: 9600
+
+### Command set
+
+The complete command set for the ICE dilution fridge is detailed in the Remote Interface document on the share network folder.
+
+**Note:** The IOC has been developed to have the same functionality as the ICECube VI. As a result, it only has the PVs and only supports the commands that are used by the VI (with one exception detailed in Gotchas). There are some commands in the Remote Interface that are never used by the VI and are thus not implemented in the IOC. These are: IDN?, 1KPUMP?, HE3PUMP?, ROOTS?, STATUS?, SVx?, Vx?, Px? (where x is the number of the solenoid valve/valve/pressure), T?, T-R?, cryo-r?, STILL-R?, 1K-R?, MC-R?, 1K, CLOSEALL, LOG=TRUE/FALSE, File Path, MC-PID, MC-TSET, MC-HTR-RGE, STILL_PWR, CRYO-HTR.
+
+The dilution fridge temperature at low temperatures is controlled via a Lakeshore 370 remotely. This can be found in the documentation command set and the two commands are LS-DIRECT-SET and LS-DIRECT-READ. These two commands will pass any command that you wish on to the Lakeshore 370 directly - as though you were talking to the device itself. This is probably the reason why the MC- commands listed above are not used, since those parameters are controlled via the LS 370. On the share network folder you can find the manual for the Lakeshore 370 and it gives detailed information about all the commands the Lakeshore accepts. 
+
+The cryostat temperature control is via a CRYOCON 24C. There is a remote direct command also for this namely CRYO-DIRECT-SET and CRYO-DIRECT-READ. They are listed in the Remote Interface but never used by the LabView VI and thus not implemented in the IOC.
 
 # Temperature control
 
