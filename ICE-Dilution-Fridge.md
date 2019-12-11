@@ -26,16 +26,6 @@ The dilution fridge temperature at low temperatures is controlled via a Lakeshor
 
 The cryostat temperature control is via a CRYOCON 24C. There is a remote direct command also for this namely CRYO-DIRECT-SET and CRYO-DIRECT-READ. They are listed in the Remote Interface but never used by the LabView VI and thus not implemented in the IOC.
 
-### Channels
-
-The ICE dilution fridge reads data from 3 distinct channels:
-
-| Physical sensor location | Channel name  | Notes |
-| --- | --- | --- |
-| He3 Pot | `VTI Loop 1` | idk. |
-| He3 Sorption pump | `VTI Loop 2` | idk! | 
-| He4 Pot | `Lakeshore Mixing Chamber` | Didk | 
-
 # Temperature control
 
 Temperature control in the triton systems is achieved by multiple cooling stages:
