@@ -2,7 +2,6 @@
 - ask about unit of MC Cernox and MC RuO
 - check data bits, parity bits and stop bits
 - ADD INFO ABOUT TEMP CHANNELS TO ice DILUTION FRIDGE WIKI PAGE
-- establish what is the exact command the device replies with when you want to get the mimic valve values, ICECube documentation has them listed in order like in the protocol file.
 - ask what the unit for the mimic pressures and proportional valves is exactly.
 - ask what the INFO? string is and how it is terminated
 - ask more what descriptions scientists want for PVs for things in the mimic panel.
