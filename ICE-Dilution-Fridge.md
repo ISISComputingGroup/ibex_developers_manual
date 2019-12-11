@@ -28,15 +28,7 @@ The cryostat temperature control is via a CRYOCON 24C. There is a remote direct 
 
 # Configuration
 
-The Triton IOC reads it's configuration (sensor <-> name mapping) from the triton control PC. However, the name <-> channel mapping is hard-coded in the triton IOC, which expects the following mapping:
-- Stage 1 (PT1) : J-T heat exchanger
-- Stage 2 (PT2) : 4K heat exchanger
-- Sorb : Sorb
-- Stil : Stil
-- Mixing chamber : mixing chamber
-- Cooling channel : **not read or used by IOC**
-
-As of https://github.com/ISISComputingGroup/IBEX/issues/3993 this mapping should have been set on all of the fridges by cryogenics section.
+In order to run this IOC, you should have the ICECube remote PC running and connected via serial. No further configuration should be needed.
 
 # Gotchas
 
