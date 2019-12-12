@@ -173,6 +173,24 @@ Flowchart of procedure:
 
 # EPICS implementation details
 
+## Statemachine
+
+The main zero-field control logic is implemented in an SNL state machine. This state machine implements the following states:
+
+| State | Description |
+| --- | --- |
+| `initializing` | Does nothing. Only used (briefly) at IOC start and never again. |
+| `inputs_invalid` | There is a problem with the data from the magnetometer IOC. This state will wait for some time before attempting to reconnect and check if the data has become valid again. |
+| `trigger_mag_read` | In normal operation, this is the first state of the state machine. The `TAKEDATA` record from the magnetometer IOC is processed. |
+| `wait_for_mag_read` | Waits for the magnetometer to have gathered new data. (i.e. for `INPUTS_UPDATED` to have been processed from the magnetometer IOC). This state times out and triggers an invalid state after 5 seconds. |
+| `check_corrected_field` | Checks whether the field is within tolerance of the setpoints and sets the `STABLE` pv accordingly. |
+| `check_raw_field` | Checks whether the raw field is overloaded, and triggers alarms if so. |
+| `check_auto_feedback` | Chooses whether to write to the power supplies or not, based on the state of the `AUTOFEEDBACK` pv. |
+| `check_output_psu_state` | Checks the readbacks from the power supplies for errors (e.g. ioc disconnected from device) and sets errors accordingly. |
+| `write_to_psu` | Performs the calculation and writing of new currents to the power supply IOCs |
+| `check_psu_writes` | Checks that the setpoints that were sent to the power supplies have been accepted, and triggers alarms if not. |
+| `loop_delay` | Sleeps for a time defined by `STATEMACHINE:LOOP_DELAY`. This stops the loop from using 100% processor. It should be set such that the Kepco power supplies can keep up with the rate of writes, with some room left for normal polling. |
+
 ## Macros
 
 | Macro | Description | Example |
