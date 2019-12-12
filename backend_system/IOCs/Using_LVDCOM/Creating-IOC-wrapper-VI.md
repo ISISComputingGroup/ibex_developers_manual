@@ -1,8 +1,12 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > [Using LVDCOM](Using-LVDCOM) > Creating IOC wrapper VI
 
-These are instructions for creating an IOC wrapper for a VI using lvDCOM. It assumes you want to create a "support" type module for lvdcom in ISIS. The Mercury ITC is an example where the below was followed and then an IOC was created using the this as a support module.
+# These instructions are **NOT accurate** and will need careful editing before they can be used to create a fully functioning IOC
 
-## 1. Create ISIS IOC
+## It is recommended that they be followed with extreme caution and with expert advice on hand
+
+These are instructions for creating an IOC wrapper for a VI using lvDCOM. It assumes you want to create a "support" type module for lvdcom in ISIS. The Mercury ITC is an example where the below was followed and then an IOC was created using this as a support module.
+
+## 1. Create ISIS Support Module
 
 I plan to make these into a template (so you will just need to run makeBaseApp.pl and not do the edits), but for now this is the manual way.
 
@@ -10,7 +14,8 @@ Please take note of the [IOC naming convention](IOC-Naming) before proceeding.
 
 1. Create a public repository to work in called EPICS-\<device>.
 1. In the `EPICS\ISIS` directory create a directory called \<device>
-1. Clone the repository into this directory and call that clone master
+1. Add the repository as a submodule and clone it into this directory (i.e. with the command `git submodule add https://github.com/ISISComputingGroup/EPICS-<device>.git master`)
+1. Create a basic standard file and directory structure either by copying a similar existing module (and then executing `make clean uninstall` to remove unnecessary files) or by running `makeSupport.pl`.  Check the results either way.
 1. Copy a standard makefile into this directory
 
 Create the IOC in EPICS\IOC\master with (from an EPICS terminal)
