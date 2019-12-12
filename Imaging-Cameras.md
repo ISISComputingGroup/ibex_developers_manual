@@ -18,3 +18,7 @@ This has been run on the `IMAT-UCB-DETECT` machine.
 ### Andor
 
 The Andor camera is run on the `IMAT-MESSINA-DETECT` machine. It uses an areaDetector IOC to communicate.
+
+# Trouble Shooting
+
+If the script is run and it report `Folder does not exist` then this could be because the mapping to the drives (see above) is incorrect.
