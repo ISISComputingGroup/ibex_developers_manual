@@ -187,7 +187,7 @@ Once the magnetometer has collected readings for all 3 coordinate axes, the magn
 In automatic mode, where the controller is required to write new currents to the power supplies, the following algorithm is implemented:
 - If the power supply is in voltage control mode, change it to current control mode. Allow up to 5 seconds (configurable via `ZFCNTRL_01:READ_TIMEOUT`) for this change to happen, and raise an alarm if it doesn't. If the power supply is already in current control mode, skip this step.
 - If the power supply is off, send it an "on" command and wait up to 5 seconds (configurable via `ZFCNTRL_01:READ_TIMEOUT`) for it to switch on, and raise an alarm if it doesn't. If the power supply is already on, skip this step.
-- Calculate new currents to write, and limit them to the interval `[ZFCNTRL_01:OUTPUT:CURR:SP.DRVL, ZFCNTRL_01:OUTPUT:CURR:SP.DRVL]`
+- Calculate new currents to write, and limit them to the interval `[ZFCNTRL_01:OUTPUT:CURR:SP.DRVL, ZFCNTRL_01:OUTPUT:CURR:SP.DRVH]`
 - Send these new currents to the power supply by writing to `$(PSU_X):CURRENT:SP`.
 - Allow up to 5 seconds (configurable via `ZFCNTRL_01:READ_TIMEOUT`) for the power supply current setpoint readbacks to get within `ZFCNTRL_01:OUTPUT:PSU_WRITE_TOLERANCE` Amps of the setpoint. If this doesn't happen, raise an alarm.
 
