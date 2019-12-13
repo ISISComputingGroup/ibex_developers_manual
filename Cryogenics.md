@@ -6,6 +6,7 @@ IOC for devices connected with cryogenic.
 * [Cryogenics Ltd Helium Level Gauge](Cryogenics-Ltd-Helium-Level-Gauge)
 * [Oxford Instruments Triton](Triton)
 * [Oxford Instruments Mercury heliox](Mercury-Heliox)
+* [ICE dilution fridge](ICE-Dilution-Fridge)
 * [Oxford Instruments Mercury ITC](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/MercuryiTC)
 * [Oxford Instruments ITC503](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/ITC-503)
 * [Oxford Instruments (mercury) IPS](Oxford-Instruments-Mercury-IPS)
