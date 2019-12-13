@@ -13,4 +13,5 @@
 * [OMEGA OME-Wise](OMEGA-OME-Wise)
 * [Triton](Triton)
 * [Mercury Heliox](Mercury-Heliox)
+* [ICE dilution fridge](ICE-Dilution-Fridge)
 
