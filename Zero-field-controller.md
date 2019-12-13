@@ -173,30 +173,23 @@ Flowchart of procedure:
 
 # EPICS implementation details
 
-## Statemachine
+## High-level implementation
 
-The main zero-field control logic is implemented in an SNL state machine. This state machine implements the following states:
+The Zero field system is usually comprised of 5 different IOCs:
+- `ZFCNTRL_01` - the zero field controller. Primarily, it is responsible for taking readings from the magnetometer and figuring out the new fields to write to the power supplies. It also handles most of the top-level user PVs.
+- `ZFMAGFLD_01` - the magnetometer IOC. It is responsible for getting new values from the DAQ hardware, offsetting to compensate for magnetometer placement, and converting to the power supplies' coordinate system via a calibration matrix.
+- 3x power supply IOCs, e.g. `KEPCO_01` - `KEPCO_03` (on EMU and MuSR). On HiFi, these 3 power supply IOCs are replaced by 3 "shim" coils in the cryomagnet.
 
-## Macros
+Because of a requirement to keep the delay between magnetometer readings and power supply writes as consistent as possible, it is not possible for the magnetometer IOC to scan independently. Instead, it is explicitly told to take a reading at suitable times from the controller IOC. This is done using a forward link from the controller ioc to `...ZFMAGFLD_01:TAKEDATA`.
 
-| Macro | Description | Example |
-| --- | --- | --- |
-| `OUTPUT_X_MIN` | Minimum allowable current setpoint (in Amps) to send to the power supply on the X axis. | `-10` |
-| `OUTPUT_X_MAX` | Maximum allowable current setpoint (in Amps) to send to the power supply on the X axis. | `10` |
-| `OUTPUT_Y_MIN` | As for X axis | `-10` |
-| `OUTPUT_Y_MAX` | As for X axis | `10` |
-| `OUTPUT_Z_MIN` | As for X axis | `-10` |
-| `OUTPUT_Z_MAX` | As for X axis | `10` |
-| `PSU_X` | The expected interface of the IOC pointed to by this record is described below. | `IN:INST:KEPCO_01` |
-| `PSU_Y` | As for X axis | `IN:INST:KEPCO_02` |
-| `PSU_Z` | As for X axis | `IN:INST:KEPCO_03` |
-| `MAGNETOMETER_TRIGGER` | A PV which is processed by the zero field controller IOC when it the magnetometer should take new data. The controller IOC expects the magnetometer to process `$(P)ZFCNTRL_01:INPUTS_UPDATED` when the readings have been taken, and will detect a read error if this does not occur within 5 seconds. |  `IN:INST:ZFMAGFLD_01:TAKEDATA.PROC` |
-| `MAGNETOMETER_X` | The fully qualified PV for the (corrected) X field reading from the magnetometer. This value should have been read after `MAGNETOMETER_TRIGGER` was processed, but before the magnetometer processes `$(P)ZFCNTRL_01:INPUTS_UPDATED` | `IN:INST:ZFMAGFLD_01:CORRECTEDFIELD:X` |
-| `MAGNETOMETER_Y` | As for X axis | `IN:INST:ZFMAGFLD_01:CORRECTEDFIELD:Y` |
-| `MAGNETOMETER_Z` | As for X axis | `IN:INST:ZFMAGFLD_01:CORRECTEDFIELD:Z` |
-| `MAGNETOMETER_OVERLOAD` | This PV should be 1 (true) if the magnetometer is overloaded and false otherwise. It should be updated along with `MAGNETOMETER_X`, `MAGNETOMETER_Y` and `MAGNETOMETER_Z` and reflect the status of the most recent reading. |  `IN:INST:ZFMAGFLD_01:OVERLOADED` |
+Once the magnetometer has collected readings for all 3 coordinate axes, the magnetometer indicates that new readings are ready by forward linking back to the controller using the PV `...ZFCNTRL_01:INPUTS_UPDATED`. This allows the state machine in the controller IOC to continue to the next step.
 
-The Zero field control logic is implemented as it's own standalone IOC, `ZFCNTRL_01`.
+In automatic mode, where the controller is required to write new currents to the power supplies, the following algorithm is implemented:
+- If the power supply is in voltage control mode, change it to current control mode. Allow up to 5 seconds (configurable via `ZFCNTRL_01:READ_TIMEOUT`) for this change to happen, and raise an alarm if it doesn't. If the power supply is already in current control mode, skip this step.
+- If the power supply is off, send it an "on" command and wait up to 5 seconds (configurable via `ZFCNTRL_01:READ_TIMEOUT`) for it to switch on, and raise an alarm if it doesn't. If the power supply is already on, skip this step.
+- Calculate new currents to write, and limit them to the interval `[ZFCNTRL_01:OUTPUT:CURR:SP.DRVL, ZFCNTRL_01:OUTPUT:CURR:SP.DRVL]`
+- Send these new currents to the power supply by writing to `$(PSU_X):CURRENT:SP`.
+- Allow up to 5 seconds (configurable via `ZFCNTRL_01:READ_TIMEOUT`) for the power supply current setpoint readbacks to get within `ZFCNTRL_01:OUTPUT:PSU_WRITE_TOLERANCE` Amps of the setpoint. If this doesn't happen, raise an alarm.
 
 ## Power supply interface
 
@@ -206,8 +199,8 @@ The Zero-field controller accepts an arbitrary PV prefix to use as a power suppl
 | --- | --- |
 | `CURRENT` | The (measured) current for this power supply. |
 | `CURRENT:SP` | The setpoint for the power supply. In automatic mode, new floating-point values will be written to this PV at relatively quick intervals (somewhere between 2-10Hz). The new value should be sent to the hardware as soon as reasonably possible, as long delays can have an impact on the stability of the zero field system. |
-| `CURRENT:SP:RBV` | The setpoint readback for the power supply. **This should be updated as soon as possible after a write to `CURRENT:SP`** - the zero field control state machine will wait for the setpoint readback to match the setpoint before continuing. For example, it can be updated from the protocol (via record redirection) as part of the setpoint write command. A fast scan is not sufficient to satisy this requirement, because the delay between writing to `CURRENT:SP` and reading back the new value in `CURRENT:SP:RBV` needs to be consistent. |
-| `VOLTAGE` | The (measured) voltage on the power supply. Not required by the state machine, but displayed for information. |
+| `CURRENT:SP:RBV` | The setpoint readback for the power supply. **This should be updated from hardware as soon as reasonably possible after a write to `CURRENT:SP`** - the zero field control state machine will wait for the setpoint readback to match the setpoint before continuing. For example, it can be updated from the protocol (via record redirection) as part of the setpoint write command. A fast scan is not sufficient to satisy this requirement, because the delay between writing to `CURRENT:SP` and reading back the new value in `CURRENT:SP:RBV` needs to be consistent. |
+| `VOLTAGE` | The (measured) voltage on the power supply. Not required by the state machine, but displayed for information. Therefore it is acceptable to update this relatively slowly. |
 | `VOLTAGE:SP:RBV` | The voltage setpoint readback |
 | `OUTPUTMODE` | A binary choice PV which returns 0 for voltage control and 1 for current control. If this choice is not applicable for a given PSU, it should always return "1" for current control. |
 | `OUTPUTMODE:SP` | "1" is written to this PV by the zero-field system to put the power supply into current control mode - if `OUTPUTMODE` returned 0. This PV is never used if `OUTPUTMODE` is always 1 (see above) |
