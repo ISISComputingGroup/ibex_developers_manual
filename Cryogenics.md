@@ -64,6 +64,12 @@ Triton systems are dilution refrigerators capable of reaching ~30mK. They are co
 
 See [Triton](Triton) for further details about the triton system
 
+### ICE dilution fridge.
+
+This dilution fridge is only used on muon beamlines - usually on MuSr, but occasionally borrowed by EMU. The RIKEN muon instruments (Argus/Chronus) may also use this fridge in the near future. This is currently the only dilution fridge at ISIS which is not controlled by an Oxford Instruments Triton controller.
+
+For details see [ICE dilution fridge](ICE-Dilution-Fridge)
+
 # Cryomagnets (cryogenically cooled superconducting magnets)
 
 Most of the magnets in this section can be used instead of a cryostat when using a "parasitic" cooling insert (e.g. heliox, triton). This is because the magnets must be cooled to low temperatures anyway so that they superconduct, so they also act as the outer cryostat.
