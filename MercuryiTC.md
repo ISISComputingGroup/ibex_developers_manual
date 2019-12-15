@@ -82,3 +82,13 @@ The OPI has macros that relate to the macros set at the IOC level.
 ### Mercury doesn't communicate 
 
 One issue we have seen is that when the Mercury is transferred between instruments, or during some initial configuration, a user will change values like the Baud rate. It's good practice to check the devices settings (baud rate etc) and the one on the set-up dialog for the Mercury VI to ensure parity between them.
+
+### Pressure card won't read heater voltage correctly
+
+This may be accompanied by an error in the ioc log:
+
+```
+<paste error here>
+```
+
+If this is the case, you need to get the latest version of `Mercury - Pressure.vi` from sourcesafe. Older versions had two parameters with the same name, which LvDCOM could not cope with correctly.
