@@ -88,7 +88,7 @@ One issue we have seen is that when the Mercury is transferred between instrumen
 This may be accompanied by an error in the ioc log:
 
 ```
-<paste error here>
+2019/12/15 16:18:04.417 TE:NDW1799:MERCURY_01:PRESSURE:2:HEATER:VOLT devAsynFloat64 process read error lvDCOMDriver:readFloat64: status=0, function=13, name=HEATER:VOLT, value=0.000000, error=LabVIEW : parameter %p not found in the VI's connector pane. : IDispat
 ```
 
 If this is the case, you need to get the latest version of `Mercury - Pressure.vi` from sourcesafe. Older versions had two parameters with the same name, which LvDCOM could not cope with correctly.
