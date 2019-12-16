@@ -6,3 +6,4 @@
 - ask what the INFO? string is and how it is terminated
 - ask more what descriptions scientists want for PVs for things in the mimic panel.
 - ask about PV4 and other invisible controls in LabVIEW mimic, such as 1k pump, HE3 pump and roots pump
+- ask if mc user reporting temp or resistance is not confusing
