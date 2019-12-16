@@ -49,6 +49,10 @@ The Triton IOC reads it's configuration (sensor <-> name mapping) from the trito
 - Mixing chamber : mixing chamber
 - Cooling channel : **not read or used by IOC**
 
+This can be set using the UI in the diagram, you must leave the tab for the configurations to take effect
+
+![triton ui](triton_channel_settings.jpg)
+
 As of https://github.com/ISISComputingGroup/IBEX/issues/3993 this mapping should have been set on all of the fridges by cryogenics section.
 
 # Gotchas
