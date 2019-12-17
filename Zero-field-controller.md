@@ -182,7 +182,7 @@ The Zero field system is usually comprised of 5 different IOCs:
 
 Because of a requirement to keep the delay between magnetometer readings and power supply writes as consistent as possible, it is not possible for the magnetometer IOC to scan independently. Instead, it is explicitly told to take a reading at suitable times from the controller IOC. This is done using a forward link from the controller ioc to `...ZFMAGFLD_01:TAKEDATA`.
 
-Once the magnetometer has collected readings for all 3 coordinate axes, the magnetometer indicates that new readings are ready by forward linking back to the controller using the PV `...ZFCNTRL_01:INPUTS_UPDATED`. This allows the state machine in the controller IOC to continue to the next step.
+Once the magnetometer has collected readings for all 3 coordinate axes (including the magnitude and whether the magnetometer is overloaded), the magnetometer indicates that new readings are ready by forward linking back to the controller using the PV `...ZFCNTRL_01:INPUTS_UPDATED`. This allows the state machine in the controller IOC to continue to the next step.
 
 In automatic mode, where the controller is required to write new currents to the power supplies, the following algorithm is implemented:
 - If the power supply is in voltage control mode, change it to current control mode. Allow up to 5 seconds (configurable via `ZFCNTRL_01:READ_TIMEOUT`) for this change to happen, and raise an alarm if it doesn't. If the power supply is already in current control mode, skip this step.
