@@ -15,6 +15,8 @@ The following general design points were agreed:
 
 # The `ActionDefinition` class
 
+Scientist defined actions must be python 2/3 compatible to work with genie python currently.
+
 An `ActionDefinition` is the base building block that the script generator will use to build up scripts. It is essentially a wrapper around a python function that can tell us:
 - Whether a given set of inputs is valid
 - The types of the parameters
@@ -23,9 +25,9 @@ An `ActionDefinition` is the base building block that the script generator will 
 As an example, consider a class that looks something like:
 
 ```python
-from action_interface import ActionDefinition, cast_parameters_to
+from genie_python.genie_script_generator import ActionDefinition, cast_parameters_to
 
-def mytype(string_input: str) -> float:
+def mytype(string_input):
     if string_input == "default":
         return 0.0
     else:
@@ -35,7 +37,7 @@ def mytype(string_input: str) -> float:
 class DoRun(ActionDefinition):
 
     @cast_parameters_to(temperature=float, field=float, uamps=mytype)
-    def run(self, temperature: float=0.0, field: float=0.0, uamps: float=0.0):
+    def run(self, temperature=0.0, field=0.0, uamps=0.0):
         g.cset("temperature", temperature)
         g.cset("field", field)
         g.begin()
@@ -43,8 +45,8 @@ class DoRun(ActionDefinition):
         g.end()
 
     @cast_parameters_to(temperature=float, field=float, uamps=mytype)
-    def parameters_valid(self, temperature: float=0.0, field: float=0.0, uamps: float=0.0):
-        errors: str = ""
+    def parameters_valid(self, temperature=0.0, field=0.0, uamps=0.0):
+        errors = ""
         if not 0.1 <= temperature <= 300:
             errors += "Temperature outside range\n"
         if not -5 <= field < 5:
