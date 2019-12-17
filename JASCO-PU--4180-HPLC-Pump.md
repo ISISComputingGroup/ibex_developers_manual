@@ -32,6 +32,8 @@ The user can then start the pump by using the `START:SP` record. The pump can be
 
 The user can also select a timed run for either a set time or volume. The user must first set a time `TIME:RUN:SP` (in seconds) or volume `TIME:VOL:SP` (in mL). Then a pump can begin by using the `TIMED:SP` record. 
 
+The calculations for the time for a set volume (done in `TIME:VOL:CALCRUN`) and the calculation for the pumped volume for a set time (done in `TIME:RUN:CALCVOL`) use `FLOWRATE:SP:RBV`, not `FLOWRATE:SP`. The RBV value is different from the setpoint if the setpoint has never been set, in which case using the setpoint would produce an invalid time or volume.
+
 Note that the Jasco IOC only allows one of these two values to be modifiable at a time (which then sets the other) - which method is used needs to be explicitly set via `TIME:CALC:SP`. This is to avoid race conditions i.e. if a user sets both `TIME:VOL:SP`and `TIME:RUN:SP` at the same time (for example via caLab or scripting) they could not be sure which one wins.
 
 NB: The devices display screen does not show current pump status information when in operation.
