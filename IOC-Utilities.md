@@ -51,6 +51,8 @@ For example:
 
 In this example, the PV `FREQ:REF` reads the values from a status and then set the values, via the protocol file, in the `FREQ:SP:RBV:RAW.A` PV. This value and any error that occurs in the `FREQ:REF` is then set on the `FREQ:SP:RBV` PV. This allows you to easily show a disconnected error in PVs that are set from the protocol file.
 
+If you need to use the error setter for PVs that are defined in a .db file instead of .template file, the .substitutions file for that .db file needs to have a different name than the .db file, otherwise the error setter will not work.
+
 ### Calibration Range
 
 Calculates the maximum and minimum values of a selected calibration file. You can load this db with macros using 
