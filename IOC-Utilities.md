@@ -44,17 +44,12 @@ For example:
     file $(UTILITIES)/db/error_setter.template {
         pattern {P, STREAM_PV, PV_NAME}
     
-        {"\$(P)", "UNITS", "READING"}
-        {"\$(P)", "UNITS", "SP"}
+        {"\$(P)", "FREQ:REF", "FREQ:SP:RBV"}
+        {"\$(P)", "FREQ:REF", "FREQ"}
 
     }
 
-The error setter creates intermidate PVs named `$(PV_NAME):RAW`, which are calc records used to combine the error from `$(STREAM_PV)` with the value intended for the PV `$(PV_NAME)`.
-
-**Important:** When using an error setter, do not set the PV value directly.
-In the example given above, `READING` is to have the same error as `UNITS`. When other PVs need to change the value of `READING` they must instead write to `READING:RAW.A`. This is the intermediate PV created by the error setter.
-
-Similarly, writes to the PV `SP` should instead by written to `SP:RAW.A` to allow the error setter to work so that the error is shared with `UNITS`.
+In this example, the PV `FREQ:REF` reads the values from a status and then set the values, via the protocol file, in the `FREQ:SP:RBV:RAW.A` PV. This value and any error that occurs in the `FREQ:REF` is then set on the `FREQ:SP:RBV` PV. This allows you to easily show a disconnected error in PVs that are set from the protocol file.
 
 If you need to use the error setter for PVs that are defined in a .db file instead of .template file, the .substitutions file for that .db file needs to have a different name than the .db file, otherwise the error setter will not work.
 
@@ -69,6 +64,12 @@ Where `TEMP` is a `cvt` record which uses the calibration file. The max value is
 ## Shell Utilities
 
 There are some IOC shell utilities defined in `C:\Instrument\Apps\EPICS\support\utilities` which can be used in an IOC shell to help startup IOCs. The doxygen docs are here http://epics.isis.rl.ac.uk/doxygen/main/support/utilities/.
+
+### Pausing an IOC at startup
+
+You can pause an IOC at startup in the st.cmd using msgBox. This is imported in `IOC_NAME_registerRecordDeviceDriver pdbbase` so must come after that line. Usage: `msgBox "title" "text"` Which will bring up a message box at the point in your startup that it is placed and pause the boot until you click the button.
+
+This could be useful if you want to run a debugger on the IOC, which you attach whilst the IOC boot is paused.
 
 ## calc
 
