@@ -113,7 +113,7 @@ LVDCOM | ?
 LSSScripts | Thomas Löhnert/James
 The Script Generator | Alistair/Tom Willemsen/John/Dom/James
 IBEX UI Design | Thomas Löhnert
-Jenkins, testing and our build systems | ?
+Jenkins, testing and our build processes | ?
 
 ### Proposed Repeated Code Chats
 
