@@ -4,6 +4,10 @@
 
 # General tips
 
+## My IOC fails to make with "Permission Denied"
+
+This is likely not to do with permissions but that the file is in use elsewhere. Try running stop_ibex_server.bat and if that doesn't work find out what else may be using the file ([LockHunter](https://lockhunter.com/) is quite useful).
+
 ## I am having an Issue with a Specific IOC
 
 Some IOC have important details which may help see if it is listed in [Specific Device IOC](Specific-Device-IOC).
