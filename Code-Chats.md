@@ -105,15 +105,15 @@ Idea | Proposed Speaker
 LUA  | James
 BDD/DDD | James/?
 Software design techniques in our processes | Aaron
-The HIFI Cryomag | Chris C
+The HIFI Cryomag | Chris C/Kathryn
 Design Patterns in IBEX | Dom
-Quiz: Which conforms to checkstyle? | ?
 EMU migration retrospective | ?
 ISISICP | Freddie
 LVDCOM | ?
-LeWIS | ?
 LSSScripts | Thomas Löhnert/James
 The Script Generator | Alistair/Tom Willemsen/John/Dom/James
+IBEX UI Design | Thomas Löhnert
+Jenkins, testing and our build systems | ?
 
 ### Proposed Repeated Code Chats
 
@@ -124,7 +124,12 @@ Observables and Writables in IBEX | ?
 System testing with squish | ?
 Code Review Processes | ?
 Dynamic Layouts in SWT | Thomas Löhnert
-
+Databinding | ?
+Mocking in Python and Java | ?
+Checkstyle Quiz | ?
+Maven, Tycho and Surefire | Tom Willemsen?
+IOC Testing Framework & Emulators | Tom Willemsen?
+RCPTT - Tips and Tricks | Dominic Oram
 
 
 ## Cake Rota
