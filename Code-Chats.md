@@ -101,7 +101,7 @@ The Script Generator | Alistair/Tom Willemsen/John/Dom/James | 8th April '20
 ISISICP (and Kafka?) | Freddie | June '20
 The HIFI Cryomag | Chris C/Kathryn | July '20
 ? | ? | Aug '20
-LSSScripts | Thomas Löhnert/James
+? | ? | Sep '20
 ? | ? | Oct '20
 ? | ? | Nov '20
 
