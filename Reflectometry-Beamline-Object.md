@@ -45,3 +45,25 @@ When the mode is changed to (not disable mode) the following happens:
 
 A mode can be declared as ”disabled mode” via parameter in its constructor. Disabled mode is special because in this mode the movements are relative to the positions when the mode was entered into. This is done by disabling the beam calculation for each component. The idea of disabled mode is to unlink all components from each other and stop tracking the beam path. Only theta related parameters should be in this mode, since theta is an angle between two components and by definition will not make sense if those are unlinked.
 
+#### Value Parameters
+
+The beamline may also contain value parameters. These are set value from a configuration that the user wants exposed under a PV for the instrument. These can then be used in scripts like run_angle. The value must be either a number or a boolean. Are are configured as the final parameter of the beamline object. 
+
+Syntax is `ValueParameter(name, value, description)` where
+
+- name: is the name of the pv will become `REF:VALUE:<name>`
+- value: the value it should have
+- description: a helpful text description
+
+For example:
+
+```
+value_parameters = [
+        ValueParameter("S1_Z", z_s1, "Slit 1 position in z"),
+        ValueParameter("SM_Z", z_sm, "Super mirror position in z"),
+        
+        ValueParameter("HAS_HEIGHT2", False, "Whether the sample stack has a second height stage"),
+        ]
+
+Beamline(..., value_parameters=value_parameters)
+```
