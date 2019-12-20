@@ -12,5 +12,5 @@
 
 Motor Setup Pane
 
-   - Correct Motion ticket box: will make the driver retry the motion if the position is not within the deadband of the set point; up to 10 times.
+   - Correct Motion tick box: will make the driver retry the motion if the position is not within the deadband of the set point; up to 10 times.
 
