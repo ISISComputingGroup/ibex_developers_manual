@@ -18,7 +18,7 @@ This copies the specified field from a PV and sets it on a different PV. E.g.
 	
     }
 
-This copies `$(P)UNITS.EGU` to `$(P)READING.EGU` and `$(P)SP.EGU`. This template copies the value of a field from one PV to the same field on another. In the example given, this is the `EGU` field.
+This example copies the `EGU` field from `$(P)READING` to `$(P)UNITS.EGU` and `$(P)SP.EGU`.
 
 ### Unit setter
 
