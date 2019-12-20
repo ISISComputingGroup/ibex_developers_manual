@@ -94,9 +94,9 @@ All presentations should be uploaded to the SharePoint site [here](https://www.f
 
 Topic | Presenter | Date
 ----- | --------- | ----
-Software design techniques in our processes and BDD/DDD | Aaron and James | 4th Feb '20
+The Script Generator | Alistair/Tom Willemsen/John/Dom/James | 4th Feb '20
 EMU migration retrospective | ? | 11th March '20
-The Script Generator | Alistair/Tom Willemsen/John/Dom/James | 8th April '20
+Software design techniques in our processes and BDD/DDD | Aaron and James | 8th April '20
 ? | ? | May '20
 ISISICP (and Kafka?) | Freddie | June '20
 The HIFI Cryomag | Chris C/Kathryn | July '20
