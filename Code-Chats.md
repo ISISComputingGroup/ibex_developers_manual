@@ -10,7 +10,7 @@ Topic | Presenter | Date
 ----- | --------- | ----
 The Script Generator | James | 4th Feb '20
 EMU migration retrospective | John? | 11th March '20
-LSSScripts | Thomas Löhnert/James | 8th April '20
+InstrumentScripts | Thomas Löhnert/James | 8th April '20
 Software design techniques in our processes and BDD/DDD | Aaron and James | May '20
 How to Read ISIS LabVIEW Drivers | Kathryn Baker | June '20
 ISISICP (and Kafka?) | Freddie | July '20
