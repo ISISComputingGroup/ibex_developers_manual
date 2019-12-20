@@ -44,12 +44,17 @@ For example:
     file $(UTILITIES)/db/error_setter.template {
         pattern {P, STREAM_PV, PV_NAME}
     
-        {"\$(P)", "FREQ:REF", "FREQ:SP:RBV"}
-        {"\$(P)", "FREQ:REF", "FREQ"}
+        {"\$(P)", "UNITS", "READING"}
+        {"\$(P)", "UNITS", "SP"}
 
     }
 
-In this example, the PV `FREQ:REF` reads the values from a status and then set the values, via the protocol file, in the `FREQ:SP:RBV:RAW.A` PV. This value and any error that occurs in the `FREQ:REF` is then set on the `FREQ:SP:RBV` PV. This allows you to easily show a disconnected error in PVs that are set from the protocol file.
+The error setter creates intermidate PVs named `$(PV_NAME):RAW`, which are calc records used to combine the error from `$(STREAM_PV)` with the value intended for the PV `$(PV_NAME)`.
+
+**Important:** When using an error setter, do not set the PV value directly.
+In the example given above, `READING` is to have the same error as `UNITS`. When other PVs need to change the value of `READING` they must instead write to `READING:RAW.A`. This is the intermediate PV created by the error setter.
+
+Similarly, writes to the PV `SP` should instead by written to `SP:RAW.A` to allow the error setter to work so that the error is shared with `UNITS`.
 
 If you need to use the error setter for PVs that are defined in a .db file instead of .template file, the .substitutions file for that .db file needs to have a different name than the .db file, otherwise the error setter will not work.
 
