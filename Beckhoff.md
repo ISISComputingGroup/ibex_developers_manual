@@ -27,9 +27,13 @@ Beckhoff provides an `automation interface` which can do any of the things you c
 
 ![Overview](beckhoff/beckhoff_overview.png)
 
-1. Jenkins will pull the Beckhoff PLC code from github
-2. `build.bat` is run to first build the `AutomationTools` themselves then to build the PLC code using the `automation interface`. This build will also create a `*.tpy` file, which outlines how to connect to the PLC and can be used to configure the IOC itself.
-3. The IOC test framework is started. This will first use the `AutomationTools` program to run a local simulated PLC. Then startup and test the Beckhoff twincat in the usual way.
+1. Jenkins will pull a `BeckhoffTestRunner` from github. This contains all the tools required to perform the building and tests.
+2. Each application of PLC has a branch on the `BeckhoffTestRunner`, Jenkins will run through all of these and test them. The current application branches are:
+   * [dummy_PLC](https://github.com/ISISComputingGroup/BeckhoffPLCCode/tree/dummy_PLC)- a PLC that does very little, basically used to test that fundamental tcIOC comms works
+   * [old_ISIS_code](https://github.com/ISISComputingGroup/BeckhoffPLCCode/tree/Ticket5052_refactor_test_runner) - this is the old ISIS prototype motion code that is currently on the CRISP jaws. Hopefully this branch can be removed once these are moved on.
+   * [ESS_base_code](https://bitbucket.org/europeanspallationsource/tc_generic_structure/) - this is the collaboration code that we will be using go forward. Currently the build only confirms that this can be built and runs no tcIOC tests against it.
+3. `build.bat` is run to first build the `AutomationTools` themselves then to build the PLC code using the `automation interface`. This build will also create a `*.tpy` file, which outlines how to connect to the PLC and can be used to configure the IOC itself.
+4. The IOC test framework is started. This will first use the `AutomationTools` program to run a local simulated PLC. Then startup and test the Beckhoff twincat in the usual way.
 
 This is currently being run on the ndw1926 node on Jenkins. A quirk of using this DCOM interface is that the Jenkins slave must be run as an interactive user and thus not as a service. To do this there is a bat file that should run on startup inside `C:\Users\ibexbuilder\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup`.
 
