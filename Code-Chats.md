@@ -94,12 +94,36 @@ All presentations should be uploaded to the SharePoint site [here](https://www.f
 
 Topic | Presenter | Date
 ----- | --------- | ----
-LUA | James | Jan 2020
+? | ? | 4th Feb '20
+? | ? | 11th March '20
+? | ? | 8th April '20
 
 ### Proposed Future Code Chats
 
 Idea | Proposed Speaker
 ---- | ----------------
+LUA  | James
+BDD/DDD | James/?
+Software design techniques in our processes | Aaron
+The HIFI Cryomag | Chris C
+Design Patterns in IBEX | Dom
+Quiz: Which conforms to checkstyle? | ?
+EMU migration retrospective | ?
+ISISICP | Freddie
+LVDCOM | ?
+LeWIS | ?
+LSSScripts | Thomas Löhnert/James
+The Script Generator | Alistair/Tom Willemsen/John/Dom/James
+
+### Proposed Repeated Code Chats
+
+Idea | Proposed Speaker
+---- | ----------------
+How to Read ISIS LabVIEW Drivers | Kathryn Baker
+Observables and Writables in IBEX | ?
+System testing with squish | ?
+Code Review Processes | ?
+Dynamic Layouts in SWT | Thomas Löhnert
 
 
 
