@@ -94,13 +94,13 @@ All presentations should be uploaded to the SharePoint site [here](https://www.f
 
 Topic | Presenter | Date
 ----- | --------- | ----
-The Script Generator | Alistair/Tom Willemsen/John/Dom/James | 4th Feb '20
-EMU migration retrospective | ? | 11th March '20
+The Script Generator | James | 4th Feb '20
+EMU migration retrospective | John? | 11th March '20
 Software design techniques in our processes and BDD/DDD | Aaron and James | 8th April '20
-? | ? | May '20
+How to Read ISIS LabVIEW Drivers | Kathryn Baker | May '20
 ISISICP (and Kafka?) | Freddie | June '20
 The HIFI Cryomag | Chris C/Kathryn | July '20
-? | ? | Aug '20
+IBEX UI Design | Thomas Löhnert | Aug '20
 ? | ? | Sep '20
 ? | ? | Oct '20
 ? | ? | Nov '20
