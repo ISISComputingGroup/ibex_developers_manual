@@ -4,6 +4,70 @@
 
 Code chats occur on a semi-regular monthly basis within the group at ISIS. Although they were originally intended to be presentations focused on a specific part of the IBEX GUI they often cover other subjects that may be considered part of the backend, or talk about general coding practices.
 
+## Upcoming Code Chats
+
+Topic | Presenter | Date
+----- | --------- | ----
+The Script Generator | James | 4th Feb '20
+EMU migration retrospective | John? | 11th March '20
+LSSScripts | Thomas Löhnert/James | 8th April '20
+Software design techniques in our processes and BDD/DDD | Aaron and James | May '20
+How to Read ISIS LabVIEW Drivers | Kathryn Baker | June '20
+ISISICP (and Kafka?) | Freddie | July '20
+The HIFI Cryomag | Chris C/Kathryn | Aug '20
+IBEX UI Design | Thomas Löhnert | Sep '20
+? | ? | Oct '20
+? | ? | Nov '20
+
+## Cake Rota
+Person | Date
+------ | ----
+Alistair | Feb '20
+Chris C | March '20
+Kathryn | April '20
+James | May '20
+Freddie | June '20
+Aaron | July '20
+Jack | Aug ' 20
+John | Sep '20
+Dom | Oct '20
+Chris MS | Dec '20
+Tom | Jan '21
+Thomas | Feb '21
+David | March '21
+
+### Proposed Future Code Chats
+
+Idea | Proposed Speaker
+---- | ----------------
+LUA  | James
+BDD/DDD | James/?
+Software design techniques in our processes | Aaron
+The HIFI Cryomag | Chris C/Kathryn
+Design Patterns in IBEX | Dom
+EMU migration retrospective | ?
+ISISICP (and Kafka?) | Freddie
+LVDCOM | Freddie?
+The Script Generator | Alistair/Tom Willemsen/John/Dom/James
+IBEX UI Design | Thomas Löhnert
+Jenkins, testing and our build processes | ?
+
+### Proposed Repeated Code Chats
+
+Idea | Proposed Speaker
+---- | ----------------
+How to Read ISIS LabVIEW Drivers | Kathryn Baker
+Observables and Writables in IBEX | ?
+System testing with squish | ?
+Code Review Processes | ?
+Dynamic Layouts in SWT | Thomas Löhnert
+Databinding | ?
+Mocking in Python and Java | ?
+Checkstyle Quiz | ?
+Maven, Tycho and Surefire | Tom Willemsen?
+IOC Testing Framework & Emulators | Tom Willemsen?
+RCPTT - Tips and Tricks | Dominic Oram
+
 ## Previous Code Chats
 
 The presentation slides for previous code chats are [available here](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Forms/AllItems.aspx?RootFolder=%2Fisis%2Fcomputing%2FICPdiscussions%2FGUI_Chat_Slides&FolderCTID=0x01200027AD8F05966A2748B3B04C98BB5B442B&View={F2C33C51-70E6-4343-B937-2C59A2568306}). 
@@ -90,67 +154,3 @@ EPICS 7 | Freddie | Nov 2019
 
 All presentations should be uploaded to the SharePoint site [here](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Forms/AllItems.aspx?RootFolder=%2Fisis%2Fcomputing%2FICPdiscussions%2FGUI_Chat_Slides&FolderCTID=0x01200027AD8F05966A2748B3B04C98BB5B442B&View={F2C33C51-70E6-4343-B937-2C59A2568306}) and/or converted to a wiki page if more appropriate. It should also be reasonably assumed that the people who gave these presentations should know something about these subjects.
 
-## Upcoming Code Chats
-
-Topic | Presenter | Date
------ | --------- | ----
-The Script Generator | James | 4th Feb '20
-EMU migration retrospective | John? | 11th March '20
-LSSScripts | Thomas Löhnert/James | 8th April '20
-Software design techniques in our processes and BDD/DDD | Aaron and James | May '20
-How to Read ISIS LabVIEW Drivers | Kathryn Baker | June '20
-ISISICP (and Kafka?) | Freddie | July '20
-The HIFI Cryomag | Chris C/Kathryn | Aug '20
-IBEX UI Design | Thomas Löhnert | Sep '20
-? | ? | Oct '20
-? | ? | Nov '20
-
-### Proposed Future Code Chats
-
-Idea | Proposed Speaker
----- | ----------------
-LUA  | James
-BDD/DDD | James/?
-Software design techniques in our processes | Aaron
-The HIFI Cryomag | Chris C/Kathryn
-Design Patterns in IBEX | Dom
-EMU migration retrospective | ?
-ISISICP (and Kafka?) | Freddie
-LVDCOM | Freddie?
-The Script Generator | Alistair/Tom Willemsen/John/Dom/James
-IBEX UI Design | Thomas Löhnert
-Jenkins, testing and our build processes | ?
-
-### Proposed Repeated Code Chats
-
-Idea | Proposed Speaker
----- | ----------------
-How to Read ISIS LabVIEW Drivers | Kathryn Baker
-Observables and Writables in IBEX | ?
-System testing with squish | ?
-Code Review Processes | ?
-Dynamic Layouts in SWT | Thomas Löhnert
-Databinding | ?
-Mocking in Python and Java | ?
-Checkstyle Quiz | ?
-Maven, Tycho and Surefire | Tom Willemsen?
-IOC Testing Framework & Emulators | Tom Willemsen?
-RCPTT - Tips and Tricks | Dominic Oram
-
-
-## Cake Rota
-Person | Date
------- | ----
-Tom | Jan '21
-Thomas | Feb '21
-David | March '21
-Alistair | Feb '20
-Chris C | March '20
-Kathryn | April '20
-James | May '20
-Freddie | June '20
-Aaron | July '20
-Jack | Aug ' 20
-John | Sep '20
-Dom | Oct '20
-Chris MS | Dec '20
