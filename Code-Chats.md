@@ -96,12 +96,12 @@ Topic | Presenter | Date
 ----- | --------- | ----
 The Script Generator | James | 4th Feb '20
 EMU migration retrospective | John? | 11th March '20
-Software design techniques in our processes and BDD/DDD | Aaron and James | 8th April '20
-How to Read ISIS LabVIEW Drivers | Kathryn Baker | May '20
-ISISICP (and Kafka?) | Freddie | June '20
-The HIFI Cryomag | Chris C/Kathryn | July '20
-IBEX UI Design | Thomas Löhnert | Aug '20
-? | ? | Sep '20
+LSSScripts | Thomas Löhnert/James | 8th April '20
+Software design techniques in our processes and BDD/DDD | Aaron and James | May '20
+How to Read ISIS LabVIEW Drivers | Kathryn Baker | June '20
+ISISICP (and Kafka?) | Freddie | July '20
+The HIFI Cryomag | Chris C/Kathryn | Aug '20
+IBEX UI Design | Thomas Löhnert | Sep '20
 ? | ? | Oct '20
 ? | ? | Nov '20
 
@@ -117,7 +117,6 @@ Design Patterns in IBEX | Dom
 EMU migration retrospective | ?
 ISISICP (and Kafka?) | Freddie
 LVDCOM | Freddie?
-LSSScripts | Thomas Löhnert/James
 The Script Generator | Alistair/Tom Willemsen/John/Dom/James
 IBEX UI Design | Thomas Löhnert
 Jenkins, testing and our build processes | ?
