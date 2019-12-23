@@ -67,7 +67,7 @@ There are some IOC shell utilities defined in `C:\Instrument\Apps\EPICS\support\
 
 ### Pausing an IOC at startup
 
-You can pause an IOC at startup in the st.cmd using msgBox. This is imported in `IOC_NAME_registerRecordDeviceDriver pdbbase` so must come after that line. Usage: `msgBox "title" "text"` Which will bring up a message box at the point in your startup that it is placed and pause the boot until you click the button.
+You can pause an IOC at startup in the st.cmd using `msgBox`. This is imported in `IOC_NAME_registerRecordDeviceDriver pdbbase` so must come after that line. Usage: `msgBox "title" "text"` Which will bring up a message box at the point in your startup that it is placed and pause the boot until you click the button.
 
 This could be useful if you want to run a debugger on the IOC, which you attach whilst the IOC boot is paused.
 
