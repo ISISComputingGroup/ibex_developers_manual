@@ -14,6 +14,8 @@ The names of the beamline and sample parameter PVs are read from a database.
 
 ## Channel Access Commands ##
 
+To dehex and decompress see "Reading a Compressed Hex PV": https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Running-IOCs
+
 ### Read Commands ###
 
 **BLOCKSERVER:IOCS**
