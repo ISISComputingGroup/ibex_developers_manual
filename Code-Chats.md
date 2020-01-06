@@ -9,7 +9,7 @@ Code chats occur on a semi-regular monthly basis within the group at ISIS. Altho
 Topic | Presenter | Date
 ----- | --------- | ----
 The Script Generator | James | 4th Feb '20
-EMU migration retrospective | John? | 11th March '20
+EMU migration retrospective | David | 11th March '20
 InstrumentScripts | Thomas Löhnert/James | 8th April '20
 Software design techniques in our processes and BDD/DDD | Aaron and James | May '20
 How to Read ISIS LabVIEW Drivers | Kathryn Baker | June '20
