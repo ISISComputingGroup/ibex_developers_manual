@@ -8,7 +8,7 @@
     - `c:\data\recovery.run`
     - `c:\data\selog.*` (.sq3 .sq3-shm and .sh3-wal files)
 
-1. Confirm the type of DAE you have - look in `c:\labview modules\dae\icp_config.xml`, if DAEType is 1 you have a DAE2, if it is 3 you have a DAE3. If you install the wrong type, it will just fail to start and complain in the ICP log file.
+1. Confirm the type of DAE you have - look in `c:\labview modules\dae\icp_config.xml`, if DAEType is 1 or 2 you have a DAE2 (1 for neutron instruments, 2 for muon instruments), if it is 3 you have a DAE3. If you install the wrong type, it will just fail to start and complain in the ICP log file.
 1. Go to \\isis\inst$\Kits$\CompGroup\ICP\ISISICP and into the directory for the DAE type you have
 1. Go into the latest build directory and double click on update_inst.cmd
    This can take a while (several minutes). You will get various messages. The following are OK:
