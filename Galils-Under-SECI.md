@@ -16,6 +16,8 @@ Motor Setup Pane
 
 # Setup values in IBEX from SECI (a subset)
 
+The notes below detail how some of the values used by the SECI Galil driver should be translated for use in the EPICS IOC for Galils.
+
 Motor steps per unit and encoder steps per unit should be inverted (`1/value`).
 
 Displayed Position
