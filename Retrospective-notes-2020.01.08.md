@@ -16,7 +16,7 @@ These statistics are already made as part of managing the IBEX project. What wou
 
 Some of our systems, such as DEMO, have ended up with out of date software, such as SQL. Are these support systems in the release schedule and maintained appropriately?
 
-Created a ticket to make a decision about the best approach: 
+Created a ticket to make a decision about the best approach: https://github.com/ISISComputingGroup/IBEX/issues/5072
 
 ### Dev Release Notes
 
