@@ -20,14 +20,17 @@ TODO: I think we need a parameter driver and then we can more easily separate Sl
 
 ### Synchronisation
 
-To enable synchronisation of axes this layer:
+To enable synchronisation of axes, this layer:
 
 - can report the minimum time taken for individual IOC driver to finish a move
 - can be told to make a move in a given duration.
 
-When calculating the time for each axis to finish a move, the backlash distance and speed is taken into account to try to be accurate even if the backlash distance makes up a considerable part of the total move duration for the axis ([ticket](https://github.com/ISISComputingGroup/IBEX/issues/4541)). There are two limitations with the system:
+When calculating the time for each axis to finish a move, the backlash distance and speed is taken into account to try to be accurate even if the backlash distance makes up a considerable part of the total move duration for the axis ([ticket](https://github.com/ISISComputingGroup/IBEX/issues/4541)). There are several limitations with the system:
 - The acceleration time of the motors is not taken into account, so calculations will be slightly inaccurate
 - When starting a move from within backlash range the speed cannot be controlled, so unless the backlash speed is very slow and is the limiting factor on the entire move, this motor will finish its move earlier than the others.
+- In order to avoid stalling, each axis has a minimum velocity stored in the PVWrapper. An axis will not move slower than this, even if instructed to do so as part of a synchronised move, meaning it might reach its target quicker than intended. However we only expect this to happen in very specific cases for very small moves thus the difference should be negligible. The minimum velocity is set to:
+     - `VBAS` of the underlying motor by default
+     - `VMAX` / `min_velocity_scale_factor` if `VBAS <=0`. `min_velocity_scale_factor` is an optional argument on the PVWrapper (defaults to 100)
 
 The user can turn this off in the configuration file. In which case the time reported to finish a move is 0, and the axis's speed is not changed on move.
 
