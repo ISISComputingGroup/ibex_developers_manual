@@ -51,22 +51,27 @@ In Auto-Feedback mode, the user specifies the desired field (in `mG`) and a feed
 
 1. Calibrate the system (to relate current to field, undertaken via the `Test Zero Field.vi` within SECI):
     - Check for a huge stray field
-         - Ensure that the absolute maximum of the fields are < 4000 mG 2 seconds after setting a 0, if it isn't the magnet is not in range, and there is a huge stray field
+         - Ensure that the absolute maximum of the fields are < 4000 mG 2 seconds after setting a current of 0, if it isn't the magnet is not in range, and there is a huge stray field
          - Calculate the magnitude of the field at this point (square root of the sum of the squared fields)
     - For each magnet and for a range of currents
          - Measure the magnetic field at the fixed sample position
     - Plot field against the current 
-         - 21 steps of `((iteration number - 10)/10) * PSmax`, with a 2-second wait before taking the field reading in all three dimensions
-    - Perform linear regression to work out the calibration coefficients (1 per coil per axis). 
-        - If the result is linear these values should be autosaved because they are the same for every config
+         - 21 evenly spaced steps of between the lower current limit and upper current limit, with a 2-second wait before taking the field reading in all three dimensions
+    - Perform linear regression to work out the calibration coefficients (1 per axis). 
+        - If the result is linear (falls in a tolerance for the RMS - tolerance TBD) these values should be displayed to the user for them to be inputted into the config
         - If not linear the user should be warned, warnings still to be defined from the VI
-        - The calibration values should be under manager mode
-    - Check that the noise ratios are acceptable at 0 in manual mode (3-second delay for settling)
+    - Check that the noise ratios are acceptable at 0 field in manual mode (3-second delay for settling)
+         - Set field to 0
+         - Put controller in manual mode
+         - Wait 3 seconds
          - 20 readings a second apart
          - Calculate the variance for each field
          - Calculate the manual RMS value (`square root of the sum of the variance for each field`)
          - The system is noisy if the RMS value > 5
-    - Check that the noise ratios are acceptable at 0 in auto feedback mode (6-second delay for settling)
+    - Check that the noise ratios are acceptable at 0 field in auto feedback mode (6-second delay for settling)
+         - Set field to 0
+         - Put controller in auto feedback mode
+         - Wait 3 seconds
          - 20 readings a second apart
          - Calculate the variance for each field
          - Calculate the manual RMS value (`square root of the sum of the variance for each field`)
@@ -78,8 +83,7 @@ In Auto-Feedback mode, the user specifies the desired field (in `mG`) and a feed
     - Place a portable probe at the sample position
     - Set the field to 0
     - Update the offsets so that the portable probe measures 0.
-        - It is OK to auto save these values they are the same for every config
-        - The offset values should be under manager mode
+        - The offsets should be printed to the user so that they can update them in the config
     - This is performed regularly
 
 ## Zero-Field Controller Feedback Loop ##
