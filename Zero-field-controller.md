@@ -213,7 +213,7 @@ The Zero-field controller accepts an arbitrary PV prefix to use as a power suppl
 
 # Performance
 
-The IBEX and SECI zero-field control systems were compared using an external magnetometer mounted at the sample position. This magnetometer is completely separate from the magnetometer which the zero-field system itself uses, and is plugged into a laptop to monitor the field completely independently.
+The IBEX and SECI zero-field control systems were compared using an external magnetometer mounted at the sample position. This magnetometer is completely separate from the magnetometer which the zero-field system itself uses, and is plugged into a laptop to monitor the field completely independently (the scientist knows how to set this system up; this is not something we are involved with and is not code we support)
 
 The following is a plot of the performance of both the IBEX and SECI zero field systems, as tested on EMU in January 2020. Y axis is in Gauss, X axis is in seconds.
 
