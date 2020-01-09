@@ -210,3 +210,13 @@ The Zero-field controller accepts an arbitrary PV prefix to use as a power suppl
 | `OUTPUTMODE:SP` | "1" is written to this PV by the zero-field system to put the power supply into current control mode - if `OUTPUTMODE` returned 0. This PV is never used if `OUTPUTMODE` is always 1 (see above) |
 | `OUTPUTSTATUS` | A binary choice PV which returns 1 if the PSU is switched on, 0 otherwise. If this choice is not applicable, then this PV should always return 1. |
 | `OUTPUTSTATUS:SP` | "1" is written to this PV by the zero-field system to turn the supply on - if `OUTPUTSTATUS` returned 0. This PV is never used if `OUTPUTSTATUS` is always 1 (see above) |
+
+# Performance
+
+The IBEX and SECI zero-field control systems were compared using an external magnetometer mounted at the sample position. This magnetometer is completely separate from the magnetometer which the zero-field system itself uses, and is plugged into a laptop to monitor the field completely independently.
+
+The following is a plot of the performance of both the IBEX and SECI zero field systems, as tested on EMU in January 2020. Y axis is in Gauss, X axis is in seconds.
+
+![](https://raw.githubusercontent.com/ISISComputingGroup/ibex_developers_manual/master/images/emu_zf_compensation_comparison.png)
+
+When using the external magnetometer (connected to the laptop), be aware that this system has a faulty power supply. If the power supply is not correctly seated in the magnetometer, it can cause the field to appear to jump and/or drift wildly. To fix this, ensure the PSU is seated firmly in the magnetometer and avoid perturbing the magnetometer control box while it is taking data.
