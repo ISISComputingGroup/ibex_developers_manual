@@ -115,14 +115,14 @@ parameters
 1. `resultvar` - the basename of the environment variable to set
 1. `lhs` - the string to test
 1. `operation` - set the first bit for verbose mode
-1. `rhs` - does nothing
+1. `rhs` - used in `lhs==rhs` opertion
 
 The operation argument is given as a decimal representation of binary flags:
 
 | Operation       | Flag  |
 |:---------------:|:-----:|
 | Verbose         | `0x1` |
-| length > 0      | `0x2` |
+| length > 0      | `0x2` (default) |
 | lhs == rhs      | `0x4` |
 | Inverse output  | `0x8` |
 
