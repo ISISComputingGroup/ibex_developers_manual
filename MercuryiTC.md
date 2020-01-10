@@ -31,7 +31,7 @@ Currently, the driver only measures and sets the following:
 
 #### Setup
 
-To activate a card you must set the related IOC macro. The macro sets the final part of the front panel name. The front panels are called `Mercury - Front Panel <I> - Temp <N>.vi` where <I> is the Mercury index (also the IOC index) and <N> is the card index 1 for the first temperatue card, 2 for the second etc. The following macros set the <I> for the 4 possible IOC slot:
+To activate a card you must set the related IOC macro. The macro sets the final part of the front panel name. The front panels are called Temperature: `Mercury - Front Panel <I> - Temp <N>.vi` where <I> is the Mercury index (also the IOC index) and <N> is the card index 1 for the first temperatue card, 2 for the second etc. The following macros set the <I> for the possible IOC slot:
 
 | Macro | Usual Value | IOC Name | 
 | ----  | ----------- | -------- | 
@@ -39,7 +39,7 @@ To activate a card you must set the related IOC macro. The macro sets the final 
 | MERCURY_01__VI_TEMP_2 | 2 | %MYPVPREFIX%MERCURY_01:2 |
 | MERCURY_01__VI_TEMP_3 | 3 | %MYPVPREFIX%MERCURY_01:3 |
 | MERCURY_01__VI_TEMP_4 |   | %MYPVPREFIX%MERCURY_01:4 |
-| MERCURY_02__VI_TEMP_1 |   | %MYPVPREFIX%MERCURY_02:1 |
+| MERCURY_02__VI_TEMP_1 |   | %MYPVPREFIX%MERCURY_01:LEVEL:1 |
 | etc                   |   |                          |
 
 #### Important PVs
@@ -51,7 +51,11 @@ To activate a card you must set the related IOC macro. The macro sets the final 
 
 ### He Level
 
-The helium level can be monitored by setting the macro VI_LEVEL_1 to point at the correct vi in a similar fashion to the temperature.
+The helium level can be monitored by setting the macro VI_LEVEL_N to point at the correct vi in a similar fashion to the temperature.
+
+### Pressure
+
+A pressure card can be monitored by setting the macro VI_PRESSURE_N to point at the correct vi in a similar fashion to the temperature.
 
 ### Example
 
