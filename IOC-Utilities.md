@@ -61,6 +61,22 @@ dbLoadRecords("$(UTILITIES)/db/calibration_range.db","P=$(P),BDIR=TEMP.BDIR,TDIR
 ```
 Where `TEMP` is a `cvt` record which uses the calibration file. The max value is outputted to `HIGH_PV` and the minimum to `LOW_PV`.
 
+### check stability
+
+This is a generic utility for verifying that a value has been within tolerance of a setpoint and without any invalid alarms for N samples.
+
+The implementation is defined in `$(UTILITIES)/db/check_stability.db`.
+
+First load the DB records, e.g. 
+
+```
+dbLoadRecords("$(UTILITIES)/db/check_stability.db", "P=$(MYPVPREFIX)$(IOCNAME):,INP_VAL=$(MYPVPREFIX)$(IOCNAME):FIELD,SP=$(MYPVPREFIX)$(IOCNAME):FIELD:SP:RBV,NSAMP=5,TOLERANCE=$(TOLERANCE=0)")
+```
+
+And then, from an existing DB, forward link to `$(P)STAB:SCANNOW` when it should take new samples (e.g. Forward-link from the readback PV).
+
+Whether the value is stable or not is then published in `$(P)STAB:IS_STABLE` - 1 if stable, 0 otherwise.
+
 ## Shell Utilities
 
 There are some IOC shell utilities defined in `C:\Instrument\Apps\EPICS\support\utilities` which can be used in an IOC shell to help startup IOCs. The doxygen docs are here http://epics.isis.rl.ac.uk/doxygen/main/support/utilities/.
