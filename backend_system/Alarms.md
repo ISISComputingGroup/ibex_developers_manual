@@ -28,7 +28,7 @@ For each instrument, there will be a single instance of the alarm server, JMS se
 The JMS server implementation used is Apache [ActiveMQ](ActiveMQ), an instance of which is started up along with the IOC log server. See the [IOC log](Ioc-message-logging) page for details.
 
 # Alarm Server #
-The alarm server can be found in EPICS/ISIS/AlarmServer. Currently it is a pre-built version. It would be useful to have a version with source code that can be modified in Eclipse and built as part of the Jenkins build. Only the plugin 'org.csstudio.alarm.beast.server' would be needed.
+The alarm server can be found in `EPICS/CSS/master/AlarmServer`. Currently it is a pre-built version. It would be useful to have a version with source code that can be modified in Eclipse and built as part of the Jenkins build. Only the plugin 'org.csstudio.alarm.beast.server' would be needed.
 
 The server can be started by running the script 'run_alarm_server.bat'. The alarm 'root configuration' that the server uses is specified as a command-line argument; the name of the root that will be used may be set by editing the value in the 'config_name.ini' file. Other settings for the alarm server including the database and JMS server connection settings, are found in the file 'alarm_server_settings.ini'.
 
