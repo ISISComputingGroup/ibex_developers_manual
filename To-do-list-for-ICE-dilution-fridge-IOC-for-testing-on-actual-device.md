@@ -1,9 +1,1 @@
-- ask scientists how they want their setpoints initialized. LabView software has them initialized from the value records only at startup. Should it be the same in EPICS? Currently initialized as undefined.
-- ask about unit of MC Cernox and MC RuO
-- check data bits, parity bits and stop bits
 - ADD INFO ABOUT TEMP CHANNELS TO ice DILUTION FRIDGE WIKI PAGE
-- ask what the unit for the mimic pressures and proportional valves is exactly.
-- ask what the INFO? string is and how it is terminated
-- ask more what descriptions scientists want for PVs for things in the mimic panel.
-- ask about PV4 and other invisible controls in LabVIEW mimic, such as 1k pump, HE3 pump and roots pump
-- ask if mc user reporting temp or resistance is not confusing
