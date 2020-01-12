@@ -14,6 +14,8 @@
 
 * [NGPS](NGPS-PSU)
 
+* [TDK Lambda Genesys](TDK-Lambda-Genesys)
+
 * [Kepco](Kepco)
 
 * [Cryogenic SMS PSU](Cryogenic-SMS-PSU)
