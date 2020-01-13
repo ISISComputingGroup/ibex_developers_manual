@@ -38,3 +38,8 @@ Device is powered, but was temporarily without power.
 Device and/or chassis driver support may have been removed.
 ```
 If this happens immediately on IOC boot, check if the DAQ is connected in NI-MAX. Check the device is reserved in NI-MAX and can be reached over the network.
+
+```
+### DAQmx ERROR (ReadAnalogF64): The specified operation cannot be performed because a task is in the process of being aborted or a device is in the process of being removed from the system. Wait until the abort operation is complete and attempt to perform the operation again.
+```
+This error usually occurs when the connection between the IOC and DAQ has been interrupted after the IOC has started running normally. Check that the machine running the IOC still has the device reservation and can connect to the DAQ. Restart the IOC.
