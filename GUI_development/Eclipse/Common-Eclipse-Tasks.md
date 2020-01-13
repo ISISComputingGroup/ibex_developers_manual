@@ -95,7 +95,7 @@ The job can be started with:
 ```java
 fooJob.schedule();
 ```
-More details can be found in the [Vogella tutorial](http://www.vogella.com/tutorials/EclipseJobs/article.htm>).
+More details can be found in the [Vogella tutorial](http://www.vogella.com/tutorials/EclipseJobs/article.html>).
 
 
 ## Updating The UI (Without Data Binding)
