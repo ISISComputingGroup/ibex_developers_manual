@@ -52,4 +52,4 @@ Once in the GUI, the script generator table is created by generating `ActionPara
 
 ## Checking the validity and generating python scripts
 
-Generator classes are used to check validity and generate scripts. They use the config's supplied `run` and `parameters_valid` methods to check validity and generate scripts. 
+Generator classes are used to check validity and generate scripts. They use the config's supplied `run` and `parameters_valid` methods to check validity and generate scripts. We do not want to block the execution of the UI thread, and as such, all parameter validity checking and script generation is done by running a Java CompletableFuture and then firing a property change and passing this up the chain to the UI. This allows updates to happen in the background without blocking the UI thread.
