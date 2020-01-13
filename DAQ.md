@@ -28,6 +28,7 @@ We addressed this issue for the zero field magnetometer (which needed consecutiv
 Unlike the other two modes, monster mode appears to need a call to `DAQmxStart(portname)` at the end of the st.cmd file for the IOC, see the ZFMAGFLD st.cmd for a reference.
 
 ### Common errors
+The DAQmxBase driver used in IBEX can throw a number of errors to the log file. After resolving the issue, the IOC will need rebooting.
 
 ```
 ### DAQmx ERROR (CreateAI): Device cannot be accessed.  Possible causes:
