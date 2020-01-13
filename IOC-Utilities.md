@@ -131,7 +131,7 @@ parameters
 1. `resultvar` - the basename of the environment variable to set
 1. `lhs` - the string to test
 1. `operation` - set the first bit for verbose mode
-1. `rhs` - used in `lhs==rhs` opertion
+1. `rhs` - used in `lhs==rhs` operation
 
 The operation argument is given as a decimal representation of binary flags:
 
