@@ -26,3 +26,14 @@ When developing the zero field magnetometer IOC we found that there are signific
 We addressed this issue for the zero field magnetometer (which needed consecutive readings very close to each other) by running in 'monster' mode. In monster mode the NI data acquisition task is never closed, so the data can be captured at a much faster rate. However, if the requested data rate is too high this can cause a buffer overflow. For the zero field magnetometer on a developer's machine this occurred at ~100000 data points/second.
 
 Unlike the other two modes, monster mode appears to need a call to `DAQmxStart(portname)` at the end of the st.cmd file for the IOC, see the ZFMAGFLD st.cmd for a reference.
+
+### Common errors
+
+```
+### DAQmx ERROR (CreateAI): Device cannot be accessed.  Possible causes:
+Device is no longer present in the system.
+Device is not powered.
+Device is powered, but was temporarily without power.
+Device and/or chassis driver support may have been removed.
+```
+If this happens immediately on IOC boot, check if the DAQ is connected in NI-MAX. Check the device is reserved in NI-MAX and can be reached over the network.
