@@ -48,7 +48,7 @@ The `ActionDefinitions` are supplied by instrument scientists in [this form](htt
 Once in the GUI, the script generator table is created by generating `ActionParameters` from the parameter names exposed through the Configs class.
 
 
-![](https://raw.githubusercontent.com/ISISComputingGroup/ibex_developers_manual/master/images/scriptgen_configs.png)
+![Script generator code structure](https://raw.githubusercontent.com/ISISComputingGroup/ibex_developers_manual/master/images/ScriptGenerator.png)
 
 ## Checking the validity and generating python scripts
 
