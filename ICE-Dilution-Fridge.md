@@ -2,7 +2,7 @@
 
 # Introduction
 
-This dilution fridge is made by a company called ICE and is not longer supported.
+This dilution fridge is made by a company called ICE and is no longer supported.
 
 This dilution fridge can not be compared to the Triton dilution fridge, and is the only one not controlled by Triton gas handling systems.
 
