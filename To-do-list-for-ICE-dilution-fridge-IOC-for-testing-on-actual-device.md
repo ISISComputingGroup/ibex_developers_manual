@@ -1,2 +1,1 @@
-- ADD INFO ABOUT TEMP CHANNELS TO ice DILUTION FRIDGE WIKI PAGE
 - ask instrument scientist to make sure ICECube MC resistance is in kOhms
