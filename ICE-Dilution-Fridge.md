@@ -28,14 +28,14 @@ The cryostat temperature control is via a CRYOCON 24C. There is a remote direct 
 
 ### Channels
 
-The mercury ITC driver essentially reads data from 5 distinct channels:
+The ICE dilution fridge has 4 distinct channels:
 
 | Physical sensor location | Channel name | Notes |
 | --- | --- | --- |
-| T1 | VTI Loop 1 | VTI Loop 1 has been used by scientists somewhat regularly in the past. The settings in the loop control the T1 readback, which is the main temperature on the VTI tab that the instrument scientists are interested in. |
-| T4 | VTI Loop 2 | VTI Loop 2 has been used by scientists rarely, if at all. The settings in the loop control the T4 readback, which is not very important to the scientists. |
+| Outer Cryostat | T1 | The T1 channel represents the temperature of the outer cryostat and is controlled through VTI Loop 1. VTI Loop 1 has been used by scientists regularly in the past, and is the main temperature on the VTI tab that the instrument scientists are interested in. |
+| Auxiliary equipment | T4 | The T4 channel represents a temperature sensor that can be attached to any auxiliary equipment and is controlled by VTI Loop 2. VTI Loop 2 has been used by scientists rarely. |
 
-The T2 and T3 readbacks seldom used since the temperature sensors they monitor are often disconnected.
+The T2 and T3 channels are seldom if ever used, therefore the temperature sensors they monitor are almost always disconnected.
 
 
 # Configuration
