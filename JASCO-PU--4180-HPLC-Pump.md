@@ -19,6 +19,10 @@ Notes:
  - Communication return is terminated with CR and LF.
  - When connecting the pump to the MOXA, be sure to use a different port from the Knauer pump.  This will allow the Knauer to use its own port as the one for the Jasco will be locked by its IOC (which runs continuously).
 
+# Simulation
+
+The driver has both a state machine and fairly complex logic in the IOC, therefore RECSIM for the device is not particularly supported.
+
 # Pump Control
 
 The device has the ability to control a number of parameters for a pump:
