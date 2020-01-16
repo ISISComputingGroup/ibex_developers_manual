@@ -23,17 +23,29 @@ Beckhoff code can be run as a simulated system on a developer machine by doing t
 
 ### Continuous Integration
 
-Beckhoff provides an `automation interface` which can do any of the things you can do in the Twincat XAE automatically through DCOM. A C# (Beckhoff do not fully support a Python interface 😢) program (`AutomationTools`) has been written to leverage this interface in the following way to write integration tests for the Beckhoff:
+Beckhoff PLC code is being developed by people who do not have CI expertise and have their own repository structures yet we want integration into some form of CI to be as easy as possible. This lent itself to the following structure:
+* A `BeckhoffTestRunner` repository that is owned by us and contains the jenkinsfile and other utilities required for CI
+* Every branch on this repository (apart from master) then pulls a different PLC project down (note each project could be from a different repository or from separate branches on the same repository)
+* The jenkinsfile can then do the one or both of the following:
+   * Build the project (currently assumed to be called `solution.sln` at the top of pulled PLC project)
+   * Run any [IOCTestFramework](https://github.com/ISISComputingGroup/EPICS-IOC_Test_Framework) tests (currently assumed to be in a `tests` folder at the top of the pulled PLC project) - these will likely be written by us
+
+This means that the workflow for adding new PLC projects into CI is:
+1. A PLC developer writes their code (making sure the solution is called `solution.sln`)
+2. They give us a link to the repo and branch that contains the code
+3. We create a new branch on `BeckhoffTestRunner` and modify it to point at their repo
+4. At this point they have CI for building their code
+5. We make a decision about whether the code requires any system tests and if so add some into their repository
+
+Note that the plan is to improve this with PLC developers writing their own code using [tcUnit](https://tcunit.org/).
+
+To actually run tests we use the Beckhoff `automation interface` which can do any of the things you can do in the Twincat XAE automatically through DCOM. A C# (Beckhoff do not fully support a Python interface 😢) program (`AutomationTools`) has been written to leverage this interface in the following way to write integration tests for the Beckhoff:
 
 ![Overview](beckhoff/beckhoff_overview.png)
 
-1. Jenkins will pull a `BeckhoffTestRunner` from [github](https://github.com/ISISComputingGroup/BeckhoffTestRunner). This contains all the tools required to perform the building and tests.
-2. Each application of PLC has a branch on the `BeckhoffTestRunner`, Jenkins will run through all of these and test them. The current application branches are:
-   * [dummy_PLC](https://github.com/ISISComputingGroup/BeckhoffPLCCode/tree/dummy_PLC)- a PLC that does very little, basically used to test that fundamental tcIOC comms works
-   * [old_ISIS_code](https://github.com/ISISComputingGroup/BeckhoffPLCCode/tree/Ticket5052_refactor_test_runner) - this is the old ISIS prototype motion code that is currently on the CRISP jaws. Hopefully this branch can be removed once these are moved on.
-   * [ESS_base_code](https://bitbucket.org/europeanspallationsource/tc_generic_structure/) - this is the collaboration code that we will be using go forward. Currently the build only confirms that this can be built and runs no tcIOC tests against it.
-3. `build.bat` is run to first build the `AutomationTools` themselves then to build the PLC code using the `automation interface`. This build will also create a `*.tpy` file, which outlines how to connect to the PLC and can be used to configure the IOC itself.
-4. The IOC test framework is started. This will first use the `AutomationTools` program to run a local simulated PLC. Then startup and test the Beckhoff twincat in the usual way.
+1. Jenkins will pull a branch of [BeckhoffTestRunner](https://github.com/ISISComputingGroup/BeckhoffTestRunner).
+2. `build.bat` is run to first build the `AutomationTools` themselves then to build the PLC code using the `automation interface`. This build will also create a `*.tpy` file, which outlines how to connect to the PLC and can be used to configure the IOC itself.
+3. The IOC test framework is started. This will first use the `AutomationTools` program to run a local simulated PLC. Then startup and test the Beckhoff twincat in the usual way.
 
 This is currently being run on the ndw1926 node on Jenkins. A quirk of using this DCOM interface is that the Jenkins slave must be run as an interactive user and thus not as a service. To do this there is a bat file that should run on startup inside `C:\Users\ibexbuilder\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup`.
 
@@ -54,6 +66,11 @@ There are currently two IOCs that we have to communicate with Beckhoffs.
 
 ### [tcIoc](tcIOC)
 
+The current Beckhoff applications that are being run through `tcIOC` and the CI pipeline discussed above are:
+* [dummy_PLC](https://github.com/ISISComputingGroup/BeckhoffPLCCode/tree/dummy_PLC)- a PLC that does very little, basically used to test that fundamental tcIOC comms works
+* [old_ISIS_code](https://github.com/ISISComputingGroup/BeckhoffPLCCode/tree/Ticket5052_refactor_test_runner) - this is the old ISIS prototype motion code that is currently on the CRISP jaws. Hopefully this code can be removed once the jaws are moved on.
+* [ESS_base_code](https://bitbucket.org/europeanspallationsource/tc_generic_structure/) - this is the collaboration code that we will be using go forward. Currently the build only confirms that this can be built and runs no tests against it.
+
 ### MCAG
 
 This IOC was originally written by ESS. It uses an ASCII protocol over TCP/IP to do the communication and is very specifically designed for motion. There is a simulator which can be run using the following steps:
@@ -61,3 +78,5 @@ This IOC was originally written by ESS. It uses an ASCII protocol over TCP/IP to
 - `cd EPICS\support\MCAG_Base_Project\master\epics\simulator`
 - `doit.bat`
 - Start the IOC (host macros needs to be set to 127.0.0.1:5024)
+
+Currently this is only being run on IMAT. It should soon be replaced by the collaboration code.
