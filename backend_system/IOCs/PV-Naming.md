@@ -42,12 +42,12 @@ record(ao, "$(P)TEMP:SP:_RAW")
 
 Having followed the [IOC-Naming](IOC-Naming) the PV will be:
 
-    PR:INSTXXCR:DEVICEXX_NN:PVNAME
+    PR:INSTXXCR:DEVICEXX_NN:PARAMETER
 
  - PR (max 2): Instrument prefix TE - test, IN - Instrument
- - INST__CR (max 8): Instrument name max 8 characters, if longer then last 2 characters are replaced with a CR16
+ - INST__CR (max 8): Instrument name max 8 characters. If the instrument name is longer than 8 characters then truncate to 6 characters and use the 2 characters CR16 hash of the instrument name e.g. `IRIS_SETUP => IRIS_SE22`
  - DEVICEXX_99 (max 11): Name of the device with the device index after it. Device index is a two digit number
- - PVNAME (max 36): PV name
+ - PARAMETER (max 36): Parameter in the IOC e.g. a temperature readback or set point
 
 
 # IOCs with multiple devices
