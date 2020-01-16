@@ -31,14 +31,32 @@ DAQmxConfig ( Asyn_port_name, physical_channel_address, channel_number, data_typ
 
 - `channel_number` should start from zero, this is used to address each channel within an Asyn port.
 - `data_type` is the data type of the channel (AI, AO, BI, ...)
-- `options`:
+- `options` Some common options are described here. All options can be found in [the documentation for DAQmxBase](https://github.com/ISISComputingGroup/EPICS-DAQmxBase/tree/master/documentation):
+  - Read mode can be continuous (default), OneShot (get data when record processed), or MONSTER (see below)
+  - `F` is the frequency (speed) at which samples will be collected
+  - `N` is the number of samples DAQmxBase will collect and then return to the IOC.
+
+A sample call to DAQmxConfig looks like (taken from separator):
+`DAQmxConfig("R0", "cDAQ9181-1234MOD3/ai1", 1, "AI","N=1000 F=1000")`
+
+This configures the third card of chassis `cDAQ9181-1234`, ai input 2. Data acquisition is continuous at a rate of 1000 samples/second collection. The sample size is 1000, so will return around once per second.
+
+To address this channel in a record, your input field will look like:
+```
+field(INP, "@asyn(R0 1 5.0) DATA")
+```
+This accesses channel 1 of port R0, with a 5.0 second timeout.
 
 # Data bottlenecking in the DAQmxBase driver (Monster mode)
 When developing the zero field magnetometer IOC we found that there are significant overheads in the EPICS DAQmx driver when running it in one shot and continuous modes. In these modes the NI task used to take the data is started and stopped with every point/array of data requested (as applicable). This means that each point/array takes ~150 ms to acquire, around 100ms of this is from starting the task and ~50ms to actually take the data.
 
 We addressed this issue for the zero field magnetometer (which needed consecutive readings very close to each other) by running in 'monster' mode. In monster mode the NI data acquisition task is never closed, so the data can be captured at a much faster rate. However, if the requested data rate is too high this can cause a buffer overflow. For the zero field magnetometer on a developer's machine this occurred at ~100000 data points/second.
 
-Unlike the other two modes, monster mode appears to need a call to `DAQmxStart(portname)` at the end of the st.cmd file for the IOC, see the ZFMAGFLD st.cmd for a reference.
+To change the read mode of the DAQ to monster mode, add `MONSTER` to the options in its DAQmxConfig call, for example:
+
+`DAQmxConfig("R0", "cDAQ9181-1234MOD3/ai1", 1, "AI","MONSTER N=1000 F=1000")`
+
+Unlike the other two modes, monster mode needs a call to `DAQmxStart(portname)` at the end of the st.cmd file for the IOC, see the ZFMAGFLD st.cmd for a reference.
 
 ### Common errors
 The DAQmxBase driver used in IBEX can throw a number of errors to the log file. After resolving the issue, the IOC will need rebooting.
