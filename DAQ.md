@@ -20,6 +20,19 @@ Notes:
 - Opening "Devices and Interfaces" in the sidebar typically takes several minutes on a computer connected to the RAL network. This is possibly because of the amount of NI hardware on the network.
 - You will need to know the hostname of the cDAQ for the "Find Network NI-DAQmx Devices" dialogue
 
+# Configuring a DAQ IOC
+The Asyn port for each channel for the daq is defined using the `DAQmxConfig` iocsh command. This is typically located in a st-daq.cmd file next to the device's st.cmd. The DAQmxBase documentation is here: https://github.com/ISISComputingGroup/EPICS-DAQmxBase/tree/master/documentation
+
+```
+DAQmxConfig ( Asyn_port_name, physical_channel_address, channel_number, data_type, options)
+```
+- `Asyn_port_name` is name of the Asyn port to be created for this channel.
+- `physical_channel_address` is the address of the channel on the device you wish to connect to. To obtain this find which input/output you wish to address on the DAQ card. This can be found on the pinout of the specific NI card by clicking the `Device Pinout` button in NI-MAX. For example, `cDAQ9181-1234MOD3/ai0` addresses the third card in chassis `cDAQ9181-1234`, and the second AI channel from that card.
+
+- `channel_number` should start from zero, this is used to address each channel within an Asyn port.
+- `data_type` is the data type of the channel (AI, AO, BI, ...)
+- `options`:
+
 # Data bottlenecking in the DAQmxBase driver (Monster mode)
 When developing the zero field magnetometer IOC we found that there are significant overheads in the EPICS DAQmx driver when running it in one shot and continuous modes. In these modes the NI task used to take the data is started and stopped with every point/array of data requested (as applicable). This means that each point/array takes ~150 ms to acquire, around 100ms of this is from starting the task and ~50ms to actually take the data.
 
