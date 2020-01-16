@@ -27,7 +27,7 @@ Beckhoff provides an `automation interface` which can do any of the things you c
 
 ![Overview](beckhoff/beckhoff_overview.png)
 
-1. Jenkins will pull a `BeckhoffTestRunner` from github. This contains all the tools required to perform the building and tests.
+1. Jenkins will pull a `BeckhoffTestRunner` from [github](https://github.com/ISISComputingGroup/BeckhoffTestRunner). This contains all the tools required to perform the building and tests.
 2. Each application of PLC has a branch on the `BeckhoffTestRunner`, Jenkins will run through all of these and test them. The current application branches are:
    * [dummy_PLC](https://github.com/ISISComputingGroup/BeckhoffPLCCode/tree/dummy_PLC)- a PLC that does very little, basically used to test that fundamental tcIOC comms works
    * [old_ISIS_code](https://github.com/ISISComputingGroup/BeckhoffPLCCode/tree/Ticket5052_refactor_test_runner) - this is the old ISIS prototype motion code that is currently on the CRISP jaws. Hopefully this branch can be removed once these are moved on.
@@ -39,7 +39,7 @@ This is currently being run on the ndw1926 node on Jenkins. A quirk of using thi
 
 ## Testing
 
-To run tests locally you must build the solution in the `BeckhoffPLCCode -> util_scripts -> AutomationTools` directory to create the AutomationTools binary (used by the IOCTestFramework to run the Beckhoff emulator). This can be built by running `build.bat` (best done not in an EPICS terminal). Once this is done you can run the following command in your `BeckhoffPLCCode` directory to begin testing:
+To run tests locally you must build the solution in the `BeckhoffTestRunner -> util_scripts -> AutomationTools` directory to create the AutomationTools binary (used by the IOCTestFramework to run the Beckhoff emulator). This can be built by running `build.bat` (best done not in an EPICS terminal). Once this is done you can run the following command in your `BeckhoffPLCCode` directory to begin testing:
 
 ```
 python %EPICS_KIT_ROOT%\\support\\IocTestFramework\\master\\run_tests.py -tp ".\\dummy_PLC\\tests"
