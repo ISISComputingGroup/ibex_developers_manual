@@ -46,7 +46,7 @@ Offset to apply in IBEX
 Backlash
 
 - The two systems differ here - SECI will add the forward backlash to the value sent to the Galil if moving forward, or add the backward one if moving backwards.
-- As such setting the Backlash acceleration to a proportion (1/3?) of the standard acceleration and the backlash velocity to a proportion (1/3?) of the standard velocity is probably wise.
+- As such setting the Backlash acceleration to a proportion (1/10) of the standard acceleration and the backlash velocity to a proportion (1/10) of the standard velocity is probably wise.
 - BDST (the backlash distance) likely needs to be set to whichever of the forward and backward backlashes are set. (Again there is a concern over sign, but just using whichever is propagated with the sign it has should be a reasonable start.) If neither are set, this value should be 0. If both are set, there is something very wrong with that stage, and it should be flagged, but as a default the backward backlash could be used.
 
 
