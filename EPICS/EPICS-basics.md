@@ -789,7 +789,7 @@ Assuming `devIocStats` exists in your system and the IOC to be modified is compl
 
 Open `configure\RELEASE` and add `DEVIOCSTATS=YOUR_PATH/devIocStats/3-1-11` with `YOUR_PATH` replaced appropriately.
 
-_Here `DEVIOCSTATS`'s value can only be set to maximum of 256 characters if anything more than 256 characters is used then it will be truncated down to 256 characters. It is due to EPICS environment variables only being able to store upto 256 characters._
+_Here `DEVIOCSTATS`'s value can only be set to maximum of 256 characters if anything more than 256 characters is used then it will be truncated down to 256 characters. It is due to EPICS environment variables only being able to store up to 256 characters._
 
 Open the `st.cmd` for the IOC and change it to look something like this
 ```
