@@ -788,8 +788,10 @@ NOTE: The aSub record automatically allocates space for input and output values 
 Assuming `devIocStats` exists in your system and the IOC to be modified is complete (i.e. it builds and runs correctly), follow the following steps to add `devIocStats` to it:
 
 Open `configure\RELEASE` and add `DEVIOCSTATS=YOUR_PATH/devIocStats/3-1-11` with `YOUR_PATH` replaced appropriately.
-Open the `st.cmd` for the IOC and change it to look something like this
 
+_Here `DEVIOCSTATS`'s value can only be set to maximum of 256 characters if anything more than 256 characters is used then it will be truncated down to 256 characters. It is due to EPICS environment variables only being able to store upto 256 characters._
+
+Open the `st.cmd` for the IOC and change it to look something like this
 ```
 #!../../bin/windows-x64/MY_IOC
 # You may have to change MY_IOC to something else
