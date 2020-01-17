@@ -89,7 +89,7 @@ In Auto-Feedback mode, the user specifies the desired field (in `mG`) and a feed
 ## Zero-Field Controller Feedback Loop ##
 The zero-field controller feedback loop uses the following inputs:
    * **M** – measured magnetic field (it has three components: longitudinal (L), transverse (T) & vertical (V))
-       - in IBEX this should use X, Y, Z, with Z being along the beam
+       - in IBEX this should use X, Y, Z, with Z being along the beam, y is vertical transverse and X is horizontal transverse.
    * **O** – Offset (to compensate for sensor placement)
    * _**C**_ – orientation matrix, derived from engineering drawing, this the direction of the field produced by each coil and because the coils are at right angles has +1, -1 and 0 as its components.
    * **S** – setpoints requested
