@@ -65,14 +65,12 @@ To test the front end on a developer machine:
 To test the front end and JSON bourne on a developer machine:
 * Run `webserver.py`
 * Edit display\_blocks.js to look at http://localhost rather than http://dataweb.isis.rl.ac.uk
-* Open default.html with the variable of ?Instrument=_name that you entered into dict_
+* Open default.html as above
 
 To be able to see your instrument as well:
 * Add your instrument to the inst_list dictionary in the `InstList` class in `web_scrapper_manager.py` (for example `inst_list = {"my_device":"localhost"}`)
 * Run your instrument
-* Run `webserver.py`
-* Edit display\_blocks.js to look at http://localhost rather than http://dataweb.isis.rl.ac.uk
-* Open default.html with the variable of ?Instrument=_name that you entered into dict_
+* Run JSON Bourne up as above
 
 If you need to update the archive engine then you will need to:
 
