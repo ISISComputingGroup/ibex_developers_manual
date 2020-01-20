@@ -2,6 +2,6 @@
 
 # Axis in IBEX
 
-In Ibex, the term axis refers to a degree-of-freedom. 
+In IBEX, the term axis refers to a degree-of-freedom. 
 
 
