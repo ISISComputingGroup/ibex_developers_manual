@@ -22,6 +22,10 @@ A [CSS](#css) component that archives [PV](#pv) values.  Implemented in [IBEX](#
 ----------
 A system to record PV values and reinstate them on startup of an IOC.
 
+[Axis](Axis)
+----------
+In IBEX, the term axis refers to a degree-of-freedom within an experimental system.  See [Axes in IBEX](Axes-in-IBEX) for more detail.
+
 Backdoor
 --------
 A method of changing the internal parameters of an emulator to mimic the behaviour of the actual device.
