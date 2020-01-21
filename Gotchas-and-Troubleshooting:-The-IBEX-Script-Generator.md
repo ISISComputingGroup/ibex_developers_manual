@@ -1,3 +1,5 @@
+# Troubleshooting
+
 ## Warning: Could not load any configs from <FileSystemLocation>
 
 This could be due to 4 things:
@@ -7,7 +9,7 @@ This could be due to 4 things:
    - To fix simply move them into the location that is given in the warning message
 - The IBEX preference is not pointing to the correct location in the file system
    - Indicated in the log by "Error loading from <FileSystemLocation>"
-   - For a temporary fix you can move the configs into that location, but for a better fix ensure that the preference is pointing to the correct location (The preference can point to multiple locations by separating them with commas
+   - For a temporary fix you can move the configs into that location, but for a better fix (see gotcha below) ensure that the preference is pointing to the correct location (The preference can point to multiple locations by separating them with commas)
 - The configs all have errors on them and cannot be loaded
    - Indicated in the log by "Error loading <ConfigName>: <error>"
    - The configs are maintained by the instrument scientists, however, obviously provide support and guidance for this
@@ -18,7 +20,13 @@ This could be due to 4 things:
 
 - We can point a preference to where to load configs from. This can be a combination of different places separated by commas. One of these preferences may be slightly incorrect and the configs from that location not loaded.
    - Indicated in the log by "Error loading from <FileSystemLocation>"
-   - Find out where the preference should point, adjust it and reload the GUI
+   - Find out where the preference should point (see gotcha below), adjust it and reload the GUI
 - Some of the configs may have errors in them and so failed to load
    - Indicated in the log by "Error loading <ConfigName>: <error>"
    - The configs are maintained by the instrument scientists, however, obviously provide support and guidance for this
+
+# Gotchas
+
+## Preferences
+
+Currently, we cannot load the main ibex client preferences from the script generator. So the script generator has it's own plugin_customization.ini containing some duplicate preferences i.e. script_generation_folder and script_generator_config_folder. When editing the preferences these should be changed in both files.
