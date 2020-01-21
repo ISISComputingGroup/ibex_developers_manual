@@ -4,7 +4,7 @@ To achieve this, the script generator can be built in both eclipse and using mav
 
 To prevent duplication, the GUI perspective depends wholly on the standalone application.
 
-For troubleshooting click [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Troubleshooting-The-IBEX-Script-Generator).
+[Troubleshooting](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Troubleshooting-The-IBEX-Script-Generator).
 
 ## The directory structure
 | Purpose        | Location |
