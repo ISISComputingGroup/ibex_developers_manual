@@ -13,7 +13,7 @@ The data displayed in the dashboard can be customized by modifying the database 
 C:\instrument\settings\config\<machine name>\configurations\dashboard.db
 ```
 
-The dashboards points at PVs prefixed with `%MYPVPREFIX:CS:DASHBOARD:` and postfixed with either `VALUE` or `LABEL` to get the values of the value or label respectively. The datatype of these PVs must be strings, and they must therefore be less than 40 characters long.
+The dashboards points at PVs prefixed with `%MYPVPREFIX:CS:DASHBOARD:` and postfixed with either `VALUE` or `LABEL` to get the values of the value or label respectively. The data type of these PVs must be strings, and they must therefore be less than 40 characters long.
 
 Examples:
 ```
