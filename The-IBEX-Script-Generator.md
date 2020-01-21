@@ -1,10 +1,10 @@
 The script generator developed as part of IBEX is held in the same repository as the IBEX client/GUI. The script generator requires both a perspective in the IBEX GUI and a standalone application.
 
-To achieve this, the script generator can be built in both eclipse and using maven, with minimal packages required from the main GUI codebase. The build system for the standalone application mirrors that of the main IBEX gui, with an independent `tycho.parent`, see [below](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/The-IBEX-Script-Generator#the-directory-structure)
+To achieve this, the script generator can be built in both eclipse and using maven, with minimal packages required from the main GUI codebase. The build system for the standalone application mirrors that of the main IBEX gui, with an independent `tycho.parent`, see [below](#the-directory-structure)
 
 To prevent duplication, the GUI perspective depends wholly on the standalone application.
 
-[Troubleshooting](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Troubleshooting-The-IBEX-Script-Generator).
+[Troubleshooting](Troubleshooting-The-IBEX-Script-Generator).
 
 ## The directory structure
 | Purpose        | Location |
