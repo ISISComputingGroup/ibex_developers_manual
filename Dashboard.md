@@ -13,7 +13,7 @@ The data displayed in the dashboard can be customized by modifying the database 
 C:\instrument\settings\config\<machine name>\configurations\dashboard.db
 ```
 
-There are two example files for neutron and muon instruments in the following location. By default, the neutron one will be copied in by the upgrade script.
+There are two example files for neutron and muon instruments in the following location. By default, the neutron one will be copied in by the upgrade script. On a muon instrument, you will need to (manually) copy in the muon-specific DB.
 
 ```
 C:\Instrument\Apps\EPICS\misc\upgrade\master\data\dashboard.db
