@@ -1,5 +1,9 @@
 # Troubleshooting
 
+## Cannot open generated script in notepad++ from the FileMessageBox
+
+Currently, we search for notepad++ in "Program Files" and "Program Files (x86)". It may be that notepad++ on the computer being used isn't stored in those two. For the time being copy and paste the file location to open with their preferred editor. 
+
 ## Warning: Could not load any configs from <FileSystemLocation>
 
 This could be due to 4 things:
