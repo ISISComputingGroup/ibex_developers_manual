@@ -63,7 +63,9 @@ If you have decided to use the CDF suite, you need to tell RAL Space (i.e. Andre
 
 #### General
 
-- At least a week before the course, book any tea or coffee requirements with catering https://www.stfccatering.co.uk/. Typically we book:
+- At least a week before the course, book any tea or coffee requirements with catering.  Start navigating from the [Catering page](https://staff.stfc.ac.uk/core/catering/Pages/default.aspx) on the staff intranet site to plan catering.  
+This will lead you to the web-site of the [current catering franchise holder](https://www.ralcatering.com/), from where you can place an order.
+Typically we book:
     - Coffee/tea (80%/20%) for 9am and 1pm. Usually we include some biscuits and a bottle of water
     - We typically don't book lunch since most people leave to do other things over the break. 
     - You will need a project code to book with catering. Ask one of the managers (e.g. Freddie Akeroyd) to provide one if you need it.
