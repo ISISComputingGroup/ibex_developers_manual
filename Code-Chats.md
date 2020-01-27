@@ -9,15 +9,16 @@ Code chats occur on a semi-regular monthly basis within the group at ISIS. Altho
 Topic | Presenter | Date
 ----- | --------- | ----
 The Script Generator | James | 4th Feb '20
-EMU migration retrospective | David | 11th March '20
-InstrumentScripts | Thomas Löhnert/James | 8th April '20
-Software design techniques in our processes and BDD/DDD | Aaron and James | May '20
-How to Read ISIS LabVIEW Drivers | Kathryn Baker | June '20
-ISISICP (and Kafka?) | Freddie | July '20
-The HIFI Cryomag | Chris C/Kathryn | Aug '20
-IBEX UI Design | Thomas Löhnert | Sep '20
-? | ? | Oct '20
+NeXus | Freddie | 11th March '20
+EMU migration retrospective | David | 8th April '20
+InstrumentScripts | Thomas Löhnert/James | May '20
+Software design techniques in our processes and BDD/DDD | Aaron and James | June '20
+How to Read ISIS LabVIEW Drivers | Kathryn Baker | July '20
+ISISICP (and Kafka?) | Freddie | Aug '20
+The HIFI Cryomag | Chris C/Kathryn | Sep '20
+IBEX UI Design | Thomas Löhnert | Oct '20
 ? | ? | Nov '20
+? | ? | Dec '20
 
 ## Cake Rota
 Person | Date
