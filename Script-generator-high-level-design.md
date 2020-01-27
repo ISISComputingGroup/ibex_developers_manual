@@ -17,7 +17,7 @@ The following general design points were agreed:
 
 Scientist defined actions must be python 2/3 compatible to work with genie python currently.
 
-An `ActionDefinition` is the base building block that the script generator will use to build up scripts. It is essentially a wrapper around a python function that can tell us:
+An `ActionDefinition` is the base building block that the script generator will use to build up scripts. It is essentially a wrapper around a Python function that can tell us:
 - Whether a given set of inputs is valid
 - The types of the parameters
 - Possibly other metadata in future
@@ -55,7 +55,10 @@ class DoRun(ActionDefinition):
             errors += "uamps outside of range"
         if errors != "":
             return errors
-        return None    
+        return None   
+
+     def get_help(self):
+        return "Help string"
 ```
 (this is not necessarily the final API)
 
