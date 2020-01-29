@@ -20,7 +20,7 @@ C:\Instrument\Apps\EPICS\misc\upgrade\master\data\dashboard.db
 C:\Instrument\Apps\EPICS\misc\upgrade\master\data\dashboard_muon.db
 ```
 
-The dashboards points at PVs prefixed with `%MYPVPREFIX:CS:DASHBOARD:` and postfixed with either `VALUE` or `LABEL` to get the values of the value or label respectively. The data type of these PVs must be strings, and they must therefore be less than 40 characters long. To be visible in the web dashboard, they must additionally have `info(archive, "VAL")` to be visible on the web dashboard.
+The dashboards points at PVs prefixed with `%MYPVPREFIX:CS:DASHBOARD:` and postfixed with either `VALUE` or `LABEL` to get the values of the value or label respectively. The data type of these PVs must be strings, and they must therefore be less than 40 characters long. **To be visible in the web dashboard, they must additionally be archived using `info(archive, "VAL")`**.
 
 Examples:
 ```
