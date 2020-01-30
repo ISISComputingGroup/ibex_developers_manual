@@ -1,9 +1,9 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [Miscellaneous motion control](Miscellaneous-Motion-Control) > [Reflectometry IOC](Reflectometry-IOC) > Alignment
 
 
-Beamline equipment on a reflectometry instrument needs to be kept aligned to preserve flux and data quality, meaning that motor zero positions are redefined to be exactly centered on the straight-through beam (i.e. the beam as it enters the blockhouse, without any modifications to the path from other equipment).
+Beamline equipment on a reflectometry instrument needs to be kept aligned to preserve flux and data quality, meaning that motor zero positions are redefined to be exactly centred on the straight-through beam (i.e. the beam as it enters the blockhouse, without any modifications to the path from other equipment).
 
-This needs to be done regularly (usually once at the start of each cycle) as positions can become inaccurate over time e.g. due to modifications to the engineering of the beamline, people accidentally leaning on equipment in the blockhousem, natural sagging etc. 
+This needs to be done regularly (usually once at the start of each cycle) as positions can become inaccurate over time e.g. due to modifications to the engineering of the beamline, people accidentally leaning on equipment in the blockhouse, natural sagging etc. 
 
 This is done by scanning individual axes around where we roughly expect the neutron beam to be. The `scan` command provided by the [Scans library](https://github.com/ISISNeutronMuon/InstrumentScripts) moves the motor at regular steps within an interval, taking data at each point, which results in an intensity graph. Depending on the type of axis scanned, the scientists then apply fits to the scan results to look for certain features that indicate where the point of interest is. These slides contain some more detail on the various different types of scans.
 
