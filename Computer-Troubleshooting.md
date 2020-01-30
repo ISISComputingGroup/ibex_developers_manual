@@ -20,4 +20,4 @@ smartsizing:i:1
 
 ## Cannot access the network shares
 
-This may be solved by adding windows credentials on the machine. There is a document describing how to do this on ICPDiscussions under "Security".
+This may be solved by adding windows credentials on the machine. There is a document describing how to do this on ICP Discussions under "Security".
