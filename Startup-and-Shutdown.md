@@ -2,7 +2,7 @@
 
 This page shows the behaviour expected for IBEX or starting and stopping. There are two different modes in which IBEX can run:
 
-1. Full: As the instrument control, which archiving, configruations, logging etc
+1. Full: As the instrument control, which archiving, configurations, logging etc
 2. MiniInst: As a provider of IOCs which are used by SECI
 
 In addition to this it can be on an instrument but switched off because SECI is running.
