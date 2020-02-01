@@ -40,7 +40,7 @@ Recent training courses have been presented in R80 (rooms CR16 & CR17) and in th
 
 To book the CDF Suite:
 * Contact Will Grainger at RAL Space.  Will administers CDF activities.  Tell him which days you'd like to run the training.  Will will tell you if those days are available.
-* Contact Chris Gibbins.  Chris is the IT guy for the CDF.  Chris can help you install IBEX and genie_python images on the dedicated PCs in the CDF suite.
+* Contact Chris Gibbins.  Chris is the IT guy for the CDF.  Chris can help you install IBEX and genie_python images on the dedicated PCs in the CDF suite. Chris prefers to have >1 week notice to set up the machines. **If using the CDF suite, it is wise to book the CDF for at least half a day before the training course, so that we have an opportunity to install IBEX on the machines. Otherwise, the room may be in use, preventing installs.**
 
 To use CR16 & CR17 in R80
 * Book CR16 & CR17 via Outlook.  These rooms are heavily used, so you need to book early to get the dates you want.
