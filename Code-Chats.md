@@ -41,6 +41,7 @@ David | March '21
 
 Idea | Proposed Speaker
 ---- | ----------------
+? | Cosimo
 LUA  | James
 BDD/DDD | James/?
 Software design techniques in our processes | Aaron
