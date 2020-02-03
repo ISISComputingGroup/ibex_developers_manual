@@ -10,6 +10,7 @@
 5. [Input/Output Controller (IOC) Resources](#input-output-controller-resources)
 6. [Control System Studio](#control-system-studio)
 7. [Office Admin Links](#office-admin-links)
+8. [IBEX training](#ibex-training)
 
 
 
@@ -114,4 +115,6 @@ As a new starter you should add your name and picture to the training [slides](h
 - [Oracle Login](https://portal.ssc.rcuk.ac.uk/) - Book leave, create timesheets
 - [Flexi Time](http://flexiral.stfc.ac.uk/) - If you're on Flexi time and need to view/edit your work history
 
-
+## IBEX training 
+There are some training materials available that we use to train scientists on IBEX. It is a good way to get started on learn about what IBEX is and the features that are available in it.
+- [IBEX training](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Forms/AllItems.aspx?RootFolder=%2Fisis%2Fcomputing%2FICPdiscussions%2FTraining&FolderCTID=0x01200027AD8F05966A2748B3B04C98BB5B442B&View={F2C33C51-70E6-4343-B937-2C59A2568306})
