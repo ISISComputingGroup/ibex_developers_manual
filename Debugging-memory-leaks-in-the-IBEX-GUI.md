@@ -72,7 +72,7 @@ Once you've diagnosed *where* the memory leak is, you need to fix it. This may n
 
 # Observables
 
-One common problem that we have repeatedly run into in IBEX is the use of obvservables. If an observer can be created multiple times, it is **very important** that it gets removed when no longer required. Otherwise, the observable will still have a reference back to the observer, which will prevent both the observer and anything which the observer references from being garbage collected. In other words, this will lead to a memory leak. The only case where is is acceptable for an observable to never be removed is if it is only created a small constant number of times and is necessary for the full lifetime of the client (for example, the instrument list).
+One common problem that we have repeatedly run into in IBEX is the use of observables. If an observer can be created multiple times, it is **very important** that it gets removed when no longer required. Otherwise, the observable will still have a reference back to the observer, which will prevent both the observer and anything which the observer references from being garbage collected. In other words, this will lead to a memory leak. The only case where is is acceptable for an observable to never be removed is if it is only created a small constant number of times and is necessary for the full lifetime of the client (for example, the instrument list).
 
 We have considered in the past making the reference from an observable to it's observers a `WeakReference`, however this does not work in many cases as the observable is often the only reference to the observer, meaning that the observer will be garbage collected and not work.
 
