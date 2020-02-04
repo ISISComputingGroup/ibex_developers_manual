@@ -5,7 +5,7 @@
 
 (if asked, Choose `Checkout-as-is; commit unix style line-endings`)
 
-During setup ensure you have selected "**Use Git from the Windows Command Prompt**". Checking the others will lead to IOC Make errors later down the line. 
+During setup ensure you have selected "**Git from the command line and also 3rd-party software**" (do NOT add the optional Unix tools to your PATH). If `sh` is added to the PATH, Make will try to compile for Linux rather than Windows. This will cause syntax errors when reading the Makefiles (such as parse errors whenever a `(` is found in an echo message).
 
 * Set you username and email address  via the command line:
 
