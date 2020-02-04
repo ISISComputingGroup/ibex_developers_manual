@@ -13,9 +13,7 @@ This page is currently heavily based on https://github.com/ISISComputingGroup/IB
 ## Tools
 
 - Java visual VM (download the GPL-licensed binary from https://visualvm.github.io/download.html )
-
 - Eclipse debugger
-
 - A way to reproduce the issue
 
 ## Setup
@@ -40,9 +38,9 @@ This page is currently heavily based on https://github.com/ISISComputingGroup/IB
 
 ## Diagnosis 1
 
-- Go under Sampler -> Memory and look at which objects are using up a lot of heap space. Note that this is only the object, **not** any of the objects that it owns!
+- Under `Sampler -> Memory` and look at which objects are using up a lot of heap space. Note that this is only the object, **not** any of the objects that it owns!
 
-```
+```java
 public class MemoryLeak{
      RealMemoryLeak thisThingIsReallyBig = reallyBig; // Something enormous
 }
@@ -50,13 +48,22 @@ public class MemoryLeak{
 
 will **not** make `MemoryLeak` show up as a large object!
 
-- Under "monitor" you can create a Heap Dump. This is a file with information about all the objects that were loaded at the time. You might find this useful or not depending on your problem.
-
-- Don't bother trying to "compute retained sizes": The IBEX program is too large and will cause the profiler itself to crash with an `OutOfMemoryException`.
+You may also find it useful to look at the instance count of suspicious classes. If some action in the GUI causes the instance count of a class to go up but not down again when closed, this is almost certainly a memory leak (but not necessarily a large memory leak - so it's possible that it's not the leak you're looking for).
 
 ## Diagnosis 2
 
-- Once you have a few candidate objects from above which you think are suspicious, use the eclipse debugger to inspect them at runtime. If you find that they're very big / contain a lot of items, then your problem has been located. If not, then rinse and repeat Diagnosis 1.
+Once you have a few candidate objects from above which you think are suspicious, use the eclipse debugger to inspect them at runtime. If you find that they're very big / contain a lot of items, then your problem has been located. If not, then rinse and repeat Diagnosis 1.
+
+## Diagnosis 3
+
+If you have objects which you think should be being garbage collected, but are not, then you can find out why they are being kept around using the Visual VM.
+- Reproduce the issue (so that the GUI contains some objects which should have been released)
+- Connect VisualVM
+- Force a garbage collection by clicking the "GC now" button
+- Under the "memory sampler" view, create a heap dump
+- In the heap dump, search for the class that you're interested in
+- Click the "GC root" button. This may take a few seconds, but will show you the reference chain which is keeping the object in memory
+- You will now need to figure out where you need to "break" this chain, so that the object can be reclaimed. You may need to iterate this process several times if the object is referred to by multiple garbage collection roots. Eventually, once all reference chains from GC roots have been broken, the object should be eligible for GC.
 
 ## Fixing
 
@@ -65,10 +72,8 @@ Once you've diagnosed *where* the memory leak is, you need to fix it. This may n
 ## Notes
 
 - The java garbage collector is responsible for cleaning up dereferenced objects. If your objects aren't being freed when you click the `Perform GC` button in java visual VM, then you still have references to them somewhere.
-
-- Some things need to be closed before/on garbage collection, for example sockets. Java's `finalize()` method is called just before the object is GC'd, and can be used to close anything that needs closing.
-
-- Good luck :)
+  * The java garbage collector uses reachability analysis, not reference counting, to test whether an object can be GC'd. The garbage collection "roots" are listed [here](https://www.ibm.com/support/knowledgecenter/en/SS3KLZ/com.ibm.java.diagnostics.memory.analyzer.doc/gcroots.html), but usually in IBEX these will be either statically reachable objects (e.g. singletons) or the current stack frame for each running thread.
+- Some things need to be closed before/on garbage collection, for example sockets. Java's `finalize()` method is called once an object is eligible for GC, but before it is actually GC'd. Beware of using finalizers to perform "cleanup" - in some cases (e.g. closing observables), not running the cleanup will mean the object will still be reachable and so the finalizer will never be run!
 
 # Observables
 
