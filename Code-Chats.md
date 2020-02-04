@@ -23,10 +23,10 @@ IBEX UI Design | Thomas Löhnert | Oct '20
 ## Cake Rota
 Person | Date
 ------ | ----
-Alistair | Feb '20
+James | Feb '20
 Chris C | March '20
 Kathryn | April '20
-James | May '20
+Alistair | May '20
 Freddie | June '20
 Aaron | July '20
 Jack | Aug ' 20
