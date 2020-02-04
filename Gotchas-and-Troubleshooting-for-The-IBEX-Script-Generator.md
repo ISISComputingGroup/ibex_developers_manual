@@ -29,6 +29,10 @@ This could be due to 4 things:
    - Indicated in the log by "Error loading <ConfigName>: <error>"
    - The configs are maintained by the instrument scientists, however, obviously provide support and guidance for this
 
+## The script generator renders as a blank view
+
+- Delete the `workspace` folder (next to the executable for the script generator) and then retry launching it. If the workspace is owned by a different user, this can cause problems with file permissions.
+
 # Gotchas
 
 ## Preferences
