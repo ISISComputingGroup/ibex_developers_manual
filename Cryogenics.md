@@ -44,7 +44,9 @@ Our support for Mercury ITC units is not yet fully complete:
 
 ### Oxford Flow through Cryostats
 
-We have not yet encountered one of these (when we do, please update this section).
+EMU use a flow cryostat controlled by an ITC503 temperature controller. There is no special setup of ITC503 required from a computing perspective.
+
+Other beamlines may use different setups, check with the scientists if unsure.
 
 # Low temperature inserts (T<1K)
 
