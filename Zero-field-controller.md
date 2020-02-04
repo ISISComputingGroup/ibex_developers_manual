@@ -42,6 +42,7 @@ One of the readbacks from the power supplies was marked with an INVALID alarm. C
 One of the power supplies has been driven onto a limit, and it's output capped. This may indicate:
 - That there is a strong external field present, which the zero-field system is unable to compensate for. Solution: talk with scientists to find out if there is a large external field
 - That there is a problem with the magnetometer readbacks. Erroneous magnetometer data can cause the zero field controller to attempt large compensations which would drive the power supplies beyond the limits.
+- That one or more of the `AMPS_PER_MG_*` macros has an incorrect sign. This will cause the controller to attempt to compensate for fields in the wrong direction, which will cause out-of-bounds setpoints to be written. If you need to re-determine these macros, see the [calibration](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Zero-field-controller#calibration) section below.
 
 ### Power supply write failed
 
