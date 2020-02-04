@@ -27,7 +27,13 @@ The magnetometers have a finite range of fields which they can measure accuratel
 
 This error state can be caused by:
 - One of the external magnets being switched on - either the longitudinal or transverse fields can overload the magnetometer. Suggested solution: switch off the external magnets
-- One of the power supplies used by the zero-field system has been driven too high, and is producing a field which overloads the magnetometer. Suggested solution: put the zero field control system into manual mode and manually set the currents in all three zero-field power supplies to zero. Check that the zero field no longer reports an overload, and then put it back into auto control and check that it can stabilize the field to zero. Consult with the scientists to define appropriate limits on the kepcos such that they can no longer overload the magnetometer.
+- One of the power supplies used by the zero-field system has been driven too high, and is producing a field which overloads the magnetometer. Suggested solution: 
+  * Put the zero field control system into manual mode 
+  * Manually set the currents in all three zero-field power supplies to zero. 
+  * Check that the zero field no longer reports an overload
+  * Put controller back into auto mode 
+  * Check that it can stabilize the field to zero. 
+  * Consult with the scientists to define appropriate limits on the kepcos such that they can no longer overload the magnetometer.
 
 If neither of the above steps works, consult the scientists. There may be a physical problem with the magnetometer probes or an external field which is too strong to be compensated. The scientists have independent hall probes which can be used to check for large fields at the sample position.
 
