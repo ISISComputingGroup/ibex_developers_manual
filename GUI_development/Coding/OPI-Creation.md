@@ -125,6 +125,8 @@ If it's required to activate a tab from a synoptic via a macro: (See SKF G5 Chop
 
 # Create a Local Enum
 
+AS OF 05/02/2020 DOES NOT WORK.
+
 Create a local pv in an opi with labels (From Tech talk article not tested).
 
     loc://demo<VEnum>(2, "A", "B", "C", "D")
