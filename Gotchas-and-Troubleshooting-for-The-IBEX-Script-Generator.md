@@ -33,6 +33,10 @@ This could be due to 4 things:
 
 - Delete the `workspace` folder (next to the executable for the script generator) and then retry launching it. If the workspace is owned by a different user, this can cause problems with file permissions.
 
+## The script generator is constantly loading
+
+- We are failing to load Python for some reason, check logs for Py4J exceptions
+
 # Gotchas
 
 ## Preferences
