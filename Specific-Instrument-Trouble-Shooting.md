@@ -1,3 +1,5 @@
+> [Wiki](Home) > [Trouble-shooting](trouble-shooting-pages) > [Specific Instrument Trouble Shooting](Specific-Instrument-Trouble-Shooting)
+
 Trouble shooting for specific instrument or groups of instruments problems.
 
 ## IRIS: Drives are not mapping correctly
