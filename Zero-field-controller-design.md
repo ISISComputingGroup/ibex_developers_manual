@@ -121,6 +121,10 @@ The process enforces maximum limits on the currents. These are set by the instru
 
 Higher currents are `clamped` to this maximum with the appropriate polarity and ARE then sent to the PSU! But there should be a warning as well. In Auto, the clamped value is used as the basis for calculations next time.
 
+### Maximum Voltage
+
+The process sets voltage limits on the PSUs to allow the current setpoints to be achieved. These should be automatically set in the power supply by the zero field controller whenever it is in auto mode.
+
 ### Maximum Field
 
 When overloaded by a high field, the fluxgate magnetometer can read any random value on all three axes which might look like it's in range and may have the opposite sign to the actual field. Moderate overloads leave the reading close to the limit. The VI attempts to detect fields at or close to the limits and says `sensor overload` if this happens: typically the main magnet coil is still on or there’s a fault with the sensor.
