@@ -1,8 +1,12 @@
 > [Wiki](Home) > [The GUI](The-GUI) > [Testing](GUI-Testing) > [System testing with Squish](System-Testing-with-Squish)
 
+# Squish Licensing Information & Contact Details
+
+[Details about our Squish License](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Forms/AllItems.aspx?RootFolder=%2Fisis%2Fcomputing%2FICPdiscussions%2FSquish%20Information&FolderCTID=0x01200027AD8F05966A2748B3B04C98BB5B442B&View={F2C33C51-70E6-4343-B937-2C59A2568306})
+
 # Set Up for local server
 
-Get a licence key (there are 5 floating licences that can be used by 2 people)
+Get a licence key (our license permits concurrent use by any 2 users from a list of 5 named users)
 
 1. Download the SQUISH/JAVA WINDOWS from the [frog logic page](https://www.froglogic.com/squish/download/) using the account in the passwords page on sharepoint
 1. Read and accept the terms and conditions if still correct
