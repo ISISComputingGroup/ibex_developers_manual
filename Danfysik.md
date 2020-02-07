@@ -42,6 +42,14 @@ The steps to change the serial standard to RS232:
 
 Note: There are two 8500 series which required a null modem on the 25-way connector. 
 
+## Value Scaling
+
+It is worth noting that some Danfysik devices read and write `RAW` values at different scales: given the same `CURRENT` the ratio of `RAW` read:write is 1:10 **except for Danfysik model 8800** where the ratio is 1:1. Configuring the IOC to take this into account is done via two macros `factor_read_i` and `factor_write_i`. The thing to note here is that they are the inverse of each other, i.e. `factor_read_i` = 1 / `factor_write_i` * `r:w ratio`. 
+
+To give an example, for an uncalibrated Danfysik model 8500:
+- `factor_write_i` is `1000`
+- `factor_read_i` is `0.01` (1/1000 * 10)
+
 ## LOQ/SANS2D Goudsmit magnet
 
 - This magnet is driven by a 750A power supply, but can only actually take ~600A. The scientists have asked us to apply a limit of 738666 parts per million on this Danfysik (which corresponds to a current of 554A)
