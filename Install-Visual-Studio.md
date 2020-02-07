@@ -1,4 +1,4 @@
-Install a version of visual studio. 2010 is used by most developers unless you are on windows 10 in which case install 2017.
+Install a version of visual studio. 2010 is used by most developers unless you are on windows 10 in which case install 2017 or 2019.
 
 # Install Visual Studio 2010
 Install Visual Studio 2010
