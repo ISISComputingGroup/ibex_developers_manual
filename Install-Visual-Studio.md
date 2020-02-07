@@ -24,13 +24,22 @@ During the installation of VS2013, under "Optional Features" make sure to includ
 Additionally, download and install the [Multibyte MFC Library](https://www.microsoft.com/en-us/download/details.aspx?id=40770).
 
 # Install Visual Studio 2017
-
 Download installer (Visual Studio **Community** 2017 exe) from installer page https://my.visualstudio.com using your stfc email address.
 During install, choose Desktop development with C++ and from the right checkboxes: 
-* The most recent Windows 10 SDK, Windows 8.1 SDK, and MFC and ATL support
-* Windows Universal CRT SDK
+- The most recent Windows 10 SDK, Windows 8.1 SDK, and MFC and ATL support
+- Windows Universal CRT SDK
 
 If these boxes aren't visible on the right it is most likely because you are trying to install professional rather than community.
+
+# Install Visual Studio 2019
+Download installer (Visual Studio **Community** 2019 exe) from installer page https://my.visualstudio.com using your stfc email address.
+During install, select "Desktop development with C++" with these individual features: 
+- The most recent Windows 10 SDK
+- MFC and ATL support
+- Windows Universal CRT SDK
+
+After installing Visual Studio 2019, download the Windows 8.1 SDK from https://developer.microsoft.com/en-us/windows/downloads/sdk-archive/.
+
 # Installing a new Version of Visual Studio
 
 If you are installing Visual Studio Community 2019, Windows Universal CRT SDK is listed under the "Compilers, build tools and runtimes" section of the "Individual components tab at the top.
