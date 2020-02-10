@@ -39,3 +39,10 @@ All communications to the physical device are handled by the LSI python API. The
    - It might be possible to do something with websockets which would provide more immediate feedback whether the device connection is still alive, which is what most devices do.
  - Once the device connection has be severed, the IOC must be restarted. There is no logic in place to drop the `LSICorrelator` object and attempt a reconnection by spawning a new object.
  - Two of the output values from the device, `TraceChA` and `TraceChB` have a length which is proportional to the measurement duration requested. Because PCASpy PV lengths are specified at IOC boot time, these arrays may have to be truncated to publish them as PVs. Currently they are not published, but are saved to file.
+
+### Saving the data
+Ideally the data would be saved into a nexus file, and the subsequent data analysis would be performed in mantid. However, because this data analysis is not yet available in mantid, the data must be processed by the vendor's software.
+
+As a temporary measure, this IOC will need to produce a data file which can be imported into the vendor's software. There are two possible file formats for this, labview XML or a CSV file. Examples of these can be found in the manuals share under the LSI correlator. The best file format between these needs to be decided.
+
+After a brief look, it appears that the vendor software may be using the `CONTIN` library to perform fitting of the correlation function.
