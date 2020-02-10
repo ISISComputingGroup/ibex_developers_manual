@@ -43,7 +43,7 @@ To update the production version of the dashboard:
 * Remote desktop into external webserver (for username and password see password page)
 * Open a git bash terminal in C:\JSON_Bourne and switch to the [release branch](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Creating-a-release)
 * Run the deploy batch script
-* Restart JSON_bourne (see https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Web-Dashboard#restart-the-dataweb)
+* Restart JSON_bourne (see [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Web-Dashboard#restart-the-dataweb))
 * Go to (for example) http://dataweb.isis.rl.ac.uk/IbexDataweb/default.html?Instrument=zoom and confirm the webpage is live
 
 ## Development/Testing
