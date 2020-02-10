@@ -83,9 +83,9 @@ If you need to update the archive engine then you will need to:
 
 First look at the log to ensure that there are no issues. The log is held in `C:\JSON_Bourne\log`
 
-## Restart the service
+## Restart the Dataweb
 
-As admin open the services and restart the json bourne service.
+As admin open the "Task Scheduler" and end and run the "JSON Bourne" task (in task scheduler library).
 
 ## Future Development Ideas
 * We need to improve the unit test coverage of this project. It would be worth looking into the [requests-mock](https://pypi.python.org/pypi/requests-mock) library as this would make it very easy to test server code which makes HTTP requests.
