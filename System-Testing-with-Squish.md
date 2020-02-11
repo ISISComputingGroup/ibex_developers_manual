@@ -178,3 +178,7 @@ R6034 An application has made an attempt to load the C runtime library incorrect
 This issue is due to us loading the `uuid` library in Python. This library loads a conflicted C runtime library and means tests aren't able to run completely correctly.
 
 Solution is to Rename `C:\Squish\python\msvcr90.dll` to `msvcr90_off.dll`, which removes the conflicting dependency version. See ticket [#4773](https://github.com/ISISComputingGroup/IBEX/issues/4773) for more details.
+
+### Squish fails to begin run
+
+Attempt to change your tcb file to a regular neutron tcb file and begin a run. You should see it beginning and then return to set up with the log message: `invalid tcb start - must be 0 not 5.00000 ns`. See the [DAE troubleshooting](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/DAE-Trouble-Shooting)
