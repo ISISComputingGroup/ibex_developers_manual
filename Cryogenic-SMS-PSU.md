@@ -76,6 +76,10 @@ To prevent a quench, the IOC will, upon setting a setpoint, calculate the steps 
 
 If all runs smoothly, the magnet will get up to the field you specify.
 
+### Queued State Machine
+
+The IOC makes use of a queued state machine, based upon the meta state machine library from boost. Possible states, events (things that prompt state changes) and actions (code to perform on given state transitions) are defined in this state machine, alongside a table of possible transitions and actions to perform on them. Inside the driver, a double-ended queue is used to store future transitions to be executed (e.g. when the device starts ramping it can queue the next event to be reaching the target). Within this queue individual events are stored inside `any` objects from the boost any library in order to preserve typing (boost msm fires events based on the typing of the object being passed to it). A separate thread is run by the driver which continually attempts to process the forwardmost item in the queue by applying a visitor to it which sends the event to the QSM and deletes it from the queue.
+
 #### Pausing
 
 The PSU can pause in the middle of a ramp. This stops ramp generator activity in the PSU and immediately responds with an acknowledge message. Subsequent ramp status queries will inform the IOC that the PSU is paused and holding at a certain current/field strength.
