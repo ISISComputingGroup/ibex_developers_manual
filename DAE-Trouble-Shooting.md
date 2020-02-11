@@ -1,5 +1,15 @@
 > [Wiki](Home) > [Trouble-shooting](trouble-shooting-pages) > [DAE](DAE-Trouble-Shooting)
 
+### invalid tcb start
+
+It is likely that you are in a muon configuration for the DAE but using a neutron tcb file or vice versa.
+
+Either change the tcb file you are using or do the following steps to change the DAE type:
+
+1. Change the DAE type of your icp_config.xml (in EPICS/ICP_Binaries) to the correct value (1 for DAE2 neutron, 2 for DAE2 muon, 3 for DAE3 neutron, 4 for DAE3 muon).
+2. In the same directory edit the isisicp.properties file to use either neutron or muon for `isisicp.simulation.detcards.type`
+3. Restart the ISISDAE using console in an EPICS terminal and end the isisicp task in the task manager (the ISISDAE should autorestart it)
+
 ### DAE switches from processing to Unknown and never goes into SetUp
 
 See [Other Troubleshooting -> instrument page not working on web dashboard](Other-Troubleshooting#instrument-page-not-working-on-web-dashboard)
