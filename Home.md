@@ -11,6 +11,7 @@
 
 - [IBEX GUI](The-GUI): The GUI along with development and testing guidelines (Including how to **get started**). 
 - [IBEX Server](The-Backend-System): Information regarding the back-end systems, including the block server, databases, configurations, and IOCs. Also contains the **[getting started guide](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/First-time-installing-and-building-(Windows))** for setting up the back-end.
+- [genie_python](genie_python): genie_python, scripting language and python framework
 - [IBEX Mini-inst Server](Configure-Mini-Inst): The mini-inst is an ibex server which only runs a fixed and small number of IOCs and processes (usually without a block server or archiver)
 - [Accelerator Information Forwarder](Beam-Status,-Shutter,-accelerator-information): Forwards information about the state of the accelerator and various other bits of centralised data into EPICS.
 - [Dataweb](Web-Dashboard): Information regarding the architecture of the instrument web pages.
