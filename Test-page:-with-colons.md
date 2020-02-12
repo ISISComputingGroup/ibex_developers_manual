@@ -1,0 +1,1 @@
+Page for testing if the Wiki Checker catches pages with colons in the name.
