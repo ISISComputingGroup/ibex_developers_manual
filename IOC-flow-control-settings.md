@@ -23,7 +23,8 @@
 | FERMCHOP            | Off | Off | Manual and IOC |  |
 | FINS                | N/A | N/A | IOC |  |
 | FZJDDFCH            | TCP | TCP | IOC |  |
-| GALIL               | TCP | TCP | IOC |  |
+| GALIL (Ethernet)    | TCP | TCP | IOC |  |
+| GALIL (Serial)      | Off | On  | IOC |  |
 | GAMRY               | Off | Off | IOC | [3139](https://github.com/ISISComputingGroup/IBEX/issues/3139) |
 | GEMORC              | Off | Off | VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
 | HAMEG8123           | Off | Off | VI | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) | 
