@@ -19,7 +19,7 @@ Positions of the motor can be restored/set without setting an offset. These can 
 1. Set the `User` `MoveAbs` to the value from the query above
 1. Click on `Use` in `Calibration` area
 
-## Galil
+## Galil Communication
 
 ### Can not communicate with the Galil
 
@@ -27,9 +27,46 @@ This is not shown well in the OPI it just has weird values. Look in the log file
 
 If it isn't connected try to ping the control address. If this isn't alive check, via the serial cable, the Galil address. The command for this is `IA?`.
 
+### No communication with Galil even on restart of IOC
+
+If in doubt it is best to plug a serial cable directly into the control box and see if you can see anything. When connected correctly it should give a colon, `:`, after pressing return.
+If you get a `>` this means that it has got into an internal configuration mode which you can't get out of without rebooting the Galil. This has been seen when communicating with 4000 series through the ethernet cable.
+
+### Partial communication I can talk to it using hyper term on the instrument but Driver does not connect
+
+This may be because the hardware flow control is blocking the communications; the driver set hardware flow control on. Use the serial sniffer to record data coming to the crate. If there is none this is probably the cause. This can be caused by serial cables which do not have this line internally connected. Get new cables and use the laptop to find the place where the serial signal is no longer being transmitted.
+
+## Galil General
+
 ### The Galil reports being at home when it is at a limit, not at the limit switch
 
 Ensure the limit_as_home flag is correctly set, see [here](Galil#configure-galil-crate-1)
+
+### Something is Weird I want Maximum Debugging
+
+Maximum debugging can be achieved by adding to your st.cmd:
+
+    epicsEnvSet("GALIL_DEBUG_FILE", "galil_debug.txt")
+
+This will generate a file containing all the commands sent and received from the Galil.
+
+### Differences between SECI and IBEX
+
+Check out [this spreadsheet](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/galil%20gotchas.xlsx) for information on speeds, accelerations, homing, and random extra bits of code that might be needed before/after moves, on startup, when homing.
+
+Check out [this page](Homing-Galils-under-SECI) if you need to see what the SECI homing routines do.
+
+### Error Downloading Homing Program
+
+If you are using RS232 then you need to enable software flow control on the galil or you will get messages like
+```
+Error downloading code model DMC2280 Rev 1.0o-CM, address COM6 38400 msg 1011 TIMEOUT ERROR.
+```
+xon/xoff is enabled via a dip switch on the Galil
+
+
+
+## Galil Movement Problems
 
 ### The axis will not move, a message gets put in the log of "Begin not valid with motor off"
 
@@ -43,18 +80,6 @@ This can mean it has hit a limit switch (look at the limit switch status). If it
 
 There is a Galil specific PV called `MTRXXXX_WLP_CMD` which controls whether an axis treats both limits as high and low. The default setting is On, it should be set to Off.
 
-### Something is Weird I want Maximum Debugging
-
-Maximum debugging can be achieved by adding to your st.cmd:
-
-    epicsEnvSet("GALIL_DEBUG_FILE", "galil_debug.txt")
-
-This will generate a file containing all the commands sent and received from the Galil.
-
-### No communication with Galil even on restart of IOC
-
-If in doubt it is best to plug a serial cable directly into the control box and see if you can see anything. When connected correctly it should give a colon, `:`, after pressing return.
-If you get a `>` this means that it has got into an internal configuration mode which you can't get out of without rebooting the Galil. This has been seen when communicating with 4000 series through the ethernet cable.
 
 ### Galil position is not stable at setpoint
 
@@ -65,21 +90,8 @@ If a Galil is particularly worn, or carries an unusually heavy load, it may not 
 ### Galil is not correctly setting accelerations
 The motor record calculates acceleration in quite a different way than used to under SECI. Check that you have set acceleration correctly given that it is defined as **seconds to get between VBAS and VELO** (this means we normally want VBAS to be set to zero.
 
-### Differences between SECI and IBEX
-
-Check out [this spreadsheet](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/galil%20gotchas.xlsx) for information on speeds, accelerations, homing, and random extra bits of code that might be needed before/after moves, on startup, when homing.
-
-Check out [this page](Homing-Galils-under-SECI) if you need to see what the SECI homing routines do.
-
 ### The limits are both made
 
 This occurs when power is cut to the limits. The main cause for this is that the safety system has been engaged as this will cut power to the whole rack of Galils. However, there could be other reasons such as in the [IMAT Lens Adjustment](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/IMAT-Lens-Adjustment)
 
-### error downloading homing program
-
-If you are using RS232 then you need to enable software flow control on the galil or you will get messages like
-```
-Error downloading code model DMC2280 Rev 1.0o-CM, address COM6 38400 msg 1011 TIMEOUT ERROR.
-```
-xon/xoff is enabled via a dip switch on the Galil
 
