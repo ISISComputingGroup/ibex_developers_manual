@@ -34,7 +34,7 @@ If you get a `>` this means that it has got into an internal configuration mode 
 
 ### Partial communication I can talk to it using hyper term on the instrument but Driver does not connect
 
-This may be because the hardware flow control is blocking the communications; the driver set hardware flow control on. Use the serial sniffer to record data coming to the crate. If there is none this is probably the cause. This can be caused by serial cables which do not have this line internally connected. Get new cables and use the laptop to find the place where the serial signal is no longer being transmitted.
+This may be because the hardware flow control is blocking the communications; the driver sets hardware flow control on. Use the serial sniffer to record data coming to the crate; if there is none this is probably the cause. This can be caused by serial cables which do not have this line internally connected. Use the laptop to find the place where the serial signal is no longer being transmitted and replace cable.
 
 ## Galil General
 
