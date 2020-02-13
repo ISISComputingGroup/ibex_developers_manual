@@ -2,8 +2,6 @@ This page lists some dependencies which we are not updating for various reasons:
 
 # Python 2
 
-Note: update to python 3 is being handled as a separate chunk of work
-
 | Dependency | Our version | Available version | Reason |
 | --- | --- | --- | --- |
 | `iPython` | 5.9.0 | 7.12.0 | Newer version requires python 3 |
@@ -13,8 +11,6 @@ Note: update to python 3 is being handled as a separate chunk of work
 | `numpy` | 1.16.6 | 1.18.1 | Newer version requires python 3 |
 
 # Python 3
-
-Note: update to python 3 is being handled as a separate chunk of work
 
 | Dependency | Our version | Available version | Reason |
 | --- | --- | --- | --- |
