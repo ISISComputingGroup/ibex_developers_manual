@@ -17,9 +17,6 @@ Latest stable version from http://wixtoolset.org/releases/
 
 See  [Install Visual Studio](Install-Visual-Studio)
 
-# Install CMake
-Install [CMake](https://cmake.org/download/) 
-
 # Install Java JDK
 
 Install **OpenJDK 8 hotspot** from https://adoptopenjdk.net/releases.html#x64_win (the MSI installer is fine, tick all the boxes when it asks you which components to install)
