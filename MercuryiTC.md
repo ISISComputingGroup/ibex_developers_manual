@@ -63,6 +63,7 @@ In this example the front panel on the Mercury look:
 
 ![front panel showing 6 areas](backend_system/IOCs/MercuryITc/front_panel.jpg)
 
+NB The device should be in remote mode this is indicated by the *i* (bottom left) having an orange background.
 This mercury has 3 temperature sensors, Sample_Rod, VTI_DB6 and PT2_DB7, the VTI has a heater attached to the second temperature. This means it needs:
 
 - `VI_TEMP_1` set to 1, 
@@ -85,7 +86,8 @@ The OPI has macros that relate to the macros set at the IOC level.
 
 ### Mercury doesn't communicate 
 
-One issue we have seen is that when the Mercury is transferred between instruments, or during some initial configuration, a user will change values like the Baud rate. It's good practice to check the devices settings (baud rate etc) and the one on the set-up dialog for the Mercury VI to ensure parity between them.
+1. One issue we have seen is that when the Mercury is transferred between instruments, or during some initial configuration, a user will change values like the Baud rate. It's good practice to check the devices settings (baud rate etc) and the one on the set-up dialog for the Mercury VI to ensure parity between them.
+1. Ensure that it is set to remote mode. On the front panel the *i*, bottom left, should have an orange background.
 
 ### Pressure card won't read heater voltage correctly
 
