@@ -1,6 +1,6 @@
 This page lists some dependencies which we are not updating for various reasons:
 
-# Python
+# Python 2
 
 Note: update to python 3 is being handled as a separate chunk of work
 
@@ -11,6 +11,14 @@ Note: update to python 3 is being handled as a separate chunk of work
 | `matplotlib` | 2.2.5 | 3.1.3 | Newer version requires python 3 |
 | `scipy` | 1.2.3 | 1.4.1 | Newer version requires python 3 |
 | `numpy` | 1.16.6 | 1.18.1 | Newer version requires python 3 |
+
+# Python 3
+
+Note: update to python 3 is being handled as a separate chunk of work
+
+| Dependency | Our version | Available version | Reason |
+| --- | --- | --- | --- |
+| `protobuf` | 3.6.1 | 3.11.3 | Newer version conflicts with `mysql-connector-python 8.0.19` |
 
 # GUI
 
