@@ -12,6 +12,6 @@ Remote debugging allows you to debug in visual studio c and c# applications runn
 1. Select the process from the list
     1. If you need to catch an error in ioc startup, start the ioc with `runIOC.bat aaa` this will cause it to start up with running st.cmd. 
     1. Once you are connected and have break points setup then type `< st.cmd` to boot the ioc
-1. Open the Modules windows, find a module you are interested in right click and do load symbols. I am a bit hazy on how this works Freddie knows more. If it works for you please put how you did it here.
+1. Open the Modules windows (Debug -> Windows -> Modules), find a module you are interested in right click and do load symbols. I am a bit hazy on how this works Freddie knows more. If it works for you please put how you did it here.
 1. You should now be a able to open code and put breakpoints in as usual.
 
