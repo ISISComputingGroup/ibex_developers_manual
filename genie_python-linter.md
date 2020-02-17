@@ -4,7 +4,7 @@ On `g.load_script` genie_python now runs pylint on the scripts. This help the us
 
 Here are some more tips that we don't necessarily want to encourage. 
 
-Warnigns can be removed from a line by adding a comment
+Warnings can be removed from a line by adding a comment
 
 `<line> # pylint disable=<warning name>`
 
