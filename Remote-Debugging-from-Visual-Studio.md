@@ -2,7 +2,7 @@
 
 Remote debugging allows you to debug in visual studio c and c# applications running on another machine. To do this:
 
-1. On the remote machine run the visual studio remote debugging (x64) tool for your version of visual studio. It can be downloaded from [microsoft](https://docs.microsoft.com/en-gb/visualstudio/debugger/remote-debugging) but may be there already. 
+1. On the remote machine run the visual studio remote debugging (x64) tool for your version of visual studio. It can be downloaded from [microsoft](https://docs.microsoft.com/en-gb/visualstudio/debugger/remote-debugging) but may be there already. You can also run the one at `\\isis\shares\ISIS_Experimental_Controls_Public\VS_Remote_Debuggers\VS2017\x64`
 1. Set the tool to allow no authentication (Tools->Options No Authentication)
 1. Set the environment variable on your local machine 
     `_NT_SYMBOL_PATH=srv*c:\MyServerSymbols*\\isis\inst$\Kits$\CompGroup\ICP\EPICS\Symbols*https://msdl.microsoft.com/download/symbols`
