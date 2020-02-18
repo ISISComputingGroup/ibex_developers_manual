@@ -9,6 +9,7 @@ This page lists some dependencies which we are not updating for various reasons:
 | `matplotlib` | 2.2.5 | 3.1.3 | Newer version requires python 3 |
 | `scipy` | 1.2.3 | 1.4.1 | Newer version requires python 3 |
 | `numpy` | 1.16.6 | 1.18.1 | Newer version requires python 3 |
+| `xmlrunner` | 2.5.2 | 3.0.1 | Newer version requires python 3 |
 
 # Python 3
 
