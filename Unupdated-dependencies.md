@@ -36,4 +36,3 @@ This page lists some dependencies which we are not updating for various reasons:
 
 | Dependency | Our version | Available version | Reason |
 | --- | --- | --- | --- |
-| `EPICS Base` | 3.15.5 | 7.x.x | See [#4416](https://github.com/ISISComputingGroup/IBEX/issues/4416) |
