@@ -4,7 +4,7 @@ The lakeshore 372 is a temperature controller used to control the temperature on
 
 ### Connection details
 
-The lakeshore 372 is an ethernet device. By default it communicates on port 7777. All messages are terminated with `\r\n`.
+The lakeshore 372 is an ethernet device. By default it communicates on port 7777. All messages are terminated with `\r\n`. To connect to the device make sure it is in DHCP mode.
 
 ### PID settings
 
