@@ -15,5 +15,8 @@ As well as the typical communication macros such as `BAUD`. `BITS`, `PARITY` etc
 | MAX_CURRENT | The maximum allowable current (in Amps). |
 | READ_OFFSET | An offset, in Amps, which is added to the value reported by the power supply before being displayed on the OPI and used to calculate the field. |
 | WRITE_OFFSET | An offset, in Amps, to add to any current setpoints before they are sent to the power supply. |
- 
+
+# Troubleshooting
+
+If the Genesys fails to communicate and it has recently been replaced this may be due to it's internal address being set incorrectly. This can be changed in the front panel of the device.
 
