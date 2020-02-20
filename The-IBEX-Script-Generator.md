@@ -88,9 +88,9 @@ The format of the chosen JSON file is as follows:
 ```
 Note: For each action in `Actions` in the JSON file, there is a table in the script generator.
 
-The Script Generator also contains the actual content of the config file that was used when saving parameters. This is to make sure that the configuration that was used to generate JSON file is the same configuration that is being used to load the data from the JSON file.
+The generated JSON also contains the actual content of the config file that was used when saving parameters. This is to make sure that the configuration that was used to generate JSON file is the same configuration that is being used to load the data from the JSON file.
 
-The generated script file will contain hexed parameter values from the JSON file and the hash of parameter values present in JSON file. Hexed parameter values can be used as back up if the JSON file is lost. The purpose of saving hash in the python file is to compare if the unhexed parameter values are the same as what it was before.
+The generated script file will contain hexed parameter values from the JSON file and the hash of parameter values present in the JSON file. Hexed parameter values can be used as a back up if the JSON file is lost to retrieve original values. The purpose of saving hash in the python file is to compare if the unhexed parameter values are the same as what it was before.
 
  
 
