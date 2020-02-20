@@ -55,3 +55,45 @@ Once in the GUI, the script generator table is created by generating `ActionPara
 ## Checking the validity and generating python scripts
 
 Generator classes are used to check validity and generate scripts. They use the config's supplied `run` and `parameters_valid` methods to check validity and generate scripts. We do not want to block the execution of the UI thread, and as such, all parameter validity checking and script generation is done by running a Java CompletableFuture and then firing a property change and passing this up the chain to the UI. This allows updates to happen in the background without blocking the UI thread.
+
+## Saving the Parameter values and loading back up
+Parameters values from the Script Generator can be saved in a file. The file format chosen is JSON due to its flexibility and well-tested parser available for upgrading it using upgrade script in future. 
+The format of the chosen JSON file is as follows:
+
+```
+{
+	"version": "",
+	"ScriptGeneratorVersion": "",
+	"Date": "",
+	"Time": "",
+	"ConfigurationFileName": "",
+	"ConfigurationFileGitHash": "",
+	"GeniePythonVersion": "",
+	"ConfigurationContent": "",
+	"Actions": [{
+		"actionName": "",
+		"parameter": {
+			"param1": "value",
+			"param2": "value"
+		}
+	}, {
+		"actionName": "",
+		"parameter": {
+			"param1": "value",
+			"param2": "value"
+		}
+	}]
+}
+
+```
+Note: For each action in `Actions` in the JSON file, there is a table in the script generator.
+
+The Script Generator also contains the actual content of the config file that was used when saving parameters. This is to make sure that the configuration that was used to generate JSON file is the same configuration that is being used to load the data from the JSON file.
+
+The generated script file will contain hexed parameter values from the JSON file and the hash of parameter values present in JSON file. Hexed parameter values can be used as back up if the JSON file is lost. The purpose of saving hash in the python file is to compare if the unhexed parameter values are the same as what it was before.
+
+ 
+
+
+
+
