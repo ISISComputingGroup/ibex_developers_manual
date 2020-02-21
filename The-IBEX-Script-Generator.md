@@ -61,6 +61,7 @@ Parameters values from the Script Generator can be saved in a file. The file for
 The format of the chosen JSON file is as follows:
 
 ```
+{
 "version": "",
 	"script_generator_version": "",
 	"date": "",
