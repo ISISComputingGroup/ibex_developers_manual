@@ -11,13 +11,13 @@ The following general design points were agreed:
 - The GUI will be written in Java (eclipse rcp). It should have minimal logic in it other than pure display logic
 - It will talk to a python process embedded in the GUI, whose responsibility it is to generate a python script based on the input that a user has provided
   * Py4j is already included in our GUI build and allows for Java-Python communication
-  * We need this process to be implemented in Python because it needs to be able to run arbitrary user-supplied python parameter validators (see also "The `ActionDefinition` class", below).
+  * We need this process to be implemented in Python because it needs to be able to run arbitrary user-supplied python parameter validators (see also "The `ScriptDefinition` class", below).
 
-# The `ActionDefinition` class
+# The `ScriptDefinition` class
 
-Scientist defined actions must be python 2/3 compatible to work with genie python currently.
+Scientist defined script definitions must be python 2/3 compatible to work with genie python currently.
 
-An `ActionDefinition` is the base building block that the script generator will use to build up scripts. It is essentially a wrapper around a Python function that can tell us:
+A `ScriptDefinition` is the base building block that the script generator will use to build up scripts. It is essentially a wrapper around a Python function that can tell us:
 - Whether a given set of inputs is valid
 - The types of the parameters
 - Possibly other metadata in future
@@ -25,7 +25,7 @@ An `ActionDefinition` is the base building block that the script generator will 
 As an example, consider a class that looks something like:
 
 ```python
-from genie_python.genie_script_generator import ActionDefinition, cast_parameters_to
+from genie_python.genie_script_generator import ScriptDefinition, cast_parameters_to
 
 def mytype(string_input):
     if string_input == "default":
@@ -34,7 +34,7 @@ def mytype(string_input):
         return float(string_input)
 
 
-class DoRun(ActionDefinition):
+class DoRun(ScriptDefinition):
 
     @cast_parameters_to(temperature=float, field=float, uamps=mytype)
     def run(self, temperature=0.0, field=0.0, uamps=0.0):
@@ -62,7 +62,7 @@ class DoRun(ActionDefinition):
 ```
 (this is not necessarily the final API)
 
-We would probably supply some default `ActionsDefinition`s, but instrument scientists would be responsible for writing and maintaining their own instrument-specific actions (in a similar way to the current instrument scripts).
+We would probably supply some default `ScriptDefinition`s, but instrument scientists would be responsible for writing and maintaining their own instrument-specific script definitions (in a similar way to the current instrument scripts).
 
 Currently, a default value has to be provided for every argument of `parameters_valid` and `run` due to the way we are passing kwargs. The parameters that are passed are all currently strings and must be converted to whatever type the user wants. We are providing a decorator `cast_parameters_to` to allow scientists to easily cast parameters and also define their own converters (see example `mytype` above). The custom converters means they can handle edge cases they are expecting from users.
 
@@ -72,9 +72,9 @@ There are two main types of user interfaces that support slightly different work
 
 ### Table based (part of MVP)
 
-This interface is a simple table. It is configured for one (and only one) type of `ActionDefinition`. It configures it's columns to match the parameters of the action.
+This interface is a simple table. It is configured for one (and only one) type of `ScriptDefinition`. It configures it's columns to match the parameters of the script definition.
 
-For example, for the `ActionDefinition` given above, the table in the script generator would look like this:
+For example, for the `ScriptDefinition` given above, the table in the script generator would look like this:
 
 | temperature | field | uamps | Validity |
 | --- | --- | --- | --- |
@@ -85,7 +85,7 @@ Each row in the table corresponds to exactly one `Action`. The type of action mu
 
 A row will be highlighted red if invalid and have a heavy cross mark against it in the validity column. If the row is valid it will be the regular table colour with a validity column cell that is green and has a heavy tick mark.
 
-A user is able to get the reason for invalidity (provided by the config) by hovering over the row or by clicking the 'Get Invalidity Errors' button.
+A user is able to get the reason for invalidity (provided by the script definition) by hovering over the row or by clicking the 'Get Invalidity Errors' button.
 
 ### List/tree view (not part of MVP, but likely to be requested in future)
 
@@ -96,8 +96,8 @@ This interface is a list of Actions and their parameters. In this UI, each actio
 
 In this sense, it is quite a thin wrapper over a python script. The main advantage it gives you is parameter type/value checking (and arguably. In future we may be able to extend this approach to allow for loops or other types of more complex statements.
 
-# Configuration
+# Script Definitions
 
-The script generator will be configured by loading in a configuration file. This configuration file can initially be written in Python - though we have not necessarily ruled out moving to another format in future if the need arises.
+The script generator will be configured by loading in a script definition file. This script definition file can initially be written in Python - though we have not necessarily ruled out moving to another format in future if the need arises.
 
-This configuration file will define the available `Action`s, and will be editable by the instrument scientists. Each instrument that uses the script generator will need at least one configuration file (maybe more if they have different experimental setups which require very different scripts).
+This script definition file will define the available `Action`s, and will be editable by the instrument scientists. Each instrument that uses the script generator will need at least one script definition file (maybe more if they have different experimental setups which require very different scripts).
