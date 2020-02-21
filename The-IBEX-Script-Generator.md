@@ -61,23 +61,22 @@ Parameters values from the Script Generator can be saved in a file. The file for
 The format of the chosen JSON file is as follows:
 
 ```
-{
-	"version": "",
-	"ScriptGeneratorVersion": "",
-	"Date": "",
-	"Time": "",
-	"ConfigurationFileName": "",
-	"ConfigurationFileGitHash": "",
-	"GeniePythonVersion": "",
-	"ConfigurationContent": "",
-	"Actions": [{
-		"actionName": "",
+"version": "",
+	"script_generator_version": "",
+	"date": "",
+	"time": "",
+	"configuration_file_name": "",
+	"configuration_file_git_hash": "",
+	"genie_python_version": "",
+	"configuration_content": "",
+	"actions": [{
+		"action_name": "",
 		"parameter": {
 			"param1": "value",
 			"param2": "value"
 		}
 	}, {
-		"actionName": "",
+		"action_name": "",
 		"parameter": {
 			"param1": "value",
 			"param2": "value"
