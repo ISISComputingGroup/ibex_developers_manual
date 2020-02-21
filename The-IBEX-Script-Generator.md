@@ -65,7 +65,7 @@ The format of the chosen JSON file is as follows:
 	"script_generator_version": "",
 	"date": "",
 	"time": "",
-	"configuration_file_name": "",
+	"configuration_path": "",
 	"configuration_file_git_hash": "",
 	"genie_python_version": "",
 	"configuration_content": "",
@@ -85,14 +85,19 @@ The format of the chosen JSON file is as follows:
 }
 
 ```
-Note: For each action in `Actions` in the JSON file, there is a table in the script generator. The `version` in the file is the version of the JSON format itself.
+Note: 
+
+- For each action in `Actions` in the JSON file, there is a table in the script generator. 
+- The `version` in the file is the version of the JSON format itself. This will be an integer and not tied to any other version number.
+- configuration_path: this is the path of the configuration file within the git repository. Allowing us to group then by instrument if this becomes useful.
+- configuration_file_git_hash: this is the git hash at the time the config file is used
 
 The generated JSON also contains the actual content of the config file that was used when saving parameters. This is to make sure that the configuration that was used to generate JSON file is the same configuration that is being used to load the data from the JSON file. We want the JSON in a seperate file so that:
 * It's language independent
 * The user is less likely to modify it
 * It would probably easier to upgrade at a later date if the JSON format changes
 
-The generated script file will contain the compressed JSON. The compressed JSON can be used as a back up if the JSON file is lost to retrieve original values. For the MVP reading the JSON from the script will not be done and we will only read the JSON file. 
+The generated script file will contain the compressed JSON. The compressed JSON can be used as a back up if the JSON file is lost to retrieve original values. For the MVP reading the JSON from the script will not be done and we will only read the JSON file.
 
 JSON formats etc. were decided in a meeting on 20/02/2020 attended by Bish, Dom, John, Tom, Alistair and James.
 
