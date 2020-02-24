@@ -152,6 +152,7 @@ How data moves at ISIS | Chris | Sep 2019
 Migration to Python 3 | James | Sep 2019
 Java 11 | Tom | Oct 2019
 EPICS 7 | Freddie | Nov 2019
+The IBEX Script Generator | James | Jan 2019
 
 All presentations should be uploaded to the SharePoint site [here](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Forms/AllItems.aspx?RootFolder=%2Fisis%2Fcomputing%2FICPdiscussions%2FGUI_Chat_Slides&FolderCTID=0x01200027AD8F05966A2748B3B04C98BB5B442B&View={F2C33C51-70E6-4343-B937-2C59A2568306}) and/or converted to a wiki page if more appropriate. It should also be reasonably assumed that the people who gave these presentations should know something about these subjects.
 
