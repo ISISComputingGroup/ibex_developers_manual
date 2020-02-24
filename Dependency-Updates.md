@@ -43,6 +43,20 @@ General update process:
 
 Tycho and eclipse framework versions are defined in the file `./base/uk.ac.stfc.isis.ibex.client.tycho.parent/pom.xml`. Note that the eclipse framework version *must* correspond with the version defined in the target platform, otherwise the maven build will fail with mismatched framework versions.
 
+# Python
+
+## Python itself
+
+- Check on Python.org for newer versions of python itself
+- If a newer version is available, download the "windows installer".
+- Install python to a location of your choice (not `c:\instrument\apps\python`).
+- Zip up the resulting directory and add it to the share at `\\isis\inst$\Kits$\CompGroup\ICP\genie_python_dependencies_python_3` as `python_clean_<version>.zip`
+- Edit `package_builder\common_build_python_3.bat` to use the new python version and test that all dependencies work correctly
+
+## Python packages
+
+Check on PyPi for any package updates, then edit `requirements.txt` to install new versions where needed.
+
 # ActiveMQ
 
 To update activeMQ in epics:
