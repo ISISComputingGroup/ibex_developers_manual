@@ -7,21 +7,43 @@ After a release all of the dependencies of the system should be considered for u
 1. Update GUI Java JRE to the latest version (See [Jenkins Build Server `Jenkins builds will bundle the JRE with the client`](Jenkins-Build-Server) for more information)
 2. Looks at the [the dependencies on the dev release notes](https://github.com/ISISComputingGroup/IBEX/wiki/ReleaseNotes_Dev#dependencies) for each item check if there is an update (as long as it is not listed below) and update it.
 
-## General Procedure
+# GUI
 
-### GUI
+The GUI has multiple mechanisms for pulling in dependencies, all of which may potentially need updates. You should aim to do one dependency update at a time, testing each update both under the eclipse IDE and maven and committing before moving onto the next update.
 
-  - Remove old library file
-  - Add library to `/lib`
-  - Remove old lib and add new lib in the `Manifest` on the `Runtime` tab in the `Classpath` part.
-  - If the old library was marked on order and export tick the box to export it for other projects
+### `.jar` files
 
-### IN module
+The following `.jar` files may need updating. Check for new versions in maven central or on the vendor website, and update if new versions are available:
 
-  - Update the jar in `EPICS\ISIS\IocLogServer\master\LogServer\lib`
-  - Update the `pom.xml` and `.classpath` to include the new version number  
+```
+./base/uk.ac.stfc.isis.ibex.activemq/lib/activemq-all-5.15.11.jar
+./base/uk.ac.stfc.isis.ibex.databases/lib/mysql-connector-java-8.0.19.jar
+./base/uk.ac.stfc.isis.ibex.epics/lib/commons-codec-1.14-javadoc.jar
+./base/uk.ac.stfc.isis.ibex.epics/lib/commons-codec-1.14-sources.jar
+./base/uk.ac.stfc.isis.ibex.epics/lib/commons-codec-1.14.jar
+./base/uk.ac.stfc.isis.ibex.epics/lib/joda-time-2.10.5.jar
+./base/uk.ac.stfc.isis.ibex.logger/lib/log4j-api-2.13.0.jar
+./base/uk.ac.stfc.isis.ibex.logger/lib/log4j-core-2.13.0.jar
+./base/uk.ac.stfc.isis.ibex.nicos/lib/jeromq-0.5.2.jar
+./base/uk.ac.stfc.isis.ibex.ui/lib/opal-1.0.0.jar
+```
 
-## Active MQ
+### Target platform
+
+This is defined in the file `./base/uk.ac.stfc.isis.ibex.targetplatform/uk.ac.stfc.isis.ibex.targetplatform.target
+`
+
+General update process:
+- Look for newer versions of the repository. E.g. if the repository url is `http://some.website/releases/1.23`, try visiting `http://some.website/releases` to see whether the releases are listed. If so, point the target platform at the new releases.
+- Some repositories are updated "in-place". Do upgrade these, simply delete and then re-add them to the target platform, when they are re-added they will pick up the latest versions.
+
+**Note: when updating the eclipse framework itself, you also need to update `client.tycho.parent` - see below for details.**
+
+### Parent POM
+
+Tycho and eclipse framework versions are defined in the file `./base/uk.ac.stfc.isis.ibex.client.tycho.parent/pom.xml`. Note that the eclipse framework version *must* correspond with the version defined in the target platform, otherwise the maven build will fail with mismatched framework versions.
+
+# ActiveMQ
 
 To update activeMQ in epics:
   - Add the activeMQ directory to `...\EPICS\ISIS\ActiveMQ\master`
@@ -30,21 +52,13 @@ To update activeMQ in epics:
   - Update `start-jms-server.bat` to point at the new version of apache
   - Update the Log server modules in `EPICS\ISIS\IocLogServer\master\LogServer`
 
-Update activeMQ in the GUI in `base/uk.ac.stfc.isis.ibex.activemq` (you need to export the library)
+# IOCLogServer
 
-## MYSql Connector/J
-
-- To update IOCLog in EPICS `EPICS\ISIS\IocLogServer\master\LogServer`
-- To update GUI in `base/uk.ac.stfc.isis.ibex.databases`
-
-## Joda Time
-
-- To update IOCLog in EPICS `EPICS\ISIS\IocLogServer\master\LogServer`
-- To update GUI in `base/uk.ac.stfc.isis.ibex.epics`
+The IOC log server has a similar build process to the main GUI, and includes several `.jar` files in it's repository. These may have new versions and need to be updated.
 
 # CS-Studio
 
-### GUI
+## GUI
 
 Our CS-Studio GUI dependencies are located on a share at `\\shadow.isis.cclrc.ac.uk\icp_p2$\css_gui_dependencies` (which is accessible via a webpage at `http://shadow.nd.rl.ac.uk/ICP_P2/css_gui_dependencies/`. To update the CS-Studio components that the GUI uses:
 - `git clone --recursive https://github.com/ISISComputingGroup/isis_css_top.git`
@@ -54,7 +68,7 @@ Our CS-Studio GUI dependencies are located on a share at `\\shadow.isis.cclrc.ac
 - Subsequent GUI builds will pick up the new dependencies
 - Test that your changes work correctly!
 
-### Archive engines / alarm servers
+## Archive engines / alarm servers
 
 - The build uses the same process as above
 - Once build is done, the products are in `org.csstudio.sns\repository\products`
