@@ -1,11 +1,8 @@
 > [Wiki](Home) > [Processes](Processes) > [Dependency Update](Dependency-updates)
 
-After a release all of the dependencies of the system should be considered for update. This will ensure that we do not get too far out of date and any upgrade will, hopefully, be small and not require much effort. In general we do not want to be on the bleeding edge but at the last stable release so use your judgement. The list of dependency will get shipped with the release notes and should be kept up-to-date with any notes. This page documents the process of updating.
+After a release all of the dependencies of the system should be considered for update. This will ensure that we do not get too far out of date and any upgrade will, hopefully, be small and not require much effort. In general we do not want to be on the bleeding edge but at the last stable release (i.e. prefer LTS versions when they are available). The list of dependency will get shipped with the release notes and should be kept up-to-date with any notes. This page documents the process of updating.
 
 **Any dependencies which should not be updated should be listed with a reason [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Unupdated-dependencies)**
-
-1. Update GUI Java JRE to the latest version (See [Jenkins Build Server `Jenkins builds will bundle the JRE with the client`](Jenkins-Build-Server) for more information)
-2. Looks at the [the dependencies on the dev release notes](https://github.com/ISISComputingGroup/IBEX/wiki/ReleaseNotes_Dev#dependencies) for each item check if there is an update (as long as it is not listed below) and update it.
 
 # GUI
 
@@ -43,6 +40,10 @@ General update process:
 
 Tycho and eclipse framework versions are defined in the file `./base/uk.ac.stfc.isis.ibex.client.tycho.parent/pom.xml`. Note that the eclipse framework version *must* correspond with the version defined in the target platform, otherwise the maven build will fail with mismatched framework versions.
 
+### Client JRE
+
+The GUI builds copy a JRE from `\\isis\inst$\Kits$\CompGroup\ICP\ibex_client_jre`. Replace this with the latest JRE and check that things still work.
+
 # Python
 
 ## Python itself
@@ -57,18 +58,17 @@ Tycho and eclipse framework versions are defined in the file `./base/uk.ac.stfc.
 
 Check on PyPi for any package updates, then edit `requirements.txt` to install new versions where needed.
 
-# ActiveMQ
+# System
 
-To update activeMQ in epics:
-  - Add the activeMQ directory to `...\EPICS\ISIS\ActiveMQ\master`
-  - Remove the old activeMQ directory
-  - Update the config to include anything new in the new version
-  - Update `start-jms-server.bat` to point at the new version of apache
-  - Update the Log server modules in `EPICS\ISIS\IocLogServer\master\LogServer`
+### MySQL
 
-# IOCLogServer
+### Java
 
-The IOC log server has a similar build process to the main GUI, and includes several `.jar` files in it's repository. These may have new versions and need to be updated.
+### Maven
+
+### Make
+
+### git
 
 # CS-Studio
 
@@ -89,4 +89,15 @@ Our CS-Studio GUI dependencies are located on a share at `\\shadow.isis.cclrc.ac
 - Copy the zip files for alarm server, alarm config tool, archive engine and archive config tool to `\\shadow.isis.cclrc.ac.uk\icp_binaries$\CSS`, renaming the directories to match the existing names if necessary
 - The changes will be picked up after doing `create_icp_binaries` and then `css\master\setup_css.bat`
 
+# ActiveMQ
 
+To update activeMQ in epics:
+  - Add the activeMQ directory to `...\EPICS\ISIS\ActiveMQ\master`
+  - Remove the old activeMQ directory
+  - Update the config to include anything new in the new version
+  - Update `start-jms-server.bat` to point at the new version of apache
+  - Update the Log server modules in `EPICS\ISIS\IocLogServer\master\LogServer`
+
+# IOCLogServer
+
+The IOC log server has a similar build process to the main GUI, and includes several `.jar` files in it's repository. These may have new versions and need to be updated.
