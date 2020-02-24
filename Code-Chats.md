@@ -24,11 +24,11 @@ Person | Date
 ------ | ----
 James | Feb '20
 Chris C | March '20
-Kathryn | April '20
-Alistair | May '20
-Freddie | June '20
-Aaron | July '20
-Jack | Aug ' 20
+Alexandru | April ' 20
+Alistair | May'20
+Kathryn | June '20
+Freddie | July '20
+Aaron | Aug'20
 John | Sep '20
 Dom | Oct '20
 Chris MS | Dec '20
