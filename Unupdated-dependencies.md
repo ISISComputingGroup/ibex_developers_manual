@@ -16,6 +16,8 @@ This page lists some dependencies which we are not updating for various reasons:
 | Dependency | Our version | Available version | Reason |
 | --- | --- | --- | --- |
 | `protobuf` | 3.6.1 | 3.11.3 | Newer version conflicts with `mysql-connector-python 8.0.19` |
+| `pcaspy` | Git commit `085f06af23cc862387b0a272828e2a9009eb0935` | 0.7.2 | The git version is newer and has not yet been published to pypi |
+| `CaChannel` | Git commit `92b53f2c5e81cc0dab178bc5b92ea058b17a7f7d` | 3.1.2  | The git version is newer and has not yet been published to pypi |
 
 # GUI
 
