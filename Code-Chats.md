@@ -8,10 +8,9 @@ Code chats occur on a semi-regular monthly basis within the group at ISIS. Altho
 
 Topic | Presenter | Date
 ----- | --------- | ----
-The Script Generator | James | 4th Feb '20
 NeXus | Freddie | 11th March '20
-EMU migration retrospective | David | 8th April '20
-InstrumentScripts | Thomas Löhnert/James | May '20
+System Testing With Squish | Dom | 8th April '20
+? | Cosimo | May '20
 Software design techniques in our processes and BDD/DDD | Aaron and James | June '20
 How to Read ISIS LabVIEW Drivers | Kathryn Baker | July '20
 ISISICP (and Kafka?) | Freddie | Aug '20
