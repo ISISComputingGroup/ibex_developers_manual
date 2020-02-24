@@ -50,7 +50,6 @@ Design Patterns in IBEX | Dom
 EMU migration retrospective | ?
 ISISICP (and Kafka?) | Freddie
 LVDCOM | Freddie?
-The Script Generator | Alistair/Tom Willemsen/John/Dom/James
 IBEX UI Design | Thomas Löhnert
 Jenkins, testing and our build processes | ?
 
