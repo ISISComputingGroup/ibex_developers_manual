@@ -572,3 +572,12 @@ The beam current in the dashboard is not read from the accelerator, but is calcu
 If the DAE beam current is oscillating but the accelerator is constant, then this can be due to issues with the time or charge component of the calculation. If it is oscillating rapidly, it may be due to some reads taking longer and meaning the "time" value used in the calculation does not correspond to the charges used. Look for DAE read timeouts, or sometimes if a lot of spectra are being displayed in the GUI this can slow down DAE proton reads. If there are a lot of DAE timeouts in the log, contact electronics group. 
 
 If the DAE beam current is incorrect for a period of time rather than rapid oscillations, this is more likely to be due to either vetos or the DAE syncing to the wrong accelerator pulse. HRPD run at 10Hz and were seeing a DAE beam current going to zero for a period of time and then returning to normal. TS1 runs at 50Hz, but 1 pulse in 5 (10Hz) goes to TS2 so if a  10Hz chopper syncs to the missing pulse you will not see any data. It looked like on HRPD this syncing was shifting and occasionally latching onto the empty pulse for a period of time (several minutes). This syncing could be a chopper or DAE issue, probably start with DAE first .
+
+### Add Single Run Entry into the Journal
+
+It is possible to add a single run into the journal database if it was not included for some reason simply run:
+
+```
+"c:\labview modules\dae\JournalParser.exe" <INSTRUMENT> <9 DIGIT run number> cycle_<cycle number, e.g. 19_3> "c:\data\export only" <INSTRUMENT MACHINE HOST NAME>
+```
+e.g. `"c:\labview modules\dae\JournalParser.exe" LOQ 00108032 cycle_19_3 "c:\data\export only" NDXLOQ`
