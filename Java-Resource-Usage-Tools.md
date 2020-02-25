@@ -12,7 +12,7 @@ You can also look at what functions are using what resources by using the sample
 
 ### Setup JVisualVM to monitor a remote client
 
-- Look in the log file for the client that you want to remotely monitor
+- Look in the log file for the client (will be on the NDX at `C:\Instrument\Apps\Client_E4\workspace\logs`) that you want to remotely monitor
 
 - When the client first starts it will print `JMX url:` followed by a url that looks a bit like `service:jmx:rmi://machine/stub/rO0ABXNyAC5qYXZheC5tYW5hZ2V...`
 
