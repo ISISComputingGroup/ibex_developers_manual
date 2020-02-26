@@ -82,9 +82,15 @@ Update the one in your local machine by running `upgrade_mysql.bat`.
 
 ### Make
 
+- Download the latest make sources from `https://ftp.gnu.org/gnu/make/`
+- In the downloaded source tree, open a command prompt
+- Run `config_env.bat` (this runs a correct `vcvarsall.bat` for the current system)
+- Run `build_w32.bat`
+- Copy the built binary in `./WinRel/gnumake.exe` to `C:\instrument\apps\epics\utils_win32\master\bin\make.exe`
 
 ### git
-Git upgrade is handled by install scripts
+
+Git upgrade is handled by install scripts.
 
 # CS-Studio
 
