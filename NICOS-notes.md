@@ -12,7 +12,7 @@ Nicos is (most likely) spawning a shell which in turn creates a git instance but
 ```
 %python3% -m pip install --upgrade --extra-index-url https://forge.frm2.tum.de/simple nicos-pyctl
 ``` 
-Once it has installed successfully you can `Ctrl-T` + `Ctrl-X`, once more in the NICOS console session to re-enable auto-restart and restart the server. You should then see the client connect to the NICOS server successfully:
+Once it has installed successfully it's advised you also pull EPICS top directory. Finally you can `Ctrl-T` + `Ctrl-X`, once more in the NICOS console session to re-enable auto-restart and restart the server. You should then see the client connect to the NICOS server successfully:
 ```
 *2020-02-26 14:32:52.322 [Worker-6: NICOSConnection] INFO  uk.ac.stfc.isis.ibex.nicos.comms.ZMQWrapper - Opening ZMQ connection to NICOS
 *2020-02-26 14:32:52.325 [Worker-6: NICOSConnection] INFO  uk.ac.stfc.isis.ibex.nicos.comms.ZMQSession - Connected to NICOS at tcp://localhost:1301
