@@ -26,3 +26,4 @@ An evaluation of Nicos and its suitability for integration into the IBEX project
 - [Testing Nicos](testing-nicos)
 - [Nicos commands](NICOS-commands)
 - [Developing nicos-core](Developing-NICOS)
+- [Nicos notes](NICOS-notes)
