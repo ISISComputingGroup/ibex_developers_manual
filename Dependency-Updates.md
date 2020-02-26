@@ -82,7 +82,9 @@ Update the one in your local machine by running `upgrade_mysql.bat`.
 
 ### Make
 
+
 ### git
+Git upgrade is handled by install scripts
 
 # CS-Studio
 
