@@ -61,6 +61,11 @@ Check on PyPi for any package updates, then edit `requirements.txt` to install n
 # System
 
 ### MySQL
+Download the latest MySQL version as a zip file and put in the share `\\isis\inst$\Kits$\CompGroup\ICP\MySQL` and remove the old one.
+
+In the upgrade script `https://github.com/ISISComputingGroup/ibex_utils/tree/master/installation_and_upgrade/ibex_install_utils` edit `install_tasks.py` to point at the new version.
+
+Update the one in your local machine by running `upgrade_mysql.bat`. 
 
 ### Java
 
