@@ -1,6 +1,6 @@
 # Periodic git pop-up while client is running
 
-If Nicos is not correctly up-to-date and working it has been seen that periodically a git.exe cmd pops up on screen. This has an associated console error:
+If Nicos is not correctly up-to-date and working it has been seen that periodically a git.exe cmd pops up on screen. This is associated with the following log message in the GUI:
 ```
 *2020-02-26 14:31:01.578 [Worker-9: NICOSConnection] INFO  uk.ac.stfc.isis.ibex.nicos.comms.ZMQWrapper - Opening ZMQ connection to NICOS
 *2020-02-26 14:31:01.581 [Worker-9: NICOSConnection] INFO  uk.ac.stfc.isis.ibex.nicos.comms.ZMQSession - Connected to NICOS at tcp://localhost:1301
