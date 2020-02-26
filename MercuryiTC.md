@@ -24,8 +24,17 @@ The screens look like:
 ![Comms detailed](backend_system/IOCs/MercuryITc/comms2.jpg)
 
 ## Driver
-
 Currently, the driver only measures and sets the following:
+
+- Temperature
+- He Level
+- Pressure
+
+There is a section on each below as well as how to se the communication settins.
+
+### Communication Settings
+
+The driver is an lvdcom driver and so to change the com port you must configure the labview code. To do this open the setup vi which is in `C:\LabVIEW Modules\Drivers\Oxford Instruments\Mercury\Mercury - System Functions.llb` and is called `Mercury - System Functions.llb`. Run this dialogue and edit the settings for the correct Mercury. To apply these settings you will need to restart the mercury vi.
 
 ### Temperature
 
