@@ -17,4 +17,5 @@ Once it has installed successfully you can `Ctrl-T` + `Ctrl-X`, once more in the
 *2020-02-26 14:32:52.322 [Worker-6: NICOSConnection] INFO  uk.ac.stfc.isis.ibex.nicos.comms.ZMQWrapper - Opening ZMQ connection to NICOS
 *2020-02-26 14:32:52.325 [Worker-6: NICOSConnection] INFO  uk.ac.stfc.isis.ibex.nicos.comms.ZMQSession - Connected to NICOS at tcp://localhost:1301
 ```
+and the pop up should stop.
 
