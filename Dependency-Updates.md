@@ -79,6 +79,10 @@ Update the one in your local machine by running `upgrade_mysql.bat`.
   * CSS studio IDE is loaded correctly
 
 ### Maven
+- Download the latest maven from `https://maven.apache.org/download.cgi#`
+- Delete the older version of the maven
+- unzip and copy the content to `\\shadow.isis.cclrc.ac.uk\ICP_Binariesw$\maven`
+
 
 ### Make
 
