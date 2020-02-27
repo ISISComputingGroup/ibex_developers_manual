@@ -9,7 +9,7 @@ This of course breaks our naming convention the blocks rely on to work. So the I
 ## IOC Setup
 When connecting to the real device, the IOC requires its IP address, but the software installed on the device has a bug and does not return the correct IP address. Its network name, however, is correct.
 
-To use the device, set the IPADDR macro in globals.txt to be the device network name, e.g. `LKSH336_01__IPADDR=ls336-1`.
+To use the device, set the IPADDR macro in globals.txt to be the device network name, e.g. `LKSH336_01__HOST=ls336-1`.
 
 ## Note on Implementation
 The Lakeshore 336 IOC was originally taken from Diamond; the Diamond IOC is on a vendor branch of the support module and uses more functionality on the device than what we actually need (at least, at the time of writing). This means that in the support module you'll find some template files which we're not using: refer to the substitutions file in the ioc repo to see which templates we're using.
