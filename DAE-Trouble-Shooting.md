@@ -26,8 +26,9 @@ This issue has been observed on LARMOR and TOSCA, accompanied by the following e
 2017-04-13 20:52:17  Endian workaround DISABLED, blocks transfers DISABLED
 2017-04-13 20:52:17  This is a VXI DAE
 ```
-
 This was resolved by powercycling the DAE followed by stopping the visa server and running `resman`. Instructions how to reset the DAE can be found in [these slides](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/ISISICP%20and%20DAE.pptx). Ask Freddy to find out more
+
+On DAE2 you will get `NIVisa::` errors as above, on a DAE3 machine a vendor network library is used rather than NI Visa and the equivalent sorts of errors will have `Qx` or `Quixtream` prefixes. Access from the ISISICP is via the network, so there is no intermediate service/server to restart. Usually the ISISICP will retry failed connections, but check with electronics if there are repeated failures. You can try restarting ISISICP in case the vendor library needs a reload itself.
 
 ### No log files are produced in `c:\data` even though blocks are set to log.
 The reason may be because cp hasn't been set to look for epics. In `C:\LabVIEW Modules\dae\isisicp.properties` set `isisicp.epicsdb.use = true` to log the epic's blocks. You will need to restart the `isisicp` process for this to take effect. To do this, just end the `isisicp` process in task manager.
