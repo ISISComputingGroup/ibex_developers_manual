@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [Nicos](Nicos) > [Nicos notes](NICOS-notes)
+
 # Periodic git pop-up while client is running
 
 If Nicos is not correctly up-to-date and working it has been seen that periodically a git.exe cmd pops up on screen. This is associated with the following log message in the GUI:
