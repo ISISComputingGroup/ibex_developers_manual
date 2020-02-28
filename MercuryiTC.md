@@ -18,7 +18,7 @@ In the future, we may want to develop a full epics IOC for it and there is a pos
 
 The device should be talked to via serial (RS232 / ISOBUS in OI terms) at a baud rate of 57600. This is variable on the front panel, but **only while the device is in local mode** (when the box in the bottom left of the home screen **_doesn't_** have an orange background).
 
-The screens look like:
+The configuration screens look like:
 
 ![Comms general](backend_system/IOCs/MercuryITc/comms1.jpg)
 ![Comms detailed](backend_system/IOCs/MercuryITc/comms2.jpg)
@@ -68,7 +68,7 @@ A pressure card can be monitored by setting the macro VI_PRESSURE_N to point at 
 
 ### Example
 
-In this example the front panel on the Mercury look:
+In this example, the front panel (home screen) on the Mercury looks like:
 
 ![front panel showing 6 areas](backend_system/IOCs/MercuryITc/front_panel.jpg)
 
