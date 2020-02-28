@@ -1,4 +1,4 @@
-> [Wiki](Home) > [The Backend System](The-Backend-System) > Nicos
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [Nicos](Nicos)
 
 NICOS is a Python based control system developed at FRM-II. The general software documentation can be found [here](http://cdn.frm2.tum.de/fileadmin/stuff/services/ITServices/nicos-master/dirhtml/). Although NICOS is a fully fledged control system ISIS are currently only using it as a script server.
 
