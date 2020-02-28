@@ -10,9 +10,11 @@ Either change the tcb file you are using or do the following steps to change the
 2. In the same directory edit the isisicp.properties file to use either neutron or muon for `isisicp.simulation.detcards.type`
 3. Restart the ISISDAE using console in an EPICS terminal and end the isisicp task in the task manager (the ISISDAE should autorestart it)
 
-### DAE switches from processing to Unknown and never goes into SetUp
+### DAE switches from processing to Unknown and never goes into SetUp / Run can not be ended
 
 See [Other Troubleshooting -> instrument page not working on web dashboard](Other-Troubleshooting#instrument-page-not-working-on-web-dashboard)
+
+*DAE2*
 
 This issue has been observed on LARMOR and TOSCA, accompanied by the following error messages continuously being logged to `C:\data\log\icp-<date>.log`:
 
@@ -28,17 +30,15 @@ This issue has been observed on LARMOR and TOSCA, accompanied by the following e
 ```
 This was resolved by powercycling the DAE followed by stopping the visa server and running `resman`. Instructions how to reset the DAE can be found in [these slides](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/ISISICP%20and%20DAE.pptx). Ask Freddy to find out more
 
-On DAE2 you will get `NIVisa::` errors as above, on a DAE3 machine a vendor network library is used rather than NI Visa and the equivalent sorts of errors will have `Qx` or `Quixtream` prefixes. Access from the ISISICP is via the network, so there is no intermediate service/server to restart. Usually the ISISICP will retry failed connections, but check with electronics if there are repeated failures. You can try restarting ISISICP in case the vendor library needs a reload itself.
+*DAE2*
 
-### DAE3 Fails to End a Run
-
-If the log contains lines like:
+On a DAE3 machine a vendor network library is used rather than NI Visa and the equivalent sorts of errors will have `Qx` or `Quixtream` prefixes. Access from the ISISICP is via the network, so there is no intermediate service/server to restart. Usually the ISISICP will retry failed connections, but check with electronics if there are repeated failures. You can try restarting ISISICP in case the vendor library needs a reload itself. An example of the error message is:
 
 ```
 2020-02-27T09:55:41  Qxtrm_channel::RDMARead failed rdma2 address 0x40010 nbytes 4(Quixtream: The timeout period on this channel expired before the transfer commenced. Channel status: Transfer failed. Data packet not received before timeout. )
 ```
 
-This means that there is a lack of communication between the isisicp and the hardware. The [last time this happened](https://github.com/ISISComputingGroup/IBEX/issues/5269) electronic sorted out the problem. Get the instrument scientist to call them to diagnose it.
+Again the resolution is to contact electronics which was done the [last time this happened](https://github.com/ISISComputingGroup/IBEX/issues/5269).
 
 ### No log files are produced in `c:\data` even though blocks are set to log.
 The reason may be because cp hasn't been set to look for epics. In `C:\LabVIEW Modules\dae\isisicp.properties` set `isisicp.epicsdb.use = true` to log the epic's blocks. You will need to restart the `isisicp` process for this to take effect. To do this, just end the `isisicp` process in task manager.
