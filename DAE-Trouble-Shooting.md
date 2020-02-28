@@ -30,6 +30,16 @@ This was resolved by powercycling the DAE followed by stopping the visa server a
 
 On DAE2 you will get `NIVisa::` errors as above, on a DAE3 machine a vendor network library is used rather than NI Visa and the equivalent sorts of errors will have `Qx` or `Quixtream` prefixes. Access from the ISISICP is via the network, so there is no intermediate service/server to restart. Usually the ISISICP will retry failed connections, but check with electronics if there are repeated failures. You can try restarting ISISICP in case the vendor library needs a reload itself.
 
+### DAE3 Fails to End a Run
+
+If the log contains lines like:
+
+```
+2020-02-27T09:55:41  Qxtrm_channel::RDMARead failed rdma2 address 0x40010 nbytes 4(Quixtream: The timeout period on this channel expired before the transfer commenced. Channel status: Transfer failed. Data packet not received before timeout. )
+```
+
+This means that there is a lack of communication between the isisicp and the hardware. The [last time this happened](https://github.com/ISISComputingGroup/IBEX/issues/5269) electronic sorted out the problem. Get the instrument scientist to call them to diagnose it.
+
 ### No log files are produced in `c:\data` even though blocks are set to log.
 The reason may be because cp hasn't been set to look for epics. In `C:\LabVIEW Modules\dae\isisicp.properties` set `isisicp.epicsdb.use = true` to log the epic's blocks. You will need to restart the `isisicp` process for this to take effect. To do this, just end the `isisicp` process in task manager.
 
