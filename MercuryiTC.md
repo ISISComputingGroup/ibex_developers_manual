@@ -16,7 +16,7 @@ In the future, we may want to develop a full epics IOC for it and there is a pos
 
 # Communications
 
-The device should be talked to via serial at a baud rate of 57600. This is variable on the front panel, but **only while the device is in local mode.**
+The device should be talked to via serial (RS232 / ISOBUS in OI terms) at a baud rate of 57600. This is variable on the front panel, but **only while the device is in local mode** (when the box in the bottom left of the home screen **_doesn't_** have an orange background).
 
 The screens look like:
 
