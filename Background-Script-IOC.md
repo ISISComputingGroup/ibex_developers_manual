@@ -5,11 +5,34 @@ The background script IOC will run a script in the background. The script must b
 If you want the IOC to register as started the user must include the lines:
 
 ```
-sys.path.insert(0, 'C:\\Instrument\\Apps\\EPICS\\ISIS\\inst_servers\\master\\')
+sys.path.insert(1, os.path.abspath(os.path.join(os.environ["KIT_ROOT"], "ISIS", "inst_servers", "master")))
 
-from server_common.ioc_data_source import IocDataSource
-from server_common.mysql_abstraction_layer import SQLAbstraction
+register_ioc_start("BGRSCRPT_01")
+```
 
-ioc_data_source = IocDataSource(SQLAbstraction("iocdb", "iocdb", "$iocdb"))
-ioc_data_source.insert_ioc_start(ioc_name, os.getpid(), exepath, STATIC_PV_DATABASE, ioc_name_with_pv_prefix)
+### Background Plot
+
+A popular use of this is to generate a [background plot](https://github.com/ISISNeutronMuon/InstrumentScripts/wiki/Muon). This can be using the script:
+
+```
+import sys
+import os
+from time import sleep
+
+sys.path.insert(0, os.path.abspath(os.path.join(r"C:\\", "Instrument", "scripts")))
+sys.path.insert(1, os.path.abspath(os.path.join(os.environ["KIT_ROOT"], "ISIS", "inst_servers", "master")))
+
+from technique.muon.background_plot import BackgroundBlockPlot
+from genie_python import genie as g
+from server_common.helpers import register_ioc_start
+
+
+register_ioc_start("BGRSCRPT_01")
+
+g.set_instrument(None)
+
+plot=BackgroundBlockPlot((("Temp_Sample", "value"), ("Temp_SP", "set point")), "Temperature").start()
+
+while True:
+    sleep(10)
 ```
