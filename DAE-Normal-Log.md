@@ -1,4 +1,4 @@
-> [Wiki](Home) > [Trouble-shooting](trouble-shooting-pages) > [DAE](DAE-Trouble-Shooting) > [DAE Normal Log](/DAE-Normal-Log)
+> [Wiki](Home) > [Trouble-shooting](trouble-shooting-pages) > [DAE](DAE-Trouble-Shooting) > [DAE Normal Log](DAE-Normal-Log)
 
 # Standard startup log
 
