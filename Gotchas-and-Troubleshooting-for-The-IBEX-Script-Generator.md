@@ -15,7 +15,7 @@ This could be due to 4 things:
    - Indicated in the log by "Error loading from <FileSystemLocation>"
    - For a temporary fix you can move the script definitions into that location, but for a better fix (see gotcha below) ensure that the preference is pointing to the correct location (The preference can point to multiple locations by separating them with commas)
 - The script definitions all have errors on them and cannot be loaded
-   - Indicated in the log by "Error loading <ScriptDefinitionName>: <error>"
+   - Indicated in the log by `Error loading <ScriptDefinitionName>: <error>`
    - The script definitions are maintained by the instrument scientists, however, obviously provide support and guidance for this
 - There is a chance that Python has crashed due to an error
    - This will likely be in the log
