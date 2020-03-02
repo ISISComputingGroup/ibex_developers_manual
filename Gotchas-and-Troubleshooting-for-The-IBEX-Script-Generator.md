@@ -9,10 +9,10 @@ Currently, we search for notepad++ in "Program Files" and "Program Files (x86)".
 This could be due to 4 things:
 
 - The script definitions have not been loaded into the correct place in the filesystem
-   - Indicated in the log by "Error loading from <FileSystemLocation>"
+   - Indicated in the log by `Error loading from <FileSystemLocation>`
    - To fix simply move them into the location that is given in the warning message
 - The IBEX preference is not pointing to the correct location in the file system
-   - Indicated in the log by "Error loading from <FileSystemLocation>"
+   - Indicated in the log by `Error loading from <FileSystemLocation>`
    - For a temporary fix you can move the script definitions into that location, but for a better fix (see gotcha below) ensure that the preference is pointing to the correct location (The preference can point to multiple locations by separating them with commas)
 - The script definitions all have errors on them and cannot be loaded
    - Indicated in the log by `Error loading <ScriptDefinitionName>: <error>`
