@@ -23,10 +23,10 @@ This could be due to 4 things:
 ## Some of my script definitions have not loaded
 
 - We can point a preference to where to load script definitions from. This can be a combination of different places separated by commas. One of these preferences may be slightly incorrect and the script definitions from that location not loaded.
-   - Indicated in the log by "Error loading from <FileSystemLocation>"
+   - Indicated in the log by `Error loading from <FileSystemLocation>`
    - Find out where the preference should point (see gotcha below), adjust it and reload the GUI
 - Some of the script definitions may have errors in them and so failed to load
-   - Indicated in the log by "Error loading <ScriptDefinitionName>: <error>"
+   - Indicated in the log by `Error loading <ScriptDefinitionName>: <error>`
    - The script definitions are maintained by the instrument scientists, however, obviously provide support and guidance for this
 
 ## The script generator renders as a blank view
