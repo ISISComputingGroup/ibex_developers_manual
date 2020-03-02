@@ -43,6 +43,6 @@ All communications to the physical device are handled by the LSI python API. The
 ### Saving the data
 Ideally the data would be saved into a nexus file, and the subsequent data analysis would be performed in mantid. However, because this data analysis is not yet available in mantid, the data must be processed by the vendor's software.
 
-As a temporary measure, this IOC will need to produce a data file which can be imported into the vendor's software. There are two possible file formats for this, labview XML or a CSV file. Examples of these can be found in the manuals share under the LSI correlator. The best file format between these needs to be decided.
+As a temporary measure, this IOC is producing a .dat tsv file which can be import into the vendor's software. The files are saved to C:\Data as txt files with the name of the form "C:\Data\{instrument_name}{run_number}_{title}_{timestamp}.txt". There is also a possibility of producing a labview xml file for the same purpose if the tsv does not work.
 
 After a brief look, it appears that the vendor software may be using the `CONTIN` library to perform fitting of the correlation function.
