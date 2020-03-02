@@ -36,3 +36,10 @@ plot=BackgroundBlockPlot((("Temp_Sample", "value"), ("Temp_SP", "set point")), "
 while True:
     sleep(10)
 ```
+
+In addition to this to show the plot add the following to the instrument init:
+
+```
+def init(inst):
+    g.adv.open_plot_window(is_primary=False)
+```
