@@ -84,7 +84,8 @@ Positives:
 
 - This is now fixed
 - There may be more banana skins
-- As part of our migrations, we should test that we can go back and plan for a possible switch back
+- As part of our migrations, we should test that we can go back and plan for a possible switchback
+   - This has been added into the steps here: https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Migrate-an-Instrument-Control-PC
 - This was tricky to catch
 - We should have a set of standard things to test across similar instruments e.g. motors for refl and start/stop for every one
 
