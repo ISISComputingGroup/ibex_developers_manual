@@ -12,8 +12,6 @@ The IOC copes with these variations in commands by making 4 commands configurabl
 
 Note - if the commands are wrong they may still reply, but report the wrong numbers! For example `IN_PV_02` can mean "read external temperature" or "read heater power" depending on the model of Julabo used. Do not assume that because there are numbers coming back they are necessarily the right numbers!
 
-If none of the settings above allow you to connect to a unit try installing a null modem.
-
 In general they control the temperature by pumping a fluid from a temperature controller bath to the sample and back. It is possible to connect an external sensor to the unit and have it control the temperature from this sensor or have it control itself from the internal bath temperature.
 
 # Setpoints
@@ -27,3 +25,7 @@ The Julabo device only has one setpoint. To enable `cset` to be used with blocks
 # P, I and D
 
 The Julabo has PID setting for temperature control and both the internal and external sensors (6 parameters in total). On at least one model (He) setting these using the remote interface, e.g. from IBEX, does not cause the unit to store these values. This means that on a power cycle it resets the values it had to the ones that were last set using the interface on the device. Furthermore from ticket [3104](https://github.com/ISISComputingGroup/IBEX/issues/3104) these values can not be set on startup using either autosave or default PVs in a config.
+
+# Communication
+
+null modem: depends on Julabo If none of the settings above allow you to connect to a unit try installing a null modem.
