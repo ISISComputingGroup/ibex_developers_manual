@@ -11,13 +11,12 @@ Topic | Presenter | Date
 NeXus | Freddie | 11th March '20
 System Testing With Squish | Dom | 8th April '20
 ? | Cosimo | May '20
-Software design techniques in our processes and BDD/DDD | Aaron and James | June '20
-How to Read ISIS LabVIEW Drivers | Kathryn Baker | July '20
-ISISICP (and Kafka?) | Freddie | Aug '20
-The HIFI Cryomag | Chris C/Kathryn | Sep '20
-IBEX UI Design | Thomas Löhnert | Oct '20
+How to Read ISIS LabVIEW Drivers | Kathryn Baker | June '20
+ISISICP (and Kafka?) | Freddie | Jul '20
+The HIFI Cryomag | Chris C/Kathryn | Aug'20
+IBEX UI Design | Thomas Löhnert | Sep '20
+? | ? | Oct '20
 ? | ? | Nov '20
-? | ? | Dec '20
 
 ## Cake Rota
 Person | Date
