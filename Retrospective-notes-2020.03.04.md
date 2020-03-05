@@ -38,3 +38,12 @@ Yes, within reason.
 - If a support call took very little time e.g. writing the ticket would take more time it may not be worth it
    - It stops being time-effective or useful to others
 - If a support call is one of a common theme we should record all them together as a tally to identify areas of the system we should improve
+
+# We should demo more in sprint reviews
+
+Yes, we need to take steps towards this.
+
+- DEMO should be deployed to earlier to give people a chance to set up their demo
+- We don't necessarily need to demo on DEMO it can be on our own machine
+   - Though demoing on DEMO can be useful to point out issues surrounding performance, state that we did not experience on our own machine etc.
+- It is a good chance for a dress rehearsal prior to scientist demos (we are a more forgiving audience)
