@@ -4,7 +4,7 @@
 
 This IOC runs on a separate computer, **not on NDXIMAT**. 
 
-The computer's name is `IMAT-UCB-DETECT`, the password is listed on the passwords page.
+The computer's name is `IMAT-UCB`, the password is listed on the passwords page. The PV Prefix is `MO:IMAT-MCP`.
 
 To launch pixelman you have to run a special batch script in `C:\Instrument\Apps\EPICS32\support\pixelman\master\run`. The file is `run_pixelman.bat` You should see some log entries in the camera software and the pixelman GUI will start itself as it loads the EPICS plugins. If the .exe is just double clicked the camera software will look like it loaded ok but not publish any PVs.  If you get a message box suggesting you remove a line from a file, please click "NO"
 
@@ -13,6 +13,12 @@ IF you see errors on the IMAT screen from scripts that say things like connectio
 `C:\Instrument\Apps\EPICS32\gateway\start_gateways.bat`
 
 For more information see the README file in `C:\Instrument\Apps\EPICS32\support\pixelman\master\run`
+
+## Setup
+
+The PC is setup and looked after by FIT and the instrument scientist. The person from Berkley setup the camera software and network card; the scientist may have instruction about how to restart various bits.
+We installed ibex server *32 bit* into c:\instrument\apps\epics32 using normal installer but for 32 bit (we literally only installed the server, no git, client, sql or config). The server does not run we just use the two programs detailed in IOC section.
+To help with this we created two shortcuts on the desktop to start pixelman and gateways as above.
 
 ## Troubleshooting
 
