@@ -20,6 +20,8 @@ Text for release ticket:
 
 ## Standard Release
 
+[Instrument scientist release email](https://github.com/ISISComputingGroup/IBEX/wiki/Instrument-scientist-release-email)
+
 Project is ready to be released not for a specific event, e.g. at the end of a sprint.
 
 ### Pre Testing
