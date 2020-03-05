@@ -91,8 +91,13 @@ Positives:
 
 # Linter is perceived as slow by some instruments. The linter may not really be slow, but is perceived as such by some instruments. How can we make ourselves more conscious of performance?
 
-We have a ticket and ideas for speeding things up. https://github.com/ISISComputingGroup/IBEX/issues/5210
-
-HDDs rather than SSDs have slowed us down here, there is a plan to upgrade.
-
-Manual tests should have time limits.
+- We have a ticket and ideas for speeding things up. https://github.com/ISISComputingGroup/IBEX/issues/5210
+- HDDs rather than SSDs have slowed us down here, there is a plan to upgrade.
+- Manual tests should have time limits.
+- Demoing and testing on demo should help us with this.
+- We should try to be aware of how our code changes performance.
+- Memory leak has added to this concern
+- We should consider writing more squish performance tests
+- We should check with the SAG how important they think performance enhancements are
+- ScriptServer may help with the speed
+   - We should add linting to the script server
