@@ -17,7 +17,9 @@ For more information see the README file in `C:\Instrument\Apps\EPICS32\support\
 ## Setup
 
 The PC is setup and looked after by FIT and the instrument scientist. The person from Berkley setup the camera software and network card; the scientist may have instruction about how to restart various bits.
-We installed ibex server *32 bit* into c:\instrument\apps\epics32 using normal installer but for 32 bit (we literally only installed the server, no git, client, sql or config). The server does not run we just use the two programs detailed in IOC section.
+
+We installed ibex server **32 bit** into `c:\instrument\apps\epics32` using normal installer but for 32 bit (we literally only installed the server, no git, client, sql or config). The server does not run we just use the two programs detailed in IOC section.
+
 To help with this we created two shortcuts on the desktop to start pixelman and gateways as above.
 
 ## Troubleshooting
