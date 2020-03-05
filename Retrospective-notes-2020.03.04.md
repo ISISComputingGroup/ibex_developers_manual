@@ -60,7 +60,7 @@ Yes, we need to take steps towards this.
 
 Upgrade process was leaving a trail of mounted network disks. Upgrade scripts should clean up after themselves.
 
-There is a ticket for this.
+There is a ticket for this. https://github.com/ISISComputingGroup/IBEX/issues/5208
 
 # Dashboard bug: This was an unnecessary own goal. Why did our testing (system, automated, manual) not catch these?
 
