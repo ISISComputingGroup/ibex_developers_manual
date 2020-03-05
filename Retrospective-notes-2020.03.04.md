@@ -89,5 +89,10 @@ Positives:
 - This was tricky to catch
 - We should have a set of standard things to test across similar instruments e.g. motors for refl and start/stop for every one
 
+# Linter is perceived as slow by some instruments. The linter may not really be slow, but is perceived as such by some instruments. How can we make ourselves more conscious of performance?
 
+We have a ticket and ideas for speeding things up. https://github.com/ISISComputingGroup/IBEX/issues/5210
 
+HDDs rather than SSDs have slowed us down here, there is a plan to upgrade.
+
+Manual tests should have time limits.
