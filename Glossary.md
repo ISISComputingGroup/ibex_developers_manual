@@ -181,7 +181,7 @@ Journal viewer is an overloaded term. There are two, one as [part of the ibex GU
 Journal Parser
 --------------
 
-The journal parser is a program that runs as part of the end run processes. It looks parses the journal produced by the isisicp and adds the deails to the database in the journal schema.
+The journal parser is a program that runs as part of the end run processes. It looks parses the journal produced by the `isisicp` and adds the details to the database in the journal schema.
 
 [LabVIEW](http://www.ni.com/labview/)
 ---------
