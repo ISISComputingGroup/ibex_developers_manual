@@ -176,8 +176,12 @@ Jenkins
 Journal Viewer
 --------------
 
+Journal viewer is an overloaded term. There are two, one as [part of the ibex GUI](The-Journal-Viewer) and the other is a standalone application supported by the instrument scientists, we only provide data for this.
+
 Journal Parser
 --------------
+
+The journal parser is a program that runs as part of the end run processes. It looks parses the journal produced by the isisicp and adds the deails to the database in the journal schema.
 
 [LabVIEW](http://www.ni.com/labview/)
 ---------
