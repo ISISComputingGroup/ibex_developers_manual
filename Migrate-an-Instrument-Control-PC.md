@@ -82,6 +82,7 @@ In the migration phase, IBEX will be physically installed and configured on the 
 1. Add the instrument and release version of IBEX to the Instrument Information table on the [IBEX wiki page](https://github.com/ISISComputingGroup/IBEX/wiki).
 1. Check that the instrument has the latest version of the LabVIEW Galil driver and update from SourceSafe if not (make backup of existing driver first).  On startup, the VI removes the software limits that the EPICS driver uses and allows SECI to function as before - which will need to happen when switching back and forth between IBEX and SECI during testing.
 1. Check that we are able to switch back to SECI if necessary, test features commonly used on the beamline e.g. motors for ref, starting and stopping runs etc.
+   - This should be documented of how it was successful and what steps were required
 
 # How to review
 
@@ -91,4 +92,4 @@ To check an instrument migration/deployment as a reviewer:
 - If the instrument is up, have a look around their configurations and synoptics and check that they are sensible.
 - Ensure there are no outstanding tickets blocking the instrument migration.
 - Ensure that blocks point at e.g. `...X` rather than `...X:SP:RBV` (unless it's clear that the block needs to point at the setpoint readback)
-- Ensure switching back to SECI tests were acceptable
+- Ensure switching back to SECI tests were acceptable and that there is sufficient documentation for it
