@@ -16,7 +16,7 @@ Text for release ticket:
     - [ ] [Post Testing](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Creating-a-release#post-testing)
     - [ ] [Create a ticket to update dependencies to latest versions and test](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Dependency-updates)
     - [ ] [Create a ticket to give instrument demos](https://github.com/ISISComputingGroup/IBEX/wiki/Timetable-for-Instrument-Demos)
-    - [ ] Distribute release notes via email
+    - [ ] Distribute release notes via email [Instrument scientist release email](https://github.com/ISISComputingGroup/IBEX/wiki/Instrument-scientist-release-email)
 
 ## Standard Release
 
