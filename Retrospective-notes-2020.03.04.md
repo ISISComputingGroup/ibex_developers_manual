@@ -44,6 +44,49 @@ Yes, within reason.
 Yes, we need to take steps towards this.
 
 - DEMO should be deployed to earlier to give people a chance to set up their demo
+   - There is now a reminder for a few of us to remind the group we need to deploy at the start of the week so it is organised earlier
 - We don't necessarily need to demo on DEMO it can be on our own machine
    - Though demoing on DEMO can be useful to point out issues surrounding performance, state that we did not experience on our own machine etc.
 - It is a good chance for a dress rehearsal prior to scientist demos (we are a more forgiving audience)
+
+# Should we try again with inviting scientists to sprint reviews? Relying on "proxy" product owners has failed multiple times recently
+
+- We are happy with the current process of having separate scientist demos.
+- Getting them to come is difficult and would extend reviews a lot.
+- However, we should be more strict in demoing to scientists.
+   - We should organise these as part of the release (added to the ticket template)
+
+# Clean up after upgrade
+
+Upgrade process was leaving a trail of mounted network disks. Upgrade scripts should clean up after themselves.
+
+There is a ticket for this.
+
+# Dashboard bug: This was an unnecessary own goal. Why did our testing (system, automated, manual) not catch these?
+
+Reasons why it wasn't caught:
+- Wouldn't have been seen unless we had neutrons 
+- We haven't got 100% coverage
+- The push for EMU made us rush
+- Mistakes can be made
+- Our simulation isn't very strong for pretending we have neutrons
+
+Actions:
+- We should be more aware to use TDD 
+   - It is noted that it is difficult to know what to test on legacy code and that it is easy to spot a bug when you know what bug you're looking for
+- If we demoed it may possibly have been caught, we should be more strict with demos
+
+Positives:
+- We were fast and reactive with our fix
+- We are more aware of this now and know we should be more careful in testing and reviewing
+
+# EMU: Switch back to SECI failed because of the presence of 32-bit Open Genie components. Is it likely to occur on other muon instruments? How should we avoid?
+
+- This is now fixed
+- There may be more banana skins
+- As part of our migrations, we should test that we can go back and plan for a possible switch back
+- This was tricky to catch
+- We should have a set of standard things to test across similar instruments e.g. motors for refl and start/stop for every one
+
+
+
