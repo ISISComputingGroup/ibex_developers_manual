@@ -2,6 +2,10 @@
 
 This page contains information on how to troubleshoot some common issues with the GUI. These are issues that occur once the GUI has started, not issues in starting the GUI. A good place to start are the log files, they are stored in `...\Instrument\Apps\Client\workspace\logs`.
 
+## Build fails due to Tycho dependencies (e.g. equinox.ds not resolvable)
+
+Clear out your Tycho by moving .m2/repository to something like .m2/old_repository and .p2 to .oldp2 (.m2 and .p2 can be found in your user directory i.e. where documents are). Running build again will download Tycho again and should fix the problem.
+
 ## ModuleNotFoundError: No module named 'pywin32_bootstrap'
 
 This may be due to windows file path limits. If you are running from a deeply nested directory after build and try to access the path to python it may run over this file path limit and not be able to find it.
