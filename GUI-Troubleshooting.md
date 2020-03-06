@@ -26,6 +26,8 @@ In some cases when you receive a `Resolving Target Definition` error, this can r
 
 ## JAXB dependency issues
 
+Firstly, as of the March 2020 dependency updates, make sure you have imported the `uk.ac.stfc.isis.ibex.jaxb` project into eclipse (check out master and pull first).
+
 We have seen some cases of JAXB causing issues with the GUI building. Since Eclipse builds in parallel a race condition can arise between building CSS (which expects some XML classes in the standard library) and the rest of the GUI (which has XML outside of the standard library due to using Java 11). If you have a load of JAXB issues, try the following:
 
 1. In the project explorer delete all the plugins (Do not delete the files from disk)
