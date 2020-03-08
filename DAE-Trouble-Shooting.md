@@ -76,9 +76,11 @@ This should not occur but has when a database was missing our extra column in th
 
 CRPT (Current Run Parameter Table) memory is a large in-memory structure used to store information about the run, including histogrammed data. Data is read from the DAE into CRPT memory and then written to file, in event mode CRPT memory is where events are histogrammed on the fly during collecting to provide real-time spectra. If you get a CRPT size error, it means the product of (number of periods) * (number of spectra) * (number of time channels) is too big. If you are in histogram mode you either need to reduce one of these variables or get the CRPT size increased (icp_config.xml) but remember this is real memory that the ICP will claim at startup. If you are in event mode and get a CRPT error, it may mean you have misconfigured the time regime you plan to use for the on-the-fly rebinning e.g. you are trying to rebin events at event mode resolution not at a coarser resolution. The event mode / histogram mode choice and which time regime to use is governed by the wiring tables.
 
-### End of run script not working
+### End of run script not working or data not being copied to the archive
 
-See https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Experimental-Runs#experimental-files-not-being-archived-and-so-not-appearing-in-the-journal
+There is a known bug where starting a run at the same time as the previous run is being saved can be cause the nexus file not to be marked read-only and so not copied to the archive. A `NEXUS ERROR: ERROR:` message will appear in the log. See https://github.com/ISISComputingGroup/IBEX/issues/4977
+
+To fix this and other errors see https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Experimental-Runs#experimental-files-not-being-archived-and-so-not-appearing-in-the-journal
 
 ### No frames/beam current registered by the DAE
 
