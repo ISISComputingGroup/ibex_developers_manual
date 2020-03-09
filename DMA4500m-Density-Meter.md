@@ -33,10 +33,4 @@ From the device's point of view, the measurement results are returned by the `ge
 ## IOC diagram:
 ![Diagram of DMA4500M IOC](https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/images/dma4500m_ioc_diagram.png)
 
-## Troubleshooting
-
-### Connection
-
-The connection status is not reflected in the PVs so you need to print out the communication string to see if it is communicating.
-
 
