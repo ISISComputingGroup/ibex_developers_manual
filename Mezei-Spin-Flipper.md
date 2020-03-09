@@ -5,25 +5,19 @@
 - The python script exposes a TCP connection
 - The python script is available in `\shares\ISIS_Experimental_Controls\external_code\Mezei Neutron Spin Flipper`
 - The current labview and IBEX drivers, running on the NDX instrument control PC, use this TCP connection to talk to the flipper system
+- There is also some optimization code. This is an instrument script which runs on the NDX machine and communicates with PVs via genie_python. This is what determines the mode and parameters which the flipper will run with.
 
-See also some of the comments in https://github.com/ISISComputingGroup/IBEX/issues/3738 for further details of the hardware setup.
+See also some of the comments in https://github.com/ISISComputingGroup/IBEX/issues/3738 and https://github.com/ISISComputingGroup/IBEX/issues/4871 for further details of the hardware setup.
 
-# Gotchas
+The flipper can run in one of four different mode:
 
-The communication protocol has several gotchas:
-- There is no outbound terminator
-- The inbound terminator is `:`, but this character can also be sent as part of some messages (e.g. `getFilename`)
-- The code on the remote PC uses regular expressions to parse messages, sending it a message which it doesn't like will cause it to crash and forcibly disconnect the driver
-- Must wait for a reply between each message - Sending messages too fast without waiting for replies will cause crashes on the remote end
-- In general any exception in the communication layer on the remote end will cause a disconnect
-- Sending the controller a command to turn on the analyser if the analyser is not present will cause the remote software to crash
-- The Amplitude should be limited to 3A to avoid burning out the coils
-- Sending a positive value for delta-T will cause a remote software crash
+| Mode | Explanation |
+| --- | --- |
+| Constant current | Does what it says on the tin - a simple constant current is supplied to the magnet coils |
+| Steps | On LET, they use RRM (repetition-rate multiplication) to select multiple incident energies per neutron pulse (frame). Running the flipper in "steps" mode supplies a different current to the coils for each incident energy. |
+| Analytical | This mode varies the current to the coils as a function of time, within each neutron pulse. The equation being modelled is `I = A / (t + t0)` |
+| File | This mode uses a file as a lookup table to determine current to the flipper coils as a function of time within each neutron pulse |
 
-# Starting the emulator
-
-The emulator for the spin flipper is not a standard lewis emulator. It is a script provided by the developer which acts as a server. It can be started listening on the emulator port 57677 using this command:
-
-```
-python C:\Instrument\Apps\EPICS\support\DeviceEmulator\master\other_emulators\mezei_flipper\flipper_emulator.py --port 57677
-```
+The other variables which the flipper can take are:
+- **Power**: power to the coils on/off.
+- **Compensation**: a fixed current which is always added to whatever value the lookups provide, to compensate for changes caused by the flipper kit itself.
