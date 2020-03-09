@@ -26,7 +26,7 @@ Notes:
 The IOC logic is fairly complex and uses features not supported by RECSIM, so RECSIM has not been implemented for this device.
 
 ## Measurement Mode
-The data sent back by the device is parsed according to the current measurement mode, which is set by `$(MEASUREMENT_MODE)` macro. Currently, the only supported modes are `DENSITY_ONLY` (for measuring density, temperature and measurement validity) and `DENSITY_AND_SPECIFIC_GRAVITY` (same values plus specific gravity).
+The data sent back by the device is parsed according to the current measurement mode, which is set by `$(MEASUREMENT_MODE)` macro. Currently, the only supported modes are `DENSITY_ONLY` (for measuring density, temperature and measurement validity) and `DENSITY_AND_SPECIFIC_GRAV` (same values plus specific gravity).
 
 From the device's point of view, the measurement results are returned by the `getdata` command. The quantities to be measured and their position in the results list are determined by the active "method". Methods are defined by the user using the device's GUI, and they can include a large number of different quantities in any order specified by the user. The device does offer a `getdatahead` command to get the name and position of the quantities returned by `getdata`, but there is no easy way of parsing the output of this command to automatically make sense of the results list. For this reason, we need to manually add a measurement mode for every method used at ISIS, and users must make sure to set the `$(MEASUREMENT_MODE)` macro in IBEX to match the method they're using.
 
