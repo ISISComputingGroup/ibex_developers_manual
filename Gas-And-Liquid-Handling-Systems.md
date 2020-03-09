@@ -12,5 +12,6 @@ System for moving gasses and liquids on the beam line
 - [WPI SP2XX Syringe Pump](WPI-SP2XX-Syringe-Pump)
 - [MKS PR4000B](MKS_PR4000B)
 - [Edwards TIC](Edwards-Turbo-Instrument-Controller)
+- [DMA4500m Density Meter](DMA4500m-Density-Meter)
 
 
