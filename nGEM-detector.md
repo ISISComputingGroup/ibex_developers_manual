@@ -14,11 +14,11 @@ The is an nGEM.opi file, this has just need installed as a device screen.
 
 INES has some simple python commands to set the START/STOP pvs for the detector. The detector IOC picks up the run number for ines to add to data files as its prefix is also IN:INES  
 
-If the detector is move to another instrument with the same laptop then:
+If the detector is moved to another instrument with the same laptop then:
 
 * edit config_env_base.bat as above to set new instrument name
 * edit globals.txt for access security of the new NDX
 * edit `copycmd.bat` to set new location for robocopy of data files
-* create share / map drive on destination computer for above copycmd 
+* create share/map drive on destination computer for above `copycmd.bat`
 
      
