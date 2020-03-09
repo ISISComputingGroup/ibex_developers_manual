@@ -25,10 +25,10 @@ James | Feb '20
 Chris C | March '20
 Alexandru | April ' 20
 Alistair | May'20
-Kathryn | June '20
+John | June '20
 Freddie | July '20
-Aaron | Aug'20
-John | Sep '20
+Kathryn | Aug '20
+Aaron | Sep '20
 Dom | Oct '20
 Chris MS | Dec '20
 Tom | Jan '21
