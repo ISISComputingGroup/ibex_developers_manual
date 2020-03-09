@@ -9,8 +9,8 @@ Code chats occur on a semi-regular monthly basis within the group at ISIS. Altho
 Topic | Presenter | Date
 ----- | --------- | ----
 NeXus | Freddie | 11th March '20
-System Testing With Squish | Dom | 8th April '20
-? | Cosimo | May '20
+TBC | Cosimo | 7th April '20
+System Testing With Squish | Dom | May '20
 How to Read ISIS LabVIEW Drivers | Kathryn Baker | June '20
 ISISICP (and Kafka?) | Freddie | Jul '20
 The HIFI Cryomag | Chris C/Kathryn | Aug'20
