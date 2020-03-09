@@ -2,7 +2,13 @@
 
 This is not a fully supported device, this was to allow a visiting scientist to run their IOC. Their code is [available]( https://bitbucket.org/europeanspallationsource/m-epics-dma4500m/src/master/).
 
-It is a densitometer which currently measures density and temperature. 
+It is a densitometer which currently measures density and temperature.
+
+## Documentation
+Documentation is available for the densiometer at `\\ISIS\shares\ISIS_Experimental_Controls\Manuals\AntonPaar__DMA4500`.
+
+#### IOC diagram:
+![Diagram of DMA4500M IOC](https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/images/dma4500m_ioc_diagram.png)
 
 ## Troubleshooting
 
