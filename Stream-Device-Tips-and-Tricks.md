@@ -10,6 +10,33 @@ If you have a waveform record of `FTVL` `STRING`, then you have to be careful ab
 
 Instead of using `%s` as your formatter, you need to use a character set, e.g. `%[A-Z0-9a-z.+-]`, which does not include the separator you are splitting on. If you use `%s`, then the whole string will be read into the zeroth element of the array, and won't be split on the separator.
 
+## Writing a waveform (e.g. long strings) to a device
+
+Writing waveforms does not not work directly in streamdevice. Instead you need to add a level of indirection and use record redirection in a protocol file to explicitly send the data in the waveform:
+
+Example db:
+
+```
+record(waveform, "$(P)MYLONGSTRING:SP") {
+    field(FTVL, "CHAR")
+    field(NELM, "1024")
+    field(FLNK, "$(P)MYLONGSTRING:SP:_SEND")
+}
+
+record(bo, "$(P)MYLONGSTRING:SP:_SEND") {
+    field(OUT, "@Mezflipr.proto setThing($(P)) $(PORT)")
+    field(DTYP, "stream")
+}
+```
+
+With corresponding protocol file:
+
+```
+setThing {
+    out "thing=%(\$1MYLONGSTRING:SP)s";
+}
+```
+
 ### Example waveform of strings record and protocol file from Keithley 2001
 
 **Record**
