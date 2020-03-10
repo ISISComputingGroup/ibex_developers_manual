@@ -5,7 +5,7 @@
 - The python script exposes a TCP connection
 - The python script is available in `\shares\ISIS_Experimental_Controls\external_code\Mezei Neutron Spin Flipper`
 - The current labview and IBEX drivers, running on the NDX instrument control PC, use this TCP connection to talk to the flipper system
-- There is also some optimization code. This is an instrument script which runs on the NDX machine and communicates with PVs via genie_python. This is what determines the mode and parameters which the flipper will run with.
+- There is also some optimization code. This is an instrument script which runs on the NDX machine and communicates with PVs via genie_python. This is what determines the mode and parameters which the flipper will run with. Therefore these modes and parameters are not expected to be set manually.
 
 See also some of the comments in https://github.com/ISISComputingGroup/IBEX/issues/3738 and https://github.com/ISISComputingGroup/IBEX/issues/4871 for further details of the hardware setup.
 
