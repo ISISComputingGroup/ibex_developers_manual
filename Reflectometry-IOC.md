@@ -52,10 +52,12 @@ This is controversial but is signed off as per [ticket 4307](https://github.com/
 
 The reflectometry server provides feedback on its status to the user at 3 different levels:
 - **Error Log:** At this level, we just collect error messages in the reflectometry server and expose them via a PV in addition to writing them to the log file. In order to do this, we should conventionally use `SERVER_STATUS_MANAGER.update_error_log(<message>)` in place of `logger.error(<message>)`. The PV with the list of errors is then displayed in a tab on the reflectometry front panel OPI.
-- **Problems:** These are slightly higher level and are comprised of a type of issue, a severity and a list of sources that are reporting this issue, e.g. 
+- **Problems:** These are slightly higher level and intended to be fairly general just as an indication of the area where a problem occurred. For more detailed information, the user should refer to the error log. Problems are comprised of a type of issue, a severity and a list of sources that are reporting it. Examples:
     - Problem: Configuration is invalid; Severity: Major; Source(s): Configuration
     - Problem: Velocity cannot be restored; Severity: Minor; Source(s): MTR0304, MTR0305
 - **Status:** This is the overall server status. The status is derived from the problems (the highest error level is the error level of the server)
+
+The intention of this system is to provide useful feedback to the user in case things go wrong **in addition to** handling exceptions programmatically in a sensible way as one would usually.
 
 The status, log and active problems get cleared every time a "move" is issued. This keeps the log PV size reasonable and the reported status up to date. E.g. if an error was thrown because of a disconnected motor IOC, and the motor has since been reconnected, the errors should be cleared on a successful move. If there are any persistent problems, they will just be thrown again.
 
