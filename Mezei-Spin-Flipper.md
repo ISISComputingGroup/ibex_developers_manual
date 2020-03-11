@@ -1,6 +1,6 @@
 # Hardware
 
-- There is a python script **running on a separate PC** which controls some DAQ units
+- There is a python script **running on a separate PC** (NDW1889) which controls some DAQ units
 - This python script reads the timing pulse (this can come from the synchrotron or a chopper) and controls the flipper
 - The python script exposes a TCP connection
 - The python script is available in `\shares\ISIS_Experimental_Controls\external_code\Mezei Neutron Spin Flipper`
