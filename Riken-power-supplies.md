@@ -86,8 +86,7 @@ RKNPS_01__CHAIN1_FWI2=9999/500
 Check the comms cable - it can become loose. It is inside the danfysik unit, you will need the power supplies section to take the front off.
 
 ### Individual PSU is talking but does not accept setpoints
-Check whether the `.DISP` field is set on records that do not accept values written to them. If yes, it is likely that the instrument thinks it is in changeover (this is the default assumption e.g. if the DAQmx box is not talking to the IOC).
-If you want to look at the physical DAQmx box, there are some pictures on [sharepoint](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Forms/AllItems.aspx?RootFolder=%2Fisis%2Fcomputing%2FICPdiscussions%2FRIKEN%20FE&FolderCTID=0x01200027AD8F05966A2748B3B04C98BB5B442B&View={F2C33C51-70E6-4343-B937-2C59A2568306}&InitialTabId=Ribbon%2EDocument&VisibilityContext=WSSTabPersistence) that show what the DAQmx looks like and where it is located at the RIKEN beamline.
+Check whether the `.DISP` field is set on records that do not accept values written to them. If yes, it is likely that the instrument thinks it is in changeover (this is the default assumption e.g. if the DAQmx box is not talking to the IOC). You may have to power cycle the DAQmx. There are some pictures on [sharepoint](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Forms/AllItems.aspx?RootFolder=%2Fisis%2Fcomputing%2FICPdiscussions%2FRIKEN%20FE&FolderCTID=0x01200027AD8F05966A2748B3B04C98BB5B442B&View={F2C33C51-70E6-4343-B937-2C59A2568306}&InitialTabId=Ribbon%2EDocument&VisibilityContext=WSSTabPersistence) that show what the DAQmx looks like and where it is located on the RIKEN beamline.
 
 ### Individual PSU won't talk sensibly / I get interleaved replies / I get delayed replies
 
