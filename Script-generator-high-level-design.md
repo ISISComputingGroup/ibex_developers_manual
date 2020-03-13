@@ -66,6 +66,8 @@ We would probably supply some default `ScriptDefinition`s, but instrument scient
 
 Currently, a default value has to be provided for every argument of `parameters_valid` and `run` due to the way we are passing kwargs. The parameters that are passed are all currently strings and must be converted to whatever type the user wants. We are providing a decorator `cast_parameters_to` to allow scientists to easily cast parameters and also define their own converters (see example `mytype` above). The custom converters means they can handle edge cases they are expecting from users.
 
+The default values are used by the script generator to populate initial values for an action. However, this does not rely on the presence of a default value. In the absence of a default value the default is set to the name of the parameter.
+
 # User interface
 
 There are two main types of user interfaces that support slightly different workflows. We have decided that we will eventually need to support both, but as part of the MVP we should only implement the table-based view.
