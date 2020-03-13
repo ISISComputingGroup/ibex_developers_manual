@@ -93,6 +93,7 @@ Note:
 - configuration_path: this is the path of the configuration file within the git repository. Allowing us to group then by instrument if this becomes useful.
 - configuration_file_git_hash: this is the git hash at the time the config file is used
 - `configuration_content` contains the actual content of the config file that was used when saving parameters
+
 This is to make sure that the configuration that was used to generate JSON file is the same configuration that is being used to load the data from the JSON file. We want the JSON in a separate file so that:
 * It's language independent
 * The user is less likely to modify it
