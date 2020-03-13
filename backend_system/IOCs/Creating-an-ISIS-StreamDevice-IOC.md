@@ -156,7 +156,7 @@ $(APPNAME)_DBD += drvAsynIPPort.dbd
 Likewise, the LIBs need to be added too:
 ```
 ## ISIS standard libraries ##
-$(APPNAME)_LIBS += seqDev seq pv
+$(APPNAME)_LIBS += seq pv
 $(APPNAME)_LIBS += devIocStats
 $(APPNAME)_LIBS += pvdump easySQLite sqlite
 $(APPNAME)_LIBS += caPutLog
