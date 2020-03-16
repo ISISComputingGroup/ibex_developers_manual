@@ -6,7 +6,8 @@ The individual pieces of equipment are:
 
 - Rhode & Schwartz (ZNB20?) Vector Network Analyser
 - Hirst (GM08?) portable Hall probe
-- Danfysik 858 PSU (when used on POLREF, Danfysik 8000(?) when offline)
+- Danfysik 858 PSU (when used on POLREF, Danfysik 8000(?) when offline) connected to...
+- GMW conventional electromagnet (not cryogenic, no direct control required)
 
 The current solution for using the FMR setup on the beamline, is that the control VI is "wrapped" by an LVDCOM IOC to isolate the users' code and provide remote access from the POLREF control machine.  Modifications had to be made to this VI to enable it to be run continuously and make the front panel item names compatible with LVDCOM (remove trailing spaces and scientific notation values e.g. `Start Frequency (300.0e3) `).  The equipment PC runs a "Mini-Inst" to enable this LVDCOM IOC to function.
 
