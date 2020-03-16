@@ -4,7 +4,7 @@ This is a small collection of devices which internal users of ISIS are testing o
 
 The individual pieces of equipment are:
 
-- Rhode & Schwartz (ZNB20?) Vector Network Analyser
+- Rohde & Schwartz (ZNB20?) Vector Network Analyser
 - Hirst (GM08?) portable Hall probe
 - Danfysik 858 PSU (when used on POLREF, Danfysik 8000(?) when offline) connected to...
 - GMW conventional electromagnet (not cryogenic, no direct control required)
