@@ -71,16 +71,16 @@ The format of the chosen JSON file is as follows:
 	"script_definition_content": "",
 	"actions": [{
 		"action_name": "",
-		"parameter": {
+		"parameter": [{
 			"param1": "value",
 			"param2": "value"
-		}
+		}]
 	}, {
 		"action_name": "",
-		"parameter": {
+		"parameter": [{
 			"param1": "value",
 			"param2": "value"
-		}
+		}]
 	}]
 }
 
