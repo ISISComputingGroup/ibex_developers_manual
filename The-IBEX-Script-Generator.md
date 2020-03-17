@@ -62,26 +62,33 @@ The format of the chosen JSON file is as follows:
 
 ```
 {
-        "version_JSON_format": "",
-	"script_generator_version": "",
-	"date_and_time": "",
-	"script_definition_file_path": "",
-	"script_definition_file_git_hash": "",
-	"genie_python_version": "",
-	"script_definition_content": "",
-	"actions": [{
-		"action_name": "",
-		"parameter": [{
-			"param1": "value",
-			"param2": "value"
-		}]
-	}, {
-		"action_name": "",
-		"parameter": [{
-			"param1": "value",
-			"param2": "value"
-		}]
-	}]
+  "version_JSON_format": "",
+  "script_generator_version": "",
+  "date_and_time": "",
+  "script_definition_file_path": "",
+  "script_definition_file_git_hash": "",
+  "genie_python_version": "",
+  "script_definition_content": "",
+  "actions": [
+    {
+      "action_name": "",
+      "parameter": [
+        {
+          "param1": "value",
+          "param2": "value"
+        }
+      ]
+    },
+    {
+      "action_name": "",
+      "parameter": [
+        {
+          "param1": "value",
+          "param2": "value"
+        }
+      ]
+    }
+  ]
 }
 
 ```
