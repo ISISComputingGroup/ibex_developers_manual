@@ -62,13 +62,13 @@ The format of the chosen JSON file is as follows:
 
 ```
 {
-"version": "",
+        "version_JSON_format": "",
 	"script_generator_version": "",
-	"dateAndTime": "",
-	"configuration_path": "",
-	"configuration_file_git_hash": "",
+	"date_and_time": "",
+	"script_definition_file_path": "",
+	"script_definition_file_git_hash": "",
 	"genie_python_version": "",
-	"configuration_content": "",
+	"script_definition_content": "",
 	"actions": [{
 		"action_name": "",
 		"parameter": {
