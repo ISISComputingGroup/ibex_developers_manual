@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [Partially Supported Devices](Partially-Supported-Devices) > [Ferro-Magnetic Resonance equipment (FMR)](Ferro-Magnetic_Resonance_equipment)
+
 ## Ferro-Magnetic Resonance equipment (FMR)
 
 This is a small collection of devices which internal users of ISIS are testing offline, but have used on the POLREF beamline.  They have written a control program in LabVIEW which runs on a separate machine and communicates with these devices and handles the setpoints, scan/sweep procedure and data file generation.
