@@ -64,8 +64,7 @@ The format of the chosen JSON file is as follows:
 {
 "version": "",
 	"script_generator_version": "",
-	"date": "",
-	"time": "",
+	"dateAndTime": "",
 	"configuration_path": "",
 	"configuration_file_git_hash": "",
 	"genie_python_version": "",
