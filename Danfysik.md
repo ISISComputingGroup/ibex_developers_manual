@@ -50,6 +50,19 @@ To give an example, for an uncalibrated Danfysik model 8500:
 - `factor_write_i` is `1000`
 - `factor_read_i` is `0.01` (1/1000 * 10)
 
+## Auto On/Off
+
+As the name suggests, this setting in the Danfysik IOC controls whether the device should automatically power itself on and off. If auto on/off is disabled, the device should stay in whatever state it is in unless explicitly instructed otherwise. If auto on/off is enabled, the device:
+- Should power off if both:
+    - The setpoint readback value is within `OFF_TOLERANCE` of 0 
+    - The readback value is stable
+- Should power on if: 
+    - The setpoint readback value is greater than 0 + `OFF_TOLERANCE`
+
+Auto on/off is part of the workflow for muon instruments, but it is not desired on neutron instruments using Danfysiks and can in fact turn the power supplies off in unsafe ways if configured badly. Thus it should always be switched off on neutron instruments.
+
+**Note:** Auto on/off gets automatically enabled when using the "sweep to zero and turn off" functionality.
+
 ## LOQ/SANS2D Goudsmit magnet
 
 - This magnet is driven by a 750A power supply, but can only actually take ~600A. The scientists have asked us to apply a limit of 738666 parts per million on this Danfysik (which corresponds to a current of 554A)
