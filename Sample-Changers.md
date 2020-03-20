@@ -12,4 +12,4 @@ There a couple of specific ISIS built rotating sample changers that are mostly u
 
 Occasionally a sample can fall down below the beam, called a 'dropped' sample. If the device drops a sample it will tell you that it has done so as it moves on to the next sample. There is a retrieve command to collect the sample again, IBEX will attempt to retrieve the sample (as well as perform some other error checking) using the following state machine:
 
-![state machine](images/Rotating_sample_changer.png)
+![state machine](https://raw.githubusercontent.com/ISISComputingGroup/ibex_developers_manual/master/images/Rotating_sample_changer.png)
