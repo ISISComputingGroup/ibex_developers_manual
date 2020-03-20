@@ -55,7 +55,8 @@ To give an example, for an uncalibrated Danfysik model 8500:
 As the name suggests, this setting in the Danfysik IOC controls whether the device should automatically power itself on and off. If auto on/off is disabled, the device should stay in whatever state it is in unless explicitly instructed otherwise. If auto on/off is enabled, the device:
 - Should power off if both:
     - The setpoint readback value is within `OFF_TOLERANCE` of 0 
-    - The readback value is stable
+    - The readback value is stable (i.e. has held its value for
+at least 5 seconds)
 - Should power on if: 
     - The setpoint readback value is greater than 0 + `OFF_TOLERANCE`
 
