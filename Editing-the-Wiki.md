@@ -29,7 +29,7 @@ Create new diagram
 
 In wiki add to markdown using:
 
-    ![alternative text](images/<image name>.png)
+    ![alternative text](https://raw.githubusercontent.com/ISISComputingGroup/ibex_developers_manual/master/images/<image name>.png)
 
 To edit this just open that png in `draw.io`.
 
@@ -45,7 +45,7 @@ git push
 
 You can then add the image in markdown using the URL `images/using_the_wiki/test.png`:
 
-    ![alternative text](images/using_the_wiki/test.png)
+    ![alternative text](https://raw.githubusercontent.com/ISISComputingGroup/ibex_developers_manual/master/images/using_the_wiki/test.png)
 
 ### Adding or Editing Files
 
