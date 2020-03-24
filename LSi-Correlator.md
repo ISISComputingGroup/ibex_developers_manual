@@ -26,6 +26,12 @@ The vendor-supplied example script, `ExampleMainCorrelator.py`, was modified to 
 **Notes:**
  - The second argument of the `LSICorrelator` object is the firmware revision on the device. This can be found from the LSi correlator vendor software.
 
+### Twisted and python 3.8
+
+Twisted does not yet support python 3.8, so can not be run with genie python 6 and above. Until the dependency issue is resolved the correlator will need to be run in a version of genie_python bundled with python <= 2.7. Autobahn and twisted will need to be added in the `dependencies.txt` of the distribution before compiling it. 
+
+It was decided by John, Tom, Alistair and Dom that before the next release we would check if twisted was compatible with python 3.8. This has been added to the list of tasks. If we find twisted is now compatible with the correlator then these dependencies can be added to genie_python as normal. If twisted still does not work, then we need to consider deploying the correlator IOC with its own python distribution as above or rolling back all of genie_python to an earlier version of python which is supported by twisted.
+
 ## The EPICS IOC
 The EPICS IOC is based on PCASpy to create and interact with PVs over channel access. A major function of the IOC is to convert the values taken in from channel access into values/objects which the LSI python API can interpret. This IOC is only compatible with Python 3+.
 
