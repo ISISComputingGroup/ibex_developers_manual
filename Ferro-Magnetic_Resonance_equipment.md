@@ -11,9 +11,9 @@ The individual pieces of equipment are:
 - Danfysik 858 PSU (when used on POLREF, Danfysik 8000(?) when offline) connected to...
 - GMW conventional electromagnet (not cryogenic, no direct control required)
 
-The current solution for using the FMR setup on the beamline, is that the control VI is "wrapped" by an LVDCOM IOC to isolate the users' code and provide remote access from the POLREF control machine.  Modifications had to be made to this VI to enable it to be run continuously and make the front panel item names compatible with LVDCOM (remove trailing spaces and scientific notation values e.g. `Start Frequency (300.0e3) `).  The equipment PC runs a "Mini-Inst" to enable this LVDCOM IOC to function.
+The current solution for using the FMR setup on the beamline, is that the control VI is "wrapped" by an LVDCOM IOC to isolate the users' code and provide remote control from the POLREF control machine.  Modifications had to be made to this VI to enable it to be run continuously and make the front panel item names compatible with LVDCOM (remove trailing spaces and scientific notation values e.g. `Start Frequency (300.0e3) `).  The equipment PC runs a "Mini-Inst" to enable this LVDCOM IOC to function.
 
-A bespoke CALAB VI was written and runs on the POLREF control machine.  This enables communication with the FMR equipment IOC and provides scripting and logging capabilities in the SECI system.
+A bespoke CALAB-based VI was written and runs on the POLREF control machine.  This enables communication with the FMR equipment IOC via CA and provides scripting and logging capabilities in the SECI system.
 
 ### Future Development
 
