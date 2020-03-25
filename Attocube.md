@@ -2,7 +2,7 @@
 
 # The Controller
 
-The Attocube ANC350 Piezo controller is currently supported in IBEX. The controller can be communicated with over USB or over Ethernet. IBEX uses the Ethernet communications.
+The Attocube ANC350 Piezo controller was supported in IBEX but is currently mothballed as it's not actively used on any beamlines. Code is of course in git, see https://github.com/ISISComputingGroup/IBEX/issues/4488. The controller can be communicated with over USB or over Ethernet. IBEX uses the Ethernet communications. 
 
 ## Enabling Ethernet
 
