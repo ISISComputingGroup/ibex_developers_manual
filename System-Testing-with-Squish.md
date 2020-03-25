@@ -183,4 +183,9 @@ Solution is to Rename `C:\Squish\python\msvcr90.dll` to `msvcr90_off.dll`, which
 
 Attempt to change your tcb file to a regular neutron tcb file and begin a run. You should see it beginning and then return to set up with the log message: `invalid tcb start - must be 0 not 5.00000 ns`. See the [DAE troubleshooting](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/DAE-Trouble-Shooting) "invalid tcb start" section.
 
-### Sq
+### Squish Fails to Start the Application
+
+Look at the `Runner/Server` Log tab see if you can diagnose the problem. 
+
+* `Unrecognized option: --add-reads=javafx.base=ALL-UNNAMED` probably running it through java8 it is on your path too high up. 
+    - I fixed this by copying the java from the shares into the directory from which it runs so that it picks this up as the default when it runs. E.g. copy `...\Kits$\CompGroup\ICP\ibex_client_jre` to `C:\Instrument\Dev\ibex_gui\built_client\jre` (note the name change to jre)
