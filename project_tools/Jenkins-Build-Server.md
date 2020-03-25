@@ -48,3 +48,4 @@ This should now build.
 ## Other
 
 * [Jenkins trouble shooting](Jenkins-Trouble-Shooting)
+* Jenkins builds use the office 365 connector plugin (https://github.com/jenkinsci/office-365-connector-plugin) to update the teams channel with build information. Examples of how this can be configured can be found in the Jenkinsfiles of the top-level EPICS repository and the GUI repository.
