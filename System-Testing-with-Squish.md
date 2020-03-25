@@ -188,4 +188,4 @@ Attempt to change your tcb file to a regular neutron tcb file and begin a run. Y
 Look at the `Runner/Server` Log tab see if you can diagnose the problem. 
 
 * `Unrecognized option: --add-reads=javafx.base=ALL-UNNAMED` probably running it through java8 it is on your path too high up. 
-    - I fixed this by copying the java from the shares into the directory from which it runs so that it picks this up as the default when it runs. E.g. copy `...\Kits$\CompGroup\ICP\ibex_client_jre` to `C:\Instrument\Dev\ibex_gui\built_client\jre` (note the name change to jre)
+    - I fixed this by copying the java from the shares into the directory from which it runs so that it picks this up as the default when it runs. E.g. copy `...\Kits$\CompGroup\ICP\ibex_client_jre` to `C:\Instrument\Dev\ibex_gui\built_client\jre` (note the name change to jre). Running `build.bat` should now do that for you.
