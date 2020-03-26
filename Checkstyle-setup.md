@@ -3,7 +3,7 @@
 Check style is set up by:
 
 1. In eclipse click Windows->Prefences
-1. Select Checkstyle
+1. Select Checkstyle (if this option is not available you will need to install the checkstyle plugin through `Window->Eclipse Marketplace` and search for checkstyle
 1. Click New (if you are updating the config select propeties)
 1. Set the following
     1. File: External configuration file
