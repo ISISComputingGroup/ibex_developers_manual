@@ -1,4 +1,4 @@
-> [Wiki](Home) > [The GUI](The-GUI) > Eclipse
+> [Wiki](Home) > [The GUI](The-GUI) > [Eclipse](GUI-Eclipse)
 
 * [Common Eclipse Tasks](Common-Eclipse-Tasks)
 
@@ -11,3 +11,5 @@
 * [Logging](Eclipse-logging)
 
 * [Preferences](Eclipse-preferences)
+
+* [Check Style setup](Checkstyle-setup)
