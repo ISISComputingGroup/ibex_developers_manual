@@ -43,3 +43,4 @@ Try to make sure all tickets by the end of the day are in a good state.
 - `genie_python` unit test coverage
 - `dbchecker` vs `dbunitchecker` vs `dbchanges`
 - Python 3 Compatibility
+- User manual updates e.g. https://github.com/ISISComputingGroup/IBEX/issues/2763
