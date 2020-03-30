@@ -552,7 +552,7 @@ Any request for a PV starting HOST:user will then be received by the gateway and
 
 See the [EPICS Application Developer's Guide](http://www.aps.anl.gov/epics/base/R3-15/0-docs/AppDevGuide/node9.html#SECTION00910000000000000000) for more information.
 
-All examples assume you are using the [wiki:CreateSimpleIOC Simple IOC] or something similar.
+All examples assume you are using the [Simple IOC](#creating-a-simple-ioc) or something similar.
 
 ## Simple Example ##
 
