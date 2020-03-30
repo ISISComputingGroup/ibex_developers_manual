@@ -29,7 +29,7 @@ genie_python gets built and put at `\\isis\inst$\Kits$\CompGroup\ICP\Client\geni
 
 ## Setting up a Pipeline Build
 
-Pipeline builds are created by adding a Jenkinsfile to you root directory and then pointing Jenkins at your repository.
+Pipeline builds are created by adding a Jenkins file to you root directory and then pointing Jenkins at your repository.
 
 ### Jenkins File
 
@@ -48,4 +48,4 @@ This should now build.
 ## Other
 
 * [Jenkins trouble shooting](Jenkins-Trouble-Shooting)
-* Jenkins builds use the office 365 connector plugin (https://github.com/jenkinsci/office-365-connector-plugin) to update the teams channel with build information. Examples of how this can be configured can be found in the Jenkinsfiles of the top-level EPICS repository and the GUI repository.
+* Jenkins builds use the office 365 connector plugin (https://github.com/jenkinsci/office-365-connector-plugin) to update the teams channel with build information. Examples of how this can be configured can be found in the Jenkins files of the top-level EPICS repository and the GUI repository.
