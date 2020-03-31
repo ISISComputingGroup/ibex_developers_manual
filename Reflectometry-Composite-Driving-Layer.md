@@ -45,8 +45,25 @@ or
 ```
 AngleDriver( ... , synchronised=False)
 ```
+### Out Of Beam Positions
 
-### Engineering Offset
+A `DisplacementDriver` (i.e. a driver looking at a translation axis) can specify out-of-beam positions, which define where a component should be parked along its movement axis if it is set to be "Out Of Beam" via an `InBeamParameter`. A driver can have an arbitrary number of out-of-beam positions. Which one is chosen depends on where the current beam path intersects with the movement axis of this component. Since in some instances, the beam can intersect with the entire range of a component's movement axis, this is done to ensure that component does not block the beam while parked.
+
+Out-of-beam positions are defined via the `OutOfBeamPosition` class. Example:
+```
+park_high = OutOfBeamPosition(position=20)
+park_low = OutOfBeamPosition(position=-10, threshold=15, tolerance=0.5)
+driver = DisplacementDriver(comp, out_of_beam_positions=[park_high, park_low])
+```
+- `position`:  the position along the movement axis where this component should be parked
+- `threshold`: if the interception between the beam path and the movement axis is _above this height_, this `position` should be chosen as parked position. If this is `None`, this signifies that this is the _only_, or _default out-of-beam position_, i.e. the out-of-beam position to use if no other threshold is met. (defaults to `None`)
+- `tolerance`: the tolerance around `position` at which this component is still considered "out of beam" (defaults to `1`)
+
+So moving `comp` out of the beam while the beam intersects the axis at a height below 15 will move it to `park_high` = 20. If it is moved out of beam  while the intersection is above 15 (let's say for a high theta angle), it will instead move to `park_low` = -10, in order to not block the beam while parked.
+
+If no out-of-beam positions are defined for a driver, it is always considered as being "in beam".
+
+## Engineering Offset
 
 Engineering offsets correct the value sent to a PV because of inaccuracies in the engineering. For instance, if we set theta to 0.3 we will be setting the height of the jaw so that the jaws centre is in the middle of the beam. However, because of needing to tilt the jaws and the centre of rotation not being in the middle of the jaws, we need to add a correction to the geometry of 0.1mm. The best place to do this is at the point at which the value is sent to the driver. The form of the corrections can multiple but we will start by catering for:
 
@@ -62,13 +79,13 @@ The configuration for this is to add an engineering offset object to the IOCDriv
 1. On initialisation to convert PV to set-point value to be initialised
     1. This is hard because to calculate the value you need a beamline parameter value which is not yet set because it is being calculated. To avoid this we introduce the constraint that engineering corrections may only be functions of an autosaved beamline parameter or the motor position/PV on which the driver is based.
 
-## Types of Engineering Corrections
+### Types of Engineering Corrections
 
-### No Correction
+#### No Correction
 
 Doesn't perform any correction. Is useful when you want to define a correction but have it do nothing.
 
-### Constant Correction
+#### Constant Correction
 
 Add a constant on to the value, probably better to redefine zero on the axis. Add this into the configuration file to the driver:
 
@@ -81,7 +98,7 @@ add_driver(DisplacementDriver(
 
 where value is the amount you want to add onto the axis when setting a set point.
 
-### Interpolated Data Correction
+#### Interpolated Data Correction
 
 This will perform a correction based on a table loaded from disc. It will perform linear interpolation between the points in the datafile to derive the correction. Outside of the table of data no correction is set. To use this add to the configuration:
 
@@ -137,7 +154,7 @@ At point:
 
 The algorithm used is the linear version of [griddata from `scipy`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.griddata.html).
 
-### User Function Engineering Correction
+#### User Function Engineering Correction
 
 To apply a user function engineering correction yo an axis we must first define the function in the configuration file. In this example case, we have a function which depends on a single beamline parameter, `theta`:
 
@@ -171,7 +188,7 @@ The `UserFunctionCorrection` takes:
 - `user_correction_function`: reference to the function to use
 - beamline parameters: 0 or more beamline parameters whose set point readback values should be passed to the `user_correction_function`
 
-### User Specified
+#### User Specified
 
 If you wish to write your own `engineering_correction` you must:
 
