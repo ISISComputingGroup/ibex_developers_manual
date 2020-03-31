@@ -71,7 +71,7 @@ SRC_DIRS += #path to your tests directory
 
 ## Running your tests
 
-Include a copy of the following batch file in your top directory to run all your tests. It will create XML reports on your tests in `test-reports` directory at the top level. Replace `IOCNAME` by the name of your IOC.
+The tests are run from make It will create XML reports on your tests in `test-reports` directory at the top level. Replace `IOCNAME` by the name of your IOC.
 
 ```batch
 :: Run all tests
@@ -88,12 +88,23 @@ exit /B %Tests_failed%
 
 ## Adding a target to run tests
 
-To run the tests by `make test` add the following to the top level Makefile of the support module
+To run the tests use `make test`. It will create XML reports on your tests in `test-reports` directory at the top level. 
+Add the following to the top level Makefile of the support module replacing `<IOCNAME>` by the name of your IOC.
+
+To just below `# Add any additional dependency rules here:`
+
+```
+TEST_RUNNER = $(TOP)/<IOCName>App/src/O.$(EPICS_HOST_ARCH)/runner
+```
+
+then
 
 ```Makefile
 .PHONY: test
 test:
-	run_tests.bat
+	run_tests.bat 	ifneq ($(wildcard $(TEST_RUNNER)*),)
+	$(TEST_RUNNER) --gtest_output=xml:$(TOP)/test-reports/TEST-<IOCName>.xml
+endif
 ```
 
 ## Adding tests to Jenkins
