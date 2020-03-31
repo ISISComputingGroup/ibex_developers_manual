@@ -4,7 +4,9 @@ Check style is set up by:
 
 1. In eclipse click Windows->Preferences
 1. Select Checkstyle (if this option is not available you will need to install the checkstyle plugin through `Help->Eclipse Marketplace` and search for checkstyle
-1. Click New (if you are updating the config select properties)
+1. Go to `Window > Preferences > Checkstyle`
+1. If you have an existing "IBEX Checks" entry using an internal configuration, remove it. If it complains about the configuration currently being used in projects, you may have to remove and re-import all projects before you remove this config.
+1. Add a new check configuration by clicking `New...` next to the table
 1. Set the following
     1. File: External configuration file
     1. Name: IBEX Checks
