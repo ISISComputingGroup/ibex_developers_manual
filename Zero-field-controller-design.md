@@ -161,7 +161,7 @@ Flowchart of procedure:
 
 1. The magnetometer values should be checked for overload, if so the feedback is (temporarily) disabled.
 1. If in Auto mode and the field is “good” it should then calculate the new currents based on the previous current setpoints, the corrected field and the setpoint. Then check the currents against the limits and if so, clamp the current to the limit value and put the PV into alarm state. It then writes these to the Kepcos (regardless of limit status).
-1. In Auto mode the field is declared “stable” if the corrected field is within some value (e.g. 10mG: perhaps set as a macro) of the setpoint, otherwise “Changing”. (PV for this status)
+1. If in Auto mode, the "AT_SETPOINT" PV is set to "Yes" if the corrected field is within some value (e.g. 10mG: perhaps set as a macro) of the setpoint, otherwise “No”. If in manual mode, the "AT_SETPOINT" PV is always set to "N/A".
 1. In either mode and regardless of any alarms above, it then reads back the actual output current and voltage from the Kepcos and fills more PVs. (Option – put the output current PVs into alarm if the actual current is not close to the setpoint.  This would best be done in the Kepco IOC, if not already.)
 1. Careful consideration should be given to the case when a PV is unavailable or in alarm.  i.e. what should the loop do when data required for a decision isn't available?
 
