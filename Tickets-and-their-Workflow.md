@@ -59,7 +59,7 @@ Some work is very small and doesn't warrant a full ticket and process e.g. fix a
 * create a PR
 * post PR into the flash-reviews Teams channel
 * we are using emojis to indicate status and avoid creating a new line that a reply/comment would. We don't want tickets disappearing off the top of the screen. The emojis to use are:  
-  * when somebody is looking at it, they add a "frown"
+  * when somebody is looking at it, they add a "surprised" emoji
   * if you are done and merged, add a "happy"
   * if it is not a flash review and needs further changes, comment on github ticket and add a "sad" face
     
