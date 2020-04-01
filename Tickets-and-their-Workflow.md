@@ -53,6 +53,16 @@ Developers should pick up a ticket as close to the top of the Ready column as th
 
 Sometimes you may want to split a larger ticket into smaller tickets to do this see [Umbrella Tickets](Umbrella-Tickets).
 
+## Flash reviews
+
+Some work is very small and doesn't warrant a full ticket and process e.g. fix a code comment, fix trivial Makefile error stopping build working. Such changes should have no potential side effects and take ~5 minutes to review. The procedure is:
+* create a PR
+* post PR into the flash-reviews Teams channel
+* we are using emojis to indicate status and avoid creating a new line that a reply/comment would. We don't want tickets disappearing off the top of the screen. The emojis to use are:  
+  * when somebody is looking at it, they add a "frown"
+  * if you are done and merged, add a "happy"
+  * if it is not a flash review and needs further changes, comment on github ticket and add a "sad" face
+    
 ## Adding tickets Mid Sprint
 
 If you are adding a ticket to the ready column mid-sprint. Please make sure it is added in priority order with estimates attached and unless there is a good reason clear it at standup.
