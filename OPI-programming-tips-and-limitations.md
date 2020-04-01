@@ -129,3 +129,36 @@ Seven utility classes are provided, but there seems to be no way to get to some 
 * PVUtil
 * !ScriptUtil
 * !WidgetUtil
+
+# Performance limitations
+
+We have found that OPIs perform poorly on initial opening once you get past a few hundred widgets being rendered simultaneously.
+
+At the time of writing, here are some representative numbers of widgets on a variety of OPIs. Note that widgets in tabs which are not shown don't count as they don't get rendered immediately.
+
+- Eurotherm: 58 widgets
+- ICE fridge (with complex schematic): 92 widgets
+- Reflectometry front panel: 135 widgets
+- CS-Studio "large" performance test: 200 widgets
+- Table of motors OPI attempt: 674 widgets - took ~15 seconds to open on NDXSCIDEMO
+
+# Implementing your own widgets in CS-Studio code
+
+*Note: this is a significant undertaking; check with other developers that this is the correct solution before going down this route*
+
+Firstly, you will need to import the CS-Studio code into eclipse by following the instructions [here](https://github.com/ISISComputingGroup/isis_css_top/blob/master/README.md)
+
+The code for most widgets is defined in `cs-studio\applications\opibuilder\opibuilder-plugins\org.csstudio.opibuilder.widget`, you will need to import this project into eclipse if you haven't already.
+
+The code follows an MVVM-like pattern, where the mapping is:
+- `xxxModel` -> model
+- `xxxEditPart` -> viewmodel
+- `xxxFigure` -> view
+
+As an easy way to get started, I suggest copying the above 3 classes from the most similar widget type and then editing them to suit your needs.
+
+To get your new widget to show up in CSS' menus, it needs to be added to the extension point `org.csstudio.opibuilder.widget` in `MANIFEST.MF`.
+
+To use a PV value, use a string with the special value `$(pv_value)`. This gets substituted for the actual value at runtime.
+
+Most figures are implemented using the `draw2d` framework, which is a graphics toolkit. In general it allows a higher level of flexibility than RCP for drawing arbitrary shapes etc, with the disadvantage that this additional flexibility makes it more complex. It is also possible to implement a figure using an RCP widget - see for example `WebBrowserFigure` in `cs-studio\applications\opibuilder\opibuilder-plugins\org.csstudio.opibuilder.widgets.rcp`.
