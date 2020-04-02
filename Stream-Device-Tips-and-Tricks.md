@@ -12,6 +12,8 @@ Instead of using `%s` as your formatter, you need to use a character set, e.g. `
 
 ## Writing a waveform (e.g. long strings) to a device
 
+Note: please do https://github.com/ISISComputingGroup/IBEX/issues/5326 before proceeding
+
 Writing waveforms does not not work directly in streamdevice. Instead you need to add a level of indirection and use record redirection in a protocol file to explicitly send the data in the waveform:
 
 Example db:
