@@ -16,6 +16,8 @@ You will need:
 
 To connect to the device from the instrument/your machine see the [National Instruments documentation](https://www.ni.com/getting-started/set-up-hardware/data-acquisition/compactdaq#Configuring%20NI-DAQmx%20for%20CompactDAQ%20Ethernet%20Chassis)
 
+You can also connect to a simulated device, see the instructions at http://www.ni.com/tutorial/3698/en/.
+
 Notes:
 - Opening "Devices and Interfaces" in the sidebar typically takes several minutes on a computer connected to the RAL network. This is possibly because of the amount of NI hardware on the network.
 - You will need to know the hostname of the cDAQ for the "Find Network NI-DAQmx Devices" dialogue
