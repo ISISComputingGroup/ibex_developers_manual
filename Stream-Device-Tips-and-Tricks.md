@@ -61,7 +61,13 @@ read_buffer {
     in  "%[A-Za-z0-9.+-]";
 }
 ```
+## Dealing with enums
 
+The record type for enums in EPICS is [mbbo](https://wiki-ext.aps.anl.gov/epics/index.php/RRM_3-14_Multi-Bit_Binary_Output)/[mbbi](https://wiki-ext.aps.anl.gov/epics/index.php/RRM_3-14_Multi-Bit_Binary_Input). However, StreamDevice also provides [support for enums within the protocol file](https://paulscherrerinstitute.github.io/StreamDevice/formats.html#enum).
+
+The way that the `mbbo` works is that it takes a user set value into the `VAL` field and uses it to lookup a value to output based on `ZRVL`, `ONVL` etc. this is outputted to the `RVAL` field. The value in `RVAL` is then passed to the protocol file, which could also have an enum specified. This effectively means that you have two enums stacked on top of each other and is BAD. Not only does it reduce readability it has historically caused issues when StreamDevice was modified to take into account `RVAL`, see [here](https://github.com/ISISComputingGroup/IBEX/issues/5263). It is up to the developer whether the enum should be defined in the protocol or the record but you should only use one.
+
+On the record side the `mbbi` works in the same way as the `mbbo` but in reverse. However, the behaviour for an `mbbi` in StreamDevice is not symmetrical with `mbbo`, which you can see by comparing [here](https://paulscherrerinstitute.github.io/StreamDevice/mbbi.html) and [here](https://paulscherrerinstitute.github.io/StreamDevice/mbbo.html) under the ENUM behaviour. This effectively means the enum defined in `mbbi` is ignored in StreamDevice so you are forced to use the protocol for defining this.  
 
 # Multi-value Protocols
 
