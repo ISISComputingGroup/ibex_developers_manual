@@ -11,23 +11,44 @@ After a component/activity has been completed and stable for a cycle then the st
 The list of components/activities and stewards is not set in stone.  It will change over time.
 
 Component/Activity | Steward |
------------------- | ------- |
+--- | --- |
+**Instrument Migrations** | |
+MUSR Migration | Chris C |
+SANS2D Migration | Bish |
+EMU Migration | David |
+SURF Migration | Thomas |
+POLREF Migration | (Not Started so no steward assigned) |
+INTER Migration | (Not Started so no steward assigned) |
+OFFSPEC Migration | (Not Started so no steward assigned) |
+HIFI Migration | (Not Started so no steward assigned) |
+CHRONUS Migration | (Not Started so no steward assigned) |
+ARGUS Migration | (Not Started so no steward assigned) |
+SXD Migration | (Not Started so no steward assigned) |
+WISH Migration | (Not Started so no steward assigned) |
+PEARL Migration | (Not Started so no steward assigned) |
+CHIPIR Migration | (Not Started so no steward assigned) |
+--- | --- |
+**IBEX Core components** |  |
 Script Server (NICOS) | Dom |
-OSIRIS | David |
-ZOOM | Kathryn |
 Graphing/Scripting | Tom |
-Script Generator | Tom |
+Script Generator | James |
 IBEX GUI | Thomas |
-[Delay tickets](Delayed-tickets) | John |
 CSS & Phoebus | Dom |
 EPICS base and support modules | Freddie |
-LOQ | Alistair
-TOSCA | Rory
-INES | Thomas
-Reflectometry | John and Thomas
-MARI | Tom
-LET | David
-SURF | Thomas
+Delay tickets | John |
+Blockserver/Other server items |  |
+Linter |  |
+Squish | Dom |
+Motion Control | Dom and Aaron |
+Reflectometry | John and Thomas |
+Dataweb |  |
+--- | --- |
+**Other items which impact significantly and directly on IBEX** |  |
+Detector systems monitoring | James |
+HIFI Cryomagnet | Kathryn and Chris C |
+RIKEN Upgrade | Chris M-S |
+Systems (Hardware, OS, etc.) | Chris M-S |
+
 
 <a name="definitionSteward"></a>
 ## Definition of the role of Component / Activity Steward
