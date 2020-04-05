@@ -28,7 +28,7 @@ The INTER script generator can also display the script in a "tree" view - this c
 
 The INTER script generator provides some time estimation.
 
-INTER script generator is available at: `\\isis\shares\ISIS_Experimental_Controls\external_code\inter script generator` (copied from https://github.com/jonasgitt/ScriptMax with required DLLs and extra files added). Launch via the Qt IDE (download latest version from web; takes a while). I haven't been able to build it successfully to an exe, but only spent half an hour on it.
+INTER script generator is available at: `\\isis\shares\ISIS_Experiment_Controls\external_code\inter script generator` (copied from https://github.com/jonasgitt/ScriptMax with required DLLs and extra files added). Launch via the Qt IDE (download latest version from web; takes a while). I haven't been able to build it successfully to an exe, but only spent half an hour on it.
 
 ### LOQ
 

@@ -4,7 +4,7 @@ Training machines have there own deployment script. It is similar but not the sa
 
 Steps:
 
-1. Make sure that the install script has been pulled it is in `...isis experimental controls public share\ibex_utils`
+1. Make sure that the install script has been pulled it is in `...isis experiment controls public share\ibex_utils`
 1. Open a command line inside the `installation_and_upgrade` folder
 1. Run `training_update.bat`
 1. Follow the steps until the end

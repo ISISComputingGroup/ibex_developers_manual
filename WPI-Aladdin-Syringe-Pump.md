@@ -2,7 +2,7 @@
 
 # Documentation
 
-Documentation is available for the pump at `\\isis\shares\ISIS_Experimental_Controls\Manuals\WPI__Aladdin_1000_syringe_pump`
+Documentation is available for the pump at `\\isis\shares\ISIS_Experiment_Controls\Manuals\WPI__Aladdin_1000_syringe_pump`
 
 # Connection Details
   

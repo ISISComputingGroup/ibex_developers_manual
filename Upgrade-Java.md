@@ -7,7 +7,7 @@
 1. Determine which new version of Java should be installed.
 1. If oracle java is on the system uninstall it
 1. Copy the latest version of the openJDK installer from the public share at
- `...\ISIS_Experimental_Controls_Public\third_party_installers\latest_versions\OpenJDK...`
+ `...\ISIS_Experiment_Controls_Public\third_party_installers\latest_versions\OpenJDK...`
    - Do not use a copy downloaded from the internet as it may not have been tested with IBEX
 1. Run the installer and install all components. The install menu should look like this:
 ![](https://raw.githubusercontent.com/ISISComputingGroup/ibex_developers_manual/master/images/openjdk_install_prompt.PNG)

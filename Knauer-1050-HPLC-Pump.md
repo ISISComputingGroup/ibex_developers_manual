@@ -2,7 +2,7 @@
 
 # Documentation
 
-Documentation is available for the pump at `\\ISIS\Shares\ISIS_Experimental_Controls\Manuals\knauer 1050 HPLC`
+Documentation is available for the pump at `\\ISIS\Shares\ISIS_Experiment_Controls\Manuals\knauer 1050 HPLC`
 
 # Connection Details
   

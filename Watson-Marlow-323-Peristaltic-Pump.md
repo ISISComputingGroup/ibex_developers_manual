@@ -2,7 +2,7 @@
 
 # Documentation
 
-Documentation is available for the pump at `\\ISIS\shares\ISIS_Experimental_Controls\Manuals\Watson-Marlow__323`
+Documentation is available for the pump at `\\ISIS\shares\ISIS_Experiment_Controls\Manuals\Watson-Marlow__323`
 
 # Connection Details
   

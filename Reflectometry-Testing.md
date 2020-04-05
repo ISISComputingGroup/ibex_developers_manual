@@ -62,7 +62,7 @@ Do a theta scan without the sample or super mirror in the way. Does it look corr
 
 ## CRISP in March 2019.
 
-Did many scans comparing SECI and IBEX see `ISIS_Experimental_Controls\Reflectometry\Ticket3462`.
+Did many scans comparing SECI and IBEX see `ISIS_Experiment_Controls\Reflectometry\Ticket3462`.
 
 ## CRISP Blind Test
 

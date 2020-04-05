@@ -15,7 +15,7 @@ When the IOC device starts the device will be placed into Measurement mode.
 
 # Documentation
 
-Documentation is available for the pump at `\\ISIS\Shares\ISIS_Experimental_Controls\Manuals\Keyence__LK-G`
+Documentation is available for the pump at `\\ISIS\Shares\ISIS_Experiment_Controls\Manuals\Keyence__LK-G`
 
 # Connection Details
 

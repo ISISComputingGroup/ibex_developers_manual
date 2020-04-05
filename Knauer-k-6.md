@@ -1,6 +1,6 @@
 # Documentation
 
-Documentation is available for the pump at `\\ISIS\Shares\ISIS_Experimental_Controls\Manuals\Knauer K-6 Valve Drive`
+Documentation is available for the pump at `\\ISIS\Shares\ISIS_Experiment_Controls\Manuals\Knauer K-6 Valve Drive`
 
 The Knauer Electric Valve Drives K-6 is designed for automatic control of the
 6-port/3-channel-injection valve, 6-port/2-channel-switching valve, 7-port/1-

@@ -6,7 +6,7 @@
 
 # Documentation
 
-There is some documentation on the physical setup at `\\...\shares\ISIS_Experimental_Controls\Manuals\RIKEN_power_supplies\riken psu controls - issue C.ppt`
+There is some documentation on the physical setup at `\\...\shares\ISIS_Experiment_Controls\Manuals\RIKEN_power_supplies\riken psu controls - issue C.ppt`
 
 # Macros
 

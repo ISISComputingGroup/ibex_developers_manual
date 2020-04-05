@@ -6,7 +6,7 @@ If a scientist/user contacts you directly about an urgent issue, you should poli
 
 If you get called with an issue that you believe has the potential to stop all instruments taking data (e.g. the central beam status is reporting incorrectly or there is a critical bug in a core IBEX component) you should immediately email all instrument scientists using the `ISIS Instrument Scientist` mailing list. You should make them aware of the problem and any workarounds that you have found.
 
-If you encounter an urgent problem that you are really unsure of you can find other team member's numbers in the support phone's contacts list or at `\\isis\shares\ISIS_Experimental_Controls\On Call\Phone Numbers.xlsx`.
+If you encounter an urgent problem that you are really unsure of you can find other team member's numbers in the support phone's contacts list or at `\\isis\shares\ISIS_Experiment_Controls\On Call\Phone Numbers.xlsx`.
 
 ## Finding telephone numbers for instrument scientists and instruments
 

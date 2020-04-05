@@ -3,7 +3,7 @@
 - There is a python script **running on a separate PC** (NDW1889) which controls some DAQ units
 - This python script reads the timing pulse (this can come from the synchrotron or a chopper) and controls the flipper
 - The python script exposes a TCP connection
-- The python script is available in `\shares\ISIS_Experimental_Controls\external_code\Mezei Neutron Spin Flipper`
+- The python script is available in `\shares\ISIS_Experiment_Controls\external_code\Mezei Neutron Spin Flipper`
 - The current labview and IBEX drivers, running on the NDX instrument control PC, use this TCP connection to talk to the flipper system
 - There is also some optimization code. This is an instrument script which runs on the NDX machine and communicates with PVs via genie_python. This is what determines the mode and parameters which the flipper will run with. Therefore these modes and parameters are not expected to be set manually.
 

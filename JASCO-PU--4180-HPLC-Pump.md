@@ -2,7 +2,7 @@
 
 # Documentation
 
-Documentation is available for the pump at `\\ISIS\shares\ISIS_Experimental_Controls\Manuals\Jasco__PU-4180 HPLC Pump`
+Documentation is available for the pump at `\\ISIS\shares\ISIS_Experiment_Controls\Manuals\Jasco__PU-4180 HPLC Pump`
 
 # Connection Details
   

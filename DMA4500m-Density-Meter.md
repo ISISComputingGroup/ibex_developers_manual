@@ -5,7 +5,7 @@ The device's IOC was originally developed at ESS, then updated to match ISIS req
 It is a densitometer which currently measures density and temperature.
 
 ## Documentation
-Vendor documentation is available at `\\ISIS\shares\ISIS_Experimental_Controls\Manuals\AntonPaar__DMA4500`.
+Vendor documentation is available at `\\ISIS\shares\ISIS_Experiment_Controls\Manuals\AntonPaar__DMA4500`.
 
 ## Connection Details
   

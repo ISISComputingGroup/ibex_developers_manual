@@ -1,6 +1,6 @@
 # Documentation
 
-Documentation is available for the pump at `"\\ISIS\shares\ISIS_Experimental_Controls\Manuals\Thurlby-Thandar-TTIEX355P"`
+Documentation is available for the pump at `"\\ISIS\shares\ISIS_Experiment_Controls\Manuals\Thurlby-Thandar-TTIEX355P"`
 
 # Connection Details
   
