@@ -112,7 +112,7 @@ where
 Either a full make of the server or running `make iocstartups` from the EPICS folder will then make the contents of these XML files available to the GUI (after restarting the instrument).
 
 **Tips**
-* If you want a macro that restricts input to be a byte, so 0-255, then you can use ^$|^([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])$ . You can change this so it allows any range of integers of you desire. [This website](https://regex101.com/) is a good resource for checking regexes.
+* If you want a macro that restricts input to be a byte, so 0-255, then you can use ^$|^([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])$ . You can change this so it allows any range of integers of you desire. [This website](https://regex101.com/) is a good resource for checking regex expressions.
 
 ## 8. PV Limits
 
