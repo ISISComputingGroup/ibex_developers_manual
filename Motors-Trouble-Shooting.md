@@ -94,4 +94,13 @@ The motor record calculates acceleration in quite a different way than used to u
 
 This occurs when power is cut to the limits. The main cause for this is that the safety system has been engaged as this will cut power to the whole rack of Galils. However, there could be other reasons such as in the [IMAT Lens Adjustment](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/IMAT-Lens-Adjustment)
 
+## The motor is surrounded by a red border in the table of motors
+
+This indicates that the motor does not believe it is at setpoint. The following algorithm is applied to decide whether the motor is at setpoint or not:
+
+- If the motor is moving, it is always "at setpoint" - this is to prevent red borders during normal moves
+- Otherwise, the absolute difference between VAL and RBV must be less than a tolerance. This tolerance is given by the following (in order of preference):
+  * Retry deadband (`RDBD`) if `RDBD` > `MRES` (the retry deadband cannot be set less than MRES - the motor record prevents this)
+  * Setpoint deadband (`SPDB`) if `SPDB` > 0
+  * `10 * MAX(ABS(ERES), ABS(MRES))`
 
