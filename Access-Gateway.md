@@ -128,6 +128,11 @@ e.g. `*SIMPLE.* ALLOW       TESTING     1`
 
 If the aim is to deny, simply replace the ALLOW with DENY. Do remember that the standard security groups can be used when writing a pvlist file as well as custom ones.
 
+## Troubleshooting
+
+### Printing Reports
+In general the gateways are set to low logging levels as they process a lot of PVs and so can be overly chatty. However, if there is an issue with a gateway you can get it to dump a report of it's state by doing `caput %MYPVPREFIX%CS:GATEWAY:BLOCKSERVER:report2Flag 1` and similarly for the external gateway. This will report information into `Instrument\var\logs\gateway`. There are 3 different reports that you can print, see [here](https://epics.anl.gov/EpicsDocumentation/ExtensionsManuals/Gateway/Gateway.html#Report) but generally report 2 gives a good overview of the state of the gateway.
+
 ## Links
 
 More information can be found at:
