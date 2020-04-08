@@ -17,7 +17,7 @@ What it does
 ------------
 The BlockServer is a Channel Access Server (CAS) written in Python using the [PCASpy](https://code.google.com/archive/p/pcaspy/) module.
 It provides a number of PVs that allow the blocks to be configured (see below) and configurations to be created and loaded.
-The blocks are PV aliases created using the blocks gateway - a standard channel access gateway running on localhost (127.0.0.1). When a configuration is loaded or the blocks changed then the BlockServer regenerates the PV file for the gateway. 
+The blocks are PV aliases created using the blocks gateway - a standard [channel access gateway](Access-Gateway) running on localhost. When a configuration is loaded or the blocks changed then the BlockServer regenerates the PV file for the gateway. 
 
 The PV file typically looks something like this:
 
