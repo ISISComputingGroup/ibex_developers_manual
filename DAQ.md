@@ -49,6 +49,18 @@ field(INP, "@asyn(R0 1 5.0) DATA")
 ```
 This accesses channel 1 of port R0, with a 5.0 second timeout.
 
+# Design of the DAQmx Driver
+The DAQmx driver was originally written by Diamond but is no longer in use by them, meaning it is effectively ours to maintain. It's written using the old C API for asyn rather than the newer C++ one. At it's core the driver uses a state machine for configuring and acquiring data and a messaging system for moving between states. The state machine for the configuration is roughly described by the diagram below:
+
+![DAQmx State Machine](https://raw.githubusercontent.com/ISISComputingGroup/ibex_developers_manual/master/images/DAQmx_state.png)
+
+There are a number of other states after the start state that actually do the data acquisition but these are simpler. The state machine is incredibly hard to reason about as there are two mechanisms to move between states:
+
+* At the beginning of the main loop a message is picked off the queue (if `ignoreMsg=0`). This message is then used to change the state.
+* During the execution of a state the state for the next loop can be changed. This change is regularly overwritten later on in the state's execution or when the message handling is performed on the next loop.
+
+This means the diagram above is only a rough idea of what is going on. The driver is in dire need of a rewrite, see https://github.com/ISISComputingGroup/IBEX/issues/5386.
+
 # Data bottlenecking in the DAQmxBase driver (Monster mode)
 When developing the zero field magnetometer IOC we found that there are significant overheads in the EPICS DAQmx driver when running it in one shot and continuous modes. In these modes the NI task used to take the data is started and stopped with every point/array of data requested (as applicable). This means that each point/array takes ~150 ms to acquire, around 100ms of this is from starting the task and ~50ms to actually take the data.
 
