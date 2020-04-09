@@ -52,7 +52,7 @@ This accesses channel 1 of port R0, with a 5.0 second timeout.
 # Design of the DAQmx Driver
 The DAQmx driver was originally written by Diamond but is no longer in use by them, meaning it is effectively ours to maintain. It's written using the old C API for asyn rather than the newer C++ one. At it's core the driver uses a state machine for configuring and acquiring data and a messaging system for moving between states. The state machine for the configuration is roughly described by the diagram below:
 
-![DAQmx State Machine](https://raw.githubusercontent.com/ISISComputingGroup/ibex_developers_manual/master/images/DAQmx_state.png)
+![DAQmx State Machine](https://user-images.githubusercontent.com/10086797/78799501-20397f00-79b2-11ea-8ebd-124bd8ebaf71.png)
 
 There are a number of other states after the start state that actually do the data acquisition but these are simpler. The state machine is incredibly hard to reason about as there are two mechanisms to move between states:
 
