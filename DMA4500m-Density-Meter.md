@@ -29,7 +29,7 @@ According to the device manual, the `getrawdata` command returns the "current ra
 ```
 where:
 - **density** and **temperature** are "instant" measurements of the current sample density and temperature. The seem to oscillate slightly if the command is run multiple times in a row, so the error is likely quite high.
-- **temperature setpoint** is the current temparature setpoint. After a `settemperature` command is sent to the device, this setpoint immediately updates to the value specified in `settemperature` and the "instant" temperature measurement can be observed to ramp up/down towards the setpoint
+- **temperature setpoint** is the current temperature setpoint. After a `settemperature` command is sent to the device, this setpoint immediately updates to the value specified in `settemperature` and the "instant" temperature measurement can be observed to ramp up/down towards the setpoint
 - **sample id** is a value that is increased by 1 every time a measurement is run (at least when started by the `start` command, possibly when started through the device GUI as well)
 
 ## Simulation
