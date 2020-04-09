@@ -23,7 +23,7 @@ Notes:
 
 ## Quirks
 #### Raw data and temperature setpoint
-According to the device manual, the `getrawdata` command returns the "current raw data values". Judging from the device output, this is the format of the response:
+According to the device manual, the `getrawdata` command returns the "current raw data values". Judging from the device output, the reponse is in this format:
 ```
 {density};{temperature};{temperature setpoint};{sample id}
 ```
