@@ -60,9 +60,9 @@ at least 5 seconds)
 - Should power on if: 
     - The setpoint readback value is greater than 0 + `OFF_TOLERANCE`
 
-Auto on/off is part of the workflow for muon instruments, but it is not desired on neutron instruments using Danfysiks and can in fact turn the power supplies off in unsafe ways if configured badly. Thus it should always be switched off on neutron instruments.
+Auto on/off gets automatically enabled when using the "sweep to zero and turn off" functionality.
 
-**Note:** Auto on/off gets automatically enabled when using the "sweep to zero and turn off" functionality.
+Auto on/off is part of the workflow for muon instruments, but it is not desired on neutron instruments using Danfysiks and can in fact turn the power supplies off in unsafe ways if configured badly. Thus it should always be switched off on neutron instruments. Note: The DISABLE_AUTOONOFF macro prevents auto on/off from being turned on at all and hides the GUI elements for setting it on. This macro is on by default, but is turned off by the config upgrade script for the EMU instrument, where this feature is desired.
 
 ## LOQ/SANS2D Goudsmit magnet
 
