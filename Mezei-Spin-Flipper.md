@@ -18,6 +18,8 @@ The flipper can run in one of four different mode:
 | Analytical | This mode varies the current to the coils as a function of time, within each neutron pulse. The equation being modelled is `I = A / (t + t0)` |
 | File | This mode uses a file as a lookup table to determine current to the flipper coils as a function of time within each neutron pulse |
 
+Each mode takes a "parameter", which is passed to the flipper as a string. It is passed to the flipper as a string to allow arbitrarily complex data structures to be transmitted to the python code which controls the flipper (for example, a common case is to pass a python list as the parameter). These parameters are only ever written to by an optimization script running on the NDX computer.
+
 The other variables which the flipper can take are:
 - **Power**: power to the coils on/off.
 - **Compensation**: a fixed current which is always added to whatever value the lookups provide, to compensate for changes caused by the flipper kit itself.
