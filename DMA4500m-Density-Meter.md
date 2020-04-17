@@ -39,7 +39,7 @@ The IOC logic is fairly complex and uses features not supported by RECSIM, so RE
 When automeasure is enabled, the IOC periodically starts a measurement without user intervention. 3 PVs are involved in this:
 - `AUTOMEASURE:FREQ`: the interval between measurements (in seconds)
 - `AUTOMEASURE:ENABLED`: a binary record that's 1 when automeasure is enabled, 0 otherwise (default)
-- `AUTOMEASURE`: the calc PV responsible for starting measurements
+- `AUTOMEASURE`: the `calcout` PV responsible for starting measurements
 
 `AUTOMEASURE` runs every second, using `AUTOMEASURE:FREQ` and `AUTOMEASURE:ENABLED` as its inputs. When automeasure is enabled, the value of this PV is set to the interval specified in `AUTOMEASURE:FREQ`. Every second, the PV's value is decreased until it reaches 0; when this happens, a new measurement is started and the value is reset to `AUTOMEASURE:FREQ`. The countdown is suspended while a measurement is running (through an SDIS field) so we're only counting the interval between two measurements. In pseudocode:
 
