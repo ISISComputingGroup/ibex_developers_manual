@@ -35,6 +35,28 @@ where:
 ## Simulation
 The IOC logic is fairly complex and uses features not supported by RECSIM, so RECSIM has not been implemented for this device.
 
+## Automeasure
+When automeasure is enabled, the IOC periodically starts a measurement without user intervention. 3 PVs are involved in this:
+- `AUTOMEASURE:FREQ`: the interval between measurements (in seconds)
+- `AUTOMEASURE:ENABLED`: a binary record that's 1 when automeasure is enabled, 0 otherwise (default)
+- `AUTOMEASURE`: the calc PV responsible for starting measurements
+
+`AUTOMEASURE` runs every second, using `AUTOMEASURE:FREQ` and `AUTOMEASURE:ENABLED` as its inputs. When automeasure is enabled, the value of this PV is set to the interval specified in `AUTOMEASURE:FREQ`. Every second, the PV's value is decreased until it reaches 0; when this happens, a new measurement is started and the value is reset to `AUTOMEASURE:FREQ`. The countdown is suspended while a measurement is running (through an SDIS field) so we're only counting the interval between two measurements. In pseudocode:
+
+```
+def process_pv():
+  if not automeasure_enabled:
+    count = max(automeasure_freq, 1)
+  else:
+    if count = 0:
+      count = automeasure_freq
+    else:
+      count-= 1
+  return count
+```
+
+Note that a measurement is started whenever the value of `AUTOMEASURE` is 0, so if `AUTOMEASURE:ENABLED` is 0 but `AUTOMEASURE:FREQ` is also 0 we have to manually set the count to a non-zero value to avoid starting a measurement. This has the side effect that there will always be at least a 1 second delay between enabling automeasure and the start of the first measurement.
+
 ## Measurement Mode
 The data sent back by the device is parsed according to the current measurement mode, which is set by `$(MEASUREMENT_MODE)` macro. Currently, the only supported mode is `DENSITY_ONLY` (for measuring density, temperature and measurement validity).
 
