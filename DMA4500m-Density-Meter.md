@@ -57,6 +57,9 @@ def process_pv():
 
 Note that a measurement is started whenever the value of `AUTOMEASURE` is 0, so if `AUTOMEASURE:ENABLED` is 0 but `AUTOMEASURE:FREQ` is also 0 we have to manually set the count to a non-zero value to avoid starting a measurement. This has the side effect that there will always be at least a 1 second delay between enabling automeasure and the start of the first measurement.
 
+### Delays when running on the real device
+I have observed that when the automeasure code is run on the real device the interval between measurements can be inconsistent. This seems to be due to a random delay when starting measurements: the IOC tells the device to start a measurement, but the device takes a few seconds to actually start one. This can lead to longer intervals than the user may have expected.
+
 ## Measurement Mode
 The data sent back by the device is parsed according to the current measurement mode, which is set by `$(MEASUREMENT_MODE)` macro. Currently, the only supported mode is `DENSITY_ONLY` (for measuring density, temperature and measurement validity).
 
