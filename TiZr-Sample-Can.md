@@ -1,6 +1,6 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [Cells](Cells)
 
-** TiZr Sample Can
+# TiZr Sample Can
 
 The main project is one that sees the building and integration of a sample can such as was used in an experiment in the mid-1990s. The sample container is designed to contain steam at 580K and 95 bar. This will be used for an experiment on NIMROD.
 
