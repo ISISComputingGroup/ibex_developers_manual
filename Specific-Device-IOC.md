@@ -4,8 +4,6 @@ These are the list of categories for an IOC. The IOC can appear in multiple cate
 
 [Cells, Cans, and Sample Holders](Cells)
 
-[Test](Check)
-
 [Choppers](Choppers)
 
 [Cryogenics](Cryogenics)
