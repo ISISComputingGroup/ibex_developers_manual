@@ -28,3 +28,4 @@
 - [EPICS WIKI](https://wiki-ext.aps.anl.gov/epics/index.php/RRM_3-14)
 - [Current program version, servers and settings](http://beamlog.nd.rl.ac.uk/inst_summary.xml)
 - [Instrument Overview page](http://dataweb.isis.rl.ac.uk/ibexdataweb/overview/ibexoverview.html)
+- [Instrument Dashboards](http://dataweb.isis.rl.ac.uk/Dashboards/default.htm)
