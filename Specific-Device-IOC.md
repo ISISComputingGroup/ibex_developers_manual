@@ -20,6 +20,8 @@ These are the list of categories for an IOC. The IOC can appear in multiple cate
 
 [Magnets](Magnets)
 
+[Magnetometers, Fluxgates and other magnetic field sensors](Fluxgates)
+
 Monitors
 
 [Motors](Motor-IOCs)
