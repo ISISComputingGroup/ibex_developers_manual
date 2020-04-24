@@ -65,6 +65,7 @@ There are some things which are cross disks, e.g. the database is a service but 
     1. Copy Client
     1. Copy EPICS UTILS
     1. Copy Python
+    1. Copy Python3
     1. Copy ICP Binaries into EPICS
     1. Copy MySql
 
