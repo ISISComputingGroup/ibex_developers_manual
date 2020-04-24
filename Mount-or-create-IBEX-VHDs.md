@@ -85,3 +85,7 @@ Either:
 Or:
 1. Follow instructions to create a blank database and copy that to the disk
 1. Add other directories meant to be in var from the developer's setup e.g. log, autosave
+
+### Automation Idea
+
+To automate this I would suggest setting up a new path in the install utils. Then mount the VHD at the correct points `c:\instrument` and then run tasks as usual.
