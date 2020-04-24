@@ -51,6 +51,7 @@ ISISICP (and Kafka?) | Freddie
 LVDCOM | Freddie?
 IBEX UI Design | Thomas Löhnert
 Jenkins, testing and our build processes | ?
+asyncio and asynchronous programming in Python 3 | ?
 
 ### Proposed Repeated Code Chats
 
