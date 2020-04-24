@@ -67,7 +67,6 @@ Checkstyle Quiz | ?
 Maven, Tycho and Surefire | Tom Willemsen?
 IOC Testing Framework & Emulators | Tom Willemsen?
 RCPTT - Tips and Tricks | Dominic Oram
-asyncio and asynchronous programming in Python 3 | ?
 
 ## Previous Code Chats
 
