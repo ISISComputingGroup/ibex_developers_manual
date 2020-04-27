@@ -1,4 +1,4 @@
-> [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [Choppers](Choppers) > [SKF MB350 Chopper](SKF-MB350g3-Chopper)
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [Choppers](Choppers) > [SKF MB350g3 Chopper](SKF-MB350g3-Chopper)
 
 The SKF MB350g3 chopper is a fermi chopper located on the EMMA beamline and was previously used on the LET beamline.  The chopper is mounted on a lifting mechanism detailed [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Fermi-Chopper-Lifter).
 
