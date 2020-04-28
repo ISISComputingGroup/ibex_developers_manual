@@ -9,6 +9,7 @@ Various Processes or tasks and info into how they should work. Remember rules ca
 - [Tickets and their Workflow](Tickets-and-their-Workflow)
     - [Backlog Preparation](Backlog-Preparation)
     - [Sprint Review](Sprint-Review)
+    - [Estimating Sprint Capacity](Estimating-Sprint-Capacity)
     - [Sprint Planning](Sprint-Planning)
     - [Sprint Retrospective](Sprint-Retrospective)
 
