@@ -9,8 +9,14 @@ A PLC (programmable logic controller) is a device that is capable of doing near 
 There are a number of different PLCs in use at ISIS:
 
 * [Beckhoff](Beckhoff) - Mostly used for motion but are in fact generic PLCs
-* Omron FINS
+* [Omron FINS](PLCs#omron-fins)
 
 ## Omron FINS
 
+The Omron FINS is a PLC controlled via a driver first written at Diamond, see [here](https://github.com/ISISComputingGroup/EPICS-FINS). The IOC works by loading an instrument specific `FINS_01.cmd` in `configurations/fins`, which will load an instrument specific `db` from `ioc/master/FINS/db`. The dbs in here are usually created from a number of templates matching specific memory addresses to PVs. Currently the following specific FINS PLC installations are supported in IBEX:
 
+* IMAT FINS PLC
+* LARMOR air PLC
+* SANS2D vacuum PLC
+* WISH vacuum PLC
+* ZOOM vacuum PLC
