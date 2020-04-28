@@ -30,11 +30,13 @@ Monitors
 
 [Multimeters](Multimeters)
 
+[PLCs](PLCs)
+
+[Polarisers & Analysers](Polarisers-and-Analysers)
+
 [Power Supplies](Power-Supplies)
 
 [Pressure Monitors](Pressure-Monitors)
-
-[Polarisers & Analysers](Polarisers-and-Analysers)
 
 [Rheometers](Rheometers)
 
