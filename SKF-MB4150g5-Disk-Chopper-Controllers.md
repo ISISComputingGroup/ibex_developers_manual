@@ -10,11 +10,11 @@ There are currently **three** controllers on LET (original choppers 3 & 4, now 5
 
 ### Addressing Schema on the instrument's private network
 
-LET - These controllers have been allocated _static_ addresses in the range _xxx.xxx.xxx.8x_, which is under the control of the Experimental Controls Group.  Since installation, the addresses have been in the original range of xxx.xxx.xxx.18x, but problems were encountered when installing two additional controllers (see ticket [5033](https://github.com/ISISComputingGroup/IBEX/issues/5033) for details).
+LET - These controllers have been allocated _static_ addresses in the range _xxx.xxx.xxx.8x_, which is under the control of the Experiment Controls Group.  Since installation, the addresses have been in the original range of xxx.xxx.xxx.18x, but problems were encountered when installing two additional controllers (see ticket [5033](https://github.com/ISISComputingGroup/IBEX/issues/5033) for details).
 
 IMAT - These controllers are still in the original range of _xxx.xxx.xxx.18x_, but it is planned to reallocate them for consistency.
 
-**N.B.** The address ranges and subnets on the private network haven't formally been divided between the various groups (Expt. Ctrl., Electronics, Detectors) to date.  A coordinated effort is required to produce a document, ideally before any further use of the private network is made.
+**N.B.** The address ranges and subnets on the private network haven't formally been divided between the various groups (Experiment Control, Electronics, Detectors) to date.  A coordinated effort is required to produce a document, ideally before any further use of the private network is made.
 
 ### Communications
 
