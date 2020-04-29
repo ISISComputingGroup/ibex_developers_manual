@@ -31,7 +31,7 @@ CHIPIR Migration | (Not Started so no steward assigned) |
 **IBEX Core components** |  |
 Script Server (NICOS) | Dom |
 Graphing/Scripting | Tom |
-Script Generator | James |
+Script Generator | Tom |
 IBEX GUI | Thomas |
 CSS & Phoebus | Dom |
 EPICS base and support modules | Freddie |
