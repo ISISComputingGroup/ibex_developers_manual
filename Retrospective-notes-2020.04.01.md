@@ -6,7 +6,7 @@ This keeps being missed.
 
 - Now added as step to https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Sprint-Planning#preparation
 
-# At least whilst WfH reterospective notes should be put in a dedicated teams channel
+# At least whilst working from home retrospective notes should be put in a dedicated teams channel
 
 # In teams we can't use ticks/crosses easily for flash reviews
 
@@ -17,7 +17,7 @@ This keeps being missed.
 
 Yes, the demo ticket should include this. We should make sure that more junior members of the team have sufficient input in to doing demos.
 
-# Reviews have slowed since moving to WfH
+# Reviews have slowed since moving to working from home
 
 - This could be due to people not being confident in how to review - we should make sure that PRs include instructions on how to review
 - We could monitor who is owing reviews but this seems a little draconian, John will look into doing it.
