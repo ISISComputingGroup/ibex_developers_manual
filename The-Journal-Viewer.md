@@ -1,4 +1,4 @@
-_(Work in progress)_
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [System Components](System-components) > [Journal Viewer](The Journal Viewer)
 
 # Overview
 
