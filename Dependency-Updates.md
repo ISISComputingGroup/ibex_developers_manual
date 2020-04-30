@@ -53,6 +53,7 @@ The GUI builds copy a JRE from `\\isis\inst$\Kits$\CompGroup\ICP\ibex_client_jre
 - Install python to a location of your choice (not `c:\instrument\apps\python`).
 - Zip up the resulting directory and add it to the share at `\\isis\inst$\Kits$\CompGroup\ICP\genie_python_dependencies_python_3` as `python_clean_<version>.zip`
 - Edit `package_builder\common_build_python_3.bat` to use the new python version and test that all dependencies work correctly
+- Edit SUPPORTED_PYTHON_VERSION in `genie_python\genie.py`
 
 ## Python packages
 
