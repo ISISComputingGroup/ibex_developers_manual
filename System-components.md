@@ -25,6 +25,6 @@ Proc Serve Control | PSCTRL | Epics IOC | Control proc serves  (start, stop and 
 [Reflectometry Server](Reflectometers) | REFL | pcaspy | Complex reflectometry motion
 [Run Control](Run-control) | RUNCTRL_01 | Epics IOC | Add run control to blocks. Run Control is a feature of IBEX that allows users to configure the instrument so when a PV is out of a certain range, neutron data is not being gathered. Needed because neutron data has an extremely large volume and sometimes that data would not be needed so it is better to not pollute the Nexus files with it.
 [Script server (Interface to Nicos)](Nicos) | SCRIPTSERVER | Python | Script server is a proxy in front of nicos to allow communication with it.
-
+[The Journal Viewer](The-Journal-Viewer) | N/A | Database, webserver and part of the client | Provides information about what experiments have been done on the instrument in the past
 
 All components are started via [Startup and Shutdown](Startup-and-Shutdown)
