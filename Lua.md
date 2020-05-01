@@ -46,7 +46,41 @@ There is a powerpoint about Lua here: https://indico.cern.ch/event/766611/contri
 
 See also the documentation on our [epics-lua module](https://github.com/ISISComputingGroup/EPICS-lua) or the actual [epics module](https://github.com/epics-modules/lua) for more information on using Lua in EPICS.
 
-## Lua utility functions
+## Importing Lua Functions from Other Files
+
+When importing functions from other files you must be very careful not to polute your scope as by default anything declared in lua is in the global scope. This means that if I have a file `importable_script.lua` of
+
+```
+function my_func()
+   print("Hello world")
+```
+
+and I import this file from elsewhere using:
+
+```
+require "importable_script.lua"
+my_func()
+```
+
+I can call `my_func` as it will be in the global variables of my new script. This means the require statement is poluting my namespace, to get around this we can change `importable_script.lua` to read:
+
+```
+local available_functions = {}
+
+local function available_functions.my_func()
+   print("Hello world")
+
+return available_functions
+```
+
+when I do the import I can do:
+
+```
+my_import = require "importable_script.lua"
+my_import.my_func()
+```
+
+now the only think in my global namespace will be `my_import`, which I specifically put in there, which contains all the functions I've imported for later reference.
 
 We have a few Lua utility functions available in our utilities submodule. For usage and how to add to them see [this page](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Our-Lua-Utility-Functions).
 
