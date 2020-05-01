@@ -28,10 +28,10 @@ This sets the value of all `ADDR` macros on MOXA12XX IOCs to 127.0.0.1. This is 
 
 ```
 macros_to_change = [
-    (Macro("ADDR"), Macro("ADDR", "127.0.0.1")),
+    (Macro("ADDR", "8.8.8.8"), Macro("ADDR", "127.0.0.1")),
     (Macro("BAUDRATE"), Macro("BAUD", "9600")),
 
 ]
 change_xml_macros.change_macros("MOXA12XX", macros_to_change)
 ```
-Multiple macros can be passed through in the list. Here, the same operation as above is performed. Also, MOXA12XX IOCs with a `BAUDRATE` macros defined get renamed to `BAUD`, with their value set to 9600.
+Multiple macros can be passed through in the list. Here, the same operation as above is performed except only `ADDR` macros currently set to 8.8.8.8 will be changed. Also, MOXA12XX IOCs with a `BAUDRATE` macros defined get renamed to `BAUD`, with their value set to 9600.
