@@ -6,11 +6,7 @@ To be able to use these you need to add this to the top of your lua file:
 
 ```
 package.path = package.path .. ';' .. os.getenv("UTILITIES") .. '/lua/luaUtils.lua;'
-local utils = require("luaUtils")
-local getMacroValue = utils.getMacroValue
-local setAsynOptions = utils.setAsynOptions
-local setHardwareFlowControl = utils.setHardwareFlowControl
-local setSoftwareFlowControl = utils.setSoftwareFlowControl
+local ibex_utils = require "luaUtils"
 ```
 ### `getMacroValue(options)`
 
@@ -19,7 +15,7 @@ Getting a macro from the environment. If the macro cannot be retrieved from the 
 - macro: String, the macro to look up in the 
 - default: String, the value to return if the macro if the macro is not set in the environment
 
-Example call: `getMacroValue{macro="RECSIM", default="0"}`
+Example call: `ibex_utils.getMacroValue{macro="RECSIM", default="0"}`
 CMD equivalent: `$(RECSIM=0)`
 
 ### `setAsynOptions(device, port, baud, bits, parity, stop)`
@@ -38,12 +34,12 @@ For a real device configure the asyn serial port and set the baud, bits, parity 
 Example call: 
 ```
 if (not isRecsim and not isDevsim) then
-    local port = getMacroValue{macro="PORT", default="NO_PORT_MACRO"}
-    local baud = getMacroValue{macro="BAUD", default="9600"}
-    local bits = getMacroValue{macro="BITS", default="8"}
-    local parity = getMacroValue{macro="PARITY", default="none"}
-    local stop = getMacroValue{macro="STOP", default="1"}
-    setAsynOptions(device, port, baud, bits, parity, stop)
+    local port = ibex_utils.getMacroValue{macro="PORT", default="NO_PORT_MACRO"}
+    local baud = ibex_utils.getMacroValue{macro="BAUD", default="9600"}
+    local bits = ibex_utils.getMacroValue{macro="BITS", default="8"}
+    local parity = ibex_utils.getMacroValue{macro="PARITY", default="none"}
+    local stop = ibex_utils.getMacroValue{macro="STOP", default="1"}
+    ibex_utils.setAsynOptions(device, port, baud, bits, parity, stop)
 ...
 ```
 
