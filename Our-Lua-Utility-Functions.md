@@ -6,7 +6,7 @@ To be able to use these you need to add this to the top of your lua file:
 
 ```
 package.path = package.path .. ';' .. os.getenv("UTILITIES") .. '/lua/luaUtils.lua;'
-local ibex_utils = require "luaUtils"
+ibex_utils = require "luaUtils"
 ```
 ### `getMacroValue(options)`
 
