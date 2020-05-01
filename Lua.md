@@ -66,12 +66,21 @@ The process for resolving names in epics Lua starts with looking for a variable 
 
 This is great so that we can access macros easily by instead of doing `$(MYMACRO)` from cmd we can just do `MYMACRO`. However, we cannot stipulate a default. There is a Lua utility function we have written, `getMacroValue(options)`, which expects to be called like this `getMacroValue{macro="MYMACRO", default="VAL"}` or `getMacroValue{macro="MYMACRO"}`.
 
-There is a strange issue due to the way epics Lua runs Lua scripts that sometimes a local variable will drop out of scope, seemingly for no reason. We expect variables to be local and are thus kept to the namespace of the Lua script itself, we do not want to use global variables for no reason.
+The way that EPICs calls lua scripts causes local variables to fall out of scope between lines such that a script where you have written
+``` 
+local text = "Hello"
+print(text)
+```
+will print `nil` as `text` has not been defined but
+```
+local text = "Hello";print(text)
+```
+will successfully print `Hello`. 
+
+Fortunately, if we have a multiline chunk such as in a function we can use local variables. Thus to limit the amount of global variables we have to use we have decided to surround our lua code in functions. This means that:
+
+- Anything outside of a function must be decalared as global for it to be used later on in the script. We think [this](https://epics-lua.readthedocs.io/en/latest/using-lua-shell.html#common-lua-environments) might `fix` the use of local variables outside of functions but it's effectively putting them in a global scope anyway.
+- This includes the functions themselves, so we must take care to not give the same names to functions in the same iocBoot.
+- I suggest if we have a main function for each lua file we give it the name `<iocname>_<filename>_main` e.g. for the oercone devices st.lua: `oercone_st_main` and it's st-common.lua: `oercone_stcommon_main`. 
 
 You may see that a variable was once the value you expect and then changes to something like `func_meta: 008...`. This is because the variable name has dropped out of scope and epics Lua attempts to look for a macro and fails, so then looks for a function and returns the func_meta string.
-
-Fortunately, if we have a multiline chunk such as in a function we can use local variables. Thus to limit the amount of global variables we have to use we have decided to surround our lua code in functions. There are two caveats to this:
-
-- The functions themselves become global variables, so we must take care to not give the same names to functions in the same iocBoot.
-    - I suggest if we have a main function for each lua file we give it the name `<iocname>_<filename>_main` e.g. for the oercone devices st.lua: `oercone_st_main` and it's st-common.lua: `oercone_stcommon_main`.
-- Our package.path setup and [lua utility](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Our-Lua-Utility-Functions) imports MUST occur outside of the function but also MUST be declared as local variables.
