@@ -48,7 +48,7 @@ See also the documentation on our [epics-lua module](https://github.com/ISISComp
 
 ## Importing Lua Functions from Other Files
 
-When importing functions from other files you must be very careful not to polute your scope as by default anything declared in lua is in the global scope. This means that if I have a file `importable_script.lua` of
+When importing functions from other files you must be very careful not to pollute your scope as by default anything declared in lua is in the global scope. This means that if I have a file `importable_script.lua` of
 
 ```
 function my_func()
@@ -62,7 +62,7 @@ require "importable_script.lua"
 my_func()
 ```
 
-I can call `my_func` as it will be in the global variables of my new script. This means the require statement is poluting my namespace, to get around this we can change `importable_script.lua` to read:
+I can call `my_func` as it will be in the global variables of my new script. This means the require statement is polluting my namespace, to get around this we can change `importable_script.lua` to read:
 
 ```
 local available_functions = {}
@@ -113,7 +113,7 @@ will successfully print `Hello`.
 
 Fortunately, if we have a multiline chunk such as in a function we can use local variables. Thus to limit the amount of global variables we have to use we have decided to surround our lua code in functions. This means that:
 
-- Anything outside of a function must be decalared as global for it to be used later on in the script. We think [this](https://epics-lua.readthedocs.io/en/latest/using-lua-shell.html#common-lua-environments) might `fix` the use of local variables outside of functions but it's effectively putting them in a global scope anyway.
+- Anything outside of a function must be declared as global for it to be used later on in the script. We think [this](https://epics-lua.readthedocs.io/en/latest/using-lua-shell.html#common-lua-environments) might `fix` the use of local variables outside of functions but it's effectively putting them in a global scope anyway.
 - This includes the functions themselves, so we must take care to not give the same names to functions in the same iocBoot.
 - I suggest if we have a main function for each lua file we give it the name `<iocname>_<filename>_main` e.g. for the oercone devices st.lua: `oercone_st_main` and it's st-common.lua: `oercone_stcommon_main`. 
 
