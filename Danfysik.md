@@ -64,6 +64,10 @@ Auto on/off gets automatically enabled when using the "sweep to zero and turn of
 
 Auto on/off is part of the workflow for muon instruments, but it is not desired on neutron instruments using Danfysiks and can in fact turn the power supplies off in unsafe ways if configured badly. Thus it should always be switched off on neutron instruments. Note: The DISABLE_AUTOONOFF macro prevents auto on/off from being turned on at all and hides the GUI elements for setting it on. This macro is on by default, but is turned off by the config upgrade script for the EMU instrument, where this feature is desired.
 
+## Initialization
+
+At ioc start, some models of danfysik need to be explicitly changed into remote mode and/or addressed. The last setpoint and power status must also be resent to the device so that the magnet does not change state as a result of an IOC restart. This is currently being done using autosave.
+
 ## LOQ/SANS2D Goudsmit magnet
 
 - This magnet is driven by a 750A power supply, but can only actually take ~600A. The scientists have asked us to apply a limit of 738666 parts per million on this Danfysik (which corresponds to a current of 554A)
