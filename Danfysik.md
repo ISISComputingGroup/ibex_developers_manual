@@ -66,7 +66,7 @@ Auto on/off is part of the workflow for muon instruments, but it is not desired 
 
 ## Initialization
 
-At ioc start, some models of danfysik need to be explicitly changed into remote mode and/or addressed. The last setpoint and power status must also be resent to the device so that the magnet does not change state as a result of an IOC restart. This is currently being done using autosave.
+At ioc start, some models of danfysik need to be explicitly changed into remote mode and/or addressed. The last setpoint and power status must also be resent to the device so that the magnet does not change state as a result of an IOC restart. This is currently being done using autosave. Further details in https://github.com/ISISComputingGroup/IBEX/issues/1209
 
 ## LOQ/SANS2D Goudsmit magnet
 
