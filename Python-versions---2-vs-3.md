@@ -5,7 +5,7 @@
 | Device Emulators | Genie Python |
 | IOC Testing Framework SCript Generator | Script Server |
 | Block Server | Database Server |
-| Reflectometry Server | Archiver Access |
+| Reflectometry Server | 
 | Block Cache | 
 | Block Server to kafka |
 | Collision Avoidance Monitor |
@@ -13,3 +13,4 @@
 | IBEX utils |
 | IBEX Wiki check |
 | Squish Tests|
+| Archiver Access |
