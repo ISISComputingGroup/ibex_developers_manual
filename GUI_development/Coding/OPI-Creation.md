@@ -8,7 +8,7 @@ OPIs live in `ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources`
 
  - Set the correct path for the Fonts and Colours files: Edit -> Preferences -> CSS Applications -> Display -> BOY. For the colour file choose `/resources/Share/isis_colours.def`; for the font file choose `/resources/Share/isis_fonts.def`.
 
- - Create a new OPI with File -> New  BOY -> OPI File
+ - Create a new OPI with File -> New -> BOY -> OPI File
  - Change to the "OPI Editor" perspective to allow easier editing.
  - You need to use "OPI Editor" to edit your files, **not** "Display Editor". The later creates a display builder file and not an OPI.
  - Edit the OPI.
