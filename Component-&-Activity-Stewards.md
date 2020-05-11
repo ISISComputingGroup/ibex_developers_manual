@@ -48,6 +48,7 @@ Detector systems monitoring | James |
 HIFI Cryomagnet | Kathryn and Chris C |
 RIKEN Upgrade | Chris M-S |
 Systems (Hardware, OS, etc.) | Chris M-S |
+Python 3 Migration | Bish |
 
 
 <a name="definitionSteward"></a>
