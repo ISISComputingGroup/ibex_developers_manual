@@ -3,7 +3,7 @@
 | Python 2| Python 3|
 | ------ | ----  |
 | Device Emulators | Genie Python |
-| IOC Testing Framework SCript Generator | Script Server |
+| IOC Testing Framework Script Generator | Script Server |
 | Block Server | Database Server |
 | Reflectometry Server | 
 | Block Cache | 
