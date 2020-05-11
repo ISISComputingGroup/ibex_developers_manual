@@ -86,6 +86,6 @@ Or:
 1. Follow instructions to create a blank database and copy that to the disk
 1. Add other directories meant to be in var from the developer's setup e.g. log, autosave
 
-### Automation Idea
+# Automation
 
-To automate this I would suggest setting up a new path in the install utils. Then mount the VHD at the correct points `c:\instrument` and then run tasks as usual.
+**To run the automated scripts, Hyper-V must be enabled on the computer which will be running the script.** It can be turned on by searching for "turn windows features on or off" from the start menu and then selecting the entire Hyper-V tree. If hyper-v wasn't already turned on this will require a restart.
