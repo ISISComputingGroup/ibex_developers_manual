@@ -19,18 +19,14 @@ The BlockServer is a Channel Access Server (CAS) written in Python using the [PC
 It provides a number of PVs that allow the blocks to be configured (see below) and configurations to be created and loaded.
 The blocks are PV aliases created using the blocks gateway - a standard [channel access gateway](Access-Gateway) running on localhost. When a configuration is loaded or the blocks changed then the BlockServer regenerates the PV file for the gateway. 
 
-The PV file typically looks something like this:
+The PV file is typically stored in `C:\Instrument\Settings\gwblock.pvlist` and looks something like this:
 
-    \(.*\)CS:SB:CJHGAP\(.*\)    ALIAS    \1MOT:JAWS1:HGAP\2
-    \(.*\)CS:SB:CJVGAP\(.*\)    ALIAS    \1MOT:JAWS1:VGAP\2
-    \(.*\)CS:SB:A1HGAP\(.*\)    ALIAS    \1MOT:JAWS2:HGAP\2
-    \(.*\)CS:SB:A1VGAP\(.*\)    ALIAS    \1MOT:JAWS2:VGAP\2
-    \(.*\)CS:SB:S1HGAP\(.*\)    ALIAS    \1MOT:JAWS3:HGAP\2
-    \(.*\)CS:SB:S1VGAP\(.*\)    ALIAS    \1MOT:JAWS3:VGAP\2
-    .*:CS:GATEWAY:.*    ALLOW
+    INST:CS:SB:MyBlock\([.:].*\)    ALIAS    INST:EUROTHRM_01:TEMP\1
+    INST:CS:SB:MYBLOCK\([.:].*\)    ALIAS    INST:EUROTHRM_01:TEMP\1
+    INST:CS:SB:MyBlock\(:RC.*\)     ALIAS    INST:CS:MYBLOCK\1
+    INST:CS:SB:MYBLOCK\(:RC.*\)     ALIAS    INST:CS:MYBLOCK\1
 
-
-Pattern matching is used so that patterns like BLOCKNAME:SP and BLOCKNAME:SP:RBV can be used.
+Pattern matching is used so that patterns like BLOCKNAME:SP and BLOCKNAME:SP:RBV can be used, aliases are created for both the case specified by the user and full uppercase so that clients can be case insensitive. Once this file is written the BlockServer will restart the gateway, running as `GWBLOCK`. The `RC` lines are used for [Run Control](Run-control), which the BlockServer is also responsible for configuring. Run control PVs live in a separate IOC with the `CS` namespace and the gateway moves them into the `CS:SB` namespace and adds case insensitive aliases. In this way all client interactions with specific blocks are going through `GWBLOCK`.
 
 The BlockServer is also responsible for configuring the blocks archiver to log the current blocks.
 
