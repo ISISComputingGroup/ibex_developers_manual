@@ -1,0 +1,1 @@
+The CRISP Spin Flipper is generally reffered to as 'FLIPPRPS' in IOC and support files.
