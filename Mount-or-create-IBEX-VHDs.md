@@ -26,10 +26,6 @@ These contain part of the system which change often. We are undecided what to do
 
 For the test system I have gone with the first approach because it was easy. I like the second approach better.
 
-### Cross disks
-
-There are some things which are cross disks, e.g. the database is a service but is stored on the apps. Do these instructions live in an upgrade script? How do we unmount and mount the disks during upgrade? The upgrade process needs thinking about.
-
 # VHD Creation
 
 ## Create empty VHDs
@@ -88,18 +84,30 @@ Or:
 
 # Automation
 
+There is an [automated job in jenkins](http://epics-jenkins.isis.rl.ac.uk/job/Create_VHD/) which builds VHDs from the latest IBEX server/client/python versions.
+
+### Build server setup
+
 To set up a computer to be able to run the [automated VHD creation script](https://github.com/ISISComputingGroup/ibex_utils/tree/master/installation_and_upgrade):
 - Hyper-V must be enabled on the computer which will be running the script. It can be turned on by searching for "turn windows features on or off" from the start menu and then selecting the entire Hyper-V tree. If hyper-v wasn't already turned on this will require a restart.
 - Powershell must be upgraded to at least version 5 to support the commands we are using.
 - Set up an environment variable called `MYSQL_PASSWORD` containing the MySQL root user password.
 - In the admin documents area, create an (empty) folder at `C:\Users\Administrator\Documents\fake_release_dir\1.0.0`
-- The computer needs to have **none** of the following directories present (this is where it will mount the VHDs):
-  * `C:\Instrument\Apps`
-  * `C:\Instrument\Settings\config`
-  * `C:\Instrument\var`
 
 ### Mounting and dismounting VHDs automatically
 
 Because VHD mounting and dismounting requires admin rights, this is done by a scheduled task running as the admin user. The code run by these scheduled tasks is checked out to `C:\Users\Administrator\Documents\ibex_utils\installation_and_upgrade`, and the bat file which is run is `vhd_scheduled_task.bat`.
 
 The scheduled tasks run every minute and look for a file which is created by the install script. If this file exists, the tasks will mount/dismount the vhds and then delete the file. Otherwise the tasks do nothing.
+
+### Build artefacts
+
+Empty VHDs are currently taken from:
+```
+\\isis\inst$\Kits$\CompGroup\Chris
+```
+
+Once filled with IBEX files, the VHDs are copied to:
+```
+\\isis\inst$\Kits$\CompGroup\ICP\VHDS
+```
