@@ -1,15 +1,17 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [Miscellaneous motion control](Miscellaneous-Motion-Control) > [Reflectometry IOC](Reflectometry-IOC) > [Beamline Parameters](Reflectometry-Beamline-Parameters)
 
-Beamline parameters store something a user wishes to set. They can have blocks or the GUI controls pointed at them. These parameters are transformations of low-level motor values. Each contains:
+Beamline parameters store something a user wishes to set. They can have blocks or the GUI controls pointed at them. These parameters are transformations of low-level motor values. The reflectometry server creates the following PVs for each parameter:
 
-- Name: name of the parameter
-- Readback: the value as calculated from the low-level motor positions.
-- Setpoint: when set, the reflectometry server will move the parameter this value
-- Setpoint read-back: the last value that this parameter was moved to.
-- Setpoint and no move: if this is set the setpoint is stored but not applied to the motor until the next time a move is triggered on this parameter.
-- Move: moves this parameter to the setpoint
-- Changed: true if the setpoint has been changed via setpoint no move, and has not yet been applied to the motor.
-- RBV at Setpoint: Whether the RBV is at the given setpoint within a tolerance
+- `<PREFIX>:REFL:PARAM:<NAME>` - Readback: the value as calculated from the low-level motor positions.
+- `<PREFIX>:REFL:PARAM:<NAME>:SP` - Setpoint: when set, the reflectometry server will move the parameter this value
+- `<PREFIX>:REFL:PARAM:<NAME>:SP:RBV` - Setpoint read-back: the last value that this parameter was moved to.
+- `<PREFIX>:REFL:PARAM:<NAME>:SP_NO_ACTION` - if this is set the setpoint is stored but not applied to the motor until the next time a move is triggered on this parameter.
+- `<PREFIX>:REFL:PARAM:<NAME>:ACTION` - moves this parameter to the setpoint
+- `<PREFIX>:REFL:PARAM:<NAME>:RBV:AT_SP` - True if readback value is within tolerance of the setpoint
+- `<PREFIX>:REFL:PARAM:<NAME>:CHANGED` - True if this setpoint has changed since the last time this parameter was moved
+- `<PREFIX>:REFL:PARAM:<NAME>:IN_MODE` - True if the parameter is in the currently active beamline mode
+- `<PREFIX>:REFL:PARAM:<NAME>:CHANGING` - True if the parameter readback value is currently changing (i.e. an underlying motor is moving)
+- `<PREFIX>:REFL:PARAM:<NAME>:DEFINE_POSITION_AS` - redefines the current parameter readback to the given value (does not move the motor)
 
 Types of beamline parameter:
 
