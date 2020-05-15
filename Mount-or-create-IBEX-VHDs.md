@@ -92,6 +92,7 @@ To set up a computer to be able to run the [automated VHD creation script](https
 - Hyper-V must be enabled on the computer which will be running the script. It can be turned on by searching for "turn windows features on or off" from the start menu and then selecting the entire Hyper-V tree. If hyper-v wasn't already turned on this will require a restart.
 - Powershell must be upgraded to at least version 5 to support the commands we are using.
 - Set up an environment variable called `MYSQL_PASSWORD` containing the MySQL root user password.
+- In the admin documents area, create an (empty) folder at `C:\Users\Administrator\Documents\fake_release_dir\1.0.0`
 - The computer needs to have **none** of the following directories present (this is where it will mount the VHDs):
   * `C:\Instrument\Apps`
   * `C:\Instrument\Settings\config`
