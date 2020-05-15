@@ -94,6 +94,8 @@ To set up a computer to be able to run the [automated VHD creation script](https
 - Set up an environment variable called `MYSQL_PASSWORD` containing the MySQL root user password.
 - In the admin documents area, create an (empty) folder at `C:\Users\Administrator\Documents\fake_release_dir\1.0.0`
 
+These items cannot be automated by jenkins as they need to be the admin user.
+
 ### Mounting and dismounting VHDs automatically
 
 Because VHD mounting and dismounting requires admin rights, this is done by a scheduled task running as the admin user. The code run by these scheduled tasks is checked out to `C:\Users\Administrator\Documents\ibex_utils\installation_and_upgrade`, and the bat file which is run is `vhd_scheduled_task.bat`.
