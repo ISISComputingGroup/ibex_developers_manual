@@ -88,10 +88,16 @@ Or:
 
 # Automation
 
-To set up a computer to be able to run the automated VHD creation script:
+To set up a computer to be able to run the [automated VHD creation script](https://github.com/ISISComputingGroup/ibex_utils/tree/master/installation_and_upgrade):
 - Hyper-V must be enabled on the computer which will be running the script. It can be turned on by searching for "turn windows features on or off" from the start menu and then selecting the entire Hyper-V tree. If hyper-v wasn't already turned on this will require a restart.
 - Set up an environment variable called `MYSQL_PASSWORD` containing the MySQL root user password.
 - The computer needs to have none of the following directories present (this is where it will mount the VHDs):
   * `C:\Instrument\Apps`
   * `C:\Instrument\Settings\config`
   * `C:\Instrument\var`
+
+### Mounting and dismounting VHDs automatically
+
+Because VHD mounting and dismounting requires admin rights, this is done by a scheduled task running as the admin user. The code run by these scheduled tasks is checked out to `C:\Users\Administrator\Documents\ibex_utils\installation_and_upgrade`, and the bat files which are run are `mount_vhds.bat` and `dismount_vhds.bat`.
+
+The scheduled tasks run every minute and look for a file which is created by the install script. If this file exists, the tasks will mount/dismount the vhds and then delete the file. Otherwise the tasks do nothing.
