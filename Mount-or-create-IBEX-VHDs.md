@@ -88,4 +88,10 @@ Or:
 
 # Automation
 
-**To run the automated scripts, Hyper-V must be enabled on the computer which will be running the script.** It can be turned on by searching for "turn windows features on or off" from the start menu and then selecting the entire Hyper-V tree. If hyper-v wasn't already turned on this will require a restart.
+To set up a computer to be able to run the automated VHD creation script:
+- Hyper-V must be enabled on the computer which will be running the script. It can be turned on by searching for "turn windows features on or off" from the start menu and then selecting the entire Hyper-V tree. If hyper-v wasn't already turned on this will require a restart.
+- Set up an environment variable called `MYSQL_PASSWORD` containing the MySQL root user password.
+- The computer needs to have none of the following directories present (this is where it will mount the VHDs):
+  * `C:\Instrument\Apps`
+  * `C:\Instrument\Settings\config`
+  * `C:\Instrument\var`
