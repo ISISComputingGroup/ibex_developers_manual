@@ -1,13 +1,8 @@
 # Overview
 
 The reflectometry configuration describes the geometry of the beamline and is read by the reflectometry IOC on startup. The config file is written in python and lives in `<config area>/refl/config.py`.
-The configuration describes the beamline in terms of 
-- [Modes of Operation]()
-- [Beamline Constants]()
-- [Beamline Parameters]()
-- [Components]()
-- [Composite Drivers]()
-- [Footprint Calculator Setup]()
+
+[Jump to Example Configuration]()
 
 # Reference Manual
 
@@ -32,12 +27,33 @@ These are fixed values which are exposed by the IOC as PVs of the form `<PREFIX>
 - `HAS_HEIGHT2`: Whether the sample stack has a second height stage (`True`/`False` only)
 
 #### Example:
+
 ```
 BeamlineConstant("MAX_THETA", 1.8, "Maximum Theta value")
 ```
 
+
 ### [Components](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Geometry-Components)
-TODO
+Components are the central building blocks of the configuration. Each of them represents a node of interaction with the beam on the instrument (either passively tracking or actively affecting it). They are also the connective middle layer element between the user-facing beamline parameters and the composite drivers that talk to low level motors.
+
+All components take the following two arguments:
+- `name`: Name of the component
+- `setup`: The geometry setup for this component as an object of the form `PositionAndAngle(component_y, component_z, angle_of_linear_displacement_axis)`
+
+#### Types of Component
+- `Component`: Most basic type of component with 1 degree of freedom: linear displacement relative to the beam
+- `TiltingComponent`: 2 degrees of freedom: linear and angular displacement. This allows the component to stay perpendicular to the beam as well as centered (e.g. point detector on SURF/CRISP). This component does not affect the beam path.
+- `ReflectingComponent`: 2 degrees of freedom like `TiltingComponent`, except this component reflects the beam and thus changes its path (e.g. supermirror)
+- 'ThetaComponent': like `ReflectingComponent`, except the angle is derived from the height of this component and the height of another component further down the beamline. For this purpose, `ThetaComponent` receives a list of components via an additional argument `angle_to`. It will use the height of the next component along the beam that is currently in beam and in the mode.
+
+#### Example
+
+```
+detector = TiltingComponent("detector", setup=PositionAndAngle(0.0, 100.0, 90.0))
+
+ThetaComponent("theta_component", setup=PositionAndAngle(0.0, 50.0, 90.0), angle_to=[detector])
+```
+
 
 ### [Beamline Parameters](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Beamline-Parameters)
 
@@ -57,8 +73,32 @@ All parameters expect at least 2 arguments for a) parameter name, and b) its bas
 
 #### Example
 
+```
+# Parameter relative to the beam path
+AngleParameter("SM_angle", supermirror_component)
+
+# Parameter that directly wraps a motor value
+DirectParameter("sample_trans", MotorPVWrapper("MOT:MTR0305"))
+```
+
 
 ### [Composite Drivers](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Composite-Driving-Layer)
+
+These objects link the middle-layer component model to the low-level motor axes. They take the following arguments:
+
+Required:
+- `component`: The source component
+- `axis`: The physical motor axis as a `PVWrapper` object (see below)
+
+Optional:
+- `synchronised`: Whether this axis should alter its velocity when moving multiple axes, to move concurrently with the slowest one.
+- `engineering_correction`: any corrections (link) that should be applied to the motor position
+- `out_of_beam_positions` (`DisplacementDriver` only): A list of possible parked positions (link) for this axis
+
+#### Types of Driver
+
+- `DisplacementDriver`:
+- `AngleDriver`:
 
 #### [PV Wrappers]()
 
@@ -66,7 +106,11 @@ All parameters expect at least 2 arguments for a) parameter name, and b) its bas
 
 ### [Footprint Calculator](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-IOC#footprint-calculator)
 
+
 ## Helper functions
+
+## Notes:
+
 
 # Example Configuration
 
