@@ -2,7 +2,7 @@
 
 ## The DAE and the ICP
 
-The Data Acquisition Electronics (DAE) is the physical hardware that reads the neutron events out of the detectors. IBEX communicates with this hardware via the Instrument Control Program (ICP).
+The Data Acquisition Electronics (DAE) is the physical hardware that reads the neutron events out of the detectors. IBEX communicates with this hardware via the Instrument Control Program (ICP). This program is also responsible for combining the neutron and sample environment data into the NeXus file.
 Additional links:
 
 - [Sharepoint Slides with more info on the DAE & ICP](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/ISISICP%20and%20DAE.pptx)
@@ -22,3 +22,22 @@ To do this you must:
 * Start your DAE
 
 The DAE will mimic the run state, title and period of the DAE it is point to.
+
+## Event and Histogram Mode
+The DAE/ICP has two main 'modes' of operation, event mode and histogram mode. In event mode the position and timestamp of every single neutron that the detector finds is passed through the DAE to the ICP and saved into the NeXus file. In histogram mode the DAE will intercept these events and put them into bins based on when they hit the detector. Due to the binning of events histograms lead to some lost information however historically histogrammed data was the only option due to limited data rates. Instruments in general are moving more towards event data but it still has the disadvantage that it will lead to large and unwieldy NeXus files and in some cases offers little benefit as histogramming would be the first step of data analysis anyway.
+
+In reality this mode of operation is actually set per detector card rather than over the whole DAE. However instruments will tend to run with a majority one way or the other and so scientists tend to think of them as distinct modes. The exception to this is monitors where instruments will nearly always histogram them. This is for two reasons:
+
+* They have higher flux than other detectors so will dramatically increase file size if put as events
+* They're used mainly for normalisation and diagnostics so loss of precision is not that much of a big deal
+
+# Configuring the DAE/ICP
+There are two settings files inside `EPICS/ICP_Binaries` that are used to configure the ICP at start up, these are `icp_config.xml` and `isisicp.properties`. They contain information that is usually quite fixed for an instrument such as whether to start up in simulation mode, how much memory to use etc.
+
+There are three main files that can be set at runtime to change the behaviour of the DAE or used for later analysis, they are collectively known as tables:
+* *Detector Table*: Files containing the word detector specifying the physical location of each detector. The second line contains the number of entries followed by the number of user parameters. The table consists of a detector id, it's offset, it's L2 (distance from the sample), an id code and then as many user specified parameters as specified in the second line.
+* *Spectra Table*: Files containing the word spectra specifying how detector id (which has little meaning to an instrument scientist) maps to spectrum number (which the scientists use for analysis). The second line contains the number of detectors.
+* *Wiring Table*: Files containing the word wiring and specifying how the detectors are connected to the DAE. The second line specifies how many detectors there are and how many of those are monitors. The table contains an index, detector id, time regime (see time channels below), physical crate, module and position numbers, the monitor that the detector corresponds to (0 for none) and the monitor prescale. 
+These files are picked up from `Instrument/Settings/config/inst/configurations/tables`, have the *.dat suffix and are all human readable. They can be edited by hand but must be done carefully to ensure that there are no logic errors within them. For example if a detector is listed in one file but not in another. 
+
+The way that data is binned by the DAE is set by changing the time channel binning (TCB). Scientists generally want different amount of detail depending on when the neutron hit the detector, which they can do by setting a smaller bin in the time range that they care more about. They can do this through the GUI manually or by creating a tcb file that is loaded into the ICP. It may be that scientists would like different levels of binning for different banks of detectors they can do this by setting up a number of different `timing regimes` and then specifying the regime they would like the detector to go into in the wiring table. If they specify a time regime of > 100 the data will be read and saved as event data. If they specify 1XX the ICP will also bin the events 'on the fly' into the XX regime as well as save the raw event data.  
