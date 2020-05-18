@@ -1,6 +1,6 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [System Components](System-components) > [DAE and the ICP](DAE-and-the-ICP)
 
-## The DAE and the ICP
+# The DAE and the ICP
 
 The Data Acquisition Electronics (DAE) is the physical hardware that reads the neutron events out of the detectors. IBEX communicates with this hardware via the Instrument Control Program (ICP). This program is also responsible for combining the neutron and sample environment data into the NeXus file.
 Additional links:
@@ -31,7 +31,7 @@ In reality this mode of operation is actually set per detector card rather than 
 * They have higher flux than other detectors so will dramatically increase file size if put as events
 * They're used mainly for normalisation and diagnostics so loss of precision is not that much of a big deal
 
-# Configuring the DAE/ICP
+## Configuring the DAE/ICP
 There are two settings files inside `EPICS/ICP_Binaries` that are used to configure the ICP at start up, these are `icp_config.xml` and `isisicp.properties`. They contain information that is usually quite fixed for an instrument such as whether to start up in simulation mode, how much memory to use etc.
 
 There are three main files that can be set at runtime to change the behaviour of the DAE or used for later analysis, they are collectively known as tables:
