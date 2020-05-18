@@ -4,7 +4,7 @@
 
 It is likely that you are in a muon configuration for the DAE but using a neutron tcb file or vice versa.
 
-Either change the tcb file you are using or do the following steps to change the DAE type:
+Either change the [tcb file](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/DAE-and-the-ICP#configuring-the-daeicp) you are using or do the following steps to change the DAE type:
 
 1. Change the DAE type of your icp_config.xml (in EPICS/ICP_Binaries) to the correct value (1 for DAE2 neutron, 2 for DAE2 muon, 3 for DAE3 neutron, 4 for DAE3 muon).
 2. In the same directory edit the isisicp.properties file to use either neutron or muon for `isisicp.simulation.detcards.type`
@@ -74,7 +74,7 @@ This should not occur but has when a database was missing our extra column in th
 
 ### Not enough CRPT memory
 
-CRPT (Current Run Parameter Table) memory is a large in-memory structure used to store information about the run, including histogrammed data. Data is read from the DAE into CRPT memory and then written to file, in event mode CRPT memory is where events are histogrammed on the fly during collecting to provide real-time spectra. If you get a CRPT size error, it means the product of (number of periods) * (number of spectra) * (number of time channels) is too big. If you are in histogram mode you either need to reduce one of these variables or get the CRPT size increased (icp_config.xml) but remember this is real memory that the ICP will claim at startup. If you are in event mode and get a CRPT error, it may mean you have misconfigured the time regime you plan to use for the on-the-fly rebinning e.g. you are trying to rebin events at event mode resolution not at a coarser resolution. The event mode / histogram mode choice and which time regime to use is governed by the wiring tables.
+CRPT (Current Run Parameter Table) memory is a large in-memory structure used to store information about the run, including histogrammed data. Data is read from the DAE into CRPT memory and then written to file, in event mode CRPT memory is where events are histogrammed on the fly during collecting to provide real-time spectra. If you get a CRPT size error, it means the product of (number of periods) * (number of spectra) * (number of time channels) is too big. If you are in histogram mode you either need to reduce one of these variables or get the CRPT size increased (icp_config.xml) but remember this is real memory that the ICP will claim at startup. If you are in event mode and get a CRPT error, it may mean you have misconfigured the time regime you plan to use for the on-the-fly rebinning e.g. you are trying to rebin events at event mode resolution not at a coarser resolution. The event mode / histogram mode choice and which time regime to use is governed by the [wiring tables](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/DAE-and-the-ICP#configuring-the-daeicp).
 
 ### End of run script not working or data not being copied to the archive
 
@@ -237,7 +237,7 @@ We have observed on a couple of occasions that the DAE got stuck in `WAITING` de
 
 ### ISISDAE reports `time regimes 1 and 2 are incompatible`
 
-Time regimes are incompatible when their starts differ by a non-integer number of microseconds, but sometimes rounding errors may lead to this happening in other circumstances. This check is actually no longer required and has been removed in ISISICP SVN revisions 2010 and above. 
+[Time regimes](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/DAE-and-the-ICP#configuring-the-daeicp) are incompatible when their starts differ by a non-integer number of microseconds, but sometimes rounding errors may lead to this happening in other circumstances. This check is actually no longer required and has been removed in ISISICP SVN revisions 2010 and above. 
 
 ### ISISICP writes a corrupted journal file
 
