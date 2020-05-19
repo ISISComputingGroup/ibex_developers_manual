@@ -2,12 +2,16 @@
 
 This page as much as possible distinguishes between the standard Python version installed on instruments/developer machines and the `genie_python` module that is actually used to communicate with IBEX. These have historically been conflated by both users and developers, leading to the problems outlined in below.
 
+### How Python Dependencies were Historically Handled
+
 Historically when a new Python module was required by any part of the IBEX system it was added as a requirement to the singular standard python installation. As the project has grown this has lead to a number of problems:
 
 * It is unclear where and how our dependencies are used particularly the split between dependencies of the server, client and of a scientist using `genie_python` alongside other tools
 * Increased risk that dependency updates will break something
 * Additional overhead in what we are giving to users as their Python client
 * Conflict of requirements between projects
+
+### How Python Dependencies should be Handled in the Future
 
 To move away from this it was decided by Freddie, Dom, Tom and John in a meeting on 19/05/2020 that we should aim instead for a system where every Python project within the IBEX system had it's own requirements listed in a `requirements.txt` and ran in a separate clean `virtualenv`. This is obviously a large change to the system so it was proposed that rather than do this in one go:
 
