@@ -33,7 +33,7 @@ The first time you set up `genie_python`, assuming you've never installed it pre
 1. Make sure you have a development version of `genie_python` set up as described above.
 1. Create a branch for your changes as per the [standard development workflow](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Git-workflow).
 1. Apply changes to the `genie_python` source at `C:\Instrument\Apps\Python\Lib\site-packages\genie_python`, remembering to commit any changes to your branch.
-1. If you need any extra libraries, or change `genie_python` dependencies, add them to `requirements.txt` and rerun `dev_build_python.bat` to make them available in your distribution.
+1. If you need any extra libraries, or change `genie_python` dependencies, add them to `requirements.txt` and rerun `dev_build_python.bat` to make them available in your distribution. Note if you need extra libraries for a project other than `genie_python` see [here](Python-dependencies#how-python-dependencies-should-be-handled-in-the-future).
 1. You can run the `genie_python` unit tests at any time with `C:\Instrument\Apps\Python\python.exe C:\Instrument\Apps\Python\Lib\site-packages\genie_python\run_tests.py`. Alternatively, from an EPICS terminal with the current working directory as `C:\Instrument\Apps\Python\Lib\site-packages\genie_python` you can simply run `python run_tests.py`.
 
 ### Building notes
