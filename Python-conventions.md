@@ -1,6 +1,6 @@
 > [Wiki](Home) > [genie_python](genie_python) > [Python Conventions](Python-conventions)
 
-For dependency conventions see [Python dependencies](python-dependencies).
+For dependency conventions see [Python dependencies](Python-dependencies).
 
 ### Coding style
 We try to follow [PEP8](https://www.python.org/dev/peps/pep-0008/) for coding style where possible or suitable.
