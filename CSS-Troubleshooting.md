@@ -1,3 +1,5 @@
+> [Wiki](Home) > [Trouble-shooting](trouble-shooting-pages) > [CSS](CSS-Troubleshooting)
+
 This page contains information on how to troubleshoot some common issues with the GUI. 
 
 **Opening some OPIs in OPI editor throws a Malformed URL Exception**
