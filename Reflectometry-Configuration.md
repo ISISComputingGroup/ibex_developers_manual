@@ -42,7 +42,7 @@ All components take the following two arguments:
 
 #### Types of Component
 - `Component`: Most basic type of component with 1 degree of freedom: linear displacement relative to the beam
-- `TiltingComponent`: 2 degrees of freedom: linear and angular displacement. This allows the component to stay perpendicular to the beam as well as centered (e.g. point detector on SURF/CRISP). This component does not affect the beam path.
+- `TiltingComponent`: 2 degrees of freedom: linear and angular displacement. This allows the component to stay perpendicular to the beam as well as centred (e.g. point detector on SURF/CRISP). This component does not affect the beam path.
 - `ReflectingComponent`: 2 degrees of freedom like `TiltingComponent`, except this component reflects the beam and thus changes its path (e.g. supermirror)
 - 'ThetaComponent': like `ReflectingComponent`, except the angle is derived from the height of this component and the height of another component further down the beamline. For this purpose, `ThetaComponent` receives a list of components via an additional argument `angle_to`. It will use the height of the next component along the beam that is currently in beam and in the mode.
 
