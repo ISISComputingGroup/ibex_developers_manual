@@ -10,9 +10,7 @@ This file needs to import relevant classes and methods used for constructing the
 
 This section contains an overview of the available building blocks in the form of classes and helper methods, which are used to construct the beamline model.
 
-## Types of Objects
-
-### [Beamline Constants](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Beamline-Object#beamline-constants)
+## [Beamline Constants](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Beamline-Object#beamline-constants)
 
 These are fixed values which are exposed by the IOC as PVs of the form `<PREFIX>:REFL:CONST:<NAME>`, but cannot be changed at runtime. They follow a naming convention so that they can be read automatically by the shared reflectometry scripting library. The default set of constants the configuration has to define consists of:
 - `S1_Z`: Z coordinate of Slit 1
@@ -35,7 +33,7 @@ BeamlineConstant("MAX_THETA", 1.8, "Maximum Theta value")
 ```
 
 
-### [Components](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Geometry-Components)
+## [Components](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Geometry-Components)
 Components are the central building blocks of the configuration. Each of them represents a node of interaction with the beam on the instrument (either passively tracking or actively affecting it). They are also the connective middle layer element between the user-facing beamline parameters and the composite drivers that talk to low level motors.
 
 All components take the following two arguments:
@@ -57,7 +55,7 @@ ThetaComponent("theta_component", setup=PositionAndAngle(0.0, 50.0, 90.0), angle
 ```
 
 
-### [Beamline Parameters](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Beamline-Parameters)
+## [Beamline Parameters](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Beamline-Parameters)
 
 These are the top-level parameters exposed as PVs of the form `<PREFIX>:REFL:PARAM:<NAME>:<SUFFIX>`, which the users can set via the reflectometry front panel or scripting. Parameters can take the following arguments:
 
@@ -88,7 +86,7 @@ AngleParameter("SM_angle", supermirror_component)
 DirectParameter("sample_trans", MotorPVWrapper("MOT:MTR0305"))
 ```
 
-### [Composite Drivers](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Composite-Driving-Layer)
+## [Composite Drivers](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Composite-Driving-Layer)
 
 These objects link the middle-layer component model to low-level motors. They take the following arguments:
 
@@ -117,7 +115,7 @@ sm_out_pos = OutOfBeamPosition(-20)
 DisplacementDriver(sm_component, MotorPVWrapper("MOT:MTR0101"), out_of_beam_positions=[sm_out_pos])
 ```
 
-### PV Wrappers
+## PV Wrappers
 
 Wrappers around lower level motors to read, monitor and cache relevant PV values (such as SP/RBV positions, or velocity related fields for synchronising moves). 
 
@@ -144,7 +142,7 @@ SlitGapPVWrapper("JAWS1", is_vertical=False)
 SlitCentrePVWrapper("JAWS1", is_vertical=True)
 ```
 
-### [Modes of Operation](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Beamline-Object)
+## [Modes of Operation](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Beamline-Object)
 
 Modes allow users to switch between different experimental setups more easily. They take the following arguments:
 - `name`: The name of the mode (e.g. `NR`, `Liquid`)
@@ -159,7 +157,7 @@ pnr_inits = {"SM_inbeam": True}
 BeamlineMode("Polarised NR", pnr_params, sp_inits=pnr_inits, is_disabled=False) 
 ```
 
-### [Footprint Calculator](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-IOC#footprint-calculator)
+## [Footprint Calculator](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-IOC#footprint-calculator)
 
 The footprint calculator provides values for beam footprint and resolution based on the current slit gaps / theta, and exposes them to the front panel and scripting via PVs. It is instantiated by the beamline object if a `FootprintSetup` argument is passed, which defines relevant dimensions on the beamlne.
 
