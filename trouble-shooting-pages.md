@@ -9,6 +9,7 @@
 * [Eclipse](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Common%20Eclipse%20Issues)
 * [Other](Other-Troubleshooting)
 * [GUI](GUI-Troubleshooting)
+* [CSS](CSS-Troubleshooting)
 * [Database](Database-Troubleshooting)
 * [Web Dashboard](Web-Dashboard#troubleshooting)
 * [genie_python](genie_python-Troubleshooting)
