@@ -2,6 +2,8 @@
 
 The reflectometry configuration describes the geometry of the beamline and is read by the reflectometry IOC on startup. The config file is written in python and lives in `<config area>/refl/config.py`.
 
+This file should import relevant classes and methods used for constructing the configuration via the line `from ReflectometryServer import *`
+
 [Jump to Example Configuration]()
 
 # Reference Manual
@@ -44,7 +46,7 @@ All components take the following two arguments:
 - `Component`: Most basic type of component with 1 degree of freedom: linear displacement relative to the beam
 - `TiltingComponent`: 2 degrees of freedom: linear and angular displacement. This allows the component to stay perpendicular to the beam as well as centred (e.g. point detector on SURF/CRISP). This component does not affect the beam path.
 - `ReflectingComponent`: 2 degrees of freedom like `TiltingComponent`, except this component reflects the beam and thus changes its path (e.g. supermirror)
-- 'ThetaComponent': like `ReflectingComponent`, except the angle is derived from the height of this component and the height of another component further down the beamline. For this purpose, `ThetaComponent` receives a list of components via an additional argument `angle_to`. It will use the height of the next component along the beam that is currently in beam and in the mode.
+- `ThetaComponent`: like `ReflectingComponent`, except the angle is derived from the height of this component and the height of another component further down the beamline. For this purpose, `ThetaComponent` receives a list of components via an additional argument `angle_to`. It will use the height of the next component along the beam that is currently in beam and in the mode.
 
 #### Example
 
@@ -84,30 +86,34 @@ DirectParameter("sample_trans", MotorPVWrapper("MOT:MTR0305"))
 
 ### [Composite Drivers](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Composite-Driving-Layer)
 
-These objects link the middle-layer component model to the low-level motor axes. They take the following arguments:
+These objects link the middle-layer component model to low-level motors. They take the following arguments:
 
 Required:
 - `component`: The source component
 - `axis`: The physical motor axis as a `PVWrapper` object (see below)
 
 Optional:
-- `synchronised`: Whether this axis should alter its velocity when moving multiple axes, to move concurrently with the slowest one.
+- `synchronised`: Whether this driver should be able to alter axis velocity when multiple axes are being moved (used for synchronised beamline movement)
 - `engineering_correction`: any corrections (link) that should be applied to the motor position
 - `out_of_beam_positions` (`DisplacementDriver` only): A list of possible parked positions (link) for this axis
 
 #### Types of Driver
 
-- `DisplacementDriver`:
-- `AngleDriver`:
+- `DisplacementDriver`: The driver for a single linear displacement axis
+- `AngleDriver`: The driver for a single angular displacement axis
 
 #### [PV Wrappers]()
 
 ### [Modes of Operation](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Beamline-Object)
 
+
+
 ### [Footprint Calculator](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-IOC#footprint-calculator)
 
 
 ## Helper functions
+
+The reflectometry server provides a set of helper functions to aid writing valid configuration files.
 
 ## Notes:
 
@@ -115,5 +121,3 @@ Optional:
 # Example Configuration
 
 Following is a simplified example of a typical beamline configuration to illustrate concepts.
-
-
