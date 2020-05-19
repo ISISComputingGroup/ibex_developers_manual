@@ -36,3 +36,7 @@ A place to record decisions:
 14. It was decided that as part of the parameter limits [ticket](https://github.com/ISISComputingGroup/IBEX/issues/4168) for the script generator we will pass all parameters as strings from java to python and handle them in the python code by providing a decorator to pass casting operations to e.g. `@cast_parameters_to(temperature=float, field=str, uamps=float)`. This will allow them to define their own casting operations to deal with funny edge cases in a nice way. It also reduces the amount of edge cases we may find with py4j handling the difference between python and java class.
     - Present: James, Tom, Alistair
     - 09/12/2019
+
+15. We should move towards using virtual environments for our python projects see [here](Python-dependencies) for more detail.
+   - Present: Dom, Tom, Freddie, John
+   - 19/05/2020
