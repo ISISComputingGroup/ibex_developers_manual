@@ -32,7 +32,7 @@ Where:
 - `FRI` is a scaling factor applied when reading current
 - `FWI` is a scaling factor applied when writing current (note, for some power supplies this can be completely different from the reading scale factor)
 
-Additionally, the IOC talks to DAQ MX to do some changeover logic, which is implemented in SNL inside the IOC.
+Additionally, the IOC talks to DAQ MX to do some changeover logic, which is implemented in SNL inside the IOC. There is a PV called `<my pv prefix>:RKNPS_01:DAQMX_STATUS` that can be used to check if the DAQ MX is connected or not.
 
 To run this IOC you will need to install the DAQMX binaries - available on the national instruments website (it is a rather large installer so it is not installed by default).
 
