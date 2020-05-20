@@ -28,7 +28,7 @@ Type   | Meaning
 **re-request** | Instrument scientist has requested a ticket and it has been requested by another instrument scientist in the past. A comment should record who asked with a +1.
 **Needs pair review** | If a ticket is complicated or has many changes, the ticket should be reviewed by a pair of developers, not just one. Ideally one of the reviewers will already be familiar with the affected area of the code (to help with knowledge sharing). This label can be added at any time. It may be ignored for review of rework unless otherwise stated. |
 **Code Review** | Ticket that could be reviewed by a wider group in a code review session. For particularly large or unique additions. 
-**Bucket** | Items that were proposed in the last proposal round, but were not high enough priority to make it into the sprint. If tickets in ready run out, these tickets should be picked up in preference to other tickets in the backlog. 
+**Bucket** | Items that were proposed in the last proposal round, but were not high enough priority to make it into the sprint. If tickets in ready run out, these tickets should be picked up in preference to other tickets in the backlog. <br> If a "bucket" ticket is required in the next sprint, then add a `proposal` label before the bucket label is removed at the end of the current sprint.
 
 ## Creation of Tickets
 
