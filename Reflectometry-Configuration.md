@@ -2,7 +2,7 @@
 
 The reflectometry configuration describes the geometry of the beamline and is read by the reflectometry IOC on startup. The config file is written in python and lives in `<config area>/refl/config.py`.
 
-This file needs to import relevant classes and methods used for constructing the configuration via the line `from ReflectometryServer import *`
+This file needs to import relevant classes and methods used for constructing the configuration via the line `from ReflectometryServer import *`. It should implement a `get_beamline()` method, which returns a single object of type `Beamline`.
 
 [Jump to Example Configuration]()
 
@@ -183,7 +183,7 @@ footprint_setup = FootprintSetup(z_s1, z_s2, z_s3, z_s4, z_sample, s1vg, s2vg, s
 
 ## Beamline
 
-The top-level `Beamline` object is what is returned to the reflectometry IOC from reading the configuration and it encompasses everything else in there. It takes the following arguments:
+The top-level `Beamline` object is what is returned to the reflectometry IOC from reading the configuration and it encompasses everything else created in there. It takes the following arguments:
 
 #### Required:
 - `components`: A list of all `Component`s, ordered from beam start to beam stop
@@ -288,4 +288,134 @@ Returns the whole configured beamline object constructed from the parts added vi
 
 # Example Configuration
 
-Following is a simplified example of a typical beamline configuration to illustrate concepts.
+Following is a example of a typical beamline configuration:
+
+```
+from ReflectometryServer import *
+
+
+def get_beamline():
+    """
+    Returns: The beamline object
+    """
+
+    # FIXED BEAMLINE VALUES
+    lambda_min = 1.4
+    lambda_max = 6.5
+
+    add_constant(BeamlineConstant("MAX_THETA", 1.8, "Maximum Theta value"))
+    add_constant(BeamlineConstant("NATURAL_ANGLE", 1.5, "Natural angle of the beam"))
+    add_constant(BeamlineConstant("HAS_HEIGHT2", False, "Second height stage present"))
+
+    # Modes
+    nr = add_mode("NR")
+    liquid = add_mode("Liquid")
+    disabled = add_mode("DISABLED", is_disabled=True)
+
+    # Slit 1
+    z_s1 = 0.0
+    add_constant(BeamlineConstant("S1_Z", z_s1, "Slit 1 z position"))
+    s1_comp = add_component(Component("s1", PositionAndAngle(0.0, z_s1, 90)))
+
+    add_parameter(TrackingPosition("S1Offset", s1_comp), modes=[nr, liquid])
+    add_driver(DisplacementDriver(s1_comp, MotorPVWrapper("MOT:MTR0301")))
+    s1_params = add_slit_parameters(1)
+
+    # Super Mirror
+    z_sm = 747.5
+    add_constant(BeamlineConstant("SM_Z", z_sm, "Super mirror z position"))
+    sm_comp = add_component(ReflectingComponent("sm", PositionAndAngle(0.0, z_sm, 90)))
+
+    add_parameter(InBeamParameter("SMInBeam", sm_comp, False),
+                  modes=[nr, liquid], mode_inits=[(nr, False), (liquid, True)])
+    add_parameter(TrackingPosition("SMOffset", sm_comp), modes=[nr, liquid])
+    add_parameter(AngleParameter("SMAngle", sm_comp), modes=[nr, liquid])
+
+    add_driver(DisplacementDriver(sm_comp, MotorPVWrapper("MOT:MTR0406"),
+                                  out_of_beam_positions=[OutOfBeamPosition(-47.0)], synchronised=False))
+    add_driver(AngleDriver(sm_comp, MotorPVWrapper("MOT:MTR0407"), synchronised=False))
+
+    # S2
+    z_s2 = z_sm + 831
+    add_constant(BeamlineConstant("S2_Z", z_s2, "Slit 2 z position"))
+    s2_comp = add_component(Component("s2", PositionAndAngle(0.0, z_s2, 90)))
+
+    add_parameter(TrackingPosition("S2Offset", s2_comp), modes=[nr, liquid])
+    add_driver(DisplacementDriver(s2_comp, MotorPVWrapper("MOT:MTR0302")))
+    s2_params = add_slit_parameters(2)
+
+    # Sample
+    z_sample = z_sm + 1088.3
+    add_constant(BeamlineConstant("SAMPLE_Z", z_sample, "Sample z position"), )
+    sample_comp = add_component(Component("sample", PositionAndAngle(0.0, z_sample, 90)))
+
+    add_parameter(TrackingPosition("SampOffset", sample_comp))
+    add_parameter(InBeamParameter("SampInBeam", sample_comp))
+    add_driver(DisplacementDriver(sample_comp, MotorPVWrapper("MOT:MTR0306"),
+                                  out_of_beam_positions=[OutOfBeamPosition(-10)]))
+
+    # Theta
+    theta_comp_marker = add_component_marker()
+    theta_param_marker = add_parameter_marker()
+
+    # S3 - example of using slit vertical centre as height
+    z_s3 = z_sm + 1399.30
+    add_constant(BeamlineConstant("S3_Z", z_s3, "Slit 3 z position"))
+    add_constant(BeamlineConstant("S3_MAX", 30, "Maximum S3 opening size"))
+    s3_comp = add_component(Component("s3", PositionAndAngle(0.0, z_s3, 90)))
+
+    add_parameter(TrackingPosition("S3Offset", s3_comp), modes=[nr, liquid])
+    add_driver(DisplacementDriver(s3_comp, JawsCentrePVWrapper("JAWS3", is_vertical=True), synchronised=False))
+    s3_params = add_slit_parameters(3, exclude="VC")
+
+    # S4
+    z_s4 = z_sm + 3114.3
+    add_constant(BeamlineConstant("S4_Z", z_s4, "Slit 4 z position"))
+    add_constant(BeamlineConstant("S4_MAX", 30, "Maximum S4 opening size"))
+    s4_comp = add_component(Component("vac_back", PositionAndAngle(0.0, z_s4, 90)))
+
+    add_parameter(TrackingPosition("VBOffset", s4_comp), modes=[nr, liquid])
+    add_driver(DisplacementDriver(s4_comp, MotorPVWrapper("MOT:MTR0304")))
+    s4_params = add_slit_parameters(4)
+
+    # point detector
+    z_point_detector = z_sm + 3505.8
+    add_constant(BeamlineConstant("PD_Z", z_point_detector, "Point detector z position"))
+    point_detector_comp = add_component(TiltingComponent("point_detector", PositionAndAngle(0.0, z_point_detector, 90)))
+
+    add_parameter(TrackingPosition("PDOffset", point_detector_comp), modes=[nr, liquid, disabled])
+    add_parameter(AngleParameter("PDAngle", point_detector_comp), modes=[nr, liquid, disabled])
+    add_parameter(InBeamParameter("PDInBeam", point_detector_comp))
+    add_driver(DisplacementDriver(point_detector_comp, MotorPVWrapper("MOT:MTR0401"),
+                                  out_of_beam_positions=[OutOfBeamPosition(285.0)]))
+    add_driver(AngleDriver(point_detector_comp, MotorPVWrapper("MOT:MTR0402"), synchronised=False))
+
+    # multi detector
+    z_multi_detector = z_point_detector + 4007
+    add_constant(BeamlineConstant("MD_Z", z_multi_detector, "Multi-detector z position"))
+    multi_detector_comp = add_component(TiltingComponent("md", PositionAndAngle(0.0, z_multi_detector, 90)))
+
+    add_parameter(TrackingPosition("MDOffset", multi_detector_comp), modes=[nr, liquid, disabled])
+    add_parameter(AngleParameter("MDAngle", multi_detector_comp), modes=[nr, liquid, disabled])
+    add_parameter(InBeamParameter("MDInBeam", multi_detector_comp), modes=[nr, liquid, disabled])
+    add_driver(DisplacementDriver(multi_detector_comp, MotorPVWrapper("MOT:MTR0403"), synchronised=False,
+                                  out_of_beam_positions=[OutOfBeamPosition(98.71)]))
+    add_driver(AngleDriver(multi_detector_comp, MotorPVWrapper("MOT:MTR0404"), synchronised=False))
+
+    # Perform marker replacements
+    theta_comp = add_component(ThetaComponent("ThetaComp", PositionAndAngle(0.0, z_sample, 90),
+                                              angle_to=[point_detector_comp, multi_detector_comp]),
+                               marker=theta_comp_marker)
+    theta_param_angle = add_parameter(AngleParameter("THETA", theta_comp, autosave=True), modes=[nr, liquid, disabled],
+                                      marker=theta_param_marker)
+
+    # Footprint calculator setup
+    add_footprint_setup(FootprintSetup(z_s1, z_s2, z_s3, z_s4, z_sample,
+                                       s1_params["VG"], s2_params["VG"], s3_params["VG"], s4_params["VG"],
+                                       theta_param_angle,
+                                       lambda_min, lambda_max))
+
+    add_beam_start(PositionAndAngle(0.0, 0.0, 0.0))
+
+    return get_configured_beamline()
+```
