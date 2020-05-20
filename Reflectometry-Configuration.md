@@ -234,7 +234,7 @@ Adds a new parameter to the list of all parameters.
 
 #### Optional arguments:
 - `modes`: A list of `BeamlineMode`s this parameter should be added to (default: `None`)
-- `mode_inits`: ` a list of mode init values for this parameter as a list of tuples (`BeamlineMode`, value) (default: `None`)
+- `mode_inits`: a list of mode init values for this parameter as a list of tuples (`BeamlineMode`, value) (default: `None`)
 - `marker`: lets you insert this component in the position of the given marker instead of at the end of the list (default: `None`)
 
 ### `add_parameter_marker`
@@ -265,7 +265,7 @@ Add jaws-specific parameters and related drivers for a given jawset, i.e. horizo
 #### Optional arguments:
 - `rbv_to_sp_tolerance`:
 - `modes`: A list of `BeamlineMode`s these parameters should be added to (default: `None`)
-- `mode_inits`: ` a list of mode init values for these parameters as a list of tuples (`BeamlineMode`, value) (default: `None`)
+- `mode_inits`: a list of mode init values for these parameters as a list of tuples (`BeamlineMode`, value) (default: `None`)
 - `exclude`: Do not create parameters for the given individual axes; each must be one of `VG`, `VC`, `HG`, `HC` (default: `None`)
 - `include_centres`: Whether parameters for centres should be created or gaps only (default: `False`)
 
