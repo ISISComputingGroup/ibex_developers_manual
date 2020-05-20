@@ -175,13 +175,26 @@ The footprint setup takes the following arguments:
 - `lambda_min`: The minimum lambda for this beamline
 - `lambda_max`: The maximum lambda for this beamline
 
-## Beamline Object
-
 #### Example
 ```
 # All of these arguments should already have been defined elsewhere in the config:
 footprint_setup = FootprintSetup(z_s1, z_s2, z_s3, z_s4, z_sample, s1vg, s2vg, s3vg, s4vg, theta, lambda_min, lambda_max)
 ```
+
+## Beamline
+
+The top-level `Beamline` object is what is returned to the reflectometry IOC from reading the configuration and it encompasses everything else in there. It takes the following arguments:
+
+#### Required:
+- `components`: A list of all `Component`s, ordered from beam start to beam stop
+- `beamline_parameters`: A list of all `BeamlineParameter`s, ordered from beam start to beam stop
+- `drivers`: A list of all `IocDriver`s, ordered from beam start to beam stop
+- `modes`: A list of all `BeamlineMode`s
+
+#### Optional:
+- `incoming_beam`: The beam start node as a `PositionAndAngle`, i.e. the beam as it enters the blockhouse (Default: `PositionAndAngle(0,0,0)`)
+- `footprint_setup`: The footprint setup to use (Default: `None`)
+- `beamline_constants`: The list of `BeamlineConstants` (Default: `None`)
 
 ## Helper functions
 
