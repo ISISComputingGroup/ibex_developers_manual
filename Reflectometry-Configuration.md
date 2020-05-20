@@ -175,6 +175,8 @@ The footprint setup takes the following arguments:
 - `lambda_min`: The minimum lambda for this beamline
 - `lambda_max`: The maximum lambda for this beamline
 
+## Beamline Object
+
 #### Example
 ```
 # All of these arguments should already have been defined elsewhere in the config:
@@ -183,33 +185,93 @@ footprint_setup = FootprintSetup(z_s1, z_s2, z_s3, z_s4, z_sample, s1vg, s2vg, s
 
 ## Helper functions
 
-The reflectometry server provides a set of helper functions to aid writing valid configuration files by automatically adding objects to the correct lists which are eventually passed into the top level `Beamline` object. The following methods are available:
-
-### `add_mode`
+The reflectometry server provides a set of helper functions to aid writing valid configuration files by automatically building up the top-level beamline object when any of the parts of it mentioned above are created. The following methods are provided:
 
 ### `add_beam_start`
 
+Adds the beam start node.
+
+#### Required arguments:
+- `beam_start`: The beam start node as `PositionAndAngle`
+
+### `add_mode`
+
+Adds a new mode of operation to the list of all modes.
+
+#### Required arguments:
+- `name`: The name of the mode
+
+#### Optional arguments:
+- `is_disabled`: Whether this mode is "disabled mode" (Default: `False`)
+
 ### `add_constant`
+
+Adds a new beamline constant to the list of all constants.
+
+#### Required arguments:
+- `constant`: The `BeamlineConstant` to add
 
 ### `add_component`
 
+Adds a new component to the list of all components. 
+
+#### Required arguments:
+- `component`: The `Component` to add
+
+#### Optional arguments:
+- `marker`: lets you insert this component in the position of the given marker instead of at the end of the list.
+
 ### `add_component_marker`
+
+Adds a new component marker. The marker itself does not do anything, it is just there to be replaced by a component later. This lets you get around components that need to be defined in a different order from the order in which they appear along the beamline (e.g. Theta component that depends on a detector component for angle)
 
 ### `add_parameter`
 
+Adds a new parameter to the list of all parameters. 
+
+#### Required arguments:
+- `parameter`: The `BeamlineParameter` to add
+
+#### Optional arguments:
+- `modes`: A list of `BeamlineMode`s this parameter should be added to (default: `None`)
+- `mode_inits`: ` a list of mode init values for this parameter as a list of tuples (`BeamlineMode`, value) (default: `None`)
+- `marker`: lets you insert this component in the position of the given marker instead of at the end of the list (default: `None`)
+
 ### `add_parameter_marker`
+
+Adds a new parameter marker. The marker itself does not do anything, it is just there to be replaced by a parameter later. This lets you get around parameters that need to be defined in a different order from the order in which they appear along the beamline
 
 ### `add_driver`
 
+Adds a new composite driver to the list of all drivers.
+
+#### Required arguments:
+- `driver`: The `IocDriver` to add
+
+#### Optional arguments:
+- `marker`: lets you insert this driver in the position of the given marker instead of at the end of the list.
+
 ### `add_driver_marker`
 
-### `create_jaws_pv_driver`
+Adds a new driver marker. The marker itself does not do anything, it is just there to be replaced by a driver later. This lets you get around drivers that need to be defined in a different order from the order in which they appear along the beamline
 
 ### `add_slit_parameters`
 
+Add jaws-specific parameters and related drivers for a given jawset, i.e. horizontal and vertical gaps and centres.
 
-## Notes:
+#### Required arguments:
+- `slit_number`: The number of the jawset for which to add the parameters
 
+#### Optional arguments:
+- `rbv_to_sp_tolerance`:
+- `modes`: A list of `BeamlineMode`s these parameters should be added to (default: `None`)
+- `mode_inits`: ` a list of mode init values for these parameters as a list of tuples (`BeamlineMode`, value) (default: `None`)
+- `exclude`: Do not create parameters for the given individual axes; each must be one of `VG`, `VC`, `HG`, `HC` (default: `None`)
+- `include_centres`: Whether parameters for centres should be created or gaps only (default: `False`)
+
+### `get_configured_beamline`
+
+Returns the whole configured beamline object constructed from the parts added via the above helper methods
 
 # Example Configuration
 
