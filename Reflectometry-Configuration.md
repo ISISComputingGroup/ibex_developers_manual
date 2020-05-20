@@ -159,7 +159,7 @@ BeamlineMode("Polarised NR", pnr_params, sp_inits=pnr_inits, is_disabled=False)
 
 ## [Footprint Calculator](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-IOC#footprint-calculator)
 
-The footprint calculator provides values for beam footprint and resolution based on the current slit gaps / theta, and exposes them to the front panel and scripting via PVs. It is instantiated by the beamline object if a `FootprintSetup` argument is passed, which defines relevant dimensions on the beamlne.
+The footprint calculator provides values for beam footprint and resolution based on the current slit gaps / theta, and exposes them to the front panel and scripting via PVs. It is instantiated by the beamline object if a `FootprintSetup` argument is passed, which defines relevant dimensions on the beamline.
 
 The footprint setup takes the following arguments:
 - `pos_s1`: Z coordinate of slit 1
