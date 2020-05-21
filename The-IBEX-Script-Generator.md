@@ -109,6 +109,41 @@ The generated script file will contain the compressed JSON. The compressed JSON 
 
 JSON formats etc. were decided in a meeting on 20/02/2020 attended by Bish, Dom, John, Tom, Alistair and James.
 
+# Pre-release Install Instructions
+
+As dev:
+
+1. Copy build to releases area (this is two part because of the deeply nested python) first copy to icp area then move to releases release number
+1. Zip this folder because it is easier to get this on a machine
+1. Copy current script definitions git repo to here
+1. Then issue following instructions to user:
+
+```
+These are the instruction to install the beta release of the script_generator. It needs to be installed on a windows machine but does not need ibex running. To install this please do the following:
+
+Either:
+
+    i: Quicker but requires more disk space
+        1. copy the zip file from <add zip path> to somewhere on your local machine.
+        2. Unzip it
+        3. Click on install_script_generator.bat
+        4. Delete zip file and unzipped files     
+
+    ii: Slower but requires less disk space
+       1. Open the folder <location of release>
+       2. Click on install_script_generator.bat
+
+This will take a while to copy the script generator to your machine (it took at least 2 hours). The final directory is ~ 3 Gb and has ~50k files.
+
+1.	Then copy the script definitions to your local machine from <add path to ScriptDefinitions> to c:\ScriptDefinitions
+
+Finally:
+
+1. Create a script dir to save scripts to in `c:\scripts`
+
+You should then be good to go just double click C:\Instrument\Apps\script_generator\ibex-script-generator.exe. If it starts but with an empty window it may be that it failed to load something earlier in that case delete the folder c:\instrument\app\script_generator\workspace and try again.
+
+```
 
 
 
