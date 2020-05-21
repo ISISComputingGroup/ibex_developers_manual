@@ -5,7 +5,7 @@
 | Device Emulators | Genie Python |
 | IOC Testing Framework Script Generator | Script Server |
 | Block Server | Database Server |
-| Reflectometry Server | 
+| Reflectometry Server | Instrument Scripts
 | Block Cache | 
 | Block Server to kafka |
 | Collision Avoidance Monitor |
