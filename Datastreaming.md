@@ -22,3 +22,9 @@ This is a Python process that runs on each NDX (see code [here](https://github.c
 
 ### Forwarder
 This is a C++ program responsible for taking the EPICS data and pushing into Kafka. ISIS currently has two instances of the forwarder running (one for the production and one for development). They are both running as services (Developer Forwarder and Production Forwarder) on NDADATASTREAM, which can be accessed via the `ibexbuilder` account. The logs for these forwarders are located in `C:\Forwarder\dev_forwarder` and `C:\Forwarder\prod_forwarder`.
+
+## Filewriting
+The [filewriter](https://github.com/ess-dmsc/kafka-to-nexus) is responsible for taking the neutron and SE data out of Kafka and writing it to a nexus file. When the ICP ends a run it sends a config message to the filewriter, via kafka, to tell it to start writing to file.
+
+## System Tests
+Currently system tests are being run to confirm that the start/stop run and event data messages are being sent into Kafka and that a Nexus file is being written with these events. The Kafka cluster and filewriter are being run in docker containers for these tests and so must be run on a Windows 10 machine.
