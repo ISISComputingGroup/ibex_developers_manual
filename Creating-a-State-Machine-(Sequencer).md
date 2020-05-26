@@ -114,7 +114,7 @@ Note that the macros you pass into the state machine **must** match up with thos
 ## Using epicsThreadSleep
 
 From https://www-csr.bessy.de/control/SoftDist/sequencer/Tutorial.html#common-pitfalls-and-misconceptions
-```
-If your action statements have any sort of polling loops or calls to epicsThreadSleep you should reconsider your design. The presence of such operations is a strong indication that you’re not using the sequencer as intended.
-```
-Long sleeps will hang the thread and then other things may happen. An example was an SNL program to check that a setpoint had been actioned by waiting 30 seconds and then comparing setpoint and readback. While it was waiting, the setpoint may change again, and the wait is now redundant, and if it doesn't check for a change in original setpoint it may do the wring thing. Using delay() is better as that does not block the thread and allows other checks to continue.     
+
+*If your action statements have any sort of polling loops or calls to epicsThreadSleep you should reconsider your design. The presence of such operations is a strong indication that you’re not using the sequencer as intended.*
+
+Long sleeps will hang the thread and then other things may happen. An example was an SNL program to check that a setpoint had been actioned by waiting 30 seconds and then comparing setpoint and readback. While it was waiting, the setpoint may change again, and the wait is now redundant, and if it doesn't check for a change in original setpoint it may do the wrong thing. Using delay() is better as that does not block the thread and allows other checks in the state to continue.     
