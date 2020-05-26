@@ -110,3 +110,11 @@ seq keithley_2001, "P=$(MYPVPREFIX)$(IOCNAME):, channels=10"
 To access these macros in your state machine, create a variable to hold your macro, e.g. `char *P` for the macro `P`, and call `macValueGet` on your macro, e.g. `P =  macValueGet("P")`, within your state machine to allow you to use the macro "P" within your code as the variable "P".
 
 Note that the macros you pass into the state machine **must** match up with those in your `.db` files. Otherwise your state machine will not be able to assign variables to PVs and the state machine won't run.
+
+## Using epicsThreadSleep
+
+From https://www-csr.bessy.de/control/SoftDist/sequencer/Tutorial.html#common-pitfalls-and-misconceptions
+```
+If your action statements have any sort of polling loops or calls to epicsThreadSleep you should reconsider your design. The presence of such operations is a strong indication that you’re not using the sequencer as intended.
+```
+Long sleeps will hang the thread and then other things may happen. An example was an SNL program to check that a setpoint had been actioned by waiting 30 seconds and then comparing setpoint and readback. While it was waiting, the setpoint may change again, and the wait is now redundant, and if it doesn't check for a change in original setpoint it may do the wring thing. Using delay() is better as that does not block the thread and allows other checks to continue.     
