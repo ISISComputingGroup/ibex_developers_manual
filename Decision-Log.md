@@ -40,3 +40,7 @@ A place to record decisions:
 15. We should move towards using virtual environments for our python projects see [here](Python-dependencies) for more detail.
    - Present: Dom, Tom, Freddie, John
    - 19/05/2020
+
+16. Genie_python should be kept 2/3 compatible until the block server is converted to python 3 in case it uses it. After this the decision should be revisted to see if we can go purely 3.
+   - Present: Dom, Freddie, John
+   - 27/05/2020
