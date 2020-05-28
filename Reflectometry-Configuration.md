@@ -185,18 +185,9 @@ footprint_setup = FootprintSetup(z_s1, z_s2, z_s3, z_s4, z_sample, s1vg, s2vg, s
 
 ## Beamline
 
-The top-level `Beamline` object is what is returned to the reflectometry IOC from reading the configuration and it encompasses everything else created in there. It takes the following arguments:
+The top-level [`Beamline` object](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Beamline-Object) is what is returned to the reflectometry IOC from reading the configuration and it encompasses everything else created in there.
 
-#### Required:
-- `components`: A list of all `Component`s, ordered from beam start to beam stop
-- `beamline_parameters`: A list of all `BeamlineParameter`s, ordered from beam start to beam stop
-- `drivers`: A list of all `IocDriver`s, ordered from beam start to beam stop
-- `modes`: A list of all `BeamlineMode`s
-
-#### Optional:
-- `incoming_beam`: The beam start node as a `PositionAndAngle`, i.e. the beam as it enters the blockhouse (Default: `PositionAndAngle(0,0,0)`)
-- `footprint_setup`: The footprint setup to use (Default: `None`)
-- `beamline_constants`: The list of `BeamlineConstants` (Default: `None`)
+The beamline object is assembled automatically by the helper functions detailed below.
 
 ## Helper functions
 
