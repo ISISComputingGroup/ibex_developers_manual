@@ -1,10 +1,12 @@
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [Miscellaneous motion control](Miscellaneous-Motion-Control) > [Reflectometry IOC](Reflectometry-IOC) > Reflectometry Configuration
+
 # Overview
 
 The reflectometry configuration describes the geometry of the beamline and is read by the reflectometry IOC on startup. The config file is written in python and lives in `<config area>/refl/config.py`.
 
 This file needs to import relevant classes and methods used for constructing the configuration via the line `from ReflectometryServer import *`. It should implement a `get_beamline()` method, which returns a single object of type `Beamline`.
 
-[Jump to Example Configuration]()
+[Jump to Example Configuration](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Configuration#example-configuration)
 
 # Reference Manual
 
@@ -16,7 +18,7 @@ These are fixed values which are exposed by the IOC as PVs of the form `<PREFIX>
 - `S1_Z`: Z coordinate of Slit 1
 - `S2_Z`: Z coordinate of Slit 2
 - `S3_Z`: Z coordinate of Slit 3
-- `S1_4`: Z coordinate of Slit 4
+- `S1_Z`: Z coordinate of Slit 4
 - `SM_Z`: Z coordinate of the supermirror
 - `SAMPLE_Z`: Z coordinate of the sample point
 - `PD_Z`: Z coordinate of the point detector
@@ -65,7 +67,7 @@ Required:
 
 Optional:
 - `description`: A description of this parameter (Default: use parameter `name`)
-- `autosave`: Whether the parameter should be [autosaved](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Beamline-Parameters#parameter-initialisation) to file (meaning that on IOC start up, the last known setpoint is re-applied, rather than inferred from a motor position). If multiple parameters depend on a single motor axis (e.g. `Theta` and `PDOffset` are inferred from  , all but one of them should be autosaved in order to not lose their values (Default: `False`)
+- `autosave`: Whether the parameter should be [autosaved](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Beamline-Parameters#parameter-initialisation) to file (meaning that on IOC start up, the last known setpoint is re-applied, rather than inferred from a motor position). If multiple parameters depend on a single motor axis (e.g. `Theta` and `PDOffset` are inferred from point detector height), all but one of them should be autosaved in order to not lose information on the constituent parts of the axis value on restart. (Default: `False`)
 - `rbv_to_sp_tolerance`: The maximum difference between parameter readback and setpoint values at which it is still considered by the IOC to have arrived at its setpoint. (Default: `0.002`)
 
 #### Types of parameter
