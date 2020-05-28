@@ -44,3 +44,4 @@ Try to make sure all tickets by the end of the day are in a good state.
 - `dbchecker` vs `dbunitchecker` vs `dbchanges`
 - Python 3 Compatibility
 - User manual updates e.g. https://github.com/ISISComputingGroup/IBEX/issues/2763 and https://github.com/ISISComputingGroup/IBEX/issues/3814
+- Update the specific device IOC pages see [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Retrospective-notes-2020.05.28#specific-device-ioc-pages-on-wiki)
