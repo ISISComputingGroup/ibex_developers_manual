@@ -40,7 +40,7 @@ The reflectometry IOC is composed of layers, each layer talking to the layer bel
 
 - **[Composite Driving Layer](Reflectometry-Composite-Driving-Layer):** This layer pushes values from the parameters into the motor group and motor driver PVs. They also push the readbacks up to the geometry layer. This layer contains some logic to allow concurrent moves with very simple synchronization (complete all moves in time with the slowest axis).
 
-The whole system is coordinated by the [Beamline object](Reflectometry-Beamline-Object).
+The whole system is coordinated by the [Beamline object](Reflectometry-Beamline-Object), which represents a complete model of the beamline from a motion point of view. This model is defined for each individual instrument by the [Reflectometry Configuration](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Configuration).
 
 ## Set Point Propagation
 
