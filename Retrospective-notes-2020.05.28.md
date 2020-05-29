@@ -1,6 +1,6 @@
 ### Specific Device IOC Pages on wiki
 
-As discussed in previous retrospective the [Specific Device IOC page](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Specific-Device-IOC) has grown to be about both the software and the hardware. This means that having the IOC in the title is misleading. It may also be good to review the kit we have listed there and make sure we have a good amount of info for devices and that they're well organised. I have added a [note](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Technical-Debt-Stand-down) to do this in the next tech debt standdown.
+As discussed in previous retrospective the [Specific Device IOC page](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Specific-Device-IOC) has grown to be about both the software and the hardware. This means that having the IOC in the title is misleading. It may also be good to review the kit we have listed there and make sure we have a good amount of info for devices and that they're well organised. I have added a [note](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Technical-Debt-Stand-down) to do this in the next tech debt stand-down.
 
 ### Organisation during meetings
 
@@ -30,7 +30,7 @@ We haven't had so many unplanned tickets, which is good. This is likely due to n
 ### General thoughts on the sprint
 
 * We missed the target number of points for this sprint
-* Having a visible burndown chart that is automatically updated would be good. We currently have an automatically updated spreadsheet but no chart (http://shadow.nd.rl.ac.uk/ibex/)
+* Having a visible burn-down chart that is automatically updated would be good. We currently have an automatically updated spreadsheet but no chart (http://shadow.nd.rl.ac.uk/ibex/)
 * We should avoid taking things out of the bucket before reviews
 * Can we set up a tool to tell us how long a ticket has been sitting in review. Freddie will add functionality into the project board task to tell us when a ticket has been review for over a week
 * There was some discussion on how to remember when you have tickets that you asked to be reworked that you need to re-review. It was suggested that people put a note on the ticket or look into configuring gut hub alerts for this
