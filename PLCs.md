@@ -21,6 +21,6 @@ The Omron FINS is a PLC controlled via a driver first written at Diamond, see [h
 * WISH vacuum PLC
 * ZOOM vacuum PLC
 
-# Testing the FINS IOC in devsim
+### Testing the FINS IOC in devsim
 
 If you want to test the IOC for a FINS PLC in devsim mode, you need to add the line ```$(IFDEVSIM) finsUDPInit("PLC", "$(PLCIP):$(EMULATOR_PORT=)", "TCPNOHEAD", 0, "$(PLCNODE=)")``` in the FINS_01.cmd file used by that specific FINS IOC. At the same time, the file should either not have any other finsUDPInit call for talking with the real PLC, or have ```$(IFNOTDEVSIM) $(IFNOTRECSIM)``` before that call.
