@@ -18,7 +18,7 @@ These are fixed values which are exposed by the IOC as PVs of the form `<PREFIX>
 - `S1_Z`: Z coordinate of Slit 1
 - `S2_Z`: Z coordinate of Slit 2
 - `S3_Z`: Z coordinate of Slit 3
-- `S1_Z`: Z coordinate of Slit 4
+- `S4_Z`: Z coordinate of Slit 4
 - `SM_Z`: Z coordinate of the supermirror
 - `SAMPLE_Z`: Z coordinate of the sample point
 - `PD_Z`: Z coordinate of the point detector
