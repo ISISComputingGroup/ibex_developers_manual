@@ -183,15 +183,24 @@ The footprint setup takes the following arguments:
 footprint_setup = FootprintSetup(z_s1, z_s2, z_s3, z_s4, z_sample, s1vg, s2vg, s3vg, s4vg, theta, lambda_min, lambda_max)
 ```
 
-## Beamline
+## [Beamline](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Beamline-Object)
 
-The top-level [`Beamline` object](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Beamline-Object) is what is returned to the reflectometry IOC from reading the configuration and it encompasses everything else created in there.
+The top-level `Beamline` object is what is returned to the reflectometry IOC from reading the configuration and it encompasses everything else created in there.
 
 The beamline object is assembled automatically by the helper functions detailed below.
 
 ## Helper functions
 
-The reflectometry server provides a set of helper functions to aid writing valid configuration files by automatically building up the top-level beamline object when any of the parts of it mentioned above are created. The following methods are provided:
+The reflectometry server provides a set of helper functions to aid writing valid configuration files by automatically building up the top-level beamline object when any of the parts of it mentioned above are created. 
+
+**Important note:** Elements added via the helper methods will appear in the beamline in the order in which they appear in the configuration! e.g.
+```
+add_parameter(AngleParameter("PD_HEIGHT", pd_component))
+add_parameter(AngleParameter("THETA", theta_component))
+```
+This would mean that, if both are changed at the time of a beamline move, the point detector height would be processed before theta, i.e. s3_height would move to the height value that is relative to the beam prior to the move theta value, and therefore the wrong place. Make sure you add elements in the order in which they appear along the beam.
+
+The following methods are provided:
 
 ### `add_beam_start`
 
