@@ -1,3 +1,5 @@
+> [Wiki](Home) > [Trouble-shooting](trouble-shooting-pages) > [Computer-Troubleshooting](Computer-Troubleshooting)
+
 Issue related to the computer that IBEX is running on
 
 
@@ -21,3 +23,22 @@ smartsizing:i:1
 ## Cannot access the network shares
 
 This may be solved by adding windows credentials on the machine. There is a document describing how to do this on ICP Discussions under "Security".
+
+## Data fills up volume too rapidly on an Instrument
+  (generating Nagios errors or disk full errors)
+
+This is usually an issue when an instrument changes their mode of data taking and it is particularly common for instruments which have changed recently to using event mode data collection or altered the scheme they use (where the amount of data which can be produced may be much larger).
+Good questions to ask are:
+
+  1) Are any monitors being used in event mode (usually not a good idea, better to histogram)
+  2) Have the jaws been opened up or is white beam falling on any detectors (check setup with scientist)
+  3) Any unusually rapid data taking? (e.g. 15s runs with large-ish files)
+
+### Data Disk available space
+Varies widely per instrument and the space is tailored over time to match the needs of the instrument (with spare space as a buffer against exceptional usage).
+
+Space for data to reside on the instrument so it can be analysed locally is provided by a cache which is purged on most instruments using a scheduled task with `robocopy` (`robocopy /? `for details).  Cache sizes vary widely per instrument.  Some instruments with low data rates have caches with more gentle purging strategies.  Caching on most high volume instruments will use a `robocopy` task with the MINAGE parameter set to 1 or 2 remove files that are 1 or 2 days old.  Fewer instruments purge on a monthly basis (e.g. MINAGE:30), muons and reflectometers generally have smaller data files.
+
+Availability in the cache for 1 day minimum is required for local copying programs on all instruments to have data _available for copying_ from the instrument `data` share.  The External Export cache may be cleared of recent data files if space is limited, but NOT the instrument Data area (these will be removed only when archived).
+
+The Clean and purging tasks run as privileged tasks in the scheduled tasks library on the guest VMs.  Where specially large and controlled caching is needed (on WISH currently) a more generic powershell script `purge.ps1` is run as a task on the host - the difference being that the cache trims to a fill level of over 90% on age and currently will not empty over time.  This allows maximum local data (about 2 cycles normally) to be available for local analysis.  In both cases, files are first moved to an area for deletion and then deleted by a separate task which runs later.
