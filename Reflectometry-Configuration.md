@@ -238,7 +238,7 @@ Adds a new component to the list of all components.
 
 ### `add_component_marker`
 
-Adds a new component marker. The marker itself does not do anything, it is just there to be replaced by a component later. This lets you get around components that need to be defined in a different order from the order in which they appear along the beamline (e.g. Theta component that depends on a detector component for angle)
+Adds a new marker which can later be replaced by a component. This lets you define components in a different order to their order inside the beamline object. (see theta component in config below for example)
 
 ### `add_parameter`
 
@@ -254,7 +254,7 @@ Adds a new parameter to the list of all parameters.
 
 ### `add_parameter_marker`
 
-Adds a new parameter marker. The marker itself does not do anything, it is just there to be replaced by a parameter later. This lets you get around parameters that need to be defined in a different order from the order in which they appear along the beamline
+Adds a new marker which can later be replaced by a parameter. This lets you define parameters in a different order to their order inside the beamline object. (see theta parameter in config below for example)
 
 ### `add_driver`
 
@@ -268,7 +268,7 @@ Adds a new composite driver to the list of all drivers.
 
 ### `add_driver_marker`
 
-Adds a new driver marker. The marker itself does not do anything, it is just there to be replaced by a driver later. This lets you get around drivers that need to be defined in a different order from the order in which they appear along the beamline
+Adds a new marker which can later be replaced by a driver. This lets you define drivers in a different order to their order inside the beamline object.
 
 ### `add_slit_parameters`
 
