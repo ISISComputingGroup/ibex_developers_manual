@@ -6,8 +6,8 @@ Temporary root for documentation for HLM database documentation.
 2. [Overview](#overview)
 3. [List of functions](#list-of-functions)
 
-##Introduction
+## Introduction
 
-##Overview
+## Overview
 
-##List of functions
+## List of functions
