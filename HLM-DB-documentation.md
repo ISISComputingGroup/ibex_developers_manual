@@ -8,7 +8,7 @@ Temporary root for documentation for HLM database documentation.
 
 ## Introduction
 
-The Helium Level Monitoring project consists of developing software for the management of helium for a large scale scientific facility.
+The Helium Level Monitoring project is concerned with developing software for the management of helium for a large scale scientific facility.
 
 Helium is becoming increasingly rare and expensive. Therefore, smart management is needed in order to minimise losses, track expenses, and localise and fix leaks. 
 
