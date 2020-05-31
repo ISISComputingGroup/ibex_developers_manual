@@ -1,1 +1,1 @@
-> [Wiki](HLM_db_documentation) > [Coordinators](Coordinators)
+> [Wiki](HLM-Database-documentation) > [Coordinators](Coordinators)
