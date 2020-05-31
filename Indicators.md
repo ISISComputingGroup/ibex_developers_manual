@@ -1,1 +1,1 @@
-> [Wiki](HLM-Databse-documentation) > [Indicators](Indicators)
+> [Wiki](HLM-Database-documentation) > [Indicators](Indicators)
