@@ -1,1 +1,1 @@
-> [Wiki](HLM-Databse-documentation) > [Positions](Positions)
+> [Wiki](HLM-Database-documentation) > [Positions](Positions)
