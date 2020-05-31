@@ -22,7 +22,7 @@ The database stores the infomration to all of the measurements taken from device
 
 ## Overview
 
-## List of functions
+## List of devices categorised by their function
 
 [Coordinators](Coordinators)
 
