@@ -30,7 +30,7 @@ The database stores the infomration to all of the measurements taken from device
 
 [Storage devices](Storage-devices)
 
-[Flow](Flow)
+[Gas flow meters](Gas-flow-meters)
 
 [Position](Position)
 
