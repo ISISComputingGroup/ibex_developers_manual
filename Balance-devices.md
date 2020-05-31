@@ -1,1 +1,1 @@
-> [Wiki](HLM-Databse-documentation) > [Balance Devices](Balance-Devices)
+> [Wiki](HLM-Database-documentation) > [Balance Devices](Balance-Devices)
