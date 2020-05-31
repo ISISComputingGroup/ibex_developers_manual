@@ -23,3 +23,19 @@ The database stores the infomration to all of the measurements taken from device
 ## Overview
 
 ## List of functions
+
+[Coordinators](Coordinators)
+
+[Balance devices](Balance-devices)
+
+[Storage devices](Storage-devices)
+
+[Flow](Flow)
+
+[Position](Position)
+
+[Measurement devices](Measurement-Devices)
+
+[Indicators](Indicators)
+
+[Valves](Valves)
