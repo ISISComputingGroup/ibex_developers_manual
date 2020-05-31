@@ -8,7 +8,7 @@ Temporary root for documentation for HLM database documentation.
 
 ## Introduction
 
-The Helium Level Monitoring project is concerned with developing software for the management of helium for a large scale scientific facility.
+The Helium Level Monitoring project is concerned with developing software for the management of helium for a large scale scientific facility. It is a collaboration of the HZB, ILL and ISIS, under the umbrella of the International Society for Sample Environment.
 
 Helium is becoming increasingly rare and expensive. Therefore, smart management is needed in order to minimise losses, track expenses, and localise and fix leaks. 
 
@@ -17,6 +17,8 @@ The HLM software developed at HZB is responsible for tracking the all inputs and
 The data is collected from the scales used for weighing incoming and outgoing Helium vessels, the wireless base stations, and the gas counters from the gas recovery lines.
 
 The wireless base stations are wireless devices developed by HZB that use the XBEE protocol to communicated. They gather data from various level meters, cryostats, gas counters, etc., that are in the facility. These devices can be moved, and therefore the HLM software is also used for locating them.
+
+The database stores the infomration to all of the measurements taken from devices, as well as infomration about every device, their model, type and siplay properties. It was developed by the team at HZB and currently runs on MySQL.
 
 ## Overview
 
