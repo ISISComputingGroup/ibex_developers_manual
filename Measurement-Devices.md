@@ -1,1 +1,1 @@
-> [Wiki](HLM-Databse-documentation) > [Measurement Devices](Measurement-Devices)
+> [Wiki](HLM-Database-documentation) > [Measurement Devices](Measurement-Devices)
