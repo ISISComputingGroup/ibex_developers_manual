@@ -1,1 +1,1 @@
-> [Wiki](HLM-Databse-documentation) > [Storage Devices](Storage-Devices)
+> [Wiki](HLM-Database-documentation) > [Storage Devices](Storage-Devices)
