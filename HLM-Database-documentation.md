@@ -30,6 +30,8 @@ In addition, the database stores relationships between individual devices, as we
 
 Finally, the database has the GAM_COORDINATE, GAN_DISPLAY, GAM_IMAGE and GAM_NETWORK tables, which provide information used for the graphical UI representation of the helium management system.
 
+![Schema for the database of the HLM program](D:\Documente\Munca\HLM\software\update GAM ERD)
+
 ## List of devices grouped by their function
 
 [Coordinators](Coordinators)
