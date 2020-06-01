@@ -11,5 +11,5 @@ In effect, the component layer is responsible for translating motor values (rela
 
 Each component captures the relationships for both set points (where the user wants the beamline to be) and readbacks (where the beamline actually is) separately i.e. the system maintains two separate models of the beam path. 
 
-**More information on implementation specifics see the [Beamline Configuration page](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Configuration#components)**
+**For more information on implementation specifics see the [Beamline Configuration page](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Configuration#components)**
 
