@@ -64,21 +64,4 @@ A mode can be declared as ”disabled mode” via parameter in its constructor. 
 
 The beamline may also define constants: these are values set in the configuration file that the user wants exposed via a PV for the instrument, for example the Z coordinates of components, or the maximum Theta angle for this instrument. These can then be used in scripts like `run_angle`, for example to derive the distance between slits for footprint calculation. The value for the constant must be either a number or a boolean. They are set by passing them into the beamline object as an optional parameter. 
 
-Syntax is `BeamlineConstant(name, value, description)` where
-
-- name: is the name of the pv will become `REF:VALUE:<name>`
-- value: the value it should have
-- description: a helpful text description
-
-For example:
-
-```
-constants= [
-        BeamlineConstant("S1_Z", z_s1, "Slit 1 position in z"),
-        BeamlineConstant("SM_Z", z_sm, "Super mirror position in z"),
-        ...
-        BeamlineConstant("HAS_HEIGHT2", False, "Whether the sample stack has a second height stage"),
-        ]
-
-Beamline(..., beamline_constants=constants)
-```
+**For more information on implementation specifics see the [Reflectometry Configuration page](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Configuration#beamline-constants)**
