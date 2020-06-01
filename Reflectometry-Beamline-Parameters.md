@@ -13,7 +13,7 @@ Beamline parameters represent high-level values a user may wish to set. They can
 - `<BASE>:CHANGING` - True if the parameter readback value is currently changing (i.e. an underlying motor is moving)
 - `<BASE>:DEFINE_POSITION_AS` - redefines the current parameter readback to the given value (does not move the motor)
 
-**For more information on implementation specifics see the [Reflectometry Configuration page](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Configuration#beamline-constants)**
+**For more information on implementation specifics see the [Reflectometry Configuration page](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Configuration#beamline-parameters)**
 
 ## Theta Readback Calculation
 
