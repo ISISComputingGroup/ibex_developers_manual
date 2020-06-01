@@ -34,7 +34,7 @@ Objects are classified into object types, which are themselves classified into o
 
 In addition, the database stores relationships between individual devices, as well as various measurements associated with one object.
 
-Finally, the database has the GAM_COORDINATE, GAN_DISPLAY, GAM_IMAGE and GAM_NETWORK tables, which provide information used for the graphical UI representation of the helium management system.
+Finally, the database has the GAM_COORDINATE, GAM_DISPLAY, GAM_IMAGE and GAM_NETWORK tables, which provide information used for the graphical UI representation of the helium management system.
 
 ## Functions
 
