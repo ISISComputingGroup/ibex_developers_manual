@@ -4,7 +4,13 @@ Temporary root for documentation for HLM database documentation.
 
 1. [Introduction](#introduction)
 2. [Overview](#overview)
-3. [List of functions](#list-of-functions)
+3. [Functions](#functions)
+4. [Object classes](#object-classes)
+5. [Object types](#object-types)
+6. [Objects](#objects)
+7. [Measurements](#measurements)
+8. [Object relationships](#object-relationships)
+9. [List of functions](#list-of-functions)
 
 ## Introduction
 
@@ -29,6 +35,18 @@ Objects are classified into object types, which are themselves classified into o
 In addition, the database stores relationships between individual devices, as well as various measurements associated with one object.
 
 Finally, the database has the GAM_COORDINATE, GAN_DISPLAY, GAM_IMAGE and GAM_NETWORK tables, which provide information used for the graphical UI representation of the helium management system.
+
+## Functions
+
+## Object classes
+
+## Object types
+
+## Objects
+
+## Measurements
+
+## Object relationships
 
 ## List of devices grouped by their function
 
