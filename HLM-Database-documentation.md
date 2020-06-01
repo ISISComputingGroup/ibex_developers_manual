@@ -22,6 +22,14 @@ The database stores the information to all of the measurements taken from device
 
 ## Overview
 
+The main table in the database is the GAM_OBJECT table. This table represents an object, which is an individual piece of equipment used for helium management: an individual level meter, an individual cryostat, and so on.
+
+Objects are classified into object types, which are themselves classified into object classes, which are classified into functions.
+
+In addition, the database stores relationships between individual devices, as well as various measurements associated with one object.
+
+Finally, the database has the GAM_COORDINATE, GAN_DISPLAY, GAM_IMAGE and GAM_NETWORK tables, which provide information used for the graphical UI representation of the helium management system.
+
 ## List of devices grouped by their function
 
 [Coordinators](Coordinators)
