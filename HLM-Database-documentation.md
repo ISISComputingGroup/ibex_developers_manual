@@ -18,7 +18,7 @@ The data is collected from the scales used for weighing incoming and outgoing He
 
 The wireless base stations are wireless devices developed by HZB that use the XBEE protocol to communicated. They gather data from various level meters, cryostats, gas counters, etc., that are in the facility. These devices can be moved, and therefore the HLM software is also used for locating them.
 
-The database stores the infomration to all of the measurements taken from devices, as well as infomration about every device, their model, type and siplay properties. It was developed by the team at HZB and currently runs on MySQL.
+The database stores the information to all of the measurements taken from devices, as well as information about every device, their model, type and display properties. It was developed by the team at HZB and currently runs on MySQL.
 
 ## Overview
 
