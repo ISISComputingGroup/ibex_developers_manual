@@ -1,6 +1,6 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [Miscellaneous motion control](Miscellaneous-Motion-Control) > [Reflectometry IOC](Reflectometry-IOC) > [Beamline Parameters](Reflectometry-Beamline-Parameters)
 
-Beamline parameters store something a user wishes to set. They can have blocks or the GUI controls pointed at them. These parameters are transformations of low-level motor values. The reflectometry server creates the following PVs for each parameter (where `<BASE>` is `<PREFIX>:REFL:PARAM:<NAME>`):
+Beamline parameters represent high-level values a user may wish to set. They can have blocks or the GUI controls pointed at them. These parameters are transformations of low-level motor values. The reflectometry server creates the following PVs for each parameter (where `<BASE>` is `<PREFIX>:REFL:PARAM:<NAME>`):
 
 - `<BASE>` - Readback: the value as calculated from the low-level motor positions.
 - `<BASE>:SP` - Setpoint: when set, the reflectometry server will move the parameter this value
@@ -13,20 +13,7 @@ Beamline parameters store something a user wishes to set. They can have blocks o
 - `<BASE>:CHANGING` - True if the parameter readback value is currently changing (i.e. an underlying motor is moving)
 - `<BASE>:DEFINE_POSITION_AS` - redefines the current parameter readback to the given value (does not move the motor)
 
-Types of beamline parameter:
-
-- `AngleParameter`: a parameter which controls the angle of a component relative to the incoming beam angle.
-- `TrackingPosition`: a parameter which controls a linear position relative to the incoming beam intercept. E.g. How far from the beam a slit should be, the position is measured along the movement axis. This is useful e.g. for scanning over this parameter for alignment.
-- `InBeamParameter`: a parameter which controls whether a component is in or out of the beam. Some components can be parked out of the beam so they don't change its path e.g. the super mirror
-- `SlitGapParameter`: a parameter which changes the gap of a slit set. Since this does not care about tracking the beam path, it does not talk to a geometry component, but directly to the underlying jaws PV. It is also used within the footprint calculator.
-
-Common Argument for setting up beamline parameters (e.g. `TrackingPosition("PDOffset", point_detector_comp, autosave=True, rbv_to_sp_tolerance=0.005`):
-
-- `name`: The name of the beamline parameter, also the identifier of the PV in uppercase, i.e. name is `det_offset` PV would be `<instrument prefix>REFL:PARAM:DET_OFFSET`
-- `<dependency>` (i.e. 'component'/'angled_component'/'pv_wrapper'): usually the component this beamline parameter is accessing (but can be the PV wrapper)
-- `description`: short description of the pv
-- `autosave`: when true the parameter is autosaved on change
-- `rbv_to_sp_tolerance`: The tolerance between the read back value and set point before a pv is displayed with a red background, defaults to 0.002.
+**For more information on implementation specifics see the [Reflectometry Configuration page](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Configuration#beamline-constants)**
 
 ## Theta Readback Calculation
 
