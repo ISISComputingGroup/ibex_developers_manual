@@ -24,17 +24,8 @@ When calculating the time for each axis to finish a move, the backlash distance 
 
 The user can turn this off in the configuration file. In which case the time reported to finish a move is 0, and the axis's speed is not changed on move.
 
-Synchronisation in the configuration files defaults to `true` but can be set with:
+Synchronisation in the configuration files defaults to `true`, but can be set on a driver via the `synchronised` argument.
 
-```
-DisplacementDriver( ... , synchronised=False)
-```
-
-or
-
-```
-AngleDriver( ... , synchronised=False)
-```
 ### Out Of Beam Positions
 
 A `DisplacementDriver` (i.e. a driver looking at a translation axis) can specify out-of-beam positions, which define where a component should be parked along its movement axis if it is set to be "Out Of Beam" via an `InBeamParameter`. A driver can have an arbitrary number of out-of-beam positions. Which one is chosen depends on where the current beam path intersects with the movement axis of this component. Since in some instances, the beam can intersect with the entire range of a component's movement axis, this is done to ensure that component does not block the beam while parked.
