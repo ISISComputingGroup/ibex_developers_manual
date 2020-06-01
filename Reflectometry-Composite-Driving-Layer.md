@@ -2,21 +2,11 @@
 
 The composite driving layer sets the PV values which will make the moves happen. 
 
-The layer consists of drivers which take setpoint values from components and push these values into a PV wrapper, and take readback values and push them into the components. The types we currently have are:
+The layer consists of drivers which take setpoint values from components and push these values into a PV wrapper, and conversely take readback values from the PV wrapper and push them into the components. It also handles moving multiple axes "synchronously", which for the moment means concurrently i.e. speeds are set so axes finish moving roughly at the same time, but no continuous synchronization in real time.
 
-- `DisplacementDrivers`: Set the position of the motor based on the displacement, this includes moving to a parked value if the component is out of the beam
-- `AngleDriver`: Set the position of the motor based on the angle.
-
-both are derived from a common base `IocDriver`.
-
-There are various PV wrapper types which handle the mapping of parameters to the correct PVs based on different conventions. These are:
-- PVWrapper: base wrapper that has all the utility functions (e.g. monitors and change listeners) but will not point at a real PV
-- MotorPVWrapper: read and write to a motor PV
-- AxisPVWrapper: read and write to an axis
-- VerticalJawsPVWrapper: read and write to a jaw set without a height stage (height defined by vertical centre)
-
-
-TODO: I think we need a parameter driver and then we can more easily separate SlitGapParameter from their PV wrappers.
+**For more information on implementation specifics see the Reflectometry Configuration page:**
+- [Composite Drivers](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Configuration#composite-drivers)
+- [PV Wrappers](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Configuration#pv-wrappers)
 
 ### Synchronisation
 
