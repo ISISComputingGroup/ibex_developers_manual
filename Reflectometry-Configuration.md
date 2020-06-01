@@ -46,16 +46,19 @@ BeamlineConstant("MAX_THETA", 1.8, "Maximum Theta value")
 Components are the central building blocks of the configuration. Each of them represents a node of interaction with the beam on the instrument (either passively tracking or actively affecting it). They are also the connective middle layer element between the user-facing beamline parameters and the composite drivers that talk to low level motors.
 
 ### Types of Component
-- `Component`: Most basic type of component with 1 degree of freedom: linear displacement relative to the beam
-- `TiltingComponent`: 2 degrees of freedom: linear and angular displacement. This allows the component to stay perpendicular to the beam as well as centred (e.g. point detector on SURF/CRISP). This component does not affect the beam path.
-- `ReflectingComponent`: 2 degrees of freedom like `TiltingComponent`, except this component reflects the beam and thus changes its path (e.g. supermirror)
-- `ThetaComponent`: like `ReflectingComponent`, except the angle is derived from the height of this component and the height of another component further down the beamline. For this purpose, `ThetaComponent` receives a list of components via an additional argument `angle_to`. It will use the height of the next component along the beam that is currently in beam and in the mode.
+- `Component`: Component that manages the linear displacement between the incoming beam and the component without affecting the beam (e.g. a slit)
+- `TiltingComponent`: Component manages the angle and distance between the incoming beam and the component without affecting the beam. This allows the component to stay perpendicular to the beam as well as centred (e.g. point detector on SURF/CRISP)
+- `ReflectingComponent`: Component manages the angle and distance between the incoming beam and the component, outgoing beam is reflected from this angle (assumes infinitely long reflector at angle and distance from the incoming beam) (e.g. supermirror)
+- `ThetaComponent`: Component manages the angle between the incoming beam and the outgoing beam at the sample position.
+    - The readback calculates the angle to the theoretical beam intercept of another component (ignoring any positional offset on that component). The component used is the first component on the list of the theta component (as defined in the configuration) that is in the beam. For example, a beamline may contain an analyser followed by a detector. If the analyser is in the beam, theta is the angle of the beam to the analyser, otherwise it is the angle to the detector.
+    - The setpoint works in the same way as the ReflectingComponent except that it will update the beam path of components which define its angle even in disabled mode. 
 
 ### Arguments
 
 #### Required:
 - `name`: Name of the component
 - `setup`: The geometry setup for this component as an object of the form `PositionAndAngle(component_y, component_z, angle_of_linear_displacement_axis)`
+- (`ThetaComponent` only) `angle_to`: a list of components which are used to define the Theta angle
 
 ### Example
 
@@ -71,9 +74,9 @@ These are the top-level parameters exposed as PVs of the form `<PREFIX>:REFL:PAR
 
 ### Types of parameter
 
-- `TrackingPosition`: A displacement relative to the beam along a linear movement axis (e.g. offset on supermirror height `SMOFFSET`)
-- `AngleParameter`: An displacement relative to the beam along an angular movement axis (e.g. angle of the point detector `PDANGLE`)
-- `InBeamParameter`: A multi-state parameter which says whether this component is currently in the beam and tracking, or in a parked state
+- `TrackingPosition`: A parameter which controls the displacement of this component relative to its beam intercept along a linear movement axis (e.g. offset on slit 2 `S2OFFSET`). This is useful for scanning over this axis for alignment
+- `AngleParameter`: A parameter which controls the angle of this component relative to the angle of the incoming beam (e.g. angle of the point detector `PDANGLE`)
+- `InBeamParameter`: A multi-state parameter which says whether this component is currently in the beam and tracking, or in parked state and not tracking
 - `DirectParameter`: A non-tracking parameter (i.e. the value is independent of the current beam path). This currently does not require a `Component` but is instead directly passed a `PVWrapper` through which it talks to the motors.
     - `SlitGapParameter`: A specific type of `DirectParameter` describing slit gaps (functionally the same)
 
@@ -104,7 +107,7 @@ These objects link the middle-layer component model to low-level motors.
 
 ### Types of Driver
 
-- `DisplacementDriver`: The driver for a single linear displacement axis
+- `DisplacementDriver`: The driver for a single linear displacement axis. This includes moving to a parked value if the component is out of the beam
 - `AngleDriver`: The driver for a single angular displacement axis
 
 ### Arguments
