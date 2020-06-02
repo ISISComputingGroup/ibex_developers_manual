@@ -9,7 +9,10 @@ In general the system works by passing both neutron and SE data into [Kafka](htt
 Part of our in-kind contribution to datastreaming is to test the system in production at ISIS. Currently it is being tested in the following way:
 
 ## The Kafka Clusters
-There are two Kafka clusters, production (`livedata.isis.cclrc.ac.uk:9092`) and development (`tenten.isis.cclrc.ac.uk:9092` or `sakura.isis.cclrc.ac.uk:9092` or `hinata.isis.cclrc.ac.uk:9092`). The development cluster is set up to auto-create topics and so when new developer machines are run up all the required topics will be created. However, the production server does not auto-create topics this means that when a new real instrument comes online corresponding topics must be created on this cluster, which is done as part of the install script.
+There are two Kafka clusters, production (`livedata.isis.cclrc.ac.uk:9092`) and development (`tenten.isis.cclrc.ac.uk:9092` or `sakura.isis.cclrc.ac.uk:9092` or `hinata.isis.cclrc.ac.uk:9092`). The development cluster is set up to auto-create topics and so when new developer machines are run up all the required topics will be created. However, the production server does not auto-create topics this means that when a new real instrument comes online corresponding topics must be created on this cluster, which is done as part of the install script. Credentials for both clusters can be found in the sharepoint.
+
+### Deployment
+Deployment involves the use of Ansible playbooks, the playbooks and instructions for using these can be found [here](https://github.com/ScreamingUdder/ansible-kafka-centos)
 
 ## Neutron Data
 The ICP on any instrument that is running in full event mode and with a DAE3 is streaming neutron events into Kafka. 
