@@ -40,6 +40,7 @@ Chris C | June '21
 
 Idea | Proposed Speaker
 ---- | ----------------
+Deploying EPICS with Ansible | Rebecca Harding
 ? | Cosimo
 LUA  | James
 BDD/DDD | James/?
