@@ -123,6 +123,10 @@ Bear in mind that both scripts and rules run **in the GUI thread** this can lead
 Seven utility classes are provided, but there seems to be no way to get to some of them in the online help other than to know their names and search for them:
 
 * ConsoleUtil has methods for writing debug messages to the console.
+    ```
+    from org.csstudio.opibuilder.scriptUtil import ConsoleUtil
+    ConsoleUtil.writeInfo(value )
+    ```
 * DataUtil has the createMacrosInput method.
 * FileUtil has methods for reading and writing files and displaying an open file dialog. There is also a saveFileDialog method that has been omitted from the online help.
 * GUIUtil has a yes/no dialog and methods for going to full screen or compact mode
