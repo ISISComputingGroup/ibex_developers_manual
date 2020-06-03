@@ -1,7 +1,7 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > PV naming
 
 # EPICS PV Naming Scheme
-Suggestions for naming of PVs at ISIS. As of EPICS base 3.14.12 record names can be up to 60 characters long, but full PV name can be longer. 
+Suggestions for naming of PVs at ISIS. 
 
 Basic idea is to describe function in the PV name, not hardware/technology - the PV name is the purpose of a channel and is abstracted from the underlying hardware; an individual IOC name can however reflect technology/hardware/implementation. Note: do not use the `:` character in an IOC name.
 
@@ -10,6 +10,14 @@ All characters in names should be uppercase. We will use `:` as hierarchy separa
 Basic scheme format is `Domain:subdomain:technicalarea:device:subdevice:signal`
 
 PV names are restricted to alphanumerical, plus `_` and `:` so `[A-Z0-9_:]*` Items that might have multiple instances must not end with a number as this would be confused with a 01,02 etc suffix used to enumerate multiple instances. 
+
+### PV Name length limit
+
+Several things can create PV names, which influence the PV limit. The limit of a PV name as far as channel access protocol is concerned is around the size of a UDP packet (so ~1500 chars). 
+
+On the other hand, an epics record can only create PVs of a smaller size, increased from 40 to 60 in 3.14.12 - but that limit doesn't field names as well.
+
+Therefore, IOC PVs have a full record name limit of 60, but PVs on channel access servers can have a much longer name.
 
 ### Private names
 
