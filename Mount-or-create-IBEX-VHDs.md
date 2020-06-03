@@ -38,7 +38,7 @@ For the test system I have gone with the first approach because it was easy. I l
 
 ## Mount a VHD
 
-1. Open `cmd` in `O3` mode
+1. Open a command prompt as administrator
 1. `diskmgmt.msc`
 1. Click Action -> Attach VHD
     - I had to click help first
