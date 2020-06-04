@@ -12,8 +12,6 @@ Types of daughter boards are:
  * Cryogen
  * GPIB board (communications)
 
-In the future, we may want to develop a full epics IOC for it and there is a possible Diamond IPC driver at  http://controls.diamond.ac.uk/downloads/support/OxInstCryojet/ currently there is an LvDCOM driver.
-
 # Communications
 
 The device should be talked to via serial (RS232 / ISOBUS in OI terms) at a baud rate of 57600. This is variable on the front panel, but **only while the device is in local mode** (when the box in the bottom left of the home screen **_doesn't_** have an orange background).
@@ -32,23 +30,22 @@ Currently, the driver only measures and sets the following:
 
 There is a section on each below as well as how to set the communication settings.
 
-### Communication Settings
-
-The driver is an lvdcom driver and so to change the com port you must configure the labview code. To do this open the setup vi which is in `C:\LabVIEW Modules\Drivers\Oxford Instruments\Mercury\Mercury - System Functions.llb` and is called `Mercury - System Functions.llb`. Run this dialogue and edit the settings for the correct Mercury. To apply these settings you will need to restart the mercury vi.
-
 ### Temperature
 
 #### Setup
 
-To activate a card you must set the related IOC macro. The macro sets the final part of the front panel name. The front panels are called Temperature: `Mercury - Front Panel <I> - Temp <N>.vi` where <I> is the Mercury index (also the IOC index) and <N> is the card index 1 for the first temperatue card, 2 for the second etc. The following macros set the <I> for the possible IOC slot:
+To activate a card you must set the related IOC macro. The following macros set the <I> for the possible IOC slot:
 
 | Macro | Usual Value | IOC Name | 
 | ----  | ----------- | -------- | 
-| MERCURY_01__VI_TEMP_1 | 1 | %MYPVPREFIX%MERCURY_01:1 |
-| MERCURY_01__VI_TEMP_2 | 2 | %MYPVPREFIX%MERCURY_01:2 |
-| MERCURY_01__VI_TEMP_3 | 3 | %MYPVPREFIX%MERCURY_01:3 |
-| MERCURY_01__VI_TEMP_4 |   | %MYPVPREFIX%MERCURY_01:4 |
-| MERCURY_02__VI_TEMP_1 |   | %MYPVPREFIX%MERCURY_01:LEVEL:1 |
+| MERCURY_01__TEMP_1 | 1 | %MYPVPREFIX%MERCURY_01:1 |
+| MERCURY_01__TEMP_2 | 2 | %MYPVPREFIX%MERCURY_01:2 |
+| MERCURY_01__TEMP_3 | 3 | %MYPVPREFIX%MERCURY_01:3 |
+| MERCURY_01__TEMP_4 |   | %MYPVPREFIX%MERCURY_01:4 |
+| MERCURY_01__LEVEL_1 |   | %MYPVPREFIX%MERCURY_01:LEVEL:1 |
+| MERCURY_01__LEVEL_2 |   | %MYPVPREFIX%MERCURY_01:LEVEL:2 |
+| MERCURY_01__PRESSURE_1 |   | %MYPVPREFIX%MERCURY_01:PRESSURE:1 |
+| MERCURY_01__PRESSURE_2 |   | %MYPVPREFIX%MERCURY_01:PRESSURE:2 |
 | etc                   |   |                          |
 
 #### Important PVs
@@ -60,11 +57,11 @@ To activate a card you must set the related IOC macro. The macro sets the final 
 
 ### He Level
 
-The helium level can be monitored by setting the macro VI_LEVEL_N to point at the correct vi in a similar fashion to the temperature.
+The helium level can be monitored by setting the macro `LEVEL_N` to point at the correct vi in a similar fashion to the temperature.
 
 ### Pressure
 
-A pressure card can be monitored by setting the macro VI_PRESSURE_N to point at the correct vi in a similar fashion to the temperature.
+A pressure card can be monitored by setting the macro `PRESSURE_N` to point at the correct vi in a similar fashion to the temperature.
 
 ### Example
 
@@ -75,13 +72,11 @@ In this example, the front panel (home screen) on the Mercury looks like:
 NB The device should be in remote mode this is indicated by the *i* (bottom left) having an orange background.
 This mercury has 3 temperature sensors, Sample_Rod, VTI_DB6 and PT2_DB7, the VTI has a heater attached to the second temperature. This means it needs:
 
-- `VI_TEMP_1` set to 1, 
-- `VI_TEMP_2` set to 2, 
-- `VI_TEMP_3` set to 3, 
+- `TEMP_1` set to MB1, 
+- `TEMP_2` set to DB6, 
+- `TEMP_3` set to DB7, 
 
 The temperature controls are on the 1st and 2nd temperature and so on the first and second tab on the mercury device screen. NB the device screen also needs these macros set.
-
-This also has a pressure gauge which we currently can't read remotely.
 
 For info here is a detailed temp loop:
 
@@ -95,7 +90,7 @@ The OPI has macros that relate to the macros set at the IOC level.
 
 ### Mercury doesn't communicate 
 
-1. One issue we have seen is that when the Mercury is transferred between instruments, or during some initial configuration, a user will change values like the Baud rate. It's good practice to check the devices settings (baud rate etc) and the one on the set-up dialog for the Mercury VI to ensure parity between them.
+1. One issue we have seen is that when the Mercury is transferred between instruments, or during some initial configuration, a user will change values like the Baud rate. It's good practice to check the devices settings (baud rate etc).
 1. Ensure that it is set to remote mode. On the front panel the *i*, bottom left, should have an orange background.
 
 ### Pressure card won't read heater voltage correctly
