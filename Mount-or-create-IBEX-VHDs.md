@@ -33,8 +33,6 @@ For the test system I have gone with the first approach because it was easy. I l
 1. Copy the three empty vhdx files (`empty_apps.vhdx`, `empty_var.vhdx`,`empty_settings.vhdx`) to a local disk (from CompGroup\chris) and rename to
 `apps.vhdx`, `var.vhdx` and `settings.vhdx`.
 2. These are pre-configured to be 30GB each.
-3. Fill them following the steps below and then copy back to the same place appending the release version to each disk. e.g.
-   `apps_5.1.2.vhdx`.
 
 ## Mount a VHD
 
@@ -43,6 +41,9 @@ For the test system I have gone with the first approach because it was easy. I l
 1. Click Action -> Attach VHD
     - I had to click help first
 1. Select location of VHD
+  1. Mount `Apps.vhdx` to `C:\Instrument\Apps` by creating a directory junction from `c:\instrument\apps` to the drive letter of the VHD you mounted
+  1. Mount `Settings.vhdx` to `C:\Instrument\Settings\config` as above
+  1. Mount `Var.vhdx` to `C:\Instrument\var` as above
 
 ## Dismounting VHD
 
@@ -51,38 +52,7 @@ For the test system I have gone with the first approach because it was easy. I l
     1. Detach VHD
     1. Copy file back to the source
 
-## VHD Contents
-
-### IBEX Apps to VHD
-
-1. Mount the VHD (see [above](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Create-IBEX-VHDs/_edit#mount-a-vhd))
-1. Open the mapped drive and copy the following:
-    1. Copy EPICS
-    1. Copy Client
-    1. Copy EPICS UTILS
-    1. Copy Python
-    1. Copy Python3
-    1. Copy ICP Binaries into EPICS
-    1. Copy MySql
-
-### IBEX Settings VHD
-
-Either:
-1. Copy current settings to VHD
-
-Or:
-1. Follow instructions to create config and common config from the developer's setup
-
-### IBEX Var VHD
-
-Either:
-1. Copy current var to VHD
-
-Or:
-1. Follow instructions to create a blank database and copy that to the disk
-1. Add other directories meant to be in var from the developer's setup e.g. log, autosave
-
-# Automation
+# VHD Creation Jenkins Job
 
 There is an [automated job in jenkins](http://epics-jenkins.isis.rl.ac.uk/job/Create_VHD/) which builds VHDs from the latest IBEX server/client/python versions.
 
