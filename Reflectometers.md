@@ -89,3 +89,4 @@ Mode | S1 Height above beam |  Polariser angle and height above
     - sample table height is the the only one
     - Homing how does that work
 1. Homing of motors what can and what can't
+1. Bump strips what does it do
