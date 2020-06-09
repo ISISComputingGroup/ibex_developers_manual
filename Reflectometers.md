@@ -90,3 +90,4 @@ Mode | S1 Height above beam |  Polariser angle and height above
     - Homing how does that work
 1. Homing of motors what can and what can't
 1. Bump strips what does it do
+1. Bender offspec analyser: Which motor drives chi? Do you need to change motor settings?
