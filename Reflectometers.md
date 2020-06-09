@@ -68,12 +68,14 @@ Mode | S1 Height above beam |  Polariser angle and height above
     2. Use the difference between the beam intercept and the position for the setpoint and add this to the read back position
     3. Do nothing this is the correct behaviour and is telling the instrument scientist they are not measuring what they think they are
     - *Answer* 2
-
-### Unanswered
-
 1. Will you want to do individual moves while another move is going on?
-1. Do we need to reflect SP of motors into Reflectometry server
-1. Can we have the dance script?
-1. Does it matter whether you can change parameters on components parked out of the beam? (e.g. SM Angle in NR Mode)
+    - Yes
+
+### Unanswered Questions
+
 1. CRISP: What is the position for S4? (found it in mantid IDF, but values differ from those in VI - assumption is VI is correct)
-1. What do we need to do that will improve the scan library to make it usable for reflectometry, especially on INTER?
+
+1. Do we need to reflect SP of motors into Reflectometry server
+     - Alarm on sp not same as RBV is good. OK?
+1. #5456: Are there lots of configs and scripts to convert, which ones?
+1. Can we have the dance script for POLREF?
