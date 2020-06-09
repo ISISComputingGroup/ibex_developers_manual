@@ -73,8 +73,9 @@ Mode | S1 Height above beam |  Polariser angle and height above
 
 ### Unanswered Questions
 
+1. Beamblock, turn on beam block mode what do you expect to happen? What can we control - yes I know this is th 3rd iteration of this
+1. 
 1. CRISP: What is the position for S4? (found it in mantid IDF, but values differ from those in VI - assumption is VI is correct)
-
 1. Do we need to reflect SP of motors into Reflectometry server
      - Alarm on sp not same as RBV is good. OK?
 1. #5456: Are there lots of configs and scripts to convert, which ones?
