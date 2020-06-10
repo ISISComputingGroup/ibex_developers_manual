@@ -81,7 +81,7 @@ Mode | S1 Height above beam |  Polariser angle and height above
 1. #5456: Are there lots of configs and scripts to convert, which ones?
 1. Can we have the dance script for POLREF?
 1. Ask about vertical CHI for FOM/SAMPLE again
-1. Ask about where horizontal/vertical ggaps should be and what labels on vertical config
+1. Ask about where horizontal/vertical gaps should be and what labels on vertical config
    - More generally how does this apply to all components
 1. Are there different park position dependent on the mode
 1. How to get pixel 28 out is it a numbered spectra
