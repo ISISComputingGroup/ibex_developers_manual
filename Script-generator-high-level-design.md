@@ -20,6 +20,7 @@ Scientist defined script definitions must be python 2/3 compatible to work with 
 A `ScriptDefinition` is the base building block that the script generator will use to build up scripts. It is essentially a wrapper around a Python function that can tell us:
 - Whether a given set of inputs is valid
 - The types of the parameters
+- How long each action will take (optionally)
 - Possibly other metadata in future
 
 As an example, consider a class that looks something like:
@@ -59,6 +60,10 @@ class DoRun(ScriptDefinition):
 
     def get_help(self):
         return "Help string"
+    
+    @cast_parameters_to(temperature=float, field=float, uamps=mytype)
+    def estimate_time(self, temperature=0.0, field=0.0, uamps=0.0):
+        return temperature * 10 + uamps * 100 
 ```
 (this is not necessarily the final API)
 
