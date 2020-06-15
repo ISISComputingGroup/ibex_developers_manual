@@ -49,6 +49,7 @@ Components are the central building blocks of the configuration. Each of them re
 - `Component`: Component that manages the linear displacement between the incoming beam and the component without affecting the beam (e.g. a slit)
 - `TiltingComponent`: Component manages the angle and distance between the incoming beam and the component without affecting the beam. This allows the component to stay perpendicular to the beam as well as centred (e.g. point detector on SURF/CRISP)
 - `ReflectingComponent`: Component manages the angle and distance between the incoming beam and the component, outgoing beam is reflected from this angle (assumes infinitely long reflector at angle and distance from the incoming beam) (e.g. supermirror)
+- `BenchComponent`: Component a reflectometry bench. The bench has an angle and height of the position which it pivots about, usually the sample, and a seesaw, which is a value added and subtracted from its two jacks. The seesaw axis must always be autosaved because it can not be worked out independently of the angle.
 - `ThetaComponent`: Component manages the angle between the incoming beam and the outgoing beam at the sample position.
     - The readback calculates the angle to the theoretical beam intercept of another component (ignoring any positional offset on that component). The component used is the first component on the list of the theta component (as defined in the configuration) that is in the beam. For example, a beamline may contain an analyser followed by a detector. If the analyser is in the beam, theta is the angle of the beam to the analyser, otherwise it is the angle to the detector.
     - The setpoint works in the same way as the ReflectingComponent except that it will update the beam path of components which define its angle even in disabled mode. 
@@ -58,15 +59,24 @@ Components are the central building blocks of the configuration. Each of them re
 #### Required:
 - `name`: Name of the component
 - `setup`: The geometry setup for this component as an object of the form `PositionAndAngle(component_y, component_z, angle_of_linear_displacement_axis)`
-- (`ThetaComponent` only) `angle_to`: a list of components which are used to define the Theta angle
+
+### Theta Angle to/of Special Method
+
+Once the component is defined that the theta should measure its angle to then it must be set on the theta component with either:
+
+    - `add_angle_to(<component>)`: this add the component to a list of components. If it is the first enabled component in that list then theta will use the components *position* to determine the angle of theta.
+    - `add_angle_of(<component>)`: this add the component to a list of components. If it is the first enabled component in that list then theta will use the components *angle* to determine the angle of theta.
 
 ### Example
 
 ```
-detector = TiltingComponent("detector", setup=PositionAndAngle(0.0, 100.0, 90.0))
+theta = add_component(ThetaComponent("theta_component", setup=PositionAndAngle(0.0, 50.0, 90.0))
 
-ThetaComponent("theta_component", setup=PositionAndAngle(0.0, 50.0, 90.0), angle_to=[detector])
+detector = add_component(TiltingComponent("detector", setup=PositionAndAngle(0.0, 100.0, 90.0)))
+theta.add_angle_to(detector)
 ```
+
+This creates a theta component which points at the detector height.
 
 ## [Beamline Parameters](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Beamline-Parameters)
 
@@ -74,8 +84,13 @@ These are the top-level parameters exposed as PVs of the form `<PREFIX>:REFL:PAR
 
 ### Types of parameter
 
-- `TrackingPosition`: A parameter which controls the displacement of this component relative to its beam intercept along a linear movement axis (e.g. offset on slit 2 `S2OFFSET`). This is useful for scanning over this axis for alignment
-- `AngleParameter`: A parameter which controls the angle of this component relative to the angle of the incoming beam (e.g. angle of the point detector `PDANGLE`)
+- `AxisParameter`: A parameter which controls the value of this components axis. If the axis is:
+    - POSITION: The position relative to the beam along the linear movement axis (e.g. offset on slit 2 `S2OFFSET`). This is useful for scanning over this axis for alignment
+    - ANGLE: The angle of this component relative to the angle of the incoming beam (e.g. angle of the point detector `PDANGLE`)
+    - TRANS: The translation position
+    - CHI: The chi rotation angle
+    - PSI: The psi rotation angle
+    - SEESAW: The seesaw of the component, used with the bench.
 - `InBeamParameter`: A multi-state parameter which says whether this component is currently in the beam and tracking, or in parked state and not tracking
 - `DirectParameter`: A non-tracking parameter (i.e. the value is independent of the current beam path). This currently does not require a `Component` but is instead directly passed a `PVWrapper` through which it talks to the motors.
     - `SlitGapParameter`: A specific type of `DirectParameter` describing slit gaps (functionally the same)
@@ -85,7 +100,7 @@ These are the top-level parameters exposed as PVs of the form `<PREFIX>:REFL:PAR
 #### Required:
 - `name`: name of the parameter
 - `component`: The component this parameter is for
-
+- `axis` (only for `AxisParameter`): The axis the parameter points to
 #### Optional:
 - `description`: A description of this parameter (Default: use parameter `name`)
 - `autosave`: Whether the parameter should be [autosaved](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Beamline-Parameters#parameter-initialisation) to file (meaning that on IOC start up, the last known setpoint is re-applied, rather than inferred from a motor position). If multiple parameters depend on a single motor axis (e.g. `Theta` and `PDOffset` are inferred from point detector height), all but one of them should be autosaved in order to not lose information on the constituent parts of the axis value on restart. (Default: `False`)
@@ -95,11 +110,16 @@ These are the top-level parameters exposed as PVs of the form `<PREFIX>:REFL:PAR
 
 ```
 # Parameter relative to the beam path
-AngleParameter("SM_angle", supermirror_component)
+AxisParameter("SM_angle", ChangeAxis.ANGLE, supermirror_component)
+```
+Point a parameter at the super mirror components angle. Call the parameter `SM_ANGLE`, resulting in the PV `<INSTRUMENT PREFIX>REFL:PARAM:SM_ANGLE` and related PVs, e.g. `:SP` to set and move to the value.
 
+```
 # Parameter that directly wraps a motor value
 DirectParameter("sample_trans", MotorPVWrapper("MOT:MTR0305"))
 ```
+Create a parameter called `SAMPLE_TRANS` that sets the motor 0305.
+
 
 ## [Composite Drivers](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Composite-Driving-Layer)
 
@@ -107,14 +127,14 @@ These objects link the middle-layer component model to low-level motors.
 
 ### Types of Driver
 
-- `DisplacementDriver`: The driver for a single linear displacement axis. This includes moving to a parked value if the component is out of the beam
-- `AngleDriver`: The driver for a single angular displacement axis
+- `IocDriver`: The driver for a single axis. This includes moving to a parked value if the component is out of the beam.
 
 ### Arguments
 
 #### Required:
 - `component`: The source component
-- `axis`: The physical motor axis as a `PVWrapper` object (see below)
+- `component_axis`: the component axis to use
+- `motor_axis`: The physical motor axis as a `PVWrapper` object (see below)
 
 #### Optional:
 - `synchronised`: Whether this driver should be able to alter axis velocity when multiple axes are being moved (used for synchronised beamline movement) (Default: `True`)
@@ -124,8 +144,8 @@ These objects link the middle-layer component model to low-level motors.
 ### Example
 ```
 # linear and angular drivers for supermirror with parked position
-DisplacementDriver(sm_component, MotorPVWrapper("MOT:MTR0101"))
-AngleDriver(sm_component, MotorPVWrapper("MOT:MTR0102"))
+IocDriver(sm_component, ChangeAxis.POSITION, MotorPVWrapper("MOT:MTR0101"))
+IocDriver(sm_component, ChangeAxis.ANGLE, MotorPVWrapper("MOT:MTR0102"))
 
 # with parked position
 sm_out_pos = OutOfBeamPosition(-20)
@@ -212,8 +232,8 @@ The reflectometry server provides a set of helper functions to aid writing valid
 
 **Important note:** Elements added via the helper methods will appear in the beamline in the order in which they appear in the configuration! e.g.
 ```
-add_parameter(AngleParameter("PD_HEIGHT", pd_component))
-add_parameter(AngleParameter("THETA", theta_component))
+add_parameter(AxisParameter("PD_HEIGHT", ChangeAxis.ANGLE, pd_component))
+add_parameter(AxisParameter("THETA", ChangeAxis.ANGLE, theta_component))
 ```
 This would mean that, if both are changed at the time of a beamline move, the point detector height would be processed before theta, i.e. s3_height would move to the height value that is relative to the beam prior to the move theta value, and therefore the wrong place. Make sure you add elements in the order in which they appear along the beam.
 
@@ -336,8 +356,8 @@ def get_beamline():
     add_constant(BeamlineConstant("S1_Z", z_s1, "Slit 1 z position"))
     s1_comp = add_component(Component("s1", PositionAndAngle(0.0, z_s1, 90)))
 
-    add_parameter(TrackingPosition("S1Offset", s1_comp), modes=[nr, liquid])
-    add_driver(DisplacementDriver(s1_comp, MotorPVWrapper("MOT:MTR0301")))
+    add_parameter(AxisParameter("S1Offset", ChangeAxis.POSITION, s1_comp), modes=[nr, liquid])
+    add_driver(IocDriver(s1_comp, ChangeAxis.POSITION, MotorPVWrapper("MOT:MTR0301")))
     s1_params = add_slit_parameters(1)
 
     # Super Mirror
@@ -347,20 +367,20 @@ def get_beamline():
 
     add_parameter(InBeamParameter("SMInBeam", sm_comp, False),
                   modes=[nr, liquid], mode_inits=[(nr, False), (liquid, True)])
-    add_parameter(TrackingPosition("SMOffset", sm_comp), modes=[nr, liquid])
-    add_parameter(AngleParameter("SMAngle", sm_comp), modes=[nr, liquid])
+    add_parameter(AxisParameter("SMOffset", ChangeAxis.POSITION, sm_comp), modes=[nr, liquid])
+    add_parameter(AxisParameter("SMAngle", ChangeAxis.ANGLE, sm_comp), modes=[nr, liquid])
 
-    add_driver(DisplacementDriver(sm_comp, MotorPVWrapper("MOT:MTR0406"),
+    add_driver(IocDriver(sm_comp,  ChangeAxis.POSITION, MotorPVWrapper("MOT:MTR0406"),
                                   out_of_beam_positions=[OutOfBeamPosition(-47.0)], synchronised=False))
-    add_driver(AngleDriver(sm_comp, MotorPVWrapper("MOT:MTR0407"), synchronised=False))
+    add_driver(IocDriver(sm_comp,  ChangeAxis.ANGLE, MotorPVWrapper("MOT:MTR0407"), synchronised=False))
 
     # S2
     z_s2 = z_sm + 831
     add_constant(BeamlineConstant("S2_Z", z_s2, "Slit 2 z position"))
     s2_comp = add_component(Component("s2", PositionAndAngle(0.0, z_s2, 90)))
 
-    add_parameter(TrackingPosition("S2Offset", s2_comp), modes=[nr, liquid])
-    add_driver(DisplacementDriver(s2_comp, MotorPVWrapper("MOT:MTR0302")))
+    add_parameter(AxisParameter("S2Offset",  ChangeAxis.POSITION, s2_comp), modes=[nr, liquid])
+    add_driver(IocDriver(s2_comp, ChangeAxis.POSITION, MotorPVWrapper("MOT:MTR0302")))
     s2_params = add_slit_parameters(2)
 
     # Sample
@@ -368,9 +388,9 @@ def get_beamline():
     add_constant(BeamlineConstant("SAMPLE_Z", z_sample, "Sample z position"), )
     sample_comp = add_component(Component("sample", PositionAndAngle(0.0, z_sample, 90)))
 
-    add_parameter(TrackingPosition("SampOffset", sample_comp))
+    add_parameter(AxisParameter("SampOffset", ChangeAxis.POSITION, sample_comp))
     add_parameter(InBeamParameter("SampInBeam", sample_comp))
-    add_driver(DisplacementDriver(sample_comp, MotorPVWrapper("MOT:MTR0306"),
+    add_driver(IocDriver(sample_comp, ChangeAxis.POSITION, MotorPVWrapper("MOT:MTR0306"),
                                   out_of_beam_positions=[OutOfBeamPosition(-10)]))
 
     # Theta
@@ -383,8 +403,8 @@ def get_beamline():
     add_constant(BeamlineConstant("S3_MAX", 30, "Maximum S3 opening size"))
     s3_comp = add_component(Component("s3", PositionAndAngle(0.0, z_s3, 90)))
 
-    add_parameter(TrackingPosition("S3Offset", s3_comp), modes=[nr, liquid])
-    add_driver(DisplacementDriver(s3_comp, JawsCentrePVWrapper("JAWS3", is_vertical=True), synchronised=False))
+    add_parameter(AxisParameter("S3Offset",  ChangeAxis.POSITION, s3_comp), modes=[nr, liquid])
+    add_driver(IocDriver(s3_comp,  ChangeAxis.POSITION, JawsCentrePVWrapper("JAWS3", is_vertical=True), synchronised=False))
     s3_params = add_slit_parameters(3, exclude="VC")
 
     # S4
@@ -393,8 +413,8 @@ def get_beamline():
     add_constant(BeamlineConstant("S4_MAX", 30, "Maximum S4 opening size"))
     s4_comp = add_component(Component("vac_back", PositionAndAngle(0.0, z_s4, 90)))
 
-    add_parameter(TrackingPosition("VBOffset", s4_comp), modes=[nr, liquid])
-    add_driver(DisplacementDriver(s4_comp, MotorPVWrapper("MOT:MTR0304")))
+    add_parameter(AxisParameter("VBOffset",  ChangeAxis.POSITION, s4_comp), modes=[nr, liquid])
+    add_driver(IocDriver(s4_comp, ChangeAxis.POSITION, MotorPVWrapper("MOT:MTR0304")))
     s4_params = add_slit_parameters(4)
 
     # point detector
@@ -402,30 +422,31 @@ def get_beamline():
     add_constant(BeamlineConstant("PD_Z", z_point_detector, "Point detector z position"))
     point_detector_comp = add_component(TiltingComponent("point_detector", PositionAndAngle(0.0, z_point_detector, 90)))
 
-    add_parameter(TrackingPosition("PDOffset", point_detector_comp), modes=[nr, liquid, disabled])
-    add_parameter(AngleParameter("PDAngle", point_detector_comp), modes=[nr, liquid, disabled])
+    add_parameter(AxisParameter("PDOffset",  ChangeAxis.POSITION, point_detector_comp), modes=[nr, liquid, disabled])
+    add_parameter(AxisParameter("PDAngle",  ChangeAxis.ANGLE, point_detector_comp), modes=[nr, liquid, disabled])
     add_parameter(InBeamParameter("PDInBeam", point_detector_comp))
-    add_driver(DisplacementDriver(point_detector_comp, MotorPVWrapper("MOT:MTR0401"),
+    add_driver(IocDriver(point_detector_comp,  ChangeAxis.POSITION, MotorPVWrapper("MOT:MTR0401"),
                                   out_of_beam_positions=[OutOfBeamPosition(285.0)]))
-    add_driver(AngleDriver(point_detector_comp, MotorPVWrapper("MOT:MTR0402"), synchronised=False))
+    add_driver(IocDriver(point_detector_comp,  ChangeAxis.ANGLE, MotorPVWrapper("MOT:MTR0402"), synchronised=False))
 
     # multi detector
     z_multi_detector = z_point_detector + 4007
     add_constant(BeamlineConstant("MD_Z", z_multi_detector, "Multi-detector z position"))
     multi_detector_comp = add_component(TiltingComponent("md", PositionAndAngle(0.0, z_multi_detector, 90)))
 
-    add_parameter(TrackingPosition("MDOffset", multi_detector_comp), modes=[nr, liquid, disabled])
-    add_parameter(AngleParameter("MDAngle", multi_detector_comp), modes=[nr, liquid, disabled])
+    add_parameter(AxisParameter("MDOffset",  ChangeAxis.POSITION, multi_detector_comp), modes=[nr, liquid, disabled])
+    add_parameter(AxisParameter("MDAngle", ChangeAxis.ANGLE, multi_detector_comp), modes=[nr, liquid, disabled])
     add_parameter(InBeamParameter("MDInBeam", multi_detector_comp), modes=[nr, liquid, disabled])
-    add_driver(DisplacementDriver(multi_detector_comp, MotorPVWrapper("MOT:MTR0403"), synchronised=False,
+    add_driver(IocDriver(multi_detector_comp, ChangeAxis.POSITION, MotorPVWrapper("MOT:MTR0403"), synchronised=False,
                                   out_of_beam_positions=[OutOfBeamPosition(98.71)]))
-    add_driver(AngleDriver(multi_detector_comp, MotorPVWrapper("MOT:MTR0404"), synchronised=False))
+    add_driver(IocDriver(multi_detector_comp, ChangeAxis.ANGLE, MotorPVWrapper("MOT:MTR0404"), synchronised=False))
 
     # Perform marker replacements
-    theta_comp = add_component(ThetaComponent("ThetaComp", PositionAndAngle(0.0, z_sample, 90),
-                                              angle_to=[point_detector_comp, multi_detector_comp]),
+    theta_comp = add_component(ThetaComponent("ThetaComp", PositionAndAngle(0.0, z_sample, 90)),
                                marker=theta_comp_marker)
-    theta_param_angle = add_parameter(AngleParameter("THETA", theta_comp, autosave=True), modes=[nr, liquid, disabled],
+    theta_comp.add_angle_to(point_detector_comp)
+    theta_comp.add_angle_to(multi_detector_comp])
+    theta_param_angle = add_parameter(AxisParameter("THETA", theta_comp, ChangeAxis.ANGLE, autosave=True), modes=[nr, liquid, disabled],
                                       marker=theta_param_marker)
 
     # Footprint calculator setup
