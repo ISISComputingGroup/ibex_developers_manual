@@ -64,8 +64,8 @@ Components are the central building blocks of the configuration. Each of them re
 
 Once the component is defined that the theta should measure its angle to then it must be set on the theta component with either:
 
-    - `add_angle_to(<component>)`: this add the component to a list of components. If it is the first enabled component in that list then theta will use the components *position* to determine the angle of theta.
-    - `add_angle_of(<component>)`: this add the component to a list of components. If it is the first enabled component in that list then theta will use the components *angle* to determine the angle of theta.
+- `add_angle_to(<component>)`: this add the component to a list of components. If it is the first enabled component in that list then theta will use the components *position* to determine the angle of theta.
+- `add_angle_of(<component>)`: this add the component to a list of components. If it is the first enabled component in that list then theta will use the components *angle* to determine the angle of theta.
 
 ### Example
 
