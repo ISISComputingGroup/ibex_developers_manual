@@ -1,5 +1,21 @@
 > [Wiki](Home) > [Project overview](Project-Overview) > [Design documents](Design-Documents) > [Reflectometers](Reflectometers) > [Reflectometry Testing](Reflectometry-Testing)
 
+## SetUp Simulated Device
+
+There are some simulated device setups in the private share `...\Reflectometry\configs\<instrument>`. To use these:
+
+1. Copy galil directory to your configuration directory
+1. Created a configuration with the correct number of simulated motors
+    - some configs have components in that help with that
+1. Switch to config so that the motors are running
+1. Run the `setup_motors.bat` in a epics terminal on your machine
+1. Copy the `config.py` to your refl directory in your config directory
+1. Restart the refl ioc
+
+This should make the instrument act like a simulated version of the chosen instrument. 
+
+If you want to swap between multiple configurations you can also create a package (includes `__init__.py`) for each instrument and then use the `config.py` in the base directory to swap between them.
+
 ## CRISP in Feb 2019.
 
 ### Setup
