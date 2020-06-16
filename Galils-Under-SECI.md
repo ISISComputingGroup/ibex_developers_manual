@@ -53,5 +53,9 @@ Backlash
 Auto On/Off
 - This relates to the De-energise setting, it is also worth noting that when this is set to false then the motor off deadband has to be set to -1.
 
+Deadbands
+- `RDBD` is the retry deadband and equates to the `positional accuracy` - both are in the engineering units
+- `SPDB` is the setpoint deadband, and equates to the parameter of that name - both are in the engineering units
+
 
 
