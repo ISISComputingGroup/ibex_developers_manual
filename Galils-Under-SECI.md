@@ -57,5 +57,6 @@ Deadbands
 - `RDBD` is the retry deadband and equates to the `positional accuracy` - both are in the engineering units
 - `SPDB` is the setpoint deadband, and equates to the parameter of that name - both are in the engineering units
 
-
+Jog Values
+- Both `JAR` and `JVEL` are set to the same values as standard move velocity and acceleration
 
