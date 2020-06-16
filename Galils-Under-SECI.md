@@ -50,6 +50,8 @@ Backlash
 - BDST (the backlash distance) likely needs to be set to whichever of the forward and backward backlashes are set. (Again there is a concern over sign, but just using whichever is propagated with the sign it has should be a reasonable start.) If neither are set, this value should be 0. If both are set, there is something very wrong with that stage, and it should be flagged, but as a default the backward backlash could be used.
 - Sign thoughts: We think the sign in IBEX is opposite to the sign in SECI. The reasoning is easiest to see with a positive axis pointing up. Here the corrected movement we want is when it is going down, -ve direction, we want it to go past the set point and come back. To achieve this in SECI you need to add a -ve value to the backwards backlash (backlash is added to the setpoint). To achieve this in IBEX you must add a +ve backlash distance (in IBEX it is taken off the setpoint).
 
+Auto On/Off
+- This relates to the De-energise setting, it is also worth noting that when this is set to false then the motor off deadband has to be set to -1.
 
 
 
