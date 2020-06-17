@@ -61,8 +61,8 @@ Jog Values
 - Both `JAR` and `JVEL` are set to the same values as standard move velocity and acceleration
 
 Limits
-- The SECI `user limits` map to the `drive limits` for IBEX, and the `soft limits` to the other limits.
-- Where the soft limits are set, but the user limits are either set to infinity or 0, then the drive limits should be set to the same value as the soft limits
+- Within IBEX we will set the `HLM` and `LLM` fields
+- Where the soft limits are set, but the user limits are either set to infinity or 0, then the soft limits should be used
 - Where the soft limits are set to infinity or 0 then the limits will be set to 0 and a message added to the 'things to be aware of' part of the system
 - If the user limits are larger than the soft limits, but not infinite, then the soft limits will win as those are the final limits used within the move normally
 
