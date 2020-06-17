@@ -41,3 +41,16 @@ There are three main files that can be set at runtime to change the behaviour of
 These files are picked up from `Instrument/Settings/config/inst/configurations/tables`, have the *.dat suffix and are all human readable. They can be edited by hand but must be done carefully to ensure that there are no logic errors within them. For example if a detector is listed in one file but not in another. 
 
 The way that data is binned by the DAE is set by changing the time channel binning (TCB). Scientists generally want different amount of detail depending on when the neutron hit the detector, which they can do by setting a smaller bin in the time range that they care more about. They can do this through the GUI manually or by creating a tcb file that is loaded into the ICP. It may be that scientists would like different levels of binning for different banks of detectors they can do this by setting up a number of different `timing regimes` and then specifying the regime they would like the detector to go into in the wiring table. If they specify a time regime of > 100 the data will be read and saved as event data. If they specify 1XX the ICP will also bin the events 'on the fly' into the XX regime as well as save the raw event data.  
+
+## Performing arbitrary actions on run start/run end
+
+The ISISDAE ioc can be configured to process PVs just after starting and ending runs. It is easiest to configure this in `globals.txt` like the following example for the SANS2D fast shutter:
+
+```
+ISISDAE_01__POST_BEGIN_1=TE:NDW1799:FINS_VAC:SHUTTER:OPEN_IF_AUTO.PROC CA PP
+ISISDAE_01__POST_END_1=TE:NDW1799:FINS_VAC:SHUTTER:CLOSE_IF_AUTO.PROC CA PP
+```
+
+There are currently 4 macros available for each of `POST_BEGIN_x` and `POST_END_x`.
+
+Note that if the PV you want to process is not in the ISISDAE ioc, you will need to specify the `.PROC` field explicitly for the link to work.
