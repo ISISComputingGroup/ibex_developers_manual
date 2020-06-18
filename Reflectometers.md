@@ -71,7 +71,7 @@ Mode | S1 Height above beam |  Polariser angle and height above
 1. Will you want to do individual moves while another move is going on?
     - Yes
 
-### Unanswered Questions
+### Answered 06/2020
 
 1. Beam block, turn on beam block mode what do you expect to happen? What can we control - yes I know this is th 3rd iteration of this
     -The way they use it is to set gaps, horizontal and vertical, then turn off the gap calcs. Then move the non-blocking beam as far as possible out of the way and thenmove the blocking blade to desired position, e.g. South blade to -1.
