@@ -74,20 +74,55 @@ Mode | S1 Height above beam |  Polariser angle and height above
 ### Unanswered Questions
 
 1. Beam block, turn on beam block mode what do you expect to happen? What can we control - yes I know this is th 3rd iteration of this
+    -The way they use it is to set gaps, horizontal and vertical, then turn off the gap calcs. Then move the non-blocking beam as far as possible out of the way and thenmove the blocking blade to desired position, e.g. South blade to -1.
+    - On CRISP the bottom blade needs to track the beam
+    - In blocking mode it should have an offset from the beam
 1. Change engineering correction based on mode how does this work 
+    - Already thought internally about this and solution is read backs update and then they will be shown to be not in position. If parameter is in mode position is corrected next move, if not they will be shown to be wrong.
 1. CRISP: What is the position for S4? (found it in mantid IDF, but values differ from those in VI - assumption is VI is correct)
+    - Vi is correct
 1. Do we need to reflect SP of motors into Reflectometry server
      - Alarm on sp not same as RBV is good. OK?
+     - Would like the explanation to appear in the status box ticket added but low prioirty [#5486](https://github.com/ISISComputingGroup/IBEX/issues/5486)
 1. #5456: Are there lots of configs and scripts to convert, which ones?
+    - Do this together when transferring POLREF but configs needs are anything ending `_HCM` or `_SCM` and all sub configs `SUB_POLREF` and polref flipper component ro see the flipper mode.
 1. Can we have the dance script for POLREF?
+    - yes called dance_gcl in network scripts area under user test
 1. Ask about vertical CHI for FOM/SAMPLE again
+    - Sample:
+        - In horizonal mode: 
+            - sample angle - phi
+            - sample roll - psi
+            - sample yaw - chi
+        - In vertical mode: 
+            - sample angle - chi
+            - sample roll - psi
+            - sample yaw - phi
+    - Detector:
+        - In horizonal mode: 
+            - detector angle - tehta
+        - In vertical mode: 
+            - detector angle - bench slide
+    - Super mirror:
+        - In horizonal mode: 
+            - straight
+        - In vertical mode: 
+            - same as before but PSI is PSI + 90 we would like this to be 0 if it is easy
 1. Ask about where horizontal/vertical gaps should be and what labels on vertical config
-   - More generally how does this apply to all components
+    - More generally how does this apply to all components
+    - Keep vertical as vertical for slits but collimation slits needs to be indicated. Ideally swapping in OPI swap positions of horizontal and vertical slits
+    - Need to add hg to run angle. Footprint calculator need to be setup for vertical slits
 1. Are there different park position dependent on the mode
-1. How to get pixel 28 out is it a numbered spectra
+    - No (apart from laser mode)
+1. How to get pixel 280 out is it a numbered spectra
+    - just a specific spectra number
 1. Clash conditions on POLREFR
-    - sample table height is the the only one
-    - Homing how does that work
+    - Guide rails on flipper stage and slit 2 clash with sample table (including something on the table)
+    - Slit 2 height stage hits a cross bar if too low
+    - j1, j2 and h are all related because horixontal stage can fall off jacks if j1 or j2 are different
 1. Homing of motors what can and what can't
+    - all apart from bench jacks
 1. Bump strips what does it do
+    - Switches off all motor amplifiers but this means that the motors relax and so after this has happened you need to reposition all motors to where they were. In SECI this mean pressing the move button. There is also a message that appears on both the motor table and on the refl server saying that this has happened. Added ticket 
 1. Bender offspec analyser: Which motor drives chi? Do you need to change motor settings?
+    - Driven by the huber motor
