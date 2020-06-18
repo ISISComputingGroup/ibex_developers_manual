@@ -13,6 +13,10 @@
 * [Remote Debugging from Visual Studio](Remote-Debugging-from-Visual-Studio)
 * [JMS-Log creation tool](Ioc-message-logging#development-tools): Tool to create ioc log messages.
 * [PSRemoting to copy files to everywhere](PS-Remote)
+* [Script to connect to all instrument](Script-to-connect-to-all-instruments)
+    - can be used to get versions of all instruments
+    - can be used to list usage of genie functions
+    - can be used to update files on drive
 
 ### Archive Tools
 
