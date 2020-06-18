@@ -48,9 +48,12 @@ The ISISDAE ioc can be configured to process PVs just after starting and ending 
 
 ```
 ISISDAE_01__POST_BEGIN_1=TE:NDW1799:FINS_VAC:SHUTTER:OPEN_IF_AUTO.PROC CA PP
+ISISDAE_01__POST_RESUME_1=TE:NDW1799:FINS_VAC:SHUTTER:OPEN_IF_AUTO.PROC CA PP
 ISISDAE_01__POST_END_1=TE:NDW1799:FINS_VAC:SHUTTER:CLOSE_IF_AUTO.PROC CA PP
+ISISDAE_01__POST_ABORT_1=TE:NDW1799:FINS_VAC:SHUTTER:CLOSE_IF_AUTO.PROC CA PP
+ISISDAE_01__POST_PAUSE_1=TE:NDW1799:FINS_VAC:SHUTTER:CLOSE_IF_AUTO.PROC CA PP
 ```
 
-There are currently 4 macros available for each of `POST_BEGIN_x` and `POST_END_x`.
+There are currently 4 macros available for each of `POST_BEGIN_x`, `POST_END_x`, `POST_ABORT_x`, `POST_PAUSE_x` and `POST_RESUME_x`.
 
 Note that if the PV you want to process is not in the ISISDAE ioc, you will need to specify the `.PROC` field explicitly for the link to work.
