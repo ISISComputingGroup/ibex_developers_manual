@@ -99,19 +99,19 @@ Mode | S1 Height above beam |  Polariser angle and height above
             - sample roll - psi
             - sample yaw - phi
     - Detector:
-        - In horizonal mode: 
+        - In horizontal mode: 
             - detector angle - theta
         - In vertical mode: 
             - detector angle - bench slide
     - Super mirror:
-        - In horizonal mode: 
+        - In horizontal mode: 
             - straight
         - In vertical mode: 
             - same as before but PSI is PSI + 90 we would like this to be 0 if it is easy
 1. Ask about where horizontal/vertical gaps should be and what labels on vertical config
     - More generally how does this apply to all components
     - Keep vertical as vertical for slits but collimation slits needs to be indicated. Ideally swapping in OPI swap positions of horizontal and vertical slits
-    - Need to add hg to run angle. Footprint calculator need to be setup for vertical slits
+    - Need to add parameters `s#hg` to run angle. Footprint calculator needs to be setup for vertical slits
 1. Are there different park position dependent on the mode
     - No (apart from laser mode)
 1. How to get pixel 280 out is it a numbered spectra
