@@ -74,11 +74,11 @@ Mode | S1 Height above beam |  Polariser angle and height above
 ### Answered 06/2020
 
 1. Beam block, turn on beam block mode what do you expect to happen? What can we control - yes I know this is th 3rd iteration of this
-    -The way they use it is to set gaps, horizontal and vertical, then turn off the gap calcs. Then move the non-blocking beam as far as possible out of the way and then move the blocking blade to desired position, e.g. South blade to -1.
+    -The way they use it is to set gaps, horizontal and vertical, then turn off the gap calcs. Then move the non-blocking blade as far as possible out of the way and then move the blocking blade to desired position, e.g. South blade to -1.
     - On CRISP the bottom blade needs to track the beam
     - In blocking mode it should have an offset from the beam
 1. Change engineering correction based on mode how does this work 
-    - Already thought internally about this and solution is read backs update and then they will be shown to be not in position. If parameter is in mode position is corrected next move, if not they will be shown to be wrong.
+    - Already thought internally about this and solution is read backs update and then they will be shown to be not in position. If parameter is in mode position is corrected next move, if not they will continue to be shown to be wrong.
 1. CRISP: What is the position for S4? (found it in mantid IDF, but values differ from those in VI - assumption is VI is correct)
     - Vi is correct
 1. Do we need to reflect SP of motors into Reflectometry server
