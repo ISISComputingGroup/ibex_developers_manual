@@ -10,57 +10,6 @@ If you have a waveform record of `FTVL` `STRING`, then you have to be careful ab
 
 Instead of using `%s` as your formatter, you need to use a character set, e.g. `%[A-Z0-9a-z.+-]`, which does not include the separator you are splitting on. If you use `%s`, then the whole string will be read into the zeroth element of the array, and won't be split on the separator.
 
-## Writing a waveform (e.g. long strings) to a device
-
-**NOTE:** please check https://github.com/ISISComputingGroup/IBEX/issues/5326 before proceeding to verify details below are still correct.
-
-Writing waveforms does not not work directly in streamdevice. Instead you need to add a level of indirection and use record redirection in a protocol file to explicitly send the data in the waveform:
-
-Example db:
-
-```
-record(waveform, "$(P)MYLONGSTRING:SP") {
-    field(FTVL, "CHAR")
-    field(NELM, "1024")
-    field(FLNK, "$(P)MYLONGSTRING:SP:_SEND")
-}
-
-record(bo, "$(P)MYLONGSTRING:SP:_SEND") {
-    field(OUT, "@Mezflipr.proto setThing($(P)) $(PORT)")
-    field(DTYP, "stream")
-}
-```
-
-With corresponding protocol file:
-
-```
-setThing {
-    out "thing=%(\$1MYLONGSTRING:SP)s";
-}
-```
-
-### Example waveform of strings record and protocol file from Keithley 2001
-
-**Record**
-
-```
-record(waveform, "$(P)SCAN:BUFF"){
-    field(DESC, "Reads value from the buffer")
-    field(DTYP, "stream")
-    field(FTVL, "STRING")
-    field(NELM, "10")
-    field(INP, "@keithley_2001.proto read_buffer $(PORT)")
-}
-```
-
-**Protocol function**
-```
-read_buffer {
-    separator=",";
-    out ":DATA:DATA?";
-    in  "%[A-Za-z0-9.+-]";
-}
-```
 ## Dealing with enums
 
 The record type for enums in EPICS is [mbbo](https://wiki-ext.aps.anl.gov/epics/index.php/RRM_3-14_Multi-Bit_Binary_Output)/[mbbi](https://wiki-ext.aps.anl.gov/epics/index.php/RRM_3-14_Multi-Bit_Binary_Input). However, StreamDevice also provides [support for enums within the protocol file](https://paulscherrerinstitute.github.io/StreamDevice/formats.html#enum).
