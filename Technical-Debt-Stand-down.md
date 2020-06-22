@@ -14,6 +14,7 @@ Try to make sure all tickets by the end of the day are in a good state.
 ### Ideas for Topics
 
 
+- Fix script generator errors: https://github.com/ISISComputingGroup/IBEX/issues/5500
 - Emulator for the compressors
 - Improve genie python unit tests coverage. It is lacking in several complicated pieces of code, such as the genie_change_cache module.
 - Add to IOC numbers so that all IOCs have at least 2
