@@ -43,7 +43,7 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
     1. GUI
         1. In `/uk.ac.stfc.isis.ibex.e4.client/plugin.xml` in `Overview` tab set `Version: ` to be `X.x.m`
         1. In `/uk.ac.stfc.isis.ibex.e4.client/pom.xml` edit the `<version>` tag (not in parent) content to be `X.x.m` (This tag may not be present and so will have to be added see as in [this](https://github.com/ISISComputingGroup/ibex_gui/compare/master...Release_5.2.1) example)
-    1. Scriptgenerator
+    1. Script generator
         1. In `/uk.ac.stfc.isis.scriptgenerator.client/plugin.xml` in `Overview` tab set `Version: ` to be `X.x.m`
         2. In `/uk.ac.stfc.isis.scriptgenerator.client/pom.xml` edit the `<version>` tag (not in parent) content to be `X.x.m`
 
