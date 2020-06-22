@@ -20,7 +20,7 @@ Text for release ticket:
 
 ## Standard Release
 
-Project is ready to be released not for a specific event, e.g. at the end of a sprint.
+Project is ready to be released not for a specific event, e.g. at the end of a sprint. Script Generator version number differs to the client.
 
 ### Pre Testing
 
@@ -31,6 +31,9 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
 1. Start a release branch so that the code is frozen (e.g. `Release_1.1.0`). You will need a branch for
     1. [genie_python](https://github.com/ISISComputingGroup/genie_python)
     1. [ibex_gui](https://github.com/ISISComputingGroup/ibex_gui)
+    1. [script_generator](https://github.com/ISISComputingGroup/ibex_gui)
+        1. Script generator release branch should start with `Release_Script_Gen_X.x.m`
+
     1. [EPICS](https://github.com/ISISComputingGroup/EPICS)
     1. For EPICS submodules you should use:
         1. `git submodule update --init --recursive --remote` which sets all the repos to their pinned version
@@ -40,16 +43,22 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
     1. GUI
         1. In `/uk.ac.stfc.isis.ibex.e4.client/plugin.xml` in `Overview` tab set `Version: ` to be `X.x.m`
         1. In `/uk.ac.stfc.isis.ibex.e4.client/pom.xml` edit the `<version>` tag (not in parent) content to be `X.x.m` (This tag may not be present and so will have to be added see as in [this](https://github.com/ISISComputingGroup/ibex_gui/compare/master...Release_5.2.1) example)
+    1. Scriptgenerator
+        1. In `/uk.ac.stfc.isis.scriptgenerator.client/plugin.xml` in `Overview` tab set `Version: ` to be `X.x.m`
+        2. In `/uk.ac.stfc.isis.scriptgenerator.client/pom.xml` edit the `<version>` tag (not in parent) content to be `X.x.m`
+
     1. EPICS
         1. In `EPICS\ioc\master\INSTETC\INSTETC-IOC-01App\Db\svn-revision.db.tmpl` edit `field(VAL, "0.0.0.$WCREV$")` to be `field(VAL, "X.x.m.$WCREV$")`
         1. NB this has to be committed on a branch in IOC and then this submodule commit has to be added to the EPICS release branch
     1. Genie Python
         1. `...\Python\Lib\site-packages\genie_python\version.py` edit `VERSION = "0.0.0.qualifier"` to VERSION = "X.x.m.xxxx" where xxxx is the SHA hash of the commit
 1. Commit your changes and push.
-1. For the builds `ibex_gui_release`, `genie_python_release` and `EPICS_release`, do the following:
+1. For the builds `ibex_gui_release`, `genie_python_release`, `scriptgenerator_release` and `EPICS_release`, do the following:
     1. Find the release build pipeline in Jenkins
     1. Click "Scan repository". It should find the new release branch and queue a build.
-    1. The release builds will be created in `P:\Kits$\CompGroup\ICP\Releases\X.x.m`
+    1. The release build for script generator will be created in `P:\Kits$\CompGroup\ICP\Releases\script_generator_release\X.x.m`
+    1. The release builds for the rest will be created in `P:\Kits$\CompGroup\ICP\Releases\X.x.m`
+    
 1. Create a released version in the [releases table](https://github.com/ISISComputingGroup/IBEX/wiki#releases) (including link to release notes)
 1. Move the changes which have been merged into the release from the dev page to the new release notes page for the version. Whilst doing this make sure that the release notes are as understandable as possible.
 1. Find dependencies which have been updated since last release and add them to the bottom of the release notes.
