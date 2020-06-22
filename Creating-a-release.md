@@ -20,7 +20,7 @@ Text for release ticket:
 
 ## Standard Release
 
-Project is ready to be released not for a specific event, e.g. at the end of a sprint. Script Generator version number differs to the client.
+Project is ready to be released not for a specific event, e.g. at the end of a sprint. Script Generator version number always differs to the client's.
 
 ### Pre Testing
 
