@@ -38,7 +38,7 @@ On a DAE3 machine a vendor network library is used rather than NI Visa and the e
 2020-02-27T09:55:41  Qxtrm_channel::RDMARead failed rdma2 address 0x40010 nbytes 4(Quixtream: The timeout period on this channel expired before the transfer commenced. Channel status: Transfer failed. Data packet not received before timeout. )
 ```
 
-Again the resolution is to contact electronics which was done the [last time this happened](https://github.com/ISISComputingGroup/IBEX/issues/5269).
+In general if you see an error like this or starting with `NIVISA` you should restart the DAE, then [contact electronics](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Contact%20details%20for%20other%20groups.docx).
 
 ### No log files are produced in `c:\data` even though blocks are set to log.
 The reason may be because cp hasn't been set to look for epics. In `C:\LabVIEW Modules\dae\isisicp.properties` set `isisicp.epicsdb.use = true` to log the epic's blocks. You will need to restart the `isisicp` process for this to take effect. To do this, just end the `isisicp` process in task manager.
