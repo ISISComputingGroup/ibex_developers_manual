@@ -46,9 +46,9 @@ Once this is set up create a new pipeline build in Jenkins.
 This should now build.
 
 
-## Setting up a Multibranch pipeline
+## Setting up a Multi-branch pipeline
 
-Jenkins Multibranch Pipeline project type enables you to implement different Jenkinsfile for different
+Jenkins Multi-branch Pipeline project type enables you to implement different Jenkinsfile for different
 branches of the same project. Additionally, we can make Jenkins to only create and execute pipeline
 for a specific branch.
 
