@@ -40,4 +40,4 @@ If the wrong java path is set then the slave will not start. Update the path to 
 
 ## Linux build node (s7cloud) is offline
 
-If the node has rebooted and/or installed an sshd update, it may have removed jenkins from its ssh authority. You need to edit `/etc/ssh/sshd_config` and add `jenkins` to the `AllowGroups` line. Then run `service sshd restart` on s7cloud. You can then ask the Jenkins server to relaunch the node.  
+If the node has rebooted and/or installed an `sshd` update, it may have removed jenkins from its ssh authority. You need to edit `/etc/ssh/sshd_config` and add `jenkins` to the `AllowGroups` line. Then run `service sshd restart` on s7cloud. You can then ask the Jenkins server to relaunch the node.  
