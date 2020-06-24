@@ -45,6 +45,30 @@ Once this is set up create a new pipeline build in Jenkins.
 
 This should now build.
 
+
+## Setting up a Multibranch pipeline
+
+Jenkins Multibranch Pipeline project type enables you to implement different Jenkinsfile for different
+branches of the same project. Additionally, we can make Jenkins to only create and execute pipeline
+for a specific branch.
+
+1. Go to http://epics-jenkins.isis.rl.ac.uk/ and log in using your federal ID and password.
+1. Click New Item on the top left corner of the dashboard.
+1. Enter the name, select Mutlibranch pipeline and click OK.
+1. Add Display Name and Description (Not mandatory but would be useful)
+1. Under `Branch Sources` tab click `Add source` and select `GitHub`
+    1. Choose credentials User ISISBuilder
+    1. Add Repository HTTPS URL (your git repo)
+    1. Under `Behaviors` -> `Discover branches` select `Strategy` from the drop-down list to be
+   `Exclude branches that are also filed as PRs` 
+    1. Under `Behaviors` click `Add` and choose `Filter by name (with wildcards)` and fill the `Include` text field
+       with `Release_*` or whatever is the release prefix for your release branch and remove the rest of the options.
+    1. Under `Property Strategy`, click `Add property` and choose `Suppress automatic SCM triggering`.
+1. Under `Build Configuration` tab, `Script Path` should match the name of your Jenkinsfile
+1. Click Save
+
+This will build now. To start the build again click `Scan Repository Now`
+
 ## Other
 
 * [Jenkins trouble shooting](Jenkins-Trouble-Shooting)
