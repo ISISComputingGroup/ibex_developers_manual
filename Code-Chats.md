@@ -8,10 +8,7 @@ Code chats occur on a semi-regular monthly basis within the group at ISIS. Altho
 
 Topic | Presenter | Date
 ----- | --------- | ----
-NeXus | Freddie | 11th March '20
-TBC | Cosimo | 7th April '20
-System Testing With Squish | Dom | May '20
-How to Read ISIS LabVIEW Drivers | Kathryn Baker | June '20
+How to Read ISIS LabVIEW Drivers | Kathryn Baker | 22nd July '20
 ISISICP (and Kafka?) | Freddie | Jul '20
 The HIFI Cryomag | Chris C/Kathryn | Aug'20
 IBEX UI Design | Thomas Löhnert | Sep '20
@@ -153,7 +150,13 @@ How data moves at ISIS | Chris | Sep 2019
 Migration to Python 3 | James | Sep 2019
 Java 11 | Tom | Oct 2019
 EPICS 7 | Freddie | Nov 2019
-The IBEX Script Generator | James | Jan 2019
+
+### 2020
+Topic | Presenter | Date
+----- | --------- | ----
+The IBEX Script Generator | James | Jan '20
+NeXus | Freddie | 11th March '20
+System Testing With Squish | Dom | May '20
 
 All presentations should be uploaded to the SharePoint site [here](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Forms/AllItems.aspx?RootFolder=%2Fisis%2Fcomputing%2FICPdiscussions%2FGUI_Chat_Slides&FolderCTID=0x01200027AD8F05966A2748B3B04C98BB5B442B&View={F2C33C51-70E6-4343-B937-2C59A2568306}) and/or converted to a wiki page if more appropriate. It should also be reasonably assumed that the people who gave these presentations should know something about these subjects.
 
