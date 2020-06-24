@@ -24,6 +24,8 @@ Run `testRunControl` from `iocBoot` for an example. You need to start `INSTETC` 
 
 To do run control on SECI blocks a separate IOC ioc/RUNCTRL will be used. This will need to be restarted by the blockserver as appropriate and the blockserver will also need to (re)write a startup file for it containing lines like:
 
-```
-dbLoadRecords("$(RUNCONTROL)/db/runcontrol.db","P=$(MYPVPREFIX),PV=$(MYPVPREFIX)TEST2")
-```
+The system is implemented by a set of db files in `support/RunControl` called `gencontrol.db` and `gencontrolMgr.db`. These define logic for calling an action when values go in and out of range. In the ioc/RUNCONTROL these are loaded twice to create 
+* :RC: (run control) PVs who allow setting limits and triggering WAITING on out of range
+* :AC: (alert control) PVs who allow setting limits and triggering sending a message on out of range
+
+On LOQ a separate :DC: instance is also created, this calls a procedure to put in the aperture when the detector count rate exceeds a limit
