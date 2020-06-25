@@ -41,3 +41,15 @@ We prefer the site. The only issue being that the values don't match our scale. 
 
 Some people are difficult to hear in meetings due to low quality microphones. It is not always obvious to the person speaking. Thomas, Bish and Chris now have solutions or solutions are on their way. We can test out our own audio in Teams and Zoom. Dom is a dalek today.
 
+## EPIC tickets processes
+
+We like Kathryn's suggestion:"I'd like to propose the following process, that should allow enough sanity for whoever is tracking the points, as well as being able to be worked with in a sensible fashion: the EPIC is added to proposals, we point and timebox against the EPIC. When the end of the timebox, or end of the sprint is reached - whichever comes first - points are assigned to the sub-tickets that were undertaken, the EPIC  is sent back to the proposals column (if there is still work to do on it), the points value and timebox reference removed, as well as the face of whoever was working on it so that we aren't prejudiced for prioritisation. There is probably some refinement to this needed, but it might make it less painful for us to use them"
+
+## Only 3 tickets in review and only 1 of 4 tickets in ready were not reworks
+
+Yes, we like this! 👍 
+
+## Regular snapshots of the burndown graph are useful
+
+Yes this is really helpful to see! We don't want to end up chasing metrics though.
+
