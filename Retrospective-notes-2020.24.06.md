@@ -51,5 +51,14 @@ Yes, we like this! 👍
 
 ## Regular snapshots of the burndown graph are useful
 
-Yes this is really helpful to see! We don't want to end up chasing metrics though.
+Yes, this is really helpful to see! We don't want to end up chasing metrics though.
 
+## New style of release notes was very helpful during demos and drop-in sessions
+
+Highlights and breaking changes sections are good! Make sure that the person doing the ticket writes it in a nice and verbose way. We should add writing the highlights and breaking changes into our processes.
+
+## Timings of the review meeting
+
+Can we do a time per ticket in the review? Another suggestion is to put estimated times on the slide.
+
+What we chose was to order the review slides by the longest time first. When someone puts their slide in they should insert in between one that they believe to be longer and one that they believe to be shorter.
