@@ -21,6 +21,23 @@ We have a decision log, which is being used more and more, and it is becoming us
 
 ## Added tickets
 
-John created an added tickets channel. Kevin has already been recording these added tickets. It is useful to be able to track which tickets have been added and why. Therefore we will create a label and people are expected to write on the ticket why it was bought in.
+John created an added tickets channel. Kevin has already been recording these added tickets. It is useful to be able to track which tickets have been added and why. Therefore we will create a label and people are expected to write on the ticket why it was bought in. John will remove the Teams channel.
 
-We need to be aware of why we are adding tickets and we should only be doing this in discussion with others (especially those likely to disagree with us).
+We need to be aware of why we are adding tickets and we should only be doing this in discussion with others (especially those likely to disagree with us). We should also look out for patterns emerging with tickets being added in. If there is a pattern we need to plan to reduce the need to bring in tickets at the root, maybe something is not currently robust enough or we need to consider our planning further. To find this pattern we will need to look at the reasons for tickets being bought in and possibly flash reviews (though we do not want to add extra process to flash reviews as that is not their purpose).
+
+## How do we think the background phone call for tech debt day went?
+
+Some felt it useful and enjoyed being connected with the team, others weren't so interested. If people wish to create it then on Friday afternoons they are encouraged to do so, making the idea become semi-regular. People don't have to join in if they do not want to.
+
+## We didn't get full participation in tech debt stand down. Why? Do we care?
+
+We rarely ever get full participation. Some feel there was less this time around, others feel there was the same amount but different people were involved. We still believe it is above the threshold before we start to wonder if the days are worth it. People aren't obliged to join in, but it is a nice opportunity to work on something different.
+
+## Panning poker site vs zoom poll?
+
+We prefer the site. The only issue being that the values don't match our scale. There are other sites we could look at though. 
+
+## Microphone quality
+
+Some people are difficult to hear in meetings due to low quality microphones. It is not always obvious to the person speaking. Thomas, Bish and Chris now have solutions or solutions are on their way. We can test out our own audio in Teams and Zoom. Dom is a dalek today.
+
