@@ -54,7 +54,7 @@ for a specific branch.
 
 1. Go to http://epics-jenkins.isis.rl.ac.uk/ and log in using your federal ID and password.
 1. Click New Item on the top left corner of the dashboard.
-1. Enter the name, select Mutlibranch pipeline and click OK.
+1. Enter the name, select Multi-branch pipeline and click OK.
 1. Add Display Name and Description (Not mandatory but would be useful)
 1. Under `Branch Sources` tab click `Add source` and select `GitHub`
     1. Choose credentials User ISISBuilder
