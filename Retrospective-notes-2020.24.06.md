@@ -49,7 +49,7 @@ We like Kathryn's suggestion:"I'd like to propose the following process, that sh
 
 Yes, we like this! 👍 
 
-## Regular snapshots of the burndown graph are useful
+## Regular snapshots of the burn down graph are useful
 
 Yes, this is really helpful to see! We don't want to end up chasing metrics though.
 
