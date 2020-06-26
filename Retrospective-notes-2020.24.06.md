@@ -39,7 +39,7 @@ We prefer the site. The only issue being that the values don't match our scale. 
 
 ## Microphone quality
 
-Some people are difficult to hear in meetings due to low quality microphones. It is not always obvious to the person speaking. Thomas, Bish and Chris now have solutions or solutions are on their way. We can test out our own audio in Teams and Zoom. Dom is a dalek today.
+Some people are difficult to hear in meetings due to low quality microphones. It is not always obvious to the person speaking. Thomas, Bish and Chris now have solutions or solutions are on their way. We can test out our own audio in Teams and Zoom. Dom is a `dalek` today.
 
 ## EPIC tickets processes
 
