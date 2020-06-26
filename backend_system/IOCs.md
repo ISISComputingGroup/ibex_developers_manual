@@ -37,13 +37,9 @@ If you're not creating a StreamDevice IOC or you you would like to know how an I
 
 1. [Running (and testing) IOC](Running-IOCs)
 
-1. [Add logging](Logging-from-the-archive)
-
 1. Add any manuals used to the [manuals directory](Manuals)
 
 1. Add a page about the device in the correct categories in [Specific Device IOC](Specific-Device-IOC)
-
-1. [Add IOC to EPICS hardware support list](Add-ioc-to-epics-hardware-list)
 
 1. [Create an OPI](OPI-Creation) and send it to instrument scientists for approval.
 
