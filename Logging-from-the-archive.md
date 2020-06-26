@@ -56,7 +56,7 @@ record(bi, "$(P)LOGGING")
     field(ONAM, "On")
     field(PINI, "YES")
     field(VAL "0")
-    info(archive, "VAL 1")
+    info(archive, "1 VAL")
     info(LOG_trigger, "")
 }
 ```
