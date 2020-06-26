@@ -31,6 +31,8 @@ Where
         * when -ve - monitor the value the value is the deadband for the system
     * field: the field to monitor on the record
 
+Find more information at [Logging from the archive](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Logging-from-the-archive).
+
 ## 3. Alarm PVs
 
 If you want a PV to appear in the alarm view (and there should be at least one per IOC so that it can show disconnected) then add:
@@ -47,7 +49,7 @@ The second argument is the field which is autosaved within the record.
 
 ## 5. Disable records
 
-It is very useful to be able to turn an IOC on and off by simply writing to a special PV, as it is a lot faster and more convenient than actually restarting the whole IOC. The instructions can be found [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Disable-records)
+It is very useful to be able to turn an IOC on and off by simply writing to a special PV, as it is a lot faster and more convenient than actually restarting the whole IOC. The instructions can be found [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Disable-records) .
 
 ## 6. PVs Have Essential Fields
 
