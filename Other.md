@@ -19,3 +19,5 @@
 * [SP300 Potentiostat](SP300-Potentiostat)
 
 * [Background Script IOC](Background-Script-IOC)
+
+* [CAEN v895](CAEN-v895)
