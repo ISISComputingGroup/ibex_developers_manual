@@ -45,7 +45,7 @@ PVs can be autosaved so that they save their values and are reloaded when the IO
 
 The second argument is the field which is autosaved within the record.
 
-## 4. Disable records
+## 5. Disable records
 
 It is very useful to be able to turn an IOC on and off by simply writing to a special PV, as it is a lot faster and more convenient than actually restarting the whole IOC. The instructions can be found [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Disable-records)
 
