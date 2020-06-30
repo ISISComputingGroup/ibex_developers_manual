@@ -8,4 +8,6 @@ The assembly will consist of a stainless steel reservoir for the sample (either 
 
 From an IBEX perspective, the standard Triple Eurotherm on NIMROD will be used to read and control the temperature of the reservoir and the cell, with readings for the cell from both the top and bottom of the cell. Another Eurotherm crate will be brought in to read the temperature of the pipework after the cell and the pressure within the cell.
 
-In a meeting on the 20th of April 2020 no other data collection or recurring calculations were identified, which means that the IBEX setup is limited to configuration items, and as such, no tickets have been created at this time.
+In a meeting on the 20th of April 2020, no other data collection or recurring calculations were identified, which means that the IBEX setup is limited to configuration items, and as such, no tickets have been created at this time.
+
+In a meeting on the 19th of June 2020, an awareness of a need to reduce the impact of potential human error was realised and IBEX issue #5494 was created to handle that
