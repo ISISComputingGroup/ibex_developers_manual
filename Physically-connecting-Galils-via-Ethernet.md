@@ -2,7 +2,7 @@ As part of migrating an instrument from SECI to IBEX, its Galil motors need to b
 
 Below is a diagram of an example setup for the cabling on a fictional instrument:
 
-[diagram here]
+![](https://raw.githubusercontent.com/wiki/ISISComputingGroup/ibex_developers_manual/motors/galil_ethernet.png)
 
 #### Notes
 - Lines represent Ethernet cables
