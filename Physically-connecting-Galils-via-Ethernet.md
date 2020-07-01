@@ -1,6 +1,4 @@
-As part of migrating an instrument from SECI to IBEX, its Galil motors in use need to be migrated from serial to Ethernet
-
-In addition to the [software configuration](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Migrating-Galil-motors-from-SECI-to-IBEX.), this requires the Galil controllers to be physically connected to the private ports on the NDH machine's network switch.
+As part of migrating an instrument from SECI to IBEX, its Galil motors need to be migrated from serial to Ethernet. In addition to the [software configuration](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Migrating-Galil-motors-from-SECI-to-IBEX.), this requires the Galil controllers to be physically connected to the private ports on the NDH machine's network switch.
 
 Below is a diagram of an example setup for the cabling on a fictional instrument:
 
