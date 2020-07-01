@@ -11,7 +11,7 @@ Below is a diagram of an example setup for the cabling on a fictional instrument
     - Free ports in the block house near the racks (purple in the diagram)
     - Private network ports (green in the diagram)
 
-### Preparation steps
+### Preparation steps (if possible)
 - Find out where the racks are located within the block house
 - Find out where free network ports are located within the block house
 - Find out where the network switch with private ports is in relation to the patch panel
