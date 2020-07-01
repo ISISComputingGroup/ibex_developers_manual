@@ -32,10 +32,10 @@ where:
 
 - portname: ASYN port name (usually PLC)
 - address: ip address of the PLC
-- protocol: 
+- protocol: which protocol to use
     - "TCP": use TCP communication
-    - <other>: use UDP ptorotcl
-- simulate:
+    - anything else: use UDP ptorotcl
+- simulate: whether to simulate calls
     - 0: Do not simulate
     - 1: Simulate (don't send commands)
 
