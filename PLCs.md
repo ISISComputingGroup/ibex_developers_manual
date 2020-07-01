@@ -34,10 +34,11 @@ where:
 - address: ip address of the PLC
 - protocol: which protocol to use
     - "TCP": use TCP communication
+    - "TCPNOHEAD": use TCP comms, but without TCP header. This is required (and should only be used for) the devsim emulator 
     - anything else: use UDP ptorotcl
 - simulate: whether to simulate calls
-    - 0: Do not simulate
-    - 1: Simulate (don't send commands)
+    - 0: Do not simulate (real device or devsim)
+    - 1: Simulate (don't send commands), this is required for recsim as it lets device initialisation complete successfully with no device
 
 ### Testing the FINS IOC in DevSim
 
