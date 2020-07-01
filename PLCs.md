@@ -21,6 +21,38 @@ The Omron FINS is a PLC controlled via a driver first written at Diamond, see [h
 * WISH vacuum PLC
 * ZOOM vacuum PLC
 
-### Testing the FINS IOC in devsim
+### PLC init
 
-If you want to test the IOC for a FINS PLC in devsim mode, you need to add the line ```$(IFDEVSIM) finsUDPInit("PLC", "$(PLCIP):$(EMULATOR_PORT=)", "TCPNOHEAD", 0, "$(PLCNODE=)")``` in the FINS_01.cmd file used by that specific FINS IOC. At the same time, the file should either not have any other finsUDPInit call for talking with the real PLC, or have ```$(IFNOTDEVSIM) $(IFNOTRECSIM)``` before that call.
+The fins PLC communication is set up with the following:
+
+```
+finsUDPInit(<portName>, <address>, <protocol>, <simulate>)
+```
+where:
+
+- portname: ASYN port name (usually PLC)
+- address: ip address of the PLC
+- protocol: 
+    - "TCP": use TCP communication
+    - <other>: use UDP ptorotcl
+- simulate:
+    - 0: Do not simulate
+    - 1: Simulate (don't send commands)
+
+### Testing the FINS IOC in DevSim
+
+If you want to test the IOC for a FINS PLC in devsim mode, you need to add to the FINS_01.cmd file used by that specific FINS IOC the line:
+```
+$(IFDEVSIM) finsUDPInit("PLC", "$(PLCIP):$(EMULATOR_PORT=)", "TCPNOHEAD", 0, "$(PLCNODE=)")
+```  
+
+At the same time, the file should either not have any other finsUDPInit call for talking with the real PLC, or have ```$(IFNOTDEVSIM) $(IFNOTRECSIM)``` before that call.
+
+### Testing the FINS IOC in RecSim
+
+If you want to test the IOC for a FINS PLC in recsim mode, you need to add to the FINS_01.cmd file used by that specific FINS IOC the line:
+```
+$(IFRECSIM) finsUDPInit("PLC", "$(PLCIP):$(EMULATOR_PORT=)", "TCPNOHEAD", 1, "$(PLCNODE=)")
+```  
+
+At the same time, the file should either not have any other finsUDPInit call for talking with the real PLC, or have ```$(IFNOTDEVSIM) $(IFNOTRECSIM)``` before that call.
