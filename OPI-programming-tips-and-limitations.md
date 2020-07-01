@@ -166,3 +166,7 @@ To get your new widget to show up in CSS' menus, it needs to be added to the ext
 To use a PV value, use a string with the special value `$(pv_value)`. This gets substituted for the actual value at runtime.
 
 Most figures are implemented using the `draw2d` framework, which is a graphics toolkit. In general it allows a higher level of flexibility than RCP for drawing arbitrary shapes etc, with the disadvantage that this additional flexibility makes it more complex. It is also possible to implement a figure using an RCP widget - see for example `WebBrowserFigure` in `cs-studio\applications\opibuilder\opibuilder-plugins\org.csstudio.opibuilder.widgets.rcp`.
+
+# Getting a macro value in a script
+
+`display.getMacroValue("MY_MACRO")`
