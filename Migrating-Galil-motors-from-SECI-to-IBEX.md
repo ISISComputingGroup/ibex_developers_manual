@@ -31,7 +31,7 @@ In addition to configuring the network, this requires the Galil controllers in t
 
 Below is a diagram of an example setup for the cabling on a fictional instrument:
 
-![](https://raw.githubusercontent.com/wiki/ISISComputingGroup/ibex_developers_manual/motors/galil_ethernet.png)
+![](https://raw.githubusercontent.com/wiki/ISISComputingGroup/ibex_developers_manual/motors/galil_on_ethernet.png)
 
 #### Notes
 - Lines represent Ethernet cables
