@@ -97,13 +97,14 @@ These are the top-level parameters exposed as PVs of the form `<PREFIX>:REFL:PAR
 - `InBeamParameter`: A multi-state parameter which says whether this component is currently in the beam and tracking, or in parked state and not tracking
 - `DirectParameter`: A non-tracking parameter (i.e. the value is independent of the current beam path). This currently does not require a `Component` but is instead directly passed a `PVWrapper` through which it talks to the motors.
     - `SlitGapParameter`: A specific type of `DirectParameter` describing slit gaps (functionally the same)
-
+- `EnumParameter`: A parameter which can take multiple values; the value is set as read back on move. 
 ### Arguments
 
 #### Required:
 - `name`: name of the parameter
-- `component`: The component this parameter is for
+- `component` (only for `AxisParameter` and `InBeamParameter`): The component this parameter is for
 - `axis` (only for `AxisParameter`): The axis the parameter points to
+- `options` (only for `EnumParameter`): A list of options that the parameter can take, e.g. `["opt1", "opt2"]`
 #### Optional:
 - `description`: A description of this parameter (Default: use parameter `name`)
 - `autosave`: Whether the parameter should be [autosaved](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Beamline-Parameters#parameter-initialisation) to file (meaning that on IOC start up, the last known setpoint is re-applied, rather than inferred from a motor position). If multiple parameters depend on a single motor axis (e.g. `Theta` and `PDOffset` are inferred from point detector height), all but one of them should be autosaved in order to not lose information on the constituent parts of the axis value on restart. (Default: `False`)
