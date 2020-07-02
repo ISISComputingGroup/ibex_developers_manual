@@ -71,8 +71,8 @@ Doesn't perform any correction. Is useful when you want to define a correction b
 Add a constant on to the value, probably better to redefine zero on the axis. Add this into the configuration file to the driver:
 
 ```
-add_driver(DisplacementDriver(
-    component, 
+add_driver(AxisDriver(
+    component, ChangeAxis.POSITION,
     PVWrapper, 
     engineering_correction=ConstantCorrection(value))
 ```
@@ -84,12 +84,12 @@ where value is the amount you want to add onto the axis when setting a set point
 This will perform a correction based on a table loaded from disc. It will perform linear interpolation between the points in the datafile to derive the correction. Outside of the table of data no correction is set. To use this add to the configuration:
 
 ```
-theta_param_angle = add_parameter(AngleParameter("THETA", theta_comp))
+theta_param_angle = add_parameter(AxisParameter("THETA", theta_comp, ChangeAxis.ANGLE))
 
 ...
 
-add_driver(DisplacementDriver(
-    component, 
+add_driver(AxisDriver(
+    component, ChangeAxis.POSITION,
     PVWrapper, 
     engineering_correction=InterpolateGridDataCorrection(filename, theta_param_angle))
 ```
@@ -154,12 +154,12 @@ If there are more beamline parameters set in `UserFunctionCorrection` these woul
 The next step is to add the engineering correction to the IOC driver. We show the definition of the theta beamline parameter to make it clear what the arguments are:
 
 ```
-theta_param_angle = add_parameter(AngleParameter("THETA", theta_comp))
+theta_param_angle = add_parameter(AxisParameter("THETA", theta_comp, ChangeAxis.ANGLE))
 
 ...
 
-add_driver(DisplacementDriver(
-    component, 
+add_driver(AxisDriver(
+    component, ChangeAxis.POSITION,
     PVWrapper, 
     engineering_correction=UserFunctionCorrection(my_correction, theta_param_angle))
 ```
@@ -169,6 +169,24 @@ The `UserFunctionCorrection` takes:
 - `user_correction_function`: reference to the function to use
 - beamline parameters: 0 or more beamline parameters whose set point readback values should be passed to the `user_correction_function`
 
+#### Select a Correction Base on a Mode
+
+This is an engineering correction which will select another correction based on the mode that the beamline is in.The correction is created with:
+
+`ModeSelectCorrection(default_correction, corrections_for_mode)`
+where:
+
+- `default_correction`: is an engineering correction which is used if there are no modes in the `corrections_for_mode` dictionary which match the current mode
+- `corrections_for_mode`: is a dictionary of the mode name against the correction that should be used for that mode
+
+Example:
+```
+add_driver(AxisDriver( component, ChangeAxis.POSITION, PVWrapper, 
+    engineering_correction=ModeSelectCorrection(ConstantCorrection(1), {"NR": UserFunctionCorrection(my_correction), "PA": ConstantCorrection(-0.2)}))
+```
+Here the correction will be by a user function in `NR` mode, by a constant of -0.2 in `PA` mode and a correction of 1 in any other mode.
+
+
 #### User Specified
 
 If you wish to write your own `engineering_correction` you must:
@@ -177,3 +195,4 @@ If you wish to write your own `engineering_correction` you must:
 1. **or** inherit from `EngineeringCorrection`: this allows different correction to be used when setting and getting value to and from the axis. The following must be overridden:
     - `to_axis(self, setpoint)`: given a setpoint return the correct value to send to the axis
     - `from_axis(self, value, setpoint)`: given the `value` read from the axis and `setpoint` for the axis return the `value` without the correction
+
