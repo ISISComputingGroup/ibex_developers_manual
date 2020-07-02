@@ -49,10 +49,19 @@ Below is a diagram of an example setup for the cabling on a fictional instrument
 - Plan how to patch all controllers through to the private network ports and note the number of switches and the number / length of cables required
 
 ### Installation
+
+![](https://raw.githubusercontent.com/wiki/ISISComputingGroup/ibex_developers_manual/motors/galil_photo_with_port.png)
+
 1. Get the appropriate cables / switches from the store room (currently located in R6, entrance by the mound opposite R2, then the first door on the left)
-1. In the blockhouse, wire up the controllers to the wall ports. Note the number of the the wall ports used as they correspond to the port in the counting house. Label the used port with "private network" (otherwise people may try to just plug a different device into the port later)
-1. In the counting house, connect the corresponding port on the patch panel leading to the block house to the private port on the network switch. Label each cable with the controllers it connects to (e.g. `MOT01-04`)
-1. After all the cables have been connected, you can confirm the PC is talking to each Galil controller by pinging their network addresses (assuming they have already been configured already) i.e.
+1. In the blockhouse:
+    1. find the Galil racks. They are big racks with several controllers inside (see picture of controller above - Ethernet port highlighted)
+    1. Install any switches needed (plug them into a mains socket, make sure they light up) 
+    1. Wire up the controllers to the switches / directly to wall ports
+    1. Note the number on the the wall ports used as they correspond to the port in the counting house. Label the used port with "private network" (otherwise people may try to just plug a different device into the port later which may not work)
+1. In the counting house
+    1. Connect the corresponding port(s) on the patch panel leading to the block house to private port(s) on the network switch. Label each cable with the controllers it connects to (e.g. `MOT01-04`)
+    1. Install an additional Ethernet cable between the instrument PC and one of the private ports on the network switch
+1. After all the cables have been connected, you can confirm the PC is talking to each Galil controller by pinging their network addresses (assuming they have been configured already) i.e.
     - `ping 192.168.1.201` for controller 1
     - `ping 192.168.1.202` for controller 2
     - etc.
