@@ -17,6 +17,9 @@ Part of our in-kind contribution to datastreaming is to test the system in produ
 ## The Kafka Clusters
 There are two Kafka clusters, production (`livedata.isis.cclrc.ac.uk:9092`) and development (`tenten.isis.cclrc.ac.uk:9092` or `sakura.isis.cclrc.ac.uk:9092` or `hinata.isis.cclrc.ac.uk:9092`). The development cluster is set up to auto-create topics and so when new developer machines are run up all the required topics will be created. However, the production server does not auto-create topics this means that when a new real instrument comes online corresponding topics must be created on this cluster, which is done as part of the install script. Credentials for both clusters can be found in the sharepoint.
 
+### Grafana dashboard
+A Grafana dashboard for the production cluster can be found at `madara.isis.cclrc.ac.uk:3000`. This shows the topic data rate and other useful information. Admin credentials can also be found in the sharepoint. 
+
 ### Deployment
 Deployment involves the use of Ansible playbooks, the playbooks and instructions for using these can be found [here.](https://github.com/ScreamingUdder/ansible-kafka-centos)
 
