@@ -1,9 +1,14 @@
+> [Wiki](Home) > [Deployment](Deployment) > [Migrate an Instrument Control PC](Migrate-an-Instrument-Control-PC) > Migrating Galil Motors from SECI to IBEX
+
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > [Motor IOCs](Motor-IOCs) > [Galil](Galil) > Migrating Galil Motors from SECI to IBEX
+
 # Physical setup (serial to ethernet conversion)
 
 Under SECI, motors are controlled via a serial connection. The IBEX Galil IOC only works properly with an ethernet connection, so the motors need to be migrated.
 
 - SECI VI needs to be converted from serial to ethernet: In the Galil Labview VI, switch the Communication protocol from RS232 to TCP and enter the appropriate network address (see below)
 - Physical private network, e.g. network switches need to be installed. This is done by another group; make sure they are warned well in advance so that any bits of kit are available when we need them
+- The Galil controllers need to be patched through from the blockhouse to the private network ports on the switch. [See here for more information](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Physically-connecting-Galils-via-Ethernet).
 
 The motors are assigned IP addresses on the private network in the following way (this is a convention, whoever set up the private network should have set it up like this, if it doesn't look like it's working then check with them):
 GALIL_01 -> `192.168.1.201`
