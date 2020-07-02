@@ -144,6 +144,9 @@ These objects link the middle-layer component model to low-level motors.
 - `synchronised`: Whether this driver should be able to alter axis velocity when multiple axes are being moved (used for synchronised beamline movement) (Default: `True`)
 - `engineering_correction`: any [corrections](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Composite-Driving-Layer#engineering-offset) that should be applied to the motor position (Default: `None`)
 - `out_of_beam_positions` (`DisplacementDriver` only): A list of possible [parked positions](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Composite-Driving-Layer#out-of-beam-positions) for this axis (Default: `None`)
+- `pv_wrapper_for_parameter`: change the PV wrapper based on the value of a parameter. This needs a `PVWrapperForParameter(parameter, value_wrapper_map)` where
+    - `parameter`: is the beamline parameter that the swap is based on
+    - `value_wrapper_map`: is a dictionary of the value and the wrapper to use. If the parameter is at a value not in this list the original wrapper is used.
 
 ### Example
 ```
@@ -154,6 +157,10 @@ IocDriver(sm_component, ChangeAxis.ANGLE, MotorPVWrapper("MOT:MTR0102"))
 # with parked position
 sm_out_pos = OutOfBeamPosition(-20)
 DisplacementDriver(sm_component, MotorPVWrapper("MOT:MTR0101"), out_of_beam_positions=[sm_out_pos])
+
+# With wrapper based on parameter
+IocDriver(s3_comp, ChangeAxis.POSITION, JawsCentrePVWrapper("MOT:JAWS3", is_vertical=True),
+        pv_wrapper_for_parameter=PVWrapperForParameter(s3_params["block"], {"South": MotorPVWrapper("MOT:JAWS3:JS:MTR")}))
 ```
 
 ## PV Wrappers
@@ -322,8 +329,9 @@ Add jaws-specific parameters and related drivers for a given jawset, i.e. horizo
 - `rbv_to_sp_tolerance`:
 - `modes`: A list of `BeamlineMode`s these parameters should be added to (default: `None`)
 - `mode_inits`: a list of mode init values for these parameters as a list of tuples (`BeamlineMode`, value) (default: `None`)
-- `exclude`: Do not create parameters for the given individual axes; each must be one of `VG`, `VC`, `HG`, `HC` (default: `None`)
+- `exclude`: Do not create parameters for the given individual axes or blades; each must be one of `VG`, `VC`, `HG`, `HC`, `N`, `S`, `E`, `W` (default: `None`)
 - `include_centres`: Whether parameters for centres should be created or gaps only (default: `False`)
+- `beam_blocker`: string containing code for beam blocker config, `N`, `S`, `E`, `W` for each blade which blocks the beam
 
 ### `get_configured_beamline`
 
