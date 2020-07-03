@@ -30,7 +30,7 @@ finsUDPInit(<port Name>, <address>, <protocol>, <simulate>)
 ```
 where:
 
-- portname: ASYN port name (usually PLC)
+- port name: ASYN port name (usually PLC)
 - address: ip address of the PLC
 - protocol: which protocol to use
     - "TCP": use TCP communication
