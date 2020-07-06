@@ -166,7 +166,7 @@ There is a LabVIEW VI in `C:\LABVIEW MODULES\Drivers\Galil DMC2280\Galil - EPICS
     - 5. Click OK on get dialogue
     - 6. Copy only the file `Galil - EPICS.llb` to the instrument you are migrating
 
-Open this VI, put the computer name as `IN` and the username as `(INSTNAME):MOT`. This should generate a load of caput commands that look like `caput IN:(INSTNAME):MOT:MTR0101.(FIELD) (value)`
+Open this VI, put the computer name as `IN` and the username as `(INSTNAME):MOT`. This should generate a load of caput commands that look like `caput IN:(INSTNAME):MOT:MTR0101.(FIELD) (value)`. If the VI complains about problems with the wiring names in a bundle it probably because the Galil driver is out of date. You can fix this by copying the settings to a more modern version of the galil driver directory and then running it.
 
 Copy these caput commands into a batch file, open an EPICS terminal and run that batch file. This will apply the settings to the Galil under IBEX. These settings should then be autosaved but **you must wait at least 30s after applying the value before restarting the IOC if you need to restart the IOC**.
 
@@ -175,6 +175,8 @@ Now test both the homing and positions to make sure they are the same as in Labv
 - If a backlash is set then you need to test that the axis goes to a correct place in both directions. The backlash works differently in SECI and so the setting can hide an error. You should see that the axis get to the final place within 2 retries (ideally no retries).
 
 Do be sure to check [this spreadsheet](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/galil%20gotchas.xlsx) to see if there are any odd behaviours, such as programs to run. This is also an opportunity to check that differences won't be highlighted by the homing routines. There is more information available on the [SECI homing routines](Homing-Galils-under-SECI)
+
+
 
 # Set up any axes / jaws / barndoors files.
 
