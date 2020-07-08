@@ -23,5 +23,5 @@ As mentioned above, a PLC is a type of computer that is specialised for controll
 There are a number of different PLCs in use at ISIS:
 
 * [Beckhoff](Beckhoff) - Mostly used for motion but are in fact generic PLCs
-* [Omron FINS](PLCs#omron-fins)
+* [Omron FINS](Omron-FINS)
 
