@@ -38,9 +38,13 @@ A place to record decisions:
     - 09/12/2019
 
 15. We should move towards using virtual environments for our python projects see [here](Python-dependencies) for more detail.
-   - Present: Dom, Tom, Freddie, John
-   - 19/05/2020
+    - Present: Dom, Tom, Freddie, John
+    - 19/05/2020
 
 16. Genie_python should be kept 2/3 compatible until the block server is converted to python 3 in case it uses it. After this the decision should be revisited to see if we can go purely 3.
-   - Present: Dom, Freddie, John
-   - 27/05/2020
+    - Present: Dom, Freddie, John
+    - 27/05/2020
+
+17. Helium level meters and other such items should be put on the domain "HA" (Hall) with no instrument identifier. So that the pv would be "HA:HLM:LEVEL1" to achieve this the IOC should run with a PVPREFIX` of `HA`. This is different to central services which runs with a blank prefix because it that case it is running multiple serves for multiple domains. We don't need the machine identifies for hall based services because it is not really anything to do with the machine unlike the instrument pvs.
+    - Present: Alex, John, Kathryn, Freddie, Dom
+    - 08/07/2020
