@@ -323,7 +323,7 @@ Adds a new marker which can later be replaced by a driver. This lets you define 
 Add jaws-specific parameters and related drivers for a given jawset, i.e. horizontal and vertical gaps and centres.
 
 #### Required arguments:
-- `slit_number`: The number of the jawset for which to add the parameters
+- `slit_number`: The number of the jawset for which to add the parameters; this is the suffix of the JAW so can be `1a` if the jaw pv is `JAWS1A
 
 #### Optional arguments:
 - `rbv_to_sp_tolerance`:
