@@ -7,6 +7,7 @@ The Omron FINS is a PLC controlled via a driver first written at Diamond, see [h
 * SANS2D vacuum PLC
 * WISH vacuum PLC
 * ZOOM vacuum PLC
+* Helium Recovery PLC - stores information needed for the Helium Level Monitoring project
 
 ### PLC init
 
