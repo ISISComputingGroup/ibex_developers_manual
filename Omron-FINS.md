@@ -19,7 +19,7 @@ finsUDPInit(<port Name>, <address>, <protocol>, <simulate>)
 where:
 
 - port name: ASYN port name (usually PLC)
-- address: ip address of the PLC and emulator port. Should be of the form $(PLC_IP):$(EMULATOR_PORT=), where PLC_IP is a macro in the GUI.
+- address: ip address of the PLC 
 - protocol: which protocol to use
     - "TCP": use TCP communication
     - "TCPNOHEAD": use TCP comms, but without FINS-TCP header. This is required (and should only be used for) the devsim IOC tests
