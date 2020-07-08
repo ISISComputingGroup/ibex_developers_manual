@@ -28,6 +28,10 @@ where:
     - 0: Do not simulate (real device or devsim)
     - 1: Simulate (don't send commands), this is required for recsim as it lets device initialisation complete successfully with no device
 
+### Testing the FINS IOC in the Ioc Test Framework
+
+In contrast to the normal operation of a FINS PLC, the instrument specific `FINS_01.cmd` file that should be used for the IOC Tests for a FINS PLC should be placed in an instrument specific folder in [ioc\master\FINS\exampleSettings](https://github.com/ISISComputingGroup/EPICS-ioc/tree/master). This cmd file should have the appropiate finsUDPInit calls for devsim or recsim, as detailed below, and also the usual `dbLoadRecords` call to load the instrument specific db.
+
 ### Testing the FINS IOC in DevSim
 
 If you want to test the IOC for a FINS PLC in devsim mode, you need to add to the FINS_01.cmd file used by that specific FINS IOC the line:
