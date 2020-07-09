@@ -2,7 +2,7 @@
 
 Sprint Burndown Chart
 
-The sprint burndown chart is intended to show the team's progress towards the sprint goal (expressed as a target number of points for the sprint).  It is reviewed daily, during the daily stand-up meeting, so that everyone in the team can see the team's progress.
+The [sprint burndown chart](http://shadow.isis.cclrc.ac.uk/ibex/burndown-points.html) is intended to show the team's progress towards the sprint goal (expressed as a target number of points for the sprint).  It is reviewed daily, during the daily stand-up meeting, so that everyone in the team can see the team's progress.
 
 The chart is deliberately arranged to show progress as a count down.  At the start of the sprint there are <N> points in the sprint backlog.  As work progresses, individual backlog items are completed and the item's number of points is deducted from the target.  Thus, the lines on the chart show the cumulative progress of the team towards completing all items in the sprint backlog.
 
@@ -29,7 +29,7 @@ Divergences above the Ideal line can mean:
    * There is a bottleneck in the process; something is preventing backlog items making it through to completion.
    * Something else is diverting the attention of the team.
 
-Divergences above the Ideal line can mean:
+Divergences below the Ideal line can mean:
    * The team is consistently overestimating the size/complexity of backlog items.  They are completing backlog items faster than expected.
    * The team is setting its target too low.  It is under-filling the sprint backlog and choosing an overly pessimistic target.
 
