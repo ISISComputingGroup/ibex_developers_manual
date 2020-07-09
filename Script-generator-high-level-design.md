@@ -108,3 +108,9 @@ In this sense, it is quite a thin wrapper over a python script. The main advanta
 The script generator will be configured by loading in a script definition file. This script definition file can initially be written in Python - though we have not necessarily ruled out moving to another format in future if the need arises.
 
 This script definition file will define the available `Action`s, and will be editable by the instrument scientists. Each instrument that uses the script generator will need at least one script definition file (maybe more if they have different experimental setups which require very different scripts).
+
+# How Repo is Updatedon Start
+
+![](script_generator/UpdateRepoFlowDiagram.png)
+
+On start up we want to get the current repository of script if possible and the user lets us. If there is a problem because they have edited their code in the repository we assume this is because they know what they are doing. To edit th ecode they will need to know how to commit it back to the central repo anyway so we don't need to cover that case except to warn them (they are power users). For normal users they jsut want it up-to-date or not.
