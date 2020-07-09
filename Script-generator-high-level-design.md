@@ -113,4 +113,4 @@ This script definition file will define the available `Action`s, and will be edi
 
 ![](script_generator/UpdateRepoFlowDiagram.png)
 
-On start up we want to get the current repository of script if possible and the user lets us. If there is a problem because they have edited their code in the repository we assume this is because they know what they are doing. To edit th ecode they will need to know how to commit it back to the central repo anyway so we don't need to cover that case except to warn them (they are power users). For normal users they jsut want it up-to-date or not.
+On start up we want to get the current repository of script if possible and the user lets us. If there is a problem because they have edited their code in the repository we assume this is because they know what they are doing. To edit the code they will need to know how to commit it back to the central repo anyway so we don't need to cover that case except to warn them (they are power users). For normal users they just want it up-to-date or not.
