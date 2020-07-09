@@ -11,6 +11,7 @@ Various Processes or tasks and info into how they should work. Remember rules ca
     - [Sprint Review](Sprint-Review)
     - [Estimating Sprint Capacity](Estimating-Sprint-Capacity)
     - [Sprint Planning](Sprint-Planning)
+    - [Sprint Burndown Chart](Sprint-Burndown-Chart)
     - [Sprint Retrospective](Sprint-Retrospective)
 
 - [Regular Demos of IBEX to Scientists](Regular-Demos-of-IBEX-to-Scientists) 
