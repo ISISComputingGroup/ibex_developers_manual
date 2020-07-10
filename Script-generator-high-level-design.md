@@ -109,7 +109,7 @@ The script generator will be configured by loading in a script definition file. 
 
 This script definition file will define the available `Action`s, and will be editable by the instrument scientists. Each instrument that uses the script generator will need at least one script definition file (maybe more if they have different experimental setups which require very different scripts).
 
-# How Repo is Updatedon Start
+# How Repo is Updated on Start
 
 ![](script_generator/UpdateRepoFlowDiagram.png)
 
