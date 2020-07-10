@@ -1,4 +1,4 @@
-> [Wiki](Home) > [Processes](Processes) > [Sprint Burn down Chart](Sprint-Burn-down Chart)
+> [Wiki](Home) > [Processes](Processes) > [Sprint Burn down Chart](Sprint-Burn-down-Chart)
 
 Sprint Burn down Chart
 
