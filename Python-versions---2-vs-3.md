@@ -6,7 +6,7 @@
 | IOC Testing Framework | Script Server |
 | Block Server | Database Server |
 | Reflectometry Server | Instrument Scripts
-| Block Cache | 
+| Block Cache | Script Generator |
 | Block Server to kafka |
 | Collision Avoidance Monitor |
 | Remote IOC Server |
