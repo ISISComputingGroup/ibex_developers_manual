@@ -45,6 +45,6 @@ A place to record decisions:
     - Present: Dom, Freddie, John
     - 27/05/2020
 
-17. Helium level meters and other such items should be put on the domain "HA" (Hall) with no instrument identifier. So that the pv would be "HA:HLM:LEVEL1" to achieve this the IOC should run with a PVPREFIX` of `HA`. This is different to central services which runs with a blank prefix because it that case it is running multiple serves for multiple domains. We don't need the machine identifies for hall based services because it is not really anything to do with the machine unlike the instrument pvs.
+17. Helium level meters and other such items should be put on the domain "HA" (Hall) with no instrument identifier. So that the pv would be "HA:HLM:LEVEL1" to achieve this the IOC should run with a blank `PVPREFIX` and the IOC should have `HA` in its IOC prefix. This is to make it the same as central services which runs with a blank prefix because it runs IOCs in multiple domains. We don't need the machine identifies for hall based services because it is not really anything to do with the machine unlike the instrument pvs.
     - Present: Alex, John, Kathryn, Freddie, Dom
     - 08/07/2020
