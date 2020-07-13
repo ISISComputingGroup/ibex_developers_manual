@@ -15,6 +15,8 @@ Currently the following specific FINS PLC installations are supported in IBEX:
 * ZOOM vacuum PLC
 * Helium Recovery PLC - stores information needed for the Helium Level Monitoring project
 
+# Connection
+
 ### PLC init
 
 The fins PLC communication is set up with the following:
@@ -33,6 +35,8 @@ where:
 - simulate: whether to simulate calls
     - 0: Do not simulate (real device or devsim)
     - 1: Simulate (don't send commands), this is required for recsim as it lets device initialisation complete successfully with no device
+
+Configuration
 
 ### Testing the FINS IOC in the Ioc Test Framework
 
