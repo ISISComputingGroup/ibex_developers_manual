@@ -40,7 +40,7 @@ Developers should pick up a ticket as close to the top of the Ready column as th
 
 1. Assign the ticket to yourself and move it to in progress. 
 2. When the ticket is done.
-    - Create a pull request. If the pull request is in a public repository the PR size bot will automatically assign a label to it based on the number of lines changed. For details see https://github.com/noqcks/pull-request-size#sizing .
+    - Create a pull request. If the pull request is in a public repository the PR size bot will automatically assign a label to it based on the number of lines changed. For details see https://github.com/noqcks/pull-request-size#sizing . Note that these labels are purely informational for other developers and do not form part of the sprint process (in particular, they are not related to ticket sizes in any way).
     - If the config needs updating either:
         - Add a change to the config updating script (usually if it affects multiple config/instruments)
         - Add a step to the upgrade script (usually when it is a simple change which affects a single instrument)
