@@ -33,7 +33,7 @@ GTEST=$(SUPPORT)/googletest/master
 
 ## Building the test runner
 
-Make sure you include the following lines in your Makefile (in `IOCSup/src/Makefile`) alongside the source code to create a test runner executable.
+Make sure you include the following lines in your Makefile alongside the source code to create a test runner executable.
 
 ```Makefile
 # googleTest Runner
