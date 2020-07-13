@@ -17,6 +17,18 @@ Currently the following specific FINS PLC installations are supported in IBEX:
 
 # The FINS protocol
 
+The FINS protocol is an applications layer communications protocol designed for industrial applications and made by Omron. FINS stands for Factory Interface Network Service.
+
+Throughout this guide, when I mention a manual, it can be found on the shares drive in Manuals/OMRON_FINS_PLCs .
+
+FINS communications can be done over a serial connection or over a network. For serial connections, it uses the Host Link protocol on the Data Link layer of the OSI model. If used over a network, FINS can be used over a wide variety of Data Link layer protocols, including Controller Link and Ethernet. At ISIS, FINS PLC communication is done via Ethernet. FINS PLCs also supports another protocol instead of FINS, called C-mode, which is specialised for Host Link, but we do not use that. For more information, see Section 1 of the Comms Reference manual.
+
+When using FINS over Ethernet, it can work with both TCP and UDP. FINS over TCP though is only supported on the CS1W-ETN21 and CJ1W-ETN21 models. The default UDP/TCP port number is 9600.
+
+## FINS Frames
+
+
+
 # Connection
 
 ### PLC init
@@ -50,7 +62,7 @@ finsUDPInit("PLC", "$(PLC_IP)", "UDP", 0, "$(PLC_NODE=)")
 dbLoadRecords("${TOP}/db/he-recovery.db","P=$(MYPVPREFIX),Q=EXAMPLE:)
 ```
 
-In the IBEX GUI, make sure to set the two macros for the FINS IOC, PLC_IP and PLC_NODE. PLC_IP refers to the IP address of the PLC, and the node is a FINS protocol application layer specific address. By default, it corresponds to the last byte of the IP address, but for some FINS PLCs this is not the case.
+In the IBEX GUI, make sure to set the two macros for the FINS IOC, PLC_IP and PLC_NODE. PLC_IP refers to the IP address of the PLC, and the node is a FINS protocol application layer specific address that differentiates between nodes (such as PLCs or host computers). By default, it corresponds to the last byte of the IP address, but for some FINS PLCs this is not the case.
 
 For running the IOC for testing, see below.
 
