@@ -25,7 +25,7 @@ Examples can be found [here](https://github.com/abseil/googletest/blob/master/go
 
 ## Release file
 
-Remember to add the path to the Google Test support module in your support module Release file.
+Remember to add the path to the Google Test support module in your support module Release file (in `configure/Release`).
 
 ```
 GTEST=$(SUPPORT)/googletest/master
@@ -33,7 +33,7 @@ GTEST=$(SUPPORT)/googletest/master
 
 ## Building the test runner
 
-Make sure you include the following lines in your Makefile alongside the source code to create a test runner executable.
+Make sure you include the following lines in your Makefile (in `IOCSup/src/Makefile`) alongside the source code to create a test runner executable.
 
 ```Makefile
 # googleTest Runner
