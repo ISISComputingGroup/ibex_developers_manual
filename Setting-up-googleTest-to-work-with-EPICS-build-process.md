@@ -1,4 +1,4 @@
-This is a guide to set up googleTest with EPICS at ISIS. This allows you to write C++ unit tests for your C/C++ code in an IOC.
+This is a guide to set up googleTest with EPICS at ISIS. This allows you to write C++ unit tests for your C/C++ code in an IOC. An example of an IOC that runs tests like this is the [Keithley 2001](https://github.com/ISISComputingGroup/EPICS-Keithley_2001).
 
 ## Contents
 * [googleTest](#googletest)
