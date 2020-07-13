@@ -38,6 +38,12 @@ where:
 
 # Configuration
 
+In order to run this IOC and talk to the real PLC, you need to have the correct instrument specific `FINS_01.cmd` in `configurations/fins`. In thr IBEX GUI, make sure to set the two macros for the FINS IOC, PLC_IP and PLC_NODE. PLC_IP refers to the IP address of the PLC, and the node is a FINS protocol application layer specific address. By default, it corresponds to the last byte of the IP address, but for some FINS PLCs this is not the case.
+
+For running the IOC for testing, see below.
+
+
+
 ## Testing the FINS IOC in the Ioc Test Framework
 
 In contrast to the normal operation of a FINS PLC, the instrument specific `FINS_01.cmd` file that should be used for the IOC Tests for a FINS PLC should be placed in an instrument specific folder in [`ioc\master\FINS\exampleSettings`](https://github.com/ISISComputingGroup/EPICS-ioc/tree/master/FINS/exampleSettings). This cmd file should have the appropriate finsUDPInit calls for devsim or recsim, as detailed below, and also the usual `dbLoadRecords` call to load the instrument specific db.
