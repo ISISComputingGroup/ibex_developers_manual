@@ -4,11 +4,11 @@ In some cases it is necessary for one IOC to talk to multiple galil motor contro
 
 For example, this IOC is used for SANS2D, which have a jawset with oppositing jaw blades on different galil controllers.
 
-# Configuration macros
+### Configuration macros
 
 The `GALILMUL` iocs are configured with `ADDR` and `MTRCTRL` macros as for a normal galil. A blank `MTRCTRL` macro specifies that no controller exists.
 
-# Motor configuration files
+### Motor configuration files
 
 The `GALILMUL` iocs load `.cmd` files from `C:\instrument\settings\config\<machine>\configurations\galilmul`, similar to the existing (single) galil controller IOC. The same files can be loaded as the usual, single, galil controller (for example `jaws.cmd` or `motorExtensions.cmd`). 
 
