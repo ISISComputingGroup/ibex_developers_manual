@@ -27,6 +27,11 @@ When using FINS over Ethernet, it can work with both TCP and UDP. FINS over TCP 
 
 ## FINS Frames
 
+When using FINS over UDP, the FINS frame is the part of the UDP packet after the UDP protocol specific header. The first 10 bytes of the FINS frame represent the FINS frame header, and the rest of the frame represent the command.
+
+The structure of the FINS frame header is as follows (each of the elements take up one byte):
+
+
 ![fins udp](images/Specific_Device_IOCs/Omron_FINS/fins_udp.jpg)
 
 
