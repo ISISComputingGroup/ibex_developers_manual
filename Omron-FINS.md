@@ -27,7 +27,7 @@ When using FINS over Ethernet, it can work with both TCP and UDP. FINS over TCP 
 
 ## FINS Frames
 
-![fins udp](images/Specific Device IOCs/Omron FINS/FINS-TCP Command Crib Sheet FINS Frame.jpg)
+![fins udp](images/Specific_Device_IOCs/Omron_FINS/fins_udp.jpg)
 
 
 # Connection
