@@ -38,7 +38,17 @@ where:
 
 # Configuration
 
-In order to run this IOC and talk to the real PLC, you need to have the correct instrument specific `FINS_01.cmd` in `configurations/fins`. In thr IBEX GUI, make sure to set the two macros for the FINS IOC, PLC_IP and PLC_NODE. PLC_IP refers to the IP address of the PLC, and the node is a FINS protocol application layer specific address. By default, it corresponds to the last byte of the IP address, but for some FINS PLCs this is not the case.
+In order to run this IOC and talk to the real PLC, you need to have the correct instrument specific `FINS_01.cmd` in `configurations/fins`. See below an example:
+
+```
+#Init and connect
+finsUDPInit("PLC", "$(PLC_IP)", "UDP", 0, "$(PLC_NODE=)")
+
+## Load our record instances
+dbLoadRecords("${TOP}/db/he-recovery.db","P=$(MYPVPREFIX),Q=EXAMPLE:)
+```
+
+In the IBEX GUI, make sure to set the two macros for the FINS IOC, PLC_IP and PLC_NODE. PLC_IP refers to the IP address of the PLC, and the node is a FINS protocol application layer specific address. By default, it corresponds to the last byte of the IP address, but for some FINS PLCs this is not the case.
 
 For running the IOC for testing, see below.
 
