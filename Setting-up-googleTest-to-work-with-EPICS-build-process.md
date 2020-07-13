@@ -36,12 +36,14 @@ GTEST=$(SUPPORT)/googletest/master
 Make sure you include the following lines in your Makefile alongside the source code to create a test runner executable.
 
 ```Makefile
+ifeq ($(findstring 10.0,$(VCVERSION)),)
 # googleTest Runner
 
 TESTPROD_HOST += runner
 USR_CPPFLAGS += -I$(GTEST)/googletest/include 
 runner_SRCS += run_all_tests.cc
 runner_LIBS += gtest
+endif
 ```
 
 Where `run_all_tests.cc` is a file containing the following lines. Make sure to also add all libs needed for the files being tested.
