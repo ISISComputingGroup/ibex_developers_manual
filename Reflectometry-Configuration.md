@@ -61,7 +61,19 @@ Components are the central building blocks of the configuration. Each of them re
 
 #### Required:
 - `name`: Name of the component
-- `setup`: The geometry setup for this component as an object of the form `PositionAndAngle(component_y, component_z, angle_of_linear_displacement_axis)`
+- `setup`:
+    - Most components: The geometry setup for this component as an object of the form `PositionAndAngle(y, z, angle)`, where:
+        - `y`: y position of straight through beam
+        - `z`: z position of straight through beam
+        - `angle`: angle at which the linear axis moves
+    - Bench Component: The bench setup of the form `BenchSetup(y, z, angle, jack_front_z, jack_rear_z, initial_table_angle, pivot_to_beam)`, where:
+        - `y`: y position of pivot of the bench of straight through beam
+        - `z`: z position of pivot of the bench of straight through beam
+        - `angle`: angle that bench pivot moves along
+        - `jack_front_z`: distance to the front jack on the bench from the pivot
+        - `jack_rear_z`: distance to the rear jack on the bench from the pivot
+        - `initial_table_angle`: initial table angle (the natural angle of the beam)
+        - `pivot_to_beam`: distance from the pivot of the bench to the beam
 
 ### Theta Angle to/of Special Method
 
