@@ -49,3 +49,4 @@ Try to make sure all tickets by the end of the day are in a good state.
 - Update the specific device IOC pages see [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Retrospective-notes-2020.05.28#specific-device-ioc-pages-on-wiki)
 - Tidy up code, remove unneeded parts
     - Discuss what to do with pv sets
+- Fix epics unit tests (https://github.com/ISISComputingGroup/IBEX/issues/5539)
