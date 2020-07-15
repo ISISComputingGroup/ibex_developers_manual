@@ -35,10 +35,10 @@ The first 10 bytes of the FINS command frame represent the FINS frame header, an
 
 The structure of the FINS frame header is as follows (each of the elements take up one byte):
 
-- Information Control Field or ICF: Displays whether the frame is for a command or a response, and whether a response is required or not. For our purposes, this byte should 0x80 for a command and 0xC1 for a reply.
-- Reserved or RSV byte: should always be 0x00.
-- Gate Count or GCT: The number of network bridges the frame needs to pass through. For our purposes, it should always be 0x02.
-- Destination Network Address or DNA: The address of the network to which the receiver belongs. This address is of the entire network, and not of just the machine, and is different from the IP address. It is 0x00 for Local Network, and 1 to 127 for remote networks.
+- Information Control Field or ICF: Displays whether the frame is for a command or a response, and whether a response is required or not. For our purposes, this byte should `0x80` for a command and `0xC1` for a reply.
+- Reserved or RSV byte: should always be `0x00`.
+- Gate Count or GCT: The number of network bridges the frame needs to pass through. For our purposes, it should always be `0x02`.
+- Destination Network Address or DNA: The address of the network to which the receiver belongs. This address is of the entire network, and not of just the machine, and is different from the IP address. It is `0x00` for Local Network, and 1 to 127 for remote networks.
 - Destination Node Address or DA1: The node of the receiver, which is an address needed by the FINS protocol, and is different from the IP address. It has values from 0 to 256, with 0 for the local PLC unit and 256 for broadcasting.
 - Destination Unit Address or DA2: The number of the unit of the destination node to which the command is addressed. It will typically be 0, for the CPU unit. A unit is one of the modules mounted on rails that make up the PLC.
 - Source network address or SNA: The node of the sender. The possible values of SNA are the same as of DNA.
