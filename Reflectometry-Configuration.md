@@ -4,7 +4,7 @@
 
 The reflectometry configuration describes the geometry of the beamline and is read by the reflectometry IOC on startup. The config file is written in python and lives in `<config area>/refl/config.py`.
 
-This file needs to import relevant classes and methods used for constructing the configuration via the line `from ReflectometryServer import *`. It should implement a `get_beamline()` method, which returns a single object of type `Beamline`.
+This file needs to import relevant classes and methods used for constructing the configuration via the line `from ReflectometryServer import *`. It should implement a `get_beamline` method, which takes a single `macros` argument, and returns an object of type `Beamline`.
 
 [Jump to Example Configuration](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Configuration#example-configuration)
 
@@ -338,7 +338,7 @@ Add jaws-specific parameters and related drivers for a given jawset, i.e. horizo
 - `slit_number`: The number of the jawset for which to add the parameters; this is the suffix of the JAW so can be `1a` if the jaw pv is `JAWS1A
 
 #### Optional arguments:
-- `rbv_to_sp_tolerance`:
+- `rbv_to_sp_tolerance`: Tolerance to set in the parameters, shows an alarm if readback value is not within this tolerance of the setpoint
 - `modes`: A list of `BeamlineMode`s these parameters should be added to (default: `None`)
 - `mode_inits`: a list of mode init values for these parameters as a list of tuples (`BeamlineMode`, value) (default: `None`)
 - `exclude`: Do not create parameters for the given individual axes or blades; each must be one of `VG`, `VC`, `HG`, `HC`, `N`, `S`, `E`, `W` (default: `None`)
@@ -348,6 +348,14 @@ Add jaws-specific parameters and related drivers for a given jawset, i.e. horizo
 ### `get_configured_beamline`
 
 Returns the whole configured beamline object constructed from the parts added via the above helper methods
+
+### `optional_is_set`:
+Checks whether a specific optional flag is set via one of the provided IOC macros. This allows you to dynamically change parts of the beamline configuration via macro rather than having to go and edit the configuration file itself.
+
+#### Required arguments:
+- `optional_id`: The id of the macro (should be numeric between 1 - 4)
+- `macros`: a dictionary of all IOC macros (should be the parameter you pass into `get_beamline` at the top)
+
 
 # Example Configuration
 
