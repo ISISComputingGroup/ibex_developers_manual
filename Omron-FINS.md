@@ -4,6 +4,8 @@
 
 Most of the work done by the IOCs for the various FINS PLCs at ISIS consists of reading and writing to various places in the memory of that particular PLC. Some IOCs also perform some internal logic.
 
+The manuals referenced on this page can be found on the shares drive, in Manuals\OMRON_FINS_PLCs. There you can also find the images on this page.
+
 The Omron FINS is a PLC controlled via a driver first written at Diamond, see [here](https://github.com/ISISComputingGroup/EPICS-FINS). The IOC works by loading an instrument specific `FINS_01.cmd` in `configurations/fins`, which will load an instrument specific `db` from `ioc/master/FINS/db`. The dbs in here are usually created from a number of templates matching specific memory addresses to PVs. This is the case because PLCs used for different applications have different things stored in their memory, and to read/write various pieces of data the IOC needs to know the exact memory address for that data. Each individual PLC has its own memory map, which shows what memory address stores what thing, and each specific IOC is based on that.
 
 Currently the following specific FINS PLC installations are supported in IBEX:
@@ -29,6 +31,8 @@ When using FINS over Ethernet, it can work with both TCP and UDP. FINS over TCP 
 
 When using FINS over UDP, the FINS frame is the part of the UDP packet after the UDP protocol specific header. The first 10 bytes of the FINS command frame represent the FINS frame header, and the rest of the frame represent either a command or a response, which have different formats. For FINS over TCP, after the TCP header and before the FINS frame there is a special FINS/TCP header used by FINS to handle TCP connections.
 
+Most of the FINS PLCs at ISIS use FINS over TCP. The Helium recovery PLC uses UDP. For more information, look at section 7-1 of the Ethernet manual.
+
 ### FINS header
 
 The first 10 bytes of the FINS command frame represent the FINS frame header, and the rest of the frame represent the command.
@@ -36,14 +40,25 @@ The first 10 bytes of the FINS command frame represent the FINS frame header, an
 The structure of the FINS frame header is as follows (each of the elements take up one byte):
 
 - Information Control Field or ICF: Displays whether the frame is for a command or a response, and whether a response is required or not. For our purposes, this byte should `0x80` for a command and `0xC1` for a reply.
-- Reserved or RSV byte: should always be `0x00`.
+- Reserved or RSV byte: should always be 0.
 - Gate Count or GCT: The number of network bridges the frame needs to pass through. For our purposes, it should always be `0x02`.
-- Destination Network Address or DNA: The address of the network to which the receiver belongs. This address is of the entire network, and not of just the machine, and is different from the IP address. It is `0x00` for Local Network, and 1 to 127 for remote networks.
+- Destination Network Address or DNA: The address of the network to which the receiver belongs. This address is of the entire network, and not of just the machine, and is different from the IP address. It is 0 for Local Network, and 1 to 127 for remote networks.
 - Destination Node Address or DA1: The node of the receiver, which is an address needed by the FINS protocol, and is different from the IP address. It has values from 0 to 256, with 0 for the local PLC unit and 256 for broadcasting.
 - Destination Unit Address or DA2: The number of the unit of the destination node to which the command is addressed. It will typically be 0, for the CPU unit. A unit is one of the modules mounted on rails that make up the PLC.
 - Source network address or SNA: The network address of the sender. The possible values of SNA are the same as of DNA.
 - Source node address or SA1: The node of the sender. The possible values of SA1 are the same as for DA1.
 - Source unit address or SA2: The unit address of the sender. It will typically be 0, for the CPU unit.
+- Service ID or SID: a number used to identify the FINS processes generating the transmission. It can have values from 0 to 255.
+
+If you need more detail about the FINS header, look at section 7-2 of the Ethernet manual.
+
+### FINS Command body
+
+The first two bytes after the header represent the command code. All the FINS command codes can be found in section 5-1 of the Comms Reference manual. Most of the commands used at ISIS are Memory Area Read, with code `0x0101`, and Memory Area Write, with code `0x0102`.
+
+The rest of the body consists of command parameters and perhaps data. It can be up to 2000 words in length. The length and format depends on the command code. For reference, in section 5-2-2 of the Comms Reference Manual you can find the parameter formats for all commands.
+
+For most FINS command, including for Memory Area Read/Write
 
 ![fins udp](images/Specific_Device_IOCs/Omron_FINS/fins_udp.jpg)
 
