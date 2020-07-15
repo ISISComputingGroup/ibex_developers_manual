@@ -2,7 +2,7 @@
 
 In some cases it is necessary for one IOC to talk to multiple galil motor controllers.
 
-For example, this IOC is used for SANS2D, which have a jawset with oppositing jaw blades on different galil controllers.
+For example, this IOC is used for SANS2D, which have a jawset with opposing jaw blades on different galil controllers.
 
 ### Configuration macros
 
