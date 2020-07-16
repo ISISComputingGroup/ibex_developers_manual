@@ -41,7 +41,17 @@ This should be used by mbbi and bi records and also longin records that read 16 
 
 This should be used for reading 16 bit signed integers. Using the 16 bit integer array support means the 16 bit signed value will be put into an array of signed 16 bit integers as the first element. This means you will read a one element integer array, and therefore the record reading from hardware needs to be a waveform and have `field(NELM, "1") field(FTVL, "SHORT")`. You can then have a user-facing longin record to read from the waveform and store the standalone 16 bit value.
 
-3. 
+3. `field(DTYP, "asynInt32")`
+
+   `field(INP,  "@asyn(PLC, $(MEMORY_ADDRESS), 5.0) FINS_DM_READ_32")`
+
+This is used for reading 32 bit signed integers.
+
+4. `field(DTYP, "asynFloat64")`
+
+   `field(INP,  "@asyn(PLC, $(MEMORY_ADDRESS), 5.0) FINS_DM_READ_32")`
+
+This is used for reading 32 bit floating point numbers. Because the asyn interface has support for up to 64 bit floating point numbers, the FINS command coming from the EPICS record will ask for 4 bytes of memory, not two. But sending back only 2 bytes will be ok.
 
 # The FINS protocol
 
