@@ -32,8 +32,16 @@ Some examples of correct DTYP and INP fields for different situations are:
 1. `field(DTYP, "asynInt32")`
 
    `field(INP,  "@asyn(PLC, $(MEMORY_ADDRESS), 5.0) FINS_DM_READ")`
-   This should be used by mbbi and bi records and also longin records that read 16 bit signed integers from 0 to 32767 or unsigned 16 bit integers. The asynInt32 interface provides support for 32 bit integers, and the `FINS_DM_READ` command asks the PLC for a 16 bit integer, which is then put into a 32 bit integer in the driver. When that is done, the number is left padded with 8 zeroes, which means it will lose its sign if it is signed and be read as a positive numeber. Therefore, records that need to read negative integers should not use this pattern
 
+This should be used by mbbi and bi records and also longin records that read 16 bit signed integers from 0 to 32767 or unsigned 16 bit integers.         The asynInt32 interface provides support for 32 bit integers, and the `FINS_DM_READ` command asks the PLC for a 16 bit integer, which is then put into a 32 bit integer in the driver. When that is done, the number is left padded with 8 zeroes, which means it will lose its sign if it is signed and be read as a positive numeber. Therefore, records that need to read negative integers should not use this pattern.
+
+2. `field(DTYP, "asynInt16ArrayIn")`
+
+   `field(INP,  "@asyn(PLC, $(MEMORY_ADDRESS), 5.0) FINS_DM_READ")`
+
+This should be used for reading 16 bit signed integers. Using the 16 bit integer array support means the 16 bit signed value will be put into an array of signed 16 bit integers as the first element. This means you will read a one element integer array, and therefore the record reading from hardware needs to be a waveform and have `field(NELM, "1") field(FTVL, "SHORT")`. You can then have a user-facing longin record to read from the waveform and store the standalone 16 bit value.
+
+3. 
 
 # The FINS protocol
 
