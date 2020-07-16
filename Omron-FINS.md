@@ -60,8 +60,6 @@ The rest of the body consists of command parameters and perhaps data. It can be 
 
 For most FINS command, including for Memory Area Read/Write
 
-![fins udp](images/Specific_Device_IOCs/Omron_FINS/fins_udp.jpg)
-
 
 # Connection
 
