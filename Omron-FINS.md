@@ -31,7 +31,9 @@ When using FINS over Ethernet, it can work with both TCP and UDP. FINS over TCP 
 
 When using FINS over UDP, the FINS frame is the part of the UDP packet after the UDP protocol specific header. The first 10 bytes of the FINS command frame represent the FINS frame header, and the rest of the frame represent either a command or a response, which have different formats. For FINS over TCP, after the TCP header and before the FINS frame there is a special FINS/TCP header used by FINS to handle TCP connections.
 
-Most of the FINS PLCs at ISIS use FINS over TCP. The Helium recovery PLC uses UDP. For more information, look at section 7-1 of the Ethernet manual.
+Most of the FINS PLCs at ISIS use FINS over TCP ?. The Helium recovery PLC uses UDP. For more information about FINS in general, look at section 7-1 of the Ethernet manual. Section 7-3 offers detailed information about FINS over UDP.
+
+There are some very useful diagrams showing the structure of FINS frames and FINS/TCP headers in the same folder as the manuals on the shares drive.
 
 ### FINS header
 
@@ -58,7 +60,28 @@ The first two bytes after the header represent the command code. All the FINS co
 
 The rest of the body consists of command parameters and perhaps data. It can be up to 2000 words in length. The length and format depends on the command code. For reference, in section 5-3 of the Comms Reference Manual you can find the parameter formats and other details for each command.
 
-The first byte after the command code represents the I/O memory area code. The next three bytes indicate the start address from which it will read or write. Of these three, the first two bytes indicate the memory address of the first word from where to read/write, and the third byte indicates the individual bit from where reading or writing starts. This third byte is 0 for word designated memory addresses, where each word is considered an element. If it is not 0, then each individual bit is considered an element.
+The first byte after the command code represents the I/O memory area code. The next three bytes indicate the start address from which it will read or write. Of these three, the first two bytes indicate the memory address of the first word from where to read/write, and the third byte indicates the individual bit from where reading or writing starts. This third byte is 0 for word designated memory addresses, where each word is considered an element. If it is not 0, then each individual bit is considered an element. After this address, two more bytes represent the number of elements to read/write. For write commands, what folows after is the data which you want to write.
+
+You can find a list of all I/O memeory area codes in section 5-2-2 of the Comms Reference manual, and more details about the memory start address in section 5-2-1 of the same manual.
+
+### FINS response body
+
+Just as with the command body, the first two bytes represent the code of the command which is being replied to. After that, two bytes represent the error code. It is 0 for no erros, and all the other error codes are detailed in section 5-1-3 of the Comms Reference Manual. Following the error codes are a number of words equal to the number of words given in the read command representing the data you want to read. For write commands, the reponse ends with the error code.
+
+### FINS/TCP header
+
+Unlike UDP, TCP is a connection based protocol. Since a virtual connection needs to be established before you can send packets, for FINS over TCP there is an extra FINS/TCP header before the FINS frame that helps to handle the virtual connection. For establishing a connection, besides the usual TCP packets, the client and server need to exchange FINS node addresses so that the PLC can manage the connections properly.
+
+The structure of the of the FINS/TCP header is as follows, with each element taking up 4 bytes:
+
+- Header: is always `0x46494E53`, which is ASCII for `FINS`.
+- Length: specifies length of data from the FINS/TCP command code onwards, including the FINS frame as well.
+- Command code: There a couple of commands for FINS/TCP for exchaning node addresses, sending FINS frames and managing errors and connections. 
+- Error code: It is 0 for no errors, and for some commands it is not even used.
+- Client Node address: only part of the FINS/TCP header for some commands.
+- Server Node address: only part of the FINS/TCP header for the FINS NODE ADDRESS DATA SEND (SERVER TO CLIENT) command.
+
+The FINS/TCP connections and commands should be handled by the C driver orignally written at Diamond and we should worry about the FINS/TCP header. If you need more information, section 7-4-2 of the Ethernet Manual gives details for each command, and section 7-4-1 gives a more detailed overview about FINS over TCP.
 
 # Connection
 
