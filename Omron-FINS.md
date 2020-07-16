@@ -17,6 +17,12 @@ Currently the following specific FINS PLC installations are supported in IBEX:
 * ZOOM vacuum PLC
 * Helium Recovery PLC - stores information needed for the Helium Level Monitoring project
 
+# Writing IOCs for FINS PLCs
+
+IOCs for FINS PLCs at ISIS use the EPICS asyn driver support to communicate with the PLC. For getting input from hardware, you need records to have an INP field such as:
+`field(INP,  "@asyn($(PORT), $(MEMORY_ADDRESS), 5.0) FINS_DM_READ")`
+where the value of `$(PORT)` should usually be PLC, `$(MEMORY_ADDRESS)` is the memory address of the data you want to read/write in the PLC and should be taken from the PLCs memory map, and 5.0 is a timeout. `FINS_DM_READ` is an example FINS command supported by the asyn driver we have from Diamond, and different methods need to be useds for different types of data. All the commands supported by the driver are listed [here](https://github.com/ISISComputingGroup/EPICS-FINS/blob/master/FINSApp/src/finsUDP.c).
+
 # The FINS protocol
 
 The FINS protocol is an applications layer communications protocol designed for industrial applications and made by Omron. FINS stands for Factory Interface Network Service.
