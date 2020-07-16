@@ -20,8 +20,20 @@ Currently the following specific FINS PLC installations are supported in IBEX:
 # Writing IOCs for FINS PLCs
 
 IOCs for FINS PLCs at ISIS use the EPICS asyn driver support to communicate with the PLC. For getting input from hardware, you need records to have an INP field such as:
-`field(INP,  "@asyn($(PORT), $(MEMORY_ADDRESS), 5.0) FINS_DM_READ")`
+
+`
+field(INP,  "@asyn($(PORT), $(MEMORY_ADDRESS), 5.0) FINS_DM_READ")
+`
+
 where the value of `$(PORT)` should usually be PLC, `$(MEMORY_ADDRESS)` is the memory address of the data you want to read/write in the PLC and should be taken from the PLCs memory map, and 5.0 is a timeout. `FINS_DM_READ` is an example FINS command supported by the asyn driver we have from Diamond, and different methods need to be useds for different types of data. All the commands supported by the driver are listed [here](https://github.com/ISISComputingGroup/EPICS-FINS/blob/master/FINSApp/src/finsUDP.c).
+
+Some examples of correct DTYP and INP fields for different situations are:
+
+1. `field(DTYP, "asynInt32")`
+
+   `field(INP,  "@asyn(PLC, $(MEMORY_ADDRESS), 5.0) FINS_DM_READ")`
+   This should be used by mbbi and bi records and also longin records that read 16 bit signed integers from 0 to 32767 or unsigned 16 bit integers. The asynInt32 interface provides support for 32 bit integers, and the `FINS_DM_READ` command asks the PLC for a 16 bit integer, which is then put into a 32 bit integer in the driver. When that is done, the number is left padded with 8 zeroes, which means it will lose its sign if it is signed and be read as a positive numeber. Therefore, records that need to read negative integers should not use this pattern
+
 
 # The FINS protocol
 
