@@ -81,7 +81,7 @@ The structure of the of the FINS/TCP header is as follows, with each element tak
 - Client Node address: only part of the FINS/TCP header for some commands.
 - Server Node address: only part of the FINS/TCP header for the FINS NODE ADDRESS DATA SEND (SERVER TO CLIENT) command.
 
-The FINS/TCP connections and commands should be handled by the C driver orignally written at Diamond and we should worry about the FINS/TCP header. If you need more information, section 7-4-2 of the Ethernet Manual gives details for each command, and section 7-4-1 gives a more detailed overview about FINS over TCP.
+The FINS/TCP connections and commands should be handled by the C driver orignally written at Diamond and we should not worry about the FINS/TCP header. If you need more information, section 7-4-2 of the Ethernet Manual gives details for each command, and section 7-4-1 gives a more detailed overview about FINS over TCP.
 
 # Connection
 
