@@ -56,10 +56,9 @@ If you need more detail about the FINS header, look at section 7-2 of the Ethern
 
 The first two bytes after the header represent the command code. All the FINS command codes can be found in section 5-1 of the Comms Reference manual. Most of the commands used at ISIS are Memory Area Read, with code `0x0101`, and Memory Area Write, with code `0x0102`.
 
-The rest of the body consists of command parameters and perhaps data. It can be up to 2000 words in length. The length and format depends on the command code. For reference, in section 5-2-2 of the Comms Reference Manual you can find the parameter formats for all commands.
+The rest of the body consists of command parameters and perhaps data. It can be up to 2000 words in length. The length and format depends on the command code. For reference, in section 5-3 of the Comms Reference Manual you can find the parameter formats and other details for each command.
 
-For most FINS command, including for Memory Area Read/Write
-
+The first byte after the command code represents the I/O memory area code. The next three bytes indicate the start address from which it will read or write. Of these three, the first two bytes indicate the memory address of the first word from where to read/write, and the third byte indicates the individual bit from where reading or writing starts. This third byte is 0 for word designated memory addresses, where each word is considered an element. If it is not 0, then each individual bit is considered an element.
 
 # Connection
 
