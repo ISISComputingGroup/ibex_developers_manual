@@ -68,7 +68,7 @@ You can find a list of all I/O memeory area codes in section 5-2-2 of the Comms 
 
 Just as with the command body, the first two bytes represent the code of the command which is being replied to. After that, two bytes represent the error code. It is 0 for no erros, and all the other error codes are detailed in section 5-1-3 of the Comms Reference Manual. Following the error codes are a number of words equal to the number of words given in the read command representing the data you want to read. For write commands, the reponse ends with the error code.
 
-### FINS/TCP header
+## FINS/TCP header
 
 Unlike UDP, TCP is a connection based protocol. Since a virtual connection needs to be established before you can send packets, for FINS over TCP there is an extra FINS/TCP header before the FINS frame that helps to handle the virtual connection. For establishing a connection, besides the usual TCP packets, the client and server need to exchange FINS node addresses so that the PLC can manage the connections properly.
 
