@@ -39,26 +39,10 @@ Make sure you include the following lines in your Makefile alongside the source 
 ifeq ($(findstring 10.0,$(VCVERSION)),)
 # googleTest Runner
 
-TESTPROD_HOST += runner
-USR_CPPFLAGS += -I$(GTEST)/googletest/include 
-runner_SRCS += run_all_tests.cc
-runner_LIBS += gtest
+GTESTPROD_HOST+= runner
+GTESTS += runner
 endif
 ```
-
-Where `run_all_tests.cc` is a file containing the following lines. Make sure to also add all libs needed for the files being tested.
-
-```C++
-#include "gtest/gtest.h"
-
-int main(int argc, char **argv) {
-    ::testing::InitGoogleTest( &argc, argv );
-    return RUN_ALL_TESTS();
-    }
-
-```
-
-This file will run all your test. It will need to be in the same directory as your tests/code.
 
 You then need to include all the files you need for your tests using 
 ```Makefile
@@ -73,57 +57,7 @@ SRC_DIRS += #path to your tests directory
 
 ## Running your tests
 
-The tests are run from make It will create XML reports on your tests in `test-reports` directory at the top level. Replace `IOCNAME` by the name of your IOC.
-
-```batch
-:: Run all tests
-@echo off
-SET TOP="."
-
-SET Tests_failed=%errorlevel%
-
-:: Change the directory depending on if you have a src sub directory
-call IOCNameSup\src\O.windows-x64\runner.exe --gtest_output=xml:%TOP%\test-reports\TEST-IOCName.xml
-
-exit /B %Tests_failed%
-```
-
-## Adding a target to run tests
-
-To run the tests use `make test`. It will create XML reports on your tests in `test-reports` directory at the top level. 
-Add the following to the top level Makefile of the support module replacing `<IOCNAME>` by the name of your IOC.
-
-To just below `# Add any additional dependency rules here:`
-
-```
-TEST_RUNNER = $(TOP)/<IOCName>App/src/O.$(EPICS_HOST_ARCH)/runner
-```
-
-then
-
-```Makefile
-.PHONY: test
-test:
-	run_tests.bat 	ifneq ($(wildcard $(TEST_RUNNER)*),)
-	$(TEST_RUNNER) --gtest_output=xml:$(TOP)/test-reports/TEST-<IOCName>.xml
-endif
-```
-
-## Adding tests to Jenkins
-
-To have these tests run on Jenkins, add the following to the bottom of the `jenkins_build.bat` file replacing IOCNAME with the name of your IOC.
-
-```batch
-:: Run googleTest C++ unit tests for IOCNAME
-cd /d %FINAL_DIR%\support\IOCNAME\master\
-make test
-if %errorlevel% neq 0 (
-    @echo ERROR: Tests failed in IOCNAME\master
-    goto ERROR
-)
-```
-
-Make sure that Jenkins has been configured to look for xUnit test reports and that you have the `xunit` Jenkins plugin installed.
+Once built you can run the tests by doing `make runtests` in your submodule. This will print the test results and also save them to an xml file in `src/O.$(EPICS_HOST_ARCH)`. This file will be picked up by Jenkins.
 
 ## Sample Test
 
@@ -140,7 +74,36 @@ namespace {
 
 ```
 
-## Notes
-We are currently using an outdated version of google tests, so some features shown in tutorials and documentation will not work as they have since been renamed.
+## Tests with external dependencies
 
-For example, we need to use `INSTANTIATE_TEST_CASE_P` instead of `INSTANTIATE_TEST_SUITE_P`, `SetUpTestCase()` instead of `SetUpTestSuite()` and `TearDownTestCase()` instead of `TearDownTestSuite()`.
+In some cases you may want to write unit tests that depend on other EPICS modules e.g. `asyn`. To do this you will need to create the required dlls and run the tests manually. First in your makefile in `src` add the following lines at the bottom:
+```Makefile
+ifdef T_A
+install: dllPath.bat
+
+dllPath.bat:
+	$(CONVERTRELEASE) -a $(T_A) -T $(IOCS_APPL_TOP) $@
+endif
+```
+
+Then in the top of your submodule create `run_tests.bat` that looks like:
+```bat
+@echo off
+setlocal
+set "ARCH=%1"
+set "TESTPATH=%~dp0<IOC_NAME>App/src/O.%ARCH%"
+if exist "%TESTPATH%\runner.exe" (
+    call %TESTPATH%\dllPath.bat
+    %TESTPATH%\runner.exe --gtest_output=xml:./test-reports/TEST-<IOC_NAME>.xml
+) else (
+    @echo No tests to run
+)
+```
+Then in the top makefile you will need to override the `runtests` rule by adding in:
+```Makefile
+.PHONY: runtests
+
+runtests:
+	run_tests.bat $(EPICS_HOST_ARCH)
+```
+An example of an IOC that does this is the [cryosms](https://github.com/ISISComputingGroup/EPICS-Cryosms).
