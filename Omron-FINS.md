@@ -134,7 +134,7 @@ where:
 - address: ip address of the PLC 
 - protocol: which protocol to use
     - "TCP": use TCP communication
-    - "TCPNOHEAD": use TCP comms, but without FINS-TCP header. This is required (and should only be used for) the devsim IOC tests
+    - "TCPNOHEAD": use TCP comms, but without FINS-TCP header. This is required (and should only be used for) the devsim IOC tests. This mode was added because the emulator framework does not support UDP, only TCP or serial. Normally, using FINS over TCP requires an extra header, but we did not want to complicate the emulator and deal with a header and FINS/TCP commands that EPICS code does not change at all. Therefore, this mode was added as a "hack" to make testing the Helium Recovery PLC easier.
     - anything else: use UDP protocol
 - simulate: whether to simulate calls
     - 0: Do not simulate (real device or devsim)
