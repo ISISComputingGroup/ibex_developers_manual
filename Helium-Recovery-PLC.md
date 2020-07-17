@@ -4,6 +4,8 @@
 
 The Helium Recovery PLC is a FINS PLC used for monitoring various parameters related to the helium gas recovery system. It contains data that will need to be stored in the database of the Helium Level Monitoring project. Therefore, we wrote an IOC for this PLC so that the data will then be read by a python server via Channel Access.
 
+The manuals folder on the shares drive has a note with a link to the web page used by Cryogenics to monitor the helium gas recovery system. This displays the vast majority of values that are read by the IOC and was used to make sure the IOC reads data correctly. The values not displayed on the web page are specified in the memory map.
+
 # Connection
 
 The Helium Recovery PLC communicates by using FINS over UDP, and is connected over Ethernet. However, you should use TCPNOHEAD when running tests in devsim. The FINS cmd should be similar to the example given [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Omron-FINS#configuration).
@@ -22,6 +24,8 @@ The command used by the IOC to read from the PLC is `0x0101` for Memory Area Rea
 
 This PLC uses big endian notation. The word size is 16 bit, so on the memory map the INT and UINT data types take up 16 bits, and the DWORD data type uses 32 bits. The REAL data type also takes up two words, so 32 bits.
 
+Because the IOC needs to read over 150 memory locations, and a lot of PVs would be identical, the IOC makes use of templates to achieve this. There are different templates for different types of record for different data types, and in the substitions you assign a PV name, description, memory address and unit for each PV, based on the contents of the memory map. Some PVs are placed in the header template because they are unique or because a template for only 2 PVs is not worth it.
+
 # Configuration
 
 In order to run this IOC and talk to the Helium recovery PLC, you should have a `FINS_01.cmd` in the settings area with the contents:
@@ -36,3 +40,10 @@ The PV domain name for this IOC is HA, with HLM as a sub domain. `$(MYPVPREFIX)`
 
 You also need to set the PLC_IP and PLC_NODE macros in the IBEX GUI.
 
+# Gotchas
+
+- During testing when the IOC had all PVs implemented, it was discovered that it was very slow and each test took up to 40 seconds. This was because the emulator was slow due to 150+ requests each second. To fix this, for testing all PVs should be made passive by setting the `$(SCAN)` macro in the `dbLoadRecords` call, which will make the tests run quite fast. `$(SCAN)` is a global macro for the scan fields of every PV, except the heartbeat. For communicating with the real device, this macro should be set to 10 seconds. The heartbeat is an exception because in order to properly see it changing from 0 to 1 and back it needs to scan every 0.5 seconds.
+- The vast majority of the PVs reading 16 bit integers from the PLC are private. They are read by an associated calc record which divides the value by 10 and is supposed to be user facing. The reason is that the these values need to be real numbers with decimal place, but they are represented as scaled integers in order to save memory space and be stored in 16 bits only rather than 32 bits. There three exceptions to this: the heartbeat and two turbine speeds. This is because the turbine speeds are not real numbers, and the heartbeat can only be 0 or 1.
+- All of the PVs reading 16 bit integer values support negative values, except the heartbeat. Because negative integer support needs to be actively added as mentioned in [Omron FINS](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Omron-FINS#writing-iocs-for-fins-plcs), but the heartbeat can only be 0 or 1 and thus has no need. For the same reason, each 16 bit PV is tested with positive and negative values in the IOC Test Framework, to make sure the IOC can read properly whatever the PLC might store.
+- Some mbbi records only have two possible values, and the reason they are not bi records is that the integers in the PLC for those values were 1 and 2, not 0 and 1.
+- There are two liquefier alarms in the memory map. They are 16 bit integers, where each bit represents one alarm. In the first alarm liquefier integer, the first bit is a spare, and in the second one the last 7 bits are spares. These two integers are read by two longin records, from which the values are read into two mbbi direct records. The mbbiDirect records could not properly read from hardware directly. For each individual alarm, there is a bi record that reads from the correct bit in one of the two mbbiDirect records, and it is these records that are user facing.
