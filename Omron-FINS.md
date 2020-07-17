@@ -15,7 +15,7 @@ Currently the following specific FINS PLC installations are supported in IBEX:
 * SANS2D vacuum PLC
 * WISH vacuum PLC
 * ZOOM vacuum PLC
-* Helium Recovery PLC - stores information needed for the Helium Level Monitoring project
+* (Helium Recovery PLC)[Helium-Recovery-PLC] - stores information needed for the Helium Level Monitoring project
 
 # Writing IOCs for FINS PLCs
 
