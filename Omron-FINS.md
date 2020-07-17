@@ -25,7 +25,7 @@ IOCs for FINS PLCs at ISIS use the EPICS asyn driver support to communicate with
 field(INP,  "@asyn($(PORT), $(MEMORY_ADDRESS), 5.0) FINS_DM_READ")
 `
 
-where the value of `$(PORT)` should usually be PLC, `$(MEMORY_ADDRESS)` is the memory address of the data you want to read/write in the PLC and should be taken from the PLCs memory map, and 5.0 is a timeout. `FINS_DM_READ` is an example FINS command supported by the asyn driver we have from Diamond, and different methods need to be useds for different types of data. All the commands supported by the driver are listed [here](https://github.com/ISISComputingGroup/EPICS-FINS/blob/master/FINSApp/src/finsUDP.c).
+where the value of `$(PORT)` should usually be PLC, `$(MEMORY_ADDRESS)` is the memory address of the data you want to read/write in the PLC and should be taken from the PLCs memory map, and 5.0 is a timeout. `FINS_DM_READ` is an example FINS command supported by the asyn driver we have from Diamond, and different methods need to be used for different types of data. All the commands supported by the driver are listed [here](https://github.com/ISISComputingGroup/EPICS-FINS/blob/master/FINSApp/src/finsUDP.c).
 
 Some examples of correct DTYP and INP fields for different situations are:
 
@@ -33,7 +33,7 @@ Some examples of correct DTYP and INP fields for different situations are:
 
    `field(INP,  "@asyn(PLC, $(MEMORY_ADDRESS), 5.0) FINS_DM_READ")`
 
-This should be used by mbbi and bi records and also longin records that read 16 bit signed integers from 0 to 32767 or unsigned 16 bit integers.         The asynInt32 interface provides support for 32 bit integers, and the `FINS_DM_READ` command asks the PLC for a 16 bit integer, which is then put into a 32 bit integer in the driver. When that is done, the number is left padded with 8 zeroes, which means it will lose its sign if it is signed and be read as a positive numeber. Therefore, records that need to read negative integers should not use this pattern.
+This should be used by mbbi and bi records and also longin records that read 16 bit signed integers from 0 to 32767 or unsigned 16 bit integers.         The asynInt32 interface provides support for 32 bit integers, and the `FINS_DM_READ` command asks the PLC for a 16 bit integer, which is then put into a 32 bit integer in the driver. When that is done, the number is left padded with 8 zeroes, which means it will lose its sign if it is signed and be read as a positive number. Therefore, records that need to read negative integers should not use this pattern.
 
 2. `field(DTYP, "asynInt16ArrayIn")`
 
@@ -96,13 +96,13 @@ The first two bytes after the header represent the command code. All the FINS co
 
 The rest of the body consists of command parameters and perhaps data. It can be up to 2000 words in length. The length and format depends on the command code. For reference, in section 5-3 of the Comms Reference Manual you can find the parameter formats and other details for each command.
 
-The first byte after the command code represents the I/O memory area code. The next three bytes indicate the start address from which it will read or write. Of these three, the first two bytes indicate the memory address of the first word from where to read/write, and the third byte indicates the individual bit from where reading or writing starts. This third byte is 0 for word designated memory addresses, where each word is considered an element. If it is not 0, then each individual bit is considered an element. After this address, two more bytes represent the number of elements to read/write. For write commands, what folows after is the data which you want to write.
+The first byte after the command code represents the I/O memory area code. The next three bytes indicate the start address from which it will read or write. Of these three, the first two bytes indicate the memory address of the first word from where to read/write, and the third byte indicates the individual bit from where reading or writing starts. This third byte is 0 for word designated memory addresses, where each word is considered an element. If it is not 0, then each individual bit is considered an element. After this address, two more bytes represent the number of elements to read/write. For write commands, what follows after is the data which you want to write.
 
-You can find a list of all I/O memeory area codes in section 5-2-2 of the Comms Reference manual, and more details about the memory start address in section 5-2-1 of the same manual.
+You can find a list of all I/O memory area codes in section 5-2-2 of the Comms Reference manual, and more details about the memory start address in section 5-2-1 of the same manual.
 
 ### FINS response body
 
-Just as with the command body, the first two bytes represent the code of the command which is being replied to. After that, two bytes represent the error code. It is 0 for no erros, and all the other error codes are detailed in section 5-1-3 of the Comms Reference Manual. Following the error codes are a number of words equal to the number of words given in the read command representing the data you want to read. For write commands, the reponse ends with the error code.
+Just as with the command body, the first two bytes represent the code of the command which is being replied to. After that, two bytes represent the error code. It is 0 for no errors, and all the other error codes are detailed in section 5-1-3 of the Comms Reference Manual. Following the error codes are a number of words equal to the number of words given in the read command representing the data you want to read. For write commands, the response ends with the error code.
 
 ## FINS/TCP header
 
@@ -112,12 +112,12 @@ The structure of the of the FINS/TCP header is as follows, with each element tak
 
 - Header: is always `0x46494E53`, which is ASCII for `FINS`.
 - Length: specifies length of data from the FINS/TCP command code onwards, including the FINS frame as well.
-- Command code: There a couple of commands for FINS/TCP for exchaning node addresses, sending FINS frames and managing errors and connections. 
+- Command code: There a couple of commands for FINS/TCP for exchanging node addresses, sending FINS frames and managing errors and connections. 
 - Error code: It is 0 for no errors, and for some commands it is not even used.
 - Client Node address: only part of the FINS/TCP header for some commands.
 - Server Node address: only part of the FINS/TCP header for the FINS NODE ADDRESS DATA SEND (SERVER TO CLIENT) command.
 
-The FINS/TCP connections and commands should be handled by the C driver orignally written at Diamond and we should not worry about the FINS/TCP header. If you need more information, section 7-4-2 of the Ethernet Manual gives details for each command, and section 7-4-1 gives a more detailed overview about FINS over TCP.
+The FINS/TCP connections and commands should be handled by the C driver originally written at Diamond and we should not worry about the FINS/TCP header. If you need more information, section 7-4-2 of the Ethernet Manual gives details for each command, and section 7-4-1 gives a more detailed overview about FINS over TCP.
 
 # Connection
 
