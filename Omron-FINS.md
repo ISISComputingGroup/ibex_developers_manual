@@ -179,3 +179,10 @@ $(IFRECSIM) finsUDPInit("PLC", "$(PLCIP):$(EMULATOR_PORT=)", "TCPNOHEAD", 1, "$(
 ```  
 
 At the same time, the file should either not have any other finsUDPInit call for talking with the real PLC, or have ```$(IFNOTDEVSIM) $(IFNOTRECSIM)``` before that call.
+
+# Emulator
+
+The emulator for FINS PLCs uses the pattern used by the SKF MB340 chopper. 
+
+Because it was written as part of https://github.com/ISISComputingGroup/IBEX/issues/5333, currently this emulator only works with the Helium Recovery PLC. The stream interface and response utilities should work with all other FINS PLCs at ISIS, but the device module is specific to helium recovery because it has dictionnaries emulating the memory map of that PLC. Currently, there is no way to specify what device to use when testing.
+
