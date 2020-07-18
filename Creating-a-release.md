@@ -58,9 +58,9 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
     1. Click "Scan repository". It should find the new release branch and queue a build.
     1. The release build for script generator will be created in `P:\Kits$\CompGroup\ICP\Releases\script_generator_release\X.x.m`
     1. The release builds for the rest will be created in `P:\Kits$\CompGroup\ICP\Releases\X.x.m`
-    
+   
+1. Move the changes which have been merged into the release from the [master page](https://github.com/ISISComputingGroup/IBEX/wiki/ReleaseNotes_Master) to the new release notes page for the version. Whilst doing this make sure that the release notes are as understandable as possible. 
 1. Create a released version in the [releases table](https://github.com/ISISComputingGroup/IBEX/wiki#releases) (including link to release notes)
-1. Move the changes which have been merged into the release from the dev page to the new release notes page for the version. Whilst doing this make sure that the release notes are as understandable as possible.
 1. Find dependencies which have been updated since last release and add them to the bottom of the release notes.
 1. Update the [user manual](https://github.com/ISISComputingGroup/ibex_user_manual/wiki) with any relevant changes
 
