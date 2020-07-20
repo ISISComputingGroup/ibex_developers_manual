@@ -29,7 +29,9 @@ Steps are marked with **bold** prefixes to indicate the following:
 - Ensure all command lines to EPICS are closed
 - Upgrade the ISISICP (Do not do this step (shutdown or install) for release 5.2)
   - Shutdown IBEX GUI (server should remain running)
-  -  Run [Upgrade the ISISICP](Upgrade-ISISICP)
+  - Use `console -M isisdae` to connect into ISISDAE-IOC-01 IOC and stop this IOC
+  - Run [Upgrade the ISISICP](Upgrade-ISISICP)
+  - ReStart ISISDAE-IOC-01 IOC from the previous console
 - Run `<public share>\ibex_utils\installation_and_upgrade\instrument_deploy.bat` 
     - It will look for the highest version number in the release folder as a source.
     - If you want to install a non-default release you need to set the `SUFFIX` variable in the batch file. For example with `x.y.z` being the current release and `hotfix` being the suffix, it will look for the folder `Releases/x.y.z-hotfix`
