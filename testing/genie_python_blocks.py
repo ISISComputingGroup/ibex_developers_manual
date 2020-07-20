@@ -12,9 +12,6 @@ def genie_python_blocks_test():
     def assert_numeric_block(name, value=None, runcontrol=None, lowlimit=None, highlimit=None, connected=None, max_wait=10):
 
         import time
-        
-        def bool_to_str(val):
-            return "YES" if val else "NO"
 
         steps = 10
         for i in range(steps):
@@ -27,21 +24,21 @@ def genie_python_blocks_test():
                 if highlimit is not None:
                     assert float_in_tolerance(block['highlimit'], highlimit)
                 if connected is not None:
-                    assert block['connected']==bool_to_str(connected)
+                    assert block['connected']==connected
                 if runcontrol is not None:
-                    assert block['runcontrol']==bool_to_str(runcontrol)
+                    assert block['runcontrol']==runcontrol
                 return
             except AssertionError:
                 if i < steps-1:
                     time.sleep(float(max_wait)/float(steps))
                 else:
                     print("Expected value: {}, {}, {}, {}, {}. Actual value: {}, {}, {}, {}, {} (val, connected, rc, low, high)".format(
-                        value, bool_to_str(connected), bool_to_str(runcontrol), lowlimit, highlimit,
+                        value, connected, runcontrol, lowlimit, highlimit,
                         block['value'], block['connected'], block['runcontrol'], block['lowlimit'], block['highlimit']))
                     assert False
                     
     def assert_from_user_input(question):  
-        assert (raw_input("{}? (Y/N) ".format(question)).lower()+"n")[0]=="y"
+        assert (input("{}? (Y/N) ".format(question)).lower()+"n")[0]=="y"
         
 
     print("Test required blocks exist")
