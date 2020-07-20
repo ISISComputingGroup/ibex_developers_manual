@@ -18,13 +18,13 @@ The memory map of this PLC can be found in a spreadsheet in the shares drive, as
 
 The memory map details the name, memory address, data type, description and units for every thing of interest to the HLM project that it stores.
 
-The command used by the IOC to read from the PLC is `0x0101` for Memory Area Read, and it reads from the DM Memory area, with code `0x82`. The PLC uses word designted memeory addresses, so the third byte of the start address in the FINS command should always be 0.
+The command used by the IOC to read from the PLC is `0x0101` for Memory Area Read, and it reads from the DM Memory area, with code `0x82`. The PLC uses word designated memory addresses, so the third byte of the start address in the FINS command should always be 0.
 
 ## Data representation
 
 This PLC uses big endian notation. The word size is 16 bit, so on the memory map the INT and UINT data types take up 16 bits, and the DWORD data type uses 32 bits. The REAL data type also takes up two words, so 32 bits.
 
-Because the IOC needs to read over 150 memory locations, and a lot of PVs would be identical, the IOC makes use of templates to achieve this. There are different templates for different types of record for different data types, and in the substitions you assign a PV name, description, memory address and unit for each PV, based on the contents of the memory map. Some PVs are placed in the header template because they are unique or because a template for only 2 PVs is not worth it.
+Because the IOC needs to read over 150 memory locations, and a lot of PVs would be identical, the IOC makes use of templates to achieve this. There are different templates for different types of record for different data types, and in the substitutions you assign a PV name, description, memory address and unit for each PV, based on the contents of the memory map. Some PVs are placed in the header template because they are unique or because a template for only 2 PVs is not worth it.
 
 # Configuration
 
