@@ -293,3 +293,7 @@ It is possible to add a single run into the journal database if it was not inclu
 "c:\labview modules\dae\JournalParser.exe" <INSTRUMENT> <9 DIGIT run number> cycle_<cycle number, e.g. 19_3> "c:\data\export only" <INSTRUMENT MACHINE HOST NAME>
 ```
 e.g. `"c:\labview modules\dae\JournalParser.exe" LOQ 00108032 cycle_19_3 "c:\data\export only" NDXLOQ`
+
+###  CRPT is not initialised - please set experiment parameters
+
+Ensure you have loaded the correct Time Channels and Data Acquisition tables in the Experiment setup tab of the DAE perspective. Reloading them causes initialisation.
