@@ -23,14 +23,14 @@ To make sure that IBEX knows both that your IOC has started and what PVs should 
 
 ```
 sys.path.insert(2, os.path.join(os.getenv("EPICS_KIT_ROOT"), "ISIS", "inst_servers", "master"))
+from server_common.helpers import register_ioc_start, get_macro_values
 
-from server_common.ioc_data_source import IocDataSource
-from server_common.mysql_abstraction_layer import SQLAbstractio
-
-ioc_data_source = IocDataSource(SQLAbstraction("iocdb", "iocdb", <password>))
-ioc_data_source.insert_ioc_start(ioc_name, os.getpid(), exepath, STATIC_PV_DATABASE, ioc_name_with_pv_prefix)
+register_ioc_start(REFL_IOC_NAME, STATIC_PV_DATABASE, PREFIX)
 ```
-where `STATIC_PV_DATABASE` is a pv database used to construct the pv. To add a pv info field use entries in the pv for PV_INFO_FIELD_NAME. For example `{'pv name': {'info_field': {'archive': '', 'INTEREST': 'HIGH'}, 'type': 'float'}}` which will archive the val field and register the pv as high interest.
+
+where
+- `STATIC_PV_DATABASE`: is a pv database used to construct the pv. To add a pv info field use entries in the pv for PV_INFO_FIELD_NAME. For example `{'pv name': {'info_field': {'archive': '', 'INTEREST': 'HIGH'}, 'type': 'float'}}` which will archive the val field and register the pv as high interest.
+- `PREFIX`: is the prefix for the IOC e.g. `IN:NDXLARMOR:REFL_01`
 
 ## Accessing PVs
 
@@ -44,3 +44,33 @@ sys.path.insert(2, os.path.join(os.getenv("EPICS_KIT_ROOT"), "ISIS", "inst_serve
 ChannelAccess.caget("{}BLAH".format(mypvprefix))
 ```
 
+## Accessing Macros on Start
+
+If you want to access the macros on start of a pv then add the following to your runIOC.bat:
+
+- `call dllPath.bat`: this adds the dll paths needed to run the icp config command. For example of this file see the reflectometry IOC.
+- Nearer the end put the macros into an environment variable
+
+    ```
+        set "GETMACROS=C:\Instrument\Apps\EPICS\support\icpconfig\master\bin\%EPICS_HOST_ARCH%\icpconfigGetMacros.exe"
+        set "MYIOCNAME=<IOC NAME>"
+
+        echo PRE %REFL_MACROS%
+
+        if "%REFL_MACROS%"=="" (
+            REM need this funny syntax to be able to set eol correctly - see google
+            for /f usebackq^ tokens^=*^ delims^=^ eol^= %%a in ( `%GETMACROS% %MYIOCNAME%`  ) do ( set "REFL_MACROS=%%a" )
+            echo Defining macros
+        ) else (
+            echo Macros already defined
+        )
+
+        echo Macro JSON is %REFL_MACROS%
+    ```
+
+- Inside the IOC you can access the macros with:
+
+    ```
+        from server_common.helpers import register_ioc_start, get_macro_values
+        get_macro_values()
+    ````
