@@ -11,6 +11,8 @@ def genie_python_dae_test():
         
     print("Test get/set title")
     new_title = "NEW TITLE"
+    print('Setting: ' + str(new_title))
+    print('Getting: ' + str(g.get_title()))
     g.change_title(new_title)
     assert g.get_title()==new_title
     
