@@ -8,10 +8,10 @@ Code chats occur on a semi-regular monthly basis within the group at ISIS. Altho
 
 Topic | Presenter | Date
 ----- | --------- | ----
-How to Read ISIS LabVIEW Drivers | Kathryn Baker | 22nd July '20
-ISISICP (and Kafka?) | Freddie | Jul '20
-The HIFI Cryomag | Chris C/Kathryn | Aug'20
-IBEX UI Design | Thomas Löhnert | Sep '20
+How to Read ISIS LabVIEW Drivers | Kathryn Baker | 6th August '20
+ISISICP (and Kafka?) | Freddie | Aug '20
+The HIFI Cryomag | Chris C/Kathryn | Sep '20
+IBEX UI Design | Thomas Löhnert | Oct '20
 ? | ? | Oct '20
 ? | ? | Nov '20
 
@@ -37,6 +37,7 @@ Chris C | June '21
 
 Idea | Proposed Speaker
 ---- | ----------------
+Reviewing tickets | ?
 Deploying EPICS with Ansible | Rebecca Harding
 ? | Cosimo
 LUA  | James
