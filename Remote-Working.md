@@ -33,3 +33,28 @@
 1. Connects to a machine, typically a general access cabin PC (NDCxxx) or analysis machine (NDLxxx)
 _[at this point has same access as if physically present in instrument cabin]_
 1. Connects to instrument control computer (NDXxxx) via RDP (if session not already established)
+
+### Read/Write and Read-only
+
+The _Read Only_ and _Read/Write_ access is to be controlled by changing the privileges on the viewing machine's standard instrument user account (ISUA).
+
+This will be for the simplest case for when the viewing machine is running Windows and has (ISIS instrument) standard local user and admin accounts, although the principal still applies to a Linux analysis machine and other cabin machines.
+
+**Procedure:**
+
+1. Instrument scientist adds ISUA to access list in "Users and Permissions" section of VNC Server options
+1. IS changes permissions in VNC server settings for ISUA to be either R or R/W to suit experiment
+1. User runs local VNC client and logs in using their personal account
+1. User sees list of available machines and connects to one using ISUA
+1. Views (if R only and connection previously established by IS) **OR**
+1. Connects (if R/W) to screen of instrument control computer via RDP if no active session, or "local" VNC client (as if in cabin in person)
+1. Instrument scientist sets privileges of ISUA back to Read Only after experiment ends
+1. (Optional) IS removes user from "Instrument People group" in VNC Cloud portal
+
+See [VNC article](https://help.realvnc.com/hc/en-us/articles/360002253618-Managing-Users-and-Session-Permissions-for-VNC-Server) for more information.
+
+**NB**
+
+When connecting using an account which has _Read Only_ access, the Users will have **_no control_** over the remote computer whatsoever, not even being able to connect to the control machine.  This option is severely limited (by design) and so relies heavily on the IS to create and leave the RDP session to the control machine in a state which will provide sufficient information to their Users.  
+
+The _Read / Write_ option on the other hand, offers **_full control_** of the remote computer and so the IS needs to consider carefully the implications of allowing Users to connect with this privilege level.
