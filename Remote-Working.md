@@ -1,6 +1,6 @@
 ### Proposed structure for VNC Cloud Groups:
 
-
+![](https://user-images.githubusercontent.com/10550207/86485047-9e0dec00-bd4f-11ea-8802-285f56966a20.png)
 
 ### Proposed procedure for setting up VNC Cloud access:
 
