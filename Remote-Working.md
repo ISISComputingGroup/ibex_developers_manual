@@ -21,7 +21,7 @@
 1. Grants "User" privilege to new users
 1. Adds users to appropriate People (instrument) Group(s) (and removes when experiment over)
 1. (Optional if willing & able) Installs VNC Server on the relevant machine(s) (e.g. NDCxxx & NDLxxx) via conventional VPN and RDP. (Details in "Deployment" section of VNC Cloud portal).  More help in [VNC Article](https://help.realvnc.com/hc/en-us/articles/360002253198-Installing-and-Removing-VNC-Connect#windows-0-0)
-1. Enables "Cloud Connectivity" in Server options
+1. Enables "Cloud Connectivity" in Server options. More help in [VNC Article](https://help.realvnc.com/hc/en-us/articles/360002249737-All-About-Cloud-Connections#enabling-cloud-connectivity-on-a-remote-computer-0-1)
 1. Adds "local" computers (viewing, analysis, etc.) to Machine Group(s) (See diagram above)
 1. Performs below steps to use VNC client
 
