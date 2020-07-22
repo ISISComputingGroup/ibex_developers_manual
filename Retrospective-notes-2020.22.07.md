@@ -26,7 +26,7 @@ Camera off is fine for coffee
 Whilst working remotely we are meant to have two meetings each day, and coffee is our second one, better attendance would mean we don't have to consider something more formal
 Leaving early is fine, arriving late is fine
 
-## The burndown chare we are using shows an increasing gap in the number of points between completed tickets and the total number in the completed and review columns - we are implementing more tickets than we review
+## The burndown chart we are using shows an increasing gap in the number of points between completed tickets and the total number in the completed and review columns - we are implementing more tickets than we review
 The end of the sprint will have been thrown by the release etc. but the gap increased slowly from the beginning
 The number of tickets in and out should be staying static, but the number of tickets has increased as well (end of the previous sprint there were 3 tickets in review, end of this sprint there are 11)
 There are some instances where there is nothing available to review either because they need specialists to review them, they are already under review, or they were by the developer looking for a review
@@ -52,7 +52,7 @@ Possibly useful: one for chairing, one for timekeeping, one for notetaking - cre
 
 ## How did the release go?
 It was close to the line, and it was stressful - there was quite a bit of out of hours working to get it done
-There is a mix of it feeling that it is a long time before it might be used for various reasons, however, we are deploying and going to be able to demo before the scientists need to use it which is a good thing to have achieved and probably better reputationally
+There is a mix of it feeling that it is a long time before it might be used for various reasons, however, we are deploying and going to be able to demo before the scientists need to use it which is a good thing to have achieved and probably better for our reputation
 Releasing close to cycle has risks, and it was asked about releasing again before the cycle, any bugs found we can patch and fix, but not release new features as we are currently unable to test thoroughly enough for that "last minute" style of release
 That kind of "last-minute" release can be done confidently, but it takes a lot of time to reach that stage of test coverage
 There was a discussion about bugs being released and the impact, and how far we are from being able to test everything, OPIs are an example of untested items which are widely used
