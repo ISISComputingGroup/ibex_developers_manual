@@ -18,7 +18,12 @@
    cd "c:\labview modules\dae"
    register_programs.cmd
    ```
-1. Now delete `c:\data\selog.*` (.sq3 .sq3-shm and .sh3-wal files)
+1. Now delete `c:\data\selog.*` (.sq3 .sq3-shm and .sh3-wal files), `c:\data\current.run*` and `c:\data\data.run*`
+```
+del /q c:\data\selog.*
+del /q c:\data\current.run*
+del /q c:\data\data.run*
+```
 
 This complete the ISISICP installation
 
