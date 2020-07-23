@@ -31,6 +31,10 @@ via end_of_run.bat to add new entries
    - *Either* run `install.bat` to install it an migrate all old journal files (new ibex instrument)
    - *or* run `install_no_migrate.bat` to install it without copying old journal files (existing ibex instrument)
 
+If this fails for some reason, it will not affect an instrument running - it will just mean that new entries do not get
+added to the ibex journal viewe (MySQL). A full import can be done at a later
+date when any issue is resolved.
+
 
 ## A log from register_programs.cmd
 ```
