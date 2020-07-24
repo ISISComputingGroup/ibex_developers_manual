@@ -25,9 +25,11 @@ Steps are marked with **bold** prefixes to indicate the following:
 - If not already set, change the Windows theme to "Windows 7" in the "Aero Themes" section.  Also change the background to solid light grey.
 
 #### upgrade
+- If the machine is down install latest java
+    - On firewall prompt reply yes
 - Ensure the instrument is running and in a setup state (e.g. so you can take screenshots of blocks, motors, running VIs, etc.)
 - Ensure all command lines to EPICS are closed
-- Upgrade the ISISICP (Do not do this step (shutdown or install) for release 5.2)
+- Upgrade the ISISICP 
   - Shutdown IBEX GUI (server should remain running)
   - Use `console -M isisdae` to connect into ISISDAE-IOC-01 IOC and stop this IOC
   - Run [Upgrade the ISISICP](Upgrade-ISISICP)
@@ -38,12 +40,7 @@ Steps are marked with **bold** prefixes to indicate the following:
     - Apart from the below points, just follow instructions
     - Be warned the upgrade runs in 3 steps and so will claim to have finished the upgrade 3 times
     - Do not remove any SECI icons from the task list if this is not the first time install
-    - Ignore the section about copying ibex_system_boot.bat to ProgramData and do the step below instead
-
-## Creating IBEX auto-startup 
-- Go to the user `Startup` folder (which is C:\Users\spudulike\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup).
-- In this directory do new -> shortcut and browse to c:\instrument\apps\epics and choose ibex_system_boot.bat
-
+    - after everything is installed and the script has finished you must restart the server from a different command line.
 
 # Manual deploy instructions
 
