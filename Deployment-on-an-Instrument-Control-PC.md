@@ -37,6 +37,7 @@ Steps are marked with **bold** prefixes to indicate the following:
 - Run `<public share>\ibex_utils\installation_and_upgrade\instrument_deploy.bat` 
     - It will look for the highest version number in the release folder as a source.
     - If you want to install a non-default release you need to set the `SUFFIX` variable in the batch file. For example with `x.y.z` being the current release and `hotfix` being the suffix, it will look for the folder `Releases/x.y.z-hotfix`
+    - As of 24.07.2020, the script has a bug where it fails on the first run with the message ` `""` is not a valid command `. Re-run the script to fix this. But you need to be in a cmd window, and not PowerShell for this to work. To navigate to the public share in a cmd, you need to use pushd instead of cd. 
     - Apart from the below points, just follow instructions
     - Be warned the upgrade runs in 3 steps and so will claim to have finished the upgrade 3 times
     - Do not remove any SECI icons from the task list if this is not the first time install
