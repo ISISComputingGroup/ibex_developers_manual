@@ -39,7 +39,7 @@ via end_of_run.bat to add a new entry
    - *or* run `install_no_migrate.bat` to install it without copying old journal files (existing ibex instrument)
 
 If this install fails for some reason, it will not affect an instrument operating - it will just mean that new run entries will not 
-be visible in the ibex journal viewe (which looks at MySQL). It will not affect the actual creation of the XML reference files by the ISISICP,
+be visible in the ibex journal viewer (which looks at MySQL). It will not affect the actual creation of the XML reference files by the ISISICP,
 so a full re=import can be done at a later date when any issues are resolved.
 
 
