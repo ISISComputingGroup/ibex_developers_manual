@@ -7,6 +7,7 @@ Various Processes or tasks and info into how they should work. Remember rules ca
 - [Modifying/setting up a device on an instrument](Modifying-Device-on-an-Instrument)
 
 - [Tickets and their Workflow](Tickets-and-their-Workflow)
+    - [Meeting Roles and Rotas](Meeting-Roles-and-Rotas)
     - [Backlog Preparation](Backlog-Preparation)
     - [Sprint Review](Sprint-Review)
     - [Estimating Sprint Capacity](Estimating-Sprint-Capacity)
