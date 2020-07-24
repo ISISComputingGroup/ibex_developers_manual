@@ -48,7 +48,7 @@ The spreadsheet is long, and not straightforward, need a system test day to auto
 Need to also consider other ways of recording the tests and their statuses
 
 ## Do we want rotas for the meeting roles?
-Possibly useful: one for chairing, one for timekeeping, one for notetaking - create and try them
+Possibly useful: one for chairing, one for timekeeping, one for note-taking - create and try them
 
 ## How did the release go?
 It was close to the line, and it was stressful - there was quite a bit of out of hours working to get it done
