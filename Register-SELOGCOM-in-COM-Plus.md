@@ -1,3 +1,4 @@
+## Register SELOGCOM in COM+
 The steps here are only required on a SECI instrument that needs an updated ISISICP, or an IBEX instrument that may revert back to SECI at some stage
  
 Open GENIE is a 32bit program, the ISISICP is 64 bit, and a DCOM component called SELOGCOM is used by SECI and Open GENIE to log values. This component is no longer built in 32bit format, SECI already uses the 64bit version (built as part of isisicp) but a workaround is needed for Open GENIE.
