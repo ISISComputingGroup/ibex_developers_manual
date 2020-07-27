@@ -8,7 +8,7 @@
 
 1. Enables "global" Two-Factor Authentication for _all_ users of the VNC Cloud system, in accordance with site security advice.
 1. Creates "Machine Groups" in VNC portal all within the ISIS "Team", one per physical ISIS instrument e.g. "LMX" (See diagram above)
-1. Creates "People Groups", one per instrument (e.g. "LMX Instrument Scientists" or perhaps "LMX Users" containing ISs _and_ external users for simplicity)
+1. Creates "People Groups", one per instrument (e.g. "LMX Instrument Scientists" or perhaps "LMX Users" containing instrument scientists _and_ external users for simplicity)
 1. Grants access to Machine Group to appropriate People Group
 1. Invites Instrument Scientists (IS) to create a VNC account via VNC portal (invitation email)
 1. Grants "Manager" privilege to IS
