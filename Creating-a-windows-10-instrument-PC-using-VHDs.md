@@ -6,7 +6,7 @@ To begin assembling a system, you need to build a new clone. The process to buil
 
 The configuration files for MDT are not currently available as they are stored on a special server; these should be made available generally as it currently means we are unable to build a new machine easily.
 
-The current build process creates a windows 10 image which should have the operating system + required software other than ibex installed (e.g. labview, nport, 7-zip). It also creates empty folders for Apps, Settings and Var - these are placeholders for where the VHDs are mounted, but need to be deleted as they will be replaced by VHDs.
+The current build process creates a windows 10 image which should have the operating system + required software other than ibex installed (e.g. labview, nport, 7-zip). It also creates empty folders for Apps, Settings and Var - these are **unused placeholders** for where the VHDs are mounted, so **they need to be deleted as they will be replaced by the IBEX VHDs**. 
 
 # Adding IBEX VHDs to the system
 
@@ -32,5 +32,18 @@ Note that the IBEX VHDs are never mounted with a drive letter (unlike on the jen
 # Starting IBEX
 
 - At this stage you should be able to start IBEX. Make sure you start it as a standard user, not admin, otherwise all of the log files and directories will be created with the wrong permissions.
-  * It seems that the Var and Settings VHDs in particular are very sensitive to getting into a state where the files are "owned" by admin but admin can't delete them, and a reboot does not fix this. To fix this, power off the machine, and re-copy a fresh VHD from the build server, remount it in hyper-v (you can't just replace the file by name - it needs to be demounted and remounted), and then power the machine back on and redo the `makeinst.ps1` and "setting up ibex before first use" steps.
+  * It seems that the Var and Settings VHDs in particular are very sensitive to getting into a state where the files are "owned" by admin but admin can't delete them, and a reboot does not fix this. To fix this, install fresh settings/var vhds by following the "upgrade/change vhd" instructions below.
+
+# Upgrading/changing IBEX VHDs
+
+If you need to upgrade/change IBEX VHDS, the process is as follows:
+- Power off the NDX machine
+- Go into hyper-V and remove the three IBEX VHDS from the VM (Apps, Settings, Var)
+- Replace the VHDS on the filesystem on the NDH with the new versions you wish to install
+- Add these back in to the VM via Hyper-V manager
+- Boot the VM
+- Re-run the `makeinst.ps1` script in an admin powershell prompt
+- Ensure that the filesystem looks sensible e.g. that `Apps/` contains EPICS and a client, `Settings` contains a settings directory, and `Var/` contains the expected file structure.
+
+Note: you can not simply replace the VHDs on the NDH by name. This is because Hyper-V sets some attributes on the VHDs when they are explicitly added; if these attributes are not set, you will get an error on attempting to boot the VM.
 
