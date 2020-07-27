@@ -26,7 +26,7 @@ Camera off is fine for coffee
 Whilst working remotely we are meant to have two meetings each day, and coffee is our second one, better attendance would mean we don't have to consider something more formal
 Leaving early is fine, arriving late is fine
 
-## The burndown chart we are using shows an increasing gap in the number of points between completed tickets and the total number in the completed and review columns - we are implementing more tickets than we review
+## The burn down chart we are using shows an increasing gap in the number of points between completed tickets and the total number in the completed and review columns - we are implementing more tickets than we review
 The end of the sprint will have been thrown by the release etc. but the gap increased slowly from the beginning
 The number of tickets in and out should be staying static, but the number of tickets has increased as well (end of the previous sprint there were 3 tickets in review, end of this sprint there are 11)
 There are some instances where there is nothing available to review either because they need specialists to review them, they are already under review, or they were by the developer looking for a review
