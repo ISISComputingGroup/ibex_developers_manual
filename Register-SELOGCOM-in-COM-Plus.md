@@ -14,4 +14,4 @@ Many DCOM components are run in-process and need to be of the correct architectu
 * right click on `com+ applications`, select `new application` and  `create empty application`
 * when prompted, chose `server application`, name it  `SELOGCOM` and accept the remaining default answers.
 * right click on `selogcom` in COM+ applications, in `properties`, `security tab` uncheck/disable "enforce access checks for this application"
-* open up the `selogcom` tree in explorer, right click on `components` and select  `new component` then  `install new component, browse to `C:\labview modules\DAE\service\x64\Release\selogcom.tlb`
+* open up the `selogcom` tree in explorer, right click on `components` and select  `new component` then  `install new component`, browse to `C:\labview modules\DAE\service\x64\Release\selogcom.tlb`
