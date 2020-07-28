@@ -1,4 +1,4 @@
-Note: these instructions are only partially complete as https://github.com/ISISComputingGroup/IBEX/issues/5489 was deprioritised. There are still likely to be issues with this process at this time.
+Note: these instructions are only partially complete as https://github.com/ISISComputingGroup/IBEX/issues/5489 was de-prioritized. There are still likely to be issues with this process at this time.
 
 # Creating the initial system
 
