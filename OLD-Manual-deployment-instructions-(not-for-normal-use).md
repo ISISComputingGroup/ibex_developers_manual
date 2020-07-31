@@ -83,6 +83,7 @@ Note: These should not normally be used to do a "standard" deployment but may be
       Z:
       cd X.x.m\EPICS
       ```
+- **mini-inst** take a backup of the current EPICS directory
 - **install**, **upgrade** and **mini-inst** Run `install_to_inst.bat` This will copy the contents of the above directory to `C:\Instrument\Apps\EPICS`.
 - **install**, **upgrade** and **mini-inst** If using the net user command delete the directory with `net use Z: /delete`
 - **install** Configure the database schemas engine. 
