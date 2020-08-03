@@ -24,4 +24,8 @@ if TYPE_CHECKING:
 def myfun(arg: 'ArgType'):
 ```
 
+Typical Error you see is:
 
+```
+ImportError: cannot import name '<class name>' from partially initialized module '<module name>' (most likely due to a circular import) (<path>)
+```
