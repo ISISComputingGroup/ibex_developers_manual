@@ -10,3 +10,4 @@ Items attached to motion but are not [motors](Motor-IOCs).
 * [MERLIN and LET Oscillating Radial Collimators](MERLIN-and-LET-Oscillating-radial-collimators)
 * Gem Oscillating Radial Collimator
 * [Reflectometry IOC](Reflectometry-IOC)
+* [SANS2D Front Beamstop Inhibit](SANS2D-Front-Beam-Stop-inhibit-movement)
