@@ -186,5 +186,5 @@ The emulator for FINS PLCs uses the pattern used by the SKF MB340 chopper.
 
 Because it was written as part of https://github.com/ISISComputingGroup/IBEX/issues/5333, currently this emulator only works with the Helium Recovery PLC. The stream interface and response utilities should work with all other FINS PLCs at ISIS, but the device module is specific to helium recovery because it has dictionaries emulating the memory map of that PLC. Currently, there is no way to specify what device to use when testing.
 
-**Note:** The FINS protocol involves reading 16 bit integers, a 32bit read from the driver is actually two consecutive 16 bit reads, similarly for a 32bit float. Though the PLC uses big endian format for its 16bit integers, the least significant part of a 32 bit number is stored first. So we have two big endian little integers stored in little endian order. The emulator thus needs to perform some extra logic to handle this.
+**Note:** The FINS protocol involves reading 16 bit integers, a 32bit read from the driver is actually two consecutive 16 bit reads, similarly for a 32bit float. Though the PLC uses big endian format for its 16bit integers, the least significant part of a 32 bit number is stored first. So we have two big endian 16 bit integers stored in little endian order. The emulator needs to perform some extra logic to handle this.
 
