@@ -28,6 +28,10 @@ These are fixed values which are exposed by the IOC as PVs of the form `<PREFIX>
 - `NATURAL_ANGLE`: Natural angle of the beam as it enters the blockhouse
 - `HAS_HEIGHT2`: Whether the sample stack has a second height stage (`True`/`False` only)
 
+Also for the OPI we need constants:
+
+- `OPI`: Value is the directory names in which the OPI link panels are stored. E.g. on CRISP this is set to CRISP and the pnales are in `<GUI OPIs>\resources\reflectometry\crisp`. This allows for different instruments and configs to have different front panels.
+
 ### Arguments
 
 #### Required:
