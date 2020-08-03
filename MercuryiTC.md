@@ -116,3 +116,11 @@ To do this:
 - Run `stop_ibex_server.bat`
 - Run `make iocstartups` from `C:\instrument\apps\epics` (it is ok if this complains about some missing directories)
 - Run `start_ibex_server.bat`
+
+### Mercury is not talking to any cards
+
+Ensure that IOC macros have been set which correctly correspond to the cards in the mercury itself. You can check which cards are currently in the mercury by looking at the "system" tab in the opi. The macros should be strings of a form similar to "DB1.T1"
+
+### Mercury is not reading a heater/needle valve correctly on a temperature/pressure card
+
+In the details screen of the OPI, check that the "associated heater channel" (for heaters) or "associated aux channel" (for needle valves) is not None. If it is None, check with the scientist/cryogenics whether a heater/needle valve should be configured for this channel.
