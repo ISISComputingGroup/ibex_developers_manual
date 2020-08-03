@@ -36,17 +36,25 @@ There is a section on each below as well as how to set the communication setting
 
 To activate a card you must set the related IOC macro. The following macros set the <I> for the possible IOC slot:
 
-| Macro | Usual Value | IOC Name | 
-| ----  | ----------- | -------- | 
-| MERCURY_01__TEMP_1 | 1 | %MYPVPREFIX%MERCURY_01:1 |
-| MERCURY_01__TEMP_2 | 2 | %MYPVPREFIX%MERCURY_01:2 |
-| MERCURY_01__TEMP_3 | 3 | %MYPVPREFIX%MERCURY_01:3 |
-| MERCURY_01__TEMP_4 |   | %MYPVPREFIX%MERCURY_01:4 |
-| MERCURY_01__LEVEL_1 |   | %MYPVPREFIX%MERCURY_01:LEVEL:1 |
-| MERCURY_01__LEVEL_2 |   | %MYPVPREFIX%MERCURY_01:LEVEL:2 |
-| MERCURY_01__PRESSURE_1 |   | %MYPVPREFIX%MERCURY_01:PRESSURE:1 |
-| MERCURY_01__PRESSURE_2 |   | %MYPVPREFIX%MERCURY_01:PRESSURE:2 |
-| etc                   |   |                          |
+| Macro | IOC Name | 
+| ----  | -------- | 
+| MERCURY_01__TEMP_1 | %MYPVPREFIX%MERCURY_01:1 |
+| MERCURY_01__TEMP_2 | %MYPVPREFIX%MERCURY_01:2 |
+| MERCURY_01__TEMP_3 | %MYPVPREFIX%MERCURY_01:3 |
+| MERCURY_01__TEMP_4 | %MYPVPREFIX%MERCURY_01:4 |
+| MERCURY_01__LEVEL_1 | %MYPVPREFIX%MERCURY_01:LEVEL:1 |
+| MERCURY_01__LEVEL_2 | %MYPVPREFIX%MERCURY_01:LEVEL:2 |
+| MERCURY_01__PRESSURE_1 | %MYPVPREFIX%MERCURY_01:PRESSURE:1 |
+| MERCURY_01__PRESSURE_2 | %MYPVPREFIX%MERCURY_01:PRESSURE:2 |
+| etc                   |                          |
+
+To find out what values these macros should take, connect the mercury IOC and check the "System" tab on the opi, which will list the cards which are currently present. 
+
+Example: If the list of Temperature cards displayed on the system tab is ["MB1.T1", "DB1.T1", "DB2.T1"] you should set the following macros:
+- `TEMP_1`: `MB1.T1`
+- `TEMP_2`: `DB1.T1`
+- `TEMP_3`: `DB2.T1`
+- `TEMP_4`: (empty string)
 
 #### Important PVs
 
