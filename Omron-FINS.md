@@ -67,7 +67,7 @@ When using FINS over Ethernet, it can work with both TCP and UDP. FINS over TCP 
 
 When using FINS over UDP, the FINS frame is the part of the UDP packet after the UDP protocol specific header. The first 10 bytes of the FINS command frame represent the FINS frame header, and the rest of the frame represent either a command or a response, which have different formats. For FINS over TCP, after the TCP header and before the FINS frame there is a special FINS/TCP header used by FINS to handle TCP connections.
 
-Most of the FINS PLCs at ISIS use FINS over TCP ?. The Helium recovery PLC uses UDP. For more information about FINS in general, look at section 7-1 of the Ethernet manual. Section 7-3 offers detailed information about FINS over UDP.
+Most of the FINS PLCs at ISIS use FINS over TCP, The Helium recovery PLC uses UDP. For more information about FINS in general, look at section 7-1 of the Ethernet manual. Section 7-3 offers detailed information about FINS over UDP.
 
 There are some very useful diagrams showing the structure of FINS frames and FINS/TCP headers in the same folder as the manuals on the shares drive.
 
