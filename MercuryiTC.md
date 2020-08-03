@@ -78,11 +78,7 @@ In this example, the front panel (home screen) on the Mercury looks like:
 ![front panel showing 6 areas](backend_system/IOCs/MercuryITc/front_panel.jpg)
 
 NB The device should be in remote mode this is indicated by the *i* (bottom left) having an orange background.
-This mercury has 3 temperature sensors, Sample_Rod, VTI_DB6 and PT2_DB7, the VTI has a heater attached to the second temperature. This means it needs:
-
-- `TEMP_1` set to MB1, 
-- `TEMP_2` set to DB6, 
-- `TEMP_3` set to DB7, 
+This mercury has 3 temperature sensors, Sample_Rod, VTI_DB6 and PT2_DB7, the VTI has a heater attached to the second temperature.
 
 The temperature controls are on the 1st and 2nd temperature and so on the first and second tab on the mercury device screen. NB the device screen also needs these macros set.
 
@@ -110,3 +106,13 @@ This may be accompanied by an error in the ioc log:
 ```
 
 If this is the case, you need to get the latest version of `Mercury - Pressure.vi` from sourcesafe. Older versions had two parameters with the same name, which LvDCOM could not cope with correctly.
+
+### Cannot input IOC macros of the form `MB0.T1`
+
+You may need to rebuild ioc startups on the instrument - Release 7.1.0 initially shipped with a regex which was too restrictive and did not allow `.` as a character.
+
+To do this:
+- Ensure it is ok to shutdown ibex temporarily (i.e. check with scientist and ensure script/dae is not running)
+- Run `stop_ibex_server.bat`
+- Run `make iocstartups` from `C:\instrument\apps\epics` (it is ok if this complains about some missing directories)
+- Run `start_ibex_server.bat`
