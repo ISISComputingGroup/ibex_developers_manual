@@ -97,6 +97,10 @@ theta.add_angle_to(detector)
 
 This creates a theta component which points at the detector height.
 
+[See example](reflectometry-bench-configuration) for an exmaple of the bench component with parameters
+
+
+
 ## [Beamline Parameters](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Beamline-Parameters)
 
 These are the top-level parameters exposed as PVs of the form `<PREFIX>:REFL:PARAM:<NAME>:<SUFFIX>`, which the users can set via the reflectometry front panel or scripting.
