@@ -6,7 +6,7 @@ Most of the work done by the IOCs for the various FINS PLCs at ISIS consists of 
 
 The manuals referenced on this page can be found on the shares drive, in Manuals\OMRON_FINS_PLCs. There you can also find the images on this page.
 
-The Omron FINS is a PLC controlled via a driver first written at Diamond, see [here](https://github.com/ISISComputingGroup/EPICS-FINS). The IOC works by loading an instrument specific `FINS_01.cmd` in `configurations/fins`, which will load an instrument specific `db` from `ioc/master/FINS/db`. The dbs in here are usually created from a number of templates matching specific memory addresses to PVs. This is the case because PLCs used for different applications have different things stored in their memory, and to read/write various pieces of data the IOC needs to know the exact memory address for that data. Each individual PLC has its own memory map, which shows what memory address stores what thing, and each specific IOC is based on that.
+The Omron FINS is a PLC controlled via a driver first written at Diamond, see [here](https://github.com/ISISComputingGroup/EPICS-FINS). The IOC works by loading an instrument specific `FINS_01.cmd` in `configurations/fins`, which will load an instrument specific `db` from `ioc/master/FINS/db`. The dbs in here are usually created from a number of templates matching specific PLC memory addresses to PVs. This is the case because PLCs used for different applications have different things stored in their memory, and to read/write various pieces of data the IOC needs to know the exact memory address for that data. Each individual PLC has its own memory map, which shows what memory address stores what thing, and each specific IOC is based on that.
 
 Currently the following specific FINS PLC installations are supported in IBEX:
 
@@ -19,7 +19,7 @@ Currently the following specific FINS PLC installations are supported in IBEX:
 
 # Writing IOCs for FINS PLCs
 
-IOCs for FINS PLCs at ISIS use the EPICS asyn driver support to communicate with the PLC. For getting input from hardware, you need records to have an INP field such as:
+IOCs for FINS PLCs at ISIS use the EPICS asyn driver support to communicate with the PLC. For getting input from hardware, you need DB records to have an INP field such as:
 
 `
 field(INP,  "@asyn($(PORT), $(MEMORY_ADDRESS), 5.0) FINS_DM_READ")
@@ -51,7 +51,7 @@ This is used for reading 32 bit signed integers.
 
    `field(INP,  "@asyn(PLC, $(MEMORY_ADDRESS), 5.0) FINS_DM_READ_32")`
 
-This is used for reading 32 bit floating point numbers. Because the asyn interface has support for up to 64 bit floating point numbers, the FINS command coming from the EPICS record will ask for 4 bytes of memory, not two. But sending back only 2 bytes will be ok.
+This is used for reading 32 bit floating point numbers. The asyn interface has support only for 64 bit floating point numbers, but the FINS command asks for 4 bytes (32 bits) and then casts teh result to a double.
 
 # The FINS protocol
 
