@@ -6,7 +6,7 @@ The bench and theta interactions are particularly difficult to set up this page 
 
 The configuration is:
 
-```
+```python
     # Theta 
     # -----
     # (This is the component which specifies and reads theta, not the bench angle but coupled to it)
@@ -51,7 +51,7 @@ The configuration is:
 
 Items to note:
 
-1. Bench position in z is the place we want to pivot about not the front of the bench. So for a bench following the sample this is the sample point
+1. Bench position in z is the place we want to pivot about not the front of the bench. So for a bench following the sample this is the sample point. In the case of a forward bench I think it will pivot around the super mirror but we haven't talked about this with instrument scientists.
 1. The bench angle is the angle is makes with the incoming beam this is usually zero
 1. The seesaw parameter MUST be autosaved; this is because seesaw and angle are both defined by the relative jack positions
 1. The bench offset is the vertical offset of the bench.
