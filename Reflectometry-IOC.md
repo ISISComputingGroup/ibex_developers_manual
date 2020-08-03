@@ -75,3 +75,13 @@ Potential design changes:
 
 1. Add component for slit gap parameter
 1. Move displacement from movement strategy and place it in beam path calc
+
+## Specific Reflectometers
+
+Information pertaining to specific reflectometery setups on the instruments.
+
+- [CRISP](Reflectomtery_IOC_CRISP)
+- [INTER](Reflectomtery_IOC_INTER)
+- [POLREF](Reflectomtery_IOC_POLREF)
+- [SURF](Reflectomtery_IOC_SURF)
+
