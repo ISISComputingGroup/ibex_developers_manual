@@ -113,6 +113,10 @@ Check that the voltage limits are set high enough. If the readback voltage is eq
 
 IBEX may not have set remote mode correctly or something along those lines (noticed as part of checks on EMU). As a workaround until we have a fix, stop the Kepco X, Y and Z, Zero field controller and magnetometer IOCs and then start up the zerofield.vi in `LabView Modules\Muon Magnets\Zero Field Controller` for a few seconds. Then stop the zerofield.vi and first start up the Kepcos and then the Zero field controller and magnetometer IOCS.
 
+### I can set the gas flow to a larger percentage but not to a smaller one
+
+The needle valve may not be connected correctly, ask the scientists
+
 # Calibration
 
 The zero-field controller IOCs has macros for the number of Amps per mG expected of each power supply. These values are obtained by running a calibration routine, which is defined in the [InstrumentScripts](https://github.com/ISISNeutronMuon/InstrumentScripts/tree/master/technique/muon) repository and loaded into the instrument scripts.
