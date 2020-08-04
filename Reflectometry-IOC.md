@@ -78,7 +78,7 @@ Potential design changes:
 
 ## Specific Reflectometers
 
-Information pertaining to specific reflectomtery setups on the instruments.
+Information pertaining to specific reflectometry setups on the instruments.
 
 - [CRISP](Reflectomtery-IOC-CRISP)
 - [INTER](Reflectomtery-IOC-INTER)
