@@ -51,7 +51,7 @@ No, it does not mean that.  DPA-2018 & GDPR permits personal data to be processe
 Similarly, ISIS publishes the names of instrument scientists (i.e. local contact) on its web pages.  It is part of an instrument scientist's job that he/she is available for users (and potential users) to consult - hence they have consented for some personal information (e.g. name and a work e-mail address) to be used.
 
 Therefore, we are clear to use the `Users` and `RB Numbers` fields.
-   * Business Apps have confirmed that for proposals awarded beamtime, the `proposal title`, `abstract`, and `experimenter names` (both the `PI` and `Co-Is`) are public data for the following types of proposals:  Direct, Rapid, Dutch, Riken, and Indian Access. 
+   * Business Apps have confirmed that for proposals awarded beam time, the `proposal title`, `abstract`, and `experimenter names` (both the `PI` and `Co-Is`) are public data for the following types of proposals:  Direct, Rapid, Dutch, Riken, and Indian Access. 
    * Business Apps also state that information relating to ICRD proposals is not published.  ICRD = ISIS Collaborative R&D, meaning proposals made by industrial partners.  Identifiable information from ICRD proposals should not be displayed on the web-dashboard (i.e. the scientists should suppress the display of the `Experiment Title` and leave the `Users` field blank).
 
 Does this mean we can display any fields containing personal data on the web dashboard?  No, it does not.  We should only display those fields that a PI has consented to display.  In fact, on a precautionary basis, we should display no more information than is necessary.  The `Users` and `RB Number` fields are sufficient.  There is no need to display any more.
