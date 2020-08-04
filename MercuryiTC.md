@@ -123,4 +123,4 @@ Ensure that IOC macros have been set which correctly correspond to the cards in 
 
 ### Mercury is not reading a heater/needle valve correctly on a temperature/pressure card
 
-In the details screen of the OPI, check that the "associated heater channel" (for heaters) or "associated aux channel" (for needle valves) is not None. If it is None, check with the scientist/cryogenics whether a heater/needle valve should be configured for this channel.
+In the details screen of the OPI, check that the `associated heater channel` (for heaters) or `associated aux channel` (for needle valves) is not None. If it is None, check with the scientist/cryogenics whether a heater/needle valve should be configured for this channel.
