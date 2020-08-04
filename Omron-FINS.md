@@ -51,7 +51,7 @@ This is used for reading 32 bit signed integers.
 
    `field(INP,  "@asyn(PLC, $(MEMORY_ADDRESS), 5.0) FINS_DM_READ_32")`
 
-This is used for reading 32 bit floating point numbers. The asyn interface has support only for 64 bit floating point numbers, but the FINS command asks for 4 bytes (32 bits) and then casts teh result to a double.
+This is used for reading 32 bit floating point numbers. The asyn interface has support only for 64 bit floating point numbers, but the FINS command asks for 4 bytes (32 bits) and then casts the result to a double.
 
 # The FINS protocol
 
