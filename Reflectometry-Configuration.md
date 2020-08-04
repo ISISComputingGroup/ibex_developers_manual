@@ -30,7 +30,7 @@ These are fixed values which are exposed by the IOC as PVs of the form `<PREFIX>
 
 Also for the OPI we need constants:
 
-- `OPI`: Value is the directory names in which the OPI link panels are stored. E.g. on CRISP this is set to CRISP and the pnales are in `<GUI OPIs>\resources\reflectometry\crisp`. This allows for different instruments and configs to have different front panels.
+- `OPI`: Value is the directory names in which the OPI link panels are stored. E.g. on CRISP this is set to CRISP and the panels are in `<GUI OPIs>\resources\reflectometry\crisp`. This allows for different instruments and configs to have different front panels.
 
 ### Arguments
 
@@ -97,7 +97,7 @@ theta.add_angle_to(detector)
 
 This creates a theta component which points at the detector height.
 
-[See example](reflectometry-bench-configuration) for an exmaple of the bench component with parameters
+[See example](reflectometry-bench-configuration) for an example of the bench component with parameters
 
 
 
