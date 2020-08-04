@@ -1,4 +1,4 @@
-> [Wiki](Home) > [Project overview](Project-overview) > [Data Protection](Data Protection)
+> [Wiki](Home) > [Project overview](Project-overview) > [Data Protection](Data-Protection)
 
 Data protection is concerned with the fair and proper use of information about people. 
 
