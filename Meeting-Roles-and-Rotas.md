@@ -20,11 +20,14 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
 * Keep notes of the discussed points
 * Add them to the wiki with a link on the [main retrospective notes page](Retrospective-Notes)
 
+## Stand up:
+* This is a weekly role starting on the first working day in that week, with substitutes being decided daily if the named person is unavailable last minute - if you know you are unavailable for the week swap with someone
+* Load and share the web pages as detailed in the tabbed note in the announce channel in the team
+* Ensure everyone present has their chance to share progress, plans, and obstacles
 
 # Rotas
 
-
-| Chair | x for Done | Timekeeper | x for Done | Note taker | x for Done |Standup | x for Done |
+| Chair | x for Done | Timekeeper | x for Done | Note taker | x for Done | Stand up | x for Done |
 | --- | --- | --- | --- | --- | --- |--- | --- |
 | KB | | DK | | BR | |KB| x |
 | FA | | JK | | CC | |CC| |
