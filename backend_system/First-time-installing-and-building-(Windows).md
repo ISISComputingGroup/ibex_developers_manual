@@ -69,7 +69,7 @@ Whilst this is building you can independently continue with this guide (up until
 
 Please see [Building the GUI](Building-the-GUI).
 
-# Setting up the configurations & scripting directory
+## Setting up the configurations & scripting directory
 
 * Create the following folder structure: `C:\Instrument\Settings\config`
 
