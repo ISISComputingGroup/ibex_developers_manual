@@ -63,11 +63,7 @@ If you see `Error 2: file not found`, you may not have installed the correct win
 
 If you still have build errors (especially relating to seabreeze or astrium choppers, [look at the troubleshooting here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Astrium-Chopper#build-issues)
 
-Whilst this is building you can independently start [Building the GUI](Building-the-GUI).
-
-# Set up the CS-Studio archiver
-In `C:\Instrument\Apps\EPICS\CSS\master` run `setup_css.bat`
-this will create directories for the archive engine. in `.\css-win.x86_64`
+Whilst this is building you can independently continue with this guide (up until Set up the CS-Studio archiver).
 
 # Setting up the configurations & scripting directory
 
@@ -140,6 +136,11 @@ git clone http://control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/common.git C:
 ```
 
 The purpose and function of the calibration files are described [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Calibration-Files).
+
+# Set up the CS-Studio archiver
+Before doing this ensure that the `build.bat` started in a previous step has successfully completed.
+In `C:\Instrument\Apps\EPICS\CSS\master` run `setup_css.bat`
+this will create directories for the archive engine. in `.\css-win.x86_64`
 
 # Configure DAE for simulation mode on developer's computer / Register ISISICP
 
