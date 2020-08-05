@@ -65,6 +65,10 @@ If you still have build errors (especially relating to seabreeze or astrium chop
 
 Whilst this is building you can independently continue with this guide (up until Set up the CS-Studio archiver).
 
+# Building the GUI
+
+Please see [Building the GUI](Building-the-GUI).
+
 # Setting up the configurations & scripting directory
 
 * Create the following folder structure: `C:\Instrument\Settings\config`
@@ -155,17 +159,6 @@ this will create directories for the archive engine. in `.\css-win.x86_64`
 ```
 Unfortunately the /RegServer registration process doesn't report either success or failure. If, on later starting the ISISDAE IOC, you see lots of errors of the form "CoCreateInstanceEx (ISISICP) : Class not registered" then it means the /RegServer flag did not work. Try registering it again in case you were not Administrator when you tried it the first time. If you get messages about missing method/functions etc. it may mean a previous isisicp.exe registered successfully, but the newer one didn't - just try again as administrator
 
-# Building the GUI
-
-After following the above instructions please see [Building the GUI](Building-the-GUI).
-
-# VNC
-
-If you are supporting instruments it may be useful to download a VNC client. We have not settled on one that we all use but we have used:
-
- - tighVNC (just the client) which is available [here](http://www.tightvnc.com/)
- - VNC Viewer (just the client) which is available [here](https://www.realvnc.com/en/connect/download/viewer/)
-
 # Utilities
 
 Git clone (usually in c:\Instrument\Dev) the following utilities:
@@ -176,9 +169,20 @@ git clone https://github.com/ISISComputingGroup/ibex_utils.git
 git clone https://github.com/ISISComputingGroup/ConfigChecker.git
 ```
 
+## Optional Extras
+
+The following are not strictly required for general IBEX development. They will be useful if you are on the project for > 1 year but otherwise probably not worth installing.
+
+# VNC
+
+If you are supporting instruments it may be useful to download a VNC client. We have not settled on one that we all use but we have used:
+
+ - tighVNC (just the client) which is available [here](http://www.tightvnc.com/)
+ - VNC Viewer (just the client) which is available [here](https://www.realvnc.com/en/connect/download/viewer/)
+
 # NI DAQ
 
-It is recommended that developers only install this if they know that they will at some point be using a DAQ mx, if you are only on the project for a few months this is unlikely to be the case. If you do not do this step, you will be unable to run certain IOCs (e.g. riken power supplies, muon separator), and consequently some of their tests will fail.
+It is recommended that developers only install this if they know that they will at some point be using a DAQ mx. If you do not do this step, you will be unable to run certain IOCs (e.g. riken power supplies, muon separator), and consequently some of their tests will fail.
 
 Some IOCs depends on DAQMX binaries from national instruments. Go to http://sine.ni.com/psp/app/doc/p/id/psp-268 or if not go here https://www.ni.com/en-gb/support/downloads/drivers/download.ni-daqmx.html#311818
 and download the latest DAQMX drivers. When installing, ensure you check the box to install DAQMX.
