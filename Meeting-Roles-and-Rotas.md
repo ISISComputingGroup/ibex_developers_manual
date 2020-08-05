@@ -24,23 +24,30 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
 # Rotas
 
 
-| Chair | x for Done | Timekeeper | x for Done | Note taker | x for Done |
-| --- | --- | --- | --- | --- | --- |
-| KB | | DK | | BR | |
-| FA | | JK | | CC | |
-| DO | | CC | | JK | |
-| JK | | BR | | TL | |
-| TL | | KB | | KB | |
-| DK | | FA | | MS | |
-| KB | | TL | | | |
-| FA | | CMS | | | |
-| DO | | BR | | | |
-| DK | | CC | | | |
-| KB | | MS | | | |
-| DO | | AL | | | |
-| TL | | FA | | | |
-| CC | | DK | | | |
-| FA | | DO | | | |
-| BR | | AL | | | |
-| JK | | CMS | | | |
-| AL | | DO | | | |
+| Chair | x for Done | Timekeeper | x for Done | Note taker | x for Done |Standup | x for Done |
+| --- | --- | --- | --- | --- | --- |--- | --- |
+| KB | | DK | | BR | |KB| x |
+| FA | | JK | | CC | |CC| |
+| DO | | CC | | JK | |FA| |
+| JK | | BR | | TL | |TL| |
+| TL | | KB | | KB | |AD| |
+| DK | | FA | | MS | |DO| |
+| KB | | TL | |  | |DK| |
+| FA | | CMS | |  | |JK| |
+| DO | | BR | |  | |TL| |
+| DK | | CC | |  | |BR| |
+| KB | | MS | |  | |CC| |
+| DO | | AL | |  | |DK| |
+| TL | | FA | |  | |DO| |
+| CC | | DK | |  | |DK| |
+| FA | | DO | |  | |JK| |
+| BR | | AL | |  | |KB| |
+| JK | | CMS | |  | |FA| |
+| AL | | DO | |  | |DO| |
+|  | |  | |  | |MS| |
+|  | |  | |  | |AL| |
+|  | |  | |  | |CMS| |
+|  | |  | |  | |BR| |
+|  | |  | |  | |TL| |
+|  | |  | |  | |FA| |
+|  | |  | |  | |KB| |
