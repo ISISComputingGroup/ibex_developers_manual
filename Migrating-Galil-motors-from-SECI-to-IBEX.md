@@ -170,7 +170,7 @@ Open this VI, put the computer name as `IN` and the username as `(INSTNAME):MOT`
 
 Copy these caput commands into a batch file. Look through the file for the extra checks you need to do.
 
-    - For initialisation commands (i.e. in the Initialisation box on the SECI motor setup) these can be added to a `.PREM` field note that they should be specific to the axis so they may need to be moved, e.g. `KSA` should be on axis `01`.
+- For initialisation commands (i.e. in the Initialisation box on the SECI motor setup) these can be added to a `.PREM` field note that they should be specific to the axis so they may need to be moved, e.g. `KSA` should be on axis `01`.
 
 Make sure the motors can be homed  or are at zero or are not connected then open an EPICS terminal and run that batch file. They need to be at 0/disconnected/can be homed because setting a motor/encoder resolution will change the positions set in the galil. This will apply the settings to the Galil under IBEX. These settings should then be autosaved but **you must wait at least 30s after applying the value before restarting the IOC if you need to restart the IOC**.
 
