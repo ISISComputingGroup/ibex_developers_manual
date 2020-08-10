@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > [Motor IOCs](Motor-IOCs) > [Galil](Galil) > [Galil userdef records](Galil-Userdef-Records)
+
 ## Galil Usedef records
 
 the `galil_userdef_records.template` file in support/galil provides a mechanism to associate EPICS ai/ao records with a variable in the galil, the epics PV name and galil variable name can be specified as macros when the template is loaded.
