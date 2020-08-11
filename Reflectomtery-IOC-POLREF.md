@@ -10,3 +10,10 @@ Slit 3 can also be set into beam blocker mode; south jaw in horizontal mode, eas
 ### Components on the Bench
 
 Components that are on the bench do not track the beam in the same way as normal components. They rely on the underlying bench to track the beam and then their positions are just relative to the bench. This will in effect look the same as if they were tracking the beam but they don't.
+
+### Blocks
+
+Blocks that may be confusing:
+
+- `Height`: Distance from the sample centre of rotation to the sample. This is used to align the sample with the beam.
+- `Height2`: Distance between the beam and the centre of rotation; usually set a 0. This moves the course z stage tracking the beam.
