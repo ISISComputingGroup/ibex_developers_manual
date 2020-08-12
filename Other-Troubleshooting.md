@@ -55,3 +55,7 @@ See also [Ticket 4201](https://github.com/ISISComputingGroup/IBEX/issues/4201) f
 # Beam Logger details not updating
 
 If PVs are visible in R3 then probably the gateway on the control service machine need to be updated.
+
+# User says they can not see their nexus data files on external machine
+
+See [DAE-Trouble-Shooting](DAE-Trouble-Shooting#user-says-they-can-not-see-their-nexus-data-files-on-external-machine)
