@@ -52,6 +52,15 @@ Field are separated by spaces. The fields are:
 
 Often these files are calculated from xml files using the sample changer support module.
 
+### Example file
+
+```
+$(IFIOC_GALIL_04) epicsEnvSet "LOOKUPFILE1" "$(ICPCONFIGROOT)/motionSetPoints/monitor3.txt"
+$(IFIOC_GALIL_04) motionSetPointsConfigure("LOOKUPFILE1","LOOKUPFILE1")
+$(IFIOC_GALIL_04) dbLoadRecords("$(MOTIONSETPOINTS)/db/motionSetPoints.db","P=$(MYPVPREFIX)LKUP:MON3:,NAME1=linear,AXIS1=$(MYPVPREFIX)MOT:MONITOR3,TOL=0.1,LOOKUP=LOOKUPFILE1")
+$(IFIOC_GALIL_04) dbLoadRecordsLoop("$(MOTIONSETPOINTS)/db/inPos.db","P=$(MYPVPREFIX)LKUP:MON3:,NAME1=linear,AXIS1=$(MYPVPREFIX)MOT:MONITOR3,TOL=0.1,LOOKUP=LOOKUPFILE1", "NUMPOS", 0, 2)
+```
+
 # OPI
 
 There are two motion set point OPIs:
