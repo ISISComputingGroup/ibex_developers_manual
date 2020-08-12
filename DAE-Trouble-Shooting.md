@@ -297,3 +297,15 @@ e.g. `"c:\labview modules\dae\JournalParser.exe" LOQ 00108032 cycle_19_3 "c:\dat
 ###  CRPT is not initialised - please set experiment parameters
 
 Ensure you have loaded the correct Time Channels and Data Acquisition tables in the Experiment setup tab of the DAE perspective. Reloading them causes initialisation.
+
+### User Says they Can Not see there Nexus Data files on external machine
+
+After a run the data files should be copied to an external archive so that the users can do more processing. If the user can not get these then there can be multiple causes and it depends exactly where they are looking. The first thing to check is that the machine is copying the files correctly in the post 
+end run script. The log for this is stored at `C:\Data\log\post_command_<day>.log`. If there is a problem rectify the problem, possible causes are:
+
+- mapped drive (`d:`) is not connected properly: often double clicking on the drive is enough to get it remapped
+- something else: fix and document here
+
+After fixing the issues the files will be copied after the next run is finished. So start and end a run (with a test like title), you may also want to put it in simulation mode if the DAE is switched off. Finally check the files have appeared in `<isis instrument folder>\<machine name>\Instrument\data\cycle_<cycle number>`.
+
+
