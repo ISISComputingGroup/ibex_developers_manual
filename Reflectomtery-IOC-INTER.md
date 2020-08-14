@@ -17,3 +17,11 @@ The following were unused axes on August 2020:
 The `SM2 AngleEnc` is the axis which has the SM2 angle encoder connected to enable us to record the encoder and motor position separately.
 
 They don't currently use the detector z axis so we don't need to have this in the reflectometry server
+
+
+### Blocks
+
+Blocks that may be confusing:
+
+- `Height`: Distance from the sample centre of rotation to the sample. This is used to align the sample with the beam.
+- `Height2`: Distance between the beam and the centre of rotation; usually set a 0. This moves the course z stage tracking the beam.
