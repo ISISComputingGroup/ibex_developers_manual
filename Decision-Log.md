@@ -48,3 +48,7 @@ A place to record decisions:
 17. Helium level meters and other such items should be put on the domain "HA" (Hall) with no instrument identifier. So that the pv would be "HA:HLM:LEVEL1" to achieve this the IOC should run with a blank `PVPREFIX` and the IOC should have `HA` in its IOC prefix. This is to make it the same as central services which runs with a blank prefix because it runs IOCs in multiple domains. We don't need the machine identifies for hall based services because it is not really anything to do with the machine unlike the instrument pvs.
     - Present: Alex, John, Kathryn, Freddie, Dom
     - 08/07/2020
+
+18. Motion setpoints based on bare motors will no longer be supported in IBEX. This is to make the code simpler, as we move towards many multiple axes in [#4573](https://github.com/ISISComputingGroup/IBEX/issues/4573) and motion setpoints more robust to motor failure. All motors should support the axes record so this should not be a problem. For more esoteric motors which need to be used on short notice it is fairly easy to either add a motor axes on top of the motor record by adding something on the form`< $(SM300CONFIG)/axes.cmd` or moving the axis to the required positions in a script.
+    - Present: Dom, John, Kathryn, Tom
+    - 14/08/2020
