@@ -66,3 +66,5 @@ $(IFIOC_GALIL_04) dbLoadRecordsLoop("$(MOTIONSETPOINTS)/db/inPos.db","P=$(MYPVPR
 There are two motion set point OPIs:
 * Motion Set Point (Few): For setpoints with only 3 or 4 positions
 * Motion Set Point: For setpoints with many positions
+
+# Upgrading from 7.2.0
