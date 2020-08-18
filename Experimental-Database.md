@@ -30,3 +30,4 @@ The populator is installed on the linux server control-svcs. This can be accesse
 ```
 20 * * * * sh /home/epics/RB_num_populator/rb_number_populator.sh > /tmp/rb_num_pop.out 2>&1
 ```
+To update the populator, simply `git pull` in the above directory as `epics`.
