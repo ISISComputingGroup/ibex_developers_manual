@@ -1,6 +1,7 @@
 # The IBEX Project
 
 [Editing the Wiki](Editing-the-Wiki)
+[Providing Support](Providing-Support)
 
 ## Project 
 
