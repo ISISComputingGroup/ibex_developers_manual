@@ -19,7 +19,7 @@ Most important:
   - You answer the support phone when it rings
 In hours:
   - You keep an eye on the Experiment Controls inbox and follow through to see that any issues are resolved, these are echoed in Teams where they can be discussed and uses the same indications as the flash reviews to indicate whether or not the issue is being or has been dealt with
-  - You keep an eye on Nagios (either via the website or if you receive mssages that way) and look to resolve issues as appropriate - ask if help is needed or it is unclear
+  - You keep an eye on Nagios (either via the website or if you receive messages that way) and look to resolve issues as appropriate - ask if help is needed or it is unclear
 Out of hours:
   - Just focus on the most important things!
 
@@ -33,7 +33,7 @@ There are a number of tips for [trouble shooting](trouble-shooting-pages) alread
 
   1. Greet the caller with something that tells them they are talking to the right team, e.g. just respond with "ISIS Experiment Controls Support"
   1. Make a note* of the time
-  1. Make a note* of the name of the insturment and the name or at least the role of the caller, if possible - somtimes they are quick and you don't get to catch it, or they don't actually say who it is. These calls can be from users in cabins, or from the MCR, knowing who called you about the problem can help if others need to follow it up.
+  1. Make a note* of the name of the instrument and the name or at least the role of the caller, if possible - sometimes they are quick and you don't get to catch it, or they don't actually say who it is. These calls can be from users in cabins, or from the MCR, knowing who called you about the problem can help if others need to follow it up.
   1. Make a note* of the basic problem.
   1. If you can solve the problem do so, if you can't start finding the appropriate answers in this guide or by reaching out to others.
 
@@ -48,7 +48,7 @@ There are a number of tips for [trouble shooting](trouble-shooting-pages) alread
     - If it is the NDX or NDH, we care, look at the next steps, there are a small subset of other systems we support that others might be logging into (TODO: List of the systems we are willing to look at). 
     - Anything else, NDC, NDL, NDW:
       - in office hours refer them to the service desk
-      - out of hours if you can help do so, but this is a best efforts offering, and you might not be able to do anything. If you can't resolve the issue out of thes service desk hours, there is no easy escalation option. An inability to log in due to incorrect passwords will fail over after a length of time, but most of us cannot access Active Directory to reset it, so they will have to find a way around it differently.
+      - out of hours if you can help do so, but this is a best efforts offering, and you might not be able to do anything. If you can't resolve the issue out of the service desk hours, there is no easy escalation option. An inability to log in due to incorrect passwords will fail over after a length of time, but most of us cannot access Active Directory to reset it, so they will have to find a way around it differently.
     - If attempting to connect to EMMA, remember the -A
   1. Unable to connect to NDX via RDP
     - Try yourself to RDP, if you can ask reporter to try again, if they can't it is a connectivity issue for the system they are using to site, in hours refer them to the service desk, out of hours this is best efforts. (TODO: pages with info for best efforts on network connections for on site, referal info to service desk etc. for out of hours)
@@ -114,7 +114,6 @@ There are a number of tips for [trouble shooting](trouble-shooting-pages) alread
 <details>
   <summary>Checking Nagios</summary>
   
-  ### Checking Nagios
   1. This is usually considered during the daily stand up
   1. Out of cycle we only worry about the most critical items
   1. In cycle there are more things to be aware of and waiting until the next stand up meeting can be too long
