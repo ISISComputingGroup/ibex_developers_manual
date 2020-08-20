@@ -69,11 +69,13 @@ There are a number of tips for [trouble shooting](trouble-shooting-pages) alread
   <summary>Device issues</summary>
 
   1. I can't talk to device/my blocks are showing as disconnected/IOC isn't working
-    - Check that the IOC is running
-    - Check that the device is turned on
-    - Check the cabling etc.
-    - If the device is a DAQmx one, look at it in MAX, and perform a self-test
-    - (TODO: Complete this section)
+      - Check that the IOC is running
+      - Check that the device is turned on
+      - If the device is a DAQmx one, look at it in MAX, and perform a self-test
+      - Device not responding
+          * Stop the IOC (or VI) and try to connect via a more direct route, e.g. Putty
+          * Check the cabling, and that ports etc. are correct
+      - (TODO: Complete this section)
   1. I can't use this button to get to more details/why doesn't this bit of the OPI work
     - Check they are in manager mode
   1. I need to add this device to my system
