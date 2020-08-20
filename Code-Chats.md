@@ -9,6 +9,7 @@ Code chats occur on a semi-regular monthly basis within the group at ISIS. Altho
 Topic | Presenter | Date
 ----- | --------- | ----
 Review techniques | Group | 3rd September '20
+DAQMx and Moxa DIO devices | Alistair | 28th September '20
 ISISICP (and Kafka?) | Freddie | Oct '20
 The HIFI Cryomag | Chris C/Kathryn | Nov '20
 ? | ? | Dec '20
