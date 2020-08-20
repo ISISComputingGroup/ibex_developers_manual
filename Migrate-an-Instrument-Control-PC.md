@@ -83,6 +83,7 @@ In the migration phase, IBEX will be physically installed and configured on the 
 1. Check that the instrument has the latest version of the LabVIEW Galil driver and update from SourceSafe if not (make backup of existing driver first).  On startup, the VI removes the software limits that the EPICS driver uses and allows SECI to function as before - which will need to happen when switching back and forth between IBEX and SECI during testing.
 1. Check that we are able to switch back to SECI if necessary, test features commonly used on the beamline e.g. motors for ref, starting and stopping runs etc.
    - This should be documented of how it was successful and what steps were required
+1. Before using start_ibex_server_close_seci.bat move <seci_configuration>/configuration/globals.txt to <ibex_configuration>/configuration/globals_seci.txt
 
 # How to review
 
