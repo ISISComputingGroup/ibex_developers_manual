@@ -30,8 +30,8 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
 | Chair | x for Done | Timekeeper | x for Done | Note taker | x for Done | Stand up | x for Done |
 | --- | --- | --- | --- | --- | --- |--- | --- |
 | KB | x | DK | x | CC | x |KB| x |
-| FA | x | JK | | BR | |CC| x |
-| DO | | CC | | JK | |FA| |
+| FA | x | JK | x | BR | |CC| x |
+| DO | x | CC | | JK | |FA| x |
 | JK | | BR | | TL | |TL| |
 | TL | | KB | | KB | |AD| |
 | DK | | FA | | MS | |DO| |
