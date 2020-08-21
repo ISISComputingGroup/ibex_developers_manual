@@ -45,15 +45,15 @@ There are a number of tips for [trouble shooting](trouble-shooting-pages) alread
   <summary>I can't log in to *** computer</summary>
 
   1. What is the name of the computer? 
-    - If it is the NDX or NDH, we care, look at the next steps, there are a small subset of other systems we support that others might be logging into (TODO: List of the systems we are willing to look at). 
+    - If it is the NDX or NDH, we care, look at the next steps, there are a small subset of other systems we support that others might be logging into which will be listed in the older SharePoint along with the access information as appropriate. 
     - Anything else, NDC, NDL, NDW:
       - in office hours refer them to the service desk
       - out of hours if you can help do so, but this is a best efforts offering, and you might not be able to do anything. If you can't resolve the issue out of the service desk hours, there is no easy escalation option. An inability to log in due to incorrect passwords will fail over after a length of time, but most of us cannot access Active Directory to reset it, so they will have to find a way around it differently.
     - If attempting to connect to EMMA, remember the -A
   1. Unable to connect to NDX via RDP
-    - Try yourself to RDP, if you can ask reporter to try again, if they can't it is a connectivity issue for the system they are using to site, in hours refer them to the service desk, out of hours this is best efforts. (TODO: pages with info for best efforts on network connections for on site, referal info to service desk etc. for out of hours)
+    - Try yourself to RDP, if you can ask reporter to try again, if they can't it is a connectivity issue for the system they are using to site, in hours refer them to the service desk, out of hours this is best efforts. Check the ISIS Computing O365 SharePoint for more information.
     - Check ping to the NDX, and to the NDH
-    (TODO: Complete this section)
+      - If there are any issues with these pings, following the instructions relating to them and the DRACs  in the older SharePoint
   1. Wrong password entered too many times on anything other than NDX
     - We can't resolve this
 </details>
@@ -75,18 +75,31 @@ There are a number of tips for [trouble shooting](trouble-shooting-pages) alread
       - Device not responding
           * Stop the IOC (or VI) and try to connect via a more direct route, e.g. Putty
           * Check the cabling, and that ports etc. are correct
-      - (TODO: Complete this section)
+      - If the device is unable to interact in any way, refer this to the appropriate hardware team (via the MCR out of hours)
+      - If the device responds via a more direct route, but not via the IOC/VI
+          * Make sure the settings in the IOC/VI are correct
+          * If the IOC/VI have been updated since the device last worked correctly, roll back to a version that is known to work, and raise a ticket to investigate the issue and find a more sustainable solution
   1. I can't use this button to get to more details/why doesn't this bit of the OPI work
     - Check they are in manager mode
   1. I need to add this device to my system
-    - (TODO: Fill in this whole section, or link to the users manual)
+    - Check [the user manual](https://github.com/ISISComputingGroup/ibex_user_manual/wiki) for IBEX, for SECI, if you don't know already ask someone else
   1. My motor won't move
-    - Is any of the other information updating?
+    - Is any of the other information updating for that motor controller?
       Yes: Go to next consideration
-      No: Under IBEX go to the engineering device screen, under SECI open the advanced motor functions and go to the console tab, do not send any characters but send a command, if the response is anything but `:` then the Galil is in a fault mode of some kind which will involve restarts etc. (TODO: What to do with a dead Galil)
-    - (TODO: Complete this section)
+      No: Under IBEX go to the engineering device screen, under SECI open the advanced motor functions and go to the console tab, do not send any characters but send a command, if the response is anything but `:` then the Galil is in a fault mode of some kind which will involve restarts etc.
+          * If the Galil is unresponsive refer it to EUSG via the MCR 
+    - Looking at the specific motor:
+        - Are you trying to move in the same direction as an active limit switch?
+          Yes: Try moving in the other direction, if you can move that way to a requested position all is fine
+        - Are you able to move in either direction?
+          No: Check for hardware faults (potentially as a referal to EUSG via the MCR)
+        - If it is able to move, is the encoder trackign in the same direction as the requested motion?
+          No: The motor setup is probably incorrect, recommission the motor
+          Yes: Feel bewildered as this should be a moving motor
   1. My device isn't behaving as I expect
-    - (TODO: Fill in this whole section)
+    - Verify that the device expected on that port is the device connected on that port
+    - Treat it as a device that is unable to interact
+    - Check the error logs (either through the log interface in the GUI, the console logs, or other appropriate method)
 
 </details>
 
