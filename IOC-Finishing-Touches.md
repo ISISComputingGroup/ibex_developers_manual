@@ -144,3 +144,8 @@ at EPICS top level and make sure it completes ok
 ## 11. Add IOC to EPICS hardware list
 
 Once the IOC is reviewed and tested with hardware, [add it to the EPICS hardware list](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Add-ioc-to-epics-hardware-list)
+
+## 12. Initialising Setpoints
+
+*TRIAL* remove when someone has tried. 
+Setpoint pvs should have undefined field be initialised using `field("UDFS", NO_ALARM)` this means that they can have alarm sensitive borders but will not alarm if they have never been set.
