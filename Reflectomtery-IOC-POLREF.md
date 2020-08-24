@@ -25,7 +25,7 @@ It is hard to know which parameters to autosave and which not to. Probably with 
 
 # Initial Testing
 
-[Testing results are here](reflectometers\tests_POLREF_2020_08_20.xlsx).
+[Testing results are here](reflectometers/tests_POLREF_2020_08_20.xlsx).
 
 Issues were:
 
@@ -43,15 +43,15 @@ Issues were:
     - Gimbal is wrong in SECI
     - PSI and CHI was my mistake in the config the motors are gonio upper and lower and I guessed the wrong way round. Now fixed in config.
 1. Stop_ibex_server_start_seci does not finish. It starts seci but waits for SECI to finish, which is not what we want. Make it start in separate consol.
-    - https://github.com/ISISComputingGroup/IBEX/issues/5651 
+    - [#5651](https://github.com/ISISComputingGroup/IBEX/issues/5651) 
 1. There was an error loading programs into SECI this has been fixed by combining programs in the galil.
 1. There is something wrong with the bench movement. We think that it is because it was not synced and the max bench angle had not been implemented. (Extra note we tried moving it and then unsynced the movement of the slide, then reveresed the slide we never resynced the movement)
-    - We should retest this after completing [5541](https://github.com/ISISComputingGroup/IBEX/issues/5541) 
+    - We should retest this after completing [#5541](https://github.com/ISISComputingGroup/IBEX/issues/5541) 
 1. Jaw 1 was synchronised and should not be (jaws in general are not synchronised to avoid clashing).
     - Changed in config
 1. Some errors in the logs for which I have created tickets
-    - [5649](https://github.com/ISISComputingGroup/IBEX/issues/5649)
-    - [5650](https://github.com/ISISComputingGroup/IBEX/issues/5650)
+    - [#5649](https://github.com/ISISComputingGroup/IBEX/issues/5649)
+    - [#5650](https://github.com/ISISComputingGroup/IBEX/issues/5650)
 1. Height and Height2 point at the same thing on the OPI
     - Corrected in master
 1. Check backlash on slits is ok, currently move is towards centre of slit them slowly out to position.
