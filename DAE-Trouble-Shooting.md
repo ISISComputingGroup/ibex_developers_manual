@@ -103,85 +103,15 @@ From an issue in Ticket https://github.com/ISISComputingGroup/IBEX/issues/3099 -
 
 ```
 [2018-04-09 15:26:49] sevr=major  setDCEventMode: Unknown detector card 3
-
 [2018-04-09 15:26:49]  setDCCardMode: Unknown detector card 3
-
 [2018-04-09 15:26:49]  setDCEventMode: Unknown detector card 4
-
 [2018-04-09 15:26:49]  setDCCardMode: Unknown detector card 4
-
-[2018-04-09 15:26:49]  setDCEventMode: Unknown detector card 5
-
-[2018-04-09 15:26:49]  setDCCardMode: Unknown detector card 5
-
-[2018-04-09 15:26:49]  setDCEventMode: Unknown detector card 6
-
-[2018-04-09 15:26:49]  setDCCardMode: Unknown detector card 6
-
-[2018-04-09 15:26:49]  setDCEventMode: Unknown detector card 7
-
-[2018-04-09 15:26:49]  setDCCardMode: Unknown detector card 7
-
-[2018-04-09 15:26:49]  setDCEventMode: Unknown detector card 8
-
-[2018-04-09 15:26:49]  setDCCardMode: Unknown detector card 8
-
-[2018-04-09 15:26:49]  setDCEventMode: Unknown detector card 9
-
-[2018-04-09 15:26:49]  setDCCardMode: Unknown detector card 9
-
-[2018-04-09 15:26:49]  setDCEventMode: Unknown detector card 10
-
-[2018-04-09 15:26:49]  setDCCardMode: Unknown detector card 10
-
 [2018-04-09 15:26:49]  Cannot find card for crate 3
-
 [2018-04-09 15:26:49]  Unknown detector card 3
-
 [2018-04-09 15:26:49]  Cannot find card for crate 4
-
 [2018-04-09 15:26:49]  Unknown detector card 4
-
-[2018-04-09 15:26:49]  Cannot find card for crate 5
-
-[2018-04-09 15:26:49]  Unknown detector card 5
-
-[2018-04-09 15:26:49]  Cannot find card for crate 6
-
-[2018-04-09 15:26:49]  Unknown detector card 6
-
-[2018-04-09 15:26:49]  Cannot find card for crate 7
-
-[2018-04-09 15:26:49]  Unknown detector card 7
-
-[2018-04-09 15:26:49]  Cannot find card for crate 8
-
-[2018-04-09 15:26:49]  Unknown detector card 8
-
-[2018-04-09 15:26:49]  Cannot find card for crate 9
-
-[2018-04-09 15:26:49]  Unknown detector card 9
-
-[2018-04-09 15:26:49]  Cannot find card for crate 10
-
-[2018-04-09 15:26:49]  Unknown detector card 10
-
 [2018-04-09 15:26:49]  Attempt to use missing detector card/crate 3
-
 [2018-04-09 15:26:49]  Attempt to use missing detector card/crate 4
-
-[2018-04-09 15:26:49]  Attempt to use missing detector card/crate 5
-
-[2018-04-09 15:26:49]  Attempt to use missing detector card/crate 6
-
-[2018-04-09 15:26:49]  Attempt to use missing detector card/crate 7
-
-[2018-04-09 15:26:49]  Attempt to use missing detector card/crate 8
-
-[2018-04-09 15:26:49]  Attempt to use missing detector card/crate 9
-
-[2018-04-09 15:26:49]  Attempt to use missing detector card/crate 10
-
 [2018-04-09 15:26:49] : Exception occurred.
 ```
 
