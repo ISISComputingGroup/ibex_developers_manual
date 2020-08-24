@@ -170,9 +170,10 @@ Open this VI, put the computer name as `IN` and the username as `(INSTNAME):MOT`
 
 Copy these caput commands into a batch file. Look through the file for the extra checks you need to do.
 
+- At the top set a echo to make sure that it is run intentionally and a pause and wait for the user to press a key.
 - For initialisation commands (i.e. in the Initialisation box on the SECI motor setup) these can be added to a `.PREM` field note that they should be specific to the axis so they may need to be moved, e.g. `KSA` should be on axis `01`.
 
-Make sure the motors can be homed  or are at zero or are not connected then open an EPICS terminal and run that batch file. They need to be at 0/disconnected/can be homed because setting a motor/encoder resolution will change the positions set in the galil. This will apply the settings to the Galil under IBEX. These settings should then be autosaved but **you must wait at least 30s after applying the value before restarting the IOC if you need to restart the IOC**.
+Make sure the motors can be homed or are at zero or are not connected then open an EPICS terminal and run that batch file. They need to be at 0/disconnected/can be homed because setting a motor/encoder resolution will change the positions set in the galil. This will apply the settings to the Galil under IBEX. These settings should then be autosaved but **you must wait at least 30s after applying the value before restarting the IOC if you need to restart the IOC**. You can also run the script on simulated motors but be aware you must run the use encoder setting again once talking to real motors. This means positions will not be reapplied when resolution is changed.
 
 Now test both the homing and positions to make sure they are the same as in Labview. This appears not to work correctly with absolute encoders so double check these axes see [ticket 2985](https://github.com/ISISComputingGroup/IBEX/issues/2985). 
 - If the home offset was set in Labview you need to home if you switch from Labview to IBEX. If you think this is going to be an issue for the scientists then you should consider leaving the HOMEVAL set to the value and set the offset to zero for a cycle while they get used to IBEX. Be aware though this will mean that on home this causes the bench to drift.
