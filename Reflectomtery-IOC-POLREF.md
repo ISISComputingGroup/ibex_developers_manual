@@ -25,7 +25,7 @@ It is hard to know which parameters to autosave and which not to. Probably with 
 
 # Initial Testing
 
-Spreadsheet is here.
+[Testing results are here](reflectometers\tests_POLREF_2020_08_20.xlsx).
 
 Issues were:
 
