@@ -195,6 +195,20 @@ isisicp.simulation.detcards.crate2.number = 12
 
 If you have defined `isisisp.datadae.use = true` in `isisicp.properties` then you need to make sure the detector card referred to in data_dae.xml  is created by above. If this is a pure setup/test machine rather than a real instrument, you may just want to set `isisisp.datadae.use = false`
 
+### Real DAE complains about missing cards
+If you see messages like
+```
+setDCEventMode: Unknown detector card 1
+setDCCardMode: Unknown detector card 1
+Attempt to use missing detector card/crate 1
+Unknown detector card 
+```
+when trying to BEGIN on a real DAE, then there are two likely causes:
+- you are loading a wiring table that is specifying cards that do no exist, you need to correct the wiring table
+- The ICP has not detected all the cards you believe are present in the DAE, hence they appear to be "missing" or "unknow"
+
+If the wiring table is correct, try a restart of the ISISICP - the DAE is only scanned at program startup, it might be the DAE hardware was not feeling very responsive first time around. If this doesn't help, then it may be the detector card has failed, or it could be the hardware is in a strange state and needs a reset. Electronics group have programs that can do this.  
+
 ### DAE exception messages
 
 If you get an error in you IOC log like:
