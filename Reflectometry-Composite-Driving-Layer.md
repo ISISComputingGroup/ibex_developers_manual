@@ -36,10 +36,10 @@ park_high = OutOfBeamPosition(position=20)
 park_low = OutOfBeamPosition(position=-10, threshold=15, tolerance=0.5)
 driver = DisplacementDriver(comp, out_of_beam_positions=[park_high, park_low])
 ```
-- `position`:  the position along the movement axis where this component should be parked, this excludes engineering correction; if this is in offset mode this is the offset from the beam and does include engineering corrections
+- `position`:  the position along the movement axis where this component should be parked, this will include any engineering correction; if this is in offset mode this is the offset from the beam
 - `threshold`: if the interception between the beam path and the movement axis is _above this height_, this `position` should be chosen as parked position. If this is `None`, this signifies that this is the _only_, or _default out-of-beam position_, i.e. the out-of-beam position to use if no other threshold is met. (defaults to `None`)
 - `tolerance`: the tolerance around `position` at which this component is still considered "out of beam" (defaults to `1`)
-- `is_offset`: if `True` then the position acts as an offset from the beam and final motor set point will include any engineering corrections (default yo `False`)
+- `is_offset`: if `True` then the position acts as an offset from the beam and final motor set point (defaults to `False`)
 
 So moving `comp` out of the beam while the beam intersects the axis at a height below 15 will move it to `park_high` = 20. If it is moved out of beam  while the intersection is above 15 (let's say for a high theta angle), it will instead move to `park_low` = -10, in order to not block the beam while parked.
 
