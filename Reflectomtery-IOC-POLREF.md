@@ -31,7 +31,7 @@ Issues were:
 
 1. On running the routine for transferring the SECI motor setups to IBEX, all the encoders were turned off. This may be a one off thing but still it should happen.
     - This was because I ran the original motor setup in sim mode. Yes this should not happen, I have added it to the information page so it won’t happen again.
-1. There was a request for a command in python for interrogating a motor e.g “pos Phi”  and it tells you all sorts of things about phi like its position offset limits etc. that could then be used in a script.
+1. There was a request for a command in python for interrogating a motor e.g `pos Phi`  and it tells you all sorts of things about phi like its position offset limits etc. that could then be used in a script.
     - We will probably never get to this if we put it on our list. I will send some details describing how you might create such a script let me know if you need help.
 1. There again also seemed to be an issue with High and low limits being the wrong way around as well as directions not being correct after the transfer. 
     - For all axes on the spreadsheet I have confirmed that they are wrong in SECI; there is nothing we can do about this.
@@ -42,10 +42,10 @@ Issues were:
 1. Labels that were the wrong way around such as the laser Gimbal axes theta and chi. We swapped them but not necessarily in the config, Also for some reason the PolREF sample stage had phi and Psi the wrong way around and again I am not sure they were swapped to the correct position fully.
     - Gimbal is wrong in SECI
     - PSI and CHI was my mistake in the config the motors are gonio upper and lower and I guessed the wrong way round. Now fixed in config.
-1. Stop_ibex_server_start_seci does not finish. It starts seci but waits for SECI to finish, which is not what we want. Make it start in separate consol.
+1. `Stop_ibex_server_start_seci` does not finish. It starts seci but waits for SECI to finish, which is not what we want. Make it start in separate console.
     - [#5651](https://github.com/ISISComputingGroup/IBEX/issues/5651) 
 1. There was an error loading programs into SECI this has been fixed by combining programs in the galil.
-1. There is something wrong with the bench movement. We think that it is because it was not synced and the max bench angle had not been implemented. (Extra note we tried moving it and then unsynced the movement of the slide, then reveresed the slide we never resynced the movement)
+1. There is something wrong with the bench movement. We think that it is because it was not synced and the max bench angle had not been implemented. (Extra note we tried moving the bench but had problems so we then set the motion of the slide to not be synchronised, then reversed the slide but we never set synchronised on the movement again)
     - We should retest this after completing [#5541](https://github.com/ISISComputingGroup/IBEX/issues/5541) 
 1. Jaw 1 was synchronised and should not be (jaws in general are not synchronised to avoid clashing).
     - Changed in config
