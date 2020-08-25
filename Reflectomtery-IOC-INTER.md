@@ -64,7 +64,7 @@ We noticed some discrepancies between the motor positions in SECI and IBEX for t
     - Marked SM1/2 height driver as not synchronised as super mirror height axes are slow and are likely the main cause for this issue
 
 
-GENERAL
+#### Issues found with IBEX in general
 - If a motor drives past its limits due to backlash it can stall and not complete the move 
     - This is an edge case but we should have a discussion whether this is the right behaviour
 - Noticed IBEX IOC list to be blank after running SECI to IBEX swap script
