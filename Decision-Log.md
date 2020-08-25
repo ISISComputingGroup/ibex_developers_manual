@@ -52,3 +52,7 @@ A place to record decisions:
 18. Motion setpoints based on bare motors will no longer be supported in IBEX. This is to make the code simpler, as we move towards many multiple axes in [#4573](https://github.com/ISISComputingGroup/IBEX/issues/4573) and motion setpoints more robust to motor failure. All motors should support the axes record so this should not be a problem. For more esoteric motors which need to be used on short notice it is fairly easy to either add a motor axes on top of the motor record by adding something on the form`< $(SM300CONFIG)/axes.cmd` or moving the axis to the required positions in a script.
     - Present: Dom, John, Kathryn, Tom
     - 14/08/2020
+
+19. Where to put the script generator release download for scientists. Decision is to put it in github, upload it to the release page, then create a page to link to it with install instructions (either in git hub or github pages). This was chosen because it is likely to be the quickest way of getting something uploaded for people to download, and we need it before cycle. Other choice were our external web server or an STFC sit; both of these would have been slow.
+    - Present: John, Tom, Alistair, Kevin, Bish
+    - 2020/08/25
