@@ -54,5 +54,5 @@ A place to record decisions:
     - 14/08/2020
 
 19. Where to put the script generator release download for scientists. Decision is to put it in github, upload it to the release page, then create a page to link to it with install instructions (either in git hub or github pages). This was chosen because it is likely to be the quickest way of getting something uploaded for people to download, and we need it before cycle. Other choice were our external web server or an STFC sit; both of these would have been slow.
-    - Present: John, Alistair, Kevin, Bish
+    - Present: John, Alistair, Kevin, Bish, Thomas
     - 2020/08/25
