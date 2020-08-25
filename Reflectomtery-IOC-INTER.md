@@ -55,7 +55,7 @@ We noticed some discrepancies between the motor positions in SECI and IBEX for t
 
 --> [Ticket 5654](https://github.com/ISISComputingGroup/IBEX/issues/5654)
 
-#### Issues found with refl server:
+#### Issues found with reflectometry server:
 - InBeam status incorrect at component level 
     - [Ticket 5655](https://github.com/ISISComputingGroup/IBEX/issues/5655)
 - Noticed a slight delay before move starts 
