@@ -92,8 +92,8 @@ There are a number of tips for [trouble shooting](trouble-shooting-pages) alread
         - Are you trying to move in the same direction as an active limit switch?
           Yes: Try moving in the other direction, if you can move that way to a requested position all is fine
         - Are you able to move in either direction?
-          No: Check for hardware faults (potentially as a referal to EUSG via the MCR)
-        - If it is able to move, is the encoder trackign in the same direction as the requested motion?
+          No: Check for hardware faults (potentially as a referral to EUSG via the MCR)
+        - If it is able to move, is the encoder tracking in the same direction as the requested motion?
           No: The motor setup is probably incorrect, recommission the motor
           Yes: Feel bewildered as this should be a moving motor
   1. My device isn't behaving as I expect
@@ -116,7 +116,7 @@ There are a number of tips for [trouble shooting](trouble-shooting-pages) alread
 
   1. My script won't load
     - (TODO: Fill in this whole section)
-  1. My script isn't behvaing in the way I expect it to
+  1. My script isn't behaving in the way I expect it to
     - This is a best efforts, and not everyone can provide the same level of support
     - Look at it with respect to basic coding standards and obvious race condition points
     - (TODO: Complete this section)
