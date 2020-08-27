@@ -17,7 +17,7 @@ There was a discussion at the LabVIEW user group meeting today about documentati
 
 https://github.com/joelparkerhenderson/architecture_decision_record
 
-We have a decision log, which is being used more and more, and it is becoming useful. We should use a more solid template. The link above has some good ideas of how to layout this template.
+We have a [decision log](Decision-Log), which is being used more and more, and it is becoming useful. We should use a more solid template. The link above has some good ideas of how to layout this template.
 
 ## Added tickets
 

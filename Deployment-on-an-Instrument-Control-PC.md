@@ -1,6 +1,6 @@
 > [Wiki](Home) > [Deployment](Deployment) > [Deployment on an Instrument Control PC](Deployment-on-an-Instrument-Control-PC)
 
-This document describes the steps necessary to install/upgrade IBEX on an Instrument control PC.  Most of these steps are superseded by the install script (but we are not quite ready to commit to this).  This document is the reference for deployment. 
+This document describes the steps necessary to install/upgrade IBEX on an Instrument control PC.  Most of these steps are superseded by the install script (but we are not quite ready to commit to this).  This document is the reference for deployment. Be sure to login as `spudulike` when deploying on instruments instead of `gamekeeper`.
 Steps are marked with **bold** prefixes to indicate the following:
 - **deploy** step to be done when using the deploy script
 - **upgrade** steps to be done when upgrading 
@@ -25,23 +25,23 @@ Steps are marked with **bold** prefixes to indicate the following:
 - If not already set, change the Windows theme to "Windows 7" in the "Aero Themes" section.  Also change the background to solid light grey.
 
 #### upgrade
+- If the machine is down install latest java
+    - On firewall prompt reply yes
 - Ensure the instrument is running and in a setup state (e.g. so you can take screenshots of blocks, motors, running VIs, etc.)
 - Ensure all command lines to EPICS are closed
-- Upgrade the ISISICP (Do not do this step (shutdown or install) for release 5.2)
+- Upgrade the ISISICP (Do not do this step for upgrades from 7.2.0 and upwards it is done as a step in instrument_deploy.bat)
   - Shutdown IBEX GUI (server should remain running)
-  -  Run [Upgrade the ISISICP](Upgrade-ISISICP)
+  - Use `console -M isisdae` to connect into ISISDAE-IOC-01 IOC and stop this IOC
+  - Run [Upgrade the ISISICP](Upgrade-ISISICP)
+  - ReStart ISISDAE-IOC-01 IOC from the previous console
 - Run `<public share>\ibex_utils\installation_and_upgrade\instrument_deploy.bat` 
     - It will look for the highest version number in the release folder as a source.
     - If you want to install a non-default release you need to set the `SUFFIX` variable in the batch file. For example with `x.y.z` being the current release and `hotfix` being the suffix, it will look for the folder `Releases/x.y.z-hotfix`
+    - As of 24.07.2020, the script has a bug where it fails on the first run with the message ` `""` is not a valid command `. Re-run the script to fix this. But you need to be in a cmd window, and not PowerShell for this to work. To navigate to the public share in a cmd, you need to use pushd instead of cd. 
     - Apart from the below points, just follow instructions
     - Be warned the upgrade runs in 3 steps and so will claim to have finished the upgrade 3 times
     - Do not remove any SECI icons from the task list if this is not the first time install
-    - Ignore the section about copying ibex_system_boot.bat to ProgramData and do the step below instead
-
-## Creating IBEX auto-startup 
-- Go to the user `Startup` folder (which is C:\Users\spudulike\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup).
-- In this directory do new -> shortcut and browse to c:\instrument\apps\epics and choose ibex_system_boot.bat
-
+    - after everything is installed and the script has finished you must restart the server from a different command line.
 
 # Manual deploy instructions
 

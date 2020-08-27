@@ -1,4 +1,4 @@
-> [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [Miscellaneous motion control](Miscellaneous-Motion-Control) > [Reflectometry IOC](Reflectometry-IOC) > Reflectometry Configuration
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [Miscellaneous motion control](Miscellaneous-Motion-Control) > [Reflectometry IOC](Reflectometry-IOC) > [Reflectometry Configuration](Reflectometry-Configuration)
 
 # Overview
 
@@ -28,6 +28,10 @@ These are fixed values which are exposed by the IOC as PVs of the form `<PREFIX>
 - `NATURAL_ANGLE`: Natural angle of the beam as it enters the blockhouse
 - `HAS_HEIGHT2`: Whether the sample stack has a second height stage (`True`/`False` only)
 
+Also for the OPI we need constants:
+
+- `OPI`: Value is the directory names in which the OPI link panels are stored. E.g. on CRISP this is set to CRISP and the panels are in `<GUI OPIs>\resources\reflectometry\crisp`. This allows for different instruments and configs to have different front panels.
+
 ### Arguments
 
 #### Required:
@@ -48,8 +52,8 @@ Components are the central building blocks of the configuration. Each of them re
 ### Types of Component
 - `Component`: Component that manages the linear displacement between the incoming beam and the component without affecting the beam (e.g. a slit)
 - `TiltingComponent`: Component manages the angle and distance between the incoming beam and the component without affecting the beam. This allows the component to stay perpendicular to the beam as well as centred (e.g. point detector on SURF/CRISP)
-- `ReflectingComponent`: Component manages the angle and distance between the incoming beam and the component, outgoing beam is reflected from this angle (assumes infinitely long reflector at angle and distance from the incoming beam) (e.g. supermirror)
-- `BenchComponent`: Component a reflectometry bench. The bench has an angle and height of the position which it pivots about, usually the sample, and a seesaw, which is a value added and subtracted from its two jacks. The seesaw axis must always be autosaved because it can not be worked out independently of the angle. The bench is also capable of moving along the beam so that the bench appears to move around an arc centred at the bench pivot (sample position). The usual configuration is that the super mirror tips and this raises the height of the bench pivot and also changes the angle of it; theta just changes the angle of the pivot; see diagram.
+- `ReflectingComponent`: Component manages the angle and distance between the incoming beam and the component, outgoing beam is reflected from this angle (assumes infinitely long reflector at angle and distance from the incoming beam) (e.g. supermirror); If the component is out of the beam it no longer reflects
+- `BenchComponent`: Component for a reflectometry bench. The bench has an angle and height of the position which it pivots about, usually the sample, and a seesaw, which is a value added and subtracted from its two jacks. The seesaw axis must always be autosaved because it can not be worked out independently of the angle. The bench is also capable of moving along the beam so that the bench appears to move around an arc centred at the bench pivot (sample position). The usual configuration is that the super mirror tips and this raises the height of the bench pivot and also changes the angle of it; theta just changes the angle of the pivot; see diagram below. For an example of a bench in the configuration [see this page](reflectometry-bench-configuration)
 
 ![bench showing how the height and pivot of the bench interact with the bench position](reflectometers/bench_movement.png)
 
@@ -66,7 +70,7 @@ Components are the central building blocks of the configuration. Each of them re
         - `y`: y position of straight through beam
         - `z`: z position of straight through beam
         - `angle`: angle at which the linear axis moves
-    - Bench Component: The bench setup of the form `BenchSetup(y, z, angle, jack_front_z, jack_rear_z, initial_table_angle, pivot_to_beam)`, where:
+    - Bench Component: The bench setup of the form `BenchSetup(y, z, angle, jack_front_z, jack_rear_z, initial_table_angle, pivot_to_beam, min_angle_for_slide, max_angle_for_slide)`, where:
         - `y`: y position of pivot of the bench of straight through beam
         - `z`: z position of pivot of the bench of straight through beam
         - `angle`: angle that bench pivot moves along
@@ -74,6 +78,8 @@ Components are the central building blocks of the configuration. Each of them re
         - `jack_rear_z`: distance to the rear jack on the bench from the pivot
         - `initial_table_angle`: initial table angle (the natural angle of the beam)
         - `pivot_to_beam`: distance from the pivot of the bench to the beam
+        - `min_angle_for_slide`: is the angle below which the slide will not move any further. This does not include the initial table angle, (e.g. on POLREF it is 0)
+        - `max_angle_for_slide`: is the angle above which the slide will not move any further. This does not include the initial table angle, (e.g. on POLREF it is 4.8)
 
 ### Theta Angle to/of Special Method
 
@@ -92,6 +98,10 @@ theta.add_angle_to(detector)
 ```
 
 This creates a theta component which points at the detector height.
+
+[See example](reflectometry-bench-configuration) for an example of the bench component with parameters
+
+
 
 ## [Beamline Parameters](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Beamline-Parameters)
 

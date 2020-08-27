@@ -25,3 +25,12 @@ Barndoors can be opened to different distances. The distance is no linearly conn
 The barndoors and momentum slits are part of the galil motor set up and are per instrument. There is an example at `...\EPICS\support\motorExtensions\master\settings\barndoors\*.cmd` copt this to `C:\Instrument\Settings\config\<instrument host name>\configurations\galil`
 
 Remember to add an address to the IOC in the IBEX GUI for the Galil IOC. If you're testing locally you still need to set it but it can just be `127.0.0.1`
+
+## Alternative move command
+
+This was done particularly for the muon barndoors. They do not move the "motor" by sending pulses from the
+galil, rather there is a program running in the galil that changes the bias voltage and then readback is done
+via a galil analogue output line. To allow control of this via the galil, it is now possible to change the command
+used by the galil for setting the motor - this is done using a PV like  $(P)MOTMTR0101_MOVE_CMD   and a %f within this
+string will be replaced with the requested position. A real galil would have this internally doing something like "PRA=%f" for "position relative axis A" - this can bet set to any valid galil command sequence.  
+  

@@ -34,7 +34,8 @@ Good questions to ask are:
   2) Have the jaws been opened up or is white beam falling on any detectors (check setup with scientist)
   3) Any unusually rapid data taking? (e.g. 15s runs with large-ish files)
 
-### Data Disk available space
+## Data Disk available space
+
 Varies widely per instrument and the space is tailored over time to match the needs of the instrument (with spare space as a buffer against exceptional usage).
 
 Space for data to reside on the instrument so it can be analysed locally is provided by a cache which is purged on most instruments using a scheduled task with `robocopy` (`robocopy /? `for details).  Cache sizes vary widely per instrument.  Some instruments with low data rates have caches with more gentle purging strategies.  Caching on most high volume instruments will use a `robocopy` task with the MINAGE parameter set to 1 or 2 remove files that are 1 or 2 days old.  Fewer instruments purge on a monthly basis (e.g. MINAGE:30), muons and reflectometers generally have smaller data files.
@@ -42,3 +43,18 @@ Space for data to reside on the instrument so it can be analysed locally is prov
 Availability in the cache for 1 day minimum is required for local copying programs on all instruments to have data _available for copying_ from the instrument `data` share.  The External Export cache may be cleared of recent data files if space is limited, but NOT the instrument Data area (these will be removed only when archived).
 
 The Clean and purging tasks run as privileged tasks in the scheduled tasks library on the guest VMs.  Where specially large and controlled caching is needed (on WISH currently) a more generic powershell script `purge.ps1` is run as a task on the host - the difference being that the cache trims to a fill level of over 90% on age and currently will not empty over time.  This allows maximum local data (about 2 cycles normally) to be available for local analysis.  In both cases, files are first moved to an area for deletion and then deleted by a separate task which runs later.
+
+## System Disk Getting Full; Finding Space
+
+Often the system disk gets full because of logging, or windows updates etc. You can free up space by doing the following:
+
+- vnc to machine, check no-one is using it
+- run tree size:
+    - flag large files that you are worried about delete to Chris
+    - uninstall apps which shouldn't be there
+- Check size of `instrument/var/logs` move any large logs to back `<inst area>\Backups$\stage-deleted\ndxMARI`. Do this by creating a directory on c, moving files in then copying to this because it is write once. 
+- [Truncate the database if it is too large](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Database-Troubleshooting#reducing-database-disc-space)
+
+
+
+

@@ -1,6 +1,6 @@
-> [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [Miscellaneous motion control](Miscellaneous-Motion-Control) > Reflectometry IOC
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [Miscellaneous motion control](Miscellaneous-Motion-Control) > [Reflectometry IOC](Reflectometry-IOC)
 
-> [Wiki](Home) > [Project overview](Project-Overview) > [Design documents](Design-Documents) > [Reflectometers](Reflectometers) > Reflectometry IOC
+> [Wiki](Home) > [Project overview](Project-Overview) > [Design documents](Design-Documents) > [Reflectometers](Reflectometers) > [Reflectometry IOC](Reflectometry-IOC)
 
 ## High level Requirements
 
@@ -75,3 +75,13 @@ Potential design changes:
 
 1. Add component for slit gap parameter
 1. Move displacement from movement strategy and place it in beam path calc
+
+## Specific Reflectometers
+
+Information pertaining to specific reflectometry setups on the instruments.
+
+- [CRISP](Reflectomtery-IOC-CRISP)
+- [INTER](Reflectomtery-IOC-INTER)
+- [POLREF](Reflectomtery-IOC-POLREF)
+- [SURF](Reflectomtery-IOC-SURF)
+

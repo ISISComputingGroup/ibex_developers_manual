@@ -103,85 +103,15 @@ From an issue in Ticket https://github.com/ISISComputingGroup/IBEX/issues/3099 -
 
 ```
 [2018-04-09 15:26:49] sevr=major  setDCEventMode: Unknown detector card 3
-
 [2018-04-09 15:26:49]  setDCCardMode: Unknown detector card 3
-
 [2018-04-09 15:26:49]  setDCEventMode: Unknown detector card 4
-
 [2018-04-09 15:26:49]  setDCCardMode: Unknown detector card 4
-
-[2018-04-09 15:26:49]  setDCEventMode: Unknown detector card 5
-
-[2018-04-09 15:26:49]  setDCCardMode: Unknown detector card 5
-
-[2018-04-09 15:26:49]  setDCEventMode: Unknown detector card 6
-
-[2018-04-09 15:26:49]  setDCCardMode: Unknown detector card 6
-
-[2018-04-09 15:26:49]  setDCEventMode: Unknown detector card 7
-
-[2018-04-09 15:26:49]  setDCCardMode: Unknown detector card 7
-
-[2018-04-09 15:26:49]  setDCEventMode: Unknown detector card 8
-
-[2018-04-09 15:26:49]  setDCCardMode: Unknown detector card 8
-
-[2018-04-09 15:26:49]  setDCEventMode: Unknown detector card 9
-
-[2018-04-09 15:26:49]  setDCCardMode: Unknown detector card 9
-
-[2018-04-09 15:26:49]  setDCEventMode: Unknown detector card 10
-
-[2018-04-09 15:26:49]  setDCCardMode: Unknown detector card 10
-
 [2018-04-09 15:26:49]  Cannot find card for crate 3
-
 [2018-04-09 15:26:49]  Unknown detector card 3
-
 [2018-04-09 15:26:49]  Cannot find card for crate 4
-
 [2018-04-09 15:26:49]  Unknown detector card 4
-
-[2018-04-09 15:26:49]  Cannot find card for crate 5
-
-[2018-04-09 15:26:49]  Unknown detector card 5
-
-[2018-04-09 15:26:49]  Cannot find card for crate 6
-
-[2018-04-09 15:26:49]  Unknown detector card 6
-
-[2018-04-09 15:26:49]  Cannot find card for crate 7
-
-[2018-04-09 15:26:49]  Unknown detector card 7
-
-[2018-04-09 15:26:49]  Cannot find card for crate 8
-
-[2018-04-09 15:26:49]  Unknown detector card 8
-
-[2018-04-09 15:26:49]  Cannot find card for crate 9
-
-[2018-04-09 15:26:49]  Unknown detector card 9
-
-[2018-04-09 15:26:49]  Cannot find card for crate 10
-
-[2018-04-09 15:26:49]  Unknown detector card 10
-
 [2018-04-09 15:26:49]  Attempt to use missing detector card/crate 3
-
 [2018-04-09 15:26:49]  Attempt to use missing detector card/crate 4
-
-[2018-04-09 15:26:49]  Attempt to use missing detector card/crate 5
-
-[2018-04-09 15:26:49]  Attempt to use missing detector card/crate 6
-
-[2018-04-09 15:26:49]  Attempt to use missing detector card/crate 7
-
-[2018-04-09 15:26:49]  Attempt to use missing detector card/crate 8
-
-[2018-04-09 15:26:49]  Attempt to use missing detector card/crate 9
-
-[2018-04-09 15:26:49]  Attempt to use missing detector card/crate 10
-
 [2018-04-09 15:26:49] : Exception occurred.
 ```
 
@@ -194,6 +124,20 @@ isisicp.simulation.detcards.crate2.number = 12
 ```
 
 If you have defined `isisisp.datadae.use = true` in `isisicp.properties` then you need to make sure the detector card referred to in data_dae.xml  is created by above. If this is a pure setup/test machine rather than a real instrument, you may just want to set `isisisp.datadae.use = false`
+
+### Real DAE complains about missing cards
+If you see messages like
+```
+setDCEventMode: Unknown detector card 1
+setDCCardMode: Unknown detector card 1
+Attempt to use missing detector card/crate 1
+Unknown detector card 
+```
+when trying to BEGIN on a real DAE, then there are two likely causes:
+- you are loading a wiring table that is specifying cards that do no exist, you need to correct the wiring table
+- The ICP has not detected all the cards you believe are present in the DAE, hence they appear to be "missing" or "unknown"
+
+If the wiring table is correct, try a restart of the ISISICP - the DAE is only scanned at program startup, it might be the DAE hardware was not feeling very responsive first time around. If this doesn't help, then it may be the detector card has failed, or it could be the hardware is in a strange state and needs a reset. Electronics group have programs that can do this.  
 
 ### DAE exception messages
 
@@ -293,3 +237,19 @@ It is possible to add a single run into the journal database if it was not inclu
 "c:\labview modules\dae\JournalParser.exe" <INSTRUMENT> <9 DIGIT run number> cycle_<cycle number, e.g. 19_3> "c:\data\export only" <INSTRUMENT MACHINE HOST NAME>
 ```
 e.g. `"c:\labview modules\dae\JournalParser.exe" LOQ 00108032 cycle_19_3 "c:\data\export only" NDXLOQ`
+
+###  CRPT is not initialised - please set experiment parameters
+
+Ensure you have loaded the correct Time Channels and Data Acquisition tables in the Experiment setup tab of the DAE perspective. Reloading them causes initialisation.
+
+### User Says they Can Not see their Nexus Data files on external machine
+
+After a run the data files should be copied to an external archive so that the users can do more processing. If the user can not get these then there can be multiple causes and it depends exactly where they are looking. The first thing to check is that the machine is copying the files correctly in the post 
+end run script. The log for this is stored at `C:\Data\log\post_command_<day>.log`. If there is a problem rectify the problem, possible causes are:
+
+- mapped drive (`d:`) is not connected properly: often double clicking on the drive is enough to get it remapped
+- something else: fix and document here
+
+After fixing the issues the files will be copied after the next run is finished. So start and end a run (with a test like title), you may also want to put it in simulation mode if the DAE is switched off. Finally check the files have appeared in `<isis instrument folder>\<machine name>\Instrument\data\cycle_<cycle number>`.
+
+

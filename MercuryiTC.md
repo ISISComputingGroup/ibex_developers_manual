@@ -36,17 +36,25 @@ There is a section on each below as well as how to set the communication setting
 
 To activate a card you must set the related IOC macro. The following macros set the <I> for the possible IOC slot:
 
-| Macro | Usual Value | IOC Name | 
-| ----  | ----------- | -------- | 
-| MERCURY_01__TEMP_1 | 1 | %MYPVPREFIX%MERCURY_01:1 |
-| MERCURY_01__TEMP_2 | 2 | %MYPVPREFIX%MERCURY_01:2 |
-| MERCURY_01__TEMP_3 | 3 | %MYPVPREFIX%MERCURY_01:3 |
-| MERCURY_01__TEMP_4 |   | %MYPVPREFIX%MERCURY_01:4 |
-| MERCURY_01__LEVEL_1 |   | %MYPVPREFIX%MERCURY_01:LEVEL:1 |
-| MERCURY_01__LEVEL_2 |   | %MYPVPREFIX%MERCURY_01:LEVEL:2 |
-| MERCURY_01__PRESSURE_1 |   | %MYPVPREFIX%MERCURY_01:PRESSURE:1 |
-| MERCURY_01__PRESSURE_2 |   | %MYPVPREFIX%MERCURY_01:PRESSURE:2 |
-| etc                   |   |                          |
+| Macro | IOC Name | 
+| ----  | -------- | 
+| MERCURY_01__TEMP_1 | %MYPVPREFIX%MERCURY_01:1 |
+| MERCURY_01__TEMP_2 | %MYPVPREFIX%MERCURY_01:2 |
+| MERCURY_01__TEMP_3 | %MYPVPREFIX%MERCURY_01:3 |
+| MERCURY_01__TEMP_4 | %MYPVPREFIX%MERCURY_01:4 |
+| MERCURY_01__LEVEL_1 | %MYPVPREFIX%MERCURY_01:LEVEL:1 |
+| MERCURY_01__LEVEL_2 | %MYPVPREFIX%MERCURY_01:LEVEL:2 |
+| MERCURY_01__PRESSURE_1 | %MYPVPREFIX%MERCURY_01:PRESSURE:1 |
+| MERCURY_01__PRESSURE_2 | %MYPVPREFIX%MERCURY_01:PRESSURE:2 |
+| etc                   |                          |
+
+To find out what values these macros should take, connect the mercury IOC and check the "System" tab on the opi, which will list the cards which are currently present. 
+
+Example: If the list of Temperature cards displayed on the system tab is ["MB1.T1", "DB1.T1", "DB2.T1"] you should set the following macros:
+- `TEMP_1`: `MB1.T1`
+- `TEMP_2`: `DB1.T1`
+- `TEMP_3`: `DB2.T1`
+- `TEMP_4`: (empty string)
 
 #### Important PVs
 
@@ -70,11 +78,7 @@ In this example, the front panel (home screen) on the Mercury looks like:
 ![front panel showing 6 areas](backend_system/IOCs/MercuryITc/front_panel.jpg)
 
 NB The device should be in remote mode this is indicated by the *i* (bottom left) having an orange background.
-This mercury has 3 temperature sensors, Sample_Rod, VTI_DB6 and PT2_DB7, the VTI has a heater attached to the second temperature. This means it needs:
-
-- `TEMP_1` set to MB1, 
-- `TEMP_2` set to DB6, 
-- `TEMP_3` set to DB7, 
+This mercury has 3 temperature sensors, Sample_Rod, VTI_DB6 and PT2_DB7, the VTI has a heater attached to the second temperature.
 
 The temperature controls are on the 1st and 2nd temperature and so on the first and second tab on the mercury device screen. NB the device screen also needs these macros set.
 
@@ -102,3 +106,21 @@ This may be accompanied by an error in the ioc log:
 ```
 
 If this is the case, you need to get the latest version of `Mercury - Pressure.vi` from sourcesafe. Older versions had two parameters with the same name, which LvDCOM could not cope with correctly.
+
+### Cannot input IOC macros of the form `MB0.T1`
+
+You may need to rebuild ioc startups on the instrument - Release 7.1.0 initially shipped with a regex which was too restrictive and did not allow `.` as a character.
+
+To do this:
+- Ensure it is ok to shutdown ibex temporarily (i.e. check with scientist and ensure script/dae is not running)
+- Run `stop_ibex_server.bat`
+- Run `make iocstartups` from `C:\instrument\apps\epics` (it is ok if this complains about some missing directories)
+- Run `start_ibex_server.bat`
+
+### Mercury is not talking to any cards
+
+Ensure that IOC macros have been set which correctly correspond to the cards in the mercury itself. You can check which cards are currently in the mercury by looking at the "system" tab in the opi. The macros should be strings of a form similar to "DB1.T1"
+
+### Mercury is not reading a heater/needle valve correctly on a temperature/pressure card
+
+In the details screen of the OPI, check that the `associated heater channel` (for heaters) or `associated aux channel` (for needle valves) is not None. If it is None, check with the scientist/cryogenics whether a heater/needle valve should be configured for this channel.

@@ -50,13 +50,13 @@ The pattern for both device configuration and extensions configuration is that t
 Directories:
 
 - galil: configures the galil [Galil](Galil) and extensions
-- mclen: configures McLennan motors [McLennan]McLennan-motors) and extensions
+- mclen: configures McLennan motors [McLennan](McLennan-motors) and extensions
 - sm300_01: configures the [SM300_01](SM300) motor extensions 
 - motionSetPoints: setpoint look up files
 - refl (for reflectometers only): contains a file `config.py`, which tells instruments using the [Reflectometry IOC](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-IOC) what their beamline looks like (follow the link for details)
 
 Common extensions:
- - [motion setpoints](Motor-SetPoints) (works for galil, McLennan and sm300)
+ - [Motion Set points](Motion-Set-points) (works for galil, McLennan and sm300)
  - [axes](axis) (works for galil, McLennan and sm300)
  - [sample changer](Sample-Changers) (works for galil, McLennan and sm300)
  - [Barn doors and Momentum slits](Barndoors-and-Momentum-Slits-on-MUON-Front-End)

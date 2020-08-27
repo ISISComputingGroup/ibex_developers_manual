@@ -6,20 +6,20 @@ Most of the work done by the IOCs for the various FINS PLCs at ISIS consists of 
 
 The manuals referenced on this page can be found on the shares drive, in Manuals\OMRON_FINS_PLCs. There you can also find the images on this page.
 
-The Omron FINS is a PLC controlled via a driver first written at Diamond, see [here](https://github.com/ISISComputingGroup/EPICS-FINS). The IOC works by loading an instrument specific `FINS_01.cmd` in `configurations/fins`, which will load an instrument specific `db` from `ioc/master/FINS/db`. The dbs in here are usually created from a number of templates matching specific memory addresses to PVs. This is the case because PLCs used for different applications have different things stored in their memory, and to read/write various pieces of data the IOC needs to know the exact memory address for that data. Each individual PLC has its own memory map, which shows what memory address stores what thing, and each specific IOC is based on that.
+The Omron FINS is a PLC controlled via a driver first written at Diamond, see [here](https://github.com/ISISComputingGroup/EPICS-FINS). The IOC works by loading an instrument specific `FINS_01.cmd` in `configurations/fins`, which will load an instrument specific `db` from `ioc/master/FINS/db`. The dbs in here are usually created from a number of templates matching specific PLC memory addresses to PVs. This is the case because PLCs used for different applications have different things stored in their memory, and to read/write various pieces of data the IOC needs to know the exact memory address for that data. Each individual PLC has its own memory map, which shows what memory address stores what thing, and each specific IOC is based on that.
 
 Currently the following specific FINS PLC installations are supported in IBEX:
 
 * IMAT FINS PLC
 * LARMOR air PLC
-* SANS2D vacuum PLC
+* [SANS2D vacuum PLC](SANS2D-vacuum-PLC)
 * WISH vacuum PLC
 * ZOOM vacuum PLC
 * [Helium Recovery PLC](Helium-Recovery-PLC) - stores information needed for the Helium Level Monitoring project
 
 # Writing IOCs for FINS PLCs
 
-IOCs for FINS PLCs at ISIS use the EPICS asyn driver support to communicate with the PLC. For getting input from hardware, you need records to have an INP field such as:
+IOCs for FINS PLCs at ISIS use the EPICS asyn driver support to communicate with the PLC. For getting input from hardware, you need DB records to have an INP field such as:
 
 `
 field(INP,  "@asyn($(PORT), $(MEMORY_ADDRESS), 5.0) FINS_DM_READ")
@@ -51,7 +51,7 @@ This is used for reading 32 bit signed integers.
 
    `field(INP,  "@asyn(PLC, $(MEMORY_ADDRESS), 5.0) FINS_DM_READ_32")`
 
-This is used for reading 32 bit floating point numbers. Because the asyn interface has support for up to 64 bit floating point numbers, the FINS command coming from the EPICS record will ask for 4 bytes of memory, not two. But sending back only 2 bytes will be ok.
+This is used for reading 32 bit floating point numbers. The asyn interface has support only for 64 bit floating point numbers, but the FINS command asks for 4 bytes (32 bits) and then casts the result to a double.
 
 # The FINS protocol
 
@@ -67,7 +67,7 @@ When using FINS over Ethernet, it can work with both TCP and UDP. FINS over TCP 
 
 When using FINS over UDP, the FINS frame is the part of the UDP packet after the UDP protocol specific header. The first 10 bytes of the FINS command frame represent the FINS frame header, and the rest of the frame represent either a command or a response, which have different formats. For FINS over TCP, after the TCP header and before the FINS frame there is a special FINS/TCP header used by FINS to handle TCP connections.
 
-Most of the FINS PLCs at ISIS use FINS over TCP ?. The Helium recovery PLC uses UDP. For more information about FINS in general, look at section 7-1 of the Ethernet manual. Section 7-3 offers detailed information about FINS over UDP.
+Most of the FINS PLCs at ISIS use FINS over TCP, The Helium recovery PLC uses UDP. For more information about FINS in general, look at section 7-1 of the Ethernet manual. Section 7-3 offers detailed information about FINS over UDP.
 
 There are some very useful diagrams showing the structure of FINS frames and FINS/TCP headers in the same folder as the manuals on the shares drive.
 
@@ -186,5 +186,5 @@ The emulator for FINS PLCs uses the pattern used by the SKF MB340 chopper.
 
 Because it was written as part of https://github.com/ISISComputingGroup/IBEX/issues/5333, currently this emulator only works with the Helium Recovery PLC. The stream interface and response utilities should work with all other FINS PLCs at ISIS, but the device module is specific to helium recovery because it has dictionaries emulating the memory map of that PLC. Currently, there is no way to specify what device to use when testing.
 
-**Note:** The FINS driver we have from Diamond does not directly support 32 bit integers and floats. Instead, it represents them as an array of two 16 bit integers. Moreover, the first 16 bit portion is the least significant one, and the second one is the more significant portion. So even though the 16 bit integers themselves are in big endian, the encoding of 32 bit numbers into 16 bit int arrays is little endian. For the IOC, this has not impact, but because of this the emulator performs some extra logic.
+**Note:** The FINS protocol involves reading 16 bit integers, a 32bit read from the driver is actually two consecutive 16 bit reads, similarly for a 32bit float. Though the PLC uses big endian format for its 16bit integers, the least significant part of a 32 bit number is stored first. So we have two big endian 16 bit integers stored in little endian order. The emulator needs to perform some extra logic to handle this.
 

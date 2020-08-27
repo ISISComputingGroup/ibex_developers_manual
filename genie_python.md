@@ -6,6 +6,7 @@
 ### General Python Information
 - [Python Conventions](Python-conventions)
 - [Python Dependencies](Python-dependencies)
+- [Python Circular Dependencies Resolution](Python-Circular-Dependencies-Resolution)
 
 ### User documentation
 

@@ -46,7 +46,12 @@ The system also produces a visual rendering of the system, for diagnostic and de
 ZOOM is running the system to detect collisions on its detector and trolley axes (`MTR0501`, `MTR0507`). These move linearly along the same axis. The measurements were provided by Dominic Oram and are shown in the schematic in [ticket 2936](https://github.com/ISISComputingGroup/IBEX/issues/2936).
 
 The system was deployed here in May 2018 with the intention of reducing the number of times the bump strips are triggered by the two components getting too close. Resetting the bump strips requires a manual reset, so catching it with the system beforehand reduces work for the instrument scientists. Motion control have stated that no damage will result from the system not stopping the motors.
- 
+
+### SANS2D Tank
+The system was reanalysed for the SANS2D tank (https://github.com/ISISComputingGroup/IBEX/issues/4587). The following issues were found that made it unsuitable for an immediate solution:
+* By moving two objects towards each other you can get just within the above limits before it comes to a stop,  when inside these limits the CAM will halt all motion and not let you move the items apart again. [Ticket](https://github.com/ISISComputingGroup/IBEX/issues/5605)
+* When automatically setting limits the CAM is not intelligent enough to realise that an object is currently moving out of the way, this could be avoided by just not using autoset limits 
+
 ## System Overview
 
 The system comprises four main parts:
