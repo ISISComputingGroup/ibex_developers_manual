@@ -70,7 +70,7 @@ Components are the central building blocks of the configuration. Each of them re
         - `y`: y position of straight through beam
         - `z`: z position of straight through beam
         - `angle`: angle at which the linear axis moves
-    - Bench Component: The bench setup of the form `BenchSetup(y, z, angle, jack_front_z, jack_rear_z, initial_table_angle, pivot_to_beam)`, where:
+    - Bench Component: The bench setup of the form `BenchSetup(y, z, angle, jack_front_z, jack_rear_z, initial_table_angle, pivot_to_beam, min_angle_for_slide, max_angle_for_slide)`, where:
         - `y`: y position of pivot of the bench of straight through beam
         - `z`: z position of pivot of the bench of straight through beam
         - `angle`: angle that bench pivot moves along
@@ -78,6 +78,8 @@ Components are the central building blocks of the configuration. Each of them re
         - `jack_rear_z`: distance to the rear jack on the bench from the pivot
         - `initial_table_angle`: initial table angle (the natural angle of the beam)
         - `pivot_to_beam`: distance from the pivot of the bench to the beam
+        - `min_angle_for_slide`: is the angle below which the slide will not move any further. This does not include the initial table angle, (e.g. on POLREF it is 0)
+        - `max_angle_for_slide`: is the angle above which the slide will not move any further. This does not include the initial table angle, (e.g. on POLREF it is 4.8)
 
 ### Theta Angle to/of Special Method
 
