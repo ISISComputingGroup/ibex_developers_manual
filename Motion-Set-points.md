@@ -73,3 +73,7 @@ Prior to version 7.2.0 motion set points only worked for 1 or 2 axes. As part of
 * There must be an axis on a motor before you can put a set point on it
 * `motionSetPointsConfigure` requires the number of axes as the final argument
 * The `motionSetPoints.db` has been replaced by `motionSetPointsSingleAxis` or `motionSetPointsDoubleAxis`
+
+# Diagram
+
+![Flow diagram of motion setpoints epics side](https://raw.githubusercontent.com/wiki/ISISComputingGroup/ibex_developers_manual/motionSetpoints/motionSetpoints.png)
