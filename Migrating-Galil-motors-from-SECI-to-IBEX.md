@@ -170,6 +170,7 @@ Open this VI, put the computer name as `IN` and the username as `(INSTNAME):MOT`
 
 Copy these caput commands into a batch file. Look through the file for the extra checks you need to do.
 
+- Check [ticket #5654](https://github.com/ISISComputingGroup/IBEX/issues/5654) to make sure fixes have been made otherwise do the fixes manually.
 - At the top set a echo to make sure that it is run intentionally and a pause and wait for the user to press a key.
 - For initialisation commands (i.e. in the Initialisation box on the SECI motor setup) these can be added to a `.PREM` field note that they should be specific to the axis so they may need to be moved, e.g. `KSA` should be on axis `01`.
 
