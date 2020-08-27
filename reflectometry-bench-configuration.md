@@ -24,13 +24,16 @@ The configuration is:
     z_bench_front = z_bench_pivot + 1201  # front of bench (in this case it is 1201 away from the sample)
     z_bench_pivot_to_front_jack = 1201   # jack is also at the front of the bench
     z_bench_pivot_to_rear_jack = z_bench_pivot_to_front_jack + 1558.0  # rear jack is spaced 1558 from front jack
-    angle_of_bench = 2.3  # the angle of the bench so when it is alligned with a optical level this is included
+    angle_of_bench = 2.3  # the angle of the bench so when it is aligned with a optical level this is included
     bench_pivot_to_beam = 628  # distance from the bench surface to the beam above the bench
+    min_angle_for_slide = 0.0  # min angle below which the slide won't move
+    max_angle_for_slide = 4.8  # max angle above which the slide won't move
 
     # bench component
     bench = add_component(BenchComponent("bench", BenchSetup(0.0, z_sample, 90,
                                                             z_bench_pivot_to_front_jack, z_bench_pivot_to_rear_jack,
-                                                            angle_of_bench, bench_pivot_to_beam)))
+                                                            angle_of_bench, bench_pivot_to_beam, 
+                                                            min_angle_for_slide, max_angle_for_slide)))
 
     # parameters to set angle, offset, seesaw and chi of bench
     add_parameter(AxisParameter("BENCH_ANGLE", bench, ChangeAxis.ANGLE, autosave=True), modes=all_modes)
