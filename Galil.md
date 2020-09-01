@@ -81,7 +81,7 @@ The largest and most frequently changed of these arguments is the code file. It 
 ```
 
 - Header: Sets initial conditions on the Galil and initiates the homing programs on thread 1
-- Body: This should be an 8 element list of exclamation mark separated values. Each element is a path to the homing routine used for each axis in sequence A-H. A description of each homing routine can be found at [Galil homing routines](https://github.com/ISISComputingGroup/EPICS-galil/tree/master/GalilSup/Db)
+- Body: This should be an 8 element list of exclamation mark separated values. Each element is a path to the homing routine used for each axis in sequence A-H. The galil homing [routines are described in this wiki(Galil-homing-routines) and each is found at [Galil homing routines](https://github.com/ISISComputingGroup/EPICS-galil/tree/master/GalilSup/Db)
 - Footer: Additional code executed after homing programs have started
 
 As you can see above, we have two programs in the footer, separated by exclamation marks.
