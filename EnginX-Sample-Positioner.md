@@ -2,6 +2,8 @@
 
 Running through LVDcom on the sample positioner to allow for the EnginX jog box to be used.
 
+There is user information in the [user manual](https://github.com/ISISComputingGroup/ibex_user_manual/wiki/Engin-X-Sample-Stack)
+
 
 Program running is  `LabVIEW Modules\Instruments\Enginx\Galil Programs\jogboxwithpos.gal`.
 
