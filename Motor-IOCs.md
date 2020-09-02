@@ -60,3 +60,5 @@ The motors currently used at ISIS are:
 * [Clearing the Motors are Moving state](Clearing-the-Motors-are-Moving-state)
 * [Portable Eulerian Cradle](Portable-Eulerian-Cradle) see on ENGINX
 * [SANS2D Front Beam Stop inhibit movement](SANS2D-Front-Beam-Stop-inhibit-movement)
+* [EnginX Sample Positioner](EnginX-Sample-Positioner)
+
