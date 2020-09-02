@@ -3,7 +3,7 @@
 Running through LVDcom on the sample positioner to allow for the EnginX jog box to be used.
 
 
-
+Program running is  `LabVIEW Modules\Instruments\Enginx\Galil Programs\jogboxwithpos.gal`.
 
 ### Variables in the program on 2020/09/02
 
