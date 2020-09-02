@@ -1,0 +1,85 @@
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [Motor IOCs](Motor-IOCs) > [EnginX Sample Positioner](EnginX-Sample-Positioner)
+
+Running through LVDcom on the sample positioner to allow for the EnginX jog box to be used.
+
+
+
+
+### Variables in the program on 2020/09/02
+
+ADI= 1.0000
+AIM= 0.0000
+BDI= 1.0000
+BIM= 0.0000
+CDI= 1.0000
+CIM= 0.0000
+DDI= 1.0000
+DIM= 0.0000
+EDI= 1.0000
+EIM= 0.0000
+EmStop= 0.0000
+ITERB= 1.0000
+JGVAL= 19354.9988
+JIM= 0.0000
+JOGS= 0.0000
+JVAL= 9.9951
+JVALA= 19980.4749
+JVALB= -6605.7648
+JVALC= -13021.2616
+JVALD= 4278.5767
+JVALE= 7.6294
+JogM= 0.0000
+LightC= 0.0000
+LimAct= 0.0000
+LimFA= 0.0000
+LimFB= 0.0000
+LimFC= 0.0000
+LimFD= 0.0000
+LimFE= 0.0000
+LimRA= 0.0000
+LimRB= 0.0000
+LimRC= 0.0000
+LimRD= 0.0000
+LimRE= 0.0000
+LocM= 0.0000
+MULTA= 3000.0000
+MULTB= 3000.0000
+MULTC= 3000.0000
+MULTD= 3000.0000
+MULTE= 3000.0000
+MultA= 200.0000
+MultB= 200.0000
+MultC= 200.0000
+MultD= 200.0000
+MultE= 200.0000
+ODCA= 1024.0000
+ODCB= 998400.0000
+ODCC= 1024.0000
+ODCD= 1024.0000
+ODCE= 19456.0000
+PosA= 0.0000
+PosB= 0.0000
+PosC= 0.0000
+PosD= 0.0000
+PosE= 0.0000
+PvPosA= 0.0000
+PvPosB= 0.0000
+PvPosC= 0.0000
+PvPosD= 0.0000
+PvPosE= 0.0000
+TESTWT= 1000.0000
+TPosA= 1006864.0000
+TPosB= -2286.0000
+TPosC= 4540.0000
+TPosD= -152439.0000
+TPosE= -443800.0000
+TwkA= 1.0000
+TwkB= 1.0000
+TwkC= 1.0000
+TwkD= 1.0000
+TwkE= 1.0000
+VA= 1024.0000
+VB= 998400.0000
+VC= 16384.0000
+VD= 16384.0000
+VE= 9216.0000
