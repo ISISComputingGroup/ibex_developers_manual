@@ -16,11 +16,13 @@ MEZFLIPR_01__POLARISERPRESENT=yes
 MEZFLIPR_01__ANALYSERPRESENT=yes
 ```
 
+For this hardware, use the `Mezei flipper (v1)` OPI.
+
 ### V2
 
 This is newer hardware which is now in use on LET. POLREF plan to eventually also migrate to this hardware, however this has not been done as of September 2020.
 
-V2 hardware is assumed by default in the ioc; no special configuration is required to use it.
+V2 hardware is assumed by default in the ioc; no special configuration is required to use it. It should use the `Mezei flipper` OPI.
 
 # Hardware
 
