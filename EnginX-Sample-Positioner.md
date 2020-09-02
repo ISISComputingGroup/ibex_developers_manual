@@ -7,6 +7,7 @@ Running through LVDcom on the sample positioner to allow for the EnginX jog box 
 
 ### Variables in the program on 2020/09/02
 
+```
 ADI= 1.0000
 AIM= 0.0000
 BDI= 1.0000
@@ -83,3 +84,4 @@ VB= 998400.0000
 VC= 16384.0000
 VD= 16384.0000
 VE= 9216.0000
+```
