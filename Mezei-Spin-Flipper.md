@@ -1,5 +1,27 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [Mezei spin flipper](Mezei-Spin-Flipper)
 
+# Hardware versions
+
+There are two versions of the Mezei flipper hardware in use, and so the IOC and OPI have two versions to cope with these differences
+
+### V1
+
+This hardware is in use on POLREF. It was originally in use by LET, but was superceded by V2 in https://github.com/ISISComputingGroup/IBEX/issues/4871 .
+
+If you need to use V1 hardware, you should set the following macros in `globals.txt` to enable support for the old protocol:
+
+```
+MEZFLIPR_01__PROTOCOL_VERSION=1
+MEZFLIPR_01__POLARISERPRESENT=yes
+MEZFLIPR_01__ANALYSERPRESENT=yes
+```
+
+### V2
+
+This is newer hardware which is now in use on LET. POLREF plan to eventually also migrate to this hardware, however this has not been done as of September 2020.
+
+V2 hardware is assumed by default in the ioc; no special configuration is required to use it.
+
 # Hardware
 
 - There is a python script **running on a separate PC** (NDW1889) which controls some DAQ units
