@@ -1,10 +1,12 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [Motor IOCs](Motor-IOCs) > [EnginX Sample Positioner](EnginX-Sample-Positioner)
 
-The sample positioner on EnginX allows the sample to be moved into position. It is not controlled by IBEX through the motor record but instead via lvdcom this is to allow them to use the EnginX jog box. when plugged in the jog box allows the operator (once SECI mode is selected) to jog the positions of various axes at various speeds (it has a speed control and a enable jog). There is user information in the [user manual](https://github.com/ISISComputingGroup/ibex_user_manual/wiki/Engin-X-Sample-Stack)
+The sample positioner on EnginX allows the sample to be moved into position. It is not controlled by IBEX through the motor record but instead via lvdcom this is to allow them to use the EnginX jog box. when plugged in the jog box allows the operator (once SECI mode is selected) to jog the positions of various axes at various speeds; the controller has a speed control and an enable jog button. There is user information for the sample poistioner in the [user manual](https://github.com/ISISComputingGroup/ibex_user_manual/wiki/Engin-X-Sample-Stack).
 
-Under the hood the IBEX `SamPos` IOC uses lvdcom to talk with the labview vi. The labview vi then talks through the table of motors to the galil controller. The controller runs a special program which allows the jog box to work as well as normal positioning. The controller is then connected to a BLuAC which converts the motor signals from the galil into signals that the motor can use (I think this is stepper to servo). The BLuAC has its own encoder which it uses to position the motor. The galil uses a separate encoder for its positions.
+Under the hood the IBEX `SamPos` IOC uses lvdcom to talk with the labview vi. The labview vi then talks through the table of motors to the galil controller. The controller runs a special program which allows the jog box to work as well as normal positioning. The controller is then connected to a BLuAC which converts the motor signals from the galil into signals that the motor can use (I think this is stepper to servo). The BLuAC has its own encoder which it uses to position the motor. The galil uses a different encoder for its positions.
 
-The program should be burnt in to the controller see the readme text in the labview modules `LabVIEW Modules\Instruments\Enginx\Galil Programs`. The program is also in there called `jogboxwithpos.gal` this is the one to upload it is a compressed version of a more commented program. Refcently we were going to replace the controller but uploading the program did not seem enough, we ended up reverting to the original controller. The new program didn't allow jogging but we think this was because certain variable were not defined, we are not yet sure where they are defined. We were trying to move Z axis the variables not defined were `JOGS`, `MultD` and `TwkD`. The variables in the current controller are as follow (as on 2020/09/02):
+### Galil Program
+
+The program should be burnt in to the controller see the readme text in the labview modules `LabVIEW Modules\Instruments\Enginx\Galil Programs`. The program is also in there and is called `jogboxwithpos.gal` this is the one to upload it is a compressed version of a more commented program. Recently we were going to replace the controller but uploading the program did not seem enough, we ended up reverting to the original controller. The new program didn't allow jogging but we think this was because certain variable were not defined, we are not yet sure where they are defined. We were trying to move Z axis the variables not defined were `JOGS`, `MultD` and `TwkD`. The variables in the current controller are as follow (as on 2020/09/02):
 
 ```
 ADI= 1.0000
@@ -84,3 +86,5 @@ VC= 16384.0000
 VD= 16384.0000
 VE= 9216.0000
 ```
+
+The program is described in the directory but in `Jog Box.dmc`.
