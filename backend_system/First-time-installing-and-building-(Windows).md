@@ -44,6 +44,8 @@ In `C:\Instrument\Apps\` run:
 
 `git clone --recursive https://github.com/ISISComputingGroup/EPICS.git`
 
+Note that some repositories may need permission to access. If these are not needed for building EPICS you can remove them by either removing them or commenting them out in the `.gitmodules` file.
+
 ## Install MySQL
 
 See [Installing and upgrading MySQL](Installing-and-Upgrading-MySQL)
