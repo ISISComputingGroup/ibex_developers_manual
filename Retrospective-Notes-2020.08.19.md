@@ -16,19 +16,19 @@
 
 ## Recording zoom code chats
 * can only store them for 3 months anyway, and need to have permission of all involved, so might be not worth the effort
-* esp. if something changes in the future making the code chat outdated, a new watcher might become misinformed
+* especially if something changes in the future making the code chat outdated, a new watcher might become misinformed
 * only record if somebody is unable to attend but wants to see it
-* only record if everyone is comfortable being recorded, if you are uncomfortable being recorded but not willing to speak up about it, contact kathryn or dom and they will champion the issue.
+* only record if everyone is comfortable being recorded, if you are uncomfortable being recorded but not willing to speak up about it, contact K.B. or D.O. and they will champion the issue.
 
 ## Mantid has a week after release to tidy up
--this is equivalent of our tech debt standdown, but for a week.
+-this is equivalent of our tech debt stand down, but for a week.
 -Mantid has more of a need for this than we do due to the size of their team and the manner in which they manage their development
 -We might put aside a "no new dev work" sprint in long shutdown, and maybe 1 week per year of this, but no changes right now.
 
 ## Should we run the system tests locally more?
 * No, this is the purpose of the build servers, only run them on your machine if you think it will break a system test
 * Could try to put something on Jenkins to highlight what  was added since the last success, but this might not be possible/helpful given the large number of repositories they are reliant on
-* Perhaps add a step in the PR template to check if anything might impact a system tests, but might be hard to follow due to bredth of system tests
+* Perhaps add a step in the PR template to check if anything might impact a system tests, but might be hard to follow due to breadth of system tests
 
 ## Instrument demo pages
 * Change it to one page with headers for the each release instead of one per demo meeting.
@@ -40,7 +40,7 @@
 
 ## good progress with points completed
 * we've got more points done than predicted, maybe because of not doing as well last sprint.
-* try not to read too much into the burndown graph
+* try not to read too much into the burn down graph
 * will see if it continues to next sprint
 
 ## stand up order
