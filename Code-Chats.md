@@ -8,7 +8,6 @@ Code chats occur on a semi-regular monthly basis within the group at ISIS. Altho
 
 Topic | Presenter | Date
 ----- | --------- | ----
-Review techniques | Group | 3rd September '20
 DAQMx and Moxa DIO devices | Alistair | 28th September '20
 ISISICP (and Kafka?) | Freddie | Oct '20
 The HIFI Cryomag | Chris C/Kathryn | Nov '20
@@ -136,6 +135,7 @@ The IBEX Script Generator | James | Jan '20
 NeXus | Freddie | 11th March '20
 System Testing With Squish | Dom | May '20
 How to Read ISIS LabVIEW Drivers | Kathryn Baker | 6th August '20
+Review techniques | Tom, Dom, James | 3rd September '20
 
 All presentations should be uploaded to the SharePoint site [here](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Forms/AllItems.aspx?RootFolder=%2Fisis%2Fcomputing%2FICPdiscussions%2FGUI_Chat_Slides&FolderCTID=0x01200027AD8F05966A2748B3B04C98BB5B442B&View={F2C33C51-70E6-4343-B937-2C59A2568306}) and/or converted to a wiki page if more appropriate. It should also be reasonably assumed that the people who gave these presentations should know something about these subjects.
 
