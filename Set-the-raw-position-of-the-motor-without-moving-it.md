@@ -3,8 +3,10 @@
 ### Setting the motor position/offset
 *Note that this applies to multiple motor types.*
 
-Sometimes it is desirable to change the reported position of the motor without it physically moving, effectively changing the origin of the axis. This can be achieved through EPICS by applying an offset to the reported motor position and by setting the position in steps in the motor. TO do this:
+Sometimes it is desirable to change the reported position of the motor without it physically moving, effectively changing the origin of the axis. 
+This can be achieved through EPICS by applying an offset to the reported motor position and by setting the position in steps in the motor. TO do this:
 
+1. See if you can home the axis instead of setting the value directly
 1. Ensure the motor IOC is running
 1. Put the instrument in to manager mode if it is not already in the mode
     * Menu bar: IBEX -> Manager mode
