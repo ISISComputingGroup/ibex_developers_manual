@@ -8,7 +8,7 @@
 * we were implementing more tickets than reviewing, this seems to have changed now
   - this being brought up has driven people to review more
   - we've got more points done than predicted, maybe because of not doing as well last sprint.
-  - try not to read too much into the burndown graph
+  - try not to read too much into the burn down graph
 * meeting roles seem to be working
 * did we make this release more stressful by imposing arbitrary deadlines? Possibly, but it's more likely that they will always be stressful
   - maybe don't leave enough time between manual system tests and first deployment
