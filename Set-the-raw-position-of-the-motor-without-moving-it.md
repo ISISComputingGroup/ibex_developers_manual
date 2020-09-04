@@ -15,7 +15,7 @@ Sometimes it is desirable to change the reported position of the motor without i
 1. In the `Calibration` section, 
     - ensure that it says Frozen above the offset box
     - switch `Cal` from `use` to `set`
-    ![motor details Calibration section Set pressed](motors/motor_details_Calibration_Set.png)
+    - ![motor details Calibration section Set pressed](motors/motor_details_Calibration_Set.png)
 1. Either
     1. Change the `Off` field to apply an offset to the current position
     1. Change the current position directly by changing the `MoveAbs` `User` field in the `Drive` section
