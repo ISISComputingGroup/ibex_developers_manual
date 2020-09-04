@@ -102,8 +102,17 @@ If we have a pre-existing VI it might be useful to connect it to an emulator to 
 5. Run the com2tcp.py script found in https://github.com/ISISComputingGroup/EPICS-DeviceEmulator/ to create a connection between one COM port and Lewis e.g. `python com2tcp.py 57677 COM12`
 6. Connect the VI to the COM port that you haven't run com2tcp.py on
 
-If the above is not working check that the baud rates/stop bits etc. set in the VI, NPort and com2tcp are all the same. otherwise look in NI MAX and confirm that the COM ports are showing up under devices and interfaces on the left, if they are not you may need to update NI MAX. Also note that the port you want to set in the driver VI is the one highlighted below (which can occasionally differ from the actual COM port)
+If the above is not working check that the baud rates/stop bits etc. set in the VI, NPort and com2tcp are all the same. otherwise, look in NI MAX and confirm that the COM ports are showing up under devices and interfaces on the left, if they are not you may need to update NI MAX. Also, note that the port you want to set in the driver VI is the one highlighted below (which can occasionally differ from the actual COM port)
 ![NI MAX](emulating_devices/ni_max.JPG)
+
+If you want to test against the LabVIEW VI and you aren't in a position to create a loopback in the MOXA, there is a VI available which you can use within the communication VI instead of the serial connections.
+1. Create some room inside the main case
+2. On the block diagram, move the reply to the far right of the main case, the read reply button and the command to the far left of the main case
+3. Drop a `disable diagram` structure around the serial communications section
+4. In the enabled state, drop in an instance of `IBEX Integration - Connect to TCP.vi`, which can be found in the `IBEX Integration.llb` in the Utilities directory (if the VI isn't there, then you need to get an updated version of the repo)
+5. Connect the errors, reply, command and so on in the obvious fashion, connect the COM port to the Port In, and create a constant for the mode
+6. Change the COM port in the setup dialog to the port of the emulator (this has to be running on localhost at the moment)
+7. Run the emulator and VI and they should be talking to each other
 
 ## Troubleshooting
 
