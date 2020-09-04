@@ -6,6 +6,8 @@ To prevent duplication, the GUI perspective depends wholly on the standalone app
 
 [Gotchas and Troubleshooting](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Gotchas-and-Troubleshooting-for-The-IBEX-Script-Generator).
 
+[Creating a release](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Creating-a-script-generator-release)
+
 ## The directory structure
 | Purpose        | Location |
 | -------------- |----------|
