@@ -71,6 +71,8 @@ If the GUI loads up but items are the wrong size, you may need to change your di
 
 Generally a resolution of 1920 x 1080 with a scaling factor of 100% should look correct on standard screens. You can increase both of those settings slightly if you feel like the display elements look uncomfortably small.
 
+Errors can occur if the wrong version of Java is installed for your OS. For example, the `x86` version can differ from the `x64` version and can cause issues when building the GUI. 
+
 ## Eclipse troubleshooting ##
 
 Sometimes eclipse will tell you that you have errors when you open it. The following operations (may) help.
@@ -80,4 +82,5 @@ Sometimes eclipse will tell you that you have errors when you open it. The follo
 - If you have done all these steps and it still doesn't work, there is more troubleshooting information [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Common-Eclipse-Issues).
 - If all else fails, delete all the projects from eclipse's workspace and reimport them.
 
+Eclipse can automatically set the Java standard for some projects to `1.8`. If you are seeing errors such as `var cannot be assigned to a type` on certain projects, navigate to the project in the explorer, then right-click and choose Properties->Java Compiler->Configure Workspace Settings, and then set the required Java standard to `11`.
 
