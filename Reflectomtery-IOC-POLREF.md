@@ -2,6 +2,10 @@
 
 Specific information about POLREF.
 
+### Axes
+
+![axes directions on POLREF](reflectometers/AxesOnPolref.png)
+
 ### Slit 3/Beam blocker
 
 Slit 3 is a tall set of normal jaws sitting on the bench. In horizontal sample mode the centre of the jaws is set using the `S3OFFSET` parameter which sets the distance from beam to the jaws, (usually set to 0). The bench movement means that the centre of the jaws rarely needs to change except during a slit scan.
