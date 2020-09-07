@@ -4,6 +4,8 @@ Specific information about POLREF.
 
 ### Axes
 
+Axes when sample is in horizontal configuration. In vertical configuration CHI and Theta/PSI/ANGLE are swapper.
+
 ![axes directions on POLREF](reflectometers/AxesOnPolref.png)
 
 ### Slit 3/Beam blocker
