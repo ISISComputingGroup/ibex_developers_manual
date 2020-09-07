@@ -4,7 +4,7 @@ Specific information about POLREF.
 
 ### Axes
 
-Axes when sample is in horizontal configuration. In vertical configuration CHI and Theta/PSI/ANGLE are swapper.
+Axes when sample is in horizontal configuration. In vertical configuration CHI and Theta/PSI/ANGLE are swapped.
 
 ![axes directions on POLREF](reflectometers/AxesOnPolref.png)
 
