@@ -7,7 +7,7 @@
 ## Project 
 
 - [Project overview](Project-Overview): High level overview of the project including architectural and design documents.
-- [Project Ideas](Project-Ideas): List of project ideas for the future or to ask [SAG](https://stfc365.sharepoint.com/sites/IBEXSAG), this is lower level ideas not as high level as future [ideas](https://github.com/ISISComputingGroup/IBEX/wiki/Future-Ideas).
+- [Project Ideas](Project-Ideas): List of project ideas for the future or to ask [SAG](https://stfc365.sharepoint.com/sites/IBEXSAG), this is lower level ideas not as high level as future [ideas](https://github.com/ISISComputingGroup/IBEX/wiki/Fure-Ideas).
 
 ## Components of the System
 
