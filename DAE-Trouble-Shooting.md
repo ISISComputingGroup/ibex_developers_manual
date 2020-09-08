@@ -1,5 +1,17 @@
 > [Wiki](Home) > [Trouble-shooting](trouble-shooting-pages) > [DAE](DAE-Trouble-Shooting)
 
+### Restarting the DAE in IBEX
+
+This IOC does not appear in the normal IOC restart list in the IBEX client, first open an EPICS terminal
+
+    `...\EPICS\epicsterm.bat`
+
+then run
+
+    `console -M localhost ISISDAE_01`
+
+and when connected press `Ctrl-x` once, you should see some restart messages from the IOC. Quit the EPICS term.
+
 ### invalid tcb start
 
 It is likely that you are in a muon configuration for the DAE but using a neutron tcb file or vice versa.
