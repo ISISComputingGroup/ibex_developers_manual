@@ -4,11 +4,11 @@
 
 This IOC does not appear in the normal IOC restart list in the IBEX client, first open an EPICS terminal
 
-    `...\EPICS\epicsterm.bat`
+`...\EPICS\epicsterm.bat`
 
 then run
 
-    `console -M localhost ISISDAE_01`
+`console -M localhost ISISDAE_01`
 
 and when connected press `Ctrl-x` once, you should see some restart messages from the IOC. Quit the EPICS term.
 
