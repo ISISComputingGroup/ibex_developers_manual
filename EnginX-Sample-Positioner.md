@@ -10,4 +10,4 @@ The program should be burnt in to the controller see the readme text in the labv
 
 ### Redefining positioner variables (X, S, Omega etc.)
 
-This can be done with the `EnginX - Positioner - Galil Remote.vi` input the value to redefine to in the setpoint and then press the define button directly below.
+This can be done with the `EnginX - Positioner - Galil Remote.vi` (found in the Positioner folder of the EnginX Positioner in LabVIEW Modules) input the value to redefine to in the setpoint and then press the define button directly below.
