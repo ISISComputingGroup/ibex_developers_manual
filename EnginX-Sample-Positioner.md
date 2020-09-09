@@ -8,3 +8,6 @@ Under the hood the IBEX `SamPos` IOC uses lvdcom to talk with the labview vi. Th
 
 The program should be burnt in to the controller see the readme text in the labview modules `LabVIEW Modules\Instruments\Enginx\Galil Programs`. The program is also in there and is called `jogboxwithpos.gal` this is the one to upload it is a compressed version of a more commented program `Jog Box.dmc`. You will also need to set and burn the values of `MultX` and `TwkX` the values are stored in that `readme`.
 
+### Redefining positioner variables (X, S, Omega etc.)
+
+This can be done with the `EnginX - Positioner - Galil Remote.vi` input the value to redefine to in the setpoint and then press the define button directly below.
