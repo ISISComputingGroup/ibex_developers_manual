@@ -115,3 +115,5 @@ IF ((hjog${AXIS} = n) & (_BG${AXIS}=0) & (home${AXIS}=1) [& (_SC${AXIS}=[value])
    hjog${AXIS} = n + 1
 ENDIF
 ```
+
+The existing steps are detailed in [Galil Homing Routine Steps](Galil-Homing-Routine-Steps)
