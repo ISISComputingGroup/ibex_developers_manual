@@ -22,8 +22,9 @@ The loading of the homing routines uses a macro to define the axis based on the 
 
 There are a number of variables used within these routines.
 
+
 | Variable Name | Variable Purpose |
-| == | == |
+| --- | --- |
 | `homeX` | Indicates that a home has been requested (1) |
 | `hjogX` | Indicates which step of the homing routine is to be completed next |
 | `inhomeX` | Indicates that the axis is in the process of homing | 
@@ -33,6 +34,7 @@ There are a number of variables used within these routines.
 | `dpon` | ? |
 | `dvalues` | ? |
 | `homedX` | This is set to 1 before being returned as a message |
+
 
 ### Header
 
@@ -55,8 +57,7 @@ If a home has been requested (homeX = 1)
    If we are about to start the homing routine (hjogX = 1) AND the motor is in motion AND a home has been requested (homeX = 1)
       Stop the motor
    Undertake appropriate homing steps
-   If we have completed all the homing steps (hjogX = number of steps in homing routine + 1) AND the motor isn't moving AND a home has been requested 
-   (homeX = 1) AND in certain cases that the reason for the motor stop is the appropriate value
+   If we have completed all the homing steps (hjogX = number of steps in homing routine + 1) AND the motor isn't moving AND a home has been requested    (homeX = 1) AND in certain cases that the reason for the motor stop is the appropriate value
       Indicate that we are have reached the end of the homing steps (hjogX = 0)
       Clear the home request (homeX = 0), send a message to the remote system
       Set the homedX varirable to 1, send a message to the remote system
