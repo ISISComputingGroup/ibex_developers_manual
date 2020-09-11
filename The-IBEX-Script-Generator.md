@@ -8,6 +8,8 @@ To prevent duplication, the GUI perspective depends wholly on the standalone app
 
 [Creating a release](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Creating-a-script-generator-release)
 
+[[Script Generator Testing Environment]]
+
 ## The directory structure
 | Purpose        | Location |
 | -------------- |----------|
