@@ -77,7 +77,7 @@ NO*********HOME - [Homing routine title]************
 [NO*********Describe homing routine steps if not obvious**********]
 #HOME${AXIS}
 IF (home${AXIS}=1)
-    inhome${AXIS}=1
+        inhome${AXIS}=1
 	IF ((home${AXIS}=1) & (hjog${AXIS}=0))
 	    slimfl${AXIS}=_FL${AXIS};FL${AXIS}=2147483647
 		slimbl${AXIS}=_BL${AXIS};BL${AXIS}=-2147483648
@@ -117,3 +117,7 @@ ENDIF
 ```
 
 The existing steps are detailed in [Galil Homing Routine Steps](Galil-Homing-Routine-Steps)
+
+### The Home No Home routine
+
+This is a variation on the above, as it does not include the standard items relating to the soft limits or stopping the motor
