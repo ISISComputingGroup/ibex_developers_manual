@@ -2,11 +2,11 @@ After the first full release of the script generator testing on personal compute
 
 A few options:
 
-- Run up a VM with windows and copy a built version into it for testing (see Script Generator VM Testing below)
+- Run up a VM with windows and copy a built version into it for testing (see VM Testing below)
 - Have a "clean" windows server to remote desktop into and copy a built version for testing
    - We will have to maintain the cleanliness by preventing setup of Java, Git and Python in it
 
-## Script Generator VM Testing
+## VM Testing
 
 https://developer.microsoft.com/en-us/windows/downloads/virtual-machines/
 
