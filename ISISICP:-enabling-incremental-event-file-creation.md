@@ -3,7 +3,7 @@ The ISISICP can write an event mode NeXus data file incrementally during the run
 To enable incremental mode edit `isisicp.properties` in `C:\labview modules\dae` and add/uncomment lines saying
 ``` 
 isisicp.incrementaleventnexus = true
-isisicp.kfakastream = true
+isisicp.kafkastream = true
 ``` 
 The changes will not take effect until you restart the ISISICP program - make sure you are in SETUP and any runs have finished saving, then kill the `ISISICP` process using task manager (you can restart seci/ibex if you prefer, but that is not necessary)
 
