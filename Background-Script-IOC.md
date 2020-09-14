@@ -5,6 +5,8 @@ The background script IOC will run a script in the background. The script must b
 If you want the IOC to register as started the user must include the lines:
 
 ```
+from server_common.helpers import register_ioc_start
+
 sys.path.insert(1, os.path.abspath(os.path.join(os.environ["KIT_ROOT"], "ISIS", "inst_servers", "master")))
 
 register_ioc_start("BGRSCRPT_01")
