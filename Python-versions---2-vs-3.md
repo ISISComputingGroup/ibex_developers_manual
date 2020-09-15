@@ -7,10 +7,8 @@
 | Block Server | Database Server |
 | Reflectometry Server | Instrument Scripts
 | Block Cache | Script Generator |
-| Block Server to kafka |
-| Collision Avoidance Monitor |
-| Remote IOC Server |
-| IBEX utils |
+| Collision Avoidance Monitor | Block Server to Kafka |
+| Remote IOC Server | IBEX utils |
 | IBEX Wiki check |
 | Squish Tests|
 | Archiver Access |
