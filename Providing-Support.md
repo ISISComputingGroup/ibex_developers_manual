@@ -80,22 +80,25 @@ There are a number of tips for [trouble shooting](trouble-shooting-pages) alread
           * Make sure the settings in the IOC/VI are correct
           * If the IOC/VI have been updated since the device last worked correctly, roll back to a version that is known to work, and raise a ticket to investigate the issue and find a more sustainable solution
   1. I can't use this button to get to more details/why doesn't this bit of the OPI work
-    - Check they are in manager mode
+      - Check they are in manager mode
   1. I need to add this device to my system
-    - Check [the user manual](https://github.com/ISISComputingGroup/ibex_user_manual/wiki) for IBEX, for SECI, if you don't know already ask someone else
+      - Check [the user manual](https://github.com/ISISComputingGroup/ibex_user_manual/wiki) for IBEX, for SECI, if you don't know already ask someone else
   1. My motor won't move
-    - Is any of the other information updating for that motor controller?
-      Yes: Go to next consideration
-      No: Under IBEX go to the engineering device screen, under SECI open the advanced motor functions and go to the console tab, do not send any characters but send a command, if the response is anything but `:` then the Galil is in a fault mode of some kind which will involve restarts etc.
-          * If the Galil is unresponsive refer it to EUSG via the MCR 
-    - Looking at the specific motor:
-        - Are you trying to move in the same direction as an active limit switch?
-          Yes: Try moving in the other direction, if you can move that way to a requested position all is fine
-        - Are you able to move in either direction?
-          No: Check for hardware faults (potentially as a referral to EUSG via the MCR)
-        - If it is able to move, is the encoder tracking in the same direction as the requested motion?
-          No: The motor setup is probably incorrect, recommission the motor
-          Yes: Feel bewildered as this should be a moving motor
+      - Are both limits made?
+          - Yes: Something has happened in the physical realm, refer it to EUSG via the MCR
+          - No: Go to next consideration
+      - Is any of the other information updating for that motor controller?
+          - Yes: Go to next consideration
+          - No: Under IBEX go to the engineering device screen, under SECI open the advanced motor functions and go to the console tab, do not send any characters but send a command, if the response is anything but `:` then the Galil is in a fault mode of some kind which will involve restarts etc.
+              * If the Galil is unresponsive refer it to EUSG via the MCR 
+     - Looking at the specific motor:
+         - Are you trying to move in the same direction as an active limit switch?
+             - Yes: Try moving in the other direction, if you can move that way to a requested position all is fine
+         - Are you able to move in either direction?
+             - No: Check for hardware faults (potentially as a referral to EUSG via the MCR)
+         - If it is able to move, is the encoder tracking in the same direction as the requested motion?
+             - No: The motor setup is probably incorrect, recommission the motor
+             - Yes: Feel bewildered as this should be a moving motor
   1. My device isn't behaving as I expect
     - Verify that the device expected on that port is the device connected on that port
     - Treat it as a device that is unable to interact
