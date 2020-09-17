@@ -21,9 +21,9 @@
 * only record if everyone is comfortable being recorded, if you are uncomfortable being recorded but not willing to speak up about it, contact K.B. or D.O. and they will champion the issue.
 
 ## Mantid has a week after release to tidy up
--this is equivalent of our tech debt stand down, but for a week.
--Mantid has more of a need for this than we do due to the size of their team and the manner in which they manage their development
--We might put aside a "no new dev work" sprint in long shutdown, and maybe 1 week per year of this, but no changes right now.
+- this is equivalent of our tech debt stand down, but for a week.
+- Mantid has more of a need for this than we do due to the size of their team and the manner in which they manage their development
+- We might put aside a "no new dev work" sprint in long shutdown, and maybe 1 week per year of this, but no changes right now.
 
 ## Should we run the system tests locally more?
 * No, this is the purpose of the build servers, only run them on your machine if you think it will break a system test
