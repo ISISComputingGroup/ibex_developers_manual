@@ -13,7 +13,7 @@ For the Mclennan this means that the belt must be driven in the positive directi
 There is currently an instrument script on MARI called `changer.py` which moves everything in the correct direction, including during homing, and selects the correct samples. Due to homing directions being different for both they can currently only be homed through that script, not the GUI. This will be corrected in https://github.com/ISISComputingGroup/IBEX/issues/5729.
 
 ### Correctly moving universal joint sample changer
-![](motors/mari_sample_changer_UJ.gif)
+![](motors/mari_sample_changer_joint.gif)
 
 ### Correctly moving belt sample changer
 ![](motors/mari_sample_changer_belt.gif)
