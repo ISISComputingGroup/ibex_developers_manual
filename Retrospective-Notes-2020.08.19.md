@@ -38,11 +38,11 @@
 * If only one person is attending molecular spectroscopy demos each month maybe add them to another group to save dev time
 * Potentially present to their group meeting, check with them.
 
-## good progress with points completed
+## Good progress with points completed
 * we've got more points done than predicted, maybe because of not doing as well last sprint.
 * try not to read too much into the burn down graph
 * will see if it continues to next sprint
 
-## stand up order
+## Stand up order
 * If people want to change it then they can do so at their leisure, list is useful so people don't get surprised by being at the start, also highlights people who aren't there.
 
