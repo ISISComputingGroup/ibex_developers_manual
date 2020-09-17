@@ -19,13 +19,13 @@ The time stamp on these are for the first `get_pv` call or equivalent after a di
 
 ## Command problems
 
-### Can not set or get a block reports diconnected
+### Can not set or get a block reports disconnected
 
 There can be multiple problems, check:
 
 1. Block exists
 1. Block is spelt correctly, use `b.` and autocomplete
-1. Try getting the underlying pv `g.get_pv("IN:<instrument>:CS:SB:<Block name?")
+1. Try getting the underlying PV `g.get_pv("IN:<instrument>:CS:SB:<Block name?")`
 1. Restart the GUI genie_python console
 
 ## Import problems
