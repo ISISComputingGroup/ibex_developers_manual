@@ -71,10 +71,12 @@ There are a number of tips for [trouble shooting](trouble-shooting-pages) alread
   1. I can't talk to device/my blocks are showing as disconnected/IOC isn't working
       - Check that the IOC is running
       - Check that the device is turned on
+      - Check if your problem is already listed on the [device/ioc wiki pages](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Specific-Device-IOC).
       - If the device is a DAQmx one, look at it in MAX, and perform a self-test
       - Device not responding
           * Stop the IOC (or VI) and try to connect via a more direct route, e.g. Putty
           * Check the cabling, and that ports etc. are correct
+          * For serial devices, check using the MOXA web interface that bytes are being sent and recieved on the correct port. Moxa IPs are listed [here](http://beamlog.nd.rl.ac.uk/inst_summary.xml) and the login details are on the usual passwords page.
       - If the device is unable to interact in any way, refer this to the appropriate hardware team (via the MCR out of hours)
       - If the device responds via a more direct route, but not via the IOC/VI
           * Make sure the settings in the IOC/VI are correct
@@ -100,9 +102,10 @@ There are a number of tips for [trouble shooting](trouble-shooting-pages) alread
              - No: The motor setup is probably incorrect, recommission the motor
              - Yes: Feel bewildered as this should be a moving motor
   1. My device isn't behaving as I expect
-    - Verify that the device expected on that port is the device connected on that port
-    - Treat it as a device that is unable to interact
-    - Check the error logs (either through the log interface in the GUI, the console logs, or other appropriate method)
+     - Verify that the device expected on that port is the device connected on that port
+     - Treat it as a device that is unable to interact
+     - Check the error logs (either through the log interface in the GUI, the console logs, or other appropriate method)
+     - Verify that the behavior you're seeing is not a known quirk of the device. These quirks are often detailed on the [device/ioc wiki pages](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Specific-Device-IOC)
 
 </details>
 
@@ -118,11 +121,11 @@ There are a number of tips for [trouble shooting](trouble-shooting-pages) alread
   <summary>Script issues</summary>
 
   1. My script won't load
-    - (TODO: Fill in this whole section)
+     - If `g.load_script` is being used and you see errors of the form `E:  1: error description (error-name)`, these errors are coming from the linter. Detailed linter troubleshooting is available [here](https://github.com/ISISComputingGroup/ibex_user_manual/wiki/Error-Checking-Troubleshooting).
   1. My script isn't behaving in the way I expect it to
-    - This is a best efforts, and not everyone can provide the same level of support
-    - Look at it with respect to basic coding standards and obvious race condition points
-    - (TODO: Complete this section)
+     - This is a best efforts, and not everyone can provide the same level of support
+     - Look at it with respect to basic coding standards and obvious race condition points
+     - (TODO: Complete this section)
 
 </details>
 
