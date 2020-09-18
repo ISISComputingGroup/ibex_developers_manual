@@ -52,3 +52,4 @@ def init(inst):
 #### Background restart of an IOC if it crashes and doesn't recover
 
 A script has been put on EMU for if an IOC goes into a severe alarm state (`INVALID`) and fails to reconnect to the hardware. The script is responsible for restarting the IOC if this happens and checking that the IOC has come back online and is no longer in an alarm state. 
+This script is also now available in the instrument scripts repository. 
