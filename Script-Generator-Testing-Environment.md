@@ -28,13 +28,13 @@ Things to check:
 ### Licensing
 
 - https://windowsdev.azureedge.net/eulas/WindowsDeveloperVirtualMachineEula20151118.pdf
-- Section 7 describes what we are not allowed to use it for
+- `Section 7` describes what we are not allowed to use it for
   - This does not include any of our currently intended purposes
-- Section 1 part c worries me slightly
+- `Section 1 part c` worries me slightly
   - I think we are using it to demonstrate and internally evaluate software on windows
-  - I am not sure whether or not this would be classed as a commercial purpose (I think this means as commercial hosting so I believe it is fine if you take into account Exhibit A 2cv)
-- Section 4
+  - I am not sure whether or not this would be classed as a commercial purpose (I think this means as commercial hosting so I believe it is fine if you take into account `Exhibit A 2cv`)
+- `Section 4`
   - We can have a backup copy and reinstall it
   - Does this mean we can keep reinstalling it?
-- Exhibit A 13dii "you may not use it after the evaluation period"
+- `Exhibit A 13dii` "you may not use it after the evaluation period"
   - Does this mean that we cannot reinstall it or use the same VM?
