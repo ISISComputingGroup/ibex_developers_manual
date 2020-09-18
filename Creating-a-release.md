@@ -45,7 +45,7 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
         1. In `/uk.ac.stfc.isis.ibex.e4.client/pom.xml` edit the `<version>` tag (not in parent) content to be `X.x.m` (This tag may not be present and so will have to be added see as in [this](https://github.com/ISISComputingGroup/ibex_gui/compare/master...Release_5.2.1) example)
     1. Script generator
         1. In `/uk.ac.stfc.isis.scriptgenerator.client/plugin.xml` in `Overview` tab set `Version: ` to be `X.x.m`
-        2. In `/uk.ac.stfc.isis.scriptgenerator.client/pom.xml` create a new `<version>` tag (not in parent) and give it content of be `X.x.m` e.g. https://github.com/ISISComputingGroup/ibex_gui/compare/Release_Script_Gen_7.2.0)
+        2. In `/uk.ac.stfc.isis.scriptgenerator.client/pom.xml` create a new `<version>` tag (not in parent) and give it content of be `X.x.m` (e.g. see [here](https://github.com/ISISComputingGroup/ibex_gui/compare/Release_Script_Gen_7.2.0))
 
     1. EPICS
         1. In `EPICS\ioc\master\INSTETC\INSTETC-IOC-01App\Db\svn-revision.db.tmpl` edit `field(VAL, "0.0.0.$WCREV$")` to be `field(VAL, "X.x.m.$WCREV$")`
