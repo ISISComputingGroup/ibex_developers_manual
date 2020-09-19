@@ -1,6 +1,6 @@
 ## Introduction
 
-RBService is a C# program that runs as a service and pulls IBEX `experiment details` information from [BUS apps API](https://api.facilities.rl.ac.uk/ws/ScheduleWebService?wsdl) and saves it in an XML file. The generated XML file is then stored in `C:\Data\RBNUM`. This service ideally should only be running on the SECI instrument as it is now been replaced by [Experiment Database Populator](https://github.com/ISISComputingGroup/ExperimentDatabasePopulator) in an IBEX instrument.
+RBService is a C# program that runs as a service and pulls IBEX `experiment details` information from [BUS apps API](https://api.facilities.rl.ac.uk/ws/ScheduleWebService?wsdl) and saves it in an XML file. The generated XML file is then stored in `C:\Data\RBNUM`, and is read by SECI to fill up the experiment details perspective in SECI. This service ideally should only be running on the SECI instrument as it is now been replaced by [Experiment Database Populator](https://github.com/ISISComputingGroup/ExperimentDatabasePopulator) in an IBEX instrument.
 
 ## Code
 
