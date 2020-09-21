@@ -18,6 +18,8 @@ Typically we then append any other code for specific functions we need after the
 
 The loading of the homing routines uses a macro to define the axis based on the location in the start controller setup (see [Galil](Galil) for more detailed information), for brevity and ease of reading this will be replaced by X throughout the descriptions below. 
 
+Further command docs can be found in the share manuals in mac2xxx.pdf
+
 ### Variables
 
 There are a number of variables used within these routines.
