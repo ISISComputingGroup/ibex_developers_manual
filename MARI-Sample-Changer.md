@@ -6,11 +6,11 @@ MARI has two different sample changers. They are very similar in that they are b
 
 Unfortunately, although the sample changers are very similar they are mechanically different in that one is directly driven by a universal joint (UJ) and the other is driven by a belt. Due to these mechanics the sample changers run in different directions (e.g. a positive move on the Mclennan causes a clockwise rotation in one sample changer and anti-clockwise in the other). For both the belt and the universal joint the correct direction is **clockwise from the top** (the top being the side where the home datum is). See the videos below.
 
-Confusingly there was an arrow on the bottom of each sample changer indicating which way it turns that was incorrect. The IS has corrected this arrow in blue marker pen. 
+Confusingly there was an arrow on the bottom of each sample changer indicating which way it turns that was incorrect. The IS has corrected this arrow in blue marker pen. For the Mclennan this means that the belt must be driven in the positive direction and the UJ in the negative direction. The positions on the cans were originally incorrectly labelled, they have now been correctly labelled by the instrument scientist in pen.
  
-For the Mclennan this means that the belt must be driven in the positive direction and the UJ in the negative direction. Unfortunately the cans are labelled incorrectly on the UJ so that going from position 1 to position 2 actually requires a 270 degree turn. On the belt they are correct and 1 -> 2 only requires a 90 degree turn.
- 
-There is currently an instrument script on MARI called `changer.py` which moves everything in the correct direction, including during homing, and selects the correct samples. Due to homing directions being different for both they can currently only be homed through that script, not the GUI. This will be corrected in https://github.com/ISISComputingGroup/IBEX/issues/5729.
+There is currently an instrument script on MARI called `changer.py` which moves everything in the correct direction, including during homing, and selects the correct samples. Due to homing directions being different for both they can currently only be homed through that script, not the GUI. These issues will be corrected in https://github.com/ISISComputingGroup/IBEX/issues/5729.
+
+Finally, because of inaccuracies between converting the motor resolution in the mclennan to one in IBEX the script does not move 90 degrees for each sample and instead has a small correction. To experimentally measure this correction there is a `test_sample_changer.py` script in C:\Scripts on MARI which will move the cans a number of full revolutions and ask the user to confirm they are still correctly aligned.
 
 ### Correctly moving universal joint sample changer
 ![](motors/mari_sample_changer_joint.gif)
