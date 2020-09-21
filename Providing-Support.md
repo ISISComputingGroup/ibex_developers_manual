@@ -76,7 +76,7 @@ There are a number of tips for [trouble shooting](trouble-shooting-pages) alread
       - Device not responding
           * Stop the IOC (or VI) and try to connect via a more direct route, e.g. Putty
           * Check the cabling, and that ports etc. are correct
-          * For serial devices, check using the MOXA web interface that bytes are being sent and recieved on the correct port. Moxa IPs are listed [here](http://beamlog.nd.rl.ac.uk/inst_summary.xml) and the login details are on the usual passwords page.
+          * For serial devices, check using the MOXA web interface that bytes are being sent and received on the correct port. Moxa IPs are listed [here](http://beamlog.nd.rl.ac.uk/inst_summary.xml) and the login details are on the usual passwords page.
       - If the device is unable to interact in any way, refer this to the appropriate hardware team (via the MCR out of hours)
       - If the device responds via a more direct route, but not via the IOC/VI
           * Make sure the settings in the IOC/VI are correct
