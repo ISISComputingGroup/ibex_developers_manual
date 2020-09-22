@@ -120,6 +120,8 @@ The symptom is that the device acts as if it's not there - you will see serial w
 
 I am not aware of a remote command to set the device back into remote mode, so you will need to walk up to the physical mercury controller. It has a touch screen with a small `l` in the bottom-left of the touch screen. If it is shown in blue, tap it once. It should turn orange, which indicates the device is now in remote. Check you now have comms.
 
+**NB** Only the main communications socket (25 pin d-type, labelled _RS232_) should be connected to a MOXA port, **not** any other sockets on the Mercury.
+
 ### I can read the main temperature but not any channels
 
 Check channel assignments are correct - see table above and instructions for finding out channel names if unknown.
