@@ -52,7 +52,7 @@ Often the system disk gets full because of logging, or windows updates etc. You 
 - run tree size:
     - flag large files that you are worried about delete to Chris
     - uninstall apps which shouldn't be there
-- Check size of `instrument/var/logs` move any large logs to back `<inst area>\Backups$\stage-deleted\ndxMARI`. Do this by creating a directory on c, moving files in then copying to this because it is write once. 
+- Check size of `instrument/var/logs` move any large logs to back `<inst area>\Backups$\stage-deleted\<instrument>`. Do this by creating a directory on c, moving files in then copying to this because it is write once. 
 - [Truncate the database if it is too large](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Database-Troubleshooting#reducing-database-disc-space)
 
 
