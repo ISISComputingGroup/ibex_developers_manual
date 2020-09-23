@@ -9,6 +9,6 @@
 | Block Cache | Script Generator |
 | Collision Avoidance Monitor | Block Server to Kafka |
 | Remote IOC Server | IBEX utils |
-| IBEX Wiki check |
+| IBEX Wiki check | System tests |
 | Squish Tests|
 | Archiver Access |
