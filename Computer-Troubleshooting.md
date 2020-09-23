@@ -54,12 +54,11 @@ Often the system disk gets full because of logging, or windows updates etc. You 
     - uninstall apps which shouldn't be there (if you have admin access then removing mysql installer - community save 600Mb)
 - Check size of `instrument/var/logs` move any large logs to back `<inst area>\Backups$\stage-deleted\<instrument>`. Do this by creating a directory on c, moving files in then copying to this because it is write once. 
 - [Truncate the database if it is too large](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Database-Troubleshooting#reducing-database-disc-space)
+- If you have remote desktop and a little more time then:
+    - disk disk clean up on c as user remove all default files
+    - run it in admin mode by clicking the button
+    - remove all the default files it lets you
 
-Experimental not yet approved
-
-- disk disk clean up on c
-- run it in admin mode by clicking the button
-- look at things that can be removed
 
 
 
