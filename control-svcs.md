@@ -8,6 +8,7 @@ The machine runs various services, including:
 * Git repositories for storing configs etc. (see https://control-svcs.isis.cclrc.ac.uk/git/)
 * [Experiment database populator](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Experimental-Database)
 * The [Alert Relay](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Alert-Relay)
+* [Isis info slack channel bots](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/ISIS-Info-Slack)
 
 None of these services are crucial for running instruments to continue taking data.
 
