@@ -2,7 +2,7 @@
 
 Information about the beam current and instrument shutter status is stored in the main accelerator control computer system, though a shutter is local to an instrument it is part of a safety system and we do not have direct access to it ourselves. Also the accelerator computer system can only read main shutter status - opening/closing a main shutter can only be performed using a physical button in the cabin. 
 
-This information is fed from an IOC running on a machine on the accelerator network (merckx.isis.rl.ac.uk). This is a VMS machine with the EPICS distribution from [here](https://github.com/FreddieAkeroyd/EPICS-VMS). The IOC is set to run on boot time and is auto-restarted if it is not present, it will also auto-restart if it receives too many errors, but some failures can cause it to hang.
+This information is fed from an IOC running on a machine on the accelerator network (merckx.isis.rl.ac.uk). This is a [Open VMS](https://en.wikipedia.org/wiki/OpenVMS) machine with the EPICS distribution from [here](https://github.com/FreddieAkeroyd/EPICS-VMS). The IOC is set to run on boot time and is auto-restarted if it is not present, it will also auto-restart if it receives too many errors, but some failures can cause it to hang.
 
 You can log onto this machine using details on usual access page (you will need to use ssh via something like PuTTY)
 
