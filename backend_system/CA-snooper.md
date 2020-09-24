@@ -21,6 +21,8 @@ Another useful option is  -c  which is like -p above, but will also check for ex
 PV. In the resulting listing a   NC   means "not connected" i.e. PV does not exist. You can use -c0 or
 -p0 to mean check/print all PVs found.
 
+CA snooper is run periodically on `control-svcs`. A link to this is at http://control-svcs.isis.cclrc.ac.uk/pv_snoop/pvs.html. 
+
 ## Checking IOCs
 
 * start caSnooper in one command window as e.g.      _caSnooper -t30 -c0 > snoop.log_
