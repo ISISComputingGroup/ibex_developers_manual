@@ -26,7 +26,7 @@ V2 hardware is assumed by default in the ioc; no special configuration is requir
 
 # Hardware
 
-- There is a python script **running on a separate PC** (NDW1889) which controls some DAQ units
+- There is a python script **running on a separate PC** (LET:NDW1889, POLREF:NDW1937) which controls some DAQ units
 - This python script reads the timing pulse (this can come from the synchrotron or a chopper) and controls the flipper
 - The python script exposes a TCP connection
 - The python script is available in `\shares\ISIS_Experiment_Controls\external_code\Mezei Neutron Spin Flipper`
