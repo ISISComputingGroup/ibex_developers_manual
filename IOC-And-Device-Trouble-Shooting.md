@@ -252,7 +252,7 @@ Certain IOCs can be made to generate log files using the [ARACCESS component](Lo
     [2020-09-24 09:20:25] [1600935625.01] INFO: Last active: 2020-09-24T09:19:31 (13469489)
     ```
    - If this doesn't show both start and stop lines which that it is set to auto start in the default block component
-- Start and stop the logging and see if it says it is creating a file, e.g. `INFO: Writing log file '...'` is this inthe expected place
+- Start and stop the logging and see if it says it is creating a file, e.g. `INFO: Writing log file '...'` is this in the expected place
 - Check the PVs it says it is logging and monitoring do they exist?
 - Next check the ARINST level is it up (check `http://localhost:4812/groups`)
     - if not restart it, this means that there is no data stored for the run
