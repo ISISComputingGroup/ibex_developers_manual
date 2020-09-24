@@ -25,12 +25,21 @@ stop /id=231601FE
 ```
 to kill it, then wait for it to restart (may take up to 30 seconds). Use the above `pipe` command to see then it has restarted, and then check isisbeam.log again. Look for messages after the `Starting iocInit` line in the file  
 
-The asyn parameters that are served are mapped to VISTA parameters  
+## more complicated details
+
+The asyn parameters that are served by the IOC are mapped to VISTA parameters (this is the accelerator control system). You can see the mapping with:  
 ```
 type params.txt
 ```
-you can read the VISTA parameter directly on MERECKX e.g.
+a line like
 ```
+beam_ions        float    t  0    IDTOR::IRT1:CURRENT
+```
+means asyn parameter `beam_ions` (in the IOC Db files) is mapped to VISTA parameter `IDTOR::IRT1:CURRENT`. The other columns are related to data type and how the programs tries to check for state values. If the `isisbeam.log` indicated a huge number of errors for a particular parameter, then this could affect reading other parameters - after a certain number of errors the program restarts, but if it starts restarting too frequently this can cause PVs never to reconnect properly. In that case you may need to temporarily remove a line, but seek advice first. 
+
+You can read the VISTA parameter directly on MERECKX if you think the issue is with the IOC e.g.
+```
+db_access IDTOR::IRT1:CURRENT
 db_access t1shut::n1_overview:sta
 ```
 
