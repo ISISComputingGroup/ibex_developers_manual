@@ -149,7 +149,7 @@ Example ramp (260mK-1.8K in steps of 20mK) demonstrating these instabilities (no
 
 There is nothing the driver does in either SECI or IBEX which can affect these stabilities. Consult cryogenics to check outer cryostat performance, PID parameters, flow rates etc.
 
-### Regeneration starts when I set temperature = 0
+### Regeneration starts when I set temperature setpoint = 0
 
 This is a feature of the heliox intentionally added by oxford instruments, when the device gets a setpoint of zero it interprets it as "regenerate and then cool" as opposed to just "cool".
 
