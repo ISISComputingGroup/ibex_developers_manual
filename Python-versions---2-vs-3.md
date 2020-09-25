@@ -2,7 +2,7 @@
 
 | Python 2| Python 3|
 | ------ | ----  |
-| Device Emulators | Genie Python |
+| Archiver Access | Genie Python |
 | IOC Testing Framework | Script Server |
 | Block Server | Database Server |
 | Reflectometry Server | Instrument Scripts
@@ -10,5 +10,5 @@
 | Collision Avoidance Monitor | Block Server to Kafka |
 | Remote IOC Server | IBEX utils |
 | IBEX Wiki check | System tests |
-| Squish Tests|
-| Archiver Access |
+| Squish Tests| Device Emulators
+
