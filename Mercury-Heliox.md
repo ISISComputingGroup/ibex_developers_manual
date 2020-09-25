@@ -148,3 +148,9 @@ Example ramp (260mK-1.8K in steps of 20mK) demonstrating these instabilities (no
 ![](https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/images/mercury_heliox_ramp_example.PNG?raw=true)
 
 There is nothing the driver does in either SECI or IBEX which can affect these stabilities. Consult cryogenics to check outer cryostat performance, PID parameters, flow rates etc.
+
+### Regeneration starts when I set temperature = 0
+
+This is a feature of the heliox intentionally added by oxford instruments, when the device gets a setpoint of zero it interprets it as "regenerate and then cool" as opposed to just "cool".
+
+This can be avoided by setting a temperature in the range 0 < T < base temperature to cool to base temp.
