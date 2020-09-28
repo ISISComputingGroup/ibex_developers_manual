@@ -18,7 +18,6 @@ Deploying EPICS with Ansible | CLF Controls team | 19th October '20
 Idea | Proposed Speaker
 ---- | ---------------
 ISISICP | Freddie
-Deploying EPICS with Ansible | Rebecca Harding
 LUA  | James
 BDD/DDD | James/?
 Software design techniques in our processes | Aaron
