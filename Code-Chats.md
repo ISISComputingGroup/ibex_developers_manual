@@ -9,7 +9,7 @@ Code chats occur on a semi-regular monthly basis within the group at ISIS. Altho
 Topic | Presenter | Date
 ----- | --------- | ----
 DAQMx and Moxa DIO devices | Alistair | 28th September '20
-? | ? | Oct '20
+Deploying EPICS with Ansible | CLF Controls team | 19th October '20
 ? | ? | Nov '20
 ? | ? | Dec '20
 
