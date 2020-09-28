@@ -135,7 +135,7 @@ The outer cryostat could be warmer than expected for various reasons:
   * If it gets much colder, it may solve the issue.
   * If it gets marginally colder or does not respond, or you have to adjust the needle valve beyond 10% or so, check with cryogenics group. There may be a leak or a cryogenic issue with the equipment meaning it is unable to reach the lowest temperatures.
   * If it gets warmer, gently decrease the flow of He. The minimum attainable temperature is a minimum on a curve, and it is possible that reducing the flow of He can get the cryostat colder.
-  * If none of the above works or you are unsure, consult cryogenics section and explain that the outer cryostat is too warm to allow the heliox to finish a regeneration.
+  * If none of the above works or you are unsure, consult cryogenics section
 
 ### Temperature control unstable
 
