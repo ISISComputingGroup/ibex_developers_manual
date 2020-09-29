@@ -26,12 +26,32 @@ The vendor-supplied example script, `ExampleMainCorrelator.py`, was modified to 
 **Notes:**
  - The second argument of the `LSICorrelator` object is the firmware revision on the device. This can be found from the LSi correlator vendor software.
 
+
 ## The EPICS IOC
 The EPICS IOC is based on PCASpy to create and interact with PVs over channel access. A major function of the IOC is to convert the values taken in from channel access into values/objects which the LSI python API can interpret. This IOC is only compatible with Python 3+.
 
 The PCASpy/EPICS driver has a dictionary of 'internal' values. These have have been converted from the PVs to they can be directly passed through to the drivers. The PVConfig structure standardises where these conversions to and from the LSI vendor API and channel access PVs take place.
 
 All communications to the physical device are handled by the LSI python API. The `take_data` function was developed from the example script supplied with this API.
+
+### Adding a new record (PV)
+The correlator PCASpy IOC adds a new interface (see [here](https://github.com/ISISComputingGroup/EPICS-LSICorrelator/blob/master/record.py)) which brings together methods typically required of a record/PV.
+
+A basic `Record` object holds the name of PV and a dictionary containing information about the fields of the record as specified in the [PCASpy documentation](https://pcaspy.readthedocs.io/en/latest/api.html#database-field-definition). For example, a simple PV to publish a temperature could look like:
+
+```
+temperature = Record("TEMPERATURE", {"VAL": float})
+```
+For enum records, the class attributes `convert_from_pv` and `convert_to_pv` lets you define a function which converts between the value of the PV and a more useful object. This is important for enums where the actual value of the PV is an integer, so a conversion between the integer and what that value represents is necessary.
+Example, a basic binary PV:
+```
+    SIM = Record("SIM",
+                 {'type': 'enum', 'enums': ["NO", "YES"]},
+                 convert_from_pv=bool
+                 )
+```
+Here, the value of the PV is 1 or 0, and the `bool()` builtin takes the current value of the PV as its argument and returns a boolean.
+
 
 ### Issues/gotchas
  - Currently there are no IOC macros for this device. To change the IP address or the saved filepath this must be performed on the instrument in the PCASpy IOC code
