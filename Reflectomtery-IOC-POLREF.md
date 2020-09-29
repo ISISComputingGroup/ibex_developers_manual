@@ -4,9 +4,13 @@ Specific information about POLREF.
 
 ### Axes
 
-Axes when sample is in horizontal configuration. In vertical configuration CHI and Theta/PSI/ANGLE are swapped; NB slit directions are not so in vertical mode the collimation is controlled by the horizontal slits.
+Axes when sample is in horizontal configuration. 
 
 ![axes directions on POLREF](reflectometers/AxesOnPolref.png)
+
+In vertical configuration CHI and Theta/PSI/ANGLE are swapped, as are x and y axes. NB slit directions are not so in vertical mode the collimation is controlled by the horizontal slits.
+
+![axes directions on POLREF in vertical mode](reflectometers/AxesOnPolrefVertical.png)
 
 ### Slit 3/Beam blocker
 
