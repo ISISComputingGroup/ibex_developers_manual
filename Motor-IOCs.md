@@ -61,4 +61,5 @@ The motors currently used at ISIS are:
 * [Portable Eulerian Cradle](Portable-Eulerian-Cradle) see on ENGINX
 * [SANS2D Front Beam Stop inhibit movement](SANS2D-Front-Beam-Stop-inhibit-movement)
 * [EnginX Sample Positioner](EnginX-Sample-Positioner)
+* [Disabling motor from view in the motor table](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Disable-records#motors)
 
