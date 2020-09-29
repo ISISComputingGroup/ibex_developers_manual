@@ -192,6 +192,17 @@ To fix, use caput for the relevant PV in the motor record:
     - No
         - Try restarting the IOC, then move the motor through a significant operation (a home or jog to limit). Sometimes restarting the IOC is enough, sometimes the move causes the underlying issue to reveal itself (see `n` above)
 
+## which process owns a serial port
+
+From an administrator (i.e. gamekeeper) prompt, run the `sysinternals` handle command like:
+
+```
+handle.exe -a | findstr "Serial pid:"
+```
+
+This will print a list of PIDs and any matches to a serial port allocated, take the pid number above the relevant \Device\Serial  line 
+
+
 # Logging
 
 ## I Changed the logging setting but it uses old settings
@@ -210,13 +221,39 @@ To regenerate log files set the date in the `c:\Logs\LOG_last_active_time` to th
 
 This can be done between two dates see `...EPICS\ISIS\inst_servers\master\ArchiverAccess\log_file_generator.py` as an example.
 
-## which process owns a serial port
+## Value logs from IOC not produced/ARACCESS not creating log files/ENGINX Stress Rig not writing log files
 
-From an administrator (i.e. gamekeeper) prompt, run the `sysinternals` handle command like:
+Certain IOCs can be made to generate log files using the [ARACCESS component](Logging-from-the-archive), if these are no longer being produced then check:
 
-```
-handle.exe -a | findstr "Serial pid:"
-```
-
-This will print a list of PIDs and any matches to a serial port allocated, take the pid number above the relevant \Device\Serial  line 
-
+- ARCCESS console (restart it) This should show a little blurb and should have start and stop lines, e.g.
+    ```
+    [2020-09-24 09:20:21] @@@ @@@ @@@ @@@ @@@
+    [2020-09-24 09:20:21] @@@ Received a sigChild for process 25052. The process was killed by signal 9
+    [2020-09-24 09:20:21] @@@ Current time: 2020-09-24 09:20:21
+    [2020-09-24 09:20:21] @@@ Child process is shutting down, a new one will be restarted shortly
+    [2020-09-24 09:20:21] @@@ ^R or ^X restarts the child, ^Q quits the server
+    [2020-09-24 09:20:22] @@@ Restarting child "ARACCESS"
+    [2020-09-24 09:20:22] @@@    (as C:\Windows\system32\cmd.exe)
+    [2020-09-24 09:20:22] @@@ The PID of new child "ARACCESS" is: 20124
+    [2020-09-24 09:20:22] @@@ @@@ @@@ @@@ @@@
+    [2020-09-24 09:20:23] [1600935623.82] INFO: Creating a new connection pool: DBSVR_127.0.0.1_archive_report
+    [2020-09-24 09:20:24] [1600935624.74] INFO: Creating a new connection pool: DBSVR_127.0.0.1_iocdb_iocdb
+    [2020-09-24 09:20:25] [1600935625.00] INFO: Reading config for ioc: INSTRON_01
+    [2020-09-24 09:20:25] [1600935625.00] INFO: Logging configuration (pvs as read from the archive)
+    [2020-09-24 09:20:25]   - file (log on end): C:\logs\INSTRON_01\INSTRON_01_{start_time}.dat
+    [2020-09-24 09:20:25]   - file (continuous): C:\logs\INSTRON_01\INSTRON_01_{start_time}_continuous.dat
+    [2020-09-24 09:20:25]   - trigger pv: IN:ENGINX:INSTRON_01:LOG:RECORD:SP.VAL
+    [2020-09-24 09:20:25]   - trigger pv: Logging from pv IN:ENGINX:INSTRON_01:LOG:SCAN.VAL with a default on error of 1s
+    [2020-09-24 09:20:25]   - file headers: [u'Cross Sectional Area = {1:.6f}', u'Gauge Length for Strain = {2:.6f}', u'RB Number = {0}', u'']
+    [2020-09-24 09:20:25]   - pvs in fileheader ['IN:ENGINX:ED:RBNUMBER.VAL', 'IN:ENGINX:INSTRON_01:STRESS:AREA.VAL',         'IN:ENGINX:INSTRON_01:STRAIN:LENGTH.VAL']
+    [2020-09-24 09:20:25]   - table headers: ['Date/time', u'Run Number', u'Position (mm)', u'Load (MPa)', u'Strain (%)']
+    [2020-09-24 09:20:25]   - table line: {time}	{2}	{0:.6f}	{1:.6f}	{3:.6f}
+    [2020-09-24 09:20:25]   - pvs in table line ['IN:ENGINX:INSTRON_01:POS.VAL', 'IN:ENGINX:INSTRON_01:STRESS.VAL', 'IN:ENGINX:DAE:RUNNUMBER.VAL', 'IN:ENGINX:INSTRON_01:STRAIN.VAL']
+    [2020-09-24 09:20:25] [1600935625.01] INFO: Last active: 2020-09-24T09:19:31 (13469489)
+    ```
+   - If this doesn't show both start and stop lines which that it is set to auto start in the default block component
+- Start and stop the logging and see if it says it is creating a file, e.g. `INFO: Writing log file '...'` is this in the expected place
+- Check the PVs it says it is logging and monitoring do they exist?
+- Next check the ARINST level is it up (check `http://localhost:4812/groups`)
+    - if not restart it, this means that there is no data stored for the run
+- Next step is to check that the data is getting into the database (probably plot on log plotter)

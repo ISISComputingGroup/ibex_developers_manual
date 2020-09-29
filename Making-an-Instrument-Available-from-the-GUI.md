@@ -25,3 +25,15 @@ To add a new instrument to this list proceed as follows:
 1. Run the script.
 1. Verify that all the instruments are picked up by the GUI (e.g. there are no parsing errors): `IBEX -> Switch Instrument` and that they have the correct alarm server and configuration loaded.
 1. Verify that the web dashboard for the instruments still works
+
+# Restricting the GUI to switching to a reduced set of instruments
+On the IDaaS machines we need to be able to limit the instruments that a user can switch to in the GUI, to protect the data of other users. This is performed by adding a whitelist to the instrument preferences supplier. This needs to be applied for each VM group that needs to be restricted.
+
+This shouldn't get overwritten during the RPM deploy as the preferences folder is created by the GUI when it first starts, and isn't in the build.
+
+1. Locate the preferences supplier in the VM group (`Client_E4/configuration/.settings/uk.ac.stfc.isis.ibex.instrument.prefs`).
+   - If this file does not yet exist, it can be created by starting the GUI and opening the instrument selector dialogue
+
+1. Add the following line to the preferences file, replacing the instrument names for those which the users of this group are allowed to access:
+`inst-whitelist/whitelist=LARMOR,DEMO`
+   - This would allow the GUI to only switch to LARMOR or DEMO from the switch instrument dialogue

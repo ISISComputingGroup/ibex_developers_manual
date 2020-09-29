@@ -1,5 +1,17 @@
 > [Wiki](Home) > [Trouble-shooting](trouble-shooting-pages) > [DAE](DAE-Trouble-Shooting)
 
+### Restarting the DAE in IBEX
+
+This IOC does not appear in the normal IOC restart list in the IBEX client, first open an EPICS terminal
+
+`...\EPICS\epicsterm.bat`
+
+then run
+
+`console -M localhost ISISDAE_01`
+
+and when connected press `Ctrl-x` once, you should see some restart messages from the IOC. Quit the EPICS term.
+
 ### invalid tcb start
 
 It is likely that you are in a muon configuration for the DAE but using a neutron tcb file or vice versa.
@@ -84,7 +96,7 @@ To fix this and other errors see https://github.com/ISISComputingGroup/ibex_deve
 
 ### No frames/beam current registered by the DAE
 
-Try switching the timing source to "Internal test clock" and starting a run. If counts are received in this state, it means that the DAE isn't receiving timing pulses from the central source. If that's the case, it needs attention from the electronics group (e.g. Simon Moorby).  Note, this may occur on more than one beam line so keep an ear open for any other reports.
+Try switching the timing source to "Internal test clock" (found in experiment setup tab of DAE) and starting a run. If counts are received in this state, it means that the DAE isn't receiving timing pulses from the central source. If that's the case, it needs attention from the electronics group (e.g. Simon Moorby).  Note, this may occur on more than one beam line so keep an ear open for any other reports.
 
 Don't forget to switch the timing source back when you're done!
 

@@ -21,9 +21,9 @@
 * only record if everyone is comfortable being recorded, if you are uncomfortable being recorded but not willing to speak up about it, contact K.B. or D.O. and they will champion the issue.
 
 ## Mantid has a week after release to tidy up
--this is equivalent of our tech debt stand down, but for a week.
--Mantid has more of a need for this than we do due to the size of their team and the manner in which they manage their development
--We might put aside a "no new dev work" sprint in long shutdown, and maybe 1 week per year of this, but no changes right now.
+- this is equivalent of our tech debt stand down, but for a week.
+- Mantid has more of a need for this than we do due to the size of their team and the manner in which they manage their development
+- We might put aside a "no new dev work" sprint in long shutdown, and maybe 1 week per year of this, but no changes right now.
 
 ## Should we run the system tests locally more?
 * No, this is the purpose of the build servers, only run them on your machine if you think it will break a system test
@@ -38,11 +38,11 @@
 * If only one person is attending molecular spectroscopy demos each month maybe add them to another group to save dev time
 * Potentially present to their group meeting, check with them.
 
-## good progress with points completed
+## Good progress with points completed
 * we've got more points done than predicted, maybe because of not doing as well last sprint.
 * try not to read too much into the burn down graph
 * will see if it continues to next sprint
 
-## stand up order
+## Stand up order
 * If people want to change it then they can do so at their leisure, list is useful so people don't get surprised by being at the start, also highlights people who aren't there.
 

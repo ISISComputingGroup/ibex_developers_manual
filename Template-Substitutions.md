@@ -1,6 +1,6 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > Template Substitution
 
-Template substitution allows you to take a database template file and substitute the macros in it for a list of chosen values. This is used for example to create the same set of records for `North`, `East`, `South`, and `West` jaw blades.
+Template substitution allows you to take a database template file and substitute the macros in it for a list of chosen values, the documentation for this can be found [here](https://epics.anl.gov/base/R7-0/1-docs/msi.html). This is used for example to create the same set of records for `North`, `East`, `South`, and `West` jaw blades.
 
 This requires two files: a `.template` and a `.substitutions` file
 - The `.substitutions` file loads the `.template` (or several) and runs a list of macro substitutions on it. This lives inside the IOC under `\<iocDir>\<ioc>App\Db\<something>.substitutions`.

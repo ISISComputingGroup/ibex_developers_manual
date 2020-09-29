@@ -9,15 +9,15 @@ Code chats occur on a semi-regular monthly basis within the group at ISIS. Altho
 Topic | Presenter | Date
 ----- | --------- | ----
 DAQMx and Moxa DIO devices | Alistair | 28th September '20
-ISISICP (and Kafka?) | Freddie | Oct '20
-The HIFI Cryomag | Chris C/Kathryn | Nov '20
+Deploying EPICS with Ansible | CLF Controls team | 19th October '20
+? | ? | Nov '20
 ? | ? | Dec '20
 
 ### Proposed Future Code Chats
 
 Idea | Proposed Speaker
 ---- | ---------------
-Deploying EPICS with Ansible | Rebecca Harding
+ISISICP | Freddie
 LUA  | James
 BDD/DDD | James/?
 Software design techniques in our processes | Aaron
@@ -28,6 +28,7 @@ LVDCOM | Freddie
 IBEX UI Design | Thomas Löhnert
 Jenkins, testing and our build processes | ?
 asyncio and asynchronous programming in Python 3 | ?
+Script Server and Nicos | ?
 
 ### Proposed Repeated Code Chats
 

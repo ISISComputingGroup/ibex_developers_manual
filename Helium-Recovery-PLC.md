@@ -34,7 +34,8 @@ In order to run this IOC and talk to the Helium recovery PLC, you should have a 
 finsUDPInit("PLC", "$(PLC_IP)", "UDP", 0, "$(PLC_NODE=)")
 
 ## Load our record instances
-dbLoadRecords("${TOP}/db/he-recovery.db","P=$(MYPVPREFIX),Q=HA:HLM:)
+dbLoadRecords("${TOP}/db/he-recovery.db","P=$(MYPVPREFIX),Q=HA:HLM:")
+
 ```
 The PV domain name for this IOC is HA, with HLM as a sub domain. `$(MYPVPREFIX)` should be set to blank when this IOC runs on a production machine. This is to make it the same as central services which runs with a blank prefix because it runs IOCs in multiple domains. The decision for that is at point 17 [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Decision-Log). When running for IOC tests, `$(MYPVPREFIX)` will be `TE:MACHINE_NAME`.
 

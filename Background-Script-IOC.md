@@ -5,7 +5,12 @@ The background script IOC will run a script in the background. The script must b
 If you want the IOC to register as started the user must include the lines:
 
 ```
-sys.path.insert(1, os.path.abspath(os.path.join(os.environ["KIT_ROOT"], "ISIS", "inst_servers", "master")))
+import sys
+import os
+
+sys.path.insert(0, os.path.abspath(os.path.join(os.environ["KIT_ROOT"], "ISIS", "inst_servers", "master")))
+
+from server_common.helpers import register_ioc_start
 
 register_ioc_start("BGRSCRPT_01")
 ```
@@ -43,3 +48,8 @@ In addition to this to show the plot add the following to the instrument init:
 def init(inst):
     g.adv.open_plot_window(is_primary=False)
 ```
+
+#### Background restart of an IOC if it crashes and doesn't recover
+
+A script has been put on EMU for if an IOC goes into a severe alarm state (`INVALID`) and fails to reconnect to the hardware. The script is responsible for restarting the IOC if this happens and checking that the IOC has come back online and is no longer in an alarm state. 
+This script is also now available in the instrument scripts repository. 

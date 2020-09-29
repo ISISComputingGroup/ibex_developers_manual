@@ -35,7 +35,9 @@ This could be due to 4 things:
 
 ## The script generator is constantly loading
 
-- We are failing to load Python for some reason, check logs for Py4J exceptions
+- This is likely based on loading a dependency
+    - Failing to load Python for some reason, check logs for Py4J exceptions (check if a C:\Instrument\Apps\Python3 is interfering)
+    - Failing to load git, check log files (the possible solution is to install git separately so we pick up the system git)
 
 # Gotchas
 

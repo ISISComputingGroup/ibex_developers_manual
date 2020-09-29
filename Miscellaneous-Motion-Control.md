@@ -10,3 +10,5 @@ Items attached to motion but are not [motors](Motor-IOCs).
 * Gem Oscillating Radial Collimator
 * [Reflectometry IOC](Reflectometry-IOC)
 * [SANS2D Front Beamstop Inhibit](SANS2D-Front-Beam-Stop-inhibit-movement)
+* [SANS2D vacuum tank collision avoidance](SANS2D-vacuum-tank-collision-avoidance)
+* [MARI Sample Changer](MARI-Sample-Changer)

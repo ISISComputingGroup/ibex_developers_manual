@@ -14,13 +14,25 @@ If remote, make sure you are either on the VPN or accessing a system on-site in 
 - [Other Tasks](#other-tasks)
 
 ## What does being on call mean?
+
+All full time members of the ISIS Computing Group are expected to be on the on call rota. Typically this will rotate so that people spend a week on it before passing it on to the next person. The on call number is `x1763` (as called from a RAL phone) and should be available between 7:00-23:00 7 days a week during cycle.
+
+If a scientist/user contacts you directly about an urgent issue, you should politely remind them that this number exists and they will be much more likely to get swifter assistance by calling it rather than individuals (obviously after you have fixed the issue).
+
+If you get called with an issue that you believe has the potential to stop all instruments taking data (e.g. the central beam status is reporting incorrectly or there is a critical bug in a core IBEX component) you should immediately email all instrument scientists using the `ISIS Instrument Scientist` mailing list. You should make them aware of the problem and any workarounds that you have found.
+
+If you encounter an urgent problem that you are really unsure of you can find other team member's numbers in the support phone's contacts list or at `\\isis\shares\ISIS_Experiment_Controls\On Call\Phone Numbers.xlsx`.
+
 Most important:
   - It means you are responsible for seeing that support items are dealt with. This doesn't mean you have to do them, but you have to make sure they are done
   - You answer the support phone when it rings
+
 In hours:
   - You keep an eye on the Experiment Controls inbox and follow through to see that any issues are resolved, these are echoed in Teams where they can be discussed and uses the same indications as the flash reviews to indicate whether or not the issue is being or has been dealt with
   - You keep an eye on Nagios (either via the website or if you receive messages that way) and look to resolve issues as appropriate - ask if help is needed or it is unclear
+
 Out of hours:
+  - If you are on call at a weekend you should look at the [nagios overview](https://varanus.nd.rl.ac.uk/nagios/) and the [web dashboard overview](http://dataweb.isis.rl.ac.uk/IbexDataweb/Overview/ibexOverview.html) in the morning to check the status of the instruments as we would normally during stand up. At the same time you should also check that no urgent issues have come through to the Experiment Controls inbox.
   - Just focus on the most important things!
 
 ## Trouble Shooting
@@ -71,35 +83,41 @@ There are a number of tips for [trouble shooting](trouble-shooting-pages) alread
   1. I can't talk to device/my blocks are showing as disconnected/IOC isn't working
       - Check that the IOC is running
       - Check that the device is turned on
+      - Check if your problem is already listed on the [device/ioc wiki pages](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Specific-Device-IOC).
       - If the device is a DAQmx one, look at it in MAX, and perform a self-test
       - Device not responding
           * Stop the IOC (or VI) and try to connect via a more direct route, e.g. Putty
           * Check the cabling, and that ports etc. are correct
+          * For serial devices, check using the MOXA web interface that bytes are being sent and received on the correct port. Moxa IPs are listed [here](http://beamlog.nd.rl.ac.uk/inst_summary.xml) and the login details are on the usual passwords page.
       - If the device is unable to interact in any way, refer this to the appropriate hardware team (via the MCR out of hours)
       - If the device responds via a more direct route, but not via the IOC/VI
           * Make sure the settings in the IOC/VI are correct
           * If the IOC/VI have been updated since the device last worked correctly, roll back to a version that is known to work, and raise a ticket to investigate the issue and find a more sustainable solution
   1. I can't use this button to get to more details/why doesn't this bit of the OPI work
-    - Check they are in manager mode
+      - Check they are in manager mode
   1. I need to add this device to my system
-    - Check [the user manual](https://github.com/ISISComputingGroup/ibex_user_manual/wiki) for IBEX, for SECI, if you don't know already ask someone else
+      - Check [the user manual](https://github.com/ISISComputingGroup/ibex_user_manual/wiki) for IBEX, for SECI, if you don't know already ask someone else
   1. My motor won't move
-    - Is any of the other information updating for that motor controller?
-      Yes: Go to next consideration
-      No: Under IBEX go to the engineering device screen, under SECI open the advanced motor functions and go to the console tab, do not send any characters but send a command, if the response is anything but `:` then the Galil is in a fault mode of some kind which will involve restarts etc.
-          * If the Galil is unresponsive refer it to EUSG via the MCR 
-    - Looking at the specific motor:
-        - Are you trying to move in the same direction as an active limit switch?
-          Yes: Try moving in the other direction, if you can move that way to a requested position all is fine
-        - Are you able to move in either direction?
-          No: Check for hardware faults (potentially as a referral to EUSG via the MCR)
-        - If it is able to move, is the encoder tracking in the same direction as the requested motion?
-          No: The motor setup is probably incorrect, recommission the motor
-          Yes: Feel bewildered as this should be a moving motor
+      - Are both limits made?
+          - Yes: Something has happened in the physical realm, refer it to EUSG via the MCR
+          - No: Go to next consideration
+      - Is any of the other information updating for that motor controller?
+          - Yes: Go to next consideration
+          - No: Under IBEX go to the engineering device screen, under SECI open the advanced motor functions and go to the console tab, do not send any characters but send a command, if the response is anything but `:` then the Galil is in a fault mode of some kind which will involve restarts etc.
+              * If the Galil is unresponsive refer it to EUSG via the MCR 
+     - Looking at the specific motor:
+         - Are you trying to move in the same direction as an active limit switch?
+             - Yes: Try moving in the other direction, if you can move that way to a requested position all is fine
+         - Are you able to move in either direction?
+             - No: Check for hardware faults (potentially as a referral to EUSG via the MCR)
+         - If it is able to move, is the encoder tracking in the same direction as the requested motion?
+             - No: The motor setup is probably incorrect, recommission the motor
+             - Yes: Feel bewildered as this should be a moving motor
   1. My device isn't behaving as I expect
-    - Verify that the device expected on that port is the device connected on that port
-    - Treat it as a device that is unable to interact
-    - Check the error logs (either through the log interface in the GUI, the console logs, or other appropriate method)
+     - Verify that the device expected on that port is the device connected on that port
+     - Treat it as a device that is unable to interact
+     - Check the error logs (either through the log interface in the GUI, the console logs, or other appropriate method)
+     - Verify that the behavior you're seeing is not a known quirk of the device. These quirks are often detailed on the [device/ioc wiki pages](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Specific-Device-IOC)
 
 </details>
 
@@ -115,11 +133,11 @@ There are a number of tips for [trouble shooting](trouble-shooting-pages) alread
   <summary>Script issues</summary>
 
   1. My script won't load
-    - (TODO: Fill in this whole section)
+     - If `g.load_script` is being used and you see errors of the form `E:  1: error description (error-name)`, these errors are coming from the linter. Detailed linter troubleshooting is available [here](https://github.com/ISISComputingGroup/ibex_user_manual/wiki/Error-Checking-Troubleshooting).
   1. My script isn't behaving in the way I expect it to
-    - This is a best efforts, and not everyone can provide the same level of support
-    - Look at it with respect to basic coding standards and obvious race condition points
-    - (TODO: Complete this section)
+     - This is a best efforts, and not everyone can provide the same level of support
+     - Look at it with respect to basic coding standards and obvious race condition points
+     - (TODO: Complete this section)
 
 </details>
 
@@ -139,4 +157,10 @@ There are a number of tips for [trouble shooting](trouble-shooting-pages) alread
      - Check which processes are high, and the graph to see how long they have been high
      - If this looks like a steady climb, if you can determine the source create a ticket for investigation
      - Contact the Instrument Scientists to let them know that there is an issue, and ask them to restart appropriate items when they have a chance. Note that restarting the IBEX server is least likely to be required.
+</details>
+
+<details>
+  <summary>Finding Instrument Scientist Phone Numbers</summary>
+  
+To find contact numbers for instrument scientists and cabin phone numbers for instruments, the following website is available: [Instrument Map](https://www.isis.stfc.ac.uk/Pages/Instruments.aspx). On this page you can either click on the instrument (in the top image), or click the `Contacts And Support > Instrument Scientists` tab and find the instrument you are looking for.
 </details>

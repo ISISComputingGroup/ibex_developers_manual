@@ -120,6 +120,8 @@ The symptom is that the device acts as if it's not there - you will see serial w
 
 I am not aware of a remote command to set the device back into remote mode, so you will need to walk up to the physical mercury controller. It has a touch screen with a small `l` in the bottom-left of the touch screen. If it is shown in blue, tap it once. It should turn orange, which indicates the device is now in remote. Check you now have comms.
 
+**NB** Only the main communications socket (25 pin d-type, labelled _RS232_) should be connected to a MOXA port, **not** any other sockets on the Mercury.
+
 ### I can read the main temperature but not any channels
 
 Check channel assignments are correct - see table above and instructions for finding out channel names if unknown.
@@ -133,7 +135,7 @@ The outer cryostat could be warmer than expected for various reasons:
   * If it gets much colder, it may solve the issue.
   * If it gets marginally colder or does not respond, or you have to adjust the needle valve beyond 10% or so, check with cryogenics group. There may be a leak or a cryogenic issue with the equipment meaning it is unable to reach the lowest temperatures.
   * If it gets warmer, gently decrease the flow of He. The minimum attainable temperature is a minimum on a curve, and it is possible that reducing the flow of He can get the cryostat colder.
-  * If none of the above works or you are unsure, consult cryogenics section and explain that the outer cryostat is too warm to allow the heliox to finish a regeneration.
+  * If none of the above works or you are unsure, consult cryogenics section
 
 ### Temperature control unstable
 
@@ -146,3 +148,9 @@ Example ramp (260mK-1.8K in steps of 20mK) demonstrating these instabilities (no
 ![](https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/images/mercury_heliox_ramp_example.PNG?raw=true)
 
 There is nothing the driver does in either SECI or IBEX which can affect these stabilities. Consult cryogenics to check outer cryostat performance, PID parameters, flow rates etc.
+
+### Regeneration starts when I set temperature setpoint = 0
+
+This is a feature of the heliox intentionally added by oxford instruments, when the device gets a setpoint of zero it interprets it as "regenerate and then cool" as opposed to just "cool".
+
+This can be avoided by setting a temperature in the range 0 < T < base temperature to cool to base temp.

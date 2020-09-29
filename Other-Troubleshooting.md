@@ -59,3 +59,9 @@ If PVs are visible in R3 then probably the gateway on the control service machin
 # User says they can not see their nexus data files on external machine
 
 See [DAE-Trouble-Shooting](DAE-Trouble-Shooting#user-says-they-can-not-see-their-nexus-data-files-on-external-machine)
+
+# Value logs from IOC not produced/ARACCESS not creating log files/ENGINX Stress Rig not writing log files
+
+See [ioc trouble shooting](IOC-And-Device-Trouble-Shooting#value-logs-from-ioc-not-producedaraccess-not-creating-log-filesenginx-stress-rig-not-writing-log-files)
+
+

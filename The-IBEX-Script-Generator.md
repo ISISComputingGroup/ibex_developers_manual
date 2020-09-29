@@ -8,6 +8,8 @@ To prevent duplication, the GUI perspective depends wholly on the standalone app
 
 [Creating a release](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Creating-a-script-generator-release)
 
+[[Script Generator Testing Environment]]
+
 ## The directory structure
 | Purpose        | Location |
 | -------------- |----------|
@@ -49,7 +51,7 @@ To change the type of action represented in the table, the singleton drops the c
 ## Importing user-supplied script definitions
 The `ScriptDefinitions` are supplied by instrument scientists in [this form](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Script-generator-high-level-design#the-actiondefinition-class). All the python modules containing an `ScriptDefinition` in a subdirectory are imported and stored in a `ScriptDefinitionWrapper` class. Using an instrument scientist supplied `ScriptDefinition`, a `ScriptDefinitionWrapper` class is created containing the `ScriptDefinition` with helper methods like `getParameters` and `parametersValid` to expose the parameters used in the action and their validation. These `ScriptDefinitionWrapper` classes are collected by the `ScriptDefinitionsWrapper`, which is then passed through the py4j interface to the GUI code.
 
-On startup of the script generator, the latest versions of the Script Definitions are pulled from [this repository](https://github.com/ISISComputingGroup/ScriptDefinitions). The default location for this repository is in `C:\ScriptDefinitions`. If this directory does not contain the ScriptDefinitions repository on script generator startup, a clone is attempted. If a clone of the ScriptDefintions repository failed from github, a clone is made from a `git bundle` form of the repository, which is shipped with the script generator and is created when the script generator is built.
+On startup of the script generator, the latest versions of the Script Definitions are pulled from [this repository](https://github.com/ISISComputingGroup/ScriptDefinitions). The default location for this repository is in `path_to_script_generator\script_definitions` but can be changed in the `plugin_customisation.ini`. If this directory does not contain the ScriptDefinitions repository on script generator startup, a clone is attempted. If a clone of the ScriptDefintions repository failed from github, a clone is made from a `git bundle` form of the repository, which is shipped with the script generator and is created when the script generator is built.
 
 Once in the GUI, the script generator table is created by generating `ActionParameters` from the parameter names exposed through the ScriptDefinitions class.
 
