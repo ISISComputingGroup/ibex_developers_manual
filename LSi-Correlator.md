@@ -35,23 +35,38 @@ The PCASpy/EPICS driver has a dictionary of 'internal' values. These have have b
 All communications to the physical device are handled by the LSI python API. The `take_data` function was developed from the example script supplied with this API.
 
 ### Adding a new record (PV)
-The correlator PCASpy IOC adds a new interface (see [here](https://github.com/ISISComputingGroup/EPICS-LSICorrelator/blob/master/record.py)) which brings together methods typically required of a record/PV.
+The correlator PCASpy IOC adds a new interface (see [here](https://github.com/ISISComputingGroup/EPICS-LSICorrelator/blob/master/record.py)) which brings together methods typically required of a record/PV. `VAL`, `SEVR` and `STAT` fields are automatically created for all records.
 
 A basic `Record` object holds the name of PV and a dictionary containing information about the fields of the record as specified in the [PCASpy documentation](https://pcaspy.readthedocs.io/en/latest/api.html#database-field-definition). For example, a simple PV to publish a temperature could look like:
 
 ```
 temperature = Record("TEMPERATURE", {"VAL": float})
 ```
+
+
 For enum records, the class attributes `convert_from_pv` and `convert_to_pv` lets you define a function which converts between the value of the PV and a more useful object. This is important for enums where the actual value of the PV is an integer, so a conversion between the integer and what that value represents is necessary.
 Example, a basic binary PV:
 ```
-    SIM = Record("SIM",
-                 {'type': 'enum', 'enums': ["NO", "YES"]},
-                 convert_from_pv=bool
-                 )
+SIM = Record("SIM",
+             {'type': 'enum', 'enums': ["NO", "YES"]},
+             convert_from_pv=bool
+            )
 ```
-Here, the value of the PV is 1 or 0, and the `bool()` builtin takes the current value of the PV as its argument and returns a boolean.
+Here, the value of the PV is 1 or 0, and the `bool()` builtin takes the current value of the PV as its argument and returns a boolean. The [PV database](https://github.com/ISISComputingGroup/EPICS-LSICorrelator/blob/master/pvdb.py) of the correlator uses this to convert between enum values and the objects they represent in python.
 
+To create a setpoint PV which mimics the current Record type, set `has_setpoint = True` as an argument when instantiating the class. For example:
+```
+temperature = Record("TEMPERATURE", {"VAL": float}, has_setpoint=True)
+```
+will create `TEMPERATURE` and `TEMPERATURE:SP`, as well as the expected `VAL`, `SEVR` and `STAT` fields for the setpoint PV. These are all added to the `database_entries` for the object `temperature`. 
+
+To add the PVs created in the Record `temperature` to the static PV database (including all `:SP` PVs) so they can be loaded into the PCASpy server:
+```
+STATIC_PV_DATABASE = {}
+STATIC_PV_DATABASE.update(temperature.database_entries)
+```
+
+A `device_setter` is a function which takes in the current value of the PV and will perform some action on it, such as writing the PV value on to the device. In the LSI correlator, the settings for the correlator are written to the device through the vendor API using `device_setter`s.
 
 ### Issues/gotchas
  - Currently there are no IOC macros for this device. To change the IP address or the saved filepath this must be performed on the instrument in the PCASpy IOC code
