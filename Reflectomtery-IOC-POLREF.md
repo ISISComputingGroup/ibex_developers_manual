@@ -28,6 +28,25 @@ Blocks that may be confusing:
 - `Height`: Distance from the sample centre of rotation to the sample. This is used to align the sample with the beam.
 - `Height2`: Distance between the beam and the centre of rotation; usually set a 0. This moves the course z stage tracking the beam.
 
+
+### Heights
+
+There are various heights in various modes. They are called:
+
+#### Horizontal Mode
+
+| Block  | Change Axis in REFL | Parameter Name | Motor | Motor Name | General term |
+| -----  | ------------------- | -------------- | ----- | ---------- | ------------ | 
+| Height | POSITION            | SAMPOFFSET     | MTR0403 | SS Low Z | Coarse Height |
+| Height2 | HEIGHT             | SAMPHEIGHT     | MTR0404 | SS High Z |  Fine Height |
+| Sample_Changer | - | - | MTR1001 | Sample Changer  | sample 
+| Trans | 
+| PSI |
+| CHI |
+| PHI |
+
+
+
 ### Parameter Autosave
 
 It is hard to know which parameters to autosave and which not to. Probably with use we will find out. I have gone with Theta and polariser angles are not autosaved all other heights and offsets are. So that when coming back from SECI the setpoints will mirror those in SECI quite closely. Other axis parameters, direct parameters and slits are not autosaved so they come back as they are, except for bench angle offset and seesaw which are autosaved.
