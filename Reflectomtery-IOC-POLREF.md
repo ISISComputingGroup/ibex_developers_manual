@@ -8,7 +8,7 @@ Axes when sample is in horizontal configuration.
 
 ![axes directions on POLREF](reflectometers/AxesOnPolref.png)
 
-In vertical configuration CHI and Theta/PHI/ANGLE are swapped, as are x and y axes. NB slit directions are not so in vertical mode the collimation is controlled by the horizontal slits.
+In vertical configuration CHI and Theta/PHI/ANGLE are swapped, as are x and y axes. NB slit directions are not so in vertical mode the collimation is controlled by the horizontal slits. PSI and Z stay the same.
 
 ![axes directions on POLREF in vertical mode](reflectometers/AxesOnPolrefVertical.png)
 
