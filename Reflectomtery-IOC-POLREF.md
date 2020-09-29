@@ -29,22 +29,35 @@ Blocks that may be confusing:
 - `Height2`: Distance between the beam and the centre of rotation; usually set a 0. This moves the course z stage tracking the beam.
 
 
-### Heights
+### Sample Stack
 
-There are various heights in various modes. They are called:
+There are various axes on the sample stack which mean different things in different modes. Below is an overview to explain which terms relate to each other:
 
 #### Horizontal Mode
 
-| Block  | Change Axis in REFL | Parameter Name | Motor | Motor Name | General term |
-| -----  | ------------------- | -------------- | ----- | ---------- | ------------ | 
-| Height | POSITION            | SAMPOFFSET     | MTR0403 | SS Low Z | Coarse Height |
-| Height2 | HEIGHT             | SAMPHEIGHT     | MTR0404 | SS High Z |  Fine Height |
-| Sample_Changer | - | - | MTR1001 | Sample Changer  | sample 
-| Trans | 
-| PSI |
-| CHI |
-| PHI |
+| Block          | Change Axis in REFL | Parameter Name | Motor   | Motor Name     | General term   |
+| -------------  | ------------------- | -------------- | ------- | -------------- | -------------- | 
+| Height         | POSITION            | SAMPOFFSET     | MTR0403 | SS Low Z       | Coarse Height  |
+| Height2        | HEIGHT              | SAMPHEIGHT     | MTR0404 | SS High Z      | Fine Height    |
+| Sample_Changer | -                   | -              | MTR1001 | Sample Changer | Sample Changer | 
+| Trans          | TRANS               | TRANS          | MTR0405 | SS Horizontal  | Trans          |
+| PHI            | ANGLE               | PHI            | MTR0405 | SS Lower Gonio | Phi            |
+| PSI            | PSI                 | PSI            | MTR0405 | SS Upper Gonio | Psi            |
+| CHI            | CHI                 | CHI            | MTR0405 | SS Rotation    | Chi            |
 
+#### Vertical Mode
+
+To do: review
+
+| Block          | Change Axis in REFL | Parameter Name | Motor | Motor Name       | General term   |
+| -------------  | ------------------- | -------------- | ----- | ---------------- | -------------- | 
+| Height         | HEIGHT              | SAMPOFFSET     | MTR0403 | SS Low Z       | Coarse Height  |
+| Height2        | -                   | SAMPHEIGHT     | MTR0404 | SS High Z      | Fine Height    |
+| Sample_Changer | -                   | -              | MTR1001 | Sample Changer | Sample Changer | 
+| Trans          | POSITION            | TRANS          | MTR0405 | SS Horizontal  | Trans          |
+| PHI            | PHI                 | PHI            | MTR0405 | SS Lower Gonio | Phi            |
+| PSI            | PSI                 | PSI            | MTR0405 | SS Upper Gonio | Psi            |
+| CHI            | ANGLE               | CHI            | MTR0405 | SS Rotation    | Chi            |
 
 
 ### Parameter Autosave
