@@ -33,3 +33,6 @@ Add to the IOC in the db load:
 ```
 DISABLE=$(DISABLE=0)
 ```
+# Motors
+
+If you are looking to disable motors from display in the motors view you need to set `MTRXXXX_able.VAL 1` or 0 if you want to enable them.
