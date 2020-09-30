@@ -40,6 +40,44 @@ This is a C++ program responsible for taking the EPICS data and pushing into Kaf
 ## Filewriting
 The [filewriter](https://github.com/ess-dmsc/kafka-to-nexus) is responsible for taking the neutron and SE data out of Kafka and writing it to a nexus file. When the ICP ends a run it sends a config message to the filewriter, via kafka, to tell it to start writing to file.
 
+### Notes for trying to get the filewriter working on windows: 
+#### trying to run filewriter natively:
+- hdf5 conan library does not seem to build under windows, however it's falling over in the conan step
+- ess takes ownership of the library 
+- did not get any further than this as the conan step failed, the rest of the libraries built
+- not sure what is falling over but the hdf5 library can probably be fixed
+
+#### trying to run a docker instance of the filewriter
+- DATASTREAM is potentially a VM and recursive hyper-v may not work - confirmed
+- Docker desktop does not run on build 14393 which is what it's on
+- I don't think this will work as we need hyper v for a windows build
+- will continue trying to install docker but so far no luck 
+- windows containers are a bit weird and we may just end up with the same problems as #1
+
+following [this link](https://blog.couchbase.com/setup-docker-windows-server-2016/)
+1.enabled containers and restarted 
+1. installed docker - weird error but seemed to install:
+```
+Start-Service : Failed to start service 'Docker Engine (docker)'.
+At C:\Users\ibexbuilder\update-containerhost.ps1:393 char:5
++     Start-Service -Name $global:DockerServiceName
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OpenError: (System.ServiceProcess.ServiceController:ServiceController) [Start-Service],
+   ServiceCommandException
+    + FullyQualifiedErrorId : StartServiceFailed,Microsoft.PowerShell.Commands.StartServiceCommand
+```
+
+Docker service then does not start and gives this error in logs:
+`fatal: Error starting daemon: Error initializing network controller: Error creating default network: HNS failed with error : The object already exists.`
+
+A quick google leads to [this](https://github.com/moby/moby/issues/34018#issuecomment-313790817)
+
+After deleting `hns.data` from `C:\ProgramData\Microsoft\Windows\HNS` and restarting HNS it still does not work and gives the same error.
+
+#### Verdict
+
+The best option here would be to try and get it running natively, as DATASTREAM is a Virtual Machine itself and Docker appears to not work. As well as this, we can then run it with `nssm` which is how we run the forwarder as well, which makes for consistent service management. We could also probably use the log rotation that the forwarder is using which is build into NSSM. 
+
 ## System Tests
 Currently system tests are being run to confirm that the start/stop run and event data messages are being sent into Kafka and that a Nexus file is being written with these events. The Kafka cluster and filewriter are being run in docker containers for these tests and so must be run on a Windows 10 machine. To run these tests you will need to install [docker for windows and add yourself as a docker-user](https://docs.docker.com/docker-for-windows/install/#install-docker-desktop-on-windows).
 
