@@ -33,9 +33,9 @@ Blocks that may be confusing:
 
 Below is an overview to explain which terms relate to each other in horizontal/vertical mode (differences highlighted):
 
-#### Horizontal Mode
+#### Sample Stack
 
-Sample Stack
+Horizontal Mode:
 
 | Block          | Change Axis in REFL | Parameter Name | Motor       | Motor Name       | General term     |
 | -------------  | ------------------- | -------------- | ----------- | ---------------- | ---------------- | 
@@ -47,16 +47,7 @@ Sample Stack
 | PSI            | PSI                 | PSI            | MTR0407     | SS Upper Gonio   | Psi              |
 | CHI            | CHI                 | CHI            | **MTR0408** | **SS Rotation**  | Chi              |
 
-Bench
-
-| Block          | Change Axis in REFL | Parameter Name | Motor       | Motor Name       | General term     |
-| -------------  | ------------------- | -------------- | ----------- | ---------------- | ---------------- | 
-| **BENCHOFFSET**| **POSITION**        | **BENCHOFFSET**| MTR0801 / MTR0802 | Bench Front Z/ Bench Rear Z    | Bench Height   |
-| **BENCHANGLE** | **ANGLE**           | **BENCHANGLE** | MTR0801 / MTR0802 | Bench Front Z/ Bench Rear Z    | Bench Angle    |
-| BENCHSEESAW    | SEESAW              | BENCHSEESAW    | MTR0801 / MTR0802 | Bench Front Z/ Bench Rear Z    | Bench Seesaw   |
-| **BENCHCHI**   | **CHI**             | **BENCHCHI**   | MTR0804     | Bench Arc        | Bench Chi        | 
-
-#### Vertical Mode
+Vertical mode:
 
 | Block          | Change Axis in REFL | Parameter Name | Motor       | Motor Name       | General term     |
 | -------------  | ------------------- | -------------- | ----------- | ---------------- | ---------------- | 
@@ -68,7 +59,19 @@ Bench
 | PSI            | PSI                 | PSI            | MTR0407     | SS Upper Gonio   | Psi              |
 | CHI            | CHI                 | CHI            | **MTR0406** |**SS Lower Gonio**| Chi              |
 
-Bench
+
+#### Bench
+
+Horizontal mode:
+
+| Block          | Change Axis in REFL | Parameter Name | Motor       | Motor Name       | General term     |
+| -------------  | ------------------- | -------------- | ----------- | ---------------- | ---------------- | 
+| **BENCHOFFSET**| **POSITION**        | **BENCHOFFSET**| MTR0801 / MTR0802 | Bench Front Z/ Bench Rear Z    | Bench Height   |
+| **BENCHANGLE** | **ANGLE**           | **BENCHANGLE** | MTR0801 / MTR0802 | Bench Front Z/ Bench Rear Z    | Bench Angle    |
+| BENCHSEESAW    | SEESAW              | BENCHSEESAW    | MTR0801 / MTR0802 | Bench Front Z/ Bench Rear Z    | Bench Seesaw   |
+| **BENCHCHI**   | **CHI**             | **BENCHCHI**   | MTR0804     | Bench Arc        | Bench Chi        | 
+
+Vertical mode:
 
 | Block          | Change Axis in REFL | Parameter Name | Motor       | Motor Name       | General term     |
 | -------------  | ------------------- | -------------- | ----------- | ---------------- | ---------------- | 
