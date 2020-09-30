@@ -29,11 +29,13 @@ Blocks that may be confusing:
 - `Height2`: Distance between the beam and the centre of rotation; usually set a 0. This moves the course z stage tracking the beam.
 
 
-### Sample Stack
+### Axes by operation mode
 
-There are various axes on the sample stack which mean different things in different modes. Below is an overview to explain which terms relate to each other:
+Below is an overview to explain which terms relate to each other in horizontal/vertical mode (differences highlighted):
 
 #### Horizontal Mode
+
+Sample Stack
 
 | Block          | Change Axis in REFL | Parameter Name | Motor       | Motor Name       | General term     |
 | -------------  | ------------------- | -------------- | ----------- | ---------------- | ---------------- | 
@@ -44,6 +46,15 @@ There are various axes on the sample stack which mean different things in differ
 | PHI            | ANGLE               | PHI            | **MTR0406** |**SS Lower Gonio**| Phi              |
 | PSI            | PSI                 | PSI            | MTR0407     | SS Upper Gonio   | Psi              |
 | CHI            | CHI                 | CHI            | **MTR0408** | **SS Rotation**  | Chi              |
+
+Bench
+
+| Block          | Change Axis in REFL | Parameter Name | Motor       | Motor Name       | General term     |
+| -------------  | ------------------- | -------------- | ----------- | ---------------- | ---------------- | 
+| **BENCHOFFSET**| **POSITION**        | **BENCHOFFSET**| MTR0801 / MTR0802 | Bench Front Z/ Bench Rear Z    | Bench Height   |
+| **BENCHANGLE** | **ANGLE**           | **BENCHANGLE** | MTR0801 / MTR0802 | Bench Front Z/ Bench Rear Z    | Bench Angle    |
+| BENCHSEESAW    | SEESAW              | BENCHSEESAW    | MTR0801 / MTR0802 | Bench Front Z/ Bench Rear Z    | Bench Seesaw   |
+| **BENCHCHI**   | **CHI**             | **BENCHCHI**   | MTR0804     | Bench Arc        | Bench Chi        | 
 
 #### Vertical Mode
 
@@ -57,6 +68,14 @@ There are various axes on the sample stack which mean different things in differ
 | PSI            | PSI                 | PSI            | MTR0407     | SS Upper Gonio   | Psi              |
 | CHI            | CHI                 | CHI            | **MTR0406** |**SS Lower Gonio**| Chi              |
 
+Bench
+
+| Block          | Change Axis in REFL | Parameter Name | Motor       | Motor Name       | General term     |
+| -------------  | ------------------- | -------------- | ----------- | ---------------- | ---------------- | 
+| **BENCHTRANS** | **TRANS**           | **BENCHTRANS** | MTR0801 / MTR0802 | Bench Front Z/ Bench Rear Z    | Bench Height   |
+| **BENCHCHI**   | **CHI**             | **BENCHCHI**   | MTR0801 / MTR0802 | Bench Front Z/ Bench Rear Z    | Bench Angle    |
+| BENCHSEESAW    | SEESAW              | BENCHSEESAW    | MTR0801 / MTR0802 | Bench Front Z/ Bench Rear Z    | Bench Seesaw   |
+| **BENCHANGLE** | **CHI**             | **BENCHANGLE** | MTR0804     | Bench Arc        | Bench Chi        | 
 
 ### Parameter Autosave
 
