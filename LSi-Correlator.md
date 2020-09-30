@@ -52,7 +52,7 @@ SIM = Record("SIM",
              convert_from_pv=bool
             )
 ```
-Here, the value of the PV is 1 or 0, and the `bool()` builtin takes the current value of the PV as its argument and returns a boolean. The [PV database](https://github.com/ISISComputingGroup/EPICS-LSICorrelator/blob/master/pvdb.py) of the correlator uses this to convert between enum values and the objects they represent in python.
+Here, the value of the PV is 1 or 0, and the `bool()` built-in takes the current value of the PV as its argument and returns a boolean. The [PV database](https://github.com/ISISComputingGroup/EPICS-LSICorrelator/blob/master/pvdb.py) of the correlator uses this to convert between enum values and the objects they represent in python.
 
 To create a setpoint PV which mimics the current Record type, set `has_setpoint = True` as an argument when instantiating the class. For example:
 ```
