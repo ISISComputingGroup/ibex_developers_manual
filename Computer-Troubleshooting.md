@@ -48,18 +48,13 @@ The Clean and purging tasks run as privileged tasks in the scheduled tasks libra
 
 Often the system disk gets full because of logging, or windows updates etc. You can free up space by doing the following:
 
-- vnc to machine, check no-one is using it
-- run tree size:
-    - flag large files that you are worried about delete to Chris
-    - uninstall apps which shouldn't be there (if you have admin access then removing mysql installer - community save 600Mb)
-- Check size of `instrument/var/logs` move any large logs to back `<inst area>\Backups$\stage-deleted\<instrument>`. Do this by creating a directory on c, moving files in then copying to this because it is write once. 
+- VNC to machine, check no-one is using it
+- Run `Tree Size` and analyse the C drive:
+    - Flag any large files that you are worried about deleting to Chris
+    - Check size of `instrument/var/logs` move any large logs to back `<inst area>\Backups$\stage-deleted\<instrument>`. Do this by creating a directory on c, moving files in then copying to this because it is write once. 
+- Uninstall apps which shouldn't be there (if you have admin access then removing mysql installer - community save 600Mb)
 - [Truncate the database if it is too large](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Database-Troubleshooting#reducing-database-disc-space)
 - If you have remote desktop and a little more time then:
-    - disk disk clean up on c as user remove all default files
-    - run it in admin mode by clicking the button
-    - remove all the default files it lets you
-
-
-
-
-
+    - Run `Disk Clean-Up` on C in user mode and remove all default files
+    - Run it in admin mode by clicking the button
+    - Remove all the default files it lets you
