@@ -2,7 +2,7 @@
 
 Specific information about POLREF.
 
-### Axes
+## Axes
 
 Axes when sample is in horizontal configuration. 
 
@@ -12,30 +12,79 @@ In vertical configuration CHI and Theta/PHI/ANGLE are swapped, as are x and y ax
 
 ![axes directions on POLREF in vertical mode](reflectometers/AxesOnPolrefVertical.png)
 
-### Slit 3/Beam blocker
-
-Slit 3 is a tall set of normal jaws sitting on the bench. In horizontal sample mode the centre of the jaws is set using the `S3OFFSET` parameter which sets the distance from beam to the jaws, (usually set to 0). The bench movement means that the centre of the jaws rarely needs to change except during a slit scan.
-Slit 3 can also be set into beam blocker mode; south jaw in horizontal mode, east or west jaws in vertical sample mode. In this state the beam blocked jaws will move independently of the slit centre using `S3S` and `S3N` or `S3W` and `S3W`. They retain the natural jaw directions so that positive is away from the centre of the jaw.
-
-### Components on the Bench
-
-Components that are on the bench do not track the beam in the same way as normal components. They rely on the underlying bench to track the beam and then their positions are just relative to the bench. This will in effect look the same as if they were tracking the beam but they don't.
-
-### Blocks
-
-Blocks that may be confusing:
-
-- `Height`: Distance from the sample centre of rotation to the sample. This is used to align the sample with the beam.
-- `Height2`: Distance between the beam and the centre of rotation; usually set a 0. This moves the course z stage tracking the beam.
-
-
-### Axes by operation mode
+### Specific Axes by Operation Mode
 
 Below is an overview to explain which terms relate to each other in horizontal/vertical mode (differences highlighted):
 
-#### Sample Stack
+<details>
+  <summary>Slit 2</summary>
 
-Horizontal Mode:
+#### Horizontal Mode
+
+| Block          | Parameter Name      | Change Axis in REFL | Motor       | Motor Name       | General term     | Other |
+| -------------  | ------------------- | -------------- | ----------- | ---------------- | ---------------- | ---- |
+| S2OFFSET | S2OFFSET              | POSITION               | 0402 | Slit 2 Z     | Slit 2 Height   | - |
+| S2ANGLE | S2ANGLE              | ANGLE               | 0605 | Slit 2 Tilt     | Slit 2 Tilt   | - |
+
+#### Vertical Mode
+
+| Block          | Parameter Name      | Change Axis in REFL | Motor       | Motor Name       | General term     | Other |
+| -------------  | ------------------- | -------------- | ----------- | ---------------- | ---------------- | ---- |
+| S2OFFSET | S2OFFSET              | POSITION               | 0305 / 0306 | Slit 2 East / West     | Slit 2 Horizontal   | Using HCENT as Offset |
+| S2ANGLE | -              | -               | - | -     | -   | - |
+</details>
+
+<details>
+  <summary>Frame Overlap Mirror (FOM)</summary>
+
+#### Horizontal Mode
+
+| Block          | Parameter Name      | Change Axis in REFL | Motor       | Motor Name       | General term     | Other |
+| -------------  | ------------------- | -------------- | ----------- | ---------------- | ---------------- | ---- |
+| FTHETA         | FTHETA              | ANGLE               | 0205 | FOM Theta     | FOM Theta   | - |
+| FCHI           | FCHI                | PSI                 | 0206 | FOM Chi     | FOM Psi  | - |
+| FOFFSET        | FOFFSET             | POSITION            | 0208 | FOM Z     | FOM Height   | - |
+| FTRANS         | FTRANS              | TRANS               | 0207 | FOM Y     | FOM Trans   | - |
+
+#### Vertical Mode
+
+| Block          | Parameter Name      | Change Axis in REFL | Motor       | Motor Name       | General term     | Other |
+| -------------  | ------------------- | -------------- | ----------- | ---------------- | ---------------- | ---- |
+| FTHETA         | FTHETA              | ANGLE               | 0205 | FOM Theta     | FOM Theta   | **-2.3 correction** |
+| FCHI           | FCHI                | PSI                 | 0206 | FOM Chi     | FOM Psi  | **+90.0 correction** |
+| FOFFSET        | FOFFSET             | POSITION            | **0207** | **FOM Y**     | **FOM Trans**   | - |
+| FTRANS         | FTRANS              | TRANS               | **0208** | **FOM Z**     | **FOM Height**  | - |
+
+</details>
+
+<details>
+  <summary>Polarizing Mirror</summary>
+
+#### Horizontal Mode
+
+| Block          | Parameter Name      | Change Axis in REFL | Motor       | Motor Name       | General term     | Other |
+| -------------  | ------------------- | -------------- | ----------- | ---------------- | ---------------- | ---- |
+| SMANGLE         | SMANGLE         | ANGLE               | 0301 | Polarizer THETA     | Polarizer Theta   | - |
+| SMCHI           | SMCHI           | PSI                 | 0302 | Polarizer CHI     | Polarizer Psi  | - |
+| SMOFFSET        | SMOFFSET        | POSITION            | 0304 | Polarizer Z     | Polarizer Height   | - |
+| SMTRANS         | SMTRANS         | TRANS               | 0303 | Polarizer Y     | Polarizer Trans   | - |
+
+#### Vertical Mode
+
+(Polarizer not currently used in vertical mode - NR only)
+
+| Block          | Parameter Name      | Change Axis in REFL | Motor       | Motor Name       | General term     | Other |
+| -------------  | ------------------- | -------------- | ----------- | ---------------- | ---------------- | ---- |
+| SMANGLE         | SMANGLE         | ANGLE               | 0301 | Polarizer THETA     | Polarizer Theta   | **-2.3 correction** |
+| SMCHI           | SMCHI           | PSI                 | 0302 | Polarizer CHI     | Polarizer Psi  | **+90.0 correction** |
+| SMOFFSET        | SMOFFSET        | POSITION            | **0303** | **Polarizer Y**     | **Polarizer Trans**    | **Park position correction** |
+| SMTRANS         | SMTRANS         | TRANS               | **0304** | **Polarizer Z**     | **Polarizer Height**   | - |
+
+</details>
+
+<details>
+  <summary>Sample Stack</summary>
+#### Horizontal Mode
 
 | Block          | Change Axis in REFL | Parameter Name | Motor       | Motor Name       | General term     |
 | -------------  | ------------------- | -------------- | ----------- | ---------------- | ---------------- | 
@@ -47,7 +96,7 @@ Horizontal Mode:
 | PSI            | PSI                 | PSI            | MTR0406     | SS Upper Gonio   | Psi              |
 | CHI            | CHI                 | CHI            | **MTR0408** | **SS Rotation**  | Chi              |
 
-Vertical mode:
+#### Vertical mode:
 
 | Block          | Change Axis in REFL | Parameter Name | Motor       | Motor Name       | General term     |
 | -------------  | ------------------- | -------------- | ----------- | ---------------- | ---------------- | 
@@ -59,10 +108,11 @@ Vertical mode:
 | PSI            | PSI                 | PSI            | MTR0406     | SS Upper Gonio   | Psi              |
 | CHI            | CHI                 | CHI            | **MTR0407** |**SS Lower Gonio**| Chi              |
 
+</details>
 
-#### Bench
-
-Horizontal mode:
+<details>
+  <summary>Bench</summary>
+#### Horizontal mode:
 
 | Block          | Change Axis in REFL | Parameter Name | Motor       | Motor Name       | General term     |
 | -------------  | ------------------- | -------------- | ----------- | ---------------- | ---------------- | 
@@ -71,7 +121,7 @@ Horizontal mode:
 | BENCHSEESAW    | SEESAW              | BENCHSEESAW    | MTR0801 / MTR0802 | Bench Front Z/ Bench Rear Z    | Bench Seesaw   |
 | **BENCHCHI**   | **CHI**             | **BENCHCHI**   | MTR0804     | Bench Arc        | Bench Chi        | 
 
-Vertical mode:
+#### Vertical mode:
 
 | Block          | Change Axis in REFL | Parameter Name | Motor       | Motor Name       | General term     |
 | -------------  | ------------------- | -------------- | ----------- | ---------------- | ---------------- | 
@@ -79,11 +129,27 @@ Vertical mode:
 | **BENCHCHI**   | **CHI**             | **BENCHCHI**   | MTR0801 / MTR0802 | Bench Front Z/ Bench Rear Z    | Bench Angle    |
 | BENCHSEESAW    | SEESAW              | BENCHSEESAW    | MTR0801 / MTR0802 | Bench Front Z/ Bench Rear Z    | Bench Seesaw   |
 | **BENCHANGLE** | **ANGLE**             | **BENCHANGLE** | MTR0804     | Bench Arc        | Bench Chi        | 
+</details>
 
-### Parameter Autosave
+## Slit 3/Beam blocker
+
+Slit 3 is a tall set of normal jaws sitting on the bench. In horizontal sample mode the centre of the jaws is set using the `S3OFFSET` parameter which sets the distance from beam to the jaws, (usually set to 0). The bench movement means that the centre of the jaws rarely needs to change except during a slit scan.
+Slit 3 can also be set into beam blocker mode; south jaw in horizontal mode, east or west jaws in vertical sample mode. In this state the beam blocked jaws will move independently of the slit centre using `S3S` and `S3N` or `S3W` and `S3W`. They retain the natural jaw directions so that positive is away from the centre of the jaw.
+
+## Components on the Bench
+
+Components that are on the bench do not track the beam in the same way as normal components. They rely on the underlying bench to track the beam and then their positions are just relative to the bench. This will in effect look the same as if they were tracking the beam but they don't.
+
+## Blocks
+
+Blocks that may be confusing:
+
+- `Height`: Distance from the sample centre of rotation to the sample. This is used to align the sample with the beam.
+- `Height2`: Distance between the beam and the centre of rotation; usually set a 0. This moves the course z stage tracking the beam.
+
+## Parameter Autosave
 
 It is hard to know which parameters to autosave and which not to. Probably with use we will find out. I have gone with Theta and polariser angles are not autosaved all other heights and offsets are. So that when coming back from SECI the setpoints will mirror those in SECI quite closely. Other axis parameters, direct parameters and slits are not autosaved so they come back as they are, except for bench angle offset and seesaw which are autosaved.
-
 
 # Initial Testing
 
