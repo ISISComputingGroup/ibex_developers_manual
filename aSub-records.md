@@ -336,6 +336,16 @@ If you find yourself needing to pass a function as an argument, you can do so us
 
 This technique can be useful if you have multiple aSub functions that are similar apart from the logic to parse a value from the waveform. You can then pass a different functions as arguments to a base aSub record function to generate your aSub record functions.
 
+## Record doesn't seem to work
+
+Add in some debug lines:
+
+```
+errlogSevPrintf(errlogMajor, "Start");
+```
+
+If you don't see this in the log (works even under the testing framework) do a `caget -a` and make sure all the links are valid; an invalid link specification will cause the record not to process.
+
 ## Tips
 
 * LONG in epics DB world is 32 bit, while the C long type is 32bit on Windows and 64bit on Linux. When casting from aSub you should use the `epicsInt32` type and not "long"
