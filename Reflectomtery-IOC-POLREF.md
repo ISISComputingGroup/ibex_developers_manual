@@ -84,6 +84,7 @@ Below is an overview to explain which terms relate to each other in horizontal/v
 
 <details>
   <summary>Sample Stack</summary>
+
 #### Horizontal Mode
 
 | Block          | Change Axis in REFL | Parameter Name | Motor       | Motor Name       | General term     |
@@ -112,6 +113,7 @@ Below is an overview to explain which terms relate to each other in horizontal/v
 
 <details>
   <summary>Bench</summary>
+
 #### Horizontal mode:
 
 | Block          | Change Axis in REFL | Parameter Name | Motor       | Motor Name       | General term     |
