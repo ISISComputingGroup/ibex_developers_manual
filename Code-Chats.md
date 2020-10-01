@@ -9,7 +9,7 @@ Code chats occur on a semi-regular monthly basis within the group at ISIS. Altho
 Topic | Presenter | Date
 ----- | --------- | ----
 Deploying EPICS with Ansible | CLF Controls team | 19th October '20
-? | ? | Nov '20
+Helium Level Monitoring | Kathryn/Mihai | Nov '20
 ? | ? | Dec '20
 
 ### Proposed Future Code Chats
