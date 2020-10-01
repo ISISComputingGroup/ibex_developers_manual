@@ -88,25 +88,25 @@ Below is an overview to explain which terms relate to each other in horizontal/v
 
 | Block          | Change Axis in REFL | Parameter Name | Motor       | Motor Name       | General term     |
 | -------------  | ------------------- | -------------- | ----------- | ---------------- | ---------------- | 
-| Height         | POSITION            | SAMPOFFSET     | **MTR0403** | **SS Low Z**     | Coarse Height    |
-| Height2        | HEIGHT              | SAMPHEIGHT     | MTR0404     | SS High Z        | Fine Height      |
-| Sample_Changer | -                   | -              | MTR1001     | Sample Changer   | Sample Changer   | 
-| Trans          | TRANS               | TRANS          | **MTR0405** | **SS Horizontal**| Trans            |
-| PHI            | ANGLE               | PHI            | **MTR0407** |**SS Lower Gonio**| Phi              |
-| PSI            | PSI                 | PSI            | MTR0406     | SS Upper Gonio   | Psi              |
-| CHI            | CHI                 | CHI            | **MTR0408** | **SS Rotation**  | Chi              |
+| Height         | POSITION            | SAMPOFFSET     | 0403     | SS Low Z         | Coarse Height    |
+| Height2        | HEIGHT              | SAMPHEIGHT     | 0404     | SS High Z        | Fine Height      |
+| Sample_Changer | -                   | -              | 1001     | Sample Changer   | Sample Changer   | 
+| Trans          | TRANS               | TRANS          | 0405     | SS Horizontal    | Trans            |
+| PHI            | ANGLE               | PHI            | 0407     | SS Lower Gonio   | Phi              |
+| PSI            | PSI                 | PSI            | 0406     | SS Upper Gonio   | Psi              |
+| CHI            | CHI                 | CHI            | 0408     | SS Rotation      | Chi              |
 
 #### Vertical mode:
 
 | Block          | Change Axis in REFL | Parameter Name | Motor       | Motor Name       | General term     |
 | -------------  | ------------------- | -------------- | ----------- | ---------------- | ---------------- | 
-| Height         | POSITION            | SAMPOFFSET     | **MTR0405** | **SS Horizontal**| Coarse Height    |
+| Height         | POSITION            | SAMPOFFSET     | **0405** | **SS Horizontal**| Trans            |
 | Height2        | -                   | -              | -           | -                | -                |
 | Sample_Changer | -                   | -              | -           | -                | -                |
-| Trans          | TRANS               | TRANS          | **MTR0403** | **SS Low Z**     | Trans            |
-| PHI            | ANGLE               | PHI            | **MTR0408** | **SS Rotation**  | Phi              |
-| PSI            | PSI                 | PSI            | MTR0406     | SS Upper Gonio   | Psi              |
-| CHI            | CHI                 | CHI            | **MTR0407** |**SS Lower Gonio**| Chi              |
+| Trans          | TRANS               | TRANS          | **0403** | **SS Low Z**     | Coarse Height    |
+| PHI            | ANGLE               | PHI            | **0408** | **SS Rotation**  | Chi              |
+| PSI            | PSI                 | PSI            | 0406     | SS Upper Gonio   | Psi              |
+| CHI            | CHI                 | CHI            | **0407** |**SS Lower Gonio**| Phi              |
 
 </details>
 
@@ -116,19 +116,19 @@ Below is an overview to explain which terms relate to each other in horizontal/v
 
 | Block          | Change Axis in REFL | Parameter Name | Motor       | Motor Name       | General term     |
 | -------------  | ------------------- | -------------- | ----------- | ---------------- | ---------------- | 
-| **BENCHOFFSET**| **POSITION**        | **BENCHOFFSET**| MTR0801 / MTR0802 | Bench Front Z/ Bench Rear Z    | Bench Height   |
-| **BENCHANGLE** | **ANGLE**           | **BENCHANGLE** | MTR0801 / MTR0802 | Bench Front Z/ Bench Rear Z    | Bench Angle    |
-| BENCHSEESAW    | SEESAW              | BENCHSEESAW    | MTR0801 / MTR0802 | Bench Front Z/ Bench Rear Z    | Bench Seesaw   |
-| **BENCHCHI**   | **CHI**             | **BENCHCHI**   | MTR0804     | Bench Arc        | Bench Chi        | 
+| BENCHOFFSET    | POSITION            | BENCHOFFSET    | 0801 / 0802 | Bench Front Z/ Bench Rear Z    | Bench Height   |
+| BENCHANGLE     | ANGLE               | BENCHANGLE     | 0801 / 0802 | Bench Front Z/ Bench Rear Z    | Bench Angle    |
+| BENCHSEESAW    | SEESAW              | BENCHSEESAW    | 0801 / 0802 | Bench Front Z/ Bench Rear Z    | Bench Seesaw   |
+| BENCHCHI       | CHI                 | BENCHCHI       | 0804     | Bench Arc        | Bench Chi        | 
 
 #### Vertical mode:
 
 | Block          | Change Axis in REFL | Parameter Name | Motor       | Motor Name       | General term     |
 | -------------  | ------------------- | -------------- | ----------- | ---------------- | ---------------- | 
-| **BENCHTRANS** | **TRANS**           | **BENCHTRANS** | MTR0801 / MTR0802 | Bench Front Z/ Bench Rear Z    | Bench Height   |
-| **BENCHCHI**   | **CHI**             | **BENCHCHI**   | MTR0801 / MTR0802 | Bench Front Z/ Bench Rear Z    | Bench Angle    |
-| BENCHSEESAW    | SEESAW              | BENCHSEESAW    | MTR0801 / MTR0802 | Bench Front Z/ Bench Rear Z    | Bench Seesaw   |
-| **BENCHANGLE** | **ANGLE**             | **BENCHANGLE** | MTR0804     | Bench Arc        | Bench Chi        | 
+| **BENCHTRANS** | **TRANS**           | **BENCHTRANS** | 0801 / 0802 | Bench Front Z/ Bench Rear Z    | Bench Height   |
+| **BENCHCHI**   | **CHI**             | **BENCHCHI**   | 0801 / 0802 | Bench Front Z/ Bench Rear Z    | Bench Angle    |
+| BENCHSEESAW    | SEESAW              | BENCHSEESAW    | 0801 / 0802 | Bench Front Z/ Bench Rear Z    | Bench Seesaw   |
+| **BENCHANGLE** | **ANGLE**             | **BENCHANGLE** | 0804     | Bench Arc        | Bench Chi        | 
 </details>
 
 ## Slit 3/Beam blocker
