@@ -43,8 +43,8 @@ Horizontal Mode:
 | Height2        | HEIGHT              | SAMPHEIGHT     | MTR0404     | SS High Z        | Fine Height      |
 | Sample_Changer | -                   | -              | MTR1001     | Sample Changer   | Sample Changer   | 
 | Trans          | TRANS               | TRANS          | **MTR0405** | **SS Horizontal**| Trans            |
-| PHI            | ANGLE               | PHI            | **MTR0406** |**SS Lower Gonio**| Phi              |
-| PSI            | PSI                 | PSI            | MTR0407     | SS Upper Gonio   | Psi              |
+| PHI            | ANGLE               | PHI            | **MTR0407** |**SS Lower Gonio**| Phi              |
+| PSI            | PSI                 | PSI            | MTR0406     | SS Upper Gonio   | Psi              |
 | CHI            | CHI                 | CHI            | **MTR0408** | **SS Rotation**  | Chi              |
 
 Vertical mode:
@@ -56,8 +56,8 @@ Vertical mode:
 | Sample_Changer | -                   | -              | -           | -                | -                |
 | Trans          | TRANS               | TRANS          | **MTR0403** | **SS Low Z**     | Trans            |
 | PHI            | ANGLE               | PHI            | **MTR0408** | **SS Rotation**  | Phi              |
-| PSI            | PSI                 | PSI            | MTR0407     | SS Upper Gonio   | Psi              |
-| CHI            | CHI                 | CHI            | **MTR0406** |**SS Lower Gonio**| Chi              |
+| PSI            | PSI                 | PSI            | MTR0406     | SS Upper Gonio   | Psi              |
+| CHI            | CHI                 | CHI            | **MTR0407** |**SS Lower Gonio**| Chi              |
 
 
 #### Bench
