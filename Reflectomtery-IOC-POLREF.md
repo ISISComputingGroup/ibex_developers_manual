@@ -78,7 +78,7 @@ Vertical mode:
 | **BENCHTRANS** | **TRANS**           | **BENCHTRANS** | MTR0801 / MTR0802 | Bench Front Z/ Bench Rear Z    | Bench Height   |
 | **BENCHCHI**   | **CHI**             | **BENCHCHI**   | MTR0801 / MTR0802 | Bench Front Z/ Bench Rear Z    | Bench Angle    |
 | BENCHSEESAW    | SEESAW              | BENCHSEESAW    | MTR0801 / MTR0802 | Bench Front Z/ Bench Rear Z    | Bench Seesaw   |
-| **BENCHANGLE** | **CHI**             | **BENCHANGLE** | MTR0804     | Bench Arc        | Bench Chi        | 
+| **BENCHANGLE** | **ANGLE**             | **BENCHANGLE** | MTR0804     | Bench Arc        | Bench Chi        | 
 
 ### Parameter Autosave
 
