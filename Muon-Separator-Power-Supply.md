@@ -1,6 +1,6 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [DAQ](DAQ) > [Muon Separator Power Supply](Muon-Separator-Power-Supply)  
 
-The Muon Separator Power Supply is controlled by a National Instruments DAQ-Mx, since IBEX cannot communicate directly with the Separator PSU. The configuration for the DAQ is done in `EPICS\ioc\master\SEPRTR\iocBoot\iocSEPRTR-IOC-01\st-daq.cmd` There is further documentation on how the seperator works [here](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Muon%20FE/Supporting%20the%20Muon%20Separator.pptx).
+The Muon Separator Power Supply is controlled by a National Instruments DAQ-Mx, since IBEX cannot communicate directly with the Separator PSU. The configuration for the DAQ is done in `EPICS\ioc\master\SEPRTR\iocBoot\iocSEPRTR-IOC-01\st-daq.cmd` There is further documentation on how the separator works [here](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Muon%20FE/Supporting%20the%20Muon%20Separator.pptx).
 
 
 The DAQ uses 4 AI ports and 4 AO ports used as such:
