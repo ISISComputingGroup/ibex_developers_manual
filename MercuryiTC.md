@@ -86,14 +86,13 @@ For the little blue cryostats to save Helium the pressure, and in turn the needl
 
 Temperature pressures are then coerced to be between a minimum and maximum pressure. 
 
-To enable the full auto control the `FULL_AUTO_TEMP1` and `FULL_AUTO_PRESSURE1` macros must be set.
+To enable the full auto control the FULL_AUTO_PRESSURE1` macros must be set.
 
 A full list of macros to set are:
 
 Macro | Default | Purpose
 ----- | ------- | -------
-FULL_AUTO_TEMP1 | blank | The index of the temperature card to use full control with
-FULL_AUTO_PRESSURE1 | blank | The index of the pressure card to control
+FULL_AUTO_PRESSUREX | blank | The index of the pressure card to control for TEMPX
 FULL_AUTO_MIN_PRESSURE | 0 | Minimum pressure allowed
 FULL_AUTO_MAX_PRESSURE | - | Maximum pressure allowed
 FULL_AUTO_TEMP_DEADBAND | - | Deadband for the temperature and setpoint
