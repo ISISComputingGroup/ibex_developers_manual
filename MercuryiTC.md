@@ -92,7 +92,7 @@ A full list of macros to set are:
 
 Macro | Default | Purpose
 ----- | ------- | -------
-FULL_AUTO_PRESSUREX | blank | The index of the pressure card to control for TEMPX
+FULL_AUTO_PRESSURE_X | blank | The index of the pressure card to control for temperature card X
 FULL_AUTO_MIN_PRESSURE | 0 | Minimum pressure allowed
 FULL_AUTO_MAX_PRESSURE | - | Maximum pressure allowed
 FULL_AUTO_TEMP_DEADBAND | - | Deadband for the temperature and setpoint
