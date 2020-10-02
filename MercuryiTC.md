@@ -28,6 +28,10 @@ Currently, the driver only measures and sets the following:
 - He Level
 - Pressure
 
+and allows control of:
+
+- Pressure based on temperature (used initially for the little blue cryostat)
+
 There is a section on each below as well as how to set the communication settings.
 
 ### Temperature
@@ -70,6 +74,32 @@ The helium level can be monitored by setting the macro `LEVEL_N` to point at the
 ### Pressure
 
 A pressure card can be monitored by setting the macro `PRESSURE_N` to point at the correct vi in a similar fashion to the temperature.
+
+### Control pressure based on temperature/Full Auto
+
+For the little blue cryostats to save Helium the pressure, and in turn the needle value opening range, is set based on the set point and current temperature. There is a PV to set this to be on for the Mercury, in addition this will turn on Temperature PID, heater and pressure flow rate automatic settings and turn off the temperature flow rate automatic setting. The pressure will be set base on four regimes based on the temperature - setpoint:
+
+- Less than - 2x the temperature deadband: Pressure is set to `minimum pressure`. The idea is to let the cell warm up as quickly as possible.
+- from -2x to -1x the deadband: Pressure is set to the value for the temperature from the table. The cell needs to warm up but more slowly.
+- from -1x to 1x the deadband: Pressure is set to the value for the temperature from the table + a ramp is added from the offset to 0. Cell is the right temperature reduce the offset we used for extra cooling to be 0.
+- above the deadband: Pressure is set to the value for the temperature from the table + offset + a value proportion to the square of the gain * distance above deadband the temperature is. Increase the pressure to cool the cell as quickly as possible reducing extra cool as we get near the deadband.
+
+Temperature pressures are then coerced to be between a minimum and maximum pressure. 
+
+To enable the full auto control the `FULL_AUTO_TEMP1` and `FULL_AUTO_PRESSURE1` macros must be set.
+
+A full list of macros to set are:
+
+Macro | Default | Purpose
+----- | ------- | -------
+FULL_AUTO_TEMP1 | blank | The index of the temperature card to use full control with
+FULL_AUTO_PRESSURE1 | blank | The index of the pressure card to control
+FULL_AUTO_MIN_PRESSURE | 0 | Minimum pressure allowed
+FULL_AUTO_MAX_PRESSURE | - | Maximum pressure allowed
+FULL_AUTO_TEMP_DEADBAND | - | Deadband for the temperature and setpoint
+FULL_AUTO_OFFSET | - | Offset from which the ramp is reduced
+FULL_AUTO_OFFSET_DURATION | - | Time in minutes over which the offset is reduced
+FULL_AUTO_GAIN | - | Gain term for the extra pressure
 
 ### Example
 
