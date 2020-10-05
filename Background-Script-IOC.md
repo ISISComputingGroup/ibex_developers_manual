@@ -4,7 +4,7 @@ The background script IOC will run a script in the background. The script must b
 
 If you want the IOC to register as started the user must include the lines:
 
-```
+```python
 import sys
 import os
 
@@ -19,7 +19,7 @@ register_ioc_start("BGRSCRPT_01")
 
 A popular use of this is to generate a [background plot](https://github.com/ISISNeutronMuon/InstrumentScripts/wiki/Muon). This can be using the script:
 
-```
+```python
 import sys
 import os
 from time import sleep
@@ -44,7 +44,7 @@ while True:
 
 In addition to this to show the plot add the following to the instrument init:
 
-```
+```python
 def init(inst):
     g.adv.open_plot_window(is_primary=False)
 ```
