@@ -52,4 +52,13 @@ def init(inst):
 #### Background restart of an IOC if it crashes and doesn't recover
 
 A script has been put on EMU for if an IOC goes into a severe alarm state (`INVALID`) and fails to reconnect to the hardware. The script is responsible for restarting the IOC if this happens and checking that the IOC has come back online and is no longer in an alarm state. 
-This script is also now available in the instrument scripts repository. 
+
+This script is available in the instrument scripts repository as a helper function called `restart_ioc_when_pv_in_alarm()`. 
+The helper function takes the block to monitor for alarms, possible alarm states it can be in (in the form of a list of strings) and an IOC to restart. 
+
+An example of this is: 
+```python
+restart_ioc_when_pv_in_alarm(block_to_monitor="field_ZF_status", iocs_to_restart=["ZFMAGFLD_01"], error_states: ["No new magnetometer data", "Magnetometer data invalid"])
+```
+
+Running the function will spawn a thread which polls between intervals (which can also be specified with the `wait_between_restarts` and `wait_for_polling` keyword arguments) 
