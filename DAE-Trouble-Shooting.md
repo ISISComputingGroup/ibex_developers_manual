@@ -267,7 +267,7 @@ end run script. The log for this is stored at `C:\Data\log\post_command_<day>.lo
 
 After fixing the issues the files will be copied after the next run is finished. So start and end a run (with a test like title), you may also want to put it in simulation mode if the DAE is switched off. Finally check the files have appeared in `<isis instrument folder>\<machine name>\Instrument\data\cycle_<cycle number>`.
 
-### DAE Server restart doen't work message when clicking start "Cannot start server on port XXX"
+### DAE Server restart doesn't work message when clicking start "Cannot start server on port XXX"
 
 If you need to restart the NI visa server on the host machine and clicking start on the server says can not start server, it may be that the via driver has started in the admin account instead of the user account. Log onto the host machine and quit the NI VXI Resource manager application. This should allow the user accounts server to start.
 
