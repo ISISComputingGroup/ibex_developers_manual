@@ -4,10 +4,11 @@ The convert record is used to convert values when you have a lookup table or for
 
 I (John) used the record in the barndoors support modules (..\EPICS\support\barndoors\master), Kathryn has used it on the Eurotherm.
 
-To use this record in an IOC you must include in the build.mak file the following:
+To use this record in an IOC you must include in the build.mak file the following (both in support and the ioc):
 
 1. `$(APPNAME)_DBD += cvtRecord.dbd` in the dbd section
 1. `$(APPNAME)_LIBS += cvtRecord csmbase` in the libraries section
+1. `CSM=$(SUPPORT)/csm/master` in the RELEASE file in configuration directory
 
 If you are using a calibration file both the base path (`TDIR` field) and the filename (`SPEC` field) must be less than 40 characters; If you really need an extra 40 characters the `BDIR` field can also be used. You should use the standard name for these macros of `CALIB_PATH` and `CALIB_FILE` (see (Macro-Naming)). The suggested location for calibration files is `C:\Instrument\Settings\calib\<device type>`. Place an example in your IOC that can be copied  in settings.
 
