@@ -35,6 +35,7 @@ Homeval
 Offset and User Offset
 
 - These are regularly added to or removed from the values being communicated.
+- Changing an offset does not move the home position. However, this does shift the position with respect to the _limits_, so will change how far you can move forwards/backwards before hitting the limit (held in software).
 - When dealing with values which need to be corrected by the offsets, the two offsets are added together to give the total offset value:
    - On sending a position: `Values sent to Galil = (user set point - (offset + user offset)) * motor steps per unit`
    - On readback: `Value displayed = (position reported in the Galil datarecord/Encoder steps per unit) + (user offset + offset)`
