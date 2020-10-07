@@ -1,4 +1,4 @@
-### File writing
+# File writing
 
 The [filewriter](https://github.com/ess-dmsc/kafka-to-nexus) is responsible for taking the neutron and SE data out of Kafka and writing it to a nexus file. When the ICP ends a run it sends a config message to the filewriter, via kafka, to tell it to start writing to file.
 
@@ -40,13 +40,13 @@ After deleting `hns.data` from `C:\ProgramData\Microsoft\Windows\HNS` and restar
 
 The best option here would be to try and get it running natively, as DATASTREAM is a Virtual Machine itself and Docker appears to not work. As well as this, we can then run it with `nssm` which is how we run the forwarder as well, which makes for consistent service management. We could also probably use the log rotation that the forwarder is using which is build into NSSM. 
 
-### Update - 07/10/20
+## Update - 07/10/20
 The filewriter is now running in a docker-compose script on NDHSPARE62, this is with Docker desktop rather than the enterprise edition and is not using the LCOW framework. We should think about a more permanent solution, however Docker clearly works on server 2019 and not 2016. NDADATASTREAM is running 2016 so may make sense to update that if we want the filewriter running on it as well. 
 
-#### isis-filewriter
+### isis-filewriter
 https://github.com/ISISComputingGroup/isis-filewriter has been created for an easy setup of the filewriter using docker-compose. it is hardcoded currently and requires the file_writer_config.ini to be changed to point at the runInfo topics manually. To begin with we ran it just pointing at ZOOM_runInfo, and it successfully wrote files containing event data. 
 
-#### combine-runinfo
+### combine-runinfo
 https://github.com/ISISComputingGroup/combine-runinfo has also been created to workaround the filewriter only being able to point at one configuration topic, so we can use the filewriter for all instruments. combine-runinfo's purpose is to run a [Kafka Stream Processor](https://kafka.apache.org/10/documentation/streams/developer-guide/processor-api.html) to forward all new configuration changes into the `ALL_runInfo` topic to be used with a single instance of the filewriter. 
 
 This project is written in Kotlin and then compiled with Gradle to create a runnable `.jar` file. This is flexible, and we could re-write it in Java if it's used permanently and maintaining another language is an issue. 
