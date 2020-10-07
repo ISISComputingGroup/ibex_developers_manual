@@ -44,7 +44,8 @@ The best option here would be to try and get it running natively, as DATASTREAM 
 The filewriter is now running in a docker-compose script on NDHSPARE62, this is with Docker desktop rather than the enterprise edition and is not using the LCOW framework. We should think about a more permanent solution, however Docker clearly works on server 2019 and not 2016. NDADATASTREAM is running 2016 so may make sense to update that if we want the filewriter running on it as well. 
 
 ### isis-filewriter
-https://github.com/ISISComputingGroup/isis-filewriter has been created for an easy setup of the filewriter using docker-compose. it is hardcoded currently and requires the file_writer_config.ini to be changed to point at the runInfo topics manually. To begin with we ran it just pointing at ZOOM_runInfo, and it successfully wrote files containing event data. 
+https://github.com/ISISComputingGroup/isis-filewriter has been created for an easy setup of the filewriter using docker-compose. it is hardcoded currently and requires the file_writer_config.ini` file to be changed to point at the `_runInfo` topics manually. To begin with we ran it just pointing at ZOOM_runInfo, and it successfully wrote files containing event data. 
+Steps to run the docker-compose script can be found in the `README` of the project. 
 
 ### combine-runinfo
 https://github.com/ISISComputingGroup/combine-runinfo has also been created to workaround the filewriter only being able to point at one configuration topic, so we can use the filewriter for all instruments. combine-runinfo's purpose is to run a [Kafka Stream Processor](https://kafka.apache.org/10/documentation/streams/developer-guide/processor-api.html) to forward all new configuration changes into the `ALL_runInfo` topic to be used with a single instance of the filewriter. 
