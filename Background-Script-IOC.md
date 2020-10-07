@@ -53,7 +53,7 @@ def init(inst):
 
 A script has been put on EMU for if an IOC goes into a severe alarm state (`INVALID`) and fails to reconnect to the hardware. The script is responsible for restarting the IOC if this happens and checking that the IOC has come back online and is no longer in an alarm state. 
 
-This script is available in the instrument scripts repository as a helper function called `restart_ioc_when_pv_in_alarm()`. 
+This script is available in the [instrument scripts repository](https://github.com/ISISNeutronMuon/InstrumentScripts/blob/master/general/utilities/restart_ioc_when_pv_in_alarm.py) as a helper function called `restart_ioc_when_pv_in_alarm()`. 
 The helper function takes the block to monitor for alarms, possible alarm states it can be in (in the form of a list of strings) and an IOC to restart. 
 
 It can be used in a background script in the same way as the background plot above but with 
