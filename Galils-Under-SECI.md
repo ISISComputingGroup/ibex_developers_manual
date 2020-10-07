@@ -41,8 +41,9 @@ Offset and User Offset
 
 Offset to apply in IBEX
 
-- As the home value in IBEX should be 0, this should likely be set to `SECI Homeval - offset - user offset` (Please check my maths here - I'm not sure about that `-` it could be `+`)
+- As the home value in IBEX should be 0, this should likely be set to `SECI Homeval - (offset + user offset)`
 - Note also that there is an option to not apply the home offset and so 0 is used in that situation for the `SECI Homeval`
+- The SECI limits are in software only and not written to the device. When applying this offset
 
 Backlash
 
@@ -63,6 +64,7 @@ Jog Values
 
 Limits
 - Within IBEX we will set the `HLM` and `LLM` fields
+- SECI limits (user and soft limits) are software only, so are never sent to the controller.
 - Where the soft limits are set, but the user limits are either set to infinity or 0, then the soft limits should be used
 - Where the soft limits are set to infinity or 0 then the limits will be set to 0 and a message added to the 'things to be aware of' part of the system
 - If the user limits are larger than the soft limits, but not infinite, then the soft limits will win as those are the final limits used within the move normally
