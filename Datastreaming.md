@@ -38,7 +38,9 @@ The instrument name for the BlockServerToKafka service is `BSKAFKA`.
 This is a C++ program responsible for taking the EPICS data and pushing into Kafka. ISIS currently has two instances of the forwarder running (one for the production and one for development). They are both running as services (Developer Forwarder and Production Forwarder) on NDADATASTREAM, which can be accessed via the `ibexbuilder` account. The logs for these forwarders are located in `C:\Forwarder\dev_forwarder` and `C:\Forwarder\prod_forwarder`.
 
 ## Filewriting
-todo:seefilewriting
+
+See [File writing](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Datastreaming:-File-writing)
+
 ## System Tests
 Currently system tests are being run to confirm that the start/stop run and event data messages are being sent into Kafka and that a Nexus file is being written with these events. The Kafka cluster and filewriter are being run in docker containers for these tests and so must be run on a Windows 10 machine. To run these tests you will need to install [docker for windows and add yourself as a docker-user](https://docs.docker.com/docker-for-windows/install/#install-docker-desktop-on-windows).
 
