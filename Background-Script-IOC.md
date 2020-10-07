@@ -56,7 +56,11 @@ A script has been put on EMU for if an IOC goes into a severe alarm state (`INVA
 This script is available in the instrument scripts repository as a helper function called `restart_ioc_when_pv_in_alarm()`. 
 The helper function takes the block to monitor for alarms, possible alarm states it can be in (in the form of a list of strings) and an IOC to restart. 
 
-An example of this is: 
+It can be used in a background script in the same way as the background plot above but with 
+```python
+plot=BackgroundBlockPlot((("Temp_Sample", "value"), ("Temp_SP", "set point")), "Temperature").start()
+```
+replaced with something like
 ```python
 restart_ioc_when_pv_in_alarm(block_to_monitor="field_ZF_status", iocs_to_restart=["ZFMAGFLD_01"], error_states: ["No new magnetometer data", "Magnetometer data invalid"])
 ```
