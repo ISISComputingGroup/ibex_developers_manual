@@ -75,9 +75,9 @@ The helium level can be monitored by setting the macro `LEVEL_N` to point at the
 
 A pressure card can be monitored by setting the macro `PRESSURE_N` to point at the correct vi in a similar fashion to the temperature.
 
-### Control pressure based on temperature/Full Auto
+### Software Pressure Control
 
-For the little blue cryostats to save Helium the pressure, and in turn the needle value opening range, is set based on the set point and current temperature. There is a PV to set this to be on for the Mercury, in addition this will turn on Temperature PID, heater and pressure flow rate automatic settings and turn off the temperature flow rate automatic setting. The pressure will be set base on four regimes based on the temperature - setpoint:
+The little blue cryostats has a software pressure control mode to save Helium. The pressure set point, and in turn the needle value opening range, is set based on the set point and current temperature. There is a PV to set this to be on for the Mercury, in addition this will turn on Temperature PID, heater and pressure flow rate automatic settings and turn off the temperature flow rate automatic setting. The pressure will be set base on four regimes based on the temperature - setpoint:
 
 - Less than - 2x the temperature deadband: Pressure is set to `minimum pressure`. The idea is to let the cell warm up as quickly as possible.
 - from -2x to -1x the deadband: Pressure is set to the value for the temperature from the table. The cell needs to warm up but more slowly.
@@ -92,13 +92,15 @@ A full list of macros to set are:
 
 Macro | Default | Purpose
 ----- | ------- | -------
-FULL_AUTO_PRESSURE_X | blank | The index of the pressure card to control for temperature card X
-FULL_AUTO_MIN_PRESSURE | 0 | Minimum pressure allowed
-FULL_AUTO_MAX_PRESSURE | - | Maximum pressure allowed
-FULL_AUTO_TEMP_DEADBAND | - | Deadband for the temperature and setpoint
-FULL_AUTO_OFFSET | - | Offset from which the ramp is reduced
-FULL_AUTO_OFFSET_DURATION | - | Time in minutes over which the offset is reduced
-FULL_AUTO_GAIN | - | Gain term for the extra pressure
+SPC_PRESSURE_X | blank | The index of the pressure card to control for temperature card X
+SPC_MIN_PRESSURE | 0 | Minimum pressure allowed
+SPC_MAX_PRESSURE | - | Maximum pressure allowed
+SPC_TEMP_DEADBAND | - | Deadband for the temperature and setpoint
+SPC_OFFSET | - | Offset from which the ramp is reduced
+SPC_OFFSET_DURATION | - | Time in minutes over which the offset is reduced
+SPC_GAIN | - | Gain term for the extra pressure
+
+The pressures for the various temperature setpoints are read from `...Settings\config\common\other_devices\little_blue_cryostat.txt`
 
 ### Example
 
