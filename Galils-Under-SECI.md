@@ -43,7 +43,6 @@ Offset to apply in IBEX
 
 - As the home value in IBEX should be 0, this should likely be set to `SECI Homeval - (offset + user offset)`
 - Note also that there is an option to not apply the home offset and so 0 is used in that situation for the `SECI Homeval`
-- The SECI limits are in software only and not written to the device. When applying this offset
 
 Backlash
 
