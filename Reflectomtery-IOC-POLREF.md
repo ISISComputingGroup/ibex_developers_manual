@@ -31,7 +31,7 @@ Below is an overview to explain which terms relate to each other in horizontal/v
 | Block          | Parameter Name      | Change Axis in REFL | Motor       | Motor Name       | General term     | Other |
 | -------------  | ------------------- | -------------- | ----------- | ---------------- | ---------------- | ---- |
 | S2OFFSET | S2OFFSET              | POSITION               | **0305 / 0306** | **Slit 2 East / West**     | **Slit 2 Horizontal**   | **Using HCENT as Offset** |
-| S2ANGLE | **S2CHI**              | **CHI**               | 0605 | Slit 2 Tilt     | Slit 2 Tilt   | - |
+| **S2CHI** | **S2CHI**              | **CHI**               | 0605 | Slit 2 Tilt     | Slit 2 Tilt   | - |
 </details>
 
 <details>
