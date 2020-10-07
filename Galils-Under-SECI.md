@@ -35,8 +35,9 @@ Homeval
 Offset and User Offset
 
 - These are regularly added to or removed from the values being communicated.
-- On sending a position: `Values sent to Galil = (user set point - offset - user offset) * motor steps per unit`
-- On readback: `Value displayed = (position reported in the Galil datarecord/Encoder steps per unit) + user offset + offset`
+- When dealing with values which need to be corrected by the offsets, the two offsets are added together to give the total offset value:
+   - On sending a position: `Values sent to Galil = (user set point - (offset + user offset)) * motor steps per unit`
+   - On readback: `Value displayed = (position reported in the Galil datarecord/Encoder steps per unit) + (user offset + offset)`
 
 Offset to apply in IBEX
 
