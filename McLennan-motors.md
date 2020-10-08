@@ -3,6 +3,8 @@
 
 The McLennan motor is a controller that support multiple independent motors.
 
+**WARNING: Unlike many other motor controllers that remember settings through autosave the McLennan exclusively uses macros. This means for changing parameters in a persistent way you will need to change them in the IOC configuration rather than the motor details panel**
+
 ## Behaviour
 
 ### Velocity
