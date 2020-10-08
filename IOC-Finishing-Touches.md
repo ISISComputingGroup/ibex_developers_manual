@@ -104,7 +104,7 @@ where
         - `^[0-9]+$`: integer no sign
     - `description`, a plain text description which is shown to the user.
     - `defaultValue`, the default value of the macro, if it exists (this attribute is not required)
-    - `hasDefault`, if the macro has a default, either `"YES"`, `"NO"`, or `"UNKNOWN"`
+    - `hasDefault`, if the macro has a default, either `"YES"`, `"NO"`, or `"UNKNOWN"`. (Note that `UNKNOWN` exists for legacy reasons, new IOCs should not use it)
 
 `config.xml` support include so if you have several iocs with the same set of macros you don't need to repeat the file contents. Example GALIL02 (see below) uses GALIL01's config:
 
