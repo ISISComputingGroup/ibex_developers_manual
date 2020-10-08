@@ -13,3 +13,11 @@ Mixing autosave with IOCs that load a dynamic number of axes/sensors can be dang
 # How to Add
 
 To add autosave to a field see [autosave PVs in finishing touches](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/IOC-Finishing-Touches#4-autosave-pvs).
+
+# Forcing autosave to save at a given point (useful for testing)
+
+You can force autosave to save at a given point by writing a command into the iocsh. The command: `manual_save("<my_file>.req")`.
+
+You can find `"<my_file>.req"` from the ioc startup logs `create_monitor_set("<my_file>.req", ...)`.
+
+If you wish to do this in the IocTestFramework you can with the ProcServLauncher. First you need the ioc to access: `self._lewis, self._ioc = get_running_lewis_and_ioc("<device_name>", DEVICE_PREFIX)` and then you can run `self._ioc.telnet.write("manual_save(\"KEPCO_01_info_settings.req\")\n")`.
