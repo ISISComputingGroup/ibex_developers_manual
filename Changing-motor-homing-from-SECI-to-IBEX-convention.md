@@ -1,3 +1,5 @@
+> [Wiki](Home) > [Galils Under SECI](galils-under-seci) > [Changing motor homing from SECI to IBEX convention](Changing-motor-homing-from-SECI-to-IBEX-convention)
+
 The convention for home values and offsets differs between IBEX and SECI. On many instruments, this difference doesn't matter as the switch between the two control systems happens only infrequently, so the motors can be homed as required.
 
 On the instruments which do expect to switch between the two control systems more often, we have decided to change the home position and offset convention in the SECI config files to the IBEX convention, where the motor home position is defined as zero.
