@@ -30,7 +30,7 @@ Home Offset
 
 Homeval
 
-- Applied if a homing routine is defined as completed successfully - assume that this is the case and this is then the '0' position, the use of this value needs to be considered alongside the other offset values
+- Applied if a homing routine is defined as completed successfully - the value that is then sent to the controller is `Home Position - (User Offset + Offset)`
 
 Offset and User Offset
 
