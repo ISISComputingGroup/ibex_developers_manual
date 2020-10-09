@@ -182,7 +182,11 @@ Now test both the homing and positions to make sure they are the same as in Labv
 
 Do be sure to check [this spreadsheet](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/galil%20gotchas.xlsx) to see if there are any odd behaviours, such as programs to run. This is also an opportunity to check that differences won't be highlighted by the homing routines. There is more information available on the [SECI homing routines](Homing-Galils-under-SECI)
 
+Finally also check for dual position stage axes
 
+### Dual position stage Axis
+
+Some Galil axes under SECI have the `dual position stage` box ticked this means that instead of executing a move they execute a jog in the desired direction. To configure these in IBEX you should create a motion setpoint and then set the motion set point to the two extreme ends of the axes. You may need to perform a jog to find out what these positions are. After this don't forget to tell the scientists that they may no longer see limit lights at both ends of the travel.
 
 # Set up any axes / jaws / barndoors files.
 
