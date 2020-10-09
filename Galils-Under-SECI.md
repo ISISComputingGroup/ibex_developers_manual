@@ -34,9 +34,9 @@ Homeval
 
 Offset and User Offset
 
-- These are regularly added to or removed from the values being communicated. Changing an offset will not affect the value displayed to the user (on the 'user axis'), but will change what position this corresponds to along the 'real' axis.
+- Offsets are regularly added to or removed from the values being communicated. Changing an offset will not affect the value displayed to the user (on the 'user axis'), but will change what position this corresponds to along the 'real' axis.
 - The limits are set relative to the user axis, so changing the offset will also affect how far you can move forwards/backwards before hitting the limit.
-- When dealing with values which need to be corrected by the offsets, the two offsets are added together to give the total offset value:
+- The two offsets are usually combined together and applied as one:
    - On sending a position: `Values sent to Galil = (user set point - (offset + user offset)) * motor steps per unit`
    - On readback: `Value displayed = (position reported in the Galil datarecord/Encoder steps per unit) + (user offset + offset)`
 
