@@ -6,7 +6,7 @@ On the instruments which do expect to switch between the two control systems mor
 
 In a nutshell, this migration shifts the home position to zero, and applies the SECI home position as an offset. If no soft limits have been set, this only has the effect of changing how the user axis (the value shown to the user) maps to the drive axis (how far along the actual axis you are).
 
-If soft limits have been set, these need to be adjusted to make sure the distance each axis can travel remains the same as before. The new soft limit value = (old home position + any old applied offsets):
+If soft limits have been set, these need to be adjusted to make sure the distance each axis can travel remains the same as before. The new soft limit = old soft limit - old home position + old offsets:
 
 ![](https://raw.githubusercontent.com/ISISComputingGroup/ibex_developers_manual/master/images/seci_to_ibex_home_scheme.png)
 
