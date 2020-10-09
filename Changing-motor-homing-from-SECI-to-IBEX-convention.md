@@ -5,9 +5,7 @@ On the instruments which do expect to switch between the two control systems mor
 In a nutshell, this migration shifts the home position to zero, and applies the SECI home position as an offset. To make sure the distance each axis can travel remains is the same as before, the soft limits need to be shifted by the difference between the (old home position + any old applied offsets) and the new home position, which is equal to the old offsets:
 ![](https://raw.githubusercontent.com/ISISComputingGroup/ibex_developers_manual/master/images/seci_to_ibex_home_scheme.png)
 
-Note that the distance an axis can travel wi
-
-The tool to perform this is held in the [ibex utils](https://github.com/ISISComputingGroup/ibex_utils) repository under `galil_ini_parser`.
+The tool to perform this is held in the [ibex utils](https://github.com/ISISComputingGroup/ibex_utils) repository under `galil_ini_parser`. Note that this script does not change any user limits.
 
 To perform the migration:
 1. Take a backup of the original Galil configuration file
