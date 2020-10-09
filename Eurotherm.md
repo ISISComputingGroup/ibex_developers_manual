@@ -8,6 +8,8 @@ Eurotherms can be calibrated by selecting a calibration file in the OPI (`None.t
 
 - If the protocol timeouts are increased too much the IOC will go into alarm states as some scans depend on the timeout. Do not increase the timeout beyond the tested value in the protocol file!
 - The eurotherm protocol uses variable terminators.
+  * Because of this, most commands do not read to a terminator but instead depend on getting a read timeout to terminate messages. This is achieved in streamdevice by setting `InTerminator = ""`.
+- There is custom timing logic in `st-timing.cmd` which attempts to set the command rate of the eurotherm such that it can keep up with the message rate. If this logic is changed it should be tested against eurotherms with different numbers of sensors connected (especially 6-sensor crates) to make sure that the eurotherm can keep up in the worst-case scenario with setpoints and readbacks updating rapidly on all sensors.
 
 # Connections
 
