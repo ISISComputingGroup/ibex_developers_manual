@@ -44,6 +44,7 @@ Offset to apply in IBEX
 
 - As the home value in IBEX should be 0, this should likely be set to `SECI Homeval - (offset + user offset)`
 - Note also that there is an option to not apply the home offset and so 0 is used in that situation for the `SECI Homeval`
+- See also [Changing motor homing from SECI to IBEX convention](Changing-motor-homing-from-SECI-to-IBEX-convention)
 
 Backlash
 
