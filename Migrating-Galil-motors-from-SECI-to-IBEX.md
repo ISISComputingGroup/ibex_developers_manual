@@ -186,7 +186,7 @@ Finally also check for dual position stage axes
 
 ### Dual position stage Axis
 
-Some Galil axes under SECI have the `dual position stage` box ticked this means that instead of executing a move they execute a jog in the desired direction. To configure these in IBEX you should create a motion setpoint and then set the motion set point to the two extreme ends of the axes. You may need to perform a jog to find out what these positions are. After this don't forget to tell the scientists that they may no longer see limit lights at both ends of the travel.
+Some Galil axes under SECI have the `dual position stage` box ticked this means that instead of executing a move they execute a jog in the desired direction. To configure these in IBEX you should create a motion setpoint and then set the motion set point to the two extreme ends of the axes. You may need to perform a jog to find out what these positions are. After this don't forget to tell the scientists that they may no longer see limit lights at both ends of the travel. If possible put the two ends of travel just inside the limits, we should avoid triggering the limit switches when possible.
 
 # Set up any axes / jaws / barndoors files.
 
