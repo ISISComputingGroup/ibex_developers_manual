@@ -4,9 +4,13 @@ The convention for home values and offsets differs between IBEX and SECI. On man
 
 On the instruments which do expect to switch between the two control systems more often, we have decided to change the home position and offset convention in the SECI config files to the IBEX convention, where the motor home position is defined as zero.
 
-In a nutshell, this migration shifts the home position to zero, and applies the SECI home position as an offset. If no soft limits have been set, this only has the effect of changing how the user axis (the value shown to the user) maps to the drive axis (how far along the actual axis you are).
+There are three rules which must be followed to change from SECI to the IBEX configuration:
 
-If soft limits have been set, these need to be adjusted to make sure the distance each axis can travel remains the same as before. The new soft limit = old soft limit - old home position + old offsets:
+1. When we are on a home switch this always translates to the same position in user space (both before and after migration and on switching IBEX/SECI)
+1. The home position must be zero, in SECI this translates to `home_val-offset = 0` as the offset is subtracted from the home_val when a home is done
+1. The distance between the physical home position and the limits must stay the same (both before and after migration and on switching IBEX/SECI). In SECI the limits are defined in drive space and so as we're changing the offset, which moves drive space, we must then change the limits
+
+These rules are illustrated here:
 
 ![](https://raw.githubusercontent.com/ISISComputingGroup/ibex_developers_manual/master/images/seci_to_ibex_home_scheme.png)
 
