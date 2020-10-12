@@ -7,7 +7,7 @@ The experimental database keeps track of:
 1. users in the team  (`user`)
 1. roles in the team  (`role`)
 
-The data is populated centrally from the [Experiment Database Populator](https://github.com/ISISComputingGroup/ExperimentDatabasePopulator) (alternatively named RB number populator) which is run on control-svcs.
+The data is populated centrally from the [Experiment Database Populator](https://github.com/ISISComputingGroup/ExperimentDatabasePopulator) (alternatively named RB number populator) which is run on control-svcs. The RB numbers were populated by a different service on SECI, which can be found at https://github.com/ISISNeutronMuon/RBNumberFinder.
 
 ## Architecture
 
