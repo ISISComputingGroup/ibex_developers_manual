@@ -75,10 +75,10 @@ Caused by: org.apache.kafka.common.errors.RecordTooLargeException: The message i
 The `combine-runinfo` was updated to use bytes rather than strings, however this did not solve the message size issue. 
 After this it was decided that as we were going to use a python script to modify the runinfo messages anyway to contain sample environment data and so on we may as well just forward the modified runinfo messages directly into `ALL_runInfo` instead. 
 
-#### Adding ISIS info to the filewriter configuration 
+#### Adding ISIS data to the filewriter configuration 
 To add static data to the filewriter configuration without directly modifying the ICP's output to the `runInfo` topics a script will be used. Things like instrument name and other fields that do not change between instruments can be added here but there are a few gaps that will need to be streamed:
 - stuff in root of file - things like inst name that can be derived from topic are ok, things that cannot be, like experiment identifier, DAE modes etc 
-- events in detector1_events - currently not being forwarded
+- events in `detector1_events` - currently not being forwarded
 - sample environment is tricky - we need to know what blocks to put in the file template, it's not as simple as just going "anything with the PV prefix of IN:ZOOM" although we could add to the script to look at the forwarder status and check in the currently forwarded PVs
 - fields derived from detector events such as total_counts
 
