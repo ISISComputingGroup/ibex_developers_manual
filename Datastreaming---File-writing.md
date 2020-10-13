@@ -73,7 +73,7 @@ to topic ALL_runInfo due to org.apache.kafka.common.errors.RecordTooLargeExcepti
 Caused by: org.apache.kafka.common.errors.RecordTooLargeException: The message is 3146528 bytes when serialized which is larger than the maximum request size you have configured with the max.request.size configuration.
 ```
 The `combine-runinfo` was updated to use bytes rather than strings, however this did not solve the message size issue. 
-After this it was decided that as we were going to use a python script to modify the runinfo messages anyway to contain sample environment data and so on we may as well just forward the modified runinfo messages directly into `ALL_runInfo` instead. 
+After this it was decided that as we were going to use a python script to modify the runinfo messages anyway to contain sample environment data and so on we may as well just forward the modified run info messages directly into `ALL_runInfo` instead. 
 
 ## Adding ISIS data to the filewriter configuration 
 To add static data to the filewriter configuration without directly modifying the ICP's output to the `runInfo` topics a script will be used. Things like instrument name and other fields that do not change between instruments can be added here but there are a few gaps that will need to be streamed:
@@ -84,3 +84,4 @@ To add static data to the filewriter configuration without directly modifying th
 
 The general structure of the file can be written as this will likely not differ between instruments (at least not much) so this will be added in by the script that forwards to `ALL_runInfo` 
 
+NB. I couldn't use the NeXus-Constructor for this as it no longer takes a NeXus file as an input, the version on master doesn't allow top-level fields or arbitrary groups, and there aren't many things in the ZOOM file for example that are in `/raw_data_1/instrument` which is where the NeXus constructor puts components by default. 
