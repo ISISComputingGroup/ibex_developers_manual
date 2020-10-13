@@ -2,7 +2,7 @@
 
 The [filewriter](https://github.com/ess-dmsc/kafka-to-nexus) is responsible for taking the neutron and SE data out of Kafka and writing it to a nexus file. When the ICP ends a run it sends a config message to the filewriter, via kafka, to tell it to start writing to file.
 
-### Notes for trying to get the filewriter working on windows: 
+### Notes for trying to get the filewriter working on windows server 2016: 
 #### trying to run filewriter natively:
 - hdf5 conan library does not seem to build under windows, however it's falling over in the conan step
 - ess takes ownership of the library 
