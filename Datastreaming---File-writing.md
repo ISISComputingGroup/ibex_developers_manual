@@ -77,10 +77,10 @@ After this it was decided that as we were going to use a python script to modify
 
 #### Adding ISIS data to the filewriter configuration 
 To add static data to the filewriter configuration without directly modifying the ICP's output to the `runInfo` topics a script will be used. Things like instrument name and other fields that do not change between instruments can be added here but there are a few gaps that will need to be streamed:
-- stuff in root of file - things like inst name that can be derived from topic are ok, things that cannot be, like experiment identifier, DAE modes etc 
-- events in `detector1_events` - currently not being forwarded
-- sample environment is tricky - we need to know what blocks to put in the file template, it's not as simple as just going "anything with the PV prefix of IN:ZOOM" although we could add to the script to look at the forwarder status and check in the currently forwarded PVs
-- fields derived from detector events such as total_counts
+- Stuff in root of file - things like inst name that can be derived from topic are ok, things that cannot be, like experiment identifier, DAE modes etc 
+- Events in `detector1_events` - currently not being forwarded
+- Sample environment is tricky - we need to know what blocks to put in the file template, it's not as simple as just going "anything with the PV prefix of IN:ZOOM" although we could add to the script to look at the forwarder status and check in the currently forwarded PVs
+- Fields derived from detector events such as `total_counts`
 
 The general structure of the file can be written as this will likely not differ between instruments (at least not much) so this will be added in by the script that forwards to `ALL_runInfo` 
 
