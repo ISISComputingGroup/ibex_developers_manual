@@ -17,8 +17,9 @@ The [filewriter](https://github.com/ess-dmsc/kafka-to-nexus) is responsible for 
 - windows containers are a bit weird and we may just end up with the same problems as #1
 
 following [this link](https://blog.couchbase.com/setup-docker-windows-server-2016/)
-1.enabled containers and restarted 
-1. installed docker - weird error but seemed to install:
+
+1. Enabled containers and restarted 
+1. Installed Docker - weird error but seemed to install:
 ```
 Start-Service : Failed to start service 'Docker Engine (docker)'.
 At C:\Users\ibexbuilder\update-containerhost.ps1:393 char:5
@@ -73,3 +74,13 @@ Caused by: org.apache.kafka.common.errors.RecordTooLargeException: The message i
 ```
 The `combine-runinfo` was updated to use bytes rather than strings, however this did not solve the message size issue. 
 After this it was decided that as we were going to use a python script to modify the runinfo messages anyway to contain sample environment data and so on we may as well just forward the modified runinfo messages directly into `ALL_runInfo` instead. 
+
+#### Adding ISIS info to the filewriter configuration 
+To add static data to the filewriter configuration without directly modifying the ICP's output to the `runInfo` topics a script will be used. Things like instrument name and other fields that do not change between instruments can be added here but there are a few gaps that will need to be streamed:
+- stuff in root of file - things like inst name that can be derived from topic are ok, things that cannot be, like experiment identifier, DAE modes etc 
+- events in detector1_events - currently not being forwarded
+- sample environment is tricky - we need to know what blocks to put in the file template, it's not as simple as just going "anything with the PV prefix of IN:ZOOM" although we could add to the script to look at the forwarder status and check in the currently forwarded PVs
+- fields derived from detector events such as total_counts
+
+The general structure of the file can be written as this will likely not differ between instruments (at least not much) so this will be added in by the script that forwards to `ALL_runInfo` 
+
