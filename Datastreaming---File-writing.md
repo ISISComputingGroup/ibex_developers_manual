@@ -52,7 +52,7 @@ Steps to run the docker-compose script can be found in the `README` of the proje
 https://github.com/ISISComputingGroup/combine-runinfo has also been created to workaround the filewriter only being able to point at one configuration topic, so we can use the filewriter for all instruments. combine-runinfo's purpose is to run a [Kafka Stream Processor](https://kafka.apache.org/10/documentation/streams/developer-guide/processor-api.html) to forward all new configuration changes into the `ALL_runInfo` topic to be used with a single instance of the filewriter. 
 
 This project is written in Kotlin and then compiled with Gradle to create a runnable `.jar` file. This is flexible, and we could re-write it in Java if it's used permanently and maintaining another language is an issue. 
-#### Update - 08/10/2020
+### Update - 08/10/2020
 `combine-runinfo` didn't work with the messages from all topics, running the `.jar` gave these errors: 
 ```
 to topic ALL_runInfo due to org.apache.kafka.common.errors.RecordTooLargeException: The message is 3146528 bytes when serialized which is larger than the maximum request size you have configured with the max.request.size configuration.
@@ -75,7 +75,7 @@ Caused by: org.apache.kafka.common.errors.RecordTooLargeException: The message i
 The `combine-runinfo` was updated to use bytes rather than strings, however this did not solve the message size issue. 
 After this it was decided that as we were going to use a python script to modify the runinfo messages anyway to contain sample environment data and so on we may as well just forward the modified runinfo messages directly into `ALL_runInfo` instead. 
 
-#### Adding ISIS data to the filewriter configuration 
+## Adding ISIS data to the filewriter configuration 
 To add static data to the filewriter configuration without directly modifying the ICP's output to the `runInfo` topics a script will be used. Things like instrument name and other fields that do not change between instruments can be added here but there are a few gaps that will need to be streamed:
 - Stuff in root of file - things like inst name that can be derived from topic are ok, things that cannot be, like experiment identifier, DAE modes etc 
 - Events in `detector1_events` - currently not being forwarded
