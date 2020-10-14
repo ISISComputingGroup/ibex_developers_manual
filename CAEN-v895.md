@@ -26,7 +26,12 @@ Then the `defaults` config is applied
 ```
 dbpf("$(MYPVPREFIX)AS:$(IOCNAME):vmeconfigMenu:name", "defaults")
 ```
-As noted above a simulation mode can be enabled by setting the `CAENVMESIM` macro to `
+As noted above a simulation mode can be enabled by setting the `CAENVMESIM` macro to 1
 
+configMenu lets you dynamically load and save autosaved values by writing to PVs. If you look in the DB files for cards you will see
+```
+info(vmeconfig, "VAL")
+```
+This means the VAL field of that record is part of the `vmeconfig` config menu set. Calling `makeAutosaveFileFromDbInfo` will create `vmeconfig_settings.req` at ioc start and then `create_manual_set` create the autosave set to manage the pvs (vmeconfigMenu.req references `vmeconfig_settings.req`). The OPI for the v895 loads the `configMenu.opi` supplied with autosave which allows different sets of PVS to be loaded and saved, however in practice they just load the first one called `defaults` as done by `dbpf` in the `st.cmd`
  
 
