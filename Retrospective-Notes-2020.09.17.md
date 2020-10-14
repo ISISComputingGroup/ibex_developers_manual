@@ -16,6 +16,7 @@
 
 ## Undocumented features
 
+* Some tools such as slack were still being used by the IS and the knowledge about the tool was not distributed evenly nor maintained in the wiki
 * Document any information/features that you know which could be useful to the team for development/support.
 
 ## Hard to keep track of support Email (answered/unanswered)
@@ -27,6 +28,7 @@
 
 * Installing and running script generator was fine on dev machine whereas it failed on user's machine. We should always test the installation process in an environment which better represents a user's machine.
 * Careful with acceptance criteria
+* Think about pre-requisite
 
  ## Deciding when to move sprint meetings and prioritise other tasks
 
