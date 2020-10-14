@@ -56,3 +56,8 @@ A place to record decisions:
 19. Where to put the script generator release download for scientists. Decision is to put it in github, upload it to the release page, then create a page to link to it with install instructions (either in git hub or github pages). This was chosen because it is likely to be the quickest way of getting something uploaded for people to download, and we need it before cycle. Other choice were our external web server or an STFC sit; both of these would have been slow.
     - Present: John, Alistair, Kevin, Bish, Thomas
     - 2020/08/25
+
+20. How to manage the database architecture to avoid instrument disk filling up. A decision was made that on most instruments the data being logged by the Instrument Archive is not critical to an experiment and so it is ok if it stops logging given a network outage on the instrument (the exception here is on [Enginx](https://github.com/ISISComputingGroup/IBEX/issues/5817)). Therefore we will move the MySQL instance that the [Instrument Archive](https://github.com/ISISComputingGroup/IBEX/issues/5819) is pushing to onto a [central server](https://github.com/ISISComputingGroup/IBEX/issues/5818). This will also be done for the [IOC log messages](https://github.com/ISISComputingGroup/IBEX/issues/5820) as they are replicated on logs on the instrument anyway. In the future it would be good to have a small cache on the instrument for some of this data to avoid issues when network is lost.
+
+    - Present: Chris M-S, David, Dom, Freddie, John, James, Kathryn, Tom W
+    - 2020/10/14
