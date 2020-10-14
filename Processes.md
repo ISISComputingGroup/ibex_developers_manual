@@ -15,6 +15,8 @@ Various Processes or tasks and info into how they should work. Remember rules ca
     - [Sprint Burn down Chart](Sprint-Burn-down-Chart)
     - [Sprint Retrospective](Sprint-Retrospective)
 
+- [External Contributions](External-Contributions)
+
 - [Regular Demos of IBEX to Scientists](Regular-Demos-of-IBEX-to-Scientists) 
 
 - Special Days
