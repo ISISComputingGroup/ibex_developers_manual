@@ -2,6 +2,8 @@
 
 This page records notes made during Sprint Retrospective meetings (most recent meeting at the top)
 
+* [Sprint Ending 2020-09-17](Retrospective-notes-2020.09.17)
+* [Sprint Ending 2020-08-19](Retrospective-notes-2020.08.19)
 * [Sprint Ending 2020-22-07](Retrospective-notes-2020.22.07)
 * [Sprint Ending 2020-24-06](Retrospective-notes-2020.24.06)
 * [Sprint Ending 2020-04-01](Retrospective-notes-2020.04.01)
