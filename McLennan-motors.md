@@ -27,6 +27,8 @@ There are 4 homing modes on the McLennan set via the home macro. The choice of m
 
 The velocity of the constant velocity move is set to be a 1/10 of the normal velocity unless the macro is set to change it.
 
+**There is a [special homing sequence for Veuvio](Vesuvio-homing-sequence) because it doesn't quite work until ticket [5739](https://github.com/ISISComputingGroup/IBEX/issues/5739) is done**
+
 ### Configuring axes
 When configuring a particular axis, an `axes.cmd` file is required in `C:\Instrument\Settings\config\[INSTMACHINE]\configurations\mclennan`. See the the [motion control](https://github.com/ISISComputingGroup/IBEX/wiki/Motion-Control) pages for additional details. It is often desirable to set up a number of axes depending which controller, and which axis is in use. There are specific environment variables set up to let you do this. The following example shows a stretching rig set up on `MOT0201` and a linear sample changer on `MOT0101`:
 
