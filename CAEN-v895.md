@@ -2,9 +2,9 @@
 
 This is a VME card used on muons to set discriminator levels. Unfortunately the card has no readbacks, so you can only set it.
 
-The underlying code is an asyn driver communicating via a vendor DLL to set register values. This code is in the EPICS-CAENVME support module
+The underlying code is an asyn driver communicating via a vendor DLL to set register values. This code is in the EPICS-CAENVME support module. The driver overrides the `drvUserCreate` method so that it can parse an asyn parameter passed from the DB file like `VMEWRITE_0x4` and then split this into a call to a "VMEWRITE" method with an additional value of "0x4" within the asynUser structure. 
 
-the ioc is configured using
+The ioc is configured using
 ```
 CAENVMEConfigure("CRATE0", 0, 0, 0, 0x10000, $(CAENVMESIM=0)) 
 ```
@@ -34,4 +34,3 @@ info(vmeconfig, "VAL")
 ```
 This means the VAL field of that record is part of the `vmeconfig` config menu set. Calling `makeAutosaveFileFromDbInfo` will create `vmeconfig_settings.req` at ioc start and then `create_manual_set` create the autosave set to manage the pvs (vmeconfigMenu.req references `vmeconfig_settings.req`). The OPI for the v895 loads the `configMenu.opi` supplied with autosave which allows different sets of PVS to be loaded and saved, however in practice they just load the first one called `defaults` as done by `dbpf` in the `st.cmd`
  
-
