@@ -1,3 +1,9 @@
+The sample changer support module allows a sample changer to be configured on top of [motion set-points](Motion-Set-points). The functionality this adds is to allow a motion set-point list to be created from the definitions of racks and slots.
+
+This takes input files `rackDefinitions.xml` and `samplechanger.xml` and then allows the user to dynamically build the motion setpoints configuration file. As of [October 2020](https://github.com/ISISComputingGroup/IBEX/issues/5720), the user can also select a specific rack, and this will rebuild the list of motion setpoints to only include the positions listed in that rack. If the selected sample changer is the special value `_ALL`, positions from all sample changers will be included in the built motionsetpoints file. This option is automatically added to the list of available sample changers.
+
+An example sampleChanger + motionSetpoints configuration can be found in `support/samplechanger/master/settings`.
+
 ## What to do after changing racks
 
 1. Edit Instrument/Settings/machinename/configurations/motionSetPoints/sampleChanger.xml setting the rack_type, xoff and yoff attributes.
