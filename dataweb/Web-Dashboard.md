@@ -34,6 +34,10 @@ The program collates all the data from the other sources, on all the EPICS instr
 
 Currently a simple JS script takes the JSON created by JSON Bourne and provides a simple webpage for an external client to view. This can be accessed from http://dataweb.isis.rl.ac.uk/. The code for the website, both the html and javascript are located in the central server at `C:\inetpub\wwwroot\DataWeb\IbexDataweb`.
 
+### Grafana and Journals Setup
+
+Docs can be found on the shares at `shares\isis_experiment_controls\web_dashboard_history.docx`
+
 ## Deployment
 To deploy on a new instrument see [Deployment](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Deployment-on-an-Instrument-Control-PC#add-instrument-to-ibex-web-dashboard)
 
