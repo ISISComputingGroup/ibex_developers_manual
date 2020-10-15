@@ -78,8 +78,8 @@ A `device_setter` is a function which takes in the current value of the PV and w
  - There is some test data which can be loaded into the analysis software in the manuals directory in testing. There is also the mock data used to generate that file which was used in testing the saving ticket.
 
 ### Saving the data
-Ideally the data would be saved into a nexus file, and the subsequent data analysis would be performed in mantid. However, because this data analysis is not yet available in mantid, the data must be processed by the vendor's software.
+Ideally the data would be saved into a nexus file, and the subsequent data analysis would be performed in mantid. However, because this data analysis is not yet available in mantid, the data must be processed by the vendor's software. Therefore we need to recreate a data format which can be imported by the vendor software in order to do this data analysis. The format of these data files is a tab-separated variable format with the extension `.dat`, examples of which can be found on the share.
 
-As a temporary measure, this IOC is producing a .dat tsv file which can be import into the vendor's software. The files are saved to C:\Data as txt files with the name of the form "C:\Data\{instrument_name}{run_number}_{title}_{timestamp}.txt". There is also a possibility of producing a labview xml file for the same purpose if the tsv does not work.
+The IOC saves the file in two locations, once in `C:\Data` with a filename which allows it to get saved into the archive. The other file gets saved in a location specified by the user in a macro.
 
 After a brief look, it appears that the vendor software may be using the `CONTIN` library to perform fitting of the correlation function.
