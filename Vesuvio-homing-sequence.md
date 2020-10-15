@@ -1,7 +1,7 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC)
  > [Motor IOCs](Motor-IOCs) > [McLennan](McLennan-motors) > [Vesuvio homing sequence](Vesuvio-homing-sequence)
 
-There is a [special homing sequence for Veuvio](Vesuvio-homing-sequence) because it doesn't work this is until ticket [5739](https://github.com/ISISComputingGroup/IBEX/issues/5739) is done
+There is a [special homing sequence for Vesuvio](Vesuvio-homing-sequence) because it doesn't work this is until ticket [5739](https://github.com/ISISComputingGroup/IBEX/issues/5739) is done
 
 ## Homing left and right foils
 
