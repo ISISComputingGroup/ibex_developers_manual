@@ -28,6 +28,7 @@ IBEX UI Design | Thomas Löhnert
 Jenkins, testing and our build processes | ?
 asyncio and asynchronous programming in Python 3 | ?
 Script Server and Nicos | ?
+CAEN v895 Discriminator | Freddie
 
 ### Proposed Repeated Code Chats
 
