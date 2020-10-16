@@ -44,7 +44,7 @@ GTESTS += runner
 endif
 ```
 
-Note: you should exclude the line `GTESTS += runner` if you are using `run_tests.bat` as described below (i.e. if your tests need external dependencies)
+Note: you should exclude the line `GTESTS += runner` if you are using `run_tests.bat` as described below (i.e. if your tests need external dependencies). This is the line that tells the default `runtests` makefile target to include this test.
 
 You then need to include all the files you need for your tests using 
 ```Makefile
