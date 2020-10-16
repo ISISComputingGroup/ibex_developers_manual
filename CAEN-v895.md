@@ -35,4 +35,7 @@ info(vmeconfig, "VAL")
 This means the VAL field of that record is part of the `vmeconfig` config menu set. Calling `makeAutosaveFileFromDbInfo` will create `vmeconfig_settings.req` at ioc start and then `create_manual_set` create the autosave set to manage the pvs (vmeconfigMenu.req references `vmeconfig_settings.req`). The OPI for the v895 loads the `configMenu.opi` supplied with autosave which allows different sets of PVS to be loaded and saved, however in practice they just load the first one called `defaults` as done by `dbpf` in the `st.cmd`
 
 configMenu docs: https://epics.anl.gov/bcda/synApps/autosave/autoSaveRestore_R5-6-1.html#configMenu
- 
+
+## Sending settings
+
+It should be noted that a channel does not have to be disabled for the setting to be sent and applied, e.g. a threshold.
