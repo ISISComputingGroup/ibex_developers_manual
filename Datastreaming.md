@@ -27,8 +27,7 @@ Deployment involves the use of Ansible playbooks, the playbooks and instructions
 The ICP on any instrument that is running in full event mode and with a DAE3 is streaming neutron events into Kafka. 
 
 ## SE Data
-
-todo add se link 
+See [Forwarding Sample Environment](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Datastreaming---Sample-Environment)
 
 ## Filewriting
 
