@@ -44,6 +44,8 @@ GTESTS += runner
 endif
 ```
 
+Note: you should exclude the line `GTESTS += runner` if you are using `run_tests.bat` as described below (i.e. if your tests need external dependencies)
+
 You then need to include all the files you need for your tests using 
 ```Makefile
 runner_SRCS += #names of test files and source files
