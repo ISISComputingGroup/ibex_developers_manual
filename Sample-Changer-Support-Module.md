@@ -9,7 +9,7 @@ An example sampleChanger + motionSetpoints configuration can be found in `suppor
 
 ## What to do after changing racks
 
-1. Edit Instrument/Settings/machinename/configurations/motionSetPoints/sampleChanger.xml setting the rack_type, xoff and yoff attributes.
+1. Edit Instrument/Settings/machinename/configurations/motionSetPoints/sampleChanger.xml setting the `rack_type`, `xoff` and `yoff` attributes.
 1. Either press the "Reload config" button on the sample changer OPI, which can be accessed from the synoptic view or put a value to machinename:username:SAMPCHNG:RECALC
 
 ## Mapping motors to axes
@@ -21,7 +21,7 @@ These are axes which are mapped by the file Instrument/Settings/machinename/conf
 
 This is done using motionSetPoints.
 The file Instrument/Settings/machinename/configurations/galil/motionsetpoints.cmd includes lines which 
-create PVs starting LKUP:SAMPLE that perform the convertion from name to position, using the 
+create PVs starting LKUP:SAMPLE that perform the conversion from name to position, using the 
 lookup file Instrument/Settings/machinename/configurations/motionSetPoints/samples.txt.
 
 The first coordinate is the position of machinename:username:MOT:STACK:Y 
