@@ -90,6 +90,8 @@ If a Galil is particularly worn, or carries an unusually heavy load, it may not 
 ### Galil is not correctly setting accelerations
 The motor record calculates acceleration in quite a different way than used to under SECI. Check that you have set acceleration correctly given that it is defined as **seconds to get between VBAS and VELO** (this means we normally want VBAS to be set to zero.
 
+There is also a minimum acceleration on galil controllers which is 1024 (in galil units). This means that if you set the acceleration to a very low value, the acceleration might get "rounded up" to a higher value. You can check what the galil believes the acceleration is by issuing `MG _ACA` for example in the galil engineering view arbitrary command interface.
+
 ### The limits are both made/on/limit light are lit
 
 This occurs when power is cut to the limits. The main cause for this is that the safety system has been engaged as this will cut power to the whole rack of Galils. However, there could be other reasons such as in the [IMAT Lens Adjustment](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/IMAT-Lens-Adjustment)
