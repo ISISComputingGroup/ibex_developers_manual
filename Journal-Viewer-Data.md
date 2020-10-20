@@ -4,4 +4,4 @@ The windows archive is smb mounted onto a linux server (sparrowhawk, which we ma
 
 It is planned to remove the linux link and replace it with a Windows 2019 server some time during 2020.
 
-Journals can be accessed remotely by users using https://shadow.nd.rl.ac.uk/journals/. More documentation on this is available at `\\isis\shares\isis_experiment_controls\web_dashboard_history.docx`
+Journals can be accessed remotely (outside the lab) by users using https://shadow.nd.rl.ac.uk/journals/. More documentation on this is available at `\\isis\shares\isis_experiment_controls\web_dashboard_history.docx`
