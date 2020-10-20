@@ -10,7 +10,8 @@
  `...\ISIS_Experiment_Controls_Public\third_party_installers\latest_versions\OpenJDK...`
    - Do not use a copy downloaded from the internet as it may not have been tested with IBEX
 1. Run the installer and install all components. The install menu should look like this:
-![](open_jdk_install_prompt.png)
+
+![open_jdk_install_prompt](https://user-images.githubusercontent.com/55101160/96607156-fa414f80-12ef-11eb-8b07-60d709bf643c.PNG)
 1. Make sure you run the instrument, either now or before you finish
    - Answer any firewall questions "yes, allow through the firewall".
 
