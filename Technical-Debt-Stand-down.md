@@ -55,4 +55,5 @@ Try to make sure all tickets by the end of the day are in a good state.
 
 Section to document missing documentation.
 
-- None at the moment
+- Area detector [#4362](https://github.com/ISISComputingGroup/IBEX/issues/4362)
+
