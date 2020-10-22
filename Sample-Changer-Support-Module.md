@@ -86,7 +86,7 @@ Each slot element has the following attributes:
 
 * name, which must match the name of one of the slot elements in rack_definitions.xml
 * rack_type, which must match the name of one of the rack elements in rack_definitions.xml
-* xoff and yoff which are the offsets between the nominal position of the slot defined in rack_definitions.xml and its actual position
+* `xoff` and `yoff` which are the offsets between the nominal position of the slot defined in rack_definitions.xml and its actual position
 
 ## Generating sample.txt
 
