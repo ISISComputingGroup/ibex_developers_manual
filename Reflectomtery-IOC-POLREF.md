@@ -146,8 +146,8 @@ Components that are on the bench do not track the beam in the same way as normal
 
 Blocks that may be confusing:
 
-- `Height`: Distance from the sample centre of rotation to the sample. This is used to align the sample with the beam.
-- `Height2`: Distance between the beam and the centre of rotation; usually set a 0. This moves the course z stage tracking the beam.
+- `Height`: Distance between the beam and the centre of rotation; usually set a 0. This moves the course z stage tracking the beam.
+- `Height2`: Distance from the sample centre of rotation to the sample. This is used to align the sample with the beam.
 
 ## Parameter Autosave
 
