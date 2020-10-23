@@ -6,10 +6,9 @@ The [filewriter](https://github.com/ess-dmsc/kafka-to-nexus) is responsible for 
 https://github.com/ISISComputingGroup/isis-filewriter has been created for an easy setup of the filewriter using docker-compose. it is hardcoded currently and requires the `file_writer_config.ini` file to be changed to point at the `_runInfo` topics manually. To begin with we ran it just pointing at `ZOOM_runInfo`, and it successfully wrote files containing event data. 
 Steps to run the docker-compose script can be found in the `README` of the project. 
 
-The isis-filewriter repository also contains some utility scripts for Kafka operations, as well as some test `nexus_structure` files which were used to write files using the filewriter at ISIS.
+The isis-filewriter repository also contains some utility scripts for Kafka operations, as well as some test `nexus_structure` files which were used to write files using the filewriter at ISIS. `add_data_to_runinfo` was used to write the config for all of the streams on MERLIN and successfully wrote events, histograms and some sample environment data.
 
 
-***
 ***
 
 ## Log of changes and updates to the filewriter deployment and configuration messages
@@ -97,5 +96,6 @@ NB. I couldn't use the NeXus-Constructor for this as it no longer takes a NeXus 
 #### Update - 23/10/2020 (end of cycle) 
 
 We managed to get the filewriter to work and output _a_ file containing one of each type of stream (`hs00`, `f142`, `ev42`) on MERLIN, which proved that the data streaming stack could be used at ISIS on a very basic level. For some reason when trying to output all events, histograms and sample environment the filewriter refused to write any sample environment data. at first we thought this was because the forwarder had crashed, which it had, however even with it up and running again the filewriter did not write any `f142` streams. Besides this it did manage to write histograms from 9 monitors at once as well as events from MERLIN. these can be seen in the files on NDHSPARE62. 
+Metadata such as start time and other ISIS-specific static data was not added to the file but this could be added easily in the future by the ICP. 
 
 
