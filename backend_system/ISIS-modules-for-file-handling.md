@@ -19,6 +19,8 @@ For examples of this modules use see the test IOC within the FileList folder or 
 
 # ReadASCII
 
-This module opens a file at a given location and uses the table within it to change PVs. The module uses one PV as a lookup on the first column of the table and subsequently changes other PVs to match the values in the other columns. The module can also be set to ramp the lookup PV and change other PVs when it crosses a threshold of the table.
+This module has two main functions:
+* Ramp a set point linearly from it's current value to a new one. This can be controlled through a ramp rate (in EGU/min) and a step rate (in steps/min)
+* Change a selection of other PVs when a set point changes. This is done by opening a file at a given location and using the table within it to change PVs. The module uses one PV as a lookup on the first column of the table and subsequently changes other PVs to match the values in the other columns. 
 
-This module is currently used specifically in the Eurotherm IOC to change PID and MaxHeater values when the temperature SP is changed.
+These functions can be turned off and on independently but can be used in conjunction to ramp the lookup PV and change other PVs when it crosses a threshold of the table. Both functions are used in the Eurotherm IOC to change PID and MaxHeater values when the temperature SP is changed. The Kepco IOC only uses the ramping functionality.
