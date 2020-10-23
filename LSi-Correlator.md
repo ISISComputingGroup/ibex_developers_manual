@@ -69,7 +69,6 @@ STATIC_PV_DATABASE.update(temperature.database_entries)
 A `device_setter` is a function which takes in the current value of the PV and will perform some action on it, such as writing the PV value on to the device. In the LSI correlator, the settings for the correlator are written to the device through the vendor API using `device_setter`s.
 
 ### Issues/gotchas
- - Currently there are no IOC macros for this device. To change the IP address or the saved filepath this must be performed on the instrument in the PCASpy IOC code
  - This device is not polled, and so it is difficult to truly know whether the connection to the device has been dropped. Currently the device will read disconnected after a correlator run is started and no data is returned.
    - It might be possible to do something with websockets which would provide more immediate feedback whether the device connection is still alive, which is what most devices do.
  - Once the device connection has be severed, the IOC must be restarted. There is no logic in place to drop the `LSICorrelator` object and attempt a reconnection by spawning a new object.
