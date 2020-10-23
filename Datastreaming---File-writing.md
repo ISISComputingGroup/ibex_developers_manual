@@ -94,4 +94,8 @@ The general structure of the file can be written as this will likely not differ 
 
 NB. I couldn't use the NeXus-Constructor for this as it no longer takes a NeXus file as an input, the version on master doesn't allow top-level fields or arbitrary groups, and there aren't many things in the ZOOM file for example that are in `/raw_data_1/instrument` which is where the NeXus constructor puts components by default. Because of events also being stored in the entry (`raw_data_1`), the NeXus-Constructor crashes when trying to output to a JSON file as it tries to write the events out which cannot be worked around unless you modify the source code to ignore that particular group. Even with this done the constructor is still quite unresponsive because of the amount of data in the in-memory NeXus file. 
 
+#### update 23/10/2020 (end of cycle) 
+
+We managed to get the filewriter to work and output _a_ file containing one of each type of stream (`hs00`, `f142`, `ev42`) on MERLIN, which proved that the data streaming stack could be used at ISIS on a very basic level. For some reason when trying to output all events, histograms and sample environment the filewriter refused to write any sample environment data. at first we thought this was because the forwarder had crashed, which it had, however even with it up and running again the filewriter did not write any `f142` streams. Besides this it did manage to write histograms from 9 monitors at once as well as events from MERLIN. these can be seen in the files on NDHSPARE62. 
+
 
