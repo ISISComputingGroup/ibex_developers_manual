@@ -133,10 +133,11 @@ The IOC log server has a similar build process to the main GUI, and includes sev
 
 `procServ`, `conserver` and `console` are cygwin applications, compiled copies of which are kept centrally in `ICP_Binaries\EPICS_Tools` and then copied into subdirectories of `tools/master` of the EPICS distribution during a build. Their source code is located in the https://github.com/ISISComputingGroup/EPICS-tools repository and they are built by the EPICS_tools Jenkins job which places new versions in `kits$\EPICS_Tools`. The Jenkins job only runs when requested.
 
-If you update the source code of procServ/conserver the following applies too, but we should also update `cygwin` and rebuild the binaries periodically even if the source code is unchanged. To publci new binaries:
+If you update the source code of procServ/conserver the following applies too, but we should also update `cygwin` and rebuild the binaries periodically even if the source code is unchanged. To publish new binaries:
 - determine the host running the Jenkins job, look at the LABEL parameter of the build (this is currently ndw1757)
 - log onto the machine and update cygwin - goto https://www.cygwin.com/ in a web browser from the machine and download and run `setup-x86_64.exe`
 - We need to stop it upgrading `libcrypt-devel` from 2.1 to 4.1 so locate `libcrypt-devel` in the pending package list shown and chose "keep" in the dropdown menu next to it.
+- (if you forget to do the above, you can always re-run `setup-x86_64.exe` and downgrade `libcrypt-devel` from 4.1 to 2.1)
 - let it update packages
 - now start the jenkins EPICS_Tools job
 - when it has finished, copy new files from `kits$\EPICS_Tools` to `ICP_Binaries\EPICS_Tools`
