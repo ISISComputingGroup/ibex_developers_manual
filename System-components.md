@@ -15,6 +15,7 @@ CA Repeater | CAREP | Executable | A epics CA repeater that is started before al
 [Database server](The-DatabaseServer) | DBSVR | Python | Intermediary between MySQL and the GUI, only used for PVs that hold instrument information, such as experiment data, which IOCs are used and information about PVs of an instrument. Legacy software, not that necessary now.
 [Experiment DB](Experimental-Database) | EXPDB | Python | Similar to DB server but for PVs for the experimental database which contains users and run numbers.
 [External/Access Gateway](Access-Gateway) | GWEXT | EPICS Gateway | Gateway to allow access to PVs from outside localhost
+[icpconfig](icpconfig) | N/A | Library of functions | functions called on IOC start up to load macros into the IOC.
 [Inst etc](Inst-etc-IOC) | INSTETC_01 |  Epics IOC | PVs which are for instrument level, e.g. motors moving and security pvs
 Instrument Archive | ARINST | Java | Archives (in mysql db) pvs with archive property see [CSS-Archive-Engine](CSS-Archive-Engine). It is a separate archive engine from Archive engine. PVs with archive property are PVs set by developers to be logged always, regardless of what scientists do, so that we can use them for diagnostics.
 [IOC Message Logger](IOC-message-logging) | IOCLOG | Java | Instrument level software that collects messages sent by any IOC, logs it in the database and put it on the JMS message queue. 
