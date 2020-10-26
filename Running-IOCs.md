@@ -34,7 +34,7 @@ TO switch an IOC to simulation mode the default is
 
 # Macros
 
-It is possible to set macros for an IOC either through the IBEX GUI or using the globals.txt file. 
+It is possible to set macros for an IOC either through the IBEX GUI or using the globals.txt file. Loaded in using [icpconfig](icpconfig).
 
 ## Globals.txt
 
