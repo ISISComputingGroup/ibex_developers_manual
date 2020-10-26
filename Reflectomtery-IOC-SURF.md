@@ -6,4 +6,5 @@ Specific information about SURF.
 
 Unlike some reflectometers there is only a single sample height and it is defined by the block:
 
-- `Height`: Distance from the sample centre of rotation to the sample. This is used to align the sample with the beam.
+- `Height`: Distance between the beam and the centre of rotation; usually set to 0. This parameter moves the height stage tracking the beam.
+
