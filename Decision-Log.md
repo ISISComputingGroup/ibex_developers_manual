@@ -61,3 +61,5 @@ A place to record decisions:
 
     - Present: Chris M-S, David, Dom, Freddie, John, James, Kathryn, Tom W
     - 2020/10/14
+
+21. Should we still support a phone app with the MCR news for ISIS staff to use? Decision was made that it's a lot of development effort to support a mobile app for all platforms and the only benefits it gives over a slack/teams channel is that it doesn't require a user login. Seeing as everyone on ISIS will have a teams account this doesn't really apply. We are going to use the teams channel instead and if it would be helpful to use graphs this can be implemented using a python service or similar. 
