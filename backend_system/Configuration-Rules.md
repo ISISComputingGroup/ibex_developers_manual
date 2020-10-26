@@ -40,6 +40,8 @@ A record of the rules for the various parts of a configuration.
 
 ## IOCs ##
 
+IOC macros are loaded from the configuration using [icpconfig](icpconfig).
+
 * If an IOC's macros or pvsets changes then restart the IOC on a configuration change
 * It should be possible to force IOCs to restart on a configuration change even if the macros or pvsets have not changed
 * An IOC is only included in a configuration/component if its auto-start setting is true
