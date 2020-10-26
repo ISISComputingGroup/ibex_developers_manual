@@ -49,23 +49,21 @@ ChannelAccess.caget("{}BLAH".format(mypvprefix))
 If you want to access the macros on start of a pv then add the following to your runIOC.bat:
 
 - `call dllPath.bat`: this adds the dll paths needed to run the icp config command. For example of this file see the reflectometry IOC.
-- Nearer the end put the macros into an environment variable
+- Nearer the end put the macros into an environment variable (`icpconfigGetMacros` is defined in [icpconfig](icpconfig)) 
 
     ```
         set "GETMACROS=C:\Instrument\Apps\EPICS\support\icpconfig\master\bin\%EPICS_HOST_ARCH%\icpconfigGetMacros.exe"
         set "MYIOCNAME=<IOC NAME>"
 
-        echo PRE %REFL_MACROS%
-
-        if "%REFL_MACROS%"=="" (
+        if "%MACROS%"=="" (
             REM need this funny syntax to be able to set eol correctly - see google
-            for /f usebackq^ tokens^=*^ delims^=^ eol^= %%a in ( `%GETMACROS% %MYIOCNAME%`  ) do ( set "REFL_MACROS=%%a" )
+            for /f usebackq^ tokens^=*^ delims^=^ eol^= %%a in ( `%GETMACROS% %MYIOCNAME%`  ) do ( set "MACROS=%%a" )
             echo Defining macros
         ) else (
             echo Macros already defined
         )
 
-        echo Macro JSON is %REFL_MACROS%
+        echo Macro JSON is %MACROS%
     ```
 
 - Inside the IOC you can access the macros with:
