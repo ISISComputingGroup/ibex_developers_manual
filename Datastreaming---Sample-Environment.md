@@ -12,4 +12,7 @@ This is a Python program responsible for taking the EPICS data and pushing into 
 
 Source for the forwarder is available [here](github.com/ess-dmsc/forwarder)
 
+On NDADATASTREAM the forwarder is run as a service with `nssm` - this is responsible for things like log file rotation and configuring which config files are used with the forwarder. To edit these services run `nssm edit ProdForwarder` or `nssm edit DevForwarder` which will open a GUI for doing so. 
+To start/stop/restart the services use `nssm [start/stop/restart] [service name]` 
+
 _NB: The forwarder was previously written in C++ but has now migrated to Python instead._
