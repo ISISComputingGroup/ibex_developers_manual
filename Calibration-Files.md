@@ -127,3 +127,7 @@ Examples of the lakeshore format can be found on the [lakeshore site](https://ww
 If you above or below the maximum or minimum values in the calibration file, IBEX will interpolate beyond or below these values. Please be sure that you have selected the correct calibration file for your sensor and the sensor range. Readings beyond the calibration range may not be as accurate as those within.
 
 The Eurotherm OPI alerts the user when you are above or below the maximum or minimum values in the calibration file. This is achieve using an IOC utility.
+
+### Temperature calibration converter script
+
+Available at https://github.com/ISISComputingGroup/ibex_utils/tree/master/workflow_support_scripts
