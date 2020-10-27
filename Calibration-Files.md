@@ -130,4 +130,6 @@ The Eurotherm OPI alerts the user when you are above or below the maximum or min
 
 ### Temperature calibration converter script
 
-Available at https://github.com/ISISComputingGroup/ibex_utils/tree/master/workflow_support_scripts
+Available at https://github.com/ISISComputingGroup/ibex_utils/tree/master/workflow_support_scripts.
+
+Call with `%PYTHON3% convert_temp_calib_files.py -i <input_folder> -o <output_folder>`
