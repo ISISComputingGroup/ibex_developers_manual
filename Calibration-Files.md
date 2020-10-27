@@ -126,14 +126,14 @@ Examples of the lakeshore format can be found on the [lakeshore site](https://ww
 
 If you above or below the maximum or minimum values in the calibration file, IBEX will interpolate beyond or below these values. Please be sure that you have selected the correct calibration file for your sensor and the sensor range. Readings beyond the calibration range may not be as accurate as those within.
 
-The Eurotherm OPI alerts the user when you are above or below the maximum or minimum values in the calibration file. This is achieve using an IOC utility.
+The Eurotherm OPI alerts the user when you are above or below the maximum or minimum values in the calibration file. This is achieved using an IOC utility.
 
-### Temperature calibration converter script
+### RhFe temperature calibration converter script
+
+This script is only designed to convert RhFe temperature sensor calibration files.
 
 Available at https://github.com/ISISComputingGroup/ibex_utils/tree/master/workflow_support_scripts.
 
 Call with `%PYTHON3% convert_temp_calib_files.py -i <input_folder> -o <output_folder>`.
 
 Produces a `.txt` file for every walkable folder under `input_folder` that contains a `.dat` file. The first 3 lines of the `.dat` file are stripped (these are header lines we do not require), for each line we then split by whitespace and take the first two of elements of the produced array and separate them with a comma. These lines are then written to an output file with the name of the folder and the txt extension e.g. `F232.txt`.
-
-Note that this script will likely not work for all calibration files, but does for RhFe temperature sensors.
