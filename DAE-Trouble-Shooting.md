@@ -271,3 +271,6 @@ After fixing the issues the files will be copied after the next run is finished.
 
 If you need to restart the NI visa server on the host machine and clicking start on the server says can not start server, it may be that the via driver has started in the admin account instead of the user account. Log onto the host machine and quit the NI VXI Resource manager application. This should allow the user accounts server to start.
 
+### Exception in ICP log
+
+If the ICP is showing an error in the form of `Simulation error (read32)` this indicates that you have a DAE3 ICP installed. Only a DAE2 ICP has a simulation mode. You should reinstall the ICP from `\\isis\inst$\Kits$\CompGroup\ICP\ISISICP\DAE2`.
