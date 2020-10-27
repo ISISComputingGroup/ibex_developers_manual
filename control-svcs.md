@@ -10,7 +10,7 @@ The machine runs various services, including:
 * The [Alert Relay](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Alert-Relay)
 * [Isis info slack channel bots](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/ISIS-Info-Slack)
 
-None of these services are crucial for running instruments to continue taking data.
+None of these services are crucial for running instruments to continue taking data. The services log to `\home\var\` and can be restarted by killing the process as they run in procserv.
 
 These run under the "epics" user id so 
 ```
