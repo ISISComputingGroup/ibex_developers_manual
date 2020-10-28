@@ -8,7 +8,7 @@ The central source of truth for MDT configuration files is `inst$\mdt$\`.
 
 - `NDXINST` - this is the windows 10 virtual machine to be built. This is a usual NDX in the sense that it runs IBEX.
 - `NDHINST` - this is the physical host on which the NDX virtual machine executes
-- `NDHBUILD` - This is an MDT server which contains instructions which the NDX can execute to install standard operating systemsand/or software.
+- `NDHBUILD` - This is an MDT server which contains instructions which the NDX can execute to install standard operating systems and/or software. This server can be either real or virtual as convenient. It never hosts a VM itself - it only contains the configuration files and setup for MDT.
 
 This wiki page descibes the process for setting up a new `NDHBUILD` machine (NOT an `NDHINST` or `NDXINST` machine).
 
