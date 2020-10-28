@@ -52,7 +52,7 @@ This wiki page descibes the process for setting up a new `NDXMDTSERVPROD` machin
 - When asked which features to install remove "windows performance toolkit", "user experience virtualisation", "microsoft application virtualisation", "Media experience analyzer"
 - Run `adkwinpsetup.exe`, accept defaults
 - Run `MicrosoftDeploymentToolkit_x64.exe`
-- Go to start -> MDT -> Deployment workbench
+- Go to start -> MDT -> Deployment workbench and **run it as admin**
 - Right click "deployment shares" -> "open" -> MDT deployment share location (found on passwords page) -> next -> finish
 - Make changes to MDT process as required
 - Right click "MDT Deployment Share" -> Properties
