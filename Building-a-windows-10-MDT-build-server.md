@@ -56,6 +56,10 @@ This wiki page descibes the process for setting up a new `NDXMDTSERVPROD` machin
 - Make changes to MDT process as required
 - Right click "MDT Deployment Share" -> update deployment share
 - Right click "MDT Deployment Share" -> Properties
-- Set "Netork (UNC) path" to the real location of the share (i.e. `\\isisarvr3\icpmdt$`). Note that you **cannot** just set this to `\\isis\inst$\mdt$` path as this is a DFS filesystem which is not supported by MDT.
+- Set "Netork (UNC) path" to the real location of the share (found on passwords page). Note that you **cannot** just set this to `\\isis\inst$\mdt$` path as this is a DFS filesystem which is not supported by MDT.
 - Under "Rules" tab:
-  * You will need to set paths to `SLShare`, `SLShareDynamicLogging` and `BackupShare`. These need to point to ``
+  * You will need to set paths: `SLShare` to `<logging_location>`, `SLShareDynamicLogging` to `<logging_location>\dynlogs` and `BackupShare` to `<logging_location>`. These are directories where logs will be written during the MDT build process, so that you can debug any failures. `<logging_location>` can be found on the passwords page.
+  * Ensure user details in this file match the MDT account detailed on the passwords page
+- Click `Edit bootstrap.ini`
+  * Set `DeployRoot` to the MDT deployment share location (found on passwords page)
+  * Ensure user details in this file match the MDT account detailed on the passwords page
