@@ -12,6 +12,6 @@ The central source of truth for MDT configuration files is `inst$\mdt$\`.
 
 This wiki page descibes the process for setting up a new `NDHBUILD` machine (NOT an `NDHINST` or `NDXINST` machine).
 
----
+# How to build a new MDT server
 
 1. Find a phyiscal NDH machine with space to host this VM (both in terms of memory and disk space). Standard instrument machines use 14GB of memory, so you will need at least this amount free. You will also need 256GB of free hard disk space.
