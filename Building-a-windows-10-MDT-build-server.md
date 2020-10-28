@@ -8,10 +8,33 @@ The central source of truth for MDT configuration files is `inst$\mdt$\`.
 
 - `NDXINST` - this is the windows 10 virtual machine to be built. This is a usual NDX in the sense that it runs IBEX.
 - `NDHINST` - this is the physical host on which the NDX virtual machine executes
-- `NDHBUILD` - This is an MDT server which contains instructions which the NDX can execute to install standard operating systems and/or software. This server can be either real or virtual as convenient. It never hosts a VM itself - it only contains the configuration files and setup for MDT.
+- `NDXMDTSERVPROD` - This is an MDT server which contains instructions which the NDX can execute to install standard operating systems and/or software. This server can be either real or virtual as convenient. It never hosts a VM itself - it only contains the configuration files and setup for MDT. A new machine will need to be called something different (e.g. `NDXMDTSERVDEV`)
 
-This wiki page descibes the process for setting up a new `NDHBUILD` machine (NOT an `NDHINST` or `NDXINST` machine).
+This wiki page descibes the process for setting up a new `NDXMDTSERVPROD` machine (NOT an `NDHINST` or `NDXINST` machine).
 
 # How to build a new MDT server
 
 1. Find a phyiscal NDH machine with space to host this VM (both in terms of memory and disk space). Standard instrument machines use 14GB of memory, so you will need at least this amount free. You will also need 256GB of free hard disk space.
+1. If you are creating `NDXMDTSERVPROD` as a virtual machine, you need to find a physical host for the MDT server. This will also need 14GB of memory and 256GB of disk space. Note that these requirements are not necessarily the same as for an instrument machine - it is just a convenient starting point.
+1. If you are creating `NDXMDTSERVPROD` as a virtual machine, go into hyper-v manager on the MDT server host and select new machine. Default settings are mostly ok other than:
+  * Set the name to the intended hostname of the `NDXMDTSERVPROD` machine
+  * You'll need to create it on a disk which has enough space (will need ~256GB free)
+  * Set startup memory to 14GB
+  * Set it to connect to ISIS network if you get the option, otherwise it will be ok on the default.
+  * Set virtual hard disk size to 128GB
+  * Install OS later
+- Find the latest windows 10 ISO file from `\\isis\inst$\mdt$\dev1\MDTDeploymentShare\Boot\LiteTouchPE_x64_Hyper-V.iso` and copy in onto the host server for `NDXMDTSERVPROD`.
+  * This ISO is not really a windows PE iso, it is instead an ISO which has been built in the past by a different MDT server machine, and this will have configured the menus which are available when booting this ISO. This is **not** substitutable for e.g. a version downloaded from microsoft.com
+- Tell Hyper-V to boot from this ISO
+- You might choose to increase number of processors available to the VM
+- Boot the machine
+- This will boot into a "Microsoft Deployment Wizard", which will then launch a set of menus embedded within the ISO.
+- Select "Build thick updated windows 10 image"
+  * Thin image == Just windows 10
+  * Thick image == windows 10 + software such as labview, nport, notepad++, 7-zip etc (but not IBEX)
+- Computer name - set it to the hostname (same as name in Hyper-V)
+- Join the default ISIS workgroup (TODO: put the name of this on the passwords share
+- Don't restore settings or data
+- When asked for an administrator password generate a secure random password following STFC password guidance, and then add this to the usual passwords page alongside hostname.
+- Don't capture any image
+- Set it off, it will now take ~1 hour and will install everything unattended
