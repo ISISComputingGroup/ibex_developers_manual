@@ -43,4 +43,8 @@ This wiki page descibes the process for setting up a new `NDXMDTSERVPROD` machin
   * Add the account as `mdtbuilder`, set a password conforming to STFC password policy and add it to the usual passwords page
   * Add the ability to remote desktop as this account by adding it to group `Remote Desktop Users`
 - Now log out of the admin account and log back in as unprivileged account
+- Copy the following files from `\\isis\inst$\kits$\CompGroup\ICP\MDT` into `NDXMDTSERVPROD`:
+  * `adksetup.exe` - a utility for measuring performance of machines ("assessment and deployment toolkit")
+  * `MicrosoftDeploymentToolkit_x64.exe` - this is MDT itself
+  * `adkwinpsetup.exe` - this may not be necessary?
 - 
