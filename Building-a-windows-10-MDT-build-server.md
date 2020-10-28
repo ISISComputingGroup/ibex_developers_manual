@@ -38,3 +38,6 @@ This wiki page descibes the process for setting up a new `NDXMDTSERVPROD` machin
 - When asked for an administrator password generate a secure random password following STFC password guidance, and then add this to the usual passwords page alongside hostname.
 - Don't capture any image
 - Set it off, it will now take ~1 hour and will install everything unattended
+- After it has finished installing, it is wise to take a hyper-v snapshot so that you can roll back to this point if needed
+- Create a non-admin account to use and remove unneeded accounts (e.g. the default ones created for instrument machines). You can use `lusrmgr.msc` to access these settings quickly, or click through from the control panel.
+  * Add the account as `mdtbuilder`, set a password conforming to STFC password policy and add it to the usual passwords page
