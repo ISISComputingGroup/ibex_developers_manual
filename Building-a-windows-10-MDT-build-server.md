@@ -14,9 +14,9 @@ This wiki page descibes the process for setting up a new `NDXMDTSERVPROD` machin
 
 # How to build a new MDT server
 
-1. Find a phyiscal NDH machine with space to host this VM (both in terms of memory and disk space). Standard instrument machines use 14GB of memory, so you will need at least this amount free. You will also need 256GB of free hard disk space.
-1. If you are creating `NDXMDTSERVPROD` as a virtual machine, you need to find a physical host for the MDT server. This will also need 14GB of memory and 256GB of disk space. Note that these requirements are not necessarily the same as for an instrument machine - it is just a convenient starting point.
-1. If you are creating `NDXMDTSERVPROD` as a virtual machine, go into hyper-v manager on the MDT server host and select new machine. Default settings are mostly ok other than:
+- Find a phyiscal NDH machine with space to host this VM (both in terms of memory and disk space). Standard instrument machines use 14GB of memory, so you will need at least this amount free. You will also need 256GB of free hard disk space.
+- If you are creating `NDXMDTSERVPROD` as a virtual machine, you need to find a physical host for the MDT server. This will also need 14GB of memory and 256GB of disk space. Note that these requirements are not necessarily the same as for an instrument machine - it is just a convenient starting point.
+- If you are creating `NDXMDTSERVPROD` as a virtual machine, go into hyper-v manager on the MDT server host and select new machine. Default settings are mostly ok other than:
   * Set the name to the intended hostname of the `NDXMDTSERVPROD` machine
   * You'll need to create it on a disk which has enough space (will need ~256GB free)
   * Set startup memory to 14GB
@@ -43,8 +43,19 @@ This wiki page descibes the process for setting up a new `NDXMDTSERVPROD` machin
   * Add the account as `mdtbuilder`, set a password conforming to STFC password policy and add it to the usual passwords page
   * Add the ability to remote desktop as this account by adding it to group `Remote Desktop Users`
 - Now log out of the admin account and log back in as unprivileged account
-- Copy the following files from `\\isis\inst$\kits$\CompGroup\ICP\MDT` into `NDXMDTSERVPROD`:
+- Copy the following files from `\\isis.cclrc.ac.uk\inst$\kits$\CompGroup\ICP\MDT` into `NDXMDTSERVPROD`:
   * `adksetup.exe` - a utility for measuring performance of machines ("assessment and deployment toolkit")
   * `MicrosoftDeploymentToolkit_x64.exe` - this is MDT itself
   * `adkwinpsetup.exe` - this may not be necessary?
-- 
+- Run `adksetup.exe`
+- When asked which features to install remove "windows performance toolkit", "user experience virtualisation", "microsoft application virtualisation", "Media experience analyzer"
+- Run `adkwinpsetup.exe`, accept defaults
+- Run `MicrosoftDeploymentToolkit_x64.exe`
+- Go to start -> MDT -> Deployment workbench
+- Right click "deployment shares" -> "open" -> `\\isis\inst$\mdt$\dev1\mdtdeploymentshare` -> next -> finish
+- Make changes to MDT process as required
+- Right click "MDT Deployment Share" -> update deployment share
+- Right click "MDT Deployment Share" -> Properties
+- Set "Netork (UNC) path" to the real location of the share (i.e. `\\isisarvr3\icpmdt$`). Note that you **cannot** just set this to `\\isis\inst$\mdt$` path as this is a DFS filesystem which is not supported by MDT.
+- Under "Rules" tab:
+  * You will need to set paths to `SLShare`, `SLShareDynamicLogging` and `BackupShare`. These need to point to ``
