@@ -13,9 +13,11 @@ There are three FileList variables that can be connected to PVs:
 - DIRBASE - Gives the base directory to search
 - SEARCH - Gives the PCRE expression to search for
 - JARR - Gives the JSON compressed list of valid files
-To connect the list of files to an OPI there is a common script called UpdateFileList.py which should be attached to a combo control. For an example of this see the Eurotherm OPI.
+To connect the list of files to an OPI there is a common script called UpdateFileList.py which should be attached to a combo control. For an example of this see the Kepco OPI.
 
-For examples of this modules use see the test IOC within the FileList folder or see the DAE IOC where this is used to select wiring, detector and spectra tables.
+There is also a db file for selecting calibration files for a record, which is used in the Eurotherm and the Kepco.
+
+For examples of this modules use see the test IOC within the FileList folder or see the DAE IOC where this is used to select wiring, detector and spectra tables. 
 
 # ReadASCII
 
