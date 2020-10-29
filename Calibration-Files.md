@@ -35,6 +35,8 @@ There is a script designed to convert RhFe temperature sensor calibration files.
 
 Available at https://github.com/ISISComputingGroup/ibex_utils/tree/master/workflow_support_scripts.
 
+**Note: the script skips the first 3 lines of the files as they contain metadata. Ensure this is also true of the new calibration files before running this script. If not, the script may need adjusting to cope with different file formats.**
+
 Call with `%PYTHON3% convert_temp_calib_files.py -i <input_folder> -o <output_folder>`.
 
 Produces a `.txt` file for every walk-able folder under `input_folder` that contains a `.dat` file. The first 3 lines of the `.dat` file are stripped (these are header lines we do not require), for each line we then split by whitespace and take the first two of elements of the produced array and separate them with a comma. These lines are then written to an output file with the name of the folder and the txt extension e.g. `F232.txt`.
