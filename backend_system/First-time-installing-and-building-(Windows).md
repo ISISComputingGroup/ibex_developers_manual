@@ -19,7 +19,7 @@ See  [Install Visual Studio](Install-Visual-Studio)
 
 ## Install Java JDK
 
-Install **OpenJDK 8 hotspot** from https://adoptopenjdk.net/releases.html#x64_win (the MSI installer is fine, tick all the boxes when it asks you which components to install)
+Install **OpenJDK 11 hotspot** from https://adoptopenjdk.net/releases.html#x64_win (the MSI installer is fine, tick all the boxes when it asks you which components to install)
 
 Do not install an Oracle JDK.
 
