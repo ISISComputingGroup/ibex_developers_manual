@@ -41,3 +41,28 @@ If the wrong java path is set then the slave will not start. Update the path to 
 ## Linux build node (s7cloud) is offline
 
 If the node has rebooted and/or installed an `sshd` update, it may have removed jenkins from its ssh authority. You need to edit `/etc/ssh/sshd_config` and add `jenkins` to the `AllowGroups` line. Then run `service sshd restart` on s7cloud. You can then ask the Jenkins server to relaunch the node.  
+
+## Builds failing to check out
+
+If a jenkins job (often epics-static-clean on NDWVEGAS) is failing to run and near the start you see something like
+```
+21:47:24   > git submodule foreach --recursive git reset --hard # timeout=10
+21:51:27  ERROR: Error fetching remote repo 'origin'
+21:51:27  hudson.plugins.git.GitException: Failed to fetch from https://github.com/ISISComputingGroup/EPICS.git
+21:51:27  	at hudson.plugins.git.GitSCM.fetchFrom(GitSCM.java:909)
+21:51:27  	at hudson.plugins.git.GitSCM.retrieveChanges(GitSCM.java:1131)
+21:51:27  	at hudson.plugins.git.GitSCM.checkout(GitSCM.java:1167)
+21:51:27  	at org.jenkinsci.plugins.workflow.steps.scm.SCMStep.checkout(SCMStep.java:125)
+21:51:27  	at org.jenkinsci.plugins.workflow.steps.scm.SCMStep$StepExecutionImpl.run(SCMStep.java:93)
+21:51:27  	at org.jenkinsci.plugins.workflow.steps.scm.SCMStep$StepExecutionImpl.run(SCMStep.java:80)
+21:51:27  	at org.jenkinsci.plugins.workflow.steps.SynchronousNonBlockingStepExecution.lambda$start$0(SynchronousNonBlockingStepExecution.java:47)
+21:51:27  	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+21:51:27  	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+21:51:27  	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+21:51:27  	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+21:51:27  	at java.lang.Thread.run(Thread.java:748)
+21:51:27  Caused by: hudson.plugins.git.GitException: Command "git submodule foreach --recursive git reset --hard" returned status code 128:
+```
+This is usually caused by an `index.lock` file not having been removed correctly during a previous git operation. This file should only exist when git is running, if there are no git processes executing on that repository then there should be no `index.lock` file present.
+ 
+You can search the workspace for these files, but there is a now a program to do this for you (which also checks for running git processes). See `\\isis\shares\ISIS_Experiment_Controls\git_lock_clean` 
