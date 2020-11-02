@@ -40,8 +40,8 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
 | DO | | BR | x |  | |TL| X |
 | DK | | CC | |  | |BR| x |
 | KB | | MS | |  | |CC| x |
-| DO | | AL | |  | |DK| |
-| TL | | FA | |  | |DO| |
+| DO | | AL | |  | |DK| x |
+| TL | | FA | |  | |DO| x |
 | CC | | DK | |  | |KB| |
 | FA | | DO | |  | |JK| |
 | BR | | AL | |  | |DK| |
