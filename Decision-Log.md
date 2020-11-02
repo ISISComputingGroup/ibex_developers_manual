@@ -63,3 +63,5 @@ A place to record decisions:
     - 2020/10/14
 
 21. Should we still support a phone app with the MCR news for ISIS staff to use? Decision was made that it's a lot of development effort to support a mobile app for all platforms and the only benefits it gives over a slack/teams channel is that it doesn't require a user login. Seeing as everyone on ISIS will have a teams account this doesn't really apply. We are going to use the teams channel instead and if it would be helpful to use graphs this can be implemented using a python service or similar. 
+
+22. In one system test we are testing the restarting of each IOC to test that we do not hit a limit as we did with the 256 limit in procservcontrol. Some IOCs are failing to restart, this may be because there is no hardware to talk to or the PVs we are looking at are autosave pvs and they are not available in the IOC. We have decided to start these IOCs in recsim to try and avoid this as this test is not to test the IOC itself but to test procservcontrol of the IOC. We can then at a later date put more work into the IOCs to make them start and go into alarm correctly.
