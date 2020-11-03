@@ -31,3 +31,28 @@ Note: this page documents the process of building a windows 10 **system**. This 
 - Join the default ISIS workgroup (found on passwords page if you are unsure)
 - Don't restore settings or data
 - When asked for admin password, refer to passwords page and add the new password there if necessary.
+
+### Setting up IBEX before first use
+
+- Start the MYSQL server by adding it as a service (as per install script)
+- Change the settings folder name from `NDHSPARE70` (which is the build server) to the machine you are building
+- Inside the settings folder, do a git checkout to the correct config branch and pull
+- See also any manual steps listed at https://github.com/ISISComputingGroup/IBEX/issues/5437
+
+### Starting IBEX
+
+- At this stage you should be able to start IBEX. Make sure you start it as a standard user, not admin, otherwise all of the log files and directories will be created with the wrong permissions.
+  * It seems that the Var and Settings VHDs in particular are very sensitive to getting into a state where the files are "owned" by admin but admin can't delete them, and a reboot does not fix this. To fix this, install fresh settings/var vhds by following the "upgrade/change vhd" instructions below.
+
+# Upgrading/changing IBEX VHDs
+
+If you need to upgrade/change IBEX VHDS, the process is as follows:
+- Power off the NDX machine
+- Go into hyper-V and remove the three IBEX VHDS from the VM (Apps, Settings, Var)
+- Replace the VHDS on the filesystem on the NDH with the new versions you wish to install
+- Add these back in to the VM via Hyper-V manager
+- Boot the VM
+- Re-run the `makeinst.ps1` script in an admin powershell prompt
+- Ensure that the filesystem looks sensible e.g. that `Apps/` contains EPICS and a client, `Settings` contains a settings directory, and `Var/` contains the expected file structure.
+
+Note: you can not simply replace the VHDs on the NDH by name. This is because Hyper-V sets some attributes on the VHDs when they are explicitly added; if these attributes are not set, you will get an error on attempting to boot the VM.
