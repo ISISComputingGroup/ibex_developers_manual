@@ -10,7 +10,7 @@ This page lists some dependencies which we are not updating for various reasons:
 | `scipy` | 1.2.3 | 1.4.1 | Newer version requires python 3 |
 | `numpy` | 1.16.6 | 1.18.1 | Newer version requires python 3 |
 | `xmlrunner` | 2.5.2 | 3.0.1 | Newer version requires python 3 |
-| `stomp.py`  | 2.24.0 | 6.1.0 | Newer versiom requires python 3 |
+| `stomp.py`  | 2.24.0 | 6.1.0 | Newer version requires python 3 |
 
 # GUI
 
