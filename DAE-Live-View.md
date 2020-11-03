@@ -39,7 +39,10 @@ In this case Y is the spectrum number and X is the time of flight bin.
 * `SIZEX` is (number_of_time_channels + 1)
 * `SPEC:START:SP` is (number_of_time_channels + 1) * (number_of_dae_spectra_to_skip_to_get_to_1D_detector_spectra).
 
-You then need to put the live view into "TOFChannel" rather than "TOFSummed" mode with:
+Typically `number_of_dae_spectra_to_skip_to_get_to_1D_detector_spectra` will be the number of monitor spectra if they occur first in the spectra order, but on a multiple detector instrument it could be larger.  
+
+You then need to put the live view into "TOFChannel" rather than "TOFSummed" mode either on the OPI or with:
 ```
 caput %MYPVPREFIX%DAE:AD1:INTG:DATAMODE:SP 1
 ```
+`number_of_time_channels` is displayed on the DAE Run Information tab as "time channels". Note that this value will change if they ever change their time channel boundaries.     
