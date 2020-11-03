@@ -14,6 +14,8 @@ Motor Setup Pane
 
    - Correct Motion tick box: will make the driver retry the motion if the position is not within the deadband of the setpoint; up to 10 times.
 
+See more details on the table of motors - To see more details press Ctrl+Shift+F10
+
 # Setup values in IBEX from SECI (a subset)
 
 The notes below detail how some of the values used by the SECI Galil driver should be translated for use in the EPICS IOC for Galils.
