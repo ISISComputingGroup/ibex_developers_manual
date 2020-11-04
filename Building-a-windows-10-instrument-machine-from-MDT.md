@@ -9,7 +9,9 @@ Note: this page documents the process of building a windows 10 **system**. This 
 
 ### Copy VHDs onto physical host
 
-- Copy the set of IBEX VHDs you wish to install from the share onto the `NDH` host computer.
+- Copy the set of IBEX VHDs you wish to install from the share onto the `NDH` host computer, ensuring that you are copying onto a disk with a suitable amount of free space.
+- In Hyper-V manager, add the VHDs as disks for the virtual machine. You do not need to specify a mount point, just make the disks available.
+  * Note: if you are replacing existing disks, you **still need to delete and re-add them in Hyper-V for them to be recognised!**
 
 ### Configure the VM
 
