@@ -36,7 +36,9 @@ Note: this page documents the process of building a windows 10 **system**. This 
 
 ### Setting up IBEX before first use
 
-- Start the MYSQL server by adding it as a service (as per install script)
+- Run the script `c:\makeinst.cmd`. This should create `Apps`, `Settings` and `Var` folders with the contents of the VHDs you mounted
+  * Check that this step has worked before proceeding! The `makeinst.cmd` script is flaky and may appear to have worked while actually leaving the system in an invalid state.
+- Start the MYSQL server by adding it as a service. MDT will have cloned `ibex_utils` into `C:\instrument`, from there run `windows_10_vhd_deploy.bat`
 - Change the settings folder name from `NDHSPARE70` (which is the build server) to the machine you are building
 - Inside the settings folder, do a git checkout to the correct config branch and pull
 - See also any manual steps listed at https://github.com/ISISComputingGroup/IBEX/issues/5437
