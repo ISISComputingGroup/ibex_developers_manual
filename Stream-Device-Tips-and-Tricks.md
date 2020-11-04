@@ -2,7 +2,7 @@
 
 # Waveforms
 
-With any waveform record protocol, you need to specify a separator to split the input or output string. For example, to split on commas use `separator = ",";` within the protocol function for the record.
+With any waveform record protocol, you need to specify a separator to split the input or output string. For example, to split on commas use `separator = ",";` within the protocol function for the record. See https://paulscherrerinstitute.github.io/StreamDevice/tipsandtricks.html
 
 ## Reading in a string into a waveform of strings
 
@@ -23,6 +23,8 @@ On the record side the `mbbi` works in the same way as the `mbbo` but in reverse
 ## Dealing with multi-value stream device protocols
 
 It often happens that a single read query to a device returns multiple values, which we ultimately need to store in separate PVs. Similarly, sometimes a single write command requires multiple values. Below are some tips on how to deal with multi-value read protocols, but the same kind of tricks can be applied to write protocols too.
+
+If all the values are the same format, you could read them into a `waveform` or `aai` record using the `separator` as described above, and then split them or manipulate after than e.g. `acalcout`, `calcout` or `scalcout`
 
 ### Passing the PV names as protocol parameters
 
