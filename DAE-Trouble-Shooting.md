@@ -1,5 +1,7 @@
 > [Wiki](Home) > [Trouble-shooting](trouble-shooting-pages) > [DAE](DAE-Trouble-Shooting)
 
+**Note:** If your DAE is not starting up correctly and you are struggling to see what the error is while, it might be worth running the IOC via `/ioc/ISISDAE/.../runIOC.bat` as this will give you additional messages compared to running from `ProcServ`.
+
 ### Restarting the DAE in IBEX
 
 This IOC does not appear in the normal IOC restart list in the IBEX client, first open an EPICS terminal
