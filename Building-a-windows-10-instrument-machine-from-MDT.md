@@ -7,11 +7,13 @@ Note: this page documents the process of building a windows 10 **system**. This 
 - Find a suitable physical host server. The server will need a minimum of 14GB of memory and 256GB of hard disk space free
   * If you are building a real instrument machine, this will usually be `NDHINST`, and the virtual machine that you're building will usually be `NDXINST`
 
-### Copy VHDs onto physical host
+### Copy needed files onto physical host
 
 - Copy the set of IBEX VHDs you wish to install from the share onto the `NDH` host computer, ensuring that you are copying onto a disk with a suitable amount of free space.
 - In Hyper-V manager, add the VHDs as disks for the virtual machine. You do not need to specify a mount point, just make the disks available.
   * Note: if you are replacing existing disks, you **still need to delete and re-add them in Hyper-V for them to be recognised!**
+- Find the latest windows 10 ISO file from `\\isis\inst$\mdt$\dev1\MDTDeploymentShare\Boot\LiteTouchPE_x64_Hyper-V.iso` and copy this ISO onto the `NDH` machine
+  * *Note: This ISO is not really a windows PE iso, it is instead an ISO which has been built by MDT. You cannot just use a version downloaded from microsoft.com*
 
 ### Configure the VM
 
@@ -22,11 +24,9 @@ Note: this page documents the process of building a windows 10 **system**. This 
   * Set it to connect to ISIS network if you get the option, otherwise it will be ok on the default.
   * Set virtual hard disk size to 128GB
   * Install OS later
-- Find the latest windows 10 ISO file from `\\isis\inst$\mdt$\dev1\MDTDeploymentShare\Boot\LiteTouchPE_x64_Hyper-V.iso` and copy this ISO onto the `NDH` machine
-  * *Note: This ISO is not really a windows PE iso, it is instead an ISO which has been built by MDT. You cannot just use a version downloaded from microsoft.com*
 - Add the VHDs that you copied over earlier as "SCSI" disks in hyper-v manager
   * Note you do not need to map them anywhere at this stage, they merely need to be attached to the VM
-- Tell Hyper-V to boot from this ISO
+- Tell Hyper-V to boot from the windows PE ISO you copied earlier by adding it as the "DVD" drive in hyper-v
 - Boot the machine
 - Select "Build thick updated windows 10 image"
 - Computer name - set it to `NDXINST` (same as name in Hyper-V)
