@@ -276,3 +276,25 @@ If you need to restart the NI visa server on the host machine and clicking start
 ### Exception in ICP log
 
 If the ICP is showing an error in the form of `Simulation error (read32)` this indicates that you have a DAE3 ICP installed. Only a DAE2 ICP has a simulation mode. You should reinstall the ICP from `\\isis\inst$\Kits$\CompGroup\ICP\ISISICP\DAE2`.
+
+### No environment cards in simulation mode
+
+In simulation mode the ISISICP should automatically give you 1 environment card. If you see the following error:
+
+```
+Error - Found 0 environment/period cards (must have only 1) and 0 detector cards
+```
+
+It can be a sign that the ISISICP is trying to restore from a corrupt save file (which could have been caused by running out of disk space, for example). Delete `current.run`, `data.run`, and the mysqlite db files from `c:\data` and try again (after having made enough disk space).
+
+### cannot lock named mutex (abadoned): ISISICP_PROCESS_LOCK
+
+If you see the following error:
+
+```
+(0) Application: [Error] System exception: cannot lock named mutex (abadoned): ISISICP_PROCESS_LOCK
+```
+
+This is a sign that there may be multiple ISISICP processes running concurrently. Check for any isisicp processes running as the wrong user (e.g. admin). 
+
+It can also be a sign that the ISISICP is trying to restore from a corrupt save file (which could have been caused by running out of disk space, for example). Delete `current.run`, `data.run`, and the mysqlite db files from `c:\data` and try again (after having made enough disk space).
