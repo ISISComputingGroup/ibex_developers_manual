@@ -17,14 +17,14 @@ Note: this page documents the process of building a windows 10 **system**. This 
 ### Configure the VM
 
 - Go into hyper-v manager on the MDT server host and select new machine. Default settings are mostly ok other than:
-  * Set the name to the intended hostname of the NDXMDTSERVPROD machine
+  * Set the name to the intended hostname of the NDX machine
   * Make sure VM files are stored on a disk with adequate space (often `D:\` or `E:\` on NDH machines)
-  * Set startup memory to 14GB.
+  * Set startup memory to 14GB (in hyper-v set to NUMA architecture limit which is usually just below 14gb).
   * Set it to connect to ISIS network if you get the option, otherwise it will be ok on the default.
   * Set virtual hard disk size to 128GB
   * Install OS later
 - In Hyper-V manager, add the VHDs as disks for the virtual machine. You do not need to specify a mount point, just make the disks available.
-  * Note: if you are replacing existing disks, you **still need to delete and re-add them in Hyper-V for them to be recognised!**
+  * Note: if you are replacing existing disks, you **still need to eject and re-add them in Hyper-V on the NDH for them to be recognized!**
 - Tell Hyper-V to boot from the windows PE ISO you copied earlier by adding it as the "DVD" drive in hyper-v
 - Boot the virtual machine from hyper-v
 - Select "Build thick updated windows 10 image"
@@ -50,12 +50,12 @@ Note: this page documents the process of building a windows 10 **system**. This 
 # Upgrading/changing IBEX VHDs
 
 If you need to upgrade/change IBEX VHDS, the process is as follows:
-- Power off the NDX machine
+- Shutdown the NDX machine (gracefully)
 - Go into hyper-V and remove the three IBEX VHDS from the VM (Apps, Settings, Var)
 - Replace the VHDS on the filesystem on the NDH with the new versions you wish to install
 - Add these back in to the VM via Hyper-V manager
 - Boot the VM
-- Re-run the `makeinst.ps1` script in an admin powershell prompt
+- Re-run the `makeinst.cmd` in `C:\` script in an **admin** powershell prompt
 - Ensure that the filesystem looks sensible e.g. that `Apps/` contains EPICS and a client, `Settings` contains a settings directory, and `Var/` contains the expected file structure.
 
 Note: you can not simply replace the VHDs on the NDH by name. This is because Hyper-V sets some attributes on the VHDs when they are explicitly added; if these attributes are not set, you will get an error on attempting to boot the VM.
