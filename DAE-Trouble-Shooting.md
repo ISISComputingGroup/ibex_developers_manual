@@ -287,12 +287,12 @@ Error - Found 0 environment/period cards (must have only 1) and 0 detector cards
 
 It can be a sign that the ISISICP is trying to restore from a corrupt save file (which could have been caused by running out of disk space, for example). Delete `current.run`, `data.run`, and the mysqlite db files from `c:\data` and try again (after having made enough disk space).
 
-### cannot lock named mutex (abadoned): ISISICP_PROCESS_LOCK
+### cannot lock named mutex (abandoned): ISISICP_PROCESS_LOCK
 
 If you see the following error:
 
 ```
-(0) Application: [Error] System exception: cannot lock named mutex (abadoned): ISISICP_PROCESS_LOCK
+(0) Application: [Error] System exception: cannot lock named mutex (abandoned): ISISICP_PROCESS_LOCK
 ```
 
 This is a sign that there may be multiple ISISICP processes running concurrently. Check for any isisicp processes running as the wrong user (e.g. admin). 
