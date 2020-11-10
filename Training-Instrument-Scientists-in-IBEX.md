@@ -55,7 +55,7 @@ To do it remotely
 Make sure you review the training course materials.  Have any new features been added to IBEX or genie_python that might require a change to the course content or are their training tickets on the backlog which should be considered?  if so, update the course.  It is a good idea to run through the course materials even if there have been no significant changes - just to re-familiarise yourself with the course contents.
 
 ### Send Delegate list to CDF
-If you have decided to use the CDF suite, you need to tell RAL Space (i.e. Andrew Caldwell) the names of each of the delegates, so that they can arrange access (e.g. swipe passes) to the Atlas building.  RAL Space need 2-weeks notice to do this.  A simple spreadsheet naming each delegate, their e-mail and indicating if the individual is a member of ISIS staff is sufficient.
+If you have decided to use the CDF suite, you need to tell RAL Space (i.e. Will Grainger) the names of each of the delegates, so that they can arrange access (e.g. swipe passes) to the Atlas building.  RAL Space need 2-weeks notice to do this.  A simple spreadsheet naming each delegate, their e-mail and indicating if the individual is a member of ISIS staff is sufficient.
 
 ### E-mail course joining instructions to all delegates
 1-2 weeks before the training course is due to run, send an e-mail to all delegates, telling them how to join the course.  Make sure you tell them: 
