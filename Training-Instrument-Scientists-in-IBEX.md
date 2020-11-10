@@ -46,6 +46,11 @@ To use CR16 & CR17 in R80
 * Book CR16 & CR17 via Outlook.  These rooms are heavily used, so you need to book early to get the dates you want.
 * Contact Facilities IT to arrange to have laptops made available to the training delegates.  You will also need to coordinate with Facilities IT to get IBEX & genie_python installed on each laptop.
 
+To do it remotely
+* Ask Chris MS to create some virtual machines and install a training system on them as below
+* If you do not have enough VMs then ask users to use IDAAS to log in to DEMO (test that you can do this first). Make sure that you make people aware that this means they may be "fighting" over the same server.
+* Contact the participants and let them know how to log in to these machines
+
 ### Review the training course materials
 Make sure you review the training course materials.  Have any new features been added to IBEX or genie_python that might require a change to the course content or are their training tickets on the backlog which should be considered?  if so, update the course.  It is a good idea to run through the course materials even if there have been no significant changes - just to re-familiarise yourself with the course contents.
 
