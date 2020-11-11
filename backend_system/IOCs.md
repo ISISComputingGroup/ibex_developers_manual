@@ -9,7 +9,7 @@ Remember, EPICS is a collaboration! Why create an IOC when you can just use one 
 
 Building a new IOC? Before you get started, take a look at the relevant [instrument page](https://github.com/ISISComputingGroup/IBEX/wiki) to see if there's any useful information for the device you're about to write an IOC for. Otherwise, let's get going. If you have problems see [See IOC and device Troubleshooting](IOC-And-Device-Trouble-Shooting).
 
-There are two sorts of IOCs, EPICs and pycaspy. For EPICs type see the automatic creation below for pycaspy see the [pycaspy ioc](ioc-pycaspy).
+There are two sorts of IOCs, EPICs and pycaspy. For EPICs type see the automatic creation below for pycaspy see the [pycaspy ioc](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/ioc-pcaspy).
 
 
 ## Automatically
