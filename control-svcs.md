@@ -22,7 +22,7 @@ Depending on what you need to do, you may need to modify system init scripts to 
 
 # Whole VM is down
 
-The best bet at diagnosing/fixing this is to [download VM Manager console[(http://www.facilities.rl.ac.uk/isis/computing/instruments/Instrument%20Documents/vmm%20console.docx) - ask Facilities IT if you have problems
+The best bet at diagnosing/fixing this is to [download VM Manager console](http://www.facilities.rl.ac.uk/isis/computing/instruments/Instrument%20Documents/vmm%20console.docx) - ask Facilities IT if you have problems
 
 # Webserver is down
 
