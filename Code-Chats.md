@@ -10,7 +10,7 @@ Topic | Presenter | Date
 ----- | --------- | ----
 Deploying EPICS with Ansible | CLF Controls team | 19th October '20
 Helium Level Monitoring | Kathryn/Mihai | 19th November '20
-? | ? | Dec '20
+Handover: Client Build System | Tom | 10th December '20
 
 ### Proposed Future Code Chats
 
