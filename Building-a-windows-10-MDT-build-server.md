@@ -31,9 +31,9 @@ This wiki page describes the process for setting up a new `NDXMDTSERVPROD` machi
 - This will boot into a "Microsoft Deployment Wizard", which will then launch a set of menus embedded within the ISO.
 - Select "Build thick updated windows 10 image"
   * Thin image == Just windows 10
-  * Thick image == windows 10 + software such as labview, nport, notepad++, 7-zip etc (but not IBEX)
+  * Thick image == windows 10 + software such as labview, nport, notepad++, 7-zip, IBEX (if you have access to the existing MDT build server you may wish to disable the IBEX installation as it won't be required for this machine)
 - Computer name - set it to the hostname (same as name in Hyper-V)
-- Join the default `ISIS workgroup` (TODO: put the name of this on the passwords share
+- Join the default `ISIS workgroup`
 - Don't restore settings or data
 - When asked for an administrator password generate a secure random password following STFC password guidance, and then add this to the usual passwords page alongside hostname.
 - Don't capture any image
@@ -64,3 +64,5 @@ This wiki page describes the process for setting up a new `NDXMDTSERVPROD` machi
   * Set `DeployRoot` to the MDT deployment share location (found on passwords page)
   * Ensure user details in this file match the MDT account detailed on the passwords page
 - Right click "MDT Deployment Share" -> update deployment share
+
+Congratulations! You should now have a working MDT build server. See [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/MDT-(Microsoft-deployment-toolkit)) for details about how to *use* MDT.
