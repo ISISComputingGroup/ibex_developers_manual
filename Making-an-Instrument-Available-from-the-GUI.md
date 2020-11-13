@@ -31,9 +31,7 @@ On the IDaaS machines we need to be able to limit the instruments that a user ca
 
 This shouldn't get overwritten during the RPM deploy as the preferences folder is created by the GUI when it first starts, and isn't in the build.
 
-1. Locate the preferences supplier in the VM group (`Client_E4/configuration/.settings/uk.ac.stfc.isis.ibex.instrument.prefs`).
-   - If this file does not yet exist, it can be created by starting the GUI and opening the instrument selector dialogue
-
+1. Locate the preferences supplier in the VM group (`Client_E4\plugins\uk.ac.stfc.isis.ibex.instrument_1.0.0.SNAPSHOT\resources\allowed_groups.conf`).
 1. Add the following line to the preferences file, replacing the instrument names for those which the users of this group are allowed to access:
-`inst-whitelist/whitelist=LARMOR,DEMO`
-   - This would allow the GUI to only switch to LARMOR or DEMO from the switch instrument dialogue
+`MUONS,SANS`
+   - This would allow the GUI to only switch to MUON or SANS instruments from the switch instrument dialogue
