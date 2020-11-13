@@ -49,8 +49,25 @@ To use CR16 & CR17 in R80
 To do it remotely
 * Ask Chris MS to create some virtual machines and install a training system on them as below
 * If you do not have enough VMs then ask users to use IDAAS to log in to DEMO (test that you can do this first). Make sure that you make people aware that this means they may be "fighting" over the same server.
-* Contact the participants and let them know how to log in to these machines
-
+* Contact the participants and let them know how to log in to>  these machines
+* Last time we ran remotely we did it in these 4 sessions:
+    1. Introduction to IBEX:
+        * How to start/stop everything
+        * What do the different perspectives do
+        * A basic overview of what’s going on behind the scenes
+    2. Configurations and Synoptics: 
+        * How to create and edit configurations
+        * How to create and edit components
+        * How to create and edit synoptics
+    3. genie_python and Scripting in IBEX: 
+        * Basic genie_python commands
+        * User and instrument scripts
+        * The script server/script generator
+    4. Converting between open genie and genie_python: 
+        * The major differences between the languages
+        * Some example conversions
+        * Hands on conversion of a selection of SANS2D user scripts
+    
 ### Review the training course materials
 Make sure you review the training course materials.  Have any new features been added to IBEX or genie_python that might require a change to the course content or are their training tickets on the backlog which should be considered?  if so, update the course.  It is a good idea to run through the course materials even if there have been no significant changes - just to re-familiarise yourself with the course contents.
 
