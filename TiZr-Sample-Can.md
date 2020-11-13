@@ -19,3 +19,5 @@ Takes two PVs as macros (PV-A and PV-B). Each PV has a maximum value set on them
 When the safe value is written the TIZRWARNING will be set into alarm for 5 seconds and then the alarm is cleared, unless, the pv is still out of range in which the alarm is persisted in which the safe value would be continuously written to the PV (this could occur if writing the safe value is rejected or the safe value > PV-A-Max). 
 
 Currently, if PV-B > PV-B-Max and a value is written to PV-A where value > PV-A-Max, the value will be set to PV-A for a brief period and then the safe value will be written to PV-A again overwriting this. We could change this by setting the DRVH on PV-A whilst inhibiting based on the PV-B value.
+
+The support module is here https://github.com/ISISComputingGroup/EPICS-TiZr and the ioc at https://github.com/ISISComputingGroup/EPICS-ioc in the TIZR folder.
