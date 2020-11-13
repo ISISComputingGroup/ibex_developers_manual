@@ -23,5 +23,6 @@ A request can be ignored by setting the .DISP field of each relevant record in a
 
 This will be implemented as a separate IOC in SNL language. This should easy to maintain and configure. A separate IOC is used because then it can apply to more than one case without importing templates during the build. In SNL because it is ideally suited to the state machine and there are already example for splitting up strings for configuration. Python was considered but there is too much boiler plate without enough win, pure C/C++ and normal DB records were also considered but they will become too complicated.
 
+## TiZR Cell inhibitor
 
-
+An alternative to the inhibitor is the TiZR cell inhibitor which is relatively general purpose and easy to set up, please see https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/TiZr-Sample-Can#tizr-cell-inhibitor-ioc
