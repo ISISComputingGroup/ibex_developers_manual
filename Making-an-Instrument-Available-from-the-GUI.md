@@ -35,3 +35,4 @@ This shouldn't get overwritten during the RPM deploy as the preferences folder i
 1. Add the following line to the preferences file, replacing the instrument names for those which the users of this group are allowed to access:
 `MUONS,SANS`
    - This would allow the GUI to only switch to MUON or SANS instruments from the switch instrument dialogue
+   - The definitive list of group names is in the isntrument list, set by `inst_servers\scripts\set_instrument_list.py`
