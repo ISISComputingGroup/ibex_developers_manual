@@ -298,3 +298,7 @@ If you see the following error:
 This is a sign that there may be multiple ISISICP processes running concurrently. Check for any isisicp processes running as the wrong user (e.g. admin). 
 
 It can also be a sign that the ISISICP is trying to restore from a corrupt save file (which could have been caused by running out of disk space, for example). Delete `current.run`, `data.run`, and the mysqlite db files from `c:\data` and try again (after having made enough disk space).
+
+### Saved counts are very low
+
+In event mode the ISISICP will wait to get a consistent snapshot from all detector cards. If one of the detector cards has a hardware fault, it can cause the saved counts to appear to be very low. The solution in this case is to ask electronics to look into the fault/replace the faulty detector card. See [ticket 5835](https://github.com/ISISComputingGroup/IBEX/issues/5835) for further details of this issue.
