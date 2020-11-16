@@ -61,3 +61,13 @@ If this happens, comment out the `patch` command in `common_build_python.bat`, t
 ### Can not set change users
 
 Users seems not to get set properly using g.change_users, see ticket [5812](https://github.com/ISISComputingGroup/IBEX/issues/5812). Look into this it is more than a one off.
+
+### Repeated error messsages in console while waiting
+
+If you get repeated errors of the form:
+
+```
+2020-11-11T17:20:48	(CMD)	(17808)	2020-11-11 17:20:48.374781: Exception in waitfor loop: UnableToConnectToPVException: Unable to connect to PV IN:LARMOR:DAE:GOODUAH: does not exist
+2020-11-11T17:20:48	(CMD)	(17808)	2020-11-11 17:20:48.512496: Exception cleared
+```
+You may need to restart the genie_python session. The root cause of this issue is currently unknown. See ticket [5893](https://github.com/ISISComputingGroup/IBEX/issues/5893)
