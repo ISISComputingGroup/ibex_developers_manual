@@ -6,7 +6,7 @@ There are two versions of the Mezei flipper hardware in use, and so the IOC and 
 
 ### V1
 
-This hardware is in use on POLREF. It was originally in use by LET, but was superceded by V2 in https://github.com/ISISComputingGroup/IBEX/issues/4871 .
+This hardware is in use on POLREF. It was originally in use by LET, but was superceded by V2 (which has been set back to V1 because of communication issues as of 16/11/2020) in https://github.com/ISISComputingGroup/IBEX/issues/4871 .
 
 If you need to use V1 hardware, you should set the following macros in `globals.txt` to enable support for the old protocol:
 
@@ -20,7 +20,7 @@ For this hardware, use the `Mezei flipper (v1)` OPI.
 
 ### V2
 
-This is newer hardware which is now in use on LET. POLREF plan to eventually also migrate to this hardware, however this has not been done as of September 2020.
+This is newer hardware which is now in use on LET (which has been set back to V1 because of communication issues as of 16/11/2020). POLREF plan to eventually also migrate to this hardware, however, this has not been done as of September 2020.
 
 V2 hardware is assumed by default in the ioc; no special configuration is required to use it. It should use the `Mezei flipper` OPI.
 
