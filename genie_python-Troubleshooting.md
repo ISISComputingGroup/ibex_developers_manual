@@ -62,7 +62,7 @@ If this happens, comment out the `patch` command in `common_build_python.bat`, t
 
 Users seems not to get set properly using g.change_users, see ticket [5812](https://github.com/ISISComputingGroup/IBEX/issues/5812). Look into this it is more than a one off.
 
-### Repeated error messsages in console while waiting
+### Repeated error messages in console while waiting
 
 If you get repeated errors of the form:
 
