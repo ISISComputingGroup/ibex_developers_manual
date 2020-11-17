@@ -17,6 +17,10 @@ Each component captures the relationships for both set points (where the user wa
 
 The next section is *Work in progress*
 
+![Architecture of the component](reflectometers/ComponentArchitecture.png)
+
+
+
 The architecture of a component is ....
 
 During init of the component it must setup the set point and read back beamline calculations. These are mostly separate calculations down the beam line; although they occasionally borrow values from each other. The basis of each beamline calculation is the original position angle relationship calculation and this continues to be true. It is assumed that each component wants to track the beam using this relationship. 
