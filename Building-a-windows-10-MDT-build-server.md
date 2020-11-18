@@ -14,18 +14,19 @@ This wiki page describes the process for setting up a new `NDXMDTSERVPROD` machi
 
 # How to build a new MDT server
 
-- Find a physical NDH machine with space to host this VM (both in terms of memory and disk space). Standard instrument machines use 14GB of memory, so you will need at least this amount free. You will also need 256GB of free hard disk space.
-- If you are creating `NDXMDTSERVPROD` as a virtual machine, you need to find a physical host for the MDT server. This will also need 14GB of memory and 256GB of disk space. Note that these requirements are not necessarily the same as for an instrument machine - it is just a convenient starting point.
+- If you are creating `NDXMDTSERVPROD` as a virtual machine, you need to find a physical host for the MDT server.
+  * Ideally use same specs as for an instrument machine (14GB memory, 256GB free disk space) 
+  * If memory or disk space are tight, an MDT server can probably get by with ~6GB of memory and ~100GB of free disk space.
 - If you are creating `NDXMDTSERVPROD` as a virtual machine, go into hyper-v manager on the MDT server host and select new machine. Default settings are mostly ok other than:
   * Set the name to the intended hostname of the `NDXMDTSERVPROD` machine
   * You'll need to create it on a disk which has enough space (will need ~256GB free)
-  * Set startup memory to 14GB
+  * Set startup memory to 14GB (or less - see above)
   * Set it to connect to ISIS network if you get the option, otherwise it will be ok on the default.
-  * Set virtual hard disk size to 128GB
+  * Set virtual hard disk size to 128GB (or a bit less - see above)
   * Install OS later
-- Find the latest windows 10 ISO file from `\\isis\inst$\mdt$\dev1\MDTDeploymentShare\Boot\LiteTouchPE_x64_Hyper-V.iso` and copy in onto the host server for `NDXMDTSERVPROD`.
+- Copy the windows 10 ISO file from `\\isis\inst$\mdt$\dev1\MDTDeploymentShare\Boot\LiteTouchPE_x64_Hyper-V.iso` and copy in onto the host server for `NDXMDTSERVPROD`.
   * This ISO is not really a windows PE iso, it is instead an ISO which has been built in the past by a different MDT server machine, and this will have configured the menus which are available when booting this ISO. This is **not** substitutable for e.g. a version downloaded from microsoft.com
-- Tell Hyper-V to boot from this ISO
+- Tell Hyper-V to boot from this ISO by adding it as a disk in the virtual disk drive (right click on the machine in hyper-v and select "settings")
 - You might choose to increase number of processors available to the VM
 - Boot the machine
 - This will boot into a "Microsoft Deployment Wizard", which will then launch a set of menus embedded within the ISO.
@@ -33,7 +34,7 @@ This wiki page describes the process for setting up a new `NDXMDTSERVPROD` machi
   * Thin image == Just windows 10
   * Thick image == windows 10 + software such as labview, nport, notepad++, 7-zip, IBEX (if you have access to the existing MDT build server you may wish to disable the IBEX installation as it won't be required for this machine)
 - Computer name - set it to the hostname (same as name in Hyper-V)
-- Join the default `ISIS workgroup`
+- Join the default ISIS workgroup (the name of this workgroup can be found on the passwords page)
 - Don't restore settings or data
 - When asked for an administrator password generate a secure random password following STFC password guidance, and then add this to the usual passwords page alongside hostname.
 - Don't capture any image
@@ -52,12 +53,14 @@ This wiki page describes the process for setting up a new `NDXMDTSERVPROD` machi
 - When asked which features to install remove "windows performance toolkit", "user experience virtualisation", "microsoft application virtualisation", "Media experience analyzer"
 - Run `adkwinpsetup.exe`, accept defaults
 - Run `MicrosoftDeploymentToolkit_x64.exe`
+- Open an **administrator** command prompt and type `net use <deployment share location> /USER:<account on passwords page`
 - Go to start -> MDT -> Deployment workbench and **run it as admin**
 - Right click "deployment shares" -> "open" -> MDT deployment share location (found on passwords page) -> next -> finish
+  * If MDT complains that the directory does not exist, check you did the `net use` above correctly.
 - Make changes to MDT process as required
 - Right click "MDT Deployment Share" -> Properties
 - Set "Network (UNC) path" to the MDT deployment share location (found on passwords page). Note that this **cannot** be a DFS filesystem, it must point to a real server. DFS shares are not supported by MDT.
-- Under "Rules" tab:
+- If this is a new share, under "Rules" tab you will need to set the following (these may already be set if using an existing share):
   * You will need to set paths: `SLShare` to `<logging_location>`, `SLShareDynamicLogging` to `<logging_location>\dynlogs` and `BackupShare` to `<logging_location>`. These are directories where logs will be written during the MDT build process, so that you can debug any failures. `<logging_location>` can be found on the passwords page.
   * Ensure user details in this file match the MDT account detailed on the passwords page
 - Click `Edit bootstrap.ini`
