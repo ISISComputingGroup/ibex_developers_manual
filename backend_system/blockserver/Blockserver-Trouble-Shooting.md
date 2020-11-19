@@ -2,7 +2,7 @@
 
 ## Running slowly/PVs not getting into the block archiver
 
-As seen on DETMON when you have a lot of blocks the blockserver but more noticeably the block gateway slow down. At about 300 blocks you could no longer caget block pvs e.g. `TE:NDADETF1:CS:SB:BLOCKNAME` but could camonitor them and the block archiver was able to retrieve most values. At about 800 blocks the block gateway and thus the block archiver and nexus files became unusable, many values were not retrieved by the block archiver from the gateway and subsequently not written to the nexus file. The blockserver also takes a lot longer to start and set up everything correctly as well.
+As seen on DETMON when you have a lot of blocks the blockserver but more noticeably the block gateway slow down. At about 300 blocks you could no longer caget block pvs e.g. `TE:NDADETF1:CS:SB:BLOCKNAME` but could camonitor them and the block archiver was able to retrieve most values. At about 800 blocks the block gateway and thus the block archiver and nexus files became unusable, many values were not retrieved by the block archiver from the gateway and subsequently not written to the nexus file. The blockserver also takes a lot longer to start and set up everything correctly as well (including the block archiver).
 
 ## Issue with the Config repository
 
