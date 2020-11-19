@@ -12,6 +12,12 @@ This page lists some dependencies which we are not updating for various reasons:
 | `xmlrunner` | 2.5.2 | 3.0.1 | Newer version requires python 3 |
 | `stomp.py`  | 2.24.0 | 6.1.0 | Newer version requires python 3 |
 
+# Python 3
+
+| Dependency | Our version | Available version | Reason |
+| `CaChannel` | 3.1.3 | 3.1.3 | Currently installed using `pip github link`  |
+| `matplotlib` | 3.2.2 | 3.3.3 | 3.3 onwards do not work on IE and hence do not work within GUI (plot renders blank)  |
+
 # GUI
 
 | Dependency | Our version | Available version | Reason |
