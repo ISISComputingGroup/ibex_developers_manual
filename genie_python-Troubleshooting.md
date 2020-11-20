@@ -70,4 +70,4 @@ If you get repeated errors of the form:
 2020-11-11T17:20:48	(CMD)	(17808)	2020-11-11 17:20:48.374781: Exception in waitfor loop: UnableToConnectToPVException: Unable to connect to PV IN:LARMOR:DAE:GOODUAH: does not exist
 2020-11-11T17:20:48	(CMD)	(17808)	2020-11-11 17:20:48.512496: Exception cleared
 ```
-You may need to restart the genie_python session. The root cause of this issue is currently unknown. See ticket [5893](https://github.com/ISISComputingGroup/IBEX/issues/5893)
+You may need to restart the genie_python session. The root cause of this issue is currently unknown. See ticket [5893](https://github.com/ISISComputingGroup/IBEX/issues/5893) for details, including a script which can scan all instruments for occurences of this issue. If this issue is seen again, please create a new ticket to investigate further and also link it here.
