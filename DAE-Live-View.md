@@ -38,7 +38,7 @@ In this case Y is the spectrum number and X is the time of flight bin.
 * `SIZEY` is the number of spectra in the 1D detector
 * `SIZEX` is (number_of_time_channels + 1)  
     - `number_of_time_channels` is shown on the DAE Information tab as `Time Channels`
-* `SPEC:START:SP` is (number_of_time_channels + 1) * (number_of_dae_spectra_to_skip_to_get_to_1D_detector_spectra).
+* `SPEC:START:SP` is number_of_dae_spectra_to_skip_to_get_to_1D_detector_spectra
 
 Typically `number_of_dae_spectra_to_skip_to_get_to_1D_detector_spectra` will be the number of monitor spectra if they occur first in the spectra order, but on a multiple detector instrument it could be larger.  
 
