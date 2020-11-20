@@ -86,5 +86,9 @@ i_want_to_observe_this.add_listener(my_callback)
 
 We use this pattern every where, so lets look at how a setpoint which is not in the mode gets to the motor:
 
+![Beamline movement events](reflectometers/BeamlineMoveEvents.png)
+
+![Motor position update events](reflectometers/MotorReadbackChangeEvents.png)
+
 
 
