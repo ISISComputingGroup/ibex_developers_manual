@@ -98,7 +98,7 @@ To fix this and other errors see https://github.com/ISISComputingGroup/ibex_deve
 
 ### No frames/beam current registered by the DAE
 
-Try switching the timing source to "Internal test clock" (found in experiment setup tab of DAE) and starting a run. If counts are received in this state, it means that the DAE isn't receiving timing pulses from the central source. If that's the case, it needs attention from the electronics group (e.g. Simon Moorby).  Note, this may occur on more than one beam line so keep an ear open for any other reports.
+Try switching the timing source to "Internal test clock" (found in experiment setup tab of DAE) and starting a run. If frames are received in this state, it means that the DAE isn't receiving timing pulses from the central source. If that's the case, it needs attention from the electronics group (e.g. Simon Moorby).  Note, this may occur on more than one beam line so keep an ear open for any other reports.
 
 Don't forget to switch the timing source back when you're done!
 
