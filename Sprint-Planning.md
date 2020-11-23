@@ -31,6 +31,8 @@ All activates are also done at pre-planning except when marked **[planning]**
 
 ### After the meeting
 
+#### **[planning only]**
+
 1. Remove tickets that did not make the sprint from ready (label and column)
 1. Remove tickets from the bucket (label and column)
 1. For tickets that made it to the sprint
@@ -38,3 +40,7 @@ All activates are also done at pre-planning except when marked **[planning]**
     1. Set label from proposal to ready and add to ready column in correct order
 1. For tickets that weren't in sprint take top # and add to bucket
 1. Remove all proposal labels (and tickets from planning board)
+
+#### **[pre-planning only]**
+
+1. Assign someone to look at IOC tickets to assess there complexity
