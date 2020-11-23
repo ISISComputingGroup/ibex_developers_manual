@@ -34,13 +34,13 @@ The tracking beam path calc has a number of component axes representing a single
 
 There are two sorts of axes, `DirectAxis` and the `BeamPathCalcAxis`. The `DirectAxis` overrides the methods above to set there is no transform between relative and displacement values. The `BeamPathCalcAxis` uses the methods from the `TrackingBeamPathCalc` to calculate the various values. The axis pointing to the methods is not as clean as it should be; but it is unclear exactly how it should change.
 
-In general a component is made from multiple axes and can respond to changes in those axes, the bench component does this for instance. The bench component has 3 user parameters height, angle and seesaw and these drives three drivers front jack, rear jack and slide. All of these changable values are axes. To make this work the component monitors the  monitors for changes in the values and transforms the user parameters to the motor axes for set points and vice versa for read backs.
+In general a component is made from multiple axes and can respond to changes in those axes, the bench component does this for instance. The bench component has 3 user parameters height, angle and seesaw and these drives three drivers front jack, rear jack and slide. All of these changeable values are axes. To make this work the component monitors the  monitors for changes in the values and transforms the user parameters to the motor axes for set points and vice versa for read backs.
 
 The `InBeamManager` is used to coordinate whether a component is in the beam based on all of its axes. This can either be set from a user parameter in which case user axes get set or it can read from the motor axes for the readbacks.
 
-The most complicated component is the `ThetaComponent` this has two beam calcs one for the readback `BeamPathCalcThetaRBV` and one for the setpoint `BeamPathCalcThetaSP`. The setpoint simply reflects the beam when it reaches the virtual sample point whereas the read back needs to calulcate the angle of the component that it is pointed at. 
+The most complicated component is the `ThetaComponent` this has two beam calcs one for the readback `BeamPathCalcThetaRBV` and one for the setpoint `BeamPathCalcThetaSP`. The setpoint simply reflects the beam when it reaches the virtual sample point whereas the read back needs to calculate the angle of the component that it is pointed at. 
 
-The final complication is that components that define where theta do not use the readback beam path to calulcate there position because this would always be zero, since it defines theta, instead they use the setpoint beam path.
+The final complication is that components that define where theta do not use the readback beam path to calculate there position because this would always be zero, since it defines theta, instead they use the setpoint beam path.
 
 ### Events
 
@@ -48,7 +48,7 @@ The whole system of readbacks, and to lesser extend setpoints, work on events be
 
 #### Defining, Triggering and Observing an Event
 
-The event is captured using a single class, this can be whatever you need but the trend at the moment is to use a dataclass (there are still quite a few named tuples about). For example:
+The event is captured using a single class, this can be whatever you need but the trend at the moment is to use a data class (there are still quite a few named tuples about). For example:
 
 ```
 @dataclass()
