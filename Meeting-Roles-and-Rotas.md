@@ -44,7 +44,7 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
 | TL | | FA | |  | |DO| x |
 | CC | | DK | |  | |KB| x |
 | FA | | DO | |  | |JK| x |
-| BR | | AL | |  | |DK| |
+| BR | | AL | |  | |DK| X |
 | JK | | CMS | |  | |FA| |
 | AL | | DO | |  | |DO| |
 |  | |  | |  | |MS| |
