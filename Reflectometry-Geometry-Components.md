@@ -119,3 +119,7 @@ The readbacks in each component axis are set based on a change in a single readb
 
 The only special case for this is theta readback also reacts to a `PhysicalMove` update of the component axis which theta depends on. This causes the beampath the be calculated starting at Theta. The beam path update event can not be reused because otherwise a circular loop would result.
 
+### Other Important Part of the Geometry Layer Code
+
+`LinearMovementCalc`: Geometry calculations
+
