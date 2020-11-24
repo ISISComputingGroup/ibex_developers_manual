@@ -15,14 +15,13 @@ Each component captures the relationships for both set points (where the user wa
 
 ## Architecture
 
-This section is *Work in progress*
-
 ### Major Classes
 
 ![Architecture of the component](reflectometers/ComponentArchitecture.png)
 
-The components contains two major elements the beam path setpoint and beam path readback. The setpoint allows positions to be set from user parameters and these setpoints are translated to setpoints on the motor level. The readback takes motor positions and calculates the user parameters from them. Both use the beam path (also either setpoint or readback) to perform the calculations. The beam path calc object that perform the calculation try to be generic for both cases, to differentiate between the motor and user level we use the terms relative to beam, for user parameters, and displacement, for motor parameters. This makes complete sense for the tracking parameters but less so for the direct parameters, which are relative to the fixed beam so also absolute, e.g. for a TRANS axis the beam is always at 0 so relative and displacement will be the same.
-The tracking beam path calc has a number of component axes representing a single quantity that can change, e.g. slit 2 height. These must have a variety of methods on them to allow the axis value to be read and written in various ways, e.g. relative to beam, and it has whether the axis is in various states, e.g. changing because the motor is moving. These states are:
+The components contains two major elements the beam path setpoint and beam path readback. The setpoint allows positions to be set from user parameters and these setpoints are translated to setpoints on the motor level. The readback takes motor positions and calculates the user parameters from them. Both setpoint and readback attributes use the tracking beam path calc, and subclasses, to perform the calculations. The tracking beam path calc object that perform the calculation try to be generic for both cases, to differentiate between the motor and user level we use the terms relative to beam, for user parameters, and displacement, for motor parameters. This makes sense for the tracking parameters but less so for the direct parameters, which are relative to the fixed beam so also absolute, e.g. for a TRANS axis the beam is always at 0 so relative and displacement will be the same.
+
+The tracking beam path calc has a number of component axes representing a single quantity that can change, e.g. slit 2 height. These must have a variety of methods and attributes. The methods allow the axis value to be read and written in various ways, e.g. relative to beam. The attributes set and show the state of the axis, e.g. changing True when the underlying motor is moving. These states are:
 
 - `is_changing`: an underlying motor is moving
 - `is_changed`: a set point has been changed but the change has not been sent to the driving layer
@@ -32,11 +31,11 @@ The tracking beam path calc has a number of component axes representing a single
 - `can_define_axis_position_as`: True if the axis can have its position defined as something else
 - `autosaved_value`: The value last read from autosave for this axis
 
-There are two sorts of axes, `DirectAxis` and the `BeamPathCalcAxis`. The `DirectAxis` overrides the methods above to set there is no transform between relative and displacement values. The `BeamPathCalcAxis` uses the methods from the `TrackingBeamPathCalc` to calculate the various values. The axis pointing to the methods is not as clean as it should be; but it is unclear exactly how it should change.
+There are two sorts of axes, `DirectAxis` and the `BeamPathCalcAxis`. The `DirectAxis` defines the methods above such that there is no transform between relative and displacement values. The `BeamPathCalcAxis` uses the methods from the `TrackingBeamPathCalc` to calculate the various values. The axis object for tracking case points to the methods needed so is not as clean as it should be; but it is unclear exactly how it should change.
 
-In general a component is made from multiple axes and can respond to changes in those axes, the bench component does this for instance. The bench component has 3 user parameters height, angle and seesaw and these drives three drivers front jack, rear jack and slide. All of these changeable values are axes. To make this work the component monitors the  monitors for changes in the values and transforms the user parameters to the motor axes for set points and vice versa for read backs.
+In general a component is made from multiple axes and can respond to changes in those axes, the bench component does this for instance. The bench component has 3 user parameters height, angle and seesaw and these drives three drivers front jack, rear jack and slide. All of these changeable values are axes. To make this work the component listen for changes to the values and transform the value applying then to the other set of axes. E.g. if the jack motor moves the position is transformed to the height, angle and seesaw user parameters.
 
-The `InBeamManager` is used to coordinate whether a component is in the beam based on all of its axes. This can either be set from a user parameter in which case user axes get set or it can read from the motor axes for the readbacks.
+The `InBeamManager` is used to coordinate whether a component is in the beam based on all of its axes. This can either be set from a user parameter in which case user axes get set or it can read from the motor axes for the readbacks. A component is out of the beam only if all its motors are at their out of beam positions.
 
 The most complicated component is the `ThetaComponent` this has two beam calcs one for the readback `BeamPathCalcThetaRBV` and one for the setpoint `BeamPathCalcThetaSP`. The setpoint simply reflects the beam when it reaches the virtual sample point whereas the read back needs to calculate the angle of the component that it is pointed at. 
 
@@ -44,11 +43,11 @@ The final complication is that components that define where theta do not use the
 
 ### Events
 
-The whole system of readbacks, and to lesser extend setpoints, work on events being passed between the various classes. We have tried very hard not to bind the components to any of part of the system directly so that the component layer can act independently. To so this events are monitored with observers. This has mostly be successful but it does get slightly complicated what the events are and where the go so we will present what events we have and where they go for a typical beamline.
+The whole system of readbacks, and to lesser extend setpoints, work on events being passed between the various classes. We have tried very hard not to bind the components to any of part of the system directly so that the component layer can act independently. To so this events are listened to by the observing classes. This has mostly be successful but it does get slightly complicated to understand what the events are and where the go so we will present what events we have and where they go for a typical beamline.
 
 #### Defining, Triggering and Observing an Event
 
-The event is captured using a single class, this can be whatever you need but the trend at the moment is to use a data class (there are still quite a few named tuples about). For example:
+The event is captured using a single class, this can be whatever you need but the future direction is to use a data class (there are still some legacy named tuples). For example:
 
 ```
 @dataclass()
@@ -84,11 +83,36 @@ i_want_to_observe_this = IWantToObserveThis()
 i_want_to_observe_this.add_listener(my_callback)
 ```
 
-We use this pattern every where, so lets look at how a setpoint which is not in the mode gets to the motor:
+### Beamline Move Event
+
+A beamline can be moved by the user through three mechanisms (see [beamline object for more detail](Reflectometry-Beamline-Object)):
+
+1. A whole beamline move, in this case all setpoints that are in the mode or have changed are set in turn (i.e. sp becomes the sp:rbv)
+    - starts from code `Beamline._move_for_all_beamline_parameters`
+1. A single parameter can have its move activates, in this case this set point value is set and all mo
+    - starts from parameter but main part of the code is `Beamline._move_for_single_beamline_parameters`
+1. A single paratere is set (`SP` not `NO_ACTION`), this is like a set and then case 2.
+
+#### Beamline move events
 
 ![Beamline movement events](reflectometers/BeamlineMoveEvents.png)
 
+In all cases the move is a `set_relative` on the axis in question. Once the axis has been set correctly if it casuses the beampath to change then the `BeamPathUpdate` event in propogated. The beamline picks up this event and then propogates the beampath to the next component which triggers `BeamPathUpdate`, and so on until all components in turn have had their beampath updated. Note that this stops at the component layer the motors will not move until later all the events are processed.
+
+At some points the set point is used to calulcate the readback value, e.g. for components defining theta. In this case the events will also propagate through the RBV beampath sequence.
+
+#### Motor Readback Change Events
+
 ![Motor position update events](reflectometers/MotorReadbackChangeEvents.png)
 
+The motors can update in several ways that need propogating through the reflectometry IOC. All events are tied to PV monitors which trigger call backs. These callbacks could come in to the system very quickly and we can not afford to process each one so instead we put a callback for the event into a dictionary and just keep the last value recorded. Then in a loop the events are processed. This happens inside the `ProcessMonitorEvents` object. The events treated in this way are:
+
+1. `DMOV` update this is eventually propogated up the beamline parameters are parameter changing so that a green background can be displayed
+1. set point change, this is propogated to the IOC Driver so it is possible to determine if a move will occur (this avoid performing small unneeded moves)
+1. rbv change, this is propogated through the beamline sequence to calulcate the new positions of all the parameters.
+
+#### Beamline Readback Event Propogation
+
+![Readback sequence Events](reflectometers/ReadbackSequenceEvents.png)
 
 
