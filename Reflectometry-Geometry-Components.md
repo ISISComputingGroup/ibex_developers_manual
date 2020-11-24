@@ -115,4 +115,7 @@ The motors can update in several ways that need propogating through the reflecto
 
 ![Readback sequence Events](reflectometers/ReadbackSequenceEvents.png)
 
+The readbacks in each component axis are set based on a change in a single readback. This readback change in a component axis will cause the associated parameter to update, and in turn the relfectometry driver, this is more actual value and whether it is now at its setpoint. Then the component triggers a beam path update which will propagate the beamline to the next component, until all components are updated. 
+
+The only special case for this is theta readback also reacts to a `PhysicalMove` update of the component axis which theta depends on. This causes the beampath the be calculated starting at Theta. The beam path update event can not be reused because otherwise a circular loop would result.
 
