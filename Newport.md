@@ -1,6 +1,6 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > [Motor IOCs](Motor-IOCs) > [Newport](Newport)
 
-The Newport XPS-D is currently in use on Larmor to control 2 rotation stages. The IOC for this, `NWPRTXPS` uses the support already present in the motor support module.
+The Newport XPS-D is currently in use on Larmor to control 2 rotation stages. The IOC for this, `NWPRTXPS` uses the support already present in the motor support module. Like the galil, settings are saved into autosave rather than supplied as macros.
 
 ## Commissioning / First Time Configuration
 
