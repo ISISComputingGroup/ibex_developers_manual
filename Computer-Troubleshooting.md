@@ -24,6 +24,12 @@ smartsizing:i:1
 
 This may be solved by adding windows credentials on the machine. There is a document describing how to do this on ICP Discussions under "Security".
 
+## Cannot VNC into the machine
+
+Check the network is up (ping `NDX<INST>`).
+
+If it is, check the VNC service is running on the NDX machine (there should be a VNC icon in the task bar).
+
 ## Data fills up volume too rapidly on an Instrument
   (generating Nagios errors or disk full errors)
 
