@@ -28,13 +28,13 @@ Synchronisation in the configuration files defaults to `true`, but can be set on
 
 ### Out Of Beam Positions
 
-A `DisplacementDriver` (i.e. a driver looking at a translation axis) can specify out-of-beam positions, which define where a component should be parked along its movement axis if it is set to be "Out Of Beam" via an `InBeamParameter`. A driver can have an arbitrary number of out-of-beam positions. Which one is chosen depends on where the y height of the current beam path intersects with the movement axis of this component. Since in some instances, the beam can intersect with the entire range of a component's movement axis, this is done to ensure that component does not block the beam while parked. It is also possible to have the park position as a position offset from the beam, e.g. for INTERs mirror/guides which when out of the beam must track the beam to remain guide.
+Any IOC Driver can specify out-of-beam positions, which define where a component should be parked along its movement axis if it is set to be "Out Of Beam" via an `InBeamParameter`. A driver can have an arbitrary number of out-of-beam positions. Which one is chosen depends on where the y height of the current beam path intersects with the movement axis of this component. Since in some instances, the beam can intersect with the entire range of a component's movement axis, this is done to ensure that component does not block the beam while parked. It is also possible to have the park position as a position offset from the beam, e.g. for INTERs mirror/guides which when out of the beam must track the beam to remain guide.
 
 Out-of-beam positions are defined via the `OutOfBeamPosition` class. Example:
 ```
 park_high = OutOfBeamPosition(position=20)
 park_low = OutOfBeamPosition(position=-10, threshold=15, tolerance=0.5)
-driver = DisplacementDriver(comp, out_of_beam_positions=[park_high, park_low])
+driver = IOCDriver(comp, the_axis, out_of_beam_positions=[park_high, park_low])
 ```
 - `position`:  the position along the movement axis where this component should be parked, this will include any engineering correction; if this is in offset mode this is the offset from the beam
 - `threshold`: if the interception between the beam path and the movement axis is _above this height_, this `position` should be chosen as parked position. If this is `None`, this signifies that this is the _only_, or _default out-of-beam position_, i.e. the out-of-beam position to use if no other threshold is met. (defaults to `None`)
