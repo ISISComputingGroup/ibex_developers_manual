@@ -19,7 +19,7 @@ Beamline parameters represent high-level values a user may wish to set. They can
 
 Some axes are direct in that they set the position from a beam that can not move, e.g. TRANS. In this case the motor value and parameter values are the same since the beam is at zero. In the case of parameters in the plane where the beam can move this can be more complicated to think about here is a diagram of the set point and read back for cases where the beam in moving around (beam is read, component is white and set point is green):
 
-![Relative parameter with motor positions](reflecometers/RelativeParameterWithMotor.png)
+![Relative parameter with motor positions](reflectometers/RelativeParameterWithMotor.png)
 
 
 ## Theta Readback Calculation
