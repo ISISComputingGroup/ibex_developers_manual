@@ -26,15 +26,6 @@ As described in the physics background page ([Reflectometers Science](Reflectome
 1. Synchronised moves: To avoid clash conditions it is desirable that most axes move together so that they reach their final destinations at the same time. This means setting the velocity of the axis before a move is started. There is no initial requirement to actively monitor the motors themselves to ensure continual crash avoidance, e.g. in the event of a motor stall.
     - a caveat on this is that some axes should not be synchronised. Either because the motor velocities should not be changed (piezo motors) or they take a long time and have no clash conditions (e.g. multi-detector heights).
 
-## Important Definitions
-
-### Theta
-
-Theta is the angle that a sample would need to be set at to deflect the beam into the detector. The angle is measured at the point where the incoming beam, from the previous component, hits the movement axis; we call this the virtual sample point. The setpoint is coded by setting the outgoing beam and then all subsequent components use this to align themselve. For the readback there are two cases:
-
-1. Detector is on a linear slide, then theta is the angle of the line from the virtual sample point to the detector (exluding any detector relative position offset). NB It does not matter what angle the detector is pointing in when measuring theta
-2. Detector is on a bench, then theta is the angle of the bench (The bench pivots around the virtual sample point). NB It does not matter what height the bench is at when calculating theta.
-
 ## Design Details
 
 Reflectometry IOC sits on top of:
