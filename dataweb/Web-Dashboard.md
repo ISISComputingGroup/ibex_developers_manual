@@ -93,6 +93,10 @@ As admin open the "Task Scheduler" and end and run the "JSON Bourne" task (in ta
 
 If the instrument archive has never been restarted then the dataweb will fail to show any information and claim that the server hasn't been started. To fix this simple restart the instrument archive.
 
+### Page for Individual Instrument not Working
+
+[See here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Other-Troubleshooting/_edit#instrument-page-not-working-on-web-dashboard)
+
 ## Future Development Ideas
 
 * We need to improve the unit test coverage of this project. It would be worth looking into the [requests-mock](https://pypi.python.org/pypi/requests-mock) library as this would make it very easy to test server code which makes HTTP requests.
