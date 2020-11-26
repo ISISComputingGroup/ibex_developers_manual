@@ -42,6 +42,7 @@ The motors currently used at ISIS are:
 * [Beckhoff](Beckhoff)
 * [SM300](SM300)
 * [Attocube](Attocube)
+* [Newport](Newport)
 
 ## Common motor extras
 
