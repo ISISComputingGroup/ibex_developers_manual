@@ -21,6 +21,7 @@ Some axes are direct in that they set the position from a beam that can not move
 
 ![Relative parameter with motor positions](reflectometers/RelativeParameterWithMotor.png)
 
+First line of positions is linear axis and second line in rotational.
 
 ## Theta Readback Calculation
 
