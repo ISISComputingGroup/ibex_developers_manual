@@ -15,3 +15,10 @@ When the device is disconnected the motor PVs will report random values and will
 ## Troubleshooting
 
 You can move the device and see additional errors via the controller web interface. By stopping the IOC and moving it through the web interface you can confirm that the hardware is working correctly. You can also view this webpage whilst the IOC is driving it to see what values it's changing.
+
+If the axis does not get to the set value and you see:
+```
+SendAndReceive unexpected response =-17,GroupMoveAbsolute (Axis.Pos,380),EndOfAPI
+2020/11/26 17:12:35.129  Error performing GroupMoveAbsolute[0,0] -17
+```
+In the log then the axis is hitting the limit set in the controller, you can change this limit in the web interface under the stages tab and then editing the `.ini` file for stage and restarting the controller.
