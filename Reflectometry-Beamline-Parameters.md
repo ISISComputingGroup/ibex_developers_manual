@@ -15,19 +15,27 @@ Beamline parameters represent high-level values a user may wish to set. They can
 
 **For more information on implementation specifics see the [Reflectometry Configuration page](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Configuration#beamline-parameters)**
 
+## Example of Beam Offset Axis
+
+Some axes are direct in that they set the position from a beam that can not move, e.g. TRANS. In this case the motor value and parameter values are the same since the beam is at zero. In the case of parameters in the plane where the beam can move this can be more complicated to think about here is a diagram of the set point and read back for cases where the beam in moving around (beam is read, component is white and set point is green):
+
+![Relative parameter with motor positions](reflecometers/RelativeParameterWithMotor.png)
+
+
 ## Theta Readback Calculation
 
 The theta beam line parameter is special because it depends on other items in the beamline. All other components are independent except for the incoming beam from a previous component. 
 
-**Theta readback is**: Half the sum of the incoming angle and outgoing angle at the point where the incoming beam hits the sample axis (this is the axis in the theta component setup). The incoming beam is calculated from the component before the theta component. The outgoing angle is calculated by using the list of components set on the theta component in the configuration. It find the first component in that list which is in the beam, it then reads its actual position and takes away any setpoint offset.
+**Theta readback is**: Half the sum of the incoming angle and outgoing angle at the point where the incoming beam hits the theta movement axis, this point is called the virtual sample point; the point at which you should mount the same to make the relfection. The theta movement axis should usually be identical to the sample movement axis. The incoming beam is calculated from the component before the theta component. The outgoing angle is calculated by using a list of components set on the theta component in the configuration. It find the first component in that list which is in the beam, from this component it calulcates theta.: 
 
-For example, on CRISP it is the angle to the detector which is in the beam. If both detectors are in the beam the point detector is used. The offset to that detector is then taken away from the current position and this is the angle used to calculate theta. From a coding point of view, this means when the readback or setpoint position of a component in this list is updated then the readback is updated.
+1. Component is on a linear slide: Theta is angle to component. The height of the component is its actual position without any setpoint offset. Theta is the angle of the line from the virtual sample point to the component. NB It does not matter what angle this component is pointing in when calulcating theta.
+2. Component is on a bench: Theta is the angle of the bench; The bench pivots around the virtual sample point. NB It does not matter what height the bench is at when calculating theta.
 
+For example, on CRISP it is the angle to the first detector which is in the beam. If both detectors are in the beam the point detector is used. The offset to that detector is then taken away from the current position and this is the angle used to calculate theta. From a coding point of view, this means when the readback or setpoint position of a component in this list is updated then the readback is updated.
 
 ## Theta Setpoint Calculation
 
 The setpoint for theta is special because all it does is change the beam path it does not affect any underlying PVs. However in disabled mode, the incoming beam is no longer altered and this means changing theta would have no effect on the component it is pointing at, e.g. changing Theta would not alter the position of the detector. To fix this there is a special route to force an incoming beam path to be set. This should allow the component defining theta to move when theta is changed.
-
 
 ## Parameter Initialisation
 
@@ -43,3 +51,4 @@ In some cases, autosaved parameters are necessary. Example:
 ![Init Theta](reflectometers/sp_inits.png)
 
 Theta is defined by the angle between the sample point and the next component it is angled to (e.g. the point detector). However, the detector itself can also have an offset parameter that moves it to a given position relative to the beam. On intialisation we only have one value for the height of the detector, however we cannot tell which portion of that height comes from theta and which portion comes from the detector offset parameter without saving one of the two values.
+
