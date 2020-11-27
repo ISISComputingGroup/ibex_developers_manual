@@ -89,33 +89,33 @@ A beamline can be moved by the user through three mechanisms (see [beamline obje
 
 1. A whole beamline move, in this case all setpoints that are in the mode or have changed are set in turn (i.e. sp becomes the sp:rbv)
     - starts from code `Beamline._move_for_all_beamline_parameters`
-1. A single parameter can have its move activates, in this case this set point value is set and all mo
+1. A single parameter can have its move activates, in this case this set point value is set and beam line is calculated
     - starts from parameter but main part of the code is `Beamline._move_for_single_beamline_parameters`
-1. A single paratere is set (`SP` not `NO_ACTION`), this is like a set and then case 2.
+1. A single parametere is set (`SP` not `NO_ACTION`), this is like a set and then case 2.
 
 #### Beamline move events
 
 ![Beamline movement events](reflectometers/BeamlineMoveEvents.png)
 
-In all cases the move is a `set_relative` on the axis in question. Once the axis has been set correctly if it casuses the beampath to change then the `BeamPathUpdate` event in propogated. The beamline picks up this event and then propogates the beampath to the next component which triggers `BeamPathUpdate`, and so on until all components in turn have had their beampath updated. Note that this stops at the component layer the motors will not move until later all the events are processed.
+In all cases the move is a `set_relative` on the axis in question. Once the axis has been set correctly if it causes the beampath to change then the `BeamPathUpdate` event in propagated. The beamline picks up this event and then propagates the beampath to the next component which triggers `BeamPathUpdate`, and so on until all components in turn have had their beampath updated. Note that this stops at the component layer the motors will not move until later all the events are processed.
 
-At some points the set point is used to calulcate the readback value, e.g. for components defining theta. In this case the events will also propagate through the RBV beampath sequence.
+At some points the set point is used to calculate the readback value, e.g. for components defining theta. In this case the events will also propagate through the RBV beampath sequence.
 
 #### Motor Readback Change Events
 
 ![Motor position update events](reflectometers/MotorReadbackChangeEvents.png)
 
-The motors can update in several ways that need propogating through the reflectometry IOC. All events are tied to PV monitors which trigger call backs. These callbacks could come in to the system very quickly and we can not afford to process each one so instead we put a callback for the event into a dictionary and just keep the last value recorded. Then in a loop the events are processed. This happens inside the `ProcessMonitorEvents` object. The events treated in this way are:
+The motors can update in several ways that need propagating through the reflectometry IOC. All events are tied to PV monitors which trigger call backs. These callbacks could come in to the system very quickly and we can not afford to process each one so instead we put a callback for the event into a dictionary and just keep the last value recorded. Then in a loop the events are processed. This happens inside the `ProcessMonitorEvents` object. The events treated in this way are:
 
-1. `DMOV` update this is eventually propogated up the beamline parameters are parameter changing so that a green background can be displayed
-1. set point change, this is propogated to the IOC Driver so it is possible to determine if a move will occur (this avoid performing small unneeded moves)
-1. rbv change, this is propogated through the beamline sequence to calulcate the new positions of all the parameters.
+1. `DMOV` update this is eventually propagated up the beamline parameters are parameter changing so that a green background can be displayed
+1. set point change, this is propagated to the IOC Driver so it is possible to determine if a move will occur (this avoid performing small unneeded moves)
+1. rbv change, this is propagated through the beamline sequence to calculate the new positions of all the parameters.
 
-#### Beamline Readback Event Propogation
+#### Beamline Readback Event Propagation 
 
 ![Readback sequence Events](reflectometers/ReadbackSequenceEvents.png)
 
-The readbacks in each component axis are set based on a change in a single readback. This readback change in a component axis will cause the associated parameter to update, and in turn the relfectometry driver, this is more actual value and whether it is now at its setpoint. Then the component triggers a beam path update which will propagate the beamline to the next component, until all components are updated. 
+The readbacks in each component axis are set based on a change in a single readback. This readback change in a component axis will cause the associated parameter to update, and in turn the reflectometry driver, this is more actual value and whether it is now at its setpoint. Then the component triggers a beam path update which will propagate the beamline to the next component, until all components are updated. 
 
 The only special case for this is theta readback also reacts to a `PhysicalMove` update of the component axis which theta depends on. This causes the beampath the be calculated starting at Theta. The beam path update event can not be reused because otherwise a circular loop would result.
 
