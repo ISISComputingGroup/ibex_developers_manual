@@ -165,7 +165,7 @@ These objects link the middle-layer component model to low-level motors.
 #### Optional:
 - `synchronised`: Whether this driver should be able to alter axis velocity when multiple axes are being moved (used for synchronised beamline movement) (Default: `True`)
 - `engineering_correction`: any [corrections](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Composite-Driving-Layer#engineering-offset) that should be applied to the motor position (Default: `None`)
-- `out_of_beam_positions` (`DisplacementDriver` only): A list of possible [parked positions](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Composite-Driving-Layer#out-of-beam-positions) for this axis (Default: `None`)
+- `out_of_beam_positions`: A list of possible [parked positions](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Composite-Driving-Layer#out-of-beam-positions) for this axis (Default: `None`)
 - `pv_wrapper_for_parameter`: change the PV wrapper based on the value of a parameter. This needs a `PVWrapperForParameter(parameter, value_wrapper_map)` where
     - `parameter`: is the beamline parameter that the swap is based on
     - `value_wrapper_map`: is a dictionary of the value and the wrapper to use. If the parameter is at a value not in this list the original wrapper is used.
@@ -178,7 +178,7 @@ IocDriver(sm_component, ChangeAxis.ANGLE, MotorPVWrapper("MOT:MTR0102"))
 
 # with parked position
 sm_out_pos = OutOfBeamPosition(-20)
-DisplacementDriver(sm_component, MotorPVWrapper("MOT:MTR0101"), out_of_beam_positions=[sm_out_pos])
+IODriver(sm_component, ChangeAxis.POSITION, MotorPVWrapper("MOT:MTR0101"), out_of_beam_positions=[sm_out_pos])
 
 # With wrapper based on parameter
 IocDriver(s3_comp, ChangeAxis.POSITION, JawsCentrePVWrapper("MOT:JAWS3", is_vertical=True),
