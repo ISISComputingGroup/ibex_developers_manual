@@ -23,11 +23,11 @@ y - y_m = (z - z_m) tan \theta_m
 
 Where:
 
-z: is distance along the straight through beam
-y: is distance perpendicular to straight through beam
-theta: is the angle the axis/beam makes with the straight through beam
-_b: is subscript indicating the beam
-_m: subscript indicating the movement axis
+- z: is distance along the straight through beam
+- y: is distance perpendicular to straight through beam
+- theta: is the angle the axis/beam makes with the straight through beam
+- _b: is subscript indicating the beam
+- _m: subscript indicating the movement axis
 
 These can be substituted and rearrranged to give the interection point at:
 
