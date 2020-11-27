@@ -91,7 +91,7 @@ A beamline can be moved by the user through three mechanisms (see [beamline obje
     - starts from code `Beamline._move_for_all_beamline_parameters`
 1. A single parameter can have its move activates, in this case this set point value is set and beam line is calculated
     - starts from parameter but main part of the code is `Beamline._move_for_single_beamline_parameters`
-1. A single parametere is set (`SP` not `NO_ACTION`), this is like a set and then case 2.
+1. A single parameter is set (`SP` not `NO_ACTION`), this is like a set and then case 2.
 
 #### Beamline move events
 
