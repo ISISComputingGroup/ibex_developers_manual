@@ -29,7 +29,7 @@ Where:
 - _b: is subscript indicating the beam
 - _m: subscript indicating the movement axis
 
-These can be substituted and rearrranged to give the interection point at:
+These can be substituted and rearranged to give the intersection point at:
 
 ```
 z = 1/(tan \theta_m - tan \theta_b) * (y_b - y_m + z_m * tan \theta_m - z_b * tan \theta_b)
