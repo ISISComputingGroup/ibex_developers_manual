@@ -11,13 +11,20 @@ The image below shows a schematic of the inside of the block house for a typical
 - Different experiments may require different beamline setups which may affect the beam path. (e.g. adding a mirror in this instance)
 - Whenever the beam path is modified, we want equipment to automatically track the beam as appropriate for the currently active configuration. Coordinating motion at the beamline level in this way is the primary purpose of our reflectometry system.
 
+### Related pages for more detail
 
-Related pages for more detail:
-
-- [Setup and science behind the experiment](Reflectometers-Science)
-- [Reflectometers Beam Height Calculation](Reflectometers-Beam-Height-Calc)
+- [Setup and science behind the experiment](Reflectometers-Science): What science is trying to achieve
+- [Reflectometers Beam Height Calculation](Reflectometers-Beam-Height-Calc): Calculate motor positions easily
+- [Reflectometry-Configuration](Reflectometry-Configuration): Configuration documentation
 - [Reflectometry IOC](Reflectometry-IOC)
+- [Architecture](Reflectometry-IOC#design-details)
+    - [Beamline](Reflectometry-Beamline-Object): Coordinating object
+    - [User Parameters](Reflectometry-Beamline-Parameters): How user parameters work, including definition of theta
+    - [Components](Reflectometry-Geometry-Components): Calculation of positions from user parameters
+    - [Driving layer](Reflectometry-Composite-Driving-Layer): Driving of motors (including engineering corrections, synchronisation and out of beam positions)
 - [Reflectometry Testing](Reflectometry-Testing)
+
+
 
 ### Components in a mode
 
