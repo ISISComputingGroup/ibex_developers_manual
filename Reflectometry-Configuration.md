@@ -355,6 +355,16 @@ Add jaws-specific parameters and related drivers for a given jawset, i.e. horizo
 - `include_centres`: Whether parameters for centres should be created or gaps only (default: `False`)
 - `beam_blocker`: string containing code for beam blocker config, `N`, `S`, `E`, `W` for each blade which blocks the beam
 
+### `as_mode_correction`
+Helper method for you define a constant correction to be applied for specific modes only.
+
+#### Required arguments:
+- `correction`: The constant offset to apply as a correction, e.g. `-1.5`
+- `modes`: A list of names for modes for which this correction should apply, e.g. `["PNR", "PA"]`
+
+#### Optional arguments:
+- `default`: The correction to apply for modes not in the list for `modes` (defaults to `0.0`)
+
 ### `get_configured_beamline`
 
 Returns the whole configured beamline object constructed from the parts added via the above helper methods
