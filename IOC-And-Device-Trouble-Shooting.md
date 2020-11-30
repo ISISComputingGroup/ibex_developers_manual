@@ -135,7 +135,9 @@ The result was a `UDF` alarm on the `bi` because the `RVAL` wasn't being updated
 
 ## IOC Crashes on debug the exception in "Unhandled exception at ... : Stack cookie instrumentation code detected a stack-based buffer overrun."
 
-This is caused when something bad happens to the stack. There are many underlying causes to this, in my case it was that the IOC had loaded a dll which used an incorrect version of visual studio in its build. The dlls that are loaded (with their paths) can be seen in debug -> Windows -> Modules in VS. To check if it is this error delete the offending dll and try the process again. To fix the error convert the IOC to use build dependencies instead of the master release list, instructions are in [Reducing Build Dependencies](Reducing-Build-Dependencies)
+This is caused when something bad happens to the stack. There are many underlying causes to this, in my case it was that the IOC had loaded a dll which used an incorrect version of visual studio in its build see [here](https://docs.microsoft.com/en-us/cpp/c-runtime-library/potential-errors-passing-crt-objects-across-dll-boundaries?view=msvc-160). The dlls that are loaded (with their paths) can be seen in debug -> Windows -> Modules in VS. To check if it is this error delete the offending dll and try the process again. To fix the error convert the IOC to use build dependencies instead of the master release list, instructions are in [Reducing Build Dependencies](Reducing-Build-Dependencies)
+
+In some cases you may be using a vendor DLL and have no control over which version of VS it is built with. If this is the case you may get an access violation when freeing memory allocated by the DLL. The easiest way round this if there is no way to rebuild the DLL is just to take the memory hit of not freeing the resource.
 
 ## Log shows `currentTime::getCurrentTime(): XXX sec time discontinuity detected`
 
