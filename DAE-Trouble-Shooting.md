@@ -76,11 +76,11 @@ Two possible ways to fix it are:
 1) Restarting the DAE rack server
  
 1) Via NI MAX, using the following steps:
-    a) Connect to the DAE rack server via Remote Desktop from the NDX machine (the machine should be listed in the Remote Desktop dialog)
-    b) Run NI MAX on the DAE rack server
-    c) Under Software->NI-VISA X.X.X,  select VISA Server and click "Stop server now"
-    d) Under "Devices and Interfaces", select "VXI System" and click "Run the VXI Resources Manager.
-    e) Finally, repeat b) but click "Start server now"
+    1) Connect to the DAE rack server via Remote Desktop from the NDX machine (the machine should be listed in the Remote Desktop dialog)
+    1) Run NI MAX on the DAE rack server
+    1) Under Software->NI-VISA X.X.X,  select VISA Server and click "Stop server now" (if you cannot see this button you may be on the wrong tab)
+    1) Under "Devices and Interfaces", select "VXI System" and click "Run the VXI Resources Manager.
+    1) Finally, repeat b) but click "Start server now"
 
 ### Blocks not being added to Nexus file
 This should not occur but has when a database was missing our extra column in the archive. If the sample table in the archive is missing a sample_id, run the following. Note that it can take a while on a database with a large number of rows in that table.
