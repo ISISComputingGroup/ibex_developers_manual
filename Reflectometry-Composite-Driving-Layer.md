@@ -187,6 +187,7 @@ add_driver(AxisDriver( component, ChangeAxis.POSITION, PVWrapper,
 ```
 Here the correction will be by a user function in `NR` mode, by a constant of -0.2 in `PA` mode and a correction of 1 in any other mode.
 
+There is also a [helper method](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Configuration#as_mode_correction) for easily creating mode specific constant corrections.
 
 #### User Specified
 
