@@ -109,7 +109,31 @@ The script generator will be configured by loading in a script definition file. 
 
 This script definition file will define the available `Action`s, and will be editable by the instrument scientists. Each instrument that uses the script generator will need at least one script definition file (maybe more if they have different experimental setups which require very different scripts).
 
-# How Repo is Updated on Start
+## Workflow for editing script definitions
+
+The workflow for creating or modifying script definitions is:
+1. The instrument scientist creates a new or edits an existing a script definition using a text editor (e.g. Notepad++).
+1. The instrument scientist saves the script definition:
+   1. if using his/her office (or cabin or home) PC, the script is saved locally (to a directory of the scientist's choosing)
+   1. if using the instrument control PC, the script is saved `<where?>` (to a directory of the scientist's choosing?)
+1. The instrument scientist transfers the saved script definition to the script definition repository.
+   * the scientist will use a command (in practice a python or batch script) to perform the transfer
+   * the command will print a message to inform the instrument scientist of success or failure of the save operation
+1. If the transfer:
+   1. succeeds: the scientist need do nothing more
+   1. fails: the scientist should contact the Experiment Controls group for support.
+
+Notes:
+1. We expect instrument scientists to create/modify script definitions.  We do not expect users to create/modify script definitions.  We should advise instrument scientists not to allow users to create/modify script definitions.
+1. We will create a python/batch script to manage transfer of saved scripts to the git repository
+1. We will prevent instrument scientists from committing as `spudulike`, the script will have to ask for a username (e.g. `fedID`) and password to commit with
+1. Script will generate a commit message that identifies that the push was done by the script (i.e. to help us to identify situations in which someone has tried to circumvent the script by using git commands directly)
+1. Script will prevent the user from setting username and password to use all the time for pushing to this repository
+1. The script will do: pull, add, commit and push to master
+1. Must have git and python installed
+1. Must have access to repository origin
+
+## How Script Definitions Repo is Updated on Start
 
 ![](script_generator/UpdateRepoFlowDiagram.png)
 
