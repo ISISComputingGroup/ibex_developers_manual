@@ -53,8 +53,6 @@ In the settings area, create `C:\Instrument\Settings\config\NDWxxxx\configuratio
 </banner>
 ```
 
-*Note: the following will apply once https://github.com/ISISComputingGroup/IBEX/issues/3562 is merged*
-
 Once this ticket is merged, all instruments should have a `C:\Instrument\Settings\config\NDWxxxx\configurations\banner.xml`, and the stop motors button will have been moved from the GUI code into `banner.xml`. A typical example of this file is as follows:
 ```xml
 <?xml version="1.0" ?>
