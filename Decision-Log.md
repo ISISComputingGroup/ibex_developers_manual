@@ -75,50 +75,7 @@ A place to record decisions:
     - Present: Bish, Dom, John, Thomas L and Tom W
     - 13/11/2020
 
-24. How to manage script definitions for the script generator, decided as part of https://github.com/ISISComputingGroup/IBEX/issues/5754
+24. How to manage script definitions for the script generator. See ticket https://github.com/ISISComputingGroup/IBEX/issues/5754 for newly decided workflow and actions and tickets to be carried out
 
-The workflow for creating or modifying script definitions is:
-1. The instrument scientist creates a new or edits an existing a script definition using a text editor (e.g. Notepad++).
-1. The instrument scientist saves the script definition:
-   1. if using his/her office (or cabin or home) PC, the script is saved locally (to a directory of the scientist's choosing)
-   1. if using the instrument control PC, the script is saved `<where?>` (to a directory of the scientist's choosing?)
-1. The instrument scientist transfers the saved script definition to the script definition repository.
-   * the scientist will use a command (in practice a python or batch script) to perform the transfer
-   * the command will print a message to inform the instrument scientist of success or failure of the save operation
-1. If the transfer:
-   1. succeeds: the scientist need do nothing more
-   1. fails: the scientist should contact the Experiment Controls group for support.
-
-Notes:
-1. We expect instrument scientists to create/modify script definitions.  We do not expect users to create/modify script definitions.  We should advise instrument scientists not to allow users to create/modify script definitions.
-1. We will create a python/batch script to manage transfer of saved scripts to the git repository
-1. We will prevent instrument scientists from committing as `spudulike`, the script will have to ask for a username (e.g. `fedID`) and password to commit with
-1. Script will generate a commit message that identifies that the push was done by the script (i.e. to help us to identify situations in which someone has tried to circumvent the script by using git commands directly)
-1. Script will prevent the user from setting username and password to use all the time for pushing to this repository
-1. The script will do: pull, add, commit and push to master
-1. Must have git and python installed
-1. Must have access to repository origin
-
-We will do the following:
-
-- Repository storage
-  - We will investigate the use of the site gitlab instance
-    - This instance should allow people with a fed id to be able to edit scripts, preventing us from the need to manage who is authorised
-  - Alternative is to use our own git instance
-  - This must be available for external users of the script generator
-- Develop structure of the repository
-  - Similar to the instrument scripts directory have folders for instruments and common areas
-  - The script generator itself must be changed to recognise that this is no longer a flat filesystem
-- We need to know where script definitions are stored on an instrument
-  - This should be standardised: have a preference for using C:\Instrument\Settings... and fall back onto a folder in the same directory as the executable
-  - This should be written down in the wiki once standardised and deployed
-- As we are using a similar workflow to the instrument scripts we will have similar issue
-  - We should write an automated service that checks for any uncommitted changes on instruments similar to https://github.com/ISISComputingGroup/IBEX/issues/5907
-
-Tickets to carry out the work:
-
-- https://github.com/ISISComputingGroup/IBEX/issues/5935
-- https://github.com/ISISComputingGroup/IBEX/issues/5936
-- https://github.com/ISISComputingGroup/IBEX/issues/5937
-- https://github.com/ISISComputingGroup/IBEX/issues/5938
-- https://github.com/ISISComputingGroup/IBEX/issues/5939
+- Present: @Kevin-Woods-Tessella @John-Holt-Tessella @DominicOram @FreddieAkeroyd @ThomasLohnert @Tom-Willemsen
+- Date: 01/12/2020
