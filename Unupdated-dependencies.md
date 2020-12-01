@@ -11,6 +11,9 @@ This page lists some dependencies which we are not updating for various reasons:
 | `numpy` | 1.16.6 | 1.18.1 | Newer version requires python 3 |
 | `xmlrunner` | 2.5.2 | 3.0.1 | Newer version requires python 3 |
 | `stomp.py`  | 2.24.0 | 6.1.0 | Newer version requires python 3 |
+| `mock`      | 3.0.5  | 4.0.2 | Newer version requires python 3 |
+| `h5py`      | 2.10.0 | 3.1.0 | Newer version requires python 3 |
+| `configparser` for `pylint` | 4.0.2 | 5.0.1 | Newer version requires python 3 |
 
 # Python 3
 
