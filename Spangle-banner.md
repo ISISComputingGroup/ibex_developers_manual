@@ -14,8 +14,6 @@ This description is served as hexed compressed JSON. The items in the list are:
 
 The way that the PVs are displayed in the GUI depends on the alarm state of the PV.
 
-*Note: the following will apply once https://github.com/ISISComputingGroup/IBEX/issues/3562 is merged*
-
 This ticket introduces the ability to add custom buttons, as well as the original items which display a PV. For displays, a new parameter has been added:
 - `width`: the width of the item in pixels when displayed in the GUI (limited to between 10 and 500)
 
