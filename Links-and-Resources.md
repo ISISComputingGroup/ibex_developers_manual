@@ -15,6 +15,7 @@
 - [Instrument sharepoint site](http://www.facilities.rl.ac.uk/isis/computing/instruments/Instrument%20Documents/Forms/AllItems.aspx) contains passwords and instrument definition 
 
 - [EPICS Channel access explained](http://www.aps.anl.gov/epics/docs/CAproto.html)
+- [EPICS Channel access explained 2 (presentation)](https://epics.anl.gov/docs/APS2014/08-Database-Principles.pdf): nice bit on `NMS`, `MS`, `MSS`, `MSI`
 
 - [HDF5 Viewer for Nexus files](https://www.hdfgroup.org/downloads/hdfview#obtain)
 ## Links
