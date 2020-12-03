@@ -27,30 +27,24 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
 
 # Rotas
 
-| Chair | x for Done | Timekeeper | x for Done | Note taker | x for Done | Stand up | x for Done |
+| Chair | x for Done | Timekeeper | x for Done | Note taker | x for Done |Standup | x for Done |
 | --- | --- | --- | --- | --- | --- |--- | --- |
-| KB | x | DK | x | CC | x |KB| x |
-| FA | x | JK | x | BR | x |CC| x |
-| DO | x | CC | x | JK | x |FA| x |
-| JK | x | BR | x | TL | x |TL| X |
-| TL | x | KB | x | KB | |AD| X |
-| DK | x | FA | x | MS | |DO| X |
-| KB | x | TL | x |  | |DK| X |
-| FA | x | CMS | x |  | |JK| X |
-| DO | x | BR | x |  | |TL| X |
-| DK | x | CC | x |  | |BR| x |
-| KB | x | MS | x |  | |CC| x |
-| DO | | AL | |  | |DK| x |
-| TL | | FA | |  | |DO| x |
-| CC | | DK | |  | |KB| x |
-| FA | | DO | |  | |JK| x |
-| BR | | AL | |  | |DK| X |
-| JK | | CMS | |  | |FA| x |
-| AL | | DO | |  | |DO| |
-|  | |  | |  | |MS| |
-|  | |  | |  | |AL| |
-|  | |  | |  | |CMS| |
-|  | |  | |  | |BR| |
-|  | |  | |  | |TL| |
-|  | |  | |  | |FA| |
-|  | |  | |  | |KB| |
+| DK | x | CC | x | TL | x |FA | x |
+| KB | x | MS | x | KB |  |DO | x |
+| FA |  | DO |  | DK |  |TL |  |
+| CMS |  | JK |  | JH |  |KB |  |
+| DO |  | FA |  | DO |  |CMS |  |
+| BR |  | JH |  | MS |  |BR |  |
+| TL |  | CC |  |  |  |FA |  |
+| KB |  | DO |  |  |  |JH |  |
+| CC |  | TL |  |  |  |DO |  |
+| FA |  | MS |  |  |  |DK |  |
+| TL |  | KB |  |  |  |MS |  |
+| DK |  | CMS |  |  |  |FA |  |
+| KB |  | DK |  |  |  |KB |  |
+| JK |  | AL |  |  |  |TL |  |
+| JH |  | FA |  |  |  |DO |  |
+| DO |  | BR |  |  |  |FA |  |
+|  |  |  |  |  |  |AL |  |
+|  |  |  |  |  |  |JH |  |
+|  |  |  |  |  |  |KB |  |
