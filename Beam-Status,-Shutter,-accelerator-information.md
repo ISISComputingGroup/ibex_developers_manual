@@ -19,6 +19,7 @@ you will see a line like
 ```
 231601FE ISISBEAM        HIB      6   346363   0 00:01:10.27      3907   2860 M
 ```
+[_ISISBEAM_1_ is a sub-process and can be ignored]
 The first number is the process id, in this case type
 ```
 stop /id=231601FE
