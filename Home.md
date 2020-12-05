@@ -17,7 +17,7 @@
   * [Guidance on specific devices](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Specific-Device-IOC)
 - [genie_python](genie_python): genie_python, scripting language and python framework
 - [IBEX Mini-inst Server](Configure-Mini-Inst): The mini-inst is an ibex server which only runs a fixed and small number of IOCs and processes (usually without a block server or archiver)
-- [Accelerator Information Forwarder](Beam-Status,-Shutter,-accelerator-information): Forwards information about the state of the accelerator and various other bits of centralised data into EPICS.
+- [Accelerator Information Forwarder](Beam-Status,-Shutter,-accelerator-and-moderator-information): Forwards information about the state of the accelerator and various other bits of centralised data (moderators, shutters etc) into EPICS for IBEX and SECI.
 - [Dataweb](Web-Dashboard): Information regarding the architecture of the instrument web pages.
 - [Project tools](Project-tools): Information on the project tooling, version control and continuous integration.
 
