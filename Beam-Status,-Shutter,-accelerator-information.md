@@ -17,12 +17,13 @@ pipe sh sys | sea sys$input isisbeam
 ```
 you will see a line like
 ```
-231601FE ISISBEAM        HIB      6   346363   0 00:01:10.27      3907   2860 M
+26E12DAA ISISBEAM        LEF      6   132040   0 00:00:01.40       284    241
+26F991FC ISISBEAM_1      HIB      4  2416385   0 00:08:24.20      9589   3173 MS
 ```
 [_ISISBEAM_1_ is a sub-process of ISISBEAM and will die when you kill _ISISBEAM_]
 The first number is the process id, in this case type
 ```
-stop /id=231601FE
+stop /id=26E12DAA
 ```
 to kill it, then wait for it to restart (may take up to 30 seconds). Use the above `pipe` command to see then it has restarted, and then check isisbeam.log again. Look for messages after the `Starting iocInit` line in the file  
 
@@ -36,16 +37,27 @@ a line like
 ```
 beam_ions        float    t  0    IDTOR::IRT1:CURRENT
 ```
-means asyn parameter `beam_ions` (in the IOC Db files) is mapped to VISTA parameter `IDTOR::IRT1:CURRENT`. The other columns are related to data type and how the programs tries to check for state values. If the `isisbeam.log` indicated a huge number of errors for a particular parameter, then this could affect reading other parameters - after a certain number of errors the program restarts, but if it starts restarting too frequently this can cause PVs never to reconnect properly. In that case you may need to temporarily remove a line, but seek advice first. 
+means asyn parameter `beam_ions` (in the IOC Db files) is mapped to VISTA parameter `IDTOR::IRT1:CURRENT`. The other columns are related to data type and how the programs tries to check for stale (non updating) values. If the `isisbeam.log` indicated a huge number of errors for a particular parameter, then this could affect reading other parameters - after a certain number of errors the program restarts, but if it starts restarting too frequently this can cause PVs never to reconnect properly. In that case you may need to temporarily remove a line, but seek advice first. 
 
 You can read the VISTA parameter directly on MERECKX if you think the issue is with the IOC e.g.
 ```
 db_access IDTOR::IRT1:CURRENT
 db_access t1shut::n1_overview:sta
 ```
+you can search for errors about a particular parameter by e.g.
+```
+sea isisbeam.log IDTOR::IRT1:CURRENT
+```
+If you killed the `ISISBEAM` process above it has restarted, then the `isisbeam.log` file will only contain values since that restart. you can look at the previous log file by adding `;-1` to the file name
+```
+sea isisbeam.log;-1 IDTOR::IRT1:CURRENT
+```
+To see all log file versions type `dir isisbeam.log`
 
-If something does appear to have gone wrong with this service you should get in touch with the accelerator controls group. The easiest way to do this is to call the MCR.
+If something does appear to have gone wrong with this service (e.g. values are not updating) you should get in touch with the _accelerator controls group_. The easiest way to do this is to call the MCR and find out who is on call.
 
 ## Value shows zero in IBEX/SECI but non-zero with `db_access`
 
 If the third column in `params.txt` contains a `z` (e.g. `tz`) then this means that the parameter will be monitored for a stale (non updating) state and if this is detected it will send 0 as the value to IBEX/SECI. At time of writing this had only been requested for the decoupled methane, sending 0 when the value is uncertain means they will go into a WAITING state as they run control on methane temperature and it is important that they are not collecting data when a methane charge-change happens. In future the value could be EPICS alarmed, but for SECI instruments we need to send 0
+
+You can confirm a value is not updating by running `db_access` on it a few times with a reasonable time delay inbetween. The methane moderator temperature for example would not be expected to remain exactly the same to two decimal places over an extended time period.  
