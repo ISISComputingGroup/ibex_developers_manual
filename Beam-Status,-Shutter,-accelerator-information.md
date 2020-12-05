@@ -19,7 +19,7 @@ you will see a line like
 ```
 231601FE ISISBEAM        HIB      6   346363   0 00:01:10.27      3907   2860 M
 ```
-[_ISISBEAM_1_ is a sub-process and can be ignored]
+[_ISISBEAM_1_ is a sub-process of ISISBEAM and will die when you kill _ISISBEAM_]
 The first number is the process id, in this case type
 ```
 stop /id=231601FE
@@ -45,3 +45,7 @@ db_access t1shut::n1_overview:sta
 ```
 
 If something does appear to have gone wrong with this service you should get in touch with the accelerator controls group. The easiest way to do this is to call the MCR.
+
+## Value shows zero in IBEX/SECI but non-zero with `db_access`
+
+If the third column in `params.txt` is `tz` then this means that the parameter will be monitored for a stale (non updating) state and if this is detected it will send 0 as the value to IBEX/SECI. At time of writing this had only been requested for the decoupled methane, sending 0 when the value is uncertain means they will go into a WAITING state as they run control on methane temperature and it is important that they are not collecting data when a methane charge-change happens. In future the value could be alarmed, but for SECI we need to send 0     
