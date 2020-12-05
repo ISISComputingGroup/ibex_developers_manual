@@ -61,3 +61,24 @@ If something does appear to have gone wrong with this service (e.g. values are n
 If the third column in `params.txt` contains a `z` (e.g. `tz`) then this means that the parameter will be monitored for a stale (non updating) state and if this is detected it will send 0 as the value to IBEX/SECI. At time of writing this had only been requested for the decoupled methane, sending 0 when the value is uncertain means they will go into a WAITING state as they run control on methane temperature and it is important that they are not collecting data when a methane charge-change happens. In future the value could be EPICS alarmed, but for SECI instruments we need to send 0
 
 You can confirm a value is not updating by running `db_access` on it a few times with a reasonable time delay inbetween. The methane moderator temperature for example would not be expected to remain exactly the same to two decimal places over an extended time period. You can view the typical value and variation in an accelerator parameter by following the links on values at [http://beamlog.nd.rl.ac.uk/status.xml](http://beamlog.nd.rl.ac.uk/status.xml) 
+
+## Checking channel access on MERCKX
+if you type
+```
+dir [--.db]
+```
+you will see all the db files used by the program, you can display one to screen using e.g.
+```
+type/page [--.db]isisbeam.db
+```
+On MERCKX `$(P)` is "" so there is no prefix to PVs you see listed. To use `caget` you first need to set an epics address list as broadcasts do not work (they require privileges). So type
+```
+def EPICS_CA_ADDR_LIST merckx
+```
+and then you can use `caget` on values e.g.
+```
+caget TG:TS2:DMOD:METH:TEMP
+```
+  
+
+ 
