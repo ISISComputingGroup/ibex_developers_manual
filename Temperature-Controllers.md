@@ -3,7 +3,7 @@
 * [Eurotherm](Eurotherm)
 * [ITC 503](ITC-503)
 * [Induction furnace](Induction-furnace)
-* [Ral Furnace 3](Ral-furnace-3)
+* [Ral Furnaces](Ral-furnaces)
 * [Julabo](Julabo)
 * Lakeshore 218
 * [Lakeshore 336](Lakeshore336)
