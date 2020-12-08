@@ -2,6 +2,9 @@
 
 ## General
 
+### Motors are hitting a hard limit in an unexpected place
+This implies that the controller has lost it's positions. The best thing to here is to rehome the axis. This can be done by selecting the offending motor in the table of motors and pressing the home button.
+
 ### Position needs to be restored 
 
 Positions of the motor can be restored/set without setting an offset. These can be needed if the motor power cycles for example on a power cut. The recommendation is to do a home if possible but if not the position can be set without this.
