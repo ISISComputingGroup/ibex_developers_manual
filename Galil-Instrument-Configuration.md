@@ -8,7 +8,7 @@ The following settings are configured in this way:
 - [Galil Controller Config](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Galil#startup)
 
 ### Optional extensions:
-- [Aliased Axes](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Axis)
+- [Axis (Alias)](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Axis)
 - [Barn Doors](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Barndoors-and-Momentum-Slits-on-MUON-Front-End)
 - [Bump Strip](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Bump-Strip)
 - [Jaws](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Jaws)
