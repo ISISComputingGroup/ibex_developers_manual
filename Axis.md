@@ -1,5 +1,7 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > [Motor IOCs](Motor-IOCs) > [Axis](Axis) 
 
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > [Motor IOCs](Motor-IOCs) > [Galil](Galil) > [Galil Instrument Configuration](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Galil-Instrument-Configuration) > Axis
+
 
 Axis records add a layer of indirection between the user and the low level motor. This means if the underlying motor needs to change it only need to change in one place, all blocks, motion set points etc use this axis and so don't need to change.
 
