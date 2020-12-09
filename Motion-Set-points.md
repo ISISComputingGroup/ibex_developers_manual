@@ -1,4 +1,6 @@
-> [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > [Motor IOCs](Motor-IOCs) > [Motion Set points](Motion-Set-points)
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > [Motor IOCs](Motor-IOCs) > Motion Set Points
+
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > [Motor IOCs](Motor-IOCs) > [Galil](Galil) > [Galil Instrument Configuration](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Galil-Instrument-Configuration) > Motion Set Points
 
 Motion set points allow you to label set positions for any number of axis, though currently db files are only created for single, double or 10 axes. Other numbers of axis can also be easily created by following the example of these. The code for this is in support in the directory [motionSetPoints](https://github.com/ISISComputingGroup/EPICS-motionSetPoints). The configuration for a motion set point is in a number of parts:
 
