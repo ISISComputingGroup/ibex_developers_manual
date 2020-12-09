@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > [Motor IOCs](Motor-IOCs) > [Galil](Galil) > [Galil Instrument Configuration](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Galil-Instrument-Configuration) > Bump Strip
+
 Some instruments use bump strips as a safety feature. These are sensors placed on the physical beamline, which "trip" when touched, killing all motion immediately. They can plug into digital input ports on the Galil which then reads `0` for TRIPPED and `1` for NOT TRIPPED. Which port this is is specific to the instrument and you may have to talk to the scientists to find out.
 
 At the moment, we do not handle the safety aspect of it in software (i.e. disable setting positions on axes), we just provide indicators in the GUI.
