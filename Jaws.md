@@ -1,5 +1,7 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [Jaws and Slits](Jaws-and-slits) > [General Jaws](Jaws)
 
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > [Motor IOCs](Motor-IOCs) > [Galil](Galil) > [Galil Instrument Configuration](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Galil-Instrument-Configuration) > Jaws
+
 The jaws are an abstraction layer in the form of a set of records that can be placed onto 4 motors which represent the North, South, East and West blade. They will allow a centre and gap to be set in both horizontal and vertical directions. It is a requirement that if an underlying motor position is set then the gap and centre should adjust to be in sync.
 
 The jaws are a `.db` record which can be added to most motors. The `.db` is assembled from records for individual jaw blades, and header records which describe the jawset as a whole (e.g. the overall lock status depending on the lock status of each individual blade). They are loaded via a `jaws.cmd` file in the configuration area which is read by the motor IOCs. The exact location is dependent on the type of motor.
