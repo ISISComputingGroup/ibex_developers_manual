@@ -1,5 +1,8 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > Barndoors and momentum slits on MUON Front End
 
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > [Motor IOCs](Motor-IOCs) > [Galil](Galil) > [Galil Instrument Configuration](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Galil-Instrument-Configuration) > Barndoors and momentum slits on MUON Front End
+
+
 The Muon front end feeds three instruments (MUSR,EMU and HIFI). It controls the moment and number of neutrons to the experiments.  Momentum is controlled by a single momentum slit device connected to a Galil motor controller.  The exposure for each of the three instruments is controlled separately by 3 barndoor-type slits, also each connected to a Galil.
 
 ## Momentum Slits
