@@ -16,3 +16,5 @@ The device itself has a large amount of functionality, however the IOC (and corr
 - Set and read maximum heater power as a percentage
 
 Terminators are `CR LF`
+
+Device uses a 9-way male serial cable (female connector on device) and requires a null modem.
