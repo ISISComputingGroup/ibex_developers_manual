@@ -17,4 +17,4 @@ The device itself has a large amount of functionality, however the IOC (and corr
 
 Terminators are `CR LF`
 
-Device uses a 9-way male serial cable (female connector on device) and requires a null modem.
+Device uses a 9-pin male serial cable (female connector on device) and requires a null modem.
