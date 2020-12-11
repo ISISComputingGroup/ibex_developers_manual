@@ -7,11 +7,12 @@
 | Squish Tests | Database Server |
 | Block Cache | Script Generator |
 | Collision Avoidance Monitor | Block Server to Kafka |
-| Remote IOC Server | IBEX utils |
-| IBEX Wiki check | System tests |
+| IBEX Wiki check | IBEX utils |
+| | System tests |
 | | Instrument Scripts
 | | Reflectometry Server
 | | Device Emulators |
-| | Block Server 
+| | Block Server |
+| | Remote IOC server |
 
 
