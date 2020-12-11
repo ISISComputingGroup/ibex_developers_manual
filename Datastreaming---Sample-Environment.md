@@ -10,7 +10,7 @@ The instrument name for the BlockServerToKafka service is `BSKAFKA`.
 ### Forwarder
 This is a Python program responsible for taking the EPICS data and pushing into Kafka. ISIS currently has two instances of the forwarder running (one for the production and one for development). They are both running as services (Developer Forwarder and Production Forwarder) on NDADATASTREAM, which can be accessed via the `ibexbuilder` account. The configuration files and logs for these forwarders are located in `C:\Forwarder\dev_forwarder` and `C:\Forwarder\prod_forwarder`.
 
-Source for the forwarder is available [here](github.com/ess-dmsc/forwarder)
+Source for the forwarder is available [here](https://github.com/ess-dmsc/forwarder)
 
 On NDADATASTREAM the forwarder is run as a service with `nssm` - this is responsible for things like log file rotation and configuring which config files are used with the forwarder. To edit these services run `nssm edit ProdForwarder` or `nssm edit DevForwarder` which will open a GUI for doing so. 
 To start/stop/restart the services use `nssm [start/stop/restart] [service name]` 
