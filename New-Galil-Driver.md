@@ -51,3 +51,7 @@ Under the new driver:
 ### Tests specific to areas the new driver has changed
 - [ ] Turn on WLP, physically press a limit switch and confirm that you cannot move the motor in either direction **WLP now appears to not work**
 - [x] Set both soft limits to zero, confirm that you can move. **Movement is possible but all motor fields go into an alarm state**
+
+### Test Communication Errors
+- [ ] Turn off Galil control and start IOC: IOC should report comms error on all motors
+- [ ] Connect IOC and then turn off galil: IOC should report comms error on all motors
