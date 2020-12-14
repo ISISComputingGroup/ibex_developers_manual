@@ -20,7 +20,7 @@ MACS is probably the most interesting muon script generator. A brief overview of
 
 **Note:**<br>
 MACS can only run on a real instrument, with a copy of SECI and working communication to hardware.  It _**cannot**_ be run offline.
-Furthermore, because the instruments (ARGUS & CHRONUS) are used in-cycle, the development team can only use it out-of-cycle.
+Furthermore, because the instruments (ARGUS & CHRONUS) are used in-cycle, the development team can only use MACS out-of-cycle.
 
 ### INTER
 
