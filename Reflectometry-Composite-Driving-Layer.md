@@ -28,7 +28,7 @@ Synchronisation in the configuration files defaults to `true`, but can be set on
 
 ### Out Of Beam Positions
 
-Any IOC Driver can specify out-of-beam positions, which define where a component should be parked along its movement axis if it is set to be "Out Of Beam" via an `InBeamParameter`. A driver can have an arbitrary number of out-of-beam positions. Which one is chosen depends on where the y height of the current beam path intersects with the movement axis of this component. Since in some instances, the beam can intersect with the entire range of a component's movement axis, this is done to ensure that component does not block the beam while parked. It is also possible to have the park position as a position offset from the beam, e.g. for INTERs mirror/guides which when out of the beam must track the beam to remain guide.
+Any IOC Driver can specify out-of-beam positions, which define where a component should be parked along its movement axis if it is set to be "Out Of Beam" via an `InBeamParameter`. A driver can have an arbitrary number of out-of-beam positions. Which one is chosen depends on where the y height of the current beam path intersects with the movement axis of this component. Since in some instances, the beam can intersect with the entire range of a component's movement axis, this is done to ensure that component does not block the beam while parked. It is also possible to have the park position as a position offset from the beam, e.g. for INTERs mirror/guides which when out of the beam must track the beam to remain guide. In addition to this the user can supply a parking sequence which will cause the instrument to park and unpark a component using the supplied positions. 
 
 Out-of-beam positions are defined via the `OutOfBeamPosition` class. Example:
 ```
@@ -44,6 +44,19 @@ driver = IOCDriver(comp, the_axis, out_of_beam_positions=[park_high, park_low])
 So moving `comp` out of the beam while the beam intersects the axis at a height below 15 will move it to `park_high` = 20. If it is moved out of beam  while the intersection is above 15 (let's say for a high theta angle), it will instead move to `park_low` = -10, in order to not block the beam while parked.
 
 If no out-of-beam positions are defined for a driver, it is always considered as being "in beam".
+
+Parking sequences are defined using `OutOfBeamSequence`. This has exactly the same parameters as out of beam except that the first argument is a list of values. The list of each parking sequence for a component, you can have one for each axis, must be the same length or not exist. You may have None's at the start of the sequence to indicate that the component should not move from its current position. Example:
+```
+driver = IOCDriver(comp, ChangeAxis.HEIGHT, out_of_beam_positions=[OutOfBeamSequence([0, -10, -10)])
+driver = IOCDriver(comp, ChangeAxis.PHI, out_of_beam_positions=[OutOfBeamSequence([None, 0, -20)])
+```
+This would mean that when this component parked the following happens:
+
+1. Height set to 0 but phi would not move
+2. Height set to -10, phi set to 0
+3. Height set to -10 (no movement), phi set to -20
+
+Unparking would be this but in reverse.
 
 ## Engineering Offset
 
