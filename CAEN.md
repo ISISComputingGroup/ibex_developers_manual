@@ -2,11 +2,9 @@
 
 A high voltage power supply normally used for detector electronics.
 
-They are communicated with using Ethernet using an IOC originally developed at the Canadian Lightsource.
+There are now two IOCs devoted to the CAEN. An older one from the Canadian light source (HVCAEN) and a newer one from SLAC (HVCAENA). They are communicated with over Ethernet. HVCAEN is used widely and HVCAENA is to be used on DETMON to test it. HVCAENA has more information available including board and crate parameters. Both IOCs have a read-only mode which can be set via macros.
 
-The IOC has a read-only mode which can be set via macros.
-
-### Communicating with multiple CAENs
+### Communicating with multiple CAENs (Older IOC)
 A single IOC can communicate with up to 8 CAEN crates, this appears to be a limit in the CAEN library as it defines MAX_CRATES as 8 in the library header and has a "too many connections" error code listed in its potential error codes. 
 
 To do this the crates must be added into the `st.cmd` as so:
