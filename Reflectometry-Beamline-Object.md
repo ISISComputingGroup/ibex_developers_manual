@@ -27,7 +27,10 @@ The following is a subsection of the configuration showing beamline parameters a
 When move for the whole beamline is triggered, the new positions of the motors are calculated using the following procedure. 
 
 1. Each of the sample parameters is considered in turn, going down the beam. 
-1. The beamline parameter is "moved to" if it has changed or if it is in the mode and a previous beamline parameter in this mode has changed.
+1. The beamline parameter is "moved to" if any of the following is true:
+    - the setpoint has been changed by the user
+    - an init value for the current mode has been defined in the config and "apply inits on move" is enabled
+    - it is in the current mode and a previous beamline parameter also in this mode has changed
 1. When the beamline parameter is "moved to" the result of the calculation will be passed down to the component it controls.
     1. At this point the set point readback value will read the same as the set point
     1. The component will then recalculate the beam path and instruct those components down beamline to recalculate their beam paths.
