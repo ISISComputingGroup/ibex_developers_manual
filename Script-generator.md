@@ -15,10 +15,12 @@ MACS is probably the most interesting muon script generator. A brief overview of
   * A run at a single combination of temperature/field
   * A scan over temperature or field (in three modes), counting at each point. These scans can be defined as linear or logarithmic.
   * An arbitrary block set to an arbitrary value
-- Sends commands to OpenGENIE via the SECI API as it goes - means that scripts can be edited (up to the point when they have started running). This is similar in spirit to nicos script server.
+- Sends commands to OpenGENIE via the SECI API as it goes - means that scripts can be edited (up to the point when they have started running). This is similar in spirit to NICOS script server.
 - Includes some basic time estimation (it displays the total count time of everything in the script window)
 
-MACS can only run out of cycle and on a real instrument.
+**Note:**<br>
+MACS can only run on a real instrument, with a copy of SECI and working communication to hardware.  It _**cannot**_ be run offline.
+Furthermore, because the instruments (ARGUS & CHRONUS) are used in-cycle, the development team can only use it out-of-cycle.
 
 ### INTER
 
