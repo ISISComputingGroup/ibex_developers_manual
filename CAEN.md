@@ -47,6 +47,8 @@ Read/write is set in the st.cmd for all crates with a call to the support level:
 
 #### CAENHVAsyn CPP/Db support level
 
-There are templates for records e.g. ai, ao. These templates are loaded CAENHVAsyn for board parameters, channel parameters and system properties, with fields filled out by passing macros. The read `Rd` records are loaded with a scan rate of 1 second and write/set `St` records are set to scan passive. The loading can be seen in the `CAENHVAsyn` CPP object's various `createParamX` methods with X being replaced by Binary, Integer etc. This process of loading records is initiated by the `CAENHVAsynConfig` call in the st.cmd.
+At initialisation of the `CAENHVAsyn` object, the crates, boards, channels and their properties and parameters are retrieved from the `CAENHVWrapper` and the support objects are populated from this. The process of retrieving and populating objects is kicked off by the creation of the Crate object (call `ICrate:create`).
+
+From this data, the dbs are loaded. There are templates for records e.g. ai, ao. These templates are loaded `CAENHVAsyn` for board parameters, channel parameters and system properties, with fields filled out by passing macros. The read `Rd` records are loaded with a scan rate of 1 second and write/set `St` records are set to scan passive. The loading of dbs can be seen in the `CAENHVAsyn` CPP object's various `createParamX` methods with X being replaced by Binary, Integer etc. This process of loading records is initiated by the `CAENHVAsynConfig` call in the st.cmd.
 
 The `CAENHVAsyn` object acts as an adapter/facade to the objects it contains: crates, boards, channels. The `CAENHVAsyn` object overrides `asynPortDriver` methods, the overriding methods search through channel parameters, board parameters and system properties to find the value to set or get corresponding to the asyn call reason. These various methods often then make calls to the `CAENHVWrapper`.
