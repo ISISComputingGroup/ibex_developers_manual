@@ -25,19 +25,28 @@ If you can ping and telnet to the crate, but the EPICS driver cannot connect, th
 
 ### HVCAENA (Newer IOC)
 
-Currently can communicate with 4 CAEN crates at a time. Set up by defining macros IP_ADDRESS_X and SYS_TYPE_X for X from 0 to 3. Another macro READ_ONLY defines whether we can write to the CAEN crate with 1 for readonly and 0 for read and write.
+Made up of three levels the IOC level (st.cmd, config etc.), the CPP/Db support level and the CAENHVWrapper level. The `CAENHVWrapper` is a vendor library that contains methods to set and get data to/from CAEN crates, it is documented in the pdf files that can be found in the `CAENHVAsyn` support module. The CPP support level was created by [SLAC](https://www6.slac.stanford.edu/) and has been [edited by us](https://github.com/ISISComputingGroup/IBEX/issues/5544). The IOC level was created by us to enable use in IBEX. 
 
-A crate is loaded in the st.cmd with:
+#### IOC Level
+
+Currently can communicate with 4 CAEN crates at a time (but very extensible to add more). Set up by defining macros IP_ADDRESS_X and SYS_TYPE_X for X from 0 to 3. Another macro READ_ONLY defines whether we can write to the CAEN crate with 1 for read-only and 0 for read/write.
+
+A crate is loaded in the st.cmd with calls to the support level:
 
 ```
-CAENHVAsynSetEpicsPrefix("$(MYPVPREFIX)$(IOCNAME):HV0:")
-CAENHVAsynConfig("HV0",$(SYS_TYPE_0),"$(IP_ADDRESS_0)","username","password")
+$(IFIP0_PRESENT) CAENHVAsynSetEpicsPrefix("$(MYPVPREFIX)$(IOCNAME):HV0:")
+$(IFIP0_PRESENT) CAENHVAsynConfig("HV0",$(SYS_TYPE_0),"$(IP_ADDRESS_0)","username","password")
 ```
 
-CAENHVAsynSetEpicsPrefix simply sets the pv prefix in the driver.
-CAENHVAsynConfig creates a new CAENHVAsyn object, which loads dbs and creates pvs for system properties, board parameters and channel parameters. 
+`CAENHVAsynSetEpicsPrefix` simply sets the pv prefix in the driver.
+`CAENHVAsynConfig` creates a new `CAENHVAsyn` object, which loads dbs and creates pvs for system properties, board parameters and channel parameters. 
 
-Read/write is set in the st.cmd with:
+Read/write is set in the st.cmd for all crates with a call to the support level:
 
 `CAENHVAsynReadOnly($(READ_ONLY=0))`
 
+#### CAENHVAsyn CPP/Db support level
+
+There are templates for records e.g. ai, ao. These templates are loaded CAENHVAsyn for board parameters, channel parameters and system properties, with fields filled out by passing macros. The read `Rd` records are loaded with a scan rate of 1 second and write/set `St` records are set to scan passive. The loading can be seen in the `CAENHVAsyn` CPP object's various `createParamX` methods with X being replaced by Binary, Integer etc. This process of loading records is initiated by the `CAENHVAsynConfig` call in the st.cmd.
+
+The `CAENHVAsyn` object acts as an adapter/facade to the objects it contains: crates, boards, channels. The `CAENHVAsyn` object overrides `asynPortDriver` methods, the overriding methods search through channel parameters, board parameters and system properties to find the value to set or get corresponding to the asyn call reason. These various methods often then make calls to the CAENHV
