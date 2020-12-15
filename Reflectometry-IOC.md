@@ -69,7 +69,7 @@ The footprint calculator calculates the resolution and footprint on the sample b
 
 **For more implementation details see the [Beamline Configuration page](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Configuration#footprint-calculator)**
 
-#### Lon Axis
+#### Long Axis
 
 The long axis can be set like any other parameter to control movement of a component along the beam. It is currently set assuming the provided `IOCDriver` moves exactly parallel to the natural beam. Moving a component so far in the long axis that it reorders components in the beam is not currently supported.
 
