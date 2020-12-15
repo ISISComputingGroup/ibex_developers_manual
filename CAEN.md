@@ -45,7 +45,7 @@ Read/write is set in the st.cmd for all crates with a call to the support level:
 
 `CAENHVAsynReadOnly($(READ_ONLY=0))` Set READ_ONLY to 1 for readonly and 0 for read/write.
 
-#### CAENHVAsyn CPP/Db support level
+#### `CAENHVAsyn` CPP/Db support level
 
 See UML below for diagram description.
 
