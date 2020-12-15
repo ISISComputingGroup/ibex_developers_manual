@@ -79,17 +79,14 @@ actionList.add(action)
 In the synoptic view I have a hidden button with actions than can be reused.
 
 # Running a script on page load
-There is no way to specify that a script run when an opi is loaded (Isabella: in theory it should work by having `=1` as a trigger PV, but for some reason it doesn't. We had it working like this at CLF). Instead scripts can only be triggered from PV changes. It is however possible to use a local PV to get the effect. Each page needs to have a script triggered from loc://where, which contains the following:
+You can make a script run on page load by setting it to trigger from a PV called `=1` and making sure it executes even if there are errors.
 
-```
-where = display.getPropertyValue('name')
-if PVUtil.getString(pvs[0])!=where:
-	pvs[0].setValue(where)
-```
+![](images/input_pvs.gif)
 
-So long as each opi has a different name, every time a new opi is loaded, the value will be different and so the script will run. To make absolutely sure that the loc://where PV is unique, you can rename it as loc://where_$(DID), where $(DID) is a unique ID number assigned by CSS at runtime.
+![](images/opi_script_options.gif)
 
-NB The if test is required. The script must only change the name if it needs changing, otherwise the script runs endlessly, potentially bringing down CSS.
+# Storing State
+Occasionally it makes sense to store some state in the OPI, e.g. which traces the user has made visible on the OPI. To do this you can use local PVs of the form `loc://MY_PV`. These can be written and read to like normal PVs but are initialised to null so you may have to initialise them with a script on OPI start.
 
 # Creating new widgets
 
