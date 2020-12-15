@@ -81,9 +81,9 @@ In the synoptic view I have a hidden button with actions than can be reused.
 # Running a script on page load
 You can make a script run on page load by setting it to trigger from a PV called `=1` and making sure it executes even if there are errors.
 
-![](images/input_pvs.gif)
+![](images/input_pvs.png)
 
-![](images/opi_script_options.gif)
+![](images/opi_script_options.png)
 
 # Storing State
 Occasionally it makes sense to store some state in the OPI, e.g. which traces the user has made visible on the OPI. To do this you can use local PVs of the form `loc://MY_PV`. These can be written and read to like normal PVs but are initialised to null so you may have to initialise them with a script on OPI start.
