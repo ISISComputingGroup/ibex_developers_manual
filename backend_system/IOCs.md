@@ -81,6 +81,8 @@ If you're not creating a StreamDevice IOC or you you would like to know how an I
 
 Debug builds of IOCs are built in jenkins and can be deployed to instruments, see [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Deploying-a-DEBUG-build-IOC).
 
+It can be useful to add a msgBox to pause so you can attach a debugger, see [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/IOC-Utilities#pausing-an-ioc-at-startup) for instructions. To attach the debugger start the IOC, open visual studio with the code in you wish to debug, set breakpoints as you wish and in the top toolbar select "Debug >> Attach to process" find your process in the list and attach. You can control the debugger as you would other debuggers using the buttons on a toolbar just below the toolbar you clicked on with "Debug" in it.
+
 # Specific IOC Information
 
 For information on specific IOCs see [Specific Device IOC](Specific-Device-IOC)
