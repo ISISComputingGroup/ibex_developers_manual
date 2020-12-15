@@ -113,6 +113,7 @@ These are the top-level parameters exposed as PVs of the form `<PREFIX>:REFL:PAR
     - POSITION: The position relative to the beam along the linear movement axis (e.g. offset on slit 2 `S2OFFSET`). This is useful for scanning over this axis for alignment
     - ANGLE: The angle of this component relative to the angle of the incoming beam (e.g. angle of the point detector `PDANGLE`)
     - TRANS: The translation position
+    - LONG_AXIS: The movement of the component parallel to the beam 
     - CHI: The chi rotation angle
     - PSI: The psi rotation angle
     - SEESAW: The seesaw of the component, used with the bench.
