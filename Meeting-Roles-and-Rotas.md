@@ -30,13 +30,13 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
 | Chair | x for Done | Timekeeper | x for Done | Note taker | x for Done |Standup | x for Done |
 | --- | --- | --- | --- | --- | --- |--- | --- |
 | DK | x | CC | x | TL | x |FA | x |
-| KB | x | MS | x | KB |  |DO | x |
+| KB | x | MS | x | KB | x |DO | x |
 | FA | x | DO | x | DK |  |TL | x |
-| CMS |  | JK |  | JH |  |KB |  |
-| DO |  | FA |  | DO |  |CMS |  |
-| BR |  | JH |  | MS |  |BR |  |
+| DO | x  | JK | x | JH |  |KB | x |
+| KB |  | FA |  | DO |  |CMS |  |
+| CMS |  | JH |  | MS |  |BR |  |
 | TL |  | CC |  |  |  |FA |  |
-| KB |  | DO |  |  |  |JH |  |
+| BR |  | DO |  |  |  |JH |  |
 | CC |  | TL |  |  |  |DO |  |
 | FA |  | MS |  |  |  |DK |  |
 | TL |  | KB |  |  |  |MS |  |
