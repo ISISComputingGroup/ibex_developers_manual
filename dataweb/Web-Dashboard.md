@@ -95,7 +95,7 @@ If the instrument archive has never been restarted then the dataweb will fail to
 
 ### Page for Individual Instrument not Working
 
-[See here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Other-Troubleshooting/_edit#instrument-page-not-working-on-web-dashboard)
+[See here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Other-Troubleshooting#instrument-page-not-working-on-web-dashboard)
 
 ## Future Development Ideas
 
