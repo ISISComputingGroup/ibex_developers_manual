@@ -23,6 +23,7 @@ It contains some files:
 - rc_setting.cmd: commands to load in runcontrol
 - banner.xml: customised displays and buttons for the GUI banner
 - custom_records.db: records specific to the instrument which are loaded by INSTETC
+   - Pass macros through from globals.txt with `CUSTOM_RECORD_MACROS="DSC_EUROTHRM=03,DSC_LKSH336=02"`
 
 ## User configuration
 
