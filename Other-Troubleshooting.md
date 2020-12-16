@@ -23,9 +23,13 @@ If you have done this it may be that the isisicp.exe program is too old. Older v
 
 ## Instrument Page not Working on Web Dashboard
 
-Check that the instrument is in the list of Instruments in https://github.com/ISISComputingGroup/JSON_bourne/blob/master/webserver.py and that the version on web server is up-to-date.
+Several causes
 
-Another cause could be that there were issues with MySQL in the moment the IBEX server was started (this seems to affect the archiver start up). Check logs of the MySQL service in the `var` area, fix any issues so that MySQL is running correctly again, then restart the IBEX server.
+1. Check that the instrument is in the list of Instruments in https://github.com/ISISComputingGroup/JSON_bourne/blob/master/webserver.py and that the version on web server is up-to-date.
+
+1. Issues with MySQL in the moment the IBEX server was started (this seems to affect the archiver start up). Check logs of the MySQL service in the `var` area, fix any issues so that MySQL is running correctly again, then restart the IBEX server.
+
+1. If it works in your browser but not he users they may have a old cahced copy (this shouldn't happen but we have seen it in Safari). Clear their browser cache and reload.
 
 ## `cmake error: could not load cache` seen during build
 
