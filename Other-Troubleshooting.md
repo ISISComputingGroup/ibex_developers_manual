@@ -29,7 +29,7 @@ Several causes
 
 1. Issues with MySQL in the moment the IBEX server was started (this seems to affect the archiver start up). Check logs of the MySQL service in the `var` area, fix any issues so that MySQL is running correctly again, then restart the IBEX server.
 
-1. If it works in your browser but not he users they may have a old cahced copy (this shouldn't happen but we have seen it in Safari). Clear their browser cache and reload.
+1. If it works in your browser but not he users they may have a old cached copy (this shouldn't happen but we have seen it in Safari). Clear their browser cache and reload.
 
 ## `cmake error: could not load cache` seen during build
 
