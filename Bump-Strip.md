@@ -12,7 +12,7 @@ If no input source is configured, this PV will default to "UNAVAILABLE". The inp
 
 This should contain a single line followed by a blank line e.g.
 ```
-epicsEnvSet "BUMPSTOP_IN" "DMC03:Galil0Bi4_STATUS"
+epicsEnvSet "BUMPSTOP_IN" "MOT:DMC03:Galil0Bi4_STATUS"
 
 ```
 In this case this expects the signal to come from digital input port 4 (*Bi04*) on Galil controller 3 (*DMC03*) 
