@@ -36,8 +36,8 @@ park_high = OutOfBeamPosition(position=20)
 park_low = OutOfBeamPosition(position=-10, threshold=15, tolerance=0.5)
 driver = IOCDriver(comp, the_axis, out_of_beam_positions=[park_high, park_low])
 ```
-- `position`:  the position along the movement axis where this component should be parked, this will include any engineering correction; if this is in offset mode this is the offset from the beam
-- `threshold`: if the interception between the beam path and the movement axis is _above this height_, this `position` should be chosen as parked position. If this is `None`, this signifies that this is the _only_, or _default out-of-beam position_, i.e. the out-of-beam position to use if no other threshold is met. (defaults to `None`)
+- `position`:  the position along the movement axis where this component should be parked. Any engineering correction will be applied implicitly to this value; if this is in offset mode this is the offset from the beam
+- `threshold`: if the interception between the beam path and the height axis is _greater than_ `threshold`, this `position` should be chosen for parking. If this is `None`, this signifies that this is the _only_, or _default out-of-beam position_, i.e. the out-of-beam position to use if no other threshold is met. (defaults to `None`)
 - `tolerance`: the tolerance around `position` at which this component is still considered "out of beam" (defaults to `1`)
 - `is_offset`: if `True` then the position acts as an offset from the beam and final motor set point (defaults to `False`)
 
