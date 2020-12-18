@@ -1,24 +1,24 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [Partially Supported Devices](Partially-Supported-Devices) > [Ferro-Magnetic Resonance equipment (FMR)](Ferro-Magnetic_Resonance_equipment)
 
-## Description of purpose of equipment (Abstract of talk given by principal investigator on 01/07/2020)
+## Description of purpose of experiment (Abstract of talk given by principal investigator on 01/07/2020)
 
 > Ferromagnetic Resonance Spectroscopy
 
 > Modern day fast computation necessitates high density data storage systems. This could be achieved through the development of multilayer thin films, consisting of alternating hard and soft magnetic layers, which exhibit magnetic moment exchange coupling at the interfaces. However, Ferromagnetic Resonance (FMR) measures the bulk magnetisation dynamics of a sample and hence cannot probe these interlayer interactions. Therefore, this project aims to explore the capabilities of FMR as a magnetic characterisation technique through the development of three novel sample environments. Firstly, FMR combined with Polarised Neutron Reflectometry, using the beamline POLREF, can map a sample’s magnetisation dynamics at each atomic layer, therefore improving the resolution of magnetic detection. Also, the novel sample environments of variable temperature FMR and temperature gradient FMR offer the potential of investigating the effect of temperature on magnetic moment switching and spin wave formation.
 
 
-## Ferro-Magnetic Resonance equipment (FMR)
+## Equipment
 
-This is a small collection of devices which internal users of ISIS are testing offline, but have used on the POLREF beamline.  They have written a control program in LabVIEW which runs on a separate machine and communicates with these devices and handles the setpoints, scan/sweep procedure and data file generation.
+This is a small collection of devices which internal ISIS users are testing offline, but have used on the POLREF beamline.  They have written a control program in LabVIEW which runs on a separate machine and communicates with these devices.  It handles the setpoints, scan/sweep procedure, analysis and data file generation.
 
 The individual pieces of equipment are:
 
 - Rohde & Schwartz (ZNB20?) Vector Network Analyser
 - Hirst (GM08?) portable Hall probe
 - Danfysik 858 PSU (when used on POLREF, Danfysik 8000(?) when offline) connected to...
-- GMW conventional electromagnet (not cryogenic, no direct control required)
+- ...GMW conventional electromagnet (not cryogenic, no direct control required)
 
-The current solution for using the FMR setup on the beamline, is that the control VI is "wrapped" by an LVDCOM IOC to isolate the users' code and provide remote control from the POLREF control machine.  Modifications had to be made to this VI to enable it to be run continuously and make the front panel item names compatible with LVDCOM (remove trailing spaces and scientific notation values e.g. `Start Frequency (300.0e3) `).  The equipment PC runs a "Mini-Inst" to enable this LVDCOM IOC to function.
+The current solution for using the FMR setup on the beamline is that the users' VI is "wrapped" by an LVDCOM IOC to isolate the code and provide remote communication from the POLREF control machine.  Modifications had to be made to this VI to enable it to be run continuously and make the front panel item names compatible with LVDCOM (remove trailing spaces and scientific notation values e.g. `Start Frequency (300.0e3) `).  The equipment PC runs a "Mini-Inst" to enable this LVDCOM IOC to function.
 
 A bespoke CALAB-based VI was written and runs on the POLREF control machine.  This enables communication with the FMR equipment IOC via CA and provides scripting and logging capabilities in the SECI system.
 
@@ -77,4 +77,4 @@ PV naming scheme separates the three devices comprising the FMR system (:PSU:, :
 
 ### Future Development
 
-Currently, the users' FMR VI does not conform to ISIS standards and would need a reasonable amount of work to bring it up to them.  Rather than concentrate efforts on this VI, and as POLREF will be migrated to IBEX sometime in the (near?) future, it may be decided to rewrite the FMR control program as a native IOC, or collection of IOCs (c.f. [zero field](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Zero-field-controller)) and possibly run a "[remote IOC](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Remote-IOCs)" (c.f. Triton) installation.  This will depend on the results of the online tests, how much effort is/will be available from the team and how much the equipment will subsequently be used.
+Currently, the users' FMR VI does not conform to ISIS standards and would need a reasonable amount of work to bring it up to them.  Rather than concentrate efforts on this VI, and as POLREF will be migrated to IBEX sometime in the (near?) future, it may be decided to rewrite the FMR control program as a native IOC, or collection of IOCs (c.f. [zero field](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Zero-field-controller)) and possibly run a "[remote IOC](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Remote-IOCs)" (c.f. Triton) installation.  Once POLREF is migrated to IBEX, at the very least an OPI will be needed to communicate with the LVDCOM VI.  The direction of development will depend on the results of the online tests, how much effort is/will be available from the team and how much the equipment will subsequently be used.
