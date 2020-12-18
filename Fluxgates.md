@@ -7,3 +7,5 @@ LakeShore 460
 [Bartlington](Bartlington)
 
 [Zero-field magnetometer](Zero-Field-Magnetometer-IOC)
+
+[Metrolab PT2025 Teslameter](Metrolab-PT2025-Teslameter-IOC)
