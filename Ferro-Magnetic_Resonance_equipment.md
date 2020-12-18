@@ -30,8 +30,8 @@ PV naming scheme separates the three devices comprising the FMR system (:PSU:, :
 
 | VI Control | VI Indicator | Read PV address | Write PV Address | Units | Description |
 |---|---|---|---|---|---|
-| "Start Ba  (A)" | | BA:START | BA:START:SP | A | Current at start of sweep |
-| "Stop Ba  (A)"  | | BA:STOP  | BA:STOP:SP  | A | Current at end of sweep   |
+| "Start Ba  (A)" | | BA:START | BA:START:SP | A | Applied magnetic field (B<sub>applied</sub>) at start of sweep, as a current |
+| "Stop Ba  (A)"  | | BA:STOP  | BA:STOP:SP  | A | Applied magnetic field (B<sub>applied</sub>) at end of sweep, as a current |
 | "Number of Ba Points" | | BA:POINTS | BA:POINTS:SP | N/A | Number of points in sweep |
 | "Millisecond timer" | | TIMER | TIMER:SP | ms | | Delay between setting PSU and reading probe |
 | | "Actual Current Level (A) " | CURR | | A | PSU output current | 
@@ -77,4 +77,4 @@ PV naming scheme separates the three devices comprising the FMR system (:PSU:, :
 
 ### Future Development
 
-Currently, the users' FMR VI does not conform to ISIS standards and would need a reasonable amount of work to bring it up to them.  Rather than concentrate efforts on this VI, and as POLREF will be migrated to IBEX sometime in the (near?) future, it may be decided to rewrite the FMR control program as a native IOC, or collection of IOCs (c.f. [zero field](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Zero-field-controller)) and possibly run a "[remote IOC](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Remote-IOCs)" (c.f. Triton) installation.  Once POLREF is migrated to IBEX, at the very least an OPI will be needed to communicate with the LVDCOM VI.  The direction of development will depend on the results of the online tests, how much effort is/will be available from the team and how much the equipment will subsequently be used.
+Currently, the users' FMR VI does not conform to ISIS standards and would need a reasonable amount of work to do so.  Rather than concentrate efforts on this VI, and as POLREF has now been migrated to IBEX, it may be decided to rewrite the FMR control program as a native IOC, or collection of IOCs (c.f. [zero field](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Zero-field-controller)) and possibly run a "[remote IOC](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Remote-IOCs)" (c.f. Triton) installation.  At the very least an OPI will be needed to communicate with the LVDCOM VI.  The direction of development will depend on the results of the online tests (and anticipated further offline), how much effort is/will be available from the IBEX team and how much the equipment will be subsequently used.
