@@ -22,6 +22,59 @@ The current solution for using the FMR setup on the beamline, is that the contro
 
 A bespoke CALAB-based VI was written and runs on the POLREF control machine.  This enables communication with the FMR equipment IOC via CA and provides scripting and logging capabilities in the SECI system.
 
+### Description of principal controls/setpoints and indicators/readbacks with associated PVs
+
+PV naming scheme separates the three devices comprising the FMR system (:PSU:, :PROBE:, :VNA:).  Also the VI itself (:FMR:)
+
+#### Power Supply Unit (:PSU:)
+
+| VI Control | VI Indicator | Read PV address | Write PV Address | Units | Description |
+|---|---|---|---|---|---|
+| "Start Ba  (A)" | | BA:START | BA:START:SP | A | Current at start of sweep |
+| "Stop Ba  (A)"  | | BA:STOP  | BA:STOP:SP  | A | Current at end of sweep   |
+| "Number of Ba Points" | | BA:POINTS | BA:POINTS:SP | N/A | Number of points in sweep |
+| "Millisecond timer" | | TIMER | TIMER:SP | ms | | Delay between setting PSU and reading probe |
+| | "Actual Current Level (A) " | CURR | | A | PSU output current | 
+| | "Current Difference" | CURR:DIFF | | A | Difference between set current and actual |
+| | "Delay (ms)" | DELAY | | ms | Delay between setting and reading current |
+| | "Loop Number" | LOOP | | N/A | Sweep step number |
+
+
+#### Hall Probe (:PROBE:)
+
+| VI Control | VI Indicator | Read PV address | Write PV Address | Units | Description |
+|---|---|---|---|---|---|
+| | "Current value " | VALUE | | variable | Field reading |
+| | "Range 4" | RANGE | | N/A | Current range |
+| | "Mode 4" | MODE | | N/A | Probe mode |
+| | "Units 5" | UNITS | | N/A | Current units |
+
+
+#### Vector Network Analyser (:VNA:)
+
+| VI Control | VI Indicator | Read PV address | Write PV Address | Units | Description |
+|---|---|---|---|---|---|
+| "RF State (T) 2" | | STATE | STATE:SP | N/A | RF on or off |
+| "Start Frequency" | | FREQ:START | FREQ:START:SP | Hz | Frequency at start of sweep |
+| "Stop Frequency" | | FREQ:STOP | FREQ:STOP:SP | Hz | Frequency at end of sweep |
+| "Number Of Points" | | FREQ:POINTS | FREQ:POINTS:SP | N/A | Number of steps in frequency sweep per field value |
+| "In Port" | | PORT:IN | PORT:IN:SP | N/A | Input port number |
+| "Out Port" | | PORT:OUT | PORT:OUT:SP | N/A | Output port number |
+| "Sweep Time" | | SWEEP:TIME | SWEEP:TIME:SP | s | Duration of sweep |
+| "Auto Sweep Time" | | SWEEP:TIME:AUTO | SWEEP:TIME:AUTO:SP | N/A | Automatic sweep time |
+| "Milliseconds to wait" | | WAIT | WAIT:SP | ms | Delay between setting frequency and analysing response |
+| "Bandwidth" | | BANDWIDTH | BANDWIDTH:SP | Hz | Analyser resolution bandwidth |
+| "Power" | | POWER | POWER:SP | dBm | Analyser signal power |
+
+
+#### Main VI (:FMR:)
+
+| VI Control | VI Indicator | Read PV address | Write PV Address | Units | Description |
+|---|---|---|---|---|---|
+| "Run" | | RUN | RUN:SP | N/A | Run analysis |
+| | "Activity" | ACTIVITY | | N/A | Indicates VI running if value oscillates between ON and OFF |
+
+
 ### Future Development
 
 Currently, the users' FMR VI does not conform to ISIS standards and would need a reasonable amount of work to bring it up to them.  Rather than concentrate efforts on this VI, and as POLREF will be migrated to IBEX sometime in the (near?) future, it may be decided to rewrite the FMR control program as a native IOC, or collection of IOCs (c.f. [zero field](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Zero-field-controller)) and possibly run a "[remote IOC](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Remote-IOCs)" (c.f. Triton) installation.  This will depend on the results of the online tests, how much effort is/will be available from the team and how much the equipment will subsequently be used.
