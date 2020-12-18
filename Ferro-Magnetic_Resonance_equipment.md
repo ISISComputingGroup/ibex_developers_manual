@@ -1,5 +1,12 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [Partially Supported Devices](Partially-Supported-Devices) > [Ferro-Magnetic Resonance equipment (FMR)](Ferro-Magnetic_Resonance_equipment)
 
+## Description of purpose of equipment (Abstract of talk given by principal investigator on 01/07/2020)
+
+> Ferromagnetic Resonance Spectroscopy
+
+> Modern day fast computation necessitates high density data storage systems. This could be achieved through the development of multilayer thin films, consisting of alternating hard and soft magnetic layers, which exhibit magnetic moment exchange coupling at the interfaces. However, Ferromagnetic Resonance (FMR) measures the bulk magnetisation dynamics of a sample and hence cannot probe these interlayer interactions. Therefore, this project aims to explore the capabilities of FMR as a magnetic characterisation technique through the development of three novel sample environments. Firstly, FMR combined with Polarised Neutron Reflectometry, using the beamline POLREF, can map a sample’s magnetisation dynamics at each atomic layer, therefore improving the resolution of magnetic detection. Also, the novel sample environments of variable temperature FMR and temperature gradient FMR offer the potential of investigating the effect of temperature on magnetic moment switching and spin wave formation.
+
+
 ## Ferro-Magnetic Resonance equipment (FMR)
 
 This is a small collection of devices which internal users of ISIS are testing offline, but have used on the POLREF beamline.  They have written a control program in LabVIEW which runs on a separate machine and communicates with these devices and handles the setpoints, scan/sweep procedure and data file generation.
