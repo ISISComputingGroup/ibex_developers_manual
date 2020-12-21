@@ -6,7 +6,7 @@
 | IBEX Wiki check | Script Server |
 | Squish Tests | Database Server |
 | Block Cache | Script Generator |
-| | Block Server to Kafka |
+| Upgrade Scripts | Block Server to Kafka |
 | | IBEX utils |
 | | System tests |
 | | Instrument Scripts
