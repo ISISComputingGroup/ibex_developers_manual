@@ -102,7 +102,13 @@ This is a summary of [[more general LvDCOM instructions|http://epics.isis.stfc.a
 
 ## 4. Edit to st.cmd
 
-1. Add `lvDCOMConfigure("lvfp", "frontpanel", "${TOP}/data/lv_controls.xml", "$(LVDCOM_HOST=)", $(LVDCOM_OPTIONS=1), "$(LVDCOM_PROGID=)", "$(LVDCOM_USER=)", "$(LVDCOM_PASS=)")` before load common record. (see [lvDCOMConfigure documentation](http://epics.isis.stfc.ac.uk/doxygen/lvDCOM/lvDCOMDriver_8cpp.html#a90fdd61917374a2fed5dd1e2ba6da62b)). Remember to add these macros to `config.xml`:
+1. Add `lvDCOMConfigure("lvfp", "frontpanel", "${TOP}/data/lv_controls.xml", "$(LVDCOM_HOST=)", $(LVDCOM_OPTIONS=1), "$(LVDCOM_PROGID=)", "$(LVDCOM_USER=)", "$(LVDCOM_PASS=)")` before loading common records and _after_ IOC initialization (to enable common macros to be used in `lv_controls.xml`). (see [lvDCOMConfigure documentation](http://epics.isis.stfc.ac.uk/doxygen/lvDCOM/lvDCOMDriver_8cpp.html#a90fdd61917374a2fed5dd1e2ba6da62b)).
+
+1. Load the DB file for the IOC using the `dbLoadRecords` command.
+
+## 5. Edit `config.xml`
+
+1. Add these macros to `config.xml` to allow them to be configured in the GUI:
 
     ```
     <macro name="LVDCOM_OPTIONS" pattern="^\d?\d?$" description="Options that define how the VI is started. Add selected options together to make the final value. 1 - warn if idle, 2 - start if idle, 4 - stop VIs if started on exit, 8 - stop VI on exit. (Default 1)" />
@@ -110,13 +116,14 @@ This is a summary of [[more general LvDCOM instructions|http://epics.isis.stfc.a
     <macro name="LVDCOM_PROGID" pattern="^.*$" description="DCOM ProgID, required if connecting to a compiled LabVIEW application (Default '')" />
     ```
     * Don't add username and password, users can set these in globals.txt
-1. Add db load record
 
-## 5. Run the IOC
+
+
+## 6. Run the IOC
 
 Run the IOC as normal. The IOC should start with no errors and typing "dbl" will list the PVs. Note: unless the VI was already open it will not be visible. If it is not visible, stop the IOC, load the VI and restart the IOC
 
-## 6. Finish the Workflow
+## 7. Finish the Workflow
 
 Now return to the IOC workflow to apply [finishing touches](IOC-Finishing-Touches) like units, PVs of interest and macros.
 Once the ISIS IOC works you should probably now create an IOC linked to this one in ioc follow a similar pattern to a support modules. Remember that if you do this add your new ioc to the Makefile `IOCDIRS` and it does not build if there is no ATL so add it to this list too, i.e. edit `EPICS\ioc\master\Makefile` add to the line:
