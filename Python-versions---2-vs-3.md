@@ -3,10 +3,10 @@
 | Python 2| Python 3|
 | ------ | ----  |
 | Collision Avoidance Monitor | Genie Python |
-| IBEX Wiki check | Script Server |
+| Upgrade Scripts | Script Server |
 | Squish Tests | Database Server |
 | Block Cache | Script Generator |
-| Upgrade Scripts | Block Server to Kafka |
+| | Block Server to Kafka |
 | | IBEX utils |
 | | System tests |
 | | Instrument Scripts
@@ -17,5 +17,6 @@
 | | IOC Testing Framework |
 | | EPICS utils |
 | | Archiver Access |
+| | IBEX wiki check |
 
 
