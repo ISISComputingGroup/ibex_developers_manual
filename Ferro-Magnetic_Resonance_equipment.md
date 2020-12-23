@@ -64,7 +64,7 @@ PV naming scheme separates the three devices comprising the FMR system (:PSU:, :
 | "Auto Sweep Time" | | SWEEP:TIME:AUTO | SWEEP:TIME:AUTO:SP | N/A | Automatic sweep time |
 | "Milliseconds to wait" | | WAIT | WAIT:SP | ms | Delay between setting frequency and analysing response |
 | "Bandwidth" | | BANDWIDTH | BANDWIDTH:SP | Hz | Analyser resolution bandwidth |
-| "Power" | | POWER | POWER:SP | dBm | Analyser signal power |
+| "Power" | | POWER | POWER:SP | `dBm` | Analyser signal power |
 
 
 #### Main VI (:FMR:)
