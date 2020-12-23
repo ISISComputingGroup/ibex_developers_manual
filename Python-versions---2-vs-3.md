@@ -4,7 +4,7 @@
 | ------ | ----  |
 | Squish Tests | Genie Python |
 | Block Cache | Script Server |
-| Vms journal parser | Database Server |
+| Vms journal converter | Database Server |
 | OPI scripts| Script Generator |
 | IOC log server | Block Server to Kafka |
 | | IBEX utils |
