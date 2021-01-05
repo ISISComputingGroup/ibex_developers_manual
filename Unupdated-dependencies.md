@@ -21,6 +21,7 @@ This page lists some dependencies which we are not updating for various reasons:
 | --- | --- | --- | --- |
 | `CaChannel` | 3.1.3 | 3.1.3 | Currently installed using `pip install github link`. `pip install CaChannel` copies dll onto itself. |
 | `matplotlib` | 3.2.2 | 3.3.3 | 3.3 onwards do not work on IE and hence do not work within GUI (plot renders blank)  |
+| `Numpy` | 1.19.3 | 1.19.4 | 1.19.4 fails to install on Windows |
 
 # GUI
 
