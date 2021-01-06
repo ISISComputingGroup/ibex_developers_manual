@@ -23,7 +23,7 @@ The image below shows a schematic of the inside of the block house for a typical
     - [Components](Reflectometry-Geometry-Components): Calculation of positions from user parameters
     - [Driving layer](Reflectometry-Composite-Driving-Layer): Driving of motors (including engineering corrections, synchronisation and out of beam positions)
 - [Reflectometry Testing](Reflectometry-Testing)
-
+- [Reflectometry Troubleshooting and FAQ](Reflectometry-Troubleshooting-and-FAQ)
 
 
 ### Components in a mode
