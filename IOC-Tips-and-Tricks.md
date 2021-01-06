@@ -93,3 +93,17 @@ There are two major ways in which your calc records can be processed:
 1)The first way is to either use a forward link or have the name of your calc record in the OUT field of another PV, followed by the PP flag. In this way, the calc record will not be processed when the IOC starts. This way is better for when the other PV is a setpoint, since you want the calc record to process only when the setpoint is explicitly set, not also when the IOC starts and when the setpoint is initialized.
 
 2)The other way is to have the PV that should trigger the processing of the calc record in the an INP field of the calc record, followed by the CP MS flags. The CP flag enables monitoring of that PV, and then the MS flag means any alarm of that PV will propagate to the calc record. The calc record will be processed every time the other PV is processed, including when the IOC starts. This way is better for when the other PV is a readback, because you want the calc to be processed each time the readback changes.
+
+## Creating many IOC aliases
+
+If you would like to create a set of PV aliases in an IOC from the `st.cmd` then that is possible using `dbAliasRecords` (to simply swap a prefix) or `dbAliasRecordsRE` (to use a more complicated regular expression)
+
+To create aliases for all records with e.g. the `ME:` (movable equipment) prefix that instead have the local pv prefix 
+```
+dbAliasRecords("ME:", "$(MYPVPREFIX)")
+```
+The equivalent using a regular expression would be
+```
+dbAliasRecordsRE("ME:(.*)", "$(MYPVPREFIX)\1")
+```
+but much more complex rewrites are possible
