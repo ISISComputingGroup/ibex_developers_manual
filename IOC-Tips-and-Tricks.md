@@ -96,11 +96,11 @@ There are two major ways in which your calc records can be processed:
 
 ## Creating many IOC aliases
 
-If you would like to create a set of PV aliases in an IOC from the `st.cmd` then that is possible using `dbAliasRecords` (to simply swap a prefix) or `dbAliasRecordsRE` (to use a more complicated regular expression)
+If you would like to create a set of PV aliases in an IOC from the `st.cmd` then that is possible using `dbAliasRecordsPrefix` (to simply swap a prefix) or `dbAliasRecordsRE` (to use a more complicated regular expression)
 
 To create aliases for all records with e.g. the `ME:` (movable equipment) prefix that instead have the local pv prefix 
 ```
-dbAliasRecords("ME:", "$(MYPVPREFIX)")
+dbAliasRecordsPrefix("ME:", "$(MYPVPREFIX)")
 ```
 The equivalent using a regular expression would be
 ```
