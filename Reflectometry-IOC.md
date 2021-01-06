@@ -89,3 +89,7 @@ Information pertaining to specific reflectometry setups on the instruments.
 - [POLREF](Reflectomtery-IOC-POLREF)
 - [SURF](Reflectomtery-IOC-SURF)
 
+
+## Troubleshooting
+
+see [Reflectometry Troubleshooting and FAQ](Reflectometry-Troubleshooting-and-FAQ)
