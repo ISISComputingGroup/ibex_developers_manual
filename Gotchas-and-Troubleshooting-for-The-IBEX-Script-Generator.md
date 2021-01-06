@@ -1,5 +1,9 @@
 # Troubleshooting
 
+## Script generator tab is not shown
+
+By default the script generator is disabled in the IBEX GUI. To enable it [Follow these steps](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/The-IBEX-Script-Generator#adding-the-perspective-into-the-client)
+
 ## Cannot open generated script in notepad++ from the FileMessageBox
 
 Currently, we search for notepad++ in "Program Files" and "Program Files (x86)". It may be that notepad++ on the computer being used isn't stored in those two. For the time being copy and paste the file location to open with their preferred editor. 
