@@ -16,7 +16,7 @@ Text for release ticket:
     - [ ] [Post Testing](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Creating-a-release#post-testing)
     - [ ] [Create a ticket to update dependencies to latest versions and test](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Dependency-updates)
     - [ ] [Create a ticket to give instrument demos](https://github.com/ISISComputingGroup/IBEX/wiki/Timetable-for-Instrument-Demos)
-    - [ ] Distribute release notes via email [Instrument scientist release email](https://github.com/ISISComputingGroup/IBEX/wiki/Instrument-scientist-release-email)
+    - [ ] Distribute release notes via email [Instrument scientist release email](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Updating-Instrument-Machines#a-new-release)
 
 ## Standard Release
 
@@ -80,7 +80,6 @@ One or more people should do [manual system tests, using this page](Manual-syste
     * Big improvement:  upgrade everyone if there is a big improvement that everyone will benefit from
     * Standard release: upgrade instruments that need updates, i.e. they need a newly released feature, and all those that are in the current release group, see [column in instruments table](https://github.com/ISISComputingGroup/IBEX/wiki#instrument-information). Note on the release ticket which instruments need to be released to using checkboxes (one for start and one for finish).
 1. Deploy a new JSON_bourne if required see [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Web-Dashboard)
-1. Send out release notes 
 
 ## Patch Release
 
