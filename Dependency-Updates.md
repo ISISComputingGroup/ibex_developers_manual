@@ -142,4 +142,6 @@ If you update the source code of procServ/conserver the following applies too, b
 - now start the jenkins EPICS_Tools job
 - when it has finished, copy new files from `kits$\EPICS_Tools` to `ICP_Binaries\EPICS_Tools`
     
+# Updates to consider
 
+- PCRE (https://github.com/ISISComputingGroup/EPICS-pcre)
