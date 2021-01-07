@@ -6,7 +6,7 @@ If only a subset of instruments are being modified lookup the instrument scienti
 
 ## A New Release
 
-For a new release of IBEX the following should be sent as soon as possible, ideally a week before the deployment date:
+For a new release of IBEX the following should be sent as soon as possible, at least a week (ideally 2 weeks) before the deployment date:
 
 ```
 Dear All,
