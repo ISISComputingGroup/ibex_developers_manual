@@ -1,4 +1,4 @@
-> [Wiki](Home) > [Deployment](Deployment) > Updating Instrument Machines
+> [Wiki](Home) > [Deployment](Deployment) > [Updating Instrument Machines](Updating-Instrument-Machines)
 
 It is important to remember when making any changes to instruments (e.g. installing new IBEX versions, cleaning disk space etc) that they are in (potentially) constant use by the instrument scientists and so they must be properly informed. Below is a template of what to send to scientists, this should be sent from the Experiment Controls email account.
 
