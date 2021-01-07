@@ -145,3 +145,4 @@ If you update the source code of procServ/conserver the following applies too, b
 # Updates to consider
 
 - PCRE (https://github.com/ISISComputingGroup/EPICS-pcre)
+- procServ
