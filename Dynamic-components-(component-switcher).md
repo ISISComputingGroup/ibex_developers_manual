@@ -4,9 +4,14 @@ The ComponentSwitcher is a module within the blockserver which is responsible fo
 
 ### Configuration
 
-The config switcher configuration file is in `C:\Instrument\Settings\config\NDW1799\configurations\ComponentSwitcher\component_switcher.json`, and has a structure similar to the following:
-
+The config switcher configuration file is in 
 ```
+C:\Instrument\Settings\config\...\configurations\ComponentSwitcher\component_switcher.json
+```
+
+and has a structure similar to the following:
+
+```json
 [
     {
         "pv": "PARS:USER:R0",
