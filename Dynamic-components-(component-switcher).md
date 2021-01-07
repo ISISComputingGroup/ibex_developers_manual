@@ -37,7 +37,7 @@ When a monitor is received, the following actions take place:
 - If the value has a non-zero STAT or SEVR, the update is logged but then ignored (we don't want to change configs based on an invalid value from hardware)
 - If the value is not present as a key in `value_to_component_map`, the update is ignored and an error is logged
 - For each configuration:
-  * Remove all components which are present in both the configuration and the `value_to_component_map`, except the component which corresponds to the value just recieved
+  * Remove all components which are present in both the configuration and the `value_to_component_map`, except the component which corresponds to the value just received
   * Add the component which corresponds to the value in `value_to_component_map`, if it was not already present
   * If the configuration changed, save it to disk
   * If this is the current configuration and it changed, reload the config to get the changes
