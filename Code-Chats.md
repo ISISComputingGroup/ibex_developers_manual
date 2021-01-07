@@ -8,6 +8,7 @@ Code chats occur on a semi-regular monthly basis within the group at ISIS. Altho
 
 Topic | Presenter | Date
 ----- | --------- | ----
+Cryogenics handover | Tom Willemsen | TBC
 
 ### Proposed Future Code Chats
 
