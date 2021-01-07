@@ -21,11 +21,18 @@ Positions of the motor can be restored/set without setting an offset. These can 
 1. Click on `Set` in `Calibration` area
 1. Set the `User` `MoveAbs` to the value from the query above
 1. Click on `Use` in `Calibration` area
-1. Also if the controller has been off it is likely that the auto deenergise off and energised state have got reset to default. Set these back to better values.
+1. Make sure you also follow instructions in the section `Galil Controller is Off while IOC running`
 
 ### Galil Controller is Off while IOC running
 
-When the Galil IOC is off it seems to incorrectly save the wrong state for deenergise off and energise state. This causes the motor to not react as expected. Make sure that these are reset. The way to find these states is to look at the autosave log.
+When the Galil IOC is off it seems to incorrectly save the wrong state for deenergise off and energise state. This causes the motor to not react as expected. Make sure that these are reset. The way to find these states is to search autosave log with:
+
+```
+grep AUTOONOFF_CMD *
+grep ON_CMD *
+```
+
+Then click the buttons to set it up correctly.
 
 ## Galil Communication
 
