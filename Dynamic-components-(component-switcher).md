@@ -60,3 +60,7 @@ To make a component as being dynamic, it is necessary to add an `isDynamic` tag 
 	<isDynamic>true</isDynamic>
 </meta>
 ```
+
+### Debugging
+
+The ComponentSwitcher logs to the blockserver log with the prefix `ComponentSwitcher: `.
