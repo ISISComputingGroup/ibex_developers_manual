@@ -41,3 +41,22 @@ When a monitor is received, the following actions take place:
   * Add the component which corresponds to the value in `value_to_component_map`, if it was not already present
   * If the configuration changed, save it to disk
   * If this is the current configuration and it changed, reload the config to get the changes
+
+### Dynamic components
+
+To make a component as being dynamic, it is necessary to add an `isDynamic` tag in `meta.xml` of the relevant component on disk. No user-facing option is provided for this setting. This flag will cause the GUI to display `(dynamic)` after the component name in the edit configuration dialogs, so that users are reminded that certain components may be edited without user interaction.
+
+**The ConfigSwitcher will only add and remove components which are marked with the `isDynamic` flag.**
+
+```xml
+<?xml version="1.0" ?>
+<meta>
+	<description>2</description>
+	<synoptic>-- NONE --</synoptic>
+	<edits>
+		...
+	</edits>
+	<isProtected>false</isProtected>
+	<isDynamic>true</isDynamic>
+</meta>
+```
