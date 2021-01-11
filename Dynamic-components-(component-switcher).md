@@ -44,22 +44,7 @@ When a monitor is received, the following actions take place:
 
 ### Dynamic components
 
-To make a component as being dynamic, it is necessary to add an `isDynamic` tag in `meta.xml` of the relevant component on disk. No user-facing option is provided for this setting. This flag will cause the GUI to display `(dynamic)` after the component name in the edit configuration dialogs, so that users are reminded that certain components may be edited without user interaction.
-
-**The ConfigSwitcher will only add and remove components which are marked with the `isDynamic` flag.**
-
-```xml
-<?xml version="1.0" ?>
-<meta>
-	<description>2</description>
-	<synoptic>-- NONE --</synoptic>
-	<edits>
-		...
-	</edits>
-	<isProtected>false</isProtected>
-	<isDynamic>true</isDynamic>
-</meta>
-```
+**The ConfigSwitcher will only add and remove components which are marked with the `isDynamic` flag.** To mark a config as "dynamic", go into the edit component menu and tick the "dynamic" option. Note that this option applies to the components being added/removed, not the configuration they are added to (otherwise every configuration on MuSR would need to be marked as dynamic).
 
 ### Debugging
 
