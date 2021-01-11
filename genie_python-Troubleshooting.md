@@ -52,7 +52,12 @@ If you get an error message similar to
 on running `config_env.bat`, you need to ensure you have **both** python 2 and python 3 available on your system.
 
 ## Error patching CaChannel
-When running `dev_build_python.bat`, you may get an error when Windows tries to apply a patch to the `CaChannel.py` file.
+When running `dev_build_python.bat`, you may get an error when Windows tries to apply a patch to the `CaChannel.py` file. E.g. 
+```
+can't find file to patch at input line XXX
+Perhaps you should have used the -p or --strip option?
+```
+This seems to be caused by using strawberry perl patch and not gits.
 
 If this happens, comment out the `patch` command in `common_build_python.bat`, then run the script again. Once it's finished, open a Git Bash window, `cd` to `/c/Instrument/Apps/Python/package_builder` and run the same `patch` command you commented out, changing the Windows paths to UNIX paths (`\` -> `/` and `C:` -> `/c`). Then, check the `CaChannel.py` file to ensure it was patched properly.
 
