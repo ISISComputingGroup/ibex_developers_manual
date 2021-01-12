@@ -57,7 +57,7 @@ When running `dev_build_python.bat`, you may get an error when Windows tries to 
 can't find file to patch at input line XXX
 Perhaps you should have used the -p or --strip option?
 ```
-This seems to be caused by using strawberry perl patch and not gits.
+This seems to be caused by using patch from strawberry perl patch and not from git.
 
 If this happens, comment out the `patch` command in `common_build_python.bat`, then run the script again. Once it's finished, open a Git Bash window, `cd` to `/c/Instrument/Apps/Python/package_builder` and run the same `patch` command you commented out, changing the Windows paths to UNIX paths (`\` -> `/` and `C:` -> `/c`). Then, check the `CaChannel.py` file to ensure it was patched properly.
 
