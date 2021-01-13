@@ -42,6 +42,7 @@ count=0
 MT~a=2
 DC~a=1024;AC~a=1024;SH~a
 ```
+
 For homing set up some variables:
 
 - mode (what galil is doing) 
@@ -60,9 +61,10 @@ WT 100
 ST~a
 AM~a
 ```
+
 If at home switch then move off it otherwise go directly to `HOME` step.
 
-``
+```
 #HOME
 '*******STEP 2 - Find Gigital Home*******
 mode=1
@@ -98,7 +100,7 @@ WT1000
 ```
 Set the position of the home switch as -200 and move to 1024.
 
-``
+```
 #OSCILSU
 '****Step 3 - Oscillation Setup*******
 mode=2
