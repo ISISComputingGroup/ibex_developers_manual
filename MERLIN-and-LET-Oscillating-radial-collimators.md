@@ -24,7 +24,7 @@ To restart this is sometimes tricky try the following:
 
 # Galil Code
 
-The oscialltions are managed by the galil code different on [LET](https://github.com/ISISComputingGroup/EPICS-galil/blob/master/GalilSup/Db/galil_Oscillating_Collimator.gmc) and [MERLIN](https://github.com/ISISComputingGroup/EPICS-galil/blob/master/GalilSup/Db/galil_Oscillating_Collimator_Merlin.gmc). This section is an rough explanation of the code.
+The oscillations are managed by the galil code different on [LET](https://github.com/ISISComputingGroup/EPICS-galil/blob/master/GalilSup/Db/galil_Oscillating_Collimator.gmc) and [MERLIN](https://github.com/ISISComputingGroup/EPICS-galil/blob/master/GalilSup/Db/galil_Oscillating_Collimator_Merlin.gmc). This section is an rough explanation of the code.
 
 ```
 '************MERLIN Collimator*********
@@ -46,9 +46,9 @@ DC~a=1024;AC~a=1024;SH~a
 For homing set up some variables:
 
 - mode (what galil is doing) 
-- count (how many oscialltions it has performed)
+- count (how many oscillations it has performed)
 
-Then set the acceleration and deacceleration and switch motor on.
+Then set the acceleration and deceleration and switch motor on.
 
 ```
 JP #HOME, @IN[6]=1
@@ -110,7 +110,7 @@ SH~a
 PA~a=-dist/2
 MC~a
 ```
-Move to half the oscialltion distance in the negative direction.
+Move to half the oscillation distance in the negative direction.
 
 ```
 #OSCIL
@@ -129,7 +129,7 @@ time=TIME-time1
 JP#OSCIL
 EN
 ```
-Move to positive and then negative positions of osciallition, recording time for total movement. There is a disabled check that we clear the limit switch. Repeat this motion forever.
+Move to positive and then negative positions of oscillation, recording time for total movement. There is a disabled check that we clear the limit switch. Repeat this motion forever.
 
 The code on LET is the same except that:
 
@@ -137,5 +137,5 @@ The code on LET is the same except that:
 1. It performs jogs instead of limited moves
 1. The home switch is defined to be at 0 (not -200)
 1. It does not switch on the motor before each move
-1. After the home and before the setup oscialltion it does not move the motor away from the home switch position
+1. After the home and before the setup oscillation it does not move the motor away from the home switch position
 
