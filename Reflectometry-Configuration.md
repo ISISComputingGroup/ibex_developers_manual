@@ -132,6 +132,7 @@ These are the top-level parameters exposed as PVs of the form `<PREFIX>:REFL:PAR
 - `description`: A description of this parameter (Default: use parameter `name`)
 - `autosave`: Whether the parameter should be [autosaved](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Beamline-Parameters#parameter-initialisation) to file (meaning that on IOC start up, the last known setpoint is re-applied, rather than inferred from a motor position). If multiple parameters depend on a single motor axis (e.g. `Theta` and `PDOffset` are inferred from point detector height), all but one of them should be autosaved in order to not lose information on the constituent parts of the axis value on restart. (Default: `False`)
 - `rbv_to_sp_tolerance`: The maximum difference between parameter readback and setpoint values at which it is still considered by the IOC to have arrived at its setpoint. (Default: `0.002`)
+- `custom_function`: A python function that will be run when the parameter is moved to (either as part of a move all, as an individual parameter move or because it is in a mode where another parameter is set). This can be used to set other things in the system that depend on certain parameters, for example INTER uses it to set the wiring table when the point detector is put into and taken out of the beam. The arguments passed are the new value of the setpoint and the original value of the setpoint. To make it future compatible it should also except `*args` and `**kwargs`.
 
 ### Example
 
@@ -147,6 +148,37 @@ DirectParameter("sample_trans", MotorPVWrapper("MOT:MTR0305"))
 ```
 Create a parameter called `SAMPLE_TRANS` that sets the motor 0305.
 
+```
+def change_dae_tables(point_detector_in_beam, last_point_detector_in_beam):
+    """
+    Change the dae tables. In beam use the point detector tables, out of the beam use multi detector.
+    
+    Args:
+        point_detector_in_beam: True point detector is in the beam; False otherwise 
+        last_point_detector_in_beam: Original value before the parameter set
+    Return:
+         message to let the user know tables were changed
+    """
+    from genie_python import genie as g
+
+    g.set_instrument(None, import_instrument_init=False)
+    tables = {True: {"wiring": "wiring_pd.dat",
+                     "spectra": "spectra_pd.dat",
+                     "detector": "detector_pd.dat"},
+              False: {"wiring": "wiring_multi.dat",
+                      "spectra": "spectra_multi.dat",
+                      "detector": "detector_multi.dat"}}
+    if point_detector_in_beam != last_point_detector_in_beam:
+        g.change_tables(**tables[point_detector_in_beam])
+        return "DAE tables set"
+    return None
+
+...
+
+    add_parameter(InBeamParameter("PDINBEAM", comp, autosave=False, custom_function=change_dae_tables), modes=all_modes)
+```
+
+Here when the point detector goes into or comes out of the beam the DAE tables are changed to be the correct tables.
 
 ## [Composite Drivers](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Composite-Driving-Layer)
 
