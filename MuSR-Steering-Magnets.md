@@ -1,0 +1,7 @@
+MuSR has two steering magnets, for horizontal and vertical steering of muons.
+
+An OPI exists for this (`musr_steering.opi`) which takes two Kepco Power supplies as macros for the respective magnet. 
+
+This OPI contains a `STOP` and `START` button as pictured - this sends a PV write to the `IN:NDXMUSR:MUSR_STEERING_OFF` PV. This gets loaded by `INSTETC` on MuSR from `custom_records.db` file in the configurations area. This is stored on the `NDXMUSR` branch. 
+
+![musr_steering_opi](https://user-images.githubusercontent.com/14823767/105205634-61fc7600-5b3d-11eb-9b34-4789c86591ae.PNG)
