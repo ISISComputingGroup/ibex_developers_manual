@@ -16,6 +16,21 @@ CAENx527ConfigureCreate "hv1", "_IP_ADDR2_"
 
 When `CAENx527DbLoadRecords` is called it will then create PVs of the form `hv0:_SLOT_:_CHANNEL_`
 
+### PVs
+
+The pv setup is a little weird for this device, it looks like value is the setpoint and value:fbk is the readback. So:
+
+`pwonoff`: sets the power
+`pwonoff:fbk`: readsback the value (I am unsure whether this is the setpoint or the status)
+
+### Simulation/HVCAENSIM Simulated CAEN (older version of the CAEN)
+
+The HVCAEN SIM IOC uses a simulated caen library to simulate the CAEN. This does not work completely, current it looks like setting anything does not updates the monitor values.
+
+The SIM also disconnects and reconnects itself every X commands to show that is working.
+
+Finally it looks like the macros `SIM`, `DEVSIM` and `RECSIM` are not respected so you need to set the SIM PV directly.
+
 ### Troubleshooting
 If you run `dbl` and get mainly standard support IOC PVs check that comms have been established to the given IP address
 
