@@ -18,10 +18,10 @@ When `CAENx527DbLoadRecords` is called it will then create PVs of the form `hv0:
 
 ### PVs
 
-The pv setup is a little weird for this device, it looks like value is the setpoint and value:fbk is the readback. So:
+The pv setup is a little weird for this device, it looks like value is the setpoint and `value:fbk` is the readback. So:
 
 `pwonoff`: sets the power
-`pwonoff:fbk`: readsback the value (I am unsure whether this is the setpoint or the status)
+`pwonoff:fbk`: readback the value (I am unsure whether this is the setpoint or the status)
 
 ### Simulation/HVCAENSIM Simulated CAEN (older version of the CAEN)
 
