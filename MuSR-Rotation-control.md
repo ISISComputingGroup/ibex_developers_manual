@@ -10,4 +10,4 @@ Condition <br>(Channel 4 voltage)          | Action                             
 ---------------------------------------|------------------------------------------------------------------------------|
 voltage >= +4V                         | If orientation is not transverse,  set orientation  to transverse, and update the config files accordingly. <br> If orientation  is already transverse,  keep orientation  set to transverse          |
 -4V < voltage < +4V                  | Do not change the current orientation                                                         |
-voltage <= +4V                         |  If orientation is not longitudinal  set orientation to longitudinal and update the config files accordingly. <br> If orientation is already longitudinal, keep orientation set to longitudinal  |
+voltage <= -4V                         |  If orientation is not longitudinal  set orientation to longitudinal and update the config files accordingly. <br> If orientation is already longitudinal, keep orientation set to longitudinal  |
