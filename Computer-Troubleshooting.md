@@ -24,6 +24,24 @@ smartsizing:i:1
 
 This may be solved by adding windows credentials on the machine. There is a document describing how to do this on ICP Discussions under "Security".
 
+## Cannot access just the ISIS archive (but can access the instrument shares as above)
+
+This will be identified by a failure to access archive shares even though access to the normal ISIS document shares **is** possible
+This may be solved by adding a global DNS suffix to the network connection. Open an admin privileged powershell console.  Then use the get command to check what is in the existing suffix list
+
+```
+Get-DnsClientGlobalSetting
+
+UseSuffixSearchList : True
+SuffixSearchList    : {domain1.ac.uk, domain2.ac.uk}
+UseDevolution       : True
+DevolutionLevel     : 0
+```
+
+Now run the following command to prepend the fully qualified (in our case the ISIS domain) to the suffix search list returned in the last command (similar syntax to the example below)
+
+`PS C:\WINDOWS\system32> Set-DnsClientGlobalSetting -SuffixSearchList newdomain3.ac.uk,domain1.ac.uk,domain2.ac.uk`
+
 ## Cannot VNC into the machine
 
 Check the network is up (ping `NDX<INST>`).
