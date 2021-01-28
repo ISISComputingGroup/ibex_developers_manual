@@ -18,3 +18,10 @@ The device itself has a large amount of functionality, however the IOC (and corr
 Terminators are `CR LF`
 
 Device uses a 9-pin male serial cable (female connector on device) and requires a null modem.
+
+## Excitations
+
+The MuSR lakeshore 340 excitations needs to be able to be controlled in two ways:
+
+- Set and get the excitations value for input A (via the OPI or a block)
+- Define temperature setpoint thresholds and excitation pairs
