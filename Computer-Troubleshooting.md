@@ -38,9 +38,9 @@ UseDevolution       : True
 DevolutionLevel     : 0
 ```
 
-Now run the following command to prepend the fully qualified (in our case the ISIS domain) to the suffix search list returned in the last command (similar syntax to the example below)
+Now run the following command to prepend the fully qualified (in our case the ISIS domain) to the suffix search list returned in the last command (similar syntax to the example below).
 
-`PS C:\WINDOWS\system32> Set-DnsClientGlobalSetting -SuffixSearchList newdomain3.ac.uk,domain1.ac.uk,domain2.ac.uk`
+`PS C:\> Set-DnsClientGlobalSetting -SuffixSearchList newdomain3.ac.uk,domain1.ac.uk,domain2.ac.uk`
 
 ## Cannot VNC into the machine
 
