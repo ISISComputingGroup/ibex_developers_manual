@@ -32,6 +32,8 @@ You can find examples in the lakeshore 340 support module `lakeshore340\excitati
 
 ### Excitations IOC records and algorithm
 
+You can view a diagram describing how the original VI worked [here](https://github.com/ISISComputingGroup/IBEX/issues/5950#issuecomment-769071044).
+
 The `asub` record `THRESHOLDS:_CALC` calculates and sets the thresholds. The function the record contains also checks conditions such as the file containing invalid lines, the file not existing and whether the file is None.txt (the default which says to not do anything).
 
 The `THRESHOLDS:_CALC` record is triggered into processing by the setting of `A:TEMP:SP` and `THRESHOLDS:FILE` (written to via `dbpf` from `st-common.cmd`). For how the thresholds file is read see [here](https://github.com/ISISComputingGroup/ibex_user_manual/wiki/Lakeshore-340) and diagram below. Once the values are calculated they are set into `THRESHOLDS:TEMP` and `THRESHOLDS:EXCITATION` or if there is an error `THRESHOLDS:ERROR`. The IOC then waits for the temperature to reach the setpoint before writing the excitation to `EXCITATIONA:SP`, this mechanism is documented in the diagram below.
