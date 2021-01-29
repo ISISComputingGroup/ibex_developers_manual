@@ -36,3 +36,4 @@ The `asub` record `THRESHOLDS:_CALC` calculates and sets the thresholds. The fun
 
 The `THRESHOLDS:_CALC` record is triggered into processing by the setting of `A:TEMP:SP` and `THRESHOLDS:FILE` (written to via `dbpf` from `st-common.cmd`). For how the thresholds file is read see [here](https://github.com/ISISComputingGroup/ibex_user_manual/wiki/Lakeshore-340) and diagram below. Once the values are calculated they are set into `THRESHOLDS:TEMP` and `THRESHOLDS:EXCITATION` or if there is an error `THRESHOLDS:ERROR`. The IOC then waits for the temperature to reach the setpoint before writing the excitation to `EXCITATIONA:SP`, this mechanism is documented in the diagram below.
 
+![IOC and flowchart diagram for excitations](https://raw.githubusercontent.com/wiki/ISISComputingGroup/ibex_developers_manual/LKSH340ExcitationsEPICS.png)
