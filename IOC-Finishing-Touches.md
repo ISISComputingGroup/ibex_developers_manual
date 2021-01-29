@@ -147,5 +147,4 @@ Once the IOC is reviewed and tested with hardware, [add it to the EPICS hardware
 
 ## 12. Initialising Setpoints
 
-*TRIAL* remove when someone has tried. 
-Setpoint pvs should have undefined field be initialised using `field("UDFS", NO_ALARM)` this means that they can have alarm sensitive borders but will not alarm if they have never been set.
+Setpoint pvs should have undefined field be initialised using `field(UDFS, "NO_ALARM")` this means that they can have alarm sensitive borders but will not alarm if they have never been set.
