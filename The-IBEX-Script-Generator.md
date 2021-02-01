@@ -64,6 +64,9 @@ Generator classes are used to check validity and generate scripts. They use the 
 
 ## Saving the Parameter values and loading back up
 Parameters values from the Script Generator can be saved in a file. The file format chosen is JSON due to its flexibility and well-tested parser available for upgrading it using upgrade script in future. 
+
+Parameters are saved as `.sgp` (Script Generator Parameter) files.
+
 The format of the chosen JSON file is as follows:
 
 ```
