@@ -76,7 +76,8 @@ ACTION: Dom should update the project board checks to check these
 - sometimes have meetings at that time
 - do we need to have an evening roundup? 
 - should we do coffee at the start of the day? or move stand up 
-- maybe we should have an activity or something for a bit of fun at coffee - show and tell, something else? 
+- maybe we should have an activity or something for a bit of fun at coffee - show and tell, something else? werewolf? suggestions on teams social channel 
+
 
  
 
