@@ -109,3 +109,9 @@ runtests:
 	run_tests.bat $(EPICS_HOST_ARCH)
 ```
 An example of an IOC that does this is the [cryosms](https://github.com/ISISComputingGroup/EPICS-Cryosms).
+
+## Common issues
+
+### Tests pass but error afterwards "Cannot detect source of runner.run"
+
+You may need to include `include $(GTEST)/cfg/compat.RULES_BUILD` at the end of your Makefile.
