@@ -4,10 +4,10 @@
 | ------ | ----  |
 | Squish Tests | Genie Python |
 | Block Cache | Script Server |
-| | Database Server |
 | OPI scripts| Script Generator |
 | IOC log server | Block Server to Kafka |
-| Experimental Database | IBEX utils |
+| | Database Server |
+| | IBEX utils |
 | | System tests |
 | | Instrument Scripts
 | | Reflectometry Server
