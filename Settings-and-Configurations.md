@@ -69,3 +69,7 @@ The configuration directory is backed up into git. This is done by the [Blockser
 Each instrument stores the configurations in their own branch in this repository, these branches are named the same as the instrument machine.
 
 The repository is stored in a [local repository](New-Local-Git-Repository).
+
+## Special cases
+
+Detmon has a special case for their configuration because they want to create configurations with the same info for multiple CAEN crates. The way this is created is [described on the ibex instrument page](in https://github.com/ISISComputingGroup/IBEX/wiki/DETMON-Instrument-Details#configuration-set-up).
