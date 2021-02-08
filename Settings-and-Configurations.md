@@ -72,4 +72,4 @@ The repository is stored in a [local repository](New-Local-Git-Repository).
 
 ## Special cases
 
-Detmon has a special case for their configuration because they want to create configurations with the same info for multiple CAEN crates. The way this is created is [described on the ibex instrument page](in https://github.com/ISISComputingGroup/IBEX/wiki/DETMON-Instrument-Details#configuration-set-up).
+`Detmon` has a special case for their configuration because they want to create configurations with the same info for multiple CAEN crates. The way this is created is [described on the ibex instrument page](in https://github.com/ISISComputingGroup/IBEX/wiki/DETMON-Instrument-Details#configuration-set-up).
