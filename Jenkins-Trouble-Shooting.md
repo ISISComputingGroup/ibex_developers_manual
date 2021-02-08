@@ -38,9 +38,9 @@ If the service fails to start have a look in `C:\Jenkins` at `jenkins-slave.wrap
 
 If the wrong java path is set then the slave will not start. Update the path to the correct version of java in `...\Jenkins\jenkins-slave.xml`.
 
-## Linux build node (sl7cloud) is offline
+## Linux build node (`sl7cloud`) is offline
 
-If the node has rebooted and/or installed an `sshd` update, it may have removed jenkins from its ssh authority. You need to edit `/etc/ssh/sshd_config` and add `jenkins` to the `AllowGroups` line. Then run `service sshd restart` on sl7cloud. You can then ask the Jenkins server to relaunch the node.  
+If the node has rebooted and/or installed an `sshd` update, it may have removed jenkins from its ssh authority. You need to edit `/etc/ssh/sshd_config` and add `jenkins` to the `AllowGroups` line. Then run `service sshd restart` on `sl7cloud`. You can then ask the Jenkins server to relaunch the node.  
 
 ## Builds failing to check out
 
