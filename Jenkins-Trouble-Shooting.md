@@ -38,10 +38,12 @@ If the service fails to start have a look in `C:\Jenkins` at `jenkins-slave.wrap
 
 If the wrong java path is set then the slave will not start. Update the path to the correct version of java in `...\Jenkins\jenkins-slave.xml`.
 
-## Linux build node (s7cloud) is offline
+## Linux build node (sl7cloud) is offline
 
-If the node has rebooted and/or installed an `sshd` update, it may have removed jenkins from its ssh authority. You need to edit `/etc/ssh/sshd_config` and add `jenkins` to the `AllowGroups` line. Then run `service sshd restart` on s7cloud. You can then ask the Jenkins server to relaunch the node.  
+If the node has rebooted and/or installed an `sshd` update, it may have removed jenkins from its ssh authority. You need to edit `/etc/ssh/sshd_config` and add `jenkins` to the `AllowGroups` line. Then run `service sshd restart` on sl7cloud. You can then ask the Jenkins server to relaunch the node.  
 
+If you need to log onto the machine, it is ssh with fed id - check the hostname in the jenkins job, it was recently `host-172-16-114-103.nubes.stfc.ac.uk`
+ 
 ## Builds failing to check out
 
 If a jenkins job (often epics-static-clean on NDWVEGAS) is failing to run and near the start you see something like
