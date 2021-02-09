@@ -46,6 +46,8 @@ Sample Stacks and Goniometers
 
 [Sensors](Sensors)
 
+[Signal Generators](Signal-Generators)
+
 [Temperature Controllers](Temperature-Controllers)
 
 [Water\Oil Baths](Water-Baths)
