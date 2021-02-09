@@ -2,4 +2,4 @@
 
 Signal generators
 
-* [Tektronix AFG3XXX](Tektronix AFG3XXX)
+* [Tektronix AFG3XXX](Tektronix-AFG3XXX)
