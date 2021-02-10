@@ -105,7 +105,7 @@ Our CS-Studio GUI dependencies are located on a share at `\\shadow.isis.cclrc.ac
 - `git clone --recursive https://github.com/ISISComputingGroup/isis_css_top.git`
 - Make relevant changes to the code, make sure submodules get pinned to new versions using same workflow as in EPICS top.
 - Trigger a build on Jenkins
-- After the build is complete go to the build server and copy the entire isis_css_top tree to the share
+- After the build is complete go to the build server and copy the entire isis_css_top tree to the share (\\shadow.isis.cclrc.ac.uk\ICP_P2$)
 - Subsequent GUI builds will pick up the new dependencies
 - Test that your changes work correctly!
 
