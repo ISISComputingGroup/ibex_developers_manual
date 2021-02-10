@@ -42,6 +42,8 @@ If the wrong java path is set then the slave will not start. Update the path to 
 
 If the node has rebooted and/or installed an `sshd` update, it may have removed jenkins from its ssh authority. You need to edit `/etc/ssh/sshd_config` and add `jenkins` to the `AllowGroups` line. Then run `service sshd restart` on `sl7cloud`. You can then ask the Jenkins server to relaunch the node.  
 
+To log onto the node you need to ssh to its real hostname - you can get this by clicking on the `sl7cloud` node in jenkins, going to `configure` and then you will see a `<something>.nubes.stfc.ac.uk` hostname to use. Lop in with fed id, you should be able to sudo from your account. 
+
 ## Builds failing to check out
 
 If a jenkins job (often epics-static-clean on NDWVEGAS) is failing to run and near the start you see something like
