@@ -44,7 +44,7 @@ If the node has rebooted and/or installed updates then it may have removed `jenk
 
 To log onto the node you need to ssh to its real hostname - you can get this by clicking on the `sl7cloud` node in jenkins, going to `configure` and then you will see a `<something>.nubes.stfc.ac.uk` hostname to use. Lop in with fed id, you should be able to sudo from your account. 
 
-Log into the web page `https://cloud.stfc.ac.uk/` for an overview of all our VMs
+Log into the web page `https://cloud.stfc.ac.uk/` for an overview of all our VMs and `https://openstack.stfc.ac.uk/` for a more detailed management interface
 
 ## Builds failing to check out
 
