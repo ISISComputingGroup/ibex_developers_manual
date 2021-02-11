@@ -49,7 +49,7 @@ The mercury ITC driver essentially reads data from 5 distinct channels:
 | He3 Pot (high sensor) | `HeHigh` | `DB7_He3_Pot_CRN` | Monitoring only. This is a "high" (~2-80K) temperature thermocouple, used for measuring the temperature of the He3 Pot when the temperature is in it's range of validity. This channel will give invalid temperatures if the heliox is running at "low" temperature. | 
 | He3 Pot (low sensor) | `HeLow` | `DB8_He3_Pot_Low` | Monitoring only. This is a "low" (~0.2-2K) temperature thermocouple, used for measuring the temperature of the He3 Pot when the temperature is in it's range of validity. This channel will give invalid temperatures if the heliox is running at "high" temperature. | 
 
-Because the channel names vary between the Muon Heliox and the LET heliox, they must be supplied as IOC macros.
+Because the channel names vary between the Muon Heliox and the LET heliox, they must be supplied as IOC macros. (Apart from the `He3 Pot`, which is the same for both devices)
 
 If a new heliox turns up on another beamline, the following is the process to figure out the required channel names:
 - Connect to the device via your favourite terminal emulator (HTerm/PuTTY/HyperTerminal/etc).
