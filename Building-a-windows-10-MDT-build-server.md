@@ -17,6 +17,7 @@ This wiki page describes the process for setting up a new `NDXMDTSERVPROD` machi
 - If you are creating `NDXMDTSERVPROD` as a virtual machine, you need to find a physical host for the MDT server.
   * Ideally use same specifications as for an instrument machine (14GB memory, 256GB free disk space) 
   * If memory or disk space are tight, an MDT server can probably get by with ~6GB of memory and ~100GB of free disk space.
+  * __NB: if you are considering using your local machine as a host while working from home the VPN can cause issues where NDHBUILD cannot be found. We haven't found an easy fix for this so it's probably best to use an on-site host machine.__
 - If you are creating `NDXMDTSERVPROD` as a virtual machine, go into hyper-v manager on the MDT server host and select new machine. Default settings are mostly ok other than:
   * Set the name to the intended hostname of the `NDXMDTSERVPROD` machine
   * You'll need to create it on a disk which has enough space (will need ~256GB free)
