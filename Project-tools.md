@@ -23,6 +23,7 @@
 * [Generate a log at points in time from the Archive](Archive-Time-Log): Tools for getting data from the archive database at regular points in time.
 * [Generate a log of events from the archive](Archive-Event-Log): Tools for getting event data, pv changes, from the archive database.
 * [Archiver rate](archive-rates): Tool for finding the archiver rate on a machine.
+* [Restore motor positions from archive](Restore-Motor-Positions-from-Archive)
 
 ### Config Tools
 
