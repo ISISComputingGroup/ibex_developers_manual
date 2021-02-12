@@ -47,9 +47,14 @@ When starting the IOC, the beamline parameter values are initialized. The intend
    - If `autosave=False`, it will initialise the setpoint based on motor value, i.e. it will be the same as the readback value. This is the default behaviour.
    - If `autosave=True`, the setpoints will be initialized to a value read from a file in the `Instrument\Var` area. If this affects the beam path (e.g. the autosaved value is the supermirror angle), parameters of components further along the beam path will be computed to be correct given the real motor position and the altered beam path. A parameter's autosave value is updated in the file every time that parameter is moved.
 
-In some cases, autosaved parameters are necessary. Example:
+In some cases, autosaved parameters are necessary. 
+
+**Example1**:
 
 ![Init Theta](reflectometers/sp_inits.png)
 
 Theta is defined by the angle between the sample point and the next component it is angled to (e.g. the point detector). However, the detector itself can also have an offset parameter that moves it to a given position relative to the beam. On intialisation we only have one value for the height of the detector, however we cannot tell which portion of that height comes from theta and which portion comes from the detector offset parameter without saving one of the two values.
 
+**Example2**:
+
+A parameter that can be calculated using an axis that can be parked. In this case if the axis has no auto save and is in its parked position when the IOC is started then it is impossible to tell where the user wants it to be when it is in the beam. In this case the server will issue the error `Parameter <parameter name> is parkable so should have an autosave value but doesn't. Has been set to 0 check its value`, the server will then use zero for the in beam position but you will want to check that it makes sense for this parameter.
