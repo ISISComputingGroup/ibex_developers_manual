@@ -46,7 +46,7 @@ This wiki page describes the process for setting up a new `NDXMDTSERVPROD` machi
   * Add the ability to remote desktop as this account by adding it to group `Remote Desktop Users`
   * Add `mdtbuilder` to `Administrators` group (this is important for later)
 - Now log out of the admin account and log back in as `mdtbuilder`
-- Copy the following files from `\\isis.cclrc.ac.uk\inst$\kits$\CompGroup\ICP\MDT` into `NDXMDTSERVPROD`:
+- Copy the following files from `\\isis.cclrc.ac.uk\inst$\kits$\CompGroup\ICP\MDT` into `NDXMDTSERVPROD`(if it asks for credentials use your fed id, **do not save these to the machine**):
   * `adksetup.exe` - a utility for measuring performance of machines ("assessment and deployment toolkit")
   * `MicrosoftDeploymentToolkit_x64.exe` - this is MDT itself
   * `adkwinpsetup.exe` - this may not be necessary?
