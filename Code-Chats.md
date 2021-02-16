@@ -8,7 +8,7 @@ Code chats occur on a semi-regular monthly basis within the group at ISIS. Altho
 
 Topic | Presenter | Date
 ----- | --------- | ----
-Cryogenics handover | Tom Willemsen | Tuesday the 2nd of February
+
 
 ### Proposed Future Code Chats
 
@@ -139,6 +139,7 @@ DAQMx and Moxa DIO devices | Alistair | 28th September '20
 Deploying EPICS with Ansible | CLF Controls team | 19th October '20
 Helium Level Monitoring | Kathryn/Mihai | 19th November '20
 Handover: Client Build System | Tom | 10th December '20
+Cryogenics handover | Tom Willemsen | 2nd February '21
 
 All presentations should be uploaded to the SharePoint site [here](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Forms/AllItems.aspx?RootFolder=%2Fisis%2Fcomputing%2FICPdiscussions%2FGUI_Chat_Slides&FolderCTID=0x01200027AD8F05966A2748B3B04C98BB5B442B&View={F2C33C51-70E6-4343-B937-2C59A2568306}) and/or converted to a wiki page if more appropriate. It should also be reasonably assumed that the people who gave these presentations should know something about these subjects.
 
