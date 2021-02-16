@@ -6,13 +6,13 @@ IOC for devices connected with cryogenic.
 * [Cryogenics Ltd Helium Level Gauge](Cryogenics-Ltd-Helium-Level-Gauge)
 * [Oxford Instruments Triton](Triton)
 * [Oxford Instruments Mercury heliox](Mercury-Heliox)
+* [Oxford Instruments ITC503 Heliox](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/ITC503-Heliox)
 * [ICE dilution fridge](ICE-Dilution-Fridge)
 * [Oxford Instruments Mercury ITC](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/MercuryiTC)
 * [Oxford Instruments ITC503](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/ITC-503)
 * [Oxford Instruments (mercury) IPS](Oxford-Instruments-Mercury-IPS)
 * [Oxford Instruments (old-style) IPS](Oxford-Instruments-IPS)
 * [Cryogenics Inc. SMS PSU](Cryogenic-SMS-PSU)
-* [Oxford Instruments ITC503 Heliox a.k.a. MuSR 3He Refrigerator](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/MuSR-3He-Refrigerator)
 
 # Cryostats (T>1K)
 
