@@ -1,4 +1,4 @@
-Used on MuSR which can be known as the Muon Heliox or MuSR 3He Refrigerator. The device is a Heliox/ITC503 based refrigerator.
+Original implementation for use on MuSR 3He refrigerator. The device is a Heliox/ITC503 based refrigerator.
 
 ## Physical process overview
 
