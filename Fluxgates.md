@@ -4,7 +4,7 @@
 
 LakeShore 460
 
-[Bartlington](Bartlington)
+[Bartington](Bartington)
 
 [Zero-field magnetometer](Zero-Field-Magnetometer-IOC)
 
