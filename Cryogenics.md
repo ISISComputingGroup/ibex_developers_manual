@@ -12,6 +12,7 @@ IOC for devices connected with cryogenic.
 * [Oxford Instruments (mercury) IPS](Oxford-Instruments-Mercury-IPS)
 * [Oxford Instruments (old-style) IPS](Oxford-Instruments-IPS)
 * [Cryogenics Inc. SMS PSU](Cryogenic-SMS-PSU)
+* [Oxford Instruments MuSR 3He Refrigerator a.k.a ITC503 Heliox](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/MuSR-3He-Refrigerator)
 
 # Cryostats (T>1K)
 
