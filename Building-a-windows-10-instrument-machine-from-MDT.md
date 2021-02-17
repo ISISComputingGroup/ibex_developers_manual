@@ -26,6 +26,7 @@ Note: this page documents the process of building a windows 10 **system**. This 
   * Install OS later
 - In Hyper-V manager, add the VHDs as disks for the virtual machine. You do not need to specify a mount point, just make the disks available.
   * Note: if you are replacing existing disks, you **still need to eject and re-add them in Hyper-V on the NDH for them to be recognized!**
+  * Note: This may cause bluescreening and it may be better to do the install first and then manually mounting the VHDs afterwards before running `make_inst.cmd` and so on. 
 - Tell Hyper-V to boot from the windows PE ISO you copied earlier by adding it as the "DVD" drive in hyper-v
 - Boot the virtual machine from hyper-v
 - Select "Build thick updated windows 10 image"
