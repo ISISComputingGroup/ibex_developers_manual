@@ -8,6 +8,7 @@ Code chats occur on a semi-regular monthly basis within the group at ISIS. Altho
 
 Topic | Presenter | Date
 ----- | --------- | ----
+RIKEN refurbishment | Kevin | Monday the 8th of March 2021
 
 
 ### Proposed Future Code Chats
