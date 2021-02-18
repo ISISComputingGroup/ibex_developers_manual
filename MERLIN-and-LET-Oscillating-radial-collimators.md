@@ -141,7 +141,7 @@ The code on LET is the same except that:
 
 ## Distance and Velocity Calculation
 
-The distance and velocity the ORC is asked to move is calculated based on the provided swept angle and frequency. This calculation is done in the db inside `motorExtensions`. First the time taken for half a cycle, T, is calculated:
+The distance and velocity the ORC is asked to move is calculated based on the provided swept angle and frequency. This calculation is done in the db inside `motorExtensions`. The purpose of these calculations is to ensure that twice the swept angle is travelled with a constant velocity. First the time taken for half a cycle, T, is calculated:
 ```
 T = 1/(2*freq)
 ```
