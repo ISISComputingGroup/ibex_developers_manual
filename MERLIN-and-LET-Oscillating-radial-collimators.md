@@ -143,7 +143,7 @@ The code on LET is the same except that:
 
 The distance and velocity the ORC is asked to move is calculated based on the provided swept angle and frequency. This calculation is done in the db inside `motorExtensions`. First the time taken for half a cycle, T, is calculated:
 ```
-T=1/(2*freq)
+T = 1/(2*freq)
 ```
 Then swept distance in steps, D, is calculated:
 ```
@@ -151,11 +151,11 @@ D = 2*Radius*(Steps/mm)*tan(swept_angle)
 ```
 The required velocity, V, is then calculated based on the equation:
 ```
-(2/A)*(V^2)-V*T+D=0
+(2/A)*(V^2) - V*T + D = 0
 ```
 The solution to which is calculated as:
 ```
-V = A * (T - sqrt(T^2 - 8 * (D/A))) / 4
+V = A * (T - sqrt(T^2 - 8*(D/A))) / 4
 ```
 which is sent to the controller as `vel`. From this velocity the distance required to get to this velocity is calculated:
 ```
@@ -163,5 +163,5 @@ D_v = V^2 / (2*A)
 ```
 And so the total `dist` sent to the control is:
 ```
-dist = 2 * D_v + D
+dist = 2*D_v + D
 ```
