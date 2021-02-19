@@ -133,6 +133,12 @@ The calibration routine will create several plots:
   * If you observe oscillations (particularly in auto mode), you can try reducing the feedback factor, however this will make the system slower to respond to real changes.
   * If you see a trend of divergence away from zero, it is likely that there is a sign error in one of the Amps per mG numbers or in the magnetometer sensor matrix.
 
+# cDaq field smoothing
+
+Averaging can be applied with the use of the `NUM_SAMPLES` macro in the `ZFMAGFLD` IOC. This can help with noise from the magnetometer quickly giving feedback to the zero field controller. 
+
+To apply averaging, set the `NUM_SAMPLES` macro to however many samples you would like to compress. The default is 1, which doesn't do anything and leaves the field values as-is. 
+
 # Debug mode
 
 The zero-field controller includes a very verbose debug mode, which is off by default. To enable it, use `caput %MYPVPREFIX%ZFCNTRL_01:DEBUG 1`. This will log messages at various points in the state machine, to aid debugging.
