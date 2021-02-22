@@ -18,5 +18,5 @@ As well as the typical communication macros such as `BAUD`. `BITS`, `PARITY` etc
 
 # Troubleshooting
 
-If the Genesys fails to communicate and it has recently been replaced this may be due to it's internal address being set incorrectly. This can be changed in the front panel of the device.
+If the Genesys fails to communicate and it has recently been replaced this may be due to it's internal address being set incorrectly. This can be changed in the front panel of the device. Devices are often shipped with internal address 6.
 
