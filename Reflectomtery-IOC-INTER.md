@@ -31,6 +31,10 @@ Blocks that may be confusing:
 - `Height2`: Distance between the beam and the centre of rotation; usually set a 0. This moves the course z stage tracking the beam.
 
 
+### Slit 3/Beam blocker
+
+The [beam blocker](Reflectometry-Beam-Blocker) on INTER is not setup yet.
+
 ## Initial Testing
 Initial testing on `INTER` was performed from 19 Aug 20 to 21 Aug 20. Tests performed:
 - Correctness of SECI <-> IBEX swap scripts
