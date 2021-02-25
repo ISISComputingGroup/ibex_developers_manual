@@ -8,3 +8,6 @@ Unlike some reflectometers there is only a single sample height and it is define
 
 - `Height`: Distance between the beam and the centre of rotation; usually set to 0. This parameter moves the height stage tracking the beam.
 
+### Slit 3/Beam blocker
+
+There is no beam blocker setup on SURF.
