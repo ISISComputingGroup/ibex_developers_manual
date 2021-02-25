@@ -387,7 +387,7 @@ Add jaws-specific parameters and related drivers for a given jawset, i.e. horizo
 - `mode_inits`: a list of mode init values for these parameters as a list of tuples (`BeamlineMode`, value) (default: `None`)
 - `exclude`: Do not create parameters for the given individual axes or blades; each must be one of `VG`, `VC`, `HG`, `HC`, `N`, `S`, `E`, `W` (default: `None`)
 - `include_centres`: Whether parameters for centres should be created or gaps only (default: `False`)
-- `beam_blocker`: string containing code for beam blocker config, `N`, `S`, `E`, `W` for each blade which blocks the beam
+- `beam_blocker`: string containing code for beam blocker config, `N`, `S`, `E`, `W` for each blade which blocks the beam. See [Reflectometry Beam Blocker](Reflectometry-Beam-Blocker)
 
 ### `as_mode_correction`
 Helper method for you define a constant correction to be applied for specific modes only.
