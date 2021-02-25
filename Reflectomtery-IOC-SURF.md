@@ -10,4 +10,4 @@ Unlike some reflectometers there is only a single sample height and it is define
 
 ### Slit 3/Beam blocker
 
-There is no beam blocker setup on SURF.
+There is no [beam blocker](Reflectometry-Beam-Blocker) setup on SURF.
