@@ -31,22 +31,22 @@ Don't forget the [drop in sessions](https://github.com/ISISComputingGroup/IBEX/w
 
 | Chair | x for Done | Timekeeper | x for Done | Note taker | x for Done |Standup | x for Done |
 | --- | --- | --- | --- | --- | --- |--- | --- |
-| DK | x | CC | x | TL | x |FA | x |
-| KB | x | MS | x | KB | x |DO | x |
-| FA | x | DO | x | DK | x |TL | x |
-| DO | x  | JK | x | JH | x  |KB | x |
-| KB | x | FA | x | DO |  |CMS | x |
-| CMS | x | JH | x | MS |  |BR | x |
-| TL | x | KB | x  |  |  |FA | x |
-| BR | x | DO | X |  |  |JH | x |
-| CC | x  | KB | x |  |  |DO | x |
-| FA | X  | TL |  |  |  |DK | x |
-| TL | x | CC |  |  |  |MS | x |
-| DK |  | CMS |  |  |  |FA | x |
-| KB |  | DK |  |  |  |KB | x |
-| JK |  | AL |  |  |  |TL |  |
-| JH |  | FA |  |  |  |DO |  |
-| DO |  | BR |  |  |  |FA |  |
+| FA | x | DO | x | JH | x |KB | x |
+| TL | x | KB | x | DO |  |TL |  |
+| DK |  | TL |  | MS |  |DO |  |
+| KB |  | CC |  | JK |  |FA |  |
+| JK |  | CMS |  | TL |  |CC |  |
+| JH |  | DK |  | KB |  |JH |  |
+| DO |  | FA |  |  |  |CMS |  |
+| FA |  | KB |  |  |  |DK |  |
+| TL |  | JK |  |  |  |JK |  |
+| KB |  | DO |  |  |  |KB |  |
+| JK |  | DK |  |  |  |FA |  |
+| MS |  | JH |  |  |  |JK |  |
+| JH |  | BR |  |  |  |DO |  |
+| BR |  | TL |  |  |  |JH |  |
+| CMS |  | MS |  |  |  |TL |  |
+| DO |  | AL |  |  |  |KB |  |
+|  |  |  |  |  |  |MS |  |
+|  |  |  |  |  |  |BR |  |
 |  |  |  |  |  |  |AL |  |
-|  |  |  |  |  |  |JH |  |
-|  |  |  |  |  |  |KB |  |
