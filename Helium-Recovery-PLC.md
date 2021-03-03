@@ -6,6 +6,8 @@ The Helium Recovery PLC is a FINS PLC used for monitoring various parameters rel
 
 The manuals folder on the shares drive has a note with a link to the web page used by Cryogenics to monitor the helium gas recovery system. This displays the vast majority of values that are read by the IOC and was used to make sure the IOC reads data correctly. The values not displayed on the web page are specified in the memory map.
 
+This PLC is also currently being used for [HLM PV Import](https://github.com/ISISNeutronMuon/HLM_PV_Import).
+
 # Connection
 
 The Helium Recovery PLC communicates by using FINS over UDP, and is connected over Ethernet. However, you should use TCPNOHEAD when running tests in devsim. The FINS cmd should be similar to the example given [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Omron-FINS#configuration).
