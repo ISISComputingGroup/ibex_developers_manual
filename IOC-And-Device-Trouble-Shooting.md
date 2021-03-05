@@ -182,9 +182,9 @@ This may be because of variances in the signal returned from the motor. This is 
 
 To fix, use caput for the relevant PV in the motor record:
 
-`IN:[INST]:MOT:MTR0n0m.MDEL`: Sets the motor deadband. This will stop the position readback from oscillating
-`IN:[INST]:MOT:MTR0n0m.ADEL`: Sets the archiver deadband. This will stop values being written to the archiver unless the value changes by more than the deadband value
-`IN:[INST]:MOT:MTR0n0m_EDEL_SP`: Sets the encoder deadband. No readbacks will be updated unless the encoder varies by this amount.
+- `IN:[INST]:MOT:MTR0n0m.MDEL`: Sets the motor deadband. This will stop the position readback from oscillating
+- `IN:[INST]:MOT:MTR0n0m.ADEL`: Sets the archiver deadband. This will stop values being written to the archiver unless the value changes by more than the deadband value
+- `IN:[INST]:MOT:MTR0n0m_EDEL_SP`: Sets the encoder deadband. No readbacks will be updated unless the encoder varies by this amount.
 
 ## McLennan OPI controls all red
 
