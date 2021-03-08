@@ -74,3 +74,9 @@ At ioc start, some models of danfysik need to be explicitly changed into remote 
   * This is true on both LOQ and SANS2D (as of May 2019)
 - The magnet is calibrated. Calibration tables are start with `Goudsmit_magnet` and are located in `C:\Instrument\Settings\config\common\magnets`
 - The magnet can be run in transverse or solenoid modes. As far as IBEX is concerned, this corresponds to a change of calibration files.
+
+## Troubleshooting
+
+### Getting no bytes back from the device
+The power supply group have some test software they wrote for communicating with the device. Ask them to try this software and if it doesn't work it's likely a wiring issue.
+ 
