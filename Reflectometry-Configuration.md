@@ -134,6 +134,7 @@ These are the top-level parameters exposed as PVs of the form `<PREFIX>:REFL:PAR
 - `rbv_to_sp_tolerance`: The maximum difference between parameter readback and setpoint values at which it is still considered by the IOC to have arrived at its setpoint. (Default: `0.002`)
 - `custom_function`: A python function that will be run when the parameter is moved to (either as part of a move all, as an individual parameter move or because it is in a mode where another parameter is set). This can be used to set other things in the system that depend on certain parameters, for example INTER uses it to set the wiring table when the point detector is put into and taken out of the beam. The arguments passed are the new value of the setpoint and the original value of the setpoint. To make it future compatible it should also except `*args` and `**kwargs`. If the function returns a string it will be printed to the log.
 - `characteristic_value` (only for axis parameters): This allow a characteristic value from a PV to be displayed next to this parameter. The value for this is the PV name without instrument extension, e.g. `MOT:MTR0101`. These are often used to display raw motor values next to positions relative to the beam.
+- `sp_mirrors_rbv` (only for axis parameters): When set to True the setpoint will take its value from the readback value on any move (either because of a move beamline or because it is in the mode). For example the long axis on INTER moves sometimes but we don't want to move the motor back instead we want to correct the detector height.
 
 ### Example
 
@@ -177,6 +178,10 @@ def change_dae_tables(point_detector_in_beam, last_point_detector_in_beam):
 ...
 
     add_parameter(InBeamParameter("PDINBEAM", comp, autosave=False, custom_function=change_dae_tables), modes=all_modes)
+
+# sp mirrors rbv
+
+    add_parameter(AxisParameter("LONG", comp, CHangeAxis.LONG, sp_mirrors_rbv=True), modes=all_modes)
 ```
 
 Here when the point detector goes into or comes out of the beam the DAE tables are changed to be the correct tables.
