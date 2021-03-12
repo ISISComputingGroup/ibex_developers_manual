@@ -31,6 +31,8 @@ The velocity of the constant velocity move is set to be a 1/10 of the normal vel
 
 **There is a [special homing sequence for HRPD low temp sample changer](HRPD-homing-sequence) because it doesn't quite work until ticket [5739](https://github.com/ISISComputingGroup/IBEX/issues/5739) is done**
 
+The way this works in the code is that the motor driver send the correct home (or no home) dependent on the mode set in [`request_mode`](https://github.com/ISISComputingGroup/EPICS-motor/blob/master/motorApp/MclennanSrc/devPM304.cc#L163), for [SNL](https://github.com/ISISComputingGroup/EPICS-motor/blob/master/motorApp/MclennanSrc/homing.st) then takes care of other moves.
+
 ### Configuring axes
 When configuring a particular axis, an `axes.cmd` file is required in `C:\Instrument\Settings\config\[INSTMACHINE]\configurations\mclennan`. See the the [motion control](https://github.com/ISISComputingGroup/IBEX/wiki/Motion-Control) pages for additional details. It is often desirable to set up a number of axes depending which controller, and which axis is in use. There are specific environment variables set up to let you do this. The following example shows a stretching rig set up on `MOT0201` and a linear sample changer on `MOT0101`:
 
