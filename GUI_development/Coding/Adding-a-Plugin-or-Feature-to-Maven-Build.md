@@ -1,8 +1,22 @@
 > [Wiki](Home) > [The GUI](The-GUI) > [Coding](GUI-Coding) > Adding a plugin or feature to Maven
 
-There are essentially two steps to adding a plug-in (one small part of IBEX, such as the blocks view) or feature (a larger collection of plug-ins, such as CSS) to the maven build: Adding a POM file to the plugin/feature, and editing the parent POM (in `uk.ac.stfc.isis.ibex.client.tycho.parent`) to include the new file.
+The steps for adding a plug-in (one small part of IBEX, such as the blocks view) or feature (a larger collection of plug-ins, such as CSS) to the maven build are below:
 
 # Step by step:
+* Add the plug-in to `feature.base`:
+    * Open `feature.xml` in `uk.ac.stfc.isis.ibex.feature.base`
+    * Go to "Included Plug-ins" tab and click "Add..."
+    * Find your new plug-in in the list and add it
+
+* Add the plug-in to `ibex.product`
+    * Open `ibex.product` in `uk.ac.stfc.isis.ibex.e4.client.product`
+    * Go to "Configuration" tab and click "Add..." next the "Start Levels" section
+    * Find your new plug-in in the list and add it
+
+* Add the plug-in to `feature.base`:
+    * Open `feature.xml` in `uk.ac.stfc.isis.ibex.feature.base`
+    * Go to "Included Plug-ins" tab and click "Add..."
+    * Find your new plug-in in the list and add it
 
 * Convert the plug-in to a Maven project.
     * Right-click on the plug-in and select Configure > Convert to Maven Project
