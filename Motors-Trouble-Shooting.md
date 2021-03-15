@@ -123,3 +123,11 @@ This indicates that the motor does not believe it is at setpoint. The following 
 
 If motion is completing successfully but you still see a border, you might need to increase the tolerance in the first instance by increasing retry deadband. Check with the scientists what an achievable precision is.
 
+## ZOOM PGC
+The PGC on ZOOM (MTR0101 and MTR0102) uses absolute encoders. To set these up after a power cycle of the Galil the following must be sent to the device:
+```
+SYA=0
+SSA=1,26,27,0<15
+SYB=0
+SSB=1,26,27,0<6
+```
