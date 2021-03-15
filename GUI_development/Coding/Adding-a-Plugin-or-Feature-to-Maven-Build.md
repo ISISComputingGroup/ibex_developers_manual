@@ -5,7 +5,7 @@ The steps for adding a plug-in (one small part of IBEX, such as the blocks view)
 # Step by step:
 * Add the plug-in to `feature.base`:
     * Open `feature.xml` in `uk.ac.stfc.isis.ibex.feature.base`
-    * Go to "Included Plug-ins" tab and click "Add..."
+    * Go to "Included Plug-ins" (or "Included Features") tab and click "Add..."
     * Find your new plug-in in the list and add it
 
 * Add the plug-in to `ibex.product`
