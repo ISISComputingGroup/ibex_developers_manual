@@ -10,8 +10,9 @@ Note: this page documents the process of building a windows 10 **system**. This 
 ### Copy needed files onto physical host
 
 - Copy the set of IBEX VHDs you wish to install from the share onto the `NDH` host computer, ensuring that you are copying onto a disk with a suitable amount of free space.
+  - These should be `apps.vhdx`, `var.vhdx`, `settings.vhdx` and `scratch.vhdx`. You **MUST** mount `scratch.vhdx` as the first SCSI drive in the VM as it gets formatted and partitioned during the MDT task sequence (into `Data` and `Scratch`). `scratch.vhdx` is actually a blank VHDX so an empty one called something different will work as well (or a copy of one of the others)
   * Note: ensure the VHDs are not corrupt first by mounting them on your local machine - if they fail to mount, they may be corrupt and you should select a different set of VHDs. After mounting each VHD should contain some files, e.g. the Apps VHD should contain an EPICS installation and a client.
-- Find the latest windows 10 ISO file from `<mdt deployment share location>\Boot\LiteTouchPE_x64_Hyper-V.iso` and copy this ISO onto the `NDH` machine
+- Find the latest windows 10 ISO file from `<mdt PRODUCTION deployment share location>\Boot\LiteTouchPE_x64_Hyper-V.iso` and copy this ISO onto the `NDH` machine
   * *Note: This ISO is not really a windows PE iso, it is instead an ISO which has been built by MDT. You cannot just use a version downloaded from microsoft.com*
   * The MDT deployment share location and credentials can be found on the passwords page if you are unsure
 
