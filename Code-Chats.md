@@ -8,7 +8,7 @@ Code chats occur on a semi-regular monthly basis within the group at ISIS. Altho
 
 Topic | Presenter | Date
 ----- | --------- | ----
-James | BCC Cryogenics Course 2021 | Wednesday 21st of April
+BCC Cryogenics Course 2021 | James | TBC
 
 
 ### Proposed Future Code Chats
