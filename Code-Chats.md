@@ -15,6 +15,7 @@ BCC Cryogenics Course 2021 | James | TBC
 
 Idea | Proposed Speaker
 ---- | ---------------
+IBEX Project Management | Kathryn
 ISISICP | Freddie
 LUA  | James
 BDD/DDD | James/?
