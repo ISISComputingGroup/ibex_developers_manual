@@ -8,8 +8,10 @@ CAUTION: updating an existing `C:\Instrument\Apps\EPICS` by the mechanism descri
 
 After running this command, you should have a compiled and ready to use distribution, with git pointing at current commit heads.
 ```
-robocopy \\isis\inst$\Kits$\CompGroup\ICP\developer\EPICS\x64 c:\Instrument\Apps\EPICS -MIR -NFL -NDL -NP -R:1
+robocopy \\isis\inst$\Kits$\CompGroup\ICP\developer\EPICS\x64 c:\Instrument\Apps\EPICS -MIR -NFL -NDL -NP -R:1 -MT
 ```
+This may take a while to complete - at least 10 minutes, but longer if your disk is not an SSD for example
+ 
 If you wanted to temporarily use an updated distribution for e.g. a review then you can: 
 - rename current `c:\Instrument\Apps\EPICS` to `c:\Instrument\Apps\EPICS-keep`
 - run above `robocopy` command to create a new `c:\Instrument\Apps\EPICS`
