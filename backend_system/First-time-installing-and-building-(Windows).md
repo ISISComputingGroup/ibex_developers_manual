@@ -44,7 +44,7 @@ In `C:\Instrument\Apps\` run:
 
 `git clone --recursive https://github.com/ISISComputingGroup/EPICS.git`
 
-Note: you can not shortcut both this initial `git clone` and the `build epics backend` step below by using the [Developer-Server-Build](Developer-Server-Build)
+Note: you can now shortcut both this initial `git clone` and the `build epics backend` step below by using the [Developer-Server-Build](Developer-Server-Build)
  
 ## Install MySQL
 
