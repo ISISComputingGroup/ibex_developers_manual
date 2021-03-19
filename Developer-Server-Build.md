@@ -11,6 +11,8 @@ After running this command, you should have a compiled and ready to use distribu
 robocopy \\isis\inst$\Kits$\CompGroup\ICP\developer\EPICS\x64 c:\Instrument\Apps\EPICS -MIR -NFL -NDL -NP -R:1 -MT
 ```
 This may take a while to complete - at least 10 minutes, but longer if your disk is not an SSD for example
+
+After `robocopy` note that everything will be on a detached head, including the very top directory. 
  
 If you wanted to temporarily use an updated distribution for e.g. a review then you can: 
 - rename current `c:\Instrument\Apps\EPICS` to `c:\Instrument\Apps\EPICS-keep`
