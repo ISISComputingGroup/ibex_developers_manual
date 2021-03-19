@@ -165,3 +165,5 @@ And so the total `dist` sent to the control is:
 ```
 dist = 2*D_v + D
 ```
+
+The explanation for these equations can be seen in the following diagram (courtesy of Ben Withers) ![ORC maths explanation](images/ORC.png)

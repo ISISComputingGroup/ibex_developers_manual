@@ -8,13 +8,15 @@ Code chats occur on a semi-regular monthly basis within the group at ISIS. Altho
 
 Topic | Presenter | Date
 ----- | --------- | ----
-
+HIFI Cryomag | Chris C | Thursday 8th of April 2021
+BCC Cryogenics Course 2021 | James | TBC
 
 
 ### Proposed Future Code Chats
 
 Idea | Proposed Speaker
 ---- | ---------------
+IBEX Project Management | Kathryn
 ISISICP | Freddie
 LUA  | James
 BDD/DDD | James/?
@@ -35,8 +37,6 @@ MuSR conversion retrospective | Jack/Tom
 Idea | Proposed Speaker
 ---- | ----------------
 Observables and Writables in IBEX | ?
-System testing with squish | ?
-Code Review Processes | ?
 Dynamic Layouts in SWT | Thomas Löhnert
 Databinding | ?
 Mocking in Python and Java | ?

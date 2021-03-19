@@ -18,12 +18,13 @@ See [Set the raw position of the motor without moving it](Set-the-raw-position-o
 
 ### Homing
 
-There are 4 homing modes on the McLennan set via the home macro. The choice of mode depends on the motor, all but 0 are controlled by some SNL. Modes are:
+There are several homing modes on the McLennan set via the home macro. The choice of mode depends on the motor, all but 0 are controlled by some SNL. Modes are:
 
 * 0: Send a home signal to the controller.
 * 1: Do a reverse constant velocity move until limit switch is hit, but do not zero the motor (this is deprecated)
-* 2: Send a home signal to the controller and then zero the motor
+* 2: Send a reverse home signal to the controller and then zero the motor
 * 3: Do a reverse constant velocity move until limit switch is hit then zero the motor
+* 4: Send a forward home signal to the controller and then zero the motor
 
 The velocity of the constant velocity move is set to be a 1/10 of the normal velocity unless the macro is set to change it.
 
