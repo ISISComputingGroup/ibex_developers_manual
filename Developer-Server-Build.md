@@ -24,3 +24,6 @@ If you wish to work with a debug build, replace `x64` with `x64-debug` in above 
 
 This scheme works as Visual Studio is binary compatible (even at object file level) from version 2015 onwards. Linking must be done with the most recent visual studio version used, the build server is currently version 2017, so any developer using Visual Studio 2017 or 2019 can use this approach.  
  
+## NOTES
+
+Currently the build does not copy `CMakeCache.txt` across - this is because the file is invalid if the visual studio version number is different (2017 v 2019). CMake is used in a few third party modules e.g. MySQL, gsl, OpenCV. Compatible binaries for these will have been copied across, so IOCs can be compiled and linked, but the lack of a `CMakeCache.txt` will mean that a `make` in the top level will rebuild these modules, some of which do take a while. When everything is VS2019 we can relax this restriction.
