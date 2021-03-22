@@ -38,7 +38,7 @@ General update process:
 
 ### Py4J
 
-We have a local copy of Py4J available at `http://shadow.nd.rl.ac.uk/ICP_P2/Py4j_P2/` (note: only available in browsers which do not auto-correct http to https as shadow is not currently configured correctly to serve https traffic).
+We have a local copy of Py4J available at `http://shadow.nd.rl.ac.uk/ICP_P2/Py4j_P2/` (note: only available in browsers which do not auto-correct http to https as shadow is not currently configured correctly to serve https traffic. You may also need to ask for access to shadow if you are unable to access it).
 
 To update this copy, download the following files from `http://eclipse.py4j.org/`:
 - `http://eclipse.py4j.org/content.jar`
