@@ -36,6 +36,18 @@ General update process:
 
 **Note: when updating the eclipse framework itself, you also need to update `client.tycho.parent` - see below for details.**
 
+### Py4J
+
+We have a local copy of Py4J available at `http://shadow.nd.rl.ac.uk/ICP_P2/Py4j_P2/` (note: only available in browsers which do not auto-correct http to https as shadow is not currently configured correctly to serve https traffic).
+
+To update this copy, download the following files from `http://eclipse.py4j.org/`:
+- `http://eclipse.py4j.org/content.jar`
+- `http://eclipse.py4j.org/artifacts.jar`
+- All the files listed in `http://eclipse.py4j.org/artifacts.jar/plugins`
+- All the files listed in `http://eclipse.py4j.org/artifacts.jar/features`
+
+Replace the versions in the ICP_P2 area with these new files you have downloaded, and test that the new version works correctly.
+
 ### Parent POM
 
 Tycho and eclipse framework versions are defined in the file `./base/uk.ac.stfc.isis.ibex.client.tycho.parent/pom.xml`. Note that the eclipse framework version *must* correspond with the version defined in the target platform, otherwise the maven build will fail with mismatched framework versions.
