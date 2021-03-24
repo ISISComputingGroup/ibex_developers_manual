@@ -160,19 +160,14 @@ The logic is split into 4 parts. Part 1 initialises the correct state, sets some
 - Set condensing status to False
 - Reset back to using autopid/tpar file/manually entered values as before recondense
 
-
-
 ## Comms
 
-ITC503s are on an RS232 connection direct into the MOXA.
-
-Set communication details using macros for each of the 4 ITC503s (`1KPOT`, `SORB`, `HE3POT_HIGHT`, `HE3POT_LOWT`).
-
-Required macros for each ITC503:
-- PORT e.g. `SORB_PORT` set to `COM1`
+Controls one ITC503 on an RS232 connection direct into the MOXA.
 
 Macros with defaults for each ITC503:
 - Baud rate e.g. `SORB_BAUD`
 - Bits e.g. `SORB_BITS`
 - Parity e.g. `SORB_PARITY`
 - Stop bit e.g. `SORB_STOP`
+
+Set control channel and sensor details using macros e.g. SORB_CHANNEL and SORB_SENSOR
