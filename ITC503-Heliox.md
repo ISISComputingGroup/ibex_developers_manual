@@ -52,6 +52,20 @@ The process that causes the He3 to be pumped onto the He3 Pot is called absorpti
 
 ## Control Logic
 
+### Setting He3Pot Temperature
+
+-If set temperature < macro for Maximum temperature to operate the heliox at
+  - If set temperature > macro for maximum temperature to use He3 cooling
+    - Change control channel to He3PotHi control channel
+  - Else
+    - Change control channel to He3PotLo control channel
+  - If Lookup PIDs is on:
+    -Look up He3Pot PIDs for the given setpoint and write them to the device
+  - Write temperature setpoint
+- Else
+  - Temp setpoint in alarm
+
+
 ## Comms
 
 ITC503s are on an RS232 connection direct into the MOXA.
