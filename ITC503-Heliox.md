@@ -33,8 +33,22 @@ The system is closed-loop because of how expensive Helium-3 is. However, at some
 The process that causes the He3 to be pumped onto the He3 Pot is called absorption. This process is reversed when the sorb is at ~30K. To regenerate the He3 we need to heat the sorb to ~30K wait for the He3Pot temperature to reach a certain value and then fast cool the sorb to resume operation.
 
 
+## HLX503 IOC Features
 
+### Current
 
+- Communication to one ITC503 with control channels defined for each of the Sorb, He3PotHi and 1KPot/He3PotLo
+- Set He3Pot temperature setpoint
+- Set Sorb temperature setpoint
+- Manual recondense
+- Setting sorb and he3pot pids via tpar file
+- Turn He3Pot Heater Off
+- Graph the He3Pot temperature
+- Monitor He3Pot setpoint, control channel, heater power, heater auto/manual
+
+### Future
+
+- [Autorecondense](https://github.com/ISISComputingGroup/IBEX/issues/6292)
 
 ## Control Logic
 
