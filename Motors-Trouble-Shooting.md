@@ -131,3 +131,4 @@ SSA=1,26,27,0<15
 SYB=0
 SSB=1,26,27,0<6
 ```
+This axis is odd in that the first axis is a normal motor/encoder (albeit with absolute encoders) but the second axis is just an encoder on the same device and is used to detect any motion issues.
