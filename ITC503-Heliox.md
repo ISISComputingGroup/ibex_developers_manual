@@ -1,4 +1,40 @@
-Original implementation for use on MuSR 3He refrigerator. The device is a Heliox/ITC503 based refrigerator.
+Original implementation for use on MuSR 3He refrigerator. The device is a Heliox/ITC503 based refrigerator controlled by the HLX503 IOC.
+
+## Physical operation and situation
+
+### Situation
+
+The 3He Refrigerator is also known as the 3He Insert because it is inserted into an outer cryostat. This document is only related to the insert not the outer cryostat, but it is useful to know that the outer cryostat cools the 3He insert to ~1.5K. From the IBEX point of view the insert and outer cryostat are separate pieces of kit. However, it is useful to know that the 1KPot in the insert is wired to the outer cryostat to control its temperature (we do not control the temperature via the insert). The insert is controlled by 1 ITC503 connected to a “magic box” that is wired to help read and control the various parts of the insert.
+
+### Thermometers and heaters
+
+TL;DR 4 thermometers, 2 heaters. We can read 3 thermometers at a time and the ITC503 controls two heaters based on the temperature setpoint and control channel we give it.
+
+On the insert itself, there are 4 thermometers: the sorb thermometer, the 1K Port thermometer, the He3Pot “High Temperature” thermometer and the He3Pot “Low Temperature” thermometer. Both the He3Pot thermometers are measuring the same temperature, one is good at measuring low-temperature values the other at high-temperature values.
+
+There are 3 ports on the magic box to connect the thermometers to (as there are 3 sensor channels in the ITC503 itself). The first sensor is connected to the sorb thermometer, the second to either the He3Pot Low-temperature thermometer or the 1K Pot (these are physically switched on the magic box) and the third is wired to the He3Pot high-temperature thermometer.
+
+The ITC503 has 1 output and the insert has two heaters (the sorb heater and the he3pot heater). By using the magic box this 1 output is at all times connected to the sorb heater, but only if the ITC503 is controlling based on the He3Pot “High Temperature” sensor then this output is also wired to the he3pot heater. 
+
+### Operation/Behaviour
+
+TL;DR When you heat the sorb this reduces the pumping efficiency of He3 which cools the He3 pot more.
+
+The temperature of the He3Pot is defined by how much Helium-3 is being pumped onto the pot. The ITC503 controls the sorb temperature which affects the pumping efficiency of the He3 and as such the temperature of the He3Pot. When the Sorb temperature increases in heat the pumping efficiency is reduced which consequently warms the He3Pot. When the sorb reduces in heat the pumping efficiency is increased so the He3Pot temperature reduces.
+
+The Sorb sits in the outer cryostat so has a base temperature of about 1.5k that it will sit at when not heated. The ITC503 output is wired at all times to a sorb heater which allows the ITC503 to control the heat of the sorb and 
+
+### Regeneration
+
+TL;DR After 24-48 hours of operation the He3 is no longer pumped onto the pot and we have to regenerate it by heating the sorb to ~30K.
+
+The system is closed-loop because of how expensive Helium-3 is. However, at some point there will not be enough Helium-3 in the pot to create cooling power (it is all in the pump). The symptom of this is that the temperature of the He3Pot to rise to the temperature of the 1K Pot.
+
+The process that causes the He3 to be pumped onto the He3 Pot is called absorption. This process is reversed when the sorb is at ~30K. To regenerate the He3 we need to heat the sorb to ~30K wait for the He3Pot temperature to reach a certain value and then fast cool the sorb to resume operation.
+
+
+
+
 
 ## Control Logic
 
