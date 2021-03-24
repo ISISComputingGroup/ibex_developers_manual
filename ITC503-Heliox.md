@@ -65,6 +65,44 @@ The process that causes the He3 to be pumped onto the He3 Pot is called absorpti
 - Else
   - Temp setpoint in alarm
 
+### Setting Sorb temperature
+
+- Change control channel to Sorb control channel
+- If Lookup PIDs is on:
+  - Look up SORB PIDs for the given setpoint and write them to the device
+- Write temperature setpoint
+
+### Turning the He3Pot Heater off
+
+- Change control channel to He3Pot
+- Set He3Pot autoheat to False
+- Set He3Pot heater output % to 0
+
+### Recondensing
+
+#### Autorecondensing
+
+Not to be implemented in first pass.
+
+All of the first set of conditions must be met and at least one of the second set of conditions. If this is the case then a recondense is required.
+
+##### First set of conditions
+
+All must be met before checking second set of conditions.
+
+- ITC503 is using the control channel chosen for the He3PotLo in macros
+- Temp setpoint < Maximum temperature to use He3 cooling macro
+- Auto condense enabled by macro
+
+##### Second set of conditions
+
+Only one of these conditions needs to be met. 
+
+- Sorb temperature check is set to on in macros and Sorb temperature > condense threshold for the sorb temperature set in macros
+- He3Pot temperature check is set to on in macros and He3Pot temperature > condense threshold for the He3 Pot temperature set in the macros
+- Temperature error check is set to on in macros and difference between He3Pot temperature setpoint and He3Pot actual temperature > condense threshold for temperature error set in the macros
+
+
 
 ## Comms
 
