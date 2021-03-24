@@ -539,6 +539,12 @@ The HOST firewall needs either to allow network access for the gateway program, 
 netsh advfirewall firewall add rule name="EPICS" dir=in localport=5064 action=allow protocol=udp
 netsh advfirewall firewall add rule name="EPICS" dir=in localport=5064 action=allow protocol=tcp
 ```
+if you want to turn firewall off for some tests you can use
+```
+netsh advfirewall set allprofiles state off
+```
+
+
 
 Clients need to point at the correct host:
 
