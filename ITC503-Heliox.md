@@ -2,6 +2,8 @@ Original implementation for use on MuSR 3He refrigerator. The device is a Heliox
 
 ## Physical operation and situation
 
+![3He Fridge Diagram](https://raw.githubusercontent.com/wiki/ISISComputingGroup/ibex_developers_manual/3HeFridgeOps.png)
+
 ### Situation
 
 The 3He Refrigerator is also known as the 3He Insert because it is inserted into an outer cryostat. This document is only related to the insert not the outer cryostat, but it is useful to know that the outer cryostat cools the 3He insert to ~1.5K. From the IBEX point of view the insert and outer cryostat are separate pieces of kit. However, it is useful to know that the 1KPot in the insert is wired to the outer cryostat to control its temperature (we do not control the temperature via the insert). The insert is controlled by 1 ITC503 connected to a “magic box” that is wired to help read and control the various parts of the insert.
