@@ -102,6 +102,64 @@ Only one of these conditions needs to be met.
 - He3Pot temperature check is set to on in macros and He3Pot temperature > condense threshold for the He3 Pot temperature set in the macros
 - Temperature error check is set to on in macros and difference between He3Pot temperature setpoint and He3Pot actual temperature > condense threshold for temperature error set in the macros
 
+#### Recondense Logic
+
+TL;DR Heat up the sorb to cause recondense, wait for He3Pot and Sorb to reach given values (showing recondense complete), fast cool the sorb and set the He3Pot to a user given temperature.
+
+The logic is split into 4 parts. Part 1 initialises the correct state, sets some state on the device waits for the Sorb and He3Pot temperatures to match certain criteria, part 2 does mostly the same but using user-specified values from the macros specifically for part 2, part 3 fast cools the Sorb and part 4 is a final clear up.
+
+##### Part 1
+- Entry
+  - Set the last start of condense time to now
+  - Set recondensing status to true
+  - Set status of skipped, cancelled and timed out to False
+  - Set status to part 1
+  - For each control channel Set to manual heating, 0% heater output and temp setpoint to 0K
+  - Set that we are not using tpar PIDs
+  - Set autopid to false
+  - Change control channel to use Sorb
+  - Set temperature setpoint (sorb) to value given by the user in the macros
+  - Write Sorb PID values given by the user in the macros
+- Wait until one of the following conditions is met
+  - The user skips the part
+  - The user cancels the operation
+    - Skip to not recondensing
+  - The operation times out
+    - Skip to the finish
+  - Sorb temp > User specified sorb condensing temp (from macros) – 0.5 or He3 Pot temperature < User specified condense He3Pot target for part 1
+
+##### Part 2
+
+- Set skipped to false
+- Update status string to say we are on part 2
+- Wait for the same conditions as in part 1 but using the He3Pot target specified for part 2 in macros
+- Wait for the number of seconds given by the user in the macros
+
+##### Part 3
+- Set skipped to false
+- Set status to fast cooling the sorb
+- Change control channel to use Sorb
+- Set sorb heater output to 0%
+- Set sorb temperature setpoint to 0K
+- Wait until one of the following conditions is true
+  - Sorb temperature < final sorb temperature specified by the user in macros
+  - User skips the part
+  - User cancels the operation
+- Wait for 2 seconds
+
+##### Finish
+
+- Do all of this even if timed out or skipped, but not cancelled
+- Set last finish of condense to now
+- If the He3Pot temperature setpoint > the user-specified temperature threshold for He3 operation 
+  - Set He3Pot temperature setpoint status accordingly
+  - Set He3Pot temperature to default post condense he3pot temp macro
+- Else
+  - Set He3Pot temperature setpoint status accordingly
+  - Set He3Pot temperature to the user-specified temperature setpoint
+- Set condensing status to False
+- Reset back to using autopid/tpar file/manually entered values as before recondense
+
 
 
 ## Comms
