@@ -538,6 +538,7 @@ The HOST firewall needs either to allow network access for the gateway program, 
 ```
 netsh advfirewall firewall add rule name="EPICS" dir=in localport=5064 action=allow protocol=udp
 netsh advfirewall firewall add rule name="EPICS" dir=in localport=5064 action=allow protocol=tcp
+netsh advfirewall firewall add rule name="EPICS" dir=in localport=5065 action=allow protocol=udp
 ```
 if you want to turn firewall off for some tests you can use
 ```
