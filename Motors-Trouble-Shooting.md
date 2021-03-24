@@ -131,4 +131,4 @@ SSA=1,26,27,0<15
 SYB=0
 SSB=1,26,27,0<6
 ```
-This axis is odd in that the first axis is a normal motor/encoder (albeit with absolute encoders) but the second axis is just an encoder on the same device and is used to detect any motion issues. The pre-move string in the first axis is used to make sure the encoder is correctly set up for that axis but is not long enough to do it for both axes (see https://github.com/ISISComputingGroup/IBEX/issues/6312). This means if the power gets cycled the second axis may appear not to move.
+This axis is odd in that the first axis is a normal motor/encoder (albeit with absolute encoders) but the second axis is just an encoder on the same device and is used to detect any motion issues. The pre-move string in the first axis is used to make sure the encoder is correctly set up for that axis but is not long enough to do it for both axes (see https://github.com/ISISComputingGroup/IBEX/issues/6312). This means if the power gets cycled the second axis may appear not to move until the above settings are reapplied.
