@@ -170,4 +170,6 @@ Macros with defaults for each ITC503:
 - Parity e.g. `SORB_PARITY`
 - Stop bit e.g. `SORB_STOP`
 
-Set control channel and sensor details using macros e.g. SORB_CHANNEL and SORB_SENSOR
+Set control channel and sensor details using macros e.g. SORB_CHANNEL and SORB_SENSOR.
+
+Further configuration of settings for recondensing and general operations are available (see macros).
