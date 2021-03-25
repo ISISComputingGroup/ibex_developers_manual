@@ -159,6 +159,8 @@ The logic is split into 4 parts. Part 1 initialises the correct state, sets some
 - Else
   - Set He3Pot temperature setpoint status accordingly
   - Set He3Pot temperature to the user-specified temperature setpoint
+- Wait for the He3Pot temperature to get to the setpoint 
+- Set recondense success status to True
 - Set condensing status to False
 - Reset back to using autopid/tpar file/manually entered values as before recondense
 
