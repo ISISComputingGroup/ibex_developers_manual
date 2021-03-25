@@ -126,6 +126,12 @@ To allow access to an IOC:
 
 e.g. `*SIMPLE.* ALLOW       TESTING     1`
 
+If you are using `CS:EXCLUSIVE:` and a custom `.acf` file, you will also need to create `a file called `gwext.pvlist` in Settings\config\servername\AccessSecurity. At the end of that file in order for the access security to work remotely, you will need to add:
+
+`.*CS:EXCLUSIVE.*    ALLOW   securityGroupName`
+
+e.g. `.*CS:EXCLUSIVE.*    ALLOW   TESTING`
+
 If the aim is to deny, simply replace the ALLOW with DENY. Do remember that the standard security groups can be used when writing a pvlist file as well as custom ones.
 
 ## Troubleshooting
