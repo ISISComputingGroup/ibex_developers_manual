@@ -24,7 +24,7 @@ TL;DR When you heat the sorb this reduces the pumping efficiency of He3 which co
 
 The temperature of the He3Pot is defined by how much Helium-3 is being pumped onto the pot. The ITC503 controls the sorb temperature which affects the pumping efficiency of the He3 and as such the temperature of the He3Pot. When the Sorb temperature increases in heat the pumping efficiency is reduced which consequently warms the He3Pot. When the sorb reduces in heat the pumping efficiency is increased so the He3Pot temperature reduces.
 
-The Sorb sits in the outer cryostat so has a base temperature of about 1.5k that it will sit at when not heated. The ITC503 output is wired at all times to a sorb heater which allows the ITC503 to control the heat of the sorb and 
+The Sorb sits in the outer cryostat so has a base temperature of about 1.5k that it will sit at when not heated. The ITC503 output is wired at all times to a sorb heater which allows the ITC503 to control the heat of the sorb and when we are controlling based on the He3Pot “High Temperature” sensor then this output is also wired to the he3pot heater. 
 
 ### Regeneration
 
