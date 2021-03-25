@@ -51,6 +51,7 @@ The process that causes the He3 to be pumped onto the He3 Pot is called absorpti
 ### Future
 
 - [Autorecondense](https://github.com/ISISComputingGroup/IBEX/issues/6292)
+- [IOC Restart State](https://github.com/ISISComputingGroup/IBEX/issues/6349)
 
 ## Control Logic
 
