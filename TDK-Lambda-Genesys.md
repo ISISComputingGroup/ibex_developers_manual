@@ -8,6 +8,8 @@ These power supplies can be daisy-chained in groups of up to 10 power supplies s
 The connection on the back of the device is an RJ45. However, the device does not communicate through ethernet as this would imply but instead requires a serial adapter to convert it into a 9 pin D type connector that we can then plug the MOXA into. We can make our own adapter using the push-pin adapters (currently in the chalk pits) using the following configuration:
 ![TDK wiring](images/tdk_wiring.jpg)
 
+Note that there is a spare 25 way connector in the office (if you use it please replace it!). I couldn't get it working with a 9 way. 
+
 # Macros
 
 As well as the typical communication macros such as `BAUD`. `BITS`, `PARITY` etc, there are a number of specialist macros for each power supply in this IOC:
