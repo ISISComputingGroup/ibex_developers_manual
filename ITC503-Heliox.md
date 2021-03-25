@@ -6,7 +6,7 @@ Original implementation for use on MuSR 3He refrigerator. The device is a Heliox
 
 ### Situation
 
-The 3He Refrigerator is also known as the 3He Insert because it is inserted into an outer cryostat. This document is only related to the insert not the outer cryostat, but it is useful to know that the outer cryostat cools the 3He insert to ~1.5K. From the IBEX point of view the insert and outer cryostat are separate pieces of kit. However, it is useful to know that the 1KPot in the insert is wired to the outer cryostat to control its temperature (we do not control the temperature via the insert). The insert is controlled by 1 ITC503 connected to a “magic box” that is wired to help read and control the various parts of the insert.
+The 3He Refrigerator is also known as the 3He Insert because it is inserted into an outer cryostat. This document is only related to the insert not the outer cryostat, but it is useful to know that the outer cryostat cools the 3He insert to ~1.5K. From the IBEX point of view the insert and outer cryostat are separate pieces of kit. However, it is useful to know that the `1KPot` in the insert is wired to the outer cryostat to control its temperature (we do not control the temperature via the insert). The insert is controlled by 1 ITC503 connected to a “magic box” that is wired to help read and control the various parts of the insert.
 
 ### Thermometers and heaters
 
@@ -39,7 +39,7 @@ The process that causes the He3 to be pumped onto the He3 Pot is called absorpti
 
 ### Current
 
-- Communication to one ITC503 with control channels defined for each of the Sorb, He3PotHi and 1KPot/He3PotLo
+- Communication to one ITC503 with control channels defined for each of the `Sorb`, `He3PotHi` and `1KPot`/`He3PotLo`
 - Set He3Pot temperature setpoint
 - Set Sorb temperature setpoint
 - Manual recondense
@@ -58,9 +58,9 @@ The process that causes the He3 to be pumped onto the He3 Pot is called absorpti
 
 - If set temperature < macro for Maximum temperature to operate the heliox at
   - If set temperature > macro for maximum temperature to use He3 cooling
-    - Change control channel to He3PotHi control channel
+    - Change control channel to `He3PotHi` control channel
   - Else
-    - Change control channel to He3PotLo control channel
+    - Change control channel to `He3PotLo` control channel
   - If Lookup PIDs is on:
     -Look up He3Pot PIDs for the given setpoint and write them to the device
   - Write temperature setpoint
@@ -92,7 +92,7 @@ All of the first set of conditions must be met and at least one of the second se
 
 All must be met before checking second set of conditions.
 
-- ITC503 is using the control channel chosen for the He3PotLo in macros
+- ITC503 is using the control channel chosen for the `He3PotLo` in macros
 - Temp setpoint < Maximum temperature to use He3 cooling macro
 - Auto condense enabled by macro
 
