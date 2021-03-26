@@ -143,7 +143,7 @@ The logic is split into 4 parts. Part 1 initialises the correct state, sets some
 - Set status to part 2
 - Wait for the same conditions as in part 1 but using the He3Pot target specified for part 2 in macros
   - Do same actions for each case
-- Wait for the number of seconds given by the user in the macros
+- If part successful then wait for the number of seconds given by the user in the macros
 
 ##### Part 3
 - Set skipped to False
@@ -151,11 +151,9 @@ The logic is split into 4 parts. Part 1 initialises the correct state, sets some
 - Change control channel to use Sorb
 - Set sorb heater output to 0%
 - Set sorb temperature setpoint to 0K
-- Wait until one of the following conditions is true
+- Wait for the same skipped, cancelled, and timeout conditions and do the same actions or wait for this condition:
   - Sorb temperature < final sorb temperature specified by the user in macros
-  - User skips the part
-  - User cancels the operation
-- Wait for 2 seconds
+    - Wait for 2 seconds
 
 ##### Finish
 
