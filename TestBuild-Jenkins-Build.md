@@ -9,6 +9,6 @@ To specify you build do the following:
 - not commit your `.gitmodule` changes and push to `testbuild`
 - now start the jenkins build from the GUI
 
-The jenkins job builds "tip of branch" i.e. it will use latest master of all submodules and also latest commits to and `branch =` lines you added. So you co not need to "git add" any submodule directories, and if you push new changes to any branch you can just start a new build and they will be used.   
+The jenkins job builds "tip of branch" i.e. it will use latest master of all submodules and also latest commits to any `branch =` lines you added. So you co not need to "git add" any submodule directories, and if you push new changes to any branch you can just start a new build and they will be used.   
 
 
