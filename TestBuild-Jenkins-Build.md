@@ -3,8 +3,8 @@ The jenkins job `TestBuild` builds the branch `testbuild` in the top EPICS git r
 To specify your build do the following:
 - create and push branches in each submodule where you want to test changes. You do not need to create pull requests, and can call the branches any name you wish.
 - in your EPICS top level, if you already have a `testbuild` branch delete this with `git branch -d testbuild`
-- check if a `testbuild` branch exists on GitHub https://github.com/ISISComputingGroup/EPICS/branches - if it does, check the other developer has finished and then delete this GitHub remote branch
-- Now create a local `testbuild` branch with `git checkout -b testbuild` in your top level EPICS 
+- check if a `testbuild` branch exists on GitHub https://github.com/ISISComputingGroup/EPICS/branches - if it does, check the other developer has finished and then delete this GitHub remote branch. If they are still using it, then it is probably based on a quite recent commit and you may be able to add your changes to this branch and both use the same build. 
+- If you deleted the remote branch, create a local `testbuild` branch with `git checkout -b testbuild` in your top level EPICS. If you are sharing `testbuild` with another developer, use `git checkout testbuild` 
 - now edit `.gitmodules` and for each of the submodules you created a separate  `my_branch_name` branch in add a corresponding `branch = my_branch_name` line to the relevant section of the file
 - not commit your `.gitmodule` changes and push to `testbuild` on GitHub
 - now start the jenkins build from the GUI
