@@ -116,13 +116,14 @@ The logic is split into 4 parts. Part 1 initialises the correct state, sets some
   - Set the last start of condense time to now
   - Set recondensing status to true
   - Set status of skipped, cancelled and timed out to False
+  - Set success status to False
   - Set status to part 1
   - For each control channel Set to manual heating, 0% heater output and temp setpoint to 0K
   - Set that we are not using tpar PIDs
   - Set autopid to false
+  - Write Sorb PID values given by the user in the macros
   - Change control channel to use Sorb
   - Set temperature setpoint (sorb) to value given by the user in the macros
-  - Write Sorb PID values given by the user in the macros
 - Wait until one of the following conditions is met
   - The user skips the part
   - The user cancels the operation
