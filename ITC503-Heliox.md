@@ -126,9 +126,13 @@ The logic is split into 4 parts. Part 1 initialises the correct state, sets some
   - Set temperature setpoint (sorb) to value given by the user in the macros
 - Wait until one of the following conditions is met
   - The user skips the part
+    - Set skipped status to True
+    - Set part success status to False
   - The user cancels the operation
+    - Set part success and overall success to false
     - Skip to not recondensing
   - The operation times out
+    - Set part success to false
     - Skip to the finish
   - Sorb temp > User specified sorb condensing temp (from macros) – 0.5 or He3 Pot temperature < User specified condense He3Pot target for part 1
     - Set that this part was successful
