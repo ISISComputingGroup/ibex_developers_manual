@@ -118,7 +118,7 @@ The logic is split into 4 parts. Part 1 initialises the correct state, sets some
   - Set status of skipped, cancelled and timed out to False
   - Set success status to False
   - Set status to part 1
-  - For each control channel Set to manual heating, 0% heater output and temp setpoint to 0K
+  - Set to manual heating and 0% heater output
   - Set that we are not using tpar PIDs
   - Set autopid to false
   - Write Sorb PID values given by the user in the macros
@@ -131,6 +131,7 @@ The logic is split into 4 parts. Part 1 initialises the correct state, sets some
   - The operation times out
     - Skip to the finish
   - Sorb temp > User specified sorb condensing temp (from macros) – 0.5 or He3 Pot temperature < User specified condense He3Pot target for part 1
+    - Set that this part was successful
 
 ##### Part 2
 
