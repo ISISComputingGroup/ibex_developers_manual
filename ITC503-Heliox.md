@@ -157,16 +157,15 @@ The logic is split into 4 parts. Part 1 initialises the correct state, sets some
 
 ##### Finish
 
-- Do all of this even if timed out or skipped, but not cancelled
+- This should execute even if timed out, skipped or previous parts are successful, but not cancelled
+- Set status to finishing
+- If all parts have been successful then set overall success to true
 - Set last finish of condense to now
 - If the He3Pot temperature setpoint > the user-specified temperature threshold for He3 operation 
-  - Set He3Pot temperature setpoint status accordingly
+  - User will be notified by the He3Pot temperature setpoint PVs being in alarm if this happens
   - Set He3Pot temperature to default post condense he3pot temp macro
 - Else
-  - Set He3Pot temperature setpoint status accordingly
   - Set He3Pot temperature to the user-specified temperature setpoint
-- Wait for the He3Pot temperature to get to the setpoint 
-- Set recondense success status to True
 - Set condensing status to False
 - Reset back to using autopid/tpar file/manually entered values as before recondense
 
