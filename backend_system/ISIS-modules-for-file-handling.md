@@ -35,4 +35,4 @@ where:
 * `port_name` is a string of the port name, used to refer to ReadASCII in the db
 * `PID_folder` is the initial folder used to search for PID lookup files (can be blank if just using ramping)
 * `steps_per_minute` is the number of steps the ramp will take per minute (note that the step size is dependant on the rate set at runtime)
-* `quiet_on_SP` can be set to 1 to stop ReadASCII logging on every new set point. This can be useful if you think the set point may end up being changed rapidly e.g. the zero field controller
+* `quiet_on_SP` *optional* can be set to 1 to stop ReadASCII logging on every new set point. This can be useful if you think the set point may end up being changed rapidly e.g. the zero field controller. Defaults to 0 i.e. logging on every set point
