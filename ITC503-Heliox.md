@@ -140,12 +140,13 @@ The logic is split into 4 parts. Part 1 initialises the correct state, sets some
 ##### Part 2
 
 - Set skipped to false
-- Update status string to say we are on part 2
+- Set status to part 2
 - Wait for the same conditions as in part 1 but using the He3Pot target specified for part 2 in macros
+  - Do same actions for each case
 - Wait for the number of seconds given by the user in the macros
 
 ##### Part 3
-- Set skipped to false
+- Set skipped to False
 - Set status to fast cooling the sorb
 - Change control channel to use Sorb
 - Set sorb heater output to 0%
