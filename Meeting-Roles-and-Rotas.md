@@ -33,14 +33,14 @@ Don't forget the [drop in sessions](https://github.com/ISISComputingGroup/IBEX/w
 | --- | --- | --- | --- | --- | --- |--- | --- |
 | FA | x | DO | x | JH | x |KB | x |
 | TL | x | KB | x | DO | x |TL | x |
-| DK | x | TL | x | MS | x |DO | x |
-| KB | x | CC | x | JK | x |FA | x |
+| DK | x | TL | x | JK | x |DO | x |
+| KB | x | CC | x | MS |  |FA | x |
 | JK | x | CMS | x | TL |  | JH | x |
 | JH | x | DK | x | KB |  | CC | x |
-| DO |  | FA |  |  |  |CMS | x |
-| FA |  | KB |  |  |  |DK | x |
+| FA | x | DO | x |  |  |CMS | x |
+| KB |  | FA |  |  |  |DK | x |
 | TL |  | JK |  |  |  |JK |  |
-| KB |  | DO |  |  |  |KB |  |
+| DO |  | KB |  |  |  |KB |  |
 | JK |  | DK |  |  |  |FA |  |
 | MS |  | JH |  |  |  |JK |  |
 | JH |  | BR |  |  |  |DO |  |
