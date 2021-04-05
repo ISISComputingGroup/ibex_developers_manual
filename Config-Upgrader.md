@@ -59,7 +59,7 @@ UPGRADE_STEPS = [
 
 You are now ready to code the perform function to do the upgrade, please use tests. The file system is isolated from the code using file_access and logging should use logger.
 
-_Note:_ When the upgrade script is run the configurations will end up on the final version in the list, i.e. the one with a `None`. So the last entry in the list will be the configuration you are wishing to finally arrive at (and not e.g. a future version placeholder)
+**Note:** When the upgrade script is run the configurations will end up on the final version in the list, i.e. the one with a `None`. So the last entry in the list will be the configuration you are wishing to finally arrive at (and not e.g. a future version placeholder)
 
 ## Creating a Production upgrade script
 
