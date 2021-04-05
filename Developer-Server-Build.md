@@ -8,11 +8,11 @@ CAUTION: updating an existing `C:\Instrument\Apps\EPICS` by the mechanism descri
 
 After running this command, you should have a compiled and ready to use distribution, with git pointing at current commit heads.
 ```
-robocopy \\isis\inst$\Kits$\CompGroup\ICP\developer\EPICS\x64 c:\Instrument\Apps\EPICS -MIR -NFL -NDL -NP -R:1 -MT
+robocopy \\isis\inst$\Kits$\CompGroup\ICP\developer\EPICS\x64 c:\Instrument\Apps\EPICS -MIR -NFL -NDL -NP -R:1 -MT -LOG:NUL
 ```
 This may take a while to complete - at least 10 minutes, but longer if your disk is not an SSD for example
 
-After `robocopy` note that everything will be on a detached HEAD, including the very top directory. 
+After `robocopy` note that all submodules will be on a detached HEAD. 
  
 If you wanted to temporarily use an updated distribution for e.g. a review then you can: 
 - rename current `c:\Instrument\Apps\EPICS` to `c:\Instrument\Apps\EPICS-keep`
@@ -24,3 +24,6 @@ If you wish to work with a debug build, replace `x64` with `x64-debug` in above 
 
 This scheme works as Visual Studio is binary compatible (even at object file level) from version 2015 onwards. Linking must be done with the most recent visual studio version used, the build server is currently version 2017, so any developer using Visual Studio 2017 or 2019 can use this approach.  
  
+### NOTES
+
+Currently the build does not copy `CMakeCache.txt` across - this is because the file is invalid if the visual studio version number is different (2017 v 2019). CMake is used in a few third party modules e.g. MySQL, gsl, OpenCV. Compatible binaries for these will have been copied across, so IOCs can be compiled and linked, but the lack of a `CMakeCache.txt` will mean that a `make` in the top level will rebuild these modules, some of which do take a while. When everything is VS2019 we can relax this restriction.

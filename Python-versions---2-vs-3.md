@@ -3,9 +3,9 @@
 | Python 2| Python 3|
 | ------ | ----  |
 | Squish Tests | Genie Python |
-| Block Cache | Script Server |
+| IOC log server | Script Server |
 | OPI scripts| Script Generator |
-| IOC log server | Block Server to Kafka |
+| | Block Server to Kafka |
 | | Database Server |
 | | IBEX utils |
 | | System tests |

@@ -8,7 +8,6 @@ Name | Console Name | Type | What it does
 [Alarm server](Alarms) | ALARM | Java | Serves alarms which appear in the alarms perspective. It checks to PVs to see if they are in alarm mode and relays that information to the client. Actual range checking is done a EPICS server.
 [Archive Access](Logging-from-the-archive) | ARACCESS | python | Creates log files based on the MySQL database for some devices with special needs.
 Archive Engine | ARBLOCK | Java | Archives (in mysql db) blocks set in a configuration (restarted when blocks change) see [CSS-Archive-Engine](CSS-Archive-Engine)
-Block Cache | BLOCKCACHE | Python | Program which caches block values and provides them via a `CS:BLOCKSERVER:BLOCKVALUES`. This is done to avoid genie python etc making too many calls to the various block PVs.
 Block Gateway | GWBLOCK | EPICS Gateway | Aliases the dynamically created block PVs e.g. CS:SB:FURNACE_TEMP to the underlying PV e.g. EUROTHRM_01:A01:TEMP see [Block server](BlockServer#what-it-does)
 [Block server](BlockServer) | BLOCKSRV | Python | Manages configurations and blocks associated with them see [Settings-and-Configurations](Settings-and-Configurations). It configures the Archive Engine and starts the IOCs read from the configuration files.
 CA Repeater | CAREP | Executable | A epics CA repeater that is started before all other processes. This repeats UDP broadcasts to CA clients on the same machine

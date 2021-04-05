@@ -4,6 +4,8 @@ After a release all of the dependencies of the system should be considered for u
 
 **Any dependencies which should not be updated should be listed with a reason [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Unupdated-dependencies)**
 
+**When updating dependencies add the new dependencies to the upcoming release notes**
+
 # GUI
 
 The GUI has multiple mechanisms for pulling in dependencies, all of which may potentially need updates. You should aim to do one dependency update at a time, testing each update both under the eclipse IDE and maven and committing before moving onto the next update.
@@ -35,6 +37,18 @@ General update process:
 - Some repositories are updated "in-place". Do upgrade these, simply delete and then re-add them to the target platform, when they are re-added they will pick up the latest versions.
 
 **Note: when updating the eclipse framework itself, you also need to update `client.tycho.parent` - see below for details.**
+
+### Py4J
+
+We have a local copy of Py4J available at `http://shadow.nd.rl.ac.uk/ICP_P2/Py4j_P2/` (note: only available in browsers which do not auto-correct http to https as shadow is not currently configured correctly to serve https traffic. The password for shadow is on the credentials page).
+
+To update this copy, download the following files from `http://eclipse.py4j.org/`:
+- `http://eclipse.py4j.org/content.jar`
+- `http://eclipse.py4j.org/artifacts.jar`
+- All the files listed in `http://eclipse.py4j.org/artifacts.jar/plugins`
+- All the files listed in `http://eclipse.py4j.org/artifacts.jar/features`
+
+Replace the versions in the ICP_P2 area with these new files you have downloaded, and test that the new version works correctly.
 
 ### Parent POM
 

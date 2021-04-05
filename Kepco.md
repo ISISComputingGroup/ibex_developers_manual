@@ -8,3 +8,8 @@ Most of the KEPCOs at ISIS which are BOPs do not have the REM command to switch 
 
 ## Calibrating Current to a Field
 The Kepco can also use a calibration file to set and readback a field instead of a current. This is currently only used for the HTS magnet. It looks in `Setting\config\common\magnets` for this calibration.
+
+## HTS Smart Monitor
+The HTS smart monitor is a device that shows the current status of a KEPCO for use with the HTS magnet system. It is capable of showing safe operating limits, hard limits and the current voltages and temperatures of the connected KEPCO. Currently it sits on a static IP which is set by the device, and on POLREF it is connected to the private network. 
+
+The device can be configured with its webserver which should be at `<static ip>:8080`; this can be used to configure a different static IP address or to enable DHCP. 
