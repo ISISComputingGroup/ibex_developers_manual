@@ -4,6 +4,8 @@ After a release all of the dependencies of the system should be considered for u
 
 **Any dependencies which should not be updated should be listed with a reason [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Unupdated-dependencies)**
 
+**When updating dependencies add the new dependencies to the upcoming release notes**
+
 # GUI
 
 The GUI has multiple mechanisms for pulling in dependencies, all of which may potentially need updates. You should aim to do one dependency update at a time, testing each update both under the eclipse IDE and maven and committing before moving onto the next update.
