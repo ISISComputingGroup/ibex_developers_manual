@@ -15,3 +15,4 @@ Here you can find the results of the system tests performed as part of each rele
 * [Release 5.4.0 results](testing/manual_system_tests_results/manual_system_tests_v5.4.0.xlsx) - May 2019
 * [Release 5.5.0 results](testing/manual_system_tests_results/Release_5.5.0_manual_system_tests_outcome_Aug2019.xlsx) - Aug 2019
 * [Release 6.0.0 results](testing/manual_system_tests_results/Release_6.0.0_manual_system_tests_outcome_Jan2020.xlsx) - Jan 2020
+* [Release 7.4.0 results](testing/manual_system_tests_results/Release_7.4.0_manual_system_tests_outcome_April2021.xlsx) - Apr 2021
