@@ -12,14 +12,14 @@
 ## Items from the last retro
 
 - New planning site is getting easier
-- Revoting and the chair starting the discussion has helped to improve the discussion
+- Re-voting and the chair starting the discussion has helped to improve the discussion
 - If a flash review needs release notes then it is not a flash review
 - Big tickets aren't scary we should encourage people to pick them up when it is not possible to split them up
 
 ## How to manage security issues
 
 - Could use the private git-repo or Microsoft teams board and link from Github
-- There are lots of different types of security vulnerabilities and there is a current concern from the organisation about cybersecurity
+- There are lots of different types of security vulnerabilities and there is a current concern from the organisation about security
 - The important thing is that we have enabled a conversation about it in planning
 
 Action: Chris MS Will ask Anthony from FIT how they do it
