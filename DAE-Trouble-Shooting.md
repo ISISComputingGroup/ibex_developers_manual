@@ -192,6 +192,8 @@ USE archive;
 ALTER TABLE sample MODIFY COLUMN array_val MEDIUMBLOB;
 ```
 
+**Note:** that command rewrites the whole `sample` table, so if the table is big it may take a while. You may wish to consider truncating the `sample` table before doing this (though that may not be possible if it contains useful data)
+  
 ### Instrument stuck in `WAITING` state
 
 We have observed on a couple of occasions that the DAE got stuck in `WAITING` despite no blocks being outside of runcontrol limits. The cause is yet unclear but in the meantime a restart of the `RUNCTRL_01` IOC seems to fix the issue.
