@@ -12,7 +12,7 @@ The 3He Refrigerator is also known as the 3He Insert because it is inserted into
 
 TL;DR 4 thermometers, 2 heaters. We can read 3 thermometers at a time and the ITC503 controls two heaters based on the temperature setpoint and control channel we give it.
 
-On the insert itself, there are 4 thermometers: the sorb thermometer, the 1K Port thermometer, the He3Pot “High Temperature” thermometer and the He3Pot “Low Temperature” thermometer. Both the He3Pot thermometers are measuring the same temperature, one is good at measuring low-temperature values the other at high-temperature values.
+On the insert itself, there are 4 thermometers: the sorb thermometer, the 1K Pot thermometer, the He3Pot “High Temperature” thermometer and the He3Pot “Low Temperature” thermometer. Both the He3Pot thermometers are measuring the same temperature, one is good at measuring low-temperature values the other at high-temperature values.
 
 There are 3 ports on the magic box to connect the thermometers to (as there are 3 sensor channels in the ITC503 itself). The first sensor is connected to the sorb thermometer, the second to either the He3Pot Low-temperature thermometer or the 1K Pot (these are physically switched on the magic box) and the third is wired to the He3Pot high-temperature thermometer.
 
