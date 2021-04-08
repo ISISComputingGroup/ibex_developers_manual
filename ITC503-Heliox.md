@@ -109,7 +109,7 @@ Only one of these conditions needs to be met.
 
 TL;DR Heat up the sorb to cause recondense, wait for He3Pot and Sorb to reach given values (showing recondense complete), fast cool the sorb and set the He3Pot to a user given temperature.
 
-The logic is split into 4 parts. Part 1 initialises the correct state, sets some state on the device waits for the Sorb and He3Pot temperatures to match certain criteria, part 2 does mostly the same but using user-specified values from the macros specifically for part 2, part 3 fast cools the Sorb and part 4 is a final clear up.
+The logic is split into 4 parts. Part 1 initialises the correct state, sets some states on the device, and waits for the Sorb and He3Pot temperatures to match certain criteria. Part 2 does mostly the same but using user-specified values from the macros specifically for part 2. Part 3 fast cools the Sorb, and part 4 is a final clear up.
 
 ##### Part 1
 - Entry
