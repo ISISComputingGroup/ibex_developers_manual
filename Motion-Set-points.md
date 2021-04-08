@@ -77,6 +77,8 @@ Prior to version 7.2.0 motion set points only worked for 1 or 2 axes. As part of
 * The `motionSetPoints.db` has been replaced by `motionSetPointsSingleAxis` or `motionSetPointsDoubleAxis`
 * The index for `AXISX` and `NAMEX` are now zero based, previously they were 1 based
 
+See examples: https://github.com/ISISComputingGroup/EPICS-motionSetPoints/tree/master/settings
+
 # Diagram
 
 ![Flow diagram of motion setpoints epics side](https://raw.githubusercontent.com/wiki/ISISComputingGroup/ibex_developers_manual/motionSetpoints/motionSetpoints.png)
