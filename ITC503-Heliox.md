@@ -173,11 +173,11 @@ The logic is split into 4 parts. Part 1 initialises the correct state, sets some
 
 Controls one ITC503 on an RS232 connection direct into the MOXA.
 
-Macros with defaults for each ITC503:
-- Baud rate e.g. `SORB_BAUD`
-- Bits e.g. `SORB_BITS`
-- Parity e.g. `SORB_PARITY`
-- Stop bit e.g. `SORB_STOP`
+Macros with defaults for the ITC503:
+- Baud rate e.g. `BAUD`
+- Bits e.g. `BITS`
+- Parity e.g. `PARITY`
+- Stop bit e.g. `STOP`
 
 Set control channel and sensor details using macros e.g. SORB_CHANNEL and SORB_SENSOR.
 
