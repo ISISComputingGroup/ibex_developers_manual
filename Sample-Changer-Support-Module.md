@@ -107,4 +107,4 @@ and the offset. This if the slot has x=1, the position has x=2 and the slot has 
 The x position corresponds to machinename:username:MOT:STACK:Y 
 and the y position corresponds to machinename:username:MOT:STACK:ZLO.
 
-Position names are created by concatenating the slot name and the position name using an underscore.
+Position names are created by concatenating the position name and the slot name (or `sample_suffix`, see above).
