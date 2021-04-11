@@ -77,7 +77,7 @@ This defines what racks are currently loaded.
 
 	<?xml version="1.0"?>
 	<slots>
-		<slot name="Top_Left" rack_type="Banjo 1mm" xoff="0.0" yoff="0.0"/>
+		<slot name="Top_Left" sample_suffix="TL" rack_type="Banjo 1mm" xoff="0.0" yoff="0.0"/>
 		<slot name="Top_Right" rack_type="Rectangular" xoff="0.0" yoff="0.0"/>
 		<slot name="Bottom_Left" rack_type="Double Stopper" xoff="0.0" yoff="0.0"/>
 		<slot name="Bottom_Right" rack_type="Banjo 5mm" xoff="0.0" yoff="0.0"/>
@@ -89,6 +89,7 @@ Each slot element has the following attributes:
 * name, which must match the name of one of the slot elements in rack_definitions.xml
 * rack_type, which must match the name of one of the rack elements in rack_definitions.xml
 * `xoff` and `yoff` which are the offsets between the nominal position of the slot defined in rack_definitions.xml and its actual position
+* `sample_suffix`, optional attribute. By default the name of each sample position in the rack will be the name of the position as defined in the `rack` followed by the name of the slot e.g. `1Top_Left`. By specifying the `sample_suffix` you can change what is appended to the sample names e.g. the above would create a sample called `1TL`.
 
 ## Generating sample.txt
 
