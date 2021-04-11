@@ -1,6 +1,6 @@
 ## Spectra
 
-The DAE serves spectra information via the following PV format
+The DAE IOC serves spectra information (data collected in the Data Acquisition Electronics hardware) via the following PV format
 ```
 $(P)DAE:SPEC:$(PERIOD):$(SPEC):X
 $(P)DAE:SPEC:$(PERIOD):$(SPEC):Y
