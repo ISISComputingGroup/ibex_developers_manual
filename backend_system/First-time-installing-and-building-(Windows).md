@@ -55,7 +55,7 @@ See [Installing and upgrading MySQL](Installing-and-Upgrading-MySQL)
 See [Building and installing genie_python](Building-and-Installing-genie_python)
 
 ## Build EPICS back-end
-Note: the instructions [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Developer-Server-Build) may be much quicker than building EPICS yourself manually, if you use this method, you will need to run 'config_mysql.bat' in '/SystemSetup'. The EPICS build on the build server contains all the git submodules so should work as usual. 
+Note: the instructions [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Developer-Server-Build) may be much quicker than building EPICS yourself manually, if you use this method, you will need to run `config_mysql.bat` in `/SystemSetup`. The EPICS build on the build server contains all the git submodules so should work as usual. 
 
 `cd` to `C:\Instrument\Apps\EPICS\` and run `build.bat`
 Note that this will take some time and should end with building the documentation.
