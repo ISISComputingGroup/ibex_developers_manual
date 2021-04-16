@@ -103,7 +103,7 @@ We use a number of parts of CSS in our GUI (Alarms, Databrowser etc.). Most of t
 Other wiki resources that you might want to check if you need to find out some information needed for your work:
 
 - [User Guide to IBEX](https://github.com/ISISComputingGroup/ibex_user_manual/wiki)
-
+- [Standards and Conventions](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Standards-&-Conventions)
 
 ## Office Admin Links
 
