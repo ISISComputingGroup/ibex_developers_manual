@@ -8,7 +8,7 @@ Code chats occur on a semi-regular monthly basis within the group at ISIS. Altho
 
 Topic | Presenter | Date
 ----- | --------- | ----
-HIFI Cryomag | Chris C | Thursday 8th of April 2021
+HIFI Cryomag | Chris C | TBC
 BCC Cryogenics Course 2021 | James | TBC
 
 
