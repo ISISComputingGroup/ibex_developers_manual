@@ -10,6 +10,7 @@ Topic | Presenter | Date
 ----- | --------- | ----
 HIFI Cryomag | Chris C | TBC
 BCC Cryogenics Course 2021 | James | TBC
+Java 17 LTS | TBC | TBC
 
 
 ### Proposed Future Code Chats
