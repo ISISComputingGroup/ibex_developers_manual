@@ -304,3 +304,7 @@ It can also be a sign that the ISISICP is trying to restore from a corrupt save 
 ### Saved counts are very low
 
 In event mode the ISISICP will wait to get a consistent snapshot from all detector cards. If one of the detector cards has a hardware fault, it can cause the saved counts to appear to be very low. The solution in this case is to ask electronics to look into the fault/replace the faulty detector card. See [ticket 5835](https://github.com/ISISComputingGroup/IBEX/issues/5835) for further details of this issue.
+
+### DAE Internal test clock is at wrong frequency
+
+Originally DAE2 had a fixed 50Hz internal test clock, newer DAE2 cards and DAE3 have a register at address 0x244 that can be set to the frame length in microseconds (so 20000 for TS1, 100000 for TS2). The DAE makes a guess as power on, but may not get this right. The ISISICP will be modified to set this, but in the meanwhile you may need to use the old "dae tester.vi" to set the value  
