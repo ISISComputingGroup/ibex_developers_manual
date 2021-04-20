@@ -72,7 +72,7 @@ followed by carriage return, should get a reply with the firmware version detail
 
 ### enabling basic mode if in safe mode
 
-You need to send the string `0x2 0x8 SAF0 0x55 0x43 0x3` where `0x` represents the hex value of the character to send
+According to manual you need to send the string `0x2 0x8 SAF0 0x55 0x43 0x3` where `0x` represents the hex value of the character to send. It may be this assumes pump address 0, if you want to set a non-zero addressed pump then you may need to prefix SAF0 with the pump address and then calculate the new checksum (which is what 0x55 0x43 is). See manual.
 
 ### connection cables
 
