@@ -13,7 +13,7 @@ Documentation is available for the pump at `\\isis\shares\ISIS_Experiment_Contro
 |     Stop bits | 1 bit            |
 |        Parity | None             |
 |   Data length | 8 bit            |
-|  Flow control | Hardware         |
+|  Flow control | None             |
 
 Command Syntax:
  - Communication command is terminated with <CR>.
@@ -39,3 +39,37 @@ The device has it's own logic for setting the units of volume to be pumped `VOLU
 
 The units for the rate can be selected but will only be set when setting the `RATE:SP`. You can resend the same set point to set newly selected rate units.
 
+## Connection notes
+
+Use supplied modem telephone cable into pump port labelled “computer port”, then use adapter supplied to connect to a female moxa cable and into moxa box
+
+For one pump it must be given address 0, see below. Additional pumps can be daisy chained using the “network” modem port on the first pump to connect to the “computer” port on a second. The additional pumps must each have a unique address.
+
+The manual says to power pump on after rs232 cable is attached
+
+The device has a configurable baud rate. See setup key below
+
+The device supports two rs232 modes: basic and safe. It looks like labview uses “basic” and attempts to turn off safe mode. A pump in basic mode can be controlled via an emulator like hyperterm.
+ 
+A triangle in top left of LED display is the “rs232 indicator” – indicates valid reception of a command at some point since power on. It looked like this triangle remained after cable was disconnected for example. 
+ 
+### Notes from the “setup key” section of manual
+Hold diameter key to enter setup mode, you will initially get first configuration parameter “PF:” which is power failure mode. It will then cycle through each setup parameter after about 2 seconds.
+
+To change value of a parameter press an arrow key under value on LED display, to store new value wait two seconds or press any non-arrow key
+
+The Last two setup parameters are:
+* Ad  - the pump address, should be 00 for just one pump
+* nnnn – the baud rate, we use 9600 so make sure this number is displayed there
+
+If r232 error is displayed on LED panel, indicates a timeout in “safe communication mode”. We should not be in this mode anyway.
+Before the pump can operate, it needs to know syringe inside diameter – set this from front panel of device
+
+### Terminal emulator test 
+If the pump is in basic rs232 mode, connect and send command 
+VER 
+followed by carriage return, should get a reply with the firmware version details
+
+### enabling basic mode if in safe mode
+
+You need to send the string `0x2 0x8 SAF0 0x55 0x43 0x3` where `0x` represents the hex value of the character to send
