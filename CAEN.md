@@ -38,6 +38,8 @@ If you log in to the console and cannot get an EPICS prompt, the whole console/p
 
 If you can ping and telnet to the crate, but the EPICS driver cannot connect, the crate may need a (physical) power cycle. This is best done by detector group.
 
+You can set `HVCAENx527Debug X` in the console (or via the st.cmd) with X being a debug level e.g. 5 and the IOC will print debugging information based on the level you have given.
+
 ### HVCAENA (Newer IOC)
 
 Made up of three levels the IOC level (st.cmd, config etc.), the CPP/Db support level and the CAENHVWrapper level. The `CAENHVWrapper` is a vendor library that contains methods to set and get data to/from CAEN crates, it is documented in the pdf files that can be found in the `CAENHVAsyn` support module. The CPP support level was created by [SLAC](https://www6.slac.stanford.edu/) and has been [edited by us](https://github.com/ISISComputingGroup/IBEX/issues/5544). The IOC level was created by us to enable use in IBEX. 
