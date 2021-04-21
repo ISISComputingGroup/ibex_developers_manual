@@ -308,3 +308,10 @@ In event mode the ISISICP will wait to get a consistent snapshot from all detect
 ### DAE Internal test clock is at wrong frequency
 
 Originally DAE2 had a fixed 50Hz internal test clock, newer DAE2 cards and DAE3 have a register at address 0x244 that can be set to the frame length in microseconds (so 20000 for TS1, 100000 for TS2). The DAE makes a guess as power on, but may not get this right. The ISISICP will be modified to set this, but in the meanwhile you may need to use the old "dae tester.vi" to set the value  
+
+### errors
+An error message like:
+``` 
+QXTRM: [Information] QxtrmInterface::readWithRetry Retrying Null pointer
+```
+means the control program cannot connect to the DAE. It may be the static ARP addresses have disappeared, or the DAE is switched off, or the DAE has locked up.  
