@@ -59,8 +59,8 @@ Hold diameter key to enter setup mode, you will initially get first configuratio
 To change value of a parameter press an arrow key under value on LED display, to store new value wait two seconds or press any non-arrow key
 
 The Last two setup parameters are:
-* Ad  - the pump address, should be 00 for just one pump
-* nnnn – the baud rate, we use 9600 so make sure this number is displayed there
+* `Ad`  - the pump address, should be 00 for just one pump
+* `nnnn` – the baud rate, we use 9600 so make sure this number is displayed there
 
 If r232 error is displayed on LED panel, indicates a timeout in “safe communication mode”. We should not be in this mode anyway.
 Before the pump can operate, it needs to know syringe inside diameter – set this from front panel of device
