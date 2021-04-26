@@ -314,4 +314,10 @@ An error message like:
 ``` 
 QXTRM: [Information] QxtrmInterface::readWithRetry Retrying Null pointer
 ```
-means the control program cannot connect to the DAE. It may be the static ARP addresses have disappeared, or the DAE is switched off, or the DAE has locked up.  
+means the control program cannot connect to the DAE. It may be the static ARP addresses have disappeared, or the DAE is switched off, or the DAE has locked up.
+
+### Histograms Show as Disconnected when DAE otherwise appears to be working
+
+Sometimes, the four histograms on the DAE display do not show a plot and stay disconnected.  Data is however correctly being read from the DAE and saved to file without problems.  This may occur if the DAE hardware has previously been disconnected or switched off and the ICP has recovered its connection to the DAE apparently successfully.
+
+The DAE histogram display comes via a different route and does not recover the same way as the data acquisition does.  The solutions is to restart the DAE IOC (instructions above).
