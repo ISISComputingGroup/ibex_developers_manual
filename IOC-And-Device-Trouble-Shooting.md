@@ -149,6 +149,14 @@ currentTime::getCurrentTime(): XXX sec time discontinuity detected
 
 It is caused by the time going backwards due to a correction; the underlying cause is unknown. However, this seems to disappear once the host machine is restarted.
 
+## My IOC is not starting/reacting at all when launching from console/ProcServ 
+
+If your IOC running in procserv is unresponsive (does not start up, `ctrl + x` from console does nothing) but you can still start the IOC manually from the IOCBoot directory, it is possible another process is using the port allocated to this IOC by procserv. 
+1. You can find the port procserv is trying to use for a given IOC under `EPICS\iocstartup\procserv.bat`
+1. In a command window, type `netstat -ano`. This gives you a list of ports currently in use and the IDs of processes using them
+1. Search that list for the port from step 1. This will give you the ID of the process using it.
+1. Find the process by it's ID in task manager.
+
 # Autosave
 
 ## Lost autosave values (especially on Galils)
