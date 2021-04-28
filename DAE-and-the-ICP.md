@@ -40,6 +40,8 @@ There are three main files that can be set at runtime to change the behaviour of
 * *Wiring Table*: Files containing the word wiring and specifying how the detectors are connected to the DAE. The second line specifies how many detectors there are and how many of those are monitors. The table contains an index, detector id, time regime (see time channels below), physical crate, module and position numbers, the monitor that the detector corresponds to (0 for none) and the monitor prescale. 
 These files are picked up from `Instrument/Settings/config/inst/configurations/tables`, have the *.dat suffix and are all human readable. They can be edited by hand but must be done carefully to ensure that there are no logic errors within them. For example if a detector is listed in one file but not in another. 
 
+### Time Channel Binning - setting to event/histogram mode
+
 The way that data is binned by the DAE is set by changing the time channel binning (TCB). Scientists generally want different amount of detail depending on when the neutron hit the detector, which they can do by setting a smaller bin in the time range that they care more about. They can do this through the GUI manually or by creating a tcb file that is loaded into the ICP. It may be that scientists would like different levels of binning for different banks of detectors they can do this by setting up a number of different `timing regimes` and then specifying the regime they would like the detector to go into in the wiring table. If they specify a time regime of > 100 the data will be read and saved as event data. If they specify 1XX the ICP will also bin the events 'on the fly' into the XX regime as well as save the raw event data.  
 
 ## Performing arbitrary actions on run start/run end
