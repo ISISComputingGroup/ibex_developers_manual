@@ -20,7 +20,7 @@ To run with the Django development server using `python manage.py runserver 0.0.
     - bootstrap\ in HLM_View\static
 
 8. Update the db connection at DATABASES in settings.py
-9. Run python manage.py runserver - works with debug=True, 
+9. Run python manage.py runserver (in root with the venv activated)- works with debug=True, 
    Note: If set to false Django won't provide static files anymore. 
    This step is just for testing as Django dev server should never be used in production.
 ```
