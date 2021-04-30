@@ -1,4 +1,4 @@
-Deployment notes for [HLM View](https://github.com/ISISNeutronMuon/HLM_View), running with Apache + mod_wsgi on Windows Server 2012 R2.
+Deployment notes for [HLM View](https://github.com/ISISNeutronMuon/HLM_View), running with Apache + `mod_wsgi` on Windows Server 2012 R2.
 
 
 #### Web App
