@@ -20,7 +20,8 @@ To run with the Django development server using `python manage.py runserver 0.0.
     - bootstrap\ in HLM_View\static
 
 8. Update the db connection at DATABASES in settings.py
-9. Run python manage.py runserver - works with debug=True, but if set to false Django won't provide static files anymore. 
+9. Run python manage.py runserver - works with debug=True, 
+   Note: If set to false Django won't provide static files anymore. 
    This step is just for testing as Django dev server should never be used in production.
 ```
 
@@ -34,7 +35,8 @@ Configure the Grafana Data Source (MySQL DB)
 In Grafana/conf, copy sample.ini , rename to custom.ini
 Then set to allow_embedding and anonymous access (for iframes)
 Restart Grafana service to apply new config
-Updated iframe links in the HLM View templates (details.html, building.html) from localhost:3000 to new address 
+Updated iframe links in the HLM View templates (details.html, building.html) 
+from localhost:3000 to new address 
 ```
 
 #### Web Server
@@ -56,30 +58,31 @@ extract in C:\Apache24, cmd cd "C:\Apache24\bin\" ,
 pip install mod_wsgi, error: MVS C++ 14.0 required
 Download vs_buildtools__1321439799.1619704707, and install universal + C++ packages
 Successfully installed mod-wsgi-4.7.1
-CMD: run mod_wsgi-express module-config (this will create mod_wsgi.cp39-win_amd64.pyd in HLM_View/venv/Lib/site-packages/mod_wsgi/server)
+CMD: run mod_wsgi-express module-config (this will create mod_wsgi.cp39-win_amd64.pyd 
+in HLM_View/venv/Lib/site-packages/mod_wsgi/server)
 
 Edit "C:\Apache24\conf\httpd.conf":
-	Changed "ServerName" to localhost:80
+    Changed "ServerName" to localhost:80
 	
-	At the end of http.conf, added:
+    At the end of http.conf, added:
 	
-		# Django Project
-		LoadFile "C:/Instrument/Apps/Python/Python39/python39.dll"
-		LoadModule wsgi_module "C:/HLM_View/venv/Lib/site-packages/mod_wsgi/server/mod_wsgi.cp39-win_amd64.pyd"
-		WSGIPythonHome "C:/HLM_View/venv;C:/Instrument/Apps/Python/Python39/"
-		WSGIScriptAlias / "C:/HLM_View/project/wsgi.py"
-		WSGIPythonPath "C:/HLM_View/venv/Lib/site-packages/;C:/HLM_View/"
+	# Django Project
+	LoadFile "C:/Instrument/Apps/Python/Python39/python39.dll"
+	LoadModule wsgi_module "C:/HLM_View/venv/Lib/site-packages/mod_wsgi/server/mod_wsgi.cp39-win_amd64.pyd"
+	WSGIPythonHome "C:/HLM_View/venv;C:/Instrument/Apps/Python/Python39/"
+	WSGIScriptAlias / "C:/HLM_View/project/wsgi.py"
+	WSGIPythonPath "C:/HLM_View/venv/Lib/site-packages/;C:/HLM_View/"
 
-		<Directory "C:/HLM_View/project/">
-			<Files wsgi.py>
-				Require all granted
-			</Files>
-		</Directory>
-
-		Alias /static "C:/HLM_View/static/"
-		<Directory "C:/HLM_View/static">
+	<Directory "C:/HLM_View/project/">
+		<Files wsgi.py>
 			Require all granted
-		</Directory>
+		</Files>
+	</Directory>
+
+	Alias /static "C:/HLM_View/static/"
+	<Directory "C:/HLM_View/static">
+		Require all granted
+	</Directory>
 
 cmd run "C:\Apache24\bin\httpd.exe" and check that http://<instrument name>/ works.
 Apache logs can be found in "C:\Apache24\logs"
