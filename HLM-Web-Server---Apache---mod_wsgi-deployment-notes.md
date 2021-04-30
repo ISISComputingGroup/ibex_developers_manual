@@ -28,14 +28,14 @@ To run with the Django development server using `python manage.py runserver 0.0.
 #### Grafana Dashboard
 To set up the Grafana dashboard:
 ```
-Install grafana-7.5.5.windows-amd64
-Set up Grafana admin credentials (Access details)
-Import dashboard with .json file from HLM_View\Grafana
-Configure the Grafana Data Source (MySQL DB)
-In Grafana/conf, copy sample.ini , rename to custom.ini
-Then set to allow_embedding and anonymous access (for iframes)
-Restart Grafana service to apply new config
-Updated iframe links in the HLM View templates (details.html, building.html) 
+1. Install grafana-7.5.5.windows-amd64
+2. Set up Grafana admin credentials (Access details)
+3. Import dashboard with .json file from HLM_View\Grafana
+4. Configure the Grafana Data Source (MySQL DB)
+5. In Grafana/conf, copy sample.ini , rename to custom.ini
+6. Then set to allow_embedding and anonymous access (for iframes)
+7. Restart Grafana service to apply new config
+8. Updated iframe links in the HLM View templates (details.html, building.html) 
 from localhost:3000 to new address 
 ```
 
@@ -48,20 +48,19 @@ Used resources:
 	https://docs.djangoproject.com/en/3.2/howto/deployment/wsgi/modwsgi/
         https://montesariel.com/blog/post-3
 	
-Added new hosts in project/settings.py ALLOWED_HOSTS
+1. Added new hosts in project/settings.py ALLOWED_HOSTS
 
-Install VC_redist.x64.exe
-Download httpd-2.4.47-win64-VS16.zip (ApacheLounge), 
-extract in C:\Apache24, cmd cd "C:\Apache24\bin\" , 
-"httpd.exe" and go to localhost 80 to check that it works
+2. Install VC_redist.x64.exe
+3. Download httpd-2.4.47-win64-VS16.zip (ApacheLounge), extract in C:\Apache24
+4. Run "C:\Apache24\bin\httpd.exe" then go to localhost 80 to confirm it works
 
-pip install mod_wsgi, error: MVS C++ 14.0 required
-Download vs_buildtools__1321439799.1619704707, and install universal + C++ packages
-Successfully installed mod-wsgi-4.7.1
-CMD: run mod_wsgi-express module-config (this will create mod_wsgi.cp39-win_amd64.pyd 
+5. pip install mod_wsgi, error: MVS C++ 14.0 required
+6. Download vs_buildtools__1321439799.1619704707, and install universal + C++ packages
+7. Successfully installed mod-wsgi-4.7.1
+8. CMD: run mod_wsgi-express module-config (this will create mod_wsgi.cp39-win_amd64.pyd 
 in HLM_View/venv/Lib/site-packages/mod_wsgi/server)
 
-Edit "C:\Apache24\conf\httpd.conf":
+9. Edit "C:\Apache24\conf\httpd.conf":
     Changed "ServerName" to localhost:80
 	
     At the end of http.conf, added:
@@ -84,11 +83,11 @@ Edit "C:\Apache24\conf\httpd.conf":
 		Require all granted
 	</Directory>
 
-cmd run "C:\Apache24\bin\httpd.exe" and check that http://<instrument name>/ works.
-Apache logs can be found in "C:\Apache24\logs"
+10. Run "C:\Apache24\bin\httpd.exe" and check that http://<instrument name>/ works.
+Note: Apache logs can be found in "C:\Apache24\logs"
 
-Fix a Python bug that causes an error 500 every time a query is made to the database.
-Edit the __init__.py file in project-root\venv\Lib\site-packages\asgiref by adding the following:
+11. Fix a Python bug that causes an error 500 every time a query is made to the database.
+    Edit the __init__.py file in project-root\venv\Lib\site-packages\asgiref by adding the following:
 	# PATCH that fixes a Python Bug:
 	import sys
 	import asyncio
@@ -97,6 +96,6 @@ Edit the __init__.py file in project-root\venv\Lib\site-packages\asgiref by addi
 		asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 
 
-Install Apache httpd.exe as a service: C:\Apache24\bin>httpd.exe -k install -n "HLM View Web Server"
+12. Install Apache httpd.exe as a service: C:\Apache24\bin>httpd.exe -k install -n "HLM View Web Server"
 ```
 
