@@ -40,7 +40,7 @@ from localhost:3000 to new address
 ```
 
 #### Web Server
-To set up the web server with Apache + mod_wsgi:
+To run with a production web server using Apache + mod_wsgi:
 ```
 Used resources: 
 	https://github.com/Johnnyboycurtis/webproject#apache-and-mod_wsgi 
