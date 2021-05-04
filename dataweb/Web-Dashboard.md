@@ -87,7 +87,7 @@ First look at the log to ensure that there are no issues. The log is held in `C:
 
 ### Restart the Dataweb
 
-As admin open the "Task Scheduler" and end and run the "JSON Bourne" task (in task scheduler library).
+As admin open the "Task Scheduler" and end and run the "JSON Bourne" task (in task scheduler library). Make sure that ending the task has killed the Python webserver process.
 
 ### New Instrument with No Details
 
