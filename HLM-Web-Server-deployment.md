@@ -61,7 +61,7 @@ Used resources:
 in HLM_View/venv/Lib/site-packages/mod_wsgi/server)
 
 9. Edit "C:\Apache24\conf\httpd.conf":
-    Changed "ServerName" to localhost:80
+    Set ServerName to localhost:80
 	
     At the end of http.conf, added:
 	
