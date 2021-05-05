@@ -12,6 +12,17 @@ HIFI Cryomag | Chris C | TBC
 BCC Cryogenics Course 2021 | James | TBC
 Java 17 LTS | TBC | TBC
 
+### Books and article ideas for technical book club
+
+- Peopleware
+- Clean code
+- The Pragmatic Programmer
+- The Effective Engineer
+- Design Patterns: Elements of Reusable Object-Oriented Software
+- Refactoring
+- The Agile Manifesto
+- Fluent Python
+- Effective Python
 
 ### Proposed Future Code Chats
 
