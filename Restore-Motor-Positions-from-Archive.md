@@ -11,7 +11,7 @@ The arguments are:
 
 ```
 Find positions of motors in the past and restore those to current positions --time 2018-01-10T09:00:00 --host ndximat
---prefix IN:IMAT:MOT --controller 01
+--prefix IN:IMAT: --controller 01
 
 optional arguments:
   -h, --help            show this help message and exit
