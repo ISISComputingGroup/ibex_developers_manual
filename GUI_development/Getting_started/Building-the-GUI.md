@@ -63,7 +63,7 @@ As part of https://github.com/ISISComputingGroup/IBEX/issues/4786 a git hook was
 1. From the command line, navigate to the `build` directory in the IBEX code (one directory under the root, which should be ibex_gui).
 1. Run `build.bat` 
 1. Wait for a few minutes while it builds
-1. After the build finishes it can be found in `\base\uk.ac.stfc.isis.ibex.e4.client.product\target\products\ibex.product\`
+1. After the build finishes it can be found in `.\built_client`
 
 ## Troubleshooting ##
 
