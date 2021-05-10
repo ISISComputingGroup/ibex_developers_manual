@@ -16,7 +16,7 @@ As described in the physics background page ([Reflectometers Science](Reflectome
     1. Set a single parameter
     1. Beamline immediately moves parameter to that position, while keeping all other parameters at their current value
 1. Readback values (so the user knows where the beamline actually is)
-    1. When any component, moves the actual position of the parameters should be reported
+    1. When any component moves, the actual position of the parameters should be reported
 1. Visual indicators (so the user has extra information on the state of parameters without thought, usually indicated on the GUI via a colour)
     1. If a parameter setpoint is changed but not moved to (default colour yellow)
     1. If an underlying motor of a parameter is moving (default colour green)
