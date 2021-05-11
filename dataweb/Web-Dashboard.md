@@ -70,7 +70,7 @@ To test the front end and JSON bourne on a developer machine:
 * Open default.html as above
 
 To be able to see your instrument as well:
-* Add your instrument to the inst_list dictionary in the `InstList` class in `web_scrapper_manager.py` (for example `inst_list = {"my_device":"localhost"}`)
+* Add your instrument to the inst_list dictionary in the `webserver.py` (for example `inst_list = {"my_device":"localhost"}`)
 * Run your instrument
 * Run JSON Bourne up as above
 
