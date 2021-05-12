@@ -118,6 +118,8 @@ The generated script file will contain the compressed JSON. The compressed JSON 
 
 JSON formats etc. were decided in a meeting on 20/02/2020 attended by Bish, Dom, John, Tom, Alistair and James.
 
+On 12/05/2021 it was decided by James, Kathryn and Dom to hide this complexity from the user by removing references to parameter files and tying the two files directly to generating scripts. This was captured in [#6492](https://github.com/ISISComputingGroup/IBEX/issues/6492). 
+
 # Pre-release Install Instructions
 
 As dev:
