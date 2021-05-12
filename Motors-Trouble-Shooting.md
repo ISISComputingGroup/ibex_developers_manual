@@ -3,7 +3,7 @@
 ## General
 
 ### Motors are hitting a hard limit in an unexpected place
-This implies that the controller has lost it's positions. The best thing to here is to rehome the axis. This can be done by selecting the offending motor in the table of motors and pressing the home button.
+This implies that the controller has lost it's positions. The best thing to here is to rehome the axis. This can be done by selecting the offending motor in the table of motors and pressing the home button. Note that you should home one axis at a time as homing multiple axes in parallel can lead to the operation timing out.
 
 ### Position needs to be restored 
 
