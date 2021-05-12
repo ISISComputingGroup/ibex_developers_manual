@@ -79,3 +79,8 @@ A place to record decisions:
 
 - Present: @Kevin-Woods-Tessella @John-Holt-Tessella @DominicOram @FreddieAkeroyd @ThomasLohnert @Tom-Willemsen
 - Date: 01/12/2020
+
+25. We have decided to hide the complexity of using the script generator parameters file from script generator users by removing references to parameter files and tying the two files produced directly to generating scripts. This was captured in [#6492](https://github.com/ISISComputingGroup/IBEX/issues/6492).
+
+- Present: James, Kathryn and Dom
+- Date: 12/05/2021
