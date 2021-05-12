@@ -4,6 +4,8 @@
 
 These controllers are a development of the [MB350g3](SKF-MB350g3-Chopper) previously used on LET for its disk choppers and now repurposed on EMMA for its Fermi.  The G5 is an Ethernet device using a MODBUS protocol to communicate, and are generally installed on the instrument private networks.  Spare/test controllers may exist on the ISIS network.
 
+The IOC for this device is the **SKFCHOPPER**.
+
 ### Current Installations
 
 There are currently **three** controllers on LET (original choppers 3 & 4, now 5, and soon to be 1) and **five** on IMAT (two double-disk choppers and a T0).
