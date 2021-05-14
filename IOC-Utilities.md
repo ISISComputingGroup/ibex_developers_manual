@@ -151,7 +151,7 @@ From the DKFPS IOC:
 ```
 stringiftest("POLAR" "$(POLARITY="BIPOLAR")" 5 "BIPOLAR")
 ```
-The operation value is `5`, or `4+1`, so this checks the lhs (`$(POLARITY)`, which defaults to `"BIPOLAR"`) equals the right hand side `"BIPOLAR"`, and puts the result in the `$(POLAR)`.
+The operation value is `5`, or `4+1`, so this checks the lhs (`$(POLARITY)`, which defaults to `"BIPOLAR"`) equals the right hand side `"BIPOLAR"`, and puts the result in the `$(POLAR)` also creating `$(IFPOLAR)` and `$(IFNOTPOLAR)` with appropriate space or `#` character 
 
 ## setIOCName
 
