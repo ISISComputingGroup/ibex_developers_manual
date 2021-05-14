@@ -41,8 +41,10 @@ This issue was encountered on Iris during the transition between Seci and Ibex. 
 # Experimental Files not being Archived and so not Appearing in the Journal
 
 At the end of a run log file should be transferred from `C:\data` to the archive. For this to happen the files should be marked read only, then when the run ends it is copied thanks to a script in `<normal user>\Documents\Configurations\COMMON\end_of_run.cmd`. 
+Double checking that the files are read only is a good first step when items are missing from the archive.
 If this has failed:
 
 * Make sure the network location d:\data\<cycle> is accessible. This can need connecting to manually after a restart, i.e. open the folder in explorer.
 
 To archive files end a run.
+Should you have runs ending and read only files, then check on the archive in `INST\instrument\logs\cycle_nn_n`, the log files there will provide some extra information. If the file `exception_copy.log` doesn't exist, or hasn't been updated for a long time, then the script above isn't running the code to clean up old files, or it has hung.
