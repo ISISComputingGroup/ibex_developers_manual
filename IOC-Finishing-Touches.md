@@ -60,7 +60,7 @@ All PVs should have if appropriate:
     * Units must be in ...
 * Precision (`PREC`) for records with floating point numbers - is this set correctly for what a user/technician requires 
 
-## 7. Compliance with DBUnitChecker
+## 7. Compliance with DBChecker
 
 The build in Jenkins will fail if the rules of the [DBChecker](PV-Units-&-Standards) script are not satisfied. You might as well check them beforehand to save yourself time later. From an epics terminal: 
 ```
