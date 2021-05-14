@@ -34,6 +34,8 @@ Get a licence key (our license permits concurrent use by any 2 users from a list
     1. Locate the executable from the built (built using the build.bat maven script) eclipse project (e.g. ibex-client in `ibex_gui\base\built_client\`)
 1. To get access to global scripts right click in squish -> global scripts pane -> add -> global scripts directory and select the global scripts directory in the repository root.
 
+You may also need to install `mysql-python-connector==8.0.11` through the GUI (Edit -> Preferences -> PyDev -> Interpreters -> Python Interpreter then "Manage with pip") if running the experiment details tests. 
+
 # RDP to Server
 
 It is possible to remote desktop to the squish server but when you disconnect you must use the "Disconnect from RDP" shortcut on the desktop. To do this you must be an Admin on the desktop.
@@ -189,3 +191,7 @@ Look at the `Runner/Server` Log tab see if you can diagnose the problem.
 
 * `Unrecognized option: --add-reads=javafx.base=ALL-UNNAMED` probably running it through java8 it is on your path too high up. 
     - I fixed this by copying the java from the shares into the directory from which it runs so that it picks this up as the default when it runs. E.g. copy `...\Kits$\CompGroup\ICP\ibex_client_jre` to `C:\Instrument\Dev\ibex_gui\built_client\jre` (note the name change to jre). Running `build.bat` should now do that for you.
+
+### KeyError: `MYSQLPW` is missing
+
+To remedy this error set `MYSQLPW` to the root password in your environment variables when running the tests. If the Squish IDE has not been restarted before this you will need to close and re-open it before running the tests again. 
