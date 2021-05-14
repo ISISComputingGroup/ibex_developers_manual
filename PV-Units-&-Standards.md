@@ -22,7 +22,7 @@ Current pv warning are:
 Current syntax errors are:
 
 - Colons not used as main separator
-- Names use characters other than alphanumerics, underscore and colon
+- Names use characters that are not alphanumeric, an underscore or colon
 - Does not adhere to :SP and SP:RBV format
 - If DUMMYPV and DUMMYPV:SP exists without DUMMYPV:SP:RBV (at least as an alias).
 - If DUMMYPV:SP exists on its own but does not have a SP:RBV alias for DUMMYPV
