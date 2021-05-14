@@ -144,3 +144,7 @@ To apply averaging, set the `NUM_SAMPLES` macro to however many samples you woul
 The zero-field controller includes a very verbose debug mode, which is off by default. To enable it, use `caput %MYPVPREFIX%ZFCNTRL_01:DEBUG 1`. This will log messages at various points in the state machine, to aid debugging.
 
 **With debug mode enabled, the zero field controller may log debug messages at the rate of ~100 messages/sec.** This option should not be left on long-term, else the messages will quickly fill available disk space.
+
+# Autosaving feedback-mode
+To autosave the feedback mode so it persists on an IOC restart add `ZFCNTRL_01__SAVEFEEDBACKMODE=YES` to your `globals.txt`. 
+This is done with a `pass0` autosave which checks for changes every 5 seconds rather than the default when using `autosaveFields` which is 30 seconds. 
