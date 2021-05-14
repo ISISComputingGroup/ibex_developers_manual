@@ -1,11 +1,11 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > PV units
 
-DB Unit Checker
+DB Checker
 ===============
 
-The DBUnitChecker Python script is a helper file that checks a number of things are true about the PVs used within the project.
+The DBChecker Python script is a helper file that checks a number of things are true about the PVs used within the project and that the correct syntax is used in db files.
 
-Current error checks are:
+Current pv error checks are:
 
 - PVs that are labelled as interesting and have type longin, longout, ai or ao must contain a unit field
 - Description fields must contain less than 41 characters
@@ -14,12 +14,27 @@ Current error checks are:
 - The names of PVs that are labelled as interesting must be capitialised and contain only `A-Z 0-9 _ :`
 - `calc` records that are marked as interesting must have their access security group (`ASG`) set to `READONLY`. This is because if you were to set it directly, the record would not execute its calculation, which is not what we want.
 
-Current warning are:
+Current pv warning are:
 
 - PVs may not have multiple unit fields
 - PVs that are labelled as interesting and have type longin, longout, ai or ao may not have blank fields
 
-The checker is run at the end of a build on Jenkins and unit tests are failed if any of the error checks fail. Failed warnings will be noted and displayed in the test report but will not result in an unstable build.
+Current syntax errors are:
+
+- Colons not used as main separator
+- Names use characters other than alphanumerics, underscore and colon
+- Does not adhere to :SP and SP:RBV format
+- If DUMMYPV and DUMMYPV:SP exists without DUMMYPV:SP:RBV (at least as an alias).
+- If DUMMYPV:SP exists on its own but does not have a SP:RBV alias for DUMMYPV
+- Underscores must not be used in place of : i.e. DUMMYPV_SP
+
+Current syntax warnings are:
+
+- Names not in uppercase
+
+
+
+The checker is run at the end of a build on Jenkins and unit tests are failed if any of the error checks fail. Failed warnings will be noted and displayed in the test report but will not result in an unstable build. Syntax errors are currently treated as warnings as some files currently contain large numbers of them.
 
 Unit Standards
 --------------
@@ -78,4 +93,4 @@ The project currently contains the following base units:
 
 ## Usage
 
-To use the DB Unit checker script, see [IOC Finishing Touches](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/IOC-Finishing-Touches#6-compliance-with-dbunitchecker).
+To use the DB checker script, see [IOC Finishing Touches](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/IOC-Finishing-Touches#6-compliance-with-dbunitchecker).
