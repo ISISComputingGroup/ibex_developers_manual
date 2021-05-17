@@ -12,7 +12,7 @@ Block Gateway | GWBLOCK | EPICS Gateway | Aliases the dynamically created block 
 [Block server](BlockServer) | BLOCKSRV | Python | Manages configurations and blocks associated with them see [Settings-and-Configurations](Settings-and-Configurations). It configures the Archive Engine and starts the IOCs read from the configuration files.
 CA Repeater | CAREP | Executable | A epics CA repeater that is started before all other processes. This repeats UDP broadcasts to CA clients on the same machine
 [Database server](The-DatabaseServer) | DBSVR | Python | Intermediary between MySQL and the GUI, only used for PVs that hold instrument information, such as experiment data, which IOCs are used and information about PVs of an instrument. Legacy software, not that necessary now.
-[Experiment DB](Experimental-Database) | EXPDB | Python | Similar to DB server but for PVs for the experimental database which contains users and run numbers.
+[Experiment DB](Experimental-Database) | N/A - runs centrally | Python | Similar to DB server but for PVs for the experimental database which contains users and run numbers.
 [External/Access Gateway](Access-Gateway) | GWEXT | EPICS Gateway | Gateway to allow access to PVs from outside localhost
 [icpconfig](icpconfig) | N/A | Library of functions | functions called on IOC start up to load macros into the IOC.
 [Inst etc](Inst-etc-IOC) | INSTETC_01 |  Epics IOC | PVs which are for instrument level, e.g. motors moving and security pvs
