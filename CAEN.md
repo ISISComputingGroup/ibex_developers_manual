@@ -4,6 +4,8 @@ A high voltage power supply normally used for detector electronics.
 
 There are now two IOCs devoted to the CAEN. An older one from the Canadian light source (HVCAEN) and a newer one from SLAC (HVCAENA). They are communicated with over Ethernet. HVCAEN is used widely and HVCAENA is to be used on DETMON to test it. HVCAENA has more information available including board and crate parameters. Both IOCs have a read-only mode which can be set via macros.
 
+# HVCAEN
+
 ### Communicating with multiple CAENs (Older IOC)
 A single IOC can communicate with up to 8 CAEN crates, this appears to be a limit in the CAEN library as it defines MAX_CRATES as 8 in the library header and has a "too many connections" error code listed in its potential error codes. 
 
@@ -40,7 +42,7 @@ If you can ping and telnet to the crate, but the EPICS driver cannot connect, th
 
 You can set `HVCAENx527Debug X` in the console (or via the st.cmd) with X being a debug level e.g. 5 and the IOC will print debugging information based on the level you have given.
 
-### HVCAENA (Newer IOC)
+# HVCAENA (Newer IOC)
 
 Made up of three levels the IOC level (st.cmd, config etc.), the CPP/Db support level and the CAENHVWrapper level. The `CAENHVWrapper` is a vendor library that contains methods to set and get data to/from CAEN crates, it is documented in the pdf files that can be found in the `CAENHVAsyn` support module. The CPP support level was created by [SLAC](https://www6.slac.stanford.edu/) and has been [edited by us](https://github.com/ISISComputingGroup/IBEX/issues/5544). The IOC level was created by us to enable use in IBEX. 
 
