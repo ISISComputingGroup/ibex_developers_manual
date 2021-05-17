@@ -38,7 +38,6 @@ Start is initiated from `C:\Instrument\Apps\EPICS\start_ibex_server.bat`. It:
 1. start the procserver for the iocs (call `iocstartup\procserv.bat`)
 1. starts proc server control (PSCTRL IOC)
 1. Reload conserver
-1. [full only] start the experimental database updater (`ISIS\ExperimentalDatabase\master\start_expdata.bat`)
 1. [full only] start the block server
 1. [full only] start the database server
 1. [full only] start the script server (if not on an instrument)
