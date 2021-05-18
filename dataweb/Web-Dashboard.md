@@ -18,7 +18,7 @@ The archive engine shown in the [high level design](High-Level-Architectural-Des
 
 ### The WebServer
 
-The webserver is run as part of the BlockServer and provides all of the data on the current configuration in JSON format. This is the exact same data that is served on the GET_CURR_CONFIG_DETAILS PV. The webserver is currently serving the data on localhost:8008.
+The webserver is run as part of the BlockServer and provides all of the data on the current configuration in JSON format. This is the exact same data that is served on the GET_CURR_CONFIG_DETAILS PV. The webserver is currently serving the data on localhost:8008. Note that the fortinet VPN uses 8008 for internal configuration and so you cannot access this address through the fortinet VPN.
 
 ---
 
