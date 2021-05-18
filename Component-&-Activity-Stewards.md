@@ -17,16 +17,16 @@ MUSR Migration | Chris C |
 SANS2D Migration | Bish |
 EMU Migration | David |
 SURF Migration | Thomas |
-POLREF Migration | (Not Started so no steward assigned) |
-INTER Migration | (Not Started so no steward assigned) |
-OFFSPEC Migration | (Not Started so no steward assigned) |
-HIFI Migration | (Not Started so no steward assigned) |
-CHRONUS Migration | (Not Started so no steward assigned) |
-ARGUS Migration | (Not Started so no steward assigned) |
-SXD Migration | (Not Started so no steward assigned) |
-WISH Migration | (Not Started so no steward assigned) |
-PEARL Migration | (Not Started so no steward assigned) |
-CHIPIR Migration | (Not Started so no steward assigned) |
+POLREF Migration | Thomas |
+INTER Migration | Thomas |
+OFFSPEC Migration | Dom |
+HIFI Migration | James & Jack |
+CHRONUS Migration | James & Jack |
+ARGUS Migration | James & Jack |
+SXD Migration | Freddie |
+WISH Migration | David |
+PEARL Migration | Bish |
+CHIPIR Migration | Thomas & Dom |
 --- | --- |
 **IBEX Core components** |  |
 Script Server (NICOS) | Dom |
