@@ -77,7 +77,7 @@ A pressure card can be monitored by setting the macro `PRESSURE_N` to point at t
 
 ### Software Pressure Control
 
-The little blue cryostats has a software pressure control mode to save Helium. The pressure set point, and in turn the needle value opening range, is set based on the set point and current temperature. There is a PV to set this to be on for the Mercury, in addition this will turn on Temperature PID, heater and pressure flow rate automatic settings and turn off the temperature flow rate automatic setting. The pressure will be set base on four regimes based on the temperature - setpoint:
+The little blue cryostat has a software pressure control mode to save Helium. The pressure set point, and in turn the needle value opening range, is set based on the set point and current temperature. There is a PV to set this to be on for the Mercury, in addition this will turn on Temperature PID, heater and pressure flow rate automatic settings and turn off the temperature flow rate automatic setting. The pressure will be set base on four regimes based on the temperature - setpoint:
 
 - Less than - 2x the temperature deadband: Pressure is set to `minimum pressure`. The idea is to let the cell warm up as quickly as possible.
 - from -2x to -1x the deadband: Pressure is set to the value for the temperature from the table. The cell needs to warm up but more slowly.
