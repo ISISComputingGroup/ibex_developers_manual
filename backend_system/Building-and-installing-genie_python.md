@@ -2,21 +2,9 @@
 
 # Setting up a dev repository
 
-Note that currently, we require **both** python 2 and python 3 to be installed on developer machines.
-
-### Python 2
-
-1. Check whether `C:\Instrument\Apps\Python` already exists. If it does, from a git-enabled command line, `cd C:\Instrument\Apps\Python` and perform a `git pull`. If it does not exist, from a git-enabled command line, run `git clone https://github.com/ISISComputingGroup/genie_python.git C:/Instrument/Apps/Python`.
-1. Navigate to `C:\Instrument\Apps\Python\package_builder`
-1. Run `dev_build_python.bat`
-
-> Note: You cannot run `dev_build_python.bat` from an EPICS terminal
-
-### Python 3
-
 1. Check whether `C:\Instrument\Apps\Python3` already exists. If it does, from a git-enabled command line, `cd C:\Instrument\Apps\Python3` and perform a `git pull`. If it does not exist, from a git-enabled command line, run `git clone https://github.com/ISISComputingGroup/genie_python.git C:/Instrument/Apps/Python3`.
 1. Navigate to `C:\Instrument\Apps\Python3\package_builder`
-1. Run `dev_build_python.bat 3`
+1. Run `dev_build_python.bat`
 
 > Note: You cannot run `dev_build_python.bat 3` from an EPICS terminal
 
