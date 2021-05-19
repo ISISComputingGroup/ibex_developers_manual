@@ -130,6 +130,10 @@ Check channel assignments are correct - see table above and instructions for fin
 
 Check the cables are connected correctly - you don't get super obvious errors if e.g. ITC and IPS cables are swapped. This issue may also be indicated by errors parsing responses from the device in the IOC log.
 
+An error could look like this if the IPS and ITC cables are swapped: 
+
+`ITC503_01:MODE: Input "0A0C3H0M50P03" does not match format "%{A0|A1|A2|A3}"`
+
 ### Regeneration starts but never finishes
 
 The Heliox detects whether a regeneration has "finished" by checking whether the temperature of the Helium-3 pot is smaller than a threshold. From testing, I believe the threshold is somewhere around 1.7K. The outer cryostat should be capable of achieving 1.6K or better. The Helium-3 pot won't go colder than the outer cryostat while regenerating, so if the outer cryostat is at a higher temperature than about 1.7K the regeneration will appear to hang and never finish. 
