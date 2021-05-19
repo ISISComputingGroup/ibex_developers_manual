@@ -126,6 +126,10 @@ I am not aware of a remote command to set the device back into remote mode, so y
 
 Check channel assignments are correct - see table above and instructions for finding out channel names if unknown.
 
+### Devices are communicating but readback values are not correct
+
+Check the cables are connected correctly - you don't get super obvious errors if e.g. ITC and IPS cables are swapped. This issue may also be indicated by errors parsing responses from the device in the IOC log.
+
 ### Regeneration starts but never finishes
 
 The Heliox detects whether a regeneration has "finished" by checking whether the temperature of the Helium-3 pot is smaller than a threshold. From testing, I believe the threshold is somewhere around 1.7K. The outer cryostat should be capable of achieving 1.6K or better. The Helium-3 pot won't go colder than the outer cryostat while regenerating, so if the outer cryostat is at a higher temperature than about 1.7K the regeneration will appear to hang and never finish. 
