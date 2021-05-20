@@ -6,7 +6,7 @@
 1. Navigate to `C:\Instrument\Apps\Python3\package_builder`
 1. Run `dev_build_python.bat`
 
-> Note: You cannot run `dev_build_python.bat 3` from an EPICS terminal
+> Note: You cannot run `dev_build_python.bat` from an EPICS terminal
 
 ### First time
 
