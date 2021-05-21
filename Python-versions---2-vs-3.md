@@ -2,9 +2,9 @@
 
 | Python 2| Python 3|
 | ------ | ----  |
-| Squish Tests | Genie Python |
+| OPI scripts | Genie Python |
 | IOC log server | Script Server |
-| OPI scripts| Script Generator |
+| | Script Generator |
 | | Block Server to Kafka |
 | | Database Server |
 | | IBEX utils |
@@ -22,3 +22,4 @@
 | | Upgrade Scripts |
 | | Vms journal converter |
 | | Device Generator | 
+| | Squish tests | 
