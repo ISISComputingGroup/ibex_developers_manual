@@ -16,18 +16,25 @@ Currently, doing this measurement requires a few hacks to get it going. These ar
 - The `MEAS` command in the protocol is a generic measure command - to force it to use a particular mode, the `get_V` and `get_R` commands will need to be changed to match the following:
    - The Keithley 2400 IOC has implemented this protocol
 ```
-# /// Read the voltage from the data string. Format is %f (V), %f (I), %f (R), %f (Timestamp), %f (Status)
+# /// Read the voltage from the data string. Format is %g (V), %g (I), %g (R), %g (Timestamp), %g (Status)
 get_V {
    ExtraInput = Ignore;
    out ":MEAS:VOLT?";
    in "%f,%*f,%*f";
 }
 
-# /// Read the resistance from the data string. Format is %f (V), %f (I), %f (R), %f (Timestamp), %f (Status)
+# /// Read the current from the data string. Format is %g (V), %g (I), %g (R), %g (Timestamp), %g (Status)
 get_I {
    ExtraInput = Ignore;
    out ":MEAS:CURR?";
-   in "%*f,%*f,%f";
+   in "%*f,%f,%*f";
+}
+
+# /// Read the resistance from the data string. Format is %g (V), %g (I), %g (R), %g (Timestamp), %g (Status)
+get_R {
+   ExtraInput = Ignore;
+   out ":MEAS:RES?";
+   in "%*g,%*g,%g";
 }
 ```
 
