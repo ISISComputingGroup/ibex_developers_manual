@@ -24,9 +24,9 @@ get_V {
 }
 
 # /// Read the resistance from the data string. Format is %f (V), %f (I), %f (R), %f (Timestamp), %f (Status)
-get_R {
+get_I {
    ExtraInput = Ignore;
-   out ":MEAS:RES?";
+   out ":MEAS:CURR?";
    in "%*f,%*f,%f";
 }
 ```
