@@ -77,9 +77,17 @@ If you are using RS232 then you need to enable software flow control on the gali
 ```
 Error downloading code model DMC2280 Rev 1.0o-CM, address COM6 38400 msg 1011 TIMEOUT ERROR.
 ```
-xon/xoff is enabled via a dip switch on the Galil
+xon/xoff is enabled via a dip switch on the Galil. The Galil must be power cycled if this DIP switch is changed
 
+### The Galil is twitching around a position
 
+If the controller has recently been replaced this could be because the jumpers inside the Galil are set incorrectly for the motor type. You will see an error like 
+
+```
+Galil::command("MTH=-2.5") got ? instead of : response.  TC1 returned "96 SM jumpers must be installed for stepper motors"
+```
+
+in the logs. To fix this you must ask electronics to confirm the jumper location inside the controller.
 
 ## Galil Movement Problems
 
