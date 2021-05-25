@@ -3,7 +3,7 @@
 | Python 2| Python 3|
 | ------ | ----  |
 | OPI scripts | Genie Python |
-| IOC log server | Script Server |
+| IOC log server test scripts | Script Server |
 | | Script Generator |
 | | Block Server to Kafka |
 | | Database Server |
