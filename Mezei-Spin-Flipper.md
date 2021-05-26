@@ -20,7 +20,7 @@ For this hardware, use the `Mezei flipper (v1)` OPI.
 
 ### V2
 
-This is newer hardware which is now in use on LET (which has been set back to V1 because of communication issues as of 16/11/2020). POLREF plan to eventually also migrate to this hardware, however, this has not been done as of September 2020.
+This is newer hardware which is now in use on LET. POLREF plan to eventually also migrate to this hardware, however, this has not been done as of September 2020.
 
 V2 hardware is assumed by default in the ioc; no special configuration is required to use it. It should use the `Mezei flipper` OPI.
 
