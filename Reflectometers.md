@@ -12,7 +12,7 @@ The image below shows a schematic of the inside of the block house for a typical
 - Whenever the beam path is modified, we want equipment to automatically track the beam as appropriate for the currently active configuration. Coordinating motion at the beamline level in this way is the primary purpose of our reflectometry system.
 
 ### Related pages for more detail
-
+- [Reflectometer glossary and commonly used phrases](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Glossary/)
 - [Setup and science behind the experiment](Reflectometers-Science): What science is trying to achieve
 - [Reflectometers Beam Height Calculation](Reflectometers-Beam-Height-Calc): Calculate motor positions easily
 - [Reflectometry-Configuration](Reflectometry-Configuration): Configuration documentation
