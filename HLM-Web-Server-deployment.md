@@ -47,8 +47,9 @@ Used resources:
 	https://github.com/GrahamDumpleton/mod_wsgi/blob/develop/win32/README.rst
 	https://docs.djangoproject.com/en/3.2/howto/deployment/wsgi/modwsgi/
         https://montesariel.com/blog/post-3
+        https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 	
-1. Added new hosts in project/settings.py ALLOWED_HOSTS
+1. Added new hosts in project/settings.py ALLOWED_HOSTS, set DEBUG to False, check the Django deployment checklist
 
 2. Install VC_redist.x64.exe
 3. Download httpd-2.4.47-win64-VS16.zip (ApacheLounge), extract in C:\Apache24
