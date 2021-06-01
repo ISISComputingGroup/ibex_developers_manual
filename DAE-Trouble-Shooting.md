@@ -323,3 +323,6 @@ means the control program cannot connect to the DAE. It may be the static ARP ad
 Sometimes, the four histograms on the DAE display do not show a plot and stay disconnected.  Data is however correctly being read from the DAE and saved to file without problems.  This may occur if the DAE hardware has previously been disconnected or switched off and the ICP has recovered its connection to the DAE apparently successfully.
 
 The DAE histogram display comes via a different route and does not recover the same way as the data acquisition does.  The solutions is to restart the DAE IOC (instructions above).
+
+### DAE tab showing pink borders
+This seems to be a problem with CSS. To fix, restart the GUI. 
