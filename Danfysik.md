@@ -2,7 +2,7 @@
 
 A type of power supply for magnets.
 
-Current three models supported: 8800, 8000 and 8500. The [RIKEN](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Riken-power-supplies) power supplies are also controlled by Danfysiks but these are a special case. The 9100 and 9700 both use a very similar protocol and so can run with the same IOC but until https://github.com/ISISComputingGroup/IBEX/issues/6543 is done the interlocks report incorrectly. Additionally the 9700 uses a buad rate of 115200, unlike the 9600 used by other devices. The baud rate macro is not exposed to the GUI and so must be set in the globals.txt, the power supply group are working on getting them switched to 9600 baud.
+Current three models supported: 8800, 8000 and 8500. The [RIKEN](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Riken-power-supplies) power supplies are also controlled by Danfysiks but these are a special case. The 9100 and 9700 both use a very similar protocol and so can run with the same IOC but until https://github.com/ISISComputingGroup/IBEX/issues/6543 is done the interlocks report incorrectly. Additionally the 9700 uses a baud rate of 115200, unlike the 9600 used by other devices. The baud rate macro is not exposed to the GUI and so must be set in the globals.txt, the power supply group are working on getting them switched to 9600 baud.
 
 All can be in calibrated or uncalibrated mode. Calibration is done within the IOC and enabled via macro. Additionally there is a macro to switch to a local calibration repository instead of the default common one. (see [Calibration Files](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Calibration-Files) for more info)
 
