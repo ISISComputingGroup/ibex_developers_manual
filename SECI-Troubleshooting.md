@@ -30,3 +30,7 @@ For most instruments including CRISP and HIFI this jsbeam.txt file is read by da
 This may be caused by one or more MOXA NPort boxes associated with an instrument losing their network connections.  VIs which communicate through a working box may be affected by other VIs being unable to open ports on a non-working box.
 
 Verify that all MOXA NPort boxes are functioning normally and have valid network connections.  Their front panels don't always show a network problem, so check the rear LAN socket for connection and activity.  If it is convenient to do so, also power-cycle the box to re-establish communications.
+
+### Configuring Blocks Causes an issue of `DataGridViewComboBoxCell value is not valid`
+
+This has been seen on HIFI and is likely due to some odd state of blocks and groups. The issue has not been fixed and the block xml must be edited manually.
