@@ -121,6 +121,7 @@ These are the top-level parameters exposed as PVs of the form `<PREFIX>:REFL:PAR
 - `DirectParameter`: A non-tracking parameter (i.e. the value is independent of the current beam path). This currently does not require a `Component` but is instead directly passed a `PVWrapper` through which it talks to the motors.
     - `SlitGapParameter`: A specific type of `DirectParameter` describing slit gaps (functionally the same)
 - `EnumParameter`: A parameter which can take multiple values; the value is set as read back on move. 
+- `VirtualParameter`: A parameter that is not actually tied to a motor and does not have any component associated with it. Values passed to this parameter is used as an engineer correction at run time.
 ### Arguments
 
 #### Required:
@@ -143,6 +144,11 @@ These are the top-level parameters exposed as PVs of the form `<PREFIX>:REFL:PAR
 AxisParameter("SM_angle", ChangeAxis.ANGLE, supermirror_component)
 ```
 Point a parameter at the super mirror components angle. Call the parameter `SM_ANGLE`, resulting in the PV `<INSTRUMENT PREFIX>REFL:PARAM:SM_ANGLE` and related PVs, e.g. `:SP` to set and move to the value.
+
+```
+VirtualParameter("HEIGHT", "mm")
+```
+Crates a parameter called `HEIGHT` and has "mm" as a unit of distance.
 
 ```
 # Parameter that directly wraps a motor value
