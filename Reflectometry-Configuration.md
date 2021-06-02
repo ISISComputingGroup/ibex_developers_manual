@@ -146,6 +146,7 @@ AxisParameter("SM_angle", ChangeAxis.ANGLE, supermirror_component)
 Point a parameter at the super mirror components angle. Call the parameter `SM_ANGLE`, resulting in the PV `<INSTRUMENT PREFIX>REFL:PARAM:SM_ANGLE` and related PVs, e.g. `:SP` to set and move to the value.
 
 ```
+# Parameter that is not associated with any component
 VirtualParameter("HEIGHT", "mm")
 ```
 Crates a parameter called `HEIGHT` and has "mm" as a unit of distance.
