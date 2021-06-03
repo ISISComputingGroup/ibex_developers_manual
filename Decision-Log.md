@@ -84,3 +84,8 @@ A place to record decisions:
 
 - Present: James, Kathryn and Dom
 - Date: 12/05/2021
+
+26. We decided to put the emulator and ioc tests into the support submodule for each IOC. As well as a number of other repository structure decisions (seehttps://github.com/ISISComputingGroup/IBEX/issues/6131)
+
+- Present: James, Kathryn, Dom, Freddie, Jack Harper, Chris MS, David and Sam J
+- Date: 03/06/2021
