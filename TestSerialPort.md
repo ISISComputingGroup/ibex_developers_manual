@@ -8,6 +8,8 @@ general syntax is
 ```
 testSerialPort [options] COMPORT [outputString] [outputEos] [inputEos]
 ```
+Note that is COMPORT doesn't start with the letters `COM` it is considered an IP address and a connection will be made there as per `drvAsynIPPortCOnfigure`
+ 
 To write a string with \\r\\n terminator and print reply
 ```
 testserialport com5 "stuff_to_write" "\r\n"
