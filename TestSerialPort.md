@@ -12,15 +12,15 @@ Note that is COMPORT doesn't start with the letters `COM` it is considered an IP
  
 To write a string with \\r\\n terminator and print reply
 ```
-testserialport com5 "stuff_to_write" "\r\n"
+testserialport COM5 "stuff_to_write" "\r\n"
 ```
 To write string, see reply and also log all serial events (as per WIN32 SetCommMask())
 ```
-testserialport com5 "stuff_to_write" "\r\n" --eventmask=0x1ff
+testserialport COM5 "stuff_to_write" "\r\n" --eventmask=0x1ff
 ```
 To see serial port status (need to have stopped IOC)
 ```
-testserialport com5 --noread --report=5
+testserialport COM5 --noread --report=5
 ```
 The command uses escaped characters as per `printf/epicsStrnRawFromEscaped` e.g. for eurotherm the Stream device \\x05 (hex) would be written as \\005 (octal)
 ```
