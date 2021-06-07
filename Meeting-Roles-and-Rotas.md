@@ -53,6 +53,6 @@ Don't forget the [drop in sessions](https://github.com/ISISComputingGroup/IBEX/w
 | FA |  | BR |  |  |  |BR |  |
 | BR |  | JA |  |  |  |AL |  |
 | JA |  | AS |  |  |  |JH |  |
-| DO |  | DKg |  |  |  |FA |  |
+| DO |  | DK |  |  |  |FA |  |
 |  |  |  |  |  |  |SJ |  |
 |  |  |  |  |  |  |CC |  |
