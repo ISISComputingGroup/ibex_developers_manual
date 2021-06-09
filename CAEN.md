@@ -75,3 +75,9 @@ From this data, the dbs are loaded. There are templates for records e.g. ai, ao.
 The `CAENHVAsyn` object acts as an adapter/facade to the objects it contains: crates, boards, channels. The `CAENHVAsyn` object overrides `asynPortDriver` methods, the overriding methods search through channel parameters, board parameters and system properties to find the value to set or get corresponding to the asyn call reason. These various methods often then make calls to the `CAENHVWrapper`.
 
 ![CAENHVAsyn UML diagram](CAENHVAsyn.png)
+
+# Deployment of the HVCAEN and HVCAENA for testing on DETMON
+
+- Access the `EPICS_win10_x64` build from the instrument and deploy it to the instrument using the install_to_inst.bat script
+- When finished copying run `create_icp_binaries.bat`
+- Then copy msvcr100.dll (there are a few located around the install but not in the right place) to EPICS/ctrl
