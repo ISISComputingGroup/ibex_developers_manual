@@ -38,7 +38,7 @@ IBEX should now build but there will probably be some errors. You can clear them
 
 **Important Notes:** 
 * you will need JDK 11 installed to launch the IBEX GUI successfully.
-* you should also [set up the checkstye](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Checkstyle-setup), do it sooner than later as it may prevent potential errors
+* you should also [set up the checkstyle](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Checkstyle-setup), do it sooner than later as it may prevent potential errors
 
 ### If you see a “Plugin execution not covered by lifecycle configuration” error
 1. From the menu bar choose: Window->Preferences
