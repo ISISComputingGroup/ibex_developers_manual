@@ -166,7 +166,7 @@ There is a LabVIEW VI in `C:\LABVIEW MODULES\Drivers\Galil DMC2280\Galil - EPICS
     - 5. Click OK on get dialogue
     - 6. Copy only the file `Galil - EPICS.llb` to the instrument you are migrating
 
-Open this VI, put the computer name as `IN` and the username as `(INSTNAME):MOT`. This should generate a load of caput commands that look like `caput IN:(INSTNAME):MOT:MTR0101.(FIELD) (value)`. If the VI complains about problems with the wiring names in a bundle it probably because the Galil driver is out of date. You can fix this by copying the settings to a more modern version of the galil driver directory and then running it.
+Open this VI, put the computer name as `IN` and the username as `(INSTNAME):MOT`, replacing `(INSTNAME)` with the name of your instrument, for example `WISH:MOT` for WISH. This should generate a load of caput commands that look like `caput IN:(INSTNAME):MOT:MTR0101.(FIELD) (value)`. If the VI complains about problems with the wiring names in a bundle it probably because the Galil driver is out of date. You can fix this by copying the settings to a more modern version of the galil driver directory and then running it.
 
 Copy these caput commands into a batch file. Look through the file for the extra checks you need to do.
 
