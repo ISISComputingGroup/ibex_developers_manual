@@ -29,7 +29,7 @@ This page lists some dependencies which we are not updating for various reasons:
 | Java (JDK) | 11.0.11 | 16 | JDK 16 is not an LTS version and will quickly become unsupported. At the time of writing (June 2021), 11.0.11 is the latest LTS version. |
 | Sapphire GEF Editor Support | 2018-09 | N/A | No longer available in the latest repositories |
 | Opal| 1.0.0 | ? | Project has been deprecated and moved into eclipse Nebula visualization widgets. Update process appears to be non-trivial. |
-| jeromq | 0.5.2| 0.5.2 |
+| `jeromq` | 0.5.2| 0.5.2 |
 |commons-codec | 1.14 | 1.14|
 
 # EPICS
