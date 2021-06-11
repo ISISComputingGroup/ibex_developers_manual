@@ -157,9 +157,9 @@ If your IOC running in procserv is unresponsive (does not start up, `ctrl + x` f
 1. Search that list for the port from step 1. This will give you the ID of the process using it.
 1. Find the process by it's ID in task manager.
 
-## Asyn reports an asynStatus value of greater than 5
+## Asyn reports an `asynStatus` value of greater than 5
 
-The asynStatus enum only contains values 0 to 5. But these are extended in asyn/asynPortDriver/paramErrors.h to include a few more useful statuses.
+The `asynStatus` enum only contains values 0 to 5. But these are extended in `asyn/asynPortDriver/paramErrors.h` to include a few more useful statuses.
 
 # Autosave
 
