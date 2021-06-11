@@ -80,4 +80,4 @@ The `CAENHVAsyn` object acts as an adapter/facade to the objects it contains: cr
 
 - Access the `EPICS_win10_x64` build from the instrument and deploy it to the instrument using the install_to_inst.bat script
 - When finished copying run `create_icp_binaries.bat`
-- Then copy msvcr100.dll (there are a few located around the install but not in the right place) to EPICS/ctrl
+- Then copy `msvcr100.dll` (there are a few located around the install but not in the right place) to `EPICS/crtl`
