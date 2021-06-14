@@ -34,7 +34,7 @@ To run from the command line, use
 
 where we have picked port 57677 (see Lewis's doc for defaults). Note that the lewis executable is located in `%PYTHON3DIR%\Scripts`.
 
-**Note:** you can find out what port the IOC is using by looking into its IOC log and then searching for `drvAsynIPPortConfigure`.
+**Note:** emulators used to be stored in one repository in `support\DeviceEmulator\` since https://github.com/ISISComputingGroup/IBEX/issues/6555 emulators should start being moved to live in the support directory for the IOCs that they are testing.
 
 Congratulations! Your emulator is now running. You can test it by connecting to it via a telnet client such as PuTTY (please see the troubleshooting note below) or with a simple Python script like so:
 
