@@ -18,7 +18,7 @@ Lewis is included as an installed module in genie_python (for Python 3).
 
 ## Set up a new emulator
 
-1. Create a subdirectory for your new emulator under `support/DeviceEmulator/master/lewis_emulators/`.
+1. Create a subdirectory for your new emulator under `support/my_device/master/system_tests/lewis_emulators/`, for an example see the CCD100.
 1. Documentation for how to write a Lewis emulator can be found [here](http://lewis.readthedocs.io/en/latest/developer_guide/writing_devices.html), and you can refer to the examples in the Lewis library (i.e. `C:\Instrument\Apps\Python3\Lib\site-packages\lewis\devices` and `...\examples`).
 1. NOTE: the simple examples `simple_device` and `example_motor` have all the code in a single `__init__.py` file, but we should stick to a consistent tidy structure like that of the `linkam_t95` emulator, i.e. with separate files for the device itself, its states (if it's a state machine), and its interfaces.
 1. Don't forget to add `__init__.py` files in all of your folders!
@@ -29,7 +29,7 @@ Lewis is included as an installed module in genie_python (for Python 3).
 To run from the command line, use
 
 ```
-%PYTHON3% -m lewis -p "stream: {bind_address: localhost, port: 57677}" -r 127.0.0.1:10000 -a C:\Instrument\Apps\EPICS\support\DeviceEmulator\master -k lewis_emulators iris_cryo_valve
+%PYTHON3% -m lewis -p "stream: {bind_address: localhost, port: 57677}" -r 127.0.0.1:10000 -a C:\Instrument\Apps\EPICS\support\cryValve\master\system_tests -k lewis_emulators iris_cryo_valve
 ```
 
 where we have picked port 57677 (see Lewis's doc for defaults). Note that the lewis executable is located in `%PYTHON3DIR%\Scripts`.
@@ -62,7 +62,7 @@ It's possible to modify the device's state on the fly as it's running in case yo
 The host and port for the backdoor are specified in the `-r` argument at startup:
 
 ```
-%PYTHON3DIR%\Scripts\lewis.exe -p "stream: {bind_address: localhost, port: 57677}" -r 127.0.0.1:10000 -a C:\Instrument\Apps\EPICS\support\DeviceEmulator\master -k lewis_emulators iris_cryo_valve
+%PYTHON3% -m lewis -p "stream: {bind_address: localhost, port: 57677}" -r 127.0.0.1:10000 -a C:\Instrument\Apps\EPICS\support\cryValve\master\system_tests -k lewis_emulators iris_cryo_valve
 ```
 
 NOTE: at the time of writing, you can't type `localhost` for the `-r` argument.
