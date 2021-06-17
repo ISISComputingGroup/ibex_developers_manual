@@ -11,3 +11,5 @@
 * [MKS PR4000B](MKS_PR4000B)
 
 * [Oerlikon Centre-One](OERCONE)
+
+* [PACE 5000/6000](PACE5000)
