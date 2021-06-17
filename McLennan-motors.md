@@ -95,7 +95,7 @@ If the McLennan moves but does not stop at the position you requested it could b
 
 *In homing modes other than 2*, the McLennan homes via SNL and uses `JVEL` as it's speed. `JVEL` defaults to `VELO/10` if not set, so try increasing the jog speed and see if this speeds up homes
 
-*In homing mode 2*, the McLennan uses an internal homing routine. This uses the "creep speed" which IBEX currently does not set (see https://github.com/ISISComputingGroup/IBEX/issues/4815 ). If you need to make homing faster, do the following:
+*In homing mode 2*, the McLennan uses an internal homing routine. This uses the "creep speed" which IBEX now _does_ set as of https://github.com/ISISComputingGroup/IBEX/issues/4815. If you need to manually make homing faster, do the following:
 - Set `JVEL` to an appropriate speed for homing via IBEX configuration macros
 - Ensure it is propagated down to motor record, look in motor details OPI
 - Disconnect IOC and connect a terminal emulator (e.g. putty, hterm, hyperterm) to the device
