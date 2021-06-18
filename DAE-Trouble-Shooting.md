@@ -326,3 +326,11 @@ The DAE histogram display comes via a different route and does not recover the s
 
 ### DAE tab showing pink borders
 This seems to be a problem with CSS. To fix, restart the GUI. 
+
+### set a different run number
+
+In `labview modules\dae\service\x64\release` you can run e.g.
+```
+instctrl.exe SETVAL RUN_NUMBER 441
+```
+to set a new run number
