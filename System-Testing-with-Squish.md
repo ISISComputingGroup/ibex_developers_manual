@@ -35,7 +35,7 @@ Get a licence key (our license permits concurrent use by any 2 users from a list
 1. To get access to global scripts right click in squish -> global scripts pane -> add -> global scripts directory and select the global scripts directory in the repository root.
 1. If not running in Python 3 follow [these](https://kb.froglogic.com/squish/howto/changing-python-installation-used-squish-binary-packages/) instructions, and point to the default `python3` directory in the squish installation root.
 
-You may also need to install `psutil` and `mysql-python-connector==8.0.11` through the GUI (Edit -> Preferences -> PyDev -> Interpreters -> Python Interpreter then "Manage with pip") if running the experiment details tests. 
+You may also need to install `psutil` and `mysql-connector-python==8.0.11` through the GUI (Edit -> Preferences -> PyDev -> Interpreters -> Python Interpreter then "Manage with pip") if running the experiment details tests. 
 
 # RDP to Server
 
