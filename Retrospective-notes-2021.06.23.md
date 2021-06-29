@@ -1,5 +1,5 @@
 ### Items from the last retro:
-* add Alarm history to alarm view - hadn't been added to Muon snaglist, has now, discuss at later date.
+* add Alarm history to alarm view - hadn't been added to Muon snags list, has now, discuss at later date.
 * "Support" label tickets requiring release notes, this has been changed we use the "no release notes" label now if things don't need release notes.
 * Return to discussion about snag lists and balance between features and stability for instrument scientists. Meeting with group leaders in future might help with this.
 * Visit cabin and blockhouse to tidy & label wiring only had a ticket for one instrument. Tickets for all or large ticket with checkboxes? Do this with someone else, will be difficult with 1 person, possibly 3 on pearl.
@@ -46,7 +46,7 @@
 * Possibly automate them?
 	
 ### Un-touched project boards
-* several project boards havn't been updated since 2019
+* several project boards haven't been updated since 2019
 * support board leftover from before teams channel
 * remove them
 		
@@ -71,7 +71,7 @@
 * Having them together means it can work as this time needs to be free.
 * Split them during cycle and not outside of cycle
 * block out more time, start earlier, finish same time, more time for a break between review and retrospective if the review takes a full hour.
-* 3oclock start and 1.5-hour run leads to outside of core hours. could move it to 2 until 4 but most people not bothered by 4:30 finish.
+* 3 o'clock start and 1.5-hour run leads to outside of core hours. could move it to 2 until 4 but most people not bothered by 4:30 finish.
 * Start at the same time but have a longer break, very likely to overrun.
 		
 ### Important dates
@@ -86,5 +86,5 @@
 * get higher occupancy of the room? have screens added?
 	* may have to wear a mask
 * needs quick resolution
-* have them onsite the first week, but possibly not have them in every day that week?
+* have them on site the first week, but possibly not have them in every day that week?
 		
