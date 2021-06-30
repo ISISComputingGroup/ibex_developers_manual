@@ -114,4 +114,4 @@ An example of an IOC that does this is the [cryosms](https://github.com/ISISComp
 
 ### Tests pass but error afterwards "Cannot detect source of runner.run"
 
-You may need to include `include $(GTEST)/cfg/compat.RULES_BUILD` at the end of your Makefile.
+You may need to include the line `-include $(GTEST)/cfg/compat.RULES_BUILD` at the end of your Makefile, note the leading `-` which is to make the include optional, this is to stop failures on a global `make clean` when `$(GTEST)/cfg` will get removed before the module is processed. 
