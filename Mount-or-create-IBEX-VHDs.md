@@ -59,7 +59,7 @@ There is an [automated job in jenkins](http://epics-jenkins.isis.rl.ac.uk/job/Cr
 ### Build server setup
 
 To set up a computer to be able to run the [automated VHD creation script](https://github.com/ISISComputingGroup/ibex_utils/tree/master/installation_and_upgrade):
-- Hyper-V must be enabled on the computer which will be running the script. It can be turned on by searching for "turn windows features on or off" from the start menu and then selecting the entire Hyper-V tree. If hyper-v wasn't already turned on this will require a restart.
+- Hyper-V must be enabled on the computer which will be running the script. It can be turned on by searching for "turn windows features on or off" from the start menu and then selecting the entire Hyper-V tree. If hyper-v wasn't already turned on this will require a restart. If you are on Windows 2012, enable it from the Server Manager (by the start button on the desktop) then select Manage -> Add Roles and Features and check the entire Hyper-V tree.
 - Powershell must be upgraded to at least version 5 to support the commands we are using.
 - Set up an environment variable called `MYSQL_PASSWORD` containing the MySQL root user password.
 - In the admin documents area, create an (empty) folder at `C:\Users\Administrator\Documents\fake_release_dir\1.0.0`
