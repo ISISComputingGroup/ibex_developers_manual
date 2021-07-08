@@ -164,3 +164,15 @@ Script definitions are configuration files which specify the following in the sc
 - How to "run" a row of the script generator (i.e. the python code that will eventually be executed)
 
 The script definitions are stored in `c:\instrument\settings\ibex_script_generator\scriptdefinitions`. This location should exist on an instrument control machine. If this location does not exist, the script generator instead looks for a folder named `scriptdefinitions` next to the executable.
+
+# Interested instruments/groups
+
+- Muons
+- Reflectometry
+- SANS
+- MARI
+- WISH
+- IMAT
+- HRPD
+- ENGIN-X
+- MERLIN
