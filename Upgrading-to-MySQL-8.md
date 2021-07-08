@@ -1,3 +1,10 @@
+## Automated Install
+
+There is a script to automatically install MySQL 8. You can find it in `<public share>\ibex_utils\installation_and_upgrade\upgrade_mysql.bat`.
+Ask another member of the team if you do not know where to find the share.
+
+## Manual install (legacy instructions)
+
 MySQL version 8 is somewhat different to MySQL 5.7. I will aim to document the transition process here
 
 ### 1. Uninstall old versions of MySQL. Go to the MySQL installer and uninstall the "MySQL server 5.7" product.
