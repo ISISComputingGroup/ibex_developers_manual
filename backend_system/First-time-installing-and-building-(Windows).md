@@ -75,11 +75,16 @@ Please see [Building the GUI](Building-the-GUI).
 
 ## Setting up the configurations & scripting directory
 
-* Create the following folder structure: `C:\Instrument\Settings\config`
+> ### Note: for all commands in this section...
+> * On a developer machine use your own username rather than "spudulike"
+> * Replace `<NDXXXX>` with your machine name, e.g. `NDXIRISTEST1`, `NDLT123`
+> * Replace `<init_inst_name>` with your lower case machine name, e.g. `init_ndxtest1.py`, `init_ndlt123.py` 
 
-* Navigate to the config folder
+1. Create the following folder structure: `C:\Instrument\Settings\config`
 
-* Enable git credential store and set a username, on a developer machine use your own name rather than "spudulike" of course, on a developer machine replace NDXXXX with the name of your computer, on an instrument use the real instrument name  
+2. Navigate to the config folder
+
+3. Enable git credential store and set a username
 ```
 git config --global core.autocrlf true
 git config --global credential.helper wincred
@@ -87,12 +92,15 @@ git config --global user.name "spudulike"
 git config --global user.email "spudulike@ndxxxx.isis.cclrc.ac.uk"
 ```
 
-* Enable default recursive check
+4. Enable default recursive check
 ```
 git config --global push.recurseSubmodules check
 ```
 
-Note that if this is not a new instrument, or that if the instrument already has a branch in the configs git, the following should be undertaken, as the branch should already exist:
+5. Set up branch for this mcahine 
+
+5a) Not A New Instrument 
+i.e. if this machine has had IBEX installed before and the config branch already exists, run through the following commands:
 ```
 cd C:\Instrument\Settings\config
 git clone http://control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/inst.git NDXXXX
@@ -100,7 +108,8 @@ cd NDXXXX
 git checkout NDXXXX
 ```
 
-If this is a new instrument or if it does not have a branch in the configs git, do the following instead:
+5b) New Instrument
+i.e. if no config branch exists for this machine name, run through the following:
 
 * Via a git client clone the repository from 'http://spudulike@control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/inst.git' to a directory with your machine name, like so:
 ```
@@ -111,14 +120,15 @@ git clone http://spudulike@control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/ins
 * Confirm that you now have the config file structure in place (components, configurations and synoptics directories)
 
 * Create a branch from master with the machine name (if on an instrument) or your fedid if on a dev machine:
+
 ```
-cd NDXXXX/
-git checkout -b NDXXXX
-rename "C:\Instrument\Settings\config\NDXXXX\Python\init_inst_name.py" init_<Inst name (lowercase e.g. iristest1)>.py
-git add Python/init_<Inst name (lowercase e.g. iristest1)>.py
-git rm Python/init_inst_name.py
+cd <NDXXXX>/
+git checkout -b <NDXXXX>
+rename "C:\Instrument\Settings\config\NDXXXX\Python\<init_inst_name>.py"
+git add Python/<init_inst_name>.py
+git rm Python/<init_inst_name>.py
 git commit -m"create initial python"
-git push --set-upstream origin NDXXXX
+git push --set-upstream origin <NDXXXX>
 ```
 
 (Note, the init_inst_name python file should have underscores rather than dashes if the machine name contains dashes. So `NDWTEST-BLAH` would have the init file `init_ndwtest_blah.py`).
@@ -127,7 +137,7 @@ Any configs created through IBEX will now be stored on this branch (they will on
 
 These repositories can be web browsed via [http://control-svcs.isis.cclrc.ac.uk/git/](http://control-svcs.isis.cclrc.ac.uk/git/)
 
-* It is possible to access the configurations of another developer or of an instrument by fetching the correct branch and switching to it, like so:
+6. Check it is possible to access the configurations of another developer or of an instrument by fetching the correct branch and switching to it, like so:
 ```
 git fetch
 git checkout NDXALF
