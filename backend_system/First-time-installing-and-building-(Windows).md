@@ -97,7 +97,7 @@ git config --global user.email "spudulike@ndxxxx.isis.cclrc.ac.uk"
 git config --global push.recurseSubmodules check
 ```
 
-5. Set up branch for this mcahine 
+5. Set up branch for this machine 
 
 5a) Not A New Instrument 
 i.e. if this machine has had IBEX installed before and the config branch already exists, run through the following commands:
