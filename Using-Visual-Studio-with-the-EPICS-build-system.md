@@ -1,3 +1,5 @@
+> [Wiki](Home) > [Project tools](Project-tools) > [Using VS with EPICS](Using-Visual-Studio-with-the-EPICS-build-system)
+
 Some of the EPICS modules are written in C++ and so it makes sense to use Visual Studio to edit these. To correctly set up Visual Studio to edit a project you should do the following:
 
 1. Start an EPICS terminal e.g. `C:\Instrument\Apps\epics\EPICSTerm.bat`
