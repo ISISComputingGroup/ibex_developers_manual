@@ -17,6 +17,7 @@
     - can be used to get versions of all instruments
     - can be used to list usage of genie functions
     - can be used to update files on drive
+* [Using Visual Studio with the EPICS build system](Using-Visual-Studio-with-the-EPICS-build-system)
 
 ### Archive Tools
 
