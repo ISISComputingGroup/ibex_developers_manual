@@ -8,12 +8,21 @@ Go to window -> preferences -> Maven -> Errors/Warnings. Change "Plugin executio
 
 ### The type XXXXXXX cannot be resolved. It is indirectly referenced from required .class files ###
 
+#### Errors appear for single plugin
 Possible solutions (in order of desperation):
 
 * Check the error message: you may need to add a dependency to the plugin that contains XXXXXXX. For example: if the error message is ```The type org.eclipse.ui.plugin.AbstractUIPlugin cannot be resolved. It is indirectly referenced from required .class files``` then the org.eclipse.ui plugin requires adding.bundle to the required bundle in the manifest file of your plugin.
 * Delete the complaining plugin from the workspace and then re-import it.
 * Remove JRE System Library from the complaining plug-in's Java Build Path then re-add it.
 * This can also occur in similar cases to the **Invalid class hierarchy**.
+
+#### Errors appear across entire project
+
+Suggests that eclipse has got itself into a funny state. Try `Project > Clean` first, if that does not get rid of the problems, try:
+1. Reset the targetplatform: Open file in `uk.ac.stfc.isis.ibex.targetplatform`, click `Reload Target Platform` top right
+2. Synchronize the runnable product: open `ibex.product` in `uk.ac.stfc.isis.ibex.e4.client.product`, click `Synchronize this configuration with the product's defining plug-in.`
+3. Confirm the problems have disappeared. (you may need to repeat step 1 & 2 a couple of times)
+4. Launch application from `ibex.product` (little green arrow on the top right) and confirm the client starts
 
 ### Invalid class hierarchy ###
 
