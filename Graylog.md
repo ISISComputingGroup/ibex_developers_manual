@@ -7,3 +7,7 @@ The plan for using Graylog is that we dump everything into it from various sourc
 ### Setting up Graylog using docker
 
 Docker and `docker compose` can be used to spin up a local graylog server with all the dependencies - to do this use [this file](https://docs.graylog.org/en/4.0/pages/installation/docker.html#persisting-data). 
+
+### Adding inputs 
+
+Graylog requires inputs to be specified before it starts taking logs. This can be done through the web interface via System -> Inputs 
