@@ -59,3 +59,10 @@ ISISDAE_01__POST_PAUSE_1=TE:NDW1799:FINS_VAC:SHUTTER:CLOSE_IF_AUTO.PROC CA PP
 There are currently 4 macros available for each of `POST_BEGIN_x`, `POST_END_x`, `POST_ABORT_x`, `POST_PAUSE_x` and `POST_RESUME_x`.
 
 Note that if the PV you want to process is not in the ISISDAE ioc, you will need to specify the `.PROC` field explicitly for the link to work.
+
+## ISISDAE environment variables
+
+These were added for https://github.com/ISISComputingGroup/IBEX/issues/6560 but testing proved inconclusive, so may need to be revisited:
+
+* `ISISDAE_TIMER_PRIORITY` controls if the spectra read timer queue thread is same (0), higher (1) or lower (-1) priority than other scan threads, defaults to higher 
+* `ISISDAE_TIMER_SLEEP` how long to sleep after a spectra read to allow a thread yield (default: 1ms)
