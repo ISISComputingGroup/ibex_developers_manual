@@ -4,7 +4,7 @@
 
 [Graylog](https://docs.graylog.org/) is a logging framework which has a web interface that enables users to search logs, including custom fields on logs, historically. 
 
-The plan for using Graylog is that we dump everything into it from various sources such as the GUI, blockserver and genie_python. 
+The plan for using Graylog is that we dump everything into it from various sources such as the GUI, blockserver and genie_python. Currently only genie_python uses graylog. It uses the `graypy` library to do add an extra logging handler. 
 
 ### Setting up Graylog using docker
 
