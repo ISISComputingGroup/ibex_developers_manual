@@ -7,6 +7,7 @@
 - [Python Conventions](Python-conventions)
 - [Python Dependencies](Python-dependencies)
 - [Python Circular Dependencies Resolution](Python-Circular-Dependencies-Resolution)
+- [Graylog in genie_python](Graylog)
 
 ### User documentation
 
