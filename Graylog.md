@@ -1,3 +1,5 @@
+> [Wiki](Home) > [genie_python](genie_python) > [Graylog](Graylog)
+
 # Graylog
 
 [Graylog](https://docs.graylog.org/) is a logging framework which has a web interface that enables users to search logs, including custom fields on logs, historically. 
