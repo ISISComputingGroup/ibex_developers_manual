@@ -46,7 +46,10 @@ Developers should pick up a ticket as close to the top of the Ready column as th
         - Add a change to the config updating script (usually if it affects multiple config/instruments)
         - Add a step to the upgrade script (usually when it is a simple change which affects a single instrument)
         - Go onto the instrument and add the change (be *very* sure it will not affect anything)
-    - Create a PR modifying the [upcoming release notes](https://github.com/ISISComputingGroup/IBEX/blob/master/release_notes/ReleaseNotes_Upcoming.md).
+    - Create a pull request modifying the [upcoming release notes](https://github.com/ISISComputingGroup/IBEX/blob/master/release_notes/ReleaseNotes_Upcoming.md).
+        - Edit the file using instructions included on the page (Change types are explained near bottom of the page)
+        - Save your changes to a branch under same name as your ticket changes branch and add pull request
+        - Include link to your ticket in pull request description
     - Try to get an informal review to check for glaring problems.
     - Either on the ticket under the Projects section use the drop-down menu to move the ticket to the review column or manually move the ticket to the bottom of the review column (unless it is of high priority, in that case, move it to the top). 
 3. Pick a ticket to review from the top of the review column. Review the ticket and if it is good close it (this will move it to the review complete) and add the complete label. If it needs work then add the rework label and move it back to the top of the ready column (you should inform the assignee that it is back in rework so they know how to prioritise their work). You must do a review when you move any ticket to the review column even if it is a rework. (A rework ticket review counts as a review).
