@@ -32,11 +32,11 @@ Don't forget the [drop in sessions](https://github.com/ISISComputingGroup/IBEX/w
 | Chair | x for Done | Timekeeper | x for Done | Note taker | x for Done |Standup | x for Done |
 | --- | --- | --- | --- | --- | --- |--- | --- |
 | CMS | x | MS | x | SJ | x |SJ | x |
-| TL | x | AL | x | BR |  |DO | x |
+| TL | x | AL | x | JK | x |DO | x |
 | FA | x | DK | x | CC |  |JH | x |
-| SJ |  | FA |  | JH |  |KB |  |
-| DK |  | SJ |  | DO |  |FA |  |
-| DO |  | CMS |  | JA |  |TL |  |
+| DO | x | KB | x | JH |  |KB | x |
+| DO | x | JH |x  | DO |  |FA |  |
+| DK |  | CMS |  | JA |  |TL |  |
 | CC |  | JH |  | TL |  |CMS |  |
 | JK |  | CC |  |  |  |DO |  |
 | KB |  | TL |  |  |  |BR |  |
