@@ -166,3 +166,5 @@ We currently use a specific commit of the NICOS upstream repository. If updating
 
 - PCRE (https://github.com/ISISComputingGroup/EPICS-pcre)
 - procServ
+- EPICS base
+- Support modules e.g. StreamDevice, asyn etc.
