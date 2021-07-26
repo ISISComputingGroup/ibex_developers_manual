@@ -36,3 +36,16 @@ where:
 * `PID_folder` is the initial folder used to search for PID lookup files (can be blank if just using ramping)
 * `steps_per_minute` is the number of steps the ramp will take per minute (note that the step size is dependant on the rate set at runtime)
 * `quiet_on_SP` *optional* can be set to 1 to stop ReadASCII logging on every new set point. This can be useful if you think the set point may end up being changed rapidly e.g. the zero field controller. Defaults to 0 i.e. logging on every set point
+
+### Behaviour
+Upon startup, ReadASCII will use lookup file to create asynPortDriver parameters and associate them with
+settings table values created also from lookup value.
+IMPORTANT - for ReadASCII to work correctly, the column names (headers) in lookup file must match PV names from .db file.
+For example given field(INP,  "@asyn($(READ),0,1)MH") the correct header in lookup file should be 'MH'.
+.db file can be usually found in master/db folder, otherwise no PV will be read/written to.
+ReadASCII has many checks written into it to prevent crashing if lookup file is incorrectly formatted or other unexpected situations occur and allows continued use without crashing, however there are currently no warnings displayed to the user - only errors printed in logs.
+
+### Extending
+It is possible to extend functionality of ReadASCII to use more parameters than currently used (1 setpoint and 4 values - P, I, D, Max).
+If the lookup file contains more columns with proper header names then corresponding PVs will be written to using lookup value table.
+There can be only one setpoint column however. Other parameters, such as LUTON (Check if reading lookup file is on) or RAMPON (Check if ramping is on) are currently hard-coded.
