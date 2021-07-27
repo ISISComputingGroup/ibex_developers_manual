@@ -133,10 +133,10 @@ Our CS-Studio GUI dependencies are located on a share at `\\shadow.isis.cclrc.ac
 # ActiveMQ
 
 To update activeMQ in epics:
-  - Add the activeMQ directory to `...\EPICS\ISIS\ActiveMQ\master`
-  - Remove the old activeMQ directory
+  - Create a vendor branch on `...\EPICS\ISIS\ActiveMQ\master`
+  - Put the latest ActiveMQ version (from https://activemq.apache.org/) on this branch
+  - Create a PR to merge this in (this PR will be merged as part of the update dependencies ticket)
   - Update the config to include anything new in the new version
-  - Update `start-jms-server.bat` to point at the new version of apache
   - Update the Log server modules in `EPICS\ISIS\IocLogServer\master\LogServer`
 
 # IOCLogServer
