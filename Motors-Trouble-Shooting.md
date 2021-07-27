@@ -7,6 +7,8 @@ This implies that the controller has lost it's positions. The best thing to here
 
 ### Position needs to be restored 
 
+Note: a script exists for this: https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Restore-Motor-Positions-from-Archive
+
 Positions of the motor can be restored/set without setting an offset. These can be needed if the motor power cycles for example on a power cut. The recommendation is to do a home if possible but if not the position can be set without this.
 
 1. Find the latest value from the archive with:
