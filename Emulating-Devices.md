@@ -137,6 +137,7 @@ Print statements in the device emulator can not print anything to a console when
     1. The lewis backdoor does not give access to private variables, so anything prefixed with `_` cannot be changed in this way.
 * If you are using `CmdBuilder` be aware that you should use `.eos()` before `.build()`, _especially_ if you have commands that 'overlap'. And example of this would be on the Keithley 2700, which has a buffer auto clear setting command, `TRAC:CLE:AUTO`, and a buffer clear command, `TRAC:CLE`. `.eos()` essentially tells the built regex to match the exact command string, rather than some of it.
 * When running the IOC tests with `make ioctests` you get no output until all the tests are run. This is set in general for all `Makefiles` to avoid interleaved printing when doing a parallel build. To fix this you need to remove the `-Otarget` from the `MAKEFLAGS` environment variable. e.g. run `set "MAKEFLAGS=-w -j 6"` before running the test. This environment variable will be reset back every time you start a new EPICS terminal.
+* Use of `@property` python decorator is not supported within `stream_interface.py` and will cause the emulator to fail. Please try to avoid using such decorators in your python scripts for use with emulators as they will cause issues when trying to construct Func-object instances during the build process.
 
 #### When using an emulator with a VI
 
