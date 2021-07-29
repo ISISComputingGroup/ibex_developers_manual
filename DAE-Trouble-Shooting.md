@@ -261,7 +261,12 @@ e.g. `"c:\labview modules\dae\JournalParser.exe" LOQ 00108032 cycle_19_3 "c:\dat
 
 ###  CRPT is not initialised - please set experiment parameters
 
-Ensure you have loaded the correct Time Channels and Data Acquisition tables in the Experiment setup tab of the DAE perspective. Reloading them causes initialisation.
+Ensure you have loaded the correct Time Channels and Data Acquisition tables in the Experiment setup tab of the DAE perspective. Reloading them causes initialisation. If you do not have any tables do the following:
+1. Copy the detector, wiring, spectra and TCB tables from the [system tests](https://github.com/ISISComputingGroup/system_tests)
+1. In the GUI go to DAE -> Experiment Setup -> Time Channels, select `Use TCB file` and select one of the copied TCB files
+1. In DAE -> Experiment Setup -> Data Acquisition, select the wiring, detector and spectra tables
+
+See [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/DAE-and-the-ICP#configuring-the-daeicp) to learn more about these files.
 
 ### User Says they Can Not see their Nexus Data files on external machine
 
