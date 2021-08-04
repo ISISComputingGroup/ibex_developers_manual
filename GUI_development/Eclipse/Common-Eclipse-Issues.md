@@ -19,7 +19,7 @@ Possible solutions (in order of desperation):
 #### Errors appear across entire project
 
 Suggests that eclipse has got itself into a funny state. Try `Project > Clean` first, if that does not get rid of the problems, try:
-1. Reset the targetplatform: Open file in `uk.ac.stfc.isis.ibex.targetplatform`, click `Reload Target Platform` top right
+1. Reset the targetplatform: Open file in `uk.ac.stfc.isis.ibex.targetplatform`, reload dependencies if they are in error, then click `Reload Target Platform` top right
 2. Synchronize the runnable product: open `ibex.product` in `uk.ac.stfc.isis.ibex.e4.client.product`, click `Synchronize this configuration with the product's defining plug-in.`
 3. Confirm the problems have disappeared. (you may need to repeat step 1 & 2 a couple of times)
 4. Launch application from `ibex.product` (little green arrow on the top right) and confirm the client starts
