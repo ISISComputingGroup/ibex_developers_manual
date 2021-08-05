@@ -107,6 +107,12 @@ The model plugin also provides an Eclipse preference page with a class that impl
 
 ![Log viewer](backend_system/logViewer.png "Log viewer")
 
+### Search filter Vs Severity Filter
+The search filter will set the field that user want their search to be on. for e.g. if `content` is selected then the it will look for user specified text in `content` field of the log messages.
+
+The severity filter will make sure that only the messages above the selected filter is displayed. for e.g. if `information` severity is selected then only the logs with information severity or higher will be displayed.
+
+In short, search filter will search the messages based on the filter and severity filter will then further filter out the messages based on selected severity level.
 ## Development
 
 When launching the Eclipse client, it is useful to have the JMS Server, the Log Server, and an appropriately configured MySQL Server instance running. You should also set the appropriate settings options in the the log server preference page.
