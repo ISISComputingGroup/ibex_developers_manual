@@ -74,8 +74,9 @@ The GUI builds copy a JRE from `\\isis\inst$\Kits$\CompGroup\ICP\ibex_client_jre
 Check on PyPi for any package updates, then edit `requirements.txt` to install new versions where needed. Note that since we decided [all python projects should use virtual environments](Python-dependencies#how-python-dependencies-should-be-handled-in-the-future) there will be `requirements.txt`files for all Python projects using the new import mechanism, ensure these are also updated.
 
 ### Lewis
+To update Lewis, merge upstream to our fork: https://github.com/ISISComputingGroup/lewis - This should get picked up automatically by the build server as it installs from the `main` branch of our fork. 
 
-When Lewis is updated the version should be changed in individual support modules in the `lewis_emulators\lewis_versions.py` file. This should also be done for the IOC Generator templates for future IOCs. 
+If the version of Lewis is updated the version should be changed in individual support modules in the `lewis_emulators\lewis_versions.py` file. This should also be done for the IOC Generator templates for future IOCs. 
  
 # System
 
