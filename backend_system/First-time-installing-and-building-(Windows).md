@@ -196,6 +196,10 @@ git clone https://github.com/ISISComputingGroup/ConfigChecker.git
 
 The following are not strictly required for general IBEX development. They will be useful if you are on the project for > 1 year but otherwise probably not worth installing.
 
+## Explorer context menu shortcut for EPICS terminal
+
+To add a shortcut to open an EPICS terminal using the context menu in Windows' file explorer, double click `add_epics_context_menu.reg` (from EPICS top) and run as admin. This will add a registry key that will enable you to right click in an empty space in file explorer and open the directory in an EPICS terminal. 
+
 ## VNC
 
 If you are supporting instruments it may be useful to download a VNC client. We have not settled on one that we all use but we have used:
