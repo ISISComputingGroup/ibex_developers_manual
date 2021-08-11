@@ -1,7 +1,20 @@
+# Lua
 I've added the EPICS Lua support module to our build system. Lua is a scripting language
 designed to be embedded, it has a small footprint and is reasonably powerful. It would
 provide an alternative to jumping through hoops in st.cmd syntax but also provides a 
-few other options. All `iocsh` commands are imported into Lua and so you can do things
+few other options. There are examples of a Lua script used in the DETADC, Attocube and OERCONE IOCs.
+
+## To add the Lua support module to an IOC
+  
+```
+add    LUA=$(SUPPORT)/lua/master     to configure/RELEASE
+add    luaSupport.dbd                to the IOC Makefile DBD list
+add    lua   and   asyn              to the IOC Makefile   _LIBS    list
+```
+
+## How to use it 
+
+All `iocsh` commands are imported into Lua and so you can do things
 like:
 
 ```
@@ -32,15 +45,6 @@ from Lua command line or script record, or even talk to a device by creating an 
 and sending strings. See the documentation directory in Lua support module  and the 
 example scripts directory in iocBoot
 
-To use 
-  
-```
-add    LUA=$(SUPPORT)/lua/master     to configure/RELEASE
-add    luaSupport.dbd                to the IOC Makefile DBD list
-add    lua   and   asyn              to the IOC Makefile   _LIBS    list
-```
-
-There are examples of a Lua script used in the DETADC, Attocube and OERCONE IOCs.
 
 There is a powerpoint about Lua here: https://indico.cern.ch/event/766611/contributions/3438291/attachments/1856812/3050126/Lang-Lua_Integrating_Scripting_Language.pdf
 
