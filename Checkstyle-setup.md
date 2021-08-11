@@ -2,7 +2,7 @@
 
 Check style is set up by:
 
-1. Install checkstyle plugin. You may need to install an older version to be compatible with our checkstyle config in case we have not updated our dependencies. 
+1. Install checkstyle plugin. You may need to install an older version to be compatible with our checkstyle config in case our dependencies are not up to date. 
     1. Help --> Install New Software
     1. Add new site (Name: Checkstyle, Location: https://checkstyle.org/eclipse-cs-update-site)
     1. Uncheck "Show only latest versions of available software"
