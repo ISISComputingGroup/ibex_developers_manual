@@ -56,7 +56,7 @@ if %errorlevel% neq 0 exit /B %errorlevel%
 ping -n 2 127.0.0.1 >nul
 
 sc start MYSQL80
-sc config MYSQL80 start=auto
+sc config MYSQL80 start= auto
 
 ping -n 2 127.0.0.1 >nul
 
