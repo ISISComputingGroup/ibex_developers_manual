@@ -75,6 +75,9 @@ One or more people should do [manual system tests, using this page](Manual-syste
     1. Enter the tag version in the format `vX.x.p` and target the release branch
     1. Enter the title `Release version X.x.p`
     1. Add a link to the release notes in the description
+    1. Delete the branch once the release and tag has been created
+1. Create release tag for each submodules in EPICS
+   1. Delete the release branch in each submodule once the tag has been created from each release branch
 1. Make sure any changes on the release branch are merged back onto master (except version numbering)
 1. Consider which instruments need this release:
     * Breaking release: upgrade everyone
