@@ -2,7 +2,7 @@
 
 The aim of the reflectometer project is to allow users of the reflectometers to have a common and easy experience to set the position of items on the beam line. The setup is fairly complex because of there are multiple items that need to be coordinated to make a measurement. This page should give an overview of what is going on and the user cases that are needed.
 
-The image below shows a schematic of the inside of the block house for a typical reflectometer.
+The image below shows a schematic of the inside of the block house for a typical reflectometer. (Note that all angles in the diagram are strongly exaggerated for clarity)
 
 ![Reflectometer Schematic](reflectometers/refl_beamline_setup.PNG)
 
