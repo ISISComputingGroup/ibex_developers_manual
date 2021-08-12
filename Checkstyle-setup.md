@@ -6,7 +6,8 @@ Check style is set up by:
     1. Help --> Install New Software
     1. Add new site (Name: Checkstyle, Location: https://checkstyle.org/eclipse-cs-update-site)
     1. Uncheck "Show only latest versions of available software"
-    1. Install the correct version of "Eclipse Checkstyle Plug-in"(at the moment this is v`8.41.0`)
+    1. Uncheck "Hide Items that are already installed"
+    1. Install the correct version of "Eclipse Checkstyle Plug-in"(at the moment this is v`8.41.0`). If you see another version in the list that is already installed, you need to uninstall it first: Go to `Help > About Eclipse IDE > Installation Details`, search for "checkstyle" in the list of installed software and click `Uninstall`
 1. In eclipse click Windows->Preferences
 1. Select Checkstyle 
 1. Go to `Window > Preferences > Checkstyle`
