@@ -2,7 +2,11 @@
 
 # General information
 
-This IOC was originally written at LIGO and is in a stable state. The original version from tcIOC was targeted at the use of Beckhoffs as generic PLCs and had no specific motion support. It constructs db records by examining the PLC project on the controller and communicates with it using ADS (Beckhoff's own protocol). More detail can be found at https://github.com/ISISComputingGroup/EPICS-tcIoc.
+This IOC was originally written at LIGO and is in a stable state. The original version from tcIOC was targeted at the use of Beckhoffs as generic PLCs and had no specific motion support. It constructs db records by examining the built PLC project files and communicates with it using ADS (Beckhoff's own protocol). More detail can be found at https://github.com/ISISComputingGroup/EPICS-tcIoc.
+
+## Making PLC variables visible
+
+tcIOC uses OPC tags to know which PLC variables to expose as PVs. These OPC tags must be specified in the structured text code as comments, the format of which is specified in the [Beckhoff documentation](https://infosys.beckhoff.com/english.php?content=../content/1033/tcopcuaserver/117093590390367755.html&id=) (note that tcIOC uses the *.tpy Twincat 2 style). Twincat XAE is very particular about the format of these comments, they must be immediately after the variable and not preceded by any other comments. If you are not sure if they have been added correctly open the built *.tpy file and search for `<Name>OPC</Name>`, which should be next to your variable in the XML structure. As mentioned in the linked documentation specifying a variable as visible in OPC is recursive e.g. if you set something with a complex type as visible all the variables that make up this type will also be visible unless explicitly set to not be in the structure definition. Additionally there are other [OPC properties](https://infosys.beckhoff.com/english.php?content=../content/1033/tf6120_tc3_opcda/80189195.html&id=) that you can set in the structured text. The only one of these we currently use is `OPC_PROP[0005]` to control if something is read/write. Further testing is needed to see which other of these properties could be useful.
 
 # Motion Support
 
