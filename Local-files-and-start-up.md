@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The GUI](The-GUI) > [Local files and Startup](Local-files-and-start-up)
+
 # Local Files
 Some processes require files to be created in user directory, which can be typically found at path similar to this:
 
