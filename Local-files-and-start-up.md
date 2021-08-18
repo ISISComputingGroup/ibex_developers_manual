@@ -12,7 +12,7 @@ As part of ticket [#6577](https://github.com/ISISComputingGroup/IBEX/issues/6577
 are classes: `ApplicationWorkbenchWindowAdvisor` and `ApplicationWorkbenchAdvisor` in package `uk.ac.stfc.isis.ibex.e4.product`.
 
 In order to detect that multiple instances of IBEX client are running, a temporary file is created in local folder, in `tmp` directory.
-A correctly started IBEX client will produce a temporary file and lock it in that folder which can be then detected by other instances of the client,
+A correctly started IBEX client will produce a temporary file in that folder and lock it which can be then detected by other instances of the client,
 prompting a confirmation dialog.
 
 The temporary files are deleted when the client is closed, unless in an event of forceful application exit (eg. pressing delete on it
