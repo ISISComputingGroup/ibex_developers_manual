@@ -4,7 +4,7 @@ The sample changer support module allows a sample changer to be configured on to
 
 This takes input files `rackDefinitions.xml` and `samplechanger.xml` and then allows the user to dynamically build the motion setpoints configuration file. As of [October 2020](https://github.com/ISISComputingGroup/IBEX/issues/5720), the user can also select a specific rack, and this will rebuild the list of motion setpoints to only include the positions listed in that rack. If the selected sample changer is the special value `_ALL`, positions from all sample changers will be included in the built motionsetpoints file. This option is automatically added to the list of available sample changers.
 
-An example sampleChanger + motionSetpoints configuration can be found in `support/samplechanger/master/settings`. As a minimum, you will need to define the following environment variables:
+An example sampleChanger + motionSetpoints configuration can be found in [sampleChanger support](https://github.com/ISISComputingGroup/EPICS-sampleChanger/tree/master/settings/sans_sample_changer). As a minimum, you will need to define the following environment variables:
 - `RACKDEFS`: Path to a rack definitions XML file.
 - `SLOT_DETAILS_FILE`: Path to a slot details XML file.
 - `SAMPLE_LKUP_FILE`: Path to the sample.txt file that should be written by this module
