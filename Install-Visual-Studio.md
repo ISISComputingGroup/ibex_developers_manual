@@ -36,7 +36,7 @@ Download installer (Visual Studio **Community** 2019 exe) from installer page ht
 During install, select "Desktop development with C++" with these individual features: 
 - The most recent Windows 10 SDK
 - MFC and ATL support
-- Windows Universal CRT SDK (under the "Compilers, build tools and runtimes")
+- From `Individual Components` tab select Windows Universal CRT SDK (under the "Compilers, build tools and runtimes")
 
 After installing Visual Studio 2019, download the Windows 8.1 SDK from https://developer.microsoft.com/en-us/windows/downloads/sdk-archive/.
 
