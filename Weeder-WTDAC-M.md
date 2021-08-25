@@ -17,8 +17,7 @@ output channels, which can be used for controlling industrial equipment requirin
 ## In-build ramping and why it is not used
 
 The device has in-build ramp generator to follow a slope at a user-defined ramp rate. 
-However, when this feature is used, the VI version uses ramping in the device whereas the
-SECI version doesn't. This means the device stops communicating with the user while it is ramping.
+However, when this feature is used, the device stops communicating with the user while it is ramping.
 Due to this, the user won't be able to read what voltage is being given out and the device will appear
 disconnected.
 
