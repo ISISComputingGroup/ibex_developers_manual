@@ -35,6 +35,8 @@ Type   | Meaning
 
 Tickets should be created at need by developers as git issues using the IBEX Project Board. Initially, they should *not* have a milestone attached to them unless they are needed for a definite date and this is the LATEST that they could possibly be started. If you are doing this ensure that there is enough time for testing; bugs fixing etc. If the ticket is created for a scientist don't forget to note this in the ticket.
 
+When creating a ticked put on appropriate labels. When adding a 'Proposal' label, also add the ticket to the 'Planning' project in 'Proposals' column.
+
 ## Movement of Tickets
 
 Developers should pick up a ticket as close to the top of the Ready column as they can (i.e. don't pick a ticket assigned to someone else). 
