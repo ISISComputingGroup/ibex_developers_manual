@@ -39,6 +39,7 @@ To set up the Grafana dashboard:
 8. Updated iframe links in the HLM View templates (details.html, building.html) 
 from localhost:3000 to new address 
 ```
+[HLM_View\Grafana](https://github.com/ISISNeutronMuon/HLM_View/blob/master/Grafana/Object%20Measurements.json)
 
 #### Web Server
 To run with a production web server using Apache + `mod_wsgi`:
