@@ -25,8 +25,8 @@ We should run this on pull requests instead and make the build fail if the warni
 ### It was strange but really good that members were in the office and having a discussion on teams 
 Meant that people off-site could jump in at points which helped with teamwork and hybrid working. There are some funny side effects with this if you are sat in the office like hearing things twice over but overall it worked OK. When we're back at work we should maybe worry less about distancing and use things like the big screen for standup and so on to get around that problem. 
 
-### Avoiding re-adding release notes back into rn_upcoming in after a release 
-We should add a ticket to write a script that rebases all tickets to the current master/main and avoids this problem. This script should be run after doing a release. ACTION: JH create ticket 
+### Avoiding re-adding release notes back into ReleaseNotes_upcoming in after a release 
+We should add a ticket to write a script that will rebase all tickets to the current master/main and avoids this problem. This script should be run after doing a release. ACTION: JH create ticket 
 
 ### Happy that the Python version being incompatible was spotted while doing the release 
 It was good that we did the release in the shutdown because mid cycle this could cause panic. 
@@ -46,7 +46,7 @@ Yes and therefore No.
 ### Discussion around sprint themes 
 DO does not like themes because as a manager it's tricky to give people the answer to "what should I work on next" without context of the tickets in the theme. Beforehand it was just "pick something from the ready column" but now it takes longer because it's difficult to advise on the tickets we aren't sure about. We also don't talk about it during planning which we used to but we don't really have enough time to do it. We have a large team and it's hard to talk about every ticket because it takes up so much time. Themes give us an idea of things we HAVE to do in the sprint, for a migration for example beforehand there may have been things left out of the migration because we didn't get round to them. 
 
-We have had less planning discussions but this may or may nothave had implications on managers and so on as it puts more pressure on them to know about all of the tickets in the theme. 
+We have had less planning discussions but this may or may not have had implications on managers and so on as it puts more pressure on them to know about all of the tickets in the theme. 
 
 The problem at the moment is the sprint is completely full with themed items which leaves us with no room to pull things into the sprint if needed. 
 
