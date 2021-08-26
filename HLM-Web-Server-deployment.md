@@ -1,4 +1,4 @@
-Deployment notes for [HLM View](https://github.com/ISISNeutronMuon/HLM_View), running with Apache + `mod_wsgi` on Windows Server 2012 R2.
+Deployment notes for [HLM View](https://github.com/ISISNeutronMuon/HLM_View), running with Apache + mod_wsgi on Windows Server 2012 R2.
 
 
 #### Web App
@@ -42,7 +42,7 @@ from localhost:3000 to new address
 [HLM_View\Grafana](https://github.com/ISISNeutronMuon/HLM_View/blob/master/Grafana/Object%20Measurements.json)
 
 #### Web Server
-To run with a production web server using Apache + `mod_wsgi`:
+To run with a production web server using Apache + mod_wsgi:
 ```
 Used resources: 
 	https://github.com/Johnnyboycurtis/webproject#apache-and-mod_wsgi 
