@@ -11,4 +11,5 @@ Items attached to motion but are not [motors](Motor-IOCs).
 * [Reflectometry IOC](Reflectometry-IOC)
 * [SANS2D Front Beamstop Inhibit](SANS2D-Front-Beam-Stop-inhibit-movement)
 * [SANS2D vacuum tank collision avoidance](SANS2D-vacuum-tank-collision-avoidance)
+* [SANS2D apertures and guides](SANS2D-apertures-and-guides)
 * [MARI Sample Changer](MARI-Sample-Changer)
