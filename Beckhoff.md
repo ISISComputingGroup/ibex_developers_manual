@@ -39,12 +39,14 @@ This means that the workflow for adding new PLC projects into CI is:
 
 Note that the plan is to improve this with PLC developers writing their own code using [tcUnit](https://tcunit.org/).
 
-To actually run tests we use the Beckhoff `automation interface` which can do any of the things you can do in the Twincat XAE automatically through DCOM. A C# (Beckhoff do not fully support a Python interface 😢) program (`AutomationTools`) has been written to leverage this interface in the following way to write integration tests for the Beckhoff:
+To actually run tests we use the Beckhoff `automation interface` which can do any of the things you can do in the Twincat XAE automatically through DCOM. Two C# (Beckhoff do not fully support a Python interface 😢) programs (`AutomationTools` and `twinCATAutomationTools`) has been written to leverage this interface in the following way to write integration tests for the Beckhoff:
 
 ![Overview](beckhoff/beckhoff_overview.png)
 
 1. Jenkins will pull a branch of [BeckhoffTestRunner](https://github.com/ISISComputingGroup/BeckhoffTestRunner).
-2. `build.bat` is run to first build the `AutomationTools` themselves then to build the PLC code using the `automation interface`. This build will also create a `*.tpy` file, which outlines how to connect to the PLC and can be used to configure the IOC itself.
+2. `build.bat` is run to do the following:
+   1. Build both sets of the `AutomationTools`, [twinCATAutomationTools](https://github.com/Simon-Cooper/twinCATAutomationTools) and [AutomationTools](https://github.com/ISISComputingGroup/BeckhoffTestRunner/tree/master/util_scripts/AutomationTools)
+   1. Use the `twinCATAutomationTools` to import the `test_config` into the generic Twincat Solution and build the PLC code using the `automation interface`. This build will also create a `*.tpy` file, which outlines how to connect to the PLC and can be used to configure the IOC itself.
 3. The IOC test framework is started. This will first use the `AutomationTools` program to run a local simulated PLC. Then startup and test the Beckhoff twincat in the usual way.
 
 This is currently being run on the ndw1926 node on Jenkins. A quirk of using this DCOM interface is that the Jenkins slave must be run as an interactive user and thus not as a service. To do this there is a bat file that should run on startup inside `C:\Users\ibexbuilder\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup`.
