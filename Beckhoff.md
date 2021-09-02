@@ -37,8 +37,6 @@ This means that the workflow for adding new PLC projects into CI is:
 4. At this point they have CI for building their code
 5. We make a decision about whether the code requires any system tests and if so add some into their repository
 
-Note that the plan is to improve this with PLC developers writing their own code using [tcUnit](https://tcunit.org/).
-
 To actually run tests we use the Beckhoff `automation interface` which can do any of the things you can do in the Twincat XAE automatically through DCOM. Two C# (Beckhoff do not fully support a Python interface 😢) programs (`AutomationTools` and `twinCATAutomationTools`) has been written to leverage this interface in the following way to write integration tests for the Beckhoff:
 
 ![Overview](beckhoff/beckhoff_overview.png)
