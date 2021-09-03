@@ -21,4 +21,8 @@ Graylog requires inputs to be specified before it starts taking logs. This can b
 
 ### Searching for logs
 
-The search bar can be used to filter out logs containing certain properties, for example the function called from genie_python or the instrument it was run on. 
+The search bar can be used to filter out logs containing certain properties, for example the function called from genie_python or the instrument it was run on. This is done like so: 
+
+![Screenshot 2021-09-03 145906](https://user-images.githubusercontent.com/14823767/132017594-55ce10dc-7e61-4c8d-a1fc-68da48da90eb.png)
+
+
