@@ -18,3 +18,7 @@ To access the web interface on a local machine you _must_ use `127.0.0.1:9000` -
 ### Adding inputs 
 
 Graylog requires inputs to be specified before it starts taking logs. This can be done through the web interface via System -> Inputs 
+
+### Searching for logs
+
+The search bar can be used to filter out logs containing certain properties, for example the function called from genie_python or the instrument it was run on. 
