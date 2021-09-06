@@ -11,7 +11,7 @@ A Graylog instance is currently running on `madara`, one of the data streaming c
 
 To access the web interface go to `madara.<cclrc prefix>:9000` (noting the full prefix - this is required for the web interface) and enter `admin` and the password for the machine. Currently we are using one input per source (genie python, ibex etc) but we could make a source per instrument in the future. 
 
-### Setting up Graylog locally using docker
+## Setting up Graylog locally using docker
 
 Docker and `docker compose` can be used to spin up a local graylog server with all the dependencies - to do this use [this file](https://docs.graylog.org/en/4.0/pages/installation/docker.html#persisting-data), call it `docker-compose.yml` locally and run `docker-compose up`. You can use `docker-compose down` to kill Graylog and its dependencies this way as well. 
 
