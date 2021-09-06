@@ -9,7 +9,7 @@ The plan for using Graylog is that we dump everything into it from various sourc
 ## Central Graylog server 
 A Graylog instance is currently running on `madara`, one of the data streaming cluster machines. This has been set up using the instructions below with a slightly modified `docker-compose.yml` file.
 
-To access the web interface go to `madara.<cclrc prefix>:9000` (noting the full prefix - this is required for the web interface) and enter `admin` and the password for the machine. Currently we are using one input per source (genie python, ibex etc) but we could make a source per instrument in the future. 
+To access the web interface go to `madara.<cclrc suffix>:9000` (noting the full suffix- this is required for the web interface) and enter `admin` and the password for the machine. Currently we are using one input per source (genie python, ibex etc) but we could make a source per instrument in the future. 
 
 ## Setting up Graylog locally using docker
 
