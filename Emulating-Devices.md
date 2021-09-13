@@ -109,7 +109,7 @@ If you want to test against the LabVIEW VI and you aren't in a position to creat
 1. Create some room inside the main case
 2. On the block diagram, move the reply to the far right of the main case, the read reply button and the command to the far left of the main case
 3. Drop a `disable diagram` structure around the serial communications section
-4. In the enabled state, drop in an instance of `IBEX Integration - Connect to TCP.vi`, which can be found in the `IBEX Integration.llb` in the Utilities directory (if the VI isn't there, then you need to get an updated version of the repo)
+4. In the enabled state, drop in an instance of `IBEX Integration - Connect to TCP.vi`, which can be found in the `IBEX Integration.llb` in the `Labview Modules\Common\Utilities` directory (if the VI isn't there, then you need to get an updated version of the repo)
 5. Connect the errors, reply, command and so on in the obvious fashion, connect the COM port to the Port In, and create a constant for the mode
 6. Change the COM port in the setup dialog to the port of the emulator (this has to be running on localhost at the moment)
 7. Run the emulator and VI and they should be talking to each other
