@@ -1,7 +1,6 @@
-Install a version of visual studio. 2010 is used by most developers unless you are on windows 10 in which case install 2017 or 2019.
+Most developers should install VS2019 - we have 2010 on a build server for building the old galil driver (until we remove it), if you need to install 2010 locally then install it before you install 2019
 
-# Install Visual Studio 2010
-Install Visual Studio 2010
+# Instructions for Visual Studio 2010
 
 Install SDK 7.1 
 -The SDK may fail if you have these installed: 
@@ -16,29 +15,12 @@ Install:
 
 Note: The free version of Visual Studio 2010, Visual Studio 2010 Express, isn't supported by the EPICS build process.
 
-# Install Visual Studio 2013
-Windows SDK 7 has compatibility issues with newer versions of Windows. In this case, Visual Studio 2013 may be used instead.
-
-During the installation of VS2013, under "Optional Features" make sure to include Microsoft Foundation Classes for C++.
-
-Additionally, download and install the [Multibyte MFC Library](https://www.microsoft.com/en-us/download/details.aspx?id=40770).
-
-# Install Visual Studio 2017
-Download installer (Visual Studio **Community** 2017 exe) from installer page https://my.visualstudio.com using your stfc email address.
-During install, choose Desktop development with C++ and from the right checkboxes: 
-- The most recent Windows 10 SDK, Windows 8.1 SDK, and MFC and ATL support
-- Windows Universal CRT SDK
-
-If these boxes aren't visible on the right it is most likely because you are trying to install professional rather than community.
-
-# Install Visual Studio 2019
+# Instructions for Visual Studio 2019
 Download installer (Visual Studio **Community** 2019 exe) from installer page https://my.visualstudio.com using your stfc email address.
 During install, select "Desktop development with C++" with these individual features: 
 - The most recent Windows 10 SDK
 - MFC and ATL support
 - From `Individual Components` tab select Windows Universal CRT SDK (under the "Compilers, build tools and runtimes")
-
-After installing Visual Studio 2019, download the Windows 8.1 SDK from https://developer.microsoft.com/en-us/windows/downloads/sdk-archive/.
 
 # Installing a new Version of Visual Studio
 If you are on a newer version of Visual Studio then you will need to upgrade various files to take this into account. Below is a list of things we needed to do when upgrading to 2017 your list may be different.
@@ -47,7 +29,7 @@ See https://github.com/ISISComputingGroup/IBEX/issues/5173 for the changes that 
 
 ## Setup the environment
 
-The visual studio compiler environment variables are set up from `...\EPICS\base\master\startup\win32.bat` this calls into the visual studio variable set up. Add your version to this.
+The visual studio compiler environment variables are set up from `...\EPICS\base\master\startup\windows.bat` this calls into the visual studio variable set up. Add your version to this.
 
 # Converting Tabs to Spaces
 
