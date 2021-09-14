@@ -11,8 +11,10 @@ OPIs live in `ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources`
  - Create a new OPI with File -> New -> BOY -> OPI File
  - Change to the "OPI Editor" perspective to allow easier editing.
  - You need to use "OPI Editor" to edit your files, **not** "Display Editor". The later creates a display builder file and not an OPI.
- - Edit the OPI.
+ - Edit the OPI - note that the `template.opi` will give you an idea of the style to use. It is best to copy controls from this template to keep the same behaviour.
  - Also add an entry to the `opi_info.xml` file which can be found in `resources\opi_info.xml`. Note that some Macros are provided (See below).
+
+If you are stuck on how to do something with an OPI there are a number of in-built examples, which you can view by going to File -> Import -> BOY-> BOY Examples.
 
 ## OPI Editor vs Display editor
 When editing an existing OPI or creating a new one, it is important to use OPI editor over Display editor, as the display editor is not currently compatible with the rest of IBEX. If you have opened an OPI and can't find the ISIS colour and font schemes, this possibly indicates that you are using the wrong toolset. You may also find that the file extension is being changed to a .bob file when the file is saved in a Display editor window.
