@@ -22,7 +22,7 @@ During install, select "Desktop development with C++" and check/enable these ind
 - C++ MFC support
 - C++ ATL support
 
-Also select .NET development and "Universal windows CRT"  
+Also select .NET development and "Universal windows CRT/universal platform development" from the features  
 
 # Installing a new Version of Visual Studio
 If you are on a newer version of Visual Studio then you will need to upgrade various files to take this into account. Below is a list of things we needed to do when upgrading to 2017 your list may be different.
