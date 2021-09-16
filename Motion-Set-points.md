@@ -37,7 +37,7 @@ For examples see Larmor, Demo or SANDALS.
 
 The lookup motion setpoint file has the following format:
 
-    # Commnet, lines starting with hashes are comments
+    # Comment, lines starting with hashes are comments
     <label> <coord 1> <coord 2>
     <label> <coord 1> <coord 2>
     ...
