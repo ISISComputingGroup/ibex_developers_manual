@@ -19,27 +19,27 @@ EMU Migration | David |
 SURF Migration | Thomas |
 POLREF Migration | Thomas |
 INTER Migration | Thomas |
-OFFSPEC Migration | Dom |
+OFFSPEC Migration | |
 HIFI Migration | James & Jack |
 CHRONUS Migration | James & Jack |
 ARGUS Migration | James & Jack |
 SXD Migration | Freddie |
 WISH Migration | David |
 PEARL Migration | Bish |
-CHIPIR Migration | Thomas & Dom |
+CHIPIR Migration | Thomas |
 --- | --- |
 **IBEX Core components** |  |
-Script Server (NICOS) | Dom |
+Script Server (NICOS) | |
 Graphing/Scripting | Tom |
 Script Generator | Tom |
 IBEX GUI | Thomas |
-CSS & Phoebus | Dom |
+CSS & Phoebus | |
 EPICS base and support modules | Freddie |
-Delay tickets | John |
+Delay tickets | |
 Blockserver/Other server items |  |
 Linter |  |
-Squish | Dom |
-Motion Control | Dom and Aaron |
+Squish |  |
+Motion Control | Jack H and Aaron |
 Reflectometry | John and Thomas |
 Dataweb |  |
 --- | --- |
@@ -49,7 +49,7 @@ HIFI Cryomagnet | Kathryn and Chris C |
 RIKEN Upgrade | Chris M-S |
 Systems (Hardware, OS, etc.) | Chris M-S |
 Python 3 Migration | Bish |
-
+Lewis | Jack A |
 
 <a name="definitionSteward"></a>
 ## Definition of the role of Component / Activity Steward
