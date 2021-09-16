@@ -64,6 +64,7 @@ To set up a computer to be able to run the [automated VHD creation script](https
 - Set up an environment variable called `MYSQL_PASSWORD` containing the MySQL root user password.
 - In the admin documents area, create an (empty) folder at `C:\Users\Administrator\Documents\fake_release_dir\1.0.0`
 - A local python must be installed in `C:\Users\Administrator\Documents`. Note: we do not use the python from the network share here as we are running as Admin.
+- The machine you're installing this on must be listed in genie_logger.py in the vhd_builder list to avoid writing logs to `C:\Instrument\Var\logs` before Var is mounted
 
 These items cannot be automated by jenkins as they need to be the admin user.
 
