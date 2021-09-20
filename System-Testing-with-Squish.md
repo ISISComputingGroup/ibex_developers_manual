@@ -12,8 +12,10 @@ we have one floating tester subscription and one floating execution subscription
 1. Read and accept the terms and conditions if still correct
 1. Install download:
     1. Run download installer
-    1. Licence Key: Enter licence key from download page
+    1. Floating license: Enter `control-svcs.isis.cclrc.ac.uk:49345`
     1. Licence Agreement: Read and accept the licence
+    1. Uncheck `Test Center` from items to install, unless you really need it
+    1. Select python version for script language (should we select 3.8 here?)
     1. Installation folder: Choose a folder I chose `c:\tools`
     1. JRE or JDK: Select the JDK we are currently developing with
     1. Shortcuts: use defaults
