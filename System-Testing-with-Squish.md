@@ -4,9 +4,9 @@
 
 [Details about our Squish License](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Forms/AllItems.aspx?RootFolder=%2Fisis%2Fcomputing%2FICPdiscussions%2FSquish%20Information&FolderCTID=0x01200027AD8F05966A2748B3B04C98BB5B442B&View={F2C33C51-70E6-4343-B937-2C59A2568306})
 
+we have one floating tester subscription and one floating execution subscription licence. The execution subscription is used by a build server to run tests, the tester subscription is used by us to develop tests. We can have at most one developer writing tests at a time, but we can all install the software on our machines. I don't yet know how the license system works e.g. if one developer forgets to close squish on their system, does it block everybody until they do? Or is there some timeout? We will have to experiment. See `license server` below for more details. 
+ 
 # Set Up for local server
-
-Get a licence key (our license permits concurrent use by any 2 users from a list of 5 named users)
 
 1. Download the SQUISH/JAVA WINDOWS from the [frog logic page](https://www.froglogic.com/squish/download/) using the account in the passwords page on sharepoint
 1. Read and accept the terms and conditions if still correct
@@ -163,6 +163,10 @@ Frequency | Test | Error
 2         | tst_can_create_lots_of_blank_configs | `RuntimeError: Error in activateItem() invocation: Menu not visible and/or enabled Called from: C:\Jenkins\workspace\System_Tests_Squish\suite_configuration_tests\tst_can_create_lots_of_blank_configs\test.py: 20`
 2         | tst_can_add_edit_and_delete_block_to_current_config | `RuntimeError: Property read failed: exception: java.lang.reflect.InvocationTargetException () org.eclipse.swt.SWTException: Widget is disposed`  `Called from: C:\Jenkins\workspace\System_Tests_Squish\suite_configuration_tests\tst_can_add_edit_and_delete_block_to_current_config\test.py: 74`
 1         | tst_user_names_can_be_set | `LookupError: Object ':Experiment Details_Text' not found. Could not match properties:    isvisible for object name: ':Experiment Details_Text' Called from: C:\Jenkins\workspace\System_Tests_Squish\suite_experiment_details_tests\tst_user_names_can_be_set\test.py: 19 C:\Jenkins\workspace\System_Tests_Squish\global_scripts\experiment_details.py: 19`
+
+# License server
+
+This was setup as per https://doc.froglogic.com/squish/latest/ins-floating-license-server.html on `control-svcs.isis.cclrc.ac.uk` in the directory `/usr/local/squish-licenceserver` the service is automatically started at boot time vis systemd, the file `squish-licenseserver.service` has the service details and is symbolically linked from the systemd `/etc/systemd/system` area. The log file is `/var/log/squish-licenseserver.log` and the service is running on the default port of 49345
 
 # Troubleshooting
 
