@@ -47,14 +47,14 @@ in `ioc/master/GALIL` there is a file  `utils/SetupR3Axis.bat`  that will initia
 ## Changes from previous driver
 
 * turning motors on using the motor record PREM field no longer works (the on state is now tested before PREM is run) so you need to set MTR0101_AUTOONOFF_CMD etc. to "On" (this has been adjusted in `SetupR3Axis.bat`)
-* GalilStartController() has lost the "display code" argument, so you need to move the "Thread mask" argument (usually value "3" for us) one position earlier in your local settings/galil/galil*.cmd files 
+* In the upstream code GalilStartController() has lost the "display code" argument, for compatibility we have added this back so we **do not** currently need to move the "Thread mask" argument (usually value "3" for us) one position earlier in your local settings/galil/galil*.cmd files. When we have completed the migration on all instruments we may revise this. 
 * Home position is now always set to 0, so PVs like MTR0101_HOMEVAL_SP and MTR0101_PHOME_CMD have been removed. See [Resetting-HOMEVAL](Resetting-HOMEVAL)
 
-## TODO
+## TODO (from earlier testing)
 
 * Unsolicited messages are currently using UDP only, I need to look at adding TCP support
-* Loading the Profile and kinematic axes DBs cause streams of errors 
-* Running GalilTest IOC from support/galil/master does not work (may not fix)
+* Loading the Profile and kinematic axes DBs cause streams of errors (may now be fixed?) 
+* Running GalilTest IOC from support/galil/master does not work (may not fix, not really needed)
   
 ## Test Strategy (Assuming testing on EMMA)
 
