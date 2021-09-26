@@ -1,6 +1,46 @@
-This page covers initial testing of the new Galil driver, this driver does not use the Galil provided DLL and so should work with all Visual Studio versions. The code is not submitted for review as a PR yet, but as some developers are unable to talk to the Galil reliably at all it may be useful in its current state. Please let @FreddieAkeroyd know of any issues you see.
+# Galil driver selection during ibex install
 
-To use the new driver you need to switch both your support/galil/master and ioc/master submodules onto the "update_to_3_4" branch and remake support/galil/master and ioc/master/GALIL.
+during install you will be asked to select OLD or NEW galil driver, default is NEW to help with automatic install during Jenkins system testing.
+
+Seek advice if you are not sure what to select as we will be doing a phased testing schedule. If the instrument is not currently running the new driver then you probably want to select OLD unless testing is planned. Note that both drivers are installed, this choice is what to make the default one on ibex startup. When ibex is not running you can run
+```
+C:\Instrument\Apps\EPICS\swap_gali.bat OLD
+```
+from a command window to swap to the old driver, pass `NEW` as the argument to swap to the new driver instead.
+
+## notes on new driver
+
+The new galil driver has been merged to master, the old driver is currently on a galil-old branch of the EPICS-galil repository. The new driver does not build with VS2010, the old driver does not work if compiled with anything other than VS2010. As we have moved to VS2019 compilers, teh new driver is now the default on master.
+
+The new driver has not yet been tested fully on an ISIS beamline, though things have changed between the old and new versions changes have been added to make them (hopefully) compatible at the PV and autosave level, thus you should be able to swap between them without issue. The only incompatible change is that the hardware home motor position must now be zero and a motor record offset used to have a non-zero user home value. We had planned to do this change on remaining instruments, we need to complete this work.
+
+Currently an EPICS_galil_old Jenkins job runs on ndhspare53, it builds the galil-old branch with vs2010, deploys this to kits$, and this then gets included in other builds giving you ioc/master/GALIL-OLD etc. A get_old_galil.bat script at top level lets a developer get these files. A swap_galil.bat script will swap between galil drivers on instrument or developer machine, it basically renames directories.
+
+# Testing of new galil driver
+
+## Testing galil-old via swap-galil 
+
+* Record motor setup
+* Shutdown ibex
+* Update instrument
+* Run Swap_galil to put on old driver
+* Start ibex
+* check positions etc. all look ok
+* compare current autosave files with ones pre-upgrade.
+
+## Testing galil-new via swap galil
+
+* Record motor setup
+* Shutdown ibex
+* Run Swap_galil to put on new driver
+* Start ibex
+* check positions etc. all look ok
+* compare current autosave files with ones pre-upgrade.
+* Shutdown ibex
+* Run Swap_galil to put back old driver
+* Start ibex
+* check positions etc. all look ok
+* compare current autosave files with ones pre-upgrade.
 
 in `ioc/master/GALIL` there is a file  `utils/SetupR3Axis.bat`  that will initialise the Galil in the ibex office with appropriate parameters so you can move it, run it after you have started the `ioc/master/GALIL` ioc (likely you will only need to run it once as things should then get autosaved locally and applied subsequently)
  
