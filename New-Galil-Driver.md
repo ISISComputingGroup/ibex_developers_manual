@@ -12,7 +12,10 @@ from a command window to swap to the old driver, pass `NEW` as the argument to s
 
 The new galil driver has been merged to master, the old driver is currently on a galil-old branch of the EPICS-galil repository. The new driver does not build with VS2010, the old driver does not work if compiled with anything other than VS2010. As we have moved to VS2019 compilers, teh new driver is now the default on master.
 
-The new driver has not yet been tested fully on an ISIS beamline, though things have changed between the old and new versions changes have been added to make them (hopefully) compatible at the PV and autosave level, thus you should be able to swap between them without issue. The only incompatible change is that the hardware home motor position must now be zero and a motor record offset used to have a non-zero user home value. We had planned to do this change on remaining instruments, we need to complete this work.
+The new driver has not yet been tested fully on an ISIS beamline, though things have changed between the old and new versions changes have been added to make them (hopefully) compatible at the PV and autosave level, thus you should be able to swap between them without issue. The only incompatible changes are:
+* the hardware home motor position must now be zero and a motor record offset used to have a non-zero user home value. We had planned to do this change on remaining instruments, we need to complete this work.
+* motor on/off cannot use PREM/POST
+see below for notes on these
 
 Currently an EPICS_galil_old Jenkins job runs on ndhspare53, it builds the galil-old branch with vs2010, deploys this to kits$, and this then gets included in other builds giving you ioc/master/GALIL-OLD etc. A get_old_galil.bat script at top level lets a developer get these files. A swap_galil.bat script will swap between galil drivers on instrument or developer machine, it basically renames directories.
 
@@ -46,7 +49,7 @@ in `ioc/master/GALIL` there is a file  `utils/SetupR3Axis.bat`  that will initia
  
 ## Changes from previous driver
 
-* turning motors on using the motor record PREM field no longer works (the on state is now tested before PREM is run) so you need to set MTR0101_AUTOONOFF_CMD etc. to "On" (this has been adjusted in `SetupR3Axis.bat`)
+* turning motors on using the motor record PREM field no longer works (the on state is now tested before PREM is run). If you were using PREM/POST to turn on/off the motor during a move then set MTR0101_AUTOONOFF_CMD etc. to "On" (this has been adjusted in `SetupR3Axis.bat`). If PREM turned a motor on and it remained on (POST did not turn it off) then set MTR0101_ON_CMD instead.
 * In the upstream code GalilStartController() has lost the "display code" argument, for compatibility we have added this back so we **do not** currently need to move the "Thread mask" argument (usually value "3" for us) one position earlier in your local settings/galil/galil*.cmd files. When we have completed the migration on all instruments we may revise this. 
 * Home position is now always set to 0, so PVs like MTR0101_HOMEVAL_SP and MTR0101_PHOME_CMD have been removed. See [Resetting-HOMEVAL](Resetting-HOMEVAL)
 
