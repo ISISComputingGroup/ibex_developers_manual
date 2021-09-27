@@ -1,16 +1,16 @@
 # Galil driver selection during ibex install
 
-during install you will be asked to select OLD or NEW galil driver, default is NEW to help with automatic install during Jenkins system testing.
-
-**Seek advice** if you are not sure what to select as we will be doing a phased testing schedule. If the instrument is not currently running the new driver then you probably want to select OLD unless testing is planned. Note that both drivers are installed, this choice is what to make the default one on ibex startup. When ibex is not running you can run
+during install/deploy you will be asked to select OLD or NEW galil driver, default is OLD for the moment but **Seek advice** if you are not sure what to select as we will be doing a phased testing schedule. If the instrument is not currently running the new driver then you probably want to select OLD unless testing is planned. Note that both drivers are installed, this choice is what to make the default one on ibex startup. When ibex is not running you can run
 ```
 C:\Instrument\Apps\EPICS\swap_gali.bat OLD
 ```
 from a command window to swap to the old driver, pass `NEW` as the argument to swap to the new driver instead.
 
+To help with automatic Jenkins system testing `install_latest_build_only.bat` installs the NEW driver and does not prompt. 
+
 ## notes on new driver
 
-The new galil driver has been merged to master, the old driver is currently on a galil-old branch of the EPICS-galil repository. The new driver does not build with VS2010, the old driver does not work if compiled with anything other than VS2010. As we have moved to VS2019 compilers, teh new driver is now the default on master.
+The new galil driver has been merged to master, the old driver is currently on a galil-old branch of the EPICS-galil repository. The new driver does not build with VS2010, the old driver does not work if compiled with anything other than VS2010. As we have moved to VS2019 compilers, the new driver is now the default on master.
 
 The new driver has not yet been tested fully on an ISIS beamline, though things have changed between the old and new versions changes have been added to make them (hopefully) compatible at the PV and autosave level, thus you should be able to swap between them without issue. The only incompatible changes are:
 * the hardware home motor position must now be zero and a motor record offset used to have a non-zero user home value. We had planned to do this change on remaining instruments, we need to complete this work.
