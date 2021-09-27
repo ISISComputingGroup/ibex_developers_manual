@@ -127,6 +127,7 @@ Our CS-Studio GUI dependencies are located on a share at `\\shadow.isis.cclrc.ac
 - After the build is complete go to the build server and copy the entire isis_css_top tree to the share (`\\shadow.isis.cclrc.ac.uk\ICP_P2$`)
 - Subsequent GUI builds will pick up the new dependencies
 - Test that your changes work correctly!
+- if you cannot write to the `ICP_P2$` share on shadow, your account will need adding to the `icp` local group on shadow itself. This just requires somebody to run the `vigr` command on shadow and then possibly `service smb restart` too 
 
 ## Archive engines / alarm servers
 
