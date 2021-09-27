@@ -6,7 +6,7 @@ C:\Instrument\Apps\EPICS\swap_gali.bat OLD
 ```
 from a command window to swap to the old driver, pass `NEW` as the argument to swap to the new driver instead.
 
-To help with automatic Jenkins system testing `install_latest_build_only.bat` installs the NEW driver and does not prompt. 
+To help with automatic Jenkins system testing `instrument_install_latest_build_only.bat` installs the NEW driver and does not prompt. 
 
 ## notes on new driver
 
