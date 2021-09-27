@@ -41,13 +41,13 @@ Don't forget the [drop in sessions](https://github.com/ISISComputingGroup/IBEX/w
 | DK | x | JK | x |  |  |DO | x |
 | BR | x | JA | x |  |  |BR | x |
 | JH | x | TL | x |  |  | FA | x |
-| FA |  | BR |  |  |  | JH | x |
+| JK | x | BR | x |  |  | JH | x |
 | KB |  | LC |  |  |  | KB | x |
-| JA |  | AS |  |  |  |SJ |  |
+| JA |  | AS |  |  |  |SJ | x |
 | DO |  | DKg |  |  |  |LC |  |
 | DK |  | DO |  |  |  |JA |  |
 | AS |  | TL |  |  |  |KB |  |
-| JK |  | AL |  |  |  |DKg |  |
+| FA |  | AL |  |  |  |DKg |  |
 | LC |  | DK |  |  |  |AS |  |
 | AL |  | JK |  |  |  |DK |  |
 | FA |  | SJ |  |  |  |BR |  |
