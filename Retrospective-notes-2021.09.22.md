@@ -31,14 +31,14 @@
 ### Burndown chart jumping
 * This was mostly due to a lot of big-point reviews going through at the same time, including release and tech-debt week
 
-### Planning fridays
-* JH not a fan of the concept of planned fridays as opposed to spontaneously picking up tickets for them, but understands that this could be too chaotic
+### Planning Fridays
+* JH not a fan of the concept of planned Fridays as opposed to spontaneously picking up tickets for them, but understands that this could be too chaotic
 * Whilst remote especially, best to have some planned conversation before starting to work on tickets to replace the small office conversation that would otherwise occur
-* A week of fridays might be too long, especially getting reviews through
-* Next friday week, consider only starting new friday tickets on monday and tuesday, then only working on existing tickets and reviews for the rest of the week
+* A week of Fridays might be too long, especially getting reviews through
+* Next Friday week, consider only starting new Friday tickets on Monday and Tuesday, then only working on existing tickets and reviews for the rest of the week
 
 ### Would people prefer being told which themes they're meant to be working on
-* Everyone seems onboard with this, KB happy to continue letting people know and willing to move things around if a developer has preferences.
+* Everyone seems on board with this, KB happy to continue letting people know and willing to move things around if a developer has preferences.
 * Assignments posted in "announce" on teams after planning
 
 ### Noting how much IBEX work done at end of sprint
@@ -52,6 +52,6 @@
 * Now that we have a floating squish license, should run training for developers so that everyone is able to write tests
 
 ### Information about accessing blockhouses
-* Hard to remember safety walk-throughs for all instruments, best to find the scientist to do it for you
+* Hard to remember safety walkthroughs for all instruments, best to find the scientist to do it for you
 * Should be a copy of local rules on/near the door if needed
 
