@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [Temperature Controllers](Temperature-Controllers) > [Lakeshore 340](Lakeshore340)
+
 # Lakeshore 340
 
 The lakeshore 340 is a device used by LET to monitor the temperature of a sample when it is being cooled by a dilution fridge inside the 9T magnet.
