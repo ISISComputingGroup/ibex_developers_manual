@@ -102,7 +102,7 @@ The PV naming conventions are described on the [PV naming](PV-Naming) page.
     }
     ```
 
-1. For a value(s) which the user wants to review before changing then press a set button:
+1. For a value(s) which the user wants to review before changing then press a set button (for motor records this can be done via [SPMG](https://epics.anl.gov/bcda/synApps/motor/R6-5/motorRecord.html#Fields_command)):
     - `XXX` - read back
     - `XXX:SP` - set the value immediately
     - `XXX:SP:RBV` - the value that the device has as a setpoint
