@@ -8,6 +8,7 @@
 * Lakeshore 218
 * [Lakeshore 336](Lakeshore336)
 * [Lakeshore 340](Lakeshore340)
+* [Lakeshore 350](Lakeshore350)
 * Lakeshore 460
 * [Mercury iTC](MercuryiTC)
 * [Neocera LTC-21](Neocera-LTC-21)
