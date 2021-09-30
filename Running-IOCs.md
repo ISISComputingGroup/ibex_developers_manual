@@ -23,6 +23,7 @@ To interact with an IOC use
     console -M localhost <IOC_NAME>
 
 console will attempt to complete the name if you only give part of it and will give you possible options. Once in the console:
+* `ctrl-t` : toggles the auto-restart setting
 * `ctrl-x` : starts and stops the IOC
 * `crtl-e` `c` `.`: exits the console
 
