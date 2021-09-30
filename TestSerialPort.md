@@ -29,4 +29,4 @@ The command uses escaped characters as per `printf/epicsStrnRawFromEscaped` e.g.
 testserialport COM7 "\0040011PV" "\005" "\003" --eventmask=0x1ff
 ```
 
-This program is built using VS2017 and so will not be on the instruments as standard. To use it on a deployment built with VS2010 you will to copy a static VS2017 build from jenkins.
+This program is built using VS2017 and so will not be on the instruments as standard. To use it on a deployment built with VS2010 you will to copy a static VS2017 build of `testserialport.exe` from jenkins.
