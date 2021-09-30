@@ -95,7 +95,6 @@ Once this ticket is merged, all instruments should have a `C:\Instrument\Setting
         <width>250</width>
       </display>
     </item>
-  </items>
     <item>
       <display>
         <name>Config</name>
@@ -104,5 +103,6 @@ Once this ticket is merged, all instruments should have a `C:\Instrument\Setting
         <width>360</width>
       </display>
     </item>
+  </items>
 </banner>
 ```
