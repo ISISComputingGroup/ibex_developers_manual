@@ -104,6 +104,8 @@ If the McLennan moves but does not stop at the position you requested it could b
 - Issue `<axis number>SC<jog speed>\r\n` with the jog speed you just looked up
 - Reconnect the IOC and check that homes now work appropriately. 
 
+Note that the creep speed for the PM600 at least is limited to 800 steps per second. We cater for this in the motor record and set it to the `HVEL` value if lower than 800 and otherwise set it to 800. 
+
 ## Office McLennan Settings
 
 The office McLennan need the following:
