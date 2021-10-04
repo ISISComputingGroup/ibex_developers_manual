@@ -37,13 +37,13 @@ This means that the workflow for adding new PLC projects into CI is:
 4. At this point they have CI for building their code
 5. We make a decision about whether the code requires any system tests and if so add some into their repository
 
-To actually run tests we use the Beckhoff `automation interface` which can do any of the things you can do in the Twincat XAE automatically through DCOM. Two C# (Beckhoff do not fully support a Python interface 😢) programs (`AutomationTools` and `twinCATAutomationTools`) has been written to leverage this interface in the following way to write integration tests for the Beckhoff:
+To actually run tests we use the Beckhoff `automation interface` which can do any of the things you can do in the Twincat XAE automatically through DCOM. AC# (Beckhoff do not fully support a Python interface 😢) program (`twinCATAutomationTools`) has been written to leverage this interface in the following way to write integration tests for the Beckhoff:
 
 ![Overview](beckhoff/beckhoff_overview.png)
 
 1. Jenkins will pull a branch of [BeckhoffTestRunner](https://github.com/ISISComputingGroup/BeckhoffTestRunner).
 2. `build.bat` is run to do the following:
-   1. Build both sets of the `AutomationTools`, [twinCATAutomationTools](https://github.com/Simon-Cooper/twinCATAutomationTools) and [AutomationTools](https://github.com/ISISComputingGroup/BeckhoffTestRunner/tree/master/util_scripts/AutomationTools)
+   1. Build the `TwincatAutomationTools` solution, [twinCATAutomationTools](https://github.com/Simon-Cooper/twinCATAutomationTools)
    1. Use the `twinCATAutomationTools` to import the `test_config` into the generic Twincat Solution and build the PLC code using the `automation interface`. This build will also create a `*.tpy` file, which outlines how to connect to the PLC and can be used to configure the IOC itself.
 3. The IOC test framework is started. This will first use the `AutomationTools` program to run a local simulated PLC. Then startup and test the Beckhoff twincat in the usual way.
 
@@ -56,6 +56,8 @@ To run tests locally you must build the solution in the `BeckhoffTestRunner -> u
 ```
 python %EPICS_KIT_ROOT%\\support\\IocTestFramework\\master\\run_tests.py -tp ".\\dummy_PLC\\tests"
 ```
+
+Note that the IOC tests do not stop the PLC at the end of the run, however this isn't a problem as the PLC is restarted when the IOC tests start. 
 
 ## Networking
 Beckhoffs are connected to NDX machines via private networks, in much the same way as the Galils. By convention Beckhoffs live in the `192.168.1.22X` range. 
