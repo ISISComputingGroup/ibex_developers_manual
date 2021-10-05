@@ -28,31 +28,31 @@ Think of a virtual machine name <VMname> to use later - this name will need to b
 chose "external network" switch for the VM, create a new virtual hard disk (the default, 128GB), choose install os from iso for booting, select above iso file saved above
   - (note: in hyper-v set to NUMA architecture limit which is usually just below 14gb).
 
-right click on VM, in firmware/bios settings of VM, put hard disk/network/dvd as boot order, this helps on booting, initially giving you some time (while it is failking to netrok boot) to get ready to press key to boot from dvd. After initial dvd boot you don't want to boot from iso again. 
+right click on VM
+- in firmware/bios settings of VM, put hard disk/network/dvd as boot order, this helps on booting, initially giving you some time (while it is failking to netrok boot) to get ready to press key to boot from dvd. After initial dvd boot you don't want to boot from dvd iso again. 
 - increase number of processors say to 4
 - add scsi hard drives and attach vhds, add scratch first and then add rest in any order. You do not need to specify a mount point, just make the disks available.
   - These should be `apps.vhdx`, `var.vhdx`, `settings.vhdx` and `scratch.vhdx`. You **MUST** mount `scratch.vhdx` as the first SCSI drive in the VM as it gets formatted and partitioned during the MDT task sequence (into `Data` and `Scratch`). `scratch.vhdx` is actually a blank VHDX so an empty one called something different will work as well (or a copy of one of the others)
   * Note: if you are replacing existing disks, you **still need to eject and re-add them in Hyper-V for them to be recognized!**
 
-go to checkpoints of VM and disable automatic checkpoints
-now create a checkpoint before you start - this lets you revert back (apply) and re-run a boot without having to recreate the VM
+go to checkpoints of VM and disable automatic checkpoints, but create a checkpoint before you start - this lets you revert back (apply) and re-run a boot without having to recreate the VM
+
 start vm and connect to screen of vm
  - If it blue screens try the boot again. I've seen this occasionally on windows 10 hyper v, not on the windows server hyperv. 
 
-After iso boot it will go into MDT install, choose reclone full system (thick w10 image) as install type
-change computer name to your unique <VMname> from above
-other defaults should be fine (join ISISWG, Don't restore settings or data)
-When asked for admin password, refer to passwords page and add the new password there if necessary. If this is your own desktop, change it to whatever you like - this is the password for the `Administrator` account after boot. 
+After iso boot it will go into MDT install
+- choose reclone full system (thick w10 image) as install type
+- change computer name to your unique <VMname> from above, other defaults should be fine (join ISISWG, Don't restore settings or data)
+- When asked for admin password, refer to passwords page and add the new password there if necessary for NDX. If this is your own desktop, change it to whatever you like - this is just the password for the `Administrator` account after boot. 
 
 ### Setting up IBEX before first use
 
 - Check settings folder name - it should have been renamed during install to correct <VMname>
 - (NDX instrument) Inside the settings folder, do a git checkout to the correct config branch and pull
-- See also any manual steps listed at https://github.com/ISISComputingGroup/IBEX/issues/5437
 
 ### Starting IBEX
 
-- At this stage you should be able to start IBEX. Make sure you start it as a standard user, not admin, otherwise all of the log files and directories will be created with the wrong permissions.
+- At this stage you should be able to start IBEX. Make sure you start it as a standard user, not `Administrator` that you are probably still logged in as, otherwise all of the log files and directories will be created with the wrong permissions.
   * It seems that the Var and Settings VHDs in particular are very sensitive to getting into a state where the files are "owned" by admin but admin can't delete them, and a reboot does not fix this. To fix this, install fresh settings/var vhds by following the "upgrade/change vhd" instructions below.
 
 # Upgrading/changing IBEX VHDs
