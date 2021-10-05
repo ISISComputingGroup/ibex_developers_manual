@@ -6,7 +6,7 @@ There are some simulated device setups in the private share `...\Reflectometry\c
 
 1. Copy galil directory to your configuration directory
 1. Created a configuration with the correct number of simulated motors
-    - some configs have components in that help with that
+    - some configs have components in that help with that. Your server may need a restart to pick them up after copying them over to your machine
 1. Switch to config so that the motors are running
 1. Run the `setup_motors.bat` in a epics terminal on your machine
 1. Copy the `config.py` to your refl directory in your config directory
