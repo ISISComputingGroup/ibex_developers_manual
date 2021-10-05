@@ -10,7 +10,7 @@ To see which PVs are doing this
 
 ## Is the Database Up
 
-Look for mysqld.exe task running in task manager or for the service MQSQLXX (currently 57) running. If it is not running log files are in `...var\mysql\Data\XXX.err`. To start it as an admin start the services from the start menu then start the MYSQLXX service.
+Look for mysqld.exe task running in task manager or for the service MYSQLXX (currently 80) running. If it is not running log files are in `...var\mysql\Data\XXX.err`. To start it as an admin start the services from the start menu then start the MYSQLXX service.
 
 ## Reducing database disc space
 
@@ -24,21 +24,18 @@ Run the script in:
 
 If you wish to do this manually:
 
-1. First create a sql dump of the database:
+1. First create an SQL dump of the database:
     ```
-    "c:\Program Files\MySQL\MySQL Server 5.7\bin\mysqldump.exe" -u root -p --all-databases --single-transaction --result-file=c:\data\old\ibex_backup_YYYY_MM_DD\ibex_db_sqldump_YYYY_MM_DD.sql
+    "c:\Instrument\Apps\MySQL\bin\mysqldump.exe" -u root -p --all-databases --single-transaction --result-file=c:\data\old\ibex_backup_YYYY_MM_DD\ibex_db_sqldump_YYYY_MM_DD.sql
     ```
 1. Check the file looks right (i.e. the dump is of an appropriate size ~ a few GB) and move it to the long term storage folder (`\\isis\inst$\backups$\stage-deleted\<inst>`). 
 1. Truncate the tables with:
-    ```
-    "c:\Program Files\MySQL\MySQL Server 5.7\bin\mysql.exe" -u root -p --execute "truncate table msg_log.message;truncate table archive.sample"
-    ```
-    or on instrument machines, 
     ```
     "c:\Instrument\Apps\MySQL\bin\mysql.exe" -u root -p --execute "truncate table msg_log.message;truncate table archive.sample"
     ```
 
 NB Originally this was the message and sample tables bumped to a directory in here, if you are looking for older data.
+
 ## Moving the Table Data Files
 
 If the tables data file were created in the wrong place they can be moved using the following.
@@ -50,7 +47,7 @@ If the tables data file were created in the wrong place they can be moved using 
 1. Remove the old service: `"C:\Program Files\MySQL\MySQL Server 5.7\bin\mysqld" --remove MySQL57`
 1. Move the data file from `C:\ProgramData\MySQL\data` to `C:\Instrument\Var\mysql\data`
 1. Copy the my.ini file into `C:\Instrument\Var\mysql\` from `EPICS\SystemSetup`
-1. Create a new service: `"C:\Program Files\MySQL\MySQL Server 5.7\bin\mysqld" --install MySQL57 --defaults-file=\"C:\Instrument\Var\mysql\my.ini\"
+1. Create a new service: `"C:\Instrument\Apps\MySQL\bin\mysqld" --install MySQL80 --defaults-file=\"C:\Instrument\Var\mysql\my.ini\"
 1. Set the user running the service: LogOn tab -> This account to `NETWORK SERVICE` no password (this removes the notes and when you click start adds them back in)
 1. Start the service
 
@@ -60,8 +57,8 @@ The commands for recreating the database are in the ibex [install script in the 
 
 1. Stop mysqld processes
 1. Move the database `../instrument/var/mysql` to `old`
-1. Recreate the database files: `mysqld.exe --datadir="c:/instrument/var/mysql/data" --initialize-insecure --console --log-error-verbosity=3`
+1. Recreate the database files: `c:\Instrument\Apps\MySQL\bin\mysqld.exe --datadir="c:/instrument/var/mysql/data" --initialize-insecure --console --log-error-verbosity=3`
 1. Start the mysql service.
-1. Set the database password with: `mysql.exe -u root -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '<password>';FLUSH privileges;"`
-1. Run the schema setup in an epics terminal: `instrument\EPICS\systemsetup\config_mysql.bat`
+1. Set the database password with: `c:\Instrument\Apps\MySQL\bin\mysql.exe -u root -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '<password>';FLUSH privileges;"`
+1. Run the schema setup in an epics terminal: `c:\instrument\Apps\EPICS\systemsetup\config_mysql.bat`
 1. Restart the epics server
