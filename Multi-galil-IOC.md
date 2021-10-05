@@ -10,7 +10,7 @@ The `GALILMUL` iocs are configured with `ADDR` and `MTRCTRL` macros as for a nor
 
 ### Motor configuration files
 
-The `GALILMUL` iocs load `.cmd` files from `C:\instrument\settings\config\<machine>\configurations\galilmul`, similar to the existing (single) galil controller IOC. The same files can be loaded as the usual, single, galil controller (for example `jaws.cmd` or `motorExtensions.cmd`). 
+The `GALILMUL` iocs load `.cmd` files from `C:\instrument\settings\config\<machine>\configurations\galilmul`, similar to the existing (single) galil controller IOC. The `.cmd` file it looks for depends on the controller `GALILMUL` IOC has loaded. If controller `01` and `02` is selected in galilmul configuration then it will look for `galilmul01.cmd` and `galilmul02.cmd` files. The same files can be loaded as the usual, single, galil controller (for example `jaws.cmd` or `motorExtensions.cmd`). 
 
 If multiple `GALILMUL` iocs are present on a beamline, use a macro guard like `$(IFIOC_GALILMUL_01=#)` to select the appropriate IOC
 
