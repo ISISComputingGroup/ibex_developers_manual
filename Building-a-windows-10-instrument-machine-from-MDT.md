@@ -2,6 +2,8 @@
 
 Note: this page documents the process of booting and building a windows 10 **system** in an empty virtual machine. This page does not focus on deploying IBEX itself, and if you are converting an instrument from SECI to IBEX you will generally not need to perform this process as a suitable NDX machine will already exist.
 
+**Note**: boot and build can take a while, 3 hours on an NDH with SSDs, longer of you have spinning disks 
+
 ### Find a suitable physical host
 
 - Find a suitable physical host server. The server will need a minimum of 14GB of memory and 256GB of hard disk space free. You can use hyperv on your own Windows 10 desktop if your machine is powerful enough.
