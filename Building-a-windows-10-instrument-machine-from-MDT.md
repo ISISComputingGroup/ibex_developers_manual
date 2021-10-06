@@ -11,7 +11,7 @@ Note: this page documents the process of booting and building a windows 10 **sys
 
 ### Copy needed files onto physical host
 
-Choose a virtual machine name <VMname> to use later - this name will need to be unique on the network (for an instrument this is the NDX name). While we are developing, we should choose a name with an `NDXW10` prefix and then e.g. our initials and a number. So `NDXW10FAA1` for example. 
+Choose a virtual machine name <VMname> to use later - this name will need to be unique on the network (for an instrument this is the NDX name). For developing, choose a name with an `NDXTEST` prefix followed by a number. Choose a free number and record your choice in the spreadsheet called `w10_test_machines.xslx` in the General channel of Teams.  
 
 - Make a copy of a boot ISO from `<Kits>\CompGroup\ICP\W10Clone\Boot` on your local computer. You may see several ISOs in here, see the `README.txt` and choose the appropriate one. This iso does an initial boot and the loads the rest off a network share name embedded within it, thus the iso itself doesn't need to change often, it is just pointing to the appropriate location to install from.   
   * *Note: This ISO is not really a windows PE iso, it is instead an ISO which has been built by MDT. You cannot just use a version downloaded from microsoft.com*
