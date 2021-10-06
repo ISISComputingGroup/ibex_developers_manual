@@ -1,6 +1,7 @@
 # Building a new instrument virtual machine from MDT
 
 Note: this page documents the process of booting and building a windows 10 **system** in an empty virtual machine. This page does not focus on deploying IBEX itself, and if you are converting an instrument from SECI to IBEX you will generally not need to perform this process as a suitable NDX machine will already exist.
+ - if you do not see hyper-v on your windows desktop, you just need to enable it via `turn windows feature on or off` , Select `Hyper-V` and sub items.
 
 **Note**: boot and build can take a while, 3 hours on an NDH with SSDs, longer of you have spinning disks.
 
