@@ -54,7 +54,7 @@ After iso boot it will go into MDT install
 
 ### Starting IBEX
 
-- At this stage you should be able to start IBEX. Make sure you start it as our **standard user**, not `Administrator` that you are probably still logged in as, otherwise all of the log files and directories will be created with the wrong permissions.
+- At this stage you should be able to start IBEX. Make sure you start it as our **standard user**, not `Administrator` that you are probably still logged in as, otherwise all of the log files and directories will be created with the wrong permissions. It is probably easiest if you now remote desktop into your new VM rather than use the hyper-v console
   * It seems that the Var and Settings VHDs in particular are very sensitive to getting into a state where the files are "owned" by admin but admin can't delete them, and a reboot does not fix this. To fix this, install fresh settings/var vhds by following the "upgrade/change vhd" instructions below.
 - Start ibex client, initially you will have no configuration loaded so not everything will start. Go to `configuration -> edit current configuration -> save as` and save it as something like `test` and switch to this configuration. This should now start DAE processes and you should end up in `SETUP` rather than `UNKNOWN` runstate after everything restarts. This seems to take a while for some reason, be patient.
 - to be able to start a run with `Begin` you need to set some DAE parameters:
