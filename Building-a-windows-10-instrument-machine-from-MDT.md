@@ -52,7 +52,7 @@ After iso boot it will go into MDT install
 
 ### Starting IBEX
 
-- At this stage you should be able to start IBEX. Make sure you start it as a standard user, not `Administrator` that you are probably still logged in as, otherwise all of the log files and directories will be created with the wrong permissions.
+- At this stage you should be able to start IBEX. Make sure you start it as our **standard user**, not `Administrator` that you are probably still logged in as, otherwise all of the log files and directories will be created with the wrong permissions.
   * It seems that the Var and Settings VHDs in particular are very sensitive to getting into a state where the files are "owned" by admin but admin can't delete them, and a reboot does not fix this. To fix this, install fresh settings/var vhds by following the "upgrade/change vhd" instructions below.
 - Start ibex client, initially you will have no configuration loaded so not everything will start. Go to `configuration -> edit current configuration -> save as` and save it as something like `test` and switch to this configuration. This should now start DAE processes and you should end up in `SETUP` rather than `UNKNOWN` runstate after everything restarts. This seems to take a while for some reason, be patient.
 - to be able to start a run with `Begin` you need to set some DAE parameters:
@@ -60,6 +60,11 @@ After iso boot it will go into MDT install
   * in `data acquisition` select the dropdown next to wiring, detector and spectra tables - choose the only option offered that is an `ibextest` table
   * now apply changes
  
+## starting SECI
+
+There is also labview, SECI and a copy on EMU’s labview modules installed. SECI should start fine if you navigate to `C:\Program Files (x86)\STFC ISIS Facility\SECI` and double click on `SECIUserinterface` (the file of type `Application`). There is a file that displays the name `SeciUserInterface.exe` but this is actually `SeciUserInterface.exe.symlink` and is a link to the `SeciUserInterface.exe.config` configuration file on the settings disk.
+
+There is an issue that the open GENIE window will look blank – if you leave the blank window on screen and then disconnect and reconnect remote desktop, the text appears. No idea what is going on…
 
 # Upgrading/changing IBEX VHDs
 
