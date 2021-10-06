@@ -51,10 +51,10 @@ This is currently being run on the ndw1926 node on Jenkins. A quirk of using thi
 
 ## Testing
 
-To run tests locally you must build the solution in the `BeckhoffTestRunner -> util_scripts -> AutomationTools` directory to create the AutomationTools binary (used by the IOCTestFramework to run the Beckhoff emulator). This can be built by running `build.bat` (best done not in an EPICS terminal). Once this is done you can run the following command in your `BeckhoffPLCCode` directory to begin testing:
+To run tests locally you must build the `twinCATAutomationTools` tools then use them to set up a working simulated PLC. This can be done by running `build.bat` (best done not in an EPICS terminal). Once this is done you can run the following command in your `BeckhoffTestRunner` directory to begin testing:
 
 ```
-python %EPICS_KIT_ROOT%\\support\\IocTestFramework\\master\\run_tests.py -tp ".\\dummy_PLC\\tests"
+python %EPICS_KIT_ROOT%\\support\\IocTestFramework\\master\\run_tests.py -tp ".\\tests"
 ```
 
 Note that the IOC tests do not stop the PLC at the end of the run, however this isn't a problem as the PLC is restarted when the IOC tests start. 
