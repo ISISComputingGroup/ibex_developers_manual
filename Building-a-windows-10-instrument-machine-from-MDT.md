@@ -11,7 +11,7 @@ Note: this page documents the process of booting and building a windows 10 **sys
 
 ### Copy needed files onto physical host
 
-Think of a virtual machine name <VMname> to use later - this name will need to be unique on the network (For an instrument this is the NDX name)
+Choose a virtual machine name <VMname> to use later - this name will need to be unique on the network (for an instrument this is the NDX name). While we are developing, we should choose a name with an `NDXW10` prefix and then e.g. our initials and a number. So `NDXW10FAA1` for example. 
 
 - Make a copy of a boot ISO from `<Kits>\CompGroup\ICP\W10Clone\Boot` on your local computer. You may see several ISOs in here, see the `README.txt` and choose the appropriate one. This iso does an initial boot and the loads the rest off a network share name embedded within it, thus the iso itself doesn't need to change often, it is just pointing to the appropriate location to install from.   
   * *Note: This ISO is not really a windows PE iso, it is instead an ISO which has been built by MDT. You cannot just use a version downloaded from microsoft.com*
@@ -54,6 +54,12 @@ After iso boot it will go into MDT install
 
 - At this stage you should be able to start IBEX. Make sure you start it as a standard user, not `Administrator` that you are probably still logged in as, otherwise all of the log files and directories will be created with the wrong permissions.
   * It seems that the Var and Settings VHDs in particular are very sensitive to getting into a state where the files are "owned" by admin but admin can't delete them, and a reboot does not fix this. To fix this, install fresh settings/var vhds by following the "upgrade/change vhd" instructions below.
+- Start ibex client, initially you will have no configuration loaded so not everything will start. Go to `configuration -> edit current configuration -> save as` and save it as something like `test` and switch to this configuration. This should now start DAE processes and you should end up in `SETUP` rather than `UNKNOWN` runstate after everything restarts. This seems to take a while for some reason, be patient.
+- to be able to start a run with `Begin` you need to set some DAE parameters:
+  * in `experiment setup -> time channels` set first row of time regime 1 to be   10, 10000, 100, dT=C
+  * in `data acquisition` select the dropdown next to wiring, detector and spectra tables - choose the only option offered that is an `ibextest` table
+  * now apply changes
+ 
 
 # Upgrading/changing IBEX VHDs
 
