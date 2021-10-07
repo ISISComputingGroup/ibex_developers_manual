@@ -84,3 +84,8 @@ This IOC was originally written by ESS. It uses an ASCII protocol over TCP/IP to
 - Start the IOC (host macros needs to be set to 127.0.0.1:5024)
 
 Currently this is only being run on IMAT. It should soon be replaced by the collaboration code.
+
+
+### Beckhoff config area
+
+The config area contains a directory used for storing `.tpy` files for use with `tcIoc`. On an instrument it should look like this: `\instrument\settings\config\<instname>\configurations\beckhoff\`. The TWINCAT IOC will search in this directory using the given `TPY_FILE` macro. 
