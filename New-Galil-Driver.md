@@ -2,11 +2,11 @@
 
 during install/deploy you will be asked to select OLD or NEW galil driver, default is OLD for the moment but **Seek advice** if you are not sure what to select as we will be doing a phased testing schedule. If the instrument is not currently running the new driver then you probably want to select OLD unless testing is planned. Note that both drivers are installed, this choice is what to make the default one on ibex startup. When ibex is not running you can run
 ```
-C:\Instrument\Apps\EPICS\swap_gali.bat OLD
+C:\Instrument\Apps\EPICS\swap_galil.bat OLD
 ```
 from a command window to swap to the old driver, pass `NEW` as the argument to swap to the new driver instead.
 
-To help with automatic Jenkins system testing `instrument_install_latest_build_only.bat` installs the NEW driver and does not prompt. 
+To help with automatic Jenkins system testing `instrument_install_latest_build_only.bat` selects the NEW driver and does not prompt. 
 
 ## notes on new driver
 
