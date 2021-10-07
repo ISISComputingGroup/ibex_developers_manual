@@ -88,4 +88,4 @@ Currently this is only being run on IMAT. It should soon be replaced by the coll
 
 ### Beckhoff config area
 
-The config area contains a directory used for storing `.tpy` files for use with `tcIoc`. On an instrument it should look like this: `\instrument\settings\config\<instname>\configurations\beckhoff\`. The TWINCAT IOC will search in this directory using the given `TPY_FILE` macro. 
+The config area contains a directory used for storing `.tpy` files for use with `tcIoc`. On an instrument it should look like this: `\instrument\settings\config\<instname>\configurations\beckhoff\`. The TWINCAT IOC will search in this directory using the given `TPY_FILE` macro. The generated DB file also gets created in this directory by `tcIoc`. 
