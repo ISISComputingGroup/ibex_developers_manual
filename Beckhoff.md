@@ -54,6 +54,9 @@ To run a PLC locally you need a license. A trial license can be activated on a d
 
 ## Testing
 
+Firstly in `BeckhoffTestRunner` run: 
+`git submodule update --init --recursive --remote`
+
 To run tests locally you must build the `twinCATAutomationTools` tools then use them to set up a working simulated PLC. This can be done by running `build.bat` (best done not in an EPICS terminal). Once this is done you can run the following command in your `BeckhoffTestRunner` directory to begin testing:
 
 ```
