@@ -76,7 +76,7 @@ One or more people should do [manual system tests, using this page](Manual-syste
     1. Enter the title `Release version X.x.p`
     1. Add a link to the release notes in the description
     1. Delete the branch once the release and tag has been created
-1. Create release tag from the release branch for each submodules in EPICS, then delete the release branch. To do this, run the following git command in top level EPICS: 
+1. Create release tag from the release branch for each submodules in EPICS, then delete the release branch. To do this, run the following git command in top level EPICS (replace `X.x.x` with the release number): 
     1. `git submodule foreach --recursive "git fetch && git tag Release_ibex_X.x.x origin/Release_X.x.x && git push --tags && git push -d origin Release_X.x.x"`
 1. Make sure any changes on the release branch are merged back onto master (except version numbering)
 1. Consider which instruments need this release:
