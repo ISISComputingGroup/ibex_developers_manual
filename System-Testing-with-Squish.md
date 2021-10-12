@@ -39,6 +39,8 @@ we have one floating tester subscription and one floating execution subscription
 
 You may also need to install `psutil` and `mysql-connector-python==8.0.11` through the GUI (Edit -> Preferences -> PyDev -> Interpreters -> Python Interpreter then "Manage with pip") if running the experiment details tests. 
 
+Once you have set up Squish via the steps above, you should be able to run a test suite to confirm everything is working. Note that you need the IBEX server running in the background, but not the client (which will be started by Squish when you run a test).
+
 # RDP to Server
 
 It is possible to remote desktop to the squish server but when you disconnect you must use the "Disconnect from RDP" shortcut on the desktop. To do this you must be an Admin on the desktop.
