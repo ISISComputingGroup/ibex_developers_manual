@@ -25,6 +25,8 @@ def step(context, status):
 
 This step takes a table as a parameter (accessed through `context.table`) and a word parameter (described by the decorator with `|word|` and passed to the step function as `status`). A step can have multiple decorators of `@Given`, `@When` and `@Then`. There are also more abilities such as using `From` sections and passing data between tests through the context variable - details at https://doc.froglogic.com/squish/latest/api.bdt.functions.html.
 
+We do not generally edit the test.py file in the test case resources scripts. This script is created by squish and handles starting up tests and setting up the hooks. This could be used to start up the client instead of using `@OnFeatureStart` to speed up tests and enable us to better structure our features without concern for lengthening our tests.
+
 # Scenario and Feature hooks
 
 In the script section of the test suite resources, there is a file named `bdd_hooks.py`. This file contains a number of functions hooked into the tests to run at the beginning and end of features. For example:
