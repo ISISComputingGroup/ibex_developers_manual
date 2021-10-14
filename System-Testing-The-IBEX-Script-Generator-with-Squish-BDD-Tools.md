@@ -39,7 +39,7 @@ Before the scenarios of a feature are run this hook is called by Squish. We util
 
 # Implementing a new test
 
-Have you already agreed to a gherkin description of the behaviour required? If so then add it to the test cases either as a new feature (there's a button labelled BDD in the test cases section of the gui ) or if your feature fits well into a feature already in the test suite then include the scenarios in there - this avoids running feature start and end code which restarts the client and lengthens the tests, though don't be afraid to add a new feature if it doesn't fit.
+Have you already agreed to a gherkin description of the behaviour required? If so then add it to the test cases either as a new feature (there's a little button labelled BDD in the test cases section of the Squish GUI) or if your feature fits well into a feature already in the test suite then include the scenarios in there - this avoids running feature start and end code which restarts the client and lengthens the tests, though don't be afraid to add a new feature if it doesn't fit.
 
 If you haven't already agreed on the behaviour, consider creating a design for the feature with gherkin and a low-fidelity prototype and reviewing it with other developers and script generator users - this depends on how major and well defined the feature is. If you're not sure, ask the team!
 
@@ -51,4 +51,4 @@ Although the recording is useful, it often produces brittle step functions, plea
 
 # Running the tests
 
-You can run the whole test suite with the 
+You can run the whole test suite with the play button located above the test cases next to the new BDD test case button 
