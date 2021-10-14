@@ -76,7 +76,7 @@ It is possible to remote desktop to the squish server but when you disconnect yo
 
 # System Testing The IBEX Script Generator with Squish BDD Tools
 
-The way we use Squish for testing the script generator is a bit different to the way we test the IBEX client. The method for testing is documented on the [System Testing The IBEX Script Generator with Squish BDD Tools](System-Testing-The-IBEX-Script-Generator-with-Squish-BDD-Tools) page.
+The way we use Squish for testing the script generator is a bit different to the way we test the IBEX client. The method for testing is documented on the [System Testing The IBEX Script Generator with Squish BDD Tools](System-Testing-The-IBEX-Script-Generator-with-Squish-BDD-Tools) page. Some of the hints and tips from this page still apply e.g. using utilities such as `set_text_field`.
 
 # Creating a new Test
 
