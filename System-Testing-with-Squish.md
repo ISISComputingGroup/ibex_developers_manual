@@ -74,6 +74,10 @@ It is possible to remote desktop to the squish server but when you disconnect yo
 1. Edit the test suite settings (select test suite in test suites tab. Then click on icon with blue spanner)
     1. Edit Object Map to be `..\objects.map`. You may not be able to do this from the Squish client depending on your version, in which case you can directly edit `suite.conf` in `/<System tests folder>/suite_<something>_tests/` (it should say `OBJECTMAP=..\objects.map`)
 
+# System Testing The IBEX Script Generator with Squish BDD Tools
+
+The way we use Squish for testing the script generator is a bit different to the way we test the IBEX client. The method for testing is documented on the [System Testing The IBEX Script Generator with Squish BDD Tools](System-Testing-The-IBEX-Script-Generator-with-Squish-BDD-Tools) page.
+
 # Creating a new Test
 
 A test contains one test case.
