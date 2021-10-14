@@ -39,4 +39,14 @@ Before the scenarios of a feature are run this hook is called by Squish. We util
 
 # Implementing a new test
 
+Have you already agreed to a gherkin description of the behaviour required? If so then add it to the test cases either as a new feature or if your feature fits well into a feature already in the test suite then include the scenarios in there - this avoids running feature start and end code which restarts the client and lengthens the tests, though don't be afraid to add a new feature if it doesn't fit.
+
+If you haven't already agreed on the behaviour, consider creating a design for the feature with gherkin and a low-fidelity prototype and reviewing it with other developers and script generator users - this depends on how major and well defined the feature is. If you're not sure, ask the team!
+
+Now that you have your feature, scenario and steps laid out it's time to write the test code. Are any of the steps already defined in the test suite resources? They may not have the same name but they may have the same functionality - you can add a new `@Given`, `@When` or `@Then` decorator to the step or rename the step in the test case. Any steps that don't have an already defined test function for you will need to implement, these steps will be annotated by Squish in the test case.
+
+To add the steps you want you can either code them directly by writing a test step function or you can record it. If you right-click on a feature or scenario in the test case and click `Record Missing Steps in Feature/Scenario` then the test will execute the steps it knows and then pauses on the steps it doesn't know to record any button clicks and do any verification steps as according to the squish recording tools - see the tutorial on https://www.froglogic.com/squish/features/recording-and-playback/. After recording, this will insert the step function into a file in the steps section of the test suite resources - often this is in a file that doesn't make sense so please move it to somewhere it does make sense. 
+
+Although the recording is useful, it often produces brittle step functions, please make use of the utilities in the global scripts area to improve the robustness of the test and see https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/System-Testing-with-Squish#writing-tests for some hints, tips and gotchas.
+
 # Running the tests
