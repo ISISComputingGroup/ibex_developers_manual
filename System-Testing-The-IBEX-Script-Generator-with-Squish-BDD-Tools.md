@@ -51,4 +51,4 @@ Although the recording is useful, it often produces brittle step functions, plea
 
 # Running the tests
 
-You can run the whole test suite with the play button located above the test cases next to the new BDD test case button 
+You can run the whole test suite with the play button located above the test cases next to the new BDD test case button. You can also run test cases with the run button next to the case in the case list. You can run features and scenarios by right-clicking and pressing run.
