@@ -1,0 +1,1 @@
+> [Wiki](Home) > [The GUI](The-GUI) > [Testing](GUI-Testing) > [System Testing The IBEX Script Generator with Squish BDD Tools](System-Testing-The-IBEX-Script-Generator-with-Squish-BDD-Tools)
