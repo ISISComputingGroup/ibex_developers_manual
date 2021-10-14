@@ -10,7 +10,18 @@ Gherkin also helps to automate testing. The steps in a `.feature` (gherkin) file
 
 # Structure of our tests
 
-Squish is split up into test suites, the script generator tests are all in the suite_script_gen_tests. The test cases in this suite are the `.feature` files that describe the behaviour in Gherkin. In general, we define a one or more features in each file with the `Feature:` tag and each feature has a collection of scenarios denoted by the `Scenario:` tag. The feature will have a title and a description and a scenario will have a title that acts as its description. 
+Squish is split up into test suites, the script generator tests are all in the suite_script_gen_tests. The test cases in this suite are the `.feature` files that describe the behaviour in Gherkin. In general, we define a one or more features in each file with the `Feature:` tag and each feature has a collection of scenarios denoted by the `Scenario:` tag. The feature will have a title and a description and a scenario will have a title that acts as its description. Each scenario is made up of a set of `Given`, `When`, `Then` steps. These steps can take parameters including whole tables and can be ordered in lots of different ways. `Given` generally describes the state the application should be in before a user action, `When` describes a user action and `Then` describes verification of the state of the application after a user action. More details can be found at https://cucumber.io/docs/gherkin/ and in the Squish tutorials on https://www.froglogic.com/squish/features/bdd-behavior-driven-development-testing/.
+
+The `Given`, `When` and `Then` steps are linked to code which is stored in the test suite resources steps area. For example, the `then_tooltip.py` file contains `Then` steps related to tooltip behaviour. Steps are defined like this:
+
+```python
+@Then("the following actions have a tooltip |word|")
+def step(context, status):
+    actions_that_we_expect_have_a_tooltip = context.table
+    do_test_code()
+```
+
+This step takes a table as a parameter (accessed through `context.table`) and a word parameter (described by the decorator with `|word|` and passed to the step function as `status`). A step can have multiple decorators of `@Given`, `@When` and `@Then`. More details at https://doc.froglogic.com/squish/latest/api.bdt.functions.html.
 
 # Implementing a new test
 
