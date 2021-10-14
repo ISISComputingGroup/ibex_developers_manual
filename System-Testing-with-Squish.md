@@ -117,6 +117,7 @@ Hints, tips and gotchas for writing tests:
     1. Click on the button object definition (you can use the search at the top to find it).
     1. In the properties tab change `occurrence` to `text` and the value to the text on the button.
     1. Save it and check it works by clicking highlight object; button should flash red.
+* Often `test.compare` and `test.verify` in Squish provides logs that aren't very useful, please do add a `test.log` line to describe the error.
 
 # Creating/Reviewing a Test when I don't have a Licence
 
