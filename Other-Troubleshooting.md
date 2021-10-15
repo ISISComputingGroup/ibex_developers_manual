@@ -31,7 +31,7 @@ Several causes
 
 1. If it works in your browser but not he users they may have a old cached copy (this shouldn't happen but we have seen it in Safari). Clear their browser cache and reload.
 
-1. Try restarting ARINST on the instrument. It can happen that the archiver does not pick up all PVs to archive on server startup. A symptom of this is that the configuration file under `EPICS\CSS\master\ArchiveEngine\inst_config.xml` is very short compared to other machines.
+1. Try restarting `ARINST` on the instrument. It can happen that the archiver does not pick up all PVs to be archived on server startup. A symptom of this is that the dashboard that the configuration file under `EPICS\CSS\master\ArchiveEngine\inst_config.xml` is very short compared to other machines.
 
 ## `cmake error: could not load cache` seen during build
 
