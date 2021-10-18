@@ -65,8 +65,21 @@ python %EPICS_KIT_ROOT%\\support\\IocTestFramework\\master\\run_tests.py -tp ".\
 
 Note that the IOC tests do not stop the PLC at the end of the run, however this isn't a problem as the PLC is restarted when the IOC tests start. If this fails to start the PLC it may be because you do not have a trial license. Debug the issue by manually running through the building and running steps above.
 
-## Networking
-Beckhoffs are connected to NDX machines via private networks, in much the same way as the Galils. By convention Beckhoffs live in the `192.168.1.22X` range. 
+## Commissioning steps
+These steps are for commissioning a Beckhoff on a beamline. 
+
+### Networking
+Beckhoffs are connected to NDX machines via private networks, in much the same way as the Galils. By convention Beckhoffs live in the `192.168.1.22X` range, starting at 0 for the first controller (`192.168.1.220`) 
+
+### ADS routes
+To actually communicate via the ADS transport layer you will need to set up a route on the instrument PC. To do so: 
+1. Install the XAR tools if not already installed. A copy of these will be hosted on `<public share>\third_party_installers\special_drivers\beckhoff\`
+2. Set up an ADS route on the NDX: 
+  - `Right-click TwinCAT icon in system tray -> Router -> Edit Routes -> Add...` with these settings:
+    - Advanced settings ticked, click the IP Address radio button, enter the IP address (mentioned above) 
+    - Static Target routes and remote routes (default) 
+    - Everything else can be left as defaults
+3. To confirm that this has been set up remote into the controller itself on the aforementioned IP address and check that the route to the NDX has been added automatically. You should not need to manually add a route in the controller. 
 
 ## IOC(s)
 
