@@ -177,6 +177,8 @@ Frequency | Test | Error
 
 This was setup as per https://doc.froglogic.com/squish/latest/ins-floating-license-server.html on `control-svcs.isis.cclrc.ac.uk` in the directory `/usr/local/squish-licenceserver` the service is automatically started at boot time vis systemd, the file `squish-licenseserver.service` has the service details and is symbolically linked from the systemd `/etc/systemd/system` area. The log file is `/var/log/squish-licenseserver.log` and the service is running on the default port of 49345
 
+To restart the licence server process use `sudo systemctl restart squish-licenseserver.service` on the licence server machine
+
 # Troubleshooting
 
 ### Squish fails to run tests with an error in the C runtime library
