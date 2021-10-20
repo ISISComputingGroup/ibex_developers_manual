@@ -3,7 +3,7 @@
 There are two use cases for adding a submodule:
 
 1. When the code is new, e.g. for a support module for a new device (Marked with **New** below)
-1. When importing code from a 3rd Party (Marked with **3rd party** below)
+1. When importing code from a 3rd Party e.g. a fork of another github project (Marked with **3rd party** below)
 
 ## 1 Create submodule in GitHub
 
