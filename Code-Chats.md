@@ -8,9 +8,7 @@ Code chats occur on a semi-regular monthly basis within the group at ISIS. Altho
 
 Topic | Presenter | Date
 ----- | --------- | ----
-HIFI Cryomag | Chris C | TBC
-BCC Cryogenics Course 2021 | James | TBC
-Java 17 LTS | TBC | TBC
+
 
 ### Books and article ideas for technical book club
 
@@ -43,6 +41,9 @@ asyncio and asynchronous programming in Python 3 | ?
 Script Server and Nicos | ?
 CAEN v895 Discriminator | Freddie
 MuSR conversion retrospective | Jack/Tom
+HIFI Cryomag | Chris C
+BCC Cryogenics Course 2021 | James
+Java 17 LTS | TBC
 
 ### Proposed Repeated Code Chats
 
