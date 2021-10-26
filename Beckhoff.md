@@ -81,6 +81,15 @@ To actually communicate via the ADS transport layer you will need to set up a ro
     - Everything else can be left as defaults
 3. To confirm that this has been set up remote into the controller itself on the aforementioned IP address and check that the route to the NDX has been added automatically. You should not need to manually add a route in the controller. 
 
+### IOC setup
+The IOC should be able to talk via ADS at this point but will need setting up in the respective configs. 
+- A TPY file will be used for `tCioc` to actually talk to the hardware - this should be placed in the instrument's twincat config area
+- A MTRCTRL number will need to be given - this is the normal controller number
+- Beckhoff_plc_code should be specified, this may be removed in future releases, more information on this is available below however it should be set to 1 for instruments running the latest code. 
+
+#### Axes, motion setpoints
+These are loaded in the usual way, however you'll need to put your `axes.cmd` and `motionSetpoints.cmd` files alongside the `tpy` file (in the twincat config directory)
+
 ## IOC(s)
 
 There are currently two IOCs that we have to communicate with Beckhoffs.
