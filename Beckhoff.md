@@ -100,7 +100,7 @@ This IOC was originally written by ESS. It uses an ASCII protocol over TCP/IP to
 - `doit.bat`
 - Start the IOC (host macros needs to be set to 127.0.0.1:5024)
 
-Currently this is only being run on IMAT. It should soon be replaced by the collaboration code.
+~Currently this is only being run on IMAT. It should soon be replaced by the collaboration code.~ - **It has been replaced by the new code, so is now defunct.**
 
 
 ### Beckhoff config area
