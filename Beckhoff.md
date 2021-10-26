@@ -83,12 +83,12 @@ To actually communicate via the ADS transport layer you will need to set up a ro
 
 ### IOC setup
 The IOC should be able to talk via ADS at this point but will need setting up in the respective configs. 
-- A TPY file will be used for `tCioc` to actually talk to the hardware - this should be placed in the instrument's twincat config area
-- A MTRCTRL number will need to be given - this is the normal controller number
-- Beckhoff_plc_code should be specified, this may be removed in future releases, more information on this is available below however it should be set to 1 for instruments running the latest code. 
+- A `.tpy` file will be used for `tCioc` to actually talk to the hardware via ADS - this should be placed in the instrument's twincat config area
+- A `MTRCTRL` number will need to be given - this is the normal controller number
+- `Beckhoff_plc_code` should be specified as a macro, this may be removed in future releases, more information on this is available below however it should be set to `1` for instruments running the latest code. 
 
 #### Axes, motion setpoints
-These are loaded in the usual way, however you'll need to put your `axes.cmd` and `motionSetpoints.cmd` files alongside the `tpy` file (in the twincat config directory)
+These are loaded in the usual way, you'll need to put your `axes.cmd` and `motionSetpoints.cmd` files alongside the `tpy` file (in the twincat config directory)
 
 ## IOC(s)
 
