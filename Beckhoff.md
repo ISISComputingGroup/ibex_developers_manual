@@ -73,7 +73,7 @@ Beckhoffs are connected to NDX machines via private networks, in much the same w
 
 ### ADS routes
 To actually communicate via the ADS transport layer you will need to set up a route on the instrument PC. To do so: 
-1. Install the XAR tools if not already installed. A copy of these will be hosted on `<public share>\third_party_installers\special_drivers\beckhoff\`
+1. Install the XAR tools if not already installed. A copy of these will be hosted on `<public share>\third_party_installers\special_drivers\beckhoff\`. All of the defaults are fine so this should be a case of just clicking through the wizard and installing the drivers that show up. 
 2. Set up an ADS route on the NDX: 
   - `Right-click TwinCAT icon in system tray -> Router -> Edit Routes -> Add...` with these settings:
     - Advanced settings ticked, click the IP Address radio button, enter the IP address (mentioned above) 
@@ -90,7 +90,7 @@ There are currently two IOCs that we have to communicate with Beckhoffs.
 The current Beckhoff applications that are being run through `tcIOC` and the CI pipeline discussed above are:
 * [dummy_PLC](https://github.com/ISISComputingGroup/BeckhoffPLCCode/tree/dummy_PLC)- a PLC that does very little, basically used to test that fundamental tcIOC comms works
 * [old_ISIS_code](https://github.com/ISISComputingGroup/BeckhoffPLCCode/tree/Ticket5052_refactor_test_runner) - this is the old ISIS prototype motion code that is currently on the CRISP jaws. Hopefully this code can be removed once the jaws are moved on.
-* [ESS_base_code](https://bitbucket.org/europeanspallationsource/tc_generic_structure/) - this is the collaboration code that we will be using go forward. Currently the build only confirms that this can be built and runs no tests against it.
+* [ESS_base_code](https://bitbucket.org/europeanspallationsource/tc_generic_structure/) (now `main`) - this is the collaboration code that we will be using go forward.
 
 ### MCAG
 
