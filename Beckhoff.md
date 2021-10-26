@@ -69,7 +69,7 @@ Note that the IOC tests do not stop the PLC at the end of the run, however this 
 These steps are for commissioning a Beckhoff on a beamline. 
 
 ### Networking
-Beckhoffs are connected to NDX machines via private networks, in much the same way as the Galils. By convention Beckhoffs live in the `192.168.1.22X` range, starting at 0 for the first controller (`192.168.1.220`) 
+Beckhoffs are connected to NDX machines via private networks, in much the same way as the Galils. By convention Beckhoffs live in the `192.168.1.22X` range, starting at 1 for the first controller (`192.168.1.221`) 
 
 ### ADS routes
 To actually communicate via the ADS transport layer you will need to set up a route on the instrument PC. To do so: 
