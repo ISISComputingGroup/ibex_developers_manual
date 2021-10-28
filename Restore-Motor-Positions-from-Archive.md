@@ -2,6 +2,8 @@
 
 This tool can be used to restore motor positions from the archive and put them on the current motor axis. It works by running in an epics terminal the commands:
 
+**NOTE** (edge case): If you are applying positions obtained with this script via SECI, be careful as the user offsets may be different for each axis i.e. the difference needs to be added to the recovered position.
+
 ```
 cd C:\Instrument\Apps\EPICS\ISIS\inst_servers\master\scripts
 %PYTHON3% restore_motor_positions.py <arguments>
