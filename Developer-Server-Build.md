@@ -28,14 +28,16 @@ After copying note that all submodules will be on a detached HEAD.
  
 If you wanted to temporarily use an updated distribution for e.g. a review then you can: 
 - rename current `c:\Instrument\Apps\EPICS` to `c:\Instrument\Apps\EPICS-keep`
-- run above `robocopy` command to create a new `c:\Instrument\Apps\EPICS`
+- use one of the above procedures to create a new `c:\Instrument\Apps\EPICS`
 - checkout branches required for review, run make in just these directories if required
 - when done delete `c:\Instrument\Apps\EPICS` and rename `EPICS-keep` back to `EPICS`
 
 If you wish to work with a debug build, replace `x64` with `x64-debug` in above commands
 
-This scheme works as Visual Studio is binary compatible (even at object file level) from version 2015 onwards. Linking must be done with the most recent visual studio version used, the build server is currently version 2017, so any developer using Visual Studio 2017 or 2019 can use this approach.  
+This scheme works as Visual Studio is binary compatible (even at object file level) from version 2015 onwards. Linking must be done with the most recent visual studio version used, the build server is currently running 2019, so any developer must also be using Visual Studio 2019.  
  
 ### NOTES
 
-Currently the build does not copy `CMakeCache.txt` across - this is because the file is invalid if the visual studio version number is different (2017 v 2019). CMake is used in a few third party modules e.g. MySQL, gsl, OpenCV. Compatible binaries for these will have been copied across, so IOCs can be compiled and linked, but the lack of a `CMakeCache.txt` will mean that a `make` in the top level will rebuild these modules, some of which do take a while. When everything is VS2019 we can relax this restriction.
+We now copy `CMakeCache.txt` across, if we later again have different developer and build server versions of visual studio then we will again need to not copy it as it is invalid if the visual studio version number is different (2017 v 2019). 
+
+CMake is used in a few third party modules e.g. MySQL, gsl, OpenCV. Compatible binaries for these will always be copied across, so IOCs can be compiled and linked, but if `CMakeCache.txt` is missing a `make` in the top level will rebuild these modules, some of which do take a while.
