@@ -12,7 +12,7 @@ robocopy \\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer\EPICS\x64 c:\Ins
 ```
 This may take a while to complete - at least 10 minutes, but longer if your disk is not an SSD for example.
 
-Alternatively, you can copy and unpack `EPICS-x64.7z` from `\\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer` and unpack thios locally using 7-zip 
+Alternatively, you can copy and unpack `EPICS-x64.7z` from `\\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer` and unpack this locally using 7-zip 
 
 After copying note that all submodules will be on a detached HEAD. 
  
