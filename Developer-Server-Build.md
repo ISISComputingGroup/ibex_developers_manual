@@ -6,13 +6,22 @@ The EPICS clean Windows 10 Jenkins build workspace is copied to  `\\isis.cclrc.a
 
 CAUTION: updating an existing `C:\Instrument\Apps\EPICS` by the mechanism described here is the equivalent of deleting the directory, a full new `git clone --recursive` and then a build. You will lose all current changes to files and also any local git branches you created in that directory. Any changes there you want to keep you must push to Github and then re-checkout the branch after the update. Stashing changes to files is not enough as the local git repos are replaced - you need to push remotely.
 
+### Getting Files
 After running this command, you should have a compiled and ready to use distribution, with git pointing at current commit heads.
 ```
 robocopy \\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer\EPICS\x64 c:\Instrument\Apps\EPICS -MIR -NFL -NDL -NP -R:1 -MT -LOG:NUL
 ```
 This may take a while to complete - at least 10 minutes, but longer if your disk is not an SSD for example.
 
-Alternatively, you can copy and unpack `EPICS-x64.7z` from `\\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer` and unpack this locally using 7-zip 
+**Alternative for slow network connection**
+
+You can instead copy `EPICS-x64.7z` from `\\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer` and unpack this locally using the 7-zip program. Either drag the file using windows explorer, or if you have a very slow connection or one that might get interrupted you can try using `robocopy` in network restartable mode. Open a cmd prompt, change to the relevant directory and type:
+```
+robocopy "\\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer" "." EPICS-x64.7z /J /Z 
+```
+Note that this pre-allocates the file space before starting the copy. I found that if I interrupt the copy with Ctrl-C and then type the command again, it picks up where it left off, so it looks hopeful it will handle network connection breaks.
+ 
+### Using Files
 
 After copying note that all submodules will be on a detached HEAD. 
  
