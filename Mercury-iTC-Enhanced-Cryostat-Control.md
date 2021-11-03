@@ -35,4 +35,4 @@ Another problem with the Mercury iTCs is that when in automated needle valve con
 
 ### High-temperature operation
 
-When operating above the cutoff temperature the MERCURY_ITC IOC should use a lookup table to decide what to set the pressure setpoint to. There should be a reasonable default lookup table in the common configs area, but a user should be able to set their own 
+When operating above the cutoff temperature the MERCURY_ITC IOC should use a lookup table to decide what to set the pressure setpoint to. There should be a reasonable default lookup table in the common configs area, but a user should be able to set their own lookup table stored in the instruments config area. The lookup table is a key-value pair. The key is the difference between the current heater power and the target heater power. The value is the pressure setpoint to set.
