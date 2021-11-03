@@ -13,6 +13,8 @@ It is difficult to switch between the two modes and requires multiple Mercurys w
 
 Implementation is to be done by modifying the existing MERCURY_ITC IOC in IBEX (https://github.com/ISISComputingGroup/EPICS-ioc/tree/master/MERCURY_ITC, https://github.com/ISISComputingGroup/EPICS-MercuryiTC). This implementation will enable the mercury hardware to be always configured for Pressure Control Mode, whilst we add an automated pressure control behaviour to optimise the pressure for given heater powers. This automated pressure control behaviour sets the pressure based on the current and target heater power.
 
+
+
 ## Switching the automated pressure control on and off
 
 The automated pressure control behaviour needs to be able to be turned on and off. The IOC should behave as if no changes had been made to the IOC when this behaviour is turned off. The behaviour should be turned on and off by a boolean checkbox in the OPI, which controls a PV whose value is persisted through autosave.
