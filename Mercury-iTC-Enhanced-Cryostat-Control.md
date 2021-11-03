@@ -24,8 +24,6 @@ The benefits of using autosave over a macro:
 - Makes the IOC more testable (not requiring a restart of the IOC in the IOCTestFramework to switch modes)
 - Enables switching between modes without reloading config
 
-However, it would also increase the complexity of the IOC.
-
 ## Temperature cutoff
 
 There will need to be two modes of operation, one at high temperatures which uses a lookup table and one at low temperatures which would set a constant pressure. We define high temperatures as any temperature above a user-defined cutoff point, and low temperatures as anything below it. This cutoff point should default to 5 Kelvin.
