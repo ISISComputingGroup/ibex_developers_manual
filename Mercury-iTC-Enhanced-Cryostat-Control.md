@@ -44,6 +44,7 @@ The user can choose a delay between setting setpoints to avoid overloading the d
 ## Questions whilst designing
 
 - I have used temperature and temperature setpoint here as it seems logical to me. It was mentioned in the meeting that the mercury algorithm set the needle valve based on the heater power. Is using the difference between the temperature and temperature setpoint correct? As far as I can tell we only seem to be able to get one value for the heater power, not a target and a current value.
+  - When we talk about heater power are we talking about a value in Watts, Volts or Percent?
 - This design expects a single temperature channel and a single pressure channel set by the user, does this match the requirements? If so are the single temperature cards and pressure cards fixed or do they vary?
 
 ## Device Screen
