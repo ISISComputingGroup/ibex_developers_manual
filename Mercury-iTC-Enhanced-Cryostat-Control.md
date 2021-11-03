@@ -23,7 +23,6 @@ The benefits of using autosave over a macro:
 
 - Makes the IOC more testable (not requiring a restart of the IOC in the IOCTestFramework to switch modes)
 - Enables switching between modes without reloading config
-- Prevents the requirement for configurations to be changed
 
 However, it would also increase the complexity of the IOC.
 
