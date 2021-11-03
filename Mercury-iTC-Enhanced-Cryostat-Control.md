@@ -30,7 +30,7 @@ There will need to be two modes of operation, one at high temperatures which use
 
 ### Low-temperature operation
 
-Another problem with the Mercury iTCs is that when in automated needle valve control at a temperature of less than 5 Kelvin the needle valve is fully opened, which is not optimal for temperature control. When operating below the cutoff temperature our automated pressure control behaviour will set should do is "When below the temperature cutoff point then set the pressure to a constant value which is defined by the user with a default of 5 mbar".
+Another problem with the Mercury iTCs is that when in automated needle valve control at a temperature of less than 5 Kelvin the needle valve is fully opened, which is not optimal for temperature control. When operating below the cutoff temperature our automated pressure control should set the pressure to a user-defined constant pressure value. This constant pressure value should persist (using autosave) and default to 5 mbar.
 
 ### High-temperature operation
 
