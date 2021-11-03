@@ -41,5 +41,5 @@ When operating above the cutoff temperature the MERCURY_ITC IOC should use a loo
 
 ## Questions whilst designing
 
-- I have used temperature and temperature setpoint here as it seems logical to me. It was mentioned in the meeting that the mercury algorithm set the needle valve based on the heater power. Is using temperature and temperature setpoint differences correct? We only seem to be able to get one value for the heater power, not a target and a current value.
-- This design accounts for a single temperature channel and a single pressure channel, does this match the requirements? If so are the single temperature cards and pressure cards fixed or do they vary?
+- I have used temperature and temperature setpoint here as it seems logical to me. It was mentioned in the meeting that the mercury algorithm set the needle valve based on the heater power. Is using the difference between the temperature and temperature setpoint correct? As far as I can tell we only seem to be able to get one value for the heater power, not a target and a current value.
+- This design expects a single temperature channel and a single pressure channel set by the user, does this match the requirements? If so are the single temperature cards and pressure cards fixed or do they vary?
