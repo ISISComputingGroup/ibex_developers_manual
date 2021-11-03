@@ -13,7 +13,7 @@ It is difficult to switch between the two modes and requires multiple Mercurys w
 
 Implementation is to be done by modifying the existing MERCURY_ITC IOC in IBEX (https://github.com/ISISComputingGroup/EPICS-ioc/tree/master/MERCURY_ITC, https://github.com/ISISComputingGroup/EPICS-MercuryiTC). This implementation will enable the mercury hardware to be always configured for Pressure Control Mode, whilst we add an automated pressure control behaviour to optimise the pressure for given heater powers. This automated pressure control behaviour sets the pressure based on the current and target heater power.
 
-
+![Flowchart design](https://raw.githubusercontent.com/wiki/ISISComputingGroup/ibex_developers_manual/MercuryEnhancedCryo.drawio.png)
 
 ## Switching the automated pressure control on and off
 
