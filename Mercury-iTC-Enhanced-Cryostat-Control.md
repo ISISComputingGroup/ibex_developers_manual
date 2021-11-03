@@ -15,17 +15,17 @@ Implementation is to be done by modifying the existing MERCURY_ITC IOC in IBEX (
 
 ## Switching the automated pressure control on and off
 
-The automated pressure control behaviour needs to be able to be turned on and off. The IOC should behave as if no changes had been made to the IOC when this behaviour is turned off. There are two options to switching on and off the control:
+The automated pressure control behaviour needs to be able to be turned on and off. The IOC should behave as if no changes had been made to the IOC when this behaviour is turned off. The behaviour should be turned on and off by a boolean checkbox in the OPI, which controls a PV whose value is persisted through autosave.
 
-- The behaviour is turned on and off by a macro in a configuration
-- The behaviour is turned on and off by a boolean checkbox in the OPI, which controls a PV whose value is persisted through autosave
-  - Unlike a macro this would:
-    - make the IOC more testable (not requiring a restart of the IOC in the IOCTestFramework to switch modes)
-    - enable switching between modes in a script
-    - prevent the requirement for configurations to be changed
-  - However, it would also increase the complexity of the IOC
+The benefits of using autosave over a macro:
+
+- Makes the IOC more testable (not requiring a restart of the IOC in the IOCTestFramework to switch modes)
+- Enables switching between modes in a script
+- Prevents the requirement for configurations to be changed
+
+However, it would also increase the complexity of the IOC
 
 
 ## Automated pressure control modes of operation
 
-There will need to be two 
+There will need to be two modes of operation, one at high temperatures which uses a lookup table and one at low pressures
