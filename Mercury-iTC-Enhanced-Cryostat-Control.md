@@ -29,6 +29,9 @@ However, it would also increase the complexity of the IOC.
 
 There will need to be two modes of operation, one at high temperatures which uses a lookup table and one at low temperatures which would set a constant pressure. We define high temperatures as any temperature above a user-defined cutoff point, and low temperatures as anything below it. This cutoff point should default to 5 Kelvin.
 
-## Low temperature operation
+### Low-temperature operation
 
-Another problem with the Mercury iTCs is that in 
+Another problem with the Mercury iTCs is that when in automated needle valve control at a temperature of less than 5 Kelvin the needle valve is fully opened, which is not optimal for temperature control. What our automated pressure control behaviour should do is "When below the temperature cutoff point then set the pressure to a constant value which is defined by the user with a default of 5 mbar".
+
+### High-temperature operation
+
