@@ -41,7 +41,8 @@ When operating above the cutoff temperature the MERCURY_ITC IOC should use a loo
 
 ### Operation delay
 
-After setting a pressure setpoint we can choose to delay by a given amount this 
+The user can choose a delay between setting setpoints to avoid overloading the device. This delay will be set in milliseconds with a default of 200                 ms. It could be set to 0 ms to avoid any delay. The delay value should be an autosaved PV so the value is persisted.
+
 
 ## Questions whilst designing
 
