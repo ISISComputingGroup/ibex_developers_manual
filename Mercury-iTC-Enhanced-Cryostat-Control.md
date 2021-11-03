@@ -11,7 +11,7 @@ It is difficult to switch between the two modes and requires multiple Mercurys w
 
 # Design
 
-Implementation is to be done by modifying the existing MERCURY_ITC IOC in IBEX (https://github.com/ISISComputingGroup/EPICS-ioc/tree/master/MERCURY_ITC, https://github.com/ISISComputingGroup/EPICS-MercuryiTC). The changes will add an automated pressure control behaviour on top of the existing behaviour.
+Implementation is to be done by modifying the existing MERCURY_ITC IOC in IBEX (https://github.com/ISISComputingGroup/EPICS-ioc/tree/master/MERCURY_ITC, https://github.com/ISISComputingGroup/EPICS-MercuryiTC). This implementation will enable the mercury hardware to be always configured for Pressure Control Mode, whilst we add an automated pressure control behaviour to optimise the pressure for given heater powers. This automated pressure control behaviour sets the pressure based on the current and target heater power.
 
 ## Switching the automated pressure control on and off
 
@@ -28,3 +28,7 @@ However, it would also increase the complexity of the IOC.
 ## Temperature cutoff
 
 There will need to be two modes of operation, one at high temperatures which uses a lookup table and one at low temperatures which would set a constant pressure. We define high temperatures as any temperature above a user-defined cutoff point, and low temperatures as anything below it. This cutoff point should default to 5 Kelvin.
+
+## Low temperature operation
+
+Another problem with the Mercury iTCs is that in 
