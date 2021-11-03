@@ -41,4 +41,5 @@ When operating above the cutoff temperature the MERCURY_ITC IOC should use a loo
 
 ## Questions whilst designing
 
-- What is the current and target heater power?
+- What is the current and target heater power? Should we really be looking at the temperature and temperature setpoint?
+- Are we just looking at a single temperature and a single pressure channel? Are these fixed?
