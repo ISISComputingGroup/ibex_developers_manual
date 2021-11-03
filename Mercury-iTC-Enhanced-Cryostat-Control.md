@@ -26,7 +26,7 @@ The benefits of using autosave over a macro:
 
 ## Temperature cutoff
 
-There will need to be two modes of operation, one at high temperatures which uses a lookup table and one at low temperatures which would set a constant pressure. We define high temperatures as any temperature above a user-defined cutoff point, and low temperatures as anything below it. This cutoff point should default to 5 Kelvin.
+There will need to be two modes of operation, one at high temperatures which uses a lookup table and one at low temperatures which would set a constant pressure. We define high temperatures as any temperature above a user-defined cutoff point, and low temperatures as anything below it. This cutoff point should persist (using autosave) and default to 5 Kelvin.
 
 ### Low-temperature operation
 
