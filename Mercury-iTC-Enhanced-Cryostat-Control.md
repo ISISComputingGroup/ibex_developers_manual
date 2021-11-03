@@ -11,7 +11,7 @@ It is difficult to switch between the two modes and requires multiple Mercurys w
 
 # Design
 
-Implementation is to be done by modifying the existing MERCURY_ITC IOC in IBEX (https://github.com/ISISComputingGroup/EPICS-ioc/tree/master/MERCURY_ITC, https://github.com/ISISComputingGroup/EPICS-MercuryiTC). This implementation will enable the mercury hardware to be always configured for Pressure Control Mode, whilst we add an automated pressure control behaviour to optimise the pressure for given heater powers. This automated pressure control behaviour sets the pressure based on the current and target heater power.
+Implementation is to be done by modifying the existing MERCURY_ITC IOC in IBEX (https://github.com/ISISComputingGroup/EPICS-ioc/tree/master/MERCURY_ITC, https://github.com/ISISComputingGroup/EPICS-MercuryiTC). This implementation will enable the mercury hardware to be always configured for Pressure Control Mode, whilst we add an automated pressure control behaviour to optimise the pressure for given temperature setpoints. This automated pressure control behaviour sets the pressure based on the temperature and the temperature setpoint.
 
 ![Flowchart design](https://raw.githubusercontent.com/wiki/ISISComputingGroup/ibex_developers_manual/MercuryEnhancedCryo.drawio.png)
 
@@ -37,9 +37,9 @@ Another problem with the Mercury iTCs is that when in automated needle valve con
 
 ### High-temperature operation
 
-When operating above the cutoff temperature the MERCURY_ITC IOC should use a lookup table to decide what to set the pressure setpoint to. There should be a reasonable default lookup table in the common configs area, but a user should be able to set their own lookup table stored in the instruments config area. The lookup table is a key-value pair. The key is the difference between the current heater power and the target heater power. The value is the pressure setpoint to set.
+When operating above the cutoff temperature the MERCURY_ITC IOC should use a lookup table to decide what to set the pressure setpoint to. There should be a reasonable default lookup table in the common configs area, but a user should be able to set their own lookup table stored in the instruments config area. The lookup table is a key-value pair. The key is the difference between the temperature and the temperature setpoint. The value is the pressure setpoint to set when the temperature - temperature setpoint is within the range of the values given key.
 
 ## Questions whilst designing
 
-- What is the current and target heater power? Should we really be looking at the temperature and temperature setpoint?
+- I have used temperature and temperature setpoint here as it seems logical. It was mentioned in the meeting that the mercury algorithm set the needle valve based on the heater power. Is using temperature and temperature setpoint differences correct? We only seem to be able to get one value for the heater power, not a target and a current value.
 - Are we just looking at a single temperature and a single pressure channel? Are these fixed?
