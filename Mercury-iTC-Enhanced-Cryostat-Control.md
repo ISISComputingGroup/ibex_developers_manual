@@ -23,9 +23,8 @@ The benefits of using autosave over a macro:
 - Enables switching between modes in a script
 - Prevents the requirement for configurations to be changed
 
-However, it would also increase the complexity of the IOC
+However, it would also increase the complexity of the IOC.
 
+## Temperature cutoff
 
-## Automated pressure control modes of operation
-
-There will need to be two modes of operation, one at high temperatures which uses a lookup table and one at low pressures
+There will need to be two modes of operation, one at high temperatures which uses a lookup table and one at low temperatures which would set a constant pressure. We define high temperatures as any temperature above a user-defined cutoff point, and low temperatures as anything below it. This cutoff point should default to 5 Kelvin.
