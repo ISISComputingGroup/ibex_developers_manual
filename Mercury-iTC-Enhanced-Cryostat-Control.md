@@ -46,6 +46,7 @@ The user can choose a delay between setting setpoints to avoid overloading the d
 - There seems to be a mix of terminology for the lookup table key. Here I have used the difference between the temperature and temperature setpoint because it was one of the terms used and seemed logical to me. The other suggestion was using the difference between the current heater power and the target heater power. Is using the difference between the temperature and temperature setpoint correct? Also, the IOC currently does not have the ability to read a current and target heater power it seems to just read a single value. The manual seems to suggest for a heater controller we can set and get a heater power but that is untested comms behaviour from our end.
   - The heater power I have referred to here seems to be in Watts. There seems to be a few different heater values with different units. Is the one referred to previously a value in Watts, Volts or Percent?
 - This design expects the user to set a single temperature channel and a single pressure channel for the behaviour to work with, does this match the requirements? If so are the single temperature cards and pressure cards that we want to use for this control fixed or do they vary?
+- This design does not use parameters that the mercury itc uses for auto needle valve control but relies on a lookup table being handwritten. Is this sufficient or do we need to come up with an algorithm to tune that table from some parameters?
 
 ## Device Screen
 
