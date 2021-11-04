@@ -49,4 +49,6 @@ The user can choose a delay between setting setpoints to avoid overloading the d
 
 ## Device Screen
 
+On branch at https://github.com/ISISComputingGroup/ibex_gui/tree/Ticket6729_enhanced_cryostat_control.
+
 ![Device screen design](https://raw.githubusercontent.com/wiki/ISISComputingGroup/ibex_developers_manual/MercuryEnhancedCryoDeviceScreen.png)
