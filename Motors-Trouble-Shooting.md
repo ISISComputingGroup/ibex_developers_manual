@@ -36,7 +36,7 @@ grep ON_CMD *
 
 Then click the buttons to set it up correctly.
 
-## Simulated Motor not moving
+### Simulated Motor not moving
 
 There is a known bug where a simulated motor will not move after setting the MRES of the motor, see [here](https://github.com/ISISComputingGroup/IBEX/issues/6881)
 
