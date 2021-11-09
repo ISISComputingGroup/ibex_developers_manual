@@ -87,6 +87,13 @@ The IOC should be able to talk via ADS at this point but will need setting up in
 - A `MTRCTRL` number will need to be given - this is the normal controller number
 - `Beckhoff_plc_code` should be specified as a macro, this may be removed in future releases, more information on this is available below however it should be set to `1` for instruments running the latest code. 
 
+#### Fields that aren't automatically populated
+Although commissioning a Beckhoff is far simpler than a Galil from an IBEX perspective, there are some fields that need to be set manually for each axis.  These are: 
+- Engineering units (`.EGU`) [ticket to populate](https://github.com/ISISComputingGroup/IBEX/issues/6855)
+- Axis description (`.DESC`) [ticket to populate](https://github.com/ISISComputingGroup/IBEX/issues/6860)
+- Velocity (`.VELO`) [ticket to populate](https://github.com/ISISComputingGroup/IBEX/issues/6861)
+
+
 #### Axes, motion setpoints
 These are loaded in the usual way, you'll need to put your `axes.cmd` and `motionSetpoints.cmd` files alongside the `tpy` file (in the twincat config directory)
 
