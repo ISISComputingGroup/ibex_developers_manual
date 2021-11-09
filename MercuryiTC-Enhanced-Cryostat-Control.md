@@ -24,17 +24,17 @@ The benefits of using autosave over a macro:
 - Makes the IOC more testable (not requiring a restart of the IOC in the IOCTestFramework to switch modes)
 - Enables switching between modes without reloading config
 
-## Temperature cutoff
+## Temperature cut-off
 
-There will need to be two modes of operation, one at high temperatures which uses a lookup table and one at low temperatures which would set a constant pressure. We define high temperatures as any temperature above a user-defined cutoff point, and low temperatures as anything below it. This cutoff point should persist (using autosave) and default to 5 Kelvin.
+There will need to be two modes of operation, one at high temperatures which uses a lookup table and one at low temperatures which would set a constant pressure. We define high temperatures as any temperature above a user-defined cut-off point, and low temperatures as anything below it. This cut-off point should persist (using autosave) and default to 5 Kelvin.
 
 ### Low-temperature operation
 
-Another problem with the MercuryiTCs is that when in automated needle valve control at a temperature of less than 5 Kelvin the needle valve is fully opened, which is not optimal for temperature control. When operating below the cutoff temperature our automated pressure control should set the pressure to a user-defined constant pressure value. This constant pressure value should persist (using autosave) and default to 5 mbar.
+Another problem with the MercuryiTCs is that when in automated needle valve control at a temperature of less than 5 Kelvin the needle valve is fully opened, which is not optimal for temperature control. When operating below the cut-off temperature our automated pressure control should set the pressure to a user-defined constant pressure value. This constant pressure value should persist (using autosave) and default to 5 mbar.
 
 ### High-temperature operation
 
-When operating above the cutoff temperature the MERCURY_ITC IOC should use a lookup table to decide what to set the pressure setpoint to. There should be a reasonable default lookup table in the common configs area, but a user should be able to set their own lookup table stored in the instruments config area. The lookup table is a key-value pair. The key is the difference between the temperature and the temperature setpoint. The value is the pressure setpoint to set when the temperature - temperature setpoint is within the range of the values given key.
+When operating above the cut-off temperature the MERCURY_ITC IOC should use a lookup table to decide what to set the pressure setpoint to. There should be a reasonable default lookup table in the common configs area, but a user should be able to set their own lookup table stored in the instruments config area. The lookup table is a key-value pair. The key is the difference between the temperature and the temperature setpoint. The value is the pressure setpoint to set when the temperature - temperature setpoint is within the range of the values given key.
 
 ### Operation delay
 
