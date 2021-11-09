@@ -11,8 +11,8 @@ The GUI also hooks into ActiveMQ to read/write to all these components. Previous
 
 The default ActiveMQ ports are:
 
-* 61616 for the openwire protocol (used by JMS)
-* 61613 for the STOMP protocol (used by script server)
+* 39990 for the openwire protocol (used by JMS)
+* 39991 for the STOMP protocol (used by script server)
 
 Due to port conflicts these have been changed to those listed [here](IBEX-Ports).
 
