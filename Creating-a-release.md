@@ -90,8 +90,8 @@ One or more people should do [manual system tests, using this page](Manual-syste
 
 The is a release when a change needs to be made between standard releases; i.e. a standard release is inappropriate because it includes lots of code which has not been through a code freeze and test. 
 
-1. Start a branch from the tag for the released version
 1. Follow all Pre Testing steps above except:
+    * For step 4 (creating the release branch) instead of creating from master create it from the latest release tag
     * Update GUI Java JRE
     * Finding the most significant change
     * Updating the MySQL and Java being deployed
