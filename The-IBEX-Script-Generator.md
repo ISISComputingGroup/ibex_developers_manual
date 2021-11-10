@@ -165,6 +165,10 @@ Script definitions are configuration files which specify the following in the sc
 
 The script definitions are stored in `c:\instrument\settings\ibex_script_generator\scriptdefinitions`. This location should exist on an instrument control machine. If this location does not exist, the script generator instead looks for a folder named `scriptdefinitions` next to the executable.
 
+# Dynamic Scripting
+
+[See here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/IBEX-Script-Generator-Dynamic-Scripting)
+
 # Interested instruments/groups
 
 - Muons
