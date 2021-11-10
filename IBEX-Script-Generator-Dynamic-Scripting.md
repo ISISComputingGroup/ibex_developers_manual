@@ -8,6 +8,8 @@ Three of these design patterns have been modified to fit our purpose. State, Fac
 
 The adapter pattern is used twice: once as an adapter to the NicosModel and the other as an adapter to the ScriptGeneratorSingleton.
 
+Dynamic scripting also makes use of the [dependency injection technique](https://www.freecodecamp.org/news/a-quick-intro-to-dependency-injection-what-it-is-and-when-to-use-it-7578c84fa88f/). See article for more details but this has allowed for ease of testing.
+
 ![UML Class Diagram for Dynamic Scripting](https://raw.githubusercontent.com/wiki/ISISComputingGroup/ibex_developers_manual/DynamicScripting.drawio.png)
 
 
