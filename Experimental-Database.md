@@ -11,7 +11,7 @@ The data is populated centrally from the [Experiment Database Populator](https:/
 
 ## Architecture
 
-The experiment database populator is a Python 3 program that is designed to run centrally and periodically update instrument databases. It does the following: 
+The experiment database populator is a Python 3.8 program that is designed to run centrally and periodically update instrument databases. It does the following: 
 * Monitors 'CS:INSTLIST' for instruments that are scheduled
 * Gathers 200 days worth of data from the web services hosted by business apps (Using the credentials stored in a git repository on the local share).
 * Reformats the data slightly to match the structure of the instrument databases
@@ -20,15 +20,21 @@ The experiment database populator is a Python 3 program that is designed to run 
 
 ## Testing
 
-* If it is the first time running the populator you will need to install Python 3 (any distribution should do) and ensure that you pip install the requirements listed in `requirements.txt`
+* If it is the first time running the populator you will need to install Python 3.8 (any distribution should do) and ensure that you pip install the requirements listed in `requirements.txt`
 * The populator has unit tests that are run in [jenkins](http://epics-jenkins.isis.rl.ac.uk/job/Experiment_Database_Populator/). 
 * You will need to add access permission for the populator to write to your local database, to do this run `EPICS/SystemSetup/create_test_account.bat`
 * You can write some dummy test data into your local database by using the `--test_data` argument. If you do not have access to the private share you can also specify the username and password for writing to the database using the `--db_user` and `--db_pass` flags. The username/password can be found in `EPICS/SystemSetup/test_account.sql`.
 
 ## Deployment
 
-The populator is installed on the linux server [control-svcs](control-svcs). This can be accessed using the credentials in the usual place. The program is installed under `/home/epics/RB_num_populator` and is being run as a `cron` job every hour. Logs for the program are written into `/home/epics/RB_number_populator/logs`. Output from the cron job, which will show if the program is not working, is written to `/tmp/rb_num_pop.out`. So see cron job details you need to `su` to epics and type `crontab -l` but they are likely
-```
-20 * * * * sh /home/epics/RB_num_populator/rb_number_populator.sh > /tmp/rb_num_pop.out 2>&1
-```
-To update the populator, simply `git pull` in the above directory as `epics`.
+The Experiment Database Populator needs to be deployed using a Python 3.8 virtual environment as the the repository is not compatible with the version of python installed system wide.
+
+Please follow the below instructions as part of deploying:
+
+* Make sure you are firstly a super user to epics using the following command: `sudo su - epics`
+* Pull most recent changes from master in `home/epics/RB_num_populator`
+* From `home/epics/RB_num_populator`, check that a python 3.8 virtual environment exists called _"exp_db_populator_venv"_.
+* Activate virtual environment if present and check `/home/epics/RB_num_populator/requirements.txt` file matches dependencies in venv and then deactivate the virtual environment.
+* If there is no virtual environment called _"exp_db_populator_venv"_ or dependencies are not inline with `/home/epics/RB_num_populator/requirements.txt`, run `/home/epics/RB_num_populator/create_rb_number_populator_python_venv.sh` and check the virtual environment has been created.
+* Check that the cron job is running correctly using the following command: `crontab -l`. The output should look similar to: ```20 * * * * sh /home/epics/RB_num_populator/rb_number_populator.sh > /tmp/rb_num_pop.out 2>&1```
+* Finally, check cron job is executing correctly by looking at recent logs since deploying under `/home/epics/RB_number_populator/logs` and for any errors indicating the cron job is not executing correctly under `/tmp/rb_num_pop.out`.
