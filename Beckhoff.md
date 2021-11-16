@@ -11,7 +11,7 @@ Beckhoff code can be run as a simulated system on a developer machine by doing t
 
  1. Download and install [TwinCAT 3 XAE](https://stfc365.sharepoint.com/sites/ISISMechatronics/Shared%20Documents/Forms/AllItems.aspx?viewid=a9a65e76%2D4335%2D479e%2Da1eb%2De12265e5cad6&id=%2Fsites%2FISISMechatronics%2FShared%20Documents%2FTwinCAT%20Development%2FTwinCAT%20Software) more information can be found about this [here](https://infosys.beckhoff.com/english.php?content=../content/1033/tcinfosys3/html/startpage.htm&id=). If you do not have permission ask IDD. The XAE is really just a Visual Studio plugin.
  1. Start the Twincat XAE. This can be done by clicking on the TwinCat icon in the system tray.
- 1. Open the Twincat project that you are interested in. For example there is a simple test PLC [here](https://github.com/ISISComputingGroup/BeckhoffPLCCode/tree/master/dummy_PLC)
+ 1. Open the Twincat project that you are interested in. For example the PLC_solution [here](https://github.com/ISISComputingGroup/BeckhoffTestRunner)
  1. Ensure that you have the following toolbars enabled in the XAE:
     - `TwinCAT PLC`
     - `TwinCAT XAE Base`
