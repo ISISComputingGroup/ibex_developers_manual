@@ -13,6 +13,7 @@ Don't forget the [drop in sessions](https://github.com/ISISComputingGroup/IBEX/w
 ## Timekeeper:
 * Needed for Pre-Planning, Review/Retrospective, and Planning
 * In Pre-Planning and planning limit discussion of tickets to a maximum of 5 minutes per ticket
+* In Pre-Planning and planning, act as moderator for the voting site, reopening voting as approprite (please announce when you do so to avoid everyone refreshing constantly thinking their site is bugged)
 * In Review ensure there is enough time for everyone to speak in the hour - this would be an average of 5 minutes per person if everyone was planning to demo
 * Keep an eye on the end time of the meeting - give everyone a five minute warning
 * If the meeting is scheduled for more than an hour to indicate the halfway time to make sure we take a break
