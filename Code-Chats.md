@@ -56,7 +56,6 @@ Mocking in Python and Java | ?
 Checkstyle Quiz | ?
 Maven, Tycho and Surefire | Tom Willemsen?
 IOC Testing Framework & Emulators | Tom Willemsen?
-RCPTT - Tips and Tricks | Dominic Oram
 
 ## Previous Code Chats
 
