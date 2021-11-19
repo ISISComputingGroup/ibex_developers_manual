@@ -8,6 +8,8 @@ Code chats occur on a semi-regular monthly basis within the group at ISIS. Altho
 
 Topic | Presenter | Date
 ----- | --------- | ----
+Github Universe | Jack Allen | 14/01/22
+Rust | Jack Harper | 14/02/22
 
 
 ### Books and article ideas for technical book club
