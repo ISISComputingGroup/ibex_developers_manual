@@ -11,7 +11,7 @@ It is difficult to switch between the two modes and requires multiple Mercurys w
 
 # Design
 
-This design comes after feedback from scientists and cryogenics teams on the previous design (below). There were concerns about the stability of control with the use of a single lookup table as it had not been tested before.  What had been tested before is the algorithm used on the orange cryostat. The second design uses elements from both the first and the orange cryostat. We have removed the use of the lookup table in favour of calculating the new pressure setpoint from `(T - Tset) ^ 2` which is limited by two separate maximum pressures (one specifically for the given temperature) and one a more general "safe" maximum, and a minimum pressure.
+This design comes after feedback from scientists and cryogenics teams on the previous design (below). There were concerns about the stability of control with the use of a single lookup table as it had not been tested before.  What had been tested before is the algorithm used on the orange cryostat. The second design uses elements from both the first design and the orange cryostat. We have removed the use of the lookup table in favour of calculating the new pressure setpoint from `(T - Tset) ^ 2` which is limited by two separate maximum pressures (one specifically for the given temperature) and one a more general "safe" maximum, and a minimum pressure.
 
 ## Python test script
 
