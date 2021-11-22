@@ -15,7 +15,7 @@ This design comes after feedback from scientists and cryogenics teams on the pre
 
 ## Python test script
 
-It was decided that we should test the algorithm using a python test script which can be found in the NDXEMU Python inst scripts.
+It was decided that we should test the algorithm using a python test script which can be found in the `Settings/config/NDXEMU/Python/inst` under the name `cryo_control_test.py`. The script has two classes: `UserDefined` and `CryoControlAlgorithm`. `UserDefined` contains defaults for parameters in the algorithm that a user will be able to define. `CryoControlAlgorithm` contains all the algorithmic logic. To run a test call `CryoControlAlgorithm.run()`, you can change the user-defined values by passing them as parameters to this run function e.g. to change the cutoff point call `CryoControlAlgorithm.run(cutoff_point=7.0)`. Other parameters can be found in the script.
 
 ## Flowchart
 
