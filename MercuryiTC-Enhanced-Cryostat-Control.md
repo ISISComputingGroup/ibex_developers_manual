@@ -25,7 +25,7 @@ When operating below the cut-off temperature our automated pressure control shou
 
 ## Implementation
 
-Implementation is to be done by modifying the existing MERCURY_ITC IOC in IBEX ([MERCURY_ITC IOC](https://github.com/ISISComputingGroup/EPICS-ioc/tree/master/MERCURY_ITC), [MercuryiTC support module](https://github.com/ISISComputingGroup/EPICS-MercuryiTC)). This implementation will enable the mercury hardware to be always configured for Pressure Control Mode, whilst we add an automated pressure control behaviour to optimise the pressure for given temperature setpoints. This automated pressure control behaviour sets the pressure based on the temperature and the temperature setpoint. My recommendation would be to build the logic with a small state machine in snl, with new PVs where required and the lookup table functionality using [ReadASCII](https://github.com/ISISComputingGroup/EPICS-ReadASCII).
+Implementation is to be done by modifying the existing MERCURY_ITC IOC in IBEX ([MERCURY_ITC IOC](https://github.com/ISISComputingGroup/EPICS-ioc/tree/master/MERCURY_ITC), [MercuryiTC support module](https://github.com/ISISComputingGroup/EPICS-MercuryiTC)). This implementation will enable the mercury hardware to be always configured for Pressure Control Mode, whilst we add an automated pressure control behaviour to optimise the pressure for given temperature setpoints. This automated pressure control behaviour sets the pressure based on the temperature and the temperature setpoint. My recommendation would be to build the logic with a small state machine in snl, with new PVs where required
 
 ## Switching the automated pressure control on and off
 
@@ -50,7 +50,7 @@ Another problem with the MercuryiTCs is that when in automated needle valve cont
 
 ### High-temperature operation
 
-When operating above the cut-off temperature the MERCURY_ITC IOC should use a lookup table to decide what to set the pressure setpoint to. There should be a reasonable default lookup table in the common configs area, but a user should be able to set their own lookup table stored in the instruments config area. The lookup table is a key-value pair. The key is the difference between the temperature and the temperature setpoint. The value is the pressure setpoint to set when the temperature - temperature setpoint is within the range of the values given key.
+When operating above the cut-off temperature the MERCURY_ITC IOC should use a lookup table to decide what to set the pressure setpoint to. There should be a reasonable default lookup table in the common configs area, but a user should be able to set their own lookup table stored in the instruments config area. The lookup table is a key-value pair. The key is the difference between the temperature and the temperature setpoint. The value is the pressure setpoint to set when the temperature - temperature setpoint is within the range of the values given key. The lookup table could be implemented using [ReadASCII](https://github.com/ISISComputingGroup/EPICS-ReadASCII).
 
 ### Operation delay
 
