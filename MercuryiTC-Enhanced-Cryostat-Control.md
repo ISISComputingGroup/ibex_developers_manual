@@ -9,15 +9,21 @@ EMU is the only beamline to be fully controlled by new MercuryiTCs as opposed to
 
 It is difficult to switch between the two modes and requires multiple Mercurys which cost thousands of pounds. For optimal control, scientists need the needle valve to be controlled based on the pressure (done automatically by the Mercury in Pressure Control Mode), but they also need the pressure to be controlled automatically based on the temperature setpoint (to be implemented in IBEX).
 
-# Design 2
+# Design
 
-This design comes after feedback from scientists and cryogenics teams on design 1 (below).
+This design comes after feedback from scientists and cryogenics teams on the previous design (below). There were concerns about the stability of control with the use of a single lookup table as it had not been tested before.  What had been tested before is the algorithm used on the orange cryostat. The second design uses elements from both the first design and the orange cryostat. We have removed the use of the lookup table in favour of calculating the new pressure setpoint from `(T - Tset) ^ 2` which is limited by two separate maximum pressures (one specifically for the given temperature) and one a more general "safe" maximum, and a minimum pressure.
 
-# Design 1
+## Python test script
 
-Implementation is to be done by modifying the existing MERCURY_ITC IOC in IBEX ([MERCURY_ITC IOC](https://github.com/ISISComputingGroup/EPICS-ioc/tree/master/MERCURY_ITC), [MercuryiTC support module](https://github.com/ISISComputingGroup/EPICS-MercuryiTC)). This implementation will enable the mercury hardware to be always configured for Pressure Control Mode, whilst we add an automated pressure control behaviour to optimise the pressure for given temperature setpoints. This automated pressure control behaviour sets the pressure based on the temperature and the temperature setpoint. My recommendation would be to build the logic with a small state machine in snl, with new PVs where required and the lookup table functionality using [ReadASCII](https://github.com/ISISComputingGroup/EPICS-ReadASCII).
+It was decided that we should test the algorithm using a python test script which can be found in the `Settings/config/NDXEMU/Python/inst` under the name `cryo_control_test.py`. The script has two classes: `UserDefined` and `CryoControlAlgorithm`. `UserDefined` contains defaults for parameters in the algorithm that a user will be able to define. `CryoControlAlgorithm` contains all the algorithmic logic. To run a test call `CryoControlAlgorithm.run()`, you can change the user-defined values by passing them as parameters to this run function e.g. to change the cutoff point call `CryoControlAlgorithm.run(cutoff_point=7.0)`. Other parameters can be found in the script.
 
-![Flowchart design](https://raw.githubusercontent.com/wiki/ISISComputingGroup/ibex_developers_manual/MercuryEnhancedCryo.drawio.png)
+## Flowchart
+
+![Flowchart design](https://raw.githubusercontent.com/wiki/ISISComputingGroup/ibex_developers_manual/MercuryEnhancedCryo2.drawio.png)
+
+## Implementation
+
+Implementation is to be done by modifying the existing MERCURY_ITC IOC in IBEX ([MERCURY_ITC IOC](https://github.com/ISISComputingGroup/EPICS-ioc/tree/master/MERCURY_ITC), [MercuryiTC support module](https://github.com/ISISComputingGroup/EPICS-MercuryiTC)). This implementation will enable the mercury hardware to be always configured for Pressure Control Mode, whilst we add an automated pressure control behaviour to optimise the pressure for given temperature setpoints. This automated pressure control behaviour sets the pressure based on the temperature and the temperature setpoint. My recommendation would be to build the logic with a small state machine in snl, with new PVs where required
 
 ## Switching the automated pressure control on and off
 
@@ -27,6 +33,14 @@ The benefits of using autosave over a macro:
 
 - Makes the IOC more testable (not requiring a restart of the IOC in the IOCTestFramework to switch modes)
 - Enables switching between modes without reloading config
+
+### Operation delay
+
+The user can choose a delay between setting setpoints to avoid overloading the device. This delay will be set in milliseconds with a default of 200                 ms. It could be set to 0 ms to avoid any delay. The delay value should be an autosaved PV so the value is persisted.
+
+# Previous Design
+
+![Flowchart design](https://raw.githubusercontent.com/wiki/ISISComputingGroup/ibex_developers_manual/MercuryEnhancedCryo.drawio.png)
 
 ## Temperature cut-off
 
@@ -38,12 +52,7 @@ Another problem with the MercuryiTCs is that when in automated needle valve cont
 
 ### High-temperature operation
 
-When operating above the cut-off temperature the MERCURY_ITC IOC should use a lookup table to decide what to set the pressure setpoint to. There should be a reasonable default lookup table in the common configs area, but a user should be able to set their own lookup table stored in the instruments config area. The lookup table is a key-value pair. The key is the difference between the temperature and the temperature setpoint. The value is the pressure setpoint to set when the temperature - temperature setpoint is within the range of the values given key.
-
-### Operation delay
-
-The user can choose a delay between setting setpoints to avoid overloading the device. This delay will be set in milliseconds with a default of 200                 ms. It could be set to 0 ms to avoid any delay. The delay value should be an autosaved PV so the value is persisted.
-
+When operating above the cut-off temperature the MERCURY_ITC IOC should use a lookup table to decide what to set the pressure setpoint to. There should be a reasonable default lookup table in the common configs area, but a user should be able to set their own lookup table stored in the instruments config area. The lookup table is a key-value pair. The key is the difference between the temperature and the temperature setpoint. The value is the pressure setpoint to set when the temperature - temperature setpoint is within the range of the values given key. The lookup table could be implemented using [ReadASCII](https://github.com/ISISComputingGroup/EPICS-ReadASCII).
 
 ## Device Screen
 
