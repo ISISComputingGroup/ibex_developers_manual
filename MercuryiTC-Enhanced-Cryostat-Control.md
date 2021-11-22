@@ -11,13 +11,21 @@ It is difficult to switch between the two modes and requires multiple Mercurys w
 
 # Design 2
 
-This design comes after feedback from scientists and cryogenics teams on design 1 (below).
+This design comes after feedback from scientists and cryogenics teams on design 1 (below). There were concerns about the stability of control with the use of a single lookup table as it had not been tested before.  What had been tested before is the algorithm used on the Eurotherm controlled orange cryostat. The second design uses elements from both the first and the orange cryostat. We have removed the use of the lookup table in favour of calculating the new pressure setpoint from `(T - Tset) ^ 2` which is limited by two separate maximum pressures (one specifically for the given temperature) and one a more general "safe" maximum, and a minimum pressure.
 
-# Design 1
+## Constant pressure value vs calculated pressure value
+
+There are two modes of operation when the automated pressure control is switched on. If the temperature 
+
+### Constant pressure value
+
+This constant pressure value mode avoids a problem with the MercuryiTCs, where, when the mercury is in automated needle valve control at a temperature of less than 5 Kelvin the needle valve is fully opened, which is not optimal for temperature control. 
+
+When operating below the cut-off temperature our automated pressure control should set the pressure to a user-defined constant pressure value. This constant pressure value should persist (using autosave) and default to 5 mbar.
+
+## Implementation
 
 Implementation is to be done by modifying the existing MERCURY_ITC IOC in IBEX ([MERCURY_ITC IOC](https://github.com/ISISComputingGroup/EPICS-ioc/tree/master/MERCURY_ITC), [MercuryiTC support module](https://github.com/ISISComputingGroup/EPICS-MercuryiTC)). This implementation will enable the mercury hardware to be always configured for Pressure Control Mode, whilst we add an automated pressure control behaviour to optimise the pressure for given temperature setpoints. This automated pressure control behaviour sets the pressure based on the temperature and the temperature setpoint. My recommendation would be to build the logic with a small state machine in snl, with new PVs where required and the lookup table functionality using [ReadASCII](https://github.com/ISISComputingGroup/EPICS-ReadASCII).
-
-![Flowchart design](https://raw.githubusercontent.com/wiki/ISISComputingGroup/ibex_developers_manual/MercuryEnhancedCryo.drawio.png)
 
 ## Switching the automated pressure control on and off
 
@@ -27,6 +35,10 @@ The benefits of using autosave over a macro:
 
 - Makes the IOC more testable (not requiring a restart of the IOC in the IOCTestFramework to switch modes)
 - Enables switching between modes without reloading config
+
+# Design 1
+
+![Flowchart design](https://raw.githubusercontent.com/wiki/ISISComputingGroup/ibex_developers_manual/MercuryEnhancedCryo.drawio.png)
 
 ## Temperature cut-off
 
