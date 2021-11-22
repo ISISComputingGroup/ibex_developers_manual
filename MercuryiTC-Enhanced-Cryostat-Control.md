@@ -13,15 +13,13 @@ It is difficult to switch between the two modes and requires multiple Mercurys w
 
 This design comes after feedback from scientists and cryogenics teams on the previous design (below). There were concerns about the stability of control with the use of a single lookup table as it had not been tested before.  What had been tested before is the algorithm used on the Eurotherm controlled orange cryostat. The second design uses elements from both the first and the orange cryostat. We have removed the use of the lookup table in favour of calculating the new pressure setpoint from `(T - Tset) ^ 2` which is limited by two separate maximum pressures (one specifically for the given temperature) and one a more general "safe" maximum, and a minimum pressure.
 
-## Constant pressure value vs calculated pressure value
+## Python test script
 
-There are two modes of operation when the automated pressure control is switched on. If the temperature 
+It was decided that we should test the algorithm using a python test script which can be found in the NDXEMU Python inst scripts.
 
-### Constant pressure value
+## Flowchart
 
-This constant pressure value mode avoids a problem with the MercuryiTCs, where, when the mercury is in automated needle valve control at a temperature of less than 5 Kelvin the needle valve is fully opened, which is not optimal for temperature control. 
-
-When operating below the cut-off temperature our automated pressure control should set the pressure to a user-defined constant pressure value. This constant pressure value should persist (using autosave) and default to 5 mbar.
+![Flowchart design](https://raw.githubusercontent.com/wiki/ISISComputingGroup/ibex_developers_manual/MercuryEnhancedCryo2.drawio.png)
 
 ## Implementation
 
@@ -35,6 +33,10 @@ The benefits of using autosave over a macro:
 
 - Makes the IOC more testable (not requiring a restart of the IOC in the IOCTestFramework to switch modes)
 - Enables switching between modes without reloading config
+
+### Operation delay
+
+The user can choose a delay between setting setpoints to avoid overloading the device. This delay will be set in milliseconds with a default of 200                 ms. It could be set to 0 ms to avoid any delay. The delay value should be an autosaved PV so the value is persisted.
 
 # Previous Design
 
@@ -51,11 +53,6 @@ Another problem with the MercuryiTCs is that when in automated needle valve cont
 ### High-temperature operation
 
 When operating above the cut-off temperature the MERCURY_ITC IOC should use a lookup table to decide what to set the pressure setpoint to. There should be a reasonable default lookup table in the common configs area, but a user should be able to set their own lookup table stored in the instruments config area. The lookup table is a key-value pair. The key is the difference between the temperature and the temperature setpoint. The value is the pressure setpoint to set when the temperature - temperature setpoint is within the range of the values given key. The lookup table could be implemented using [ReadASCII](https://github.com/ISISComputingGroup/EPICS-ReadASCII).
-
-### Operation delay
-
-The user can choose a delay between setting setpoints to avoid overloading the device. This delay will be set in milliseconds with a default of 200                 ms. It could be set to 0 ms to avoid any delay. The delay value should be an autosaved PV so the value is persisted.
-
 
 ## Device Screen
 
