@@ -9,9 +9,9 @@ EMU is the only beamline to be fully controlled by new MercuryiTCs as opposed to
 
 It is difficult to switch between the two modes and requires multiple Mercurys which cost thousands of pounds. For optimal control, scientists need the needle valve to be controlled based on the pressure (done automatically by the Mercury in Pressure Control Mode), but they also need the pressure to be controlled automatically based on the temperature setpoint (to be implemented in IBEX).
 
-# Design 2
+# Design
 
-This design comes after feedback from scientists and cryogenics teams on design 1 (below). There were concerns about the stability of control with the use of a single lookup table as it had not been tested before.  What had been tested before is the algorithm used on the Eurotherm controlled orange cryostat. The second design uses elements from both the first and the orange cryostat. We have removed the use of the lookup table in favour of calculating the new pressure setpoint from `(T - Tset) ^ 2` which is limited by two separate maximum pressures (one specifically for the given temperature) and one a more general "safe" maximum, and a minimum pressure.
+This design comes after feedback from scientists and cryogenics teams on the previous design (below). There were concerns about the stability of control with the use of a single lookup table as it had not been tested before.  What had been tested before is the algorithm used on the Eurotherm controlled orange cryostat. The second design uses elements from both the first and the orange cryostat. We have removed the use of the lookup table in favour of calculating the new pressure setpoint from `(T - Tset) ^ 2` which is limited by two separate maximum pressures (one specifically for the given temperature) and one a more general "safe" maximum, and a minimum pressure.
 
 ## Constant pressure value vs calculated pressure value
 
@@ -36,7 +36,7 @@ The benefits of using autosave over a macro:
 - Makes the IOC more testable (not requiring a restart of the IOC in the IOCTestFramework to switch modes)
 - Enables switching between modes without reloading config
 
-# Design 1
+# Previous Design
 
 ![Flowchart design](https://raw.githubusercontent.com/wiki/ISISComputingGroup/ibex_developers_manual/MercuryEnhancedCryo.drawio.png)
 
