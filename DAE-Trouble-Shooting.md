@@ -158,6 +158,12 @@ when trying to BEGIN on a real DAE, then there are two likely causes:
 
 If the wiring table is correct, try a restart of the ISISICP - the DAE is only scanned at program startup, it might be the DAE hardware was not feeling very responsive first time around. If this doesn't help, then it may be the detector card has failed, or it could be the hardware is in a strange state and needs a reset. Electronics group have programs that can do this.  
 
+If the system is running DAE3, then there is another possible cause. check the log for a line like
+```
+2021-11-25 15:40:19  (36692) (0) Qxtrm_driver: [Error] (Qxtrm_driver::Qxtrm_driver) Unable to create Quixtream on process20: Quixtream Error: Failed to bind the socket to the local port.
+```
+The quickstream driver expects certain ports in the UDP dynamic range to be available - this error indicates something is not. It is not very helpful about which specific port (it uses UDP ports from 0xFE00 (65024) upwards) so a reboot may be the only option. 
+
 ### DAE exception messages
 
 If you get an error in you IOC log like:
