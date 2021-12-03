@@ -31,15 +31,26 @@ Items **NOT** within the repository
 
 ## RhFe temperature calibration conversion
 
-There is a script designed to convert RhFe temperature sensor calibration files.
+### Convert from .dab files to .txt 
+There is a script designed to convert RhFe temperature sensor calibration files in .dat format.
 
-Available at https://github.com/ISISComputingGroup/ibex_utils/tree/master/workflow_support_scripts.
-
-**Note: the script skips the first 3 lines of the files as they contain metadata. Ensure this is also true of the new calibration files before running this script. If not, the script may need adjusting to cope with different file formats.**
+**Note: The script skips the first 3 lines of the files as they contain metadata.**
 
 Call with `%PYTHON3% convert_temp_calib_files.py -i <input_folder> -o <output_folder>`.
 
 Produces a `.txt` file for every walk-able folder under `input_folder` that contains a `.dat` file. The first 3 lines of the `.dat` file are stripped (these are header lines we do not require), for each line we then split by whitespace and take the first two of elements of the produced array and separate them with a comma. These lines are then written to an output file with the name of the folder and the txt extension e.g. `F232.txt`.
+
+### Convert from .curve files to .txt
+
+There is a script designed to convert RhFe temperature sensor calibration files in .curve format.
+
+**Note: The script skips the first 6 lines of the files as they contain metadata and creates a header in ISIS calibration file format (see below).**
+
+Produces a `.txt` file for every walk-able folder under `input_folder` that contains a `.curve` file. The first 6 lines of the `.curve` file are stripped (these are header lines we do not require), a header block in ISIS calibration file format is generated and for each line we then split by whitespace and take the first two of elements of the produced array and separate them with a comma. These lines are then written to an output file with the name of the folder and the txt extension e.g. `F232.txt`.
+
+Scripts are available at https://github.com/ISISComputingGroup/ibex_utils/tree/master/workflow_support_scripts.
+
+**Note: Ensure that metadata of the new calibration files match with the format of the script you are using before running it. If not, the script may need adjusting to cope with different file formats.**
 
 You will then need to push these files to the common config area and update the files on the instruments using the section below.
 
