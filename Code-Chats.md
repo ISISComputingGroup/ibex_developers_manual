@@ -30,11 +30,11 @@ Idea | Proposed Speaker
 ---- | ---------------
 IBEX Project Management | Kathryn
 ISISICP | Freddie
-LUA  | James
-BDD/DDD | James/?
+LUA  | ?
+BDD/DDD | ?
 Software design techniques in our processes | Aaron
 The HIFI Cryomag | Chris C/Kathryn
-Design Patterns in IBEX | Dom
+Design Patterns in IBEX | ?
 Datastreaming | Dolica/Jack/Matt
 LVDCOM | Freddie
 IBEX UI Design | Thomas Löhnert
@@ -44,7 +44,7 @@ Script Server and Nicos | ?
 CAEN v895 Discriminator | Freddie
 MuSR conversion retrospective | Jack/Tom
 HIFI Cryomag | Chris C
-BCC Cryogenics Course 2021 | James
+BCC Cryogenics Course 2021 | ?
 Java 17 LTS | TBC
 
 ### Proposed Repeated Code Chats
