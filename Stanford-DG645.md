@@ -15,7 +15,7 @@ The IOC currently covers setting and reading of delays of channels T0, T1, A, B,
 - Channel A is currently 5ms + T0
 - Channel D is currently 10ms + A
 ## 
-Then final delay for channel D is 15ms which in the GUI is called a 'channel width'.It is possible to chain references accross all of the channels. Channel T1 serves as max function of all the other channels.
+Then final delay for channel D is 15ms which in the GUI is called a 'channel width'.It is possible to chain references across all of the channels. Channel T1 serves as max function of all the other channels.
 
 ### Widths
 
