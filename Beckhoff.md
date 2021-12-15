@@ -101,6 +101,24 @@ These can be set via a `caput` and will be autosaved thereafter.
 #### Axes, motion setpoints
 These are loaded in the usual way, you'll need to put your `axes.cmd` and `motionSetpoints.cmd` files alongside the `tpy` file (in the twincat config directory)
 
+#### If a controller has more than 8 axes
+If a controller with more than 8 axes is going to be used for now you will need to alias these axes over to another controller to see them in the GUI. 
+You can do this by loading in a records file with some aliases in from motorExtensions.cmd like so: 
+
+`motorExtensions.cmd`: 
+```
+dbLoadRecords("C:/Instrument/Settings/config/NDLT1542/configurations/twincat/controller_alias.db","P=TE:NDLT1542:,")
+
+```
+which loads in `controller_alias.db`: 
+```
+alias("$(P)MOT:MTR0109", "$(P)MOT:MTR0201")
+alias("$(P)MOT:MTR0109_able", "$(P)MOT:MTR0201_able")
+```
+which will alias over the 9th axis to another controller, which will enable you to see it in the GUI. You need to do the `_able` record too as this will make it show up as enabled in the GUI. 
+
+
+
 ## IOC(s)
 
 There are currently two IOCs that we have to communicate with Beckhoffs.
