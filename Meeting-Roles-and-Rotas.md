@@ -28,6 +28,21 @@ Don't forget the [drop in sessions](https://github.com/ISISComputingGroup/IBEX/w
 * Load and share the web pages as detailed in the tabbed note in the announce channel in the team
 * Ensure everyone present has their chance to share progress, plans, and obstacles
 
+# Sprint Meeting Structure
+## Pre-Planning
+**_To be filled out..._**
+
+## Review/Retrospective
+The order in which topics are discussed during the Review/Retrospective meeting are as described below:
+* Review and highlight significant work completed as part of a PowerPoint presentation which will be accessible through MS Teams.
+* Discuss the previous sprint's [retrospective notes](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Retrospective-Notes) located in the wiki:
+    * Look through topics discussed in the previous retrospective for the current sprint and check if they have been actioned or not.
+    * Discuss any new items to action in the next sprint based on the messages on the retrospective teams channel.
+* Ask everyone how they think the sprint went and if anyone has any concerns/constructive criticisms we should aim to work on going forward.
+
+## Planning
+**_To be filled out..._**
+
 # Rotas
 
 | Chair | x for Done | Timekeeper | x for Done | Note taker | x for Done |Standup | x for Done |
