@@ -103,21 +103,13 @@ These are loaded in the usual way, you'll need to put your `axes.cmd` and `motio
 
 #### If a controller has more than 8 axes
 If a controller with more than 8 axes is going to be used for now you will need to alias these axes over to another controller to see them in the GUI. 
-You can do this by loading in a records file with some aliases in from motorExtensions.cmd like so: 
-
-`motorExtensions.cmd`: 
-```
-dbLoadRecords("C:/Instrument/Settings/config/NDLT1542/configurations/twincat/controller_alias.db","P=TE:NDLT1542:,")
+You can do this by calling `dbAliasRecordsRE` (more info [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/IOC-Tips-and-Tricks#creating-many-ioc-aliases)) like so in `st-common.cmd`: 
 
 ```
-which loads in `controller_alias.db`: 
+dbAliasRecordsRE("$(MYPVPREFIX)MOT:MTR0109(.*)", "$(MYPVPREFIX)MOT:MTR0201\1")
 ```
-alias("$(P)MOT:MTR0109", "$(P)MOT:MTR0201")
-alias("$(P)MOT:MTR0109_able", "$(P)MOT:MTR0201_able")
-```
-which will alias over the 9th axis to another controller, which will enable you to see it in the GUI. You need to do the `_able` record too as this will make it show up as enabled in the GUI. 
 
-
+which will alias over the 9th axis to another controller, which will enable you to see it in the GUI. 
 
 ## IOC(s)
 
