@@ -39,7 +39,7 @@ Don't forget the [drop in sessions](https://github.com/ISISComputingGroup/IBEX/w
 | BR | x | TL | x | TL |  |TL | x |
 | JA | x | DKg | x | SJ |  |FA | x |
 | JH |  | KB |  | DKg |  |LC | x |
-| FA |  | CMS |  | BR |  |JH |  |
+| FA |  | CMS |  | BR |  |JH | x |
 | DKg |  | DK |  | DK |  |CMS |  |
 | AS |  | FA |  |  |  |N/A |  |
 | DK |  | JH |  |  |  |FA |  |
