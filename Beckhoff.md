@@ -102,14 +102,7 @@ These can be set via a `caput` and will be autosaved thereafter.
 These are loaded in the usual way, you'll need to put your `axes.cmd` and `motionSetpoints.cmd` files alongside the `tpy` file (in the twincat config directory)
 
 #### If a controller has more than 8 axes
-If a controller with more than 8 axes is going to be used for now you will need to alias these axes over to another controller to see them in the GUI. 
-You can do this by calling `dbAliasRecordsRE` (more info [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/IOC-Tips-and-Tricks#creating-many-ioc-aliases)) like so in `st-common.cmd`: 
-
-```
-dbAliasRecordsRE("$(MYPVPREFIX)MOT:MTR0109(.*)", "$(MYPVPREFIX)MOT:MTR0201\1")
-```
-
-which will alias over the 9th axis to another controller, which will enable you to see it in the GUI. 
+If a controller with more than 8 axes is going to be used, the TWINCAT IOC will alias records to the next controller number so they are shown in the GUI. For this to work you need to make sure that the next available controller number is not (and never will be, so long as the TWINCAT IOC uses it) used. 
 
 ## IOC(s)
 
