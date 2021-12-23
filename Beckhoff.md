@@ -20,7 +20,6 @@ Beckhoff code can be run as a simulated system on a developer machine by doing t
     - `TwinCAT XAE Base`
     - (optionally) `TwinCAT XAE Remote Manager`
 1. Click the `Activate Configuration` button ![Activate](beckhoff/Activate.PNG) - Note you may need to do [this](https://control.com/forums/threads/twincat-3-error-when-switched-to-run-mode.43467/) if it moans about ticks. You may also need to disable Hyper-V and disable Intel Virtualisation from within BIOS on your machine if this error persists.  
-`Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Hypervisor`
 To revert this run: `Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All` in an elevated Powershell window. 
 2. TwinCAT will ask you to enter a code to get a trial license. You will need to do this once a week.
 3. If prompted if you wish to start the system in `Run Mode` click `Ok`. Otherwise start run mode using the button next to `Activate Configuration` ![Run](beckhoff/Run.PNG)
