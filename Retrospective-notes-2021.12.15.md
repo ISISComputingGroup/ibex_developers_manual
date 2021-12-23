@@ -11,7 +11,7 @@
 ### Next Sprint will include a FRIDAY
 
 ### Timekeeper also moderates voting room
-We didnt get to test it yet. We should try this at the next opportunity.
+We didn't get to test it yet. We should try this at the next opportunity.
 
 ### Move some documentation into repos as to wiki?
 
@@ -63,4 +63,4 @@ We decided to go for it as nobody had an issue with that
 - Optionally we could add a pre-commit message check.
 
 ### When adding new sections or editing existing sections of the wiki, I would like descriptions to be as verbose as possible to be more accommodating to new members within the team
-We can make things more verbose where we can, but we have to look out for possibilty of duplicating information. Where it exists, we should favour linking other pages rather than keeping extensive amounts of information on one page.
+We can make things more verbose where we can, but we have to look out for possibility of duplicating information. Where it exists, we should favour linking other pages rather than keeping extensive amounts of information on one page.
