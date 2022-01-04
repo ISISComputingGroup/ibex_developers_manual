@@ -13,41 +13,9 @@ Unlike most other devices (except the Galil) the computing group has some oversi
 ## Testing
 See [Beckhoff testing](Beckhoff-testing)
 
-## Commissioning steps
-These steps are for commissioning a Beckhoff on a beamline. 
+## Commissioning a new Beckhoff on a beamline
+see [Beckhoff Commissioning](Beckhoff-Commissioning)
 
-### Networking
-Beckhoffs are connected to NDX machines via private networks, in much the same way as the Galils. By convention Beckhoffs live in the `192.168.1.22X` range, starting at 1 for the first controller (`192.168.1.221`) 
-
-### ADS routes
-To actually communicate via the ADS transport layer you will need to set up a route on the instrument PC. To do so: 
-1. Install the XAR tools if not already installed. A copy of these will be hosted on `<public share>\third_party_installers\special_drivers\beckhoff\`. All of the defaults are fine so this should be a case of just clicking through the wizard and installing the drivers that show up. 
-2. Set up an ADS route on the NDX: 
-  - `Right-click TwinCAT icon in system tray -> Router -> Edit Routes -> Add...` with these settings:
-    - Advanced settings ticked, click the IP Address radio button, enter the IP address (mentioned above) 
-    - Static Target routes and remote routes (default) 
-    - Everything else can be left as defaults
-3. To confirm that this has been set up remote into the controller itself on the aforementioned IP address and check that the route to the NDX has been added automatically. You should not need to manually add a route in the controller. 
-
-### IOC setup
-The IOC should be able to talk via ADS at this point but will need setting up in the respective configs. 
-- A `.tpy` file will be used for `tCioc` to actually talk to the hardware via ADS - this should be placed in the instrument's twincat config area
-- A `MTRCTRL` number will need to be given - this is the normal controller number
-- `Beckhoff_plc_code` should be specified as a macro, this may be removed in future releases, more information on this is available below however it should be set to `1` for instruments running the latest code. 
-
-#### Fields that aren't automatically populated
-Although commissioning a Beckhoff is far simpler than a Galil from an IBEX perspective, there are some fields that need to be set manually for each axis.  These are: 
-- Engineering units (`.EGU`) - [ticket to populate](https://github.com/ISISComputingGroup/IBEX/issues/6855)
-- Axis description (`.DESC`) - [ticket to populate](https://github.com/ISISComputingGroup/IBEX/issues/6860)
-- Velocity (`.VELO`) - [ticket to populate](https://github.com/ISISComputingGroup/IBEX/issues/6861)
-
-These can be set via a `caput` and will be autosaved thereafter.
-
-#### Axes, motion setpoints
-These are loaded in the usual way, you'll need to put your `axes.cmd` and `motionSetpoints.cmd` files alongside the `tpy` file (in the twincat config directory)
-
-#### If a controller has more than 8 axes
-If a controller with more than 8 axes is going to be used, the TWINCAT IOC will alias records to the next controller number so they are shown in the GUI. For this to work you need to make sure that the next available controller number is not (and never will be, so long as the TWINCAT IOC uses it) used. 
 
 ## IOC(s)
 
