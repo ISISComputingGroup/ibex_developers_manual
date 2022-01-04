@@ -6,14 +6,17 @@ Various Processes or tasks and info into how they should work. Remember rules ca
 
 - [Modifying/setting up a device on an instrument](Modifying-Device-on-an-Instrument)
 
+**Workflow:**
 - [Tickets and their Workflow](Tickets-and-their-Workflow)
+-  **Sprints:**
     - [Meeting Roles and Rotas](Meeting-Roles-and-Rotas)
-    - [Backlog Preparation](Backlog-Preparation)
-    - [Sprint Review](Sprint-Review)
     - [Estimating Sprint Capacity](Estimating-Sprint-Capacity)
-    - [Sprint Planning](Sprint-Planning)
     - [Sprint Burn down Chart](Sprint-Burn-down-Chart)
-    - [Sprint Retrospective](Sprint-Retrospective)
+    - **Meetings:**
+        - [Backlog Preparation/Pre-Planning](Backlog-Preparation)
+        - [Sprint Review](Sprint-Review)
+        - [Sprint Planning](Sprint-Planning)
+        - [Sprint Retrospective](Sprint-Retrospective)
 
 - [External Contributions](External-Contributions)
 
