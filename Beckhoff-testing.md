@@ -4,7 +4,7 @@
 # Beckhoff testing
 
 
-### Building and simulating the code
+## Building and simulating the code
 Beckhoff code can be run as a simulated system on a developer machine by doing the following: 
 
  1. Download and install [TwinCAT 3 XAE](https://stfc365.sharepoint.com/sites/ISISMechatronics/Shared%20Documents/Forms/AllItems.aspx?viewid=a9a65e76%2D4335%2D479e%2Da1eb%2De12265e5cad6&id=%2Fsites%2FISISMechatronics%2FShared%20Documents%2FTwinCAT%20Development%2FTwinCAT%20Software) more information can be found about this [here](https://infosys.beckhoff.com) (click TwinCAT 3 on the left). If you do not have permission ask IDD. The XAE is really just a Visual Studio plugin.
@@ -21,7 +21,7 @@ To revert this run: `Enable-WindowsOptionalFeature -Online -FeatureName Microsof
 4. You now have a simulated beckhoff PLC running on your PC. This behaves the same as real hardware and so all development can be done against it. You could now also run an IOC up talking to this local PLC.
 5. To see what is happening inside this PLC in more detail, and to change values, you can use the login button ![Login](beckhoff/Login.PNG)
 
-### Continuous Integration
+## Continuous Integration
 
 Beckhoff PLC code is being developed by people who do not have CI expertise and have their own repository structures yet we want integration into some form of CI to be as easy as possible. This lent itself to the following structure:
 * A `BeckhoffTestRunner` repository that is owned by us and contains the jenkinsfile and other utilities required for CI
