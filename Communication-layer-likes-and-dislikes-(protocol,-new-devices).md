@@ -19,7 +19,7 @@ Ethernet is a commonly used and well-supported transport layer at ISIS using RJ4
 
 ### USB
 
-USB devices are difficult to implement for ISIS, and we prefer not to have to use USB wherever possible.
+USB devices are difficult to integrate USB devices into the Experiment Control System, so should be avoided.
 
 ### Manufacturer software / DLLs
 
@@ -27,7 +27,7 @@ We prefer not to use these interfaces, however, in some cases, we may be able to
 
 ### Modbus
 
-Modbus is more difficult for us than ASCII protocols but we can deal with this if absolutely necessary.
+Modbus is more difficult for us than ASCII protocols but we can deal with this.
 
 # Protocol
 
@@ -53,7 +53,7 @@ temp=30.5<CR><LF>
 
 ### Replies
 
-All commands to a device should return some form of reply. This helps the control system to distinguish between a device which is unplugged and an incorrect or invalid command.
+All commands to a device should ideally return some form of reply. This helps the control system to distinguish between a device which is unplugged and an incorrect or invalid command.
 
 Where no data needs to be returned, a device could generate an "ACK" or "OK" or similar response. Commands which are invalid or rejected could return a "NAK" or "NOK" or "error" or similar responses.
 
