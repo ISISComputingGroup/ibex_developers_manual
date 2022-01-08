@@ -345,3 +345,26 @@ In `labview modules\dae\service\x64\release` you can run e.g.
 instctrl.exe SETVAL RUN_NUMBER 441
 ```
 to set a new run number
+
+## DAE IOC cannot start ISISICP
+
+When using EPICS ISISDAE if you see errors like
+```
+[2022-01-07 11:11:37] (Re)Making local connection to ISISICP
+[2022-01-07 11:11:37] CoCreateInstance() failed with error -2147024809, retrying with CLSCTX_ALL
+[2022-01-07 11:11:37] updateRunStatus exception: CoCreateInstance (ISISICP) : The parameter is incorrect.
+```
+This likely means that the isisicp did not write the registry entries. This has only been seen on windows server machines.
+To solve, import appropriate isisicp.reg file (for labview modules or icp_binaries location of isisicp) via regedit
+
+If you get
+```
+[2022-01-07 11:22:06] (Re)Making local connection to ISISICP
+[2022-01-07 11:22:06] CoCreateInstance() failed with error -2147024891, retrying with CLSCTX_ALL
+[2022-01-07 11:22:06] (Re)Making local connection to ISISICPsevr=major CoCreateInstance (ISISICP) : Access is denied.
+```
+This is a dcom access permission, most likely seen in jenkins as they run under a domain rather than local account.
+Again, only seen on windows server. To resolve:
+
+* add account trying to run isisicp to "distributed com users" local windwows group
+* run dcomcnfg and make sure "distributed com users" has approriate default permissions (it should already have appropriate limit permisisons, but check)
