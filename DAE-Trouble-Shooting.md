@@ -355,7 +355,7 @@ When using EPICS ISISDAE if you see errors like
 [2022-01-07 11:11:37] updateRunStatus exception: CoCreateInstance (ISISICP) : The parameter is incorrect.
 ```
 This likely means that the isisicp did not write the registry entries. This has only been seen on windows server machines.
-To solve, import appropriate isisicp.reg file (for labview modules or icp_binaries location of isisicp) via regedit
+To solve, import appropriate isisicp reg file from the isisicp install location (`isisicp_icp_binaries.reg` or `isisicp_lv_modules.reg`) using `regedit`
 
 If you get
 ```
@@ -367,4 +367,4 @@ This is a dcom access permission, most likely seen in jenkins as they run under 
 Again, only seen on windows server. To resolve:
 
 * add account trying to run isisicp to "distributed com users" local windwows group
-* run dcomcnfg and make sure "distributed com users" has approriate default permissions (it should already have appropriate limit permisisons, but check)
+* run `dcomcnfg` command and make sure "distributed com users" has approriate default permissions (it should already have appropriate limit permisisons, but check)
