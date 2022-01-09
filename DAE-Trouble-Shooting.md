@@ -366,5 +366,5 @@ If you get
 This is a dcom access permission, most likely seen in jenkins as they run under a domain rather than local account.
 Again, only seen on windows server. To resolve:
 
-* add account trying to run isisicp to "distributed com users" local windwows group
-* run `dcomcnfg` command and make sure "distributed com users" has approriate default permissions (it should already have appropriate limit permisisons, but check)
+* add account trying to run isisicp to "distributed com users" local windows group
+* run `dcomcnfg` command and make sure "distributed com users" has appropriate default permissions (it should already have appropriate limit permissions, but check)
