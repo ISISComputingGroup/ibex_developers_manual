@@ -30,29 +30,23 @@ Don't forget the [drop in sessions](https://github.com/ISISComputingGroup/IBEX/w
 
 # Rotas
 
-| Chair | x for Done | Timekeeper | x for Done | Note taker | x for Done |Standup | x for Done |
-| --- | --- | --- | --- | --- | --- |--- | --- |
-| FA | x | TL | x | LC | x |DKg | x |
-| DO | x | JK | x | JK | x |DK | x |
-| DK | x | LC | x | JA | x |JK | x |
-| TL | x | AS | x | AS | x |BR | x |
-| BR | x | TL | x | SJ | x |TL | x |
-| JA | x | DKg | x | TL |  |FA | x |
-| JH | x | KB | x | DKg |  |LC | x |
-| FA | x | DK | x | BR |  |JH | x |
-| DKg |  | CMS |  | DK |  |KB | x |
-| AS |  | FA |  |  |  |N/A | x |
-| DK |  | JH |  |  |  |CMS | x |
-| KB |  | SJ |  |  |  |FA|  |
-| CMS |  | JA |  |  |  |BR |  |
-| TL |  | DK |  |  |  |JA |  |
-| SJ |  | BR |  |  |  |SJ |  |
-| BR |  | LC |  |  |  |LC |  |
-| JH |  | CMS |  |  |  |DK |  |
-| FA |  | JH |  |  |  |FA |  |
-| LC |  | AL |  |  |  |TL |  |
-| TL |  | SJ |  |  |  |BR |  |
-| CMS |  | JA |  |  |  |KB |  |
-| DK |  | DKg |  |  |  |LC |  |
-| FA |  | AS |  |  |  |SJ |  |
-| KB |  | TL |  |  |  |JA |  |
+| Meeting| Chair | x for Done | Timekeeper | x for Done | Note taker | x for Done |Standup | Week Commencing | x for Done |
+| ---| --- | --- | ---| --- | --- | --- |--- | --- | --- |
+| 2021_12_16_Review/Retro| JH | x | KB| x | SJ| x |CMS | 03/01/2022 |x |
+| 2022_01_06_Planning| FA | x | DK| x | |  |FA | 10/01/2022 | |
+| 2022_02_03_Pre-Planning| KB |   | JH|   | |  |SJ | 17/01/2022 | |
+| 2022_01_06_Review/Retro| AS |   | CMS|   | DK|   |TL | 24/01/2022 | |
+| 2022_02_03_Planning| DK |   | SJ|   | |  |JA | 31/01/2022 | |
+| 2022_02_24_Pre-Planning| TL |   | JA|   | |  |DK | 07/02/2022 | |
+| 2022_02_03_Review/Retro| DKg |   | KB|   | LC|   |AS | 14/02/2022 | |
+| 2022_02_24_Planning| JH |   | TL|   | |  |DKg | 21/02/2022 | |
+| 2022_03_24_Pre-Planning| SJ |   | DKg|   | |  |KB | 28/02/2022 | |
+| 2022_02_24_Review/Retro| CMS |   | LC|   | JH|   |FA | 07/03/2022 | |
+| 2022_03_24_Planning| DK |   | AS|   | |  |JH | 14/03/2022 | |
+| 2022_04_21_Pre-Planning| JA |   | FA|   | |  |JA | 21/03/2022 | |
+| 2022_03_24_Review/Retro| LC |   | CMS|   | AS|   |TL | 28/03/2022 | |
+| 2022_04_21_Planning| TL |   | DKg|   | |  |KB | 04/04/2022 | |
+| |  |  | |  | |  |CMS | 11/04/2022 | |
+| |  |  | |  | |  |LC | 18/04/2022 | |
+| |  |  | |  | |  |FA | 25/04/2022 | |
+
