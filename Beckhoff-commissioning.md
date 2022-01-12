@@ -35,3 +35,7 @@ These are loaded in the usual way, you'll need to put your `axes.cmd` and `motio
 
 #### If a controller has more than 8 axes
 If a controller with more than 8 axes is going to be used, the TWINCAT IOC will alias records to the next controller number so they are shown in the GUI. For this to work you need to make sure that the next available controller number is not (and never will be, so long as the TWINCAT IOC uses it) used. 
+
+#### Arbitrary fields 
+
+It was decided during #6916 that extra fields, for example LARMOR's air signals + bump strips will be exposed via a separate `PROG` file within the PLC, which would then propagate to the `tpy` file, and therefore get picked up by `TcIOC`. At the time of writing the approach with these is to place a block on them on an instrument within the same config area which will log them over time. This has the benefit of giving them a human readable name too. We may decide to automate this in the future. 
