@@ -3,6 +3,12 @@
 
 # Beckhoff testing
 
+Note: you may need to disable some windows features, such as Hyper-V, Windows Hypervisor Platform etc.
+
+For reference, here is a working setup and its features: 
+
+![windowsfeatures](https://user-images.githubusercontent.com/14823767/149163247-309eb8de-41d4-4a06-b9ff-9009865ab340.png)
+
 
 ## Building and simulating the code
 Beckhoff code can be run as a simulated system on a developer machine by doing the following: 
