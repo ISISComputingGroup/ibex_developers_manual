@@ -15,7 +15,7 @@ The GUI has multiple mechanisms for pulling in dependencies, all of which may po
 The following `.jar` files may need updating. Check for new versions in maven central or on the vendor website, and update if new versions are available:
 
 ```
-./base/uk.ac.stfc.isis.ibex.activemq/lib/activemq-all-5.15.11.jar
+./base/uk.ac.stfc.isis.ibex.activemq/lib/activemq-all-5.16.3.jar
 ./base/uk.ac.stfc.isis.ibex.databases/lib/mysql-connector-java-8.0.19.jar
 ./base/uk.ac.stfc.isis.ibex.epics/lib/commons-codec-1.14-javadoc.jar
 ./base/uk.ac.stfc.isis.ibex.epics/lib/commons-codec-1.14-sources.jar
