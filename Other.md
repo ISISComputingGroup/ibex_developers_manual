@@ -23,3 +23,5 @@
 * [CAEN v895](CAEN-v895)
 
 * [LOTQD MSH150 Monochromator](LOTQD-MSH150-Monochromator)
+
+* [Rotating Stirrer Rack](Rotating-Stirrer-Rack)
