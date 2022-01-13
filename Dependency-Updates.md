@@ -16,13 +16,13 @@ The following `.jar` files may need updating. Check for new versions in maven ce
 
 ```
 ./base/uk.ac.stfc.isis.ibex.activemq/lib/activemq-all-5.16.3.jar
-./base/uk.ac.stfc.isis.ibex.databases/lib/mysql-connector-java-8.0.19.jar
-./base/uk.ac.stfc.isis.ibex.epics/lib/commons-codec-1.14-javadoc.jar
-./base/uk.ac.stfc.isis.ibex.epics/lib/commons-codec-1.14-sources.jar
-./base/uk.ac.stfc.isis.ibex.epics/lib/commons-codec-1.14.jar
-./base/uk.ac.stfc.isis.ibex.epics/lib/joda-time-2.10.5.jar
-./base/uk.ac.stfc.isis.ibex.logger/lib/log4j-api-2.13.0.jar
-./base/uk.ac.stfc.isis.ibex.logger/lib/log4j-core-2.13.0.jar
+./base/uk.ac.stfc.isis.ibex.databases/lib/mysql-connector-java-8.0.27.jar
+./base/uk.ac.stfc.isis.ibex.epics/lib/commons-codec-1.15-javadoc.jar
+./base/uk.ac.stfc.isis.ibex.epics/lib/commons-codec-1.15-sources.jar
+./base/uk.ac.stfc.isis.ibex.epics/lib/commons-codec-1.15.jar
+./base/uk.ac.stfc.isis.ibex.epics/lib/joda-time-2.10.13.jar
+./base/uk.ac.stfc.isis.ibex.logger/lib/log4j-api-2.17.1.jar
+./base/uk.ac.stfc.isis.ibex.logger/lib/log4j-core-2.17.1.jar
 ./base/uk.ac.stfc.isis.ibex.nicos/lib/jeromq-0.5.2.jar
 ./base/uk.ac.stfc.isis.ibex.ui/lib/opal-1.0.0.jar
 ```
