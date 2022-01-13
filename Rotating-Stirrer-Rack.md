@@ -1,4 +1,4 @@
-> [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [Other](Other) > [Rotating Stirrer Rack](Rotating_Stirrer_Rack)
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [Other](Other) > [Rotating Stirrer Rack](Rotating-Stirrer-Rack)
 
 ## About
 Rotating stirrer rack uses [TTI-PLP to control motors](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Thurlby-Thandar-TTI-PLP-Power-Supply). The TTI-PLP IOC controls the motor itself, while Stirring Stages IOC controls front-end of Rotating Stirrer Rack interface. For this reason both IOCs need to be configured and enabled, to interact with Rotating Stirrer Rack. The IOC behaviour was modelled on existing VI which can be found at C:\LabVIEW Modules\Drivers\TTi PL-P Stirring Stages
