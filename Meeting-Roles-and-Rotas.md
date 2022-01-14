@@ -32,8 +32,8 @@ Don't forget the [drop in sessions](https://github.com/ISISComputingGroup/IBEX/w
 
 | Meeting| Chair | x for Done | Timekeeper | x for Done | Note taker | x for Done |Standup | Week Commencing | x for Done |
 | ---| --- | --- | ---| --- | --- | --- |--- | --- | --- |
-| 2021_12_16_Review/Retro| JH | x | KB| x | SJ| x |CMS | 03/01/2022 |x |
-| 2022_01_06_Planning| FA | x | DK| x | |  |FA | 10/01/2022 | |
+| 2021_12_16_Review/Retro| JH | x | KB| x | SJ| x |CMS | 03/01/2022 | x |
+| 2022_01_06_Planning| FA | x | DK| x | |  |FA | 10/01/2022 | x |
 | 2022_02_03_Pre-Planning| KB |   | JH|   | |  |SJ | 17/01/2022 | |
 | 2022_01_06_Review/Retro| AS |   | CMS|   | DK|   |TL | 24/01/2022 | |
 | 2022_02_03_Planning| DK |   | SJ|   | |  |JA | 31/01/2022 | |
