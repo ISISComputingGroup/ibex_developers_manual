@@ -69,13 +69,18 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
 One or more people should do [manual system tests, using this page](Manual-system-tests).
 
 ### Post Testing
+
+These steps should only be done once all changes to a release have been made. Here we are creating a tag
+which will become inconsistent if further changes are made to the release branch. Hence it is important to delete
+the branch after it has been tagged.
+    
 1. Create a release tag in the EPICS, ibex_gui, genie_python and JSON_bourne repositories. For each repo
     1. Go to `[REPO_URL]/releases`, e.g. `https://github.com/ISISComputingGroup/ibex_gui/releases`
     1. Click `Draft a new release`
     1. Enter the tag version in the format `vX.x.p` and target the release branch
     1. Enter the title `Release version X.x.p`
     1. Add a link to the release notes in the description
-    1. Delete the branch once the release and tag has been created
+    1. `Delete the branch` once the release and tag has been created. 
 1. Create release tag from the release branch for each submodules in EPICS, then delete the release branch. To do this, run the following two git commands in top level EPICS (replace `X.x.x` with the release number): 
     1. `git submodule foreach --recursive "git fetch && git tag Release_ibex_X.x.x origin/Release_X.x.x || exit 0"` // Create tag
     1. `git submodule foreach --recursive "git push --tags && git push -d origin Release_X.x.x || exit 0"` // Push tags and delete release branch
