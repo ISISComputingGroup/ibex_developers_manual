@@ -70,9 +70,9 @@ One or more people should do [manual system tests, using this page](Manual-syste
 
 ### Post Testing
 
-These steps should only be done once all changes to a release have been made. Here we are creating a tag
+These steps should only be done once all changes to a release have been made and we are ready to deploy. Here we are creating a tag
 which will become inconsistent if further changes are made to the release branch. Hence it is important to delete
-the branch after it has been tagged.
+the relevant release branch after it has been tagged.
     
 1. Create a release tag in the EPICS, ibex_gui, genie_python and JSON_bourne repositories. For each repo
     1. Go to `[REPO_URL]/releases`, e.g. `https://github.com/ISISComputingGroup/ibex_gui/releases`
