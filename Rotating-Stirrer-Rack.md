@@ -8,7 +8,7 @@ ROTSTIRR needs to be configured in config area to use same IOC number as TTIPLP.
 
 C:\Instrument\Settings\config\common\rotating_stirrer_rack\Default.txt
 
-The file is read using [cvt record](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Convert-Record). Example translation file can be found in the IOC support directory.
+The file is read using [convert record](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Convert-Record). Example translation file can be found in the IOC support directory.
 
 ### Tests
 Since ROTSTIRR currently does not directly control any hardware, there was no need to create a Lewis emulator, however file structure is there in case that changes in the future. This decision was taken since I wanted to leave TTI-PLP in it's original behaviour so we can use it for other purposes (not just Rotating Stirrer Rack) - in line with something like Galil. The tests are not located in IocTestFramework - but rather in the support directory itself.
