@@ -9,7 +9,7 @@ To set this up for `MTR0105` on WISH for example you would:
 
 * have a non-zero `max retries` count - default is 10
 * set a `readback delay`, currently using 5 seconds
-* set `readback resolution` to 1
+* set `readback resolution` to 1 (we have handled this in the `_EPOS_CALC` record)
 * set a `readback link` value - for MTR0105 on WISH this is `IN:WISH:MOT:MTR0105:EPOS_AV CP MS`
 * set `use encoder` to `no` (do this before setting readback)
 * set `use readback` to `yes`
