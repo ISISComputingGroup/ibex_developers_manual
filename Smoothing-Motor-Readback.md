@@ -11,5 +11,7 @@ To set this up for `MTR0105` on WISH for example you would:
 * set a `readback delay`, currently using 5 seconds
 * set `readback resolution` to 1 (we have handled this in the `_EPOS_CALC` record)
 * set a `readback link` value - for MTR0105 on WISH this is `IN:WISH:MOT:MTR0105:EPOS_AV CP MS`
-* set `use encoder` to `no` (do this before setting readback)
+* set `use encoder` to `no`
 * set `use readback` to `yes`
+
+Setting `use encoder` to `no` before enabling readback is probably a better sequence of operations, but not crucial. If you set readback to yes it automatically sets encoder to no, but i had a case when it seemed to get a bit confused. If it does make sure values are correct and then just restart ioc and autosave will apply them correctly. Bear in mind that these are settings and so autosave at 30 second intervals, so don't restart too soon after a change  
