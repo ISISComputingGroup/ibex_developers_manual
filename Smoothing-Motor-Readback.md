@@ -7,9 +7,9 @@ To solve this issue, the readbacks can be smoothed using an EPICS compress recor
 
 To set this up for `MTR0105` on WISH for example you would:
 
-* have a non-zero max retries count - default is 10
-* set a readback delay, currently using 5 seconds
-* set readback resolution to 1
-* set a readback link value - for MTR0105 on WISH this is `IN:WISH:MOT:MTR0105:EPOS_AV CP MS`
+* have a non-zero `max retries` count - default is 10
+* set a `readback delay`, currently using 5 seconds
+* set `readback resolution` to 1
+* set a `readback link` value - for MTR0105 on WISH this is `IN:WISH:MOT:MTR0105:EPOS_AV CP MS`
 * set `use encoder` to `no` (do this before setting readback)
 * set `use readback` to `yes`
