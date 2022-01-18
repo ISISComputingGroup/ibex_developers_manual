@@ -5,7 +5,7 @@ To solve this issue, the readbacks can be smoothed using an EPICS compress recor
 * when the motor record is using the readback link, it is in "no encoder" mode i.e. it thinks it is in open loop. The only visible effect of this is that on startup it didn't sync the last setpoint to the current readback, this has been resolved by forcing a delayed write to the motor record SYNC field after ioc startup (see `_EPOS_INIT` and `_EPOS_SYNC` PVs). This needs to be delayed so channel access and other things have started.
 * a readback delay needs to be set on the motor record, this is because the compress record averaged values will be a bit biased by the motion that has just occurred otherwise and so any retry calculation distance will be incorrect.
 
-For with setup of `MTR0105` for example you would
+To set this up for `MTR0105` on WISH for example you would:
 
 * have a non-zero max retries count - default is 10
 * set a readback delay, currently using 5 seconds
