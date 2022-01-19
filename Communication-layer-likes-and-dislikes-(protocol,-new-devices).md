@@ -34,7 +34,7 @@ MODBUS is more difficult for us than ASCII protocols but we can deal with this.
 
 ### Termination characters
 
-It is very helpful for devices to terminate their messages with a unique set of characters that do not appear elsewhere in the message. A common example of a terminator is a carriage-return, line-feed pair ('<CR><LF>', '/r/n', HEX: `0D 0A`).
+It is very helpful for devices to terminate their messages with a unique set of characters that do not appear elsewhere in the message. A common example of a terminator is a carriage-return, line-feed pair (`<CR><LF>`, `/r/n`, HEX: `0D 0A`).
 
 ### Readability/encoding
 
