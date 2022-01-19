@@ -5,39 +5,40 @@ This page documents an "idealised" communication protocol for communicating with
 ### Serial (RS232, RS422, RS485)
 
 This is the most common transport layer at ISIS. Serial settings are flexible in all of our drivers but the most common configuration is:
+
 - Baud rate: 9600
 - Data bits: 8
 - Parity: None
 - Stop bits: 1
 - Flow control: Off
 
-RS232 is preferable, RS422 and RS485 are avoided as far as reasonable. Note that distances can be extreme if higher baud rates are required.
+RS232 is preferable, RS422 and RS485 are avoided as far as reasonable. Note that distances can be extreme if higher baud rates are required.  Preferred socket is DB-9, but DB-25 also acceptable.
 
 ### Ethernet
 
-Ethernet is a commonly used and well-supported transport layer at ISIS using RJ45 ports. Any other port type is to be avoided. It is also preferable that devices use DHCP to find their IP address rather than a static IP.
+Ethernet is a commonly used and well-supported transport layer at ISIS using RJ45 ports (AKA 8P8C sockets). Any other port type is to be avoided. It is also preferable that devices use DHCP to find their IP address rather than being issued a static address.
 
 ### USB
 
-USB devices are difficult to integrate USB devices into the Experiment Control System, so should be avoided.
+USB devices are difficult to integrate into the Experiment Control System, so should be avoided.
 
 ### Manufacturer software / DLLs
 
-We prefer not to use these interfaces, however, in some cases, we may be able to work with these types of interfaces.
+We prefer not to use these interfaces.  However, in some cases, we may be able to work with these.
 
-### Modbus
+### MODBUS
 
-Modbus is more difficult for us than ASCII protocols but we can deal with this.
+MODBUS is more difficult for us than ASCII protocols but we can deal with this.
 
 # Protocol
 
 ### Termination characters
 
-It is very helpful for devices to terminate their messages with a unique set of characters that do not appear elsewhere in the message. A common example of a terminator is a carriage-return line-feed pair (HEX: `0D 0A`).
+It is very helpful for devices to terminate their messages with a unique set of characters that do not appear elsewhere in the message. A common example of a terminator is a carriage-return, line-feed pair ('<CR><LF>', '/r/n', HEX: `0D 0A`).
 
 ### Readability/encoding
 
-Commands to a device are ideally human-readable so that they can be used via terminal emulators. Many protocols use an ASCII encoding.
+Commands to a device are ideally human-readable so that they can be used via terminal emulators and the device interacted with. Many protocols use an ASCII encoding.
 
 For example, a temperature controller might implement commands similar to the following:
 
@@ -59,4 +60,4 @@ Where no data needs to be returned, a device could generate an "ACK" or "OK" or 
 
 ### Unsolicited messages
 
-We prefer not to receive unsolicited messages. It is better for a driver to explicitly ask for a parameter each time the driver wants to read it.
+We prefer not to receive unsolicited messages. It is better for a driver to explicitly ask for a parameter each time it is required.
