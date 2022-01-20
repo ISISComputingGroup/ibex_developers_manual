@@ -16,7 +16,7 @@ we have one floating tester subscription and one floating execution subscription
     1. Licence Agreement: Read and accept the licence
     1. Uncheck `Test Center` from items to install, unless you really need it
     1. Select python version for script language (3.*)
-    1. Installation folder: Choose a folder I chose `c:\tools`
+    1. Installation folder: Choose a folder I chose `c:\tools` but  `c:\squish` is used on the build server
     1. JRE or JDK: Select the JDK we are currently developing with
     1. Shortcuts: use defaults
     1. Start Menu: use defaults
