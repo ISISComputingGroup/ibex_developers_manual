@@ -30,6 +30,10 @@ We prefer not to use these interfaces.  However, in some cases, we may be able t
 
 MODBUS is more difficult for us than ASCII protocols but we can deal with this.
 
+### Connection Hardware
+
+Use “standard”, easily maintainable and available connection hardware where possible, so no unusual or bespoke sockets, cables or adapters preferred.
+
 # Protocol
 
 ### Termination characters
