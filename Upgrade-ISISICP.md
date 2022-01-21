@@ -80,3 +80,7 @@ c:\LabVIEW Modules\dae>
 1. Before you run DAE3 for first time you will need to run `set_dae3_arp.bat` in `labview modules\dae` as an administrator
 1. You will also need to add `set_dae3_arp.bat` to be run as administrator at system startup. To do this run the task scheduler as administrator and then import the `DAE3_arp_boot_task.xml` boot task file.
 1. Also check firewall settings 
+
+# Updating isisicp on developer machine
+
+The ISISICP on a developer machine is ran from the `ICP_Binaries` directory, this will get automatically updated when `create_icp_binaries.bat` is run. If you get simulated DAE issues, you may need to re-register the ISISICP by running `ICP_Binaries\isisdae\register_programs.bat` as an admin account  
