@@ -39,7 +39,6 @@ Currently a simple JS script takes the JSON created by JSON Bourne and provides 
 Docs can be found on the shares at `shares\isis_experiment_controls\web_dashboard_history.docx`
 
 ## Deployment
-To deploy on a new instrument see [Deployment](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Deployment-on-an-Instrument-Control-PC#add-instrument-to-ibex-web-dashboard)
 
 To update the production version of the dashboard:
 * Remote desktop into external webserver (for username and password see password page)
