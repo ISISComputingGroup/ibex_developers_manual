@@ -5,9 +5,12 @@ For dependency conventions see [Python dependencies](Python-dependencies).
 ### Coding style
 We try to follow [PEP8](https://www.python.org/dev/peps/pep-0008/) for coding style where possible or suitable.
  
-A clear exception is when it comes to line length; PEP8 suggests a line length limit of 79 characters, but PyCharm defaults to 120. We follow PyCharm on this.
+A clear exception is when it comes to line length; PEP8 suggests a line length limit of 79 characters but defaults to 100, but PyCharm defaults to 120. I recommend following PEP8 and modifying PyCharm default to 100 on this (See: `File -> Settings -> Editor -> Code Style -> General: Right margin (columns)`).
 
 **PyCharm warns on many deviations from PEP8, please don't ignore it.**
+
+You can add a GitHub workflow to perform lint checking on your repository to enforce PEP8 standards as part of code reviews. The gitHub workflow can be found here:
+[Pylint GitHub Workflow](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Shared-utility-scripts#github-workflows)
 
 Key points relating to general code formatting:
 
@@ -209,3 +212,9 @@ AVOID using the older `%` formatter or concatenating strings with `+`.
 os.path.join('directory', 'subdirectory1', 'subdirectory2')
 ```
 AVOID combining strings with '\\', '\\\\' or '/'
+
+
+### GitHub Workflows:
+You can add a GitHub workflow to perform lint checking on your repository to enforce PEP8 standards here:
+[Pylint GitHub Workflow](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Shared-utility-scripts#github-workflows)
+
