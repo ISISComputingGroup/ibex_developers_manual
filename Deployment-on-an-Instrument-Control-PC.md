@@ -29,7 +29,7 @@ Steps are marked with **bold** prefixes to indicate the following:
     - On firewall prompt reply yes
 - Ensure the instrument is running and in a setup state (e.g. so you can take screenshots of blocks, motors, running VIs, etc.)
 - Ensure all command lines to EPICS are closed
-- Upgrade the ISISICP (Do not do this step for upgrades from 7.2.0 and upwards it is done as a step in instrument_deploy.bat)
+- (**Do not do this step for upgrades from 7.2.0 and upwards it is done as a step in instrument_deploy.bat**) Upgrade the ISISICP 
   - Shutdown IBEX GUI (server should remain running)
   - Use `console -M isisdae` to connect into ISISDAE-IOC-01 IOC and stop this IOC
   - Run [Upgrade the ISISICP](Upgrade-ISISICP)
