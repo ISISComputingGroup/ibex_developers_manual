@@ -45,6 +45,11 @@ The idea behind adding this workflow to a repository is to make developers want 
 When implementing this workflow, I recommend adding or altering the PR template for the repository to include a requirement that pylint checks must either stay the same or increase in quality. This should help prevent the codebase moving further away from PEP8 standards. 
 
 **Please Note** that you should modify the python version in the YAML file to reflect the version of python used in the repository.
+
+### View Suppressed Messages
+To view suppressed messages when running Pylint on a given file which has `pylint: disable=` statements, add the flag `--enable=suppressed-message` to the Pylint command. Alternatively, you can run locally using: `pylint --enable=suppressed-message`.
+
+### Workflow
 ```YAML
 name: Pylint
 
