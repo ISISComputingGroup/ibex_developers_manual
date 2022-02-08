@@ -21,3 +21,4 @@
 - [NPort Install](NPort-install)
 - [Instrument definition (like mapped drives) "Instrument Machine standards.doc"](http://www.facilities.rl.ac.uk/isis/computing/instruments/Instrument%20Documents/Forms/AllItems.aspx)
 - [Updating Instrument Machines](Updating-Instrument-Machines)
+- [Reviewing Deployment Tickets](Reviewing-Deploy-Tickets)
