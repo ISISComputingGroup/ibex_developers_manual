@@ -9,7 +9,7 @@ Code chats occur on a semi-regular monthly basis within the group at ISIS. Altho
 Topic | Presenter | Date
 ----- | --------- | ----
 Rust | Jack Harper | 14/02/22
-
+ISISICP/DAE | Freddie | 31/03/22
 
 ### Books and article ideas for technical book club
 
@@ -28,7 +28,6 @@ Rust | Jack Harper | 14/02/22
 Idea | Proposed Speaker
 ---- | ---------------
 IBEX Project Management | Kathryn
-ISISICP | Freddie
 LUA  | ?
 BDD/DDD | ?
 Software design techniques in our processes | Aaron
