@@ -55,7 +55,7 @@ The priority of squish license usage during the final week of a sprint can be pr
 ## Equipment
 
 ### The office mic is barely legible for stand-up, is there a better solution we could use?
-- [@rerpha](https://github.com/rerpha) will contact  [@KathrynBaker](https://github.com/KathrynBaker)/[@FreddieAkeroyd](https://github.com/FreddieAkeroyd) to discuss solutions to resolve this. Options discussed included:
+- [@rerpha](https://github.com/rerpha) will contact  [@KathrynBaker](https://github.com/KathrynBaker) / [@FreddieAkeroyd](https://github.com/FreddieAkeroyd) to discuss solutions to resolve this. Options discussed included:
     - Mic mounted to the ceiling
     - Mic that everyone can hand around the office (Not the most Covid secure option)
     - Order a VC system if cost effective so we can hear and see everyone in the office.
