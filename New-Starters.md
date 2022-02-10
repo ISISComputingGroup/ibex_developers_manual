@@ -113,7 +113,7 @@ As a new starter you should add your name and picture to the training [slides](h
 - [Slack Channel](https://ibex-icp.slack.com/messages/C055HTCCU/) - Office-related chat
 - [ISIS Sharepoint](https://www.facilities.rl.ac.uk/isis/default.aspx) - Shared ISIS documents, manuals, meeting minutes etc
 - [Oracle Login](https://portal.ssc.rcuk.ac.uk/) - Book leave, create timesheets
-- [Flexi Time](http://flexiral.stfc.ac.uk/) - If you're on Flexi time and need to view/edit your work history
+- [Flexi Time](https://flexiral.stfc.ac.uk/FCDWeb/) - If you're on Flexi time and need to view/edit your work history
 
 ## More about IBEX 
 There are some training materials available that we use to train scientists on IBEX. It is a good way to get started on learn about what IBEX is and the features that are available in it.
