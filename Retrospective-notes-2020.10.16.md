@@ -7,7 +7,7 @@
 - Freddie will bypass footprints and send directly to experimental controls mailbox for SANS or the Muons
 - Dom to check if ticket for script generator testing environment (Ticket is [here](https://github.com/ISISComputingGroup/IBEX/issues/5701))
 
-### As per the article in [in.brief from HIFI](https://staff.stfc.ac.uk/prog/news/Pages/ISIS-20200930.aspx). To quote: `Thanks to the work of the ISIS computing team, the group were then able to access the computers that control the beamline, turning their office into a replacement hutch for the week` so the solutions we put in place are being acknowledged, and are proving useful
+### As per an article in in.brief from HIFI. To quote: `Thanks to the work of the ISIS computing team, the group were then able to access the computers that control the beamline, turning their office into a replacement hutch for the week` so the solutions we put in place are being acknowledged, and are proving useful
 
 Chris MS: Yes, nice to get that warm fuzzy feeling - notes of diamond and a hint of rabbit too
 
