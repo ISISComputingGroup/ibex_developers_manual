@@ -1,6 +1,6 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > [Motor IOCs](Motor-IOCs) > [Galil](Galil)
 
-The galil motors can be configured to run one of the multiple homing routines. These routines are documented in the [readme of the galil repository](https://github.com/ISISComputingGroup/EPICS-galil/tree/master/GalilSup/Db); there is extra documentation on the [oscillating collimator page for those routines](MERLIN-and-LET-Oscillating-radial-collimators).
+The galil motors can be configured to run one of the multiple homing routines. These routines are documented in the [readme of the galil repository](https://github.com/ISISComputingGroup/EPICS-galil/tree/master/GalilSup/Db); there is extra documentation on the [oscillating collimator page for those routines](MERLIN,-LET-and-WISH-Oscillating-radial-collimators).
 
 The whole consideration for the routine has to include the default header and footer for the Galil, with the following basic structure:
 Header
