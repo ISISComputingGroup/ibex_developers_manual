@@ -38,7 +38,7 @@
   - Discussion of how we want to handle versioning, differences between Major/Minor/Patch:
     - What we would classify as a major change and what the scientist would may differ greatly.
     - If we want to change this, we might have to change how we deploy, or how we number versions, or both.
-      - If these things change we may also have to alter our build system to avoid changing more than is nesecary.
+      - If these things change we may also have to alter our build system to avoid changing more than is necessary.
    - Discussion of deployment at other facilities.
      - There doesn't seem to be a common approach among them.
      - More use of static builds with unrolled DBs?
