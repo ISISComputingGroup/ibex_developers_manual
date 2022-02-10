@@ -97,7 +97,7 @@ Check if you have stray widgets. An example of a stray widget might have:
 ```
 
 If you have a stray widget, it may prevent scrollbars from appearing on your OPI. It might be possible to solve the issue by selecting and copying the elements to a new OPI. You can then diff the old version and the copied version using the following tools:
-- XML sorter e.g. [https://xmlsorter.codeplex.com/](https://xmlsorter.codeplex.com/)
+- XML sorter
 - Diff tool e.g. notepad++, winmerge
 
 # Writing to char waveform PVs and displaying char waveforms as strings
