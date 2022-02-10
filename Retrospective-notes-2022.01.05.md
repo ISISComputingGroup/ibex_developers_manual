@@ -11,7 +11,7 @@
      - This will remove everyone who doesn't have it already enabled.
      - This may handle most of those who need to be removed.
      - This will only effect write access.
-   - Look into removeing members who have not been members of the project in some time.
+   - Look into removing members who have not been members of the project in some time.
      - Change them to read-only?
 
  - New team members still running into permissions problems on some repositories:
@@ -21,15 +21,15 @@
 
  - Best way to handle reminders about updating submodules.
    - Ideas:
-     - Mesage on teams?
+     - Message on teams?
      - todo in issue template?
      - pre-commit message check?
    - Repo-checks do actually catch this, but this usually delays being noticed until the next standup.
 
  - Adding to/Editing wiki sections.
    - Try and make things more verbose, but if information would be duplicated then using links instead.
-     - Finding things can be extremly difficult on the wiki, so:
-       - Try and make names of pages clear and relevent.
+     - Finding things can be extremely difficult on the wiki, so:
+       - Try and make names of pages clear and relevant.
        - The wiki likely needs a cleanup, probably still the best option for documentation though.
        - Searching better at top left within repository, rather than using the wiki provided search-bar.
 
@@ -48,5 +48,5 @@
 
  - This sprint was very short:
    - Seemed to work fairly well, and was well tracked by shadow.
-   - Was useful as a tech-debt sprint, similar to mantids post-release period.
+   - Was useful as a tech-debt sprint, similar to Mantid's post-release period.
    - Up to date calenders would make it easier for sprints similar to this to be planned in future.
