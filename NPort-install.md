@@ -19,3 +19,5 @@ To install/upgrade NPort driver:
 1. Click Apply.
 1. Ignore the message about setting moxa to real port.
 1. Close NPort administrator
+
+If the upon clicking apply you are told the port is in use, you may need to move to using NPort Driver Manager instead, it can be found here `\\isis\inst$\Kits$\CompGroup\Utilities\MOXA Nport Software`
