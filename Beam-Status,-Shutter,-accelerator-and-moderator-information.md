@@ -66,6 +66,8 @@ If the third column in `params.txt` contains a `z` (e.g. `tz`) then this means t
 
 You may be able to confirm a value is not updating by running `db_access` on it a few times with a reasonable time delay inbetween, but some values are quite stable or fluctuate only a bit so this may be difficult to determine. You can view the typical value and variation in an accelerator parameter by following the links on values at [http://beamlog.nd.rl.ac.uk/status.xml](http://beamlog.nd.rl.ac.uk/status.xml) 
 
+**If this is after a shutdown**, check the `st.cmd` and see if `epicsEnvSet("SIM_ISISBEAM", "1")` has been uncommented to stop out of cycle errors, if so comment it out and then kill the ISISBEAM process so it can restart
+
 ## Checking channel access on MERCKX
 if you type
 ```
