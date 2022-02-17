@@ -75,10 +75,17 @@ By default the trace output is sent to the epics error log (which by default ech
 
 # Getting (VERY VERBOSE) output from stream device.
 
-In your `st.cmd`, or at the EPICS prompt fomr a console session, use:
+In your `st.cmd`, or at the EPICS prompt from a console session, use:
 
 `var streamDebug 1`
 
 This will turn on debug logging from stream device which is very verbose.
 
+# Seeing all channel access put requests to the IOC
 
+In your `st.cmd`, or at the EPICS prompt from a console session, use:
+
+`var caPutLogToConsole 1`
+
+This will log all details of `caput` etc to the ioc to console using the `caPutLog` mechanism.
+ 
