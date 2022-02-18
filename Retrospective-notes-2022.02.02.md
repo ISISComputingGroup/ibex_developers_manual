@@ -54,12 +54,10 @@ Might be interesting to just discuss the idea of the ICD lightening talks we att
 What would everyone's opinion be regarding merging the Social and random teams channels together to reduce the number of channels we have?
 Is there history in one or both chats that we particularly care about and would prefer not to lose?
 
-- not been using certain channels very often, so no harm in removing.  especially "lunch" as only used in lockdowns.
-- option for individuals to hide any channels on own client
+- Group not been using certain channels very often, so no harm in removing.  Especially "lunch" as was only used in lockdowns.
+- Always option for individuals to hide any channels on own client
 - OK to delete "social", "lunch" and "reviews". DONE.
-- suggestion to have "system" channel for CMM to record activities.  e.g. reclone system, fix RAM, alter GFX car, move physical machine or VM.  May be better on Sharepoint on a per instrument basis.
-
-
+- Suggestion to have "system" channel for CMM to record activities.  e.g. reclone system, fix RAM, alter GFX car, move physical machine or VM.  May be better on Sharepoint on a per instrument basis.
 
 
 Can we discuss this ticket as a group to look at automating the release build.?https://github.com/ISISComputingGroup/IBEX/issues/6973#issuecomment-1015399722
@@ -121,6 +119,6 @@ OK to pick up "Friday" ticket at any point?
 Sprint Review:
 
 - Release created and deployed on time
-- see how early deployment worked for coming sprint - created more patches?  scientists tested early as was point?
+- See how deploying early worked for the upcoming sprint/cycle - did we create more patches as a result?  Did scientists test early as that was the whole point?
 
 
