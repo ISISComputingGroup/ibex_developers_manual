@@ -1,5 +1,7 @@
 It is possible to use one of the checkouts from a build server as the basis of your local development environment.
 
+NOTE: if you just want a recent EPICS build for somewhere, you just need to run the `install_to_inst.bat` in the appropriate build on `kits$` when connected from the machine you want to install it on
+
 ## EPICS
 
 The EPICS clean Windows 10 Jenkins build workspace is copied to  `\\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer\EPICS\x64` - this contains much more than an instrument installation e.g. it has all the local .git submodules and temporary build (object) files. It can thus be used as the basis for further development work on your local computer.
