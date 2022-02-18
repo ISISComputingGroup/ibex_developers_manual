@@ -1,22 +1,21 @@
 ## Items from last sprint: 
 
-
 Can we make our deployment process clear with respect to version numbers of current and previous?  Major/Minor/Patch version.
-How do we account for e.g. hotfixes, roll-backs, patches, etc.  Or deployment of a single IOC, or a support module (e.g. StreamDevice)
+How do we account for e.g. hotfixes, roll-backs, patches, etc.  Or a deployment of a single IOC, or a support module? (e.g. StreamDevice)
 
-- Perhaps link to wiki page from About Box showing versions and hotfixes (exists already).  Or an ID suffix on version number.
+- Perhaps link to wiki page from GUI `About Box` showing versions and hotfixes (exists already).  Or an ID suffix on version number?
 - Each IOC and module has a version number created during build.  Can then compare.
 - How do other facilities handle this?
-- Discuss in separate meeting.
+- Decided need to discuss in separate meeting.
 
-
+-------------------------------
 
 ## Items from Current Sprint (2022_01_06)
 
-How to account to support work
+How to account to support work?
 
-- comment on support channel in Teams
-- KVLB will concatenate at end of sprint and account for points
+- comment on `Support Channel` in Teams
+- KVLB will review at end of sprint and account for points spent
 
 
 What would everyone's opinion be on trying to bring in one or two issues each sprint to automate some of the manual tests we do as part of preparing for releases to slowly begin chipping away at them to speed up release testing?
