@@ -20,36 +20,35 @@ How to account to support work?
 
 What would everyone's opinion be on trying to bring in one or two issues each sprint to automate some of the manual tests we do as part of preparing for releases to slowly begin chipping away at them to speed up release testing?
 
-- use Squish as we have it
-- always good to speed up release testing
-- difficult to prioritse higher than instrument work
-- occasionally convert one test after creating ticket and then review
-- Have list tests/tasks/tickets on wiki for "spare moments" e.g. on Friday afternoon
-- get cycle(s) out of the way and then think more
-
+- Use Squish as we have it
+- Always good to speed up release testing
+- Difficult to prioritise testing higher than instrument work
+- Occasionally convert one test after creating ticket and then review
+- Have a list of tests/tasks/tickets on wiki for "spare moments" e.g. on Friday afternoon
+- Decided to get ISIS cycle(s) out of the way first and then have another think, probably a meeting.
 
 
 Would revisiting the concept of code freezes be a good idea?
 
-- already do something approximating code freezes
-- discuss at meeting above if required 
+- Already do something approximating code freezes
+- Discuss at meeting above if required 
 
 
 Can we consider using GitHub Discussions to contain technical conversations?  I feel it may help us as a team to better organise and archive technical discussions taken place under custom categories and pin important conversations (sort of like an internal stack overflow). I believe it may also help reduce duplication of questions asked and answered within the team. 
 
-- worried about number of search locations
-- technical question should already be in wiki, if not add it.
-- suggested that JA give code chat on subject
-- UKRI univeral documentation project - "UDOC" - option for our manuals(s)?
+- Group worried about number of search locations
+- Any technical question should already be answered on wiki, add it if not.
+- Suggested that JA give a Code Chat on the subject
+- UKRI Universal Documentation Project ("UDOC") - option for our manuals(s)?
 
 
 Might be interesting to just discuss the idea of the ICD lightening talks we attended this week, seemed an interesting idea.  Maybe we could put an odd slot in for one or two (e.g. one after stand-up once a week?).  Not necessarily to to do a block meeting of them  but let a few technical tricks and ideas out of the bag in a 1-2 minute slot.  Could also be presented to ICD if appropriate.
 
-- for info: 4 to 6 months frequency for ICD talks
-- book weekly slot and people can volunteer if have something to talk about
-- after Stand-Up ideal, if time allows and not running in to next meeting.
-- give people option to not attend if not interested
-- suggest after Standup of final day of sprint
+- For info: 4 to 6 months is frequency for ICD talks
+- Book weekly slot and people can volunteer if have something to talk about
+- After Stand-Up meeting is ideal, if time allows and not running in to next meeting
+- Give people option not to attend if not interested
+- Suggestion is to have after Stand-Up of final day of sprint
 
 
 What would everyone's opinion be regarding merging the Social and random teams channels together to reduce the number of channels we have?
