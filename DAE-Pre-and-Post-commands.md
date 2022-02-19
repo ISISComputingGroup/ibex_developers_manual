@@ -5,3 +5,7 @@ The PV links to use during PRE/POST are set by macros, either in the configurati
 ISISDAE_01__PRE_BEGIN_1=SOME:PV:TO:ACCESS.PROC CA
 ```
 Note the `CA` added at the end to request a channel access put, which means the DAE IOC will wait for processing of the PV to finish before executing the main command (begin in this case). As mentioned above `PP` would request processing but not wait, but `PP` is only valid for PVs in the same IOC and it is unlikely the PV of interest will be inside the DAE IOC. For PVs not in the DAE IOC, a channel access put will be done anyway and whether the record processes will be determined by properties of the field written to. I've not determined yet whether adding `CA` to a link that refers to a PV outside the DAE IOC make any difference to Wait behaviour as it will already be a channel access link, but if you wish this behaviour it is safer to add `CA`.   
+
+## genie python interface
+
+By default PRE/POST commands are executed, however in genie python you can request that they are not by passing `prepost=False` to commands like `begin` e.g. `g.begin(prepost=False)` 
