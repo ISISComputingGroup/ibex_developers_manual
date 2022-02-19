@@ -2,6 +2,6 @@ It is possible to get additional actions to be carried out by DAE IOC when comma
 
 The PV links to use during PRE/POST are set by macros, either in the configuration or in `globals.txt`. They have names like `PRE_BEGIN_1` and `POST_BEGIN_1`, to specify then in globals you would add something like   
 ```
-ISISDAE_01__PRE_BEGIN_1=SOME:PV:TO:ACCESS.PROC PP
+ISISDAE_01__PRE_BEGIN_1=SOME:PV:TO:ACCESS.PROC CA
 ```
-Note the `PP` added at the end to request processing, if you wish the DAE IOC to wait for processing to finish before executing the main command (begin in this case) then change `PP` to `CA`. If the PV you are writing to is not within the DAE IOC, then only a channel access link is possible. I've not determined yet whether, in this case, adding CA make any difference to Wait behaviour or whether it will happen anyway, so it is safer to add `CA` if yu wish a wait.   
+Note the `CA` added at the end to request a channel access put, which means the DAE IOC will wait for processing of the PV to finish before executing the main command (begin in this case). As mentioned above `PP` would request processing but not wait, but `PP` is only valid for PVs in the same IOC and it is unlikely the PV of interest will be inside the DAE IOC. For PVs not in the DAE IOC, a channel access put will be done anyway and whether the record processes will be determined by properties of the field written to. I've not determined yet whether adding `CA` to a link that refers to a PV outside the DAE IOC make any difference to Wait behaviour as it will already be a channel access link, but if you wish this behaviour it is safer to add `CA`.   
