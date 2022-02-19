@@ -8,4 +8,4 @@ Note the `CA` added at the end to request a channel access put, which means the 
 
 ## genie python interface
 
-By default PRE/POST commands are executed, however in genie python you can request that they are not by passing `prepost=False` to commands like `begin` e.g. `g.begin(prepost=False)` 
+By default PRE/POST commands are executed, however in genie python you can request that they are not by passing `prepost=False` to commands like `begin` e.g. `g.begin(prepost=False)`. This works by shortcutting some of the logic, normally it would write to the `BEGINRUN` PV which does a fanout to run PRE, main command, POST. The main command is executed via a PV with `_` appended, so `BEGINRUN_`. Thus is you write to `BEGINRUN_` PV instead of to `BEGINRUN` you will avoid running PRE and POST but still start the run.    
