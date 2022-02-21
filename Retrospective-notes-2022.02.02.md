@@ -54,7 +54,7 @@ Might be interesting to just discuss the idea of the ICD lightning talks we atte
 What would everyone's opinion be regarding merging the Social and random teams channels together to reduce the number of channels we have?
 Is there history in one or both chats that we particularly care about and would prefer not to lose?
 
-- Group not been using certain channels very often, so no harm in removing.  Especially "lunch" as was only used in lockdowns.
+- Group not been using certain channels very often, so no harm in removing.  Especially "lunch" as was only used in lock-downs.
 - Always option for individuals to hide any channels on own client
 - OK to delete "social", "lunch" and "reviews". DONE.
 - Suggestion to have "system" channel for CMM to record activities.  e.g. reclone system, fix RAM, alter GFX car, move physical machine or VM.  May be better on Sharepoint on a per instrument basis.
