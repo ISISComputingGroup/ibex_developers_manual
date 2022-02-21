@@ -83,7 +83,7 @@ We probably don't need to buy a mic for the office webcam now, but it's probably
 - suggestion to try separate mic and camera
 
 
-DDaT launch PC recycling and sustainability scheme (sharepoint.com) Volunteers required to re-image obsolete (but still useful) IT equipment for resale to staff or donation to charity.  Scheme currently being run from Polaris House, but maybe if/when expanded to RAL, could be an idea for a team-building exercise (or perhaps more of a busman's holiday!)
+`DDaT` launch PC recycling and sustainability scheme (sharepoint.com) Volunteers required to re-image obsolete (but still useful) IT equipment for resale to staff or donation to charity.  Scheme currently being run from Polaris House, but maybe if/when expanded to RAL, could be an idea for a team-building exercise (or perhaps more of a busman's holiday!)
 
 - probably more useful team-building exercises we could do, like joint programming, or hack-a-thon.
 
