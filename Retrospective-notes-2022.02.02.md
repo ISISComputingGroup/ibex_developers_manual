@@ -42,7 +42,7 @@ Can we consider using GitHub Discussions to contain technical conversations?  I 
 - UKRI Universal Documentation Project ("UDOC") - option for our manuals(s)?
 
 
-Might be interesting to just discuss the idea of the ICD lightening talks we attended this week, seemed an interesting idea.  Maybe we could put an odd slot in for one or two (e.g. one after stand-up once a week?).  Not necessarily to to do a block meeting of them  but let a few technical tricks and ideas out of the bag in a 1-2 minute slot.  Could also be presented to ICD if appropriate.
+Might be interesting to just discuss the idea of the ICD lightning talks we attended this week, seemed an interesting idea.  Maybe we could put an odd slot in for one or two (e.g. one after stand-up once a week?).  Not necessarily to to do a block meeting of them but let a few technical tricks and ideas out of the bag in a 1-2 minute slot. Could also be presented to ICD if appropriate.
 
 - For info: 4 to 6 months is frequency for ICD talks
 - Book weekly slot and people can volunteer if have something to talk about
@@ -61,11 +61,9 @@ Is there history in one or both chats that we particularly care about and would 
 
 
 Can we discuss this ticket as a group to look at automating the release build.?https://github.com/ISISComputingGroup/IBEX/issues/6973#issuecomment-1015399722
-
 - all documented on wiki, so assumed straightforward to create Jenkins job.
 - deployment more involved and risky.  start task with just automated release and then run system tests.
 - create ticket for automating release, not deployment.  Win10 deployment is very different to current system, so will revisit when in place.
-
 
 
 If we can be more descriptive / verbose with PR titles and descriptions, I like the idea of using the auto generated release notes feature on GitHub for release tags going forward. Currently PR's vary quite a lot in how well they are written so the auto generated release notes don't look very nice.
@@ -79,7 +77,7 @@ If we can be stricter with how well we write PR's and commit messages (title and
 
 
 
-We probably don't need to buy a mic for the office webcam now, but its probably worth shutting the door at standup as people walking past the office can be picked up on it now with the "low" noise suppression option ticked on zoom. Otherwise though I think it's much clearer! 
+We probably don't need to buy a mic for the office webcam now, but it's probably worth shutting the door at standup as people walking past the office can be picked up on it now with the "low" noise suppression option ticked on zoom. Otherwise though I think it's much clearer! 
 
 - camera angle too narrow to show all present.
 - suggestion to try separate mic and camera
