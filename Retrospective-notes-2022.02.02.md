@@ -60,7 +60,7 @@ Is there history in one or both chats that we particularly care about and would 
 - Suggestion to have "system" channel for CMM to record activities.  e.g. reclone system, fix RAM, alter GFX car, move physical machine or VM.  May be better on Sharepoint on a per instrument basis.
 
 
-Can we discuss this ticket as a group to look at automating the release build.?https://github.com/ISISComputingGroup/IBEX/issues/6973#issuecomment-1015399722
+Can we discuss [this ticket](https://github.com/ISISComputingGroup/IBEX/issues/6973#issuecomment-1015399722) as a group to look at automating the release build.?
 - all documented on wiki, so assumed straightforward to create Jenkins job.
 - deployment more involved and risky.  start task with just automated release and then run system tests.
 - create ticket for automating release, not deployment.  Win10 deployment is very different to current system, so will revisit when in place.
