@@ -83,6 +83,7 @@ If you need to update the archive engine then you will need to:
 ### General Investigation
 
 First look at the log to ensure that there are no issues. The log is held in `C:\JSON_Bourne\log`. Issues may be in the front end, in which case error logs are in the web browser, visit the webpage in a browser and open up the web console.
+If there are a number of `HTTP Error 503. The service is unavailable` errors, restarting the server completely may be required, but simply restarting the Dataweb should be the first thing to try.
 
 ### Restart the Dataweb
 
