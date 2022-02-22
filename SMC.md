@@ -4,7 +4,7 @@ SMC100 Motor controller it has N axes which have different ports.
 
 This is a newport motor controller. They have peculiar startup and homing behaviour, after powering up they must be homed and once homed they can not be homed again.
 
-If running asyn trace, when it is working you may have nothing printed, so i guess It doesn't look to regularly poll. but all a bit confusion.
+If running asyn trace, when it is working you may have nothing printed, so i guess It doesn't look to regularly poll. but all a bit confusion. If you want to run asyn trace, note that the port is called `serial1` rather than `L0`
 
 ### Connection
 
