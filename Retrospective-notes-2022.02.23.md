@@ -38,7 +38,7 @@ If we can be stricter with how well we write PR's and commit messages (title and
 
 We probably don't need to buy a mic for the office webcam now, but it's probably worth shutting the door at standup as people walking past the office can be picked up on it now with the "low" noise suppression option ticked on zoom. Otherwise though I think it's much clearer! 
 
-`DDaT` launch PC recycling and sustainability scheme (sharepoint.com) Volunteers required to re-image obsolete (but still useful) IT equipment for resale to staff or donation to charity.  Scheme currently being run from Polaris House, but maybe if/when expanded to RAL, could be an idea for a team-building exercise (or perhaps more of a busman's holiday!)
+`DDaT` launch PC recycling and sustainability scheme (sharepoint.com) Volunteers required to re-image obsolete (but still useful) IT equipment for resale to staff or donation to charity.  Scheme currently being run from Polaris House, but maybe if/when expanded to RAL, could be an idea for a team-building exercise (or perhaps more of a bus man's holiday!)
 
 ## Items from current sprint
 
@@ -52,7 +52,7 @@ because we had a developer build
 If we can be more descriptive / verbose with PR titles and descriptions, I like the idea of using the auto generated release notes feature on GitHub for release tags going forward. Currently PR's vary quite a lot in how well they are written so the auto generated release notes don't look very nice.
 If we can be stricter with how well we write PR's and commit messages (title and body), I would like to place the Release notes link in the release tag like we do already and then the auto generated release notes beneath that to be more descriptive with the changes included in each release tag per repository.
 - We looked at the draft of auto-generated release notes
-- We decided that we should think about maing pull request titles more descriptive but
+- We decided that we should think about making pull request titles more descriptive but
 we will not be spending time on auto release notes
 
 Would it help to know the points expected at the start of planning meetings to help with the awareness of what we can do?
