@@ -8,4 +8,4 @@ If running asyn trace, when it is working you may have nothing printed, so i gue
 
 ### Connection
 
-DLS system: connected to laptop via a gender changer. It deos not seem to need a null modem, not tested if correct gender cable works, seems "traditional" to use a cable + gender changer.
+DLS system: connected to laptop via a gender changer. It does not seem to need a null modem, not tested if correct gender cable works, seems "traditional" to use a cable + gender changer.
