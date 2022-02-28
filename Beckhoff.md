@@ -44,3 +44,16 @@ The config area contains a directory used for storing `.tpy` files for use with 
 ## Updating
 
 Some discussion has been had on how we handle updates to the Beckhoff PLC code and `tcIoc` etc. this is documented [here](https://stfc365.sharepoint.com/:w:/s/ISISMechatronics/EXnBTNmcqqVCkIXXxjSvYdwBD3ZihXKDE0pZpiErGnkJ1g?e=4%3AWjCJxN&at=9&CID=0DF00AB8-D565-4B81-9AA2-C0DD226434CA&wdLOR=c76050FF1-1FF0-4AC8-A94C-0127E17DD337)
+
+## Troubleshooting
+
+As we don't really handle any logic minus the motor record aliasing, there isn't much to go wrong (in theory) - sometimes for numerous reasons such as motion logic changing etc. the `.tpy` file that maps over memory addresses to human readable names can go out of date.  
+
+### "TPY file needs updating"
+If nothing whatsoever is working, moves aren't sending and enabling/disabling is not working, an outdated `.tpy` file could be the cause. 
+
+To remedy this: 
+1. Stop the `TC` IOC from IBEX.
+1. Obtain a valid/up to date `.tpy` file, either sent from the motion team or from the controller (usually under `C:\TwinCAT\3.1\Boot\Plc\`, named `port_852.tpy`, you can remote desktop in using the PLC's IP address and use a file explorer to copy it from its Windows environment)
+1. Place above `.tpy` file in `C:\Instrument\Settings\Config\NDX<instname>\configurations\twincat\` - it will need to be called whatever it was before or whatever it was in the config (it's passed in via a macro) - it's usually called `tc_project_app.tpy`
+1. Start the `TC` IOC again from IBEX. This should re-generate the `.db` file in the above directory and you should now have working communication. The table of motors may take a while to update so to check if things are working it may be easiest to use the `Beckhoff Engineering` device screen. If this does not exist on an instrument, create it. 
