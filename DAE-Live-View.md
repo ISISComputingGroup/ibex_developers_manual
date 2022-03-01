@@ -47,3 +47,7 @@ You then need to put the live view into "TOFChannel" rather than "TOFSummed" mod
 caput %MYPVPREFIX%DAE:AD1:INTG:DATAMODE:SP 1
 ```
 `number_of_time_channels` is displayed on the DAE Run Information tab as "time channels". Note that this value will change if they ever change their time channel boundaries.     
+
+## error on profile picture about not enough data for dataWidth*height
+
+This is caused by the array pv being viewed not being large enough to contain all the data, this is determined by `NELEMENTS` in `liveview.cmd` in `ioc/isisdae`. It is set by the macro `LIVEVIEW_NELEMENTS`
