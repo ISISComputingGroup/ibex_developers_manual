@@ -50,4 +50,4 @@ caput %MYPVPREFIX%DAE:AD1:INTG:DATAMODE:SP 1
 
 ## error on profile picture about not enough data for dataWidth*height
 
-This is caused by the array pv being viewed not being large enough to contain all the data, this is determined by `NELEMENTS` in `liveview.cmd` in `ioc/isisdae`. It is set by the macro `LIVEVIEW_NELEMENTS`
+This is caused by the array pv being viewed not being large enough to contain all the data, this is determined by `NELEMENTS` in `liveview.cmd` in `ioc/isisdae`. It is set by the macro `LIVEVIEW_NELEMENTS` iy needs to be at least sizeX x sizeY
