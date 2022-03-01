@@ -50,4 +50,4 @@ caput %MYPVPREFIX%DAE:AD1:INTG:DATAMODE:SP 1
 
 ## error on profile picture about not enough data for dataWidth*height
 
-This is caused by the array pv being viewed not being large enough to contain all the data, this is determined by `NELEMENTS` in `liveview.cmd` in `ioc/isisdae`. It is set by the macro `LIVEVIEW_NELEMENTS` iy needs to be at least sizeX x sizeY
+This is caused by the array pv being viewed not being large enough to contain all the data, this is determined by `NELEMENTS` in `liveview.cmd` in `ioc/isisdae`. It is set by the macro `LIVEVIEW_NELEMENTS` it needs to be at least sizeX x sizeY. In some cases `EPICS_CA_MAX_ARRAY_BYTES` could need increasing, but we have set this quite large now (and EPICS7 did away with it), so it would be gateway/pcaspy/CSS where it might have an effect. 
