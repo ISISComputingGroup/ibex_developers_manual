@@ -48,6 +48,6 @@ caput %MYPVPREFIX%DAE:AD1:INTG:DATAMODE:SP 1
 ```
 `number_of_time_channels` is displayed on the DAE Run Information tab as "time channels". Note that this value will change if they ever change their time channel boundaries.     
 
-## error on profile picture about not enough data for dataWidth*height
+## error on profile picture about not enough data for `dataWidth*height`
 
-This is caused by the array pv being viewed not being large enough to contain all the data, this is determined by `NELEMENTS` in `liveview.cmd` in `ioc/isisdae`. It is set by the macro `LIVEVIEW_NELEMENTS` it needs to be at least sizeX x sizeY. In some cases `EPICS_CA_MAX_ARRAY_BYTES` could need increasing, but we have set this quite large now (and EPICS7 did away with it), so it would be gateway/pcaspy/CSS where it might have an effect. 
+This is caused by the array pv being viewed not being large enough to contain all the data, this is determined by `NELEMENTS` in `liveview.cmd` in `ioc/isisdae`. It is set by the macro `LIVEVIEW_NELEMENTS` it needs to be at least `sizeX` x `sizeY`. In some cases `EPICS_CA_MAX_ARRAY_BYTES` could need increasing, but we have set this quite large now (and EPICS7 did away with it), so it would be gateway/pcaspy/CSS where it might have an effect. 
