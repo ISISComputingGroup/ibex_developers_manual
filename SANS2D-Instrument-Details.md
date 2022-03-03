@@ -89,11 +89,11 @@ SANS2D has 5 moveable aperture plates:
 ##### Note: Guides #####
 SANS2D has 5 moveable guides.  Each guide contains two channels - a collimation channel and a guide (super-mirror) channel:
 1. All guides are driven by a Beckhoff which in turn drives Stober drives.
-   * the guides are very heavy (> 3 tonnes) - that's why they need Stober drives to move them.
-1. guide positions are defined as motion set-points.
-1. guides can also be driven to any position in their range (but this is not usual).  Plates are sometimes scanned, to check the motion set-points are still valid.
-1. guides are homed by driving to a low limit switch, then driving up to a home switch.
-1. guides **MUST NOT** be moved when the vacuum on (there is an inhibit signal from the vacuum PLC, forwarded to the Beckhoff to prevent motion).
+   * The guides are very heavy (> 3 tonnes) - that's why they need Stober drives to move them.
+1. Guide positions are defined as motion set-points.
+1. Guides can also be driven to any position in their range (but this is not usual).  Plates are sometimes scanned, to check the motion set-points are still valid.
+1. Guides are homed by driving to a low limit switch, then driving up to a home switch.
+1. Guides **MUST NOT** be moved when the vacuum is on (there is an inhibit signal from the vacuum PLC, forwarded to the Beckhoff to prevent motion).
     * When the permit is re-established, there is a monitor in `custom_records.db` which forwards the PLC value to each of the axis enabled controls.
 
 ##### Note: Gate Valve #####
