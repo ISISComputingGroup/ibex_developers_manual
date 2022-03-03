@@ -88,7 +88,7 @@ SANS2D has 5 moveable aperture plates:
 
 ##### Note: Guides #####
 SANS2D has 5 moveable guides.  Each guide contains two channels - a collimation channel and a guide (super-mirror) channel:
-1. All guides are driven by a Beckhoff which in turn drives Stober drives.
+1. All guides are driven by a [Beckhoff](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Beckhoff) which in turn drives Stober drives.
    * The guides are very heavy (> 3 tonnes) - that's why they need Stober drives to move them.
 1. Guide positions are defined as motion set-points.
 1. Guides can also be driven to any position in their range (but this is not usual).  Plates are sometimes scanned, to check the motion set-points are still valid.
