@@ -114,8 +114,8 @@ Thurlby EX355P PSU - see [#155](https://github.com/ISISComputingGroup/IBEX/issue
 <a name="noteSyringePumps"></a>
 ##### Note: Syringe Pumps #####
 1. [Watson Marlow 323 Peristaltic Pump](http://www.watson-marlow.com/gb-en/range/watson-marlow/300-tube-pumps/323d/)
-1. [WPI Aladdin-1000 Syringe Pump](https://www.wpi-europe.com/products/pumps-and-microinjection/laboratory-syringe-pumps/al1000-220.aspx)
-1. [WPI SP2xx Syringe Pump](https://www.wpi-europe.com/products/pumps-and-microinjection/laboratory-syringe-pumps.aspx) - check specific model.
+1. [WPI Aladdin-1000 Syringe Pump](https://www.wpi-europe.com/products/pumps--microinjection/laboratory-syringe-pumps/al1000-220.aspx)
+1. [WPI SP2xx Syringe Pump](https://www.wpi-europe.com/products/pumps--microinjection/laboratory-syringe-pumps.aspx) - check specific model.
 
 <a name="noteHe3Monitor"></a>
 ##### Note: He3 Monitor #####
