@@ -124,7 +124,7 @@ Low temperature experiments?[Neocera LTC-21 Manual](http://www.submm.caltech.edu
 1. Implemented via LabVIEW, lvDCOM - see [#1398](https://github.com/ISISComputingGroup/IBEX/issues/1398)).
 
 ##### Note: Syringe Pumps #####
-1. [WPI Aladdin-1000 Syringe Pump](https://www.wpi-europe.com/products/pumps-and-microinjection/laboratory-syringe-pumps/al1000-220.aspx)
+1. [WPI Aladdin-1000 Syringe Pump](https://www.wpi-europe.com/products/pumps--microinjection/laboratory-syringe-pumps/al1000-220.aspx)
 
 ## POLREF Notes ##
 POLREF has the following specialist panels/systems:
