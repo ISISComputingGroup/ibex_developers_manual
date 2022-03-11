@@ -65,7 +65,7 @@ The [CAEN V895](http://www.caen.it/csite/CaenProd.jsp?parent=11&idmod=49) is a 1
    * Triton Documentation : C:\LabVIEW Modules\Drivers\Triton\Documentation
    * See also [#2915](https://github.com/ISISComputingGroup/IBEX/issues/2915)
 1. Support for Mercury Temperature Controller was created as part of [#2840](https://github.com/ISISComputingGroup/IBEX/issues/2840)
-1. Heliox devices are [He3 Sorption Refrigerators](https://nanoscience.oxinst.com/products/helium3-refrigerators/).  See [#3739](https://github.com/ISISComputingGroup/IBEX/issues/3739) and [#4549](https://github.com/ISISComputingGroup/IBEX/issues/4549).
+1. Heliox devices are He3 Sorption Refrigerators.  See [#3739](https://github.com/ISISComputingGroup/IBEX/issues/3739) and [#4549](https://github.com/ISISComputingGroup/IBEX/issues/4549).
 
 ##### Note: LakeShore #####
 1. [Model 340](http://www.lakeshore.com/products/Cryogenic-Temperature-Controllers/Model-340/Pages/Overview.aspx): this model is now obsolete, having been replaced by the 336 and 350 models.
