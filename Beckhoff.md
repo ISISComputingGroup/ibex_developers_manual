@@ -21,7 +21,7 @@ see [Beckhoff Commissioning](Beckhoff-Commissioning)
 
 The current Beckhoff applications that are being run through `tcIOC` and the CI pipeline discussed above are:
 * [dummy_PLC](https://github.com/ISISComputingGroup/BeckhoffPLCCode/tree/dummy_PLC)- a PLC that does very little, basically used to test that fundamental tcIOC comms works
-* [old_ISIS_code](https://github.com/ISISComputingGroup/BeckhoffPLCCode/tree/Ticket5052_refactor_test_runner) - this is the old ISIS prototype motion code that is currently on the CRISP jaws. Hopefully this code can be removed once the jaws are moved on.
+* [old_ISIS_code](https://github.com/ISISComputingGroup/BeckhoffPLCCode/) - this is the old ISIS prototype motion code that is currently on the CRISP jaws. Hopefully this code can be removed once the jaws are moved on.
 * [ESS_base_code](https://bitbucket.org/europeanspallationsource/tc_generic_structure/) (now linked to by `main` of the `BeckhoffTestRunner` repository) - this is the collaboration code that we will be using go forward.
 
 <details>
