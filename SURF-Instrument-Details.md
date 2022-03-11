@@ -116,8 +116,8 @@ Nima Trough: SECI uses a manufacturer supplied VI (see `C:\LabVIEW Modules\Drive
    * `C:\LabVIEW Modules\Drivers\Watson Marlow 323 Pump`
 
 ##### Note: Syringe Pumps #####
-1. [WPI Aladdin-1000 Syringe Pump](https://www.wpi-europe.com/products/pumps-and-microinjection/laboratory-syringe-pumps/al1000-220.aspx)
-1. [WPI SP2xx Syringe Pump](https://www.wpi-europe.com/products/pumps-and-microinjection/laboratory-syringe-pumps.aspx) - check specific model.  See also [#3261](https://github.com/ISISComputingGroup/IBEX/issues/3261)
+1. [WPI Aladdin-1000 Syringe Pump](https://www.wpi-europe.com/products/pumps--microinjection/laboratory-syringe-pumps/al1000-220.aspx)
+1. [WPI SP2xx Syringe Pump](https://www.wpi-europe.com/products/pumps--microinjection/laboratory-syringe-pumps.aspx) - check specific model.  See also [#3261](https://github.com/ISISComputingGroup/IBEX/issues/3261)
 1. The Watson Marlow and WPI Aladdin-1000 syringe pumps are the ones used most frequently on SURF (usually depending on which one is available).
 1. Check existing SECI VIs for logic and manual: VIs and manuals are located here: 
    * `C:\LabVIEW Modules\Drivers\WPI Aladdin-1000 Syringe Pump`
