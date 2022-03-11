@@ -234,7 +234,7 @@ A Superlogics thermocouple 8018R device is used to monitor temperatures on SANS2
 1. See also [#3175](https://github.com/ISISComputingGroup/IBEX/issues/3175)
 
 ##### Note: Syringe Pumps #####
-1. [WPI Aladdin-1000 Syringe Pump](https://www.wpi-europe.com/products/pumps-and-microinjection/laboratory-syringe-pumps/al1000-220.aspx)
+1. [WPI Aladdin-1000 Syringe Pump](https://www.wpi-europe.com/products/pumps--microinjection/laboratory-syringe-pumps/al1000-220.aspx)
 1. See also [#3787](https://github.com/ISISComputingGroup/IBEX/issues/3787)
 
 ##### Note: Detector Trolleys #####
