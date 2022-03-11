@@ -125,9 +125,9 @@ Thurlby EX355P PSU - see [#155](https://github.com/ISISComputingGroup/IBEX/issue
    * Support now implemented (14-08-2019).  See [#3786](https://github.com/ISISComputingGroup/IBEX/issues/3786)
 
 ##### Note: Syringe Pumps #####
-1. [WPI Aladdin-1000 Syringe Pump](https://www.wpi-europe.com/products/pumps-and-microinjection/laboratory-syringe-pumps/al1000-220.aspx)
+1. [WPI Aladdin-1000 Syringe Pump](https://www.wpi-europe.com/products/pumps--microinjection/laboratory-syringe-pumps/al1000-220.aspx)
    * Support now implemented (20-06-2019).  See [#3787](https://github.com/ISISComputingGroup/IBEX/issues/3787)
-1. [WPI SP2xx Syringe Pump](https://www.wpi-europe.com/products/pumps-and-microinjection/laboratory-syringe-pumps.aspx) - check specific model.
+1. [WPI SP2xx Syringe Pump](https://www.wpi-europe.com/products/pumps--microinjection/laboratory-syringe-pumps.aspx) - check specific model.
    * Support now implemented (05-07-2018).  See [#3261](https://github.com/ISISComputingGroup/IBEX/issues/3261)
 
 ##### Note: Weeder #####
