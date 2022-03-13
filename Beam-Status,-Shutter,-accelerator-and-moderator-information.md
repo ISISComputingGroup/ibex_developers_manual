@@ -93,6 +93,6 @@ The program will restart after too many errors are detected. If you run:
 ```
 camonitor ICS:IB:ERRCNT ICS:IB:CHANERRCNT
 ```
-`ERRCNT` is the total number of channel reads errors since last successful read, `CHANERRCNT` is the number of channels currently in error. When `ERRCNT` passes a threshold, the program restarts and you will see these PVs as well as other beam PVs briefly become disconnected.
+`ERRCNT` is the total number of channel reads errors since last successful read, `CHANERRCNT` is the number of channels currently in error. When `ERRCNT` passes a threshold, the program restarts and you will see these PVs as well as other beam PVs briefly become disconnected. Note that `CHANERRCNT` may be non-zero while `ERRCNT` remains 0, this means that there isn't an actual read error on the channel, but it is considered in error for another reason. You would typically need to look at `isisbeam.log` to tell. This usually means the program thinks the channel is `stale`. Each channel, even if it does not change value, should have its timestamp updated by the accelerator control system. Also things like beam current are flagged as suspicious if their value (when non-zero) is exactly the same value for a long period of time.       
 
 
