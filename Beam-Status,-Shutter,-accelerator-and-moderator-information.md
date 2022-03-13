@@ -37,7 +37,7 @@ a line like
 ```
 beam_ions        float    t  0    IDTOR::IRT1:CURRENT
 ```
-means asyn parameter `beam_ions` (in the IOC Db files) is mapped to VISTA parameter `IDTOR::IRT1:CURRENT`. The other columns are related to data type and how the programs tries to check for stale (non updating) values. If the `isisbeam.log` indicated a huge number of errors for a particular parameter, then this could affect reading other parameters - after a certain number of errors the program restarts, but if it starts restarting too frequently this can cause PVs never to reconnect properly. In that case you may need to temporarily remove a line, but seek advice first. 
+means asyn parameter `beam_ions` (in the IOC Db files) is mapped to VISTA parameter `IDTOR::IRT1:CURRENT`. The other columns are related to data type and how the programs tries to check for stale (non updating) values. If the `isisbeam.log` indicated a huge number of errors for a particular parameter, then this could affect reading other parameters - after a certain number of errors the program restarts, but if it starts restarting too frequently this can cause PVs never to reconnect properly. In that case you _may need to temporarily remove a line_, but seek advice first. 
 
 You can read the VISTA parameter directly on MERECKX if you think the issue is with the IOC e.g.
 ```
@@ -87,5 +87,12 @@ camonitor TG:TS2:DMOD:METH:TEMP
 ```
 You can [browse the Db file source on the web](https://github.com/FreddieAkeroyd/EPICS-VMS/tree/master/ioc/ISISBEAM/isisbeamApp/Db)
   
+## intermittent dropouts
 
- 
+The program will restart after too many errors are detected. If you run:
+```
+camonitor ICS:IB:ERRCNT ICS:IB:CHANERRCNT
+```
+`ERRCNT` is the total number of channel reads errors since last successful read, `CHANERRCNT` is the number of channels currently in error. When `ERRCNT` passes a threshold, the program restarts and you will see these PVs as well as other beam PVs briefly become disconnected.
+
+
