@@ -61,6 +61,6 @@ The _Read / Write_ option on the other hand, offers **_full control_** of the re
 
 # Troubleshooting
 
-If you can connect via cloud VNC but get a blank screen that you can do nothing with, this may be because no monitor is attached to the computer. The cloud VNC needs to start the vnc server program in service mode (running as a windows service), and this seems to need a screen of some sort. We run VNC server in user mode on the NDX and this is happy just having an active remote desktop session rather than a screen, but user mode only allows point to point rather than cloud connections.  
+If you can connect via cloud VNC but get a blank screen that you can do nothing with, this may be because no monitor is attached to the computer. The cloud VNC mechanism needs to have the vnc server program running in service mode (as a windows service), and this seems to need a screen of some sort. We run VNC server in user mode on the NDX and this is happy just having an active remote desktop session rather than a real screen, but user mode only allows point to point and not cloud connections.  
 
-We have purchased some "screen dongles" that can be used instead of a monitor, these attach to e.g. the display port adapter on the PC.    
+We have purchased some "screen dongles" that can be used instead of a real monitor, these attach to e.g. a display port adapter port on the PC.    
