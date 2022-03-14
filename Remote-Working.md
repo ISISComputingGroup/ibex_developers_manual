@@ -58,3 +58,9 @@ See [VNC article](https://help.realvnc.com/hc/en-us/articles/360002253618-Managi
 When connecting using an account which has _Read Only_ access, the Users will have **_no control_** over the remote computer whatsoever, not even being able to connect to the control machine.  This option is severely limited (by design) and so relies heavily on the IS to create and leave the RDP session to the control machine in a state which will provide sufficient information to their Users.  
 
 The _Read / Write_ option on the other hand, offers **_full control_** of the remote computer and so the IS needs to consider carefully the implications of allowing Users to connect with this privilege level.
+
+# Troubleshooting
+
+If you can connect via cloud VNC but get a blank screen that you can do nothing with, this may be because no monitor is attached to the computer. The cloud VNC needs to start the vnc server program in service mode (running as a windows service), and this seems to need a screen of some sort. We run VNC server in user mode on the NDX and this is happy just having an active remote desktop session rather than a screen, but user mode only allows point to point rather than cloud connections.  
+
+We have purchased some "screen dongles" that can be used instead of a monitor, these attach to e.g. the display port adapter on the PC.    
