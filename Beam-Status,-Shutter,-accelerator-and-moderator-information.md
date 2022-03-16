@@ -97,5 +97,5 @@ camonitor ICS:IB:ERRCNT ICS:IB:CHANERRCNT
 
 ## nothing working
 
-check `isisbeam.log` but could be a scaled up version of intermittent dropouts leading to extremely frequent restarts and so no time for PVS to get connected
+check `isisbeam.log` but could be a scaled up version of intermittent dropouts leading to extremely frequent restarts and so no time for PVS to get connected. In bad cases you may need to remove lines from the `params.txt` file described above to stop the erroring reads being attempted.
 
