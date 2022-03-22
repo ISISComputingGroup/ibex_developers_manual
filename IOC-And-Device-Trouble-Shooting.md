@@ -4,6 +4,10 @@
 
 # General tips
 
+## My IOC does not show up in the IOC list in IBEX
+
+To update the list of IOCs in IBEX (which is stored in the database) you will need to run `make iocstartups` from `C:\Instrument\Apps\EPICS\` - this will concatenate all the `config.xml` files in the `ioc` directory for each IOC, then filter it and push it to the database. 
+
 ## My IOC fails to make with "Permission Denied"
 
 This is likely not to do with permissions but that the file is in use elsewhere. Try running stop_ibex_server.bat and if that doesn't work find out what else may be using the file ([LockHunter](https://lockhunter.com/) is quite useful).
