@@ -12,7 +12,7 @@ PR auto generated release notes
 Points expected at start of meetings: 
 - still trying this
 
-DIscussion tickets: 
+Discussion tickets: 
 - Now trying architecture meetings, we need another one but it might not be this sprint given we've got cycle, release and deploy
 - we should do one about networks but we should hold fire as there will be changes
 
@@ -23,8 +23,8 @@ Eclipse RCP training:
 - has been decided that a few people are going on a training course for it. Freddie may also do the course as well as he has a license. 
 
 Should we merge IBEX/wiki and the developers manual? 
-- some things wi;ll be changed and moved around, this is still in progress. 
-- inst info moving to the dev manual, this is in progress
+- some things will be changed and moved around, this is still in progress. 
+- instrument info moving to the dev manual, this is in progress
 - main ibex manual is being rearranged a bit, "" 
 
 Team day: 
@@ -49,8 +49,8 @@ We can cheat about this slightly to stop them getting stale
   - pair review may be an idea to get through the tickets that take a lot of time. 
 
 Should we hit the button to get rid of everyone from the GH org who does not have 2FA enabled
- - we need a way of doing this for ISISBuilder
- - we mighrt be able to do this via an app or email rather than text message for it. 
+ - we need a way of doing this for `ISISBuilder`
+ - we might be able to do this via an app or email rather than text message for it. 
 
 We should have a known issues page for accelerator beam stuff being down like the MCR news that the scientists can use for update 
 - Should be something we can all edit
@@ -72,13 +72,13 @@ We decided to move parts of the IBEX wiki into the code repo, would it be an ide
 - this is easy to do
 - this will break the wiki check so we should keep this in mind - though this is easy as well 
 - one click less to have the same info
-- we should doubel check this won't break relative links etc. and retain history
+- we should double check this won't break relative links etc. and retain history
 
 Graylog move to SCD cloud
-- created a friday ticket for this, didn;'t quite get it working
-- the ticket for making graypy more hardy should be treated with a higher priority than the instance location as it caused some scripts to fail
+- created a Friday ticket for this, didn't quite get it working
+- the ticket for making `graypy` more hardy should be treated with a higher priority than the instance location as it caused some scripts to fail
 
-Hackathon to move all IOCs into support dir
+Hackathon to move all IOCs into support directory
 - we should do this instead of the next Friday as a hackathon, they are fun
 - ACTION KB will propose a date 
 
