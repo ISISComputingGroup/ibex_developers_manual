@@ -2,10 +2,6 @@
 
 The linked slides describe the process for [estimating the number of points](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Sprint%20Documents/Estimating_Points_for_a_Sprint.pptx) we expect to deliver in a sprint.
 
-Website links:
-[Priority](https://www.planitpoker.com/board/#/room/a032a4cd557e4efab4dc8efb29edd8ef)
-[Pointing](https://www.planitpoker.com/board/#/room/8e1473cab1f340d1818633eb5b2ab009)
-
 For quick reference points when used the planning poker website can be considered as follows:
 
 ```
