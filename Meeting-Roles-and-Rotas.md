@@ -42,8 +42,8 @@ Don't forget the [drop in sessions](https://github.com/ISISComputingGroup/IBEX/w
 | 2022_02_24_Planning| JH | x  | JA | x | |  |KB | 21/02/2022 | x |
 | 2022_03_24_Pre-Planning| SJ | x | DKg| x | |  |DK | 28/02/2022 | x |
 | 2022_02_24_Review/Retro| CMS | x | LC| x | JH| x |JH | 07/03/2022 | x |
-| 2022_03_24_Planning| DK |   | AS|   | |  |FA | 14/03/2022 | x |
-| 2022_04_21_Pre-Planning| JA |   | FA|   | |  |JA | 21/03/2022 | |
+| 2022_03_24_Planning| SJ | x | AS| x | |  |FA | 14/03/2022 | x |
+| 2022_04_21_Pre-Planning| JA |   | FA|   | |  |JA | 21/03/2022 | x |
 | 2022_03_24_Review/Retro| LC |   | CMS|   | LC|   |TL | 28/03/2022 | |
 | 2022_04_21_Planning| DK |   | DKg|   | |  |KB | 04/04/2022 | |
 | |  |  | |  | |  |CMS | 11/04/2022 | |
