@@ -54,7 +54,7 @@ Should we hit the button to get rid of everyone from the GH org who does not hav
 
 We should have a known issues page for accelerator beam stuff being down like the MCR news that the scientists can use for update 
 - Should be something we can all edit
-- why dont we use hte shared inbox? because people who want to know might not be scientists so we cant just email all of the scientists. 
+- why don't we use the shared inbox? because people who want to know might not be scientists so we cant just email all of the scientists. 
 - we should put this alongside where our shared phone number is listed and put it on that page as it might stop people from calling
 - we need a discussion with the internal web admins in the computing group? to discuss this
 
