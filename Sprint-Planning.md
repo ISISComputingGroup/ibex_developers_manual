@@ -20,10 +20,6 @@ All activates are also done at pre-planning except when marked **[planning]**
 
 ### During meeting
 
-Website links:
-[Priority](https://www.planitpoker.com/board/#/room/a032a4cd557e4efab4dc8efb29edd8ef)
-[Pointing](https://www.planitpoker.com/board/#/room/8e1473cab1f340d1818633eb5b2ab009)
-
 1. For each ticket in proposed:
     1. Read the ticket and understand the issue
     1. Make sure the acceptance criteria makes sense
