@@ -21,3 +21,8 @@ You can force autosave to save at a given point by writing a command into the io
 You can find `"<my_file>.req"` from the ioc startup logs `create_monitor_set("<my_file>.req", ...)`.
 
 If you wish to do this in the IocTestFramework you can with the ProcServLauncher. First you need the ioc to access: `self._lewis, self._ioc = get_running_lewis_and_ioc("<device_name>", DEVICE_PREFIX)` and then you can run `self._ioc.telnet.write("manual_save(\"KEPCO_01_info_settings.req\")\n")`.
+
+# Troubleshooting
+
+See https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/IOC-And-Device-Trouble-Shooting#autosave
+
