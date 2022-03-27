@@ -182,6 +182,14 @@ This has been observed primarily on Galils since they create custom monitor sets
 
 Galils also will not autosave any settings or values if they are set to `DEVSIM` or `RECSIM` mode. 
 
+## comparing current to previous autosaved values
+
+When an IOC starts, it copies the last autosave values to a date stamped file such as `GALIL_02_settings.sav_170309-144116` You can compare the current running IOC values to any of these files by using the `asVerify` command that is built as part of the `autosave` module and should be in your path after a `config_env` e.g.
+```
+asVerify  C:\Instrument\Var\autosave\GALIL_02\GALIL_02_settings.sav_170309-144116
+```
+There is no command to apply an autosave file to the current PVS, this is because it may be a bit dangerous as boot time autosave can apply values without forcing a process of a PV, whereas using a `caput` could have different results. Thus it is better to stop ioc, update autosave file, start ioc as described for galil above. 
+  
 # Motors
 
 ## Limit switches not active at the limit position
