@@ -73,4 +73,4 @@ You can search the workspace for these files, but there is a now a program to do
 
 ## [Office365connector] Matched status 'FAILURE' for webhook with name 'Office 365'.
 
-This is not an error with the `Office365connector`, it is reporting that the connector is being run because it had been configured to match a 'FAILURE' state and the build had failed. The real reason for build failure is earlier in the log file.  
+This is not an error with the `Office365connector`, it is reporting that the connector is being run because it had been configured to match a 'FAILURE' state and the build had failed. You will likely see this message at the end of most failed builds, the real reason for the build failure will be earlier in the jenkins log file.  
