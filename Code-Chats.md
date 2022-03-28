@@ -8,8 +8,8 @@ Code chats occur on a semi-regular monthly basis within the group at ISIS. Altho
 
 Topic | Presenter | Date
 ----- | --------- | ----
-Rust | Jack Harper | 14/02/22
 ISISICP/DAE | Freddie | 31/03/22
+Motion in Ibex| Jack Harper | -----
 
 ### Books and article ideas for technical book club
 
