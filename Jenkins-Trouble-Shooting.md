@@ -70,3 +70,7 @@ If a jenkins job (often epics-static-clean on NDWVEGAS) is failing to run and ne
 This is usually caused by an `index.lock` file not having been removed correctly during a previous git operation. This file should only exist when git is running, if there are no git processes executing on that repository then there should be no `index.lock` file present.
  
 You can search the workspace for these files, but there is a now a program to do this for you (which also checks for running git processes). See `\\isis\shares\ISIS_Experiment_Controls\git_lock_clean` 
+
+## [Office365connector] Matched status 'FAILURE' for webhook with name 'Office 365'.
+
+This is not an error with the `Office365connector`, it is reporting that the connector is being run because it had been configured to match a 'FAILURE' state and the build had failed. The real reason for build failure is earlier in the log file.  
