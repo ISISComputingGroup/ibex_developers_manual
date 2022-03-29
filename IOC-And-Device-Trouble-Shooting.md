@@ -27,6 +27,13 @@ At the IOC command prompt, type:
 dbior("drvAsyn",2)
 ```
 
+## ioc fails to connect to serial COM port
+Errors like
+```
+2022/03/29 17:19:08.570 L0 -1 autoConnect could not connect: \\.\COM106 Can't open: Access is denied.
+```
+*access is denied* probably means another process (an IOC or terminal emulator like hyperterm) is already using the port. After you stop the offending process, it may be a few seconds before you can connect.    
+
 ## It doesn't work What Should I Do?
 
 1. Connect over hyperterminal (see *Connect over hyperterminal*)
