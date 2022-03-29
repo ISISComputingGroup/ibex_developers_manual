@@ -171,7 +171,8 @@ Github Universe | Jack Allen | 14/01/22
 
 
 
-## Lightning Talks
+# Lightning Talks
+Lightning talks are a chance to share smaller bits of interesting information after standup at the end of a sprint.
 Topic | Presenter | Date
 ----- | --------- | ----
 Rust | Jack Harper | 23/03/2022
