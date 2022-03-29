@@ -60,8 +60,10 @@ IOC Testing Framework & Emulators | Tom Willemsen?
 ## Previous Code Chats
 
 The presentation slides for previous code chats are [available here](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Forms/AllItems.aspx?RootFolder=%2Fisis%2Fcomputing%2FICPdiscussions%2FGUI_Chat_Slides&FolderCTID=0x01200027AD8F05966A2748B3B04C98BB5B442B&View={F2C33C51-70E6-4343-B937-2C59A2568306}). 
-
-### 2015
+<details>
+  <summary>Previous code chats</summary>
+  
+  ### 2015
 
 Topic | Presenter | Date
 ----- | --------- | ----
@@ -164,6 +166,10 @@ RIKEN refurbishment | Kevin | 8th of March 21
 Topic | Presenter | Date
 ----- | --------- | ----
 Github Universe | Jack Allen | 14/01/22
+
+</details>
+
+
 
 ## Lightning Talks
 Topic | Presenter | Date
