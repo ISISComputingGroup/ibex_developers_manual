@@ -32,7 +32,7 @@ In reality this mode of operation is actually set per detector card rather than 
 * They're used mainly for normalisation and diagnostics so loss of precision is not that much of a big deal
 
 ## Configuring the DAE/ICP
-There are two settings files inside `EPICS/ICP_Binaries` that are used to configure the ICP at start up, these are `icp_config.xml` and `isisicp.properties`. They contain information that is usually quite fixed for an instrument such as whether to start up in simulation mode, how much memory to use etc.
+There are two settings files inside `EPICS/ICP_Binaries` that are used to configure the ICP at start up, these are `icp_config.xml` and `isisicp.properties`. They contain information that is usually quite fixed for an instrument such as whether to start up in simulation mode, how much memory to use etc. **NOTE:** on in instrument these files live in a different location `c:\labview modules\dae`
 
 There are three main files that can be set at runtime to change the behaviour of the DAE or used for later analysis, they are collectively known as tables and need to be selected from the "Experiment Setup/Data Acquisition" tab in the GUI:
 * *Detector Table*: Files containing the word detector specifying the physical location of each detector. The second line contains the number of entries followed by the number of user parameters. The table consists of a detector id, it's offset, it's L2 (distance from the sample), an id code and then as many user specified parameters as specified in the second line.
