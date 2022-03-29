@@ -59,4 +59,4 @@ To remedy this:
 1. Start the `TC` IOC again from IBEX. This should re-generate the `.db` file in the above directory and you should now have working communication. The table of motors may take a while to update so to check if things are working it may be easiest to use the `Beckhoff Engineering` device screen. If this does not exist on an instrument, create it. 
 
 ### Unable to set limits and multiple errors.
-Safety systems such as light curtains will throw the controller into error and prevent limits being set, as opposed to just stopping movement like on a galil.
+Safety systems such as light curtains or bump strips will throw the controller into error (and usually disable all axes) and prevent limits being set, as opposed to just stopping movement like on a Galil. The green reset button on each beamline should clear the error and re-enable. 
