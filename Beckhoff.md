@@ -57,3 +57,6 @@ To remedy this:
 1. Obtain a valid/up to date `.tpy` file, either sent from the motion team or from the controller (usually under `C:\TwinCAT\3.1\Boot\Plc\`, named `port_852.tpy`, you can remote desktop in using the PLC's IP address and use a file explorer to copy it from its Windows environment)
 1. Place above `.tpy` file in `C:\Instrument\Settings\Config\NDX<instname>\configurations\twincat\` - it will need to be called whatever it was before or whatever it was in the config (it's passed in via a macro) - it's usually called `tc_project_app.tpy`
 1. Start the `TC` IOC again from IBEX. This should re-generate the `.db` file in the above directory and you should now have working communication. The table of motors may take a while to update so to check if things are working it may be easiest to use the `Beckhoff Engineering` device screen. If this does not exist on an instrument, create it. 
+
+### Unable to set limits and multiple errors.
+Safety systems such as light curtains will throw the controller into error and prevent limits being set, as opposed to just stopping movement like on a galil.
