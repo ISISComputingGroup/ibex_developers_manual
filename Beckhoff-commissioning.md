@@ -31,14 +31,14 @@ Although commissioning a Beckhoff is far simpler than a Galil from an IBEX persp
 These can be set via a `caput` and will be autosaved thereafter.
 
 #### Axes, motion setpoints, jaws
-These are loaded in the usual way, you'll need to put your `axes.cmd` and `motionSetpoints.cmd` files alongside the `tpy` file (in the twincat config directory)
+These are loaded in the usual way, you'll need to put your `axes.cmd` and `motionSetpoints.cmd` files alongside the `tpy` file (in the `twincat` config directory)
 
 #### Jaws
 
 Jaws controlled by Beckhoffs don't actually require any logic to calculate gaps & centres, as this is done on the controller using virtual axes for the gaps and centres, so instead we load in a `$(JAWS)/db/jaws_alias.db` file instead of the usual `jaws.db`. This takes macros for the (virtual) axes to use as the gaps and centres.
 
 #### If a controller has more than 8 axes
-If a controller with more than 8 axes is going to be used, the TWINCAT IOC will alias records to the next controller number so they are shown in the GUI. For this to work you need to make sure that the next available controller number is not (and never will be, so long as the TWINCAT IOC uses it) used. 
+If a controller with more than 8 axes is going to be used, the TC IOC will alias records to the next controller number so they are shown in the GUI. For this to work you need to make sure that the next available controller number is not (and never will be, so long as the TC IOC uses it) used. 
 
 #### Arbitrary fields 
 
