@@ -2,14 +2,6 @@
 
 The SDTEST IOCs allow us to set up communications with an arbitrary device on-the-fly. This often happens if an instrument acquires a bit of equipment to achieve a short term goal. We should try and ensure that if a device is to be used long-term that we find out about it early enough to provide a dedicated IOC, or deliver it as soon as practical.
 
-
-
-
-
-***************
-SDTEST IOC
-***************
-
 The serial device test module consists of IOCs called SDTEST_01, SDTEST_02 etc. Each of these can control up to 8 separate serial devices.
 
 Configuration of the devices is via EPICS macros, which can be defined in the globals.txt file located in c:/Instrument/settings/config/NDXLARMOR/configurations
@@ -22,11 +14,6 @@ Each SDTEST IOC supports 8 devices numbered 1 to 8. Settings for each of these h
 Arbitrary string commands can be sent to the device via EPICS process variables, but it is also possible to define a way to send and receive a particular numeric value through a PV. The format of how to send this value and how often to poll for it need to be specified and this is described later.
 
 By way of example we will consider a power supply. In globals.txt we have:
-
-
-
-
-
 
 
 # Macros
@@ -57,9 +44,8 @@ Each SDTest IOC supports communication with 8 separate devices on 8 ports. Macro
 - `INITP`: Send an initialisation command (default: NO)
 - `PROTO`: Path to custom protocol file, (default: SDTEST-default.proto)
 
-Note that typically 
 
-# Example
+## Example
 
 This is an example of `globals.txt` for using SDTest for talking to a Keithley 2000:
 
@@ -83,6 +69,8 @@ SDTEST_01__SETIN3=OK             # expected reply from SETOUT* Use e.g. %*40c to
 
 As these all start SDTEST_01\_\_ and end in 3 they refer to the third device attached to IOC SDTEST_01
 You do not need to specify all values, here are defaults
+
+# Process variables
 
 Process variables defined are of the form {instrument prefix}{ioc name}{device index}{variable} e.g. for the first device (P1) on IOC SDTEST_01
 
@@ -116,16 +104,19 @@ For INIT, macros INITOUT and INITIN
  
 The ASYN record PV can be useful for diagnostics
 
-## SDTEST Synoptic OPI
+# Logging
+
+Typically you would point a block at `IN:LARMOR:SDTEST_01:P1:GETVAL` to get values logged
+
+# SDTEST Synoptic OPI
 
 An OPI file SDTEST.opt exists that opens a display for managing the serial device, which
 includes the option to open an ayn record OPI - see screenshots at bottom 
 of _ASYN Record: http://www.aps.anl.gov/epics/modules/soft/asyn/R4-26/asynRecord.html
 
-## More complex cases
+# More complex cases
 
-CAn use `PROTO` macro to specify another stread device protocol file rather than  `SDTEST-default.proto`
-
+Can use `PROTO` macro to specify another stream device protocol file rather than  `SDTEST-default.proto`
 
 See http://epics.web.psi.ch/software/streamdevice/doc/  
 
