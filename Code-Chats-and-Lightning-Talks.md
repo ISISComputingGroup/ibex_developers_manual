@@ -8,7 +8,6 @@ Code chats occur on a semi-regular monthly basis within the group at ISIS. Altho
 
 Topic | Presenter | Date
 ----- | --------- | ----
-ISISICP/DAE | Freddie | 31/03/22
 Motion in Ibex| Jack Harper | -----
 
 ### Books and article ideas for technical book club
@@ -163,9 +162,10 @@ Cryogenics handover | Tom Willemsen | 2nd February '21
 RIKEN refurbishment | Kevin | 8th of March 21
 
 ### 2022
-Topic | Presenter | Date
------ | --------- | ----
-Github Universe | Jack Allen | 14/01/22
+Topic | Presenter | Date | Recording
+----- | --------- | ---- | ----------
+Github Universe | Jack Allen | 14/01/22 | Not Recorded
+ISISICP/DAE | Freddie | 31/03/22 | [Recorded here.](https://stfc365-my.sharepoint.com/:v:/r/personal/jack_harper_stfc_ac_uk/Documents/Recordings/Code%20chat%20(ISISICP_DAE)-20220331_140431-Meeting%20Recording.mp4?csf=1&web=1&e=ccVfMJ)
 
 </details>
 
