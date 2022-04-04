@@ -32,21 +32,29 @@ Don't forget the [drop in sessions](https://github.com/ISISComputingGroup/IBEX/w
 
 | Meeting| Chair | x for Done | Timekeeper | x for Done | Note taker | x for Done |Standup | Week Commencing | x for Done |
 | ---| --- | --- | ---| --- | --- | --- |--- | --- | --- |
-| 2021_12_16_Review/Retro| JH | x | KB| x | SJ| x |CMS | 03/01/2022 | x |
-| 2022_01_06_Planning| FA | x | DK| x | |  |FA | 10/01/2022 | x |
-| 2022_02_03_Pre-Planning| KB | x | JH| x | |  |SJ | 17/01/2022 | x |
-| 2022_01_06_Review/Retro| AS | x | CMS| x | DK| x  |TL | 24/01/2022 | x |
-| 2022_02_03_Planning| TL | x  | SJ| x  | |  |JA | 31/01/2022 | x |
-| 2022_02_24_Pre-Planning| TL | x | JA| x | |  |DKg | 07/02/2022 | x |
-| 2022_02_03_Review/Retro| DKg | x  | KB| x  | AS| x |AS | 14/02/2022 | x |
-| 2022_02_24_Planning| JH | x  | JA | x | |  |KB | 21/02/2022 | x |
-| 2022_03_24_Pre-Planning| SJ | x | DKg| x | |  |DK | 28/02/2022 | x |
-| 2022_02_24_Review/Retro| CMS | x | LC| x | JH| x |JH | 07/03/2022 | x |
-| 2022_03_24_Planning| SJ | x | AS| x | |  |FA | 14/03/2022 | x |
-| 2022_04_21_Pre-Planning| JA |   | FA|   | |  |JA | 21/03/2022 | x |
-| 2022_03_24_Review/Retro| LC |   | CMS|   | LC|   |TL | 28/03/2022 | x |
-| 2022_04_21_Planning| DK |   | DKg|   | |  |KB | 04/04/2022 | |
-| |  |  | |  | |  |CMS | 11/04/2022 | |
-| |  |  | |  | |  |LC | 18/04/2022 | |
-| |  |  | |  | |  |FA | 25/04/2022 | |
+| 2022_02_24_Review/Retro| CMS | x | LC| x | JH| x |JA | 21/03/2022 |x |
+| 2022_03_24_Planning| SJ | x | AS| x | |  |TL | 28/03/2022 |x |
+| 2022_04_21_Pre-Planning| JA |   | FA|   | |  |KB | 04/04/2022 | |
+| 2022_03_24_Review/Retro| LC |   | CMS|   | JA|   |CMS | 11/04/2022 | |
+| 2022_04_21_Planning| TL |   | DKg|   | |  |LC | 18/04/2022 | |
+| 2022_05_19_Pre-Planning| DK |   | TL|   | |  |FA | 25/04/2022 | |
+| 2022_04_21_Review/Retro| AS |   | DK|   | DKg|   |DKg | 02/05/2022 | |
+| 2022_05_19_Planning| JH |   | SJ|   | |  |DK | 09/05/2022 | |
+| 2022_06_16_Pre-Planning| KB |   | JH|   | |  |AS | 16/05/2022 | |
+| 2022_05_19_Review/Retro| DKg |   | LC|   | TL|   |TL | 23/05/2022 | |
+| 2022_06_16_Planning| LC |   | AS|   | |  |CMS | 30/05/2022 | |
+| 2022_07_14_Pre-Planning| FA |   | CMS|   | |  |KB | 06/06/2022 | |
+| 2022_06_16_Review/Retro| CMS |   | JA|   | LC|   |LC | 13/06/2022 | |
+| 2022_07_14_Planning| DK |   | FA|   | |  |DKg | 20/06/2022 | |
+| 2022_08_11_Pre-Planning| JA |   | KB|   | |  |AS | 27/06/2022 | |
+| 2022_07_14_Review/Retro| SJ |   | JH|   | JA|   |FA | 04/07/2022 | |
+| 2022_08_11_Planning| FA |   | LC|   | |  |JA | 11/07/2022 | |
+| 2022_09_01_Pre-Planning| KB |   | DK|   | |  |JH | 18/07/2022 | |
+| 2022_08_11_Review/Retro| LC |   | SJ|   | JH|   |CMS | 25/07/2022 | |
+| 2022_09_01_Planning| DK |   | TL|   | |  |TL | 01/08/2022 | |
+| |  |  | |  | |  |DK | 08/08/2022 | |
+| |  |  | |  | |  |LC | 15/08/2022 | |
+| |  |  | |  | |  |SJ | 22/08/2022 | |
+| |  |  | |  | |  |KB | 29/08/2022 | |
+
 
