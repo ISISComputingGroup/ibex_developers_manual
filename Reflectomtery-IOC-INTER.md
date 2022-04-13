@@ -37,7 +37,7 @@ The [beam blocker](Reflectometry-Beam-Blocker) on INTER is not setup yet.
 
 ### Sample height correction
 
-INTER has a correction function on sample height which is a fudge factor to account for imperfections in the mirror alignment. [See here](https://github.com/ISISComputingGroup/IBEX/issues/6357#issuecomment-844244014) for more detail
+INTER has a correction function on sample height which is a fudge factor to account for engineering imperfections in the mirror alignment. [See here](https://github.com/ISISComputingGroup/IBEX/issues/6357#issuecomment-844244014) for more detail
 
 
 ## Initial Testing
