@@ -8,7 +8,7 @@ Code chats occur on a semi-regular monthly basis within the group at ISIS. Altho
 
 Topic | Presenter | Date
 ----- | --------- | ----
-Motion in Ibex| Jack Harper | -----
+Motion in Ibex| Jack Harper | 27/04/22
 
 ### Books and article ideas for technical book club
 
