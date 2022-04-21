@@ -25,7 +25,7 @@ You should end up with a path to MySQL that looks like `C:\Instrument\Apps\mysql
 
 ### 4. Install MySQL8 as a service
 
-Save the following as a batch file somewhere on your computer and then run it **as administrator**. It is advised to launch this from within a command prompt (also ran as administrator) so you can debug potential errors as it runs. When prompted for passwords, enter the MySQL root password. The MySQL root password is stored on the ISIS sharepoint, which you will need access to. 
+Save the following as a batch file somewhere on your computer and then run it **as administrator**. It is advised to launch this from within a command prompt (also ran as administrator) so you can debug potential errors as it runs. When prompted for passwords, enter the MySQL root password. The MySQL root password is stored in the IBEX password vault, which you will need access to (talk to someone in the team to get added).
 
 ```
 sc stop MYSQL80 > nul
