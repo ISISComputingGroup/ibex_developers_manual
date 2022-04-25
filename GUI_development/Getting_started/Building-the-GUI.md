@@ -26,7 +26,7 @@ These are the steps needed to run the GUI via Eclipse:
 1. Then `git checkout master` from where the IBEX code was cloned to (if it's a fresh clone, it should already be on this branch).
 1. Install the pre-commit hook (see https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Building-the-GUI#installing-the-git-hooks)
 1. Start Eclipse IDE and select the workspace and use "Browse" to create and select the new workspace folder.
-1. From the menu bar choose File->Import->General->Existing Projects into Workspace. Choose "Select root directory" and browse to `<IBEX Clone Path>\base`, Eclipse should automatically select everything so click "Finish" to add them to the project
+1. From the menu bar choose File->Import->General->Existing Projects into Workspace. Choose "Select root directory" and browse to `<IBEX Clone Path>\base`. You should now see a list of plugins to import with names like `uk.ac.stfc.isis.ibex.*`. Eclipse should automatically select everything so you just need to click "Finish" to add them to the project
 1. Expand the target platform folder (labelled as ``uk.ac.stfc.isis.ibex.targetplatform``), double click on the target file and choose "Set as Target Platform". This may take some time as parts of CS-Studio and DAWN are downloaded. It may also be required to update the Locations in use should some packages appear to be missing. 
 1. Then select Project->Clean from the menu bar.
 1. To run the application from within Eclipse: open "ibex.product" from the ``uk.ac.stfc.isis.ibex.e4.client.product`` folder, select "Launch an Eclipse application".
