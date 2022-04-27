@@ -17,7 +17,7 @@ Zoom contact details:
  - Its possible that the call queues are mangling caller ID, might need to test it.
    - Possible that if its forwarded from queue 1 to 2 it might say its from call 2.
    - This can cause issues with calling people back.
-   - Somes have caller ID and some don't.
+   - Some have caller ID and some don't.
  
 Moving Wiki into the code repo:
  - Would be just moving the ibex wiki repository to the main repository.
@@ -32,7 +32,7 @@ Graylog move to SCD cloud:
  - We don't currently have graylog running.
 
 Moving IOC tests and emulators to support directory:
- - Happening on friday.
+ - Happening on Friday.
 
 
 ## Items from this sprint
