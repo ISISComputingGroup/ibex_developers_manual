@@ -60,3 +60,6 @@ To remedy this:
 
 ### Unable to set limits and multiple errors.
 Safety systems such as light curtains or bump strips will throw the controller into error (and usually disable all axes) and prevent limits being set, as opposed to just stopping movement like on a Galil. The green reset button on each beamline should clear the error and re-enable. 
+
+### Motor not responding to set points, no errors in log, "controller error" message
+In this case, navigating to the TwinCAT Beckhoff Controller OPI, selecting the troublesome axis, then pressing "load" then "reset" cleared the issue.
