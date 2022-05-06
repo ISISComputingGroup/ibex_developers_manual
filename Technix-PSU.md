@@ -35,7 +35,7 @@ Status bits information:
 * PL4 = 1 Hv-On status 
 * PL4 = 0 Hv-Off status 
 
-PL5, PL6, PL7, PL8 are input bits corresponding to P5, P6, P7 et P8 instructions ( image of output logical instructions) 
+PL5, PL6, PL7, PL8 are input bits corresponding to P5, P6, P7 and P8 instructions ( image of output logical instructions) 
 
 ## Use and safety
 
