@@ -27,6 +27,8 @@ The following `.jar` files may need updating. Check for new versions in maven ce
 ./base/uk.ac.stfc.isis.ibex.ui/lib/opal-1.0.0.jar
 ```
 
+After upgrading the jars make sure to update the resferences to them in their project's .classpath and META-INF/MANIFEST.MF files.
+
 ### Target platform
 
 This is defined in the file `./base/uk.ac.stfc.isis.ibex.targetplatform/uk.ac.stfc.isis.ibex.targetplatform.target
