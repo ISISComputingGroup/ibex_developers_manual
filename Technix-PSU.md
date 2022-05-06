@@ -13,8 +13,8 @@ Eg. Instruction --> `P7,1` Answer --> `P7,1`.
 | OUTPUT CURRENT PROGRAMMING     | `d2,X` ( X E [0 ;4095])  | Sets the current. |
 | OUTPUT VOLTAGE MONITOR     | `a1`  | Gets the voltage. |
 | OUTPUT CURRENT MONITOR     | `a2`  | Gets the current. |
-| HV ON     | `P5,1` --> (delay 100 mS) `P5,0`  | Sets HV ON. |
-| HV OF     | `P6,1` --> (delay 100 mS) `P6,0`  | Sets HV OFF. |
+| HV ON     | `P5,1` --> (delay 100 ms) `P5,0`  | Sets HV ON. |
+| HV OF     | `P6,1` --> (delay 100 ms) `P6,0`  | Sets HV OFF. |
 | LOCAL/REMOTE MODE     | LOCAL:`P7,1` REMOTE:`P7,0`  | Sets local/remote mode. |
 | INHIBIT     | ACTIVE:`P8,1` IDLE:`P8,0`  | Sets inhibit mode. |
 | MAINS INFORMATION     | `F`  | Gets mains information. (F001 mains correct/ F000 mains defective) |
