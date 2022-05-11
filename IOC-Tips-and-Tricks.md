@@ -109,5 +109,5 @@ dbAliasRecordsRE("ME:(.*)", "$(MYPVPREFIX)\1")
 but much more complex rewrites are possible
 
 ## For general information on commands see:
-http://epics.isis.rl.ac.uk/doxygen/main/support/utilities/index.html
-https://epics.anl.gov/base/R3-14/12-docs/AppDevGuide/node19.html
+* http://epics.isis.rl.ac.uk/doxygen/main/support/utilities/index.html
+* https://epics.anl.gov/base/R3-14/12-docs/AppDevGuide/node19.html
