@@ -73,7 +73,9 @@ There are a number of tips for [trouble shooting](trouble-shooting-pages) alread
 <details>
   <summary>I can't see the dataweb for {instrument}</summary>
  
-  1. Check whether or not you can see that dataweb, and how extensive the failure is (one instrument, many, all) (TODO: Find out the solution for this, is it always restart the dataweb server/JSON_BOURNE?)
+  1. Check whether or not you can see that dataweb, and how extensive the failure is (one instrument, many, all) (TODO: Find out the solution for this, is it always restart the dataweb server/JSON_BOURNE?
+  2. Try the troubleshooting section on the [dataweb](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Web-Dashboard#troubleshooting)
+  3. If this doesn't work try restarting ndaextweb3
 
 </details>
 
