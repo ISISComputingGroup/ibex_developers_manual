@@ -24,7 +24,7 @@ can be ORed together and optionally set:
 
 * `0x1`: ASYN_TRACE_ERROR - Print error messages (default)
 * `0x2`: ASYN_TRACEIO_DEVICE - Device support reports I/O activity.
-* `0x4`: ASYN_TRACEIO_FILTER - Any layer between device support and the low level driver
+* `0x4`: ASYN_TRACEIO_FILTER - Any layer between device support and the low level driver e.g. asyn interpose functions 
 * `0x8`: ASYN_TRACEIO_DRIVER - Low level driver reports I/O activity
 * `0x10`: ASYN_TRACE_FLOW - Report logic flow
 * `0x20`: ASYN_TRACE_WARNING - Report warnings, i.e. conditions between ASYN_TRACE_ERROR and ASYN_TRACE_FLOW
