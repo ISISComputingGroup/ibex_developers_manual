@@ -8,4 +8,4 @@ The relay can be controlled via the digital output of the Galil. Sending `SB 1` 
 
 Unfortunately the feed for the encoder also powers the limits meaning that power will also be cut to these when stationary and they will appear as if a limit has been hit. The homing routine does not send a `CB 1` on start and so will not work. Therefore to do a home the relay will have to be manually switched. To do this there are some helper functions in the instrument scripts `IMAT_library.py` called `turn_on_encoder` and `turn_off_encoder`, use `turn_on_encoder` prior to a home and `turn_off_encoder` afterwards
 
-During a move `IN:IMAT:MOT:DMC01:Galil0Bo0_STATUS` will show `Low` (from `CB 1`) and then return to `High` (from `SB 1`) afterwards
+During a move `IN:IMAT:MOT:DMC01:Galil0Bo0_STATUS` will show `Low` (from `CB 1`) and then return to `High` (from `SB 1`) afterwards. When not moving, the motor will show as both limits engaged as power will have been cut by the relay. 
