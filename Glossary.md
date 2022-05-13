@@ -193,7 +193,7 @@ The journal parser is a program that runs as part of the end run processes. It l
 
 Macro
 -----
-A named abstraction for a variable setting, e.g. the macro is PORT, referenced as `$(PORT)`, but the data it is abstracting could be `COM11` or `192.168.0.0`. Regexes are used to define the format of the macro in the GUI to ensure that you don't try to use the wrong data type or formatting where the variable is referenced.
+A named abstraction for a variable setting, e.g. the macro is PORT, referenced as `$(PORT)`, but the data it is abstracting could be `COM11` or `192.168.0.0`. Regex is used to define the format of the macro in the GUI to ensure that you don't try to use the wrong data type or formatting where the variable is referenced.
 
 Mini-Inst
 ---------
