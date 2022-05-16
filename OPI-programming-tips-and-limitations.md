@@ -167,3 +167,8 @@ Most figures are implemented using the `draw2d` framework, which is a graphics t
 # Getting a macro value in a script
 
 `display.getMacroValue("MY_MACRO")`
+
+# Hotfixing an OPI
+
+OPIs can be hotfixed on an instrument PC, with a built client, by modifying the OPI files in:
+`\<built client location, usually \instrument\apps\client_e4\>\plugins\uk.ac.stfc.isis.ibex.opis_1.0.0.SNAPSHOT\resources` - this means you do not have to copy the entire client over, just the `.opi` file. You may also need to modify `opi_info.xml`, also in this folder, if you are adding a new OPI or modifying macros passed to an OPI. 
