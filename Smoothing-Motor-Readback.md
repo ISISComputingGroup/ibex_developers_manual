@@ -1,6 +1,6 @@
 Several Galil systems use analogue feedback as the encoder, this is effectively an absolute encoder (so no need to rehome etc) but the readback can be noisy and this has caused issues in the past with setpoints looking like they are drifting. The WISH instrument is an example.
 
-We did look at smoothing the values within an EPICS db using the compress record etc. and linking this to an alternative motor readback [AS PER OLD NOTES](Smoothing-Motor-Readback-old), but it turned out the jaws were so noisy it swamped the Galil and we had to add smoothing there.
+We did look at smoothing the values within an EPICS db using the compress record etc. and linking this to an alternative motor readback [as per old notes](Smoothing-Motor-Readback-old), but it turned out the jaws were so noisy it swamped the Galil and we had to add smoothing there.
 
 
 To set this up for `MTR0105` on WISH for example you would:
