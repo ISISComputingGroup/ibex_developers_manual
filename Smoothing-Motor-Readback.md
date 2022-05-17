@@ -2,14 +2,17 @@ Several Galil systems use analogue feedback as the encoder, this is effectively 
 
 We did look at smoothing the values within an EPICS db using the compress record etc. and linking this to an alternative motor readback [as per old notes](Smoothing-Motor-Readback-old), but it turned out the jaws were so noisy it swamped the Galil and we had to add smoothing there.
 
-
+The data is smoothed using the same algorithm available in an epics analogue input (ai) record i.e. a first-order infinite impulse response (IIR) digital filter.
+```
+New_Val =  Old_VAL * SMOO + (1 - SMOO) * New_Data
+```
+So `SMOO == 0` is no smoothing. During a move the unsmoothed encoder position is returned by the galil IOC to the motor record, but once motion has stopped the smoothing algorithm is activated to smooth the the data. For the system to work it needs to:
+* be setup to retry moves (which is our default)
+* have a readback delay set (something like 2 seconds)
+The readback delay is important as this is how long the motor record waits (settle time) after a move has finished before it uses the position for the next task (retry in our case). So the readback delay is how much time we are averaging the encoder readback of the stationary motor for before we decide on any correction/retry to get to the requested setpoint. The other important factor is the smoothing factor. 
+   
 To set this up for `MTR0105` on WISH for example you would:
-
-* have a non-zero `max retries` count - default is 10
-* set a `readback delay`, currently using 5 seconds
-* set `readback resolution` to 1 (we have handled this in the `_EPOS_CALC` record)
-* set a `readback link` value - for MTR0105 on WISH this is `IN:WISH:MOT:MTR0105:EPOS_AV CP MS`
-* set `use encoder` to `no`
-* set `use readback` to `yes`
-
-Setting `use encoder` to `no` before enabling readback is probably a better sequence of operations, but not crucial. If you set readback to yes it automatically sets encoder to no, but i had a case when it seemed to get a bit confused. If it does make sure values are correct and then just restart ioc and autosave will apply them correctly. Bear in mind that these are settings and so autosave at 30 second intervals, so don't restart too soon after a change  
+* Set max retries (MTR0105.RTRY) to > 0 (typically 10)
+* Set `readback delay` (MTR0105.DLY) is set to a reasonable averaging period (e.g. 2 seconds)
+* Set encoder smoothing factor MTR0105_ENC_SMOO_SP to > 0 e.g. 0.5
+You may need to experiment a bit with delay and smoothing. Bear in mind that these are autosaved at 30 second intervals, so don't restart IOC too soon after a change or you will lose them.  
