@@ -14,6 +14,6 @@ The readback delay is important as this is how long the motor record waits (sett
    
 To set this up for `MTR0105` on WISH for example you would:
 * Set max retries (MTR0105.RTRY) to > 0 (typically 10)
-* Set `readback delay` (MTR0105.DLY) is set to a reasonable averaging period (e.g. 2 seconds)
+* Set `readback delay` (MTR0105.DLY) to a reasonable averaging period (e.g. 2 seconds)
 * Set encoder smoothing factor MTR0105_ENC_SMOO_SP to > 0 e.g. 0.5
 You may need to experiment a bit with delay and smoothing. Bear in mind that these are autosaved at 30 second intervals, so don't restart IOC too soon after a change or you will lose them.  
