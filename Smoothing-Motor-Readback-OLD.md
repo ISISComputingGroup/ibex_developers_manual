@@ -1,3 +1,6 @@
+# This is the old proposed way and not currently used, but some of its implementation is in place
+
+
 Several Galil systems use analogue feedback as the encoder, this is effectively an absolute encoder (so no need to rehome etc) but the readback can be noisy and this has caused issues in the past with setpoints looking like they are drifting.
 
 To solve this issue, the readbacks can be smoothed using an EPICS compress record and this fed into the motor record by using its optional readback link functionality. So the motor record internally sets values as usual, but using a different route for readback. A few notes on the system:
