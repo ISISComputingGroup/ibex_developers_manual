@@ -37,7 +37,9 @@ will enable ASYN_TRACE_ERROR and ASYN_TRACEIO_DRIVER for all addresses (-1) on p
 
 `asynSetTraceMask("L0",0,0x11)`
 
-will enable ASYN_TRACE_ERROR and ASYN_TRACE_FLOW on port "L0" but just for address 0 
+will enable ASYN_TRACE_ERROR and ASYN_TRACE_FLOW on port "L0" but just for address 0.
+
+To see output of interpose functions such as `asynInterposeThrottle` add `0x4`, so `0x9` become `0xD` for example
 
 ## ASYN traceIO mask
 
