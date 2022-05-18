@@ -6,7 +6,7 @@ The data is smoothed using the same algorithm available in an epics analogue inp
 ```
 New_Val =  Old_VAL * SMOO + (1 - SMOO) * New_Data
 ```
-So `SMOO == 0` is no smoothing. During a move the unsmoothed encoder position is returned by the galil IOC to the motor record, but once motion has stopped the smoothing algorithm is activated to smooth the the data. For the system to work it needs to:
+So `SMOO == 0` is no smoothing. During a move the un-smoothed encoder position is returned by the galil IOC to the motor record, but once motion has stopped the smoothing algorithm is activated to smooth the the data. For the system to work it needs to:
 * be setup to retry moves (which is our default)
 * have a readback delay set (something like 2 seconds)
 The readback delay is important as this is how long the motor record waits (settle time) after a move has finished before it uses the position for the next task (retry in our case). So the readback delay is how much time we are averaging the encoder readback of the stationary motor for before we decide on any correction/retry to get to the requested setpoint.
