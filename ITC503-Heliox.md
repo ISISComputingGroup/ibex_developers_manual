@@ -134,10 +134,10 @@ The logic is split into 4 parts. Part 1 initialises the correct state, sets some
   - The operation times out
     - Set part success to false
     - Skip to the finish
-  - Sorb temp > User specified sorb condensing temp (from macros) – 0.5 or He3 Pot temperature < User specified condense He3Pot target for part 1
+  - Sorb temp > User specified sorb condensing temp (from macros) – 0.5 and He3 Pot temperature < User specified condense He3Pot target for part 1
     - Set that this part was successful
 
-##### Part 2
+##### Part 2 (Now not needed - removed)
 
 - Set skipped to false
 - Set status to part 2
