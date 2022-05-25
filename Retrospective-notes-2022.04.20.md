@@ -42,7 +42,8 @@ Cable Testers:
  - Possibly worth borrowing from SCD in short term but might be better to have our own.
  - Check with anthony shuttle for suggestions.
  - We're not network engineers, but useful to know that the cables we're bringing around work.
- - Possibly [this](https://www.amazon.co.uk/dp/B07WRV3N5F/ref=sspa_dk_detail_0?psc=1&pf_rd_p=828203ef-618e-4303-a028-460d6b615038&pd_rd_wg=V07Nd&pf_rd_r=9DJ8RGN71F7P4VQGVWHY&pd_rd_w=2aYQS&pd_rd_r=4daea718-1c03-482c-89c5-3ae3a10df11c&s=diy&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEyOEhJUUNEMkxYVDhMJmVuY3J5cHRlZElkPUEwNTg1NzIyWlNNRlNINUlLT05XJmVuY3J5cHRlZEFkSWQ9QTA4NzIwNTYzTDFJN0Q0WlhJRjZBJndpZGdldE5hbWU9c3BfZGV0YWlsJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ==)
+ - Possibly this:
+   - `https://www.amazon.co.uk/dp/B07WRV3N5F/ref=sspa_dk_detail_0?psc=1&pf_rd_p=828203ef-618e-4303-a028-460d6b615038&pd_rd_wg=V07Nd&pf_rd_r=9DJ8RGN71F7P4VQGVWHY&pd_rd_w=2aYQS&pd_rd_r=4daea718-1c03-482c-89c5-3ae3a10df11c&s=diy&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEyOEhJUUNEMkxYVDhMJmVuY3J5cHRlZElkPUEwNTg1NzIyWlNNRlNINUlLT05XJmVuY3J5cHRlZEFkSWQ9QTA4NzIwNTYzTDFJN0Q0WlhJRjZBJndpZGdldE5hbWU9c3BfZGV0YWlsJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ==`
     - More expensive but less risk of damaging things.
 
 Github Discussions:
