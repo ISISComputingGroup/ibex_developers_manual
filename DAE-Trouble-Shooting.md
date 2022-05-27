@@ -371,4 +371,4 @@ Again, only seen on windows server. To resolve:
 
 ### DAE not showing period changes in NeXus data file when running in event mode
 
-Due to a historical problem with electronic noise causing random period changes, many instruments have a setting enable to set the period number to 1 in event mode data events regardless of what the DAE claims it is. To make the DAE vale be used you will need to edit `isisicp.properties` in `c:\labeview modules\dae` and add/update the line to be `isisicp.badheaderworkaround = false` 
+Due to a historical problem with electronic noise causing random period changes, many instruments have a setting enable to set the period number to 1 in event mode data events regardless of what the DAE claims it is. To make the DAE vale be used you will need to edit `isisicp.properties` in `c:\labeview modules\dae` and add/update the line to be `isisicp.badheaderworkaround = false` then restart the `isisicp` process
