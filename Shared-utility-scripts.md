@@ -33,6 +33,16 @@ Usage:
 Found in ibex_utils/workflow_support_scripts.
 To make it easy to use add the ibex_utils/workflow_support_scripts folder to your PATH.
 
+## IOC Copier
+Run in an Epics terminal.
+Makes duplicates of an IOC correctly numbered for use when large numbers of an IOC is needed.
+Usage:
+- Copy to IOC folder.
+- Takes 4 parameters, the name of the ioc, the number ioc to copy, the first copy to create, and the last copy to make.
+- e.g. %python3% ioc_copier.py DFKPS 11 12 35
+- This would copy the danfysik using ioc-11 as the base, and create copies 12 through 35
+Found in ibex_utils/ioc_copier.
+
 ## GitHub Workflows
 Useful [GitHub Workflows](https://docs.github.com/en/actions/learn-github-actions) and [Git Hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) which can be added to project repositories
 
