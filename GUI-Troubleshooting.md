@@ -2,6 +2,20 @@
 
 This page contains information on how to troubleshoot some common issues with the GUI. These are issues that occur once the GUI has started, not issues in starting the GUI. A good place to start are the log files, they are stored in `...\Instrument\Apps\Client\workspace\logs`.
 
+## Runtime failure due to security manager
+
+If you use eclipse IDE version 2022-03 to attempt to launch the GUI, you will get an error like the following:
+
+```
+org.osgi.framework.BundleException: Exception in org.eclipse.osgi.internal.framework.SystemBundleActivator.start() of bundle org.eclipse.osgi.
+...
+Caused by: org.osgi.framework.BundleException: Failed to create security manager
+...
+Caused by: java.lang.ClassNotFoundException: allow
+```
+
+The solution to this error is to use an older IDE - for example 2021-12 works without issue. Longer-term solution to this issue is to wait for the eclipse IDE team to fix this bug.
+
 ## Build fails due to Tycho dependencies (e.g. equinox.ds not resolvable; this is only for the Maven build)
 
 Clear out your Tycho by moving .m2/repository to something like .m2/old_repository and .p2 to .oldp2 (.m2 and .p2 can be found in your user directory i.e. where documents are). Running build again will download Tycho again and should fix the problem.
