@@ -39,7 +39,7 @@ Makes duplicates of an IOC correctly numbered for use when large numbers of an I
 Usage:
 - Copy to IOC folder.
 - Takes 4 parameters, the name of the ioc, the number ioc to copy, the first copy to create, and the last copy to make.
-- e.g. %python3% ioc_copier.py DFKPS 11 12 35
+- e.g. `%python3% ioc_copier.py DFKPS 11 12 35`
 - This would copy the danfysik using ioc-11 as the base, and create copies 12 through 35
 Found in ibex_utils/ioc_copier.
 
