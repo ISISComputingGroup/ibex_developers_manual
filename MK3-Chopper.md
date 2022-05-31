@@ -10,12 +10,6 @@ The IOC connects from the driver to the Mk3BridgeLib.dll (in support) using a c 
 
 The user can only start/stop/park and unpark the mk3chopper using the panel on the chopper itself. It also has to be put into remote mode before any commands can be sent to it. [This is limited by the hardware control but may be expanded by the chopper group at some point. Email has been sent to them Sep 2019](https://github.com/ISISComputingGroup/IBEX/issues/4389)
 
-# Notes
-
-This can currently only been built in VS2010 because the solution file is 2010.
-
-If you just want to build it on your computer with a newer version of visual studio than VS2010, use visual studio open the `.sln` file in the mk3chopper support module and upgrade it to your version. DO NOT COMMIT THESE CHANGES.
-
 # Troubleshooting
 
 ## User cannot set Frequency
