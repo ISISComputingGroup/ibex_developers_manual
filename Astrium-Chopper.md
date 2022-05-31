@@ -41,7 +41,7 @@ It is believed that the reset is not required on this system.
 
 ### Build Issues
 
-**We are now using Visual Studio 2019 which allows a target of "latest W10 sdk" as the version, so we no longer need to use a specific W10 for our builds. This error was seen briefly on mk3 build too. If you see it, post to technical on Teams. **
+**We are now using Visual Studio 2019 which allows a target of "latest W10 sdk" as the version, so we no longer need to use a specific W10 for our builds. This error was seen briefly on mk3 build too. If you see it, post to technical on Teams.**
 
 If you're having trouble building the Astrium chopper with error messages relating to the Boost library, you need to update visual studio 2017 (15.9.21 works) as there is a compiler bug in earlier versions of VS.
 
