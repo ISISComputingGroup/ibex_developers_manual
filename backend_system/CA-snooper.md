@@ -28,4 +28,5 @@ CA snooper is run periodically on `control-svcs`. A link to this is at http://co
 * start caSnooper in one command window as e.g.      _caSnooper -t30 -c0 > snoop.log_
 * restart the IOC under test (or the whole of ibex, but you may need more than 30 seconds)
 * look at the generated report
+* if you type `set EPICS_CAS_INTF_ADDR_LIST=127.0.0.1` in the command window before running caSnooper it will restrict its check to the loopback interface, which is where local IOCS will normally broadcast
  
