@@ -60,6 +60,10 @@ Replace the versions in the ICP_P2 area with these new files you have downloaded
 
 The GUI builds copy a JRE from `\\isis\inst$\Kits$\CompGroup\ICP\ibex_client_jre`. Replace this with the latest JRE and check that things still work.
 
+### Pydev
+
+To update the version of Pydev on shadow, git clone --recurse-submodules the latest version and run mvn install in its base directory. After a successful build, upload the repo to shadow.
+
 # Python
 
 ## Python itself
