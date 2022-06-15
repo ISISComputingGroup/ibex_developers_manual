@@ -1,8 +1,6 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [Nicos](Nicos) > Running Nicos
 
-Nicos is set to start/stop running as part of the instrument in the `start_ibex_server_full.bat` file. If you want to start/stop the Nicos script server (i.e. the Nicos daemon) in isolation you have two options:
-* You can use the `start_nicos_daemon.bat` and `stop_nicos_daemon.bat` files in ISIS/ScriptServer. This will start the Nicos process within procServ. Note that the startup bat will set the instrument config that Nicos will run (currently there is one Nicos instrument for all of ISIS).
-* You can navigate to the `bin/` directory and run `python nicos-daemon`. If no instrument is specified (either by the INSTRUMENT environment variable or by the `nicos.conf` file in the Nicos root) Nicos will run the `demo` instrument by default. Details on how to specify which instrument to run can be found in the [Running an Instrument](Configuring-a-New-Nicos-Instrument) section of the developer's manual. Note that for Nicos to be able to talk channel access through the genie_python commands, you need to launch it from within an EPICS terminal, so the necessary macros are set.
+As of [issue 7135](https://github.com/IsisComputingGroup/ibex/issues/7135), NICOS is no longer started automatically as part of a default instrument startup. Instead, the `NICOSDAEMON` ioc must be added to the configuration. On instruments, adding this IOC to their "base" component is likely to be best.
 
 To test the script server is working, open the "Script Server" perspective in the ibex client. Check that the connection status label says "No Error". Write a simple script and send it to the server. You should be able to see the output from NICOS in the output text field.
 
