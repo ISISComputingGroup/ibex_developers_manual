@@ -30,31 +30,56 @@ Don't forget the [drop in sessions](https://github.com/ISISComputingGroup/IBEX/w
 
 # Rotas
 
-| Meeting| Chair | x for Done | Timekeeper | x for Done | Note taker | x for Done |Standup | Week Commencing | x for Done |
-| ---| --- | --- | ---| --- | --- | --- |--- | --- | --- |
-| 2022_02_24_Review/Retro| CMS | x | LC| x | JH| x |JA | 21/03/2022 |x |
-| 2022_03_24_Planning| SJ | x | AS| x | |  |TL | 28/03/2022 |x |
-| 2022_04_21_Pre-Planning| LC | x | FA| x | |  |SJ | 04/04/2022 |x |
-| 2022_03_24_Review/Retro| JA | x | CMS| x | SJ| x |CMS | 11/04/2022 |x |
-| 2022_04_21_Planning| TL | x | DKg| x | |  |AS | 18/04/2022 | x |
-| 2022_05_19_Pre-Planning| DK | x | TL| x | |  |Dkg | 25/04/2022 |x |
-| 2022_04_21_Review/Retro| AS | x | xx | x | JA | x |DK | 02/05/2022 |x |
-| 2022_05_19_Planning| JH | x  | DKg| x  | |  |LC | 09/05/2022 |x |
-| 2022_06_16_Pre-Planning| KB | x  | JH| x  | |  |TL | 16/05/2022 |x |
-| 2022_05_19_Review/Retro| FA |   | LC|   | DKg |   |FA | 23/05/2022 |x |
-| 2022_06_16_Planning| DKg |   | AS|   | |  |CMS | 30/05/2022 |x |
-| 2022_07_14_Pre-Planning| LC|   | CMS|   | |  |KB | 06/06/2022 |x |
-| 2022_06_16_Review/Retro| CMS |   | JA|   | LC|   |LC | 13/06/2022 | |
-| 2022_07_14_Planning| DK |   | FA|   | |  |DKg | 20/06/2022 | |
-| 2022_08_11_Pre-Planning| JA |   | KB|   | |  |AS | 27/06/2022 | |
-| 2022_07_14_Review/Retro| SJ |   | JH|   | TL|   |FA | 04/07/2022 | |
-| 2022_08_11_Planning| FA |   | LC|   | |  |JA | 11/07/2022 | |
-| 2022_09_01_Pre-Planning| KB |   | DK|   | |  |JH | 18/07/2022 | |
-| 2022_08_11_Review/Retro| LC |   | SJ|   | JA|   |CMS | 25/07/2022 | |
-| 2022_09_01_Planning| DK |   | TL|   | |  |TL | 01/08/2022 | |
-| |  |  | |  | |  |DK | 08/08/2022 | |
-| |  |  | |  | |  |LC | 15/08/2022 | |
-| |  |  | |  | |  |SJ | 22/08/2022 | |
-| |  |  | |  | |  |KB | 29/08/2022 | |
+## Stand up
+| Stand up | Week Commencing | x for Done |
+ |--- | --- | --- |
+ |JA | 21/03/2022 |x |
+ |TL | 28/03/2022 |x |
+ |SJ | 04/04/2022 |x |
+ |CMS | 11/04/2022 |x |
+ |AS | 18/04/2022 |x |
+ |DKg | 25/04/2022 |x |
+ |DK | 02/05/2022 |x |
+ |LC | 09/05/2022 |x |
+ |TL | 16/05/2022 |x |
+ |FA | 23/05/2022 |x |
+ |CMS | 30/05/2022 |x |
+ |KB | 06/06/2022 |x |
+ |LC | 13/06/2022 | |
+ |DKg | 20/06/2022 | |
+ |AS | 27/06/2022 | |
+ |FA | 04/07/2022 | |
+ |JA | 11/07/2022 | |
+ |JH | 18/07/2022 | |
+ |CMS | 25/07/2022 | |
+ |TL | 01/08/2022 | |
+ |DK | 08/08/2022 | |
+ |LC | 15/08/2022 | |
+ |SJ | 22/08/2022 | |
+ |KB | 29/08/2022 | |
 
+
+## Sprint Meetings
+| Meeting| Chair | x for Done | Timekeeper | x for Done | Note taker | x for Done |
+| ---| --- | --- | ---| --- | --- | --- |
+| 2022_02_24_Review/Retro| CMS | x | LC| x | JH| x |
+| 2022_03_24_Planning| SJ | x | AS| x | |  |
+| 2022_04_21_Pre-Planning| LC | x | FA| x | |  |
+| 2022_03_24_Review/Retro| JA | x | CMS| x | SJ| x |
+| 2022_04_21_Planning| TL | x | DKg| x | |  |
+| 2022_05_19_Pre-Planning| DK | x | TL| x | |  |
+| 2022_04_21_Review/Retro| AS | x | xx| x | JA| x |
+| 2022_05_19_Planning| JH | x | DKg| x | |  |
+| 2022_06_16_Pre-Planning| KB | x | JH| x | |  |
+| 2022_05_19_Review/Retro| LC | x | LC| x | DKg| x |
+| 2022_06_16_Planning| DKg | x | AS| x | |  |
+| 2022_07_14_Pre-Planning| FA |   | CMS|   | |  |
+| 2022_06_16_Review/Retro| CMS |   | JA|   | LC|   |
+| 2022_07_14_Planning| DK |   | FA|   | |  |
+| 2022_08_11_Pre-Planning| JA |   | KB|   | |  |
+| 2022_07_14_Review/Retro| SJ |   | JH|   | TL|   |
+| 2022_08_11_Planning| FA |   | LC|   | |  |
+| 2022_09_01_Pre-Planning| KB |   | DK|   | |  |
+| 2022_08_11_Review/Retro| LC |   | SJ|   | JA|   |
+| 2022_09_01_Planning| DK |   | TL|   | |  |
 
