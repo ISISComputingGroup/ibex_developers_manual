@@ -167,7 +167,7 @@ Topic | Presenter | Date | Recording
 Github Universe | Jack Allen | 14/01/22 | Not Recorded
 ISISICP/DAE | Freddie | 31/03/22 | [Recorded here.](https://stfc365-my.sharepoint.com/:v:/r/personal/jack_harper_stfc_ac_uk/Documents/Recordings/Code%20chat%20(ISISICP_DAE)-20220331_140431-Meeting%20Recording.mp4?csf=1&web=1&e=ccVfMJ)
 Motion in Ibex| Jack Harper | 27/04/22 | Not Recorded
-Docusaurus | Jack Allen | 24/06/22 | 
+[Docusaurus](https://github.com/JackEAllen/Docusaurus_L_and_D) | Jack Allen | 24/06/22 | 
 </details>
 
 
