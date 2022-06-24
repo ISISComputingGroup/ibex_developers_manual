@@ -32,7 +32,7 @@ IBEX Project Management | Kathryn
 LUA  | ?
 BDD/DDD | ?
 Software design techniques in our processes | Aaron
-The HIFI Cryomag | Chris C/Kathryn
+The HIFI Cryomag | Lilith/Kathryn
 Design Patterns in IBEX | ?
 Datastreaming | Dolica/Jack/Matt
 LVDCOM | Freddie
