@@ -42,7 +42,6 @@ asyncio and asynchronous programming in Python 3 | ?
 Script Server and Nicos | ?
 CAEN v895 Discriminator | Freddie
 MuSR conversion retrospective | Jack/Tom
-HIFI Cryomag | Chris C
 BCC Cryogenics Course 2021 | ?
 Java 17 LTS | TBC
 
