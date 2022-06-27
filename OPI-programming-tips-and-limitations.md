@@ -88,6 +88,10 @@ You can make a script run on page load by setting it to trigger from a PV called
 # Storing State
 Occasionally it makes sense to store some state in the OPI, e.g. which traces the user has made visible on the OPI. To do this you can use local PVs of the form `loc://MY_PV`. These can be written and read to like normal PVs but are initialised to null so you may have to initialise them with a script on OPI start.
 
+Local PVs (prefixed with `loc://`) usually have *application level* scope, i.e. a local PV with the same name will have the same value from all OPIs within IBEX. While this can be useful (e.g. to share state between OPIs), it can also be problematic for OPIs where we expect to have multiple instances of the OPI open.
+
+The `$(DID)` macro is a unique-per-opi-view identifier which can be inserted into local PV names to ensure that multiple instances of the same OPI do not conflict with each other.
+
 # Creating new widgets
 
 Given an existing widget of the correct type, new widgets can be created and added to a container. 
