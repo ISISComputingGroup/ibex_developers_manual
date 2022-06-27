@@ -9,6 +9,8 @@
 
 ## Equipment
 
+![20220627_145529](https://user-images.githubusercontent.com/14823767/175974946-803ba034-8a8c-4fcb-80cb-3ed5c46193f7.jpg)
+
 This is a small collection of devices which internal ISIS users are testing offline, but have used on the POLREF beamline.  They have written a control program in LabVIEW which runs on a separate machine and communicates with these devices.  It handles the setpoints, scan/sweep procedure, analysis and data file generation.
 
 The individual pieces of equipment are:
