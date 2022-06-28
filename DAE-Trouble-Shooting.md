@@ -372,3 +372,12 @@ Again, only seen on windows server. To resolve:
 ### DAE not showing period changes in NeXus data file when running in event mode
 
 Due to a historical problem with electronic noise causing random period changes, many instruments have a setting enable to set the period number to 1 in event mode data events regardless of what the DAE claims it is. To make the DAE vale be used you will need to edit `isisicp.properties` in `c:\labeview modules\dae` and add/update the line to be `isisicp.badheaderworkaround = false` then restart the `isisicp` process
+
+### cycle number not updating
+
+The isis cycle is contained in a local file on the NDX that is read by the `end_of_run.cmd` which will also update this file to the most recent copy from the mapped o: drive on the NDX. If the cycle number is not updating then:
+- sometimes the first run in a cycle gets into the wrong number, so if it is just the first run that is a "feature"
+- if all files are in the wrong cycle, either the central copy has not been updated, or the `o:` drive on the instrument has become disconnected so it is not being updated to the latest version
+
+to reconnect the o: drive, log onto the NDX and just open it in windows explorer, that should reconnect using cached credentials
+   
