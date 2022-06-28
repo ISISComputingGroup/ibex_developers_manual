@@ -375,9 +375,9 @@ Due to a historical problem with electronic noise causing random period changes,
 
 ### cycle number not updating
 
-The isis cycle is contained in a local file on the NDX that is read by the `end_of_run.cmd` which will also update this file to the most recent copy from the mapped o: drive on the NDX. If the cycle number is not updating then:
+The isis cycle is contained in a local file `setcycle.cmd` on the NDX that is read by the `end_of_run.cmd` which will also update this file to the most recent copy from the mapped o: drive on the NDX. If the cycle number is not updating then:
 - sometimes the first run in a cycle gets into the wrong number, so if it is just the first run that is a "feature"
 - if all files are in the wrong cycle, either the central copy has not been updated, or the `o:` drive on the instrument has become disconnected so it is not being updated to the latest version
 
-to reconnect the o: drive, log onto the NDX and just open it in windows explorer, that should reconnect using cached credentials
+to reconnect the o: drive, log onto the NDX and just open it in windows explorer, that should reconnect using cached credentials. Then check that `o:\setcycle.cmd` has the correct cycle number.
    
