@@ -27,7 +27,7 @@ To revert this run: `Enable-WindowsOptionalFeature -Online -FeatureName Microsof
 4. You now have a simulated beckhoff PLC running on your PC. This behaves the same as real hardware and so all development can be done against it. You could now also run an IOC up talking to this local PLC.
 5. To see what is happening inside this PLC in more detail, and to change values, you can use the login button ![Login](beckhoff/Login.PNG)
 
-## Continuous Integration
+### Continuous Integration
 
 Beckhoff PLC code is being developed by people who do not have CI expertise and have their own repository structures yet we want integration into some form of CI to be as easy as possible. This lent itself to the following structure:
 * A `BeckhoffTestRunner` repository that is owned by us and contains the jenkinsfile and other utilities required for CI
@@ -58,14 +58,11 @@ This is currently being run on the ndw1926 node on Jenkins. A quirk of using thi
 To run a PLC locally you need a license. A trial license can be activated on a developer's machine by manually running through the building and running steps above until you are prompted to supply a captcha phrase to generate a license.
 
 ## Testing
-Initially clone `BeckhoffTestRunner` using `git clone --recursive https://github.com/ISISComputingGroup/BeckhoffTestRunner.git`
-
-Then in `BeckhoffTestRunner` run: 
+1. clone `BeckhoffTestRunner` using `git clone --recursive https://github.com/ISISComputingGroup/BeckhoffTestRunner.git`
+1. Then in `BeckhoffTestRunner` run: 
 `git submodule update --init --recursive --remote`
-
-To run tests locally you must build the `twinCATAutomationTools` tools then use them to set up a working simulated PLC. This can be done by running `build.bat` (best done not in an EPICS terminal). 
-
-Once this is done, create an epics terminal, and then run the following command in your `BeckhoffTestRunner` directory to begin testing:
+1. To run tests locally you must build the `twinCATAutomationTools` tools then use them to set up a working simulated PLC. This can be done by running `build.bat` (best done not in an EPICS terminal). 
+1. Create an epics terminal, and then run the following command in your `BeckhoffTestRunner` directory to begin testing:
 
 ```
 python %EPICS_KIT_ROOT%\\support\\IocTestFramework\\master\\run_tests.py -tp ".\\tests"
