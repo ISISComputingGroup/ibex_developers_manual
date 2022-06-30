@@ -105,5 +105,7 @@ check `isisbeam.log` but could be a scaled up version of intermittent dropouts l
 
 on merckx will show the local database TS2 beam, if this seems unusually stable then the accelerator controls vista system may have frozen.
 
+## nagios
 
+Check for `merckx` in nagios, put it in the quick search box on the nagios top page
  
