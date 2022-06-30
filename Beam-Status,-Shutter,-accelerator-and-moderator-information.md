@@ -107,5 +107,5 @@ on merckx will show the local database TS2 beam, if this seems unusually stable 
 
 ## nagios
 
-Check for `merckx` in nagios, put it in the quick search box on the nagios top page
+Check for `merckx` in nagios, put it in the quick search box on the nagios top page. The `TS2 Beam Current Updating` check should reflect similar to the `db_access LOCAL::BEAM:TARGET2`
  
