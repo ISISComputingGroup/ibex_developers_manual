@@ -5,23 +5,26 @@ Ibex support is via the NGEM IOC, which is installed on the laptop. It could in 
 For a clean setup on laptop (skip relevant steps if previously configured)
 * Install EPICS (you can just run `install_to_inst.bat` in the epics release on `kits$` rather than a full installer run)
 * run `config_env.bat` in `c:\instrument\apps\epics` to create the `c:\instrument\settings` tree
-* now close this cmd window and create a file `c:\instrument\settings\config\mypvprefixnc.txt` that contains the correct PV prefix but without a trailing : e.g. `IN:INES`
-* now re-run `config_env.bat` from a cmd window and check `MYPVPREFIX` is as expected
-* Edit `c:\instrument\settings\config\NDLTxxx\configurations\globals.txt` to define `ACF_IH1` so the NX computer can start/stop nGEM via PVs e.g. `ACF_IH1=NDXINES`
+* now close this cmd window and create a file `c:\instrument\settings\config\NDLTxxx\configurations\mypvprefixnc.txt` that contains the correct PV prefix but without a trailing : e.g. `IN:INES`
+* now re-run `config_env.bat` from a cmd window and check `MYPVPREFIX` etc is as expected
+* Create `c:\instrument\settings\config\NDLTxxx\configurations\globals.txt` to define `ACF_IH1` so the NX computer can start/stop nGEM via PVs e.g. `ACF_IH1=NDXINES`
 * Create shortcuts on desktop pointing at `c:\instrument\apps\epics\gateway\start_gateways.bat` and the `runIOC.bat` for the NGEM ioc directory
-* edit `copycmd.bat` in `c:\instrument\apps\epics\support\ngem-bbtx\master\utils` to set ARCHIVE location for files to be copied to (this is the USB attached drive)
-* put notes on running both shortcuts on reboot and location of `copycmd.bat` into a README/NOTES file on desktop
+* put notes on running both shortcuts on reboot into a README/NOTES file on desktop
 * start gateways and nemIOC via shortcuts
 * agree to popups to allow firewall access to domain network for carepeater, gateway, ngemioc
 
 The is an `nGEM.opi` on the NDX, this has just need to be installed as a device screen.
 
-INES has some simple python commands to set the START/STOP pvs for the detector. The detector IOC picks up the run number for ines to add to data files as its prefix is also IN:INES  
+The ioc will move data files to the directory specified in the opi settings area
+
+The ngem IOC picks up the run number from the instrument of the same prefix to add to data files  
+
+INES has some simple python commands to set the START/STOP pvs for the detector. 
 
 If the detector is moved to another instrument with the same laptop then:
 
 * edit `mypvprefixnc.txt` and `globals.txt` as appropriate
-* edit `copycmd.bat` to set new location for robocopy of data files
-* create share/map drive on destination computer for above `copycmd.bat` if it is not a simple attached USB drive
+* specify a new copy to location of data files in the opi
+* create share/map drive on destination computer if it is not a simple attached USB drive
 
      
