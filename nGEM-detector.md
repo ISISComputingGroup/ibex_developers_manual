@@ -11,7 +11,7 @@ For a clean setup on laptop (skip relevant steps if previously configured)
 * Create shortcuts on desktop pointing at `c:\instrument\apps\epics\gateway\start_gateways.bat` and the `runIOC.bat` for the NGEM ioc directory
 * edit `copycmd.bat` in `c:\instrument\apps\epics\support\ngem-bbtx\master\utils` to set ARCHIVE location for files to be copied to (this is the USB attached drive)
 * put notes on running both shortcuts on reboot and location of `copycmd.bat` into a README/NOTES file on desktop
-* start ghateways and nemIOC via shortcuts
+* start gateways and nemIOC via shortcuts
 * agree to popups to allow firewall access to domain network for carepeater, gateway, ngemioc
 
 The is an `nGEM.opi` on the NDX, this has just need to be installed as a device screen.
