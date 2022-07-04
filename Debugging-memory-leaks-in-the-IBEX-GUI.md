@@ -12,7 +12,8 @@ This page is currently heavily based on https://github.com/ISISComputingGroup/IB
 
 ## Tools
 
-- Java visual VM (download the GPL-licensed binary from https://visualvm.github.io/download.html )
+- Java visual VM (download the GPL-licensed binary from https://visualvm.github.io/download.html ) 
+    - If you experience problems trying to run the standalone client where a pop up warning windows notifies you of a JRE problem, try first checking if you have the correct version of Java in your system environment variables and that no older/newer versions exist in addition to the correct version (removing if necessary). Secondly, try the following command next to the VisualVM executable you are having issues with: `visualvm.exe --jdkhome c:\Progra~1\Eclips~1\jdk-11.0.14.9-hotspot` changing the version of jdk where applicable to the version you have.
 - Eclipse debugger
 - A way to reproduce the issue
 
