@@ -27,4 +27,9 @@ If the detector is moved to another instrument with the same laptop then:
 * specify a new copy to location of data files in the opi
 * create share/map drive on destination computer if it is not a simple attached USB drive
 
-     
+## debugging 
+
+* If the NGEM vendor software is restarted, the IOC will need to be restarted. Kill the running ioc cmd window and then run runIOC.bat shortcut on desktop
+
+
+If      
