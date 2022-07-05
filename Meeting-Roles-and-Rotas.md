@@ -31,21 +31,8 @@ Don't forget the [drop in sessions](https://github.com/ISISComputingGroup/IBEX/w
 # Rotas
 
 ## Stand up
-| Stand up | Week Commencing | x for Done |
+| Standup | Week Commencing | x for Done |
  |--- | --- | --- |
- |JA | 21/03/2022 |x |
- |TL | 28/03/2022 |x |
- |SJ | 04/04/2022 |x |
- |CMS | 11/04/2022 |x |
- |AS | 18/04/2022 |x |
- |DKg | 25/04/2022 |x |
- |DK | 02/05/2022 |x |
- |LC | 09/05/2022 |x |
- |TL | 16/05/2022 |x |
- |FA | 23/05/2022 |x |
- |CMS | 30/05/2022 |x |
- |KB | 06/06/2022 |x |
- |LC | 13/06/2022 |x |
  |DKg | 20/06/2022 |x |
  |AS | 27/06/2022 |x |
  |FA | 04/07/2022 | |
@@ -57,6 +44,23 @@ Don't forget the [drop in sessions](https://github.com/ISISComputingGroup/IBEX/w
  |LC | 15/08/2022 | |
  |SJ | 22/08/2022 | |
  |KB | 29/08/2022 | |
+ |FA | 05/09/2022 | |
+ |JA | 12/09/2022 | |
+ |CMS | 19/09/2022 | |
+ |JH | 26/09/2022 | |
+ |KB | 03/10/2022 | |
+ |TL | 10/10/2022 | |
+ |LC | 17/10/2022 | |
+ |JH | 24/10/2022 | |
+ |SJ | 31/10/2022 | |
+ |DK | 07/11/2022 | |
+ |FA | 14/11/2022 | |
+ |JA | 21/11/2022 | |
+ |KB | 28/11/2022 | |
+ |DK | 05/12/2022 | |
+ |JH | 12/12/2022 | |
+ |CMS | 19/12/2022 | |
+ |N/A | 26/12/2022 | |
 
 
 ## Sprint Meetings
