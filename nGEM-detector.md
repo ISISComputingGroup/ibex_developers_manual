@@ -30,6 +30,4 @@ If the detector is moved to another instrument with the same laptop then:
 ## debugging 
 
 * If the NGEM vendor software is restarted, the IOC will need to be restarted. Kill the running ioc cmd window and then run runIOC.bat shortcut on desktop
-
-
-If      
+      
