@@ -106,6 +106,10 @@ If the McLennan moves but does not stop at the position you requested it could b
 
 Note that the creep speed for the PM600 at least is limited to 800 steps per second. We cater for this in the motor record and set it to the `HVEL` value if lower than 800 and otherwise set it to 800. 
 
+## Mclennan does not communicate
+
+Most McLennans have 2 RS232 ports, for daisy chain in&out. The out port is **required** to have an rs-232 terminator installed in it, this looks similar to a null modem and bridges two pins. **If this terminator is not installed the mclennan will not communicate at all using any comms settings**.
+
 ## Office McLennan Settings
 
 The office McLennan need the following:
