@@ -102,8 +102,12 @@ There is a Galil specific PV called `MTRXXXX_AUTOONOFF_CMD` which controls wheth
 This can mean it has hit a hard limit switch (look at the limit switch status). If it has hit a soft limit it means that the motor steps have hit the hi/low soft limit set in the motor record. This may be the case or it maybe that the motor/encoder steps are out of sync - inside the galil controller limits are applied to motor steps not encoder position. Rehoming the axis will fix it. (If you can't home it, talk with the instrument scientist and make sure they get a homing routine set up. For the moment you can set the raw motor steps on the detailed motor panel by clicking set then entering raw motor steps to be what you want, then clicking use). If you would like the motor to resync back to the encoder automatically then you can set e.g. for `MTR0101` the PV `MTR0101_MOT_ENC_SYNC_TOL_SP` to a non-zero value which is the max EGU they are allowed to differ by, this resync is done at the start of each move. This scheme assumes the encoder is correct, if it is an incremental encoder and there has been a power outage then this will definitely not be the case for example. So this has been described here as "dangerous" as you do not know if it's the encoder or the motor that's out. But if there has been a power outage the motor step counter will probably be wrong too, and both incremental encoders and motors can lose steps (whenever a motor stalls the step count will go up but things do not move, hence the motor step count is now inaccurate in an absolute positioning sense, hence later issue with soft limits). Setting `MTR0101_MOT_ENC_SYNC_TOL_SP` may hide a slowly developing mechanical issue, but if there is a known issue on an axis (it keeps stalling/slipping/losing steps) then enabling it could avoid lost beam time. 
 
 #### Galil won't move after stalling and does not send motor pulses - soft limits
-
+To show the soft limits on the controller use `MG _BLx` to show reverse limit and `MG _FLx` to show forward limit in the engineering view OPI.
 It may be that the soft limit is applying a `FL` or `BL` value from the motor record - homing should 0 the motor pulses which will fix this. You can also raise the soft limit from the IBEX table of motors which will raise the `FL/BL` value and enable moves again, provided it does not stall again. 
+
+##### Disabling soft limits
+
+To disable soft limits for an axis send `BLx=-2147483648` and `FLx=2147483647` where `x` is the Axis character (`A-H`)
 
 ### The axis will not move away from a limit regardless of direction, a message gets put in the log of "move failed, `wlp` active" or "Wrong limit protect stop motor"
 
