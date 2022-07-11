@@ -11,7 +11,7 @@ Building a new IOC? Before you get started, take a look at the relevant [instrum
 
 There are two sorts of IOCs, EPICs and pycaspy. For EPICs type see the automatic creation below for pycaspy see the [pycaspy ioc](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/ioc-pcaspy).
 
-
+If you need more than 2 IOCs there is a script to duplicate IOCs, more information can be found [here.](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Shared-utility-scripts#ioc-copier)
 ## Automatically
 If you're building a new StreamDevice IOC you can use the [IOC Generator script](https://github.com/ISISComputingGroup/IBEX_device_generator), for developer info see the [wiki](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/IOC-Generator).
 
