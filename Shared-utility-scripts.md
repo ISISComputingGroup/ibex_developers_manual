@@ -35,7 +35,8 @@ To make it easy to use add the ibex_utils/workflow_support_scripts folder to you
 
 ## IOC Copier
 Run in an Epics terminal.
-Makes duplicates of an IOC correctly numbered for use when large numbers of an IOC is needed.
+Makes duplicates of an IOC correctly numbered for use when large numbers of an IOC are needed.
+This should only be used on IOC 2 or greater, as these IOCs link to some files in the first rather than duplicating them.
 Usage:
 - Copy to IOC folder.
 - Takes 4 parameters, the name of the ioc, the number ioc to copy, the first copy to create, and the last copy to make.
