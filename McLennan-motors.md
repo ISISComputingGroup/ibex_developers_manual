@@ -115,6 +115,7 @@ Most McLennans have 2 RS232 ports, for daisy chain in&out. The out port is **req
 The office McLennan need the following:
 
 1. No Null terminator or gender changer (if using a straight-through male-female cable from a PC)
+  * Note: If the mclennan has two ports (for daisy chaining), the out port MUST have an RS232 terminator in it. This looks similar to a null modem and bridges two serial pins. If this is not present, the motor controller will not communicate.
 1. `BAUD` 9600
 1. `BITS` 8
 1. `AXIS 3` yes (all others no)
