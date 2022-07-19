@@ -109,4 +109,7 @@ on merckx will show the local database TS2 beam, if this seems unusually stable 
 
 Check for `merckx` in nagios, put it in the quick search box on the nagios top page. The `TS2 Beam Current Updating` check should reflect similar to the `db_access LOCAL::BEAM:TARGET2`
 
-If nagios shows `merckx` is down, email "ISIS Controls (support)" in the outlook address book and tell them that "The VMS MERCKX server is unreachable and instruments cannot access beam and moderator information that is important for running" 
+If nagios shows `merckx` is down:
+* during office hours email "ISIS Controls (support)" in the outlook address book and tell them that "The VMS MERCKX server is unreachable and instruments cannot access beam and moderator information that is important for running"
+* out of hours contact the MCR and ask them to contact the on call ISIS accelerator controls computing person
+
