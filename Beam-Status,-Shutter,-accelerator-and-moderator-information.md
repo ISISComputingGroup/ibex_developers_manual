@@ -105,8 +105,8 @@ check `isisbeam.log` but could be a scaled up version of intermittent dropouts l
 
 on merckx will show the local database TS2 beam, if this seems unusually stable then the accelerator controls vista system may have frozen.
 
-## nagios
+## server or services unavailable (nagios)
 
 Check for `merckx` in nagios, put it in the quick search box on the nagios top page. The `TS2 Beam Current Updating` check should reflect similar to the `db_access LOCAL::BEAM:TARGET2`
 
-If nagios shows `merckx` is down, email "ISIS Controls (support)" in the outlook address look and tell them that "The VMS MERCKX server is offline and we cannot access beam and moderator information that is important for some instruments to run" 
+If nagios shows `merckx` is down, email "ISIS Controls (support)" in the outlook address book and tell them that "The VMS MERCKX server is unreachable and instruments cannot access beam and moderator information that is important for running" 
