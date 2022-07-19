@@ -2,6 +2,8 @@
 
 See also [design notes](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Cryogenic-SMS-PSU-design) for background on the implementation of this IOC.
 
+It was originally designed to be used for the HIFI main instrument cryomagnet, but has also been used to control the Oxford Instruments 9T magnet.
+
 ## Troubleshooting
 
 ### Driver gets stuck in `Processing` at a ramp rate transition, at high field
