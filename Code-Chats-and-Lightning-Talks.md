@@ -172,6 +172,7 @@ SANS/TRANS Instrument Scripts | Thomas Cottee Meldrum | 21/07/22 | [Recorded her
 
 
 </details>
+
 # Lightning Talks
 Lightning talks are a chance to share smaller bits of interesting information after standup at the end of a sprint.
 Topic | Presenter | Date
