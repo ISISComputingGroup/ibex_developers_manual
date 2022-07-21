@@ -167,11 +167,11 @@ Topic | Presenter | Date | Recording
 Github Universe | Jack Allen | 14/01/22 | Not Recorded
 ISISICP/DAE | Freddie | 31/03/22 | [Recorded here.](https://stfc365-my.sharepoint.com/:v:/r/personal/jack_harper_stfc_ac_uk/Documents/Recordings/Code%20chat%20(ISISICP_DAE)-20220331_140431-Meeting%20Recording.mp4?csf=1&web=1&e=ccVfMJ)
 Motion in Ibex| Jack Harper | 27/04/22 | Not Recorded
-[Docusaurus](https://github.com/JackEAllen/Docusaurus_L_and_D) | Jack Allen | 24/06/22 | [Recorded here.](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/GUI_Chat_Slides/Docusaurus.mp4)</details>
+[Docusaurus](https://github.com/JackEAllen/Docusaurus_L_and_D) | Jack Allen | 24/06/22 | [Recorded here.](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/GUI_Chat_Slides/Docusaurus.mp4)
 SANS/TRANS Instrument Scripts | Thomas Cottee Meldrum | 21/07/22 | [Recorded here.](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/GUI_Chat_Slides/SANS%20TRANS%20Instrument%20Scripts.mp4)
 
 
-
+</details>
 # Lightning Talks
 Lightning talks are a chance to share smaller bits of interesting information after standup at the end of a sprint.
 Topic | Presenter | Date
