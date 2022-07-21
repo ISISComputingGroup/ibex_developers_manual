@@ -8,7 +8,6 @@ Code chats occur on a semi-regular monthly basis within the group at ISIS. Altho
 
 Topic | Presenter | Date
 ----- | --------- | ----
-||
 IOC Testing Framework & Emulators | Tom Willemsen | August
 
 
