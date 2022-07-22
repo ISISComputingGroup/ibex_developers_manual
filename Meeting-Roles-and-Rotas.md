@@ -37,7 +37,7 @@ Don't forget the [drop in sessions](https://github.com/ISISComputingGroup/IBEX/w
  |AS | 27/06/2022 |x |
  |FA | 04/07/2022 |x |
  |JA | 11/07/2022 |x |
- |JH | 18/07/2022 | |
+ |JH | 18/07/2022 |x |
  |CMS | 25/07/2022 | |
  |TL | 01/08/2022 | |
  |DK | 08/08/2022 | |
