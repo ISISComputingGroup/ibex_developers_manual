@@ -57,3 +57,5 @@ _According to safety rules, a 5 seconds watchdog device is initialized after eac
 ### Cannot turn on Power supply despite interlocks being clear
 
 Try switching to local mode, waiting a bit, then remote mode, wait a bit, and finally re-attempt to turn on the HV.
+
+Note: attempting to do this automatically via the protocol file did not work during hardware testing. Testing on the hardware is required if this is re-attempted.
