@@ -51,3 +51,9 @@ _According to safety rules, a 5 seconds watchdog device is initialized after eac
 ## Device Manual
 
  \\\isis\shares\ISIS_Experiment_Controls\Manuals\Technix power supply
+
+# Troubleshooting
+
+### Cannot turn on Power supply despite interlocks being clear
+
+Try switching to local mode, waiting a bit, then remote mode, wait a bit, and finally re-attempt to turn on the HV.
