@@ -164,17 +164,6 @@ If the system is running DAE3, then there is another possible cause. check the l
 ```
 The quickstream driver expects certain ports in the UDP dynamic range to be available - this error indicates something is not. It is not very helpful about which specific port (it uses UDP ports from 0xFE00 (65024) upwards) so a reboot may be the only option. 
 
-### DAE exception messages
-
-If you get an error in you IOC log like:
-
-```
-[2018-10-26 17:33:37] sevr=major Win32StructuredException code 0xc0000005 pExpCode 0xc0000005 pExpAddress 0000000000000000
-[2018-10-26 17:33:37] 2018/10/26 17:33:36.741 IN:DEMO:DAE:AD1:INTG:TMIN:SP devAsynFloat64 pPvt->result.status=3, process error isisdaeDriver:writeFloat64: status=0, function=184, name=INTG_TMIN, value=0.000000, error=Win32StructuredException code 0xc0000005 pExpCode 0xc0000005 pExpAddr
-```
- 
-One cause would be the IOC is trying to call a function in the ISISICP that it can't find. If the ISISICP has been updated, but   /RegServer  has not been run, then new functions added there will not be visible. See [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/First-time-installing-and-building-(Windows)#configure-dae-for-simulation-mode-on-developers-computer--register-isisicp).
-  
 ### Real DAE complains about missing cards/crates (new card/crate hardware has just need added)
 
 If a new DAE3 card or DAE2 crate has been added, it may not be picked up automatically. The ISISICP scans "crates", wgere for DAE2 this was a full 11 card VME crate, but for DAE3 each "crate" is actually a physical DAE3 card. So if you add a new DAE3 card, you need to change `icp_config.xml` in `c:\labview modules\dae`. If it contained
@@ -186,6 +175,17 @@ this tells it to scan for crate 0. Add an additional line
 <String>  <Name>DAEDevice1</Name>              <Val>ISISDAE1</Val>      </String>
 ```
 to also scan for crate 1. For DAE2 the name like `ISISDAE0` refers to an alias for a VISA resource name, for DAE3 just follow the same naming convention but no VISA alias needs creating.   
+
+### DAE exception messages
+
+If you get an error in you IOC log like:
+
+```
+[2018-10-26 17:33:37] sevr=major Win32StructuredException code 0xc0000005 pExpCode 0xc0000005 pExpAddress 0000000000000000
+[2018-10-26 17:33:37] 2018/10/26 17:33:36.741 IN:DEMO:DAE:AD1:INTG:TMIN:SP devAsynFloat64 pPvt->result.status=3, process error isisdaeDriver:writeFloat64: status=0, function=184, name=INTG_TMIN, value=0.000000, error=Win32StructuredException code 0xc0000005 pExpCode 0xc0000005 pExpAddr
+```
+ 
+One cause would be the IOC is trying to call a function in the ISISICP that it can't find. If the ISISICP has been updated, but   /RegServer  has not been run, then new functions added there will not be visible. See [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/First-time-installing-and-building-(Windows)#configure-dae-for-simulation-mode-on-developers-computer--register-isisicp).
 
 ### DAE3 does not start 
 
