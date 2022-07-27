@@ -144,7 +144,7 @@ isisicp.simulation.detcards.crate2.number = 12
 
 If you have defined `isisisp.datadae.use = true` in `isisicp.properties` then you need to make sure the detector card referred to in data_dae.xml  is created by above. If this is a pure setup/test machine rather than a real instrument, you may just want to set `isisisp.datadae.use = false`
 
-### Real DAE complains about missing cards
+### Real DAE complains about missing cards (but was previously working)
 If you see messages like
 ```
 setDCEventMode: Unknown detector card 1
@@ -175,6 +175,18 @@ If you get an error in you IOC log like:
  
 One cause would be the IOC is trying to call a function in the ISISICP that it can't find. If the ISISICP has been updated, but   /RegServer  has not been run, then new functions added there will not be visible. See [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/First-time-installing-and-building-(Windows)#configure-dae-for-simulation-mode-on-developers-computer--register-isisicp).
   
+### Real DAE complains about missing cards/crates (new card/crate hardware has just need added)
+
+If a new DAE3 card or DAE2 crate has been added, it may not be picked up automatically. The ISISICP scans "crates", wgere for DAE2 this was a full 11 card VME crate, but for DAE3 each "crate" is actually a physical DAE3 card. So if you add a new DAE3 card, you need to change `icp_config.xml` in `c:\labview modules\dae`. If it contained
+```
+<String>  <Name>DAEDevice0</Name>              <Val>ISISDAE0</Val>      </String>
+```
+this tells it to scan for crate 0. Add an additional line
+```
+<String>  <Name>DAEDevice1</Name>              <Val>ISISDAE1</Val>      </String>
+```
+to also scan for crate 1. For DAE2 the name like `ISISDAE0` refers to an alias for a VISA resource name, for DAE3 just follow the same naming convention but no VISA alias needs creating.   
+
 ### DAE3 does not start 
 
 DAE3 is new ethernet based acquisition electronics on ZOOM and MARI, it used `ISISICP` and looks like DAE2 for most purposes. If everything remains in processing, it may be that the `arp` network entries did not get created - these should be done as a system time boot task. Do `arp -a` and see if there is an entry for 192.168.1.101 etc.  If not, run `set_dae3_arp.bat` in `c:\labview modules\dae` as as administrator
