@@ -166,7 +166,7 @@ The quickstream driver expects certain ports in the UDP dynamic range to be avai
 
 ### Real DAE complains about missing cards/crates (new card/crate hardware has just need added)
 
-If a new DAE3 card or DAE2 crate has been added, it may not be picked up automatically. The ISISICP scans "crates", wgere for DAE2 this was a full 11 card VME crate, but for DAE3 each "crate" is actually a physical DAE3 card. So if you add a new DAE3 card, you need to change `icp_config.xml` in `c:\labview modules\dae`. If it contained
+If a new DAE3 card or DAE2 crate has been added, it may not be picked up automatically. The ISISICP scans "crates", where for DAE2 this was a full 11 card VME crate, but for DAE3 each "crate" is actually a physical DAE3 card. So adding a new DAE2 card to an existing crate does not require any additional changes, but adding an additional DAE3 card requires a change to `icp_config.xml` in `c:\labview modules\dae`. If it contained
 ```
 <String>  <Name>DAEDevice0</Name>              <Val>ISISDAE0</Val>      </String>
 ```
@@ -174,7 +174,7 @@ this tells it to scan for crate 0. Add an additional line
 ```
 <String>  <Name>DAEDevice1</Name>              <Val>ISISDAE1</Val>      </String>
 ```
-to also scan for crate 1. For DAE2 the name like `ISISDAE0` refers to an alias for a VISA resource name, for DAE3 just follow the same naming convention but no VISA alias needs creating.   
+to also scan for crate 1. For DAE2 the name like `ISISDAE0` refers to an alias for a VISA resource name, for DAE3 just follow the same naming convention but no VISA alias needs creating. There should be as many `DAEDevice*` lines present as there are DAE3 cards in the system.
 
 ### DAE exception messages
 
