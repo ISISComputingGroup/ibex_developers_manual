@@ -74,6 +74,10 @@ You can verify that you are using the correct java version by running `java -ver
 ## File set from project ... has no valid check configuration.
 Try [setting up the checkstyle](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Checkstyle-setup).
 
+## GUI claims another instance is running upon start (but there isn't)
+Navigate to: `C:/Users/<username>/AppData/Local/IBEX` and delete the file "instance.txt"
+
+
 ## Other issues
 
 [Memory "leaks"](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Debugging-memory-leaks-in-the-IBEX-GUI)
