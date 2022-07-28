@@ -23,8 +23,8 @@ Known settings are:
 The IBEX driver contains a statemachine which waits for the power supply to complete certain actions before proceeding. Physically this corresponds to waiting for an inrush current.
 
 In particular, the following commands are known to be problematic:
-- `N` -> turns power supply on, no response. Note that must wait 30s after this command before sending any currents etc (due to PSU inrush current). In particular, setting new current within 20s of this command may be ignored.
-- `RS` -> Note that must wait 30s after sending this before turning supply on. In particular, turning on the supply within 20s may be ignored.
+- `N` -> turns power supply on, no response. Note that must wait 20s after this command before sending any currents etc (due to PSU inrush current). In particular, setting new current within 20s of this command may be ignored.
+- `RS` -> Note that must wait 20s after sending this before turning supply on. In particular, turning on the supply within 20s may be ignored.
 
 The statemachine in IBEX enforces appropriate delays between the reset, power, and set current commands.
 
