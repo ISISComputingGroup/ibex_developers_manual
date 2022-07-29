@@ -7,7 +7,7 @@ def genie_python_dae_test():
         return abs(actual-expected)<tolerance
         
     def assert_from_user_input(question):  
-        assert (raw_input("{}? (Y/N) ".format(question)).lower()+"n")[0]=="y"
+        assert (input("{}? (Y/N) ".format(question)).lower()+"n")[0]=="y"
         
     print("Test get/set title")
     new_title = "NEW TITLE"
