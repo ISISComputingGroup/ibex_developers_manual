@@ -394,4 +394,8 @@ The isis cycle is contained in a local file `setcycle.cmd` on the NDX that is re
 - if all files are in the wrong cycle, either the central copy has not been updated, or the `o:` drive on the instrument has become disconnected so it is not being updated to the latest version
 
 to reconnect the o: drive, log onto the NDX and just open it in windows explorer, that should reconnect using cached credentials. Then check that `o:\setcycle.cmd` has the correct cycle number.
+
+### run stuck in ending
+
+Check icp log file. If it says "waiting for period card" and beam is off, then the issue is that a default end waits to complete the current period cycles, which if beam is off is not going to happen (no trigger signal for frames). Solution is to type `g.end(immediate=True)` in a python console. 
    
