@@ -21,7 +21,7 @@ Beckhoff code can be run as a simulated system on a developer machine by doing t
     - `TwinCAT XAE Base`
     - (optionally) `TwinCAT XAE Remote Manager`
 1. Click the `Activate Configuration` button ![Activate](beckhoff/Activate.PNG) - Note you may need to do [this](https://control.com/forums/threads/twincat-3-error-when-switched-to-run-mode.43467/) if it moans about ticks. You may also need to disable Hyper-V and disable Intel Virtualisation from within BIOS on your machine if this error persists.  
-To revert this run: `Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All` in an elevated Powershell window. You may also need to execute `win8settick.bat` in `C:\TwinCAT\3.1\System` as administrator and reboot. 
+To revert this run: `Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All` in an elevated Powershell window. You may also need to execute `settick.bat` in `tcioc\master` as administrator and reboot. 
 2. TwinCAT will ask you to enter a code to get a trial license. You will need to do this once a week.
 3. If prompted if you wish to start the system in `Run Mode` click `Ok`. Otherwise start run mode using the button next to `Activate Configuration` ![Run](beckhoff/Run.PNG)
 4. You now have a simulated beckhoff PLC running on your PC. This behaves the same as real hardware and so all development can be done against it. You could now also run an IOC up talking to this local PLC.
