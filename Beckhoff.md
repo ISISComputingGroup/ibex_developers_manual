@@ -65,4 +65,4 @@ Safety systems such as light curtains or bump strips will throw the controller i
 In this case, navigating to the TwinCAT Beckhoff Controller OPI, selecting the troublesome axis, then pressing "load" then "reset" cleared the issue.
 
 ### `currentTime::getCurrentTime(): time discontinuity detected`
-This is a weird error that seems to occur sometimes when running a Beckhoff simulator. To stop it you need to do the opposite of the `win8settick.bat` script and reboot. NB this should never happen on an instrument machine as they do not run simulated Beckhoffs. 
+This is a weird error that seems to occur sometimes when running a Beckhoff simulator. To stop it you need to do run `unsettick.bat` script in `tcioc\master` and reboot. NB this should never happen on an instrument machine as they do not run simulated Beckhoffs. 
