@@ -260,7 +260,7 @@ Finally, the last step is to add the plug-in we created to uk.ac.stfc.isis.ibex.
 
 ### Adding a new icon
 
-* Grab a nice png icon which is appropriately sized from somewhere like http://www.flaticon.com/ 
+* Grab a nice png icon which is appropriately sized (`24x24` pixels) from somewhere like http://www.flaticon.com/ 
 
 * Create a icons folder in the top-level of the plug-in
 
