@@ -176,3 +176,20 @@ Most figures are implemented using the `draw2d` framework, which is a graphics t
 
 OPIs can be hotfixed on an instrument PC, with a built client, by modifying the OPI files in:
 `\<built client location, usually \instrument\apps\client_e4\>\plugins\uk.ac.stfc.isis.ibex.opis_1.0.0.SNAPSHOT\resources` - this means you do not have to copy the entire client over, just the `.opi` file. You may also need to modify `opi_info.xml`, also in this folder, if you are adding a new OPI or modifying macros passed to an OPI. 
+
+
+# Improving the runtime performance of rules in OPIs
+
+As of [ticket 7212](https://github.com/ISISComputingGroup/IBEX/issues/7212), we are using a custom `ScriptStore` implementation in cs-studio called `RhinoWithFastPathScriptStore`. By default, CS-Studio uses a script store called `RhinoScriptStore`.
+
+The primary difference is that `RhinoWithFastPath` will *attempt* to implement rules in pure java, without needing to call into javascript. This saves a significant amount of memory and CPU time. However, there are a number of limitations:
+- Rules cannot output expressions.
+- All conditions in a rule must be listed either in `FAST_PATH_EXPRESSIONS` in `RhinoScriptStore` (in CS-Studio), or be added by the ibex client in `addFastPathHandlers` in `/uk.ac.stfc.isis.ibex.opis/src/uk/ac/stfc/isis/ibex/opis/Opi.java`
+
+If the above conditions are true, javascript will be bypassed. If any condition is false, javascript will be used.
+
+This approach lets us be fully compatible with all CS-Studio rules, while still getting significant performance gains on a small number of commonly-used rules.
+
+You can generate a list of all rule expressions used in IBEX by running ` grep -roP "bool_exp=\".*?\"" | cut -d ":" -f 2 | sort | uniq -c | sort -nr` from a git bash terminal in `/c/Instrument/dev/ibex_gui/base/uk.ac.stfc.isis.ibex.opis/resources`. The vast majority of our rules use a small number of expressions - these are the expressions which are good candidates for a "fast-path" expression.
+
+On OPIs which have had significant performance issues, such as the reflectometry OPI, *all* rules should have an associated fast-path condition. This ensures that a JavaScript interpreter never needs to be spawned.
