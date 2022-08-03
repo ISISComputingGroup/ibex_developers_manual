@@ -193,3 +193,9 @@ This approach lets us be fully compatible with all CS-Studio rules, while still 
 You can generate a list of all rule expressions used in IBEX by running ` grep -roP "bool_exp=\".*?\"" | cut -d ":" -f 2 | sort | uniq -c | sort -nr` from a git bash terminal in `/c/Instrument/dev/ibex_gui/base/uk.ac.stfc.isis.ibex.opis/resources`. The vast majority of our rules use a small number of expressions - these are the expressions which are good candidates for a "fast-path" expression.
 
 On OPIs which have had significant performance issues, such as the reflectometry OPI, *all* rules should have an associated fast-path condition. This ensures that a JavaScript interpreter never needs to be spawned.
+
+### Ensuring scripts execute in javascript
+
+If a specific rule must use javascript, but also matches the conditions above, you can add a comment to the condition so that it does not match any fast-path conditions (e.g. `pvInt0 == 1 /* no fast path */`). This should be extremely rare, and we should aim to remove or fix fast-path conditions if they do not correctly match what a JS implementation would do.
+
+If you need to execute *all* rules in JS (e.g. a major bug is found in `RhinoWithFastPathScriptStore`), it can be entirely disabled by editing `org.csstudio.opibuilder/java_script_engine=RHINO_WITH_FAST_PATH` to `org.csstudio.opibuilder/java_script_engine=RHINO` in `/uk.ac.stfc.isis.ibex.e4.client/plugin_customization.ini`.
