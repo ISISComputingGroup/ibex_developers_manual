@@ -98,7 +98,7 @@ Software imported from outside should use a "vendor branch" so new versions are 
     cd EPICS/support/danfysik8000
     git submodule add https://github.com/ISISComputingGroup/EPICS-danfysikMps8000.git master
     ```
-    note: if the default branch is not master e.g. main is now the default on github then you must use
+    note: if the default branch is not `master` e.g. `main` is now the default on github then you must specify this with `-b` e.g.
    ```
     git submodule add -b main https://github.com/ISISComputingGroup/EPICS-danfysikMps8000.git master
    ```
