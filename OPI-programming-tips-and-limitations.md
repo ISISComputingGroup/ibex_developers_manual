@@ -1,7 +1,5 @@
 > [Wiki](Home) > [The GUI](The-GUI) > [CS Studio](GUI-CSS) > [OPI Programming tips and limitations](OPI-programming-tips-and-limitations)
 
-These are a few things I have discovered while creating the table of motors and synoptic view.
-
 # Opening a new Opi
 CSS can display one or more windows, each of which can be divided into multiple views, each of
 which can contain multiple tabs, so there is huge flexibility but CSS has its own ideas about
