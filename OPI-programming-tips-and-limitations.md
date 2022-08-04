@@ -67,7 +67,6 @@ currentDisplay = Display.getCurrent()
 
 class WorkerThread(Runnable):
     def run(self):
-        # Widget names need to be set before trying to set properties
         Thread.sleep(1000)
 
         class UITask(Runnable):
