@@ -1,6 +1,6 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > Debug Builds
 
-**NOTE**: if you are a developer wishing to develop on your desktop with a debug build, the debug version of the [Developer server build](Developer-Server-Build) may be easier to work with. The builds below do not ship `.lib` or intermediate `O.*` object directories so any rebuilding after changes is much harder.
+**NOTE**: if you are a developer wishing to develop on your desktop with a debug build, the debug version of the [Developer server build](Developer-Server-Build) may be easier to work with. The builds below do not ship `.lib` or intermediate `O.*` object directories so if you wish to rebuild with changes after having run the debugger it is a little more time consuming.
 
 DEBUG DLL builds are kept in `EPICS_DEBUG_CLEAN_win7_x64` in the usual kits deployment area. If you wish to deploy only a single IOC in debug mode rather than replace the whole installation with the above debug build then:
 1. You need to build the `dllCopy.bat` by running ```make dllCopy.bat``` in the ioc boot area.
