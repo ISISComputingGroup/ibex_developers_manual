@@ -4,7 +4,7 @@ NOTE: if you just want a recent EPICS build for somewhere, you just need to run 
 
 ## EPICS
 
-The EPICS clean Windows 10 Jenkins build workspace is copied to  `\\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer\EPICS\x64` - this contains much more than an instrument installation e.g. it has all the local .git submodules and temporary build (object) files. It can thus be used as the basis for further development work on your local computer.
+The EPICS clean Windows 10 Jenkins build workspace is copied to  `\\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer\EPICS\x64` - this contains much more than an instrument installation e.g. it has all the local `.git` submodules and `*.lib` link libraries as well as temporary build (`O.*`) object file directories. It can thus be used as the basis for rapid further development work on your local computer. A standard instrument debug install for example would allow you to run an ioc in debug mode, but any further development would require re-generating the relevant `*.lib` files need to link the IOC and so take longer than using a developer debug build. 
 
 CAUTION: updating an existing `C:\Instrument\Apps\EPICS` by the mechanism described here is the equivalent of deleting the directory, a full new `git clone --recursive` and then a build. You will lose all current changes to files and also any local git branches you created in that directory. Any changes there you want to keep you must push to Github and then re-checkout the branch after the update. Stashing changes to files is not enough as the local git repos are replaced - you need to push remotely.
 
