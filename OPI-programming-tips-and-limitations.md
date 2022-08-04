@@ -56,7 +56,7 @@ sleep(1)
 widget.doSomething()
 ```
 
-which would block the UI thread for 1 second, we can import relevant java classes and do:
+which would block the UI thread for 1 second, we can import some CS-Studio and core Java classes from python directly, and do:
 
 ```python
 # Correct approach
@@ -74,7 +74,6 @@ class WorkerThread(Runnable):
             def run(self):
                 widget.doSomething()
         UIBundlingThread.getInstance().addRunnable(currentDisplay, UITask())
-        
         
 thread = Thread(WorkerThread(), "some_thread_name")
 thread.start()
