@@ -183,19 +183,23 @@ OPIs can be hotfixed on an instrument PC, with a built client, by modifying the 
 As of [ticket 7212](https://github.com/ISISComputingGroup/IBEX/issues/7212), we are using a custom `ScriptStore` implementation in cs-studio called `RhinoWithFastPathScriptStore`. By default, CS-Studio uses a script store called `RhinoScriptStore`.
 
 The primary difference is that `RhinoWithFastPath` will *attempt* to implement rules in pure java, without needing to call into javascript. This saves a significant amount of memory and CPU time. However, there are a number of limitations:
-- Rules cannot output expressions.
-- All conditions in a rule must be listed either in `FAST_PATH_EXPRESSIONS` in `RhinoScriptStore` (in CS-Studio), or be added by the ibex client in `addFastPathHandlers` in `/uk.ac.stfc.isis.ibex.opis/src/uk/ac/stfc/isis/ibex/opis/Opi.java`
+- Rules must not output expressions.
+- All conditions in a rule must be listed either in `FAST_PATH_EXPRESSIONS` in `RhinoWithFastPathScriptStore` (in CS-Studio), or be added by the ibex client in `addFastPathHandlers` in `/uk.ac.stfc.isis.ibex.opis/src/uk/ac/stfc/isis/ibex/opis/Opi.java`
+  * Note that fast path expressions are an exact string match, so `pvInt0 == 0` is a different fast-path condition to `pvInt0==0`.
+- Fast-path expressions can only use their linked PVs as variables - it is not possible to depend on the `widget` or macros directly. In practice, it is very rare for rules to depend on anything other than their linked PVs. e.g. It is not currently possible to write a fast-path expression for `widget.getValue() == 1`.
 
-If the above conditions are true, javascript will be bypassed. If any condition is false, javascript will be used.
+If the above conditions are true, javascript will be bypassed and a pure java implementation used instead. If any condition is false, javascript will be used. The pure java implementation is significantly more performant in terms of CPU and memory use.
 
-This approach lets us be fully compatible with all CS-Studio rules, while still getting significant performance gains on a small number of commonly-used rules.
+This approach lets us be fully compatible with all CS-Studio rules & `.opi` files (which can use completely arbitrary javascript fragments as their conditions), while still getting significant performance gains on most rules (as most rules use a relatively small number of distinct expressions).
 
-You can generate a list of all rule expressions used in IBEX by running ` grep -roP "bool_exp=\".*?\"" | cut -d ":" -f 2 | sort | uniq -c | sort -nr` from a git bash terminal in `/c/Instrument/dev/ibex_gui/base/uk.ac.stfc.isis.ibex.opis/resources`. The vast majority of our rules use a small number of expressions - these are the expressions which are good candidates for a "fast-path" expression.
+You can generate a list of all rule expressions used in IBEX by running ` grep -roP "bool_exp=\".*?\"" | cut -d ":" -f 2 | sort | uniq -c | sort -nr` from a git bash terminal in `/c/Instrument/dev/ibex_gui/base/uk.ac.stfc.isis.ibex.opis/resources`. The vast majority of our rules use a small number of simple expressions - these are the expressions which are good candidates for a "fast-path" expression.
 
-On OPIs which have had significant performance issues, such as the reflectometry OPI, *all* rules should have an associated fast-path condition. This ensures that a JavaScript interpreter never needs to be spawned.
+On OPIs which have had significant performance issues, such as the reflectometry OPI, *all* rule expressions should have an associated fast-path handler, and should not use the "output expression" feature of CS-Studio. This ensures that all rules in this OPI do not use the javascript rules implementation.
 
-### Ensuring scripts execute in javascript
+### Forcing JS execution of a single rule
 
 If a specific rule must use javascript, but also matches the conditions above, you can add a comment to the condition so that it does not match any fast-path conditions (e.g. `pvInt0 == 1 /* no fast path */`). This should be extremely rare, and we should aim to remove or fix fast-path conditions if they do not correctly match what a JS implementation would do.
+
+### Forcing JS execution of all rules
 
 If you need to execute *all* rules in JS (e.g. a major bug is found in `RhinoWithFastPathScriptStore`), it can be entirely disabled by editing `org.csstudio.opibuilder/java_script_engine=RHINO_WITH_FAST_PATH` to `org.csstudio.opibuilder/java_script_engine=RHINO` in `/uk.ac.stfc.isis.ibex.e4.client/plugin_customization.ini`.
