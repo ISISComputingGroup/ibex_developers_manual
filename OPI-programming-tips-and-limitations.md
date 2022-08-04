@@ -236,4 +236,6 @@ If a specific rule must use javascript, but also matches the conditions above, y
 
 ### Forcing JS execution of all rules
 
-If you need to execute *all* rules in JS (e.g. a major bug is found in `RhinoWithFastPathScriptStore`), it can be entirely disabled by editing `org.csstudio.opibuilder/java_script_engine=RHINO_WITH_FAST_PATH` to `org.csstudio.opibuilder/java_script_engine=RHINO` in `/uk.ac.stfc.isis.ibex.e4.client/plugin_customization.ini`.
+If you need to execute *all* rules in JS (e.g. a major bug is found in `RhinoWithFastPathScriptStore`), it can be entirely disabled by editing `org.csstudio.opibuilder/java_script_engine=RHINO_WITH_FAST_PATH` to `org.csstudio.opibuilder/java_script_engine=RHINO` in `/uk.ac.stfc.isis.ibex.e4.client/plugin_customization.ini`. 
+
+Note that you will need to increase the GUI heap size parameter if this is done, particularly on reflectometers, as the reflectometry OPI uses huge numbers of rules which cause excessive memory consumption under javascript.
