@@ -48,6 +48,40 @@ When an opi is displayed in a linking container, scripts on the opi display widg
 This is largely undocumented. The help in CSS/BOY says little and Google can find little.
 The only way I was able to find out how to manipulate the actions on a button was to view the java source on [GitHub](https://github.com/ControlSystemStudio/cs-studio/tree/master/applications). The Python objects simply expose the public Java methods.
 
+It is possible to use any java module or method from python code in an OPI. For example, instead of:
+
+```python
+# Note: this is BAD - do not do this!
+sleep(1)
+widget.doSomething()
+```
+
+which would block the UI thread for 1 second, we can import relevant java classes and do:
+
+```python
+# Correct approach
+from org.csstudio.ui.util.thread import UIBundlingThread
+from java.lang import Thread, Runnable
+from org.eclipse.swt.widgets import Display
+currentDisplay = Display.getCurrent()
+
+class WorkerThread(Runnable):
+    def run(self):
+        # Widget names need to be set before trying to set properties
+        Thread.sleep(1000)
+
+        class UITask(Runnable):
+            def run(self):
+                widget.doSomething()
+        UIBundlingThread.getInstance().addRunnable(currentDisplay, UITask())
+        
+        
+thread = Thread(WorkerThread(), "some_thread_name")
+thread.start()
+```
+
+Which will *not* block the UI thread for 1 second, as it's 1 second wait is in a different thread (it then uses `UIBundlingThread.addRunnable` to get back onto the UI thread once the wait is finished).
+
 # Changing actions
 The list of actions on a button is:
 
@@ -119,6 +153,8 @@ Note that for dynamically create widgets that do not normally have click actions
 
 Bear in mind that both scripts and rules run **in the GUI thread** this can lead to unresponsiveness if you are doing a lot of work in them. You can write multithreaded scripts, see the jaws_display.opi for an example of this. 
 
+Note that it is a programming error to call `sleep` or other similar functions directly in an OPI script - these will completely block the UI thread every time the script executes. Instead, use a threading pattern and only call `sleep` in a non-UI thread if you need an arbitrary wait in OPI scripts. `UIBundlingThread.addRunnable` can be used to get back onto the UI thread after the sleep is complete.
+
 # Utilities
 
 Seven utility classes are provided, but there seems to be no way to get to some of them in the online help other than to know their names and search for them:
@@ -146,6 +182,8 @@ At the time of writing, here are some representative numbers of widgets on a var
 - Reflectometry front panel: 135 widgets
 - CS-Studio "large" performance test: 200 widgets
 - Table of motors OPI attempt: 674 widgets - took ~15 seconds to open on NDXSCIDEMO
+
+See also section below on improving the performance of rules, if your OPI contains significant numbers of rules (e.g. more than 10). If your OPI contains significant numbers of rules, you need to ensure that all rule conditions have an associated fast-path handler.
 
 # Implementing your own widgets in CS-Studio code
 
