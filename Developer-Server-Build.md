@@ -1,5 +1,7 @@
 It is possible to use one of the intermediate outputs from a build server as the basis of your local development environment. This can provide you with either a normal `Release` build (EPICS_HOST_ARCH=windows-x64), or a `Debug` build (EPICS_HOST_ARCH=windows-x64-debug) 
 
+If you wish to use a `Debug` build, replace `x64` in paths below with `x64-debug`
+
 NOTE: if you just want a recent EPICS build for somewhere, you just need to run the `install_to_inst.bat` in the appropriate build on `kits$` when connected from the machine you want to install it on
 
 ## EPICS
@@ -33,8 +35,6 @@ If you wanted to temporarily use an updated distribution for e.g. a review then 
 - use one of the above procedures to create a new `c:\Instrument\Apps\EPICS`
 - checkout branches required for review, run make in just these directories if required
 - when done delete `c:\Instrument\Apps\EPICS` and rename `EPICS-keep` back to `EPICS`
-
-If you wish to work with a debug build, replace `x64` with `x64-debug` in above commands
 
 This scheme works as Visual Studio is binary compatible (even at object file level) from version 2015 onwards. Linking must be done with the most recent visual studio version used, the build server is currently running 2019, so any developer must also be using Visual Studio 2019.  
  
