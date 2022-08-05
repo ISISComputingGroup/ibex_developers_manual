@@ -217,9 +217,9 @@ OPIs can be hotfixed on an instrument PC, with a built client, by modifying the 
 As of [ticket 7212](https://github.com/ISISComputingGroup/IBEX/issues/7212), we are using a custom `ScriptStore` implementation in cs-studio called `RhinoWithFastPathScriptStore`. By default, CS-Studio uses a script store called `RhinoScriptStore`.
 
 The primary difference is that `RhinoWithFastPath` will *attempt* to implement rules in pure java, without needing to call into javascript. This saves a significant amount of memory and CPU time. However, there are a number of limitations:
-- Rules must not output expressions.
 - All conditions in a rule must be listed either in `FAST_PATH_EXPRESSIONS` in `RhinoWithFastPathScriptStore` (in CS-Studio), or be added by the ibex client in `addFastPathHandlers` in `/uk.ac.stfc.isis.ibex.opis/src/uk/ac/stfc/isis/ibex/opis/Opi.java`
   * Note that fast path expressions are an exact string match, so `pvInt0 == 0` is a different fast-path condition to `pvInt0==0`.
+- If a rule uses the "output expression" feature of CSS, then all output expressions must *also* be listed in `FAST_PATH_EXPRESSIONS` (or added by the ibex client in `Opi.java` as above). This is currently limited to output expressions of boolean type.
 - Fast-path expressions can only use their linked PVs as variables - it is not currently possible to depend on the `widget` or macros directly. For example it is not currently possible to write a fast-path expression for `widget.getValue() == 1`.
 
 If the above conditions are true, javascript will be bypassed and a pure java implementation used instead. The pure java implementation is significantly more performant in terms of CPU and memory use. This approach lets us be fully compatible with all CS-Studio rules & `.opi` files (which can use completely arbitrary javascript fragments as their conditions), while still getting significant performance gains on most rules in practice.
