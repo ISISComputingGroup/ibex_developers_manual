@@ -222,7 +222,7 @@ The primary difference is that `RhinoWithFastPath` will *attempt* to implement r
 - If a rule uses the "output expression" feature of CSS, then all output expressions must *also* be listed in `FAST_PATH_EXPRESSIONS` (or added by the ibex client in `Opi.java` as above). This is currently limited to output expressions of boolean type.
 - Fast-path expressions can only use their linked PVs as variables - it is not currently possible to depend on the `widget` or macros directly. For example it is not currently possible to write a fast-path expression for `widget.getValue() == 1`.
 
-If the above conditions are true, javascript will be bypassed and a pure java implementation used instead. The pure java implementation is significantly more performant in terms of CPU and memory use. This approach lets us be fully compatible with all CS-Studio rules & `.opi` files (which can use completely arbitrary javascript fragments as their conditions), while still getting significant performance gains on most rules in practice.
+If the above conditions are true, javascript will be bypassed and a pure java implementation used instead. The pure java implementation is significantly more performant in terms of CPU and memory use. The javascript implementation (Rhino) is used as a fallback if the above conditions are not true. This approach lets us be fully compatible with all CS-Studio rules & `.opi` files (which can use completely arbitrary javascript fragments as their conditions), while still getting significant performance gains on most rules in practice.
 
 You can generate a list of all rule expressions used in IBEX by running:
 
