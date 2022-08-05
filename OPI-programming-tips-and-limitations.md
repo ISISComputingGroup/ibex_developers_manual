@@ -234,9 +234,9 @@ from a git bash terminal in `ibex_gui/base/uk.ac.stfc.isis.ibex.opis/resources`.
 
 On OPIs which have had significant performance issues, such as the reflectometry OPI, *all* rule expressions should have an associated fast-path handler, and should not use the "output expression" feature of CS-Studio. This ensures that all rules in this OPI do not use the javascript rules implementation.
 
-### Forcing JS execution of a single rule
+### Checking which rules execute in JS
 
-If a specific rule must use javascript, but also matches the conditions above, you can add a comment to the condition so that it does not match any fast-path conditions (e.g. `pvInt0 == 1 /* no fast path */`). This should be extremely rare, and we should aim to remove or fix fast-path conditions if they do not correctly match what a JS implementation would do.
+In `/uk.ac.stfc.isis.ibex.opis/src/uk/ac/stfc/isis/ibex/opis/Opi.java`, call `RhinoWithFastPathScriptStore.setLogScriptsUsingJS(true)`. This will log the script content the first time a rule is loaded and executes via the slow (JS interpreter) path.
 
 ### Forcing JS execution of all rules
 
