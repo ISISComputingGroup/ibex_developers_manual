@@ -36,7 +36,8 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
 
     1. [EPICS](https://github.com/ISISComputingGroup/EPICS)
     1. For EPICS submodules you should use:
-        1. `git submodule update --init --recursive --remote` which sets all the repos to their pinned version
+        1. `git submodule update --init --recursive --remote` which sets all the repos to their latest version
+        1. `git status` and check if any submodules are listed as `new commits`. If this is so, it means a new submodule version has not been pushed (the `EPICS repo checks` Jenkins build will likely be in error). Normally this module should be pushed and once the `repo checks` build passes this step repeated. If you do not want the changes in this submodule, then you will likely need to checkout a desired commit on the top level and then do the above submodule update without `--remote`. See advice if this doesn't make sense.         
         1. `git submodule foreach "(git checkout -b Release_X.x.x; git push -u origin Release_X.x.x)||true"` this creates a branch at the current checked out version for each repo and pushes it.
     1. [JSON_bourne](https://github.com/ISISComputingGroup/JSON_bourne). First check if changes have been made as JSON_bourne is rarely edited.
 1. Update the version numbers:
