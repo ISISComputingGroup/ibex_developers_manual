@@ -27,7 +27,7 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
 1. Contact computing group to let us know of the upgrade. Find out anything that needs to be in the release that isn't and mark with `for release` label. (This does not prevent a release)
 1. Look at the released features in this branch [Upcoming Changes](https://github.com/ISISComputingGroup/IBEX/blob/master/release_notes/ReleaseNotes_Upcoming.md) and find the most significant level of change (i.e. is this cumulatively a major change, a minor change, or a patch?).
 1. Update the [upgrade script](https://github.com/ISISComputingGroup/EPICS-upgrade/blob/master/upgrade.py) to include the latest version (this is done on master). Steps to do this are in [Config Upgrader in section *creating a production upgrade script*](Config-Upgrader#creating-a-production-upgrade-script) 
-    1. Don't forget to push the changes to the associated submodule on the EPICS master branch before proceeding.
+    1. After committing these changes to `master` on the `EPICS-upgrade` submodule, don't forget to push the new submodule version to `master` on the top `EPICS` branch. This is needed to make sure you changes appear on the release branch created in the next step. 
 1. Start a release branch so that the code is frozen (e.g. `Release_1.1.0`). You will need a branch for
     1. [genie_python](https://github.com/ISISComputingGroup/genie_python)
     1. [ibex_gui](https://github.com/ISISComputingGroup/ibex_gui)
