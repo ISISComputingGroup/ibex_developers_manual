@@ -126,14 +126,14 @@ Git upgrade is handled by install scripts.
 
 ## GUI
 
-Our CS-Studio GUI dependencies are located on a share at `\\shadow.isis.cclrc.ac.uk\icp_p2$\css_gui_dependencies` (which is accessible via a webpage at `http://shadow.nd.rl.ac.uk/ICP_P2/css_gui_dependencies/`. To update the CS-Studio components that the GUI uses:
+Our CS-Studio GUI dependencies are located on a share on shadow, a read only version `\\shadow.isis.cclrc.ac.uk\icp_p2$\css_gui_dependencies` (which is accessible via a webpage at `http://shadow.nd.rl.ac.uk/ICP_P2/css_gui_dependencies/` and a writable version `\\shadow.isis.cclrc.ac.uk\icp_p2w$\css_gui_dependencies`. To update the CS-Studio components that the GUI uses:
 - `git clone --recursive https://github.com/ISISComputingGroup/isis_css_top.git`
 - Make relevant changes to the code, make sure submodules get pinned to new versions using same workflow as in EPICS top.
 - Trigger a build on Jenkins
-- After the build is complete go to the build server and copy the entire isis_css_top tree to the share (`\\shadow.isis.cclrc.ac.uk\ICP_P2$`)
+- After the build is complete go to the build server and copy the entire isis_css_top tree to the share (`\\shadow.isis.cclrc.ac.uk\ICP_P2W$`)
 - Subsequent GUI builds will pick up the new dependencies
 - Test that your changes work correctly!
-- if you cannot write to the `ICP_P2$` share on shadow, your account will need adding to the `icp` local group on shadow itself. This just requires somebody to run the `vigr` command on shadow and then possibly `service smb restart` too 
+- if you cannot write to the `ICP_P2W$` share on shadow, your fed id account will need adding to the `icp` local group on shadow itself. This just requires somebody to run the `vigr` command on shadow and then possibly `service smb restart` too 
 
 ## Archive engines / alarm servers
 
