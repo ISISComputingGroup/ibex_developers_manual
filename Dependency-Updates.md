@@ -46,7 +46,7 @@ Tycho and eclipse framework versions are defined in the file `./base/uk.ac.stfc.
 
 ### Py4J
 
-We have a local copy of Py4J available at `http://shadow.nd.rl.ac.uk/ICP_P2/Py4j_P2/` (note: only available in browsers which do not auto-correct http to https as shadow is not currently configured correctly to serve https traffic. The password for shadow is on the credentials page).
+We have a local copy of Py4J available at `https://shadow.nd.rl.ac.uk/ICP_P2/Py4j_P2/` (The password for shadow is on the credentials page).
 
 To update this copy, download the following files from `http://eclipse.py4j.org/`:
 - `http://eclipse.py4j.org/content.jar`
