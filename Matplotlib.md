@@ -27,7 +27,7 @@ We have modified the backend to:
 
 `WebAgg` is published by matplotlib as a browser-based backend. IBEX previously rendered plots in an embedded web browser view within an OPI, but this had significant reliability problems.
 
-We have since moved to reimplementing the javascript based frontend code in java, as it is very simple. When matplotlib is updated, we should verify that plots still work and update the protocol in the GUI if the underlying protocol in `WebAgg` has changed or been extended. However this should be relatively rare as WebAgg is designed to be embedded in other applications (per https://matplotlib.org/stable/gallery/user_interfaces/embedding_webagg_sgskip.html).
+We have since moved to reimplementing the javascript based frontend code in java, as it is very simple. When matplotlib is updated, we should verify that plots still work and update the protocol in the GUI if the underlying protocol in `WebAgg` has changed or been extended. However this should be relatively rare as WebAgg is designed to be embedded in other applications (per [mpl docs](https://matplotlib.org/stable/gallery/user_interfaces/embedding_webagg_sgskip.html)).
 
 The front-end receives binary messages from the backend, and displays the binary message content as a PNG in the user interface. The user interface also occasionally forces plots to be redrawn, so that any missed updates will not cause a plot to completely freeze/fail to update.
 
