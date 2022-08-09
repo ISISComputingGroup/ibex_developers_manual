@@ -1,5 +1,11 @@
 # Matplotlib
 
+---
+
+See also [user-facing docs](https://github.com/ISISComputingGroup/ibex_user_manual/wiki/Matplotlib) on user manual.
+
+---
+
 We allow plotting in IBEX via `matplotlib`. These plots will appear in the IBEX client.
 
 As of [ticket 6719](https://github.com/ISISComputingGroup/IBEX/issues/6719), we are using a custom matplotlib backend. This backend comprises two main components:
