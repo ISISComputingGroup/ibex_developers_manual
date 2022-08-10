@@ -69,9 +69,17 @@ NOTE: at the time of writing, you can't type `localhost` for the `-r` argument.
 
 Once the emulator is running, the backdoor can be operated either via the command line through `lewis-control`:
 ```
-%PYTHON3DIR%\scripts\lewis-control.exe -r 127.0.0.1:10000 device "backdoor command" "arguments"
+%PYTHON3DIR%\scripts\lewis-control.exe -r localhost:<PORT> device <EMULATOR FUNCTION/COMMAND/VARIABLE> "<ARG1>" "<ARG2>" "<ARG...>"
 ```
 or can be scripted, as described in the Lewis documentation.
+
+Replace each of the sections in `<>`s with the relevant values, not including the angle brackets. For example, to call the `backdoor_set_channel_property(self, channel_id, property_name, value)` method on an emulator running on port `59254`, you would write:
+
+```
+%PYTHON3DIR%\scripts\lewis-control.exe -r localhost:59254 device backdoor_set_channel_property "MB1.H0"  "voltage"  "10"
+```
+
+If you want to control an emulator running from a test, look at the lewis log for the device in `Instrument\Var\logs\IOCTestFramework` and use the port that the `ControlServer` is listening on. 
 
 **NOTE**: If an argument is a string that contains words separated by white space characters, then you need to use "'argument'" instead of "argument", since otherwise the command line will not interpret it correctly and crash with a SyntaxError.
 
