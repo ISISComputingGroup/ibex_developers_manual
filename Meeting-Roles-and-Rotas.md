@@ -81,7 +81,7 @@ Don't forget the [drop in sessions](https://github.com/ISISComputingGroup/IBEX/w
 | 2022_06_16_Review/Retro| CMS |x (retro only)   | JA|   | LC|   |
 | 2022_07_14_Planning| DK |x   | FA|   | |  |
 | 2022_08_11_Pre-Planning| JA |   | CMS|   | |  |
-| 2022_07_14_Review/Retro| LJ |   | JH|   | TL|   |
+| 2022_07_14_Review/Retro| LJ | x  | JH|   | TL|   |
 | 2022_08_11_Planning| FA |   | LC|   | |  |
 | 2022_09_01_Pre-Planning| KB |   | DK|   | |  |
 | 2022_08_11_Review/Retro| LC |   | LJ|   | JA|   |
