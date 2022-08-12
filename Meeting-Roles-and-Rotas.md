@@ -33,14 +33,14 @@ Don't forget the [drop in sessions](https://github.com/ISISComputingGroup/IBEX/w
 ## Stand up
 | Standup | Week Commencing | x for Done |
  |--- | --- | --- |
- |DKg | 20/06/2022 |x |
- |AS | 27/06/2022 |x |
- |FA | 04/07/2022 |x |
- |JA | 11/07/2022 |x |
- |JH | 18/07/2022 |x |
- |CMS | 25/07/2022 |x |
- |LC | 01/08/2022 |x |
- |DK | 08/08/2022 | |
+ |DKg | 20/06/2022 |x|
+ |AS | 27/06/2022 |x|
+ |FA | 04/07/2022 |x|
+ |JA | 11/07/2022 |x|
+ |JH | 18/07/2022 |x|
+ |CMS | 25/07/2022 |x|
+ |LC | 01/08/2022 |x|
+ |DK | 08/08/2022 |x|
  |TL | 15/08/2022 | |
  |LJ | 22/08/2022 | |
  |KB | 29/08/2022 | |
@@ -78,7 +78,7 @@ Don't forget the [drop in sessions](https://github.com/ISISComputingGroup/IBEX/w
 | 2022_05_19_Review/Retro| LC | x | LC| x | DKg| x |
 | 2022_06_16_Planning| DKg | x | AS| x | |  |
 | 2022_07_14_Pre-Planning| FA |x   | KB|   | |  |
-| 2022_06_16_Review/Retro| CMS |x (retro only)   | JA|   | LC|   |
+| 2022_06_16_Review/Retro| CMS |x (review only) | JA|   | LC|   |
 | 2022_07_14_Planning| DK |x   | FA|   | |  |
 | 2022_08_11_Pre-Planning| JA |   | CMS|   | |  |
 | 2022_07_14_Review/Retro| LJ | x  | JH|   | TL|   |
