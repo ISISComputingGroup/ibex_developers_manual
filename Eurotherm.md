@@ -49,3 +49,11 @@ To change the comms settings on a physical eurotherm box:
   * Note that the eurotherm **WILL NOT** communicate while it is in the config mode
 - The eurotherm should now communicate on the selected protocol.
 
+### Comms mode implementation details
+
+- The comms mode is passed to the `.db` file as an `IFUSES_BISYNCH` and `IFNOTUSES_BISYNCH` macros, which are mutually exclusive. This macro is used to select between `INP` links that use streamdevice (for EI-bisynch) and `INP` links that use modbus (via asyn).
+- The modbus addresses are defined in `generate_substitutions.py`, which is a helper file for generating a set of `.substitutions` files for each channel. This provides substitutions for the `GAD` and `LAD` macros (needed in bisynch mode) and also the modbus addresses.
+- 10 `.db` files, for each sensor number that IBEX supports, are created by the `.substitutions` files. These files correspond to a physical sensor, not a sensor number in IBEX.
+- `st-comms-eibisynch.cmd` and `st-comms-modbus.cmd` contain protocol-specific comms setup code in the `st.cmd`. Only one of these files will be called, depending on the value of the `COMMS_MODE` macro.
+- Both protocols are supported (via two stream interfaces) in lewis, and the same set of tests run against the eurotherm in both modes, using a set of base tests in the IOCTestFramework.
+
