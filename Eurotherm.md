@@ -27,3 +27,25 @@ General:
 HRPD: 
 
 - Port: serial cable needs to be plugged into the RH 9 pin port labelled "J" not the 25 pin one labelled "H"
+
+# Comms modes
+
+As of [ticket 4240](https://github.com/ISISComputingGroup/IBEX/issues/4240), we can communicate with Eurotherms via either Modbus or EI-BISYNCH protocol. The EI-BISYNCH protocol is the default and is currently used for most eurotherms at ISIS.
+
+### Changing comms mode in IOC
+
+The modbus protocol takes the same serial comms settings as EI-BISYNCH. The `BITS` macro is ignored and hardcoded to 8 bits because this is part of the modbus specification. Note that baud rate and parity may change when changing the comms settings physically on a eurotherm, so this should be double checked.
+
+To choose MODBUS, set the `COMMS_MODE` macro to `modbus`. To choose `EI-bisynch`, set the `COMMS_MODE` macro to `eibisynch`. If the macro is not set, EI-bisynch will be used.
+
+### Changing comms mode on physical device
+
+To change the comms settings on a physical eurotherm box:
+- Power cycle the unit while holding down the up & down arrow keys simultaneously
+- Once the unit comes up asking for a passcode, enter the configuration password (for office eurotherm, this is in keeper. For other eurotherms on a beamline, it is probably a similar password)
+- Navigate to the "comms" menu section, scroll down to "protocol" and select EI-BISYNCH or MODBUS as appropriate
+- Check the baud rate and parity in the comms menu as this sometimes changes as you change between comms modes
+- Navigate back to the config section of the menu, and select "GOTO" -> "Level 3".
+  * Note that the eurotherm **WILL NOT** communicate while it is in the config mode
+- The eurotherm should now communicate on the selected protocol.
+
