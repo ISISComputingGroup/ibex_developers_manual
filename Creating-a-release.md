@@ -95,6 +95,9 @@ the relevant release branch after it has been tagged.
     * Standard release: upgrade instruments that need updates, i.e. they need a newly released feature, and all those that are in the current release group, see [column in instruments table](https://github.com/ISISComputingGroup/IBEX/wiki#instrument-information). Note on the release ticket which instruments need to be released to using checkboxes (one for start and one for finish).
 1. Deploy a new JSON_bourne if required see [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Web-Dashboard)
 
+## Partial Release
+For any release in which GUI version increments but server version does not, ensure the previous server version is added to the release folder via symbolic links or junctions, [see this ticket](https://github.com/ISISComputingGroup/IBEX/issues/7250).
+
 ## Patch Release
 
 The is a release when a change needs to be made between standard releases; i.e. a standard release is inappropriate because it includes lots of code which has not been through a code freeze and test. 
