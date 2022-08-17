@@ -24,4 +24,5 @@ There are a number of different PLCs in use at ISIS:
 
 * [Beckhoff](Beckhoff) - Mostly used for motion but are in fact generic PLCs
 * [Omron FINS](Omron-FINS)
+* [Schneider](Schneider-PLC)
 
