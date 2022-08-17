@@ -11,7 +11,7 @@ To actually communicate via the ADS transport layer you will need to set up a ro
 1. Install the XAR tools if not already installed. A copy of these will be hosted on `<public share>\third_party_installers\special_drivers\beckhoff\`. All of the defaults are fine so this should be a case of just clicking through the wizard and installing the drivers that show up. 
 2. Set up an ADS route on the NDX: 
   - `Right-click TwinCAT icon in system tray -> Router -> Edit Routes -> Add...` with these settings:
-    - Advanced settings ticked, click the IP Address radio button, enter the IP address (mentioned above) 
+    - Advanced settings ticked, click the IP Address radio button, then enter the IP address (mentioned above) on box at top. Press the return key after entering this in the box - this seems to work better than pressing the refresh button.  
     - Static Target routes and remote routes (default) 
     - Everything else can be left as defaults
 3. To confirm that this has been set up remote into the controller itself on the aforementioned IP address and check that the route to the NDX has been added automatically. You should not need to manually add a route in the controller. 
