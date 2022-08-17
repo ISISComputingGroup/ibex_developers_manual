@@ -51,7 +51,7 @@ This is controversial but is signed off as per [ticket 4307](https://github.com/
 ## Server Status Feedback
 
 The reflectometry server provides feedback on its status to the user at 3 different levels:
-- **Error Log:** At this level, we just collect error messages in the reflectometry server and expose them via a PV in addition to writing them to the log file. In order to do this, we should conventionally use `SERVER_STATUS_MANAGER.update_error_log(<message>)` in place of `logger.error(<message>)`. The PV with the list of errors is then displayed in a tab on the reflectometry front panel OPI.
+- **Error Log:** At this level, we just collect error messages in the reflectometry server and expose them via a PV in addition to writing them to the log file. In order to do this, we should conventionally use `SERVER_STATUS_MANAGER.update_error_log(<message>)` in place of `logger.error(<message>)`. The PV with the list of errors is then displayed in a tab on the reflectometry front panel OPI. The log is stored in a 10,000 element char waveform and thus the string returned is truncated to that limit.
 - **Problems:** These are slightly higher level and intended to be fairly general just as an indication of the area where a problem occurred. For more detailed information, the user should refer to the error log. Problems are comprised of a type of issue, a severity and a list of sources that are reporting it. Examples:
     - Problem: Configuration is invalid; Severity: Major; Source(s): Configuration
     - Problem: Velocity cannot be restored; Severity: Minor; Source(s): MTR0304, MTR0305
