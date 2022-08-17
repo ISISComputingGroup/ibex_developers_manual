@@ -1,7 +1,7 @@
-These are controlled by the `SCHNDR` iocs. Relevant macros are:
+These are controlled by the `SCHNDR` iocs and are used on various instruments, such as to monitor value status or pressure (a TPG300 can for example feed data into the PLC inputs). Relevant macros are:
 
-* `MODE`: `TCP`, `RTU` or `ASCII` to specify PLC connection mode.
-* `PORT`: Serial COM Port of PLC for `RTU` or `ASCII`
+* `MODE`: `TCP`, `RTU` or `ASCII` to specify PLC connection mode. We generally use either `TCP` or `RTU`.
+* `PORT`: Serial COM Port of PLC for `RTU` or `ASCII` mode
 * `IPADDR`: IP address of PLC for `TCP` mode
 * `IPPORT`: TCP will connect on default modbus 502 port, set this if different.
 
