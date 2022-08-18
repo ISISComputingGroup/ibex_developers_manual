@@ -7,6 +7,6 @@ In order to make sure that IOC descriptions, and how they appear in the IOC sele
 3. What it is/does (e.g. waveform generator, jaws manager)
 
 ### Examples of IOC Descriptions
-Agilent 33220A 20MHz waveform generator
-ISIS IBEX Reflectometry Server
-ISIS DAE
+* Agilent 33220A 20MHz waveform generator
+* ISIS IBEX Reflectometry Server
+* ISIS DAE
