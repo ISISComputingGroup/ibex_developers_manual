@@ -1,4 +1,4 @@
-> [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > IOC Naming
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > IOC Descriptions
 
 In order to make sure that IOC descriptions, and how they appear in the IOC selection list is understandable the IOC Description in the config.xml should consist of the following items, in this order:
 
