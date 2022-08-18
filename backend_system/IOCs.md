@@ -47,6 +47,8 @@ If you're not creating a StreamDevice IOC or you you would like to know how an I
 
 * [IOC naming](IOC-Naming)
 
+* [IOC descriptions](IOC-Descriptions)
+
 * [ISIS PV guide](ISIS-PV-Guide)
 
 * [PV naming](PV-Naming)
