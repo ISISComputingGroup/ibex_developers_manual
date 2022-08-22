@@ -111,5 +111,9 @@ There is a plan to install a neutron camera on NIMROD.  The camera would be a Ne
 
 This has been installed on Galil 4 axis 5 (D) on NIMROD. Motion setpoints have been added under the name `CAMERA` for this, with positions for in/out of the beam. 
 
+
+<img src="https://user-images.githubusercontent.com/32413847/185881413-a8bdc8be-f955-451b-92e1-de948daf452a.jpg" width="240" height="320" />
+
+
 #### Electrochemical Cell Positioner ####
 A device is being built to position an electrochemical cell in the beam.  This is a single linear axis with continuous positioning.  We need not concern ourselves with the cell itself as this will be controlled by the users.
