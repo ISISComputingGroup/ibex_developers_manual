@@ -1,6 +1,6 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [Temperature Controllers](Temperature-Controllers) > [Lakeshore 336](Lakeshore336)
 
-The Lakeshore 336 is a temperature controller that has four input temperature readings (A, B, C, D) and two heater outputs (1, 2). The user can configure which heater output is paired up with which input.
+The Lakeshore 336 is a temperature controller that has four input temperature readings (A, B, C, D) and four heater outputs (1, 2, 3, 4). The user can configure which heater output is paired up with which input.
 
 This means that the temperature setpoint `TEMP1:SP` (and `TEMP1:SP:RBV`) could be matched to any of the temperature readings `TEMP_A`, `TEMP_B`, `TEMP_C` or `TEMP_D` depending on how the device is setup, and the user can change this dynamically.
 This of course breaks our naming convention the blocks rely on to work. So the IOC has some extra PVs to deal with this, so the user can either rely on the names `TEMP_A`, `TEMP_A:SP`, `TEMP_A:SP:RBV`, or on the names `TEMP1`, `TEMP1:SP`, `TEMP1:SP:RBV`.
@@ -17,7 +17,7 @@ The Lakeshore 336 IOC was originally taken from Diamond; the Diamond IOC is on a
 The template files we're using have been tweaked to fit our needs and have gone through a general PV renaming, to make them consistent with our naming convention. In the template files we're not using the PVs have NOT been renamed.
 
 **NOTE**
-The device has actually four outputs, two of one type and two of another type, and we're only using one type. In the original IOC, the functionality common to both types is in the lakeshore336output.template file, while the things that are specific to each output type are in separate files, lakeshore336loop.template and lakeshore336analog.template.
+The device has actually four outputs, two of one type and two of another type. In the original IOC, the functionality common to both types is in the lakeshore336output.template file, while the things that are specific to each output type are in separate files, lakeshore336loop.template and lakeshore336analog.template.
 
 Now, some PVs (typically mbbi/mbbo) have their definition split in two files: the common fields in the common file, and the type-specific fields in the type-specific file.
 
