@@ -1,5 +1,8 @@
 We have a Jenkins pipeline for tests that check if our wikis are grammatically correct, that they reference valid links, and so on. It checks the developer's Wiki, the IBEX User's manual and the IBEX Wiki. 
 
+## Wiki Checks Repository
+https://github.com/ISISComputingGroup/ibex_wiki_checker
+
 ## Running the Wiki Checker locally
 
 In order to run them locally, you need to change directory to `C:\Instrument\Dev\ibex_wiki_checker` and then execute `run_tests.bat`.
