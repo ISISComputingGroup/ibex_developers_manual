@@ -8,7 +8,7 @@ Code chats occur on a semi-regular monthly basis within the group at ISIS. Altho
 
 Topic | Presenter | Date
 ----- | --------- | ----
-IOC Testing Framework & Emulators | Tom Willemsen | 23rd August
+ |  |
 
 
 ### Books and article ideas for technical book club
@@ -169,6 +169,7 @@ ISISICP/DAE | Freddie | 31/03/22 | [Recorded here.](https://stfc365-my.sharepoin
 Motion in Ibex| Jack Harper | 27/04/22 | Not Recorded
 [Docusaurus](https://github.com/JackEAllen/Docusaurus_L_and_D) | Jack Allen | 24/06/22 | [Recorded here.](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/GUI_Chat_Slides/Docusaurus.mp4)
 SANS/TRANS Instrument Scripts | Thomas Cottee Meldrum | 21/07/22 | [Recorded here.](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/GUI_Chat_Slides/SANS%20TRANS%20Instrument%20Scripts.mp4)
+IOC Testing Framework & Emulators | Tom Willemsen | 23/08/22 | [Recorded here.](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/GUI_Chat_Slides/Emulators%20and%20IOC%20Testing%20Framework%20Codechat.mp4)
 
 
 </details>
