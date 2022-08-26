@@ -12,49 +12,22 @@ The GUI has multiple mechanisms for pulling in dependencies, all of which may po
 
 ### `.jar` files
 
-The following `.jar` files may need updating. Check for new versions in maven central or on the vendor website, and update if new versions are available:
-
-```
-./base/uk.ac.stfc.isis.ibex.activemq/lib/activemq-all-5.16.3.jar
-./base/uk.ac.stfc.isis.ibex.databases/lib/mysql-connector-java-8.0.27.jar
-./base/uk.ac.stfc.isis.ibex.epics/lib/commons-codec-1.15-javadoc.jar
-./base/uk.ac.stfc.isis.ibex.epics/lib/commons-codec-1.15-sources.jar
-./base/uk.ac.stfc.isis.ibex.epics/lib/commons-codec-1.15.jar
-./base/uk.ac.stfc.isis.ibex.epics/lib/joda-time-2.10.13.jar
-./base/uk.ac.stfc.isis.ibex.logger/lib/log4j-api-2.17.1.jar
-./base/uk.ac.stfc.isis.ibex.logger/lib/log4j-core-2.17.1.jar
-./base/uk.ac.stfc.isis.ibex.nicos/lib/jeromq-0.5.2.jar
-./base/uk.ac.stfc.isis.ibex.ui/lib/opal-1.0.0.jar
-```
-
-After upgrading the jars make sure to update the references to them in their project's .classpath and META-INF/MANIFEST.MF files.
+We now only reference a single `.jar` file (`opal`) from the GUI. This is not currently being updated as the project has moved to nebula visualisation widgets and no new versions are being produced.
 
 ### Target platform
 
-This is defined in the file `./base/uk.ac.stfc.isis.ibex.targetplatform/uk.ac.stfc.isis.ibex.targetplatform.target
-`
+This is defined in the file `./base/uk.ac.stfc.isis.ibex.targetplatform/targetplatform.target`
 
 General update process:
 - Look for newer versions of the repository. E.g. if the repository url is `http://some.website/releases/1.23`, try visiting `http://some.website/releases` to see whether the releases are listed. If so, point the target platform at the new releases.
 - Some repositories are updated "in-place". Do upgrade these, simply delete and then re-add them to the target platform, when they are re-added they will pick up the latest versions.
+- For maven dependencies referenced in target platform, look up latest version on maven central then update the version number in target platform to correspond. If the version numbers are hardcoded in `feature.xml` or `MANIFEST.MF` for individual plugins, update it there too.
 
 **Note: when updating the eclipse framework itself, you also need to update `client.tycho.parent` - see below for details.**
 
 ### Parent POM
 
 Tycho and eclipse framework versions are defined in the file `./base/uk.ac.stfc.isis.ibex.client.tycho.parent/pom.xml`. Note that the eclipse framework version *must* correspond with the version defined in the target platform, otherwise the maven build will fail with mismatched framework versions.
-
-### Py4J
-
-We have a local copy of Py4J available at `https://shadow.nd.rl.ac.uk/ICP_P2/Py4j_P2/` (The password for shadow is on the credentials page).
-
-To update this copy, download the following files from `http://eclipse.py4j.org/`:
-- `http://eclipse.py4j.org/content.jar`
-- `http://eclipse.py4j.org/artifacts.jar`
-- All the files listed in `http://eclipse.py4j.org/artifacts.jar/plugins`
-- All the files listed in `http://eclipse.py4j.org/artifacts.jar/features`
-
-Replace the versions in the ICP_P2 area with these new files you have downloaded, and test that the new version works correctly. See below for how to access this via writable share name `ICP_P2W$`
 
 ### Client JRE
 
