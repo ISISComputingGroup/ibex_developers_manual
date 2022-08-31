@@ -18,6 +18,7 @@
     * [Reading from a waveform of Strings](#reading-from-a-waveform-of-strings)
     * [Decoupling from the aSub record pointer](#decoupling-from-the-asub-record-pointer)
     * [Parsing functions as arguments](#parsing-functions-as-arguments)
+* [aSub Functions](#asub-functions)
 
 # Introduction
 
@@ -355,4 +356,8 @@ If you don't see this in the log (works even under the testing framework) do a `
 epicsInt32 i = *(epicsInt32*)prec->a;
 epicsOldString* result = (epicsOldString*)prec->vala;
 strcpy_s(*result, MAX_STRING_SIZE, "Unknown")
-```  
+```
+
+# aSub Functions
+
+* [splitCharWaveform](https://github.com/ISISComputingGroup/EPICS-asubFunctions/blob/master/asubFunctionsApp/src/splitCharWaveform.c#L108)
