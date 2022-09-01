@@ -34,7 +34,7 @@ class UpgradeStepFromXpxpx(UpgradeStep):
         return -1
 ```
 
-Next the step needs to be added to the upgrade list. This is found in `upgrade.py` and look like:
+Next the step needs to be added to the upgrade list. This is found in `...EPICS\misc\upgrade\master\upgrade.py` and look like:
 
 ```
 UPGRADE_STEPS = [
