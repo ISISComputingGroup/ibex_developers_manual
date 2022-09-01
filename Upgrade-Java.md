@@ -4,10 +4,11 @@
 
 (Please note if you are following this link from here https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/First-time-installing-and-building-(Windows) then you do not need to worry about this section. )
 1. Before you start, ensure you understand [Java's licensing](Understanding-Java-Licensing).
-1. Determine which new version of Java should be installed.
-1. If oracle java, or any previous java version, is on the system uninstall it
-1. **If on IBEX V11 or previous, Copy Java 11 from** `...\ISIS_Experiment_Controls_Public\third_party_installers\old_versions` otherwise copy the latest version of the openJDK installer from the public share at
- `...\ISIS_Experiment_Controls_Public\third_party_installers\latest_versions\OpenJDK...`
+1. If any previous java version is installed on the system, uninstall it. Note that previous java versions may be under "Oracle", "AdoptOpenJDK", or "Eclipse Temurin JDK".
+1. Install an appropriate version of java:
+   - For developer installs, use the latest java in `...\ISIS_Experiment_Controls_Public\third_party_installers\latest_versions\OpenJDK...`
+   - For IBEX version v11 and before, use JDK 11 in `...\ISIS_Experiment_Controls_Public\third_party_installers\old_versions`
+   - For IBEX version v12 onwards, use JDK 17 in `...\ISIS_Experiment_Controls_Public\third_party_installers\latest_versions\OpenJDK...`
    - Do not use a copy downloaded from the internet as it may not have been tested with IBEX
 1. Run the installer and install all components. The install menu should look like this:
 
