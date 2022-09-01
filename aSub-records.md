@@ -154,7 +154,7 @@ In the same directory as the `C` source code file, create a header (`.h` extensi
 ```C++
 #ifdef __cplusplus
 extern "C" {
-#endif
+#endifit
 
 extern long function_name_impl(aSubRecord *prec);
 extern long another_function_name_impl(aSubRecord *prec);
@@ -360,4 +360,4 @@ strcpy_s(*result, MAX_STRING_SIZE, "Unknown")
 
 # aSub Functions
 
-* [splitCharWaveform](https://github.com/ISISComputingGroup/EPICS-asubFunctions/blob/master/asubFunctionsApp/src/splitCharWaveform.c#L108)
+* [`splitCharWaveform`](https://github.com/ISISComputingGroup/EPICS-asubFunctions/blob/master/asubFunctionsApp/src/splitCharWaveform.c#L108)
