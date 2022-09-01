@@ -26,7 +26,7 @@ The IOC should be able to talk via ADS at this point but will need setting up in
 Although commissioning a Beckhoff is far simpler than a Galil from an IBEX perspective, there are some fields that need to be set manually for each axis.  These are: 
 - Engineering units (`.EGU`) - [ticket to populate](https://github.com/ISISComputingGroup/IBEX/issues/6855)
 - Axis description (`.DESC`) - [ticket to populate](https://github.com/ISISComputingGroup/IBEX/issues/6860)
-- Velocity (`.VELO`) - [ticket to populate](https://github.com/ISISComputingGroup/IBEX/issues/6861)
+- ~Velocity (`.VELO`) - [ticket to populate](https://github.com/ISISComputingGroup/IBEX/issues/6861)~ - now done!
 
 These can be set via a `caput` and will be autosaved thereafter.
 
