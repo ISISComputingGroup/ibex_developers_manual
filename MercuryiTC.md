@@ -123,6 +123,26 @@ For info here is a detailed temp loop:
 
 The OPI has macros that relate to the macros set at the IOC level.
 
+## Outdated Macros
+There are some MercuryiTCs which are using outdated macros (in the fomat `VI_`...). See below for where these are located.
+| **Instrument**  | **Configuration/Component** |
+| ------------- | ------------- |
+| LET  | LET_Mercury  |
+| OSIRIS  | OSIRIS_Mercury | 
+| MAPS | mercury_itc |
+| GEM | Mercury_cryostat |
+| SANDALS | GEM_mercury |
+| IRIS | triton |
+| ZOOM  | isistat |
+| LARMOR | ISISTAT |
+
+If you use one of these could you please:
+* add and configure the new macros if they have not yet been added
+* configure the new macros if they exist but have not yet been configured
+
+The new macros and how to configure them can be found in [Setup](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/MercuryiTC#setup) section above: 
+
+
 ## Troubleshooting
 
 ### Mercury doesn't communicate 
