@@ -136,7 +136,7 @@ There are some MercuryiTCs which are using outdated macros (in the fomat `VI_`..
 | ZOOM  | isistat |
 | LARMOR | ISISTAT |
 
-If you use one of these could you please:
+If you use one of these MercuryiTCs could you please:
 * add and configure the new macros if they have not yet been added
 * configure the new macros if they exist but have not yet been configured
 
