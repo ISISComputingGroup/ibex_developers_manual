@@ -18,7 +18,7 @@ The solution to this error is to use an older IDE - for example 2021-12 works wi
 
 ## Build fails due to Tycho dependencies (e.g. equinox.ds not resolvable; this is only for the Maven build)
 
-Clear out your Tycho by moving .m2/repository to something like .m2/old_repository and .p2 to .oldp2 (.m2 and .p2 can be found in your user directory i.e. where documents are). Running build again will download Tycho again and should fix the problem.
+Try deleting the `.m2` cache directory (in `ibex_gui/build/.m2` for GUI/script generator or `isis_css_top/.m2` for CSS) and then rebuilding.
 
 ## ModuleNotFoundError: No module named 'pywin32_bootstrap'
 
