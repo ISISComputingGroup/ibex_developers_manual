@@ -197,6 +197,8 @@ DAE3 is new ethernet based acquisition electronics on ZOOM and MARI, it used `IS
 
 Note that DAE3 does not ping, so the only way to know if it is there is by running `qxtalk` or the `isisicp` (via ibex or seci)
 
+If ibex has been in simulation mode for a long time previously, then some of the tcp ports used by dae3 may have been grabbed by the system as described in `Real DAE complains about missing cards (but was previously working)`. The only option then is to reboot
+
 ### Error code 112
 
 If there is an error code 112 reported in the log it means that the disk (data volume) is full and it can not start the `isisicp` program.
