@@ -84,6 +84,8 @@ Two possible ways to fix it are:
 
 If on NI MAX the "Run the VXI Resources Manager" button and VISA server buttons are greyed out/not available this is likely a sign that the VISA server cannot talk to the DAE.
 
+For DAE3 see `DAE3 does not start` below
+
 ### Blocks not being added to Nexus file
 This should not occur but has when a database was missing our extra column in the archive. If the sample table in the archive is missing a sample_id, run the following. Note that it can take a while on a database with a large number of rows in that table.
 ``` "c:\programs files\wherever...\Mysql.exe" -u root -p  --execute="ALTER TABLE sample ADD COLUMN sample_id BIGINT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'Sample id'" archive```
@@ -192,6 +194,8 @@ One cause would be the IOC is trying to call a function in the ISISICP that it c
 ### DAE3 does not start 
 
 DAE3 is new ethernet based acquisition electronics on ZOOM and MARI, it used `ISISICP` and looks like DAE2 for most purposes. If everything remains in processing, it may be that the `arp` network entries did not get created - these should be done as a system time boot task. Do `arp -a` and see if there is an entry for 192.168.1.101 etc.  If not, run `set_dae3_arp.bat` in `c:\labview modules\dae` as as administrator
+
+Note that DAE3 does not ping, so the only way to know if it is there is by running `qxtalk` or the `isisicp` (via ibex or seci)
 
 ### Error code 112
 
