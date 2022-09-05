@@ -124,7 +124,7 @@ For info here is a detailed temp loop:
 The OPI has macros that relate to the macros set at the IOC level.
 
 ## Outdated Macros
-There are some MercuryiTCs which are using outdated macros (in the fomat `VI_`...). See below for where these are located.
+There are some MercuryiTCs which are using outdated macros (in the format `VI_`...). See below for where these are located.
 | **Instrument**  | **Configuration/Component** |
 | ------------- | ------------- |
 | LET  | LET_Mercury  |
