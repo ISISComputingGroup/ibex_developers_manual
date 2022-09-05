@@ -1,3 +1,5 @@
+Note: this page relates to an older-style GPIB-connected stress rig, which we talk to via a GPIB converter box. For documentation about the ethernet-connected rig (i.e. the 100kN rig on ENGIN-X) see https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Instron-stress-rig---MiniTower
+
 # Setup
 
 The Instron stress rig is a National Instruments GPIB device. It requires some special setup to get going:
