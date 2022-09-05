@@ -133,8 +133,8 @@ There are some MercuryiTCs which are using outdated macros (in the format `VI_`.
 | GEM | Mercury_cryostat |
 | SANDALS | GEM_mercury |
 | IRIS | triton |
-| ZOOM  | isistat |
-| LARMOR | ISISTAT |
+| ZOOM  | isisstat |
+| LARMOR | ISISSTAT |
 
 If you use one of these MercuryiTCs could you please:
 * add and configure the new macros if they have not yet been added
