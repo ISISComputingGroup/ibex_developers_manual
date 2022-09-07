@@ -63,6 +63,8 @@ You are now ready to code the perform function to do the upgrade, please use tes
 
 Do not drop the previous last entry even if adding a new step that does nothing. Though this version may not have been deployed to any instruments, the config version will exist on a system test build server and probably some developer's machines too
 
+A collection of common upgrade steps can be found [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Common-config-upgrade-steps).
+
 ## Creating a Production upgrade script
 
 To create a production config simply edit the `UPGRADE_STEPS` list in `upgrade.py`. Replace the None with `UpgradeStepNoOp()` and add a new tuple `("X.X.x", None)` to the list, don't forget the comma. E.g. from:
