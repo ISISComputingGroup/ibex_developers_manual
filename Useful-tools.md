@@ -56,6 +56,8 @@ Key combos in the console:
 - `<CTRL>+E` then `C`, then `.`: exit the console press
 - `<CTRL>+T`: toggle auto restart process on/off 
 
+If attempting to run your console gives an error about port 782 being in use, the issue may be due to incorrect permissions in your Instrument\Var folder. Try moving/deleting/renaming your current var (you may need to stop the mysql service), then running `config_env.bat` to generate a new one and `upgrade_mysql.bat` in IBEX_Utils to rebuild your database.
+
 ## Modbus
 
 [QModMaster](https://sourceforge.net/projects/qmodmaster/) is a useful piece of software to probe Modbus devices much like Putty is used with serial/Ethernet connected devices.
