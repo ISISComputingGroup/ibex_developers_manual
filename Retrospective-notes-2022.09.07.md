@@ -80,7 +80,7 @@ The answer: "Yes, just let the organiser know how long you need"
 ## Could we make the repo_checks jenkins job statuses go to the #Jenkins teams channel rather than #General?
 Possible solution discussed:
 * We could try and automate builds and stop checks temporarily.
-* [Jack Allen](www.github.com/JackEAllen) will place an existing GitHub workflow developed for personal use into a repository to be adapted to work through Jenkins. The main piece of work that will need to be undertaken to do this is setting up an authentication token for the Jenkins user to be able to push to the repository as the GitHub workflow developed relies on a personal access token which is not suitable for use in an organisational repository.
+* [Jack Allen](https://www.github.com/JackEAllen) will place an existing GitHub workflow developed for personal use into a repository to be adapted to work through Jenkins. The main piece of work that will need to be undertaken to do this is setting up an authentication token for the Jenkins user to be able to push to the repository as the GitHub workflow developed relies on a personal access token which is not suitable for use in an organisational repository.
 
 ## Would it be helpful whilst we are trying something different with planning if I run the next sprint planning meetings as well?
 A resounding yes! `:thumbsup:`
@@ -105,7 +105,7 @@ Automate checkstyle in GitHub to become part of the review (can't be missed this
 The only complexity mentioned with this is we would need to tell Jenkins which branch to compare against master and that master would need pulling to ensure it is up to date.
 
 Action taken:
-[Jack Allen](www.github.com/JackEAllen) will create an issue to explore the viability of automating through GitHub and label as tech depth. We will leave checkstyle as it is for now, but be stricter with merging in pull requests and be more concise with updates in stand-up - no harm in saying "can I catch you afterwards" to resolve checkstyle increases.
+[Jack Allen](https://www.github.com/JackEAllen) will create an issue to explore the viability of automating through GitHub and label as tech depth. We will leave checkstyle as it is for now, but be stricter with merging in pull requests and be more concise with updates in stand-up - no harm in saying "can I catch you afterwards" to resolve checkstyle increases.
 
 ### Currently, It is Hard to Find New Developer Issues
 
