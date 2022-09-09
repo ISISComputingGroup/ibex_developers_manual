@@ -38,6 +38,8 @@ The modbus protocol takes the same serial comms settings as EI-BISYNCH. The `BIT
 
 To choose MODBUS, set the `COMMS_MODE` macro to `modbus`. To choose `EI-bisynch`, set the `COMMS_MODE` macro to `eibisynch`. If the macro is not set, EI-bisynch will be used.
 
+Note: if changing from ei-bisynch to modbus, ensure you carefully read the section below entitled "modbus scaling"
+
 ### Changing comms mode on physical device
 
 To change the comms settings on a physical eurotherm box:
@@ -57,3 +59,26 @@ To change the comms settings on a physical eurotherm box:
 - `st-comms-eibisynch.cmd` and `st-comms-modbus.cmd` contain protocol-specific comms setup code in the `st.cmd`. Only one of these files will be called, depending on the value of the `COMMS_MODE` macro.
 - Both protocols are supported (via two stream interfaces) in lewis, and the same set of tests run against the eurotherm in both modes, using a set of base tests in the IOCTestFramework.
 
+
+# Modbus scaling
+
+WHen setting up a eurotherm in modbus, macros need to be set in `globals.txt` for each sensor describing the scaling.
+
+The macros are:
+
+| Macro | Meaning |
+| --- | --- |
+| `TEMP_SCALING_1` | Scaling factor used on sensor 1 for temperature setpoints and readbacks |
+| `P_SCALING_1` | Scaling factor used on sensor 1 for "P" PID parameter |
+| `I_SCALING_1` | Scaling factor used on sensor 1 for "I" PID parameter |
+| `D_SCALING_1` | Scaling factor used on sensor 1 for "D" PID parameter |
+| `OUTPUT_SCALING_1` | Scaling factor on sensor 1 used for output parameters (e.g. `MAX_OUTPUT`) |
+| ... | As above, for all other sensors |
+
+Because of the large number of macros, these have not been added to `config.xml`, and so are only settable via `globals.txt`.
+
+Note that the scaling factors can differ between sensors on a eurotherm crate, and there is not necessarily any relationship between each of the individual scaling factors within a sensor.
+
+The scaling factors are always powers of 10.
+
+To determine the scaling factors, start the IOC in modbus mode, then for each parameter on each sensor, check using the eurotherm menus that the number in the eurotherm itself equals what IBEX reports. **Check carefully** as, for example, a PID parameter of `1.5` looks quite similar to `15`, but will cause temperature control to be entirely incorrect! 
