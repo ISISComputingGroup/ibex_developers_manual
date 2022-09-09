@@ -14,7 +14,7 @@ _Items discussed in the previous retrospective_
 - KB suggested sprint planning/start for the coming sprint can be be delayed by a week to finish off large volume of items in ready/in progress
 - Agreed upon by all
 
-### PlanitPoker vs. Scrumpy - which is better? - planitpoker stick with for now 
+### `PlanitPoker` vs. Scrumpy - which is better? - `planitpoker` stick with for now 
 Scrumpy Pros:
 - Github tickets are more easily tied into the service
 - Asynchronous voting - People can vote in advance if they will be away for planning
@@ -22,7 +22,7 @@ Scrumpy Pros:
 Cons:
 - You can only be in one room at a time, difficult to do priority / points in parallel. We could use both in a hybrid solution but might create more overhead than utility
 
-We will stick with PlanitPoker for now but keep Scrumpy in mind as an adequate backup if needed.
+We will stick with `PlanitPoker` for now but keep Scrumpy in mind as an adequate backup if needed.
 
 ## Customer relations
 
@@ -83,7 +83,7 @@ Possible solution discussed:
 * [Jack Allen](www.github.com/JackEAllen) will place an existing GitHub workflow developed for personal use into a repository to be adapted to work through Jenkins. The main piece of work that will need to be undertaken to do this is setting up an authentication token for the Jenkins user to be able to push to the repository as the GitHub workflow developed relies on a personal access token which is not suitable for use in an organisational repository.
 
 ## Would it be helpful whilst we are trying something different with planning if I run the next sprint planning meetings as well?
-A resounding yes! :thumbsup:
+A resounding yes! `:thumbsup:`
 
 ## Coffee Attendance
 Try running only on Wednesdays and Fridays interchangeably to be inclusive of those working remotely on one of the two suggested days.
@@ -105,7 +105,7 @@ Automate checkstyle in GitHub to become part of the review (can't be missed this
 The only complexity mentioned with this is we would need to tell Jenkins which branch to compare against master and that master would need pulling to ensure it is up to date.
 
 Action taken:
-[Jack Allen](www.github.com/JackEAllen) will create an issue to explore the viability of automating through GitHub and label as tech depth. We will leave checkstyles as they are for now, but be stricter with merging in pull requests and be more concise with updates in stand-up - no harm in saying "can I catch you afterwards" to resolve checkstyle increases.
+[Jack Allen](www.github.com/JackEAllen) will create an issue to explore the viability of automating through GitHub and label as tech depth. We will leave checkstyle as it is for now, but be stricter with merging in pull requests and be more concise with updates in stand-up - no harm in saying "can I catch you afterwards" to resolve checkstyle increases.
 
 ### Currently, It is Hard to Find New Developer Issues
 
