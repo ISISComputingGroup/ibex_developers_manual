@@ -47,6 +47,54 @@ Found in ibex_utils/ioc_copier.
 ## GitHub Workflows
 Useful [GitHub Workflows](https://docs.github.com/en/actions/learn-github-actions) and [Git Hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) which can be added to project repositories
 
+### Update Submodules Automatically
+A template repository which can be used when creating a submodule where you would like the parent repository to be updated automatically on push to the main / master branch of the child repository.
+* https://github.com/ISISComputingGroup/Update_Submodule_Workflow_Action
+
+The repository was created in response to a discussion held in the retrospective [Retrospective notes 2022.09.07](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Retrospective-notes-2022.09.07) to remove the need for a check to scan repositories to ensure submodules have correctly been updated.
+
+The repository can be used as a starting point for integration into Jenkins CI/CD.
+
+#### Workflow
+```YAML
+name: Send submodule updates to parent repo
+on:
+  push:
+    branches:
+      - main #NOTE: If adding this action to a new repo you may need to change the child repo branch name
+env:
+  PARENT_REPO_NAME: <GITHUB_ORGANISATION_ACCOUNT>/<PARENT_REPOSITORY> #NOTE: You may need to change the parent repo
+  PARENT_REPO_BRANCH: main #NOTE: You may need to change the parent repo branch name
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout ${{ github.event.repository.name }}
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.PRIVATE_TOKEN_GITHUB }}
+      - name: Checkout ${{ env.PARENT_REPO_NAME }}
+        uses: actions/checkout@v2
+        with:
+          repository: ${{ env.PARENT_REPO_NAME }}
+          submodules: 'true'
+          ref: ${{ env.PARENT_REPO_BRANCH }}
+          token: ${{ secrets.PRIVATE_TOKEN_GITHUB }}
+          fetch-depth: 0
+      - name: Get submodule updates
+        run: |
+          cd ${{ github.event.repository.name }}
+          git fetch --all
+          git switch ${{ github.ref_name }}
+      - name: Commit and push the changes to ${{ env.PARENT_REPO_NAME }}
+        run: |
+          git config user.email "actions@github.com"
+          git config user.name "GitHub Actions - update submodules"
+          git add --all
+          git commit -m "Auto-update: ${{ github.event.repository.name }}" -m "This is an automatic update completed by GitHub Actions, using submodule_update.yml. It was triggered by a push to the ${{ github.ref_name }} branch of the ${{ github.event.repository.name }} submodule repo." || echo "No changes to commit"
+          git push
+```
+
 ### Pylint
 Place the below example in `.github\workflows\` in a file called `pylint.yml` to add a GitHub workflow [on push](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on) to a repository.
 The workflow will execute [pylint](https://pypi.org/project/pylint/) on all `.py` files within the repository.
