@@ -111,6 +111,9 @@ The only complexity mentioned with this is we would need to tell Jenkins which b
 Action taken:
 [Jack Allen](https://www.github.com/JackEAllen) will create an issue to explore the viability of automating through GitHub and label as tech depth. We will leave checkstyle as it is for now, but be stricter with merging in pull requests and be more concise with updates in stand-up - no harm in saying "can I catch you afterwards" to resolve checkstyle increases.
 
+Actions Taken:
+- Issue to explore viability of automating through GitHub: https://github.com/ISISComputingGroup/IBEX/issues/7346
+
 ### Currently, It is Hard to Find New Developer Issues
 
 Currently, it is hard to find appropriate worthwhile issues for new starters and members in the team early in their careers - Can we be more liberal with adding things? - 
