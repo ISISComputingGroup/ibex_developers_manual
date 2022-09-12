@@ -33,38 +33,41 @@ Don't forget the [drop in sessions](https://github.com/ISISComputingGroup/IBEX/w
 ## Stand up
 | Standup | Week Commencing | x for Done |
  |--- | --- | --- |
- |DKg | 20/06/2022 |x|
- |AS | 27/06/2022 |x|
- |FA | 04/07/2022 |x|
- |JA | 11/07/2022 |x|
- |JH | 18/07/2022 |x|
- |CMS | 25/07/2022 |x|
- |LC | 01/08/2022 |x|
- |DK | 08/08/2022 |x|
- |TL | 15/08/2022 |x |
- |LJ | 22/08/2022 |x |
- |KB | 29/08/2022 |x|
- |FA | 05/09/2022 |x|
+ |KB | 29/08/2022 |x |
+ |FA | 05/09/2022 |x |
  |JA | 12/09/2022 | |
- |CMS | 19/09/2022 | |
- |JH | 26/09/2022 | |
- |KB | 03/10/2022 | |
- |TL | 10/10/2022 | |
- |LC | 17/10/2022 | |
- |JH | 24/10/2022 | |
- |LJ | 31/10/2022 | |
- |DK | 07/11/2022 | |
- |FA | 14/11/2022 | |
- |JA | 21/11/2022 | |
- |KB | 28/11/2022 | |
- |DK | 05/12/2022 | |
- |JH | 12/12/2022 | |
+ |LC | 19/09/2022 | |
+ |DK | 26/09/2022 | |
+ |TL | 03/10/2022 | |
+ |JH | 10/10/2022 | |
+ |LJ | 17/10/2022 | |
+ |FA | 24/10/2022 | |
+ |LC | 31/10/2022 | |
+ |CMS | 07/11/2022 | |
+ |DK | 14/11/2022 | |
+ |TL | 21/11/2022 | |
+ |JH | 28/11/2022 | |
+ |HC | 05/12/2022 | |
+ |NR | 12/12/2022 | |
  |CMS | 19/12/2022 | |
  |N/A | 26/12/2022 | |
-
 
 ## Sprint Meetings
 | Meeting| Chair | x for Done | Timekeeper | x for Done | Note taker | x for Done |
 | ---| --- | --- | ---| --- | --- | --- |
+| 2022_10_06_Pre-Planning| -- | X | --| X | |  |
+| 2022_09_08_Review/Retro| DK |  | CMS|  | LC|   |
+| 2022_10_06_Planning| KB |  | LC|  | |  |
+| 2022_10_27_Pre-Planning| -- |  | --|  | |  |
+| 2022_10_06_Review/Retro| DK |  | JH|  | HC|   |
+| 2022_10_27_Planning| KB |  | TL|  | |  |
+| 2022_11_24_Pre-Planning| -- |  | --|  | |  |
+| 2022_10_27_Review/Retro| FA |  | DK|  | TL|  |
+| 2022_11_24_Planning| KB |  | FA|  | |  |
+| 2023_01_05_Pre-Planning| -- |  | --|  | |  |
+| 2022_11_24_Review/Retro| JH |  | HC|  | NR|  |
+| 2023_01_05_Planning| KB |  | CMS|  | |  |
+| 2023_02_02_Pre-Planning| -- |  | --|  | |  |
+| 2023_01_05_Review/Retro| KB |  | NR|  | |  |
+| 2023_02_02_Planning| KB |  | DK|  | |  |
 
-This will be updated soon
