@@ -30,11 +30,11 @@ HRPD:
 
 # Comms modes
 
-As of [ticket 4240](https://github.com/ISISComputingGroup/IBEX/issues/4240), we can communicate with Eurotherms via either Modbus or EI-BISYNCH protocol. The EI-BISYNCH protocol is the default and is currently used for most eurotherms at ISIS.
+As of [ticket 4240](https://github.com/ISISComputingGroup/IBEX/issues/4240), we can communicate with Eurotherms via either Modbus or `EI-BISYNCH` protocol. The `EI-BISYNCH` protocol is the default and is currently used for most eurotherms at ISIS.
 
 ### Changing comms mode in IOC
 
-The modbus protocol takes the same serial comms settings as EI-BISYNCH. The `BITS` macro is ignored and hardcoded to 8 bits because this is part of the modbus specification. Note that baud rate and parity may change when changing the comms settings physically on a eurotherm, so this should be double checked.
+The modbus protocol takes the same serial comms settings as `EI-BISYNCH`. The `BITS` macro is ignored and hardcoded to 8 bits because this is part of the modbus specification. Note that baud rate and parity may change when changing the comms settings physically on a eurotherm, so this should be double checked.
 
 To choose MODBUS, set the `COMMS_MODE` macro to `modbus`. To choose `EI-bisynch`, set the `COMMS_MODE` macro to `eibisynch`. If the macro is not set, EI-bisynch will be used.
 
@@ -45,7 +45,7 @@ Note: if changing from ei-bisynch to modbus, ensure you carefully read the secti
 To change the comms settings on a physical eurotherm box:
 - Power cycle the unit while holding down the up & down arrow keys simultaneously
 - Once the unit comes up asking for a passcode, enter the configuration password (for office eurotherm, this is in keeper. For other eurotherms on a beamline, it is probably a similar password)
-- Navigate to the "comms" menu section, scroll down to "protocol" and select EI-BISYNCH or MODBUS as appropriate
+- Navigate to the "comms" menu section, scroll down to "protocol" and select `EI-BISYNCH` or `MODBUS` as appropriate
 - Check the baud rate and parity in the comms menu as this sometimes changes as you change between comms modes
 - Navigate back to the config section of the menu, and select "GOTO" -> "Level 3".
   * Note that the eurotherm **WILL NOT** communicate while it is in the config mode
@@ -53,7 +53,7 @@ To change the comms settings on a physical eurotherm box:
 
 ### Comms mode implementation details
 
-- The comms mode is passed to the `.db` file as an `IFUSES_BISYNCH` and `IFNOTUSES_BISYNCH` macros, which are mutually exclusive. This macro is used to select between `INP` links that use streamdevice (for EI-bisynch) and `INP` links that use modbus (via asyn).
+- The comms mode is passed to the `.db` file as an `IFUSES_BISYNCH` and `IFNOTUSES_BISYNCH` macros, which are mutually exclusive. This macro is used to select between `INP` links that use streamdevice (for `EI-bisynch`) and `INP` links that use modbus (via asyn).
 - The modbus addresses are defined in `generate_substitutions.py`, which is a helper file for generating a set of `.substitutions` files for each channel. This provides substitutions for the `GAD` and `LAD` macros (needed in bisynch mode) and also the modbus addresses.
 - 10 `.db` files, for each sensor number that IBEX supports, are created by the `.substitutions` files. These files correspond to a physical sensor, not a sensor number in IBEX.
 - `st-comms-eibisynch.cmd` and `st-comms-modbus.cmd` contain protocol-specific comms setup code in the `st.cmd`. Only one of these files will be called, depending on the value of the `COMMS_MODE` macro.
@@ -62,7 +62,7 @@ To change the comms settings on a physical eurotherm box:
 
 # Modbus scaling
 
-WHen setting up a eurotherm in modbus, macros need to be set in `globals.txt` for each sensor describing the scaling.
+When setting up a eurotherm in modbus, macros need to be set in `globals.txt` for each sensor describing the scaling.
 
 The macros are:
 
