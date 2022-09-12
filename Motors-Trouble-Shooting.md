@@ -151,3 +151,7 @@ SSB=1,26,27,0<6
 ```
 (See the `Technical Report on the use of Absolute Encoders at ISIS` in the manuals area for more information)
 This axis is odd in that the first axis is a normal motor/encoder (albeit with absolute encoders) but the second axis is just an encoder on the same device and is used to detect any motion issues. The pre-move string in the first axis is used to make sure the encoder is correctly set up for that axis but is not long enough to do it for both axes (see https://github.com/ISISComputingGroup/IBEX/issues/6312). This means if the power gets cycled the second axis may appear not to move until the above settings are reapplied.
+
+## sans2d tank will not home/move
+
+some of the axes on SANS2D are part of the collision avoidance system, which means they are kept in "pause" of SPMG. To home these you need to select home and then on the low level motor screen select "Go" on SPMG to action the home.     
