@@ -43,8 +43,8 @@ Don't forget the [drop in sessions](https://github.com/ISISComputingGroup/IBEX/w
  |DK | 08/08/2022 |x|
  |TL | 15/08/2022 |x |
  |LJ | 22/08/2022 |x |
- |KB | 29/08/2022 | |
- |FA | 05/09/2022 | |
+ |KB | 29/08/2022 |x|
+ |FA | 05/09/2022 |x|
  |JA | 12/09/2022 | |
  |CMS | 19/09/2022 | |
  |JH | 26/09/2022 | |
@@ -66,24 +66,5 @@ Don't forget the [drop in sessions](https://github.com/ISISComputingGroup/IBEX/w
 ## Sprint Meetings
 | Meeting| Chair | x for Done | Timekeeper | x for Done | Note taker | x for Done |
 | ---| --- | --- | ---| --- | --- | --- |
-| 2022_02_24_Review/Retro| CMS | x | LC| x | JH| x |
-| 2022_03_24_Planning| LJ | x | AS| x | |  |
-| 2022_04_21_Pre-Planning| LC | x | FA| x | |  |
-| 2022_03_24_Review/Retro| JA | x | CMS| x | LJ| x |
-| 2022_04_21_Planning| TL | x | DKg| x | |  |
-| 2022_05_19_Pre-Planning| DK | x | TL| x | |  |
-| 2022_04_21_Review/Retro| AS | x | xx| x | JA| x |
-| 2022_05_19_Planning| JH | x | DKg| x | |  |
-| 2022_06_16_Pre-Planning| KB | x | JH| x | |  |
-| 2022_05_19_Review/Retro| LC | x | LC| x | DKg| x |
-| 2022_06_16_Planning| DKg | x | AS| x | |  |
-| 2022_07_14_Pre-Planning| FA |x   | KB|   | |  |
-| 2022_06_16_Review/Retro| CMS |x (review only) | JA|   | LC|   |
-| 2022_07_14_Planning| DK |x   | FA|   | |  |
-| 2022_08_11_Pre-Planning| JA |   | CMS|   | |  |
-| 2022_07_14_Review/Retro| LJ | x  | JH|   | TL|   |
-| 2022_08_11_Planning| FA |   | LC|   | |  |
-| 2022_09_01_Pre-Planning| KB |   | DK|   | |  |
-| 2022_08_11_Review/Retro| LC |   | LJ|   | JA|   |
-| 2022_09_01_Planning| DK |   | TL|   | |  |
 
+This will be updated soon
