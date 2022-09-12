@@ -29,6 +29,7 @@ To revert this run: `Enable-WindowsOptionalFeature -Online -FeatureName Microsof
 
 ### Continuous Integration
 
+<summary>Jenkins</summary><details>
 Beckhoff PLC code is being developed by people who do not have CI expertise and have their own repository structures yet we want integration into some form of CI to be as easy as possible. This lent itself to the following structure:
 * A `BeckhoffTestRunner` repository that is owned by us and contains the jenkinsfile and other utilities required for CI
 * Every branch on this repository (apart from master) then pulls a different PLC project down (note each project could be from a different repository or from separate branches on the same repository)
@@ -54,10 +55,11 @@ To actually run tests we use the Beckhoff `automation interface` which can do an
 3. The IOC test framework is started. This will use the `TwinCATAutomationTools` program to run a local simulated PLC. Then startup and test the Beckhoff twincat in the usual way.
 
 This is currently being run on the ndw1926 node on Jenkins. A quirk of using this DCOM interface is that the Jenkins slave must be run as an interactive user and thus not as a service. To do this there is a bat file that should run on startup inside `C:\Users\ibexbuilder\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup`.
-
-To run a PLC locally you need a license. A trial license can be activated on a developer's machine by manually running through the building and running steps above until you are prompted to supply a captcha phrase to generate a license.
+</details>
 
 ## Testing
+To run a PLC locally you need a license. A trial license can be activated on a developer's machine by manually running through the building and running steps above until you are prompted to supply a captcha phrase to generate a license.
+
 1. clone `BeckhoffTestRunner` using `git clone --recursive https://github.com/ISISComputingGroup/BeckhoffTestRunner.git`
 1. Then in `BeckhoffTestRunner` run: 
 `git submodule update --init --recursive --remote`
