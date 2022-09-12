@@ -64,10 +64,6 @@ To run a PLC locally you need a license. A trial license can be activated on a d
 1. Then in `BeckhoffTestRunner` run: 
 `git submodule update --init --recursive --remote`
 1. To run tests locally you must build the `twinCATAutomationTools` tools then use them to set up a working simulated PLC. This can be done by running `build.bat` (best done not in an EPICS terminal). 
-1. Create an epics terminal, and then run the following command in your `BeckhoffTestRunner` directory to begin testing:
-
-```
-python %EPICS_KIT_ROOT%\\support\\IocTestFramework\\master\\run_tests.py -tp ".\\tests"
-```
+1. Create an epics terminal, and then run `run_tests.bat` in your `BeckhoffTestRunner` directory to begin testing.
 
 _NB the IOC tests do not stop the PLC at the end of the run, however this isn't a problem as the PLC is restarted when the IOC tests start. If this fails to start the PLC it may be because you do not have a trial license. Debug the issue by manually running through the building and running steps above._
