@@ -69,7 +69,7 @@ To test the front end and JSON bourne on a developer machine:
 * Open default.html as above
 
 To be able to see your instrument as well:
-* Add your instrument to the `local_inst_list` dictionary in the `webserver.py` (for example `local_inst_list = {"LOCALHOST": ("localhost", "MYPVPREFIX")}`)
+* Add your instrument to the `local_inst_list` dictionary in the `webserver.py` e.g. `local_inst_list = {"LOCALHOST": ("localhost")}`
 * Run your instrument
 * Run JSON Bourne up as above
 
