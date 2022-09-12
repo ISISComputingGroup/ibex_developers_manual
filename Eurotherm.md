@@ -36,9 +36,9 @@ As of [ticket 4240](https://github.com/ISISComputingGroup/IBEX/issues/4240), we 
 
 The modbus protocol takes the same serial comms settings as `EI-BISYNCH`. The `BITS` macro is ignored and hardcoded to 8 bits because this is part of the modbus specification. Note that baud rate and parity may change when changing the comms settings physically on a eurotherm, so this should be double checked.
 
-To choose MODBUS, set the `COMMS_MODE` macro to `modbus`. To choose `EI-bisynch`, set the `COMMS_MODE` macro to `eibisynch`. If the macro is not set, EI-bisynch will be used.
+To choose MODBUS, set the `COMMS_MODE` macro to `modbus`. To choose `EI-bisynch`, set the `COMMS_MODE` macro to `eibisynch`. If the macro is not set, `EI-bisynch` will be used.
 
-Note: if changing from ei-bisynch to modbus, ensure you carefully read the section below entitled "modbus scaling"
+Note: if changing from `ei-bisynch` to modbus, ensure you carefully read the section below entitled "modbus scaling"
 
 ### Changing comms mode on physical device
 
