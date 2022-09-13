@@ -1,7 +1,9 @@
-## Creating IOC 2
-If you need more than 1 IOC (e.g you are making the second IOC) there is only a process to follow, rather than a script, as various IOCs can have their own nuances: so take this with a grain of salt. Let us refer to the IOC you are duplicating as `newIOC`, for clarity.
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [Creating and Basics of IOCs](IOCs) > Duplicating IOCs
 
-Navigate to an IOC folder which has two or more IOCs: you can see there are two folders to focus on, `<ioc>/iocBoot/` and `<ioc>/<ioc>-IOC-0<n>App` (where `n` is the number of IOCs) - make sure this IOC has a `st-common.cmd` file (to make your life easier!). Let us refer to this as `refIOC`. 
+## Creating IOC 2
+If you need more than 1 IOC (i.e. you are making the second IOC) there is only a process to follow, rather than a script, as various IOCs can have their own nuances: so take this with a grain of salt. Let us refer to the IOC you are duplicating as `newIOC`, for clarity.
+
+Navigate to an IOC folder which has two or more IOCs: here we have two folders to focus on, `<ioc>/iocBoot/` and `<ioc>/<ioc>-IOC-0<n>App` (where `n` is the number of IOCs). Make sure this IOC has a `st-common.cmd` file (to make your life easier!). Let us refer to this as `refIOC`. 
 
 Now, let's get cracking!
 
@@ -43,5 +45,5 @@ Refactor `DEVICE_PREFIX` to `newIOC_02` and you will need to refactor any calls 
 ****WARNING:**** If you will also be making more IOCs via the method below, you should be _very_ confident that your new `newIOC_02` behaves the same as `newIOC_01` before duplicating: any issues with `newIOC_02` will be propagated in _every_ other new IOC you make as well.
 
 
-## Creating IOC 3 and more
+## Creating IOC 3 and higher
 If you need more than 2 IOCs there is a script to duplicate IOCs, more information can be found [here.](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Shared-utility-scripts#ioc-copier)
