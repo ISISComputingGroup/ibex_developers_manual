@@ -30,20 +30,20 @@ This one may be slightly less straightforward. There may be nuances and addition
 4. Navigate to `<newIOC>-IOC-01App` and copy across **`src`** to the `02App` folder. 
       - Empty the contents of both `O.` folders. 
       - Delete the `build.mak` file 
-      - Rename the `...Main.cpp` file with the correct IOC number, and rename the header in the file itself.
+      - Rename the `<...>Main.cpp` file with the correct IOC number, and rename the header in the file itself.
       - In the `Makefile`, update `APPNAME` with the correct IOC number - but the `include ...` line needs to stay the same. 
 
 ### Making the IOC
-1. **`make`** the `newIOC` folder
+1. **`make`** the `<newIOC>` folder
 2. **`make iocstartups`** in EPICS top
 3. Try to run your new IOC!
 
 ### Testing the IOC
 Navigate to `IOCTestframework` or the `ioc/<newIOC>` folder (wherever the IOC tests live). 
-Refactor `DEVICE_PREFIX` to `newIOC_02` and you will need to refactor any calls to get_default_ioc_dir() with additional parameter `iocnum` (or whatever the equivalent is in your test module, this should be pretty intuitive).
+Refactor `DEVICE_PREFIX` to `<newIOC>_02` and you will need to refactor any calls to get_default_ioc_dir() with additional parameter `iocnum` (or whatever the equivalent is in your test module, this should be pretty intuitive).
 
-****WARNING:**** If you will also be making more IOCs via the method below, you should be _very_ confident that your new `newIOC_02` behaves the same as `newIOC_01` before duplicating: any issues with `newIOC_02` will be propagated in _every_ other new IOC you make as well.
-
+****WARNING:**** If you will also be making more IOCs via the method below, you should be _very_ confident that your new `<newIOC>_02` behaves the same as `<newIOC>_01` before duplicating: any issues with `<newIOC_02` will be propagated in _every_ other new IOC you make as well.
+>
 
 ## Creating IOC 3 and higher
 If you need more than 2 IOCs there is a script to duplicate IOCs, more information can be found [here.](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Shared-utility-scripts#ioc-copier)
