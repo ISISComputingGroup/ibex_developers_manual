@@ -32,6 +32,8 @@ This one may be slightly less straightforward. There may be nuances and addition
       - Delete the `build.mak` file 
       - Rename the `<...>Main.cpp` file with the correct IOC number, and rename the header in the file itself.
       - In the `Makefile`, update `APPNAME` with the correct IOC number - but the `include ...` line needs to stay the same. 
+5. Check whether `<newIOC>-IOC-01App` has a **`protocol`** file
+      - If it does, just copy this across. As far as I can see, the Makefiles and folder contents seem to be the same.
 
 ### Making the IOC
 1. **`make`** the `<newIOC>` folder
