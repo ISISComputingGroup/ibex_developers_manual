@@ -64,7 +64,7 @@ To change the simulation mode manually, in `icp_config.xml` change the simulate 
 
 ### Log file for labview modules DAE
 
-The log file for real icpisis program is written to `C:\Data\Export only\logs\icp\log\icp-<date>log`. There is an [example DAE log in this wiki](DAE-Normal-Log).
+The log file for real `isisicp` program is written to `C:\Data\Export only\logs\icp\log\icp-<date>log`. There is an [example DAE log in this wiki](DAE-Normal-Log).
 
 
 ### Error pop up: `*** ICP failed to start - your DAE may be switched OFF or is missing cards ***`
