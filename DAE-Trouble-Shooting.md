@@ -62,7 +62,7 @@ The DAE can be set to run in simulation mode, this must be unset before data wil
 
 To change the simulation mode manually, in `icp_config.xml` change the simulate property to 1 (or 0 if turning off simulation mode). `icp_config.xml` can be found in either the "LabVIEW modules" or "ICP Binaries" directory. Stop the DAE IOC from the console, then kill the ISISICP process. Finally, restart the DAE IOC from the console.
 
-### Log file for labview modules DA
+### Log file for labview modules DAE
 
 The log file for real icpisis program is written to `C:\Data\Export only\logs\icp\log\icp-<date>log`. There is an [example DAE log in this wiki](DAE-Normal-Log).
 
