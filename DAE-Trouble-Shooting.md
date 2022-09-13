@@ -64,8 +64,7 @@ To change the simulation mode manually, in `icp_config.xml` change the simulate 
 
 ### Log file for labview modules DAE
 
-The log file for real `isisicp` program is written to `C:\Data\Export only\logs\icp\log\icp-<date>log`. There is an [example DAE log in this wiki](DAE-Normal-Log).
-
+Both SECI and IBEX use the same underlying `isisicp` program (located in `labview modules\dae`) that writes to `C:\Data\Export only\logs\icp\log\icp-<date>log`. There is an [example DAE log in this wiki](DAE-Normal-Log). This is a good place to locate DAE specific issues, not all of the details in this log appear in the ISISDAE IOC log. 
 
 ### Error pop up: `*** ICP failed to start - your DAE may be switched OFF or is missing cards ***`
 The DAE unit may be switched off. This is particularly likely during shut down. Change the DAE into simulation mode as described above.
