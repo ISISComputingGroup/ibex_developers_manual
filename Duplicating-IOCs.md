@@ -42,7 +42,7 @@ This one may be slightly less straightforward. There may be nuances and addition
 
 ### Testing the IOC
 Navigate to `IOCTestframework` or the `ioc/<newIOC>` folder (wherever the IOC tests live). 
-Refactor `DEVICE_PREFIX` to `<newIOC>_02` and you will need to refactor any calls to get_default_ioc_dir() with additional parameter `iocnum` (or whatever the equivalent is in your test module, this should be pretty intuitive).
+Refactor `DEVICE_PREFIX` to `<newIOC>_02` and you will need to refactor any calls to `get_default_ioc_dir()` with additional parameter `iocnum` (or whatever the equivalent is in your test module, this should be pretty intuitive).
 
 ****WARNING:**** If you will also be making more IOCs via the method below, you should be _very_ confident that your new `<newIOC>_02` behaves the same as `<newIOC>_01` before duplicating: any issues with `<newIOC_02` will be propagated in _every_ other new IOC you make as well.
 >
