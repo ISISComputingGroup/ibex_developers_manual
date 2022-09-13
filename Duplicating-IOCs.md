@@ -46,4 +46,4 @@ Refactor `DEVICE_PREFIX` to `<newIOC>_02` and you will need to refactor any call
 >
 
 ## Creating IOC 3 and higher
-If you need more than 2 IOCs there is a script to duplicate IOCs, more information can be found [here.](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Shared-utility-scripts#ioc-copier)
+If you need more than 2 IOCs, there is a script to duplicate IOCs: more information can be found [here.](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Shared-utility-scripts#ioc-copier)
