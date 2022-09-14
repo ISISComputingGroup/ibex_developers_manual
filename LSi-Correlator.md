@@ -84,3 +84,6 @@ Ideally the data would be saved into a nexus file, and the subsequent data analy
 The IOC saves the file in two locations, once in `C:\Data` with a filename which allows it to get saved into the archive. The other file gets saved in a location specified by the user in a macro.
 
 After a brief look, it appears that the vendor software may be using the `CONTIN` library to perform fitting of the correlation function.
+
+## Testing with Hardware
+To test with the LSi Correlator hardware, the laser will need to be run onto a sample so that the correlation function can be populated. This means that the DLS would need to be installed where safe to operate and the correlator plugged into the network on an instrument. IBEX can then be run (as distinct from the vendor program).
