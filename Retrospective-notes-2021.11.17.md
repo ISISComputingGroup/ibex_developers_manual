@@ -67,6 +67,6 @@ The priority of squish license usage during the final week of a sprint can be pr
 ### Would everyone be interested in organising a secret Santa this year to get us in the festive mood? 
 Everyone is interested in a secret Santa and festive meal in the new year.
 - [@JackEAllen](https://github.com/JackEAllen) will organise the [secret santa](https://www.elfster.com/).
-- [@SamJenkins1](https://github.com/SamJenkins1) will organise the meal for the new year.
+- [@LowriJenkins](https://github.com/LowriJenkins) will organise the meal for the new year.
 
 ---
