@@ -115,7 +115,7 @@ Other things to to check in this state are:
 - [ ] If frame/raw counts are not showing up, a good diagnostic is to put the DAE into "Internal Test Clock".  If this works and frames appear, it is likely that there may be a problem with a Time of Flight signal (this often affects more than one beamline.
 
 ### My total counts are low
-Make sure that the timing is appropriate (e.g. a DAE Timing Source of `ISIS (first TS1)` will only count the first pulse not all 4)
+Make sure that the timing is appropriate (e.g. a DAE Timing Source of `ISIS (first TS1)` will only count the first pulse not all 4). If it is left on "internal test clock" you will receive no uamps at all.
 
 ### Simulation mode DAE complains about missing cards
 
