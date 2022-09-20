@@ -427,7 +427,7 @@ Checks whether a specific optional flag is set via one of the provided IOC macro
 
 Following is a example of a typical beamline configuration:
 
-```
+```Python
 from ReflectometryServer import *
 
 
