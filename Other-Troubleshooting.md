@@ -77,7 +77,7 @@ See [ioc trouble shooting](IOC-And-Device-Trouble-Shooting#value-logs-from-ioc-n
 
 Try the following as administrator on the machine that you are running remote desktop client on:
 ```
-* Run gpedit.msc. 
+* Run gpedit.msc
 * Navigate to Computer Configuration > Administration Templates > Windows Components > Remote Desktop Services > Remote Desktop Connection Client. 
 * Set the "Turn Off UDP On Client" setting to Enabled.
 ```
