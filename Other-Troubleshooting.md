@@ -73,3 +73,12 @@ See [DAE-Trouble-Shooting](DAE-Trouble-Shooting#user-says-they-can-not-see-their
 See [ioc trouble shooting](IOC-And-Device-Trouble-Shooting#value-logs-from-ioc-not-producedaraccess-not-creating-log-filesenginx-stress-rig-not-writing-log-files)
 
 
+# Remote desktop client keep freezing/hanging
+
+Try the following as administrator on the machine that you are running remote desktop client on:
+``
+* Run gpedit.msc. 
+* Navigate to Computer Configuration > Administration Templates > Windows Components > Remote Desktop Services > Remote Desktop Connection Client. 
+* Set the "Turn Off UDP On Client" setting to Enabled.
+```
+
