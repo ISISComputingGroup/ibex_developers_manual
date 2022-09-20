@@ -23,11 +23,14 @@ C:\Instrument\Apps\EPICS\support\HFMAGPSU\master\HFMAGPSUSup
 Create a state file in this directory (e.g. fsm.st).
 The EPICS manual for SNL files can be found [here.](http://www-csr.bessy.de/control/SoftDist/sequencer/index.html)
 
-If you are reading or changing PV values, the following must be included in your `fsm.st` file
+If you are reading or changing PV values, the following must be included in your `fsm.st` file:
 ```
-#include "seqPVmacros.h"
+#include "ibexSeqPVmacros.h"
 ```
-A copy of `seqPVmacros.h` can be found [here](https://github.com/ISISComputingGroup/EPICS-motor/blob/7080600a752478f9fa23301a7e99d7ea081df453/motorApp/NewportSrc/seqPVmacros.h) and should be in the folder alongside the `fsm.st` file.
+You may also need to add a line to your `configure/RELEASE` file to allow inclusion of these PV utility macros:
+```
+UTILITIES=$(SUPPORT)/utilities/master
+```
 
 Create a `fsm.dbd` file, which contains the following:
 ```
