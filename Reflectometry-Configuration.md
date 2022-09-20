@@ -41,7 +41,7 @@ Also for the OPI we need constants:
 
 ### Example:
 
-```
+```Python
 BeamlineConstant("MAX_THETA", 1.8, "Maximum Theta value")
 ```
 
@@ -90,7 +90,7 @@ Once the component is defined that the theta should measure its angle to then it
 
 ### Example
 
-```
+```Python
 theta = add_component(ThetaComponent("theta_component", setup=PositionAndAngle(0.0, 50.0, 90.0))
 
 detector = add_component(TiltingComponent("detector", setup=PositionAndAngle(0.0, 100.0, 90.0)))
@@ -139,25 +139,25 @@ These are the top-level parameters exposed as PVs of the form `<PREFIX>:REFL:PAR
 
 ### Example
 
-```
+```Python
 # Parameter relative to the beam path
 AxisParameter("SM_angle", ChangeAxis.ANGLE, supermirror_component)
 ```
 Point a parameter at the super mirror components angle. Call the parameter `SM_ANGLE`, resulting in the PV `<INSTRUMENT PREFIX>REFL:PARAM:SM_ANGLE` and related PVs, e.g. `:SP` to set and move to the value.
 
-```
+```Python
 # Parameter that is not associated with any component
 VirtualParameter("HEIGHT", "mm")
 ```
 Crates a parameter called `HEIGHT` and has "mm" as a unit of distance.
 
-```
+```Python
 # Parameter that directly wraps a motor value
 DirectParameter("sample_trans", MotorPVWrapper("MOT:MTR0305"))
 ```
 Create a parameter called `SAMPLE_TRANS` that sets the motor 0305.
 
-```
+```Python
 def change_dae_tables(point_detector_in_beam, last_point_detector_in_beam):
     """
     Change the dae tables. In beam use the point detector tables, out of the beam use multi detector.
@@ -217,7 +217,7 @@ These objects link the middle-layer component model to low-level motors.
     - `value_wrapper_map`: is a dictionary of the value and the wrapper to use. If the parameter is at a value not in this list the original wrapper is used.
 
 ### Example
-```
+```Python
 # linear and angular drivers for supermirror with parked position
 IocDriver(sm_component, ChangeAxis.POSITION, MotorPVWrapper("MOT:MTR0101"))
 IocDriver(sm_component, ChangeAxis.ANGLE, MotorPVWrapper("MOT:MTR0102"))
@@ -249,7 +249,7 @@ Wrappers around lower level motors to read, monitor and cache relevant PV values
 - `min_velocity_scale_factor`: used to compute a minimum motor velocity in case none is set via `VBAS` on the underlying axis. Having a minimum velocity avoids motor stalling. The minimum velocity will be equal to `VMAX / min_velocity_scale_factor`. (Default: 100 - i.e. default minimum velocity `VMAX`/100)
 
 ### Example:
-```
+```Python
 # Drive Axis 0101
 MotorPVWrapper("MOT:MTR0101")
 
@@ -269,7 +269,7 @@ Modes allow users to switch between different experimental setups more easily. T
 - `is_disabled`: denotes that this is a special ["disabled" mode](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Beamline-Object#disabled-mode), which means all beam tracking is disabled. This is useful for aligning individual parameters in isolation. (Default: False) 
 
 ### Example:
-```
+```Python
 pnr_params = [...]  # A list of all parameters relevant to PNR mode
 pnr_inits = {"SM_inbeam": True}
 BeamlineMode("Polarised NR", pnr_params, sp_inits=pnr_inits, is_disabled=False) 
@@ -294,7 +294,7 @@ The footprint setup takes the following arguments:
 - `lambda_max`: The maximum lambda for this beamline
 
 ### Example
-```
+```Python
 # All of these arguments should already have been defined elsewhere in the config:
 footprint_setup = FootprintSetup(z_s1, z_s2, z_s3, z_s4, z_sample, s1vg, s2vg, s3vg, s4vg, theta, lambda_min, lambda_max)
 ```
@@ -310,7 +310,7 @@ The beamline object is assembled automatically by the helper functions detailed 
 The reflectometry server provides a set of helper functions to aid writing valid configuration files by automatically building up the top-level beamline object when any of the parts of it mentioned above are created. 
 
 **Important note:** Elements added via the helper methods will appear in the beamline in the order in which they appear in the configuration! e.g.
-```
+```Python
 add_parameter(AxisParameter("PD_HEIGHT", ChangeAxis.ANGLE, pd_component))
 add_parameter(AxisParameter("THETA", ChangeAxis.ANGLE, theta_component))
 ```
