@@ -2,6 +2,12 @@
 
 Specific information about POLREF.
 
+|   |   |
+|---|---|
+|  <img src="https://user-images.githubusercontent.com/32413847/191480709-8b086cd3-f00f-4603-a433-7b578372ce3d.jpg" alt="polref_ISIS_DESIGN_IMAGE"  width="500" height="300"> |  <img src="https://user-images.githubusercontent.com/32413847/191480746-de46ade9-70fa-40dc-812a-3edbd07053f7.jpg" alt="POLREF"  width="300" height="400">  |
+
+
+
 ## Axes
 
 Axes when sample is in horizontal configuration. 
