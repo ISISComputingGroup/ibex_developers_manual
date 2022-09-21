@@ -21,6 +21,13 @@ It was decided that we should test the algorithm using a python test script whic
 
 ![Flowchart design](https://raw.githubusercontent.com/wiki/ISISComputingGroup/ibex_developers_manual/MercuryEnhancedCryo2.drawio.png)
 
+Some amendments were made in a future meeting after the creation of this flowchart:
+1. `temperature setpoint <= cutoff point` -> `temperature setpoint <= cutoff point && temperature <= cutoff point`.
+2. Set delay should be 10s by default, rather than 200ms.
+3. Pressure law changed: 
+    1. `new pressure setpoint = (temperature - temperature_setpoint)^2` becomes
+    2. `new pressure setpoint = pressure setpoint minimum + temp scale * (temperature - temperature setpoint)^2`
+
 ## Implementation
 
 Implementation is to be done by modifying the existing MERCURY_ITC IOC in IBEX ([MERCURY_ITC IOC](https://github.com/ISISComputingGroup/EPICS-ioc/tree/master/MERCURY_ITC), [MercuryiTC support module](https://github.com/ISISComputingGroup/EPICS-MercuryiTC)). This implementation will enable the mercury hardware to be always configured for Pressure Control Mode, whilst we add an automated pressure control behaviour to optimise the pressure for given temperature setpoints. This automated pressure control behaviour sets the pressure based on the temperature and the temperature setpoint. My recommendation would be to build the logic with a small state machine in snl, with new PVs where required
