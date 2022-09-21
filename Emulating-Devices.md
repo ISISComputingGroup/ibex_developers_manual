@@ -29,7 +29,7 @@ Lewis is included as an installed module in genie_python (for Python 3).
 To run from the command line, use
 
 ```
-%PYTHON3% -m lewis -p "stream: {bind_address: localhost, port: 57677}" -r 127.0.0.1:10000 -a C:\Instrument\Apps\EPICS\support\cryValve\master\system_tests -k lewis_emulators iris_cryo_valve
+%PYTHON3% -u -m lewis -p "stream: {bind_address: localhost, port: 57677}" -r 127.0.0.1:10000 -a C:\Instrument\Apps\EPICS\support\cryValve\master\system_tests -k lewis_emulators iris_cryo_valve
 ```
 
 where we have picked port 57677 (see Lewis's doc for defaults). Note that the lewis executable is located in `%PYTHON3DIR%\Scripts`.
@@ -62,7 +62,7 @@ It's possible to modify the device's state on the fly as it's running in case yo
 The host and port for the backdoor are specified in the `-r` argument at startup:
 
 ```
-%PYTHON3% -m lewis -p "stream: {bind_address: localhost, port: 57677}" -r 127.0.0.1:10000 -a C:\Instrument\Apps\EPICS\support\cryValve\master\system_tests -k lewis_emulators iris_cryo_valve
+%PYTHON3% -u -m lewis -p "stream: {bind_address: localhost, port: 57677}" -r 127.0.0.1:10000 -a C:\Instrument\Apps\EPICS\support\cryValve\master\system_tests -k lewis_emulators iris_cryo_valve
 ```
 
 NOTE: at the time of writing, you can't type `localhost` for the `-r` argument.
@@ -134,7 +134,7 @@ The setup 'default' you tried to load does not specify a valid device type, but
 the device module 'neocera_ltc21' provides multiple device types so that no meaningful default can be deduced.`. Possible solutions:
     - Add device to `__init__` file of package so it can be imported.
     - Ensure that the initial state is one of the states returned by get_state_handlers.
-* When I try to launch `lewis.exe` I get the error `Fatal error in launcher: Unable to create process using '"'`. When you build Python on Windows, the Python path is baked into the `lewis.exe` executable. If you subsequently say move `Python-build` to `Python` then the path will be incorrect and the executable doesn't know where to launch from. You can either run lewis as a module e.g. `%PYTHON3% -m lewis` or run it by importing it into a python script.
+* When I try to launch `lewis.exe` I get the error `Fatal error in launcher: Unable to create process using '"'`. When you build Python on Windows, the Python path is baked into the `lewis.exe` executable. If you subsequently say move `Python-build` to `Python` then the path will be incorrect and the executable doesn't know where to launch from. You can either run lewis as a module e.g. `%PYTHON3% -u -m lewis` or run it by importing it into a python script.
 * When I try to print something from the device emulator, nothing happens. Why?
 Print statements in the device emulator can not print anything to a console when they are ran as part of the IocTestFramework.
 * I want to log something how do I do that?
