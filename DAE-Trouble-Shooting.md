@@ -406,13 +406,13 @@ Check icp log file. If it says "waiting for period card" and beam is off, then t
 
 ## data files not being created
 
-If data files are not appearing on the archive, it may be the end process has not completed. After an END is issued remaining data is read from the DAE and then a separate thread in the ISISICP is spawned to complete the end process. To avoid too many of these threads running at once, they all share an internal semaphore. If somethings gets stuck in the ending process, then runs will not complete. You can see this by there being lots of `current.run*`, `data.run*`, and `events*.tmp` files in `c:\data` on the NDX instrument. Normally you should only see files for the current run number and the previous run number (if the run is still ending), seeing many more than this would indicate a problem. 
+If data files are not appearing on the archive or in the instrument journal viewer, it may be the end process has not completed. After an END is issued remaining data is read from the DAE and then a separate thread in the ISISICP process is spawned to complete the end process. To avoid too many of these threads running at once, they all share an internal semaphore. If somethings gets stuck in the ending process, then runs will not complete. You can see this by there being lots of `current.run*`, `data.run*`, and `events*.tmp` files in `c:\data` on the NDX instrument. Normally you should only see files for the current run number and maybe the previous run number if the END is still happening in the background. If you see many more than this it would indicate a problem. 
 
 To resolve the problem you need to restart the ISISICP in failed run recovery mode.
-- have instrument in SETUP and wait for run to complete and copy data to archive
+- make sure NDX instrument machine in SETUP
 - edit `c:\labview modules\dae\isisicp.properties` and add/amend a line to say `isisicp.failedends.rerun = true`
 - kill the `isisicp.exe` process
 - the process should now restart and re-save the missing runs
-- Edit `isisicp.properties` and comment out the `isisicp.failedends.rerun` line so it will not automatically do any reruns on next restart. This is just in case a later run failed to end and crashed the program due to corrupt data, if it tried to re-end this on restart you might get into an infinite isisicp crashing loop.
+- re-Edit `isisicp.properties` and comment out the `isisicp.failedends.rerun` line so it will not automatically do any reruns on next restart. This is just in case a later run failed to end and crashed the program due to corrupt data, if it tried to re-end this on restart you might get into an infinite isisicp re-end crashing loop.
   
         
