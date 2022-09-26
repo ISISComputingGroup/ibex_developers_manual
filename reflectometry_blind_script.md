@@ -1,6 +1,6 @@
 > [Wiki](Home) > [Project overview](Project-Overview) > [Design documents](Design-Documents) > [Reflectometers](Reflectometers) > [Reflectometry Testing](Reflectometry-Testing) > [Experiment script](reflectometry_blind_script)
 
-```
+```Python
 import sys
 import os
 
