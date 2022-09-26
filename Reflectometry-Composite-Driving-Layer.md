@@ -31,7 +31,7 @@ Synchronisation in the configuration files defaults to `true`, but can be set on
 Any IOC Driver can specify out-of-beam positions, which define where a component should be parked along its movement axis if it is set to be "Out Of Beam" via an `InBeamParameter`. A driver can have an arbitrary number of out-of-beam positions. Which one is chosen depends on where the y height of the current beam path intersects with the movement axis of this component. Since in some instances, the beam can intersect with the entire range of a component's movement axis, this is done to ensure that component does not block the beam while parked. It is also possible to have the park position as a position offset from the beam, e.g. for INTERs mirror/guides which when out of the beam must track the beam to remain guide. In addition to this the user can supply a parking sequence which will cause the instrument to park and unpark a component using the supplied positions. 
 
 Out-of-beam positions are defined via the `OutOfBeamPosition` class. Example:
-```
+```Python
 park_high = OutOfBeamPosition(position=20)
 park_low = OutOfBeamPosition(position=-10, threshold=15, tolerance=0.5)
 driver = IOCDriver(comp, the_axis, out_of_beam_positions=[park_high, park_low])
@@ -46,7 +46,7 @@ So moving `comp` out of the beam while the beam intersects the axis at a height 
 If no out-of-beam positions are defined for a driver, it is always considered as being "in beam".
 
 Parking sequences are defined using `OutOfBeamSequence`. This has exactly the same parameters as out of beam except that the first argument is a list of values. The list of each parking sequence for a component, you can have one for each axis, must be the same length or not exist. You may have None's at the start of the sequence to indicate that the component should not move from its current position. Example:
-```
+```Python
 driver = IOCDriver(comp, ChangeAxis.HEIGHT, out_of_beam_positions=[OutOfBeamSequence([0, -10, -10)])
 driver = IOCDriver(comp, ChangeAxis.PHI, out_of_beam_positions=[OutOfBeamSequence([None, 0, -20)])
 ```
@@ -84,7 +84,7 @@ Doesn't perform any correction. Is useful when you want to define a correction b
 
 Add a constant on to the value, probably better to redefine zero on the axis. Add this into the configuration file to the driver:
 
-```
+```Python
 add_driver(AxisDriver(
     component, ChangeAxis.POSITION,
     PVWrapper, 
@@ -97,7 +97,7 @@ where value is the amount you want to add onto the axis when setting a set point
 
 This will perform a correction based on a table loaded from disc. It will perform linear interpolation between the points in the datafile to derive the correction. Outside of the table of data no correction is set. To use this add to the configuration:
 
-```
+```Python
 theta_param_angle = add_parameter(AxisParameter("THETA", theta_comp, ChangeAxis.ANGLE))
 
 ...
@@ -110,7 +110,7 @@ add_driver(AxisDriver(
 
 In this example, `theta_param_angle` is being used as the interpolation variable. The filename in the name of a file in the configuration directory (`C:\Instrument\Settings\config\<instrument>\configurations\refl\`) which contains the points. The format is:
 
-```
+```Python
 Theta, correction
 1.0, 1.2
 1.01, 3.4
@@ -121,13 +121,13 @@ Where the header `Theta, correction` matches with the name of the beamline param
 
 If you want to do multi-dimension interpolation then your `InterpolateGridDataCorrection` object should have all beamline values in it that are needed, e.g.:
 
-```
+```Python
 InterpolateGridDataCorrection(filename, theta_param_angle, sm_angle_param))
 ```
 
 and the data file should have a similar header and data:
 
-```
+```Python
 Theta, smangle, correction
 -10, 10, 1
 10, 10, 10
@@ -153,7 +153,7 @@ The algorithm used is the linear version of [griddata from `scipy`](https://docs
 
 To apply a user function engineering correction yo an axis we must first define the function in the configuration file. In this example case, we have a function which depends on a single beamline parameter, `theta`:
 
-```
+```Python
 def my_correction(value, theta):
    ...
    return calulated_offset
@@ -167,7 +167,7 @@ When called by the reflectometry IOC this function will be given:
 If there are more beamline parameters set in `UserFunctionCorrection` these would be additional arguments. The function should return a correction which will be added onto the value before being sent to the PV.
 The next step is to add the engineering correction to the IOC driver. We show the definition of the theta beamline parameter to make it clear what the arguments are:
 
-```
+```Python
 theta_param_angle = add_parameter(AxisParameter("THETA", theta_comp, ChangeAxis.ANGLE))
 
 ...
@@ -194,7 +194,7 @@ where:
 - `corrections_for_mode`: is a dictionary of the mode name against the correction that should be used for that mode
 
 Example:
-```
+```Python
 add_driver(AxisDriver( component, ChangeAxis.POSITION, PVWrapper, 
     engineering_correction=ModeSelectCorrection(ConstantCorrection(1), {"NR": UserFunctionCorrection(my_correction), "PA": ConstantCorrection(-0.2)}))
 ```
