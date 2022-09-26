@@ -1,6 +1,6 @@
 > [Wiki](Home) > [Project overview](Project-Overview) > [Design documents](Design-Documents) > [Reflectometers](Reflectometers) > [Reflectometry Testing](Reflectometry-Testing) > [Experiment script output](reflectometry_blind_script_output)
 
-```
+```bash
 C:\Windows\system32>call C:\Instrument\Apps\EPICS\..\Python\genie_python.bat
 Python 2.7.14 (v2.7.14:84471935ed, Sep 16 2017, 20:25:58) [MSC v.1500 64 bit (AMD64)]
 Type "copyright", "credits" or "license" for more information.
