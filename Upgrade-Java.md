@@ -18,7 +18,7 @@
 
 ## Additional optional steps for developer installations (not required on instruments):
 
-1. To build CS-Studio from source, you will need JavaFX binaries. These can be patched onto the AdoptOpenJDK installation. Download the latest **long term support** binaries from https://openjfx.io/ and unzip openjfx-11.XXX.zip and copy over the bin, legal and lib directory to your java (C:\Program Files\AdoptOpenJDK\jdk-11.0.8.10-hotspot). Please check that the license is still appropriate before you install.
+1. To build CS-Studio from source, you will need JavaFX binaries. These can be patched onto the AdoptOpenJDK/Eclipse Temurin installation. Download the Windows SDK from [gluon](https://gluonhq.com/products/javafx/) and copy the `bin`, `lib`, and `legal` directories over the corresponding directories in your java installation. Note that the JavaFX version does not necessarily need to match your java installation, as long as the versions are compatible. For example we can use JavaFX 19 on a Java 11 installation. Please check that the license is still appropriate before you install.
 
 1. If you will be debugging lots of java applications you may wish to install the java Visual VM. This used to be bundled with oracle java but is no longer present in OpenJDK. You can download a GPL-licensed version of the visual VM from https://visualvm.github.io/
 
