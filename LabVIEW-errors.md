@@ -2,7 +2,7 @@
 
 This page documents common LabVIEW errors and how to resolve them
 
-## Large LabVIEW log files in `Users\spudulike\AppData\Local\Temp`
+## Large LabVIEW log files in `Users\<username>\AppData\Local\Temp`
 
 Symptom: the above files of the form `*_cur.txt` and `*_log.txt` are very large and getting spammed with messages of the form 
 
