@@ -14,6 +14,6 @@ There are some processes happening during startup of IBEX client as part of appl
 As part of ticket [#6577](https://github.com/ISISComputingGroup/IBEX/issues/6577) of particular interest
 are classes: `ApplicationWorkbenchWindowAdvisor` and `ApplicationWorkbenchAdvisor` in package `uk.ac.stfc.isis.ibex.e4.product`.
 
-In order to detect that multiple instances of IBEX client are running, a file in the folder contains [PIDs](https://en.wikipedia.org/wiki/Process_identifier) of currently running IBEX instances. Every new instance of the client will check process list for PIDs that
-are in the file. If a match is found then it means that another instance is already running and user should be prompted for confirmation to
-start another client instance.
+In order to detect that multiple instances of IBEX client are running, a file in the folder is locked using a Java `FileLock`. Every new instance of the client will check if the file is locked. If the file is locked then it means that another instance is already running and user should be prompted for confirmation to start another client instance. See [#7381](https://github.com/ISISComputingGroup/IBEX/issues/7381).
+
+Currently only the first instance locks the file. So as an example if two instances are started, the first locking instance is closed, and a third instance is started, the user will not be prompted and the third instance will re-lock the file.
