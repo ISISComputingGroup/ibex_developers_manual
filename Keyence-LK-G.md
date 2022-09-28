@@ -9,6 +9,8 @@ This device has two modes: Communication (Set-up) and Measure. Fields on the dev
 
 To keep the process of scripting and user control simple, the device is put into measurement mode and will switch to communication mode (at the protocol level) when a set point is changed. The `MODE` record can be interrogated to determine the current operating mode for debugging. 
 
+To stop the device from constantly switching modes, the scan rate for records that need Measure mode can be changed ([#7376](https://github.com/ISISComputingGroup/IBEX/issues/7376)). The default scan rate for these records is `5 second` and can be set to `Passive`. If new records are needed that use Measure mode, they can be added to the `seq` record `SCAN` so their scan rate can be controlled as well.
+
 # On IOC Start
 
 When the IOC device starts the device will be placed into Measurement mode.
