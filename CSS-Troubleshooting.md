@@ -5,3 +5,15 @@ This page contains information on how to troubleshoot some common issues with th
 **Opening some OPIs in OPI editor throws a Malformed URL Exception**
 
 This might happen if you recently pulled or changed branches in the GUI repository . A reason this can happen is that your workspace and file system are out of sync. You can fix this by collapsing the workspace, then deleting everything under `uk.ac.stfc.isis.ibex.opis` (but do NOT delete contents on disk!), and then reimporting everything again from `base/uk.ac.stfc.isis.ibex.opis`.
+
+
+# CSS components won't start (IDE, Block Archiver, Inst Archiver, Alarm server)
+
+Ensure Java 8 is **NOT** installed on the system. If java 8 is installed, uninstall it and reboot. A java 8 installation will prevent CSS components from starting correctly, as they will detect this and attempt to use it, but they are incompatible with java 8 and require java 11+.
+
+For the IDE:
+- Make sure java 8 is not installed on system
+- restart your machine
+- run `git clean -fqdx` in the css directory
+- run `create_icp_binaries.bat`
+- run `setup_css.bat`
