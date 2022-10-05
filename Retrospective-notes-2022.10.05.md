@@ -1,5 +1,5 @@
 | Chair      | Timekeeper | Note Taker |
-| :--------   | :---------: | ----------: |
+| --------   | --------- | ---------- |
 | David | Chris | Lilith |
 
 --- 
