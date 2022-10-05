@@ -347,7 +347,7 @@ Replace the code between the DATABINDING START and the DATABINDING FINISH with:
 ```java
 final DataBindingContext ctx = new DataBindingContext();
 
-UpdateValueStrategy strategyOnPress = new UpdateValueStrategy(UpdateValueStrategy.POLICY_ON_REQUEST);
+UpdateValueStrategy<Object, String> strategyOnPress = new UpdateValueStrategy<Object, String>(UpdateValueStrategy.POLICY_ON_REQUEST);
 
 IObservableValue target = WidgetProperties.text(SWT.Modify).observe(txtName);
 IObservableValue model = BeanProperties.value("name").observe(person);
