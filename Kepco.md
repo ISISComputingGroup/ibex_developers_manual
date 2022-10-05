@@ -13,3 +13,5 @@ The Kepco can also use a calibration file to set and readback a field instead of
 The HTS smart monitor is a device that shows the current status of a KEPCO for use with the HTS magnet system. It is capable of showing safe operating limits, hard limits and the current voltages and temperatures of the connected KEPCO. Currently it sits on a static IP which is set by the device, and on POLREF it is connected to the private network. 
 
 The device can be configured with its webserver which should be at `<static ip>:8080`; this can be used to configure a different static IP address or to enable DHCP. 
+
+The status command response on the smart monitor does not match what we have written in the "manual" (which is just an email chain) and adds a timestamp before the last status character - [#7397](https://github.com/ISISComputingGroup/IBEX/issues/7397) addresses this issue.
