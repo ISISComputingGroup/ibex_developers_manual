@@ -38,11 +38,11 @@ Don't forget the [drop in sessions](https://github.com/ISISComputingGroup/IBEX/w
  |JA | 12/09/2022 |x |
  |LC | 19/09/2022 |x |
  |DK | 26/09/2022 |x |
- |TL | 03/10/2022 | |
- |JH | 10/10/2022 | |
- |LJ | 17/10/2022 | |
- |FA | 24/10/2022 | |
- |LC | 31/10/2022 | |
+ |TL | 03/10/2022 |x |
+ |LJ | 10/10/2022 | |
+ |FA | 17/10/2022 | |
+ |LC | 24/10/2022 | |
+ |JH | 31/10/2022 | |
  |CMS | 07/11/2022 | |
  |DK | 14/11/2022 | |
  |TL | 21/11/2022 | |
@@ -56,8 +56,8 @@ Don't forget the [drop in sessions](https://github.com/ISISComputingGroup/IBEX/w
 | Meeting| Chair | x for Done | Timekeeper | x for Done | Note taker | x for Done |
 | ---| --- | --- | ---| --- | --- | --- |
 | 2022_10_06_Pre-Planning| -- | X | --| X | |  |
-| 2022_09_08_Review/Retro| DK |  | CMS|  | LC|   |
-| 2022_10_06_Planning| KB |  | LC|  | |  |
+| 2022_09_08_Review/Retro| DK | x | CMS| x | LC| x |
+| 2022_10_06_Planning| KB | x | LC| x | |  |
 | 2022_10_27_Pre-Planning| -- |  | --|  | |  |
 | 2022_10_06_Review/Retro| DK |  | JH|  | HC|   |
 | 2022_10_27_Planning| KB |  | TL|  | |  |
