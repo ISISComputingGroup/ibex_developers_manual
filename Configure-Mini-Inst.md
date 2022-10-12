@@ -28,6 +28,9 @@ If you want to run an IOC in a mini-inst then:
 1. Run the Vi
 
 
+### Running `ARINST` and/or `ARACCESS` in a mini-inst
+
+ENGIN-X will run a mini-inst for the instron stress rig that needs to use both `ARINST` and `ARACCESS`. These need to be added to `startup.txt` and MySQL needs to be installed and running on the machine.
 
 
 
