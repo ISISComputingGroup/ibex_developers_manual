@@ -8,9 +8,9 @@ The IOC for this device is the **SKFCHOPPER**, this IOC has to have macros set i
 
 ### Current Installations
 
-* **four** controllers on LET (original choppers 3 & 4, and the previously Astrium 1 & 5)
-* **five** on IMAT (two double-disk choppers and a T0)
-* **two** on SANDALS (a single double-disk chopper)
+* **Six** controllers on LET (original single-disk choppers 3 & 4, and the previously Astrium double-disk choppers 1 & 5. Chopper 2 is an ISIS MK3)
+* **Five** on IMAT (two double-disk choppers and a T0)
+* **Two** on SANDALS (a single double-disk chopper)
 
 ### Addressing Schema on the instrument's private network
 
