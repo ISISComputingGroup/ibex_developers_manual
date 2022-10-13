@@ -3,6 +3,9 @@
 
 # Beckhoff testing
 
+
+
+## Building, simulating and testing the code
 <details>
 <summary>You may need to disable some windows features, such as Hyper-V, Windows Hypervisor Platform etc.
 For reference, here is a working setup and its features: </summary>
@@ -10,26 +13,23 @@ For reference, here is a working setup and its features: </summary>
 ![windows features](https://user-images.githubusercontent.com/14823767/149163247-309eb8de-41d4-4a06-b9ff-9009865ab340.png)
 </details>
 
-## Building and simulating the code
 Beckhoff code can be run as a simulated system on a developer machine by doing the following: 
 
- 1. Download and install [TwinCAT 3 XAE](https://stfc365.sharepoint.com/sites/ISISMechatronics/Shared%20Documents/Forms/AllItems.aspx?viewid=a9a65e76%2D4335%2D479e%2Da1eb%2De12265e5cad6&id=%2Fsites%2FISISMechatronics%2FShared%20Documents%2FTwinCAT%20Development%2FTwinCAT%20Software) more information can be found about this [here](https://infosys.beckhoff.com) (click TwinCAT 3 on the left). If you do not have permission ask IDD. The XAE is really just a Visual Studio plugin.
- 1. Start the Twincat XAE. This can be done by clicking on the TwinCat icon in the system tray.
- 1. Open the Twincat project that you are interested in. For example the PLC_solution [here](https://github.com/ISISComputingGroup/BeckhoffTestRunner)
- 1. Ensure that you have the following toolbars enabled in the XAE (`Tools > Customize...`):
-    - `TwinCAT PLC`
-    - `TwinCAT XAE Base`
-    - (optionally) `TwinCAT XAE Remote Manager`
-1. Click the `Activate Configuration` button ![Activate](beckhoff/Activate.PNG) - Note you may need to do [this](https://control.com/forums/threads/twincat-3-error-when-switched-to-run-mode.43467/) if it moans about ticks. You may also need to disable Hyper-V and disable Intel Virtualisation from within BIOS on your machine if this error persists.  
-To revert this run: `Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All` in an elevated Powershell window. You may also need to execute `settick.bat` in `BeckhoffTestRunner` as administrator and reboot. 
-2. TwinCAT will ask you to enter a code to get a trial license. You will need to do this once a week.
-3. If prompted if you wish to start the system in `Run Mode` click `Ok`. Otherwise start run mode using the button next to `Activate Configuration` ![Run](beckhoff/Run.PNG)
-4. You now have a simulated beckhoff PLC running on your PC. This behaves the same as real hardware and so all development can be done against it. You could now also run an IOC up talking to this local PLC.
-5. To see what is happening inside this PLC in more detail, and to change values, you can use the login button ![Login](beckhoff/Login.PNG)
+ 1. Clone `BeckhoffTestRunner` using `git clone --recurse-submodules https://github.com/ISISComputingGroup/BeckhoffTestRunner.git` in `C:\Instrument\Dev\`
+ 1. Run `settick.bat` and reboot
+ 1. Download and install [TwinCAT 3 XAE](https://stfc365.sharepoint.com/sites/ISISMechatronics/Shared%20Documents/Forms/AllItems.aspx?viewid=a9a65e76%2D4335%2D479e%2Da1eb%2De12265e5cad6&id=%2Fsites%2FISISMechatronics%2FShared%20Documents%2FTwinCAT%20Development%2FTwinCAT%20Software) [more information here](https://infosys.beckhoff.com) (click TwinCAT 3 on the left). If you do not have permission ask IDD. The XAE is really just a Visual Studio plugin. Reboot after installing. 
+ 1. Run `build.bat` to build the `twinCATAutomationTools` binaries, which then sets up a working simulated PLC.
+ 1. To run a PLC locally you need a license. Open TwinCAT XAE shell, select "open solution" and open `C:\Instrument\Dev\BeckhoffTestRunner\PLC_solution\solution.sln` Navigate in the solution explorer to `solution -> SYSTEM -> License` - open this and select "7 days trial license". You may now close the XAE Shell.
+1. run `run_tests.bat` in the `BeckhoffTestRunner` directory to begin testing. You should notice that your system tray icon turns green which means you are running a simulated PLC and testing against it. 
+
+_NB the IOC tests do not stop the PLC at the end of the run, however this isn't a problem as the PLC is restarted when the IOC tests start._
+
+_When you have finished testing/reviewing a PR, it is best to run unsettick.bat and reboot - otherwise you will have loads of "time discontinuity detected" messages in IOC logs_
 
 ### Continuous Integration
 
 <summary>Jenkins</summary><details>
+
 Beckhoff PLC code is being developed by people who do not have CI expertise and have their own repository structures yet we want integration into some form of CI to be as easy as possible. This lent itself to the following structure:
 * A `BeckhoffTestRunner` repository that is owned by us and contains the jenkinsfile and other utilities required for CI
 * Every branch on this repository (apart from master) then pulls a different PLC project down (note each project could be from a different repository or from separate branches on the same repository)
@@ -75,13 +75,4 @@ This IOC was originally written by ESS. It uses an ASCII protocol over TCP/IP to
 
 </details>
 
-## Testing
-To run a PLC locally you need a license. A trial license can be activated on a developer's machine by manually running through the building and running steps above until you are prompted to supply a captcha phrase to generate a license.
 
-1. clone `BeckhoffTestRunner` using `git clone --recursive https://github.com/ISISComputingGroup/BeckhoffTestRunner.git`
-1. Then in `BeckhoffTestRunner` run: 
-`git submodule update --init --recursive --remote`
-1. To run tests locally you must build the `twinCATAutomationTools` tools then use them to set up a working simulated PLC. This can be done by running `build.bat`
-1. run `run_tests.bat` in the `BeckhoffTestRunner` directory to begin testing.
-
-_NB the IOC tests do not stop the PLC at the end of the run, however this isn't a problem as the PLC is restarted when the IOC tests start. If this fails to start the PLC it may be because you do not have a trial license. Debug the issue by manually running through the building and running steps above._
