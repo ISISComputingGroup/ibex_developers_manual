@@ -8,6 +8,13 @@ As we don't really handle any logic minus the motor record aliasing, there isn't
 - If the records in here are in alarm, it's likely that there is a comms issue or the TPY file is out of date - see below.
 - If not, and there are error IDs for any axis, the beckhoff has thrown an error. You may be able to hit "reset" and resolve this, if not contact the IESG or the IDD Motion team. 
 
+## ADS route and pinging
+an easy thing to check to see if a beckhoff is actually reachable is to
+- ping `192.168.1.22x` (usually 221)
+- from the NDX system tray right click the twincat icon, then routing -> edit routes. check there is an `x` or padlock symbol in the "connected" column. 
+
+if neither of these work the cable has probably fallen out. 
+
 ## "TPY file needs updating"
 If nothing whatsoever is working, moves aren't sending and enabling/disabling is not working, an outdated `.tpy` file could be the cause. 
 
