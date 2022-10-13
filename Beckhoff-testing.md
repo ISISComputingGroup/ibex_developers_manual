@@ -16,7 +16,7 @@ For reference, here is a working setup and its features: </summary>
 Beckhoff code can be run as a simulated system on a developer machine by doing the following: 
 
  1. Clone `BeckhoffTestRunner` into `C:\Instrument\Dev\` using `git clone --recurse-submodules https://github.com/ISISComputingGroup/BeckhoffTestRunner.git` 
- 1. Run `settick.bat` and reboot
+ 1. Run `settick.bat` with admin privileges and reboot
  1. Download and install [TwinCAT 3 XAE](https://stfc365.sharepoint.com/sites/ISISMechatronics/Shared%20Documents/Forms/AllItems.aspx?viewid=a9a65e76%2D4335%2D479e%2Da1eb%2De12265e5cad6&id=%2Fsites%2FISISMechatronics%2FShared%20Documents%2FTwinCAT%20Development%2FTwinCAT%20Software) [more information here](https://infosys.beckhoff.com) (click TwinCAT 3 on the left). If you do not have permission ask IDD. The XAE is really just a Visual Studio plugin. Reboot after installing. 
  1. Run `build.bat` to build the `twinCATAutomationTools` binaries, which then sets up a working simulated PLC.
  1. To run a PLC locally you need a license. Open TwinCAT XAE shell, select "open solution" and open `C:\Instrument\Dev\BeckhoffTestRunner\PLC_solution\solution.sln` Navigate in the solution explorer to `solution -> SYSTEM -> License` - open this and select "7 days trial license". You may now close the XAE Shell.
