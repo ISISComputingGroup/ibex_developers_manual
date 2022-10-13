@@ -55,6 +55,24 @@ To actually run tests we use the Beckhoff `automation interface` which can do an
 3. The IOC test framework is started. This will use the `TwinCATAutomationTools` program to run a local simulated PLC. Then startup and test the Beckhoff twincat in the usual way.
 
 This is currently being run on the ndw1926 node on Jenkins. A quirk of using this DCOM interface is that the Jenkins slave must be run as an interactive user and thus not as a service. To do this there is a bat file that should run on startup inside `C:\Users\ibexbuilder\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup`.
+
+The current Beckhoff applications that are being run through `tcIOC` and the CI pipeline discussed above are:
+* [dummy_PLC](https://github.com/ISISComputingGroup/BeckhoffPLCCode/tree/dummy_PLC)- a PLC that does very little, basically used to test that fundamental tcIOC comms works
+* [old_ISIS_code](https://github.com/ISISComputingGroup/BeckhoffPLCCode/) - this is the old ISIS prototype motion code that is currently on the CRISP jaws. Hopefully this code can be removed once the jaws are moved on.
+* [ESS_base_code](https://bitbucket.org/europeanspallationsource/tc_generic_structure/) (now linked to by `main` of the `BeckhoffTestRunner` repository) - this is the collaboration code that we will be using go forward.
+
+<details>
+<summary> MCAG (defunct) - click to expand </summary>
+
+This IOC was originally written by ESS. It uses an ASCII protocol over TCP/IP to do the communication and is very specifically designed for motion. There is a simulator which can be run using the following steps:
+
+- `cd EPICS\support\MCAG_Base_Project\master\epics\simulator`
+- `doit.bat`
+- Start the IOC (host macros needs to be set to 127.0.0.1:5024)
+
+~Currently this is only being run on IMAT. It should soon be replaced by the collaboration code.~ - **It has been replaced by the new code, so is now defunct.**
+</details>
+
 </details>
 
 ## Testing
