@@ -11,6 +11,8 @@
 For reference, here is a working setup and its features: </summary>
 
 ![windows features](https://user-images.githubusercontent.com/14823767/149163247-309eb8de-41d4-4a06-b9ff-9009865ab340.png)
+
+To revert this run: `Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All` in an elevated Powershell window.
 </details>
 
 Beckhoff code can be run as a simulated system on a developer machine by doing the following: 
@@ -26,9 +28,26 @@ _NB the IOC tests do not stop the PLC at the end of the run, however this isn't 
 
 _When you have finished testing/reviewing a PR, it is best to run unsettick.bat and reboot - otherwise you will have loads of "time discontinuity detected" messages in IOC logs_
 
-### Continuous Integration
+## Using XAE shell to manually build a PLC
+<summary> manual steps </summary>
+<details>
 
-<summary>Jenkins</summary><details>
+1. Ensure that you have the following toolbars enabled in the XAE shell (`Tools > Customize...`):
+    - `TwinCAT PLC`
+    - `TwinCAT XAE Base`
+1. Click the `Activate Configuration` button ![Activate](beckhoff/Activate.PNG) 
+
+2. TwinCAT will ask you to enter a code to get a trial license. You will need to do this once a week.
+3. If prompted if you wish to start the system in `Run Mode` click `Ok`. Otherwise start run mode using the button next to `Activate Configuration` ![Run](beckhoff/Run.PNG)
+4. You now have a simulated beckhoff PLC running on your PC. This behaves the same as real hardware and so all development can be done against it. You could now also run an IOC up talking to this local PLC.
+5. To see what is happening inside this PLC in more detail, and to change values, you can use the login button ![Login](beckhoff/Login.PNG)
+
+</details>
+
+## Continuous Integration
+
+<summary>Jenkins</summary>
+<details>
 
 Beckhoff PLC code is being developed by people who do not have CI expertise and have their own repository structures yet we want integration into some form of CI to be as easy as possible. This lent itself to the following structure:
 * A `BeckhoffTestRunner` repository that is owned by us and contains the jenkinsfile and other utilities required for CI
