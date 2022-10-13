@@ -8,9 +8,9 @@ NOTE: if you just want a recent EPICS build for somewhere, you just need to run 
 
 ### quick instructions
 
-* make sure you have no EPICS processing running, do a `stop_ibex_server.bat` and then confirm in task manager.
-* make sure you don't care about `c:\Instrument\Apps\EPICS` being overwritten - rename existing directory it if you do
-* run `robocopy \\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer\EPICS\x64 c:\Instrument\Apps\EPICS -MIR -NFL -NDL -NP -R:1 -MT -LOG:NUL`
+* run `stop_ibex_server.bat` from `c:\Instrument\Apps\EPICS` (if this directory already exists)
+* rename any existing `c:\Instrument\Apps\EPICS` to a different name. If you care about the contents, then keep this for a later rename back. If you don't care (all work pushed to github) then delete it. The reason for doing a rename first is that it confirms no EPICS processes remain running that may cause the robocopy below to not complete properly.     
+* run `robocopy \\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer\EPICS\x64 c:\Instrument\Apps\EPICS -MIR -NFL -NDL -NP -R:1 -MT -LOG:NUL` and wait
  
 ### details
 
