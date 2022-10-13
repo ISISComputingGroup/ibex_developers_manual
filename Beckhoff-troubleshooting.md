@@ -4,7 +4,7 @@
 
 As we don't really handle any logic minus the motor record aliasing, there isn't much to go wrong (in theory) - sometimes for numerous reasons such as motion logic changing etc. the `.tpy` file that maps over memory addresses to human readable names can go out of date. 
 
-**The first thing to do if an issue occurs is open a device screen which is pointing to the "Beckhoff engineering view" and check all axes for an error ID.**
+**The first thing to do if an issue occurs is open a device screen which is pointing to the "Beckhoff engineering view" and check all axes for an error ID. note you have to press the load button to load an axis.**
 **If the records in here are in link alarm, it's likely that there is a comms issue OR the TPY file is out of date - see below.**
 **If not, and there are error IDs for any axis, the beckhoff has thrown an error. You may be able to hit "reset" and resolve this, if not contact the IESG or the IDD Motion team. **
 
@@ -27,13 +27,7 @@ In this case, navigating to the TwinCAT Beckhoff Controller OPI, selecting the t
 This is a weird error that seems to occur sometimes when running a Beckhoff simulator on a dev machine. To stop it you need to do run `unsettick.bat` script in `tcioc\master` and reboot. NB this should never happen on an instrument machine as they do not run simulated Beckhoffs. 
 
 ## Twincat Beckhoff Engineering View
-#### Error: `19250`
+#### Error: `xxxxx`
 To resolve, a physical restart was necessary - Contact Electrical and Electronic User Support Group to resolve
 Once a physical restart has taken place, load each axis and reload to check the error status has returned back to 0. 
 
-#### Error: `17510` or `19209`
-Occur during physical restart, and may remaining if physical restart was unsuccessful.
-Once a successful physical restart has taken place, they should go away. - Contact Electrical and Electronic User Support Group to resolve this
-
-#### Error: `18000`
-Axes may not move at all when under `18000` error. To resolve, reset using Beckhoff Engineering View and / or perform homing routine.
