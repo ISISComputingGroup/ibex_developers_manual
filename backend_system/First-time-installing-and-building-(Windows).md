@@ -215,3 +215,7 @@ It is recommended that developers only install this if they know that they will 
 
 Some IOCs depends on DAQMX binaries from national instruments. Go to http://sine.ni.com/psp/app/doc/p/id/psp-268 or if not go here https://www.ni.com/en-gb/support/downloads/drivers/download.ni-daqmx.html#311818
 and download the latest DAQMX drivers. When installing, ensure you check the box to install DAQMX.
+
+## Beckhoff XAR
+
+If you will be developing or reviewing code involved with Beckhoff PLCs you will need to install TwinCAT XAR. This can be found on the public share in `installers`. More information for simulating Beckhoffs can be found [here](Beckhoff-testing)
