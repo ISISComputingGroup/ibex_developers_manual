@@ -8,7 +8,7 @@ As we don't really handle any logic minus the motor record aliasing, there isn't
 - If the records in here are in alarm, it's likely that there is a comms issue or the TPY file is out of date - see below.
 - If not, and there are error IDs for any axis, the beckhoff has thrown an error. You may be able to hit "reset" and resolve this, if not contact the IESG or the IDD Motion team. 
 
-### "TPY file needs updating"
+## "TPY file needs updating"
 If nothing whatsoever is working, moves aren't sending and enabling/disabling is not working, an outdated `.tpy` file could be the cause. 
 
 To remedy this: 
@@ -20,7 +20,7 @@ To remedy this:
 ## Twincat Beckhoff Engineering View
 
 ### Error: `xxxxx`
-This is an issue reporting from the beckhoff itself. you may be able to reset the error and get moving again. otherwise contact IESG to resolve.
+This is an issue reporting from the Beckhoff itself. you may be able to reset the error and get moving again. otherwise contact IESG to resolve. A list of error IDs are available from the TwinCAT documentation available online. 
 
 #### Safety systems
 Safety systems such as light curtains or bump strips will throw the controller into error (and usually disable all axes) as opposed to just stopping movement like on a Galil. The green reset button on each beamline should clear the error and re-enable. 
