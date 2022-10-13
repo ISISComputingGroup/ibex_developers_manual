@@ -28,7 +28,8 @@ _NB the IOC tests do not stop the PLC at the end of the run, however this isn't 
 
 _When you have finished testing/reviewing a PR, it is best to run unsettick.bat and reboot - otherwise you will have loads of "time discontinuity detected" messages in IOC logs_
 
-## Using XAE shell to manually build a PLC
+## Other information on testing and configuring a Beckhoff
+### Using XAE shell to manually build a PLC
 <summary> manual steps </summary>
 <details>
 
@@ -44,7 +45,7 @@ _When you have finished testing/reviewing a PR, it is best to run unsettick.bat 
 
 </details>
 
-## Continuous Integration
+### Continuous Integration
 
 <summary>Jenkins</summary>
 <details>
