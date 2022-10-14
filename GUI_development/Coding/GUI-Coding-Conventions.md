@@ -192,6 +192,14 @@ It is extremely rare to override Object.finalize.
 Tip: Don't do it. If you absolutely must, first read and understand Effective Java Item 7, "Avoid Finalizers," very carefully, and then don't do it.
 ```
 
+As of Java 9, `finalize` is officially deprecated in java. The IBEX checkstyle configuration is configured to disallow finalizers - this check should not be disabled or overridden.
+
+The remaining options for supported clean-up mechanisms (in preference order) are:
+- Implement `autocloseable` and use the class in a try-with-resources statement to ensure the relevant resource is closed
+- Use a `closeable` and manually call `close` to ensure the relevant resource is closed
+- Refactor to avoid needing to close the resource at all
+- Use a *supported* automatic clean-up mechanism such as `PhantomReference` or `Cleaner` only as a last resort. While these are *better* than finalizers, they still suffer from high complexity and are tricky to get right. In particular it is easy to accidentally create reference loops meaning that objects will never be cleaned.
+
 ### Return a empty collection or stream, not null ###
 For methods that return arrays/lists/maps/sets/streams etc. don't return null. It is cleaner to return an empty instance as the calling code does not need to check for null.
 
