@@ -1,16 +1,18 @@
 # Welcome to IBEX!
 
-1. [Using the Developer Wiki](#using-the-developer-wiki)
+1. [Using the Developer Wiki](#using-the-developer-wiki) 
+   1. [Searching the Codebase](#searching-the-codebase)
 2. [Getting Set Up](#getting-set-up)
-   1. [Git](#git)
+   1. [Using Git](#using-git)
    2. [Creating Useful Shortcuts](#creating-useful-shortcuts)
-3. [Familiarising IBEX](#familiarising-ibex)
+   3. [Office Admin Links](#office-admin-links)
+3. [Familiarising with IBEX](#familiarising-with-ibex)
+   1. [Introduction](#introduction)
+   2. [Components and Technical Concepts](#components-and-technical-concepts)
 4. [EPICS Introduction](#epics-introduction)
    1. [Further EPICS](#epics-introduction)
-5. [Input/Output Controller (IOC) Resources](#input-output-controller-resources)
-6. [Control System Studio](#control-system-studio)
-7. [Office Admin Links](#office-admin-links)
-8. [More about IBEX](#more-about-ibex)
+   2. [Input/Output Controller (IOC) Resources](#input-output-controller-resources)
+5. [Control System Studio](#control-system-studio)
 
 This page is designed to be used as a comprehensive reference to getting started in the Instrument Controls team. Written by new-ish starters, for the newest starters. It's a collection of useful resources which will speed up your onboarding and get you developing. 
 
@@ -20,15 +22,25 @@ There are many how-to guides in the Developer's manual. If you're searching for 
 
 ![Wiki Search Results](https://raw.githubusercontent.com/ISISComputingGroup/ibex_developers_manual/master/images/wiki_halp.png)
 
+Being able to use the wiki is as much a skill as learning to use any of our tools. If you're stuck, this can be really useful - try searching for different keywords from your ticket. 
+
+### Searching the Codebase
+
+Another mode of attack is searching through our codebase for particular code snippets, which is equally useful! You don't need to reinvent the wheel - you can search to see how code has been already written for a similar purpose, find examples of how unfamiliar concepts are used, or see our coding conventions for certain processes. This is also a good way to locate files if you don't know where they live, but know some keywords they may contain! 
+
+You can do this by searching in [ISISComputingGroup](https://github.com/ISISComputingGroup/ibex_developers_manual) and clicking on the 'Code' tab (as seen above).
+
 ## Getting Set Up
 
 First off you're going to need all the developer tools we use, a copy of the existing codebase, and the Eclipse GUI for IBEX*.
 
 - [Installing the Backend System](First-time-installing-and-building-(Windows))
 
-### Git
+Don't forget to come back afterwards!
 
-We use Git for version control of the codebase. For IBEX-flavoured git help, see:
+### Using Git
+
+We use Git for version control of the codebase. For IBEX-flavoured Git resources, see:
 
 - [Our Github resources](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Working-with-Git-and-GitHub)
 - [IBEX Git workflow](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Git-workflow)
@@ -36,22 +48,39 @@ We use Git for version control of the codebase. For IBEX-flavoured git help, see
 If you're not familiar with it, learn it!
 
 - [Github's own Git tutorials](https://try.github.io/)
-- [Friendly git sandbox](https://learngitbranching.js.org/) - the remote tutorials in partiular
-- [Nice intro to the concept of Git & version control](https://swcarpentry.github.io/git-novice/01-basics/index.html)
+- [Friendly git sandbox](https://learngitbranching.js.org/) - the 'remote' tutorials in partiular
+- [Nice intro to Git & version control](https://swcarpentry.github.io/git-novice/01-basics/index.html)
 
 ### Creating Useful Shortcuts
 
-There's a couple files/commands you'll find yourself using a lot. You can make desktop shortcuts to these that will make your like a lot easier!
+There's a couple files/commands you'll find yourself using a *lot*. It's handy to create desktop shortcuts for these frequently used links:
 
 - `EPICSTerm` (The EPICS terminal window where IOCs are built and run)
 - `start_ibex_server`
 - `stop_ibex_server`
 
-These are found in `C:\Instrument\Apps\EPICS`
+These can be found in `C:\Instrument\Apps\EPICS`.
 
-## Familiarising IBEX
+### Office Admin Links
 
-###### IBEX: Introduction
+As a new starter you should add your name and picture to the training [slides](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Forms/AllItems.aspx?RootFolder=%2Fisis%2Fcomputing%2FICPdiscussions%2FTraining&FolderCTID=0x01200027AD8F05966A2748B3B04C98BB5B442B&View=%7BF2C33C51-70E6-4343-B937-2C59A2568306%7D).
+
+- [ISIS Sharepoint](https://www.facilities.rl.ac.uk/isis/default.aspx) - Shared ISIS documents, manuals, meeting minutes etc
+- [Oracle Login](https://portal.ssc.rcuk.ac.uk/) - Book leave, create timesheets
+- [Flexi Time](https://flexiral.stfc.ac.uk/FCDWeb/) - If you're on Flexi time and need to view/edit your work history
+- [Health & Safety Training](https://lmsweb.stfc.ac.uk/moodle/login/index.php)
+
+Here's some useful bits and bobs for how our team operates and the conventions we use in our work.
+
+- [IBEX Processes](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Processes) - Logistics of the day-to-day
+- [IBEX Project Board](https://github.com/ISISComputingGroup/IBEX/projects/1) - Where our tickets live
+- [Tickets and their Workflow](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Tickets-and-their-Workflow)
+- [Standards and Conventions](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Standards-&-Conventions)
+- [Useful Tools](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Useful-tools)
+
+## Familiarising with IBEX
+
+### Introduction
 
 While that's installing, get to know the IBEX components. Get to know EPICS. It's the software environment that IBEX uses to control the ISIS instruments. 
 
@@ -61,9 +90,13 @@ Ironically, to get a well-explained overview of what IBEX is, and how to interac
 - [IBEX GUI Features](https://github.com/ISISComputingGroup/ibex_user_manual/wiki/IBEX-GUI-Features)
 - [How To Do Things In IBEX](https://github.com/ISISComputingGroup/ibex_user_manual/wiki/How-To-Do-Things-In-IBEX)
 
-###### IBEX: EPICS and technical bits
+There are some training materials available that we use to train scientists on IBEX, which is also a nice way to get started:
 
-From a more technical perspective, some pages to read over: 
+- [IBEX training](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Forms/AllItems.aspx?RootFolder=%2Fisis%2Fcomputing%2FICPdiscussions%2FTraining&FolderCTID=0x01200027AD8F05966A2748B3B04C98BB5B442B&View=%7BF2C33C51-70E6-4343-B937-2C59A2568306%7D)
+
+### Components and Technical Concepts
+
+Some pages to read over: 
 
 - [System Components](System-Components)
 - [Useful tools](Useful-tools)
@@ -93,9 +126,11 @@ There is much to learn about EPICS and it can be difficult to know what you're l
 - [ASYN/Stream Device overview](https://epics.anl.gov/docs/USPAS2014/2-Tuesday/SNL_2_Sequencer.pdf)
 - [YouTube Videos covering the epics.gov.anl slideshows](https://epics.anl.gov/docs/APS2015.php)
 
-## IOC (Input Output Controller) Resources
+### Input Output Controller Resources
 
-When building an IOC, emulator, or writing tests, much can be learned by looking at existing IOCs. However, there are also several places online to find good sources for learning and referencing. 
+When building an IOC, emulator, or writing tests, much can be learned by looking at existing IOCs: these can be found in `C:\Instrument\Apps\EPICS\ioc\master`.
+
+However, there are also several places online to find good sources for learning and referencing. 
 
 - [Creating & Basics of IOCs](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/IOCs) - Our guide to creating IOCs and how they work. Lots of useful tips!
 - [Protocol Files and Record Types](http://epics.web.psi.ch/software/streamdevice/doc/protocol.html) - Excellent reference for when you're mixing up your %d's and %f's. Bookmark this one!
@@ -103,30 +138,12 @@ When building an IOC, emulator, or writing tests, much can be learned by looking
 
 ## Control System Studio
 
-We use a number of parts of CSS in our GUI (Alarms, Databrowser etc.). Most of these resources require little developer interaction apart from creating Operator Interfaces (OPIs - GUIs, essentially) for the instrument controllers. Here's an overview and get started guide.
+We use a number of parts of Control System Studio (CSS) in our GUI (Alarms, Databrowser etc.). Most of these resources require little developer interaction apart from creating Operator Interfaces (OPIs) - GUIs, essentially - for the instrument controllers. It can be useful to create a desktop shortcut of this too.
 
+Here's an overview and a get started guide.
+
+- [Creating OPIs](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/OPI-Creation) - An introduction for how we use CSS and to set it up on your computer
 - [Overview of CS-Studio](https://epics.anl.gov/docs/USPAS2014/1-Monday/CSS_1_Overview.pdf)
 - [Intro to using CS-Studio](http://www.aps.anl.gov/epics/docs/USPAS2014/1-Monday/CSS_2_First_Steps.pdf)
-- [Creating OPIs](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/OPI-Creation)
 
-## Office Admin Links
-
-As a new starter you should add your name and picture to the training [slides](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Forms/AllItems.aspx?RootFolder=%2Fisis%2Fcomputing%2FICPdiscussions%2FTraining&FolderCTID=0x01200027AD8F05966A2748B3B04C98BB5B442B&View=%7BF2C33C51-70E6-4343-B937-2C59A2568306%7D).
-
-- [ISIS Sharepoint](https://www.facilities.rl.ac.uk/isis/default.aspx) - Shared ISIS documents, manuals, meeting minutes etc
-- [Oracle Login](https://portal.ssc.rcuk.ac.uk/) - Book leave, create timesheets
-- [Flexi Time](https://flexiral.stfc.ac.uk/FCDWeb/) - If you're on Flexi time and need to view/edit your work history
-
-## More about IBEX
-
-There are some training materials available that we use to train scientists on IBEX. It is a good way to get started on learn about what IBEX is and the features that are available in it.
-
-- [IBEX training](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Forms/AllItems.aspx?RootFolder=%2Fisis%2Fcomputing%2FICPdiscussions%2FTraining&FolderCTID=0x01200027AD8F05966A2748B3B04C98BB5B442B&View={F2C33C51-70E6-4343-B937-2C59A2568306})
-
-## Our workflow
-
-Here's some useful bits and bobs for how our team operates, and the conventions we use in our development process.
-
-- [IBEX Project Board](https://github.com/ISISComputingGroup/IBEX/projects/1) - Work tickets
-
-- [Standards and Conventions](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Standards-&-Conventions)
+You can find CSS at `C:\Instrument\Apps\EPICS\CSS\master`.
