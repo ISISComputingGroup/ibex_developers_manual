@@ -6,13 +6,11 @@ NOTE: if you just want a recent EPICS build for somewhere, you just need to run 
 
 ## EPICS
 
+You need to be using a Visual Studio compatible with the build server, currently `Visual Studio 2019` and from "help about" it needs to be `16.11.*` or later
+
 ### quick instructions
 
-* You need to be using a Visual Studio compatible with the build server, currently `Visual Studio 2019` and from "help about" it needs to be `16.11.*` or later
-* run `stop_ibex_server.bat` from `c:\Instrument\Apps\EPICS` (if this directory already exists)
-* rename any existing `c:\Instrument\Apps\EPICS` to a different name. If you care about the contents, then keep this for a later rename back. If you don't care (all work pushed to github) then delete it. The reason for doing a rename first is that it confirms no EPICS processes remain running that may cause the robocopy below to not complete properly.     
-* run `robocopy \\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer\EPICS\x64 c:\Instrument\Apps\EPICS -MIR -NFL -NDL -NP -R:1 -MT -LOG:NUL` and wait
-* As an extra check you can run `robocopy \\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer\EPICS\x64 c:\Instrument\Apps\EPICS -MIR -NFL -NDL -NP -R:1 -MT` (as above but no LOG option). This should not take too long and should not print any errors or have any entries in the Mismatch/FAILED/Extras columns displayed at the end.  
+In `\\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer` run `install_developer_build.bat`
  
 ### details
 
@@ -21,7 +19,13 @@ much more than an instrument installation e.g. it has all the local `.git` submo
 
 CAUTION: updating an existing `C:\Instrument\Apps\EPICS` by the mechanism described here is the equivalent of deleting the directory, a full new `git clone --recursive` and then a build. You will lose all current changes to files and also any local git branches you created in that directory. Any changes there you want to keep you must push to Github and then re-checkout the branch after the update. Stashing changes to files is not enough as the local git repos are replaced - you need to push remotely.
 
-After running above robocopy command, you should have a compiled and ready to use distribution, with git pointing at current commit heads.
+run
+```
+robocopy \\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer\EPICS\x64 c:\Instrument\Apps\EPICS -MIR -NFL -NDL -NP -R:1 -MT -LOG:NUL
+```
+As an extra check you can run `robocopy \\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer\EPICS\x64 c:\Instrument\Apps\EPICS -MIR -NFL -NDL -NP -R:1 -MT` (as above but no LOG option). This should not take too long and should not print any errors or have any entries in the Mismatch/FAILED/Extras columns displayed at the end.  
+
+you should have a compiled and ready to use distribution, with git pointing at current commit heads.
 This may take a while to complete - at least 10 minutes, but longer if your disk is not an SSD for example.
 
 **Alternative for slow network connection**
