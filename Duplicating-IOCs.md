@@ -1,6 +1,9 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [Creating and Basics of IOCs](IOCs) > Duplicating IOCs
+## IOC Duplication script
+There is a script in ibex utils to duplicate IOCs, more information can be found [here.](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Shared-utility-scripts#ioc-copier)
 
-## Creating IOC 2
+The manual instructions below can also be used.
+<summary>Manual instructions</summary><details>## Creating IOC 2
 If you need more than 1 IOC (i.e. you are making the second IOC) there is only a process to follow, rather than a script, as various IOCs can have their own nuances: so take this with a grain of salt. Let us refer to the IOC you are duplicating as `newIOC`, for clarity.
 
 Navigate to an IOC folder which has two or more IOCs: here we have two folders to focus on, `<ioc>/iocBoot/` and `<ioc>/<ioc>-IOC-0<n>App` (where `n` is the number of IOCs). Make sure this IOC has a `st-common.cmd` file (to make your life easier!). Let us refer to this as `refIOC`. 
@@ -34,6 +37,10 @@ This one may be slightly less straightforward. There may be nuances and addition
       - In the `Makefile`, update `APPNAME` with the correct IOC number - but the `include ...` line needs to stay the same. 
 5. Check whether `<newIOC>-IOC-01App` has a **`protocol`** file
       - If it does, just copy this across. As far as I can see, the Makefiles and folder contents seem to be the same.
+</details> 
+
+### After duplication
+After either using the script or creating dulicates manually be sure to make and test to IOC.
 
 ### Making the IOC
 1. **`make`** the `<newIOC>` folder
@@ -46,6 +53,3 @@ Refactor `DEVICE_PREFIX` to `<newIOC>_02` and you will need to refactor any call
 
 ****WARNING:**** If you will also be making more IOCs via the method below, you should be _very_ confident that your new `<newIOC>_02` behaves the same as `<newIOC>_01` before duplicating: any issues with `<newIOC_02` will be propagated in _every_ other new IOC you make as well.
 >
-
-## Creating IOC 3 and higher
-If you need more than 2 IOCs, there is a script to duplicate IOCs: more information can be found [here.](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Shared-utility-scripts#ioc-copier)
