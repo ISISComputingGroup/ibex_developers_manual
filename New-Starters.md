@@ -48,7 +48,7 @@ We use Git for version control of the codebase. For IBEX-flavoured Git resources
 If you're not familiar with it, learn it!
 
 - [Github's own Git tutorials](https://try.github.io/)
-- [Friendly git sandbox](https://learngitbranching.js.org/) - the 'remote' tutorials in partiular
+- [Friendly git sandbox](https://learngitbranching.js.org/) - the 'remote' tutorials in particular
 - [Nice intro to Git & version control](https://swcarpentry.github.io/git-novice/01-basics/index.html)
 
 ### Creating Useful Shortcuts
