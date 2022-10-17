@@ -26,7 +26,7 @@ Beckhoff code can be run as a simulated system on a developer machine by doing t
 
 _NB the IOC tests do not stop the PLC at the end of the run, however this isn't a problem as the PLC is restarted when the IOC tests start._
 
-_When you have finished testing/reviewing a PR, it is best to run unsettick.bat and reboot - otherwise you will have loads of "time discontinuity detected" messages in IOC logs_
+_When you have finished testing/reviewing a PR, it is best to run `unsettick.bat` and reboot - otherwise you will have loads of "time discontinuity detected" messages in IOC logs_
 
 ## Other information on testing and configuring a Beckhoff
 ### Using XAE shell to manually build a PLC
