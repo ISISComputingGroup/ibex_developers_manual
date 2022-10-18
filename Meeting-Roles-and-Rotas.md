@@ -2,8 +2,6 @@
 
 It was decided that we would set up a rota for the various roles in IBEX meetings, a rota is below. There is only a single rota for each type of role, although not all roles are needed at all meetings, there is a column then to indicate where in the rota we are. If the person scheduled on the rota isn't available, then a volunteer will be asked for at the beginning of the meeting and we will continue the rota next time. If you are scheduled for more than one role choose which one you do this time, and you get to do the other one next time. At the moment this should cover for 6 months, and it is not a repeating pattern, and it is subject to change.
 
-Don't forget the [drop in sessions](https://github.com/ISISComputingGroup/IBEX/wiki/Instrument-Control-Drop-in-Session) as well.
-
 # Role descriptions:
 ## Chair 
 * Needed for Pre-Planning, Review/Retrospective, and Planning
