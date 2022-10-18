@@ -37,7 +37,7 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
  |LC | 19/09/2022 |x |
  |DK | 26/09/2022 |x |
  |TL | 03/10/2022 |x |
- |LJ | 10/10/2022 | |
+ |LJ | 10/10/2022 |x |
  |FA | 17/10/2022 | |
  |LC | 24/10/2022 | |
  |JH | 31/10/2022 | |
