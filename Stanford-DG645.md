@@ -9,6 +9,29 @@ Currently does not support RECSIM mode.
 ## Connection
 The device supports varying BAUD rates but other communication parameters are fixed, hence we do not have macros for them. Default BAUD rate is 9600.
 
+The device also supports an ethernet connection using Telnet. In order to connect via ethernet, follow these steps on the device:
+1. In the NET menu (SHIFT -> STO) set:
+    1. TCPIP = Enabled
+
+    2. DHCP = Enabled
+
+    3. Telnet = Enabled
+
+    4. Reset = Yes
+
+    5. Press the Enter Button
+2. Then access the status menu (SHIFT -> 6) and use the arrows to navigate to TCPIP Status.
+2. Press 6 until you get to IP
+3. Make a note of this IP address
+
+Then in IBEX:
+
+5. Set the `INTERFACE` macro to `ETHERNET`
+6. Set the `ADDR` macro to the IP you wrote down earlier
+7. Start the IOC
+
+This IP will be reassigned if the device is down for a while. So steps 2-7 will need to be repeated.
+
 ## Usage
 The IOC currently covers setting and reading of delays of channels T0, T1, A, B, C, D, E and F. T0 is the base channel that is not changeable from the IOC. Channels A-F can be configured to have their own delay value, offset by reference to another channel. For example:
 - Channel T0 is currently 0ms
