@@ -40,7 +40,7 @@ This one may be slightly less straightforward. There may be nuances and addition
 </details> 
 
 ### After duplication
-After either using the script or creating dulicates manually be sure to make and test to IOC.
+After either using the script or creating duplicates manually be sure to make and test to IOC.
 
 ### Making the IOC
 1. **`make`** the `<newIOC>` folder
