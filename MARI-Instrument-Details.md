@@ -69,7 +69,12 @@ Neocera is used only occasionally.  [Neocera LTC-21 Manual](http://www.submm.cal
 
 ##### Note: Sample Changer #####
 This is a single-axis cryogenic sample changer with up to 4 positions (sample cans).<br>
-At the time of writing, this is in a very early design stage with the hope of delivering the device for the February 2019 cycle.  The motion control part will most likely be a Beckhoff if funds allow, and a Mclennan otherwise.  The temperature control will be handled by a Eurotherm.<br>
+The changer is now in use and runs with a Mclennan controller via RS232/MOXI.
+There is still a plan to use a Beckhoff controller in future.<br>
+The changer is driven by an instrument script which has the rotation angle corresponding to each position hard-coded in.<br>
+The script will also perform a home scan on request. This is usual done when samples are mounted.<br>
+The changer should only be rotated in one direction, otherwise there is a risk the head will unscrew itself. The instrument script knows and enforces this condition.<br>
+The temperature control will be handled by a Eurotherm.<br>
 [Project Details](http://www.facilities.rl.ac.uk/isis/projects/_layouts/listform.aspx?PageType=4&ListId={EB0AB6DD-0B50-4DBD-8C95-E45C95069C26}&ID=541&ContentTypeID=0x01000DF6FB717D3FBD47809FF94DE29BBBC4) and 
 [Project Plan](https://tasks.office.com/stfc365.onmicrosoft.com/en-US/Home/PlanViews/8bdu_4UTBUeZwF_PB8SLIpYAESGr)
 
@@ -79,9 +84,7 @@ MARI has a number of SECI configurations, which need to be migrated.
 ## MARI Genie Scripts ##
 Critical OpenGenie scripts for initialisation and focussing.
 
-MARI has a number of instrument specific Genie scripts. These need to be migrated to genie_python.
-
-It would be useful to have a script to put the instrument into "white beam" mode (i.e. allow a broad range of neutron wavelengths).  Discuss this with the instrument scientists.
+MARI has a number of instrument specific Genie scripts. These have now been migrated to genie_python.
 
 ## MARI Notes ##
 1. MARI does not currently use a script generator, but there is interest in having one in the future.
