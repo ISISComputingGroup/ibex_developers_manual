@@ -1,12 +1,6 @@
 > [Wiki](Home) > [Deployment](Deployment) > [Deployment on an Instrument Control PC](Deployment-on-an-Instrument-Control-PC)
 
-This document describes the steps necessary to install/upgrade IBEX on an Instrument control PC.  Most of these steps are superseded by the install script (but we are not quite ready to commit to this).  This document is the reference for deployment. Be sure to login as `spudulike` when deploying on instruments instead of `gamekeeper`.
-Steps are marked with **bold** prefixes to indicate the following:
-- **deploy** step to be done when using the deploy script
-- **upgrade** steps to be done when upgrading 
-- **install** steps should be done only for install
-- **mini-inst** only these steps should be done for installation of a mini inst server. After installation [configure](Configure-Mini-Inst) it in the appropriate manner.
-- unlabelled steps should be done except for installing a mini inst.
+This document describes the steps necessary to install/upgrade IBEX on an Instrument control PC. Be sure to login as `spudulike` when deploying on instruments instead of `gamekeeper`.
 
 # Steps using the install/deployment script
 ## Preparatory Steps for Client and Server
@@ -15,7 +9,7 @@ Steps are marked with **bold** prefixes to indicate the following:
 - Visit each instrument on which code will be released and check for changes which have been made which are not summarised on the [IBEX wiki](https://github.com/ISISComputingGroup/IBEX/wiki#instrument-information). Do this by running `git status` in the EPICs directory and looking at the diff and comparing with those changes.
 - Make sure that the public share has the most recent version of the install and upgrade information from Git (i.e. do git pull).
 
-#### install
+#### install IBEX for the first time
 - Run `<public share>\ibex_utils\installation_and_upgrade\instrument_install.bat` (if you are on a test machine you may have to enter the full DNS path rather than the shorthand)
     - It will look for the highest version number in the release folder as a source.
     - If you want to install a non-default release you need to set the `SUFFIX` variable in the batch file. For example with `x.y.z` being the current release and `hotfix` being the suffix, it will look for the folder `Releases/x.y.z-hotfix`
@@ -24,7 +18,7 @@ Steps are marked with **bold** prefixes to indicate the following:
 - After the script has successfully finished and the IBEX server has been started, run `instrument_test.bat` in the same folder and follow the instructions.
 - If not already set, change the Windows theme to "Windows 7" in the "Aero Themes" section.  Also change the background to solid light grey.
 
-#### upgrade
+#### upgrading IBEX to the latest version
 - If the machine is down install latest java
     - On firewall prompt reply yes
 - Ensure the instrument is running and in a setup state (e.g. so you can take screenshots of blocks, motors, running VIs, etc.)
