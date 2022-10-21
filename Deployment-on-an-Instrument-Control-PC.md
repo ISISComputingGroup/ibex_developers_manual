@@ -7,7 +7,7 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
 
 - Inform the instrument scientist that you are going to upgrade the instrument in 5 minutes so that they are not surprised when you remote desktop to the instrument, include a link to the release notes of the latest release in this email. Wait 5 minutes.
 - Visit each instrument on which code will be released and check for changes which have been made which are not summarised on the [IBEX wiki](https://github.com/ISISComputingGroup/IBEX/wiki#instrument-information). Do this by running `git status` in the EPICs directory and looking at the diff and comparing with those changes.
-- Make sure that the public share has the most recent version of the install and upgrade information from Git (i.e. do git pull).
+- Make sure that the public share has the most recent version of `ibex_utils` from Git (i.e. do git pull).
 
 #### install IBEX for the first time
 - Run `<public share>\ibex_utils\installation_and_upgrade\instrument_install.bat` (if you are on a test machine you may have to enter the full DNS path rather than the shorthand)
@@ -16,26 +16,16 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
     - Follow the instructions on the command line. 
 - If needed, shutdown IBEX and [upgrade the ISISICP](Upgrade-ISISICP). Remember to run the journal parser installation (Step 8 of upgrading ICP) - this can take some time.
 - After the script has successfully finished and the IBEX server has been started, run `instrument_test.bat` in the same folder and follow the instructions.
-- If not already set, change the Windows theme to "Windows 7" in the "Aero Themes" section.  Also change the background to solid light grey.
 
 #### upgrading IBEX to the latest version
-- If the machine is down install latest java
-    - On firewall prompt reply yes
 - Ensure the instrument is running and in a setup state (e.g. so you can take screenshots of blocks, motors, running VIs, etc.)
 - Ensure all command lines to EPICS are closed
-- (**Do not do this step for upgrades from 7.2.0 and upwards it is done as a step in instrument_deploy.bat**) Upgrade the ISISICP 
-  - Shutdown IBEX GUI (server should remain running)
-  - Use `console -M isisdae` to connect into ISISDAE-IOC-01 IOC and stop this IOC
-  - Run [Upgrade the ISISICP](Upgrade-ISISICP)
-  - ReStart ISISDAE-IOC-01 IOC from the previous console
 - Run `<public share>\ibex_utils\installation_and_upgrade\instrument_deploy.bat` 
     - It will look for the highest version number in the release folder as a source.
     - If you want to install a non-default release you need to set the `SUFFIX` variable in the batch file. For example with `x.y.z` being the current release and `hotfix` being the suffix, it will look for the folder `Releases/x.y.z-hotfix`
-    - As of 24.07.2020, the script has a bug where it fails on the first run with the message ` `""` is not a valid command `. Re-run the script to fix this. But you need to be in a cmd window, and not PowerShell for this to work. To navigate to the public share in a cmd, you need to use pushd instead of cd. 
     - Apart from the below points, just follow instructions
     - Be warned the upgrade runs in 3 steps and so will claim to have finished the upgrade 3 times
     - Do not remove any SECI icons from the task list if this is not the first time install
-    - after everything is installed and the script has finished you must restart the server from a different command line.
 
 # Manual deploy instructions
 
