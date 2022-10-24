@@ -8,7 +8,7 @@ Code chats occur on a semi-regular monthly basis within the group at ISIS. Altho
 
 Topic | Presenter | Date
 ----- | --------- | ----
- |  |
+ Ibex Gui Build System (Maven) | Tom Willemsen | TBD
 
 
 ### Books and article ideas for technical book club
