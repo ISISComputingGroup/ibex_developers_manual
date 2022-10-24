@@ -55,11 +55,12 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
     1. Genie Python
         1. `...\Python\Lib\site-packages\genie_python\version.py` edit `VERSION = "0.0.0.qualifier"` to VERSION = "X.x.m"
 1. Commit your changes and push.
-1. For the builds `ibex_gui_release`, `genie_python_release`, `scriptgenerator_release` and `EPICS_release`, do the following:
+1. For the builds `ibex_gui_release`, `genie_python_release`, `scriptgenerator_release`, `EPICS_release` and `EPICS_release32`, do the following:
     1. Find the release build pipeline in Jenkins
     1. Click "Scan repository". It should find the new release branch and queue a build.
     1. The release build for script generator will be created in `P:\Kits$\CompGroup\ICP\Releases\script_generator_release\X.x.m`
     1. The release builds for the rest will be created in `P:\Kits$\CompGroup\ICP\Releases\X.x.m`
+    1. The 32bit release will only build `EPICS` and is created in `P:\Kits$\CompGroup\ICP\Releases\X.x.m\EPICS32`
    
 1. Check that all of the merged tickets have also had their [release notes merged](https://github.com/ISISComputingGroup/IBEX/pulls) then move the changes which have been merged into the release from the [upcoming page](https://github.com/ISISComputingGroup/IBEX/blob/master/release_notes/ReleaseNotes_Upcoming.md) to a new release notes page for the version. Whilst doing this make sure that the release notes are as understandable as possible. 
 1. Create a released version in the [releases table](https://github.com/ISISComputingGroup/IBEX/blob/master/docs/all-releases.md) (including link to release notes)
