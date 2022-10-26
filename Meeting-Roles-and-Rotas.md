@@ -66,6 +66,6 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
 | 2022_11_24_Review/Retro| JH |  | HC|  | NR|  |
 | 2023_01_05_Planning| KB |  | CMS|  | |  |
 | 2023_02_02_Pre-Planning| -- |  | --|  | |  |
-| 2023_01_05_Review/Retro| KB |  | NR|  | |  |
+| 2023_01_05_Review/Retro| KB |  | NR|  | HC |  |
 | 2023_02_02_Planning| KB |  | DK|  | |  |
 
