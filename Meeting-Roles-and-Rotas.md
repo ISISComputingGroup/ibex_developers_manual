@@ -60,8 +60,8 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
 | 2022_10_06_Review/Retro| FA |  | JH|  | LJ |   |
 | 2022_10_27_Planning| KB |  | TL|  | |  |
 | 2022_11_24_Pre-Planning| -- |  | --|  | |  |
-| 2022_10_27_Review/Retro| FA |  | DK|  | TL|  |
-| 2022_11_24_Planning| KB |  | FA|  | |  |
+| 2022_10_27_Review/Retro| DK |  | FA|  | TL|  |
+| 2022_11_24_Planning| KB |  | DK|  | |  |
 | 2023_01_05_Pre-Planning| -- |  | --|  | |  |
 | 2022_11_24_Review/Retro| JH |  | HC|  | NR|  |
 | 2023_01_05_Planning| KB |  | CMS|  | |  |
