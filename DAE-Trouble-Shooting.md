@@ -388,6 +388,8 @@ Again, only seen on windows server. To resolve:
 * add account trying to run isisicp to "distributed com users" local windows group
 * run `dcomcnfg` command and make sure "distributed com users" has appropriate default permissions (it should already have appropriate limit permissions, but check)
 
+If you get the error "server execution failure" (seen on MUONFE) and also the system log has errors/crashes mentioning `visa64.dll` then you need to copy all the DLL files in `c:\labview modules\dae\service\x64\visa` into `c:\labview modules\dae\service\x64\release`
+
 ### DAE not showing period changes in NeXus data file when running in event mode
 
 Due to a historical problem with electronic noise causing random period changes, many instruments have a setting enable to set the period number to 1 in event mode data events regardless of what the DAE claims it is. To make the DAE vale be used you will need to edit `isisicp.properties` in `c:\labeview modules\dae` and add/update the line to be `isisicp.badheaderworkaround = false` then restart the `isisicp` process
