@@ -388,7 +388,7 @@ Again, only seen on windows server. To resolve:
 * add account trying to run isisicp to "distributed com users" local windows group
 * run `dcomcnfg` command and make sure "distributed com users" has appropriate default permissions (it should already have appropriate limit permissions, but check)
 
-If you get the error "server execution failure" (seen on MUONFE) and also the system log has errors/crashes mentioning `visa64.dll` then you need to copy all the DLL files in `c:\labview modules\dae\service\x64\visa` into `c:\labview modules\dae\service\x64\release`
+If you get the error "server execution failure" (seen on MUONFE) and also the system log has errors/crashes mentioning `visa64.dll` then you need to copy all the DLL files in `c:\labview modules\dae\service\x64\visa` into `c:\labview modules\dae\service\x64\release`. This probably indicates an incompatibility between the system installed visa and what isisicp is expecting. Only seen on MUONFE which runs in simulation mode, so not worried about which visa version being used. If seen on a DAE2 instrument may need more looking at as these machines use visa client-server to the NDH, and the visa versions either end need to match to some level.     
 
 ### DAE not showing period changes in NeXus data file when running in event mode
 
