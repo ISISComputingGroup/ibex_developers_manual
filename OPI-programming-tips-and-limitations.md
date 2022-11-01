@@ -244,7 +244,7 @@ If you need to execute *all* rules in JS (e.g. a major bug is found in `RhinoWit
 
 Note that you will need to increase the GUI heap size parameter if this is done, particularly on reflectometers, as the reflectometry OPI uses huge numbers of rules which cause excessive memory consumption under javascript.
 
-### Importing scripts into other scripts
+# Importing scripts into other scripts
 
 If you need complicated scripts with imports - first consider the design of your OPI. Most OPIs should aim not to require any scripts at all, for example by moving logic into the IOC layer.
 
