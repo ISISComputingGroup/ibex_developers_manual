@@ -243,3 +243,25 @@ In `/uk.ac.stfc.isis.ibex.opis/src/uk/ac/stfc/isis/ibex/opis/Opi.java`, call `Rh
 If you need to execute *all* rules in JS (e.g. a major bug is found in `RhinoWithFastPathScriptStore`), it can be entirely disabled by editing `org.csstudio.opibuilder/java_script_engine=RHINO_WITH_FAST_PATH` to `org.csstudio.opibuilder/java_script_engine=RHINO` in `/uk.ac.stfc.isis.ibex.e4.client/plugin_customization.ini`. 
 
 Note that you will need to increase the GUI heap size parameter if this is done, particularly on reflectometers, as the reflectometry OPI uses huge numbers of rules which cause excessive memory consumption under javascript.
+
+### Importing scripts into other scripts
+
+If you need complicated scripts with imports - first consider the design of your OPI. Most OPIs should aim not to require any scripts at all, for example by moving logic into the IOC layer.
+
+However, in some cases it is useful to be able to create generic scripts and import them into other scripts. The CS-Studio Jython instance does not allow access to `__file__`, so it is not always possible to add a known import directory to python's path.
+
+The workaround is to use something like:
+
+```python
+from java.lang.System import getProperty as getJavaSystemProperty
+
+import sys
+import os
+resources_dir = getJavaSystemProperty("ibex.opis.resources_directory")
+sys.path.append(os.path.join(resources_dir, "HV", "Scripts"))
+# ... import from HV.Scripts.something
+```
+
+The `ibex.opis.resources_directory` property is set from Java before any OPIs load in `base/uk.ac.stfc.isis.ibex.opis/src/uk/ac/stfc/isis/ibex/opis/Opi.java`
+
+Note that hard-coding a path like `c:\instrument\dev\ibex_gui\...\resources` would fail on an instrument as the client will be installed in a different location - so this system property **must** be used instead.
