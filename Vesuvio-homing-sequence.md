@@ -21,7 +21,7 @@ Goto the motor details page in ibex
 
 The offset value in the Calibration section should not get altered by this procedure, as the dial position is zero both the user readback value and the offset should be the same and reflect the position you currently expect (42.5 right, -41.75 left). 
 
-To test you could drive to the other limit and back etc. Whenever you drive to the  appropriate homing limit the Dial value should end up being 0 (or very close to)
+To test you could drive to the other limit and back etc. using the `Jog:` buttons. Whenever you drive to the  appropriate homing limit the Dial value should end up being 0 (or very close to)
 
 Note: Ibex stores the “offset” and high/low soft limits as part of the configuration, so if these are changed on the motor details they would also need to be changed on the config page or they will get reset on an ibex restart. I think I have adjusted the left ones to work on the above procedure, but we can check later.
 
