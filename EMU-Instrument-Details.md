@@ -127,6 +127,25 @@ EMU_place_holder2.conf             | -                                          
 
 ## EMU Genie Scripts ##
 Similarly, Document information about EMU SECI Genie scripts here.
+### Booster heater issues
+
+Scientists initially raised concerns about intermittent invalid alarms and it appears this is due to communication failures to a mercury (see [#6286](https://github.com/ISISComputingGroup/IBEX/issues/6286)).
+
+These intermittent caused a failure to switch on the booster heater. The reason for this was that the booster heater script refers to the `Temp_Sample` block for determining whether it should switch the heater on, and if the target temperature is higher than `Temp_Sample`, it will start using the booster heater by csetting the same block. If the block is temporarily in ‘invalid’, then it certainly fails to read and set the temperature (and just carries on).
+
+[#6286](https://github.com/ISISComputingGroup/IBEX/issues/6286) was then closed with a temporary increased stream device lock timeout - from 5 to 30 seconds.
+
+The problems from [#6286](https://github.com/ISISComputingGroup/IBEX/issues/6286) then reoccurred on the 22nd and 23rd of May 2021, which spawned tickets [#6270](https://github.com/ISISComputingGroup/IBEX/issues/6720) (issues concerning communicating with the mercury) and [#6271](https://github.com/ISISComputingGroup/IBEX/issues/6721) (issues concerning the booster heater). In [#6270](https://github.com/ISISComputingGroup/IBEX/issues/6720), there was some debate over whether there were differences in the mercury's setup on the day (some addresses of the daughter boards were changed) which could have caused the reoccurence of the issue.
+
+Investigation showed the device failed to reply as fast in busy periods and didn't reply as quickly as usual, and that a reply timeout trips up the IOC until it gets time to send the commands again and get a correct response. It was suggested that increasing the reply timeout slightly would fix this, but also that it was pertinent to investigate why on the 23rd and 22nd of May this was more prominent. Adding `@replyTimeout` handlers didn't seem to help very much either.
+
+Some possible solutions considered:
+
+- Match the way LabVIEW comms are done
+- Increase the reply timeout
+
+Sep 2021: Added a [retry mechanism](https://github.com/ISISComputingGroup/EPICS-StreamDevice/compare/master...Ticket6720_add_max_retries_for_mercury_issues) for protocols. 
+Lacking documentation about whether this deployment to EMU was successful, and how above changes have affected the status of [#6271](https://github.com/ISISComputingGroup/IBEX/issues/6721).
 
 ## EMU Notes ##
 EMU has the following specialist panels:
