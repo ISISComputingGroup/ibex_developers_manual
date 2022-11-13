@@ -4,7 +4,8 @@ Information about the beam current and instrument shutter status is stored in th
 
 This information is fed from an IOC running on a machine on the accelerator network (merckx.isis.rl.ac.uk). This is a [Open VMS](https://en.wikipedia.org/wiki/OpenVMS) machine with the EPICS distribution from [here](https://github.com/FreddieAkeroyd/EPICS-VMS). The IOC is set to run on boot time and is auto-restarted if it is not present, it will also auto-restart if it receives too many errors, but some failures can cause it to hang.
 
-You can log onto this machine using details on usual access page (you will need to use ssh via something like PuTTY)
+You can log onto this machine using details on usual access page (you will need to use ssh via something like PuTTY, or git bash with `-oHostKeyAlgorithms=+ssh-dss` as an argument)
+
 
 The most likely cause of a problem is that the local database has stopped updating, thus giving an unchanging value. You can can check the server log file with: 
 ```
