@@ -151,7 +151,13 @@ From the DKFPS IOC:
 ```
 stringiftest("POLAR" "$(POLARITY="BIPOLAR")" 5 "BIPOLAR")
 ```
-The operation value is `5`, or `4+1`, so this checks the lhs (`$(POLARITY)`, which defaults to `"BIPOLAR"`) equals the right hand side `"BIPOLAR"`, and puts the result in the `$(POLAR)` also creating `$(IFPOLAR)` and `$(IFNOTPOLAR)` with appropriate space or `#` character 
+The operation value is `5`, or `4+1`, so this checks the lhs (`$(POLARITY)`, which defaults to `"BIPOLAR"`) equals the right hand side `"BIPOLAR"`, and puts the result in the `$(POLAR)` also creating `$(IFPOLAR)` and `$(IFNOTPOLAR)` with appropriate space or `#` character. So if you wanted to execute some lines of `st.cmd` if `POLARITY` equals `BIPOLAR` and some if it wasn't you would type
+```
+$(IFPOLAR) do something 
+$(IFNOTPOLAR) do something else
+```
+
+You'll see this used a lot in the form `$(IFDEVSIM)` and `$(IFNOTDEVSIM)` to eiterh connect to the real hardware or an emulator
 
 Search the `EPICS-ioc` repository for `stringiftest` to see many other examples of usage
 
