@@ -59,7 +59,7 @@ This may be because the hardware flow control is blocking the communications; th
 The Galil driver keeps track of this by setting a value on `MOT:DMC[motor number]:PWRDET:SP` and monitoring the value on the galil. If `MOT:DMC[motor number]:PWRDET:SP` and `MOT:DMC[motor number]:PWRDET` diverge then the galil has lost power and the positions may not be correct. This is check every 5 minutes, and monitored by Nagios.
 The value is automatically updated after a succesful check to avoid burning a value into the galil.
 
-If Nagios is reporting a power cycled galil, ensure the positions have been corrected (by homing or other means), and clear the error by writing to `MOT:DMC[motor number]:PWRDET:RESET:SP`.
+If Nagios is reporting a power cycled galil, ensure the positions have been corrected (by homing or other means, this may be unnecessary if there are absolute encoders), and clear the error by writing to `MOT:DMC[motor number]:PWRDET:RESET:SP`.
 
 ### The Galil reports being at home when it is at a limit, not at the limit switch
 
