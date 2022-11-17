@@ -157,7 +157,7 @@ $(IFPOLAR) do something
 $(IFNOTPOLAR) do something else
 ```
 
-You'll see this used a lot in the form `$(IFDEVSIM)` and `$(IFNOTDEVSIM)` to eiterh connect to the real hardware or an emulator
+You'll see this used a lot in the form `$(IFDEVSIM)` and `$(IFNOTDEVSIM)` to either connect to the real hardware or an emulator
 
 Search the `EPICS-ioc` repository for `stringiftest` to see many other examples of usage
 
