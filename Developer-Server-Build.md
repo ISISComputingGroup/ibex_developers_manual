@@ -1,6 +1,4 @@
-It is possible to use one of the intermediate outputs from a build server as the basis of your local development environment. This can provide you with either a normal `Release` build (EPICS_HOST_ARCH=windows-x64), or a `Debug` build (EPICS_HOST_ARCH=windows-x64-debug) 
-
-If you wish to use a `Debug` build, replace `x64` in paths below with `x64-debug`
+It is possible to use one of the intermediate outputs from a build server as the basis of your local development environment. This can provide you with either a normal `Release` build (EPICS_HOST_ARCH=windows-x64), or a `Debug` build (EPICS_HOST_ARCH=windows-x64-debug) or a different architecture such as 32bit (EPICS_HOST_ARCH=win32-x86)
 
 NOTE: if you just want a recent EPICS build for somewhere, you just need to run the `install_to_inst.bat` in the appropriate build on `kits$` when connected from the machine you want to install it on
 
@@ -8,13 +6,16 @@ NOTE: if you just want a recent EPICS build for somewhere, you just need to run 
 
 You need to be using a Visual Studio compatible with the build server, currently `Visual Studio 2019` and from "help about" it needs to be `16.11.*` or later
 
-### quick instructions
+### Quick Instructions
 
-In `\\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer` run `install_developer_build.bat`
+Run `install_developer_build.bat` in either `\\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer\EPICS` (for 64bit build) or  
+`\\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer\EPICS32` for 32 bit build
  
 ### details
 
-The EPICS clean Windows 10 Jenkins build workspace is copied to  `\\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer\EPICS\x64` - this contains 
+If you wish to use a `Debug` build, replace `x64` in paths below with `x64-debug`
+
+The EPICS clean Windows 10 Jenkins build workspace is copied to  `\\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer\EPICS` - this contains 
 much more than an instrument installation e.g. it has all the local `.git` submodules and `*.lib` link libraries as well as temporary build (`O.*`) object file directories. It can thus be used as the basis for rapid further development work on your local computer. A standard instrument debug install for example would allow you to run an ioc in debug mode, but any further development would require re-generating the relevant `*.lib` files need to link the IOC and so take longer than using a developer debug build. 
 
 CAUTION: updating an existing `C:\Instrument\Apps\EPICS` by the mechanism described here is the equivalent of deleting the directory, a full new `git clone --recursive` and then a build. You will lose all current changes to files and also any local git branches you created in that directory. Any changes there you want to keep you must push to Github and then re-checkout the branch after the update. Stashing changes to files is not enough as the local git repos are replaced - you need to push remotely.
