@@ -9,4 +9,4 @@ The safe way to build another architecture in the same (or different) tree is to
 
 **Note:** it used to be possible to just pass a new architecture to `build.bat` e.g. `build.bat win32-x86` but it looks like recent software packages don't support this and it will need looking at if it is to work again. So use above instead.
  
-If you need a 32 bit build in a hurry check out using a `developer build`
+If you need a 32 bit build in a hurry check out using a [Developer Server Build]
