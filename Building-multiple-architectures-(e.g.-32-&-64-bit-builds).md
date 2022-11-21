@@ -5,8 +5,8 @@ Running config_env selects a default EPICS_HOST_ARCH for builds, and typing "mak
 To build for another architecture without changing your default you need to:
 - Open an epics terminal and run config_env in the normal way
 - Pass a different architecture to build.bat e.g.
-
-    build.bat windows-x64-static
+  * build.bat windows-x64-static
+  * build.bat win32-x86
 
 Note that this just compiles/builds the files, runIOC.bat will still use your default architecture. You can run IOCs manually if you wish to check the new architecture, I'll develop a better system for doing this but currently you can achieve it by temporarily resetting you default architecture (which is in epics_host_arch.txt at the top level) if you are careful.
 
