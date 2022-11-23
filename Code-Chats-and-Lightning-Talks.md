@@ -170,7 +170,7 @@ Motion in Ibex| Jack Harper | 27/04/22 | Not Recorded
 [Docusaurus](https://github.com/JackEAllen/Docusaurus_L_and_D) | Jack Allen | 24/06/22 | [Recorded here.](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/GUI_Chat_Slides/Docusaurus.mp4)
 SANS/TRANS Instrument Scripts | Thomas Cottee Meldrum | 21/07/22 | [Recorded here.](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/GUI_Chat_Slides/SANS%20TRANS%20Instrument%20Scripts.mp4)
 IOC Testing Framework & Emulators | Tom Willemsen | 23/08/22 | [Recorded here.](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/GUI_Chat_Slides/Emulators%20and%20IOC%20Testing%20Framework%20Codechat.mp4)
- Ibex Gui Build System (Maven) | Tom Willemsen | 22/11/22 |
+ Ibex Gui Build System (Maven) | Tom Willemsen | 22/11/22 | [Recorded here.](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/GUI_Chat_Slides/IBEX%20GUI%20build%20System%20Code%20chat.mp4)
 
 
 </details>
