@@ -3,9 +3,9 @@
 | [Freddie Akeroyd](https://github.com/LilithCole) | [Jack Harper](https://github.com/rerpha) | [Lowri Jenkins](https://github.com/LowriJenkins) |
 
 # Items from last retrospective.
- - G34 vs G06 - Opinion doesn't seem particulary strong either way.
+ - G34 vs G06 - Opinion doesn't seem particularly strong either way.
 	- Whichever is more convenient?
-	- Current Booking is until christmas.
+	- Current Booking is until Christmas.
 
 ***
 # Items from this retrospective
@@ -34,8 +34,8 @@
 	- It would be nice to know if something is fundamentally broken
 		- we won't be fixing it for a 6months - a year
 	- Perhaps just test squish and system tests on win11 with a win10 built client
-		- have to be occasional due to squish liscence
-			- squish only takes an hour though, so should be scheduleable
+		- have to be occasional due to squish license
+			- squish only takes an hour though, so should be schedulable
 	- full build node note really needed at the moment, as we're unlikely to have developers or instruments on it.
 
 - Laptop and Desktop
@@ -65,12 +65,12 @@
 
 - Previously running column
 	- relatively new, (this or last deploy?)
-	- could the version and previous version be automatically be on the wikipage?
-		- irrelevent to whether or not we actualy want to display that information on the front page of ibex
-	- Table is already noisey and cluttered, its potentailly useful, but is it useful enough to clutter this table more
-		- the page itself is noisey and cluttered, not nessecarily specific to that table
+	- could the version and previous version be automatically be on the wiki page?
+		- irrelevant to whether or not we actually want to display that information on the front page of ibex
+	- Table is already noisy and cluttered, its potentially useful, but is it useful enough to clutter this table more
+		- the page itself is noisy and cluttered, not necessarily specific to that table
 		- The quick summary of how many release notes to check is useful
-		- should it be on a seperate page?
+		- should it be on a separate page?
 			- Instrument details pages?
 	- Scientists will rarely want this, but if they do are likely to cause trouble if they can't find it.
 		- instrument pages horrendously out of date and unmaintained
@@ -89,7 +89,7 @@
 			- user manual doesn't know what version is on an instrument,
 				- needs time spent on it
 	- helps to be able look in one place for information
-		- however this is just for us, so if theres reason for it to be split then probably better to leave it as is.
+		- however this is just for us, so if there's reason for it to be split then probably better to leave it as is.
 		- possible that some information is in the wrong wiki.
 	- for those who didn't know, wiki on the same repository as release notes.
 		- this means that github search -> organisation -> wikis will find information on any of these.
