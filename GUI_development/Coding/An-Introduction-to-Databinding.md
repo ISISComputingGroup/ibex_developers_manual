@@ -10,7 +10,7 @@ First create an Eclipse plug-in for the back-end:
 
 * Start the plug-in wizard via File->New->Plug-in Project
 
-* On the first page of the wizard enter org.databinding.example.backend as the name
+* On the first page of the wizard enter `org.databinding.example.backend` as the name
 
 * On the second page:
 
@@ -23,7 +23,7 @@ Next create a plug-in for the UI side:
 
 * Start the plug-in wizard via File->New->Plug-in Project
 
-* On the first page of the wizard enter org.databinding.example.frontend as the name
+* On the first page of the wizard enter `org.databinding.example.frontend` as the name
 
 * On the second page:
 
@@ -36,8 +36,8 @@ Next create a plug-in for the UI side:
 
 ## Creating the Person class (the model)
 
-In the backend plug-in create two new classes, one called ModelObject and one called Person.
-Enter the following code for the ModelObject:
+In the backend plug-in create two new classes, one called `ModelObject` and one called Person.
+Enter the following code for the `ModelObject`:
 ```java
 package org.databinding.example.backend;
 
@@ -63,11 +63,11 @@ public class ModelObject {
 ```
 The ModelObject contains the code that is essential for data-binding. 
 
-Behind the scenes when you create a binding the data-binding framework automatically calls addPropertyChangeListener for the UI widget being bound 
-(not strictly true - it is a bean object that is associated with the widget). The removePropertyChangeListener is called when the widget binding is disposed, e.g. when the GUI is closed.
+Behind the scenes when you create a binding the data-binding framework automatically calls `addPropertyChangeListener` for the UI widget being bound 
+(not strictly true - it is a bean object that is associated with the widget). The `removePropertyChangeListener` is called when the widget binding is disposed, e.g. when the GUI is closed.
 
-The firePropertyChange method is used to inform the listeners when the value has changed.
-Note: if oldValue and newValue are the same then the event is not raised.
+The `firePropertyChange` method is used to inform the listeners when the value has changed.
+Note: if `oldValue` and `newValue` are the same then the event is not raised.
 
 The Person class is the class that is going to be used as the model the UI binds to. Add the following code:
 ```java
@@ -109,17 +109,17 @@ public class Person extends ModelObject {
     }
 }
 ```
-Whenever a setter is called the firePropertyChange is called which informs all the listeners that the value has changed.
+Whenever a setter is called the `firePropertyChange` is called which informs all the listeners that the value has changed.
 Other than that it is a pretty standard Java class.
 
 ## Basic data-binding
 
 In the frontend plug-in's MANIFEST.MF add the backend plug-in to the list of dependencies. Also, add the following dependencies:
 
-* org.eclipse.core.databinding
-* org.eclipse.core.databinding.beans
-* org.eclipse.core.databinding.property
-* org.eclipse.jface.databinding
+* `org.eclipse.core.databinding`
+* `org.eclipse.core.databinding.beans`
+* `org.eclipse.core.databinding.property`
+* `org.eclipse.jface.databinding`
 
 Open the View class and change it to the following:
 ```java
@@ -206,21 +206,21 @@ public class View extends ViewPart {
 }
 ```
     
-The binding of the name is a simple as it gets; an IObservableValue is created for both the widget and the name in the Person class 
-and these are bound together in the DataBindingContext object.
+The binding of the name is a simple as it gets; an `IObservableValue` is created for both the widget and the name in the Person class 
+and these are bound together in the `DataBindingContext` object.
  
 For age, because it is an int it is possible to make the widget show an error message when is contains a value that is not an int 
-using ControlDecorationSupport as shown.
+using `ControlDecorationSupport` as shown.
 
 If the UI is started then it is possible to see the data-binding in action, by using the debugger it is possible to see that the 
-setName method is called every time a change is made to the widget text, i.e. every time a letter is added or removed.
+`setName` method is called every time a change is made to the widget text, i.e. every time a letter is added or removed.
 
 ## Validators
 
 In the previous example, a warning was shown when the age entered was invalid - this is basic validation, it might be that more advanced validation is desired.
 For example, it might that we want to ensure a string is only made up of digits.
 
-Create a new class called NumbersOnlyValidator and add the following code:
+Create a new class called `NumbersOnlyValidator` and add the following code:
 ```java
 package org.databinding.example.frontend;
 
@@ -242,7 +242,7 @@ public class NumbersOnlyValidator implements IValidator {
     }
 }
 ```
-All custom validators implement IValidator. In this example, pattern matching is used to check that the value (in this case a string) contains only digits.
+All custom validators implement `IValidator`. In this example, pattern matching is used to check that the value (in this case a string) contains only digits.
 Otherwise it returns an error status.
 
 Now modify View by adding the following directly before DATABINDING END:
@@ -268,9 +268,9 @@ ControlDecorationSupport.create(bindValue2, SWT.TOP | SWT.RIGHT);
 
 ```
 This code creates a label and text-box for the ID field of the Person class. 
-An instance of NumbersOnlyValidator is created and added to a UpdateValueStrategy object.
-The UpdateValueStrategy object defines how a data-binding responses to value changes - in this case it calls the validator before setting the value.
-The strategy is added as the third parameter of the bindValue method call, this is because the third parameter represents the strategy for updating the model based on the widget.
+An instance of `NumbersOnlyValidator` is created and added to a `UpdateValueStrategy` object.
+The `UpdateValueStrategy` object defines how a data-binding responses to value changes - in this case it calls the validator before setting the value.
+The strategy is added as the third parameter of the `bindValue` method call, this is because the third parameter represents the strategy for updating the model based on the widget.
 The fourth parameter is null because there is currently no update strategy for updating the widget based on the model (the default is used).
 
 By running this example it can be seen that a warning appears if a non-numeric character is entered for the ID.
@@ -280,9 +280,9 @@ By running this example it can be seen that a warning appears if a non-numeric c
 Converters are similar to validators in that they are used as part of the update strategy; however, they are used to convert either the data from the model or the data send to the model by the widget.
 In this example, two converters are created: one to convert the name to upper-case; and, one to convert to lower-case.
 
-Create two new classes called ToLowerConverter and ToUpperConverter.
+Create two new classes called `ToLowerConverter` and `ToUpperConverter`.
 
-Add the following code to ToLowerConverter:
+Add the following code to `ToLowerConverter`:
 ```java
 package org.databinding.example.frontend;
 
@@ -337,7 +337,7 @@ ctx.bindValue(target, model, strategy1, strategy2);
 ```
 Note: The data-binding for age has been deleted, so the age text-box will be empty when this is run.
 
-Running this example should show the name in upper-case and it ran through the debugger it can be seen that if the value is modified the setName method in Person receives a lower-case string.
+Running this example should show the name in upper-case and it ran through the debugger it can be seen that if the value is modified the `setName` method in Person receives a lower-case string.
 
 ## Update strategies
 
@@ -366,13 +366,13 @@ btnUpdate.addSelectionListener(new SelectionAdapter() {
 
 ```
 In this example, the Update strategy is initialised with POLICY_ON_REQUEST. This means the updates are only send to the model (the Person object) when told to.
-The models are updated when updateModels is called by the DataBindingContext which in this example is on a button click.
+The models are updated when `updateModels` is called by the `DataBindingContext` which in this example is on a button click.
 
-Running this example in the debugger shows that the setName method is only called when the button is clicked rather than on every modification.
+Running this example in the debugger shows that the `setName` method is only called when the button is clicked rather than on every modification.
 
 ## Binding a Java List to a List Control
 
-Most of this is taken care of by the databinding library via ListViewer and ObservableListContentProvider. Here is an example of it in action:
+Most of this is taken care of by the databinding library via `ListViewer` and `ObservableListContentProvider`. Here is an example of it in action:
 
 ```java
 ListViewer myViewer = new ListViewer(parent, SWT.BORDER | SWT.V_SCROLL | SWT.SINGLE);
@@ -384,4 +384,4 @@ myViewer.setInput(BeanProperties.list("names").observe(myViewModel));
 List myList = myViewer.getList();
 ```
 
-ListViewer is a wrapper around the List control that provides extra functionality and ObservableListContentProvider make the databinding work.
+`ListViewer` is a wrapper around the List control that provides extra functionality and `ObservableListContentProvider` make the databinding work.
