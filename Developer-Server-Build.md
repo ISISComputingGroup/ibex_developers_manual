@@ -11,7 +11,7 @@ You need to be using a Visual Studio compatible with the build server, currently
 Run `install_developer_build.bat` in either `\\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer\EPICS` (for 64bit build) or  
 `\\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer\EPICS32` for 32 bit build
  
-### details
+### Details (not normally needed)
 
 If you wish to use a `Debug` build, replace `x64` in paths below with `x64-debug`
 
@@ -20,21 +20,21 @@ much more than an instrument installation e.g. it has all the local `.git` submo
 
 CAUTION: updating an existing `C:\Instrument\Apps\EPICS` by the mechanism described here is the equivalent of deleting the directory, a full new `git clone --recursive` and then a build. You will lose all current changes to files and also any local git branches you created in that directory. Any changes there you want to keep you must push to Github and then re-checkout the branch after the update. Stashing changes to files is not enough as the local git repos are replaced - you need to push remotely.
 
-run
+you would need to find an appropriate build number in `\\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer\EPICS\windows-x64` and then run e.g.
 ```
-robocopy \\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer\EPICS\x64 c:\Instrument\Apps\EPICS -MIR -NFL -NDL -NP -R:1 -MT -LOG:NUL
+robocopy \\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer\EPICS\windows-x64\BUILD-1 c:\Instrument\Apps\EPICS -MIR -NFL -NDL -NP -R:1 -MT -LOG:NUL
 ```
-As an extra check you can run `robocopy \\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer\EPICS\x64 c:\Instrument\Apps\EPICS -MIR -NFL -NDL -NP -R:1 -MT` (as above but no LOG option). This should not take too long and should not print any errors or have any entries in the Mismatch/FAILED/Extras columns displayed at the end.  
+As an extra check you can re-run the robocopy without the LOG option. This should not take too long and should not print any errors or have any entries in the Mismatch/FAILED/Extras columns displayed at the end.  
 
 you should have a compiled and ready to use distribution, with git pointing at current commit heads.
 This may take a while to complete - at least 10 minutes, but longer if your disk is not an SSD for example.
 
 **Alternative for slow network connection**
 
-You can instead copy `EPICS-x64.7z` from `\\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer` and unpack this locally using
+You can instead copy `EPICS-x64.7z` from `\\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer\zips` and unpack this locally using
 the [7-zip](https://www.7-zip.org/) program. Either drag the file using windows explorer, or if you have a very slow connection or one that might get interrupted you can try using `robocopy` in _restartable mode_. Open a cmd prompt, change to the relevant directory and type:
 ```
-robocopy "\\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer" "." EPICS-x64.7z /J /Z 
+robocopy "\\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer\zips" "." EPICS-windows-x64.7z /J /Z 
 ```
 Note that this pre-allocates the full file space before starting the copy. I found that if I interrupt the copy with Ctrl-C and then type the command again, it picks up where it left off, so it looks hopeful it will handle network connection breaks.
  
