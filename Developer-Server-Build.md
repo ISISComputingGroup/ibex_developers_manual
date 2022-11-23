@@ -8,12 +8,11 @@ You need to be using a Visual Studio compatible with the build server, currently
 
 ### Quick Instructions
 
-Run `install_developer_build.bat` in either `\\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer\EPICS` (for 64bit build) or  
-`\\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer\EPICS32` for 32 bit build
+Run `install_developer_build.bat` in either `\\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer\EPICS` (for 64bit build) orr `\\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer\EPICS32` for 32 bit build. It will prompt you for normal/debug/static.
  
 ### Details (not normally needed)
 
-If you wish to use a `Debug` build, replace `x64` in paths below with `x64-debug`
+If you wish to use a `debug` build, replace `x64` in paths below with `x64-debug`
 
 The EPICS clean Windows 10 Jenkins build workspace is copied to  `\\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer\EPICS` - this contains 
 much more than an instrument installation e.g. it has all the local `.git` submodules and `*.lib` link libraries as well as temporary build (`O.*`) object file directories. It can thus be used as the basis for rapid further development work on your local computer. A standard instrument debug install for example would allow you to run an ioc in debug mode, but any further development would require re-generating the relevant `*.lib` files need to link the IOC and so take longer than using a developer debug build. 
