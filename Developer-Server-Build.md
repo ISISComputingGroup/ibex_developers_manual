@@ -30,7 +30,7 @@ This may take a while to complete - at least 10 minutes, but longer if your disk
 
 **Alternative for slow network connection**
 
-You can instead copy `EPICS-x64.7z` from `\\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer\zips` and unpack this locally using
+You can instead copy `EPICS-windows-x64.7z` from `\\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer\zips` and unpack this locally using
 the [7-zip](https://www.7-zip.org/) program. Either drag the file using windows explorer, or if you have a very slow connection or one that might get interrupted you can try using `robocopy` in _restartable mode_. Open a cmd prompt, change to the relevant directory and type:
 ```
 robocopy "\\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer\zips" "." EPICS-windows-x64.7z /J /Z 
