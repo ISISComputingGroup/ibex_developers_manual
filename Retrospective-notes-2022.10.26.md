@@ -53,7 +53,7 @@
 	- only concern is some people on mantid are entirely remote and might be left out?
 		- how do we avoid them and us scenario for people working remotely?
 		- do benefits outweigh this or not?
-	- Discussion with people from mantid would be nessecary to handle this would be wise.
+	- Discussion with people from mantid would be necessary to handle this would be wise.
 		- potential approach for hybridization?
 		- breakdown of how many people remote vs local?
 		- if were meeting with accelerators, do we cycle between them etc?
