@@ -28,7 +28,7 @@ The manufacturer software ("Console") must be running in the background while th
 
 - Check the machine is powered on - it travels with the stress rig and may not necessarily always be plugged in!
 - Check the machine is connected to the ISIS network via it's motherboard port, and to the stress rig via the USB-ethernet adapter.
-- Connect a monitor to find out the machine's IP address - it is sometimes slow to update in the nameserver, but can be remote-desktopped to if you know the IP directly.
+- Connect a monitor to find out the machine's IP address - it is sometimes slow to update in the nameserver, but can be accessed via remote desktop if you know the IP directly.
 - For username/password details for this machine, see keeper.
 
 ### ArbySPY
@@ -78,7 +78,7 @@ This has been seen on a previous stress rig control PC. We are unsure of the cau
 Consider how much time you want to spend on this issue - we can only provide very limited support for instron's console application, and complex support queries might be best to send to instron directly.
 
 It is possible to re-install the software from `\\isis\shares\ISIS_Experiment_Controls\Manuals\Instron_Stress_Rig\MiniTower (Ethernet - Arby)\installer`
-- This should only be attempted as a last resort and will take some time to set up, and will need instrument scientist involvement to recomission/recalibrate the rig once done.
+- This should only be attempted as a last resort and will take some time to set up, and will need instrument scientist involvement to recommission/recalibrate the rig once done.
 - When it asks for a system ID, this is on a sticker on the rig itself, and also stored at `\\isis\shares\ISIS_Experiment_Controls\Manuals\Instron_Stress_Rig\MiniTower (Ethernet - Arby)\ENGIN-X Instron Control Tower System ID.jpg`
 - You will need to restore calibrations from `\\isis\shares\ISIS_Experiment_Controls\Manuals\Instron_Stress_Rig\MiniTower (Ethernet - Arby)\ENGIN-X 100kN rig calibration files 2022-09-01` after reinstalling
 
