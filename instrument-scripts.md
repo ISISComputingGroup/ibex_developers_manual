@@ -36,4 +36,4 @@ It was decided not to try to bulk-change all existing instrument scripts, as thi
 See also the issues linked to https://github.com/ISISComputingGroup/IBEX/issues/3496
 
 ### General Instrument Scripts
-The general instrument scripts are in this [repositiory](https://github.com/ISISNeutronMuon/InstrumentScripts) and include scripts like `do_sans` and `do_trans`, as well as the scans library.
+The general instrument scripts are in this [repository](https://github.com/ISISNeutronMuon/InstrumentScripts) and include scripts like `do_sans` and `do_trans`, as well as the scans library.
