@@ -1,6 +1,8 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [Power Supplies](Power-Supplies) > [HTS Magnet](HTS-Magnet)
 
 ## HTS Magnet System
+![20221130_140744](https://user-images.githubusercontent.com/14823767/204819524-231b166f-1085-4ad6-b43e-59eb3096af49.jpg)
+
 
 Consists of an electromagnet powered by two KEPCO PSUs in master/slave configuration with monitoring by a Smartmonitor.
 
