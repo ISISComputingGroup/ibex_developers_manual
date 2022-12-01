@@ -14,7 +14,7 @@ The slave PSU is connected to the master (current output is shared between the t
 
 ### Smart Monitor
 
-The Smartmonitor is a _READ ONLY_ device which monitors the PSUs and magnet.  It shows the safe operating limits, hard limits and the current voltages and temperatures of the connected KEPCO.  Its only connection to the control system is via Ethernet on the private instrument network.  It has a fixed(?) IP address of 192.168.0.11, which is not on the same subnet as the private network and so may need additional configuration of the NDX to enable communication.
+The Smartmonitor is a _READ ONLY_ device which monitors the PSUs and magnet.  It shows the safe operating limits, hard limits and the current voltages and temperatures of the connected KEPCO.  Its only connection to the control system is via Ethernet on the private instrument network.  It has a fixed IP address on the R80 network, which is x.x.38.184. It has not yet been set up for R55 but if so the MAC address is available in the manuals area needed for setting up a new IP reserve.
 
 The device can be configured with its webserver which should be at `<static ip>:8080`; this can be used to configure a different static IP address or to enable DHCP. 
 
