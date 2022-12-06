@@ -2,7 +2,7 @@
 
 ### Introduction
 
-The main PLC on RIKEN is responsible for controlling and monitoring the various systems on the beamlines, e.g. vacuum and magnet cooling.  The Schneider PLC IOC loads a configuration file specific to RIKEN which then gives access to designated PLC registers (memory addresses) for specific variables.  The groups of variables are as follows: (all are readonly, apart from the vacuum valve controls)
+The main PLC on RIKEN is responsible for controlling and monitoring the various systems on the beamlines, e.g. vacuum and magnet cooling.  The Schneider PLC IOC loads a DB file specific to RIKEN which then gives access to designated PLC registers (memory addresses) via the ASyn MODBUS driver.  The groups of variables are as follows: (all are readonly, apart from the vacuum valve controls)
 
 - Separator vacuum status
 - Solenoid status
@@ -19,3 +19,5 @@ The main PLC on RIKEN is responsible for controlling and monitoring the various 
 - Magnets cooling water flow status, rate and temperature
 - RBox (Rectifier Box) and bypass interlock status
 - MOL (Magnet Off Light) status (purely the status of the _bulb_, not the magnet)
+
+The PLC IOC also loads a separate DB file (TEMPMON) for monitoring temperatures of a selection of magnets (RQ1, RQ2, RB1) and is purely for logging purposes.  This is at the request of the Electrical Controls Group who are performing an experimental analysis.
