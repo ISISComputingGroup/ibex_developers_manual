@@ -1,6 +1,6 @@
 # Transtechnik Power Supply
 
-The Transtechnik power supply is a modular power supply being used on RIKEN. Similar models are also used on the ISIS Accelerator.
+The Transtechnik power supply is a modular system being used on RIKEN for crossfield magnets. Similar models are also used on the ISIS Accelerator.
 
 Each power supply module provides 100A typically - so for a rack containing a controller and 5 power supply modules, this indicates a 500A supply. Max voltage is 125V.
 
@@ -27,8 +27,8 @@ Known settings are:
 The IBEX driver contains a state machine which waits for the power supply to complete certain actions before proceeding. Physically this corresponds to waiting for an inrush current.
 
 In particular, the following commands are known to be problematic:
-- `N` -> turns power supply on, no response. Note that must wait 20s after this command before sending any currents etc (due to PSU inrush current). In particular, setting new current within 20s of this command may be ignored.
-- `RS` -> Note that must wait 20s after sending this before turning supply on. In particular, turning on the supply within 20s may be ignored.
+- `N` -> Turns power supply on, no response. Note that a wait of 20s is enforced after this command is sent before setting any currents etc (due to PSU inrush current). In particular, setting new current within 20s of this command may be ignored.
+- `RS` -> Note that a wait of 20s is enforced after this command is sent before turning supply on. In particular, turning on the supply within 20s may be ignored.
 
 The state machine in IBEX enforces appropriate delays between the reset, power, and set current commands.
 
@@ -37,3 +37,8 @@ The state machine in IBEX enforces appropriate delays between the reset, power, 
 ### No interlocks are displayed but power supply can't be turned on
 
 On this power supply, the interlock lights will go off once the interlock is *physically* cleared, but the power supply will still be in a tripped state until a reset is sent. There is no easy way to display this in IBEX. Solution: send a reset, wait for the enforced delay time, and then try to turn on again.
+
+### No Communication with device
+
+- Check address and serial port settings above
+- Check that the appropriate port(s) on the MOXA NPort are set to **RS422** mode.  This is done via its configuration webpage. (Most likely to occur after replacing a MOXA NPort unit).
