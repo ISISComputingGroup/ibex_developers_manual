@@ -2,7 +2,7 @@
 
 The Transtechnik power supply is a modular power supply being used on RIKEN. Similar models are also used on the ISIS Accelerator.
 
-Each power supply module provides 100A typically - so for a rack containing a controller and 5 power supply modules, this indicates a 500A supply. For max voltage, ask
+Each power supply module provides 100A typically - so for a rack containing a controller and 5 power supply modules, this indicates a 500A supply. Max voltage is 125V.
 
 # Macros/configuration
 
@@ -14,9 +14,13 @@ Each power supply module provides 100A typically - so for a rack containing a co
 
 Known settings are:
 
-| Instrument/area | `PS_ADDR` | `VOLT_FULLSCALE` | `CURR_FULLSCALE` | Serial comms settings |
-| --- | --- | --- | --- | --- |
-| DCLAB test supply (for RIKEN) | `005` | `125` | `500` | 9600/8/None/1, 9-way cable, no null modem |
+| Instrument | Location | `PS_ADDR` | `VOLT_FULLSCALE` | `CURR_FULLSCALE` | Serial comms settings |
+| --- | --- | --- | --- | --- | --- |
+| Test (for RIKEN) | R6 DCLAB | `005` | `125` | `500` | **RS422** 9600/8/None/1, 9-way cable, no null modem |
+| RIKEN XFD1 | Mezzanine | `001` | `125` | `100` | **RS422** 9600/8/None/1, 9-way cable, no null modem |
+| RIKEN XFD2 | Mezzanine | `002` | `125` | `100` | **RS422** 9600/8/None/1, 9-way cable, no null modem |
+| RIKEN XFD3 | Mezzanine | `003` | `125` | `100` | **RS422** 9600/8/None/1, 9-way cable, no null modem |
+
 
 # Driver logic
 
