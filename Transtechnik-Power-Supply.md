@@ -1,6 +1,6 @@
 # Transtechnik Power Supply
 
-The Transtechnik power supply is a modular system being used on RIKEN for crossfield magnets. Similar models are also used on the ISIS Accelerator.
+The Transtechnik power supply is a modular system being used on RIKEN for cross-field magnets. Similar models are also used on the ISIS Accelerator.
 
 Each power supply module provides 100A typically - so for a rack containing a controller and 5 power supply modules, this indicates a 500A supply. Max voltage is 125V.
 
