@@ -36,8 +36,8 @@ The PLC is physically located on the ground floor of the RIKEN area in R55, the 
 
 IOC macro values are specified in the `globals.txt` file in the settings area. There are macros to specify the connection type (TCP in this case), IP address of the PLC and which configuration (`CMD`) file to load.  Macros are not defined in the IOC configuration screen of the client to avoid accidental editing, and because the values are very unlikely to change.
 
-The CMD file ('RIKENFE.cmd') is located in the [`devices`](https://github.com/ISISComputingGroup/EPICS-ioc/tree/master/SCHNDR/iocBoot/iocSCHNDR-IOC-01/devices) directory of the IOC.
+The CMD file (`RIKENFE.cmd`) is located in the [`devices`](https://github.com/ISISComputingGroup/EPICS-ioc/tree/master/SCHNDR/iocBoot/iocSCHNDR-IOC-01/devices) directory of the IOC.
 
-The DB file ('RIKENFE.db') is generated using a set of template files which correspond to types of PLC variables and readback values.  The substitution and CMD files follow the structure of the Specifications document referenced above, and so it is advised to read them in parallel when required.  See the [`DB`](https://github.com/ISISComputingGroup/EPICS-ioc/tree/master/SCHNDR/SCHNDR-IOC-01App/Db) area of the IOC directory.
+The DB file (`RIKENFE.db`) is generated using a set of template files which correspond to types of PLC variables and readback values.  The substitution and CMD files follow the structure of the Specifications document referenced above, and so it is advised to read them in parallel when required.  See the [`DB`](https://github.com/ISISComputingGroup/EPICS-ioc/tree/master/SCHNDR/SCHNDR-IOC-01App/Db) area of the IOC directory.
 
-The PLC IOC also loads a separate DB file ('RIKENFE_TEMPMON.db') for monitoring temperatures of a selection of magnets (RQ1, RQ2, RB1) and is purely for logging purposes.  This is at the request of the Electrical Controls Group who are performing an experimental analysis.
+The PLC IOC also loads a separate DB file (`RIKENFE_TEMPMON.db`) for monitoring temperatures of a selection of magnets (RQ1, RQ2, RB1) and is purely for logging purposes.  This is at the request of the Electrical Controls Group who are performing an experimental analysis.
