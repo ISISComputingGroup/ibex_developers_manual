@@ -4,7 +4,7 @@
 
 The main PLC on RIKEN is responsible for controlling and monitoring the various systems on the beamlines, e.g. vacuum equipment and magnet cooling.  The Schneider PLC IOC runs a CMD file specific to RIKEN which then loads a specific DB file to give access to designated PLC registers (memory addresses) via the ASyn MODBUS driver.
 
-The groups of variables are defined in the document `RIKEN PLC IBEX Specification` (which can be found in the RIKEN FE ICP Discussions area of SharePoint) and are as follows: (all are readonly, apart from the vacuum valve controls, see below)
+The groups of variables are defined in the document [`RIKEN PLC IBEX Specification`](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/RIKEN%20FE/RIKEN%20PLC%20IBEX%20Specification%20-%20Issue%20G_TC.docx) (which can be found in the RIKEN FE ICP Discussions area of SharePoint) and are as follows: (all are readonly, apart from the vacuum valve controls, see below)
 
 - Separator vacuum status
 - Solenoid status
