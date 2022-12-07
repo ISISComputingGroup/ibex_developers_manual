@@ -12,7 +12,7 @@ The groups of variables are defined in the document [`RIKEN PLC IBEX Specificati
 - Kickers status and output (voltage and current)
 - GH (Gauge Head) vacuum gauge status
 - LV (Line Valve), AMGV (All Metal Gate Valve) and FSOV (Fast Shut Off Valve) vacuum valve status
-- LV, AMGV, FSOV, control (**writable** ````from IBEX, but only to **open** the valves)
+- LV, AMGV, FSOV, control (**writable** from IBEX, but only to **open** the valves)
 - BP (Backing Pump) and TP (Turbo Pump) vacuum pump status 
 - PIV (Pump Isolation Valve) interlock status
 - LV, AMGV, FSOV, BPV1 interlock status
@@ -24,12 +24,14 @@ The groups of variables are defined in the document [`RIKEN PLC IBEX Specificati
 
 The PLC IOC also loads a separate DB file (TEMPMON) for monitoring temperatures of a selection of magnets (RQ1, RQ2, RB1) and is purely for logging purposes.  This is at the request of the Electrical Controls Group who are performing an experimental analysis.
 
-### Connection and Configuration
+### Connection
 
-The PLC is connected to the ISIS Controls Network using a fixed/static IP address which is specified in the `globals.txt` file.  Also in this file are macros to specify the connection type (TCP in this case) and which configuration (`CMD` file) to load.  The PLC also has a "local" network to connect to its satellite nodes and HMI screens.
+The PLC is connected to the ISIS Controls Network using a fixed/static IP address.  The PLC also has a "local" network to connect to its satellite nodes and HMI screens.
 
-### Files
+### Configuration Files
 
-The DB file is generated using a set of template files which correspond to types of PLC variables and readback values.  The substitutions file follows the structure of the Specifications document referenced above, and so it is advised to read them in parallel when required.  See the [DB](https://github.com/ISISComputingGroup/EPICS-ioc/tree/master/SCHNDR/SCHNDR-IOC-01App/Db) area of the IOC directory.
+IOC macro values are specified in the `globals.txt` file in the settings area. There are macros to specify the connection type (TCP in this case), IP address of the PLC and which configuration (`CMD` file) to load.
 
-The CMD file is located in the [`devices`](https://github.com/ISISComputingGroup/EPICS-ioc/tree/master/SCHNDR/iocBoot/iocSCHNDR-IOC-01/devices)directory of the IOC.
+The CMD file is located in the [`devices`](https://github.com/ISISComputingGroup/EPICS-ioc/tree/master/SCHNDR/iocBoot/iocSCHNDR-IOC-01/devices) directory of the IOC.
+
+The DB file is generated using a set of template files which correspond to types of PLC variables and readback values.  The substitution and CMD files follow the structure of the Specifications document referenced above, and so it is advised to read them in parallel when required.  See the [DB](https://github.com/ISISComputingGroup/EPICS-ioc/tree/master/SCHNDR/SCHNDR-IOC-01App/Db) area of the IOC directory.
