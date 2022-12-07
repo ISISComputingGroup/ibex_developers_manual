@@ -30,5 +30,6 @@ The PLC is connected to the ISIS Controls Network using a fixed/static IP addres
 
 ### Files
 
-The DB file is generated using a set of template files which correspond to types of PLC variables and readback values.  The substitutions file follows the structure of the Specifications document referenced above, and so it is advised to read them in parallel when required.
+The DB file is generated using a set of template files which correspond to types of PLC variables and readback values.  The substitutions file follows the structure of the Specifications document referenced above, and so it is advised to read them in parallel when required.  See the [DB](https://github.com/ISISComputingGroup/EPICS-ioc/tree/master/SCHNDR/SCHNDR-IOC-01App/Db) area of the IOC directory.
 
+The CMD file is located in the [`devices`](https://github.com/ISISComputingGroup/EPICS-ioc/tree/master/SCHNDR/iocBoot/iocSCHNDR-IOC-01/devices)directory of the IOC.
