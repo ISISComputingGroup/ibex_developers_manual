@@ -1,0 +1,34 @@
+The Keithley 2290 is a high-voltage power supply.
+
+The Model 2290-10 model that we have outputs up to 10kV with a maximum output current of 1mA.
+(NB, the user manual - incorrectly - says the maximum current is 1uA.)
+
+There is also a 2290-5 model which outputs up to 5kV.
+
+The output voltage is programmable.
+Other programmable parameters include voltage limit, current limit and trip current.
+
+The unit is remotely controllable by means of a GPIB or RS-232 port.
+There is also an analog input.
+
+### Setting up the Device
+The IOC works with a MOXA connected to the RS-232 port.
+
+Plug the device into the mains, and into a MOXA via its RS-232 port on the back. 
+
+Pressing the power button (lower right on the front panel) should make it turn on and beep.
+
+The 'High voltage' switch (lower left on the front panel) is a 3-position switch.
+To enable remote computer control, the switch needs to be in the middle position.
+The upper 'ON' position enables output under local control only.
+The lower 'OFF/RESET' position disables output.
+
+### Confirming communication
+Test that you can now talk to it by connecting to it via PuTTY or something similar.
+Send `*IDN?`, you get the device name back.
+
+### Probable errors
+- If the 'High voltage' switch is not in the middle position, it will be possible to communicate with the unit, but any attempt to turn the HV on will result in an 'Execution error'. This is treated as an alarm condition by the IOC.
+  Set the switch to the correct position, acknowledge the alarm and turn the HV on again. 
+- If the set voltage or current limits or trips are exceeded, this will be treated as an alarm condition by the IOC.
+  Correct the cause of overload and acknowledge the alarm.
