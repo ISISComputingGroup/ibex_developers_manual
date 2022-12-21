@@ -68,7 +68,7 @@ A device, usually a spinning disc of thick metal with a narrow slot, which allow
 -----
 **C**entral **L**aser **F**acility.  A department at RAL that also uses the [EPICS](#epics) control system.
 
-[Code Chats](Code-Chats)
+[Code Chats](Code-Chats-and-Lightning-Talks)
 ------------
 Short meetings and presentations held within the group to discuss various aspects of the control system, or other related technologies.
 
