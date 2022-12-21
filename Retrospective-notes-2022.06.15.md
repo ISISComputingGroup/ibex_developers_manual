@@ -1,6 +1,6 @@
 | Chair      | Timekeeper | Note Taker |
 | :--------   | :---------: | ----------: |
-|[@LilithCole](https://github.com/LilithCole)|[@LilithCole](https://github.com/LilithCole)| [@daryakoskeroglu](https://github.com/daryakoskeroglu)|
+|[@LilithCole](https://github.com/LilithCole) |[@LilithCole](https://github.com/LilithCole) | [@daryakoskeroglu](https://github.com/daryakoskeroglu) |
 
 --- 
 
