@@ -10,7 +10,7 @@ _(discussed these items very briefly to get to Kathryn's new items before she ha
 
 #### Disk Cleaning Automation:
 - Job could be automated but it's not trivial. No new updates for now
-- Discussion on a possible solution will be added to our list on Teams (Thank you for volunteering [@DavidKeymer](https://github.com/davidkeymer)!)
+- Discussion on a possible solution will be added to our list on Teams (Thank you for volunteering [@DavidKeymer](https://github.com/davidkeymer )!)
 
 #### Splitting up issues more finely:
 - We have not had an opportunity to implement this yet in the last sprint.
