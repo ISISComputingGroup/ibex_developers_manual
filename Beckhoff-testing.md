@@ -30,8 +30,8 @@ _When you have finished testing/reviewing a PR, it is best to run `unsettick.bat
 
 ## Other information on testing and configuring a Beckhoff
 ### Using XAE shell to manually build a PLC
-<summary> manual steps </summary>
-<details>
+<details><summary> manual steps </summary>
+
 
 1. Ensure that you have the following toolbars enabled in the XAE shell (`Tools > Customize...`):
     - `TwinCAT PLC`
@@ -47,8 +47,8 @@ _When you have finished testing/reviewing a PR, it is best to run `unsettick.bat
 
 ### Continuous Integration
 
-<summary>Jenkins</summary>
-<details>
+<details><summary>Jenkins</summary>
+
 
 Beckhoff PLC code is being developed by people who do not have CI expertise and have their own repository structures yet we want integration into some form of CI to be as easy as possible. This lent itself to the following structure:
 * A `BeckhoffTestRunner` repository that is owned by us and contains the jenkinsfile and other utilities required for CI
