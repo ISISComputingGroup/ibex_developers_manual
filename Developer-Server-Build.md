@@ -10,7 +10,7 @@ You need to be using a Visual Studio compatible with the build server, currently
 
 Run `install_developer_build.bat` in either `\\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer\EPICS` (for 64bit build) or `\\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer\EPICS32` for 32 bit build. It will prompt you for normal/debug/static.
  
-### Details (not normally needed)
+ <details> <summary> Details (not normally needed) </summary>
 
 If you wish to use a `debug` build, replace `x64` in paths below with `x64-debug`
 
@@ -36,7 +36,8 @@ the [7-zip](https://www.7-zip.org/) program. Either drag the file using windows 
 robocopy "\\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer\zips" "." EPICS-windows-x64.7z /J /Z 
 ```
 Note that this pre-allocates the full file space before starting the copy. I found that if I interrupt the copy with Ctrl-C and then type the command again, it picks up where it left off, so it looks hopeful it will handle network connection breaks.
- 
+ </details>
+
 ### Using Files
 
 After copying note that all submodules will be on a detached HEAD. 
