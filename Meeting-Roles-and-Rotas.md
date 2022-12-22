@@ -47,7 +47,7 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
  |JH | 28/11/2022 | x |
  |HC | 05/12/2022 | x |
  |NR | 12/12/2022 | x |
- |CMS | 19/12/2022 | |
+ |JH | 19/12/2022 | x |
  |N/A | 26/12/2022 | |
 
 ## Sprint Meetings
