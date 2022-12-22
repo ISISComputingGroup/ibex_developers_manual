@@ -31,24 +31,25 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
 ## Stand up
 | Standup | Week Commencing | x for Done |
  |--- | --- | --- |
- |KB | 29/08/2022 |x |
- |FA | 05/09/2022 |x |
- |JA | 12/09/2022 |x |
- |LC | 19/09/2022 |x |
- |DK | 26/09/2022 |x |
- |TL | 03/10/2022 |x |
- |LJ | 10/10/2022 |x |
- |FA | 17/10/2022 |x |
- |JH | 24/10/2022 |x |
- |LC | 31/10/2022 |x |
- |CMS | 07/11/2022 |x |
- |DK | 14/11/2022 |x |
- |TL | 21/11/2022 | x |
- |JH | 28/11/2022 | x |
- |HC | 05/12/2022 | x |
- |NR | 12/12/2022 | x |
- |JH | 19/12/2022 | x |
+ |HC | 05/12/2022 |x |
+ |NR | 12/12/2022 |x |
+ |JH | 19/12/2022 |x |
  |N/A | 26/12/2022 | |
+ |TBC| 02/01/2023 | |
+ |DK | 09/01/2023 | |
+ |CMS | 16/01/2023 | |
+ |LJ | 23/01/2023 | |
+ |LC | 30/01/2023 | |
+ |TL | 06/02/2023 | |
+ |HC | 13/02/2023 | |
+ |NR | 20/02/2023 | |
+ |FA | 27/02/2023 | |
+ |KB | 06/03/2023 | |
+ |JH | 13/03/2023 | |
+ |DK | 20/03/2023 | |
+ |CMS | 27/03/2023 | |
+ |LJ | 03/04/2023 | |
+
 
 ## Sprint Meetings
 | Meeting| Chair | x for Done | Timekeeper | x for Done | Note taker | x for Done |
