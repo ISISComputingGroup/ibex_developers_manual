@@ -44,4 +44,4 @@ If a controller with more than 8 axes is going to be used, the TC IOC will alias
 
 #### Arbitrary fields 
 
-It was decided during [A meeting with the motion team](https://github.com/ISISComputingGroup/IBEX/issues/6916) that extra fields, for example LARMOR's air signals + bump strips will be exposed via a separate `PROG` file within the PLC. We should load these in from a `motorExtensions` `.cmd` file.
+It was decided during [A meeting with the motion team](https://github.com/ISISComputingGroup/IBEX/issues/6916) that extra fields, for example LARMOR's air signals + bump strips will be exposed via a separate `PROG` file within the PLC. We should load these in from a `motorExtensions` `.cmd` file. Examples for LARMOR and SANS2D can be found in the settings directory of `motorExtensions\master\settings`
