@@ -2,7 +2,7 @@
 
 # Beckhoff troubleshooting
 
-As we don't really handle any logic minus the motor record aliasing, there isn't much to go wrong (in theory) - sometimes for numerous reasons such as motion logic changing etc. the `.tpy` file that maps over memory addresses to human readable names can go out of date. 
+As we don't really handle any logic minus the motor record aliasing, there isn't much to go wrong (in theory) 
 
 **The first thing to do if an issue occurs is open a device screen which is pointing to the "Beckhoff engineering view" and check all axes for an error ID. note you have to press the load button to load an axis.**
 - If the records in here are in alarm, it's likely that there is a comms issue or the TPY file is out of date - see below.
@@ -14,15 +14,6 @@ an easy thing to check to see if a beckhoff is actually reachable is to
 - from the NDX system tray right click the twincat icon, then routing -> edit routes. check there is an `x` or padlock symbol in the "connected" column. 
 
 if neither of these work the cable has probably fallen out. 
-
-## "TPY file needs updating"
-If nothing whatsoever is working, moves aren't sending and enabling/disabling is not working, an outdated `.tpy` file could be the cause. 
-
-To remedy this: 
-1. Stop the `TC` IOC from IBEX.
-1. Obtain a valid/up to date `.tpy` file, either sent from the motion team or from the controller (usually under `C:\TwinCAT\3.1\Boot\Plc\`, named `port_852.tpy`, you can remote desktop in using the PLC's IP address and use a file explorer to copy it from its Windows environment)
-1. Place above `.tpy` file in `C:\Instrument\Settings\Config\NDX<instname>\configurations\twincat\` - it will need to be called whatever it was before or whatever it was in the config (it's passed in via a macro) - it's usually called `tc_project_app.tpy`
-1. Start the `TC` IOC again from IBEX. This should re-generate the `.db` file in the above directory and you should now have working communication. The table of motors may take a while to update so to check if things are working it may be easiest to use the `Beckhoff Engineering` device screen. If this does not exist on an instrument, create it. 
 
 ## Twincat Beckhoff Engineering View
 
