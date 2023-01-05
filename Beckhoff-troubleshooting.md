@@ -5,7 +5,7 @@
 As we don't really handle any logic minus the motor record aliasing, there isn't much to go wrong (in theory) 
 
 **The first thing to do if an issue occurs is open a device screen which is pointing to the "Beckhoff engineering view" and check all axes for an error ID. note you have to press the load button to load an axis.**
-- If the records in here are in alarm, it's likely that there is a comms issue or the TPY file is out of date - see below.
+- If the records in here are in alarm, it's likely that there is a comms issue.
 - If not, and there are error IDs for any axis, the beckhoff has thrown an error. You may be able to hit "reset" and resolve this, if not contact the IESG or the IDD Motion team. 
 
 ## ADS route and pinging
