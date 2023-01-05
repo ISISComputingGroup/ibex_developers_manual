@@ -1,6 +1,7 @@
 > [Wiki](Home) > [Project overview](Project-Overview) > [Notes from Retrospectives](Retrospective-Notes)
 
 This page records notes made during Sprint Retrospective meetings (most recent meeting at the top)
+* [Sprint Ending 2023-01-04](Retrospective-notes-2023.01.04)
 * [Sprint Ending 2022-11-23](Retrospective-notes-2022.11.23)
 * [Sprint Ending 2022-10-26](Retrospective-notes-2022.10.26)
 * [Sprint Ending 2022-09-07](Retrospective-notes-2022.09.07)
