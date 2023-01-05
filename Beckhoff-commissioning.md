@@ -18,14 +18,14 @@ To actually communicate via the ADS transport layer you will need to set up a ro
 
 ### IOC setup
 The IOC should be able to talk via ADS at this point but will need setting up in the respective configs. 
-- ~A `.tpy` file will be used for `tCioc` to actually talk to the hardware via ADS - this should be placed in the instrument's twincat config area~
 - A `MTRCTRL` number will need to be given - this is the normal controller number
 - `Beckhoff_plc_code` should be specified as a macro, this may be removed in future releases, more information on this is available below however it should be set to `1` for instruments running the latest code. 
+- Number of axes (`NUM_AXES` macro)
+- the `IP` and `AMSnetID` of the controller
 
 #### Fields that aren't automatically populated
 Although commissioning a Beckhoff is far simpler than a Galil from an IBEX perspective, there are some fields that need to be set manually for each axis.  These are: 
-- Number of axes (`NUM_AXES` macro)
-- the `IP` and `AMSnetID` of the controller
+
 - Engineering units (`.EGU`) - [ticket to populate](https://github.com/ISISComputingGroup/IBEX/issues/6855)
 - Axis description (`.DESC`) - [ticket to populate](https://github.com/ISISComputingGroup/IBEX/issues/6860)
 - Soft limits
