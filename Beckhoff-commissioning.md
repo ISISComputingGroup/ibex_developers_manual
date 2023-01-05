@@ -33,7 +33,7 @@ Although commissioning a Beckhoff is far simpler than a Galil from an IBEX persp
 These can be set via a `caput` and will be autosaved thereafter.
 
 #### Axes, motion setpoints, jaws
-These are loaded in the usual way, you'll need to put your `axes.cmd` and `motionSetpoints.cmd` files alongside the `tpy` file (in the `twincat` config directory)
+These are loaded in the usual way, you'll need to put your `axes.cmd` and `motionSetpoints.cmd` files in the `twincat` config directory
 
 #### Jaws
 
