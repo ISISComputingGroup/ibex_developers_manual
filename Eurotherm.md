@@ -73,6 +73,7 @@ The macros are:
 | `I_SCALING_1` | Scaling factor used on sensor 1 for "I" PID parameter |
 | `D_SCALING_1` | Scaling factor used on sensor 1 for "D" PID parameter |
 | `OUTPUT_SCALING_1` | Scaling factor on sensor 1 used for output parameters (e.g. `MAX_OUTPUT`) |
+| `OUTPUT_RATE_SCALING_1` | Scaling factor on sensor 1 used for OUTPUT_RATE parameter |
 | ... | As above, for all other sensors |
 
 Because of the large number of macros, these have not been added to `config.xml`, and so are only settable via `globals.txt`.
