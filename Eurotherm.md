@@ -13,6 +13,8 @@ Eurotherms can be calibrated by selecting a calibration file in the OPI (`None.t
 - The eurotherm protocol uses variable terminators and the checksum comes after the termination character.
   * Because of this, most commands do not read to a terminator but instead depend on getting a read timeout to terminate messages. This is achieved in streamdevice by setting `InTerminator = ""`.
 - There is custom timing logic in `st-timing.cmd` which attempts to set the command rate of the eurotherm such that it can keep up with the message rate. If this logic is changed it should be tested against eurotherms with different numbers of sensors connected (especially 6-sensor crates) to make sure that the eurotherm can keep up in the worst-case scenario with setpoints and readbacks updating rapidly on all sensors.
+- The 2400 model has a maximum OUTPUT_RATE of 99.9 %/min, whereas the 3500 model has a maximum OUTPUT_RATE of 9999.9 %/min. The user manual for the 3500 specifies this available range, but the manual for the 2400 does not.
+- 16-bit data limits mean that OUTPUT_RATE is further limited to 3276.7 %/min when modbus mode is used and the required OUTPUT_RATE_SCALING is 0.1.
 
 # Connections
 
