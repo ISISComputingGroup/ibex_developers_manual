@@ -34,8 +34,8 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
  |HC | 05/12/2022 |x |
  |NR | 12/12/2022 |x |
  |JH | 19/12/2022 |x |
- |N/A | 26/12/2022 | |
- |TBC| 02/01/2023 | |
+ |N/A | 26/12/2022 |x |
+ |TBC| 02/01/2023 |x |
  |DK | 09/01/2023 | |
  |CMS | 16/01/2023 | |
  |LJ | 23/01/2023 | |
@@ -65,7 +65,7 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
 | 2022_11_24_Planning| KB | x | LJ| x | |  |
 | 2023_01_05_Pre-Planning| -- |  | --|  | |  |
 | 2022_11_24_Review/Retro| JH | x | HC| x | NR| x |
-| 2023_01_05_Planning| KB |  | CMS|  | |  |
+| 2023_01_05_Planning| KB | x | CMS| x | |  |
 | 2023_02_02_Pre-Planning| -- |  | --|  | |  |
 | 2023_01_05_Review/Retro| KB |  | NR|  | HC |  |
 | 2023_02_02_Planning| KB |  | DK|  | |  |
