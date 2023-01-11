@@ -30,7 +30,7 @@ The PLC is connected to the ISIS Controls Network using a fixed/static IP addres
 
 ### Location
 
-The PLC is physically located on the ground floor of the RIKEN area in R55, the ISIS TS1 Experiment Hall, in the end rack of a block of five.
+The PLC is physically located on the ground floor of the RIKEN area in R55, the ISIS TS1 Experiment Hall, in the end rack of a block of five (labelled **RR5**).
 
 ### Configuration Files
 
