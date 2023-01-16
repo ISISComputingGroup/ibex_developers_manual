@@ -2,63 +2,19 @@
 
 # Setup
 
-The serial connections to the RIKEN Front End power supply units (PSUs) were previously made in four daisy chains, terminated at a single MOXA Nport (i.e. using four of its ports).  Since the refurbishment project (concluded December 2022), the connections are now made individually to each PSU in a _radial_ fashion using five MOXA NPort units placed strategically around the area.
+The serial connections to the RIKEN Front End power supply units (PSUs) were previously made in four daisy chains, which all terminated at a single MOXA Nport (i.e. using four of its serial ports).  Since the refurbishment project (concluded December 2022) which replaced all of the PSUs with Danfysik units, the connections are now made in a _radial_ fashion to each individual PSU using five MOXA NPort units placed strategically around the area.
 
 # Documentation
 
-There is some documentation on the physical setup at `\\...\shares\ISIS_Experiment_Controls\Manuals\RIKEN_power_supplies\riken psu controls - issue C.ppt`.  Most of the information in this area is now out-of-date, particularly that which describes the serial connections to the power supplies.  The _changeover_ system, both reading and writing, has now been removed entirely.
+The SharePoint site [`Computing -> ICPdiscussions -> RIKEN FE`](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/RIKEN%20FE) contains documentation relating to the refurbishment project, and the current power supply connection information in particular.
 
-# Macros
+The original documentation on the physical setup is at `\\...\shares\ISIS_Experiment_Controls\Manuals\RIKEN_power_supplies\` with some schematics in `riken psu controls - issue C.ppt`.  Most of the information in this area is now out-of-date, particularly that which describes the serial connections to the power supplies.  The _changeover_ system (configuring RB2 magnet mode to direct beam to specific instruments), has now been removed entirely.
 
-The RIKEN power supplies are controlled by a number of daisy chained [Danfysik](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Danfysik) PSUs. Daisy chained PSUs are connected to each other in a chain with one PSU at the end connecting to the MOXA. This is done because on RIKEN a large number of PSUs are needed that would require a large number of RJ-45 ports otherwise, so daisy chaining is used to connect multiple PSUs to just one port. 
+# IOCs and Macros
 
-Macros are prefixed with (for example) `CHAIN1_`. Each chain of PSUs is talking on a completely independent COM port. This is configured using the `CHAIN1_PORT` macro.
+Each of the individual power supplies is controlled by an individual [Danfysik](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Danfysik) IOC (i.e. a one-to-one mapping).  Each IOC is configured accordingly using its macro values, with a different COM port for each (as described above).
 
-For each power supply, the macros will be in the following format:
-```
-CHAIN1_ADR1=1
-CHAIN1_ID1=RQ1
-CHAIN1_FRV1=2
-CHAIN1_FRI1=625/99990
-CHAIN1_FWI1=9999/625
-```
-
-Because there are a huge number of macros, they cannot be set in the gui: they must be set via globals.txt
-
-Where:
-- `ADR` is the address on the daisy chain of the power supply
-- `ID` is the human-friendly name of the power supply
-- `FRV` is a scaling factor applied when reading voltage
-- `FRI` is a scaling factor applied when reading current
-- `FWI` is a scaling factor applied when writing current (note, for some power supplies this can be completely different from the reading scale factor)
-
-Additionally, the IOC talks to DAQ MX to do some changeover logic, which is implemented in SNL inside the IOC. There is a PV called `<my pv prefix>:RKNPS_01:DAQMX_STATUS` that can be used to check if the DAQ MX is connected or not.
-
-To run this IOC you will need to install the DAQMX binaries - available on the national instruments website (it is a rather large installer so it is not installed by default).
-
-A minimal globals.txt file which can boot the IOC and connect to the emulator contains:
-```
-RKNPS_01__CHAIN1_PORT=COM5
-RKNPS_01__EMULATOR_PORT1=57677
-RKNPS_01__EMULATOR_PORT2=57678
-RKNPS_01__EMULATOR_PORT3=57679
-RKNPS_01__EMULATOR_PORT4=57680
-
-# GEC 200 volts 500 amps (but scales as 625A)
-RKNPS_01__CHAIN1_ADR1=001
-RKNPS_01__CHAIN1_ID1=RQ1
-RKNPS_01__CHAIN1_FRV1=2
-RKNPS_01__CHAIN1_FRI1=625/99990
-RKNPS_01__CHAIN1_FWI1=9999/625
-
-# GEC 200 volts 500 amps
-RKNPS_01__CHAIN1_ADR2=002
-RKNPS_01__CHAIN1_ID2=RB1
-RKNPS_01__CHAIN1_FRV2=2
-RKNPS_01__CHAIN1_FRI2=500/99990
-RKNPS_01__CHAIN1_FWI2=9999/500
-
-```
+The single IBEX configuration contains several components, each of which relates to the type of magnet a group of PSUs control e.g. `quadrupole`, `bending`, `crossfield`, etc.  (There is also a component for the 11 TPG300 units which control and monitor the vacuum system).
 
 # Hardware notes / Changeover sequences
 
@@ -79,7 +35,7 @@ RKNPS_01__CHAIN1_FWI2=9999/500
 # Debugging
 
 ### Whole chain of PSUs won't talk
-- Double check that the moxa port is set to RS-422 mode. **This setting needs to be done in the moxa itself (via the webpage) - IBEX can't do it!**
+- Double check that the MOXA port is set to RS-422 mode. **This setting needs to be done in the MOXA itself (via the webpage) - IBEX can't do it!**
 
 ### Individual PSU won't talk at all
 
@@ -127,3 +83,4 @@ Note that this procedure may briefly change the value of RB2, so it is best to p
 
 ### RQ2 and RB1
 These supplies sometimes don’t turn back on after a polarity change. Usually re-running inst.set_beamline() re-sends the setpoints and they start working eventually.
+[Computing](http://www.facilities.rl.ac.uk/isis/computing/) : [ICPdiscussions](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions):RIKEN FE
