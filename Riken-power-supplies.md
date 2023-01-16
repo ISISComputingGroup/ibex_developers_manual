@@ -1,28 +1,31 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [Power Supplies](Power-Supplies) > [Riken power supplies](Riken-power-supplies)
 
-# Setup
+## Setup
 
 The serial connections to the RIKEN Front End power supply units (PSUs) were previously made in four daisy chains, which all terminated at a single MOXA Nport (i.e. using four of its serial ports).  Since the refurbishment project (concluded December 2022) which replaced all of the PSUs with Danfysik units, the connections are now made in a _radial_ fashion to each individual PSU using five MOXA NPort units placed strategically around the area.
 
-# Documentation
+## Documentation
 
 The SharePoint site [`Computing -> ICPdiscussions -> RIKEN FE`](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/RIKEN%20FE) contains documentation relating to the refurbishment project, and the current power supply connection information in particular.
 
 The original documentation on the physical setup is at `\\...\shares\ISIS_Experiment_Controls\Manuals\RIKEN_power_supplies\` with some schematics in `riken psu controls - issue C.ppt`.  Most of the information in this area is now out-of-date, particularly that which describes the serial connections to the power supplies.  The _changeover_ system (configuring RB2 magnet mode to direct beam to specific instruments), has now been removed entirely.
 
-# IOCs and Macros
+## IOCs and Macros
 
 Each of the individual power supplies is controlled by an individual [Danfysik](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Danfysik) IOC (i.e. a one-to-one mapping).  Each IOC is configured accordingly using its macro values, with a different COM port for each (as described above).
 
 The single IBEX configuration contains several components, each of which relates to the type of magnet a group of PSUs control e.g. `quadrupole`, `bending`, `crossfield`, etc.  (There is also a component for the 11 TPG300 units which control and monitor the vacuum system).
 
-# Hardware notes / Changeover sequences
+## Hardware notes
 
-### RB2 mode change
+### RB2 (**Due to be replaced April 2023(?) with standard Danfysik units.**)
 
-- RB2 is a power supply that can be put into three distinct modes: BEND1 (beam goes one way), BEAM2 (the other way), and SEPTUM (beam splits both ways). RB2, although one physical supply, has two control boards. The first control board (called "RB2" in our system) supplies current for either BEND1, BEND2, or half of SEPTUM mode. The second control board ("RB2-2" in our system) is *only* used in SEPTUM mode and supplies the other half of the current.
-- We check that BOTH RB2 and RB2-2 are powered off before allowing an RB2 mode change to take place.
-- Currently IBEX does not know the state of the changeover switches; only that a switch has been requested. This information is available from the PLC but not currently read.
+- RB2 is a power supply that can be put into three distinct modes: BEND1 (beam goes one way), BEAM2 (the other way), and SEPTUM (beam splits both ways). RB2, although one physical supply, has two control boards. The first control board (called "RB2" in our system) supplies current for either BEND1, BEND2, or half of SEPTUM mode. The second control board ("RB2_2" in our system) is *only* used in SEPTUM mode and supplies the other half of the current.
+
+- It is the only remaining original PSU from before the refurbishment project.  Its replacement(s) were not ready in time to be installed during the long shutdown, and so it has had to be integrated into the new connection topology.  Adapters were made to enable each control board to be directly connected to a MOXA Nport, rather than via a daisy chain as previously.  Wiring details of these adapters are in the document `RIKEN PSU Communications Cables` on the SharePoint site mentioned above.
+
+
+
 
 ### Port 3/4 changeover
 
@@ -32,7 +35,7 @@ The single IBEX configuration contains several components, each of which relates
 - It is possible for these switches to get out of sync with each other - see debugging section below
 - The switches are located behind a grille, in a corner between port 3 and 4, near some servers and HV power supplies. There are LEDs to say which mode each switch is currently in, which are visible through the grille. To access the switches physically you need a permit - contact Tim Carter.
 
-# Debugging
+## Debugging
 
 ### Whole chain of PSUs won't talk
 - Double check that the MOXA port is set to RS-422 mode. **This setting needs to be done in the MOXA itself (via the webpage) - IBEX can't do it!**
@@ -60,13 +63,13 @@ IBEX will only let the changeover sequence proceed if it gets "off" readings WIT
 
 ### Changeover sequence won't finish
 
-RB2 mode change:
+## RB2 mode change:
 - Sometimes RB2 does not properly acknowledge the request to change from the PLC. The PLC will then sit there in it's changeover state waiting for the PSU to be in the correct state. To fix this, need to go down in person to RB2 and press the button on the front panel to put it into the mode the PLC expects (it will then detect this and the changeover will finish)
 
-Port changeover:
+## Port changeover:
 - The port changeover depends on three rotary switches which are located in the corner between ports 3 and 4 (near some HV power supplies). These switches can, and often do, get out of sync with each other. To fix this state, the misbehaving switch has to be manually forced back into place. The switches are interlocked and you will need a permit to access them. Contact Tim Carter in the first instance.
 
-# Magnet troubleshooting 
+## Magnet troubleshooting 
 
 This section is from a document by James Lord; the original document on the manuals shared drive
 
@@ -83,4 +86,3 @@ Note that this procedure may briefly change the value of RB2, so it is best to p
 
 ### RQ2 and RB1
 These supplies sometimes don’t turn back on after a polarity change. Usually re-running inst.set_beamline() re-sends the setpoints and they start working eventually.
-[Computing](http://www.facilities.rl.ac.uk/isis/computing/) : [ICPdiscussions](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions):RIKEN FE
