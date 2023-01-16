@@ -2,11 +2,11 @@
 
 # Setup
 
-![](https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/images/riken_changeover.PNG?raw=true)
+The serial connections to the RIKEN Front End power supply units (PSUs) were previously made in four daisy chains, terminated at a single MOXA Nport (i.e. using four of its ports).  Since the refurbishment project (concluded December 2022), the connections are now made individually to each PSU in a _radial_ fashion using five MOXA NPort units placed strategically around the area.
 
 # Documentation
 
-There is some documentation on the physical setup at `\\...\shares\ISIS_Experiment_Controls\Manuals\RIKEN_power_supplies\riken psu controls - issue C.ppt`
+There is some documentation on the physical setup at `\\...\shares\ISIS_Experiment_Controls\Manuals\RIKEN_power_supplies\riken psu controls - issue C.ppt`.  Most of the information in this area is now out-of-date, particularly that which describes the serial connections to the power supplies.  The _changeover_ system, both reading and writing, has now been removed entirely.
 
 # Macros
 
