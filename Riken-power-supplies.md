@@ -18,7 +18,7 @@ The original documentation on the physical setup is at `\\...\shares\ISIS_Experi
 
 Each of the individual power supplies is controlled by an individual [Danfysik](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Danfysik) IOC (i.e. a one-to-one mapping).  Each IOC is configured accordingly using its macro values, with a different COM port for each (as described above).
 
-The single IBEX configuration contains several components, each of which relates to the type of magnet a group of PSUs control e.g. `quadrupole`, `bending`, `crossfield`, etc.  (There is also a component for the 11 TPG300 units which control and monitor the vacuum system).
+The single IBEX configuration contains several components, each of which relates to the type of magnet a group of PSUs control e.g. 'Quadrupole', 'Bending', 'Crossfield', etc.  (There is also a component for the 11 TPG300 units which control valves and read gauges in the vacuum system).
 
 ## Hardware notes
 
@@ -26,14 +26,14 @@ The single IBEX configuration contains several components, each of which relates
 
 - RB2 is a power supply that can be put into three distinct modes: BEND1 (beam goes one way), BEAM2 (the other way), and SEPTUM (beam splits both ways). RB2, although one physical supply, has two Danfysik-like control boards. The first control board (called "RB2" in our system) supplies current for either BEND1, BEND2, or half of SEPTUM mode. The second control board ("RB2_2" in our system) is *only* used to supply the other half of the current in SEPTUM mode.
 
-- It is the only remaining original PSU from before the refurbishment project.  Its replacement(s) were not ready in time to be installed during the long shutdown, and so it has had to be integrated into the new connection topology.  Adapters were made to enable each control board to be directly connected to a MOXA Nport, rather than via a daisy chain as previously.  Wiring details of these adapters are in the document `RIKEN PSU Communications Cables` on the SharePoint site mentioned above.
+- It is the only remaining original PSU from before the refurbishment project.  Its replacement(s) were not ready in time to be installed during the long shutdown, and so it has had to be integrated into the new connection topology.  Adapters were made to enable each control board to be directly connected to a MOXA NPort, rather than via a daisy chain as previously.  Wiring details of these adapters are in the document `RIKEN PSU Communications Cables` on the SharePoint site mentioned above.
 
 
 ## Debugging & Troubleshooting
 
 For Danfysik PSUs, see separate [Wiki Page](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Danfysik) for more specific information.
 
-### Individual PSU won't talk at all
+### Individual Danfysik PSU won't talk at all
 
 - Check the PSU is powered on.  The control mode should switch to `REMOTE` as soon as a command is received.
 - Check the Comms cable - it can occasionally become loose. It is attached to the rear of each supply and can be accessed from the rear door of the rack.  There is also an RJ45 socket for each PSU in each rack.  This is where the MOXA serial lead connects to be patched back to the MOXA NPort unit, and is also worth checking.
@@ -54,7 +54,7 @@ The only (known) way to get out of this state is to power-cycle the power supply
 This section is from a document by James Lord; the original document on the manuals shared drive
 
 ### RB2
-Sometimes RB2-2 reads back implausible numbers such as 75000A. RB2 may also be wrong by a factor of 2. This is often because the IOC (or all of IBEX) has been restarted and the calibration factors for the power supply have been reset to default (which now corresponds to SEPTUM).
-- Run inst.set_RB2_mode(mode,”CAL”) with the mode that RB2 is in now.
-- Run inst.set_beamline() to re-send the setpoints.
+Sometimes RB2_2 reads back implausible numbers such as 75000A. RB2 may also be wrong by a factor of 2. This is often because the IOC (or all of IBEX) has been restarted and the calibration factors for the power supply have been reset to default (which now corresponds to SEPTUM).
+- Run `inst.set_RB2_mode(mode,”CAL”)` with the mode that RB2 is in now.
+- Run `inst.set_beamline()` to re-send the setpoints.
 Note that this procedure may briefly change the value of RB2, so it is best to pause any runs in progress. The restart of IBEX itself would not have affected the magnets.
