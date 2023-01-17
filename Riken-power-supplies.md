@@ -24,6 +24,8 @@ The single IBEX configuration contains several components, each of which relates
 
 ### RB2 (**Due to be replaced April 2023(?) with standard Danfysik units.**)
 
+![Annotated image of RIKEN RB2 PSU Front Panel](https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/images/RIKEN%20RB2%20Front%20Panel.svg)
+
 - RB2 is a power supply that can be put into three distinct modes: BEND1 (beam goes one way), BEAM2 (the other way), and SEPTUM (beam splits both ways). RB2, although one physical supply, has two Danfysik-like control boards. The first control board (called "RB2" in our system) supplies current for either BEND1, BEND2, or half of SEPTUM mode. The second control board ("RB2_2" in our system) is *only* used to supply the other half of the current in SEPTUM mode.
 
 - It is the only remaining original PSU from before the refurbishment project.  Its replacement(s) were not ready in time to be installed during the long shutdown, and so it has had to be integrated into the new connection topology.  Adapters were made to enable each control board to be directly connected to a MOXA NPort, rather than via a daisy chain as previously.  Wiring details of these adapters are in the document `RIKEN PSU Communications Cables` on the SharePoint site mentioned above.
