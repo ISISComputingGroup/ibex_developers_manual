@@ -29,24 +29,17 @@ The single IBEX configuration contains several components, each of which relates
 - It is the only remaining original PSU from before the refurbishment project.  Its replacement(s) were not ready in time to be installed during the long shutdown, and so it has had to be integrated into the new connection topology.  Adapters were made to enable each control board to be directly connected to a MOXA Nport, rather than via a daisy chain as previously.  Wiring details of these adapters are in the document `RIKEN PSU Communications Cables` on the SharePoint site mentioned above.
 
 
-
-
-### Port 3/4 changeover
-
-- The port 3/4 changeover sequence is similar in that RQ18, 19 and 20 power supplies must be OFF before the  sequence can complete. There are three sets of rotary switches that each have 3 positions - Ports 3, 4, and 5 (port 5 does not exist - it is a dummy port).
-- These switches redirect power supplies to different magnets based on the mode. RQ 18, 19 and 20 get redirected to RQ 21, 22 and 23 respectively. The underlying power supply stays the same. The switches are controlled by the PLC which drives the changeover logic. 
-- Currently IBEX does not know the state of the changeover switches; only that a switch has been requested. This information is available from the PLC but not currently read. Therefore, the driver does not "disable" the power supplies for the "other" mode. For example, RQ18 and RQ21 will always read the same, regardless of the state of the changeover switches. This will be addressed in https://github.com/ISISComputingGroup/IBEX/issues/3490
-- It is possible for these switches to get out of sync with each other - see debugging section below
-- The switches are located behind a grille, in a corner between port 3 and 4, near some servers and HV power supplies. There are LEDs to say which mode each switch is currently in, which are visible through the grille. To access the switches physically you need a permit - contact Tim Carter.
-
 ## Debugging
 
-### Whole chain of PSUs won't talk
-- Double check that the MOXA port is set to RS-422 mode. **This setting needs to be done in the MOXA itself (via the webpage) - IBEX can't do it!**
+### RB2 PSU won't talk
+- Check that the PSU is powered on at the isolator on the EPB wall and at its own local switch under the front control panel.
+- Check that remote control mode is selected.  This is done by pressing the `COMP` switch in the `CONT.` section of the control panel.
+- Double check that the appropriate MOXA port(s) is/are set to RS-422 mode. **This setting needs to be done in the MOXA itself (via the webpage) - IBEX can't do it!**
 
 ### Individual PSU won't talk at all
 
-Check the comms cable - it can become loose. It is inside the danfysik unit, you will need the power supplies section to take the front off.
+- Check the PSU is powered on.  The control mode should switch to `REMOTE` as soon as a command is received.
+- Check the Comms cable - it can occasionally become loose. It is attached to the rear of each supply and can be accessed from the rear door of the rack.  There is also an RJ45 socket for each PSU in each rack.  This is where the MOXA serial lead connects to be patched back to the MOXA NPort unit, and is also worth checking.
 
 ### Individual PSU is talking but does not accept setpoints
 Check whether the `.DISP` field is set on records that do not accept values written to them. If yes, it is likely that the instrument thinks it is in changeover (this is the default assumption e.g. if the DAQmx box is not talking to the IOC). You may have to power cycle the DAQmx. There are some pictures on [sharepoint](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Forms/AllItems.aspx?RootFolder=%2Fisis%2Fcomputing%2FICPdiscussions%2FRIKEN%20FE&FolderCTID=0x01200027AD8F05966A2748B3B04C98BB5B442B&View={F2C33C51-70E6-4343-B937-2C59A2568306}&InitialTabId=Ribbon%2EDocument&VisibilityContext=WSSTabPersistence) that show what the DAQmx looks like and where it is located on the RIKEN beamline.
