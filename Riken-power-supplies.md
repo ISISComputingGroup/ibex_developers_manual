@@ -4,15 +4,15 @@
 
 ## Setup
 
-The serial connections to the RIKEN Front End power supply units (PSUs) were previously made in four daisy chains, which all terminated at a single MOXA Nport (i.e. using four of its serial ports).  Since the refurbishment project (concluded December 2022) which replaced all of the PSUs with Danfysik units, the connections are now made in a _radial_ fashion to each individual PSU using five MOXA NPort units placed strategically around the area.
+The serial connections to the RIKEN Front End power supply units (PSUs) were previously made in four daisy chains, which all terminated at a single MOXA NPort (i.e. using four of its serial ports).  Since the refurbishment project (concluded December 2022) which replaced all of the PSUs with Danfysik units, the connections are now made in a _radial_ fashion to each individual PSU using five MOXA NPort units placed strategically around the area.
 
 See the `RIKENFE MOXA NPort Devices and IOCs` spreadsheet in the documentation area mentioned below for PSU <-> COM port <-> IOC mappings.
 
 ## Documentation
 
-The SharePoint site [`Computing -> ICPdiscussions -> RIKEN FE`](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/RIKEN%20FE) contains documentation relating to the refurbishment project, and the current power supply connection information in particular.
+The SharePoint site [`Computing -> ICPdiscussions -> RIKEN FE`](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/RIKEN%20FE) contains documentation relating to the refurbishment project.
 
-The original documentation on the physical setup is at `\\...\shares\ISIS_Experiment_Controls\Manuals\RIKEN_power_supplies\` with some schematics in `riken psu controls - issue C.ppt`.  Most of the information in this area is now out-of-date, particularly that which describes the serial connections to the power supplies.  The _changeover_ system (configuring RB2 magnet mode to direct beam to specific instruments), has now been removed entirely.
+The original documentation on the physical setup is at `\\...\shares\ISIS_Experiment_Controls\Manuals\RIKEN_power_supplies\` with some schematics in `riken psu controls - issue C.ppt`.  Most of the information in this area is now out-of-date, particularly that which describes the daisy-chain serial connections to the power supplies.  The _changeover_ system (configuring RB2 magnet mode to direct beam to specific instruments), has now been removed entirely.
 
 ## IOCs and Macros
 
@@ -41,16 +41,16 @@ For Danfysik PSUs, see separate [Wiki Page](https://github.com/ISISComputingGrou
 ### Individual Danfysik PSU won't talk at all
 
 - Check the PSU is powered on.  The control mode should switch to `REMOTE` as soon as a command is received.
-- Check the Comms cable - it can occasionally become loose. It is attached to the rear of each supply and can be accessed from the rear door of the rack.  There is also an RJ45 socket for each PSU in each rack.  This is where the MOXA serial lead connects to be patched back to the MOXA NPort unit, and is also worth checking.
+- Check the serial cable - it can occasionally become loose. It is attached to the rear of each supply (with null modem) and can be accessed from the rear door of the rack.  There is also an RJ45 socket for each PSU in each rack.  This is where the MOXA serial lead connects to be patched back to the MOXA NPort unit, and is also worth checking.
 
 ### RB2 PSU won't talk
 - Check that the PSU is powered on at the isolator on the EPB wall and at its own local switch under the front control panel.
 - Check that remote control mode is selected.  This is done by pressing the `COMP` switch in the `CONT.` section of the control panel.
-- Double check that the appropriate MOXA port(s) is/are set to RS-422 mode. **This setting needs to be done in the MOXA itself (via the webpage) - IBEX can't do it!**
+- Double check that the appropriate MOXA port(s) is/are set to RS-422 mode. **This setting needs to be done in the MOXA itself (via the webpage) - IBEX can't do it!**  (See spreadsheet mentioned above for port information).
 
 ### Individual PSU won't talk sensibly / I get interleaved replies / I get delayed replies
 
-This can happen, we are not sure why. The PSU seems to get into a communications mode where it is using a different terminator (I think it's terminator when it gets into this state is `\n\r\n\r\n\r`, and no, that isn't a typo...).
+This can happen, we are not sure why. The PSU seems to get into a communications mode where it is using a different terminator (I think its terminator when it gets into this state is `\n\r\n\r\n\r`, and no, that isn't a typo...).
 
 The only (known) way to get out of this state is to power-cycle the power supply at its main switch.
 
