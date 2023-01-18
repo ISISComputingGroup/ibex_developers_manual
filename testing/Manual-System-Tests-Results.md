@@ -20,3 +20,4 @@ Here you can find the results of the system tests performed as part of each rele
 * [Release 9.0.0 results](testing/manual_system_tests_results/Release_9.0.0_manual_system_tests.xlsx) - Oct 2021
 * [Release 10.0.0 results](testing/manual_system_tests_results/Release_10.0.0_manual_system_tests.xlsx) - Jan 2022
 * [Release 11.0.0 results](testing/manual_system_tests_results/Release_11.0.0_manual_system_tests.xlsx) - July 2022
+* [Release 12.0.0 results](testing/manual_system_tests_results/Release_12.0.0_manual_system_tests.xlsx) - Jan 2023
