@@ -58,7 +58,7 @@ TPG300 support is implemented via [#216](https://github.com/ISISComputingGroup/I
 SANDALS uses a [vacuum pump](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/SANDALS/SANDALS_Turbo_Pump.jpg) (in conjunction with CCRs).  A TPG26x is used to measure the pressure.
 TPG26x support was originally implemented via [#1411](https://github.com/ISISComputingGroup/IBEX/issues/1411), [#2379](https://github.com/ISISComputingGroup/IBEX/issues/2379) and [#2578](https://github.com/ISISComputingGroup/IBEX/issues/2578)
 
-<a name="notePLC></a>
+<a name="notePLC"></a>
 ##### Note: Gate Valve PLC #####
 SANDALS has an [Omron PLC](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Omron-FINS) to control two gate valves, one of which has not been set up yet. `GV2` is currently in use and has been set up in SANDALS' base component. The PV for the V1 valve already exists so is ready to create blocks for when it is set up correctly, but currently nothing is wired up on the PLC end. We can still read the status for it. 
 
