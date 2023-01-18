@@ -30,6 +30,7 @@ The single IBEX configuration contains several components, each of which relates
 
 - It is the only remaining original PSU from before the refurbishment project.  Its replacement(s) were not ready in time to be installed during the long shutdown, and so it has had to be integrated into the new connection topology.  Adapters were made to enable each control board to be directly connected to a MOXA NPort, rather than via a daisy chain as previously.  Wiring details of these adapters are in the document `RIKEN PSU Communications Cables` on the SharePoint site mentioned above.
 
+- The PSU itself is inside a restricted area, controlled by swipe access.  A Muon scientist, PSU group member, or MCR officer will need to be contacted should access be required.
 
 ## Debugging & Troubleshooting
 
