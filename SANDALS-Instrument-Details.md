@@ -58,6 +58,10 @@ TPG300 support is implemented via [#216](https://github.com/ISISComputingGroup/I
 SANDALS uses a [vacuum pump](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/SANDALS/SANDALS_Turbo_Pump.jpg) (in conjunction with CCRs).  A TPG26x is used to measure the pressure.
 TPG26x support was originally implemented via [#1411](https://github.com/ISISComputingGroup/IBEX/issues/1411), [#2379](https://github.com/ISISComputingGroup/IBEX/issues/2379) and [#2578](https://github.com/ISISComputingGroup/IBEX/issues/2578)
 
+<a name="notePLC></a>
+##### Note: Gate Valve PLC #####
+SANDALS has an [Omron PLC](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Omron-FINS) to control two gate valves, one of which has not been set up yet. `GV2` is currently in use and has been set up in SANDALS' base component. The PV for the V1 valve already exists so is ready to create blocks for when it is set up correctly, but currently nothing is wired up on the PLC end. We can still read the status for it. 
+
 <a name="noteEurotherm"></a>
 ##### Note: Eurotherm #####
 [Eurotherms](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/SANDALS/SANDALS_Eurotherms.jpg) are used to control temperature Orange Cryostat, CCR and Furnace devices.
@@ -84,14 +88,7 @@ More information on [IRIS Furnaces](https://www.isis.stfc.ac.uk/Pages/High-tempe
 
 <a name="noteSampleChanger"></a>
 ##### Note: SANDALS Sample Changer #####
-The [SANDALS sample changer](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/SANDALS/SANDALS_Sample_Changer_bottom.jpg) can hold up to 15 samples.  It uses a custom controller (i.e. not a Galil) - see [SANDALS sample changer (top)](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/SANDALS/SANDALS_Sample_Changer_top.jpg)
-May need to create a custom stream-driver to handle this device.
-NIMROD has the same type of sample changer but, in this case, is controlled by a Galil.
-
-The SM300 that the sample changer uses has had [issues](https://github.com/ISISComputingGroup/IBEX/issues/2992) in the past if software flow control is enabled. The SM300 communicates with non-ascii characters. If mistimed or misinterpreted, these can interrupt traffic with the device. Flow control has been disabled in the associated [pull request](https://github.com/ISISComputingGroup/EPICS-ioc/pull/237).
-
-It is proposed to replace the SM300 controller with a Galil DMC4040 controller (see [#3259](https://github.com/ISISComputingGroup/IBEX/issues/3259)).
-
+The [SANDALS sample changer](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/SANDALS/SANDALS_Sample_Changer_bottom.jpg) can hold up to 15 samples.  It has recently been upgraded to use a [Beckhoff PLC](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Beckhoff) which controls the jaws as well. 
 <a name="noteWaterBath"></a>
 ##### Note: Water Bath #####
 SANDALS uses two types of water bath, both Julabo models: FP-50 and [FP-52](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/SANDALS/SANDALS_Julabo_FP52.jpg).  
