@@ -181,29 +181,29 @@
        id="text857"><tspan
          sodipodi:role="line"
          id="tspan855"
-         style="stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.264583"
          x="37.082478"
          y="33.510311">Output</tspan><tspan
          sodipodi:role="line"
-         style="stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.264583"
          x="37.082478"
-         y="41.447811"
+         y="41.521317"
          id="tspan8087">('OFF', 'ON')</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:Bold-Riley-Free;-inkscape-font-specification:Bold-Riley-Free;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="171.12372"
-       y="35.891754"
+       x="158.19588"
+       y="32.149487"
        id="text2643"><tspan
          sodipodi:role="line"
          id="tspan2641"
-         style="stroke-width:0.264583"
-         x="171.12372"
-         y="35.891754">Control Mode</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.264583"
+         x="158.19588"
+         y="32.149487">Control Mode</tspan><tspan
          sodipodi:role="line"
-         style="stroke-width:0.264583"
-         x="171.12372"
-         y="43.829254"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.264583"
+         x="158.19588"
+         y="40.160492"
          id="tspan9237">('LOCAL', 'COMP.')</tspan></text>
     <path
        style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker1131)"
@@ -214,7 +214,7 @@
        sodipodi:nodetypes="cc" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker1131)"
-       d="M 170.76687,47.443908 121.95096,112.26957"
+       d="M 158.17924,45.742877 121.95096,112.26957"
        id="path4273"
        inkscape:connector-type="polyline"
        inkscape:connector-curvature="0"
@@ -227,29 +227,29 @@
        id="text5467"><tspan
          sodipodi:role="line"
          id="tspan5465"
-         style="stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.264583"
          x="32.659794"
          y="196.29897">Polarity</tspan><tspan
          sodipodi:role="line"
-         style="stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.264583"
          x="32.659794"
-         y="204.23647"
-         id="tspan6661">(+, -)</tspan></text>
+         y="204.30997"
+         id="tspan6661">('+', '-')</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:Bold-Riley-Free;-inkscape-font-specification:Bold-Riley-Free;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
        x="104.95361"
-       y="197.65979"
+       y="192.36819"
        id="text5757"><tspan
          sodipodi:role="line"
          id="tspan5755"
-         style="stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.264583"
          x="104.95361"
-         y="197.65979">Mode</tspan><tspan
+         y="192.36819">Mode</tspan><tspan
          sodipodi:role="line"
-         style="stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.264583"
          x="104.95361"
-         y="205.59729"
+         y="200.3792"
          id="tspan5759">('BEND 1', 'BEND 2', 'SEPTUM')</tspan></text>
     <text
        xml:space="preserve"
@@ -258,13 +258,13 @@
        y="27.173967"
        id="text11529"><tspan
          id="tspan11527"
-         style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.265;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.265;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          x="99.297668"
          y="27.173967"
          sodipodi:role="line">Interlock status</tspan><tspan
-         style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.265;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.265;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          x="99.297668"
-         y="35.111465"
+         y="35.184975"
          id="tspan11531"
          sodipodi:role="line">&amp; RESET button</tspan></text>
     <text
@@ -275,13 +275,13 @@
        id="text13251"><tspan
          sodipodi:role="line"
          id="tspan13249"
-         style="stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.264583"
          x="187.6237"
          y="184.90207">RB2_1 Output</tspan><tspan
          sodipodi:role="line"
-         style="stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.264583"
          x="187.6237"
-         y="192.83957"
+         y="192.91307"
          id="tspan13253">&amp; Current setting</tspan></text>
     <text
        xml:space="preserve"
@@ -290,13 +290,13 @@
        y="195.39171"
        id="text13251-3"><tspan
          id="tspan13249-1"
-         style="stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.264583"
          x="243.01573"
          y="195.39171"
          sodipodi:role="line">RB2_2 Output</tspan><tspan
-         style="stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.264583"
          x="243.01573"
-         y="203.32921"
+         y="203.40271"
          id="tspan13253-4"
          sodipodi:role="line">&amp; Current setting</tspan></text>
     <path
@@ -308,19 +308,21 @@
        sodipodi:nodetypes="cc" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker14664)"
-       d="M 239.16494,186.26288 223.68556,152.75257"
+       d="m 239.16494,186.26288 -7.31443,-53.24227"
        id="path14660"
        inkscape:connector-type="polyline"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker14858)"
-       d="M 189.66495,176.90721 176.2268,153.60309"
+       d="M 200.21134,176.90721 186.09277,133.87113"
        id="path14854"
        inkscape:connector-type="polyline"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker15134)"
-       d="m 105.12371,191.02578 13.26804,-40.31444"
+       d="m 106.14433,186.6031 12.24742,-35.89176"
        id="path15130"
        inkscape:connector-type="polyline"
        inkscape:connector-curvature="0"
