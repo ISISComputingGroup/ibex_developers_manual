@@ -1,7 +1,5 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [Power Supplies](Power-Supplies) > [Riken power supplies](Riken-power-supplies)
 
-# Draft Version
-
 ## Setup
 
 The serial connections to the RIKEN Front End power supply units (PSUs) were previously made in four daisy chains, which all terminated at a single MOXA NPort (i.e. using four of its serial ports).  Since the refurbishment project (concluded December 2022) which replaced all of the PSUs with Danfysik units, the connections are now made in a _radial_ fashion to each individual PSU using five MOXA NPort units placed strategically around the area.
@@ -16,9 +14,11 @@ The original documentation on the physical setup is at `\\...\shares\ISIS_Experi
 
 ## IOCs and Macros
 
-Each of the individual power supplies is controlled by an individual [Danfysik](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Danfysik) IOC (i.e. a one-to-one mapping).  Each IOC is configured accordingly using its macro values, with a different COM port for each (as described above).
+Each of the individual Danfysik power supplies is controlled by an individual [Danfysik](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Danfysik) IOC (i.e. a one-to-one mapping).  Each IOC is configured accordingly using its macro values, with a different COM port for each (as described above).
 
-The single IBEX configuration contains several components, each of which relates to the type of magnet a group of PSUs control e.g. 'Quadrupole', 'Bending', 'Crossfield', etc.  (There is also a component for the 11 TPG300 units which control valves and read gauges in the vacuum system).
+The RB2 PSU is _also_ controlled by a Danfysik IOC (actually two - one for each board, see below).  Its protocol is very similar to a model 8500, and so the `DEVTYPE` macro is set to this, with the only difference being the command for setting the current.  Rather than writing an entirely separate protocol file, it was decided to create a `protocol_override` macro and set this to a file containing the single command definition.
+
+The IBEX configuration contains several components, each of which relates to the type of magnet a group of PSUs control e.g. 'Quadrupole', 'Bending', 'Crossfield', etc.  (There is also a component for the 11 TPG300 units which control valves and read gauges in the vacuum system).
 
 ## Hardware notes
 
@@ -28,7 +28,7 @@ The single IBEX configuration contains several components, each of which relates
 
 - RB2 is a power supply that can be put into three distinct modes: BEND1 (beam goes one way), BEAM2 (the other way), and SEPTUM (beam splits both ways). RB2, although one physical supply, has two Danfysik-like control boards. The first control board (called "RB2" in our system) supplies current for either BEND1, BEND2, or half of SEPTUM mode. The second control board ("RB2_2" in our system) is *only* used to supply the other half of the current in SEPTUM mode.
 
-![Annotated image of RIKEN RB2 PSU control boards](https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/images/RIKEN%20RB2%20Control%20Boards.svg)
+![Annotated image of RIKEN RB2 PSU Control Boards](https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/images/RIKEN%20RB2%20Control%20Boards.svg)
 
 - It is the only remaining original PSU from before the refurbishment project.  Its replacement(s) were not ready in time to be installed during the long shutdown, and so it has had to be integrated into the new connection topology.  Adapters were made to enable each control board to be directly connected to a MOXA NPort, rather than via a daisy chain as previously.  Wiring details of these adapters are in the document `RIKEN PSU Communications Cables` on the SharePoint site mentioned above.
 
@@ -40,7 +40,7 @@ For Danfysik PSUs, see separate [Wiki Page](https://github.com/ISISComputingGrou
 
 ### Individual Danfysik PSU won't talk at all
 
-- Check the PSU is powered on.  The control mode should switch to `REMOTE` as soon as a command is received.
+- Check the PSU is powered on :wink:  The control mode should switch to `REMOTE` as soon as a command is received.
 - Check the serial cable - it can occasionally become loose. It is attached to the rear of each supply (with null modem) and can be accessed from the rear door of the rack.  There is also an RJ45 socket for each PSU in each rack.  This is where the MOXA serial lead connects to be patched back to the MOXA NPort unit, and is also worth checking.
 
 ### RB2 PSU won't talk
