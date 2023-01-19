@@ -29,6 +29,15 @@ Send `*IDN?`, you get the device name back.
 
 ### Probable errors
 - If the 'High voltage' switch is not in the middle position, it will be possible to communicate with the unit, but any attempt to turn the HV on will result in an 'Execution error'. This is treated as an alarm condition by the IOC.
-  Set the switch to the correct position, acknowledge the alarm and turn the HV on again. 
+  Set the switch to the correct position, acknowledge the alarm and turn the HV on again.
+- If the voltage setpoint is set to greater that the voltage limit, this will also result in an 'Execution error'.
 - If the set voltage or current limits or trips are exceeded, this will be treated as an alarm condition by the IOC.
   Correct the cause of overload and acknowledge the alarm.
+
+### Testing with hardware
+- Set the voltage setpoint, readback voltage should change to match. 'Stable' is likely to be off for some seconds.
+- With a resistive load fitted, set the 'Current limit' to less than the measured value. This causes the readback voltage to drop so that the measured current is at the set limit. This will cause the 'Current limited' alarm to be set to 'MINOR'.
+- Restore the 'Current limit' to more than the load current at the set voltage. The readback voltage should be at the setpoint again, and the alarm will clear.
+- 'Trip reset mode is in the 'Auto' position.
+-- Set the 'Current trip' to less than the load current. This causes the output to trip and sets the 'Current tripped' alarm to 'MAJOR'. However, the auto trip reset re-enables the output after some seconds (resulting in another trip).
+-- Set the 'Current trip' to greater than the load current. The trip / trip cycling stops and operation returns to normal. The alarm will still need to be acknowledged.
