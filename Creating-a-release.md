@@ -69,6 +69,9 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
 1. Update the [user manual](https://github.com/ISISComputingGroup/ibex_user_manual/wiki) with any relevant changes
 
 ### Testing
+
+Make sure that the experiment controls public share has the most recent version of ibex_utils from Git (i.e. do git pull) - thi sis so the most recent install script will be used for testing and install
+
 One or more people should do [manual system tests, using this page](Manual-system-tests).
 
 ### Post Testing
