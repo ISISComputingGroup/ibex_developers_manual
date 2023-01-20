@@ -26,8 +26,8 @@ The IOC should be able to talk via ADS at this point but will need setting up in
 #### Fields that aren't automatically populated
 Although commissioning a Beckhoff is far simpler than a Galil from an IBEX perspective, there are some fields that need to be set manually for each axis.  These are: 
 
-- Engineering units (`.EGU`) - [ticket to populate](https://github.com/ISISComputingGroup/IBEX/issues/6855)
-- Axis description (`.DESC`) - [ticket to populate](https://github.com/ISISComputingGroup/IBEX/issues/6860)
+- Engineering units (`.EGU`) - [ticket to automatically populate](https://github.com/ISISComputingGroup/IBEX/issues/6855)
+- Axis description (`.DESC`) - [ticket to automatically populate](https://github.com/ISISComputingGroup/IBEX/issues/6860)
 - Soft limits
 
 These can be set via a `caput` and will be autosaved thereafter.
