@@ -29,44 +29,58 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
 # Rotas
 
 ## Stand up
-| Standup | Week Commencing | x for Done |
+ | Standup | Week Commencing | x for Done |
  |--- | --- | --- |
- |HC | 05/12/2022 |x |
- |NR | 12/12/2022 |x |
- |JH | 19/12/2022 |x |
- |N/A | 26/12/2022 |x |
- |TBC| 02/01/2023 |x |
- |DK | 09/01/2023 | |
- |CMS | 16/01/2023 | |
+ |DK | 09/01/2023 |x |
+ |CMS | 16/01/2023 |x |
  |LJ | 23/01/2023 | |
- |LC | 30/01/2023 | |
+ |FA | 30/01/2023 | |
  |TL | 06/02/2023 | |
  |HC | 13/02/2023 | |
  |NR | 20/02/2023 | |
- |FA | 27/02/2023 | |
- |KB | 06/03/2023 | |
+ |KB | 27/02/2023 | |
+ |LC | 06/03/2023 | |
  |JH | 13/03/2023 | |
  |DK | 20/03/2023 | |
- |CMS | 27/03/2023 | |
+ |TL | 27/03/2023 | |
  |LJ | 03/04/2023 | |
+ |CMS | 10/04/2023 | |
+ |FA | 17/04/2023 | |
+ |LC | 24/04/2023 | |
+ |DK | 01/05/2023 | |
+ |CMS | 08/05/2023 | |
+ |NR | 15/05/2023 | |
+ |JH | 22/05/2023 | |
+ |HC | 29/05/2023 | |
+ |FA | 05/06/2023 | |
+ |DK | 12/06/2023 | |
+ |LC | 19/06/2023 | |
+ |TL | 26/06/2023 | |
+ |LJ | 03/07/2023 | |
+ |JH | 10/07/2023 | |
+ |CMS | 17/07/2023 | |
+ |DK | 24/07/2023 | |
+ |FA | 31/07/2023 | |
+ |LC | 07/08/2023 | |
 
 
 ## Sprint Meetings
 | Meeting| Chair | x for Done | Timekeeper | x for Done | Note taker | x for Done |
 | ---| --- | --- | ---| --- | --- | --- |
-| 2022_10_06_Pre-Planning| -- | X | --| X | |  |
-| 2022_09_08_Review/Retro| DK | x | CMS| x | LC| x |
-| 2022_10_06_Planning| KB | x | LC| x | |  |
-| 2022_10_27_Pre-Planning| -- |  | --|  | |  |
-| 2022_10_06_Review/Retro| FA | X | JH| X | LJ | X |
-| 2022_10_27_Planning| KB | x | TL| x | |  |
-| 2022_11_24_Pre-Planning| -- |  | --|  | |  |
-| 2022_10_27_Review/Retro| LC | x | FA| x | TL| x |
-| 2022_11_24_Planning| KB | x | LJ| x | |  |
-| 2023_01_05_Pre-Planning| -- |  | --|  | |  |
-| 2022_11_24_Review/Retro| JH | x | HC| x | NR| x |
-| 2023_01_05_Planning| KB | x | CMS| x | |  |
-| 2023_02_02_Pre-Planning| -- |  | --|  | |  |
-| 2023_01_05_Review/Retro| KB |  | NR|  | HC |  |
+| 2023_01_05_Planning| KB | X | CMS| X | |  |
+| 2023_01_05_Review/Retro| KB |  | NR| X | HC| 0 |
 | 2023_02_02_Planning| KB |  | DK|  | |  |
+| 2023_02_02_Review/Retro| LJ |  | JH|  | DK| 0 |
+| 2023_03_09 _Planning| KB |  | LJ|  | |  |
+| 2023_03_09 _Review/Retro| NR |  | HC|  | JH| 0 |
+| 2023_04_14 _Planning| KB |  | NR|  | |  |
+| 2023_04_14 _Review/Retro| FA |  | DK|  | TL|  |
+| 2023_05_11 _Planning| KB |  | TL|  | |  |
+| 2023_05_11 _Review/Retro| HC |  | LC|  | NR| 0 |
+| 2023_06_08 _Planning| KB |  | HC|  | |  |
+| 2023_06_08 _Review/Retro| TL |  | NR|  | HC| 0 |
+| 2023_07_17 _Planning| KB |  | JH|  | |  |
+| 2023_07_17 _Review/Retro| CMS |  | FA|  | LJ| 0 |
+| 2023_08_10_Planning| KB |  | CMS|  | |  |
+| 2023_08_10_Review/Retro| JH |  | LJ|  | LC| 0 |
 
