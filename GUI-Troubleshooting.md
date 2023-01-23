@@ -77,6 +77,11 @@ Try [setting up the checkstyle](https://github.com/ISISComputingGroup/ibex_devel
 ## GUI claims another instance is running upon start (but there isn't)
 Navigate to: `C:/Users/<username>/AppData/Local/IBEX` and delete the file "instance.txt"
 
+## maven-built client can't see referenced files
+Add `Eclipse-BundleShape: dir` in the `MANIFEST.MF`; see the `.opis` `MANIFEST.MF` for an example of this. 
+This makes the maven build build the directory into a directory rather than a jar, which is sometimes necessary to let eclipse then "see" the files natively on the filesystem. If you look in the `plugins/` folder of a built client you should see a folder for `.opis` but a `.jar` for most other ibex modules - except for a few that need to be built as directories, as you may be finding.
+
+
 
 ## Other issues
 
