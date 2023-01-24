@@ -41,7 +41,7 @@ Send `*IDN?`, you get the device name back.
 - With a resistive load fitted, set the 'Current limit' to less than the measured value. This causes the readback voltage to drop so that the measured current is at the set limit. This will cause the 'Current limited' alarm to be set to 'MINOR'.
 - Restore the 'Current limit' to more than the load current at the set voltage. The readback voltage should be at the setpoint again, and the alarm will clear.
 - Remove the external interlock connector. This causes the output to trip and sets the 'Interlock tripped' alarm to 'MAJOR'.
-- Replace the external interlock connector. The output remains tripped until the alarm is acknowledged. Operation the returns to normal. 
+- Replace the external interlock connector. The output remains tripped until the alarm is acknowledged. Operation then returns to normal. 
 - 'Trip reset mode' is in the 'MAN' position:
   - Set the 'Current trip' to less than the load current. This causes the output to trip and sets the 'Current tripped' alarm to 'MAJOR'.
   - Set the 'Current trip' to greater than the load current. The output remains tripped until the alarm is acknowledged. The operation returns to normal.
