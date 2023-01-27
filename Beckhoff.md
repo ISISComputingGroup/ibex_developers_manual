@@ -21,7 +21,7 @@ see [Beckhoff Commissioning](Beckhoff-Commissioning)
 ## IOC
 ### Beckhoff config area
 
-The config area contains a directory used for storing `.tpy` files for use with `tcIoc`. On an instrument it should look like this: `\instrument\settings\config\<instname>\configurations\twincat\`. The TC IOC will search in this directory using the given `TPY_FILE` macro. The generated DB file also gets created in this directory by `tcIoc`. 
+The config area contains a directory used for storing `.cmd` files for use with `tcIoc` (in the same way as a galil or other motor controller). On an instrument it should look like this: `\instrument\settings\config\<instname>\configurations\twincat\`. 
 
 ## Updating
 
