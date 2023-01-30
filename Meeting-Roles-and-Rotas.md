@@ -33,7 +33,7 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
  |--- | --- | --- |
  |DK | 09/01/2023 |x |
  |CMS | 16/01/2023 |x |
- |LJ | 23/01/2023 | |
+ |LJ | 23/01/2023 |x |
  |FA | 30/01/2023 | |
  |TL | 06/02/2023 | |
  |HC | 13/02/2023 | |
