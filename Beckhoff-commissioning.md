@@ -8,7 +8,8 @@ Beckhoffs are connected to NDX machines via private networks, in much the same w
 
 ### ADS routes
 To actually communicate via the ADS transport layer you will need to set up a route on the instrument PC. To do so: 
-1. Install the XAR tools if not already installed. A copy of these will be hosted on `<public share>\third_party_installers\special_drivers\beckhoff\`. All of the defaults are fine so this should be a case of just clicking through the wizard and installing the drivers that show up. 
+1. Install the XAR tools if not already installed(these are included in the windows 10 clone so should be installed to instrument machines)
+ A copy of these will be hosted on `<public share>\third_party_installers\special_drivers\beckhoff\`. All of the defaults are fine so this should be a case of just clicking through the wizard and installing the drivers that show up. 
 2. Set up an ADS route on the NDX: 
   - `Right-click TwinCAT icon in system tray -> Router -> Edit Routes -> Add...` with these settings:
     - Advanced settings ticked, click the IP Address radio button, then enter the IP address (mentioned above) on box at top. Press the return key after entering this in the box - this seems to work better than pressing the refresh button.  
