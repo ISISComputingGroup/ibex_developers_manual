@@ -96,3 +96,5 @@ This IOC was originally written by ESS. It uses an ASCII protocol over TCP/IP to
 </details>
 
 
+#### `currentTime::getCurrentTime(): time discontinuity detected`
+This is a weird error that seems to occur sometimes when running a Beckhoff simulator on a dev machine. To stop it you need to do run `unsettick.bat` script in `tcioc\master` and reboot. NB this should never happen on an instrument machine as they do not run simulated Beckhoffs. 
