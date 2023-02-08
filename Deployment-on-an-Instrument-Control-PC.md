@@ -20,7 +20,7 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
 ### upgrading IBEX to the latest version
 - Ensure the instrument is running and in a setup state (e.g. so you can take screenshots of blocks, motors, running VIs, etc.)
 - Ensure all command lines to EPICS are closed
-- Run `<public share>\ibex_utils\installation_and_upgrade\instrument_deploy.bat` 
+- Run `<public share>\ibex_utils\installation_and_upgrade\instrument_deploy.bat` (or for 32-bit releases run with the parameter `x86`)
     - It will look for the highest version number in the release folder as a source.
     - If you want to install a non-default release you need to set the `SUFFIX` variable in the batch file. For example with `x.y.z` being the current release and `hotfix` being the suffix, it will look for the folder `Releases/x.y.z-hotfix`
     - Apart from the below points, just follow instructions
