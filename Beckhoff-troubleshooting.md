@@ -18,7 +18,7 @@ if neither of these work the cable has probably fallen out.
 ## Twincat Beckhoff Engineering View
 
 ### Error: `xxxxx`
-This is an issue reporting from the Beckhoff itself. you may be able to reset the error and get moving again. otherwise contact IESG to resolve. A list of error IDs are available from the TwinCAT documentation available online. 
+This is an issue reporting from the Beckhoff itself. you may be able to reset the error and get moving again. otherwise contact IESG to resolve. A list of error IDs are available from the [TwinCAT documentation](https://infosys.beckhoff.com/english.php?content=../content/1033/tcdiagnostics/513122571.html&id=3090135020933951410). 
 
 #### Safety systems
 Safety systems such as light curtains or bump strips will throw the controller into error (and usually disable all axes) as opposed to just stopping movement like on a Galil. The green reset button on each beamline should clear the error and re-enable. 
