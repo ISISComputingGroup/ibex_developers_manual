@@ -24,6 +24,8 @@ This is newer hardware which is now in use on LET. POLREF plan to eventually als
 
 V2 hardware is assumed by default in the ioc; no special configuration is required to use it. It should use the `Mezei flipper` OPI.
 
+The port used by default is 80. As of [#7206](https://github.com/ISISComputingGroup/IBEX/issues/7206) we now enforce that this is added to the `HOST` macro. 
+
 # Hardware
 
 - There is a python script **running on a separate PC** (LET:NDW1889, POLREF:NDW1937) which controls some DAQ units
