@@ -19,7 +19,7 @@ To actually communicate via the ADS transport layer you will need to set up a ro
 
 ### IOC setup
 The IOC should be able to talk via ADS at this point but will need setting up in the respective configs. 
-- A `MTRCTRL` number will need to be given - this is the normal controller number
+- A `MTRCTRL` number will need to be given - this is the controller number as shown on the table of motors.
 - `Beckhoff_plc_code` should be specified as a macro, this may be removed in future releases, more information on this is available below however it should be set to `1` for instruments running the latest code. 
 - Number of axes (`NUM_AXES` macro)
 - the `IP` and `AMSnetID` of the controller
