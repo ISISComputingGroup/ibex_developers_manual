@@ -154,5 +154,5 @@ We are using a fork of NICOS. If updating NICOS, ensure that the protocol versio
 - procServ
 - EPICS base
 - Support modules e.g. StreamDevice, asyn, Lua etc.
-- Google test (`gtest`)
+- Google test for EPICS (`gtest`) (https://github.com/epics-modules/gtest)
 
