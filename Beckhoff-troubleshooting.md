@@ -23,5 +23,3 @@ This is an issue reporting from the Beckhoff itself. you may be able to reset th
 #### Safety systems
 Safety systems such as light curtains or bump strips will throw the controller into error (and usually disable all axes) as opposed to just stopping movement like on a Galil. The green reset button on each beamline should clear the error and re-enable. 
 
-## `currentTime::getCurrentTime(): time discontinuity detected`
-This is a weird error that seems to occur sometimes when running a Beckhoff simulator on a dev machine. To stop it you need to do run `unsettick.bat` script in `tcioc\master` and reboot. NB this should never happen on an instrument machine as they do not run simulated Beckhoffs. 
