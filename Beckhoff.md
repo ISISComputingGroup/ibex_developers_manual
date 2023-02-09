@@ -3,6 +3,19 @@
 
 Beckhoff motor controllers are the most complex in use at ISIS and will be the standard going forward. A Beckhoff controller is basically a generic PLC that includes a number of useful functions out of the box for running motors. The generality of a Beckhoff means that it will most likely be used in the future for measuring and controlling other hardware outside of motion. A more detailed presentation has been given about Beckhoffs in a [Code Chat](Code-Chats-and-Lightning-Talks) entitled Layers, Onions and Ogres.
 
+Current Beckhoff installations are:
+| Instrument | Device |
+| -----------|--------|
+| LARMOR | Rotation Bench |
+| IMAT | Large sample bench, controlling rotation and height |
+| SANS2D | Guides (5 in total) - note apertures are still Galil-controlled| 
+| CHIPIR | Filter set | 
+| SANDALS | Jaws and Sample changer | 
+| CRISP | Jaws (running old firmware for now) | 
+| MUONFE | Barn doors (in progress) | 
+| INTER | Secondary flight path upgrade (in progress) | 
+| SURF | Critical axis (in progress) |
+
 ## Documentation
 - [Axis and Controller Commissioning Guide](https://stfc365.sharepoint.com/:w:/s/ISISMechatronics/Ee_aMxb5CF1Dlz-NUGW3OVgB0K7vQjXXwZDwSl5DSHN48w?e=GjqNEb&isSPOFile=1) document describing setting up a controller and TwinCAT solution for a new system and configuring real and virtual axes within TwinCAT environment.
 
