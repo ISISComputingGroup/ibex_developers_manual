@@ -1,5 +1,8 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > [Motor IOCs](Motor-IOCs) > [Beckhoff](Beckhoff) > [tcIOC](tcIOC)
 
+
+
+**Note: we no longer use tcIOC for numerous reasons, the most important being the unreliable `.tpy` file format which was preventing us from integrating the new motion standard library code. We now use `AdsDriver` in conjunction with `TwincatMotor`.**
 # General information
 
 This IOC was originally written at LIGO and is in a stable state. The original version from tcIOC was targeted at the use of Beckhoffs as generic PLCs and had no specific motion support. It constructs db records by examining the built PLC project files and communicates with it using ADS (Beckhoff's own protocol). More detail can be found at https://github.com/ISISComputingGroup/EPICS-tcIoc.
