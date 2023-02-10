@@ -7,6 +7,7 @@ As we don't really handle any logic minus the motor record aliasing, there isn't
 **The first thing to do if an issue occurs is open a device screen which is pointing to the "Beckhoff engineering view" and check all axes for an error ID. note you have to press the load button to load an axis.**
 - If the records in here are _all_ in alarm, it's likely that there is a comms issue.
 - If not, and there are error IDs for any axis, the beckhoff has thrown an error. You may be able to hit "reset" and resolve this, if not contact the IESG or the IDD Motion team. 
+- If the axis does not have the "enabled" light on, try and enable it. If this does not work there is probably some form of interlock stopping this from working, such as light curtains, bump strips etc. 
 
 ## ADS route and pinging
 an easy thing to check to see if a beckhoff is actually reachable is to
