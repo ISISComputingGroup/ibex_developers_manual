@@ -47,7 +47,7 @@ Now run the following command to prepend the fully qualified (in our case the IS
 Check the network is up (ping `NDX<INST>`).
 
 If it is, check the VNC process is running on the NDX machine (there should be a VNC icon in the task bar). 
-If not start it by double-clicking the entry in the windows autostart menu (`c:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp`) and start it manually.
+If not start it by double-clicking the entry in the windows autostart menu (`c:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp`) and start it manually. VNC does not run as a windows service on NDX computers - it is running in "user mode" in the background, started on login
 
 ## Data fills up volume too rapidly on an Instrument
   (generating Nagios errors or disk full errors)
