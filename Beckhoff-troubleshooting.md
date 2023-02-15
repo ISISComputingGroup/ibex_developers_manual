@@ -12,6 +12,7 @@ As we don't really handle any logic minus the motor record aliasing, there isn't
 ## ADS route and pinging
 an easy thing to check to see if a beckhoff is actually reachable is to
 - ping `192.168.1.22x` (usually 221)
+  * Note, not all beckhoffs reply to ping.
 - from the NDX system tray right click the twincat icon, then routing -> edit routes. check there is an `x` or padlock symbol in the "connected" column. 
 
 if neither of these work the cable has probably fallen out. 
