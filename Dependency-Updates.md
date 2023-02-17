@@ -23,7 +23,7 @@ General update process:
 - Some repositories are updated "in-place". Do upgrade these, simply delete and then re-add them to the target platform, when they are re-added they will pick up the latest versions.
 - For maven dependencies referenced in target platform, look up latest version on maven central then update the version number in target platform to correspond. If the version numbers are hardcoded in `feature.xml` or `MANIFEST.MF` for individual plugins, update it there too.
 
-**Note: when updating the eclipse framework itself, you also need to update `client.tycho.parent` - see below for details.**
+**Note: when updating the eclipse framework itself, you will need to download the same eclipse IDE with the same version number or else some jars may not be found. You also need to update `client.tycho.parent` - see below for details.**
 
 ### Parent POM
 
@@ -31,7 +31,7 @@ Tycho and eclipse framework versions are defined in the file `./base/uk.ac.stfc.
 
 ### Client JRE
 
-The GUI builds copy a JRE from `\\isis\inst$\Kits$\CompGroup\ICP\ibex_client_jre`. Replace this with the latest JRE and check that things still work.
+The GUI builds copy a JRE from `\\isis\inst$\Kits$\CompGroup\ICP\ibex_client_jdk<jdk_version>`. Copy the latest jdk to ICP, rename to follow the same format, and then update `ibex_gui\build\build.bat` to point at the new JRE location.
 
 ### Pydev
 
