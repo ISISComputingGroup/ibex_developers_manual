@@ -14,7 +14,7 @@
 
 ### 
 > Coffee
-- Too tricky to invite MANTID group to coffee, but possible with accelerator controls group.  FAA talking to Ivan anyway.
+- Too tricky to invite MANTID group to coffee (as they work remotely more often), but should be possible with accelerator controls group.  FAA talking to Ivan about this anyway
 
 
 ## Items from this retrospective:
