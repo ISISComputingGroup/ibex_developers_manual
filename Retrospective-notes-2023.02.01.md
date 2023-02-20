@@ -1,6 +1,6 @@
 | Chair      | Timekeeper | Note Taker |
 | :--------   | :---------: | ----------: |
-| ?? | ?? | David Keymer |
+| JH | NR | DK |
 
 ## Items from [last retrospective](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Retrospective-notes-2023.01.04):
 
