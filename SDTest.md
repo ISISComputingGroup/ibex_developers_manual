@@ -92,10 +92,10 @@ IN:LARMOR:SDTEST_01:P1:ASYNREC       (write) Access to an EPICS
                                              .. _ASYN Record: http://www.aps.anl.gov/epics/modules/soft/asyn/R4-26/asynRecord.html 
 ```
 
-When polling the GETVAL process variable, the the IOC will send $(GETOUT) and expect to receive $(GETIN)  Within $(GETIN) can be printf style format characters to match
+When polling the GETVAL process variable, the the IOC will send `$(GETOUT)` and expect to receive `$(GETIN)`  Within `$(GETIN)` can be printf style format characters to match
 the value being read. For valid format converters see __ http://epics.web.psi.ch/software/streamdevice/doc/formats.html
 
-When writing to the SETVAL process variable, the IOC will construct a string from concatenating $(SETOUTA), $(SETOUTB) and $(SETOUTC). The writing format character (e.g. %f)
+When writing to the SETVAL process variable, the IOC will construct a string from concatenating `$(SETOUTA)`, `$(SETOUTB)` and `$(SETOUTC)`. The writing format character (e.g. %f)
 must be in SETOUTC, normally only SETOUTA and SETOUTC are specified, sometimes just SETOUTC. SETOUTB is for sending a special character between these two values, such as a space.
 SETOUTA and SETOUTC are quoted strings as per __ http://epics.web.psi.ch/software/streamdevice/doc/protocol.html whereas SETOUTB can be a byte number such as 0x20 for a space character.  Only use SETOUTB is you have trouble with using SETOUTA and SETOUTC - in particular needing to send a space character between and string
 and a format converter that seems to get stripped otherwise.
