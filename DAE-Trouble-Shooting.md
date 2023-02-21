@@ -417,4 +417,12 @@ To resolve the problem you need to restart the ISISICP in failed run recovery mo
 - the process should now restart and re-save the missing runs
 - re-Edit `isisicp.properties` and comment out the `isisicp.failedends.rerun` line so it will not automatically do any reruns on next restart. This is just in case a later run failed to end and crashed the program due to corrupt data, if it tried to re-end this on restart you might get into an infinite isisicp re-end crashing loop.
   
-        
+## corrupted MAX database
+
+for DAE2 systems the VME connection should be visible in the NI measurement and automation explorer, if when you try and view it you get 
+
+![image](https://user-images.githubusercontent.com/1132753/220388765-abf91689-eefb-492d-8873-237051d7bfba.png)
+
+you probably need to follow https://knowledge.ni.com/KnowledgeArticleDetails?id=kA00Z000000P8awSAC&l=en-GB
+
+         
