@@ -421,7 +421,7 @@ To resolve the problem you need to restart the ISISICP in failed run recovery mo
 
 for DAE2 systems the VME connection should be visible in the NI measurement and automation explorer, if when you try and view it you get 
 
-![image](https://user-images.githubusercontent.com/1132753/220388765-abf91689-eefb-492d-8873-237051d7bfba.png)
+![Capture](https://user-images.githubusercontent.com/1132753/220389741-3f33982f-9f92-4ae4-bccc-0ef542a00225.PNG)
 
 you probably need to follow https://knowledge.ni.com/KnowledgeArticleDetails?id=kA00Z000000P8awSAC&l=en-GB
 
