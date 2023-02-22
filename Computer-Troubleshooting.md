@@ -89,7 +89,7 @@ Often the system disk gets full because of logging, or windows updates etc. You 
 Dual monitors with one replicated by a Daxten or a single remote Daxten monitor may need this as 1920 x 1200 monitors are less common in default resolution lists.  Digital connections are normally fine but in this case the connection has to be analogue.
 
 When a monitor is being driven though a remote analogue VGA connection, there is no feedback to the computer to select the correct monitor resolution.  In this case the resolution must be forced on the graphics card and in Windows to be correct.  The essentials are
-  1) install the analogue _monitor_ driver in the advanced display settings for the screen - once this is associated with the dispaly...
+  1) Install the analogue _monitor_ driver in the advanced display settings for the screen - once this is associated with the display
   2) Use the Graphics card Manufacturer utility to set up a custom 1920 x 1200 resolution (if necessary) and refresh rate (go low on refresh rate e.g. 51Hz if the graphics card considers the refresh rate too high).
   3) Ensure this is applied to the correct display.
 
