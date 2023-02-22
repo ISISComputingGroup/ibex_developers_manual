@@ -93,4 +93,4 @@ When a monitor is being driven though a remote analogue VGA connection, there is
   2) Use the Graphics card Manufacturer utility to set up a custom 1920 x 1200 resolution (if necessary) and refresh rate (go low on refresh rate e.g. 51Hz if the graphics card considers the refresh rate too high).
   3) Ensure this is applied to the correct display.
 
-for more details see https://github.com/ISISComputingGroup/ControlsWork/issues/720
+for more details see https://github.com/ISISComputingGroup/ControlsWork/issues/720#issuecomment-1413986492
