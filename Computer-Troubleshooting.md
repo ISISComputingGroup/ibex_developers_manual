@@ -3,7 +3,7 @@
 Issue related to the computer that IBEX is running on
 
 
-## Screen Resolution needs to be Set
+## Screen Resolution needs to be Set on a small screen to view a larger screen remotely
 
 The resolution is settable on a remote desktop, even to a resolution bigger than the current screen. To do this there is a menu item on the remote desktop window for “smart sizing” which does just this. 
 
@@ -83,3 +83,14 @@ Often the system disk gets full because of logging, or windows updates etc. You 
     - Run `Disk Clean-Up` on C in user mode and remove all default files
     - Run it in admin mode by clicking the button
     - Remove all the default files it lets you
+
+## Getting 1920 x 1200 (or other) resolution on Daxten (analogue) connection to a monitor which supports this
+
+Dual monitors with one replicated by a Daxten or a single remote Daxten monitor may need this as 1920 x 1200 monitors are less common in default resolution lists.  Digital connections are normally fine but in this case the connection has to be analogue.
+
+When a monitor is being driven though a remote analogue VGA connection, there is no feedback to the computer to select the correct monitor resolution.  In this case the resolution must be forced on the graphics card and in Windows to be correct.  The essentials are
+  1) install the analogue _monitor_ driver in the advanced display settings for the screen - once this is associated with the dispaly...
+  2) Use the Graphics card Manufacturer utility to set up a custom 1920 x 1200 resolution (if necessary) and refresh rate (go low on refresh rate e.g. 51Hz if the graphics card considers the refresh rate too high).
+  3) Ensure this is applied to the correct display.
+
+for more details see https://github.com/ISISComputingGroup/ControlsWork/issues/720
