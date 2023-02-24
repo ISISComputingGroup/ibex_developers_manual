@@ -3,7 +3,7 @@
 Manual system tests should be performed as part of the release cycle and should be performed once a branch has been created. See [Creating-a-release](Creating-a-release)
 
 1. Create a shared spreadsheet to record test results
-    1. Copy the [manual system tests template](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/testing/manual_system_tests_template.xlsx) to a shared folder.
+    1. Copy the [manual system tests template](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/testing/manual_system_tests_template_v2.xlsx) to a shared folder.
     1. Set the spreadsheet as shared (Review -> share workbook). This means people can work on it in parallel, save to update your sheet with other peoples changes.
 1. Choose an instrument to test on (local or remote) and install the test version
     1. Navigate to an `ibex_utils` folder (either locally or in the `ISIS_Experiment_Controls_Public` share) and pull the latest changes from git
