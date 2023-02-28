@@ -53,6 +53,20 @@ To update the version of Pydev on shadow, git clone --recurse-submodules the lat
 ## Python packages
 
 Check on PyPi for any package updates, then edit `requirements.txt` to install new versions where needed. Note that since we decided [all python projects should use virtual environments](Python-dependencies#how-python-dependencies-should-be-handled-in-the-future) there will be `requirements.txt`files for all Python projects using the new import mechanism, ensure these are also updated.
+ODE is handled separately from other packages and is installed from a wheel on `\\isis\inst$\Kits$\CompGroup\ICP\genie_python_dependencies_python_3` if moving to a new python version i.e. 3.10 to 3.11 this will need to be replaced. 
+* First check [here](https://www.lfd.uci.edu/~gohlke/pythonlibs/#ode) for a matching version of ODE, if one is not present one will need to be built, to do so:
+    * Download the latest release tag from the [ODE Bitbucket](https://bitbucket.org/odedevs/ode/downloads/?tab=tags)
+    * In the folder, navigate to build and run `premake4.exe --with-gimpact --platform=x64 vs2008`
+    * Open the created solution file in visual studio, ensure that the config is set to `x64` and `ReleaseDoubleDLL` and then build it.
+    * Navigate to `bindings/python` and open the `setup.py`
+    * Add `from wheel.bdist_wheel import bdist_wheel` to the imports.
+    * Update the version number to match the version of ode downloaded, and set the name to `ode`.
+    * replace the calls to pkg-config with `ode_cflags = ['-I<Full path to \\include>']` and `ode_libs=['< Full path to \\lib\\ReleaseDoubleDLL\\ode_double.lib>']`
+    * pip install wheel onto `%python3%`
+    * run `%python3% setup.py build_ext` and then `%python3% setup.py bdist_wheel`
+    * copy the wheel generated in `dist` to `\\isis\inst$\Kits$\CompGroup\ICP\genie_python_dependencies_python_3`
+* Edit `common_build_python.bat` in `package_builder` to point to the most recent wheel file.
+   
 
 ### Lewis
 To update Lewis, merge upstream to our fork: https://github.com/ISISComputingGroup/lewis - This should get picked up automatically by the build server as it installs from the `main` branch of our fork. 
