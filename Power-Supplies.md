@@ -20,4 +20,4 @@
 
 * [Cryogenic SMS PSU](Cryogenic-SMS-PSU)
 
-* [Razorbill RP100 Strain Cell PSU](Razorbill-RP100)
+* [Razorbill RP100 Strain Cell PSU](Razorbill-RP100-Strain-Cell-PSU)
