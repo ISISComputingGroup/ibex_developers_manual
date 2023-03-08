@@ -23,7 +23,7 @@
 
 ###
 > Could be more ambitious with migration schedules
- - David and Kathryn are on the case creating the new starters tickets. 
+ - David and Kathryn on the case creating the new starter tickets. 
 
 ###
 > General thought that the group is not currently working on 'large'(er) projects
@@ -37,16 +37,18 @@
 
 ### Standup: standing in the conference room 
  - Generally agreed upon that it's only fair enough as remote workers are sitting: we have reached the conclusion that people are welcome to sit/stand as they please
- - Mentioned that as there is a culture of standing, unless enforced we will most likely continue standing out of habit. Thus, we will have sit-down standups for the following sprint. We will evaluate our time efficiency next sprint, and consider the need for a timekeeper (or decide to have stand up standups again).
+ - Mentioned that as there is a culture of standing, unless enforced we will most likely continue standing out of habit. Thus, we will have sit-down standups for the following sprint. 
+ - Evaluate our time efficiency next sprint, and consider the need for a timekeeper (or decide to have stand up standups again).
 
 ### CO2 monitor 
  - See Thomas L's picture in teams: this is the most up-to-date guidance. We often surpass the 800 mark (e.g., _open windows, reduce occupancy_) in the office, even when it's not particularly full - as we are expecting new starters next month, this is not acceptable.
  - The two solutions were seen as either living with the windows open (estate's advice, but it's winter so not particularly viable) or pushing estates for a better air circulation system.
-   - Freddie will ask estates
+   - Freddie to ask estates.
    - In the mean time, we will try to leave a fan running: evaluate our satisfaction with this next sprint. 
 
 ### Concerns regarding recording hotfixes
- - General agreement that it's currently a pain to record hotfixes, and too easy to accidentally skip/miss the hotfix step on the upgrade step. Agreed to remove the version numbers from the hotfix page, but migrate these elsewhere as they are useful for support calls.
+ - General agreement that it's currently a pain to record hotfixes, and too easy to accidentally skip/miss the hotfix step on the upgrade step. 
+ - Agreed to remove the version numbers from the hotfix page, but migrate these elsewhere as they are useful for support calls.
  - Jack H to remove the version numbers from [Instrument Information / Hotfixes](https://github.com/ISISComputingGroup/IBEX/wiki#instrument-information--hotfixes), and add a link to each instrument's wiki page with the version numbers there instead: this will make the information there more concise.
 
 ### Database truncation
@@ -56,9 +58,11 @@
 ### Barriers which prevented [Instrument Demos](https://github.com/ISISComputingGroup/IBEX/issues/7584) from being done
  - General feeling that recording yourself is uncomfortable: proposed idea of one person recording, and another editing to overcome this.
  - Still very much considered valuable and a good idea.
+ - Discussed the lack of demo meetings, and how these can be valuable for IBEX input. Decided that it's more sensible to encourage the ISs to come to us, rather than imposing meetings on them.
  - Agreed actions:
    - Skip demos for this sprint: it's been long enough that we should focus on preparing for the next sprint's instead.
    - Each sprint's demos will cover the changes occurred since the last, as then we get a nice archive going forwards.
-   - Create videos both for each feature and the sprint features as a whole (creative license for the person doing the ticket to decide which way to do this)
+   - Create videos both for each feature in the sprint, and the sprint features as a whole (creative license for the person doing the ticket to decide which way to do this).
  - Brought up larger issue of not picking up high priority tickets. Decided this can be rectified by also keeping an eye on the 'Ready' column and the tickets at the top when checking the project board during standup. 
    - Hannah to add this to standup notes on teams so we remember going forwards.
+
