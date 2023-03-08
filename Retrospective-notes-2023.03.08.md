@@ -14,7 +14,7 @@
 
 ###
 > CO2 monitor, is it still effective? Perhaps worrying too much about it?
- - See below. 
+ - Discussed below.
 
 ###
 > Recent AwayDay very worthwhile and productive
