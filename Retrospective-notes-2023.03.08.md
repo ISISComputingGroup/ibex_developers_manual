@@ -64,5 +64,5 @@
    - Each sprint's demos will cover the changes occurred since the last, as then we get a nice archive going forwards.
    - Create videos both for each feature in the sprint, and the sprint features as a whole (creative license for the person doing the ticket to decide which way to do this).
  - Brought up larger issue of not picking up high priority tickets. Decided this can be rectified by also keeping an eye on the 'Ready' column and the tickets at the top when checking the project board during standup. 
-   - Hannah to add this to standup notes on teams so we remember going forwards.
+   - Hannah to note this in standup links file on teams so we remember going forwards.
 
