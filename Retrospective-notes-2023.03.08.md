@@ -41,7 +41,7 @@
 
 ### CO2 monitor 
  - See Thomas L's picture in teams: this is the most up-to-date guidance. We often surpass the 800 mark (e.g., _open windows, reduce occupancy_) in the office, even when it's not particularly full - as we are expecting new starters next month, this is not acceptable.
- - The two solutions were seen as either living with the windows open (estate's advice, but it's winter so not particularly viable) or pushing estates for a better air circulation system.
+ - The two solutions were seen as either living with the windows open (estate's advice, but it's winter so not particularly viable) or pushing estates for a better ventilation system.
    - Freddie to ask estates.
    - In the mean time, we will try to leave a fan running: evaluate our satisfaction with this next sprint. 
 
