@@ -4,7 +4,6 @@
 
 ## Items from [last retrospective](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Retrospective-notes-2023.02.01):
 
-##
 > Try to automate more of release workflow to avoid errors
  - Will be discussed in planning meeting (2023/03/09) succeeding this one. 
 
@@ -50,7 +49,7 @@
  - General agreement that it's currently a pain to record hotfixes, and too easy to accidentally skip/miss the hotfix step on the upgrade step. 
  - Agreed to remove the version numbers from the hotfix page, but migrate these elsewhere as they are useful for support calls.
  - Jack H to remove the version numbers from [Instrument Information / Hotfixes](https://github.com/ISISComputingGroup/IBEX/wiki#instrument-information--hotfixes), and add a link to each instrument's wiki page with the version numbers there instead: this will make the information there more concise.
- - Tom W to write ticket for investigating technical solutions for this
+ - Tom W to write ticket for investigating technical solutions for this.
 
 ### Database truncation
 - All in agreement this is necessary
