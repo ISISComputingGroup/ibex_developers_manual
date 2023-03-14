@@ -58,7 +58,7 @@
 ### Barriers which prevented [Instrument Demos](https://github.com/ISISComputingGroup/IBEX/issues/7584) from being done
  - General feeling that recording yourself is uncomfortable: proposed idea of one person recording, and another editing to overcome this.
  - Still very much considered valuable and a good idea.
- - Discussed the lack of demo meetings, and how these can be valuable for IBEX input. Decided that it's more sensible to encourage the ISs to come to us, rather than imposing meetings on them.
+ - Discussed the lack of demo meetings, and how these can be valuable for IBEX input. Decided that it's more sensible to encourage the instrument scientists to come to us, rather than imposing meetings on them.
  - Agreed actions:
    - Skip demos for this sprint: it's been long enough that we should focus on preparing for the next sprint's instead.
    - Each sprint's demos will cover the changes occurred since the last, as then we get a nice archive going forwards.
