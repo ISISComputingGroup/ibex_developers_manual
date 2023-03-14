@@ -1,4 +1,5 @@
 This page collects information that will be useful for the implementation of the IBEX control system on PEARL.
+
 ## Background & Timeline ##
 PEARL is a powder diffraction instrument on TS1 at ISIS, dedicated to high-pressure studies.  The [PEARL](https://www.isis.stfc.ac.uk/Pages/pearl.aspx) web page describes the background to the instrument.
 
@@ -47,9 +48,12 @@ PEARL uses Galil controllers.
 ##### Note: LinMot #####
 PEARL uses LinMot P0x-23 motors, controlled by LinMot drives.<br>
 [LinMot User Manual](http://www.linmot.com/fileadmin//user_upload/Downloads/software-firmware/servo-drives/linmot-talk-1-3-x/UserManual_1r3_e_recent.pdf)
+1. Alignment Mirror:  Driven either IN or OUT by a single LinMot axis.
+1. Also jaw sets mentioned below
 
 ##### Note: Jaws #####
-1. Jaws are driven by LinMot P0x-23 motors. 
+1. Two sets of jaws are driven by LinMot P0x-23 motors...
+1. ... and one by Galil
 1. PEARL has custom screens for controlling the jaws
    * See `C:\LabVIEW Modules\Instruments\PEARL\PEARL Jaws\Screens`
 
@@ -84,15 +88,18 @@ PACE appear to have been taken over by [Baker Hughes Digital Solutions](https://
 1. VI for Pace 5000 is located here: `C:\LabVIEW Modules\Drivers\PACE 5000`
 
 ##### Note: PEARL Pressure Transducer #####
-Document information about PEARL Pressure Transducer (MMP 200 or 210) device in use on PEARL here.
 1. VI for PEARL Pressure Transducer is here: `C:\LabVIEW Modules\Instruments\PEARL\PEARL Pressure Transducer`
-1. MMP 200 device may no longer used on PEARL.
+1. **MMP 200/210 device is no longer used on PEARL**
+1. Superseded by M905 (currently connected to Pressure Cell Controller, but would like to be read independently in other experiments)
 
 ##### Note: Pressure Cell Controller #####
+1. Pressure Controller Repositories
+- [Support](https://github.com/ISISComputingGroup/EPICS_PearlPressure) 
+- [IOC](https://github.com/ISISComputingGroup/EPICS-ioc/tree/master/PEARLPC)
 1. VI for PEARL Pressure Cell Controller is here: `C:\LabVIEW Modules\Instruments\PEARL\PEARL Pressure Cell Controller`
 
 ##### Note: PEARL Temperature Controller #####
-1. Based on a [NI cDAQ 9181](http://www.ni.com/en-gb/support/model.cdaq-9181.html) device.
+1. Based on a [NI cDAQ 9181](http://www.ni.com/en-gb/support/model.cdaq-9181.html) device using 9213 Thermocouple module.
 1. VI for PEARL Temperature Controller is here: `C:\LabVIEW Modules\Instruments\PEARL\PEARL Temperature`
 
 ##### Note: Cold Valve #####
@@ -102,17 +109,13 @@ Document information about PEARL Pressure Transducer (MMP 200 or 210) device in 
 1. For the avoidance of doubt, the PEARL ColdValve is _**entirely unrelated**_ to the IRIS CryoValve.
 
 ## PEARL Notes ##
-Pressure Controller Repositories
-- [Support](https://github.com/ISISComputingGroup/EPICS_PearlPressure) 
-- [IOC](https://github.com/ISISComputingGroup/EPICS-ioc/tree/master/PEARLPC)
 
 PEARL has the following specialist panels:
-1. PEARL Alignment
+1. PEARL Sample Alignment
+   * This is a method to move the sample into position, using 'nudges' rather than setpoints
    * see `C:\LabVIEW Modules\Instruments\PEARL\PEARL Alignment`
 1. PEARL Jaws & Beam Dimensions
-   * PEARL Beam dimensions.vi
-   * PEARL Jaws1 Driver.vi
-   * PEARL Jaws2 Driver.vi
+   * PEARL Beam dimensions.vi (controls all jaw sets 1x Galil & 2x LinMot)
 
 Compare with similar systems on GEM and POLARIS.
 
