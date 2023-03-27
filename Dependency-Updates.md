@@ -83,7 +83,7 @@ In the upgrade script `https://github.com/ISISComputingGroup/ibex_utils/tree/mas
 Update the one in your local machine by running `upgrade_mysql.bat`. 
 
 ### Java
-- Get the latest AdoptOpen JDK 8 from `https://adoptium.net/releases.html?variant=openjdk8&jvmVariant=hotspot` and put it in `\\isis\shares\ISIS_Experiment_Controls_Public\third_party_installers\latest_versions`.
+- Get the latest AdoptOpen JDK 17 from `https://adoptium.net/releases.html?variant=openjdk17&jvmVariant=hotspot` and put it in `\\isis\shares\ISIS_Experiment_Controls_Public\third_party_installers\latest_versions`.
 - Copy the older version onto the `\\isis\shares\ISIS_Experiment_Controls_Public\third_party_installers\old_versions`. 
 - Uninstall the older version from control Panel and install the new version.
 - Test the following IOCs start correctly
@@ -117,7 +117,8 @@ Git upgrade is handled by install scripts.
 
 ## GUI
 
-Our CS-Studio GUI dependencies are located on a share on shadow, a read only version `\\shadow.isis.cclrc.ac.uk\ICP_P2$\css_gui_dependencies` (which is accessible via a webpage at `http://shadow.nd.rl.ac.uk/ICP_P2/css_gui_dependencies/` and a writable version `\\shadow.isis.cclrc.ac.uk\ICP_P2W$\css_gui_dependencies`. To update the CS-Studio components that the GUI uses:
+Our CS-Studio GUI dependencies are located on a share on shadow, a read only version `\\shadow.isis.cclrc.ac.uk\ICP_P2$\css_gui_dependencies` (which is accessible via a webpage at `http://shadow.nd.rl.ac.uk/ICP_P2/css_gui_dependencies/` and a writable version `\\shadow.isis.cclrc.ac.uk\ICP_P2W$\css_gui_dependencies`. CS-Studio requires a version of jdk11 to build that it gets from `\\isis\inst$\Kits$\CompGroup\ICP\CS_Studio_jdk<jdk_version>`. Copy the latest jdk11 to ICP, rename to follow the same format, and then update `isis_css_top\build.bat` to point at the new jdk location.
+  To update the CS-Studio components that the GUI uses:
 - `git clone --recursive https://github.com/ISISComputingGroup/isis_css_top.git`
 - Make relevant changes to the code, make sure submodules get pinned to new versions using same workflow as in EPICS top.
 - Trigger a build on Jenkins
