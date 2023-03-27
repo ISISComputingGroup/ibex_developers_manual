@@ -117,7 +117,9 @@ Git upgrade is handled by install scripts.
 
 ## GUI
 
-Our CS-Studio GUI dependencies are located on a share on shadow, a read only version `\\shadow.isis.cclrc.ac.uk\ICP_P2$\css_gui_dependencies` (which is accessible via a webpage at `http://shadow.nd.rl.ac.uk/ICP_P2/css_gui_dependencies/` and a writable version `\\shadow.isis.cclrc.ac.uk\ICP_P2W$\css_gui_dependencies`. CS-Studio requires a version of jdk11 to build that it gets from `\\isis\inst$\Kits$\CompGroup\ICP\CS_Studio_jdk<jdk_version>`. Copy the latest jdk11 to ICP, rename to follow the same format, and then update `isis_css_top\build.bat` to point at the new jdk location.
+Our CS-Studio GUI dependencies are located on a share on shadow, a read only version `\\shadow.isis.cclrc.ac.uk\ICP_P2$\css_gui_dependencies` (which is accessible via a webpage at `http://shadow.nd.rl.ac.uk/ICP_P2/css_gui_dependencies/` and a writable version `\\shadow.isis.cclrc.ac.uk\ICP_P2W$\css_gui_dependencies`. CS-Studio requires a version of jdk11 to build that it gets from `\\isis\inst$\Kits$\CompGroup\ICP\CS_Studio_jdk<jdk_version>`. 
+- Copy the latest jdk11 to ICP, rename to follow the same format, and then update `isis_css_top\build.bat` to point at the new jdk location.
+- You will need JavaFX binaries. These can be patched onto the AdoptOpenJDK/Eclipse Temurin installation. Download the Windows SDK from \\isis\inst$\Kits$\CompGroup\ICP\Java_utils\openjfx-19_windows-x64_bin-sdk\javafx-sdk-19 (originally from [gluon](https://gluonhq.com/products/javafx/)) and copy the bin, lib, and legal directories over the corresponding directories in the jdk. Note that the JavaFX version does not necessarily need to match your java installation, as long as the versions are compatible. For example we can use JavaFX 19 on a Java 11 installation. Please check that the license is still appropriate before you install.
   To update the CS-Studio components that the GUI uses:
 - `git clone --recursive https://github.com/ISISComputingGroup/isis_css_top.git`
 - Make relevant changes to the code, make sure submodules get pinned to new versions using same workflow as in EPICS top.
