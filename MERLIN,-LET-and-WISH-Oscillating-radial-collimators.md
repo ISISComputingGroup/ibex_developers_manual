@@ -168,6 +168,16 @@ dist = 2*D_v + D
 
 The explanation for these equations can be seen in the following diagram (courtesy of Ben Withers) ![ORC maths explanation](images/ORC.png)
 
+### Moving indicators
+
+The `MOT:OSCCOL:MOVING` PV (i.e. whether the collimator is moving or not) is calculated differently for MERLIN/LET and WISH. 
+
+Merlin and LET both are fitted with a laser which is plugged into the galil's digital input. We can deduce the movement of the collimator from whether this PV value (`$(P)MOT:DMC01:Galil0Bi5_STATUS`) is fluctuating or not.
+The Db scans this laser PV every .1 second taking 100 samples, so it takes 10 seconds to calculate collimator movement. For example, if the laser PV has changed value within the last 10 seconds then it is `Moving`, and otherwise reports `Not moving`. 
+Due to the way movement is calculated, when the laser pv is in alarm, the collimator will report `Moving` but in an **invalid state**.
+
+WISH is not fitted with this laser, and so uses the already previously existing logic which checks that (largest motor position in last 10s) != (smallest motor position in last 10s).
+
 ### WISH specifics 
 
 The WISH collimator is slightly unusual in the way that it: 
