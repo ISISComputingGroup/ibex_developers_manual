@@ -117,7 +117,7 @@ Git upgrade is handled by install scripts.
 
 ## GUI
 
-Our CS-Studio GUI dependencies are located on a share on shadow, a read only version `\\shadow.isis.cclrc.ac.uk\ICP_P2$\css_gui_dependencies` (which is accessible via a webpage at `http://shadow.nd.rl.ac.uk/ICP_P2/css_gui_dependencies/` and a writable version `\\shadow.isis.cclrc.ac.uk\ICP_P2W$\css_gui_dependencies`. CS-Studio requires a version of jdk11 to build that it gets from `\\isis\inst$\Kits$\CompGroup\ICP\CS_Studio_jdk<jdk_version>`. 
+Our CS-Studio GUI dependencies are located on a share on shadow, a read only version `\\shadow.isis.cclrc.ac.uk\ICP_P2$\` (which is accessible via a webpage at `http://shadow.nd.rl.ac.uk/ICP_P2/` and a writable version `\\shadow.isis.cclrc.ac.uk\ICP_P2W$\`. CS-Studio requires a version of jdk11 to build that it gets from `\\isis\inst$\Kits$\CompGroup\ICP\CS_Studio_jdk<jdk_version>`. 
 - Copy the latest jdk11 to ICP, rename to follow the same format, and then update `isis_css_top\build.bat` to point at the new jdk location.
 - You will need JavaFX binaries. These can be patched onto the AdoptOpenJDK/Eclipse Temurin installation. Download the Windows SDK from \\isis\inst$\Kits$\CompGroup\ICP\Java_utils\openjfx-19_windows-x64_bin-sdk\javafx-sdk-19 (originally from [gluon](https://gluonhq.com/products/javafx/)) and copy the bin, lib, and legal directories over the corresponding directories in the jdk. Note that the JavaFX version does not necessarily need to match your java installation, as long as the versions are compatible. For example we can use JavaFX 19 on a Java 11 installation. Please check that the license is still appropriate before you install.
 
@@ -125,8 +125,9 @@ To update the CS-Studio components that the GUI uses:
 - `git clone --recursive https://github.com/ISISComputingGroup/isis_css_top.git`
 - Make relevant changes to the code, make sure submodules get pinned to new versions using same workflow as in EPICS top.
 - Trigger a build on Jenkins
-- After the build is complete go to the build server and copy the entire isis_css_top tree to the share (`\\shadow.isis.cclrc.ac.uk\ICP_P2W$`)
-- Subsequent GUI builds will pick up the new dependencies
+- After the build is complete go to the build server and copy the entire isis_css_top tree to the share (`\\shadow.isis.cclrc.ac.uk\ICP_P2W$`) rename the folder to `css_gui_dependencies_<year_month_day>`.
+- Updated the gui target platform to point at the new folder, i.e. `http://shadow.nd.rl.ac.uk/ICP_P2/css_gui_dependencies_<year_month_day>/p2repo/`
+- Reload the target platform and rebuild the gui.
 - Test that your changes work correctly!
 - if you cannot write to the `ICP_P2W$` share on shadow, your fed id account will need adding to the `icp` local group on shadow itself. This just requires somebody to run the `vigr` command on shadow and then possibly `service smb restart` too 
 
