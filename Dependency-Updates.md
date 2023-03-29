@@ -135,7 +135,7 @@ To update the CS-Studio components that the GUI uses:
 
 - The build uses the same process as above
 - Once build is done, the products are in `org.csstudio.sns\repository\products`
-- Copy the zip files for alarm server, alarm config tool, archive engine and archive config tool to `\\shadow.isis.cclrc.ac.uk\icp_binaries$\CSS`, renaming the directories to match the existing names if necessary
+- Copy the zip files for alarm server, alarm config tool, archive engine and archive config tool to `\\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\Binaries\CSS`, renaming the directories to match the existing names if necessary (The existing ones should be backed up).
 - The changes will be picked up after doing `create_icp_binaries` and then `css\master\setup_css.bat`
 - Ensure scripts to launch Archivers and alarm server [1](https://github.com/ISISComputingGroup/EPICS-CSS/blob/master/AlarmServer/run_alarm_server.bat) [2](https://github.com/ISISComputingGroup/EPICS-CSS/blob/master/ArchiveEngine/start_block_archiver.bat) [3](https://github.com/ISISComputingGroup/EPICS-CSS/blob/master/ArchiveEngine/start_inst_archiver.bat) point at correct executables after running `create_icp_binaries.bat` and `setup_css.bat`.
 
