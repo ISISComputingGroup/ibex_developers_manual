@@ -64,7 +64,7 @@ ODE is handled separately from other packages and is installed from a wheel on `
     * Navigate to `bindings/python` and open the `setup.py`
     * Add `from wheel.bdist_wheel import bdist_wheel` to the imports.
     * Update the version number to match the version of ode downloaded, and set the name to `ode`.
-    * replace the calls to pkg-config with `ode_cflags = ['-I<Full path to \\include>']` and `ode_libs=['< Full path to \\lib\\ReleaseDoubleDLL\\ode_double.lib>']`
+    * replace the calls to pkg-config with `ode_cflags = ['-I<Full path to \\include>']` and `ode_libs=['< Full path to \\lib\\ReleaseDoubleLib\\ode_double.lib>']`
     * pip install wheel onto `%python3%`
     * run `%python3% setup.py build_ext` and then `%python3% setup.py bdist_wheel`
     * copy the wheel generated in `dist` to `\\isis\inst$\Kits$\CompGroup\ICP\genie_python_dependencies_python_3`
