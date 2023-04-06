@@ -53,11 +53,14 @@ To update the version of Pydev on shadow, git clone --recurse-submodules the lat
 ## Python packages
 
 Check on PyPi for any package updates, then edit `requirements.txt` to install new versions where needed. Note that since we decided [all python projects should use virtual environments](Python-dependencies#how-python-dependencies-should-be-handled-in-the-future) there will be `requirements.txt`files for all Python projects using the new import mechanism, ensure these are also updated.
+
+### ODE
+
 ODE is handled separately from other packages and is installed from a wheel on `\\isis\inst$\Kits$\CompGroup\ICP\genie_python_dependencies_python_3` if moving to a new python version i.e. 3.10 to 3.11 this will need to be replaced. 
 * First check [here](https://www.lfd.uci.edu/~gohlke/pythonlibs/#ode) for a matching version of ODE, if one is not present one will need to be built, to do so:
     * Download the latest release tag from the [ODE Bitbucket](https://bitbucket.org/odedevs/ode/downloads/?tab=tags)
     * In the folder, navigate to build and run `premake4.exe --with-gimpact --platform=x64 vs2008`
-    * Open the created solution file in visual studio, ensure that the config is set to `x64` and `ReleaseDoubleDLL` and then build it.
+    * Open the created solution file in visual studio, ensure that the config is set to `x64` and `ReleaseDoubleLib` and then build it. Note that selecting `x64` is important (the default is `x86`). Also we should prefer the static (lib) build rather than the DLL build as this means we don't need to copy around DLLs.
     * Navigate to `bindings/python` and open the `setup.py`
     * Add `from wheel.bdist_wheel import bdist_wheel` to the imports.
     * Update the version number to match the version of ode downloaded, and set the name to `ode`.
