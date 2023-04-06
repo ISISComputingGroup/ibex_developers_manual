@@ -69,6 +69,7 @@ ODE is handled separately from other packages and is installed from a wheel on `
     * run `%python3% setup.py build_ext` and then `%python3% setup.py bdist_wheel`
     * copy the wheel generated in `dist` to `\\isis\inst$\Kits$\CompGroup\ICP\genie_python_dependencies_python_3`
 * Edit `common_build_python.bat` in `package_builder` to point to the most recent wheel file.
+* Test by running `python run_all_tests.py` in `inst_servers`, which contains collision avoidance monitor tests
    
 
 ### Lewis
