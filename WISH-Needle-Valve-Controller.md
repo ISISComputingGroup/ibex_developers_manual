@@ -46,16 +46,15 @@ These rights are managed via a series of fanout/seq records, which set `0` or `1
 | Flow | `.DISP`=1 | `.DISP`=0 |
 | Temperature | `.DISP`=0 | `.DISP`=1 |
 
-### Summary
-For a very explicit summary of write access for these two PVs, see  below:
+See below for an explicit summary of the write access of these two PVs under both modes.
 
-#### `MANUAL_FLOW` 
+`MANUAL_FLOW`
 |  | `FLOW_SP_MODE_SELECT`=0 (Auto) | `FLOW_SP_MODE_SELECT`=1 (Manual) |
 | -- | -- | -- | 
 | `CS:MANAGER`=0 (Off) | Read only | Read only |
 | `CS:MANAGER`=1 (On) | Read only | Readable & Writable |
 
-#### `TEMP` 
+`TEMP`
 |  | `FLOW_SP_MODE_SELECT`=0 (Auto) | `FLOW_SP_MODE_SELECT`=1 (Manual) |
 | -- | -- | -- | 
 | `CS:MANAGER`=0 (Off) | Read only | Read only |
