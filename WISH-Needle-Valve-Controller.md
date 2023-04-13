@@ -1,10 +1,8 @@
 # Introduction
 
-_... add intro to the needle valve controller here._
+This is controlling the flow of helium in a cryostat, via a needle valve, based on a lookup table implemented in the hardware. The underlying hardware is a Eurotherm (Modbus) controller, and `automaticNeedleValve.db` adds some extra settings on top.
 
-_... add intro to the implementation here (e.g. uses eurotherm modbus + adds some extra settings on top)_
-
-The needle valve operation revolves around manager mode, and concept of the modes _'Automatic'_ and _'Manual'_.
+The needle valve operation revolves around two modes: manager mode and setpoint mode. The latter has the two modes _'Automatic'_ and _'Manual'_, which dictate the behaviour of the needle valve:
 * Automatic mode: 
   * Temperature (`TEMP`) is writable and readable
   * Flow (`MANUAL_FLOW`) can only be read
@@ -29,10 +27,10 @@ The needle valve operation revolves around manager mode, and concept of the mode
 | `TEMP`| Temperature readback from Eurotherm | Read/Write | |
 
 # Access control architecture
-There are two mechanisms at work controlling access rights here; setpoint mode and manager mode.
+There are two mechanisms at work controlling SP access rights here; setpoint mode and manager mode.
 
 ### Manager mode
-All writable items are _only_ accessible when manager mode is enabled (e.g., `$(P)CS:MANAGER`=1).
+All writable items are _only_ accessible when manager mode is enabled (e.g., `$(P)CS:MANAGER`=1): 
 
 ### Setpoint mode
 As detailed above, the access rights to the `MANUAL_FLOW` and `TEMP` PVs is controlled partially via setpoint mode.
@@ -44,7 +42,7 @@ These rights are managed via a series of fanout/seq records, which set `0` or `1
 | Temperature | `.DISP`=0 | `.DISP`=1 |
 
 ### Summary
-For a very explicit summary, see below for truth tables for the writability of `MANUAL_FLOW` and `TEMP`.
+For a very explicit summary of write access for these two PVs, see  below:
 
 #### `MANUAL_FLOW` 
 |  | `FLOW_SP_MODE_SELECT`=0 (Auto) | `FLOW_SP_MODE_SELECT`=1 (Manual) |
