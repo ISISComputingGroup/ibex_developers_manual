@@ -1,14 +1,19 @@
 # Introduction
 
-This is controlling the flow of helium in a cryostat, via a needle valve, based on a lookup table implemented in the hardware. The underlying hardware is a Eurotherm (Modbus) controller, and `automaticNeedleValve.db` adds some extra settings on top.
+This is controlling the flow of helium in a cryostat, via a needle valve, based on a lookup table implemented in the hardware. The underlying hardware is a Eurotherm (Modbus) controller, and `automaticNeedleValve.db` adds some extra settings on top. 
+This controller uses the 'WISH Automatic Needle Valve' OPI in IBEX.
 
-The needle valve operation revolves around two modes: manager mode and setpoint mode. The latter has the two modes _'Automatic'_ and _'Manual'_, which dictate the behaviour of the needle valve:
+The needle valve operation revolves around two modes: **manager mode and setpoint mode**. 
+
+The latter has the two modes _'Automatic'_ and _'Manual'_, which dictate the behaviour of the needle valve:
 * Automatic mode: 
   * Temperature (`TEMP`) is writable and readable
   * Flow (`MANUAL_FLOW`) can only be read
 * Manual mode:
   * Flow (`MANUAL_FLOW`) is writable and readable
   * Temperature (`TEMP`) can only be read
+
+**Note**: the above assumes manager mode is enabled; items are _only_ writable in manager mode. 
 
 # Main records
 ### `automaticNeedleValve.db`
@@ -30,10 +35,10 @@ The needle valve operation revolves around two modes: manager mode and setpoint 
 There are two mechanisms at work controlling SP access rights here; setpoint mode and manager mode.
 
 ### Manager mode
-All writable items are _only_ accessible when manager mode is enabled (e.g., `$(P)CS:MANAGER`=1): 
+All setpoint PVs have the field `field(ASG, "MANAGER")`, so all writable items are _only_ accessible when manager mode is enabled (e.g., `$(P)CS:MANAGER`=1).
 
 ### Setpoint mode
-As detailed above, the access rights to the `MANUAL_FLOW` and `TEMP` PVs is controlled partially via setpoint mode.
+As detailed above, the access rights to the PVs `MANUAL_FLOW` and `TEMP` are also controlled via setpoint mode.
 
 These rights are managed via a series of fanout/seq records, which set `0` or `1` to the `.DISP` field (see [EPICS: Fields Common to All Record Types](https://epics.anl.gov/base/R7-0/6-docs/dbCommonRecord.html)) of each of these PVs, depending on the mode:
 |  | Auto | Manual |
