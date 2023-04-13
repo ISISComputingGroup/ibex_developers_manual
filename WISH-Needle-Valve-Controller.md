@@ -1,6 +1,8 @@
 # Introduction
 
-This is controlling the flow of helium in a cryostat, via a needle valve, based on a lookup table implemented in the hardware. The underlying hardware is a Eurotherm (Modbus) controller, and `automaticNeedleValve.db` adds some extra settings on top. 
+This is controlling the flow of helium in a cryostat, via a needle valve, based on a lookup table implemented in the hardware. 
+
+The underlying hardware is a Eurotherm (Modbus) controller, and `automaticNeedleValve.db` adds some extra settings on top. 
 This controller uses the 'WISH Automatic Needle Valve' OPI in IBEX.
 
 The needle valve operation revolves around two modes: **manager mode and setpoint mode**. 
