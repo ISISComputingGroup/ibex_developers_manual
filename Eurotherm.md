@@ -85,3 +85,8 @@ Note that the scaling factors can differ between sensors on a eurotherm crate, a
 The scaling factors are always powers of 10.
 
 To determine the scaling factors, start the IOC in modbus mode, then for each parameter on each sensor, check using the eurotherm menus that the number in the eurotherm itself equals what IBEX reports. **Check carefully** as, for example, a PID parameter of `1.5` looks quite similar to `15`, but will cause temperature control to be entirely incorrect! 
+
+# Troubleshooting
+
+ - If you're having trouble with the Eurotherm-based automatic needle valve controller (i.e. on WISH), see [Automatic needle valve controller wiki](Automatic-Needle-Valve-Controller)
+
