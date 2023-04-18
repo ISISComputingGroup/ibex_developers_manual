@@ -28,7 +28,7 @@ The controllers use a MODBUS protocol to communicate over Ethernet.  Their IOCs 
 
 The MODBUS TCP protocol is used, which slightly differs to MODBUS RTU used by eurotherms and other serial devices. 
 This means there are some extra fields in the header of MODBUS requests/responses, as well as MODBUS TCP using a `crc16` or similar checksum. 
-A MODBUS TCP packet consists of an MBAP (Modbus Application Header) and a PDU (the same as MODBUS RTU)
+A MODBUS TCP packet consists of an MBAP (Modbus Application) Header and a PDU (the same as MODBUS RTU)
 The MBAP consists of: 
 
 Transaction Identifier: 2 bytes
@@ -38,5 +38,5 @@ Unit Identifier: 1 byte
 
 https://ipc2u.com/articles/knowledge-base/detailed-description-of-the-modbus-tcp-protocol-with-command-examples/ shows some examples of a MODBUS TCP request compared against MODBUS RTU. 
 
-
+Some of the SKF chopper controllers at ISIS implement the transaction identifier part of the MBAP header incorrectly. We have catered for this in the MODBUS interpose framework, skipping the check for this ID can be done by setting the `SKIP_TRANSACTION_ID` macro in globals to `1`. 
 
