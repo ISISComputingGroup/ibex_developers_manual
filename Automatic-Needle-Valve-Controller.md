@@ -62,5 +62,5 @@ See below for an explicit summary of the write access of these two PVs under bot
 | `CS:MANAGER`=0 (Off) | Read only | Read only |
 | `CS:MANAGER`=1 (On) | Readable & Writable | Readable only |
 
-The use of `cainfo` may be useful for troubleshooting to check read/write perimssions.
+The use of `cainfo` may be useful for troubleshooting to check read/write permissions.
 
