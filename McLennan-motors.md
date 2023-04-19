@@ -40,18 +40,17 @@ Rotary switch SW1 and SW2 give axis address, address is 10*SW1 + SW2
 
 SW3
 
-1=ON 2=OFF gives serial baud 9600, see manual for other combinations 
-3=OFF 7bit even parity, or     3=ON 8bit no parity
-4=OFF
-5=ON  (quiet command reply mode, required by EPICS driver)
-6=OFF
-7=OFF
-8=OFF
+* 1=ON 2=OFF gives serial baud 9600, see manual for other combinations 
+* 3=OFF 7bit even parity, or     3=ON 8bit no parity
+* 4=OFF
+* 5=ON  (quiet command reply mode, required by EPICS driver)
+* 6=OFF
+* 7=OFF
+* 8=OFF
 
 SW4 controls encoder termination, with OFF=single ended (TTL), ON=differential pair (RS422). Not for us to change, leave to motion engineers.
 
 ### Encoder resolution
-
 Key macro is `ERES`, this is not the same as the ERES in the motor record, it is actually the encoder ratio written `M/E` providing `motor_steps_per_revolution / encoder_steps_per_revolution`. So `actual_position_steps = encoder_steps_readback * encoder_ratio`. For closed loop mode to work this needs to be correct so that `commanded_motor_steps_moved = encoder_steps_moved * encoder_ratio`. It is possible to work this out by e.g. going to console, doing a small MR relative move and comparing command (CP) and actual (AP) position. `dbior` on an ioc now shows these values, as does the `QP` command at the motor low level serial interface. The Raw encoder steps is `IP` or `Input Position` which is scaled by encoder ratio to give actual position. If encoder and motor move in opposite directions, add a minus sign.
 
 ### Configuring axes
