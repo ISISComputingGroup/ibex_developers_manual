@@ -34,7 +34,7 @@ The velocity of the constant velocity move is set to be a 1/10 of the normal vel
 
 The way this works in the code is that the motor driver send the correct home (or no home) dependent on the mode set in [`request_mode`](https://github.com/ISISComputingGroup/EPICS-motor/blob/master/motorApp/MclennanSrc/devPM304.cc#L163), for [SNL](https://github.com/ISISComputingGroup/EPICS-motor/blob/master/motorApp/MclennanSrc/homing.st) then takes care of other moves.
 
-### switch settings
+### Switch settings
 
 Rotary switch SW1 and SW2 give axis address, address is 10*SW1 + SW2
 
