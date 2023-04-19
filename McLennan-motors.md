@@ -20,7 +20,7 @@ See [Set the raw position of the motor without moving it](Set-the-raw-position-o
 
 There are several homing modes on the McLennan set via the home macro. The choice of mode depends on the motor, all but 0 are controlled by some SNL. Modes are:
 
-* 0: Send a home signal to the controller.
+* 0: Controller does internal home to an external home signal.
 * 1: Do a reverse constant velocity move until limit switch is hit, but do not zero the motor (this is deprecated)
 * 2: Send a reverse home signal to the controller and then zero the motor
 * 3: Do a reverse constant velocity move until limit switch is hit then zero the motor
@@ -33,6 +33,26 @@ The velocity of the constant velocity move is set to be a 1/10 of the normal vel
 **There is a [special homing sequence for HRPD low temp sample changer](HRPD-homing-sequence) because it doesn't quite work until ticket [5739](https://github.com/ISISComputingGroup/IBEX/issues/5739) is done**
 
 The way this works in the code is that the motor driver send the correct home (or no home) dependent on the mode set in [`request_mode`](https://github.com/ISISComputingGroup/EPICS-motor/blob/master/motorApp/MclennanSrc/devPM304.cc#L163), for [SNL](https://github.com/ISISComputingGroup/EPICS-motor/blob/master/motorApp/MclennanSrc/homing.st) then takes care of other moves.
+
+### switch settings
+
+Rotary switch SW1 and SW2 give axis address, address is 10*SW1 + SW2
+
+SW3
+
+1=ON 2=OFF gives serial baud 9600, see manual for other combinations 
+3=OFF 7bit even parity, or     3=ON 8bit no parity
+4=OFF
+5=ON  (quiet command reply mode, required by EPICS driver)
+6=OFF
+7=OFF
+8=OFF
+
+SW4 controls encoder termination, with OFF=single ended (TTL), ON=differential pair (RS422). Not for us to change, leave to motion engineers.
+
+### Encoder resolution
+
+Key macro is `ERES`, this is not the same as the ERES in the motor record, it is actually the encoder ratio written `M/E` providing `motor_steps_per_revolution / encoder_steps_per_revolution`. So `actual_position_steps = encoder_steps_readback * encoder_ratio`. For closed loop mode to work this needs to be correct so that `commanded_motor_steps_moved = encoder_steps_moved * encoder_ratio`. It is possible to work this out by e.g. going to console, doing a small MR relative move and comparing command (CP) and actual (AP) position. `dbior` on an ioc now shows these values, as does the `QP` command at the motor low level serial interface. The Raw encoder steps is `IP` or `Input Position` which is scaled by encoder ratio to give actual position. If encoder and motor move in opposite directions, add a minus sign.
 
 ### Configuring axes
 When configuring a particular axis, an `axes.cmd` file is required in `C:\Instrument\Settings\config\[INSTMACHINE]\configurations\mclennan`. See the the [motion control](https://github.com/ISISComputingGroup/IBEX/wiki/Motion-Control) pages for additional details. It is often desirable to set up a number of axes depending which controller, and which axis is in use. There are specific environment variables set up to let you do this. The following example shows a stretching rig set up on `MOT0201` and a linear sample changer on `MOT0101`:
