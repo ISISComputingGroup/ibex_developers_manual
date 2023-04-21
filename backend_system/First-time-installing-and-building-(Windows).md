@@ -50,6 +50,8 @@ Note: you can now shortcut both this initial `git clone` and the `build epics ba
 
 See [Installing and upgrading MySQL](Installing-and-Upgrading-MySQL)
 
+Note: If installing for the first time, a new installation of MySQL may try to start up IBEX servers, which may lead to errors if Python isn't installed yet.
+
 ## Install genie_python
 
 See [Building and installing genie_python](Building-and-Installing-genie_python)
