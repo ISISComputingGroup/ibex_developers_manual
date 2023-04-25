@@ -196,7 +196,11 @@ DAE3 is new ethernet based acquisition electronics on ZOOM and MARI, it used `IS
 
 Note that DAE3 does not ping, so the only way to know if it is there is by running `qxtalk` or the `isisicp` (via ibex or seci)
 
-If ibex has been in simulation mode for a long time previously, then some of the tcp ports used by dae3 may have been grabbed by the system as described in `Real DAE complains about missing cards (but was previously working)`. The only option then is to reboot
+If IBEX/SECI has either been in simulation mode or not running for a long time previously, then some of the tcp ports used by dae3 may have been grabbed by the operating system as described in `Real DAE complains about missing cards (but was previously working)` above on this page. You will see errors like
+```
+Quixtream Error: Failed to bind the socket to the local port."
+``` 
+in the ICP log and some client applications may complain about `NULL Pointer` errors. The only solution is to reboot the NDX computer.
 
 ### Error code 112
 
