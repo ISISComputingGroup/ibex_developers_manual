@@ -49,7 +49,7 @@ This was resolved by powercycling the DAE followed by stopping the visa server a
 On a DAE3 machine a vendor network library is used rather than NI Visa and the equivalent sorts of errors will have `Qx` or `Quixtream` prefixes. Access from the ISISICP is via the network, so there is no intermediate service/server to restart. Usually the ISISICP will retry failed connections, but check with electronics if there are repeated failures. You can try restarting ISISICP in case the vendor library needs a reload itself. An example of the error message is:
 
 ```
-2020-02-27T09:55:41  Qxtrm_channel::RDMARead failed rdma2 address 0x40010 nbytes 4(Quixtream: The timeout period on this channel expired before the transfer commenced. Channel status: Transfer failed. Data packet not received before timeout. )
+Qxtrm_channel::RDMARead failed rdma2 address 0x40010 nbytes 4(Quixtream: The timeout period on this channel expired before the transfer commenced. Channel status: Transfer failed. Data packet not received before timeout. )
 ```
 
 In general if you see an error like this or starting with `NIVISA` you should restart the DAE, then [contact electronics](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Contact%20details%20for%20other%20groups.docx).
@@ -161,7 +161,7 @@ If the wiring table is correct, try a restart of the ISISICP - the DAE is only s
 
 If the system is running DAE3, then there is another possible cause. check the log for a line like
 ```
-(Qxtrm_driver::Qxtrm_driver) Unable to create Quixtream on process20: Quixtream Error: Failed to bind the socket to the local port.
+Unable to create Quixtream on process20: Quixtream Error: Failed to bind the socket to the local port.
 ```
 The quickstream driver expects certain ports in the UDP dynamic range to be available - this error indicates something is not. It is not very helpful about which specific port (it uses UDP ports from 0xFE00 (65024) upwards) so a reboot may be the only option. 
 
