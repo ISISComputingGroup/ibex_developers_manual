@@ -161,7 +161,7 @@ If the wiring table is correct, try a restart of the ISISICP - the DAE is only s
 
 If the system is running DAE3, then there is another possible cause. check the log for a line like
 ```
-2021-11-25 15:40:19  (36692) (0) Qxtrm_driver: [Error] (Qxtrm_driver::Qxtrm_driver) Unable to create Quixtream on process20: Quixtream Error: Failed to bind the socket to the local port.
+(Qxtrm_driver::Qxtrm_driver) Unable to create Quixtream on process20: Quixtream Error: Failed to bind the socket to the local port.
 ```
 The quickstream driver expects certain ports in the UDP dynamic range to be available - this error indicates something is not. It is not very helpful about which specific port (it uses UDP ports from 0xFE00 (65024) upwards) so a reboot may be the only option. 
 
