@@ -78,6 +78,7 @@ A method for detecting collisions between moving beamline components by simulati
 
 Commit
 ------
+A commit is a snapshot of your repository at a certain point in time. It is also a git command, which saves all of your staged changes on a project. There are various ways to perform a git commit, more info can be found here: [Git Guides - git commit](https://github.com/git-guides/git-commit)
 
 
 Component
@@ -94,6 +95,7 @@ A Python script to upgrade current configurations to be compatible with new vers
 
 Configuration
 -------------
+
 
 ConServer
 ---------
