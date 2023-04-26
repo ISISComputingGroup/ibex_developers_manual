@@ -146,9 +146,11 @@ An implementation of the [OpenGenie](http://www.opengenie.org) scripting languag
 
 GIT
 ---
+Git is a distributed version control software. Version control is a way to save changes over time without overwriting previous versions. More info can be found here: [Git Guides: Git](https://github.com/git-guides)
 
 Github
 ------
+While Git takes care of the underlying version control, GitHub is the collaboration platform built on top of it. It's where most of IBEX source code is kept, along with some other projects. [Git Guides: Git](https://github.com/git-guides)
 
 GUI
 ---
