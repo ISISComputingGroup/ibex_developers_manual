@@ -256,7 +256,7 @@ Script Server
 
 SECI
 ----
-**S**ample **E**nvironment **C**ontrol **I**nterface.  The current instrument control system, currently being replaced by IBEX.  Written in C# and incorporating [LabVIEW](#labview) drivers for the sample environment equipment.  User manual [here](http://www.facilities.rl.ac.uk/isis/projects/uip/UserManuals/Forms/AllItems.aspx).
+**S**ample **E**nvironment **C**ontrol **I**nterface.  The current instrument control system, currently being replaced by IBEX.  Written in C# and incorporating [LabVIEW](#labview) drivers for the sample environment equipment.  If you need access to the SECI user manual, please ask.
 
 Sequencer
 ---------
