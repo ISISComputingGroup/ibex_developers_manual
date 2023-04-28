@@ -17,6 +17,11 @@ asynSetTraceIOTruncateSize("L0", -1, 1024)
 
 Where 1024 is the maximum message length you expect - could be increased if your device requires it.
 
+to turn off use
+```
+asynSetTraceMask("L0", -1, 0x1)
+```
+
 ## ASYN trace mask
 
 This determines what you see and is set to 0x1 (ASYN_TRACE_ERROR) by default. The following additional values
