@@ -31,9 +31,9 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
 ## Stand up
  | Standup | Week Commencing | x for Done |
  |--- | --- | --- |
- |DK | 09/01/2023 |x |
- |CMS | 16/01/2023 |x |
- |LJ | 23/01/2023 |x |
+ |DK | 09/01/2023 | x |
+ |CMS | 16/01/2023 | x |
+ |LJ | 23/01/2023 | x |
  |FA | 30/01/2023 | x |
  |TL | 06/02/2023 | x |
  |HC | 13/02/2023 | x |
@@ -42,11 +42,11 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
  |JH | 06/03/2023 | x |
  |DK | 13/03/2023 | x |
  |TL | 20/03/2023 | x |
- |LJ | 27/03/2023 | |
- |FA | 03/04/2023 | |
- |CMS | 10/04/2023 | |
- |HC | 17/04/2023 | |
- |DK | 24/04/2023 | |
+ |LJ | 27/03/2023 | x |
+ |FA | 03/04/2023 | x |
+ |CMS | 10/04/2023 | x |
+ |HC | 17/04/2023 | x |
+ |DK | 24/04/2023 | x |
  |NR | 01/05/2023 | |
  |CMS | 08/05/2023 | |
  |JH | 15/05/2023 | |
