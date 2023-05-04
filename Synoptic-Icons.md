@@ -1,14 +1,9 @@
 > [Wiki](Home) > [The GUI](The-GUI) > [Other](GUI-Other) > Synoptic icons
 
-### Icon Conventions
-* Thumbnail icon image files have height of 28px and a width of 28px including margins.
-* Synoptic icon image files have a maximum height of 100px and a width of (icon width + 20px) including margins.
-* The icon image should be a `.png` file.
-* The fill colour of the icons is `0xAAA19C`. The border colour is black.
-* The icon background should be transparent.
-
-### Creating Icons
+# Creating Icons
 (Note: this page will not discuss the creative process involved in creating an icon)
+
+### Tools
 
 [GIMP](http://www.gimp.org/) is a powerful, free image editing program that can be used to create icons for Synoptics.
 
@@ -20,6 +15,13 @@ You can specify which icon should appear in the synoptic with the file `uk.ac.st
                 return "pump";``` where the returned value is the icon's base filename.
 
 If you need to add new icons for the synoptic, these are under `uk.ac.stfc.isis.ibex.ui.devicescreens/icons` (both full size icons for the actual synoptic and thumbnails for the synoptic editor and device screens perspective). Please follow these guidelines when creating new synoptic icons (e.g. `icon.png`) and ensure thumbnail icons have a `_tb` suffix (e.g., `icon_tb.png`).
+
+### Icon Conventions
+* Thumbnail icon image files have height of 28px and a width of 28px including margins.
+* Synoptic icon image files have a maximum height of 100px and a width of (icon width + 20px) including margins.
+* The icon image should be a `.png` file.
+* The fill colour of the icons is `0xAAA19C`. The border colour is black.
+* The icon background should be transparent.
 
 ### Centred Icons
 To centre your new (or a pre-existing) icon, open the file in gimp and follow these steps:
