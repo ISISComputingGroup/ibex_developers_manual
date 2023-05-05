@@ -7,7 +7,7 @@ If you need to add new icons for the IBEX GUI Synoptic Perspective, these are un
 
 ### Getting started
 
-[GIMP](http://www.gimp.org/) is a powerful, free image editing program that can be used to create icons for Synoptics. There are also some  
+[GIMP](http://www.gimp.org/) is a powerful, free image editing program that can be used to create icons for Synoptics. There are also some [helpful tutorials](https://www.gimp.org/tutorials/) on their website.
 
 An alternative is [Inkscape](https://inkscape.org/) which is a vector graphics editor and possibly more suited to icon creation and editing.  Please see the [Basic Tutorial](https://inkscape.org/en/doc/tutorials/basic/tutorial-basic.html) for an introduction to the program.
 
