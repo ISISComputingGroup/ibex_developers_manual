@@ -29,6 +29,8 @@ You may wish to install some optional java components [as detailed here](https:/
 Install [Maven](https://maven.apache.org/download.cgi) and follow the 'Windows tips' in [these instructions ](https://maven.apache.org/install.html) to set 'Environment Variables' for the SDK with JAVA_HOME and maven in PATH
 It is recommended to install Maven into `C:\Tools\`
 
+_System Properties - Environment Variables - Path - New -`C:\Tools\apache-maven-###`_
+
 The Windows Tips from the above link says you should add maven to the PATH in the user variables. If it does not recognise mvn -v afterwards, then try to add it to the list of variables in PATH in System variables.
 
 Note: you MUST install a maven version >=3.6.0, but not 3.6.1 as this has a bug. Versions earlier than 3.6 are unable to build the GUI.
