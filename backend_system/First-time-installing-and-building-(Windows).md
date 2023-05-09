@@ -26,6 +26,9 @@ Do not install an Oracle JDK.
 You may wish to install some optional java components [as detailed here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Upgrade-Java#additional-optional-steps-for-developer-installations-not-required-on-instruments).
 
 ## Install Maven 
+
+Create `C:\Tools\`
+
 Install [Maven](https://maven.apache.org/download.cgi) and follow the 'Windows tips' in [these instructions ](https://maven.apache.org/install.html) to set 'Environment Variables' for the SDK with JAVA_HOME and maven in PATH
 It is recommended to install Maven into `C:\Tools\`
 
@@ -39,6 +42,8 @@ Note: you MUST install a maven version >=3.6.0, but not 3.6.1 as this has a bug.
 Install Git [Getting-started-with-Git-and-GitHub](Getting-started-with-Git-and-GitHub)
 
 ## Recursive clone from git
+
+Create `C:\Instrument\Apps\`
 
 Navigate to `C:\Instrument\Apps\` and check whether the EPICS directory already exists. If so, remove the EPICS directory before continuing.
   
