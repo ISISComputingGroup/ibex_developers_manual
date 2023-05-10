@@ -6,7 +6,7 @@ For a clean setup on laptop (skip relevant steps if previously configured)
 * Install EPICS (you can just run `install_to_inst.bat` in the epics release on `kits$` rather than a full installer run)
 * run `config_env.bat` in `c:\instrument\apps\epics` to create the `c:\instrument\settings` tree
 * now close this cmd window and create a file `c:\instrument\settings\config\NDLTxxx\configurations\mypvprefixnc.txt` that contains the correct PV prefix but without a trailing : e.g. `IN:INES` (the `nc` suffix in `mypvprefixnc.txt` means "no colon") 
-* now re-run `config_env.bat` from a cmd window and check `MYPVPREFIX` etc is as expected
+* now re-run `config_env.bat` from a cmd window and check `%MYPVPREFIX%` etc is as expected
 * Create `c:\instrument\settings\config\NDLTxxx\configurations\globals.txt` to define `ACF_IH1` so the NX computer can start/stop nGEM via PVs e.g. `ACF_IH1=NDXINES`
 * Create shortcuts on desktop pointing at `c:\instrument\apps\epics\gateway\start_gateways.bat` and the `runIOC.bat` for the NGEM ioc directory
 * put notes on running both shortcuts on reboot into a README/NOTES file on desktop
