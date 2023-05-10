@@ -30,4 +30,4 @@ If the detector is moved to another instrument with the same laptop then:
 ## problems/debugging 
 
 * If the NGEM vendor software is restarted, the IOC will need to be restarted. Kill the running ioc cmd window and then run runIOC.bat shortcut on desktop
-* Make sure the NGEM IOC isn't running in two places with the same PV prefix, currently this means it should be running only on the laptop and not on the associated NDX computer. If there are two IOCs running, you will have issues starting/stopping collection and probably see "multiple PV warning" if you use a command line tool             
+* Make sure the NGEM IOC isn't running in two places with the same PV prefix, currently this means it should be running only on the laptop and not on the associated NDX computer (NGEM is listed in the start/stop IOCs menu so can get started accidentally). If there are two IOCs running, you will have issues starting/stopping collection and probably see "multiple PV warning" if you use a command line tool             
