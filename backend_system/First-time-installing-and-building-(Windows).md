@@ -52,16 +52,16 @@ In `C:\Instrument\Apps\` run:
 `git clone --recursive https://github.com/ISISComputingGroup/EPICS.git`
 
 Note: you can now shortcut both this initial `git clone` and the `build epics backend` step below by using the [Developer-Server-Build](Developer-Server-Build)
- 
+
+## Install genie_python
+
+See [Building and installing genie_python](Building-and-Installing-genie_python)
+
 ## Install MySQL
 
 See [Installing and upgrading MySQL](Installing-and-Upgrading-MySQL)
 
 Note: If installing for the first time, a new installation of MySQL may try to start up IBEX servers, which may lead to errors if Python isn't installed yet.
-
-## Install genie_python
-
-See [Building and installing genie_python](Building-and-Installing-genie_python)
 
 ## Build EPICS back-end
 Note: the instructions [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Developer-Server-Build) may be much quicker than building EPICS yourself manually, if you use this method, you will need to run `config_mysql.bat` in `C:\Instrument\Apps\EPICS\SystemSetup`. The EPICS build on the build server contains all the git submodules so should work as usual. 
