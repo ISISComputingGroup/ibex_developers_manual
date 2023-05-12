@@ -143,3 +143,10 @@ The office McLennan need the following:
 1. `VELO3` 0.5
 1. `ERES3` 400/4096
 1. `MTP3` 4000
+
+## getting debug output
+
+console to IOC and type `dbior` for basic information. For extended information pass a higher report level to dbior e.g. `dbior * 1`
+  
+
+
