@@ -47,7 +47,7 @@ Install Git [Getting-started-with-Git-and-GitHub](Getting-started-with-Git-and-G
 
 1. Create `C:\Instrument\Apps\`
 1. Navigate to `C:\Instrument\Apps\` and check whether the EPICS directory already exists. If so, remove the EPICS directory before continuing.  
-1. Follow instructions on the [Developer-Server-Build](Developer-Server-Build) page to copy a built version of EPICS to `\instrument\apps`
+1. Follow instructions on the [Quick instructions section of the developer server build page](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Developer-Server-Build#quick-instructions) to copy a built version of EPICS to `\instrument\apps`
 
 ## Install genie_python
 
