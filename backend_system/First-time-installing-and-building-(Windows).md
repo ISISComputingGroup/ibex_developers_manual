@@ -43,11 +43,11 @@ Install Git [Getting-started-with-Git-and-GitHub](Getting-started-with-Git-and-G
 
 ## Copy EPICS build
 
-Create `C:\Instrument\Apps\`
+_EPICS contains lots of code that requires compilation before use, so we generally copy a pre-built version of this to save time._
 
-Navigate to `C:\Instrument\Apps\` and check whether the EPICS directory already exists. If so, remove the EPICS directory before continuing.
-  
-Follow instructions on the [Developer-Server-Build](Developer-Server-Build) page tp copy a built version of EPICS to `\instrument\apps`
+1. Create `C:\Instrument\Apps\`
+1. Navigate to `C:\Instrument\Apps\` and check whether the EPICS directory already exists. If so, remove the EPICS directory before continuing.  
+1. Follow instructions on the [Developer-Server-Build](Developer-Server-Build) page to copy a built version of EPICS to `\instrument\apps`
 
 ## Install genie_python
 
