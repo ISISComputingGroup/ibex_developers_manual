@@ -41,17 +41,13 @@ Note: you MUST install a maven version >=3.6.0, but not 3.6.1 as this has a bug.
 ## Install Git 
 Install Git [Getting-started-with-Git-and-GitHub](Getting-started-with-Git-and-GitHub)
 
-## Recursive clone from git
+## Copy EPICS build
 
 Create `C:\Instrument\Apps\`
 
 Navigate to `C:\Instrument\Apps\` and check whether the EPICS directory already exists. If so, remove the EPICS directory before continuing.
   
-In `C:\Instrument\Apps\` run:
-
-`git clone --recursive https://github.com/ISISComputingGroup/EPICS.git`
-
-Note: you can now shortcut both this initial `git clone` and the `build epics backend` step below by using the [Developer-Server-Build](Developer-Server-Build)
+Follow instructions on the [Developer-Server-Build](Developer-Server-Build) page tp copy a built version of EPICS to `\instrument\apps`
 
 ## Install genie_python
 
