@@ -43,7 +43,7 @@ Install Git [Getting-started-with-Git-and-GitHub](Getting-started-with-Git-and-G
 
 ## Copy EPICS build
 
-_EPICS contains lots of code that requires compilation before use, so we generally copy a pre-built version of this to save time._
+_EPICS contains lots of code that requires compilation before use, so we generally copy a pre-built version of this to save time and then build modules as changes are made._
 
 1. Create `C:\Instrument\Apps\`
 1. Navigate to `C:\Instrument\Apps\` and check whether the EPICS directory already exists. If so, remove the EPICS directory before continuing.  
