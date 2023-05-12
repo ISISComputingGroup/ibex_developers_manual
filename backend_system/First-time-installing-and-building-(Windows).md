@@ -36,14 +36,14 @@ _System Properties - Environment Variables - Path - New -`C:\Tools\apache-maven-
 
 The Windows Tips from the above link says you should add maven to the PATH in the user variables. If it does not recognise mvn -v afterwards, then try to add it to the list of variables in PATH in System variables.
 
-Note: you MUST install a maven version >=3.6.0, but not 3.6.1 as this has a bug. Versions earlier than 3.6 are unable to build the GUI.
+>Note: you MUST install a maven version >=3.6.0, but not 3.6.1 as this has a bug. Versions earlier than 3.6 are unable to build the GUI.
 
 ## Install Git 
 Install Git [Getting-started-with-Git-and-GitHub](Getting-started-with-Git-and-GitHub)
 
 ## Copy EPICS build
 
-_EPICS contains lots of code that requires compilation before use, so we generally copy a pre-built version of this to save time and then build modules as changes are made._
+>_EPICS contains lots of code that requires compilation before use, so we generally copy a pre-built version of this to save time and then build modules as changes are made._
 
 1. Create `C:\Instrument\Apps\`
 1. Navigate to `C:\Instrument\Apps\` and check whether the EPICS directory already exists. If so, remove the EPICS directory before continuing.  
@@ -132,7 +132,7 @@ These repositories can be web browsed via [http://control-svcs.isis.cclrc.ac.uk/
 git fetch
 git checkout NDXALF
 ```
-Note: The developer branch has been created to store useful configurations that may be shared amongst all developers.
+>Note: The developer branch has been created to store useful configurations that may be shared amongst all developers.
 
 ## Setting up a calibrations directory
 
