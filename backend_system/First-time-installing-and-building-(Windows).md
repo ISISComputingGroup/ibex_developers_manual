@@ -59,23 +59,6 @@ See [Installing and upgrading MySQL](Installing-and-Upgrading-MySQL)
 
 Note: If installing for the first time, a new installation of MySQL may try to start up IBEX servers, which may lead to errors if Python isn't installed yet.
 
-## Build EPICS back-end
-Note: the instructions [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Developer-Server-Build) may be much quicker than building EPICS yourself manually, if you use this method, you will need to run `config_mysql.bat` in `C:\Instrument\Apps\EPICS\SystemSetup`. The EPICS build on the build server contains all the git submodules so should work as usual. 
-<details>
-  <summary>Manual build</summary>
-
-`cd` to `C:\Instrument\Apps\EPICS\` and run `build.bat`
-Note that this will take some time and should end with building the documentation.
-
-Certain items will not be built when using VS2013, these are:
-*  Mk3Chopper support module and IOC - only builds with VS2010
-
-If you see `Error 2: file not found`, you may not have installed the correct windows SDK or visual studio version. Check for `rc.exe` in `C:\Program Files (x86)\Windows Kits\10\bin\x86\` (as appropriate for your system). If you don't have `rc.exe`, try installing the windows SDK appropriate for your operating system.
-
-If you still have build errors (especially relating to seabreeze or astrium choppers, [look at the troubleshooting here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Astrium-Chopper#build-issues)
-</details>
-Whilst this is building/copying you can independently continue with this guide (up until Set up the CS-Studio archiver).
-
 ## Building the GUI
 
 Please see [Building the GUI](Building-the-GUI).
