@@ -70,6 +70,8 @@ Please see [Building the GUI](Building-the-GUI).
 > * Replace `<NDXXXX>` with your machine name, e.g. `NDXIRISTEST1`, `NDLT123`
 > * Replace `<init_inst_name>` with your lower case machine name, e.g. `init_ndxtest1.py`, `init_ndlt123.py` 
 
+(Note: If you already have a 'NDXXXX' folder, rename it to 'NDXXXX.old' and continue with the following steps)
+
 1. Create the following folder structure: `C:\Instrument\Settings\config`
 
 2. Navigate to the config folder
