@@ -66,6 +66,10 @@ This error state means that writes were sent to the power supply but the setpoin
 
 This state is triggered if the power supply limits have been defined incorrectly in the configuration. Check the configuration macros for sign errors.
 
+### PSU out of range
+
+This state is triggered if the power supply setpoint readback value is outside of the power supply limits.
+
 # Miscellaneous troubleshooting
 
 ### Zero field controller reports "unstable" when the instrument is running at field.
