@@ -203,14 +203,14 @@ Calculate the appropriate IOC macros as follows:
 * `Name = "Mclennan Newport"` so we set `NAME1 = Mclennan Newport`
 * `Motor steps per unit = 8000.000000` so we set `MSTP1 = 8000`
 * `Velocity = 10000` this is in steps per second, so we divide by 8000 to get units per second, `VELO1 = 1.25`
-* `Acceleration = 40000` this is in steps / s^2, so device velocity by acceleration (10000 / 40000) to get `ACCL1 = 0.25`
+* `Acceleration = 40000` this is in steps / s^2, so devide velocity by acceleration (10000 / 40000) to get `ACCL1 = 0.25`
 * `Units = "deg"` so we set `UNIT1 = deg`
-* `Jog Speed = 10000` so we calculate (10000 / 8000) to set `JVEL1 = 1.25`
-* `Upper limit = 180.000000` set `DHLM = 180.0`    
-* `Lower Limit = -180.000000` set `DLLM = -180.0`
+* `Jog Speed = 10000` so we calculate (10000 / 8000) to get `JVEL1 = 1.25`
+* `Upper limit = 180.000000` so set `DHLM = 180.0`    
+* `Lower Limit = -180.000000` so set `DLLM = -180.0`
 * `Homing Speed = 10000` so calculate (10000/8000) and set `HVEL1 = 1.25`
-* `Numerator = 8.000000` and `Denominator = 1.000000` means we set `ERES1 = 8/1` (This should be the same numeric ratio as `Motor steps per unit`/`Encoder counts per unit` which is true here as 8000 / 1000 == 8 / 1 )
+* `Numerator = 8.000000` and `Denominator = 1.000000` refer to the encoder ratio so we set `ERES1 = 8/1` (This should be the same numeric ratio as `Motor steps per unit`/`Encoder counts per unit` which is true here as 8000 / 1000 == 8 / 1 )
 * `Home Position = 0.000000` we always apply a dial home position of 0, if this is non-zero set `OFST1` to its value
 * `Control Mode = 4` in labview `4` is "closed loop stepper" so set `CMOD1 = CLOSED` (if it was `1` that means "open loop stepper" and `CMOD1 = OPEN`. We don't currently handle other values)     
-* `Homing Method = 2` for labview 0=none,1=home signal+,2=home signal-,3=reverse limit,home signal+,4=forward limit,home signal-,5=reverse limit,6=forward limit. So for `2` we set `HOME1 = 2` after examining ibex home table above. We don't currently have labview 3 and 4 modes, but they could be emulated by using 1 or 2 with an initial manual jog to the appropriate limit. 
+* `Homing Method = 2` for labview 0=none; 1=home signal+; 2=home signal-; 3=reverse limit,home signal+; 4=forward limit,home signal-;5=reverse limit;6=forward limit. So for `2` we set `HOME1 = 2` after examining ibex home table above. We don't currently have labview 3 and 4 modes, but they could be emulated by using 1 or 2 with an initial manual jog to the appropriate limit before homing. 
     
