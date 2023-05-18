@@ -7,18 +7,26 @@ The McLennan motor is a controller that support multiple independent motors.
 
 ## Behaviour
 
+### Motor Resolution
+The motor resolution is set with the *MSTP***n** IOC macros and is in units of `steps/mm`, this will be inverted by the IOC internally as the motor record `MRES` uses `steps/mm`. 
+
+### Encoder Resolution
+The encoder ratio rather than encoder resolution is set with the *ERES***n** IOC macros, this is a string like `400/4096` and bears no direct relation to the motor record `ERES`. As the mclennan driver pretends to be open loop (no encoder as per `MSTA` field) whatever mode it is running in, motor record `ERES` is not actually used and is set to `0` in the `st.cmd`  
+
+The encoder ratio written `M/E` is providing `motor_steps_per_revolution / encoder_steps_per_revolution`. So `actual_position_steps = encoder_steps_readback * encoder_ratio`. For closed loop mode to work this needs to be correct so that `commanded_motor_steps_moved = encoder_steps_moved * encoder_ratio`. It is possible to work this out by e.g. going to console, doing a small MR relative move and comparing command (CP) and actual (AP) position. `dbior` on an ioc now shows these values, as does the `QP` command at the motor low level serial interface. The Raw encoder steps is `IP` or `Input Position` which is scaled by encoder ratio to give actual (AP) position. If encoder and motor move in opposite directions, add a minus sign to encoder ratio.
+
 ### Velocity
-The McLennan motor velocity is set with the *VELO***n** IOC macros. The value set is in `mm/second`. The motor resolution is set with the *MRES***n** IOC macros and as in units of `mm/step`. The velocity value set on the device will be the velocity divided by the motor resolution, and will be in units of `step/second`.
+The McLennan motor velocity is set with the *VELO***n** IOC macros, the value set is in `mm/second`. 
 
 ### Acceleration
-Acceleration is far less intuitive than velocity. The acceleration value on the device is the acceleration in units of `step/s^2`. It is calculated as the IOC macro values of velocity divided by the product of the motor resolution and acceleration. The IOC macro acceleration is therefore the number of seconds under linear acceleration to reach maximum speed.
+The IOC macro *ACCL***n** for acceleration is the the number of seconds under linear acceleration to reach maximum speed, the same as the motor record (The acceleration value on the device is the acceleration in units of `step/s^2`, It is calculated in the IOC as velocity divided by the product of the motor resolution and ACCL value.) 
 
 ### Setting the motor position/offset
 See [Set the raw position of the motor without moving it](Set-the-raw-position-of-the-motor-without-moving-it)
 
 ### Homing
 
-There are several homing modes on the McLennan set via the home macro. The choice of mode depends on the motor, all but 0 are controlled by some SNL. Modes are:
+There are several homing modes on the McLennan set via the home macro. The choice of mode depends on the motor, 1 and 3 (constant velocity homes to limits) are controlled by SNL, others by motor internally. Modes are:
 
 * 0: Controller does internal home to an external home signal.
 * 1: Do a reverse constant velocity move until limit switch is hit, but do not zero the motor (this is deprecated)
@@ -26,7 +34,7 @@ There are several homing modes on the McLennan set via the home macro. The choic
 * 3: Do a reverse constant velocity move until limit switch is hit then zero the motor
 * 4: Send a forward home signal to the controller and then zero the motor
 
-The velocity of the constant velocity move is set to be a 1/10 of the normal velocity unless the macro is set to change it.
+The velocity of the constant velocity move uses JVEL and is set to be a 1/10 of the normal velocity unless the macro is set to change it.
 
 **There is a [special homing sequence for Vesuvio](Vesuvio-homing-sequence) because it doesn't quite work until ticket [5739](https://github.com/ISISComputingGroup/IBEX/issues/5739) is done**
 
@@ -49,9 +57,6 @@ SW3
 * 8=OFF
 
 SW4 controls encoder termination, with OFF=single ended (TTL), ON=differential pair (RS422). Not for us to change, leave to motion engineers.
-
-### Encoder resolution
-Key macro is `ERES`, this is not the same as the ERES in the motor record, it is actually the encoder ratio written `M/E` providing `motor_steps_per_revolution / encoder_steps_per_revolution`. So `actual_position_steps = encoder_steps_readback * encoder_ratio`. For closed loop mode to work this needs to be correct so that `commanded_motor_steps_moved = encoder_steps_moved * encoder_ratio`. It is possible to work this out by e.g. going to console, doing a small MR relative move and comparing command (CP) and actual (AP) position. `dbior` on an ioc now shows these values, as does the `QP` command at the motor low level serial interface. The Raw encoder steps is `IP` or `Input Position` which is scaled by encoder ratio to give actual (AP) position. If encoder and motor move in opposite directions, add a minus sign to encoder ratio.
 
 ### Configuring axes
 When configuring a particular axis, an `axes.cmd` file is required in `C:\Instrument\Settings\config\[INSTMACHINE]\configurations\mclennan`. See the the [motion control](https://github.com/ISISComputingGroup/IBEX/wiki/Motion-Control) pages for additional details. It is often desirable to set up a number of axes depending which controller, and which axis is in use. There are specific environment variables set up to let you do this. The following example shows a stretching rig set up on `MOT0201` and a linear sample changer on `MOT0101`:
@@ -148,5 +153,64 @@ The office McLennan need the following:
 
 console to IOC and type `dbior` for basic information. For extended information pass a higher report level to dbior e.g. `dbior * 1`
   
+## converting values from labview
 
-
+if you need to convert a labview mclennan ini file, these are usually found in `c:\labview modules\Drivers\Mclennan PM600\INI Files` on the instrument. A file will have an entry like:
+```
+[M0]
+Name = "Mclennan Newport"
+Enabled = TRUE    
+Units = "deg"
+Com Port = 7 
+Axis Address = 1    
+Baud Rate = 9600    
+Data Bits = 8    
+Parity = 0    
+Stop Bits = 10    
+Acceleration = 40000    
+Velocity = 10000    
+Motor steps per unit = 8000.000000    
+Encoder counts per unit = 1000.000000    
+Correction Gain = 70    
+Window = 50    
+Creep Speed = 5000    
+Creep Steps = 0    
+Settling Time = 0    
+Jog Speed = 10000    
+Control Mode = 4    
+BackOff Steps = 0    
+Deceleration = 40000    
+Upper limit = 180.000000    
+Lower Limit = -180.000000    
+Enable State = 1    
+KF = 0    
+KP = 10    
+KS = 0    
+KV = 0    
+KX = 0    
+Numerator = 8.000000    
+Denominator = 1.000000    
+Homing Method = 2    
+Homing Speed = 10000    
+Home Offset = 0.000000    
+Apply Home Position = TRUE    
+Home Position = 0.000000    
+Apply Home Offset = FALSE    
+```
+Calculate the appropriate IOC macros as follows:
+  
+* `Axis Address = 1` we set `AXIS1=yes` and then only set other macros with a suffix of `1`
+* `Name = "Mclennan Newport"` so we set `NAME1 = Mclennan Newport`
+* `Motor steps per unit = 8000.000000` so we set `MSTP1 = 8000`
+* `Velocity = 10000` this is in steps per second, so we divide by 8000 to get units per second, `VELO1 = 1.25`
+* `Acceleration = 40000` this is in steps / s^2, so device velocity by acceleration (10000 / 40000) to get `ACCL1 = 0.25`
+* `Units = "deg"` so we set `UNIT1 = deg`
+* `Jog Speed = 10000` so we calculate (10000 / 80000) to set `JVEL1 = 1.25`
+* `Upper limit = 180.000000` set `DHLM = 180.0`    
+* `Lower Limit = -180.000000` set `DLLM = -180.0`
+* `Homing Speed = 10000` so calculate (10000/8000) and set `HVEL1 = 1.25`
+* `Numerator = 8.000000` and `Denominator = 1.000000` means we set `ERES1 = 8/1` (This should be the same numeric ratio as `Motor steps per unit`/`Encoder counts per unit`)
+* `Home Position = 0.000000` we always apply a home position of 0, If this is non-zero set `OFST1` to its value
+* `Control Mode = 4`     CMOD   
+* `Homing Method = 2`    HOME
+    
