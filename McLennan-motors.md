@@ -8,7 +8,7 @@ The McLennan motor is a controller that support multiple independent motors.
 ## Behaviour
 
 ### Motor Resolution
-The motor resolution is set with the *MSTP***n** IOC macros and is in units of `steps/mm`, this will be inverted by the IOC internally as the motor record `MRES` uses `steps/mm`. 
+The motor resolution is set with the *MSTP***n** IOC macros and is in units of `steps/mm`, this will be inverted by the IOC internally as the motor record `MRES` uses `mm/step`. 
 
 ### Encoder Resolution
 The encoder ratio rather than encoder resolution is set with the *ERES***n** IOC macros, this is a string like `400/4096` and bears no direct relation to the motor record `ERES`. As the mclennan driver pretends to be open loop (no encoder as per `MSTA` field) whatever mode it is running in, motor record `ERES` is not actually used and is set to `0` in the `st.cmd`  
