@@ -213,16 +213,16 @@ Calculate the appropriate IOC macros as follows:
 * `Control Mode = 4` in labview `4` is "closed loop stepper" so set `CMOD1 = CLOSED` (if it was `1` that means "open loop stepper" set `CMOD1 = OPEN`. We don't currently handle other values)     
 * `Homing Method = 2` for labview 0=none; 1=home signal+; 2=home signal-; 3=reverse limit,home signal+; 4=forward limit,home signal-;5=reverse limit;6=forward limit. So for `2` we set `HOME1 = 2` after examining ibex home table above. We don't currently have labview 3 and 4 modes, but they could be emulated by using 1 or 2 with an initial manual jog to the appropriate limit before homing.   
 
-Some labview values do not currently have macros and get IOC defaults currently. Edit IOC `st-motor-init.st` if you need to temporarily change them and then create a ticket to add a proper IOC macro
+Some labview values do not currently have macros and get IOC defaults. Edit IOC `st-motor-init.st` if you need to temporarily change them and then create a ticket to add a proper IOC macro
 
 * `Window = 50` this is the end of move check window before an internal mclennan retry, it is set to a IOC calculated default value. It is a bit like the retry deadband of the motor record, but done at the controller. If a moves completes with a controller error then edit `st-motor-init.st` to change directly and create a ticket to add a macro.
 * `Correction Gain = 70` this is equivalent to the IOC default `PCOF = 0.7`    
-* `Creep Steps = 0` steps to approach position at the slower `Creep speed`    
-* `Creep Speed = 5000` only important if `Creep Steps` > 0. It is temporary set to `HVEL` during a home so does not affect that.    
+* `Creep Steps = 0` steps to approach position at the slower `Creep speed` in final phase of move    
+* `Creep Speed = 5000` only important if `Creep Steps` > 0 as it is temporary set to `HVEL` during a home so does not affect that.
 * `Settling Time = 0` how long motor must be within `Window` at end of move    
-* `BackOff Steps = 0` used for backlash    
+* `BackOff Steps = 0` used for backlash correction
 
 Some mclennan values were not covered in labview but exist in `st-motor-init.st`
 
-* Tracking window
+* Tracking window - a parameter used to determine if a tracking abort should be signalled
 * Not Complete/Time-Out time
