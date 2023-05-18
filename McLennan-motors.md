@@ -111,7 +111,9 @@ When starting the unit:
 
 Try using the macros for an axis other than 1 (2 or 3) in the ibex GUI. The axis to be driven by the buttons on the front panel are set by a position dial inside the driver, so these might not work with the motor you need to control.
 
-Additionally if it moves a short distance and stops it may be going into Tracking abort. This happens when the encoder and motor resolutions are incorrect/incompatible. The first thing to do is to restart the McLennan and then the IOC so that the values are resent. If this does not fix it then check the settings are correct. 
+Additionally if it moves a short distance and stops it may be going into `Tracking abort`. A tracking abort means the encoder and motor step counters have got too far apart, this could be due to: 
+* The encoder and motor resolutions are incorrect/incompatible. The first thing to do is to restart the McLennan and then the IOC so that the values are resent. If this does not fix it then check the settings are correct.
+* you are trying to accelerate or move too quickly, or possibly move too slowly, meaning there is a time lag between the motor pulses being sent and the motor response. Try changing these parameters. See end of page if you need to change tracking abort window.   
 
 ### McLennan moves but doesn't stop at desired position
 
@@ -211,7 +213,7 @@ Calculate the appropriate IOC macros as follows:
 * `Control Mode = 4` in labview `4` is "closed loop stepper" so set `CMOD1 = CLOSED` (if it was `1` that means "open loop stepper" set `CMOD1 = OPEN`. We don't currently handle other values)     
 * `Homing Method = 2` for labview 0=none; 1=home signal+; 2=home signal-; 3=reverse limit,home signal+; 4=forward limit,home signal-;5=reverse limit;6=forward limit. So for `2` we set `HOME1 = 2` after examining ibex home table above. We don't currently have labview 3 and 4 modes, but they could be emulated by using 1 or 2 with an initial manual jog to the appropriate limit before homing.   
 
-Some values do not currently have macros and get IOC defaults currently. Edit IOC `st-motor-init.st` if you need to temporarily change them and then create a ticket to add a proper IOC macro
+Some labview values do not currently have macros and get IOC defaults currently. Edit IOC `st-motor-init.st` if you need to temporarily change them and then create a ticket to add a proper IOC macro
 
 * `Window = 50` this is the end of move check window before an internal mclennan retry, it is set to a IOC calculated default value. It is a bit like the retry deadband of the motor record, but done at the controller. If a moves completes with a controller error then edit `st-motor-init.st` to change directly and create a ticket to add a macro.
 * `Correction Gain = 70` this is equivalent to the IOC default `PCOF = 0.7`    
@@ -219,4 +221,8 @@ Some values do not currently have macros and get IOC defaults currently. Edit IO
 * `Creep Speed = 5000` only important if `Creep Steps` > 0. It is temporary set to `HVEL` during a home so does not affect that.    
 * `Settling Time = 0` how long motor must be within `Window` at end of move    
 * `BackOff Steps = 0` used for backlash    
-    
+
+Some mclennan values were not covered in labview but exist in `st-motor-init.st`
+
+* Tracking window
+* Not Complete/Time-Out time
