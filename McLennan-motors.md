@@ -201,28 +201,28 @@ Calculate the appropriate IOC macros as follows:
 * `Axis Address = 1` and `Enabled = TRUE` so we set `AXIS1=yes` and then set other macros with a suffix of `1`
 * `Name = "Mclennan Newport"` so we set `NAME1 = Mclennan Newport`
 * `Motor steps per unit = 8000.000000` so we set `MSTP1 = 8000` (which will lead to an EPICS motor record MRES of 0.000125)
-* `Velocity = 10000` this is in steps per second, so we divide by 8000 to get units per second, `VELO1 = 1.25`
-* `Acceleration = 40000` this is in steps / s^2, we divide velocity by acceleration (10000 / 40000) to get the time `ACCL1 = 0.25`
+* `Velocity = 10000` this is in steps per second, so we divide by motor steps per unit to get units per second  (10000 / 8000), `VELO1 = 1.25`
+* `Acceleration = 40000` this is in steps / s^2, we divide velocity by acceleration (10000 / 40000) to get the acceleration time `ACCL1 = 0.25`
 * `Units = "deg"` so we set `UNIT1 = deg`
-* `Jog Speed = 10000` so we divide by steps (10000 / 8000) to get `JVEL1 = 1.25`
-* `Upper limit = 180.000000` so set `DHLM = 180.0`    
-* `Lower Limit = -180.000000` so set `DLLM = -180.0`
-* `Homing Speed = 10000` so divide by steps (10000/8000) to get `HVEL1 = 1.25`
-* `Numerator = 8.000000` and `Denominator = 1.000000` refer to the encoder ratio components so we set `ERES1 = 8/1` (This should be the same numeric ratio as `Motor steps per unit`/`Encoder counts per unit` which is true here as 8000 / 1000 == 8 / 1 )
+* `Jog Speed = 10000` so like velocity above we divide by steps (10000 / 8000) to get `JVEL1 = 1.25`
+* `Upper limit = 180.000000` is already in proper units so set `DHLM = 180.0`    
+* `Lower Limit = -180.000000` is already in proper units so set `DLLM = -180.0`
+* `Homing Speed = 10000` so divide by motor steps (10000/8000) to get `HVEL1 = 1.25`
+* `Numerator = 8.000000` and `Denominator = 1.000000` refer to the encoder ratio components so we set `ERES1 = 8/1` (This should be the equivalent numeric ratio as `Motor steps per unit`/`Encoder counts per unit` which is true here as 8000 / 1000 == 8 / 1 )
 * `Home Position = 0.000000` we always apply a dial home position of 0, if this is non-zero set `OFST1` to its value
 * `Control Mode = 4` in labview `4` is "closed loop stepper" so set `CMOD1 = CLOSED` (if it was `1` that means "open loop stepper" set `CMOD1 = OPEN`. We don't currently handle other values)     
 * `Homing Method = 2` for labview 0=none; 1=home signal+; 2=home signal-; 3=reverse limit,home signal+; 4=forward limit,home signal-;5=reverse limit;6=forward limit. So for `2` we set `HOME1 = 2` after examining ibex home table above. We don't currently have labview 3 and 4 modes, but they could be emulated by using 1 or 2 with an initial manual jog to the appropriate limit before homing.   
 
-Some labview values do not currently have macros and get IOC defaults. Edit IOC `st-motor-init.st` if you need to temporarily change them and then create a ticket to add a proper IOC macro
+Some labview values do not currently have macros and get IOC defaults. Edit MCLEN IOC `st-motor-init.st` if you need to temporarily change them and then create a ticket to add a proper IOC macro
 
 * `Window = 50` this is the end of move check window before an internal mclennan retry, it is set to a IOC calculated default value. It is a bit like the retry deadband of the motor record, but done at the controller. If a moves completes with a controller error then edit `st-motor-init.st` to change directly and create a ticket to add a macro.
-* `Correction Gain = 70` this is equivalent to the IOC default `PCOF = 0.7`    
-* `Creep Steps = 0` steps to approach position at the slower `Creep speed` in final phase of move    
-* `Creep Speed = 5000` only important if `Creep Steps` > 0 as it is temporary set to `HVEL` during a home so does not affect that.
-* `Settling Time = 0` how long motor must be within `Window` at end of move    
+* `Correction Gain = 70` this is equivalent to the IOC default `PCOF = 0.7` for a stepper motor
+* `Creep Steps = 0` number of steps to approach final position at the slower `Creep speed` in final phase of a move    
+* `Creep Speed = 5000` only important for us if `Creep Steps` > 0 as it is temporary set to `HVEL` during a home so does not affect homes.
+* `Settling Time = 0` how long motor readback must be within `Window` of requested position at end of move    
 * `BackOff Steps = 0` used for backlash correction
 
-Some mclennan values were not covered in labview but exist in `st-motor-init.st`
+Some mclennan values were not covered in labview but exist in MCLEN IOC `st-motor-init.st`
 
-* Tracking window - a parameter used to determine if a tracking abort should be signalled
+* Tracking window - a parameter used to determine if a tracking abort should be signalled, max allowed difference between current and requested position during a move. May get caused by a motor moving too fast or too slow and so stalling.
 * Not Complete/Time-Out time
