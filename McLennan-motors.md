@@ -139,14 +139,17 @@ The office McLennan need the following:
 
 1. No Null terminator or gender changer (if using a straight-through male-female cable from a PC)
   * Note: If the mclennan has two ports (for daisy chaining), the out port MUST have an RS232 terminator in it. This looks similar to a null modem and bridges two serial pins. If this is not present, the motor controller will not communicate.
+
+Use following IOC macro setting:
+
 1. `BAUD` 9600
 1. `BITS` 8
-1. `AXIS 3` yes (all others no)
+1. `AXIS3` yes (all others no)
 1. `MODE3` CLOSED
 1. `ACCL3` 1
 1. `VELO3` 0.5
 1. `ERES3` 400/4096
-1. `MTP3` 4000
+1. `MSTP3` 4000
 
 ## getting debug output
 
