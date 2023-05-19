@@ -198,7 +198,7 @@ Apply Home Offset = FALSE
 ```
 Calculate the appropriate IOC macros as follows:
   
-* `Axis Address = 1` we set `AXIS1=yes` and then set other macros with a suffix of `1`
+* `Axis Address = 1` and `Enabled = TRUE` so we set `AXIS1=yes` and then set other macros with a suffix of `1`
 * `Name = "Mclennan Newport"` so we set `NAME1 = Mclennan Newport`
 * `Motor steps per unit = 8000.000000` so we set `MSTP1 = 8000` (which will lead to an EPICS motor record MRES of 0.000125)
 * `Velocity = 10000` this is in steps per second, so we divide by 8000 to get units per second, `VELO1 = 1.25`
