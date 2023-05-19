@@ -105,6 +105,10 @@ ConServer
 -----
 "**C**ontrol **S**ystem **S**tudio is an [Eclipse](#eclipse)-based collection of tools to monitor and operate large scale control systems, such as the ones in the accelerator community. It's a product of the collaboration between different laboratories and universities."
 
+DAE
+-------
+The Data Acquisition Electronics (DAE) is the physical hardware that reads the neutron events out of the detectors. IBEX communicates with this hardware via the Instrument Control Program (ICP). This program is also responsible for combining the neutron and sample environment data into the NeXus file. 
+
 [Database Server](the-databaseserver)
 -----------------
 
