@@ -435,8 +435,10 @@ If you need to recover a system that has filled up its `c:\data` area due to a l
 
 * log onto NDX computer
 * Run `stop_ibex_server` or  `kill seci` as appropriate
-* open `c:\data` in windows explorer
-* look for a large `eventsYYYYY.tmp` file, make a note of the `YYYYY` number and then select and `shift+delete` this file (you do not want to move it to recycle bin - make sure the prompt says "permanently delete this file" and not "delete this file")
+* open `c:\data` in windows explorer and sort files by name
+* look for a very large `eventsYYYYY.tmp` file, make a note of the `YYYYY` number and then select and `shift+delete` this file (you do not want to move it to recycle bin - make sure the prompt says "permanently delete this file" and not "delete this file")
 * Also now shift+delete `current.run`, `current.runYYYYY`, `data.run`, `data.runYYYYY`
 * open `c:\data\events` and shift+delete the folder `run_YYYYY`
 * start ibex or seci again
+
+Hopefully there is either only one `eventsYYYYY.tmp` file, or the most recent one (largest YYYYY number) is also the largest in size. If there are several files making a decision may need a bit more thought. It is possible that a very large run was done earlier which nearly filled up the disk, then a new one was started that pushed it over the limit while the previous one was ending in the background. Check with the scientists if it is ok to delete this earlier bigger run. You should always delete all YYYYY files corresponding to the run that was in progress when the system filled up, but you may also need to handle an earlier YYYYY number set of files to free up enough disk space.      
