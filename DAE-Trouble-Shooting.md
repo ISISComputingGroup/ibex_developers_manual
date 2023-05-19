@@ -434,9 +434,9 @@ you probably need to follow https://knowledge.ni.com/KnowledgeArticleDetails?id=
 If you need to recover a system that has filled up its `c:\data` area due to a long event mode runwith e.g. noisy detectors then you can use the following. This assumes the scientists do not need the data, you can move the files off instrument but recovery is hard and may not be possible.   
 
 * log onto NDX computer
-* kill ibex / seci
+* Run `stop_ibex_server` or  `kill seci` as appropriate
 * open `c:\data` in windows explorer
 * look for a large `eventsYYYYY.tmp` file, make a note of the `YYYYY` number and then select and `shift+delete` this file (you do not want to move it to recycle bin - make sure the prompt says "permanently delete this file" and not "delete this file")
 * Also now shift+delete `current.run`, `current.runYYYYY`, `data.run`, `data.runYYYYY`
 * open `c:\data\events` and shift+delete the folder `run_YYYYY`
-* start ibex/seci again
+* start ibex or seci again
