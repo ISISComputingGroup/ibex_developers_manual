@@ -227,5 +227,5 @@ Some labview values do not currently have macros and get IOC defaults. Edit MCLE
 
 Some mclennan values were not covered in labview but exist in MCLEN IOC `st-motor-init.st`
 
-* Tracking window - a parameter used to determine if a tracking abort should be signalled, max allowed difference between current and requested position during a move. May get caused by a motor moving too fast or too slow and so stalling.
+* Tracking window - a parameter used to determine if a *tracking abort* should be signalled, it is the max allowed difference between current and requested position during a move (also known as the following error). May get triggered by a motor being told to move/accelerate too quickly, more move too slow and stalling, or an incorrect encoder ratio.
 * Not Complete/Time-Out time
