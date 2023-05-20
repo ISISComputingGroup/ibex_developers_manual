@@ -431,7 +431,7 @@ you probably need to follow https://knowledge.ni.com/KnowledgeArticleDetails?id=
 
 ## ISISICP program crashed and cannot restart, `c:\data` area full
 
-If you need to recover a system that has filled up its `c:\data` area due to a long event mode runwith e.g. noisy detectors then you can use the following. This assumes the scientists do not need the data, you can move the files off instrument but recovery is hard and may not be possible.   
+If you need to recover a system that has filled up its `c:\data` area due to a long event mode run with e.g. noisy detectors then you can use the following. This assumes the scientists do not need the data, you can move the files off instrument but recovery is hard and may not be possible.   
 
 * log onto NDX computer
 * Run `stop_ibex_server` or  `kill seci` as appropriate
