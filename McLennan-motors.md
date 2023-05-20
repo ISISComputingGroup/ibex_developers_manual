@@ -157,7 +157,7 @@ console to IOC and type `dbior` for basic information. For extended information 
   
 ## converting values from labview
 
-if you need to convert a labview mclennan ini file, these are usually found in `c:\labview modules\Drivers\Mclennan PM600\INI Files` on the instrument. A file will have an entry like:
+if you need to convert a previous SECI/labview mclennan ini file, these are usually found in `c:\labview modules\Drivers\Mclennan PM600\INI Files` on the NDX computer. A file will have an entry like:
 ```
 [M0]
 Name = "Mclennan Newport"
@@ -199,7 +199,7 @@ Apply Home Position = TRUE
 Home Position = 0.000000    
 Apply Home Offset = FALSE    
 ```
-Calculate the appropriate IOC macros as follows:
+Calculate the appropriate MCLEN IOC macros as follows:
   
 * `Axis Address = 1` and `Enabled = TRUE` so we set `AXIS1=yes` and then set other macros with a suffix of `1`
 * `Name = "Mclennan Newport"` so we set `NAME1 = Mclennan Newport`
@@ -211,21 +211,21 @@ Calculate the appropriate IOC macros as follows:
 * `Upper limit = 180.000000` is already in proper units so set `DHLM = 180.0`    
 * `Lower Limit = -180.000000` is already in proper units so set `DLLM = -180.0`
 * `Homing Speed = 10000` so divide by motor steps (10000/8000) to get `HVEL1 = 1.25`
-* `Numerator = 8.000000` and `Denominator = 1.000000` refer to the encoder ratio components so we set `ERES1 = 8/1` (This should be the equivalent numeric ratio as `Motor steps per unit`/`Encoder counts per unit` which is true here as 8000 / 1000 == 8 / 1 )
-* `Home Position = 0.000000` we always apply a dial home position of 0, if this is non-zero set `OFST1` to its value
-* `Control Mode = 4` in labview `4` is "closed loop stepper" so set `CMOD1 = CLOSED` (if it was `1` that means "open loop stepper" set `CMOD1 = OPEN`. We don't currently handle other values)     
-* `Homing Method = 2` for labview 0=none; 1=home signal+; 2=home signal-; 3=reverse limit,home signal+; 4=forward limit,home signal-;5=reverse limit;6=forward limit. So for `2` we set `HOME1 = 2` after examining ibex home table above. We don't currently have labview 3 and 4 modes, but they could be emulated by using 1 or 2 with an initial manual jog to the appropriate limit before homing.   
+* `Numerator = 8.000000` and `Denominator = 1.000000` refer to the encoder ratio components so we set `ERES1 = 8/1` (This should be the equivalent numeric ratio to `Motor steps per unit`/`Encoder counts per unit` which is true here as 8000 / 1000 == 8 / 1 )
+* `Home Position = 0.000000` IOC always applies a dial home position of 0, if labview value is non-zero set `OFST1` to this value
+* `Control Mode = 4` in labview `4` is "closed loop stepper" so set `CMOD1 = CLOSED` (if labview was `1` that means "open loop stepper" so would set `CMOD1 = OPEN`. We don't currently handle other values)
+* `Homing Method = 2` for labview 0=none; 1=home signal+; 2=home signal-; 3=reverse limit,home signal+; 4=forward limit,home signal-;5=reverse limit;6=forward limit. So for labview `2` we set IOC `HOME1 = 2` from examining ibex home table above. We don't currently have labview 3 and 4 modes, but they could be emulated by using 1 or 2 with an initial manual jog to the appropriate limit before homing.   
 
 Some labview values do not currently have macros and get IOC defaults. Edit MCLEN IOC `st-motor-init.st` if you need to temporarily change them and then create a ticket to add a proper IOC macro
 
-* `Window = 50` this is the end of move check window before an internal mclennan retry, it is set to a IOC calculated default value. It is a bit like the retry deadband of the motor record, but done at the controller. If a moves completes with a controller error then edit `st-motor-init.st` to change directly and create a ticket to add a macro.
+* `Window = 50` this is the end of move check window before an internal mclennan retry, it is set to a IOC calculated default value. It is a bit like the retry deadband of the motor record, but done at the controller. If a moves plus retries completes and is still outside this Window, an error will be signalled. You can edit `st-motor-init.st` to change this directly (restart IOC afterwards) and then create a ticket to add a permanent macro.
 * `Correction Gain = 70` this is equivalent to the IOC default `PCOF = 0.7` for a stepper motor
-* `Creep Steps = 0` number of steps to approach final position at the slower `Creep speed` in final phase of a move    
-* `Creep Speed = 5000` only important for us if `Creep Steps` > 0 as it is temporary set to `HVEL` during a home so does not affect homes.
-* `Settling Time = 0` how long motor readback must be within `Window` of requested position at end of move    
+* `Creep Steps = 0` number of steps to approach final position at the slower `Creep speed` in the final phase of a move    
+* `Creep Speed = 5000` only important for us if `Creep Steps` > 0 as this is temporary set to `HVEL` during a home so does not now affect homes.
+* `Settling Time = 0` how long motor readback must be within `Window` of requested position at end of move
 * `BackOff Steps = 0` used for backlash correction
 
 Some mclennan values were not covered in labview but exist in MCLEN IOC `st-motor-init.st`
 
-* Tracking window - a parameter used to determine if a *tracking abort* should be signalled, it is the max allowed difference between current and requested position during a move (also known as the following error). May get triggered by a motor being told to move/accelerate quicker than it can, or move too slowly and so stalling, or an incorrect encoder ratio so motor/encoder get out of step.
-* Not Complete/Time-Out time - max time at end of a move for any settling/auto corrections etc. to take place, otherwise triggers a *NOT COMPLETE/TIMEOUT ABORT*  
+* Tracking window - a parameter used to determine if a *tracking abort* should be signalled, it is the max allowed difference between current and requested position during a move (also known as the *following error*). This may get triggered by a motor being told to move/accelerate quicker than it can, or move too slowly and so stalling, or an incorrect encoder ratio so motor and encoder get out of step.
+* Not Complete/Time-Out time - the max time at end of a move for any settling/auto corrections etc. to take place, otherwise triggers a *NOT COMPLETE/TIMEOUT ABORT*
