@@ -31,13 +31,13 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
 1. Start the Jenkins pipeline `Release_branches`.
     - Set `VERSION` to the new release version (e.g. `X.x.m`).
     - Check `REMOTE` if the `EPICS` submodules should be updated from remote. The script will fail if there are new commits.
-    - The script will then:
+    - The script will then (as selected):
         - Create the release branches for:
             - `EPICS` and submodules.
             - `IBEX GUI`.
             - `Script Generator`.
             - `Genie Python`.
-            - `JSON_bourne`. (If there have been new commits since the last release)
+            - `JSON_bourne`.
         - Update or add version numbers:
             - In `ioc/master/INSTETC/INSTETC-IOC-01App/Db/svn-revision.db.tmpl` for `EPICS`.
             - In `/uk.ac.stfc.isis.ibex.e4.client/pom.xml` and `/uk.ac.stfc.isis.ibex.e4.client/META-INF/MANIFEST.mf` for `IBEX GUI`.
