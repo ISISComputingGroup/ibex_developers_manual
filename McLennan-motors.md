@@ -50,11 +50,11 @@ SW3
 
 * 1=ON 2=OFF gives serial baud 9600, see manual for other combinations 
 * 3=OFF 7bit even parity, or     3=ON 8bit no parity
-* 4=OFF
+* 4=OFF (no hardware flow control)
 * 5=ON  (quiet command reply mode, required by EPICS driver)
-* 6=OFF
-* 7=OFF
-* 8=OFF
+* 6=OFF 
+* 7=OFF (rs232)
+* 8=OFF (no terminator for rs485)
 
 SW4 controls encoder termination, with OFF=single ended (TTL), ON=differential pair (RS422). Not for us to change, leave to motion engineers.
 
