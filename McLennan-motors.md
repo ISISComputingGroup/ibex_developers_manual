@@ -30,9 +30,9 @@ There are several homing modes on the McLennan set via the `HOME` macro. The cho
 
 * 0: Controller does internal home to an external home signal (not normally used).
 * 1: Do a reverse constant velocity move (jog) until limit switch is hit, but do not zero the motor (this is deprecated)
-* 2: Do a hardware reverse direction search for a home signal and then zero the motor
+* 2: Do a hardware reverse (-) direction search for a home signal and then zero the motor
 * 3: Do a reverse constant velocity move (jog) until limit switch is hit then zero the motor.
-* 4: Do a hardware forward direction search for a home signal and then zero the motor
+* 4: Do a hardware forward (+) direction search for a home signal and then zero the motor
 * 5: Move to forward limit, do a hardware reverse direction search for a home signal and then zero the motor
 * 6: Move to reverse limit, do a hardware forward direction search for a home signal and then zero the motor
 
@@ -219,7 +219,7 @@ Calculate the appropriate MCLEN IOC macros as follows:
 * `Numerator = 8.000000` and `Denominator = 1.000000` refer to the encoder ratio components so we set `ERES1 = 8/1` (This should be the equivalent numeric ratio to `Motor steps per unit`/`Encoder counts per unit` which is true here as 8000 / 1000 == 8 / 1 )
 * `Home Position = 0.000000` IOC always applies a dial home position of 0, if labview value is non-zero set `OFST1` IOC macro to this value
 * `Control Mode = 4` in labview `4` is "closed loop stepper" so set `CMOD1 = CLOSED` (if labview was `1` that means "open loop stepper" so would set `CMOD1 = OPEN`. We don't currently handle other values and they are not used at ISIS as far as we know)
-* `Homing Method = 2` for labview 0=none; 1=home signal+; 2=home signal-; 3=reverse limit,home signal+; 4=forward limit,home signal-;5=reverse limit;6=forward limit. So for labview `2` we set IOC `HOME1 = 2` after examining the `Homing` section above for equivalent ibex modes.    
+* `Homing Method = 2` for labview 0=none; 1=home signal+; 2=home signal-; 3=reverse limit,home signal+; 4=forward limit,home signal-;5=reverse limit;6=forward limit. So labview method `2` is a reverse direction hardware home so after examining the `Homing` section above the equivalent ibex IOC mode is `HOME1 = 2`     
 
 Some labview values do not currently have macros and get IOC defaults. Edit MCLEN IOC `st-motor-init.st` if you need to temporarily change them and then create a ticket to add a proper IOC macro
 
