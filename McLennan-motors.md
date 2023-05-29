@@ -117,7 +117,7 @@ Additionally if it moves a short distance and stops it may be going into `Tracki
 * The encoder and motor resolutions are incorrect/incompatible. The first thing to do is to restart the McLennan and then the IOC so that the values are resent. If this does not fix it then check the settings are correct.
 * you are trying to accelerate or move too quickly, or possibly move too slowly, meaning there is a time lag between the motor pulses being sent and the motor response. Try changing these parameters. See end of this page if you need to change tracking abort window.   
 
-Check the `MCLEN` IOC log file for error messages
+Check the `MCLEN` IOC log file for error messages and also examine output from `dbior` and `dbior * 1` typed at the IOC console window. 
  
 ### McLennan moves but doesn't stop at desired position
 
