@@ -113,10 +113,12 @@ When starting the unit:
 
 Try using the macros for an axis other than 1 (2 or 3) in the ibex GUI. The axis to be driven by the buttons on the front panel are set by a position dial inside the driver, so these might not work with the motor you need to control.
 
-Additionally if it moves a short distance and stops it may be going into `Tracking abort`. A tracking abort means the encoder and motor step counters have got too far apart, this could be due to: 
+Additionally if it moves a short distance and stops it may be going into `Tracking abort`. A tracking abort means the encoder and motor step counters have got too far apart during the move, this could be due to: 
 * The encoder and motor resolutions are incorrect/incompatible. The first thing to do is to restart the McLennan and then the IOC so that the values are resent. If this does not fix it then check the settings are correct.
-* you are trying to accelerate or move too quickly, or possibly move too slowly, meaning there is a time lag between the motor pulses being sent and the motor response. Try changing these parameters. See end of page if you need to change tracking abort window.   
+* you are trying to accelerate or move too quickly, or possibly move too slowly, meaning there is a time lag between the motor pulses being sent and the motor response. Try changing these parameters. See end of this page if you need to change tracking abort window.   
 
+Check the `MCLEN` IOC log file for error messages
+ 
 ### McLennan moves but doesn't stop at desired position
 
 If the McLennan moves but does not stop at the position you requested it could be that the encoder and motor resolutions have not been sent to the controller or are incorrect. This must be done whenever the unit is restarted and is done by restarting the IOC.
