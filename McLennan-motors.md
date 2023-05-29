@@ -111,13 +111,13 @@ When starting the unit:
 
 ### I've booted up a McLennan and can't get it moving (properly)
 
-Try using the macros for an axis other than 1 (2 or 3) in the ibex GUI. The axis to be driven by the buttons on the front panel are set by a position dial inside the driver, so these might not work with the motor you need to control.
-
-Additionally if it moves a short distance and stops it may be going into `Tracking abort`. A tracking abort means the encoder and motor step counters have got too far apart during the move, this could be due to: 
-* The encoder and motor resolutions are incorrect/incompatible. The first thing to do is to restart the McLennan and then the IOC so that the values are resent. If this does not fix it then check the settings are correct.
-* you are trying to accelerate or move too quickly, or possibly move too slowly, meaning there is a time lag between the motor pulses being sent and the motor response. Try changing these parameters. See end of this page if you need to change tracking abort window.   
-
 Check the `MCLEN` IOC log file for error messages and also examine output from `dbior` and `dbior * 1` typed at the IOC console window. 
+
+If it doesn't move at all try using the macros for an axis number other than 1 (e.g. 2 or 3) in the ibex GUI. The axis to be driven by the buttons on the front panel are set by a position dial inside the mclennan crate, so you may not be be trying to control the correct axis id.
+
+If it moves a short distance and stops it may be going into `Tracking abort`. A tracking abort means the encoder and motor step counters have got further apart than expected during the move, this could be due to: 
+* The encoder and motor resolutions are incorrect/incompatible, so "expected" and "actual" position are diverging. The first thing to do is to restart the McLennan hardware and then the IOC so that the values are resent. If this does not fix it then check the settings are correct.
+* you are trying to accelerate or move too quickly, or possibly move too slowly, meaning there is a time lag between the motor pulses being sent and the motor response. Try changing these parameters. See end of this page if you need to change the tracking abort window.
  
 ### McLennan moves but doesn't stop at desired position
 
@@ -128,7 +128,7 @@ If the McLennan moves but does not stop at the position you requested it could b
 *In homing modes 1 and 3*, the McLennan homes via SNL and uses `JVEL` as it's speed. `JVEL` defaults to `VELO/10` if not set, so try increasing the jog speed and see if this speeds up homes
 
 *In other homing modes*, the McLennan uses an internal homing routine. This uses the "creep speed" which IBEX now _does_ set as of https://github.com/ISISComputingGroup/IBEX/issues/4815. If you need to manually make homing faster, do the following:
-- Set `HVEL` to an appropriate speed for homing via IBEX configuration macros
+- Set `HVEL` macro to an appropriate speed for homing via IBEX configuration macros
 - Restart the IOC
 
 Note that the creep speed for the PM600 at least is limited to 800 steps per second. We cater for this in the motor record and set it to the `HVEL` value if lower than 800 and otherwise set it to 800. 
@@ -155,7 +155,7 @@ Use following IOC macro setting:
 1. `ERES3` 400/4096
 1. `MSTP3` 4000
 
-## getting debug output
+## getting debug output/information
 
 console to IOC and type `dbior` for basic information. For extended information pass a higher report level to dbior e.g. `dbior * 1` (you need the * as the first argument is the driver name and the second the debug level)  
   
@@ -232,5 +232,5 @@ Some labview values do not currently have macros and get IOC defaults. Edit MCLE
 
 Some mclennan values were not covered in labview but exist in MCLEN IOC `st-motor-init.st`
 
-* Tracking window - a parameter used to determine if a *tracking abort* should be signalled, it is the max allowed difference between current and requested position during a move (also known as the *following error*). This may get triggered by a motor being told to move/accelerate quicker than it can, or move too slowly and so stalling, or an incorrect encoder ratio so motor and encoder get out of step.
+* Tracking window - a parameter used to determine if a *TRACKING ABORT* should be signalled, it is the max allowed difference between current and requested position during a move (also known as the *following error*). This may get triggered by a motor being told to move/accelerate quicker than it can, or move too slowly and so stalling, or an incorrect encoder ratio so motor and encoder get out of step.
 * Not Complete/Time-Out time - the max time at end of a move for any settling/auto corrections etc. to take place, otherwise triggers a *NOT COMPLETE/TIMEOUT ABORT*
