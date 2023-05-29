@@ -109,7 +109,7 @@ When starting the unit:
 1. Start/restart the IOC (so that it can send the motor and encoder resolutions to the controller)
 1. Home the device
 
-### I've booted up a McLennan and can't get it moving
+### I've booted up a McLennan and can't get it moving (properly)
 
 Try using the macros for an axis other than 1 (2 or 3) in the ibex GUI. The axis to be driven by the buttons on the front panel are set by a position dial inside the driver, so these might not work with the motor you need to control.
 
