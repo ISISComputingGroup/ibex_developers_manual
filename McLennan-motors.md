@@ -1,7 +1,7 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC)
  > [Motor IOCs](Motor-IOCs) > [McLennan](McLennan-motors)
 
-The McLennan motor is a controller that support multiple independent motors.
+The McLennan motor is a controller that support multiple independent motors. It is often used at ISIS for rotation stages.
 
 **WARNING: Unlike many other motor controllers that remember settings through autosave the McLennan exclusively uses macros. This means for changing parameters in a persistent way you will need to change them in the IOC configuration rather than the motor details panel, otherwise they will get lost on IOC restart**
 
@@ -11,28 +11,30 @@ The McLennan motor is a controller that support multiple independent motors.
 The motor resolution is set with the *MSTP***n** IOC macros and in units of `steps/mm` (same as in SECI/labview), this will be inverted by the IOC internally as the EPICS motor record `MRES` field uses the inverse `mm/step`. 
 
 ### Encoder Resolution
-The encoder ratio rather than encoder resolution is set with the *ERES***n** IOC macros, this is a string like `400/4096` and bears no direct relation to the EPICS motor record `ERES`. As the mclennan driver pretends to be open loop (no encoder as per `MSTA` field) whatever mode it is running in, motor record `ERES` is not actually used and is set to `0` in the `st.cmd` and then may display as the same value as motor record `MRES` when later viewed.  
+The encoder ratio rather than encoder resolution is set with the *ERES***n** IOC macros, this is a string like `400/4096` and bears no direct relation to the EPICS motor record `ERES`. As the mclennan driver pretends to be open loop (no encoder present as per `MSTA` field) whatever mode it is running in, the motor record `ERES` is not actually used and is set to `0` in the `st.cmd` and will then display as the same value as motor record `MRES` when later viewed. So ignore the encoder resolution value displayed on the motor record screen.  
 
-The encoder ratio written `M/E` is providing `motor_steps_per_revolution / encoder_steps_per_revolution`, in SECI/labview this was referred to as `Numerator / Demoninator`. So `actual_position_steps = encoder_steps_readback * encoder_ratio`. For closed loop (encoder feedback) controller mode to work this ratio needs to be correct so that `commanded_motor_steps_moved = encoder_steps_moved * encoder_ratio`, if the ratio isn't right the motor will fail to get position leading to many retries and an error. It is possible to work this the ratio by e.g. going to motor console (PuTTY/hterm), doing a small MR relative move and comparing command position (CP) and actual position (AP). `dbior` command on an ioc window now shows these values, as does the `QP` command at the motor low level serial interface. The Raw encoder steps is `IP` or `Input Position` which is scaled by encoder ratio to give actual (AP) position. If encoder and motor move in opposite directions, add a minus sign to encoder ratio.
+The encoder ratio written `M/E` is providing `motor_steps_per_revolution / encoder_steps_per_revolution`, in SECI/labview this was referred to as `Numerator / Demoninator`. So `actual_position_steps = encoder_steps_readback * encoder_ratio`. For closed loop (encoder feedback) controller mode to work this ratio needs to be correct so that `commanded_motor_steps_moved = encoder_steps_moved * encoder_ratio`, if the ratio isn't right the motor will fail to get position leading to many retries and an error. It is possible to work out the ratio by e.g. going to motor console (PuTTY/hterm), doing a small MR relative move and comparing command position (CP) and actual position (AP). `dbior` command on an ioc window now shows these values, as does the `QP` command at the motor low level serial interface. The Raw encoder steps is `IP` or `Input Position` which is scaled by encoder ratio to give actual (AP) position. If encoder and motor move in opposite directions, add a minus sign to encoder ratio.
 
 ### Velocity
 The McLennan motor velocity is set with the *VELO***n** IOC macros, the value set is in `mm/second`, same units as EPICS motor record uses.
 
 ### Acceleration
-The IOC macro *ACCL***n** for acceleration is the the number of seconds under linear acceleration to reach maximum speed, the same convention as the EPICS motor record (The acceleration value on the device is the acceleration in units of `step/s^2`, it is calculated in the IOC as velocity divided by the product of the motor resolution and ACCL value.) 
+The IOC macro *ACCL***n** for acceleration is the the number of seconds under linear acceleration to reach maximum speed, the same convention as the EPICS motor record (The acceleration value on the device itself is the acceleration in units of `step/s^2`, this is calculated in the IOC as velocity divided by the product of the motor resolution and ACCL value). 
 
 ### Setting the motor position/offset
 See [Set the raw position of the motor without moving it](Set-the-raw-position-of-the-motor-without-moving-it)
 
 ### Homing
 
-There are several homing modes on the McLennan set via the `HOME` macro. The choice of mode depends on the motor, modes 1 and 3 (constant velocity homes to limit switches) are controlled by SNL, others by controller `HD` (home to datum) command. Modes are:
+There are several homing modes on the McLennan set via the `HOME` macro. The choice of mode depends on the motor, modes 1 and 3 (constant velocity homes to limit switches) are controlled in software by SNL, others by controller `HD` (home to datum) command. Modes are:
 
-* 0: Controller does internal home to an external home signal.
-* 1: Do a reverse constant velocity move until limit switch is hit, but do not zero the motor (this is deprecated)
-* 2: Send a reverse home signal to the controller and then zero the motor
-* 3: Do a reverse constant velocity move until limit switch is hit then zero the motor
-* 4: Send a forward home signal to the controller and then zero the motor
+* 0: Controller does internal home to an external home signal (not normally used).
+* 1: Do a reverse constant velocity move (jog) until limit switch is hit, but do not zero the motor (this is deprecated)
+* 2: Do a hardware reverse direction search for a home signal and then zero the motor
+* 3: Do a reverse constant velocity move (jog) until limit switch is hit then zero the motor.
+* 4: Do a hardware forward direction search for a home signal and then zero the motor
+* 5: Move to forward limit, do a hardware reverse direction search for a home signal and then zero the motor
+* 6: Move to reverse limit, do a hardware forward direction search for a home signal and then zero the motor
 
 The constant velocity move uses JVEL and is set to be a 1/10 of the normal velocity unless the macro is set to change it.
 
@@ -153,7 +155,7 @@ Use following IOC macro setting:
 
 ## getting debug output
 
-console to IOC and type `dbior` for basic information. For extended information pass a higher report level to dbior e.g. `dbior * 1`
+console to IOC and type `dbior` for basic information. For extended information pass a higher report level to dbior e.g. `dbior * 1` (you need the * as the first argument is the driver name and the second the debug level)  
   
 ## converting values from labview
 
@@ -204,6 +206,7 @@ Calculate the appropriate MCLEN IOC macros as follows:
 * `Axis Address = 1` and `Enabled = TRUE` so we set `AXIS1=yes` and then set other macros with a suffix of `1`
 * `Name = "Mclennan Newport"` so we set `NAME1 = Mclennan Newport`
 * `Motor steps per unit = 8000.000000` so we set `MSTP1 = 8000` (which will lead to an EPICS motor record MRES of 0.000125)
+* `Encoder counts per unit = 1000.000000` this is not used directly, but see comment on `Numerator` and `Denominator` below
 * `Velocity = 10000` this is in steps per second, so we divide by motor steps per unit to get units per second  (10000 / 8000), `VELO1 = 1.25`
 * `Acceleration = 40000` this is in steps / s^2, we divide velocity by acceleration (10000 / 40000) to get the acceleration time `ACCL1 = 0.25`
 * `Units = "deg"` so we set `UNIT1 = deg`
@@ -212,9 +215,9 @@ Calculate the appropriate MCLEN IOC macros as follows:
 * `Lower Limit = -180.000000` is already in proper units so set `DLLM = -180.0`
 * `Homing Speed = 10000` so divide by motor steps (10000/8000) to get `HVEL1 = 1.25`
 * `Numerator = 8.000000` and `Denominator = 1.000000` refer to the encoder ratio components so we set `ERES1 = 8/1` (This should be the equivalent numeric ratio to `Motor steps per unit`/`Encoder counts per unit` which is true here as 8000 / 1000 == 8 / 1 )
-* `Home Position = 0.000000` IOC always applies a dial home position of 0, if labview value is non-zero set `OFST1` to this value
-* `Control Mode = 4` in labview `4` is "closed loop stepper" so set `CMOD1 = CLOSED` (if labview was `1` that means "open loop stepper" so would set `CMOD1 = OPEN`. We don't currently handle other values)
-* `Homing Method = 2` for labview 0=none; 1=home signal+; 2=home signal-; 3=reverse limit,home signal+; 4=forward limit,home signal-;5=reverse limit;6=forward limit. So for labview `2` we set IOC `HOME1 = 2` from examining ibex home table above. We don't currently have labview 3 and 4 modes, but they could be emulated by using 1 or 2 with an initial manual jog to the appropriate limit before homing.   
+* `Home Position = 0.000000` IOC always applies a dial home position of 0, if labview value is non-zero set `OFST1` IOC macro to this value
+* `Control Mode = 4` in labview `4` is "closed loop stepper" so set `CMOD1 = CLOSED` (if labview was `1` that means "open loop stepper" so would set `CMOD1 = OPEN`. We don't currently handle other values and they are not used at ISIS as far as we know)
+* `Homing Method = 2` for labview 0=none; 1=home signal+; 2=home signal-; 3=reverse limit,home signal+; 4=forward limit,home signal-;5=reverse limit;6=forward limit. So for labview `2` we set IOC `HOME1 = 2` after examining the `Homing` section above for equivalent ibex modes.    
 
 Some labview values do not currently have macros and get IOC defaults. Edit MCLEN IOC `st-motor-init.st` if you need to temporarily change them and then create a ticket to add a proper IOC macro
 
