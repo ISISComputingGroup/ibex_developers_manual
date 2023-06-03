@@ -43,4 +43,4 @@ All activates are also done at pre-planning except when marked **[planning]**
 
 #### **[pre-planning only]**
 
-1. Assign someone to look at IOC tickets to assess there complexity
+1. Assign someone to look at IOC tickets to assess their complexity

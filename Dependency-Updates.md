@@ -23,7 +23,7 @@ General update process:
 - Some repositories are updated "in-place". Do upgrade these, simply delete and then re-add them to the target platform, when they are re-added they will pick up the latest versions.
 - For maven dependencies referenced in target platform, look up latest version on maven central then update the version number in target platform to correspond. If the version numbers are hardcoded in `feature.xml` or `MANIFEST.MF` for individual plugins, update it there too.
 
-**Note: when updating the eclipse framework itself, you will need to download the same eclipse IDE with the same version number or else some jars may not be found. You also need to update `client.tycho.parent` - see below for details.**
+**Note: when updating the eclipse framework itself, you will need to download the same eclipse IDE with the same version number or else some jars may not be found. You also need to update `client.tycho.parent` - see below for details. Make sure you update the [gui build wiki page](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Building-the-GUI) to ensure new starters get the correct version.**
 
 ### Parent POM
 
@@ -53,19 +53,23 @@ To update the version of Pydev on shadow, git clone --recurse-submodules the lat
 ## Python packages
 
 Check on PyPi for any package updates, then edit `requirements.txt` to install new versions where needed. Note that since we decided [all python projects should use virtual environments](Python-dependencies#how-python-dependencies-should-be-handled-in-the-future) there will be `requirements.txt`files for all Python projects using the new import mechanism, ensure these are also updated.
+
+### ODE
+
 ODE is handled separately from other packages and is installed from a wheel on `\\isis\inst$\Kits$\CompGroup\ICP\genie_python_dependencies_python_3` if moving to a new python version i.e. 3.10 to 3.11 this will need to be replaced. 
 * First check [here](https://www.lfd.uci.edu/~gohlke/pythonlibs/#ode) for a matching version of ODE, if one is not present one will need to be built, to do so:
     * Download the latest release tag from the [ODE Bitbucket](https://bitbucket.org/odedevs/ode/downloads/?tab=tags)
     * In the folder, navigate to build and run `premake4.exe --with-gimpact --platform=x64 vs2008`
-    * Open the created solution file in visual studio, ensure that the config is set to `x64` and `ReleaseDoubleDLL` and then build it.
+    * Open the created solution file in visual studio, ensure that the config is set to `x64` and `ReleaseDoubleLib` and then build it. Note that selecting `x64` is important (the default is `x86`). Also we should prefer the static (lib) build rather than the DLL build as this means we don't need to copy around DLLs.
     * Navigate to `bindings/python` and open the `setup.py`
     * Add `from wheel.bdist_wheel import bdist_wheel` to the imports.
     * Update the version number to match the version of ode downloaded, and set the name to `ode`.
-    * replace the calls to pkg-config with `ode_cflags = ['-I<Full path to \\include>']` and `ode_libs=['< Full path to \\lib\\ReleaseDoubleDLL\\ode_double.lib>']`
+    * replace the calls to pkg-config with `ode_cflags = ['-I<Full path to \\include>']` and `ode_libs=['< Full path to \\lib\\ReleaseDoubleLib\\ode_double.lib>']`
     * pip install wheel onto `%python3%`
     * run `%python3% setup.py build_ext` and then `%python3% setup.py bdist_wheel`
     * copy the wheel generated in `dist` to `\\isis\inst$\Kits$\CompGroup\ICP\genie_python_dependencies_python_3`
 * Edit `common_build_python.bat` in `package_builder` to point to the most recent wheel file.
+* Test by running `python run_all_tests.py` in `inst_servers`, which contains collision avoidance monitor tests
    
 
 ### Lewis
@@ -162,6 +166,9 @@ If you update the source code of procServ/conserver the following applies too, b
 - We need to stop it upgrading `libcrypt-devel` from 2.1 to 4.1 so locate `libcrypt-devel` in the pending package list shown and chose "keep" in the dropdown menu next to it.
 - (if you forget to do the above, you can always re-run `setup-x86_64.exe` and downgrade `libcrypt-devel` from 4.1 to 2.1)
 - let it update packages
+
+There are two cygwin distributions on the computer in `c:\cygwin64` and `c:\mini_cygwin64`, the one in `cygwin64` is used to build programs and the one in `mini_cygwin64` is a minimal distribution that is copied to the instrument along with the built procServ/conserver programs to provide a runtime environment. Both of these need to be updated, so you will **need to run the above setup twice** changing the installation directory between runs. The `libcrypt-devel` note above only applies to `c:\cygwin64`, when you update `c:\mini_cygwin64` there will likely be very few packages and nothing additional needs to be done other than update it.     
+
 - now start the jenkins EPICS_Tools job
 - when it has finished, copy new files from `kits$\EPICS_Tools` to `ICP_Binaries\EPICS_Tools`
 

@@ -49,7 +49,7 @@ This was resolved by powercycling the DAE followed by stopping the visa server a
 On a DAE3 machine a vendor network library is used rather than NI Visa and the equivalent sorts of errors will have `Qx` or `Quixtream` prefixes. Access from the ISISICP is via the network, so there is no intermediate service/server to restart. Usually the ISISICP will retry failed connections, but check with electronics if there are repeated failures. You can try restarting ISISICP in case the vendor library needs a reload itself. An example of the error message is:
 
 ```
-2020-02-27T09:55:41  Qxtrm_channel::RDMARead failed rdma2 address 0x40010 nbytes 4(Quixtream: The timeout period on this channel expired before the transfer commenced. Channel status: Transfer failed. Data packet not received before timeout. )
+Qxtrm_channel::RDMARead failed rdma2 address 0x40010 nbytes 4(Quixtream: The timeout period on this channel expired before the transfer commenced. Channel status: Transfer failed. Data packet not received before timeout. )
 ```
 
 In general if you see an error like this or starting with `NIVISA` you should restart the DAE, then [contact electronics](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Contact%20details%20for%20other%20groups.docx).
@@ -161,7 +161,7 @@ If the wiring table is correct, try a restart of the ISISICP - the DAE is only s
 
 If the system is running DAE3, then there is another possible cause. check the log for a line like
 ```
-2021-11-25 15:40:19  (36692) (0) Qxtrm_driver: [Error] (Qxtrm_driver::Qxtrm_driver) Unable to create Quixtream on process20: Quixtream Error: Failed to bind the socket to the local port.
+Unable to create Quixtream on process20: Quixtream Error: Failed to bind the socket to the local port.
 ```
 The quickstream driver expects certain ports in the UDP dynamic range to be available - this error indicates something is not. It is not very helpful about which specific port (it uses UDP ports from 0xFE00 (65024) upwards) so a reboot may be the only option. 
 
@@ -196,7 +196,11 @@ DAE3 is new ethernet based acquisition electronics on ZOOM and MARI, it used `IS
 
 Note that DAE3 does not ping, so the only way to know if it is there is by running `qxtalk` or the `isisicp` (via ibex or seci)
 
-If ibex has been in simulation mode for a long time previously, then some of the tcp ports used by dae3 may have been grabbed by the system as described in `Real DAE complains about missing cards (but was previously working)`. The only option then is to reboot
+If IBEX/SECI has either been in simulation mode or not running for a long time previously, then some of the tcp ports used by dae3 may have been grabbed by the operating system as described in `Real DAE complains about missing cards (but was previously working)` above on this page. You will see errors like
+```
+Quixtream Error: Failed to bind the socket to the local port."
+``` 
+in the ICP log and some client applications may complain about `NULL Pointer` errors. The only solution is to reboot the NDX computer.
 
 ### Error code 112
 
@@ -425,4 +429,20 @@ for DAE2 systems the VME connection should be visible in the NI measurement and 
 
 you probably need to follow https://knowledge.ni.com/KnowledgeArticleDetails?id=kA00Z000000P8awSAC&l=en-GB
 
-         
+## ISISICP program crashed and cannot restart, `c:\data` area full
+
+If you need to recover a system that has filled up its `c:\data` area due to a long event mode run with e.g. noisy detectors then you can use the following. This assumes the scientists do not need the data, you can move the files off instrument but recovery is hard and may not be possible.   
+
+* log onto NDX computer
+* Run `stop_ibex_server` or  `kill seci` as appropriate
+* open `c:\data` in windows explorer and sort files by name
+* look for a very large `eventsYYYYY.tmp` file, make a note of the `YYYYY` number and then select and `shift+delete` this file (you do not want to move it to recycle bin - make sure the prompt says "permanently delete this file" and not "delete this file")
+* Also now shift+delete `current.run`, `current.runYYYYY`, `data.run`, `data.runYYYYY`
+* open `c:\data\events` and shift+delete the folder `run_YYYYY`
+* start ibex or seci again
+
+Hopefully there is either only one `eventsYYYYY.tmp` file, or the most recent one (largest YYYYY number) is also the largest in size. If there are several files making a decision may need a bit more thought. It is possible that a very large run was done earlier which nearly filled up the disk, then a new one was started that pushed it over the limit while the previous one was ending in the background. Check with the scientists if it is ok to delete this earlier bigger run. You should always delete all YYYYY files corresponding to the run that was in progress when the system filled up, but you may also need to handle an earlier YYYYY number set of files to free up enough disk space. 
+
+For info, the `eventsYYYYY.tmp` file is the NeXus HDF5 file being written as the run goes along, and the `run_YYYYY` folder is the raw events read from the electronics. The `.tmp` is renamed to `.nxs` during an END is nothing has gone wrong, otherwise raw events can be replayed from `run_YYYYY` to create a NeXus file from scratch       
+
+If the run number comes back incorrectly (like as `000001`) then it means `c:\data\recovery.run` has been corrupted. Details of what to do later...

@@ -5,7 +5,7 @@ For dependency conventions see [Python dependencies](Python-dependencies).
 ### Coding style
 We try to follow [PEP8](https://www.python.org/dev/peps/pep-0008/) for coding style where possible or suitable.
  
-A clear exception is when it comes to line length; PEP8 suggests a line length limit of 79 characters but defaults to 100, but PyCharm defaults to 120. I recommend following PEP8 and modifying PyCharm default to 100 on this (See: `File -> Settings -> Editor -> Code Style -> General: Right margin (columns)`).
+A clear exception is when it comes to line length; PEP8 suggests a line length limit of 79 characters but defaults to 100, but PyCharm defaults to 120. I recommend following PEP8 and modifying PyCharm default to 100 on this (See: `File -> Settings -> Editor -> Code Style -> Python -> Wrapping and Braces -> Hard wrap at: `).
 
 **PyCharm warns on many deviations from PEP8, please don't ignore it.**
 

@@ -8,6 +8,7 @@ Various Processes or tasks and info into how they should work. Remember rules ca
 
 **Workflow:**
 - [Tickets and their Workflow](Tickets-and-their-Workflow)
+- [Git Workflow](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Git-workflow)
 -  **Sprints:**
     - [Meeting Roles and Rotas](Meeting-Roles-and-Rotas)
     - [Estimating Sprint Capacity](Estimating-Sprint-Capacity)

@@ -26,50 +26,38 @@ Do not install an Oracle JDK.
 You may wish to install some optional java components [as detailed here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Upgrade-Java#additional-optional-steps-for-developer-installations-not-required-on-instruments).
 
 ## Install Maven 
-Install [Maven](https://maven.apache.org/download.cgi) and follow the 'Windows tips' in [these instructions ](https://maven.apache.org/install.html) to set environment variables for the SDK with JAVA_HOME and maven in PATH
+
+Create `C:\Tools\`
+
+Install [Maven](https://maven.apache.org/download.cgi) and follow the 'Windows tips' in [these instructions ](https://maven.apache.org/install.html) to set 'Environment Variables' for the SDK with JAVA_HOME and maven in PATH
 It is recommended to install Maven into `C:\Tools\`
+
+_System Properties - Environment Variables - Path - New -`C:\Tools\apache-maven-###\bin`_
 
 The Windows Tips from the above link says you should add maven to the PATH in the user variables. If it does not recognise mvn -v afterwards, then try to add it to the list of variables in PATH in System variables.
 
-Note: you MUST install a maven version >=3.6.0, but not 3.6.1 as this has a bug. Versions earlier than 3.6 are unable to build the GUI.
+>Note: you MUST install a maven version >=3.6.0, but not 3.6.1 as this has a bug. Versions earlier than 3.6 are unable to build the GUI.
 
 ## Install Git 
 Install Git [Getting-started-with-Git-and-GitHub](Getting-started-with-Git-and-GitHub)
 
-## Recursive clone from git
+## Copy EPICS build
 
-Navigate to `C:\Instrument\Apps\` and check whether the EPICS directory already exists. If so, remove the EPICS directory before continuing.
-  
-In `C:\Instrument\Apps\` run:
+>_EPICS contains lots of code that requires compilation before use, so we generally copy a pre-built version of this to save time and then build modules as changes are made._
 
-`git clone --recursive https://github.com/ISISComputingGroup/EPICS.git`
-
-Note: you can now shortcut both this initial `git clone` and the `build epics backend` step below by using the [Developer-Server-Build](Developer-Server-Build)
- 
-## Install MySQL
-
-See [Installing and upgrading MySQL](Installing-and-Upgrading-MySQL)
+1. Create `C:\Instrument\Apps\`
+1. Navigate to `C:\Instrument\Apps\` and check whether the EPICS directory already exists. If so, remove the EPICS directory before continuing.  
+1. Follow instructions on the [Quick instructions section of the developer server build page](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Developer-Server-Build#quick-instructions) to copy a built version of EPICS to `\instrument\apps`
 
 ## Install genie_python
 
 See [Building and installing genie_python](Building-and-Installing-genie_python)
 
-## Build EPICS back-end
-Note: the instructions [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Developer-Server-Build) may be much quicker than building EPICS yourself manually, if you use this method, you will need to run `config_mysql.bat` in `C:\Instrument\Apps\EPICS\SystemSetup`. The EPICS build on the build server contains all the git submodules so should work as usual. 
-<details>
-  <summary>Manual build</summary>
+## Install MySQL
 
-`cd` to `C:\Instrument\Apps\EPICS\` and run `build.bat`
-Note that this will take some time and should end with building the documentation.
+See [Installing and upgrading MySQL](Installing-and-Upgrading-MySQL)
 
-Certain items will not be built when using VS2013, these are:
-*  Mk3Chopper support module and IOC - only builds with VS2010
-
-If you see `Error 2: file not found`, you may not have installed the correct windows SDK or visual studio version. Check for `rc.exe` in `C:\Program Files (x86)\Windows Kits\10\bin\x86\` (as appropriate for your system). If you don't have `rc.exe`, try installing the windows SDK appropriate for your operating system.
-
-If you still have build errors (especially relating to seabreeze or astrium choppers, [look at the troubleshooting here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Astrium-Chopper#build-issues)
-</details>
-Whilst this is building/copying you can independently continue with this guide (up until Set up the CS-Studio archiver).
+Note: If installing for the first time, a new installation of MySQL may try to start up IBEX servers, which may lead to errors if Python isn't installed yet.
 
 ## Building the GUI
 
@@ -81,6 +69,8 @@ Please see [Building the GUI](Building-the-GUI).
 > * On a developer machine use your own username rather than "spudulike"
 > * Replace `<NDXXXX>` with your machine name, e.g. `NDXIRISTEST1`, `NDLT123`
 > * Replace `<init_inst_name>` with your lower case machine name, e.g. `init_ndxtest1.py`, `init_ndlt123.py` 
+
+**(Note: If you already have a 'NDXXXX' folder, rename it to 'NDXXXX.old' and continue with the following steps)**
 
 1. Create the following folder structure: `C:\Instrument\Settings\config`
 
@@ -144,7 +134,7 @@ These repositories can be web browsed via [http://control-svcs.isis.cclrc.ac.uk/
 git fetch
 git checkout NDXALF
 ```
-Note: The developer branch has been created to store useful configurations that may be shared amongst all developers.
+>Note: The developer branch has been created to store useful configurations that may be shared amongst all developers.
 
 ## Setting up a calibrations directory
 

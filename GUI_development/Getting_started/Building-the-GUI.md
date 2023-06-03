@@ -16,7 +16,7 @@ Create a directory for where you want your IBEX GUI to reside (e.g. `C:\Instrume
 
 ### Eclipse
 
-You must use a version of eclipse >= 2019-06, earlier versions will fail to build the client. An appropriate version is available at `\\isis\inst$\Kits$\CompGroup\ICP\Developer Tools`, simply unzip the the latest version folder to your chosen location for Eclipse and use the provided workspace. You can choose to download Eclipse directly from [the eclipse website](http://www.eclipse.org/downloads/packages/), choose the package for "RCP and RAP developers". If you download from the website you should use version 2021-12, there have been issues with later versions.
+You must use a version of eclipse >= 2019-06, earlier versions will fail to build the client. An appropriate version is available at `\\isis\inst$\Kits$\CompGroup\ICP\Developer Tools`, simply unzip the the latest version folder to your chosen location for Eclipse and use the provided workspace. You can choose to download Eclipse directly from [the eclipse website](http://www.eclipse.org/downloads/packages/), choose the package for "RCP and RAP developers". If you download from the website you should use version 4.26.
 
 ### Building
 
@@ -27,7 +27,7 @@ These are the steps needed to run the GUI via Eclipse:
 1. Install the pre-commit hook (see https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Building-the-GUI#installing-the-git-hooks)
 1. Start Eclipse IDE and select the workspace and use "Browse" to create and select the new workspace folder.
 1. From the menu bar choose File->Import->General->Existing Projects into Workspace. Choose "Select root directory" and browse to `<IBEX Clone Path>\base`. You should now see a list of plugins to import with names like `uk.ac.stfc.isis.ibex.*`. Eclipse should automatically select everything so you just need to click "Finish" to add them to the project
-1. Expand the target platform folder (labelled as ``uk.ac.stfc.isis.ibex.targetplatform``), double click on the target file and choose "Set as Target Platform". This may take some time as parts of CS-Studio and DAWN are downloaded. It may also be required to update the Locations in use should some packages appear to be missing. 
+1. If there is a "Welcome" tab open in Eclipse, close it. From the "Project Explorer" tab on the left, expand the target platform folder (labelled as ``uk.ac.stfc.isis.ibex.targetplatform``), double click on the target file and choose "Set as Target Platform". This may take some time as parts of CS-Studio and DAWN are downloaded. It may also be required to update the Locations in use should some packages appear to be missing. 
 1. Then select Project->Clean from the menu bar.
 1. To run the application from within Eclipse: open "ibex.product" from the ``uk.ac.stfc.isis.ibex.e4.client.product`` folder, select "Launch an Eclipse application".
 1. Next, From the menu bar choose Run->Run configurations and select "ibex.product" from the left hand list under "Eclipse Application".

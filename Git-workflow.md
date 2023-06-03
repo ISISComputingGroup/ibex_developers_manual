@@ -50,6 +50,7 @@ Reviewing work for the 'top' of EPICS (no other related changes)
 Reviewing work for the subModules of EPICS
 ----------------------------------------------------------------------------------
 * Navigate to the appropriate directory in Git Bash
+* If the submodule is not initialised, run `git submodule update --init` in the directory above
 * Update the repo: ``git remote update``
 * Checkout the branch with the changes to review: ``git checkout [branch-name]``
 * Build, make, update access to the code as necessary. If changing something in support, don't forget to make IOC entries as well

@@ -16,4 +16,5 @@
 * [Triton](Triton)
 * [Mercury Heliox](Mercury-Heliox)
 * [ICE dilution fridge](ICE-Dilution-Fridge)
+* [Automatic needle valve controller](Automatic-Needle-Valve-Controller)
 

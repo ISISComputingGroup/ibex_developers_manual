@@ -78,6 +78,7 @@ A method for detecting collisions between moving beamline components by simulati
 
 Commit
 ------
+A commit is a snapshot of your repository at a certain point in time. It is also a git command, which saves all of your staged changes on a project. There are various ways to perform a git commit, more info can be found here: [Git Guides - git commit](https://github.com/git-guides/git-commit)
 
 
 Component
@@ -95,6 +96,7 @@ A Python script to upgrade current configurations to be compatible with new vers
 Configuration
 -------------
 
+
 ConServer
 ---------
 
@@ -102,6 +104,10 @@ ConServer
 [CSS](http://controlsystemstudio.org/)
 -----
 "**C**ontrol **S**ystem **S**tudio is an [Eclipse](#eclipse)-based collection of tools to monitor and operate large scale control systems, such as the ones in the accelerator community. It's a product of the collaboration between different laboratories and universities."
+
+DAE
+-------
+The Data Acquisition Electronics (DAE) is the physical hardware that reads the neutron events out of the detectors. IBEX communicates with this hardware via the Instrument Control Program (ICP). This program is also responsible for combining the neutron and sample environment data into the NeXus file. 
 
 [Database Server](the-databaseserver)
 -----------------
@@ -144,9 +150,11 @@ An implementation of the [OpenGenie](http://www.opengenie.org) scripting languag
 
 GIT
 ---
+Git is a distributed version control software. Version control is a way to save changes over time without overwriting previous versions. More info can be found here: [Git Guides: Git](https://github.com/git-guides)
 
 Github
 ------
+While Git takes care of the underlying version control, GitHub is the collaboration platform built on top of it. It's where most of IBEX source code is kept, along with some other projects. [Git Guides: Git](https://github.com/git-guides)
 
 GUI
 ---
@@ -252,7 +260,7 @@ Script Server
 
 SECI
 ----
-**S**ample **E**nvironment **C**ontrol **I**nterface.  The current instrument control system, currently being replaced by IBEX.  Written in C# and incorporating [LabVIEW](#labview) drivers for the sample environment equipment.  User manual [here](http://www.facilities.rl.ac.uk/isis/projects/uip/UserManuals/Forms/AllItems.aspx).
+**S**ample **E**nvironment **C**ontrol **I**nterface.  The current instrument control system, currently being replaced by IBEX.  Written in C# and incorporating [LabVIEW](#labview) drivers for the sample environment equipment.  If you need access to the SECI user manual, please ask.
 
 Sequencer
 ---------

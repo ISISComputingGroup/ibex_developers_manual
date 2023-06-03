@@ -2,8 +2,6 @@
 
 # Squish Licensing Information & Contact Details
 
-[Details about our Squish License](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Forms/AllItems.aspx?RootFolder=%2Fisis%2Fcomputing%2FICPdiscussions%2FSquish%20Information&FolderCTID=0x01200027AD8F05966A2748B3B04C98BB5B442B&View={F2C33C51-70E6-4343-B937-2C59A2568306})
-
 we have one floating tester subscription and one floating execution subscription licence. The execution subscription is used by a build server to run tests, the tester subscription is used by us to develop tests. We can have at most one developer writing tests at a time, but we can all install the software on our machines. I don't yet know how the license system works e.g. if one developer forgets to close squish on their system, does it block everybody until they do? Or is there some timeout? We will have to experiment. See `license server` below for more details. 
  
 # Set Up for local server
