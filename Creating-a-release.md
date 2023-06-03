@@ -30,9 +30,9 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
     1. After committing these changes to `master` on the `EPICS-upgrade` submodule, don't forget to push the new submodule version to `master` on the top `EPICS` branch. This is needed to make sure you changes appear on the release branch created in the next step. 
 1. Start the Jenkins pipeline `Release_branches`.
     - Set `VERSION` to the new release version (e.g. `X.x.m`).
-    - Check `REMOTE` if the `EPICS` submodules should be updated from remote. The script will fail if there are new commits.
+    - Check `REMOTE` if the `EPICS` submodules should be updated from remote to latest versions - the script will fail if there are submodule commits unpushed. If you want the currently pinned (not necessarily latest) versions, do not check REMOTE. If you should/expect to be using the latest versions of all dependent submodules, check REMOTE box to verify this. If there are unpushed submodules the `EPICS repo checks` Jenkins build will likely be in error.
     - The script will then (as selected):
-        - Create the release branches for:
+        - Create the release branches (named `Release_X.x.m` except `Release_Script_Gen_X.x.m` for script generator) for:
             - `EPICS` and submodules.
             - `IBEX GUI`.
             - `Script Generator`.
@@ -43,13 +43,13 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
             - In `/uk.ac.stfc.isis.ibex.e4.client/pom.xml` and `/uk.ac.stfc.isis.ibex.e4.client/META-INF/MANIFEST.mf` for `IBEX GUI`.
             - In `/uk.ac.stfc.isis.scriptgenerator.client/pom.xml` and `/uk.ac.stfc.isis.scriptgenerator.client/META-INF/MANIFEST.mf` for `Script Generator`.
             - In `.../Python/Lib/site-packages/genie_python/version.py` for `Genie Python`.
-        - Push these changes to remote.
-        - Start the Jenkins builds:
-            - `EPICS_release`. (Build will be in `\\Kits$\CompGroup\ICP\Releases\X.x.m\EPICS`)
-            - `EPICS_release32`. (Build will be in `\\Kits$\CompGroup\ICP\Releases\X.x.m\EPICS32`)
-            - `genie_python_release_pipeline`. (Build will be in `\\Kits$\CompGroup\ICP\Releases\X.x.m\genie_python_3`)
-            - `ibex_gui_releases_pipeline`. (Build will be in `\\Kits$\CompGroup\ICP\Releases\X.x.m\Client`)
-            - `scriptgenerator_release`. (Build will be in `\\Kits$\CompGroup\ICP\Releases\script_generator_release\X.x.m`)
+        - Push these changes to remote release branch.
+        - Start the Jenkins builds (click `Scan Repository` on the ones that are multibranch pipelines):
+            - `EPICS_release`. (Build will be in `Kits$\CompGroup\ICP\Releases\X.x.m\EPICS`)
+            - `EPICS_release32`. (Build will be in `Kits$\CompGroup\ICP\Releases\X.x.m\EPICS32`)
+            - `genie_python_release_pipeline`. (Build will be in `Kits$\CompGroup\ICP\Releases\X.x.m\genie_python_3`)
+            - `ibex_gui_releases_pipeline`. (Build will be in `Kits$\CompGroup\ICP\Releases\X.x.m\Client`)
+            - `scriptgenerator_release`. (Build will be in `Kits$\CompGroup\ICP\Releases\script_generator_release\X.x.m`)
 1. Check that all of the merged tickets have also had their [release notes merged](https://github.com/ISISComputingGroup/IBEX/pulls) then move the changes which have been merged into the release from the [upcoming page](https://github.com/ISISComputingGroup/IBEX/blob/master/release_notes/ReleaseNotes_Upcoming.md) to a new release notes page for the version. Whilst doing this make sure that the release notes are as understandable as possible. 
 1. Create a released version in the [releases table](https://github.com/ISISComputingGroup/IBEX/blob/master/docs/all-releases.md) (including link to release notes)
 1. Update the "latest stable release" link on the [IBEX wiki homepage](https://github.com/ISISComputingGroup/IBEX)
