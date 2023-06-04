@@ -30,7 +30,7 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
     1. After committing these changes to `master` on the `EPICS-upgrade` submodule, don't forget to push the new submodule version to `master` on the top `EPICS` branch. This is needed to make sure you changes appear on the release branch created in the next step. 
 1. Start the Jenkins pipeline `Release_branches`.
     - Set `VERSION` to the new release version (e.g. `X.x.m`).
-    - Set `TAG` if you wish to branch off a commit other than the latest top level `HEAD`. If you do branch off an earlier commit, also set `REMOTE` to `false` as it now does not make sense to verify if you are on the latest version. 
+    - Set `TAG` if you wish to branch off a commit other than the latest top level `HEAD`. If you do branch off an earlier commit, also set `REMOTE` to `false` as it now does not make sense to verify if you are on the latest submodule versions. 
     - Check `REMOTE` if the `EPICS` submodules should be checked for later versions on their remote - the script will fail if there are submodule commits unpushed to top level. For a normal release you will be expecting all submodules to be on the latest version. If you want the currently pinned (not necessarily latest) versions, do not check REMOTE. If you should/expect to be using the latest versions of all dependent submodules, check REMOTE box to verify this. If there are unpushed submodules the `EPICS repo checks` Jenkins build will likely be in error already.
     - The script will then (as selected):
         - Create the release branches (named `Release_X.x.m` except `Release_Script_Gen_X.x.m` for script generator) for:
