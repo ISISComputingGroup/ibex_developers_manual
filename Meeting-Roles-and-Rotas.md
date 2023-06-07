@@ -50,8 +50,8 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
  |NR | 01/05/2023 | x |
  |CMS | 08/05/2023 | x |
  |JH | 15/05/2023 | x |
- |HC | 22/05/2023 | |
- |FA | 29/05/2023 | |
+ |HC | 22/05/2023 | x |
+ |FA | 29/05/2023 | x |
  |DK | 05/06/2023 | |
  |LC | 12/06/2023 | |
  |TL | 19/06/2023 | |
@@ -73,10 +73,10 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
 | 2023_02_02_Review/Retro| LJ | X | JH| X | HC| X |
 | 2023_03_09 _Planning| KB | X | LJ| X | |  |
 | 2023_03_09 _Review/Retro| NR | X | HC| X | JH| X |
-| 2023_04_14 _Planning| KB |  | DK|  | |  |
-| 2023_04_14 _Review/Retro| FA |  | DK|  | TL|  |
-| 2023_05_11 _Planning| KB |  | TL|  | |  |
-| 2023_05_11 _Review/Retro| HC |  | LC|  | NR|  |
+| 2023_04_14 _Planning| KB | X | DK| X | |  |
+| 2023_04_14 _Review/Retro| FA | X | DK| X | TL| X |
+| 2023_05_11 _Planning| KB | X | TL| X | |  |
+| 2023_05_11 _Review/Retro| HC | X | LC| X | NR| X |
 | 2023_06_08 _Planning| KB |  | HC|  | |  |
 | 2023_06_08 _Review/Retro| TL |  | NR|  | HC|  |
 | 2023_07_17 _Planning| KB |  | JH|  | |  |
