@@ -9,7 +9,7 @@ If you don't see either "master" or "detached HEAD" then you need to decide if y
 From a git shell do:
 
     git pull
-    git submodule init
+    git submodule update --init --recursive
 
 You can now do either
 
