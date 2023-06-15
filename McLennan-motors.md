@@ -157,7 +157,7 @@ Use following IOC macro setting:
 
 ## getting debug output/information
 
-console to IOC and type `dbior` for basic information. For extended information pass a higher report level to dbior e.g. `dbior * 1` (you need the * as the first argument is the driver name and the second the debug level)  
+console to IOC and type `dbior` for basic information. For extended information pass a higher report level to dbior e.g. `dbior drvPM304 1` (the `drvPM304` is the mclennan driver name and restricts details to just that, the second argument is the debug level. You can use `*` instead of `drvPM304` but will then get extended details for `asyn` and other loaded drivers too)
   
 ## converting values from labview
 
