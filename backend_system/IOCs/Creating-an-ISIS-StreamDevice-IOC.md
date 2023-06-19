@@ -44,7 +44,7 @@ ReplyTimeout = 2000;
 
 getIDN {
     out "*IDN?";
-    #Read no more that 39 chars (EPICS limit)
+    #Read no more than 39 chars (EPICS limit)
     in "%/(.{0,39})/";
     ExtraInput = Ignore;
 }
