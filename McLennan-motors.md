@@ -116,7 +116,7 @@ Check the `MCLEN` IOC log file for error messages and also examine output from `
 If it doesn't move at all try using the macros for an axis number other than 1 (e.g. 2 or 3) in the ibex GUI. The axis to be driven by the buttons on the front panel are set by a position dial inside the mclennan crate, so you may not be be trying to control the correct axis id.
 
 If it moves a short distance and stops it may be going into `Tracking abort`. A tracking abort means the encoder and motor step counters have got further apart than expected during the move, this could be due to: 
-* The encoder and motor resolutions are incorrect/incompatible, so "expected" and "actual" position are diverging. The first thing to do is to restart the McLennan hardware and then the IOC so that the values are resent. If this does not fix it then check the settings are correct.
+* The encoder and motor resolutions are incorrect/incompatible, so "expected" and "actual" position are diverging. The first thing to do is to restart the McLennan hardware and then the IOC so that the values are resent. If this does not fix it then check the settings are correct. 
 * you are trying to accelerate or move too quickly, or possibly move too slowly, meaning there is a time lag between the motor pulses being sent and the motor response. Try changing these parameters. See end of this page if you need to change the tracking abort window.
  
 ### McLennan moves but doesn't stop at desired position
@@ -220,17 +220,17 @@ Calculate the appropriate MCLEN IOC macros as follows:
 * `Home Position = 0.000000` IOC always applies a dial home position of 0, if labview value is non-zero set `OFST1` IOC macro to this value
 * `Control Mode = 4` in labview `4` is "closed loop stepper" so set `CMOD1 = CLOSED` (if labview was `1` that means "open loop stepper" so would set `CMOD1 = OPEN`. We don't currently handle other values and they are not used at ISIS as far as we know)
 * `Homing Method = 2` for labview 0=none; 1=home signal+; 2=home signal-; 3=reverse limit,home signal+; 4=forward limit,home signal-;5=reverse limit;6=forward limit. So labview method `2` is a *reverse direction hardware home* so after examining the [Homing](#homing) section above the equivalent ibex IOC mode is `HOME1 = 2`     
+* `Window = 50` this is the end of move check window before an internal mclennan retry. It is a bit like the retry deadband of the motor record, but done at the controller. If a moves plus retries completes and is still outside this Window, an error will be signalled. So we set `WIN1 = 50`
+* `Creep Steps = 0` number of steps to approach final position at the slower `Creep speed` in the final phase of a move. So we set `CRST1 = 0`    
+* `Settling Time = 0` how long motor readback must be within `Window` of requested position at end of move, if not achieved triggers a timeout abort. So we set `SETL1 = 0`
+* `BackOff Steps = 0` used for backlash correction. We can set `BOST1 = 0` but this is the default anyway.
 
 Some labview values do not currently have macros and get IOC defaults. Edit MCLEN IOC `st-motor-init.st` if you need to temporarily change them and then create a ticket to add a proper IOC macro
 
-* `Window = 50` this is the end of move check window before an internal mclennan retry, it is set to a IOC calculated default value. It is a bit like the retry deadband of the motor record, but done at the controller. If a moves plus retries completes and is still outside this Window, an error will be signalled. You can edit `st-motor-init.st` to change this directly (restart IOC afterwards) and then create a ticket to add a permanent macro.
 * `Correction Gain = 70` this is equivalent to the IOC default `PCOF = 0.7` for a stepper motor
-* `Creep Steps = 0` number of steps to approach final position at the slower `Creep speed` in the final phase of a move    
 * `Creep Speed = 5000` only important for us if `Creep Steps` > 0 as this is temporary set to `HVEL` during a home so does not now affect homes.
-* `Settling Time = 0` how long motor readback must be within `Window` of requested position at end of move
-* `BackOff Steps = 0` used for backlash correction
 
 Some mclennan values were not covered in labview but exist in MCLEN IOC `st-motor-init.st`
 
-* Tracking window - a parameter used to determine if a *TRACKING ABORT* should be signalled, it is the max allowed difference between current and requested position during a move (also known as the *following error*). This may get triggered by a motor being told to move/accelerate quicker than it can, or move too slowly and so stalling, or an incorrect encoder ratio so motor and encoder get out of step.
-* Not Complete/Time-Out time - the max time at end of a move for any settling/auto corrections etc. to take place, otherwise triggers a *NOT COMPLETE/TIMEOUT ABORT*
+* Tracking window - a parameter used to determine if a *TRACKING ABORT* should be signalled, it is the max allowed difference between current and requested position during a move (also known as the *following error*). This may get triggered by a motor being told to move/accelerate quicker than it can, or move too slowly and so stalling, or an incorrect encoder ratio so motor and encoder get out of step, or incorrect encoder values being returned from the hardware
+* Not Complete/Time-Out time - the max time at end of a move for any settling/auto corrections etc. to take place, otherwise triggers a *NOT COMPLETE/TIMEOUT ABORT* This could mean the `Window` mclennan parameter is too small and cannot be achieved, try increasing relevant `WIN*` macro. 
