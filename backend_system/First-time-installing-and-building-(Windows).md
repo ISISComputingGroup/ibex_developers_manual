@@ -190,7 +190,7 @@ The following are not strictly required for general IBEX development. They will 
 
 ## Explorer context menu shortcut for EPICS terminal
 
-To add a shortcut to open an EPICS terminal using the context menu in Windows' file explorer, double click `add_epics_context_menu.reg` (from EPICS top) and run as admin. This will add a registry key that will enable you to right click in an empty space in file explorer and open the directory in an EPICS terminal. 
+To add a shortcut to open an EPICS terminal using the context menu in Windows' file explorer, Run Command Prompt as Admin, navigate to EPICS in the Command Prompt, and type `add_epics_context_menu.reg` (from EPICS top) to run it as admin. This will add a registry key that will enable you to right click in an empty space in file explorer and open the directory in an EPICS terminal. 
 
 ## VNC
 
