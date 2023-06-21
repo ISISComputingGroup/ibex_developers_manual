@@ -4,6 +4,8 @@
 
 * [TPG36x](TPG36x)
 
+* [TPGx00](TPGx00)
+
 * [CCD100](CCD100)
 
 * [Omega IBTHX](Omega_IBTHX)
