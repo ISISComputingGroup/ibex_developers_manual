@@ -13,14 +13,16 @@ The TPG500 is the slightly newer version of the TPG300; the main differences bet
 |  | 300                   | 500                                                  | Affected commands |
 | ---- | --------------------- | ---------------------------------------------------- | ---- |
 | Switching Functions | `1, 2, 3, 4, A, B` | `1, 2, 3, 4` | SPx |
-| Switching Function assignments | `No Assignment, A1, A2, B1, B1, A1 self-monitoring, A2 self-monitoring, B1 self-monitoring, B1 self-monitoring` | `Off, A1, A2, B1, B2` | SPx |
+| Switching Function assignments | `No Assignment, A1, A2, B1, B1, A1 self-monitoring, A2 self-monitoring, B1 self-monitoring, B1 self-monitoring` | `Off, A1, A2, B1, B2, On` | SPx |
 | Units    | `mbar, Torr, Pa` | `hPascal, mbar, Torr, Pa, Micron, Volt, Ampere` | UNI/UNIx |
 
 ## Commands
 The IOC currently supports the use following commands with the TPGx00 devices:
-* **`Pxx`**, where xx is `A1|A2|A3|A4`: Gets the pressure measurement from the specified channel
-* **`ERR`**: Get the error status of the device
-* **`SPS`**: Get the statuses of all the switching functions
-* **`SPx`**, where x is `1|2|3|4` (+ `A|B` for 300): Get/set the threshold settings for a specified switching function
-* **`UNI`**: Get the unit of measurement
-* **`UNIx`**, where x is `1|2|3` (+ `0|4|5|6` for 500): Set the current unit of measurement
+| Command | Description                   |
+| ------- | ----------------------------- |
+| **`Pxx`**, where xx is `A1\|A2\|A3\|A4` | Gets the pressure measurement from the specified channel |
+| **`ERR`** | Get the error status of the device |
+| **`SPS`** | Get the statuses of all the switching functions |
+| **`SPx`**, where x is `1\|2\|3\|4` (+ `A\|B` for 300) | Get/set the threshold settings for a specified switching function |
+| **`UNI`** | Get the unit of measurement |
+| **`UNIx`**, where x is `1\|2\|3` (+ `0\|4\|5\|6` for 500) | Set the current unit of measurement |
