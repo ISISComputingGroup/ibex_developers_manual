@@ -32,4 +32,4 @@ null modem: depends on Julabo If none of the settings above allow you to connect
 
 # Troubleshooting
 
-The julabo can have several setpoints, ibex always uses setpoint 1. If the julabo hardware is set to e.g. use setpoint 2 then ibex will think all is fine and send/read the setpoint ok, but the julabo hardware will how a different setpoint value on its screen. A technician will need to go into the configuration menu on the device and change it to use setpoint 1  
+The julabo hardware supports having several different setpoints and can control on any of them, ibex always uses setpoint 1. If the julabo hardware is set to e.g. use setpoint 2 then ibex will think all is fine and send/read the setpoint 1 ok, but the julabo hardware will how a different setpoint value (setpoint 2) on its screen. A technician will need to go into the configuration menu on the device and change it to use setpoint 1  
