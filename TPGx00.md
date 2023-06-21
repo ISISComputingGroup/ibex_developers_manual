@@ -20,7 +20,7 @@ The TPG500 is the slightly newer version of the TPG300; the main differences bet
 
 Some less explicit differences are as follows:
 * Communication terminators
-   * in the TPG300 manual, there is a mismatch of `<CR><LF>` and `<CR>` receive acknowledgement terminators. The TPG500 consistently uses `<CR><LF>`. This may be a typo in the TPG300 manual, but luckily as all the commands we use for the TPG300 are listed as using `<CR><LF>`, this shouldn't cause any headaches.
+   * In the TPG300 manual, there is a mismatch of using `<ACK><CR><LF>` and `<ACK><CR>` as intermediate acknowledgement terminators. The TPG500 consistently uses `<ACK><CR><LF>`. All the commands we use for the TPG300 are listed as using `<ACK><CR>`, but the protocol file always uses `<ACK><CR><LF>`, and we have no issues with this historically, so this is most likely a typo.
 * `SPS` command
    * Although the 300 and 500 have a mismatch of switching functions, `SPS` returns status values for all switching functions (e.g. `1|2|3|4|A|B`) for _both_ models. However, we don't actually care about the return values for SFs `A` and `B` for either model, so these last two values are skipped in the protocol file. Regardless, it's worth noting that for the 500 the values returned for A and B are:  
       * 1 if an automatic function is active for sensor A1 (for SF `A`) or B1 (for SF `B`) and the sensor is ON 
