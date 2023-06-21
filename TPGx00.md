@@ -1,7 +1,9 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [Pressure Monitors](Pressure-Monitors) > [TPGx00](TPGx00)
 
 ## TPGx00
-TPGx00 is shorthand for the TPG300 and the TPG500 Pfeiffer Vaccuum Gauges which use the same `TPG300` IOC. These are devices which control a series of four pressure sensors (A1, A2, A3, A4). 
+A type of device which controls a series of four pressure sensors (A1, A2, A3, A4). 
+
+TPGx00 is shorthand for the TPG300 and the TPG500 Pfeiffer Vaccuum Gauges which use the same `TPG300` IOC. The two models also share the same `TPG300.opi` file, which updates its appearance based on the TPG model.
 
 **To configure the IOC for the 500, define the MODEL macro: it defaults to TPG300**
 
