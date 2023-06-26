@@ -16,7 +16,7 @@ The TPG300 communicates over a serial interface via RS232 with the use of an IF 
 
 ### TPG500
 The TPG500 communicates over a serial interface via Ethernet, USB and RS485 (virtual com-port), and RS232 with the use of an IF 300C plugin interface card.
-Pfeiffer has their own 'Ethernet Configuration Tool' software which can be used to configure a virtual com-port. 
+Pfeiffer has their own 'Ethernet Configuration Tool' software which can be used to configure a virtual com-port (see page 32 of the 'Operating Instructions' manual). 
 
 ## Differences between the 300 and 500
 The TPG500 is the slightly newer version of the TPG300; the main differences between these two devices is in their communication protocols. See the manuals for what these properties are used for. 
