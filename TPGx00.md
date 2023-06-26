@@ -3,11 +3,20 @@
 ## TPGx00
 A type of device which controls a series of four pressure sensors (A1, A2, A3, A4). 
 
-TPGx00 is shorthand for the TPG300 and the TPG500 Pfeiffer Vacuum Gauges which use the same `TPG300` IOC. The two models also share the same `TPG300.opi` file, which updates its appearance based on the TPG model.
+TPGx00 is shorthand for the TPG 300 and 500 Pfeiffer Vacuum Gauges which use the same `TPG300` IOC. The two models also share the same `TPG300.opi` file, which updates its appearance based on TPG model number.
 
 **To configure the IOC for the 500, define the MODEL macro: it defaults to TPG300**
 
-These devices are similar to the [TPG26x](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/TPG26x) and [TPG36x](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/TPG36x), but have 4 pressure sensors to read from, and have a slightly more complicated IOC. All their manuals can be found in `<share>\ISIS_Experiment_Controls\Manuals\Pfeiffer TPG<xxx>`.
+The TPG300/500 are similar to the [TPG26x](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/TPG26x) and [TPG36x](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/TPG36x), but have 4 pressure sensors to read from, and have a slightly more complicated IOC. All TPG manuals can be found in `<share>\ISIS_Experiment_Controls\Manuals\Pfeiffer TPG<xxx>`.
+
+## Communication
+
+### TPG300
+The TPG300 communicates via serial (RS232) with the use of an `IF 300C` plugin interface card.
+
+### TPG500
+The TPG500 can communicate via Ethernet, USB and RS485 via virtual com-port, and via serial (RS232) with the use of an `IF 300C` plugin interface card.
+Pfeiffer has their own 'Ethernet Configuration Tool' software which can be used to configure a virtual com-port. 
 
 ## Differences between the 300 and 500
 The TPG500 is the slightly newer version of the TPG300; the main differences between these two devices is in their communication protocols. See the manuals for what these properties are used for. 
@@ -30,7 +39,7 @@ Some less explicit differences are as follows:
    * For the 500, this command returns an extra parameter which is the 'ON-Timer', but we don't care about this so is skipped in the protocol file.
 
 ## Commands
-The IOC currently supports the use following commands with the TPGx00 devices:
+The `TPG300` IOC currently supports the use following commands with the TPGx00 devices:
 | Command | Description                   |
 | ------- | ----------------------------- |
 | **`Pxx`**, where xx is `A1\|A2\|A3\|A4` | Gets the pressure measurement from the specified channel |
