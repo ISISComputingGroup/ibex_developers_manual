@@ -24,7 +24,7 @@ These are the steps needed to run the GUI via Eclipse:
 
 1. First, create a new workspace (example name: ibex_workspace_E4).
 1. Then `git checkout master` from where the IBEX code was cloned to (if it's a fresh clone, it should already be on this branch).
-1. Install the pre-commit hook (see https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Building-the-GUI#installing-the-git-hooks)
+1. Install the [pre-commit hook](https://github.com/ISISComputingGroup/IBEX/issues/4786). To install this hook you must run `build/install_pre_commit_hook.bat`.
 1. Start Eclipse IDE and select the workspace and use "Browse" to create and select the new workspace folder.
 1. From the menu bar choose File->Import->General->Existing Projects into Workspace. Choose "Select root directory" and browse to `<IBEX Clone Path>\base`. You should now see a list of plugins to import with names like `uk.ac.stfc.isis.ibex.*`. Eclipse should automatically select everything so you just need to click "Finish" to add them to the project
 1. If there is a "Welcome" tab open in Eclipse, close it. From the "Project Explorer" tab on the left, expand the target platform folder (labelled as ``uk.ac.stfc.isis.ibex.targetplatform``), double click on the target file and choose "Set as Target Platform". This may take some time as parts of CS-Studio and DAWN are downloaded. It may also be required to update the Locations in use should some packages appear to be missing. 
@@ -55,8 +55,6 @@ Not for new starters: this should already have been done by eclipse so unless yo
 1. Click `Finish`
 1. The repository and branch names should now be displayed after each plugin as above
 
-## Installing the git hooks ##
-As part of https://github.com/ISISComputingGroup/IBEX/issues/4786 a git hook was put into the gui repository. To install this hook you must run `build/install_pre_commit_hook.bat`.
 
 ## Building via Maven ##
 
