@@ -26,7 +26,7 @@ If the detector is moved to another instrument with the same laptop then:
 * edit `mypvprefixnc.txt` and `globals.txt` as appropriate
 * specify a new copy to location of data files in the opi
 * create share/map drive on destination computer if it is not a simple attached USB drive
-* start the IOC on the laptop and then view from the GUI OPI device screen on the NDX instrument (do not start NGEM from start/stop IOC in IBEX GUI)
+* start the IOC on the laptop and then view from the GUI OPI device screen on the NDX instrument (**do not** start NGEM from start/stop IOC in IBEX GUI)
 
 ## problems/debugging 
 
