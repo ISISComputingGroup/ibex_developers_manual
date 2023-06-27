@@ -29,7 +29,7 @@ The TPG500 is the slightly newer version of the TPG300; the main differences bet
 
 Some less explicit differences are as follows:
 * Communication terminators
-   * In the TPG300 manual, there is a mismatch of using `<ACK><CR><LF>` and `<ACK><CR>` as intermediate acknowledgement terminators. The TPG500 consistently uses `<ACK><CR><LF>`. All the commands we use for the TPG300 are listed as using `<ACK><CR>`, but the protocol file always uses `<ACK><CR><LF>`, and we have no issues with this historically, so this is most likely a typo.
+   * The TPG300 manual has a mismatch of `<ACK><CR><LF>` and `<ACK><CR>` for intermediate acknowledgement terminators. Hardware testing with the 300 has confirmed that **this is a typo** and all commands use `<ACK><CR><LF>`. This is the same as the 500, so we can universally use `<CR><LF>` terminator in the protocol file.
 * `SPS` command
    * Although the 300 and 500 have a mismatch of switching functions, `SPS` returns status values for all switching functions (e.g. `1|2|3|4|A|B`) for _both_ models. However, we don't actually care about the return values for switching functions `A` and `B` for either model, so these last two values are skipped in the protocol file. Regardless, it's worth noting that for the 500 the values returned for A and B are:  
       * 1 if an automatic function is active for sensor A1 (for SF `A`) or B1 (for SF `B`) and the sensor is ON 
@@ -40,16 +40,27 @@ Some less explicit differences are as follows:
 
 ## Commands
 The `TPG300` IOC currently supports the use following commands with the TPGx00 devices:
-| Command | Description                   |
-| ------- | ----------------------------- |
-| **`Pxx`**, where xx is `A1\|A2\|A3\|A4` | Gets the pressure measurement from the specified channel |
-| **`ERR`** | Get the error status of the device |
-| **`SPS`** | Get the statuses of all switching functions `1\|2\|3\|4\|A\|B` |
-| **`SPx`**, where x is `1\|2\|3\|4` (+ `A\|B` for 300) | Get/set the threshold settings for a specified switching function |
-| **`UNI`** | Get the unit of measurement |
-| **`UNIx`**, where x is `1\|2\|3` (+ `0\|4\|5\|6` for 500) | Set the current unit of measurement |
+| Command | Model available |  Description                   |
+| ------- | ------- | ----------------------------- |
+| **`Pxx`**, where xx is `A1\|A2\|A3\|A4` | Both | Gets the pressure measurement from the specified channel |
+| **`ERR`** | 300 only | Get the error status of the device |
+| **`SPS`** | 300 only | Get the statuses of all switching functions `1\|2\|3\|4\|A\|B` |
+| **`SPx`**, where x is `1\|2\|3\|4` (+ `A\|B` for 300) | Both | Get/set the threshold settings for a specified switching function |
+| **`UNI`** | Both | Get the unit of measurement |
+| **`UNIx`**, where x is `1\|2\|3` (+ `0\|4\|5\|6` for 500) | Both | Set the current unit of measurement |
 
 At the moment, there is some level of protection for using invalid commands between devices (e.g. sending a `UNI6` to a TPG300):
 * `$(P)UNITS:SP` (note: **_not_** `$(P)UNITS`) goes into alarm if set outside the states defined for the current model
 * `$(P)FUNCTION` has protective PV `$(P)FUNCTION:VALID` which only allows switching function SP/RB PVs to interact with the protocol file IFF `$(P)FUNCTION` is in a 'valid' state. 
    * For example, if you try to query the switching function `B` on a TPG500, `SPB` cannot be sent to the TPG. However, as of [#7458](https://github.com/ISISComputingGroup/IBEX/issues/7458), no alarm is raised if `$(P)FUNCTION` is set to `B`, as is with `:UNITS:SP`.
+
+## Known issues
+
+### TPG500
+The TPG500 has some slightly odd behaviour that is worth noting. 
+* Error state
+   * The `ERR` command was added to the `TPG300` IOC as of [#7458](https://github.com/ISISComputingGroup/IBEX/issues/7458). Upon start-up, the TPG500 enters the default `No error` (`0000`) state. However, after the first command is sent to the device, regardless of validity, the device is pushed into a `Syntax error` (`0001`) state, and this persists for the rest of this power cycle. Thus, the `ERR` command is currently only implemented for the 300, as it doesn't report anything of use. 
+* `SPS` command
+   * The `SPS` command currently is not accepted by the TPG500 (inconsistently with the manual): `SPS` will receive `NAK><CR><LF>`, i.e. negative acknowledgement, which is the same response for syntactically incorrect commands. Oddly, when sent as the _very first_ command after start-up, this command will be accepted as per the manual, but for every attempt after, it will be rejected. Thus, this command is also only implemented for the 300 - for the 500 we can infer this information from the 'Circuit Assignment' readback box in the OPI, so it is not necessarily essential. 
+* Firmware
+   * TPG500s will most likely have software version `010100`. Upgrading the firmware to `010300`, to be inline with minimum version specified by the manual, creates some weird handshake behaviour. Whilst in a persisting `Syntax error` state as detailed above, the TPG (inconsistently with the manual) will append `NAK><CR><LF>` (`15 0D 0A` in hex) to every healthy command. These, however, don't seem to upset the protocol file, so are relatively harmless. 
