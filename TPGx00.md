@@ -10,13 +10,16 @@ TPGx00 is shorthand for the TPG 300 and 500 Pfeiffer Vacuum Gauges which use the
 The TPG300/500 are similar to the [TPG26x](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/TPG26x) and [TPG36x](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/TPG36x), but have 4 pressure sensors to read from, and have a slightly more complicated IOC. All TPG manuals can be found in `<share>\ISIS_Experiment_Controls\Manuals\Pfeiffer TPG<xxx>`.
 
 ## Communication
+**The IOC has the macros `IPADDR` and `PORT` to configure communication with the TPG. `IPADDR` can only be used for 500 models, as the 300 does not have an ethernet interface.**
 
 ### TPG300
 The TPG300 communicates over a serial interface via RS232 with the use of an IF 300C plugin interface card.
 
 ### TPG500
 The TPG500 communicates over a serial interface via Ethernet, USB and RS485 (virtual com-port), and RS232 with the use of an IF 300C plugin interface card.
-Pfeiffer has their own 'Ethernet Configuration Tool' software which can be used to configure a virtual com-port (see page 32 of the 'Operating Instructions' manual). 
+
+Pfeiffer has their own 'Ethernet Configuration Tool' software which can be used to configure a virtual com-port (see page 32 of the 'Operating Instructions' manual), although this software has yet to be used to connect to a TPG500 successfully.
+
 
 ## Differences between the 300 and 500
 The TPG500 is the slightly newer version of the TPG300; the main differences between these two devices is in their communication protocols. See the manuals for what these properties are used for. 
