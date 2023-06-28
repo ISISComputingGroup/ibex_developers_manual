@@ -89,6 +89,6 @@ alias("$(P)SIM:CURRENT","$(P)SIM:CURRENT:SP")
 alias("$(P)SIM:CURRENT","$(P)SIM:CURRENT:SP:RBV")
 ```
 
-To link the simulation to a record that is passively scanning you should add `field(FLNK, "SOFT_CHANNEL")` to the simulation record.
+To link the simulation to a record that is passively scanning you should add `field(FLNK, "<SOFT_CHANNEL_RECORD>")` to the simulation record.
 
 For more information on fields in simulation records see [here](https://epics.anl.gov/base/R7-0/6-docs/dbCommonInput.html) for input records, or [here](https://epics.anl.gov/base/R7-0/6-docs/dbCommonOutput.html) for output records.
