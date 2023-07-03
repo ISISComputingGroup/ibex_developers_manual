@@ -1,6 +1,6 @@
 It is possible to use one of the intermediate outputs from a build server as the basis of your local development environment. This can provide you with either a normal `Release` build (EPICS_HOST_ARCH=windows-x64), or a `Debug` build (EPICS_HOST_ARCH=windows-x64-debug) or a different architecture such as 32bit (EPICS_HOST_ARCH=win32-x86)
 
-NOTE: if you just want a recent EPICS build for somewhere, you just need to run the `install_to_inst.bat` in the appropriate build on `kits$` when connected from the machine you want to install it on
+NOTE: if you just want a recent EPICS build to run somewhere and do not need to be able to develop using it, you just need to run the `install_to_inst.bat` in the appropriate build on `kits$` when connected from the machine you want to install it on
 
 ## EPICS
 
