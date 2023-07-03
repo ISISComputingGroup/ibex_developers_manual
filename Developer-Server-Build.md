@@ -8,8 +8,8 @@ You need to be using a Visual Studio compatible with the build server, currently
 
 ### Quick Instructions
 
-Run `install_developer_build.bat` in either `\\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer\EPICS` (for 64bit build) or `\\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer\EPICS32` for 32 bit build. It will prompt you for normal/debug/static - usually `normal`
-is what you want (windows-x64), static and debug are for special cases/testing 
+Run `install_developer_build.bat` in either `\\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer\EPICS` (for 64bit builds, what you usually need) or `\\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer\EPICS32` (for 32 bit builds, only if you have to build/test a specific driver needing 32bit versions). It will prompt you to choose from  normal/debug/static - in most cases `normal`
+is what you want and is what is deployed to an instrument, static and debug are for special cases/testing 
  
  <details> <summary> Details (not normally needed) </summary>
 
