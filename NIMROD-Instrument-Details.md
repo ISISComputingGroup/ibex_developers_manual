@@ -47,7 +47,9 @@ TPG26x support was originally implemented via [#1411](https://github.com/ISISCom
 [Eurotherms](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/SANS2D/SANS2D_Eurotherms.jpg) are used to control temperature Orange Cryostat, CCR and Furnace devices.
 
 ##### Note: NIMROD Sample Changer #####
-The NIMROD sample changer is a two-axis sample changer controlled by a Galil.
+The NIMROD sample changer is a two-axis (vertical and rotation) sample changer controlled by a Galil.
+
+As of July 2023, the lower limit for the vertical axis is not physically working, so be careful when changing soft limits for the sample changer's vertical axis. The sample changer is set to home to the upper limit as the switch works. 
 
 ##### Note: Water Bath #####
 NIMROD uses two types of water bath, both Julabo models: FP-50 and [FP-52](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/NIMROD/NIMROD_Julabo_FP52.jpg).  
