@@ -31,8 +31,7 @@ These are the steps needed to run the GUI via Eclipse:
 1. Then select Project->Clean from the menu bar.
 1. To run the application from within Eclipse: open "ibex.product" from the ``uk.ac.stfc.isis.ibex.e4.client.product`` folder, select "Launch an Eclipse application".
 1. Next, From the menu bar choose Run->Run configurations and select "ibex.product" from the left hand list under "Eclipse Application".
-1. In the "Main" tab tick the "Clear" tick box and in the "Configuration" tab tick the "Clear the configuration area before launching" tick box. Click "Apply" and select "Run".
-1. When a dialogue box asking if you want to clear the run-time workspace data click "Yes". This dialogue box will appear every time you run the E4 build of IBEX from within Eclipse.
+1. In the "Main" tab tick the "Clear" tick box and in the "Configuration" tab tick the "Clear the configuration area before launching" tick box. Click "Apply" and select "Run". Untick "Ask for confirmation before clearing", otherwise a dialog box will pop up every time you run the client.
 
 IBEX should now build but there will probably be some errors. You can clear them following the procedure below.
 
