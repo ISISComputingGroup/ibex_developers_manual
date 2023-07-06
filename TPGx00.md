@@ -53,7 +53,7 @@ The `TPG300` IOC currently supports the use following commands with the TPGx00 d
 | **`UNIx`**, where x is `1\|2\|3` (+ `0\|4\|5\|6` for 500) | Both | Set the current unit of measurement |
 
 At the moment, there is some level of protection for using invalid commands between devices (e.g. sending a `UNI6` to a TPG300):
-* `$(P)UNITS:SP` (note: **_not_** `$(P)UNITS`) goes into alarm if set outside the states defined for the current model
+* `$(P)UNITS:SP` (note: **_not_** `$(P)UNITS`) goes into alarm if set outside the states defined for the current model - but only on a TPG300 (this may be due to the fact for an 300, the `mbbi` does not have a defined zero-state, and so cannot default to zero as a 500 can).
 * `$(P)FUNCTION` has protective PV `$(P)FUNCTION:VALID` which only allows switching function SP/RB PVs to interact with the protocol file IFF `$(P)FUNCTION` is in a 'valid' state. 
    * For example, if you try to query the switching function `B` on a TPG500, `SPB` cannot be sent to the TPG. However, as of [#7458](https://github.com/ISISComputingGroup/IBEX/issues/7458), no alarm is raised if `$(P)FUNCTION` is set to `B`, as is with `:UNITS:SP`.
 
