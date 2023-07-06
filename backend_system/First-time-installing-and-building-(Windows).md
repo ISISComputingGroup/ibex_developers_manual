@@ -174,6 +174,19 @@ https://visualstudio.microsoft.com/downloads/
 
 And try running `isisicp.exe /RegServer` again.
 
+### Getting DAE ready to start a run
+
+This can be done later:
+- run `start_ibex_server`
+- start the GUI
+- go into experiment setup in DAE view and
+- - in time channels put  from 10.0 to 19900.0 step 10.0 with DT=C mode just for time regime 1
+- - in data acquisition use the dropdown for wiring, detector and spectra to choose a file with the name "ibextest" in it e.g. wiring_ibextest.dat for wiring
+- - Press the Apply button
+- Now go back to main DAE view and press the begin button - you should get the instrument going into RUNNING
+- Press Abort and you shoudl go back into SETUP
+- You can also open a python scripting window and use  g.begin() and g.abort() to do the same thing
+ 
 ## Utilities
 
 Git clone (usually in c:\Instrument\Dev) the following utilities:
