@@ -38,7 +38,7 @@ Some less explicit differences are as follows:
       * 1 if an automatic function is active for sensor A1 (for SF `A`) or B1 (for SF `B`) and the sensor is ON 
       * 0 otherwise
 * `SPx` command
-   * This command returns a couple of parameters, one of which is the 'switching function assignment'. As noted above, these differ between the 300 and 500, but most importantly, `B1` being repeated twice isn't a typo - this is specified in the manual. By contrary, the 500 does have a `B2`.
+   * This command returns a couple of parameters, one of which is the 'switching function assignment'. As noted above, these differ between the 300 and 500, but most importantly, `B1` being repeated twice isn't a typo - this is specified in the manual (but this is not certain, so will be checked in [#7860](https://github.com/ISISComputingGroup/IBEX/issues/7860)). By contrary, the 500 does have a `B2`.
    * For the 500, this command returns an extra parameter which is the 'ON-Timer', but we don't care about this so is skipped in the protocol file.
 
 ## Commands
