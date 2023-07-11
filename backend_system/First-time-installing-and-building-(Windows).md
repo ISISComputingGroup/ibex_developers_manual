@@ -184,7 +184,7 @@ This can be done later:
 - - in data acquisition use the dropdown for wiring, detector and spectra to choose a file with the name "ibextest" in it e.g. wiring_ibextest.dat for wiring
 - - Press the Apply button
 - Now go back to main DAE view and press the begin button - you should get the instrument going into RUNNING
-- Press Abort and you shoudl go back into SETUP
+- Press Abort and you should go back into SETUP
 - You can also open a python scripting window and use  g.begin() and g.abort() to do the same thing
  
 ## Utilities
