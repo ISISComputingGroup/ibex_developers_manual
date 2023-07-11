@@ -18,7 +18,7 @@ To actually communicate via the ADS transport layer you will need to set up a ro
 3. To confirm that this has been set up remote into the controller itself on the aforementioned IP address and check that the route to the NDX has been added automatically. You should not need to manually add a route in the controller. 
 
 ### IOC setup
-The IOC should be able to talk via ADS at this point but will need setting up in the respective configs. 
+The IOC (`TC_01`) should in principle be able to talk via ADS at this point but will need setting up in the respective configs. 
 - A `MTRCTRL` number will need to be given - this is the controller number as shown on the table of motors.
 - `Beckhoff_plc_code` should be specified as a macro, this may be removed in future releases, more information on this is available below however it should be set to `1` for instruments running the latest code. 
 - Number of axes (`NUM_AXES` macro)
