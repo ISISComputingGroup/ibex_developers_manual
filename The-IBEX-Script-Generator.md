@@ -20,7 +20,7 @@ To prevent duplication, the GUI perspective depends wholly on the standalone app
 To build and run the app through eclipse, the script generator product is found in `base\uk.ac.stfc.isis.scriptgenerator.client.product`. The instructions for setting up eclipse and loading the target platform (necessary for the script generator) are found in the instructions for the [main IBEX GUI setup](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Building-the-GUI)
 
 ### Adding the perspective into the client
-Currently the script generator perspective is not shown or selectable in the main IBEX GUI. It can be readded by selecting `Preferences > Select Visible Perspectives` from the IBEX Main Menu.
+Currently the script generator perspective is not shown or selectable in the main IBEX GUI. It can be re-added by selecting `Preferences > Select Visible Perspectives` from the IBEX Main Menu.
 
 ## Maven build
 To build the standalone app through maven run `build\build_script_generator.bat`
