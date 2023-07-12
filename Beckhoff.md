@@ -36,6 +36,12 @@ see [Beckhoff Commissioning](Beckhoff-Commissioning)
 
 The config area contains a directory used for storing `.cmd` files for use with the `TC` IOC (in the same way as a galil or other motor controller). On an instrument it should look like this: `\instrument\settings\config\<instname>\configurations\twincat\`. 
 
+### Quirks
+
+- The Beckhoff uses whether it has been homed to set `ATHM` in the motor record, rather than just using the raw datum switch. 
+- The motor record sets `UEIP` (use encoder if present) to false to avoid using the encoder resolution to scale values. We have no control over whether to use or not use an encoder with a Beckhoff, the internal code handles it
+- Axes marked with `(V)` are virtual axes. 
+
 ## Updating
 
 Some discussion has been had on how we handle updates to the Beckhoff PLC code and `twincatMotor` etc. this is documented [here](https://stfc365.sharepoint.com/:w:/s/ISISMechatronics/EXnBTNmcqqVCkIXXxjSvYdwBD3ZihXKDE0pZpiErGnkJ1g?e=4%3AWjCJxN&at=9&CID=0DF00AB8-D565-4B81-9AA2-C0DD226434CA&wdLOR=c76050FF1-1FF0-4AC8-A94C-0127E17DD337)
