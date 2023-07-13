@@ -15,3 +15,5 @@
 * [Oerlikon Centre-One](OERCONE)
 
 * [PACE 5000/6000](PACE5000)
+
+* [MEASM905](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/MEASM905-Pressure-Transducer)
