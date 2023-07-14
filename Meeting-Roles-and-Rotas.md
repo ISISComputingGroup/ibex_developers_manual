@@ -32,9 +32,9 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
  | Standup | Week Commencing | x for Done |
  |--- | --- | --- |
  |NR | 10/07/2023 |X |
- |CMS | 17/07/2023 | |
+ |DK | 17/07/2023 | |
  |KB | 24/07/2023 | |
- |DK | 31/07/2023 | |
+ |CMS| 31/07/2023 | |
  |LC | 07/08/2023 | |
  |TL | 14/08/2023 | |
  |JH | 21/08/2023 | |
