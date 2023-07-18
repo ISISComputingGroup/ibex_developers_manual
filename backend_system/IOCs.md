@@ -80,6 +80,13 @@ If you're not creating a StreamDevice IOC or you you would like to know how an I
 * [Creating a State Machine](Creating-a-State-Machine-(Sequencer))
 * [Limited range on PV](PV-with-a-limited-range)
 
+# Remake and run IOC
+
+When modifying and testing an IOC it helps if you chain the commands to make and run the IOC like below:
+```
+cd C:\Instrument\Apps\EPICS\support\<IOC name>\master && make clean uninstall && make && cd C:\Instrument\Apps\EPICS\ioc\master\<IOC name>\ && make clean uninstall && make && cd C:\Instrument\Apps\EPICS\ioc\master\<IOC name>\iocBoot\ioc<name>\ && runioc.bat
+```
+
 # Debugging IOCs
 
 Debug builds of IOCs are built in jenkins and can be deployed to instruments, see [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Deploying-a-DEBUG-build-IOC).
