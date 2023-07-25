@@ -21,6 +21,7 @@ Development work
 * Push changes using `git push` (if this is the first time the branch is being pushed, use `git push -u origin [branch-name]`)
 * Go to GitHub and create the pull request, don't forget a test plan
 * Bored of being asked for your username and password? Read [this](https://help.github.com/articles/caching-your-github-password-in-git/).
+* If you are creating a new submodule for EPICS, find more info here: [Creating New Submodules in EPICS](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Creating-New-Submodules-in-EPICS)
 
 Reviewing work for the GUI
 ----------------------------------------------------------------------------------
