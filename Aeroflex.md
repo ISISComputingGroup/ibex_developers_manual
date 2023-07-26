@@ -1,5 +1,8 @@
 Previous logic of the ioc had this logic for sending mode params:
 
+This logic is probably in connection with changing from PULSE to none PULSE versions of the MODE setpoint. The calculation part
+takes care of switching to the right mode with respect to the specified order of modes in the mbbo in record MODE:SP
+
 ### Model 2023A
 
 In db file at `aeroflexSup\aeroflex_2023A.db`
