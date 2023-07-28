@@ -406,11 +406,13 @@ The isis cycle is contained in a local file `setcycle.cmd` on the NDX that is re
 
 to reconnect the o: drive, log onto the NDX and just open it in windows explorer, that should reconnect using cached credentials. Then check that `o:\setcycle.cmd` has the correct cycle number.
 
-### run stuck in ending
+### run stuck in ending when using period card
 
 Check icp log file. If it says "waiting for period card" and beam is off, then the issue is that a default end waits to complete the current period cycles, which if beam is off is not going to happen (no trigger signal for frames). Solution is to type `g.end(immediate=True)` in a python console. 
 
-## data files not being created
+If the instrument is not using hardware periods via a period card, then the `c:\data` disk area may be full. If it is running in event mode it will get stuck in ending and be be unable to write a data file if it has already filled the disk with raw events. Check nagios and/or the computer. See below.
+ 
+## run stuck in ending or data files not being created
 
 If data files are not appearing on the archive or in the instrument journal viewer, it may be the end process has not completed. After an END is issued remaining data is read from the DAE and then a separate thread in the ISISICP process is spawned to complete the end process. To avoid too many of these threads running at once, they all share an internal semaphore. If somethings gets stuck in the ending process, then runs will not complete. You can see this by there being lots of `current.run*`, `data.run*`, and `events*.tmp` files in `c:\data` on the NDX instrument. Normally you should only see files for the current run number and maybe the previous run number if the END is still happening in the background. If you see many more than this it would indicate a problem. 
 
