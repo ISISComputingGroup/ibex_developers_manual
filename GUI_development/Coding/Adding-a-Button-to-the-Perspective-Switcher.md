@@ -27,7 +27,7 @@ Note: Generate an activator is unchecked as generally we do not need one for UI 
 
 Now the plug-in has been created: 
 
-* Add a source package via File->New->Package
+* Add a source package via File->New->Other->Java->Package
 
 * Set the source folder to the path of the source folder in the newly created plug-in
 
