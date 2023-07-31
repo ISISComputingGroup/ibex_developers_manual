@@ -67,7 +67,7 @@ The errors should now have disappeared, but there are a few more things to do:
 
 With the Perspective now in place we need to add a View:
 
-* Add a new class via File->New->Class
+* Add a new class via File->New->Other->Java->Class
 
 * Make sure the Package is the same as one created earlier
 
