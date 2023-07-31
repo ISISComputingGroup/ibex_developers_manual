@@ -4,7 +4,7 @@
 
 ### Creating a plug-in
 
-* In Eclipse, add a new UI plug-in via File->New->Plug-in Project
+* In Eclipse, add a new UI plug-in via File->New->Other->Plug-in Development->Plug-in Project
 
 * Give it a name, for example: uk.ac.stfc.isis.ibex.ui.myperspective
 
