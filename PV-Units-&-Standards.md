@@ -5,6 +5,15 @@ DB Checker
 
 The DBChecker Python script is a helper file that checks a number of things are true about the PVs used within the project and that the correct syntax is used in db files.
 
+### Usage
+
+From an EPICS terminal in `C:\Instrument\Apps\EPICS\ISIS\DbChecker\master`, run:
+```
+%python3% check_db_file.py -d <directory to check> -r
+```
+
+### Capabilities
+
 Current pv error checks are:
 
 - PVs that are labelled as interesting and have type longin, longout, ai or ao must contain a unit field
@@ -90,7 +99,3 @@ The project currently contains the following base units:
 * step or stp for short
 * T
 * V
-
-## Usage
-
-To use the DB checker script, see [IOC Finishing Touches](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/IOC-Finishing-Touches#6-compliance-with-dbunitchecker).
