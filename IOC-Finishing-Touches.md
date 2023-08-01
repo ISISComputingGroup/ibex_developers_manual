@@ -62,12 +62,7 @@ All PVs should have if appropriate:
 
 ## 7. Compliance with DBChecker
 
-The build in Jenkins will fail if the rules of the [DBChecker](PV-Units-&-Standards) script are not satisfied. You might as well check them beforehand to save yourself time later. From an epics terminal: 
-```
-cd C:\Instrument\Apps\EPICS\ISIS\DbChecker\master
-%python3% check_db_file.py -d <directory to check> -r
-```
-To check it will not fail the build.
+The build in Jenkins will fail if the rules of the [DBChecker](PV-Units-&-Standards) script are not satisfied. You might as well check them beforehand to save yourself time later. See linked page for additional information & instructions.
 
 ## 8. Macros and Details
 
