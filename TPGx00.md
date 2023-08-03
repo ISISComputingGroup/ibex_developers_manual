@@ -77,7 +77,7 @@ At the moment, there is some level of protection for using invalid commands betw
 
 > These issues seem to have been resolved by correcting the communication protocol.
 > During transmission when sending the `<ENQ>` ASCII code (hex `05`) it should not be appended by
-> the terminators `<CR><LF>` in contrast to the first command. (See [Communication Protocol](#Communication-Protocol))
+> the terminators `<CR><LF>` in contrast to the first command. (See [Communication Protocol](#communication-protocol))
 
 ### TPG500
 
