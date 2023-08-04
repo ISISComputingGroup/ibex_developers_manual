@@ -29,7 +29,7 @@ Pfeiffer has their own 'Ethernet Configuration Tool' software which can be used 
 First send a command (e.g. ask for the pressure) then the device will return ACK.
 Then send ENQ to get the actual value.
 
-An example: (S: Send, R: Recieve)
+An example: (S: Send, R: Receive)
 1. S: `<Command><CR><LF>`
 2. R: `<ACK><CR><LF>`
 3. S: `<ENQ>`                  
