@@ -146,7 +146,15 @@ To get the operation that you require, add the flag value in decimal. For exampl
 
 For debugging purposes it is advisable to add the verbose/logging flag of value `1` to your operation.
 
-### Example 
+### Examples
+A simple use case might be to only run certain sections of `st.cmd` for a serial port (`PORT` macro defined) and others only if `IPADDR` macro is defined. So we would use lines like:
+```
+stringiftest("SERIAL", "$(PORT=)")
+stringiftest("IPADDR", "$(IPADDR=)")
+$(IFIPADDR) drvAsynIPPortConfigure("$(DEVICE)", "$(IPADDR):12345")
+$(IFSERIAL) drvAsynSerialPortConfigure("$(DEVICE)", "$(PORT)", 0, 1, 0, 0)
+```
+
 From the DKFPS IOC:
 ```
 stringiftest("POLAR" "$(POLARITY="BIPOLAR")" 5 "BIPOLAR")
