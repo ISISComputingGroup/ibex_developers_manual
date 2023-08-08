@@ -37,6 +37,34 @@ An example: (S: Send, R: Receive)
 
 > !!! Important that the `<ENQ>` is not terminated with `<CR><LF>` which would cause the device to report syntax error.
 
+
+## Talking to a real device or the emulator
+
+
+### Talking to a real device
+
+TPG300
+
+1. Connect it to the moxa and identify the COM port it is linked to through `NPort Administrator`.
+2. Start HTerm and connect to the right COM port with the following settings: \
+Baud: 9600, Data: 8, Stop: 1, Parity: None
+3. When sending the first command use ASC and CR-LF as `Send on enter`
+4. You should recieve an ACK (acknowledgement).
+5. Now send the HEX code 05 ENQ command ! Make sure you change the type to HEX and the"Send on enter" to None.
+6. The data returned should be what you requested in the first command.
+
+TPG500
+
+You can use "TCP Terminal" to connect to the IP address of the TPG500 with the port being 8000. Then follow the instructions above but use TCP Terminal instead of HTerm. There won't be COM port settings as the commiunication is done through TCP now.
+
+
+### Talking to an emulator
+
+See [this wiki page](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Emulating-Devices) on how to start an emulator. Or alternatively start the tests with the `-a` flag to run the emulator and IOC.
+
+Once it's running you can read off the IP address and PORT from the lewis start command. Use those in the TCP Term to send instructions directly to the emulator.
+
+
 ## Differences between the 300 and 500
 The TPG500 is the slightly newer version of the TPG300; the main differences between these two devices is in their communication protocols. See the manuals for what these properties are used for. 
 
