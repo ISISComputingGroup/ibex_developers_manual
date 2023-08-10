@@ -116,7 +116,7 @@ git clone http://spudulike@control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/ins
 ```
 cd <NDXXXX>/
 git checkout -b <NDXXXX>
-rename "C:\Instrument\Settings\config\NDXXXX\Python\<init_inst_name>.py"
+rename "C:\Instrument\Settings\config\NDXXXX\Python\init_**inst_name**.py" to "C:\Instrument\Settings\config\NDXXXX\Python\init_**NDXXXX**.py"
 git add Python/<init_inst_name>.py
 git rm Python/<init_inst_name>.py
 git commit -m"create initial python"
