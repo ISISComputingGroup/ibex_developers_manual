@@ -116,8 +116,8 @@ git clone http://spudulike@control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/ins
 ```
 cd <NDXXXX>/
 git checkout -b <NDXXXX>
-rename "C:\Instrument\Settings\config\NDXXXX\Python\init_inst_name.py" to "C:\Instrument\Settings\config\NDXXXX\Python\init_NDXXXX.py"
-git add Python/init_NDXXXX.py
+rename "C:\Instrument\Settings\config\NDXXXX\Python\init_inst_name.py" to "C:\Instrument\Settings\config\NDXXXX\Python\init_ndxxxx.py" (note lowercase on init_ndxxxx.py)
+git add Python/init_ndxxxx.py
 git rm Python/init_inst_name.py
 git commit -m "create initial python"
 git push --set-upstream origin <NDXXXX>
@@ -174,18 +174,20 @@ https://visualstudio.microsoft.com/downloads/
 
 And try running `isisicp.exe /RegServer` again.
 
-### Getting DAE ready to start a run
+### Getting DAE ready to start a run (so you are in SETUP rather than processing)
 
-This can be done later:
+You need to create a configuration so ISISDAE-IOC-01 will start:
+
 - run `start_ibex_server`
 - start the GUI
-- go into experiment setup in DAE view and
+- configuration -> edit current configuration -> give it a name and save as
+- now go into experiment setup in DAE view and
 - - in time channels put  from 10.0 to 19900.0 step 10.0 with DT=C mode just for time regime 1
 - - in data acquisition use the dropdown for wiring, detector and spectra to choose a file with the name "ibextest" in it e.g. wiring_ibextest.dat for wiring
 - - Press the Apply button
 - Now go back to main DAE view and press the begin button - you should get the instrument going into RUNNING
 - Press Abort and you should go back into SETUP
-- You can also open a python scripting window and use  g.begin() and g.abort() to do the same thing
+- You can also open a python scripting window (scripting on left) and use  g.begin() and g.abort() to do the same thing
  
 ## Utilities
 
@@ -209,8 +211,9 @@ To add a shortcut to open an EPICS terminal using the context menu in Windows' f
 
 If you are supporting instruments it may be useful to download a VNC client. We have not settled on one that we all use but we have used:
 
- - tighVNC (just the client) which is available [here](http://www.tightvnc.com/)
  - VNC Viewer (just the client) which is available [here](https://www.realvnc.com/en/connect/download/viewer/)
+
+(we have used tightVNC (just the client) in past which is available [here](http://www.tightvnc.com/))
 
 ## NI DAQ
 
@@ -221,4 +224,4 @@ and download the latest DAQMX drivers. When installing, ensure you check the box
 
 ## Beckhoff XAR
 
-If you will be developing or reviewing code involved with Beckhoff PLCs you will need to install TwinCAT XAR. This can be found on the public share in `installers`. More information for simulating Beckhoffs can be found [here](Beckhoff-testing)
+If you will be developing or reviewing code involved with Beckhoff PLCs you will need to install TwinCAT XAR. This can be found on the public share in `installers`. More information for simulating Beckhoffs can be found [here](Beckhoff-testing). Note that XAR is the runtime that but for testing you will need the full setup which is the installer on the share 
