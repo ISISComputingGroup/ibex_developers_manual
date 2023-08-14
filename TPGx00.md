@@ -50,13 +50,13 @@ TPG300
 2. Start HTerm and connect to the right COM port with the following settings: \
 Baud: 9600, Data: 8, Stop: 1, Parity: None
 3. When sending the first command use ASC and CR-LF as `Send on enter`
-4. You should recieve an ACK (acknowledgement).
+4. You should receive an ACK (acknowledgement).
 5. Now send the HEX code 05 ENQ command ! Make sure you change the type to HEX and the"Send on enter" to None.
 6. The data returned should be what you requested in the first command.
 
 TPG500
 
-You can use "TCP Terminal" to connect to the IP address of the TPG500 with the port being 8000. Then follow the instructions above but use TCP Terminal instead of HTerm. There won't be COM port settings as the commiunication is done through TCP now.
+You can use "TCP Terminal" to connect to the IP address of the TPG500 with the port being 8000. Then follow the instructions above but use TCP Terminal instead of HTerm. There won't be COM port settings as the communication is done through TCP now.
 
 
 ### Talking to an emulator
