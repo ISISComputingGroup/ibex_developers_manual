@@ -21,8 +21,8 @@
 - It all works if amount of Project and BAU added stays consistent; if not, the point average will be going up and down. 
 Based on IBEX+; It makes the most sense to put that all on the board. If you have an idea of how much work there is and what you’re doing you can better estimate. 
 - The main idea of the burndown chart is to help estimating and current sprint work. 
-- What is exactly included in “+” part of “IBEX+”? We might not be pointing stuff which isn’t IBEX and also isn’t “+”, but should that count on the burndown chart. General scope definition of "IBEX+" explicitly might be necessary
-- IBEX work could be more than the “50%” discussed in previous planning, if it’s work done that isn’t part of the migration project/process
+- What is exactly included in “+” part of “IBEX+”? We might not be pointing stuff which is not IBEX and also is not “+”, but should that count on the burndown chart. General scope definition of "IBEX+" explicitly might be necessary
+- IBEX work could be more than the “50%” discussed in previous planning, if it’s work done that is not part of the migration project/process
 
 ### Start moving New grads into support stuff? 
 - Usually this is done after a year and a bit after, but we are somewhat short staffed, so getting an idea for the process generally; i.e. going down to the halls, etc. with those who are on support for ES and DM might be good to start soon.
@@ -30,7 +30,7 @@ Based on IBEX+; It makes the most sense to put that all on the board. If you hav
 ### IBEX training course
 - For New Starters vs. for New Scientists/Users
 - Learning things such as, "How do I add a block in IBEX?" and other stuff would help out when doing support. 
-- Might be a good idea to run a training course for us, wouldn’t need to set up external machines. Are we running a “proper” IBEX training course soon? - - Since we are migrating new instruments, e.g. Muon instruments are migrating and such. There might be new scientists who have started on new instruments that would benefit from this. 
+- Might be a good idea to run a training course for us, would not need to set up external machines. Are we running a “proper” IBEX training course soon? - - Since we are migrating new instruments, e.g. Muon instruments are migrating and such. There might be new scientists who have started on new instruments that would benefit from this. 
 - Need to send out an email to check interest on external training. Need NDXDEMO/NDXTEST if doing for Scientists/Users 
 - We can make NDXTEST relatively easily for this, and we have the space and capacity to do this. 
 - Training course sounds like a good idea; if we just run it for developers we can just do it in G.06 on our own machines, once we have all the new starters, the week of the 20th of August. After that we can sort out if we’re doing it for scientists as well
