@@ -10,8 +10,8 @@ See https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Things-to-
 ## Install Perl
 Download and install [Strawberry Perl](http://strawberryperl.com/)
 
-## Install WiX toolset 
-Download and install latest stable version from http://wixtoolset.org/releases/
+## Install WiX toolset (We use version 3 and not the latest one)
+Download and install latest stable version from https://wixtoolset.org/docs/wix3/
 
 ## Install Visual Studio
 
