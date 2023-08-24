@@ -29,7 +29,7 @@ If you are on a newer version of Visual Studio then you will need to upgrade var
 
 See https://github.com/ISISComputingGroup/IBEX/issues/5173 for the changes that were necessary to add support for Visual Studio 2019.
 
-## Setup the environment
+## Setup the environment (Only if you are going for a later version)
 
 The visual studio compiler environment variables are set up from `...\EPICS\base\master\startup\windows.bat` this calls into the visual studio variable set up. Add your version to this.
 
