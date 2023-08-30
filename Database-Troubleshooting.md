@@ -22,6 +22,8 @@ Run the script in:
 <public share>\ibex_utils\installation_and_upgrade\truncate_database.bat
 ```
 
+Note that you may need the full name of the public share root.
+
 If you wish to do this manually:
 
 1. First create an SQL dump of the database:
