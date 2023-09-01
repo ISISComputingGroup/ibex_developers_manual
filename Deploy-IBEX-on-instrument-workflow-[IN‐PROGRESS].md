@@ -79,7 +79,7 @@ some instruments it might want instead if not default on cclrc.ac.uk
 | Different but no open PR | Ask team member whether okay to leave or if it needs to be copied to new install and a PR (and potentially a ticket) to be made |
 
 
-Backup and truncation can be done separately from deploy, for example if instrument in cycle:
+## Backup and truncation can be done separately from deploy, for example if instrument in cycle:
 | Config step | Instruction (y/n) | Comment |
 | ----------- | ----------------- | ------- |
 |  Stop ibex server | y | N/A |
