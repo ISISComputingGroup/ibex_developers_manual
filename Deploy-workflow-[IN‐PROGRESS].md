@@ -8,9 +8,12 @@ some instruments it might want instead if not default on cclrc.ac.uk
 
 ## Steps
 
+### Pre-script
 1. Remote desktop in:NDXinstrumentName 
 2. Start ibex sever so you can take a 'picture' of some configurations.
 3. Run deploy script in the tools' dir, instrument_deploy.bat, double click.
+
+### During script
 
 | Config step | Instruction (y/n) | Comment |
 | ----------- | ----------------- | ------- |
@@ -43,33 +46,41 @@ some instruments it might want instead if not default on cclrc.ac.uk
 | Client release test | y | N/A |
 | Check version | y | Navigate to Help - > About |
 | Confirm genie python works | y | In scripting tab run `g.cshow()` correctly and run as well in `C:\Instrument\Apps\Python 3\genie_python.bat` |
-| Confirm config is consistent | y | |
-| Check web links work | y | |
-| Switch instrument to one correct one without NDX prefix | y| |
+| Confirm config is consistent | y | N/A |
+| Check web links work | y | N/A |
+| Switch instrument to one correct one without NDX prefix | y | N/A |
 | Verify the server is up | y | May need to refresh the PVs |
-| Client release tests | n | | 
-| Server release tests| y | | 
+| Client release tests | n | N/A | 
+| Server release tests | y | N/A | 
 | Confirm blocks logging as expected | y | Navigate to `C:\Data\[RUN NUMBER]` | 
 | Confirm correct branch | y | Open git bash and cd to EPICS | 
-| | | | 
-| | | | 
-| | | | 
-| | | | 
-| | | | 
-| | | | 
+| Check web dashboard | y | N/A | 
+| Run config checker | y | N/A | 
+| Save motor params if applicable | y/n| N/A | 
+| Save block params | y | N/A | 
+| Set username & password | n | N/A | 
+| Set autostart script | n | N/A | 
+| Inform scientists | n | You can if you want but generally done in release messages |
 
 ## Reapply Hotfixes
 
-1. Go into git bash
-2. Outcome: Git diff between new ibex file and data/old file if same then someone merged it with new deploy so all okay
-3. Outcome: Git diff is different but there looks to be an open merge then check that the open merge file (GitHub URL and use curl) to compare with new, matches the old file, and thus merge the pull request. Copy the file over from old to new ibex, may need to remove read permissions from the db directory, if permission denied.
-4. Outcome: If its not in new deploy already and there's no open pull request for it that got forgotten to be merged, then ask a team member whether the hotfix is still needed or whether it got patched by something else somewhere etc.
-    1. If it is still needed then copy over the file to the normal ibex install and make a PR from a new branch, which may need to get a ticket created if it's a large difference or the PR might be enough and just message somewhere for someone to approve it.
+1. Open git bash.
+2. For each file you noted in the pre-script hotfixes instruction
+    1. Run `git diff` between the file in the NEW EPICS dir and the `C:\Data\Old\` dir
+    2. Use the outcome and response table to evaluate the file
+
+| Outcome for each file of note | Response | 
+| ----------- | ----------------- | 
+| Returns nothing | Must be part of release so nothing to do | 
+| Different but you have checked the repo and found a forgotten pull request that matches (you `curl [URL]` the url of the raw file in the PR and run git diff between old and this PR file | Merge the pull request. Copy the file over from old to new ibex, may need to remove read permissions from the db directory, if permission denied. Update submodules. | 
+| Different but no open PR | Ask team member whether okay to leave or if it needs to be copied to new install and a PR (and potentially a ticket) to be made |
 
 
 Backup and truncation can be done separately from deploy, for example if instrument in cycle:
-1. Stop ibex server
-2. In `\\isis\shares\ISIS_Experiment_Controls_Public\ibex_utils\installation_and_upgrade\truncate_database.db` just double click. Enter database admin password. If you have Keeper type, if not, ask someone. It'll do backup first.
-3. Say yes to truncated, enter admin password.
+| Config step | Instruction (y/n) | Comment |
+| ----------- | ----------------- | ------- |
+|  Stop ibex server | y | N/A |
+| Run `truncate_database.db` | y | In `\\isis\shares\ISIS_Experiment_Controls_Public\ibex_utils\installation_and_upgrade\` |
+| Truncate db | y | The previous step was just the backup |
 
 
