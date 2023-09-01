@@ -10,7 +10,10 @@ some instruments it might want instead if not default on cclrc.ac.uk
 
 ### Pre-script
 1. Remote desktop in:NDXinstrumentName 
-2. Start ibex sever so you can take a 'picture' of some configurations.
+2. Open git-bash
+    1. Run `git status`
+    2. Run `git diff`
+    3. Ask senior team member if any of the deleted/new/modified files are of note and record the ones that are, to deal with later.
 3. Run deploy script in the tools' dir, instrument_deploy.bat, double click.
 
 ### During script
@@ -30,10 +33,10 @@ some instruments it might want instead if not default on cclrc.ac.uk
 | Truncate database | y | N/A |
 | Start ibex server install | y | N/A |
 | Keep old Galil driver | y/n | you can check at `ioc\master\GALIL\GALIL_OLD.txt` |
-| Update ICP | y | |
+| Update ICP | y | N/A |
 | Upgrade ICP found in LabView | y | Needs admin passowrd |
 | Install genie_python | y | N/A |
-| Install MySQL | y | |
+| Install MySQL | y | N/A |
 | Install ibex client with built-in python | y | N/A |
 | Update instrument config | y | N/A |
 | Automatic config merge | y | N/A |
@@ -72,7 +75,7 @@ some instruments it might want instead if not default on cclrc.ac.uk
 | Outcome for each file of note | Response | 
 | ----------- | ----------------- | 
 | Returns nothing | Must be part of release so nothing to do | 
-| Different but you have checked the repo and found a forgotten pull request that matches (you `curl [URL]` the url of the raw file in the PR and run git diff between old and this PR file | Merge the pull request. Copy the file over from old to new ibex, may need to remove read permissions from the db directory, if permission denied. Update submodules. | 
+| Different but you have checked the repo and found a forgotten pull request that matches (you `curl [URL]` the url of the raw file in the PR and run git diff between old and this PR file) | Merge the pull request. Copy the file over from old to new ibex, may need to remove read permissions from the db directory, if permission denied. Update submodules. | 
 | Different but no open PR | Ask team member whether okay to leave or if it needs to be copied to new install and a PR (and potentially a ticket) to be made |
 
 
