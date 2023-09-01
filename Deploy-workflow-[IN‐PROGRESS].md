@@ -75,7 +75,7 @@ some instruments it might want instead if not default on cclrc.ac.uk
 | Outcome for each file of note | Response | 
 | ----------- | ----------------- | 
 | Returns nothing | Must be part of release so nothing to do | 
-| Different but you have checked the repo and found a forgotten pull request that matches (you `curl [URL]` the url of the raw file in the PR and run git diff between old and this PR file) | Merge the pull request. Copy the file over from old to new ibex, may need to remove read permissions from the db directory, if permission denied. Update submodules. | 
+| Different but you have checked the repo and found a forgotten pull request that matches (you `curl [URL]` the url of the raw file in the PR and run git diff between old and this PR file) | Merge the pull request. Update submodule (pull latest with merge completed), go to EPICS dir and git add .and push this version of EPICS with the updated submodule version | 
 | Different but no open PR | Ask team member whether okay to leave or if it needs to be copied to new install and a PR (and potentially a ticket) to be made |
 
 
