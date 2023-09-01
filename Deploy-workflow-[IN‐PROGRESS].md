@@ -14,7 +14,7 @@ some instruments it might want instead if not default on cclrc.ac.uk
 
 | Config step | Instruction (y/n) | Comment |
 | ----------- | ----------------- | ------- |
-| Confirm new version | y if correct | |
+| Confirm new version | y if correct | N/A |
 | Record LabView VIs | y | Take screenshots of blocks and relevant information such as motors in some cases. (for future reference) |
 | Save motor parameters | y | Saves into csv file at `C:\Instrument\var\deployment_pv_backups\motors\` |
 | Save block params | y | Saves into csv file at `C:\Instrument\var\deployment_pv_backups\` |
@@ -22,34 +22,41 @@ some instruments it might want instead if not default on cclrc.ac.uk
 | Update Git | y | It will need an admin account password for the instrument |
 | Update Java | y | This will be manual: go to `\\isis\shares\ISIS_Experiment_Controls_Public\third_party_installers\` and install the latest version of Java. You can find some more info here: https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Upgrade-Java |
 | Backup dirs | y | This might take a long time. Close any window that have it open. The dir. Find size of epics i apps dir and then find size of backup in data and then old to find out its stage |
-| Verfy backup | y | |
-| Backup database | y | |
-| Truncate database | y | |
-| Start ibex server install | y | |
+| Verfy backup | y | N/A |
+| Backup database | y | N/A |
+| Truncate database | y | N/A |
+| Start ibex server install | y | N/A |
 | Keep old Galil driver | y/n | you can check at `ioc\master\GALIL\GALIL_OLD.txt` |
 | Update ICP | y | |
 | Upgrade ICP found in LabView | y | Needs admin passowrd |
-| Install genie_python | y | |
+| Install genie_python | y | N/A |
 | Install MySQL | y | |
-| Install ibex client with built-in python | y | |
-| Update instrument config | y | |
-| Automatic config merge | y | |
-| Update calibration repo | y | |
-| Apply release notes | y | |
-| Update release notes | y | |
+| Install ibex client with built-in python | y | N/A |
+| Update instrument config | y | N/A |
+| Automatic config merge | y | N/A |
+| Update calibration repo | y | N/A |
+| Apply release notes | y | N/A |
+| Update release notes | y | N/A |
 | Reapply hotfixes | yes if any to reapply | [See "Reapply Hotfixes" section](#reapply-hotfixes) |
-| Start ibex GUI | y | |
-| Restart vis | yes | |
-| Client release test | y | |
-
-33. Check version yes, go to help and about section in ibex
-34. Confirm genie python works, go into scripting and run `g.cshow()` it'll output some stuff that should look correct
-35. Confirm this also works in genie_python.bat, in `C:\Instrument\Apps\Python 3\`, run `g.cshow()` in that too
-36. Confirm config is consistent with the pictures you took at the start say yes if ok
-37. Check all web links work correctly
-38. If instrument has NDX prefix, switch instrument to non-NDX prefix version. so set to no by which instrument
-39. Verify the server is up, may need to refresh the PVS.
-
+| Start ibex GUI | y | N/A |
+| Restart vis | yes | N/A |
+| Client release test | y | N/A |
+| Check version | y | Navigate to Help - > About |
+| Confirm genie python works | y | In scripting tab run `g.cshow()` correctly and run as well in `C:\Instrument\Apps\Python 3\genie_python.bat` |
+| Confirm config is consistent | y | |
+| Check web links work | y | |
+| Switch instrument to one correct one without NDX prefix | y| |
+| Verify the server is up | y | May need to refresh the PVs |
+| Client release tests | n | | 
+| Server release tests| y | | 
+| Confirm blocks logging as expected | y | Navigate to `C:\Data\[RUN NUMBER]` | 
+| Confirm correct branch | y | Open git bash and cd to EPICS | 
+| | | | 
+| | | | 
+| | | | 
+| | | | 
+| | | | 
+| | | | 
 
 ## Reapply Hotfixes
 
