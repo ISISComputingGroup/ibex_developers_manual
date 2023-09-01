@@ -11,9 +11,10 @@ some instruments it might want instead if not default on cclrc.ac.uk
 ### Pre-script
 1. Remote desktop in:NDXinstrumentName 
 2. Open git-bash
-    1. Run `git status`
-    2. Run `git diff`
-    3. Ask senior team member if any of the deleted/new/modified files are of note and record the ones that are, to deal with later.
+    1. cd into `C:\Instrument\Apps\EPICS`
+    2. Run `git status`
+    3. Run `git diff`
+    4. Ask senior team member if any of the deleted/new/modified files are of note and record the ones that are, to deal with later.
 3. Run deploy script in the tools' dir, instrument_deploy.bat, double click.
 
 ### During script
