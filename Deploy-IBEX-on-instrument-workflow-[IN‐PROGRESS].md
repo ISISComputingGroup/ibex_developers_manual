@@ -18,7 +18,7 @@ some instruments it might want instead if not default on cclrc.ac.uk
 
 ### During script
 
-| Config step | Instruction (y/n) | Comment |
+| Config step (in order of script) | Instruction (y/n) | Comment |
 | ----------- | ----------------- | ------- |
 | Confirm new version | y if correct | N/A |
 | Record LabView VIs | y | Take screenshots of blocks and relevant information such as motors in some cases. (for future reference) |
