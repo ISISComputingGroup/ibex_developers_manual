@@ -37,7 +37,7 @@ some instruments it might want instead if not default on cclrc.ac.uk
 | Update calibration repo | y | |
 | Apply release notes | y | |
 | Update release notes | y | |
-| Reapply hotfixes | yes if any to reapply | <ol><li>Go into git bash</li><li>Outcome: Git diff between new ibex file and data/old file if same then someone merged it with new deploy so all okay</li><li>Outcome: Git diff is different but there looks to be an open merge then check that the open merge file (GitHub URL and use curl) to compare with new, matches the old file, and thus merge the pull request. Copy the file over from old to new ibex, may need to remove read permissions from the db directory, if permission denied.</li><li>Outcome: If its not in new deploy already and there's no open pull request for it that got forgotten to be merged, then ask a team member whether the hotfix is still needed or whether it got patched by something else somewhere etc.</li><ol><li>If it is still needed then copy over the file to the normal ibex install and make a PR from a new branch, which may need to get a ticket created if it's a large difference or the PR might be enough and just message somewhere for someone to approve it.</li></ol></ol> |
+| Reapply hotfixes | yes if any to reapply | [See "Reapply Hotfixes" section](#reapply-hotfixes) |
 | Start ibex GUI | y | |
 | Restart vis | yes | |
 | Client release test | y | |
@@ -49,6 +49,16 @@ some instruments it might want instead if not default on cclrc.ac.uk
 37. Check all web links work correctly
 38. If instrument has NDX prefix, switch instrument to non-NDX prefix version. so set to no by which instrument
 39. Verify the server is up, may need to refresh the PVS.
+
+
+## Reapply Hotfixes
+
+1. Go into git bash
+2. Outcome: Git diff between new ibex file and data/old file if same then someone merged it with new deploy so all okay
+3. Outcome: Git diff is different but there looks to be an open merge then check that the open merge file (GitHub URL and use curl) to compare with new, matches the old file, and thus merge the pull request. Copy the file over from old to new ibex, may need to remove read permissions from the db directory, if permission denied.
+4. Outcome: If its not in new deploy already and there's no open pull request for it that got forgotten to be merged, then ask a team member whether the hotfix is still needed or whether it got patched by something else somewhere etc.
+    1. If it is still needed then copy over the file to the normal ibex install and make a PR from a new branch, which may need to get a ticket created if it's a large difference or the PR might be enough and just message somewhere for someone to approve it.
+
 
 Backup and truncation can be done separately from deploy, for example if instrument in cycle:
 1. Stop ibex server
