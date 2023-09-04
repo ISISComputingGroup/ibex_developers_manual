@@ -1,4 +1,4 @@
-> [Wiki](Home) > [Deployment](Deployment) > [Deploy to Instrument Workflow](Deploy-to-instrument-workflow)
+> [Wiki](Home) > [Deployment](Deployment) > [Deploy script workflow](Deploy-script-workflow)
 
 # Deploy workflow
 
