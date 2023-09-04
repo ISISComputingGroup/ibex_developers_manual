@@ -180,9 +180,9 @@ You need to create a configuration so ISISDAE-IOC-01 will start:
 
 - run `start_ibex_server`
 - start the GUI
-- configuration -> edit current configuration -> give it a name and save as
+- configuration -> edit current configuration -> give it a name and save as. It should now prompt you to switch to the configuration, after you do this the `Config:` line on the bottom of the gui screen should show this name and the instrument should be in `SETUP`
 - now go into experiment setup in DAE view and
-- - in time channels put  from 10.0 to 19900.0 step 10.0 with DT=C mode just for time regime 1
+- - in time channels put  from 10.0 to 19900.0 step 10.0 with DT=C mode just for time regime 1. If there are no boxes to fill in, this means the configuration has not switched to the one you saved above and the ISISDAE-IOC-01 process is not running
 - - in data acquisition use the dropdown for wiring, detector and spectra to choose a file with the name "ibextest" in it e.g. wiring_ibextest.dat for wiring
 - - Press the Apply button
 - Now go back to main DAE view and press the begin button - you should get the instrument going into RUNNING
