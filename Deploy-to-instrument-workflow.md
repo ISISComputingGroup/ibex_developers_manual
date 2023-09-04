@@ -1,3 +1,5 @@
+> [Wiki](Home) > [Deployment](Deployment) > [Deploy to Instrument Workflow](Deploy-to-instrument-workflow)
+
 # Deploy workflow
 
 ## Deploy script location
