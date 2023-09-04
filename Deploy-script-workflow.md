@@ -1,7 +1,5 @@
 > [Wiki](Home) > [Deployment](Deployment) > [Deploy script workflow](Deploy-script-workflow)
 
-# Deploy workflow
-
 ## Deploy script location
 
 Scripts needed are in: `\\isis\shares\ISIS_Experiment_Controls_Public\ibex_utils\installation_and_upgrade`
