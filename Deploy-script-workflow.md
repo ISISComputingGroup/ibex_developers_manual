@@ -34,7 +34,7 @@ some instruments it might want instead if not default on cclrc.ac.uk
 | Backup database | y | N/A |
 | Truncate database | y | N/A |
 | Start ibex server install | y | N/A |
-| Keep old Galil driver | y/n | you can check at `ioc\master\GALIL\GALIL_OLD.txt` |
+| Keep old Galil driver | y/n | If you have a the file `ioc\master\GALIL\GALIL_OLD.txt` then YES if not ask a team member |
 | Update ICP | y | N/A |
 | Upgrade ICP found in LabView | y | Needs admin passowrd |
 | Install genie_python | y | N/A |
