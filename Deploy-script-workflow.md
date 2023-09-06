@@ -9,7 +9,7 @@ some instruments it might want instead if not default on cclrc.ac.uk
 ## Steps
 
 ### Pre-script
-1. Remote desktop "in:NDXinstrumentName"
+1. Remote desktop into the instrument
 2. Open git-bash
     1. cd into `C:\Instrument\Apps\EPICS`
     2. Run `git status`
