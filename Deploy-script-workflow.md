@@ -9,13 +9,13 @@ some instruments it might want instead if not default on cclrc.ac.uk
 ## Steps
 
 ### Pre-script
-1. Remote desktop in:NDXinstrumentName 
+1. Remote desktop "in:NDXinstrumentName"
 2. Open git-bash
     1. cd into `C:\Instrument\Apps\EPICS`
     2. Run `git status`
     3. Run `git diff`
     4. Ask senior team member if any of the deleted/new/modified files are of note and record the ones that are, to deal with later.
-3. Run deploy script in the tools' dir, instrument_deploy.bat, double click.
+3. Run deploy script in the tools' directory, instrument_deploy.bat, double click.
 
 ### During script
 
@@ -28,15 +28,15 @@ some instruments it might want instead if not default on cclrc.ac.uk
 | Save block server to file | y | It'll now save existing installation |
 | Update Git | y | It will need an admin account password for the instrument |
 | Update Java | y | This will be manual: go to `\\isis\shares\ISIS_Experiment_Controls_Public\third_party_installers\` and install the latest version of Java. You can find some more info here: https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Upgrade-Java |
-| Backup dirs | y | This might take a long time. Close any window that have it open. The dir. Find size of epics i apps dir and then find size of backup in data and then old to find out its stage |
+| Backup directories | y | This might take a long time. Close any window that have it open. The dir. Find size of epics i apps dir and then find size of backup in data and then old to find out its stage |
 | Manually check Python installation | y | `Python` will not exist but `Python3` will, which the script will realise and back up|
-| Verfy backup | y | N/A |
+| Verify backup | y | N/A |
 | Backup database | y | N/A |
 | Truncate database | y | N/A |
 | Start ibex server install | y | N/A |
 | Keep old Galil driver | y/n | If you have a the file `ioc\master\GALIL\GALIL_OLD.txt` then YES if not ask a team member |
 | Update ICP | y | N/A |
-| Upgrade ICP found in LabView | y | Needs admin passowrd |
+| Upgrade ICP found in LabView | y | Needs admin password |
 | Install genie_python | y | N/A |
 | Install MySQL | y | N/A |
 | Install ibex client with built-in python | y | N/A |
