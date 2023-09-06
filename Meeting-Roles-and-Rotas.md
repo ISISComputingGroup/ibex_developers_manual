@@ -65,9 +65,9 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
 | Meeting| Chair | X for Done | Timekeeper | X for Done | Note taker | X for Done |
 | :------| :---: | :--------: | :--------: | :--------: | :--------: | :--------: |
 | 2023_07_13_Planning| LC | X | JH| X | |  |
-| 2023_07_13_Review/Retro| DK |  | LC|  | ES|  |
+| 2023_07_13_Review/Retro| DK |  | LC|  | ES| X |
 | 2023_08_10_Planning| TL |  | CMS|  | |  |
-| 2023_08_10_Review/Retro| ES |  | KB|  | DK|  |
+| 2023_08_10_Review/Retro| ES | X | KB|  | DK|  |
 | 2023_09_07_Planning| KB |  | ES|  | |  |
 | 2023_09_07_Review/Retro| FA |  | ZK|  | DM|  |
 | 2023_10_05_Planning| LJ |  | FA|  | |  |
