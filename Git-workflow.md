@@ -65,7 +65,7 @@ Reviewing work for the subModules of EPICS
 * Update master in 'top' 
     * `git checkout master` 
     * `git pull`
-* Add in the tested submodules: ``git add [tested merged submodules]`` (example: ``git add ioc/master/`` to add ``EPICS-ioc``)
+* Stage the tested submodules with: ``git add [tested merged submodules]`` (example: ``git add ioc/master/`` to add ``EPICS-ioc``)
 * Commit the updated submodules, with the comment as "Update submodules <list of submodules>": ``git commit -m "Update submodules <list of submodules>"``
 * Push the changed submodules back to GitHub: ``git push --recurse-submodule=check``
 NOTE: if you run `git config --global push.recurseSubmodules check` once, then the above becomes the default push action 
