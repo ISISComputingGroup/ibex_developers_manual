@@ -147,11 +147,6 @@ git clone http://control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/common.git C:
 
 The purpose and function of the calibration files are described [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Calibration-Files).
 
-## Set up the CS-Studio archiver
-Before doing this ensure that the `build.bat` started in a previous step has successfully completed.
-In `C:\Instrument\Apps\EPICS\CSS\master` run `setup_css.bat`
-this will create directories for the archive engine. in `.\css-win.x86_64`
-
 ## Configure DAE for simulation mode on developer's computer / Register ISISICP
 
 * Make sure **ISISDAE-IOC-01.exe** and **ISISICP.exe** processes are not running
@@ -173,6 +168,11 @@ https://visualstudio.microsoft.com/downloads/
 (Scroll down, expand "Other Tools, Frameworks and Redistributables" and install Microsoft Visual C++ Redistributable for Visual Studio 2019(x64))
 
 And try running `isisicp.exe /RegServer` again.
+
+## Set up the CS-Studio archiver
+Before doing this ensure that the `build.bat` started in a previous step has successfully completed.
+In `C:\Instrument\Apps\EPICS\CSS\master` run `setup_css.bat`
+this will create directories for the archive engine. in `.\css-win.x86_64`
 
 ### Getting DAE ready to start a run (so you are in SETUP rather than processing)
 
