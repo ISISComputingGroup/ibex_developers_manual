@@ -17,7 +17,7 @@ Need more than 1 IOC? See [IOC Duplication](https://github.com/ISISComputingGrou
 If you're building a new StreamDevice IOC you can use the [IOC Generator script](https://github.com/ISISComputingGroup/IBEX_device_generator), for developer info see the [wiki](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/IOC-Generator).
 
 ## Manually
-If you're not creating a StreamDevice IOC or you you would like to know how an IOC could be created manually see:
+If you're not creating a StreamDevice IOC or you would like to know how an IOC could be created manually see:
 * [Creating an ISIS StreamDevice IOC](Creating-an-ISIS-StreamDevice-IOC)
 * [Creating an LvDCOM IOC](Creating-IOC-wrapper-VI)
 * [Creating a simple IOC](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/EPICS-basics#creating-a-simple-ioc) - usual basic way to make an IOC on new EPICS installation, not the way we do it in ISIS.
