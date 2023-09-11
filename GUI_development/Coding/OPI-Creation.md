@@ -40,11 +40,11 @@ will scan a single OPI in `resources/Lakeshore336/Lakeshore336.opi` and save the
 There is a script called `update_values.py` in `C:\Instrument\Dev\ibex_gui\base\uk.ac.stfc.isis.ibex.opis`. This will iterate over all OPIs in the `C:\Instrument\Dev\ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources` directory and update named colour and font tags to match the definitions given in `C:\Instrument\Apps\EPICS\CSS\master\Share\isis_colours.def` and `C:\Instrument\Apps\EPICS\CSS\master\Share\isis_fonts.def`, respectively.
 
 Usage:
-`python update_values.py [-file FILE] [-directory DIRECTORY] [-attribute ATTRIBUTE]`
+`python update_values.py [-file FILE] [-directory DIRECTORY] [-attribute <color/font>]`
 
 e.g. 
-`python update_values.py -directory resources/DG645 -file dg645.opi -attribute font`
-will scan a single OPI in `resources/DG645/dg645.opi` and update the font attributes as necessary.
+`python update_values.py -directory resources/DG645 -file dg645.opi -attribute color`
+will scan a single OPI in `resources/DG645/dg645.opi` and update the color attributes as necessary.
 
 ## Macros
 When an OPI is opened from the synoptic (via OpiTargetView.java) you get at least the following macros automatically set:
