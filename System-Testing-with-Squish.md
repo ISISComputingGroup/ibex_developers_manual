@@ -6,7 +6,7 @@ we have one floating tester subscription and one floating execution subscription
  
 # Set Up for local server
 
-1. Download the SQUISH/JAVA WINDOWS from the [frog logic page](https://www.froglogic.com/squish/download/) using the account in the passwords page on sharepoint
+1. Install SQUISH/JAVA WINDOWS from `<isis experiment controls share>\squish`
 1. Read and accept the terms and conditions if still correct
 1. Install download:
     1. Run download installer
