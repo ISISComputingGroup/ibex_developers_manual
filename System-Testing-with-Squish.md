@@ -31,7 +31,7 @@ we have one floating tester subscription and one floating execution subscription
     1. Ensure that the ibex_gui client has been built with build.bat
     1. Edit -> Server Settings -> Manage AUTs ...
     1. Select Mapped AUTs and click Add...
-    1. Locate the executable from the built (built using the build.bat maven script) eclipse project (e.g. ibex-client in `ibex_gui\base\built_client\`)
+    1. Locate the executable from the built (built using the build.bat maven script) eclipse project (e.g. ibex-client in `ibex_gui\built_client\`)
 1. To get access to global scripts right click in squish -> global scripts pane -> add -> global scripts directory and select the global scripts directory in the repository root.
 1. If not running in Python 3 follow [these](https://kb.froglogic.com/squish/howto/changing-python-installation-used-squish-binary-packages/) instructions, and point to the default `python3` directory in the squish installation root.
 
