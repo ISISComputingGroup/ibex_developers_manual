@@ -40,6 +40,7 @@ The config area contains a directory used for storing `.cmd` files for use with 
 ### Quirks
 
 - The Beckhoff uses whether it has been homed to set `ATHM` in the motor record, rather than just using the raw datum switch. 
+- The "limits" shown on the table of motors summary view are not necessarily actual physical limit switches being engaged - the Beckhoff has more complex rules on whether motors can move back or forwards
 - The motor record sets `UEIP` (use encoder if present) to false to avoid using the encoder resolution to scale values. We have no control over whether to use or not use an encoder with a Beckhoff, the internal code handles it
 - Axes marked with `(V)` are virtual axes. 
 
