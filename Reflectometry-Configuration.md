@@ -117,6 +117,8 @@ These are the top-level parameters exposed as PVs of the form `<PREFIX>:REFL:PAR
     - CHI: The chi rotation angle
     - PSI: The psi rotation angle
     - SEESAW: The seesaw of the component, used with the bench.
+    - DISPLACEMENT_HEIGHT: The height of the component relative to gravity. Cannot be set by the user directly, rather this is exposing positions computed by the reflectometry server based on the current beam path
+    - DISPLACEMENT_ANGLE: The angle of the component relative to gravity. Cannot be set by the user directly, rather this is exposing positions computed by the reflectometry server based on the current beam path
 - `InBeamParameter`: A multi-state parameter which says whether this component is currently in the beam and tracking, or in parked state and not tracking
 - `DirectParameter`: A non-tracking parameter (i.e. the value is independent of the current beam path). This currently does not require a `Component` but is instead directly passed a `PVWrapper` through which it talks to the motors.
     - `SlitGapParameter`: A specific type of `DirectParameter` describing slit gaps (functionally the same)
