@@ -49,6 +49,8 @@ Install Git [Getting-started-with-Git-and-GitHub](Getting-started-with-Git-and-G
 1. Navigate to `C:\Instrument\Apps\` and check whether the EPICS directory already exists. If so, remove the EPICS directory before continuing.  
 1. Follow instructions on the [Quick instructions section of the developer server build page](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Developer-Server-Build#quick-instructions) to copy a built version of EPICS to `\instrument\apps`
 
+To easily add `EPICSTerm.bat` to the start menu after copying EPICS, run `C:\Instrument\Apps\EPICS\add_epicsterm_to_start_menu.bat`
+
 ## Install genie_python
 
 See [Building and installing genie_python](Building-and-Installing-genie_python)
