@@ -24,7 +24,7 @@
 ### Delegating other IBEX project management tasks
 - e.g. SE devices project representative and manage group's resulting work
 - Action for group to think about which tasks they'd like to take responsibility for.  Can discuss at next retrospective
-- Need place to put list of tasks so that people can take them on (e.g. Teams form, tickboxes on ticket/wiki, Outlook task list on ExptCtrls calendar)
+- Need place to put list of tasks so that people can take them on (e.g. Teams form, tick boxes on ticket/wiki, Outlook task list on ExptCtrls calendar)
 
 ### ES asked about reinstating the office screen to display build status etc.
 - Need to ask CMS about previous control machine or a replacement
