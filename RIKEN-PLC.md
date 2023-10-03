@@ -53,6 +53,5 @@ Currently it provides raw volt reading, adc volt, actual volt, resistance and te
 
 where `<magnet>` is RQ1, RQ2 or RB1 and `<tap>` is between TAP01-TAP24.
 
-
-> [!IMPORTANT]
+> **Note**
 > This IOC will be live on RIKENFE on the next deploy.
