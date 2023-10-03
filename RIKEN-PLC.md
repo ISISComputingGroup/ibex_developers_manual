@@ -51,7 +51,7 @@ Currently it provides raw volt reading, adc volt, actual volt, resistance and te
 - `IN:RIKENFE:<magnet>:<tap>:RES`
 - `IN:RIKENFE:<magnet>:<tap>:TEMP`
 
-where ,magnet> is RQ1, RQ2 or RB1 and <tap> is between TAP01-TAP24.
+where `<magnet>` is RQ1, RQ2 or RB1 and `<tap>` is between TAP01-TAP24.
 
 
 > [!IMPORTANT]
