@@ -40,9 +40,9 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
  |FA  | 21/08/2023 | X |
  |KB  | 28/08/2023 | X |
  |CMS | 04/09/2023 | X |
- |DK  | 11/09/2023 | |
- |LC  | 18/09/2023 | |
- |TL  | 25/09/2023 | |
+ |DK  | 11/09/2023 | X |
+ |LC  | 18/09/2023 | X |
+ |TL  | 25/09/2023 | X |
  |ES  | 02/10/2023 | |
  |LJ  | 09/10/2023 | |
  |FA  | 16/10/2023 | |
@@ -69,8 +69,8 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
 | 2023_08_10_Planning| TL | X | CMS| X | |  |
 | 2023_08_10_Review/Retro| ES | X | KB| X | DK| X |
 | 2023_09_07_Planning| KB | X | ES| X | |  |
-| 2023_09_07_Review/Retro| FA |  | ZK|  | DM|  |
-| 2023_10_05_Planning| LJ |  | FA|  | |  |
+| 2023_09_07_Review/Retro| KB |  | ZK|  | LJ |  |
+| 2023_10_05_Planning| FA |  | LJ |  | |  |
 | 2023_10_05_Review/Retro| DM |  | KB|  | LJ|  |
 | 2023_11_02_Planning| LC |  | DM|  | |  |
 | 2023_11_02_Review/Retro| JH |  | LC|  | ZX|  |
