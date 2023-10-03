@@ -43,4 +43,14 @@ The DB file (`RIKENFE.db`) is generated using a set of template files which corr
 The PLC IOC also loads a separate DB file (`RIKENFE_TEMPMON.db`) for monitoring temperatures of a selection of magnets (RQ1, RQ2, RB1) and is purely for logging purposes.  This is at the request of the Electrical Controls Group who are performing an experimental analysis.
 
 The IOC called RKNMNTR is designed to deal with calculating the magnet temperatures based on the PSU currents on RIKENFE (SCHNDR IOCs).
-Currently it provides raw volt reading, adc volt, actual volt, resistance and temperature per tap for magnets RQ1, RQ2, RB1.
+Currently it provides raw volt reading, adc volt, actual volt, resistance and temperature per tap for magnets RQ1, RQ2, RB1 on the following PV patterns respectively:
+
+- IN:RIKENFE:<magnet>:<tap>:VOLT:RAW
+- IN:RIKENFE:<magnet>:<tap>:VOLT:ADC
+- IN:RIKENFE:<magnet>:<tap>:VOLT
+- IN:RIKENFE:<magnet>:<tap>:RES
+- IN:RIKENFE:<magnet>:<tap>:TEMP
+
+where ,magnet> is RQ1, RQ2 or RB1 and <tap> is between TAP01-TAP24.
+
+This IOC will be live on RIKENFE on the next deploy.
