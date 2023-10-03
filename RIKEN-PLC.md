@@ -41,3 +41,6 @@ The CMD file (`RIKENFE.cmd`) is located in the [`devices`](https://github.com/IS
 The DB file (`RIKENFE.db`) is generated using a set of template files which correspond to types of PLC variables and readback values.  The substitution and CMD files follow the structure of the Specifications document referenced above, and so it is advised to read them in parallel when required.  See the [`DB`](https://github.com/ISISComputingGroup/EPICS-ioc/tree/master/SCHNDR/SCHNDR-IOC-01App/Db) area of the IOC directory.
 
 The PLC IOC also loads a separate DB file (`RIKENFE_TEMPMON.db`) for monitoring temperatures of a selection of magnets (RQ1, RQ2, RB1) and is purely for logging purposes.  This is at the request of the Electrical Controls Group who are performing an experimental analysis.
+
+The IOC called RKNMNTR is designed to deal with calculating the magnet temperatures based on the PSU currents on RIKENFE (SCHNDR IOCs).
+Currently it provides raw volt reading, adc volt, actual volt, resistance and temperature per tap for magnets RQ1, RQ2, RB1.
