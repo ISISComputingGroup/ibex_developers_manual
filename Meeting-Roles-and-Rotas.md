@@ -25,6 +25,7 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
 * This is a weekly role starting on the first working day in that week, with substitutes being decided daily if the named person is unavailable last minute - if you know you are unavailable for the week swap with someone
 * Load and share the web pages as detailed in the tabbed note in the announce channel in the team
 * Ensure everyone present has their chance to share progress, plans, and obstacles
+* If you're able to, writing a squish test to replace one of the [Manual system tests](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Manual-System-Tests) would be great. If the person running the week before has done so and it hasn't been reviewed, now would be a good time to review that as well. 
 
 # Rotas
 
