@@ -30,53 +30,63 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
 # Rotas
 
 ## Stand up
- | Standup | Week Commencing | X for Done |
- | :-----: | :-------------: | :--------: |
- |NR  | 10/07/2023 | X |
- |DK  | 17/07/2023 | X |
- |KB  | 24/07/2023 | X |
- |CMS | 31/07/2023 | X |
- |LC  | 07/08/2023 | X |
- |TL  | 14/08/2023 | X |
- |FA  | 21/08/2023 | X |
- |KB  | 28/08/2023 | X |
- |CMS | 04/09/2023 | X |
- |DK  | 11/09/2023 | X |
- |LC  | 18/09/2023 | X |
- |TL  | 25/09/2023 | X |
- |ES  | 02/10/2023 | X |
- |JH  | 09/10/2023 | |
- |FA  | 16/10/2023 | |
- |LJ  | 23/10/2023 | |
- |KB | 30/10/2023 | |
- |CMS  | 06/11/2023 | |
- |DK  | 13/11/2023 | |
- |DM  | 20/11/2023 | |
- |LC  | 27/11/2023 | |
- |TL  | 04/12/2023 | |
- |LJ  | 11/12/2023 | |
- |ES  | 18/12/2023 | |
+ | Standup | Week Commencing | x for Done |
+ |--- | --- | --- |
+ |JH | 09/10/2023 | |
+ |FA | 16/10/2023 | |
+ |ZK | 23/10/2023 | |
+ |DK | 30/10/2023 | |
+ |DM | 06/11/2023 | |
+ |LJ | 13/11/2023 | |
+ |IH | 20/11/2023 | |
+ |TL | 27/11/2023 | |
+ |WS | 04/12/2023 | |
+ |CMS | 11/12/2023 | |
+ |KB | 18/12/2023 | |
  |XXX | 25/12/2023 | |
- | JH   | 01/01/2024 | |
- | ZK   | 08/01/2024 | |
+ |LC | 01/01/2024 | |
+ |SC | 08/01/2024 | |
+ |JH | 15/01/2024 | |
+ |ES | 22/01/2024 | |
+ |LJ | 29/01/2024 | |
+ |DM | 05/02/2024 | |
+ |KB | 12/02/2024 | |
+ |CMS | 19/02/2024 | |
+ |WS | 26/02/2024 | |
+ |FA | 04/03/2024 | |
+ |SC | 11/03/2024 | |
+ |LC | 18/03/2024 | |
+ |IH | 25/03/2024 | |
+ |TL | 01/04/2024 | |
+ |ZK | 08/04/2024 | |
+ |DK | 15/04/2024 | |
+ |ES | 22/04/2024 | |
+ |JH | 29/04/2024 | |
+ |LJ | 06/05/2024 | |
+
 
 ***
 
 ## Sprint Meetings
-| Meeting| Chair | X for Done | Timekeeper | X for Done | Note taker | X for Done |
-| :------| :---: | :--------: | :--------: | :--------: | :--------: | :--------: |
-| 2023_07_13_Planning| LC | X | JH| X | |  |
-| 2023_07_13_Review/Retro| DK | X | LC| X | ES| X |
-| 2023_08_10_Planning| TL | X | CMS| X | |  |
-| 2023_08_10_Review/Retro| ES | X | KB| X | DK| X |
-| 2023_09_07_Planning| KB | X | ES| X | |  |
-| 2023_09_07_Review/Retro| KB | X  | ZK| X | LJ | X |
-| 2023_10_05_Planning| FA | X | LJ | X | |  |
-| 2023_10_05_Review/Retro| DM |  | KB|  | LJ|  |
-| 2023_11_02_Planning| LC |  | DM|  | |  |
-| 2023_11_02_Review/Retro| JH |  | LC|  | ZK|  |
-| 2023_11_30_Planning| KB |  | LJ|  | |  |
-| 2023_11_30_Review/Retro| ZK |  | CMS|  | LC|  |
-| 2024_01_11_Planning| LJ |  | FA|  | |  |
-| 2024_01_11_Review/Retro| CMS |  | DK|  | TL|  |
-
+| Meeting| Chair | x for Done | Timekeeper | x for Done | Note taker | x for Done |
+| ---| --- | --- | ---| --- | --- | --- |
+| 2023_10_05_Planning| FA | X | LJ| X | |  |
+| 2023_10_05_Review/Retro| LJ |  | DM|  | TL|  |
+| 2023_11_02_Planning| DK |  | WS|  | |  |
+| 2023_11_02_Review/Retro| DM |  | ZK|  | WS|  |
+| 2023_11_30_Planning| TL |  | SC|  | |  |
+| 2023_11_30_Review/Retro| WS |  | IH|  | DM|  |
+| 2024_01_11_Planning| KB |  | FA|  | |  |
+| 2024_01_11_Review/Retro| ZK |  | KB|  | DK|  |
+| 2024_02_01_Planning| ES |  | DK|  | |  |
+| 2024_02_01_Review/Retro| SC |  | CMS|  | ZK|  |
+| 2024_07_03_Planning| FA |  | SC|  | |  |
+| 2024_06_20_Review/Retro| IH |  | TL|  | LC|  |
+| 2024_07_18_Planning| LJ |  | IH|  | |  |
+| 2024_07_18_Review/Retro| CMS |  | LC|  | IH|  |
+| 2024_08_08_Planning| KB |  | WS|  | |  |
+| 2024_08_08_Review/Retro| FA |  | JH|  | LJ|  |
+| 2024_09_05_Planning| TL |  | ZK|  | |  |
+| 2024_09_05_Review/Retro| ES |  | LJ|  | SC|  |
+| 2024_10_03_Planning| LC |  | DM|  | |  |
+| 2024_10_03_Review/Retro| CMS |  | ES|  | JH|  |
