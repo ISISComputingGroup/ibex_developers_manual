@@ -12,6 +12,7 @@ When connecting to the real device, the IOC requires its IP address, but the sof
 To use the device, set the IPADDR macro in globals.txt to be the device network name, e.g. `LKSH336_01__HOST=ls336-1`.
 
 ### Troubleshooting: device not reachable for IOC using hostname
+
 The Lakeshore 336 has a strange issue where if it travels with some kit (for example the 3D Magnet) it needs to be forced to renew its DHCP lease. To do this, re-select "Ethernet" on the front panel of the device.
 
 
