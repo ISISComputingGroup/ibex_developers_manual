@@ -13,7 +13,7 @@ To use the device, set the IPADDR macro in globals.txt to be the device network 
 
 ### Troubleshooting: device not reachable for IOC using hostname
 
-The Lakeshore 336 has a strange issue where if it travels with some kit (for example the 3D Magnet) it needs to be forced to renew its DHCP lease. To do this, re-select "Ethernet" on the front panel of the device.
+The Lakeshore 336 has a strange issue where if it travels with some kit (for example the 3D Magnet) it needs to be forced to renew its DHCP lease. To do this, re-select "Ethernet" on the front panel of the device. If the address shown is 172.* then it has failed to connect to the network and defaulted to a private address, re-selecting ethernet should fix this. It may also be it is showing an old address, or one for the wrong experiment hall - reselecting ethernet should fix this. A third problem is that if somehow there are multiple lakeshores with the same hostname on the network, reselectign will fix by overwriting the current DNS entry, but the other lakeshore need to be located and renamed.    
 
 
 ## Note on Implementation
