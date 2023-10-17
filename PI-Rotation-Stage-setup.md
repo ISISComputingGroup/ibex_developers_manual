@@ -1,4 +1,4 @@
-The PI rotation stage is run over serial from a MOXA and should be as simple as just plugging it in. After a power on, the first thing you must do is HOME the device. The IOC to run is called PIMOT_01 and the following macros need to be specified in either the configuration or globals.txt  
+The PI rotation stage is run over serial from a MOXA and should be as simple as just plugging it in. After a power on, **the first thing you must do is HOME the device**. The IOC to run is called PIMOT_01 and the following macros need to be specified in either the configuration or globals.txt  
 
 ```
 PORT # COM port to use
