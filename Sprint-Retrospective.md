@@ -4,8 +4,7 @@ Sprint retrospective is the time where we think about how well the last sprint w
 
 ### Preparation
 
-1. Add ideas to list on the board
-1. Take a picture of the list to look at in the meeting
+1. Order any conversations in the retrospective channel so that we can talk about similar things at the same time
 
 ### During
 
