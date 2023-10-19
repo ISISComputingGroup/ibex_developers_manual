@@ -14,9 +14,10 @@ Various Processes or tasks and info into how they should work. Remember rules ca
     - [Estimating Sprint Capacity](Estimating-Sprint-Capacity)
     - [Sprint Burn down Chart](Sprint-Burn-down-Chart)
     - **Meetings:**
-        - [Backlog Preparation/Pre-Planning](Backlog-Preparation)
-        - [Sprint Review](Sprint-Review)
+        - [Backlog Preparation/Pre-Planning](Backlog-Preparation) - This meeting is unlikely to occur
+        - [Program Increment Planning](PI-Planning)
         - [Sprint Planning](Sprint-Planning)
+        - [Sprint Review](Sprint-Review)
         - [Sprint Retrospective](Sprint-Retrospective)
 
 - [External Contributions](External-Contributions)
