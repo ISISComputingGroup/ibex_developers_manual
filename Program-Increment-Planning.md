@@ -12,16 +12,16 @@ This meeting will usually be chaired by the project manager for the group.
 
 There is a [template](https://github.com/orgs/ISISComputingGroup/projects?query=is%3Aopen+is%3Atemplate) for the PI board into which can be brought the tickets that relate to the work to be undertaken.
 Start by using that template to create a project for the coming PI.
-Edit the setting to add the sprints to the appropriate field. Assign the prepopulated tickets to the appropriate sprint.
+Edit the setting to add the sprints to the appropriate field. Assign the pre-populated tickets to the appropriate sprint.
 Add the items to be considered in the upcoming PI that are either a significant amount of work, or which the instrument scientists would appreciate visibility of. These can be added as either a link to a ticket in one of the repos, or a note on this board. These will typically have a classification of `Project/Feature`. It is wise to add sub-tickets of these umbrellas as well, as `To do for a Project/Feature`, as if there are dependencies between them they can be assigned to sprints as appropriate.
 Items to consider may be carried over from the previous PI, or be new items.
 Assign a priority order to the projects and features, and any sub-tickets which have been added so that they can be grouped easily.
 
 ### During Meeting
 
-Review the PI about to end, see what is complete what isn't, and discuss if appropriate.
+Review the PI about to end, see what is complete and what isn't, and discuss if appropriate.
 Ask what has gone well or badly during the PI about to end, as a small retrospective.
-Looing to the PI about to start, load each project/feature  from the `Prioritising Table - Projects/Features` tab, so that the aims and purposes of each piece of work can be discussed and agreed. Care should be taken that the details of code and implementation should not be undertaken here too thoroughly.
+Looking to the PI about to start, load each project/feature  from the `Prioritising Table - Projects/Features` tab, so that the aims and purposes of each piece of work can be discussed and agreed. Care should be taken that the details of code and implementation should not be undertaken here too thoroughly.
 Where items can be assigned to a specific sprint this should be done. If any priorities are wildly inappropriate that can also be discussed in this meeting, although care should be taken not to become too detailed.
 
 ### Extra Notes
