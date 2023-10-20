@@ -1,13 +1,13 @@
 > [Wiki](Home) > [Processes](Processes) > [Sprint Planning](Sprint-Planning)
 
-Sprint planning is the meeting where we decide what will appear in next sprint. We do this roughly by looking at tickets selected by the team choosing there priority and estimating their size.
+Sprint planning is the meeting where we decide what will appear in next sprint. We do this roughly by looking at tickets selected by the team, choosing their priority, and estimating their size.
 
 ### Preparation
 
-1. Announce at stand-up that people should add the proposal label and move on the planning board; tickets should be tickets that must be in and a maximum of 2 extras per person
+1. Announce at stand-up that people should add the proposal label to any tickets that they wish to be discussed in the planning meeting, and move them onto the planning board. These should be tickets that _must_ be in the next sprint, with a maximum of 2 extras per person.
 1. Ensure that the proposed tickets are on the planning board
 1. Add tickets from the Program Increment board which are planned for this sprint specifically, and other high priority tickets as appropriate
-1. Add tickets in ready that have not been started to the `From ready` column in order; the easiest way to do this is to open the tickets in order each in a separate tabs then add then sequentially to the column on the planning board
+1. Add tickets in ready that have not been started to the `From ready` column in order; the easiest way to do this is to open the tickets in order each in a separate tab then add them sequentially to the column on the planning board
 1. Add any impeded tickets to the `From Impeded` column, if there is enough time these can be considered to see if they can be moved forward, just in case we have been unable to do this in stand up meetings recently
 1. Create a support ticket based on the contents of the support channel (adding one tally for each thread, and for every multiple of 10 in the comments, so a thread with 23 comments would get 3 tally marks), and assign it to ISIS Builder with the appropriate number of points
 1. Remove the automation from the `Review Complete` column of the IBEX board, rename that column to be the name of the sprint ending
