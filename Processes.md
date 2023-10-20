@@ -15,7 +15,7 @@ Various Processes or tasks and info into how they should work. Remember rules ca
     - [Sprint Burn down Chart](Sprint-Burn-down-Chart)
     - **Meetings:**
         - [Backlog Preparation/Pre-Planning](Backlog-Preparation) - This meeting is unlikely to occur
-        - [Program Increment Planning](PI-Planning)
+        - [Program Increment Planning](Program-Increment-Planning)
         - [Sprint Planning](Sprint-Planning)
         - [Sprint Review](Sprint-Review)
         - [Sprint Retrospective](Sprint-Retrospective)
