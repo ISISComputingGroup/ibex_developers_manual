@@ -13,7 +13,7 @@ Current Beckhoff installations are:
 | SANDALS | Jaws and Sample changer | 
 | CRISP | Jaws (running old firmware for now) | 
 | MUONFE | Barn doors (in progress) | 
-| INTER | Secondary flight path upgrade (in progress) | 
+| INTER | Secondary flight path upgrade (INTER tank) | 
 | SURF | Critical axis (in progress) |
 
 
