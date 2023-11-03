@@ -27,14 +27,14 @@
         - Chair to prepare more by looking at checks and services ahead of the meeting / fixing minor issues as appropriate. There may be a bit of a transitional period as we collectively build the habit, others may remind the chair of this process for the time being
         - Be more strict in mentioning what you achieved the day before in individual updates
 - **PI board for planning**: We have decided to try running the next planning meeting off of the PI board instead of the IBEX Project Board
-- **Merch:** There is a strong desire among new graduates and industrial placement students to get ISIS merch. 
+- **Merchandise:** There is a strong desire among new graduates and industrial placement students to get ISIS merchandise. 
     - We do not want to make wearing this mandatory
     - Raise with FA for follow up. JH has the contact of the supplier and will start to collect an order from the team
 
 ***
 
 ### Other comments (Mad/Glad/Sad)
-- **Flat Github structure:** We don't have a good way of grouping tickets hierarchically. This would make it easier to do IOCs in parallel if its split up into subtickets
+- **Flat Github structure:** We don't have a good way of grouping tickets hierarchically. This would make it easier to do IOCs in parallel if its split up into sub-tickets
     - We have tried this before but found that IOCs are not usually "big" enough to warrant lots of subtickets, and it can make development more awkward in places where developing the whole thing in parallel is more convenient
     - A more structured approach to categorizing tickets hierarchically might be useful e.g. for larger features like Client, Script Generator, etc.
 - **Documentation:** Is lacking in places
