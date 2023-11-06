@@ -35,7 +35,7 @@
 
 ### Other comments (Mad/Glad/Sad)
 - **Flat Github structure:** We don't have a good way of grouping tickets hierarchically. This would make it easier to do IOCs in parallel if its split up into sub-tickets
-    - We have tried this before but found that IOCs are not usually "big" enough to warrant lots of subtickets, and it can make development more awkward in places where developing the whole thing in parallel is more convenient
+    - We have tried this before but found that IOCs are not usually "big" enough to warrant lots of sub-tickets, and it can make development more awkward in places where developing the whole thing in parallel is more convenient
     - A more structured approach to categorizing tickets hierarchically might be useful e.g. for larger features like Client, Script Generator, etc.
 - **Documentation:** Is lacking in places
     - It's up to everyone to keep this up to date. If you notice something missing, feel free to add it
