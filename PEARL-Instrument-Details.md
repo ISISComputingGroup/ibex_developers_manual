@@ -126,7 +126,7 @@ PEARL has the following devices under motion control:
 1. XYZ stage
 1. Diamond Anvil Cell(DAC): uses XYZ stage, rotation stage.  All driven by Galil.
 
-This is a weird "Servostep" box which contains a Galil 4000 series inside. It looks like this: 
+This is a weird `Servostep` box which contains a Galil 4000 series inside. It looks like this: 
 
 ![IMG_5182-1](https://github.com/ISISComputingGroup/ibex_developers_manual/assets/14823767/f1fa2f82-ff4e-4c3f-8598-ee6cf3d9ab05)
 
