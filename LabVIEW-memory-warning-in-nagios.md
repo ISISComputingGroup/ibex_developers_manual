@@ -17,5 +17,5 @@ ISIS Experiment Controls
 
 Now send this email to the special instrument address alias
 
-Then acknowledge the service in nagios, you will need to give a comment for the acknowledgement e.g. "emailed scientists"
+Then acknowledge the service in nagios: click on `LABVIEW memory` for the instrument in the nagios view, then on the right of the next page click on `Acknowledge this service problem` and then give a comment like "emailed scientists" and press `Commit`. If you now return to the nagios service view, you should see a tick mark next to the service name. 
 
