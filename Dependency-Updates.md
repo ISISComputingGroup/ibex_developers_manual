@@ -84,7 +84,7 @@ Download the latest stable MySQL version (as of 11/23 this is 8.0.x) as a zip fi
 
 In the upgrade script `https://github.com/ISISComputingGroup/ibex_utils/tree/master/installation_and_upgrade/ibex_install_utils` edit `install_tasks.py` to point at the new version.
 
-Update the one in your local machine by running `upgrade_mysql.bat`. 
+Update the one in your local machine by running `upgrade_mysql.bat`.
 
 ### Java
 - Get the latest AdoptOpen JDK 17 from `https://adoptium.net/releases.html?variant=openjdk17&jvmVariant=hotspot` and put it in `\\isis\shares\ISIS_Experiment_Controls_Public\third_party_installers\latest_versions`.
