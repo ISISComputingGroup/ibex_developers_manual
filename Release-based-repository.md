@@ -21,4 +21,4 @@ git remote add origin http://control-svcs.isis.cclrc.ac.uk/gitroot/releases/12.0
 git checkout -b NDXEMMA-A
 git push -u origin NDXEMMA-A
 ```
-`12.0.1` should agree with the local `VERSION.txt` file, we use computer name (i.e. NDX prefix) to be consistent with configurations 
+`12.0.1` should agree with the local `VERSION.txt` file, we use computer name (i.e. NDX prefix, as per `COMPUTERNAME` environment variable) to be consistent with configurations 
