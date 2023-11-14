@@ -26,11 +26,14 @@ Note that you may need the full name of the public share root.
 
 If you wish to do this manually:
 
-1. First create an SQL dump of the database:
+1. First create a folder in `\\isis\inst$\Backups$\stage-deleted\<inst>\YYYY_MM_DD` - you need to do this from a cmd window not from windows explorer, this is because the file permissions allow create but not delete, but the way windows explorer creates a directory involves a delete. e.g. for LET
+```
+md  \\isis\inst$\Backups$\stage-deleted\ndxLET\ibex_backup_2023_09_04
+```
+1. Now create an SQL dump of the database:
     ```
-    "c:\Instrument\Apps\MySQL\bin\mysqldump.exe" -u root -p --all-databases --single-transaction --result-file=c:\data\old\ibex_backup_YYYY_MM_DD\ibex_db_sqldump_YYYY_MM_DD.sql
+    "c:\Instrument\Apps\MySQL\bin\mysqldump.exe" -u root -p --all-databases --single-transaction --result-file=\\isis\inst$\Backups$\stage-deleted\<inst>\ibex_backup_YYYY_MM_DD\ibex_db_sqldump_YYYY_MM_DD.sql
     ```
-1. Check the file looks right (i.e. the dump is of an appropriate size ~ a few GB) and move it to the long term storage folder (`\\isis\inst$\backups$\stage-deleted\<inst>`). 
 1. Truncate the tables with:
     ```
     "c:\Instrument\Apps\MySQL\bin\mysql.exe" -u root -p --execute "truncate table msg_log.message;truncate table archive.sample"
