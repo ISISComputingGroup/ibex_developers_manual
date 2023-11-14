@@ -87,7 +87,7 @@ the relevant release branch after it has been tagged.
     * Big improvement:  upgrade everyone if there is a big improvement that everyone will benefit from
     * Standard release: upgrade instruments that need updates, i.e. they need a newly released feature, and all those that are in the current release group, see [column in instruments table](https://github.com/ISISComputingGroup/IBEX/wiki#instrument-information). Note on the release ticket which instruments need to be released to using checkboxes (one for start and one for finish).
 1. Deploy a new JSON_bourne if required see [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Web-Dashboard)
-
+1. Create repository for recording instrument changes post release https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Release-based-repository the deploy script automatically puts the instrument onto a branch of this repository
 ## Partial Release
 For any release in which GUI version increments but server version does not, ensure the previous server version is added to the release folder via symbolic links or junctions, [see this ticket](https://github.com/ISISComputingGroup/IBEX/issues/7250).
 
