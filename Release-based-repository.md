@@ -13,7 +13,7 @@ Also Add an extra section at end of the config file
 [http]
         receivepack = true
 ```
-# Associating an instrument with releasae
+# Associating an instrument with release
 
 In instrument computer NDXEMMA-A is running release 12.0.1 for example then open git bash in c:\instrument\apps\epics and run
 ```
