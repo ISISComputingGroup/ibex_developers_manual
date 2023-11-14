@@ -13,3 +13,11 @@ Also Add an extra section at end of the config file
 [http]
         receivepack = true
 ```
+# Associating an instrument with releasae
+
+In instrument computer NDXEMMA-A is running release 12.0.1 for example then open git bash in c:\instrument\apps\epics and run
+```
+git remote add origin http://control-svcs.isis.cclrc.ac.uk/gitroot/releases/12.0.1/EPICS.git
+git checkout -b NDXEMMA-A
+git push -u origin NDXEMMA-A
+```
