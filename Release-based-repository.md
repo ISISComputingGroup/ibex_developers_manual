@@ -15,6 +15,8 @@ Also Add an extra section at end of the config file
 ```
 # Associating an instrument with release
 
+Newer deployment scripts do this automatically
+
 In instrument computer NDXEMMA-A is running release 12.0.1 for example then open git bash in c:\instrument\apps\epics and run
 ```
 git remote add origin http://control-svcs.isis.cclrc.ac.uk/gitroot/releases/12.0.1/EPICS.git
