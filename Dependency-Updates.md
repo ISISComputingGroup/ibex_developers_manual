@@ -80,7 +80,7 @@ If the version of Lewis is updated the version should be changed in individual s
 # System
 
 ### MySQL
-Download the latest MySQL version as a zip file and put in the share `\\isis\inst$\Kits$\CompGroup\ICP\MySQL` and remove the old one.
+Download the latest stable MySQL version (as of 11/23 this is 8.0.x) as a zip file and put in the share `\\isis\inst$\Kits$\CompGroup\ICP\MySQL` and remove the old one.
 
 In the upgrade script `https://github.com/ISISComputingGroup/ibex_utils/tree/master/installation_and_upgrade/ibex_install_utils` edit `install_tasks.py` to point at the new version.
 
