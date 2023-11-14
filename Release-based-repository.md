@@ -15,7 +15,12 @@ Also Add an extra section at end of the config file
 ```
 # Associating an instrument with release
 
-Newer deployment scripts do this automatically
+Newer deployment scripts do this automatically, if you are not sure if it has already been done run
+```
+git remote -v
+git branch
+```
+and check output
 
 In instrument computer NDXEMMA-A is running release 12.0.1 for example then open git bash in c:\instrument\apps\epics and run
 ```
