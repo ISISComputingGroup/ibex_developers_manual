@@ -1,3 +1,5 @@
+This program monitors the `data$` share on the NDX instrument specified and copies across new files to the local computer it is running on, it is installed as a windows service.
+ 
 Run setup.exe from `\\isis\shares\ISIS_Experiment_Controls_Public\archive_watcher` it will install to `c:\Program Files (x86)\STFC ISIS Facility\ISIS Archive Watcher` and register as a service
 
 you then need to follow `README_POSTINSTALL.rtf` in this directory, you will create an `archive_watcher.properties` with relevant content. For musr this was
