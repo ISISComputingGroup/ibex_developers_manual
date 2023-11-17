@@ -1,8 +1,8 @@
-### Install checkstyle plugin.
+## Install the Checkstyle plugin
 
 `Help` > `Eclipse Marketplace...`
 
-### Configure checkstyle to use external configuration.
+## Configure Checkstyle to use external file.
 
 1. Open checkstyle settings via `Window` > `Preferences` > `Checkstyle`
 
@@ -21,3 +21,7 @@ It will find `$(checkstyle.suppressions.file` it wil lask if you want to add the
 for it's value put `C:\Instrument\Dev\ibex_gui\base\uk.ac.stfc.isis.ibex.client.tycho.parent\suppressions.xml`
 
 Now select all the folders on your project explorer view and click project > preferences >Checkstyle and select IBEX Checks for all and save.
+
+## Useful links
+
+https://checkstyle.org/eclipse-cs/#!/custom-config
