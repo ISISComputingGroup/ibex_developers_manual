@@ -12,4 +12,4 @@
 
 * [Preferences](Eclipse-preferences)
 
-* [Checkstyle setup](Set-up-Checkstyle-within-Eclipse)
+* [Checkstyle setup](Checkstyle-setup)
