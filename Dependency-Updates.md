@@ -87,7 +87,7 @@ In the upgrade script `https://github.com/ISISComputingGroup/ibex_utils/tree/mas
 Update the one in your local machine by running `upgrade_mysql.bat`.
 
 ### Java
-- Get the latest AdoptOpen JDK 17 from `https://adoptium.net/releases.html?variant=openjdk17&jvmVariant=hotspot` and put it in `\\isis\shares\ISIS_Experiment_Controls_Public\third_party_installers\latest_versions`.
+- Get the latest AdoptOpen JDK 17 (.msi file) from `https://adoptium.net/releases.html?variant=openjdk17&jvmVariant=hotspot` and put it in `\\isis\shares\ISIS_Experiment_Controls_Public\third_party_installers\latest_versions`.
 - Copy the older version onto the `\\isis\shares\ISIS_Experiment_Controls_Public\third_party_installers\old_versions`. 
 - Uninstall the older version from control Panel and install the new version.
 - Test the following IOCs start correctly
