@@ -13,3 +13,5 @@
 * [Preferences](Eclipse-preferences)
 
 * [Checkstyle setup](Checkstyle-setup)
+
+* [Dictionary setup](Dictionary-setup)
