@@ -90,12 +90,12 @@ Update the one in your local machine by running `upgrade_mysql.bat`.
 - Get the latest AdoptOpen JDK 17 msi file from `https://adoptium.net/releases.html?variant=openjdk17&jvmVariant=hotspot` and put it in `\\isis\shares\ISIS_Experiment_Controls_Public\third_party_installers\latest_versions`.
 - Copy the older version onto the `\\isis\shares\ISIS_Experiment_Controls_Public\third_party_installers\old_versions`. 
 - Uninstall the older version from control Panel and install the new version.
-- Test the following IOCs start correctly
+- Test that running a start_ibex_server.bat works, and ensure there are no obvious errors in IOC logs for:
   * ARBLOCK
   * ARINST
   * ALARM
   * IOCLOG
-  * CSS studio IDE is loaded correctly
+- Check that CS Studio IDE is loaded correctly
 
 ### Maven
 - There are two versions of maven, this is to update the one following the format `maven-X.x.x`
