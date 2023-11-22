@@ -71,7 +71,7 @@ ODE is handled separately from other packages and is installed from a wheel on `
     * open ode.pyx, change definition of `collide_callback` to add `noexcept` i.e. `cdef void collide_callback(void* data, dGeomID o1, dGeomID o2):` to `cdef void collide_callback(void* data, dGeomID o1, dGeomID o2) noexcept:`
     * Navigate to `bindings/python` and open the `setup.py`
     * Add `from wheel.bdist_wheel import bdist_wheel` to the imports at top.
-    * remove the whole try/except clause that calls `pkg-config`, instead set the variables explicitly e.g. `ode_cflags = [r'-IC:\devel\ODE\include', r'-IC:\devel\ODE\ode-build\include']` and `ode_libs = [r'C:\devel\ODE\ode-build\Release\ode_double.lib']`
+    * remove the whole try/except clause that calls `pkg-config` from `Popen`, instead just set the variables explicitly e.g. `ode_cflags = [r'-IC:\devel\ODE\include', r'-IC:\devel\ODE\ode-build\include']` and `ode_libs = [r'C:\devel\ODE\ode-build\Release\ode_double.lib']`
     * in main() Update the version number to match the version of ode used, and set the name to `ode`.
     * run `%python3% setup.py build_ext` and then `%python3% setup.py bdist_wheel`
     * copy the wheel generated in `dist` to `\\isis\inst$\Kits$\CompGroup\ICP\genie_python_dependencies_python_3`
