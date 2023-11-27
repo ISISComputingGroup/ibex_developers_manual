@@ -5,7 +5,7 @@ This page lists some dependencies which we are not updating for various reasons:
 | Dependency | Our version | Available version | Reason |
 | --- | --- | --- | --- |
 | `CaChannel` | 3.1.3 | 3.1.3 | Currently installed using `pip install github link`. `pip install CaChannel` copies dll onto itself. |
-| Python3 | 3.11.6 | 3.12.0 | [path tools does not build with Python 3.12](https://github.com/gorakhargosh/pathtools/issues/13) as of 11/23 check. |
+| Python3 | 3.11.6 | 3.12.0 | [`pathtools` does not build with Python 3.12](https://github.com/gorakhargosh/pathtools/issues/13) as of 11/23 check. |
 
 # GUI
 
