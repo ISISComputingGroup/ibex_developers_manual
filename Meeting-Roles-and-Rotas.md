@@ -34,11 +34,11 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
  |--- | --- | --- |
  |JH | 09/10/2023 |X|
  |FA | 16/10/2023 |X|
- |ZK | 23/10/2023 | |
- |DK | 30/10/2023 | |
- |LJ | 06/11/2023 | |
- |IH | 13/11/2023 | |
- |DM | 20/11/2023 | |
+ |ZK | 23/10/2023 |X |
+ |DK | 30/10/2023 |X |
+ |LJ | 06/11/2023 |X |
+ |IH | 13/11/2023 |X |
+ |DM | 20/11/2023 |X |
  |TL | 27/11/2023 | |
  |WS | 04/12/2023 | |
  |CMS | 11/12/2023 | |
@@ -71,8 +71,8 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
 | Meeting| Chair | x for Done | Timekeeper | x for Done | Note taker | x for Done |
 | ---| --- | --- | ---| --- | --- | --- |
 | 2023_10_05_Planning| FA | X | LJ| X | |  |
-| 2023_10_05_Review/Retro| LJ |  | DM|  | TL|  |
-| 2023_11_02_Planning| DK |  | WS|  | |  |
+| 2023_10_05_Review/Retro| LC | X | DM| X | TL| X |
+| 2023_11_02_Planning| DK | X | WS| X | |  |
 | 2023_11_02_Review/Retro| DM |  | ZK|  | WS|  |
 | 2023_11_30_Planning| TL |  | SC|  | |  |
 | 2023_11_30_Review/Retro| WS |  | IH|  | DM|  |
