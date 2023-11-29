@@ -2,11 +2,11 @@
 
 # Overview
 
+### [An in-depth training course for writing a Reflectometry Configuration can be found here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Config-Training:-Overview-&-Setup)
+
 The reflectometry configuration describes the geometry of the beamline and is read by the reflectometry IOC on startup. The config file is written in python and lives in `<config area>/refl/config.py`.
 
 This file needs to import relevant classes and methods used for constructing the configuration via the line `from ReflectometryServer import *`. It should implement a `get_beamline` method, which takes a single `macros` argument, and returns an object of type `Beamline`.
-
-[An in-depth training course for writing a Reflectometry Configuration can be found here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Config-Training:-Overview-&-Setup)
 
 [Jump to Example Configuration](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Configuration#example-configuration)
 
