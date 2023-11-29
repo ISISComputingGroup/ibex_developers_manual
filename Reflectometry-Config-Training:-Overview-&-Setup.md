@@ -26,4 +26,4 @@ This training unit presents a series of exercises which take you through the cre
 
 You should now be all set up!
 
-Continue to Exercise 1 (Placeholder)
+[Next: The Basics >](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Config-Training:-Exercise-1)
