@@ -6,7 +6,7 @@ This training unit presents a series of exercises which take you through the cre
 
 **NB:** While I have taken care that the examples in the exercises produce a beamline model that resembles those of real instruments, it will be simplified in many ways for the sake of clarity.
 
-#### Useful Links:
+#### Useful Resources:
 
 - [Reflectometry View User Manual](https://github.com/ISISComputingGroup/ibex_user_manual/wiki/Reflectometry-View)
 - [Reflectometry Config Documentation & Reference Manual](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Configuration)
