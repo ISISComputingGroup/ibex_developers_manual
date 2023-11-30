@@ -159,11 +159,12 @@ To update activeMQ in epics:
   - Put the latest ActiveMQ version (from https://activemq.apache.org/) on this branch
   - Create a PR to merge this in (this PR will be merged as part of the update dependencies ticket)
   - Update the config to include anything new in the new version
-  - Update the Log server modules in `EPICS\ISIS\IocLogServer\master\LogServer`
 
 # IOCLogServer
 
 The IOC log server has a similar build process to the main GUI, and includes several `.jar` files in it's repository. These may have new versions and need to be updated.
+
+Update `EPICS\ISIS\IocLogServer\master\LogServer\pom.xml` with new dependency version numbers.
 
 # Cygwin Tools
 
