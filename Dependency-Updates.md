@@ -157,8 +157,8 @@ To update the CS-Studio components that the GUI uses:
 To update ActiveMQ in epics:
   - Create a new branch on `...\EPICS\ISIS\ActiveMQ\master`.
   - Put the latest ActiveMQ version (from https://activemq.apache.org/) on this branch.
-  - Create a PR to merge this in (this PR will be merged as part of the update dependencies ticket).
   - Overwrite directories in `...\EPICS\ISIS\ActiveMQ\master\conf` with those supplied by the new version (copy the contents of `...\EPICS\ISIS\ActiveMQ\master\apache-activemq\conf` in and replace in the destination).
+  - Create a PR to merge this in (this PR will be merged as part of the update dependencies ticket).
 
 # IOCLogServer
 
