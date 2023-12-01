@@ -14,6 +14,19 @@ Look for mysqld.exe task running in task manager or for the service MYSQLXX (cur
 
 ## Reducing database disc space
 
+First check with the scientists it is OK to go ahead - send an email to the <instrument> specific contact list with something like
+```
+Subject: Archiving of old logging information on NDX<instrument> to free up disk space
+
+Dear <instrument>,
+
+We would like to do a bit of system maintenance on NDX<instrument> – this is to backup and then archive some diagnostic information in databases that has started to occupy a lot of space. It takes around half an hour to do this, we don’t necessarily need to shutdown IBEX during this process, but the system will pause logging blocks etc. during the time so it is best to be done at a non critical time with the instrument in SETUP.  Please let us know if it would be convenient to do this today
+
+Regards,
+
+ISIS Experiment Controls
+```
+ 
 Database disc space is taken up by tables stored in `C:\Instrument\Var\mysql\data` the space can be regained by truncating the table. This could lose the data and will certainly remove it from the database so be careful. At various stages you will be prompted for the database password it is on the passwords page. This can be done while the EPICS back-end on the instrument is up, but should not be done while data is being collected as some data points may get lost during the process.
 
 Run the script in:
