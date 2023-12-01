@@ -14,6 +14,8 @@ Look for mysqld.exe task running in task manager or for the service MYSQLXX (cur
 
 ## Reducing database disc space
 
+The database resides on the `Var` instrument disk volume, so can be responsible for this looking full; however there are also IOC log files on this volume that may instead be, or also be, the cause.
+
 First check with the scientists it is OK to go ahead - send an email to the <instrument> specific contact list with something like
 ```
 Subject: Archiving of old logging information on NDX<instrument> to free up disk space
