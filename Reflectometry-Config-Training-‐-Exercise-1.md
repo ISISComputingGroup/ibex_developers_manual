@@ -90,4 +90,4 @@ Once you are done making changes, you can load the updated config by restarting 
 - **Parameter is there but I can't set it!** - Check you can move the motors in question from the low motor table. If so, check the parameter you are setting and the IocDriver for the Galil axis have matching ChangeAxes
 
 
-### [< Previous: Overview & Setup](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Config-Training:-Overview-&-Setup) || Next (Placeholder)>
+### [< Previous: Overview & Setup](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Config-Training-%E2%80%90-Overview-&-Setup) || Next (Placeholder)>
