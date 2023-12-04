@@ -22,4 +22,4 @@ Additional notes:
 - Jaws records should already be configured on the `REFL_TRAINING` branch
 - You can add slit parameters to your config with a helper method, e.g.:`add_slit_parameters(slit_number=1, include_centres=True)`
 
-[< Previous: The Basics](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Config-Training-%E2%80%90-Exercise-1) || Next (Placeholder)>
+### [< Previous: The Basics](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Config-Training-%E2%80%90-Exercise-1) || Next (Placeholder)>
