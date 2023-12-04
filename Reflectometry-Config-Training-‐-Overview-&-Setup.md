@@ -2,7 +2,7 @@
 
 # Reflectometry Config Training: Overview & Setup
 
-This training unit presents a series of exercises which take you through the creation of a reflectometry config. The aim of this is to become more confident in working with a reflectometry configuration itself as well as to hopefully learn something about how the reflectometry IOC works internally. 
+This training unit presents a series of exercises which take you through the creation of a reflectometry config. The aim of this is to become more confident in working with the python configuration itself as well as to hopefully learn something about how the reflectometry IOC works internally. 
 
 **NB:** While I have taken care that the examples in the exercises produce a beamline model that resembles those of real instruments, it will be simplified in many ways for the sake of clarity.
 
