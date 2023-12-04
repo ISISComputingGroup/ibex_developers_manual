@@ -19,9 +19,7 @@ To Note:
 - Parameters/Drivers have a many-to-one relationship to Components
 - Parameters and Drivers do not _have_ to be a one-to-one match, even though often this is the case (like a height offset parameter on the POLREF bench will equally displace front and back height jacks).
 
-## Exercise 1
-
-In this exercise, we will add a single item to the reflectometry configuration, a Supermirror, complete with Parameters and Drivers.
+In the following exercise, we will add a single item to the reflectometry configuration, a Supermirror, complete with Parameters and Drivers.
 Before we start making changes, let's review the content of the blank config in front of you:
 
 ```
@@ -34,7 +32,7 @@ from ReflectometryServer import *
 def get_beamline(macros):
     """
 
-    Returns: The SURF beamline
+    Returns: The beamline model
 
     """
     #########################
@@ -57,11 +55,13 @@ def get_beamline(macros):
 - `from ReflectometryServer import *`: This is required to use classes and helper methods which are used to  construct the model of the beamline
 - `def get_beamline`: While the python config file gives you tremendous freedom to include arbitrary python code, this is the one method we expect to be here as the reflectometry server calls it on config load. It should return an object of type `Beamline`
 - `add_constant(BeamlineConstant("OPI", "SURF", "OPIs to show on front panel"))`: This adds a PV intended to expose constant values that are used across the instrument so that these do not have to be defined in multiple places. In this case, we are creating the PV `REFL_01:CONST:OPI` which holds the value "SURF". This PV then is used to populate the Front Panel OPI with hardcoded items for the named beamline.
-- `DISTANCE`: This is an constant we will be using just inside the config file to space every item in the beamline model an equal distance apart for simplicity as it helps with understanding & verifying position tracking behaviour. This is just for the training course, you will not find this on a real beamline.
+- `DISTANCE`: This is a constant we will be using just inside the config file to space every item in the beamline model an equal distance apart for simplicity as it helps with understanding & verifying position tracking behaviour. This is just for the training course, you will not find this on a real beamline.
 - `ANGLE_OF_MOVEMENT`: Another constant we will be using throughout the config. This lets us define the angle of movement of our physical components relative to the natural beam which defines our coordinate system, i.e. the angle between the dotted blue line and the dotted grey lines above. Usually this is 90 + 1.5 for TS1, and 90 + 2.3 for TS2 instruments. However, in this training course for now we will assume that the natural beam is level to the floor for simplicity.
 - `nr = add_mode("NR")`: Modes are "presets" used to define which devices are in use & should automatically track depending on the type of experiment being run.
 
-Now, add the following to your beamline model. 
+## Exercise 1
+
+Add the following to your beamline model. 
 1. A component for the Supermirror, which may reflect the beam
 1. Two beamline parameters (for SM Height offset and SM angle)
 1. Two drivers (for driving the SM height and SM angle axes)
@@ -77,7 +77,7 @@ Some Tips:
 - There are different subclasses of Components: 
     - `Component` just tracks the beam path in height
     - `TiltingComponent` tracks the beam path in height and angle 
-    - `ReflectingComponent` tracks the in height and angle and can also change the downstream beam path
+    - `ReflectingComponent` tracks the in height and angle and can also change the path of the beam for components further downstream
 - `ChangeAxis` is used to link a given `AxisParameter` to a given `IocDriver`. Note that `ChangeAxis.POSITION` and `ChangeAxis.ANGLE` are special in that they represent axes inside the tracking plane in which the beam can move! i.e. these are the only Component Axes that will have their value changed when the beam path changes.
 - `MTRXXXX` should be replaced with the appropriate motor axis. In this case, we are looking for "Supermirror Height" and "Supermirror Rot" in the table of motors.
 
