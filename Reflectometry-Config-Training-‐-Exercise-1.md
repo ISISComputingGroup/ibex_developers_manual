@@ -6,7 +6,7 @@
 
 Fundamentally, the Reflectometry Config defines a geometry model of the beamline, which we use to calculate relative positions for each axis in the model based on the current beam path. We think about this model in 3 layers:
 - `Drivers` are wrappers responsible for talking to the low-level motor axes which report their positions in coordinates **relative to the Natural Beam**, i.e. the straight beam as it enters the blockhouse (dotted blue line in the diagram above)
-- `Parameters` are high level parameters **relative to the current (bounced) beam** (solid blue line above).
+- `Parameters` are high level parameters **relative to the current (bounced) beam** (solid blue line above). These provide an abstraction so the users do not have to worry about specific offsets as all values they interact with are relative to the reflected beam. They also provide functionality which lets you enter a setpoint but not action it until you press a separate action ("move") button, as opposed to setting a value as soon as you hit enter on an OPI textbox as is the behaviour everywhere els. (This was an explicit requirement)
 - `Components` are the middle layer geometry nodes. This layer is responsible for translating between the two different sets of coordinates mentioned above. Each component represents one node of interaction with the beam e.g. a Slit or the Sample Stack. 
 
 Going forward, whenever any of these 3 terms are used, they will be referring to the definitions above. 
@@ -14,6 +14,7 @@ Going forward, whenever any of these 3 terms are used, they will be referring to
 In the reflectometry config, we define a list of items for each of these 3 layers. **The items in this list must appear in the order in which they appear along the physical beamline** as changes in one component trigger changes downstream only. These lists are packaged into a single `Beamline` object, which coordinates everything at the top level. Here is a diagram representing at an abstract level what the beamline model may look like internally:
 
 ![image](https://github.com/ISISComputingGroup/ibex_developers_manual/assets/18398579/1a5ced20-cf45-4e8a-bf36-c56148aa63a3)
+
 
 To Note:
 - Parameters/Drivers have a many-to-one relationship to Components
