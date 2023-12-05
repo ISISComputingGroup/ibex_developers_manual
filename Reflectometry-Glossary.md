@@ -2,7 +2,6 @@
 
 **Alignment:** The process of finding the position of an axis where it is centered/perpendicular to the neutron beam by scanning over a range of positions. This position is then usually defined as 0.
 
-
 **[Diagram of axis conventions available here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectomtery-IOC-POLREF#axes)**
 
 **Axis, X:** Translation across the natural beam.
@@ -32,7 +31,6 @@
 **Beam, Straight Through:** See `Natural Beam`
 
 **Beam, Reflected:** The current beam path including any reflections from mirrors & sample (often contrasted with the theoretical Natural Beam)
-
 
 **Beamline Object:** The top level object holding & coordinating the whole geometry model inside the reflectometry server.
 
