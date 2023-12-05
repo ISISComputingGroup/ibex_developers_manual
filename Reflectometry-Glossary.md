@@ -34,6 +34,8 @@
 
 **Beamline Object:** The top level object holding & coordinating the whole geometry model inside the reflectometry server.
 
+**Bench:** A large movable bench that pivots on an arc around a point of reflection i.e. a mirror or sample. Benches can be found on OFFSPEC and POLREF. They are all identical in dimensions and are each driven by 3 physical axes: Front height jack, back height jack and slide (which is a linear translation towards/away from the pivot). From these, we derive the bench angle and height offset from the beam. Benches usually have other components statically mounted on top of them e.g. Slits, Detectors
+
 ## C
 
 **Characteristic Value:** The low level motor value which a given `Beamline Parameter` is derived from. Can be added as a readback to a `Beamline Parameter` for diagnostics purposes.
@@ -76,6 +78,14 @@
 
 **Mirror, Super:** Non-polarising mirror designed specifically for reflecting neutrons. 
 
+**Mode:** A set of defaults which can be used to easily configure the behaviour of the reflectometry server's beamline model at runtime. Modes can define which parameters track i.e. automatically move to stay aligned to the reflected beam, which components should be moved in/out of the beam, which corrections get applied, and they can define a set of parameter default values to apply when you enter the mode (and optionally, to re-apply on every beamline move).
+  - Neutron Reflection mode (NR) : The simplest case - no mirrors or polarisers, just reflecting the beam off the sample.
+  - Liquid mode: Reflect the beam off a mirror (or multiple) to change the incident angle while keeping the sample level
+  - Polarised Neutron Reflection mode (PNR): Basically the same as liquid mode from a motion perspective, but with an added polariser system. 
+  - Neutron Reflection mode with Analyser (NA): NR but with an analyser component in the beam between sample and detector
+  - Polarised Neutron Reflection mode with Analyser (PA): PNR & NA modes combined
+  - Disabled Mode: Disables all tracking and stops the beam path from being able to change while in this mode. Can be used e.g. for aligning a super mirror which would otherwise move the detector while scanning.
+
 ## P
 
 **Parameter:** A top-level user parameter, describing some value relative to the incoming beam.
@@ -86,6 +96,8 @@
 **Redefine:** `Beamline Parameters` can be redefined via the reflectometry server, which abstracts the process of setting a motor axes from `USE` to `SET` mode, redefining the user offset and going back to `USE` mode into a single PV write. Redefining via a `Beamline Parameter` also takes any engineering corrections into account.
 
 ## T
+
+**Tank:** Refers to the INTER detector tank. This is a large component that pivots on an arc around the virtual sample point, like the benches found on POLREF and OFFSPEC. It is however different, in that instead of two jacks it is driven by a linear height and rotation axis, and that its slide axis moves parallel to the floor rather than parallel to the current bench angle.
 
 **Tracking:** Automatically moving in order to stay centred on the reflected beam as and when it changes.
 
