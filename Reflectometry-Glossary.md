@@ -26,7 +26,7 @@
 
 **Beam, Outgoing:** The origin of the beam path segment after interacting with a given component. This becomes the incoming beam 
 
-**Beam, Natural**: The neutron beam as it enters an instrument blockhouse without any additional reflections. This is a downward 1.5° for TS1 beamlines and a downward 2.3° for TS2 beamlines. The natural beam defines the Z axis of the Y/Z tracking plane used by the reflectometry server, since axes get aligned to it i.e. an axis' position is redefined to 0 when it is centred on the natural beam.
+**Beam, Natural**: The neutron beam as it enters an instrument blockhouse without any additional reflections. This is a downward 1.5° for TS1 beamlines and a downward 2.3° for TS2 beamlines. The natural beam defines the Z axis of the Y/Z tracking plane in which the coordinate system used by the reflectometry server exists.
 
 **Beam, Straight Through:** See `Natural Beam`
 
@@ -42,6 +42,10 @@
 **Component, Reflecting:** An item on the beamline that can change the direction of the incoming beam for e.g. a super mirror
 
 **Configuration:** Configuration in reflectometry defines the beamline and the components in the beamline. Reflectometry configuration is written in python.
+
+**Coordinates, Mantid:** Coordinate system used in the reflectometry server, where everything moves perpendicular to the natural beam. So named as it originated in the Mantid project.
+
+**Coordinates, Room:** Coordinate system where everything moves perpendicular to the floor. 
 
 ## D
 
