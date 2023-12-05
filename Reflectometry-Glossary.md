@@ -2,6 +2,7 @@
 
 **Alignment:** The process of finding the position of an axis where it is centered/perpendicular to the neutron beam by scanning over a range of positions. This position is then usually defined as 0.
 
+
 **[Diagram of axis conventions available here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectomtery-IOC-POLREF#axes)**
 
 **Axis, X:** Translation across the natural beam.
@@ -32,6 +33,7 @@
 
 **Beam, Reflected:** The current beam path including any reflections from mirrors & sample (often contrasted with the theoretical Natural Beam)
 
+
 **Beamline Object:** The top level object holding & coordinating the whole geometry model inside the reflectometry server.
 
 ## C
@@ -60,6 +62,7 @@
 **Incident Angle:** See `Theta`
 
 ## M
+
 **Mirror:** Some samples, such as liquids, cannot be angled. Mirrors can be used to change the incident angle of the beam to enable multiple angles to be measured from the surface, essentially angling the whole beamline around the sample instead rather than the other way around.
 
 **Mirror, Polarising**: A mirror that additionally polarises the neutrons that it reflects.
