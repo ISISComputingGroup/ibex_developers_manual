@@ -8,7 +8,7 @@
 
 **Axis, Y:** Height relative to the natural beam.
 
-**Axis, Y:** Displacement along the natural beam.
+**Axis, Z:** Displacement along the natural beam.
 
 **Axis, Chi:** Yaw angle of a component relative to the natural beam. (Rotation in XZ Plane)
 
@@ -72,6 +72,13 @@
 **Parameter:** A top-level user parameter, describing some value relative to the incoming beam.
 (aka. Beamline Parameter)
 
+## T
+
+**Trans:** Can mean one of two things
+  - *Translation:* See `Axis, X`
+  - *Transmission:* A data collection run with the sample out of beam, used for normalising neutron data.
+
 ## V
 
 **Virtual Sample Point:** The theoretical intersection between the incoming beam at the sample and its movement axes.
+
