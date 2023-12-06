@@ -1,3 +1,5 @@
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [Miscellaneous motion control](Miscellaneous-Motion-Control) > [Reflectometry IOC](Reflectometry-IOC) > [Reflectometry Configuration](Reflectometry-Configuration) > [Reflectometry Config Training](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Config-Training-%E2%80%90-Overview-&-Setup) > Exercise 2
+
 ## Building up the Beamline Model
 
 We have now added a single node of the beamline model to the configuration. Every reflectometry configuration is fundamentally just a series of nodes just like this supermirror, with varying parameters to configure how exactly the transformations between Motor Axes and High-level parameters should work. 
