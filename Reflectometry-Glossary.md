@@ -1,6 +1,6 @@
 ## A
 
-**Alignment:** The process of finding the position of an axis where it is centered/perpendicular to the neutron beam by scanning over a range of positions. This position is then usually defined as 0.
+**Alignment:** The process of finding the position of an axis where it is centred/perpendicular to the neutron beam by scanning over a range of positions. This position is then usually defined as 0.
 
 **[Diagram of axis conventions available here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectomtery-IOC-POLREF#axes)**
 
