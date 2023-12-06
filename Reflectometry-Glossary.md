@@ -26,9 +26,7 @@
 
 **Beam, Outgoing:** The origin of the beam path segment after interacting with a given component as described by Y, Z and Angle coordinates. This becomes the `Incoming Beam` for the following component. If this component is non-reflecting, repeat the outgoing beam of the last reflecting component.
 
-**Beam, Natural:** The neutron beam as it enters an instrument blockhouse without any additional reflections. This is a downward 1.5° for TS1 beamlines and a downward 2.3° for TS2 beamlines. The `Natural Beam` defines the Z axis of the Y/Z tracking plane in which the coordinate system used by the reflectometry server exists.
-
-**Beam, Straight Through:** See `Natural Beam`
+**Beam, Natural:** (aka Straight Through Beam) The neutron beam as it enters an instrument blockhouse without any additional reflections. This is a downward 1.5° for TS1 beamlines and a downward 2.3° for TS2 beamlines. The `Natural Beam` defines the Z axis of the Y/Z tracking plane in which the coordinate system used by the reflectometry server exists.
 
 **Beam, Reflected:** The current beam path including any reflections from mirrors & sample (often contrasted with the theoretical `Natural Beam`)
 
@@ -52,17 +50,19 @@
 
 **Coordinates, Room:** Coordinate system where everything moves perpendicular to the floor. Axis positions at the motor level are reported in this coordinate system, as are distances measured between components as part of beamline surveys i.e. these constants usually need to be transformed into their equivalent distances along the `Natural Beam` for the reflectometry config.
 
+**Correction:** See `Engineering Correction`
+
 ## D
 
 **Detector, Point (0D):** A simple tube is used to integrate intensity, the detector itself has no position sensitivity, just the angle it is positioned at
 
-**Detector, Linear (1D):** Also referred to as linear, area or multi-detector, where a stack of tubes/pixels is used to integrate intensity with either vertical or horizontal position sensitivity equal to the pixel size
+**Detector, Linear (1D):** A stack of tubes/pixels is used to integrate intensity with either vertical or horizontal position sensitivity equal to the pixel size
 
-**Detector, Area (2D):** Also referred to as area detector. Similar to the 1D but with both vertical and horizontal position sensitivity. Note pixels may not be uniform in horizontal/vertical size.
+**Detector, Area (2D):** Similar to the 1D but with both vertical and horizontal position sensitivity. Note pixels may not be uniform in horizontal/vertical size.
 
 **Downstream:** Further from the source of the neutron beam relative to a given point
 
-**Driver:** part of the reflectometry server that interacts with the motor PVs relating to a given component. Handles simple reads and writes via a `PV Wrapper`, as well as some more complex logic such as engineering corrections, move synchronization and translating parking toggles into concrete positions (aka Composite Driver, Ioc Driver)
+**Driver:** (aka Composite Driver, Ioc Driver) part of the reflectometry server that interacts with the motor PVs relating to a given component. Handles simple reads and writes via a `PV Wrapper`, as well as some more complex logic such as engineering corrections, move synchronization and translating parking toggles into concrete positions 
 
 ## E
 
@@ -92,9 +92,11 @@
 
 **Move, Parameter:** Move a single parameter only i.e. (re-)apply its current SP and re-apply the SP:RBV of all downstream parameters in the current mode.
 
+**Move, Synchronised:** (aka Concurrent Move) When moving several axes at the same time, the reflectometry server will calculate the duration for the slowest axis and then modify the velocity of all other axes to finish at the same time (more or less). This is not truly synchronised and not good enough for e.g. continuous scanning, but generally good enough to avoid what would be clashes if one axis "overtakes" another. Parameters have a flag to be be excluded from synchronised moves in case they are very slow and could make other axes stall, and do not have clash conditions. 
+
 ## P
 
-**Parameter:** A top-level user parameter, describing some value relative to the incoming beam for the related component. (aka. Beamline Parameter)
+**Parameter:** (aka Beamline Parameter) A top-level user parameter, describing some value relative to the incoming beam for the related component. 
 
 **Parameter, Axis:** Numerical parameter that controls a single axis relative to the incoming beam.
 
@@ -116,7 +118,7 @@
 
 **Tank:** Refers to the INTER detector tank. This is a large component that pivots on an arc around the virtual sample point, like the benches found on POLREF and OFFSPEC. It is however different, in that instead of two jacks it is driven by a linear height and rotation axis, and that its slide axis moves parallel to the floor rather than parallel to the current bench angle.
 
-**Theta:** The reflection Angle of the beam at the sample. Neutron data for a single sample is usually collected at a few different Theta angles and then stitched together to form a complete dataset. NB Theta does NOT drive the sample phi angle. Instead Theta just decribes the theoretical path the beam WOULD take for a given value so that downstream components can track it. Similarly, the readback value does not come from the sample phi angle either but from a representative axis of a downstream component, i.e. detector height if moving along a linear height stage, or bench/tank angle for detectors mounted on either of those components moving on an arc. The rationale for this is that we never not want to tilt the sample angle implicitly as it may have severe consequences e.g. if a large liquid tank is mounted there. Instead this is done via a separate PHI parameter which is never in the mode. So to make sure that the detector gets neutrons, Phi needs to be set accordingly for a given Theta. (aka Incident Angle)
+**Theta:** (aka Incident Angle) The reflection Angle of the beam at the sample. Neutron data for a single sample is usually collected at a few different Theta angles and then stitched together to form a complete dataset. NB Theta does NOT drive the sample phi angle. Instead Theta just decribes the theoretical path the beam WOULD take for a given value so that downstream components can track it. Similarly, the readback value does not come from the sample phi angle either but from a representative axis of a downstream component, i.e. detector height if moving along a linear height stage, or bench/tank angle for detectors mounted on either of those components moving on an arc. The rationale for this is that we never not want to tilt the sample angle implicitly as it may have severe consequences e.g. if a large liquid tank is mounted there. Instead this is done via a separate PHI parameter which is never in the mode. So to make sure that the detector gets neutrons, Phi needs to be set accordingly for a given Theta. 
 
 **Tracking:** Automatically moving in order to stay centred on the reflected beam as and when it changes.
 
