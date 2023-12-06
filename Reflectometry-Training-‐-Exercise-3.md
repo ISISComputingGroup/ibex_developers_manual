@@ -24,3 +24,5 @@ Make the following changes to your `config.py`:
 1. You should now be able to switch between `NR` and `PNR` mode via the front panel OPI. 
 1. When doing so, you should see a little green "M" appear/disappear next to parameters, indicating whether they are part of the currently selected mode.
 1. Try moving `sm_angle`. You should now see `s2_offset` automatically staying aligned to the reflected beam, while `sa_offset` and `sa_phi` are not (as they were prior to this exercise)
+
+### [< Previous: Building Up The Beamline Model](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Config-Training-%E2%80%90-Exercise-1) || [Next: (Placeholder)](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Training-%E2%80%90-Exercise-4)>
