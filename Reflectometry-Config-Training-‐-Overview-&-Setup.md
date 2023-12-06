@@ -10,7 +10,7 @@ This training unit presents a series of exercises which take you through the cre
 
 - [Reflectometry View User Manual](https://github.com/ISISComputingGroup/ibex_user_manual/wiki/Reflectometry-View)
 - [Reflectometry Config Documentation & Reference Manual](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Configuration)
-
+- [Reflectometry Glossary](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Glossary)
 
 ## Setup Instrument Configuration & Dev Environment:
 
