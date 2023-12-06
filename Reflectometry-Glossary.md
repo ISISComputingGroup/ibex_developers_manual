@@ -40,7 +40,7 @@
 
 **Characteristic Value:** The low level motor value which a given `Beamline Parameter` is derived from. Can be added as a readback to a `Beamline Parameter` for diagnostics purposes.
 
-**Component:** An item on the beamline that interacts with the beam in some way (tracking or modifying its path)
+**Component:** A node in the geometry model that interacts with the beam in some way (tracking or modifying its path). Each usually represents one physical device on the beamline (with some exceptions, e.g. the Theta Component which is virtual)
 
 **Component, Passive:** An item on the beamline which interacts with the beam but does not change the direction of the incoming beam e.g. slits
 
@@ -61,6 +61,8 @@
 **Detector, Area (2D):** Also referred to as area detector. Similar to the 1D but with both vertical and horizontal position sensitivity. Note pixels may not be uniform in horizontal/vertical size.
 
 **Downstream**: Further from the source of the neutron beam relative to a given point
+
+**Driver:** part of the reflectometry server that interacts with the motor PVs relating to a given component. Handles simple reads and writes via a `PV Wrapper`, as well as some more complex logic such as engineering corrections, move synchronization and translating parking toggles into concrete positions (aka Composite Driver, Ioc Driver)
 
 ## E
 
@@ -88,8 +90,9 @@
 
 ## P
 
-**Parameter:** A top-level user parameter, describing some value relative to the incoming beam.
-(aka. Beamline Parameter)
+**Parameter:** A top-level user parameter, describing some value relative to the incoming beam for the related component. (aka. Beamline Parameter)
+
+**PV Wrapper:** A thin wrapper around a motor or slit axis which monitors and caches a specific subset of fields that we care about. This layer provides a couple of performance benefits: a) because the values are cached we do not need to wait for channel access whenever we need to read one, and b) we can bundle and trigger updates periodically so we don't have to process every monitor event. These can take quite a while to process as they may trigger updates of the whole beamline model and so may overwhelm the reflectometry server in great volumes.
 
 ## R
 
