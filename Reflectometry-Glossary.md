@@ -102,6 +102,10 @@
 
 **Parameter, InBeam:** A toggle parameter that lets you move a component in or out of the beam. See also `Parking`
 
+**Parking:** The act of moving a component to a predefined position via an `InBeam Parameter` - conceptually the same as a motion setpoint. However parking a component may apply setpoints for multiple of its axes (e.g. to park supermirror, set height to -20 and angle to 0)
+
+**Parking Sequence:** A parking sequence defines a series of preset positions to move through when parking a component. The reason for this is that for some devices there is something physically in the way on the beamline between the in and out positions. (e.g. park a monitor by moving it up, to the side, then down)
+
 **PV Wrapper:** A thin wrapper around a motor or slit axis which monitors and caches a specific subset of fields that we care about. This layer provides a couple of performance benefits: a) because the values are cached we do not need to wait for channel access whenever we need to read one, and b) we can bundle and trigger updates periodically so we don't have to process every monitor event. These can take quite a while to process as they may trigger updates of the whole beamline model and so may overwhelm the reflectometry server in great volumes.
 
 ## R
