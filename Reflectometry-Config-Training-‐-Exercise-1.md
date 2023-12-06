@@ -82,7 +82,7 @@ Some Tips:
 - `ChangeAxis` is used to link a given `AxisParameter` to a given `IocDriver`. Note that `ChangeAxis.POSITION` and `ChangeAxis.ANGLE` are special in that they represent axes inside the tracking plane in which the beam can move! i.e. these are the only Component Axes that will have their value changed when the beam path changes.
 - `MTRXXXX` should be replaced with the appropriate motor axis. In this case, we are looking for "Supermirror Height" and "Supermirror Rot" in the table of motors.
 
-#### To Test
+### To Test
 
 Once you are done making changes, you can load the updated config by restarting the REFL_01 IOC. You should be able to see 2 parameters in the "Collimation Plane Parameters" tab, that, when set, will move the appropriate Galil axes.
 
