@@ -92,9 +92,9 @@
 
 **Mirror:** Some samples, such as liquids, cannot be angled. Mirrors can be used to change the incident angle of the beam to enable multiple angles to be measured from the surface, essentially angling the whole beamline around the sample instead rather than the other way around.
 
-**Mirror, Polarising:** A mirror that additionally polarises the neutrons that it reflects.
-
 **Mirror, Super:** Non-polarising mirror designed specifically for reflecting neutrons. 
+
+**Mirror, Polarising:** A mirror that additionally polarises the neutrons that it reflects.
 
 **Mode:** A set of defaults which can be used to easily configure the behaviour of the reflectometry server's beamline model at runtime. Modes can define which parameters track i.e. automatically move to stay aligned to the reflected beam, which components should be moved in/out of the beam, which corrections get applied, and they can define a set of parameter default values to apply when you enter the mode (and optionally, to re-apply on every beamline move).
   - Neutron Reflection mode (NR) : The simplest case - no mirrors or polarisers, just reflecting the beam off the sample.
