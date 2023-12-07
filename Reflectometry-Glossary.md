@@ -104,7 +104,7 @@
   - Polarised Neutron Reflection mode with Analyser (PA): PNR & NA modes combined
   - Disabled Mode: Disables all tracking and stops the beam path from being able to change while in this mode. Can be used e.g. for aligning a super mirror which would otherwise move the detector while scanning.
 
-**Move, Beamline:** Move the whole beamline model i.e. apply all currently unapplied parameter SPs, and reapply SP:RBVs for all parameters in the current `mode` and tracking the beam.
+**Move, Beamline:** Move the whole beamline model i.e. apply all currently un-applied parameter SP values, and reapply SP:RBV values for all parameters in the current `mode` and tracking the beam.
 
 **Move, Parameter:** Move a single parameter only i.e. (re-)apply its current SP and re-apply the SP:RBV of all downstream parameters in the current mode.
 
@@ -138,7 +138,7 @@
 
 **Tank:** Refers to the INTER detector tank. This is a large component that pivots on an arc around the virtual sample point, like the benches found on POLREF and OFFSPEC. It is however different, in that instead of two jacks it is driven by a linear height and rotation axis, and that its slide axis moves parallel to the floor rather than parallel to the current bench angle.
 
-**Theta:** (aka Incident Angle at the Sample) The reflection Angle of the beam at the sample. Neutron data for a single sample is usually collected at a few different Theta angles and then stitched together to form a complete dataset. NB Theta does NOT drive the sample phi angle. Instead Theta just decribes the theoretical path the beam WOULD take for a given value so that downstream components can track it. Similarly, the readback value does not come from the sample phi angle either but from a representative axis of a downstream component, i.e. detector height if moving along a linear height stage, or bench/tank angle for detectors mounted on either of those components moving on an arc. The rationale for this is that we never not want to tilt the sample angle implicitly as it may have severe consequences e.g. if a large liquid tank is mounted there. Instead this is done via a separate PHI parameter which is never in the mode. So to make sure that the detector gets neutrons, Phi needs to be set accordingly for a given Theta. 
+**Theta:** (aka Incident Angle at the Sample) The reflection Angle of the beam at the sample. Neutron data for a single sample is usually collected at a few different Theta angles and then stitched together to form a complete dataset. NB Theta does NOT drive the sample phi angle. Instead Theta just describes the theoretical path the beam WOULD take for a given value so that downstream components can track it. Similarly, the readback value does not come from the sample phi angle either but from a representative axis of a downstream component, i.e. detector height if moving along a linear height stage, or bench/tank angle for detectors mounted on either of those components moving on an arc. The rationale for this is that we never not want to tilt the sample angle implicitly as it may have severe consequences e.g. if a large liquid tank is mounted there. Instead this is done via a separate PHI parameter which is never in the mode. So to make sure that the detector gets neutrons, Phi needs to be set accordingly for a given Theta. 
 
 **Tracking:** Automatically moving in order to stay centred on the reflected beam as and when it changes.
 
