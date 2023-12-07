@@ -46,6 +46,8 @@
 
 **Configuration:** Configuration in reflectometry defines the beamline and the components in the beamline. Reflectometry configuration is written in python.
 
+**Constants:** (aka Beamline Constants) A set of constant values for this beamline defined in the reflectometry configuration and exposed via PVs to be read in other places e.g. the OPI & the reflectometry scripts. These include the `Z` coordinates of each `component`, the maximum achievable `Theta` angle or the name of the correct front panel OPI for this beamline.
+
 **Coordinates, Mantid:** Coordinate system where everything moves perpendicular to the `Natural Beam`. The beamline geometry model in the IOC is described in this coordinate system. So named as this convention originated in the Mantid project.
 
 **Coordinates, Room:** Coordinate system where everything moves perpendicular to the floor. Axis positions at the motor level are reported in this coordinate system, as are distances measured between components as part of beamline surveys i.e. these constants usually need to be transformed into their equivalent distances along the `Natural Beam` for the reflectometry config.
