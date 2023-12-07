@@ -126,6 +126,10 @@
 
 **Redefine:** `Beamline Parameters` can be redefined via the reflectometry server, which abstracts the process of setting a motor axes from `USE` to `SET` mode, redefining the user offset and going back to `USE` mode into a single PV write. Redefining via a `Beamline Parameter` also takes any engineering corrections into account.
 
+## S
+
+**Scanning:** The process of moving a given axis over a range of positions around the beam at discrete steps, taking neutron data at every step. Plotting out the beam intensity over the range of positions gives you a graph with some kind of feature (e.g. a peak) that indicates where the axis is perfectly aligned to the beam.
+
 ## T
 
 **Tank:** Refers to the INTER detector tank. This is a large component that pivots on an arc around the virtual sample point, like the benches found on POLREF and OFFSPEC. It is however different, in that instead of two jacks it is driven by a linear height and rotation axis, and that its slide axis moves parallel to the floor rather than parallel to the current bench angle.
