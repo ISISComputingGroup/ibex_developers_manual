@@ -22,9 +22,9 @@
 
 ## B
 
-**Beam, Incoming:** The source of the beam segment before interacting with a given a component as described by Y, Z and Angle coordinates. This is the `Outgoing Beam` of the last reflecting component the beam has interacted with, or the `Natural Beam` if no reflections apply.
+**Beam, Incoming:** The source of the beam segment before interacting with a given a component as described by Y, Z and Angle coordinates. This is the `Outgoing Beam` of the last previous reflecting component the beam has interacted with, or the `Natural Beam` if no reflections apply.
 
-**Beam, Outgoing:** The origin of the beam path segment after interacting with a given component as described by Y, Z and Angle coordinates. This becomes the `Incoming Beam` for the following component. If this component is non-reflecting, repeat the outgoing beam of the last reflecting component.
+**Beam, Outgoing:** The origin of the beam path segment after interacting with a given component as described by Y, Z and Angle coordinates. This becomes the `Incoming Beam` for the following component. If this component is non-reflecting, repeat the outgoing beam of the last previous reflecting component.
 
 **Beam, Natural:** (aka Straight Through Beam) The neutron beam as it enters an instrument blockhouse without any additional reflections. This is a downward 1.5° for TS1 beamlines and a downward 2.3° for TS2 beamlines. The `Natural Beam` defines the Z axis of the Y/Z tracking plane in which the coordinate system used by the reflectometry server exists.
 
