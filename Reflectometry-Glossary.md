@@ -70,6 +70,8 @@
 
 ## F
 
+**Flux:** The number of neutrons passing through a given point (e.g. a monitor, a detector) at any one time.
+
 **Footprint:** The surface area of the sample illuminated by the neutron beam. Depends on the incident angle and slit gap sizes.
 
 ## G
