@@ -68,6 +68,10 @@
 
 **Engineering Correction:** A correction that is added to setpoints / removed for readback values for a given axis at the Composite Driver level. These corrections can be of fixed value, or calculated by a user function or an interpolation matrix. These exist to account for slight inaccuracies in engineering, e.g. a mirror that is not perfectly flat.
 
+## F
+
+**Footprint:** The surface area of the sample illuminated by the neutron beam. Depends on the incident angle and slit gap sizes.
+
 ## I
 
 **Incident Angle:** See `Theta`
