@@ -72,9 +72,17 @@
 
 **Footprint:** The surface area of the sample illuminated by the neutron beam. Depends on the incident angle and slit gap sizes.
 
+## G
+
+**Goniometer:** A rotation stage with several degrees of freedom that lets you freely rotate a mounted component.
+
 ## I
 
 **Incident Angle:** See `Theta`
+
+## L
+
+**Laser:** Typically refers to an optical laser that sits at the start of a reflectometry beamline and can be used for rough visual alignment of devices before aligning them more precisely with neutrons. Some instruments also have a Laser known by its manufacturer ("Keyence") which measures the precision height of the sample and is used to automatically apply a height offset depending on varying sample thickness so that it stays aligned to the beam.
 
 ## M
 
