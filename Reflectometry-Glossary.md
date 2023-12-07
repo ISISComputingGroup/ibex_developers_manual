@@ -74,7 +74,7 @@
 
 **Flux:** The number of neutrons passing through a given point (e.g. a monitor, a detector) at any one time.
 
-**Footprint:** The surface area of the sample illuminated by the neutron beam. Depends on the incident angle and slit gap sizes.
+**Footprint:** The surface area of the sample illuminated by the neutron beam. Depends on Theta and slit gap sizes.
 
 ## G
 
@@ -82,7 +82,7 @@
 
 ## I
 
-**Incident Angle:** See `Theta`
+**Incident Angle:** The angle between an incident ray (of neutrons) and a reflective surface (eg. a mirror or sample)
 
 ## L
 
@@ -90,7 +90,7 @@
 
 ## M
 
-**Mirror:** Some samples, such as liquids, cannot be angled. Mirrors can be used to change the incident angle of the beam to enable multiple angles to be measured from the surface, essentially angling the whole beamline around the sample instead rather than the other way around.
+**Mirror:** Some samples, such as liquids, cannot be angled. Mirrors can be used to change the incident angle of the beam while keeping the sample level to gravity, essentially rotating the whole beamline around the sample rather than rotating the sample around the beam.
 
 **Mirror, Super:** Non-polarising mirror designed specifically for reflecting neutrons. 
 
@@ -138,7 +138,7 @@
 
 **Tank:** Refers to the INTER detector tank. This is a large component that pivots on an arc around the virtual sample point, like the benches found on POLREF and OFFSPEC. It is however different, in that instead of two jacks it is driven by a linear height and rotation axis, and that its slide axis moves parallel to the floor rather than parallel to the current bench angle.
 
-**Theta:** (aka Incident Angle) The reflection Angle of the beam at the sample. Neutron data for a single sample is usually collected at a few different Theta angles and then stitched together to form a complete dataset. NB Theta does NOT drive the sample phi angle. Instead Theta just decribes the theoretical path the beam WOULD take for a given value so that downstream components can track it. Similarly, the readback value does not come from the sample phi angle either but from a representative axis of a downstream component, i.e. detector height if moving along a linear height stage, or bench/tank angle for detectors mounted on either of those components moving on an arc. The rationale for this is that we never not want to tilt the sample angle implicitly as it may have severe consequences e.g. if a large liquid tank is mounted there. Instead this is done via a separate PHI parameter which is never in the mode. So to make sure that the detector gets neutrons, Phi needs to be set accordingly for a given Theta. 
+**Theta:** (aka Incident Angle at the Sample) The reflection Angle of the beam at the sample. Neutron data for a single sample is usually collected at a few different Theta angles and then stitched together to form a complete dataset. NB Theta does NOT drive the sample phi angle. Instead Theta just decribes the theoretical path the beam WOULD take for a given value so that downstream components can track it. Similarly, the readback value does not come from the sample phi angle either but from a representative axis of a downstream component, i.e. detector height if moving along a linear height stage, or bench/tank angle for detectors mounted on either of those components moving on an arc. The rationale for this is that we never not want to tilt the sample angle implicitly as it may have severe consequences e.g. if a large liquid tank is mounted there. Instead this is done via a separate PHI parameter which is never in the mode. So to make sure that the detector gets neutrons, Phi needs to be set accordingly for a given Theta. 
 
 **Tracking:** Automatically moving in order to stay centred on the reflected beam as and when it changes.
 
