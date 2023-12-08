@@ -14,7 +14,7 @@ Similarly, the Theta RBV is not derived from the sample Phi axis, but from a axi
 1. Detectors moving on a linear height stage that can tilt towards the beam (SURF, CRISP)
 1. Detectors mounted on another component that moves on an arc around the sample (POLREF, INTER, OFFSPEC)
 
-For the former, Theta is calculated trigonometrically where the Detector Height is the Adjacent and the distance between Sample and Detector is the Opposite side of the right angle triangle. For the latter, the component the detector is mounted on (= a bench or vacuum tank) will have a rotation axis that we can use as readback.
+For the former, Theta is calculated via trigonometry, where the Detector Height is the Adjacent, and the distance between Sample and Detector is the Opposite side of the right angle triangle. For the latter, the component the detector is mounted on (= a bench or vacuum tank) will have a rotation axis that we can use as readback.
 
 From a config point of view, we can provide the `ThetaComponent` with a list of downstream components from which Theta's RBV can be derived. This is a list as some beamlines may use one of several detectors. Theta will look for the next component in the list that is currently active in the beam and derive it's angle from it. 
 
@@ -26,7 +26,7 @@ As an example, let's say SURF has a structure of `Beam Source - Sample - Point D
 
 In this exercise, let's add Theta and a detector component from which we can derive its value to our beamline model. For this exercise, we will assume we are using the setup that is found on SURF and CRISP, i.e. a detector that can move up and down on a linear height axis, and tilt towards the beam via a separate rotation axis. (we will look at a bench setup in a later exercise). Add the following to your config:
 1. Theta Component and Parameter
-1. Detector Component and Detector Height & Angle parameters linked to appropriate motor axes (referred to in the motor axis descriptions as "Sgl detector" = single detector)
+1. Detector Component and Detector Height & Angle parameters linked to appropriate motor axes (referred to in the motor axis descriptions as `Sgl detector` = single detector)
 1. At this point you can restart the IOC and you should be able to move detector height and angle parameters as with everything we have added previously. Theta should also be there and read `NaN` as we have not yet told it what axis it should derive its value from.
 1. Add the detector to Theta's list of components define its angle. The ThetaComponent provides the methods `add_angle_to(component)` to do this for a linear height axis, or `.add_angle_of(component)` for an arc component. 
 1. You should now be able to set `Theta` and see it move the detector height & angle. This works the same as the `sm_angle` - you can try setting Theta to 22.5 which should move the detector height axis to the distance between the Theta and detector components, and the angle to 45 deg.
