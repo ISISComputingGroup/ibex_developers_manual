@@ -227,7 +227,9 @@ ALTER TABLE sample MODIFY COLUMN array_val MEDIUMBLOB;
   
 ### Instrument stuck in `WAITING` state
 
-We have observed on a couple of occasions that the DAE got stuck in `WAITING` despite no blocks being outside of runcontrol limits. The cause is yet unclear but in the meantime a restart of the `RUNCTRL_01` IOC seems to fix the issue.
+We have observed on a couple of occasions that the DAE got stuck in `WAITING` despite no blocks being outside of runcontrol limits. The cause is yet unclear but in the meantime try:
+- force a resync of the system with e.g. for OFFSPEC `caput IN:OFFSPEC:CS:RC:SYNC:SP 1`
+- restart the `RUNCTRL_01` IOC 
 
 ### ISISDAE reports `time regimes 1 and 2 are incompatible`
 
