@@ -29,3 +29,5 @@ The system is implemented by a set of db files in `support/RunControl` called `g
 * :AC: (alert control) PVs who allow setting limits and triggering sending a message on out of range
 
 On LOQ a separate :DC: instance is also created, this calls a procedure to put in the aperture when the detector count rate exceeds a limit
+
+If the system gets stuck in a WAITING state with no blocks being outside of runcontrol limits, then you can force a resync of the system with e.g. for OFFSPEC `caput IN:OFFSPEC:CS:RC:SYNC:SP 1`
