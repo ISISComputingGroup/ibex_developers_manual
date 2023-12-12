@@ -12,7 +12,7 @@ When you move a component into the beam, each parked axis returns to its SP:RBV 
 These parameters function very similarly to [Motion Set Points](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Motion-Set-points). There are a few reasons why we integrated these into the reflectometry server as a parameter type rather than just using motion setpoints:
 - As for other Parameters, they provide the option to enter a setpoint without applying it
 - The in/out of beam status affects the beam tracking model, e.g. `sm_angle` will be ignored for the beam path if the super mirror component is parked
-- `InBeam` Parameters allow for more sophisticated parking behaviour, such as 
+- `InBeam` Parameters allow for [more sophisticated parking behaviour](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Composite-Driving-Layer#out-of-beam-positions-and-parking-sequences), such as 
     - moving through a sequence of positions when parking in special cases where the linear path is physically obstructed on the beamline
     - applying one of several possible parked positions depending on the beam position in cases where we might accidentally obstruct it otherwise. e.g. Park High for low angled beam, Park Low for high angled beam.
 
