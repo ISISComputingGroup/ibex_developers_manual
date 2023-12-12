@@ -104,6 +104,8 @@
   - Polarised Neutron Reflection mode with Analyser (PA): PNR & NA modes combined
   - Disabled Mode: Disables all tracking and stops the beam path from being able to change while in this mode. Can be used e.g. for aligning a super mirror which would otherwise move the detector while scanning.
 
+**Mode Init:** A default value for a given mode you can configure for a parameter. This value is automatically applied as SP when changing to this mode.
+
 **Move, Beamline:** Move the whole beamline model i.e. apply all currently un-applied parameter SP values, and reapply SP:RBV values for all parameters in the current `mode` and tracking the beam.
 
 **Move, Parameter:** Move a single parameter only i.e. (re-)apply its current SP and re-apply the SP:RBV of all downstream parameters in the current mode.
