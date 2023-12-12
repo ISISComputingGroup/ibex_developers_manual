@@ -130,9 +130,15 @@
 
 ## R
 
+**Readback Value (RBV)**: The current actual position of a parameter or axis.
+
 **Redefine:** `Beamline Parameters` can be redefined via the reflectometry server, which abstracts the process of setting a motor axes from `USE` to `SET` mode, redefining the user offset and going back to `USE` mode into a single PV write. Redefining via a `Beamline Parameter` also takes any engineering corrections into account.
 
 ## S
+
+**Setpoint (SP):** The target position to apply to a given parameter for the next time it receives an explicit `move` instruction.
+
+**Setpoint Readback Value (SP:RBV):** The target position a given parameter received for their last move. Parameters in the current mode track the beam by automatically re-applying this (relative) value every time the beam path changes.
 
 **Scanning:** The process of moving a given axis over a range of positions around the beam at discrete steps, taking neutron data at every step. Plotting out the beam intensity over the range of positions gives you a graph with some kind of feature (e.g. a peak) that indicates where the axis is perfectly aligned to the beam.
 
