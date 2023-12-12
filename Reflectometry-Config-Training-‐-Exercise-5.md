@@ -36,4 +36,4 @@ In this exercise, we will add parking behaviour to the super mirror and sample c
 
 - You might get a warning if you do not enable autosave on the `InBeam` parameter. This  does not stop you from running the server but it means that on startup, we cannot differentiate between an offset from a parameter setpoint and an offset from being parked so they might be initialised wrong. More detail can be found here: https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Beamline-Parameters#parameter-initialisation
 
-### [< Previous: Theta](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Config-Training-%E2%80%90-Exercise-4) || [Next: Engineering Corrections](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Training-%E2%80%90-Exercise-6)>
+### [< Previous: Theta](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Config-Training-%E2%80%90-Exercise-4) || [Next: Beamline Parameters Misc](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Training-%E2%80%90-Exercise-6)>
