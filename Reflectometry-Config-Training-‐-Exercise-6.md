@@ -6,8 +6,8 @@
 In this short section, I just want to briefly highlight some other optional functionality Beamline Parameters can provide:
 
 #### `autosave`
-Parameters have an optional `autosave` flag which determines how SPs for those parameters get initialised on start-up. At this point in time **we probably just want to autosave every parameter by default** - read below for rationale
-- If `True`, they are read from a file in `/Instrument/var/refl/`. SPs get autosaved whenever a parameter is moved i.e. a new SP is applied as SP:RBV. 
+Parameters have an optional `autosave` flag which determines how Setpoints for those parameters get initialised on start-up. At this point in time **we probably just want to autosave every parameter by default** - read below for rationale
+- If `True`, they are read from a file in `/Instrument/var/refl/`. Setpoints get autosaved whenever a parameter is moved i.e. a new SP is applied as SP:RBV. 
 - If `False`, parameters are initialised to their current RBV. This option was implemented as a way for the reflectometry server to account for positions being changed outside of IBEX when swapping between SECI and IBEX for testing. This option is informally deprecated as not autosaving positions can lead to some ambiguity when initialising setpoints, and the workflow it supported is outdated as reflectometers are not going back to SECI anymore.
 
 #### `characteristic_value`
