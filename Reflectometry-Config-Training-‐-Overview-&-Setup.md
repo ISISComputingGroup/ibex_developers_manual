@@ -2,6 +2,17 @@
 
 # Reflectometry Config Training: Overview & Setup
 
+### Jump To Section:
+> 0. Overview
+> 1. [The Basics](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Config-Training-%E2%80%90-Exercise-1)
+>1. [Building Up The Beamline Model](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Config-Training-%E2%80%90-Exercise-2)
+>1. [Modes](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Config-Training-%E2%80%90-Exercise-3) 
+>1. [Theta](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Config-Training-%E2%80%90-Exercise-4)
+>1. [Parking Components](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Config-Training-%E2%80%90-Exercise-5)
+>1. [Beamline Parameter Misc](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Config-Training-%E2%80%90-Exercise-6)
+>1. [Engineering Corrections](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Config-Training-%E2%80%90-Exercise-7)
+>1. [The Bench](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Config-Training-%E2%80%90-Exercise-8)
+
 This training unit presents a series of exercises which take you through the creation of a reflectometry config. The aim of this is to become more confident in working with the python configuration itself as well as to hopefully learn something about how the reflectometry IOC works internally. 
 
 **NB:** While I have taken care that the examples in the exercises produce a beamline model that resembles those of real instruments, it will be simplified in many ways for the sake of clarity.
