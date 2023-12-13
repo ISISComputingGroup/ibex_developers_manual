@@ -4,7 +4,7 @@
 
 As we briefly touched on in a previous section, the beamline occasionally needs be re-configured by moving components in or out of the beam. This can be the polariser when switching between NR and PNR mode, moving the sample out of the beam to record the base neutron flux, moving everything out of the way of the laser (and back in) for alignment, among many more reasons. In order to facilitate this action, the reflectometry server provides `InBeam Parameters`, a toggle parameter type for moving a given component in or out of the beam, an abstraction layer for applying one out of a set of pre-defined, named numerical positions. As the `InBeam Parameter` is applied at the component level, this may set those pre-defined positions on multiple axes of that component. 
 
-When you move a component out of the beam, it's offset SPs and SP:RBVs are preserved but each axis physically moves to its park position (if defined). Once it's parked, a component will not track or change the beam path in the beamline model. You should also see the move button for other parameters on this component being locked on the OPI for this reason.
+When you move a component out of the beam, it's offset Setpoints and SP:RBVs are preserved but each axis physically moves to its park position (if defined). Once it's parked, a component will not track or change the beam path in the beamline model. You should also see the move button for other parameters on this component being locked on the OPI for this reason.
 
 When you move a component into the beam, each parked axis returns to its SP:RBV and it can become part of the active tracking model again (if all other conditions are met too e.g. its part of the current mode).
 
