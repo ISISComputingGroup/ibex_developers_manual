@@ -35,10 +35,10 @@ The GUI builds copy a JRE from `\\isis\inst$\Kits$\CompGroup\ICP\ibex_client_jdk
 
 ### Pydev
 
-- git clone --recurse-submodules the latest version of our fork and create a new dependency update branch off of master. 
-- git clone --recurse-submodules the latest version of the upstream on to a vendor branch and merge this branch into the dependency update branch.
+- git clone --recurse-submodules the latest version of [our fork](https://github.com/ISISComputingGroup/Pydev) and create a new dependency update branch off of master. 
+- git clone --recurse-submodules the latest version of [the upstream](https://github.com/fabioz/Pydev) on to a vendor branch and merge this branch into the dependency update branch.
 - Run mvn install in the dependency update branch base directory. 
-- After a successful build create a PR to merge the changes into master, and upload the updated repo to `\\shadow.isis.cclrc.ac.uk\ICP_P2W$`, this latest version should be named 'Pydev'.
+- After a successful build, create a PR to merge the changes into master, and upload the updated repo to `\\shadow.isis.cclrc.ac.uk\ICP_P2W$`, this latest version should be named 'Pydev'.
 - Remove and re-add the Pydev target platform dependency in the GUI
 
 # Python
