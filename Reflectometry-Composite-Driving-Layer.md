@@ -43,6 +43,12 @@ driver = IOCDriver(comp, the_axis, out_of_beam_positions=[park_high, park_low])
 
 So moving `comp` out of the beam while the beam intersects the axis at a height below 15 will move it to `park_high` = 20. If it is moved out of beam  while the intersection is above 15 (let's say for a high theta angle), it will instead move to `park_low` = -10, in order to not block the beam while parked.
 
+You can also use this short-hand for very simple, single out of beam positions (ie. no sequences or thresholds, you just want to move to -10 in this case as it'll always be out of the beam):
+
+```Python
+driver = IOCDriver(comp, the_axis, out_of_beam_positions=-10)
+```
+
 If no out-of-beam positions are defined for a driver, it is always considered as being "in beam".
 
 Parking sequences are defined using `OutOfBeamSequence`. This has exactly the same parameters as out of beam except that the first argument is a list of values. The list of each parking sequence for a component, you can have one for each axis, must be the same length or not exist. You may have None's at the start of the sequence to indicate that the component should not move from its current position. Example:
