@@ -144,6 +144,8 @@ This indicates that the motor does not believe it is at setpoint. The following 
   * Setpoint deadband (`SPDB`) if `SPDB` > 0
   * `10 * MAX(ABS(ERES), ABS(MRES))`
 
+_Note the above is done here: https://github.com/ISISComputingGroup/EPICS-axis/blob/master/axisApp/Db/axis_base.template#L160_
+
 If motion is completing successfully but you still see a border, you might need to increase the tolerance in the first instance by increasing retry deadband. Check with the scientists what an achievable precision is.
 
 ## ZOOM PGC
