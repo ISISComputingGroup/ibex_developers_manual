@@ -8,27 +8,23 @@ These are instructions for adding a new Windows machine as a node to be used by 
 
 * Delete the EPICS subdirectory that was created in the previous step (maintaining C:\Instrument\Apps)
 
-* Add the builders password as a environment variable (system variable) called BUILDERPW
-
-* Nicos requires a specific version of Visual Studio to build Python dependencies which can be found [here](https://www.microsoft.com/en-us/download/details.aspx?id=44266)
-
 ### Adding to Jenkins
 
-* Go to ​http://epics-jenkins.isis.rl.ac.uk/computer/ and log in to Jenkins
+* Go to ​https://epics-jenkins.isis.rl.ac.uk/computer/ and log in to Jenkins
 
-* Create a New Node with the Node Name as the computer name, select 'Dumb Slave'
+* Create a `New Node` with the Node Name as the computer name, select 'Permanent Agent'
 
 * Set a root directory of C:\Jenkins
 
 * Set a label of 'windows'
 
-* Select the Launch slave agents via Java Web Start under the Launch methods
+* Select the `Launch agent by connecting it to the controller`
 
 * Save
 
-* Select the slave that has just been created and click the 'Launch agent from browser on slave' button
+* Select the slave that has just been created and make a note of secret. For an initial test make a note of the curl and java commands from `Run from agent command line: (Windows)`
 
-* This should launch a Java window from which, select File, Install as Windows Service
+* in a command window in c:\jenkins run the curl and java commands
 
 See the Jenkins [website](https://wiki.jenkins.io/display/JENKINS/Step+by+step+guide+to+set+up+master+and+agent+machines+on+Windows) for more information.
 
