@@ -204,3 +204,12 @@ Look at the `Runner/Server` Log tab see if you can diagnose the problem.
 ### KeyError: `MYSQLPW` is missing
 
 To remedy this error set `MYSQLPW` to the root password in your environment variables when running the tests. If the Squish IDE has not been restarted before this you will need to close and re-open it before running the tests again. 
+
+### No licence available
+
+If onsite/vpn you can access  https://control-svcs.nd.rl.ac.uk/squish/squish_stats.txt - look for something like
+```
+"clientAddress": "::ffff:a.b.c.d"
+"licenseType": "tester"
+```
+Then from a command windows do `nslookup a.b.c.d` to see machine name using licence. Currently licences should auto-expire after 12 hours anyway, so you may just need to wait.  `licenceType` can be `tester` or `execution`, we have one of each type and `execution` is used by the squish test server
