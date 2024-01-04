@@ -212,4 +212,4 @@ If onsite/vpn you can access  https://control-svcs.nd.rl.ac.uk/squish/squish_sta
 "clientAddress": "::ffff:a.b.c.d"
 "licenseType": "tester"
 ```
-Then from a command windows do `nslookup a.b.c.d` to see machine name using licence. Currently licences should auto-expire after 12 hours anyway, so you may just need to wait.  `licenceType` can be `tester` or `execution`, we have one of each type and `execution` is used by the squish test server
+Then from a command windows do `nslookup a.b.c.d` to see machine name using licence. Currently licences should auto-expire after 12 hours anyway, so you may just need to wait.  `licenceType` can be `tester` or `execution`, we have one of each type and `execution` is used by the squish test server (this licence type only allow running not editing of tests)  
