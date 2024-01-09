@@ -42,9 +42,9 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
  |TL | 27/11/2023 |X |
  |WS | 04/12/2023 |X |
  |CMS | 11/12/2023 |X |
- |~KB~ WS | 18/12/2023 | |
- |XXX | 25/12/2023 | |
- |LC | 01/01/2024 | |
+ |~KB~ WS | 18/12/2023 | X|
+ |XXX | 25/12/2023 |X |
+ |LC | 01/01/2024 |X |
  |SC | 08/01/2024 | |
  |JH | 15/01/2024 | |
  |ES | 22/01/2024 | |
@@ -73,11 +73,11 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
 | 2023_10_05_Planning| FA | X | LJ| X | |  |
 | 2023_10_05_Review/Retro| LC | X | DM| X | TL| X |
 | 2023_11_02_Planning| DK | X | WS| X | |  |
-| 2023_11_02_Review/Retro| LJ |  | KB |  | IH |  |
-| 2023_11_30_Planning| TL |  | SC|  | |  |
-| 2023_11_30_Review/Retro| DM |  | IH|  | DM|  |
+| 2023_11_02_Review/Retro| LJ | X | KB | X | IH | X |
+| 2023_11_30_Planning| TL | X | SC| X | |  |
+| 2023_11_30_Review/Retro| DM |  | IH|  | DK|  |
 | 2024_01_11_Planning| KB |  | FA|  | |  |
-| 2024_01_11_Review/Retro| WS |  | ZK|  | DK|  |
+| 2024_01_11_Review/Retro| WS |  | ZK|  | DM|  |
 | 2024_02_01_Planning| ES |  | DK|  | |  |
 | 2024_02_01_Review/Retro| ZK |  | CMS|  | ZK|  |
 | 2024_07_03_Planning| FA |  | SC|  | |  |
