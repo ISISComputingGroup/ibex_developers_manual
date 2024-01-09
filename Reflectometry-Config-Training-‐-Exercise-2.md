@@ -46,7 +46,7 @@ Additional notes:
 Once you have added all these components, you should now be able to set the parameters and see the related motor axes move as in the previous exercise. You now also have enough in your beamline model to see beamline parameters react to changes in the beam:
 1. Make sure all parameters are at 0 to start with
 1. Set an angle SP for `sm_angle`. I recommend 22.5 as this results in a reflection angle of 45 degrees - this produces tracked positions for downstream components that are easy to understand. 
-1. When you move `sm_angle` to this setpoints you should now see the RBV of all downstream components change. This is because while the physical axes have not moved, the *beam* has, so their relative positions are now different.
+1. When you move `sm_angle` to this setpoint you should now see the RBV of all downstream components change. This is because while the physical axes have not moved, the *beam* has, so their relative positions are now different.
     - `s2_offset` should read equivalent to its distance due to the 45 degree angle i.e. **-10** (negative because it is still centred on the natural beam i.e. below the new reflected beam
     - `sa_offset` similar to `s2_offset` i.e. should be at -20
     - `sa_phi` as still sitting perpendicular to the natural beam, but the reflected beam has been bounced up 45 degrees, i.e. this should now read back -45 
