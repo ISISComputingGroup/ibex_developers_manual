@@ -195,6 +195,8 @@ def change_dae_tables(point_detector_in_beam, last_point_detector_in_beam):
     add_parameter(AxisParameter("LONG", comp, CHangeAxis.LONG, sp_mirrors_rbv=True), modes=all_modes)
 ```
 
+(Note: `all_modes` will have been manually defined earlier in the example file as a list of the available modes and is *not* an in-built value.)
+
 Here when the point detector goes into or comes out of the beam the DAE tables are changed to be the correct tables.
 
 ## [Composite Drivers](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Composite-Driving-Layer)
@@ -368,7 +370,7 @@ Adds a new parameter to the list of all parameters.
 - `parameter`: The `BeamlineParameter` to add
 
 #### Optional arguments:
-- `modes`: A list of `BeamlineMode`s this parameter should be added to (default: `None`)
+- `modes`: A list of `BeamlineMode`s this parameter should be added to (default: `None`), by variable name.
 - `mode_inits`: a list of mode init values for this parameter as a list of tuples (`BeamlineMode`, value) (default: `None`)
 - `marker`: lets you insert this component in the position of the given marker instead of at the end of the list (default: `None`)
 
