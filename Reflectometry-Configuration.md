@@ -153,7 +153,7 @@ Point a parameter at the super mirror components angle. Call the parameter `SM_A
 # Parameter that is not associated with any component
 VirtualParameter("HEIGHT", "mm")
 ```
-Crates a parameter called `HEIGHT` and has "mm" as a unit of distance.
+Creates a parameter called `HEIGHT` and has "mm" as a unit of distance.
 
 ```Python
 # Parameter that directly wraps a motor value
