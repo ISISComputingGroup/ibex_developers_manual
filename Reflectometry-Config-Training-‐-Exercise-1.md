@@ -88,8 +88,8 @@ You can use the generic code below for reference:
 
 ```
 component = add_component(Component("comp_name", PositionAndAngle(Y, Z, Angle)))
-add_parameter(AxisParameter("param_name", component, ChangeAxis.CHANGEAXIS))
-add_driver(IocDriver(component, ChangeAxis.CHANGEAXIS, MotorPVWrapper("MOT:MTRXXXX")))
+add_parameter(AxisParameter("param_name", component, ChangeAxis.[Axis parameter]))
+add_driver(IocDriver(component, ChangeAxis.[Axis parameter], MotorPVWrapper("MOT:MTRXXXX")))
 ```
 
 Some Tips:
