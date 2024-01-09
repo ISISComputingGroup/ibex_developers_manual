@@ -108,6 +108,9 @@ PACE appear to have been taken over by [Baker Hughes Digital Solutions](https://
 1. They current model will (at some point in the future) be replaced by a new one which the Cryogenics team are making. Both the old and new models will use the same controller.
 1. For the avoidance of doubt, the PEARL ColdValve is _**entirely unrelated**_ to the IRIS CryoValve.
 
+##### Note: Camera #####
+PEARL's camera is a blackfly model which we communicate with through the `areaDetector` module. There is a generic "webcam" device screen which needs to be set up for this pointing at the `PEARLCAM_01` IOC which lets them start acquiring image data with region of interest functionality. 
+
 ## PEARL Notes ##
 
 PEARL has the following specialist panels:
