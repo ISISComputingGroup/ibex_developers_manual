@@ -13,6 +13,7 @@ Demo of tickets that have been done in this sprint.
 
 1. Go through each person's slide and get them to demo and mention tickets they have done
 1. Discuss any issues and goodness in the code
+1. Review the previous [retrospective notes](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Retrospective-Notes)
 
 ## After the Meeting
 
