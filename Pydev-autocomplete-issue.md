@@ -11,7 +11,7 @@ if you then used `x().` in a scripting console this would run in a never-ending 
 
 This was alarming as we have several functions in our genie_python library which could be called this way by accident and this could have done bad things ie. move motors or set temperatures without the user realising. 
 
-It was decided after investigation that we should disable this for now, [triangulate](https://github.com/ISISComputingGroup/IBEX/issues/7850) when it started happening, then look into a solution. This led to some investigation and we discovered that: 
+It was decided after investigation that we should [disable this for now](https://github.com/ISISComputingGroup/Pydev/pull/4), [triangulate](https://github.com/ISISComputingGroup/IBEX/issues/7850) when it started happening, then look into a solution. This led to some investigation and we discovered that: 
 a) this had been happening since the introduction of pydev in the GUI, though no one other than us had actually noticed - more on this later
 b) this problem only happens in pydev's console view, which has no form of dynamic analysis of the code put into it
 
