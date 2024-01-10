@@ -25,4 +25,5 @@ In order to disable autocompletion on an instrument, you will need to (in `\inst
 - rename `ast.jar` to `ast.jar.ACENABLED`
 - copy `ast.jar` from `\\shadow<isis suffix>\ICP_P2$\Pydevup_042023\plugins\org.python.pydev.ast`
 
+_Note: this will get reverted when we deploy a new GUI, so we may have to keep doing it until the underlying issue is solved. _
 
