@@ -75,14 +75,14 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
 | 2023_11_02_Planning| DK | X | WS| X | |  |
 | 2023_11_02_Review/Retro| LJ | X | KB | X | IH | X |
 | 2023_11_30_Planning| TL | X | SC| X | |  |
-| 2023_11_30_Review/Retro| DM |  | IH|  | DK|  |
-| 2024_01_11_Planning| KB |  | FA|  | |  |
+| 2023_11_30_Review/Retro| DM | x | IH| x | DK|x  |
+| 2024_01_11_Planning| KB | x | LC| x | |  |
 | 2024_01_11_Review/Retro| WS |  | ZK|  | DM|  |
-| 2024_02_01_Planning| ES |  | DK|  | |  |
+| 2024_02_01_Planning| LJ |  | DK|  | |  |
 | 2024_02_01_Review/Retro| ZK |  | CMS|  | ZK|  |
 | 2024_07_03_Planning| FA |  | SC|  | |  |
 | 2024_06_20_Review/Retro| IH |  | TL|  | LC|  |
-| 2024_07_18_Planning| LJ |  | IH|  | |  |
+| 2024_07_18_Planning| ES |  | IH|  | |  |
 | 2024_07_18_Review/Retro| CMS |  | LC|  | WS |  |
 | 2024_08_08_Planning| KB |  | WS|  | |  |
 | 2024_08_08_Review/Retro| SC |  | JH|  | LJ|  |
