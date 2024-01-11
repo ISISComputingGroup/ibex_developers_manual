@@ -79,4 +79,4 @@ You may need to restart the genie_python session. The root cause of this issue i
 
 ### can read local PVs from instrument but not e.g. `CS:INSTLIST` or accelerator ones like beam current
 
-In one case this was due to the firewall rule for `A:\python3\python.exe` has been disabled - a process firewall exception is needed to allow it to receive the UDP name query reply 
+In one case this was due to the firewall rule for `A:\python3\python.exe` had been disabled - a process firewall exception is needed to allow it to receive the UDP name query reply 
