@@ -12,13 +12,23 @@
 - Flat GitHub structure: Add pull requests in tickets to development workflow to avoid automatic closing when merging a single PR.  Need some investigation of GitHub behaviour as still seems to do this.
 - Documentation: Still lacking in some areas, but external users say IBEX wiki very useful and extensive.
 
-
 ***
 
 ## Items from this retrospective:
--
+
+- Weekly coffee rolling rota: LC has created calendar invitations.
+- Migrate new project board style: Now checks are done via application rather than automation(?).  May create problems for existing checks if converted.  ZS will try on current PI board and report back.
+- Regular Code reviews: Each Monday Standup meeting been extended to 1hr to accommodate code review.  First one this week which went well.  Thanks to JH for stepping in.
+- JH mentioned EPICS meeting and asked how many from group would go.  Includes training sessions, so good for new-starters.  April 15th-18th 2024, week before a cycle.  Another EPICS meeting in October and NOBUGS in September.
+- KVLB highlighted next sprint is only three weeks to avoid cycle clash.
 
 ***
 
 ### Other comments (Mad/Glad/Sad)
-- 
+
+- FAA sad that many tickets still under review after Christmas break – anomaly because of long break and people forgot which tickets they were reviewing?  Suggest look at first five ProjectBoard warnings each week and ask about reviews status.  Can remove and re-add 'under review' labels to reset check.
+- KVLB sad about lack of responses from ARGUS ISs.
+- All glad that Christmas meal went well – thanks to WS and DM.  
+- FAA glad most tickets complete and reviewed before end of sprint, especially those for release.
+- LC glad system tests green before building release next week.
+- LJ glad that gap closed between tickets and reviews on burndown chart.
