@@ -27,7 +27,7 @@
 ### Other comments (Mad/Glad/Sad)
 
 - FAA sad that many tickets still under review after Christmas break – anomaly because of long break and people forgot which tickets they were reviewing?  Suggest look at first five ProjectBoard warnings each week and ask about reviews status.  Can remove and re-add 'under review' labels to reset check.
-- KVLB sad about lack of responses from ARGUS ISs.
+- KVLB sad about lack of responses from ARGUS instrument scientists.
 - All glad that Christmas meal went well – thanks to WS and DM.  
 - FAA glad most tickets complete and reviewed before end of sprint, especially those for release.
 - LC glad system tests green before building release next week.
