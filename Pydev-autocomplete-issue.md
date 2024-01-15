@@ -15,7 +15,7 @@ It was decided after investigation that we should [disable this for now](https:/
 a) this had been happening since the introduction of pydev in the GUI, though no one other than us had actually noticed - more on this later
 b) this problem only happens in pydev's console view, which has no form of dynamic analysis of the code put into it
 
-After talking to the maintainer and doing several days work into looking into the code, we decided that the best course of action was to re-enable for now on instruments and let ISs know that it may cause issues. The fix isn't trivial due to the lack of dynamic analysis, but the continuously doing the action is a definite bug.
+After talking to the maintainer and doing several days work into looking into the code, we decided that the best course of action was to re-enable for now on instruments and let instrument scientists know that it may cause issues. The fix isn't trivial due to the lack of dynamic analysis, but the continuously doing the action is a definite bug.
 
 ## How to enable or disable auto completion
 Pydev on a built GUI client is stored as several jars in the `plugins\` directory. The one we care about is called `org.python.pydev.ast_XXX` where `XXX` is the version suffix. The jar contains lots of bytecode-compiled java classes which are not directly editable. 
