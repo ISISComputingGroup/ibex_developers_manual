@@ -15,7 +15,7 @@ some instruments it might want instead if not default on cclrc.ac.uk
     2. Run `git status`
     3. Run `git diff`
     4. Ask senior team member if any of the deleted/new/modified files are of note and record the ones that are, to deal with later.
-3. Run deploy script in the tools' directory, instrument_deploy.bat, double click.
+3. Run deploy script in the tools' directory, you can double click on `instrument_deploy.bat` but it is safer to create a command window and then run the command from there, if the process were to crash you see the last message in the window. The install does now write a log file so this may not be necessary, but i usually still do it this way in case. 
 
 ### During script
 
