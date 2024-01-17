@@ -47,6 +47,7 @@ some instruments it might want instead if not default on cclrc.ac.uk
 | Update release notes | y | N/A |
 | Reapply hotfixes | yes if any to reapply | [See "Reapply Hotfixes" section](#reapply-hotfixes) |
 | Update script generator script definitions | y | N/A |
+| Remove Instrument Scripts githooks | y | N/A |
 | Start ibex GUI | y | N/A |
 | Restart vis | yes | N/A |
 | Client release test | y | N/A |
