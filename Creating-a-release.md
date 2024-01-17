@@ -71,7 +71,10 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
 
 ### Testing
 
-Using GitBash, update the `experiment controls public share` has the most recent version of `ibex_utils` from Git (i.e. do git pull) - this is so the most recent install script will be used for testing and install
+Using GitBash, update the `experiment controls public share` has the most recent version of `ibex_utils` from Git (i.e. do git pull) - this is so the most recent install script will be used for testing and install. In git bash you can do a `cd` with the windows path but just change `\` to `/` e.g. `cd //isis/somewhere`. When you do a git operation it may warn about directory ownership, just follow the command it suggests to add an exception and then git try again. You should:
+* do a `git branch` and check it is on `master` and not e.g. a test or ticket branch
+* do a `git status` and check for any changes
+* do a `git pull`
 
 One or more people should do [manual system tests, using this page](Manual-system-tests).
 
