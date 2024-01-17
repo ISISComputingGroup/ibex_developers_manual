@@ -23,7 +23,7 @@ some instruments it might want instead if not default on cclrc.ac.uk
 | ----------- | ----------------- | ------- |
 | Confirm new version | y if correct | N/A |
 | Record LabView VIs | y | Take screenshots of blocks and relevant information such as motors in some cases. (for future reference) |
-| Save motor parameters | y | Saves into csv file at `C:\Instrument\var\deployment_pv_backups\motors\` |
+| Save motor parameters | y | Saves into csv file at `C:\Instrument\var\deployment_pv_backups\motors\` not strictly necessary on a test machine, but useful to do there to test the process is still working |
 | Save block params | y | Saves into csv file at `C:\Instrument\var\deployment_pv_backups\` |
 | Save block server to file | y | It'll now save existing installation |
 | Update Git | y | It will need an admin account password for the instrument |
