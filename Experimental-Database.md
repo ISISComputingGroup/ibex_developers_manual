@@ -20,7 +20,7 @@ The experiment database populator is a Python 3.8 program that is designed to ru
 
 ## Testing
 
-* If it is the first time running the populator you will need to install Python 3.8 (any distribution should do) and ensure that you pip install the requirements listed in `requirements.txt`
+* If it is the first time running the populator you will need to install Python 3.8 (any distribution should do) and ensure that you pip install the requirements listed in `requirements.txt` in the venv
 * The populator has unit tests that are run in [jenkins](http://epics-jenkins.isis.rl.ac.uk/job/Experiment_Database_Populator/). 
 * You will need to add access permission for the populator to write to your local database, to do this run `EPICS/SystemSetup/create_test_account.bat`
 * You can write some dummy test data into your local database by using the `--test_data` argument. If you do not have access to the private share you can also specify the username and password for writing to the database using the `--db_user` and `--db_pass` flags. The username/password can be found in `EPICS/SystemSetup/test_account.sql`.
