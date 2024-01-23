@@ -96,7 +96,7 @@ the relevant release branch after it has been tagged.
     1. `git submodule foreach --recursive "git push --tags && git push --delete origin Release_X.x.x || exit 0"` // Push tags and delete release branch
 
     _Note: you may need to run `git config fsck.badEmail ignore` for the above step_
-1. Make sure any changes on the release branch are merged back onto master (except version numbering)
+1. Make sure any changes on the release branch are merged back onto master for EPICS, ibex_gui, genie_python, and JSON_bourne (except version numbering)
 1. Consider which instruments need this release:
     * Breaking release: upgrade everyone
     * Big improvement:  upgrade everyone if there is a big improvement that everyone will benefit from
