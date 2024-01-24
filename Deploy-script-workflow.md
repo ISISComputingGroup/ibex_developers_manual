@@ -31,7 +31,7 @@ some instruments it might want instead if not default on cclrc.ac.uk
 | Backup directories | y | This might take a long time. Close any window that have it open. The dir. Find size of epics i apps dir and then find size of backup in data and then old to find out its stage |
 | Manually check Python installation | y | `Python` will not exist but `Python3` will, which the script will realise and back up|
 | Verify backup | y | N/A |
-| Backup database | y | N/A |
+| Backup database | y | Find password in Keeper |
 | Truncate database | y | N/A |
 | Start ibex server install | y | N/A |
 | Keep old Galil driver | y/n | Should automatically locate the version and proceed but if it requires a decision of which version to use then ask a team member |
