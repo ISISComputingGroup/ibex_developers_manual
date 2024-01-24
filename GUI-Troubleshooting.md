@@ -84,20 +84,25 @@ This makes the maven build build the directory into a directory rather than a ja
 
 
 ## Other issues
-### Running debugger
+### Remote debugging with Eclipse
 The following has been done to ensure that it is possible to debug the IBEX GUI running on any particular instrument:
-1. The JDWP hook is created for a specific port on individual installations.
-2. Access to the port has been disabled by a "deny" rule in each instrument.
+1. The JDWP agent is added to IBEX GUI. In individual installations it will run on an available port dynamically determined at run-time.
+2. There is a utility available in `\\isis\shares\ISIS_Experiment_Controls_Public\ibex_utils\ibex_gui_utilities` - getJVMInfo.bat
+3. SSH server is installed on all instruments and port forwarding is enabled.
 
 The following needs to be done to debug the instance:
-1. Get hold of the IP of the instrument where the IBEX GUI is running, and the port on which JDWP is enabled
-2. Run the following to disable the firewall access "deny" rule mentioned above: 
- `netsh advfirewall firewall set rule name="Block Java De-bugging" new enable=yes `
-3. Set the debug configuration (Run ==> Debug Configurations... ==> Remote Java Application) on the eclipse as shown below:
+1. Get hold of the IP of the instrument where the IBEX GUI is running
+2. Go to task manager in the instrument and note down the process id of the GUI ==> Check the Details tab - the process is called ibex-client.exe. In case you are running the instance from eclipse the process name will be javaw.exe
+3. Open Command prompt in the Instrument.
+4. Get the port on which JDWP is enabled for the instrument by executing the following on the command prompt:
+`\\isis\shares\ISIS_Experiment_Controls_Public\ibex_utils\ibex_gui_utilities\getJVMInfo.bat <Process_Id>`.
+From the output copy the value against dt_socket.
+5. In your local machine open command prompt and enter `ssh –L <Your_Port>:127.0.0.1:<DEBUG_PORT> <TOP_SECRET_UID@<SERVER>`.
+For example `ssh –L 12345:127.0.0.1:66666 spudulike@ndxscidemo`
+6. Set the debug configuration (Run ==> Debug Configurations... ==> Remote Java Application) on the eclipse as shown below. Use 127.0.0.1 as host name and <Your_Port> as the port:
 ![image](https://github.com/ISISComputingGroup/ibex_developers_manual/assets/142808099/d75fc3cc-f727-47b1-b04e-dee0341a264c)
 
-4. Once the debug session is completed, please take care to enable the access deny rule again:
- `netsh advfirewall firewall set rule name="Block Java De-bugging" new enable=no `
+
 
 
 [Memory "leaks"](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Debugging-memory-leaks-in-the-IBEX-GUI)
