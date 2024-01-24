@@ -9,7 +9,15 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
 - Visit each instrument on which code will be released and check for changes which have been made which are not summarised on the [IBEX wiki](https://github.com/ISISComputingGroup/IBEX/wiki#instrument-information). Do this by running `git status` in the EPICs directory and looking at the diff and comparing with those changes.
 - Make sure that the public share has the most recent version of `ibex_utils` from Git (i.e. do git pull).
 
+### Notes on network share access
+The install will need to access both `<public share>\ibex_utils` (where the install script is located) and `kits$` (where the ibex release and a genie python instance is kept). As we will be updating python, we cannot use the locally installed python for the deploy. 
+
+On an instrument NDX computer the D: and O: drives will be mapped to the instrument archive and have sufficient access rights, however they can sometimes become disconnected and then things don't work. So before starting look in windows eplorer and if D: and/or O: are showing as Disconnedted click on them to reconnect.
+
+If you do not have either a D: or O: network drive, then you will need to specify network credentials to map the drive via the `net use` command.    
+
 ### install IBEX for the first time
+- If an instrument, check D: network drive status as above
 - Run `<public share>\ibex_utils\installation_and_upgrade\instrument_install.bat` (if you are on a test machine you may have to enter the full DNS path rather than the shorthand)
     - It will look for the highest version number in the release folder as a source.
     - If you want to install a non-default release you need to set the `SUFFIX` variable in the batch file. For example with `x.y.z` being the current release and `hotfix` being the suffix, it will look for the folder `Releases/x.y.z-hotfix`
@@ -18,6 +26,7 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
 - After the script has successfully finished and the IBEX server has been started, run `instrument_test.bat` in the same folder and follow the instructions.
 
 ### upgrading IBEX to the latest version
+- If an instrument, check D: network drive status as above
 - Ensure the instrument is running and in a setup state (e.g. so you can take screenshots of blocks, motors, running VIs, etc.)
 - Ensure all command lines to EPICS are closed
 - Run `<public share>\ibex_utils\installation_and_upgrade\instrument_deploy.bat` (or for 32-bit releases run with the parameter `x86`)
