@@ -92,12 +92,12 @@ The following has been done to ensure that it is possible to debug the IBEX GUI 
 The following needs to be done to debug the instance:
 1. Get hold of the IP of the instrument where the IBEX GUI is running, and the port on which JDWP is enabled
 2. Run the following to disable the firewall access "deny" rule mentioned above: 
-netsh advfirewall firewall set rule name="Block Java De-bugging" new enable=yes
+'netsh advfirewall firewall set rule name="Block Java De-bugging" new enable=yes'
 3. Set the debug configuration (Run ==> Debug Configurations... ==> Remote Java Application) on the eclipse as shown below:
 ![image](https://github.com/ISISComputingGroup/ibex_developers_manual/assets/142808099/d75fc3cc-f727-47b1-b04e-dee0341a264c)
 
 4. Once the debug session is completed, please take care to enable the access deny rule again:
-netsh advfirewall firewall set rule name="Block Java De-bugging" new enable=no
+'netsh advfirewall firewall set rule name="Block Java De-bugging" new enable=no'
 
 
 [Memory "leaks"](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Debugging-memory-leaks-in-the-IBEX-GUI)
