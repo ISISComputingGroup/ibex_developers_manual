@@ -103,7 +103,7 @@ For example `ssh –L 12345:127.0.0.1:66666 spudulike@ndxscidemo`
 
 
 ### Debugging local code with Eclipse
-1. When eclipse build starts it will print on the console the port it is listening for debugging. Similar to : "Listening for transport dt_socket at address: 60796"
+1. When eclipse build starts it will print on the console the port it is listening for debugging. Similar to : `Listening for transport dt_socket at address: 60796`
 2. Set a debug configuration for Remote Java Application with host as localhost and port as obtained above.
 
 [Memory "leaks"](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Debugging-memory-leaks-in-the-IBEX-GUI)
