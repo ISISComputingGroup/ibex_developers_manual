@@ -1,5 +1,11 @@
 # Pydev autocomplete issue
 
+We have re-enabled the pydev autocomplete. This had been disabled for a while after we discovered a problem, but it is not an easy fix and the problem may actually have existed for a much longer time than we realised.
+
+The problem only occurs with a "chained autocomplete". For example if you type `g.` or `b.` to autocomplete a command or block then that works fine. The problem occurs if you try and autocomplete further on a completed command. For example if you type `g.c` you will be able to complete a `g.cset` command with no problems. However if after having completed this as `g.cset("ablock", 1)` you then typed a further `.` (i.e. `g.cset("ablock", 1).`) you would end up running the `cset` command continuously. This is because the command line needs to run the function to find out what type of object it returns so as to be able to display the list of options. So the bottom line is that simple autocompletes will not give any problems, but be aware that autocompleting on the result of a function will cause the function to run which may have undesirable side effects. This does not apply only to genie python functions, it applies to any python function. If you type `print("hello")` and then press `.` rather than the enter key, it will print hello continuously as it needs to run the print function to get the autocomplete choice.         
+
+# Pydev autocomplete issue
+
 We found an issue in the `pydev` plugin, used for the embedded scripting console in the GUI, in https://github.com/ISISComputingGroup/IBEX/issues/7604 which basically ran a function on autocomplete continuously. An example of this is like so: 
 
 ```python 
