@@ -9,7 +9,7 @@ some instruments it might want instead if not default on cclrc.ac.uk
 ## Steps
 
 ### Pre-script
-1. Use VNC Viewer to ensure that the instrument is not currently in use.
+1. Use RealVNC Viewer to ensure that the instrument is not currently in use.
 1. Remote desktop into the instrument
 1. Open git-bash
     1. cd into `C:\Instrument\Apps\EPICS`
