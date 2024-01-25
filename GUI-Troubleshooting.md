@@ -91,14 +91,13 @@ The following has been done to ensure that it is possible to debug the IBEX GUI 
 3. SSH server is installed on all instruments and port forwarding is enabled.
 
 The following needs to be done to debug the instance:
-1. Go to task manager in the instrument and note down the process id of the GUI ==> Check the Details tab - the process is called ibex-client.exe. In case you are running the instance from eclipse the process name will be javaw.exe
-2. Open Command prompt in the Instrument.
-3. Get the port on which JDWP is enabled for the instrument by executing the following on the command prompt:
-`\\isis\shares\ISIS_Experiment_Controls_Public\ibex_utils\ibex_gui_utilities\getJVMInfo.bat <Process_Id>`.
+1. Open Command prompt in the Instrument.
+2. Get the port on which JDWP is enabled for the instrument by executing the following on the command prompt:
+`\\isis\shares\ISIS_Experiment_Controls_Public\ibex_utils\ibex_gui_utilities\getJVMInfo.bat`.
 From the output copy the value against dt_socket.
-4. In your local machine open command prompt and enter `ssh –L <Your_Port>:127.0.0.1:<DEBUG_PORT> <TOP_SECRET_UID@<SERVER>`.
+3. In your local machine open command prompt and enter `ssh –L <Your_Port>:127.0.0.1:<DEBUG_PORT> <TOP_SECRET_UID@<SERVER>`.
 For example `ssh –L 12345:127.0.0.1:66666 spudulike@ndxscidemo`
-5. Set the debug configuration (Run ==> Debug Configurations... ==> Remote Java Application) on the eclipse as shown below. Use 127.0.0.1 as host name and <Your_Port> as the port:
+4. Set the debug configuration (Run ==> Debug Configurations... ==> Remote Java Application) on the eclipse as shown below. Use 127.0.0.1 as host name and <Your_Port> as the port:
 ![image](https://github.com/ISISComputingGroup/ibex_developers_manual/assets/142808099/d75fc3cc-f727-47b1-b04e-dee0341a264c)
 
 
