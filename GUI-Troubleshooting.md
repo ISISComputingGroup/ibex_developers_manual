@@ -87,7 +87,7 @@ This makes the maven build build the directory into a directory rather than a ja
 ### Remote debugging with Eclipse
 The following has been done to ensure that it is possible to debug the IBEX GUI running on any particular instrument:
 1. The JDWP agent is added to IBEX GUI. In individual installations it will run on an available port dynamically determined at run-time.
-2. There is a utility available in `\\isis\shares\ISIS_Experiment_Controls_Public\ibex_utils\ibex_gui_utilities` - getJVMInfo.bat
+2. There is a utility available in `\\isis\shares\ISIS_Experiment_Controls_Public\ibex_utils\ibex_gui_utilities - getJVMInfo.bat`
 3. SSH server is installed on all instruments and port forwarding is enabled.
 
 The following needs to be done to debug the instance:
