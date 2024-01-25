@@ -9,13 +9,14 @@ some instruments it might want instead if not default on cclrc.ac.uk
 ## Steps
 
 ### Pre-script
+1. Use VNC Viewer to ensure that the instrument is not currently in use.
 1. Remote desktop into the instrument
-2. Open git-bash
+1. Open git-bash
     1. cd into `C:\Instrument\Apps\EPICS`
     2. Run `git status`
     3. Run `git diff`
     4. Ask senior team member if any of the deleted/new/modified files are of note and record the ones that are, to deal with later.
-3. Run deploy script in the tools' directory, you can double click on `instrument_deploy.bat` but it is safer to create a command window and then run the command from there, if the process were to crash you see the last message in the window. The install does now write a log file so this may not be necessary, but i usually still do it this way in case. 
+1. Run deploy script in the tools' directory, you can double click on `instrument_deploy.bat` but it is safer to create a command window and then run the command from there, if the process were to crash you see the last message in the window. The install does now write a log file so this may not be necessary, but i usually still do it this way in case. 
 
 ### During script
 
