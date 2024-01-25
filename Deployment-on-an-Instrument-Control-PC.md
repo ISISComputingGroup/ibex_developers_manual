@@ -12,7 +12,7 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
 ### Notes on network share access
 The install will need to access both `<public share>\ibex_utils` (where the install script is located) and `kits$` (where the ibex release and a genie python instance is kept). As we will be updating python, we cannot use the locally installed python for the deploy. 
 
-On an instrument NDX computer the D: and O: drives will be mapped to the instrument archive and have sufficient access rights, however they can sometimes become disconnected and then things don't work. So before starting look in windows eplorer and if D: and/or O: are showing as Disconnedted click on them to reconnect.
+On an instrument NDX computer the D: and O: drives will be mapped to the instrument archive and have sufficient access rights, however they can sometimes become disconnected and then things don't work. So before starting look in windows explorer and if D: and/or O: are showing as Disconnected click on them to reconnect.
 
 If you do not have either a D: or O: network drive, then you will need to specify network credentials to map the drive via the `net use` command.    
 
