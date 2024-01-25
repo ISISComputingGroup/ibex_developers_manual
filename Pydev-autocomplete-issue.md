@@ -1,4 +1,4 @@
-# Pydev autocomplete issue
+# Summary
 
 We have re-enabled the pydev autocomplete, which is the autocomplete in the ibex GUI scripting window. This had been disabled for a while after we discovered a problem, but it is not an easy fix and the problem may actually have existed for a much longer time than we realised.
 
