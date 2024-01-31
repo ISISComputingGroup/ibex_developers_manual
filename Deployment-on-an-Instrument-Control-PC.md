@@ -16,17 +16,7 @@ On an instrument NDX computer the D: and O: drives will be mapped to the instrum
 
 If you do not have either a D: or O: network drive, then you will need to specify network credentials to map the drive via the `net use` command.    
 
-### install IBEX for the first time
-- If an instrument, check D: network drive status as per above _Notes on network share access_
-- Run `<public share>\ibex_utils\installation_and_upgrade\instrument_install.bat` (if you are on a test machine you may have to enter the full DNS path rather than the shorthand)
-    - you can double click on this, but usually better to drag the path into a new empty cmd window so you don't miss any errors on abort  
-    - It will look for the highest version number in the release folder as a source.
-    - If you want to install a non-default release you need to set the `SUFFIX` variable in the batch file. For example with `x.y.z` being the current release and `hotfix` being the suffix, it will look for the folder `Releases/x.y.z-hotfix`
-    - Follow the instructions on the command line. 
-- If needed, shutdown IBEX and [upgrade the ISISICP](Upgrade-ISISICP). Remember to run the journal parser installation (Step 8 of upgrading ICP) - this can take some time.
-- After the script has successfully finished and the IBEX server has been started, run `instrument_test.bat` in the same folder and follow the instructions.
-
-### upgrading IBEX to the latest version
+### Upgrading IBEX to the latest version
 - If an instrument, check D: network drive status as per above _Notes on network share access_
 - Ensure the instrument is running and in a setup state (e.g. so you can take screenshots of blocks, motors, running VIs, etc.)
 - Ensure all command lines to EPICS or windows accessing the EPICS path are closed
@@ -37,6 +27,22 @@ If you do not have either a D: or O: network drive, then you will need to specif
     - Apart from the below points, just follow instructions
     - Be warned the upgrade runs in 3 steps and so will claim to have finished the upgrade 3 times
     - Do not remove any SECI icons from the task list if this is not the first time install
+
+
+### install IBEX for the first time
+_Note this is unlikely to happen now we've migrated most instruments, and SECI instruments should have a copy of IBEX at the least._
+<details>
+<summary> Click to expand</summary>
+
+- If an instrument, check D: network drive status as per above _Notes on network share access_
+- Run `<public share>\ibex_utils\installation_and_upgrade\instrument_install.bat` (if you are on a test machine you may have to enter the full DNS path rather than the shorthand)
+    - you can double click on this, but usually better to drag the path into a new empty cmd window so you don't miss any errors on abort  
+    - It will look for the highest version number in the release folder as a source.
+    - If you want to install a non-default release you need to set the `SUFFIX` variable in the batch file. For example with `x.y.z` being the current release and `hotfix` being the suffix, it will look for the folder `Releases/x.y.z-hotfix`
+    - Follow the instructions on the command line. 
+- If needed, shutdown IBEX and [upgrade the ISISICP](Upgrade-ISISICP). Remember to run the journal parser installation (Step 8 of upgrading ICP) - this can take some time.
+- After the script has successfully finished and the IBEX server has been started, run `instrument_test.bat` in the same folder and follow the instructions.
+</details>
 
 # Manual deploy instructions
 
