@@ -20,4 +20,4 @@ However, this is not a permanent fix and the errors will return if LabVIEW is re
 
 Note that the `_cur.txt` log is the log from the currently-running instance of labview, while `_log.txt` is from the last instance to run. So to fully make the large logs disappear LabVIEW needs to be restarted twice. Alternatively you can manually delete the logs.
 
-This is probably caused by the 3dmagnet https://github.com/ISISComputingGroup/EPICS-Magnet3D/blob/master/magnet3DApp/protocol/lv_controls.xml
+`Vector-control-v16isis.vi` is probably caused by the 3dmagnet https://github.com/ISISComputingGroup/EPICS-Magnet3D/blob/master/magnet3DApp/protocol/lv_controls.xml
