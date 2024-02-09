@@ -81,13 +81,14 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
 | 2024_02_01_Planning| ES | X | CMS| X | |  |
 | 2024_02_01_Review/Retro| SC |  | DK|  | ZK|  |
 | 2024_03_07_Planning| FA |  | SC|  | |  |
-| 2024_03_07_Review/Retro| IH |  | TL|  | LC|  |
+| 2024_03_07_Review/Retro| IH |  | ES|  | LC|  |
 | 2024_04_04_Planning| LJ |  | IH|  | |  |
 | 2024_04_04_Review/Retro| CMS |  | LC|  | IH|  |
-| 2024_05_02_Planning| KB |  | WS|  | |  |
+| 2024_05_02_Planning| KB |  | FA|  | |  |
 | 2024_05_02_Review/Retro| FA |  | JH|  | LJ|  |
-| 2024_05_23_Planning| TL |  | ZK|  | |  |
+| 2024_05_23_Planning| JH |  | ZK|  | |  |
 | 2024_05_23_Review/Retro| ES |  | LJ|  | SC|  |
 | 2024_06_20_Planning| LC |  | DM|  | |  |
 | 2024_06_20_Review/Retro| CMS |  | ES|  | JH|  |
+
 
