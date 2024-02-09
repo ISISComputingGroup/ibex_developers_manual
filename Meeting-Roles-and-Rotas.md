@@ -32,37 +32,38 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
 ## Stand up
  | Standup | Week Commencing | x for Done |
  |--- | --- | --- |
- |JH | 09/10/2023 |X|
- |FA | 16/10/2023 |X|
- |ZK | 23/10/2023 |X |
- |DK | 30/10/2023 |X |
- |LJ | 06/11/2023 |X |
- |IH | 13/11/2023 |X |
- |DM | 20/11/2023 |X |
- |TL | 27/11/2023 |X |
- |WS | 04/12/2023 |X |
- |CMS | 11/12/2023 |X |
- |~KB~ WS | 18/12/2023 | X|
- |XXX | 25/12/2023 |X |
- |LC | 01/01/2024 |X |
- |SC | 08/01/2024 | X|
- |JH | 15/01/2024 | X|
- |ES | 22/01/2024 | X|
- |LJ | 29/01/2024 | X|
- |DM | 05/02/2024 | X|
- |KB | 12/02/2024 | |
+ |JH | 09/10/2023 |x |
+ |FA | 16/10/2023 |x |
+ |ZK | 23/10/2023 |x |
+ |DK | 30/10/2023 |x |
+ |DM | 06/11/2023 |x |
+ |LJ | 13/11/2023 |x |
+ |IH | 20/11/2023 |x |
+ |TL | 27/11/2023 |x |
+ |WS | 04/12/2023 |x |
+ |CMS | 11/12/2023 |x |
+ |KB | 18/12/2023 |x |
+ |XXX | 25/12/2023 |x |
+ |LC | 01/01/2024 |x |
+ |SC | 08/01/2024 |x |
+ |JH | 15/01/2024 |x |
+ |ES | 22/01/2024 |x |
+ |LJ | 29/01/2024 |x |
+ |DM | 05/02/2024 |x |
+ |DK | 12/02/2024 | |
  |CMS | 19/02/2024 | |
- |WS | 26/02/2024 | |
- |FA | 04/03/2024 | |
- |SC | 11/03/2024 | |
+ |FA | 26/02/2024 | |
+ |KB | 04/03/2024 | |
+ |ZK | 11/03/2024 | |
  |LC | 18/03/2024 | |
- |IH | 25/03/2024 | |
- |TL | 01/04/2024 | |
- |ZK | 08/04/2024 | |
- |DK | 15/04/2024 | |
- |ES | 22/04/2024 | |
- |JH | 29/04/2024 | |
- |LJ | 06/05/2024 | |
+ |SC | 25/03/2024 | |
+ |ES | 01/04/2024 | |
+ |IH | 08/04/2024 | |
+ |LJ | 15/04/2024 | |
+ |JH | 22/04/2024 | |
+ |DM | 29/04/2024 | |
+ |KB | 06/05/2024 | |
+
 
 
 ***
@@ -70,23 +71,23 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
 ## Sprint Meetings
 | Meeting| Chair | x for Done | Timekeeper | x for Done | Note taker | x for Done |
 | ---| --- | --- | ---| --- | --- | --- |
-| 2023_10_05_Planning| FA | X | LJ| X | |  |
-| 2023_10_05_Review/Retro| LC | X | DM| X | TL| X |
+| 2023_10_05_Review/Retro| LJ | X | DM| X | LJ| X |
 | 2023_11_02_Planning| DK | X | WS| X | |  |
-| 2023_11_02_Review/Retro| LJ | X | KB | X | IH | X |
+| 2023_11_02_Review/Retro| DM | X | ZK| X | WS| X |
 | 2023_11_30_Planning| TL | X | SC| X | |  |
-| 2023_11_30_Review/Retro| DM | x | IH| x | DK|x  |
-| 2024_01_11_Planning| KB | x | LC| x | |  |
-| 2024_01_11_Review/Retro| WS |  | ZK|  | DM|  |
-| 2024_02_01_Planning| LJ |  | DK|  | |  |
-| 2024_02_01_Review/Retro| ZK |  | CMS|  | ZK|  |
-| 2024_07_03_Planning| FA |  | SC|  | |  |
-| 2024_06_20_Review/Retro| IH |  | TL|  | LC|  |
-| 2024_07_18_Planning| ES |  | IH|  | |  |
-| 2024_07_18_Review/Retro| CMS |  | LC|  | WS |  |
-| 2024_08_08_Planning| KB |  | WS|  | |  |
-| 2024_08_08_Review/Retro| SC |  | JH|  | LJ|  |
-| 2024_09_05_Planning| TL |  | ZK|  | |  |
-| 2024_09_05_Review/Retro| ES |  | LJ|  | SC|  |
-| 2024_10_03_Planning| LC |  | DM|  | |  |
-| 2024_10_03_Review/Retro| CMS |  | ES|  | JH|  |
+| 2023_11_30_Review/Retro| WS | X | IH| X | DM| X |
+| 2024_01_11_Planning| KB | X | FA| X | |  |
+| 2024_01_11_Review/Retro| ZK | X | KB| X | DK| X |
+| 2024_02_01_Planning| ES | X | CMS| X | |  |
+| 2024_02_01_Review/Retro| SC |  | DK|  | ZK| X |
+| 2024_03_07_Planning| FA |  | SC|  | |  |
+| 2024_03_07_Review/Retro| IH |  | TL|  | LC|  |
+| 2024_04_04_Planning| LJ |  | IH|  | |  |
+| 2024_04_04_Review/Retro| CMS |  | LC|  | IH|  |
+| 2024_05_02_Planning| KB |  | WS|  | |  |
+| 2024_05_02_Review/Retro| FA |  | JH|  | LJ|  |
+| 2024_05_23_Planning| TL |  | ZK|  | |  |
+| 2024_05_23_Review/Retro| ES |  | LJ|  | SC|  |
+| 2024_06_20_Planning| LC |  | DM|  | |  |
+| 2024_06_20_Review/Retro| CMS |  | ES|  | JH|  |
+
