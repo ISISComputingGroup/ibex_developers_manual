@@ -49,7 +49,7 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
  |JH | 15/01/2024 | X|
  |ES | 22/01/2024 | X|
  |LJ | 29/01/2024 | X|
- |DM | 05/02/2024 | |
+ |DM | 05/02/2024 | X|
  |KB | 12/02/2024 | |
  |CMS | 19/02/2024 | |
  |WS | 26/02/2024 | |
