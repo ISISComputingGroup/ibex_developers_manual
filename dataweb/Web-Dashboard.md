@@ -87,7 +87,7 @@ If there are a number of `HTTP Error 503. The service is unavailable` errors, re
 
 ### Restart the Dataweb
 
-As admin open the "Task Scheduler" and end and run the "JSON Bourne" task (in task scheduler library). Make sure that ending the task has killed the Python webserver process.
+As admin open the "Task Scheduler" (there is a shortcut for this on the desktop) and end and run the "JSON Bourne" task (in task scheduler library). Make sure that ending the task has killed the Python webserver process.
 
 ### New Instrument with No Details
 
