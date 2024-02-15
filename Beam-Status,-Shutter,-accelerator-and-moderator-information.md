@@ -5,6 +5,8 @@ Information about the beam current and instrument shutter status is stored in th
 This information is fed from an IOC running on a machine on the accelerator network (merckx.isis.rl.ac.uk). This is a [Open VMS](https://en.wikipedia.org/wiki/OpenVMS) machine with the EPICS distribution from [here](https://github.com/ISISComputingGroup/EPICS-VMS/). The IOC is set to run on boot time and is auto-restarted if it is not present, it will also auto-restart if it receives too many errors, but some failures can cause it to hang.
 
 **If the system restarts itself, then there will be a brief loss of PVs for beam current/shutters/moderator temp to instruments, some will go into a WAITING state when this happens if run control is enabled on the block**
+
+if you need to contact the accelerator controls team, look for "ISIS Controls (Support)" in outlook
  
 You can see the current error counts in nagios for the merckx system or via
 ```
