@@ -123,6 +123,10 @@ If it moves a short distance and stops it may be going into `Tracking abort`. A 
 
 If the McLennan moves but does not stop at the position you requested it could be that the encoder and motor resolutions have not been sent to the controller or are incorrect. This must be done whenever the unit is restarted and is done by restarting the IOC.
 
+### Lots of parity errors in log file
+
+check `Controller Switch settings` above - if IBEX has been set to use 7 bit even parity but the crate dip switch is set at 8 bits no parity, then this could lead to parity errors being generated. Make sure the IBEX MCLEN IOC and the crate agree on this setting.  
+
 ### Homes are very slow
 
 *In homing modes 1 and 3*, the McLennan homes via SNL and uses `JVEL` as it's speed. `JVEL` defaults to `VELO/10` if not set, so try increasing the jog speed and see if this speeds up homes
