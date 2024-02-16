@@ -48,7 +48,7 @@ The way this works in the code is that the motor driver send the correct home (o
 
 Rotary switch SW1 and SW2 give axis address, address is 10*SW1 + SW2
 
-SW3
+DIP Switch SW3
 
 * 1=ON 2=OFF gives serial baud 9600, see manual for other combinations 
 * 3=OFF 7bit even parity, or     3=ON 8bit no parity
