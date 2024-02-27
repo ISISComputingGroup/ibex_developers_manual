@@ -2,5 +2,5 @@ Nagios has a file that lists time periods that notifications will be emailed in,
 * log onto control-mon.isis.cclrc.ac.uk linux machine
 * cd /usr/local/nagios/etc/objects
 * edit `timeperiods.cfg` with your favourite linux editor. At the bottom of the file there is a timeperiod called `isis_cycle` and add a new line to this in the same format as the rest of the define. We use friday before start of user run for our start time - the web page https://www.isis.stfc.ac.uk/Pages/Beam-Status.aspx lists start of user run which is the tuesday, so count back 4 days from that  
-* run `sudo service nagios reload` to load changes
+* run `sudo service nagios reload` to load changes - you will be prompted for the password of the account you are logged in as
 
