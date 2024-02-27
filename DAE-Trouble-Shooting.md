@@ -450,3 +450,7 @@ Hopefully there is either only one `eventsYYYYY.tmp` file, or the most recent on
 For info, the `eventsYYYYY.tmp` file is the NeXus HDF5 file being written as the run goes along, and the `run_YYYYY` folder is the raw events read from the electronics. The `.tmp` is renamed to `.nxs` during an END is nothing has gone wrong, otherwise raw events can be replayed from `run_YYYYY` to create a NeXus file from scratch       
 
 If the run number comes back incorrectly (like as `000001`) then it means `c:\data\recovery.run` has been corrupted. Details of what to do later...
+
+## SQLite database is very large 
+
+The `selog.sq3` file in `C:/Data` is used by ISISICP to store log data prior to a run end, it is then purged. It will normally only get very big if a run has not been ended for a long time, which either happens over a shutdown if logging has been left running, or on systems that do not often end runs such as RIKENFE, MUONFE, DETMON, HIFI-CRYOLAB etc. The solution is to begin and end a run, though on HIFI-CRYOLAB the scientist will noramlly do this themselves once a cycle to keep log data together in the same file, so consult with them if it needs doing.    
