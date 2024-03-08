@@ -12,7 +12,7 @@
 FA recommends maybe using a config file (predefined answers for steps), further discussion needs to take place to decide how we want to move forward with this.
 - Code review: Happened and was successful.
 - Modular Instrument Control Virtual Machines: Another code chat this Friday is coming up but this will be the topic of discussion for next one.
-- Korea EPICS Meeting: There is a leghtier discussion in our teams channel. JH is the only one that the team and management can justify to send. The reasons include that training does not appear to be general/as useful as anticipated. Another reason is the limited budget.
+- Korea EPICS Meeting: There is a lengthier discussion in our teams channel. JH is the only one that the team and management can justify to send. The reasons include that training does not appear to be general/as useful as anticipated. Another reason is the limited budget.
 
 ***
 
