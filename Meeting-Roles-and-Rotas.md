@@ -53,9 +53,9 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
  |DK | 12/02/2024 |x |
  |CMS | 19/02/2024 |x |
  |FA | 26/02/2024 |x |
- |KB | 04/03/2024 | |
- |ZK | 11/03/2024 | |
- |LC | 18/03/2024 | |
+ |KB | 04/03/2024 |x |
+ |LC | 11/03/2024 | |
+ |ZK | 18/03/2024 | |
  |SC | 25/03/2024 | |
  |ES | 01/04/2024 | |
  |IH | 08/04/2024 | |
@@ -79,8 +79,8 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
 | 2024_01_11_Planning| KB | X | FA| X | |  |
 | 2024_01_11_Review/Retro| ZK | X | KB| X | DK| X |
 | 2024_02_01_Planning| ES | X | CMS| X | |  |
-| 2024_02_01_Review/Retro| IH |  | DK|  | ZK|  |
-| 2024_03_07_Planning| FA |  | SC|  | |  |
+| 2024_02_01_Review/Retro| IH | x | DK| x | ZK| x |
+| 2024_03_07_Planning| FA | x | SC|x  | |  |
 | 2024_03_07_Review/Retro| SC |  | ES|  | LC|  |
 | 2024_04_04_Planning| LJ |  | IH|  | |  |
 | 2024_04_04_Review/Retro| CMS |  | LC|  | IH|  |
