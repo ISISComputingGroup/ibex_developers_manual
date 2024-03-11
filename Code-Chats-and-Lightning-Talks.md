@@ -8,7 +8,6 @@ Code chats occur on a semi-regular monthly basis within the group at ISIS. Altho
 
 Topic | Presenter | Date
 ----- | --------- | ----
-Java Debug Option, and Gui Singleton | Sudeepta | March 2024
  Basics of Epic DBs | TBD | TBD
 
 
@@ -177,7 +176,7 @@ IOC Testing Framework & Emulators | Tom Willemsen | 23/08/22 | [Recorded here.](
 ### 2024
 Topic | Presenter | Date | Recording
 ----- | --------- | ---- | ----------
-Java Debug Option & the GUI Singleton | Sudeepta Chakraborty | 8/03/24|[Part 1.](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/GUI_Chat_Slides/Code_Chat_Java_Debug_Option.mp4) [Part 2.](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/GUI_Chat_Slides/Code_Chat_The_GUI_Singleton.mp4)
+Java Debug Option & the GUI Singleton | Sudeepta Chakraborty | 08/03/24|[Part 1.](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/GUI_Chat_Slides/Code_Chat_Java_Debug_Option.mp4) [Part 2.](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/GUI_Chat_Slides/Code_Chat_The_GUI_Singleton.mp4)
 
 
 </details>
