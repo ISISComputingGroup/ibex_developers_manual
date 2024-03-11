@@ -174,6 +174,11 @@ SANS/TRANS Instrument Scripts | Thomas Cottee Meldrum | 21/07/22 | [Recorded her
 IOC Testing Framework & Emulators | Tom Willemsen | 23/08/22 | [Recorded here.](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/GUI_Chat_Slides/Emulators%20and%20IOC%20Testing%20Framework%20Codechat.mp4)
  Ibex Gui Build System (Maven) | Tom Willemsen | 22/11/22 | [Recorded here.](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/GUI_Chat_Slides/IBEX%20GUI%20build%20System%20Code%20chat.mp4)
 
+### 2024
+Topic | Presenter | Date | Recording
+----- | --------- | ---- | ----------
+Java Debug Option & the GUI Singleton | Sudeepta Chakraborty | 8/03/24|[Part 1.](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/GUI_Chat_Slides/Code_Chat_Java_Debug_Option.mp4) [Part 2.](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/GUI_Chat_Slides/Code_Chat_The_GUI_Singleton.mp4)
+
 
 </details>
 
