@@ -81,6 +81,10 @@ A different command, which will get the latest versions of all submodules from g
 
     git submodule update --init --recursive --remote
 
+Yet another command, which will leave some submodules like adsDriver and others which are forked and would cause a "modified content" warning if running `--remote`:
+
+    git submodule update --recursive
+
 Updating the GUI
 ----------------------------------------------------------------------------------
 * Navigate to the appropriate directory in Git Bash
