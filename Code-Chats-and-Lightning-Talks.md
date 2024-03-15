@@ -59,7 +59,7 @@ IOC Testing Framework & Emulators | Tom Willemsen?
 
 ## Previous Code Chats
 
-The presentation slides for previous code chats are [available here](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Forms/AllItems.aspx?RootFolder=%2Fisis%2Fcomputing%2FICPdiscussions%2FGUI_Chat_Slides&FolderCTID=0x01200027AD8F05966A2748B3B04C98BB5B442B&View={F2C33C51-70E6-4343-B937-2C59A2568306}). 
+The presentation slides for previous code chats are [available here](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/Forms/AllItems.aspx?id=%2Fsites%2FISISExperimentControls%2FICP%20Discussions%2FGUI%5FChat%5FSlides&viewid=45d81cb9%2D9571%2D4a80%2Da5cc%2D2cb4871703a3). 
 <details>
   <summary>Previous code chats</summary>
   
@@ -168,15 +168,15 @@ Topic | Presenter | Date | Recording
 Github Universe | Jack Allen | 14/01/22 | Not Recorded
 ISISICP/DAE | Freddie | 31/03/22 | [Recorded here.](https://stfc365-my.sharepoint.com/:v:/r/personal/jack_harper_stfc_ac_uk/Documents/Recordings/Code%20chat%20(ISISICP_DAE)-20220331_140431-Meeting%20Recording.mp4?csf=1&web=1&e=ccVfMJ)
 Motion in Ibex| Jack Harper | 27/04/22 | Not Recorded
-[Docusaurus](https://github.com/JackEAllen/Docusaurus_L_and_D) | Jack Allen | 24/06/22 | [Recorded here.](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/GUI_Chat_Slides/Docusaurus.mp4)
-SANS/TRANS Instrument Scripts | Thomas Cottee Meldrum | 21/07/22 | [Recorded here.](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/GUI_Chat_Slides/SANS%20TRANS%20Instrument%20Scripts.mp4)
-IOC Testing Framework & Emulators | Tom Willemsen | 23/08/22 | [Recorded here.](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/GUI_Chat_Slides/Emulators%20and%20IOC%20Testing%20Framework%20Codechat.mp4)
- Ibex Gui Build System (Maven) | Tom Willemsen | 22/11/22 | [Recorded here.](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/GUI_Chat_Slides/IBEX%20GUI%20build%20System%20Code%20chat.mp4)
+[Docusaurus](https://github.com/JackEAllen/Docusaurus_L_and_D) | Jack Allen | 24/06/22 | [Recorded here.](https://stfc365.sharepoint.com/sites/ISISExperimentControls/_layouts/15/stream.aspx?id=%2Fsites%2FISISExperimentControls%2FICP%20Discussions%2FGUI%5FChat%5FSlides%2FDocusaurus%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview)
+SANS/TRANS Instrument Scripts | Thomas Cottee Meldrum | 21/07/22 | [Recorded here.](https://stfc365.sharepoint.com/sites/ISISExperimentControls/_layouts/15/stream.aspx?id=%2Fsites%2FISISExperimentControls%2FICP%20Discussions%2FGUI%5FChat%5FSlides%2FSANS%20TRANS%20Instrument%20Scripts%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview)
+IOC Testing Framework & Emulators | Tom Willemsen | 23/08/22 | [Recorded here.](https://stfc365.sharepoint.com/sites/ISISExperimentControls/_layouts/15/stream.aspx?id=%2Fsites%2FISISExperimentControls%2FICP%20Discussions%2FGUI%5FChat%5FSlides%2FEmulators%20and%20IOC%20Testing%20Framework%20Codechat%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview)
+ Ibex Gui Build System (Maven) | Tom Willemsen | 22/11/22 | [Recorded here.](https://stfc365.sharepoint.com/sites/ISISExperimentControls/_layouts/15/stream.aspx?id=%2Fsites%2FISISExperimentControls%2FICP%20Discussions%2FGUI%5FChat%5FSlides%2FIBEX%20GUI%20build%20System%20Code%20chat%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview)
 
 ### 2024
 Topic | Presenter | Date | Recording
 ----- | --------- | ---- | ----------
-Java Debug Option & the GUI Singleton | Sudeepta Chakraborty | 08/03/24|[Part 1.](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/GUI_Chat_Slides/Code_Chat_Java_Debug_Option.mp4) [Part 2.](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/GUI_Chat_Slides/Code_Chat_The_GUI_Singleton.mp4)
+Java Debug Option & the GUI Singleton | Sudeepta Chakraborty | 08/03/24|[Part 1.](https://stfc365.sharepoint.com/sites/ISISExperimentControls/_layouts/15/stream.aspx?id=%2Fsites%2FISISExperimentControls%2FICP%20Discussions%2FGUI%5FChat%5FSlides%2FCode%5FChat%5FJava%5FDebug%5FOption%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview) [Part 2.](https://stfc365.sharepoint.com/sites/ISISExperimentControls/_layouts/15/stream.aspx?id=%2Fsites%2FISISExperimentControls%2FICP%20Discussions%2FGUI%5FChat%5FSlides%2FCode%5FChat%5FThe%5FGUI%5FSingleton%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview)
 
 
 </details>
@@ -189,5 +189,5 @@ Rust | Jack Harper | 23/03/2022
 Git Interactive Staging| Lowri Jenkins | 10/08/2022
 Speeduino| Jack Harper | 10/08/2022
 
-All presentations should be uploaded to the SharePoint site [here](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Forms/AllItems.aspx?RootFolder=%2Fisis%2Fcomputing%2FICPdiscussions%2FGUI_Chat_Slides&FolderCTID=0x01200027AD8F05966A2748B3B04C98BB5B442B&View={F2C33C51-70E6-4343-B937-2C59A2568306}) (There is a subfolder for lightning talks) and/or converted to a wiki page if more appropriate. It should also be reasonably assumed that the people who gave these presentations should know something about these subjects.
+All presentations should be uploaded to the SharePoint site [here](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/Forms/AllItems.aspx?id=%2Fsites%2FISISExperimentControls%2FICP%20Discussions%2FGUI%5FChat%5FSlides&viewid=45d81cb9%2D9571%2D4a80%2Da5cc%2D2cb4871703a3) (There is a subfolder for lightning talks) and/or converted to a wiki page if more appropriate. It should also be reasonably assumed that the people who gave these presentations should know something about these subjects.
 
