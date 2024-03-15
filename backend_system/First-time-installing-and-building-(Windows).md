@@ -41,6 +41,9 @@ The Windows Tips from the above link says you should add maven to the PATH in th
 ## Install Git 
 Install Git [Getting-started-with-Git-and-GitHub](Getting-started-with-Git-and-GitHub)
 
+## Install Moxa Nport Driver manager
+Install `\\inst$\kits$\drvmgr*.exe` - this is required on the instruments for networked serial ports. It's required on dev machines for the database server (more specifically the moxa mappings page in the GUI)
+
 ## Copy EPICS build
 
 >_EPICS contains lots of code that requires compilation before use, so we generally copy a pre-built version of this to save time and then build modules as changes are made._
