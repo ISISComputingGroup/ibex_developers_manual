@@ -8,6 +8,7 @@ Code chats occur on a semi-regular monthly basis within the group at ISIS. Altho
 
 Topic | Presenter | Date
 ----- | --------- | ----
+How Virtual Machines and VHDs can speed up IBEX deployment | Chris | 29/04/24
  Basics of Epic DBs | TBD | TBD
 
 
