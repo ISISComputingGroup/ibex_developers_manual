@@ -129,7 +129,7 @@ First checkout the vendor branch and remove all local files. You need to remove 
     git checkout vendor
     rm -fr *
 ```
-Then unpack the new code into the directory in the same way as above. You'll have files added, removed and changed to handle. Type  `git status`  and remove unwanted added files like like binaries and temporary files as described above. Then type:  
+Then unpack the new code from the zip/tar into the directory in the same way as above. You'll have files added, removed and changed to handle. Type  `git status`  and remove unwanted added files like binaries and temporary files as described above. Then type:  
 ```
     git add -u .
 ```
@@ -137,17 +137,17 @@ This will add changed files. Again check with a   `git status`  that all is look
 ```
     git add .
 ```
-to add new and remove deleted files. As a final check run:
+which adds new and removes deleted files. As a final check run:
 ```
     git status --ignored
 ```
-This will show files in the directory currently ignored by git. As you started from an empty directory, and unpacked a clean vendor release, consider carefully whether these files should actually be added. If they should, you will need to use `git add -f` to force an add. There are several reasons why files may get ignored when they should be added:
-- A `.gitignore` may contain `db` or `db/` as a directory to ignore. The `db` directory is usually a top level install directory to be ignored, the real files are in the `Db` subdirectory. However as the windows file system is case insensitive git treats `db` and `Db` as the same and so unless you are careful you can miss adding some important files. We usually change a `db` to something more selective in our local version post merge e.g. `/db/` if there is just a top level.
+This will show files in the directory currently ignored by git via a `.gitignore`. As you started from an empty directory, and unpacked a clean vendor release, consider carefully whether these files should actually be added. If they should, you will need to use `git add -f` to force an add. There are several reasons why files may get ignored when they should be added:
+- Windows/unix case sensitivity difference. A `.gitignore` may contain `db` or `db/` as a directory to ignore. The top level `db` directory is usually a top level install directory to be ignored, the real files are in the `*App/Db` subdirectory. However as the windows file system is case insensitive git treats `db` and `Db` as the same so just `db` in a .gitignore will incorrectly exclude `*App/Db` files and cause us to miss adding them. We usually change a `db` to something more selective in our local `.gitignore` version post merge e.g. `/db/` means only match `db` at top level and not in subdirectories. There may be other case sensitivity issues, but this is the most common one.
 - a `.gitignore` pattern may be too selective for importing. For example it may exclude `*.local` to ignore files like `RELEASE.local` created later during development, but the distribution has an `EXAMPLE_RELEASE.local` that should be imported by us.
 
-Unless a new file is obviously included by error in the distribution, it is probably best to import everything in the vendor distribution
+Unless a new file is obviously included by error in the distribution, it is probably best to import everything in the vendor release distribution zip/tar file. 
     
-Finally commit and tag the changes
+Finally commit and tag the changes e.g.
 ```
     git commit -m "Imported danfysik 8000 version 1.12"
     git tag -a vendor_1_12 -m "Tag of danfysik 8000 import version 1.12"
@@ -156,7 +156,7 @@ Finally commit and tag the changes
 ```
 Now you need to go back to your ticket branch and merge in new version of vendor code
 ```
-    git checkout TicketXXX_
+    git checkout TicketXXX_add_danfysik_8000
     git pull
     git merge vendor_1_12
 ```
