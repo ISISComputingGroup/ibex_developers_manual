@@ -266,4 +266,4 @@ The `ibex.opis.resources_directory` property is set from Java before any OPIs lo
 
 Note that hard-coding a path like `c:\instrument\dev\ibex_gui\...\resources` would fail on an instrument as the client will be installed in a different location - so this system property **must** be used instead.
 
-Note that bi and mbbi records that you are trying to use with an LED in an OPI will not work unless the values are 0 and 1. This is because the LED ignores the bit and ENUM settings and On state and Off State and goes of ONLY the PVName attr.
+Note that bi and mbbi records that you are trying to use with an LED in an OPI will not work unless the values are 0 and 1. This is because the LED ignores the bit and ENUM settings and On state and Off State and goes of ONLY the PVName attribute.
