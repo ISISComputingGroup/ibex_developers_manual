@@ -19,7 +19,8 @@ Now, let's get cracking!
       - if there **is no**t, note how the `st.cmd` and `st-common.cmd` are set up in `refIOC`. In `ioc<newIOC>-IOC-01`, transition the `st.cmd` contents to a 
 `st-common.cmd` file and refactor the `st.cmd` to reference this in a similar way. Now follow the step above!
 4. Copy across the **`Makefile`** - this stays unchanged.
-5. Copy across **`dllPath<...>`**, **`envPaths`** and **`relPaths`** files. These also stay unchanged.
+5. Copy across **`envPaths`**, changing `ioc<newIOC>-IOC-01` to `ioc<newIOC>-IOC-02` if it appears.
+6. Copy across **`dllPath<...>`** and **`relPaths`** files. These also stay unchanged.
 
 
 ### Making IOC 2:  `<newIOC>-IOC-02App`
