@@ -34,6 +34,8 @@ Monitors
 
 [Polarisers & Analysers](Polarisers-and-Analysers)
 
+[Power Distribution Units] (Power-Distribution-Unit-(PDU))
+
 [Power Supplies](Power-Supplies)
 
 [Pressure Monitors](Pressure-Monitors)
