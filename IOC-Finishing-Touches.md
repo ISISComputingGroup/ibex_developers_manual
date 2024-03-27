@@ -66,7 +66,7 @@ The build in Jenkins will fail if the rules of the [DBChecker](PV-Units-&-Standa
 
 ## 8. Macros and Details
 
-Macros where possible should follow the [standard names](Macro-Naming). If a macro can be set as part of the IOC (and can be reasonably set in the GUI) then a config file should be added to the run directory which contains a list of macros (i.e. `..\EPICS\ioc\master\<IOC Name>\iocBoot\<IOC Instance Name>\config.xml`). The file is of the form:
+Macros where possible should follow the [standard names](Macro-Naming). If a macro can be set as part of the IOC (and can be reasonably set in the GUI) then a config file should be added to the run directory which contains a list of macros (i.e. `..\EPICS\ioc\master\<IOC Name>\iocBoot\<IOC Instance Name>\config.xml`). Common macros should be included from `..\EPICS\ioc\common\`.The file is of the form:
 
 ```xml
 <?xml version="1.0" ?>
@@ -74,7 +74,7 @@ Macros where possible should follow the [standard names](Macro-Naming). If a mac
 <config_part>
 <ioc_desc>Eurotherm temperature controller</ioc_desc>
 <macros>
-  <macro name="PORT" pattern="^COM[0-9]+$" description="Serial COM Port" hasDefault="NO" />
+  <xi:include href="../../../COMMON/PORT.xml" />
   <macro name="BAUD" pattern="^[0-9]+$" description="Serial communication baud rate, defaults to 9600." defaultValue="9600" hasDefault="YES" />
   <macro name="BITS" pattern="^[0-9]$" description="Serial communication number of bits, defaults to 7." defaultValue="7" hasDefault="YES" />
   <macro name="PARITY" pattern="^(even)|(odd)|(none)$" description="Serial communication parity, defaults to even." defaultValue="even" hasDefault="YES" />
