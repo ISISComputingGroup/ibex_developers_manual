@@ -34,7 +34,7 @@ Monitors
 
 [Polarisers & Analysers](Polarisers-and-Analysers)
 
-[Power-Distribution-Unit-(PDU)(https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Power-Distribution-Unit-(PDU))] 
+[Power-Distribution-Unit-(PDU)](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Power-Distribution-Unit-(PDU)) 
 
 [Power Supplies](Power-Supplies)
 
