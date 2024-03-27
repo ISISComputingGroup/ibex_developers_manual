@@ -1,4 +1,4 @@
-> [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [Power Distribution Unit (PDU)](Power Distribution Unit (PDU)s)
+> [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [Power-Distribution-Unit-(PDU)](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Power-Distribution-Unit-(PDU))
 
 ## Imaging Cameras
 
