@@ -1,6 +1,6 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [Power-Distribution-Unit-(PDU)](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Power-Distribution-Unit-(PDU))
 
-## Imaging Cameras
+## Power Distribution Unit (PDU)
 
 These are often controlled via their own PCs running bespoke software.  Running an IOC on the camera's control PC allows the instrument control machine to communicate with it.
 
