@@ -1,3 +1,7 @@
+| Chair        | Timekeeper  | Note Taker   |
+| :--------:   | :---------: | :----------: |
+| SC           | ES          | LC           |
+
 # Items from last retrospective
 - items fromlast sprint left in same order- all good
 - code reviews moved to thursday - been finding it good
