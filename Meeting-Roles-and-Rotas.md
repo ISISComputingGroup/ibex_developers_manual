@@ -16,10 +16,13 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
 * Keep an eye on the end time of the meeting - give everyone a five minute warning
 * If the meeting is scheduled for more than an hour to indicate the halfway time to make sure we take a break
 
-## Note taker:
-* Needed for Retrospective
+## Note taker in Retrospective:
 * Keep notes of the discussed points
 * Add them to the wiki with a link on the [main retrospective notes page](Retrospective-Notes)
+
+## Note taker in Planning:
+* Make notes on tickets of any important information which gets discussed but is not already mentioned on the ticket
+* Add a timestamp to tickets of when in the recording the ticket was discussed.
 
 ## Stand up:
 * This is a weekly role starting on the first working day in that week, with substitutes being decided daily if the named person is unavailable last minute - if you know you are unavailable for the week swap with someone
