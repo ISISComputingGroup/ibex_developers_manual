@@ -10,7 +10,7 @@ We have a book which should serve as a reasonable introduction to the Eclipse RC
 
 Create a directory for where you want your IBEX GUI to reside (e.g. `C:\Instrument\Dev`). From an appropriate Git console (e.g. Git Bash) navigate to your directory and run:
 
-`git clone https://github.com/ISISComputingGroup/ibex_gui.git`
+`git clone https://github.com/ISISComputingGroup/ibex_gui.git` (`git clone git@github.com:ISISComputingGroup/ibex_gui.git` if using ssh authentication)
 
 ## Building via Eclipse ##
 
