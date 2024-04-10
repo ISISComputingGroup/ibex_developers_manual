@@ -140,8 +140,10 @@ git fetch
 git checkout NDXALF
 ```
 
-7. Switch back to your new branch
-`git checkout <NDXXXX>`
+7. Switch back to your new branch:
+```
+git checkout <NDXXXX>
+```
 
 >Note: The developer branch has been created to store useful configurations that may be shared amongst all developers.
 
