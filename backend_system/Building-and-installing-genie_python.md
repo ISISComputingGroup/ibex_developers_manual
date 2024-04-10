@@ -71,7 +71,7 @@ For these packages we have created our own installable units as zip files. To cr
 
 For packages that we have modified it ourselves it is just necessary to create an appropriately named zip file and modify build_python.bat to unzip the file to \\Lib\\site-packages.
 
-## Installing on the instruments
+# Installing on the instruments
 
 On the instrument connect to the shared drive (\\\\isis\inst$\Kits$\CompGroup\ICP\genie_python\\[latest version]) and run the genie_python_install.bat file.
 
@@ -87,18 +87,19 @@ As this folder is added to the Python path any other files put in this directory
 
 Scripts relating to the operation of the instrument should be kept in `C:\Instrument\Settings\config\NDX%INSTNAME%\Python` too. This means that they can then be versioned in git.User scripts should not be stored here.
 
-### Importing from arbitrary locations
-
-You can import modules from anywhere on your machine into genie_python. This is done for example for the shared scans library, which lives in `\Instrument\Scripts` by default. 
-
-To do this, you must first append the location to the system path. The command for this is `sys.path.insert( <path> )`. You can now import modules in `<path>` normally.
-
 ## Quickly deploy minor changes to instruments
 
 If changes have been made to the genie_python source (and tested!), it can be quicker just to copy the changed files onto the instrument directly rather than wait for the build server.
 
 The genie_python source can be found in C:\Instrument\Apps\Python\Lib\site-packages\genie_python.
 Restarting genie_python will pick up the changes.
+
+# Importing from arbitrary locations
+
+You can import modules from anywhere on your machine into genie_python. This is done for example for the shared scans library, which lives in `\Instrument\Scripts` by default. 
+
+To do this, you must first append the location to the system path. The command for this is `sys.path.insert( <path> )`. You can now import modules in `<path>` normally.
+
 
 # Troubleshooting
 
