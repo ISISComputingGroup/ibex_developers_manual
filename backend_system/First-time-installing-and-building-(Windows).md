@@ -139,6 +139,10 @@ These repositories can be web browsed via [http://control-svcs.isis.cclrc.ac.uk/
 git fetch
 git checkout NDXALF
 ```
+
+7. Switch back to your new branch
+`git checkout <NDXXXX>`
+
 >Note: The developer branch has been created to store useful configurations that may be shared amongst all developers.
 
 ## Setting up a calibrations directory
