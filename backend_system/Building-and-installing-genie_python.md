@@ -13,7 +13,7 @@
 The first time you set up `genie_python`, assuming you've never installed it previously, you'll need to set up an ipython profile. 
 
 1. From `C:\Instrument\Apps\Python3`, run `python.exe .\Scripts\ipython.exe profile create`
-1. Copy `ipython_config.py` from the `package_builder` directory to `C:\users\[fedid]\.ipython\profile_default\.` If the .ipython folder does not exist, create one and inside it make a profile_default folder and paste the file there.
+1. Copy `ipython_config.py` from the `package_builder` directory to `C:\Users\[fedid]\.ipython\profile_default\.` If the .ipython folder does not exist, create one and inside it make a profile_default folder and paste the file there.
 
 
 ### Development workflow
