@@ -184,7 +184,7 @@ And try running `isisicp.exe /RegServer` again.
 
 You need to create a configuration so ISISDAE-IOC-01 will start:
 
-- run `start_ibex_server`
+- run `start_ibex_server` (in `C:\Instrument\Apps\EPICS`)
 - start the GUI
 - configuration -> edit current configuration -> give it a name and save as. It should now prompt you to switch to the configuration, after you do this the `Config:` line on the bottom of the gui screen should show this name and the instrument should be in `SETUP`
 - now go into experiment setup in DAE view and
