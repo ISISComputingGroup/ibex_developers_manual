@@ -2,7 +2,7 @@
 
 # Setting up a dev repository
 
-1. Check whether `C:\Instrument\Apps\Python3` already exists. If it does, from a git-enabled command line, `cd C:\Instrument\Apps\Python3` and perform a `git pull`. If it does not exist, from a git-enabled command line, run `git clone https://github.com/ISISComputingGroup/genie_python.git C:/Instrument/Apps/Python3`.
+1. Check whether `C:\Instrument\Apps\Python3` already exists. If it does, from a git-enabled command line, `cd C:\Instrument\Apps\Python3` and perform a `git pull`. If it does not exist, from a git-enabled command line, run `git clone https://github.com/ISISComputingGroup/genie_python.git C:/Instrument/Apps/Python3` (or if using ssh authentication `git clone git@github.com:ISISComputingGroup/genie_python.git`).
 1. Navigate to `C:\Instrument\Apps\Python3\package_builder`
 1. Run `dev_build_python.bat` (You can use the indirection into a file to look back into the console output " > some_file_name  2>&1")
 
