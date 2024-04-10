@@ -180,6 +180,12 @@ https://visualstudio.microsoft.com/downloads/
 
 And try running `isisicp.exe /RegServer` again.
 
+
+### Set up the CS-Studio archiver
+Before doing this ensure that the `build.bat` started in a previous step (to build EPICS) has successfully completed.
+In `C:\Instrument\Apps\EPICS\CSS\master` run `setup_css.bat`
+this will create directories for the archive engine. in `.\css-win.x86_64`
+
 ### Getting DAE ready to start a run (so you are in SETUP rather than processing)
 
 You need to create a configuration so ISISDAE-IOC-01 will start:
@@ -194,11 +200,6 @@ You need to create a configuration so ISISDAE-IOC-01 will start:
 - Now go back to main DAE view and press the begin button - you should get the instrument going into RUNNING
 - Press Abort and you should go back into SETUP
 - You can also open a python scripting window (scripting on left) and use  g.begin() and g.abort() to do the same thing
-
-## Set up the CS-Studio archiver
-Before doing this ensure that the `build.bat` started in a previous step has successfully completed.
-In `C:\Instrument\Apps\EPICS\CSS\master` run `setup_css.bat`
-this will create directories for the archive engine. in `.\css-win.x86_64`
  
 ## Utilities
 
