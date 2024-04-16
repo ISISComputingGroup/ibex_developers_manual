@@ -22,7 +22,14 @@ Subject: Archiving of old logging information on NDX<instrument> to free up disk
 
 Dear <instrument>,
 
-We would like to do a bit of system maintenance on NDX<instrument> – this is to backup and then archive some diagnostic information in databases that has started to occupy a lot of space. It takes around half an hour to do this, we don’t necessarily need to shutdown IBEX during this process, but the system will pause logging blocks etc. during the time so it is best to be done at a non critical time with the instrument in SETUP.  Please let us know if it would be convenient to do this today
+We would like to do a bit of system maintenance on NDX<instrument> – this is to backup and then archive some diagnostic information in databases that has started to occupy a lot of space. It takes around half an hour to an hour to do this, though we don’t necessarily need to shutdown IBEX during this process, but as the system will pause logging blocks etc. during the time it is best that either:
+- we shutdown ibex for the duration of the backup, or
+- the instrument is in SETUP state and not logging anything critical
+
+Please let us know:
+- when it would be convenient to do this backup
+- if it is OK to shutdown IBEX and then restart afterwards
+- if the instrument is currently RUNNING, any specific instructions e.g. end() run and then begin() a new one after backup 
 
 Regards,
 
