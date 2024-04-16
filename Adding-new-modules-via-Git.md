@@ -124,10 +124,13 @@ Once all the changes are done then create a pull request in the usual way for th
 
 ## Updating vendor branch
 
-First checkout the vendor branch and remove all local files. You need to remove all files first or you will either not pick up files removed in the latest version, or a file that is renamed will not get tracked properly by git as the original will still exist in your local source.  
+First checkout the vendor branch and remove all local files. You need to remove all current files before you unpack the new files or else you will either not pick up files removed in the latest version, or a file that is renamed will not get tracked properly by git as the original will still exist in your local source.  
 ```
+    # If in git bash shell:
     git checkout vendor
     rm -fr *
+    ls -a
+    # now remove any file or directory starting with a `.` but _do not_ remove `.git`
 ```
 Then unpack the new code from the zip/tar into the directory in the same way as above. You'll have files added, removed and changed to handle. Type  `git status`  and remove unwanted added files like binaries and temporary files as described above. Then type:  
 ```
