@@ -36,7 +36,7 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
  | Standup | Week Commencing | x for Done |
  |--- | --- | --- |
  |IH | 08/04/2024 |x |
- |LJ | 15/04/2024 | |
+ |LJ | 15/04/2024 |x |
  |DK | 22/04/2024 | |
  |JH | 29/04/2024 | |
  |DM | 06/05/2024 | |
