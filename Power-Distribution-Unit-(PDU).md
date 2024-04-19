@@ -6,7 +6,7 @@ A PDU, or Power Distribution Unit, is a large power strip with multiple power ou
 
 ### LINDY PDU
 
-The Lindy PDU has been implemented on IBEX GUI using an IOC that uses the SNMP interface to view, monitor and update outlets. There are 8 outlets on the strip and they can be individually turned on or off from IBEX. Lindy also comes with a web interface and there is also separate configuration software that can be downloaded if required from the web site, which would probably be needed to set a static IP address (however DHCP can be enabled via a button preff - see below). To run on the IBEX the IP of the PDU is required to be configured on the IOC macros.
+The Lindy PDU has been implemented on IBEX GUI using an IOC that uses the SNMP interface to view, monitor and update outlets. There are 8 outlets on the strip and they can be individually turned on or off from IBEX. Lindy also comes with a web interface and there is also separate configuration software that can be downloaded if required from the web site, which would probably be needed to set a static IP address (however DHCP can be enabled via a button press - see below). To run on the IBEX the IP of the PDU is required to be configured on the IOC macros.
 Further info [here](https://www.lindy.co.uk/power-c8/power-distribution-unit-pdu-c347) for user manual etc. The manual is also in `<controls share>\Manuals\Lindy_ipower`
 
 ### IP address 
