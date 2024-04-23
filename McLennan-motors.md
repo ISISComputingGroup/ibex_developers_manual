@@ -238,3 +238,17 @@ Some mclennan values were not covered in labview but exist in MCLEN IOC `st-moto
 
 * Tracking window - a parameter used to determine if a *TRACKING ABORT* should be signalled, it is the max allowed difference between current and requested position during a move (also known as the *following error*). This may get triggered by a motor being told to move/accelerate quicker than it can, or move too slowly and so stalling, or an incorrect encoder ratio so motor and encoder get out of step, or incorrect encoder values being returned from the hardware
 * Not Complete/Time-Out time - the max time at end of a move for any settling/auto corrections etc. to take place, otherwise triggers a *NOT COMPLETE/TIMEOUT ABORT* This could mean the `Window` mclennan parameter is too small and cannot be achieved, try increasing relevant `WIN*` macro. 
+
+## useful commands
+
+Command syntax is `aXXnnn` where a is address, XX command, nnn optional argument e.g. `1HD-1` homes axis 1 to datum in negative direction.
+```
+CO - query current operation
+OS - query status
+QA - query all parameters
+QM - query modes
+QP - query positions
+QS - query speeds
+```
+modes give a bit pattern - see manual for meaning
+ 
