@@ -241,7 +241,7 @@ Some mclennan values were not covered in labview but exist in MCLEN IOC `st-moto
 
 ## useful commands for debugging from a terminal session
 
-Command syntax is `aXXnnn` where a is address, XX command, nnn optional argument e.g. `1HD-1` homes axis 1 to datum in negative direction.
+Command syntax is `aXXnnn` where `a` is address, `XX` command, `nnn` optional argument e.g. `1HD-1` homes axis 1 to datum in negative direction.
 ```
 CO - query current operation
 OS - query status
