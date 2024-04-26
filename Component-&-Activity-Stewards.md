@@ -13,43 +13,34 @@ The list of components/activities and stewards is not set in stone.  It will cha
 Component/Activity | Steward |
 --- | --- |
 **Instrument Migrations** | |
-MUSR Migration | Chris C |
-SANS2D Migration | Bish |
-EMU Migration | David |
-SURF Migration | Thomas |
-POLREF Migration | Thomas |
-INTER Migration | Thomas |
-OFFSPEC Migration | |
-HIFI Migration | James & Jack |
-CHRONUS Migration | James & Jack |
-ARGUS Migration | James & Jack |
-SXD Migration | Freddie |
-WISH Migration | David |
-PEARL Migration | Bish |
-CHIPIR Migration | Thomas |
+MUSR Migration | LC |
+OFFSPEC Migration | JH |
+HIFI Migration | TBC |
+CHRONUS Migration | LC & DK |
+ARGUS Migration | LC & DK |
+SXD Migration | LJ |
+CHIPIR Migration | JH |
 --- | --- |
 **IBEX Core components** |  |
 Script Server (NICOS) | |
-Graphing/Scripting | Tom |
-Script Generator | Tom |
-IBEX GUI | Thomas |
+Graphing/Scripting |  |
+Script Generator |  |
+IBEX GUI |  |
 CSS & Phoebus | |
-EPICS base and support modules | Freddie |
+EPICS base and support modules | FA |
 Delay tickets | |
 Blockserver/Other server items |  |
 Linter |  |
 Squish |  |
-Motion Control | Jack H and Aaron |
-Reflectometry | John and Thomas |
+Motion Control | JH |
+Reflectometry | JH |
 Dataweb |  |
 --- | --- |
 **Other items which impact significantly and directly on IBEX** |  |
-Detector systems monitoring | James |
-HIFI Cryomagnet | Kathryn and Chris C |
-RIKEN Upgrade | Chris M-S |
-Systems (Hardware, OS, etc.) | Chris M-S |
-Python 3 Migration | Bish |
-Lewis | Jack A |
+Detector systems monitoring |  |
+HIFI Cryomagnet | LC |
+Systems (Hardware, OS, etc.) | CMS |
+Lewis |  |
 
 <a name="definitionSteward"></a>
 ## Definition of the role of Component / Activity Steward
