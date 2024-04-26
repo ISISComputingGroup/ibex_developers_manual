@@ -4,13 +4,15 @@ The calibration files are anything that is equipment specific but not how to dri
 
 A prime example of this are the temperature sensors which have a calibration of current to temperature. If a mistake is found in the calibration, it should be corrected and pushed to other instruments.
 
-These files live in a separate repository at:
+These files live in a separate upstream repository at:
 
     http://control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/common.git
 
 This repo should be cloned with:
 
     git clone http://control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/common.git C:\Instrument\Settings\config\common
+
+_Note that on an instrument PC these files are located in `C:\Instrument\Settings\config\common`_
 
 The reason these files are in a separate repository is that they have a different release cycle to the ibex backend (they can be updated mid-experiment where we wouldn't want to release a whole new experiment backend). It might be possible to place them in the configuration branch for instruments but merging them across instruments would be tricky. They need to be shared because the equipment is shared between experiments.
 
