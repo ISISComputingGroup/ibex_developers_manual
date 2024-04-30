@@ -8,7 +8,6 @@ Code chats occur on a semi-regular monthly basis within the group at ISIS. Altho
 
 Topic | Presenter | Date
 ----- | --------- | ----
-How Virtual Machines and VHDs can speed up IBEX deployment | Chris | 29/04/24
  Basics of Epic DBs | TBD | TBD
 
 
@@ -178,6 +177,7 @@ IOC Testing Framework & Emulators | Tom Willemsen | 23/08/22 | [Recorded here.](
 Topic | Presenter | Date | Recording
 ----- | --------- | ---- | ----------
 Java Debug Option & the GUI Singleton | Sudeepta Chakraborty | 08/03/24|[Part 1.](https://stfc365.sharepoint.com/sites/ISISExperimentControls/_layouts/15/stream.aspx?id=%2Fsites%2FISISExperimentControls%2FICP%20Discussions%2FGUI%5FChat%5FSlides%2FCode%5FChat%5FJava%5FDebug%5FOption%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview) [Part 2.](https://stfc365.sharepoint.com/sites/ISISExperimentControls/_layouts/15/stream.aspx?id=%2Fsites%2FISISExperimentControls%2FICP%20Discussions%2FGUI%5FChat%5FSlides%2FCode%5FChat%5FThe%5FGUI%5FSingleton%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview)
+How Virtual Machines and VHDs can speed up IBEX deployment | Chris | 29/04/24 | [Recorded here.](https://stfc365.sharepoint.com/sites/ISISExperimentControls/_layouts/15/stream.aspx?id=%2Fsites%2FISISExperimentControls%2FICP%20Discussions%2FGUI%5FChat%5FSlides%2FCode%5Fchat%5FHow%5FVirtual%5FMachines%5Fand%5FVHDs%5Fcan%5Fspeed%5Fup%5FIBEX%5Fdeployment%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E5b2105eb%2D3914%2D4d48%2Da5db%2D1f77539e7b7b)
 
 
 </details>
