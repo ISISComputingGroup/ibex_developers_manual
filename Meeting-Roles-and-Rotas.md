@@ -37,7 +37,7 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
  |--- | --- | --- |
  |IH | 08/04/2024 |x |
  |LJ | 15/04/2024 |x |
- |DK | 22/04/2024 | |
+ |DK | 22/04/2024 |x |
  |JH | 29/04/2024 | |
  |DM | 06/05/2024 | |
  |KB | 13/05/2024 | |
@@ -71,7 +71,7 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
 | Meeting| Chair | x for Done | Timekeeper | x for Done | Note taker | x for Done |
 | ---| --- | --- | ---| --- | --- | --- |
 | 2024_04_04_Planning| LJ | X | LC| X | LC| X |
-| 2024_04_04_Review/Retro| CMS |  | LJ|  | SC|  |
+| 2024_04_04_Review/Retro| CMS |x  | LJ|x  | SC|x  |
 | 2024_05_02_Planning| KB |  | FA|  | LJ|  |
 | 2024_05_02_Review/Retro| FA |  | JH|  | IH|  |
 | 2024_05_23_Planning| DK |  | ZK|  | JH|  |
