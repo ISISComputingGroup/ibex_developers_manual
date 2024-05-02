@@ -65,7 +65,7 @@ These can be found in `C:\Instrument\Apps\EPICS`.
 
 As a new starter you should add your name and picture to the training [slides](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Forms/AllItems.aspx?RootFolder=%2Fisis%2Fcomputing%2FICPdiscussions%2FTraining&FolderCTID=0x01200027AD8F05966A2748B3B04C98BB5B442B&View=%7BF2C33C51-70E6-4343-B937-2C59A2568306%7D).
 
-- [ISIS Sharepoint](https://www.facilities.rl.ac.uk/isis/default.aspx) - Shared ISIS documents, manuals, meeting minutes etc
+- [ISIS Sharepoint](https://stfc365.sharepoint.com/sites/isis-hub/) - Shared ISIS documents, manuals, meeting minutes etc
 - [Oracle Login](https://portal.ssc.rcuk.ac.uk/) - Book leave, create timesheets
 - [Flexi Time](https://flexiral.stfc.ac.uk/FCDWeb/) - If you're on Flexi time and need to view/edit your work history
 - [Health & Safety Training](https://lmsweb.stfc.ac.uk/moodle/login/index.php)
