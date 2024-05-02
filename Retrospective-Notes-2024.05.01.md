@@ -1,40 +1,17 @@
 | Chair        | Timekeeper  | Note Taker   |
 | :--------:   | :---------: | :----------: |
-| SC           | ES          | LC           |
+| CMS          |             | SC           |
 
 # Items from last retrospective
-- items from last sprint left in same order- all good
-- code reviews moved to Thursday - been finding it good
 - More context and pictures in ticket headers, screenshots in release notes
-  - packing release notes full of images felt impractical, put links instead
-  - image added to ticket header by developer before putting it into review
-  - image will be on the branch you're working on
+  - ES pointed to two things: 
+1. In certain cases the ticket is otherwise well written but the requirement has changed.
+2. [6053](https://github.com/ISISComputingGroup/IBEX/issues/6053) is a good example of a well written ticket.
 
+- Flash reviews as task
+  - LJ ==> Important that these aren't ignored and picked up due urgency. On the task board if there are no updates we generally overlook the board. However with flash reviews on the board, no update could mean important reviews haven't been taken up. We need to be careful when checking the task board.
+ 
 # Items from the current retrospective
-
-## Looking at ISIS beam status page at standup in cycle
-- a lot of time beam is off without us realising
-- will give us context for the day with regards to possible scheduling
-- could make just a PV on our dashboard, if you want more news look at the teams channel
-- push back about adding another check to morning standup instead of keeping an eye on teams
-
-## Ticket context
-- Want bad examples of tickets, action on ES for this
-- Will bring this up again next retro
-- Should we have a longer planning meeting to properly go over what a ticket would entail, and make sure it is written properly with correct acceptance criteria?
-  - Will run into problem where "the person whose domain this ticket belongs to" is absent
-  - This was something we used to do a bit of in pre-planning
-  - Is it worth recording planning meetings so we can reference the discussion later (timekeeper)
-  - Possibly have a note-taker for planning, will try it in next planning 
-
-## Ordering the priority columns in planning
-- People seem to pick up the tickets that they feel able to do/interested in
-- Position in ready does (or at least should) influence order tickets are taken
-- Feeling that it may not matter too much with 6-monthly releases, however patches change this
-- Prioritising adds more time to talking about tickets, however planning meetings are already very short
-- Sometimes people skip tickets because it's in an area they aren't familiar enough with, or is not clear what needs to be done
-- Enforcing the order will push people into areas they're not comfortable, which would be good in the long term
-  - We're allowed to make mistakes, you don't have to succeed from the outset (especially if it isn't urgent)
 
 ## Splitting PM duties
 - KB to split duties with GR
