@@ -19,6 +19,11 @@
   - KB ==> Issues with hearing and not comfortable with multiple people talking even with noise cancellation headphones.
   - LJ ==> Issues with echo and delay in delivery.
   - We're going to keep having meetings as hybrid, as multiple people in  a zoom call in the same room is limiting for some of the team
+- Discussions on Burndown chart
+  - KB explained that the burndown chart isn't typical burndown chart, but customized for ISIS. 
+  - LC suggested to invert the Y axis of the graph.
+- Discussions around rotating logs off
+  - CMS ==> When is the file closed and available for moving/truncating/copying - also applies particularly to console logs? When to truncate the DB?
 
 ## Mad sad glad
 - LC glad that user training went well, interesting discussions.
