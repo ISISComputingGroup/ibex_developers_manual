@@ -38,7 +38,9 @@ There is a script designed to convert RhFe temperature sensor calibration files 
 
 **Note: The script skips the first 3 lines of the files as they contain metadata.**
 
-Call with `%PYTHON3% convert_temp_calib_files.py -i <input_folder> -o <output_folder>`.
+Call with `%PYTHON3% file_converter.py -i <input_folder> -o <output_folder>`.
+
+`-hl allows you to specify the number of header lines a temp sensor file if needs be (default is 1)`
 
 Produces a `.txt` file for every walk-able folder under `input_folder` that contains a `.dat` file. The first 3 lines of the `.dat` file are stripped (these are header lines we do not require), for each line we then split by whitespace and take the first two of elements of the produced array and separate them with a comma. These lines are then written to an output file with the name of the folder and the txt extension e.g. `F232.txt`.
 
