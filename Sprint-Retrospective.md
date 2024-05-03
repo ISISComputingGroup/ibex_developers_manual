@@ -8,14 +8,11 @@ Sprint retrospective is the time where we think about how well the last sprint w
 
 ### During
 
-In no particular order
-
-* Discuss items on the list
-* Discuss what made people mad, sad and glad during the sprint
-* Discuss the current state of the sprint board
 * Discuss items from the last sprint retrospective
   * Are we implementing them?
   * Are we happy with how implementing them went?
+* Discuss items on the list
+* Discuss what made people mad, sad and glad during the sprint
 
 ### After
 
