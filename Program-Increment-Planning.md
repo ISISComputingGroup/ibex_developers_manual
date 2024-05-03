@@ -4,7 +4,7 @@ This meeting covers the overarching themes for the next few months. It will usua
 
 A PI will consist of the sprints between this major release and the next one, these will typically be in January/February and August/September.
 
-In the first sprint in a PI we will create and deploy a release of the work we have just completed. The deploy should occur so that the instrument scientists have two weeks of testing time available before the start of the user cycle. In the third sprint we will undertake dependency updates.
+In the first sprint in a PI we will create and deploy a release of the work we have just completed. The deploy should occur so that the instrument scientists have at least two full weeks of testing time available before the start of the user cycle. In the third sprint we will undertake dependency updates.
 
 This meeting will usually be chaired by the project manager for the group.
 
