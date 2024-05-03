@@ -1,5 +1,7 @@
 > [Wiki](Home) > [Processes](Processes) > [Prioritisation of tickets](Prioritisation-of-Tickets)
 
+We are presently not ordering tickets to a finer detail than high/medium/low, and this is often based on overarching priorities brought in by stakeholder managers, and the group generally.
+
 These are notes on prioritisation this is not an ordered list yet:
 
  - Stops Instrument running
