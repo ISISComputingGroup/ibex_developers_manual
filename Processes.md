@@ -9,13 +9,14 @@ Various Processes or tasks and info into how they should work. Remember rules ca
 **Workflow:**
 - [Tickets and their Workflow](Tickets-and-their-Workflow)
 - [Git Workflow](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Git-workflow)
+- [Program Increment Planning](Program-Increment-Planning)
 -  **Sprints:**
     - [Meeting Roles and Rotas](Meeting-Roles-and-Rotas)
     - [Estimating Sprint Capacity](Estimating-Sprint-Capacity)
     - [Sprint Burn down Chart](Sprint-Burn-down-Chart)
+    - [The PM Workbook](PM-Workbook)
     - **Meetings:**
         - [Backlog Preparation/Pre-Planning](Backlog-Preparation) - This meeting is unlikely to occur
-        - [Program Increment Planning](Program-Increment-Planning)
         - [Sprint Planning](Sprint-Planning)
         - [Sprint Review](Sprint-Review)
         - [Sprint Retrospective](Sprint-Retrospective)
