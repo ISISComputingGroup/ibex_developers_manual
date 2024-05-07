@@ -31,10 +31,10 @@ These are instructions for adding a new Windows machine as a node to be used by 
 We use https://github.com/jenkinsci/windows-slave-installer-module and https://github.com/winsw/winsw the relevant files are in 
 `\\isis\shares\ISIS_Experiment_Controls_Public\third_party_installers\latest_versions\builderserver` to copy to `c:\Jenkins`   
 
-Copy jenkins-agent.exe and jenkins-agent.xml into same directory e.g. c:\jenkins
+Copy `jenkins-agent.exe` and `jenkins-agent.xml` into same directory e.g. `c:\jenkins`
 
-Edit xml and change COMPUTER and SECRET to those from above, and workDir argument if not using c:\jenkins
-COMPUTER should be capitalised as written on jenkins 
+Edit `jenkins-agent.xml` and change COMPUTER and SECRET to those from above, add `-workDir` argument of `c:\jenkins`
+COMPUTER should be capitalised in same way as written on jenkins 
 
 Open an admin window and run `jenkins-agent.exe install` and then `servies.msc`
 
