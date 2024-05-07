@@ -38,7 +38,7 @@ COMPUTER should be capitalised in same way as written on jenkins
 
 Open an admin cmd window and run `jenkins-agent.exe install` and then `servies.msc`
 
-Find the jenkins service in the service manager window and change it to run as `isis\ibexbuilder` rather than local service account, you'll need to enter isisbuilder password.
+Find the jenkins service in the service manager window and change it to run as `isis\ibexbuilder` rather than local service account, you'll need to enter `isisbuilder` password.
 
 start service 
 
