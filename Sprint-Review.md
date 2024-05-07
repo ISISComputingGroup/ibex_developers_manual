@@ -1,6 +1,6 @@
 > [Wiki](Home) > [Processes](Processes) > [Sprint Review](Sprint-Review)
 
-This is a review within the team, demonstartions with our users take place with releases at the start of each program increment.
+This is a review within the team, demonstrations with our users take place with releases at the start of each program increment.
 
 ### Preparation
 At least two working days before the review:
