@@ -81,12 +81,12 @@ Please see [Building the GUI](Building-the-GUI).
 
 2. Navigate to the config folder
 
-3. Enable git credential store and set a username - replace `ndXXXX` with real computer name
+3. Enable git credential store and set a username - replace `<NDXXXX>` with real computer name
 ```
 git config --global core.autocrlf true
 git config --global credential.helper wincred
 git config --global user.name "spudulike"
-git config --global user.email "spudulike@ndXXXX.isis.cclrc.ac.uk"
+git config --global user.email "spudulike@<NDXXXX>.isis.cclrc.ac.uk"
 ```
 
 4. Enable default recursive check
