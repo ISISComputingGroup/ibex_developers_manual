@@ -24,15 +24,23 @@ These are instructions for adding a new Windows machine as a node to be used by 
 
 * Select the slave that has just been created and make a note of secret. For an initial test make a note of the curl and java commands from `Run from agent command line: (Windows)`
 
-* in a command window in c:\jenkins run the curl and java commands
+* in a command window in c:\jenkins run the curl and java commands. These can be put into a bat file for interactive running.
 
-See the Jenkins [website](https://wiki.jenkins.io/display/JENKINS/Step+by+step+guide+to+set+up+master+and+agent+machines+on+Windows) for more information.
+## setup as service
 
-* Notes from John to integrate
+We use https://github.com/jenkinsci/windows-slave-installer-module and there are relevant files in 
+`\\isis\shares\ISIS_Experiment_Controls_Public\third_party_installers\latest_versions\builderserver` to copy to `c:\Jenkins`   
 
-1. Download the slave jar from http://<jenkins>/jnlpJars/agent.jar
-1. Place in `C:\Jenkins`
-1. Run the java web start line when in node
+Copy jenkins-agent.exe and jenkins-agent.xml into same directory e.g. c:\jenkins
+
+Edit xml and change COMPUTER and SECRET to those from above, and workDir argument if not using c:\jenkins
+COMPUTER should be capitalised as written on jenkins 
+
+Open an admin window and run `jenkins-agent.exe install` and then `servies.msc`
+
+Find the jenkins service in the service manager window and change it to run as `isis\ibexbuilder` rather than local service account, you'll need to enter isisbuilder password.
+
+start service 
 
 <a name="jenkins_gui_tests"></a>
 ### Special Notes on Jenkins for GUI Tests
