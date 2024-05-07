@@ -165,3 +165,6 @@ Now you need to go back to your ticket branch and merge in new version of vendor
 ```
 And resolve conflicts before committing.
 
+### checking a vendor branch update
+
+You should confirm the number of changes in your new update branch when compared to the new vendor it is based on looks reasonable. For example if our current master when compared to its original old vendor branch had changed 5 files, then after updating vendor and merging you would expect to see something like the same number of file changes. You can do this via git branch compare - compare current master with old vendor tag and new update branch with new vendor branch tag. The number of changes will not always be identical in the new vendor branch as we do feed some of our changes back upstream if they are not locally specific hence those changes will not need re-applying and no longer show up as a changed file. If you see a large increase in files differences, this likely indicates a merge issue. 
