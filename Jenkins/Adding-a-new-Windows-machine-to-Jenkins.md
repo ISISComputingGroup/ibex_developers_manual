@@ -28,7 +28,7 @@ These are instructions for adding a new Windows machine as a node to be used by 
 
 ## setup as service
 
-We use https://github.com/jenkinsci/windows-slave-installer-module and there are relevant files in 
+We use https://github.com/jenkinsci/windows-slave-installer-module and https://github.com/winsw/winsw the relevant files are in 
 `\\isis\shares\ISIS_Experiment_Controls_Public\third_party_installers\latest_versions\builderserver` to copy to `c:\Jenkins`   
 
 Copy jenkins-agent.exe and jenkins-agent.xml into same directory e.g. c:\jenkins
