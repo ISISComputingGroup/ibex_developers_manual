@@ -46,7 +46,7 @@ Run the script in:
 
 Note that you may need the full name of the public share root.
 
-If you wish to do this manually:
+# _If you wish to do this manually:_
 
 1. First create a folder in `\\isis\inst$\Backups$\stage-deleted\<inst>\YYYY_MM_DD` - you need to do this from a cmd window not from windows explorer, this is because the file permissions allow create but not delete, but the way windows explorer creates a directory involves a delete. e.g. for LET
 ```
