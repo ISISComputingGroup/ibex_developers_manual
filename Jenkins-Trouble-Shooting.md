@@ -74,3 +74,7 @@ You can search the workspace for these files, but there is a now a program to do
 ## [Office365connector] Matched status 'FAILURE' for webhook with name 'Office 365'.
 
 This is not an error with the `Office365connector`, it is reporting that the connector is being run because it had been configured to match a 'FAILURE' state and the build had failed. You will likely see this message at the end of most failed builds, the real reason for the build failure will be earlier in the jenkins log file.  
+
+## Builds not Building on 1926
+
+Connect to the computer and start the Jenkins Slave, the Beckhoff tests mean this has to be done manually on this system
