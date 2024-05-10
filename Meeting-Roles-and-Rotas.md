@@ -38,8 +38,8 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
  |IH | 08/04/2024 |x |
  |LJ | 15/04/2024 |x |
  |DK | 22/04/2024 |x |
- |JH | 29/04/2024 | |
- |DM | 06/05/2024 | |
+ |JH | 29/04/2024 |x |
+ |DM | 06/05/2024 |x |
  |KB | 13/05/2024 | |
  |CMS | 20/05/2024 | |
  |FA | 27/05/2024 | |
