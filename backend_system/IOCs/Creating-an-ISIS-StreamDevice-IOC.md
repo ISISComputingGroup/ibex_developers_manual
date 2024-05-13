@@ -6,12 +6,15 @@ Is the a support module already available? Check https://epics.anl.gov/modules/m
 
 ## First step
 
-~The easiest way to create a StreamDevice is to use the script [here](https://github.com/ISISComputingGroup/IBEX_device_generator) but if for some reason you want to create it manually the instructions are as follows:~
+The easiest way to create a StreamDevice is to use the script [here](https://github.com/ISISComputingGroup/IBEX_device_generator) but if for some reason you want to create it manually the instructions are as follows:
 
-**Note:** the IOC creating script is currently broken and does not handle git operations correctly, meaning that the files will be created in the wrong repository. Will be solved by:
-- https://github.com/ISISComputingGroup/IBEX/issues/3431
-- https://github.com/ISISComputingGroup/IBEX/issues/3588
-- https://github.com/ISISComputingGroup/IBEX/issues/4659
+> [!WARNING]
+> The IOC creating script is improving but still under testing. Git operations should be happening correctly.
+> Tickets related to the issues:
+> - https://github.com/ISISComputingGroup/IBEX/issues/3431
+> - https://github.com/ISISComputingGroup/IBEX/issues/3588
+> - https://github.com/ISISComputingGroup/IBEX/issues/4659
+> - https://github.com/ISISComputingGroup/IBEX/issues/8249
 
 ## Create a StreamDevice support module
 
