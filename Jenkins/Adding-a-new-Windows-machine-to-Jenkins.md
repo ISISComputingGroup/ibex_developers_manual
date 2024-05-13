@@ -31,16 +31,16 @@ These are instructions for adding a new Windows machine as a node to be used by 
 We use https://github.com/jenkinsci/windows-slave-installer-module and https://github.com/winsw/winsw the relevant files are in 
 `\\isis\shares\ISIS_Experiment_Controls_Public\third_party_installers\latest_versions\builderserver` to copy to `c:\Jenkins`   
 
-Copy `jenkins-agent.exe` and `jenkins-agent.xml` into same directory e.g. `c:\jenkins`
+Copy `jenkins-agent.exe` and `jenkins-agent.xml` into same directory on the target machine e.g. `c:\jenkins`
 
-Edit `jenkins-agent.xml` and change COMPUTER and SECRET to those from above, add `-workDir` argument of `c:\jenkins`
-COMPUTER should be capitalised in same way as written on jenkins 
+Edit `jenkins-agent.xml` and change  https://epics-jenkins.isis.rl.ac.uk/computer/COMPUTER/jenkins-agent.jnlp and the SECRET field to the same as they are from the Jenkins' Node page, add `-workDir` argument of `c:\jenkins`
+COMPUTER should be capitalised in same way as written on Jenkins.
 
 Open an admin cmd window and run `jenkins-agent.exe install` and then `servies.msc`
 
-Find the jenkins service in the service manager window and change it to run as `isis\ibexbuilder` rather than local service account, you'll need to enter `isisbuilder` password.
+Find the jenkins service in the Service Manager window on the machine, and change it to run as `isis\ibexbuilder` rather than local service account, you'll need to enter `ISISBuilder` password.
 
-start service 
+Then run start service from the Service Manager window.
 
 <a name="jenkins_gui_tests"></a>
 ### Special Notes on Jenkins for GUI Tests
