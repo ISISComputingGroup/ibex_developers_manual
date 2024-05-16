@@ -13,3 +13,5 @@
 * [Adding a new local git repository](New-Local-Git-Repository)
 
 * [Common cross repository tasks using Repo Tools](git-hub-repo-tools)
+
+* [Steps to make ssh key authentication work with our workflows](Making-the-IBEX-workflow-work-with-SSH-authentication)
