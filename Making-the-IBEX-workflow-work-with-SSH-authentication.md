@@ -26,14 +26,6 @@ eval `ssh-agent`
 ssh-add
 ```
 
-You may also need to add the following to ~/.ssh/config
-```
-AddKeysToAgent yes
-Host github.com
- Hostname github.com
- IdentityFile ~/.ssh/id_rsa
-```
-
 ## Everytime you wish to run a script
 
 ### To run a script in Git Bash
