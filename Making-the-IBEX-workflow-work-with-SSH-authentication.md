@@ -13,10 +13,26 @@ You could make your developer set up work by simply replacing all of the remotes
 
 _(Remember if you use multiple instances of git for some reason, ensure that you add it to all the ones you wish to use for IBEX development!)_
 
-#Scripts that contain git comands
+If  you grow tired of entering your passphrase everytime you run a git command - follow the configuration instructions bellow. 
+
+# Scripts that contain git comands
 The above will work fine until you encounter a script which runs a git command (possibly only those using hte python git library), this will not prompt you for your ssh key passphrase and so will fail with an authentication error. To overcome this, you need to already have an ssh agent running and have added your key. To do this you can do the following
 
 ## Initial configuraiton
+You need to configure your enviroment to launch an ssh agent and add your key. It will do this eveeytime you open a new window - prompting you to enter your passphrase. To do this add the following to ~/.bash_profile (or if you don't have one, create one with this in):
+
+```
+eval `ssh-agent`
+ssh-add
+```
+
+You may also need to add the following to ~/.ssh/config
+```
+AddKeysToAgent yes
+Host github.com
+ Hostname github.com
+ IdentityFile ~/.ssh/id_rsa
+```
 
 ## Everytime you wish to run a script
 
