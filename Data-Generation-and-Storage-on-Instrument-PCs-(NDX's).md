@@ -92,3 +92,6 @@ Final actions:
 1. Collect a new sample of data over the next cycle. (Collect weekly but for more instruments)
 1. Agree above things to do on shutdown create tickets to implement and automate these
 1. Agree critical things to do all the time and create tickets to implement these
+
+# Previous work
+This page was substantially rewirtten in 2024. The 2018 version is avaialble in the git history. In 2018 we monitored 6 instruments over 19 days in cycle, the results are in an [excel file](design_documents/DataVolumns_resolution.xlsx). We found that the daily variation is not huge and therefore we can look at the averages of data captured per day. Of the various types of data the largest was conserver logs, ioc logs, mysql-archive, msg-logs and mysql files. At that time, IMAT was the biggest user collecting less than 400MB/day.
