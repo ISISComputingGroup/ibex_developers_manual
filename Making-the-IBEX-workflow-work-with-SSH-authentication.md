@@ -15,8 +15,8 @@ _(Remember if you use multiple instances of git for some reason, ensure that you
 
 If you grow tired of entering your passphrase every time you run a git command - follow the configuration instructions bellow. 
 
-# Scripts that contain git comands
-The above will work fine until you encounter a script which runs a git command (possibly only those using hte python git library), this will not prompt you for your ssh key passphrase and so will fail with an authentication error. To overcome this, you need to already have an ssh agent running and have added your key. To do this you can do the following
+# Scripts that contain git commands
+The above will work fine until you encounter a script which runs a git command (possibly only those using the python git library), this will not prompt you for your ssh key passphrase and so will fail with an authentication error. To overcome this, you need to already have an ssh agent running and have added your key. To do this you can do the following
 
 ## Initial configuration
 You need to configure your environment to launch an ssh agent and add your key. It will do this every time you open a new window - prompting you to enter your passphrase. To do this add the following to ~/.bash_profile (or if you don't have one, create one with this in):
