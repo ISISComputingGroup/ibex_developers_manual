@@ -40,6 +40,6 @@ How is an instrument configured and what is stored in the settings directory (c:
 
 Links to 3rd party dependencies of the system.
 
-## [Data Generation and Storage](Data-Generation-and-Storage)
+## [Data Generation and Storage](Data-Generation-and-Storage-on-Instrument-PCs-(NDX's))
 
-Description of the data which IBEX generates and how it is stored.
+Description of the data which IBEX generates and how it is stored on the Instrument PCs.
