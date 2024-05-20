@@ -28,7 +28,7 @@ Data is produced by various parts of the IBEX infrastructure.
 
 ## Data storage
 
-In May 2024 we went through each of these data types, and reviewed decisions made in 2018 ([see bellow](Data-Generation-and-Storage-on-Instrument-PCs-(NDX's)#previous-work)). In each case we identified how long we needed to keep them on the instrument, whether (and if so, how long) we needed to keep the data having moved it off the instrument, and what changes could be made to better automate that movement. 
+In May 2024 we went through each of these data types, and reviewed decisions made in 2018 ([see below](Data-Generation-and-Storage-on-Instrument-PCs-(NDX's)#previous-work)). In each case we identified how long we needed to keep them on the instrument, whether (and if so, how long) we needed to keep the data having moved it off the instrument, and what changes could be made to better automate that movement. 
 
 Data type | Storage on instrument | Easy access storage | Other storage | Justification
 --------  | --------------------- | ------------------- | ------------- | -------------
