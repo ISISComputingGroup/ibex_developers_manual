@@ -24,12 +24,6 @@ Data is produced by various parts of the IBEX infrastructure.
     - *mysql-sys*: system schema
     - *mysql_files*: files in the root on mysql data
 
-# Current Data Volumes
-
-We monitored 6 instruments over 19 days in cycle, the results are in an [excel file](design_documents/DataVolumns_resolution.xlsx). We found that the daily variation is not huge and therefore we can look at the averages of data captured per day. Of the various types of data the largest was conserver logs, ioc logs, mysql-archive, msg-logs and mysql files.
-
-IMAT was the biggest user collecting less than 400MB/day.
-
 # Decisions
 
 ## Data storage
