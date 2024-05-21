@@ -30,9 +30,9 @@ In May 2024 we went through each of these data types, and reviewed decisions mad
 
 Data type | Retention on instrument PC | Retention after migration | Automation | Notes
 --------  | -------------------------- | ------------------------- | ---------- | -----
-Autosave  | Indefinitely               | N/A                       | N/A        | Trivially Small and useful. 
+Autosave  | Indefinitely               | N/A                       | N/A        | Trivially Small and useful
 Config    | [Tracked with git](Settings-and-Configurations) | N/A  | N/A        | Small
-
+logs: all other than those listed below (inc. IOC, Genie-python, ICP, DAE ...) | 10 days | 10 years | [#8360](https://github.com/ISISComputingGroup/IBEX/issues/8360) | Currently moved by a script being run manually between cycles. Agreed that the usefulness of these logs declines sharply with time and the potential volume is such as to justify the 10 day retention period
           
 
 
