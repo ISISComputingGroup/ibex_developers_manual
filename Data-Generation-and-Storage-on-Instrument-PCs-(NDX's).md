@@ -1,5 +1,3 @@
-****__WORK IN PROGRESS (20/05/2024 - will finish tomorrow, GR)__****
-
 # Data Production
 
 Data is produced by various parts of the IBEX infrastructure. 
@@ -30,10 +28,17 @@ Data is produced by various parts of the IBEX infrastructure.
 
 In May 2024 we went through each of these data types, and reviewed decisions made in 2018 ([see below](Data-Generation-and-Storage-on-Instrument-PCs-(NDX's)#previous-work)). In each case we identified how long we needed to keep them on the instrument, whether (and if so, how long) we needed to keep the data having moved it off the instrument, and what changes could be made to better automate that movement. 
 
+Data type | Retention on instrument PC | Retention after migration | Automation | Notes
+--------  | -------------------------- | ------------------------- | ---------- | -----
+Autosave  | Indefinitely               | N/A                       | N/A        | Trivially Small and useful. 
+Config    | [Tracked with git](Settings-and-Configurations) | N/A  | N/A        | Small
+
+          
+
+
+
 Data type | Storage on instrument | Easy access storage | Other storage | Justification
 --------  | --------------------- | ------------------- | ------------- | -------------
-Autosave  | 2 cycles              | 1 year              | not needed    | Useful but only in the short term to redo settings and possibly see long term drifts
-config    | -                     |  -                  | -             | These do not increase in size rapidly so do not need clearing out
 logs-ioc/ nicos and genie python | 1 cycle | 2 cycles | forever | these are a primary source of information and can be used to analysis problems in the data which is held for 10 years. So we should keep
 logs-conserver | 1 cycle        | 0 | 0 | These hold marginally more info than the ioc logs but that extra info is not interesting and the ioc logs are easier to access
 mysql-msg_log | 1 cycle | 0 | 0 | Sub set of the ioc logs
