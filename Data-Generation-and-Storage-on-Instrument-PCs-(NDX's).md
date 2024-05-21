@@ -33,7 +33,7 @@ Data type | Retention on instrument PC | Retention after migration | Automation 
 Autosave  | Indefinitely               | N/A                       | N/A        | Trivially Small and useful
 Config    | [Tracked with git](Settings-and-Configurations) | N/A  | N/A        | Small
 logs: all, other than those listed below (inc. IOC, Genie-python, ICP, DAE ...) | 10 days | 10 years | [#8360](https://github.com/ISISComputingGroup/IBEX/issues/8360) | Currently moved by a script being run manually between cycles. Agreed that the usefulness of these logs declines sharply with time and the potential volume is such as to justify the 10 day retention period
-logs: conserver | 10 days              | Delete after 10 days      | [#83636](https://github.com/ISISComputingGroup/IBEX/issues/8363) | These contain no additional information over other logs, but are useful for debugging in some specific contexts, as such no need to retain beyond the period they would be useful for that debugging.  
+logs: conserver | 10 days              | Delete after 10 days      | [#8363](https://github.com/ISISComputingGroup/IBEX/issues/8363) | These contain no additional information over other logs, but are useful for debugging in some specific contexts, as such no need to retain beyond the period they would be useful for that debugging.  
 
 
 
