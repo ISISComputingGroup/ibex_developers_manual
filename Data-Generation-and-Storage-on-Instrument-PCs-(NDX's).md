@@ -34,14 +34,11 @@ Autosave  | Indefinitely               | N/A                       | N/A        
 Config    | [Tracked with git](Settings-and-Configurations) | N/A  | N/A        | Small
 logs: all, other than those listed below (inc. IOC, Genie-python, ICP, DAE ...) | 10 days | 10 years | [#8360](https://github.com/ISISComputingGroup/IBEX/issues/8360) | Currently moved by a script being run manually between cycles. Agreed that the usefulness of these logs declines sharply with time and the potential volume is such as to justify the 10 day retention period
 logs: conserver | 10 days              | Delete after 10 days      | [#8363](https://github.com/ISISComputingGroup/IBEX/issues/8363) | These contain no additional information over other logs, but are useful for debugging in some specific contexts, as such no need to retain beyond the period they would be useful for that debugging.  
-
+MySQL: msg_log | TBC (?1 month?)       | ?10 years?                | #8364 | Searchable DB of things in the IOC log. Retention time requires discussion with existing users of the IBEX feature supported by the msg_log. 
 
 
 Data type | Storage on instrument | Easy access storage | Other storage | Justification
 --------  | --------------------- | ------------------- | ------------- | -------------
-logs-ioc/ nicos and genie python | 1 cycle | 2 cycles | forever | these are a primary source of information and can be used to analysis problems in the data which is held for 10 years. So we should keep
-logs-conserver | 1 cycle        | 0 | 0 | These hold marginally more info than the ioc logs but that extra info is not interesting and the ioc logs are easier to access
-mysql-msg_log | 1 cycle | 0 | 0 | Sub set of the ioc logs
 mysql-archive | 1 cycle | 2 cycles | forever | Experiments can be across multiple cycles so keep access for scientists for 2 cycles off the instrument. Afterwards store where it is hard to get to we only get asked for this information ~twice a year.
 mysql (all others) | - | - | - | Data can be reconstructed and does not grow
 
