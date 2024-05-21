@@ -34,13 +34,9 @@ Autosave  | Indefinitely               | N/A                       | N/A        
 Config    | [Tracked with git](Settings-and-Configurations) | N/A  | N/A        | Small
 logs: all, other than those listed below (inc. IOC, Genie-python, ICP, DAE ...) | 10 days | 10 years | [#8360](https://github.com/ISISComputingGroup/IBEX/issues/8360) | Currently moved by a script being run manually between cycles. Agreed that the usefulness of these logs declines sharply with time and the potential volume is such as to justify the 10 day retention period
 logs: conserver | 10 days              | Delete after 10 days      | [#8363](https://github.com/ISISComputingGroup/IBEX/issues/8363) | These contain no additional information over other logs, but are useful for debugging in some specific contexts, as such no need to retain beyond the period they would be useful for that debugging.  
-MySQL: msg_log | TBC (?1 month?)       | ?10 years?                | #8364 | Searchable DB of things in the IOC log. Retention time requires discussion with existing users of the IBEX feature supported by the msg_log. 
-
-
-Data type | Storage on instrument | Easy access storage | Other storage | Justification
---------  | --------------------- | ------------------- | ------------- | -------------
-mysql-archive | 1 cycle | 2 cycles | forever | Experiments can be across multiple cycles so keep access for scientists for 2 cycles off the instrument. Afterwards store where it is hard to get to we only get asked for this information ~twice a year.
-mysql (all others) | - | - | - | Data can be reconstructed and does not grow
+MySQL: msg_log | TBC (?30 days?)       | ?10 years?                | [#8364](https://github.com/ISISComputingGroup/IBEX/issues/8364) | Searchable DB of things in the IOC log. Retention time requires discussion with existing users of the IBEX IOC log. 
+MySQL: archive | 1 cycle               | ?10 years?                | #836n | Source for IBEX graphs. Agreed keeping for one cycle would be appropriate retention. If we then find manual truncation is still required in cycle, then we should adapt the truncation script to leave n days of data behind. 
+MySQL: all others not listed above | Indefinitely | N/A            | N/A        | Small
 
 # Previous work
 This page was substantially rewritten in 2024, including a change in name. [The 2018 version](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Data-Generation-and-Storage/89680073e9034ff5381470be73eacfc2daf24a40) is available in the git history. In 2018 we monitored 6 instruments over 19 days in cycle, the results are in an [excel file](design_documents/DataVolumns_resolution.xlsx). We found that the daily variation is not huge and therefore we can look at the averages of data captured per day. Of the various types of data the largest was conserver logs, ioc logs, mysql-archive, msg-logs and mysql files. At that time, IMAT was the biggest user collecting less than 400MB/day.
