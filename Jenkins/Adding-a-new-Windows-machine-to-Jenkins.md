@@ -6,6 +6,8 @@ These are instructions for adding a new Windows machine as a node to be used by 
 
 * First set up the machine so it can be used to build the back-end system manually by following these [instructions](First-time-installing-and-building-(Windows))
 
+* After you have registered the ISISICP go into `c:\Instrument\Apps\EPICS\ICP_Binaries\isisdae` and read `README_isisicp_reg.txt` in particular you will probably need to add the the account running jenkins to the windows group mentioned 
+
 * Delete the EPICS subdirectory that was created in the previous step (maintaining C:\Instrument\Apps)
 
 ### Adding to Jenkins
