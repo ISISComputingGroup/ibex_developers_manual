@@ -92,7 +92,7 @@ Software imported from outside should use a "vendor branch" so new versions are 
 1. Add an initial .gitattributes and .gitignore (often using a copy from an older repo).
 
 ## 4 Adding module as submodule
-
+This should be undertaken by the reviewer as part of the merge process to avoid issues with merge conflicts in epics top caused by IOC master.
 1. Add the new repository as a submodule:
     ```
     cd EPICS/support/danfysik8000
