@@ -120,7 +120,7 @@ This should be undertaken by the reviewer as part of the merge process to avoid 
     ````
 1. Adjust `.gitignore` and `.gitattributes` to make sure they don't contain file that you have just built. Check `make clean uninstall` works. 
 
-Once all the changes are done then create a pull request in the usual way for the new code in EPICS and the new module.
+Once all the changes in the submodule are merged, create a commit in EPICS top using `git commit -m "add submodule <module name>"`, and then pushing `git push --recurse-submodule=check`.
 
 ## Updating vendor branch
 
