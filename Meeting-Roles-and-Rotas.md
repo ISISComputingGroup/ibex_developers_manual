@@ -8,10 +8,13 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
 * Make sure things happen as per the ticket workflow details for meetings, see the [processes](Processes) page for more details (if they are out of date, update them)
 * Keep the meetings on track (as much as possible)
 
-## Timekeeper:
-* Needed for Pre-Planning, Review/Retrospective, and Planning
-* In Pre-Planning and planning limit discussion of tickets to a maximum of 5 minutes per ticket
-* In Pre-Planning and planning, act as moderator for the voting site, reopening voting as approprite (please announce when you do so to avoid everyone refreshing constantly thinking their site is bugged)
+## Timekeeper in Planning:
+* Limit discussion of tickets to a maximum of 5 minutes per ticket.
+* Act as moderator for the voting site, deleting estimates between votes, show votes when everyone is ready, and giving brief reminders if some time has passed and some votes have not been cast.
+* Keep an eye on the end time of the meeting - give everyone a five minute warning
+* If the meeting is scheduled for more than an hour to indicate the halfway time to make sure we take a break
+
+## Timekeeper in Review
 * In Review ensure there is enough time for everyone to speak in the hour - this would be an average of 5 minutes per person if everyone was planning to demo
 * Keep an eye on the end time of the meeting - give everyone a five minute warning
 * If the meeting is scheduled for more than an hour to indicate the halfway time to make sure we take a break
@@ -22,6 +25,7 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
 
 ## Note taker in Planning:
 * Make notes on tickets of any important information which gets discussed but is not already mentioned on the ticket
+  * This should include acceptence criteria discussed.
 * Add a timestamp to tickets of when in the recording the ticket was discussed.
 
 ## Stand up:
