@@ -25,7 +25,7 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
 
 ## Note taker in Planning:
 * Make notes on tickets of any important information which gets discussed but is not already mentioned on the ticket
-  * This should include acceptence criteria discussed.
+  * This should include acceptance criteria discussed.
 * Add a timestamp to tickets of when in the recording the ticket was discussed.
 
 ## Stand up:
