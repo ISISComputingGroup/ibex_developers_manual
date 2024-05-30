@@ -177,11 +177,9 @@ Update `EPICS\ISIS\IocLogServer\master\LogServer\pom.xml` with new dependency ve
 If you update the source code of procServ/conserver the following applies too, but we should also update `cygwin` and rebuild the binaries periodically even if the source code is unchanged. To publish new binaries:
 - determine the host running the Jenkins job, look at the LABEL parameter of the build (this is currently ndhspare53)
 - log onto the machine and update cygwin - goto https://www.cygwin.com/ in a web browser from the machine and download and run `setup-x86_64.exe`
-- We need to stop it upgrading `libcrypt-devel` from 2.1 to 4.1 so locate `libcrypt-devel` in the pending package list shown and chose "keep" in the dropdown menu next to it.
-- (if you forget to do the above, you can always re-run `setup-x86_64.exe` and downgrade `libcrypt-devel` from 4.1 to 2.1)
 - let it update packages
 
-There are two cygwin distributions on the computer in `c:\cygwin64` and `c:\mini_cygwin64`, the one in `cygwin64` is used to build programs and the one in `mini_cygwin64` is a minimal distribution that is copied to the instrument along with the built procServ/conserver programs to provide a runtime environment. Both of these need to be updated, so you will **need to run the above setup twice** changing the installation directory between runs. The `libcrypt-devel` note above only applies to `c:\cygwin64`, when you update `c:\mini_cygwin64` there will likely be very few packages and nothing additional needs to be done other than update it.     
+There are two cygwin distributions on the computer in `c:\cygwin64` and `c:\mini_cygwin64`, the one in `cygwin64` is used to build programs and the one in `mini_cygwin64` is a minimal distribution that is copied to the instrument along with the built procServ/conserver programs to provide a runtime environment. Both of these need to be updated, so you will **need to run the above setup twice** changing the installation directory between runs. when you update `c:\mini_cygwin64` there will likely be very few packages and nothing additional needs to be done other than update it. After you update the main `cygwin64` you will need to disable ASLR on cygwin1.dll     
 
 - now start the jenkins EPICS_Tools job, this will build and update `kits$\Binaries\EPICS_Tools` 
 
