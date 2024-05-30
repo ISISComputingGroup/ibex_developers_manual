@@ -183,8 +183,7 @@ If you update the source code of procServ/conserver the following applies too, b
 
 There are two cygwin distributions on the computer in `c:\cygwin64` and `c:\mini_cygwin64`, the one in `cygwin64` is used to build programs and the one in `mini_cygwin64` is a minimal distribution that is copied to the instrument along with the built procServ/conserver programs to provide a runtime environment. Both of these need to be updated, so you will **need to run the above setup twice** changing the installation directory between runs. The `libcrypt-devel` note above only applies to `c:\cygwin64`, when you update `c:\mini_cygwin64` there will likely be very few packages and nothing additional needs to be done other than update it.     
 
-- now start the jenkins EPICS_Tools job
-- when it has finished, copy new files from `kits$\EPICS_Tools` to `ICP_Binaries\EPICS_Tools`
+- now start the jenkins EPICS_Tools job, this will build and update `kits$\Binaries\EPICS_Tools` 
 
 # NICOS
 [Nicos Dependency update steps](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Developing-NICOS).
