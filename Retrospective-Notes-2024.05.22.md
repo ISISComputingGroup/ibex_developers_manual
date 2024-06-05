@@ -70,7 +70,7 @@ Draw attention to impeded through a new mechanism.
 
 EPICS top PR Lowri says that there should be a better way to manage the submodules. Jack offered solution and Lowri updated the wiki page to reflect this.
 
-If discussion ticket and clear acceptance criteria for outcome of discussion whoever assigned to to create the discussion just does it. If the implementation ends up going beyond the ponts then make another ticket for the rest of the implementation.
+If discussion ticket and clear acceptance criteria for outcome of discussion whoever assigned to to create the discussion just does it. If the implementation ends up going beyond the points then make another ticket for the rest of the implementation.
 
 ==**MAD/SAD/GLAD:**==
 
