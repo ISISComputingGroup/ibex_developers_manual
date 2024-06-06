@@ -25,3 +25,5 @@
 * [LOTQD MSH150 Monochromator](LOTQD-MSH150-Monochromator)
 
 * [Rotating Stirrer Rack](Rotating-Stirrer-Rack)
+
+* [Stanford SR850 Lock In Amplifier](Stanford-SR850)
