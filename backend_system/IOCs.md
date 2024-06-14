@@ -14,7 +14,7 @@ There are two sorts of IOCs, EPICs and pycaspy. For EPICs type see the automatic
 Need more than 1 IOC? See [IOC Duplication](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Duplicating-IOCs)
 
 ## Automatically
-If you're building a new StreamDevice IOC you can use the [IOC Generator script](https://github.com/ISISComputingGroup/IBEX-device-generator), for developer info see the [wiki](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/IOC-Generator).
+If you're building a new StreamDevice IOC you can use the [IOC Generator script](https://github.com/ISISComputingGroup/IBEX-device-generator).
 
 ## Manually
 If you're not creating a StreamDevice IOC or you would like to know how an IOC could be created manually see:
