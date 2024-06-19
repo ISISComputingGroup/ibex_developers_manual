@@ -4,7 +4,7 @@ To deploy a new IOC to an instrument, or patch an existing one, different levels
 
 You do not usually need to deploy a new GUI, in fact it is best to avoid this as you may update other OPIs unintentionally, introducing changes that need updates to IOC that you are not deploying. So go for the minimal change approach if possible:
 - keep existing GUI build on instrument
-- the directory yopu will be updating on the instrument will be of the form `C:\Instrument\Apps\Client_E4\plugins\uk.ac.stfc.isis.ibex.opis_1.0.0.4670\resources` and if from your local machine then from somewhere like `C:\Instrument\Dev\ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources`
+- the directory you will be updating on the instrument will be of the form `C:\Instrument\Apps\Client_E4\plugins\uk.ac.stfc.isis.ibex.opis_1.0.0.4670\resources` and if from your local machine then from somewhere like `C:\Instrument\Dev\ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources`
 - copy across just the new/changed OPIs and leave everything else as is
 - If adding a new IOC, then you may need to manually edit `opi_info.xml` to add new OPI to ibex list. Do not copy across a new `opi_info.xml` as it could refer to things that are not present.   
 
