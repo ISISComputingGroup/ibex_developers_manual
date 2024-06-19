@@ -14,7 +14,7 @@ again, change the minimum possible, don't copy a whole tree from the jenkins bui
 
 ##  Deploying new IOC (or updating an existing ioc when EXE has changed)
 
-An IOC EXE from `ioc\master\MYIOC\bin\windows-x64` depends on DLL files etc in `support` and these may change after a developer dependency update to our EPICS repositoryies, so just copying an EXE from usual EPICS_CLEAN jenkins will not work. If you are sure that the dependencies on the build server and instrument were the same, you can just copy a new EXE, but it may be safer to copy a static build of an EXE across as that includes all these DLL dependencies inside the EXE and so is self contained (if a lot larger). If you copy an EXE you should also copy the ioc's `dbd` file from the same build e.g. for INSTETC ioc this is copying `INSTETC/dbd/INSTETC-IOC-01.dbd` file as well as the `INSTETC/bin` files.
+An IOC EXE from `ioc\master\MYIOC\bin\windows-x64` depends on DLL files etc in `support` and these may change after a developer dependency update to our EPICS repositories, so just copying an EXE from usual EPICS_CLEAN jenkins will not work (c++ libraries expose functions from DLLs, these may change with a new version of e.g. EPICS base or asyn). If you are sure that the dependencies on the build server and instrument were the same, you can just copy a new EXE, but it may be safer to copy a static build of an EXE across as that includes all these DLL dependencies inside the EXE and so is self contained (if a lot larger). If you copy an EXE you should also copy the ioc's `dbd` file from the same build e.g. for INSTETC ioc this is copying `INSTETC/dbd/INSTETC-IOC-01.dbd` file as well as the `INSTETC/bin` EXE files.
 
 So for a new IOC do the following:
 
