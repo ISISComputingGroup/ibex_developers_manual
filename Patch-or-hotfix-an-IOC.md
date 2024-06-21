@@ -26,4 +26,4 @@ So for a new IOC do the following:
 # Notes
 
 * on windows you cannot replace an EXE file if it is in use
-* The list of IOCs to start is produced by a `start_ibex_server` and it also builds the list of ioc macros that the GUI reads. So you will need to run `start_ibex_server` for a new IOC or changed macros, and may have to restart the GUI afgter this too.
+* The list of IOCs to start is produced by a `start_ibex_server` and it also builds the list of ioc macros that the GUI reads. So you will need to run `start_ibex_server` for a new IOC or changed macros, and may have to restart the GUI after this too.
