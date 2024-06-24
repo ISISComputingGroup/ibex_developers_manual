@@ -9,6 +9,7 @@
 
 > [!NOTE]
 > The beckhoff XAR (runtime environment) does NOT currently support windows 11 (check [here](https://infosys.beckhoff.com/english.php?content=../content/1033/tc3_overview/6162419083.html&id=) for updates on this situation). This means that if you are on a Windows 11 development PC, you cannot run the beckhoff tests.
+> Beckhoff XAE (the editor) is supported on Windows 11.
 
 <details>
 <summary>You may need to disable some windows features, such as Hyper-V, Windows Hypervisor Platform etc.
