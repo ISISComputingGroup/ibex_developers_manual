@@ -6,11 +6,11 @@ so we want to find out what is at offset `0x66c0` in `asyn.dll`
 
 * vnc onto instrument
 * create cmd window and cd to iocBoot for ioc
-* run dllpath.bat
+* run `dllpath.bat`
 * now run `C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\windbg.exe`
 * file -> open executable and browse to ioc exe in bin
-* look at debug ->modules window and note load address of DLL of interest e.g. 00007ffe`b6da0000
-* if offset was `0x66c0` then type `u 0x00007ffeb6da0000 + 0x66c0 L1` and you'll get somethign like
+* look at debug ->modules window and note load address of DLL of interest e.g. `00007ffeb6da0000`
+* if offset was `0x66c0` then type `u 0x00007ffeb6da0000 + 0x66c0 L1` and you'll get something like
 ```
 0:000> u 0x00007ffeb6da0000 + 0x66c0 l1
 asyn!findDpCommon [C:\Instrument\Apps\EPICS\support\asyn\master\asyn\asynDriver\asynManager.c @ 2620] [inlined in asyn!getTraceMask [C:\Instrument\Apps\EPICS\support\asyn\master\asyn\asynDriver\asynManager.c @ 2620]]:
