@@ -58,6 +58,8 @@ To easily add `EPICSTerm.bat` to the start menu after copying EPICS, run `C:\Ins
 
 See [Building and installing genie_python](Building-and-Installing-genie_python)
 
+Note: This is a private repository so any new-starters will need to ask a developer to add them.
+
 ## Install MySQL
 
 See [Installing and upgrading MySQL](Installing-and-Upgrading-MySQL)
