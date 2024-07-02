@@ -2,13 +2,13 @@ If there has been an EPICS dependency update, then taking DLLs/EXE from the late
 
 If EPICS has a git tag v14.0.0 then
 
-# if first time you need to create branch
+if first time you need to create branch
 ```
 git checkout -b Release_14.0.0_hotfix v14.0.0
 git push origin Release_14.0.0_hotfix
 git submodule update
 ```
-# subsequently just change to it
+subsequently just change to it
 ```
 git checkout -b Release_14.0.0_hotfix v14.0.0
 git submodule update
