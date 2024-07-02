@@ -1,4 +1,4 @@
-If there has been an EPICS dependency update, then taking DLLs/EXE from the latest build server or your desktop for an instrument will not work as there will be library mismatches. If you need to build a new exe/dll for an existiing release, this is the procedure to setup a jenkins job for this 
+If there has been an EPICS dependency update, then taking DLLs/EXE from the latest build server or your desktop for an instrument will not work as there will be library mismatches. If you need to build a new exe/dll for an existing release, this is the procedure to setup a jenkins job for this 
 
 If EPICS has a git tag v14.0.0 then
 
