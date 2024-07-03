@@ -35,7 +35,7 @@ These are the steps needed to run the GUI via Eclipse:
 1. Next, From the menu bar choose Run->Run configurations and select "ibex.product" from the left hand list under "Eclipse Application".
 1. In the "Main" tab in **Run configurations** tick the "Clear" tick box and untick the "Ask for confirmation before clearing". In the "Configuration" tab tick the "Clear the configuration area before launching" tick box. Click "Apply" and select "Run".
 
-Note: If there is a ava.lang.UnsupportedClassVersionError error then go to Window -> Preferences -> Java -> Compiler -> Set compliance level to 17
+Note: If there is a `ava.lang.UnsupportedClassVersionError` error then go to Window -> Preferences -> Java -> Compiler -> Set compliance level to 17
 
 IBEX should now build but there will probably be some errors. You can clear them following the procedure below.
 
