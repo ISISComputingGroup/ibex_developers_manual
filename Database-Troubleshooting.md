@@ -16,6 +16,8 @@ Look for mysqld.exe task running in task manager or for the service MYSQLXX (cur
 
 The database resides on the `Var` instrument disk volume, so can be responsible for this looking full; however there are also IOC log files on this volume that may instead be, or also be, the cause.
 
+[Always do instruments that are in warning in this Nagios list for their Archive Db](https://control-mon.isis.cclrc.ac.uk/nagios/cgi-bin/status.cgi?servicegroup=mysql_db&style=detail)
+
 First check with the scientists it is OK to go ahead - send an email to the <instrument> specific contact list with something like
 ```
 Subject: Archiving of old logging information on NDX<instrument> to free up disk space
