@@ -25,3 +25,9 @@ This is an issue reporting from the Beckhoff itself. you may be able to reset th
 #### Safety systems
 Safety systems such as light curtains or bump strips will throw the controller into error (and usually disable all axes) as opposed to just stopping movement like on a Galil. The green reset button on each beamline should clear the error and re-enable. 
 
+# Virtual axes do not accept two setpoints in quick succession
+
+See https://github.com/ISISComputingGroup/IBEX/issues/8339 for a detailed description of the issue.
+
+The solution is to set `.DLY` to 0.25 in the motor record (which causes a 250ms "settle time" after motions).
+
