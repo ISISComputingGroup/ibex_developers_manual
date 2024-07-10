@@ -11,11 +11,11 @@ There needs to be a system VHD, this has been created by Chris and will be detai
 
 ### App VHD
 
-IBEX applications needs to be placed on a disk these should be generic for all instruments. In practice hot fixes will make them different, we record hotfixes and these are reapplied on upgrade of needed. 
+IBEX applications need to be placed on a disk and these should be generic for all instruments. In practice hot fixes will make them different, we record hotfixes and these are reapplied on upgrade of needed. 
 
 ### Configuration Settings VHD
 
-IBEX settings are placed on a setting VHD, these will be created once when the instrument is converted to use VHDs and after that this will be persisted through IBEX and Windows upgrades. On Upgrade the configuration will need to be upgrades and the common calibration files need to be updated.
+IBEX settings are placed on a setting VHD, these will be created once when the instrument is converted to use VHDs and after that this will be persisted through IBEX and Windows upgrades. On Upgrade, the configuration will need to be upgraded and the common calibration files need to be updated.
 
 ### Var VHD
 
