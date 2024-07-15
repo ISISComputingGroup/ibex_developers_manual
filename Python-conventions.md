@@ -22,13 +22,14 @@ Key points relating to general code formatting:
 * Function/method names should be lowercase, with words separated by underscores as necessary to improve readability
 * Comments should have a space after the # and start with a capital letter (unless it is a variable name)
 * Files should have one blank line at the end
+* Methods and function definitions should contain type hints.
 
 ```python
 import os
 
 
 class CapsWordName(object):
-    def method_that_has_underscores(self, x, y=None):
+    def method_that_has_underscores(self, x: any, y=None: any):
         """
         See docstring guide below.
         """
@@ -36,7 +37,7 @@ class CapsWordName(object):
             x += y
         return x
 
-    def one_blank_line_before_next_method(self, max):
+    def one_blank_line_before_next_method(self, max: int) -> int:
         """
         See docstring guide below.
         """
@@ -51,7 +52,7 @@ class CapsWordName(object):
 
         return total
 
-    def _this_method_is_non_public(self):
+    def _this_method_is_non_public(self) -> int:
         """
         The single underscore warns people using this class that this method 
         is not part of the API, so may change and should be used with care.
@@ -65,13 +66,12 @@ class CapsWordName(object):
 
 ### Docstring format
 
-Here we also deviate from PEP8 in that our format is based mostly on the [Google style](https://google.github.io/styleguide/pyguide.html).
+Here we also deviate from PEP8 in that our format is based mostly on the [Google style](https://google.github.io/styleguide/pyguide.html). It is not identical however.
 See below for usage examples, but some key points to follow are:
 
 * Docstrings start and end with triple double-quotes
 * Newline after opening `"""`
-* First line of text should be a one sentence description followed by a full-stop and a new line. More details can then follow
-* Args can have their suggested type declared in brackets. This is optional, but preferred in code a user may encounter, for example: in genie_python
+* First line of text should be a one sentence description followed by a full-stop and then an empty line. More details can then follow
 
 Google style suggests that argument descriptions start with a capital and end with a full-stop.
 ```python
