@@ -76,17 +76,13 @@ See below for usage examples, but some key points to follow are:
 Google style suggests that argument descriptions start with a capital and end with a full-stop.
 ```python
     Args:
-        state (string): The state to wait for (e.g. "paused").
+        state: The state to wait for (e.g. "paused").
 ```
 We have decided to follow Google on this; however, some older docstrings may not match this, so please adjust them as you come across them.
 
 PyCharm can be set to auto-generate Google style dostrings via `File --> Settings --> Tools --> Python Integrated Tools`
 
 PyCharm also supports the ability to specify types in the docstring. This includes being able to write objects class names, for example: 
-```python
-    Returns:
-           Group (block.Block): A block object containing a groups block information.
-````
 
 This is useful because it will syntax highlight potential type errors before you even debug, as well as allow you to quickly perform introspection on objects of that type in you code (Ctrl-Left Click).
 
@@ -100,7 +96,7 @@ class ExampleClass:
     There should be a newline between this docstring and the following method.
     """
 
-    def an_example_method(self, param1, param2=None, *args, **kwargs):
+    def an_example_method(self, param1: int, param2=None: string, *args, **kwargs):
         """
         This is an example of a method.
 
@@ -113,8 +109,8 @@ class ExampleClass:
             self is not included in the 'Args' section.
 
         Args:
-            param1 (int): The first parameter.
-            param2 (string, optional): The second parameter. Defaults to None.
+            param1: The first parameter.
+            param2 (optional): The second parameter. Defaults to None.
                 Subsequent line(s) of description should be indented.
             *args: Variable length argument list.
             **kwargs: Arbitrary keyword arguments.
@@ -145,14 +141,14 @@ def a_function_that_returns_none(param1):
 ```
 
 ```python
-def waitfor_runstate(state, maxwaitsecs=3600, onexit=False):
+def waitfor_runstate(state: string, maxwaitsecs=3600: int, onexit=False: bool):
     """
     Wait for a particular instrument run state.
 
     Args:
-        state (string): The state to wait for (e.g. "paused").
-        maxwaitsecs (int, optional): The maximum time to wait before carrying on.
-        onexit (bool, optional): Wait for runstate to change from the specified state.
+        state: The state to wait for (e.g. "paused").
+        maxwaitsecs (optional): The maximum time to wait before carrying on.
+        onexit (optional): Wait for runstate to change from the specified state.
 
     Examples:
         Wait for a run to enter the paused state:
