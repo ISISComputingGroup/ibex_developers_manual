@@ -7,10 +7,9 @@ We try to follow [PEP8](https://www.python.org/dev/peps/pep-0008/) for coding st
  
 A clear exception is when it comes to line length; PEP8 suggests a line length limit of 79 characters but defaults to 100, but PyCharm defaults to 120. I recommend following PEP8 and modifying PyCharm default to 100 on this (See: `File -> Settings -> Editor -> Code Style -> Python -> Wrapping and Braces -> Hard wrap at: `).
 
-**PyCharm warns on many deviations from PEP8, please don't ignore it.**
+**We have a [Ruff config](https://github.com/ISISComputingGroup/reusable-workflows/blob/main/ruff.toml), you can setup ruff to work with most IDE's and then use our config to lint your code, or run ruff from commandline before making a pull request, standards compliance will be enforced by this config at pullrequest. So before making a pullrequest you should ensure any files you have changed have been formatted by ruff, and pass its checks. Ruff can also automatically fix many violations.**
 
-You can add a GitHub workflow to perform lint checking on your repository to enforce PEP8 standards as part of code reviews. The gitHub workflow can be found here:
-[Pylint GitHub Workflow](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Shared-utility-scripts#github-workflows)
+For new repos containing python you should add the following [workflow](https://github.com/ISISComputingGroup/reusable-workflows/blob/main/.github/workflows/linters.yml) to ensure standards compliance.
 
 Key points relating to general code formatting:
 
