@@ -185,25 +185,30 @@ def get_blocknames(self):
 
 ### Code conventions
 
-#### Use the Python 3 style print function
-```python
-print('Hello, World')
-```
-AVOID using the Python 2 style print function.
-
-#### Use format to construct strings from values
+#### Use f-strings to construct strings from values, or .format() when this is not possible (e.g. when you wish to use the same template multiple times with different variables).
 ```python
 # Single value
-print('Name: {}'.format('Eric'))
+name = 'eric'
+print(f'Name: {name}')
 
 # Multiple values
-print('Name: {}, Age: {}'.format('Eric', 21))
+name = 'eric'
+age = 11
+print(f'Name: {name}, Age: {age}')
 
 # With a class
-print('Name: {user.name}, Age: {user.age}, Sex: {user.sex}'.format(user=usr))
+print(f'Name: {user.name}, Age: {user.age}, Sex: {user.sex}')
 
 # Limit to two decimal points
-print('Name: {}, Age: {:.2f}'.format('Eric', 12.3456789))
+name = 'eric'
+age =  12.3456789
+print('Name: {name}, Age: {age:.2f}')
+
+# if you want to re-use a template then prefer .format(), as fstrings are evaluated immediatley.
+template = 'Name: {}, Age: {}'
+print(template.format('Eric', 11)
+...
+print(template.format('Alice', 13)
 ```
 AVOID using the older `%` formatter or concatenating strings with `+`.
 
