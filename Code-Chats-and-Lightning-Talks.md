@@ -9,6 +9,7 @@ Code chats occur on a semi-regular monthly basis within the group at ISIS. Altho
 Topic | Presenter | Date
 ----- | --------- | ----
  Bluesky | Tom Willemsen | 21/08
+ Nagios and Jenkins Checks | Freddie | 01/10
  Basics of Epic DBs | TBD | TBD
 
 
