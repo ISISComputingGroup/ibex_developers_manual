@@ -11,6 +11,7 @@ The Environment Monitor is a simple, read-only device with two sensors, A and B,
 | SENSORB:PRESENT | Whether Sensor B is connected (yes / no) |
 
 ## IOC Setup
+The IOC has two macros for sensor A present and sensor B present which need to be set in the IOC configurations.
 When connecting to the real device it must be connected via serial, and the IOC requires the device's COM Port in its macros.
 
 ## Implementation
