@@ -45,9 +45,13 @@ There are a number of tips for [trouble shooting](trouble-shooting-pages) alread
 
   1. Greet the caller with something that tells them they are talking to the right team, e.g. just respond with "ISIS Experiment Controls Support"
   1. Make a note* of the time
-  1. Make a note* of the name of the instrument and the name or at least the role of the caller, if possible - sometimes they are quick and you don't get to catch it, or they don't actually say who it is. These calls can be from users in cabins, or from the MCR, knowing who called you about the problem can help if others need to follow it up.
-  1. Make a note* of the basic problem.
-  1. If you can solve the problem do so, if you can't start finding the appropriate answers in this guide or by reaching out to others.
+  1. Make a note* of the name of the instrument and the name or at least the role of the caller, if possible - sometimes they are quick and you don't get to catch it, or they don't actually say who it is. These calls can be from users in cabins, or from the MCR, knowing who called you about the problem can help if others need to follow it up. Ask how best to call them back - scientist may call from cabin, but say to email or phone their mobile.
+  1. Make a note* of the basic problem. Useful details like:
+      1. When did the problem start happening (helps us to know where to look for in log files)
+      1. Is it happening now, or when you try and do something
+      1. What events led up to the problem happening e.g. commands, change of configuration, connecting new equipment, ...
+      1. how urgent is it? Do they have a workaround for now? When is a convenient time for us to investigate issue.
+  1. If you can solve the problem do so, if you can't start finding the appropriate answers in this guide or by reaching out to others (if onsite, ask in room - if offsite, post in teams)
 
   * Notes can be mental notes - but don't be afraid to write everything down either, you have to write it all down for the out of hours calls anyway.
 </details>
