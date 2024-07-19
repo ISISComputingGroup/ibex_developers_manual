@@ -2,7 +2,7 @@ There is a long list of things to worry about when you have the support phone or
 
 These pages should be a living document - as people learn things add them to the appropriate place if things change and you notice update them. If you are experienced, make sure the rest of us are getting things right and verify what is linked to from here. Just remember, this is a public wiki, so be wary of the detail added.
 
-Don't forget to "Send As" Experiment Controls, that way it should be possible for others to see what has already been discussed
+Don't forget to "Send As" ISIS Experiment Controls in outlook and also cc: ISIS Experiment Controls in the message, that way it will be possible for others to see what has already been discussed. You should also start a thread in the "support issues" teams channel
 
 If remote, make sure you are either on the VPN or accessing a system on-site in some way
 
@@ -29,11 +29,7 @@ Most important:
 
 In hours:
   - You keep an eye on the Experiment Controls inbox and follow through to see that any issues are resolved, these are echoed in Teams where they can be discussed and uses the same indications as the flash reviews to indicate whether or not the issue is being or has been dealt with
-  - You keep an eye on Nagios (either via the website or if you receive messages that way) and look to resolve issues as appropriate - ask if help is needed or it is unclear
-
-Out of hours:
-  - If you are on call at a weekend you should look at the [nagios overview](https://varanus.nd.rl.ac.uk/nagios/) and the [web dashboard overview](http://dataweb.isis.rl.ac.uk/IbexDataweb/Overview/ibexOverview.html) in the morning to check the status of the instruments as we would normally during stand up. At the same time you should also check that no urgent issues have come through to the Experiment Controls inbox.
-  - Just focus on the most important things!
+  - You keep an eye on Nagios (either via the website or if you receive messages that way) and look to resolve issues as appropriate - ask if help is needed or it is unclear. [nagios overview](https://varanus.nd.rl.ac.uk/nagios/) and the [web dashboard overview](http://dataweb.isis.rl.ac.uk/IbexDataweb/Overview/ibexOverview.html)
 
 ## Trouble Shooting
 
@@ -45,13 +41,13 @@ There are a number of tips for [trouble shooting](trouble-shooting-pages) alread
 
   1. Greet the caller with something that tells them they are talking to the right team, e.g. just respond with "ISIS Experiment Controls Support"
   1. Make a note* of the time
-  1. Make a note* of the name of the instrument and the name or at least the role of the caller, if possible - sometimes they are quick and you don't get to catch it, or they don't actually say who it is. These calls can be from users in cabins, or from the MCR, knowing who called you about the problem can help if others need to follow it up. Ask how best to call them back - scientist may call from cabin, but say to email or phone their mobile.
+  1. Make a note* of the name of the instrument and the name or at least the role of the caller, if possible - sometimes they are quick and you don't get to catch it, or they don't actually say who it is. These calls can also come from visiting users in cabins, or from the Main Control Room (MCR), knowing who called you about the problem can help if others need to follow it up. Check how best to call them back - scientist may call from cabin, but say to email or phone back on their mobile in case they are no longer in the cabin.
   1. Make a note* of the basic problem. Useful details like:
-      1. When did the problem start happening (helps us to know where to look for in log files)
-      1. Is it happening now, or when you try and do something
-      1. What events led up to the problem happening e.g. commands, change of configuration, connecting new equipment, ...
-      1. how urgent is it? Do they have a workaround for now? When is a convenient time for us to investigate issue.
-  1. If you can solve the problem do so, if you can't start finding the appropriate answers in this guide or by reaching out to others (if onsite, ask in room - if offsite, post in teams)
+      1. When did the problem start happening (this helps us to know where to look for in log files)
+      1. Is it happening now, or only when you try and do something
+      1. What events led up to the problem happening e.g. which commands, opened something on GUI, connected new equipment, ...
+      1. how urgent is it - do they have a workaround for now etc.  When is a convenient time for us to start to investigate issue.
+  1. If you can solve the problem do so, if you can't start finding the appropriate answers in this guide or by reaching out to others (if onsite, ask in office - if offsite, post in teams). It is OK to tell the user you will call them back 
 
   * Notes can be mental notes - but don't be afraid to write everything down either, you have to write it all down for the out of hours calls anyway.
 </details>
@@ -62,9 +58,9 @@ There are a number of tips for [trouble shooting](trouble-shooting-pages) alread
 
   1. What is the name of the computer? 
     - If it is the NDX or NDH, we care, look at the next steps, there are a small subset of other systems we support that others might be logging into which will be listed in the older SharePoint along with the access information as appropriate. 
-    - Anything else, NDC, NDL, NDW:
-      - in office hours refer them to the service desk
-      - out of hours if you can help do so, but this is a best efforts offering, and you might not be able to do anything. If you can't resolve the issue out of the service desk hours, there is no easy escalation option. An inability to log in due to incorrect passwords will fail over after a length of time, but most of us cannot access Active Directory to reset it, so they will have to find a way around it differently.
+    - Anything else, NDC, NDL, NDW, cabin PCs, or an ISIS or CLRC domain account as opposed to a local instrument account:
+      - in office hours refer them to the Facilities IT service desk
+      - out of hours, if in cycle then in zoom phone call "ISIS IT Infrastructure on-call" (phone number 94499)
     - If attempting to connect to EMMA, remember the -A
   1. Unable to connect to NDX via RDP
     - Try yourself to RDP, if you can ask reporter to try again, if they can't it is a connectivity issue for the system they are using to site, in hours refer them to the service desk, out of hours this is best efforts. Check the ISIS Computing O365 SharePoint for more information.
