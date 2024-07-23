@@ -109,9 +109,9 @@ actionList.add(action)
 In the synoptic view I have a hidden button with actions than can be reused.
 
 # Running a script on page load
-You can make a script run on page load by setting it to trigger from a PV called `=1` and making sure it executes even if there are errors.
+You can make a script run on page load by setting it to trigger from a PV called `loc://$(DID)_CONST_1(1)` and making sure it executes even if there are errors.
 
-![](images/input_pvs.png)
+![image](https://github.com/user-attachments/assets/cfe8a146-ee04-4375-9c46-0562cfe3e9f2)
 
 ![](images/opi_script_options.png)
 
