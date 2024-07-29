@@ -53,6 +53,7 @@ For the test system I have gone with the first approach because it was easy. I l
     1. Copy file back to the source
 
 # VHD Creation Jenkins Job
+## 
 
 There is an [automated job in jenkins](http://epics-jenkins.isis.rl.ac.uk/job/Create_VHD/) which builds VHDs from the latest IBEX server/client/python versions.
 
@@ -85,3 +86,9 @@ Once filled with IBEX files, the VHDs are copied to:
 ```
 \\isis\inst$\Kits$\CompGroup\ICP\VHDS
 ```
+
+# Upgrade IBEX Version on a VM By Copying VHD
+
+to do
+
+
