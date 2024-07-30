@@ -22,7 +22,16 @@ The `binary_search_time()` procedure takes one input parameter and returns two o
     OUT p_row_number INT -- The returned record number in the table which is closest to the target time.
  			    This will be a reference to a variable provided by the calling scope.
 ```
+The procedure `truncate_message_table()` calls the binary search procedure and uses the returned first row ID and target row ID to determine the rows to be deleted. Potentially the number of rows to be deleted could be very large, in some cases millions, so it is important that the database server is not locked for significant periods. Instead, rows are deleted in blocks of, say 1000 rows at a time, with a sleep period in between. This makes the deletion process cooperative and prevents data loss and timeouts from other database clients.
+The `truncate_message_table()` procedure takes one input parameter and returns two output parameters, in the same way as the binary search procedure:
+```
+    IN p_retention_period time -- The retention period as a time type (e.g. '336:00:00' == 2 wks) Note that this is limited in SQL to '838:59:59', about 35 days
+    OUT p_first_row_id   -- The id value of the earliest row in the table (zeroth row).
+    OUT p_row_number INT -- The returned record number in the table which is closest to the target time.
+ 			    This will be a reference to a variable provided by the calling scope.
+```
 
+The `log_truncation_event()` is triggered periodically, typically once per day at 01:00 and calls the `truncate_message_table()`, supplying the retention period in days. Within the `CREATE EVENT` block, there are two STARTS lines, one of which is commented out and can be instated for testing with a short interval. 
 
 ## Testing
 There is a fairly comprehensive README.md file in C:\Instrument\Apps\EPICS\ISIS\IocLogServer\master\tests
