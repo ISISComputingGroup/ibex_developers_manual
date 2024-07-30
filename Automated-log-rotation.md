@@ -47,3 +47,8 @@ cd C:\Instrument\Apps\EPICS\ISIS\IocLogServer\master
 C:\Instrument\Apps\MySQL\bin\mysql.exe -u root --password=<db root password> < log-truncation-schema.sql
 
 Note that the checks that the script is running correctly is by examining a new database table debug_messages, which is emptied before each truncation process. Details of the process are recorded in the table as simple text, which includes information on the progress of the binary search procedure.
+
+If you want to update a procedure, simply edit the SQL file in the `C:\Instrument\Apps\EPICS\ISIS\IocLogServer\master` directory or `tests\` subdirectory, then use the mysql executable to do the change to the database accordingly, e.g.:
+
+`C:\Instrument\Apps\MySQL\bin\mysql.exe -u root --password=JhCkz5X6VNWV < truncate_event.sql`
+
