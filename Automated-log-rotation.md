@@ -46,6 +46,8 @@ Files specific to automatic truncation are:
 | truncate_event.sql | Defines the log_truncation_event() event |
 | create_event_logger.sql | Defines the EventsLog table for auto truncation process logging |
 | debug_log.sql | Defines the debug_log procedure appending info to the process log |
+| test\test_truncate_proc.sql | A SQL script to quickly test the truncate_message_table() procedure |
+| test\test_fill_message.sql | A SQL script to populate the message table with records assigned a createDate field value at one hour intervals over the given period (period_days)  |
 
 ## Testing
 There is a fairly comprehensive README.md file in C:\Instrument\Apps\EPICS\ISIS\IocLogServer\master\tests
@@ -55,6 +57,17 @@ For new systems with no pre-exiting database, the described test procedure can b
 For systems with an existing msg_log database, there is a SQL script which simply creates the SQL event and procedures necessary for the automatic truncation, without affecting any existing database content:
 cd C:\Instrument\Apps\EPICS\ISIS\IocLogServer\master
 C:\Instrument\Apps\MySQL\bin\mysql.exe -u root --password=<db root password> < log-truncation-schema.sql
+
+**Dummy data**:
+
+There is a script : SQL file tests\test_fill_message.sql which will insert dummy log records into the message table. Message records will be assigned a createDate field value at one hour intervals over the given period (period_days). These parameters are configurable within the script.
+
+`C:\Instrument\Apps\MySQL\bin\mysql.exe -u root --password=<db root password> < tests\test_fill_message.sql`
+
+**Run the test**
+After filling the message table, it is then possible to test the truncation procedure via:
+`C:\Instrument\Apps\MySQL\bin\mysql.exe -u root --password=<db root password> < tests\test_truncate_proc.sql`
+Metrics are output to the screen. It can also be helpful to manually examine the message table to view the remaining data and check the time span.
 
 Note that the checks that the script is running correctly is by examining a new database table debug_messages, which is emptied before each truncation process. Details of the process are recorded in the table as simple text, which includes information on the progress of the binary search procedure.
 
