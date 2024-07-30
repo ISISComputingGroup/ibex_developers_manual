@@ -37,6 +37,16 @@ The `truncate_message_table()` procedure takes one input parameter and returns t
 
 The `log_truncation_event()` is triggered periodically, typically once per day at 01:00 and calls the `truncate_message_table()`, supplying the retention period in days. Within the `CREATE EVENT` block, there are two STARTS lines, one of which is commented out and can be instated for testing with a short interval. 
 
+Files specific to automatic truncation are:
+
+| File | Description |
+| -----| ----------- |
+| binary_search.sql | Defines the binary_search_time() procedure |
+| truncate_message_table.sql | Defines the truncate_message_table() procedure |
+| truncate_event.sql | Defines the log_truncation_event() event |
+| create_event_logger.sql | Defines the EventsLog table for auto truncation process logging |
+| debug_log.sql | Defines the debug_log procedure appending info to the process log |
+
 ## Testing
 There is a fairly comprehensive README.md file in C:\Instrument\Apps\EPICS\ISIS\IocLogServer\master\tests
 
@@ -50,5 +60,5 @@ Note that the checks that the script is running correctly is by examining a new 
 
 If you want to update a procedure, simply edit the SQL file in the `C:\Instrument\Apps\EPICS\ISIS\IocLogServer\master` directory or `tests\` subdirectory, then use the mysql executable to do the change to the database accordingly, e.g.:
 
-`C:\Instrument\Apps\MySQL\bin\mysql.exe -u root --password=<db root password>< truncate_event.sql`
+`C:\Instrument\Apps\MySQL\bin\mysql.exe -u root --password=<db root password> < truncate_event.sql`
 
