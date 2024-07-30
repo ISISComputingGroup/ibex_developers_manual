@@ -91,12 +91,12 @@ Once filled with IBEX files, the VHDs are copied to:
 
  - The VM set up, running an older version of IBEX, has been located within Hyper-V manager.
  - If you wish, a 'Checkpoint' (Right Click -> Checkpoint) can be capture of the current system to allow a way to restore the VM to a functioning state, if required.
- - Ensure that the VM is switched OFF (Right Click -> Turn Off...)
- - Once the State has changed to 'Off', Right Click the VM and select 'Settings...'
- - Under Hardware -> SCSI Controller, Select the Hard Drive for '/apps'
+ - Ensure that the VM is switched OFF (Right Click -> Turn Off...).
+ - Once the State has changed to 'Off', Right Click the VM and select 'Settings...'.
+ - Under Hardware -> SCSI Controller, Select the Hard Drive for '/apps'.
  - Select 'Browse...' and locate the '/apps' drive containing the latest IBEX build.
  - Select 'Open', and double check this is the correct drive.
  - Select 'Apply' and then 'OK'.
  - To test that the IBEX has been updated, double click the VM or right click and press 'Start'.
- - Once the IBEX server has been start, you can check the version within 'Help' -> 'About' on the toolbar within the IBEX GUI
+ - Once the IBEX server has been start, you can check the version within 'Help' -> 'About' on the toolbar within the IBEX GUI.
 
