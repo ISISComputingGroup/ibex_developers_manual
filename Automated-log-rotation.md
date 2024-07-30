@@ -10,3 +10,6 @@ Currently, for all files not modified within the last 10 days, it:
 The scheduled task is added/recreated as an install step in `ibex_utils` under `server_tasks`.
 
 A nagios check will use the same script, but in dry-run mode and with a cutoff of 14 days, to notify us if the log rotation stops working.
+
+
+# Automated periodic database message log truncation
