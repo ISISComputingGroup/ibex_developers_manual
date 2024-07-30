@@ -64,7 +64,8 @@ There is a script : SQL file tests\test_fill_message.sql which will insert dummy
 
 `C:\Instrument\Apps\MySQL\bin\mysql.exe -u root --password=<db root password> < tests\test_fill_message.sql`
 
-**Run the test**
+**Run the test**:
+
 After filling the message table, it is then possible to test the truncation procedure via:
 `C:\Instrument\Apps\MySQL\bin\mysql.exe -u root --password=<db root password> < tests\test_truncate_proc.sql`
 Metrics are output to the screen. It can also be helpful to manually examine the message table to view the remaining data and check the time span.
