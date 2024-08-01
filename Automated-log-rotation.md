@@ -47,7 +47,7 @@ Files specific to automatic truncation are:
 | create_event_logger.sql | Defines the EventsLog table for auto truncation process logging |
 | debug_log.sql | Defines the debug_log procedure appending info to the process log |
 | test\test_truncate_proc.sql | A SQL script to quickly test the truncate_message_table() procedure |
-| test\test_fill_message.sql | A SQL script to populate the message table with records assigned a createDate field value at one hour intervals over the given period (period_days)  |
+| test\test_fill_message.sql | A SQL script to populate the message table with records assigned a `createDate` field value at one hour intervals over the given period (period_days)  |
 
 ## Testing
 There is a fairly comprehensive README.md file in C:\Instrument\Apps\EPICS\ISIS\IocLogServer\master\tests
