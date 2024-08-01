@@ -52,7 +52,7 @@ Files specific to automatic truncation are:
 ## Testing
 There is a fairly comprehensive README.md file in C:\Instrument\Apps\EPICS\ISIS\IocLogServer\master\tests
 
-For new systems with no pre-exiting database, the described test procedure can be invoked once the msg_log database has been built by running: C:\Instrument\Apps\EPICS\SystemSetup\confg_mysql.bat.
+For new systems with no pre-exiting database, the described test procedure can be invoked once the msg_log database has been built by running: `C:\Instrument\Apps\EPICS\SystemSetup\config_mysql.bat`.
 
 For systems with an existing msg_log database, there is a SQL script which simply creates the SQL event and procedures necessary for the automatic truncation, without affecting any existing database content:
 cd C:\Instrument\Apps\EPICS\ISIS\IocLogServer\master
@@ -60,7 +60,7 @@ C:\Instrument\Apps\MySQL\bin\mysql.exe -u root --password=<db root password> < l
 
 **Dummy data**:
 
-There is a script : SQL file tests\test_fill_message.sql which will insert dummy log records into the message table. Message records will be assigned a createDate field value at one hour intervals over the given period (period_days). These parameters are configurable within the script.
+There is a script : SQL file tests\test_fill_message.sql which will insert dummy log records into the message table. Message records will be assigned a `createDate` field value at one hour intervals over the given period (period_days). These parameters are configurable within the script.
 
 `C:\Instrument\Apps\MySQL\bin\mysql.exe -u root --password=<db root password> < tests\test_fill_message.sql`
 
