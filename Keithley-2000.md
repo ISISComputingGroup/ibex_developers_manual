@@ -16,3 +16,10 @@ Note that only one of these variables can only be read at a time. The keithley 2
 - Device takes a male 9-way serial connection with no null modem.
 - Device has configurable terminators on the device and in the IOC (via `IEOS`/`OEOS` macros). The terminator can be any of `\r`, `\n`, `\r\n` or `\n\r`. When entering these as macros, the slashes must be doubled, e.g. `\\r\\n`.
 - Device can be very slow to respond and get streamdevice timeouts just after changing measurement modes. This is due to internal relays in the keithley switching over and taking time to acquire a new measurement.
+
+
+# Troubleshooting
+
+### Error `-231` and beeping when trying to read the keithley
+
+Try sending `:INIT:CONT OFF` to the keithley via hterm/hyperterm, then reconnect the IOC.
