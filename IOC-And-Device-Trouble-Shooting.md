@@ -294,3 +294,18 @@ Certain IOCs can be made to generate log files using the [ARACCESS component](Lo
 - Next check the ARINST level is it up (check `http://localhost:4812/groups`)
     - if not restart it, this means that there is no data stored for the run
 - Next step is to check that the data is getting into the database (probably plot on log plotter)
+
+- Write tip on Wiki for importing a database dump file into local database.  Commands and output:
+
+
+## Reading historical PV values from local database _after_ it has been backed up and truncated
+
+This can be done by _importing_ the backed-up database (ususally on a network drive) into a local developer's copy, then reading/plotting from there.
+Example command from a request to read chopper values on MERLIN:
+
+```
+mysql.exe -u root -p < [insert network back-up path here]\ndxMERLIN\ibex_database_backup_2024_01_30\ibex_db_sqldump_2024_01_30.sql
+Enter password: ************
+```
+
+The local database can then be truncated to remove the import.
