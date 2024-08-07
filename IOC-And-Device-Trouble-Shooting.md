@@ -300,7 +300,7 @@ Certain IOCs can be made to generate log files using the [ARACCESS component](Lo
 
 ## Reading historical PV values from local database _after_ it has been backed up and truncated
 
-This can be done by _importing_ the backed-up database (ususally on a network drive) into a local developer's copy, then reading/plotting from there.
+This can be done by _importing_ the backed-up database (usually on a network drive) into a local developer's copy, then reading/plotting from there.
 Example command from a request to read chopper values on MERLIN:
 
 ```
