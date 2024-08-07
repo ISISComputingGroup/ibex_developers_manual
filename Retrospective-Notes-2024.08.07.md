@@ -9,25 +9,25 @@
 
 # Previous Sprint
 
-- Python standards -> JH suggested a code chat or code review to discuss the changes.  LJ agreed and reminded the group that we have standards already, now we'll enforce them
+- Python standards -> JH suggested a code chat or code review to discuss the changes.  LJ agreed and reminded the group that we have standards already, now we'll enforce them. LJ to discuss at the forthcoming sprint planning meeting.
 
 - Assign ourselves as reviewer of a PR -> all agreed good idea.
 
-- Have a `Pending` column in tasks board rather than two columns -> KB created mockups of potential new task board (link in `Dev-Changes-Memo` Teams channel).  `View 4` agreed as best option.  Discussion of labels, sorting of columns, etc.  KB will write up some instructions on how to use the system, and to link them from said Teams channel.
+- Have a `Pending` column in tasks board rather than two columns -> KB created mockups of potential new task board (link in `Dev-Changes-Memo` Teams channel).  `View 4` agreed as best option.  Discussion of labels, sorting of columns, etc.  KB will write up some instructions on how to use the system, and to link them from said Teams channel. -> LJ commented that it's an improvement.
 
-- Fleeces for new starters - T-shirts and polo shirts also requested -> JH will get some quotes
+- Fleeces for new starters - T-shirts and polo shirts also requested -> JH will get some quotes -> Not done yet - Jack is happy to pass on acquisition information in case anyone else gets some time to do it.
 
-- Should `email-exp-controls` Teams channel contribute to support issues effort calculations? -> all agreed to only discuss issues in this channel in 'support-issues' for accounting purposes.  'Read Only' access applied to channel?
+- Should `email-exp-controls` Teams channel contribute to support issues effort calculations? -> all agreed to only discuss issues in this channel in 'support-issues' for accounting purposes.  'Read Only' access applied to channel? -> Yes it's read-only.
 
-- New web dashboard - JH would like to further develop -> TW suggested a code-chat/review of what's been done already before deploying.  Agreed would be done on 25/07/2024.  UPDATE: JH gave talk & demonstration on morning of 01/08/2024.
+- New web dashboard - JH would like to further develop -> TW suggested a code-chat/review of what's been done already before deploying.  Agreed would be done on 25/07/2024.  UPDATE: JH gave talk & demonstration on morning of 01/08/2024. -> JH is planning to work on this next sprint.
 
-- NOT looking at project board in Stand-Up meeting (as new checks cover most issues) -> agreed to check weekly during Friday's meeting as a trial.
+- NOT looking at project board in Stand-Up meeting (as new checks cover most issues) -> agreed to check weekly during Friday's meeting as a trial.-> all finding it a good thing.
 
-- Adding new sub-modules to EPICS Top repository -> agreed to create and add empty submodule (to master branch) at beginning of ticket, reviewer will then populate during final merge
+- Adding new sub-modules to EPICS Top repository -> agreed to create and add empty submodule (to master branch) at beginning of ticket, reviewer will then populate during final merge. -> Not yet done.
 
-- Concern over large number of 'in progress' tickets -> suggestion to use 'impeded' label more freely rather than just for external reasons.
+- Concern over large number of 'in progress' tickets -> suggestion to use 'impeded' label more freely rather than just for external reasons. -> Doing alright.
 
-- 15 minute wait during Stand-Up - awkward with gap in middle while those present wait for others who've said they'll be late.  Sometimes gap filled with looking further at system issues -> LC suggested to start 10:15 and do personal updates first, then look at system status.  LC has checked meeting room availability.  Agreed we'll try this for two sprints and review next but one retrospective.  **Highlight this for reviewer of said sprint**
+- 15 minute wait during Stand-Up - awkward with gap in middle while those present wait for others who've said they'll be late.  Sometimes gap filled with looking further at system issues -> LC suggested to start 10:15 and do personal updates first, then look at system status.  LC has checked meeting room availability.  Agreed we'll try this for two sprints and review next but one retrospective.  **Highlight this for reviewer of said sprint** -> All agree that 10:15 is much better.
 
 
 # Current Sprint
