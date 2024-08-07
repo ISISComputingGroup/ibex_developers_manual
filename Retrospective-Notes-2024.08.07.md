@@ -1,10 +1,10 @@
 | Chair        | Timekeeper  | Note Taker   |
 | :--------:   | :---------: | :----------: |
-| LC           | CMS         | IG           |
+| DM           | DK          | IG           |
 
 ### Present:
 - in person: DK, JD, TW, IG
-- online:    LC, LJ, DM, SC, DK, CMS, JH
+- online:    LC, LJ, DM, SC, CMS, JH
 
 
 # Previous Sprint
