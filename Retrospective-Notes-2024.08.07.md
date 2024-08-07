@@ -9,21 +9,6 @@
 
 # Previous Sprint
 
-- PyCharm on NDX control machines - could potentially run scripts via the IDE causing confusion; would produce an extra load on NDX machine -> discourage use if/when possible
-        
-- Extra role for planning (not sure what - timing?  editing tickets?) - possibly too much for notetaker to do -> agreed can try at next planning meeting then reassess.
- 
-- Ticket formatting/template - nothing done towards this to date -> LJ will create a ticket to rewrite the template
- 
-- 15 minute Stand-up split -> revisit next retrospective as not enough information this time.
- 
-- Join meeting from office PC -> OK for time being for one-off meetings when room not available.
- 
-- Interpreting Nagios -> LJ will organise a codechat
-
-
-# Current Sprint
-
 - Python standards -> JH suggested a code chat or code review to discuss the changes.  LJ agreed and reminded the group that we have standards already, now we'll enforce them
 
 - Assign ourselves as reviewer of a PR -> all agreed good idea.
@@ -45,9 +30,17 @@
 - 15 minute wait during Stand-Up - awkward with gap in middle while those present wait for others who've said they'll be late.  Sometimes gap filled with looking further at system issues -> LC suggested to start 10:15 and do personal updates first, then look at system status.  LC has checked meeting room availability.  Agreed we'll try this for two sprints and review next but one retrospective.  **Highlight this for reviewer of said sprint**
 
 
+# Current Sprint
+- DK: I think it would be beneficial to the team if every member of it showed a summary slide at each sprint review, no matter how large or small their own perceived contribution to the project may be. -> Unanimous agreement generally.
+- FA: Could we move sprint planning to be 10:30 to 12:30 which would be more in line with our start time to allow people travelling further to get to the meeting in time? We could also then use the existing 10:15 stand-up slot for a triage of any support issues for when planning is in cycle. -> There was a certain amount of disagreement due to potential conflicts with out of core-hours, in particular lunchtime. Needs further discussion.
+- TW: Could we encourage signing off messages sent from the shared mailbox with something like "Tom (on behalf of exp controls)" or similar? Not just for our scientists actually, sometimes it's a bit tricky as a developer to find out who replied to one of the messages. -> Agreed within the team that we should always try to associate a 'human' with a communication.
+- LJ: Do we want to be more strict about re-pointing tickets at sprint change-overs/when putting them into review? we started this sprint with supposedly a large amount of points in review, but often when this is the case it's actually not representative of amount of work to be done. -> There was some discussion and no conclusion was reached. Needs further discussion.
+- TW: SURF caused a lot of support issues this sprint, which fell disproportionately on one or two team members. The feeling is that we are taking the blame for issues outside of our control. -> TW suggested more pairing when addressing SURF support calls. All agreed this was a good suggestion. JH/DK suggested a presentation to the dev team on the software architecture etc. to increase familiarity.
+
+
 ## Mad/Glad/Sad
 
-- KB was glad we finished the sprint with no tickets in the `Ready` column.  Suggested explanation that we underestimated the number of tickets we were capable of completing.
-- FA glad Beckhoff issues fixed, JH all of the above for the same reason!
-- DK and LC glad Open Day demonstration went well and thanked everyone involved.
-- DK and others glad JD has made very good start and fitted in to Team well.
+- LC: Sad that Isaac was leaving and he will be missed.
+- DK: Sad about SURF issues.
+- LJ: Glad that we now have coding standards in place and that we can now build on them.
+- IG: Mad that had to share a meeting room with very active rodents above the ceiling.
