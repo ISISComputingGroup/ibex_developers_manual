@@ -115,6 +115,8 @@ CSS text input fields can write to char waveform PVs but needs to be set up in a
 - Postfix the PV name with ` {"longString":true}` (note the space before the JSON). The final value in "PV Name" should look similar to the following: `$(PV_ROOT):ARBITRARY:SP {"longString":true}`
 - Ensure "Format Type" is "String"
 
+Note: If waveform PV is being attached to a multi-line text box then user will have to `ctrl-enter` to save their changes. 
+
 # Data browser Graph Creation
 
 To make a databrowser graph on an OPI:
