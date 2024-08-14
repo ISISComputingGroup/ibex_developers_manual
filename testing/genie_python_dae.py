@@ -1,3 +1,5 @@
+from genie_python import genie as g
+
 """
 A manual system test for exercising genie_python dae functionality
 """
