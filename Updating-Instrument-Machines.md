@@ -11,7 +11,7 @@ For a new release of IBEX the following should be sent as soon as possible, at l
 ```
 Dear All,
 
-We have recently created version **X.x.x** of IBEX and will be looking to install it on all IBEX instruments between **date** and **date**.
+We have recently created version **X.x.x** of IBEX and will be looking to install it to the (summer | winter) group, which includes the following instruments:
 
 The list of new features and bug fixes in this release can be found at **link to release notes**.
 
