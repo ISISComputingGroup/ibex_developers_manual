@@ -213,3 +213,8 @@ If onsite/vpn you can access  https://control-svcs.nd.rl.ac.uk/squish/squish_sta
 "licenseType": "tester"
 ```
 Then from a command windows do `nslookup a.b.c.d` to see machine name using licence. Currently licences should auto-expire after 12 hours anyway, so you may just need to wait.  `licenceType` can be `tester` or `execution`, we have one of each type and `execution` is used by the jenkins squish test server (this licence type only allow running not editing of tests)  
+
+### install new service squish-license-server start
+
+on `control-svcs` edit `/etc/squish-licence-server/licences/squish-licence.cfg` and paste in new licence details. Then 
+ `service squish-license-server stop` and ``service squish-license-server start`
