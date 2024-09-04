@@ -23,7 +23,7 @@
     - New starters should be encouraged as they progress to go for more higher priority tickets depending on ability. 
 - TW: Creating a release is painful:
     - We ought to create a 'CI' like process for releases so that when it comes to producing a release, there aren't lots of unexpected problems to solve in a small time constraint.
-- TW: Code reviews at Thursday standups:
+- JH & TW: Code reviews at Thursday standups:
     - Decided that if no one volunteers to do a 'show and tell' then the ticket at the top of review will be picked and the code will be looked at by the team. As it is a review, it should be understandable by the whole team anyways. Also helps whoever is about to pick up the review.
 - LJ & KB: Repointing Tickets:
     - Decided that with the burndown chart coming back there is no need to repoint tickets either during the sprint or between sprints. There was concern about a loss in resolution in how much time a ticket will take after end of a sprint.
