@@ -36,7 +36,6 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
 
 # Rotas
 
-## Stand up
  | Standup | Week Commencing | x for Done |
  |--- | --- | --- |
  |IH | 08/04/2024 |x |
@@ -59,8 +58,8 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
  |SC | 05/08/2024 |x |
  |CMS | 12/08/2024 |x |
  |FA | 19/08/2024 |x |
- |GR| 26/08/2024 |x |
- |LJ| 02/09/2024 | |
+ |GR | 26/08/2024 |x |
+ |LJ | 02/09/2024 | |
  |LC | 09/09/2024 | |
  |DK | 16/09/2024 | |
  |DM | 23/09/2024 | |
@@ -70,6 +69,7 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
  |JH | 21/10/2024 | |
  |ES | 28/10/2024 | |
  |FA | 04/11/2024 | |
+
 
 
 
@@ -85,18 +85,19 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
 | 2024_05_23_Planning| DK | X | ZK| X | JH| X |
 | 2024_05_23_Review/Retro| ES | X | IH| X | ZK| X |
 | 2024_06_20_Planning| JH | X | DM| X | LC| X |
-| 2024_06_20_Review/Retro| LC | X | CMS| X | DK| X |
-| 2024_07_18_Planning| SC |  | JH|  | GR|  |
-| 2024_07_18_Review/Retro| DM |  | DK|  | IG|  |
-| 2024_08_08_Planning| LJ |  | SC|  | DM|  |
-| 2024_08_08_Review/Retro| KB |  | FA|  | JD|  |
-| 2024_09_05_Planning| FA |  | ES|  | LJ|  |
-| 2024_09_05_Review/Retro| CMS |  | KB|  | LC|  |
-| 2024_10_03_Planning| JH |  | LJ|  | SC|  |
-| 2024_10_03_Review/Retro| DK |  | TW|  | ES|  |
-| 2024_10_31_Planning| GR |  | CMS|  | TW|  |
+| 2024_06_20_Review/Retro| LC | X | CMS| X | DK|  |
+| 2024_07_18_Planning| SC | X | JH| X | GR|  |
+| 2024_07_18_Review/Retro| DM | X | DK| X | IG|  |
+| 2024_08_08_Planning| TW | X | SC| X | DM|  |
+| 2024_08_08_Review/Retro| KB |  | LJ|  | JD|  |
+| 2024_09_05_Planning| GR |  | TW|  | LJ|  |
+| 2024_09_05_Review/Retro| CMS |  | FA|  | LC|  |
+| 2024_10_03_Planning| JH |  | ES|  | SC|  |
+| 2024_10_03_Review/Retro| DK |  | KB|  | ES|  |
+| 2024_10_31_Planning| FA |  | CMS|  | TW|  |
 | 2024_10_31_Review/Retro| LC |  | GR|  | JH|  |
-| 2024_11_28_Planning| TW |  | IG|  | DK|  |
+| 2024_11_28_Planning| LJ |  | IG|  | DK|  |
 | 2024_11_28_Review/Retro| DM |  | JD|  | GR|  |
 | 2024_12_19_Planning| IG |  | JH|  | LC|  |
 | 2024_12_19_Review/Retro| CMS |  | ES|  | LJ|  |
+
