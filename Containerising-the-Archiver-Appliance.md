@@ -44,3 +44,31 @@ On the container host system (NDX) it is necessary to switch on WSL (Windows Sub
 
 On the main VM host machine (NDH) it is necessary to switch on 'Nested Virtualisation' to allow the NDX VM to run its own VMs. If this is not done, then errors will be presented when trying to run Rancher Desktop: 'Requires WSL with kernel 5.15 or newer (have 0.0.0.0)
 
+## Creating the Archiver Appliance image
+The image is composed of the EPICS Archiver Appliance, hosted on a minimal Linux platform. The definition for this is specified in the `Containerfile` file.
+The image can be built either using the Containerfile directly:
+
+`nerdctl build . --tag isis-aa`
+
+Or it can be built and run using `compose`:
+
+`nerdctl compose -f aa-compose.yaml up`
+
+The `compose` route is preferred, as it specifies all the port mappings and host mount points within the YAML file.
+
+if `nerdctl build' is used, then the container will need to be spun up via the following:
+`nerdctl run -it --rm -v "containerdata:/storage" -p 17665:17665 isis-aa /bin/bash`
+
+**Note** that the local `containerdata` directory is specified as a relative path to the current working directory. It is possible to define an absolute path, but this needs further reading and testing to discover how it works.
+
+## EPICS Container Gateway
+### The problem
+The Archiver Appliance running inside a container requires visibility of Channel Access broadcasts to enable it to see PVs. By default a container is isolated from the host network, unless networking is specified or specific ports mapped at runtime to the host network. A Linux host, with a standard network stack can permit a container to full network access by specifying `--network 'host'` parameter. Unfortunately, Windows does not implement a standard stack and has some weird network interface construction that prevents the 'host' option being used.
+Instead a gateway has been configured which the container 'sees' via port mapping 5064 and 5065.
+The new container targeted gateway is started with the `start_gwcontainer.bat` script, called from within `start_gateways.bat`. 
+
+### Access security
+A new ACF file (`gwcontainer.acf`) has been created specifically for the container gateway running on the localhost (NDX). Only localhost is in the machine list (`HAG`) and PVs are made read/write by anyone.
+
+
+
