@@ -28,4 +28,19 @@ Download the Installation MSI file for Windows (x64). At the time of writing, it
 
 Run the msi file, you will need admin access at some point. Under testing, an error message was presented: "Rancher Desktop Setup Wizard ended prematurely. Your system has not been modified...", but on the second attempt, the installation completed successfully. 
 
+
+
 ## Observations and present limitations
+### Minimum Windows version
+Rancher Desktop (and likely any other container management platform under Windows) requires WSL2. The minimum Windows version that is supported is 10-1909. Unfortunately, the NDX VMs are older, probably running 10-1809, so it will not be possible to run any form of containerisation on those hosts until they are upgraded. Upgrading the NDX hosts requires a carefully designed test plan to ensure minimal risk to loss of beam time.
+
+### Rancher WSL vs Windows WSL
+Although Rancher does install a version of WSL automatically, I ran into an issue which prompted me to update it using the `cmd` command: `wsl --update`
+after which there were no further issues.
+
+### Virtualisation support on the NDX and NDH hosts
+On the container host system (NDX) it is necessary to switch on WSL (Windows Subsystem for Linux):
+![image](https://github.com/user-attachments/assets/f5f7ae90-6ff7-4ec1-b946-473601af3155)
+
+On the main VM host machine (NDH) it is necessary to switch on 'Nested Virtualisation' to allow the NDX VM to run its own VMs. If this is not done, then errors will be presented when trying to run Rancher Desktop: 'Requires WSL with kernel 5.15 or newer (have 0.0.0.0)
+
