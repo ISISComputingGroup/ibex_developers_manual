@@ -87,3 +87,28 @@ A simple python script to find 1000 prime numbers:
 
 At first sight, this seems to indicate that there should be very little concern regarding container performance on NDX machines.
 
+### Storing images in a different location
+On installing Rancher Desktop, two WSL distros are created: `rancher-desktop` and `rancher-desktop-data`. The latter is where images are stored and it is feasible to modify the physical storage volume via the following procedure:
+```
+wsl --shutdown
+wsl --export rancher-desktop-data rancher-desktop-data.tar
+wsl --unregister rancher-desktop-data
+wsl --import rancher-desktop-data c:\instrument\var\containers rancher-desktop-data.tar --version 2
+```
+Once verified that it has worked, ```rancher-desktop-data.tar``` can be deleted.
+
+## Testing
+In order to verify correct operation of the Archiver Appliance container, follow the procedures from the sections above:
+1. Rancher Desktop Installation (above)
+2. It is important to ensure that Rancher Desktop is running.
+3. Start a local EPICS gateway, using Instrument/Apps/EPICS/gateway/start_gateways.bat
+4. Build and run the container by following: Creating the Archiver Appliance image (above)
+5. Wait for Tomcat to complete initialisation in the container.
+6. Use a browser to view: http://localhost:17665/mgmt/ui/index.html
+7. Select a small number of PVs and type them into the web page (Home page) where it says: "please type in some PV names here"
+8. Click the 'Archive' button.
+9. After a delay of around a minute or longer, the PV status should change from 'Initial sampling' to 'Archiving'.
+10. Check that archive files are being created in ./Containerdata/{sts,mts,lts} directory trees.
+
+
+
