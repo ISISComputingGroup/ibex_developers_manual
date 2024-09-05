@@ -24,6 +24,8 @@ Due to complications and uncertainties of licencing of Docker Desktop, it has be
 ## Rancher Desktop Installation
 Non-windows Containers on Windows hosts need Windows System for Linux (WSL2) to be installed on the host machine. If not already present, this is installed as part of the Rancher Desktop installation process. Rancher Desktop will create its own necessary distributions (rancher-desktop-data and rancher-desktop) on WSL and it there is no need to manually install anything else.
 
+**Note:** Rancher (and other container managers) have a minimum Windows version that it will run on, which is 10-1909 or newer.
+
 Download the Installation MSI file for Windows (x64). At the time of writing, it is: `Rancher.Desktop.Setup.1.15.1.msi`
 
 Run the msi file, you will need admin access at some point. Under testing, an error message was presented: "Rancher Desktop Setup Wizard ended prematurely. Your system has not been modified...", but on the second attempt, the installation completed successfully. 
@@ -42,7 +44,7 @@ Or it can be built and run using `compose`:
 
 The `compose` route is preferred, as it specifies all the port mappings and host mount points within the YAML file.
 
-if `nerdctl build' is used, then the container will need to be spun up via the following:
+if `nerdctl build` is used, then the container will need to be spun up via the following:
 `nerdctl run -it --rm -v "containerdata:/storage" -p 17665:17665,5064:5064,5065:5065 isis-aa /bin/bash`
 Where: 
 * 17665 is the Arvhiver Appliance web interface port. 
@@ -83,4 +85,5 @@ A simple python script to find 1000 prime numbers:
 | Dev machine | 0.0035 s |
 | NDX | 0.0116 s |
 
+At first sight, this seems to indicate that there should be very little concern regarding container performance on NDX machines.
 
