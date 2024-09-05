@@ -107,7 +107,7 @@ In order to verify correct operation of the Archiver Appliance container, follow
 6. Use a browser to view: http://localhost:17665/mgmt/ui/index.html
 7. Select a small number of PVs and type them into the web page (Home page) where it says: "please type in some PV names here"
 8. Click the 'Archive' button.
-9. After a delay of around a minute or longer, the PV status should change from 'Initial sampling' to 'Archiving'.
+9. After a delay of around a minute or longer, the PV status should change from 'Initial sampling' to 'Being archived'.
 10. Check that archive files are being created in ./Containerdata/{sts,mts,lts} directory trees.
 
 
