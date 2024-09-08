@@ -1,6 +1,6 @@
-Most developers should install VS2019 - we have 2010 on a build server for building the old galil driver (until we remove it), if you need to install 2010 locally then install it before you install 2019
+Most developers should install VS2022 - we have 2010 on a build server for building the old galil driver (until we remove it), if you need to install 2010 locally then install it before you install 2022
 
-# Instructions for Visual Studio 2010
+# Instructions for Visual Studio 2010 (not needed in most cases)
 
 Install SDK 7.1 
 -The SDK may fail if you have these installed: 
@@ -15,7 +15,17 @@ Install:
 
 Note: The free version of Visual Studio 2010, Visual Studio 2010 Express, isn't supported by the EPICS build process.
 
-# Instructions for Visual Studio 2019
+# Instructions for Visual Studio 2022
+Download installer (Visual Studio **Community** 2022 exe) from installer page https://my.visualstudio.com using your stfc email address.
+During install, select "Desktop development with C++" and check/enable these individual features if they are not already: 
+- The most recent Windows 11 SDK
+- C++ MFC support
+- C++ ATL support
+
+Also select ".NET desktop development" (needed for mk3chooepr and astrium chopper):
+- make sure .NET 4.7.2 development is included as one of the options   
+
+# Instructions for Visual Studio 2019 (old)
 Download installer (Visual Studio **Community** 2019 exe) from installer page https://my.visualstudio.com using your stfc email address.
 During install, select "Desktop development with C++" and check/enable these individual features: 
 - The most recent Windows 10 SDK
