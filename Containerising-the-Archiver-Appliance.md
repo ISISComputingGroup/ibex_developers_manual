@@ -5,21 +5,21 @@ A new EPICS gateway has been configured to make localhost PVs available to the c
 
 | File | Description |
 | ---- | ----------- |
-| gwcontainer.acf | Container gateway security |
-| gwcontainer.pvlist | Container gateway PV list |
-| start_gwcontainer.bat | Container gateway start script, called from start_gateways.bat |
-| stop_gwcontainer.bat | Container gateway stop script, called from stop_gateways.bat |
+| `gwcontainer.acf` | Container gateway security |
+| `gwcontainer.pvlist` | Container gateway PV list |
+| `start_gwcontainer.bat` | Container gateway start script, called from start_gateways.bat |
+| `stop_gwcontainer.bat` | Container gateway stop script, called from stop_gateways.bat |
 
 A new git repository has been created (git@github.com:ISISComputingGroup/isis-aa-config.git). This contains all the code required to build a Archiver Appliance image and run a container instance.
 
 | File | Description |
 | ---- | ----------- |
-| Containerfile | Defines the content to build into the image |
-| aa-compose.yaml | Used by `nerdctl compose` to marshall building the image and running the container  |
-| docker-compose.yaml | This was used as an experimental compose file to test various networking options to try to circumvent Windows lack of 'host' container networking. Retained as there is some useful info and techniques |
-| containerdata  | This directory is mounted by the container and facilitates data persistence  |
+| `Containerfile` | Defines the content to build into the image |
+| `aa-compose.yaml` | Used by `nerdctl compose` to control building the image and running the container  |
+| `docker-compose.yaml` | This was used as an experimental compose file to test various networking options to try to circumvent Windows lack of 'host' container networking. Retained as there is some useful info and techniques |
+| `containerdata`  | This directory is mounted by the container and facilitates data persistence  |
 
-Due to complications and uncertainties of licencing of Docker Desktop, it has been decided to adopt an open source alternative, a number of which are freely available, such as Rancher Desktop, Podman, etc. For the purpose of this exercise, [Rancher](https://rancherdesktop.io/) was chosen.
+Due to complications and uncertainties of licencing of Docker Desktop, it has been decided to adopt an open source alternative, a number of which are freely available, such as Rancher Desktop, `Podman`, etc. For the purpose of this exercise, [Rancher](https://rancherdesktop.io/) was chosen.
 
 ## Rancher Desktop Installation
 Non-windows Containers on Windows hosts need Windows System for Linux (WSL2) to be installed on the host machine. If not already present, this is installed as part of the Rancher Desktop installation process. Rancher Desktop will create its own necessary distributions (rancher-desktop-data and rancher-desktop) on WSL and it there is no need to manually install anything else.
@@ -47,7 +47,7 @@ The `compose` route is preferred, as it specifies all the port mappings and host
 if `nerdctl build` is used, then the container will need to be spun up via the following:
 `nerdctl run -it --rm -v "containerdata:/storage" -p 17665:17665,5064:5064,5065:5065 isis-aa /bin/bash`
 Where: 
-* 17665 is the Arvhiver Appliance web interface port. 
+* 17665 is the Archiver Appliance web interface port. 
 * 5065,5064 are the standard EPICS channel access ports (both UDP and TCP).
 
 **Note** that the local `containerdata` directory is specified as a relative path to the current working directory. It is possible to define an absolute path, but this needs further reading and testing to discover how it works.
@@ -88,7 +88,7 @@ A simple python script to find 1000 prime numbers:
 At first sight, this seems to indicate that there should be very little concern regarding container performance on NDX machines.
 
 ### Storing images in a different location
-On installing Rancher Desktop, two WSL distros are created: `rancher-desktop` and `rancher-desktop-data`. The latter is where images are stored and it is feasible to modify the physical storage volume via the following procedure:
+On installing Rancher Desktop, two WSL distributions are created: `rancher-desktop` and `rancher-desktop-data`. The latter is where images are stored and it is feasible to modify the physical storage volume via the following procedure:
 ```
 wsl --shutdown
 wsl --export rancher-desktop-data rancher-desktop-data.tar
@@ -108,7 +108,7 @@ In order to verify correct operation of the Archiver Appliance container, follow
 7. Select a small number of PVs and type them into the web page (Home page) where it says: "please type in some PV names here"
 8. Click the 'Archive' button.
 9. After a delay of around a minute or longer, the PV status should change from 'Initial sampling' to 'Being archived'.
-10. Check that archive files are being created in ./Containerdata/{sts,mts,lts} directory trees.
+10. Check that archive files are being created in `./Containerdata/{sts,mts,lts}` directory trees.
 
 
 
