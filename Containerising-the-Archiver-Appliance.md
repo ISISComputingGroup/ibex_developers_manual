@@ -10,7 +10,7 @@ A new EPICS gateway has been configured to make localhost PVs available to the c
 | `start_gwcontainer.bat` | Container gateway start script, called from start_gateways.bat |
 | `stop_gwcontainer.bat` | Container gateway stop script, called from stop_gateways.bat |
 
-A new git repository has been created (git@github.com:ISISComputingGroup/isis-aa-config.git). This contains all the code required to build a Archiver Appliance image and run a container instance.
+A new git repository has been created (`git@github.com:ISISComputingGroup/isis-aa-config.git`). This contains all the code required to build a Archiver Appliance image and run a container instance.
 
 | File | Description |
 | ---- | ----------- |
