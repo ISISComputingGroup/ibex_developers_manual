@@ -10,7 +10,7 @@ A new EPICS gateway has been configured to make localhost PVs available to the c
 | `start_gwcontainer.bat` | Container gateway start script, called from start_gateways.bat |
 | `stop_gwcontainer.bat` | Container gateway stop script, called from stop_gateways.bat |
 
-A new git repository has been created (`https://github.com/ISISComputingGroup/isis-aa-config`). This contains all the code required to build a Archiver Appliance image and run a container instance.
+A new git repository has been created (`https://github.com/ISISComputingGroup/isis-aa-config.git`). This contains all the code required to build a Archiver Appliance image and run a container instance.
 
 | File | Description |
 | ---- | ----------- |
@@ -32,7 +32,7 @@ Run the msi file, you will need admin access at some point. Under testing, an er
 
 ## Creating the Archiver Appliance image
 The image is composed of the EPICS Archiver Appliance, hosted on a minimal Linux platform. The definition for this is specified in the `Containerfile` file.
-The repository for the containerised Archiver Appliance development is: [git@github.com:ISISComputingGroup/isis-aa-config.git](git@github.com:ISISComputingGroup/isis-aa-config.git)
+The repository for the containerised Archiver Appliance development is: [isis-aa-config.git](https://github.com/ISISComputingGroup/isis-aa-config.git)
 
 The image can be built either using the `Containerfile` directly:
 
