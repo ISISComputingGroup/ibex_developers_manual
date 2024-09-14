@@ -8,7 +8,7 @@ Velocity - this is hardcoded in VI, but often `50`. It is in steps per second in
  
 COM port - due to an indirect logic lookup, the real COM port to use is 1 more than the number in the VI. `ibex_com_port = labview port + 1`
 
-Check order axes are indexed - A,B,C,D = MTR01,02,03,04 in ibex 
+Check order axes are indexed A,B,C,D = MTR01,02,03,04 in ibex 
 
 If all is correct, values should agree onscreen when swapping between ibex and labview
 
