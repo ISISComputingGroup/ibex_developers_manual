@@ -1,16 +1,16 @@
 # Getting initial values for a migration
 
-There are no config files, values are hardcoded in labview VIs. On a block diagram you will find a number referred to as `linmotcalibration` - this will be `MRES` in ibex. So normally `MRES = linmotcalibration`
+There are no config files, values are hardcoded in labview VIs. On a block diagram you will find a number referred to as `linmotcalibration` - this will be `MRES` in ibex. So `MRES = linmotcalibration`
 
-Also look at the offset values in the VI, these are in motor steps and in ibex need to be in EGU. Also note that they are usually applied in a way that requires a sign change, but check VI logic. So normally `OFST = -(offset_in_vi *  linmotcalibration)
+Also look at the offset values in the VI, these are in motor steps but in ibex need to be in EGU. Also note that they are usually applied in labview that requires a sign change when going to ibex, but check VI logic. So normally `OFST = -(offset_in_vi *  linmotcalibration)
 
-Velocity - this is hardcoded in VI, but often `50`. It is in steps per second in both cases. So `VELO = value_in_vi` 
+Velocity - this is hardcoded in VI and in internal_uits_per_second, but often `50`. Just set `VELO = value_in_vi_used_in_a_!SV_command` 
  
-COM port - due to an indirect logic lookup, the real COM port to use is 1 more than the number in the VI. `ibex_com_port = labview port + 1`
+COM port - due to an indirect logic lookup in labview, the real COM port to use in ibex is 1 more than the number in the VI. `ibex_com_port = labview linmot port + 1`
 
-Check order axes are indexed A,B,C,D = MTR01,02,03,04 in ibex 
+Check order axes are indexed in,  A,B,C,D = MTR01,02,03,04 in ibex 
 
-If all is correct, values should agree onscreen when swapping between ibex and labview
+If all is correct, motor position values should agree onscreen when swapping between ibex and labview
 
 # Setting limits
 
