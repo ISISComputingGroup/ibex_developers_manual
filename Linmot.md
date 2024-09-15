@@ -1,4 +1,4 @@
-# getting initial values
+# Getting initial values for a migration
 
 There are no config files, values are hardcoded in labview VIs. On a block diagram you will find a number referred to as `linmotcalibration` - this will be `MRES` in ibex. So normally `MRES = linmotcalibration`
 
