@@ -36,4 +36,6 @@ galil, rather there is a program running in the galil that changes the bias volt
 via a galil analogue output line. To allow control of this via the galil, it is now possible to change the command
 used by the galil for setting the motor - this is done using a PV like  $(P)MOTMTR0101_MOVE_CMD   and a %f within this
 string will be replaced with the requested position. A real galil would have this internally doing something like "PRA=%f" for "position relative axis A" - this can bet set to any valid galil command sequence.  
+
+This means that the motors on MUONFE are disabled by design - a raw galil command is sent to the galil controller by labview VIs on each of EMU, MUSR, HIFI. For IBEX instruments this means they use an LVDCOM wrapper, which is the `MUONJAWS` ioc.
   
