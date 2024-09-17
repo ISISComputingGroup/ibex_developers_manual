@@ -82,10 +82,10 @@ Reduced performance is to be expected when running containers on a virtual machi
 A simple python script to find 1000 prime numbers:
 | Host type | Elapsed time |
 | --------- | ------------ |
-| Dev machine | 0.0035 s |
-| NDX | 0.0116 s |
+| NDX native | 0.004 - 0.010 s |
+| NDX container | 0.006 - 0.009 s |
 
-At first sight, this seems to indicate that there should be very little concern regarding container performance on NDX machines.
+At first sight, this seems to indicate that there should be very little concern regarding container performance on NDX machines compared with native execution.
 
 ### Storing images in a different location
 On installing Rancher Desktop, two WSL distributions are created: `rancher-desktop` and `rancher-desktop-data`. The latter is where images are stored and it is feasible to modify the physical storage volume via the following procedure:
