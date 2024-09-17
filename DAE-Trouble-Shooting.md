@@ -117,7 +117,7 @@ Other things to to check in this state are:
 ### My total counts are low
 Make sure that the timing is appropriate (e.g. a DAE Timing Source of `ISIS (first TS1)` will only count the first pulse not all 4). If it is left on "internal test clock" you will receive no uamps at all.
 
-### Count rate low (accross multiple instruments)
+### Count rate low (across multiple instruments)
 
 This can be due to an analogue ("PPP") signal being incorrect, this is an analogue signal that the DAE uses internally to calculate beam current.
 
@@ -125,7 +125,7 @@ If you see this, DSG group may be the best contacts, they may then pass the issu
 
 Exact copy-pasted note from the relevant team the last time this happened:
 
-> [...] the Buffer Unit from the Diags Room that sends EIM6 to the HET Racks where it becomes the PPP Signal is loading the new electronics, causing this loss of signal
+> [...] the Buffer Unit from the `Diags` Room that sends EIM6 to the HET Racks where it becomes the PPP Signal is loading the new electronics, causing this loss of signal
 
 ### Simulation mode DAE complains about missing cards
 
