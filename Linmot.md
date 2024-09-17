@@ -2,7 +2,7 @@
 
 There are no config files, values are hardcoded in labview VIs. On a block diagram you will find a number referred to as `linmotcalibration` - this will be `MRES` in ibex. So `MRES = linmotcalibration`
 
-Also look at the offset values in the VI, these are in motor steps but in ibex need to be in EGU. Also note that they are usually applied in labview that requires a sign change when going to ibex, but check VI logic. So normally `OFST = -(offset_in_vi *  linmotcalibration)
+Also look at the offset values in the VI, these are in motor steps but in ibex need to be in EGU. Also note that they are usually applied in labview that requires a sign change when going to ibex, but check VI logic. So normally `OFST = -(offset_in_vi *  linmotcalibration)'
 
 Velocity - this is hardcoded in VI and in 'internal_units_per_second', but often `50`. Just set `VELO = value_in_vi_used_in_a_!SV_command` 
  
