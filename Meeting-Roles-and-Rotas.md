@@ -36,11 +36,8 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
 
 # Rotas
 
- | Standup | Week Commencing | x for Done |
+  | Standup | Week Commencing | x for Done |
  |--- | --- | --- |
- |IH | 08/04/2024 |x |
- |LJ | 15/04/2024 |x |
- |DK | 22/04/2024 |x |
  |JH | 29/04/2024 |x |
  |DM | 06/05/2024 |x |
  |KB | 13/05/2024 |x |
@@ -60,15 +57,19 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
  |FA | 19/08/2024 |x |
  |GR | 26/08/2024 |x |
  |LJ | 02/09/2024 |x |
- |LC | 09/09/2024 | |
- |DK | 16/09/2024 | |
- |DM | 23/09/2024 | |
+ |LC | 09/09/2024 |x |
+ |DK | 16/09/2024 |x |
+ |JH | 23/09/2024 | |
  |SC | 30/09/2024 | |
  |KB | 07/10/2024 | |
  |CMS | 14/10/2024 | |
- |JH | 21/10/2024 | |
- |ES | 28/10/2024 | |
- |FA | 04/11/2024 | |
+ |ES | 21/10/2024 | |
+ |FA | 28/10/2024 | |
+ |IG | 04/11/2024 | |
+ |TW | 11/11/2024 | |
+ |ES | 18/11/2024 | |
+ |JD | 25/11/2024 | |
+
 
 
 
