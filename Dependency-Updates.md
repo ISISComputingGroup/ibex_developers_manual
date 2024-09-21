@@ -58,25 +58,6 @@ The GUI builds copy a JRE from `\\isis\inst$\Kits$\CompGroup\ICP\ibex_client_jdk
 
 Check on PyPi for any package updates, then edit `requirements.txt` to install new versions where needed. Note that since we decided [all python projects should use virtual environments](Python-dependencies#how-python-dependencies-should-be-handled-in-the-future) there will be `requirements.txt`files for all Python projects using the new import mechanism, ensure these are also updated.
 
-## `epicscorelibs_pcas`
-
-When changing python versions, `epicscorelibs_pcas` will need to be built with the new version. 
-
-To build the wheel:
-- Checkout `ISISComputingGroup/epicscorelibs_pcas` to `c:\instrument\dev`
-- In `c:\instrument\dev\epicscorelibs_pcas` run `python setup.py bdist_wheel` using the new version of python you want to target.
-- A wheel will be generated in `C:\Instrument\dev\epicscorelibs_pcas\dist`
-- Upload that wheel to `https://github.com/ISISComputingGroup/epicscorelibs_pcas/releases`
-
-Point at the new wheel:
-- In `ISISComputingGroup/pcaspy`:
-  * Add an extra line in the `pyproject.toml` which installs your new wheel, on the specific python version you are targeting
-  * As above but for the `requirements` variable in `setup.py`
-  * Create a branch & PR for those changes (note: the repo is a fork, create the PR with a base repo of `ISISComputingGroup`, not upstream!)
-  * Until the above PR is merged, in `genie_python\package_builder\requirements.txt` point pcaspy at your branch rather than master.
-
-Note: this is a temporary setup until we get proper CI builds sorted and publishing to pypi.
-
 ### ODE
 
 ODE is handled separately from other packages and is installed from a wheel on `\\isis\inst$\Kits$\CompGroup\ICP\genie_python_dependencies_python_3` if moving to a new python version i.e. 3.10 to 3.11 this wheel will need to be replaced. 
