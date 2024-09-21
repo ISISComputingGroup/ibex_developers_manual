@@ -75,7 +75,7 @@ Two possible ways to fix it are:
 1) Restarting the DAE rack server
  
 1) Via NI MAX, using the following steps:
-    1) Connect to the DAE rack server via Remote Desktop from the NDX machine (the machine should be listed in the Remote Desktop dialog)
+    1) Connect to the DAE rack server via Remote Desktop from the NDX machine (the machine should be listed in the Remote Desktop dialog - if not use address 192.168.1.2)
     1) Run NI MAX on the DAE rack server
     1) Under Software->NI-VISA X.X.X,  select VISA Server and click "Stop server now" (if you cannot see this button you may be on the wrong tab on the bottom bar)
     1) Under "Devices and Interfaces", select "VXI System" and click "Run the VXI Resources Manager".
