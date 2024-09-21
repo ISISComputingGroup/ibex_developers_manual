@@ -90,3 +90,8 @@ To determine the scaling factors, start the IOC in modbus mode, then for each pa
 
  - If you're having trouble with the Eurotherm-based automatic needle valve controller (i.e. on WISH), see [Automatic needle valve controller wiki](Automatic-Needle-Valve-Controller)
 
+## eurothem not heating
+
+If the P,I,D, Max Output all look OK, and the setpoint readback suggests a setpoint has been sent, but the heater output remains 0, then one possibility is that the eurotherm is in Manual not automatic mode - there is a Manual/Automatic switch on the front panel on the eurotherm hardware
+
+    
