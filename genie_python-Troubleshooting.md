@@ -117,4 +117,4 @@ _distutils_hack.remove_shim()
 import pip
 ```
 
-But this is not recommended for obvious reasons.
+But this is not recommmended for obvious reasons.
