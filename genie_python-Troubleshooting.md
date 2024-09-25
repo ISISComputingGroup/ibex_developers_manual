@@ -80,3 +80,41 @@ You may need to restart the genie_python session. The root cause of this issue i
 ### can read local PVs from instrument but not e.g. `CS:INSTLIST` or accelerator ones like beam current
 
 In one case this was due to the firewall rule for `A:\python3\python.exe` had been disabled - a process firewall exception is needed to allow it to receive the UDP name query reply 
+
+### Can't import channel-access modules
+
+If you get an error of the form:
+
+```
+Traceback (most recent call last):
+  File "c:\Jenkins\workspace\System_Tests\test_genie_python_common_imports.py", line 33, in _attempt_to_import_module_by_name
+    mod = importlib.import_module(module_name)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Instrument\Apps\Python3\Lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "C:\Instrument\Apps\Python3\Lib\site-packages\setuptools_dso\__init__.py", line 10, in <module>
+    from .dsocmd import DSO, Extension, install, build, build_dso, build_ext, bdist_egg
+  File "C:\Instrument\Apps\Python3\Lib\site-packages\setuptools_dso\dsocmd.py", line 729, in <module>
+    _needs_builddso(_build, right_before='build_clib')
+  File "C:\Instrument\Apps\Python3\Lib\site-packages\setuptools_dso\dsocmd.py", line 715, in _needs_builddso
+    assert issubclass(command, Command)
+```
+
+When trying to import channel access libraries (`CaChannel`, `pcaspy`, `aioca`, `p4p` etc), this may be because `import pip` has previously been run in the same python session. See https://github.com/pypa/pip/issues/8761 for some details/links. `import pip` is not generally supported/recommended by python and is a bad idea - if wanting to install packages dynamically, use `subprocess` instead to explicitly spawn a new process which calls pip.
+
+It's also technically possible to replace `import pip` with:
+
+```
+import _distutils_hack
+_distutils_hack.remove_shim()
+import pip
+```
+
+But this is not recommended for obvious reasons.
