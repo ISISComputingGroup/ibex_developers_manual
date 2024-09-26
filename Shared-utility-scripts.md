@@ -1,4 +1,4 @@
-A place to share resources for speeding up our workflow
+A place to share resources for speeding up our workflow - most of these live in https://github.com/ISISComputingGroup/ibex_utils
 
 ## make_ioc batch script
 
