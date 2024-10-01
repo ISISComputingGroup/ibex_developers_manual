@@ -25,7 +25,7 @@ Based on decisions taken in [issue 8469](https://github.com/ISISComputingGroup/I
 
 ## Implementation
 
-Archive appliance configuration files are in [isis-aa-config](https://github.com/isiscomputinggroup/isis-aa-config) and our build of the archive appliance is at [epicsarchiverap](https://github.com/isiscomputinggroup/epicsarchiverap).
+Archive appliance configuration files are in [isis-aa-config](https://github.com/isiscomputinggroup/isis-aa-config) and our build of the archive appliance is at [`epicsarchiverap`](https://github.com/isiscomputinggroup/epicsarchiverap).
 
 The archiver appliance is run using containers, so you will need to install rancher desktop to do any development on this system.
 
