@@ -74,7 +74,7 @@ The Clean and purging tasks run as privileged tasks in the scheduled tasks libra
 Often the system disk gets full because of logging, or windows updates etc. You can free up space by doing the following:
 
 - VNC to machine, check no-one is using it
-- Run `Tree Size` and analyse the C drive:
+- Run `Tree Size` `(\\isis\installs\ISISAPPS\TreesizePro)` and analyse the C drive:
     - Flag any large files that you are worried about deleting to Chris
     - Check size of `instrument/var/logs` move any large logs to back `<inst area>\Backups$\stage-deleted\<instrument>`. Do this by creating a directory on c, moving files in then copying to this because it is write once. 
 - Uninstall apps which shouldn't be there (if you have admin access then removing mysql installer - community save 600Mb)
