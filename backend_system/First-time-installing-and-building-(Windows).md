@@ -60,6 +60,16 @@ See [Building and installing genie_python](Building-and-Installing-genie_python)
 
 Note: This is a private repository so any new-starters will need to ask a developer to add them.
 
+## Ruff git hook and convenience scripts
+
+We have a central configuration file for python code formatting & linting.
+
+If you wish to set up a git hook to automatically check this on each commit, see [here](https://github.com/ISISComputingGroup/reusable-workflows/blob/f40d42e26c9bb10779c1bd845be760d3b19f7e98/README.md#local-configuration-git-hook).
+
+If you wish to install a convenient alias which automatically uses an appropriate `ruff` config for each repository, see [here](https://github.com/ISISComputingGroup/reusable-workflows/blob/f40d42e26c9bb10779c1bd845be760d3b19f7e98/README.md#local-configuration-convenience-script)
+
+Note: this configuration is not mandatory as the build server will run linting and formatting checks on python repositories anyway, but running the checks locally is faster and more dev-friendly than waiting for the build servers.
+
 ## Install MySQL
 
 See [Installing and upgrading MySQL](Installing-and-Upgrading-MySQL)
