@@ -36,9 +36,6 @@ _System Properties - Environment Variables - Path - New -`C:\Tools\apache-maven-
 
 The Windows Tips from the above link says you should add maven to the PATH in the user variables. If it does not recognise mvn -v afterwards, then try to add it to the list of variables in PATH in System variables.
 
-> [!NOTE]
-> You MUST install a maven version >=3.6.0, but not 3.6.1 as this has a bug. Versions earlier than 3.6 are unable to build the GUI.
-
 ## Install Git 
 Install Git [Getting-started-with-Git-and-GitHub](Getting-started-with-Git-and-GitHub)
 
