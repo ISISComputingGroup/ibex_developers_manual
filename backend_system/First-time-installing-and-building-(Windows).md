@@ -88,7 +88,9 @@ Please see [Building the GUI](Building-the-GUI).
 
 ## Setting up the configurations & scripting directory
 
-> ### Note: for all commands in this section...
+> [!NOTE]
+>
+> ### For all commands in this section...
 > * On a developer machine use your own username rather than "spudulike"
 > * Replace `<NDXXXX>` with your machine name, e.g. `NDXIRISTEST1`, `NDLT123`
 > * Replace `<init_inst_name>` with your lower case machine name, e.g. `init_ndxtest1.py`, `init_ndlt123.py` 
@@ -147,7 +149,8 @@ git commit -m "create initial python"
 git push --set-upstream origin <NDXXXX>
 ```
 
-(Note, the init_inst_name python file should have underscores rather than dashes if the machine name contains dashes. So `NDWTEST-BLAH` would have the init file `init_ndwtest_blah.py`).
+> [!NOTE]
+> The init_inst_name python file should have underscores rather than dashes if the machine name contains dashes. So `NDWTEST-BLAH` would have the init file `init_ndwtest_blah.py`
 
 Any configs created through IBEX will now be stored on this branch (they will only be pushed remotely if you do a manual push first e.g. the last line above)
 
@@ -165,7 +168,7 @@ git checkout <NDXXXX>
 ```
 
 > [!NOTE]
-> Note: The developer branch has been created to store useful configurations that may be shared amongst all developers.
+> The developer branch has been created to store useful configurations that may be shared amongst all developers.
 
 ## Setting up a calibrations directory
 
@@ -256,4 +259,6 @@ and download the latest DAQMX drivers. When installing, ensure you check the box
 
 ## Beckhoff XAR
 
-If you will be developing or reviewing code involved with Beckhoff PLCs you will need to install TwinCAT XAR. This can be found on the public share in `installers`. More information for simulating Beckhoffs can be found [here](Beckhoff-testing). Note that XAR is the runtime that but for testing you will need the full setup which is the installer on the share 
+If you will be developing or reviewing code involved with Beckhoff PLCs you will need to install TwinCAT XAR. This can be found on the public share in `installers`. More information for simulating Beckhoffs can be found [here](Beckhoff-testing).
+> [!NOTE]
+> XAR is the runtime that but for testing you will need the full setup which is the installer on the share 
