@@ -36,7 +36,8 @@ _System Properties - Environment Variables - Path - New -`C:\Tools\apache-maven-
 
 The Windows Tips from the above link says you should add maven to the PATH in the user variables. If it does not recognise mvn -v afterwards, then try to add it to the list of variables in PATH in System variables.
 
->Note: you MUST install a maven version >=3.6.0, but not 3.6.1 as this has a bug. Versions earlier than 3.6 are unable to build the GUI.
+> [!NOTE]
+> You MUST install a maven version >=3.6.0, but not 3.6.1 as this has a bug. Versions earlier than 3.6 are unable to build the GUI.
 
 ## Install Git 
 Install Git [Getting-started-with-Git-and-GitHub](Getting-started-with-Git-and-GitHub)
@@ -58,23 +59,28 @@ To easily add `EPICSTerm.bat` to the start menu after copying EPICS, run `C:\Ins
 
 See [Building and installing genie_python](Building-and-Installing-genie_python)
 
-Note: This is a private repository so any new-starters will need to ask a developer to add them.
+> [!NOTE]
+> This is a private repository so any new-starters will need to ask a developer to add them.
 
 ## Ruff git hook and convenience scripts
 
+We use `ruff` for [formatting & linting](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Python-conventions) and `pyright` for static analysis. 
+
 We have a central configuration file for python code formatting & linting.
 
-If you wish to set up a git hook to automatically check this on each commit, see [here](https://github.com/ISISComputingGroup/reusable-workflows/blob/f40d42e26c9bb10779c1bd845be760d3b19f7e98/README.md#local-configuration-git-hook).
+If you wish (you probably do) to install a convenient alias which automatically uses an appropriate `ruff` config for each repository, see [here](https://github.com/ISISComputingGroup/reusable-workflows/blob/f40d42e26c9bb10779c1bd845be760d3b19f7e98/README.md#local-configuration-convenience-script)
 
-If you wish to install a convenient alias which automatically uses an appropriate `ruff` config for each repository, see [here](https://github.com/ISISComputingGroup/reusable-workflows/blob/f40d42e26c9bb10779c1bd845be760d3b19f7e98/README.md#local-configuration-convenience-script)
+If you wish to set up a git hook to automatically check this on each commit, see [here](https://github.com/ISISComputingGroup/reusable-workflows/blob/f40d42e26c9bb10779c1bd845be760d3b19f7e98/README.md#local-configuration-git-hook). You probably do want to set this up, but be careful with external repositories as it may not adhere to their formatting/linting standards. You can bypass the pre-commit hook if needed with `git commit --no-verify`
 
-Note: this configuration is not mandatory as the build server will run linting and formatting checks on python repositories anyway, but running the checks locally is faster and more dev-friendly than waiting for the build servers.
+> [!NOTE]
+> this configuration is not mandatory as the build server will run linting and formatting checks on python repositories anyway, but running the checks locally is faster and more dev-friendly than waiting for the build servers.
 
 ## Install MySQL
 
 See [Installing and upgrading MySQL](Installing-and-Upgrading-MySQL)
 
-Note: If installing for the first time, a new installation of MySQL may try to start up IBEX servers, which may lead to errors if Python isn't installed yet.
+> [!NOTE]
+> If installing for the first time, a new installation of MySQL may try to start up IBEX servers, which may lead to errors if Python isn't installed yet.
 
 ## Building the GUI
 
@@ -87,7 +93,8 @@ Please see [Building the GUI](Building-the-GUI).
 > * Replace `<NDXXXX>` with your machine name, e.g. `NDXIRISTEST1`, `NDLT123`
 > * Replace `<init_inst_name>` with your lower case machine name, e.g. `init_ndxtest1.py`, `init_ndlt123.py` 
 
-**(Note: If you already have a 'NDXXXX' folder, rename it to 'NDXXXX.old' and continue with the following steps)**
+> [!NOTE]
+>  If you already have a 'NDXXXX' folder, rename it to 'NDXXXX.old' and continue with the following steps)
 
 1. Create the following folder structure: `C:\Instrument\Settings\config`
 
@@ -157,7 +164,8 @@ git checkout NDXALF
 git checkout <NDXXXX>
 ```
 
->Note: The developer branch has been created to store useful configurations that may be shared amongst all developers.
+> [!NOTE]
+> Note: The developer branch has been created to store useful configurations that may be shared amongst all developers.
 
 ## Setting up a calibrations directory
 
