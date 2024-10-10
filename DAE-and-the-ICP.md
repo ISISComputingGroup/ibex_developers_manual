@@ -46,7 +46,7 @@ The way that data is binned by the DAE is set by changing the time channel bound
 
 Time regimes defined in the GUI are assigned an integer from 1 to 99. There is a special convention for the time regime number in a wiring table file. If the integer 1-99 is used, this means collect in histogram mode using binning created from that time regime. Specifying a time regime number of > 100 in a wiring table file is a convention for event mode - specifying YYXX will collect events using regime XX regime but create 'on the fly' histograms in YY time regime for quick spectra view. Normally you will see `1` for histogram mode and `102` for event mode in a wiring file, this mean histograms will use time regime 1 and event mode will use time regime 2 for collecting the data at high resolution but create histograms based on time regime 1 resolution for quick spectrum views         
 
-By default data will head into one or two spectra, if you want to see data across all backs e.g. for an areaDetector simulation then look for the following lines in `isisicp.properties` mentioned above in `Configuring the DAE/ICP`
+By default data will head into one or two spectra, if you want to see data across all banks e.g. for an areaDetector simulation then look for the following lines in `isisicp.properties` mentioned above in `Configuring the DAE/ICP`
 ```
 isisicp.simulation.neventssim = 50
 isisicp.simulation.spreadsimevents = false
