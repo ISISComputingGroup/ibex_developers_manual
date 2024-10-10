@@ -32,7 +32,7 @@ In reality this mode of operation is actually set per detector card rather than 
 * They're used mainly for normalisation and diagnostics so loss of precision is not that much of a big deal
 
 ## Configuring the DAE/ICP
-There are two settings files inside `EPICS/ICP_Binaries` that are used to configure the ICP at start up, these are `icp_config.xml` and `isisicp.properties`. They contain information that is usually quite fixed for an instrument such as whether to start up in simulation mode, how much memory to use etc. **NOTE:** on in instrument these files live in a different location `c:\labview modules\dae`
+There are two settings files inside `EPICS/ICP_Binaries` that are used to configure the ICP at start up, these are `icp_config.xml` and `isisicp.properties`. They contain information that is usually quite fixed for an instrument such as whether to start up in simulation mode, how much memory to use etc. **NOTE:** on in instrument these files live in a different location `c:\labview modules\dae`. The `isisicp.properties` file is used to override settings in `isisicp.default.properties`. 
 
 There are three main files that can be set at runtime to change the behaviour of the DAE or used for later analysis, they are collectively known as tables and need to be selected from the "Experiment Setup/Data Acquisition" tab in the GUI:
 * *Detector Table*: Files containing the word detector specifying the physical location of each detector. The second line contains the number of entries followed by the number of user parameters. The table consists of a detector id, it's offset, it's L2 (distance from the sample), an id code and then as many user specified parameters as specified in the second line.
@@ -46,6 +46,13 @@ The way that data is binned by the DAE is set by changing the time channel bound
 
 Time regimes defined in the GUI are assigned an integer from 1 to 99. There is a special convention for the time regime number in a wiring table file. If the integer 1-99 is used, this means collect in histogram mode using binning created from that time regime. Specifying a time regime number of > 100 in a wiring table file is a convention for event mode - specifying YYXX will collect events using regime XX regime but create 'on the fly' histograms in YY time regime for quick spectra view. Normally you will see `1` for histogram mode and `102` for event mode in a wiring file, this mean histograms will use time regime 1 and event mode will use time regime 2 for collecting the data at high resolution but create histograms based on time regime 1 resolution for quick spectrum views         
 
+By default data will head into one or two spectra, if you want to see data across all backs e.g. for an areaDetector simulation then look for the following lines in `isisicp.properties` mentioned above in `Configuring the DAE/ICP`
+```
+isisicp.simulation.neventssim = 50
+isisicp.simulation.spreadsimevents = false
+```
+change `spreadsimevents` to `true`, you probably don't need to increase `neventssim` unless you had loaded a custom larger wiring table and spectra aren't accumulating data fast enough for you.
+ 
 ## Performing arbitrary actions on run start/run end
 
 The ISISDAE ioc can be configured to process PVs just after starting and ending runs. It is easiest to configure this in `globals.txt` like the following example for the SANS2D fast shutter:
