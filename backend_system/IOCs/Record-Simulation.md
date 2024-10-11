@@ -29,7 +29,7 @@ record(bo, "$(P)SIM")
 }
 ```
 
-Add to the IOC in the db load:
+Add to the IOC in the db load (this will have been done for you if you used the device generator script):
 
 ```
 RECSIM=$(RECSIM=0)
