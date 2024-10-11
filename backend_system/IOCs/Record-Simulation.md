@@ -16,7 +16,7 @@ There are several cases where recsim doesn't work properly (or not without signi
 - MBBI/MBBO records with Soft channel device support. Soft channel doesn't populate `RVAL`, it is possible to work around this in some simple cases but often the benefit of adding recsim to these records is not worth the time to get it to work.
 
 There is a [script to help](Add-sim-records-script).
-First add the following record that will be used to indicate if simulation mode is being used
+First add the following record that will be used to indicate if simulation mode is being used (this will have been done for you if you used the [device generator script](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/IOC-Generator)):
 
 ```
 record(bo, "$(P)SIM") 
@@ -29,7 +29,7 @@ record(bo, "$(P)SIM")
 }
 ```
 
-Add to the IOC in the db load (this will have been done for you if you used the device generator script):
+Add to the IOC in the db load (this will have been done for you if you used the [device generator script](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/IOC-Generator)):
 
 ```
 RECSIM=$(RECSIM=0)
