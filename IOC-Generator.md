@@ -4,11 +4,11 @@ Generates the boilerplate structure required for developing an IBEX [IOC](https:
 
 # How you use it
 
-Use these [instructions](https://github.com/ISISComputingGroup/IBEX_device_generator).
+Use these [instructions](https://github.com/ISISComputingGroup/IBEX-device-generator).
 
 # How to edit it/how it works/file locations
 
-Clone the [repository](https://github.com/ISISComputingGroup/IBEX_device_generator) into C:\Instrument\Dev.
+Clone the [repository](https://github.com/ISISComputingGroup/IBEX-device-generator) into C:\Instrument\Dev.
 
 This program makes git branches and pushes to the remote repo, you can stop this by adding a return statement at the start of each method in git_utils (including the RepoWrapper constructor).
 
