@@ -97,6 +97,10 @@ In the upgrade script `https://github.com/ISISComputingGroup/ibex_utils/tree/mas
 
 Update the one in your local machine by running `upgrade_mysql.bat`.
 
+In `create_icp_binaries.bat`, update the unpacked version of MySQL used during the build to the new version added on the share.
+
+In `c:\instrument\apps\epics\support\mysql\master\MySQLCppApp\src\mysql-connector-c++`, update the vendor submodule to a recent version, then rebuild `mysql`, `pvdump`, and then all IOCs, in that order.
+
 ### Java
 - Get the latest AdoptOpen JDK 17 msi file from `https://adoptium.net/releases.html?variant=openjdk17&jvmVariant=hotspot` and put it in `\\isis\shares\ISIS_Experiment_Controls_Public\third_party_installers\latest_versions`.
 - Copy the older version onto the `\\isis\shares\ISIS_Experiment_Controls_Public\third_party_installers\old_versions`. 
