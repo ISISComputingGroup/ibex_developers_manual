@@ -1,5 +1,7 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [IOCs](IOCs) > [Motor IOCs](Motor-IOCs) > [Attocube](Attocube)
 
+_Not to be confused with the [SXD Attocube](SXD-Attocube)_
+
 # The Controller
 
 The Attocube ANC350 Piezo controller was supported in IBEX but is currently mothballed as it's not actively used on any beamlines. Code is of course in git, see [here](https://github.com/ISISComputingGroup/IBEX/issues/4488) for where it was mothballed. The controller can be communicated with over USB or over Ethernet. IBEX uses the Ethernet communications. 
