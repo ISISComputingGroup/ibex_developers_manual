@@ -60,11 +60,19 @@ All PVs should have if appropriate:
     * Units must be in ...
 * Precision (`PREC`) for records with floating point numbers - is this set correctly for what a user/technician requires 
 
-## 7. Compliance with DBChecker
+## 7. Initialising Setpoints
+
+Setpoint pvs should have "undefined field" initialised by adding the following record to the PV:
+
+    `field(UDFS, "NO_ALARM")` 
+
+This means that they can have alarm sensitive borders but will not alarm if they have never been set.
+
+## 8. Compliance with DBChecker
 
 The build in Jenkins will fail if the rules of the [DBChecker](PV-Units-&-Standards) script are not satisfied. You might as well check them beforehand to save yourself time later. See linked page for additional information & instructions.
 
-## 8. Macros and Details
+## 9. Macros and Details
 
 Macros where possible should follow the [standard names](Macro-Naming). If a macro can be set as part of the IOC (and can be reasonably set in the GUI) then a config file should be added to the run directory which contains a list of macros (i.e. `..\EPICS\ioc\master\<IOC Name>\iocBoot\<IOC Instance Name>\config.xml`). Common macros should be included from `..\EPICS\ioc\common\`.The file is of the form:
 
@@ -115,7 +123,7 @@ Either a full make of the server or running `make iocstartups` from the EPICS fo
 **Tips**
 * If you want a macro that restricts input to be a byte, so 0-255, then you can use ^$|^([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])$ . You can change this so it allows any range of integers of you desire. [This website](https://regex101.com/) is a good resource for checking regex expressions.
 
-## 9. PV Limits
+## 10. PV Limits
 
 If a limit on a set point is well defined (i.e., given by a device manual) then the fields `DRVH` "Drive High" and `DRVL` "Drive Low" should be used to constrain the PV set point. The behaviour of these fields is that if a limit is 10.0 and a user inputs 11.0, then the PV will constrain the input to 10.0 and process that value. Records that use limits should also be robustly tested to ensure the behave as expected. An example test:
 
@@ -129,19 +137,14 @@ If a limit on a set point is well defined (i.e., given by a device manual) then 
         self.ca.assert_that_pv_is("CURRENT:SP", limit_value)
 ```
 
-## 10. Directories added to Makefiles
+## 11. Directories added to Makefiles
 Type
 ```
 make checkdirs
 ```
 at EPICS top level and make sure it completes ok
  
-## 11. Add IOC to EPICS hardware list
+## 12. Add IOC to EPICS hardware list
 
 Once the IOC is reviewed and tested with hardware, [add it to the EPICS hardware list](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Add-ioc-to-epics-hardware-list)
 
-## 12. Initialising Setpoints
-
-Setpoint pvs should have undefined field be initialised using `field(UDFS, "NO_ALARM")` this means that they can have alarm sensitive borders but will not alarm if they have never been set.
-
-Confirmed on Lakeshore 340.
