@@ -33,13 +33,18 @@ Beckhoff | | | | | [see Beckhoff note](#note-beckhoff)
 ##### Note: Galil #####
 Model: [DMC2280](http://www.galilmc.com/products/dmc-22x0.php)
 
+Other than the collimator, the only other quirk to CHIPIR's galil 02 is that the jaws in/out axis uses a non-standard homing routine - [galil_Home_JogForwLimit.dmc](https://github.com/ISISComputingGroup/EPICS-galil/pull/79/files#diff-64af6fffc6cf1ad849a8685d6848ae66746109ac8457de498d3fa758491681e1)
+
 ##### Note: Filter Set #####
-Driven by Galil controlled motor.<br>
+Driven by Beckhoff controlled motor.<br>
 See [see Galil note](#noteGalil)
+
+These are driven through `TC` using some variables for in/out readback and control. There is also some web HMI screen which IDD motion wrote which may now be defunct now that IBEX works with the filter set. 
 
 ##### Note: Collimator #####
 Driven by Galil controlled motor.<br>
-See [see Galil note](#noteGalil)
+
+This runs some [custom galil code](https://github.com/ISISComputingGroup/EPICS-galil/blob/master/GalilSup/Db/galil_CHIPIR_Collimator.dmc) but essentially does not accept moves like a normal motor. it has an encoder as an auxiliary feedback only ie. to see if it's moving, but uses physical switches fed into the Galil's digital ins for positioning. It uses a "read" thread that runs on thread 7 to monitor these during a move. 
 
 ##### Note: XYZ Table #####
 Driven by Galil controlled motor.<br>
