@@ -13,7 +13,7 @@ MG "stop 1" {P2}
 ```
 
 BUSY is determined by comparing the response to BUSY= with \s0.0000\r\n:, if they match the system is not busy.
-ATANGLE= returns the Angle Postion
+ATANGLE= returns the Angle Position
 Y= returns the Arc Position
 If setting the angle send ATTO= with a double between +170 and -170, followed by ATGO=1
 If setting the arc send ARK= with a double between -19 and +19, followed by ARGO=1
