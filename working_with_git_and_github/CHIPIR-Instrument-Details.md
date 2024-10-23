@@ -33,7 +33,7 @@ Beckhoff | | | | | [see Beckhoff note](#note-beckhoff)
 ##### Note: Galil #####
 Model: [DMC2280](http://www.galilmc.com/products/dmc-22x0.php)
 
-Other than the collimator, the only other quirk to CHIPIR's galil 02 is that the jaws in/out axis uses a non-standard homing routine - [galil_Home_JogForwLimit.dmc](https://github.com/ISISComputingGroup/EPICS-galil/pull/79/files#diff-64af6fffc6cf1ad849a8685d6848ae66746109ac8457de498d3fa758491681e1)
+Other than the collimator, the only other quirk to CHIPIR's galil 02 is that the jaws in/out axis uses a non-standard homing routine - [`galil_Home_JogForwLimit.dmc`](https://github.com/ISISComputingGroup/EPICS-galil/pull/79/files#diff-64af6fffc6cf1ad849a8685d6848ae66746109ac8457de498d3fa758491681e1)
 
 ##### Note: Filter Set #####
 Driven by Beckhoff controlled motor.<br>
