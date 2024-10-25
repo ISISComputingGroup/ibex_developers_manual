@@ -1,4 +1,4 @@
-With the move to using GitHub V2 projects a new method of automation ws required.
+With the move to using GitHub V2 projects a new method of automation was required.
 
 This is achieved using the application forked in https://github.com/ISISComputingGroup/board-automation-app
 (Note this is a fork from an organisation related to one of the developers at the time, as organisation level access is required, and rather than develop and troubleshoot in this organisation, a simpler system was considered wise.)
@@ -48,14 +48,14 @@ Add the repository to the list in organisation settings > GitHub Apps > ibex-git
 <summary>Installing the application on a host</summary>
 
 This will start with a pull of the application from GitHub.
-The instruction for the confiduration settins are held in the repo, and those instructions should be followed.
+The instruction for the configuration settings are held in the repo, and those instructions should be followed.
 Starting the app is all that is needed after that by running `app.py` via python.
 
 Note that this has to use Python 3.10 or higher, and due to constraints on the system deployed to and installing on there, a specific python instance was created, which needs to be used for this. At time of writing, this is Python 3.13, with the following packages installed manually:
-- plotly
-- numpy
-- pandas
-- tornado
+- `plotly`
+- `numpy`
+- `pandas`
+- `tornado`
 </details>
 <details>
 <summary>Updating the application</summary>
@@ -63,7 +63,7 @@ This should be as simple as synchronising the fork, and pulling to the server it
 </details>
 <details>
 <summary>Installing/Updating the application whilst JSON Bourne is in use</summary>
-In order to simplify the addition of this application to the existing eco-system, rather than run proxies it has been designed to run alongside an existing Tornado Application JSON Bourne.
+In order to simplify the addition of this application to the existing ecosystem, rather than run proxies it has been designed to run alongside an existing Tornado Application JSON Bourne.
 
 Basic installation and update is the same, but an additional step is needed to ensure both sets of code are run, the contents of the automation application, including the updated python, need to be copied into the JSON Bourne directory, and the contents of `webserver_forJSONBourne.py` should be replaced with the contents of `webserver_forJSONBourne_and_git_automation.py`. Alternatively `start_webserver.bat` could be updated to use `webserver_forJSONBourne_and_git_automation.py` instead of the existing `webserver.py`.
 The python made available for the automation application will run JSON Bourne, and `start_webserver.bat` should be updated to use that specific python.
