@@ -1,6 +1,6 @@
 This page lists some dependencies which we are not updating for various reasons:
 
-# Python 3
+# Python
 
 | Dependency | Our version | Available version | Reason |
 | --- | --- | --- | --- |
