@@ -13,8 +13,8 @@ This page lists some dependencies which we are not updating for various reasons:
 | Dependency | Our version | Available version | Reason |
 | --- | --- | --- | --- |
 | Opal | 1.0.0 | ? | Project has been deprecated and moved into eclipse Nebula visualization widgets. Update process appears to be non-trivial. |
-| Eclipse | 2023-03 | 2023-12 | Build failed, [investigation](https://github.com/ISISComputingGroup/IBEX/issues/8149) required. |
-| Eclipse updates | 4.26 | 4.30 | Build failed, [investigation](https://github.com/ISISComputingGroup/IBEX/issues/8149) required. |
+| `com.sun.istack.commons-runtime` | `3.x` | `4.x` | Causes `javax`/`jakarta` conflicts with `javax.activation`. |
+| `activemq` | `5.x` | `6.x` | v6 uses `jakarta` packages, CSS needs `javax` packages. Need to update CSS to resolve. |
 
 # EPICS
 
