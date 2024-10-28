@@ -102,7 +102,8 @@ In `create_icp_binaries.bat`, update the unpacked version of MySQL used during t
 In `c:\instrument\apps\epics\support\mysql\master\MySQLCppApp\src\mysql-connector-c++`, update the vendor submodule to a recent version, then rebuild `mysql`, `pvdump`, and then all IOCs, in that order.
 
 ### Java
-- Get the latest AdoptOpen JDK 17 msi file from `https://adoptium.net/releases.html?variant=openjdk17&jvmVariant=hotspot` and put it in `\\isis\shares\ISIS_Experiment_Controls_Public\third_party_installers\latest_versions`.
+- Get the latest AdoptOpen JDK msi file from `https://adoptium.net/releases.html?jvmVariant=hotspot` and put it in `\\isis\shares\ISIS_Experiment_Controls_Public\third_party_installers\latest_versions`.
+  * Only upgrade major versions to another LTS version.
 - Copy the older version onto the `\\isis\shares\ISIS_Experiment_Controls_Public\third_party_installers\old_versions`. 
 - Uninstall the older version from control Panel and install the new version.
 - Test that running `start_ibex_server.bat` completes successfully, and ensure there are no obvious errors in the IOC log files for:
