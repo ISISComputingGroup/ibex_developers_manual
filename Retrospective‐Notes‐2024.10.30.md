@@ -30,7 +30,7 @@ Present:
 - would have to rewrite history on 4 instrument branches (thankfully not on any others)
 - LJ willing to take a look
 
-## ISIS Branded merch for new starters
+## ISIS Branded merchandise for new starters
 - JH Hopefully getting around to it this week
 
 ## NDX security
@@ -40,4 +40,31 @@ Present:
 - going to revisit with GR present to make sure no points misrepresented
 
 ## Cabin PC passwords
-- 
+- Should we have scientists share their passwords with us in keeper? There were a few instances where we needed them and had to look on a whiteboard for them
+   - Generally don't need to use them but e.g. IMAT has a couple of machines we need to log into for cameras
+   - A user called us on the support phone when they needed the cabin PC password, and the local contact was neither local nor contactable, so we had to tell them to read words on the whiteboard until one of them sounded like a password to us
+       - Should we even be giving them out? Probably not.
+- Could go round the halls once a year looking for passwords on whiteboards and adding them to keeper
+- Could also just ask the scientists if they don't mind giving us the passwords
+
+## Release numbering
+- Every release for a while has been a major release and incrementing the large version number
+- Could be confusing figuring out which instruments a given release was deployed to
+- Will instead move to YY.MM.Patch format from next release (now 25.02.0) from next release onwards
+
+## Moving sprint meetings based on availability
+- Will bring this up again when GR present
+- More labour to check, but LC willing to do a little rescheduling on further out days if the team is ok with it
+
+## Demos
+- Should not be a whole cycle after release, should put it in PI template
+- It's a good way to ensure whole team is visible to science groups for more than just specific devices etc.
+- Even if only 3 out of the 5 demos have people show up, will still be worth it
+
+# Mad/Sad/Glad
+Mad:
+- SC mad of pyright because there's now work needed before submitting to review, but...
+Glad:
+- SC glad at the same time that it's teaching better python practices
+- Collectively glad that old code is being updated to follow pyright
+   - As such less messing around with it when you change a single file
