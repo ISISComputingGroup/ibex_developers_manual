@@ -10,7 +10,7 @@ Present:
 - Automation: we now have it on the sprint board, with labels being added/removed when moving a card through columns
 - Ruff/Pyright day: we did this.
 - Using task table instead of task board: this seems to work quite well
-- Was remarked last retro that there felt like fewer calls for lat cycle, however after doing the math it was also our most support-heavy cycle of the year
+- Was remarked last retro that there felt like fewer calls for lat cycle, however after doing the maths it was also our most support-heavy cycle of the year
 
 # Current Sprint
 ## Moving planning meetings later in the day
