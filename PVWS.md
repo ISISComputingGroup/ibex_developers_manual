@@ -7,7 +7,7 @@ this is done with a native tomcat service (rather than a container) following th
 
 ## Updating
 Things to consider when updating Tomcat/PVWS:
-- tomcat installer from https://tomcat.apache.org/download-90.cgi installed in `C:\Program Files\Apache Software Foundation\Tomcat 9.0` 
+- Tomcat installer from https://tomcat.apache.org/download-90.cgi installed in `C:\Program Files\Apache Software Foundation\Tomcat 9.0` 
 - (pvws)[https://github.com/ornl-epics/pvws] - we are using the latest nightly .war as of 01/11/24 - to update download this and place in the tomcat dir\webapps folder and restart the service
 - jdk 21 from https://adoptium.net/en-GB/ installed in `C:\Program Files\Eclipse Adoptium\jdk-21.0.5.11-hotspot`
 
@@ -19,6 +19,12 @@ Things to consider when updating Tomcat/PVWS:
 3) create a `.pfx` file if you need a new certificate by using Windows' `certificate manager -> wherever the cert is -> all tasks -> export`
   -  no, do not export the private key
   - "personal information exchange", `include all certificates in the certification path if possible: true, delete the private key if export is successful: false, export all extended properties: false, enable certificate privacy: false`
+
+> [!NOTE]  
+> when finished you'll need to add `local service` to the users that can read this file like so: 
+>
+> ![image](https://github.com/user-attachments/assets/1d040def-06fe-4e0d-b6cd-126a27797658)
+
 4) edit `server.xml` to contain these lines: 
 
 ```xml
@@ -27,10 +33,10 @@ Things to consider when updating Tomcat/PVWS:
                maxParameterCount="1000" Server=" " 
 			   scheme="https" secure="true" clientAuth="false" sslProtocol="TLS" keystoreFile="file:///C:/PROGRA~1/APACHE~1/TOMCAT~1.0/dataweb.pfx" keystoreType="PKCS12" keystorePass="<keeper:.pfx keystore password for PVWS tomcat instance on NDAEXTWEB3>"
                >
-
     </Connector>
 ```
+
 this will start a https connector using the `.pfx` file generated from the certificate. 
 
-5) go to services.msc and hit restart then navigate to `https://<machine name>:7777/pvws` - this should present the PVWS test page. 
+5) go to `services.msc` and hit restart on the tomcat service then navigate to `https://<machine name>:7777/pvws` - this should present the PVWS test page. 
 6) if you want the web dashboard to permanently use this, update https://github.com/ISISComputingGroup/WebDashboard/blob/main/.env
