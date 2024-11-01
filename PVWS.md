@@ -12,3 +12,5 @@ jdk 21 from https://adoptium.net/en-GB/ installed in C:\Program Files\Eclipse Ad
 
 ## Setting CA environment variables for the tomcat instance
 `C:\Program Files\Apache Software Foundation\Tomcat 9.0\bin>Tomcat9.exe //US ++Environment EPICS_CA_AUTO_ADDR_LIST=NO;EPICS_CA_ADDR_LIST=<ip>` where ip is the gateway address. 
+
+(more info [here](https://tomcat.apache.org/tomcat-9.0-doc/windows-service-howto.html))
