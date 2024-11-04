@@ -6,9 +6,9 @@ we run a `PVWS` instance on NDAEXTWEB3 for the [Web Dashboard](https://github.co
 this is done with a native tomcat service (rather than a container) following the [PVWS instructions](https://github.com/ornl-epics/pvws?tab=readme-ov-file#running-under-tomcat), though it could be run as a container in the future. 
 
 ## Updating
-Things to consider when updating Tomcat/PVWS:
+Things to consider when updating `Tomcat/PVWS`:
 - Tomcat installer from https://tomcat.apache.org/download-90.cgi installed in `C:\Program Files\Apache Software Foundation\Tomcat 9.0` 
-- (pvws)[https://github.com/ornl-epics/pvws] - we are using the latest nightly .war as of 01/11/24 - to update download this and place in the tomcat dir\webapps folder and restart the service
+- (`pvws`)[https://github.com/ornl-epics/pvws] - we are using the latest nightly .war as of 01/11/24 - to update download this and place in the tomcat `dir\webapps` folder and restart the service
 - jdk 21 from https://adoptium.net/en-GB/ installed in `C:\Program Files\Eclipse Adoptium\jdk-21.0.5.11-hotspot`
 
 ## Setting up PVWS on a machine from scratch
