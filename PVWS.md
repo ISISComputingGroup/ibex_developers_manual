@@ -1,7 +1,7 @@
 # PVWS
 (PV Web socket)
 
-we run a PVWS instance on NDAEXTWEB3 for the [Web Dashboard](https://github.com/ISISComputingGroup/WebDashboard)
+we run a `PVWS` instance on NDAEXTWEB3 for the [Web Dashboard](https://github.com/ISISComputingGroup/WebDashboard)
 
 this is done with a native tomcat service (rather than a container) following the [PVWS instructions](https://github.com/ornl-epics/pvws?tab=readme-ov-file#running-under-tomcat), though it could be run as a container in the future. 
 
