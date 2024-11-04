@@ -12,6 +12,8 @@ This is a hall probe IOC, which is used as part of HIFI's zero-field system.
 
 Each IOC can talk to 3 sensors, which can be individually named via the `NAME0`..`NAME2` macros.
 
+A multiplier can be set for each field via the `SCALE0`..`SCALE2` macros (usually this will be either `1` or `-1`).
+
 The scan rate for both field and temperature are independently specified as IOC macros.
 
 ### Statemachine
