@@ -16,7 +16,7 @@ A multiplier can be set for each field via the `SCALE0`..`SCALE2` macros (usuall
 
 The scan rate for both field and temperature are independently specified as IOC macros.
 
-### Statemachine
+### State machine
 
 An SNL program is in use to automatically change the measurement range of each probe.
 
