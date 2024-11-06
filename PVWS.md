@@ -42,4 +42,6 @@ Things to consider when updating `Tomcat/PVWS`:
 this will start a https connector using the `.pfx` file generated from the certificate. 
 
 5) go to `services.msc` and hit restart on the tomcat service then navigate to `https://<machine name>:7777/pvws` - this should present the PVWS test page. 
+6) update the max message size to `131072` as per "increasing maximum message size" of https://github.com/ornl-epics/pvws?tab=readme-ov-file#running-under-tomcat - this should be done in `C:\Program Files\Apache Software Foundation\Tomcat 9.0\webapps\pvws\WEB-INF\web.xml`
+7) restart the service again
 6) if you want the web dashboard to permanently use this, update https://github.com/ISISComputingGroup/WebDashboard/blob/main/.env
