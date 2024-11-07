@@ -27,3 +27,5 @@
 * [Rotating Stirrer Rack](Rotating-Stirrer-Rack)
 
 * [Stanford SR850 Lock In Amplifier](Stanford-SR850)
+
+* [Thorlabs FW102C Six position filter wheel](Thorlabs-FW102C-Filter-Wheel)
