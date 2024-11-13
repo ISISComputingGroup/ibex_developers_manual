@@ -12,7 +12,7 @@ Where there are multiple instances of a device within an IOC (e.g. SDTEST, GENES
 | --- | --- | --- | --- |
 | DEV_TYPE | The Device Type where one IOC handles multiple devices (e.g. the Danfysik PSU IOC) | Varies by device | No (Not in config.) |
 | PORT | The COM port to use | Do not set this to a default | Yes (`PORT.xml`) |
-| HOST | The host name or IP address of the device, can include the port separated by a colon | Do not set this to a default | No |
+| HOST | The host name or IP address of the device, can include the port separated by a colon | Do not set this to a default | Yes (`HOST.xml`) |
 | ADDR | Secondary address information, e.g. on RS485 | Varies by device | No |
 | BAUD | The Baud rate of a serial device | Varies by device | Yes (if default of 9600, `BAUD9600.xml`) | 
 | BITS | The number of bits in the serial interface | Varies by device | Yes (If default 8, `BITS8.xml` |
