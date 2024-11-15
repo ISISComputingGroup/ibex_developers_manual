@@ -1,3 +1,8 @@
+> [!NOTE]
+> The collision avoidance monitor was removed in [this PR](https://github.com/ISISComputingGroup/EPICS-inst_servers/pull/400/files).
+
+---
+
  This project aims to develop a system for detecting collisions within the LARMOR instrument at STFC's ISIS facility, using the IBEX control system.
 
 ## Original Behavior
