@@ -34,7 +34,7 @@
 
 ## First time
 
-The first time you set up `genie_python`, assuming you've never installed it previously, you'll need to set up an ipython profile. 
+The first time you set up python, assuming you've never installed it previously, you'll need to set up an ipython profile. 
 
 1. From `C:\Instrument\Apps\Python3`, run `python.exe .\Scripts\ipython.exe profile create` (use the EPICSTerm if Command Prompt results in errors) 
 1. Copy `ipython_config.py` from the `package_builder` directory to `C:\Users\[fedid]\.ipython\profile_default\.` If the .ipython folder does not exist, create one and inside it make a profile_default folder and paste the file there.
@@ -59,9 +59,9 @@ Or to install `ibex_bluesky_core` in an editable configuration:
 
 Once you have made the changes you want in `c:\instrument\dev\<library>`, they should be committed and pushed from that repository as usual. `uktena` will pick up the changes by default next time the library is released to `PyPI`.
 
-# Writing `genie_python` system tests
+# Writing system tests
 
-As well as writing units test for genie_python you can write system tests. These are located in the [genie_python_system_tests repository]( https://github.com/ISISComputingGroup/genie_python_system_tests). On your local machine run the run_tests.py; on the jenkins machine it will install the latest version of Ibex server and genie and run the tests.
+As well as writing unit tests for genie_python you can write system tests. These are located in the [genie_python_system_tests repository]( https://github.com/ISISComputingGroup/genie_python_system_tests). On your local machine run the run_tests.py; on the jenkins machine it will install the latest version of Ibex server and genie and run the tests.
 
 To use a new config add it to the configs directory, it must start with `rcptt_` so it will be ignored by git in IBEX. In the setup of the test ensure that the config is loaded. 
 
