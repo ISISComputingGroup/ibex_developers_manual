@@ -4,13 +4,15 @@
 
 > [!IMPORTANT]
 >
-> The previous `genie_python` repository was split into two components in November 2024: 
+> The previous `genie_python` repository, which handled both library and distribution, was split into two components in November 2024: 
 > - [genie](https://github.com/ISISComputingGroup/genie), the library:
 >   * An installable pip package, `genie_python`
 >   * The `genie_python` module itself, i.e. the result of `from genie_python import genie` in python
 > - [uktena](https://github.com/ISISComputingGroup/uktena), the distribution:
 >   * A `python.exe` at a specific version
 >   * Many pre-installed libraries including `numpy`, `scipy`, `genie_python`, `ibex_bluesky_core`, ...
+>
+> From the perspective of the uktena python distribution, `genie_python` is "just" another library which happens to be installed alongside many other libraries - there is no special handling of the `genie_python` library in uktena.
 
 ---
 
