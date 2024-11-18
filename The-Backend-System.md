@@ -8,9 +8,9 @@ How to install and build the backend system for the first time on Windows.
 
 Detailed description of the design and function of several components of the backend system
 
-## [genie_python](Building-and-installing-genie_python)
+## [python](Building-and-installing-genie_python)
 
-How to build and install genie_python.
+How to build and install the uktena python distribution (which includes the `genie_python` library).
 
 ## [EPICS](EPICS)
 
