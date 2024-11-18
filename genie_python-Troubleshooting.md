@@ -4,7 +4,7 @@
 
 ### Where are the logs?
 
-Genie_python writes its logs to `...\Instrument\var\logs\genie_python`.
+Genie_python writes its logs to `C:\Instrument\var\logs\genie_python`.
 
 ### What does `ERROR: CAException` mean when it is in the log?
 
@@ -34,14 +34,6 @@ There can be multiple problems, check:
 
 Have you pulled and [rebuilt](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Building-and-installing-genie_python) the latest version of the repository under `\Apps\Python3` ?
 
-### Genie_python crashes on start, Underlying python works but fails on `import numpy`
-
-If `genie_python` crashes on start with a windows error but the underlying Python appears to start ok try importing `numpy`. We have a problem with the latest CPUs (`skylakex`) running under the hypervisor which means that the `OPENBLAS` library has an unknown instruction in it. The current fix is to set the environment variable so it appears it is running a different core type. Do this with:
-
-    OPENBLAS_CORETYPE=Haswell
-
-This is set within the system environment on the PC; currently, this fix is only needed on `RIKENFE` and `MUONFE`.
-
 ### Can't find Python 3
 
 If you get an error message similar to
@@ -50,16 +42,6 @@ If you get an error message similar to
 *** Cannot find GENIE-PYTHON 3 - some things are not likely to work ***
 ```
 on running `config_env.bat`, you need to ensure you have Python 3 available on your system.
-
-## Error patching CaChannel
-When running `dev_build_python.bat`, you may get an error when Windows tries to apply a patch to the `CaChannel.py` file. E.g. 
-```
-can't find file to patch at input line XXX
-Perhaps you should have used the -p or --strip option?
-```
-This seems to be caused by using patch from strawberry perl patch and not from git.
-
-If this happens, comment out the `patch` command in `common_build_python.bat`, then run the script again. Once it's finished, open a Git Bash window, `cd` to `/c/Instrument/Apps/Python3/package_builder` and run the same `patch` command you commented out, changing the Windows paths to UNIX paths (`\` -> `/` and `C:` -> `/c`). Then, check the `CaChannel.py` file to ensure it was patched properly.
 
 ## Other Issues
 
