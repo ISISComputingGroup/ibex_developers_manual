@@ -1,11 +1,20 @@
 > [Wiki](Home) > [The Backend System](The-Backend-System) > [genie_python](Building-and-installing-genie_python)
 
-# Setting up a dev repository
+---
 
-1. Check whether `C:\Instrument\Apps\Python3` already exists. If it does, from a git-enabled command line, `cd C:\Instrument\Apps\Python3` and perform a `git pull`. If it does not exist, from a git-enabled command line, run `git clone https://github.com/ISISComputingGroup/genie_python.git C:/Instrument/Apps/Python3` (or if using ssh authentication `git clone git@github.com:ISISComputingGroup/genie_python.git`).
-1. Navigate to `C:\Instrument\Apps\Python3\package_builder`
-1. Be sure to have 7-Zip installed before processing with the next step.
-1. Run `dev_build_python.bat` (You can use the indirection into a file to look back into the console output " > some_file_name  2>&1")
+# Setting up uktena python distribution
+
+- Check whether `C:\Instrument\Apps\Python3` already exists.
+  * If it exists and `git remote get-url origin` returns `https://github.com/ISISComputingGroup/genie_python.git`:
+    * Stop IBEX server
+    * Remove the entire `Python3` directory
+    * Proceed as if `Python3` `C:\Instrument\Apps\Python3` did not exist
+  * If it exists and `git remote get-url origin` returns `https://github.com/ISISComputingGroup/uktena.git`:
+    * Perform a `git pull` in `c:\instrument\apps\python3`
+  * If it does not exist, from a git-enabled command line, run `git clone https://github.com/ISISComputingGroup/uktena.git C:/Instrument/Apps/Python3` (or if using ssh authentication `git clone git@github.com:ISISComputingGroup/uktena.git`).
+- Navigate to `C:\Instrument\Apps\Python3\package_builder`
+- Be sure to have 7-Zip installed before processing with the next step.
+- Run `dev_build_python.bat` (You can use the indirection into a file to look back into the console output " > some_file_name  2>&1")
 
 > Note: You cannot run `dev_build_python.bat` from an EPICS terminal
 
