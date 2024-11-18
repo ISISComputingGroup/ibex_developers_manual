@@ -10,7 +10,7 @@ Detailed description of the design and function of several components of the bac
 
 ## [Python](Building-and-installing-genie_python)
 
-How to build and install the uktena python distribution (which includes the `genie_python` library).
+How to build and install the uktena python distribution (which includes the `genie_python` library, among others).
 
 ## [EPICS](EPICS)
 
