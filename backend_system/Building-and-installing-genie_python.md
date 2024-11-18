@@ -7,10 +7,10 @@
 - Check whether `C:\Instrument\Apps\Python3` already exists.
   * If it exists and `git remote get-url origin` returns `https://github.com/ISISComputingGroup/genie_python.git`:
     * Stop IBEX server
-    * Remove the entire `Python3` directory
+    * Remove the entire `C:\Instrument\Apps\Python3` directory
     * Proceed as if `C:\Instrument\Apps\Python3` did not exist
   * If it exists and `git remote get-url origin` returns `https://github.com/ISISComputingGroup/uktena.git`:
-    * Perform a `git pull` in `c:\instrument\apps\python3`
+    * Perform a `git checkout master && git pull` in `C:\instrument\apps\python3`
   * If it does not exist, from a git-enabled command line, run `git clone https://github.com/ISISComputingGroup/uktena.git C:/Instrument/Apps/Python3` (or if using ssh authentication `git clone git@github.com:ISISComputingGroup/uktena.git`).
 - Navigate to `C:\Instrument\Apps\Python3\package_builder`
 - Be sure to have 7-Zip installed before processing with the next step.
