@@ -2,6 +2,18 @@
 
 ---
 
+> [!IMPORTANT]
+>
+> The previous `genie_python` repository was split into two components in November 2024: 
+> - [genie](https://github.com/ISISComputingGroup/genie), the library:
+>   * An installable pip package, `genie_python`
+>   * The `genie_python` module itself, i.e. the result of `from genie_python import genie` in python
+> - [uktena](https://github.com/ISISComputingGroup/uktena), the distribution:
+>   * A `python.exe` at a specific version
+>   * Many pre-installed libraries including `numpy`, `scipy`, `genie_python`, `ibex_bluesky_core`, ...
+
+---
+
 # Setting up uktena python distribution
 
 - Check whether `C:\Instrument\Apps\Python3` already exists.
@@ -45,52 +57,13 @@ Or to install `ibex_bluesky_core` in an editable configuration:
 
 Once you have made the changes you want in `c:\instrument\dev\<library>`, they should be committed and pushed from that repository as usual. `uktena` will pick up the changes by default next time the library is released to `PyPI`.
 
-# Building notes
-
-The batch file `common_build_python.bat` used by the developer and Jenkins build script does the following:
-
-* Copies locally the Python packages where we have strict requirements on versions (e.g. NumPy) or created ourselves from a remote location (\\\\isis\\inst$\\Kits$\\CompGroup\\ICP\\genie_python_dependencies)
-
-* Creates a virtual environment for installing all the required packages
-
-* Installs all the required 3rd party packages. Some of the packages are stored locally as executables, some are zip files and some are downloaded
-
-* Copies startup scripts from the `package_builder` directory into the installation
-
-Jenkins only:
-
-* Copies genie_python from the local directory in the virtual environment
-
-* Copies site-packages directories into the clean Python installation
-
-* Zips the Python installation and bundles it with the install scripts etc. 
-
-* Copies the installation to the shared drive
-
-# Developing
+# Writing `genie_python` system tests
 
 As well as writing units test for genie_python you can write system tests. These are located in the [genie_python_system_tests repository]( https://github.com/ISISComputingGroup/genie_python_system_tests). On your local machine run the run_tests.py; on the jenkins machine it will install the latest version of Ibex server and genie and run the tests.
 
 To use a new config add it to the configs directory, it must start with `rcptt_` so it will be ignored by git in IBEX. In the setup of the test ensure that the config is loaded. 
 
 To run a test in pycharm make sure you set the environment to be the same as your epics environment for the variable: `ICPCONFIGROOT`, `EPICS_CA_MAX_ARRAY_BYTES`, `EPICS_CA_ADDR_LIST` and `EPICS_CA_AUTO_ADDR_LIST`.
-
-## Creating Python packages
-
-Some of the packages we want to use do not come with an installer that is suitable for an automated build (e.g. PyQt) or are packages we have modified to meet our needs.
-For these packages we have created our own installable units as zip files. To create one of these units for a package with an unsuitable installer follow these steps:
-
-* Install the correct version of Python
-
-* Install the package using the supplied installer
-
-* In the Python directory, locate the package in Lib\\site-packages and zip it up with a name of the form name-x.x.x.zip where x.x.x is the version number of the package
-
-* Copy the zip file to the shared drive (\\\\isis\\inst$\\Kits$\\CompGroup\\ICP\\genie_python_dependencies)
-
-* Modify the build_python.bat file so it includes the new zip
-
-For packages that we have modified it ourselves it is just necessary to create an appropriately named zip file and modify build_python.bat to unzip the file to \\Lib\\site-packages.
 
 # Installing on the instruments
 
