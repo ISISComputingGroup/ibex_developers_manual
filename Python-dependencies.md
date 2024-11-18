@@ -1,5 +1,13 @@
 > [Wiki](Home) > [genie_python](genie_python) > [Python Dependencies](Python-dependencies)
 
+> [!NOTE]
+>
+> Much of the information on this page is now obsolete.
+>
+> The split of library and distribution was done in [ticket 8381](https://github.com/ISISComputingGroup/IBEX/issues/8381)
+>
+> `genie_python` can now be installed via `pip`.
+
 This page as much as possible distinguishes between the standard Python version installed on instruments/developer machines and the `genie_python` module that is actually used to communicate with IBEX. These have historically been conflated by both users and developers, leading to the problems outlined in below.
 
 ### How Python Dependencies were Historically Handled
