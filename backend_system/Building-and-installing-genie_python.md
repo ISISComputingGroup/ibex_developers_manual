@@ -28,11 +28,22 @@ The first time you set up `genie_python`, assuming you've never installed it pre
 
 # Development workflow
 
-1. Make sure you have a development version of `genie_python` set up as described above.
-1. Create a branch for your changes as per the [standard development workflow](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Git-workflow).
-1. Apply changes to the `genie_python` source at `C:\Instrument\Apps\Python3\Lib\site-packages\genie_python`, remembering to commit any changes to your branch.
-1. If you need any extra libraries, or change `genie_python` dependencies, add them to `requirements.txt` and rerun `dev_build_python.bat` to make them available in your distribution. Note if you need extra libraries for a project other than `genie_python` see [here](Python-dependencies#how-python-dependencies-should-be-handled-in-the-future).
-1. You can run the `genie_python` unit tests at any time with `C:\Instrument\Apps\Python3\python.exe C:\Instrument\Apps\Python3\Lib\site-packages\genie_python\run_tests.py`. Alternatively, from an EPICS terminal with the current working directory as `C:\Instrument\Apps\Python3\Lib\site-packages\genie_python` you can simply run `python run_tests.py`.
+The uktena python distributions uses released versions of all dependencies by default. However, you can install development versions of libraries into it easily using `pip` editable installs.
+
+The process is:
+- Check out the library you want to develop into `c:\instrument\dev`
+- Run `c:\instrument\apps\python3\python.exe -m pip install -e c:\instrument\dev\<library>[dev]`
+- Your uktena python distribution now contains a development install of the relevant library, which can be automatically reloaded (i.e. there is no need to rebuild `uktena` or re-run the `pip install` step after making changes)
+
+For example, to install `genie` in an editable configuration:
+- `git clone https://github.com/IsisComputingGroup/genie c:\instrument\dev\genie` (if it doesn't already exist)
+- `c:\instrument\apps\python3\python.exe -m pip install -e c:\instrument\dev\genie[dev]`
+
+Or to install `ibex_bluesky_core` in an editable configuration:
+- `git clone https://github.com/IsisComputingGroup/ibex_bluesky_core c:\instrument\dev\ibex_bluesky_core` (if it doesn't already exist)
+- `c:\instrument\apps\python3\python.exe -m pip install -e c:\instrument\dev\ibex_bluesky_core[dev]`
+
+Once you have made the changes you want in `c:\instrument\dev\<library>`, they should be committed and pushed from that repository as usual. `uktena` will pick up the changes by default next time the library is released to `PyPI`.
 
 # Building notes
 
