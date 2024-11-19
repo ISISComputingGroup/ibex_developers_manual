@@ -44,9 +44,9 @@ The first time you set up python, assuming you've never installed it previously,
 
 The uktena python distributions uses released versions of all dependencies by default. However, you can install development versions of libraries into it easily using `pip` editable installs.
 
-The process is:
-- Check out the library you want to develop into `c:\instrument\dev`
-- Run `c:\instrument\apps\python3\python.exe -m pip install -e c:\instrument\dev\<library>[dev]`
+### Dev process
+- Check out the library you want to develop into `c:\instrument\dev\some_library`
+- Run `c:\instrument\apps\python3\python.exe -m pip install -e c:\instrument\dev\some_library[dev]`
 - Your uktena python distribution now contains a development install of the relevant library, which can be automatically reloaded (i.e. there is no need to rebuild `uktena` or re-run the `pip install` step after making changes)
 
 For example, to install `genie` in an editable configuration:
@@ -58,6 +58,17 @@ Or to install `ibex_bluesky_core` in an editable configuration:
 - `c:\instrument\apps\python3\python.exe -m pip install -e c:\instrument\dev\ibex_bluesky_core[dev]`
 
 Once you have made the changes you want in `c:\instrument\dev\<library>`, they should be committed and pushed from that repository as usual. `uktena` will pick up the changes by default next time the library is released to `PyPI`.
+
+You can now make changes in `c:\instrument\dev\some_library`. 
+- Python code changes will be picked up immediately by your development python, no need to re-install the dependency for python-only changes
+- If your changes modify dependencies, you will need to re-run the `pip` command above to pick up the new dependencies
+
+Once you are happy with your changes locally, commit and push them from `c:\instrument\dev\some_library` as usual.
+- In order to pick up the changes in future built versions of uktena, the changes will need to be released to pypi.
+
+> [!NOTE]
+>
+> Our python dependencies, along with many other external dependencies, all define a `[dev]` optional dependency group which contains dev-only dependencies (like linters, documentation build tools, debugging tools and so on). If you are editable-installing an external library, it may use a different convention - consult that library's documentation or `pyproject.toml` to see which dependency groups are available.
 
 # Writing system tests
 
