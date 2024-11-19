@@ -1,5 +1,9 @@
 Updating your local IBEX
 
+If you just want a clean start then you can use a pre-built build server checkout [[Developer-Server-Build]] as a new starting point
+
+If you want to up date your existing checkout, read on...
+
 Firstly you may want to check what branches all your submodules are on:
 
     git submodule foreach "git branch" | egrep "^Entering|^\*"
