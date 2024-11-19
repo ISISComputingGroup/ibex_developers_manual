@@ -4,7 +4,7 @@ NOTE: if you just want a recent EPICS build to run somewhere and do not need to 
 
 ## EPICS
 
-You need to be using a Visual Studio compatible with the build server, currently `Visual Studio 2019` and from "help about" it needs to be `16.11.*` or later
+You need to be using a Visual Studio compatible with the build server, currently `Visual Studio 2022` 
 
 ### Quick Instructions
 
