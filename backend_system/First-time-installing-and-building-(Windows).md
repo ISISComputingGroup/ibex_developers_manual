@@ -191,12 +191,12 @@ The purpose and function of the calibration files are described [here](https://g
 ```
 Unfortunately the /RegServer registration process doesn't report either success or failure. If, on later starting the ISISDAE IOC, you see lots of errors of the form "CoCreateInstanceEx (ISISICP) : Class not registered" then it means the /RegServer flag did not work. Try registering it again in case you were not Administrator when you tried it the first time. If you get messages about missing method/functions etc. it may mean a previous isisicp.exe registered successfully, but the newer one didn't - just try again as administrator
 
-If you use Visual Studio 2017 (or older versions) and got "vcruntime140_1.dll was not found" error, you need to install Microsoft Visual C++ Redistributable for Visual Studio 2019. 
+If you use Visual Studio 2017 (or older versions) and got "vcruntime140_1.dll was not found" error, you need to install Microsoft Visual C++ Redistributable for Visual Studio 2022. 
 
 You can do this via this link:
 
 https://visualstudio.microsoft.com/downloads/
-(Scroll down, expand "Other Tools, Frameworks and Redistributables" and install Microsoft Visual C++ Redistributable for Visual Studio 2019(x64))
+(Scroll down, expand "Other Tools, Frameworks and Redistributables" and install Microsoft Visual C++ Redistributable for Visual Studio 2022(x64))
 
 And try running `isisicp.exe /RegServer` again.
 
