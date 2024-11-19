@@ -32,7 +32,7 @@ There can be multiple problems, check:
 
 ### Problems importing a dependency that should be in `genie_python`
 
-Have you pulled and [rebuilt](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Building-and-installing-genie_python) the latest version of the repository under `\Apps\Python3` ?
+Have you pulled and [rebuilt](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Building-and-installing-uktena) the latest version of the repository under `\Apps\Python3` ?
 
 ### Can't find Python 3
 
