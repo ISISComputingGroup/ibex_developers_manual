@@ -73,6 +73,8 @@ NOTE: if you run `git config --global push.recurseSubmodules check` once, then t
 Updating all Submodules
 ------------------------
 
+If you want a clean start then you can use a [[Developer-Server-Build]] rather than an in place git update
+
 The following command used to be used in the project I leave it here for the minute. I believe that when run from the EPICS directory it updates all submodules by merging in the last commit from origin. This feels like you could have problems if your submodule is on a different branch
 
     git submodule update --remote --merge
