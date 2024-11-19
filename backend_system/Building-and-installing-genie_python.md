@@ -13,6 +13,8 @@
 >   * Many pre-installed libraries including `numpy`, `scipy`, `genie_python`, `ibex_bluesky_core`, ...
 >
 > From the perspective of the uktena python distribution, `genie_python` is "just" another library which happens to be installed alongside many other libraries - there is no special handling of the `genie_python` library in uktena.
+>
+> Likewise, the genie library has no reference to uktena, and does not necessarily have to run as part of the uktena distribution.
 
 ---
 
