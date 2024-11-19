@@ -54,7 +54,7 @@ To easily add `EPICSTerm.bat` to the start menu after copying EPICS, run `C:\Ins
 
 ## Install the uktena python distribution
 
-See [Building and installing genie_python](Building-and-Installing-genie_python)
+See [Building and installing the uktena python distribution](Building-and-Installing-uktena)
 
 ## Ruff git hook and convenience scripts
 
