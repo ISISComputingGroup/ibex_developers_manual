@@ -52,12 +52,9 @@ Install `\\isis.cclrc.ac.uk\inst$\kits$\CompGroup\Utilities\MOXA Nport Software\
 
 To easily add `EPICSTerm.bat` to the start menu after copying EPICS, run `C:\Instrument\Apps\EPICS\add_epicsterm_to_start_menu.bat`
 
-## Install genie_python
+## Install the uktena python distribution
 
 See [Building and installing genie_python](Building-and-Installing-genie_python)
-
-> [!NOTE]
-> This is a private repository so any new-starters will need to ask a developer to add them.
 
 ## Ruff git hook and convenience scripts
 
