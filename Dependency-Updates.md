@@ -68,7 +68,7 @@ ODE is handled separately from other packages and is installed from a wheel on `
     * If `0.16.4` is your version to build then `cd ode && git checkout 0.16.4`
     * type `set "CMAKE=c:\Instrument\Apps\EPICS\ICP_Binaries\CMake\bin\cmake.exe"`
     * type `mkdir ode-build && cd ode-build`
-    * run `"%CMAKE%" -G"Visual Studio 16 2019" -A x64 ..`
+    * run `"%CMAKE%" -G"Visual Studio 16 2022" -A x64 ..`
     * type `start ode.sln`
     * change to `Debug` to `Release` configuration at top, it should already say x64, and from menu build -> build solution
     * now cd to the `bindings\python directory`
