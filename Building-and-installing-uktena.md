@@ -72,6 +72,10 @@ Once you are happy with your changes locally, commit and push them from `c:\inst
 >
 > Our python dependencies, along with many other external dependencies, all define a `[dev]` optional dependency group which contains dev-only dependencies (like linters, documentation build tools, debugging tools and so on). If you are editable-installing an external library, it may use a different convention - consult that library's documentation or `pyproject.toml` to see which dependency groups are available.
 
+To go back to the released version of the dependencies, you can run `c:\instrument\apps\python3\python.exe -m pip uninstall some_library` to remove your development version, followed by `c:\instrument\apps\python3\python.exe -m pip install some_library` to reinstall the released version from pypi.
+
+If you need to go back to a completely "clean" uktena distribution, you can also re-run `dev_build_python.bat` (but this will be significantly slower than a single uninstall/reinstall).
+
 # Writing system tests
 
 As well as writing unit tests for genie_python you can write system tests. These are located in the [genie_python_system_tests repository]( https://github.com/ISISComputingGroup/genie_python_system_tests). On your local machine run the run_tests.py; on the jenkins machine it will install the latest version of Ibex server and genie and run the tests.
