@@ -58,7 +58,7 @@ This may be because the hardware flow control is blocking the communications; th
 ### The Galil controller has been power cycled
 The Galil driver keeps track of this by setting a variable on the controller via `MOT:DMC[controller number]:PWRDET:SP` and monitoring the value on the galil. If `MOT:DMC[controller number]:PWRDET:SP` and `MOT:DMC[controller number]:PWRDET` diverge then the galil has lost power and the positions may not be correct. This is checked every 5 minutes, and monitored by Nagios. The value is automatically changed after a successful check to avoid burning a value into the galil leading to a power cycle being missed.
 
-If Nagios is reporting a power cycled galil, ensure the positions have been corrected (by homing or other means, this may be unnecessary if there are absolute encoders), and clear the error by writing to `MOT:DMC[controller number]:PWRDET:RESET:SP`.
+If Nagios is reporting a power cycled galil (`ERROR: galils 0x power check failed`), ensure the positions have been corrected (by homing or other means, this may be unnecessary if there are absolute encoders), and clear the error by writing to `MOT:DMC[controller number]:PWRDET:RESET:SP`.
 
 ### The Galil reports being at home when it is at a limit, not at the limit switch
 
