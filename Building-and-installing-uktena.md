@@ -46,6 +46,9 @@ The first time you set up python, assuming you've never installed it previously,
 
 The uktena python distributions uses released versions of all dependencies by default. However, you can install development versions of libraries into it easily using `pip` editable installs.
 
+> [!NOTE]
+> If you have not come across optional dependencies like `[dev]` before, read about them [here](https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#dependencies-and-requirements).
+
 ### Dev process
 - Check out the library you want to develop into `c:\instrument\dev\some_library`
 - Run `c:\instrument\apps\python3\python.exe -m pip install -e c:\instrument\dev\some_library[dev]`
