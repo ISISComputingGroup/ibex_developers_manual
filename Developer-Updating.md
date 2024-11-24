@@ -18,7 +18,7 @@ To check what branches all your submodules are on:
 
     git submodule foreach --recursive "git branch" | egrep "^Entering|^\*"
 
-If you don't see either "master" or "detached HEAD" then you need to decide if you really want to be on that branch, or just forgot to swap back after reviewing a ticket.
+If you don't see either "master" or "detached HEAD" then you need to decide if you really want to be on that branch, or just forgot to swap back after reviewing a ticket. If you are leaving a module on a non main/master branch, it may be worth merging the latest upstream main/master into this branch. 
 
 To update, from a git shell at top do:
 
@@ -26,17 +26,15 @@ To update, from a git shell at top do:
     git submodule init
     git submodule update --init --recursive
 
-You can now do either
+You can use
 
-    git submodule update --merge
+    git submodule update --init --recursive --merge
 
-or just
+if you wish to leave items on their branch and merge in upstream, if you leave off `--merge` you will get switched to a detached HEAD at the upstream version.    
 
-    git submodule update
+If you want to remove local changes as they are causing issues, you can use `git reset --hard` in a module or `git submodule foreach --recursive "git reset --hard"` to do all from the top level.
 
-The main difference is that --merge will leave you on any local branch you have switched to/working on and attempt to merge in new changes, whereas leaving off --merge will switch you from your branch to a new detached HEAD on master. 
-
-If you want to remove local changes as they are causing issues, you can use `git reset --hard` in a module or `git submodule foreach --recursive "git reset --hard"` to do all from the top level. For info, Jenkins does the following to update a git tree on a clean build:
+For info, Jenkins does the following to update a git tree on a clean build:
 ```
 git reset --hard
 git clean -fdx 
