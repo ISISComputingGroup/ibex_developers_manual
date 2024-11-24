@@ -55,6 +55,8 @@ Now build IBEX in the usual way. See [[Things-to-know-as-a-developer]] for speed
 
 ### Troubleshooting
 
+typing `git status` should not show unexpected changes being flagged.
+
 If you get errors, the most likely causes are:
 1. A file was renamed, but EPICS has not updated its Makefile dependency rules and is still looking for the old one
 2. A directory was renamed/deleted, but the original directory is still on your computer because it was not empty
