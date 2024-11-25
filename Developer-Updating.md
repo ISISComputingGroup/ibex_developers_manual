@@ -12,7 +12,7 @@ Here we will update all modules from git to the latest version and then rebuild.
 
 So you need to make sure that your directory tree is in a good state. You can probably do this iteratively after each failure as you update, or you can do it all first. 
 - make sure all work is pushed. You don't usually need to reset branches back to master/main, but may be a good point to do this if work is finished 
-- particularly after a dependency update where the liklihood of directory name changes is greatest, remove all build products: either `make clean uninstall` or `git submodule foreach --recursive "git clean -fdx"` from top directory. The git command is probably faster, but removes all files not under version control so you need to be sure you haven't forgotten to `git add` and push something to a remote branch.   
+- particularly after a dependency update where the likelihood of directory name changes is greatest, remove all build products: either `make clean uninstall` or `git submodule foreach --recursive "git clean -fdx"` from top directory. The git command is probably faster, but removes all files not under version control so you need to be sure you haven't forgotten to `git add` and push something to a remote branch.   
 
 To check what branches all your submodules are on:
 
