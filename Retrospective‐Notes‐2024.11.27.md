@@ -11,7 +11,7 @@ Present:
 
 ## Instrument configurations on gitlab
 
-- [ ] **Action: LJ to persevere with trying to sort out the dodgy commits which prevent us from doing this. **
+- [ ] **Action: LJ to persevere with trying to sort out the dodgy commits which prevent us from doing this.**
 
 
 ## Security - cabin pc passwords on whiteboards
@@ -50,7 +50,7 @@ there is a big list now which is for culling, KB needs assistance from the group
 ## Professional versions of pycharm
 would like the professional versions as vs2022 not quite as good
 
-- [ ] **action: JH will ask irene for numbers for half the group and all the group, we will then talk about it again**
+- [ ] **Action: JH will ask irene for numbers for half the group and all the group, we will then talk about it again**
 
 
 ## Group mailing lists
@@ -59,7 +59,7 @@ would like the professional versions as vs2022 not quite as good
 - all of the above are showing up in outlook - we might not have control over them so may need to ask someone else? 
 - we should write down what we want to do about these groups and do it. 
 
-- [ ] **short term action: could FA or CMS make sure that the members are at least the same. **
+- [ ] **Short term action: could FA or CMS make sure that the members are at least the same.**
 FA: we may be able to reduce them down to one anyway. 
 
 ## Release notes numbering
