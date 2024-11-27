@@ -19,7 +19,7 @@ Present:
 - we should not give out passwords over the phone. 
 
 ## Release versioning
-- we agreed to move to YY.MM.patch for the next release.
+- we agreed to move to `YY.MM.patch` for the next release.
 
 ## Demos
 - these should be part of the PI template to have them done before a whole cycle after the release. 
@@ -38,8 +38,8 @@ This would mean jsut the meeting changes, but sprint deadlines will remain. we s
 
 ## Multiple repos on the project board 
 - this is a good thing and it's working pretty seamlessly. 
-- this means issues are much more isolated to where the actual code is
-- it's quite easy to transfer issues now, this is great 
+- this means issues are much more isolated to where the actual code is.
+- it's quite easy to transfer issues now, this is great.
 
 ## Closing old tickets
 - lots of work has been happening to close old/dead tickets 
