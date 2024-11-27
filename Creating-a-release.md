@@ -30,7 +30,7 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
     1. After committing these changes to `master` on the `EPICS-upgrade` submodule, don't forget to push the new submodule version to `master` on the top `EPICS` branch. This is needed to make sure you changes appear on the release branch created in the next step. 
 1. For packages which are published on `PyPI`, in particular `genie_python` and `ibex_bluesky_core`, create PyPI releases if needed.
     1. These packages are released by performing a `git tag x.y.z` on a checkout of `main`, where `x.y.z` is the new version you want to release. They will then build and prompt to "approve" the release pipeline to PyPI.
-    1. Ensure these releases are complete by checking on [pypi](https://pypi.org/) for the new release number before proceeding.
+    1. **Ensure these releases were sucessfull** by checking on [pypi](https://pypi.org/) for the new release number before proceeding.
 1. Start the Jenkins pipeline [Release Branches](https://epics-jenkins.isis.rl.ac.uk/job/Release_branches/).
     - Click on 'Build with Parameters'.
     - Set `VERSION` to the new release version (e.g. `X.x.m`).
@@ -41,18 +41,18 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
             - `EPICS` and submodules.
             - `IBEX GUI`.
             - `Script Generator`.
-            - `Genie Python`.
+            - `Uktena`.
             - `JSON_bourne`. (not none by default as it does not often change and is also not directly deployed to instruments)
         - Update or add version numbers:
             - In `ioc/master/INSTETC/INSTETC-IOC-01App/Db/svn-revision.db.tmpl` for `EPICS`.
             - In `/uk.ac.stfc.isis.ibex.e4.client/pom.xml` and `/uk.ac.stfc.isis.ibex.e4.client/META-INF/MANIFEST.mf` for `IBEX GUI`.
             - In `/uk.ac.stfc.isis.scriptgenerator.client/pom.xml` and `/uk.ac.stfc.isis.scriptgenerator.client/META-INF/MANIFEST.mf` for `Script Generator`.
-            - In `.../Python/Lib/site-packages/genie_python/version.py` for `Genie Python`.
+            - Note: `genie_python` library version numbers are set automatically from the git tag, and no longer need manually updating.
         - Push these changes to remote release branch.
         - Start the Jenkins builds (click `Scan Repository` on the ones that are multibranch pipelines):
             - `EPICS_release`. (Build will be in `Kits$\CompGroup\ICP\Releases\X.x.m\EPICS`)
             - `EPICS_release32`. (Build will be in `Kits$\CompGroup\ICP\Releases\X.x.m\EPICS32`)
-            - `genie_python_release_pipeline`. (Build will be in `Kits$\CompGroup\ICP\Releases\X.x.m\genie_python_3`)
+            - `uktena_release_pipeline`. (Build will be in `Kits$\CompGroup\ICP\Releases\X.x.m\genie_python_3`)
             - `ibex_gui_releases_pipeline`. (Build will be in `Kits$\CompGroup\ICP\Releases\X.x.m\Client`)
             - `scriptgenerator_release`. (Build will be in `Kits$\CompGroup\ICP\Releases\script_generator_release\X.x.m`)
 1. Move the `Upcoming Release Notes` page (copy & paste) into a new blank `Release Notes "X.x.m"` file: Check that all of the merged tickets have also had their [release notes merged](https://github.com/ISISComputingGroup/IBEX/pulls) then move the changes which have been merged into the new release from the [upcoming page](https://github.com/ISISComputingGroup/IBEX/blob/master/release_notes/ReleaseNotes_Upcoming.md) to a new release notes page for the version, and commit this change to the master branch. Check that the release notes are as understandable as possible. 
