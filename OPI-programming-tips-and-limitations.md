@@ -208,6 +208,8 @@ Most figures are implemented using the `draw2d` framework, which is a graphics t
 
 `display.getMacroValue("MY_MACRO")`
 
+However, if your macro name is constant, it is better to use a local pv as a trigger for the script, which happens to be initialized to the value of the relevant macro. e.g. use a local PV like `loc://$(DID)_some_name("$(MACRO)")` - you can then use this as `pvStr0` as usual in your script/rule.
+
 # Hotfixing an OPI
 
 OPIs can be hotfixed on an instrument PC, with a built client, by modifying the OPI files in:
