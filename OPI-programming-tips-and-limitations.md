@@ -118,7 +118,7 @@ You can make a script run on page load by setting it to trigger from a PV called
 # Storing State
 Occasionally it makes sense to store some state in the OPI, e.g. which traces the user has made visible on the OPI. To do this you can use local PVs of the form `loc://MY_PV`. These can be written and read to like normal PVs.
 
-`loc://` PVs get inititialized to null, but you can provide an explicit initialization value by including it in parentheses e.g. `loc://my_pv(123)` would initialize `loc://my_pv` to `123`.
+`loc://` PVs get initialized to null, but you can provide an explicit initialization value by including it in parentheses e.g. `loc://my_pv(123)` would initialize `loc://my_pv` to `123`.
 
 Local PVs (prefixed with `loc://`) usually have *application level* scope, i.e. a local PV with the same name will have the same value from all OPIs within IBEX. While this can be useful (e.g. to share state between OPIs), it can also be problematic for OPIs where we expect to have multiple instances of the OPI open.
 
