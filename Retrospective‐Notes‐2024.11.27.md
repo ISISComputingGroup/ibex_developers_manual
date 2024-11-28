@@ -34,7 +34,7 @@ we should set something up to talk about this in the group meeting.
 GR has meetings in advance that cause clashes. can we be a bit more flexible about sprint meetings? 
 KB has predicted sprint dates for the next year. It's difficult to book meeting rooms in this way because there are always clashes. 
 GR has agreed to take some of the labour off rescheduling by finding new rooms if need to reschedule and then updating the meeting. 
-This would mean jsut the meeting changes, but sprint deadlines will remain. we should always mark ourselves as out of office, in our own and the expt. ctrls. calendar, to make both of these tasks easier. 
+This would mean just the meeting changes, but sprint deadlines will remain. we should always mark ourselves as out of office, in our own and the experiment controls. calendar, to make both of these tasks easier. 
 
 ## Multiple repos on the project board 
 - this is a good thing and it's working pretty seamlessly. 
@@ -50,7 +50,7 @@ there is a big list now which is for culling, KB needs assistance from the group
 ## Professional versions of pycharm
 would like the professional versions as vs2022 not quite as good
 
-- [ ] **Action: JH will ask irene for numbers for half the group and all the group, we will then talk about it again**
+- [ ] **Action: JH will ask Irene for numbers for half the group and all the group, we will then talk about it again**
 
 
 ## Group mailing lists
@@ -76,7 +76,7 @@ FA: we may be able to reduce them down to one anyway.
 - we should lock the office when we're not in it. no-one can get locked out as it's a keypad so there's not really an excuse. 
 
 ## Next release RC possibility
-- next release is looking more complicated because of dependency updates, can we create release candidate for pre release so we can be told about all the broken stuff before we deploy in feb. 
+- next release is looking more complicated because of dependency updates, can we create release candidate for pre release so we can be told about all the broken stuff before we deploy in February. 
 - this is quite tight as we need to be creating the next release in January
 - CRISP may be busy, but other instruments may be willing, though unlikely as we're currently in cycle. 
 
