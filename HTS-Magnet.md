@@ -18,7 +18,7 @@ The Smartmonitor is a _READ ONLY_ device which monitors the PSUs and magnet.  It
 
 Note that you cannot ping the smart monitor, but can telnet into it or view its web server at `<ip:8080>`
 
-The status command response on the Smartmonitor does not match what we have written in the "manual" (which is just an email chain) and adds a timestamp (in the NZST format...) before the last status character - [#7397](https://github.com/ISISComputingGroup/IBEX/issues/7397) addresses this issue.
+The status command response on the Smartmonitor does not match what we have written in the "manual" (which is just an email chain) and adds a timestamp (in the NZST timezone...) before the last status character - [#7397](https://github.com/ISISComputingGroup/IBEX/issues/7397) addresses this issue.
 
 If the smart monitor can't talk by IP or on it's webserver, but all looks plugged in and otherwise healthy, try power cycling the system (after verifying field is zero) and/or check all ethernet cables are correctly seated.
 
