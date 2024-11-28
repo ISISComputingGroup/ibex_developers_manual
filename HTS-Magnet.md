@@ -20,6 +20,8 @@ Note that you cannot ping the smart monitor, but can telnet into it or view its 
 
 The status command response on the Smartmonitor does not match what we have written in the "manual" (which is just an email chain) and adds a timestamp before the last status character - [#7397](https://github.com/ISISComputingGroup/IBEX/issues/7397) addresses this issue.
 
+If the smart monitor can't talk by IP or on it's webserver, but all looks plugged in and otherwise healthy, try power cycling the system (after verifying field is zero).
+
 ### Newport SMC100 Motion Controller
 
 This system is also used with an [SMC100](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/SMC100) single axis stage to position the sample inside the magnet itself.
