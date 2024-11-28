@@ -80,7 +80,7 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
 | 2024_10_03_Planning| JH | X | ES| X | SC| X |
 | 2024_10_03_Review/Retro| DK | X | KB| X | LC| X |
 | 2024_10_31_Planning| LJ | X | CMS| X | TW| X |
-| 2024_10_31_Review/Retro| LC |  | IG|  | JH|  |
+| 2024_10_31_Review/Retro| LC |  | IG| X | JH|  |
 | 2024_11_28_Planning| IG |  | JD|  | DK|  |
 | 2024_11_28_Review/Retro| DM |  | GR|  | JD|  |
 | 2024_12_19_Planning| FA |  | JH|  | GR|  |
