@@ -47,15 +47,22 @@ If you don't have the experience to resolve something, then you should ask the t
 
 ### Additional In Cycle Duties
 Your phone will ring first for support issues, be prepared to answer it.
+
 If you don't have the experience to resolve the issues, then in cycle you should ask whoever is on call for help first, followed by others in the team.
+
 Extra note for the first week of cycle, these are usually busy, be prepared to delegate tasks. It may be necessary to ask specific individuals, and you may need to keep track of who is dealing with which problem and where they are. It would also be wise to share the issues as appropriate, but do remember that working patterns and individual needs may play a part in who can help with what.
 
 
 ## What does being on call mean?
 This role is active between 07:00 and 23:00, everyday in cycle, generally with a different person on duty each week.
+
 An on call week starts on a Friday and finishes a week later. (So that the first on call week of a cycle starts the Friday before cycle starts, and the final on call week ends with cycle.)
+
 During working hours the person scheduled for first line will receive phone calls first, therefore the duties here are more focussed on the out of hours time (07:00 to 08:30 and 17:00 to 23:00).
+
 Your mobile phone will ring, be prepared to answer it, and deal with the issue detailed.
+
+If the person on first line support is inexperienced, be ready to support them and take calls from them.
 
 ## Trouble Shooting
 
