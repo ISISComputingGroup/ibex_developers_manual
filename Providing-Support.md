@@ -1,35 +1,61 @@
 There is a long list of things to worry about when you have the support phone or are dealing with a support issue, and this page should provide a starting point to look for guidance on what to do if no one is around.
 
-These pages should be a living document - as people learn things add them to the appropriate place if things change and you notice update them. If you are experienced, make sure the rest of us are getting things right and verify what is linked to from here. Just remember, this is a public wiki, so be wary of the detail added.
+These pages should be a living document - as people learn things add them to the appropriate place if things change, and you notice, update them. If you are experienced, make sure the rest of us are getting things right and verify what is linked to from here. Just remember, this is a public wiki, so be wary of the detail added.
 
-Don't forget to "Send As" ISIS Experiment Controls in outlook and also cc: ISIS Experiment Controls in the message, that way it will be possible for others to see what has already been discussed. You should also start a thread in the "support issues" teams channel
+Don't forget to "Send As" ISIS Experiment Controls in outlook and also cc: ISIS Experiment Controls in the message, that way it will be possible for others to see what has already been discussed. Don't forget to include your name when signing off emails from ISIS Experiment Controls, it's much nicer to deal with a person who is part of a group than an anonymous entity. 
 
-If remote, make sure you are either on the VPN or accessing a system on-site in some way
+Everyone should start a thread in the "support issues" teams channel for any support work whether that is the emails being dealt with, the calls received, or anything that comes out of people walking into the office.
+
+If remote, make sure you are either on the VPN or accessing a system on-site in some way.
+
+The on call number is `x1763` (as called from a RAL phone, and should be available between 7:00-23:00 7 days a week during cycle.
+The email address can be found in the address book as `ISIS Experiment Controls`.
 
 ## Contents
+- [The types of support](#the-types-of-support)
+- [Duties for "first line"](#duties-for-first-line)
 - [What does being on call mean?](#what-does-being-on-call-mean)
 - [Trouble Shooting](#trouble-shooting)
 - [Answering the support phone](#answering-the-support-phone)
 - [Basic types of call](#basic-types-of-call)
 - [Other Tasks](#other-tasks)
 
-## What does being on call mean?
+## The types of support
+All permanent members of the ISIS Computing Group are expected to be on the support rotas.
 
-All full time members of the ISIS Computing Group are expected to be on the on call rota. Typically this will rotate so that people spend a week on it before passing it on to the next person. The on call number is `x1763` (as called from a RAL phone) and should be available between 7:00-23:00 7 days a week during cycle.
+Note that being the person on rota means you are responsible for seeing that support items are dealt with. This doesn't mean you have to do them, but you have to make sure they are done.
 
-If a scientist/user contacts you directly about an urgent issue, you should politely remind them that this number exists and they will be much more likely to get swifter assistance by calling it rather than individuals (obviously after you have fixed the issue).
+There is no requirement to change working patterns when on call.
 
-If you get called with an issue that you believe has the potential to stop all instruments taking data (e.g. the central beam status is reporting incorrectly or there is a critical bug in a core IBEX component) you should immediately email all instrument scientists using the `ISIS Instrument Scientist` mailing list. You should make them aware of the problem and any workarounds that you have found.
+### Some basic support principles
+
+If a scientist/user contacts you directly about an urgent issue, you should politely remind them that there is an on call number, and a generic email, and they will be much more likely to get swifter assistance by calling/emailing it rather than individuals.
+
+If you are working on a problem that you believe has the potential to stop all instruments taking data (e.g. the central beam status is reporting incorrectly or there is a critical bug in a core IBEX component) you should immediately email all instrument scientists using the `ISIS Instrument Scientist` mailing list. You should make them aware of the problem and any workarounds that you have found.
 
 If you encounter an urgent problem that you are really unsure of you can find other team member's numbers in the support phone's contacts list or at `\\isis\shares\ISIS_Experiment_Controls\On Call\Phone Numbers.xlsx`.
 
-Most important:
-  - It means you are responsible for seeing that support items are dealt with. This doesn't mean you have to do them, but you have to make sure they are done
-  - You answer the support phone when it rings
+### Who is on call when?
+The "first line" and on call rotas will be made available via the shared calendar as is currently the case.
+There will always be someone who is "first line", but those duties vary in and out of cycle.
+On call only exists in cycle.
 
-In hours:
-  - You keep an eye on the Experiment Controls inbox and follow through to see that any issues are resolved, these are echoed in Teams where they can be discussed and uses the same indications as the flash reviews to indicate whether or not the issue is being or has been dealt with
-  - You keep an eye on Nagios (either via the website or if you receive messages that way) and look to resolve issues as appropriate - ask if help is needed or it is unclear. [nagios overview](https://varanus.nd.rl.ac.uk/nagios/) and the [web dashboard overview](http://dataweb.isis.rl.ac.uk/IbexDataweb/Overview/ibexOverview.html)
+## Duties for first line
+This role is active between 8:30 and 17:00, every weekday, generally with a different person on duty each week.
+You will keep an eye on the support emails, and any voicemails, and make sure they are dealt with by someone. Chase up if something doesn't happen.
+If you don't have the experience to resolve something, then you should ask the team for help.
+
+### Additional In Cycle Duties
+Your phone will ring first for support issues, be prepared to answer it.
+If you don't have the experience to resolve the issues, then in cycle you should ask whoever is on call for help first, followed by others in the team.
+Extra note for the first week of cycle, these are usually busy, be prepared to delegate tasks. It may be necessary to ask specific individuals, and you may need to keep track of who is dealing with which problem and where they are. It would also be wise to share the issues as appropriate, but do remember that working patterns and individual needs may play a part in who can help with what.
+
+
+## What does being on call mean?
+This role is active between 07:00 and 23:00, everyday in cycle, generally with a different person on duty each week.
+An on call week starts on a Friday and finishes a week later. (So that the first on call week of a cycle starts the Friday before cycle starts, and the final on call week ends with cycle.)
+During working hours the person scheduled for first line will receive phone calls first, therefore the duties here are more focussed on the out of hours time (07:00 to 08:30 and 17:00 to 23:00).
+Your mobile phone will ring, be prepared to answer it, and deal with the issue detailed.
 
 ## Trouble Shooting
 
