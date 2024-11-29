@@ -26,7 +26,7 @@
 - [Project Processes](Processes): List of processes we wish to document
 - [Deployment](Deployment): Deployment Information
 - [Component & Activity Stewards](Component-&-Activity-Stewards): Component & Activity Stewards: who looks after which components/activities
-- [On Call Guidance](Providing-Support): Some hints and tips for when you're on call
+- [Providing Support](Providing-Support): Some hints and tips for when you're dealing with first line support or are on call
 - [Remote Working](Remote-Working): Some procedures for setting up VNC for remote working
 
 ## Resources
