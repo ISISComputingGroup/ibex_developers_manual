@@ -19,7 +19,7 @@ See  [Install Visual Studio](Install-Visual-Studio)
 
 ## Install Java JDK
 
-Install **OpenJDK 17 hotspot** from https://adoptium.net/?variant=openjdk17&jvmVariant=hotspot (the MSI installer is fine, tick all the boxes when it asks you which components to install)
+Install **OpenJDK 21 hotspot** from https://adoptium.net/?variant=openjdk21&jvmVariant=hotspot (the MSI installer is fine, tick all the boxes when it asks you which components to install)
 
 Do not install an Oracle JDK.
 
