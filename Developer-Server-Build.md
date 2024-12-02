@@ -54,8 +54,10 @@ If you wanted to temporarily use an updated distribution for e.g. a review then 
 
 This scheme works as Visual Studio is binary compatible (even at object file level) from version 2015 onwards. Linking must be done with the most recent visual studio version used, the build server is currently running 2019, so any developer must also be using Visual Studio 2019.  
  
-### NOTES
+
+<details> <summary> NOTES </summary>
 
 We now copy `CMakeCache.txt` across, if we later again have different developer and build server versions of visual studio then we will again need to not copy it as it is invalid if the visual studio version number is different (2017 v 2019). 
 
 CMake is used in a few third party modules e.g. MySQL, gsl, OpenCV. Compatible binaries for these will always be copied across, so IOCs can be compiled and linked, but if `CMakeCache.txt` is missing a `make` in the top level will rebuild these modules, some of which do take a while.
+</details>
