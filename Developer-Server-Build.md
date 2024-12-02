@@ -9,7 +9,7 @@ You need to be using a Visual Studio compatible with the build server, currently
 is what you want and is what is deployed to an instrument, `static` and `debug` are for special cases/testing 
 
 
-> [!TIP]  
+> [!NOTE]  
 > if you just want a recent EPICS build to run somewhere and do not need to be able to develop using it, you just need to run the `install_to_inst.bat` in the appropriate build on `kits$` when connected from the machine you want to install it on
  
  <details> <summary> Details (not normally needed) </summary>
