@@ -7,9 +7,10 @@ We try to follow [PEP8](https://www.python.org/dev/peps/pep-0008/) for coding st
  
 A clear exception is when it comes to line length; PEP8 suggests a line length limit of 79 characters but defaults to 100, but PyCharm defaults to 120. I recommend following PEP8 and modifying PyCharm default to 100 on this (See: `File -> Settings -> Editor -> Code Style -> Python -> Wrapping and Braces -> Hard wrap at: `).
 
-**We have a [Ruff config](https://github.com/ISISComputingGroup/reusable-workflows/blob/main/ruff.toml), you can setup ruff to work with most IDE's and then use our [config](https://github.com/ISISComputingGroup/reusable-workflows/blob/main/ruff.toml) to lint your code, or run ruff from command line (`%PYTHON3% -m ruff check --config="C:\Instrument\Dev\reusable-workflows\ruff.toml"`) before making a pull request, standards compliance will be enforced by this config at pull request. So before making a pull request you should ensure any files you have changed have been formatted by ruff, and pass its checks. Ruff can also automatically fix many violations. 
-
-Ruff should be run from the base directory of any project you are working in, for example in `DeviceEmulator`, it should be run from `master`, not from, for example `DeviceEmulator\master\lewis_emulators\eurotherm`**
+> [!IMPORTANT]
+> We have a [Ruff config](https://github.com/ISISComputingGroup/reusable-workflows/blob/main/ruff.toml), you can setup ruff to work with most IDE's and then use our [config](https://github.com/ISISComputingGroup/reusable-workflows/blob/main/ruff.toml) to lint your code, or run ruff from command line (`%PYTHON3% -m ruff check --config="C:\Instrument\Dev\reusable-workflows\ruff.toml"`) before making a pull request, standards compliance will be enforced by this config at pull request. So before making a pull request you should ensure any files you have changed have been formatted by ruff, and pass its checks. Ruff can also automatically fix many violations. 
+>
+> Ruff should be run from the base directory of any project you are working in, for example in `DeviceEmulator`, it should be run from `master`, not from, for example `DeviceEmulator\master\lewis_emulators\eurotherm`
 
 For new repos containing python you should add the following [workflow](https://github.com/ISISComputingGroup/reusable-workflows/blob/main/.github/workflows/linters.yml) to ensure standards compliance.
 
