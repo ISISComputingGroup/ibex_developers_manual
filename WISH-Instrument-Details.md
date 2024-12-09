@@ -3,7 +3,7 @@ This page collects information that will be useful for the implementation of the
 WISH is a long-wavelength diffractometer, on TS2. The [WISH](https://www.isis.stfc.ac.uk/Pages/WISH.aspx) web page describes the background to the instrument.
 
 ## Control System ##
-WISH will migrate from the SECI control system to the IBEX control system in MMMMMMMM YYYY.
+WISH has migrated to IBEX from SECI
 
 ## WISH Equipment ##
 The equipment listed below is used on WISH. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).
