@@ -150,6 +150,11 @@ _Note the above is done here: https://github.com/ISISComputingGroup/EPICS-axis/b
 
 If motion is completing successfully but you still see a border, you might need to increase the tolerance in the first instance by increasing retry deadband. Check with the scientists what an achievable precision is.
 
+## Controller can communicate, soft limits are fine, but cannot move motor which is showing a W1 fault 
+W1 or W2 fault is a winding fault which can happen to the drive cards of the motor. This has happened a few times on ALF specifically after power has been cut.  This issue shows up as a little red LED on the drive card itself. To fix, power cycle the drive card itself using the off/on toggle switch on the front: 
+![image](https://github.com/user-attachments/assets/8536241f-7f9c-4eaf-9dde-645cd74b2d1f)
+ 
+
 ## ZOOM PGC
 The PGC on ZOOM (MTR0101 and MTR0102) uses absolute encoders. To set these up after a power cycle of the Galil the following must be sent to the device:
 ```
