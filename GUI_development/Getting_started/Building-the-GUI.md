@@ -18,7 +18,7 @@ Create a directory for where you want your IBEX GUI to reside (e.g. `C:\Instrume
 
 You must use a version of eclipse >= 2019-06, earlier versions will fail to build the client. An appropriate version is available at `\\isis\inst$\Kits$\CompGroup\ICP\Developer Tools`, simply unzip the the latest version folder to your chosen location for Eclipse (e.g. `C:\Tools\eclipse`) and use the provided workspace. 
 
-You can choose to download Eclipse directly from [the eclipse website](http://www.eclipse.org/downloads/packages/), choose the package for "RCP and RAP developers". If you choose to download eclipse directly from the eclipse website, and you get errors about failing to resolve `jython` manifests, you will need to add `-Djdk.util.zip.disableZip64ExtraFieldValidation` to `eclipse.ini` (located right next to the eclipse.exe executable).
+You can choose to download Eclipse directly from [the eclipse website](http://www.eclipse.org/downloads/packages/), choose the package for "RCP and RAP developers". If you choose to download eclipse directly from the eclipse website, and you get errors about failing to resolve `jython` manifests, you will need to add `-Djdk.util.zip.disableZip64ExtraFieldValidation=true` to `eclipse.ini` (located right next to the eclipse.exe executable).
 
 ### Building
 
