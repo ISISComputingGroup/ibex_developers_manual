@@ -12,7 +12,7 @@ This is *why* the work needs to be done, and for *whom*.
 It will be centred around an actor who is part of the process, whether that is a user, developer, someone providing support, someone with a role will have a need and the story should highlight who has that need.
 It should state what needs to happen, along with the justification of why it needs to work that way.
 
-As a role/method of interacting with the system, I want it to behave in this way, so that something does(n't) happen.
+As a role/method of interacting with the system, I want it to behave in this way, so that something does/doesn't happen.
 
 This should amount to a requirement, one or two lines at most.
 
