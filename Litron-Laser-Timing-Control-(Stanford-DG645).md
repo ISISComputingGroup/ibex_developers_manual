@@ -17,7 +17,7 @@ If mode is 1:
     then:
         Error State
   
-If mode is 2:
+Else if mode is 2:
     if Delay + Offset > 39900 us
         or dC_0 + Delay + Offset <= 0 us
     then:
