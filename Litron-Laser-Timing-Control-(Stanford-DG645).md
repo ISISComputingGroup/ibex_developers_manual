@@ -44,4 +44,4 @@ Note that IOC mode is not the same as device mode. IOC mode refers to a value of
 
 ## Other
 - Unlike the DG645 IOC- when the user changes the device mode, we do not restart the IOC. We chose not to as we need to know at any point what the device mode is for error checking- if we restart the IOC then we lose track of what the device mode is.
-- The original specification for Litron Laser Timing Control states that `dA_0` and `dC_0` should be polled at 4hz. We chose to keep the original polling rate of the DG645 at 1hz.
+- The original specification for Litron Laser Timing Control states that `dA_0` and `dC_0` should be polled at 4Hz. We chose to keep the original polling rate of the DG645 at 1Hz.
