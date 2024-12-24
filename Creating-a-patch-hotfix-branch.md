@@ -8,7 +8,7 @@ git checkout -b Release_14.0.0_hotfix v14.0.0
 git push -u origin Release_14.0.0_hotfix
 git submodule update --recursive
 ```
-subsequently just change to it
+subsequently just change to it - either locally or if somebody else has already created it and pushed it
 ```
 git checkout Release_14.0.0_hotfix
 git submodule update --recursive
