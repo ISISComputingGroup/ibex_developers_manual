@@ -5,7 +5,7 @@ If EPICS has a git tag v14.0.0 then
 if first time you need to create branch
 ```
 git checkout -b Release_14.0.0_hotfix v14.0.0
-git push origin Release_14.0.0_hotfix
+git push -u origin Release_14.0.0_hotfix
 git submodule update
 ```
 subsequently just change to it
