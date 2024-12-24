@@ -10,7 +10,7 @@ git submodule update --recursive
 ```
 subsequently just change to it
 ```
-git checkout -b Release_14.0.0_hotfix v14.0.0
+git checkout Release_14.0.0_hotfix
 git submodule update --recursive
 ```
 If you just want to use master of a new module, you can just `git add` that. In more complicated setups you may need to create a `Release_14.0.0_hotfix` branch in the submodule based on its original 14.0.0, cherry pick across relevant changes, and then `git add` the submodule at the top
