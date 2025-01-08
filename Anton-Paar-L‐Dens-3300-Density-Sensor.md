@@ -14,4 +14,4 @@ Parity = None
 
 Stop = 1
 
-The manual can be found at \\ISIS\Shares\ISIS_Experiment_Controls\Manuals\AntonParr_L-Dens3300. (With the operator and admin pass codes on page 16)
+The manual can be found at `\\ISIS\Shares\ISIS_Experiment_Controls\Manuals\AntonParr_L-Dens3300`. (With the operator and admin pass codes on page 16)
