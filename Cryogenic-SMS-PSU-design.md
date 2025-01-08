@@ -17,22 +17,10 @@ longhand. This is likely to change).</p>
 stamped, some are not. These are also listed in the manual on the 
 network share.</p>
 <h3>
-<a id="user-content-emulator" class="anchor" href="https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Cryogenic-SMS-PSU#emulator" aria-hidden="true"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"></svg></a></h3><h3>Emulator</h3>
-<p>An emulator is being developed for this currently (July 2019) which 
-will be one of the most accurate emulators that the IBEX Project will 
-have made. This is because the Muon Group need to be sure that the new 
-software will work and <em>not</em> quench a superconducting cryomagnet and cost STFC upwards of £1 million to repair/replace it.<br>
-It is meant to be thoroughly tested against the VI in every capacity 
-that the VI can interact with it (and more), and tested against the IOC 
-to check for equivalent control. This means that it needs to do ramping,
- reply with correct status messages, mock a quench, mock a trip, mock 
-fault states, emergency ramp, and much, much more. Fortunately you can 
-run lewis <em>X</em> times faster than real time, meaning that week-long
- ramps can be run at 100x speed so that IOC tests don't take weeks to 
-finish.</p>
+<a id="user-content-emulator" class="anchor" href="https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Cryogenic-SMS-PSU#emulator" aria-hidden="true"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"></svg></a></h3>
 <h3>
 <a id="user-content-ioc" class="anchor" href="https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Cryogenic-SMS-PSU#ioc" aria-hidden="true"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"></svg></a></h3><h3>IOC</h3>
-<p>An IOC is currently (Mar 2020) being developed for this PSU, named 
+<p>An IOC exists for this PSU, named 
 CRYOSMS. In order to prevent users from negligently sending commands to 
 the PSU which could damage the cryomagnet (e.g. manually setting an 
 incorrect ramp rate, sending values in wrong units), this IOC has a very
