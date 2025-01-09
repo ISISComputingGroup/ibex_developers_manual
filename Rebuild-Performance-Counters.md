@@ -8,21 +8,22 @@ NTSTATUS: NT_STATUS_ACCESS_DENIED - Access denied
 You may need to rebuild the performance counters on the machine that cannot be queried.
 
 This is detailed on https://support.microsoft.com/en-us/help/2554336/how-to-manually-rebuild-performance-counters-for-windows-server-2008-6 but to summarise:
-```
-Open a administrator CMD window
 
-To Rebuilding the counters:
-     cd c:\windows\system32
-     lodctr /R
-     cd c:\windows\sysWOW64
-     lodctr /R
+1. Open a administrator CMD window
+1. Rebuild the counters:
+    ```
+    cd c:\windows\system32
+    lodctr /R
+    cd c:\windows\sysWOW64
+    lodctr /R
+    ```
+1. Resync the counters with Windows Management Instrumentation (WMI):
+    ```
+    WINMGMT.EXE /RESYNCPERF
+    ```
+1. Stop and restart the Performance Logs and Alerts service (only if it is running)
+1. Stop and restart the Windows Management Instrumentation service (this should always be running)
 
-To Resync the counters with Windows Management Instrumentation (WMI):
-     WINMGMT.EXE /RESYNCPERF
-
-Stop and restart the Performance Logs and Alerts service (only if it is running)
-Stop and restart the Windows Management Instrumentation service (this should always be running)
-```
 
 If all this fails, you may have to reboot
 
