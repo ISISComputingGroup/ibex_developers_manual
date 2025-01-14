@@ -29,7 +29,7 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
 1. Update the [upgrade script](https://github.com/ISISComputingGroup/EPICS-upgrade/blob/master/upgrade.py) to include the latest version (this is done on master). Steps to do this are in [Config Upgrader in section *creating a production upgrade script*](Config-Upgrader#creating-a-production-upgrade-script) 
     1. After committing these changes to `master` on the `EPICS-upgrade` submodule, don't forget to push the new submodule version to `master` on the top `EPICS` branch. This is needed to make sure you changes appear on the release branch created in the next step. 
 1. For packages which are published on `PyPI`, in particular `genie_python` and `ibex_bluesky_core`, create PyPI releases if needed.
-    1. These packages are released by performing a `git tag x.y.z` on a checkout of `main`, where `x.y.z` is the new version you want to release. They will then build and prompt to "approve" the release pipeline to PyPI.
+    1. These packages are released by performing a `git tag x.y.z` on a checkout of `main`, where `x.y.z` is the new version you want to release. They will then build and prompt to "approve" the release pipeline to PyPI. `genie` should be released with a version number matching the main IBEX version number. `ibex_bluesky_core` should generally have a minor/patch version incremented for now until we reach v1.
     1. **Ensure these releases were successful** by checking on [pypi](https://pypi.org/) for the new release number before proceeding.
 1. Start the Jenkins pipeline [Release Branches](https://epics-jenkins.isis.rl.ac.uk/job/Release_branches/).
     - Click on 'Build with Parameters'.
