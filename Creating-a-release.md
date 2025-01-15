@@ -61,7 +61,7 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
 1. Create a released version entry in the [releases table](https://github.com/ISISComputingGroup/IBEX/blob/master/docs/all-releases.md) (including link to release notes) and commit to master.
 1. Update the "Latest Stable Release" link on the [IBEX wiki homepage](https://github.com/ISISComputingGroup/IBEX) to be the new `"Release X.x.m"` and commit to master.
 1. Remove all entries from `Upcoming Release Notes`, leaving a blank file with only the headers, e.g. "Instrument Specific Changes", etc. and commit to master.
-1. If applicable, update the dependencies since the last release and add them to the bottom of the release notes. To find the python dependencies list, run a `pip freeze` on a cleanly released `genie_python`. Note that you will need to specify the scripts directory to run pip commands. i.e. `C:\Instrument\Apps\Python3\Scripts\Pip.exe freeze`
+1. If applicable, update the dependencies since the last release and add them to the bottom of the release notes. To find the python dependencies list, run a `pip freeze` on a cleanly released `uktena`. Note that you will need to specify the scripts directory to run pip commands. i.e. `C:\Instrument\Apps\Python3\Scripts\Pip.exe freeze`
 1. Update the [user manual](https://github.com/ISISComputingGroup/ibex_user_manual/wiki) with any relevant changes
 1. copy the release to `control-svcs`, this is so we can set git remotes for hotfixes etc. as part of the deploy. So if release is number 1.2.3
     - `robocopy "Kits$\CompGroup\ICP\Releases\1.2.3\EPICS\.git" "\\control-svcs.nd.rl.ac.uk\git$\releases\1.2.3\EPICS.git" /mir /nfl /ndl`
