@@ -6,7 +6,7 @@ Litron Laser Timing Control is an extension of the DG645 IOC made for HIFI to us
 
 By setting a delay and offset the following calculation is done. 
 
-`dC_0 = Delay + Offset` in `us`
+`dA_0 = Delay + Offset` in `us`
 
 Under the following constraints:
 
