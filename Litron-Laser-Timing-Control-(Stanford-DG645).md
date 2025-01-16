@@ -4,9 +4,9 @@ Litron Laser Timing Control is an extension of the DG645 IOC made for HIFI to us
 
 ## Delay & Offset
 
-By setting a delay and offset the following calculation is done. 
+By setting a delay and offset the following calculation is done.
 
-`dA_0 = dC_0 + Delay + Offset` in `us`
+`dA_0 = Delay + Offset` in `us`
 
 Under the following constraints:
 
@@ -41,6 +41,10 @@ else: # IOC mode is auto
         Set device mode to 2
 ```
 Note that IOC mode is not the same as device mode. IOC mode refers to a value of `auto` or `1` or `2`, the device mode refers to which configuration/setting slot the DG645 is in (0-9). IOC mode 1 and 2 refers to device setting slots 1 and 2.
+
+## Summed Delay
+
+Summed Delay = dA_0 + dC_0
 
 ## Other
 - Unlike the DG645 IOC- when the user changes the device mode, we do not restart the IOC. We chose not to as we need to know at any point what the device mode is for error checking- if we restart the IOC then we lose track of what the device mode is.
