@@ -42,6 +42,8 @@ else: # IOC mode is auto
 ```
 Note that IOC mode is not the same as device mode. IOC mode refers to a value of `auto` or `1` or `2`, the device mode refers to which configuration/setting slot the DG645 is in (0-9). IOC mode 1 and 2 refers to device setting slots 1 and 2.
 
+As of writing auto mode has not been tested on device/instrument as not yet needed.
+
 ## Summed Delay
 
 `Summed Delay = dA_0 + dC_0`
