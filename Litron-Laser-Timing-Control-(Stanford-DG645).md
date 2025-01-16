@@ -44,7 +44,7 @@ Note that IOC mode is not the same as device mode. IOC mode refers to a value of
 
 ## Summed Delay
 
-Summed Delay = dA_0 + dC_0
+`Summed Delay = dA_0 + dC_0`
 
 ## Other
 - Unlike the DG645 IOC- when the user changes the device mode, we do not restart the IOC. We chose not to as we need to know at any point what the device mode is for error checking- if we restart the IOC then we lose track of what the device mode is.
