@@ -4,10 +4,10 @@ Tree Size pro is a tool to allow flexible and informative disk space management 
 # Distribution
 As this is now made available via SCCM/Software Center it should not normally be necessary for us to provide a distribution service.  It is however incumbent on us to provide an up to date version of the software to DI regularly so that they can keep an updated version online.
 
-Good to do this regularly via a TopDesk ticket (particularly if there are any security issues raised) - but this hasn't been running for long.  We can obviously download it from the treesize site for ourselves.
+Good to do this regularly via a TopDesk ticket (particularly if there are any security issues raised) - but this hasn't been running for long.  We can obviously download it from the TreeSize site for ourselves.
 
 # Licence Key
-There is a licence key which is needed for installation for any machine it is used on.  This is available on the TreeSize site (details in keeper) and in \\isis\Installs\ISISAPPS\TreesizePro, the licence is custom to us, so should not be passed on to anyone who is not aware of the licence requirements!  Unless a query is specifically directed to us for this "Enterprise" version on this site, _general/home other users will be better being pointed to the "TreeSize free" version_ which can be installed for free (and is extremely helpful for home use)
+There is a licence key which is needed for installation for any machine it is used on.  This is available on the TreeSize site (details in keeper) and in `\\isis\Installs\ISISAPPS\TreesizePro`, the licence is custom to us, so should not be passed on to anyone who is not aware of the licence requirements!  Unless a query is specifically directed to us for this "Enterprise" version on this site, _general/home other users will be better being pointed to the "TreeSize free" version_ which can be installed for free (and is extremely helpful for home use)
 
 
 # Licence
