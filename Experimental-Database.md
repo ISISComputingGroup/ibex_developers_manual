@@ -11,29 +11,35 @@ The data is populated centrally from the [Experiment Database Populator](https:/
 
 ## Architecture
 
-The experiment database populator is a Python 3.8 program that is designed to run centrally and periodically update instrument databases. It does the following: 
+The experiment database populator is a Python program that is designed to run centrally and periodically update instrument databases. It does the following: 
 * Monitors 'CS:INSTLIST' for instruments that are scheduled
 * Gathers 200 days worth of data from the web services hosted by business apps (Using the credentials stored in a git repository on the local share).
 * Reformats the data slightly to match the structure of the instrument databases
 * Pushes to the instrument database (Using the credentials stored in a git repository on the local share).
 * Optionally repeats every hour
 
+## Installation
+
+```
+git clone https://github.com/ISISComputingGroup/ExperimentDatabasePopulator
+cd ExperimentDatabasePopulator
+python -m venv .venv
+.venv\Scripts\activate
+python -m pip install -e .[dev]
+```
+
 ## Testing
 
-* If it is the first time running the populator you will need to install Python 3.8 (any distribution should do) and ensure that you pip install the requirements listed in `requirements.txt` in the venv
-* The populator has unit tests that are run in [jenkins](http://epics-jenkins.isis.rl.ac.uk/job/Experiment_Database_Populator/). 
 * You will need to add access permission for the populator to write to your local database, to do this run `EPICS/SystemSetup/create_test_account.bat`
-* You can write some dummy test data into your local database by using the `--test_data` argument. If you do not have access to the private share you can also specify the username and password for writing to the database using the `--db_user` and `--db_pass` flags. The username/password can be found in `EPICS/SystemSetup/test_account.sql`.
+* You can write some dummy test data into your local database by using the `--test_data` argument. You must specify the username and password for writing to the database using the `--db_user` and `--db_pass` flags. The username/password can be found in `EPICS/SystemSetup/test_account.sql`.
 
 ## Deployment
-
-The Experiment Database Populator needs to be deployed using a Python 3.8 virtual environment as the the repository is not compatible with the version of python installed system wide.
 
 Please follow the below instructions as part of deploying:
 
 * Make sure you are firstly a super user to epics using the following command: `sudo su - epics`
 * Pull most recent changes from master in `home/epics/RB_num_populator`
-* From `home/epics/RB_num_populator`, check that a python 3.8 virtual environment exists called _"exp_db_populator_venv"_.
+* From `home/epics/RB_num_populator`, check that a python virtual environment exists called _"exp_db_populator_venv"_.
 * Activate virtual environment if present and check `/home/epics/RB_num_populator/requirements.txt` file matches dependencies in venv and then deactivate the virtual environment.
 * If there is no virtual environment called _"exp_db_populator_venv"_ or dependencies are not inline with `/home/epics/RB_num_populator/requirements.txt`, run `/home/epics/RB_num_populator/create_rb_number_populator_python_venv.sh` and check the virtual environment has been created.
 * Check that the cron job is running correctly using the following command: `crontab -l`. The output should look similar to: ```20 * * * * sh /home/epics/RB_num_populator/rb_number_populator.sh > /tmp/rb_num_pop.out 2>&1```
