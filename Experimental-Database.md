@@ -21,12 +21,15 @@ The experiment database populator is a Python program that is designed to run ce
 ## Installation
 
 ```
-git clone https://github.com/ISISComputingGroup/ExperimentDatabasePopulator
+git config --global protocol.file.allow always
+git clone --recursive https://github.com/ISISComputingGroup/ExperimentDatabasePopulator
 cd ExperimentDatabasePopulator
 python -m venv .venv
 .venv\Scripts\activate
 python -m pip install -e .[dev]
 ```
+
+Note: due to the structure of the project with a private submodule, you always need to use an editable install, with the `-e` flag on `pip install`, even if you do not actually intend to edit in-place.
 
 ## Testing
 
