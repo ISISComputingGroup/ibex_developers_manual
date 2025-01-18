@@ -36,6 +36,20 @@ Note: due to the structure of the project with a private submodule, you always n
 * You will need to add access permission for the populator to write to your local database, to do this run `EPICS/SystemSetup/create_test_account.bat`
 * You can write some dummy test data into your local database by using the `--test_data` argument. You must specify the username and password for writing to the database using the `--db_user` and `--db_pass` flags. The username/password can be found in `EPICS/SystemSetup/test_account.sql`.
 
+Run the populator using:
+
+```
+exp_db_populator
+```
+
+or for help on command line arguments use:
+
+```
+exp_db_populator --help
+```
+
+The script will have been added to your `PATH` if you followed installation instructions above. It is installed in editable mode so will immediately pick up code changes without the install step needing to be rerun.
+
 ## Deployment
 
 Please follow the below instructions as part of deploying:
