@@ -68,6 +68,7 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
     - edit `EPICS.git\config` on the control-svcs version (you can browse straight to the `\\control-svcs` share above)
         - change `bare = false` to `bare = true`
         - Add an extra section at end of file
+    - Do the same for the `EPICS32` 32-bit build, replacing `EPICS` with `EPICS32` everywhere in the commands above.
 ```
 [http]
         receivepack = true
