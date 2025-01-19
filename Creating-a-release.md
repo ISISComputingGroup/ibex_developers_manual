@@ -72,7 +72,7 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
 [http]
         receivepack = true
 ```
-1. Check release is now listed in `https://control-svcs.isis.cclrc.ac.uk/git/?a=project_list;pf=releases` 
+1. Check release is now listed in [`https://control-svcs.isis.cclrc.ac.uk/git/?a=project_list;pf=releases`](https://control-svcs.isis.cclrc.ac.uk/git/?a=project_list;pf=releases)
 
 ### Testing
 
