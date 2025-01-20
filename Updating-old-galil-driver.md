@@ -4,7 +4,7 @@ The galil-old structures needs to be kept in step to some extent with the main m
 
 Currently explicit galil-old branches exist for EPICS top, support/galil and ioc/master - other modules have just have pinned versions to EPICS that may not be the most recent (e.g. because newer versions do not compile with VS2010). Updating the to level galil-old EPICS branch should consider the following.
 - if a change is made to support/galil master branch of EPICS-galil repository consider if this needs back-porting to the galil-old branch of this repository
-- if a change is made to ioc/master/GALIL or ioc/master/GALILMUL consider if it needs back-porting to galil-old branch of this repositort
-- some support modules get built into the galil ioc so the galil-old EPICS toplevel needs to be pinned to the most recent version of these e.g. sampleChanger, motionSetpoints. In general it is not a problem (but not necessary) to have all submodule repositories that are not on a separate galil-old branch to be at the most recent version, however in somes cases this is not possible due to compiler conflicts
+- if a change is made to ioc/master/GALIL or ioc/master/GALILMUL consider if it needs back-porting to galil-old branch of this repository
+- some support modules get built into the galil ioc so the galil-old EPICS top level needs to be pinned to the most recent version of these e.g. sampleChanger, motionSetpoints. In general it is not a problem (but not necessary) to have all submodule repositories that are not on a separate galil-old branch to be at the most recent version, however in some cases this is not possible due to compiler conflicts
       
    
