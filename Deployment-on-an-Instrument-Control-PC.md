@@ -18,8 +18,9 @@ If you do not have either a D: or O: network drive, then you will need to specif
 
 ### Upgrading IBEX to the latest version
 - If an instrument, check D: network drive status as per above _Notes on network share access_
-- Ensure the instrument is running and in a setup state (e.g. so you can take screenshots of blocks, motors, running VIs, etc.)
-- Ensure all command lines to EPICS or windows accessing the EPICS path are closed
+- Ensure the instrument is running and in a setup state
+- Take screenshots of blocks, motors, running VIs, etc. to allow later comparison
+- Ensure all command lines to EPICS or windows accessing the EPICS path are closed (though there is no need to stop the IBEX Server)
 - Run `<public share>\ibex_utils\installation_and_upgrade\instrument_deploy.bat` (or for 32-bit releases run with the parameter `x86`)
     - you can double click on this, but usually better to drag the path into a new empty cmd window so you don't miss any errors on abort  
     - It will look for the highest version number in the release folder as a source.
@@ -27,7 +28,7 @@ If you do not have either a D: or O: network drive, then you will need to specif
     - Apart from the below points, just follow instructions
     - Be warned the upgrade runs in 3 steps and so will claim to have finished the upgrade 3 times
     - Do not remove any SECI icons from the task list if this is not the first time install
-
+- Compare screenshots taken earlier to current state
 
 ### install IBEX for the first time
 _Note this is unlikely to happen now we've migrated most instruments, and SECI instruments should have a copy of IBEX at the least._
