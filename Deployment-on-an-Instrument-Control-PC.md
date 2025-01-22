@@ -6,7 +6,7 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
 ## Preparatory Steps for Client and Server
 
 - Inform the instrument scientist that you are going to upgrade the instrument in 5 minutes so that they are not surprised when you remote desktop to the instrument, include a link to the release notes of the latest release in this email. Wait 5 minutes.
-- Visit each instrument on which code will be released and check for changes which have been made which are not summarised on the [IBEX wiki](https://github.com/ISISComputingGroup/IBEX/wiki#instrument-information). Do this by running `git status` in the EPICs directory and looking at the diff and comparing with those changes.
+- Visit each instrument on which code will be released and check for changes which have been made which are not summarised on the [IBEX wiki](https://github.com/ISISComputingGroup/IBEX/wiki#tocInstrumentInfo). Do this by running `git status` in the EPICs directory and looking at the diff and comparing with those changes.
 - Make sure that the public share has the most recent version of `ibex_utils` from Git (i.e. do git pull).
 
 ### Notes on network share access
