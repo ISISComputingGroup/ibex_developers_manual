@@ -34,6 +34,8 @@ During install, select "Desktop development with C++" and check/enable these ind
 
 Also select .NET development and "Universal windows CRT/universal platform development" from the features  
 
+NOTE: If you are having issues running the installer, moving the .exe from 'Downloads' to 'Documents'.
+
 # Installing a new Version of Visual Studio
 If you are on a newer version of Visual Studio then you will need to upgrade various files to take this into account. Below is a list of things we needed to do when upgrading to 2017 your list may be different.
 
