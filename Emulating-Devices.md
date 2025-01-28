@@ -8,7 +8,7 @@ You've created an IOC to talk to a device, and you want to test it: just borrow 
 
 However, we can try and get as close as possible at the development stage. We also might want to make minor changes to an IOC we know that works without all the effort of tracking down an actual piece of hardware. The above principle still applies, but we can still take steps to improve our odds.
 
-Our emulators are written within the Lewis framework developed at ESS. The purpose of this page is not to replicate the full Lewis documentation, which can be found [here](http://lewis.readthedocs.io/en/latest/), but to give quick pointers to common actions and describe how it all fits within IBEX.
+Our emulators are written within the Lewis framework developed at ESS. The purpose of this page is not to replicate the full Lewis documentation, which can be found [here](https://isiscomputinggroup.github.io/lewis/index.html), but to give quick pointers to common actions and describe how it all fits within IBEX.
 
 Due to some staff turnover Lewis is now maintained by ISIS and ESS collaboratively. Dom has access to pushing release versions of Lewis to pypi. 
 
@@ -19,7 +19,7 @@ Lewis is included as an installed module in genie_python (for Python 3).
 ## Set up a new emulator
 
 1. Create a subdirectory for your new emulator under `support/my_device/master/system_tests/lewis_emulators/`, for an example see the CCD100.
-1. Documentation for how to write a Lewis emulator can be found [here](http://lewis.readthedocs.io/en/latest/developer_guide/writing_devices.html), and you can refer to the examples in the Lewis library (i.e. `C:\Instrument\Apps\Python3\Lib\site-packages\lewis\devices` and `...\examples`).
+1. Documentation for how to write a Lewis emulator can be found [here](https://isiscomputinggroup.github.io/lewis/developer_guide/writing_devices.html), and you can refer to the examples in the Lewis library (i.e. `C:\Instrument\Apps\Python3\Lib\site-packages\lewis\devices` and `...\examples`).
 1. NOTE: the simple examples `simple_device` and `example_motor` have all the code in a single `__init__.py` file, but we should stick to a consistent tidy structure like that of the `linkam_t95` emulator, i.e. with separate files for the device itself, its states (if it's a state machine), and its interfaces.
 1. Don't forget to add `__init__.py` files in all of your folders!
 1. At the time of writing, the Lewis `StreamAdapter.handle_error()` method does nothing. Please make sure your interface class deriving from `StreamAdapter` prints the content of the error, which makes it easier to understand what's going on (see for example the `iris_cryo_valve` emulator).
@@ -57,7 +57,7 @@ s.close()
 
 ### The backdoor
 
-It's possible to modify the device's state on the fly as it's running in case you want to push it into a specific state (as a backdoor). The backdoor can also be used to alter simulation parameters, e.g. to simulate a loss of connection or speed up the simulation time. Full documentation can be found [here for device access](http://lewis.readthedocs.io/en/latest/user_guide/remote_access_devices.html) and [here for simulation access](http://lewis.readthedocs.io/en/latest/user_guide/remote_access_simulation.html).
+It's possible to modify the device's state on the fly as it's running in case you want to push it into a specific state (as a backdoor). The backdoor can also be used to alter simulation parameters, e.g. to simulate a loss of connection or speed up the simulation time. Full documentation can be found [here for device access](https://isiscomputinggroup.github.io/lewis/user_guide/remote_access_devices.html) and [here for simulation access](https://isiscomputinggroup.github.io/lewis/user_guide/remote_access_simulation.html).
 
 The host and port for the backdoor are specified in the `-r` argument at startup:
 
