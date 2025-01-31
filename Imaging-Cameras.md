@@ -7,7 +7,7 @@ These are often controlled via their own PCs running bespoke software.  Running 
 In general the IMAT instrument scripts create folders on the relevant remote PC for the data to be stored in (using the mapped drives) and then communicates with the IOCs on the remote PC to take data. The remote PCs are mapped to the following drives on the NDX: 
 
 * M: `IMAT-MESSINA-DETECT`
-* E: `IMAT-UCB-DETECT`
+* E: `IMAT-UCB`
 
 ### Pixelman
 
