@@ -11,7 +11,7 @@ In general the IMAT instrument scripts create folders on the relevant remote PC 
 
 ### Pixelman
 
-This has been run on the `IMAT-UCB-DETECT` machine.
+This has been run on the `IMAT-UCB` machine.
 
 [Pixelman](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Pixelman)
 
