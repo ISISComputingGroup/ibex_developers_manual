@@ -1,6 +1,6 @@
 | Chair | Timekeeper | Note Taker |
 |-------|------------|------------|
-| TW    | DM         | JH         |
+| TW    |            | JH         |
 
 Present:
 - In person: IG GR KB
