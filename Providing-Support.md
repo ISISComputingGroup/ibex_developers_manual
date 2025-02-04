@@ -45,12 +45,11 @@ This role is active between 8:30 and 17:00, every weekday, generally with a diff
 You will keep an eye on the support emails, and any voicemails, and make sure they are dealt with by someone. Chase up if something doesn't happen.
 If you don't have the experience to resolve something, then you should ask the team for help.
 
-### Additional In Cycle Duties
 Your phone will ring first for support issues, be prepared to answer it.
 
-If you don't have the experience to resolve the issues, then in cycle you should ask whoever is on call for help first, followed by others in the team.
+If you don't have the experience to resolve the issues, then in cycle you should ask whoever is on call for help first, followed by others in the team. Out of cycle ask the team. 
 
-Extra note for the first week of cycle, these are usually busy, be prepared to delegate tasks. It may be necessary to ask specific individuals, and you may need to keep track of who is dealing with which problem and where they are. It would also be wise to share the issues as appropriate, but do remember that working patterns and individual needs may play a part in who can help with what.
+Extra note for the first week of cycle, these are usually busy, be prepared to delegate tasks. It may be necessary to ask specific individuals to undertake tasks, and you may need to keep track of who is dealing with which problem and where they are. It would also be wise to share the issues as appropriate, but do remember that working patterns and individual needs may play a part in who can help with what.
 
 
 ## What does being on call mean?
