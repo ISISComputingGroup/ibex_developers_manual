@@ -27,7 +27,4 @@ The project manager (or an agreed alternative team member) should do the followi
 
 ### After the meeting
 
-1. Remove any tickets in the `Ready` column of the IBEX project board that are not reworks
-1. Add the tickets from the planning board in order from the top of High to the end of Low
-1. Set the milestones of tickets to the appropriate milestone (those in `Ready`, `In Progress`, `Impeded`, `Review`, and `Review Complete` should all have the current milestone) - this is most easily done at present through the issues list and filtering
-1. Remove the proposal label from all tickets - this is most easily done at present through the issues list and filtering
+1. Check with Kathryn, this process is currently being updated.
