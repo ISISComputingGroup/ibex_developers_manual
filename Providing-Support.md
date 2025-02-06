@@ -97,7 +97,7 @@ There are a number of tips for [trouble shooting](trouble-shooting-pages) alread
   1. Unable to connect to NDX via RDP
     - Try yourself to RDP, if you can ask reporter to try again, if they can't it is a connectivity issue for the system they are using to site, in hours refer them to the service desk, out of hours this is best efforts. Check the ISIS Computing O365 SharePoint for more information.
     - Check ping to the NDX, and to the NDH
-      - If there are any issues with these pings, following the instructions relating to them and the DRACs  in the older SharePoint
+      - If there are any issues with these pings, you can check DRAC. [Basic DRAC information here](https://stfc365.sharepoint.com/sites/ISISExperimentControls/SitePages/Getting%20to%20Instrument%20DRACs.aspx) and instrument [DRAC IDs here](https://stfc365.sharepoint.com/sites/ISISExperimentControls/Lists/Instrument%20Control%20Computers/AllItems.aspx).
   1. Wrong password entered too many times on anything other than NDX
     - We can't resolve this
 </details>
