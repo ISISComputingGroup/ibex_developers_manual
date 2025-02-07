@@ -11,7 +11,7 @@
 ## Introduction
 Does your IOC require definitive states? If the logic of your IOC will go beyond calc fields, you may wish to implement a Finite State Machine. 
 
-EPICS supports State Machine creation with a set of [Sequencer tools.](http://www-csr.bessy.de/control/SoftDist/sequencer/index.html) The state file, which controls the states the system can be in and the transitions between them, is written in C-based State Notation Language.
+EPICS supports State Machine creation with a set of [Sequencer tools.](https://epics-modules.github.io/sequencer/Manual.html) The state file, which controls the states the system can be in and the transitions between them, is written in C-based State Notation Language.
 This is a how-to guide to create and implement a state machine into your IOC.
 
 ## Create State File 
@@ -21,7 +21,7 @@ Enter the support directory of your IOC, e.g.:
 C:\Instrument\Apps\EPICS\support\HFMAGPSU\master\HFMAGPSUSup
 ```
 Create a state file in this directory (e.g. fsm.st).
-The EPICS manual for SNL files can be found [here.](http://www-csr.bessy.de/control/SoftDist/sequencer/index.html)
+The EPICS manual for SNL files can be found [here.](https://epics-modules.github.io/sequencer/Manual.html)
 
 If you are reading or changing PV values, the following must be included in your `fsm.st` file:
 ```
