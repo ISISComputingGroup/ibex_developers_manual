@@ -17,6 +17,8 @@ The list of new features and bug fixes in this release can be found at **link to
 
 To perform the release we will have to stop the instrument from taking data for a couple of hours. If there is a specific day you would like us to perform the release, you would rather not have this release for your instrument or you have any other concerns please get in contact with us ASAP. If we do not hear back from you we will assume that you are happy for us to do this any day in the above range.
 
+Please note that this is a separate task to any operating system updates that may be going on, we will co-ordinate between those two tasks as appropriate.
+
 Thanks,
 ISIS Experiment Controls
 ```
