@@ -107,4 +107,4 @@ Pyright keeps a cache directory in `c:\Users\spudulike\.cache`, this can get cor
 
 This cache can be deleted (at the cost of the next script-check operation being much slower).
 
-Error will be a `json.decode.JsonDecoderError` as pyright does not return JSON in this case (but rather, returns some non-JSON error message).
+Error will be a `json.decoder.JSONDecodeError` as pyright does not return JSON in this case (but rather, returns some non-JSON error message).
