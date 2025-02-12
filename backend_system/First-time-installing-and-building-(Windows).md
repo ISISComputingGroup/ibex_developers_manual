@@ -10,9 +10,6 @@ See https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Things-to-
 ## Install Perl
 Download and install [Strawberry Perl](http://strawberryperl.com/)
 
-## Install WiX toolset (We use version 3 and not the latest one)
-Download and install latest stable version from https://wixtoolset.org/docs/wix3/
-
 ## Install Visual Studio
 
 See  [Install Visual Studio](Install-Visual-Studio)
@@ -253,3 +250,6 @@ and download the latest DAQMX drivers. When installing, ensure you check the box
 If you will be developing or reviewing code involved with Beckhoff PLCs you will need to install TwinCAT XAR. This can be found on the public share in `installers`. More information for simulating Beckhoffs can be found [here](Beckhoff-testing).
 > [!NOTE]
 > XAR is the runtime that but for testing you will need the full setup which is the installer on the share 
+
+## Install WiX toolset (We use version 3 and not the latest one - only install if required)
+Download and install latest stable version from https://wixtoolset.org/docs/wix3/
