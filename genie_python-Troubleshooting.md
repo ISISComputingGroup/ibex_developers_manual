@@ -103,8 +103,6 @@ But this is not recommended for obvious reasons.
 
 # Pyright completely fails to run
 
-Pyright keeps a cache directory in `c:\Users\spudulike\.cache`, this can get corrupted, if it does get corrupted pyright will entirely fail to execute.
+Pyright keeps a cache directory in `c:\Users\spudulike\.cache`, this can get corrupted, if it does get corrupted pyright will entirely fail to execute. This cache can be deleted (at the cost of the next script-check operation being much slower).
 
-This cache can be deleted (at the cost of the next script-check operation being much slower).
-
-Error will be a `json.decoder.JSONDecodeError` as pyright does not return JSON in this case (but rather, returns some non-JSON error message).
+Error from `g.load_script` will be a `json.decoder.JSONDecodeError` as pyright does not return JSON in this case (but rather, returns some non-JSON error message).
