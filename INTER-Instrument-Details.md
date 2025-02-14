@@ -45,6 +45,9 @@ See multi-detector and single-detector below.
 ##### Note: Choppers #####
 INTER has a Mk3 chopper.<br>
 
+##### Note: Motion safety #####
+INTER has a safety system which includes light curtains and some other bits, but these are controlled via a safety-rated PLC within a Beckhoff. It forwards a signal when it is "about to trip" motion, which we then use to send an `AB 1` command (abort all motion) to all of the galils. this is done to avoid positions being lost on open-loop axes. The actual forwarding code for this lives in `custom_records.db` in the settings area, and is loaded in by the `INSTETC` IOC. 
+
 ##### Note: Jaws #####
 Provide information about INTER jaws. (After reflectometry meeting these seem to be micro jaws which they borrow from another instrument this is not a galil controlled but have not yet got any extra information)
 
