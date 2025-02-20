@@ -16,6 +16,8 @@ Things to consider when updating `Tomcat/PVWS`:
 
 ![image](https://github.com/user-attachments/assets/edb64e77-c54b-470f-838e-f829b8089786)
 
+During the installer expand `+Tomcat` when it asks you which components to install, and tick the option which starts tomcat on startup.
+
 2) copy `pvws.war` to the `webapps` directory in the tomcat directory (usually `C:\Program Files\Apache Software Foundation\Tomcat 9.0\webapps`)
 3) in your `tomcat\bin` directory, we need to add the `EPICS_CA` variables that specify the gateway address so PVWS knows where to look for PVs. this is done by running `Tomcat9.exe` with the `//US` (update server) flag ie: 
  `C:\Program Files\Apache Software Foundation\Tomcat 9.0\bin>Tomcat9.exe //US ++Environment EPICS_CA_AUTO_ADDR_LIST=NO;EPICS_CA_ADDR_LIST=<ip>` where ip is the gateway address. (more info on this command [here](https://tomcat.apache.org/tomcat-9.0-doc/windows-service-howto.html)) _note, don't do this in powershell as it tries to interpret the arguments as separate commands._ 
