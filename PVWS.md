@@ -8,7 +8,7 @@ this is done with a native tomcat service (rather than a container) following th
 ## Updating
 Things to consider when updating `Tomcat/PVWS`:
 - Tomcat installer from https://tomcat.apache.org/download-90.cgi installed in `C:\Program Files\Apache Software Foundation\Tomcat 9.0` 
-- (`pvws`)[https://github.com/ornl-epics/pvws] - we are using the latest nightly .war as of 01/11/24 - to update download this and place in the tomcat `dir\webapps` folder and restart the service
+- [`pvws`](https://github.com/ornl-epics/pvws) - we are using the latest nightly .war as of 01/11/24 - to update download this and place in the tomcat `dir\webapps` folder and restart the service
 - jdk 21 from https://adoptium.net/en-GB/ installed in `C:\Program Files\Eclipse Adoptium\jdk-21.0.5.11-hotspot`
 
 ## Setting up PVWS on a machine from scratch
