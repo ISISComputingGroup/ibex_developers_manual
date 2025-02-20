@@ -1,9 +1,13 @@
 > [Wiki](Home) > [Project tools](Project-tools) > [Working with git and github](Working-with-git-and-github) > Adding new modules
 
+# Read Before Use
+ 
 There are two use cases for adding a submodule:
 
 1. When the code is new, e.g. for a support module for a new device (Marked with **New** below)
 1. When importing code from a 3rd Party e.g. a fork of another github project (Marked with **3rd party** below)
+    > For most cases, this should be done by forking the repo, as it makes dependency updates *much* simpler to manage. However, there are instructions included on this page for how to do this without simply forking a repo, covered in 3a "3rd Party Initial Import". This should only be used in cases where forking is not possible for some extreme edge case. In most cases, forking a repo, creating an "IBEX" branch, and setting that branch as default in our ISISComputingGroup will suffice.
+
 
 ## 1 Create submodule in GitHub
 
