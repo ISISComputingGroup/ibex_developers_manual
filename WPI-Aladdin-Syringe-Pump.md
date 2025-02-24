@@ -43,6 +43,11 @@ The units for the rate can be selected but will only be set when setting the `RA
 
 Use supplied modem telephone cable into pump port labelled **“computer port”**, then use adapter supplied to connect to a female moxa cable and into moxa box. (There is another port on the pump labelled _Network_ - this is not for the main network, but used if you wish to join pumps together in a "pump network")
 
+Note most of these units have been helpfully labelled by the soft matter group, so this should be indicated like so:
+
+<img src="https://github.com/user-attachments/assets/59dce379-5f5f-45b8-a1c2-e51db3a0a0be" width=320>
+
+
 For one pump it must be given address 0, see below. Additional pumps can be daisy chained using the “network” modem port on the first pump to connect to the “computer” port on a second. The additional pumps must each have a unique address.
 
 The manual says to power pump on after rs232 cable is attached
