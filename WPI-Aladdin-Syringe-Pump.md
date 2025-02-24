@@ -78,6 +78,11 @@ According to manual you need to send the string `0x2 0x8 SAF0 0x55 0x43 0x3` whe
 
 The manual mentions two connector cables, a “GN-PC” variety to connect to a PC and “GN-NET” variety to connect pumps. A separate rs232 adapter is also mentioned. Check it is a GN-PC telephone cable and not a GN-NET telephone cable to connect to this rs232 adapter, I’m not sure if this is identified ion the cable but i think the GN-PC is dark grey and GN-NET is light grey
 
+It should look like this: 
+![image](https://github.com/user-attachments/assets/9c1cc34a-4fd3-457e-bea3-5bb7efab58c8)
+
+Where the black cable is a Male Moxa cable and the grey cable is plugged into the "PC" port on the pump. 
+
 ### Sockets on device
 
 On the rear of the pump itself are two identical sockets, one labelled "To Computer" and the other "To Network", both under a heading "RS232" (or words to that effect).  The cable which is ultimately connected to the MOXA needs to be plugged into the "To Computer" socket.  The "To Network" socket is for daisy-chaining pumps together.  If for some reason the IOC is receiving replies identical to those being sent, then it could be that the cable is in the wrong socket.
