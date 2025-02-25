@@ -55,6 +55,9 @@ See [Building and installing the uktena python distribution](Building-and-Instal
 
 ## Ruff git hook and convenience scripts
 
+In order to use this please clone the reusable workflows repo into dev
+```git clone https://github.com/ISISComputingGroup/reusable-workflows.git```
+
 We use `ruff` for [formatting & linting](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Python-conventions) and `pyright` for static analysis. 
 
 We have a central configuration file for python code formatting & linting.
@@ -72,6 +75,8 @@ See [Installing and upgrading MySQL](Installing-and-Upgrading-MySQL)
 
 > [!NOTE]
 > If installing for the first time, a new installation of MySQL may try to start up IBEX servers, which may lead to errors if Python isn't installed yet.
+>
+> During a change in admin provisioning on computers you may need to use the admin runner available in one of the IBEX Utilities referred to later.
 
 ## Building the GUI
 
