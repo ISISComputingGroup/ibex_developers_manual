@@ -76,7 +76,7 @@ See [Installing and upgrading MySQL](Installing-and-Upgrading-MySQL)
 > [!NOTE]
 > If installing for the first time, a new installation of MySQL may try to start up IBEX servers, which may lead to errors if Python isn't installed yet.
 >
-> During a change in admin provisioning on computers you may need to use the admin runner available in one of the IBEX Utilities referred to later.
+> During a change in admin provisioning on computers you may need to use the admin runner available in one of the IBEX Utilities referred to later more directly. Alter `run_all` in the admin runner file to print the command to be run at the prompt and wait for an input to continue rather than simply run the command for you via the `AdminRunner` class.
 
 ## Building the GUI
 
