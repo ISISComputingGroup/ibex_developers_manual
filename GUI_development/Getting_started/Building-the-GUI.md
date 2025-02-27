@@ -87,6 +87,8 @@ Sometimes eclipse will tell you that you have errors when you open it. The follo
 
 Eclipse can automatically set the Java standard for some projects to `1.8`. If you are seeing errors such as `var cannot be assigned to a type` on certain projects, navigate to the project in the explorer, then right-click and choose Properties->Java Compiler->Configure Workspace Settings, and then set the required Java standard to `11`.
 
+If you have a lot of errors make sure that `-Djdk.util.zip.disableZip64ExtraFieldValidation=true` is included in `eclipse.ini` (located right next to the eclipse.exe executable).
+
 ## Further Troubleshooting ##
 
 Additional support can be found [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/GUI-Troubleshooting).
