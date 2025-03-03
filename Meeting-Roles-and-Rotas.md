@@ -52,9 +52,9 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
  |FA | 20/01/2025 |x |
  |SC | 27/01/2025 |x |
  |GR | 03/02/2025 |x |
- |DM | 10/02/2025 | |
- |LC | 17/02/2025 | |
- |GR | 24/02/2025 | |
+ |DM | 10/02/2025 |x |
+ |LC | 17/02/2025 |x |
+ |GR | 24/02/2025 |x |
  |KB | 03/03/2025 | |
  |JD | 10/03/2025 | |
  |TW | 17/03/2025 | |
