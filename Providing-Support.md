@@ -159,7 +159,7 @@ There are a number of tips for [trouble shooting](trouble-shooting-pages) alread
   <summary>This network device isn't connecting</summary>
 
   1. If the device has been working on the ISIS network in that specific hall since the start of May 2025 then this is most likely an issue with the device or the port.
-  1. If this is a new to that hall, or to ISIS generally device, or it hsn't been used since sometime before May 2025, then this may be a network access issue, and it will need some help from the Infrastucture team, the MCR will have a number for them.
+  1. If this is a new to that hall, or to ISIS generally device, or it hasn’t been used since sometime before May 2025, then this may be a network access issue, and it will need some help from the Infrastructure team, the MCR will have a number for them.
   
 </details>
 
