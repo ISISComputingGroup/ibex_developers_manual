@@ -1,4 +1,4 @@
-# Galil behavior:
+# Galil behaviour:
 
 1. Set high limit (HLM) to 100
 2. Begin move to 100
@@ -9,7 +9,7 @@
 This is consistent with the Galil docs for the "BL" and "FL" commands
 
 
-# Simulated behavior:
+# Simulated behaviour:
 
 1. Set high limit (HLM) to 100
 2. Begin move to 100
