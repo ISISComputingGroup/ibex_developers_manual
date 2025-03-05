@@ -752,7 +752,7 @@ asubtest_DBD += asubroutine.dbd
 asubtest_SRCS += my_asub_routine.c
 ```
 
-Move to the `asubtestApp\Db` directory and create a file called asubtest.db. Add the following to it:
+Move to the `asubtestApp\Db` directory and create a file called `asubtest.db`. Add the following to it:
 
 ```
 record(ai, "testasub:value_in")
