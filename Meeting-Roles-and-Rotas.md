@@ -80,16 +80,17 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
 | 2024_10_03_Planning| JH | X | ES| X | SC| X |
 | 2024_10_03_Review/Retro| DK | X | KB| X | LC| X |
 | 2024_10_31_Planning| LJ | X | CMS| X | TW| X |
-| 2024_10_31_Review/Retro| LC | x | IG| X | JH| x |
-| 2024_11_28_Planning| IG | X | JD| x | DK| x |
-| 2024_11_28_Review/Retro| FA | x | GR| x | JD| x |
-| 2024_12_19_Planning| KB | x | JH| x | GR| x |
-| 2024_12_19_Review/Retro| CMS | X | ES| X | IG| x |
+| 2024_10_31_Review/Retro| LC | X | IG| X | JH| X |
+| 2024_11_28_Planning| IG | X | JD| X | DK| X |
+| 2024_11_28_Review/Retro| DM | X | GR| X | JD| X |
+| 2024_12_19_Planning| FA | X | JH| X | GR| X |
+| 2024_12_19_Review/Retro| CMS | X | ES| X | IG| X |
 | 2025_01_08_Planning| SC | X | TW| X | ES| X |
 | 2025_01_08_Review/Retro| TW | X | GR| X | JH| X |
-| 2025_02_05_Planning| ES |  | GR|  | DM|  |
-| 2025_02_05_Review/Retro| GR |  | DK|  | LJ|  |
-| 2025_03_05_Planning| JH |  | IG|  | SC|  |
-| 2025_03_05_Review/Retro| JD |  | FA|  | TW|  |
+| 2025_02_05_Planning| ES | X | DK| X | LJ| X |
+| 2025_02_05_Review/Retro| GR |  | DM|  | TW|  |
+| 2025_03_05_Planning| JH |  | IG|  | DM|  |
+| 2025_03_05_Review/Retro| JD |  | FA|  | SC|  |
+
 
 
