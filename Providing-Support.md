@@ -151,7 +151,7 @@ There are a number of tips for [trouble shooting](trouble-shooting-pages) alread
      - Verify that the device expected on that port is the device connected on that port
      - Treat it as a device that is unable to interact
      - Check the error logs (either through the log interface in the GUI, the console logs, or other appropriate method)
-     - Verify that the behavior you're seeing is not a known quirk of the device. These quirks are often detailed on the [device/ioc wiki pages](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Specific-Device-IOC)
+     - Verify that the behaviour you're seeing is not a known quirk of the device. These quirks are often detailed on the [device/ioc wiki pages](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Specific-Device-IOC)
 
 </details>
 
