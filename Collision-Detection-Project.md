@@ -5,7 +5,7 @@
 
  This project aims to develop a system for detecting collisions within the LARMOR instrument at STFC's ISIS facility, using the IBEX control system.
 
-## Original Behavior
+## Original Behaviour
 
 Presently, experiments are executed using Genie Python scripts, which command the various axes of motion, as well as the DAE system and other instrument systems. Care must be taken to ensure that the motion axes are not allowed to collide with each other, or other parts of the instrument. This means that "soft" limits must be placed on each axis of motion, based on the equipment present on the instrument and determined by the instrument scientist.
  
