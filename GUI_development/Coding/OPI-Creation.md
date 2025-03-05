@@ -44,7 +44,7 @@ Usage:
 
 e.g. 
 `python update_values.py -directory resources/DG645 -file dg645.opi -attribute color`
-will scan a single OPI in `resources/DG645/dg645.opi` and update the color attributes as necessary.
+will scan a single OPI in `resources/DG645/dg645.opi` and update the `color` attributes as necessary.
 
 ## Macros
 When an OPI is opened from the synoptic (via OpiTargetView.java) you get at least the following macros automatically set:
