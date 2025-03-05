@@ -5,17 +5,17 @@ The ALF Goniometer is a 6-axis goniometer. There is no specific logic required i
 ### Axes Conventions
 The numbering of the axes below corresponds to the number of the axes on the [annotated diagram](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/ALF/ALF_Gonio_annotated.png) of the ALF goniometer.
 
-1. Z-axis
-1. theta (a.k.a. Rrot)
-1. Cy (according to galil.ini for LabVIEW control)
-1. Cx (according to galil.ini for LabVIEW control)
-1. Rlower
-1. Rupper 
+1. `Z-axis`
+1. `theta` (a.k.a. `Rrot`)
+1. `Cy` (according to `galil.ini` for LabVIEW control)
+1. `Cx` (according to `galil.ini` for LabVIEW control)
+1. `Rlower`
+1. `Rupper` 
 
 ### Axes & Motors
 The table below defines how the goniometer axes are connected to motors, and the motor setup data needed: 
 
-Axis Name | Rupper | Rlower | Cx | Cy | theta | Z 
+Axis Name | `Rupper` | `Rlower` | `Cx` | `Cy` | `theta` | `Z`
 ------------ | ------------- | ------------- | ------------- | ------------- | ------------- | -------------
 Axis letter (crate) | F | E | D | C | B | A
 Units | deg | deg | mm | mm | deg | mm
