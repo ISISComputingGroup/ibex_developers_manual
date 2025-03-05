@@ -16,7 +16,7 @@ ASYN=$(SUPPORT)/asyn/master
 To determine what you need to add: 
 * look at the Makefile to see what DBD and library files are used when building an IOC and then add the relevant macro definitions from MASTER_RELEASE to the new RELEASE to allow these to be located. See the _LIB and _DBD macros 
 * Look at DB template *.substitution files in the App/Db directory to see where DB files are included from, you'll need any macros from here too
-* Check st.cmd for use of such macros e.g. $(ACCESSSECURITY) and other DB files it may load and add these macros to the new RELEASE too
+* Check st.cmd for use of such macros e.g. `$(ACCESSSECURITY)` and other DB files it may load and add these macros to the new RELEASE too
 
 For the first step you can use the script in `ibex_utils/developer_support_script` which will add the lines to RELEASE based on libs and dbd files in you build.mak which it knows about. This script can be run multiple times. To run use:
 
