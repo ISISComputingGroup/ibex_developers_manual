@@ -383,7 +383,7 @@ private void doBinding(Label lblTitle){
     bindingContext.bindValue(WidgetProperties.text().observe(lblTitle), BeanProperties.value("title").observe(Title.getInstance().model()));
 }
 ```
-* Then the method can be called from the createPartControl method of the View
+* Then the method can be called from the `createPartControl` method of the View
 
 ## Writing to a PV
 
@@ -492,7 +492,7 @@ public void sendTitleSP()
 }
 ...
 ```
-The final step is to add a button to the View's createPartControl method:
+The final step is to add a button to the View's `createPartControl` method:
 ```java
 ...
 Button btnSet = new Button(parent, SWT.NONE);
