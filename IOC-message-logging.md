@@ -123,15 +123,15 @@ If the Eclipse client cannot find the JMS server, it will periodically re-attemp
 
 A log message may contain the following fields
 
-* contents 	- The text content of the message.
-* eventTime	- The time when the message was generated (as recorded by the IOC).
-* createTime	- The time when the message was received by the log server.
-* type		- The type of the message (possible values to be determined).
-* severity	- The message severity (possible values to be determined).
-* clientName	- The name of the IOC (as supplied by the IOC in its message).
-* clientHost 	- The name/address of the machine that the IOC is on.
-* applicationId	- The application that processed the message (typically log server).
-* repeatCount	- The number of times the message has been repeated in succession.
+* `contents` 	- The text content of the message.
+* `eventTime`	- The time when the message was generated (as recorded by the IOC).
+* `createTime`	- The time when the message was received by the log server.
+* `type`		- The type of the message (possible values to be determined).
+* `severity`	- The message severity (possible values to be determined).
+* `clientName`	- The name of the IOC (as supplied by the IOC in its message).
+* `clientHost` 	- The name/address of the machine that the IOC is on.
+* `applicationId`	- The application that processed the message (typically log server).
+* `repeatCount`	- The number of times the message has been repeated in succession.
 
 The log server converts log messages into a simple XML format before dispatching them via JMS. 
 
