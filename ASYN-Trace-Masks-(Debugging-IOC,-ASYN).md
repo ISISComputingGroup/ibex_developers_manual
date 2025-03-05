@@ -63,7 +63,7 @@ would enable ASYN_TRACEIO_ESCAPE style printing of all bytes read/written by the
 
 ## Additional trace information
 
-This mask determines the information printed at the start of each message above. The default is ASYN_TRACEINFO_TIME which just adds a timestamp, normally this is sufficient but it can be changed by calling  asynSetTraceInfoMask  with a combination of flags:
+This mask determines the information printed at the start of each message above. The default is `ASYN_TRACEINFO_TIME` which just adds a timestamp, normally this is sufficient but it can be changed by calling  `asynSetTraceInfoMask`  with a combination of flags:
 
 * `0x1`  `(ASYN_TRACEINFO_TIME)`   prints the date and time of the message (default)
 * `0x2`  `(ASYN_TRACEINFO_PORT)`   prints `[port,addr,reason]`, where port is the port name, `addr` is the asyn address, and reason is pasynUser->reason. These are the 3 pieces of "addressing" information in asyn.
