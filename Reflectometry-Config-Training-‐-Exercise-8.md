@@ -28,7 +28,7 @@ The bench is a large motion component which moves on an arc around a given pivot
 This component is special compared to the rest of the Reflectometry server as it provides a much more dramatic transformation between motor- and control axes. The control axes provided by the bench component and settable as parameters are
 - Height 
 - Angle - pivoting around the last point of reflection
-- Seesaw - pivoting around the center of rotation of the bench itself - used for alignment only
+- Seesaw - pivoting around the centre of rotation of the bench itself - used for alignment only
 
 The physical motor axes are:
 - Front Height Jack
