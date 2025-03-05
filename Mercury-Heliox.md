@@ -57,7 +57,7 @@ If a new heliox turns up on another beamline, the following is the process to fi
 - This will respond with a string like `STAT:SYS:CAT:DEV:<device 1 id>:<device 1 type>:DEV:<device 2 id>:<device 2 type>:...`. 
   * The IDs should look something like `DB1.H1` (meaning: daughter board 1, heater 1)
   * The device type could be one of `TEMP` (temperature), `PRES` (pressure), `HTR` (heater) or `AUX` (auxiliary output).
-- For each of the devices in the catalog response, issue the command `READ:DEV:<device id>:<device type>:NICK` (terminated with a line feed)
+- For each of the devices in the catalogue response, issue the command `READ:DEV:<device id>:<device type>:NICK` (terminated with a line feed)
 - The device will respond with a string that looks like `STAT:DEV:MB1.T1:TEMP:NICK:MB1_He3_Sorb`
 - The last part of this response (`MB1_He3_Sorb` in this example) is the string that the IOC will need as a macro
 - If it's not immediately obvious which channel name corresponds to which item in the table above, consult cryogenics for advice about how the channels have been named.
