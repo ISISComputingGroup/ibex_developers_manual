@@ -30,6 +30,6 @@ caget %MYPVPREFIX%CS:DASHBOARD:BANNER:LEFT:LABEL
 caget %MYPVPREFIX%CS:DASHBOARD:TAB:2:2:VALUE
 ```
 
-The following picture shows the location of each customizable dashboard PV (each one includes both a value and a label).
+The following picture shows the location of each customisable dashboard PV (each one includes both a value and a label).
 
 ![](https://raw.githubusercontent.com/ISISComputingGroup/ibex_developers_manual/master/images/banner_customisation.png)
