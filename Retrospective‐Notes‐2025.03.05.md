@@ -138,3 +138,16 @@ GR: We can probably justify missing one standup every so often
 Conclusion: don't know and/or don't care, other meetings might take priority, as long as ops stuff e.g. nagios gets checked. "Someone" will take care of it.
 
 ### 
+
+
+# 😠😢😄 
+
+- FA 😄 we made changes to lots of stuff in release and got away with it
+- LJ 😄 about stress(ful) rig
+- ES 😄 about OPCUA
+- GR 😄 about 🌞 in the evenings when leaving work
+- CMS 😄 that we've run EMMA on newer windows version/hardware
+  * CMS 😄 OpenGENIE & SECI work on windows 11 (?!)
+- FA & KB & others 😄 about SECI 💀
+- IG 😠 that his 💻 got wiped
+- GR 😄 that this meeting wasn't stupidly long
