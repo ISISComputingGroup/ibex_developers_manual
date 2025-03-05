@@ -2,13 +2,13 @@
 
 ## Introduction
 
-There are two files involved in the gateway, an ACF and a PVLIST. When the start_gateways.bat is run it copies the default files, appends any custom rules for the server stored in settings\config\serverName\AccessSecurity, and uses the standard macro expander for IBEX.
+There are two files involved in the gateway, an ACF and a PVLIST. When the start_gateways.bat is run it copies the default files, appends any custom rules for the server stored in `settings\config\serverName\AccessSecurity`, and uses the standard macro expander for IBEX.
 
 The ACF is the rules for the access, while the pvlist specifies which rules to follow for what.
 
 ## ACF Files
 
-The default.acf used by both the external gateway and the IOCs is stored in AccessSecurity - these could be diverged if necessary.
+The default.acf used by both the external gateway and the IOCs is stored in `AccessSecurity` - these could be diverged if necessary.
 
 The rules for the groups are enacted from bottom to top
 
@@ -68,7 +68,7 @@ record (bo, "$(P)CS:EXCLUSIVE")
 
 It is also possible to generate 4 more (they have the name $(P)CS:EXCLUSIVE$(ID) in the db entry) using macros EXCLUSIVE1, EXCLUSIVE2, EXCLUSIVE3 and EXCLUSIVE4 which can be set via globals.txt. Note that these entries will need to include a : to use in the ID name, this has been left to implement there as otherwise if for some reason there was an expectation in an ACF for such a macro and it didn't exist we don't end up with a PV with nothing after a :.
 
-Should an IBEX server require specific security group settings, then creating a file called gwext.acf in the Settings\config\servername\AccessSecurity folder will ensure that the gateway loads up with both the default groups, and any groups specified in gwext.acf.
+Should an IBEX server require specific security group settings, then creating a file called `gwext.acf` in the `Settings\config\servername\AccessSecurity` folder will ensure that the gateway loads up with both the default groups, and any groups specified in `gwext.acf`.
 
 An example of a custom acf file would be:
 ```
@@ -126,7 +126,7 @@ To allow access to an IOC:
 
 e.g. `*SIMPLE.* ALLOW       TESTING     1`
 
-If you are using `CS:EXCLUSIVE:` and a custom `.acf` file, you will also need to create `a file called `gwext.pvlist` in Settings\config\servername\AccessSecurity. At the end of that file in order for the access security to work remotely, you will need to add:
+If you are using `CS:EXCLUSIVE:` and a custom `.acf` file, you will also need to create `a file called `gwext.pvlist` in `Settings\config\servername\AccessSecurity`. At the end of that file in order for the access security to work remotely, you will need to add:
 
 `.*CS:EXCLUSIVE.*    ALLOW   securityGroupName`
 
