@@ -14,7 +14,7 @@ A nagios check will use the same script, but in dry-run mode and with a cutoff o
 
 # Automated periodic database message log truncation
 Console logs are written to a `msg_log` database. After a while, the number of messages can become huge, especially if the console logging frequency is high. To mitigate this, an automated message log truncation procedure has been created. A scheduled SQL event calls a procedure to truncate the database `message` table to retain just those records spanning a predefined retention period.
-The table's primary key is just the ID number, so searching on the createTime column for the row at the retention period threshold would be inherently slow. Instead a binary search algorithm has been developed which, knowing the earliest and last record timestamps, will check whether the target time lies above or below the current binary division and iterate until the `createTime` field of the target record is within three rows of the low and high row search limits. The `binary_search_time()` procedure is in the `binary-search.sql` file.
+The table's primary key is just the ID number, so searching on the `createTime` column for the row at the retention period threshold would be inherently slow. Instead a binary search algorithm has been developed which, knowing the earliest and last record timestamps, will check whether the target time lies above or below the current binary division and iterate until the `createTime` field of the target record is within three rows of the low and high row search limits. The `binary_search_time()` procedure is in the `binary-search.sql` file.
 The `binary_search_time()` procedure takes one input parameter and returns two output parameters:
 
 **Binary Search**:
