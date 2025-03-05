@@ -79,23 +79,31 @@ DK: 🐐💀 at end of financial year?
 
 KB: No. End of project is September 2025. But most people won't be booking significant time to ibex post June.
 
-GR: just to be clear this is the 🐐 project, not the 🐐 product
+GR: Just to be clear this is the 🐐 project, not the 🐐 product
+
+KB: next PI we might be looking at doing things differently. August.
+
+DK: Can we have more time for internal team/technical priorities
+
+FA: Have a formal 80/20 split for tickets which are scientist-driven/not-scientist-driven, but there's also scope for "personal development" type time outside the ticket framework.
+
+FA: Post ibex finish we can review some of our IBEX tech choices, some bits of 🐐 are looking a bit dated.
 
 ### Wikis
 
-GR: 3 wikis exist, sometimes with duplicate content. Happy to tinker
-
-Conclusion: go for it
+GR: 3 wikis exist, sometimes with duplicate content. Happy to tinker.
 
 IBEX: scientist facing
 Dev: dev facing
 User: how to use ibex
 
-JH: repository-specific info - migrate to `README` of each repo.
+Conclusion: go for it George.
 
-LJ: searching
+JH: repository-specific info - migrate to `README` or docs of each repo.
 
-ES: search at org level
+LJ: Searching?
+
+ES: Search at org level
 
 ### Pyright
 
