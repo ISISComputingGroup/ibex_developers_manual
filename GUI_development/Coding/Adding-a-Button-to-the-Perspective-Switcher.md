@@ -91,7 +91,7 @@ The new class file should open in the editor. For this example I am just going t
 
 * Now click on the Source tab
 
-* If the createPartControl method has a Composite argument called arg0 change it to parent
+* If the `createPartControl` method has a Composite argument called arg0 change it to parent
 
 * Delete the TODO comments
 
