@@ -29,7 +29,7 @@ Use NDXMOTION to do beckhoff stuff, don't install XAR locally. JH removed from i
 
 # Current Sprint
 
-### Defunt emails that looks like it's associated with us but isn't.
+### Defunct emails that looks like it's associated with us but isn't.
 
 FA has sorted this.
 
