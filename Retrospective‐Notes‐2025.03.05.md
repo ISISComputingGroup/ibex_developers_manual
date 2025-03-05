@@ -4,6 +4,6 @@
 
 # Previous sprint
 
-nothing - short sprint
+
 
 # Current Sprint
