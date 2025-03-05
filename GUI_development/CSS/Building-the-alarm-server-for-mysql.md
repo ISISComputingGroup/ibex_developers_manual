@@ -8,7 +8,7 @@ Download ActiveMQ from Apache.
 
 Start ActiveMQ `bin\activemq.bat` - this needs to be running for the alarm server to work.
 
-Use an new database or an existing one, configure the database using the ALARM_MYSQL.sql and MYSQL_USER.sql files in org.csstudio.alarm.beast\dbd
+Use an new database or an existing one, configure the database using the `ALARM_MYSQL.sql` and`MYSQL_USER.sql` files in `org.csstudio.alarm.beast\dbd`
 
 # Configuring the alarm handler
 
