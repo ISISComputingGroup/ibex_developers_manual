@@ -48,7 +48,7 @@ Start is initiated from `C:\Instrument\Apps\EPICS\start_ibex_server.bat`. It:
 Initiated from start or `C:\Instrument\Apps\EPICS\stop_ibex_server.bat`. It stops the following
 
 1. Remove start file [#1950](https://github.com/ISISComputingGroup/IBEX/issues/1950)
-1. IOCs in startup.txt
+1. IOCs in `startup.txt`
 1. Conserver
 1. IOC Log Server
 1. Alarm server
@@ -60,29 +60,29 @@ Initiated from start or `C:\Instrument\Apps\EPICS\stop_ibex_server.bat`. It stop
 1. All procserve processes
 1. All exes in ioc startups
 1. Gateway exe
-1. Conserver.exe
-1. Console.exe
-1. PSCTRL
+1. `Conserver.exe`
+1. `Console.exe`
+1. `PSCTRL`
 1. Archive engine
 1. MK3 Chopper
-1. [instrument only] css.exe
-1. [instrument only] javaw
-1. [instrument only] java
-1. [instrument only] pythonw
-1. [instrument only] ibex-client
-1. [without startup.txt] python
-1. [without startup.txt] SeciUserInterface
-1. [without startup.txt] SeciStartup
-1. [without startup.txt] LabView
-1. [without startup.txt] mkscript3
-1. [without startup.txt] muonscript
-1. [without startup.txt] PlotScan.exe
-1. [without startup.txt] vs7jit.exe
-1. [without startup.txt] mari_script.exe 
-1. [without startup.txt] tkgenie32.exe
-1. [without startup.txt] dllhost.exe
-1. [without startup.txt] isisdatasvr.exe
-1. [without startup.txt] isisicp.exe
-1. [without startup.txt] cwdss.exe
-1. camonitor
-1. caRepeater
+1. [instrument only] `css.exe`
+1. [instrument only] `javaw`
+1. [instrument only] `java`
+1. [instrument only] `pythonw`
+1. [instrument only] `ibex-client`
+1. [without startup.txt] `python`
+1. [without startup.txt] `SeciUserInterface`
+1. [without startup.txt] `SeciStartup`
+1. [without startup.txt] `LabView`
+1. [without startup.txt] `mkscript3`
+1. [without startup.txt] `muonscript`
+1. [without startup.txt] `PlotScan.exe`
+1. [without startup.txt] `vs7jit.exe`
+1. [without startup.txt] `mari_script.exe`
+1. [without startup.txt] `tkgenie32.exe`
+1. [without startup.txt] `dllhost.exe`
+1. [without startup.txt] `isisdatasvr.exe`
+1. [without startup.txt] `isisicp.exe`
+1. [without startup.txt] `cwdss.exe`
+1. `camonitor`
+1. `caRepeater`
