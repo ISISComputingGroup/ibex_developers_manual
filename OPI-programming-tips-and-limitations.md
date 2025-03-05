@@ -162,10 +162,10 @@ Seven utility classes are provided, but there seems to be no way to get to some 
     from org.csstudio.opibuilder.scriptUtil import ConsoleUtil
     ConsoleUtil.writeInfo(value )
     ```
-* DataUtil has the createMacrosInput method.
-* FileUtil has methods for reading and writing files and displaying an open file dialog. There is also a saveFileDialog method that has been omitted from the online help.
-* GUIUtil has a yes/no dialog and methods for going to full screen or compact mode
-* PVUtil
+* `DataUtil` has the `createMacrosInput` method.
+* `FileUtil` has methods for reading and writing files and displaying an open file dialog. There is also a `saveFileDialog` method that has been omitted from the online help.
+* `GUIUtil` has a yes/no dialog and methods for going to full screen or compact mode
+* `PVUtil`
 * !ScriptUtil
 * !WidgetUtil
 
