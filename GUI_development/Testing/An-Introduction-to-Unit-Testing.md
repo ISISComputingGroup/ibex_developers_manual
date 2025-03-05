@@ -101,7 +101,7 @@ Now the test should pass if it is run again:
 
 JUnit has many useful features, here are a select few.
 
-* other asserts such as assertTrue, assertArrayEquals,  assertNotEqual and assertNotNull
+* other asserts such as `assertTrue`, `assertArrayEquals`,  `assertNotEqual` and `assertNotNull`
 
 * assert that an error is thrown:
 
