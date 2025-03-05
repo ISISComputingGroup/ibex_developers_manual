@@ -47,11 +47,11 @@ The first thing you will notice is that there are numerous red errors.
 
 These are easily fixed:
 
-* Hover the mouse over 'BasePerspective' on the 'public class Perspective' line and select 'Fix project setup...'
+* Hover the mouse over `BasePerspective` on the `public class Perspective` line and select `Fix project setup...`
 
-* Delete the 'Consoles.getDefault().createConsole();' line
+* Delete the `Consoles.getDefault().createConsole();` line
 
-* Open the MANIFEST.MF file in META_INF and select the 'Dependencies' tab; on that tab click the 'Add' button under 'Required Plug-ins'. From the list select uk.ac.stfc.isis.ibex.ui and click 'OK'. Add org.eclipse.ui and org.eclipse.core.runtime with the same method.
+* Open the MANIFEST.MF file in META_INF and select the `Dependencies` tab; on that tab click the `Add` button under `Required Plug-ins`. From the list select uk.ac.stfc.isis.ibex.ui and click `OK`. Add org.eclipse.ui and org.eclipse.core.runtime with the same method.
 
 * There are likely to be other dependencies missing, fix any other errors.
 
