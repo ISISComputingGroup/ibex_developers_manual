@@ -14,18 +14,18 @@ Alternatively, you can use the get_config.bat file to retrieve the current setti
 
 To send a configuration to the database, use the set_config.bat file.
 
-This file will need to be edited to point at the correct engine (currently set to icap_test_engine) and to use the correct configuration file (currently set to icap_test_config.xml).
+This file will need to be edited to point at the correct engine (currently set to `icap_test_engine`) and to use the correct configuration file (currently set to `icap_test_config.xml`).
 
 # Running the Archive Engine
 The Archive Engine bundle contains two batch files: one for starting the engine; and, one for stopping the engine.
 
-The mysql_settings.ini file contains the database settings and may need to be altered depending on your setup.
+The `mysql_settings.ini` file contains the database settings and may need to be altered depending on your setup.
 
-To run the archive engine use the run_archive_engine.bat file.
+To run the archive engine use the `run_archive_engine.bat` file.
 
 This file will need to be edited to point at the correct engine (currently set to icap_test_engine).
 
-To stop the archive engine use the kill_archive_engine.bat file.
+To stop the archive engine use the `kill_archive_engine.bat` file.
 
 Note: sometimes the archive engine disappears from task manager but still appears to be running.
-If this happens then it is necessary to kill the associated javaw.exe process.
+If this happens then it is necessary to kill the associated `javaw.exe` process.
