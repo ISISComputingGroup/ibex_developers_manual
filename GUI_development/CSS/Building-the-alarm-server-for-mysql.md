@@ -67,7 +67,7 @@ It should contain something like:
 
 Where localhost may need to be replaced by your server(s) details.
 
-In Eclipse, go to org.csstudio.alarm.beast.configtool and open !AlarmConfigTool.product.
+In Eclipse, go to org.csstudio.alarm.beast.configtool and open `!AlarmConfigTool.product`.
 Add the following settings to the "Launching" tab under "Program Arguments" and run as a normal RCP application:
 
 ```
