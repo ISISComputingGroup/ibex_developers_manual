@@ -1,6 +1,6 @@
 | Chair | Timekeeper | Note Taker |
 |-------|------------|------------|
-| GR    | ???        | tw         |
+| GR    | ???        | TW         |
 
 # Previous sprint
 
@@ -143,7 +143,7 @@ Conclusion: don't know and/or don't care, other meetings might take priority, as
 # 😠😢😄 
 
 - FA 😄 we made changes to lots of stuff in release and got away with it
-- LJ 😄 about stress(ful) rig
+- LJ 😄 about stress(full) rig
 - ES 😄 about OPCUA
 - GR 😄 about 🌞 in the evenings when leaving work
 - CMS 😄 that we've run EMMA on newer windows version/hardware
