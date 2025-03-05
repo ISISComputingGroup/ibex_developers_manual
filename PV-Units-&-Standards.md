@@ -20,7 +20,7 @@ Current pv error checks are:
 - Description fields must contain less than 41 characters
 - All units must conform to unit standards (see below)
 - PVs that are labelled as interesting must have description fields
-- The names of PVs that are labelled as interesting must be capitialised and contain only `A-Z 0-9 _ :`
+- The names of PVs that are labelled as interesting must be capitalised and contain only `A-Z 0-9 _ :`
 - `calc` records that are marked as interesting must have their access security group (`ASG`) set to `READONLY`. This is because if you were to set it directly, the record would not execute its calculation, which is not what we want.
 
 Current pv warning are:
