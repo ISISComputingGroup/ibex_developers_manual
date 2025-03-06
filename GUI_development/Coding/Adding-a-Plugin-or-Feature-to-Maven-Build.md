@@ -34,7 +34,7 @@ The steps for adding a plug-in (one small part of IBEX, such as the blocks view)
     * Open the pom.xml tab
     * Change/add the packaging to `eclipse-plugin` (or `eclipse-test-plugin` if it's a unit test plugin)
     * Remove the build section
-    * Remove the groupID and version entries outside of parent
+    * Remove the `groupID` and version entries outside of parent
     * Save it
 
 ## Example POM
