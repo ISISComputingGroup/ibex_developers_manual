@@ -52,7 +52,7 @@ If  ASYN_TRACEIO_DRIVER  has been enabled, then this mask determines the format 
 
 * `0x0` (ASYN_TRACEIO_NODATA) - Print count of bytes transferred, but not bytes themselves
 * `0x1`  (ASYN_TRACEIO_ASCII)  - Print bytes with a "%s" style format
-* `0x2`  (ASYN_TRACEIO_ESCAPE) - Calls epicsStrPrintEscaped() to display bytes
+* `0x2`  (ASYN_TRACEIO_ESCAPE) - Calls `epicsStrPrintEscaped()` to display bytes
 * `0x4`  (ASYN_TRACEIO_HEX)    - Print hexadecimal values of each byte with " %2.2x"
 
 So
