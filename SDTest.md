@@ -120,7 +120,7 @@ Can use `PROTO` macro to specify another stream device protocol file rather than
 
 See http://epics.web.psi.ch/software/streamdevice/doc/  
 
-because you will load the same DB file, you will need to provide the same functions as `SDTEST-default.proto`  i.e. getValue() and setValue()
+because you will load the same DB file, you will need to provide the same functions as `SDTEST-default.proto`  i.e. `getValue()` and `setValue()`
 Place files in `$(ICPCONFIGROOT)/SDTEST` on the machine
 
 
