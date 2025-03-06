@@ -16,7 +16,7 @@ So you need to make sure that your directory tree is in a good state. You can pr
 
 To check what branches all your submodules are on:
 
-    git submodule foreach --recursive "git branch" | egrep "^Entering|^\*"
+`git submodule foreach --recursive "git branch" | egrep "^Entering|^\*"`
 
 If you don't see either "master" or "detached HEAD" then you need to decide if you really want to be on that branch, or just forgot to swap back after reviewing a ticket. If you are leaving a module on a non main/master branch, it may be worth merging the latest upstream main/master into this branch. 
 
