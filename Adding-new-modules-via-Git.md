@@ -18,9 +18,9 @@ There are two use cases for adding a submodule:
 1. Decide on public or private repository, if you create it private one you can easily make it public later, but there is a limit on how many private repositories we can have at any one time. Repositories should be private if we do not wish to share the code.
 
 1. Start choice:
-    * **3rd Party** Create a blank repository i.e. without a README, licence or .gitignore file. 
+    * **3rd Party** Create a blank repository i.e. without a README, licence or `.gitignore` file. 
 
-    * **New** Create a repository with a readme, but no .gitignore or licence. When it is created Use ISIS .gitignore files.
+    * **New** Create a repository with a readme, but no `.gitignore` or licence. When it is created Use ISIS `.gitignore` files.
 
 1. Click `Create Repository`
 
@@ -93,7 +93,7 @@ Software imported from outside should use a "vendor branch" so new versions are 
     git checkout TicketXXX_description
 ```
 1. Edit/Create a readme.md to say what the module does 
-1. Add an initial .gitattributes and .gitignore (often using a copy from an older repo).
+1. Add an initial `.gitattributes` and `.gitignore` (often using a copy from an older repo).
 
 ## 4 Adding module as submodule
 This should be undertaken by the reviewer as part of the merge process to avoid issues with merge conflicts in epics top caused by IOC master.
