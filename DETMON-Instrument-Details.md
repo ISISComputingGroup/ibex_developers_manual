@@ -13,48 +13,48 @@ The following items need to be monitored for each part of the system:
 
 Parameter | Variable | What to record | Type
 --- | --- | --- | ---
-ON/OFF available in network | ConnStatus | Any variation | String
-Crate fan status | HVFanStat | Any variation | String
-Crate fan speed | HVFanSpeed | Any variation >+-5% | String
+ON/OFF available in network | `ConnStatus` | Any variation | String
+Crate fan status | `HVFanStat` | Any variation | String
+Crate fan speed | `HVFanSpeed` | Any variation >+-5% | String
 Which slots are used in the crate | | Any variation | 
-Model Name | ModelName | Any variation | String
-Software Release | SwRelease | Any variation | String
-Power Supply Status | HvPwSM | Any Variation | String
-IP address | IPAddr | Any Variation | String
-Boards slots | Slots | Any Variation | Integer
-CPU Load | CPULoad | Any Variation>=+-??? | Integer
-Commands in the queue | CmdQueueStatus | Any Variation>=+-??? | Integer
-Memory Status | MemoryStatus | Any Variation >=+-??? | Integer
+Model Name | `ModelName` | Any variation | String
+Software Release | `SwRelease` | Any variation | String
+Power Supply Status | `HvPwSM` | Any Variation | String
+IP address | `IPAddr` | Any Variation | String
+Boards slots | `Slots` | Any Variation | Integer
+CPU Load | `CPULoad` | Any Variation>=+-??? | Integer
+Commands in the queue | `CmdQueueStatus` | Any Variation>=+-??? | Integer
+Memory Status | `MemoryStatus` | Any Variation >=+-??? | Integer
 
 #### Boards ####
 
 Parameter | Variable | What to record | Type
 --- | --- | --- | ---
 Model | Model | Any Variation | String
-Firmware release | Fmw Release | Any Variation | String
-Serial Number | SerNum | Any Variation | Integer
-Number of Channels | NrOfCh | Any Variation | Integer
-Temperature | Temp | Any variation >= +-1 deg C | Float
-Max Voltage | HVMax | Any Variation | Float
-Board Status | BdStatus | Any Variation | Integer
+Firmware release | `Fmw Release` | Any Variation | String
+Serial Number | `SerNum` | Any Variation | Integer
+Number of Channels | `NrOfCh` | Any Variation | Integer
+Temperature | `Temp` | Any variation >= +-1 deg C | Float
+Max Voltage | `HVMax` | Any Variation | Float
+Board Status | `BdStatus` | Any Variation | Integer
 
 #### Channels ####
 
 Parameter | Variable | What to record | Type
 --- | --- | --- | ---
 Channel Name | Name | Any Variation | String
-Voltage Setting | V0Set | Any Variation | Float
-Current Setting | I0Set | Any Variation | Float
-Voltage1 Setting | V1Set | Any Variation | Float
-Current1 Setting | I1Set | Any Variation | Float
-Rump Up speed | RUp | Any Variation | Float
-Rump Down speed | RDWn | Any Variation | Float
+Voltage Setting | `V0Set` | Any Variation | Float
+Current Setting | `I0Set` | Any Variation | Float
+Voltage1 Setting | `V1Set` | Any Variation | Float
+Current1 Setting | `I1Set` | Any Variation | Float
+Rump Up speed | `RUp` | Any Variation | Float
+Rump Down speed | `RDWn` | Any Variation | Float
 Trip time | Trip | Any Variation | Float
-Max Voltage Software limit | SVMax | Any Variation | Float
-Monitor Voltage | VMon | Any Variation >= +-1 V | Float
-Monitor Current | IMon | Any Variation >= +-2 uA | Float
+Max Voltage Software limit | `SVMax` | Any Variation | Float
+Monitor Voltage | `VMon` | Any Variation >= +-1 V | Float
+Monitor Current | `IMon` | Any Variation >= +-2 uA | Float
 Status | Status | Any Variation | Integer
-Power Down Mode | PDwn | Any Variation | Integer
+Power Down Mode | `PDwn` | Any Variation | Integer
 
 ### Notes for the solution ###
 * This monitoring would be for every crate in use at ISIS, and for any offline/test crates as well. Note that a crate has many boards, and a board has many channels – in the test system available at time of writing there is 1 crate, 8 cards, and 23 channels per card
