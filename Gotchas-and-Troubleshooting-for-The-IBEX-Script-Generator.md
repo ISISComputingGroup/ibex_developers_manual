@@ -8,7 +8,7 @@ By default the script generator is disabled in the IBEX GUI. To enable it [Follo
 
 Currently, we search for notepad++ in "Program Files" and "Program Files (x86)". It may be that notepad++ on the computer being used isn't stored in those two. For the time being copy and paste the file location to open with their preferred editor. 
 
-## Warning: Could not load any script definitions from <FileSystemLocation>
+## Warning: Could not load any script definitions from `<FileSystemLocation>`
 
 This could be due to 4 things:
 
