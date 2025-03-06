@@ -68,7 +68,7 @@ Ensure the limit_as_home flag is correctly set, see [here](Galil#configure-galil
 
 Maximum debugging can be achieved by adding to your st.cmd:
 
-    epicsEnvSet("GALIL_DEBUG_FILE", "galil_debug.txt")
+    `epicsEnvSet("GALIL_DEBUG_FILE", "galil_debug.txt")`
 
 This will generate a file containing all the commands sent and received from the Galil.
 
