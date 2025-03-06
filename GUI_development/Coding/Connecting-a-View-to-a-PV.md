@@ -260,7 +260,7 @@ This is where we wire up the ObservableTitleModel and the TitleVariable:
 
 * First we want to rename Activator because it is not a very descriptive name, let's refactor it to be called Title (okay that is not much better...)
 
-* We want to make the Activator a singleton, so we need it to contain a static instance of itself, a constructor and a getInstance method:
+* We want to make the Activator a singleton, so we need it to contain a static instance of itself, a constructor and a `getInstance` method:
 ```java
 package org.csstudio.isis.title;
 
