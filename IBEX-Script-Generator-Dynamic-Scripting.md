@@ -15,5 +15,5 @@ Dynamic scripting also makes use of the [dependency injection technique](https:/
 
 ## Implementation
 
-Dynamic Scripting code is stored in the uk.ac.stfc.isis.ibex.scriptgenerator.dynamicscripting module of the [ibex_gui](https://github.com/ISISComputingGroup/ibex_gui). As well as code for the UI in the uk.ac.stfc.isis.ibex.ui.scriptgenerator.
+Dynamic Scripting code is stored in the `uk.ac.stfc.isis.ibex.scriptgenerator.dynamicscripting` module of the [ibex_gui](https://github.com/ISISComputingGroup/ibex_gui). As well as code for the UI in the `uk.ac.stfc.isis.ibex.ui.scriptgenerator`.
 
