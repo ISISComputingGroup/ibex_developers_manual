@@ -180,7 +180,7 @@ If you want to test the IOC for a FINS PLC in recsim mode, you need to add to th
 $(IFRECSIM) finsUDPInit("PLC", "$(PLCIP):$(EMULATOR_PORT=)", "TCPNOHEAD", 1, "$(PLCNODE=)")
 ```  
 
-At the same time, the file should either not have any other finsUDPInit call for talking with the real PLC, or have ```$(IFNOTDEVSIM) $(IFNOTRECSIM)``` before that call.
+At the same time, the file should either not have any other `finsUDPInit` call for talking with the real PLC, or have ```$(IFNOTDEVSIM) $(IFNOTRECSIM)``` before that call.
 
 # Emulator
 
