@@ -147,7 +147,7 @@ public class ObservableTitleModel extends ModelObject{
     }
 }
 ```
-The firePropertyChange method raises an event when the title changes.
+The `firePropertyChange` method raises an event when the title changes.
     
 * Next we create a BaseObserver inside the class, like so:
 ```java
