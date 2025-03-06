@@ -3,7 +3,7 @@
 This page lists the component & activity stewards.
 
 ## What is a component / activity steward?
-A Component or Activity Steward is the individual responsible for the development and quality of a component or activity.  The role itself is [defined in more detail](#definitionSteward) below but, in essence, it means that the named individual is responsible for the "well-being" of a component or activity.  Knowing who the relevant steward is means you have a first point of contact for finding out about that particular component or activity.
+A Component or Activity Steward is the individual responsible for the development and quality of a component or activity.  The role itself is [defined in more detail](#definition_steward) below but, in essence, it means that the named individual is responsible for the "well-being" of a component or activity.  Knowing who the relevant steward is means you have a first point of contact for finding out about that particular component or activity.
 
 After a component/activity has been completed and stable for a cycle then the steward should retire for that activity/component. 
 
@@ -42,7 +42,7 @@ HIFI Cryomagnet | LC |
 Systems (Hardware, OS, etc.) | CMS |
 Lewis |  |
 
-<a name="definitionSteward"></a>
+<a name="definition_steward"></a>
 ## Definition of the role of Component / Activity Steward
 The role of Component or Activity Steward is to be the individual responsible for the development and quality of a component or activity.  An example of a component is the Blockserver, or a major part of the IBEX GUI.  An example of an activity might be ensuring that an instrument is ready to migrate to IBEX (i.e. by ensuring that IBEX support the devices used on that instrument).
 
