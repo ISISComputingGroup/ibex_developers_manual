@@ -70,7 +70,7 @@ In many ways it can be consider the equivalent of a C-style Makefile as it defin
 
 Let's explain the various parts shown:
 * Near the top we have the following information:
-    * The groupId is usually the name of the overarching project and is the same style as a Java package ID, e.g. org.apache.maven
+    * The `groupId` is usually the name of the overarching project and is the same style as a Java package ID, e.g. org.apache.maven
     * The name that the project is often known by, e.g. maven
     * The version number. SNAPSHOT is automatically replaced by a date-time indicating the build time
     * Packaging defines what is built, in this case a standard jar file
