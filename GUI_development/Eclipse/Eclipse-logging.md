@@ -56,7 +56,7 @@ import org.csstudio.isis.logger.IsisLog;
 import org.apache.logging.log4j.Logger;
 ```
 
-The argument to the static getLogger() method can be either a Class type or a string. If you wanted all the messages from a given plugin to be listed as coming from the same source, you could supply the name of the plugins activator class (for example) to the getLogger() call in every class in the plugin.
+The argument to the static `getLogger()` method can be either a Class type or a string. If you wanted all the messages from a given plugin to be listed as coming from the same source, you could supply the name of the plugins activator class (for example) to the `getLogger()` call in every class in the plugin.
 
 Finally to actually log a message, simply call the appropriate method on your 'Logger' object:
 
