@@ -162,7 +162,7 @@ For running the IOC for testing, see below.
 
 ## Testing the FINS IOC in the Ioc Test Framework
 
-In contrast to the normal operation of a FINS PLC, the instrument specific `FINS_01.cmd` file that should be used for the IOC Tests for a FINS PLC should be placed in an instrument specific folder in [`ioc\master\FINS\exampleSettings`](https://github.com/ISISComputingGroup/EPICS-ioc/tree/master/FINS/exampleSettings). This cmd file should have the appropriate finsUDPInit calls for devsim or recsim, as detailed below, and also the usual `dbLoadRecords` call to load the instrument specific db.
+In contrast to the normal operation of a FINS PLC, the instrument specific `FINS_01.cmd` file that should be used for the IOC Tests for a FINS PLC should be placed in an instrument specific folder in [`ioc\master\FINS\exampleSettings`](https://github.com/ISISComputingGroup/EPICS-ioc/tree/master/FINS/exampleSettings). This cmd file should have the appropriate `finsUDPInit` calls for devsim or recsim, as detailed below, and also the usual `dbLoadRecords` call to load the instrument specific db.
 
 ### Testing the FINS IOC in DevSim
 
@@ -171,7 +171,7 @@ If you want to test the IOC for a FINS PLC in devsim mode, you need to add to th
 $(IFDEVSIM) finsUDPInit("PLC", "$(PLCIP):$(EMULATOR_PORT=)", "TCPNOHEAD", 0, "$(PLCNODE=)")
 ```  
 
-At the same time, the file should either not have any other finsUDPInit call for talking with the real PLC, or have ```$(IFNOTDEVSIM) $(IFNOTRECSIM)``` before that call.
+At the same time, the file should either not have any other `finsUDPInit` call for talking with the real PLC, or have ```$(IFNOTDEVSIM) $(IFNOTRECSIM)``` before that call.
 
 ### Testing the FINS IOC in RecSim
 
