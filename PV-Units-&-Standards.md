@@ -54,7 +54,7 @@ If the unit has a standard alphanumeric unit symbol that has been used. In the c
 
 Standard prefixes, [T|G|M|k|m|u|n|p|f], are accepted before all units.
 
-Units can be constructed from a number of 'base' units using a space, forwardslash and caret for multiplication, division and powers respectively. For example a unit for work done could be "N m", a unit for velocity could be "m/s" and a unit for area "m^2". This is the same standard as used in [udunits](http://linux.die.net/man/3/udunits).
+Units can be constructed from a number of 'base' units using a space, forward-slash and caret for multiplication, division and powers respectively. For example a unit for work done could be "N m", a unit for velocity could be "m/s" and a unit for area "m^2". This is the same standard as used in [udunits](http://linux.die.net/man/3/udunits).
 
 For PVs where the units are contestable, for example NUMSPECTRA, a blank units field is acceptable. This will give a warning, but not a failure, when a test is run and so can be discussed at a later date.
 
