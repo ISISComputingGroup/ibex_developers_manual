@@ -63,16 +63,17 @@ public class TitleVariable {
 
 } 
 ```
-Explanation on Channels, InitialiseOnSubscribeObservable and reader.
+Explanation on Channels, `InitialiseOnSubscribeObservable` and reader.
 
 ## Adding a Model interface
 
 Next we create a Model interface:
 
-* Create a new Interface called TitleModel
+* Create a new Interface called TitleModel``
 
-* Implementing the interface will require getTitle and setTitle methods, so the code needs to look like:
-```java
+* Implementing the interface will require `getTitle` and `setTitle` methods, so the code needs to look like:
+```
+java
 package org.csstudio.isis.title;
 
 public interface TitleModel {
