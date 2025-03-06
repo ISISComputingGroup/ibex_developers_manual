@@ -28,15 +28,15 @@ Checkstyle configuration is done by XML file called 'checkstyle.xml' which is lo
 The ISIS standard Checkstyle rules for the IDE is stored in the repository for our client, so that can just be imported rather than setting the rules up by hand. For the Eclipse IDE the "MagicNumber" rule is not disabled as it does occasionally provide some useful warnings, but can be ignored for cases where it is being pernickety.
 
 An example of a "useful" warning:
-
+```
     @Override
     public int hashCode() {
         return displayName.hashCode() ^ (isWritable ? 1231 : 1237);    // It is not clear what these numbers represent
     }
-
+```
 
 An example of an overzealous warning:
-
+```
     @Override
     public String getColumnText(Object element, int columnIndex) {
 	IocState ioc = (IocState) element;
@@ -59,23 +59,23 @@ An example of an overzealous warning:
 	        return "Unknown column";
 	}
     }
-
+```
 There is also the option of using the `@SuppressWarnings` qualifier to tell Checkstyle to ignore certain warnings for specific classes or methods. For example:
-
+```
     @SuppressWarnings("checkstyle:magicnumber")
     public void getSecondsInHours(int hours) {
         return hours * 60 * 60;    // Magic numbers!
     }
-
+```
 Or for multiple warnings:
 
-
+```
     @SuppressWarnings({"checkstyle:magicnumber", "checkstyle:localvariablename"})
     public void getSecondsInHours(int hours) {
         int seconds_per_hour = 60 * 60;    // Magic numbers and a variable name that does not conform to the recommended style!
         return hours * seconds_per_hour;
     }
-
+```
 # PMD
 
 PMD focuses on potential coding problems such as unused or suboptimal code, code size and complexity, and good coding practices. Some typical rules include "Empty If Statement", "Broken Null Check", "Avoid Deeply Nested If Statements", "Switch Statements Should Have Defaults", etc. PMD will produce far fewer warnings/errors than checkstyle, however they are typically far more important, indicating technical problems with the code rather than merely stylistic ones, and should therefore be fixed whenever possible/sensible.
