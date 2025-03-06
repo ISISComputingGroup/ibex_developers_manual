@@ -333,7 +333,7 @@ Connecting now will show slightly more information:
 @@@ 0 user(s) and 0 logger(s) connected (plus you)
 ```
 
-This connection is read/write so sending IOC commands like dbl and dbtpf will work.
+This connection is read/write so sending IOC commands like `dbl` and `dbtpf` will work.
 
 By default, typing exit and pressing return will quit and restart the IOC, and a mixture of ProcServer and IOC messages will be seen. The IOC can be set to not automatically restart by specifying the `--noautorestart` parameter when starting ProcServer. It is still possible to restart the IOC remotely once exited by using `CTRL+X` followed by pressing return.
 
