@@ -20,7 +20,7 @@ Enter the support directory of your IOC, e.g.:
 ```
 C:\Instrument\Apps\EPICS\support\HFMAGPSU\master\HFMAGPSUSup
 ```
-Create a state file in this directory (e.g. fsm.st).
+Create a state file in this directory (e.g. `fsm.st`).
 The EPICS manual for SNL files can be found [here.](https://epics-modules.github.io/sequencer/Manual.html)
 
 If you are reading or changing PV values, the following must be included in your `fsm.st` file:
