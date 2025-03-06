@@ -77,7 +77,7 @@ Software imported from outside should use a "vendor branch" so new versions are 
 ```
 1. Make local changes. 
     - Create a readme.md to say where we got the code originally from 
-    - Add an initial .gitattributes and .gitignore (often using a copy from an older repo).
+    - Add an initial `.gitattributes` and `.gitignore` (often using a copy from an older repo).
 
 1. Make sure it builds. You'll probably need to update `configure/RELEASE` to be like e.g. `../calc/master/configure/RELEASE`. Also check the Makefile for both *App and *app targets as well as iocBoot and iocboot - on windows this results in a double match due to case insensitivity, so remove the the *app and iocboot
 
