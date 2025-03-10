@@ -10,7 +10,7 @@ testSerialPort [options] COMPORT [outputString] [outputEos] [inputEos]
 ```
 Note that is COMPORT doesn't start with the letters `COM` it is considered an IP address and a connection will be made there as per `drvAsynIPPortCOnfigure`
 
-Also asyn only allows up to 2 characters for inputEos/outputEos (streamDevice itself can do more)
+Also asyn only allows up to 2 characters for `inputEos`/`outputEos` (`streamDevice` itself can do more)
  
 To write a string with \\r\\n terminator and print reply
 ```
