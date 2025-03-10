@@ -8,7 +8,7 @@ Name | Console Name | Type | What it does
 [Alarm server](Alarms) | `ALARM` | Java | Serves alarms which appear in the alarms perspective. It checks to PVs to see if they are in alarm mode and relays that information to the client. Actual range checking is done a EPICS server.
 [Archive Access](Logging-from-the-archive) | `ARACCESS` | python | Creates log files based on the MySQL database for some devices with special needs.
 Archive Engine | `ARBLOCK` | Java | Archives (in mysql db) blocks set in a configuration (restarted when blocks change) see [CSS-Archive-Engine](CSS-Archive-Engine)
-Block Gateway | `GWBLOC`K | EPICS Gateway | Aliases the dynamically created block PVs e.g. CS:SB:FURNACE_TEMP to the underlying PV e.g. EUROTHRM_01:A01:TEMP see [Block server](BlockServer#what-it-does)
+Block Gateway | `GWBLOCK` | EPICS Gateway | Aliases the dynamically created block PVs e.g. CS:SB:FURNACE_TEMP to the underlying PV e.g. EUROTHRM_01:A01:TEMP see [Block server](BlockServer#what-it-does)
 [Block server](BlockServer) | `BLOCKSRV` | Python | Manages configurations and blocks associated with them see [Settings-and-Configurations](Settings-and-Configurations). It configures the Archive Engine and starts the IOCs read from the configuration files.
 CA Repeater | `CAREP` | Executable | A epics CA repeater that is started before all other processes. This repeats UDP broadcasts to CA clients on the same machine
 [Database server](The-DatabaseServer) | `DBSVR` | Python | Intermediary between MySQL and the GUI, only used for PVs that hold instrument information, such as experiment data, which IOCs are used and information about PVs of an instrument. Legacy software, not that necessary now.
