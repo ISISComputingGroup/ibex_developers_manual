@@ -123,7 +123,7 @@ The needle valve may not be connected correctly, ask the scientists
 
 # Calibration
 
-The zero-field controller IOCs has macros for the number of Amps per mG expected of each power supply. These values are obtained by running a calibration routine, which is defined in the [InstrumentScripts](https://github.com/ISISNeutronMuon/InstrumentScripts/tree/master/technique/muon) repository and loaded into the instrument scripts.
+The zero-field controller IOCs has macros for the number of Amps per mG expected of each power supply. These values are obtained by running a calibration routine, which is defined in the [`InstrumentScripts`](https://github.com/ISISNeutronMuon/InstrumentScripts/tree/master/technique/muon) repository and loaded into the instrument scripts.
 
 The calibration routine will create several plots:
 - Plots of Amps against measured mG for each axis. 
