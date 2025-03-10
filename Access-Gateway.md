@@ -96,7 +96,7 @@ As with the ACF there is default file.
 
 It is possible to alter the evaluation order of the pvlist rules, by default within IBEX they are ordered ALLOW, DENY which makes deny rules override allow rules. This should not be changed.
 
-Within the default pvlist there is a rule for all PVs to ALLOW them to a certain security group. The default for this is GWEXT. However, there is a macro, $(ACF_PV), which can be used to alter that to a different security group. Please note, setting this macro could have serious repercussions on who has the ability to control (or not) an instrument, and it should generally be left alone.
+Within the default pvlist there is a rule for all PVs to ALLOW them to a certain security group. The default for this is `GWEXT`. However, there is a macro, `$(ACF_PV)`, which can be used to alter that to a different security group. Please note, setting this macro could have serious repercussions on who has the ability to control (or not) an instrument, and it should generally be left alone.
 
 Should an instrument need a specific pvlist file then there are a few behaviours and formats to be aware of. To provide access to a PV this has to be done via the original PV, you cannot provide access to an alias in these files if the underlying PV is not granted access. However, if the underlying PV has access then so too do any aliases (or at least that is what was observed). 
 
