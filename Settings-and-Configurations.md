@@ -4,7 +4,7 @@ How is an instrument configured and what is stored in the settings directory.
 
 The settings directory should be in `c:\Instrument\Settings`, it contains (each level is a directory):
 
-- gwblock.pvlist: created by the blockserver on each config change and used to configure the block gateway, which provides aliases for PVs to blocks. See [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Access-Gateway#pvlist-files) for format.
+- `gwblock.pvlist`: created by the blockserver on each config change and used to configure the block gateway, which provides aliases for PVs to blocks. See [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Access-Gateway#pvlist-files) for format.
 - config
     - common: [Calibration files specific to equipment but potentially shared](Calibration-Files)
     - <Instrument name>
