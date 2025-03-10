@@ -115,7 +115,7 @@ dbLoadRecords("db/simple.db","user=blahblah")
 
 Save it!
 
-Now to start the IOC by typing the following from the iocBootiocsimpledirectory:
+Now to start the IOC by typing the following from the `iocBootiocsimpledirectory`:
 
 ```
 ..\..\bin\windows-x64\simple.exe st.cmd
