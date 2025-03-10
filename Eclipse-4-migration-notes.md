@@ -116,7 +116,7 @@ To create a menu item:
         public void execute(Shell shell)
         ```
     1. Add an method and label @CanExecute this should return true if the command can be executed
-1. Remove the menu item from the extension to avoid the errors like "[main] ERROR org.eclipse.ui.workbench - uk.ac.stfc.isis.ibex.ui.mainmenu.managermode.ManagerModeHandler cannot be cast to org.eclipse.core.commands.IHandler" 
+1. Remove the menu item from the extension to avoid the errors like `[main] ERROR org.eclipse.ui.workbench - uk.ac.stfc.isis.ibex.ui.mainmenu.managermode.ManagerModeHandler cannot be cast to org.eclipse.core.commands.IHandler` 
 
 # E4 migration continuation, November 2017 Sprint
 
