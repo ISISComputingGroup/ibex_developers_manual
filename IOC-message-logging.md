@@ -97,7 +97,7 @@ The model also provides for the facility to search a database for log messages. 
 
 Clients of the model (i.e., the view) may subscribe, receiving any new log messages from the JMS. The model stores a local cache of all recently received messages which clients may access. This means that a client will not miss any messages received between the time the programs startsup and the time the client is instantiated.
 
-The model plugin also provides an Eclipse preference page with a class that implements '!IWorkbenchPreferencePage'. This page allows the user to configure settings that control the connection to the JMS server and to the database server. These settings are saved to disk so are persistent between uses of the Eclipse client. Changes to these settings take effect immediately.
+The model plugin also provides an Eclipse preference page with a class that implements 'IWorkbenchPreferencePage'. This page allows the user to configure settings that control the connection to the JMS server and to the database server. These settings are saved to disk so are persistent between uses of the Eclipse client. Changes to these settings take effect immediately.
 
 ![Log preferences](backend_system/LogPreferences.png "Log preferences")
 
