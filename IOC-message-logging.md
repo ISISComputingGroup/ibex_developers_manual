@@ -160,8 +160,8 @@ A typical message might look like:
 * SQL server address: localhost
 * SQL server port: 3306
 * SQL server schema: msg_log
-* SQL server username (readonly): msg_report
-* SQL server password (readonly): $msg_report
+* SQL server username (read-only): msg_report
+* SQL server password (read-only): $msg_report
 * SQL server username (read/write): msg_log
 * SQL server password (read/write): $msg_log
 
