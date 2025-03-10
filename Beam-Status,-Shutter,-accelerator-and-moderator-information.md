@@ -73,7 +73,7 @@ A "Beam current" block may not be showing the accelerator beam current, it may b
 
 If the third column in `params.txt` contains a `z` (e.g. `tz`) then this means that the parameter will be monitored for a stale (non updating) state and if this is detected it will send 0 as the value to IBEX/SECI. At time of writing this had only been requested for the decoupled methane, sending 0 when the value is uncertain means they will go into a WAITING state as they run control on methane temperature and it is important that they are not collecting data when a methane charge-change happens. In future the value could be EPICS alarmed, but for SECI instruments we need to send 0
 
-You may be able to confirm a value is not updating by running `db_access` on it a few times with a reasonable time delay inbetween, but some values are quite stable or fluctuate only a bit so this may be difficult to determine. You can view the typical value and variation in an accelerator parameter by following the links on values at [http://beamlog.nd.rl.ac.uk/status.xml](http://beamlog.nd.rl.ac.uk/status.xml) 
+You may be able to confirm a value is not updating by running `db_access` on it a few times with a reasonable time delay in-between, but some values are quite stable or fluctuate only a bit so this may be difficult to determine. You can view the typical value and variation in an accelerator parameter by following the links on values at [http://beamlog.nd.rl.ac.uk/status.xml](http://beamlog.nd.rl.ac.uk/status.xml) 
 
 **If this is after a shutdown**, check the `st.cmd` and see if `epicsEnvSet("SIM_ISISBEAM", "1")` has been uncommented to stop out of cycle errors, if so comment it out and then kill the ISISBEAM process so it can restart
 
