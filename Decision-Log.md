@@ -66,7 +66,7 @@ A place to record decisions:
 
 22. In one system test we are testing the restarting of each IOC to test that we do not hit a limit as we did with the 256 limit in procservcontrol. Some IOCs are failing to restart, this may be because there is no hardware to talk to or the PVs we are looking at are autosave pvs and they are not available in the IOC. We have decided to start these IOCs in recsim to try and avoid this as this test is not to test the IOC itself but to test procservcontrol of the IOC. We can then at a later date put more work into the IOCs to make them start and go into alarm correctly.
 
-23. How to manage the [InstrumentScripts](https://github.com/ISISNeutronMuon/InstrumentScripts) repository to make sure the code is kept up to date on all instruments but at the same time be open to Instrument Scientists modifying it. Decision was made [here](https://github.com/ISISComputingGroup/IBEX/issues/5858) to do the following:
+23. How to manage the [`InstrumentScripts`](https://github.com/ISISNeutronMuon/InstrumentScripts) repository to make sure the code is kept up to date on all instruments but at the same time be open to Instrument Scientists modifying it. Decision was made [here](https://github.com/ISISComputingGroup/IBEX/issues/5858) to do the following:
 * When doing a release we will tag a release of Instrument Scripts and release it to all instruments, whether they currently use the library or not
 * We will write an automated service to tell us if instruments have local changes in Instrument Scripts (which should be located in C:\Instrument\scripts), or if they are not on the release tag
 * If instruments do have local changes we will discuss with them getting the changes into master for the next release
