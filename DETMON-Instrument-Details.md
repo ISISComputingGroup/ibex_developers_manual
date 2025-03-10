@@ -78,17 +78,17 @@ Power Down Mode | `PDwn` | Any Variation | Integer
 DETMON has a lot of blocks to set up and the CAEN crates create have a dynamic amount of boards and channels set up. This set up is scripted with scripts from the NDADETMON config area (in `Python/inst`). There are two scripts:
 
 1. The script `record_channels.py` searches for the connected boards and channels for the crates (see the script help option for arguments to pass). The output is a JSON file containing information on the crate name, boards and channels. 
-1. Using this JSON file you can then create the relevant blocks.xml, groups.xml, block_config.xml and gwblock.pvlist files using the `create_config_files_from_recorded_channels.py`. Once produced put them in the config area alongside the meta.xml and other configuration-specific files. In the meta.xml ensure that the `configuresBlockGWAndArchiver` tag is set to true and the blockserver will handle the use of the files you have created. 
+1. Using this JSON file you can then create the relevant `blocks.xml`, `groups.xml`, `block_config.xml` and `gwblock.pvlist` files using the `create_config_files_from_recorded_channels.py`. Once produced put them in the config area alongside the meta.xml and other configuration-specific files. In the meta.xml ensure that the `configuresBlockGWAndArchiver` tag is set to true and the blockserver will handle the use of the files you have created. 
 
 This two step process lets you edit the intermediate JSON to include channels and crates which are not currently on the network.
 
 ## Notes
 
-- DETMON runs the block gateway and block archiver with customised gwblock.pvlist and block_config.xml files to tackle handling the high number of blocks that we require on IBEX. See ticket https://github.com/ISISComputingGroup/IBEX/issues/5069.
+- DETMON runs the block gateway and block archiver with customised `gwblock.pvlist` and `block_config.xml` files to tackle handling the high number of blocks that we require on IBEX. See ticket https://github.com/ISISComputingGroup/IBEX/issues/5069.
 
 
 ## Known issues
 
 - The number of blocks is so high that they often timeout when getting them from the blockserver. We do not at the moment care too much as long as they are written correctly to the nexus file and Davide seems quite happy with that.
-  - Tackled in https://github.com/ISISComputingGroup/IBEX/issues/5069 by using customised gwblock.pvlist and block_config.xml files
+  - Tackled in https://github.com/ISISComputingGroup/IBEX/issues/5069 by using customised `gwblock.pvlist` and `block_config.xml` files
   - Possible future performance upgrade in https://github.com/ISISComputingGroup/IBEX/issues/5917
