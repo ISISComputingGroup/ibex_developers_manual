@@ -44,11 +44,11 @@ There are 5 ASG lists within IBEX by default at present and they are as follows,
 
 ASG Name | Read Rule | Write Rule
 --- | --- | ---
-DEFAULT | 1 | 1
-GWEXT | 1 | 1 for instmachine
-READONLY | 1 |
-WASL0 | 1 | 0 for instmachine
-ANYBODY | 1 | 1
+`DEFAULT` | 1 | 1
+`GWEXT` | 1 | 1 for `instmachine`
+`READONLY` | 1 |
+`WASL0` | 1 | 0 for `instmachine`
+`ANYBODY` | 1 | 1
 
 There is a standard record always available within IBEX to control via a CALC as per the example above within INSTETC_01. The db entry for that record is:
 ```
