@@ -10,7 +10,7 @@ There is only one ICE dilution fridge which is used on MUSR mainly. It is availa
 
 # Connection
 
-The ICE dilution fridge itself is controlled through a LabView VI running on a PC called ICECube. That PC runs Windows XP and should absolutely not go on the ISIS network. That PC runs the VI that contains the complicated logic for making dilution happen. That PC is then controlled by an IOC running under IBEX, which replaces a much simpler VI found at C:\LabVIEW Modules\Drivers\ICEOxford\ICECube . The IOC talks to ICECube over a serial connection.
+The ICE dilution fridge itself is controlled through a LabView VI running on a PC called ICECube. That PC runs Windows XP and should absolutely not go on the ISIS network. That PC runs the VI that contains the complicated logic for making dilution happen. That PC is then controlled by an IOC running under IBEX, which replaces a much simpler VI found at `C:\LabVIEW Modules\Drivers\ICEOxford\ICECube` . The IOC talks to ICECube over a serial connection.
 
 Settings:
 
