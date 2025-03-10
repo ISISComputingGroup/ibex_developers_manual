@@ -122,7 +122,7 @@ Note: These should not normally be used to do a "standard" deployment but may be
 
 - **install** Update the code at C:\JSON Bourne to be the same as that in the repository
 
-- **install** Add a link to the main page of the dataweb to IbexDataweb/default.html?instrument=_instname_. This can be done in the C:\inetpub\wwwroot\DataWeb\Dashboards\redirect.html
+- **install** Add a link to the main page of the dataweb to `IbexDataweb/default.html?instrument=_instname_`. This can be done in the `C:\inetpub\wwwroot\DataWeb\Dashboards\redirect.html`
 
 - **install** Restart JSON_bourne on extweb (It is running as a service).
 	
