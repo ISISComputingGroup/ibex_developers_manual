@@ -62,7 +62,7 @@ $(IFIP0_PRESENT) CAENHVAsynConfig("HV0",$(SYS_TYPE_0),"$(IP_ADDRESS_0)","usernam
 
 Read/write is set in the st.cmd for all crates with a call to the support level:
 
-`CAENHVAsynReadOnly($(READ_ONLY=0))` Set READ_ONLY to 1 for readonly and 0 for read/write.
+`CAENHVAsynReadOnly($(READ_ONLY=0))` Set READ_ONLY to 1 for read-only and 0 for read/write.
 
 #### `CAENHVAsyn` CPP/Db support level
 
