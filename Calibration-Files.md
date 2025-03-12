@@ -6,11 +6,11 @@ A prime example of this are the temperature sensors which have a calibration of 
 
 These files live in a separate upstream repository at:
 
-    http://control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/common.git
+    https://gitlab.stfc.ac.uk/isisexperimentcontrols/common.git
 
 This repo should be cloned with:
 
-    git clone http://control-svcs.isis.cclrc.ac.uk/gitroot/instconfigs/common.git C:\Instrument\Settings\config\common
+    git clone https://gitlab.stfc.ac.uk/isisexperimentcontrols/common.git C:\Instrument\Settings\config\common
 
 _Note that on an instrument PC these files are located in `C:\Instrument\Settings\config\common`_
 
