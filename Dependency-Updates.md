@@ -60,6 +60,14 @@ Check on PyPi for any package updates, then edit `requirements.txt` to install n
 
 ### ODE
 
+**We are not currently distributing ODE with `uktena`** - nothing needs to be done.
+
+<summary>
+
+Old instructions
+
+<details>
+
 ODE is handled separately from other packages and is installed from a wheel on `\\isis\inst$\Kits$\CompGroup\ICP\genie_python_dependencies_python_3` if moving to a new python version i.e. 3.10 to 3.11 this wheel will need to be replaced. 
 * First check [here](https://www.lfd.uci.edu/~gohlke/pythonlibs/#ode) for a matching version of ODE, if one is not present one will need to be built, to do so:
     * Make a note of the latest release tag from the [ODE Bitbucket](https://bitbucket.org/odedevs/ode/downloads/?tab=tags)
@@ -82,6 +90,8 @@ ODE is handled separately from other packages and is installed from a wheel on `
     * copy `ode_double.dll` from `C:\devel\ODE\ode-build\Release` to the same place
 * Edit `common_build_python.bat` in `package_builder` to point to the most recent wheel file.
 * Test by running `python run_all_tests.py` in `inst_servers`, which contains collision avoidance monitor tests
+</details>
+</summary>
    
 ### Lewis
 To update Lewis, merge upstream to our fork: https://github.com/ISISComputingGroup/lewis - This should get picked up automatically by the build server as it installs from the `main` branch of our fork. 
