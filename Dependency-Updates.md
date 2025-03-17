@@ -43,7 +43,7 @@ The GUI builds copy a JRE from `\\isis\inst$\Kits$\CompGroup\ICP\ibex_client_jdk
 
 # Python
 
-## Python itself
+## Uktena python distribution
 
 - Check on Python.org for newer versions of python itself
 - If a newer version is available, download the "windows installer".
@@ -52,11 +52,24 @@ The GUI builds copy a JRE from `\\isis\inst$\Kits$\CompGroup\ICP\ibex_client_jdk
 - Also during the python installation process, in advanced options screen select both `download debugging symbols` and `download debug binaries`
 - Zip up the resulting directory and add it to the share at `\\isis\inst$\Kits$\CompGroup\ICP\genie_python_dependencies_python_3` as `python_clean_<version>.zip`
 - Edit `package_builder\common_build_python_3.bat` to use the new python version and test that all dependencies work correctly
-- Edit SUPPORTED_PYTHON_VERSION in `genie_python\genie.py`
+   
+### Our packages
 
-## Python packages
+We depend on a variety of python packages that we publish ourselves, either via pypi or via git.
 
-Check on PyPi for any package updates, then edit `requirements.txt` to install new versions where needed. Note that since we decided [all python projects should use virtual environments](Python-dependencies#how-python-dependencies-should-be-handled-in-the-future) there will be `requirements.txt`files for all Python projects using the new import mechanism, ensure these are also updated.
+These may need to be updated to allow new python versions. For packages published on PyPI, a new pypi release will need to be made.
+
+These packages include:
+- `genie`
+- `ibex_bluesky_core`
+- `lewis`
+- `pcaspy`
+- `CaChannel`
+- `epicscorelibs_pcas`
+
+## External packages
+
+Check on PyPi for any package updates, then edit `requirements.txt` to install new versions where needed. Note that since we decided [all python projects should use virtual environments](Python-dependencies#how-python-dependencies-should-be-handled-in-the-future) there will be a `pyproject.toml` or legacy `requirements.txt` file for all Python projects using the new import mechanism, ensure these are also updated.
 
 ### ODE
 
@@ -92,11 +105,6 @@ ODE is handled separately from other packages and is installed from a wheel on `
 * Test by running `python run_all_tests.py` in `inst_servers`, which contains collision avoidance monitor tests
 </details>
 </summary>
-   
-### Lewis
-To update Lewis, merge upstream to our fork: https://github.com/ISISComputingGroup/lewis - This should get picked up automatically by the build server as it installs from the `main` branch of our fork. 
-
-If the version of Lewis is updated the version should be changed in individual support modules in the `lewis_emulators\lewis_versions.py` file. This should also be done for the IOC Generator templates for future IOCs. 
  
 # System
 
