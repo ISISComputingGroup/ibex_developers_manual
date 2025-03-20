@@ -33,6 +33,7 @@ Here are some possible resolutions to some failures. Not all possible failures a
 | Failure | Possible resolution |
 | ------ | ----  |
 | Config version is wrong | Check why config version and server version are different. Run upgrade script. |
+| Unable to check out git tag for a release | The tag it tries to check out comes from `c:\instrument\settings\config\ndxXXXX\configurations\config_version.txt`.<br /><br />If that file points at an invalid release, correct it.<br /><br />If it points at a valid release, you may need to fetch the tag locally using `git fetch --tags` in the appropriate directory under configchecker (or alternatively doing a `git clean -fqdx` will force configchecker to reclone all appropriate repos next time it runs). |
 | There should not be more than one 'config_version.txt' file in the repository. | Remove extra version.txt file. |
 | Component <blah> contained unexpected files in its directory | Check with the scientist whether we can move these files to a `data/old` directory or similar. |
 | Component <blah> did not contain the required config file <blah> | Check if this config actually loads in IBEX. If not, remove or move to `data/old`. |
