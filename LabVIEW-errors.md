@@ -21,3 +21,5 @@ However, this is not a permanent fix and the errors will return if LabVIEW is re
 Note that the `_cur.txt` log is the log from the currently-running instance of labview, while `_log.txt` is from the last instance to run. So to fully make the large logs disappear LabVIEW needs to be restarted twice. Alternatively you can manually delete the logs.
 
 `Vector-control-v16isis.vi` is probably caused by the 3d magnet https://github.com/ISISComputingGroup/EPICS-Magnet3D/blob/master/magnet3DApp/protocol/lv_controls.xml
+
+Open `C:\LabVIEW Modules\Drivers\Scientific Instruments\3D Magnet\Source Code\Vector-control-v16isis.vi` in labview then choose `View -> Breakpoint Manager` - after that you can close breakpoint manager
