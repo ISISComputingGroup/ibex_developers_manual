@@ -31,19 +31,19 @@ Rancher Desktop is an application provides container management and Kubernetes o
 
 Rancher Desktop can be installed [here](https://docs.rancherdesktop.io/getting-started/installation/).
 
-Follow the steps to complete the installation process.
+Once the .exe file has been downloaded, follow the steps to complete the installation process.
 
 Ensure the `dockerd` is selected as the runtime during the installation or within the Rancher Desktop settings. 
 
 ## Creating a Container
 
-1. Create a folder in which all container file will be stored i.e. C:\Instrument\App\Epics\Container
+1. Create a folder in which all container file will be stored i.e. `C:\Instrument\App\Epics\Container`.
 
-2. Within the folder, create a test.db file:
+2. Within the folder, create a `test.db` file:
 
 	`record(ao, "TESTTEST:FOO") {}`
 
-3. Additionally, a Dockerfile should be added as this is the set of 'instructions' from which Docker builds images. Below is an example which creates a container with a simple IOC: 
+3. Additionally, a `Dockerfile` should be added as this is the set of 'instructions' from which Docker builds images. Below is an example which creates a container with a simple IOC: 
 
 	    FROM python:3.11-slim
 	    RUN apt-get update && \
@@ -66,17 +66,37 @@ Ensure the `dockerd` is selected as the runtime during the installation or withi
 	    ENTRYPOINT ["python", "-m", "epicscorelibs.ioc", "-d", "testdup.db"]
 
 
-4. To build the container from the Dockerfile, cd into the folder within a CMD window
+4. To build the container from the `Dockerfile`, cd into the folder within a CMD window:
 
-	`docker build -t ioc_container .`
+	`docker build -t <container_name> .`
 
-5. To run the container, enter the following (replace the path with your own folder location)
+        docker build: Tells Docker to create a new image.
+     
+        -t: Specifies a name for the image you're building.
 
-	`docker run --rm -it --net=host -v C:\Instrument\Apps\EPICS\isis-ioc-container:/usr/src/app ioc_container`
+        <container_name>: The name you're giving to the new image.
 
-	The container should be running, this can be seen now by the python environment running within the CMD window
+        .: Tells Docker to use the current folder for the build.
 
-6. Within another  CMD window, a EPICS terminal window is needed:
+5. To run the container, enter the following (replace the path with your own folder location):
+
+	`docker run --rm -it --net=host -v <path_to_folder>:/usr/src/app <container_name>`
+
+        docker run: Starts a container.
+
+        --rm: Deletes the container when done.
+
+        -it: Lets you interact with the container.
+
+        --net=host: Uses your computer’s network.
+
+        -v <path_to_folder>:/usr/src/app: Shares a folder from your computer with the container.
+
+        <container_name>: The image to use for the container.
+
+	After this, the container should be running within the Python Environment within the CMD window.
+
+6. To test if the PV is readable within the container, a EPICS terminal window is needed. For this, open another CMD window and enter:
 
 	`C:\Instrument\Apps\Epics\config_env.bat`
 	
@@ -105,5 +125,5 @@ A solution as been found, which is already included within the Dockerfile, where
 
 ## Further Exploration
 
-Talk about snowsignal
+Talk about SnowSignal
 Talk about WLS2 on Windows 11
