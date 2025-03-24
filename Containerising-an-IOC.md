@@ -124,7 +124,7 @@ The following command entered within the EPICS terminal allows users to check fo
 
 It would appear that both IBEX and the network=host wish to use port 5064, and the container is being blocked whilst the IBEX server is running.
 
-A solution as been found, which is already included within the Dockerfile, where another port has been bound which enables the container's IOC to be communicated with whilst the IBEX server is running. However, it has been found that each IOC will need it's own port, which can lead to issues as the number IOC increases.
+A solution as been found, which is already included within the `Dockerfile`, where another port has been bound which enables the container's IOC to be communicated with whilst the IBEX server is running. However, it has been found that each IOC will need it's own port, which can lead to issues as the number IOC increases.
 
 ## Further Exploration
 
