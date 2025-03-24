@@ -66,7 +66,7 @@ Ensure the `dockerd` is selected as the runtime during the installation or withi
 	    ENTRYPOINT ["python", "-m", "epicscorelibs.ioc", "-d", "testdup.db"]
 
 
-4. To build the container from the `Dockerfile`, cd into the folder within a CMD window:
+4. To build the container from the `Dockerfile`, cd into the folder within a CMD window and enter:
 
 	`docker build -t <container_name> .`
 
@@ -104,17 +104,20 @@ Ensure the `dockerd` is selected as the runtime during the installation or withi
 	
 	`set EPICS_CA_ADDR_LIST=127.0.0.1:5066`
 
-BONUS:
+7. Now that both terminals are running, the value from the PV can be retrieve by entering the following command into the EPICS terminal:
 
-The following command within the EPICS terminal allows the ports which are specified to be checked, in this example the port 5066 is being checked:
+    `caget TESTTEST:FOO` 
+
+    To which the response should be `TESTTEST:FOO    0`
+
+    Addtionally, `caput <PV_name>` can also be used to set the value of the PV.
+
+
+### Network Connections
+
+The following command entered within the EPICS terminal allows users to check for network connections that are being used by a specified port, in this example the port 5066 is being checked:
 
 `netstat -a -n -o |findstr 5066`
-
-To get the PV value, enter:
-
-`caget TESTTEST:FOO`
-
-`caput` can also be used to set the value of the PV:
 
 
 ## Observations and Present Limitations
@@ -125,5 +128,8 @@ A solution as been found, which is already included within the Dockerfile, where
 
 ## Further Exploration
 
-Talk about SnowSignal
-Talk about WLS2 on Windows 11
+In the above example, an approach similar to [epics-containers](https://epics-containers.github.io/main/index.html) was attempted, however there are a couple of alternative methods that could be explored.
+
+[SnowSignal](https://github.com/ISISNeutronMuon/SnowSignal/tree/main) is a possible alternative to UDP communication between localhost and the container. SnowSignal is designed to create a mesh network between instances of the program that will listen for UDP broadcasts received on one node of the network and rebroadcast on all other nodes.
+
+WLS on Windows 11 22H2 and higher introduced ['Mirror mode networking'](https://learn.microsoft.com/en-us/windows/wsl/networking#mirrored-mode-networking). This changes WSL to an entirely new networking architecture which has the goal of 'mirroring' the network interfaces that you have on Windows into Linux, to add new networking features and improve compatibility.
