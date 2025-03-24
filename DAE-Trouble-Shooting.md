@@ -55,7 +55,7 @@ Qxtrm_channel::RDMARead failed rdma2 address 0x40010 nbytes 4(Quixtream: The tim
 In general if you see an error like this or starting with `NIVISA` you should restart the DAE, then [contact electronics](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Contact%20details%20for%20other%20groups.docx).
 
 ### No log files are produced in `c:\data` even though blocks are set to log.
-The reason may be because cp hasn't been set to look for epics. In `C:\LabVIEW Modules\dae\isisicp.properties` set `isisicp.epicsdb.use = true` to log the epic's blocks. You will need to restart the `isisicp` process for this to take effect. To do this, just end the `isisicp` process in task manager.
+The reason may be because the isisicp program that writes the datafile hasn't been configured to read values from MySQL for EPICS - the old SECI program used a different route. This is a one off change needed SECI -> IBEX migration. In `C:\LabVIEW Modules\dae\isisicp.properties` set `isisicp.epicsdb.use = true` to enable this. You will need to restart the `isisicp` process for this to take effect. To do this, just end the `isisicp` process in task manager. 
 
 ### DAE doesn't seem to be connected/I want to run without a DAE connected
 The DAE can be set to run in simulation mode, this must be unset before data will be collected. To set the mode run `g.set_dae_simulation_mode(True)` or `g.set_dae_simulation_mode(False)` to unset.
