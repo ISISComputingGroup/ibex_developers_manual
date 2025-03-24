@@ -308,4 +308,6 @@ mysql.exe -u root -p < [insert network back-up path here]\ndxMERLIN\ibex_databas
 Enter password: ************
 ```
 
-The local database can then be truncated to remove the import.
+This [script](https://github.com/ISISComputingGroup/EPICS/blob/master/utils/query_ioclog.bat) can be used to extract data into CSV file(s) for e.g. diagnostic purposes.
+
+The local database can then be truncated to remove the import once work is complete.
