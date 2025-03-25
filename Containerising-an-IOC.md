@@ -46,27 +46,28 @@ Ensure the `dockerd` is selected as the runtime during the installation or withi
 	`record(ao, "TESTTEST:FOO") {}`
 
 3. A `Dockerfile` should be added as this is the set of 'instructions' from which Docker builds images. Below is an example which creates a container with a simple IOC: 
+```
+    FROM python:3.11-slim
+    RUN apt-get update && \
+        apt-get install -y \
+        build-essential \
+        wget \
+        git \
+        && rm -rf /var/lib/apt/list/*
+	
+    RUN pip install --upgrade pip
+    RUN pip install epicscorelibs
+	
+    ENV EPICS_BASE=/epics
+    ENV EPICS_HOST_ARCH=linux-x86_64
+    ENV EPICS_CA_SERVER_PORT 5066
+	
+    WORKDIR /app
+    COPY . /app
+	
+    ENTRYPOINT ["python", "-m", "epicscorelibs.ioc", "-d", "testdup.db"]
 
-	    FROM python:3.11-slim
-	    RUN apt-get update && \
-	        apt-get install -y \
-	        build-essential \
-	        wget \
-	        git \
-	        && rm -rf /var/lib/apt/list/*
-	
-	    RUN pip install --upgrade pip
-	    RUN pip install epicscorelibs
-	
-	    ENV EPICS_BASE=/epics
-	    ENV EPICS_HOST_ARCH=linux-x86_64
-	    ENV EPICS_CA_SERVER_PORT 5066
-	
-	    WORKDIR /app
-	    COPY . /app
-	
-	    ENTRYPOINT ["python", "-m", "epicscorelibs.ioc", "-d", "testdup.db"]
-
+```
 
 4. To build the container from the `Dockerfile`, cd into the folder within a CMD window and enter:
 
