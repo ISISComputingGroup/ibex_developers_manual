@@ -29,7 +29,7 @@ Further information on the WSL installation process can be found [here](https://
 
 ## Rancher Desktop Installation
 
-Rancher Desktop is an application provides container management and Kubernetes on the desktop. Rancher Desktop provides the ability to build, push, and pull container images along with the ability to run containers.
+Rancher Desktop is an application provides container management and `Kubernetes` on the desktop. Rancher Desktop provides the ability to build, push, and pull container images along with the ability to run containers.
 
 Rancher Desktop can be installed [here](https://docs.rancherdesktop.io/getting-started/installation/).
 
