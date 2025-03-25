@@ -17,7 +17,7 @@ To install WSL, open a PowerShell or CMD window in Administrator mode, and enter
 
 `wsl --install`
 
-Note: This method only works if WSL is not installed. If you run `wsl --install` and see the WSL help text, please try running `wsl --list --online` to see a list of available distros and run `wsl --install -d <DistroName>` to install a distro.
+Note: This method only works if WSL is not installed. If you run `wsl --install` and see the WSL help text, please try running `wsl --list --online` to see a list of available distribution and run `wsl --install -d <DistroName>` to install a distribution.
 
 ### Uninstalling Legacy WSL Versions
 
