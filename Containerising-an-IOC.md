@@ -45,7 +45,7 @@ Ensure the `dockerd` is selected as the runtime during the installation or withi
 
 	`record(ao, "TESTTEST:FOO") {}`
 
-3. Additionally, a `Dockerfile` should be added as this is the set of 'instructions' from which Docker builds images. Below is an example which creates a container with a simple IOC: 
+3. A `Dockerfile` should be added as this is the set of 'instructions' from which Docker builds images. Below is an example which creates a container with a simple IOC: 
 
 	    FROM python:3.11-slim
 	    RUN apt-get update && \
@@ -112,7 +112,7 @@ Ensure the `dockerd` is selected as the runtime during the installation or withi
 
     To which the response should be `TESTTEST:FOO    0`
 
-    Addtionally, `caput <PV_name>` can also be used to set the value of the PV.
+    `caput <PV_name>` can also be used to set the value of the PV.
 
 
 ### Network Connections
