@@ -459,7 +459,7 @@ Hopefully there is either only one `eventsYYYYY.tmp` file, or the most recent on
 
 For info, the `eventsYYYYY.tmp` file is the NeXus HDF5 file being written as the run goes along, and the `run_YYYYY` folder is the raw events read from the electronics. The `.tmp` is renamed to `.nxs` during an END is nothing has gone wrong, otherwise raw events can be replayed from `run_YYYYY` to create a NeXus file from scratch       
 
-If the run number comes back incorrectly (like as `000001`) then it means `c:\data\recovery.run` has been corrupted. Details of what to do later...
+If the run number comes back incorrectly (like as `000001`) then it means `c:\data\recovery.run` has been corrupted. There are backup weekday copies in c:\data e.g. `recovery.run_Thu` so you can pick one to copy to `recovery.run` however note that this may include an old run number so after restarting you may need to reset the run number (see on this page) 
 
 ## SQLite database is very large 
 
