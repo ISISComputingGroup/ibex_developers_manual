@@ -101,13 +101,12 @@ Ensure the `dockerd` is selected as the runtime during the installation or withi
 
 	After this, the container should be running within the Python Environment within the CMD window.
 
-6. To test if the PV is readable within the container, a EPICS terminal window is needed. For this, open another CMD window and enter:
+6. To test if the PV is readable within the container, a EPICS terminal window is needed. For this, open another CMD window and enter the following:
 
 	`C:\Instrument\Apps\Epics\config_env.bat`
 	
-	If `Warning: "Identical process variable name on multiple servers"` appears within the EPICS Terminal , enter the following to set the CA address to that of the container:
-	
 	`set EPICS_CA_ADDR_LIST=127.0.0.1:5066`
+	
 
 7. Now that both terminals are running, the value from the PV can be retrieve by entering the following command into the EPICS terminal:
 
