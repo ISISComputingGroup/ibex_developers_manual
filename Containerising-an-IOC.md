@@ -146,6 +146,6 @@ There can be an issue with running a VM on a Windows 11 VM, which may result in 
 ["Error: 0x80370102 The virtual machine could not be started because a required feature is not installed."](https://learn.microsoft.com/en-us/windows/wsl/troubleshooting#error-0x80370102-the-virtual-machine-could-not-be-started-because-a-required-feature-is-not-installed) 
 
 
-The command is as below, if you run it directly on the right server you can skip the "-Computername HOSTSERVERNAME" bit.
+The command is as below, if you run it directly on the right server you can skip the `-Computername HOSTSERVERNAME` bit.
  
 `PS C:\> Set-VMProcessor -ComputerName HOSTSERVERNAME -VMName GUESTMACHINENAME -ExposeVirtualizationExtensions $true`
