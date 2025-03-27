@@ -85,6 +85,8 @@ Ensure the `dockerd` is selected as the runtime during the installation or withi
 
 	`docker run --rm -it --net=host -v <path_to_folder>:/usr/src/app <container_name>`
 
+    `EXAMPLE: docker run --rm -it --net=host -v /c/Instrument/Apps/EPICS/isis-ioc-container:/usr/src/app ioc_container`
+
         docker run: Starts a container.
 
         --rm: Deletes the container when done.
