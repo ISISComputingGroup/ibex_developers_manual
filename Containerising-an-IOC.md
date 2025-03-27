@@ -65,7 +65,7 @@ Ensure the `dockerd` is selected as the runtime during the installation or withi
     WORKDIR /app
     COPY . /app
 	
-    ENTRYPOINT ["python", "-m", "epicscorelibs.ioc", "-d", "testdup.db"]
+    ENTRYPOINT ["python", "-m", "epicscorelibs.ioc", "-d", "test.db"]
 
 ```
 
