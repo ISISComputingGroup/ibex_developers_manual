@@ -136,3 +136,14 @@ In the above example, an approach similar to [epics-containers](https://epics-co
 [SnowSignal](https://github.com/ISISNeutronMuon/SnowSignal/tree/main) is a possible alternative to UDP communication between localhost and the container. SnowSignal is designed to create a mesh network between instances of the program that will listen for UDP broadcasts received on one node of the network and rebroadcast on all other nodes.
 
 WLS on Windows 11 22H2 and higher introduced ['Mirror mode networking'](https://learn.microsoft.com/en-us/windows/wsl/networking#mirrored-mode-networking). This changes WSL to an entirely new networking architecture which has the goal of 'mirroring' the network interfaces that you have on Windows into Linux, to add new networking features and improve compatibility.
+
+## WSL2 on a Windows 11 Virtual Machine
+
+There can be an issue with running a VM on a Windows 11 VM, which may result in the following error:
+
+["Error: 0x80370102 The virtual machine could not be started because a required feature is not installed."](https://learn.microsoft.com/en-us/windows/wsl/troubleshooting#error-0x80370102-the-virtual-machine-could-not-be-started-because-a-required-feature-is-not-installed) 
+
+
+The command is as below, if you run it directly on the right server you can skip the "-Computername HOSTSERVERNAME" bit.
+ 
+`PS C:\> Set-VMProcessor -ComputerName HOSTSERVERNAME -VMName GUESTMACHINENAME -ExposeVirtualizationExtensions $true`
