@@ -37,7 +37,7 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
 # Rotas
 
  | Standup | Week Commencing | x for Done |
- |--- | --- | --- |
+  |--- | --- | --- |
  |IG | 04/11/2024 |x |
  |TW | 11/11/2024 |x |
  |ES | 18/11/2024 |x |
@@ -46,22 +46,29 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
  |KB | 09/12/2024 |x |
  |DK | 16/12/2024 |x |
  |JH | 23/12/2024 |x |
- |RB | 30/12/2024 |happy new year |
- |LJ | 06/01/2025 |x |
- |CMS | 13/01/2025 |x |
- |FA | 20/01/2025 |x |
- |SC | 27/01/2025 |x |
- |GR | 03/02/2025 |x |
- |DM | 10/02/2025 |x |
+ |RB | 30/12/2024 |x |
+ |DM | 06/01/2025 |x |
+ |LJ | 13/01/2025 |x |
+ |CMS | 20/01/2025 |x |
+ |FA | 27/01/2025 |x |
+ |SC | 03/02/2025 |x |
+ |GR | 10/02/2025 |x |
  |LC | 17/02/2025 |x |
  |GR | 24/02/2025 |x |
  |KB | 03/03/2025 |x |
  |JD | 10/03/2025 |x |
  |TW | 17/03/2025 |x |
- |LJ | 24/03/2025 | |
- |ES | 31/03/2025 | |
+ |LJ | 24/03/2025 |x |
+ |ES | 31/03/2025 |x |
  |DM | 07/04/2025 | |
  |IG | 14/04/2025 | |
+ |CMS | 21/04/2025 | |
+ |LC | 28/04/2025 | |
+ |JH | 05/05/2025 | |
+ |GR | 12/05/2025 | |
+ |IG | 19/05/2025 | |
+ |KB | 26/05/2025 | |
+ |FA | 02/06/2025 | |
 
 
 
@@ -71,26 +78,30 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
 ## Sprint Meetings
 | Meeting| Chair | x for Done | Timekeeper | x for Done | Note taker | x for Done |
 | ---| --- | --- | ---| --- | --- | --- |
-| 2024_07_18_Planning| SC | X | JH| X | GR| X |
-| 2024_07_18_Review/Retro| DM | X | DK| X | IG| X |
-| 2024_08_08_Planning| TW | X | SC| X | DM| X |
-| 2024_08_08_Review/Retro| KB | X | LJ| X | JD| X |
-| 2024_09_05_Planning| GR | X | TW| X | LJ| X |
-| 2024_09_05_Review/Retro| CMS | X | FA| X | LC| X |
-| 2024_10_03_Planning| JH | X | ES| X | SC| X |
-| 2024_10_03_Review/Retro| DK | X | KB| X | LC| X |
-| 2024_10_31_Planning| LJ | X | CMS| X | TW| X |
-| 2024_10_31_Review/Retro| LC | X | IG| X | JH| X |
-| 2024_11_28_Planning| IG | X | JD| X | DK| X |
-| 2024_11_28_Review/Retro| DM | X | GR| X | JD| X |
-| 2024_12_19_Planning| FA | X | JH| X | GR| X |
-| 2024_12_19_Review/Retro| CMS | X | ES| X | IG| X |
-| 2025_01_08_Planning| SC | X | TW| X | ES| X |
-| 2025_01_08_Review/Retro| TW | X | GR| X | JH| X |
-| 2025_02_05_Planning| ES | X | DK| X | LJ| X |
-| 2025_02_05_Review/Retro| GR |  | FA|  | TW|  |
-| 2025_03_05_Planning| JH |  | JD|  | IG| X |
+| 2025_03_05_Planning| JH |x  | TW|x  | IG|x  |
 | 2025_03_05_Review/Retro| JD |  | DM|  | SC|  |
+| 2025_04_10_Planning| TW |  | JD|  | DM|  |
+| 2025_04_10_Review/Retro| FA |  | KB|  | DK|  |
+| 2025_05_08_Planning| JD |  | LJ|  | GR|  |
+| 2025_05_08_Review/Retro| KB |  | LC|  | ES|  |
+| 2025_06_12_Planning| LC |  | CMS|  | JH|  |
+| 2025_06_12_Review/Retro| DM |  | IG|  | LJ|  |
+| 2025_07_10_Planning| IG |  | SC|  | TW|  |
+| 2025_07_10_Review/Retro| SC |  | ES|  | DM|  |
+| 2025_07_31_Planning| ES |  | GR|  | SC|  |
+| 2025_07_31_Review/Retro| GR |  | JH|  | LC|  |
+| 2025_08_28_Planning| DM |  | DK|  | LJ|  |
+| 2025_08_28_Review/Retro| IH |  | FA|  | IG|  |
+| 2025_10_02_Planning| TW |  | DM|  | DK|  |
+| 2025_10_02_Review/Retro| CMS |  | TW|  | GR|  |
+| 2025_11_27_Planning| GR |  | --|  | ES|  |
+| 2025_11_27_Review/Retro| FA |  | LJ|  | --|  |
+| 2026_01_08_Planning| IG |  | LC|  | LJ|  |
+| 2026_01_08_Review/Retro| -- |  | CMS|  | TW|  |
+| 2026_02_05_Planning| JH |  | IG|  | SC|  |
+| 2026_02_05_Review/Retro| DK |  | SC|  | DM|  |
+| 2026_03_05_Planning| LC |  | ES|  | JH|  |
+
 
 
 
