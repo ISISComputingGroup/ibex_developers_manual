@@ -1,3 +1,6 @@
+> [!IMPORTANT]  
+> This page documents the old(though still current) web dashboard, also known as `JSON_Bourne`. The [new one](https://github.com/ISISComputingGroup/webdashboard) should have its architecture and how it's run explained in the README of its repository. 
+
 The dataweb service allows some information about each instrument to be viewed in a webpage from both inside and outside the ISIS network. This service already exists for SECI instruments.
 
 ## The Overall Architecture
