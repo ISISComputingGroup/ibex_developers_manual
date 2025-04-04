@@ -10,6 +10,10 @@ The system comprises:
 * Rotation stage (controlled separately by a Galil axis)
 * Motorised needle valve (controlled by Galil analogue output, or Thurlby-Thandar EX355P benchtop PSU)
 
+### Large log files
+
+See https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/LabVIEW-errors for mitigations - this is a known labview issue/bug.
+
 ### VI
 
 There is a manufacturer supplied VI and our own LVDCOM IOC.  There are two versions of the manufacturer's VI and both are stored in SourceSafe at the following location: `\LabVIEW Modules\Drivers\Scientific Instruments\3D Magnet\Source Code\`.  One VI has been used on LARMOR and ZOOM and uses the TTi PSU for needle valve control, and the other on POLREF when an analogue output from the Galil was used.  See below for more information.
