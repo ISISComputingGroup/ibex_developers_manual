@@ -1,4 +1,4 @@
-NDAEXTWEB is a central Windows 2019 server that runs a number of the web services associated with IBEX and SECI. The login credentials for this are in sharepoint. The server holds:
+NDAEXTWEB is a central Windows 2019 server that runs a number of the web services associated with IBEX. The login credentials for this are in sharepoint. The server holds:
 
 * The [IBEX web dashboard](Web-Dashboard)
 * The [Automation application](Automation-Application)
