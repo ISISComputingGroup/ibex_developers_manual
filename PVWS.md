@@ -47,3 +47,75 @@ this will start a https connector using the `.pfx` file generated from the certi
 6) update the max message size to `131072` as per "increasing maximum message size" of https://github.com/ornl-epics/pvws?tab=readme-ov-file#running-under-tomcat - this should be done in `C:\Program Files\Apache Software Foundation\Tomcat 9.0\webapps\pvws\WEB-INF\web.xml`
 7) restart the service again
 6) if you want the web dashboard to permanently use this, update https://github.com/ISISComputingGroup/WebDashboard/blob/main/.env
+
+## Gateway
+
+TODO fill this in 
+
+```
+# GW config for web dashboard
+# This is an explicit allowlist to allow the web dashboard to look at a handful of PVS ie. some blockserver, some DAE and some INSTETC. 
+
+EVALUATION ORDER DENY, ALLOW
+
+#.* DENY
+
+
+# Beam currents/instlists
+AC:TS1:BEAM:CURR ALLOW
+AC:TS2:BEAM:CURR ALLOW
+AC:MUON:BEAM:CURR ALLOW
+CS:INSTLIST  ALLOW 
+
+# These are blocks for instruments and developer machines
+[^:]+:[^:]+:CS:SB:.*  ALLOW 
+
+# These are dashboard PVs for instruments and developer machines
+[^:]+:[^:]+:CS:DASHBOARD:.*  ALLOW 
+
+# Shutter statuses
+[^:]+:[^:]+:CS:SHUTTER  ALLOW 
+
+# Time of day
+[^:]+:[^:]+:TIME_OF_DAY  ALLOW 
+
+# blockserver config details
+[^:]+:[^:]+:CS:BLOCKSERVER:WD_CONF_DETAILS  ALLOW 
+
+# current config name
+
+[^:]+:[^:]+:CS:BLOCKSERVER:CURR_CONFIG_NAME  ALLOW 
+
+# DAE PVs
+
+[^:]+:[^:]+:DAE:RUNSTATE_STR  ALLOW 
+[^:]+:[^:]+:DAE:RUNNUMBER  ALLOW 
+[^:]+:[^:]+:DAE:GOODFRAMES  ALLOW 
+[^:]+:[^:]+:DAE:RAWFRAMES  ALLOW 
+[^:]+:[^:]+:DAE:COUNTRATE  ALLOW 
+[^:]+:[^:]+:DAE:_RBNUMBER  ALLOW 
+[^:]+:[^:]+:DAE:BEAMCURRENT  ALLOW 
+[^:]+:[^:]+:DAE:TOTALUAMPS  ALLOW 
+[^:]+:[^:]+:DAE:MONITORCOUNTS  ALLOW 
+[^:]+:[^:]+:DAE:MONITORSPECTRUM  ALLOW 
+[^:]+:[^:]+:DAE:MONITORTO  ALLOW 
+[^:]+:[^:]+:DAE:MONITORFROM  ALLOW 
+[^:]+:[^:]+:DAE:NUMSPECTRA  ALLOW 
+[^:]+:[^:]+:DAE:NUMTIMECHANNELS  ALLOW 
+[^:]+:[^:]+:DAE:SIM_MODE  ALLOW 
+[^:]+:[^:]+:DAE:STARTTIME  ALLOW 
+[^:]+:[^:]+:DAE:RUNDURATION  ALLOW 
+[^:]+:[^:]+:DAE:PERIOD  ALLOW 
+[^:]+:[^:]+:DAE:RAWFRAMES_PD  ALLOW 
+[^:]+:[^:]+:DAE:NUMPERIODS  ALLOW 
+[^:]+:[^:]+:DAE:RUNDURATION_PD  ALLOW 
+[^:]+:[^:]+:DAE:PERIODSEQ  ALLOW 
+[^:]+:[^:]+:DAE:GOODFRAMES_PD  ALLOW 
+[^:]+:[^:]+:DAE:DAEMEMORYUSED  ALLOW 
+[^:]+:[^:]+:DAE:DAETIMINGSOURCE  ALLOW 
+[^:]+:[^:]+:DAE:EVENTS  ALLOW 
+
+# These are sanitised PVs so they can be hidden at the isisdae level.
+[^:]+:[^:]+:DAE:WDTITLE  ALLOW 
+[^:]+:[^:]+:DAE:WDUSERS  ALLOW 
+```
