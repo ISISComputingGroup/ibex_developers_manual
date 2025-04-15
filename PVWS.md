@@ -58,7 +58,7 @@ TODO fill this in
 
 EVALUATION ORDER DENY, ALLOW
 
-#.* DENY
+.* DENY
 
 
 # Beam currents/instlists
