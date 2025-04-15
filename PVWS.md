@@ -1,7 +1,7 @@
 # PVWS
 (PV Web socket)
 
-we run a `PVWS` instance on NDAEXTWEB3 for the [Web Dashboard](https://github.com/ISISComputingGroup/WebDashboard)
+we run a `PVWS` instance on NDAEXTWEB4 for the [Web Dashboard](https://github.com/ISISComputingGroup/WebDashboard)
 
 this is done with a native tomcat service (rather than a container) following the [PVWS instructions](https://github.com/ornl-epics/pvws?tab=readme-ov-file#running-under-tomcat), though it could be run as a container in the future. 
 
@@ -33,7 +33,7 @@ During the installer expand `+Tomcat` when it asks you which components to insta
 4) edit `server.xml` to contain these lines: 
 
 ```xml
-<Connector port="7777" protocol="org.apache.coyote.http11.Http11NioProtocol"
+<Connector port="443" protocol="org.apache.coyote.http11.Http11NioProtocol"
                maxThreads="150" SSLEnabled="true"
                maxParameterCount="1000" Server=" " 
 			   scheme="https" secure="true" clientAuth="false" sslProtocol="TLS" keystoreFile="file:///C:/PROGRA~1/APACHE~1/TOMCAT~1.0/dataweb.pfx" keystoreType="PKCS12" keystorePass="<keeper:.pfx keystore password for PVWS tomcat instance on NDAEXTWEB3>"
@@ -50,7 +50,10 @@ this will start a https connector using the `.pfx` file generated from the certi
 
 ## Gateway
 
-TODO fill this in 
+A gateway runs on NDAEXTWEB4 which is needed to only allow PVWS to access some PVs but not others.
+
+This runs under the task scheduler as making a `.bat` run as a Windows service is not trivial. 
+
 
 ```
 # GW config for web dashboard
