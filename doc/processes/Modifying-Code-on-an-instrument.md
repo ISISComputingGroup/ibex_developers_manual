@@ -1,4 +1,4 @@
-> [Wiki](Home) > [Processes](Processes) > [Modifying Code on an instrument](Modifying-Code-on-an-instrument)
+# Modifying code on an instrument
 
 What to do when you need to fix something on an Instrument or modify code on the instrument.
 

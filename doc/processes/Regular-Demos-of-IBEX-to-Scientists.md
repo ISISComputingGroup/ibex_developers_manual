@@ -1,4 +1,4 @@
-> [Wiki](Home) > [Processes](Processes) > [Regular Demos of IBEX to Scientists](Regular-Demos-of-IBEX-to-Scientists)
+# Regular Demos of IBEX to Scientists
 
 The regular 4-week Sprint Review is not the ideal forum for demonstrating new developments in IBEX to scientists. Instead, we will demonstrate each new release of IBEX prior to its deployment to groups of instrument scientists (or, when appropriate, to individual instrument scientists).  Demos will be arranged as follows:
 1. Developers pair off to demonstrate IBEX to each group of instrument scientists.  

@@ -1,6 +1,4 @@
-> [Wiki](Home) > [Processes](Processes) > [Sprint Burn down Chart](Sprint-Burn-down-Chart)
-
-Sprint Burn down Chart
+# Sprint Burn down Chart
 
 The [sprint burn down chart](http://shadow.isis.cclrc.ac.uk/ibex/burndown-points.html) is intended to show the team's progress through a sprint.  It is reviewed daily, during the daily stand-up meeting, so that everyone in the team can see the team's progress.
 

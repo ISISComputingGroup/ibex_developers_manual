@@ -1,4 +1,4 @@
-> [Wiki](Home) > [Deployment](Deployment)
+# Deployment
 
 - [Deployment Strategy](Deployment-strategy)
 - [Creating a Release](Creating-a-release)

@@ -1,8 +1,10 @@
-### Proposed structure for VNC Cloud Groups:
+# Remote Working (VNC Cloud)
+
+## Proposed structure for VNC Cloud Groups:
 
 ![](https://user-images.githubusercontent.com/10550207/86485047-9e0dec00-bd4f-11ea-8802-285f56966a20.png)
 
-### Proposed procedure for setting up VNC Cloud access:
+## Proposed procedure for setting up VNC Cloud access:
 
 **Owner / Admin (Single Experiment Controls group member)**
 
@@ -34,7 +36,7 @@
 _[at this point has same access as if physically present in instrument cabin]_
 1. Connects to instrument control computer (NDXxxx) via RDP (if session not already established)
 
-### Read/Write and Read-only
+## Read/Write and Read-only
 
 The _Read Only_ and _Read/Write_ access is to be controlled by changing the privileges on the viewing machine's standard instrument user account (ISUA).
 
@@ -59,7 +61,7 @@ When connecting using an account which has _Read Only_ access, the Users will ha
 
 The _Read / Write_ option on the other hand, offers **_full control_** of the remote computer and so the IS needs to consider carefully the implications of allowing Users to connect with this privilege level.
 
-# Troubleshooting
+## Troubleshooting
 
 If you can connect via cloud VNC but get a blank screen that you can do nothing with, this may be because no monitor is attached to the computer. The cloud VNC mechanism needs to have the vnc server program running in service mode (as a windows service), and this seems to need a screen of some sort. We run VNC server in user mode on the NDX and this is happy just having an active remote desktop session rather than a real screen, but user mode only allows point to point and not cloud connections.  
 

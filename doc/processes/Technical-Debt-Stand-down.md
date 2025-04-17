@@ -1,4 +1,4 @@
-> [Wiki](Home) > [Processes](Processes) > [Technical Debt Stand-down](Technical-Debt-Stand-down)
+# Technical Debt Stand-down
 
 A technical debt stand-down day is a day devoted to fixing technical debt in the system. The format is:
 

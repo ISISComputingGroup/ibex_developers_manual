@@ -1,4 +1,4 @@
-> [Wiki](Home) > [Processes](Processes) > [Tickets and their Workflow](Tickets-and-their-Workflow)
+# Ticket workflows
 
 ## Ticket Types
 

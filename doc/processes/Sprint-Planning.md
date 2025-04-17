@@ -1,4 +1,4 @@
-> [Wiki](Home) > [Processes](Processes) > [Sprint Planning](Sprint-Planning)
+# Sprint Planning
 
 Sprint planning is the meeting where we decide what will appear in next sprint. We assign these roughly to high/medium/low priority tickets, and give them a `points` value to indicate a rough estimate of effort involved in those items. This is all done through the current Program Increment (PI) project on GitHub.
 

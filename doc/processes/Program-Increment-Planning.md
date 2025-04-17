@@ -1,4 +1,4 @@
-> [Wiki](Home) > [Processes](Processes) > [Program Increment Planning](PI-Planning)
+# Program Increment Planning
 
 This meeting covers the overarching themes for the next few months. It will usually be held in the week or so before the first sprint of the Program Increment (PI) in question. This is an opportunity to ensure the whole team are aware of the more mid term goals of the team.
 

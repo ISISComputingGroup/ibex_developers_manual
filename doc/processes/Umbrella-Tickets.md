@@ -1,3 +1,5 @@
+# Umbrella tickets
+
 Umbrella tickets (or Epics in agile speak) are over arching tickets which contain multiple stages. Sometime you may feel it is beneficial for you or the reviewer to split a ticket which has been agreed in backlog prep into multiple smaller tickets; in this case you create an umbrella ticket. These can exist as actual tickets, but can also be raft tickets on the Program Increment (PI) board.
 
 ## On the PI Board

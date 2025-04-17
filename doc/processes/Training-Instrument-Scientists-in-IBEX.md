@@ -1,4 +1,4 @@
-> [Wiki](Home) > [Processes](Processes) > [Training Instrument Scientists in IBEX](Training-Instrument-Scientists-in-IBEX)
+# Training Instrument Scientists in IBEX
 
 From time-to-time, we run IBEX and genie_python training courses.  This page collects information that you will need to organise and run the IBEX and genie_python train courses.
 

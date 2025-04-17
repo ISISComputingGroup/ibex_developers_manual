@@ -1,4 +1,4 @@
-> [Wiki](Home) > [Processes](Processes) > [External Contributions](External-Contributions)
+# External Contributions
 
 The majority of IBEX code is open source, it uses code from the EPICS community and contributes code towards it, it is also used by a number of scientists that have good software development skills. Therefore it's expected that code will be contributed from outside the core ISIS developers and this should be encouraged as much as possible as it allows the project to move more quickly and react to people's requirements. To encourage this we should expedite any contributions with the following process:
 

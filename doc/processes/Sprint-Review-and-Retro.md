@@ -1,4 +1,5 @@
-> [Wiki](Home) > [Processes](Processes) > [Sprint Review](Sprint-Review)
+# Sprint Review & Retrospective
+
 ### Preparation
 
 ![image](https://github.com/ISISComputingGroup/ibex_developers_manual/assets/101112838/114f1f64-d098-46cb-8613-627a8c98d782)

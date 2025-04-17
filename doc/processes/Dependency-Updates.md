@@ -1,4 +1,4 @@
-> [Wiki](Home) > [Processes](Processes) > [Dependency Update](Dependency-updates)
+# Dependency Updates
 
 After a release all of the dependencies of the system should be considered for update. This will ensure that we do not get too far out of date and any upgrade will, hopefully, be small and not require much effort. In general we do not want to be on the bleeding edge but at the last stable release (i.e. prefer LTS versions when they are available). The list of dependency will get shipped with the release notes and should be kept up-to-date with any notes. This page documents the process of updating.
 
@@ -6,13 +6,13 @@ After a release all of the dependencies of the system should be considered for u
 
 **When updating dependencies add the new dependencies to the upcoming release notes**
 
-# WebDashboard
+## WebDashboard
 
 - [Update `tomcat` on external webserver](https://github.com/isiscomputinggroup/pvws-config?tab=readme-ov-file#updating). This is an external-facing process so **must** be kept up-to-date with latest security bugfixes.
 - Update java JDK on external webserver. This is used to run tomcat, which is an external-facing process, so **must** be kept up-to-date with latest security bugfixes.
 - Update [javascript dependencies](https://github.com/ISISComputingGroup/WebDashboard/blob/main/package.json)
 
-# GUI
+## GUI
 
 The GUI has multiple mechanisms for pulling in dependencies, all of which may potentially need updates. You should aim to do one dependency update at a time, testing each update both under the eclipse IDE and maven and committing before moving onto the next update.
 
@@ -47,9 +47,9 @@ The GUI builds copy a JRE from `\\isis\inst$\Kits$\CompGroup\ICP\ibex_client_jdk
 - After a successful build, create a PR to merge the changes into master, and upload the updated repo to `\\shadow.isis.cclrc.ac.uk\ICP_P2W$`, this latest version should be named 'Pydev'.
 - Remove and re-add the Pydev target platform dependency in the GUI
 
-# Python
+## Python
 
-## Uktena python distribution
+### Uktena python distribution
 
 - Check on Python.org for newer versions of python itself
 - If a newer version is available, download the "windows installer".
@@ -73,7 +73,7 @@ These packages include:
 - `CaChannel`
 - `epicscorelibs_pcas`
 
-## External packages
+### External packages
 
 Check on PyPi for any package updates, then edit `requirements.txt` to install new versions where needed. Note that since we decided [all python projects should use virtual environments](Python-dependencies#how-python-dependencies-should-be-handled-in-the-future) there will be a `pyproject.toml` or legacy `requirements.txt` file for all Python projects using the new import mechanism, ensure these are also updated.
 
@@ -112,7 +112,7 @@ ODE is handled separately from other packages and is installed from a wheel on `
 </details>
 </summary>
  
-# System
+## System
 
 ### MySQL
 Download the latest stable MySQL version as a zip file and put in the share `\\isis\inst$\Kits$\CompGroup\ICP\MySQL` and remove the old one.
@@ -157,9 +157,9 @@ In `c:\instrument\apps\epics\support\mysql\master\MySQLCppApp\src\mysql-connecto
 
 Git upgrade is handled by install scripts.
 
-# CS-Studio
+## CS-Studio
 
-## GUI
+### GUI
 
 Our CS-Studio GUI dependencies are located on a share on shadow, a read only version `\\shadow.isis.cclrc.ac.uk\ICP_P2$\` (which is accessible via a webpage at `http://shadow.nd.rl.ac.uk/ICP_P2/` and a writable version `\\shadow.isis.cclrc.ac.uk\ICP_P2W$\`.
 
@@ -177,7 +177,7 @@ To update the CS-Studio components that the GUI uses:
 - Test that your changes work correctly!
 - if you cannot write to the `ICP_P2W$` share on shadow, your fed id account will need adding to the `icp` local group on shadow itself. This just requires somebody to run the `vigr` command on shadow and then possibly `service smb restart` too 
 
-## Archive engines / alarm servers
+### Archive engines / alarm servers
 
 - The build uses the same process as above
 - Once build is done, the products are in `org.csstudio.sns\repository\products`
@@ -185,7 +185,7 @@ To update the CS-Studio components that the GUI uses:
 - The changes will be picked up after doing `create_icp_binaries` and then `css\master\setup_css.bat`
 - Ensure scripts to launch Archivers and alarm server [1](https://github.com/ISISComputingGroup/EPICS-CSS/blob/master/AlarmServer/run_alarm_server.bat) [2](https://github.com/ISISComputingGroup/EPICS-CSS/blob/master/ArchiveEngine/start_block_archiver.bat) [3](https://github.com/ISISComputingGroup/EPICS-CSS/blob/master/ArchiveEngine/start_inst_archiver.bat) point at correct executables after running `create_icp_binaries.bat` and `setup_css.bat`.
 
-# ActiveMQ
+## ActiveMQ
 
 To update ActiveMQ in epics:
   - Create a new branch on `...\EPICS\ISIS\ActiveMQ\master`.
@@ -193,13 +193,13 @@ To update ActiveMQ in epics:
   - Merge the vendor branch into your new branch
   - Create a PR to merge this in to master (this PR will be merged as part of the update dependencies ticket).
 
-# IOCLogServer
+## IOCLogServer
 
 The IOC log server has a similar build process to the main GUI, and includes several `.jar` files in it's repository. These may have new versions and need to be updated.
 
 Update `EPICS\ISIS\IocLogServer\master\LogServer\pom.xml` with new dependency version numbers.
 
-# Cygwin Tools
+## Cygwin Tools
 
 `procServ`, `conserver` and `console` are cygwin applications, compiled copies of which are kept centrally in `ICP_Binaries\EPICS_Tools` and then copied into subdirectories of `tools/master` of the EPICS distribution during a build. Their source code is located in the https://github.com/ISISComputingGroup/EPICS-tools repository and they are built by the EPICS_tools Jenkins job which places new versions in `kits$\EPICS_Tools`. The Jenkins job only runs when requested.
 
@@ -212,13 +212,13 @@ There are two cygwin distributions on the computer in `c:\cygwin64` and `c:\mini
 
 - now start the jenkins EPICS_Tools job, this will build and update `kits$\Binaries\EPICS_Tools` 
 
-# NICOS
+## NICOS
 [Nicos Dependency update steps](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Developing-NICOS).
 
 **Note:**
 We are using a fork of NICOS. If updating NICOS, ensure that the protocol versions defined in the client and the server match. The server version is specified in `C:\Instrument\Apps\EPICS\ISIS\ScriptServer\master\nicos\protocols\daemon\classic.py` and the client version in `/uk.ac.stfc.isis.ibex.nicos/src/uk/ac/stfc/isis/ibex/nicos/messages/ReceiveBannerMessage.java`. If these do not match, the script server connection will fail.
     
-# Updates to consider
+## Updates to consider
 
 - PCRE (https://github.com/ISISComputingGroup/EPICS-pcre)
 - procServ

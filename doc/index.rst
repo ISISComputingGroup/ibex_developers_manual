@@ -2,20 +2,28 @@ IBEX Developer's manual
 ===============
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Tutorial
-   :glob:
-
-   tutorial/overview.md
+   :maxdepth: 1
+   :caption: IBEX Server
    
 .. toctree::
    :maxdepth: 1
-   :caption: Instrument Details
-   
-   Instrument-Details.rst
+   :caption: User Interface
    
 .. toctree::
    :maxdepth: 1
-   :caption: Retrospective Notes
+   :caption: Deployment
    
-   Retrospective-Notes.rst
+   Deployment
+   
+.. toctree::
+   :maxdepth: 1
+   :caption: Project Processes & Meetings
+   
+   Processes
+   Retrospective-Notes
+   
+.. toctree::
+   :maxdepth: 1
+   :caption: Instrument Migration Notes
+   
+   Instrument-Details

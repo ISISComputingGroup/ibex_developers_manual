@@ -1,4 +1,4 @@
-> [Wiki](Home) > [Processes](Processes) > [The PM Workbook](PM-Workbook)
+# PM Workbook
 
 This workbook is used to support the calculations for the number of points available in a sprint, and an indication for interest in the flow of tickets.
 

@@ -1,7 +1,6 @@
-> [Wiki](Home) > [Project tools](Project-tools) > [Working with git and github](Working-with-git-and-github) > Git cribs
+# Git workflow
 
-Steps for Developing Code with existing Git Repos
-=====================================================
+## Steps for Developing Code with existing Git Repos
 
 If you are not sure what a git command does, you can take a look at https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Git-Commands
 
@@ -23,8 +22,8 @@ Development work
 * Bored of being asked for your username and password? Read [this](https://help.github.com/articles/caching-your-github-password-in-git/).
 * If you are creating a new submodule for EPICS, find more info here: [Creating New Submodules in EPICS](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Creating-New-Submodules-in-EPICS)
 
-Reviewing work for the GUI
-----------------------------------------------------------------------------------
+## Reviewing work for the GUI
+
 * Navigate to the appropriate directory in Git Bash
 * Update the repo: ``git remote update``
 * Checkout the branch with the changes to review: ``git checkout [branch-name]``
@@ -36,8 +35,8 @@ Reviewing work for the GUI
 * Once the tests have been passed, go to GitHub and merge the pull request. There will need to be at least one "approving" review before the merge button is enabled - as the reviewer, you can add your review by clicking on "files changed" and then "review changes".
 * Click on the delete branch button on the merged page
 
-Reviewing work for the 'top' of EPICS (no other related changes)
-----------------------------------------------------------------------------------
+## Reviewing work for the 'top' of EPICS (no other related changes)
+
 * Useful checklist for reviewing java code: https://dzone.com/articles/java-code-review-checklist
 * Check the list of files to be merged on the GitHub PR page - if one of them is `.gitmodules` then the PR **should not be merged** and needs to be either amended or recreated. 
 * Navigate to the appropriate directory in Git Bash
@@ -48,8 +47,8 @@ Reviewing work for the 'top' of EPICS (no other related changes)
 * Once the tests have been passed, go to GitHub and merge the pull request. On most repositories, there will need to be at least one "approving" review before the merge button is enabled - as the reviewer, you can add your review by clicking on "files changed" and then "review changes".
 * Click on the delete branch button on the merged page
 
-Reviewing work for the subModules of EPICS
-----------------------------------------------------------------------------------
+## Reviewing work for the subModules of EPICS
+
 * Navigate to the appropriate directory in Git Bash
 * If the submodule is not initialised, run `git submodule update --init` in the directory above
 * Update the repo: ``git remote update``
@@ -70,8 +69,7 @@ Reviewing work for the subModules of EPICS
 * Push the changed submodules back to GitHub: ``git push --recurse-submodule=check``
 NOTE: if you run `git config --global push.recurseSubmodules check` once, then the above becomes the default push action 
 
-Updating all Submodules
-------------------------
+## Updating all Submodules
 
 If you want a clean start then you can use a [[Developer-Server-Build]] rather than an in place git update
 
@@ -87,8 +85,8 @@ Yet another command, which will leave some submodules like adsDriver and others 
 
     git submodule update --recursive
 
-Updating the GUI
-----------------------------------------------------------------------------------
+## Updating the GUI
+
 * Navigate to the appropriate directory in Git Bash
 * Make sure you are in the master directory
 * Get the latest version: ``git pull``
@@ -96,8 +94,8 @@ Updating the GUI
 * Import any new packages
 * Refresh the packages
 
-Updating EPICS
-----------------------------------------------------------------------------------
+## Updating EPICS
+
 * Navigate to the appropriate directory in Git Bash
 * Make sure you are in the master directory
 * Get the latest version: ``git pull``
@@ -105,21 +103,20 @@ Updating EPICS
 * Rebuild as appropriate
 * If you only want the head files for the submodules leave off the ``--merge`` from the submodule update
 
-Cleaning up local installations (allowing yourself to see the wood, or branches, for the trees)
-------------------------------------------------------------------------------------------------
+## Cleaning up local installations (allowing yourself to see the wood, or branches, for the trees)
+
 * In Git Bash, browse to any repo that might need cleaning up (the GUI is a prime example for this)
 * Update all local branches set to track remote branches (does not merge any changes) : ``git remote update``
 * Remove local listings of closed branches (can use --dry-run argument just to see what listings would be removed): ``git remote prune origin``
 * Check the list of branches: ``git branch -a``
 * Remove any out of date local branches: ``git branch -d [unused-local-branches]``
 
-Steps for Developing Code with new Git Repos
-=====================================================
+## Steps for Developing Code with new Git Repos
 
 See [Adding new modules](Adding-new-modules-via-Git). If reviewing this you will need to checkout the branch on main EPICS and do `git submodule update --init` to initialise the newly created submodule into the tree. Everything else is as normal.
 
-Git Merge notes crib sheet
-=====================================================
+## Git Merge notes crib sheet
+
 The basic outline of the git merge entries are:
 
 ```

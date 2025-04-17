@@ -1,4 +1,4 @@
-> [Wiki](Home) > [Processes](Processes) > [Estimating Sprint Capacity](Estimating-Sprint-Capacity)
+# Estimating Sprint Capacity
 
 Sprint capacity is not used by this group to limit points in a sprint, but to track work throughput via a burndown chart.
 
