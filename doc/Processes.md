@@ -1,18 +1,4 @@
-# Processes
-
-Various Processes or tasks and info into how they should work. Remember rules can be bent or broken but think about why you are doing that.
-
-## Patching
-
-```{toctree}
-:glob:
-:titlesonly:
-
-processes/Modifying-Code-on-an-instrument
-processes/Modifying-Device-on-an-Instrument
-```
-
-## Development
+# Development Processes
 
 ```{toctree}
 :glob:
@@ -24,6 +10,8 @@ processes/Umbrella-Tickets
 processes/Dependency-Updates
 processes/External-Contributions
 ```
+
+# Meetings
 
 ## Internal meetings
 
@@ -49,7 +37,7 @@ processes/Regular-Demos-of-IBEX-to-Scientists
 processes/Training-Instrument-Scientists-in-IBEX
 ```
 
-## Project management
+# Project Management
 
 ```{toctree}
 :glob:
@@ -61,7 +49,7 @@ processes/Sprint-Burn-down-Chart
 processes/Prioritisation-of-Tickets
 ```
 
-## Admin
+# Admin
 
 ```{toctree}
 :glob:

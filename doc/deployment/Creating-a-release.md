@@ -1,4 +1,4 @@
-> [Wiki](Home) > [Deployment](Deployment) > Creating a release
+# Creating a release
 
 ## Understanding Java Licensing
 Make sure you [understand how Java is licensed](Understanding-Java-Licensing), so that we do not inadvertently make ISIS liable for licensing fees.
@@ -147,6 +147,3 @@ The is a release when a change needs to be made between standard releases; i.e. 
 1. cd to EPICS
 1. checkout release branch and pull
 1. update submodule reference, commit and push.
-
-### Note: Minor upgrades to v11.0.0.
-**WARNING:** If branching off the `v11.0.0` to make a release, you will need to re-add changes made in this [commit](https://github.com/ISISComputingGroup/EPICS-upgrade/commit/9b92ba915ca7cfdd1f711aff4945fe842972ee11). Otherwise, you will have problems with an incorrect number in the instrument's config area when deploying. 

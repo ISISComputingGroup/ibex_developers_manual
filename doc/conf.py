@@ -64,6 +64,7 @@ html_logo = "logo.svg"
 html_theme_options = {
     "logo_only": False,
     "style_nav_header_background": "#343131",
+    'body_max_width': None,
 }
 html_favicon = "favicon.svg"
 

@@ -11,7 +11,7 @@ IBEX Developer's manual
    
 .. toctree::
    :maxdepth: 1
-   :caption: Deployment
+   :caption: Deployment & Patching
    
    Deployment
    

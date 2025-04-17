@@ -1,25 +1,59 @@
+# Releases
+
+```{toctree}
+:glob:
+:titlesonly:
+
+deployment/Creating-a-release
+deployment/Manual-system-tests
+```
+
 # Deployment
 
-- [Deployment Strategy](Deployment-strategy)
-- [Creating a Release](Creating-a-release)
-- [How to deploy IBEX and EPICS on an instrument control PC](Deployment-on-an-Instrument-Control-PC)
-- [Deploy script workflow](Deploy-script-workflow)
-- [How to deploy IBEX to training machine](IBEX-Deployment-on-Training-machine)
-- [How to release a single IOC to an instrument](Release-Single-IOC)
-- [How to migrate an instrument from SECI to IBEX](Migrate-an-Instrument-Control-PC)
-- [How to add the instrument to the list of available instruments](Making-an-Instrument-Available-from-the-GUI)
-- [Upgrade Java](Upgrade-java)
-- [Manual System Tests](Manual-system-tests)
-- [Manual System Tests Results](Manual-System-Tests-Results)
-- [Installing and upgrading MySQL](Installing-and-Upgrading-MySQL)
-- [Disaster Recovery Testing](Disaster-Recovery-Testing)
-- [Virtual System Creation](Virtual-System-Creation)
-- [Autostart IBEX on Computer Restart](Autostart-IBEX-on-Computer-Restart)
-- [Quick Deploy](Quick-Deploy) (e.g. for Demo and R78)
-- [Upgrade ISISICP](Upgrade-ISISICP)
-- [Modifying Plugins on a Deployed Client](Modifying-Plugins-on-a-Deployed-Client)
-- [Mount or create IBEX VHDs](Mount-or-create-IBEX-VHDs)
-- [NPort Install](NPort-install)
-- [Instrument definition (like mapped drives) "Instrument Machine standards.doc"](http://www.facilities.rl.ac.uk/isis/computing/instruments/Instrument%20Documents/Forms/AllItems.aspx)
-- [Updating Instrument Machines](Updating-Instrument-Machines)
-- [Reviewing Deployment Tickets](Reviewing-Deploy-Tickets)
+## IBEX
+
+```{toctree}
+:glob:
+:titlesonly:
+
+deployment/Updating-Instrument-Machines
+deployment/Deployment-on-an-Instrument-Control-PC
+deployment/IBEX-Deployment-on-Training-machine
+deployment/Autostart-IBEX-on-Computer-Restart
+deployment/Making-an-Instrument-Available-from-the-GUI
+deployment/Reviewing-Deploy-Tickets
+deployment/Deploy-script-workflow
+```
+
+## Supporting software
+
+```{toctree}
+:glob:
+:titlesonly:
+
+deployment/Installing-and-Upgrading-MySQL
+deployment/NPort-install
+deployment/Upgrade-Java
+deployment/Upgrade-ISISICP
+```
+
+# Patching
+
+```{toctree}
+:glob:
+:titlesonly:
+
+deployment/Modifying-Code-on-an-instrument
+deployment/Modifying-Device-on-an-Instrument
+deployment/Release-Single-IOC
+deployment/Modifying-Plugins-on-a-Deployed-Client
+```
+
+# VHD Build & Deployments
+
+```{toctree}
+:glob:
+:titlesonly:
+
+deployment/Mount-or-create-IBEX-VHDs
+```

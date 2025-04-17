@@ -1,10 +1,9 @@
-> [Wiki](Home) > [Deployment](Deployment) > [Mount or create IBEX VHDs](Mount-or-create-IBEX-VHDs)
-
-# Deployment
+# Mount or create IBEX VHDs
 
 The new architecture for deployment is to deploy onto VHDs which will be copied to the desired places and linked in; this was a result of [discussions of making deployment quicker](Plan-how-to-deploy-automatically-on-30-instruments).
 
-## Part of the system
+## Parts of the system
+
 ### System VHD
 
 There needs to be a system VHD, this has been created by Chris and will be detailed *CHRIS TODO*. This contains windows and user level programs (probably including labview).
@@ -26,15 +25,15 @@ These contain part of the system which change often. We are undecided what to do
 
 For the test system I have gone with the first approach because it was easy. I like the second approach better.
 
-# VHD Creation
+## VHD Creation
 
-## Create empty VHDs
+### Create empty VHDs
 
 1. Copy the three empty vhdx files (`empty_apps.vhdx`, `empty_var.vhdx`,`empty_settings.vhdx`) to a local disk (from CompGroup\chris) and rename to
 `apps.vhdx`, `var.vhdx` and `settings.vhdx`.
 2. These are pre-configured to be 30GB each.
 
-## Mount a VHD
+### Mount a VHD
 
 1. Open a command prompt as administrator
 1. `diskmgmt.msc`
@@ -45,15 +44,14 @@ For the test system I have gone with the first approach because it was easy. I l
   1. Mount `Settings.vhdx` to `C:\Instrument\Settings\config` as above
   1. Mount `Var.vhdx` to `C:\Instrument\var` as above
 
-## Dismounting VHD
+### Dismounting VHD
 
 1. Close the VHD and copy back
     1. Right click on drive on left at the bottom
     1. Detach VHD
     1. Copy file back to the source
 
-# VHD Creation Jenkins Job
-## 
+## VHD Creation Jenkins Job
 
 There is an [automated job in jenkins](http://epics-jenkins.isis.rl.ac.uk/job/Create_VHD/) which builds VHDs from the latest IBEX server/client/python versions.
 
@@ -87,7 +85,7 @@ Once filled with IBEX files, the VHDs are copied to:
 \\isis\inst$\Kits$\CompGroup\ICP\VHDS
 ```
 
-# Upgrade IBEX Version on a VM By Copying VHD
+## Upgrade IBEX Version on a VM By Copying VHD
 
  - The VM set up, running an older version of IBEX, has been located within Hyper-V manager.
  - If you wish, a 'Checkpoint' (Right Click -> Checkpoint) can be capture of the current system to allow a way to restore the VM to a functioning state, if required.

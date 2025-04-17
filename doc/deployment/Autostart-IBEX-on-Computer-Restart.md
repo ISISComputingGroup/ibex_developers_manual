@@ -1,6 +1,6 @@
-> [Wiki](Home) > [Deployment](Deployment) > [Autostart IBEX on Computer Restart](Autostart-IBEX-on-Computer-Restart)
+# Auto-start IBEX on Computer Restart
 
-# Windows Server 2012 R2
+## Windows Server 2012 R2
 
 **This appears to work but doesn't because the user does not have interactive mode permissions. There is a ticket to sort this out**
 

@@ -1,6 +1,6 @@
-> [Wiki](Home) > [Deployment](Deployment) > [Deployment on an Instrument Control PC](Deployment-on-an-Instrument-Control-PC) > [Upgrade ISISICP](Upgrade-ISISICP)
+# ISISICP
 
-# To upgrade on a computer when the DAE type is remaining the same
+## DAE type remaining the same
 
 1. Check `isisicp` and `isisdatasvr` processes are not running. You cannot kill them if ISISDAE-IOC-01 is running so you need to stop this separately (and stop procserv restarting them) or run stop_ibex_server  
 1. Backup existing installation: copy the following to `c:\data\old\isisdae_backup_YYY_MM_DD`:
@@ -43,7 +43,7 @@ be visible in the ibex journal viewer (which looks at MySQL). It will not affect
 so a full re=import can be done at a later date when any issues are resolved.
 
 
-## A log from register_programs.cmd
+### A log from register_programs.cmd
 ```
 
 C:\Windows\system32>cd "c:\labview modules\dae"
@@ -72,7 +72,7 @@ Press any key to continue . . .
 c:\LabVIEW Modules\dae>
 ```
 
-# changing DAE type (DAE2 -> DAE3)
+## Changing DAE type (DAE2 -> DAE3)
 
 1. If DAE3 is new to this computer, it may not have the "Microsoft Visual C++ 2015 redistributable" installed. Check in the installed program list, if it is missing run `vc_redist.x64.exe` in `\\isis\inst$\Kits$\CompGroup\ICP\ISISICP\VS2015`   
 1. install the new DAE software as above
@@ -81,6 +81,6 @@ c:\LabVIEW Modules\dae>
 1. You will also need to add `set_dae3_arp.bat` to be run as administrator at system startup. To do this run the task scheduler as administrator and then import the `DAE3_arp_boot_task.xml` boot task file.
 1. Also check firewall settings 
 
-# Updating isisicp on developer machine
+## Developer installation
 
 The ISISICP on a developer machine is ran from the `ICP_Binaries` directory, this will get automatically updated when `create_icp_binaries.bat` is run. If you get simulated DAE issues, you may need to re-register the ISISICP by running `EPICS\ICP_Binaries\isisdae\register_programs.cmd` as an admin account  

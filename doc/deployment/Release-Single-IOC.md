@@ -1,4 +1,4 @@
-> [Wiki](Home) > [Deployment](Deployment) > [How to release a single IOC to an instrument](Release-Single-IOC)
+# Release a single IOC
 
 We may want to release a single IOC to an instrument but not release a whole build. This is the procedure to do this:
 

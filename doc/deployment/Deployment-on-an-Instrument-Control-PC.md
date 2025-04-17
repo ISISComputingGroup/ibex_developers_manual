@@ -1,22 +1,21 @@
-> [Wiki](Home) > [Deployment](Deployment) > [Deployment on an Instrument Control PC](Deployment-on-an-Instrument-Control-PC)
+# Deploy to an instrument machine
 
 This document describes the steps necessary to install/upgrade IBEX on an Instrument control PC. Be sure to login as `spudulike` when deploying on instruments instead of `gamekeeper`.
 
-# Steps using the install/deployment script
 ## Preparatory Steps for Client and Server
 
 - Inform the instrument scientist that you are going to upgrade the instrument in 5 minutes so that they are not surprised when you remote desktop to the instrument, include a link to the release notes of the latest release in this email. Wait 5 minutes.
 - Visit each instrument on which code will be released and check for changes which have been made which are not summarised on the [IBEX wiki](https://github.com/ISISComputingGroup/IBEX/wiki#tocInstrumentInfo). Do this by running `git status` in the EPICs directory and looking at the diff and comparing with those changes.
 - Make sure that the public share has the most recent version of `ibex_utils` from Git (i.e. do git pull).
 
-### Notes on network share access
+## Notes on network share access
 The install will need to access both `<public share>\ibex_utils` (where the install script is located) and `kits$` (where the ibex release and a genie python instance is kept). As we will be updating python, we cannot use the locally installed python for the deploy. 
 
 On an instrument NDX computer the D: and O: drives will be mapped to the instrument archive and have sufficient access rights, however they can sometimes become disconnected and then things don't work. So before starting look in windows explorer and if D: and/or O: are showing as Disconnected click on them to reconnect.
 
 If you do not have either a D: or O: network drive, then you will need to specify network credentials to map the drive via the `net use` command.    
 
-### Upgrading IBEX to the latest version
+## Upgrading IBEX to the latest version
 1. If an instrument, check D: network drive status as per above _Notes on network share access_
 1. Ensure the instrument is running and in a setup state
 1. Take screenshots of blocks, motors, running VIs, etc. to allow later comparison
@@ -30,7 +29,7 @@ If you do not have either a D: or O: network drive, then you will need to specif
     - Do not remove any SECI icons from the task list if this is not the first time install
 1. Compare screenshots taken earlier to current state
 
-### install IBEX for the first time
+## Install IBEX for the first time
 _Note this is unlikely to happen now we've migrated most instruments, and SECI instruments should have a copy of IBEX at the least._
 <details>
 <summary> Click to expand</summary>
@@ -44,7 +43,3 @@ _Note this is unlikely to happen now we've migrated most instruments, and SECI i
 - If needed, shutdown IBEX and [upgrade the ISISICP](Upgrade-ISISICP). Remember to run the journal parser installation (Step 8 of upgrading ICP) - this can take some time.
 - After the script has successfully finished and the IBEX server has been started, run `instrument_test.bat` in the same folder and follow the instructions.
 </details>
-
-# Manual deploy instructions
-
-Moved to https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/OLD-Manual-deployment-instructions-(not-for-normal-use)

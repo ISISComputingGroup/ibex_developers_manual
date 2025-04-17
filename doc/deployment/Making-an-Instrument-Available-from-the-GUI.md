@@ -1,4 +1,4 @@
-> [Wiki](Home) > [Deployment](Deployment) > [Making an Instrument Available from the GUI](Making-an-Instrument-Available-from-the-GUI)
+# Adding an instrument to the instrument list
 
 The new instrument must be added to the list of available instruments so that users can control it from the Ibex GUI. The list of available instruments is stored in a PV called `CS:INSTLIST`, which runs on the beam status IOC, and is therefore independent of any specific instrument.
 
@@ -26,7 +26,7 @@ To add a new instrument to this list proceed as follows:
 1. Verify that all the instruments are picked up by the GUI (e.g. there are no parsing errors): `IBEX -> Switch Instrument` and that they have the correct alarm server and configuration loaded.
 1. Verify that the web dashboard for the instruments still works
 
-# Restricting the GUI to switching to a reduced set of instruments
+## Restricting the GUI to switching to a reduced set of instruments
 On the IDaaS machines we need to be able to limit the instruments that a user can switch to in the GUI, to protect the data of other users. This is performed by adding a whitelist to the instrument preferences supplier. This needs to be applied for each VM group that needs to be restricted.
 
 This shouldn't get overwritten during the RPM deploy as the preferences folder is created by the GUI when it first starts, and isn't in the build.
