@@ -1,2 +1,0 @@
-### The blue info messages have disappeared
-These messages can be turned on using the command `TOGGLE /INFO ON`. A likely reason for them being turned off in the first place is that the user has issued a keyboard interrupt during an operation that turns them off then turns them back on.
