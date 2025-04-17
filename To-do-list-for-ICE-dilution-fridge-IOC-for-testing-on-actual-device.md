@@ -1,1 +1,0 @@
-- ask instrument scientist to make sure ICECube MC resistance is in kOhms
