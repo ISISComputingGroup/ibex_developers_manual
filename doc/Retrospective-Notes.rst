@@ -1,10 +1,11 @@
 Retrospective Notes
 ===================
 
+Notes from sprint retrospective meetings.
+
 .. toctree::
    :titlesonly:
    :reversed:
-   :caption: Retrospective Notes
    :glob:
    :maxdepth: 1
    
