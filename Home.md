@@ -37,7 +37,6 @@
 - [Glossary](Glossary): Glossary of terms
 - [Other Links and Resources](links-and-resources): Page of links and resources not in this wiki
 - [Trouble Shooting Pages](trouble-shooting-pages): Pages that link to trouble shooting of various kinds
-- [Galils Under SECI](galils-under-seci): Pages that link to information on control of Galils under SECI
 - [Python shared scripts (also know as shared instrument scripts)](https://github.com/ISISNeutronMuon/InstrumentScripts/wiki): Start of an area to share scripts between instruments
 - [Shared utility scripts](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Shared-utility-scripts): An area to document any utility scripts for us to use
 - [SAG](https://stfc365.sharepoint.com/sites/IBEXSAG): Sharepoint site for Scientific Advisory Group (SAG) material.
