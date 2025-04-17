@@ -1,4 +1,4 @@
-> [Wiki](Home) > [The GUI](The-GUI) > [Getting started](GUI-Getting-Started) > Building the GUI
+# Building the GUI
 
 Before building and running the GUI please make sure you have followed the steps from here: [First time installing and building (Windows)](First-time-installing-and-building-(Windows)). In particular make sure Git and genie_python are installed.
 

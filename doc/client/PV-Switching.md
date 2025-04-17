@@ -1,4 +1,4 @@
-> [Wiki](Home) > [The GUI](The-GUI) > [Coding](GUI-Coding) > PV switching
+# PV switching
 
 If you are only interested in how to create PVs in IBEX with proper switching behaviour go to "Using the PV Switching".
 

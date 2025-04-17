@@ -1,6 +1,4 @@
-> [Wiki](Home) > [The GUI](The-GUI) > Code chats
-
-# Code Chats
+# Code chats
 
 Code chats occur on a semi-regular monthly basis within the group at ISIS. Although they were originally intended to be presentations focused on a specific part of the IBEX GUI they often cover other subjects that may be considered part of the backend, or talk about general coding practices.
 
@@ -183,7 +181,7 @@ How Virtual Machines and VHDs can speed up IBEX deployment | Chris | 29/04/24 | 
 
 </details>
 
-# Lightning Talks
+## Lightning Talks
 Lightning talks are a chance to share smaller bits of interesting information after standup at the end of a sprint.
 Topic | Presenter | Date
 ----- | --------- | ----

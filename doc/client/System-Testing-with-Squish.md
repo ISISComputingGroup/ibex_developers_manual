@@ -1,10 +1,10 @@
-> [Wiki](Home) > [The GUI](The-GUI) > [Testing](GUI-Testing) > [System testing with Squish](System-Testing-with-Squish)
+# Squish
 
-# Squish Licensing Information & Contact Details
+## Squish Licensing Information & Contact Details
 
 we have one floating tester subscription and one floating execution subscription licence. The execution subscription is used by a build server to run tests, the tester subscription is used by us to develop tests. We can have at most one developer writing tests at a time, but we can all install the software on our machines. I don't yet know how the license system works e.g. if one developer forgets to close squish on their system, does it block everybody until they do? Or is there some timeout? We will have to experiment. See `license server` below for more details. 
  
-# Set Up for local server
+## Set Up for local server
 
 1. Install SQUISH/JAVA WINDOWS from `<isis experiment controls share>\squish`
 1. Read and accept the terms and conditions if still correct
@@ -39,11 +39,11 @@ You may also need to install `psutil` and `mysql-connector-python==8.0.11` throu
 
 Once you have set up Squish via the steps above, you should be able to run a test suite to confirm everything is working. Note that you need the IBEX server running in the background, but not the client (which will be started by Squish when you run a test).
 
-# RDP to Server
+## RDP to Server
 
 It is possible to remote desktop to the squish server but when you disconnect you must use the "Disconnect from RDP" shortcut on the desktop. To do this you must be an Admin on the desktop.
 
-# Setup For Build Server
+## Setup For Build Server
 
 1. Install all the things needed for an instrument (Git, MySql, Java)
 1. Install Jenkins build system but run it from a command line.
@@ -60,7 +60,7 @@ It is possible to remote desktop to the squish server but when you disconnect yo
 1. Then disconnect the session using the shortcut on the desktop
 1. Leave the machine with an attached screen. I think this is needed to set the resolution when leaving remote desktop.
 
-# Creating a new Test Suite
+## Creating a new Test Suite
 
 1. Click File -> New test Suite ...
 1. New Test Suite:
@@ -72,11 +72,11 @@ It is possible to remote desktop to the squish server but when you disconnect yo
 1. Edit the test suite settings (select test suite in test suites tab. Then click on icon with blue spanner)
     1. Edit Object Map to be `..\objects.map`. You may not be able to do this from the Squish client depending on your version, in which case you can directly edit `suite.conf` in `/<System tests folder>/suite_<something>_tests/` (it should say `OBJECTMAP=..\objects.map`)
 
-# System Testing The IBEX Script Generator with Squish BDD Tools
+## System Testing The IBEX Script Generator with Squish BDD Tools
 
 The way we use Squish for testing the script generator is a bit different to the way we test the IBEX client. The method for testing is documented on the [System Testing The IBEX Script Generator with Squish BDD Tools](System-Testing-The-IBEX-Script-Generator-with-Squish-BDD-Tools) page. Some of the hints and tips from this page still apply e.g. using utilities such as `set_text_field`.
 
-# Creating a new Test
+## Creating a new Test
 
 A test contains one test case.
 
@@ -102,7 +102,7 @@ A test contains one test case.
         <rest of test>
     ```
 
-# Writing tests
+## Writing tests
 
 Hints, tips and gotchas for writing tests:
 
@@ -117,7 +117,7 @@ Hints, tips and gotchas for writing tests:
     1. Save it and check it works by clicking highlight object; button should flash red.
 * Often `test.compare` and `test.verify` in Squish provides logs that aren't very useful, please do add a `test.log` line to describe the error.
 
-# Other 
+## Other 
 
 ### Change Java that squish is using
 
@@ -166,13 +166,13 @@ Frequency | Test | Error
 2         | tst_can_add_edit_and_delete_block_to_current_config | `RuntimeError: Property read failed: exception: java.lang.reflect.InvocationTargetException () org.eclipse.swt.SWTException: Widget is disposed`  `Called from: C:\Jenkins\workspace\System_Tests_Squish\suite_configuration_tests\tst_can_add_edit_and_delete_block_to_current_config\test.py: 74`
 1         | tst_user_names_can_be_set | `LookupError: Object ':Experiment Details_Text' not found. Could not match properties:    isvisible for object name: ':Experiment Details_Text' Called from: C:\Jenkins\workspace\System_Tests_Squish\suite_experiment_details_tests\tst_user_names_can_be_set\test.py: 19 C:\Jenkins\workspace\System_Tests_Squish\global_scripts\experiment_details.py: 19`
 
-# License server
+## License server
 
 This was setup as per https://doc.qt.io/squish/setting-up-the-squish-floating-license-server.html on `control-svcs.isis.cclrc.ac.uk` in the directory `/usr/local/squish-licenceserver` the service is automatically started at boot time vis systemd, the file `squish-licenseserver.service` has the service details and is symbolically linked from the systemd `/etc/systemd/system` area. The log file is `/var/log/squish-licenseserver.log` and the service is running on the default port of 49345
 
 To restart the licence server process use `sudo systemctl restart squish-licenseserver.service` on the licence server machine
 
-# Troubleshooting
+## Troubleshooting
 
 ### Squish fails to run tests with an error in the C runtime library
 

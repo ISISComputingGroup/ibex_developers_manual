@@ -1,6 +1,5 @@
-> [Wiki](Home) > [The GUI](The-GUI) > [Coding](GUI-Coding) > OPI creation
+# OPI creation
 
-# Introduction
 OPIs live in `ibex_gui\base\uk.ac.stfc.isis.ibex.opis\resources`
 
  - Start CS-Studio to create/edit an OPI (see `EPICS\CSS\master\start_css.bat`)
@@ -71,7 +70,7 @@ In case an OPI's PV_root is defined in its parent, you need to go where to the p
 | ---- | ------- |
 | PV_ROOT | Root for all PVs within an OPI |
 
-# Completing the OPI
+## Completing the OPI
 
 Add the IOC name with appropriate information, including macros to the xml file
 
@@ -91,12 +90,12 @@ Please follow [these guidelines](Synoptic-Icons) when specifying and creating ne
 
 The final step should be to send the OPI to the instrument scientists. If they don't approve it that is fine but it is good to get their response.
   
-# Testing
+## Testing
 
 To start and interact with a testing IOC see [Running (and testing) IOC](Running-IOCs)
 The easiest way to test this is to run IBEX-gui through the eclipse editor. Create a device screen and use this to test. The device screen can be refreshed (right click -> refresh) to display the latest changes made in CSS editor.
 
-# Debugging: No scrollbars
+## Debugging: No scrollbars
 
 Check if you have stray widgets. An example of a stray widget might have:
 
@@ -109,7 +108,7 @@ If you have a stray widget, it may prevent scrollbars from appearing on your OPI
 - XML sorter
 - Diff tool e.g. notepad++, winmerge
 
-# Writing to char waveform PVs and displaying char waveforms as strings
+## Writing to char waveform PVs and displaying char waveforms as strings
 
 CSS text input fields can write to char waveform PVs but needs to be set up in a special way. If you don't do this, the `NORD` field of the waveform will not be set correctly on write and the PV value will only be written successfully if NORD already has a large enough value.
 - Postfix the PV name with ` {"longString":true}` (note the space before the JSON). The final value in "PV Name" should look similar to the following: `$(PV_ROOT):ARBITRARY:SP {"longString":true}`
@@ -117,7 +116,7 @@ CSS text input fields can write to char waveform PVs but needs to be set up in a
 
 Note: If waveform PV is being attached to a multi-line text box then user will have to `ctrl-enter` to save their changes. 
 
-# Data browser Graph Creation
+## Data browser Graph Creation
 
 To make a databrowser graph on an OPI:
 
@@ -130,7 +129,7 @@ To make a databrowser graph on an OPI:
 1. Add a `Data Browser` monitor to your opi
 1. In properties in file set the file you have created
 
-# Activate tab
+## Activate tab
 
 If it's required to activate a tab from a synoptic via a macro: (See SKF G5 Chopper OPI as an example.)
 
@@ -138,7 +137,7 @@ If it's required to activate a tab from a synoptic via a macro: (See SKF G5 Chop
 1. Create script that reads value
 1. Set active tab on tab container using `setActiveTabIndex`
 
-# Create a Local Enum
+## Create a Local Enum
 
 AS OF 05/02/2020 DOES NOT WORK.
 
@@ -154,7 +153,7 @@ Or set the items from a script:
     combo.setItems( [ "Ene", "Mene", "Muh" ] )
 ```
 
-# Enable and disable controls
+## Enable and disable controls
 
 If the enablement state of a widget (i.e. `enabled` property) is controlled as part of OPI logic, it can be made more obvious by also controlling its `transparent` property.
 
@@ -162,7 +161,7 @@ See `\base\uk.ac.stfc.isis.ibex.opis\resources\mercuryiTC\enablement_of_controls
 
 Initial investigations centred on alternating the background colour of the control between e.g. `ISIS_Textbox_Readonly_Background` and `ISIS_Textbox_Background`.  However, although the logic and syntax were sound, the OPI didn't faithfully reproduce the requested colours.
 
-# Using OPI rules and external scripts
+## Using OPI rules and external scripts
 
 When implementing display logic for OPIs (such as toggling an objects visibility based on a PV value) our standards are: 
 1. Rules take preference over scripts for trivial logic

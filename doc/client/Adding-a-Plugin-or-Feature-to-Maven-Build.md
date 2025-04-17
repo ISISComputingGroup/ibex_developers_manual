@@ -1,8 +1,8 @@
-> [Wiki](Home) > [The GUI](The-GUI) > [Coding](GUI-Coding) > Adding a plugin or feature to Maven
+# Adding a plugin or feature to Maven
 
 The steps for adding a plug-in (one small part of IBEX, such as the blocks view) or feature (a larger collection of plug-ins, such as CSS) to the maven build are below:
 
-# Step by step:
+## Step by step:
 * Add the plug-in to `feature.base`:
     * Open `feature.xml` in `uk.ac.stfc.isis.ibex.feature.base`
     * Go to "Included Plug-ins" (or "Included Features") tab and click "Add..."

@@ -1,4 +1,4 @@
-> [Wiki](Home) > [The GUI](The-GUI) > [Coding](GUI-Coding) > [Instrument switching](Instrument-switching)
+# Instrument switching
 
 Instrument switching in the GUI uses an extension point. This means that the switch can take place in a central place but then each plugin which is interested can sign up to the switching event. This keeps a separation between the plugins and the instrument switching module; i.e. a plugin can be removed without changing the instrument switching code.
 

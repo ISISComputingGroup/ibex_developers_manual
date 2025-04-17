@@ -1,4 +1,4 @@
-> [Wiki](Home) > [The GUI](The-GUI) > [Testing](GUI-Testing) > Mockito
+# Mockito
 
 You should read the guide to testing in IBEX before reading this guide.
 

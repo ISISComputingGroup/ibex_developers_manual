@@ -1,10 +1,10 @@
-> [Wiki](Home) > [The GUI](The-GUI) > [Coding](GUI-Coding) > Static analysis
+# Static analysis
 
 We are currently making use of 3 static analysis tools to help ensure the quality of our code: [PMD](https://pmd.github.io/), [FindBugs](http://findbugs.sourceforge.net/), and [CheckStyle](https://checkstyle.sourceforge.io/). These particular tools are mostly intended for use with Java programs and as such our main use for them is the Eclipse GUI project, though they are also used on some Java code in the main EPICS project (specifically the IOC log server).
 
 All of these tools have maven plugins which allow the analyses to be run as part of the maven build process, with the results being output to an XML file. Additionally, they all have Jenkins plugins which can consume the XML results files, producing reports and graphs within Jenkins and allowing you to track code quality trends over time. The Jenkins reports list all the specific violations which can be categorised in a number of ways and are listed with file name and line number as well as a detailed description of the problem.
 
-# Checkstyle
+## Checkstyle
 
 Checkstyle is designed to enforce a set of highly configurable coding standards. It supports a very large number of rules including ones relating to naming conventions, annotations, javadoc comments, poor coding practices, etc. That rules that Checkstyle will check for violations of may be configured in an XML file. 
 
@@ -76,17 +76,17 @@ Or for multiple warnings:
         return hours * seconds_per_hour;
     }
 ```
-# PMD
+## PMD
 
 PMD focuses on potential coding problems such as unused or suboptimal code, code size and complexity, and good coding practices. Some typical rules include "Empty If Statement", "Broken Null Check", "Avoid Deeply Nested If Statements", "Switch Statements Should Have Defaults", etc. PMD will produce far fewer warnings/errors than checkstyle, however they are typically far more important, indicating technical problems with the code rather than merely stylistic ones, and should therefore be fixed whenever possible/sensible.
 
-# FindBugs
+## FindBugs
 
 FindBugs detects similar types of problems as PMD, though it can detect many additional serious problems such as potential null pointer exceptions, infinite loops, and unintentional access of the internal state of an object (to name a few). Unlike PMD, which checks through the source code, FindBugs actually checks through the applications bytecode for potential issues. FindBugs tends to find a smaller number of more important issues.
 
 For both PMD and FindBugs, there are certain rules which, while generally sensible, may not apply to the project at hand. For example, on the Eclipse GUI project, FindBugs throws up a lot of problems involving writing to a static member from an instance method, however the Activator class in most Eclipse plugins make use of this construct.
 
-# Maven
+## Maven
 
 The tools may be run as part of a maven build by including them as plugins in the project's pom.xml. In the case of the Eclipse GUI, each plugin is included in the 'tycho.parent' pom.xml file, and is therefore used in every other project (Eclipse plugin) during the build.
 

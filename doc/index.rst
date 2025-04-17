@@ -1,13 +1,19 @@
 IBEX Developer's manual
 ===============
-
-.. toctree::
-   :maxdepth: 1
-   :caption: IBEX Server
    
 .. toctree::
    :maxdepth: 1
-   :caption: User Interface
+   :caption: GUI / Frontend
+   
+   Gui
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Python
+   
+.. toctree::
+   :maxdepth: 1
+   :caption: Server / Backend
    
 .. toctree::
    :maxdepth: 1
@@ -17,7 +23,7 @@ IBEX Developer's manual
    
 .. toctree::
    :maxdepth: 1
-   :caption: Project Processes & Meetings
+   :caption: Project Processes
    
    Processes
    Retrospective-Notes

@@ -1,4 +1,5 @@
-> [Wiki](Home) > [The GUI](The-GUI) > [Coding](GUI-Coding) > Adding a perspective
+# Adding a perspective
+
 ![Perspective Switcher](GUI_development/images/adding_a_button_to_the_perspective_switcher/IBEX_complete_perspective_switcher_highlighted.png)
 
 

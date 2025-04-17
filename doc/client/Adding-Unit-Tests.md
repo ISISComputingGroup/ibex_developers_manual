@@ -1,4 +1,4 @@
-> [Wiki](Home) > [The GUI](The-GUI) > [Testing](GUI-Testing) > Adding tests
+# Adding tests
 
 For more detailed information see [an_introduction_to_unit_testing.rst](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/An-Introduction-to-Unit-Testing).
 

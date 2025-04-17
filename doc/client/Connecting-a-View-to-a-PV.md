@@ -1,4 +1,4 @@
-> [Wiki](Home) > [The GUI](The-GUI) > [Coding](GUI-Coding) > Connecting a view to a PV
+# Connecting a view to a PV
 
 See [An Introduction to Databinding](An-Introduction-to-Databinding) for a explanation of databinding.
 

@@ -1,10 +1,10 @@
-> [Wiki](Home) > [The GUI](The-GUI) > [Coding](GUI-Coding) > Conventions
+# Conventions
 
 Contains the style and coding conventions for the IBEX GUI.
 
 **New conventions should not be added to this document without first being discussed at a 'Code Chat'.**
 
-# Style Conventions #
+## Style Conventions #
 
 Unless stated otherwise below we should follow the standard Java conventions for style where possible.
 
@@ -163,7 +163,7 @@ class Point {
 }
 ```    
 
-# Coding Conventions #
+## Coding Conventions ##
 
 A mix of IBEX specific and general Java coding conventions.
 

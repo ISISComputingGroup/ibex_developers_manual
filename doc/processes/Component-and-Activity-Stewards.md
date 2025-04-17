@@ -1,4 +1,4 @@
-> [Wiki](Home) > [Component & activity stewards](Component-&-Activity-Stewards)
+# Component & Activity Stewards
 
 This page lists the component & activity stewards.
 

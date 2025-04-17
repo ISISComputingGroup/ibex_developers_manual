@@ -1,4 +1,4 @@
-> [Wiki](Home) > [The GUI](The-GUI) > [Testing](GUI-testing) > Test naming
+# Test naming
 
 When writing tests, it is important that the purpose and expected outcome of the test is clear from the name. This has several advantages:
 

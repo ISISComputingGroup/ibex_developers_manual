@@ -1,6 +1,4 @@
-> [Wiki](Home) > [The GUI](The-GUI) > [Testing](GUI-Testing) > An introduction to unit testing
-
-# Unit Testing
+# An introduction to unit testing
 
 To create unit tests for an Eclipse plug-in a Fragment Project is used. When creating a Fragment Project we assign the plug-in we wish to test as a Host Plug-in.
 Eclipse automatically gives the Fragment access to the classes in the original plug-in.
@@ -218,9 +216,9 @@ From the results it can be seen that 63.2% of the StringManipulator code is used
 The code that isn't used is highlighted in red - for this example we can see that we need to write a test that tests the reverseString method.
 
     
-# Eclipse is complaining
+## Troubleshooting
 
-## ClassNotFoundException
+### ClassNotFoundException
 
 Running the tests in Eclipse might crash with an error like:
 
@@ -244,7 +242,7 @@ This is a known bug and there is a workaround:
 * On the original dialog, click "Apply" and then "Run"
 * Hopefully, the tests will now work and you should be able to re-run them in the normal way
 
-## Eclipse is not picking up new tests
+### Eclipse is not picking up new tests
 
 If Eclipse is not picking up changes when you add tests you may need to change the default output folder for tests for Maven to pick it up.
 
@@ -252,6 +250,6 @@ If Eclipse is not picking up changes when you add tests you may need to change t
 * Change the output folder to target/test-classes (you may need to create this folder first by clicking browse, selecting target and adding the test-classes folder)
 * If this does not work try deleting the target/test-classes folder first, if it existed already, and do a clean rebuild of the workspace
 
-## IncompatibleClassChangeError
+### IncompatibleClassChangeError
 
 If the tests are failing because of an IncompatibleClassChangeError error then the solution is to delete the bin and target folders for both the main plug-in and the corresponding test plug-in
