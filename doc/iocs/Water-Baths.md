@@ -1,3 +1,0 @@
-# Water Baths
-
-* [Julabo](Julabo)

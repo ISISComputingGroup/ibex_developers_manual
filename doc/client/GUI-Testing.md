@@ -1,11 +1,8 @@
-> [Wiki](Home) > [The GUI](The-GUI) > Testing
+# Testing
 
-* [An Introduction to Unit Testing](An-Introduction-to-Unit-Testing)
+```{toctree}
+:glob:
+:titlesonly:
 
-* [Adding Unit Tests Step by Step](Adding-Unit-Tests)
-
-* [Mockito](Using-Mockito-for-Testing-in-the-GUI)
-
-* [System/UI testing with Squish](System-Testing-with-Squish)
-
-* [Test naming](Test-naming)
+testing/*
+```

@@ -1,5 +1,8 @@
-> [Wiki](Home) > [The GUI](The-GUI) > Other
+# Miscellaneous
 
-* [Synoptic Icons](Synoptic-Icons)
-* [Designing for Colour Blindness](Designing-for-Colour-Blindness)
-* [Icon Licences](Icon-Licences)
+```{toctree}
+:glob:
+:titlesonly:
+
+misc/*
+```

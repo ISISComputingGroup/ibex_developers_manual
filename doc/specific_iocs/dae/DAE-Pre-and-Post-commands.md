@@ -1,0 +1,15 @@
+# DAE Pre & Post commands
+
+It is possible to get additional actions to be carried out by DAE IOC when commands such as begin/end/pause/resume/abort are executed. These actions are typically used to do things like open/close an intermediate (fast) shutter. A `PRE` action is executed before the command and a `POST` after it has run. Whether the IOC waits for a PRE/POST to complete before the next action is controlled by whether `PP` or `CA` is passed as part of configuration, `CA` will wait for a completion callback and `PP` will just initiate processing and then carry on to start the next operation. The PV specified for PRE/POST will have the number 0 written to it for a PRE action and 1 for a POST action, often you will specify the `.PROC` field of a PV so just processing is initiated, but you could specify e.g. the `.VAL`, or another field such as `.A` of a calcout record, and use the 0/1 value to determine the action to take.   
+
+The PV links to use during PRE/POST are set by macros, either in the configuration or in `globals.txt`. They have names like `PRE_BEGIN_1` and `POST_BEGIN_1`, to specify then in globals.txt you would add something like   
+```
+ISISDAE_01__PRE_BEGIN_1=SOME:PV:TO:ACCESS.PROC CA
+```
+Note the `CA` added at the end to request a channel access put, which means the DAE IOC will wait for processing of the PV to finish before executing the main command (begin in this case). As mentioned above `PP` would request processing but not wait, but `PP` is only valid for PVs in the same IOC and it is unlikely the PV of interest will be inside the DAE IOC. For PVs not in the DAE IOC, a channel access put will be done anyway and whether the record processes will be determined by properties of the field written to. I've not determined yet whether adding `CA` to a link that refers to a PV already outside the DAE IOC make any difference to Wait behaviour as it will already be a channel access link, but if you wish this behaviour it is safer to add `CA`.   
+
+## genie python interface
+
+By default IOC based PRE/POST commands are executed, however in genie python you can request that they are not by passing `prepost=False` to commands like `begin` e.g. `g.begin(prepost=False)`. This works by shortcutting some of the logic, normally it would write to the `$(P)DAE:BEGINRUN` PV which does a fanout to run: (PRE, main command, POST) with the main command executed via a PV with `_` appended e.g. `$(P)DAE:BEGINRUN_`. Thus if you write to `$(P)DAE:BEGINRUN_` PV instead of to `$(P)DAE:BEGINRUN` you will avoid running PRE and POST but still start the run. As well as begin, end/pause/resume/abort all follow this same scheme.
+
+As well as server side/DAE IOC based PRE/POST, genie python can have client side pre-post functions defined e.g. via`set_begin_precmd()`. Execution of these functions is not skipped with `prepost=False`, instead the `prepost` argument is passed to these functions to allow them to decide what to do.         

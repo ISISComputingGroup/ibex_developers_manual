@@ -8,32 +8,32 @@ CSS is built via jenkins. Clone [this repository](https://github.com/ISISComputi
 
 ## Archive Engine
 
-The Archive Engine is part of CSS and is used to archive PV values. Note that most facilities use the [Archive Appliance](https://slacmshankar.github.io/epicsarchiver_docs/index.html) as the Archive Engine (specifically MySQL) was found to be slow at millions of PVs. As we don't have that many PVs we have continued to use the Archive Engine. For more details see [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/CSS-Archive-Engine).
+The Archive Engine is part of CSS and is used to archive PV values. Note that most facilities use the [Archive Appliance](https://slacmshankar.github.io/epicsarchiver_docs/index.html) as the Archive Engine (specifically MySQL) was found to be slow at millions of PVs. As we don't have that many PVs we have continued to use the Archive Engine. For more details see [here](/system_components/CSS-Archive-Engine).
 
 ## Alarm Server
 
 The Alarm Server is part of CSS and alerts the GUI to any PV alarm changes. There is also a CSS Alarm View that we use as part of our GUI.
 
-* [Building the alarm server for MySQL](Building-the-alarm-server-for-mysql)
+* [Building the alarm server for MySQL](/system_components/alarms/Building-the-alarm-server-for-mysql)
 
-* [Using the alarm server with MySQL](Using-the-alarm-server-with-mysql)
+* [Using the alarm server with MySQL](/system_components/alarms/Using-the-alarm-server-with-mysql)
 
 ## Operator Interfaces
 
 OPIs are the main way that users interact with an IOC. They are GUIs created in CSS and imported into our GUI.
 
-* [OPI Creation](OPI-Creation)
+```{toctree}
+:glob:
+:titlesonly:
 
-* [OPI Programming tips and limitations](OPI-programming-tips-and-limitations)
-
-* [Converting OPIs from old to new style: tips and gotchas](Converting-OPI-to-New-Style-Tips-and-Gotchas)
+opis/*
+```
 
 ## Other
 
-* [A first look at the scan server](A-first-look-at-the-scan-server)
+```{toctree}
+:glob:
+:titlesonly:
 
-* [Debugging CSS](Debugging-CSS)
-
-* [Connection layer to PV](PV-Connection-Layer) PVManger, CAJ and JCA
-
-* [Malformed URL errors](Malformed-URL-errors)
+css_other/*
+```

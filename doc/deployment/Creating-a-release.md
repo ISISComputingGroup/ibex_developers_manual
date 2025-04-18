@@ -1,32 +1,42 @@
 # Creating a release
 
+```{toctree}
+:glob:
+:titlesonly:
+:maxdepth: 1
+:hidden:
+
+release/*
+```
+
 ## Understanding Java Licensing
-Make sure you [understand how Java is licensed](Understanding-Java-Licensing), so that we do not inadvertently make ISIS liable for licensing fees.
+Make sure you [understand how Java is licensed](/processes/dev_processes/Understanding-Java-Licensing), so that we do not inadvertently make ISIS liable for licensing fees.
 
 ## Release tickets
 
 Text for release ticket:
 
-    As a developer I want an IBEX release so I can install it on the instrument machines for the start of machine physics on 26th.
-    
-    Acceptance Criteria:
-    
-    - [ ] [Pre Testing Steps](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Creating-a-release#pre-testing)
-    - [ ] [Testing steps](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Creating-a-release#testing)
-    - [ ] [Post Testing](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Creating-a-release#post-testing)
-    - [ ] [Create a ticket to update dependencies to latest versions and test](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Dependency-updates)
-    - [ ] [Create a ticket to give instrument demos](https://github.com/ISISComputingGroup/IBEX/wiki/Timetable-for-Instrument-Demos)
-    - [ ] Distribute release notes via email [Instrument scientist release email](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Updating-Instrument-Machines#a-new-release)
+> As a developer I want an IBEX release so I can install it on the instrument machines for the start of machine physics on 26th.
+> 
+> Acceptance Criteria:
+> 
+> - [ ] [Pre Testing Steps](#creating_release_pre_testing_steps)
+> - [ ] [Testing steps](#creating_release_testing_steps)
+> - [ ] [Post Testing](#creating_release_post_testing_steps)
+> - [ ] [Create a ticket to update dependencies to latest versions and test](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Dependency-updates)
+> - [ ] [Create a ticket to give instrument demos](https://github.com/ISISComputingGroup/IBEX/wiki/Timetable-for-Instrument-Demos)
+> - [ ] Distribute release notes via email [Instrument scientist release email](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Updating-Instrument-Machines#a-new-release)
 
 ## Standard Release
 
 Project is ready to be released not for a specific event, e.g. at the end of a sprint. Script Generator version number always differs to the client's.
 
+{#creating_release_pre_testing_steps}
 ### Pre Testing
 
 1. Contact computing group to let us know of the upgrade. Find out anything that needs to be in the release that isn't and mark with `for release` label. (This does not prevent a release)
 1. Look at the released features in this branch [Upcoming Changes](https://github.com/ISISComputingGroup/IBEX/blob/master/release_notes/ReleaseNotes_Upcoming.md) and find the most significant level of change (i.e. is this cumulatively a major change, a minor change, or a patch?).
-1. Update the [upgrade script](https://github.com/ISISComputingGroup/EPICS-upgrade/blob/master/upgrade.py) to include the latest version (this is done on master). Steps to do this are in [Config Upgrader in section *creating a production upgrade script*](Config-Upgrader#creating-a-production-upgrade-script) 
+1. Update the [upgrade script](https://github.com/ISISComputingGroup/EPICS-upgrade/blob/master/upgrade.py) to include the latest version (this is done on master). Steps to do this are in [Config Upgrader in section *creating a production upgrade script*](/tools/Config-Upgrader) 
     1. After committing these changes to `master` on the `EPICS-upgrade` submodule, don't forget to push the new submodule version to `master` on the top `EPICS` branch. This is needed to make sure you changes appear on the release branch created in the next step. 
 1. For packages which are published on `PyPI`, in particular `genie_python` and `ibex_bluesky_core`, create PyPI releases if needed.
     1. These packages are released by performing a `git tag x.y.z` on a checkout of `main`, where `x.y.z` is the new version you want to release. Push the tag using `git push origin tag x.y.z`. They will then build in github actions, and prompt to "approve" the release pipeline to PyPI. 
@@ -76,6 +86,7 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
 1. Do the same for the `EPICS32` 32-bit build, replacing `EPICS` with `EPICS32` everywhere in the commands above.
 1. Check release is now listed in [`https://control-svcs.isis.cclrc.ac.uk/git/?a=project_list;pf=releases`](https://control-svcs.isis.cclrc.ac.uk/git/?a=project_list;pf=releases)
 
+{#creating_release_testing_steps}
 ### Testing
 
 Using GitBash, update the `experiment controls public share` has the most recent version of `ibex_utils` from Git (i.e. do git pull) - this is so the most recent install script will be used for testing and install. In git bash you can do a `cd` with the windows path but just change `\` to `/` e.g. `cd //isis/somewhere`. When you do a git operation it may warn about directory ownership, just follow the command it suggests to add an exception and then git try again. You should:
@@ -83,8 +94,9 @@ Using GitBash, update the `experiment controls public share` has the most recent
 * do a `git status` and check for any changes, if there are post on Teams
 * do a `git pull` so you are on the latest `master` branch with no local changes
 
-One or more people should do [manual system tests, using this page](Manual-system-tests).
+One or more people should do [manual system tests, using this page](Manual-System-Tests).
 
+{#creating_release_post_testing_steps}
 ### Post Testing
 
 These steps should only be done once all changes to a release have been made and we are ready to deploy. Here we are creating a tag

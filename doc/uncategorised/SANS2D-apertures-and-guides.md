@@ -1,3 +1,0 @@
-> [Wiki](Home) > [The Backend System](The-Backend-System) > [Specific Device IOC](Specific-Device-IOC) > [Miscellaneous motion control](Miscellaneous-Motion-Control) > [SANS2D Apertures and Guides](SANS2D-apertures-and-guides)
-
-The SANS2D apertures and guides are a set of 5 apertures, driven by a Galil, and 5 guides that are controlled by a [Beckhoff](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Beckhoff). The Beckhoff is controlling a set of Stober drives to actually move the devices. A [motion set points](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Motion-Set-points) configuration is used to set all apertures/guides to go to set positions. They use absolute encoders and so do not need to be homed.

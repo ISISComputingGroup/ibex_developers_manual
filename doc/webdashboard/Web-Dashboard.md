@@ -8,7 +8,7 @@ The dataweb service allows some information about each instrument to be viewed i
 
 ## The Overall Architecture
 
-![Architecture](dataweb/images/dataweb_architecture.png)
+![Architecture](dataweb_architecture.png)
 
 The dataweb system consists of a number of parts running on each instrument:
 
@@ -16,7 +16,7 @@ The dataweb system consists of a number of parts running on each instrument:
 
 ### The Archive Engine
 
-The archive engine shown in the [high level design](High-Level-Architectural-Design) produces internal webpages that provides live data on various PVs in HTML format:
+The archive engine shown in the [high level design](/overview/High-Level-Architectural-Design) produces internal webpages that provides live data on various PVs in HTML format:
 
 * INST (located at http://localhost:4812/group?name=INST&format=json) gives data on the PVs associated with the DAE etc.
 * BLOCKS (located at http://localhost:4813/group?name=BLOCKS&format=json) gives data on the current status of all block PVs
@@ -30,7 +30,7 @@ The webserver is run as part of the BlockServer and provides all of the data on 
 
 ### On the Dataweb Server
 
-There are also parts of the system running on a central [webserver](Webserver), which provides external access.
+There are also parts of the system running on a central [webserver](/systems/Webserver), which provides external access.
 
 ### JSON Bourne
 
@@ -84,6 +84,7 @@ If you need to update the archive engine then you will need to:
 1. Run create_icp_binaries.bat
 1. `make clean uninstall install` in `..\EPICS\CSS\master`
 
+{#webdashboard_troubleshooting}
 ## Troubleshooting
 
 ### General Investigation
@@ -99,9 +100,18 @@ As admin open the "Task Scheduler" (there is a shortcut for this on the desktop)
 
 If the instrument archive has never been restarted then the dataweb will fail to show any information and claim that the server hasn't been started. To fix this simple restart the instrument archive.
 
-### Page for Individual Instrument not Working
+{#webdashboard_troubleshooting_instrument_page_not_working}
+### Instrument Page not Working on Web Dashboard
 
-[See here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Other-Troubleshooting#instrument-page-not-working-on-web-dashboard)
+Several causes
+
+1. Check that the instrument is in the list of Instruments in https://github.com/ISISComputingGroup/JSON_bourne/blob/master/webserver.py and that the version on web server is up-to-date.
+
+1. Issues with MySQL in the moment the IBEX server was started (this seems to affect the archiver start up). Check logs of the MySQL service in the `var` area, fix any issues so that MySQL is running correctly again, then restart the IBEX server.
+
+1. If it works in your browser but not he users they may have a old cached copy (this shouldn't happen but we have seen it in Safari). Clear their browser cache and reload.
+
+1. Try restarting `ARINST` on the instrument. It can happen that the archiver does not pick up all PVs to be archived on server startup. A symptom of this is that the configuration file under `EPICS\CSS\master\ArchiveEngine\inst_config.xml` is very short compared to other machines.
 
 ## Future Development Ideas
 

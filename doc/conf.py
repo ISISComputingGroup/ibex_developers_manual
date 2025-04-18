@@ -19,8 +19,15 @@ release = "0.1"
 
 nitpicky = True
 
-myst_enable_extensions = ["dollarmath", "strikethrough", "colon_fence", "linkify"]
-suppress_warnings = ["myst.strikethrough"]
+myst_enable_extensions = [
+    "dollarmath", 
+    "strikethrough", 
+    "colon_fence", 
+    "linkify", 
+    "html_image",
+    "attrs_block",
+]
+suppress_warnings = ["myst.strikethrough", "myst.header"]
 
 extensions = [
     "myst_parser",
@@ -66,5 +73,6 @@ html_css_files = [
 ]
 
 autoclass_content = "both"
-myst_heading_anchors = 1
+myst_heading_anchors = 7
 html_last_updated_fmt = ""
+html_show_copyright = False

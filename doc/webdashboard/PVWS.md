@@ -1,6 +1,4 @@
-# PVWS
-
-(PV Web socket)
+# PVWS (PV Web socket)
 
 PVWS is a tool which lets you get EPICS PV information and expose it via a websocket. We use this for the [web dashboard.](https://github.com/ISISComputingGroup/WebDashboard?tab=readme-ov-file#web-dashboard)
 
