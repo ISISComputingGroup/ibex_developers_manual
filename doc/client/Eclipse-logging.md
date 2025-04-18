@@ -1,6 +1,4 @@
-> [Wiki](Home) > [The GUI](The-GUI) > [Eclipse](GUI-Eclipse) > Eclipse logging
-
-# Logging in the IBEX GUI (Eclipse Client)
+# Eclipse logging
 
 ## Log4j
 We are using the [log4j2](http://logging.apache.org/log4j/2.x/manual/index.html) framework for our logging.

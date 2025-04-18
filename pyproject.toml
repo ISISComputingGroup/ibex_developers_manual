@@ -25,7 +25,7 @@ classifiers = [
 
 dependencies = [
   "sphinx", 
-  "sphinx_rtd_theme", 
+  "sphinx_rtd_theme",
   "myst_parser",
   "sphinx-autobuild",
   "linkify-it-py",

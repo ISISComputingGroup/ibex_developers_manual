@@ -1,14 +1,14 @@
-> [Wiki](Home) > [The GUI](The-GUI) > [Eclipse](GUI-Eclipse) > Common Eclipse issues
+# Common Eclipse issues
 
 Sometimes the error messages that Eclipse gives are a little opaque, so here are some possible solutions for some of the more common issues.
 
-### plugin execution not covered by lifecycle configuration
+## Plugin execution not covered by lifecycle configuration
 
 Go to window -> preferences -> Maven -> Errors/Warnings. Change "Plugin execution not covered by lifecycle configuration" to ignore in the drop down.
 
-### The type XXXXXXX cannot be resolved. It is indirectly referenced from required .class files ###
+## The type XXXXXXX cannot be resolved. It is indirectly referenced from required .class files
 
-#### Errors appear for single plugin
+### Errors appear for single plugin
 Possible solutions (in order of desperation):
 
 * Check the error message: you may need to add a dependency to the plugin that contains XXXXXXX. For example: if the error message is ```The type org.eclipse.ui.plugin.AbstractUIPlugin cannot be resolved. It is indirectly referenced from required .class files``` then the org.eclipse.ui plugin requires adding.bundle to the required bundle in the manifest file of your plugin.
@@ -16,7 +16,7 @@ Possible solutions (in order of desperation):
 * Remove JRE System Library from the complaining plug-in's Java Build Path then re-add it.
 * This can also occur in similar cases to the **Invalid class hierarchy**.
 
-#### Errors appear across entire project
+### Errors appear across entire project
 
 Suggests that eclipse has got itself into a funny state. Try `Project > Clean` first, if that does not get rid of the problems, try:
 1. Reset the targetplatform: Open file in `uk.ac.stfc.isis.ibex.targetplatform`, reload dependencies if they are in error, then click `Reload Target Platform` top right
@@ -24,7 +24,7 @@ Suggests that eclipse has got itself into a funny state. Try `Project > Clean` f
 3. Confirm the problems have disappeared. (you may need to repeat step 1 & 2 a couple of times)
 4. Launch application from `ibex.product` (little green arrow on the top right) and confirm the client starts
 
-### Invalid class hierarchy ###
+## Invalid class hierarchy
 
 * Make sure that you don't have any circular dependencies. That is package A imports package B imports package A.
 * If you have several layers of derived dependencies, particularly containing CSStudio or eclipse classes, make sure the correct bundles have been imported. Dependencies are not necessarily re-exported from the intermediate layers by default. There are two solutions:
@@ -32,7 +32,7 @@ Suggests that eclipse has got itself into a funny state. Try `Project > Clean` f
     * Go through the classes you derive from. In their bundles go to the dependencies menu and click on the plugin you're deriving from. Click properties and check the box that says "Reexport this dependency". Once the intermediate layers all reexport their dependencies then it should become available to your class.
 
 
-### Product XXXXXXXXXXX.product could not be found ###
+## Product XXXXXXXXXXX.product could not be found
 
 Typically is followed by a lot of errors relating to bundle resolution, for example:
 
@@ -75,21 +75,20 @@ Possible solution:
 
 * Check the offending plug-in has been added to one of the feature projects as a plug-in
 
-### New plugin is not available (and possibly crashing existing plugins) ###
+## New plugin is not available (and possibly crashing existing plugins)
 
 This might be difficult to find as an error, and it may not exist for other developers - even on the same branch!
 Adding the plugin directly to your configuration solves this.
 
-### Plugins compile fine but dependencies cause errors at runtime ###
+## Plugins compile fine but dependencies cause errors at runtime
 
 If you can run the application fine but are seeing a `java.lang.NoClassDefFoundError` at runtime, try re-setting the target platform, synchronizing `client.product` (under "testing" in the product overview), and doing a clean.
 
-### Menu items are missing ###
+## Menu items are missing
 
 This is usually because a dependency is missing. See "I really cannot work out why the GUI won't start!" below.
 
-### I really cannot work out why the GUI won't start! ###
-#### Also for runtime error "No application ID" ####
+## No application ID
 
 Starting the GUI via Eclipse just doesn't seem to work and I cannot see why!
 
@@ -111,13 +110,13 @@ Sometimes eclipse will tell you that you have errors in various projects when yo
 - In `uk.ac.stfc.isis.ibex.targetplatform`, open `uk.ac.stfc.isis.ibex.targetplatform.target` and click "set as target platform". 
 - If all else fails, delete all the projects from eclipse's workspace and reimport them.
 
-#### The GUI starts but looks strange and some items (e.g. menu bar, perspective buttons) are missing ####
+## The GUI starts but looks strange and some items (e.g. menu bar, perspective buttons) are missing
 
 This can happen if the wrong ".product" file is run and not all plugins are defined in the application.
 
 * Make sure you *only* run ibex.product in uk.ac.stfc.isis.ibex.**client**.product *not* any other ".product" file in the workspace e.g. uk.ac.stfc.isis.ibex.product
 
-### I can't see changes in a new branch
+## I can't see changes in a new branch
 
 Sometimes when you check out a new branch in the ibex GUI repository, you won't see any changes in the GUI. You can fix this by following the steps below:
 
@@ -125,6 +124,6 @@ Sometimes when you check out a new branch in the ibex GUI repository, you won't 
 1. Then, while checked out to the branch you want to see the changes on, perform a `git clean -fdx && git reset HEAD --hard` to reset the git repository. This will remove any changes you have made to the branch.
 1. Restart Eclipse and repeat the steps to get the GUI working from [Building the GUI](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Building-the-GUI).
 
-### Build fails with `[ERROR] Failed to resolve target definition ... targetplatform.target: Could not find "org.eclipse.e4.tools.spies.feature.feature.group..." in the repositories of the current location`
+## Build fails with `[ERROR] Failed to resolve target definition ... targetplatform.target: Could not find "org.eclipse.e4.tools.spies.feature.feature.group..." in the repositories of the current location`
 
 This probably means that our pinned target has gone out of date and needs updating. Open the Eclipse IDE and click on `org.eclipse.tools/latest` and click `update` this should fail and show `Unable to locate installable unit ...`. To fix this remove the plugin and then add it from the `software site `, work with `org.eclipse.e4.core.tools.update - http://download.eclipse.org/e4/snapshots/org.eclipse.e4.tools/latest` then you add `Eclipse E4 - All Spies`.

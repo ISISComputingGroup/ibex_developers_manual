@@ -9,7 +9,7 @@
 import os
 import sys
 
-project = "IBEX Developers Manual"
+project = "IBEX Developer's Manual"
 copyright = ""
 author = "ISIS Experiment Controls"
 release = "0.1"
@@ -18,14 +18,6 @@ release = "0.1"
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 nitpicky = True
-nitpick_ignore_regex = [
-    ("py:func", r"^(?!ibex_bluesky_core\.).*$"),
-    ("py:class", r"^(?!ibex_bluesky_core\.).*$"),
-    ("py:class", r"^.*\.T$"),
-    ("py:obj", r"^.*\.T$"),
-    ("py:class", r"^.*\.T.*_co$"),
-    ("py:obj", r"^.*\.T.*_co$"),
-]
 
 myst_enable_extensions = ["dollarmath", "strikethrough", "colon_fence", "linkify"]
 suppress_warnings = ["myst.strikethrough"]
@@ -59,14 +51,20 @@ html_context = {
     "conf_py_path": "/doc/",  # Path in the checkout to the docs root
 }
 
+html_title = "IBEX Developer's Manual"
+html_short_title = "Dev Manual"
 html_theme = "sphinx_rtd_theme"
 html_logo = "logo.svg"
 html_theme_options = {
     "logo_only": False,
     "style_nav_header_background": "#343131",
-    'body_max_width': None,
 }
-html_favicon = "favicon.svg"
+html_favicon = "favicon.ico"
+html_static_path = ["_static"]
+html_css_files = [
+    'css/custom.css',
+]
 
 autoclass_content = "both"
-myst_heading_anchors = 3
+myst_heading_anchors = 1
+html_last_updated_fmt = ""

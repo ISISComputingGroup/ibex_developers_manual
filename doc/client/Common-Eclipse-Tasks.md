@@ -1,4 +1,4 @@
-> [Wiki](Home) > [The GUI](The-GUI) > [Eclipse](GUI-Eclipse) > Common Eclipse tasks
+# Common Eclipse tasks
 
 ## Add A New Plugin
 

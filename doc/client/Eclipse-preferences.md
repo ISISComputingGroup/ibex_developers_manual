@@ -1,4 +1,4 @@
-> [Wiki](Home) > [The GUI](The-GUI) > [Eclipse](GUI-Eclipse) > Eclipse preferences
+# Eclipse preferences
 
 There are two sorts of settings. 
 

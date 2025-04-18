@@ -41,4 +41,27 @@ client/System-Testing-with-Squish
 client/Test-naming
 ```
 
-# Web Dashboard
+## Eclipse
+
+```{toctree}
+:glob:
+:titlesonly:
+
+client/Common-Eclipse-Tasks
+client/Common-Eclipse-Issues
+client/Creating-the-IBEX-Developer-Version-of-Eclipse
+client/Eclipse-RCP
+client/Eclipse-logging
+client/Eclipse-preferences
+client/Checkstyle-setup
+client/Dictionary-setup
+```
+
+## CS-Studio in the GUI
+
+```{toctree}
+:glob:
+:titlesonly:
+
+client/GUI-CSS
+```

@@ -1,4 +1,6 @@
-# Releases
+# Releases & Deployment
+
+## Releases
 
 ```{toctree}
 :glob:
@@ -8,9 +10,9 @@ deployment/Creating-a-release
 deployment/Manual-system-tests
 ```
 
-# Deployment
+## Deployment
 
-## IBEX
+### IBEX
 
 ```{toctree}
 :glob:
@@ -25,7 +27,7 @@ deployment/Reviewing-Deploy-Tickets
 deployment/Deploy-script-workflow
 ```
 
-## Supporting software
+### Supporting software
 
 ```{toctree}
 :glob:
@@ -37,7 +39,7 @@ deployment/Upgrade-Java
 deployment/Upgrade-ISISICP
 ```
 
-# Patching
+## Patching
 
 ```{toctree}
 :glob:
@@ -49,11 +51,21 @@ deployment/Release-Single-IOC
 deployment/Modifying-Plugins-on-a-Deployed-Client
 ```
 
-# VHD Build & Deployments
+## VHD Build & Deployments
 
 ```{toctree}
 :glob:
 :titlesonly:
 
 deployment/Mount-or-create-IBEX-VHDs
+```
+
+## Containers
+
+```{toctree}
+:glob:
+:titlesonly:
+
+deployment/Containerising-an-IOC
+deployment/Containerising-the-Archiver-Appliance
 ```
