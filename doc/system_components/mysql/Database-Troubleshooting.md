@@ -12,6 +12,7 @@ To see which PVs are doing this
 
 Look for mysqld.exe task running in task manager or for the service MYSQLXX (currently 80) running. If it is not running log files are in `...var\mysql\Data\XXX.err`. To start it as an admin start the services from the start menu then start the MYSQLXX service.
 
+{#database_troubleshooting_reduce_space}
 ## Reducing database disc space
 
 The database resides on the `Var` instrument disk volume, so can be responsible for this looking full; however there are also IOC log files on this volume that may instead be, or also be, the cause.

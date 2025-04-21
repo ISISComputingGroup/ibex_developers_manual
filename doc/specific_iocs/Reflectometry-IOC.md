@@ -70,6 +70,7 @@ The status, log and active problems get cleared every time a "move" is issued. T
 
 ## Other Concepts
 
+{#reflectometry_footprint_calculator}
 #### Footprint Calculator
 
 The footprint calculator calculates the resolution and footprint on the sample based on the slit gaps, distances between slits and sample length. This object is owned by the beamline. Currently, the footprint and resolution values are read-only.

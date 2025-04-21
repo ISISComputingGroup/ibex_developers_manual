@@ -40,9 +40,7 @@ To check whether access security is working properly it can be useful to use a `
 
 ## Even more information
 
-https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/EPICS-basics#Access-Security
-
-https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Access-Gateway
+- [Access Gateway](/system_components/Access-Gateway)
 
 ## Past approaches / future extensions
 

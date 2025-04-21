@@ -2,7 +2,7 @@
 
 ## Script generator tab is not shown
 
-By default the script generator is disabled in the IBEX GUI. To enable it [Follow this step](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/The-IBEX-Script-Generator#adding-the-perspective-into-the-client)
+By default the script generator is disabled in the IBEX GUI. To enable it [Follow this step](#scriptgenerator_enable_perspective)
 
 ## Cannot open generated script in notepad++ from the FileMessageBox
 

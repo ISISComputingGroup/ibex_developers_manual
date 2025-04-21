@@ -24,4 +24,4 @@ If the smart monitor can't talk by IP or on it's webserver, but all looks plugge
 
 ### Newport SMC100 Motion Controller
 
-This system is also used with an [SMC100](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/SMC100) single axis stage to position the sample inside the magnet itself.
+This system is also used with an [SMC100](../motors/SMC100) single axis stage to position the sample inside the magnet itself.

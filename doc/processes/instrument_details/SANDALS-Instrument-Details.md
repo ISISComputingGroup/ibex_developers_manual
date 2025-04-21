@@ -61,7 +61,7 @@ TPG26x support was originally implemented via [#1411](https://github.com/ISISCom
 
 {#sandals_notePLC}
 ##### Note: Gate Valve PLC #####
-SANDALS has an [Omron PLC](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Omron-FINS) to control two gate valves, one of which has not been set up yet. `GV2` is currently in use and has been set up in SANDALS' base component. The PV for the V1 valve already exists so is ready to create blocks for when it is set up correctly, but currently nothing is wired up on the PLC end. We can still read the status for it. 
+SANDALS has an [Omron PLC](/specific_iocs/plcs/Omron-FINS) to control two gate valves, one of which has not been set up yet. `GV2` is currently in use and has been set up in SANDALS' base component. The PV for the V1 valve already exists so is ready to create blocks for when it is set up correctly, but currently nothing is wired up on the PLC end. We can still read the status for it. 
 
 {#sandals_noteEurotherm}
 ##### Note: Eurotherm #####
@@ -89,12 +89,12 @@ More information on [IRIS Furnaces](https://www.isis.stfc.ac.uk/Pages/High-tempe
 
 {#sandals_noteSampleChanger}
 ##### Note: SANDALS Sample Changer #####
-The [SANDALS sample changer](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/SANDALS/SANDALS_Sample_Changer_bottom.jpg) can hold up to 15 samples.  It has recently been upgraded to use a [Beckhoff PLC](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Beckhoff) which controls the jaws as well. 
+The [SANDALS sample changer](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/SANDALS/SANDALS_Sample_Changer_bottom.jpg) can hold up to 15 samples.  It has recently been upgraded to use a [Beckhoff PLC](/specific_iocs/motors/Beckhoff) which controls the jaws as well. 
 
 {#sandals_noteWaterBath}
 ##### Note: Water Bath #####
 SANDALS uses two types of water bath, both Julabo models: FP-50 and [FP-52](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/SANDALS/SANDALS_Julabo_FP52.jpg).  
-See [supported Julabo models](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Julabo) for more details.
+See [supported Julabo models](/specific_iocs/temp_controllers/Julabo) for more details.
 SANDALS uses the FP-52 model of Julabo most frequently (used in conjunction with the [Sample Changer](#sandals_noteSampleChanger)).  Sometimes SANDALS uses water as the coolant/heating medium; sometimes it uses oil or glycol as the coolant/heating medium (Julabo/Presto A40 device).  SANDALS has also used Haake water bath in the past, but none of the current instrument scientists know anything about this (so it might have been a one-off).
 
 {#sandals_noteChell}

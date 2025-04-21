@@ -26,7 +26,7 @@ Then edit your run configuration and include `-agentlib:hprof=heap=dump,format=b
 
 ## See also
 
-https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Debugging-memory-leaks-in-the-IBEX-GUI
+[Debugging memory leaks in the GUI](Debugging-memory-leaks-in-the-IBEX-GUI).
 
 ## JStack
 

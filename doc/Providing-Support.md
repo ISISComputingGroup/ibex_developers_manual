@@ -108,7 +108,7 @@ There are a number of tips for [trouble shooting](#all_troubleshooting_links) al
   <summary>I can't see the dataweb for {instrument}</summary>
  
   1. Check whether or not you can see that dataweb, and how extensive the failure is (one instrument, many, all) (TODO: Find out the solution for this, is it always restart the dataweb server/JSON_BOURNE?
-  2. Try the troubleshooting section on the [dataweb](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Web-Dashboard#troubleshooting)
+  2. Try the troubleshooting section on the [dataweb](#webdashboard_troubleshooting)
   3. If this doesn't work try restarting ndaextweb3
 
 </details>
@@ -119,7 +119,7 @@ There are a number of tips for [trouble shooting](#all_troubleshooting_links) al
   1. I can't talk to device/my blocks are showing as disconnected/IOC isn't working
       - Check that the IOC is running
       - Check that the device is turned on
-      - Check if your problem is already listed on the [device/ioc wiki pages](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Specific-Device-IOC).
+      - Check if your problem is already listed on the [device/ioc wiki pages](Specific-IOCs).
       - If the device is a DAQmx one, look at it in MAX, and perform a self-test
       - Device not responding
           * Stop the IOC (or VI) and try to connect via a more direct route, e.g. Putty
@@ -153,7 +153,7 @@ There are a number of tips for [trouble shooting](#all_troubleshooting_links) al
      - Verify that the device expected on that port is the device connected on that port
      - Treat it as a device that is unable to interact
      - Check the error logs (either through the log interface in the GUI, the console logs, or other appropriate method)
-     - Verify that the behaviour you're seeing is not a known quirk of the device. These quirks are often detailed on the [device/ioc wiki pages](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Specific-Device-IOC)
+     - Verify that the behaviour you're seeing is not a known quirk of the device. These quirks are often detailed on the [device/ioc wiki pages](Specific-IOCs)
 
 </details>
 
@@ -170,7 +170,7 @@ There are a number of tips for [trouble shooting](#all_troubleshooting_links) al
 
   1. There are a few things that have services which run, especially the databases, and it is possible after a crash/other restart that these don't start up again, starting task manager as an administrator should allow you to start the service in question
   1. If it is not one of our services (e.g. swipe systems, ERA), we cannot resolve the issue, escalate as appropriate (TODO: Make sure the different escalation methods are documented)
-  1. If the MCR news service isn't working, then so long as there is space, restarting our [webserver](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Webserver) may help.
+  1. If the MCR news service isn't working, then so long as there is space, restarting our [webserver](/systems/Webserver) may help.
   
 </details>
 

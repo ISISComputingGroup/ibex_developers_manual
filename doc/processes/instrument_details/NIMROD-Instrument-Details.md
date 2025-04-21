@@ -25,7 +25,7 @@ Julabo | FP-52 | Water Bath | RS-232 | | [see Water Bath note](#nimrod_note-wate
 Oerlikon | Centre One | Pressure Gauge | RS-232 | EPICS | [see Oerlikon note](#nimrod_note-oerlikon)
 MKS | PDR2000 | Pressure Transducer | RS-232 | [EPICS](http://www.aps.anl.gov/epics/modules/manufacturer.php#MKS) | [see MKS note](#nimrod_note-mks)
 MKS | [PR4000B](https://www.mksinst.com/f/pr4000b-digital-power-supply) | Digital Pressure Controller | RS-232 | [EPICS](http://www.aps.anl.gov/epics/modules/manufacturer.php#MKS) | [see MKS note](#nimrod_note-mks)
-ISIS | [TiZr Cell](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Specific-Device-IOC) | Eurotherms | RS-232 | | 
+ISIS | [TiZr Cell](/specific_iocs/cells/TiZr-Sample-Can) | Eurotherms | RS-232 | | 
 
 {#nimrod_note-dae}
 ##### Note: DAE #####
@@ -62,10 +62,10 @@ As of July 2023, the lower limit for the vertical axis is not physically working
 {#nimrod_note-water-bath}
 ##### Note: Water Bath #####
 NIMROD uses two types of water bath, both Julabo models: FP-50 and [FP-52](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/NIMROD/NIMROD_Julabo_FP52.jpg).  
-See [supported Julabo models](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Julabo) for more details.
+See [supported Julabo models](/specific_iocs/temp_controllers/Julabo) for more details.
 NIMROD uses the FP-52 model of Julabo most frequently (+90%), used in conjunction with the [Sample Changer](#nimrod_note-nimrod-sample-changer).  Sometimes NIMROD uses water as the coolant/heating medium; sometimes it uses oil or glycol as the coolant/heating medium (Julabo/Presto A40 device).
 
-According to the [Water Baths](https://www.isis.stfc.ac.uk/Pages/Water-Baths.aspx) page, NIMROD uses WB21 (which is a Julabo FB52-SL).  This contradicts the above information - need to check this.   The [Julabo Commands](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/backend_system/IOCs/julabo_commands.xlsx) spreadsheet indicates that WB21 is configured to use the "small" Julabo command set.
+According to the [Water Baths](https://www.isis.stfc.ac.uk/Pages/Water-Baths.aspx) page, NIMROD uses WB21 (which is a Julabo FB52-SL).  This contradicts the above information - need to check this.   The [Julabo Commands](/specific_iocs/temp_controllers/julabo_commands.xlsx) spreadsheet indicates that WB21 is configured to use the "small" Julabo command set.
 
 NIMROD also uses oil bath OB-1 (Presto A40 oil bath) from time to time.
 

@@ -28,7 +28,7 @@
 - People are comfortable enough leading the sprint planning meeting, except for the program increment bit.
 - People are also unsure about all the other pre- and post-admin surrounding the actual meeting itself.
 - DK volunteered to check we have a comprehensive list of necessary steps written down on the wiki (or elsewhere that's accessible)
-    - We have https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Sprint-Planning - check this is up to date
+    - We have [sprint planning](/processes/meetings/Sprint-Planning) - check this is up to date
 
 ### Other comments (Mad/Glad/Sad)
 - Glad: Support has been going well, feels like we have been good at addressing issues. However, we are also aware that TS1 has not come online yet, will likely make support more challenging

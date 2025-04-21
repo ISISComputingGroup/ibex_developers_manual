@@ -85,7 +85,7 @@ You may have built with Java 11 but are running with Java 8 make sure the path i
 You can verify that you are using the correct java version by running `java -version` in a command prompt. It should return java 11 in a non-EPICS terminal, or java 8 in an epics terminal (note, you cannot launch the GUI from an EPICS terminal). If it returns the incorrect version, you can add the correct version to your PATH.
 
 ## File set from project ... has no valid check configuration.
-Try [setting up the checkstyle](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Checkstyle-setup).
+Try [setting up the checkstyle](eclipse/Checkstyle-setup).
 
 ## GUI claims another instance is running upon start (but there isn't)
 Navigate to: `C:/Users/<username>/AppData/Local/IBEX` and delete the file "instance.txt"

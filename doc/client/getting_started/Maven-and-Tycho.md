@@ -366,7 +366,3 @@ In IBEX we define a separate project called `uk.ac.stfc.isis.ibex.client.product
 ```
 
 The key area is the materialize-products section, this tells Tycho to actually create the product. Without this the build runs and checks everything is okay, but does not produce an executable.
-
-## How to add a new plugin to the Maven build ##
-
-https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Adding-a-Plugin-or-Feature-to-Maven-Build

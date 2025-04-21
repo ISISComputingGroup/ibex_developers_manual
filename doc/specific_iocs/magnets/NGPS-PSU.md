@@ -10,7 +10,7 @@ See comments on https://github.com/ISISComputingGroup/IBEX/issues/3447 for detai
 
 ### Ethernet comms
 
-See details of setup here: https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Muon-NGS-Power-Supply-Firewall
+See details of setup [here](/specific_iocs/magnets/Muon-NGS-Power-Supply-Firewall)
 
 ### Status of the device
 

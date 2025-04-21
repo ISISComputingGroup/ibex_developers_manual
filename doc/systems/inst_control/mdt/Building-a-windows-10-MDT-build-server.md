@@ -69,4 +69,4 @@ This wiki page describes the process for setting up a new `NDXMDTSERVPROD` machi
   * Ensure user details in this file match the MDT account detailed on the passwords page
 - Right click "MDT Deployment Share" -> update deployment share
 
-Congratulations! You should now have a working MDT build server. See [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/MDT-(Microsoft-deployment-toolkit)) for details about how to *use* MDT.
+Congratulations! You should now have a working MDT build server. See [here](../MDT-(Microsoft-deployment-toolkit)) for details about how to *use* MDT.

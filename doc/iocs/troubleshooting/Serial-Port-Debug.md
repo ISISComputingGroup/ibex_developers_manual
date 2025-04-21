@@ -28,6 +28,6 @@ to startup, this will print all com events except writes – to see writes too u
 ```
 asynSetOption("L0", -1, "eventmask", "0x11f")
 ```
-You can also stop IOC and try using the [`testSerialPort` command](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/TestSerialPort)
+You can also stop IOC and try using the [`testSerialPort` command](TestSerialPort)
 
 It is also possible to use the new "escape" and "purge" options with asynSetOption at runtime to manipulate the various things about the send and receive buffers and line status.  

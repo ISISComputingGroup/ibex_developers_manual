@@ -1,6 +1,6 @@
 # Exercise 7 - Engineering Corrections
 
-See the [Engineering Corrections Wiki Page](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Composite-Driving-Layer#engineering-offset) for more detail.
+See the [Engineering Corrections Wiki Page](#reflectometry_engineering_offset) for more detail.
 
 Engineering corrections are offsets that are added to set points at the Driver level before they are sent off to the underlying motor axes, and subtracted from the readback value before it is propagated up to the component level. These are used to account for inaccuracies in the physical engineering of the beamline. For instance, in the perfect world of the beamline geometry model, all mirrors are perfectly flat and extend into infinite space, whereas in reality, they may be slightly concave or the neutrons hit it off the centre of rotation so that you get slight drift for different mirror angles.
 

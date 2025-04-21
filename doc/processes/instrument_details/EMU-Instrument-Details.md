@@ -52,7 +52,7 @@ EMU uses Julabo water baths
 ##### Note: Water Baths #####
 1. Julabo Water Bath
    * no information on specific Julabo Water Baths - maybe EMU uses water baths from the pool?
-   * consult the [Julabo commands](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/backend_system/IOCs/julabo_commands.xlsx) spreadsheet for specific details of which set of commands are used individual water baths.
+   * consult the [Julabo commands](/specific_iocs/temp_controllers/julabo_commands.xlsx) spreadsheet for specific details of which set of commands are used individual water baths.
    * EMU may use oil or glycol as the coolant/heating medium (Julabo/Presto A40 device). 
 1. See also [Water Baths](https://www.isis.stfc.ac.uk/Pages/Water-Baths.aspx) list
 
@@ -150,7 +150,7 @@ EMU has the following specialist panels:
 1. EMU Traverse field supply
 1. EMU Steering Magnet
 1. HIFI Metrolab PT2025 (NMR Readout)
-1. [MUON Zero Field Controller](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Zero-field-controller)
+1. [MUON Zero Field Controller](/specific_iocs/magnets/Zero-field-controller)
 1. MUON Magnets Danfysik
 1. MUON FrontEnd Control
 1. MUON FrontEnd Magnet Monitoring

@@ -8,7 +8,7 @@ This IOC is designed to be used in conjunction with a sequencer IOC, which uses 
 
 ## Corrections applied to the input fields
 
-The maths which defines these operations is described in finer detail [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Zero-field-controller#zero-field-controller-feedback-loop).
+The maths which defines these operations is described in finer detail [here](../magnets/Zero-field-controller).
 
 1. Magnetometer range scaling
    - The three field components are multiplied by a scaling factor to transform the input on to the range of the magnetometer. The scaling factor is set by the macro `$(RANGE)`, and is held in the PV `$(P)RANGE`.

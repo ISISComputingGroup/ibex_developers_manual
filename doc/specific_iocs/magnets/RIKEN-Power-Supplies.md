@@ -14,7 +14,7 @@ The original documentation on the physical setup is at `\\...\shares\ISIS_Experi
 
 ## IOCs and Macros
 
-Each of the individual Danfysik power supplies is controlled by an individual [Danfysik](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Danfysik) IOC (i.e. a one-to-one mapping).  Each IOC is configured accordingly using its macro values, with a different COM port for each (as described above).
+Each of the individual Danfysik power supplies is controlled by an individual [Danfysik](Danfysik) IOC (i.e. a one-to-one mapping).  Each IOC is configured accordingly using its macro values, with a different COM port for each (as described above).
 
 The RB2 PSU is _also_ controlled by a Danfysik IOC (actually two - one for each board, see below).  Its protocol is very similar to a model 8500, and so the `DEVTYPE` macro is set to this, with the only difference being the command for setting the current.  Rather than writing an entirely separate protocol file, it was decided to create a `protocol_override` macro and set this to a file containing the single command definition.
 
@@ -36,7 +36,7 @@ The IBEX configuration contains several components, each of which relates to the
 
 ## Debugging & Troubleshooting
 
-For Danfysik PSUs, see separate [Wiki Page](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Danfysik) for more specific information.
+For Danfysik PSUs, see separate [Wiki Page](Danfysik) for more specific information.
 
 ### Individual Danfysik PSU won't talk at all
 

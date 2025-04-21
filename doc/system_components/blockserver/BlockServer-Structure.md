@@ -11,6 +11,7 @@ significant parts:
 
 ![Full UML](full_uml.png)
 
+{#blockserver_structure_channel_access}
 ## Channel Access
 
 The BlockServer uses the pcaspy Python module to implement channel access. There are two main means of implementing PVs in the

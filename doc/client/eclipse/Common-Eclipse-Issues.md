@@ -122,7 +122,7 @@ Sometimes when you check out a new branch in the ibex GUI repository, you won't 
 
 1. In Eclipse, remove all the projects from the workspace and close Eclipse.
 1. Then, while checked out to the branch you want to see the changes on, perform a `git clean -fdx && git reset HEAD --hard` to reset the git repository. This will remove any changes you have made to the branch.
-1. Restart Eclipse and repeat the steps to get the GUI working from [Building the GUI](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Building-the-GUI).
+1. Restart Eclipse and repeat the steps to get the GUI working from [Building the GUI](../getting_started/Building-the-GUI).
 
 ## Build fails with `[ERROR] Failed to resolve target definition ... targetplatform.target: Could not find "org.eclipse.e4.tools.spies.feature.feature.group..." in the repositories of the current location`
 

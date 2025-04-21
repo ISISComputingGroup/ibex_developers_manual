@@ -25,7 +25,7 @@ Whilst the Front End control will be undertaken under IBEX, it must integrate wi
 
 {#muonfe_noteMomentumSlits}
 ## Barndoors and Momentum Slits ##
-The barn doors and momentum slits control the muon beam delivered to the 3 muon instruments: HIFI, muSR and EMU.  The control of these devices is described on the [Barndoors & Momentum-Slits](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Barndoors-and-Momentum-Slits-on-MUON-Front-End) page.
+The barn doors and momentum slits control the muon beam delivered to the 3 muon instruments: HIFI, muSR and EMU.  The control of these devices is described on the [Barndoors & Momentum-Slits](/specific_iocs/motor_extensions/jaws/Barndoors-and-Momentum-Slits-on-MUON-Front-End) page.
 
 {#muonfe_noteMotion}
 ##### Note: Motion #####

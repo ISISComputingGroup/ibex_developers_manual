@@ -1,6 +1,6 @@
 # Mercury IPS
 
-The Oxford Instruments Mercury IPS is a superconducting magnet power supply. It is the successor to the [IPS](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Oxford-Instruments-IPS). Much of the information on the IPS wiki page also applies to the Mercury IPS.
+The Oxford Instruments Mercury IPS is a superconducting magnet power supply. It is the successor to the [IPS](Oxford-Instruments-IPS). Much of the information on the IPS wiki page also applies to the Mercury IPS.
 
 Note: although the Mercury IPS is the successor to the "old" IPS, cryogenics prefer to run the older IPS units as they are more reliable.
 

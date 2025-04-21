@@ -16,6 +16,7 @@ To do this you must:
 
 The DAE will mimic the run state, title and period of the DAE it is point to.
 
+{#dae_event_histogram_modes}
 ## Event and Histogram Mode
 The DAE/ICP has two main 'modes' of operation, event mode and histogram mode. In event mode the position and timestamp of every single neutron that the detector finds is passed through the DAE to the ICP and saved into the NeXus file. In histogram mode the DAE will intercept these events and put them into bins based on when they hit the detector. Due to the binning of events histograms lead to some lost information however historically histogrammed data was the only option due to limited data rates. Instruments in general are moving more towards event data but it still has the disadvantage that it will lead to large and unwieldy NeXus files and in some cases offers little benefit as histogramming would be the first step of data analysis anyway.
 
@@ -24,6 +25,7 @@ In reality this mode of operation is actually set per detector card rather than 
 * They have higher flux than other detectors so will dramatically increase file size if put as events
 * They're used mainly for normalisation and diagnostics so loss of precision is not that much of a big deal
 
+{#dae_configuration}
 ## Configuring the DAE/ICP
 There are two settings files inside `EPICS/ICP_Binaries` that are used to configure the ICP at start up, these are `icp_config.xml` and `isisicp.properties`. They contain information that is usually quite fixed for an instrument such as whether to start up in simulation mode, how much memory to use etc. **NOTE:** on in instrument these files live in a different location `c:\labview modules\dae`. The `isisicp.properties` file is used to override settings in `isisicp.default.properties`. 
 

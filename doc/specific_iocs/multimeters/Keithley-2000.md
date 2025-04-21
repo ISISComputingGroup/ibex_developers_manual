@@ -1,6 +1,6 @@
 # Keithley 2000
 
-Note: this page refers to *generic* keithley 2000 multimeter support. For scanning calorimetry experiments (IRIS) see [keithley 2001](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Keithley-2001). For HIFI cryomagnet (2700, but uses a comparable protocol) see [keithley 2700](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Keithley-2700).
+Note: this page refers to *generic* keithley 2000 multimeter support. For scanning calorimetry experiments (IRIS) see [keithley 2001](Keithley-2001). For HIFI cryomagnet (2700, but uses a comparable protocol) see [keithley 2700](Keithley-2700).
 
 The keithley 2000 is a general-purpose multimeter which is portable and can be used on many beamlines. It is a pure multimeter, not a source meter (c.f. 2400 series, which are also capable of sourcing currents).
 

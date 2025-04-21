@@ -6,7 +6,7 @@ This needs to be done regularly (usually once at the start of each cycle) as pos
 
 This is done by scanning individual axes around where we roughly expect the neutron beam to be. The `scan` command provided by the [Scans library](https://github.com/ISISNeutronMuon/InstrumentScripts) moves the motor at regular steps within an interval, taking data at each point, which results in an intensity graph. Depending on the type of axis scanned, the scientists then apply fits to the scan results to look for certain features that indicate where the point of interest is. These slides contain some more detail on the various different types of scans.
 
-The IBEX reflectometry server provides [parameters](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Beamline-Parameters) which can hold displacement and angle of individual components relative to the beam, which provide a convenient way to perform these scans.
+The IBEX reflectometry server provides [parameters](Reflectometry-Beamline-Parameters) which can hold displacement and angle of individual components relative to the beam, which provide a convenient way to perform these scans.
 
 Generally speaking, the process for aligning an axis is as follows:
 1. Open slit gaps to sensible parameters

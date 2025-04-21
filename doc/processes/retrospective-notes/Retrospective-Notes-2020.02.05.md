@@ -42,7 +42,7 @@ Thank you Dom for checking up on these things to keep it in order.
 
 The review column is prioritized (the top is the most urgent to review). There is an urgent tag to use that applies to the whole tickets life cycle.
 
-These urgent tickets should be placed higher in the column and we should be working through the column as per procedure documented at https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Tickets-and-their-Workflow
+These urgent tickets should be placed higher in the column and we should be working through the column as per [procedure documented](/processes/dev_processes/Tickets-and-their-Workflow)
 
 ## Training deployment
 
@@ -54,7 +54,7 @@ A positive point was that our deployment took 3 hours between 2 developers for 1
 
 An alternative to be would be to have virtual machines with IBEX deployed on that we can remote desktop too. This would be a slower experience and we are not sure about connectivity from ATLAS and R78, but this could even be more realistic.
 
-We have extensive documentation for training at https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Training-Instrument-Scientists-in-IBEX
+We have [extensive documentation for training](/processes/meetings_with_scientists/Training-Instrument-Scientists-in-IBEX)
 
 ## This sprint was a bit stressful with EMU and a few things such as IE unexpectedly thrown at us
 

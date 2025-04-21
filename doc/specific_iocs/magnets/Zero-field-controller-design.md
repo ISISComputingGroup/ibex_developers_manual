@@ -148,6 +148,7 @@ When overloaded by a high field, the fluxgate magnetometer can read any random v
 * There is no enforced maximum rate of change. The calculated new currents are applied immediately – the field change itself may be limited by the inductance of the coils and the Kepcos briefly hitting the voltage limits as a result. Similarly in manual, a new current entered should be applied immediately. In practice in a real experiment there might be a large step on initially zeroing the field for a new sample/cryostat but subsequently going back into Auto will only be a small change.
 * The system should be monitored for the currents overloading and this should be fed back to the user
 
+{#zero_field_implementation}
 ## Implementation ##
 **Suggested operation of magnetometer IOC:** (see [ticket #4838](https://github.com/ISISComputingGroup/IBEX/issues/4838) for more details]
 1. On a regular timescale the IOC will read the three axes of the magnetometer. It should then fill in PVs for the **raw field** and **corrected field**: `Mc = (M-O) * C`, as well as its **magnitude**: `Magnitude = sqrt(corrected_X_field^2 + corrected_Y_field^2 + corrected_z_field^2)`.

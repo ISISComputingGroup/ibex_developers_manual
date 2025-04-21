@@ -76,9 +76,9 @@ To update those instruments still on SECI use the folder `...\CompGroup\Calibrat
     - `format_version`: a string of the format number, can be a float. For this version must be 1.
     - `conversion_date`: date for conversion as a string in `YYYY/MM/DD`.
     - `column1_name`: (String) name of the first column.
-    - `column1_units`: (String) units of the first column [should match epics units conventions](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/PV-Units-&-Standards#unit-standards)
+    - `column1_units`: (String) units of the first column [should match epics units conventions](#pv_units_standards)
     - `column2_name`: (String) name of the second column
-    - `column2_units`: (String) name of the second column [should match epics units conventions](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/PV-Units-&-Standards#unit-standards)
+    - `column2_units`: (String) name of the second column [should match epics units conventions](#pv_units_standards)
 1. Tables of data in two columns separated by a comma
     - The first column comprises floats representing temperature.
     - The second column comprises floats representing reading from the sensor.

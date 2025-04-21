@@ -1,6 +1,6 @@
 # PV Sets
 
-PV Sets are a feature that is rarely used, if at all. According to Freddie, it was originally made at the request of an instrument scientist on LARMOR. Later, said scientist said he might not need it anymore and then never came back with the issue. It can only be set for the Galil according to John and Freddie. However, there is a page called Linmot (https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Linmot) in the dev wiki which says that the Linmot IOC should have PV Sets for Engin-X and MAPS, however I could not find any PV Set in any Linmot ioc in any component.
+PV Sets are a feature that is rarely used, if at all. According to Freddie, it was originally made at the request of an instrument scientist on LARMOR. Later, said scientist said he might not need it anymore and then never came back with the issue. It can only be set for the Galil according to John and Freddie. However, there is a page called [Linmot](/specific_iocs/motors/Linmot) in the dev wiki which says that the Linmot IOC should have PV Sets for Engin-X and MAPS, however I could not find any PV Set in any Linmot ioc in any component.
 
 The User wiki has this to say about PV Sets: https://github.com/ISISComputingGroup/ibex_user_manual/wiki/Create-And-Manage-Configurations#ioc-pv-sets .
 

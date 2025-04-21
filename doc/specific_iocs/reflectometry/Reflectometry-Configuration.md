@@ -1,18 +1,18 @@
 # Configuration
 
-### [An in-depth training course for writing a Reflectometry Configuration can be found here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Config-Training-%E2%80%90-Overview-&-Setup)
+### [An in-depth training course for writing a Reflectometry Configuration can be found here](config_training/Reflectometry-Config-Training-%E2%80%90-Overview-&-Setup)
 
 The reflectometry configuration describes the geometry of the beamline and is read by the reflectometry IOC on startup. The config file is written in python and lives in `<config area>/refl/config.py`.
 
 This file needs to import relevant classes and methods used for constructing the configuration via the line `from ReflectometryServer import *`. It should implement a `get_beamline` method, which takes a single `macros` argument, and returns an object of type `Beamline`.
 
-[Jump to Example Configuration](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Configuration#example-configuration)
+[Jump to Example Configuration](#example-configuration)
 
 ## Reference Manual
 
 This section contains an overview of the available building blocks in the form of classes and helper methods, which are used to construct the beamline model.
 
-### [Beamline Constants](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Beamline-Object#beamline-constants)
+### [Beamline Constants](#reflectometry_beamline_constants)
 
 These are fixed values which are exposed by the IOC as PVs of the form `<PREFIX>:REFL:CONST:<NAME>`, but cannot be changed at runtime. They follow a naming convention so that they can be read automatically by the shared reflectometry scripting library. The default set of constants the configuration has to define consists of:
 - `S1_Z`: Z coordinate of Slit 1
@@ -45,8 +45,8 @@ Example:
 BeamlineConstant("MAX_THETA", 1.8, "Maximum Theta value")
 ```
 
-
-### [Components](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Geometry-Components)
+{#reflectometry_components}
+### [Components](Reflectometry-Geometry-Components)
 Components are the central building blocks of the configuration. Each of them represents a node of interaction with the beam on the instrument (either passively tracking or actively affecting it). They are also the connective middle layer element between the user-facing beamline parameters and the composite drivers that talk to low level motors.
 
 #### Types of Component
@@ -101,9 +101,8 @@ This creates a theta component which points at the detector height.
 
 [See example](reflectometry-bench-configuration) for an example of the bench component with parameters
 
-
-
-### [Beamline Parameters](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Beamline-Parameters)
+{#reflectometry_beamline_parameters}
+### [Beamline Parameters](Reflectometry-Beamline-Parameters)
 
 These are the top-level parameters exposed as PVs of the form `<PREFIX>:REFL:PARAM:<NAME>:<SUFFIX>`, which the users can set via the reflectometry front panel or scripting.
 
@@ -134,7 +133,7 @@ Required:
 
 Optional:
 - `description`: A description of this parameter (Default: use parameter `name`)
-- `autosave`: Whether the parameter should be [autosaved](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Beamline-Parameters#parameter-initialisation) to file (meaning that on IOC start up, the last known setpoint is re-applied, rather than inferred from a motor position). If multiple parameters depend on a single motor axis (e.g. `Theta` and `PDOffset` are inferred from point detector height), all but one of them should be autosaved in order to not lose information on the constituent parts of the axis value on restart. It should also be autosaved if a parameter can be parked out of the beam. (Default: `False`)
+- `autosave`: Whether the parameter should be [autosaved](#reflectometry_parameter_init) to file (meaning that on IOC start up, the last known setpoint is re-applied, rather than inferred from a motor position). If multiple parameters depend on a single motor axis (e.g. `Theta` and `PDOffset` are inferred from point detector height), all but one of them should be autosaved in order to not lose information on the constituent parts of the axis value on restart. It should also be autosaved if a parameter can be parked out of the beam. (Default: `False`)
 - `rbv_to_sp_tolerance`: The maximum difference between parameter readback and setpoint values at which it is still considered by the IOC to have arrived at its setpoint. (Default: `0.002`)
 - `custom_function`: A python function that will be run when the parameter is moved to (either as part of a move all, as an individual parameter move or because it is in a mode where another parameter is set). This can be used to set other things in the system that depend on certain parameters, for example INTER uses it to set the wiring table when the point detector is put into and taken out of the beam. The arguments passed are the new value of the setpoint and the original value of the setpoint. To make it future compatible it should also except `*args` and `**kwargs`. If the function returns a string it will be printed to the log.
 - `characteristic_value` (only for axis parameters): This allow a characteristic value from a PV to be displayed next to this parameter. The value for this is the PV name without instrument extension, e.g. `MOT:MTR0101`. These are often used to display raw motor values next to positions relative to the beam.
@@ -198,7 +197,8 @@ def change_dae_tables(point_detector_in_beam, last_point_detector_in_beam):
 
 Here when the point detector goes into or comes out of the beam the DAE tables are changed to be the correct tables.
 
-### [Composite Drivers](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Composite-Driving-Layer)
+{#reflectometry_composite_drivers}
+### [Composite Drivers](Reflectometry-Composite-Driving-Layer)
 
 These objects link the middle-layer component model to low-level motors.
 
@@ -215,8 +215,8 @@ Required:
 
 Optional:
 - `synchronised`: Whether this driver should be able to alter axis velocity when multiple axes are being moved (used for synchronised beamline movement) (Default: `True`)
-- `engineering_correction`: any [corrections](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Composite-Driving-Layer#engineering-offset) that should be applied to the motor position (Default: `None`)
-- `out_of_beam_positions`: A list of possible [parked positions](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Composite-Driving-Layer#out-of-beam-positions) for this axis (Default: `None`). NB if the axis can be parked then any associated parameter will need to be autosaved.
+- `engineering_correction`: any [corrections](#reflectometry_engineering_offset) that should be applied to the motor position (Default: `None`)
+- `out_of_beam_positions`: A list of possible [parked positions](#reflectometry_parking_sequences) for this axis (Default: `None`). NB if the axis can be parked then any associated parameter will need to be autosaved.
 - `pv_wrapper_for_parameter`: change the PV wrapper based on the value of a parameter. This needs a `PVWrapperForParameter(parameter, value_wrapper_map)` where
     - `parameter`: is the beamline parameter that the swap is based on
     - `value_wrapper_map`: is a dictionary of the value and the wrapper to use. If the parameter is at a value not in this list the original wrapper is used.
@@ -236,6 +236,7 @@ IocDriver(s3_comp, ChangeAxis.POSITION, JawsCentrePVWrapper("MOT:JAWS3", is_vert
         pv_wrapper_for_parameter=PVWrapperForParameter(s3_params["block"], {"South": MotorPVWrapper("MOT:JAWS3:JS:MTR")}))
 ```
 
+{#reflectometry_pv_wrappers}
 ### PV Wrappers
 
 Wrappers around lower level motors to read, monitor and cache relevant PV values (such as SP/RBV positions, or velocity related fields for synchronising moves). 
@@ -265,13 +266,13 @@ SlitGapPVWrapper("JAWS1", is_vertical=False)
 SlitCentrePVWrapper("JAWS1", is_vertical=True)
 ```
 
-### [Modes of Operation](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Beamline-Object)
+### [Modes of Operation](Reflectometry-Beamline-Object)
 
 Modes allow users to switch between different experimental setups more easily. They take the following arguments:
 - `name`: The name of the mode (e.g. `NR`, `Liquid`)
 - `beamline_parameters_to_calculate`: The list of parameters that should automatically track the beam path when this mode is active
 - `sp_inits`: A dictionary of `parameter:value` pairs to be applied when entering this mode (Default: empty)
-- `is_disabled`: denotes that this is a special ["disabled" mode](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Beamline-Object#disabled-mode), which means all beam tracking is disabled. This is useful for aligning individual parameters in isolation. (Default: False) 
+- `is_disabled`: denotes that this is a special ["disabled" mode](#reflectometry_disabled_mode), which means all beam tracking is disabled. This is useful for aligning individual parameters in isolation. (Default: False) 
 
 #### Example:
 ```Python
@@ -280,7 +281,7 @@ pnr_inits = {"SM_inbeam": True}
 BeamlineMode("Polarised NR", pnr_params, sp_inits=pnr_inits, is_disabled=False) 
 ```
 
-## [Footprint Calculator](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-IOC#footprint-calculator)
+## [Footprint Calculator](#reflectometry_footprint_calculator)
 
 The footprint calculator provides values for beam footprint and resolution based on the current slit gaps / theta, and exposes them to the front panel and scripting via PVs. It is instantiated by the beamline object if a `FootprintSetup` argument is passed, which defines relevant dimensions on the beamline.
 
@@ -304,7 +305,7 @@ The footprint setup takes the following arguments:
 footprint_setup = FootprintSetup(z_s1, z_s2, z_s3, z_s4, z_sample, s1vg, s2vg, s3vg, s4vg, theta, lambda_min, lambda_max)
 ```
 
-## [Beamline](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Beamline-Object)
+## [Beamline](Reflectometry-Beamline-Object)
 
 The top-level `Beamline` object is what is returned to the reflectometry IOC from reading the configuration and it encompasses everything else created in there.
 
@@ -406,6 +407,7 @@ Add jaws-specific parameters and related drivers for a given jawset, i.e. horizo
 - `include_centres`: Whether parameters for centres should be created or gaps only (default: `False`)
 - `beam_blocker`: string containing code for beam blocker config, `N`, `S`, `E`, `W` for each blade which blocks the beam. See [Reflectometry Beam Blocker](Reflectometry-Beam-Blocker)
 
+{#reflectometry_as_mode_correction}
 ### `as_mode_correction`
 Helper method for you define a constant correction to be applied for specific modes only.
 

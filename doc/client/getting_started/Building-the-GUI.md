@@ -41,7 +41,7 @@ IBEX should now build but there will probably be some errors. You can clear them
 
 **Important Notes:** 
 * you will need JDK 21 installed to launch the IBEX GUI successfully.
-* you should also [set up the checkstyle](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Checkstyle-setup), do it sooner than later as it may prevent potential errors
+* you should also [set up the checkstyle](../eclipse/Checkstyle-setup), do it sooner than later as it may prevent potential errors
 
 ### If you see a “Plugin execution not covered by lifecycle configuration” error
 1. From the menu bar choose: Window->Preferences
@@ -82,7 +82,7 @@ Sometimes eclipse will tell you that you have errors when you open it. The follo
 - Refresh, clean and build all projects. Select all projects, press F5 to refresh, then go to `Project -> Clean` to clean all projects.
 - Go to `Run -> Run Configurations -> Plugins` and press "Add required plugins". You can now validate/apply your choice.
 - In `uk.ac.stfc.isis.ibex.targetplatform`, open `uk.ac.stfc.isis.ibex.targetplatform.target` and click "set as target platform". 
-- If you have done all these steps and it still doesn't work, there is more troubleshooting information [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Common-Eclipse-Issues).
+- If you have done all these steps and it still doesn't work, there is more troubleshooting information [here](../eclipse/Common-Eclipse-Issues).
 - If all else fails, delete all the projects from eclipse's workspace and reimport them.
 
 Eclipse can automatically set the Java standard for some projects to `1.8`. If you are seeing errors such as `var cannot be assigned to a type` on certain projects, navigate to the project in the explorer, then right-click and choose Properties->Java Compiler->Configure Workspace Settings, and then set the required Java standard to `11`.
@@ -91,4 +91,4 @@ If you have a lot of errors make sure that `-Djdk.util.zip.disableZip64ExtraFiel
 
 ## Further Troubleshooting ##
 
-Additional support can be found [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/GUI-Troubleshooting).
+Additional support can be found [here](../GUI-Troubleshooting).

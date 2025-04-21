@@ -15,6 +15,7 @@ The following general design points were agreed:
   * Py4j is already included in our GUI build and allows for Java-Python communication
   * We need this process to be implemented in Python because it needs to be able to run arbitrary user-supplied python parameter validators (see also "The `ScriptDefinition` class", below).
 
+{#scriptgenerator_script_definition}
 ## The `ScriptDefinition` class
 
 Scientist defined script definitions must be python 2/3 compatible to work with genie python currently.

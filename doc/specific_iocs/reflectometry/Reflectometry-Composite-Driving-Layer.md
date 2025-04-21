@@ -5,8 +5,8 @@ The composite driving layer sets the PV values which will make the moves happen.
 The layer consists of drivers which take setpoint values from components and push these values into a PV wrapper, and conversely take readback values from the PV wrapper and push them into the components. It also handles moving multiple axes "synchronously", which for the moment means concurrently i.e. speeds are set so axes finish moving roughly at the same time, but no continuous synchronization in real time.
 
 **For more information on implementation specifics see the Reflectometry Configuration page:**
-- [Composite Drivers](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Configuration#composite-drivers)
-- [PV Wrappers](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Configuration#pv-wrappers)
+- [Composite Drivers](#reflectometry_composite_drivers)
+- [PV Wrappers](#reflectometry_pv_wrappers)
 
 ### Synchronisation
 
@@ -26,6 +26,7 @@ The user can turn this off in the configuration file. In which case the time rep
 
 Synchronisation in the configuration files defaults to `true`, but can be set on a driver via the `synchronised` argument.
 
+{#reflectometry_parking_sequences}
 ### Out Of Beam Positions and Parking Sequences
 
 Any IOC Driver can specify out-of-beam positions, which define where a component should be parked along its movement axis if it is set to be "Out Of Beam" via an `InBeamParameter`. A driver can have an arbitrary number of out-of-beam positions. Which one is chosen depends on where the y height of the current beam path intersects with the movement axis of this component. Since in some instances, the beam can intersect with the entire range of a component's movement axis, this is done to ensure that component does not block the beam while parked. It is also possible to have the park position as a position offset from the beam, e.g. for INTERs mirror/guides which when out of the beam must track the beam to remain guide. In addition to this the user can supply a parking sequence which will cause the instrument to park and unpark a component using the supplied positions. 
@@ -64,6 +65,7 @@ This would mean that when this component parked the following happens:
 
 Unparking would be this but in reverse.
 
+{#reflectometry_engineering_offset}
 ## Engineering Offset
 
 Engineering offsets correct the value sent to a PV because of inaccuracies in the engineering. For instance, if we set theta to 0.3 we will be setting the height of the jaw so that the jaws centre is in the middle of the beam. However, because of needing to tilt the jaws and the centre of rotation not being in the middle of the jaws, we need to add a correction to the geometry of 0.1mm. The best place to do this is at the point at which the value is sent to the driver. The form of the corrections can multiple but we will start by catering for:
@@ -206,7 +208,7 @@ add_driver(AxisDriver( component, ChangeAxis.POSITION, PVWrapper,
 ```
 Here the correction will be by a user function in `NR` mode, by a constant of -0.2 in `PA` mode and a correction of 1 in any other mode.
 
-There is also a [helper method](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Configuration#as_mode_correction) for easily creating mode specific constant corrections.
+There is also a [helper method](#reflectometry_as_mode_correction) for easily creating mode specific constant corrections.
 
 #### User Specified
 

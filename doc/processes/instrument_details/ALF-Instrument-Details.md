@@ -39,5 +39,5 @@ Photograph of [ALF Slits/Jaws](http://www.facilities.rl.ac.uk/isis/computing/ICP
 ##### Note: Goniometer #####
 Model: 6-axis Goniometer, unknown model & manufacturer.<br>
 Driven by [Galils](#alf_noteGalil).<br>
-See [ALF Goniometer Axes](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/ALF-Goniometer-Axes) for details of how the Goniometer is set up and configured.<br>
+See [ALF Goniometer Axes](/specific_iocs/motor_extensions/ALF-Goniometer-Axes) for details of how the Goniometer is set up and configured.<br>
 Photographs of [ALF Goniometer (1)](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/ALF/ALF_Goniometer_1.jpg) and [ALF Goniometer (2)](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/ALF/ALF_Goniometer_2.jpg).

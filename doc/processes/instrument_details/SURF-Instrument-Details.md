@@ -59,7 +59,7 @@ TPG300 support is implemented via [#216](https://github.com/ISISComputingGroup/I
 
 ##### Note: Water Baths #####
 1. Julabo Water Bath (apparently the following Julabos: WB7, WB30 )
-   * consult the [Julabo commands](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/backend_system/IOCs/julabo_commands.xlsx) spreadsheet for specific details of which set of commands is used by these water baths.
+   * consult the [Julabo commands](/specific_iocs/temp_controllers/julabo_commands.xlsx) spreadsheet for specific details of which set of commands is used by these water baths.
 1. Grant Water Bath (no longer supported at ISIS) ~(apparently the following Grant water bath: WB27)~
    * Update (25-06-2019): Grant water baths are no longer used.  No longer any need to support them.  See [#4457](https://github.com/ISISComputingGroup/IBEX/issues/4457)
 1. Haake Water Bath (no longer supported at ISIS)

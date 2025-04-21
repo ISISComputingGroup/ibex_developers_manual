@@ -49,7 +49,7 @@ Now that you have your feature, scenario and steps laid out it's time to write t
 
 To add the steps you want you can either code them directly by writing a test step function or you can record it. If you right-click on a feature or scenario in the test case and click `Record Missing Steps in Feature/Scenario` then the test will execute the steps it knows and then pauses on the steps it doesn't know to record any button clicks and do any verification steps as according to the squish recording tools - see the tutorial on https://www.froglogic.com/squish/features/recording-and-playback/. After recording, this will insert the step function into a file in the steps section of the test suite resources - often this is in a file that doesn't make sense so please move it to somewhere it does make sense. 
 
-Although the recording is useful, it often produces brittle step functions, please make use of the utilities in the global scripts area to improve the robustness of the test and see https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/System-Testing-with-Squish#writing-tests for some hints, tips and gotchas.
+Although the recording is useful, it often produces brittle step functions, please make use of the utilities in the global scripts area to improve the robustness of the test and see [here](System-Testing-with-Squish) for some hints, tips and gotchas.
 
 ## Running the tests
 

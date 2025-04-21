@@ -1,6 +1,6 @@
 # MDT (Microsoft deployment toolkit)
 
-This page assumes you already have access to a machine with MDT installed. If you don't have access to this type of machine, you can build a new one by following the instructions listed [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Building-a-windows-10-MDT-build-server)
+This page assumes you already have access to a machine with MDT installed. If you don't have access to this type of machine, you can build a new one by following the instructions listed [here](mdt/Building-a-windows-10-MDT-build-server)
 
 MDT is a tool used by some other organisations - as such, there is some documentation about how to use the tool online. Rather than trying to describe the full capabilities of the tool, this page aims to document the ISIS-specific ways in which it is used.
 

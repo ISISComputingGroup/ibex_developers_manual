@@ -4,7 +4,7 @@
 | :--------   | :---------: | ----------: |
 | Lilith Cole | Freddie Akeroyd | Thomas Lohnert |
 
-## Items from [last retrospective](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Retrospective-notes-2022.10.26):
+## Items from [last retrospective](Retrospective-Notes-2022.10.26):
 
 ### Windows 11 builds:
 > Perhaps just test squish and system tests on win11 with a win10 built client

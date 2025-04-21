@@ -14,7 +14,7 @@ Mixing autosave with IOCs that load a dynamic number of axes/sensors can be dang
 
 ## How to Add
 
-To add autosave to a field see [autosave PVs in finishing touches](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/IOC-Finishing-Touches#4-autosave-pvs).
+To add autosave to a field see [autosave PVs in finishing touches](#ioc_finishing_touches_autosave_pvs).
 
 ## Forcing autosave to save at a given point (useful for testing)
 
@@ -26,5 +26,5 @@ If you wish to do this in the IocTestFramework you can with the ProcServLauncher
 
 ## Troubleshooting
 
-See https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/IOC-And-Device-Trouble-Shooting#autosave
+See [here](/iocs/troubleshooting/IOC-And-Device-Trouble-Shooting)
 

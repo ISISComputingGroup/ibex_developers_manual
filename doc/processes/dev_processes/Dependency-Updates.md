@@ -213,7 +213,7 @@ There are two cygwin distributions on the computer in `c:\cygwin64` and `c:\mini
 - now start the jenkins EPICS_Tools job, this will build and update `kits$\Binaries\EPICS_Tools` 
 
 ## NICOS
-[Nicos Dependency update steps](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Developing-NICOS).
+[Nicos Dependency update steps](/system_components/nicos/Developing-NICOS).
 
 **Note:**
 We are using a fork of NICOS. If updating NICOS, ensure that the protocol versions defined in the client and the server match. The server version is specified in `C:\Instrument\Apps\EPICS\ISIS\ScriptServer\master\nicos\protocols\daemon\classic.py` and the client version in `/uk.ac.stfc.isis.ibex.nicos/src/uk/ac/stfc/isis/ibex/nicos/messages/ReceiveBannerMessage.java`. If these do not match, the script server connection will fail.

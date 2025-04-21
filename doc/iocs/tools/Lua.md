@@ -87,7 +87,7 @@ my_import.my_func()
 
 now the only think in my global namespace will be `my_import`, which I specifically put in there, which contains all the functions I've imported for later reference.
 
-We have a few Lua utility functions available in our utilities submodule. For usage and how to add to them see [this page](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Our-Lua-Utility-Functions).
+We have a few Lua utility functions available in our utilities submodule. For usage and how to add to them see [this page](lua/Our-Lua-Utility-Functions).
 
 ## Style Guide
 
@@ -95,7 +95,7 @@ We are using the style guide from LuaRocks as documented in https://github.com/l
 
 ## LuaCheck
 
-For installation, usage and troubleshooting see the [luacheck page](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/LuaCheck)
+For installation, usage and troubleshooting see the [luacheck page](lua/LuaCheck)
 
 ## Issues with Epics Lua and some answers
 

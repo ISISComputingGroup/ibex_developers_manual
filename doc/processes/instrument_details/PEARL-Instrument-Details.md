@@ -74,7 +74,7 @@ Three Eurotherms in use on PEARL.  Used to control temperature of all top-loadin
 1. [Model 336](http://www.lakeshore.com/products/cryogenic-temperature-controllers/model-336/Pages/Overview.aspx):
 
 There are [EPICS drivers](http://www.aps.anl.gov/epics/modules/manufacturer.php#Lakeshore) for a variety of Lakeshore temperature controllers.
-Documentation on the Lakeshore 336 IOC setup can be found [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Lakeshore336).
+Documentation on the Lakeshore 336 IOC setup can be found [here](/specific_iocs/temp_controllers/Lakeshore336).
 
 ##### Note: Sorensen #####
 Sorensen appear to have been taken over by [AMETEK](http://www.programmablepower.com/brands/sorensen.htm).<br>

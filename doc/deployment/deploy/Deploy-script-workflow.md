@@ -24,7 +24,7 @@ some instruments it might want instead if not default on cclrc.ac.uk
 | Save block params | y | Saves into csv file at `C:\Instrument\var\deployment_pv_backups\` |
 | Save block server to file | y | It'll now save existing installation |
 | Update Git | y | It will need an admin account password for the instrument |
-| Update Java | y | This will be manual: go to `\\isis\shares\ISIS_Experiment_Controls_Public\third_party_installers\` and install the latest version of Java. You can find some more info here: https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Upgrade-Java |
+| Update Java | y | This will be manual: go to `\\isis\shares\ISIS_Experiment_Controls_Public\third_party_installers\` and install the latest version of Java. You can find some more info [here](Upgrade-Java) |
 | Backup directories | y | This might take a long time. Close any window that have it open. The dir. Find size of epics i apps dir and then find size of backup in data and then old to find out its stage |
 | Manually check Python installation | y | `Python` will not exist but `Python3` will, which the script will realise and back up|
 | Verify backup | y | N/A |

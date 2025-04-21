@@ -44,6 +44,7 @@ Current syntax warnings are:
 
 The checker is run at the end of a build on Jenkins and unit tests are failed if any of the error checks fail. Failed warnings will be noted and displayed in the test report but will not result in an unstable build. Syntax errors are currently treated as warnings as some files currently contain large numbers of them.
 
+{#pv_units_standards}
 ## Unit Standards
 
 The unit standards apply to both DB files and [calibration files](/system_components/configurations/Calibration-Files).

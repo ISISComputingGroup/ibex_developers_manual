@@ -85,7 +85,7 @@ Possible solution discussed:
 * [Jack Allen](https://www.github.com/JackEAllen) will place an existing GitHub workflow developed for personal use into a repository to be adapted to work through Jenkins. The main piece of work that will need to be undertaken to do this is setting up an authentication token for the Jenkins user to be able to push to the repository as the GitHub workflow developed relies on a personal access token which is not suitable for use in an organisational repository.
 
 Actions Taken:
-* Wiki has been updated to include workflow: https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Shared-utility-scripts
+* Wiki has been updated to include workflow: [shared utility scripts](/tools/Shared-utility-scripts)
 * A template repository has been created which can be used as it is, or as a starting point for integration into Jenkins CI/CD: https://github.com/ISISComputingGroup/Update_Submodule_Workflow_Action
 
 ### Would it be helpful whilst we are trying something different with planning if I run the next sprint planning meetings as well?

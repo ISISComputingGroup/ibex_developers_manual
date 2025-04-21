@@ -1,6 +1,6 @@
 # Stanford DG645
 
-For the Litron Laser Timing Control see [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Litron-Laser-Timing-Control-(Stanford-DG645)).
+For the Litron Laser Timing Control see [here](Litron-Laser-Timing-Control-(Stanford-DG645)).
 
 ## About
 Stanford DG645 is a digital delay generator. There is an IOC, emulator and tests for it. The OPI is constructed in a modular fashion

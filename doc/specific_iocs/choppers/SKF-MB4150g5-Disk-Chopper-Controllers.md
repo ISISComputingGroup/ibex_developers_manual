@@ -6,7 +6,7 @@ The IOC for this device is the **SKFCHOPPER**, this IOC has to have macros set i
 
 ## Current Installations
 
-* **Six** controllers on LET (original single-disk choppers 3 & 4, and the previously Astrium double-disk choppers 1 & 5. Chopper 2 is an [ISIS MK3](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/MK3-Chopper))
+* **Six** controllers on LET (original single-disk choppers 3 & 4, and the previously Astrium double-disk choppers 1 & 5. Chopper 2 is an [ISIS MK3](MK3-Chopper))
 * **Five** on IMAT (two double-disk choppers and a T0)
 * **Two** on SANDALS (a single double-disk chopper)
 

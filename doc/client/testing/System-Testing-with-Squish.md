@@ -192,7 +192,7 @@ Solution is to Rename `C:\Squish\python\msvcr90.dll` to `msvcr90_off.dll`, which
 
 ### Squish fails to begin run
 
-Attempt to change your tcb file to a regular neutron tcb file and begin a run. You should see it beginning and then return to set up with the log message: `invalid tcb start - must be 0 not 5.00000 ns`. See the [DAE troubleshooting](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/DAE-Trouble-Shooting) "invalid tcb start" section.
+Attempt to change your tcb file to a regular neutron tcb file and begin a run. You should see it beginning and then return to set up with the log message: `invalid tcb start - must be 0 not 5.00000 ns`. See the [DAE troubleshooting](/specific_iocs/dae/DAE-Trouble-Shooting) "invalid tcb start" section.
 
 ### Squish Fails to Start the Application
 

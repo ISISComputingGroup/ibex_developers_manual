@@ -23,9 +23,9 @@ Text for release ticket:
 > - [ ] [Pre Testing Steps](#creating_release_pre_testing_steps)
 > - [ ] [Testing steps](#creating_release_testing_steps)
 > - [ ] [Post Testing](#creating_release_post_testing_steps)
-> - [ ] [Create a ticket to update dependencies to latest versions and test](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Dependency-updates)
+> - [ ] [Create a ticket to update dependencies to latest versions and test](/processes/dev_processes/Dependency-Updates)
 > - [ ] [Create a ticket to give instrument demos](https://github.com/ISISComputingGroup/IBEX/wiki/Timetable-for-Instrument-Demos)
-> - [ ] Distribute release notes via email [Instrument scientist release email](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Updating-Instrument-Machines#a-new-release)
+> - [ ] Distribute release notes via email [Instrument scientist release email](#updating_instrument_new_release_email_template)
 
 ## Standard Release
 
@@ -120,8 +120,8 @@ the relevant release branch after it has been tagged.
     * Breaking release: upgrade everyone
     * Big improvement:  upgrade everyone if there is a big improvement that everyone will benefit from
     * Standard release: upgrade instruments that need updates, i.e. they need a newly released feature, and all those that are in the current release group, see [column in instruments table](https://github.com/ISISComputingGroup/IBEX/wiki#instrument-information). Note on the release ticket which instruments need to be released to using checkboxes (one for start and one for finish).
-1. Deploy a new JSON_bourne if required see [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Web-Dashboard)
-1. Create repository for recording instrument changes post release https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Release-based-repository the deploy script automatically puts the instrument onto a branch of this repository
+1. Deploy a new JSON_bourne if required see [here](/webdashboard/Web-Dashboard)
+1. [Create repository for recording instrument changes post release](release/Release-based-repository) the deploy script automatically puts the instrument onto a branch of this repository
 ## Partial Release
 For any release in which GUI version increments but server version does not, ensure the previous server version is added to the release folder via symbolic links or junctions, [see this ticket](https://github.com/ISISComputingGroup/IBEX/issues/7250).
 

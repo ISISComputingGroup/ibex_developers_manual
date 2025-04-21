@@ -11,7 +11,7 @@ The major issue this sprint was the feeling that no progress has been made this 
 
 ## Number of Reworks
 
-Have a lot of rework tickets, to help this we have agreed to do informal reviews if possible before the ticket goes into review. (This has been added to [workflow](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Tickets-and-their-Workflow))
+Have a lot of rework tickets, to help this we have agreed to do informal reviews if possible before the ticket goes into review. (This has been added to [workflow](/processes/dev_processes/Tickets-and-their-Workflow))
 
 Also agreed to try and make pull requests smaller.
 
@@ -25,5 +25,5 @@ In general, we would like to LUA instead of `st.cmd`. There is little risk to th
 
 ## Pending Tasks
 
-We should make sure that pending tasks scheduled for the next sprint are in sprint planning. [Added to sprint planning description](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Sprint-Planning)
+We should make sure that pending tasks scheduled for the next sprint are in sprint planning. [Added to sprint planning description](../meetings/Sprint-Planning)
 

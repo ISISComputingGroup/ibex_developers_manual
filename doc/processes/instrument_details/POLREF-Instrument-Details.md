@@ -74,7 +74,7 @@ TPG300 support is implemented via [#216](https://github.com/ISISComputingGroup/I
 
 ##### Note: Water Baths #####
 1. Julabo Water Bath (apparently the following Julabos: WB23 )
-   * consult the [Julabo commands](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/backend_system/IOCs/julabo_commands.xlsx) spreadsheet for specific details of which set of commands is used by these water baths.
+   * consult the [Julabo commands](/specific_iocs/temp_controllers/julabo_commands.xlsx) spreadsheet for specific details of which set of commands is used by these water baths.
 1. Haake Water Bath (no longer supported at ISIS)
    1. ~Haake N6 Water Bath.  Haake has now been taken over by [ThermoFisher](https://www.thermofisher.com/uk/en/home/life-science/lab-equipment/water-baths-circulators-chillers.html).  N6 model may be obsolete.  Check existing SECI VI for logic and manual~.
 1. ~See also [Water Baths](https://www.isis.stfc.ac.uk/Pages/Water-Baths.aspx) list~

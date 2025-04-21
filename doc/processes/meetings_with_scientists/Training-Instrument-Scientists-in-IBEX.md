@@ -16,7 +16,7 @@ We record people who would like to attend the next training session by listing t
 ## Training materials
 
 - [Mantid](https://www.mantidproject.org/Documentation)
-- [IBEX](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/links-and-resources)
+- [IBEX](/overview/Links-and-Resources)
     - There are various slides at the end of the material: "Reference card", "GUI Reference Card" and "Useful Locations". These are supposed to provide a brief reference of the major IBEX features, GUI elements and a memo sheet for folder locations respectively. Print off a copy of each for each delegate.
 - [genie_python](https://github.com/ISISComputingGroup/ibex_user_manual/wiki/genie_python-and-IBEX-%28Introduction%29)
 

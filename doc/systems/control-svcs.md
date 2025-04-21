@@ -8,9 +8,9 @@ The machine runs various services, including:
 * EPICS gateways for running data between the halls
 * ArchiveEngine for storing central data for beam currents etc. 
 * Git repositories for storing configs etc. (see https://control-svcs.isis.cclrc.ac.uk/git/)
-* [Experiment database populator](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Experimental-Database)
-* The [Alert Relay](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Alert-Relay)
-* [Isis info slack channel bots](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/ISIS-Info-Slack)
+* [Experiment database populator](https://github.com/ISISComputingGroup/ExperimentDatabasePopulator)
+* The [Alert Relay](control_svcs/Alert-Relay)
+* [Isis info slack channel bots](/webdashboard/ISIS-Info-Slack)
 
 None of these services are crucial for running instruments to continue taking data. The services log to `\home\var\` and can be restarted by killing the process as they run in procserv.
 

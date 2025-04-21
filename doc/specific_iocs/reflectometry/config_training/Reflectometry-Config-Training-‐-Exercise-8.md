@@ -2,7 +2,7 @@
 
 ## The Bench
 
-[More detail on the Bench Configuration available here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/reflectometry-bench-configuration).
+[More detail on the Bench Configuration available here](../reflectometry-bench-configuration).
 
 The bench is a large motion component which moves on an arc around a given pivot point (i.e. the last point where the beam may bounce before the bench). The reason for this is that we want to keep the detector at a constant distance from the sample for all experiments to preserve e.g. Time of Flight regardless of Theta. In case you are wondering how this is handled on beamlines that use a detector driving on a linear height stage, the answer is they do not. However, those instruments (i.e. CRISP and SURF) have an optical lever short enough that they can ignore this factor without sacrificing too much quality. Other devices (such as slits and detectors) can be mounted statically on top of it while the bench handles all the beam tracking. Benches are used for the POLREF secondary beam path (everything after the sample) and for the OFFSPEC primary & secondary beam path.
 
@@ -28,7 +28,7 @@ In this exercise we will add the bench component to the configuration. You may n
 - `MTR0403.DESC` should be `Bench Slide`
 
 You can add the bench component like so (
-[Documentation on parameters required for `BenchSetup` can be found here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Configuration#required-1)):
+[Documentation on parameters required for `BenchSetup` can be found here](../Reflectometry-Configuration)):
 
 `bench = add_component(BenchComponent("bench", BenchSetup( ... )))`
 

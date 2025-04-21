@@ -18,7 +18,7 @@ and when connected press `Ctrl-x` once, you should see some restart messages fro
 
 It is likely that you are in a muon configuration for the DAE but using a neutron tcb file or vice versa.
 
-Either change the [tcb file](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/DAE-and-the-ICP#configuring-the-daeicp) you are using or do the following steps to change the DAE type:
+Either change the [tcb file](#dae_configuration) you are using or do the following steps to change the DAE type:
 
 1. Change the DAE type of your icp_config.xml (in EPICS/ICP_Binaries) to the correct value (1 for DAE2 neutron, 2 for DAE2 muon, 3 for DAE3 neutron, 4 for DAE3 muon).
 2. In the same directory edit the isisicp.properties file to use either neutron or muon for `isisicp.simulation.detcards.type`
@@ -91,13 +91,13 @@ This should not occur but has when a database was missing our extra column in th
 
 ### Not enough CRPT memory
 
-CRPT (Current Run Parameter Table) memory is a large in-memory structure used to store information about the run, including histogrammed data. Data is read from the DAE into CRPT memory and then written to file, in event mode CRPT memory is where events are histogrammed on the fly during collecting to provide real-time spectra. If you get a CRPT size error, it means the product of (number of periods) * (number of spectra) * (number of time channels) is too big. If you are in histogram mode you either need to reduce one of these variables or get the CRPT size increased (icp_config.xml) but remember this is real memory that the ICP will claim at startup. If you are in event mode and get a CRPT error, it may mean you have misconfigured the time regime you plan to use for the on-the-fly rebinning e.g. you are trying to rebin events at event mode resolution not at a coarser resolution. The event mode / histogram mode choice and which time regime to use is governed by the [wiring tables](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/DAE-and-the-ICP#configuring-the-daeicp).
+CRPT (Current Run Parameter Table) memory is a large in-memory structure used to store information about the run, including histogrammed data. Data is read from the DAE into CRPT memory and then written to file, in event mode CRPT memory is where events are histogrammed on the fly during collecting to provide real-time spectra. If you get a CRPT size error, it means the product of (number of periods) * (number of spectra) * (number of time channels) is too big. If you are in histogram mode you either need to reduce one of these variables or get the CRPT size increased (icp_config.xml) but remember this is real memory that the ICP will claim at startup. If you are in event mode and get a CRPT error, it may mean you have misconfigured the time regime you plan to use for the on-the-fly rebinning e.g. you are trying to rebin events at event mode resolution not at a coarser resolution. The event mode / histogram mode choice and which time regime to use is governed by the [wiring tables](#dae_configuration).
 
 ### End of run script not working or data not being copied to the archive
 
 There is a known bug where starting a run at the same time as the previous run is being saved can be cause the nexus file not to be marked read-only and so not copied to the archive. A `NEXUS ERROR: ERROR:` message will appear in the log. See https://github.com/ISISComputingGroup/IBEX/issues/4977
 
-To fix this and other errors see https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Experimental-Runs#experimental-files-not-being-archived-and-so-not-appearing-in-the-journal
+To fix this and other errors see [experimental runs troubleshooting](Experimental-Runs)
 
 ### No frames/beam current registered by the DAE
 
@@ -198,7 +198,7 @@ If you get an error in you IOC log like:
 [2018-10-26 17:33:37] 2018/10/26 17:33:36.741 IN:DEMO:DAE:AD1:INTG:TMIN:SP devAsynFloat64 pPvt->result.status=3, process error isisdaeDriver:writeFloat64: status=0, function=184, name=INTG_TMIN, value=0.000000, error=Win32StructuredException code 0xc0000005 pExpCode 0xc0000005 pExpAddr
 ```
  
-One cause would be the IOC is trying to call a function in the ISISICP that it can't find. If the ISISICP has been updated, but   /RegServer  has not been run, then new functions added there will not be visible. See [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/First-time-installing-and-building-(Windows)#configure-dae-for-simulation-mode-on-developers-computer--register-isisicp).
+One cause would be the IOC is trying to call a function in the ISISICP that it can't find. If the ISISICP has been updated, but   /RegServer  has not been run, then new functions added there will not be visible. See [here](#first_time_install_configure_dae).
 
 ### DAE3 does not start 
 
@@ -243,7 +243,7 @@ We have observed on a couple of occasions that the DAE got stuck in `WAITING` de
 
 ### ISISDAE reports `time regimes 1 and 2 are incompatible`
 
-[Time regimes](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/DAE-and-the-ICP#configuring-the-daeicp) are incompatible when their starts differ by a non-integer number of microseconds, but sometimes rounding errors may lead to this happening in other circumstances. This check is actually no longer required and has been removed in ISISICP SVN revisions 2010 and above. 
+[Time regimes](#dae_configuration) are incompatible when their starts differ by a non-integer number of microseconds, but sometimes rounding errors may lead to this happening in other circumstances. This check is actually no longer required and has been removed in ISISICP SVN revisions 2010 and above. 
 
 ### ISISICP writes a corrupted journal file
 
@@ -307,7 +307,7 @@ Ensure you have loaded the correct Time Channels and Data Acquisition tables in 
 1. In the GUI go to DAE -> Experiment Setup -> Time Channels, select `Use TCB file` and select one of the copied TCB files
 1. In DAE -> Experiment Setup -> Data Acquisition, select the wiring, detector and spectra tables
 
-See [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/DAE-and-the-ICP#configuring-the-daeicp) to learn more about these files.
+See [here](#dae_configuration) to learn more about these files.
 
 {#dae_troubleshooting_cannot_see_nexus_files}
 ### User Says they Can Not see their Nexus Data files on external machine

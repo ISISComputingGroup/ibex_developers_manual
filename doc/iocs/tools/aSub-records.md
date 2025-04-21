@@ -8,7 +8,7 @@ Circumstances where you may need to use aSub records include:
 - A device responds with a very complex status string which is too complex to decode using streamdevice
 - There are complex checks required before a command can be sent to a device, or complex logic required to interpret the state of a device.
 - The device responds with completely different responses based on its physical configuration, and the IOC needs to handle all possible circumstances
-- You need to interact with files from within an IOC (first consider whether [autosave](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Autosave) or [ReadASCII](https://github.com/ISISComputingGroup/EPICS-ReadASCII) cover the functionality you need)
+- You need to interact with files from within an IOC (first consider whether [autosave](Autosave) or [ReadASCII](https://github.com/ISISComputingGroup/EPICS-ReadASCII) cover the functionality you need)
 
 ### Examples
 - `FZJ Fermi Chopper` (`EPICS/ioc/master/FERMCHOP`)
@@ -216,7 +216,7 @@ It is advised that when writing an aSub record, you escape to C++ as soon as pos
 
 ### GoogleTest unit tests
 
-GoogleTest can be used to write unit tests for you aSub functions. Details on how to set up GoogleTest to compile under EPICS can be found [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Setting-up-GoogleTest-to-work-with-EPICS-build-process).
+GoogleTest can be used to write unit tests for you aSub functions. Details on how to set up GoogleTest to compile under EPICS can be found [here](#googletest_intro).
 
 ### Error catching
 

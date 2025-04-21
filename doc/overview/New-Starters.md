@@ -139,7 +139,7 @@ We use a number of parts of Control System Studio (CSS) in our GUI (Alarms, Data
 
 Here's an overview and a get started guide.
 
-- [Creating OPIs](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/OPI-Creation) - An introduction for how we use CSS and to set it up on your computer
+- [Creating OPIs](/client/opis/OPI-Creation) - An introduction for how we use CSS and to set it up on your computer
 - [Overview of CS-Studio](https://epics.anl.gov/docs/USPAS2014/1-Monday/CSS_1_Overview.pdf)
 - [Intro to using CS-Studio](http://www.aps.anl.gov/epics/docs/USPAS2014/1-Monday/CSS_2_First_Steps.pdf)
 

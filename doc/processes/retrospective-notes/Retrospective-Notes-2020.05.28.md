@@ -2,7 +2,7 @@
 
 ## Specific Device IOC Pages on wiki
 
-As discussed in previous retrospective the [Specific Device IOC page](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Specific-Device-IOC) has grown to be about both the software and the hardware. This means that having the IOC in the title is misleading. It may also be good to review the kit we have listed there and make sure we have a good amount of info for devices and that they're well organised. I have added a [note](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Technical-Debt-Stand-down) to do this in the next tech debt stand-down.
+As discussed in previous retrospective the [Specific Device IOC page](/Specific-IOCs) has grown to be about both the software and the hardware. This means that having the IOC in the title is misleading. It may also be good to review the kit we have listed there and make sure we have a good amount of info for devices and that they're well organised. I have added a [note](/processes/meetings/Technical-Debt-Stand-down) to do this in the next tech debt stand-down.
 
 ## Organisation during meetings
 

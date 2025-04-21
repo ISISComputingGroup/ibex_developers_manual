@@ -4,7 +4,7 @@
 
 e.g. IOC is updated to fix bug. We know it could be used on other instruments but isn't being used now. What do we do?
 
-The procedure we decided on is documented [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Modifying-Code-on-an-instrument)
+The procedure we decided on is documented [here](/deployment/patch/Modifying-Code-on-an-instrument)
 
 ## Stop doing 0 point tickets
 

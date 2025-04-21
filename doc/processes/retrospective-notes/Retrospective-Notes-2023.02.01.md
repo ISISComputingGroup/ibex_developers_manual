@@ -4,7 +4,7 @@
 | :--------   | :---------: | ----------: |
 | JH | NR | DK |
 
-## Items from [last retrospective](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Retrospective-notes-2023.01.04):
+## Items from [last retrospective](Retrospective-Notes-2023.01.04):
 
 ### 
 > Is point allocation for support appropriate?

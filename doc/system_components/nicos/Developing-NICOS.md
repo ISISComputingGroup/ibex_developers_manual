@@ -6,7 +6,7 @@ We have [forked nicos](https://github.com/ISISComputingGroup/nicos) and added it
 
 **This is no longer our process for updating but has been kept in case the for is not successful and we need to switch back**
 
-The (read-only copy) of the NICOS repository is at `git://trac.frm2.tum.de/home/repos/git/frm2/nicos/nicos-core.git`. We keep a submodule that points to this repo as part of EPICS base, to update the version IBEX uses you need only go to the submodule, pull the version you want and then follow the instructions as per [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Git-workflow#reviewing-work-for-the-submodules-of-epics).
+The (read-only copy) of the NICOS repository is at `git://trac.frm2.tum.de/home/repos/git/frm2/nicos/nicos-core.git`. We keep a submodule that points to this repo as part of EPICS base, to update the version IBEX uses you need only go to the submodule, pull the version you want and then follow the instructions as per [here](#git_workflow_reviewing_epics_submodules).
 
 There is some general NICOS documentation [here](https://forge.frm2.tum.de/nicos/doc/nicos-master/)
 

@@ -10,7 +10,7 @@ The system comprises:
 
 ### Large log files
 
-See https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/LabVIEW-errors for mitigations - this is a known labview issue/bug.
+See [here](/system_components/labview/LabVIEW-errors) for mitigations - this is a known labview issue/bug.
 
 ### VI
 

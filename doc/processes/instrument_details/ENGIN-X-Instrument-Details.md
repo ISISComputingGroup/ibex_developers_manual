@@ -83,7 +83,7 @@ jaws-3 also has 4 blades, but they operate as 2 linked pairs.  In jaws-3:
 
 In effect, jaws-3 has only 2 degrees of freedom (instead of 4, if the blades could operate independently).  In practice, you can only control the horizontal & vertical gaps; you cannot control the position of the centre of the blades.
 
-The initial jaws settings are documented here: [ENGIN-X Jaws Settings](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/EnginX-Jaws)
+The initial jaws settings are documented here: [ENGIN-X Jaws Settings](/specific_iocs/motor_extensions/jaws/EnginX-Jaws)
 
 There is a plan to upgrade the third set of jaws (jaws-3) to a 4-independent-blade set, which will be driven by Galil controllers.  The timing of this upgrade is yet to be determined.  
 

@@ -36,7 +36,7 @@ I think this is a good idea, but I have a couple of queries:
 - Scientists don't always consider the wider picture.  Their solution might work for their particular needs, but often it won't easily generalise or may not be maintainable.  We should take care not to accept code that generates a high maintenance overhead.
 
 Yes we agree, though it should not be a 0 point ticket.
-Dom will write this process onto the wiki. Done [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/External-Contributions).
+Dom will write this process onto the wiki. Done [here](/processes/dev_processes/External-Contributions).
 
 ## As well as when preparing new instruments we should probably consider IBEX and genie_python training more regularly as a reminder and most especially for new starters
 

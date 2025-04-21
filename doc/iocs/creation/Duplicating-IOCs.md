@@ -1,6 +1,6 @@
 # Duplicating IOCs
 ## IOC Duplication script
-There is a script in ibex utils to duplicate IOCs, more information can be found [here.](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Shared-utility-scripts#ioc-copier)
+There is a script in ibex utils to duplicate IOCs, more information can be found [here.](#ioc_copier_script)
 
 The manual instructions below can also be used.
 <summary>Manual instructions</summary><details>## Creating IOC 2

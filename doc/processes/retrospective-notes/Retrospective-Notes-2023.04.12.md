@@ -5,7 +5,7 @@
 | NR | HC | JH |
 
 
-## Items from [last retrospective](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Retrospective-notes-2023.03.08):
+## Items from [last retrospective](Retrospective-Notes-2023.03.08):
 
 ### Standing in the conference room at standup 
 - people do whatever they want

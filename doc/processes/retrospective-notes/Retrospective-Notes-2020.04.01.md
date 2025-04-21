@@ -6,7 +6,7 @@ This keeps being missed.
 
 ## We should repoint tickets before planning
 
-- Now added as step to https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Sprint-Planning#preparation
+- Now added as step to [sprint planning](/processes/meetings/Sprint-Planning)
 
 ## At least whilst working from home retrospective notes should be put in a dedicated teams channel
 

@@ -36,6 +36,7 @@ There is a section on each below as well as how to set the communication setting
 
 ### Temperature
 
+{#mercury_itc_setup}
 #### Setup
 
 To activate a card you must set the related IOC macro (note that this is different from in SECI where there was a separate VI to talk to each individual card e.g. Mercury_1_Temp_4 to talk to the 4th card as a temperature card). The following macros set the <I> for the possible IOC slot:
@@ -140,7 +141,7 @@ If you use one of these MercuryiTCs could you please:
 * add and configure the new macros if they have not yet been added
 * configure the new macros if they exist but have not yet been configured
 
-The new macros and how to configure them can be found in [Setup](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/MercuryiTC#setup) section above: 
+The new macros and how to configure them can be found in [Setup](#mercury_itc_setup) section above: 
 
 
 ## Troubleshooting

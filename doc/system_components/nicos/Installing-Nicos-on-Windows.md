@@ -7,7 +7,7 @@ The Nicos source was written primarily for Linux and so things can be a bit more
 ## Install Genie python
 As we intend to integrate with IBEX, we are going to work with Genie Python. You can use any Python 2 (2.6 or higher) distribution instead, though some steps may vary between 32 and 64-bit versions.
 
-Genie Python can be installed by following the instructions [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/First-time-installing-and-building-(Windows)).
+Genie Python can be installed by following the instructions [here](/overview/First-Time-Build).
 
 For the remainder of this wiki, when we refer to Python, it is Genie Python and all commands launched using Python should use the Genie Python executable.
 

@@ -10,7 +10,7 @@ This PLC is also currently being used for [HLM PV Import](https://github.com/ISI
 
 ## Connection
 
-The Helium Recovery PLC communicates by using FINS over UDP, and is connected over Ethernet. However, you should use TCPNOHEAD when running tests in devsim. The FINS cmd should be similar to the example given [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Omron-FINS#configuration).
+The Helium Recovery PLC communicates by using FINS over UDP, and is connected over Ethernet. However, you should use TCPNOHEAD when running tests in devsim. The FINS cmd should be similar to the example given [here](#omron_fins_configuration).
 
 The IP address and node for this PLC are noted on the memory map spreadsheet in the shares drive, in Manuals > OMRON_FINS_PLCs > Helium recovery PLC.
 
@@ -39,7 +39,7 @@ finsUDPInit("PLC", "$(PLC_IP)", "UDP", 0, "$(PLC_NODE=)")
 dbLoadRecords("${TOP}/db/he-recovery.db","P=$(MYPVPREFIX),Q=HA:HLM:")
 
 ```
-The PV domain name for this IOC is HA, with HLM as a sub domain. `$(MYPVPREFIX)` should be set to blank when this IOC runs on a production machine. This is to make it the same as central services which runs with a blank prefix because it runs IOCs in multiple domains. The decision for that is at point 17 [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Decision-Log). When running for IOC tests, `$(MYPVPREFIX)` will be `TE:MACHINE_NAME`.
+The PV domain name for this IOC is HA, with HLM as a sub domain. `$(MYPVPREFIX)` should be set to blank when this IOC runs on a production machine. This is to make it the same as central services which runs with a blank prefix because it runs IOCs in multiple domains. The decision for that is at point 17 [here](/processes/Decision-Log). When running for IOC tests, `$(MYPVPREFIX)` will be `TE:MACHINE_NAME`.
 
 You also need to set the PLC_IP and PLC_NODE macros in the IBEX GUI.
 
@@ -47,7 +47,7 @@ You also need to set the PLC_IP and PLC_NODE macros in the IBEX GUI.
 
 - During testing when the IOC had all PVs implemented, it was discovered that it was very slow and each test took up to 40 seconds. This was because the emulator was slow due to 150+ requests each second. To fix this, for testing all PVs should be made passive by setting the `$(SCAN)` macro in the `dbLoadRecords` call, which will make the tests run quite fast. `$(SCAN)` is a global macro for the scan fields of every PV, except the heartbeat. For communicating with the real device, this macro should be set to 10 seconds. The heartbeat is an exception because in order to properly see it changing from 0 to 1 and back it needs to scan every 0.5 seconds.
 - The vast majority of the PVs reading 16 bit integers from the PLC are private. They are read by an associated calc record which divides the value by 10 and is supposed to be user facing. The reason is that the these values need to be real numbers with decimal place, but they are represented as scaled integers in order to save memory space and be stored in 16 bits only rather than 32 bits. There three exceptions to this: the heartbeat and two turbine speeds. This is because the turbine speeds are not real numbers, and the heartbeat can only be 0 or 1.
-- All of the PVs reading 16 bit integer values support negative values, except the heartbeat. Because negative integer support needs to be actively added as mentioned in [Omron FINS](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Omron-FINS#writing-iocs-for-fins-plcs), but the heartbeat can only be 0 or 1 and thus has no need. For the same reason, each 16 bit PV is tested with positive and negative values in the IOC Test Framework, to make sure the IOC can read properly whatever the PLC might store.
+- All of the PVs reading 16 bit integer values support negative values, except the heartbeat. Because negative integer support needs to be actively added as mentioned in [Omron FINS](#omron_fins_writing_ioc), but the heartbeat can only be 0 or 1 and thus has no need. For the same reason, each 16 bit PV is tested with positive and negative values in the IOC Test Framework, to make sure the IOC can read properly whatever the PLC might store.
 - Some mbbi records only have two possible values, and the reason they are not bi records is that the integers in the PLC for those values were 1 and 2, not 0 and 1.
 - There are two liquefier alarms in the memory map. They are 16 bit integers, where each bit represents one alarm. In the first alarm liquefier integer, the first bit is a spare, and in the second one the last 7 bits are spares. These two integers are read by two longin records, from which the values are read into two mbbi direct records. The mbbiDirect records could not properly read from hardware directly. For each individual alarm, there is a bi record that reads from the correct bit in one of the two mbbiDirect records, and it is these records that are user facing. The meaning of each bit is commented in the IOC header template, in the shares drive and on the HLM project Sharepoint.
 

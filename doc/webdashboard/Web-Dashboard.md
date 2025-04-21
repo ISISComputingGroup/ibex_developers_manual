@@ -48,9 +48,9 @@ Docs can be found on the shares at `shares\isis_experiment_controls\web_dashboar
 
 To update the production version of the dashboard:
 * Remote desktop into external webserver (for username and password see password page)
-* Open a git bash terminal in C:\JSON_Bourne and switch to the [release branch](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Creating-a-release)
+* Open a git bash terminal in C:\JSON_Bourne and switch to the [release branch](/deployment/Creating-a-release)
 * Run the deploy batch script as admin
-* Restart JSON_bourne (see [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Web-Dashboard#restart-the-dataweb))
+* Restart JSON_bourne (see [here](#webdashboard_restart_dataweb))
 * Go to (for example) http://dataweb.isis.rl.ac.uk/IbexDataweb/default.html?Instrument=zoom and confirm the webpage is live
 
 ## Development/Testing
@@ -92,6 +92,7 @@ If you need to update the archive engine then you will need to:
 First look at the log to ensure that there are no issues. The log is held in `C:\JSON_Bourne\log`. Issues may be in the front end, in which case error logs are in the web browser, visit the webpage in a browser and open up the web console.
 If there are a number of `HTTP Error 503. The service is unavailable` errors, restarting the server completely may be required, but simply restarting the Dataweb should be the first thing to try.
 
+{#webdashboard_restart_dataweb}
 ### Restart the Dataweb
 
 As admin open the "Task Scheduler" (there is a shortcut for this on the desktop) and end and run the "JSON Bourne" task (in task scheduler library). Make sure that ending the task has killed the Python webserver process.

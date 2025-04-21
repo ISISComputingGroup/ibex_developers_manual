@@ -6,7 +6,7 @@ TPGx00 is shorthand for the TPG 300 and 500 Pfeiffer Vacuum Gauges which use the
 
 **To configure the IOC for the 500, define the MODEL macro: it defaults to TPG300**
 
-The TPG300/500 are similar to the [TPG26x](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/TPG26x) and [TPG36x](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/TPG36x), but have 4 pressure sensors to read from, and have a slightly more complicated IOC. All TPG manuals can be found in `<share>\ISIS_Experiment_Controls\Manuals\Pfeiffer TPG<xxx>`.
+The TPG300/500 are similar to the [TPG26x](TPG26x) and [TPG36x](TPG36x), but have 4 pressure sensors to read from, and have a slightly more complicated IOC. All TPG manuals can be found in `<share>\ISIS_Experiment_Controls\Manuals\Pfeiffer TPG<xxx>`.
 
 
 ## Communication
@@ -59,7 +59,7 @@ You can use "TCP Terminal" to connect to the IP address of the TPG500 with the p
 
 ### Talking to an emulator
 
-See [this wiki page](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Emulating-Devices) on how to start an emulator. Or alternatively start the tests with the `-a` flag to run the emulator and IOC.
+See [this wiki page](/iocs/testing/Emulating-Devices) on how to start an emulator. Or alternatively start the tests with the `-a` flag to run the emulator and IOC.
 
 Once it's running you can read off the IP address and PORT from the lewis start command. Use those in the TCP Term to send instructions directly to the emulator.
 

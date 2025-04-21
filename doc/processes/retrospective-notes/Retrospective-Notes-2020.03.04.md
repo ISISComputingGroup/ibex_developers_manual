@@ -106,6 +106,6 @@ Positives:
 
 ## Make a standard email to send release notes out when we make a release. Release process should include sending this out.
 
-Yes, added to the process in https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Creating-a-release
+Yes, added to the process in [creating a release](/deployment/Creating-a-release)
 
-Standard email format (not necessarily a good email, please consider it's contents): https://github.com/ISISComputingGroup/IBEX/wiki/Instrument-scientist-release-email
+[Standard email format](/deployment/deploy/Updating-Instrument-Machines) (not necessarily a good email, please consider it's contents).

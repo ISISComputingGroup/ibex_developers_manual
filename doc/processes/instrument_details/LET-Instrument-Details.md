@@ -80,7 +80,7 @@ Controlled via Eurotherm.
 
 ##### Note: ISIS 9T Chopper Magnet #####
 [ISIS 9T Chopper Magnet](https://www.isis.stfc.ac.uk/Pages/9T-chopper-magnet.aspx) 
-See also:[IBEX Support for 9T chopper magnet](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Cryogenics#9t-chopper-magnet).
+See also:[IBEX Support for 9T chopper magnet](/specific_iocs/Cryogenics).
 
 ##### Note: ISIS 14T Magnet #####
 LET has, in the past, used the [ISIS 14T Magnet](https://www.isis.stfc.ac.uk/Pages/14T-Diffraction-Magnet.aspx).  This magnet is currently being repaired and there is no ETA on when it might return to service.

@@ -6,4 +6,4 @@ Currently, we get a tank vacuum status from the PLC. This was not available in S
 
 ## Front beamstop inhibit
 
-Done as part of motorExtensions. See https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/SANS2D-Front-Beam-Stop-inhibit-movement
+Done as part of motorExtensions. See [here](../motor_extensions/SANS2D-Front-Beam-Stop-inhibit-movement).

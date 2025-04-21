@@ -2,7 +2,7 @@
 
 This is controlling the flow of helium in a cryostat, via a needle valve, based on a lookup table implemented in the hardware. 
 
-The underlying hardware is a [Eurotherm](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Eurotherm) controller in MODBUS communications mode (see [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Eurotherm#changing-comms-mode-on-physical-device) to change), and `automaticNeedleValve.db` adds some extra settings on top. 
+The underlying hardware is a [Eurotherm](Eurotherm) controller in MODBUS communications mode (see [here](#eurotherm_comms_modes) to change), and `automaticNeedleValve.db` adds some extra settings on top. 
 This controller uses the 'Automatic Needle Valve Controller' OPI in IBEX.
 
 The needle valve operation revolves around two modes: **manager mode and setpoint mode**. 

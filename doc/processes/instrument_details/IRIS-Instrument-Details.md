@@ -99,7 +99,7 @@ There are [EPICS drivers](http://www.aps.anl.gov/epics/modules/manufacturer.php#
 
 The Lakeshore 336 on IRIS is shown in the linked [photograph](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/IRIS/IRIS_Lakeshore_336.jpg).
 
-Documentation on the Lakeshore 336 IOC setup can be found [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Lakeshore336).
+Documentation on the Lakeshore 336 IOC setup can be found [here](/specific_iocs/temp_controllers/Lakeshore336).
 
 {#iris_noteFurnace}
 ##### Note: ISIS High temperature furnace #####

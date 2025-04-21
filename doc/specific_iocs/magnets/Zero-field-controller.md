@@ -76,7 +76,7 @@ This state is triggered if the power supply setpoint readback value is outside o
 
 The "stability" indicator does not truly indicate stability - instead, it indicates that the measured field is within a tolerance of the setpoint. The tolerance is defined in `ZFCNTRL_01:TOLERANCE`. 
 
-This behaviour was specified in the [initial design document - see flowchart](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Zero-field-controller-design#implementation) which was agreed with the muon scientists, and should only be changed by agreement with all scientists using this system.
+This behaviour was specified in the [initial design document - see flowchart](#zero_field_implementation) which was agreed with the muon scientists, and should only be changed by agreement with all scientists using this system.
 
 ### Zero field controller always goes into manual after being restarted (e.g. on config load)
 

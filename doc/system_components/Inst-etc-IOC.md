@@ -16,5 +16,5 @@ There are a host of user variables which are autosaved for the users to set. The
 There are a group of user buttons which can be setup using the [add buttons shared utility script](https://github.com/ISISNeutronMuon/InstrumentScripts/wiki/Button-Functions). The number of these is controlled with `NUM_USER_BUTTONS` macro.
 
 ## Instrument specific records
-Records that are specific to an instrument can be placed in the `custom_records.db` in the configurations directory which are then loaded by INSTETC. [Macros can also be passed through to these records](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Settings-and-Configurations#files)
+Records that are specific to an instrument can be placed in the `custom_records.db` in the configurations directory which are then loaded by INSTETC. [Macros can also be passed through to these records](Settings-and-Configurations)
  

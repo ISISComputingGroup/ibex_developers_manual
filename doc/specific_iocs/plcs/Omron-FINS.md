@@ -16,6 +16,7 @@ Currently the following specific FINS PLC installations are supported in IBEX:
 * [Helium Recovery PLC](Helium-Recovery-PLC) - stores information needed for the Helium Level Monitoring project
 * SANDALS Gate Valve PLC
 
+{#omron_fins_writing_ioc}
 ## Writing IOCs for FINS PLCs
 
 IOCs for FINS PLCs at ISIS use the EPICS asyn driver support to communicate with the PLC. For getting input from hardware, you need DB records to have an INP field such as:
@@ -139,6 +140,7 @@ where:
     - 0: Do not simulate (real device or devsim)
     - 1: Simulate (don't send commands), this is required for recsim as it lets device initialisation complete successfully with no device
 
+{#omron_fins_configuration}
 ## Configuration
 
 In order to run this IOC and talk to the real PLC, you need to have the correct instrument specific `FINS_01.cmd` in `configurations/fins`. See below an example:

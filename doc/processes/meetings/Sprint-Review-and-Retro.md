@@ -13,7 +13,7 @@
 
 1. Go through each person's slide and get them to demo and mention tickets they have done
 1. Discuss any issues and goodness in the code
-1. Review the [retrospective notes](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Retrospective-Notes) from the previous meeting, which will be found at the top of the page. The items to discuss will be located under 'Items from this retrospective:' and 'Other comments (Mad/Glad/Sad)'
+1. Review the [retrospective notes](../Retrospective-Notes) from the previous meeting, which will be found at the top of the page. The items to discuss will be located under 'Items from this retrospective:' and 'Other comments (Mad/Glad/Sad)'
 
 1. Open up Teams > IBEX Developers > retrospective and discuss any items below the relevant post:
 

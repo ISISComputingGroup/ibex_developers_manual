@@ -8,7 +8,7 @@ In order to be able to embed JavaFX views, the efxclipse compatibility layer mus
 
 ### Patching Java to include JavaFX support
 
-To enable JavaFX support on a java installation, it must be patched with the JavaFX overlay. See https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Upgrade-Java#additional-steps for details of how to do this. 
+To enable JavaFX support on a java installation, it must be patched with the JavaFX overlay. See [here](/deployment/deploy/Upgrade-Java) for details of how to do this. 
 
 If you don't do this, you will get an error of the form:
 

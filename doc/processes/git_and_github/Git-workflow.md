@@ -2,7 +2,7 @@
 
 ## Steps for Developing Code with existing Git Repos
 
-If you are not sure what a git command does, you can take a look at https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Git-Commands
+If you are not sure what a git command does, you can take a look at [git commands](Git-Commands)
 
 Development work
 ----------------------------------------------------------------------------------
@@ -20,7 +20,7 @@ Development work
 * Push changes using `git push` (if this is the first time the branch is being pushed, use `git push -u origin [branch-name]`)
 * Go to GitHub and create the pull request, don't forget a test plan
 * Bored of being asked for your username and password? Read [this](https://help.github.com/articles/caching-your-github-password-in-git/).
-* If you are creating a new submodule for EPICS, find more info here: [Creating New Submodules in EPICS](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Creating-New-Submodules-in-EPICS)
+* If you are creating a new submodule for EPICS, find more info here: [Creating New Submodules in EPICS](/iocs/creation/Creating-New-Submodules-in-EPICS)
 
 ## Reviewing work for the GUI
 
@@ -47,6 +47,7 @@ Development work
 * Once the tests have been passed, go to GitHub and merge the pull request. On most repositories, there will need to be at least one "approving" review before the merge button is enabled - as the reviewer, you can add your review by clicking on "files changed" and then "review changes".
 * Click on the delete branch button on the merged page
 
+{#git_workflow_reviewing_epics_submodules}
 ## Reviewing work for the subModules of EPICS
 
 * Navigate to the appropriate directory in Git Bash

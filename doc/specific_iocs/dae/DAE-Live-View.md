@@ -2,7 +2,7 @@
 
 ## normal integral 2D detector live view
  
-The DAE, when in [event mode](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/DAE-and-the-ICP#event-and-histogram-mode), can serve up an [AreaDetector](https://github.com/areaDetector/ADCore) image as a live view of the neutron data. This can be viewed using an ImageJ plugin or as an Intensity plot in CSS.
+The DAE, when in [event mode](#dae_event_histogram_modes), can serve up an [AreaDetector](https://github.com/areaDetector/ADCore) image as a live view of the neutron data. This can be viewed using an ImageJ plugin or as an Intensity plot in CSS.
 
 Using the live view device screen you should be able to add a view with the DET macro as 1 or 2
 
@@ -26,7 +26,7 @@ depending on the number of spectra, MAX_ARRAY_BYTES may need adjusting
 
 ## Live view in histogram mode
 
-It is possible to use liveview in [histogram mode](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/DAE-and-the-ICP#event-and-histogram-mode), but this is slower and puts more load on the DAE unless a separate integrating detector card is used (such as on LOQ or SANS2D). Use the parameters to define spectrum numbers etc. as above and then enable this way with:
+It is possible to use liveview in [histogram mode](#dae_event_histogram_modes), but this is slower and puts more load on the DAE unless a separate integrating detector card is used (such as on LOQ or SANS2D). Use the parameters to define spectrum numbers etc. as above and then enable this way with:
 ```  
 caput %MYPVPREFIX%DAE:AD1:INTG:SPEC:MODE:SP 1
 ```

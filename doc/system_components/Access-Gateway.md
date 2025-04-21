@@ -88,6 +88,7 @@ ASG(TESTING) {
 
 Please note, these specific groups will only be required when WRITE access is needed beyond the standard named machines, and/or must be limited in some fashion. All systems will allow READING of any PV.
 
+{#gateway_pvlist_files}
 ## PVLIST files
 
 These lists allow the gateway to enact rules separately to the security rules being enacted by the IOCs, as well as providing an ability to ALIAS records as well.

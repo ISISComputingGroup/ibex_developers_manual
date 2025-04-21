@@ -29,7 +29,7 @@ Buttons have the following parameters:
 - `height`: the height of the button in  pixels (limited to between 10 and 35)
 
 See the `xml` example below for the full structure. The order that the items are placed in the `xml` determines the order that they are placed in the GUI. The items in the GUI are aligned right, so the item at the top of `banner.xml` will be displayed on the furthest right, and the second item will be to the left of that, and so on.
-Banner elements that were previously hard coded have now been moved to `banner.xml`. A new PV for the current configuration name was added to the Block Server in order to do this. Since PVs defined with `pcaspy` do not have a `.SEVR` field, this had to be defined manually in order to stop it being coloured pink in the GUI, see [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/BlockServer-Structure#channel-access) for details.
+Banner elements that were previously hard coded have now been moved to `banner.xml`. A new PV for the current configuration name was added to the Block Server in order to do this. Since PVs defined with `pcaspy` do not have a `.SEVR` field, this had to be defined manually in order to stop it being coloured pink in the GUI, see [here](#blockserver_structure_channel_access) for details.
 
 ## Configuration
 

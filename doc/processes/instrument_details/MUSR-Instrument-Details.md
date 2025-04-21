@@ -119,10 +119,10 @@ MUSR has the following specialist panels:
    * See [see MetroLab note](#musr_note-metroLab).  Check functionality against existing MUSR VI.
 1. MUON Magnets - Danfysik
    * See [see Danfysik note](#musr_note-danfysik).  Check functionality against existing MUSR VI.
-1. MUON Magnets - [MUON Rotation Control](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/MuSR-Rotation-control)
-1. MUON Magnets - [Zero Field Controller](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Zero-field-controller)
+1. MUON Magnets - [MUON Rotation Control](/specific_iocs/daq/MuSR-Rotation-control)
+1. MUON Magnets - [Zero Field Controller](/specific_iocs/magnets/Zero-field-controller)
 1. ~MUON TRMC2~ (TRMC2 is obsolete, no longer used)
-1. MUSR Steering - [Muon Steering magnets](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/MuSR-Steering-Magnets)
+1. MUSR Steering - [Muon Steering magnets](/specific_iocs/magnets/MuSR-Steering-Magnets)
 
 MUSR has the following motion control items:
 1. ~sample changer (2-axis)~ not needed (configuration item probably accidentally copied from another instrument)

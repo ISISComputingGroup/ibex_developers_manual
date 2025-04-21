@@ -22,8 +22,9 @@ script_generator/*
 | Standalone app build directories | `base/uk.ac.isis.scriptgenerator/*` |
 
 ## Eclipse build
-To build and run the app through eclipse, the script generator product is found in `base\uk.ac.stfc.isis.scriptgenerator.client.product`. The instructions for setting up eclipse and loading the target platform (necessary for the script generator) are found in the instructions for the [main IBEX GUI setup](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Building-the-GUI)
+To build and run the app through eclipse, the script generator product is found in `base\uk.ac.stfc.isis.scriptgenerator.client.product`. The instructions for setting up eclipse and loading the target platform (necessary for the script generator) are found in the instructions for the [main IBEX GUI setup](/client/getting_started/Building-the-GUI)
 
+{#scriptgenerator_enable_perspective}
 ### Adding the perspective into the client
 Currently the script generator perspective is not shown or selectable in the main IBEX GUI. It can be re-added by selecting `Preferences > Select Visible Perspectives` from the IBEX Main Menu.
 
@@ -35,7 +36,7 @@ There is a Jenkins pipeline which will build the script generator with every new
 
 ## Data structures in the GUI
 
-Each 'action', or step in a script is represented in the GUI as a row. Each cell contains one parameter for an action, which the users change to define their experiment. A complete row of defined parameters should be enough information to run the action once (see [Script Generator High-Level Design](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Script-generator-high-level-design#the-action-class))
+Each 'action', or step in a script is represented in the GUI as a row. Each cell contains one parameter for an action, which the users change to define their experiment. A complete row of defined parameters should be enough information to run the action once (see [Script Generator High-Level Design](#scriptgenerator_script_definition))
 
 ![](scriptgen.png)
 
@@ -44,7 +45,7 @@ The parameter values are stored as strings in the underlying action. These strin
 To change the type of action represented in the table, the singleton drops the current table and replaces it with a new one constructed using the new action type.
 
 ## Importing user-supplied script definitions
-The `ScriptDefinitions` are supplied by instrument scientists in [this form](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Script-generator-high-level-design#the-actiondefinition-class). All the python modules containing an `ScriptDefinition` in a subdirectory are imported and stored in a `ScriptDefinitionWrapper` class. Using an instrument scientist supplied `ScriptDefinition`, a `ScriptDefinitionWrapper` class is created containing the `ScriptDefinition` with helper methods like `getParameters` and `parametersValid` to expose the parameters used in the action and their validation. These `ScriptDefinitionWrapper` classes are collected by the `ScriptDefinitionsWrapper`, which is then passed through the py4j interface to the GUI code.
+The `ScriptDefinitions` are supplied by instrument scientists in [this form](#scriptgenerator_script_definition). All the python modules containing an `ScriptDefinition` in a subdirectory are imported and stored in a `ScriptDefinitionWrapper` class. Using an instrument scientist supplied `ScriptDefinition`, a `ScriptDefinitionWrapper` class is created containing the `ScriptDefinition` with helper methods like `getParameters` and `parametersValid` to expose the parameters used in the action and their validation. These `ScriptDefinitionWrapper` classes are collected by the `ScriptDefinitionsWrapper`, which is then passed through the py4j interface to the GUI code.
 
 On startup of the script generator, the latest versions of the Script Definitions are pulled from [this repository](https://github.com/ISISComputingGroup/ScriptDefinitions). The default location for this repository is in `path_to_script_generator\script_definitions` but can be changed in the `plugin_customisation.ini`. If this directory does not contain the ScriptDefinitions repository on script generator startup, a clone is attempted. If a clone of the ScriptDefintions repository failed from github, a clone is made from a `git bundle` form of the repository, which is shipped with the script generator and is created when the script generator is built.
 
@@ -162,7 +163,7 @@ The script definitions are stored in `c:\instrument\settings\ibex_script_generat
 
 ## Dynamic Scripting
 
-[See here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/IBEX-Script-Generator-Dynamic-Scripting)
+[See here](script_generator/IBEX-Script-Generator-Dynamic-Scripting)
 
 ## Interested instruments/groups
 

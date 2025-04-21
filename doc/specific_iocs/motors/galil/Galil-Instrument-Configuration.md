@@ -5,12 +5,12 @@ On startup, Galil IOCs are configured at a higher level by reading from files th
 The following settings are configured in this way:
 
 ## Required:
-- [Galil Controller Config](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Galil#startup)
+- [Galil Controller Config](#galil_startup)
 
 ## Optional extensions:
-- [Axis (Alias)](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Axis)
-- [Barn Doors](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Barndoors-and-Momentum-Slits-on-MUON-Front-End)
-- [Bump Strip](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Bump-Strip)
-- [Jaws](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Jaws)
-- [Motion Set Points](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Motion-Set-points) 
-- [Sample Changer](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Sample-Changer-Support-Module)
+- [Axis (Alias)](../../motor_extensions/Axis)
+- [Barn Doors](../../motor_extensions/jaws/Barndoors-and-Momentum-Slits-on-MUON-Front-End)
+- [Bump Strip](../../motor_extensions/Bump-Strip)
+- [Jaws](../../motor_extensions/Jaws)
+- [Motion Set Points](../../motor_extensions/Motion-Set-points) 
+- [Sample Changer](../../motor_extensions/Sample-Changer-Support-Module)

@@ -22,8 +22,7 @@ In the following exercise, we will add a single item to the reflectometry config
 Before we start making changes, let's review the content of the blank config in front of you:
 
 ```
-# Reference documentation for writing reflectometry configurations available at
-# https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Configuration
+# Reference documentation for writing reflectometry configurations available at Reflectometry-Configuration
 
 from ReflectometryServer import *
 
@@ -77,7 +76,7 @@ Some Tips:
     - `Component` just tracks the beam path in height
     - `TiltingComponent` tracks the beam path in height and angle 
     - `ReflectingComponent` tracks the in height and angle and can also change the path of the beam for components further downstream
-- `ChangeAxis` is used to link a given `AxisParameter` to a given `IocDriver`. For more information on the different options for `AxisParameter, see [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Configuration#types-of-parameter)
+- `ChangeAxis` is used to link a given `AxisParameter` to a given `IocDriver`. For more information on the different options for `AxisParameter, see [here](../Reflectometry-Configuration)
 - `MTRXXXX` should be replaced with the appropriate motor axis. In this case, we are looking for "Supermirror Height" and "Supermirror Rot" in the table of motors.
 
 ## To Test

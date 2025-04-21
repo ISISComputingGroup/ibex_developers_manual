@@ -13,7 +13,7 @@ Beamline parameters represent high-level values a user may wish to set. They can
 - `<BASE>:CHANGING` - True if the parameter readback value is currently changing (i.e. an underlying motor is moving)
 - `<BASE>:DEFINE_POSITION_AS` - redefines the current parameter readback to the given value (does not move the motor)
 
-**For more information on implementation specifics see the [Reflectometry Configuration page](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Configuration#beamline-parameters)**
+**For more information on implementation specifics see the [Reflectometry Configuration page](#reflectometry_beamline_parameters)**
 
 ## Example of Beam Offset Axis
 
@@ -38,6 +38,7 @@ For example, on CRISP it is the angle to the first detector which is in the beam
 
 The setpoint for theta is special because all it does is change the beam path it does not affect any underlying PVs. However in disabled mode, the incoming beam is no longer altered and this means changing theta would have no effect on the component it is pointing at, e.g. changing Theta would not alter the position of the detector. To fix this there is a special route to force an incoming beam path to be set. This should allow the component defining theta to move when theta is changed.
 
+{#reflectometry_parameter_init}
 ## Parameter Initialisation
 
 When starting the IOC, the beamline parameter values are initialized. The intended behaviour is that if you restart the reflectometry IOC, it should come back exactly in the state you left it in.

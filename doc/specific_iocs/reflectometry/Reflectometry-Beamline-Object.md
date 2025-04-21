@@ -58,12 +58,14 @@ When the mode is changed to (not disable mode) the following happens:
     1. This includes setting whether the components are in the beam or not
 2. The parameters in the beamline are activated/deactivated as defined by the newly set mode.
 
+{#reflectometry_disabled_mode}
 #### Disabled Mode
 
 A mode can be declared as ”disabled mode” via parameter in its constructor. Disabled mode is special because in this mode the movements are relative to the positions when the mode was entered into. This is done by disabling the beam calculation for each component. The idea of disabled mode is to unlink all components from each other and stop tracking the beam path. Only theta related parameters should be in this mode, since theta is an angle between two components and by definition will not make sense if those are unlinked.
 
+{#reflectometry_beamline_constants}
 #### Beamline Constants
 
 The beamline may also define constants: these are values set in the configuration file that the user wants exposed via a PV for the instrument, for example the Z coordinates of components, or the maximum Theta angle for this instrument. These can then be used in scripts like `run_angle`, for example to derive the distance between slits for footprint calculation. The value for the constant must be either a number or a boolean. They are set by passing them into the beamline object as an optional parameter. 
 
-**For more information on implementation specifics see the [Reflectometry Configuration page](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Configuration#beamline-constants)**
+**For more information on implementation specifics see the [Reflectometry Configuration page](Reflectometry-Configuration)**

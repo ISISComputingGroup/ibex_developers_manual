@@ -4,7 +4,7 @@
 | :--------   | :---------: | ----------: |
 | LJ | JH | HC |
 
-## Items from [last retrospective](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Retrospective-notes-2023.02.01):
+## Items from [last retrospective](Retrospective-Notes-2023.02.01):
 
 > Try to automate more of release workflow to avoid errors
  - Will be discussed in planning meeting (2023/03/09) succeeding this one. 

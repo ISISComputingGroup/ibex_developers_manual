@@ -13,5 +13,5 @@ asynInterposeThrottleConfig(port, address, min_delay_between_commands)
 
 so you would add e.g. `asynInterposeThrottleConfig("L0", 0, 0.1)` to the `st.cmd` after port `L0` is created.
 
-To see when a delay is being inserted, enable the filter debug output as per https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/ASYN-Trace-Masks-(Debugging-IOC,-ASYN) so e.g. set trace mask to `0xD` rather than `0x9`
+To see when a delay is being inserted, enable the filter debug output as per [asyn trace masks](/iocs/troubleshooting/ASYN Trace Masks (Debugging IOC, ASYN)) so e.g. set trace mask to `0xD` rather than `0x9`
 

@@ -41,7 +41,7 @@ print(unpacked_float) # Value should be 30.5. This is a Celcius measurement take
 
 * This is a modbus device, which adds complications when testing and emulating.
 
-* Recsim is difficult to get working as a modbus device relies on I/O interrupts and AsynInt/AsynFloat types, both of which make it much more difficult to get a record simulation to work. See [Record Simulation](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Record-Simulation)
+* Recsim is difficult to get working as a modbus device relies on I/O interrupts and AsynInt/AsynFloat types, both of which make it much more difficult to get a record simulation to work. See [Record Simulation](/iocs/testing/Record-Simulation)
    * Therefore, this device has no RECSIM tests.
 
 * There is a crude DEVSIM/lewis emulator, but support for modbus in the lewis framework is minimal.

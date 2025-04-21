@@ -60,7 +60,7 @@ We noticed some discrepancies between the motor positions in SECI and IBEX for t
 - Offset sign was incorrect
 - De-energise set incorrectly
 - Encoders were not set 
-    - This is due to running the conversion on simulated motors. Information added [to the motor migration wiki page](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Migrating-Galil-motors-from-SECI-to-IBEX).
+    - This is due to running the conversion on simulated motors.
 
 --> [Ticket 5654](https://github.com/ISISComputingGroup/IBEX/issues/5654)
 

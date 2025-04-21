@@ -1,8 +1,8 @@
 # Razorbill RP100 Strain Cell PSU
 
-This is a small power supply (±200V, ±6mA) used to drive a piezoelectric strain cell.  It has a USB interface which connects to an [AnywhereUSB](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/AnywhereUSB) USB<->Ethernet adapter on the beamline, or a local PC for testing/setup.
+This is a small power supply (±200V, ±6mA) used to drive a piezoelectric strain cell.  It has a USB interface which connects to an [AnywhereUSB](/specific_iocs/other/AnywhereUSB) USB<->Ethernet adapter on the beamline, or a local PC for testing/setup.
 
-[When connecting via an AnywhereUSB adapter or directly to a PC](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/AnywhereUSB), an additional COM port will appear.  Usually it's the next available, although it's not possible to predict which number it will be.  The Windows Device Manager can be used to find out (view only under normal user privileges), where it will show a `USB Serial Device (COMn)` under `Ports (COM & LPT)`.  This value can then be used for an IOC macro in the usual way.
+[When connecting via an AnywhereUSB adapter or directly to a PC](/specific_iocs/other/AnywhereUSB), an additional COM port will appear.  Usually it's the next available, although it's not possible to predict which number it will be.  The Windows Device Manager can be used to find out (view only under normal user privileges), where it will show a `USB Serial Device (COMn)` under `Ports (COM & LPT)`.  This value can then be used for an IOC macro in the usual way.
 
 WISH are the primary users of this device and previously have had to borrow one from SE Electronics Group, but now have their own unit.  Usually their experiments using the Razorbill PSU also involve the [Keysight E4980AL LCR Meter](https://github.com/ISISComputingGroup/IBEX/issues/7663).
 

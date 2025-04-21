@@ -139,7 +139,7 @@ WISH has the following specialist panels/systems:
    * See also `C:\LabVIEW Modules\Instruments\POLARIS\POLARIS Sample Changer\POLARIS SC - Front Panel.vi`
 1. WISH Jaws
 1. WISH Lakeshore 370
-1. WISH Oscillating Radial Collimator (Galil) - see https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/MERLIN,-LET-and-WISH-Oscillating-radial-collimators#wish-specifics for more info
+1. WISH Oscillating Radial Collimator (Galil) - see [here](/specific_iocs/motor_extensions/MERLIN,-LET-and-WISH-Oscillating-radial-collimators) for more info
 1. WISH Vacuum PLC
 
 WISH has the following devices under motion control:

@@ -2,7 +2,7 @@
 
 ## Last Retrospective
 
-- Documentation for our approach for external contributions [here](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/External-Contributions)
+- Documentation for our approach for external contributions [here](/processes/dev_processes/External-Contributions)
 - Invite for training course went out to all scientists. Had 3-4 extra scientists join that were new to ISIS. We should perhaps run one every couple of releases or so.
 - Running the training course remotely went fine. Lessons learned: 
     - Could have used some more training machines to be set up
@@ -49,5 +49,5 @@ Yes, this is a good idea. Call the file `Sprintreview_start_<date>`. Add start a
 
 - We are happy that POLREF is now running on IBEX and SURF is planning to use it this cycle.
 - We are making good progress on SANS2D. Different groups coordinating well with each other (us, scientists, network team, ...)
-- We are excited about Windows 10 updates. Build is "mostly" automated, process is now documented [(Link)](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Building-a-windows-10-instrument-machine-from-MDT), everyone should in principle be able to set this up.
+- We are excited about Windows 10 updates. Build is "mostly" automated, process is now documented [(Link)](/systems/inst_control/mdt/Building-a-windows-10-instrument-machine-from-MDT), everyone should in principle be able to set this up.
 - What to do with trivial support issues? Creating a ticket every time seems like a lot of overhead --> Put them in a teams channel, then record them permanently in a ticket at the end of the sprint. `support-issues` channel has now been created

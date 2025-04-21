@@ -9,10 +9,10 @@ When you move a component out of the beam, it's offset Setpoints and SP:RBVs are
 When you move a component into the beam, each parked axis returns to its SP:RBV and it can become part of the active tracking model again (if all other conditions are met too e.g. its part of the current mode).
 
 ## Design Rationale
-These parameters function very similarly to [Motion Set Points](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Motion-Set-points). There are a few reasons why we integrated these into the reflectometry server as a parameter type rather than just using motion setpoints:
+These parameters function very similarly to [Motion Set Points](/specific_iocs/motor_extensions/Motion-Set-points). There are a few reasons why we integrated these into the reflectometry server as a parameter type rather than just using motion setpoints:
 - As for other Parameters, they provide the option to enter a setpoint without applying it
 - The in/out of beam status affects the beam tracking model, e.g. `sm_angle` will be ignored for the beam path if the super mirror component is parked
-- `InBeam` Parameters allow for [more sophisticated parking behaviour](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Composite-Driving-Layer#out-of-beam-positions-and-parking-sequences), such as 
+- `InBeam` Parameters allow for [more sophisticated parking behaviour](#reflectometry_parking_sequences), such as 
     - moving through a sequence of positions when parking in special cases where the linear path is physically obstructed on the beamline
     - applying one of several possible parked positions depending on the beam position in cases where we might accidentally obstruct it otherwise. e.g. Park High for low angled beam, Park Low for high angled beam.
 
@@ -34,4 +34,4 @@ In this exercise, we will add parking behaviour to the super mirror and sample c
 
 `add_driver(IocDriver(..., out_of_beam_positions=[OutOfBeamPosition(-10)]))`
 
-- You might get a warning if you do not enable autosave on the `InBeam` parameter. This  does not stop you from running the server but it means that on startup, we cannot differentiate between an offset from a parameter setpoint and an offset from being parked so they might be initialised wrong. More detail can be found here: https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Reflectometry-Beamline-Parameters#parameter-initialisation
+- You might get a warning if you do not enable autosave on the `InBeam` parameter. This  does not stop you from running the server but it means that on startup, we cannot differentiate between an offset from a parameter setpoint and an offset from being parked so they might be initialised wrong. More detail can be found [here](#reflectometry_parameter_init)

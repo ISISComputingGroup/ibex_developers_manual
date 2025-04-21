@@ -2,7 +2,7 @@
 
 The eurotherm is one of the most common temperature controllers at ISIS. Most beamlines have at least one eurotherm if not more.
 
-Eurotherms can be calibrated by selecting a calibration file in the OPI (`None.txt` for uncalibrated to read voltage/millivolt). By default this looks at a common calibrations repository, but can be set to a instrument-specific local one via IOC macro. See [Calibration Files](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/Calibration-Files) for more info.
+Eurotherms can be calibrated by selecting a calibration file in the OPI (`None.txt` for uncalibrated to read voltage/millivolt). By default this looks at a common calibrations repository, but can be set to a instrument-specific local one via IOC macro. See [Calibration Files](/system_components/configurations/Calibration-Files) for more info.
 
 **To use the IOC one of the `ADDR_X` macros should be defined**
 
@@ -30,6 +30,7 @@ HRPD:
 
 - Port: serial cable needs to be plugged into the RH 9 pin port labelled "J" not the 25 pin one labelled "H"
 
+{#eurotherm_comms_modes}
 ## Comms modes
 
 As of [ticket 4240](https://github.com/ISISComputingGroup/IBEX/issues/4240), we can communicate with Eurotherms via either Modbus or `EI-BISYNCH` protocol. The `EI-BISYNCH` protocol is the default and is currently used for most eurotherms at ISIS.
