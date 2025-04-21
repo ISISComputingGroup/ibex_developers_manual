@@ -1,0 +1,10 @@
+name: sphinx
+
+on: [push, pull_request, workflow_call]
+
+jobs:
+  call_sphinx_builder:
+    uses: ISISComputingGroup/reusable-workflows/.github/workflows/sphinx.yml@main
+    secrets: inherit
+    with:
+      deploy-branch: "docs"

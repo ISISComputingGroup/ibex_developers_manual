@@ -31,6 +31,9 @@ dependencies = [
   "linkify-it-py",
 ]
 
+[project.optional-dependencies]
+doc = []
+
 [project.urls]
 "Homepage" = "https://github.com/isiscomputinggroup/ibex_developers_manual/"
 "Bug Reports" = "https://github.com/isiscomputinggroup/ibex_developers_manual/issues"
