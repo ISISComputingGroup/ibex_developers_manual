@@ -8,8 +8,8 @@ After a release all of the dependencies of the system should be considered for u
 
 # WebDashboard
 
-- [Update `tomcat` on external webserver](https://github.com/isiscomputinggroup/pvws-config?tab=readme-ov-file#updating). This is an external-facing process so **must** be kept up-to-date with latest security bugfixes.
-- Update java JDK on external webserver. This is used to run tomcat, which is an external-facing process, so **must** be kept up-to-date with latest security bugfixes.
+- [Update `tomcat` on external webserver](https://github.com/isiscomputinggroup/pvws-config?tab=readme-ov-file#updating). This is an external-facing process so **must** be kept up-to-date with latest security bug fixes.
+- Update java JDK on external webserver. This is used to run tomcat, which is an external-facing process, so **must** be kept up-to-date with latest security bug fixes.
 - Update [javascript dependencies](https://github.com/ISISComputingGroup/WebDashboard/blob/main/package.json)
 
 # GUI
