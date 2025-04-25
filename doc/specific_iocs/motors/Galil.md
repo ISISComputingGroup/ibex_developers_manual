@@ -8,7 +8,7 @@ This page contains information and references regarding the operation and mainte
 
 Useful information about the Galil can be found on the following pages:
 
-- [Motors Trouble Shooting](/iocs/troubleshooting/Motors-Trouble-Shooting)
+- [Motors Trouble Shooting](Motors-Trouble-Shooting)
 - [IOC And Device Trouble Shooting](/iocs/troubleshooting/IOC-And-Device-Trouble-Shooting)
 - [Differences between real Galil and simulated motor](galil/Differences-between-real-Galil-and-simulated-motor)
 - [Galil Instrument Configuration](galil/Galil-Instrument-Configuration)
@@ -128,10 +128,6 @@ EN
 ## Syncing encoder and motor steps
 
 It can be useful to sync the motor steps to the encoder steps before each move. This is especially true with an absolute encoder where a power cycle of a Galil controller can change the motor steps to 0 but not the encoder steps because this makes the soft limits stop the motion at strange places. To do this the PV `<MOT:MTR0X0X>_MOT_ENC_SYNC_TOL_SP` should be set to a non zero value, when the difference differs by more than this tolerance the motor steps will be resynced. If the encoder is not absolute you should be cautious when doing this, the encoder and motor steps should not get out of sync so don't do it without recording the reason somewhere.
-
-## Trouble Shooting
-
-See [Motors Trouble Shooting](/iocs/troubleshooting/Motors-Trouble-Shooting)
 
 ## Further Information
 

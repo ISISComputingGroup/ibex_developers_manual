@@ -25,7 +25,7 @@ So for a new IOC do the following:
 * copy the just the ioc EXE files from the `bin` of the `EPICS-STATIC-CLEAN` build to replace those you copied from `EPICS-CLEAN` e.g. replace files on instrument in `ioc\master\SR400\bin\windows-x64` with the files from `EPICS-STATIC-CLEAN` jenkins directory `ioc\master\SR400\bin\windows-x64-static` (this will just be replacing exe, if a DLL is present in the original instrument directory don't worry about it)
 * copy the dbd files i.e. copy all dbd files in `ioc\master\SR400\dbd` from `EPICS-STATIC-CLEAN` jenkins to equivalent location on instrument computer e.g. to `c:\instrument\apps\EPICS\ioc\master\SR400\dbd`. We need to copy dbd files as they relate to EPICS records in DLLs that are embedded. We can't copy all of the `EPICS-STATIC-CLEAN` tree as some bits have the wrong `EPICS_HOST_ARCH` embedded (as in windows-x64-static). So we need to do this hybrid approach.
 
-# Notes
+## Notes
 
 * on windows you cannot replace an EXE file if it is in use
 * The list of IOCs to start is produced by a `start_ibex_server` and it also builds the list of ioc macros that the GUI reads. So you will need to run `start_ibex_server` for a new IOC or changed macros, and may have to restart the GUI after this too.

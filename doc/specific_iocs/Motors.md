@@ -42,23 +42,42 @@ The motors currently used at ISIS are:
 :titlesonly:
 :maxdepth: 1
 
-motors/*
+motors/Attocube
+motors/Beckhoff
+motors/EnginX-Sample-Positioner
+motors/Galil
+motors/Linmot
+motors/McLennan-motors
+motors/Newport
+motors/PI-Rotation-Stage-setup
+motors/SM300
+motors/SMC100
+motors/SXD-Attocube
 ```
 
 ```{seealso}
 See [Motor Extensions](Motors-Extensions) for information about extra configuration which can be applied to motion controllers, for example jaws.
 ```
 
-## Other info
+## Troubleshooting information
 
-* [Set the raw position of the motor without moving it](/iocs/troubleshooting/Set-the-raw-position-of-the-motor-without-moving-it)
+```{toctree}
+:glob:
+:titlesonly:
+:maxdepth: 1
+
+motors/Motors-Trouble-Shooting
+motors/Adding-motor-IOC-to-global-motor-moving-and-stop-all
+motors/Clearing-the-Motors-are-Moving-state
+motors/Set-the-raw-position-of-the-motor-without-moving-it
+motors/Add-support-for-motor-extras
+```
+
+## See also
+
 * [IMAT Lens Adjustment](motor_extensions/IMAT-Lens-Adjustment)
 * [Motion Setpoints](motor_extensions/Motion-Set-points)
 * [Creating soft motors to control real motors](motor_extensions/Creating-soft-motors-to-control-real-motors) This is useful if you need some logic for transformations between axes.
-* [Adding a motor IOC to global motor moving and stop all](/iocs/tips_tricks/Adding-motor-IOC-to-global-motor-moving-and-stop-all)
-* [Clearing the Motors are Moving state](/iocs/troubleshooting/Clearing-the-Motors-are-Moving-state)
 * [Portable Eulerian Cradle](motor_extensions/Portable-Eulerian-Cradle) see on ENGINX
 * [SANS2D Front Beam Stop inhibit movement](motor_extensions/SANS2D-Front-Beam-Stop-inhibit-movement)
-* [EnginX Sample Positioner](motors/EnginX-Sample-Positioner)
 * [Disabling motor from view in the motor table](/iocs/testing/Disable-records)
-

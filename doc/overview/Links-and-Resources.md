@@ -44,7 +44,7 @@ A non-exhaustive collection of troubleshooting pages.
 * [Jenkins](/processes/continuous_integration/Jenkins-Trouble-Shooting)
 * [Blockserver](/system_components/blockserver/Blockserver-Trouble-Shooting)
 * [IOC and device](/iocs/troubleshooting/IOC-And-Device-Trouble-Shooting)
-* [Motors](/iocs/troubleshooting/Motors-Trouble-Shooting)
+* [Motors](/specific_iocs/motors/Motors-Trouble-Shooting)
 * [DAE](/specific_iocs/dae/DAE-Trouble-Shooting)
 * [Experimental Runs](/specific_iocs/dae/Experimental-Runs) - This includes how log plotter can be used to look at old data.
 * [Eclipse](/client/eclipse/Common-Eclipse-Issues)

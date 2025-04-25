@@ -40,8 +40,8 @@ If you're not creating a StreamDevice IOC or you would like to know how an IOC c
 
 1. [IOC Finishing Touches](iocs/creation/IOC-Finishing-Touches)
     * Additional for motors:
-        1. [Adding motor IOC to global motor moving and stop all](iocs/tips_tricks/Adding-motor-IOC-to-global-motor-moving-and-stop-all)
-        1. [Add support for motor extras, e.g. axes](iocs/tips_tricks/Add-support-for-motor-extras)    
+        1. [Adding motor IOC to global motor moving and stop all](/specific_iocs/motors/Adding-motor-IOC-to-global-motor-moving-and-stop-all)
+        1. [Add support for motor extras, e.g. axes](/specific_iocs/motors/Add-support-for-motor-extras)    
 
 1. [Running (and testing) IOC](iocs/testing/Running-IOCs)
 

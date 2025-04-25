@@ -98,7 +98,7 @@ A Python script to upgrade current configurations to be compatible with new vers
 
 The Data Acquisition Electronics (DAE) is the physical hardware that reads the neutron events out of the detectors. IBEX communicates with this hardware via the Instrument Control Program (ICP). This program is also responsible for combining the neutron and sample environment data into the NeXus file. 
 
-## [Database Server](/system_components/The-DatabaseServer)
+## [Database Server](/system_components/DatabaseServer)
 
 ## DataWeb
 
@@ -124,7 +124,7 @@ It is a collection of software tools collaboratively developed which can be inte
 
 ## Field
 
-## [Gateway](/system_components/Access-Gateway)
+## [Gateway](/system_components/Gateway)
 
 A service that controls access between two or more networks.
 
@@ -164,7 +164,7 @@ Archives [PV](#pv) values using the [CSS Archive Engine](#archive-engine) which 
 
 ## Journal Viewer
 
-Journal viewer is an overloaded term. There are two, one as [part of the ibex GUI](/system_components/The-Journal-Viewer) and the other is a standalone application supported by the instrument scientists, we only provide data for this.
+Journal viewer is an overloaded term. There are two, one as [part of the ibex GUI](/system_components/Journal-Viewer) and the other is a standalone application supported by the instrument scientists, we only provide data for this.
 
 ## Journal Parser
 

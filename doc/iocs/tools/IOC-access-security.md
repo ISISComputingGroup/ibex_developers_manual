@@ -40,7 +40,7 @@ To check whether access security is working properly it can be useful to use a `
 
 ## Even more information
 
-- [Access Gateway](/system_components/Access-Gateway)
+- [Access Gateway](/system_components/Gateway)
 
 ## Past approaches / future extensions
 

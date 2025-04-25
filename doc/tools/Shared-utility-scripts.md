@@ -1,4 +1,4 @@
-# Shared Utility Scripts
+# Shared Utility Scripts (`ibex_utils`)
 
 A place to share resources for speeding up our workflow - most of these live in https://github.com/ISISComputingGroup/ibex_utils
 
