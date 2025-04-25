@@ -7,13 +7,13 @@ Sphinx is a widely-adopted structured documentation tool, which scales well even
 is used to build [python's documentation](https://docs.python.org/3/), the [linux kernel documentation](https://docs.kernel.org/), and 
 the [numpy documentation](https://numpy.org/doc/stable/).
 
-### Markdown
+## Markdown
 
 Markdown is the preferred format, although any format supported by sphinx can be used if needed for example ReST or MediaWiki may be useful if moving documentation from other sources.
 
 For a 3-minute introduction to Markdown see ['Mastering Markdown'](https://guides.github.com/features/mastering-markdown/).
 
-### Page Titles
+## Page Titles
 
 A top-level heading (e.g. `#` markdown header) is used as the page title. **A page should only have one title** (at the top) - otherwise multiple links to that
 page will appear in the navigation structure. Subsections within a page should use sub-headers like `##` or `###`.
@@ -21,7 +21,7 @@ page will appear in the navigation structure. Subsections within a page should u
 The page title is independent from the filename of the markdown file - however, for clarity, choose to use similar titles and
 filenames wherever possible.
 
-### Adding & editing pages
+## Adding & editing pages
 
 For simple edits to existing pages, editing can be done via the github interface. There is an "edit on github" button at
 the top of every page, which will take you to the relevant page in github to edit it.
@@ -36,7 +36,7 @@ Some sphinx `toctrees` (Table-of-contents trees) are listed explicitly, to promo
 new pages will need to be added to the `toctree` in the document one level up from where the new page has been added - preserving a 
 natural reading order. Sphinx will warn you (and fail the build) if you forget to do this.
 
-### Building the wiki locally
+## Building the wiki locally
 
 Check out the wiki into `c:\instrument\dev\ibex_developers_manual`:
 
@@ -69,7 +69,7 @@ rmdir /s /q _build && sphinx-autobuild doc _build
 ```
 
 
-### Adding DrawIO Diagram
+## Adding DrawIO Diagram
 
 Create new diagram
 
@@ -86,7 +86,7 @@ In wiki add to markdown using:
 
 To edit this just open that png in `draw.io`.
 
-### Adding Images
+## Images
 
 To add images you need to check out the Wiki and add them manually. The images should go into a folder next to the page which will use them.
 
@@ -99,3 +99,39 @@ git push
 You can then add the image in markdown using the URL `test.png`:
 
     ![alternative text](test.png)
+
+## Spellchecking
+
+The wiki has a built-in spellchecker, which will automatically run when a commit
+is pushed to github.
+
+To run the spellchecker locally, use:
+
+```
+sphinx-build -b spelling doc _build
+```
+
+There is an additional dictionary of allowed words in `doc/spelling_wordlist.txt`. This
+is used for words which we know are spelt correctly, but are not in the default dictionary.
+
+
+## Admonitions
+
+Sphinx supports various admonitions, which can be used to draw the reader's attention to
+certain topics.
+
+For example:
+
+```
+:::{tip}
+This is a tip!
+:::
+```
+
+Will render as:
+
+:::{tip}
+This is a tip!
+:::
+
+The list of supported admonitions is [on the MyST documentation](https://myst-parser.readthedocs.io/en/latest/syntax/admonitions.html).
