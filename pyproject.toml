@@ -29,6 +29,7 @@ dependencies = [
   "myst_parser",
   "sphinx-autobuild",
   "linkify-it-py",
+  "sphinxcontrib-spelling",
 ]
 
 [project.optional-dependencies]

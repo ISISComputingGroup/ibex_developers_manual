@@ -6,8 +6,6 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-import os
-import sys
 
 project = "IBEX Developer's Manual"
 copyright = ""
@@ -20,10 +18,10 @@ release = "0.1"
 nitpicky = True
 
 myst_enable_extensions = [
-    "dollarmath", 
-    "strikethrough", 
-    "colon_fence", 
-    "linkify", 
+    "dollarmath",
+    "strikethrough",
+    "colon_fence",
+    "linkify",
     "html_image",
     "attrs_block",
 ]
@@ -69,10 +67,14 @@ html_theme_options = {
 html_favicon = "favicon.ico"
 html_static_path = ["_static"]
 html_css_files = [
-    'css/custom.css',
+    "css/custom.css",
 ]
 
 autoclass_content = "both"
 myst_heading_anchors = 7
 html_last_updated_fmt = ""
 html_show_copyright = False
+
+spelling_lang = "en_GB"
+spelling_filters = ["enchant.tokenize.MentionFilter"]
+spelling_exclude_patterns = ["Glossary.md"]
