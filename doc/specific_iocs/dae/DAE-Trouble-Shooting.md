@@ -42,7 +42,7 @@ This issue has been observed on LARMOR and TOSCA, accompanied by the following e
 2017-04-13 20:52:17  Endian workaround DISABLED, blocks transfers DISABLED
 2017-04-13 20:52:17  This is a VXI DAE
 ```
-This was resolved by powercycling the DAE followed by stopping the visa server and running `resman`. Instructions how to reset the DAE can be found in [these slides](https://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/ISISICP%20and%20DAE.pptx). Ask Freddy to find out more
+This was resolved by powercycling the DAE followed by stopping the visa server and running `resman`. Instructions how to reset the DAE can be found in [these slides](https://stfc365.sharepoint.com/:p:/r/sites/ISISExperimentControls/_layouts/15/Doc.aspx?sourcedoc=%7BFB34A9F9-48C9-4590-A6B0-FDAE2EEA38B0%7D&file=ISISICP%20and%20DAE.pptx&action=edit&mobileredirect=true&DefaultItemOpen=1).
 
 *DAE3*
 
