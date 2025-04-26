@@ -80,8 +80,8 @@ This information is left here for completeness only.
 > 1. [build.bat](https://github.com/ISISComputingGroup/ibex_gui/blob/master/build/build.bat) and
 > 1. [pom.xml](https://github.com/ISISComputingGroup/ibex_gui/blob/master/base/uk.ac.stfc.isis.ibex.client.tycho.parent/pom.xml)
 > We also use ActiveMQ on the IBEX server.  [ActiveMQ](http://activemq.apache.org/) is a Java application (from the [Apache Software Foundation](http://www.apache.org/)).  ActiveMQ is invoked via one of two batch files:
-> 1. [activemq.bat](https://github.com/ISISComputingGroup/EPICS-ActiveMQ/blob/master/bin/activemq.bat)
-> 1. [activemq-admin.bat](https://github.com/ISISComputingGroup/EPICS-ActiveMQ/blob/master/bin/activemq-admin.bat)
+> 1. [`activemq.bat`](https://github.com/ISISComputingGroup/EPICS-ActiveMQ/blob/master/bin/activemq.bat)
+> 1. [`activemq-admin.bat`](https://github.com/ISISComputingGroup/EPICS-ActiveMQ/blob/master/bin/activemq-admin.bat)
 > The ``-XX:+UnlockCommercialFeatures`` command line option is **not** a feature of either batch file. Given that the Apache SF is dedicated to the provision of open-source software, it seems highly unlikely that they will ever use 
 > the ``-XX:+UnlockCommercialFeatures`` command line option.
 > ## Reference Material

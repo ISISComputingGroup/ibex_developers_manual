@@ -101,7 +101,7 @@ Need to check which model of Danfysik is used on EMU.
 1. Intelligent Pressure Controller - what do we know about this?
 
 ##### Note: LakeShore #####
-1. On muon instruments, the Triton fridges have an additional Lakeshore controller (the 372) to allow control and continuous readout of the sample temperature (the OI software doesn’t allow this using the in-built Lakeshore, despite the unit having a dedicated channel for the sample thermometry). 
+1. On muon instruments, the Triton fridges have an additional Lakeshore controller (the 372) to allow control and continuous readout of the sample temperature (the OI software doesn't allow this using the in-built Lakeshore, despite the unit having a dedicated channel for the sample thermometry). 
 1. [Model 372](https://www.lakeshore.com/products/categories/overview/temperature-products/ac-resistance-bridges/model-372-ac-resistance-bridge-temperature-controller) temperature controller.
 1. There are [EPICS drivers](https://epics-controls.org/resources-and-support/modules/hardware-support/) for a variety of Lakeshore temperature controllers.
 

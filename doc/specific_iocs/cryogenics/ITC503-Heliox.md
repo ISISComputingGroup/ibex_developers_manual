@@ -59,7 +59,7 @@ The process that causes the He3 to be pumped onto the He3 Pot is called absorpti
 
 ### Setting He3Pot Temperature
 
-- If set temperature < macro for Maximum temperature to operate the heliox at
+- If set temperature < macro for Maximum temperature to operate the Heliox at
   - If set temperature > macro for maximum temperature to use He3 cooling
     - Change control channel to `He3PotHi` control channel
   - Else

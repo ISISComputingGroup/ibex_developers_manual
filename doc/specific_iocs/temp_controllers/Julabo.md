@@ -1,12 +1,12 @@
 # Julabo
 
-Julabo is a temperature control unit. There are many different versions. The commands for each model are slightly different. When migrating an instrument, care must be taken to check exactly which command set it is using under SECI and to configure an equivalent command set in IBEX. A spreadsheet of labview settings against command set is in [this spreadsheet](julabo_commands.xlsx).
+Julabo is a temperature control unit. There are many different versions. The commands for each model are slightly different. When migrating an instrument, care must be taken to check exactly which command set it is using under SECI and to configure an equivalent command set in IBEX. A spreadsheet of LabVIEW settings against command set is in [this spreadsheet](julabo_commands.xlsx).
 
 The IOC copes with these variations in commands by making 4 commands configurable via macros:
-- `READ_POWER_CMD_NUMBER` configures the command used to read power. This macro should be the 2-digit number at the end of the read power command in the spreadsheet above (for the relevant model of julabo).
+- `READ_POWER_CMD_NUMBER` configures the command used to read power. This macro should be the 2-digit number at the end of the read power command in the spreadsheet above (for the relevant model of Julabo).
 - `READ_EXT_TEMP_CMD_NUMBER` - syntax as above but for reading external temperature
-- `READ_HIGH_LIM_CMD_NUMBER` - syntax as above but for reading the high limit from the julabo
-- `READ_LOW_LIM_CMD_NUMBER` - syntax as above but for reading the low limit from the julabo
+- `READ_HIGH_LIM_CMD_NUMBER` - syntax as above but for reading the high limit from the Julabo
+- `READ_LOW_LIM_CMD_NUMBER` - syntax as above but for reading the low limit from the Julabo
 - `OEOS` - the output terminator. Needs slashes escaping, so set to `\\r\\n` for a CR LF terminator.
 - `IEOS` - the input terminator. Needs slashes escaping, so set to `\\r\\n` for a CR LF terminator.
 
@@ -32,4 +32,4 @@ null modem: depends on Julabo If none of the settings above allow you to connect
 
 ## Troubleshooting
 
-The julabo hardware supports having several different setpoints and can control on any of them, ibex always uses setpoint 1. If the julabo hardware is set to e.g. use setpoint 2 then ibex will think all is fine and send/read the setpoint 1 ok, but the julabo hardware will how a different setpoint value (setpoint 2) on its screen. A technician will need to go into the configuration menu on the device and change it to use setpoint 1  
+The Julabo hardware supports having several different setpoints and can control on any of them, ibex always uses setpoint 1. If the Julabo hardware is set to e.g. use setpoint 2 then ibex will think all is fine and send/read the setpoint 1 ok, but the Julabo hardware will how a different setpoint value (setpoint 2) on its screen. A technician will need to go into the configuration menu on the device and change it to use setpoint 1  

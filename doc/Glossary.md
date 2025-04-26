@@ -2,7 +2,7 @@
 
 ## ACF
 
-**A**ccess **C**ontrol **F**ile.  A file used by the [Gateway](#gateway) which contains rules for access.
+**Access Control File**.  A file used by the [Gateway](#gateway) which contains rules for access.
 
 ## [ActiveMQ](/system_components/ActiveMQ)
 
@@ -46,7 +46,7 @@ A [Channel Access](#channel-access-ca) Server (CAS) that allows [blocks](#block)
 
 ## [CALab](https://www.helmholtz-berlin.de/zentrum/locations/it/software/exsteuer/calab/index_en.html)
 
-**C**hannel **A**ccess **Lab**oratory.  A library which enables [EPICS](#epics) and [LabVIEW](#labview) to communicate with each other.
+**Channel Access Laboratory**.  A library which enables [EPICS](#epics) and [LabVIEW](#labview) to communicate with each other.
 
 ## [Calibration Files](/system_components/configurations/Calibration-Files)
 
@@ -62,7 +62,7 @@ A device, usually a spinning disc of thick metal with a narrow slot, which allow
 
 ## [CLF](https://www.clf.stfc.ac.uk/Pages/home.aspx)
 
-**C**entral **L**aser **F**acility.  A department at RAL that also uses the [EPICS](#epics) control system.
+**Central Laser Facility**.  A department at RAL that also uses the [EPICS](#epics) control system.
 
 ## [Code Chats](processes/meetings/Code-Chats-and-Lightning-Talks)
 
@@ -92,7 +92,7 @@ A Python script to upgrade current configurations to be compatible with new vers
 
 ## [CSS](http://controlsystemstudio.org/)
 
-"**C**ontrol **S**ystem **S**tudio is an [Eclipse](#eclipse)-based collection of tools to monitor and operate large scale control systems, such as the ones in the accelerator community. It's a product of the collaboration between different laboratories and universities."
+"**Control System Studio** is an [Eclipse](#eclipse)-based collection of tools to monitor and operate large scale control systems, such as the ones in the accelerator community. It's a product of the collaboration between different laboratories and universities."
 
 ## [DAE](/specific_iocs/DAE-and-the-ICP)
 
@@ -119,7 +119,7 @@ A software implementation of hardware.  Usually used to help write and test an [
 
 ## EPICS
 
-**E**xperimental **P**hysics and **I**ndustrial **C**ontrol **S**ystem.  A client/server control system using [Channel Access](#channel-access-ca) as its communication protocol, forming a distributed real-time database of machine values ([PVs](#pv)).
+**Experimental Physics and Industrial Control System**.  A client/server control system using [Channel Access](#channel-access-ca) as its communication protocol, forming a distributed real-time database of machine values ([PVs](#pv)).
 It is a collection of software tools collaboratively developed which can be integrated to provide a comprehensive and scalable control system.
 
 ## Field
@@ -142,7 +142,7 @@ While Git takes care of the underlying version control, GitHub is the collaborat
 
 ## GUI
 
-**G**raphical **U**ser **I**nterface.  AKA "[The GUI](Client)" or [IBEX](#ibex) Client.  A program which provides a graphical method of interacting with the [IBEX](#ibex) Server.
+**Graphical User Interface**.  AKA "[The GUI](Client)" or [IBEX](#ibex) Client.  A program which provides a graphical method of interacting with the [IBEX](#ibex) Server.
 
 ## IBEX
 
@@ -156,7 +156,7 @@ Archives [PV](#pv) values using the [CSS Archive Engine](#archive-engine) which 
 
 ## IOC
 
-**I**nput**O**utput**C**ontroller.  A process which reads and writes [PVs](#pv).  Often interfaces with hardware (e.g. sample environment equipment) to enable it to be controlled remotely.
+**Input  Output Controller**.  A process which reads and writes [PVs](#pv).  Often interfaces with hardware (e.g. sample environment equipment) to enable it to be controlled remotely.
 
 ## Java
 
@@ -172,11 +172,11 @@ The journal parser is a program that runs as part of the end run processes. It l
 
 ## [LabVIEW](/system_components/LabVIEW)
 
-**Lab**oratory**V**irtual**I**nstrument**E**ngineering**W**orkbench.  A graphical programming language in which the device drivers for [SECI](#seci) are written.
+**Laboratory Virtual Instrument Engineering Workbench**.  A graphical programming language in which the device drivers for [SECI](#seci) are written.
 
 ## [LeWIS](https://github.com/DMSC-Instrument-Data/lewis)
 
-**Le**t's **W**rite **I**ntricate **S**imulators.  A Python framework for producing and running [emulators](#emulator).  See [Emulating-Devices](/iocs/testing/Emulating-Devices) for more information.
+**Let's Write Intricate Simulators**.  A Python framework for producing and running [emulators](#emulator).  See [Emulating-Devices](/iocs/testing/Emulating-Devices) for more information.
 
 ## Macro
 
@@ -198,7 +198,7 @@ A network-based control system.  Some elements of it are used in the [script ser
 
 ## OPI
 
-**Op**erator **I**nterface.  A file used in [CSS](#css) to enable a user to interact with an IOC graphically.
+**Operator Interface**.  A file used in [CSS](#css) to enable a user to interact with an IOC graphically.
 
 ## Perspective
 
@@ -208,7 +208,7 @@ A network-based control system.  Some elements of it are used in the [script ser
 
 ## PV
 
-**P**rocess **V**ariable.  A named piece of data and the primary object of the [Channel Access Protocol](#channel-access-ca), often associated with a piece of equipment (e.g. status, readback, setpoint, parameter).
+**Process Variable**.  A named piece of data and the primary object of the [Channel Access Protocol](#channel-access-ca), often associated with a piece of equipment (e.g. status, readback, setpoint, parameter).
 
 ## PVLIST
 
@@ -228,7 +228,7 @@ The version of [IBEX](#ibex) to be deployed.
 
 ## SECI
 
-**S**ample **E**nvironment **C**ontrol **I**nterface.  The current instrument control system, currently being replaced by IBEX.  Written in C# and incorporating [LabVIEW](#labview) drivers for the sample environment equipment.  If you need access to the SECI user manual, please ask.
+**Sample Environment Control Interface. An old instrument control system, used before IBEX. No longer in use on any instruments. Written in C# and incorporating [LabVIEW](#labview) drivers for the sample environment equipment.
 
 ## Sequencer
 
@@ -236,7 +236,7 @@ An [EPICS](#epics) module to provide support for [SNL](#snl) files.
 
 ## SNL
 
-**S**tate **N**otation **L**anguage.  A "C-like" language to enable [State Machines](#state-machine) to be written which can then be integrated into [IOCs](#ioc).
+**State Notation Language**.  A "C-like" language to enable [State Machines](#state-machine) to be written which can then be integrated into [IOCs](#ioc).
 
 ## Soft Motor
 
@@ -270,7 +270,7 @@ A tool for running [virtual machines](#virtual-machine).
 
 ## VI
 
-**V**irtual **I**nstrument.  A [LabVIEW](#labview) program, usually a device driver for interacting with sample environment equipment.
+**Virtual Instrument**.  A [LabVIEW](#labview) program, usually a device driver for interacting with sample environment equipment.
 
 ## Virtual Machine
 

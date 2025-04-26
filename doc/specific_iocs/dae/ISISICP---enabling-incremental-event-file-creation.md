@@ -9,4 +9,4 @@ isisicp.kafkastream = true
 ``` 
 The changes will not take effect until you restart the ISISICP program - make sure you are in SETUP and any runs have finished saving, then kill the `ISISICP` process using task manager (you can restart seci/ibex if you prefer, but that is not necessary)
 
-After this is enabled, you can also run Mantid on any computer and use the kafka live listener to view and process events live during the run.
+After this is enabled, you can also run Mantid on any computer and use the Kafka live listener to view and process events live during the run.

@@ -20,7 +20,7 @@
 ## Items from this retrospective:
 - **(GLAD) New features:** Just relaying some positive feedback from instrument scientists, particularly regarding new Alarms functionality and Moxa Mappings perspective.
 - **Wiki restructuring:** ES has progressed this work as part of the recent "Friday", but still ongoing
-- **Central Mysql service:** JH has talked to SCD about implementing a central Mysql service. We need a proper discussion on how exactly this should be implemented but we have a contact in SCD now and we know that it is possible.
+- **Central MySQL service:** JH has talked to SCD about implementing a central Mysql service. We need a proper discussion on how exactly this should be implemented but we have a contact in SCD now and we know that it is possible.
 - **Should we have Standup every day?:** 
     - Motivation for retrospective comment was that it was perceived to be getting in the way of things like support during cycle while not adding that much (e.g. "I'm going to continue working on my ticket")
     - There was a sentiment that by not having it every day we would lose more than we gain

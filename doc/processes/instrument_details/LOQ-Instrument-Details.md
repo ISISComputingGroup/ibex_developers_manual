@@ -15,23 +15,23 @@ The equipment listed below is used on LOQ. Please add new information (e.g. new 
 For a _minimally functional instrument_:
 
 Manufacturer | Model | Type | Connection | Driver | Notes |
------------- | ------------- | ------------- | ------------- | ------------- | -------------------------------------------
-ISIS | DAE 2 | Detector Electronics | Ethernet | | [see DAE note](#loq_note-dae)
-ISIS | n/a | LiveView | | | [see Live View note](#loq_note-live-view)
-ISIS | Mk3 | Chopper | N/A |     | [see Chopper note](#loq_note-choppers)
-GALIL | [DMC2280](http://www.galilmc.com/products/dmc-22x0.php) | Motion Controller | Ethernet | [EPICS] | [see Galil note](#loq_note-galil)
-ORDELA | 2661N | Ordela Detector |  | | [see Ordela Detector note](#loq_note-ordela-detector)
-NI | ??? | Fieldpoint | Ethernet | | [see Ordela Detector note](#loq_note-ordela-detector)
+------------ | ------------- | ------------- |------------| ------------- | -------------------------------------------
+ISIS | DAE 2 | Detector Electronics | Ethernet   | | [see DAE note](#loq_note-dae)
+ISIS | n/a | LiveView |            | | [see Live View note](#loq_note-live-view)
+ISIS | Mk3 | Chopper | N/A        |     | [see Chopper note](#loq_note-choppers)
+GALIL | [DMC2280](http://www.galilmc.com/products/dmc-22x0.php) | Motion Controller | Ethernet   | [EPICS] | [see Galil note](#loq_note-galil)
+ORDELA | 2661N | Ordela Detector |            | | [see Ordela Detector note](#loq_note-ordela-detector)
+NI | ??? | Fieldpoint | Ethernet   | | [see Ordela Detector note](#loq_note-ordela-detector)
 ~Omega~ | ~iBTHX~ | ~Transmitter~ | ~Ethernet~ | | ~[see Omega note](#loq_noteOmega)~
-~Omega~ | ~PAC~ | ~Intelligent Controller~ | ~ModBus~ | | ~[see Omega PAC note](#loq_note-omega-pac)~
-MOXA | ioLogik | Remote I/O Controller | Ethernet | | [see MOXA ioLogik note](#loq_note-moxa-iologik)
-ISIS | ??? | ISIS Vacuum System |  |  |[see Vacuum System note](#loq_note-vacuum-system)
-Pfeiffer | TPG300 | Vacuum Gauge | RS-232 | EPICS | [see Vacuum System note](#loq_note-vacuum-system)
-Eurotherm | Temperature Controller | All models at ISIS | RS-232 | [EPICS](http://www.aps.anl.gov/epics/modules/manufacturer.php#Eurotherm) | [see Eurotherm note](#loq_note-eurotherm)
-Julabo | FP-51 | Water Bath | RS-232 | | [see Water Bath note](#loq_note-water-baths)
-ISIS | n/a | Julabo Valve |  | | [see Water Bath note](#loq_note-julabo-valve)
-ISIS | LOQ | Sample Changer |  | | [see Sample Changer note](#loq_note-sample-changer)
-ISIS | LOQ | Sample Changer Scan |  | | [see Sample Changer Scan note](#loq_note-sample-changer-scan)
+~Omega~ | ~PAC~ | ~Intelligent Controller~ | ~Modbus~   | | ~[see Omega PAC note](#loq_note-omega-pac)~
+MOXA | ioLogik | Remote I/O Controller | Ethernet   | | [see MOXA ioLogik note](#loq_note-moxa-iologik)
+ISIS | ??? | ISIS Vacuum System |            |  |[see Vacuum System note](#loq_note-vacuum-system)
+Pfeiffer | TPG300 | Vacuum Gauge | RS-232     | EPICS | [see Vacuum System note](#loq_note-vacuum-system)
+Eurotherm | Temperature Controller | All models at ISIS | RS-232     | [EPICS](http://www.aps.anl.gov/epics/modules/manufacturer.php#Eurotherm) | [see Eurotherm note](#loq_note-eurotherm)
+Julabo | FP-51 | Water Bath | RS-232     | | [see Water Bath note](#loq_note-water-baths)
+ISIS | n/a | Julabo Valve |            | | [see Water Bath note](#loq_note-julabo-valve)
+ISIS | LOQ | Sample Changer |            | | [see Sample Changer note](#loq_note-sample-changer)
+ISIS | LOQ | Sample Changer Scan |            | | [see Sample Changer Scan note](#loq_note-sample-changer-scan)
 
 There is then a wide range of alternative sample environment used on a much less frequent basis, listed below in (approximate) decreasing order of importance: 
 

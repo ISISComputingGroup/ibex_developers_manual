@@ -3,7 +3,7 @@
 ## Building, simulating and testing the code
 
 ```{note}
-The beckhoff XAR runtime environment [does not support windows 11](https://infosys.beckhoff.com/english.php?content=../content/1033/tc3_overview/6162419083.html&id=). This means that if you are on a Windows 11 development PC, you cannot run the beckhoff tests.
+The Beckhoff XAR runtime environment [does not support windows 11](https://infosys.beckhoff.com/english.php?content=../content/1033/tc3_overview/6162419083.html&id=). This means that if you are on a Windows 11 development PC, you cannot run the Beckhoff tests.
 
 Beckhoff XAE (the editor) is supported on Windows 11.
 ```
@@ -42,7 +42,7 @@ _When you have finished testing/reviewing a PR, it is best to run `unsettick.bat
 
 2. TwinCAT will ask you to enter a code to get a trial license. You will need to do this once a week.
 3. If prompted if you wish to start the system in `Run Mode` click `Ok`. Otherwise start run mode using the button next to `Activate Configuration` ![Run](Run.PNG)
-4. You now have a simulated beckhoff PLC running on your PC. This behaves the same as real hardware and so all development can be done against it. You could now also run an IOC up talking to this local PLC.
+4. You now have a simulated Beckhoff PLC running on your PC. This behaves the same as real hardware and so all development can be done against it. You could now also run an IOC up talking to this local PLC.
 5. To see what is happening inside this PLC in more detail, and to change values, you can use the login button ![Login](Login.PNG)
 
 </details>
@@ -66,15 +66,15 @@ This means that the workflow for adding new PLC projects into CI is:
 4. At this point they have CI for building their code
 5. We make a decision about whether the code requires any system tests and if so add some into their repository
 
-To actually run tests we use the Beckhoff `automation interface` which can do any of the things you can do in the Twincat XAE automatically through DCOM. AC# (Beckhoff do not fully support a Python interface 😢) program (`twinCATAutomationTools`) has been written to leverage this interface in the following way to write integration tests for the Beckhoff:
+To actually run tests we use the Beckhoff `automation interface` which can do any of the things you can do in the TwinCAT XAE automatically through DCOM. AC# (Beckhoff do not fully support a Python interface 😢) program (`twinCATAutomationTools`) has been written to leverage this interface in the following way to write integration tests for the Beckhoff:
 
 ![Overview](beckhoff_overview.png)
 
 1. Jenkins will pull a branch of [BeckhoffTestRunner](https://github.com/ISISComputingGroup/BeckhoffTestRunner).
 2. `build.bat` is run to do the following:
    1. Build the `TwincatAutomationTools` solution, [twinCATAutomationTools](https://github.com/Simon-Cooper/twinCATAutomationTools)
-   1. Use the `twinCATAutomationTools` to import the `test_config` into the generic Twincat Solution and build the PLC code using the `automation interface`. This build will also create a `*.tpy` file, which outlines how to connect to the PLC and can be used to configure the IOC itself.
-3. The IOC test framework is started. This will use the `TwinCATAutomationTools` program to run a local simulated PLC. Then startup and test the Beckhoff twincat in the usual way.
+   1. Use the `twinCATAutomationTools` to import the `test_config` into the generic TwinCAT Solution and build the PLC code using the `automation interface`. This build will also create a `*.tpy` file, which outlines how to connect to the PLC and can be used to configure the IOC itself.
+3. The IOC test framework is started. This will use the `TwinCATAutomationTools` program to run a local simulated PLC. Then startup and test the Beckhoff TwinCAT in the usual way.
 
 This is currently being run on the ndw1926 node on Jenkins. A quirk of using this DCOM interface is that the Jenkins slave must be run as an interactive user and thus not as a service. To do this there is a bat file that should run on startup inside `C:\Users\ibexbuilder\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup`.
 

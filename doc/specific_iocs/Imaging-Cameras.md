@@ -33,4 +33,4 @@ The Andor camera is run on the `IMAT-MESSINA-DETECT` machine. It uses an areaDet
 
 If the script is run and it report `Folder does not exist` then this could be because the mapping to the drives (see above) is incorrect.
 
-On the Andor camera computer, there are two scripts on the desktop, start_epics and start_css which should be run in sequence (note the first will not finish but should sit waiting after a few seconds).  If the start_epics fails with an "ERROR: VxD not loaded" it may be a problem with camera power or USB connection.  Note the Andor camera PSU has two lights, both of which should be on.
+On the Andor camera computer, there are two scripts on the desktop, start_epics and start_css which should be run in sequence (note the first will not finish but should sit waiting after a few seconds).  If the start_epics fails with an `ERROR: VxD not loaded` it may be a problem with camera power or USB connection.  Note the Andor camera PSU has two lights, both of which should be on.

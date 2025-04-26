@@ -50,5 +50,5 @@ SURF is most likely going back to Galils as well, as they don’t have anyone to
 - FA: We got through a lot of useful tickets, and a lot of tickets generally, and we have good new people in the team.
 - LC: Happy the last big block of MUSR is done and on schedule.
 - ES: Seeing the cryostat/ needle valve work was cool
-- FA: Hasn’t been too warm which is nice in the office, we aren't overheating.
+- FA: Hasn't been too warm which is nice in the office, we aren't overheating.
 

@@ -42,7 +42,7 @@ This issue has been observed on LARMOR and TOSCA, accompanied by the following e
 2017-04-13 20:52:17  Endian workaround DISABLED, blocks transfers DISABLED
 2017-04-13 20:52:17  This is a VXI DAE
 ```
-This was resolved by powercycling the DAE followed by stopping the visa server and running `resman`. Instructions how to reset the DAE can be found in [these slides](https://stfc365.sharepoint.com/:p:/r/sites/ISISExperimentControls/_layouts/15/Doc.aspx?sourcedoc=%7BFB34A9F9-48C9-4590-A6B0-FDAE2EEA38B0%7D&file=ISISICP%20and%20DAE.pptx&action=edit&mobileredirect=true&DefaultItemOpen=1).
+This was resolved by power cycling the DAE followed by stopping the visa server and running `resman`. Instructions how to reset the DAE can be found in [these slides](https://stfc365.sharepoint.com/:p:/r/sites/ISISExperimentControls/_layouts/15/Doc.aspx?sourcedoc=%7BFB34A9F9-48C9-4590-A6B0-FDAE2EEA38B0%7D&file=ISISICP%20and%20DAE.pptx&action=edit&mobileredirect=true&DefaultItemOpen=1).
 
 *DAE3*
 
@@ -62,7 +62,7 @@ The DAE can be set to run in simulation mode, this must be unset before data wil
 
 To change the simulation mode manually, in `icp_config.xml` change the simulate property to 1 (or 0 if turning off simulation mode). `icp_config.xml` can be found in either the "LabVIEW modules" or "ICP Binaries" directory. Stop the DAE IOC from the console, then kill the ISISICP process. Finally, restart the DAE IOC from the console.
 
-### Log file for labview modules DAE
+### Log file for LabVIEW modules DAE
 
 Both SECI and IBEX use the same underlying `isisicp` program (located in `labview modules\dae`) that writes to `C:\Data\Export only\logs\icp\log\icp-<date>log`. There is an [example DAE log in this wiki](DAE-Normal-Log). This is a good place to locate DAE specific issues, not all of the details in this log appear in the ISISDAE IOC log. 
 
@@ -145,7 +145,7 @@ From an issue in Ticket https://github.com/ISISComputingGroup/IBEX/issues/3099 -
 [2018-04-09 15:26:49] : Exception occurred.
 ```
 
-The issue here is that the default simulated DAE has 2 detector cards in it, but the real DAE has more cards. To fix edit `isisicp.properties` in Labview modules to create more cards. Note this is not an ibex issue - it will also affect DAE simulation mode under SECI. The number of cards on each crate is given by the maximum missing card for the crate (see log), more crates can be added as well as cards. An example from wish with 3 crates, 10, 10 and 12 card per crate is:
+The issue here is that the default simulated DAE has 2 detector cards in it, but the real DAE has more cards. To fix edit `isisicp.properties` in LabVIEW modules to create more cards. Note this is not an ibex issue - it will also affect DAE simulation mode under SECI. The number of cards on each crate is given by the maximum missing card for the crate (see log), more crates can be added as well as cards. An example from wish with 3 crates, 10, 10 and 12 card per crate is:
 
 ```
 isisicp.simulation.detcards.crate0.number = 10
@@ -173,7 +173,7 @@ If the system is running DAE3, then there is another possible cause. check the l
 ```
 Unable to create Quixtream on process20: Quixtream Error: Failed to bind the socket to the local port.
 ```
-The quickstream driver expects certain ports in the UDP dynamic range to be available - this error indicates something is not. It is not very helpful about which specific port (it uses UDP ports from 0xFE00 (65024) upwards) so a reboot may be the only option. 
+The quickstream driver expects certain ports in the UDP dynamic range to be available - this error indicates something is not. It is not very helpful about which specific port (it uses UDP ports from `0xFE00` (65024) upwards) so a reboot may be the only option. 
 
 ### Real DAE complains about missing cards/crates (new card/crate hardware has just need added)
 
@@ -476,4 +476,4 @@ Check to see if you have any errors similar to the following:
 
 If so, you haven't registered your `isisicp.exe` program with the registry. Follow the steps to [Configure DAE for simulation mode on developer's computer](#first_time_install_configure_dae)
 
-If you have done this it may be that the isisicp.exe program is too old. Older versions do not contain a function which is needed by IBEX. Check the file   svn_revision.txt   in c:\labview modules\dae - it needs to be 1633 or higher. If it needs updating, ask a SECI specialist to update the program.
+If you have done this it may be that the isisicp.exe program is too old. Older versions do not contain a function which is needed by IBEX. Check the file `svn_revision.txt` in `c:\labview modules\dae` - it needs to be 1633 or higher. If it needs updating, ask a SECI specialist to update the program.

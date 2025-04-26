@@ -1,12 +1,12 @@
 # LabVIEW memory leak
 
-If nagios is reporting a critical memory usage for labview (which will only be on a SECI instrument) then you need to do the following:
+If nagios is reporting a critical memory usage for LabVIEW (which will only be on a SECI instrument) then you need to do the following:
 
 first check to see if the nagios service has been acknowledged (has a tick next to it), it it has then these steps have already been followed and you need do nothing
 
 compose an email with the from address set to "ISIS Experiment Controls" and the following content with `yyyy` replaced by the instrument name e.g. `OFFSPEC`
 ```
-subject: SECI/Labview memory usage on NDXyyyy computer
+subject: SECI/LabVIEW memory usage on NDXyyyy computer
 
 Hi,
 

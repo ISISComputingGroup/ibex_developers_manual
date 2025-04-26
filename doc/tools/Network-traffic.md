@@ -2,7 +2,7 @@
 
 ## View Network Traffic using Wireshark
 
-To see packets to and from the machine simply install wireshark and use. To look at packets on localhost. Install npcap (https://nmap.org/npcap/) with compatible for winpcap. Then afterwards install wireshark it should recognise ncap.
+To see packets to and from the machine simply install Wireshark and use. To look at packets on localhost. Install npcap (https://nmap.org/npcap/) with compatible for winpcap. Then afterwards install Wireshark it should recognise ncap.
 To capture network traffic:
 
 1. Start Wireshark

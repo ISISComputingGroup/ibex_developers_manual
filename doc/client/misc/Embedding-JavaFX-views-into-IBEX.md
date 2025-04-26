@@ -1,10 +1,10 @@
 # Embedding JavaFX views into IBEX
 
-This is useful for e.g. embedding native views from phoebus such as displaybuilder, databrowser etc.
+This is useful for e.g. embedding native views from Phoebus such as displaybuilder, databrowser etc.
 
 ### EFXclipse / compatibility layer setup
 
-In order to be able to embed JavaFX views, the efxclipse compatibility layer must be configured on the branch you're attempting to use. The easiest way to check this is to check for the presence of an `uk.ac.stfc.isis.ibex.javafx` package - if this package is not present, you will not be able to embed javafx views. Currently this package is only available on the phoebus proof-of-concept branch.
+In order to be able to embed JavaFX views, the efxclipse compatibility layer must be configured on the branch you're attempting to use. The easiest way to check this is to check for the presence of an `uk.ac.stfc.isis.ibex.javafx` package - if this package is not present, you will not be able to embed javafx views. Currently this package is only available on the Phoebus proof-of-concept branch.
 
 ### Patching Java to include JavaFX support
 

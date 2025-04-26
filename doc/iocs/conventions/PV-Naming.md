@@ -147,28 +147,28 @@ Sub domain is full instrument name e.g GEM. If we wish to distinguish the instru
 
 If a value can fluctuate, these refer to the current measured value of a quantity and the suffixes SP and RBV are used to indicated the desired value software requested (setpoint) and the desired value being used in the hardware (RBV)
 
-| Signal Name   | Meaning   | Valid Units |
-|---|---|---|
-| POS   | Position |    M, mm, cm |
-| STAT  | Status, State | Open, Closed, On, Off, Ok, Error |
-| CURR  | Current | A, mA, uA |
-| VOLT  | Voltage | kV, V |
-| CMD   | Device command e.g. write to this to perform an action, such as start/stop a run | |  
-| SEL   | Select mode or position | |
-| TEMP  | Temperature   | |
-| COUNT | Counter value, neutron counts | |
-| COUNTD    | Counter value as a distribution, i.e. divided by bin width - so neutron counts per microsecond for example | |
-| P, I, D |     P, I, D values on e.g. eurotherm | |
-| TOF | Time of flight axis for a spectrum  | |
-| TIME | An absolute timestamp , preferably in ISO8601 format | |
-| FIELD | Magnetic field | |
-| PRESSURE | Pressure | |
-| FREQ | Frequency of a chopper | Hz |
-| PHAS | Phase of a chopper | us |
-| PHAS_ERR | Error in the phase | us |
-| ERROR | Device error output | Integer or String values |
-| COMP | A component for a given composition gradient. Common on high performance liquid chromatography devices. | |
-| FLOWRATE | The flow rate of a pump | (SI prefix) + L |
-| RAMPRATE | The ramp rate of a variable | (SI unit of variable)/ (s or min) |
+| Signal Name   | Meaning                                                                                                                                                         | Valid Units |
+|---|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|---|
+| POS   | Position                                                                                                                                                        |    M, mm, cm |
+| STAT  | Status, State                                                                                                                                                   | Open, Closed, On, Off, Ok, Error |
+| CURR  | Current                                                                                                                                                         | A, mA, uA |
+| VOLT  | Voltage                                                                                                                                                         | kV, V |
+| CMD   | Device command e.g. write to this to perform an action, such as start/stop a run                                                                                | |  
+| SEL   | Select mode or position                                                                                                                                         | |
+| TEMP  | Temperature                                                                                                                                                     | |
+| COUNT | Counter value, neutron counts                                                                                                                                   | |
+| COUNTD    | Counter value as a distribution, i.e. divided by bin width - so neutron counts per microsecond for example                                                      | |
+| P, I, D | P, I, D values on e.g. Eurotherm                                                                                                                                | |
+| TOF | Time of flight axis for a spectrum                                                                                                                              | |
+| TIME | An absolute timestamp , preferably in ISO8601 format                                                                                                            | |
+| FIELD | Magnetic field                                                                                                                                                  | |
+| PRESSURE | Pressure                                                                                                                                                        | |
+| FREQ | Frequency of a chopper                                                                                                                                          | Hz |
+| PHAS | Phase of a chopper                                                                                                                                              | us |
+| PHAS_ERR | Error in the phase                                                                                                                                              | us |
+| ERROR | Device error output                                                                                                                                             | Integer or String values |
+| COMP | A component for a given composition gradient. Common on high performance liquid chromatography devices.                                                         | |
+| FLOWRATE | The flow rate of a pump                                                                                                                                         | (SI prefix) + L |
+| RAMPRATE | The ramp rate of a variable                                                                                                                                     | (SI unit of variable)/ (s or min) |
 | START | For a device with a singular operation (Ramp, Pump etc.,) but a complex initialisation this can be used to start the operation (using a sequenced record etc.,) | |
-| STOP | For a device with a singular operation (Ramp, Pump etc.,) but a complex shutdown this can be used to stop the operation (using a sequenced record etc.,) | |
+| STOP | For a device with a singular operation (Ramp, Pump etc.,) but a complex shutdown this can be used to stop the operation (using a sequenced record etc.,)        | |

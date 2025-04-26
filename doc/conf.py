@@ -72,9 +72,12 @@ html_css_files = [
 
 autoclass_content = "both"
 myst_heading_anchors = 7
+myst_linkify_fuzzy_links = False
 html_last_updated_fmt = ""
 html_show_copyright = False
 
 spelling_lang = "en_GB"
 spelling_filters = ["enchant.tokenize.MentionFilter"]
-spelling_exclude_patterns = ["Glossary.md"]
+spelling_warning = True
+spelling_show_suggestions = True
+spelling_suggestion_limit = 3

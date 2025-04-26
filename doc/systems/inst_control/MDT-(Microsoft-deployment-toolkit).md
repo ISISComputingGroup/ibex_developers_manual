@@ -9,7 +9,7 @@ MDT is a tool used by some other organisations - as such, there is some document
 - **Deployment share** - this is a static location which must be read-accessible from the new machine to be built, and write-accessible from the MDT build server.
 - **MDT Build server** - this is a machine with MDT installed on it, that has write access to the deployment share. This can be a virtual machine, even one built using MDT itself...
 - **Deployment ISO** - this is a virtual disk (ISO image) which gets built by the MDT process. It contains a minimal (bootstrap) operating system, and points back to the deployment share to read instructions from it. It is the bootable media which starts off the creation of a new virtual machine.
-  * Note that it is not a standard windows 10 iso (like you might get directly from microsoft), as it has to contain instructions to point to the ISIS MDT deployment share location.
+  * Note that it is not a standard windows 10 iso (like you might get directly from Microsoft), as it has to contain instructions to point to the ISIS MDT deployment share location.
 
 The basic process of an MDT update and deployment is:
 - Make changes to the MDT configuration on the MDT build server.

@@ -6,7 +6,7 @@ There are two versions of the Mezei flipper hardware in use, and so the IOC and 
 
 ### V1
 
-This hardware is in use on POLREF. It was originally in use by LET, but was superceded by V2 (which has been set back to V1 because of communication issues as of 16/11/2020) in https://github.com/ISISComputingGroup/IBEX/issues/4871 .
+This hardware is in use on POLREF. It was originally in use by LET, but was superseded by V2 (which has been set back to V1 because of communication issues as of 16/11/2020) in https://github.com/ISISComputingGroup/IBEX/issues/4871 .
 
 If you need to use V1 hardware, you should set the following macros in `globals.txt` to enable support for the old protocol:
 
@@ -32,7 +32,7 @@ The port used by default is 80. As of [#7206](https://github.com/ISISComputingGr
 - This python script reads the timing pulse (this can come from the synchrotron or a chopper) and controls the flipper
 - The python script exposes a TCP connection
 - The python script is available in `\shares\ISIS_Experiment_Controls\external_code\Mezei Neutron Spin Flipper`
-- The current labview and IBEX drivers, running on the NDX instrument control PC, use this TCP connection to talk to the flipper system
+- The current LabVIEW and IBEX drivers, running on the NDX instrument control PC, use this TCP connection to talk to the flipper system
 - There is also some optimization code. This is an instrument script which runs on the NDX machine and communicates with PVs via genie_python. This is what determines the mode and parameters which the flipper will run with. Therefore these modes and parameters are not expected to be set manually.
 
 See also some of the comments in https://github.com/ISISComputingGroup/IBEX/issues/3738 and https://github.com/ISISComputingGroup/IBEX/issues/4871 for further details of the hardware setup.

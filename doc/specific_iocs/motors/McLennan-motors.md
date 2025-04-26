@@ -13,17 +13,17 @@ The McLennan motor is a controller that support multiple independent motors. It 
 
 **WARNING: Unlike many other motor controllers that remember settings through autosave the McLennan exclusively uses macros. This means for changing parameters in a persistent way you will need to change them in the IOC configuration rather than the motor details panel, otherwise they will get lost on IOC restart. We now plan to make these settings appear read-only in the motor view to avoid any confusion **
 
-Instructions on how to convert a **labview mclennan ini file** are at the end of this document in the [converting values from labview](#converting-values-from-labview) section
+Instructions on how to convert a **LabVIEW Mclennan ini file** are at the end of this document in the [converting values from LabVIEW](#converting-values-from-labview) section
 
 ## Behaviour
 
 ### Motor Resolution
-The motor resolution is set with the *MSTP***n** IOC macros and in units of `steps/mm` (same as in SECI/labview), this will be inverted by the IOC internally as the EPICS motor record `MRES` field uses the inverse `mm/step`. 
+The motor resolution is set with the *MSTP***n** IOC macros and in units of `steps/mm` (same as in SECI/LabVIEW), this will be inverted by the IOC internally as the EPICS motor record `MRES` field uses the inverse `mm/step`. 
 
 ### Encoder Resolution
-The encoder ratio rather than encoder resolution is set with the *ERES***n** IOC macros, this is a string like `400/4096` and bears no direct relation to the EPICS motor record `ERES`. As the mclennan driver pretends to be open loop (no encoder present as per `MSTA` field) whatever mode it is running in, the motor record `ERES` is not actually used and is set to `0` in the `st.cmd` and will then display as the same value as motor record `MRES` when later viewed. So ignore the encoder resolution value displayed on the motor record screen.  
+The encoder ratio rather than encoder resolution is set with the *ERES***n** IOC macros, this is a string like `400/4096` and bears no direct relation to the EPICS motor record `ERES`. As the Mclennan driver pretends to be open loop (no encoder present as per `MSTA` field) whatever mode it is running in, the motor record `ERES` is not actually used and is set to `0` in the `st.cmd` and will then display as the same value as motor record `MRES` when later viewed. So ignore the encoder resolution value displayed on the motor record screen.  
 
-The encoder ratio written `M/E` is providing `motor_steps_per_revolution / encoder_steps_per_revolution`, in SECI/labview this was referred to as `Numerator / Demoninator`. So `actual_position_steps = encoder_steps_readback * encoder_ratio`. For closed loop (encoder feedback) controller mode to work this ratio needs to be correct so that `commanded_motor_steps_moved = encoder_steps_moved * encoder_ratio`, if the ratio isn't right the motor will fail to get position leading to many retries and an error. It is possible to work out the ratio by e.g. going to motor console (PuTTY/hterm), doing a small MR relative move and comparing command position (CP) and actual position (AP). `dbior` command on an ioc window now shows these values, as does the `QP` command at the motor low level serial interface. The Raw encoder steps is `IP` or `Input Position` which is scaled by encoder ratio to give actual (AP) position. If encoder and motor move in opposite directions, add a minus sign to encoder ratio.
+The encoder ratio written `M/E` is providing `motor_steps_per_revolution / encoder_steps_per_revolution`, in SECI/LabVIEW this was referred to as `Numerator / Demoninator`. So `actual_position_steps = encoder_steps_readback * encoder_ratio`. For closed loop (encoder feedback) controller mode to work this ratio needs to be correct so that `commanded_motor_steps_moved = encoder_steps_moved * encoder_ratio`, if the ratio isn't right the motor will fail to get position leading to many retries and an error. It is possible to work out the ratio by e.g. going to motor console (PuTTY/hterm), doing a small MR relative move and comparing command position (CP) and actual position (AP). `dbior` command on an ioc window now shows these values, as does the `QP` command at the motor low level serial interface. The Raw encoder steps is `IP` or `Input Position` which is scaled by encoder ratio to give actual (AP) position. If encoder and motor move in opposite directions, add a minus sign to encoder ratio.
 
 ### Velocity
 The McLennan motor velocity is set with the *VELO***n** IOC macros, the value set is in `mm/second`, same units as EPICS motor record uses.
@@ -123,7 +123,7 @@ When starting the unit:
 
 Check the `MCLEN` IOC log file for error messages and also examine output from `dbior` and `dbior * 1` typed at the IOC console window. 
 
-If it doesn't move at all try using the macros for an axis number other than 1 (e.g. 2 or 3) in the ibex GUI. The axis to be driven by the buttons on the front panel are set by a position dial inside the mclennan crate, so you may not be be trying to control the correct axis id.
+If it doesn't move at all try using the macros for an axis number other than 1 (e.g. 2 or 3) in the ibex GUI. The axis to be driven by the buttons on the front panel are set by a position dial inside the Mclennan crate, so you may not be be trying to control the correct axis id.
 
 If it moves a short distance and stops it may be going into `Tracking abort`. A tracking abort means the encoder and motor step counters have got further apart than expected during the move, this could be due to: 
 * The encoder and motor resolutions are incorrect/incompatible, so "expected" and "actual" position are diverging. The first thing to do is to restart the McLennan hardware and then the IOC so that the values are resent. If this does not fix it then check the settings are correct. 
@@ -149,14 +149,14 @@ Note that the creep speed for the PM600 at least is limited to 800 steps per sec
 
 ## Mclennan does not communicate
 
-Most McLennans have 2 RS232 ports, for daisy chain in&out. The out port is **required** to have an rs-232 terminator installed in it, this looks similar to a null modem and bridges two pins. **If this terminator is not installed the mclennan will not communicate at all using any comms settings**.
+Most McLennans have 2 RS232 ports, for daisy chain in&out. The out port is **required** to have an rs-232 terminator installed in it, this looks similar to a null modem and bridges two pins. **If this terminator is not installed the Mclennan will not communicate at all using any comms settings**.
 
 ## Office McLennan Settings
 
 The office McLennan(s, there are two) needs the following:
 
 1. No Null terminator or gender changer (if using a straight-through male-female cable from a PC)
-  * Note: If the mclennan has two ports (for daisy chaining), the out port MUST have an RS232 terminator in it. This looks similar to a null modem and bridges two serial pins. If this is not present, the motor controller will not communicate.
+  * Note: If the Mclennan has two ports (for daisy chaining), the out port MUST have an RS232 terminator in it. This looks similar to a null modem and bridges two serial pins. If this is not present, the motor controller will not communicate.
 
 Use following IOC macro setting:
 
@@ -176,11 +176,11 @@ _note: the comms settings should be labelled on the device, so refer to those_
 
 ## getting debug output/information
 
-console to IOC and type `dbior` for basic information. For extended information pass a higher report level to dbior e.g. `dbior drvPM304 1` (the `drvPM304` is the mclennan driver name and restricts details to just that, the second argument is the debug level. You can use `*` instead of `drvPM304` but will then get extended details for `asyn` and other loaded drivers too)
+console to IOC and type `dbior` for basic information. For extended information pass a higher report level to dbior e.g. `dbior drvPM304 1` (the `drvPM304` is the Mclennan driver name and restricts details to just that, the second argument is the debug level. You can use `*` instead of `drvPM304` but will then get extended details for `asyn` and other loaded drivers too)
   
-## converting values from labview
+## converting values from LabVIEW
 
-if you need to convert a previous SECI/labview mclennan ini file, these are usually found in `c:\labview modules\Drivers\Mclennan PM600\INI Files` on the NDX computer. A file will have an entry like:
+if you need to convert a previous SECI/LabVIEW Mclennan ini file, these are usually found in `c:\labview modules\Drivers\Mclennan PM600\INI Files` on the NDX computer. A file will have an entry like:
 ```
 [M0]
 Name = "Mclennan Newport"
@@ -236,23 +236,23 @@ Calculate the appropriate MCLEN IOC macros as follows:
 * `Lower Limit = -180.000000` is already in proper units so set `DLLM = -180.0`
 * `Homing Speed = 10000` so divide by motor steps (10000/8000) to get `HVEL1 = 1.25`
 * `Numerator = 8.000000` and `Denominator = 1.000000` refer to the encoder ratio components so we set `ERES1 = 8/1` (This should be the equivalent numeric ratio to `Motor steps per unit`/`Encoder counts per unit` which is true here as 8000 / 1000 == 8 / 1 )
-* `Home Position = 0.000000` IOC always applies a dial home position of 0, if labview value is non-zero set `OFST1` IOC macro to this value
-* `Control Mode = 4` in labview `4` is "closed loop stepper" so set `CMOD1 = CLOSED` (if labview was `1` that means "open loop stepper" so would set `CMOD1 = OPEN`. We don't currently handle other values and they are not used at ISIS as far as we know)
-* `Homing Method = 2` for labview 0=none; 1=home signal+; 2=home signal-; 3=reverse limit,home signal+; 4=forward limit,home signal-;5=reverse limit;6=forward limit. So labview method `2` is a *reverse direction hardware home* so after examining the [Homing](#homing) section above the equivalent ibex IOC mode is `HOME1 = 2`     
-* `Window = 50` this is the end of move check window before an internal mclennan retry. It is a bit like the retry deadband of the motor record, but done at the controller. If a moves plus retries completes and is still outside this Window, an error will be signalled. So we set `WIN1 = 50`
+* `Home Position = 0.000000` IOC always applies a dial home position of 0, if LabVIEW value is non-zero set `OFST1` IOC macro to this value
+* `Control Mode = 4` in LabVIEW `4` is "closed loop stepper" so set `CMOD1 = CLOSED` (if LabVIEW was `1` that means "open loop stepper" so would set `CMOD1 = OPEN`. We don't currently handle other values and they are not used at ISIS as far as we know)
+* `Homing Method = 2` for LabVIEW 0=none; 1=home signal+; 2=home signal-; 3=reverse limit,home signal+; 4=forward limit,home signal-;5=reverse limit;6=forward limit. So LabVIEW method `2` is a *reverse direction hardware home* so after examining the [Homing](#homing) section above the equivalent ibex IOC mode is `HOME1 = 2`     
+* `Window = 50` this is the end of move check window before an internal Mclennan retry. It is a bit like the retry deadband of the motor record, but done at the controller. If a moves plus retries completes and is still outside this Window, an error will be signalled. So we set `WIN1 = 50`
 * `Creep Steps = 0` number of steps to approach final position at the slower `Creep speed` in the final phase of a move. So we set `CRST1 = 0`    
 * `Settling Time = 0` how long motor readback must be within `Window` of requested position at end of move, if not achieved triggers a timeout abort. So we set `SETL1 = 0`
 * `BackOff Steps = 0` used for backlash correction. We can set `BOST1 = 0` but this is the default anyway.
 
-Some labview values do not currently have macros and get IOC defaults. Edit MCLEN IOC `st-motor-init.st` if you need to temporarily change them and then create a ticket to add a proper IOC macro
+Some LabVIEW values do not currently have macros and get IOC defaults. Edit MCLEN IOC `st-motor-init.st` if you need to temporarily change them and then create a ticket to add a proper IOC macro
 
 * `Correction Gain = 70` this is equivalent to the IOC default `PCOF = 0.7` for a stepper motor
 * `Creep Speed = 5000` only important for us if `Creep Steps` > 0 as this is temporary set to `HVEL` during a home so does not now affect homes.
 
-Some mclennan values were not covered in labview but exist in MCLEN IOC `st-motor-init.st`
+Some Mclennan values were not covered in LabVIEW but exist in MCLEN IOC `st-motor-init.st`
 
 * Tracking window - a parameter used to determine if a *TRACKING ABORT* should be signalled, it is the max allowed difference between current and requested position during a move (also known as the *following error*). This may get triggered by a motor being told to move/accelerate quicker than it can, or move too slowly and so stalling, or an incorrect encoder ratio so motor and encoder get out of step, or incorrect encoder values being returned from the hardware
-* Not Complete/Time-Out time - the max time at end of a move for any settling/auto corrections etc. to take place, otherwise triggers a *NOT COMPLETE/TIMEOUT ABORT* This could mean the `Window` mclennan parameter is too small and cannot be achieved, try increasing relevant `WIN*` macro. 
+* Not Complete/Time-Out time - the max time at end of a move for any settling/auto corrections etc. to take place, otherwise triggers a *NOT COMPLETE/TIMEOUT ABORT* This could mean the `Window` Mclennan parameter is too small and cannot be achieved, try increasing relevant `WIN*` macro. 
 
 ## useful commands for debugging from a terminal session
 

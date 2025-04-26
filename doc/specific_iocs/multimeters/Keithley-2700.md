@@ -99,4 +99,4 @@ For a more thorough explanation, see `coordinate_sort()` and `coordinate_update_
 
 ### Unit Tests
 
-The device utilises [googletest](/iocs/testing/Setting-up-googleTest-to-work-with-EPICS-build-process) to test the drift functionality. It does this using real-world recorded values from a previous run. The tests can be found in the support directory for the keithley, in `Keithley_2700Sup\tests` and can be run using `make test` from the top level support directory, or using `run_tests.bat` for slightly more colourful output.
+The device utilises [googletest](/iocs/testing/Setting-up-googleTest-to-work-with-EPICS-build-process) to test the drift functionality. It does this using real-world recorded values from a previous run. The tests can be found in the support directory for the Keithley, in `Keithley_2700Sup\tests` and can be run using `make test` from the top level support directory, or using `run_tests.bat` for slightly more colourful output.

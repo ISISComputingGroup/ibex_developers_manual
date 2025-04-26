@@ -29,7 +29,7 @@ Although commissioning a Beckhoff is far simpler than a Galil from an IBEX persp
 
 - Engineering units (`.EGU`) - [ticket to automatically populate](https://github.com/ISISComputingGroup/IBEX/issues/6855)
 - Axis description (`.DESC`) - [ticket to automatically populate](https://github.com/ISISComputingGroup/IBEX/issues/6860)
-  - Note, if `stDescription` is actually filled out on a beckhoff you can use the `FORWARD_DESC` macro set to `1` which will forward the PLC description to the corresponding motor record's `.DESC` field. 
+  - Note, if `stDescription` is actually filled out on a Beckhoff you can use the `FORWARD_DESC` macro set to `1` which will forward the PLC description to the corresponding motor record's `.DESC` field. 
 - Soft limits
 
 These can be set via a `caput` and will be autosaved thereafter.

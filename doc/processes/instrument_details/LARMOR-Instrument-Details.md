@@ -3,14 +3,14 @@
 This page collects information that will be useful for the implementation of the new control system on LARMOR.
 
 ## Background & Timeline ##
-The [LARMOR](http://www.isis.stfc.ac.uk/instruments/larmor/larmor8239.html) web page describes the background to the instrument. The layout of the LARMOR beamline is shown in [this diagram](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Larmor/LARMOR_Beamline_Diagram.pdf).
+The [Larmor](http://www.isis.stfc.ac.uk/instruments/larmor/larmor8239.html) web page describes the background to the instrument. The layout of the LARMOR beamline is shown in [this diagram](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Larmor/LARMOR_Beamline_Diagram.pdf).
 The proposed architecture for the LARMOR control system is described [here](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Larmor/Larmor%20Architecture.ppt).  We also have a list of LARMOR's [motion control components](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Larmor/LARMOR%20Beam%20Line%20-%20Motion%20Control%20Components.docx).
 
 ## Control System ##
-LARMOR is currently using the IBEX control system.
+Larmor is currently using the IBEX control system.
 
 ## LARMOR Equipment ##
-The equipment listed below is to be used on LARMOR. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).
+The equipment listed below is to be used on Larmor. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).
 
 Manufacturer | Model | Type | Connection | Driver | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------------------------------------

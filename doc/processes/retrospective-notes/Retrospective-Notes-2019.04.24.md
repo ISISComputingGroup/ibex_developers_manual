@@ -5,7 +5,7 @@
 The major issue this sprint was the feeling that no progress has been made this sprint and that we are very busy. There is a general concern that the next sprint we have said we will convert a new instrument but there is a feeling we do not have time for this. The new instrument will be resolved at sprint planning. Progress this sprint has been slow because:
 
 - lots of support calls because of the loss of a key member of the group
-- easter holidays and APR season took time out of the sprint
+- Easter holidays and APR season took time out of the sprint
 - we need to make sure we can do the number of points in a sprint. 
 - need to be prepared to say "No" to requests sometimes; if someone doesn't want to do this or are not sure then request should be passed to team lead, group lead or PM.
 

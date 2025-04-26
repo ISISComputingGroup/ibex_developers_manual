@@ -4,8 +4,8 @@ This documentation is built using [sphinx](https://www.sphinx-doc.org/en/master/
 plugin. Both of these tools have excellent online documentation.
 
 Sphinx is a widely-adopted structured documentation tool, which scales well even for very large projects - for example it 
-is used to build [python's documentation](https://docs.python.org/3/), the [linux kernel documentation](https://docs.kernel.org/), and 
-the [numpy documentation](https://numpy.org/doc/stable/).
+is used to build [Python's documentation](https://docs.python.org/3/), the [Linux kernel documentation](https://docs.kernel.org/), and 
+the [EPICS documentation](https://docs.epics-controls.org/en/latest/).
 
 ## Markdown
 
@@ -114,6 +114,17 @@ sphinx-build -b spelling doc _build
 There is an additional dictionary of allowed words in `doc/spelling_wordlist.txt`. This
 is used for words which we know are spelt correctly, but are not in the default dictionary.
 
+The word list can be kept in order by running `sort_word_list` (which will be available in
+the python virtual environment). This is also enforced by CI, and can be checked locally by
+running `pytest`. Both of these tools should be run from the top-level of an `ibex_developers_manual`
+git checkout - the directory that contains `pyproject.toml`.
+
+Sphinx is strict about capitalisation; where multiple spellings are valid, the word will
+need to be added to the word list with each of the valid spellings. An exception is all-lowercase entries in the 
+word list - these also allow a variant with an initial capital letter. 
+
+Where a word or product has a preferred stylisation, for example **ActiveMQ** or **LabVIEW**, only that spelling 
+should be added to the word list. Proper nouns should not have uncapitalised variants added to the word list.
 
 ## Admonitions
 

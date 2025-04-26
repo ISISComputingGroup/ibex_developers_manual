@@ -18,10 +18,10 @@ Due to port conflicts these have been changed to those listed [here](#ibex_hard_
 
 The ports used are hardcoded in a number of places so to change them they must be changed in:
 
-* EPICS\ISIS\ActiveMQ\master\conf\activemq.xml
-* EPICS\CSS\master\AlarmServer\alarm_server_settings.ini
-* EPICS\ISIS\IocLogServer\master\logserver_config.ini
-* Client\base\uk.ac.stfc.isis.ibex.product\plugin_customization.ini
-* Client\base\uk.ac.stfc.isis.ibex.activemq\src\uk\ac\stfc\isis\ibex\activemq\ActiveMQ.java
+* `EPICS\ISIS\ActiveMQ\master\conf\activemq.xml`
+* `EPICS\CSS\master\AlarmServer\alarm_server_settings.ini`
+* `EPICS\ISIS\IocLogServer\master\logserver_config.ini`
+* `Client\base\uk.ac.stfc.isis.ibex.product\plugin_customization.ini`
+* `Client\base\uk.ac.stfc.isis.ibex.activemq\src\uk\ac\stfc\isis\ibex\activemq\ActiveMQ.java`
 
 It's hard to put these into a central macro as most of the configuration requires loading *.ini files.

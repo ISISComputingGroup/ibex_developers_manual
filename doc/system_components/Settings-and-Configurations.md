@@ -59,16 +59,16 @@ The pattern for both device configuration and extensions configuration is that t
 
 Directories:
 
-- galil: configures the galil [Galil](/specific_iocs/motors/Galil) and extensions
-- mclen: configures McLennan motors [McLennan](/specific_iocs/motors/McLennan-motors) and extensions
-- sm300_01: configures the [SM300_01](/specific_iocs/motors/SM300) motor extensions 
-- motionSetPoints: setpoint look up files
-- refl (for reflectometers only): contains a file `config.py`, which tells instruments using the [Reflectometry IOC](/specific_iocs/Reflectometry-IOC) what their beamline looks like (follow the link for details)
+- `galil`: configures the galil [Galil](/specific_iocs/motors/Galil) and extensions
+- `mclen`: configures McLennan motors [McLennan](/specific_iocs/motors/McLennan-motors) and extensions
+- `sm300_01`: configures the [SM300_01](/specific_iocs/motors/SM300) motor extensions 
+- `motionSetPoints`: setpoint look up files
+- `refl` (for reflectometers only): contains a file `config.py`, which tells instruments using the [Reflectometry IOC](/specific_iocs/Reflectometry-IOC) what their beamline looks like (follow the link for details)
 
 Common extensions:
- - [Motion Set points](/specific_iocs/motor_extensions/Motion-Set-points) (works for galil, McLennan and sm300)
- - [axes](/specific_iocs/motor_extensions/Axis) (works for galil, McLennan and sm300)
- - [sample changer](/specific_iocs/motor_extensions/Sample-Changer-Support-Module) (works for galil, McLennan and sm300)
+ - [Motion Set points](/specific_iocs/motor_extensions/Motion-Set-points) (works for galil, McLennan and SM300)
+ - [axes](/specific_iocs/motor_extensions/Axis) (works for galil, McLennan and SM300)
+ - [sample changer](/specific_iocs/motor_extensions/Sample-Changer-Support-Module) (works for galil, McLennan and SM300)
  - [Barn doors and Momentum slits](/specific_iocs/motor_extensions/jaws/Barndoors-and-Momentum-Slits-on-MUON-Front-End)
 
 ### Version Control

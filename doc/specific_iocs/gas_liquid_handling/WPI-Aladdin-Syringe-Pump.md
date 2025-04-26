@@ -54,7 +54,7 @@ The manual says to power pump on after rs232 cable is attached
 
 The device has a configurable baud rate. See setup key below
 
-The device supports two rs232 modes: basic and safe. It looks like labview uses “basic” and attempts to turn off safe mode. A pump in basic mode can be controlled via an emulator like hyperterm.
+The device supports two rs232 modes: basic and safe. It looks like LabVIEW uses “basic” and attempts to turn off safe mode. A pump in basic mode can be controlled via an emulator like hyperterm.
  
 A triangle in top left of LED display is the “rs232 indicator” – indicates valid reception of a command at some point since power on. It looked like this triangle remained after cable was disconnected for example. 
  

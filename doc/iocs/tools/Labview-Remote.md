@@ -1,6 +1,6 @@
-# Labview Remote
+# LabVIEW Remote
 
-IOC to allow remote connection labview VI's via ISIS Remote Labview services.
+IOC to allow remote connection LabVIEW VI's via ISIS Remote LabVIEW services.
 
 ## Templates
 There are pre-existing templates that can be implemented via substitution files for doubles, buttons, strings, and enums.

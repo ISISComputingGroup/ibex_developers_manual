@@ -38,7 +38,7 @@ The alarm server can be found in `EPICS/CSS/master/AlarmServer`. Currently it is
 
 The server can be started by running the script 'run_alarm_server.bat'. The alarm 'root configuration' that the server uses is specified as a command-line argument; the name of the root that will be used may be set by editing the value in the 'config_name.ini' file. Other settings for the alarm server including the database and JMS server connection settings, are found in the file 'alarm_server_settings.ini'.
 
-The settings for which PVs are watched by the alarm server are set using the AlarmServerConfig tool. In a similar way to the [ArchiveEngines](CSS-Archive-Engine). The script in `AlarmServer\make_alarm_config.py` creates the xml that the config tool reads and populates the alarm server with. This xml is created based on the running IOCs as specified in the mySQL db.
+The settings for which PVs are watched by the alarm server are set using the AlarmServerConfig tool. In a similar way to the [ArchiveEngines](CSS-Archive-Engine). The script in `AlarmServer\make_alarm_config.py` creates the xml that the config tool reads and populates the alarm server with. This xml is created based on the running IOCs as specified in the MySQL db.
 
 There is also a script (procserv_start.bat) to start that alarm server wrapped in procserv, but this doesn't appear to work correctly at the present time.
 

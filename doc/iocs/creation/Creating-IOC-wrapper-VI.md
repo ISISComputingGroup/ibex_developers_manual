@@ -1,4 +1,4 @@
-# LvDCOM IOCs (Labview wrapper IOCs)
+# LvDCOM IOCs (LabVIEW wrapper IOCs)
 
 ```{warning}
 These instructions are **NOT accurate** and will need careful editing before they can be used to create a fully functioning IOC and support module ⚠️
@@ -62,7 +62,7 @@ endif
 This is a summary of [[more general LvDCOM instructions|http://epics.isis.stfc.ac.uk/doxygen/lvDCOM]].
 
 1. Open the VI in lab view.
-1. Export strings from the labview panel (In different version of labview this is different)
+1. Export strings from the LabVIEW panel (In different version of LabVIEW this is different)
      1. 2010:  Go to Tools menu, Advanced, Export Strings... and uncheck the wizard option for "block diagram strings" and save the export results to a text file e.g. controls.txt (Note: you may need write access to the VI itself to do this, so might have to make a local copy of the VI first)
      1. 2014: 
          1. Menu -> Tools -> Advanced -> Export Strings... 
@@ -73,7 +73,7 @@ This is a summary of [[more general LvDCOM instructions|http://epics.isis.stfc.a
    ```
     C:\Instrument\Apps\EPICS\ISIS\lvDCOM\master\lvDCOMApp\src\fix_xml.cmd "controls.txt" "controls.xml"
     ```
-1. Generate lvcom file:
+1. Generate lvdcom file:
     ```
     xsltproc C:\Instrument\Apps\EPICS\ISIS\lvDCOM\master\lvDCOMApp\src\lvstrings2input.xsl "controls.xml" > lv_controls.xml
     ```
@@ -265,7 +265,7 @@ You can also use the   **dbior**   command from the IOC prompt to print out the 
 
 ## Fixing LabVIEW 2010's Registry settings to allow remote DCOM access
 
-It appears that when LabVIEW 2010 is installed it does not regisiter itself correctly in the Windows Registry. This means that it ignores any DCOM settings applied to it via dcomcnfg (see note below); as a result, it uses the general default settings instead.
+It appears that when LabVIEW 2010 is installed it does not register itself correctly in the Windows Registry. This means that it ignores any DCOM settings applied to it via dcomcnfg (see note below); as a result, it uses the general default settings instead.
 
 Note: dcomcnfg is the DCOM configuration tool which can be launched by typing "dcomcnfg" at the command prompt.
 

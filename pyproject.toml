@@ -30,15 +30,27 @@ dependencies = [
   "sphinx-autobuild",
   "linkify-it-py",
   "sphinxcontrib-spelling",
+  "pytest",
 ]
 
 [project.optional-dependencies]
 doc = []
+dev = []
 
 [project.urls]
 "Homepage" = "https://github.com/isiscomputinggroup/ibex_developers_manual/"
 "Bug Reports" = "https://github.com/isiscomputinggroup/ibex_developers_manual/issues"
 "Source" = "https://github.com/isiscomputinggroup/ibex_developers_manual/"
 
-[tool.build_sphinx]
+[project.scripts]
+sort_word_list = "ibex_developers_manual.sort_word_list.__main__:main"
 
+[tool.pytest.ini_options]
+testpaths = "tests"
+
+[tool.setuptools.packages.find]
+where = [
+    "src"
+]
+
+[tool.build_sphinx]

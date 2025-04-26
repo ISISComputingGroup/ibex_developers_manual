@@ -1,6 +1,6 @@
 # File writing
 
-The [filewriter](https://github.com/ess-dmsc/kafka-to-nexus) is responsible for taking the neutron and SE data out of Kafka and writing it to a nexus file. When the ICP ends a run it sends a config message to the filewriter, via kafka, to tell it to start writing to file.
+The [filewriter](https://github.com/ess-dmsc/kafka-to-nexus) is responsible for taking the neutron and SE data out of Kafka and writing it to a nexus file. When the ICP ends a run it sends a config message to the filewriter, via Kafka, to tell it to start writing to file.
 
 ## ISIS-filewriter
 https://github.com/ISISComputingGroup/isis-filewriter has been created for an easy setup of the filewriter using docker-compose. it is hardcoded currently and requires the `file_writer_config.ini` file to be changed to point at the `_runInfo` topics manually. To begin with we ran it just pointing at `ZOOM_runInfo`, and it successfully wrote files containing event data. 
@@ -14,9 +14,9 @@ The isis-filewriter repository also contains some utility scripts for Kafka oper
 ## Log of changes and updates to the filewriter deployment and configuration messages
 ### Notes for trying to get the filewriter working on windows server 2016: 
 #### trying to run filewriter natively:
-- hdf5 conan library does not seem to build under windows, however it's falling over in the conan step
+- hdf5 Conan library does not seem to build under windows, however it's falling over in the Conan step
 - ess takes ownership of the library 
-- did not get any further than this as the conan step failed, the rest of the libraries built
+- did not get any further than this as the Conan step failed, the rest of the libraries built
 - not sure what is falling over but the hdf5 library can probably be fixed
 
 #### trying to run a docker instance of the filewriter

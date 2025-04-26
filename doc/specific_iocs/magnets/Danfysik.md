@@ -26,7 +26,7 @@ Interlock and power status can be testing by setting status PV: `%MYPVPREFIX%DFK
 
 ## Connecting to an 8500 series through serial
 
-The serial standard (RS232, 422 OR 485) used by a danfysik 8500 series is determined by the position of a jumper on the control board. This may need to be put in place for a new power supply.
+The serial standard (RS232, 422 OR 485) used by a Danfysik 8500 series is determined by the position of a jumper on the control board. This may need to be put in place for a new power supply.
 
 As the MCR network uses RS422, the jumper position will need to be changed if the PSU was previously controlled by the MCR.
 
@@ -66,7 +66,7 @@ Auto on/off is part of the workflow for muon instruments, but it is not desired 
 
 ## Initialization
 
-At ioc start, some models of danfysik need to be explicitly changed into remote mode and/or addressed. The last setpoint and power status must also be resent to the device so that the magnet does not change state as a result of an IOC restart. This is currently being done using autosave. Further details in https://github.com/ISISComputingGroup/IBEX/issues/1209
+At ioc start, some models of Danfysik need to be explicitly changed into remote mode and/or addressed. The last setpoint and power status must also be resent to the device so that the magnet does not change state as a result of an IOC restart. This is currently being done using autosave. Further details in https://github.com/ISISComputingGroup/IBEX/issues/1209
 
 ## LOQ/SANS2D Goudsmit magnet
 

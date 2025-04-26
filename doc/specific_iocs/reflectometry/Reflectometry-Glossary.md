@@ -84,7 +84,7 @@
 
 ## I
 
-**Incident Angle:** The angle between an incident ray (of neutrons) and a reflective surface (eg. a mirror or sample)
+**Incident Angle:** The angle between an incident ray (of neutrons) and a reflective surface (e.g. a mirror or sample)
 
 ## L
 

@@ -15,7 +15,7 @@ Note: this page documents the process of booting and building a windows 10 **sys
 Choose a virtual machine name <VMname> to use later - this name will need to be unique on the network (for an instrument this is the NDX name). For developing, choose a name with an `NDXTEST` prefix followed by a number. Choose a free number and record your choice in the spreadsheet called `w10_test_machines.xslx` in the General channel of Teams.  
 
 - Make a copy of a boot ISO from `<Kits>\CompGroup\ICP\W10Clone\Boot` on your local computer. You may see several ISOs in here, see the `README.txt` and choose the appropriate one. This iso does an initial boot and the loads the rest off a network share name embedded within it, thus the iso itself doesn't need to change often, it is just pointing to the appropriate location to install from.   
-  * *Note: This ISO is not really a windows PE iso, it is instead an ISO which has been built by MDT. You cannot just use a version downloaded from microsoft.com*
+  * *Note: This ISO is not really a windows PE iso, it is instead an ISO which has been built by MDT. You cannot just use a version downloaded from `microsoft.com`*
 - Next make a local copy of the VHD disks from `<Kits>\CompGroup\ICP\W10Clone\VHDS` - choose either an appropriate IBEX release or latest Jenkins build. You will need to copy the `apps`, `var` and `settings` VHDS. If you plan to have several local VMs, you may wish to rename these to `<VMname>-settings.vhdx` etc. Make a copy of the `var` disk name rename it to `scratch.vhdx` or `<VMname>-scratch.vhdx` as appropriate. Make sure you are copying them to a disk with enough free space. 
   * Note: you can check the VHDs are not corrupt by mounting them on your local machine (right click on file) if they fail to mount, they may be corrupt and you should select a different set of VHDs. After mounting each VHD should contain some files, e.g. the Apps VHD should contain an EPICS installation and a client.
 
@@ -64,7 +64,7 @@ After iso boot it will go into MDT install
  
 ### starting SECI
 
-There is also labview, SECI and a copy on EMU’s labview modules installed. SECI should start fine if you navigate to `C:\Program Files (x86)\STFC ISIS Facility\SECI` and double click on `SECIUserinterface` (the file of type `Application`). There is a file that displays the name `SeciUserInterface.exe` but this is actually `SeciUserInterface.exe.symlink` and is a link to the `SeciUserInterface.exe.config` configuration file on the settings disk.
+There is also LabVIEW, SECI and a copy on EMU’s LabVIEW modules installed. SECI should start fine if you navigate to `C:\Program Files (x86)\STFC ISIS Facility\SECI` and double click on `SECIUserinterface` (the file of type `Application`). There is a file that displays the name `SeciUserInterface.exe` but this is actually `SeciUserInterface.exe.symlink` and is a link to the `SeciUserInterface.exe.config` configuration file on the settings disk.
 
 There is an issue that the open GENIE window will look blank – if you leave the blank window on screen and then disconnect and reconnect remote desktop, the text appears. No idea what is going on…
 

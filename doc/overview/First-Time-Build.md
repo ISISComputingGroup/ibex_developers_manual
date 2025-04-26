@@ -40,7 +40,7 @@ The Windows Tips from the above link says you should add maven to the PATH in th
 ## Install Git 
 Install Git [Getting-started-with-Git-and-GitHub](/processes/git_and_github/Getting-started-with-Git-and-GitHub)
 
-## Install Moxa Nport Driver manager
+## Install Moxa NPort Driver manager
 Install `\\isis.cclrc.ac.uk\inst$\kits$\CompGroup\Utilities\MOXA Nport Software\drvmgr*.exe` - this is required on the instruments for networked serial ports. It's required on dev machines for the database server (more specifically the moxa mappings page in the GUI)
 
 ## Copy EPICS build
@@ -253,7 +253,7 @@ If you are supporting instruments it may be useful to download a VNC client. We 
 
 ### NI DAQ
 
-It is recommended that developers only install this if they know that they will at some point be using a DAQ mx. If you do not do this step, you will be unable to run certain IOCs (e.g. riken power supplies, muon separator), and consequently some of their tests will fail.
+It is recommended that developers only install this if they know that they will at some point be using a DAQ mx. If you do not do this step, you will be unable to run certain IOCs (e.g. RIKEN power supplies, muon separator), and consequently some of their tests will fail.
 
 Some IOCs depends on DAQMX binaries from national instruments. Go to http://sine.ni.com/psp/app/doc/p/id/psp-268 or if not go here https://www.ni.com/en-gb/support/downloads/drivers/download.ni-daqmx.html#311818
 and download the latest DAQMX drivers. When installing, ensure you check the box to install DAQMX.

@@ -67,7 +67,7 @@ To test JSON_Bourne:
   Where [Instrument-Name] is replaced by the desired instrument (i.e., ZOOM&) in all capitals.
 
 To test the front end on a developer machine:
-* Open default.html with the variable of ?Instrument=instrument-name e.g. go to `file:///C:/Instrument/Dev/JSON_bourne/front_end/default.html?Instrument=larmor` in a browser to view larmor's dashboard. Note that the path is dependant on where you have created the local JSON_bourne repository. This will use the JSON bourne instance running on NDAEXTWEB!
+* Open default.html with the variable of ?Instrument=instrument-name e.g. go to `file:///C:/Instrument/Dev/JSON_bourne/front_end/default.html?Instrument=larmor` in a browser to view Larmor's dashboard. Note that the path is dependant on where you have created the local JSON_bourne repository. This will use the JSON bourne instance running on NDAEXTWEB!
 
 To test the front end and JSON bourne on a developer machine:
 * Run `webserver.py`

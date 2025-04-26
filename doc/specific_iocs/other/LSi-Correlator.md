@@ -1,6 +1,6 @@
 # LSi Correlator
 
-The LSi correlator is a device used as part of the DLS system on LOQ. It can be controlled either with the vendor-supplied software, or using the Python, Labview or Matlab APIs.
+The LSi correlator is a device used as part of the DLS system on LOQ. It can be controlled either with the vendor-supplied software, or using the Python, LabVIEW or Matlab APIs.
 
 ## The vendor software
 ### Connecting the software to the correlator
@@ -79,7 +79,7 @@ A `device_setter` is a function which takes in the current value of the PV and w
  - If the correlation does not output in the file due to the `correlation_data` being equal to a blank array (`[]`), check that the default sampling time (minimum time lag) variable is set to an appropriate value. Common pre-sets used by IS are as follows: `12.5, 200, 400, 800, 1600, 3200`nano seconds.
 
 ### Saving the data
-Ideally the data would be saved into a nexus file, and the subsequent data analysis would be performed in mantid. However, because this data analysis is not yet available in mantid, the data must be processed by the vendor's software. Therefore we need to recreate a data format which can be imported by the vendor software in order to do this data analysis. The format of these data files is a tab-separated variable format with the extension `.dat`, examples of which can be found on the share.
+Ideally the data would be saved into a nexus file, and the subsequent data analysis would be performed in Mantid. However, because this data analysis is not yet available in Mantid, the data must be processed by the vendor's software. Therefore we need to recreate a data format which can be imported by the vendor software in order to do this data analysis. The format of these data files is a tab-separated variable format with the extension `.dat`, examples of which can be found on the share.
 
 The IOC saves the file in two locations, once in `C:\Data` with a filename which allows it to get saved into the archive. The other file gets saved in a location specified by the user in a macro.
 

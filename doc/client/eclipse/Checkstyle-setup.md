@@ -23,8 +23,8 @@ You may need to install an older version to be compatible with our checkstyle co
     1. `Additional Properties` button
         1. `Add...` button
         1. Set:
-            - Name: checkstyle.suppressions.file
-            - Value: C:\Instrument\Dev\ibex_gui\base\uk.ac.stfc.isis.ibex.client.tycho.parent\suppressions.xml
+            - Name: `checkstyle.suppressions.file`
+            - Value: `C:\Instrument\Dev\ibex_gui\base\uk.ac.stfc.isis.ibex.client.tycho.parent\suppressions.xml`
 1. Apply and close: you should now be setup
     1. If you have issues with the highlight colour on a dark theme you can go to: Window -> Preferences, General -> Editors -> Text Editors -> Annotations to change it.
 

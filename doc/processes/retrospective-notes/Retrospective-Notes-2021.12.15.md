@@ -35,7 +35,7 @@ We tried to follow this ruleset during this sprint and it seems to have worked. 
 This issue hasn't been dealt with yet.
 
 ### Would everyone be interested in organising a secret Santa this year to get us in the festive mood?
-We did the secret santa and the team enjoyed it. We are yet to organize a new year's meal.
+We did the secret Santa and the team enjoyed it. We are yet to organize a new year's meal.
 
 ---
 

@@ -34,7 +34,7 @@ A script exists in the muon instrument scripts repo to set all channels to a use
 {#chronus_kepco-note}
 ### Kepco Note
 
-There are 3 kepcos being used on CHRONUS, all of which for the zero-field system. The axis are aligned as follows:
+There are 3 Kepcos being used on CHRONUS, all of which for the zero-field system. The axis are aligned as follows:
  - X: Left - Right
  - Y: Up - Down
  - Z: Forward - Back
@@ -42,4 +42,4 @@ There are 3 kepcos being used on CHRONUS, all of which for the zero-field system
 {#chronus_magnetometer-note}
 ### Magnetometer Note
 
-There are two magnetometers used on chronus, one fixed and used in the zero field controller, the other a removable probe.
+There are two magnetometers used on Chronus, one fixed and used in the zero field controller, the other a removable probe.

@@ -95,7 +95,7 @@ asynSetTraceMask("L0",-1,0x9)
 asynSetTraceIOMask("L0",-1,0x2)
 ```
 
-where <port> is the port name you used in the asyn setup eg `drvAsynSerialPortConfigure(<port>...)`
+where <port> is the port name you used in the asyn setup e.g. `drvAsynSerialPortConfigure(<port>...)`
 
 This will include the terminator character, if you don't see it it is not being sent or received.
 If no reply is given this will include a message "No reply from device in XXXms"
@@ -118,7 +118,7 @@ Then Monitor -> Asyn shows received and sent byte count.
 
 ### Environment Variable not getting set from MASTER_RELEASE
 
-Varibles are transferred from `...EPICS\configure\MASTER_RELEASE` to `...EPICS\ioc\master\<IOCNAME>\iocBoot\<IOCNAME>\envPaths` when the ioc is made. You will have to delete the file to get the newest macros in and the paths have to exist.
+Variables are transferred from `...EPICS\configure\MASTER_RELEASE` to `...EPICS\ioc\master\<IOCNAME>\iocBoot\<IOCNAME>\envPaths` when the ioc is made. You will have to delete the file to get the newest macros in and the paths have to exist.
 
 ### I get a `UDF` alarm on by `bi` record that's getting its value from a `calcout`
 

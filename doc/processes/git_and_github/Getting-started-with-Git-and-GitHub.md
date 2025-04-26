@@ -3,7 +3,7 @@
 * Register with GitHub to create an account
 * Download and install [git client for Windows](https://git-scm.com/download/win>) or [GitHub for Windows](https://windows.github.com/) or [Tortoise Git](https://tortoisegit.org/)
 
-(if asked, Choose `Checkout-as-is; commit unix style line-endings`)
+(if asked, Choose `Checkout-as-is; commit Unix style line-endings`)
 
 During setup ensure you have selected "**Git from the command line and also 3rd-party software**" (do NOT add the optional Unix tools to your PATH). If `sh` is added to the PATH, Make will try to compile for Linux rather than Windows. This will cause syntax errors when reading the Makefiles (such as parse errors whenever a `(` is found in an echo message).
 

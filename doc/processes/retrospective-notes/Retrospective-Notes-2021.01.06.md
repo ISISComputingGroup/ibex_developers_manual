@@ -18,7 +18,7 @@
 - Friday tickets not being reviewed quickly enough, true for general tickets too.  Reviews should take precedence over rework, especially towards end of sprint.
 - Suggestion to have Monday morning for reviews to save context switching between consecutive work days.  Developers should at least self-assign tickets to be reviewed at this time.
 - Friday "sprint" went well and was enjoyed on the whole.  Other ongoing tasks did get in the way of people taking on a specific Friday ticket.
-- Discussion about shorter sprints to concentrate on specific matters (c.f. mantid tidy-up week) "Technical Debt Sprint"?  Decided not realistic in cycle, but more likely in longer shutdowns.
+- Discussion about shorter sprints to concentrate on specific matters (c.f. Mantid tidy-up week) "Technical Debt Sprint"?  Decided not realistic in cycle, but more likely in longer shutdowns.
 
 ## Additional Comments
 - Discussion on GitHub price plans followed main meeting

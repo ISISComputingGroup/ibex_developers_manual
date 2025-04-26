@@ -2,7 +2,7 @@
 
 The mercury Heliox systems are a type of refrigerator which cools using Helium-3. Using this technique, temperatures of around ~300mK can be achieved. 
 
-The heliox systems, like dilution fridges, are parasitic, which means they must sit in an outer cryostat or cryomagnet which provides the initial stage of cooling to low temperature (a few degrees Kelvin) before the heliox provides the final stage of cooling (to ~300mK). The outer cryostat is usually controlled by a standard Mercury ITC controller.
+The Heliox systems, like dilution fridges, are parasitic, which means they must sit in an outer cryostat or cryomagnet which provides the initial stage of cooling to low temperature (a few degrees Kelvin) before the Heliox provides the final stage of cooling (to ~300mK). The outer cryostat is usually controlled by a standard Mercury ITC controller.
 
 ## Physical process - background
 
@@ -27,11 +27,11 @@ The Helium-4 pot is used to recondense Helium-3 back into a liquid after being r
 
 ### Settings
 
-The Mercury can be physically configured to use serial, ethernet or GPIB as it's transport layer. At ISIS, we use serial. The serial settings can be changed on the physical device, but we typically use 57600 baud as this is usually an acceptable compromise of transmission speed against line length restrictions. If there is a very long connection from the moxa to the heliox unit, and there is noise on the line, it may be useful to reduce the baud rate to see if this helps.
+The Mercury can be physically configured to use serial, ethernet or GPIB as it's transport layer. At ISIS, we use serial. The serial settings can be changed on the physical device, but we typically use 57600 baud as this is usually an acceptable compromise of transmission speed against line length restrictions. If there is a very long connection from the moxa to the Heliox unit, and there is noise on the line, it may be useful to reduce the baud rate to see if this helps.
 
 ### Command set
 
-The Heliox systems are physically based on the mercury ITC temperature controllers, but they do not use the same command set and cannot be controlled by the same drivers. The mercury heliox systems have their own driver.
+The Heliox systems are physically based on the mercury ITC temperature controllers, but they do not use the same command set and cannot be controlled by the same drivers. The mercury Heliox systems have their own driver.
 
 The devices use an SCPI-like command syntax. There are two approaches to getting data using this protocol:
 - Ask for everything in one go, e.g. `STAT:DEV:HelioxX`. This will return a huge status string containing every measurement under that category (~30 items). This approach is used by the LabVIEW driver (although it only actually looks at the data for a few measurements). It is also useful for enumerating the valid pieces of data that you can ask for individually.
@@ -41,17 +41,17 @@ The devices use an SCPI-like command syntax. There are two approaches to getting
 
 The mercury ITC driver essentially reads data from 5 distinct channels:
 
-| Physical sensor location | Channel name on LET heliox | Channel name on Muon heliox | Notes |
-| --- | --- | --- | --- |
-| He3 Pot | `HelioxX` | `HelioxX` | This is the "main" heliox control channel. According to the OI manual this is the only channel which we should need to use to control the heliox's temperature. In the IOC and LabVIEW driver, this is the only channel on which we allow setting setpoints. It is a hardware alias of either `HeHigh` or `HeLow` depending on temperature (see below). |
-| He3 Sorption pump | `He3Sorb` | `MB1_He3_Sorb` | Dedicated channel for the (helium-3) sorption pump. Monitoring only. Note: the He3 sorption pump and the He3 Pot are not the same! | 
-| He4 Pot | `He4Pot` | `DB6_He4Pot` | Dedicated channel for the (helium-4) 1K-pot cooling stage. Monitoring only. Note: the way that ISIS run the Mercury Heliox systems means that this channel will read a constant value all the time, as there is no actual hardware present on the heliox to read this. This hardware would only be present if a single Mercury ITC unit was used to control both the main cryostat and the sorption stage. | 
-| He3 Pot (high sensor) | `HeHigh` | `DB7_He3_Pot_CRN` | Monitoring only. This is a "high" (~2-80K) temperature thermocouple, used for measuring the temperature of the He3 Pot when the temperature is in it's range of validity. This channel will give invalid temperatures if the heliox is running at "low" temperature. | 
-| He3 Pot (low sensor) | `HeLow` | `DB8_He3_Pot_Low` | Monitoring only. This is a "low" (~0.2-2K) temperature thermocouple, used for measuring the temperature of the He3 Pot when the temperature is in it's range of validity. This channel will give invalid temperatures if the heliox is running at "high" temperature. | 
+| Physical sensor location | Channel name on LET Heliox | Channel name on Muon Heliox | Notes                                                                                                                                                                                                                                                                                                                                                                                                      |
+| --- |----------------------------|-----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| He3 Pot | `HelioxX`                  | `HelioxX`                   | This is the "main" Heliox control channel. According to the OI manual this is the only channel which we should need to use to control the Heliox's temperature. In the IOC and LabVIEW driver, this is the only channel on which we allow setting setpoints. It is a hardware alias of either `HeHigh` or `HeLow` depending on temperature (see below).                                                    |
+| He3 Sorption pump | `He3Sorb`                  | `MB1_He3_Sorb`              | Dedicated channel for the (helium-3) sorption pump. Monitoring only. Note: the He3 sorption pump and the He3 Pot are not the same!                                                                                                                                                                                                                                                                         | 
+| He4 Pot | `He4Pot`                   | `DB6_He4Pot`                | Dedicated channel for the (helium-4) 1K-pot cooling stage. Monitoring only. Note: the way that ISIS run the Mercury Heliox systems means that this channel will read a constant value all the time, as there is no actual hardware present on the Heliox to read this. This hardware would only be present if a single Mercury ITC unit was used to control both the main cryostat and the sorption stage. | 
+| He3 Pot (high sensor) | `HeHigh`                   | `DB7_He3_Pot_CRN`           | Monitoring only. This is a "high" (~2-80K) temperature thermocouple, used for measuring the temperature of the He3 Pot when the temperature is in it's range of validity. This channel will give invalid temperatures if the Heliox is running at "low" temperature.                                                                                                                                       | 
+| He3 Pot (low sensor) | `HeLow`                    | `DB8_He3_Pot_Low`           | Monitoring only. This is a "low" (~0.2-2K) temperature thermocouple, used for measuring the temperature of the He3 Pot when the temperature is in it's range of validity. This channel will give invalid temperatures if the Heliox is running at "high" temperature.                                                                                                                                      | 
 
-Because the channel names vary between the Muon Heliox and the LET heliox, they must be supplied as IOC macros. (Apart from the `He3 Pot`, which is the same for both devices)
+Because the channel names vary between the Muon Heliox and the LET Heliox, they must be supplied as IOC macros. (Apart from the `He3 Pot`, which is the same for both devices)
 
-If a new heliox turns up on another beamline, the following is the process to figure out the required channel names:
+If a new Heliox turns up on another beamline, the following is the process to figure out the required channel names:
 - Connect to the device via your favourite terminal emulator (HTerm/PuTTY/HyperTerminal/etc).
 - Issue the command `READ:SYS:CAT` (terminated with a line feed, `\n`)
 - This will respond with a string like `STAT:SYS:CAT:DEV:<device 1 id>:<device 1 type>:DEV:<device 2 id>:<device 2 type>:...`. 
@@ -74,9 +74,9 @@ A regeneration follows the following physical process:
 - This heat causes the pump to release all of the Helium-3 stored in it.
 - At the same time, the 1K pot is run, which causes the helium-3 to recondense when it comes into contact with the 1K pot
 - Once all of the helium 3 has recondensed, the sorption pump is cooled back down. This causes it to start "pumping" and therefore cooling of the He3 Pot resumes.
-- This process will take approximately 30-90 minutes depending on the starting temperature of the heliox.
+- This process will take approximately 30-90 minutes depending on the starting temperature of the Heliox.
 
-The heliox typically needs a regeneration after 24-48 hours of cooling. I think this depends on the sample and the external heat load.
+The Heliox typically needs a regeneration after 24-48 hours of cooling. I think this depends on the sample and the external heat load.
 
 In effect, this means that the users lose temperature control while a regeneration is in progress. TODO: do the scientists know this or will they be surprised by this behaviour? Are regenerations typically done automatically or manually or does this depend on the scientist/experiment?
 
@@ -105,7 +105,7 @@ When a regeneration is triggered, the existing LabVIEW driver simply sends a tem
 
 It appears to me as though the setpoint is never set back to the previous value in the LabVIEW code. There is a lot of code relating to this, but it is all disabled.
 
-Under IBEX we currently only allow manual regenerations. The same conditions as above are displayed on an indicator on the IBEX OPI, but no action is taken. This is because the scientists don't trust the current regeneration conditions and so they have not been hooked up. We would need to book lots of time with the heliox to try and work out a better set of detection conditions if this logic were to be used in future.
+Under IBEX we currently only allow manual regenerations. The same conditions as above are displayed on an indicator on the IBEX OPI, but no action is taken. This is because the scientists don't trust the current regeneration conditions and so they have not been hooked up. We would need to book lots of time with the Heliox to try and work out a better set of detection conditions if this logic were to be used in future.
 
 ## LabVIEW driver oddities
 
@@ -155,10 +155,10 @@ Example ramp (260mK-1.8K in steps of 20mK) demonstrating these instabilities (no
 
 ![](mercury_heliox_ramp_example.PNG)
 
-There is nothing the driver does in either SECI or IBEX which can affect these stabilities. Consult cryogenics to check outer cryostat performance, PID parameters, flow rates etc.
+There is nothing the driver does in either SECI or IBEX which can affect the stability. Consult cryogenics to check outer cryostat performance, PID parameters, flow rates etc.
 
 ### Regeneration starts when I set temperature setpoint = 0
 
-This is a feature of the heliox intentionally added by oxford instruments, when the device gets a setpoint of zero it interprets it as "regenerate and then cool" as opposed to just "cool".
+This is a feature of the Heliox intentionally added by oxford instruments, when the device gets a setpoint of zero it interprets it as "regenerate and then cool" as opposed to just "cool".
 
 This can be avoided by setting a temperature in the range 0 < T < base temperature to cool to base temp.

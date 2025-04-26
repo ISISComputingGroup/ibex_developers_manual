@@ -58,7 +58,7 @@ The system was deployed here in May 2018 with the intention of reducing the numb
 ### SANS2D Tank
 The system was reanalysed for the SANS2D tank (https://github.com/ISISComputingGroup/IBEX/issues/4587). The following issues were found that made it unsuitable for an immediate solution:
 * By moving two objects towards each other you can get just within the above limits before it comes to a stop,  when inside these limits the CAM will halt all motion and not let you move the items apart again. [Ticket](https://github.com/ISISComputingGroup/IBEX/issues/5605)
-* When automatically setting limits the CAM is not intelligent enough to realise that an object is currently moving out of the way, this could be avoided by just not using autoset limits 
+* When automatically setting limits the CAM is not intelligent enough to realise that an object is currently moving out of the way, this could be avoided by just not using automatically set limits 
 
 ## System Overview
 
@@ -93,10 +93,10 @@ If the geometries of the computer model are sufficiently larger than the real-wo
 
 For a given increase in size `S` applied to each face of the box:
 ```
-modeled size = actual size + 2S
+modelled size = actual size + 2S
 ```
 
-Assuming a head on collision and considering only linear movement of the seeking axis, a collision of the real world system occurs once the model has collided by at least `2S`. Furthermore, taking two objects with an actual size of zero, and a modeled size of `2S`, a "head-on" collision is maintained for `4S`. 
+Assuming a head on collision and considering only linear movement of the seeking axis, a collision of the real world system occurs once the model has collided by at least `2S`. Furthermore, taking two objects with an actual size of zero, and a modelled size of `2S`, a "head-on" collision is maintained for `4S`. 
 
 ![Head on](collision_detection/Oversize.PNG)
 
@@ -191,7 +191,7 @@ Parameter        | Indexed on | Description
 `ignore`        | N/A        | A list of `geometries` index pairs which are not of interest. This is useful for bodies which are mechanically connected - we don't care if the carriage collides with it's slide. As this list can be long for a complicated moving system, this is best generated using a nested `for` loop. 
 `coarse`        | N/A        | The initial coarse limit seek step, which can be overridden by PV.
 `fine`          | N/A        | The initial fine limit seek step, which can be overridden by PV (but probably never needs to change from 0.5).
-`oversize`      | N/A        | The initial oversize parameter to apply to the bodies, which can be overriden by PV. The relationship `oversize = coarse / 4` should be maintained. 
+`oversize`      | N/A        | The initial oversize parameter to apply to the bodies, which can be overridden by PV. The relationship `oversize = coarse / 4` should be maintained. 
 
 ## Suggested enhancements
 

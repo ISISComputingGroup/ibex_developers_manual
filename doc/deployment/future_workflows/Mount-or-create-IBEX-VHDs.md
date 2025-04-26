@@ -6,7 +6,7 @@ The new architecture for deployment is to deploy onto VHDs which will be copied 
 
 ### System VHD
 
-There needs to be a system VHD, this has been created by Chris and will be detailed *CHRIS TODO*. This contains windows and user level programs (probably including labview).
+There needs to be a system VHD, this has been created by Chris and will be detailed *CHRIS TODO*. This contains windows and user level programs (probably including LabVIEW).
 
 ### App VHD
 

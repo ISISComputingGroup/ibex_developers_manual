@@ -56,12 +56,12 @@ yes
 we should remind people who are on first line support the next week - we'll start doing this at standup.
 
 ### zipping up builds
-sophos is horrible and tries to read the millions of files that eg. client builds are made up of - we should zip these up. 
+Sophos is horrible and tries to read the millions of files that e.g. client builds are made up of - we should zip these up. 
 we should also do this with the ibex backup from NDX to data-old. 
 turns out we already do this! but we should make our nightly builds not bother with leaving the unzipped build. that will save a lot of files
 
-### twincat on developer machines
-we should not bother installing it on developer machines, and leave NDXMOTION to run twincat XAR so it can simulate beckhoffs.
+### TwinCAT on developer machines
+we should not bother installing it on developer machines, and leave NDXMOTION to run TwinCAT XAR so it can simulate Beckhoffs.
 
 ## Mad/Glad/Sad
 

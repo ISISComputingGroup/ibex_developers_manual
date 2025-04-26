@@ -5,7 +5,7 @@ There is a special homing sequence for Vesuvio because it doesn't work this is u
 ## Homing left and right foils
 
 Do not home in ibex
-Drive the foil with mclennan front panel to appropriate limit (upper limit for left foil, lower limit for right foil). 
+Drive the foil with Mclennan front panel to appropriate limit (upper limit for left foil, lower limit for right foil). 
 Goto the motor details page in ibex
 
 -	Check the led is red next to the appropriate limit to indicate it is on the limit switch 

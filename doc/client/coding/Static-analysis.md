@@ -10,7 +10,7 @@ Checkstyle is designed to enforce a set of highly configurable coding standards.
 
 The style rules imposed by Checkstyle are very demanding and it may be helpful to consider them as guidelines rather than as hard rules. At our first analysis of the Eclipse GUI project, Checkstyle showed over 30000 errors and it probably isn't worth the effort to fix all of these. However moving forward, when writing new code, it is a good idea to make at least some effort to conform to the Checkstyle 'rules'.
 
-Checkstyle configuration is done by XML file called 'checkstyle.xml' which is located in the tycho parent directory. This is then set up as a global rule set called IBEX Checks. The rule set used is the default Sun ruleset with some rules disabled (by commenting them out in the XML file). In order to reduce the number of needless Checkstyle warnings, the following specific rules, which are enabled by default, have been disabled for Jenkins:
+Checkstyle configuration is done by XML file called 'checkstyle.xml' which is located in the Tycho parent directory. This is then set up as a global rule set called IBEX Checks. The rule set used is the default Sun ruleset with some rules disabled (by commenting them out in the XML file). In order to reduce the number of needless Checkstyle warnings, the following specific rules, which are enabled by default, have been disabled for Jenkins:
 
 * FileTabCharacterCheck - using a tab character anywhere in the code
 * RegexpSinglelineCheck - line has trailing white space
@@ -88,7 +88,7 @@ For both PMD and FindBugs, there are certain rules which, while generally sensib
 
 ## Maven
 
-The tools may be run as part of a maven build by including them as plugins in the project's pom.xml. In the case of the Eclipse GUI, each plugin is included in the 'tycho.parent' pom.xml file, and is therefore used in every other project (Eclipse plugin) during the build.
+The tools may be run as part of a maven build by including them as plugins in the project's pom.xml. In the case of the Eclipse GUI, each plugin is included in the `tycho.parent` pom.xml file, and is therefore used in every other project (Eclipse plugin) during the build.
 
 * [FindBugs maven plugin](https://gleclaire.github.io/findbugs-maven-plugin/index.html)
 * [CheckStyle maven plugin](http://maven.apache.org/plugins/maven-checkstyle-plugin/)

@@ -23,7 +23,7 @@ There are various generations of Triton systems in use at ISIS. There are someti
 ## Temperature control
 
 Temperature control in the triton systems is achieved by multiple cooling stages:
-- Outer cryostat - usually a eurotherm, ITC503 or lakeshore. This cryostat will typically be able to cool the dilution fridge and sample to a few degrees Kelvin (1-5). 
+- Outer cryostat - usually a Eurotherm, ITC503 or Lakeshore. This cryostat will typically be able to cool the dilution fridge and sample to a few degrees Kelvin (1-5). 
 - Mixing chamber - this is where dilution cooling occurs, which brings the sample down towards base temperature (roughly 20-40mK). Dilution cooling only starts to work around 1K, hence the need for the outer cryostat. Dilution provides a constant amount of cooling power, so for temperature control the mixing chamber is fitted with a small heater which warms up the dilution to the desired temperature.
 - There are a number of intermediate stages to bridge the gap between the outer cryostat and dilution. They are not always all present (depending on which fridge is used and experimental setup). In no particular order, there may be: J-T heat exchanger, 4K heat exchanger, sorb, still. The IOC monitors these temperatures if available from the Triton system, but they are not usually of interest to us (they are of interest to cryogenics).
 

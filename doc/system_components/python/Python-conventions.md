@@ -82,7 +82,7 @@ Google style suggests that argument descriptions start with a capital and end wi
 ```
 We have decided to follow Google on this; however, some older docstrings may not match this, so please adjust them as you come across them.
 
-PyCharm can be set to auto-generate Google style dostrings via `File --> Settings --> Tools --> Python Integrated Tools`
+PyCharm can be set to auto-generate Google style docstrings via `File --> Settings --> Tools --> Python Integrated Tools`
 
 PyCharm also supports the ability to specify types in the docstring. This includes being able to write objects class names, for example: 
 

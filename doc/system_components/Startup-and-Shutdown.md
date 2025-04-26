@@ -35,7 +35,7 @@ Start is initiated from `C:\Instrument\Apps\EPICS\start_ibex_server.bat`. It:
 1. Put start file in place [#1950](https://github.com/ISISComputingGroup/IBEX/issues/1950)
 1. Runs ca repeater bat
     1. Kills old carepeater tasks
-    1. Starts a new task in procserve
+    1. Starts a new task in procserv
 1. Runs conserver bat
     1. Stops conserver
     1. Starts a new conserver
@@ -66,7 +66,7 @@ Initiated from start or `C:\Instrument\Apps\EPICS\stop_ibex_server.bat`. It stop
 1. Database Server
 1. Script Server
 1. IOCs with PID files
-1. All procserve processes
+1. All procserv processes
 1. All exes in ioc startups
 1. Gateway exe
 1. `Conserver.exe`

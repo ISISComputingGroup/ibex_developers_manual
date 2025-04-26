@@ -17,7 +17,7 @@
 ### Friday "sprint" went well and was enjoyed on the whole.  Other ongoing tasks did get in the way of people taking on a specific Friday ticket.
 - it was
 
-### Discussion about shorter sprints to concentrate on specific matters (c.f. mantid tidy-up week) "Technical Debt Sprint"?  Decided not realistic in cycle, but more likely in longer shutdowns.
+### Discussion about shorter sprints to concentrate on specific matters (c.f. Mantid tidy-up week) "Technical Debt Sprint"?  Decided not realistic in cycle, but more likely in longer shutdowns.
 - beginning of long shutdown maybe we'll do a technical debt sprint
 
 ## Items from this retrospective

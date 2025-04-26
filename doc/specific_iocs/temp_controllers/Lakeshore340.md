@@ -1,8 +1,8 @@
 # Lakeshore 340
 
-The lakeshore 340 is a device used by LET to monitor the temperature of a sample when it is being cooled by a dilution fridge inside the 9T magnet.
+The Lakeshore 340 is a device used by LET to monitor the temperature of a sample when it is being cooled by a dilution fridge inside the 9T magnet.
 
-This lakeshore has four measurement channels, each of which exposes a temperature and a raw measurement (usually a resistance from a thermocouple). The device supports multiple independent temperature control loops, however, we only use one of these loops.
+This Lakeshore has four measurement channels, each of which exposes a temperature and a raw measurement (usually a resistance from a thermocouple). The device supports multiple independent temperature control loops, however, we only use one of these loops.
 
 The device itself has a large amount of functionality, however, the IOC (and corresponding LabVIEW driver) only expose a fraction of it. The functionality exposed by the drivers is:
 - Set and read back a temperature setpoint (it only ever sets and reads back the setpoint for control loop 1).
@@ -21,14 +21,14 @@ The device uses a 9-pin male serial cable (female connector on device) and requi
 
 ## Excitations
 
-The MuSR lakeshore 340 excitations need to be able to be controlled in two ways:
+The MuSR Lakeshore 340 excitations need to be able to be controlled in two ways:
 
 - Set and get the value of the excitation for input A (via the OPI or a block)
 - Define temperature setpoint thresholds and excitation pairs
 
 ### Excitations Temperature Threshold File
 
-You can find examples in the lakeshore 340 support module `lakeshore340\excitation_thresholds`. More details [here](https://github.com/ISISComputingGroup/ibex_user_manual/wiki/Lakeshore-340).
+You can find examples in the Lakeshore 340 support module `lakeshore340\excitation_thresholds`. More details [here](https://github.com/ISISComputingGroup/ibex_user_manual/wiki/Lakeshore-340).
 
 ### Excitations IOC records and algorithm
 

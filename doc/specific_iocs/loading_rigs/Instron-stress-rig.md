@@ -26,7 +26,7 @@ To turn on the actuator for the 50kN rig, Press and hold the "Hydraulics on" but
 
 ### Hydraulics keep tripping off and status is "oil too hot"
 
-Check if the cooling water circuit for TS1 south side is turned on. If not, the instron's oil might heat up too much which causes the hydraulics to trip when moving the rig. This happens regardless of whether IOC, LabVIEW, or manual control is used to move the actuator. Additional symptoms are a rig status of "HYD. PUMP SHUTDOWN" and the red status light on the control panel being solidly on (and not being able to clear it).
+Check if the cooling water circuit for TS1 south side is turned on. If not, the Instron's oil might heat up too much which causes the hydraulics to trip when moving the rig. This happens regardless of whether IOC, LabVIEW, or manual control is used to move the actuator. Additional symptoms are a rig status of "HYD. PUMP SHUTDOWN" and the red status light on the control panel being solidly on (and not being able to clear it).
 
 If the cooling water is off, there is a circulation pump that can be used to run the rig in low-force mode: ask the scientists.
 
@@ -51,7 +51,7 @@ The stress rig on ENGIN-X is mapped from both ENGINX and ENGINX_SETUP. **Only on
 
 ### Hydraulics won't re-enable after panic stop
 
-A panic stop sends the `C23,0` command to the stress rig. To quote from the instron manual:
+A panic stop sends the `C23,0` command to the stress rig. To quote from the Instron manual:
 
 > If this command is sent with the Off parameter, actuator manifold pressure is turned Off immediately, and the Actuator On button is disabled.
 

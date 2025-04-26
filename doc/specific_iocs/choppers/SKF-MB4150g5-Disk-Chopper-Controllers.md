@@ -24,7 +24,7 @@ SANDALS - Also still in the original range of _xxx.xxx.xxx.18x_.
 
 The controllers use a MODBUS protocol to communicate over Ethernet.  Their IOCs use a small subset of the complete command set to provide the minimum functionality required for remote control by the scientists.  Due to differences in parameter definitions between SKF and ISIS, some interpretation (and trial and error) was needed to produce this reduced set of commands.
 
-The MODBUS TCP protocol is used, which slightly differs to MODBUS RTU used by eurotherms and other serial devices. 
+The MODBUS TCP protocol is used, which slightly differs to MODBUS RTU used by Eurotherms and other serial devices. 
 This means there are some extra fields in the header of MODBUS requests/responses, as well as MODBUS TCP using a `crc16` or similar checksum. 
 A MODBUS TCP packet consists of an MBAP (Modbus Application) Header and a PDU (the same as MODBUS RTU)
 The MBAP consists of: 

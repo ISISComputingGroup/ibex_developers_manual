@@ -447,7 +447,7 @@ The getter returns an empty string, but this does not matter - we could wire it 
 
 The setter uses the Writable object to write the new value to the IOC via channel access.
 
-Finally we need to edit the View itself to enable it to bind to titleSP. For this we add a text-box called txtNewTitle and set up the binding:
+Finally we need to edit the View itself to enable it to bind to titleSP. For this we add a text-box called `txtNewTitle` and set up the binding:
 ```java
 ...
 bindingContext.bindValue(WidgetProperties.text(SWT.Modify).observe(txtNewTitle), BeanProperties.value("titleSP").observe(org.csstudio.isis.title.Title.getInstance().model()));

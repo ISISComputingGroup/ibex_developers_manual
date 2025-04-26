@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The main PLC on RIKEN is a "Schneider Electric M580" and is responsible for controlling and monitoring the various systems on the beamlines, e.g. vacuum equipment and magnet cooling.  The Schneider PLC IOC (`SCHNDR_01`) runs on `NDXRIKENFE` and provides access to designated PLC registers (memory addresses) via the ASyn MODBUS driver.
+The main PLC on RIKEN is a "Schneider Electric M580" and is responsible for controlling and monitoring the various systems on the beamlines, e.g. vacuum equipment and magnet cooling.  The Schneider PLC IOC (`SCHNDR_01`) runs on `NDXRIKENFE` and provides access to designated PLC registers (memory addresses) via the Asyn MODBUS driver.
 
 ## Registers and Variables
 

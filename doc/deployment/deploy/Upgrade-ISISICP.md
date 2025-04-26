@@ -6,7 +6,7 @@
 1. Backup existing installation: copy the following to `c:\data\old\isisdae_backup_YYY_MM_DD`:
     - `c:\LabVIEW Modules\dae`
     - `c:\data\recovery.run`
-    - `c:\data\selog.*` (.sq3 .sq3-shm and .sh3-wal files)
+    - `c:\data\selog.*` (`.sq3` `.sq3-shm` and `.sh3-wal` files)
 
 1. Confirm the type of DAE hardware you have - look in `c:\labview modules\dae\icp_config.xml`, if DAEType in this file is 1 or 2 you have DAE2 hardware (1 means it runs in neutron mode, 2 in muon mode), if it is 3 you have a DAE3 hardware. So if DAEType is 1 or 2 use the **DAE2** folder on the share below to install from, if DAEType is 3 use the **DAE3** folder to install from. If you install the wrong type, it will just fail to start and complain in the ICP log file about wrong dae type; you would just need to reinstall the right one.
 1. Go to `\\isis\inst$\Kits$\CompGroup\ICP\ISISICP` and into the directory for the DAE hardware you determined was installed (DAE2 or DAE3)
@@ -18,7 +18,7 @@
    cd "c:\labview modules\dae"
    register_programs.cmd
    ```
-1. Now delete `c:\data\selog.*` (.sq3 .sq3-shm and .sh3-wal files), `c:\data\current.run*` and `c:\data\data.run*`
+1. Now delete `c:\data\selog.*` (`.sq3` `.sq3-shm` and `.sh3-wal` files), `c:\data\current.run*` and `c:\data\data.run*`
 ```
 del /q c:\data\selog.*
 del /q c:\data\current.run*

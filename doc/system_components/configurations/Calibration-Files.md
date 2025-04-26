@@ -25,7 +25,7 @@ There is the option to use a local calibration directory instead of the common o
 1. `temp_sensors` - temperature sensor calibration files
 1. `magnets` - calibration for magnets (mostly Danfysik. Note: magnetic field unit **needs to be Gauss**)
 1. `barndoors` - calibration for motors on barndoors
-1. `ramps` - shared ramp files (mostly for a eurotherm)
+1. `ramps` - shared ramp files (mostly for a Eurotherm)
 
 Items **NOT** within the repository
 
@@ -149,7 +149,7 @@ As part of the implementation, it was decided in a discussion between John and T
 
 ### Lakeshore
 
-Examples of the lakeshore format can be found on the [lakeshore site](https://www.lakeshore.com/resources/product-information).
+Examples of the Lakeshore format can be found on the [Lakeshore site](https://www.lakeshore.com/resources/product-information).
 
 ### Out of range in the calibration file
 

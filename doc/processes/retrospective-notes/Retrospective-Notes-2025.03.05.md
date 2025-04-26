@@ -25,9 +25,9 @@ GALILOLD is bad
 
 Remind people when they are on first line support
 
-Zipping up builds, sophos is horrible. Tickets. Many tickets. Some of which are conflated with each other.
+Zipping up builds, Sophos is horrible. Tickets. Many tickets. Some of which are conflated with each other.
 
-Use NDXMOTION to do beckhoff stuff, don't install XAR locally. JH removed from install & build wiki page.
+Use NDXMOTION to do Beckhoff stuff, don't install XAR locally. JH removed from install & build wiki page.
 
 ## Current Sprint
 
@@ -117,7 +117,7 @@ KB: still some instruments to migrate in summer
 
 ### Standup
 
-CMS: Move "friday" standup tasks to "thursday"?
+CMS: Move "Friday" standup tasks to "Thursday"?
 
 LJ/KB/GR: Discussion about whether we might lose code review time
 

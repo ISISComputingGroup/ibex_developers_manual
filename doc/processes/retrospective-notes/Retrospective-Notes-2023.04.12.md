@@ -33,9 +33,9 @@ brought up larger issue of picking up higher priority tickets
 
 
 ### Flash reviews hanging round
-- perhaps we should bring them up at standup on mondays to get them through
-- should add this on to the monday reviews (project board etc.)
-- add to list of things to check at standup on a monday and assign people 
+- perhaps we should bring them up at standup on Mondays to get them through
+- should add this on to the Monday reviews (project board etc.)
+- add to list of things to check at standup on a Monday and assign people 
 - should we use a different way of telling about flash reviews? have to be careful about making it too heavyweight. 
 - checking at standup requires little extra effort, we should do this. 
 ACTION add this to standup list

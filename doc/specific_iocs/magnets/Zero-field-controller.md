@@ -33,7 +33,7 @@ This error state can be caused by:
   * Check that the zero field no longer reports an overload
   * Put controller back into auto mode 
   * Check that it can stabilize the field to zero. 
-  * Consult with the scientists to define appropriate limits on the kepcos such that they can no longer overload the magnetometer.
+  * Consult with the scientists to define appropriate limits on the Kepcos such that they can no longer overload the magnetometer.
 
 If neither of the above steps works, consult the scientists. There may be a physical problem with the magnetometer probes or an external field which is too strong to be compensated. The scientists have independent hall probes which can be used to check for large fields at the sample position.
 
@@ -60,7 +60,7 @@ This error state means that writes were sent to the power supply but the setpoin
 - Is the power supply communicating properly? You can put the zero field controller into manual mode and manually set setpoints
 - Is the tolerance too tight?
 - If it looks like the readbacks are getting within tolerance but slower than the read timeout, try to update the setpoint readback from hardware immediately after sending a new setpoint in the protocol file. If it's still too slow the read timeout can be increased, but beware that very slow readbacks can affect the stability of the system and only use this as a last resort.
-- If the power supply appears to write correctly for a short time, and then one of the kepcos goes into a non-clearable comms error, verify that `REMOTE_ON_SET=NO` is set in the IOC macros for the three relevant kepcos. This settings MUST be set for zero-field kepcos.
+- If the power supply appears to write correctly for a short time, and then one of the Kepcos goes into a non-clearable comms error, verify that `REMOTE_ON_SET=NO` is set in the IOC macros for the three relevant Kepcos. This settings MUST be set for zero-field Kepcos.
 
 ### PSU high limit < low limit
 

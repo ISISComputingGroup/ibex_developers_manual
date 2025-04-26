@@ -57,9 +57,9 @@ The outer cryostat for these inserts can be either a blue cryostat (see above fo
 
 ### Mercury Heliox (He3 sorption refrigerator)
 
-This insert is capable of reaching temperatures of ~300mK. The heliox and the outer cryostat use separate physical controllers, which need separate moxa connections and EPICS drivers.
+This insert is capable of reaching temperatures of ~300mK. The H and the outer cryostat use separate physical controllers, which need separate moxa connections and EPICS drivers.
 
-For further details see [mercury heliox](cryogenics/Mercury-Heliox)
+For further details see [mercury Heliox](cryogenics/Mercury-Heliox)
 
 ### Triton Dilution Fridge
 
@@ -75,7 +75,7 @@ For details see [ICE dilution fridge](cryogenics/ICE-Dilution-Fridge)
 
 ## Cryomagnets (cryogenically cooled superconducting magnets)
 
-Most of the magnets in this section can be used instead of a cryostat when using a "parasitic" cooling insert (e.g. heliox, triton). This is because the magnets must be cooled to low temperatures anyway so that they superconduct, so they also act as the outer cryostat.
+Most of the magnets in this section can be used instead of a cryostat when using a "parasitic" cooling insert (e.g. Heliox, triton). This is because the magnets must be cooled to low temperatures anyway so that they superconduct, so they also act as the outer cryostat.
 
 ### 7.5T magnet
 

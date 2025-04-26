@@ -86,7 +86,7 @@ Mode | S1 Height above beam |  Polariser angle and height above
     - In blocking mode it should have an offset from the beam
 1. Change engineering correction based on mode how does this work 
     - Already thought internally about this and solution is read backs update and then they will be shown to be not in position. If parameter is in mode position is corrected next move, if not they will continue to be shown to be wrong.
-1. CRISP: What is the position for S4? (found it in mantid IDF, but values differ from those in VI - assumption is VI is correct)
+1. CRISP: What is the position for S4? (found it in Mantid IDF, but values differ from those in VI - assumption is VI is correct)
     - Vi is correct
 1. Do we need to reflect SP of motors into Reflectometry server
      - Alarm on sp not same as RBV is good. OK?
@@ -132,4 +132,4 @@ Mode | S1 Height above beam |  Polariser angle and height above
 1. Bump strips what does it do
     - Switches off all motor amplifiers but this means that the motors relax and so after this has happened you need to reposition all motors to where they were. In SECI this mean pressing the move button. There is also a message that appears on both the motor table and on the refl server saying that this has happened. Added ticket 
 1. Bender offspec analyser: Which motor drives chi? Do you need to change motor settings?
-    - Driven by the huber motor
+    - Driven by the Huber motor

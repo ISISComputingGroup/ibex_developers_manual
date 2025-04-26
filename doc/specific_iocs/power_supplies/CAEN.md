@@ -27,7 +27,7 @@ The pv setup is a little weird for this device, it looks like value is the setpo
 
 ### Simulation/HVCAENSIM Simulated CAEN (older version of the CAEN)
 
-The HVCAEN SIM IOC uses a simulated caen library to simulate the CAEN. This does not work completely, current it looks like setting anything does not updates the monitor values.
+The HVCAEN SIM IOC uses a simulated Caen library to simulate the CAEN. This does not work completely, current it looks like setting anything does not updates the monitor values.
 
 The SIM also disconnects and reconnects itself every X commands to show that is working.
 

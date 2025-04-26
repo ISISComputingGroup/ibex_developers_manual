@@ -82,37 +82,37 @@ The config files are located in the folder `SECI\Configurations\` on the VESUVIO
 
 
 
-| Configuration Name | Sub-Configurations | Last Accessed | Required |
------------- | ------------- | ------------- | ------------- |
+| Configuration Name | Sub-Configurations                  | Last Accessed | Required |
+------------ |-------------------------------------| ------------- | ------------- |
 VESUVIO_withTLCCR__31mar2015 | Sub_EVS_Base, Sub_EVS_Eurotherm_CCR | 16/09/2016 | - |
-highTfurnace__oct2015 | - | 12/10/2015 | - |
-EVS_Huber | eurotherm | 09/09/2015 | - |
-VESUVIO_Nbfurnace__15june2015 | eurotherm | 15/06/2015 | - |
-VESUVIO_emptyInstrument__26mar2015 | eurotherm | 26/03/2015 | - |
-VESUVIO_emptyInstrument__16mar2015 | eurotherm | 16/03/2015 | - |
-EVS Ambient | eurotherm | 22/08/2014 | - |
-tempalooza | eurotherm | 13/06/2014 | - |
-20130425 - EVS Ambient | - | 26/04/2013 | - |
-rotating cs + cryo | - | 28/07/2011 | - |
-heaters on sample 0 -100C | - | 28/07/2011 | - |
-EVS Heated Can | - | 22/07/2011 | - |
-EVS Cryostat | - | 22/07/2011 | - |
-EVS Ambient + Platinums | - | 22/07/2011 | - |
-Calibration | - | 31/03/2011 | - |
-U Foil Calibration | - | 14/02/2011 | - |
-rotating prisma cs | - | 14/02/2011 | - |
-rotating prisma cs + cryo | - | 14/02/2011 | - |
-rotating cs | - | 14/02/2011 | - |
-rotating ccr | - | 14/02/2011 | - |
-Neocera | - | 14/02/2011 | - |
-Kelvinox | - | 14/02/2011 | - |
-EVS Water Bath | - | 14/02/2011 | - |
-EVS Kelvinox | - | 14/02/2011 | - |
-EVS CCR | - | 14/02/2011 | - |
-EVS Ambient + Cryostat | - | 14/02/2011 | - |
-EVS 4K TLCCR | - | 14/02/2011 | - |
-ChipIR2 | - | 14/02/2011 | - |
-ChipIR | - | 14/02/2011 | - |
+highTfurnace__oct2015 | -                                   | 12/10/2015 | - |
+EVS_Huber | Eurotherm                           | 09/09/2015 | - |
+VESUVIO_Nbfurnace__15june2015 | Eurotherm                           | 15/06/2015 | - |
+VESUVIO_emptyInstrument__26mar2015 | Eurotherm                           | 26/03/2015 | - |
+VESUVIO_emptyInstrument__16mar2015 | Eurotherm                           | 16/03/2015 | - |
+EVS Ambient | Eurotherm                           | 22/08/2014 | - |
+tempalooza | Eurotherm                           | 13/06/2014 | - |
+20130425 - EVS Ambient | -                                   | 26/04/2013 | - |
+rotating cs + cryo | -                                   | 28/07/2011 | - |
+heaters on sample 0 -100C | -                                   | 28/07/2011 | - |
+EVS Heated Can | -                                   | 22/07/2011 | - |
+EVS Cryostat | -                                   | 22/07/2011 | - |
+EVS Ambient + Platinums | -                                   | 22/07/2011 | - |
+Calibration | -                                   | 31/03/2011 | - |
+U Foil Calibration | -                                   | 14/02/2011 | - |
+rotating prisma cs | -                                   | 14/02/2011 | - |
+rotating prisma cs + cryo | -                                   | 14/02/2011 | - |
+rotating cs | -                                   | 14/02/2011 | - |
+rotating ccr | -                                   | 14/02/2011 | - |
+Neocera | -                                   | 14/02/2011 | - |
+Kelvinox | -                                   | 14/02/2011 | - |
+EVS Water Bath | -                                   | 14/02/2011 | - |
+EVS Kelvinox | -                                   | 14/02/2011 | - |
+EVS CCR | -                                   | 14/02/2011 | - |
+EVS Ambient + Cryostat | -                                   | 14/02/2011 | - |
+EVS 4K TLCCR | -                                   | 14/02/2011 | - |
+ChipIR2 | -                                   | 14/02/2011 | - |
+ChipIR | -                                   | 14/02/2011 | - |
 
 ## VESUVIO Genie Scripts ##
 Similarly, VESUVIO has built up a significant collection of genie scripts over the years. Again, many scripts are old and may no longer be used regularly. There will be a need to convert some of these scripts to genie-python, but probably not all.

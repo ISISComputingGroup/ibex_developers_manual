@@ -77,9 +77,9 @@ See also tickets [#1826](https://github.com/ISISComputingGroup/IBEX/issues/1826)
 Low temperature experiments?[Neocera LTC-21 Manual](http://www.submm.caltech.edu/~sharc/technical/LTC-21%20manual.pdf)
 
 {#sxd_noteAttoCube}
-##### Note: Atto Cube #####
+##### Note: Attocube #####
 1. [AttoCube](http://www.attocube.com/) - check existing VI.
-1. There are existing [EPICS drivers](https://epics.anl.gov/modules/manufacturer.php#attocube) for attocube devices.
+1. There are existing [EPICS drivers](https://epics.anl.gov/modules/manufacturer.php#attocube) for Attocube devices.
 
 {#sxd_note-helium-gauge}
 ##### Note: Helium Gauge #####

@@ -2,11 +2,11 @@
 
 If you want a minimal ICP with no real DAE support then:
 
-In c:/labview modules/dae/isisicp.properties    add the line
+In `c:/labview modules/dae/isisicp.properties` add the line
 ```    
 isisicp.simulation.detcards.shared = false
 ```
-In c:/labview modules/dae/icp_config.xml    change the CRPTSize  line to a smaller value e.g.
+In `c:/labview modules/dae/icp_config.xml` change the CRPTSize  line to a smaller value e.g.
 ```
 <I32>     <Name>CRPTSize</Name>                <Val>10000</Val>           </I32>  <!-- In words -->
 ```

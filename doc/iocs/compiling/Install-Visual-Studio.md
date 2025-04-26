@@ -24,7 +24,7 @@ During install, select "Desktop development with C++" and check/enable these ind
 - C++ MFC support
 - C++ ATL support
 
-Also select ".NET desktop development" (needed for mk3chopper and astrium chopper):
+Also select ".NET desktop development" (needed for mk3chopper and Astrium chopper):
 - make sure .NET 4.7.2 development is included as one of the options   
 
 ## Instructions for Visual Studio 2019 (old)

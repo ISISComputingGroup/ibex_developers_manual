@@ -24,7 +24,7 @@ Try and get everyone in if possible - more fun when people are in the office + f
 It was agreed that the timekeeper should act as the moderator for voting rooms to enforce voting does not overrun time allocated for an issue.
 
 ### Move some documentation into repos as to wiki?
-- URL's should be added to repositories and WIKI to include links to relevant repositories and recourses.
+- URL's should be added to repositories and WIKI to include links to relevant repositories and resources.
 - Repositories should include URLS to all relevant information such as WIKI pages, manual locations (where applicable), Server locations and other associated repositories (for example an IOC repo should include URL's to emulator and OPI).
 - [@ThomasLohnert](https://github.com/ThomasLohnert) will make an issue for this which includes script generator automatic documentation.
 - [@JackEAllen](https://github.com/JackEAllen) will also make issues to tackle adding of URLS to some repositories as Friday tickets in the next Sprint.
@@ -66,5 +66,5 @@ The priority of squish license usage during the final week of a sprint can be pr
 
 ### Would everyone be interested in organising a secret Santa this year to get us in the festive mood? 
 Everyone is interested in a secret Santa and festive meal in the new year.
-- [@JackEAllen](https://github.com/JackEAllen) will organise the [secret santa](https://www.elfster.com/).
+- [@JackEAllen](https://github.com/JackEAllen) will organise the [secret Santa](https://www.elfster.com/).
 - [@LowriJenkins](https://github.com/LowriJenkins) will organise the meal for the new year.

@@ -13,7 +13,7 @@ The stress rig has several components:
   * Note, this "control PC" is **NOT** the `NDX` machine or equivalent, it is a separate machine. Currently a small-form-factor PC named `enginx-stress-1`
   * The network between the stress rig controller and `enginx-stress-1` is a point-to-point private network. The relevant network adapter on `enginx-stress-1` should be set to an IP address of `10.0.0.1` with netmask `255.0.0.0`. The stress rig controller is on `10.0.0.2` and should respond to `ping` if it is working.
 - The control PC has a physically separate RJ45 port (currently a USB-to-ethernet converter) used to connect to the ISIS network.
-- There is an "MMI" controller which plugs into the control PC via USB - and also simultaneously into the instron controller via a separate cable.
+- There is an "MMI" controller which plugs into the control PC via USB - and also simultaneously into the Instron controller via a separate cable.
 
 The manufacturer software ("Console") **MUST** be running on the control PC for the rig to work. Some functions (calibrations, setup, advanced diagnostics) are only available via the "console" software.
 
@@ -36,7 +36,7 @@ The manufacturer software ("Console") must be running in the background while th
 
 ### ArbySPY
 
-The instron software contains a module called "ArbySPY" which can be used to trace all commands being sent to the rig, no matter their source. As such it is possible to find out what Console is doing to make sure that IBEX can replicate these same commands.
+The Instron software contains a module called "ArbySPY" which can be used to trace all commands being sent to the rig, no matter their source. As such it is possible to find out what Console is doing to make sure that IBEX can replicate these same commands.
 
 ### Command rejected - frame in control
 
@@ -74,11 +74,11 @@ This happens if the rig controller is switched off.
 
 Solution: turn the rig controller back on (and wait ~2 mins for it to connect to console again)
 
-### Cannot start the instron "Console" application
+### Cannot start the Instron "Console" application
 
 This has been seen on a previous stress rig control PC. We are unsure of the cause.
 
-Consider how much time you want to spend on this issue - we can only provide very limited support for instron's console application, and complex support queries might be best to send to instron directly.
+Consider how much time you want to spend on this issue - we can only provide very limited support for Instron's console application, and complex support queries might be best to send to Instron directly.
 
 It is possible to re-install the software from `\\isis\shares\ISIS_Experiment_Controls\Manuals\Instron_Stress_Rig\MiniTower (Ethernet - Arby)\installer`
 - This should only be attempted as a last resort and will take some time to set up, and will need instrument scientist involvement to recommission/recalibrate the rig once done.

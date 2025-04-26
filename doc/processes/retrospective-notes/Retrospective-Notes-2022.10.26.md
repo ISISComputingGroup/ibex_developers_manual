@@ -49,12 +49,12 @@
 	- win11 laptop talks to win10 fine over remote desktop
 
 
-- cake with mantid
+- cake with Mantid
 	- generally happy with the idea?
-	- only concern is some people on mantid are entirely remote and might be left out?
+	- only concern is some people on Mantid are entirely remote and might be left out?
 		- how do we avoid them and us scenario for people working remotely?
 		- do benefits outweigh this or not?
-	- Discussion with people from mantid would be necessary to handle this would be wise.
+	- Discussion with people from Mantid would be necessary to handle this would be wise.
 		- potential approach for hybridization?
 		- breakdown of how many people remote vs local?
 		- if were meeting with accelerators, do we cycle between them etc?
@@ -62,7 +62,7 @@
 	- Do we want something similar with accelerator controls people as well?
 		- That might be useful since they are epics newcomers
 		- do they have coffee meetings or the like?
-			- they might all be on site on wednesdays?
+			- they might all be on site on Wednesdays?
 
 - Previously running column
 	- relatively new, (this or last deploy?)
@@ -95,4 +95,4 @@
 	- for those who didn't know, wiki on the same repository as release notes.
 		- this means that github search -> organisation -> wikis will find information on any of these.
 	- possibility of website pointed at checked out search to git using git grep
-		- or docusaurus perhaps?
+		- or Docusaurus perhaps?

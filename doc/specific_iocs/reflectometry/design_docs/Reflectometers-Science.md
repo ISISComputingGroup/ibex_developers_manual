@@ -4,7 +4,7 @@
 
 ## Experiment to perform
 
-The reflectometry concept are described in part in the [mantid documentation](http://docs.mantidproject.org/v3.12.0/techniques/ISIS_Reflectometry.html)
+The reflectometry concept are described in part in the [Mantid documentation](http://docs.mantidproject.org/v3.12.0/techniques/ISIS_Reflectometry.html)
 the actual experiment is described in [reflectometry at Isis](https://github.com/ISISComputingGroup/IBEX/wiki/Reflectometry-at-Isis). The important things to know from this and other are:
 
 1. The data needed to be retrieved is neutron count vs Q.

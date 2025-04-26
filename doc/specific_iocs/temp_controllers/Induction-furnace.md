@@ -2,7 +2,7 @@
 
 Device is being developed by Jakob Ahlburg at Aarhus university.
 
-Internally it uses several pieces of hardware - a Julabo, a power supply etc but we only talk to an arduino controller (via serial). The arduino controller contains the PID controller and all logic that is needed to drive the device at the hardware level.
+Internally it uses several pieces of hardware - a Julabo, a power supply etc but we only talk to an Arduino controller (via serial). The Arduino controller contains the PID controller and all logic that is needed to drive the device at the hardware level.
 
 Serial command set is on manuals shared drive.
 
@@ -26,7 +26,7 @@ Note: there are some differences in the protocols, so it is not possible to swap
 
 ## Arduino code
 
-We have been given a (potentially out of date) version of the arduino code, which is on the share. This can be used as a reference point if needed, but we should not in general need to use it or modify it in any way.
+We have been given a (potentially out of date) version of the Arduino code, which is on the share. This can be used as a reference point if needed, but we should not in general need to use it or modify it in any way.
 
 ## Hardware notes
 

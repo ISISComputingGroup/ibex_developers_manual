@@ -1,6 +1,6 @@
 # Building an MDT build server
 
-This wiki page documents the process for setting up a new MDT (microsoft deployment toolkit) build server to create new windows 10 clones.
+This wiki page documents the process for setting up a new MDT (Microsoft deployment toolkit) build server to create new windows 10 clones.
 
 The central source of truth for MDT configuration files is the MDT deployment share location, which can be found on the usual passwords page.
 
@@ -26,14 +26,14 @@ This wiki page describes the process for setting up a new `NDXMDTSERVPROD` machi
   * Set virtual hard disk size to 128GB (or a bit less - see above)
   * Install OS later
 - Copy the windows 10 ISO file from `\\isis\inst$\mdt$\dev1\MDTDeploymentShare\Boot\LiteTouchPE_x64_Hyper-V.iso` and copy in onto the host server for `NDXMDTSERVPROD`.
-  * This ISO is not really a windows PE iso, it is instead an ISO which has been built in the past by a different MDT server machine, and this will have configured the menus which are available when booting this ISO. This is **not** substitutable for e.g. a version downloaded from microsoft.com
+  * This ISO is not really a windows PE iso, it is instead an ISO which has been built in the past by a different MDT server machine, and this will have configured the menus which are available when booting this ISO. This is **not** substitutable for e.g. a version downloaded from `microsoft.com`
 - Tell Hyper-V to boot from this ISO by adding it as a disk in the virtual disk drive (right click on the machine in hyper-v and select "settings")
 - You might choose to increase number of processors available to the VM
 - Boot the machine
 - This will boot into a "Microsoft Deployment Wizard", which will then launch a set of menus embedded within the ISO.
 - Select "Build thick updated windows 10 image"
   * Thin image == Just windows 10
-  * Thick image == windows 10 + software such as labview, nport, notepad++, 7-zip, IBEX (if you have access to the existing MDT build server you may wish to disable the IBEX installation as it won't be required for this machine)
+  * Thick image == windows 10 + software such as LabVIEW, NPort, notepad++, 7-zip, IBEX (if you have access to the existing MDT build server you may wish to disable the IBEX installation as it won't be required for this machine)
 - Computer name - set it to the hostname (same as name in Hyper-V)
 - Join the default ISIS workgroup (the name of this workgroup can be found on the passwords page)
 - Don't restore settings or data
@@ -51,7 +51,7 @@ This wiki page describes the process for setting up a new `NDXMDTSERVPROD` machi
   * `MicrosoftDeploymentToolkit_x64.exe` - this is MDT itself
   * `adkwinpsetup.exe` - this may not be necessary?
 - Run `adksetup.exe`
-- When asked which features to install remove "windows performance toolkit", "user experience virtualisation", "microsoft application virtualisation", "Media experience analyzer"
+- When asked which features to install remove "windows performance toolkit", "user experience virtualisation", "Microsoft application virtualisation", "Media experience analyzer"
 - Run `adkwinpsetup.exe`, accept defaults
 - Run `MicrosoftDeploymentToolkit_x64.exe`
 - Open an **administrator** command prompt and type `net use <deployment share location> /USER:<account on passwords page`

@@ -170,7 +170,7 @@ See [test naming](Test-naming).
 Mockito is a framework for creating mock objects that can be substituted for real objects to make testing easier and more specific.
 For example: writing tests that don't rely on a database, file or network connection being present.
 
-Like JUnit is can be used inside a Fragment Project after the dependency is added (org.mockito).
+Like JUnit is can be used inside a Fragment Project after the dependency is added (`org.mockito`).
    
 An example of using Mockito would be to mock a database wrapper so that a real database is not required:
 
@@ -199,7 +199,7 @@ An example of using Mockito would be to mock a database wrapper so that a real d
     }
 ```
 
-For more detail on Mockito see the using_mockito_for_testing_in_ibex document.
+For more detail on Mockito see [here](Using-Mockito-for-Testing-in-the-GUI).
 
 ## Code coverage
 

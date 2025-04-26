@@ -5,8 +5,8 @@ Motion set points allow you to label set positions for any number of axis, thoug
 1. First, you must set up axes on the motors that you want to configure with the set points
 1. St file called `motionsetpoints.cmd` which sets up the db file which is stored in the configuration under the motor name:
     - galil is `Settings\config\<host name>\configurations\galil`
-    - mclennan is `Settings\config\<host name>\configurations\mcleanan`
-    - sm300 is `Settings\config\<host name>\configurations\<sm300 ioc name e.g. SM300_01>`
+    - Mclennan is `Settings\config\<host name>\configurations\mcleanan`
+    - SM300 is `Settings\config\<host name>\configurations\<sm300 ioc name e.g. SM300_01>`
 1. The positions which are referenced from the st file. are stored in  `Settings\config\<host name>\configurations\motionSetPoints`
 
 The  `motionsetpoints.cmd` contains the following lines:

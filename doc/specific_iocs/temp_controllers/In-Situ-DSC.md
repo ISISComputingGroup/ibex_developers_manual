@@ -20,4 +20,4 @@ Initial testing can be arranged for beam off days and shutdowns. Longer-term the
   - 6 for the Eurotherm (heater)
     - 2 for the heater, 2 for the heater setpoint and 2 for the ramp rate
   - 4 for the Lakeshore 336 (monitoring the temperature at 4 points)
-- The Eurotherm and lakeshore 336 must be specified as macros (in globals.txt) using DSC_EUROTHERM and DSC_LKSH336 e.g. DSC_EUROTHERM=03
+- The Eurotherm and Lakeshore 336 must be specified as macros (in globals.txt) using DSC_EUROTHERM and DSC_LKSH336 e.g. DSC_EUROTHERM=03

@@ -1,4 +1,4 @@
-# Creating a pcasPy IOC
+# Creating a pcaspy IOC
 
 IOCs can be served via python using pycaspy. These let you create IOCs with PVs using channel access. They do not work quite like the normal EPICs so this the start of a guide to help create one.
 

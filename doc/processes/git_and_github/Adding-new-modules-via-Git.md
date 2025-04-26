@@ -32,7 +32,7 @@ There are two use cases for adding a submodule:
 ## 2 Get the repository
 
 1. Move to a new branch in the EPICS directory for your ticket. 
-1. Create a directory root for the submodule, e.g. for danfysik in support
+1. Create a directory root for the submodule, e.g. for Danfysik in support
 ```
     cd EPICS/support
     mkdir danfysikMps8000
@@ -147,7 +147,7 @@ which adds new and removes deleted files. As a final check run:
     git status --ignored
 ```
 This will show files in the directory currently ignored by git via a `.gitignore`. As you started from an empty directory, and unpacked a clean vendor release, consider carefully whether these files should actually be added. If they should, you will need to use `git add -f` to force an add. There are several reasons why files may get ignored when they should be added:
-- Windows/unix case sensitivity difference. A `.gitignore` may contain `db` or `db/` as a directory to ignore. The top level `db` directory is usually a top level install directory to be ignored, the real files are in the `*App/Db` subdirectory. However as the windows file system is case insensitive git treats `db` and `Db` as the same so just `db` in a `.gitignore` will incorrectly exclude `*App/Db` files and cause us to miss adding them. We usually change a `db` to something more selective in our local `.gitignore` version post merge e.g. `/db/` means only match `db` at top level and not in subdirectories. There may be other case sensitivity issues, but this is the most common one.
+- Windows/Unix case sensitivity difference. A `.gitignore` may contain `db` or `db/` as a directory to ignore. The top level `db` directory is usually a top level install directory to be ignored, the real files are in the `*App/Db` subdirectory. However as the windows file system is case insensitive git treats `db` and `Db` as the same so just `db` in a `.gitignore` will incorrectly exclude `*App/Db` files and cause us to miss adding them. We usually change a `db` to something more selective in our local `.gitignore` version post merge e.g. `/db/` means only match `db` at top level and not in subdirectories. There may be other case sensitivity issues, but this is the most common one.
 - a `.gitignore` pattern may be too selective for importing. For example it may exclude `*.local` to ignore files like `RELEASE.local` created later during development, but the distribution has an `EXAMPLE_RELEASE.local` that should be imported by us.
 
 Unless a new file is obviously included by error in the distribution, it is probably best to import everything in the vendor release distribution zip/tar file. 

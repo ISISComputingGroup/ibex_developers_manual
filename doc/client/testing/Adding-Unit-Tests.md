@@ -8,8 +8,8 @@ Here are the steps required in Eclipse:
 
 * Create a new Fragment Project
     * File > New > Project... > Plug-in Development > Fragment Project
-    * Set the project name to \<the full name of the plug-in to test\>.tests
-    * Change the location to the repository rather than the workspace: xxx\ibex_gui\base\\\<project_name> (don't forget the project name!!)
+    * Set the project name to `\<the full name of the plug-in to test\>.tests`
+    * Change the location to the repository rather than the workspace: `xxx\ibex_gui\base\\\<project_name>` (don't forget the project name!!)
     * Click "Next"
     * Make sure the Execution Environment points at the correct version of Java (currently JavaSE-11)
     * Click the "Browse" button next to "Plug-in ID" 
@@ -27,7 +27,7 @@ Here are the steps required in Eclipse:
     * The class name **must** end in Test to be picked up by the automated build
     
 * Add tests to the class
-    * Add org.junit and org.mockito (if required) to the 'Required Plug-ins', under the Dependencies tab for the manifest
+    * Add `org.junit` and `org.mockito` (if required) to the 'Required Plug-ins', under the Dependencies tab for the manifest
 
 * Add the test plug-in to the Maven build by [following these steps](../coding/Adding-a-Plugin-or-Feature-to-Maven-Build)
     

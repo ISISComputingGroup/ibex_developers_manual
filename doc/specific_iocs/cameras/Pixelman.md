@@ -12,7 +12,7 @@ For more information see the README file in `C:\Instrument\Apps\EPICS\support\pi
 
 ## Setup
 
-The PC is set up and looked after by FIT and the instrument scientists. The person from Berkley set up the camera software and network card; the scientists may have instructions about how to restart various components.
+The PC is set up and looked after by FIT and the instrument scientists. The person from Berkeley set up the camera software and network card; the scientists may have instructions about how to restart various components.
 
 We installed the IBEX server **32-bit** into `c:\instrument\apps\epics` using the normal installer but for 32-bit (we literally only installed the server, no git, client, SQL or config). The server does **not** run, we just use the two programs detailed in IOC section.
 

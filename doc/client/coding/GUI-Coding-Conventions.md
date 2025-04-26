@@ -102,7 +102,7 @@ Checkstyle has a suppress warning flag that tells it to ignore certain warning; 
 
 * Magic numbers - if it is related to a GUI layout then suppress them.
 
-* Name must match pattern - ignore GUI names that don't match the recommended pattern (e.g. gd_switchToCombo)
+* Name must match pattern - ignore GUI names that don't match the recommended pattern (e.g. `gd_switchToCombo`)
     
 Suppression example:
 

@@ -90,7 +90,7 @@ and the VM should start normally.
 
 ## Installing the client
 
-I have not done this from scratch you will need to experiment the following is what I did before I ran out of time on the ticket. Ideally I think the plan is to place the compiled version of the client and an install script into the linex_env directory then on the ubuntu machine this appears in `/vagrant` (not home directory). You should be run install.sh and it should install and possibly start the client. To do this you will need at least java installed but I am unsure what else. see the instructions below of how I built and started my client.
+I have not done this from scratch you will need to experiment the following is what I did before I ran out of time on the ticket. Ideally I think the plan is to place the compiled version of the client and an install script into the linux_env directory then on the Ubuntu machine this appears in `/vagrant` (not home directory). You should be run install.sh and it should install and possibly start the client. To do this you will need at least java installed but I am unsure what else. see the instructions below of how I built and started my client.
 
 ## Create virtual machine
 
@@ -102,8 +102,10 @@ I am currently on a windows machine so it is useful to have a virtual machine on
 4. cd directory
 5. change virtual machine to use 
 
-      config.vm.box = "ubuntu/trusty64"
-      config.vm.box_url = "ubuntu/trusty64" #"../../vagrant_ubuntu_minimal/package.box"
+```
+config.vm.box = "ubuntu/trusty64"
+config.vm.box_url = "ubuntu/trusty64" #"../../vagrant_ubuntu_minimal/package.box"
+```
 
 6. cd `.../ecp-dev-envs\nicos-dev-env`
 7. `vagrant up`

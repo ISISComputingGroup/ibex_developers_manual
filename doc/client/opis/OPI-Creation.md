@@ -60,7 +60,7 @@ One convention we have used is to define a macro within the opened OPI called PV
 
 here EUROTHERM would be a parameter passed from the synoptic and it is combined with P to create the prefix for all PVs referenced within the OPI screen. The macro name should be something like the un-shortened device name, and its value would typically be the IOC name used in the PVs, e.g. EUROTHERM_01.
 
-In case an OPI's PV_root is defined in its parent, you need to go where to the parent OPI, select the section that represents the child OPI, and in the Macros row in the Properties tab you can find the value for PV_ROOT. Example: The psu_summary_indicate_changeover OPI can be found in the parent OPI riken_front_end_overview . If you open the former in OPI Editor, PV_ROOT ca not be found in the Macros row. However, if you go to riken_front_end_overview, which is the parent OPI, and click a linking container that links to psu_summary_indicate_changeover, you will find that PV_ROOT is defined in the Macros row.
+In case an OPI's PV_root is defined in its parent, you need to go where to the parent OPI, select the section that represents the child OPI, and in the Macros row in the Properties tab you can find the value for PV_ROOT. Example: The psu_summary_indicate_changeover OPI can be found in the parent OPI `riken_front_end_overview`. If you open the former in OPI Editor, PV_ROOT ca not be found in the Macros row. However, if you go to `riken_front_end_overview`, which is the parent OPI, and click a linking container that links to psu_summary_indicate_changeover, you will find that PV_ROOT is defined in the Macros row.
 
 ### Other Standard Macro Names
 

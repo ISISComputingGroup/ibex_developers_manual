@@ -61,7 +61,7 @@ We should have a known issues page for accelerator beam stuff being down like th
 Zoom now works if you're logged in from multiple places. hooray! 
 
 INTER could not find the new zoom support phone number so ended up coming to the office instead. the previous number is now redundant as all landlines have been removed. 
-- We should get some cards laminated again with the details on as the ones round site are out of date. ACTION: get these printed. Perhaps we could put a QR code of the our web page on it. And a picture of a goat! DKg would like to do the designing of these cards. KB will send Dkg the previous one
+- We should get some cards laminated again with the details on as the ones round site are out of date. ACTION: get these printed. Perhaps we could put a QR code of the our web page on it. And a picture of a goat! DKg would like to do the designing of these cards. KB will send DKg the previous one
 - 1763 should still work from the existing landlines in cabins, but will ring to zoom. We couldn't ring them back without looking up their number on the intranet
 - this is inconsistent as WISH seemed to come through with their own numbers... 
 - If you add them to contacts they show up as their instrument name.

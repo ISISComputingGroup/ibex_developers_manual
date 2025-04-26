@@ -48,7 +48,7 @@ Development work
 * Click on the delete branch button on the merged page
 
 {#git_workflow_reviewing_epics_submodules}
-## Reviewing work for the subModules of EPICS
+## Reviewing work for the submodules of EPICS
 
 * Navigate to the appropriate directory in Git Bash
 * If the submodule is not initialised, run `git submodule update --init` in the directory above
