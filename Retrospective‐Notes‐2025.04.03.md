@@ -136,11 +136,11 @@ David K: the up-to-date rota is in a tab in the announce channel: [Onsite Rota](
 George R: It was great to see Evan working with a colleague from Accelerator Controls today. Can we do more to build links with other RAL EPICS users and share knowledge/expertise across groups?
 Freddie A: We have had meetings with accelerator controls in the past, but these dropped off at some point, we can restart. I'd offered to host the next "EPICS oxfordshire" meeting onsite for start of this year, but then as STFC were hosting a full collab meeting it was decided to postpone until later in year. 
 
-### Teams for other meetings?
-Chris M: Teams for planning seemed to go very smoothly, should we be moving other meetings?
 
 # 😠😢😄 
 - KB 😄 **Bluesky scripting** has gone really well so far, and I think the message from Diego asking for it on zoom is a great example of this ([diego.alba-venero@stfc.ac.uk via email: bluesky on Zoom](https://teams.microsoft.com/l/message/19:4e381ff6b5674230a74878b1355eec22@thread.skype/1743159129191?tenantId=3f66361c-a87e-4158-8f61-99e82db3cac8&groupId=d9946ec3-a454-424f-b673-5ffcb9f9ade0&parentMessageId=1743159129191&teamName=IBEX%20Developers&channelName=email-exp-controls&createdTime=1743159129191)
 posted in IBEX Developers / email-exp-controls on 28 March 2025 10:52)
 
 - TW 😄 We eventually had SECI free cycle!!
+
+- CMS 😄 Teams for planning seemed to go very smoothly, should we be moving other meetings?
