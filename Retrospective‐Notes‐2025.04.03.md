@@ -3,32 +3,6 @@
 | GR    | ???        | SC         |
 
 # Previous sprint
-
-PI changeovers confusing
-
-Shared laptop helpful
-
-Ticket priority - probably not enough data to tell whether there was any change.
-
-Source code in dev manual - yes move it - ticket exists
-
-Manual system tests on release
-
-Build nodes
-
-Windows patching / IBEX deployment - note added to draft email by KB
-
-GALILOLD is bad
-- Should we update GALILNEW to be actually new, otherwise GALILNEW is a bit old.
-
-Remind people when they are on first line support
-
-Zipping up builds, sophos is horrible. Tickets. Many tickets. Some of which are conflated with each other.
-
-Use NDXMOTION to do beckhoff stuff, don't install XAR locally. JH removed from install & build wiki page.
-
-# Current Sprint
-
 ### Defunct emails that looks like it's associated with us but isn't.
 
 FA has sorted this.
@@ -138,6 +112,9 @@ GR: We can probably justify missing one standup every so often
 Conclusion: don't know and/or don't care, other meetings might take priority, as long as ops stuff e.g. nagios gets checked. "Someone" will take care of it.
 
 ### 
+
+
+# Current Sprint
 
 
 # 😠😢😄 
