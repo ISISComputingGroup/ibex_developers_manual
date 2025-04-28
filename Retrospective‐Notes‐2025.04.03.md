@@ -1,6 +1,6 @@
 | Chair | Timekeeper | Note Taker |
 |-------|------------|------------|
-| GR    | ???        | SC         |
+| JD    | ???        | SC         |
 
 # Previous sprint
 ### Defunct emails that looks like it's associated with us but isn't.
