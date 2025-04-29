@@ -68,7 +68,7 @@ Ensure the `dockerd` is selected as the runtime during the installation or withi
 
 ```
 
-4. To build the container from the `Dockerfile`, cd into the folder within a CMD window, ensure that Rancher Desktop is running and enter:
+4. To build the container from the `Dockerfile`, cd into the folder within a CMD window with admin privilege, ensure that Rancher Desktop is running and enter:
 
 	`docker build -t <container_name> .`
 
