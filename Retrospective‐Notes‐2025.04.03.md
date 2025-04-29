@@ -134,7 +134,7 @@ David K: the up-to-date rota is in a tab in the announce channel: [Onsite Rota](
 
 ### EPICS Collaboration on site
 George R: It was great to see Evan working with a colleague from Accelerator Controls today. Can we do more to build links with other RAL EPICS users and share knowledge/expertise across groups?
-Freddie A: We have had meetings with accelerator controls in the past, but these dropped off at some point, we can restart. I'd offered to host the next "EPICS oxfordshire" meeting onsite for start of this year, but then as STFC were hosting a full collab meeting it was decided to postpone until later in year. 
+Freddie A: We have had meetings with accelerator controls in the past, but these dropped off at some point, we can restart. I'd offered to host the next "EPICS Oxfordshire" meeting onsite for start of this year, but then as STFC were hosting a full collaboration meeting it was decided to postpone until later in year. 
 
 
 # 😠😢😄 
