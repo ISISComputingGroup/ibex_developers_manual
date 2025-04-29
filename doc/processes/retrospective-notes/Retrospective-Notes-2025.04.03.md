@@ -91,7 +91,7 @@ KB: still some instruments to migrate in summer
 
 ### Standup
 
-CMS: Move "friday" standup tasks to "thursday"?
+CMS: Move "Friday" standup tasks to "Thursday"?
 
 LJ/KB/GR: Discussion about whether we might lose code review time
 
