@@ -485,6 +485,6 @@ if above doesn't work
 - as admin run compmgmt.msc
 - computer management -> device manager -> right click scan for hardware changes on NDH computer name and possibly usb subtree too
 - close and reopen NIMAX
-- if it is still not showing, reboot NDH computer
-- after reboot, visa server may now be running again, stop it
+- if VXI0 now appears, jump to "add vme device" step below
+- if it is still not showing reboot NDH computer, after reboot visa server may be running again so stop it
 - right click on Frame0 of VXI0 and "add vme device" then choose DAE2 from VME profile
