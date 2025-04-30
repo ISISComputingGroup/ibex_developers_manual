@@ -467,23 +467,24 @@ The `selog.sq3` file in `C:/Data` is used by ISISICP to store log data prior to 
 
 ## Multiple VXI devices
 
-If you have multiple DAE2 VME crates then you will legitimately have multiple VXI devices in NI MAX. However there are cases when you can get two devices showing but have only one. This is usually because of either:
-- DAE USB cable has been plugged into a different socket in the PC
-- the DAE USB card has been changed
+If you have multiple DAE2 VME crates then you will legitimately have multiple VXI devices in NI MAX. However there are cases when you can get two devices showing in MAX but have only one device in reality. This is usually because of either:
+- The DAE USB cable has been moved into a different USB port on the PC
+- the DAE NI USB card has been changed
 
-in these cases when the "scan for new hardware" happens on the PC, it thinks it has found a new device. usually the old device will show as VXI0 and disconnected, the enw device as VXI1. To remedy teh situation
+in these cases when the "scan for new hardware" happens on the PC, it thinks it has found a new device. Usually you will have a disconnected VXI0 and a new VXI1 device. To remedy the situation
 - stop visa server in NI max
 - delete VXI0
 - rename VXI1 to VXI0
 - start visa server
 
 ### full rebuild
+if above doesn't work
 - stop visa server in NI max
 - delete all VXI* device
 - view refresh
 - as admin run compmgmt.msc
-- computer management -> device manager -> rigth click scan for hardware changes on NDH computer name and possible usb in tree too
-- clsoe and reopen NIMAX
-- if it is not showing, reboot NDH computer
-- after rebbot, visa server may now be running, stop it
-- click on Frame0 of VXI0 and "add vme device" then choose DAE2 from VME profile
+- computer management -> device manager -> right click scan for hardware changes on NDH computer name and possibly usb subtree too
+- close and reopen NIMAX
+- if it is still not showing, reboot NDH computer
+- after reboot, visa server may now be running again, stop it
+- right click on Frame0 of VXI0 and "add vme device" then choose DAE2 from VME profile
