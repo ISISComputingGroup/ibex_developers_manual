@@ -470,6 +470,7 @@ The `selog.sq3` file in `C:/Data` is used by ISISICP to store log data prior to 
 If you have multiple DAE2 VME crates then you will legitimately have multiple VXI devices in NI MAX. However there are cases when you can get two devices showing but have only one. This is usually because of either:
 - DAE USB cable has been plugged into a different socket in the PC
 - the DAE USB card has been changed
+
 in these cases when the "scan for new hardware" happens on the PC, it thinks it has found a new device. usually the old device will show as VXI0 and disconnected, the enw device as VXI1. To remedy teh situation
 - stop visa server in NI max
 - delete VXI0
