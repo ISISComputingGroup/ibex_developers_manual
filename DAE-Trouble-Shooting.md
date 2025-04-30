@@ -474,7 +474,7 @@ If you have multiple DAE2 VME crates then you will legitimately have multiple VX
 in these cases when the "scan for new hardware" happens on the PC, it thinks it has found a new device. Usually you will have a disconnected VXI0 and a new VXI1 device. To remedy the situation
 - stop visa server in NI max
 - delete VXI0
-- rename VXI1 to VXI0
+- rename VXI1 to VXI0 (change the system identifier number in the menu for the device from 1 to 0)
 - start visa server
 
 ### full rebuild
