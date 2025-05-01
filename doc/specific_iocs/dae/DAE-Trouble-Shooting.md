@@ -477,3 +477,28 @@ Check to see if you have any errors similar to the following:
 If so, you haven't registered your `isisicp.exe` program with the registry. Follow the steps to [Configure DAE for simulation mode on developer's computer](#first_time_install_configure_dae)
 
 If you have done this it may be that the isisicp.exe program is too old. Older versions do not contain a function which is needed by IBEX. Check the file `svn_revision.txt` in `c:\labview modules\dae` - it needs to be 1633 or higher. If it needs updating, ask a SECI specialist to update the program.
+
+## Multiple VXI devices
+
+If you have multiple DAE2 VME crates then you will legitimately have multiple VXI devices in NI MAX. However there are cases when you can get two devices showing in MAX but have only one device in reality. This is usually because of either:
+- The DAE USB cable has been moved into a different USB port on the PC
+- the DAE NI USB card has been changed
+
+in these cases when the "scan for new hardware" happens on the PC, it thinks it has found a new device. Usually you will have a disconnected VXI0 and a new VXI1 device. To remedy the situation
+- stop visa server in NI max
+- delete VXI0
+- rename VXI1 to VXI0 (change the system identifier number in the menu for the device from 1 to 0)
+- start visa server
+
+### full rebuild
+if above doesn't work
+- stop visa server in NI max
+- delete all VXI* device
+- view refresh
+- as admin run compmgmt.msc
+- computer management -> device manager -> right click scan for hardware changes on NDH computer name and possibly usb subtree too
+- close and reopen NIMAX
+- if VXI0 now appears, jump to "add vme device" step below
+- if it is still not showing reboot NDH computer, after reboot visa server may be running again so stop it
+- right click on Frame0 of VXI0 and "add vme device" then choose DAE2 from VME profile
+- start visa server
