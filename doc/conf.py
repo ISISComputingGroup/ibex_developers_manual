@@ -52,7 +52,7 @@ html_context = {
     "display_github": True,  # Integrate GitHub
     "github_user": "ISISComputingGroup",  # Username
     "github_repo": "ibex_developers_manual",  # Repo name
-    "github_version": "docs",  # Version
+    "github_version": "master",  # Version
     "conf_py_path": "/doc/",  # Path in the checkout to the docs root
 }
 
