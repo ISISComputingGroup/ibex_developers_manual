@@ -3,8 +3,8 @@
 This page collects information that will be useful for the implementation of the new control system on LARMOR.
 
 ## Background & Timeline ##
-The [Larmor](http://www.isis.stfc.ac.uk/instruments/larmor/larmor8239.html) web page describes the background to the instrument. The layout of the LARMOR beamline is shown in [this diagram](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Larmor/LARMOR_Beamline_Diagram.pdf).
-The proposed architecture for the LARMOR control system is described [here](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Larmor/Larmor%20Architecture.ppt).  We also have a list of LARMOR's [motion control components](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Larmor/LARMOR%20Beam%20Line%20-%20Motion%20Control%20Components.docx).
+The [Larmor](http://www.isis.stfc.ac.uk/instruments/larmor/larmor8239.html) web page describes the background to the instrument. The layout of the LARMOR beamline is shown in [this diagram](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/Forms/AllItems.aspx?id=%2Fsites%2FISISExperimentControls%2FICP%20Discussions%2FLarmor%2FLARMOR%5FBeamline%5FDiagram%2Epdf&viewid=45d81cb9%2D9571%2D4a80%2Da5cc%2D2cb4871703a3&parent=%2Fsites%2FISISExperimentControls%2FICP%20Discussions%2FLarmor).
+The proposed architecture for the LARMOR control system is described [here](https://stfc365.sharepoint.com/:p:/r/sites/ISISExperimentControls/ICP%20Discussions/Larmor/Larmor%20Architecture.ppt?d=w3585d74556004cb78678c947da892098&csf=1&web=1&e=C3nCRw).  We also have a list of LARMOR's [motion control components](https://stfc365.sharepoint.com/:w:/r/sites/ISISExperimentControls/ICP%20Discussions/Larmor/LARMOR%20Beam%20Line%20-%20Motion%20Control%20Components.docx?d=wfd6d77e31a414b76b3a00a4ebc60204b&csf=1&web=1&e=PZGpIv).
 
 ## Control System ##
 Larmor is currently using the IBEX control system.
@@ -17,7 +17,7 @@ Manufacturer | Model | Type | Connection | Driver | Notes
 ISIS |Mk3 Chopper | CHOPPER | Ethernet/.NET | #170 |[see ISIS Mk3 Chopper note](#larmor_noteMk3Chopper)
  |  | Spin Flipper | |  |[see SpinFlipper note](#larmor_noteSpinFlipper)
 Delft | Spin Echo| Spin Echo control system| TBD | TBD |[see Spin Echo System note](#larmor_noteSpinEcho)
-[JJ XRAY](http://www.jjxray.dk/) | [7-axis Sample Stack](http://www.jjxray.dk/products/positioning/multi-axis-stages/sample-stacks) [Manual](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Larmor/LARMOR%20JJXRAY%20SAMPLE%20STACK.pdf) | Sample Stack | | #304 |[see JJ X-Ray note](#larmor_noteJJXray)
+[JJ XRAY](http://www.jjxray.dk/) | [7-axis Sample Stack](http://www.jjxray.dk/products/positioning/multi-axis-stages/sample-stacks) [Manual](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/Larmor/LARMOR%20JJXRAY%20SAMPLE%20STACK.pdf) | Sample Stack | | #304 |[see JJ X-Ray note](#larmor_noteJJXray)
 ISIS | [Two Tier](https://github.com/ISISComputingGroup/IBEX/wiki/TwoTierSampleChanger) | Sample Changer || |[see SampleChanger note](#larmor_noteSampleChanger)
  |  | In/Out Monitor | | #267 |[see Monitor note](#larmor_noteMonitor)
 ISIS | DAE 3 | Detector Electronics | Ethernet | #219 |[see DAE note](#larmor_noteDAE)
@@ -60,12 +60,12 @@ Driven by [Galils](#larmor_noteGalil)
 
 {#larmor_noteSpinEcho}
 ##### Note: Spin Echo System #####
-[Delft RF Flipper Manual](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Larmor/Delft_RF_Flipper_Manual.pdf)<br>
+[Delft RF Flipper Manual](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/Larmor/Delft_RF_Flipper_Manual.pdf)<br>
 
 {#larmor_noteJJXray}
 ##### Note: JJ X-Ray #####
 [7-axis sample stack](http://www.jjxray.dk/products/positioning/multi-axis-stages/sample-stacks)<br>
-[Manual](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Larmor/LARMOR%20JJXRAY%20SAMPLE%20STACK.pdf)
+[Manual](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/Larmor/LARMOR%20JJXRAY%20SAMPLE%20STACK.pdf)
 
 {#larmor_noteSampleStack}
 ##### Note: SampleStack #####

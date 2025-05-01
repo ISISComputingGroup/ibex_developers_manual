@@ -117,7 +117,7 @@ There are 3 Eurotherm devices on ENGIN-X, arranged in a single crate.  Typically
 {#enginx_noteStressRig}
 ##### Note: Stress Rig #####
 Used to put stress on samples under test on ENGIN-X.  This device is shared between IMAT and ENGIN-X.
-The ICP discussion site contains [Stress Rig documentation](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Forms/AllItems.aspx?RootFolder=%2Fisis%2Fcomputing%2FICPdiscussions%2FInstron%20Stress%20Rig&FolderCTID=0x01200027AD8F05966A2748B3B04C98BB5B442B&View={F2C33C51-70E6-4343-B937-2C59A2568306}).<br>
+The ICP discussion site contains [Stress Rig documentation](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/Forms/AllItems.aspx?id=%2Fsites%2FISISExperimentControls%2FICP%20Discussions%2FInstron%20Stress%20Rig).<br>
 **Note:** Stress Rig uses GPIB communications protocol.<br>
 The Stress Rig is driven from its own PC (fitted with a GPIB card).  IBEX communicates with the Stress Rig PC via the GPIB card.  See [#2338](https://github.com/ISISComputingGroup/IBEX/issues/2338) for ideas on how to test the Stress Rig IOC.
 

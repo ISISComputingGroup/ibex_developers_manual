@@ -2,11 +2,11 @@
 
 This page collects information that will be useful for the implementation of the IBEX control system on SANS2D.
 ## Background & Timeline ##
-SANS2D is a Time-of-Flight Small-Angle Neutron Scattering instrument, on TS2. The [SANS2D](https://www.isis.stfc.ac.uk/Pages/SANS2D.aspx) web page describes the background to the instrument.  Information about the [construction of SANS2D](https://www.facilities.rl.ac.uk/isis/projects/ts2/ts2construction/Instruments/Forms/AllItems.aspx?Paged=TRUE&PagedPrev=TRUE&p_SortBehavior=0&p_FileLeafRef=SaP%20warrant%203%20%28sans2d%20e2-e3%20platform%29%2edoc&p_ID=1829&RootFolder=%2fisis%2fprojects%2fts2%2fts2construction%2fInstruments%2fSANS2D&PageFirstRow=181&&View={776499AB-B00F-4B98-9619-3125F112A0C8}), which is useful background for understanding the operation of the instrument, is also available.
+SANS2D is a Time-of-Flight Small-Angle Neutron Scattering instrument, on TS2. The [SANS2D](https://www.isis.stfc.ac.uk/Pages/SANS2D.aspx) web page describes the background to the instrument.  Information about the [construction of SANS2D](https://stfc365.sharepoint.com/sites/ISISProjects-Archive/TS2%20Construction/Forms/AllItems.aspx?FolderCTID=0x012000B3C16B2D4C3C4D48AAFC5C89840FE109&id=%2Fsites%2FISISProjects%2DArchive%2FTS2%20Construction%2FInstruments%20%28WBS%208%2E0%29%2FSANS2D), which is useful background for understanding the operation of the instrument, is also available.
 
 Images of SANS2D equipment can be found here [SANS2D equipment](https://github.com/ISISComputingGroup/IBEX/wiki/SANS2D-equipment-Images-GIF).
 
-The SANS2D instrument scientists have provided a description of the [instrument beamline](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/SANS2D/Beam_line_descriptors(Sarah%20and%20Najet).docx) and some [schematic drawings](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/SANS2D/Sans2d_drawing_for%20_IBEX(Sarah%20and%20Najet).pptx).
+The SANS2D instrument scientists have provided a description of the [instrument beamline](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/SANS2D/Beam_line_descriptors(Sarah%20and%20Najet).docx) and some [schematic drawings](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/SANS2D/Sans2d_drawing_for%20_IBEX(Sarah%20and%20Najet).pptx).
 
 ## Mini-IBEX on SANS2D ##
 This section contains relating to the mini-IBEX server on SANS2D.  This information can be deleted once SANS2D has migrated to a full IBEX server.
@@ -25,7 +25,7 @@ SANS2D will migrate from the SECI control system to the IBEX control system in M
 ## SANS2D Equipment ##
 The equipment listed below is used on SANS2D. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).
 
-See also [SANS2D Migration Notes](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/SANS2D/SANS2D%20Migration%20to%20IBEX%20Notes.docx)
+See also [SANS2D Migration Notes](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/SANS2D/SANS2D%20Migration%20to%20IBEX%20Notes.docx)
 
 Manufacturer | Model | Type | Connection | Driver | Notes |
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------------------------------------
@@ -139,7 +139,7 @@ The vacuum system on SANS2D is controlled by a FINS PLC.  IBEX does not control 
 TPG300 support is implemented via [#216](https://github.com/ISISComputingGroup/IBEX/issues/216) and [#2063](https://github.com/ISISComputingGroup/IBEX/issues/2063)
 
 ##### Note: Eurotherm #####
-[Eurotherms](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/SANS2D/SANS2D_Eurotherms.jpg) are used to control temperature Orange Cryostat, CCR and Furnace devices.
+Eurotherms are used to control temperature Orange Cryostat, CCR and Furnace devices.
 
 ##### Note: Water Baths #####
 1. Julabo Water Bath (apparently the following Julabos: WB15, WB16 )

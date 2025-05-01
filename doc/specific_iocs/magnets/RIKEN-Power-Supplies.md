@@ -8,7 +8,7 @@ See the `RIKENFE MOXA NPort Devices and IOCs` spreadsheet in the documentation a
 
 ## Documentation
 
-The SharePoint site [`Computing -> ICPdiscussions -> RIKEN FE`](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/RIKEN%20FE) contains documentation relating to the refurbishment project.
+The SharePoint site [`Computing -> ICPdiscussions -> RIKEN FE`](http://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/RIKEN%20FE) contains documentation relating to the refurbishment project.
 
 The original documentation on the physical setup is at `\\...\shares\ISIS_Experiment_Controls\Manuals\RIKEN_power_supplies\` with some schematics in `riken psu controls - issue C.ppt`.  Most of the information in this area is now out-of-date, particularly that which describes the daisy-chain serial connections to the power supplies.  The remote _changeover_ system (configuring RB2 magnet mode to direct beam to specific instruments), has now been removed entirely.
 

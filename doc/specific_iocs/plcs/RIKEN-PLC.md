@@ -6,7 +6,7 @@ The main PLC on RIKEN is a "Schneider Electric M580" and is responsible for cont
 
 ## Registers and Variables
 
-The groups of variables and their associated registers are defined in the document [`RIKEN PLC IBEX Specification`](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/RIKEN%20FE/RIKEN%20PLC%20IBEX%20Specification%20-%20Issue%20G_TC.docx) (which can be found in the RIKEN FE ICP Discussions area of SharePoint) and are as follows: (all are read-only, apart from the vacuum valve controls, see below)
+The groups of variables and their associated registers are defined in the document [`RIKEN PLC IBEX Specification`](https://stfc365.sharepoint.com/:w:/r/sites/ISISExperimentControls/ICP%20Discussions/RIKEN%20FE/RIKEN%20PLC%20IBEX%20Specification%20-%20Issue%20G_TC.docx?d=w277cb25c4cbc4e4ba988f52e49c1eb29&csf=1&web=1&e=zbhcoa) (which can be found in the RIKEN FE ICP Discussions area of SharePoint) and are as follows: (all are read-only, apart from the vacuum valve controls, see below)
 
 - Separator vacuum status
 - Solenoid status

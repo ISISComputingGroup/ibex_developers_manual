@@ -22,7 +22,7 @@ A system to record PV values and reinstate them on startup of an IOC.
 
 ## [Axis](/specific_iocs/motor_extensions/Axis)
 
-In IBEX, the term axis refers to a degree-of-freedom within an experimental system.  See [Axes in IBEX](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Glossary/Axes%20in%20IBEX%20V1R0M0.pdf) for more detail.
+In IBEX, the term axis refers to a degree-of-freedom within an experimental system.  See [Axes in IBEX](https://stfc365.sharepoint.com/sites/IBEXSAG/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FIBEXSAG%2FShared%20Documents%2FAxes%20in%20IBEX%20V1R0M0%2Epdf&parent=%2Fsites%2FIBEXSAG%2FShared%20Documents) for more detail.
 
 ## Backdoor
 

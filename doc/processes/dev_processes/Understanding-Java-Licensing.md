@@ -85,6 +85,6 @@ This information is left here for completeness only.
 > The ``-XX:+UnlockCommercialFeatures`` command line option is **not** a feature of either batch file. Given that the Apache SF is dedicated to the provision of open-source software, it seems highly unlikely that they will ever use 
 > the ``-XX:+UnlockCommercialFeatures`` command line option.
 > ## Reference Material
-> * [Java Licensing](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Forms/AllItems.aspx?RootFolder=%2Fisis%2Fcomputing%2FICPdiscussions%2FJava%20Licensing&FolderCTID=0x01200027AD8F05966A2748B3B04C98BB5B442B&View={F2C33C51-70E6-4343-B937-2C59A2568306}) folder on ICP Discussions site.
+> * [Java Licensing](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/Forms/AllItems.aspx?id=%2Fsites%2FISISExperimentControls%2FICP%20Discussions%2FJava%20Licensing) folder on ICP Discussions site.
 > * [Oracle Binary Code License Agreement for the JAVA SE Platform Products (02-April-2013)](http://www.oracle.com/technetwork/java/javase/documentation/otn-bcl-02april2013-1966219.pdf)
 > * [Ticket: #1915](https://github.com/ISISComputingGroup/IBEX/issues/1915)

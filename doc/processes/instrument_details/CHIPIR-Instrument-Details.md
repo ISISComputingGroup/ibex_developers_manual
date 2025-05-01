@@ -91,7 +91,7 @@ Agilent has spun-off its electronic measurement business, which now trades as [K
 {#chipir_note-super-logics}
 ##### Note: SuperLogics #####
 1. [8017/18/19 series - 8 Channel Analog Input Module, 16-Bit A/D Converter](https://www.superlogics.com/data-acquisition-99/data-acq-analog-input/analog-input-rs485/8017.html).<br>
-Copy of manual for [8017/18/19 series](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Chipir/Manuals%20for%20Equipment/Superlogics_8019R.pdf).
+Copy of manual for [8017/18/19 series](https://stfc365.sharepoint.com/:b:/r/sites/ISISExperimentControls/ICP%20Discussions/Chipir/Manuals%20for%20Equipment/Superlogics_8019R.pdf?csf=1&web=1&e=EV4XiD).
 
 {#chipir_note-camera}
 ##### Note: Camera #####

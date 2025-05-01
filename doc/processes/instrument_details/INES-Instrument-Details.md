@@ -52,7 +52,7 @@ The vacuum is monitored using a TPG300 pressure gauge.  TPG300 support is implem
 
 {#ines_noteEurotherm}
 ##### Note: Eurotherm #####
-[Eurotherms](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/INES/INES_Eurotherms.jpg) are used to control temperature in the vacuum tank.
+Eurotherms are used to control temperature in the vacuum tank.
 
 {#ines_noteKeithley}
 ##### Note: Keithley #####

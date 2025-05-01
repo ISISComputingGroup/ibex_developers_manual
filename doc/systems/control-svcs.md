@@ -26,7 +26,7 @@ Depending on what you need to do, you may need to modify system init scripts to 
 
 ### Whole VM is down
 
-The best bet at diagnosing/fixing this is to [download VM Manager console](http://www.facilities.rl.ac.uk/isis/computing/instruments/Instrument%20Documents/vmm%20console.docx) - ask Facilities IT if you have problems. The machine has appeared to be down in the past (unable to ping etc.) but has actually been running OK (access via VM console) - this seems to happen if the VM is "live migrated" to a new node on the cluster. Facilities IT are now aware of this and should inform us first, after the migration we may need to reboot to restore network connectivity.   
+The best bet at diagnosing/fixing this is to [download VM Manager console](https://stfc365.sharepoint.com/sites/ISISExperimentControls/_layouts/15/Doc.aspx?sourcedoc=%7B289EA683-832D-4CC5-936B-A409AB379AF7%7D&file=vmm%20console.docx&action=default&mobileredirect=true&DefaultItemOpen=1) - ask Facilities IT if you have problems. The machine has appeared to be down in the past (unable to ping etc.) but has actually been running OK (access via VM console) - this seems to happen if the VM is "live migrated" to a new node on the cluster. Facilities IT are now aware of this and should inform us first, after the migration we may need to reboot to restore network connectivity.   
 
 ### Webserver is down
 

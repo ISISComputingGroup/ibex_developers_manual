@@ -45,18 +45,18 @@ _**Note:**_ NIMROD does not have choppers either.
 
 {#sandals_noteJaws}
 ##### Note: Jaws #####
-SANDALS has a single set of jaws controlled by a [Parker controller](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/SANDALS/SANDALS_Parker_Controller.jpg), which is not currently controlled by SECI.  There is no requirement to support the Parker system in IBEX, although it would be very convenient if such a thing were possible.
+SANDALS has a single set of jaws controlled by a [Parker controller](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/SANDALS/SANDALS_Parker_Controller.jpg), which is not currently controlled by SECI.  There is no requirement to support the Parker system in IBEX, although it would be very convenient if such a thing were possible.
 
 It is proposed to replace the Parker controller with a Galil DMC4040 controller (see [#3259](https://github.com/ISISComputingGroup/IBEX/issues/3259)).
 
 {#sandals_noteVacuum}
 ##### Note: Vacuum System #####
-The vacuum pressure on SANDALS is the pressure in the SANDALS tank/chamber itself.  SANDALS only needs to monitor the vacuum pressure; scientists do not want to control the vacuum system from IBEX.  The vacuum pressure is also displayed on [a gauge mounted on the "fence"](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/SANDALS/SANDALS_fence.jpg) that surrounds SANDALS.
+The vacuum pressure on SANDALS is the pressure in the SANDALS tank/chamber itself.  SANDALS only needs to monitor the vacuum pressure; scientists do not want to control the vacuum system from IBEX.  The vacuum pressure is also displayed on [a gauge mounted on the "fence"](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/SANDALS/SANDALS_fence.jpg) that surrounds SANDALS.
 TPG300 support is implemented via [#216](https://github.com/ISISComputingGroup/IBEX/issues/216) and [#2063](https://github.com/ISISComputingGroup/IBEX/issues/2063)
 
 {#sandals_noteVacuumPump}
 ##### Note: Vacuum Pump #####
-SANDALS uses a [vacuum pump](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/SANDALS/SANDALS_Turbo_Pump.jpg) (in conjunction with CCRs).  A TPG26x is used to measure the pressure.
+SANDALS uses a [vacuum pump](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/SANDALS/SANDALS_Turbo_Pump.jpg) (in conjunction with CCRs).  A TPG26x is used to measure the pressure.
 TPG26x support was originally implemented via [#1411](https://github.com/ISISComputingGroup/IBEX/issues/1411), [#2379](https://github.com/ISISComputingGroup/IBEX/issues/2379) and [#2578](https://github.com/ISISComputingGroup/IBEX/issues/2578)
 
 {#sandals_notePLC}
@@ -65,7 +65,7 @@ SANDALS has an [Omron PLC](/specific_iocs/plcs/Omron-FINS) to control two gate v
 
 {#sandals_noteEurotherm}
 ##### Note: Eurotherm #####
-[Eurotherms](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/SANDALS/SANDALS_Eurotherms.jpg) are used to control temperature Orange Cryostat, CCR and Furnace devices.
+Eurotherms are used to control temperature Orange Cryostat, CCR and Furnace devices.
 
 {#sandals_noteOxfordInstruments}
 ##### Note: Oxford Instruments #####
@@ -80,7 +80,7 @@ SANDALS has an [Omron PLC](/specific_iocs/plcs/Omron-FINS) to control two gate v
 
 {#sandals_noteCCR}
 ##### Note: Closed Cycle Refrigerators #####
-   1. [CCR](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/SANDALS/SANDALS_CCR.jpg) is the most frequently used low-temperature device used in on SANDALS.
+   1. [CCR](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/SANDALS/SANDALS_CCR.jpg) is the most frequently used low-temperature device used in on SANDALS.
 [CCRs](https://www.isis.stfc.ac.uk/Pages/Closed-Cycle-refrigerators,-CCRs.aspx). Not directly computer-controlled  - controlled via Eurotherm.
 
 {#sandals_noteISISFurnaces}
@@ -89,11 +89,11 @@ More information on [IRIS Furnaces](https://www.isis.stfc.ac.uk/Pages/High-tempe
 
 {#sandals_noteSampleChanger}
 ##### Note: SANDALS Sample Changer #####
-The [SANDALS sample changer](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/SANDALS/SANDALS_Sample_Changer_bottom.jpg) can hold up to 15 samples.  It has recently been upgraded to use a [Beckhoff PLC](/specific_iocs/motors/Beckhoff) which controls the jaws as well. 
+The [SANDALS sample changer](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/SANDALS/SANDALS_Sample_Changer_bottom.jpg) can hold up to 15 samples.  It has recently been upgraded to use a [Beckhoff PLC](/specific_iocs/motors/Beckhoff) which controls the jaws as well. 
 
 {#sandals_noteWaterBath}
 ##### Note: Water Bath #####
-SANDALS uses two types of water bath, both Julabo models: FP-50 and [FP-52](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/SANDALS/SANDALS_Julabo_FP52.jpg).  
+SANDALS uses two types of water bath, both Julabo models: FP-50 and [FP-52](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/SANDALS/SANDALS_Julabo_FP52.jpg).  
 See [supported Julabo models](/specific_iocs/temp_controllers/Julabo) for more details.
 SANDALS uses the FP-52 model of Julabo most frequently (used in conjunction with the [Sample Changer](#sandals_noteSampleChanger)).  Sometimes SANDALS uses water as the coolant/heating medium; sometimes it uses oil or glycol as the coolant/heating medium (Julabo/Presto A40 device).  SANDALS has also used Haake water bath in the past, but none of the current instrument scientists know anything about this (so it might have been a one-off).
 

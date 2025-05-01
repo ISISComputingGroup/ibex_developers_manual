@@ -48,18 +48,18 @@ Two controllers each with four active channels.
 
 ##### Note: Eurotherm #####
 Used to control temperature of top-loading CCRs, Furnace, Orange Cryostat devices.
-OSIRIS has 3 Eurotherm devices, arranged in a single crate, as illustrated in the photograph of the [Eurotherm Crate](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/OSIRIS/OSIRIS_3x_Eurotherm.jpg).
+OSIRIS has 3 Eurotherm devices, arranged in a single crate, as illustrated in the photograph of the [Eurotherm Crate](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/OSIRIS/OSIRIS_3x_Eurotherm.jpg).
 
 ##### Note: LakeShore #####
 Three model 218 temperature controllers in total, each with 8 active channels.  Two monitor the temperature of the Analyser and one the beryllium filter.
-1. [Model 218](http://www.lakeshore.com/products/Cryogenic-Temperature-Monitors/Model-218/Pages/Overview.aspx).  The [3 LakeShore devices](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/OSIRIS/OSIRIS_3x_LakeShore_218.jpg), are mounted in the OSIRIS rack.
+1. [Model 218](http://www.lakeshore.com/products/Cryogenic-Temperature-Monitors/Model-218/Pages/Overview.aspx).  The [3 LakeShore devices](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/OSIRIS/OSIRIS_3x_LakeShore_218.jpg), are mounted in the OSIRIS rack.
 
 ##### Note: Neocera #####
 1. [Neocera LTC-21 Manual](http://www.submm.caltech.edu/~sharc/technical/LTC-21%20manual.pdf)
 1. See also [#1828](https://github.com/ISISComputingGroup/IBEX/issues/1828)
 
 ##### Note: CryoValve Controller #####
-1. Implemented on IRIS - see [#1405](https://github.com/ISISComputingGroup/IBEX/issues/1405).  The [CryoValve Controller](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/OSIRIS/OSIRIS_CryoValve.jpg) sits on the OSIRIS rack.
+1. Implemented on IRIS - see [#1405](https://github.com/ISISComputingGroup/IBEX/issues/1405).  The [CryoValve Controller](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/OSIRIS/OSIRIS_CryoValve.jpg) sits on the OSIRIS rack.
 
 ## OSIRIS Notes ##
 #### Specialist Panels/Systems ####

@@ -40,7 +40,7 @@ As of 2018-11-15, TOSCA uses only one McLennan motor, which is for the sample ch
 
 {#tosca_noteSamplePositioner}
 ##### Note: Sample Positioner #####
-The Sample Positioner is driven by a McLennan motor (i.e. it raises/lowers sample plates attached to a chain drive, driven by the McLennan).  Here are 3 photograph of the Sample Positioner: [One](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/TOSCA/TOSCA_Sample_Changer_1.jpg), [Two](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/TOSCA/TOSCA_Sample_Changer_2.jpg), [Three](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/TOSCA/TOSCA_Sample_Changer_3.jpg).
+The Sample Positioner is driven by a McLennan motor (i.e. it raises/lowers sample plates attached to a chain drive, driven by the McLennan).  Here are 3 photograph of the Sample Positioner: [One](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/TOSCA/TOSCA_Sample_Changer_1.jpg), [Two](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/TOSCA/TOSCA_Sample_Changer_2.jpg), [Three](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/TOSCA/TOSCA_Sample_Changer_3.jpg).
 
 {#tosca_noteJaws}
 ##### Note: Jaws #####
@@ -52,7 +52,7 @@ TPG300 support is implemented via [#216](https://github.com/ISISComputingGroup/I
 
 {#tosca_noteEurotherm}
 ##### Note: Eurotherm #####
-[Eurotherms](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/TOSCA/TOSCA_Eurotherms.jpg) are used to control temperature Orange Cryostat, CCR and Furnace devices.
+Eurotherms are used to control temperature Orange Cryostat, CCR and Furnace devices.
 
 {#tosca_noteLakeshore}
 ##### Note: LakeShore #####

@@ -63,7 +63,7 @@ The homing behaviour for the McLennans is currently under review. The McLennan I
 
 {#iris_noteSampleChanger}
 ##### Note: Sample Changer #####
-The Sample Changer is driven by the McLennan motor (i.e. it raises/lowers sample cans attached to the sample changer).  There is a photograph of the [Sample Changer](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/IRIS/IRIS_Sample_Changer.jpg), which shows the sample cans attached to the bottom of the sample changer.  There is also a [diagram](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/IRIS/IRIS_Sample_Changer_Diagram(log%20book).JPG) showing the dimensions of the Sample Changer (the diagram is taken from the instrument scientist's notebook - it is a sketch, not an engineering drawing (just to set your expectations :-) ).
+The Sample Changer is driven by the McLennan motor (i.e. it raises/lowers sample cans attached to the sample changer).  There is a photograph of the [Sample Changer](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/IRIS/IRIS_Sample_Changer.jpg), which shows the sample cans attached to the bottom of the sample changer.  There is also a [diagram](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/IRIS/IRIS_Sample_Changer_Diagram(log%20book).JPG) showing the dimensions of the Sample Changer (the diagram is taken from the instrument scientist's notebook - it is a sketch, not an engineering drawing (just to set your expectations :-) ).
 
 {#iris_noteLeybold}
 ##### Note: Leybold #####
@@ -86,7 +86,7 @@ Orange Cryostat: [models](http://www.isis.stfc.ac.uk/sample-environment/low-temp
 {#iris_noteEurotherm}
 ##### Note: Eurotherm #####
 Used to control temperature of top-loading CCRs, Be Filter, Furnace, Orange Cryostat devices.
-There are at least 6 Eurotherm devices on IRIS, arranged in two crates of 3, as illustrated in the photograph of the [Eurotherm Crate](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/IRIS/IRIS_Eurotherm_Triple_Crate.jpg).
+There are at least 6 Eurotherm devices on IRIS, arranged in two crates of 3, as illustrated in the photograph of the [Eurotherm Crate](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/IRIS/IRIS_Eurotherm_Triple_Crate.jpg).
 
 {#iris_noteLakeshore}
 ##### Note: LakeShore #####
@@ -97,7 +97,7 @@ There are at least 6 Eurotherm devices on IRIS, arranged in two crates of 3, as 
 
 There are [EPICS drivers](http://www.aps.anl.gov/epics/modules/manufacturer.php#Lakeshore) for a variety of Lakeshore temperature controllers.
 
-The Lakeshore 336 on IRIS is shown in the linked [photograph](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/IRIS/IRIS_Lakeshore_336.jpg).
+The Lakeshore 336 on IRIS is shown in the linked [photograph](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/IRIS/IRIS_Lakeshore_336.jpg).
 
 Documentation on the Lakeshore 336 IOC setup can be found [here](/specific_iocs/temp_controllers/Lakeshore336).
 

@@ -2,7 +2,7 @@
 
 This page collects information that will be useful for the implementation of the new control system on ZOOM.
 ## Background & Timeline ##
-The [ZOOM](http://www.isis.stfc.ac.uk/instruments/zoom/zoom8060.html) web page describes the background to the instrument. Additional material is also available on the [ZOOM sharepoint](http://www.facilities.rl.ac.uk/isis/projects/ts2/phase2instruments/ZOOM/Forms/AllItems.aspx).  ZOOM is expected to have 36 motion axes.
+The [ZOOM](http://www.isis.stfc.ac.uk/instruments/zoom/zoom8060.html) web page describes the background to the instrument. Additional material is also available on the [ZOOM sharepoint](https://stfc365.sharepoint.com/sites/ISISProjects-1015/ZOOM/Forms/AllItems.aspx).  ZOOM is expected to have 36 motion axes.
 
 The ZOOM shutter is due to open in February 2017 (see Zoom plan 28th May 2016). 
 
@@ -23,7 +23,7 @@ ISIS |  | Spin Flipper | | #1234 |[see SpinFlipper note](#zoom_noteSpinFlipper)
  |  | JAWS | | #179, #180 |
  |  | Alignment Laser | |  |[see Alignment Laser note](#zoom_noteLaser)
  |  | JAWS | | #179, #180 |
-[JJ XRAY](http://www.jjxray.dk/) | [7-axis Sample Stack](http://www.jjxray.dk/products/positioning/multi-axis-stages/sample-stacks) [Manual](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Larmor/LARMOR%20JJXRAY%20SAMPLE%20STACK.pdf) | Sample Stack | | #304, #1238 |[see JJ X-Ray note](#zoom_noteJJXray)
+[JJ XRAY](http://www.jjxray.dk/) | [7-axis Sample Stack](http://www.jjxray.dk/products/positioning/multi-axis-stages/sample-stacks) [Manual](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/Larmor/LARMOR%20JJXRAY%20SAMPLE%20STACK.pdf) | Sample Stack | | #304, #1238 |[see JJ X-Ray note](#zoom_noteJJXray)
  | Translation (across beam) | Sample Stack | | #1238 |[see SampleStack note](#zoom_noteSampleStack)
 ISIS | Translation (along beam) | Sample Stack || #1238 |Driven by [Beckhoff](#zoom_noteBeckhoff)
 ISIS | Two Tier sample changer | Sample Changer || |[see SampleChanger note](#zoom_noteSampleChanger)
@@ -115,7 +115,7 @@ No control of the alignment laser is required, other than the ability to move it
 ##### Note: JJ X-Ray 7-axis Sample Stack #####
 Location: Blockhouse<br>
 Due: Day 1<br>
-[7-axis Sample Stack Manual](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Larmor/LARMOR%20JJXRAY%20SAMPLE%20STACK.pdf)<br>
+[7-axis Sample Stack Manual](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/Larmor/LARMOR%20JJXRAY%20SAMPLE%20STACK.pdf)<br>
 See also [LARMOR](LARMOR-Instrument-Details)<br>
 
 {#zoom_noteSampleStack}
@@ -126,7 +126,7 @@ The [JJ X-Ray sample stack](#zoom_noteJJXray) will sit on rails to allow the ent
 
   1. Across beam (i.e. perpendicular to the rails): Alignment stage for reproducibility.
   2. Along beam (i.e. along the rails): Monitoring only, no control required.<br>
-See [ZOOM_Sample_Stack_Schematic](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/ZOOM/ZOOM_Sample_Stack_Schematic.pptx)
+See [ZOOM_Sample_Stack_Schematic](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/ZOOM/ZOOM_Sample_Stack_Schematic.pptx)
 
 {#zoom_notePneumaticShutter}
 ##### Note: Pneumatic Shutter #####

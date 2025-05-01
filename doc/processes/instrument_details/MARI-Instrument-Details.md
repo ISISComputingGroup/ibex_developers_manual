@@ -39,7 +39,7 @@ MARI has two ISIS MK3 disk choppers.  User needs the ability to change speed & p
 Ideally, the two choppers should seen as a single pair by visiting scientists; instrument scientists need the ability to control the two choppers independently (e.g. for diagnostic purposes).
 
 ##### Note: MARI Fermi Chopper #####
-The fermi chopper is a Jülich model (FZJ - Forschungszentrum Jülich) - custom built for ISIS (therefore unique, although very similar to models installed on MAPS and MERLIN).  A copy of the communications manual (PDF) is [here](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/MERLIN/Fermi%20Chopper%20Communications%20Protocol.pdf) and the operating manual [here](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/MERLIN/Fermi%20Chopper%20Operating%20Manual.pdf).<br>
+The fermi chopper is a Jülich model (FZJ - Forschungszentrum Jülich) - custom built for ISIS (therefore unique, although very similar to models installed on MAPS and MERLIN).  A copy of the communications manual (PDF) is [here](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/Forms/AllItems.aspx?id=%2Fsites%2FISISExperimentControls%2FICP%20Discussions%2FMERLIN) and the operating manual [here](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/Forms/AllItems.aspx?id=%2Fsites%2FISISExperimentControls%2FICP%20Discussions%2FMERLIN).<br>
 The control program will need to include various safety-critical condition monitoring routines (e.g. overspeed, bearing voltage out-of-range).  There are some aspects of the control system which are specific to MARI and will need to be incorporated into the IOC.  Ideally, they would be modular (e.g. macro, configuration file) so that the main program would be compatible between the three systems (MERLIN, MAPS, MARI).<br>
 David Keymer wrote the original VIs, which are a useful reference.<br>
 The Fermi chopper on MARI is primarily controlled via scripts.  Scripts are used to calculate the frequency & phase, based on the energy (longer-term this calculation could be folded into IOC).  The OPI should merely display the frequency & phase, not allow the user to change them. <br>
@@ -77,7 +77,7 @@ The changer is driven by an instrument script which has the rotation angle corre
 The script will also perform a home scan on request. This is usual done when samples are mounted.<br>
 The changer should only be rotated in one direction, otherwise there is a risk the head will unscrew itself. The instrument script knows and enforces this condition.<br>
 The temperature control will be handled by a Eurotherm.<br>
-[Project Details](http://www.facilities.rl.ac.uk/isis/projects/_layouts/listform.aspx?PageType=4&ListId={EB0AB6DD-0B50-4DBD-8C95-E45C95069C26}&ID=541&ContentTypeID=0x01000DF6FB717D3FBD47809FF94DE29BBBC4) and 
+[Project Details](https://stfc365.sharepoint.com/sites/ISISProject-1122) and 
 [Project Plan](https://tasks.office.com/stfc365.onmicrosoft.com/en-US/Home/PlanViews/8bdu_4UTBUeZwF_PB8SLIpYAESGr)
 
 ## MARI SECI Configs ##

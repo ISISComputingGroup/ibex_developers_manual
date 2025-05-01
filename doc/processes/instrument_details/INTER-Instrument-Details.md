@@ -62,7 +62,7 @@ TPG300 support is implemented via [#216](https://github.com/ISISComputingGroup/I
 
 {#inter_note-eurotherm}
 ##### Note: Eurotherm #####
-[Eurotherms](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/INTER/INTER_Eurotherms.jpg) are used to control temperature Orange Cryostat, CCR and Furnace devices.
+Eurotherms are used to control temperature Orange Cryostat, CCR and Furnace devices.
 
 {#inter_note-water-baths}
 ##### Note: Water Baths #####
@@ -169,7 +169,7 @@ Thurlby EX355P PSU - see [#155](https://github.com/ISISComputingGroup/IBEX/issue
    * Is the vacuum chamber related to the INTER High Voltage VI (listed below)?
 
 ## INTER Mirror Guides ##
-INTER is due to get new mirror guides (prior to Cycle 2019/01).  These will be operational (under SECI) before INTER is migrated to IBEX.  There is a [sketch showing the three mirror guide sections](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/INTER/Defined%20Axis%20and%20Rotations.pdf) (MG1 - MG3).  MG1 is fixed; it requires no control.  MG2 and MG3 are moveable and, therefore, do require control.
+INTER is due to get new mirror guides (prior to Cycle 2019/01).  These will be operational (under SECI) before INTER is migrated to IBEX.  There is a [sketch showing the three mirror guide sections](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/INTER/Defined%20Axis%20and%20Rotations.pdf) (MG1 - MG3).  MG1 is fixed; it requires no control.  MG2 and MG3 are moveable and, therefore, do require control.
 
 There will be, essentially, 3 modes of operation:
    1. **no bounce:** all three sections centred in height around the incident beam height  to allow straight through beam on sample
@@ -178,7 +178,7 @@ There will be, essentially, 3 modes of operation:
 
 In modes 2 and 3 several beamline components need to track: intermediate slit (S1b), slit 2, sample monitor, sample height, slit 3 and detector.
 
-In May 2019, SECI was updated to handle the new mirror guides.  IBEX will need to replicate the new functionality in SECI.  The is a document [describing the SECI changes](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/INTER/INTER%20SECI%20changes.docx).
+In May 2019, SECI was updated to handle the new mirror guides.  IBEX will need to replicate the new functionality in SECI.  The is a document [describing the SECI changes](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/INTER/INTER%20SECI%20changes.docx).
 
 ## INTER SECI Configs ##
 Document information about INTER SECI configs here.

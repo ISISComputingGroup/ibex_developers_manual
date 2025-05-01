@@ -6,4 +6,4 @@ A bi-directional interlock exists between the chopper controller (an [SKF MB5150
 
 There is further documentation in the Motion Control Group's SharePoint site: Beamline Motion -> IDD Motion Control -> Technical Files -> EMMA -> EMMA chopper lifter - Handover.docx
 
-[Direct link to document](http://www.facilities.rl.ac.uk/isis/Motion/TestDocuments/EMMA%20chopper%20lifter%20-%20Handover.docx)
+[Direct link to document](https://stfc365.sharepoint.com/:w:/r/sites/ISISExperimentControls/_layouts/15/Doc.aspx?sourcedoc=%7BAFC19324-E335-4636-B5AB-702A140668AA%7D&file=EMMA%20chopper%20lifter%20-%20Handover.docx&action=default&mobileredirect=true&DefaultItemOpen=1)

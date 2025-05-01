@@ -61,7 +61,7 @@ These can be found in `C:\Instrument\Apps\EPICS`.
 
 ### Office Admin Links
 
-As a new starter you should add your name and picture to the training [slides](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Forms/AllItems.aspx?RootFolder=%2Fisis%2Fcomputing%2FICPdiscussions%2FTraining&FolderCTID=0x01200027AD8F05966A2748B3B04C98BB5B442B&View=%7BF2C33C51-70E6-4343-B937-2C59A2568306%7D).
+As a new starter you should add your name and picture to the training slides in `<shares>\ISIS_Experiment_Controls_Public\training`. If you do not know where this share is, please ask.
 
 - [ISIS Sharepoint](https://stfc365.sharepoint.com/sites/isis-hub/) - Shared ISIS documents, manuals, meeting minutes etc
 - [Oracle Login](https://portal.ssc.rcuk.ac.uk/) - Book leave, create timesheets
@@ -89,7 +89,7 @@ Ironically, to get a well-explained overview of what IBEX is, and how to interac
 
 There are some training materials available that we use to train scientists on IBEX, which is also a nice way to get started:
 
-- [IBEX training](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Forms/AllItems.aspx?RootFolder=%2Fisis%2Fcomputing%2FICPdiscussions%2FTraining&FolderCTID=0x01200027AD8F05966A2748B3B04C98BB5B442B&View=%7BF2C33C51-70E6-4343-B937-2C59A2568306%7D)
+- IBEX training: `<shares>\ISIS_Experiment_Controls_Public\training` (if you do not know where the share is, please ask)
 
 ### Components and Technical Concepts
 
