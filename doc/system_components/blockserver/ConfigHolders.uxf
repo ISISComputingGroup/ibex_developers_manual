@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>560</x>
+      <y>410</y>
+      <w>200</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>bg=green
+InactiveConfigHolder
+--
++ load_inactive()
++ save_inactive()
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>670</x>
+      <y>20</y>
+      <w>280</w>
+      <h>320</h>
+    </coordinates>
+    <panel_attributes>bg=green
+ConfigHolder
+--
++ clear_config()
++ add_subconfig()
++ remove_subconfig()
++ get_blocknames()
++ get_block_details()
++ get_group_details()
++ get_config_name()
++ get_ioc_names()
++ get_ioc_details()
++ get_component_names()
++ add_block()
++ get_config_details()
++ set_config_details()
++ set_config()
++ load_configuration()
++ save_configuration()
++ update_runcontrol_settings_for_saving()
++ get_config_meta()
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>850</x>
+      <y>410</y>
+      <w>240</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>bg=green
+ActiveConfigHolder
+--
++ load_active()
++ save_active()
++ get_ioc_state()
++ start_iocs()
++ restart_iocs()
++ stop_iocs()
++ stop_config_iocs()
++ stop_iocs_and_start_config_iocs()
++ update_archiver()
++ set_last_config()
++ load_last_config()
++ create_runcontrol_pvs()
++ get_out_of_range_pvs()
++ get_runcontrol_settings()
++ set_runcontrol_settings()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>660</x>
+      <y>330</y>
+      <w>80</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>60.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>890</x>
+      <y>330</y>
+      <w>80</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;60.0;80.0</additional_attributes>
+  </element>
+</diagram>

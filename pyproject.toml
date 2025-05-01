@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools", "setuptools_scm>=8"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ibex_developers_manual"  # REQUIRED, is the only field that cannot be marked as dynamic.
+dynamic = ["version"]
+description = "IBEX Developer's manual"
+readme = "README.md"
+requires-python = ">=3.10"
+license-files = ["LICENSE"]
+
+authors = [
+  {name = "ISIS Experiment Controls", email = "ISISExperimentControls@stfc.ac.uk" }
+]
+maintainers = [
+  {name = "ISIS Experiment Controls", email = "ISISExperimentControls@stfc.ac.uk" }
+]
+
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3 :: Only",
+]
+
+dependencies = [
+  "sphinx", 
+  "sphinx_rtd_theme",
+  "myst_parser",
+  "sphinx-autobuild",
+  "linkify-it-py",
+  "sphinxcontrib-spelling",
+  "pytest",
+]
+
+[project.optional-dependencies]
+doc = []
+dev = []
+
+[project.urls]
+"Homepage" = "https://github.com/isiscomputinggroup/ibex_developers_manual/"
+"Bug Reports" = "https://github.com/isiscomputinggroup/ibex_developers_manual/issues"
+"Source" = "https://github.com/isiscomputinggroup/ibex_developers_manual/"
+
+[project.scripts]
+sort_word_list = "ibex_developers_manual.sort_word_list.__main__:main"
+
+[tool.pytest.ini_options]
+testpaths = "tests"
+
+[tool.setuptools.packages.find]
+where = [
+    "src"
+]
+
+[tool.build_sphinx]
