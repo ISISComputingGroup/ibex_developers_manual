@@ -2,8 +2,6 @@
 
 ## Naming
 
-Hello my favourite IOC is a triton
-
 Technically, "Triton" refers to the gas handling apparatus. This is what IBEX and SECI talk to. When setting up a triton, scientists may refer to it as a "Kelvinox". This is the technical name for the dilution insert, which is controlled by the triton gas handling apparatus.
 
 To avoid confusion: all dilution fridges currently in use at ISIS are controlled by Triton gas handling systems, with one exception: the ICE fridge used on the muon beamlines.
