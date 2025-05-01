@@ -490,15 +490,14 @@ in these cases when the "scan for new hardware" happens on the PC, it thinks it 
 - rename VXI1 to VXI0 (change the system identifier number in the menu for the device from 1 to 0)
 - start visa server
 
-### full rebuild
-if above doesn't work
+**Full rebuild, if above doesn't work**:
 - stop visa server in NI max
 - delete all VXI* device
 - view refresh
-- as admin run compmgmt.msc
-- computer management -> device manager -> right click scan for hardware changes on NDH computer name and possibly usb subtree too
+- as admin run `compmgmt.msc`
+- computer management -> device manager -> right click scan for hardware changes on NDH computer name and possibly USB sub tree too
 - close and reopen NIMAX
-- if VXI0 now appears, jump to "add vme device" step below
+- if VXI0 now appears, jump to "add VME device" step below
 - if it is still not showing reboot NDH computer, after reboot visa server may be running again so stop it
-- right click on Frame0 of VXI0 and "add vme device" then choose DAE2 from VME profile
+- right click on Frame0 of VXI0 and "add VME device" then choose DAE2 from VME profile
 - start visa server
