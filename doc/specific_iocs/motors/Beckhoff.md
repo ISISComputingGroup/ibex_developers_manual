@@ -18,7 +18,8 @@ Current Beckhoff installations are:
 
 
 ## Code on the controller
-Unlike most other devices (except the Galil) the computing group has some oversight over the PLC code written on the controller. It has been agreed that this code will mostly be written by IDD, with oversight from computing to guide good programming practices, assist in debugging etc. The ISIS first version of this code is stored [here](https://github.com/ISISComputingGroup/BeckhoffPLCCode/) however this is now not used and going forward the code is written in collaboration with the ESS and stored [here](https://bitbucket.org/europeanspallationsource/tc_generic_structure/src/master/).
+Unlike most other devices (except the Galil) the computing group has some oversight over the PLC code written on the controller. It has been agreed that this code will mostly be written by IDD, with oversight from computing to guide good programming practices, assist in debugging etc. Code running on the PLC lives [here](https://github.com/ISIS-Motion-Control).
+
 ### Documentation
 - [Axis and Controller Commissioning Guide](https://stfc365.sharepoint.com/:w:/s/ISISMechatronics/Ee_aMxb5CF1Dlz-NUGW3OVgB0K7vQjXXwZDwSl5DSHN48w?e=GjqNEb&isSPOFile=1) document describing setting up a controller and TwinCAT solution for a new system and configuring real and virtual axes within TwinCAT environment.
 
@@ -32,16 +33,21 @@ See [Beckhoff testing](beckhoff/Beckhoff-testing)
 see [Beckhoff Commissioning](beckhoff/Beckhoff-commissioning)
 
 ## IOC
+
+```{note}
+we no longer use [tcIOC](https://github.com/ISISComputingGroup/EPICS-tcIoc) for numerous reasons, the most important being the dependence on the unreliable `.tpy` file format which was preventing us from integrating the new motion standard library code. We now use [`AdsDriver`](https://github.com/ISISComputingGroup/adsDriver) in conjunction with [`TwincatMotor`](https://github.com/ISISComputingGroup/EPICS-TwincatMotor).**
+```
+
 ### Beckhoff config area
 
-The config area contains a directory used for storing `.cmd` files for use with the `TC` IOC (in the same way as a galil or other motor controller). On an instrument it should look like this: `\instrument\settings\config\<instname>\configurations\twincat\`. 
+The config area contains a directory used for storing `.cmd` files for use with the `TC` IOC (in the same way as a galil or other motor controller). On an instrument it should look like this: `\instrument\apps\EPICS\support\motorExtensions\master\settings\<instname>\twincat\`. 
 
 ### Quirks
 
+- The main quirk with the way we interact with Beckhoffs is that we use [`AdsDriver`](https://github.com/ISISComputingGroup/adsDriver) to spin up lots of intermediate PVs, in which our motor record uses with `dbpf` and `dbgf` instead of directly communicating with the device. In the future, we could integrate [`AdsDriver`](https://github.com/ISISComputingGroup/adsDriver) within our motor record for a more standard approach.
 - The Beckhoff uses whether it has been homed to set `ATHM` in the motor record, rather than just using the raw datum switch. 
 - The "limits" shown on the table of motors summary view are not necessarily actual physical limit switches being engaged - the Beckhoff has more complex rules on whether motors can move back or forwards
 - The motor record sets `UEIP` (use encoder if present) to false to avoid using the encoder resolution to scale values. We have no control over whether to use or not use an encoder with a Beckhoff, the internal code handles it
-- Axes marked with `(V)` are virtual axes. 
 
 ## Updating
 
