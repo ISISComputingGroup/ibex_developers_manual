@@ -44,6 +44,10 @@ Find the jenkins service in the Service Manager window on the machine, and chang
 
 Then run start service from the Service Manager window.
 
+### configure jenkins-agent.xml
+
+We need a longer git checkout time than default of ten minutes. To adjust for submodule operations see  https://plugins.jenkins.io/git/#plugin-content-default-timeout  which basically means you need to add `-Dorg.jenkinsci.plugins.gitclient.Git.timeOut=60` to both the jenkins server and the client args. On the java command line put it before the `-jar` option as otherwise it gets passed as an argument to the jar file
+
 <a name="jenkins_gui_tests"></a>
 ### Special Notes on Jenkins for GUI Tests
 
