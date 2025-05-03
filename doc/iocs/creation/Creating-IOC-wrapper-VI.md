@@ -59,7 +59,7 @@ endif
 
 ## 2. Create the xml configuration file
 
-This is a summary of [[more general LvDCOM instructions|http://epics.isis.stfc.ac.uk/doxygen/lvDCOM]].
+This is a summary of [more general LvDCOM instructions](http://epics.isis.stfc.ac.uk/doxygen/lvDCOM).
 
 1. Open the VI in lab view.
 1. Export strings from the LabVIEW panel (In different version of LabVIEW this is different)

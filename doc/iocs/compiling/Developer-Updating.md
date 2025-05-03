@@ -2,7 +2,7 @@
 
 ## using a pre-built distribution
 
-If you just want a clean start then you can use a pre-built build server checkout [[Developer-Server-Build]] as a new starting point. This is by far the easiest - it is the equivalent of deleting your current EPICS directory, doing a clean checkout and then building, just a bit quicker as it has already been built/compiled for you on the build server. If you have no important local changes (i.e. everything is pushed to github) then you will lose nothing and can just swap back to these branches after the new install.
+If you just want a clean start then you can use a [pre-built build server checkout](/iocs/compiling/Developer-Server-Build) as a new starting point. This is by far the easiest - it is the equivalent of deleting your current EPICS directory, doing a clean checkout and then building, just a bit quicker as it has already been built/compiled for you on the build server. If you have no important local changes (i.e. everything is pushed to github) then you will lose nothing and can just swap back to these branches after the new install.
 
 ## updating in-place
 
@@ -51,7 +51,7 @@ git submodule foreach --recursive "git reset --hard"
 git submodule foreach --recursive "git clean -fdx"
 ```
 
-Now build IBEX in the usual way. See [[Things-to-know-as-a-developer]] for speeding up a build.
+Now build IBEX in the usual way. See [here](/processes/dev_processes/Things-to-know-as-a-developer) for speeding up a build.
 
 ### Troubleshooting
 
