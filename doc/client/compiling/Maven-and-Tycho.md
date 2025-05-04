@@ -1,6 +1,6 @@
 # Maven and Tycho
 
-The IBEX GUI is built using Tycho which is an extension of Maven designed for building Eclipse RCP products.
+The IBEX GUI is built using Tycho, which is a Maven plugin used for building Eclipse RCP products.
 
 This document provides a brief overview of both Maven and Tycho.
 
@@ -8,11 +8,10 @@ This document provides a brief overview of both Maven and Tycho.
 
 The official description:
 
-_Apache Maven is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project's build, reporting and documentation from a central piece of information._
+> _Apache Maven is a software project management and comprehension tool. Based on the concept of a project object model
+> (POM), Maven can manage a project's build, reporting and documentation from a central piece of information._
 
-In simple terms:
-
-_Maven is a build automation tool used primarily for Java projects._
+In simple terms, Maven is a build automation tool used primarily for Java projects.
 
 ### What is a POM file? ###
 An XML file that describes the software project being built, its dependencies on other external modules and components, the build order, directories, and required plug-ins.
@@ -148,7 +147,7 @@ It also has a dependency on GSON for the hell of it. The dependencies have a sco
 * `runtime` - not needed for compilation
 * `system` - have to provide the containing JAR explicitly
 
-There are other options and more detailed explanations on the [Maven website] (https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html) 
+There are other options and more detailed explanations on the [Maven website](https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html).
 
 Now application has no idea where to find library, so we create a new POM file in a higher directory which will be our parent POM. The parent provides the information for both modules to work together. The POM looks something like:
 

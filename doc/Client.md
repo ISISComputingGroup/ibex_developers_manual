@@ -6,7 +6,7 @@
 :glob:
 :titlesonly:
 
-client/GUI-Getting-Started
+client/GUI-Building
 client/GUI-Coding
 client/GUI-Testing
 client/GUI-Eclipse

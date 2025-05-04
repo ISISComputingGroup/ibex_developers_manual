@@ -4,7 +4,8 @@ Sometimes the error messages that Eclipse gives are a little opaque, so here are
 
 ## Plugin execution not covered by lifecycle configuration
 
-Go to window -> preferences -> Maven -> Errors/Warnings. Change "Plugin execution not covered by lifecycle configuration" to ignore in the drop down.
+Go to window -> preferences -> Maven -> Errors/Warnings. 
+Change "Plugin execution not covered by lifecycle configuration" to ignore in the drop down.
 
 ## The type XXXXXXX cannot be resolved. It is indirectly referenced from required .class files
 
@@ -122,8 +123,19 @@ Sometimes when you check out a new branch in the ibex GUI repository, you won't 
 
 1. In Eclipse, remove all the projects from the workspace and close Eclipse.
 1. Then, while checked out to the branch you want to see the changes on, perform a `git clean -fdx && git reset HEAD --hard` to reset the git repository. This will remove any changes you have made to the branch.
-1. Restart Eclipse and repeat the steps to get the GUI working from [Building the GUI](../getting_started/Building-the-GUI).
+1. Restart Eclipse and repeat the steps to get the GUI working from [Building the GUI](../compiling/Building-the-GUI).
 
 ## Build fails with `[ERROR] Failed to resolve target definition ... targetplatform.target: Could not find "org.eclipse.e4.tools.spies.feature.feature.group..." in the repositories of the current location`
 
 This probably means that our pinned target has gone out of date and needs updating. Open the Eclipse IDE and click on `org.eclipse.tools/latest` and click `update` this should fail and show `Unable to locate installable unit ...`. To fix this remove the plugin and then add it from the `software site `, work with `org.eclipse.e4.core.tools.update - http://download.eclipse.org/e4/snapshots/org.eclipse.e4.tools/latest` then you add `Eclipse E4 - All Spies`.
+
+## Validation error in target platform `jython` manifests
+
+Make sure that `-Djdk.util.zip.disableZip64ExtraFieldValidation=true` is included in `eclipse.ini` (located right next
+to the `eclipse.exe` executable).
+
+## `java.lang.UnsupportedClassVersionError`
+
+If you see a `java.lang.UnsupportedClassVersionError` error at runtime, then:
+- Select Window -> Preferences -> Java -> Compiler
+- Set compliance level to 21.

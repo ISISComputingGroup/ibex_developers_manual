@@ -16,6 +16,7 @@ Download and install [Strawberry Perl](http://strawberryperl.com/)
 
 See  [Install Visual Studio](/iocs/compiling/Install-Visual-Studio)
 
+{#first_time_install_java}
 ## Install Java JDK
 
 Install **OpenJDK 21 hotspot** from https://adoptium.net/?variant=openjdk21&jvmVariant=hotspot (the MSI installer is fine, tick all the boxes when it asks you which components to install)
@@ -26,6 +27,7 @@ Install **OpenJDK 21 hotspot** from https://adoptium.net/?variant=openjdk21&jvmV
 
 You may wish to install some optional java components [as detailed here](#developer_upgrade_java).
 
+{#first_time_install_maven}
 ## Install Maven 
 
 Create `C:\Tools\`
@@ -37,6 +39,7 @@ _System Properties - Environment Variables - Path - New -`C:\Tools\apache-maven-
 
 The Windows Tips from the above link says you should add maven to the PATH in the user variables. If it does not recognise mvn -v afterwards, then try to add it to the list of variables in PATH in System variables.
 
+{#first_time_install_git}
 ## Install Git 
 Install Git [Getting-started-with-Git-and-GitHub](/processes/git_and_github/Getting-started-with-Git-and-GitHub)
 
@@ -53,6 +56,7 @@ Install `\\isis.cclrc.ac.uk\inst$\kits$\CompGroup\Utilities\MOXA Nport Software\
 
 To easily add `EPICSTerm.bat` to the start menu after copying EPICS, run `C:\Instrument\Apps\EPICS\add_epicsterm_to_start_menu.bat`
 
+{#first_time_install_uktena}
 ## Install the uktena python distribution
 
 See [Building and installing the uktena python distribution](/system_components/python/Building-and-installing-uktena)
@@ -86,7 +90,7 @@ Due to a change in admin provisioning on computers, you may need to use the admi
 
 ## Building the GUI
 
-Please see [Building the GUI](/client/getting_started/Building-the-GUI).
+Please see [Building the GUI](/client/compiling/Building-the-GUI).
 
 ## Setting up the configurations & scripting directory
 

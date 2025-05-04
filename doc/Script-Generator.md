@@ -22,7 +22,7 @@ script_generator/*
 | Standalone app build directories | `base/uk.ac.isis.scriptgenerator/*` |
 
 ## Eclipse build
-To build and run the app through eclipse, the script generator product is found in `base\uk.ac.stfc.isis.scriptgenerator.client.product`. The instructions for setting up eclipse and loading the target platform (necessary for the script generator) are found in the instructions for the [main IBEX GUI setup](/client/getting_started/Building-the-GUI)
+To build and run the app through eclipse, the script generator product is found in `base\uk.ac.stfc.isis.scriptgenerator.client.product`. The instructions for setting up eclipse and loading the target platform (necessary for the script generator) are found in the instructions for the [main IBEX GUI setup](/client/compiling/Building-the-GUI)
 
 {#scriptgenerator_enable_perspective}
 ### Adding the perspective into the client
