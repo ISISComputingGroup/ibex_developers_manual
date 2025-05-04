@@ -35,9 +35,10 @@ install_pre_commit_hook.bat
 
 You must use a version of eclipse which supports the RCP and Java versions currently in use by the client. There are
 two options for this:
-- Use the most recent version in `\\isis\inst$\Kits$\CompGroup\ICP\Developer Tools`
 - Download a recent Eclipse version directly from
 [the eclipse website](https://www.eclipse.org/downloads/packages/); choose the package for "RCP and RAP developers"
+- Use the most recent version in `\\isis\inst$\Kits$\CompGroup\ICP\Developer Tools` (which is simply a download from
+the Eclipse website, at a specific version).
 
 By convention eclipse versions are installed into `c:\tools`, for example in 
 `c:\tools\eclipse-rcp-2024-06-R-win32-x86_64`.

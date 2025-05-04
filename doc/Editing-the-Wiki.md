@@ -146,3 +146,11 @@ This is a tip!
 :::
 
 The list of supported admonitions is [on the MyST documentation](https://myst-parser.readthedocs.io/en/latest/syntax/admonitions.html).
+
+## Removing & deleting pages
+
+When moving pages, it is helpful to add redirects to the new location, so that links external to the wiki continue to
+work. To do this, we are using the [`sphinx-reredirects`](https://documatt.com/sphinx-reredirects/usage/) plugin.
+
+When moving a page, add a redirect from the old location to the new location. When deleting a page, add a redirect to
+the most suitable alternative documentation. The redirects are configured by the `redirects` key in `doc/conf.py`.

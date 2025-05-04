@@ -139,3 +139,9 @@ to the `eclipse.exe` executable).
 If you see a `java.lang.UnsupportedClassVersionError` error at runtime, then:
 - Select Window -> Preferences -> Java -> Compiler
 - Set compliance level to 21.
+
+## Adding a dictionary to Eclipse's spelling checker
+
+- In Eclipse open `Window > Preferences > General > Editors > Text Editors > Spelling`
+- Change the "User defined dictionary" to `<ISIS Experiment Controls Shares>/Eclipse settings/code_dictionary.txt`
+

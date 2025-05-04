@@ -30,6 +30,7 @@ dependencies = [
   "sphinx-autobuild",
   "linkify-it-py",
   "sphinxcontrib-spelling",
+  "sphinx-reredirects",
   "pytest",
 ]
 
