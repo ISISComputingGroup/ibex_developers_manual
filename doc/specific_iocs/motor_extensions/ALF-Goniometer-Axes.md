@@ -3,7 +3,7 @@
 The ALF Goniometer is a 6-axis goniometer. There is no specific logic required in controlling it, all that is required is the standard movement across the whole range with appropriate encoder/motor counts, and an ability to home all axes to a known position.
 
 ## Axes Conventions
-The numbering of the axes below corresponds to the number of the axes on the [annotated diagram](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/ALF/ALF_Gonio_annotated.png) of the ALF goniometer.
+The numbering of the axes below corresponds to the number of the axes on the [annotated diagram](http://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/ALF/ALF_Gonio_annotated.png) of the ALF goniometer.
 
 1. `Z-axis`
 1. `theta` (a.k.a. `Rrot`)

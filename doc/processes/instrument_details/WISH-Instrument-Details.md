@@ -59,7 +59,7 @@ TPG300 support is implemented via [#216](https://github.com/ISISComputingGroup/I
 
 {#wish_note-eurotherm}
 ##### Note: Eurotherm #####
-[Eurotherms](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/WISH/HIFI_Eurotherms.jpg) are used to control temperature Orange Cryostat, CCR and Furnace devices.
+Eurotherms are used to control temperature Orange Cryostat, CCR and Furnace devices.
 
 {#wish_note-lakeshore}
 ##### Note: LakeShore #####
@@ -105,7 +105,7 @@ There are [EPICS drivers](http://www.aps.anl.gov/epics/modules/manufacturer.php#
 ##### Note: Keithley #####
 1. [Keithley 6500 Series Electrometers](https://uk.tek.com/keithley-low-level-sensitive-and-specialty-instruments/keithley-high-resistance-low-current-electrom).
    * [Keithley 6517B DataSheet](https://uk.tek.com/datasheet/high-resistance-low-current-electrometers-series-6500-6430/model-6517b-electrometer-high-r)
-   * See also [Keithley 6517B Reference Manual](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Forms/AllItems.aspx?RootFolder=%2Fisis%2Fcomputing%2FICPdiscussions%2FKeithley&FolderCTID=0x01200027AD8F05966A2748B3B04C98BB5B442B&View={F2C33C51-70E6-4343-B937-2C59A2568306}&InitialTabId=Ribbon%2EDocument&VisibilityContext=WSSTabPersistence)
+   * See also [Keithley 6517B Reference Manual](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/Forms/AllItems.aspx?FolderCTID=0x0120005C4AD37BB338BE469E2247B9E5E1C301&id=%2Fsites%2FISISExperimentControls%2FICP%20Discussions%2FKeithley)
 1. There are existing [EPICS drivers](https://epics-controls.org/resources-and-support/modules/hardware-support/) for similar Keithley devices (but not for model 6517B).
 
 {#wish_note-razorbill}

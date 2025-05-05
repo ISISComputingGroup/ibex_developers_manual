@@ -57,7 +57,7 @@ TPG300 support is implemented via [#216](https://github.com/ISISComputingGroup/I
 
 {#crisp_noteEurotherm}
 ##### Note: Eurotherm #####
-[Eurotherms](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/CRISP/CRISP_Eurotherms.jpg) are used to control temperature Orange Cryostat, CCR and Furnace devices.
+Eurotherms are used to control temperature Orange Cryostat, CCR and Furnace devices.
 
 {#crisp_noteOxfordInstruments}
 ##### Note: Oxford Instruments #####
@@ -66,7 +66,7 @@ TPG300 support is implemented via [#216](https://github.com/ISISComputingGroup/I
 
 {#crisp_noteCCR}
 ##### Note: Closed Cycle Refrigerators #####
-   1. [CCR](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/CRISP/CRISP_CCR.jpg) is the most frequently used low-temperature device used in on CRISP.
+   1. CCR is the most frequently used low-temperature device used in on CRISP.
 [CCRs](https://www.isis.stfc.ac.uk/Pages/Closed-Cycle-refrigerators,-CCRs.aspx). Not directly computer-controlled  - controlled via Eurotherm.
 
 {#crisp_noteWaterBath}

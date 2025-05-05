@@ -101,7 +101,7 @@ Both the OMEGA™ iBTHX and OMEGA™ PAC devices (see above) have proved unrelia
 
 {#loq_note-eurotherm}
 ##### Note: Eurotherm #####
-[Eurotherms](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/LOQ/LOQ_Eurotherms.jpg) are used to control the temperature of Orange Cryostats, CCRs and Furnace devices. And also to measure voltages from other sensors.
+Eurotherms are used to control the temperature of Orange Cryostats, CCRs and Furnace devices. And also to measure voltages from other sensors.
 
 {#loq_note-water-baths}
 ##### Note: Water Baths #####
@@ -141,7 +141,7 @@ The Thar Pressure Cell normally just integrates with the Eurotherm controller.
 1. : Currently a Danfysik Model 8000 controller is integrated into an ageing GEC power supply, but the GEC unit is due to be replaced in the near future as part of ISIS-wide obsolescence. It will most likely be replaced by a Danfysik power supply. Richard Hale may be able to advise what model.
    1. There is a possibility that the GEC power supply will be replaced prior to December 2018.  The replacement power supply will be a Danfysik 8500 Model 859.
 2. [Danfysik Power Supplies](http://www.danfysik.com/en/products/power-supplies/)
-3. [User and Software Manuals](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Forms/AllItems.aspx?RootFolder=%2Fisis%2Fcomputing%2FICPdiscussions%2FPower%20Supplies&FolderCTID=0x01200027AD8F05966A2748B3B04C98BB5B442B&View={F2C33C51-70E6-4343-B937-2C59A2568306}&InitialTabId=Ribbon%2EDocument&VisibilityContext=WSSTabPersistence) for System 8500.
+3. [User and Software Manuals](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/Forms/Allhttps://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/Forms/AllItems.aspx?id=%2Fsites%2FISISExperimentControls%2FICP%20Discussions%2FPower%20Supplies) for System 8500.
 4. See [#1208](https://github.com/ISISComputingGroup/IBEX/issues/1208) for comms settings.
 
 {#loq_note-rheometer}

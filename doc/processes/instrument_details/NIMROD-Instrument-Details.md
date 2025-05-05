@@ -46,12 +46,12 @@ TPG300 support is implemented via [#216](https://github.com/ISISComputingGroup/I
 
 {#nimrod_note-vacuum-pump}
 ##### Note: Vacuum Pump #####
-NIMROD uses a [vacuum pump](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/NIMROD/NIMROD_Turbo_Pump.jpg) (in conjunction with CCRs).  A TPG26x is used to measure the pressure.
+NIMROD uses a vacuum pump (in conjunction with CCRs).  A TPG26x is used to measure the pressure.
 TPG26x support was originally implemented via [#1411](https://github.com/ISISComputingGroup/IBEX/issues/1411), [#2379](https://github.com/ISISComputingGroup/IBEX/issues/2379) and [#2578](https://github.com/ISISComputingGroup/IBEX/issues/2578)
 
 {#nimrod_note-eurotherm}
 ##### Note: Eurotherm #####
-[Eurotherms](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/SANS2D/SANS2D_Eurotherms.jpg) are used to control temperature Orange Cryostat, CCR and Furnace devices.
+Eurotherms are used to control temperature Orange Cryostat, CCR and Furnace devices.
 
 {#nimrod_note-nimrod-sample-changer}
 ##### Note: NIMROD Sample Changer #####
@@ -61,7 +61,7 @@ As of July 2023, the lower limit for the vertical axis is not physically working
 
 {#nimrod_note-water-bath}
 ##### Note: Water Bath #####
-NIMROD uses two types of water bath, both Julabo models: FP-50 and [FP-52](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/NIMROD/NIMROD_Julabo_FP52.jpg).  
+NIMROD uses two types of water bath, both Julabo models: FP-50 and FP-52.  
 See [supported Julabo models](/specific_iocs/temp_controllers/Julabo) for more details.
 NIMROD uses the FP-52 model of Julabo most frequently (+90%), used in conjunction with the [Sample Changer](#nimrod_note-nimrod-sample-changer).  Sometimes NIMROD uses water as the coolant/heating medium; sometimes it uses oil or glycol as the coolant/heating medium (Julabo/Presto A40 device).
 

@@ -43,7 +43,7 @@ Provide information about MUSR jaws.
 
 {#musr_note-eurotherm}
 ##### Note: Eurotherm #####
-[Eurotherms](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/MUSR/EMU_Eurotherms.jpg) are used to control temperature Orange Cryostat, CCR and Furnace devices.
+Eurotherms are used to control temperature Orange Cryostat, CCR and Furnace devices.
 
 {#musr_note-Oxford-ICE-Cube}
 ##### Note: Oxford ICE Cube #####
@@ -89,7 +89,7 @@ The [CAEN V895](http://www.caen.it/csite/CaenProd.jsp?parent=11&idmod=49) is a 1
 ##### Note: Danfysik #####
 Need to check if MUSR does use Danfysik 8000 or a different model of PSU.
 1. [Danfysik Power Supplies](http://www.danfysik.com/en/products/power-supplies/): model 8000 appears to have been superseded by model 8500.
-1. [User and Software Manuals](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Forms/AllItems.aspx?RootFolder=%2Fisis%2Fcomputing%2FICPdiscussions%2FPower%20Supplies&FolderCTID=0x01200027AD8F05966A2748B3B04C98BB5B442B&View={F2C33C51-70E6-4343-B937-2C59A2568306}&InitialTabId=Ribbon%2EDocument&VisibilityContext=WSSTabPersistence) for System 8500.
+1. [User and Software Manuals](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/Forms/AllItems.aspx?id=%2Fsites%2FISISExperimentControls%2FICP%20Discussions%2FPower%20Supplies) for System 8500.
 1. See [#1208](https://github.com/ISISComputingGroup/IBEX/issues/1208) for comms settings.
 
 {#musr_note-gossen}

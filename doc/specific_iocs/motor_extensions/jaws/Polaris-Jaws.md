@@ -1,6 +1,6 @@
 # POLARIS Jaws
 
-Polaris jaws are a set of 5 jaws which work in concert to limit the beam of neutrons reaching the sample (see [Jaws Manager](Jaws-Managers)). Jaws 1-4 are instrument user controlled and work together in a pyramid shape to reduce the beam size in stages. The gap in each jaw set is set based on its distance from the sample. There are documents stored in [sharepoint](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/POLARIS/polarisCalculations.zip). The 5 jaws are ordered 1 nearest the beam and 5 nearest the sample. 
+Polaris jaws are a set of 5 jaws which work in concert to limit the beam of neutrons reaching the sample (see [Jaws Manager](Jaws-Managers)). Jaws 1-4 are instrument user controlled and work together in a pyramid shape to reduce the beam size in stages. The gap in each jaw set is set based on its distance from the sample. There are documents stored in [sharepoint](http://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/POLARIS/polarisCalculations.zip). The 5 jaws are ordered 1 nearest the beam and 5 nearest the sample. 
 Jaw set 5 is under on instrument scientist control. To change these settings the user must put the GUI into management mode. 
 
 The parameters are (with reference to the diagram in [Jaws Manager](Jaws-Managers)):

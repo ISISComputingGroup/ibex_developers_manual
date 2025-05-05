@@ -59,7 +59,7 @@ TPG300 support is implemented via [#216](https://github.com/ISISComputingGroup/I
 
 {#sxd_note-eurotherm}
 ##### Note: Eurotherm #####
-[Eurotherms](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/SXD/SXD_Eurotherms.jpg) are used to control temperature Orange Cryostat, CCR and Furnace devices.
+Eurotherms are used to control temperature Orange Cryostat, CCR and Furnace devices.
 
 {#sxd_note-keithley}
 ##### Note: Keithley #####

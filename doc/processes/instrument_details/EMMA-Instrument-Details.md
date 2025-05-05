@@ -51,23 +51,23 @@ One T0 chopper.<br>
 Chopper is ISIS Mk2 chopper.  Mk2 choppers have a serial interface (not Ethernet like Mk3).
 See [#2130](https://github.com/ISISComputingGroup/IBEX/issues/2130) for IOC & OPI for Mk2 chopper.<br>
 The front panel of the Mk2 chopper control crate (located in the EMMA rack) looks like this:
-* [wide angle view](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/EMMA/EMMA_T0_Chopper_Front_Panel_(wide)_2017_06_05.jpg)
-* [zoomed-in view](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/EMMA/EMMA_T0_Chopper_Front_Panel_(zoom)_2017_06_05.jpg)
+* [wide angle view](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/Forms/AllItems.aspx?id=%2Fsites%2FISISExperimentControls%2FICP%20Discussions%2FEMMA%2FEMMA%5FT0%5FChopper%5FFront%5FPanel%5F%28wide%29%5F2017%5F06%5F05%2Ejpg&viewid=45d81cb9%2D9571%2D4a80%2Da5cc%2D2cb4871703a3&parent=%2Fsites%2FISISExperimentControls%2FICP%20Discussions%2FEMMA)
+* [zoomed-in view](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/Forms/AllItems.aspx?id=%2Fsites%2FISISExperimentControls%2FICP%20Discussions%2FEMMA%2FEMMA%5FT0%5FChopper%5FFront%5FPanel%5F%28zoom%29%5F2017%5F06%5F05%2Ejpg&viewid=45d81cb9%2D9571%2D4a80%2Da5cc%2D2cb4871703a3&parent=%2Fsites%2FISISExperimentControls%2FICP%20Discussions%2FEMMA)
 
 {#emma_noteFermiChopper}
 ##### Note: Fermi Chopper #####
 EMMA has a single Fermi chopper (manufactured by SKF).<br>
-Link to [Manual](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/EMMA/Mirrortron-SKF%20892-0053%20MB350PC_R%20Rev%20C.pdf)<br>
+Link to [Manual](https://stfc365.sharepoint.com/:b:/r/sites/ISISExperimentControls/ICP%20Discussions/EMMA/Mirrortron-SKF%20892-0053%20MB350PC_R%20Rev%20C.pdf?csf=1&web=1&e=hctyNH)<br>
 The Fermi chopper control crates (located in the EMMA rack) look like this:
-* [Front View (upper & lower crates)](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/EMMA/EMMA_SKF_FermiChopper_Controller_Front_Upper_Lower_2017_06_05.jpg)
-* [Rear View (upper crate)](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/EMMA/EMMA_SKF_FermiChopper_Controller_Rear_Upper_2017_06_05.jpg)
-* [Rear View (lower crate)](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/EMMA/EMMA_SKF_FermiChopper_Controller_Rear_Lower_2017_06_05.jpg)
+* [Front View (upper & lower crates)](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/Forms/AllItems.aspx?id=%2Fsites%2FISISExperimentControls%2FICP%20Discussions%2FEMMA%2FEMMA%5FSKF%5FFermiChopper%5FController%5FFront%5FUpper%5FLower%5F2017%5F06%5F05%2Ejpg&viewid=45d81cb9%2D9571%2D4a80%2Da5cc%2D2cb4871703a3&parent=%2Fsites%2FISISExperimentControls%2FICP%20Discussions%2FEMMA)
+* [Rear View (upper crate)](https://stfc365.sharepoint.com/:i:/r/sites/ISISExperimentControls/ICP%20Discussions/EMMA/EMMA_SKF_FermiChopper_Controller_Rear_Upper_2017_06_05.jpg?csf=1&web=1&e=GzrImg)
+* [Rear View (lower crate)](https://stfc365.sharepoint.com/:i:/r/sites/ISISExperimentControls/ICP%20Discussions/EMMA/EMMA_SKF_FermiChopper_Controller_Rear_Lower_2017_06_05.jpg?csf=1&web=1&e=qJrYiI)
 
 {#emma_noteFermiChopperLift}
 ##### Note: Fermi Chopper Lift #####
 The Fermi chopper is lifted into position by a Galil controlled motor.<br>
 The Fermi chopper must not be operated when it is not in the beam (i.e. in the parked/upper position)
-There is a hardware interlock to prevent the Fermi chopper from being operated in the parked position.  This interlock is implemented in the Galil controller, via a Galil program (described in the [EMMA chopper lifter - Handover](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/EMMA/EMMA%20chopper%20lifter%20-%20Handover.docx) document).  In SECI a simple VI is used to provide a GUI, which passes parameters to the Galil program, so that the user can control the Fermi Chopper lift.  IBEX should provide a similar capability via an IOC and OPI.
+There is a hardware interlock to prevent the Fermi chopper from being operated in the parked position.  This interlock is implemented in the Galil controller, via a Galil program (described in the [EMMA chopper lifter - Handover](https://stfc365.sharepoint.com/:w:/r/sites/ISISExperimentControls/ICP%20Discussions/EMMA/EMMA%20chopper%20lifter%20-%20Handover.docx?d=wafc19324e3354636b5ab702a140668aa&csf=1&web=1&e=A6BnDe) document).  In SECI a simple VI is used to provide a GUI, which passes parameters to the Galil program, so that the user can control the Fermi Chopper lift.  IBEX should provide a similar capability via an IOC and OPI.
 
 {#emma_noteJaws}
 ##### Note: Jaws #####
@@ -76,23 +76,23 @@ Jaw set is manufactured by Advanced Design Consultancy.
 
 {#emma_noteVacuum}
 ##### Note: Vacuum System #####
-The vacuum system ([TPG300](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/EMMA/EMMA_TPG300_2017_06_05.jpg)) on EMMA is currently (06/03/2017) not operational.  Outside possibility that it may be operational by cycle 2017/02.
+The vacuum system ([TPG300](https://stfc365.sharepoint.com/:i:/r/sites/ISISExperimentControls/ICP%20Discussions/EMMA/EMMA_TPG300_2017_06_05.jpg?csf=1&web=1&e=k6q5ew)) on EMMA is currently (06/03/2017) not operational.  Outside possibility that it may be operational by cycle 2017/02.
 
 {#emma_noteYZTable}
 ##### Note: Y-Z Table #####
 Driven by Galil controlled motors.
 In SECI, Y-Z Table has its own GUI.  No particular reason for this; it could be merged with the Rotation Stage UI.<br>
-[Photograph of Y-Z table](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/EMMA/EMMA_Y_Z_Table_2017_06_05.jpg).
+[Photograph of Y-Z table](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/EMMA/EMMA_Y_Z_Table_2017_06_05.jpg).
 
 {#emma_noteRotationStage}
 ##### Note: Rotation Stage #####
 Driven by Galil controlled motors.
 In SECI, Rotation Stage has its own GUI.  No particular reason for this; it could be merged with the Y-Z Table UI.<br>
-[Photograph of Rotation Stage](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/EMMA/EMMA_Rotation_Stage_2017_06_05.jpg).  It sits on top of the Y-Z table when in use.
+[Photograph of Rotation Stage](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/EMMA/EMMA_Rotation_Stage_2017_06_05.jpg).  It sits on top of the Y-Z table when in use.
 
 {#emma_noteCAENHT}
 ##### Note: CAEN HT #####
-CAEN high-voltage system is a [SYS2527](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/EMMA/EMMA_CAEN_HV_PSU_2017_06_05.jpg) (see tickets: #212, #241, #320, #419, #424)
+CAEN high-voltage system is a [SYS2527](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/EMMA/EMMA_CAEN_HV_PSU_2017_06_05.jpg) (see tickets: #212, #241, #320, #419, #424)
 
 {#emma_noteCAENDigitiser}
 ##### Note: CAEN Digitiser #####

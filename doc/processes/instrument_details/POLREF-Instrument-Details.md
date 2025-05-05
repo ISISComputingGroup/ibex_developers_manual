@@ -70,7 +70,7 @@ Support for McLennan devices is well established (see [#1099](https://github.com
 TPG300 support is implemented via [#216](https://github.com/ISISComputingGroup/IBEX/issues/216) and [#2063](https://github.com/ISISComputingGroup/IBEX/issues/2063)
 
 ##### Note: Eurotherm #####
-[Eurotherms](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/POLREF/POLREF_Eurotherms.jpg) are used to control temperature Orange Cryostat, CCR and Furnace devices.
+Eurotherms are used to control temperature Orange Cryostat, CCR and Furnace devices.
 
 ##### Note: Water Baths #####
 1. Julabo Water Bath (apparently the following Julabos: WB23 )

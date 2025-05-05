@@ -26,18 +26,18 @@ DAE-2
 {#alf_noteGalil}
 ##### Note: Galil #####
 Model: [DMC2280](http://www.galilmc.com/products/dmc-22x0.php).<br>
-Photograph of [ALF Galil Crate](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/ALF/ALF_Galil_Crate.jpg).<br>
+Photograph of [ALF Galil Crate](https://stfc365.sharepoint.com/:i:/r/sites/ISISExperimentControls/ICP%20Discussions/ALF/ALF_Galil_Crate.jpg?csf=1&web=1&e=tteUae).<br>
 Note that GALIL_02 had trouble communicating asynchronously so Freddie switched it to synchronous (done by making the third argument of `GalilCreateController("Galil", "$(GALILADDR02)", 20)` negative in `galil2.cmd`).
 
 {#alf_noteJaws}
 ##### Note: Jaws #####
 Location: various<br>
 Driven by [Galils](#alf_noteGalil).<br>
-Photograph of [ALF Slits/Jaws](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/ALF/ALF_Slits.jpg).
+Photograph of [ALF Slits/Jaws](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/Forms/AllItems.aspx?id=%2Fsites%2FISISExperimentControls%2FICP%20Discussions%2FALF%2FALF%5FSlits%2Ejpg&viewid=45d81cb9%2D9571%2D4a80%2Da5cc%2D2cb4871703a3&parent=%2Fsites%2FISISExperimentControls%2FICP%20Discussions%2FALF).
 
 {#alf_noteGoniometer}
 ##### Note: Goniometer #####
 Model: 6-axis Goniometer, unknown model & manufacturer.<br>
 Driven by [Galils](#alf_noteGalil).<br>
 See [ALF Goniometer Axes](/specific_iocs/motor_extensions/ALF-Goniometer-Axes) for details of how the Goniometer is set up and configured.<br>
-Photographs of [ALF Goniometer (1)](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/ALF/ALF_Goniometer_1.jpg) and [ALF Goniometer (2)](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/ALF/ALF_Goniometer_2.jpg).
+Photographs of [ALF Goniometer (1)](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/Forms/AllItems.aspx?id=%2Fsites%2FISISExperimentControls%2FICP%20Discussions%2FALF%2FALF%5FGoniometer%5F1%2Ejpg&viewid=45d81cb9%2D9571%2D4a80%2Da5cc%2D2cb4871703a3&parent=%2Fsites%2FISISExperimentControls%2FICP%20Discussions%2FALF) and [ALF Goniometer (2)](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/Forms/AllItems.aspx?id=%2Fsites%2FISISExperimentControls%2FICP%20Discussions%2FALF%2FALF%5FGoniometer%5F2%2Ejpg&viewid=45d81cb9%2D9571%2D4a80%2Da5cc%2D2cb4871703a3&parent=%2Fsites%2FISISExperimentControls%2FICP%20Discussions%2FALF).
