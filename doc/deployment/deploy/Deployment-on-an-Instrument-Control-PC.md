@@ -29,6 +29,26 @@ If you do not have either a D: or O: network drive, then you will need to specif
     - Do not remove any SECI icons from the task list if this is not the first time install
 1. Compare screenshots taken earlier to current state
 
+## Restore IBEX from backup(s)
+
+As part of the deployment script, backup zip files will be created in `C:\data\old\ibex_backup_<date>`. 
+If you need to go back to a previous backup, you can restore a full backup using the `tar` command, which
+is available in any `cmd` window. 
+
+For example, to restore `c:\Instrument\Apps\Python3` from a backup, run the following in a `cmd` window:
+
+```
+mkdir c:\Instrument\Apps\Python3
+tar -xf c:\data\old\ibex_backup_<date>\Python3.zip -C c:\Instrument\Apps\Python3
+```
+
+If the `mkdir` step fails with the target directory already existing, delete or move it elsewhere
+before restoring the backup.
+
+If you instead wish to just restore/check the contents of a single file, the backups are standard `.zip`
+archives which can be browsed using any zip tool - for example `7-zip` is relatively convenient and widely
+installed on NDX computers.
+
 ## Install IBEX for the first time
 _Note this is unlikely to happen now we've migrated most instruments, and SECI instruments should have a copy of IBEX at the least._
 <details>
