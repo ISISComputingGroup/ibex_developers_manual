@@ -5,15 +5,17 @@ It is possible to use one of the intermediate outputs from a build server as the
 ## EPICS
 You need to be using a Visual Studio compatible with the build server, currently `Visual Studio 2022` 
 
-> [!TIP]
->### Quick Instructions  
-> Run `install_developer_build.bat` in either `\\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer\EPICS` (for 64bit builds, what you usually need) or `\\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer\EPICS32` (for 32 bit builds, only if you have to build/test a specific driver needing 32bit versions). It will prompt you to choose from  normal/debug/static - in most cases `normal`
+:::{tip}
+**Quick Instructions**
+
+Run `install_developer_build.bat` in either `\\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer\EPICS` (for 64bit builds, what you usually need) or `\\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer\EPICS32` (for 32 bit builds, only if you have to build/test a specific driver needing 32bit versions). It will prompt you to choose from  normal/debug/static - in most cases `normal`
 is what you want and is what is deployed to an instrument, `static` and `debug` are for special cases/testing 
+:::
 
+:::{note}  
+If you just want a recent EPICS build to run somewhere and do not need to be able to develop using it, you just need to run the `install_to_inst.bat` in the appropriate build on `kits$` when connected from the machine you want to install it on
+::: 
 
-> [!NOTE]  
-> if you just want a recent EPICS build to run somewhere and do not need to be able to develop using it, you just need to run the `install_to_inst.bat` in the appropriate build on `kits$` when connected from the machine you want to install it on
- 
  <details> <summary> Details (not normally needed) </summary>
 
 If you wish to use a `debug` build, replace `x64` in paths below with `x64-debug`

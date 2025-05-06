@@ -127,8 +127,7 @@ public class FooDisplay extends Canvas
 
 Instructions on adding a new perspective can be found [here](../coding/Adding-a-Button-to-the-Perspective-Switcher).
 
-Add A Preference Page
----------------------
+## Add A Preference Page
 
 Many plugins may have options that you want the user of the client to be able to configure. The simplest way to achieve this is to have the plugin contribute a preference page to the client's preference window.
 
@@ -296,7 +295,3 @@ The ``plugin.xml`` should now resemble:
 </plugin>
 ```
 The menu should now be visible in the client UI. For more details see the [Vogella menus tutorial](http://www.vogella.com/tutorials/EclipseCommands/article.html).
-
-## Add A Third Party Library To A Plugin
-
-To do

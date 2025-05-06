@@ -29,7 +29,7 @@ General update process:
 - Some repositories are updated "in-place". Do upgrade these, simply delete and then re-add them to the target platform, when they are re-added they will pick up the latest versions.
 - For maven dependencies referenced in target platform, look up latest version on maven central then update the version number in target platform to correspond. If the version numbers are hardcoded in `feature.xml` or `MANIFEST.MF` for individual plugins, update it there too.
 
-**Note: when updating the eclipse framework itself, you will need to download the same eclipse IDE with the same version number or else some jars may not be found. You also need to update `client.tycho.parent` - see below for details. Make sure you update the [gui build wiki page](/client/getting_started/Building-the-GUI) to ensure new starters get the correct version.**
+**Note: when updating the eclipse framework itself, you will need to download the same eclipse IDE with the same version number or else some jars may not be found. You also need to update `client.tycho.parent` - see below for details. Make sure you update the [gui build wiki page](/client/compiling/Building-the-GUI) to ensure new starters get the correct version.**
 
 ### Parent POM
 

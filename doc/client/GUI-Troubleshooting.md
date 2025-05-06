@@ -11,6 +11,15 @@ The following pages also contain GUI troubleshooting information for specific pr
 troubleshooting/*
 ```
 
+## Display resolution & scaling
+
+If the GUI loads up but items are the wrong size, you may need to change your display settings. The exact settings that
+you need may vary from computer to computer. This is a common issue on Windows 10 machines due to the OS' scaling
+setting for text, icons etc. that is meant to ensure they do not look too small on high screen resolutions. 
+
+Generally a resolution of 1920 x 1080 with a scaling factor of 100% should look correct on standard screens. You can
+increase both of those settings slightly if you feel like the display elements look uncomfortably small.
+
 ## IBEX appears fullscreen with top menu items hidden
 
 Solution: right click inside any OPI and select "exit full screen".
@@ -93,7 +102,6 @@ Navigate to: `C:/Users/<username>/AppData/Local/IBEX` and delete the file "insta
 ## maven-built client can't see referenced files
 Add `Eclipse-BundleShape: dir` in the `MANIFEST.MF`; see the `.opis` `MANIFEST.MF` for an example of this. 
 This makes the maven build build the directory into a directory rather than a jar, which is sometimes necessary to let eclipse then "see" the files natively on the filesystem. If you look in the `plugins/` folder of a built client you should see a folder for `.opis` but a `.jar` for most other ibex modules - except for a few that need to be built as directories, as you may be finding.
-
 
 
 ## Other issues

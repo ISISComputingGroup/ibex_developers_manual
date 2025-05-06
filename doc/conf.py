@@ -38,6 +38,8 @@ extensions = [
     "sphinx.ext.intersphinx",
     # Add links to source code in API docs
     "sphinx.ext.viewcode",
+    # Redirects
+    "sphinx_reredirects",
 ]
 napoleon_google_docstring = True
 napoleon_numpy_docstring = False
@@ -81,3 +83,10 @@ spelling_filters = ["enchant.tokenize.MentionFilter"]
 spelling_warning = True
 spelling_show_suggestions = True
 spelling_suggestion_limit = 3
+
+redirects = {
+    "client/GUI-Getting-Started": "GUI-Building.html",
+    "client/eclipse/Creating-the-IBEX-Developer-Version-of-Eclipse": "../compiling/Building-the-GUI.html#gui-build-install-eclipse",  # noqa E501
+    "client/eclipse/Dictionary-setup": "Common-Eclipse-Issues.html#adding-a-dictionary-to-eclipse-s-spelling-checker",  # noqa E501
+    "client/getting_started/GUI-Development-Workflow": "../../processes/git_and_github/Git-workflow.html",  # noqa E501
+}
