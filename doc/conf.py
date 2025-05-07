@@ -2,6 +2,7 @@
 #
 # For the full list of built-in configuration values, see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
+import os.path
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
@@ -77,6 +78,8 @@ myst_heading_anchors = 7
 myst_linkify_fuzzy_links = False
 html_last_updated_fmt = ""
 html_show_copyright = False
+
+html_search_scorer = os.path.join(os.path.dirname(__file__), "searchscorer.js")
 
 spelling_lang = "en_GB"
 spelling_filters = ["enchant.tokenize.MentionFilter"]
