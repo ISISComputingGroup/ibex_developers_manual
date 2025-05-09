@@ -15,7 +15,7 @@
 ## Previous sprint
 
 - FA: Possibly host central MYSQL instance ourselves.  CMS will investigate server options.
-- FA: May need to revist onsite rotas later in year.
+- FA: May need to revisit onsite rotas later in year.
 - LJ: EPICS collaboration on site - more local contacts made through recent meeting.
 
 
@@ -43,7 +43,7 @@
 - LC: will book date for beginning of September.
 
 ### IBEX Training:
-- TW,LJ: SECI no longer covererd in course so went more quickly.  Also fewer trainees this time.
+- TW,LJ: SECI no longer covered in course so went more quickly.  Also fewer trainees this time.
 - KB: Expand course to cover more functionality and fill time instead.
 - LJ: Will create ticket to cover changes.
 
