@@ -1,0 +1,367 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IPS &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=2ac7ccea" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Mercury IPS" href="Oxford-Instruments-Mercury-IPS.html" />
+    <link rel="prev" title="Mercury iTC - Enhanced cryostat control" href="MercuryiTC-Enhanced-Cryostat-Control.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Cells.html">Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Choppers.html">Choppers</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Cryogenics.html">Cryogenics</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="2T-3D-Vector-magnet.html">Scientific Magnetics 2T 3D Vector Magnet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CP2800-Compressors.html">CP2800 Compressors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Cryogenic-SMS-PSU.html">Cryosms PSU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Cryogenics-Ltd-Helium-Level-Gauge.html">Helium Level Gauge (Cryogenics Ltd)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HLM-General.html">Helium Level Monitoring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ICE-Dilution-Fridge.html">ICE Dilution Fridge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ITC-503.html">ITC503</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ITC503-Heliox.html">ITC503 (Old-style Heliox)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Mercury-Heliox.html">Oxford Instruments Mercury Heliox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MercuryiTC.html">Mercury iTC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MercuryiTC-Enhanced-Cryostat-Control.html">Mercury iTC - Enhanced cryostat control</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">IPS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Oxford-Instruments-Mercury-IPS.html">Mercury IPS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Triton.html">Triton</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../DAE-and-the-ICP.html">DAE (Data Acquisition Electronics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DAQ.html">DAQ (NI cDAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Fluxgates.html">Fluxgates &amp; Magnetometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gas-And-Liquid-Handling-Systems.html">Gas and liquid handling systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Imaging-Cameras.html">Imaging Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Loading-Rigs.html">Loading rigs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Magnets.html">Magnets &amp; Large Power Supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors.html">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Motors-Extensions.html">Motor Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Multimeters.html">Multimeters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Other.html">Other / Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PLCs.html">PLCs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Polarisers-and-Analysers.html">Polarisers &amp; Analysers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Distribution-Unit-%28PDU%29.html">Power distribution units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Power-Supplies.html">Power supplies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pressure-Monitors.html">Pressure monitors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reflectometry-IOC.html">Reflectometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Rheometers.html">Rheometers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sample-Changers.html">Sample Changers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sensors.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Signal-Generators.html">Signal Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Temperature-Controllers.html">Temperature Controllers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Systems.html">Systems Administration &amp; Hardware</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+          <li class="breadcrumb-item"><a href="../Cryogenics.html">Cryogenics</a></li>
+      <li class="breadcrumb-item active">IPS</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/specific_iocs/cryogenics/Oxford-Instruments-IPS.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="ips">
+<h1>IPS<a class="headerlink" href="#ips" title="Link to this heading"></a></h1>
+<p>The Oxford instruments IPS is a cryogenic magnet power supply. <strong>This device can cause a magnet to <a class="reference external" href="https://en.wikipedia.org/wiki/Superconducting_magnet#Magnet_quench">quench</a> if it sends commands while the magnet is in the wrong state! Please be careful when modifying this driver, especially if modifying the state machine.</strong> In particular, the two most obvious states which must be avoided are:</p>
+<ol class="arabic simple">
+<li><p>PSU current != Magnet current and switch heater on</p></li>
+<li><p>Ramping the Magnet current too fast</p></li>
+</ol>
+<p>When configuring the IOC, suggested blocks to create are:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>PV</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Field</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">FIELD:USER</span></code></p></td>
+<td><p>This is a composite field block that will choose to display either the persistent field or the power supply field, depending on the status of the switch heater</p></td>
+</tr>
+<tr class="row-odd"><td><p>Magnet_status</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">STS:SYSTEM:FAULT</span></code></p></td>
+<td><p>This is a status readback from the hardware. Should always be “Normal” (Enum: 0). <strong>It is recommended to put run control on this being 0 (set limits -0.5 to 0.5), otherwise it can be difficult for the scientists to see that there is a problem.</strong></p></td>
+</tr>
+</tbody>
+</table>
+<section id="basic-cryomagnet-operation">
+<h2>Basic cryomagnet operation<a class="headerlink" href="#basic-cryomagnet-operation" title="Link to this heading"></a></h2>
+<p>The circuit diagram of a cryogenic magnet with a switch heater looks something like the following:</p>
+<p><img alt="Cryomagnet" src="../../_images/cryomagnet_circuit_diagram.PNG" /></p>
+<p>The basic idea of operation in persistent mode is as follows:</p>
+<ul class="simple">
+<li><p>If the switch heater is turned off, the magnet can be set to a particular current/field by the IPS</p></li>
+<li><p>Once the magnet is set to that current/field, the switch heater can be turned off.</p>
+<ul>
+<li><p>This closes the superconducting switch</p></li>
+<li><p>Because of how cryomagnets behave, you now get a “persistent” current which flows around the superconducting loop formed by the magnet and the switch.</p></li>
+<li><p>Persistent currents are an advantage because they allow much greater stability than a power supply</p></li>
+<li><p>When in persistent mode the IPS can be ramped down and the persistent current within the magnet will keep generating a field.</p></li>
+</ul>
+</li>
+<li><p>Now that there is a persistent current flowing around the magnet/switch, the IPS can be ramped down</p>
+<ul>
+<li><p>This has the advantage that it saves power &amp; cryogens</p></li>
+<li><p>Must set the IPS back to the same current as the magnet before turning the switch heater back on!</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>GOLDEN RULE OF OPERATING THE IPS: Only turn the switch heater on if PSU current == Magnet current</strong></p>
+</section>
+<section id="state-machine">
+<h2>State machine<a class="headerlink" href="#state-machine" title="Link to this heading"></a></h2>
+<p>The IOC implements the following state machine in SNL:</p>
+<ul class="simple">
+<li><p>Initial state</p>
+<ul>
+<li><p>The state that the state machine starts in</p></li>
+<li><p>The machine can get stuck in this state if the field PV is not processed</p></li>
+</ul>
+</li>
+<li><p>At field</p>
+<ul>
+<li><p>This is the state where the magnet is at a particular field (either persistent or not), and is not ramping to anywhere.</p></li>
+<li><p>The activity of the IPS should be “hold” - this instructs the IPS to maintain it’s current output at the present level.</p></li>
+</ul>
+</li>
+<li><p>Set PSU to match magnet</p>
+<ul>
+<li><p>The state machine always sets the IPS to explicitly match the current in the magnet, regardless of whether the current is already matched. This is only technically needed if the magnet was in persistent mode previously, but it doesn’t do any harm to set it explicitly anyway.</p></li>
+<li><p>The activity of the IPS is “Ramp to Setpoint”</p></li>
+</ul>
+</li>
+<li><p>Wait for voltage to stabilize</p>
+<ul>
+<li><p>Once the PSU is at the required current, wait for the voltage to be stable. We define stable as 5 successive readings which are all within a <em>stability voltage</em> of each other. The stability voltage is set as a macro <code class="docutils literal notranslate"><span class="pre">STABILITY_VOLTAGE</span></code> which defaults to 0.1V.</p></li>
+</ul>
+</li>
+<li><p>Turn switch heater on and wait</p>
+<ul>
+<li><p>This state puts the activity back to “Hold”</p></li>
+<li><p>It also instructs the switch heater to turn on and then waits for the heater to warm up</p></li>
+</ul>
+</li>
+<li><p>Set PSU output</p>
+<ul>
+<li><p>At this stage in the state machine, we can begin the ramp to the target field</p></li>
+</ul>
+</li>
+<li><p>[PERSISTENT MODE ONLY] Switch off heater</p>
+<ul>
+<li><p>Once the magnet has reached the target field, it is safe to switch off the switch heater again</p></li>
+<li><p>We wait for the switch to cool back down again (and become superconducting) before moving onto the next state</p></li>
+</ul>
+</li>
+<li><p>[PERSISTENT MODE ONLY] Ramp down PSU</p>
+<ul>
+<li><p>The heater is now OFF (the switch is superconducting), so the PSU is free to ramp down without affecting the field produced by the magnet</p></li>
+<li><p>Set the IPS activity to “Ramp to Zero” and wait for the supplied current to drop to zero</p></li>
+<li><p>At the end of this state, the magnet is set to “persistent” mode.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="ioc-notes">
+<h2>IOC notes<a class="headerlink" href="#ioc-notes" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>The IOC does not enter it’s state machine until a setpoint is set.</p>
+<ul>
+<li><p>If a ramp was in progress at the time the IOC was started, the ramp will continue, but no further action will occur (for example, the magnet won’t be set to persistent mode and the heater status won’t be changed).</p></li>
+<li><p>This is done so that there are no assumptions made about the state of the IPS which might be invalid</p></li>
+<li><p>To continue setting the field to the desired value after an IOC restart, simply resend the setpoint</p></li>
+</ul>
+</li>
+<li><p>There are user facing records <code class="docutils literal notranslate"><span class="pre">FIELD:USER</span></code> and <code class="docutils literal notranslate"><span class="pre">FIELD:USER:SP</span></code> which should be used for blocks. This field readback will choose whether to display either the persistent field or the power supply field depending on whether the switch heater is on or not. The setpoint is an alias to <code class="docutils literal notranslate"><span class="pre">FIELD:SP</span></code>.</p></li>
+</ul>
+</section>
+<section id="settings">
+<h2>Settings<a class="headerlink" href="#settings" title="Link to this heading"></a></h2>
+<p>There are various IPS units here is a list of the ones we know the settings for (Lab view settings are in <code class="docutils literal notranslate"><span class="pre">...LabVIEW</span> <span class="pre">Modules\Oxford</span> <span class="pre">Software\TESLTRON.INI</span></code>):</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Setting</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>IN LabVIEW</p></th>
+<th class="head"><p>7T Magnet</p></th>
+<th class="head"><p>9T Chopper Magnet (LET)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">STABILITY_VOLTAGE</span></code></p></td>
+<td><p>5 voltages are compared and they must differ by less than this to be declared stable</p></td>
+<td><p>hard coded</p></td>
+<td><p>0.1</p></td>
+<td><p>0.1</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">MAX_FIELD</span></code></p></td>
+<td><p>Maximum field</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">PS0MaxField(2.2K)</span></code> and <code class="docutils literal notranslate"><span class="pre">PS0MaxField(4.2K)</span></code></p></td>
+<td><p>7.0 [1]</p></td>
+<td><p>8.8 [2]</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">MAX_SWEEP_RATE</span></code></p></td>
+<td><p>Maximum rate of change of the field in B/min</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">PS0MaxSweep(4.2K)</span></code> and <code class="docutils literal notranslate"><span class="pre">PS0MaxSweep(2.2K)</span></code></p></td>
+<td><p>0.399</p></td>
+<td><p>0.3990</p></td>
+</tr>
+</tbody>
+</table>
+<p>[1] - The limit may be lower on some beamlines due to the construction of their sample area. Below are known cases:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Beamline</p></th>
+<th class="head"><p>Maximum field</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ZOOM</p></td>
+<td><p>5.5T</p></td>
+</tr>
+<tr class="row-odd"><td><p>MERLIN</p></td>
+<td><p>2.0T</p></td>
+</tr>
+</tbody>
+</table>
+<p>[2] - Limited by hardware. The IPS is configured to reject any setpoints above 8.8T.</p>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading"></a></h2>
+<section id="magnet-won-t-go-to-field-which-has-been-set-activity-is-clamped">
+<h3>Magnet won’t go to field which has been set - “Activity” is “Clamped”<a class="headerlink" href="#magnet-won-t-go-to-field-which-has-been-set-activity-is-clamped" title="Link to this heading"></a></h3>
+<p>Check on the “Advanced” tab of the OPI whether the IPS reports it’s status as “clamped”. If so, the state machine will be unable to proceed because being “clamped” means that the IPS will stay at it’s current output indefinitely. “Clamped” mode is usually used by cryogenics when setting up the magnet, it is potentially undesirable to do this remotely without checking with them first.</p>
+<p>Note: You <em>may</em> be able to get out of a clamped state remotely with <code class="docutils literal notranslate"><span class="pre">caput</span> <span class="pre">%MYPVPREFIX%IPS_01:ACTIVITY:SP</span> <span class="pre">Hold</span></code>, but the old LabVIEW driver did not do this and it is not exposed as a user-facing option in the EPICS driver. <strong>You should double check that this is ok with cryogenics before executing this command! It is potentially dangerous if the magnet has not been fully set up.</strong></p>
+</section>
+<section id="magnet-won-t-go-to-field-sweep-rate-readback-is-zero">
+<h3>Magnet won’t go to field - sweep rate readback is zero<a class="headerlink" href="#magnet-won-t-go-to-field-sweep-rate-readback-is-zero" title="Link to this heading"></a></h3>
+<p>Set the magnet to a non-zero sweep rate (you will need to be in manager mode to do this). Maximum permissible sweep rates are listed in the table above. If unsure, consult the instrument scientists or cryogenics. The IPS itself should limit the sweep rate to safe values in hardware.</p>
+</section>
+<section id="magnet-won-t-respond-to-any-setpoints">
+<h3>Magnet won’t respond to any setpoints<a class="headerlink" href="#magnet-won-t-respond-to-any-setpoints" title="Link to this heading"></a></h3>
+<p>Check remote mode is enabled.</p>
+</section>
+<section id="magnet-system-status-reports-something-other-than-normal-e-g-quenched-or-fault">
+<h3>Magnet system status reports something other than “normal” - e.g. “quenched” or “fault”<a class="headerlink" href="#magnet-system-status-reports-something-other-than-normal-e-g-quenched-or-fault" title="Link to this heading"></a></h3>
+<p>This indicates a hardware fault. Inform instrument scientists that the magnet has a problem and has likely gone to zero field (even if the IPS still claims to be producing a non-zero field). Consult cryogenics for help.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="MercuryiTC-Enhanced-Cryostat-Control.html" class="btn btn-neutral float-left" title="Mercury iTC - Enhanced cryostat control" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Oxford-Instruments-Mercury-IPS.html" class="btn btn-neutral float-right" title="Mercury IPS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on May 09, 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

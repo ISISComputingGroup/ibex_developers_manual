@@ -1,0 +1,14 @@
+.wy-table-responsive table td, .wy-table-responsive table th {
+    white-space: inherit;
+}
+
+a:hover {
+    color: #01afec;
+}
+
+.wy-menu-vertical p.caption {
+    color: #01afec;
+}
+.wy-nav-content {
+    max-width: 1200px !important;
+}

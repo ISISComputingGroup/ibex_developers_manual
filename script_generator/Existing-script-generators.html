@@ -1,0 +1,311 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Existing script generators &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=2ac7ccea" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Troubleshooting" href="Gotchas-and-Troubleshooting-for-The-IBEX-Script-Generator.html" />
+    <link rel="prev" title="Script Generator" href="../Script-Generator.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../Script-Generator.html">Script Generator</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Existing script generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Gotchas-and-Troubleshooting-for-The-IBEX-Script-Generator.html">Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IBEX-Script-Generator-Dynamic-Scripting.html">Dynamic Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Script-Generator-Testing-Environment.html">Script Generator testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Script-generator-high-level-design.html">Script Generator Design</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Systems.html">Systems Administration &amp; Hardware</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../Script-Generator.html">Script Generator</a></li>
+      <li class="breadcrumb-item active">Existing script generators</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/script_generator/Existing-script-generators.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="existing-script-generators">
+<h1>Existing script generators<a class="headerlink" href="#existing-script-generators" title="Link to this heading"></a></h1>
+<section id="mkscript">
+<h2>MkScript<a class="headerlink" href="#mkscript" title="Link to this heading"></a></h2>
+<p>Used by south side muons and MARI</p>
+</section>
+<section id="muonscript">
+<h2>MuonScript<a class="headerlink" href="#muonscript" title="Link to this heading"></a></h2>
+<p>Used by south side muons</p>
+</section>
+<section id="macs">
+<h2>MACS<a class="headerlink" href="#macs" title="Link to this heading"></a></h2>
+<p>MACS is probably the most interesting muon script generator. A brief overview of functionality:</p>
+<ul class="simple">
+<li><p>Keeps a table-based view of operations on the screen. An “Operation” could be:</p>
+<ul>
+<li><p>A run at a single combination of temperature/field</p></li>
+<li><p>A scan over temperature or field (in three modes), counting at each point. These scans can be defined as linear or logarithmic.</p></li>
+<li><p>An arbitrary block set to an arbitrary value</p></li>
+</ul>
+</li>
+<li><p>Sends commands to OpenGENIE via the SECI API as it goes - means that scripts can be edited (up to the point when they have started running). This is similar in spirit to NICOS script server.</p></li>
+<li><p>Includes some basic time estimation (it displays the total count time of everything in the script window)</p></li>
+</ul>
+<p><strong>Note:</strong><br>
+MACS can only run on a real instrument, with a copy of SECI and working communication to hardware.  It <em><strong>cannot</strong></em> be run offline.
+Furthermore, because the instruments (ARGUS &amp; CHRONUS) are used in-cycle, the development team can only use MACS out-of-cycle.</p>
+</section>
+<section id="inter">
+<h2>INTER<a class="headerlink" href="#inter" title="Link to this heading"></a></h2>
+<p>INTER has a script generator called MaxScript. It has fallen out of use because it is not easy to integrate with the SECI system. Scientists from Inter expressed the desire for the script generator to be able to talk to the script server directly, with feedback (for example, greying out completed rows where a row represents an experimental measurement).</p>
+<p>The INTER script generator can also display the script in a “tree” view - this collapses each run into a short recognisable string, and the details can be seen by expanding out the tree item.</p>
+<p>The INTER script generator provides some time estimation.</p>
+<p>INTER script generator is available at: <code class="docutils literal notranslate"><span class="pre">\\isis\shares\ISIS_Experiment_Controls\external_code\inter</span> <span class="pre">script</span> <span class="pre">generator</span></code> (copied from <a class="reference external" href="https://github.com/jonasgitt/ScriptMax">https://github.com/jonasgitt/ScriptMax</a> with required DLLs and extra files added). Launch via the Qt IDE (download latest version from web; takes a while). I haven’t been able to build it successfully to an exe, but only spent half an hour on it.</p>
+</section>
+<section id="loq">
+<h2>LOQ<a class="headerlink" href="#loq" title="Link to this heading"></a></h2>
+<p>LOQ uses a script generator “written by Matt Clarke in VB or C#”. The scientists have expressed a desire for the script generator to be simple from a user’s perspective.</p>
+</section>
+<section id="commonalities-of-old-systems-feature-requests-for-new-system">
+<h2>Commonalities of old systems / feature requests for new system<a class="headerlink" href="#commonalities-of-old-systems-feature-requests-for-new-system" title="Link to this heading"></a></h2>
+<section id="configurable">
+<h3>Configurable<a class="headerlink" href="#configurable" title="Link to this heading"></a></h3>
+<p>There is a clear need for the script generator to be highly configurable. Common actions that scientists want to take are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cset</span></code> a block</p></li>
+<li><p>run an arbitrary instrument script (with parameters)</p></li>
+</ul>
+<p>There is also a need for “hooks” into which the instrument scientists can insert arbitrary code. For example, if the script generator (/server) are told to stop, some instruments may want to simply terminate execution of all code, whereas others may want to perform some “cleanup” (for example, setting the beamline back to a known state).</p>
+</section>
+<section id="offline-mode">
+<h3>Offline mode<a class="headerlink" href="#offline-mode" title="Link to this heading"></a></h3>
+<p>Being able to use the script generator offline (in advance) as well as alongside/integrated with IBEX is important.</p>
+</section>
+<section id="spreadsheet-table-based">
+<h3>Spreadsheet / table based<a class="headerlink" href="#spreadsheet-table-based" title="Link to this heading"></a></h3>
+<p>Most of the existing script generators are table based. Some have additional alternative means of displaying equivalent information (such as a tree view). At a SAG meeting, there was broad consensus that a table-based UI would be appropriate.</p>
+</section>
+<section id="parameters">
+<h3>Parameters<a class="headerlink" href="#parameters" title="Link to this heading"></a></h3>
+<p>All of the script generators I’ve seen have essentially been setting a small number (2-10) of parameters and then performing some kind of run. The functions to set parameters and do the runs are different for each beamline, so each beamline will need to be able to configure this. It would be advantageous for a scientist to be able to configure this by themselves, without necessarily requiring input from computing.</p>
+</section>
+<section id="parameter-checking">
+<h3>Parameter checking<a class="headerlink" href="#parameter-checking" title="Link to this heading"></a></h3>
+<p>All of the scientists have brought up a desire for parameters to be checked for implausible values (e.g. setting a dilution fridge to furnace temperatures). Many of the existing script generators already do this. How the limits are defined should be configurable by instrument scientists.</p>
+</section>
+<section id="output">
+<h3>Output<a class="headerlink" href="#output" title="Link to this heading"></a></h3>
+<p>All of the existing script generators generate a plain text file. However, the overwhelming consensus is that a script written using the new generator should be able to be executed “in one click”, without requiring copying/saving a script and loading it explicitly.</p>
+<p>However, the <em>option</em> to explicitly generate and load a script is still important, as some users like to edit the generated script before it is sent.</p>
+</section>
+<section id="execution-feedback">
+<h3>Execution Feedback<a class="headerlink" href="#execution-feedback" title="Link to this heading"></a></h3>
+<p>Scientists have expressed a desire for live feedback visible in the script generator while the script is running. For example, rows should be greyed out once that part of the script has been executed.</p>
+</section>
+<section id="time-estimation">
+<h3>Time estimation<a class="headerlink" href="#time-estimation" title="Link to this heading"></a></h3>
+<p>Some of the existing script generators already do some form of time estimation - given instrument-specific assumptions. This is a feature that is quite heavily requested by all the different groups.</p>
+</section>
+<section id="dry-runs">
+<h3>Dry runs<a class="headerlink" href="#dry-runs" title="Link to this heading"></a></h3>
+<p>Some scientists have expressed an interest in dry runs/simulated runs of scripts to detect errors. None of the existing script generators that I’ve seen contain this functionality.</p>
+<p>At a SAG meeting, the scientists suggested a graph of time (or rather, counts) against arbitrary parameters so that they can check the the graph looks as they expect.</p>
+</section>
+<section id="scans">
+<h3>Scans<a class="headerlink" href="#scans" title="Link to this heading"></a></h3>
+<p>Some of the existing script generators already support “scanning” a parameter (that is, setting a parameter to a value and taking a measurement at each step. There is broad consensus that this is useful functionality.</p>
+<p>There is slightly less consensus about nested loops - some groups see these as very useful, while others would prefer this “advanced” functionality to be handled by writing the python themselves.</p>
+<p>Logarithmic scans (as opposed to linear) are important for the Muon group, but there was not substantial interest from other groups.</p>
+</section>
+<section id="loading-scripts">
+<h3>Loading scripts<a class="headerlink" href="#loading-scripts" title="Link to this heading"></a></h3>
+<p>The script generator should be able to load/save scripts in it’s own format. In addition, several groups expressed interest in loading from other formats, for example:</p>
+<ul class="simple">
+<li><p>Excel</p></li>
+<li><p>CSV</p></li>
+<li><p>custom formats (e.g. ENGINX)</p></li>
+<li><p>Raw python code</p></li>
+</ul>
+</section>
+<section id="readability">
+<h3>Readability<a class="headerlink" href="#readability" title="Link to this heading"></a></h3>
+<p>There is broad consensus that the generated scripts should be human readable, to facilitate a workflow where they may generate the skeleton of the script using the script generator and then edit it to suit some more advanced requirements for a more complex experiment.</p>
+</section>
+</section>
+<section id="suggested-implementations">
+<h2>Suggested implementations<a class="headerlink" href="#suggested-implementations" title="Link to this heading"></a></h2>
+<p>All of the implementations below assume that the NICOS script server will be used as the back-end, when the script generator is running on an instrument. Using the script server is logical as it already allows for queuing/re-ordering/editing scripts in a queue on an instrument.</p>
+<section id="approach-1">
+<h3>Approach 1<a class="headerlink" href="#approach-1" title="Link to this heading"></a></h3>
+<p>One suggestion to implement the script generator as a Java eclipse plugin that can be run either within the IBEX GUI or standalone. This plugin would be implemented as an MVVM stack in a similar style to the rest of the GUI.</p>
+<p>Advantages:</p>
+<ul class="simple">
+<li><p>It facilitates integration within the GUI while not being too difficult to package as a standalone application.</p></li>
+<li><p>We can re-use some of the NICOS code from the GUI</p></li>
+<li><p>It is a UI technology which IBEX developers already use and are already familiar with</p></li>
+</ul>
+<p>Disadvantages:</p>
+<ul class="simple">
+<li><p>Using Eclipse RCP might constrain us unnecessarily</p></li>
+<li><p>It might be easier to work with generating python code in python itself</p></li>
+</ul>
+</section>
+<section id="approach-2">
+<h3>Approach 2<a class="headerlink" href="#approach-2" title="Link to this heading"></a></h3>
+<p>Another suggestion would be to implement the script generator as a standalone Python program (using tkinter or a similar UI framework). As above this would be implemented as an MVVM stack.</p>
+<p>Advantages:</p>
+<ul class="simple">
+<li><p>It might be easier to interface with Nicos as nicos is written in Python</p></li>
+<li><p>It may be easier to generate python code using python than java (for example, access to the <code class="docutils literal notranslate"><span class="pre">ast</span></code> module)</p></li>
+<li><p>Python is a technology which IBEX developers already know and use (minus caveat about UI toolkits below)</p></li>
+</ul>
+<p>Disadvantages:</p>
+<ul class="simple">
+<li><p>IBEX developers are not currently familiar with Python UI toolkits. This would be another technology to learn.</p></li>
+<li><p>Some of the NICOS functionality which we’ve implemented in the GUI would need to be reimplemented in Python</p></li>
+<li><p>It would be more difficult or perhaps impossible to integrate this into the main GUI later</p></li>
+</ul>
+</section>
+<section id="approach-3">
+<h3>Approach 3<a class="headerlink" href="#approach-3" title="Link to this heading"></a></h3>
+<p>Approach 3 would be to attempt to adopt and adapt one of the existing script generators, and retrofit script server support to it and add any other features that are requested.</p>
+<p>Advantages:</p>
+<ul class="simple">
+<li><p>Some functionality is already implemented in the other script generators.</p></li>
+</ul>
+<p>Disadvantages:</p>
+<ul class="simple">
+<li><p>The quality of the existing code is largely unknown</p></li>
+<li><p>The existing script generators are written in technologies which were not necessarily familiar with, or which may be obsolete</p></li>
+<li><p>It is unknown how generic/extensible the existing script generators are. Most are fairly specific to a small number of beamlines.</p></li>
+</ul>
+</section>
+<section id="approach-4">
+<h3>Approach 4<a class="headerlink" href="#approach-4" title="Link to this heading"></a></h3>
+<p>The script generator could be written as a web application, enabling it to be used both from within the user interface and externally.</p>
+<p>Advantages:</p>
+<ul class="simple">
+<li><p>The script generator can be accessed from anywhere without needing to be downloaded</p></li>
+</ul>
+<p>Disadvantages:</p>
+<ul class="simple">
+<li><p>The IBEX team as a whole do not have significant expertise in web technologies</p></li>
+<li><p>It is not clear how this would interface with the NICOS script server (and what the security implications of doing this would be)</p></li>
+<li><p>Running the application in a web browser may constrain us unnecessarily.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../Script-Generator.html" class="btn btn-neutral float-left" title="Script Generator" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Gotchas-and-Troubleshooting-for-The-IBEX-Script-Generator.html" class="btn btn-neutral float-right" title="Troubleshooting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on May 09, 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
