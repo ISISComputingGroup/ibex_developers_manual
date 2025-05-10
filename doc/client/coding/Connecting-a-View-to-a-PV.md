@@ -1,10 +1,12 @@
 # Connecting a view to a PV
 
-See [An Introduction to Databinding](Databinding) for a explanation of databinding.
+:::{seealso}
+[An Introduction to Databinding](Databinding) for an explanation of databinding.
+:::
 
-The basic arrangement for the mechanism for connecting a View to a PV is shown below:
+The basic arrangement for the mechanism for connecting a View to a PV is:
 
-![Basic principle](basic_principle.png)
+<img src="connect_view_to_pv_basic_principle.png" width=750>
 
 ## Adding an Observable
 

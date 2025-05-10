@@ -1,4 +1,4 @@
-# Adding a plugin or feature to Maven
+# Adding a plugin or feature
 
 The steps for adding a plug-in (one small part of IBEX, such as the blocks view) or feature (a larger collection of plug-ins, such as CSS) to the maven build are below:
 
