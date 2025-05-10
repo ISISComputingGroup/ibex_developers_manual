@@ -4,6 +4,11 @@ This is a guide for basic operations using either the development or production 
 
 Note that there are many ways to do the following, what is written here is the way commonly done at ISIS on our development and production clusters. Something like `kafka-tool` is a nice GUI that will list topics, brokers, etc and create or delete topics. You may have more luck running things like `kafkacat`, `kafkacow` or any of the official Kafka scripts under the [Windows subsystem for linux](https://docs.microsoft.com/en-gb/windows/wsl/install-win10)
 
+## Configure a new datastreaming cluster
+
+There are instructions for how to set up a new data streaming Kafka/Redpanda cluster
+[in the `ds-containers` repository](https://github.com/isiscomputinggroup/ds-containers).
+
 ## Topic operations
 
 Pushing to one topic does not necessarily mean that the other topics in the cluster receive the data and replicate it, so use with caution. If you need to create a topic that is replicated through all of the topics you should probably follow [this guide](https://coralogix.com/blog/create-kafka-topics-in-3-easy-steps/) by `ssh` on the actual server machines themselves. 
