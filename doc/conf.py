@@ -92,4 +92,8 @@ redirects = {
     "client/eclipse/Creating-the-IBEX-Developer-Version-of-Eclipse": "../compiling/Building-the-GUI.html#gui-build-install-eclipse",  # noqa E501
     "client/eclipse/Dictionary-setup": "Common-Eclipse-Issues.html#adding-a-dictionary-to-eclipse-s-spelling-checker",  # noqa E501
     "client/getting_started/GUI-Development-Workflow": "../../processes/git_and_github/Git-workflow.html",  # noqa E501
+    "client/coding/Instrument-switching": "PV-Switching.html",
+    "client/coding/Databinding---common-mistakes": "Databinding.html",
+    "client/coding/Migrating-or-adding-a-button-to-the-E4-perspective-switcher": "Perspectives.html",  # noqa E501
+    "client/coding/Adding-a-Button-to-the-Perspective-Switcher": "Perspectives.html",
 }

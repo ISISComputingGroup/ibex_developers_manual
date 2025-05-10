@@ -534,7 +534,6 @@ mvn
 mW
 mx
 myexample
-myperspective
 MySQL
 mysql
 mysqladmin
@@ -604,9 +603,6 @@ pdf
 Peopleware
 performant
 pernickety
-perspectiveExtension
-perspectiveExtensions
-PerspectiveSwitcher
 Pfeiffer
 Physica
 Physik
@@ -641,7 +637,6 @@ prepended
 prepends
 preplanning
 prescale
-preSetInstruments
 printf
 prisma
 ProcServ
@@ -754,7 +749,6 @@ searchable
 seci
 sendSlackMessage
 Sensirion
-setInstrument
 setIOCName
 setParam
 setpoint
