@@ -28,9 +28,7 @@ Part of our in-kind contribution to datastreaming is to test the system in produ
 There is a Kafka cluster at `livedata.isis.cclrc.ac.uk`. Port 9092 is used for the primary Kafka broker. A web interface
 is available on port 8080.
 
-The production server does not auto-create topics this 
-means that when a new real instrument comes online corresponding topics must be created on this cluster, which is done 
-as part of the install script. 
+The production server auto-creates topics when those topics are produced to; consuming however does not create them.
 
 Credentials for the cluster can be found in Keeper, under `ds streaming container user`. The machine is reachable by
 SSH with these credentials.
