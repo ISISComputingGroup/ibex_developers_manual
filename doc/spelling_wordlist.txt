@@ -114,6 +114,7 @@ Chakraborty
 checkboxes
 checkRelease
 checkstyle
+checksums
 Chell
 Chrono
 Chronus
@@ -582,6 +583,8 @@ Omron
 onboarding
 Onenote
 onwards
+opc
+opcua
 openjfx
 openssl
 openwire
@@ -800,6 +803,7 @@ subVI
 Sudeepta
 sudo
 Sumitomo
+Sunil
 Superlogics
 supermirror
 supermirrors
@@ -859,6 +863,7 @@ TTi
 Turbotronik
 TwinCAT
 txt
+ua
 uA
 uamps
 UC
