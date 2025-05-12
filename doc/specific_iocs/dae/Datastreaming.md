@@ -64,6 +64,10 @@ See [File writing](datastreaming/Datastreaming---File-writing)
 
 ## System Tests
 
+:::{note}
+These tests are not currently enabled.
+:::
+
 Currently system tests are being run to confirm that the start/stop run and event data messages are being sent into
 Kafka and that a Nexus file is being written with these events. The Kafka cluster and filewriter are being run in docker
 containers for these tests and so must be run on a Windows 10 machine. To run these tests you will need to
