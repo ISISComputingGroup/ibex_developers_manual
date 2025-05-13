@@ -23,19 +23,34 @@ Part of our in-kind contribution to datastreaming is to test the system in produ
 
 ![](ISISDSLayout.png)
 
-## The Kafka Clusters
-There are two Kafka clusters, production (`livedata.isis.cclrc.ac.uk:9092`) and development (`tenten.isis.cclrc.ac.uk:9092` or `sakura.isis.cclrc.ac.uk:9092` or `hinata.isis.cclrc.ac.uk:9092`). The development cluster is set up to auto-create topics and so when new developer machines are run up all the required topics will be created. However, the production server does not auto-create topics this means that when a new real instrument comes online corresponding topics must be created on this cluster, which is done as part of the install script. Credentials for both clusters can be found in the keeper shared folder.
+## The Kafka Cluster
 
-### Grafana dashboard
-A Grafana dashboard for the production cluster can be found at `madara.isis.cclrc.ac.uk:3000`. This shows the topic data rate and other useful information. Admin credentials can also be found in the sharepoint. 
+There is a Kafka cluster at `livedata.isis.cclrc.ac.uk`. Port 9092 is used for the primary Kafka broker. A web interface
+is available on port 8080.
 
-### Deployment
-Deployment involves the use of Ansible playbooks, the playbooks and instructions for using these can be found [here.](https://github.com/ISISComputingGroup/ansible-kafka-centos)
+:::{important}
+It was decided that we no longer maintain the Kafka cluster, and it will be handled by the the Flexible Interactive Automation team. See `\\isis\shares\ISIS_Experiment_Controls\On Call\autoreduction_livedata_support.txt` for their support information.
+:::
+
 
 ## Neutron Data
-The ICP on any instrument that is running in full event mode and with a DAE3 is streaming neutron events into Kafka. 
+
+The ICP on any instrument that is running in full event mode and with a DAE3 may stream neutron events into Kafka.
+
+This is controlled using flags in the `isisicp.properties` file:
+
+```
+isisicp.kafkastream = true
+# if not specified, topicprefix will default to instrument name in code
+isisicp.kafkastream.topicprefix =
+isisicp.kafkastream.broker = livedata.isis.cclrc.ac.uk:9092
+isisicp.kafkastream.topic.suffix.runinfo = _runInfo
+isisicp.kafkastream.topic.suffix.sampleenv = _sampleEnv
+isisicp.kafkastream.topic.suffix.alarms = _alarms
+```
 
 ## SE Data
+
 See [Forwarding Sample Environment](datastreaming/Datastreaming---Sample-Environment)
 
 ## Filewriting
@@ -43,10 +58,20 @@ See [Forwarding Sample Environment](datastreaming/Datastreaming---Sample-Environ
 See [File writing](datastreaming/Datastreaming---File-writing)
 
 ## System Tests
-Currently system tests are being run to confirm that the start/stop run and event data messages are being sent into Kafka and that a Nexus file is being written with these events. The Kafka cluster and filewriter are being run in docker containers for these tests and so must be run on a Windows 10 machine. To run these tests you will need to install [docker for windows and add yourself as a docker-user](https://docs.docker.com/docker-for-windows/install/#install-docker-desktop-on-windows).
+
+:::{note}
+These tests are not currently enabled.
+:::
+
+Currently system tests are being run to confirm that the start/stop run and event data messages are being sent into
+Kafka and that a Nexus file is being written with these events. The Kafka cluster and filewriter are being run in docker
+containers for these tests and so must be run on a Windows 10 machine. To run these tests you will need to
+install [docker for windows and add yourself as a docker-user](https://docs.docker.com/docker-for-windows/install/#install-docker-desktop-on-windows).
 
 ## The future of streaming at ISIS
 
-After the in-kind work finishes and during the handover, there are some proposed changes that affect the layout and integration of data streaming at ISIS. This diagram is subject to change, but shows a brief overview of what the future system might look like:
+After the in-kind work finishes and during the handover, there are some proposed changes that affect the layout and
+integration of data streaming at ISIS. This diagram is subject to change, but shows a brief overview of what the future
+system might look like:
 
 ![](FUTUREISISDSLayout.png)
