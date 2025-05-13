@@ -28,15 +28,10 @@ Part of our in-kind contribution to datastreaming is to test the system in produ
 There is a Kafka cluster at `livedata.isis.cclrc.ac.uk`. Port 9092 is used for the primary Kafka broker. A web interface
 is available on port 8080.
 
-The production server auto-creates topics when those topics are produced to; consuming however does not create them.
+:::{important}
+It was decided that we no longer maintain the Kafka cluster, and it will be handled by the the Flexible Interactive Automation team. See `\\isis\shares\ISIS_Experiment_Controls\On Call\autoreduction_livedata_support.txt` for their support information.
+:::
 
-Credentials for the cluster can be found in Keeper, under `ds streaming container user`. The machine is reachable by
-SSH with these credentials.
-
-### Deployment
-
-Deployment is currently onto a machine running in the SCD cloud. Deployment instructions can be found
-[in the `ds-containers` repository](https://github.com/isiscomputinggroup/ds-containers).
 
 ## Neutron Data
 

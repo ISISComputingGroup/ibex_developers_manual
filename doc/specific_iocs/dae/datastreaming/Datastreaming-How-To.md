@@ -4,9 +4,7 @@ This is a guide for basic operations using either the development or production 
 
 Note that there are many ways to do the following, what is written here is the way commonly done at ISIS on our development and production clusters. Something like `kafka-tool` is a nice GUI that will list topics, brokers, etc and create or delete topics. You may have more luck running things like `kafkacat`, `kafkacow` or any of the official Kafka scripts under the [Windows subsystem for linux](https://docs.microsoft.com/en-gb/windows/wsl/install-win10)
 
-:::{important}
-It was decided that we no longer maintain the Kafka cluster, and it will be handled by the the Flexible Interactive Automation team. See `\\isis\shares\ISIS_Experiment_Controls\On Call\autoreduction_livedata_support.txt` for their support information.
-:::
+
 
 ## Topic operations
 
