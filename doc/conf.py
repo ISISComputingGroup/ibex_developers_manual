@@ -43,8 +43,6 @@ extensions = [
     "sphinx_reredirects",
     # Mermaid diagrams
     "sphinxcontrib.mermaid",
-    # Graphvis diagrams
-    "sphinx.ext.graphviz",
 ]
 napoleon_google_docstring = True
 napoleon_numpy_docstring = False
