@@ -44,6 +44,7 @@ extensions = [
     # Mermaid diagrams
     "sphinxcontrib.mermaid",
 ]
+mermaid_d3_zoom = True
 napoleon_google_docstring = True
 napoleon_numpy_docstring = False
 

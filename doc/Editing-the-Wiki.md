@@ -102,7 +102,7 @@ You can then add the image in markdown using the URL `test.png`:
 
 ## Mermaid Diagrams
 Mermaid diagrams can be added using the following syntax (example):
-```
+````
 ```{mermaid}
 ---
 title: Simple sample
@@ -116,6 +116,7 @@ stateDiagram-v2
     Crash --> Develop_software
     Test_software --> [*]
 ```
+````
 
 will render as:
 ```{mermaid}
