@@ -100,6 +100,42 @@ You can then add the image in markdown using the URL `test.png`:
 
     ![alternative text](test.png)
 
+## Mermaid Diagrams
+Mermaid diagrams can be added using the following syntax (example):
+````
+```{mermaid}
+---
+title: Simple sample
+---
+stateDiagram-v2
+    [*] --> Document
+    Develop_software --> Document
+    Document --> Develop_software
+    Develop_software --> Test_software
+    Test_software --> Crash
+    Crash --> Develop_software
+    Test_software --> [*]
+```
+````
+
+will render as:
+```{mermaid}
+---
+title: Simple sample
+---
+stateDiagram-v2
+    [*] --> Document
+    Document --> Develop_software
+    Develop_software --> Document
+    Develop_software --> Test_software
+    Test_software --> Crash
+    Crash --> Develop_software
+    Test_software --> [*]
+```
+
+
+The Mermaid syntax is documented [here](https://mermaid.js.org/intro/syntax-reference.html).
+
 ## Spellchecking
 
 The wiki has a built-in spellchecker, which will automatically run when a commit

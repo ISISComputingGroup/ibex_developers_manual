@@ -32,6 +32,7 @@ dependencies = [
   "sphinxcontrib-spelling",
   "sphinx-reredirects",
   "pytest",
+  "sphinxcontrib-mermaid"
 ]
 
 [project.optional-dependencies]
