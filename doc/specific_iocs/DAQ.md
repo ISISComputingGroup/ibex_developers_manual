@@ -27,7 +27,7 @@ Notes:
 - You will need to know the hostname of the cDAQ for the "Find Network NI-DAQmx Devices" dialogue
 
 ## Configuring a DAQ IOC
-The Asyn port for each channel for the daq is defined using the `DAQmxConfig` iocsh command. This is typically located in a st-daq.cmd file next to the device's st.cmd. The DAQmxBase documentation is here: https://github.com/ISISComputingGroup/EPICS-DAQmxBase/tree/master/documentation
+The Asyn port for each channel for the daq is defined using the `DAQmxConfig` iocsh command. This is typically located in a st-daq.cmd file next to the device's st.cmd. The DAQmxBase documentation is here: https://isiscomputinggroup.github.io/EPICS-DAQmxBase/
 
 ```
 DAQmxConfig ( Asyn_port_name, physical_channel_address, channel_number, data_type, options)
