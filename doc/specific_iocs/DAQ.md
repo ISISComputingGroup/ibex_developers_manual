@@ -37,7 +37,7 @@ DAQmxConfig ( Asyn_port_name, physical_channel_address, channel_number, data_typ
 
 - `channel_number` should start from zero, this is used to address each channel within an Asyn port.
 - `data_type` is the data type of the channel (AI, AO, BI, ...)
-- `options` Some common options are described here. All options can be found in [the documentation for DAQmxBase](https://github.com/ISISComputingGroup/EPICS-DAQmxBase/tree/master/documentation):
+- `options` Some common options are described here. All options can be found in [the documentation for DAQmxBase](https://isiscomputinggroup.github.io/EPICS-DAQmxBase/):
   - Read mode can be continuous (default), OneShot (get data when record processed), or MONSTER (see below)
   - `F` is the frequency (speed) at which samples will be collected
   - `N` is the number of samples DAQmxBase will collect and then return to the IOC.
