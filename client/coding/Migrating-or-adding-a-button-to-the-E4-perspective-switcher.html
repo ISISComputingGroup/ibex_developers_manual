@@ -1,0 +1,204 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adding a button to the E4 Perspective switcher &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=2ac7ccea" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="PV switching" href="PV-Switching.html" />
+    <link rel="prev" title="Instrument switching" href="Instrument-switching.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Building.html">Building</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../GUI-Coding.html">Coding</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Adding-a-Button-to-the-Perspective-Switcher.html">Adding a perspective</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Adding-a-Plugin-or-Feature-to-Maven-Build.html">Adding a plugin or feature to Maven</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Connecting-a-View-to-a-PV.html">Connecting a view to a PV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Databinding.html">Databinding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Databinding---common-mistakes.html">Databinding - common mistakes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GUI-Coding-Conventions.html">Conventions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Instrument-switching.html">Instrument switching</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Adding a button to the E4 Perspective switcher</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PV-Switching.html">PV switching</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Static-analysis.html">Static analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Eclipse.html">Eclipse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-CSS.html">CS-Studio Views in the GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Other.html">Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Troubleshooting.html">GUI Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Design.html">Design Documents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Systems.html">Systems Administration &amp; Hardware</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+          <li class="breadcrumb-item"><a href="../GUI-Coding.html">Coding</a></li>
+      <li class="breadcrumb-item active">Adding a button to the E4 Perspective switcher</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/client/coding/Migrating-or-adding-a-button-to-the-E4-perspective-switcher.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="adding-a-button-to-the-e4-perspective-switcher">
+<h1>Adding a button to the E4 Perspective switcher<a class="headerlink" href="#adding-a-button-to-the-e4-perspective-switcher" title="Link to this heading"></a></h1>
+<section id="migrating-an-e3-perspective-to-e4">
+<h2>Migrating an E3 perspective to E4<a class="headerlink" href="#migrating-an-e3-perspective-to-e4" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Open the Application.e4xmi from <code class="docutils literal notranslate"><span class="pre">uk.ac.stfc.isis.ibex.e4.client</span></code></p></li>
+<li><p>Go to <code class="docutils literal notranslate"><span class="pre">Snippets</span></code></p></li>
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">Add</span></code> to add a new perspective</p></li>
+<li><p>Set the perspective up using an existing migrated perspective as a template</p>
+<ol class="arabic simple">
+<li><p>Set a sensible ID</p></li>
+<li><p>Give it a label</p></li>
+<li><p>If you want your perspective to be invisible toggle the visible checkbox</p></li>
+<li><p>Set the icon</p></li>
+<li><p>Add controls. This should be a hierarchy of part sash containers. You can see how it should be set up from the existing perspectives. Don’t forget to set the container data where appropriate; it sets the relative size of sibling components.</p></li>
+</ol>
+</li>
+<li><p>Add the perspective-specific parts</p>
+<ol class="arabic simple">
+<li><p>In the alarms perspective, you’ll see one part in the final part sash container called alarms. Do the same thing in your new perspective, but give it an appropriate name</p></li>
+<li><p>Change the ID of your new part to the ID of the view class you want the perspective to open</p></li>
+</ol>
+</li>
+<li><p>Add the dependency of the view you’ve added to the <code class="docutils literal notranslate"><span class="pre">plugin.xml</span></code> in the <code class="docutils literal notranslate"><span class="pre">...e4.client</span></code> plugin</p></li>
+<li><p>Add the new dependency to <code class="docutils literal notranslate"><span class="pre">...feature.xml</span></code> (in <code class="docutils literal notranslate"><span class="pre">uk.ac.stfc.isis.ibex.feature.base</span></code>)</p></li>
+<li><p>Synchronize <code class="docutils literal notranslate"><span class="pre">ibex.product</span></code> (in <code class="docutils literal notranslate"><span class="pre">...e4.client.product</span></code>)</p></li>
+<li><p>Open IBEX</p></li>
+<li><p>Check the new perspective scales appropriately and change the layout accordingly if needed</p></li>
+</ol>
+</section>
+<section id="creating-a-brand-new-e4-perspective">
+<h2>Creating a brand new E4 perspective<a class="headerlink" href="#creating-a-brand-new-e4-perspective" title="Link to this heading"></a></h2>
+<p>Making a brand new E4 perspective would probably look similar to the steps above, minus the E3 steps. However, a new E4 perspective has yet to been attempted.</p>
+</section>
+<section id="hiding-perspectives">
+<h2>Hiding Perspectives<a class="headerlink" href="#hiding-perspectives" title="Link to this heading"></a></h2>
+<p>Perspectives can be hidden by adding perspective IDs to the Eclipse preference store at the preference key <code class="docutils literal notranslate"><span class="pre">uk.ac.stfc.isis.ibex.preferences/perspectives_not_shown</span></code> (at <code class="docutils literal notranslate"><span class="pre">/uk.ac.stfc.isis.ibex.e4.client/plugin_customization.ini</span></code>). e.g.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">uk</span><span class="o">.</span><span class="n">ac</span><span class="o">.</span><span class="n">stfc</span><span class="o">.</span><span class="n">isis</span><span class="o">.</span><span class="n">ibex</span><span class="o">.</span><span class="n">preferences</span><span class="o">/</span><span class="n">perspectives_not_shown</span><span class="o">=</span><span class="n">uk</span><span class="o">.</span><span class="n">ac</span><span class="o">.</span><span class="n">stfc</span><span class="o">.</span><span class="n">isis</span><span class="o">.</span><span class="n">ibex</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">e4</span><span class="o">.</span><span class="n">product</span><span class="o">.</span><span class="n">perspective</span><span class="o">.</span><span class="n">scriptGenerator</span>
+</pre></div>
+</div>
+<p>Note: Multiple perspectives can be hidden using a comma separated list of perspective IDs. e.g.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">uk</span><span class="o">.</span><span class="n">ac</span><span class="o">.</span><span class="n">stfc</span><span class="o">.</span><span class="n">isis</span><span class="o">.</span><span class="n">ibex</span><span class="o">.</span><span class="n">preferences</span><span class="o">/</span><span class="n">perspectives_not_shown</span><span class="o">=</span><span class="n">uk</span><span class="o">.</span><span class="n">ac</span><span class="o">.</span><span class="n">stfc</span><span class="o">.</span><span class="n">isis</span><span class="o">.</span><span class="n">ibex</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">e4</span><span class="o">.</span><span class="n">product</span><span class="o">.</span><span class="n">perspective</span><span class="o">.</span><span class="n">scriptGenerator</span><span class="p">,</span><span class="n">uk</span><span class="o">.</span><span class="n">ac</span><span class="o">.</span><span class="n">stfc</span><span class="o">.</span><span class="n">isis</span><span class="o">.</span><span class="n">ibex</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">e4</span><span class="o">.</span><span class="n">product</span><span class="o">.</span><span class="n">perspective</span><span class="o">.</span><span class="n">dae</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Instrument-switching.html" class="btn btn-neutral float-left" title="Instrument switching" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="PV-Switching.html" class="btn btn-neutral float-right" title="PV switching" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on May 16, 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

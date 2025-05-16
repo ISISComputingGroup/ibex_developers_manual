@@ -1,0 +1,203 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>control-svcs &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=2ac7ccea" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Alert Relay" href="control_svcs/Alert-Relay.html" />
+    <link rel="prev" title="Webserver" href="Webserver.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../Systems.html">Systems Administration &amp; Hardware</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="External.html">External systems/services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Inst-Control.html">Instrument control computers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Nagios.html">Nagios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Test-Machines.html">Test Machines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Webserver.html">Webserver</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">control-svcs</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="control_svcs/Alert-Relay.html">Alert Relay</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../Systems.html">Systems Administration &amp; Hardware</a></li>
+      <li class="breadcrumb-item active"><code class="docutils literal notranslate"><span class="pre">control-svcs</span></code></li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/systems/control-svcs.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="control-svcs">
+<h1><code class="docutils literal notranslate"><span class="pre">control-svcs</span></code><a class="headerlink" href="#control-svcs" title="Link to this heading"></a></h1>
+<p>control-svcs.isis.cclrc.ac.uk</p>
+<p>To log on use an SSH client such as Putty and see usual username/password page for credentials.</p>
+<p>The machine runs various services, including:</p>
+<ul class="simple">
+<li><p>EPICS gateways for running data between the halls</p></li>
+<li><p>ArchiveEngine for storing central data for beam currents etc.</p></li>
+<li><p>Git repositories for storing configs etc. (see <a class="reference external" href="https://control-svcs.isis.cclrc.ac.uk/git/">https://control-svcs.isis.cclrc.ac.uk/git/</a>)</p></li>
+<li><p><a class="reference external" href="https://github.com/ISISComputingGroup/ExperimentDatabasePopulator">Experiment database populator</a></p></li>
+<li><p>The <a class="reference internal" href="control_svcs/Alert-Relay.html"><span class="doc std std-doc">Alert Relay</span></a></p></li>
+<li><p><a class="reference internal" href="../webdashboard/ISIS-Info-Slack.html"><span class="doc std std-doc">Isis info slack channel bots</span></a></p></li>
+</ul>
+<p>None of these services are crucial for running instruments to continue taking data. The services log to <code class="docutils literal notranslate"><span class="pre">\home\var\</span></code> and can be restarted by killing the process as they run in procserv.</p>
+<p>These run under the “epics” user id so</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">su</span> <span class="o">-</span> <span class="n">epics</span>
+</pre></div>
+</div>
+<p>and give your “isissupport” password when prompted</p>
+<p>Depending on what you need to do, you may need to modify system init scripts to start services at boot time.</p>
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading"></a></h2>
+<section id="whole-vm-is-down">
+<h3>Whole VM is down<a class="headerlink" href="#whole-vm-is-down" title="Link to this heading"></a></h3>
+<p>The best bet at diagnosing/fixing this is to <a class="reference external" href="https://stfc365.sharepoint.com/sites/ISISExperimentControls/_layouts/15/Doc.aspx?sourcedoc=%7B289EA683-832D-4CC5-936B-A409AB379AF7%7D&amp;amp;file=vmm%20console.docx&amp;amp;action=default&amp;amp;mobileredirect=true&amp;amp;DefaultItemOpen=1">download VM Manager console</a> - ask Facilities IT if you have problems. The machine has appeared to be down in the past (unable to ping etc.) but has actually been running OK (access via VM console) - this seems to happen if the VM is “live migrated” to a new node on the cluster. Facilities IT are now aware of this and should inform us first, after the migration we may need to reboot to restore network connectivity.</p>
+</section>
+<section id="webserver-is-down">
+<h3>Webserver is down<a class="headerlink" href="#webserver-is-down" title="Link to this heading"></a></h3>
+<p>Log onto control services and check if the webserver service is running using</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">systemctl</span> <span class="n">status</span> <span class="n">httpd</span>
+</pre></div>
+</div>
+<p>If it is down, it can be restarted with the following standard commands (these commands are also used to start/auto-restart any other linux service, substituting <code class="docutils literal notranslate"><span class="pre">httpd</span></code> with the name of the appropriate service):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">systemctl</span> <span class="n">start</span> <span class="n">httpd</span>
+<span class="n">sudo</span> <span class="n">systemctl</span> <span class="n">enable</span> <span class="n">httpd</span>
+</pre></div>
+</div>
+<p>If you need to stop the service first use</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">systemctl</span> <span class="n">stop</span> <span class="n">httpd</span>
+</pre></div>
+</div>
+<p>The logs are located in <code class="docutils literal notranslate"><span class="pre">/var/log/httpd</span></code> which may be useful for troubleshooting if a simple restart does not solve the issue.</p>
+</section>
+<section id="gateways-unavailable-beam-logger-details-not-updating">
+<h3>Gateways unavailable / Beam Logger details not updating<a class="headerlink" href="#gateways-unavailable-beam-logger-details-not-updating" title="Link to this heading"></a></h3>
+<p>If PVs are visible in R3 then probably the gateway on the control service machine need to be updated.</p>
+</section>
+</section>
+<section id="further-information">
+<h2>Further Information<a class="headerlink" href="#further-information" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="control_svcs/Alert-Relay.html">Alert Relay</a></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Webserver.html" class="btn btn-neutral float-left" title="Webserver" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="control_svcs/Alert-Relay.html" class="btn btn-neutral float-right" title="Alert Relay" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on May 16, 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
