@@ -3,7 +3,6 @@ ack
 Acqiris
 actioned
 ActiveMQ
-addStrings
 adsDriver
 Aeroflex
 AeroflexIFR
@@ -533,7 +532,6 @@ mutex
 mvn
 mW
 mx
-myexample
 myperspective
 MySQL
 mysql
@@ -725,7 +723,6 @@ repurposed
 reselecting
 resync
 resynced
-reverseString
 rheometers
 rhs
 Riken
