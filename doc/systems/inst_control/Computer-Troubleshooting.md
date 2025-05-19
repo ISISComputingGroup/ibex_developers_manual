@@ -137,4 +137,4 @@ If it is through a share the file lock will not appear in here. In this case loo
 
 ## Checking windows event log on NDX computer for process crash/resource issues
 
-The windows application and system event logs contain useful details to help diagnose system, process and resource issues check as crashes and memory issues. Accessing this via the computer management (compmgmt) application is in a [separate sharepoint document](https://stfc365.sharepoint.com/:w:/r/sites/ISISExperimentControls/Instrument%20Documents/Checking%20event%20log%20on%20a%20computer.docx?d=w40b9227a3095448eb655c156c2a567db&csf=1&web=1&e=VzNF0U)
+The windows application and system event logs contain useful details to help diagnose system, process and resource issues check as crashes and memory issues. Accessing this via the computer management (`compmgmt`) application is in a [separate sharepoint document](https://stfc365.sharepoint.com/:w:/r/sites/ISISExperimentControls/Instrument%20Documents/Checking%20event%20log%20on%20a%20computer.docx?d=w40b9227a3095448eb655c156c2a567db&csf=1&web=1&e=VzNF0U)
