@@ -25,15 +25,13 @@ Part of our in-kind contribution to datastreaming is to test the system in produ
 
 ## The Kafka Cluster
 
-There is a Kafka cluster at `livedata.isis.cclrc.ac.uk`. Port 9092 is used for the primary Kafka broker. A web interface
-is available on port 8080.
+There is a Kafka cluster at `livedata.isis.cclrc.ac.uk`. Port 31092 is used for the primary Kafka broker. 
+A web interface is available [here](https://reduce.isis.cclrc.ac.uk/redpanda-console/overview).
 
 :::{important}
 It was decided that we no longer maintain the Kafka cluster, and it will be handled by the the Flexible Interactive
 Automation team. See `\\isis\shares\ISIS_Experiment_Controls\On Call\autoreduction_livedata_support.txt` for their
 support information.
-
-The Redpanda console is available [here](https://reduce.isis.cclrc.ac.uk/redpanda-console/overview) for diagnostics.
 :::
 
 ## Neutron Data
@@ -46,7 +44,8 @@ This is controlled using flags in the `isisicp.properties` file:
 isisicp.kafkastream = true
 # if not specified, topicprefix will default to instrument name in code
 isisicp.kafkastream.topicprefix =
-isisicp.kafkastream.broker = livedata.isis.cclrc.ac.uk:9092
+# FIA team run their kafka cluster on port 31092, not 9092
+isisicp.kafkastream.broker = livedata.isis.cclrc.ac.uk:31092
 isisicp.kafkastream.topic.suffix.runinfo = _runInfo
 isisicp.kafkastream.topic.suffix.sampleenv = _sampleEnv
 isisicp.kafkastream.topic.suffix.alarms = _alarms
