@@ -12,3 +12,16 @@ a:hover {
 .wy-nav-content {
     max-width: 1200px !important;
 }
+
+@keyframes highlight {
+    0% {
+        background: #01afec;
+    }
+    100% {
+        background: none;
+    }
+}
+
+:target {
+    animation: highlight 3s;
+}
