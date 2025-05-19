@@ -29,9 +29,12 @@ There is a Kafka cluster at `livedata.isis.cclrc.ac.uk`. Port 9092 is used for t
 is available on port 8080.
 
 :::{important}
-It was decided that we no longer maintain the Kafka cluster, and it will be handled by the the Flexible Interactive Automation team. See `\\isis\shares\ISIS_Experiment_Controls\On Call\autoreduction_livedata_support.txt` for their support information.
-:::
+It was decided that we no longer maintain the Kafka cluster, and it will be handled by the the Flexible Interactive
+Automation team. See `\\isis\shares\ISIS_Experiment_Controls\On Call\autoreduction_livedata_support.txt` for their
+support information.
 
+The Redpanda console is available [here](https://reduce.isis.cclrc.ac.uk/redpanda-console/overview) for diagnostics.
+:::
 
 ## Neutron Data
 
