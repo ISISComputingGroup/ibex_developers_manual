@@ -125,7 +125,7 @@ public class FooDisplay extends Canvas
 
 ## Add A New Perspective
 
-Instructions on adding a new perspective can be found [here](../coding/Adding-a-Button-to-the-Perspective-Switcher).
+Instructions on adding a new perspective can be found [here](../coding/Perspectives).
 
 ## Add A Preference Page
 
