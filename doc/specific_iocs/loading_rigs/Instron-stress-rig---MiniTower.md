@@ -25,6 +25,10 @@ Due to needing to link against the 32-bit manufacturer DLL (`Arby.dll`) for comm
 
 The manufacturer software ("Console") must be running in the background while the IOC is attempting to talk - otherwise the rig will not work.
 
+## Logs
+
+As well as the `INSTONA` IOC log there is the `RecentLogA.txt` file in `C:\ProgramData\Instron\Console\Logs` 
+ 
 ## Troubleshooting
 
 ### Cannot connect via remote desktop to `enginx-stress-1`
