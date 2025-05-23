@@ -1,0 +1,463 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adding a perspective &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Adding a plugin or feature to Maven" href="Adding-a-Plugin-or-Feature-to-Maven-Build.html" />
+    <link rel="prev" title="Coding" href="../GUI-Coding.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Building.html">Building</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../GUI-Coding.html">Coding</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Adding a perspective</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Adding-a-Plugin-or-Feature-to-Maven-Build.html">Adding a plugin or feature to Maven</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Connecting-a-View-to-a-PV.html">Connecting a view to a PV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Databinding.html">Databinding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Databinding---common-mistakes.html">Databinding - common mistakes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GUI-Coding-Conventions.html">Conventions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Instrument-switching.html">Instrument switching</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Migrating-or-adding-a-button-to-the-E4-perspective-switcher.html">Adding a button to the E4 Perspective switcher</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PV-Switching.html">PV switching</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Static-analysis.html">Static analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Eclipse.html">Eclipse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-CSS.html">CS-Studio Views in the GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Other.html">Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Troubleshooting.html">GUI Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Design.html">Design Documents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Systems.html">Systems Administration &amp; Hardware</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+          <li class="breadcrumb-item"><a href="../GUI-Coding.html">Coding</a></li>
+      <li class="breadcrumb-item active">Adding a perspective</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/client/coding/Adding-a-Button-to-the-Perspective-Switcher.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="adding-a-perspective">
+<h1>Adding a perspective<a class="headerlink" href="#adding-a-perspective" title="Link to this heading"></a></h1>
+<p><img alt="Perspective Switcher" src="../../_images/IBEX_complete_perspective_switcher_highlighted.png" /></p>
+<section id="creating-a-plug-in">
+<h2>Creating a plug-in<a class="headerlink" href="#creating-a-plug-in" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>In Eclipse, add a new UI plug-in via File-&gt;New-&gt;Other-&gt;Plug-in Development-&gt;Plug-in Project</p></li>
+<li><p>Give it a name, for example: uk.ac.stfc.isis.ibex.ui.myperspective</p></li>
+<li><p>Do not use the default location, instead set it to C:\Instrument\Dev\client\ISIS\base\ plus the plug-in name.</p>
+<ul>
+<li><p>for example: C:\Instrument\Dev\ibex_gui\base\uk.ac.stfc.isis.ibex.ui.myperspective</p></li>
+</ul>
+</li>
+<li><p>The dialog should look like this:</p></li>
+</ul>
+<p><img alt="Add Perspective" src="../../_images/eclipse_add_perspective_plugin1.png" /></p>
+<ul class="simple">
+<li><p>Click ‘Next’</p></li>
+<li><p>On the next page of the dialog check it looks like the following and click ‘Finish’:</p></li>
+</ul>
+<p><img alt="Add Perspective" src="../../_images/eclipse_add_perspective_plugin2.png" /></p>
+<p>Note: Generate an activator is unchecked as generally we do not need one for UI plug-ins, but it does not really matter if there is one.</p>
+</section>
+<section id="creating-a-perspective">
+<h2>Creating a Perspective<a class="headerlink" href="#creating-a-perspective" title="Link to this heading"></a></h2>
+<p>Now the plug-in has been created:</p>
+<ul class="simple">
+<li><p>Add a source package via File-&gt;New-&gt;Other-&gt;Java-&gt;Package</p></li>
+<li><p>Set the source folder to the path of the source folder in the newly created plug-in</p></li>
+<li><p>Set the name to something sensible prefixed by the plug-in name (or just the plug-in itself)</p></li>
+<li><p>The dialog should look something like this:</p></li>
+</ul>
+<p><img alt="Add a package" src="../../_images/eclipse_adding_a_package.png" /></p>
+<p>Note: Package names should be in the format of uk.ac.stfc.isis.ibex.ui.packagename, not org.csstudio.isis.ui.packagename as shown in all images.</p>
+<p>We now need to add a Perspective class to the new package; the easiest way to do this is to copy and paste an existing one, for example: the one in uk.ac.stfc.isis.ibex.ui.scripting, and edit it.</p>
+<p>The first thing you will notice is that there are numerous red errors.</p>
+<p><img alt="Eclipse errors" src="../../_images/eclipse_perspective_copy_errors.png" /></p>
+<p>These are easily fixed:</p>
+<ul class="simple">
+<li><p>Hover the mouse over <code class="docutils literal notranslate"><span class="pre">BasePerspective</span></code> on the <code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">class</span> <span class="pre">Perspective</span></code> line and select <code class="docutils literal notranslate"><span class="pre">Fix</span> <span class="pre">project</span> <span class="pre">setup...</span></code></p></li>
+<li><p>Delete the <code class="docutils literal notranslate"><span class="pre">Consoles.getDefault().createConsole();</span></code> line</p></li>
+<li><p>Open the MANIFEST.MF file in META_INF and select the <code class="docutils literal notranslate"><span class="pre">Dependencies</span></code> tab; on that tab click the <code class="docutils literal notranslate"><span class="pre">Add</span></code> button under <code class="docutils literal notranslate"><span class="pre">Required</span> <span class="pre">Plug-ins</span></code>. From the list select uk.ac.stfc.isis.ibex.ui and click <code class="docutils literal notranslate"><span class="pre">OK</span></code>. Add org.eclipse.ui and org.eclipse.core.runtime with the same method.</p></li>
+<li><p>There are likely to be other dependencies missing, fix any other errors.</p></li>
+<li><p>Save all the changes.</p></li>
+</ul>
+<p>The errors should now have disappeared, but there are a few more things to do:</p>
+<ul class="simple">
+<li><p>Change the value returned by the name function to be what you want shown on the Perspective Switcher. Put an ampersand before the character that you want to use as the perspective shortcut making sure that the chosen character is not in use already. (More on this later)</p></li>
+<li><p>Add a new icon (we will leave that as it is for now and fix it later!)</p></li>
+</ul>
+</section>
+<section id="creating-a-view">
+<h2>Creating a View<a class="headerlink" href="#creating-a-view" title="Link to this heading"></a></h2>
+<p>With the Perspective now in place we need to add a View:</p>
+<ul class="simple">
+<li><p>Add a new class via File-&gt;New-&gt;Other-&gt;Java-&gt;Class</p></li>
+<li><p>Make sure the Package is the same as one created earlier</p></li>
+<li><p>Enter a sensible name</p></li>
+<li><p>Click the ‘Browse’ button next to the Superclass and select ViewPart</p></li>
+</ul>
+<p>The dialog should look something like this:</p>
+<p><img alt="Add a View" src="../../_images/eclipse_adding_a_View.png" /></p>
+<p>The new class file should open in the editor. For this example I am just going to add a web browser to the view:</p>
+<ul class="simple">
+<li><p>Right-click on the View in the Package Explorer in Eclipse and select Open With-&gt;WindowBuilder Editor.</p></li>
+<li><p>In the window that pops up select the Design tab</p></li>
+<li><p>Select the FillLayout and click on the mock-up of the View to add it</p></li>
+<li><p>Select the Browser control and click on the mock-up to add it</p></li>
+<li><p>Now click on the Source tab</p></li>
+<li><p>If the <code class="docutils literal notranslate"><span class="pre">createPartControl</span></code> method has a Composite argument called arg0 change it to parent</p></li>
+<li><p>Delete the TODO comments</p></li>
+<li><p>Add an ID for the View which is the full-name of the class in lower-case; for example: uk.ac.stfc.isis.ibex.ui.myperspective.myview</p></li>
+<li><p>It should now look something like:</p></li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="kn">package</span><span class="w"> </span><span class="nn">uk.ac.stfc.isis.ibex.ui.myperspective</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kn">import</span><span class="w"> </span><span class="nn">org.eclipse.swt.widgets.Composite</span><span class="p">;</span>
+<span class="w">    </span><span class="kn">import</span><span class="w"> </span><span class="nn">org.eclipse.ui.part.ViewPart</span><span class="p">;</span>
+<span class="w">    </span><span class="kn">import</span><span class="w"> </span><span class="nn">org.eclipse.swt.layout.FillLayout</span><span class="p">;</span>
+<span class="w">    </span><span class="kn">import</span><span class="w"> </span><span class="nn">org.eclipse.swt.SWT</span><span class="p">;</span>
+<span class="w">    </span><span class="kn">import</span><span class="w"> </span><span class="nn">org.eclipse.swt.browser.Browser</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MyView</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">ViewPart</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;uk.ac.stfc.isis.ibex.ui.myperspective.myview&quot;</span><span class="p">;</span>
+<span class="w">        </span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="nf">MyView</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="nd">@Override</span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">createPartControl</span><span class="p">(</span><span class="n">Composite</span><span class="w"> </span><span class="n">parent</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">parent</span><span class="p">.</span><span class="na">setLayout</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">FillLayout</span><span class="p">(</span><span class="n">SWT</span><span class="p">.</span><span class="na">HORIZONTAL</span><span class="p">));</span>
+<span class="w">            </span>
+<span class="w">            </span><span class="n">Browser</span><span class="w"> </span><span class="n">browser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Browser</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span><span class="w"> </span><span class="n">SWT</span><span class="p">.</span><span class="na">NONE</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="nd">@Override</span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setFocus</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="adding-the-perspective-and-view-to-the-gui">
+<h2>Adding the Perspective and View to the GUI<a class="headerlink" href="#adding-the-perspective-and-view-to-the-gui" title="Link to this heading"></a></h2>
+<p>Note: The extensions are defined in XML inside plugin.xml, so example XML is included below if you would prefer to edit that directly.</p>
+<p>Note: Sometimes Eclipse cannot find the schema for the extensions, so when trying to select, say, New-&gt;contribution contribution does not appear in the list rather it says Generic; in this case, it is necessary to edit the XML directly.</p>
+<p>To add both the new Perspective and View to the main GUI we use extensions. First let’s add the Perspective:</p>
+<ul class="simple">
+<li><p>Open the MANIFEST.MF file in META_INF and select the ‘Extensions’ tab, it should be empty like this:</p></li>
+</ul>
+<p><img alt="Extensions" src="../../_images/eclipse_no_extensions.png" /></p>
+<ul class="simple">
+<li><p>Click the ‘Add’ button and select uk.ac.stfc.isis.ibex.ui.perspectives extension point and click ‘Finish’</p></li>
+</ul>
+<p><img alt="Extension points" src="../../_images/eclipse_select_extension_point.png" /></p>
+<ul class="simple">
+<li><p>It should now look like this:</p></li>
+</ul>
+<p><img alt="Extension points" src="../../_images/eclipse_extensions_added1.png" /></p>
+<ul class="simple">
+<li><p>Right-click on the uk.ac.stfc.isis.ibex.ui.perspectives extension point and select New-&gt;contribution</p></li>
+<li><p>The contribution should appear below the extension point</p></li>
+<li><p>Using the ‘Browse’ button select the Perspective class created earlier, the screen should now look like like this:</p></li>
+</ul>
+<p><img alt="Extension points" src="../../_images/eclipse_extensions_added2.png" /></p>
+<ul class="simple">
+<li><p>Using the ‘Add’ button as before we need to add org.eclipse.ui.perspectives extension point</p></li>
+<li><p>Right-click on the new extension point and select New-&gt;perspective; the new perspective should appear below the extension point</p></li>
+<li><p>Select the newly added item and fill in the required details, it should look something like this:</p></li>
+</ul>
+<p><img alt="Extension points" src="../../_images/eclipse_extensions_added3.png" /></p>
+<p>The XML in plugin.xml for what we have done so far is:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="w">   </span><span class="nt">&lt;extension</span>
+<span class="w">         </span><span class="na">point=</span><span class="s">&quot;uk.ac.stfc.isis.ibex.ui.perspectives&quot;</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;contribution</span>
+<span class="w">            </span><span class="na">class=</span><span class="s">&quot;uk.ac.stfc.isis.ibex.ui.myperspective.Perspective&quot;</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/contribution&gt;</span>
+<span class="w">   </span><span class="nt">&lt;/extension&gt;</span>
+<span class="w">   </span><span class="nt">&lt;extension</span>
+<span class="w">         </span><span class="na">point=</span><span class="s">&quot;org.eclipse.ui.perspectives&quot;</span><span class="nt">&gt;</span>
+<span class="w">         </span><span class="nt">&lt;perspective</span>
+<span class="w">            </span><span class="na">class=</span><span class="s">&quot;uk.ac.stfc.isis.ibex.ui.myperspective.Perspective&quot;</span>
+<span class="w">            </span><span class="na">id=</span><span class="s">&quot;uk.ac.stfc.isis.ibex.ui.myperspective.perspective&quot;</span>
+<span class="w">            </span><span class="na">name=</span><span class="s">&quot;My Perspective&quot;</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/perspective&gt;</span>
+<span class="w">   </span><span class="nt">&lt;/extension&gt;</span>
+</pre></div>
+</div>
+<p>Now we add the extensions for the View:</p>
+<ul class="simple">
+<li><p>Using the ‘Add’ button as before we need to add org.eclipse.ui.perspectiveExtensions extension point</p></li>
+<li><p>Right-click on the new extension point and select New-&gt;perspectiveExtension; the new perspectiveExtension should appear below the extension point</p></li>
+<li><p>For the new perspectiveExtension set the targetID to the ID of your perspective, for this example it is uk.ac.stfc.isis.ibex.ui.myperspective.perspective</p></li>
+<li><p>Right-click on the perspectiveExtension and select New-&gt;view; the new view should appear</p></li>
+<li><p>Select the view and change the ID to the ID of your View, for example: uk.ac.stfc.isis.ibex.ui.myperspective.myview</p></li>
+<li><p>Change the relative to uk.ac.stfc.isis.ibex.ui.perspectives.PerspectiveSwitcher</p></li>
+<li><p>The remaining setting determine how the View will appear and behave, it is recommended that you set the following values:</p>
+<ul>
+<li><p>closeable: false</p></li>
+<li><p>minimized: false</p></li>
+<li><p>moveable: false</p></li>
+<li><p>showTitle: false</p></li>
+<li><p>standalone: true</p></li>
+<li><p>visible: true</p></li>
+<li><p>relationship: right</p></li>
+</ul>
+</li>
+<li><p>It should look something like this:</p></li>
+</ul>
+<p><img alt="Extension points" src="../../_images/eclipse_extensions_added4.png" /></p>
+<ul class="simple">
+<li><p>Next, using the ‘Add’ button we need to add org.eclipse.ui.views extension point</p></li>
+<li><p>Right-click on the new item and select New-&gt;view; the new view should appear below the extension point</p></li>
+<li><p>Set the class and id to the name and id of your View class respectively; it should look something like this:</p></li>
+</ul>
+<p><img alt="Extension points" src="../../_images/eclipse_extensions_added5.png" /></p>
+<p>The XML in the plugin.xml for the View related stuff is:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="w">   </span><span class="nt">&lt;extension</span>
+<span class="w">         </span><span class="na">point=</span><span class="s">&quot;org.eclipse.ui.perspectiveExtensions&quot;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;perspectiveExtension</span>
+<span class="w">            </span><span class="na">targetID=</span><span class="s">&quot;uk.ac.stfc.isis.ibex.ui.myperspective.perspective&quot;</span><span class="nt">&gt;</span>
+<span class="w">         </span><span class="nt">&lt;view</span>
+<span class="w">               </span><span class="na">closeable=</span><span class="s">&quot;false&quot;</span>
+<span class="w">               </span><span class="na">id=</span><span class="s">&quot;uk.ac.stfc.isis.ibex.ui.myperspective.myview&quot;</span>
+<span class="w">               </span><span class="na">minimized=</span><span class="s">&quot;false&quot;</span>
+<span class="w">               </span><span class="na">moveable=</span><span class="s">&quot;false&quot;</span>
+<span class="w">               </span><span class="na">ratio=</span><span class="s">&quot;0.1f&quot;</span>
+<span class="w">               </span><span class="na">relationship=</span><span class="s">&quot;right&quot;</span>
+<span class="w">               </span><span class="na">relative=</span><span class="s">&quot;uk.ac.stfc.isis.ibex.ui.perspectives.PerspectiveSwitcher&quot;</span>
+<span class="w">               </span><span class="na">showTitle=</span><span class="s">&quot;false&quot;</span>
+<span class="w">               </span><span class="na">standalone=</span><span class="s">&quot;true&quot;</span>
+<span class="w">               </span><span class="na">visible=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
+<span class="w">         </span><span class="nt">&lt;/view&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/perspectiveExtension&gt;</span>
+<span class="w">   </span><span class="nt">&lt;/extension&gt;</span>
+<span class="w">   </span><span class="nt">&lt;extension</span>
+<span class="w">         </span><span class="na">point=</span><span class="s">&quot;org.eclipse.ui.views&quot;</span><span class="nt">&gt;</span>
+<span class="w">         </span><span class="nt">&lt;view</span>
+<span class="w">            </span><span class="na">allowMultiple=</span><span class="s">&quot;false&quot;</span>
+<span class="w">            </span><span class="na">class=</span><span class="s">&quot;uk.ac.stfc.isis.ibex.ui.myperspective.MyView&quot;</span>
+<span class="w">            </span><span class="na">id=</span><span class="s">&quot;uk.ac.stfc.isis.ibex.ui.myperspective.myview&quot;</span>
+<span class="w">            </span><span class="na">name=</span><span class="s">&quot;My View&quot;</span>
+<span class="w">            </span><span class="na">restorable=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/view&gt;</span>
+<span class="w">   </span><span class="nt">&lt;/extension&gt;</span>
+</pre></div>
+</div>
+<p>Finally, the last step is to add the plug-in we created to uk.ac.stfc.isis.ibex.feature.base:</p>
+<ul class="simple">
+<li><p>Open the feature.xml file in uk.ac.stfc.isis.ibex.feature.base and select the Plug-ins tab</p></li>
+<li><p>Click the ‘Add’ button and select the new plug-in we created</p></li>
+<li><p>Save everything and run the main GUI - hopefully, the new Perspective will appear</p></li>
+</ul>
+</section>
+<section id="adding-a-new-icon">
+<h2>Adding a new icon<a class="headerlink" href="#adding-a-new-icon" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Grab a nice png icon which is appropriately sized (<code class="docutils literal notranslate"><span class="pre">24x24</span></code> pixels) from somewhere like <a class="reference external" href="http://www.flaticon.com/">http://www.flaticon.com/</a></p></li>
+<li><p>Create a icons folder in the top-level of the plug-in</p></li>
+<li><p>Drag the icon into it</p></li>
+<li><p>Open the MANIFEST.MF file and select the Build tab</p></li>
+<li><p>Tick the icons box under Binary Build to include the icons folder in the build</p></li>
+</ul>
+<p><img alt="Add an icon" src="../../_images/eclipse_add_icons_to_build.png" /></p>
+<ul class="simple">
+<li><p>Open the Perspective class created earlier</p></li>
+<li><p>Change the image method to return the new icon from the correct plug-in by changing the plug-in name and icon name, like so:</p></li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="kn">package</span><span class="w"> </span><span class="nn">uk.ac.stfc.isis.ibex.ui.myperspective</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kn">import</span><span class="w"> </span><span class="nn">uk.ac.stfc.isis.ibex.ui.perspectives.BasePerspective</span><span class="p">;</span>
+<span class="w">    </span><span class="kn">import</span><span class="w"> </span><span class="nn">org.eclipse.swt.graphics.Image</span><span class="p">;</span>
+<span class="w">    </span><span class="kn">import</span><span class="w"> </span><span class="nn">org.eclipse.ui.IPageLayout</span><span class="p">;</span>
+<span class="w">    </span><span class="kn">import</span><span class="w"> </span><span class="nn">org.eclipse.wb.swt.ResourceManager</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Perspective</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">BasePerspective</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;uk.ac.stfc.isis.ibex.ui.myperspective.perspective&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">//$NON-NLS-1$</span>
+
+<span class="w">        </span><span class="nd">@Override</span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">createInitialLayout</span><span class="p">(</span><span class="n">IPageLayout</span><span class="w"> </span><span class="n">layout</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="kd">super</span><span class="p">.</span><span class="na">createInitialLayout</span><span class="p">(</span><span class="n">layout</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span>
+<span class="w">        </span><span class="nd">@Override</span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">ID</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">ID</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="nd">@Override</span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">name</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;My Perspective&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span>
+<span class="w">        </span><span class="nd">@Override</span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="n">Image</span><span class="w"> </span><span class="nf">image</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">ResourceManager</span><span class="p">.</span><span class="na">getPluginImage</span><span class="p">(</span><span class="s">&quot;uk.ac.stfc.isis.ibex.myperspective&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;icons/myperspective.png&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Finally, start the GUI to check the new icon is shown</p></li>
+</ul>
+</section>
+<section id="adding-a-keyboard-shortcut">
+<h2>Adding a keyboard shortcut<a class="headerlink" href="#adding-a-keyboard-shortcut" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>In the plugin xml for your new perspective add the following:</p></li>
+</ul>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="nt">&lt;extension</span>
+<span class="w">         </span><span class="na">point=</span><span class="s">&quot;org.eclipse.ui.bindings&quot;</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;key</span>
+<span class="w">            </span><span class="na">commandId=</span><span class="s">&quot;uk.ac.stfc.isis.ibex.ui.perspectives.commands.SwitchPerspective&quot;</span>
+<span class="w">            </span><span class="na">schemeId=</span><span class="s">&quot;IBEX_key_scheme&quot;</span>
+<span class="w">            </span><span class="na">sequence=</span><span class="s">&quot;Alt+Shift+_char chosen earlier_&quot;</span><span class="nt">&gt;</span>
+<span class="w">         </span><span class="nt">&lt;parameter</span>
+<span class="w">               </span><span class="na">id=</span><span class="s">&quot;uk.ac.stfc.isis.ibex.ui.perspectives.commands.perspectiveID&quot;</span>
+<span class="w">               </span><span class="na">value=</span><span class="s">&quot;_your perspective id_&quot;</span><span class="nt">&gt;</span>
+<span class="w">         </span><span class="nt">&lt;/parameter&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/key&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/extension&gt;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Run the GUI and hit ALT + SHIFT + <em>chosen char</em> and confirm that the perspective is switched to.</p></li>
+</ul>
+</section>
+<section id="setting-the-perspective-to-be-invisible">
+<h2>Setting the Perspective to be invisible<a class="headerlink" href="#setting-the-perspective-to-be-invisible" title="Link to this heading"></a></h2>
+<p>If you are creating the perspective for testing a new feature that you do not want displayed to the user by default then add the following code to your perspective class:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>	<span class="nd">@Override</span>
+	<span class="n">public</span> <span class="n">boolean</span> <span class="n">isVisibleDefault</span><span class="p">()</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="n">false</span><span class="p">;</span> 
+	<span class="p">}</span>
+</pre></div>
+</div>
+<p>by default this value is set to true and so perspectives are displayed.</p>
+<p>To subsequently display the perspective run IBEX and go to the perspective window (CTRL + ALT + P) then enable the checkbox in ISIS Perspectives. On the next restart of the GUI your perspective should be displayed.</p>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading"></a></h2>
+<p>If the perspective is not being shown in the switcher at the side it may be Eclipse being silly or you may not be running the right product. Be sure to re-run by going selecting the client product, rather than using the drop-down (which will run the same product as you used previously) Finally, try clearing the workspace and resetting the target platform etc.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../GUI-Coding.html" class="btn btn-neutral float-left" title="Coding" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Adding-a-Plugin-or-Feature-to-Maven-Build.html" class="btn btn-neutral float-right" title="Adding a plugin or feature to Maven" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on May 23, 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
