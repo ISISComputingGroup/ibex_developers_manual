@@ -1,2 +1,0 @@
-# CAEN Hexagon
-
