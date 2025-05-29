@@ -6,3 +6,8 @@ Data is published to the usual instrument network archive, but to the `autoreduc
 
 scripting currently has some extra `begin_hexagons` and `end_hexagons` commands defined in the local python to start/stop acquisition - this also begins a usual run, so do not use normal begin commands. Do not use `begin` and `end` - this will just start a simulated DAE run, use the special hexagon commands mentioned previously.
 
+## Troubleshooting
+
+Sometimes the hexagon loses connection with the IOC, this can be due to a hexagin spontaneous reboot or it may have hung. If you see errors like `exception in pollerTask: CAENMCA::GetData(): Generic error` then
+- try an IOC restrart
+- try a hexagon power cycle then an IOC restart
