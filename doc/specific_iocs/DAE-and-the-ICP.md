@@ -2,7 +2,7 @@
 
 The Data Acquisition Electronics (DAE) is the physical hardware that reads the neutron events out of the detectors. IBEX communicates with this hardware via the Instrument Control Program (ICP). This program is also responsible for combining the neutron and sample environment data into the NeXus file. 
 
-Note: the `MUX` instrument uses a [different type of acquisition electronics](CAEN-Hexagon.md)
+Note: the `MUX` instrument uses a [different type of acquisition electronics](other/CAEN-Hexagon.md)
 
 ## Running the DAE in Parallel
 
