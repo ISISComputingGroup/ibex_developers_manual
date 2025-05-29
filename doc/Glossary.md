@@ -32,6 +32,11 @@ A method of changing the internal parameters of an emulator to mimic the behavio
 
 Slits used on each of the Muon instruments to control the neutron flux to the sample.  Each "jaw" pivots on one edge, much like a door on a hinge.
 
+## BDD
+
+Behaviour-driven development. See the [Agile Alliance definition of BDD](https://www.agilealliance.org/glossary/bdd/),
+and [how we use BDD for testing in Squish](/client/testing/System-Testing-with-Squish-BDD).
+
 ## Block
 
 ## Block Archive

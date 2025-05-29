@@ -95,4 +95,5 @@ redirects = {
     "client/eclipse/Creating-the-IBEX-Developer-Version-of-Eclipse": "../compiling/Building-the-GUI.html#gui-build-install-eclipse",  # noqa E501
     "client/eclipse/Dictionary-setup": "Common-Eclipse-Issues.html#adding-a-dictionary-to-eclipse-s-spelling-checker",  # noqa E501
     "client/getting_started/GUI-Development-Workflow": "../../processes/git_and_github/Git-workflow.html",  # noqa E501
+    "client/testing/Using-Mockito-for-Testing-in-the-GUI": "Mockito.html",
 }
