@@ -8,6 +8,6 @@ scripting currently has some extra `begin_hexagons` and `end_hexagons` commands 
 
 ## Troubleshooting
 
-Sometimes the hexagon loses connection with the IOC, this can be due to a hexagin spontaneous reboot or it may have hung. If you see errors like `exception in pollerTask: CAENMCA::GetData(): Generic error` then
-- try an IOC restrart
+Sometimes the hexagon loses connection with the IOC, this can be due to a hexagon spontaneous reboot or it may have hung. If you see errors like `exception in pollerTask: CAENMCA::GetData(): Generic error` then
+- try an IOC restart
 - try a hexagon power cycle then an IOC restart
