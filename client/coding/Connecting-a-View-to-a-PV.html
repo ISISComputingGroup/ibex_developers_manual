@@ -1,0 +1,800 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Connecting a view to a PV &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Databinding" href="Databinding.html" />
+    <link rel="prev" title="Adding a plugin or feature to Maven" href="Adding-a-Plugin-or-Feature-to-Maven-Build.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Building.html">Building</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../GUI-Coding.html">Coding</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Adding-a-Button-to-the-Perspective-Switcher.html">Adding a perspective</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Adding-a-Plugin-or-Feature-to-Maven-Build.html">Adding a plugin or feature to Maven</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Connecting a view to a PV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Databinding.html">Databinding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Databinding---common-mistakes.html">Databinding - common mistakes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GUI-Coding-Conventions.html">Conventions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Instrument-switching.html">Instrument switching</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Migrating-or-adding-a-button-to-the-E4-perspective-switcher.html">Adding a button to the E4 Perspective switcher</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PV-Switching.html">PV switching</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Static-analysis.html">Static analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Eclipse.html">Eclipse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-CSS.html">CS-Studio Views in the GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Other.html">Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Troubleshooting.html">GUI Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Design.html">Design Documents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Systems.html">Systems Administration &amp; Hardware</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+          <li class="breadcrumb-item"><a href="../GUI-Coding.html">Coding</a></li>
+      <li class="breadcrumb-item active">Connecting a view to a PV</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/client/coding/Connecting-a-View-to-a-PV.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="connecting-a-view-to-a-pv">
+<h1>Connecting a view to a PV<a class="headerlink" href="#connecting-a-view-to-a-pv" title="Link to this heading"></a></h1>
+<p>See <a class="reference internal" href="Databinding.html"><span class="doc std std-doc">An Introduction to Databinding</span></a> for a explanation of databinding.</p>
+<p>The basic arrangement for the mechanism for connecting a View to a PV is shown below:</p>
+<p><img alt="Basic principle" src="../../_images/basic_principle.png" /></p>
+<section id="adding-an-observable">
+<h2>Adding an Observable<a class="headerlink" href="#adding-an-observable" title="Link to this heading"></a></h2>
+<p>The Observable is responsible for the connection to the PV and monitoring it for changes.</p>
+<p>For this example we are going to connect and read the title PV on the DAE IOC. There is already a way of getting the title in the IBEX GUI, but for demonstration purposes we are going to ignore that!</p>
+<p>First we need to create a new Plug-in in Eclipse:</p>
+<ul class="simple">
+<li><p>Select File-&gt;New-&gt;Plug-in Project</p></li>
+<li><p>Enter org.csstudio.isis.title for the project name</p></li>
+<li><p>Un-check ‘Use default location’ and browse to where the GUI code is located and append the project name to the path. For example, on my system the location would be C:\Instrument\Dev\client\ISIS\base\org.csstudio.isis.title</p></li>
+<li><p>Click ‘Next’</p></li>
+<li><p>On the next screen, check the ‘Generate an activator …’ check-box and un-check the others.</p></li>
+<li><p>Set ‘Would you like to create a 3.x rich client application?’ to ‘No’</p></li>
+<li><p>Click ‘Finish’</p></li>
+</ul>
+<p>Now the Plug-in is created we can create an Observable:</p>
+<ul class="simple">
+<li><p>Open the MANIFEST.MF file in META-INF and under the ‘Dependencies’ tab add org.csstudio.isis.instrument to the list of required plug-ins</p></li>
+<li><p>Don’t forget to save the changes</p></li>
+<li><p>Create a new Class called TitleVariable, this will be the class that holds the connection to the PV</p></li>
+<li><p>First we will need to create an observable factory to get our observable, in this case the PV should be updated when the instrument switches so add the following as a field.</p></li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">ObservableFactory</span><span class="w"> </span><span class="n">obsFactory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ObservableFactory</span><span class="p">(</span><span class="n">OnInstrumentSwitch</span><span class="p">.</span><span class="na">SWITCH</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Next we get the specific variable for the PV the observable for the PV:</p></li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span><span class="w"> </span><span class="nn">org.csstudio.isis.title</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">uk.ac.stfc.isis.ibex.epics.observing.ForwardingObservable</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">uk.ac.stfc.isis.ibex.epics.switching.ObservableFactory</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">uk.ac.stfc.isis.ibex.epics.switching.OnInstrumentSwitch</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.csstudio.isis.instrument.Channels</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.csstudio.isis.instrument.channels.CharWaveformChannel</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">uk.ac.stfc.isis.ibex.instrument.InstrumentUtils</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TitleVariable</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">ObservableFactory</span><span class="w"> </span><span class="n">obsFactory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ObservableFactory</span><span class="p">(</span><span class="n">OnInstrumentSwitch</span><span class="p">.</span><span class="na">SWITCH</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">ForwardingObservable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">titleRBV</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
+<span class="w">            </span><span class="n">obsFactory</span><span class="p">.</span><span class="na">getSwitchableObservable</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CharWaveformChannel</span><span class="p">(),</span><span class="w"> </span><span class="n">InstrumentUtils</span><span class="p">.</span><span class="na">addPrefix</span><span class="p">(</span><span class="s">&quot;DAE:TITLE&quot;</span><span class="p">));</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">TitleVariable</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="p">}</span><span class="w"> </span>
+</pre></div>
+</div>
+<p>Explanation on Channels, <code class="docutils literal notranslate"><span class="pre">InitialiseOnSubscribeObservable</span></code> and reader.</p>
+</section>
+<section id="adding-a-model-interface">
+<h2>Adding a Model interface<a class="headerlink" href="#adding-a-model-interface" title="Link to this heading"></a></h2>
+<p>Next we create a Model interface:</p>
+<ul class="simple">
+<li><p>Create a new Interface called TitleModel``</p></li>
+<li><p>Implementing the interface will require <code class="docutils literal notranslate"><span class="pre">getTitle</span></code> and <code class="docutils literal notranslate"><span class="pre">setTitle</span></code> methods, so the code needs to look like:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">java</span>
+<span class="n">package</span> <span class="n">org</span><span class="o">.</span><span class="n">csstudio</span><span class="o">.</span><span class="n">isis</span><span class="o">.</span><span class="n">title</span><span class="p">;</span>
+
+<span class="n">public</span> <span class="n">interface</span> <span class="n">TitleModel</span> <span class="p">{</span>
+    <span class="n">String</span> <span class="n">getTitle</span><span class="p">();</span>
+    <span class="n">void</span> <span class="n">setTitle</span><span class="p">(</span><span class="n">String</span> <span class="n">value</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="adding-an-observablemodel">
+<h2>Adding an ObservableModel<a class="headerlink" href="#adding-an-observablemodel" title="Link to this heading"></a></h2>
+<p>Next we create an ObservableModel which allows us to bind controls on the View to the PV Observable:</p>
+<ul class="simple">
+<li><p>Create a new Class called ObservableTitleModel</p></li>
+<li><p>ObservableTitleModel needs to inherit from ModelObject from org.csstudio.isis.model, so change the code to look like:</p></li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span><span class="w"> </span><span class="nn">org.csstudio.isis.title</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ObservableTitleModel</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">ModelObject</span><span class="w"> </span><span class="p">{</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>To fix the errors we need to add org.csstudio.isis.model to the required plug-ins list in the MANIFEST.INF. We can either add it manually or hover over the error and select “Add ‘org.csstudio.isis.model’ to required bundles”</p></li>
+<li><p>The next error can be fixed via the drop-down by selecting “Import ‘ModelObject’ (org.csstudio.isis.model)”</p></li>
+<li><p>The class also needs to implement TitleModel, so change the code to implement TitleModel:</p></li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ObservableTitleModel</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">ModelObject</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">TitleModel</span><span class="w"> </span><span class="p">{</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>There should now be an error because the methods of TitleModel are not implemented. Hover over the error and select ‘Add unimplemented methods’. The code should look like this:</p></li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span><span class="w"> </span><span class="nn">org.csstudio.isis.title</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.csstudio.isis.epics.observing.BaseObserver</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.csstudio.isis.model.ModelObject</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ObservableTitleModel</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">ModelObject</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">TitleModel</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">title</span><span class="p">;</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getTitle</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// TODO Auto-generated method stub</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setTitle</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// TODO Auto-generated method stub</span>
+<span class="w">        </span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>The correctly cased getter and setter are requirements for the object to be bindable from a View (<a class="reference external" href="http://en.wikipedia.org/wiki/JavaBeans">http://en.wikipedia.org/wiki/JavaBeans</a>). We now need to add our own code to the methods:</p></li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span><span class="w"> </span><span class="nn">org.csstudio.isis.title</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.csstudio.isis.model.ModelObject</span><span class="p">;</span>
+
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ObservableTitleModel</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">ModelObject</span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">title</span><span class="p">;</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getTitle</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">title</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setTitle</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">firePropertyChange</span><span class="p">(</span><span class="s">&quot;title&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">title</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">firePropertyChange</span></code> method raises an event when the title changes.</p>
+<ul class="simple">
+<li><p>Next we create a BaseObserver inside the class, like so:</p></li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span><span class="w"> </span><span class="nn">org.csstudio.isis.title</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.csstudio.isis.epics.observing.BaseObserver</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.csstudio.isis.model.ModelObject</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ObservableTitleModel</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">ModelObject</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">TitleModel</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">title</span><span class="p">;</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">BaseObserver</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">titleObserver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BaseObserver</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">(){</span>
+
+<span class="w">        </span><span class="nd">@Override</span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onValue</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">setTitle</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="nd">@Override</span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onError</span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="nd">@Override</span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onConnectionChanged</span><span class="p">(</span><span class="kt">boolean</span><span class="w"> </span><span class="n">isConnected</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getTitle</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">title</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setTitle</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">firePropertyChange</span><span class="p">(</span><span class="s">&quot;title&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">title</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>The BaseObserver is responsible for observing changes in the TitleVariable, but for that we need to wire the objects up. Add a private variable for TitleVariable, like so:</p></li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="p">...</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ObservableTitleModel</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">ModelObject</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">TitleModel</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">title</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">TitleVariable</span><span class="w"> </span><span class="n">titleVar</span><span class="p">;</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">BaseObserver</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">titleObserver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BaseObserver</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">(){</span>
+<span class="p">...</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Now we add a constructor for that allows the wiring up of the BaseObserver and the TitleVariable:</p></li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="nf">ObservableTitleModel</span><span class="p">(</span><span class="n">TitleVariable</span><span class="w"> </span><span class="n">titleVar</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">titleVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">titleVar</span><span class="p">;</span>
+<span class="w">    </span><span class="n">titleVar</span><span class="p">.</span><span class="na">titleRBV</span><span class="p">.</span><span class="na">subscribe</span><span class="p">(</span><span class="n">titleObserver</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>The final class looks like this:</p></li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span><span class="w"> </span><span class="nn">org.csstudio.isis.title</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.csstudio.isis.epics.observing.BaseObserver</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.csstudio.isis.model.ModelObject</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ObservableTitleModel</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">ModelObject</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">TitleModel</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">title</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">TitleVariable</span><span class="w"> </span><span class="n">titleVar</span><span class="p">;</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">BaseObserver</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">titleObserver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BaseObserver</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="nd">@Override</span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onValue</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">setTitle</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="nd">@Override</span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onError</span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="nd">@Override</span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onConnectionChanged</span><span class="p">(</span><span class="kt">boolean</span><span class="w"> </span><span class="n">isConnected</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getTitle</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">title</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setTitle</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">firePropertyChange</span><span class="p">(</span><span class="s">&quot;title&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">title</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">ObservableTitleModel</span><span class="p">(</span><span class="n">TitleVariable</span><span class="w"> </span><span class="n">titleVar</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">titleVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">titleVar</span><span class="p">;</span>
+<span class="w">        </span><span class="n">titleVar</span><span class="p">.</span><span class="na">titleRBV</span><span class="p">.</span><span class="na">subscribe</span><span class="p">(</span><span class="n">titleObserver</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="the-activator">
+<h2>The Activator<a class="headerlink" href="#the-activator" title="Link to this heading"></a></h2>
+<p>The Activator is the entry-point for the Plug-in - it gets created when the Plug-in is first used.
+This is where we wire up the ObservableTitleModel and the TitleVariable:</p>
+<ul class="simple">
+<li><p>First we want to rename Activator because it is not a very descriptive name, let’s refactor it to be called Title (okay that is not much better…)</p></li>
+<li><p>We want to make the Activator a singleton, so we need it to contain a static instance of itself, a constructor and a <code class="docutils literal notranslate"><span class="pre">getInstance</span></code> method:</p></li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span><span class="w"> </span><span class="nn">org.csstudio.isis.title</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.osgi.framework.BundleActivator</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.osgi.framework.BundleContext</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Title</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">BundleActivator</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">BundleContext</span><span class="w"> </span><span class="n">context</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Title</span><span class="w"> </span><span class="n">instance</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Title</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">;</span><span class="w">		</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Title</span><span class="w"> </span><span class="nf">getInstance</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">instance</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="n">BundleContext</span><span class="w"> </span><span class="nf">getContext</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">context</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="cm">/*</span>
+<span class="cm">     * (non-Javadoc)</span>
+<span class="cm">     * @see org.osgi.framework.BundleActivator#start(org.osgi.framework.BundleContext)</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span><span class="n">BundleContext</span><span class="w"> </span><span class="n">bundleContext</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Title</span><span class="p">.</span><span class="na">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bundleContext</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="cm">/*</span>
+<span class="cm">     * (non-Javadoc)</span>
+<span class="cm">     * @see org.osgi.framework.BundleActivator#stop(org.osgi.framework.BundleContext)</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">stop</span><span class="p">(</span><span class="n">BundleContext</span><span class="w"> </span><span class="n">bundleContext</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Title</span><span class="p">.</span><span class="na">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Now we need it to wire up our classes from earlier, so we add the wiring up to the constructor:</p></li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="p">...</span>
+<span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">BundleContext</span><span class="w"> </span><span class="n">context</span><span class="p">;</span>
+<span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Title</span><span class="w"> </span><span class="n">instance</span><span class="p">;</span>
+
+<span class="kd">private</span><span class="w"> </span><span class="n">TitleVariable</span><span class="w"> </span><span class="n">titleVar</span><span class="p">;</span>
+<span class="kd">private</span><span class="w"> </span><span class="n">ObservableTitleModel</span><span class="w"> </span><span class="n">model</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="nf">Title</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">;</span><span class="w">		</span>
+<span class="w">    </span><span class="n">titleVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TitleVariable</span><span class="p">(</span><span class="n">Instrument</span><span class="p">.</span><span class="na">getInstance</span><span class="p">().</span><span class="na">channels</span><span class="p">());</span>
+<span class="w">    </span><span class="n">model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ObservableTitleModel</span><span class="p">(</span><span class="n">titleVar</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="p">...</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Finally we add a method to retrieve the model so we can bind against it. The final code look like this:</p></li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span><span class="w"> </span><span class="nn">org.csstudio.isis.title</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.csstudio.isis.instrument.Instrument</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.osgi.framework.BundleActivator</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.osgi.framework.BundleContext</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Title</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">BundleActivator</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">BundleContext</span><span class="w"> </span><span class="n">context</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Title</span><span class="w"> </span><span class="n">instance</span><span class="p">;</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">TitleVariable</span><span class="w"> </span><span class="n">titleVar</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">ObservableTitleModel</span><span class="w"> </span><span class="n">model</span><span class="p">;</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Title</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">;</span><span class="w">		</span>
+<span class="w">        </span><span class="n">titleVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TitleVariable</span><span class="p">(</span><span class="n">Instrument</span><span class="p">.</span><span class="na">getInstance</span><span class="p">().</span><span class="na">channels</span><span class="p">());</span>
+<span class="w">        </span><span class="n">model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ObservableTitleModel</span><span class="p">(</span><span class="n">titleVar</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Title</span><span class="w"> </span><span class="nf">getInstance</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">instance</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">ObservableTitleModel</span><span class="w"> </span><span class="nf">model</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">model</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="n">BundleContext</span><span class="w"> </span><span class="nf">getContext</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">context</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="cm">/*</span>
+<span class="cm">     * (non-Javadoc)</span>
+<span class="cm">     * @see org.osgi.framework.BundleActivator#start(org.osgi.framework.BundleContext)</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span><span class="n">BundleContext</span><span class="w"> </span><span class="n">bundleContext</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Title</span><span class="p">.</span><span class="na">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bundleContext</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="cm">/*</span>
+<span class="cm">     * (non-Javadoc)</span>
+<span class="cm">     * @see org.osgi.framework.BundleActivator#stop(org.osgi.framework.BundleContext)</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">stop</span><span class="p">(</span><span class="n">BundleContext</span><span class="w"> </span><span class="n">bundleContext</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Title</span><span class="p">.</span><span class="na">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="a-little-tidying-up">
+<h2>A little tidying up<a class="headerlink" href="#a-little-tidying-up" title="Link to this heading"></a></h2>
+<p>By convention we should put any class etc. we don’t want exposed outside outside of the Plug-in in a package ending in internal. In this example the package would be called org.csstudio.isis.title.internal.</p>
+</section>
+<section id="binding-the-view-to-the-model">
+<h2>Binding the View to the Model<a class="headerlink" href="#binding-the-view-to-the-model" title="Link to this heading"></a></h2>
+<p>The simplest way to do this is to add a method for creating the binding to the View:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">private</span><span class="w"> </span><span class="n">DataBindingContext</span><span class="w"> </span><span class="n">bindingContext</span><span class="p">;</span>
+
+<span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">doBinding</span><span class="p">(</span><span class="n">Label</span><span class="w"> </span><span class="n">lblTitle</span><span class="p">){</span>
+<span class="w">    </span><span class="n">bindingContext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DataBindingContext</span><span class="p">();</span>
+<span class="w">    </span><span class="n">bindingContext</span><span class="p">.</span><span class="na">bindValue</span><span class="p">(</span><span class="n">WidgetProperties</span><span class="p">.</span><span class="na">text</span><span class="p">().</span><span class="na">observe</span><span class="p">(</span><span class="n">lblTitle</span><span class="p">),</span><span class="w"> </span><span class="n">BeanProperties</span><span class="p">.</span><span class="na">value</span><span class="p">(</span><span class="s">&quot;title&quot;</span><span class="p">).</span><span class="na">observe</span><span class="p">(</span><span class="n">Title</span><span class="p">.</span><span class="na">getInstance</span><span class="p">().</span><span class="na">model</span><span class="p">()));</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Then the method can be called from the <code class="docutils literal notranslate"><span class="pre">createPartControl</span></code> method of the View</p></li>
+</ul>
+</section>
+<section id="writing-to-a-pv">
+<h2>Writing to a PV<a class="headerlink" href="#writing-to-a-pv" title="Link to this heading"></a></h2>
+<p>For this example we will start by adding a writeable PV for writing to the title to the TitleVariable class, so it now looks like this:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span><span class="w"> </span><span class="nn">org.csstudio.isis.title</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">uk.ac.stfc.isis.ibex.epics.observing.ForwardingObservable</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.csstudio.isis.epics.writing.Writable</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.csstudio.isis.instrument.Channels</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.csstudio.isis.instrument.channels.CharWaveformChannel</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">uk.ac.stfc.isis.ibex.instrument.InstrumentUtils</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TitleVariable</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">ObservableFactory</span><span class="w"> </span><span class="n">obsFactory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ObservableFactory</span><span class="p">(</span><span class="n">OnInstrumentSwitch</span><span class="p">.</span><span class="na">SWITCH</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">ForwardingObservable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">titleRBV</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
+<span class="w">            </span><span class="n">obsFactory</span><span class="p">.</span><span class="na">getSwitchableObservable</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CharWaveformChannel</span><span class="p">(),</span><span class="w"> </span><span class="n">InstrumentUtils</span><span class="p">.</span><span class="na">addPrefix</span><span class="p">(</span><span class="s">&quot;DAE:TITLE&quot;</span><span class="p">));</span>
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">WritableFactory</span><span class="w"> </span><span class="n">writeFactory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">WritableFactory</span><span class="p">(</span><span class="n">OnInstrumentSwitch</span><span class="p">.</span><span class="na">SWITCH</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Writable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">titleSP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
+<span class="w">            </span><span class="n">writeFactory</span><span class="p">.</span><span class="na">getSwitchableWritable</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CharWaveformChannel</span><span class="p">(),</span><span class="w"> </span><span class="n">InstrumentUtils</span><span class="p">.</span><span class="na">addPrefix</span><span class="p">(</span><span class="s">&quot;DAE:TITLE:SP&quot;</span><span class="p">));</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">TitleVariable</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Note that the type of the new PV is Writable and uses writable and not reader.</p>
+<p>Next we open the TitleModel interface and add two new methods for working with the set-point, it now looks like this:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span><span class="w"> </span><span class="nn">org.csstudio.isis.title</span><span class="p">;</span>
+
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">TitleModel</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="nf">getTitle</span><span class="p">();</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">setTitle</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">value</span><span class="p">);</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="nf">getTitleSP</span><span class="p">();</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">setTitleSP</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">value</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This interface is implemented in the ObservableTitleModel class, so we need to add implementations for the two new methods.
+In fact, the ObservableTitleModel should now be showing an error because these methods are not implemented.
+Open the class and hover over the class name, it should give you the option to ‘Add unimplemented methods’, select this.
+Now we need to add code for these new methods:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="p">...</span>
+<span class="nd">@Override</span>
+<span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getTitleSP</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nd">@Override</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setTitleSP</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">titleVar</span><span class="p">.</span><span class="na">titleSP</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="p">...</span>
+</pre></div>
+</div>
+<p>The getter returns an empty string, but this does not matter - we could wire it up to get the current value of the set-point using a BaseObserver in the same way we did for reading the current title earlier, but we will leave that as an exercise for the reader!</p>
+<p>The setter uses the Writable object to write the new value to the IOC via channel access.</p>
+<p>Finally we need to edit the View itself to enable it to bind to titleSP. For this we add a text-box called <code class="docutils literal notranslate"><span class="pre">txtNewTitle</span></code> and set up the binding:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="p">...</span>
+<span class="n">bindingContext</span><span class="p">.</span><span class="na">bindValue</span><span class="p">(</span><span class="n">WidgetProperties</span><span class="p">.</span><span class="na">text</span><span class="p">(</span><span class="n">SWT</span><span class="p">.</span><span class="na">Modify</span><span class="p">).</span><span class="na">observe</span><span class="p">(</span><span class="n">txtNewTitle</span><span class="p">),</span><span class="w"> </span><span class="n">BeanProperties</span><span class="p">.</span><span class="na">value</span><span class="p">(</span><span class="s">&quot;titleSP&quot;</span><span class="p">).</span><span class="na">observe</span><span class="p">(</span><span class="n">org</span><span class="p">.</span><span class="na">csstudio</span><span class="p">.</span><span class="na">isis</span><span class="p">.</span><span class="na">title</span><span class="p">.</span><span class="na">Title</span><span class="p">.</span><span class="na">getInstance</span><span class="p">().</span><span class="na">model</span><span class="p">()));</span>
+<span class="p">...</span>
+</pre></div>
+</div>
+<p>The key thing to note here is that WidgetProperties.txt takes SWT.Modify; this tells the binding to push the changes back to the model when the text-box is changed.</p>
+<p>If we start the GUI it can be seen that as we type in the text-box the title changes; however, it is not ideal as the title set-point is updated with every keystroke which seems a bit unnecessary.</p>
+<p>The alternative is to have a set button. First add a string property for the title SP called titleSP like so:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="p">...</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ObservableTitleModel</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">ModelObject</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">TitleModel</span><span class="w"> </span><span class="p">{</span>
+
+<span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">title</span><span class="p">;</span>
+<span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">titleSP</span><span class="p">;</span>
+<span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">TitleVariable</span><span class="w"> </span><span class="n">titleVar</span><span class="p">;</span>
+
+<span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">BaseObserver</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">titleObserver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BaseObserver</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="p">...</span>
+</pre></div>
+</div>
+<p>Now we modify the getter and setter to use this variable for storing the new title before it is sent to the IOC:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="p">...</span>
+<span class="nd">@Override</span>
+<span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getTitleSP</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">titleSP</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nd">@Override</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setTitleSP</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">firePropertyChange</span><span class="p">(</span><span class="s">&quot;titleSP&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">titleSP</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">titleSP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="p">...</span>
+</pre></div>
+</div>
+<p>We also add a method to the TitleModel interface and the implementation to the ObservableTitleModle for sending the string to the IOC:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="p">...</span>
+<span class="nd">@Override</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sendTitleSP</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">titleVar</span><span class="p">.</span><span class="na">titleSP</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="n">titleSP</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="p">...</span>
+</pre></div>
+</div>
+<p>The final step is to add a button to the View’s <code class="docutils literal notranslate"><span class="pre">createPartControl</span></code> method:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="p">...</span>
+<span class="n">Button</span><span class="w"> </span><span class="n">btnSet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Button</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span><span class="w"> </span><span class="n">SWT</span><span class="p">.</span><span class="na">NONE</span><span class="p">);</span>
+<span class="n">btnSet</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="s">&quot;Set&quot;</span><span class="p">);</span>
+<span class="n">btnSet</span><span class="p">.</span><span class="na">addSelectionListener</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">SelectionAdapter</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">widgetSelected</span><span class="p">(</span><span class="n">SelectionEvent</span><span class="w"> </span><span class="n">e</span><span class="p">){</span>
+<span class="w">        </span><span class="n">org</span><span class="p">.</span><span class="na">csstudio</span><span class="p">.</span><span class="na">isis</span><span class="p">.</span><span class="na">title</span><span class="p">.</span><span class="na">Title</span><span class="p">.</span><span class="na">getInstance</span><span class="p">().</span><span class="na">model</span><span class="p">().</span><span class="na">sendTitleSP</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">});</span>
+<span class="p">...</span>
+</pre></div>
+</div>
+</section>
+<section id="using-a-read-write-control">
+<h2>Using a Read-Write control<a class="headerlink" href="#using-a-read-write-control" title="Link to this heading"></a></h2>
+<p>It is fine to have separate controls on the View for reading and writing, but sometimes it is more convenient to have one control for both.</p>
+<p>This is relatively straightforward as there is already a helper class called WritableObservableAdapter that does most of the work.</p>
+<p>The first step though is to create a View Model class in our UI plug-in, so create a new class in org.csstudio.isis.ui.title called ViewModel.
+This class is where we will connect up the WritableObservableAdapter, but first we need to make some changes to ObservableTitleModel
+and to do that we start by modifying TitleModel to add a methods for accessing the Writeable object and a CachingObservable object (explained later):</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span><span class="w"> </span><span class="nn">org.csstudio.isis.title</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.csstudio.isis.epics.observing.CachingObservable</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.csstudio.isis.epics.writing.Writable</span><span class="p">;</span>
+
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">TitleModel</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="nf">getTitle</span><span class="p">();</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">setTitle</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">value</span><span class="p">);</span>
+<span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="nf">getTitleSP</span><span class="p">();</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">setTitleSP</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">value</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">sendTitleSP</span><span class="p">();</span>
+<span class="w">    </span><span class="n">CachingObservable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">title</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Writable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">titleSetter</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Now we implement these methods in ObservableTitleModel:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="p">...</span>
+<span class="nd">@Override</span>
+<span class="kd">public</span><span class="w"> </span><span class="n">CachingObservable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">title</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">titleVar</span><span class="p">.</span><span class="na">titleRBV</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nd">@Override</span>
+<span class="kd">public</span><span class="w"> </span><span class="n">Writable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">titleSetter</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">titleVar</span><span class="p">.</span><span class="na">titleSP</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">...</span>
+</pre></div>
+</div>
+<p>Next we add some code to ViewModel to connect things up:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span><span class="w"> </span><span class="nn">org.csstudio.isis.ui.myperspective</span><span class="p">;</span>
+
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.csstudio.isis.title.ObservableTitleModel</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.csstudio.isis.ui.widgets.observable.WritableObservableAdapter</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ViewModel</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">ObservableTitleModel</span><span class="w"> </span><span class="n">model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">org</span><span class="p">.</span><span class="na">csstudio</span><span class="p">.</span><span class="na">isis</span><span class="p">.</span><span class="na">title</span><span class="p">.</span><span class="na">Title</span><span class="p">.</span><span class="na">getInstance</span><span class="p">().</span><span class="na">model</span><span class="p">();</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">WritableObservableAdapter</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">WritableObservableAdapter</span><span class="p">(</span><span class="n">model</span><span class="p">.</span><span class="na">titleSetter</span><span class="p">(),</span><span class="w"> </span><span class="n">model</span><span class="p">.</span><span class="na">title</span><span class="p">());</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">ViewModel</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Some error messages will appear relating to WritableObservableAdapter; to fix, hover over WritableObervableAdaptor and select “Add ‘org.csstudio.isis.ui.widgets’ to required bundles”.
+Errors will still remain on model.titleSetter() and model.title(), so hover over one of those and select “Add ‘org.csstudio.isis.epics’ to required bundles”.</p>
+<p>Now we need to adjust the View to use the ViewModel, first we strip out all of the code relating to the previous label, text-box and button (including the bindings), and then we add a ViewModel object and a WritableObservingTextBox:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span><span class="w"> </span><span class="nn">org.csstudio.isis.ui.myperspective</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.csstudio.isis.ui.widgets.observable.WritableObservingTextBox</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.eclipse.swt.SWT</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.eclipse.swt.widgets.Composite</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.eclipse.ui.part.ViewPart</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.eclipse.swt.layout.GridData</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.eclipse.swt.layout.GridLayout</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MyView</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">ViewPart</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;org.csstudio.isis.ui.myperspective.myview&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">ViewModel</span><span class="w"> </span><span class="n">viewModel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ViewModel</span><span class="p">();</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">WritableObservingTextBox</span><span class="w"> </span><span class="n">rbNumber</span><span class="p">;</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">MyView</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">createPartControl</span><span class="p">(</span><span class="n">Composite</span><span class="w"> </span><span class="n">parent</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">parent</span><span class="p">.</span><span class="na">setLayout</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">GridLayout</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">));</span>
+<span class="w">        </span><span class="n">rbNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">WritableObservingTextBox</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span><span class="w"> </span><span class="n">SWT</span><span class="p">.</span><span class="na">NONE</span><span class="p">,</span><span class="w"> </span><span class="n">viewModel</span><span class="p">.</span><span class="na">title</span><span class="p">);</span>
+<span class="w">        </span><span class="n">rbNumber</span><span class="p">.</span><span class="na">setLayoutData</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">GridData</span><span class="p">(</span><span class="n">SWT</span><span class="p">.</span><span class="na">FILL</span><span class="p">,</span><span class="w"> </span><span class="n">SWT</span><span class="p">.</span><span class="na">CENTER</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">));</span>
+<span class="w">        </span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setFocus</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Hopefully once the GUI is started that all works as expected.</p>
+<p>So what is going on and what are these new bits we are using?</p>
+<ul class="simple">
+<li><p>WritableObservingTextBox is a custom ISIS control for displaying and editing a value where they are different PVs for reading and writing</p></li>
+<li><p>WritableObservableAdapter is the object for linking up the two PVs. Essentially it does the same as what we did earlier with reading one PV and writing to another</p></li>
+<li><p>View Model - a class for providing presentation logic and state information for a View. The code could live in the View itself, but it is cleaner to put it in a separate class.</p></li>
+</ul>
+<p><a class="reference external" href="http://blogs.msdn.com/b/dphill/archive/2009/01/31/the-viewmodel-pattern.aspx">http://blogs.msdn.com/b/dphill/archive/2009/01/31/the-viewmodel-pattern.aspx</a> provides a good explanation of View Models and how they fit in with the View and Model.</p>
+<p>As you have probably noticed there are a number of methods in the ObservableTitlemodel that is no longer used, these can be removed (don’t forgot to remove them from the interface as well!). The BaseObserver can also be removed.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span><span class="w"> </span><span class="nn">org.csstudio.isis.title</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.csstudio.isis.epics.observing.CachingObservable</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.csstudio.isis.epics.writing.Writable</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.csstudio.isis.model.ModelObject</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ObservableTitleModel</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">ModelObject</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">TitleModel</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">TitleVariable</span><span class="w"> </span><span class="n">titleVar</span><span class="p">;</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">ObservableTitleModel</span><span class="p">(</span><span class="n">TitleVariable</span><span class="w"> </span><span class="n">titleVar</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">titleVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">titleVar</span><span class="p">;</span>
+<span class="w">        </span><span class="c1">//titleVar.titleRBV.subscribe(titleObserver);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">CachingObservable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">title</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">titleVar</span><span class="p">.</span><span class="na">titleRBV</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Writable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">titleSetter</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">titleVar</span><span class="p">.</span><span class="na">titleSP</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Adding-a-Plugin-or-Feature-to-Maven-Build.html" class="btn btn-neutral float-left" title="Adding a plugin or feature to Maven" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Databinding.html" class="btn btn-neutral float-right" title="Databinding" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on May 30, 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

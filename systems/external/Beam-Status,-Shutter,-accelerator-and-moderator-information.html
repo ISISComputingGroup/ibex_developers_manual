@@ -1,0 +1,264 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Merckx (Accelerator Information) &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="ICAT / TopCAT" href="ICAT-Troubleshooting.html" />
+    <link rel="prev" title="External systems/services" href="../External.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Systems.html">Systems Administration &amp; Hardware</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../External.html">External systems/services</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Merckx (Accelerator Information)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ICAT-Troubleshooting.html">ICAT / TopCAT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IDAaaS.html">IDAaaS</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Inst-Control.html">Instrument control computers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Nagios.html">Nagios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Test-Machines.html">Test Machines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Webserver.html">Webserver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../control-svcs.html"><code class="docutils literal notranslate"><span class="pre">control-svcs</span></code></a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Systems.html">Systems Administration &amp; Hardware</a></li>
+          <li class="breadcrumb-item"><a href="../External.html">External systems/services</a></li>
+      <li class="breadcrumb-item active">Merckx (Accelerator Information)</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/systems/external/Beam-Status,-Shutter,-accelerator-and-moderator-information.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="merckx-accelerator-information">
+<h1>Merckx (Accelerator Information)<a class="headerlink" href="#merckx-accelerator-information" title="Link to this heading"></a></h1>
+<p>Information about the beam current and instrument shutter status is stored in the main accelerator control computer system, though a shutter is local to an instrument it is part of a safety system and we do not have direct access to it ourselves. Also the accelerator computer system can only read main shutter status - opening/closing a main shutter can only be performed using a physical button in the cabin.</p>
+<p>This information is fed from an IOC running on a machine on the accelerator network (merckx.isis.rl.ac.uk). This is a <a class="reference external" href="https://en.wikipedia.org/wiki/OpenVMS">Open VMS</a> machine with the EPICS distribution from <a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-VMS/">here</a>. The IOC is set to run on boot time and is auto-restarted if it is not present, it will also auto-restart if it receives too many errors, but some failures can cause it to hang.</p>
+<p><strong>If the system restarts itself, then there will be a brief loss of PVs for beam current/shutters/moderator temp to instruments, some will go into a WAITING state when this happens if run control is enabled on the block</strong></p>
+<p>if you need to contact the accelerator controls team, look for “ISIS Controls (Support)” in outlook</p>
+<p>You can see the current error counts in nagios for the merckx system or via</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">camonitor</span> <span class="n">ICS</span><span class="p">:</span><span class="n">IB</span><span class="p">:</span><span class="n">ERRCNT</span> <span class="n">ICS</span><span class="p">:</span><span class="n">IB</span><span class="p">:</span><span class="n">CHANERRCNT</span>
+</pre></div>
+</div>
+<p>You can log onto this machine using details on usual access page (you will need to use ssh via something like PuTTY, or git bash with <code class="docutils literal notranslate"><span class="pre">-oHostKeyAlgorithms=+ssh-dss</span></code> as an argument)</p>
+<p>The most likely cause of a problem is that the local database has stopped updating, thus giving an unchanging value. You can can check the server log file with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">beamlogdir</span>
+<span class="nb">type</span> <span class="n">isisbeam</span><span class="o">.</span><span class="n">log</span>
+</pre></div>
+</div>
+<p>And see if there are errors about parameters not updating. Probably easiest thing to do is to kill the service and let it restart, then see if errors continue in the log. First type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>pipe sh sys | sea sys$input isisbeam
+</pre></div>
+</div>
+<p>you will see a line like</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">26E12</span><span class="n">DAA</span> <span class="n">ISISBEAM</span>        <span class="n">LEF</span>      <span class="mi">6</span>   <span class="mi">132040</span>   <span class="mi">0</span> <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mf">01.40</span>       <span class="mi">284</span>    <span class="mi">241</span>
+<span class="mi">26</span><span class="n">F991FC</span> <span class="n">ISISBEAM_1</span>      <span class="n">HIB</span>      <span class="mi">4</span>  <span class="mi">2416385</span>   <span class="mi">0</span> <span class="mi">00</span><span class="p">:</span><span class="mi">08</span><span class="p">:</span><span class="mf">24.20</span>      <span class="mi">9589</span>   <span class="mi">3173</span> <span class="n">MS</span>
+</pre></div>
+</div>
+<p>[<em>ISISBEAM_1</em> is a sub-process of ISISBEAM and will die when you kill <em>ISISBEAM</em>]
+The first number is the process id, in this case type</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stop</span> <span class="o">/</span><span class="nb">id</span><span class="o">=</span><span class="mf">26E12</span><span class="n">DAA</span>
+</pre></div>
+</div>
+<p>to kill it, then wait for it to restart (may take up to 30 seconds). Use the above <code class="docutils literal notranslate"><span class="pre">pipe</span></code> command to see then it has restarted, and then check isisbeam.log again. Look for messages after the <code class="docutils literal notranslate"><span class="pre">Starting</span> <span class="pre">iocInit</span></code> line in the file</p>
+<section id="more-complicated-details">
+<h2>more complicated details<a class="headerlink" href="#more-complicated-details" title="Link to this heading"></a></h2>
+<p>The asyn parameters that are served by the IOC are mapped to VISTA parameters (this is the accelerator control system). You can see the mapping with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span> <span class="n">params</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>a line like</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">beam_ions</span>        <span class="nb">float</span>    <span class="n">t</span>  <span class="mi">0</span>    <span class="n">IDTOR</span><span class="p">::</span><span class="n">IRT1</span><span class="p">:</span><span class="n">CURRENT</span>
+</pre></div>
+</div>
+<p>means asyn parameter <code class="docutils literal notranslate"><span class="pre">beam_ions</span></code> (in the IOC Db files) is mapped to VISTA parameter <code class="docutils literal notranslate"><span class="pre">IDTOR::IRT1:CURRENT</span></code>. The other columns are related to data type and how the programs tries to check for stale (non updating) values. If the <code class="docutils literal notranslate"><span class="pre">isisbeam.log</span></code> indicated a huge number of errors for a particular parameter, then this could affect reading other parameters - after a certain number of errors the program restarts, but if it starts restarting too frequently this can cause PVs never to reconnect properly. In that case you <em>may need to temporarily remove a line</em>, but seek advice first.</p>
+<p>You can read the VISTA parameter directly on MERECKX if you think the issue is with the IOC e.g.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">db_access</span> <span class="n">IDTOR</span><span class="p">::</span><span class="n">IRT1</span><span class="p">:</span><span class="n">CURRENT</span>
+<span class="n">db_access</span> <span class="n">t1shut</span><span class="p">::</span><span class="n">n1_overview</span><span class="p">:</span><span class="n">sta</span>
+</pre></div>
+</div>
+<p>you can search for errors about a particular parameter by e.g.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sea</span> <span class="n">isisbeam</span><span class="o">.</span><span class="n">log</span> <span class="n">IDTOR</span><span class="p">::</span><span class="n">IRT1</span><span class="p">:</span><span class="n">CURRENT</span>
+</pre></div>
+</div>
+<p>If you killed the <code class="docutils literal notranslate"><span class="pre">ISISBEAM</span></code> process above it has restarted, then the <code class="docutils literal notranslate"><span class="pre">isisbeam.log</span></code> file will only contain values since that restart. you can look at the previous log file by adding <code class="docutils literal notranslate"><span class="pre">;-1</span></code> to the file name</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sea</span> <span class="n">isisbeam</span><span class="o">.</span><span class="n">log</span><span class="p">;</span><span class="o">-</span><span class="mi">1</span> <span class="n">IDTOR</span><span class="p">::</span><span class="n">IRT1</span><span class="p">:</span><span class="n">CURRENT</span>
+</pre></div>
+</div>
+<p>To see all log file versions type <code class="docutils literal notranslate"><span class="pre">dir</span> <span class="pre">isisbeam.log</span></code></p>
+<p>If something does appear to have gone wrong with this service (e.g. values are not updating) you should get in touch with the <em>accelerator controls group</em>. The easiest way to do this is to call the MCR and find out who is on call.</p>
+</section>
+<section id="beam-current-block-shows-0">
+<h2>Beam current block shows 0<a class="headerlink" href="#beam-current-block-shows-0" title="Link to this heading"></a></h2>
+<p>A “Beam current” block may not be showing the accelerator beam current, it may be showing the effective beam current from the DAE. Blocks read from the accelerator will all be referring to global PV names starting AC: and TG: so if the block refers to an IN: it will be something on the local instrument. The DAE:BEAMCURRENT value is the effective DAE beam current, but if the dae is not counting (SETUP, WAITING, PAUSED) then this value will be zero. If the DAE is vetoing this value will vary between 0 and something else depending on what % of frames are being vetoed. If the chopper is being run at a lower frequency, the value will be lower too as the DAE is seeing less pulses and hence a lower effective beam current.</p>
+</section>
+<section id="value-shows-zero-in-ibex-seci-but-non-zero-with-db-access-on-mereckx">
+<h2>Value shows zero in IBEX/SECI but non-zero with <code class="docutils literal notranslate"><span class="pre">db_access</span></code> on MERECKX<a class="headerlink" href="#value-shows-zero-in-ibex-seci-but-non-zero-with-db-access-on-mereckx" title="Link to this heading"></a></h2>
+<p>If the third column in <code class="docutils literal notranslate"><span class="pre">params.txt</span></code> contains a <code class="docutils literal notranslate"><span class="pre">z</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">tz</span></code>) then this means that the parameter will be monitored for a stale (non updating) state and if this is detected it will send 0 as the value to IBEX/SECI. At time of writing this had only been requested for the decoupled methane, sending 0 when the value is uncertain means they will go into a WAITING state as they run control on methane temperature and it is important that they are not collecting data when a methane charge-change happens. In future the value could be EPICS alarmed, but for SECI instruments we need to send 0</p>
+<p>You may be able to confirm a value is not updating by running <code class="docutils literal notranslate"><span class="pre">db_access</span></code> on it a few times with a reasonable time delay in-between, but some values are quite stable or fluctuate only a bit so this may be difficult to determine. You can view the typical value and variation in an accelerator parameter by following the links on values at <a class="reference external" href="http://beamlog.nd.rl.ac.uk/status.xml">http://beamlog.nd.rl.ac.uk/status.xml</a></p>
+<p><strong>If this is after a shutdown</strong>, check the <code class="docutils literal notranslate"><span class="pre">st.cmd</span></code> and see if <code class="docutils literal notranslate"><span class="pre">epicsEnvSet(&quot;SIM_ISISBEAM&quot;,</span> <span class="pre">&quot;1&quot;)</span></code> has been uncommented to stop out of cycle errors, if so comment it out and then kill the ISISBEAM process so it can restart</p>
+</section>
+<section id="checking-channel-access-on-merckx">
+<h2>Checking channel access on MERCKX<a class="headerlink" href="#checking-channel-access-on-merckx" title="Link to this heading"></a></h2>
+<p>if you type</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">dir</span> <span class="p">[</span><span class="o">--.</span><span class="n">db</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>you will see all the db files used by the program, you can display one to screen using e.g.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="o">/</span><span class="n">page</span> <span class="p">[</span><span class="o">--.</span><span class="n">db</span><span class="p">]</span><span class="n">isisbeam</span><span class="o">.</span><span class="n">db</span>
+</pre></div>
+</div>
+<p>On MERCKX <code class="docutils literal notranslate"><span class="pre">$(P)</span></code> is “” so there is no prefix to PVs you see listed. To use <code class="docutils literal notranslate"><span class="pre">caget</span></code> you first need to set an epics address list as broadcasts do not work (they require privileges). So type</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">EPICS_CA_ADDR_LIST</span> <span class="n">merckx</span>
+</pre></div>
+</div>
+<p>and then you can use <code class="docutils literal notranslate"><span class="pre">caget</span></code> or <code class="docutils literal notranslate"><span class="pre">camonitor</span></code> on values e.g.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">camonitor</span> <span class="n">TG</span><span class="p">:</span><span class="n">TS2</span><span class="p">:</span><span class="n">DMOD</span><span class="p">:</span><span class="n">METH</span><span class="p">:</span><span class="n">TEMP</span>
+</pre></div>
+</div>
+<p>You can <a class="reference external" href="https://github.com/FreddieAkeroyd/EPICS-VMS/tree/master/ioc/ISISBEAM/isisbeamApp/Db">browse the Db file source on the web</a></p>
+</section>
+<section id="intermittent-dropouts">
+<h2>intermittent dropouts<a class="headerlink" href="#intermittent-dropouts" title="Link to this heading"></a></h2>
+<p>The program will restart after too many errors are detected. If you run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">camonitor</span> <span class="n">ICS</span><span class="p">:</span><span class="n">IB</span><span class="p">:</span><span class="n">ERRCNT</span> <span class="n">ICS</span><span class="p">:</span><span class="n">IB</span><span class="p">:</span><span class="n">CHANERRCNT</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">ERRCNT</span></code> is the total number of channel reads errors since last successful read, <code class="docutils literal notranslate"><span class="pre">CHANERRCNT</span></code> is the number of channels currently in error. When <code class="docutils literal notranslate"><span class="pre">ERRCNT</span></code> passes a threshold, the program restarts and you will see these PVs as well as other beam PVs briefly become disconnected. Note that <code class="docutils literal notranslate"><span class="pre">CHANERRCNT</span></code> may be non-zero while <code class="docutils literal notranslate"><span class="pre">ERRCNT</span></code> remains 0, this means that there isn’t an actual read error on the channel, but it is considered in error for another reason. You would typically need to look at <code class="docutils literal notranslate"><span class="pre">isisbeam.log</span></code> to tell. This usually means the program thinks the channel is <code class="docutils literal notranslate"><span class="pre">stale</span></code>. Each channel, even if it does not change value, should have its timestamp updated by the accelerator control system. Also things like beam current are flagged as suspicious if their value (when non-zero) is exactly the same value for a long period of time.</p>
+</section>
+<section id="nothing-working">
+<h2>nothing working<a class="headerlink" href="#nothing-working" title="Link to this heading"></a></h2>
+<p>check <code class="docutils literal notranslate"><span class="pre">isisbeam.log</span></code> but could be a scaled up version of intermittent dropouts leading to extremely frequent restarts and so no time for PVS to get connected. In bad cases you may need to remove lines from the <code class="docutils literal notranslate"><span class="pre">params.txt</span></code> file described above to stop the erroring reads being attempted.</p>
+</section>
+<section id="things-not-updating">
+<h2>things not updating<a class="headerlink" href="#things-not-updating" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">db_access</span> <span class="pre">LOCAL::BEAM:TARGET2</span></code></p>
+<p>on merckx will show the local database TS2 beam, if this seems unusually stable then the accelerator controls vista system may have frozen.</p>
+</section>
+<section id="server-or-services-unavailable-nagios">
+<h2>server or services unavailable (nagios)<a class="headerlink" href="#server-or-services-unavailable-nagios" title="Link to this heading"></a></h2>
+<p>Check for <code class="docutils literal notranslate"><span class="pre">merckx</span></code> in nagios, put it in the quick search box on the nagios top page. The <code class="docutils literal notranslate"><span class="pre">TS2</span> <span class="pre">Beam</span> <span class="pre">Current</span> <span class="pre">Updating</span></code> check should reflect similar to the <code class="docutils literal notranslate"><span class="pre">db_access</span> <span class="pre">LOCAL::BEAM:TARGET2</span></code></p>
+<p>If nagios shows <code class="docutils literal notranslate"><span class="pre">merckx</span></code> is down:</p>
+<ul class="simple">
+<li><p>during office hours email “ISIS Controls (support)” in the outlook address book and tell them that “The VMS MERCKX server is unreachable and instruments cannot access beam and moderator information that is important for running”</p></li>
+<li><p>out of hours contact the MCR and ask them to contact the on call ISIS accelerator controls computing person</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../External.html" class="btn btn-neutral float-left" title="External systems/services" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ICAT-Troubleshooting.html" class="btn btn-neutral float-right" title="ICAT / TopCAT" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on May 30, 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

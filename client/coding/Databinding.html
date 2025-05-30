@@ -1,0 +1,525 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Databinding &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Databinding - common mistakes" href="Databinding---common-mistakes.html" />
+    <link rel="prev" title="Connecting a view to a PV" href="Connecting-a-View-to-a-PV.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Building.html">Building</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../GUI-Coding.html">Coding</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Adding-a-Button-to-the-Perspective-Switcher.html">Adding a perspective</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Adding-a-Plugin-or-Feature-to-Maven-Build.html">Adding a plugin or feature to Maven</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Connecting-a-View-to-a-PV.html">Connecting a view to a PV</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Databinding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Databinding---common-mistakes.html">Databinding - common mistakes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GUI-Coding-Conventions.html">Conventions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Instrument-switching.html">Instrument switching</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Migrating-or-adding-a-button-to-the-E4-perspective-switcher.html">Adding a button to the E4 Perspective switcher</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PV-Switching.html">PV switching</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Static-analysis.html">Static analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Eclipse.html">Eclipse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-CSS.html">CS-Studio Views in the GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Other.html">Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Troubleshooting.html">GUI Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GUI-Design.html">Design Documents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Systems.html">Systems Administration &amp; Hardware</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+          <li class="breadcrumb-item"><a href="../GUI-Coding.html">Coding</a></li>
+      <li class="breadcrumb-item active">Databinding</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/client/coding/Databinding.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="databinding">
+<h1>Databinding<a class="headerlink" href="#databinding" title="Link to this heading"></a></h1>
+<p>Note: there are some helpful tips to common errors/mistakes <a class="reference internal" href="Databinding---common-mistakes.html"><span class="doc std std-doc">here</span></a>.</p>
+<p>Note: an explanation of how to connect a view to a PV is <a class="reference internal" href="Connecting-a-View-to-a-PV.html"><span class="doc std std-doc">here</span></a></p>
+<section id="create-the-example-plug-ins">
+<h2>Create the example plug-ins<a class="headerlink" href="#create-the-example-plug-ins" title="Link to this heading"></a></h2>
+<p>First create an Eclipse plug-in for the back-end:</p>
+<ul class="simple">
+<li><p>Start the plug-in wizard via File-&gt;New-&gt;Plug-in Project</p></li>
+<li><p>On the first page of the wizard enter <code class="docutils literal notranslate"><span class="pre">org.databinding.example.backend</span></code> as the name</p></li>
+<li><p>On the second page:</p>
+<ul>
+<li><p>Deselect “Generate an activator, a Java class that controls the plug-in’s life cycle”</p></li>
+<li><p>Deselect “This plug-in will make contributions to the UI”</p></li>
+<li><p>Select “No” for “Would you like to create a 3.x rich client application?”</p></li>
+<li><p>Click “Finish”</p></li>
+</ul>
+</li>
+</ul>
+<p>Next create a plug-in for the UI side:</p>
+<ul class="simple">
+<li><p>Start the plug-in wizard via File-&gt;New-&gt;Plug-in Project</p></li>
+<li><p>On the first page of the wizard enter <code class="docutils literal notranslate"><span class="pre">org.databinding.example.frontend</span></code> as the name</p></li>
+<li><p>On the second page:</p>
+<ul>
+<li><p>Select “Generate an activator, a Java class that controls the plug-in’s life cycle”</p></li>
+<li><p>Select “This plug-in will make contributions to the UI”</p></li>
+<li><p>Select “Yes” for “Would you like to create a 3.x rich client application?”</p></li>
+<li><p>Click “Next”</p></li>
+<li><p>Select “RCP application with a view”</p></li>
+<li><p>Click “Finish”</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="creating-the-person-class-the-model">
+<h2>Creating the Person class (the model)<a class="headerlink" href="#creating-the-person-class-the-model" title="Link to this heading"></a></h2>
+<p>In the backend plug-in create two new classes, one called <code class="docutils literal notranslate"><span class="pre">ModelObject</span></code> and one called Person.
+Enter the following code for the <code class="docutils literal notranslate"><span class="pre">ModelObject</span></code>:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span><span class="w"> </span><span class="nn">org.databinding.example.backend</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.beans.PropertyChangeListener</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.beans.PropertyChangeSupport</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ModelObject</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">PropertyChangeSupport</span><span class="w"> </span><span class="n">changeSupport</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PropertyChangeSupport</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">addPropertyChangeListener</span><span class="p">(</span><span class="n">PropertyChangeListener</span><span class="w"> </span><span class="n">listener</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">changeSupport</span><span class="p">.</span><span class="na">addPropertyChangeListener</span><span class="p">(</span><span class="n">listener</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">removePropertyChangeListener</span><span class="p">(</span><span class="n">PropertyChangeListener</span><span class="w"> </span><span class="n">listener</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">changeSupport</span><span class="p">.</span><span class="na">removePropertyChangeListener</span><span class="p">(</span><span class="n">listener</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">firePropertyChange</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">propertyName</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="n">oldValue</span><span class="p">,</span>
+<span class="w">            </span><span class="n">Object</span><span class="w"> </span><span class="n">newValue</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">changeSupport</span><span class="p">.</span><span class="na">firePropertyChange</span><span class="p">(</span><span class="n">propertyName</span><span class="p">,</span><span class="w"> </span><span class="n">oldValue</span><span class="p">,</span><span class="w"> </span><span class="n">newValue</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The ModelObject contains the code that is essential for data-binding.</p>
+<p>Behind the scenes when you create a binding the data-binding framework automatically calls <code class="docutils literal notranslate"><span class="pre">addPropertyChangeListener</span></code> for the UI widget being bound
+(not strictly true - it is a bean object that is associated with the widget). The <code class="docutils literal notranslate"><span class="pre">removePropertyChangeListener</span></code> is called when the widget binding is disposed, e.g. when the GUI is closed.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">firePropertyChange</span></code> method is used to inform the listeners when the value has changed.
+Note: if <code class="docutils literal notranslate"><span class="pre">oldValue</span></code> and <code class="docutils literal notranslate"><span class="pre">newValue</span></code> are the same then the event is not raised.</p>
+<p>The Person class is the class that is going to be used as the model the UI binds to. Add the following code:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span><span class="w"> </span><span class="nn">org.databinding.example.backend</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Person</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">ModelObject</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">idNumber</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getName</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setName</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">firePropertyChange</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getAge</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setAge</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">firePropertyChange</span><span class="p">(</span><span class="s">&quot;age&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">age</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">age</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getIdNumber</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">idNumber</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setIdNumber</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">firePropertyChange</span><span class="p">(</span><span class="s">&quot;idNumber&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">idNumber</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">idNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">id</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Person</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">setName</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+<span class="w">        </span><span class="n">setAge</span><span class="p">(</span><span class="n">age</span><span class="p">);</span>
+<span class="w">        </span><span class="n">setIdNumber</span><span class="p">(</span><span class="s">&quot;0000&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Whenever a setter is called the <code class="docutils literal notranslate"><span class="pre">firePropertyChange</span></code> is called which informs all the listeners that the value has changed.
+Other than that it is a pretty standard Java class.</p>
+</section>
+<section id="basic-data-binding">
+<h2>Basic data-binding<a class="headerlink" href="#basic-data-binding" title="Link to this heading"></a></h2>
+<p>In the frontend plug-in’s MANIFEST.MF add the backend plug-in to the list of dependencies. Also, add the following dependencies:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">org.eclipse.core.databinding</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">org.eclipse.core.databinding.beans</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">org.eclipse.core.databinding.property</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">org.eclipse.jface.databinding</span></code></p></li>
+</ul>
+<p>Open the View class and change it to the following:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span><span class="w"> </span><span class="nn">org.databinding.example.frontend</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.databinding.example.backend.Person</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.eclipse.swt.SWT</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.eclipse.swt.layout.GridData</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.eclipse.swt.layout.GridLayout</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.eclipse.swt.widgets.Composite</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.eclipse.swt.widgets.Label</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.eclipse.swt.widgets.Text</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.eclipse.ui.part.ViewPart</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.eclipse.core.databinding.Binding</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.eclipse.core.databinding.DataBindingContext</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.eclipse.core.databinding.observable.value.IObservableValue</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.eclipse.jface.databinding.fieldassist.ControlDecorationSupport</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.eclipse.jface.databinding.swt.WidgetProperties</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.eclipse.core.databinding.beans.BeanProperties</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">View</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">ViewPart</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;org.databinding.example.frontend.view&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Person</span><span class="w"> </span><span class="n">person</span><span class="p">;</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">View</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Person</span><span class="p">(</span><span class="s">&quot;John&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span><span class="w">	</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">createPartControl</span><span class="p">(</span><span class="n">Composite</span><span class="w"> </span><span class="n">parent</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">GridLayout</span><span class="w"> </span><span class="n">glParent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">GridLayout</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
+<span class="w">        </span><span class="n">glParent</span><span class="p">.</span><span class="na">marginHeight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<span class="w">        </span><span class="n">glParent</span><span class="p">.</span><span class="na">marginWidth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<span class="w">        </span><span class="n">glParent</span><span class="p">.</span><span class="na">horizontalSpacing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">        </span><span class="n">glParent</span><span class="p">.</span><span class="na">verticalSpacing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="n">parent</span><span class="p">.</span><span class="na">setLayout</span><span class="p">(</span><span class="n">glParent</span><span class="p">);</span>
+<span class="w">        </span>
+<span class="w">        </span><span class="n">Label</span><span class="w"> </span><span class="n">lblName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Label</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span><span class="w"> </span><span class="n">SWT</span><span class="p">.</span><span class="na">NONE</span><span class="p">);</span>
+<span class="w">        </span><span class="n">lblName</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="s">&quot;Name: &quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">lblName</span><span class="p">.</span><span class="na">setLayoutData</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">GridData</span><span class="p">(</span><span class="n">SWT</span><span class="p">.</span><span class="na">FILL</span><span class="p">,</span><span class="w"> </span><span class="n">SWT</span><span class="p">.</span><span class="na">CENTER</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">));</span>
+<span class="w">        </span>
+<span class="w">        </span><span class="n">Text</span><span class="w"> </span><span class="n">txtName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Text</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span><span class="w"> </span><span class="n">SWT</span><span class="p">.</span><span class="na">BORDER</span><span class="p">);</span>
+<span class="w">        </span><span class="n">GridData</span><span class="w"> </span><span class="n">gdText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">GridData</span><span class="p">(</span><span class="n">SWT</span><span class="p">.</span><span class="na">LEFT</span><span class="p">,</span><span class="w"> </span><span class="n">SWT</span><span class="p">.</span><span class="na">CENTER</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">        </span><span class="n">gdText</span><span class="p">.</span><span class="na">minimumWidth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+<span class="w">        </span><span class="n">txtName</span><span class="p">.</span><span class="na">setLayoutData</span><span class="p">(</span><span class="n">gdText</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">Text</span><span class="w"> </span><span class="n">txtReadName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Text</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span><span class="w"> </span><span class="n">SWT</span><span class="p">.</span><span class="na">BORDER</span><span class="p">);</span>
+<span class="w">        </span><span class="n">GridData</span><span class="w"> </span><span class="n">gdReadText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">GridData</span><span class="p">(</span><span class="n">SWT</span><span class="p">.</span><span class="na">LEFT</span><span class="p">,</span><span class="w"> </span><span class="n">SWT</span><span class="p">.</span><span class="na">CENTER</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">        </span><span class="n">gdReadText</span><span class="p">.</span><span class="na">minimumWidth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+<span class="w">        </span><span class="n">txtReadName</span><span class="p">.</span><span class="na">setLayoutData</span><span class="p">(</span><span class="n">gdReadText</span><span class="p">);</span>
+<span class="w">        </span><span class="n">txtReadName</span><span class="p">.</span><span class="na">setEditable</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+<span class="w">        </span>
+<span class="w">        </span><span class="n">Label</span><span class="w"> </span><span class="n">lblAge</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Label</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span><span class="w"> </span><span class="n">SWT</span><span class="p">.</span><span class="na">NONE</span><span class="p">);</span>
+<span class="w">        </span><span class="n">lblAge</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="s">&quot;Age: &quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">lblAge</span><span class="p">.</span><span class="na">setLayoutData</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">GridData</span><span class="p">(</span><span class="n">SWT</span><span class="p">.</span><span class="na">FILL</span><span class="p">,</span><span class="w"> </span><span class="n">SWT</span><span class="p">.</span><span class="na">CENTER</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">));</span>
+<span class="w">        </span>
+<span class="w">        </span><span class="n">Text</span><span class="w"> </span><span class="n">txtAge</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Text</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span><span class="w"> </span><span class="n">SWT</span><span class="p">.</span><span class="na">BORDER</span><span class="p">);</span>
+<span class="w">        </span><span class="n">GridData</span><span class="w"> </span><span class="n">gdAge</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">GridData</span><span class="p">(</span><span class="n">SWT</span><span class="p">.</span><span class="na">LEFT</span><span class="p">,</span><span class="w"> </span><span class="n">SWT</span><span class="p">.</span><span class="na">CENTER</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">        </span><span class="n">gdAge</span><span class="p">.</span><span class="na">minimumWidth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+<span class="w">        </span><span class="n">txtAge</span><span class="p">.</span><span class="na">setLayoutData</span><span class="p">(</span><span class="n">gdAge</span><span class="p">);</span>
+<span class="w">        </span>
+<span class="w">        </span><span class="c1">// DATABINDING START</span>
+<span class="w">        </span><span class="n">DataBindingContext</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DataBindingContext</span><span class="p">();</span>
+<span class="w">        </span>
+<span class="w">        </span><span class="n">IObservableValue</span><span class="w"> </span><span class="n">target</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">WidgetProperties</span><span class="p">.</span><span class="na">text</span><span class="p">(</span><span class="n">SWT</span><span class="p">.</span><span class="na">Modify</span><span class="p">).</span><span class="na">observe</span><span class="p">(</span><span class="n">txtName</span><span class="p">);</span>
+<span class="w">        </span><span class="n">IObservableValue</span><span class="w"> </span><span class="n">model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BeanProperties</span><span class="p">.</span><span class="na">value</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">).</span><span class="na">observe</span><span class="p">(</span><span class="n">person</span><span class="p">);</span>
+<span class="w">        </span><span class="n">ctx</span><span class="p">.</span><span class="na">bindValue</span><span class="p">(</span><span class="n">target</span><span class="p">,</span><span class="w"> </span><span class="n">model</span><span class="p">);</span><span class="w"> </span>
+
+<span class="w">        </span><span class="c1">// Bind on one line</span>
+<span class="w">        </span><span class="n">ctx</span><span class="p">.</span><span class="na">bindValue</span><span class="p">(</span><span class="n">WidgetProperties</span><span class="p">.</span><span class="na">text</span><span class="p">(</span><span class="n">SWT</span><span class="p">.</span><span class="na">Modify</span><span class="p">)</span>
+<span class="w">                </span><span class="p">.</span><span class="na">observe</span><span class="p">(</span><span class="n">txtReadName</span><span class="p">),</span><span class="w"> </span><span class="n">BeanProperties</span><span class="p">.</span><span class="na">value</span><span class="p">(</span><span class="s">&quot;Name&quot;</span><span class="p">).</span><span class="na">observe</span><span class="p">(</span><span class="n">person</span><span class="p">));</span>
+<span class="w">        </span>
+<span class="w">        </span><span class="c1">// Use default validation - binding code on one line</span>
+<span class="w">        </span><span class="n">Binding</span><span class="w"> </span><span class="n">bindValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctx</span><span class="p">.</span><span class="na">bindValue</span><span class="p">(</span><span class="n">WidgetProperties</span><span class="p">.</span><span class="na">text</span><span class="p">(</span><span class="n">SWT</span><span class="p">.</span><span class="na">Modify</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="na">observe</span><span class="p">(</span><span class="n">txtAge</span><span class="p">),</span><span class="w"> </span><span class="n">BeanProperties</span><span class="p">.</span><span class="na">value</span><span class="p">(</span><span class="s">&quot;age&quot;</span><span class="p">).</span><span class="na">observe</span><span class="p">(</span><span class="n">person</span><span class="p">));</span>
+<span class="w">            </span>
+<span class="w">        </span><span class="n">ControlDecorationSupport</span><span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="n">bindValue</span><span class="p">,</span><span class="w"> </span><span class="n">SWT</span><span class="p">.</span><span class="na">TOP</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">SWT</span><span class="p">.</span><span class="na">RIGHT</span><span class="p">);</span>
+<span class="w">        </span><span class="c1">// DATABINDING END</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setFocus</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The binding of the name is a simple as it gets; an <code class="docutils literal notranslate"><span class="pre">IObservableValue</span></code> is created for both the widget and the name in the Person class
+and these are bound together in the <code class="docutils literal notranslate"><span class="pre">DataBindingContext</span></code> object.</p>
+<p>For age, because it is an int it is possible to make the widget show an error message when is contains a value that is not an int
+using <code class="docutils literal notranslate"><span class="pre">ControlDecorationSupport</span></code> as shown.</p>
+<p>If the UI is started then it is possible to see the data-binding in action, by using the debugger it is possible to see that the
+<code class="docutils literal notranslate"><span class="pre">setName</span></code> method is called every time a change is made to the widget text, i.e. every time a letter is added or removed.</p>
+</section>
+<section id="validators">
+<h2>Validators<a class="headerlink" href="#validators" title="Link to this heading"></a></h2>
+<p>In the previous example, a warning was shown when the age entered was invalid - this is basic validation, it might be that more advanced validation is desired.
+For example, it might that we want to ensure a string is only made up of digits.</p>
+<p>Create a new class called <code class="docutils literal notranslate"><span class="pre">NumbersOnlyValidator</span></code> and add the following code:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span><span class="w"> </span><span class="nn">org.databinding.example.frontend</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.regex.Pattern</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.eclipse.core.databinding.validation.IValidator</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.eclipse.core.databinding.validation.ValidationStatus</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.eclipse.core.runtime.IStatus</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">NumbersOnlyValidator</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">IValidator</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Pattern</span><span class="w"> </span><span class="n">numbersOnly</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Pattern</span><span class="p">.</span><span class="na">compile</span><span class="p">(</span><span class="s">&quot;\\d*&quot;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">IStatus</span><span class="w"> </span><span class="nf">validate</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">numbersOnly</span><span class="p">.</span><span class="na">matcher</span><span class="p">(</span><span class="n">value</span><span class="p">.</span><span class="na">toString</span><span class="p">()).</span><span class="na">matches</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">ValidationStatus</span><span class="p">.</span><span class="na">ok</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ValidationStatus</span><span class="p">.</span><span class="na">error</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; contains a non-numeric!&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>All custom validators implement <code class="docutils literal notranslate"><span class="pre">IValidator</span></code>. In this example, pattern matching is used to check that the value (in this case a string) contains only digits.
+Otherwise it returns an error status.</p>
+<p>Now modify View by adding the following directly before DATABINDING END:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Label</span><span class="w"> </span><span class="n">lblId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Label</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span><span class="w"> </span><span class="n">SWT</span><span class="p">.</span><span class="na">NONE</span><span class="p">);</span>
+<span class="n">lblId</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="s">&quot;ID: &quot;</span><span class="p">);</span>
+<span class="n">lblId</span><span class="p">.</span><span class="na">setLayoutData</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">GridData</span><span class="p">(</span><span class="n">SWT</span><span class="p">.</span><span class="na">FILL</span><span class="p">,</span><span class="w"> </span><span class="n">SWT</span><span class="p">.</span><span class="na">CENTER</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">));</span>
+
+<span class="n">Text</span><span class="w"> </span><span class="n">txtId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Text</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span><span class="w"> </span><span class="n">SWT</span><span class="p">.</span><span class="na">BORDER</span><span class="p">);</span>
+<span class="n">GridData</span><span class="w"> </span><span class="n">gdId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">GridData</span><span class="p">(</span><span class="n">SWT</span><span class="p">.</span><span class="na">LEFT</span><span class="p">,</span><span class="w"> </span><span class="n">SWT</span><span class="p">.</span><span class="na">CENTER</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="n">gdId</span><span class="p">.</span><span class="na">minimumWidth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+<span class="n">txtId</span><span class="p">.</span><span class="na">setLayoutData</span><span class="p">(</span><span class="n">gdId</span><span class="p">);</span>
+
+<span class="n">IValidator</span><span class="w"> </span><span class="n">validator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">NumbersOnlyValidator</span><span class="p">();</span>
+
+<span class="n">UpdateValueStrategy</span><span class="w"> </span><span class="n">strategy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">UpdateValueStrategy</span><span class="p">();</span>
+<span class="n">strategy</span><span class="p">.</span><span class="na">setBeforeSetValidator</span><span class="p">(</span><span class="n">validator</span><span class="p">);</span>
+<span class="n">Binding</span><span class="w"> </span><span class="n">bindValue2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctx</span><span class="p">.</span><span class="na">bindValue</span><span class="p">(</span><span class="n">WidgetProperties</span><span class="p">.</span><span class="na">text</span><span class="p">(</span><span class="n">SWT</span><span class="p">.</span><span class="na">Modify</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="na">observe</span><span class="p">(</span><span class="n">txtId</span><span class="p">),</span>
+<span class="w">        </span><span class="n">BeanProperties</span><span class="p">.</span><span class="na">value</span><span class="p">(</span><span class="s">&quot;idNumber&quot;</span><span class="p">).</span><span class="na">observe</span><span class="p">(</span><span class="n">person</span><span class="p">),</span><span class="w"> </span><span class="n">strategy</span><span class="p">,</span>
+<span class="w">        </span><span class="kc">null</span><span class="p">);</span>
+<span class="n">ControlDecorationSupport</span><span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="n">bindValue2</span><span class="p">,</span><span class="w"> </span><span class="n">SWT</span><span class="p">.</span><span class="na">TOP</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">SWT</span><span class="p">.</span><span class="na">RIGHT</span><span class="p">);</span><span class="w"> </span>
+</pre></div>
+</div>
+<p>This code creates a label and text-box for the ID field of the Person class.
+An instance of <code class="docutils literal notranslate"><span class="pre">NumbersOnlyValidator</span></code> is created and added to a <code class="docutils literal notranslate"><span class="pre">UpdateValueStrategy</span></code> object.
+The <code class="docutils literal notranslate"><span class="pre">UpdateValueStrategy</span></code> object defines how a data-binding responses to value changes - in this case it calls the validator before setting the value.
+The strategy is added as the third parameter of the <code class="docutils literal notranslate"><span class="pre">bindValue</span></code> method call, this is because the third parameter represents the strategy for updating the model based on the widget.
+The fourth parameter is null because there is currently no update strategy for updating the widget based on the model (the default is used).</p>
+<p>By running this example it can be seen that a warning appears if a non-numeric character is entered for the ID.</p>
+</section>
+<section id="converters">
+<h2>Converters<a class="headerlink" href="#converters" title="Link to this heading"></a></h2>
+<p>Converters are similar to validators in that they are used as part of the update strategy; however, they are used to convert either the data from the model or the data send to the model by the widget.
+In this example, two converters are created: one to convert the name to upper-case; and, one to convert to lower-case.</p>
+<p>Create two new classes called <code class="docutils literal notranslate"><span class="pre">ToLowerConverter</span></code> and <code class="docutils literal notranslate"><span class="pre">ToUpperConverter</span></code>.</p>
+<p>Add the following code to <code class="docutils literal notranslate"><span class="pre">ToLowerConverter</span></code>:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span><span class="w"> </span><span class="nn">org.databinding.example.frontend</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.eclipse.core.databinding.conversion.Converter</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ToLowerConverter</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Converter</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">ToLowerConverter</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">String</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="nf">convert</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">fromObject</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">fromObject</span><span class="p">.</span><span class="na">toString</span><span class="p">().</span><span class="na">toLowerCase</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span><span class="w"> </span>
+</pre></div>
+</div>
+<p>Likewise for ToUpperConverter:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span><span class="w"> </span><span class="nn">org.databinding.example.frontend</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.eclipse.core.databinding.conversion.Converter</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ToUpperConverter</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Converter</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">ToUpperConverter</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">String</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="nf">convert</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">fromObject</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">fromObject</span><span class="p">.</span><span class="na">toString</span><span class="p">().</span><span class="na">toUpperCase</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Now replace the code between the DATABINDING START and the DATABINDING FINISH with:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">DataBindingContext</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DataBindingContext</span><span class="p">();</span>
+
+<span class="n">UpdateValueStrategy</span><span class="w"> </span><span class="n">strategy1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">UpdateValueStrategy</span><span class="p">();</span>
+<span class="n">strategy1</span><span class="p">.</span><span class="na">setConverter</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ToLowerConverter</span><span class="p">());</span>
+
+<span class="n">UpdateValueStrategy</span><span class="w"> </span><span class="n">strategy2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">UpdateValueStrategy</span><span class="p">();</span>
+<span class="n">strategy2</span><span class="p">.</span><span class="na">setConverter</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ToUpperConverter</span><span class="p">());</span>
+
+<span class="n">IObservableValue</span><span class="w"> </span><span class="n">target</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">WidgetProperties</span><span class="p">.</span><span class="na">text</span><span class="p">(</span><span class="n">SWT</span><span class="p">.</span><span class="na">Modify</span><span class="p">).</span><span class="na">observe</span><span class="p">(</span><span class="n">txtName</span><span class="p">);</span>
+<span class="n">IObservableValue</span><span class="w"> </span><span class="n">model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BeanProperties</span><span class="p">.</span><span class="na">value</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">).</span><span class="na">observe</span><span class="p">(</span><span class="n">person</span><span class="p">);</span>
+
+<span class="c1">// First strategy goes towards the model, second goes towards the widget (target)</span>
+<span class="n">ctx</span><span class="p">.</span><span class="na">bindValue</span><span class="p">(</span><span class="n">target</span><span class="p">,</span><span class="w"> </span><span class="n">model</span><span class="p">,</span><span class="w"> </span><span class="n">strategy1</span><span class="p">,</span><span class="w"> </span><span class="n">strategy2</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Note: The data-binding for age has been deleted, so the age text-box will be empty when this is run.</p>
+<p>Running this example should show the name in upper-case and it ran through the debugger it can be seen that if the value is modified the <code class="docutils literal notranslate"><span class="pre">setName</span></code> method in Person receives a lower-case string.</p>
+</section>
+<section id="update-strategies">
+<h2>Update strategies<a class="headerlink" href="#update-strategies" title="Link to this heading"></a></h2>
+<p>There are other things that can be done with update strategies, in this example the model is only updated when the update button is clicked (unlike in the first example where the person’s name changes each time it is modified).</p>
+<p>Replace the code between the DATABINDING START and the DATABINDING FINISH with:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">final</span><span class="w"> </span><span class="n">DataBindingContext</span><span class="w"> </span><span class="n">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DataBindingContext</span><span class="p">();</span>
+
+<span class="n">UpdateValueStrategy</span><span class="o">&lt;</span><span class="n">Object</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">strategyOnPress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">UpdateValueStrategy</span><span class="o">&lt;</span><span class="n">Object</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="p">(</span><span class="n">UpdateValueStrategy</span><span class="p">.</span><span class="na">POLICY_ON_REQUEST</span><span class="p">);</span>
+
+<span class="n">IObservableValue</span><span class="w"> </span><span class="n">target</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">WidgetProperties</span><span class="p">.</span><span class="na">text</span><span class="p">(</span><span class="n">SWT</span><span class="p">.</span><span class="na">Modify</span><span class="p">).</span><span class="na">observe</span><span class="p">(</span><span class="n">txtName</span><span class="p">);</span>
+<span class="n">IObservableValue</span><span class="w"> </span><span class="n">model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BeanProperties</span><span class="p">.</span><span class="na">value</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">).</span><span class="na">observe</span><span class="p">(</span><span class="n">person</span><span class="p">);</span>
+<span class="n">ctx</span><span class="p">.</span><span class="na">bindValue</span><span class="p">(</span><span class="n">target</span><span class="p">,</span><span class="w"> </span><span class="n">model</span><span class="p">,</span><span class="w"> </span><span class="n">strategyOnPress</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span>
+
+<span class="n">Button</span><span class="w"> </span><span class="n">btnUpdate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Button</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span><span class="w"> </span><span class="n">SWT</span><span class="p">.</span><span class="na">NONE</span><span class="p">);</span>
+<span class="n">btnUpdate</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="s">&quot;Update&quot;</span><span class="p">);</span>
+<span class="n">txtAge</span><span class="p">.</span><span class="na">setLayoutData</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">GridData</span><span class="p">(</span><span class="n">SWT</span><span class="p">.</span><span class="na">LEFT</span><span class="p">,</span><span class="w"> </span><span class="n">SWT</span><span class="p">.</span><span class="na">CENTER</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">));</span>
+
+<span class="n">btnUpdate</span><span class="p">.</span><span class="na">addSelectionListener</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">SelectionAdapter</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">widgetSelected</span><span class="p">(</span><span class="n">SelectionEvent</span><span class="w"> </span><span class="n">arg0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ctx</span><span class="p">.</span><span class="na">updateModels</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>In this example, the Update strategy is initialised with POLICY_ON_REQUEST. This means the updates are only send to the model (the Person object) when told to.
+The models are updated when <code class="docutils literal notranslate"><span class="pre">updateModels</span></code> is called by the <code class="docutils literal notranslate"><span class="pre">DataBindingContext</span></code> which in this example is on a button click.</p>
+<p>Running this example in the debugger shows that the <code class="docutils literal notranslate"><span class="pre">setName</span></code> method is only called when the button is clicked rather than on every modification.</p>
+</section>
+<section id="binding-a-java-list-to-a-list-control">
+<h2>Binding a Java List to a List Control<a class="headerlink" href="#binding-a-java-list-to-a-list-control" title="Link to this heading"></a></h2>
+<p>Most of this is taken care of by the databinding library via <code class="docutils literal notranslate"><span class="pre">ListViewer</span></code> and <code class="docutils literal notranslate"><span class="pre">ObservableListContentProvider</span></code>. Here is an example of it in action:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">ListViewer</span><span class="w"> </span><span class="n">myViewer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ListViewer</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span><span class="w"> </span><span class="n">SWT</span><span class="p">.</span><span class="na">BORDER</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">SWT</span><span class="p">.</span><span class="na">V_SCROLL</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">SWT</span><span class="p">.</span><span class="na">SINGLE</span><span class="p">);</span>
+<span class="n">ObservableListContentProvider</span><span class="w"> </span><span class="n">contentProvider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ObservableListContentProvider</span><span class="p">();</span>
+<span class="n">myViewer</span><span class="p">.</span><span class="na">setContentProvider</span><span class="p">(</span><span class="n">contentProvider</span><span class="p">);</span>
+<span class="n">myViewer</span><span class="p">.</span><span class="na">setInput</span><span class="p">(</span><span class="n">BeanProperties</span><span class="p">.</span><span class="na">list</span><span class="p">(</span><span class="s">&quot;names&quot;</span><span class="p">).</span><span class="na">observe</span><span class="p">(</span><span class="n">myViewModel</span><span class="p">));</span>
+
+<span class="c1">// To get the List Control itself - it is org.eclipse.swt.widget.List not a standard Java List</span>
+<span class="n">List</span><span class="w"> </span><span class="n">myList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">myViewer</span><span class="p">.</span><span class="na">getList</span><span class="p">();</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">ListViewer</span></code> is a wrapper around the List control that provides extra functionality and <code class="docutils literal notranslate"><span class="pre">ObservableListContentProvider</span></code> make the databinding work.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Connecting-a-View-to-a-PV.html" class="btn btn-neutral float-left" title="Connecting a view to a PV" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Databinding---common-mistakes.html" class="btn btn-neutral float-right" title="Databinding - common mistakes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on May 30, 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
