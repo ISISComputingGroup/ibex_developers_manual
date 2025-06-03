@@ -1,5 +1,5 @@
 # OPC UA 
-## What is OPC UA
+## General / What is OPC UA
 OPC UA is a cross-platform, open-source, IEC62541 standard for data exchange from sensors to cloud applications developed by the OPC Foundation. It is characterised by: 
 
 * Standardized data models freely available for over 60 types of industrial equipment, published by the OPC Foundation via Companion Specifications
@@ -18,22 +18,24 @@ existing commercial and/or open-source stacks available in all popular programmi
 
 More info can be found [here on Wikipedia for a general overview](https://en.wikipedia.org/wiki/OPC_Unified_Architecture), or for a more detailed description from [OPC Foundation](https://opcfoundation.org/about/what-is-opc/).
 
-## How is authentication handled?
-Currently, the IOC does not seem to be able to support encrypted message security policy. It does, however, support “None” security mode, and connecting with a username and password, which also appears to require sending the password encrypted with Basic256 (username and password connection works with None security mode, but does not work if there is no certificate and private key provided via the `opcuaCLientCertificate` option in the `st-common.cmd` or `st.cmd` file, which loads the IOC with some other options.  
+## Authentication
+### How is authentication handled?
+Currently, the IOC does not seem to be able to support encrypted message security policy. It does, however, support “None” security mode, and connecting with a username and password, which also appears to require sending the password encrypted with Basic256 (username and password connection works with None security mode, but does not work if there is no certificate and private key provided via the `opcuaCLientCertificate` option in the `st-common.cmd` or `st.cmd` file, which loads the IOC with some other options, such as IP address, node configuration, namespace address, etc. More information on the EPICS OPC UA module can be found here: [EPICS OPC UA Documentation](https://github.com/epics-modules/opcua?tab=readme-ov-file#documentation).
 
-Currently, authentication configurations in Windows only seem to work with username and password. This is likely due to functionality missing from the `open62541` library, the open source library that we use in conjunction with `opcua` EPICS module. A username and password is set on the PLC itself, and those values can be read at IOC startup to authenticate, and sent via Basic256 encryption to the PLC to sign in. When implementing/installing onto a new instrument, the `client_private_key.pem`, `cert.txt` (which will need to be edited to reflect current username and password for the target PLC/server), and `OPCUA_01.cmd` should be moved from the Experiment Controls non-public share `OPCUA` folder, to the instrument's configurations area, in a new folder that should be named `opcua`. If done properly, the `opcua` EPICS module should be able to pick up the user name and password, log in to the OPC server properly, and begin a connection. 
+Authentication configurations in Windows only seem to work with username and password. This is likely due to functionality missing from the `open62541` library, the open source library that we use in conjunction with `opcua` EPICS module. A username and password is set on the PLC itself, and those values can be read at IOC startup to authenticate, and sent via Basic256 encryption to the PLC to sign in. When implementing/installing onto a new instrument, the `client_private_key.pem` (which needs to either be generated, or gotten from the appropriate instrument's `OPCUA` folder from the private network shares), `cert.txt` (which will need to be edited to reflect current username and password for the target PLC/server), and `OPCUA_01.cmd` should be moved from the Experiment Controls private network share `OPCUA` folder, to the instrument's configurations area, in a new folder that should be named `opcua`. If done properly, the `opcua` EPICS module should be able to pick up the user name and password, log in to the OPC server properly, and begin a connection. 
 
-## Do any settings in the PLC side need to be adjusted to get communicating properly?
-On occasion, a client certificate needs to be trusted manually, from the PLC technician side. However, things *_should_* be set up on our PLCs currently deployed; this step is done in deployment/implementation. A security policy might be set that is not what the IOC is trying to use, if everything else seems fine but you are unable to connect. Lastly, another person might be connected to the server (perhaps testing an IOC or something), and they would need to be kicked off in order for the IOC to communicate properly. Speak with Tim Carter or a member of his team to see if this is the case.
+## Communication
+### Do any settings in the PLC side need to be adjusted to get communicating properly?
+On occasion, a client certificate needs to be trusted manually, from the PLC technician side. However, things *_should_* be set up on our PLCs currently deployed; this step is done in deployment/implementation. A security policy might be set that is not what the IOC is trying to use, if everything else seems fine but you are unable to connect. Lastly, another person might be connected to the server (perhaps testing an IOC or something), and they would need to be kicked off in order for the IOC to communicate properly. Speak with Tim Carter or a member of the team, Instrumentation and Control Systems Group, to see if this is the case.
 
-## Where are instrument-specific configs loaded from 
-We load instrument specific configs from the $(INSTRUMENT)/configurations/opcua/ folder. This `opcua` folder is created at implementation time, on the `NDX` machine. It should contain a `OPCUA_01.cmd` file, which contains any `DbLoadRecords` calls, and where paths are specified to the `db` files for that `NDX`'s specific `OPCUA` IOC. If an `NDX` is missing an `opcua` folder, create one; if you cannot find it's `OPCUA_01.cmd` file, it _should_ be placed in the Experiment Controls non-public network share, in the `OPCUA` folder, in a folder specific to that `NDX`. For example, `NDXMAPS`'s `OPCUA_01.cmd` file is in `<network share>/OPCUA/MAPS_OPCUA/`.
+## Configuration
+### Where are instrument-specific configs loaded from 
+We load instrument specific configs from the $(INSTRUMENT)/configurations/opcua/ folder. This `opcua` folder is created at implementation time, on the `NDX` machine. It should contain a `OPCUA_01.cmd` file, which contains any `dbLoadRecords` calls, and where paths are specified to the `db` files for that `NDX`'s specific `OPCUA` IOC. If an `NDX` is missing an `opcua` folder, create one; if you cannot find it's `OPCUA_01.cmd` file, it _should_ be placed in the Experiment Controls private network share, in the `OPCUA` folder, in a folder specific to that `NDX`. For example, `NDXMAPS`'s `OPCUA_01.cmd` file is in `<network share>/OPCUA/MAPS_OPCUA/`.
 
-## Where are instrument-specific DBs defined
+### Where are instrument-specific DBs defined
 Instrument specific `db` files are currently defined in `ioc/master/OPCUA/OPCUA-IOC-01App/Db`. Hence, the `db` files should have somewhat specific names so as to avoid confusion.
 
-
-## Any troubleshooting information (As a support/on call person, things to look out for)
+## Troubleshooting
 As always, be sure to check the IOC log first, if something isn't working properly. If the IOC has connected properly to the server, the IOC log should print out something like the following: 
 ```
 # namespace 4 urn:OMRON:SomeOpcUaServer:FactoryAutomation
