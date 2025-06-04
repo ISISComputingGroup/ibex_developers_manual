@@ -86,7 +86,9 @@ Device is not powered.
 Device is powered, but was temporarily without power.
 Device and/or chassis driver support may have been removed.
 ```
-If this happens immediately on IOC boot, check if the DAQ is connected in NI-MAX. Check the device is reserved in NI-MAX and can be reached over the network.
+If this happens immediately on IOC boot, check if the DAQ is connected in NI-MAX. Check the device is reserved in NI-MAX and can be reached over the network. If you believe the device is reachable but has a red cross beside it in NI-MAX, then right-click the device under network devices, unreserve and re-reserve.
+
+NI-MAX is a piece of software which is installed on the NDX that needs it, available from the start menu on the instrument. It can be very slow when expanding the list of device - be patient.
 
 ```
 ### DAQmx ERROR (ReadAnalogF64): The specified operation cannot be performed because a task is in the process of being aborted or a device is in the process of being removed from the system. Wait until the abort operation is complete and attempt to perform the operation again.
