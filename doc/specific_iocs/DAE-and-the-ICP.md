@@ -51,6 +51,10 @@ isisicp.simulation.neventssim = 50
 isisicp.simulation.spreadsimevents = false
 ```
 change `spreadsimevents` to `true`, you probably don't need to increase `neventssim` unless you had loaded a custom larger wiring table and spectra aren't accumulating data fast enough for you.
+
+:::{note}
+In order for simulation mode parameters like `isisicp.simulation.spreadsimevents` to work correctly, you need to have an event-mode wiring table loaded.
+:::
  
 ## Performing arbitrary actions on run start/run end
 
