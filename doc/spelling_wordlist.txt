@@ -469,6 +469,7 @@ makefile
 makefiles
 makeSupport
 manc
+Mannix
 Mantid
 Mantracourt
 Marlow
