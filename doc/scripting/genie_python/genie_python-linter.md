@@ -1,6 +1,6 @@
 # `genie_python` script checking (linting)
 
-On `g.load_script` genie_python now runs pylint on the scripts. This help the user see errors before the script is run. However sometimes this causes its own issues. There is a {external+ibex_user_manual}`page in the user manual <scripting/Error-Checking-Troubleshooting>` describing what the user should do.
+On `g.load_script` genie_python now runs pylint on the scripts. This help the user see errors before the script is run. However sometimes this causes its own issues. There is a {external+ibex_user_manual:doc}`page in the user manual <scripting/Error-Checking-Troubleshooting>` describing what the user should do.
 
 Here are some more tips that we don't necessarily want to encourage. 
 
