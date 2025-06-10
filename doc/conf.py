@@ -97,3 +97,8 @@ redirects = {
     "client/getting_started/GUI-Development-Workflow": "../../processes/git_and_github/Git-workflow.html",  # noqa E501
     "client/testing/Using-Mockito-for-Testing-in-the-GUI": "Mockito.html",
 }
+
+intersphinx_mapping = {
+    "ibex_user_manual": ("https://isiscomputinggroup.github.io/ibex_user_manual/", None),
+}
+
