@@ -83,7 +83,7 @@ While that's installing, get to know the IBEX components. Get to know EPICS. It'
 
 Ironically, to get a well-explained overview of what IBEX is, and how to interact with it as a dev, the {external+ibex_user_manual:doc}`IBEX user manual <index>` is a really nice place to start. In particular, see:
 
-- {external+ibex_user_manual:doc}`IBEX Key Concepts <Concepts>`
+- {external+ibex_user_manual:doc}`IBEX Key Concepts <Key-Concepts-in-IBEX>`
 - {external+ibex_user_manual:doc}`IBEX-GUI-Features`
 - {external+ibex_user_manual:doc}`How To Do Things In IBEX <How-To>`
 
