@@ -39,7 +39,7 @@
 - TW - most outages didn't take much recovery time
 
 ### Many instruments hit 100G/24hr limit on export only area
-- TWW - MAPS, Polaris, NIMROD all hit limit. CMS demoed NIMROD solution in code review. Agreed in code review to extend deployment
+- TW - MAPS, Polaris, NIMROD all hit limit. CMS demoed NIMROD solution in code review. Agreed in code review to extend deployment
 - CMS confirmed that given time it can be deployed more widely (in response to FA question). CMS expressed concern about knock on impact on how careful people may be as a result of change.
 - FA - has emailed MAPS about the creation of RAW files as well as Nexus files. RAW files do not compress as well as nexus (can be one order magnitude). Not writing raw file may well solve this issues for some of these issues. Should watch for this.
 - Discussion of other log files and reasons for storage and history (CMS to email FA about one specific case to check if case involving 100s file/run needed)
