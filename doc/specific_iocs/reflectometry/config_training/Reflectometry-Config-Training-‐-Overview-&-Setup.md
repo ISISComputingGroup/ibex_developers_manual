@@ -6,7 +6,7 @@ This training unit presents a series of exercises which take you through the cre
 
 ## Useful Resources:
 
-- [Reflectometry View User Manual](https://github.com/ISISComputingGroup/ibex_user_manual/wiki/Reflectometry-View)
+- {external+ibex_user_manual:doc}`Reflectometry View User Manual <gui/Reflectometry-View>`
 - [Reflectometry Config Documentation & Reference Manual](../Reflectometry-Configuration)
 - [Reflectometry Glossary](../Reflectometry-Glossary)
 

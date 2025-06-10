@@ -26,7 +26,7 @@
 ## Links
 
 - [IBEX wiki](https://github.com/ISISComputingGroup/IBEX/wiki)
-- [IBEX User Manual](https://github.com/ISISComputingGroup/ibex_user_manual/wiki)
+- {external+ibex_user_manual:doc}`IBEX user manual <index>`
 - [IBEX Project Board for Issues](https://github.com/ISISComputingGroup/IBEX/projects/1)
 - [Stream Protocol Page](http://epics.web.psi.ch/software/streamdevice/doc/)
 - [genie_python reference](http://shadow.nd.rl.ac.uk/genie_python/sphinx/genie_python.html)

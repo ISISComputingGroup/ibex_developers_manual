@@ -1,7 +1,7 @@
 # Matplotlib
 
 ```{seealso}
-[User-facing docs](https://github.com/ISISComputingGroup/ibex_user_manual/wiki/Matplotlib) on user manual.
+{external+ibex_user_manual:doc}`scripting/Matplotlib` on the user manual.
 ```
 
 We allow plotting in IBEX via `matplotlib`. These plots will appear in the IBEX client.

@@ -132,7 +132,7 @@ There are a number of tips for [trouble shooting](#all_troubleshooting_links) al
   1. I can't use this button to get to more details/why doesn't this bit of the OPI work
       - Check they are in manager mode
   1. I need to add this device to my system
-      - Check [the user manual](https://github.com/ISISComputingGroup/ibex_user_manual/wiki) for IBEX, for SECI, if you don't know already ask someone else
+      - Check {external+ibex_user_manual:doc}`the user manual <index>` for IBEX, for SECI, if you don't know already ask someone else
   1. My motor won't move
       - Are both limits made?
           - Yes: Something has happened in the physical realm, refer it to EUSG via the MCR
@@ -178,7 +178,7 @@ There are a number of tips for [trouble shooting](#all_troubleshooting_links) al
   <summary>Script issues</summary>
 
   1. My script won't load
-     - If `g.load_script` is being used and you see errors of the form `E:  1: error description (error-name)`, these errors are coming from the linter. Detailed linter troubleshooting is available [here](https://github.com/ISISComputingGroup/ibex_user_manual/wiki/Error-Checking-Troubleshooting).
+     - If `g.load_script` is being used and you see errors of the form `E:  1: error description (error-name)`, these errors are coming from the linter. Detailed linter troubleshooting is available {external+ibex_user_manual:doc}`here <scripting/Error-Checking-Troubleshooting>`.
   1. My script isn't behaving in the way I expect it to
      - This is a best efforts, and not everyone can provide the same level of support
      - Look at it with respect to basic coding standards and obvious race condition points

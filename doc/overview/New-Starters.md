@@ -81,11 +81,11 @@ Here's some useful bits and bobs for how our team operates and the conventions w
 
 While that's installing, get to know the IBEX components. Get to know EPICS. It's the software environment that IBEX uses to control the ISIS instruments. 
 
-Ironically, to get a well-explained overview of what IBEX is, and how to interact with it as a dev, the [IBEX User Manual](https://github.com/ISISComputingGroup/ibex_user_manual/wiki) is a really nice place to start. In particular, see:
+Ironically, to get a well-explained overview of what IBEX is, and how to interact with it as a dev, the {external+ibex_user_manual:doc}`IBEX user manual <index>` is a really nice place to start. In particular, see:
 
-- [IBEX Key Concepts](https://github.com/ISISComputingGroup/ibex_user_manual/wiki/Key-Concepts-in-IBEX)
-- [IBEX GUI Features](https://github.com/ISISComputingGroup/ibex_user_manual/wiki/IBEX-GUI-Features)
-- [How To Do Things In IBEX](https://github.com/ISISComputingGroup/ibex_user_manual/wiki/How-To-Do-Things-In-IBEX)
+- {external+ibex_user_manual:doc}`IBEX Key Concepts <Key-Concepts-in-IBEX>`
+- {external+ibex_user_manual:doc}`IBEX-GUI-Features`
+- {external+ibex_user_manual:doc}`How To Do Things In IBEX <How-To>`
 
 There are some training materials available that we use to train scientists on IBEX, which is also a nice way to get started:
 
