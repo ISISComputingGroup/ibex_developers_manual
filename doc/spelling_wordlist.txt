@@ -772,6 +772,7 @@ Sophos
 Sorensen
 sourcesafe
 Southren
+SpC
 Speeduino
 Spellman
 spudulike
