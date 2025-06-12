@@ -302,4 +302,4 @@ The Baldor drives do need to be set up – but this is done independently. Histo
 **Important Note:** These are the only Baldor axes at ISIS.  There is limited support (apparently Baldor has been bought out since SANS2D was commissioned). For SANS2D to operate, the axes must be operational.  The motion control group are considering whether to convert these axes to a Beckhoff system that is supportable.  At the present time (November 2018) no decision has been taken to replace the Baldor drives.  However, people are aware that support for these is limited.
 
 ## Additional Information ##
-The backlash distance in IBEX converted from SECI was `-2` however(Front Det X), IBEX doesn't like it so when a motor is moved to a negative direction, it uses BVEL speed instead of VELO [5675](https://github.com/ISISComputingGroup/IBEX/issues/5657).
+The backlash distance in IBEX converted from SECI was `-2` however(Front Det X), IBEX doesn't like it so when a motor is moved to a negative direction, it uses BVEL speed instead of VELO [5657](https://github.com/ISISComputingGroup/IBEX/issues/5657).
