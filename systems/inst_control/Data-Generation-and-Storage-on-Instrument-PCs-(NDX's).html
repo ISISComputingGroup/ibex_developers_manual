@@ -1,0 +1,255 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Storage &amp; Production &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Increase VM memory" href="Increase-VM-memory.html" />
+    <link rel="prev" title="Computer Troubleshooting" href="Computer-Troubleshooting.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Systems.html">Systems Administration &amp; Hardware</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../External.html">External systems/services</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Inst-Control.html">Instrument control computers</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Archive-Watcher.html">Archive Watcher</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Automated-log-rotation.html">Automated log rotation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Change-Windows-Theme.html">Change Windows Theme</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Computer-Troubleshooting.html">Computer Troubleshooting</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Data Storage &amp; Production</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Increase-VM-memory.html">Increase VM memory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MDT-%28Microsoft-deployment-toolkit%29.html">MDT (Microsoft deployment toolkit)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PS-Remote.html">Powershell Remote</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Rebuild-Performance-Counters.html">Rebuild Performance Counters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Register-SELOGCOM-in-COM-Plus.html">Register SELOGCOM in COM+</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Script-to-connect-to-all-instruments.html">Script to connect to all instruments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TreeSize-Pro.html">TreeSize</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cron-jobs-and-windows-scheduled-tasks.html">Cron Jobs &amp; Scheduled Tasks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Nagios.html">Nagios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Test-Machines.html">Test Machines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Webserver.html">Webserver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../control-svcs.html"><code class="docutils literal notranslate"><span class="pre">control-svcs</span></code></a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Systems.html">Systems Administration &amp; Hardware</a></li>
+          <li class="breadcrumb-item"><a href="../Inst-Control.html">Instrument control computers</a></li>
+      <li class="breadcrumb-item active">Data Storage &amp; Production</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/systems/inst_control/Data-Generation-and-Storage-on-Instrument-PCs-(NDX's).md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="data-storage-production">
+<h1>Data Storage &amp; Production<a class="headerlink" href="#data-storage-production" title="Link to this heading"></a></h1>
+<p>Data is produced by various parts of the IBEX infrastructure.</p>
+<ul class="simple">
+<li><p><em>scientific data</em>: is captured in NEXUS files is well understood and the process for storing and archiving it is well documented.</p></li>
+<li><p><em>autosave</em>: captured in autosave files</p></li>
+<li><p><em>configurations</em>: including instrument scripts (not user scripts)</p></li>
+<li><p><em>gui</em>: workspace of the gui (Apps\Client\workspace)</p></li>
+<li><p><em>logs</em></p>
+<ul>
+<li><p><em>conserver</em>: console servers logs</p></li>
+<li><p><em>ioc</em>: ioc logs</p></li>
+<li><p><em>other</em>: all other directories in var\logs</p></li>
+</ul>
+</li>
+<li><p><em>sql database</em>:</p>
+<ul>
+<li><p><em>mysql-alarm</em>: alarm schema</p></li>
+<li><p><em>mysql-archive</em>: archive schema for archive engines</p></li>
+<li><p><em>mysql-exp_data</em>: experimental database schema</p></li>
+<li><p><em>mysql-iocdb</em>: IOC information schema</p></li>
+<li><p><em>mysql-journal</em>: Journal schema</p></li>
+<li><p><em>mysql-msg_log</em>: message log schema</p></li>
+<li><p><em>mysql-mysql</em>: mysql own schema</p></li>
+<li><p><em>mysql-performance_schema</em>: performance schema</p></li>
+<li><p><em>mysql-sys</em>: system schema</p></li>
+<li><p><em>mysql_files</em>: files in the root on mysql data</p></li>
+</ul>
+</li>
+</ul>
+<section id="decisions">
+<h2>Decisions<a class="headerlink" href="#decisions" title="Link to this heading"></a></h2>
+<section id="data-storage">
+<h3>Data storage<a class="headerlink" href="#data-storage" title="Link to this heading"></a></h3>
+<p>In May 2024 we went through each of these data types, and reviewed decisions made in 2018 (<a class="reference internal" href="#data-generation-and-storage-previous-work">see below</a>. In each case we identified how long we needed to keep them on the instrument, whether (and if so, how long) we needed to keep the data having moved it off the instrument, and what changes could be made to better automate that movement.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Data type</p></th>
+<th class="head"><p>Retention on instrument PC</p></th>
+<th class="head"><p>Retention after migration</p></th>
+<th class="head"><p>Automation</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Autosave</p></td>
+<td><p>Indefinitely</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>Trivially Small and useful</p></td>
+</tr>
+<tr class="row-odd"><td><p>Config</p></td>
+<td><p><a class="reference internal" href="../../system_components/Settings-and-Configurations.html"><span class="doc std std-doc">Tracked with git</span></a></p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>Small</p></td>
+</tr>
+<tr class="row-even"><td><p>logs: all, other than those listed below (inc. IOC, Genie-python, ICP, DAE …)</p></td>
+<td><p>10 days</p></td>
+<td><p>10 years</p></td>
+<td><p><a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/8360">#8360</a></p></td>
+<td><p>Currently moved by a script being run manually between cycles. Agreed that the usefulness of these logs declines sharply with time and the potential volume is such as to justify the 10 day retention period</p></td>
+</tr>
+<tr class="row-odd"><td><p>logs: conserver</p></td>
+<td><p>10 days</p></td>
+<td><p>Delete after 10 days</p></td>
+<td><p><a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/8363">#8363</a></p></td>
+<td><p>These contain no additional information over other logs, but are useful for debugging in some specific contexts, as such no need to retain beyond the period they would be useful for that debugging.</p></td>
+</tr>
+<tr class="row-even"><td><p>MySQL: msg_log</p></td>
+<td><p>14 days - configurable</p></td>
+<td><p>None</p></td>
+<td><p><a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/8364">#8364</a></p></td>
+<td><p>Searchable DB of things in the IOC log. Retention time shall be nominally 2 weeks, but configurable within each instrument.</p></td>
+</tr>
+<tr class="row-odd"><td><p>MySQL: archive</p></td>
+<td><p>1 cycle</p></td>
+<td><p>?10 years?</p></td>
+<td><p><a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/8365">#8365</a></p></td>
+<td><p>Source for IBEX graphs. Agreed keeping for one cycle would be appropriate retention. If we then find manual truncation is still required in cycle, then we should adapt the truncation script to leave n days of data behind. We may also wish to investigate the suitability of a process of trickle deletions maintaining x days of data at any time.</p></td>
+</tr>
+<tr class="row-even"><td><p>MySQL: all others not listed above</p></td>
+<td><p>Indefinitely</p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p>Small</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="data-generation-and-storage-previous-work">
+<h2>Previous work<a class="headerlink" href="#data-generation-and-storage-previous-work" title="Link to this heading"></a></h2>
+<p>This page was substantially rewritten in 2024, including a change in name. <a class="reference external" href="https://github.com/IsisComputingGroup/ibex_developers_manual/wiki/Data-Generation-and-Storage/89680073e9034ff5381470be73eacfc2daf24a40">The 2018 version</a> is available in the git history. In 2018 we monitored 6 instruments over 19 days in cycle, the results are in an <a class="reference download internal" download="" href="../../_downloads/517e8c8cb13ec4243f7c033506fc9ab4/DataVolumns_resolution.xlsx"><span class="xref download myst">excel file</span></a>. We found that the daily variation is not huge and therefore we can look at the averages of data captured per day. Of the various types of data the largest was conserver logs, ioc logs, mysql-archive, msg-logs and mysql files. At that time, IMAT was the biggest user collecting less than 400MB/day.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Computer-Troubleshooting.html" class="btn btn-neutral float-left" title="Computer Troubleshooting" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Increase-VM-memory.html" class="btn btn-neutral float-right" title="Increase VM memory" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Jun 12, 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
