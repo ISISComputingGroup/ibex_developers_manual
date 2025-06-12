@@ -2,7 +2,7 @@
 
 ## Setup
 
-Clone the repository from [`https://github.com/ISISComputingGroup/ConfigChecker`](https://github.com/ISISComputingGroup/ConfigChecker). Make sure that Genie Python 3 is installed in `C:\Instrument\Apps\Python3`; if it isn't, either install it there or point the `call` command in `run_tests.bat` to your install location.
+Clone the repository from [`https://github.com/ISISComputingGroup/ConfigChecker`](https://github.com/ISISComputingGroup/ConfigChecker). Make sure that the Uktena python distribution is installed in `C:\Instrument\Apps\Python3`, and then point the `call` command in `run_tests.bat` to that location.
 
 To set up the config checker to run locally on all instruments:
 1. Run `run_tests.bat`

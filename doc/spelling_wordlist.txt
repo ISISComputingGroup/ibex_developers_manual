@@ -3,7 +3,6 @@ ack
 Acqiris
 actioned
 ActiveMQ
-addStrings
 adsDriver
 Aeroflex
 AeroflexIFR
@@ -114,6 +113,7 @@ Chakraborty
 checkboxes
 checkRelease
 checkstyle
+checksums
 Chell
 Chrono
 Chronus
@@ -469,6 +469,7 @@ makefile
 makefiles
 makeSupport
 manc
+Mannix
 Mantid
 Mantracourt
 Marlow
@@ -534,6 +535,7 @@ mvn
 mW
 mx
 myexample
+myperspective
 MySQL
 mysql
 mysqladmin
@@ -581,6 +583,8 @@ Omron
 onboarding
 Onenote
 onwards
+opc
+opcua
 openjfx
 openssl
 openwire
@@ -700,6 +704,7 @@ recsim
 recurse
 redistributable
 redistributables
+Redpanda
 reflectometer
 reflectometers
 reflectometry
@@ -719,7 +724,6 @@ repurposed
 reselecting
 resync
 resynced
-reverseString
 rheometers
 rhs
 Riken
@@ -764,6 +768,7 @@ Sophos
 Sorensen
 sourcesafe
 Southren
+SpC
 Speeduino
 Spellman
 spudulike
@@ -794,6 +799,7 @@ subVI
 Sudeepta
 sudo
 Sumitomo
+Sunil
 Superlogics
 supermirror
 supermirrors
@@ -853,6 +859,7 @@ TTi
 Turbotronik
 TwinCAT
 txt
+ua
 uA
 uamps
 UC

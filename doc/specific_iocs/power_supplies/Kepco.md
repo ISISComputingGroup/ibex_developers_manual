@@ -1,6 +1,6 @@
 # Kepco
 
-Summary of use is now in the [user manual](https://github.com/ISISComputingGroup/ibex_user_manual/wiki/Kepco-Power-Supply).
+Summary of use is now in the {external+ibex_user_manual:doc}`user manual <device_specific/Kepco-Power-Supply>`.
 
 ## Remote connection details
 

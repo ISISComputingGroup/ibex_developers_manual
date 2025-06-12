@@ -28,7 +28,7 @@ The MuSR Lakeshore 340 excitations need to be able to be controlled in two ways:
 
 ### Excitations Temperature Threshold File
 
-You can find examples in the Lakeshore 340 support module `lakeshore340\excitation_thresholds`. More details [here](https://github.com/ISISComputingGroup/ibex_user_manual/wiki/Lakeshore-340).
+You can find examples in the Lakeshore 340 support module `lakeshore340\excitation_thresholds`. More details {external+ibex_user_manual:doc}`here <device_specific/Lakeshore-340>`.
 
 ### Excitations IOC records and algorithm
 
@@ -36,6 +36,6 @@ You can view a diagram describing how the original VI worked [here](https://gith
 
 The `asub` record `THRESHOLDS:_CALC` calculates and sets the thresholds. The function the record contains also checks conditions such as the file containing invalid lines, the file not existing and whether the file is None.txt (the default which says to not do anything).
 
-The `THRESHOLDS:_CALC` record is triggered into processing by the setting of `A:TEMP:SP` and `THRESHOLDS:FILE` (written to via `dbpf` from `st-common.cmd`). For how the thresholds file is read see [here](https://github.com/ISISComputingGroup/ibex_user_manual/wiki/Lakeshore-340) and diagram below. Once the values are calculated they are set into `THRESHOLDS:TEMP` and `THRESHOLDS:EXCITATION` or if there is an error `THRESHOLDS:ERROR`. The IOC then waits for the temperature to reach the setpoint before writing the excitation to `EXCITATIONA:SP`, this mechanism is documented in the diagram below.
+The `THRESHOLDS:_CALC` record is triggered into processing by the setting of `A:TEMP:SP` and `THRESHOLDS:FILE` (written to via `dbpf` from `st-common.cmd`). For how the thresholds file is read see {external+ibex_user_manual:doc}`here <device_specific/Lakeshore-340>` and diagram below. Once the values are calculated they are set into `THRESHOLDS:TEMP` and `THRESHOLDS:EXCITATION` or if there is an error `THRESHOLDS:ERROR`. The IOC then waits for the temperature to reach the setpoint before writing the excitation to `EXCITATIONA:SP`, this mechanism is documented in the diagram below.
 
 ![IOC and flowchart diagram for excitations](LKSH340ExcitationsEPICS.png)

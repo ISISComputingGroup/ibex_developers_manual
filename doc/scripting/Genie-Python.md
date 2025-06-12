@@ -13,5 +13,5 @@ genie_python/*
 
 ### User documentation
 
-- [Scripting in the user manual](https://github.com/ISISComputingGroup/ibex_user_manual/wiki/Scripting)
+- {external+ibex_user_manual:doc}`Scripting in the user manual <Scripting>`
 - [genie_python reference](http://shadow.nd.rl.ac.uk/genie_python/sphinx/genie_python.html)

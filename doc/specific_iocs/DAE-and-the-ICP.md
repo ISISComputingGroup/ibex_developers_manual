@@ -1,6 +1,8 @@
 # DAE (Data Acquisition Electronics)
 
-The Data Acquisition Electronics (DAE) is the physical hardware that reads the neutron events out of the detectors. IBEX communicates with this hardware via the Instrument Control Program (ICP). This program is also responsible for combining the neutron and sample environment data into the NeXus file.
+The Data Acquisition Electronics (DAE) is the physical hardware that reads the neutron events out of the detectors. IBEX communicates with this hardware via the Instrument Control Program (ICP). This program is also responsible for combining the neutron and sample environment data into the NeXus file. 
+
+Note: the `MUX` instrument uses a [different type of acquisition electronics](other/CAEN-Hexagon.md)
 
 ## Running the DAE in Parallel
 
@@ -49,6 +51,10 @@ isisicp.simulation.neventssim = 50
 isisicp.simulation.spreadsimevents = false
 ```
 change `spreadsimevents` to `true`, you probably don't need to increase `neventssim` unless you had loaded a custom larger wiring table and spectra aren't accumulating data fast enough for you.
+
+:::{note}
+In order for simulation mode parameters like `isisicp.simulation.spreadsimevents` to work correctly, you need to have an event-mode wiring table loaded.
+:::
  
 ## Performing arbitrary actions on run start/run end
 

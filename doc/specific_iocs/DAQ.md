@@ -27,7 +27,7 @@ Notes:
 - You will need to know the hostname of the cDAQ for the "Find Network NI-DAQmx Devices" dialogue
 
 ## Configuring a DAQ IOC
-The Asyn port for each channel for the daq is defined using the `DAQmxConfig` iocsh command. This is typically located in a st-daq.cmd file next to the device's st.cmd. The DAQmxBase documentation is here: https://github.com/ISISComputingGroup/EPICS-DAQmxBase/tree/master/documentation
+The Asyn port for each channel for the daq is defined using the `DAQmxConfig` iocsh command. This is typically located in a st-daq.cmd file next to the device's st.cmd. The DAQmxBase documentation is here: https://isiscomputinggroup.github.io/EPICS-DAQmxBase/
 
 ```
 DAQmxConfig ( Asyn_port_name, physical_channel_address, channel_number, data_type, options)
@@ -37,7 +37,7 @@ DAQmxConfig ( Asyn_port_name, physical_channel_address, channel_number, data_typ
 
 - `channel_number` should start from zero, this is used to address each channel within an Asyn port.
 - `data_type` is the data type of the channel (AI, AO, BI, ...)
-- `options` Some common options are described here. All options can be found in [the documentation for DAQmxBase](https://github.com/ISISComputingGroup/EPICS-DAQmxBase/tree/master/documentation):
+- `options` Some common options are described here. All options can be found in [the documentation for DAQmxBase](https://isiscomputinggroup.github.io/EPICS-DAQmxBase/):
   - Read mode can be continuous (default), OneShot (get data when record processed), or MONSTER (see below)
   - `F` is the frequency (speed) at which samples will be collected
   - `N` is the number of samples DAQmxBase will collect and then return to the IOC.
@@ -86,7 +86,9 @@ Device is not powered.
 Device is powered, but was temporarily without power.
 Device and/or chassis driver support may have been removed.
 ```
-If this happens immediately on IOC boot, check if the DAQ is connected in NI-MAX. Check the device is reserved in NI-MAX and can be reached over the network.
+If this happens immediately on IOC boot, check if the DAQ is connected in NI-MAX. Check the device is reserved in NI-MAX and can be reached over the network. If you believe the device is reachable but has a red cross beside it in NI-MAX, then right-click the device under network devices, unreserve and re-reserve.
+
+NI-MAX is a piece of software which is installed on the NDX that needs it, available from the start menu on the instrument. It can be very slow when expanding the list of device - be patient.
 
 ```
 ### DAQmx ERROR (ReadAnalogF64): The specified operation cannot be performed because a task is in the process of being aborted or a device is in the process of being removed from the system. Wait until the abort operation is complete and attempt to perform the operation again.

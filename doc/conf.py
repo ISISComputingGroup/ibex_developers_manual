@@ -41,7 +41,10 @@ extensions = [
     "sphinx.ext.viewcode",
     # Redirects
     "sphinx_reredirects",
+    # Mermaid diagrams
+    "sphinxcontrib.mermaid",
 ]
+mermaid_d3_zoom = True
 napoleon_google_docstring = True
 napoleon_numpy_docstring = False
 
@@ -96,4 +99,10 @@ redirects = {
     "client/coding/Databinding---common-mistakes": "Databinding.html",
     "client/coding/Migrating-or-adding-a-button-to-the-E4-perspective-switcher": "Perspectives.html",  # noqa E501
     "client/coding/Adding-a-Button-to-the-Perspective-Switcher": "Perspectives.html",
+    "client/testing/Using-Mockito-for-Testing-in-the-GUI": "Mockito.html",
 }
+
+intersphinx_mapping = {
+    "ibex_user_manual": ("https://isiscomputinggroup.github.io/ibex_user_manual/", None),
+}
+

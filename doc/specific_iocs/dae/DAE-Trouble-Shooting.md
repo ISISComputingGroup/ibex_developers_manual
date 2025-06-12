@@ -255,7 +255,7 @@ Freddie may also have a patched version of the isisicp that fixes this issue.
 
 ### My blocks aren't being written to a run title properly
 
-See the documentation in the [user manual](https://github.com/ISISComputingGroup/ibex_user_manual/wiki/Add-blocks-to-run-title)
+See the documentation in the {external+ibex_user_manual:doc}`user manual <how_to/Add-blocks-to-run-title>`
 
 ### Exception in ICP log
 
