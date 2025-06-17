@@ -143,7 +143,7 @@ IBEX has been set up to resync the motor position and the encoder readback befor
 This is configured using PVs of the form `MTR0101_MOT_ENC_SYNC_TOL_SP`. If the drift between the motor and encoder 
 exceeds the limit defined by this PV, then the motor position will be resynced to the encoder readback just before a
 move. The drift is available in PVs of the form `MTR0101_MTRENC_DRIFT`. 
-For most axes, a setting equal to `ERES` is appropriate - this resyncs motor to encoder if they differ by more than one
+For most axes, a setting equal to `ERES` is appropriate - this re-syncs motor to encoder if they differ by more than one
 encoder pulse (which is the smallest increment accurately measurable).
 
 A [config checker test](https://github.com/ISISComputingGroup/InstrumentChecker) checks that the resync tolerance has
@@ -151,7 +151,7 @@ been set. If you need to disable the resync mechanism for a particular axis, the
 explicit large value (e.g. much larger than the total range of travel for the axis).
 
 A side effect of enabling the resync logic on every axis is that if an encoder fails, and is switched to open loop, it
-will need to be rehomed or rescanned to have an accurate position. This is because it will have done a resync to the
+will need to be re-homed or re-scanned to have an accurate position. This is because it will have done a resync to the
 broken encoder.
 Even without the resync logic, the open-loop axis may have lost its absolute position, for example due to
 motor record retries.
