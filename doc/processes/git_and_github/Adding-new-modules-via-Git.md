@@ -126,10 +126,20 @@ Once all the changes in the submodule are merged, create a commit in EPICS top u
 
 ## Updating vendor branch
 
-First checkout the vendor branch and remove all local files. You need to remove all current files before you unpack the new files or else you will either not pick up files removed in the latest version, or a file that is renamed will not get tracked properly by git as the original will still exist in your local source.  
+Here we will update the vendor branch with new code, tag this revision, and then use a separate branch to merge new upstream changes into master 
+
+First create your update branch
+```
+    git checkout master # or main
+    git pull
+    git checkout -b TicketXXX_update_to_danfysik_1_12
+```
+
+now checkout the vendor branch and remove all local files. You need to remove all current files before you unpack the new files or else you will either not pick up files removed in the latest version, or a file that is renamed will not get tracked properly by git as the original will still exist in your local source.  
 ```
     # If in git bash shell:
     git checkout vendor
+    git pull
     rm -fr *
     ls -a
     # now remove any file or directory starting with a `.` but _do not_ remove `.git`
@@ -159,15 +169,15 @@ Finally commit and tag the changes e.g.
     git push origin vendor
     git push --tags
 ```
-Now you need to go back to your ticket branch and merge in new version of vendor code
+Now go back to your ticket branch that was branched from the old master/main and merge in new version of vendor code via tag
 ```
-    git checkout TicketXXX_add_danfysik_8000
+    git checkout TicketXXX_update_to_danfysik_1_12
     git pull
     git merge vendor_1_12
 ```
-And resolve conflicts before committing.
+And resolve conflicts before committing. Now create a PR to merge `TicketXXX_update_to_danfysik_1_12` branch into main/master
 
 ### IMPORTANT: checking a vendor branch update
 First, you need to be sure your tar/zip contained what you expected. If it came from an official release web page, probably fine. If it was just an auto-created github tagged version then it may be missing a lot of files. github will zip up a repository for you, if the repository contains submodules however these will not get included in the auto generated zip. In this cases if you just take the zip file from github you will end up remove lots of files you really wanted to update. If you do a `git status` and see loads of files being removed, this may have happened. The epics motor and areaDetector modules are cases where care need to be taken.       
 
-You should confirm the number of changes in your new update branch when compared to the new vendor it is based on looks reasonable. For example if our current master when compared to its original old vendor branch had changed 5 files, then after updating vendor and merging you would expect to see something like the same number of file changes. You can do this via git branch compare - compare current master with old vendor tag and new update branch with new vendor branch tag. The number of changes will not always be identical in the new vendor branch as we do feed some of our changes back upstream if they are not locally specific hence those changes will not need re-applying and no longer show up as a changed file. If you see a large increase in files differences, this likely indicates a merge issue. 
+You should confirm the number of changes in your new update branch when compared to the new vendor it is based on looks reasonable. For example if our current master when compared to its original old vendor branch had changed 5 files, then after updating vendor and merging you would expect to see something like the same number of file changes. You can do this via git branch compare: compare current master with old vendor tag, and new update branch with new vendor branch tag. The number of changes will not always be identical in the new vendor branch as we do feed some of our changes back upstream if they are not locally specific hence those changes will not need re-applying and no longer show up as a changed file. If you see a large increase in files differences, this likely indicates a merge issue. 
