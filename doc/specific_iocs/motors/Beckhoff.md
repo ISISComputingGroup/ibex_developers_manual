@@ -38,6 +38,8 @@ see [Beckhoff Commissioning](beckhoff/Beckhoff-commissioning)
 we no longer use [tcIOC](https://github.com/ISISComputingGroup/EPICS-tcIoc) for numerous reasons, the most important being the dependence on the unreliable `.tpy` file format which was preventing us from integrating the new motion standard library code. We now use [`AdsDriver`](https://github.com/ISISComputingGroup/adsDriver) in conjunction with [`TwincatMotor`](https://github.com/ISISComputingGroup/EPICS-TwincatMotor).**
 ```
 
+See [Beckhoff IOC Architecture](beckhoff/Beckhoff-architecture) for more information. 
+
 ### Beckhoff config area
 
 The config area contains a directory used for storing `.cmd` files for use with the `TC` IOC (in the same way as a galil or other motor controller). On an instrument it should look like this: `\instrument\apps\EPICS\support\motorExtensions\master\settings\<instname>\twincat\`. 
