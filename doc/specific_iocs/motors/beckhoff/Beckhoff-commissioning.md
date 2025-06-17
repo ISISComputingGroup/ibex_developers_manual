@@ -24,13 +24,14 @@ The IOC (`TC_01`) should in principle be able to talk via ADS at this point but 
 - Number of axes (`NUM_AXES` macro)
 - the `IP` and `AMSnetID` of the controller
 
+{#beckhoff_manual_commission_step}
 #### Fields that aren't automatically populated
 Although commissioning a Beckhoff is far simpler than a Galil from an IBEX perspective, there are some fields that need to be set manually for each axis.  These are: 
 
 - Engineering units (`.EGU`) - [ticket to automatically populate](https://github.com/ISISComputingGroup/IBEX/issues/6855)
 - Axis description (`.DESC`) - [ticket to automatically populate](https://github.com/ISISComputingGroup/IBEX/issues/6860)
   - Note, if `stDescription` is actually filled out on a Beckhoff you can use the `FORWARD_DESC` macro set to `1` which will forward the PLC description to the corresponding motor record's `.DESC` field. 
-- Soft limits
+- Soft limits - [ticket to automatically populate](https://github.com/ISISComputingGroup/IBEX/issues/8763)
 
 These can be set via a `caput` and will be autosaved thereafter.
 
@@ -39,7 +40,7 @@ These are loaded in the usual way, you'll need to put your `axes.cmd` and `motio
 
 #### Jaws
 
-Jaws controlled by Beckhoffs don't actually require any logic to calculate gaps & centres, as this is done on the controller using virtual axes for the gaps and centres, so instead we load in a `$(JAWS)/db/jaws_alias.db` file instead of the usual `jaws.db`. This takes macros for the (virtual) axes to use as the gaps and centres.
+This is currently done in the same way as any other motion controller where IBEX works out gaps and centres. This logic may move to the controller eventually, in which case we will need to use [The Jaws alias `.db`](https://github.com/ISISComputingGroup/EPICS-jaws/blob/master/jawsApp/Db/jaws_alias.substitutions) 
 
 #### If a controller has more than 8 axes
 If a controller with more than 8 axes is going to be used, the TC IOC will alias records to the next controller number so they are shown in the GUI. For this to work you need to make sure that the next available controller number is not (and never will be, so long as the TC IOC uses it) used. 
