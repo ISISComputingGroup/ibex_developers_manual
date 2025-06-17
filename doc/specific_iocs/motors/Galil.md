@@ -127,7 +127,44 @@ EN
 
 ## Syncing encoder and motor steps
 
-It can be useful to sync the motor steps to the encoder steps before each move. This is especially true with an absolute encoder where a power cycle of a Galil controller can change the motor steps to 0 but not the encoder steps because this makes the soft limits stop the motion at strange places. To do this the PV `<MOT:MTR0X0X>_MOT_ENC_SYNC_TOL_SP` should be set to a non zero value, when the difference differs by more than this tolerance the motor steps will be resynced. If the encoder is not absolute you should be cautious when doing this, the encoder and motor steps should not get out of sync so don't do it without recording the reason somewhere.
+The Galil keeps two counters: a motor step counter, and an encoder readback. The motor step counter corresponds to
+how far a given axis should have moved, given the number of motor pulses sent to it. The encoder readback is an
+independent position readback from the encoder.
+
+These two numbers can get out of sync with each other for various reasons, for example:
+- The motor may mechanically stall (motor steps will be sent; some of the sent steps will not cause corresponding motion)
+- Motion may be disabled by a safety system (motor steps will be sent; no physical motion will occur)
+- The encoder may be broken (motor steps will be sent, motion will occur, but will not be registered by the encoder)
+
+In June 2025, in [ticket 5220](https://github.com/ISISComputingGroup/IBEX/issues/5220), it was decided that the encoder
+would be the "source of truth" number used by IBEX (wherever an encoder is present). This means that
+IBEX has been set up to resync the motor position and the encoder readback before every move.
+
+This is configured using PVs of the form `MTR0101_MOT_ENC_SYNC_TOL_SP`. If the drift between the motor and encoder 
+exceeds the limit defined by this PV, then the motor position will be resynced to the encoder readback just before a
+move. The drift is available in PVs of the form `MTR0101_MTRENC_DRIFT`. 
+For most axes, a setting equal to `ERES` is appropriate - this resyncs motor to encoder if they differ by more than one
+encoder pulse (which is the smallest increment accurately measurable).
+
+A [config checker test](https://github.com/ISISComputingGroup/InstrumentChecker) checks that the resync tolerance has
+been set. If you need to disable the resync mechanism for a particular axis, the resync tolerance should be set to an
+explicit large value (e.g. much larger than the total range of travel for the axis).
+
+A side effect of enabling the resync logic on every axis is that if an encoder fails, and is switched to open loop, it
+will need to be rehomed or rescanned to have an accurate position. This is because it will have done a resync to the
+broken encoder.
+Even without the resync logic, the open-loop axis may have lost its absolute position, for example due to
+motor record retries.
+
+On axes where the resync logic has been disabled, by setting `MTR0101_MOT_ENC_SYNC_TOL_SP` to a large value, you may
+see errors of the form:
+
+```
+move begin failure axis X after XXX seconds: ... [Decelerating or stopped by FWD limit switch or soft limit FL]"
+```
+
+Even when the encoder readback is not close to a limit. This is because the IBEX Galil driver sets limits in the
+Galil based on the motor position - this means that if the motor and encoder are out of sync with each other.
 
 ## Further Information
 
