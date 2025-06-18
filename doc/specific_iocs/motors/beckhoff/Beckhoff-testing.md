@@ -85,7 +85,7 @@ After doing all of this you should be able to build the solution from "build" an
 ### Continuous Integration
 
 ```{warning}
-This is currently broken and this documentation will become out-of-date. https://github.com/ISISComputingGroup/IBEX/issues/7552 is to get them running again.
+This is currently broken and this documentation will become out-of-date until https://github.com/ISISComputingGroup/IBEX/issues/7552 is complete to get them running again.
 ```
 
 <details><summary>Jenkins</summary>

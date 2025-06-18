@@ -29,3 +29,31 @@ See https://github.com/ISISComputingGroup/IBEX/issues/8339 for a detailed descri
 
 The solution is to set `.DLY` to 0.25 in the motor record (which causes a 250ms "settle time" after motions).
 
+## Instrument specific Beckhoff information
+
+### SANDALS - Jaws and Sample Changer
+
+SANDALS has a Beckhoff PLC which serves the Jaws permanently, and the Sample Changer when it is plugged in (over an ethercat network)
+
+Some of these axes are relatively-encoded, so need to be homed/calibrated before use after a power cycle. At the moment we use the `.ATHM` field to indicate this, so if the home icon is not shown on the Table of Motors the axes have not been calibrated and will error when a move is attempted.
+
+The Sample changer has some `pt100` sensors for temperature mounted on it, these are fed in through the beckhoff as extra fields. These are loaded by [this `.db`](https://github.com/ISISComputingGroup/EPICS-motorExtensions/blob/master/sandalsSampleChangerApp/Db/sandals_sample_changer_beckhoff_extras.substitutions)
+
+### INTER - Detector tank including Jaws 4
+
+This is currently the most complex implementation of using a Beckhoff PLC as it handles kinematics between physical axes and flight paths, traditionally "worked out" by the Reflectometry server. It has some custom routines which can be accessed from the PLC HMI or through the `INTER Beckhoff Diagnostics` device screen in IBEX.
+
+It also controls some Jaws on the front of the tank. 
+
+### LARMOR - Detector Bench
+
+This is a single axis. It lets IBEX know about an air PLC signal as it requires an air bearing to move. This is fed in by [this `.db`](https://github.com/ISISComputingGroup/EPICS-motorExtensions/blob/master/larmorBeckhoffExtrasApp/Db/larmor_beckhoff_extras.substitutions) and the bump strip signal is flipped and sent to the bump strip PV which is shown in the banner to indicate that motion has tripped.
+
+### IMAT - Rotation and Height stage
+
+This is currently just two axes, with no real quirks on our side. 
+
+### SURF - Cloche motion and jaws 1&2
+
+SURF's motion involves the tank, including the supermirror and frame-overlap mirror, as well as Jaws 1 and 2. This has had issues with encoder radiation in the past which has required a PLC power cycle, which in turn then requires a power restore. In order to get this properly working, [this ticket](https://github.com/ISISComputingGroup/IBEX/issues/8464) needs to be completed.
+
