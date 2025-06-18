@@ -104,5 +104,6 @@ redirects = {
 
 intersphinx_mapping = {
     "ibex_user_manual": ("https://isiscomputinggroup.github.io/ibex_user_manual/", None),
+    "EPICS": ("https://docs.epics-controls.org/en/latest/", None),
 }
 
