@@ -2,7 +2,7 @@
 
 [TC](https://github.com/ISISComputingGroup/EPICS-ioc/tree/master/TC) is the IOC responsible for communication with Beckhoff PLCs at ISIS.
 
-At IOC startup, it uses [a command](https://github.com/ISISComputingGroup/adsDriver/blob/main/adsApp/src/ioc_commands.cpp#L139) to get the number of motion axes. Note that this may be more than 8, in which case we have to use [some logic](https://github.com/ISISComputingGroup/EPICS-ioc/blob/master/TC/iocBoot/iocTC-IOC-01/st-common.lua#L51) to alias `MTR0109` to `MTR0201` so we can display it in the IBEX GUI's table of motors.  
+At IOC startup, it uses [a command](https://github.com/ISISComputingGroup/adsDriver/blob/71a3404bd266cc260ff8802e1a1c017be09dbef4/adsApp/src/ioc_commands.cpp#L139-L199) to get the number of motion axes. Note that this may be more than 8, in which case we have to use [some logic](https://github.com/ISISComputingGroup/EPICS-ioc/blob/2ae20fd5997457a48469ced80f377eaaa49935b3/TC/iocBoot/iocTC-IOC-01/st-common.lua#L51-L55) to alias `MTR0109` to `MTR0201` so we can display it in the IBEX GUI's table of motors.  
 
 We have an EPICS motor record implementation which TC uses that interfaces some intermediate PVs, spun up [at runtime](https://github.com/ISISComputingGroup/EPICS-ioc/blob/97e2bd77c5909ff2f1b6c0cda7f175366b379102/TC/iocBoot/iocTC-IOC-01/st-common.lua#L30) per-axis by AdsDriver using [the Beckhoff Motor Extensions](https://github.com/ISISComputingGroup/EPICS-motorExtensions/tree/master/beckhoffApp)  `.db` files.
 

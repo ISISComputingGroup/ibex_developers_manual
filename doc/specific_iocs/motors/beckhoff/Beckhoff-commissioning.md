@@ -42,7 +42,7 @@ These can be set via a `caput` and will be autosaved thereafter.
 
 #### Axes, motion setpoints, jaws
 
-These are loaded in the usual way, you'll need to put your `axes.cmd` and `motionSetpoints.cmd` files in `motorExtensions\master\settings\NDX<inst>\twincat\`
+These are loaded in the usual way, you'll need to put your `axes.cmd` and `motionSetpoints.cmd` files in `motorExtensions\master\settings\<inst>\twincat\`
 
 #### Jaws
 

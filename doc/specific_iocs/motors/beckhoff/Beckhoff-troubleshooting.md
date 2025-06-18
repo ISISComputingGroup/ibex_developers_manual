@@ -33,7 +33,7 @@ The solution is to set `.DLY` to 0.25 in the motor record (which causes a 250ms 
 
 ### SANDALS - Jaws and Sample Changer
 
-SANDALS has a Beckhoff PLC which serves the Jaws permanently, and the Sample Changer when it is plugged in (over an Ethercat network)
+SANDALS has a Beckhoff PLC which serves the Jaws permanently, and the Sample Changer when it is plugged in (over an [EtherCAT](https://en.wikipedia.org/wiki/EtherCAT) network)
 
 Some of these axes are relatively-encoded, so need to be homed/calibrated before use after a power cycle. At the moment we use the `.ATHM` field to indicate this, so if the home icon is not shown on the Table of Motors the axes have not been calibrated and will error when a move is attempted.
 

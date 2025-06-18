@@ -20,9 +20,7 @@ Current Beckhoff installations are:
 ## Code on the controller
 Unlike most other devices (except the Galil) the computing group has some oversight over the PLC code written on the controller. It has been agreed that this code will mostly be written by IDD, with oversight from computing to guide good programming practices, assist in debugging etc. Code running on the PLC is kept in source control [here](https://github.com/ISIS-Motion-Control).
 
-The [Axis and Controller Commissioning Guide](https://stfc365.sharepoint.com/:w:/s/ISISMechatronics/Ee_aMxb5CF1Dlz-NUGW3OVgB0K7vQjXXwZDwSl5DSHN48w?e=GjqNEb&isSPOFile=1) document describing setting up a controller and TwinCAT solution for a new system and configuring real and virtual axes within TwinCAT environment.
-
-
+The [Axis and Controller Commissioning Guide](https://stfc365.sharepoint.com/:w:/r/sites/ISISMechatronics/Shared%20Documents/Beckhoff%20and%20TwinCAT/Commissioning/Axis%20and%20Controller%20Commissioning%20Guide.docx?d=w1633daef08f9435d973f8d5065b73958&csf=1&web=1&e=QFdAQk) document describing setting up a controller and TwinCAT solution for a new system and configuring real and virtual axes within TwinCAT environment.
 
 ## Commissioning a new Beckhoff on a beamline
 see [Beckhoff Commissioning](beckhoff/Beckhoff-commissioning)

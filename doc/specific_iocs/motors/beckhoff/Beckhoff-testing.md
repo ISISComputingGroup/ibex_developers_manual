@@ -53,7 +53,7 @@ To simulate an instrument's Beckhoff and make it virtual rather than driving phy
 
 1. Follow the above steps
 1. find the repo for that particular MCU within https://github.com/ISIS-Motion-Control 
-1. clone it and checkout master, then `git submodule update --init` in the cloned directory
+1. `git clone --recurse-submodules <repo> <dir>`
 1. open up the solution in TwinCAT XAR
 1. change the `MCU_xxx` in the dropdown next to "solution" to `<local>`
 
