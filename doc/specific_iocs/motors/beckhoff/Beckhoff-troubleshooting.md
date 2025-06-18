@@ -37,7 +37,7 @@ SANDALS has a Beckhoff PLC which serves the Jaws permanently, and the Sample Cha
 
 Some of these axes are relatively-encoded, so need to be homed/calibrated before use after a power cycle. At the moment we use the `.ATHM` field to indicate this, so if the home icon is not shown on the Table of Motors the axes have not been calibrated and will error when a move is attempted.
 
-The Sample changer has some `pt100` sensors for temperature mounted on it, these are fed in through the beckhoff as extra fields. These are loaded by [this `.db`](https://github.com/ISISComputingGroup/EPICS-motorExtensions/blob/master/sandalsSampleChangerApp/Db/sandals_sample_changer_beckhoff_extras.substitutions)
+The Sample changer has some `pt100` sensors for temperature mounted on it, these are fed in through the Beckhoff as extra fields. These are loaded by [this `.db`](https://github.com/ISISComputingGroup/EPICS-motorExtensions/blob/master/sandalsSampleChangerApp/Db/sandals_sample_changer_beckhoff_extras.substitutions)
 
 ### INTER - Detector tank including Jaws 4
 

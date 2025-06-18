@@ -233,6 +233,7 @@ enums
 env
 erroring
 ess
+Ethercat
 ethernet
 Eulerian
 Eurotherm
