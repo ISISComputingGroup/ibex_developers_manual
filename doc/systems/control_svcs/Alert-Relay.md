@@ -16,3 +16,12 @@ An IOC usually posts to this service from the :AC: (alert control) system loaded
 To do the alerting it will use `sendAlert.db` from `support/webget`. This combines several PVs with mobiles, emails etc. and encodes into the format required for a http POST using the aSub function `webFormURLEncode`. It then sends this to control-svcs using the aSub function `webPOSTRequest`
 
 To see the debug output of what `sendAlerts.db` is sending set `epicsEnvSet("WEBGET_POST_DEBUG","1")` in the `st.cmd` of the runcontrol IOC. This is suppressed by default as it may contain sensitive user data.
+
+The PVs in IBEX which hold the URL & password for sending alerts are in the form:
+
+```
+%MYPVPREFIX%CS:AC:ALERTS:URL:SP
+%MYPVPREFIX%CS:AC:ALERTS:PW:SP
+```
+
+There is further documentation in the [`RUNCTRL` README file](https://github.com/ISISComputingGroup/EPICS-ioc/blob/master/RUNCTRL/README.md).
