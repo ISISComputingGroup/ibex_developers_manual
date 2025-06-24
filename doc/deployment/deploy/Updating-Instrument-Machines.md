@@ -3,7 +3,7 @@
 
 It is important to remember when making any changes to instruments (e.g. installing new IBEX versions, cleaning disk space etc) that they are in (potentially) constant use by the instrument scientists and so they must be properly informed. Below is a template of what to send to scientists, this should be sent from the Experiment Controls email account.
 
-If only a subset of instruments are being modified lookup the instrument scientists for these instruments [here](https://www.isis.stfc.ac.uk/Pages/Instrument-Scientists.aspx) and email only those affected. If most instruments are going to be modified then email the ISIS Instrument Scientists + Others.
+If most instruments are going to be modified then email the `ISIS Instrument Scientists + Others` outlook address, if only a subset of instruments are being modified you can use the `instrument-` contact email address from https://sparrowhawk.nd.rl.ac.uk/footprints/contacts.html#instemail 
 
 {#updating_instrument_new_release_email_template}
 ## New Release
