@@ -419,6 +419,12 @@ The isis cycle is contained in a local file `setcycle.cmd` on the NDX that is re
 
 to reconnect the o: drive, log onto the NDX and just open it in windows explorer, that should reconnect using cached credentials. Then check that `o:\setcycle.cmd` has the correct cycle number.
 
+### journal has run number in incorrect cycle
+
+as mentioned above, the cycle number is set by running the `setcycle` command but this is run at run end. When the cycle is updated on `o:` it is often copied to instruments, but if a run is already in progress when the cycle is updated, then the journal will use an incorrect cycle number but the raw file will use a correct one. This issue should be fixed in newer ISISICP but this will take a while to roll out. 
+
+To fix this you need to edit the two cycle XML `journal_*_*.xml` files in `c:\data` involved and move the XML run number block involved from the incorrect XML file to the correct one. Next time a run ends, these updated xml files will get copied to the correct place. 
+
 ### run stuck in ending when using period card
 
 Check icp log file. If it says "waiting for period card" and beam is off, then the issue is that a default end waits to complete the current period cycles, which if beam is off is not going to happen (no trigger signal for frames). Solution is to type `g.end(immediate=True)` in a python console. 
