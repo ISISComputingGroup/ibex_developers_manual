@@ -125,7 +125,8 @@ EN
 5) Power cycle and the Galil should be available on the network.
 6) Please note : do not overwrite the permanent program resident in the Galil. It can be overwritten as long as it is not made permanent. Other programs, such as homing routines can be downloaded into the device but should not be burnt in.
 
-## Syncing encoder and motor steps
+{#galil_mot_enc_sync}
+### Syncing encoder and motor steps
 
 The Galil keeps two counters: a motor step counter, and an encoder readback. The motor step counter corresponds to
 how far a given axis should have moved, given the number of motor pulses sent to it. The encoder readback is an
@@ -156,15 +157,20 @@ broken encoder.
 Even without the resync logic, the open-loop axis may have lost its absolute position, for example due to
 motor record retries.
 
-On axes where the resync logic has been disabled, by setting `MTR0101_MOT_ENC_SYNC_TOL_SP` to a large value, you may
-see errors of the form:
+### Limits
 
+If the motor is on limits and a move is attempted, you will see a message in the log like:
 ```
 move begin failure axis X after XXX seconds: ... [Decelerating or stopped by FWD limit switch or soft limit FL]"
 ```
 
-Even when the encoder readback is not close to a limit. This is because the IBEX Galil driver sets limits in the
-Galil based on the motor position - this means that if the motor and encoder are out of sync with each other.
+This means that the axis is on a limit, which can be either a hard limit or a soft limit. If it is a hard limit, the
+hard limit indicators in IBEX (`.LLS` and `.HLS` PVs will be active) - this means that a mechanical limit switch is
+engaged, or that an external system has disabled motion (safety systems commonly cause both limits to show engaged).
+
+If it is a soft limit, these are set in IBEX. For axes where the [motor and encoder resync](#galil_mot_enc_sync),
+the internal limits in the galil should match closely with the limits set in IBEX. However, if the motor-encoder resync
+tolerance is set very high, it is possible for the internal galil limits to differ from those configured in IBEX.
 
 ## Further Information
 
