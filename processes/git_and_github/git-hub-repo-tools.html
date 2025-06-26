@@ -1,0 +1,171 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Github Repository Tools &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Instrument Migration Notes" href="../Instrument-Details.html" />
+    <link rel="prev" title="New local git repository" href="New-Local-Git-Repository.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Systems.html">Systems Administration &amp; Hardware</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Processes.html">Processes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Admin.html">Admin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Continuous-Integration.html">Continuous Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Decision-Log.html">Decision Log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Dev-Processes.html">Developer Processes</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Git-and-GitHub.html">Git and Github</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Adding-new-modules-via-Git.html">Adding new modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Automation-Application.html">Automation Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Getting-started-with-Git-and-GitHub.html">Getting started with git and github</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Git-Cleanup.html">Git cleanup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Git-Commands.html">Useful Git commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Git-workflow.html">Git workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Making-the-IBEX-workflow-work-with-SSH-authentication.html">Git and SSH key authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="New-Local-Git-Repository.html">New local git repository</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Github Repository Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Instrument-Details.html">Instrument Migration Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings.html">Meetings - internal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings-with-Scientists.html">Meetings - with scientists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pm.html">Project Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Retrospective-Notes.html">Retrospective Notes</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Processes.html">Processes</a></li>
+          <li class="breadcrumb-item"><a href="../Git-and-GitHub.html">Git and Github</a></li>
+      <li class="breadcrumb-item active">Github Repository Tools</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/processes/git_and_github/git-hub-repo-tools.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="github-repository-tools">
+<h1>Github Repository Tools<a class="headerlink" href="#github-repository-tools" title="Link to this heading"></a></h1>
+<p>These are stored in <a class="reference external" href="https://github.com/ISISComputingGroup/ibex_utils">ibex_utils</a> and there are install instructions and help. This is a list of common tasks run under epics terminal:</p>
+<ul>
+<li><p>List repositories belonging to ISISComputingGroup</p>
+<p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">Scripts\change_repos.py</span> <span class="pre">-u</span> <span class="pre">John-Holt-Tessella</span> <span class="pre">-o</span> <span class="pre">ISISComputingGroup</span></code></p>
+</li>
+<li><p>For the standard repositories close all old milestones (with no issues), create new milestone, ensure labels exist (adding –dry-run to this, or any command, will show you what it will do without altering the repository)</p>
+<p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">Scripts\change_repos.py</span> <span class="pre">-u</span> <span class="pre">John-Holt-Tessella</span> <span class="pre">-o</span> <span class="pre">ISISComputingGroup</span> <span class="pre">--repo-file</span> <span class="pre">standard_repos.txt</span> <span class="pre">--label-file</span> <span class="pre">standard_labels.txt</span> <span class="pre">--ms-from</span> <span class="pre">2016-05-19</span> <span class="pre">--ms-to</span> <span class="pre">2016-06-15</span> <span class="pre">--ms-close</span></code></p>
+</li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="New-Local-Git-Repository.html" class="btn btn-neutral float-left" title="New local git repository" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Instrument-Details.html" class="btn btn-neutral float-right" title="Instrument Migration Notes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Jun 26, 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

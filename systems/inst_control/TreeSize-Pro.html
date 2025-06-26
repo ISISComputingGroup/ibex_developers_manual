@@ -1,0 +1,191 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TreeSize &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Cron Jobs &amp; Scheduled Tasks" href="cron-jobs-and-windows-scheduled-tasks.html" />
+    <link rel="prev" title="Script to connect to all instruments" href="Script-to-connect-to-all-instruments.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Systems.html">Systems Administration &amp; Hardware</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../External.html">External systems/services</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Inst-Control.html">Instrument control computers</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Archive-Watcher.html">Archive Watcher</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Automated-log-rotation.html">Automated log rotation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Change-Windows-Theme.html">Change Windows Theme</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Computer-Troubleshooting.html">Computer Troubleshooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Data-Generation-and-Storage-on-Instrument-PCs-%28NDX%27s%29.html">Data Storage &amp; Production</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Increase-VM-memory.html">Increase VM memory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MDT-%28Microsoft-deployment-toolkit%29.html">MDT (Microsoft deployment toolkit)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PS-Remote.html">Powershell Remote</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Rebuild-Performance-Counters.html">Rebuild Performance Counters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Register-SELOGCOM-in-COM-Plus.html">Register SELOGCOM in COM+</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Script-to-connect-to-all-instruments.html">Script to connect to all instruments</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">TreeSize</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cron-jobs-and-windows-scheduled-tasks.html">Cron Jobs &amp; Scheduled Tasks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Nagios.html">Nagios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sparrowhawk.html">Sparrowhawk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Test-Machines.html">Test Machines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Webserver.html">Webserver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../control-svcs.html"><code class="docutils literal notranslate"><span class="pre">control-svcs</span></code></a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Systems.html">Systems Administration &amp; Hardware</a></li>
+          <li class="breadcrumb-item"><a href="../Inst-Control.html">Instrument control computers</a></li>
+      <li class="breadcrumb-item active">TreeSize</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/systems/inst_control/TreeSize-Pro.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="treesize">
+<h1>TreeSize<a class="headerlink" href="#treesize" title="Link to this heading"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>Tree Size pro is a tool to allow flexible and informative disk space management on Windows machines.  Particularly useful for the instrument machines (ideally used over the network and not on the machines directly).  It’s also invaluable for managing and reporting on space and statistics for the ISIS archive servers.</p>
+</section>
+<section id="distribution">
+<h2>Distribution<a class="headerlink" href="#distribution" title="Link to this heading"></a></h2>
+<p>As this is now made available via <code class="docutils literal notranslate"><span class="pre">SCCM</span></code>/<code class="docutils literal notranslate"><span class="pre">Software</span> <span class="pre">Center</span></code> it should not normally be necessary for us to provide a distribution service.  It is however incumbent on us to provide an up to date version of the software to DI regularly so that they can keep an updated version online.</p>
+<p>Good to do this regularly via a TopDesk ticket (particularly if there are any security issues raised) - but this hasn’t been running for long.  We can obviously download it from the TreeSize site for ourselves.</p>
+</section>
+<section id="licence-key">
+<h2>Licence Key<a class="headerlink" href="#licence-key" title="Link to this heading"></a></h2>
+<p>There is a licence key which is needed for installation for any machine it is used on.  This is available on the TreeSize site (details in keeper) and in <code class="docutils literal notranslate"><span class="pre">\\isis\Installs\ISISAPPS\TreesizePro</span></code>, the licence is custom to us, so should not be passed on to anyone who is not aware of the licence requirements!  Unless a query is specifically directed to us for this “Enterprise” version on this site, <em>general/home other users will be better being pointed to the “TreeSize free” version</em> which can be installed for free (and is extremely helpful for home use)</p>
+</section>
+<section id="licence">
+<h2>Licence<a class="headerlink" href="#licence" title="Link to this heading"></a></h2>
+<p>Due to the relatively low cost and benefit of the tool, this software is licenced and maintained as a “Site” licence for the UKRI STFC RAL site at Harwell (but by ISIS).  The terms of this level of licence do not allow use at other UKRI sites or by non-UKRI organizations.  The software is now distributed and licenced via the DI <code class="docutils literal notranslate"><span class="pre">Software</span> <span class="pre">Center</span></code> which installs and licenses it for end users.</p>
+</section>
+<section id="licence-renewal">
+<h2>Licence Renewal<a class="headerlink" href="#licence-renewal" title="Link to this heading"></a></h2>
+<p>A renewal notice should be sent to the group inbox. It is usually due for renewal by the end of January. Further details can be found in <a class="reference external" href="https://github.com/ISISComputingGroup/ControlsWork/issues/356#issuecomment-2595707626">this ticket</a>.</p>
+<ol class="arabic simple">
+<li><p>Logon to JAM Software site and renew maintenance. Use the address and log in details in keeper. After login to the JAM Software site, go to “Customer Area” and then to “Licences”.  Our licences are shown and maintenance can be renewed here.</p></li>
+<li><p>Upload new Invoice &amp; licence to the ticket linked above.</p></li>
+<li><p>Download a recent version of TreeSize Pro to <code class="docutils literal notranslate"><span class="pre">\\isis\Installs\ISISAPPS\TreesizePro</span></code> and update licence instructions if necessary.</p></li>
+<li><p>Submit a ticket to FIT to update the <code class="docutils literal notranslate"><span class="pre">Software</span> <span class="pre">Center</span></code> installation version from this location.</p></li>
+<li><p>update the STFC software licencing list (see ticket for link).  It is listed on the STFC software licence server <a class="reference external" href="https://stfc365.sharepoint.com/sites/StfcITLicensing/Lists/STFCSoftwareLicensingList/Full%20details.aspx">here</a>.</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Script-to-connect-to-all-instruments.html" class="btn btn-neutral float-left" title="Script to connect to all instruments" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="cron-jobs-and-windows-scheduled-tasks.html" class="btn btn-neutral float-right" title="Cron Jobs &amp; Scheduled Tasks" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Jun 26, 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
