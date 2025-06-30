@@ -192,7 +192,7 @@ deenergise
 dehex
 deprioritise
 dereferenced
-deserialize
+deserialise
 Det
 dev
 devsim
