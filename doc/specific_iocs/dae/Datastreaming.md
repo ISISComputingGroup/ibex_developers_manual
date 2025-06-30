@@ -13,6 +13,8 @@ The datastreaming system is being built as part of in-kind work to ESS. It will 
 
 In general the system works by passing both neutron and SE data into [Kafka](https://kafka.apache.org/) and having clients that either view data live (like Mantid) or write the data to file, additional information can be found [here](http://accelconf.web.cern.ch/AccelConf/icalepcs2017/papers/tupha029.pdf) and [here](https://iopscience.iop.org/article/10.1088/1742-6596/1021/1/012013). 
 
+All data is passed into flatbuffers using [these schemas](https://github.com/ess-dmsc/streaming-data-types) - we have a tool called [saluki](https://github.com/ISISComputingGroup/saluki) which can deserialise these and make them human-readable after they've been put into Kafka. 
+
 The datastreaming layout proposed looks something like this, not including the Mantid steps or anything before event data is collected:
 
 ![](ESSDSLayout.png)
