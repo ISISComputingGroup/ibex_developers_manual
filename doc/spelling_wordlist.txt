@@ -410,6 +410,7 @@ junit
 jvisualvm
 Jython
 Jülich
+Kafka
 Kammrath
 Kanban
 kbaud
