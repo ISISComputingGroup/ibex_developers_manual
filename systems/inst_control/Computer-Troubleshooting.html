@@ -1,0 +1,299 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Computer Troubleshooting &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Data Storage &amp; Production" href="Data-Generation-and-Storage-on-Instrument-PCs-%28NDX%27s%29.html" />
+    <link rel="prev" title="Change Windows Theme" href="Change-Windows-Theme.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Systems.html">Systems Administration &amp; Hardware</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../External.html">External systems/services</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Inst-Control.html">Instrument control computers</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Archive-Watcher.html">Archive Watcher</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Automated-log-rotation.html">Automated log rotation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Change-Windows-Theme.html">Change Windows Theme</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Computer Troubleshooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Data-Generation-and-Storage-on-Instrument-PCs-%28NDX%27s%29.html">Data Storage &amp; Production</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Increase-VM-memory.html">Increase VM memory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MDT-%28Microsoft-deployment-toolkit%29.html">MDT (Microsoft deployment toolkit)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PS-Remote.html">Powershell Remote</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Rebuild-Performance-Counters.html">Rebuild Performance Counters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Register-SELOGCOM-in-COM-Plus.html">Register SELOGCOM in COM+</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Script-to-connect-to-all-instruments.html">Script to connect to all instruments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TreeSize-Pro.html">TreeSize</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cron-jobs-and-windows-scheduled-tasks.html">Cron Jobs &amp; Scheduled Tasks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Nagios.html">Nagios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sparrowhawk.html">Sparrowhawk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Test-Machines.html">Test Machines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Webserver.html">Webserver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../control-svcs.html"><code class="docutils literal notranslate"><span class="pre">control-svcs</span></code></a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Systems.html">Systems Administration &amp; Hardware</a></li>
+          <li class="breadcrumb-item"><a href="../Inst-Control.html">Instrument control computers</a></li>
+      <li class="breadcrumb-item active">Computer Troubleshooting</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/systems/inst_control/Computer-Troubleshooting.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="computer-troubleshooting">
+<h1>Computer Troubleshooting<a class="headerlink" href="#computer-troubleshooting" title="Link to this heading"></a></h1>
+<p>Issue related to the computer that IBEX is running on</p>
+<section id="screen-resolution-needs-to-be-set-on-a-small-screen-to-view-a-larger-screen-remotely">
+<h2>Screen Resolution needs to be Set on a small screen to view a larger screen remotely<a class="headerlink" href="#screen-resolution-needs-to-be-set-on-a-small-screen-to-view-a-larger-screen-remotely" title="Link to this heading"></a></h2>
+<p>The resolution is settable on a remote desktop, even to a resolution bigger than the current screen. To do this there is a menu item on the remote desktop window for “smart sizing” which does just this.</p>
+<p><img alt="smart screen" src="../../_images/rdp_smart_screen.png" /></p>
+<p>It doesn’t seem to persist on server 2012 unless you edit it into the <code class="docutils literal notranslate"><span class="pre">.rdp</span></code> file (and it also requires that you don’t select full screen or it takes a lower resolution).  I’ve edited the <code class="docutils literal notranslate"><span class="pre">.rdp</span></code> file appropriately on the NDHSMUONFE desktop so that this works at 1920x1200.  The key bits are at the top here – but you we can fiddle the resolution down a bit if a different aspect ratio works better.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">screen</span> <span class="n">mode</span> <span class="nb">id</span><span class="p">:</span><span class="n">i</span><span class="p">:</span><span class="mi">1</span>
+<span class="n">use</span> <span class="n">multimon</span><span class="p">:</span><span class="n">i</span><span class="p">:</span><span class="mi">0</span>
+<span class="n">desktopwidth</span><span class="p">:</span><span class="n">i</span><span class="p">:</span><span class="mi">1920</span>
+<span class="n">desktopheight</span><span class="p">:</span><span class="n">i</span><span class="p">:</span><span class="mi">1200</span>
+<span class="n">smartsizing</span><span class="p">:</span><span class="n">i</span><span class="p">:</span><span class="mi">1</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+</section>
+<section id="cannot-access-the-network-shares">
+<h2>Cannot access the network shares<a class="headerlink" href="#cannot-access-the-network-shares" title="Link to this heading"></a></h2>
+<p>This may be solved by adding windows credentials on the machine. There is a document describing how to do this on ICP Discussions under “Security”.</p>
+</section>
+<section id="cannot-access-just-the-isis-archive-but-can-access-the-instrument-shares-as-above">
+<h2>Cannot access just the ISIS archive (but can access the instrument shares as above)<a class="headerlink" href="#cannot-access-just-the-isis-archive-but-can-access-the-instrument-shares-as-above" title="Link to this heading"></a></h2>
+<p>This will be identified by a failure to access archive shares even though access to the normal ISIS document shares <strong>is</strong> possible
+This may be solved by adding a global DNS suffix to the network connection. Open an admin privileged powershell console.  Then use the get command to check what is in the existing suffix list</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Get</span><span class="o">-</span><span class="n">DnsClientGlobalSetting</span>
+
+<span class="n">UseSuffixSearchList</span> <span class="p">:</span> <span class="kc">True</span>
+<span class="n">SuffixSearchList</span>    <span class="p">:</span> <span class="p">{</span><span class="n">domain1</span><span class="o">.</span><span class="n">ac</span><span class="o">.</span><span class="n">uk</span><span class="p">,</span> <span class="n">domain2</span><span class="o">.</span><span class="n">ac</span><span class="o">.</span><span class="n">uk</span><span class="p">}</span>
+<span class="n">UseDevolution</span>       <span class="p">:</span> <span class="kc">True</span>
+<span class="n">DevolutionLevel</span>     <span class="p">:</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>Now run the following command to prepend the fully qualified (in our case the ISIS domain) to the suffix search list returned in the last command (similar syntax to the example below).</p>
+<p><code class="docutils literal notranslate"><span class="pre">PS</span> <span class="pre">C:\&gt;</span> <span class="pre">Set-DnsClientGlobalSetting</span> <span class="pre">-SuffixSearchList</span> <span class="pre">newdomain3.ac.uk,domain1.ac.uk,domain2.ac.uk</span></code></p>
+</section>
+<section id="cannot-vnc-into-the-machine">
+<h2>Cannot VNC into the machine<a class="headerlink" href="#cannot-vnc-into-the-machine" title="Link to this heading"></a></h2>
+<p>Check the network is up (ping <code class="docutils literal notranslate"><span class="pre">NDX&lt;INST&gt;</span></code>).</p>
+<p>If it is, check the VNC process is running on the NDX machine (there should be a VNC icon in the task bar).
+If not start it by double-clicking the entry in the windows autostart menu (<code class="docutils literal notranslate"><span class="pre">c:\ProgramData\Microsoft\Windows\Start</span> <span class="pre">Menu\Programs\StartUp</span></code>) and start it manually. VNC does not run as a windows service on NDX computers - it is running in “user mode” in the background, started on login</p>
+</section>
+<section id="data-fills-up-volume-too-rapidly-on-an-instrument">
+<h2>Data fills up volume too rapidly on an Instrument<a class="headerlink" href="#data-fills-up-volume-too-rapidly-on-an-instrument" title="Link to this heading"></a></h2>
+<p>(generating Nagios errors or disk full errors)</p>
+<p>This is usually an issue when an instrument changes their mode of data taking and it is particularly common for instruments which have changed recently to using event mode data collection or altered the scheme they use (where the amount of data which can be produced may be much larger).
+Good questions to ask are:</p>
+<ol class="arabic simple">
+<li><p>Are any monitors being used in event mode (usually not a good idea, better to histogram)</p></li>
+<li><p>Have the jaws been opened up or is white beam falling on any detectors (check setup with scientist)</p></li>
+<li><p>Any unusually rapid data taking? (e.g. 15s runs with large-ish files)</p></li>
+</ol>
+</section>
+<section id="data-disk-available-space">
+<h2>Data Disk available space<a class="headerlink" href="#data-disk-available-space" title="Link to this heading"></a></h2>
+<p>Varies widely per instrument and the space is tailored over time to match the needs of the instrument (with spare space as a buffer against exceptional usage).</p>
+<p>Space for data to reside on the instrument so it can be analysed locally is provided by a cache which is purged on most instruments using a scheduled task with <code class="docutils literal notranslate"><span class="pre">robocopy</span></code> (<code class="docutils literal notranslate"><span class="pre">robocopy</span> <span class="pre">/?</span> </code>for details).  Cache sizes vary widely per instrument.  Some instruments with low data rates have caches with more gentle purging strategies.  Caching on most high volume instruments will use a <code class="docutils literal notranslate"><span class="pre">robocopy</span></code> task with the MINAGE parameter set to 1 or 2 remove files that are 1 or 2 days old.  Fewer instruments purge on a monthly basis (e.g. MINAGE:30), muons and reflectometers generally have smaller data files.</p>
+<p>Availability in the cache for 1 day minimum is required for local copying programs on all instruments to have data <em>available for copying</em> from the instrument <code class="docutils literal notranslate"><span class="pre">data</span></code> share.  The External Export cache may be cleared of recent data files if space is limited, but NOT the instrument Data area (these will be removed only when archived).</p>
+<p>The Clean and purging tasks run as privileged tasks in the scheduled tasks library on the guest VMs.  Where specially large and controlled caching is needed (on WISH currently) a more generic powershell script <code class="docutils literal notranslate"><span class="pre">purge.ps1</span></code> is run as a task on the host - the difference being that the cache trims to a fill level of over 90% on age and currently will not empty over time.  This allows maximum local data (about 2 cycles normally) to be available for local analysis.  In both cases, files are first moved to an area for deletion and then deleted by a separate task which runs later.</p>
+</section>
+<section id="system-disk-getting-full-finding-space">
+<h2>System Disk Getting Full; Finding Space<a class="headerlink" href="#system-disk-getting-full-finding-space" title="Link to this heading"></a></h2>
+<p>Often the system disk gets full because of logging, or windows updates etc. You can free up space by doing the following:</p>
+<ul class="simple">
+<li><p>VNC to machine, check no-one is using it</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">Tree</span> <span class="pre">Size</span></code> <code class="docutils literal notranslate"><span class="pre">(\\isis\installs\ISISAPPS\TreesizePro)</span></code> and analyse the C drive:</p>
+<ul>
+<li><p>Flag any large files that you are worried about deleting to Chris</p></li>
+<li><p>Check size of <code class="docutils literal notranslate"><span class="pre">instrument/var/logs</span></code> move any large logs to back <code class="docutils literal notranslate"><span class="pre">&lt;inst</span> <span class="pre">area&gt;\Backups$\stage-deleted\&lt;instrument&gt;</span></code>. Do this by creating a directory on c, moving files in then copying to this because it is write once.</p></li>
+</ul>
+</li>
+<li><p>Uninstall apps which shouldn’t be there (if you have admin access then removing mysql installer - community save 600Mb)</p></li>
+<li><p><a class="reference internal" href="../../system_components/mysql/Database-Troubleshooting.html#database-troubleshooting-reduce-space"><span class="std std-ref">Truncate the database if it is too large</span></a></p></li>
+<li><p>If you have remote desktop and a little more time then:</p>
+<ul>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">Disk</span> <span class="pre">Clean-Up</span></code> on C in user mode and remove all default files</p></li>
+<li><p>Run it in admin mode by clicking the button</p></li>
+<li><p>Remove all the default files it lets you</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="getting-1920-x-1200-or-other-resolution-on-daxten-analogue-connection-to-a-monitor-which-supports-this">
+<h2>Getting 1920 x 1200 (or other) resolution on Daxten (analogue) connection to a monitor which supports this<a class="headerlink" href="#getting-1920-x-1200-or-other-resolution-on-daxten-analogue-connection-to-a-monitor-which-supports-this" title="Link to this heading"></a></h2>
+<p>Dual monitors with one replicated by a Daxten or a single remote Daxten monitor may need this as 1920 x 1200 monitors are less common in default resolution lists.  Digital connections are normally fine but in this case the connection has to be analogue.</p>
+<p>When a monitor is being driven though a remote analogue VGA connection, there is no feedback to the computer to select the correct monitor resolution.  In this case the resolution must be forced on the graphics card and in Windows to be correct.  The essentials are</p>
+<ol class="arabic simple">
+<li><p>Install the analogue <em>monitor</em> driver in the advanced display settings for the screen - once this is associated with the display</p></li>
+<li><p>Use the Graphics card Manufacturer utility to set up a custom 1920 x 1200 resolution (if necessary) and refresh rate (go low on refresh rate e.g. 51Hz if the graphics card considers the refresh rate too high).</p></li>
+<li><p>Ensure this is applied to the correct display.</p></li>
+</ol>
+<p>for more details see <a class="reference external" href="https://github.com/ISISComputingGroup/ControlsWork/issues/720#issuecomment-1413986492">https://github.com/ISISComputingGroup/ControlsWork/issues/720#issuecomment-1413986492</a></p>
+</section>
+<section id="iris-drives-are-not-mapping-correctly">
+<h2>IRIS: Drives are not mapping correctly<a class="headerlink" href="#iris-drives-are-not-mapping-correctly" title="Link to this heading"></a></h2>
+<p>On IRIS when the machine is rebooted the mapped drives don’t automatically reconnect for some reason. This means there data is not copied to the analysis machine. The drives are reconnected by opening them in file manager in windows then it is done.</p>
+</section>
+<section id="remote-desktop-client-keep-freezing-hanging">
+<h2>Remote desktop client keep freezing/hanging<a class="headerlink" href="#remote-desktop-client-keep-freezing-hanging" title="Link to this heading"></a></h2>
+<p>Try the following as administrator on the machine that you are running remote desktop client on:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">Run</span> <span class="n">gpedit</span><span class="o">.</span><span class="n">msc</span>
+<span class="o">*</span> <span class="n">Navigate</span> <span class="n">to</span> <span class="n">Computer</span> <span class="n">Configuration</span> <span class="o">&gt;</span> <span class="n">Administration</span> <span class="n">Templates</span> <span class="o">&gt;</span> <span class="n">Windows</span> <span class="n">Components</span> <span class="o">&gt;</span> <span class="n">Remote</span> <span class="n">Desktop</span> <span class="n">Services</span> <span class="o">&gt;</span> <span class="n">Remote</span> <span class="n">Desktop</span> <span class="n">Connection</span> <span class="n">Client</span><span class="o">.</span> 
+<span class="o">*</span> <span class="n">Set</span> <span class="n">the</span> <span class="s2">&quot;Turn Off UDP On Client&quot;</span> <span class="n">setting</span> <span class="n">to</span> <span class="n">Enabled</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="user-says-they-can-not-see-their-nexus-data-files-on-external-machine">
+<h2>User says they can not see their nexus data files on external machine<a class="headerlink" href="#user-says-they-can-not-see-their-nexus-data-files-on-external-machine" title="Link to this heading"></a></h2>
+<p>See <a class="reference internal" href="../../specific_iocs/dae/DAE-Trouble-Shooting.html#dae-troubleshooting-cannot-see-nexus-files"><span class="std std-ref">DAE-Trouble-Shooting</span></a></p>
+</section>
+<section id="unable-to-communicate-with-moxa-ports">
+<h2>Unable to communicate with MOXA ports<a class="headerlink" href="#unable-to-communicate-with-moxa-ports" title="Link to this heading"></a></h2>
+<p>We encountered this issue in August 2017 on HRPD. Neither SECI nor IBEX could communicate with the MOXA. We solved the problem on the fly by remapping the ports from COM blocks 5-20 to 21-36. NPort Administrator had several ports in the former block marked as in use in spite of no devices being active. The ultimate fix was to clear out the offending registry value:</p>
+<ol class="arabic simple">
+<li><p>Click start → Run → type regedit and click OK button</p></li>
+<li><p>Navigate to <code class="docutils literal notranslate"><span class="pre">HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\COM</span> <span class="pre">Name</span> <span class="pre">Arbiter</span></code></p></li>
+<li><p>Now on the right panel, you can see the key <code class="docutils literal notranslate"><span class="pre">ComDB</span></code>. Right-click it and click modify</p></li>
+<li><p>In value Data section select all and delete reset to zero</p></li>
+<li><p>Restart the machine if needed (to do this remotely use the command <code class="docutils literal notranslate"><span class="pre">shutdown</span> <span class="pre">-r</span> <span class="pre">-t</span> <span class="pre">0</span></code></p></li>
+</ol>
+<p>A similar (but I think unrelated) problem was found in June 2018 on ZOOM. Some ports in a MOXA were found to not communicate with a Julabo. According to both the lights on the MOXA and the MOXA’s web interface there was data being transmitted both to and from the device. However, when transmitting to the device (either via hyperterminal or IOC) no actual data was received. Restarting the MOXA had no affect. The problem was ultimately not resolved, the Julabos were moved to different ports.</p>
+</section>
+<section id="can-not-rename-delete-move-a-file-folder">
+<h2>Can not rename/delete/move a file/folder<a class="headerlink" href="#can-not-rename-delete-move-a-file-folder" title="Link to this heading"></a></h2>
+<p>This happens when windows locks a file for you. The lock can either be because of a local process or because of a file is shared from another computer.</p>
+<section id="local-process">
+<h3>Local Process<a class="headerlink" href="#local-process" title="Link to this heading"></a></h3>
+<p>Close items that might be using the file, especially command line consoles in that directory. If you still can’t find it load “Process Explorer” (sysinternals some of the machines have this in the start menu). Then click <code class="docutils literal notranslate"><span class="pre">Menu</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Find</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Find</span> <span class="pre">File</span> <span class="pre">or</span> <span class="pre">Handle</span> <span class="pre">...</span></code> type the path and this will give you the process id that is holding the lock.</p>
+</section>
+<section id="share">
+<h3>Share<a class="headerlink" href="#share" title="Link to this heading"></a></h3>
+<p>If it is through a share the file lock will not appear in here. In this case look at the share information <update where that is here> then kill the share. It may reconnect so just do the operation quickly.</p>
+</section>
+</section>
+<section id="checking-windows-event-log-on-ndx-computer-for-process-crash-resource-issues">
+<h2>Checking windows event log on NDX computer for process crash/resource issues<a class="headerlink" href="#checking-windows-event-log-on-ndx-computer-for-process-crash-resource-issues" title="Link to this heading"></a></h2>
+<p>The windows application and system event logs contain useful details to help diagnose system, process and resource issues check as crashes and memory issues. Accessing this via the computer management (<code class="docutils literal notranslate"><span class="pre">compmgmt</span></code>) application is in a <a class="reference external" href="https://stfc365.sharepoint.com/:w:/r/sites/ISISExperimentControls/Instrument%20Documents/Checking%20event%20log%20on%20a%20computer.docx?d=w40b9227a3095448eb655c156c2a567db&amp;amp;csf=1&amp;amp;web=1&amp;amp;e=VzNF0U">separate sharepoint document</a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Change-Windows-Theme.html" class="btn btn-neutral float-left" title="Change Windows Theme" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Data-Generation-and-Storage-on-Instrument-PCs-%28NDX%27s%29.html" class="btn btn-neutral float-right" title="Data Storage &amp; Production" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Jul 04, 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

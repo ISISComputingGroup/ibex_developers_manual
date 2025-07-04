@@ -1,0 +1,173 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Design thoughts for a serial or ethernet IOC &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Stream Device Tips and Tricks" href="Stream-Device-Tips-and-Tricks.html" />
+    <link rel="prev" title="PV with a limited range" href="PV-with-a-limited-range.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Compiling.html">Compiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Conventions.html">Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Creation.html">IOC Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Testing.html">Testing</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Tips-and-Tricks.html">Tips, Tricks &amp; Techniques</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Communication-layer-likes-and-dislikes-%28protocol%2C-new-devices%29.html">Comms layer likes &amp; dislikes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Email-Text-Alerts-from-IOCS.html">Email &amp; Text alerts from IOCs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Flow-control.html">Flow control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Handling-Invalid-Values.html">Handling invalid values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-Tips-and-Tricks.html">IOC Tips &amp; Tricks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PV-with-a-limited-range.html">PV with a limited range</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Design thoughts for a serial or ethernet IOC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Stream-Device-Tips-and-Tricks.html">Stream Device Tips and Tricks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Using-IP-rather-than-nport-with-MOXA-%28RFC-2217%29.html">Using IP rather than NPORT (RFC 2217)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Tools.html">Tools &amp; Support Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Systems.html">Systems Administration &amp; Hardware</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+          <li class="breadcrumb-item"><a href="../Tips-and-Tricks.html">Tips, Tricks &amp; Techniques</a></li>
+      <li class="breadcrumb-item active">Design thoughts for a serial or ethernet IOC</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/iocs/tips_tricks/Some-Design-thoughts-for-a-serial-or-Ethernet-IOC.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="design-thoughts-for-a-serial-or-ethernet-ioc">
+<h1>Design thoughts for a serial or ethernet IOC<a class="headerlink" href="#design-thoughts-for-a-serial-or-ethernet-ioc" title="Link to this heading"></a></h1>
+<section id="serial-devices">
+<h2>Serial Devices<a class="headerlink" href="#serial-devices" title="Link to this heading"></a></h2>
+<p>Applicable - For IOCS (or any code) which ultimately drives something at the end of a real wire or a fibre where the comms. are very much an end-to-end affair.</p>
+<p>Not applicable - Some IOCS are to drive things in crates (with hardware slots interrupt lines etc.) this is not about these, also it is not about things that communicate with other bits of manufacturers code (unless this ultimately ends up driving a serial device).</p>
+</section>
+<section id="different-models-for-device-communication">
+<h2>Different models for device communication<a class="headerlink" href="#different-models-for-device-communication" title="Link to this heading"></a></h2>
+<p>There are generally two sorts of “serial” devices.</p>
+<p>Those that “chatter” to the computer regardless of whether you talk to them, for those an IOC should treat this chatter as a heartbeat (i.e. timeout and report a comms. error if it doesn’t receive what it should within a time). We’ve generally not preferred these sort of comms. (if we have a choice) because they can be a bit awkward to program and are by definition asynchronous with the code talking to them (unfortunately, hardware people often quite like these).</p>
+<p>Alternatively, there are “obedient” devices which only speak when they are spoken to. These must be polled because this is the only way we will know they still are working. In fact, they must really be polled so as to return at least one data value or response packet.  Devices which accept silent commands need to checked for data coming back (one wire may not be connected). The rate of polling for data can then be set lower than this (or on demand) if values are not needed very often. An IOC is simplified if heartbeat and data needs are satisfied at the same rate which is normal.  For “chatterers” it may be possible to alter the rate of chatter with a device command.</p>
+<p>As far as I can think, this will apply to any device connected to any simple serial “bus” RS232, Ethernet, MODBUS etc. There is a point to be made that between two bits of code on a local system, polling is generally a poor idea (software should use events/interrupts). When talking to real hardware without its own interrupt lines, it is essential.</p>
+<p>The network load of polling is generally very low for real RS232 speeds even at 115Kb (the CPU load of over-polling serial calls might be higher though). On the Ethernet, saturation of an Ethernet link is slightly possible, but as long as the device is fairly dumb and one waits for a reply, the chances of a very tight loop are quite low (I would always put in a delay though).</p>
+<p>Just some thoughts as you continue into the design of your IOC.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="PV-with-a-limited-range.html" class="btn btn-neutral float-left" title="PV with a limited range" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Stream-Device-Tips-and-Tricks.html" class="btn btn-neutral float-right" title="Stream Device Tips and Tricks" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Jul 04, 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
