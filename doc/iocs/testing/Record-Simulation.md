@@ -7,7 +7,7 @@ Simulated values can either be a constant, or can be read/written to another PV 
 
 Though a simulated motor exists, it is probably still worth doing record simulation for e.g. jaws as it provides a convenient way to test GUIs without having to start additional IOCs
 
-The EPICS record has to initialise first before simulation mode is enabled internally, and this is where problems can occur. Some drivers will try to read a value from the hardware at record initialisation, and if this fails they leave the record in an error state that stops simulation mode working. If you see PACT is stuck at 1 this is typical of a failed record initialisation. You will wither need to fix the device driver, or avoid this record when using recsim. 
+The EPICS record has to initialise first before simulation mode is enabled internally, and this is where problems can occur. Some drivers will try to read a value from the hardware at record initialisation, and if this fails they leave the record in an error state that stops simulation mode working. If you see PACT is stuck at 1 this is typical of a failed record initialisation. You will either need to fix the device driver, or avoid this record when using recsim. 
   
 There are several cases where recsim doesn't work properly (or not without significant extra work):
 - Records with `PINI="YES"` - initialisation runs before channel access is active which causes issues.
