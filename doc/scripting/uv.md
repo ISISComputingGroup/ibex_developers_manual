@@ -6,7 +6,7 @@ We are currently considering whether we could use it to split up our python proc
 
 ## `uv` files
 
-- `c:\Instrument\apps\uv\` is the main installation folder for uv itself. 
+- `c:\Instrument\apps\uv\` is the main installation folder for `uv` itself. 
 - `c:\Instrument\apps\uv\snakes` is the location of individually-versioned python interpreter executables. These are "bare" interpreters, that do not contain any dependencies such as `genie_python`.
 - `c:\Instrument\var\tmp\uvcache` is the location of `uv`'s pip download cache. This can safely be deleted and will be recreated as-needed.
 
@@ -29,5 +29,5 @@ It can be used on Github actions CI, but isn't currently.
 ### Instrument processes
 
 In the future we may consider using `uv` to create and build virtual environments for each respective python process that runs on the NDX. This requires some decisions and subsequent work: 
-- `uv.lock` files - should we keep them in source, or at least on the build server, then build venvs on the NDXes with those specific versions?
+- `uv.lock` files - should we keep them in source, or at least on the build server, then build virtual environments on the NDXes with those specific versions?
 - python wheels need to be available for everything we use - the NDXes do not have compilers ie. Visual Studio installed.
