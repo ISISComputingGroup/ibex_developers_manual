@@ -87,6 +87,27 @@ The scaling factors are always powers of 10.
 
 To determine the scaling factors, start the IOC in modbus mode, then for each parameter on each sensor, check using the Eurotherm menus that the number in the Eurotherm itself equals what IBEX reports. **Check carefully** as, for example, a PID parameter of `1.5` looks quite similar to `15`, but will cause temperature control to be entirely incorrect! 
 
+## Read rates
+
+Eurotherms come in a number of different configurations, namely crates with varying number of sensors. For typical baud rates, there is a limit to how much data can be communicated across a serial line. This have proven problematic in the past for configurations using 3 or more sensors. In the latest version of the IOC (3.0.0 at time of writing), the frequency of requests per sensor is inversely proportional to the number of sensors, so the overall request rate stays constant.
+
+The reads are split between slow reads and fast reads. The slow reads are split into 5 blocks. When communicating with the Eurotherm, the IOC will query each block of slow reads sequentially along with a fast read. In other words, the read sequence for each sensor goes:
+
+```
+Read slow block 1
+Read fast
+Read slow block 2
+Read fast
+...
+Read slow block 5
+Read fast block
+[Repeat]
+```
+
+The time taken for each block is defined as the variable `SECONDS_PER_READ` in `.../ioc/EUROTHRM/iocBoot/iocEUROTHRM-IOC-01/st-timing.cmd`
+
+The with the `SECONDS_PER_READ` set to 0.08 this would mean each block takes roughly 0.5s per sensor; `second per read [0.08] * (number of reads in a fast block + number of reads in a slow block [3 + 3]) * num of read`. There are 5 blocks in total so all parameters are reread every 2.5s per sensor. On a 3 sensor crate this would be a temperature read every 1.5s and a refresh of all parameters every 7.5s. 
+
 ## Troubleshooting
 
  - If you're having trouble with the Eurotherm-based automatic needle valve controller (i.e. on WISH), see [Automatic needle valve controller wiki](Automatic-Needle-Valve-Controller)
@@ -95,4 +116,8 @@ To determine the scaling factors, start the IOC in modbus mode, then for each pa
 
 If the P,I,D, Max Output all look OK, and the setpoint readback suggests a setpoint has been sent, but the heater output remains 0, then one possibility is that the Eurotherm is in Manual not automatic mode - there is a Manual/Automatic switch on the front panel on the Eurotherm hardware. The Eurotherm IOC does not tell the Eurotherm how much power to deliver directly, it sends P,I,D and max output and the Eurotherm itself decides how much power to deliver (heater readback)
 
-    
+## Resources
+
+- [Eurotherm IOC Repository](https://github.com/ISISComputingGroup/EPICS-ioc/tree/master/EUROTHRM)
+- [Eurotherm IOC System Tests](https://github.com/ISISComputingGroup/EPICS-IOC_Test_Framework/blob/master/tests/eurotherm.py)
+- [Eurotherm2k Support Repository](https://github.com/ISISComputingGroup/EPICS-eurotherm2k/tree/master)
