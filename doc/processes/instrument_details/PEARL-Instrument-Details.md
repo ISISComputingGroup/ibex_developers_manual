@@ -23,23 +23,23 @@ PEARL will migrate from the SECI control system to the IBEX control system.
 ## PEARL Equipment ##
 The equipment listed below is used on PEARL. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).
 
-Manufacturer | Model | Type | Connection | Driver | Notes |
------------- | ------------- | ------------- | ------------- | ------------- | -------------------------------------------
-ISIS | DAE 2 | Detector Electronics | Ethernet | | [see DAE note](#note-dae)
+Manufacturer | Model | Type | Connection    | Driver | Notes |
+------------ | ------------- | ------------- |---------------| ------------- | -------------------------------------------
+ISIS | DAE 2 | Detector Electronics | Ethernet      | | [see DAE note](#note-dae)
 ISIS | Mk3 Chopper | Chopper | Ethernet/.NET | #169 | [see Mk3 Chopper note](#pearl_note-mk3-chopper) |
-GALIL | [DMC2280](http://www.galilmc.com/products/dmc-22x0.php) | Motion Controller | Ethernet | [EPICS](http://www.aps.anl.gov/epics/modules/manufacturer.php#Galil%20Motion%20Control) | [see Galil note](#note-galil) | 
-[LINMOT](http://www.linmot.com/) | [P0x-23](http://www.linmot.com/fileadmin//user_upload/Downloads/software-firmware/servo-drives/linmot-talk-1-3-x/UserManual_1r3_e_recent.pdf) | Linear Motors and Motion Controller | RS-232 | [#2098](https://github.com/ISISComputingGroup/IBEX/issues/2098) | [see LinMot note](#note-linmot) |
-??? | ??? | 1 x 4-blade jaws |  |  | [see Jaws note](#note-jaws)
-[Pfeiffer](http://www.pfeiffer-vacuum.com/products/measurement/container.action) | TPG300 | ISIS Vacuum System | RS232 | #216 |[see Pfeiffer note](#note-pfeiffer)
-Eurotherm | Temperature Controller | All models at ISIS | RS-232 | [EPICS](http://www.aps.anl.gov/epics/modules/manufacturer.php#Eurotherm) | [see Eurotherm  note](#note-eurotherm)
-LakeShore | 336| Temperature Controller | RS-232 | [EPICS](http://www.aps.anl.gov/epics/modules/manufacturer.php#Lakeshore) | [see LakeShore note](#note-lakeshore )
-~Oxford Instruments~ | ~ITC503~ | ~Cryogenic System~ |   |  | [see Oxford Instruments note](#note-oxford-instruments)
-Sorensen | High-PT | PSU |  |  | [see Sorensen note](#note-sorensen)
-Pace | 5000 | Pressure Controller | RS-232 |  | [see Pace note](#note-pace)
-ISIS | PEARL | Pressure Cell Controller |  |  | [see Pressure Cell Controller note](#note-pressure-cell-controller)
-ISIS | PEARL | MMP ~200~ or 210 Pressure Transducer |  |  | [see PEARL Pressure Transducer note](#note-pearl-pressure-transducer)
-ISIS | PEARL | Temperature Controller |  |  | [see PEARL Temperature Controller note](#note-pearl-temperature-controller)
-ISIS | ??? | Cold Valve| | | [see Cold Valve note](#note-cold-valve)
+GALIL | [DMC2280](http://www.galilmc.com/products/dmc-22x0.php) | Motion Controller | Ethernet      | [EPICS](http://www.aps.anl.gov/epics/modules/manufacturer.php#Galil%20Motion%20Control) | [see Galil note](#note-galil) | 
+[LINMOT](http://www.linmot.com/) | [P0x-23](http://www.linmot.com/fileadmin//user_upload/Downloads/software-firmware/servo-drives/linmot-talk-1-3-x/UserManual_1r3_e_recent.pdf) | Linear Motors and Motion Controller | RS-232        | [#2098](https://github.com/ISISComputingGroup/IBEX/issues/2098) | [see LinMot note](#note-linmot) |
+??? | ??? | 1 x 4-blade jaws |               |  | [see Jaws note](#note-jaws)
+[Pfeiffer](http://www.pfeiffer-vacuum.com/products/measurement/container.action) | TPG300 | ISIS Vacuum System | RS232         | #216 |[see Pfeiffer note](#note-pfeiffer)
+Eurotherm | Temperature Controller | All models at ISIS | RS-232        | [EPICS](http://www.aps.anl.gov/epics/modules/manufacturer.php#Eurotherm) | [see Eurotherm  note](#note-eurotherm)
+LakeShore | 336| Temperature Controller | RS-232        | [EPICS](http://www.aps.anl.gov/epics/modules/manufacturer.php#Lakeshore) | [see LakeShore note](#note-lakeshore )
+~Oxford Instruments~ | ~ITC503~ | ~Cryogenic System~ |               |  | [see Oxford Instruments note](#note-oxford-instruments)
+Sorensen | High-PT | PSU |               |  | [see Sorensen note](#note-sorensen)
+Pace | 5000 | Pressure Controller | RS-232        |  | [see Pace note](#note-pace)
+ISIS | PEARL | Pressure Cell Controller |               |  | [see Pressure Cell Controller note](#note-pressure-cell-controller)
+ISIS | PEARL | MEAS M905 Pressure Transducer | RS485         |  | [see PEARL Pressure Transducer note](#note-pearl-pressure-transducer)
+ISIS | PEARL | Temperature Controller |               |  | [see PEARL Temperature Controller note](#note-pearl-temperature-controller)
+ISIS | ??? | Cold Valve|               | | [see Cold Valve note](#note-cold-valve)
 
 ##### Note: DAE #####
 Main Detector banks + one working fixed monitor upstream of sample position.
