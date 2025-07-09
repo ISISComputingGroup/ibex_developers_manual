@@ -108,3 +108,29 @@ The x position corresponds to machinename:username:MOT:STACK:Y
 and the y position corresponds to machinename:username:MOT:STACK:ZLO.
 
 Position names are created by concatenating the position name and the slot name (or `sample_suffix`, see above).
+
+## Images
+
+### Banjo rack
+![Banjo](sans_sample_changer/131144968-496a52d1-0fa9-4b43-9d9d-ca58974193f8.jpg)
+
+### Banjo Sample
+![Banjo_sample](sans_sample_changer/131144984-9d347067-7893-4a07-ab4d-6782fa2ea74e.jpg)
+
+### Skinny Rack
+![Skinny](sans_sample_changer/131145026-117618fb-37f0-47a4-b3a4-28fa33bc38f6.jpg)
+
+### Skinny Sample
+![Skinny_sample](sans_sample_changer/131145043-69114cdd-ef52-42fe-82d0-48a7e3c48ee6.jpg)
+
+### Wide Rack
+![Wide_SANS2D](sans_sample_changer/131146548-1297c2a1-b7a4-4ae6-93f7-8929499930b5.jpg)
+
+### Beam position Calibration 
+![Beam_calibration_sample](sans_sample_changer/131145008-a829e99d-ffb1-408b-9f17-a9c021388417.jpg)
+
+### Sample Changer X Axis movement
+![Sample_changer_X_Axis_GIF](sans_sample_changer/131147524-27f89f1e-caf8-4714-a760-25be4da85780.gif)
+
+### Sample Changer X and Y Axis Movement
+![Sample_changer_X_Y_GIF (2)](sans_sample_changer/131150501-7d3805e1-1a08-4175-881a-7788a711c58d.gif)
