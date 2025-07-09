@@ -45,7 +45,7 @@ There is a project relating to the motion on the South Side Muons in progress, t
 ##### Note: Jaws #####
 Provide information about HIFI jaws.
 
-{#hifi_note-vacuum}
+{#hifi_note-vacuum-system}
 ##### Note: Vacuum System #####
 TPG300 support is implemented via [#216](https://github.com/ISISComputingGroup/IBEX/issues/216) and [#2063](https://github.com/ISISComputingGroup/IBEX/issues/2063)
 
@@ -63,7 +63,7 @@ There appears to be no driver for the Aeroflex 2023A in `C:\LabVIEW Modules\`. H
 ##### Note: Water Baths #####
 1. Julabo Water Bath
    * no information on specific Julabo Water Baths - maybe HIFI uses water baths from the pool?
-   * consult the [Julabo commands](https://github.com/ISISComputingGroup/ibex_developers_manual/wiki/backend_system/IOCs/julabo_commands.xlsx) spreadsheet for specific details of which set of commands are used individual water baths.
+   * consult the [Julabo commands](/specific_iocs/temp_controllers/julabo_commands.xlsx) spreadsheet for specific details of which set of commands are used individual water baths.
 1. Haake Water Bath is now obsolete (replaced by Julabo, according to instrument scientist)
    * ~Haake Water Bath (apparently the following Haake water bath: WB9)~
    * ~Haake N6 Water Bath.  Haake has now been taken over by [ThermoFisher](https://www.thermofisher.com/uk/en/home/life-science/lab-equipment/water-baths-circulators-chillers.html).  N6 model may be obsolete.  Check existing SECI VI for logic and manual (see `C:\LabVIEW Modules\Drivers\Haake N6`).~
@@ -95,7 +95,7 @@ See also `C:\LabVIEW Modules\Drivers\Caen`.
 1. [Model 218](http://www.lakeshore.com/products/Cryogenic-Temperature-Monitors/Model-218/Pages/Overview.aspx):
 1. [Model 336](http://www.lakeshore.com/products/cryogenic-temperature-controllers/model-336/Pages/Overview.aspx):
 1. [Model 340](http://www.lakeshore.com/products/Cryogenic-Temperature-Controllers/Model-340/Pages/Overview.aspx): this model is now obsolete, having been replaced by the 336 and 350 models.
-1. On muon instruments, the Triton fridges have an additional Lakeshore controller (the 372) to allow control and continuous readout of the sample temperature (the OI software doesn’t allow this using the in-built Lakeshore, despite the unit having a dedicated channel for the sample thermometry). 
+1. On muon instruments, the Triton fridges have an additional Lakeshore controller (the 372) to allow control and continuous readout of the sample temperature (the OI software doesn't allow this using the in-built Lakeshore, despite the unit having a dedicated channel for the sample thermometry). 
 1. [Model 372](https://www.lakeshore.com/products/categories/overview/temperature-products/ac-resistance-bridges/model-372-ac-resistance-bridge-temperature-controller) temperature controller.
 1. There are [EPICS drivers](https://epics-controls.org/resources-and-support/modules/hardware-support/) for a variety of Lakeshore temperature controllers.
 

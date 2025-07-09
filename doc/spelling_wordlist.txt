@@ -148,6 +148,7 @@ cryo
 Cryocon
 cryomag
 cryomagnet
+Cryomagnetics
 cryomagnets
 cryosms
 cset

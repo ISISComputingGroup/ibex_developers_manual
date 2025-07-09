@@ -18,48 +18,48 @@ OFFSPEC will migrate from the SECI control system to the IBEX control system in 
 The equipment listed below is used on OFFSPEC. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).
 
 
-|  VI | Config(s) | Config last updated | IBEX equivalent |
-| --- | --- | --- | --- |
-| `beam logger.vi` | | | standard IBEX |
-| `dae control.vi` | | | standard IBEX / ISISDAE |
-| `delft/coldasever.vi` | `OFFSPEC-DELFT-MAIN.conf` | 18/05/2022 | https://github.com/ISISComputingGroup/IBEX/issues/7437 |
-| eurotherm |  |  | EUROTHRM |
-| galil ToM |  |  | standard IBEX / GALIL |
-| Glassman LV power supply | `OFFSPEC - no logging.conf` | 2019 | Obsolete, not required |
-| Hitachi L7100 |  |  | *Obsolete* |
-| Mk3 Chopper |  |  | MK3CHOPR |
-| Jasco 4180 |  |  | JSCO4180 |
-| Julabo (several models) |  |  | JULABO |
-| Kepco |  |  | KEPCO |
-| Keyence TM 3001P |  |  | KYNCTM3K |
-| Knauer K-6 |  |  | KNRK6 |
-| Knauer 1050 |  |  | KNR1050 |
-| motion control (various) |  |  | REFL - assume being handled in https://github.com/ISISComputingGroup/IBEX/issues/6245 |
-| Newport SMC100 |  |  | SMC100 |
-| Nima Trough |  |  | NIMATRO |
-| Mercury ITC |  |  | MERCURY_ITC |
-| SM300-5 (power supply) |  |  | https://github.com/ISISComputingGroup/IBEX/issues/4461 |
-| Tektronix AFG 3000 series |  |  | TEKAFG3XXX |
-| Thurlby EX355P |  |  | TTIEX355P |
-| Thurlby TGA1240 |  |  | None (hardware is obsolete; functionality to be replaced by Tektronix function generators - we should not need to convert this driver) |
-| Thurlby TSX 3510P | all | - | https://github.com/ISISComputingGroup/IBEX/issues/7434 |
-| Aladdin-1000 syringe pump |  |  | ALDN1000 |
-| WPI 2XX syringe pump |  |  | SP2XX |
-| inter galil dio |  |  | Digital i/o already covered in GALIL ioc |
-| surf galil dio|  |  | Digital i/o already covered in GALIL ioc |
-| `delft_dc_mc - front panel.vi` |  |  | https://github.com/ISISComputingGroup/IBEX/issues/7492 |
-| `delft/eltromatdriver` | all | - | https://github.com/ISISComputingGroup/IBEX/issues/7494 |
-| `delft/hfcontroldriver` | DELFT, NIMA, "Single Config" | 2011/2012 | Deprecated, not required |
-| hydrocell |  |  | One-off user kit; not required |
+| VI                                   | Config(s) | Config last updated | IBEX equivalent |
+|--------------------------------------| --- | --- | --- |
+| `beam logger.vi`                     | | | standard IBEX |
+| `dae control.vi`                     | | | standard IBEX / ISISDAE |
+| `delft/coldasever.vi`                | `OFFSPEC-DELFT-MAIN.conf` | 18/05/2022 | https://github.com/ISISComputingGroup/IBEX/issues/7437 |
+| Eurotherm                            |  |  | EUROTHRM |
+| galil                             |  |  | standard IBEX / GALIL |
+| Glassman LV power supply             | `OFFSPEC - no logging.conf` | 2019 | Obsolete, not required |
+| Hitachi L7100                        |  |  | *Obsolete* |
+| Mk3 Chopper                          |  |  | MK3CHOPR |
+| Jasco 4180                           |  |  | JSCO4180 |
+| Julabo (several models)              |  |  | JULABO |
+| Kepco                                |  |  | KEPCO |
+| Keyence TM 3001P                     |  |  | KYNCTM3K |
+| Knauer K-6                           |  |  | KNRK6 |
+| Knauer 1050                          |  |  | KNR1050 |
+| motion control (various)             |  |  | REFL - assume being handled in https://github.com/ISISComputingGroup/IBEX/issues/6245 |
+| Newport SMC100                       |  |  | SMC100 |
+| Nima Trough                          |  |  | NIMATRO |
+| Mercury ITC                          |  |  | MERCURY_ITC |
+| SM300-5 (power supply)               |  |  | https://github.com/ISISComputingGroup/IBEX/issues/4461 |
+| Tektronix AFG 3000 series            |  |  | TEKAFG3XXX |
+| Thurlby EX355P                       |  |  | TTIEX355P |
+| Thurlby TGA1240                      |  |  | None (hardware is obsolete; functionality to be replaced by Tektronix function generators - we should not need to convert this driver) |
+| Thurlby TSX 3510P                    | all | - | https://github.com/ISISComputingGroup/IBEX/issues/7434 |
+| Aladdin-1000 syringe pump            |  |  | ALDN1000 |
+| WPI 2XX syringe pump                 |  |  | SP2XX |
+| `inter galil dio`                     |  |  | Digital i/o already covered in GALIL ioc |
+| `surf galil dio`                      |  |  | Digital i/o already covered in GALIL ioc |
+| `delft_dc_mc - front panel.vi`       |  |  | https://github.com/ISISComputingGroup/IBEX/issues/7492 |
+| `delft/eltromatdriver`               | all | - | https://github.com/ISISComputingGroup/IBEX/issues/7494 |
+| `delft/hfcontroldriver`              | DELFT, NIMA, "Single Config" | 2011/2012 | Deprecated, not required |
+| `hydrocell`                            |  |  | One-off user kit; not required |
 | ISIS sample environment (digital i/o) |  |  | https://github.com/ISISComputingGroup/IBEX/issues/7436 |
-| Linkam |  |  | LINKAM95 |
-| Newport motor |  |  | NEWPORT |
-| OFFSPEC BH |  |  | Functionality covered in IBEX by a combination of KEPCO, KHLY2400, and scans library. https://github.com/ISISComputingGroup/IBEX/issues/7435 to write equivalent scans script to existing VI |
-| OFFSPEC DELFT RF |  |  | https://github.com/ISISComputingGroup/IBEX/issues/7493 |
-| OFFSPEC high level |  |  | REFL |
-| PI motion stage |  |  | PIMOT |
-| Danfysik |  |  | DFKPS |
-| ITC 503 |  |  | ITC503 |
+| Linkam                               |  |  | LINKAM95 |
+| Newport motor                        |  |  | NEWPORT |
+| OFFSPEC BH                           |  |  | Functionality covered in IBEX by a combination of KEPCO, KHLY2400, and scans library. https://github.com/ISISComputingGroup/IBEX/issues/7435 to write equivalent scans script to existing VI |
+| OFFSPEC DELFT RF                     |  |  | https://github.com/ISISComputingGroup/IBEX/issues/7493 |
+| OFFSPEC high level                   |  |  | REFL |
+| PI motion stage                      |  |  | PIMOT |
+| Danfysik                             |  |  | DFKPS |
+| ITC 503                              |  |  | ITC503 |
 
 <details>
   <summary>Older information:</summary>

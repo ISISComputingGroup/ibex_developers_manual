@@ -90,7 +90,7 @@ Low temperature experiments?[Neocera LTC-21 Manual](http://www.submm.caltech.edu
 {#argus_note-lakeshore}
 ##### Note: LakeShore #####
 1. [Model 332](https://www.lakeshore.com/products/Cryogenic-Temperature-Controllers/Model-332/Pages/Overview.aspx) temperature controller.  Model 332 has now been superseded by [Model 335](https://www.lakeshore.com/products/Cryogenic-Temperature-Controllers/Model-335/Pages/Overview.aspx).
-1. On muon instruments, the Triton fridges have an additional Lakeshore controller (the 372) to allow control and continuous readout of the sample temperature (the OI software doesn’t allow this using the in-built Lakeshore, despite the unit having a dedicated channel for the sample thermometry). 
+1. On muon instruments, the Triton fridges have an additional Lakeshore controller (the 372) to allow control and continuous readout of the sample temperature (the OI software doesn't allow this using the in-built Lakeshore, despite the unit having a dedicated channel for the sample thermometry). 
 1. [Model 372](https://www.lakeshore.com/products/categories/overview/temperature-products/ac-resistance-bridges/model-372-ac-resistance-bridge-temperature-controller) temperature controller.
 1. [Model 460](https://www.lakeshore.com/products/Gaussmeters/Model-460-3-Channel-Gaussmeter/Pages/Overview.aspx) gaussmeter.  Model 460 has now been superseded by [Model F71](https://www.lakeshore.com/products/Gaussmeters/F71-F41-teslameters/Pages/Overview.aspx).
 1. There are [EPICS drivers](https://epics-controls.org/resources-and-support/modules/hardware-support/) for a variety of Lakeshore devices.
@@ -107,6 +107,10 @@ Low temperature experiments?[Neocera LTC-21 Manual](http://www.submm.caltech.edu
       * The VI appears to date from 2004.
       * This model of dilution fridge (the GHS-2T-1T-700) is probably obsolete.  It is no longer listed on the web-site.
 
+{#argus_note-mclennan}
+##### Note: McLennan #####
+Support for McLennan devices is well established (see [#1099](https://github.com/ISISComputingGroup/IBEX/issues/1099) and [#1100](https://github.com/ISISComputingGroup/IBEX/issues/1100) and subsequent tickets.
+   * muon instruments don't use motors in their sample environment
 
 ## ARGUS SECI Configs ##
 Document information about ARGUS SECI configs here.
@@ -136,7 +140,3 @@ Manufacturer | Model | Type | Connection | Driver | Notes |
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------------------------------------
 GALIL | [DMC2280](http://www.galilmc.com/products/dmc-22x0.php) | Motion Controller | Ethernet | [EPICS](http://www.aps.anl.gov/epics/modules/manufacturer.php#Galil%20Motion%20Control) | | 
 McLennan | PM600 | Motion Controller | RS-232 | [EPICS](http://www.aps.anl.gov/epics/modules/manufacturer.php#McLennan%20Servo%20Supplies) | [see McLennan note](#argus_note-mclennan)
-
-##### Note: McLennan #####
-Support for McLennan devices is well established (see [#1099](https://github.com/ISISComputingGroup/IBEX/issues/1099) and [#1100](https://github.com/ISISComputingGroup/IBEX/issues/1100) and subsequent tickets.
-   * muon instruments don't use motors in their sample environment
