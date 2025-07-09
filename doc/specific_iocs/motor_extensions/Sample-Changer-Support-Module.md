@@ -9,6 +9,24 @@ An example sampleChanger + motionSetpoints configuration can be found in [sample
 - `SLOT_DETAILS_FILE`: Path to a slot details XML file.
 - `SAMPLE_LKUP_FILE`: Path to the sample.txt file that should be written by this module
 
+## Background
+
+There are two different models of two-tier sample changer at ISIS. Both models are very similar; from the point of view of the control system they are effectively the same. The earlier of the two models is used on SANS2D [pictured ​here](http://www.isis.stfc.ac.uk/sample-environment/soft-condensed-matter/sample-changers-and-cell-racks/kit/two-tiered-sample-changer/two-tiered-sample-changer14341.html). The newer model is used on LARMOR.
+
+Each tier on the sample changer can hold two racks side-by-side. Different types of rack are used to hold different types of sample cartridge. The number of cartridges per rack depends on the size of the cartridge - the larger the cartridge, the fewer cartridges will fit in a rack. At present there are 3 types of rack (holding different styles of sample cartridge).
+
+1. Rectangular – 10 position
+1. Double stopper – 7 position
+1. Banjo style (with 1, 2 or 5mm gaps) – 7 position 
+
+Racks can be mixed and matched as required. For example, the sample changer could be configured with (say): a 10-position, rectangular rack and a 7-position, Banjo style rack on the top tier and two 7-position, Double stopper racks on the bottom tier, which would allow an experiment to use 31 samples. A picture of the [LARMOR sample changer](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Larmor/LAMOR%20RACK%20VIEW.jpg) shows an alternative configuration.
+
+With the current types of rack, the two tier sample changer can hold a maximum of 40 samples (4 x 10-position rectangular racks; 2 on each tier).  Diagrams of various types of Banjo-style cartridges are available: [Banjo 1mm gap)](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Larmor/BANJO-CELL-RACK.pdf), [Banjo 2mm gap)](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Larmor/BANJO-CELL-RACK-2MM.pdf), [Banjo 5mm gap)](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/Larmor/BANJO-CELL-RACK-5MM.pdf).
+
+The positions of the samples in each rack are known. Motors are used to drive the tiers, so that each sample can be positioned in the beam.
+
+The Sample Changer IOC needs to allow a scientist to select any sample loaded into the sample changer. The maximum number of positions is 40 (based on current rack designs, but this could change in the future). Each position comprises a name and an (x, y) coordinate pair. The scientist will select positions by their names.
+
 ## What to do after changing racks
 
 1. Edit Instrument/Settings/machinename/configurations/motionSetPoints/sampleChanger.xml setting the `rack_type`, `xoff` and `yoff` attributes.
@@ -108,3 +126,29 @@ The x position corresponds to machinename:username:MOT:STACK:Y
 and the y position corresponds to machinename:username:MOT:STACK:ZLO.
 
 Position names are created by concatenating the position name and the slot name (or `sample_suffix`, see above).
+
+## Images
+
+### Banjo rack
+![Banjo](sans_sample_changer/131144968-496a52d1-0fa9-4b43-9d9d-ca58974193f8.jpg)
+
+### Banjo Sample
+![Banjo_sample](sans_sample_changer/131144984-9d347067-7893-4a07-ab4d-6782fa2ea74e.jpg)
+
+### Skinny Rack
+![Skinny](sans_sample_changer/131145026-117618fb-37f0-47a4-b3a4-28fa33bc38f6.jpg)
+
+### Skinny Sample
+![Skinny_sample](sans_sample_changer/131145043-69114cdd-ef52-42fe-82d0-48a7e3c48ee6.jpg)
+
+### Wide Rack
+![Wide_SANS2D](sans_sample_changer/131146548-1297c2a1-b7a4-4ae6-93f7-8929499930b5.jpg)
+
+### Beam position Calibration 
+![Beam_calibration_sample](sans_sample_changer/131145008-a829e99d-ffb1-408b-9f17-a9c021388417.jpg)
+
+### Sample Changer X Axis movement
+![Sample_changer_X_Axis_GIF](sans_sample_changer/131147524-27f89f1e-caf8-4714-a760-25be4da85780.gif)
+
+### Sample Changer X and Y Axis Movement
+![Sample_changer_X_Y_GIF (2)](sans_sample_changer/131150501-7d3805e1-1a08-4175-881a-7788a711c58d.gif)
