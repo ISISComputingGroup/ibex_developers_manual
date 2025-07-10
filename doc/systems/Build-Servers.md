@@ -2,6 +2,10 @@
 
 In order to set up a new build server, capable of running GUI, Uktena, and EPICS builds, you need to install:
 - Visual Studio
+  * C++
+  * ATL
+  * MFC
+  * .NET
 - Perl
 - Java
 - Maven
