@@ -15,7 +15,7 @@ jobs:
       - name: install requirements
         run: uv sync --all-extras
       - name: run pytest
-        run: python -m pytest
+        run: uv run pytest
       - name: run spellcheck
         run: sphinx-build -E -a -W --keep-going -b spelling doc _build
   build:
