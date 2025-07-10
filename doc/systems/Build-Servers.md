@@ -5,7 +5,7 @@ In order to set up a new build server, capable of running GUI, Uktena, and EPICS
   * C++
   * ATL
   * MFC
-  * .NET
+  * .NET targeting pack
 - Perl
 - Java
 - Maven
