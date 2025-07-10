@@ -13,7 +13,7 @@ jobs:
         with:
           python-version: "3.12"
       - name: install requirements
-        run: uv pip install -e .[dev]
+        run: uv sync --all-extras
       - name: run pytest
         run: python -m pytest
       - name: run spellcheck
