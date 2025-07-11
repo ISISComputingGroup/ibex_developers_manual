@@ -12,7 +12,7 @@ In order to set up a new build server, capable of running GUI, Uktena, and EPICS
 - Doxygen
 - git
 - TwinCAT bits
-- symstore (via windbg)
+- symstore (`\\isis\inst$\Kits$\CompGroup\ICP\winsdk`)
 
 ## Connecting to Jenkins
 
