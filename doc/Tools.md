@@ -33,13 +33,17 @@ The IOCs available can be listed using
 console -M localhost -x
 ```
 
-To look at an IOC remotely
+To look at an IOC remotely, use SSH:
 
 ```
-console -M [MACHINE_NAME] -l [USERNAME] [IOCNAME]
+ssh [USERNAME]@[MACHINE] "c:\instrument\apps\epics\config_env.bat && console -M localhost [IOCNAME]"
 ```
-
-where username is the local user on the instrument PC (e.g. `spudulike`).
+or
+```
+ssh [USERNAME]@[MACHINE] "c:\instrument\apps\epics\scripts\console -M localhost [IOCNAME]"
+```
+where `USERNAME` is the local user on the instrument PC (e.g. `spudulike`). As the second version does
+not run `config_env` it starts quicker but does not return to an epics term when you exit console 
 
 Key combos in the console:
 
