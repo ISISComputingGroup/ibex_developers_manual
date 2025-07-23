@@ -22,3 +22,7 @@ If a new server is setup, then ciphers and old TLS versions may need to be disab
 ## NDAEXTWEB4
 
 NDAEXTWEB4 is similar in that it also runs on the Hyper-V cluster. This currently hosts the [PVWS](/webdashboard/PVWS) which is a PVWS instance for the IBEX web dashboard. 
+
+## Shadow
+    
+Some web services run on Shadow - see [here](/systems/Shadow) for more information. 
