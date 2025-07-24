@@ -1,6 +1,7 @@
+{#uv}
 # `uv` and python environments
 
-`uv` is a Python package and project manager. See [`uv`'s docs](https://docs.astral.sh/uv/) for more information.
+[`uv`](https://github.com/astral-sh/uv) is a Python package and project manager. See [`uv`'s docs](https://docs.astral.sh/uv/) for more information.
 
 We are currently considering whether we could use it to split up our python processes and use it for python version management on instrument machines. 
 
