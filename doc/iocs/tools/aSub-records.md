@@ -91,7 +91,7 @@ UTILITIES=$(SUPPORT)/utilities/master
 ASUBFUNCTIONS=$(SUPPORT)/asubFunctions/master
 ```
 
-Finally, the **IOC** makefile (`build.mak`) will now need to be updated to include the DBD and Library produced by the support module. The following lines will add the dependency:
+Finally, the **IOC** makefile (`-IOC-01App\src\build.mak`) will now need to be updated to include the DBD and Library produced by the support module. The following lines will add the dependency:
 
 ```
 $(APPNAME)_DBD += LIBRARY_NAME.dbd
