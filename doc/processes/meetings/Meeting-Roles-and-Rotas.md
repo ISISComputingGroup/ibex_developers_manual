@@ -87,21 +87,21 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
 | 2025_05_08_Review/Retro| LC | X | KB| X | GR| X |
 | 2025_06_12_Planning| LJ | X | CMS| X | ES| X |
 | 2025_06_12_Review/Retro| DM | X | JH| X | SC| X |
-| 2025_07_10_Planning| IG |  | DK|  | TW|  |
+| 2025_07_10_Planning| IG |x | DK|x | TW|x |
 | 2025_07_10_Review/Retro| SC |  | IG|  | LJ|  |
-| 2025_07_31_Planning| ES |  | GR|  | DM|  |
-| 2025_07_31_Review/Retro| DM |  | JH|  | SC|  |
-| 2025_08_28_Planning| FA |  | TW|  | LC|  |
-| 2025_08_28_Review/Retro| GR |  | DM|  | LJ|  |
-| 2025_10_02_Planning| TW |  | FA|  | IG|  |
+| 2025_07_31_Planning| KB |  | DM|  | SC|  |
+| 2025_07_31_Review/Retro| FA |  | CMS|  | DM|  |
+| 2025_08_28_Planning| DM |  | TW|  | LC|  |
+| 2025_08_28_Review/Retro| TW |  | KB|  | LJ|  |
+| 2025_10_02_Planning| LC |  | FA|  | IG|  |
 | 2025_10_02_Review/Retro| CMS |  | ES|  | DK|  |
 | 2025_11_27_Planning| GR |  | SpC|  | ES|  |
-| 2025_11_27_Review/Retro| IG |  | LJ|  | SpC|  |
-| 2026_01_08_Planning| IG |  | LC|  | LJ|  |
-| 2026_01_08_Review/Retro| SpC |  | CMS|  | TW|  |
+| 2025_11_27_Review/Retro| FA |  | KB|  | SpC|  |
+| 2026_01_08_Planning| LJ |  | LC|  | TW|  |
+| 2026_01_08_Review/Retro| SpC |  | CMS|  | LJ|  |
 | 2026_02_05_Planning| JH |  | IG|  | SC|  |
 | 2026_02_05_Review/Retro| DK |  | SC|  | DM|  |
-| 2026_03_05_Planning| LC |  | ES|  | JH|  |
+| 2026_03_05_Planning| CMS |  | ES|  | JH|  |
 | 2026_03_05_Review/Retro| IG |  | GR|  | LC|  |
 
 
