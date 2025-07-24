@@ -61,6 +61,10 @@ To easily add `EPICSTerm.bat` to the start menu after copying EPICS, run `C:\Ins
 
 See [Building and installing the uktena python distribution](/system_components/python/Building-and-installing-uktena)
 
+## uv
+
+See {ref}`installing_uv`
+
 ## Ruff git hook and convenience scripts
 
 In order to use this please clone the reusable workflows repo into dev

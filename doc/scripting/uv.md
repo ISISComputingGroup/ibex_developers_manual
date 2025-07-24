@@ -10,7 +10,15 @@ We are currently considering whether we could use it to split up our python proc
 - `c:\Instrument\apps\uv\snakes` is the location of individually-versioned python interpreter executables. These are "bare" interpreters, that do not contain any dependencies such as `genie_python`.
 - `c:\Instrument\var\tmp\uvcache` is the location of `uv`'s pip download cache. This can safely be deleted and will be recreated as-needed.
 
-## Details of `uv` setup
+{#installing_uv}
+## Installing `uv`
+We have a script which is used in various places to install `uv`. This will install `uv` into `c:\Instrument\apps\uv\` and can be run on instruments, build machines and developer machines. 
+
+To install `uv` run `\\isis\shares\ISIS_Experiment_Controls_Public\ibex_utils\installation_and_upgrade\install_or_update_uv.bat`
+
+For developer machines currently this can be used for things that aren't in `\Instrument\Apps\EPICS\` such as projects you have in `Instrument\dev\` or for manually running the items below. 
+
+## Usage of `uv` in IBEX
 
 ### IBEX install scripts
 
@@ -31,3 +39,4 @@ It can be used on Github actions CI, but isn't currently.
 In the future we may consider using `uv` to create and build virtual environments for each respective python process that runs on the NDX. This requires some decisions and subsequent work: 
 - `uv.lock` files - should we keep them in source, or at least on the build server, then build virtual environments on the NDXes with those specific versions?
 - python wheels need to be available for everything we use - the NDXes do not have compilers ie. Visual Studio installed.
+
