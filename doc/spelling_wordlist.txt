@@ -895,6 +895,7 @@ url
 userdef
 usr
 utils
+uv
 uzhex
 vala
 validator
