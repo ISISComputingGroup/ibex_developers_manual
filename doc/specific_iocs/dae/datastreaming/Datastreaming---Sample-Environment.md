@@ -23,4 +23,4 @@ in `C:\Instrument\Apps\EPICS\utils\build_ioc_startups.py` we have hotfixed this 
 
 to add a Procserv entry that runs it. 
 
-HIFI also has a modified `ISIS/inst_servers/master/start_bs_to_kafka_cmd.bat` which points to the SuperMuSR redpanda instance. 
+HIFI also has a modified `ISIS/inst_servers/master/start_bs_to_kafka_cmd.bat` which points to the SuperMuSR Redpanda instance. 
