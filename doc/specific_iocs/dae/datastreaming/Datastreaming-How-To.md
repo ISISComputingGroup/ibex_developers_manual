@@ -17,7 +17,7 @@ This can be done through Redpanda console or via a Kafka API call.
 
 ### Viewing or "consuming" data from a topic 
 
-[Saluki](https://github.com/rerpha/saluki) can be used for de-serialising the flatbuffers-encoded blobs that are pushed into Kafka.
+[Saluki](https://github.com/ISISComputingGroup/saluki) can be used for de-serialising the flatbuffers-encoded blobs that are pushed into Kafka.
 
 
 {#localredpanda}
