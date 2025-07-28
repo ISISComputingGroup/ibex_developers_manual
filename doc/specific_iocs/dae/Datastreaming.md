@@ -36,6 +36,10 @@ Automation team. See `\\isis\shares\ISIS_Experiment_Controls\On Call\autoreducti
 support information.
 :::
 
+### I want my own local instance of Kafka
+
+See {ref}`localredpanda`
+
 ## Neutron Data
 
 The ICP on any instrument that is running in full event mode and with a DAE3 may stream neutron events into Kafka.
