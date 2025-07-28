@@ -16,7 +16,6 @@ Manufacturer | Model | Type | Connection | Driver | Notes |
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------------------------------------
 ISIS | DAE 2 | Detector Electronics | Ethernet | | [see DAE note](#note-dae)
 SKF | MB4150-G5 | Disk Chopper | Ethernet |  | [see High-Speed SKF Disk Chopper note](#note-high-speed-skf-disk-chopper) |
-Astrium | TBD | Disk Chopper | TBD | .NET | [see High-Speed Astrium Disk Chopper note](#note-high-speed-astrium-disk-chopper) |
 ISIS | Mk3 | Disk Chopper | Ethernet | .NET | [see ISIS Chopper note](#note-isis-disk-chopper) |
 N/A | N/A | Jaws |  |  | [see Jaws note](#note-jaws)
 [Pfeiffer](http://www.pfeiffer-vacuum.com/products/measurement/container.action) | TPG300 | ISIS Vacuum System | RS232 | [#216](https://github.com/ISISComputingGroup/IBEX/issues/216) |[see Pfeiffer note](#note-pfeiffer)
@@ -42,11 +41,6 @@ LET currently has 2 high-speed SKF choppers (same as IMAT).  These are currently
 1. SKF G5 choppers also used on IMAT (see [#1907](https://github.com/ISISComputingGroup/IBEX/issues/1907)).
    * [SKF MB4150-G5 Chopper](http://www.skf.com/uk/products/magnetic-systems/magnetic-systems-applications/neutron-chopper-instrumentation/index.html)
    * [MBScope](http://www.skf.com/uk/products/magnetic-systems/software-downloads/MBScope-Beamline-software.html) software for SKF magnetic bearing choppers.
-
-##### Note: High-Speed Astrium Disk Chopper #####
-LET currently has 2 high-speed Astrium choppers.  These are due to be replaced by 2 new SKF G5 choppers ~within 9-12 months (from September 2017).~  Latest news: The Astrium choppers will be replaced in early 2020 ~(one might even be replaced as early as August 2019).~, but more likely is chopper 5 in January/February shutdown and chopper 1 in the long shutdown.
-
-The Astrium choppers are currently controlled by 2 VMs running on NDHLET (one VM per chopper).  The VMs communicate with the choppers, via a MOXA, using a .NET connection.
 
 ##### Note: ISIS Disk Chopper #####
 LET currently has 1 Mk3 ISIS chopper.
