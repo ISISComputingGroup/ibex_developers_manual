@@ -2,6 +2,7 @@
 
 All IBEX instruments are currently forwarding their sample environment PVs into Kafka. This is done in two parts:
 
+{#bskafka}
 ## BlockserverToKafka
 
 This is a Python process that runs on each NDX (see code [here](https://github.com/ISISComputingGroup/EPICS-inst_servers/tree/master/BlockServerToKafka)) it monitors the blockserver config PVs and any time the config changes it pushes a new configuration to the forwarder, via a Kafka topic `forwarder_config`. This is a process written and managed by IBEX developers.
