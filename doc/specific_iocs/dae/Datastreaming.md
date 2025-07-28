@@ -25,6 +25,7 @@ Part of our in-kind contribution to datastreaming is to test the system in produ
 
 ![](ISISDSLayout.png)
 
+{#kafkacluster}
 ## The Kafka Cluster
 
 There is a Kafka cluster at `livedata.isis.cclrc.ac.uk`. Port 31092 is used for the primary Kafka broker. 
