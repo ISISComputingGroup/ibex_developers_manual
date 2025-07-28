@@ -71,7 +71,6 @@
 | SECI2IBEX           | LVDCOM | LVDCOM | IOC |  |
 | SKFCHOPPER          | IP | IP | IOC |  |
 | SKFMB350            | Off | Off | VI (manual?) | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
-| SM300               | Off | Off | VI | [3139](https://github.com/ISISComputingGroup/IBEX/issues/3139) |
 | SMC100              | On | Off | Manual | [3139](https://github.com/ISISComputingGroup/IBEX/issues/3139) |
 | SP2XX               | Off | Off | Manual and VI |  |
 | SPINFLIPPER306015   | Off | Off | Manual | [3180](https://github.com/ISISComputingGroup/IBEX/issues/3180) |
