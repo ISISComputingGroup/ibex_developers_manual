@@ -3,10 +3,9 @@
 Motion set points allow you to label set positions for any number of axis, though currently db files are only created for single, double or 10 axes. Other numbers of axis can also be easily created by following the example of these. The code for this is in support in the directory [motionSetPoints](https://github.com/ISISComputingGroup/EPICS-motionSetPoints). The configuration for a motion set point is in a number of parts:
 
 1. First, you must set up axes on the motors that you want to configure with the set points
-1. St file called `motionsetpoints.cmd` which sets up the db file which is stored in the configuration under the motor name:
+1. St file called `motionsetpoints.cmd` which sets up the db file which is stored in [the `motorExtensions` settings](https://github.com/ISISComputingGroup/EPICS-motorExtensions/tree/master/settings) under the motor name:
     - galil is `Settings\config\<host name>\configurations\galil`
     - Mclennan is `Settings\config\<host name>\configurations\mcleanan`
-    - SM300 is `Settings\config\<host name>\configurations\<sm300 ioc name e.g. SM300_01>`
 1. The positions which are referenced from the st file. are stored in  `Settings\config\<host name>\configurations\motionSetPoints`
 
 The  `motionsetpoints.cmd` contains the following lines:

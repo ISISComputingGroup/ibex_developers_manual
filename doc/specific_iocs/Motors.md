@@ -50,7 +50,6 @@ motors/Linmot
 motors/McLennan-motors
 motors/Newport
 motors/PI-Rotation-Stage-setup
-motors/SM300
 motors/SMC100
 motors/SXD-Attocube
 ```
