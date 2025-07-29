@@ -43,7 +43,7 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
     1. `genie` should be released with a version number matching the main IBEX version number. The release takes around 15 minutes in GHA.
     1. `ibex_bluesky_core` should generally have a minor/patch version incremented for now until we reach v1. The release takes a couple of minutes in GHA.
     1. **Ensure these releases were successful** by checking on [pypi](https://pypi.org/) for the new release number before proceeding.
-1. Start the Jenkins pipeline [Release Branches](https://epics-jenkins.isis.rl.ac.uk/job/Release_branches/).
+1. Start the Github Actions pipeline [`create-release-branches`](https://github.com/ISISComputingGroup/ibex_utils/actions/workflows/create-release-branches.yml).
     - Click on 'Build with Parameters'.
     - Set `VERSION` to the new release version (e.g. `X.x.m`).
     - Set `TAG` if you wish to branch off a commit other than the latest top level `HEAD`. If you do branch off an earlier commit, also set `REMOTE` to `false` as it now does not make sense to verify if you are on the latest submodule versions. 
@@ -61,12 +61,7 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
             - In `/uk.ac.stfc.isis.scriptgenerator.client/pom.xml` and `/uk.ac.stfc.isis.scriptgenerator.client/META-INF/MANIFEST.mf` for `Script Generator`.
             - Note: `genie_python` library version numbers are set automatically from the git tag, and no longer need manually updating.
         - Push these changes to remote release branch.
-        - Start the Jenkins builds (click `Scan Repository` on the ones that are multibranch pipelines):
-            - `EPICS_release`. (Build will be in `Kits$\CompGroup\ICP\Releases\X.x.m\EPICS`)
-            - `EPICS_release32`. (Build will be in `Kits$\CompGroup\ICP\Releases\X.x.m\EPICS32`)
-            - `uktena_release_pipeline`. (Build will be in `Kits$\CompGroup\ICP\Releases\X.x.m\genie_python_3`)
-            - `ibex_gui_releases_pipeline`. (Build will be in `Kits$\CompGroup\ICP\Releases\X.x.m\Client`)
-            - `scriptgenerator_release`. (Build will be in `Kits$\CompGroup\ICP\Releases\script_generator_release\X.x.m`)
+1. Start all of [these builds](https://epics-jenkins.isis.rl.ac.uk/view/Release/) in Jenkins.
 1. Move the `Upcoming Release Notes` page (copy & paste) into a new blank `Release Notes "X.x.m"` file: Check that all of the merged tickets have also had their [release notes merged](https://github.com/ISISComputingGroup/IBEX/pulls) then move the changes which have been merged into the new release from the [upcoming page](https://github.com/ISISComputingGroup/IBEX/blob/master/release_notes/ReleaseNotes_Upcoming.md) to a new release notes page for the version, and commit this change to the master branch. Check that the release notes are as understandable as possible. 
 1. Create a released version entry in the [releases table](https://github.com/ISISComputingGroup/IBEX/blob/master/docs/all-releases.md) (including link to release notes) and commit to master.
 1. Update the "Latest Stable Release" link on the [IBEX wiki homepage](https://github.com/ISISComputingGroup/IBEX) to be the new `"Release X.x.m"` and commit to master.
