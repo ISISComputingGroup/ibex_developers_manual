@@ -1,5 +1,5 @@
-# 2025-07-10
-## Sprint 2025_05_08 Retrospective (2025-07-10)
+# 2025-07-29
+## Sprint 2025-07-10 Retrospective (2025-07-29)
 
 | Chair | Timekeeper | Note Taker |
 |-------|------------|------------|
