@@ -26,10 +26,10 @@
     
 ### NDW1926 Linux build?
  - Build Nodes NDW1926 can't run win11, can we convert it to a linux box so we can actually have "our" linux build server, as the rest is on the cloud, or will that just become another system to maintain that we don't want.
-    - we could put windows server lts on it, or force upgrade it to win11 and see how long it lasts?
+    - we could put windows server long term support on it, or force upgrade it to win11 and see how long it lasts?
         - Might catch us out, have a build fail due to unsupported OS on the machine etc. and end up on a debugging rabbit hole
         - ESU licence used to be 3 years for £100, £200, £400 for support. At the moment they are very cheap, but we don't know for certain that its the same
-        - could downgrade it to win-server 2019 LTS and get support til 2029
+        - could downgrade it to win-server 2019 long term support and get support til 2029
     - SCD Cloud is no longer stable, is it important to move away from it
         - Nothing critical relies on the cloud
             - Actually release_branches do, could we move those to shadow? 
@@ -40,7 +40,7 @@
 
 
 ### IBEX Wiki things needed to be done
-  - JH gonna put the message in the list of things to do in the documentathon
+  - JH gonna put the message in the list of things to do in the Documentathon
   - decision that needs to be made, Demos and associated pages, either keep them here in "code" or move them to the dev manual, or time tables and notes get added to the ticket to that set of demos.
       - Yes we'll do that, timetables and Notes will now be on the demo ticket.
   - Do we have any broken links now?
