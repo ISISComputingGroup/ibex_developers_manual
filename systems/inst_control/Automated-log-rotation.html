@@ -1,0 +1,244 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Automated log rotation &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Change Windows Theme" href="Change-Windows-Theme.html" />
+    <link rel="prev" title="Archive Watcher" href="Archive-Watcher.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Systems.html">Systems Administration &amp; Hardware</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../External.html">External systems/services</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Inst-Control.html">Instrument control computers</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Archive-Watcher.html">Archive Watcher</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Automated log rotation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Change-Windows-Theme.html">Change Windows Theme</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Computer-Troubleshooting.html">Computer Troubleshooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Data-Generation-and-Storage-on-Instrument-PCs-%28NDX%27s%29.html">Data Storage &amp; Production</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Increase-VM-memory.html">Increase VM memory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MDT-%28Microsoft-deployment-toolkit%29.html">MDT (Microsoft deployment toolkit)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PS-Remote.html">Powershell Remote</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Rebuild-Performance-Counters.html">Rebuild Performance Counters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Register-SELOGCOM-in-COM-Plus.html">Register SELOGCOM in COM+</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Script-to-connect-to-all-instruments.html">Script to connect to all instruments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TreeSize-Pro.html">TreeSize</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cron-jobs-and-windows-scheduled-tasks.html">Cron Jobs &amp; Scheduled Tasks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Nagios.html">Nagios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Shadow.html">Shadow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sparrowhawk.html">Sparrowhawk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Test-Machines.html">Test Machines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Webserver.html">Webserver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../control-svcs.html"><code class="docutils literal notranslate"><span class="pre">control-svcs</span></code></a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Systems.html">Systems Administration &amp; Hardware</a></li>
+          <li class="breadcrumb-item"><a href="../Inst-Control.html">Instrument control computers</a></li>
+      <li class="breadcrumb-item active">Automated log rotation</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/systems/inst_control/Automated-log-rotation.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="automated-log-rotation">
+<h1>Automated log rotation<a class="headerlink" href="#automated-log-rotation" title="Link to this heading"></a></h1>
+<p>IBEX logs are rotated by a script called <code class="docutils literal notranslate"><span class="pre">logrotate.py</span></code> in <code class="docutils literal notranslate"><span class="pre">C:\instrument\apps\epics\utils\logrotate.py</span></code>. This script is called nightly by a windows scheduled task.</p>
+<p>Currently, for all files not modified within the last 10 days, it:</p>
+<ul class="simple">
+<li><p>Deletes them if they are console logs</p></li>
+<li><p>Moves them to <code class="docutils literal notranslate"><span class="pre">stage-deleted</span></code> otherwise</p></li>
+</ul>
+<p>The scheduled task is added/recreated as an install step in <code class="docutils literal notranslate"><span class="pre">ibex_utils</span></code> under <code class="docutils literal notranslate"><span class="pre">server_tasks</span></code>.</p>
+<p>A nagios check will use the same script, but in dry-run mode and with a cutoff of 14 days, to notify us if the log rotation stops working.</p>
+<section id="automated-periodic-database-message-log-truncation">
+<h2>Automated periodic database message log truncation<a class="headerlink" href="#automated-periodic-database-message-log-truncation" title="Link to this heading"></a></h2>
+<p>Console logs are written to a <code class="docutils literal notranslate"><span class="pre">msg_log</span></code> database. After a while, the number of messages can become huge, especially if the console logging frequency is high. To mitigate this, an automated message log truncation procedure has been created. A scheduled SQL event calls a procedure to truncate the database <code class="docutils literal notranslate"><span class="pre">message</span></code> table to retain just those records spanning a predefined retention period.
+The table’s primary key is just the ID number, so searching on the <code class="docutils literal notranslate"><span class="pre">createTime</span></code> column for the row at the retention period threshold would be inherently slow. Instead a binary search algorithm has been developed which, knowing the earliest and last record timestamps, will check whether the target time lies above or below the current binary division and iterate until the <code class="docutils literal notranslate"><span class="pre">createTime</span></code> field of the target record is within three rows of the low and high row search limits. The <code class="docutils literal notranslate"><span class="pre">binary_search_time()</span></code> procedure is in the <code class="docutils literal notranslate"><span class="pre">binary-search.sql</span></code> file.
+The <code class="docutils literal notranslate"><span class="pre">binary_search_time()</span></code> procedure takes one input parameter and returns two output parameters:</p>
+<p><strong>Binary Search</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">IN</span> <span class="n">p_retention_period</span> <span class="n">time</span> <span class="o">--</span> <span class="n">The</span> <span class="n">retention</span> <span class="n">period</span> <span class="k">as</span> <span class="n">a</span> <span class="n">time</span> <span class="nb">type</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span> <span class="s1">&#39;336:00:00&#39;</span> <span class="o">==</span> <span class="mi">2</span> <span class="n">wks</span><span class="p">)</span> <span class="n">Note</span> <span class="n">that</span> <span class="n">this</span> <span class="ow">is</span> <span class="n">limited</span> <span class="ow">in</span> <span class="n">SQL</span> <span class="n">to</span> <span class="s1">&#39;838:59:59&#39;</span><span class="p">,</span> <span class="n">about</span> <span class="mi">35</span> <span class="n">days</span>
+    <span class="n">OUT</span> <span class="n">p_first_row_id</span>   <span class="o">--</span> <span class="n">The</span> <span class="nb">id</span> <span class="n">value</span> <span class="n">of</span> <span class="n">the</span> <span class="n">earliest</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">table</span> <span class="p">(</span><span class="n">zeroth</span> <span class="n">row</span><span class="p">)</span><span class="o">.</span>
+    <span class="n">OUT</span> <span class="n">p_row_number</span> <span class="n">INT</span> <span class="o">--</span> <span class="n">The</span> <span class="n">returned</span> <span class="n">record</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">table</span> <span class="n">which</span> <span class="ow">is</span> <span class="n">closest</span> <span class="n">to</span> <span class="n">the</span> <span class="n">target</span> <span class="n">time</span><span class="o">.</span>
+ 			    <span class="n">This</span> <span class="n">will</span> <span class="n">be</span> <span class="n">a</span> <span class="n">reference</span> <span class="n">to</span> <span class="n">a</span> <span class="n">variable</span> <span class="n">provided</span> <span class="n">by</span> <span class="n">the</span> <span class="n">calling</span> <span class="n">scope</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>The procedure <code class="docutils literal notranslate"><span class="pre">truncate_message_table()</span></code> calls the binary search procedure and uses the returned first row ID and target row ID to determine the rows to be deleted. Potentially the number of rows to be deleted could be very large, in some cases millions, so it is important that the database server is not locked for significant periods. Instead, rows are deleted in blocks of, say 1000 rows at a time, with a sleep period in between. This makes the deletion process cooperative and prevents data loss and timeouts from other database clients.
+The <code class="docutils literal notranslate"><span class="pre">truncate_message_table()</span></code> procedure takes one input parameter and returns two output parameters, in the same way as the binary search procedure:</p>
+<p><strong>Truncation procedure</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">IN</span> <span class="n">p_retention_period</span> <span class="n">time</span> <span class="o">--</span> <span class="n">The</span> <span class="n">retention</span> <span class="n">period</span> <span class="k">as</span> <span class="n">a</span> <span class="n">time</span> <span class="nb">type</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span> <span class="s1">&#39;336:00:00&#39;</span> <span class="o">==</span> <span class="mi">2</span> <span class="n">wks</span><span class="p">)</span> <span class="n">Note</span> <span class="n">that</span> <span class="n">this</span> <span class="ow">is</span> <span class="n">limited</span> <span class="ow">in</span> <span class="n">SQL</span> <span class="n">to</span> <span class="s1">&#39;838:59:59&#39;</span><span class="p">,</span> <span class="n">about</span> <span class="mi">35</span> <span class="n">days</span>
+    <span class="n">OUT</span> <span class="n">p_first_row_id</span>   <span class="o">--</span> <span class="n">The</span> <span class="nb">id</span> <span class="n">value</span> <span class="n">of</span> <span class="n">the</span> <span class="n">earliest</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">table</span> <span class="p">(</span><span class="n">zeroth</span> <span class="n">row</span><span class="p">)</span><span class="o">.</span>
+    <span class="n">OUT</span> <span class="n">p_row_number</span> <span class="n">INT</span> <span class="o">--</span> <span class="n">The</span> <span class="n">returned</span> <span class="n">record</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">table</span> <span class="n">which</span> <span class="ow">is</span> <span class="n">closest</span> <span class="n">to</span> <span class="n">the</span> <span class="n">target</span> <span class="n">time</span><span class="o">.</span>
+ 			    <span class="n">This</span> <span class="n">will</span> <span class="n">be</span> <span class="n">a</span> <span class="n">reference</span> <span class="n">to</span> <span class="n">a</span> <span class="n">variable</span> <span class="n">provided</span> <span class="n">by</span> <span class="n">the</span> <span class="n">calling</span> <span class="n">scope</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">log_truncation_event()</span></code> is triggered periodically, typically once per day at 01:00 and calls the <code class="docutils literal notranslate"><span class="pre">truncate_message_table()</span></code>, supplying the retention period in days. Within the <code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">EVENT</span></code> block, there are two STARTS lines, one of which is commented out and can be instated for testing with a short interval.</p>
+<p>Files specific to automatic truncation are:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>File</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>binary_search.sql</p></td>
+<td><p>Defines the binary_search_time() procedure</p></td>
+</tr>
+<tr class="row-odd"><td><p>truncate_message_table.sql</p></td>
+<td><p>Defines the truncate_message_table() procedure</p></td>
+</tr>
+<tr class="row-even"><td><p>truncate_event.sql</p></td>
+<td><p>Defines the log_truncation_event() event</p></td>
+</tr>
+<tr class="row-odd"><td><p>create_event_logger.sql</p></td>
+<td><p>Defines the EventsLog table for auto truncation process logging</p></td>
+</tr>
+<tr class="row-even"><td><p>debug_log.sql</p></td>
+<td><p>Defines the debug_log procedure appending info to the process log</p></td>
+</tr>
+<tr class="row-odd"><td><p>test\test_truncate_proc.sql</p></td>
+<td><p>A SQL script to quickly test the truncate_message_table() procedure</p></td>
+</tr>
+<tr class="row-even"><td><p>test\test_fill_message.sql</p></td>
+<td><p>A SQL script to populate the message table with records assigned a <code class="docutils literal notranslate"><span class="pre">createDate</span></code> field value at one hour intervals over the given period (period_days)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="testing">
+<h2>Testing<a class="headerlink" href="#testing" title="Link to this heading"></a></h2>
+<p>There is a fairly comprehensive README.md file in C:\Instrument\Apps\EPICS\ISIS\IocLogServer\master\tests</p>
+<p>For new systems with no pre-exiting database, the described test procedure can be invoked once the msg_log database has been built by running: <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Apps\EPICS\SystemSetup\config_mysql.bat</span></code>.</p>
+<p>For systems with an existing msg_log database, there is a SQL script which simply creates the SQL event and procedures necessary for the automatic truncation, without affecting any existing database content:
+cd C:\Instrument\Apps\EPICS\ISIS\IocLogServer\master
+C:\Instrument\Apps\MySQL\bin\mysql.exe -u root –password=<db root password> &lt; log-truncation-schema.sql</p>
+<p><strong>Dummy data</strong>:</p>
+<p>There is a script : SQL file tests\test_fill_message.sql which will insert dummy log records into the message table. Message records will be assigned a <code class="docutils literal notranslate"><span class="pre">createDate</span></code> field value at one hour intervals over the given period (period_days). These parameters are configurable within the script.</p>
+<p><code class="docutils literal notranslate"><span class="pre">C:\Instrument\Apps\MySQL\bin\mysql.exe</span> <span class="pre">-u</span> <span class="pre">root</span> <span class="pre">--password=&lt;db</span> <span class="pre">root</span> <span class="pre">password&gt;</span> <span class="pre">&lt;</span> <span class="pre">tests\test_fill_message.sql</span></code></p>
+<p><strong>Run the test</strong>:</p>
+<p>After filling the message table, it is then possible to test the truncation procedure via:
+<code class="docutils literal notranslate"><span class="pre">C:\Instrument\Apps\MySQL\bin\mysql.exe</span> <span class="pre">-u</span> <span class="pre">root</span> <span class="pre">--password=&lt;db</span> <span class="pre">root</span> <span class="pre">password&gt;</span> <span class="pre">&lt;</span> <span class="pre">tests\test_truncate_proc.sql</span></code>
+Metrics are output to the screen. It can also be helpful to manually examine the message table to view the remaining data and check the time span.</p>
+<p>Note that the checks that the script is running correctly is by examining a new database table debug_messages, which is emptied before each truncation process. Details of the process are recorded in the table as simple text, which includes information on the progress of the binary search procedure.</p>
+<p>If you want to update a procedure, simply edit the SQL file in the <code class="docutils literal notranslate"><span class="pre">C:\Instrument\Apps\EPICS\ISIS\IocLogServer\master</span></code> directory or <code class="docutils literal notranslate"><span class="pre">tests\</span></code> subdirectory, then use the mysql executable to do the change to the database accordingly, e.g.:</p>
+<p><code class="docutils literal notranslate"><span class="pre">C:\Instrument\Apps\MySQL\bin\mysql.exe</span> <span class="pre">-u</span> <span class="pre">root</span> <span class="pre">--password=&lt;db</span> <span class="pre">root</span> <span class="pre">password&gt;</span> <span class="pre">&lt;</span> <span class="pre">truncate_event.sql</span></code></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Archive-Watcher.html" class="btn btn-neutral float-left" title="Archive Watcher" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Change-Windows-Theme.html" class="btn btn-neutral float-right" title="Change Windows Theme" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Aug 01, 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
