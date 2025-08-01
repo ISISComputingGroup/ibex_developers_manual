@@ -10,8 +10,6 @@ deploy/Configure-Mini-Inst
 deploy/Client-Release-Tests
 deploy/Server-Release-Tests
 deploy/IBEX-Deployment-on-Training-machine
-deploy/Deploy-script-workflow
-deploy/Autostart-IBEX-on-Computer-Restart
 deploy/Making-an-Instrument-Available-from-the-GUI
 deploy/Creating-a-new-branch-for-IBEX-configurations
 deploy/Reviewing-Deploy-Tickets

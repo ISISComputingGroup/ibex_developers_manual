@@ -73,6 +73,18 @@ These packages include:
 - `CaChannel`
 - `epicscorelibs_pcas`
 
+{#dep_update_venvs}
+#### Virtual environments for our packages
+
+We are moving towards using virtual environments in favour of `uktena` just bundling all of the dependencies for absolutely all python packages. Using a separate virtual environment for each of the packages means that: 
+1. If we need to patch one of those packages with ie. a dependency that has a known security vulnerability, it doesn't interfere with other packages
+2. We can actually use entirely different versions of python per-package, if a vendor library keeps us from updating
+3. We can be more efficient about running things like upgrade scripts, which cuts down time waiting to install dependencies/copy `uktena` from the share.
+
+The new mechanism uses `uv pip compile pyproject.toml -o requirements-frozen.txt` to generate a "frozen" set of requirements, with the versions pinned. 
+
+It also uses a `.python-version` file to say which version of python should be used at runtime, which `uv` respects.
+
 ### External packages
 
 Check on PyPi for any package updates, then edit `requirements.txt` to install new versions where needed. Note that since we decided [all python projects should use virtual environments](/system_components/python/Python-dependencies) there will be a `pyproject.toml` or legacy `requirements.txt` file for all Python projects using the new import mechanism, ensure these are also updated.

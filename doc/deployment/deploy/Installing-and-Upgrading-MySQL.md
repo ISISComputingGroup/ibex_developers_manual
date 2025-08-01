@@ -2,7 +2,9 @@
 
 ## Installation
 
-There is a script to automatically install MySQL 8. You can find it in `\\isis\shares\ISIS_Experiment_Controls_Public\ibex_utils\installation_and_upgrade\upgrade_mysql.bat`
+There is a script to automatically install MySQL. You can find it in `\\isis\shares\ISIS_Experiment_Controls_Public\ibex_utils\installation_and_upgrade\upgrade_mysql.bat`
+
+This is called during a deployment. 
 
 ## Troubleshooting
 
