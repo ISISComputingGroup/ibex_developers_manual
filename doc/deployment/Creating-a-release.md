@@ -34,8 +34,8 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
 {#creating_release_pre_testing_steps}
 ### Pre Testing
 
-1. Contact computing group to let us know of the upgrade. Find out anything that needs to be in the release that isn't and mark with `for release` label. (This does not prevent a release)
-1. Look at the released features in this branch [Upcoming Changes](https://github.com/ISISComputingGroup/IBEX/blob/master/release_notes/ReleaseNotes_Upcoming.md) and find the most significant level of change (i.e. is this cumulatively a major change, a minor change, or a patch?).
+1. Find out anything that needs to be in the release that isn't and mark with `for release` label. (This does not prevent a release)
+1. Look at the [upcoming release notes](https://github.com/ISISComputingGroup/IBEX?tab=readme-ov-file#release-notes) and find the most significant level of change (i.e. is this cumulatively a major change, a minor change, or a patch?).
 1. Update the [upgrade script](https://github.com/ISISComputingGroup/EPICS-upgrade/blob/master/upgrade.py) to include the latest version (this is done on master). Steps to do this are in [Config Upgrader in section *creating a production upgrade script*](/tools/Config-Upgrader) 
     1. After committing these changes to `master` on the `EPICS-upgrade` submodule, don't forget to push the new submodule version to `master` on the top `EPICS` branch. This is needed to make sure you changes appear on the release branch created in the next step. 
 1. For packages which are published on `PyPI`, in particular `genie_python` and `ibex_bluesky_core`, create PyPI releases if needed.
@@ -44,17 +44,15 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
     1. `ibex_bluesky_core` should generally have a minor/patch version incremented for now until we reach v1. The release takes a couple of minutes in GHA.
     1. **Ensure these releases were successful** by checking on [pypi](https://pypi.org/) for the new release number before proceeding.
 1. Start the Github Actions pipeline [`create-release-branches`](https://github.com/ISISComputingGroup/ibex_utils/actions/workflows/create-release-branches.yml).
-    - Click on 'Build with Parameters'.
+    - Click on 'Run workflow'
     - Set `VERSION` to the new release version (e.g. `X.x.m`).
-    - Set `TAG` if you wish to branch off a commit other than the latest top level `HEAD`. If you do branch off an earlier commit, also set `REMOTE` to `false` as it now does not make sense to verify if you are on the latest submodule versions. 
-    - Check `REMOTE` if the `EPICS` submodules should be checked for later versions on their remote - the script will fail if there are submodule commits unpushed to top level. For a normal release you will be expecting all submodules to be on the latest version. If you want the currently pinned (not necessarily latest) versions, do not check REMOTE. If you should/expect to be using the latest versions of all dependent submodules, check REMOTE box to verify this. If there are unpushed submodules the `EPICS repo checks` Jenkins build will likely be in error already.
+    - Set `TAG` if you wish to branch off a commit other than the latest top level `HEAD`. If you do branch off an earlier commit, also set `REMOTE` to `false` as it now does not make sense to verify if you are on the latest submodule versions.
     - The script will then (as selected):
         - Create the release branches (named `Release_X.x.m` except `Release_Script_Gen_X.x.m` for script generator) for:
             - `EPICS` and submodules.
             - `IBEX GUI`.
             - `Script Generator`.
             - `Uktena`.
-            - `JSON_bourne`. (not none by default as it does not often change and is also not directly deployed to instruments)
         - Update or add version numbers:
             - In `ioc/master/INSTETC/INSTETC-IOC-01App/Db/svn-revision.db.tmpl` for `EPICS`.
             - In `/uk.ac.stfc.isis.ibex.e4.client/pom.xml` and `/uk.ac.stfc.isis.ibex.e4.client/META-INF/MANIFEST.mf` for `IBEX GUI`.
