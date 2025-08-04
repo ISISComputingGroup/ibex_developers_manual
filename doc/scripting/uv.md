@@ -37,7 +37,4 @@ It can be used on Github actions CI, but isn't currently.
 
 ### Instrument processes
 
-In the future we may consider using `uv` to create and build virtual environments for each respective python process that runs on the NDX. This requires some decisions and subsequent work: 
-- `uv.lock` files - should we keep them in source, or at least on the build server, then build virtual environments on the NDXes with those specific versions?
-- python wheels need to be available for everything we use - the NDXes do not have compilers ie. Visual Studio installed.
-
+We are starting to use `uv` to help us create and manage virtual environments on instrument PCs at deploy time. More information on this can be found in the {ref}`Dependency update notes. <dep_update_venvs>`
