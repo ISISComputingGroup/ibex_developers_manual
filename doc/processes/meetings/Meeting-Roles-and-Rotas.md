@@ -44,9 +44,9 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
  |LJ | 23/06/2025 |x |
  |TW | 30/06/2025 |x |
  |GR | 07/07/2025 |x |
- |LC | 14/07/2025 | |
- |DK | 21/07/2025 | |
- |SC | 28/07/2025 | |
+ |LC | 14/07/2025 |x |
+ |DK | 21/07/2025 |x |
+ |SC | 28/07/2025 |x |
  |JH | 04/08/2025 | |
  |IG | 11/08/2025 | |
  |CMS | 18/08/2025 | |
@@ -88,8 +88,8 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
 | 2025_06_12_Planning| LJ | X | CMS| X | ES| X |
 | 2025_06_12_Review/Retro| DM | X | JH| X | SC| X |
 | 2025_07_10_Planning| IG |x | DK|x | TW|x |
-| 2025_07_10_Review/Retro| SC |  | IG|  | LJ|  |
-| 2025_07_31_Planning| KB |  | DM|  | SC|  |
+| 2025_07_10_Review/Retro| SC | x | IG| x | LJ| x |
+| 2025_07_31_Planning| KB | x | DM| x | SC| x |
 | 2025_07_31_Review/Retro| FA |  | CMS|  | DM|  |
 | 2025_08_28_Planning| DM |  | TW|  | LC|  |
 | 2025_08_28_Review/Retro| TW |  | KB|  | LJ|  |
