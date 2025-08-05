@@ -59,7 +59,7 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
             - Note: `genie_python` library version numbers are set automatically from the git tag, and no longer need manually updating.
         - Push these changes to remote release branch.
 1. Start all of [these builds](https://epics-jenkins.isis.rl.ac.uk/view/Release/) in Jenkins.
-1. Copy the version's release notes page (copy & paste) into a new blank `Release Notes "X.x.m"` file and clear the contents: Check that all of the merged tickets have also had their [release notes merged](https://github.com/ISISComputingGroup/IBEX/pulls). Check that the release notes are as understandable as possible. 
+1. Copy the new version's release notes (copy & paste) into a new blank `Release Notes "X.x.m"` (where `X.x.m` is the upcoming version) file and clear the contents: Check that all of the merged tickets have also had their [release notes merged](https://github.com/ISISComputingGroup/IBEX/pulls). Check that the release notes are as understandable as possible. 
 1. Create a released version entry in the [releases table](https://github.com/ISISComputingGroup/IBEX/blob/master/docs/all-releases.md) (including link to release notes) and commit to master.
 1. Update the "Latest Stable Release" and "Upcoming release" links on the [IBEX wiki homepage](https://github.com/ISISComputingGroup/IBEX) to be the new release and commit to master.
 1. If applicable, update the dependencies since the last release and add them to the bottom of the release notes. To find the python dependencies list, run a `pip freeze` on a cleanly released `uktena`. Note that you will need to specify the scripts directory to run pip commands. i.e. `C:\Instrument\Apps\Python3\Scripts\Pip.exe freeze`
