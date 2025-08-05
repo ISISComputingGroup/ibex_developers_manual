@@ -59,12 +59,10 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
             - Note: `genie_python` library version numbers are set automatically from the git tag, and no longer need manually updating.
         - Push these changes to remote release branch.
 1. Start all of [these builds](https://epics-jenkins.isis.rl.ac.uk/view/Release/) in Jenkins.
-1. Move the `Upcoming Release Notes` page (copy & paste) into a new blank `Release Notes "X.x.m"` file: Check that all of the merged tickets have also had their [release notes merged](https://github.com/ISISComputingGroup/IBEX/pulls) then move the changes which have been merged into the new release from the [upcoming page](https://github.com/ISISComputingGroup/IBEX/blob/master/release_notes/ReleaseNotes_Upcoming.md) to a new release notes page for the version, and commit this change to the master branch. Check that the release notes are as understandable as possible. 
+1. Copy the version's release notes page (copy & paste) into a new blank `Release Notes "X.x.m"` file and clear the contents: Check that all of the merged tickets have also had their [release notes merged](https://github.com/ISISComputingGroup/IBEX/pulls). Check that the release notes are as understandable as possible. 
 1. Create a released version entry in the [releases table](https://github.com/ISISComputingGroup/IBEX/blob/master/docs/all-releases.md) (including link to release notes) and commit to master.
-1. Update the "Latest Stable Release" link on the [IBEX wiki homepage](https://github.com/ISISComputingGroup/IBEX) to be the new `"Release X.x.m"` and commit to master.
-1. Remove all entries from `Upcoming Release Notes`, leaving a blank file with only the headers, e.g. "Instrument Specific Changes", etc. and commit to master.
+1. Update the "Latest Stable Release" and "Upcoming release" links on the [IBEX wiki homepage](https://github.com/ISISComputingGroup/IBEX) to be the new release and commit to master.
 1. If applicable, update the dependencies since the last release and add them to the bottom of the release notes. To find the python dependencies list, run a `pip freeze` on a cleanly released `uktena`. Note that you will need to specify the scripts directory to run pip commands. i.e. `C:\Instrument\Apps\Python3\Scripts\Pip.exe freeze`
-1. Update the {external+ibex_user_manual:doc}`user manual <index>` with any relevant changes
 1. copy the release to `control-svcs`, this is so we can set git remotes for hotfixes etc. as part of the deploy. So if release is number 1.2.3
     - `robocopy "Kits$\CompGroup\ICP\Releases\1.2.3\EPICS\.git" "\\control-svcs.nd.rl.ac.uk\git$\releases\1.2.3\EPICS.git" /mir /nfl /ndl`
     - edit `EPICS.git\config` on the control-svcs version (you can browse straight to the `\\control-svcs` share above)
