@@ -79,7 +79,7 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
 {#creating_release_testing_steps}
 ### Testing
 
-Using GitBash, update the `experiment controls public share` has the most recent version of `ibex_utils` from Git (i.e. do git pull) - this is so the most recent install script will be used for testing and install. In git bash you can do a `cd` with the windows path but just change `\` to `/` e.g. `cd //isis/somewhere`. When you do a git operation it may warn about directory ownership, just follow the command it suggests to add an exception and then git try again. You should:
+Update `\\isis\shares\ISIS_Experiment_Controls_Public\ibex_utils` - this is so the most recent install script will be used for testing and install. You should:
 * do a `git branch` and check it is on `master` and not e.g. a test or ticket branch
 * do a `git status` and check for any changes, if there are post on Teams
 * do a `git pull` so you are on the latest `master` branch with no local changes
