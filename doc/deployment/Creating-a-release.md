@@ -9,24 +9,6 @@
 release/*
 ```
 
-## Understanding Java Licensing
-Make sure you [understand how Java is licensed](/processes/dev_processes/Understanding-Java-Licensing), so that we do not inadvertently make ISIS liable for licensing fees.
-
-## Release tickets
-
-Text for release ticket:
-
-> As a developer I want an IBEX release so I can install it on the instrument machines for the start of machine physics on 26th.
-> 
-> Acceptance Criteria:
-> 
-> - [ ] [Pre Testing Steps](#creating_release_pre_testing_steps)
-> - [ ] [Testing steps](#creating_release_testing_steps)
-> - [ ] [Post Testing](#creating_release_post_testing_steps)
-> - [ ] [Create a ticket to update dependencies to latest versions and test](/processes/dev_processes/Dependency-Updates)
-> - [ ] [Create a ticket to give instrument demos](https://github.com/ISISComputingGroup/IBEX/wiki/Timetable-for-Instrument-Demos)
-> - [ ] Distribute release notes via email [Instrument scientist release email](#updating_instrument_new_release_email_template)
-
 ## Standard Release
 
 Project is ready to be released not for a specific event, e.g. at the end of a sprint. Script Generator version number always differs to the client's.
