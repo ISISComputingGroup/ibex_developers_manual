@@ -64,7 +64,7 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
 1. Update the "Latest Stable Release" and "Upcoming release" links on the [IBEX wiki homepage](https://github.com/ISISComputingGroup/IBEX) to be the new release and commit to master.
 1. If applicable, update the dependencies since the last release and add them to the bottom of the release notes. To find the python dependencies list, run a `pip freeze` on a cleanly released `uktena`. Note that you will need to specify the scripts directory to run pip commands. i.e. `C:\Instrument\Apps\Python3\Scripts\Pip.exe freeze`
 1. copy the release to `control-svcs`, this is so we can set git remotes for hotfixes etc. as part of the deploy. So if release is number 1.2.3
-    - `robocopy "Kits$\CompGroup\ICP\Releases\1.2.3\EPICS\.git" "\\control-svcs.nd.rl.ac.uk\git$\releases\1.2.3\EPICS.git" /mir /nfl /ndl`
+    - `robocopy "\\isis\inst$\Kits$\CompGroup\ICP\Releases\1.2.3\EPICS\.git" "\\control-svcs.nd.rl.ac.uk\git$\releases\1.2.3\EPICS.git" /mir /nfl /ndl`
     - edit `EPICS.git\config` on the control-svcs version (you can browse straight to the `\\control-svcs` share above)
         - change `bare = false` to `bare = true`
         - Add an extra section at end of file
