@@ -11,7 +11,7 @@ To edit contacts or contact groups:
 
 1. SSH into the Nagios host using the login details available in Keeper
 2. Nagios is in `/usr/local/nagios` with configuration of objects within `/usr/local/nagios/etc/objects/`
-3. Within that directory, edit contacts.cfg 
+3. Within that directory, edit `contacts.cfg` 
 4. restart the Nagios service:
     `sudo service nagios reload`
 6. Check changes in the web interface as above
