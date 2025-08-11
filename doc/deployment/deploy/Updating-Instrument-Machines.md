@@ -15,7 +15,7 @@ Dear All,
 
 We have recently created version **X.x.x** of IBEX and will be looking to install it to the (summer | winter) group, between **date** and **date** which includes the following instruments:
 
-The list of new features and bug fixes in this release can be found at **link to release notes**.
+The list of new features and bug fixes in this release can be found at **links to release notes since last deply to group**.
 
 To perform the release we will have to stop the instrument from taking data for a couple of hours. If there is a specific day you would like us to perform the release, you would rather not have this release for your instrument or you have any other concerns please get in contact with us ASAP. If we do not hear back from you we will assume that you are happy for us to do this any day in the above range.
 
