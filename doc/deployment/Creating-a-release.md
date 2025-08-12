@@ -75,7 +75,7 @@ These steps should only be done once all changes to a release have been made and
 which will become inconsistent if further changes are made to the release branch. Hence it is important to delete
 the relevant release branch after it has been tagged.
     
-1. Create a release tag in the EPICS, ibex_gui, uktena and JSON_bourne repositories. For each repo
+1. Create a release tag in the EPICS, ibex_gui and uktena repositories. For each repo
     1. Go to `[REPO_URL]/releases`, e.g. `https://github.com/ISISComputingGroup/ibex_gui/releases`
     1. Click `Draft a new release`
     1. Enter the tag version in the format `vX.x.p` and target the release branch
@@ -87,12 +87,11 @@ the relevant release branch after it has been tagged.
     1. `git submodule foreach --recursive "git push origin tag Release_ibex_X.x.x && git push --delete origin Release_X.x.x || exit 0"` // Push tags and delete release branch
 
     _Note: you may need to run `git config fsck.badEmail ignore` for the above step_
-1. Make sure any changes on the release branch are merged back onto master for EPICS, ibex_gui, genie_python, and JSON_bourne (except version numbering)
+1. Make sure any changes on the release branch are merged back onto master for EPICS, ibex_gui, and uktena (except version numbering)
 1. Consider which instruments need this release:
     * Breaking release: upgrade everyone
     * Big improvement:  upgrade everyone if there is a big improvement that everyone will benefit from
     * Standard release: upgrade instruments that need updates, i.e. they need a newly released feature, and all those that are in the current release group, see [column in instruments table](https://github.com/ISISComputingGroup/IBEX/wiki#instrument-information). Note on the release ticket which instruments need to be released to using checkboxes (one for start and one for finish).
-1. Deploy a new JSON_bourne if required see [here](/webdashboard/Web-Dashboard)
 1. [Create repository for recording instrument changes post release](release/Release-based-repository) the deploy script automatically puts the instrument onto a branch of this repository
 ## Partial Release
 For any release in which GUI version increments but server version does not, ensure the previous server version is added to the release folder via symbolic links or junctions, [see this ticket](https://github.com/ISISComputingGroup/IBEX/issues/7250).
