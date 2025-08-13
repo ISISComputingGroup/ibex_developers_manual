@@ -107,5 +107,5 @@ intersphinx_mapping = {
     # docs.epics-controls.org sometimes gives us a 429 "too many requests" from GHA.
     # If it does, then fall back to local inventory. This local inventory should be
     # updated periodically.
-    "EPICS": ("https://docs.epics-controls.org/en/latest/", "epics-controls.inv"),
+    "EPICS": ("https://docs.epics-controls.org/en/latest/", (None, "epics-controls.inv")),
 }
