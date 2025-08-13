@@ -56,7 +56,7 @@ you run a test).
 ## RDP to Server
 
 It is possible to remote desktop to the squish servers but when you disconnect you must use the "Disconnect from RDP"
-shortcut on the desktop. This will prompt for escalated priviledges - enter your federal ID and password on the CLRC domain.
+shortcut on the desktop. This will prompt for escalated privileges - enter your federal ID and password on the CLRC domain.
 
 ## Setup For Build Server
 
