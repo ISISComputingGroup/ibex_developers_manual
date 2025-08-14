@@ -90,6 +90,6 @@ The commands for recreating the database are in the ibex [install script in the 
 1. create an empty  `c:/instrument/var/mysql` directory 
 1. Recreate the database files: `c:\Instrument\Apps\MySQL\bin\mysqld.exe --datadir="c:/instrument/var/mysql/data" --initialize-insecure --console --log-error-verbosity=3`
 1. Start the mysql service.
-1. Set the database password with: `c:\Instrument\Apps\MySQL\bin\mysql.exe -u root -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '<password>';FLUSH privileges;"`
+1. Set the database password with: `c:\Instrument\Apps\MySQL\bin\mysql.exe -u root -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH IDENTIFIED WITH caching_sha2_password BY '<password>';FLUSH privileges;"`
 1. Run the schema setup in an epics terminal: `c:\instrument\Apps\EPICS\systemsetup\config_mysql.bat`
 1. Restart the epics server
