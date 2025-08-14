@@ -1,0 +1,593 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OFFSPEC &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="OSIRIS" href="OSIRIS-Instrument-Details.html" />
+    <link rel="prev" title="NIMROD" href="NIMROD-Instrument-Details.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Systems.html">Systems Administration &amp; Hardware</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Processes.html">Processes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Admin.html">Admin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Continuous-Integration.html">Continuous Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Decision-Log.html">Decision Log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Dev-Processes.html">Developer Processes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Git-and-GitHub.html">Git and Github</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Instrument-Details.html">Instrument Migration Notes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ALF-Instrument-Details.html">ALF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ARGUS-Instrument-Details.html">ARGUS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CHIPIR-Instrument-Details.html">CHIPIR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CHRONUS-Instrument-Details.html">CHRONUS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CRISP-Instrument-Details.html">CRISP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DETMON-Instrument-Details.html">DETMON</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EMMA-Instrument-Details.html">EMMA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EMU-Instrument-Details.html">EMU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ENGIN-X-Instrument-Details.html">ENGIN-X</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GEM-Instrument-Details.html">GEM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HIFI-Instrument-Details.html">HIFI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HIFI_CRYOMAG-Instrument-Details.html">HIFI-CRYOMAG</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HRPD-Instrument-Details.html">HRPD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IMAT-Instrument-Details.html">IMAT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="INES-Instrument-Details.html">INES</a></li>
+<li class="toctree-l3"><a class="reference internal" href="INTER-Instrument-Details.html">INTER</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IRIS-Instrument-Details.html">IRIS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LARMOR-Instrument-Details.html">LARMOR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LET-Instrument-Details.html">LET</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LOQ-Instrument-Details.html">LOQ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MAPS-Instrument-Details.html">MAPS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MARI-Instrument-Details.html">MARI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MERLIN-Instrument-Details.html">MERLIN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MUON-Front-End-Instrument-Details.html">MUONFE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MUSR-Instrument-Details.html">MUSR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MUX-Instrument-Details.html">MUX</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NIMROD-Instrument-Details.html">NIMROD</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">OFFSPEC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OSIRIS-Instrument-Details.html">OSIRIS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PEARL-Instrument-Details.html">PEARL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="POLARIS-Instrument-Details.html">POLARIS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="POLREF-Instrument-Details.html">POLREF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RIKEN-Front-End-Instrument-Details.html">RIKENFE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SANDALS-Instrument-Details.html">SANDALS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SANS2D-Instrument-Details.html">SANS2D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SURF-Instrument-Details.html">SURF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SXD-Instrument-Details.html">SXD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TOSCA-Instrument-Details.html">TOSCA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VESUVIO-Instrument-Details.html">VESUVIO</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WISH-Instrument-Details.html">WISH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ZOOM-Instrument-Details.html">ZOOM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings.html">Meetings - internal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Meetings-with-Scientists.html">Meetings - with scientists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Pm.html">Project Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Retrospective-Notes.html">Retrospective Notes</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Processes.html">Processes</a></li>
+          <li class="breadcrumb-item"><a href="../Instrument-Details.html">Instrument Migration Notes</a></li>
+      <li class="breadcrumb-item active">OFFSPEC</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/processes/instrument_details/OFFSPEC-Instrument-Details.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="offspec">
+<h1>OFFSPEC<a class="headerlink" href="#offspec" title="Link to this heading"></a></h1>
+<section id="background-timeline">
+<h2>Background &amp; Timeline<a class="headerlink" href="#background-timeline" title="Link to this heading"></a></h2>
+<p>OFFSPEC is an advanced reflectometer instrument at ISIS, on TS2. The <a class="reference external" href="https://www.isis.stfc.ac.uk/Pages/OFFSPEC.aspx">OFFSPEC</a> web page describes the background to the instrument.</p>
+<p>This page collects information that will be useful for the implementation of the IBEX control system on OFFSPEC.</p>
+</section>
+<section id="information-about-offspec-and-reflectometers-in-general">
+<h2>Information about OFFSPEC (and reflectometers in general)<a class="headerlink" href="#information-about-offspec-and-reflectometers-in-general" title="Link to this heading"></a></h2>
+<p><img alt="Offspec bench setup" src="../../_images/OffSpec.png" /></p>
+<p>Bench moves so that angle is correct this requires motors at front and back to change positions and the bench to slide in and out. This maintains the distance from the detector to the sample in an arc.</p>
+</section>
+<section id="control-system">
+<h2>Control System<a class="headerlink" href="#control-system" title="Link to this heading"></a></h2>
+<p>OFFSPEC will migrate from the SECI control system to the IBEX control system in MMMMMMMM YYYY.</p>
+</section>
+<section id="offspec-equipment">
+<h2>OFFSPEC Equipment<a class="headerlink" href="#offspec-equipment" title="Link to this heading"></a></h2>
+<p>The equipment listed below is used on OFFSPEC. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>VI</p></th>
+<th class="head"><p>Config(s)</p></th>
+<th class="head"><p>Config last updated</p></th>
+<th class="head"><p>IBEX equivalent</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">beam</span> <span class="pre">logger.vi</span></code></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>standard IBEX</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">dae</span> <span class="pre">control.vi</span></code></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>standard IBEX / ISISDAE</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">delft/coldasever.vi</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">OFFSPEC-DELFT-MAIN.conf</span></code></p></td>
+<td><p>18/05/2022</p></td>
+<td><p><a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/7437">https://github.com/ISISComputingGroup/IBEX/issues/7437</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Eurotherm</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>EUROTHRM</p></td>
+</tr>
+<tr class="row-even"><td><p>galil</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>standard IBEX / GALIL</p></td>
+</tr>
+<tr class="row-odd"><td><p>Glassman LV power supply</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">OFFSPEC</span> <span class="pre">-</span> <span class="pre">no</span> <span class="pre">logging.conf</span></code></p></td>
+<td><p>2019</p></td>
+<td><p>Obsolete, not required</p></td>
+</tr>
+<tr class="row-even"><td><p>Hitachi L7100</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p><em>Obsolete</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>Mk3 Chopper</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>MK3CHOPR</p></td>
+</tr>
+<tr class="row-even"><td><p>Jasco 4180</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>JSCO4180</p></td>
+</tr>
+<tr class="row-odd"><td><p>Julabo (several models)</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>JULABO</p></td>
+</tr>
+<tr class="row-even"><td><p>Kepco</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>KEPCO</p></td>
+</tr>
+<tr class="row-odd"><td><p>Keyence TM 3001P</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>KYNCTM3K</p></td>
+</tr>
+<tr class="row-even"><td><p>Knauer K-6</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>KNRK6</p></td>
+</tr>
+<tr class="row-odd"><td><p>Knauer 1050</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>KNR1050</p></td>
+</tr>
+<tr class="row-even"><td><p>motion control (various)</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>REFL - assume being handled in <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/6245">https://github.com/ISISComputingGroup/IBEX/issues/6245</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Newport SMC100</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>SMC100</p></td>
+</tr>
+<tr class="row-even"><td><p>Nima Trough</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>NIMATRO</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mercury ITC</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>MERCURY_ITC</p></td>
+</tr>
+<tr class="row-even"><td><p>SM300-5 (power supply)</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/4461">https://github.com/ISISComputingGroup/IBEX/issues/4461</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Tektronix AFG 3000 series</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>TEKAFG3XXX</p></td>
+</tr>
+<tr class="row-even"><td><p>Thurlby EX355P</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>TTIEX355P</p></td>
+</tr>
+<tr class="row-odd"><td><p>Thurlby TGA1240</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>None (hardware is obsolete; functionality to be replaced by Tektronix function generators - we should not need to convert this driver)</p></td>
+</tr>
+<tr class="row-even"><td><p>Thurlby TSX 3510P</p></td>
+<td><p>all</p></td>
+<td><p>-</p></td>
+<td><p><a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/7434">https://github.com/ISISComputingGroup/IBEX/issues/7434</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Aladdin-1000 syringe pump</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>ALDN1000</p></td>
+</tr>
+<tr class="row-even"><td><p>WPI 2XX syringe pump</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>SP2XX</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">inter</span> <span class="pre">galil</span> <span class="pre">dio</span></code></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>Digital i/o already covered in GALIL ioc</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">surf</span> <span class="pre">galil</span> <span class="pre">dio</span></code></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>Digital i/o already covered in GALIL ioc</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">delft_dc_mc</span> <span class="pre">-</span> <span class="pre">front</span> <span class="pre">panel.vi</span></code></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/7492">https://github.com/ISISComputingGroup/IBEX/issues/7492</a></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">delft/eltromatdriver</span></code></p></td>
+<td><p>all</p></td>
+<td><p>-</p></td>
+<td><p><a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/7494">https://github.com/ISISComputingGroup/IBEX/issues/7494</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">delft/hfcontroldriver</span></code></p></td>
+<td><p>DELFT, NIMA, “Single Config”</p></td>
+<td><p>2011/2012</p></td>
+<td><p>Deprecated, not required</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">hydrocell</span></code></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>One-off user kit; not required</p></td>
+</tr>
+<tr class="row-odd"><td><p>ISIS sample environment (digital i/o)</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/7436">https://github.com/ISISComputingGroup/IBEX/issues/7436</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Linkam</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>LINKAM95</p></td>
+</tr>
+<tr class="row-odd"><td><p>Newport motor</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>NEWPORT</p></td>
+</tr>
+<tr class="row-even"><td><p>OFFSPEC BH</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>Functionality covered in IBEX by a combination of KEPCO, KHLY2400, and scans library. <a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/7435">https://github.com/ISISComputingGroup/IBEX/issues/7435</a> to write equivalent scans script to existing VI</p></td>
+</tr>
+<tr class="row-odd"><td><p>OFFSPEC DELFT RF</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference external" href="https://github.com/ISISComputingGroup/IBEX/issues/7493">https://github.com/ISISComputingGroup/IBEX/issues/7493</a></p></td>
+</tr>
+<tr class="row-even"><td><p>OFFSPEC high level</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>REFL</p></td>
+</tr>
+<tr class="row-odd"><td><p>PI motion stage</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>PIMOT</p></td>
+</tr>
+<tr class="row-even"><td><p>Danfysik</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>DFKPS</p></td>
+</tr>
+<tr class="row-odd"><td><p>ITC 503</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>ITC503</p></td>
+</tr>
+</tbody>
+</table>
+<details>
+  <summary>Older information:</summary>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Manufacturer | Model | Type | Connection | Driver | Notes |
+------------ | ------------- | ------------- | ------------- | ------------- | -------------------------------------------
+ISIS | DAE 2 | Detector Electronics | Ethernet | | [see DAE note](#note-dae)
+ISIS | Mk3 | Chopper | N/A |     | [see Chopper note](#note-chopper)
+GALIL | [DMC2280](http://www.galilmc.com/products/dmc-22x0.php) | Motion Controller | Ethernet | [EPICS](http://www.aps.anl.gov/epics/modules/manufacturer.php#Galil%20Motion%20Control) | | 
+??? |  | 4-blade jaws |  |  | [see Jaws note](#note-jaws)
+ISIS | ??? | ISIS Vacuum System |  |  |[see Vacuum System note](#note-vacuum)
+Pfeiffer | TPG300 | Vacuum Gauge | RS-232 | EPICS | [see Vacuum System note](#note-vacuum)
+Eurotherm | Temperature Controller | All models at ISIS | RS-232 | [EPICS](http://www.aps.anl.gov/epics/modules/manufacturer.php#Eurotherm) | [see Eurotherm  note](#note-eurotherm)
+Julabo | FL1703 | Re-circulating Cooler | RS-232 | | [see Julabo note](#note-julabo)
+Julabo | FL300 | Re-circulating Cooler | RS-232 | | [see Julabo note](#note-julabo)
+Julabo | FP-50 | Water Bath | RS-232 | | [see Julabo note](#note-julabo)
+Julabo | FP-52 | Water Bath | RS-232 | | [see Julabo note](#note-julabo)
+Keithley | 2400 | Source Meter | RS-232 | | [see Keithley note](#note-keithley)
+[Knauer](http://www.knauer.net/) | K6 | Electric valve drive | RS232 |  |[see Knauer note](#note-knauer)
+[Knauer](http://www.knauer.net/) | 1050 | HPLC pump | ??? | | [see Knauer HPLC note](#note-knauerHPLC)
+~Hitachi~ | ~L-7100~ | ~HPLC pump~ | ??? | | [see Hitachi note](#note-hitachi)
+[Jasco](https://jascoinc.com/products/chromatography/)| PU-4180 | HPLC pump| ??? | | [see JASCO HPLC note](#note-jasco-hplc-pump)
+Nima Trough | ??? | Trough | ??? | | [see Nima Trough note](#note-nima-trough)
+[KEPCO](http://www.kepcopower.com/bop.htm) | BOP 100-10MG | Bi-Polar Power Supply | RS232 | #187 |[see Kepco note](#note-kepco)
+[KEPCO](http://www.kepcopower.com/bop.htm) | BIT 4886 | I/F card | GPIB, RS-232 |  |[see Kepco note](#note-kepco)
+[KEPCO](http://www.kepcopower.com/bop.htm) | BOP 50-2M-4886 | Bi-Polar Power Supply | RS232 | |[see Kepco note](#note-kepco)
+Delta-Elektronika | SM300-5 | PSU | ??? | | [see Delta Elektronika note](#note-delta-elektronika )
+Thurlby | EX355P | PSU | ??? | | [see Thurlby note](#note-thurlby)
+Thurlby | TGA1240 | Arbitrary Waveform Generator | ??? | | [see Thurlby note](#note-thurlby)
+Thurlby | TSX3510P | PSU | ??? | | [see Thurlby note](#note-thurlby)
+Oxford Instruments | Mercury | Temperature Controller | RS-232 | | [see Oxford Instruments note](#note-oxford-instruments)
+Oxford Instruments | ITC503 | Cryogenic System |   |  | [see Oxford Instruments note](#note-oxford-instruments)
+Tektronix | AFG 3021B | Function Generator | Ethernet | #237 |[see Tektronix note](#note-tektronix)
+[Linkam](http://www.linkam.co.uk/) | T95 |  | RS232 |  |[see Linkam note](#note-linkam)
+Watson Marlow | 323 | Peristaltic Pump | ??? | | [see Peristaltic Pumps note](#note-peristaltic-pumps)
+WPI | Aladdin-1000 | Syringe Pump | ??? | | [see Syringe Pumps note](#note-syringe-pumps)
+WPI | SP2xx | Syringe Pump | ??? | | [see Syringe Pumps note](#note-syringe-pumps)
+
+##### Note: DAE #####
+See multi-detector and single-detector below.
+
+##### Note: Choppers #####
+OFFSPEC has a Mk3 chopper.&lt;br&gt;
+
+##### Note: Jaws #####
+Provide information about OFFSPEC jaws.
+
+##### Note: Vacuum System #####
+TPG300 support is implemented via [#216](https://github.com/ISISComputingGroup/IBEX/issues/216) and [#2063](https://github.com/ISISComputingGroup/IBEX/issues/2063)
+
+##### Note: Eurotherm #####
+[Eurotherms](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/OFFSPEC/OFFSPEC_Eurotherms.jpg) are used to control temperature Orange Cryostat, CCR and Furnace devices.
+
+&lt;a name=&quot;noteJulabo&quot;&gt;&lt;/a&gt;
+##### Note: Julabo #####
+OFFSPEC uses Julabo water baths &amp; re-circulating coolers
+1. [Julabo FL1703](https://www.julabo.com/en/products/recirculating-coolers/fl1703-recirculating-cooler)
+1. [Julabo FL300](https://www.julabo.com/en/products/recirculating-coolers/fl300-recirculating-cooler)
+1. Julabo Water Bath (which models?)
+
+##### Note: KEPCO #####
+1. [Kepco BOP 100-10MG PSU](http://www.kepcopower.com/bophimod.htm).&lt;br&gt;  See also [#3005](https://github.com/ISISComputingGroup/IBEX/issues/3005)
+1. [Kepco BIT 4886](http://www.kepcopower.com/bit.htm) is an interface card for Kepco bi-polar ([BOP](http://www.kepcopower.com/bop.htm)) power supplies.
+1. [KEPCO BOP 50-2M-4886 PSU](http://www.kepcopower.com/bophimod.htm).&lt;br&gt;  See also [#188](https://github.com/ISISComputingGroup/IBEX/issues/188) &amp; [#200](https://github.com/ISISComputingGroup/IBEX/issues/200)
+
+##### Note: Keithley #####
+1. [Keithley 2400 Series Source Meter](https://uk.tek.com/keithley-source-measure-units/keithley-smu-2400-series-sourcemeter).&lt;br&gt;
+See also tickets [#1826](https://github.com/ISISComputingGroup/IBEX/issues/1826), [#2695](https://github.com/ISISComputingGroup/IBEX/issues/2695), [#2801](https://github.com/ISISComputingGroup/IBEX/issues/2801) and [#3176](https://github.com/ISISComputingGroup/IBEX/issues/3176).
+
+##### Note: Hitachi #####
+Hitachi L-7100 HPLC pump (no longer supported at ISIS).  ~Can&#39;t find L-7100 on [Hitachi web-site](http://www.hitachi-hightech.com/global/about/corporate/group/hhs (may be obsolete).  Check existing SECI VI for logic and manual.~
+
+##### Note: JASCO HPLC Pump #####
+[JASCO HPLC pump](https://jascoinc.com/products/chromatography/hplc/modules/hplc-pumps/) is a new (for ISIS) model of HPLC pump.
+   * See `C:\LabVIEW Modules\Drivers\Jasco PU-4180 HPLC Pump\Documentation` for documentation.
+   * See also [#3743](https://github.com/ISISComputingGroup/IBEX/issues/3743) &amp; [#3923](https://github.com/ISISComputingGroup/IBEX/issues/3923)
+
+##### Note: Knauer #####
+1. Knauer K-6 Electric Valve Drive.  [Knauer web site](https://www.knauer.net)&lt;br&gt;
+   * K-6 model appears to have been superseded.  Check existing SECI VI for logic and manual.
+   * Support now implemented (28-03-2019).  See [#3781](https://github.com/ISISComputingGroup/IBEX/issues/3781).
+
+##### Note: Knauer HPLC #####
+Knauer HPLC 1050 [Knauer HPLC 1050 is discontinued.](https://www.knauer.net/en/discontinued-smartline-pump-1050-successor-azura-p-61l/p14161).  Check existing SECI VI for logic and manual.
+   1. Support now implemented (04-01-2019).  See [#3262](https://github.com/ISISComputingGroup/IBEX/issues/3262).
+
+##### Note: Nima Trough #####
+Nima Trough: SECI used a manufacturer supplied VI.  We may need to do the same in IBEX (via lvDCOM).&lt;br&gt;
+   * **Note:** NIMA Technologies Ltd now seems to be part of [Biolin Scientific](https://www.biolinscientific.com/ksvnima).&lt;br&gt;
+   * The NIMA trough is used regularly on SURF.  The manufacturer supplied VI is used to view graphs showing information about thin films.
+   * The manufacturer has made additional software available for download.  A copy of this software is located in `\\isis\shares\ISIS_Experiment_Controls\NIMA Trough\Nima_TR8.1.zip`.
+   * Support now implemented (25-05-2019).  See [#3783](https://github.com/ISISComputingGroup/IBEX/issues/3783)
+
+##### Note: Delta-Elektronika #####
+1. Delta-Elektronika SM300-5 is a DC power supply.  It is listed on page for [Delta-Elektronika SM1500 series](http://www.delta-elektronika.nl/en/products/dc-power-supplies-1500w-sm1500-series.html) products.
+
+##### Note: Thurlby #####
+[Thurlby Thandar Instruments](https://www.aimtti.com/)
+1. [Thurlby Thandar Instruments EX355P PSU](https://www.aimtti.com/product-category/dc-power-supplies/aim-ex-rseries)
+   * see [#155](https://github.com/ISISComputingGroup/IBEX/issues/155) and [#198]
+   * IOC &amp; OPI updated (18-07-2019).  See [#3784](https://github.com/ISISComputingGroup/IBEX/issues/3784)
+(https://github.com/ISISComputingGroup/IBEX/issues/198).
+1. [Thurlby TGA1240 Arbitrary Waveform Generator](https://www.aimtti.com/product-category/arbitrary-generators/aim-tga1240series)
+1. [Thurlby TSX3510P DC Power Supply](https://www.aimtti.com/product-category/dc-power-supplies/aim-tsxseries)
+
+##### Note: Oxford Instruments #####
+1. Support for OI ITC503 created as part of [#2593](https://github.com/ISISComputingGroup/IBEX/issues/2593)
+1. Support for Mercury Temperature Controller was created as part of [#2840](https://github.com/ISISComputingGroup/IBEX/issues/2840)
+
+##### Note: Linkam #####
+There are VIs for this.&lt;br&gt;
+See also [Linkam T95 controller](http://www.linkam.co.uk/t95-system-controllers/) and tickets [#1106](https://github.com/ISISComputingGroup/IBEX/issues/1106), [#1496](https://github.com/ISISComputingGroup/IBEX/issues/1496), [#1509](https://github.com/ISISComputingGroup/IBEX/issues/1509).
+
+##### Note: Peristaltic Pumps #####
+1. [Watson Marlow 323 Peristaltic Pump](http://www.watson-marlow.com/gb-en/range/watson-marlow/300-tube-pumps/323d/)
+   * Support now implemented (14-08-2019).  See [#3786](https://github.com/ISISComputingGroup/IBEX/issues/3786)
+
+##### Note: Syringe Pumps #####
+1. [WPI Aladdin-1000 Syringe Pump](https://www.wpi-europe.com/products/pumps--microinjection/laboratory-syringe-pumps/al1000-220.aspx)
+   * Support now implemented (20-06-2019).  See [#3787](https://github.com/ISISComputingGroup/IBEX/issues/3787)
+1. [WPI SP2xx Syringe Pump](https://www.wpi-europe.com/products/pumps--microinjection/laboratory-syringe-pumps.aspx) - check specific model.
+   * Support now implemented (05-07-2018).  See [#3261](https://github.com/ISISComputingGroup/IBEX/issues/3261)
+
+##### Note: Tektronix #####
+1. Tektronix Function Generator: [AFG 3021B](https://www.tek.com/datasheet/afg3000-series)
+   * See also [#237](https://github.com/ISISComputingGroup/IBEX/issues/237)
+
+##### Note: ISIS Environment Monitor #####
+1. The ISIS Environment Monitor is a device to monitor various environmental properties (temperature, pressure, humidity, etc).  There is an existing list of commands and a VI to work from.
+
+## OFFSPEC Notes ##
+OFFSPEC has the following specialist panels/systems:
+1. OFFSPEC High Level
+1. OFFSPEC Delft System
+1. OFFSPEC ISIS Sample Environment
+1. OFFSPEC Linkam
+   * [see Linkam note](#noteLinkam)
+1. OFFSPEC Newport Piezo Stage
+1. OFFSPEC BH (KEPCO 100-10MG &amp; Keithley 2400)
+   * [see Kepco note](#noteKepco) &amp; [see Keithley note](#noteKeithley)
+1. OFFSPEC Delft RF
+1. OFFSPEC PI Motion Stage
+1. POLREF Danfysik
+1. SURF Galil DIO
+1. INTER Galil DIO
+
+OFFSPEC has the following devices under motion control:
+1. benches
+1. coarse jaws
+1. FOMs (Frame Overlap Mirror)
+1. jaws
+1. laser gimbal
+1. OFFSPEC Analyser
+1. point detector
+1. Polarizer
+1. reflectometer sample stack
+
+## OFFSPEC SECI Configs ##
+Document information about OFFSPEC SECI configs here.
+
+Configuration Name                     | Sub-Configurations                                 | Last Accessed | Required |
+---------------------------------------|----------------------------------------------------|---------------|----------|
+OFFSPEC_place_holder1.conf             | -                                                  | dd/mm/yyyy    | -        |
+OFFSPEC_place_holder2.conf             | -                                                  | dd/mm/yyyy    | -        |
+
+</pre></div>
+</div>
+</details>
+</section>
+<section id="offspec-genie-scripts">
+<h2>OFFSPEC Genie Scripts<a class="headerlink" href="#offspec-genie-scripts" title="Link to this heading"></a></h2>
+<p>Similarly, Document information about OFFSPEC SECI Genie scripts here.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="NIMROD-Instrument-Details.html" class="btn btn-neutral float-left" title="NIMROD" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="OSIRIS-Instrument-Details.html" class="btn btn-neutral float-right" title="OSIRIS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Aug 14, 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
