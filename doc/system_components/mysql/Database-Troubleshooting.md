@@ -87,6 +87,7 @@ The commands for recreating the database are in the ibex [install script in the 
 
 1. Stop mysqld processes
 1. Move the database `../instrument/var/mysql` to `old`
+1. create an empty  `c:/instrument/var/mysql` directory 
 1. Recreate the database files: `c:\Instrument\Apps\MySQL\bin\mysqld.exe --datadir="c:/instrument/var/mysql/data" --initialize-insecure --console --log-error-verbosity=3`
 1. Start the mysql service.
 1. Set the database password with: `c:\Instrument\Apps\MySQL\bin\mysql.exe -u root -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '<password>';FLUSH privileges;"`
