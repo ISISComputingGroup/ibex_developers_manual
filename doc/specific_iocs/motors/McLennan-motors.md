@@ -11,7 +11,10 @@ mclennan/*
 
 The McLennan motor is a controller that support multiple independent motors. It is often used at ISIS for rotation stages.
 
-**WARNING: Unlike many other motor controllers that remember settings through autosave the McLennan exclusively uses macros. This means for changing parameters in a persistent way you will need to change them in the IOC configuration rather than the motor details panel, otherwise they will get lost on IOC restart. We now plan to make these settings appear read-only in the motor view to avoid any confusion **
+```{warning}
+Unlike many other motor controllers that remember settings through autosave the McLennan exclusively uses macros. This means for changing parameters in a persistent way you will need to change them in the IOC configuration rather than the motor details panel, otherwise they will get lost on IOC restart. We now plan to make these settings appear read-only in the motor view to avoid any confusion
+```
+
 
 Instructions on how to convert a **LabVIEW Mclennan ini file** are at the end of this document in the [converting values from LabVIEW](#converting-values-from-labview) section
 
