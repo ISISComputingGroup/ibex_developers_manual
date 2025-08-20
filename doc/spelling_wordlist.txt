@@ -817,6 +817,7 @@ switchToCombo
 SWT
 synoptics
 sysinternals
+syslog
 systemd
 targetID
 targetplatform
