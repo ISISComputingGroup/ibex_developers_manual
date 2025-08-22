@@ -1,0 +1,268 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Dashboard &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="PVWS (PV Web socket)" href="PVWS.html" />
+    <link rel="prev" title="Web Dashboard &amp; Chat" href="../Web.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../Web.html">Web Dashboard &amp; Chat</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Web Dashboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PVWS.html">PVWS (PV Web socket)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ISIS-Info-Slack.html">ISIS Info (Slack)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MCR-News-in-Teams.html">MCR News (Microsoft Teams)</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Systems.html">Systems Administration &amp; Hardware</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../Web.html">Web Dashboard &amp; Chat</a></li>
+      <li class="breadcrumb-item active">Web Dashboard</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/webdashboard/Web-Dashboard.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="web-dashboard">
+<h1>Web Dashboard<a class="headerlink" href="#web-dashboard" title="Link to this heading"></a></h1>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This page documents the old web dashboard, also known as <code class="docutils literal notranslate"><span class="pre">JSON_Bourne</span></code>. The <a class="reference external" href="https://github.com/ISISComputingGroup/webdashboard">new one</a> should have its architecture and how it’s run explained in the README of its repository.</p>
+</div>
+<p>The dataweb service allows some information about each instrument to be viewed in a webpage from both inside and outside the ISIS network. This service already exists for SECI instruments.</p>
+<section id="the-overall-architecture">
+<h2>The Overall Architecture<a class="headerlink" href="#the-overall-architecture" title="Link to this heading"></a></h2>
+<p><img alt="Architecture" src="../_images/dataweb_architecture.png" /></p>
+<p>The dataweb system consists of a number of parts running on each instrument:</p>
+<hr class="docutils" />
+<section id="the-archive-engine">
+<h3>The Archive Engine<a class="headerlink" href="#the-archive-engine" title="Link to this heading"></a></h3>
+<p>The archive engine shown in the <a class="reference internal" href="../overview/High-Level-Architectural-Design.html"><span class="doc std std-doc">high level design</span></a> produces internal webpages that provides live data on various PVs in HTML format:</p>
+<ul class="simple">
+<li><p>INST (located at <a class="reference external" href="http://localhost:4812/group?name=INST&amp;amp;format=json">http://localhost:4812/group?name=INST&amp;format=json</a>) gives data on the PVs associated with the DAE etc.</p></li>
+<li><p>BLOCKS (located at <a class="reference external" href="http://localhost:4813/group?name=BLOCKS&amp;amp;format=json">http://localhost:4813/group?name=BLOCKS&amp;format=json</a>) gives data on the current status of all block PVs</p></li>
+<li><p>DATAWEB (located at <a class="reference external" href="http://localhost:4813/group?name=DATAWEB&amp;amp;format=json">http://localhost:4813/group?name=DATAWEB&amp;format=json</a>) gives data on hidden blocks</p></li>
+</ul>
+</section>
+<section id="the-webserver">
+<h3>The WebServer<a class="headerlink" href="#the-webserver" title="Link to this heading"></a></h3>
+<p>The webserver is run as part of the BlockServer and provides all of the data on the current configuration in JSON format. This is the exact same data that is served on the GET_CURR_CONFIG_DETAILS PV. The webserver is currently serving the data on localhost:8008. Note that the fortinet VPN uses 8008 for internal configuration and so you cannot access this address through the fortinet VPN.</p>
+</section>
+<hr class="docutils" />
+<section id="on-the-dataweb-server">
+<h3>On the Dataweb Server<a class="headerlink" href="#on-the-dataweb-server" title="Link to this heading"></a></h3>
+<p>There are also parts of the system running on a central <a class="reference internal" href="../systems/Webserver.html"><span class="doc std std-doc">webserver</span></a>, which provides external access.</p>
+</section>
+<section id="json-bourne">
+<h3>JSON Bourne<a class="headerlink" href="#json-bourne" title="Link to this heading"></a></h3>
+<p>The program collates all the data from the other sources, on all the EPICS instruments, such as putting the blocks and their values into the relevant groups as given by the configuration. This information is served as JSON to localhost:60000. This runs as a service on the central server and lives in C:\JSON_Bourne.</p>
+</section>
+<section id="the-website">
+<h3>The Website<a class="headerlink" href="#the-website" title="Link to this heading"></a></h3>
+<p>Currently a simple JS script takes the JSON created by JSON Bourne and provides a simple webpage for an external client to view. This can be accessed from <a class="reference external" href="http://dataweb.isis.rl.ac.uk/">http://dataweb.isis.rl.ac.uk/</a>. The code for the website, both the html and javascript are located in the central server at <code class="docutils literal notranslate"><span class="pre">C:\inetpub\wwwroot\DataWeb\IbexDataweb</span></code>.</p>
+</section>
+<section id="grafana-and-journals-setup">
+<h3>Grafana and Journals Setup<a class="headerlink" href="#grafana-and-journals-setup" title="Link to this heading"></a></h3>
+<p>Docs can be found on the shares at <code class="docutils literal notranslate"><span class="pre">shares\isis_experiment_controls\web_dashboard_history.docx</span></code></p>
+</section>
+</section>
+<section id="deployment">
+<h2>Deployment<a class="headerlink" href="#deployment" title="Link to this heading"></a></h2>
+<p>To update the production version of the dashboard:</p>
+<ul class="simple">
+<li><p>Remote desktop into external webserver (for username and password see password page)</p></li>
+<li><p>Open a git bash terminal in C:\JSON_Bourne and switch to the <a class="reference internal" href="../deployment/Creating-a-release.html"><span class="doc std std-doc">release branch</span></a></p></li>
+<li><p>Run the deploy batch script as admin</p></li>
+<li><p>Restart JSON_bourne (see <a class="reference internal" href="#webdashboard-restart-dataweb">here</a>)</p></li>
+<li><p>Go to (for example) <a class="reference external" href="http://dataweb.isis.rl.ac.uk/IbexDataweb/default.html?Instrument=zoom">http://dataweb.isis.rl.ac.uk/IbexDataweb/default.html?Instrument=zoom</a> and confirm the webpage is live</p></li>
+</ul>
+</section>
+<section id="development-testing">
+<h2>Development/Testing<a class="headerlink" href="#development-testing" title="Link to this heading"></a></h2>
+<p>Clone the repository at <a class="reference external" href="https://github.com/ISISComputingGroup/JSON_bourne">https://github.com/ISISComputingGroup/JSON_bourne</a></p>
+<p>To test the blockserver webserver:</p>
+<ul class="simple">
+<li><p>Start your instrument</p></li>
+<li><p>Navigate to <code class="docutils literal notranslate"><span class="pre">localhost:8008</span></code> in a browser</p></li>
+</ul>
+<p>To test JSON_Bourne:</p>
+<ul class="simple">
+<li><p>Run webserver.py</p></li>
+<li><p>Navigate in a browser to <a class="reference external" href="http://localhost:60000/?callback=parseObject&amp;amp;Instrument=%5BInstrument-Name%5D&amp;amp;">http://localhost:60000/?callback=parseObject&amp;Instrument=[Instrument-Name]&amp;</a>.
+Where [Instrument-Name] is replaced by the desired instrument (i.e., ZOOM&amp;) in all capitals.</p></li>
+</ul>
+<p>To test the front end on a developer machine:</p>
+<ul class="simple">
+<li><p>Open default.html with the variable of ?Instrument=instrument-name e.g. go to <code class="docutils literal notranslate"><span class="pre">file:///C:/Instrument/Dev/JSON_bourne/front_end/default.html?Instrument=larmor</span></code> in a browser to view Larmor’s dashboard. Note that the path is dependant on where you have created the local JSON_bourne repository. This will use the JSON bourne instance running on NDAEXTWEB!</p></li>
+</ul>
+<p>To test the front end and JSON bourne on a developer machine:</p>
+<ul class="simple">
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">webserver.py</span></code></p></li>
+<li><p>Edit display_blocks.js to look at <a class="reference external" href="http://localhost">http://localhost</a> rather than <a class="reference external" href="http://dataweb.isis.rl.ac.uk">http://dataweb.isis.rl.ac.uk</a></p></li>
+<li><p>Open default.html as above</p></li>
+</ul>
+<p>To be able to see your instrument as well:</p>
+<ul class="simple">
+<li><p>Add your instrument to the <code class="docutils literal notranslate"><span class="pre">local_inst_list</span></code> dictionary in the <code class="docutils literal notranslate"><span class="pre">webserver.py</span></code> e.g. <code class="docutils literal notranslate"><span class="pre">local_inst_list</span> <span class="pre">=</span> <span class="pre">{&quot;LOCALHOST&quot;:</span> <span class="pre">(&quot;localhost&quot;)}</span></code></p></li>
+<li><p>Run your instrument</p></li>
+<li><p>Run JSON Bourne up as above</p></li>
+</ul>
+<p>If you need to update the archive engine then you will need to:</p>
+<ol class="arabic simple">
+<li><p>Run create_icp_binaries.bat</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">clean</span> <span class="pre">uninstall</span> <span class="pre">install</span></code> in <code class="docutils literal notranslate"><span class="pre">..\EPICS\CSS\master</span></code></p></li>
+</ol>
+</section>
+<section id="webdashboard-troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#webdashboard-troubleshooting" title="Link to this heading"></a></h2>
+<section id="general-investigation">
+<h3>General Investigation<a class="headerlink" href="#general-investigation" title="Link to this heading"></a></h3>
+<p>First look at the log to ensure that there are no issues. The log is held in <code class="docutils literal notranslate"><span class="pre">C:\JSON_Bourne\log</span></code>. Issues may be in the front end, in which case error logs are in the web browser, visit the webpage in a browser and open up the web console.
+If there are a number of <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">Error</span> <span class="pre">503.</span> <span class="pre">The</span> <span class="pre">service</span> <span class="pre">is</span> <span class="pre">unavailable</span></code> errors, restarting the server completely may be required, but simply restarting the Dataweb should be the first thing to try.</p>
+</section>
+<section id="webdashboard-restart-dataweb">
+<h3>Restart the Dataweb<a class="headerlink" href="#webdashboard-restart-dataweb" title="Link to this heading"></a></h3>
+<p>As admin open the “Task Scheduler” (there is a shortcut for this on the desktop) and end and run the “JSON Bourne” task (in task scheduler library). Make sure that ending the task has killed the Python webserver process.</p>
+</section>
+<section id="new-instrument-with-no-details">
+<h3>New Instrument with No Details<a class="headerlink" href="#new-instrument-with-no-details" title="Link to this heading"></a></h3>
+<p>If the instrument archive has never been restarted then the dataweb will fail to show any information and claim that the server hasn’t been started. To fix this simple restart the instrument archive.</p>
+</section>
+<section id="webdashboard-troubleshooting-instrument-page-not-working">
+<h3>Instrument Page not Working on Web Dashboard<a class="headerlink" href="#webdashboard-troubleshooting-instrument-page-not-working" title="Link to this heading"></a></h3>
+<p>Several causes</p>
+<ol class="arabic simple">
+<li><p>Check that the instrument is in the list of Instruments in <a class="reference external" href="https://github.com/ISISComputingGroup/JSON_bourne/blob/master/webserver.py">https://github.com/ISISComputingGroup/JSON_bourne/blob/master/webserver.py</a> and that the version on web server is up-to-date.</p></li>
+<li><p>Issues with MySQL in the moment the IBEX server was started (this seems to affect the archiver start up). Check logs of the MySQL service in the <code class="docutils literal notranslate"><span class="pre">var</span></code> area, fix any issues so that MySQL is running correctly again, then restart the IBEX server.</p></li>
+<li><p>If it works in your browser but not he users they may have a old cached copy (this shouldn’t happen but we have seen it in Safari). Clear their browser cache and reload.</p></li>
+<li><p>Try restarting <code class="docutils literal notranslate"><span class="pre">ARINST</span></code> on the instrument. It can happen that the archiver does not pick up all PVs to be archived on server startup. A symptom of this is that the configuration file under <code class="docutils literal notranslate"><span class="pre">EPICS\CSS\master\ArchiveEngine\inst_config.xml</span></code> is very short compared to other machines.</p></li>
+</ol>
+</section>
+</section>
+<section id="future-development-ideas">
+<h2>Future Development Ideas<a class="headerlink" href="#future-development-ideas" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>We need to improve the unit test coverage of this project. It would be worth looking into the <a class="reference external" href="https://pypi.python.org/pypi/requests-mock">requests-mock</a> library as this would make it very easy to test server code which makes HTTP requests.</p></li>
+</ul>
+</section>
+<section id="overview-page">
+<h2>Overview page<a class="headerlink" href="#overview-page" title="Link to this heading"></a></h2>
+<p><a class="reference external" href="http://dataweb.isis.rl.ac.uk/IbexDataweb/Overview/ibexOverview.html">http://dataweb.isis.rl.ac.uk/IbexDataweb/Overview/ibexOverview.html</a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../Web.html" class="btn btn-neutral float-left" title="Web Dashboard &amp; Chat" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="PVWS.html" class="btn btn-neutral float-right" title="PVWS (PV Web socket)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Aug 22, 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
