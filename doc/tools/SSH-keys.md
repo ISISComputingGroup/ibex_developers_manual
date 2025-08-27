@@ -24,9 +24,11 @@ manager. This will generate two files: `~\.ssh\id_ed25519` and `~\.ssh\id_ed2551
 ending in `.pub` is a public key, the one without the `.pub` extension is a private key. It
 would be sensible to store copies of these two files in your password manager too.
 
+:::{warning}
 For the avoidance of doubt, the **public** key (`*.pub`) can be freely shared with everyone (for
 example, by being copied onto instruments). Do not share your **private** key. The private key
 is additionally encrypted using your selected password.
+:::
 
 ## Setting up SSH agent
 
@@ -39,7 +41,7 @@ Start-Service ssh-agent
 ## Deploying the public key
 
 - Add your public key to the [keys repository](https://github.com/ISISComputingGroup/keys).
-- Ask a developer whose key is *already* deployed to run the deployment script, which will
+- Ask a developer whose key is *already* deployed to run the [`deploy_keys.py` script](https://github.com/ISISComputingGroup/keys/blob/main/deploy_keys.py), which will
 update the `authorized_keys` files on each instrument.
 
 If the permissions on `administrators_authorized_keys` are wrong, that file won't work. The
@@ -63,9 +65,11 @@ account password; your key is sufficient to grant you access.
 
 ## Bulk usage
 
-Firstly, if you intend to run a command across many instruments, it is worth getting that command
+:::{caution}
+If you intend to run a command across many instruments, it is worth getting that command
 reviewed by another developer and running it together. This is **especially** true if you intend to
 run a command as a privileged user.
+:::
 
 Typing the password to unlock your SSH key for each instrument would be tedious.
 To avoid this, we can **temporarily** add the key to the SSH agent:
