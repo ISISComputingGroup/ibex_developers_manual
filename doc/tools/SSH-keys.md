@@ -38,19 +38,12 @@ Start-Service ssh-agent
 
 ## Deploying the public key
 
-:::{important}
-TODO: write helper script/process to get public keys onto every inst.
-:::
+- Add your public key to the [keys repository](https://github.com/ISISComputingGroup/keys).
+- Ask a developer whose key is *already* deployed to run the deployment script, which will
+update the `authorized_keys` files on each instrument.
 
-For each instrument, append your **public** key (the one from the file ending `.pub`) to the
-following locations on each instrument:
-```
-c:\Users\spudulike\.ssh\authorized_keys
-c:\ProgramData\ssh\administrators_authorized_keys
-```
-
-The `administrators_authorized_keys` file must be set up with correct permissions. If the file
-was originally created by an administrator they should already be correct, otherwise run:
+If the permissions on `administrators_authorized_keys` are wrong, that file won't work. The
+permissions can be fixed by running:
 
 ```
 icacls.exe "c:\ProgramData\ssh\administrators_authorized_keys" /inheritance:r /grant "Administrators:F" /grant "SYSTEM:F"
