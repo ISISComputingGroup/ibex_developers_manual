@@ -17,6 +17,9 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
 ### Pre Testing
 
 1. Find out anything that needs to be in the release that isn't and mark with `for release` label. (This does not prevent a release)
+1. Ensure the version of `cs-studio` [referenced in the GUI's target platform](https://github.com/ISISComputingGroup/ibex_gui/blob/master/base/uk.ac.stfc.isis.ibex.targetplatform/targetplatform.target)
+is recent enough to include the most recent changes in the
+[`isis_css_top` repository](https://github.com/ISISComputingGroup/isis_css_top).
 1. Update the [upgrade script](https://github.com/ISISComputingGroup/EPICS-upgrade/blob/master/upgrade.py) to include the latest version (this is done on master). Steps to do this are in [Config Upgrader in section *creating a production upgrade script*](/tools/Config-Upgrader) 
     1. After committing these changes to `master` on the `EPICS-upgrade` submodule, don't forget to push the new submodule version to `master` on the top `EPICS` branch. This is needed to make sure you changes appear on the release branch created in the next step. 
 1. For packages which are published on `PyPI`, in particular `genie_python` and `ibex_bluesky_core`, create PyPI releases if needed.
