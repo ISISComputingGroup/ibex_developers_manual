@@ -13,15 +13,8 @@ The `procserv` name for the BlockServerToKafka service is `BSKAFKA`.
 
 Source for the forwarder is available [here](https://github.com/ess-dmsc/forwarder)
 
-We don't currently run this for every instrument, and need to figure out topology ie. running a central forwarder, one per instrument and so on.
+As of IBEX version 25.8.0 we run this on every instrument under the `FWDR` `procserv` name.
 
 ### Forwarder on HIFI
 
-HIFI has an instance of the forwarder currently running under procserv within IBEX for the SuperMuSR project.
-
-in `C:\Instrument\Apps\EPICS\utils\build_ioc_startups.py` we have hotfixed this line: 
-`ioc_startups.add("FWDR", IocStartup(os.path.join("C:\\", "instrument", "dev", "forwarder"), description="forward epics to kafka", exe="forwarder_launch.bat", iocexe="procServ.exe"))`
-
-to add a Procserv entry that runs it. 
-
-HIFI's `ISIS/inst_servers/master/start_bs_to_kafka_cmd.bat` points to the SuperMuSR Redpanda instance rather than the normal `livedata` cluster. 
+HIFI uses a different broker currently, so we have changed the `KAFKA_BROKER` macro for `BSKAFKA` and `FWDR`. This is currently in `globals.txt`. 
