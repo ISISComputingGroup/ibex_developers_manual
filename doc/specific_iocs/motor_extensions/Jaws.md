@@ -10,7 +10,7 @@ This is a standard full set of jaws (N,S,E,W blades) that are entirely controlle
 
 ### Example
 
-For a galil they might be in a file in the instrument settings called `<inst name>\configurations\galil\jaws.cmd`:
+For a galil they might be in a file in the [motor extensions repository's settings area](https://github.com/ISISComputingGroup/EPICS-motorExtensions/tree/master/settings):
 
 ```
 # Define a set of jaws from first 4 motors on first controller (if present)
