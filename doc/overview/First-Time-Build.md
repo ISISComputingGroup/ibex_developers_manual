@@ -284,3 +284,8 @@ XAR is the runtime that but for testing you will need the full setup which is th
 
 ### Install WiX toolset (We use version 3 and not the latest one - only install if required)
 Download and install latest stable version from https://wixtoolset.org/docs/wix3/
+
+### Add your SSH key to the `keys` repository
+
+Adding an SSH key to the [keys repository](https://github.com/isiscomputinggroup/keys) can be used to give
+passwordless access to instrument machines. Follow the instructions [here](/tools/SSH-keys).
