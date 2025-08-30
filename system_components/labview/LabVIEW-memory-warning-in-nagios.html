@@ -1,0 +1,182 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LabVIEW memory leak &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Logging from the archive" href="../Logging-from-the-archive.html" />
+    <link rel="prev" title="LabVIEW errors" href="LabVIEW-errors.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../System-components.html">Backend System Components</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ActiveMQ.html">ActiveMQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Alarms.html">Alarms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../BlockServer.html">BlockServer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CSS-Archive-Engine.html">CS-Studio Archive Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Central-archiver-appliance.html">Central archiver appliance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DatabaseServer.html">Database Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Gateway.html">Gateways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../IOC-message-logging.html">IOC Message Logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Inst-etc-IOC.html"><code class="docutils literal notranslate"><span class="pre">INSTETC</span></code> IOC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Journal-Viewer.html">Journals</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../LabVIEW.html">LabVIEW</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Complexity-of-LabVIEW-Drivers.html">Complexity of LabVIEW Drivers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LabVIEW-errors.html">LabVIEW errors</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">LabVIEW memory leak</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Logging-from-the-archive.html">Logging from the archive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../MySQL-Database.html">MySQL database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Nicos.html">NICOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../PVAccess-gateways-%28p4p%29.html">PVAccess Gateways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python.html">Python (Uktena)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Remote-IOCs.html">Remote IOC Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Run-control.html">Run Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Settings-and-Configurations.html">Settings &amp; Configurations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Startup-and-Shutdown.html">Startup and Shutdown</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Systems.html">Systems Administration &amp; Hardware</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../System-components.html">Backend System Components</a></li>
+          <li class="breadcrumb-item"><a href="../LabVIEW.html">LabVIEW</a></li>
+      <li class="breadcrumb-item active">LabVIEW memory leak</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/system_components/labview/LabVIEW-memory-warning-in-nagios.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="labview-memory-leak">
+<h1>LabVIEW memory leak<a class="headerlink" href="#labview-memory-leak" title="Link to this heading"></a></h1>
+<p>If nagios is reporting a critical memory usage for LabVIEW (which will only be on a SECI instrument) then you need to do the following:</p>
+<p>first check to see if the nagios service has been acknowledged (has a tick next to it), it it has then these steps have already been followed and you need do nothing</p>
+<p>compose an email with the from address set to “ISIS Experiment Controls” and the following content with <code class="docutils literal notranslate"><span class="pre">yyyy</span></code> replaced by the instrument name e.g. <code class="docutils literal notranslate"><span class="pre">OFFSPEC</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">subject</span><span class="p">:</span> <span class="n">SECI</span><span class="o">/</span><span class="n">LabVIEW</span> <span class="n">memory</span> <span class="n">usage</span> <span class="n">on</span> <span class="n">NDXyyyy</span> <span class="n">computer</span>
+
+<span class="n">Hi</span><span class="p">,</span>
+
+<span class="n">The</span> <span class="n">SECI</span><span class="o">/</span><span class="n">LabVIEW</span> <span class="n">memory</span> <span class="n">usage</span> <span class="n">on</span> <span class="n">the</span> <span class="n">NDXyyyy</span> <span class="n">instrument</span> <span class="n">computer</span> <span class="ow">is</span> <span class="n">getting</span> <span class="n">very</span> <span class="n">high</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">process</span> <span class="n">may</span> <span class="n">crash</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">next</span> <span class="n">few</span> <span class="n">days</span><span class="p">,</span> <span class="n">it</span> <span class="n">would</span> <span class="n">be</span> <span class="n">advisable</span> <span class="n">to</span> <span class="n">restart</span> <span class="n">the</span> <span class="n">SECI</span> <span class="n">control</span> <span class="n">system</span> <span class="n">at</span> <span class="n">the</span> <span class="nb">next</span> <span class="n">convenient</span> <span class="n">point</span>
+
+<span class="n">Regards</span><span class="p">,</span>
+
+<span class="n">ISIS</span> <span class="n">Experiment</span> <span class="n">Controls</span>
+</pre></div>
+</div>
+<p>Now send this email to the special instrument address alias</p>
+<p>Then acknowledge the service in nagios: click on <code class="docutils literal notranslate"><span class="pre">LABVIEW</span> <span class="pre">memory</span></code> for the instrument in the nagios view, then on the right of the next page click on <code class="docutils literal notranslate"><span class="pre">Acknowledge</span> <span class="pre">this</span> <span class="pre">service</span> <span class="pre">problem</span></code> and then give a comment like “emailed scientists” and press <code class="docutils literal notranslate"><span class="pre">Commit</span></code>. If you now return to the nagios service view, you should see a tick mark next to the service name.</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="LabVIEW-errors.html" class="btn btn-neutral float-left" title="LabVIEW errors" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Logging-from-the-archive.html" class="btn btn-neutral float-right" title="Logging from the archive" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Aug 30, 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
