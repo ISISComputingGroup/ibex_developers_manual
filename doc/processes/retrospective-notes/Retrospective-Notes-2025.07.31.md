@@ -1,4 +1,4 @@
-## Sprint 2025-07-31 Retrospective (2025-08-27)
+# Sprint 2025-07-31 Retrospective (2025-08-27)
 
 | Chair | Timekeeper | Note Taker |
 |-------|------------|------------|
@@ -11,7 +11,7 @@
  - JH suggests we consider buying another build machine. Further discussions during the Experiment Controls Group Meeting need to be had about purchasing machine before it is critical.
 
 ### IBEX Wiki things needed to be done (Documentation)
- - JH states this issue is ongoing, as sprint it coming up he will double check timeframes.
+ - JH states this issue is ongoing, as sprint it coming up he will double check time frames.
 
 ## Items from this retrospective:
 ###  Navigation of folders during deployment
