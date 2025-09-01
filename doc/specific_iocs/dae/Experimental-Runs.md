@@ -36,7 +36,7 @@ This is from a problem see on IRIS.
 
 ## Experiment stuck in `Waiting` state after beginning a run
 
-This issue was encountered on Iris during the transition between Seci and Ibex. SECI was in a waiting state prior to shutdown, then IBEX was left in this waiting state. Usually SECI run control is transient i.e. set by Open GENIE and cleared on a SECI restart, so just restarting SECI would usually clear it. The is now a new PV that you can write to from IBEX to force a resync of run control
+There is now a new PV that you can write to from IBEX to force a resync of run control
 
     caput %MYPVPREFIX%CS:RC:SYNC:SP 1
 
