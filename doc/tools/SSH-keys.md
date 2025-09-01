@@ -33,13 +33,15 @@ is additionally encrypted using your selected password.
 {#keeper_ssh}
 ## Keeper
 
-To avoid having to copy and paste your passphrase every time, you can use [Keeper](https://ukri.sharepoint.com/sites/thesource/SitePages/Keeper-Password-Manager.aspx) to store your passwords.
+To avoid having to copy and paste your passphrase every time, you can use [Keeper](https://ukri.sharepoint.com/sites/thesource/SitePages/Keeper-Password-Manager.aspx) to store your passwords and SSH keys.
 
-If you want to use Keeper (you'll need the desktop client for this, _not_ the browser plugin) for storing your SSH keys, and not have local plaintext copies on your machine, you can do so. 
+If you want to use Keeper (you'll need the desktop client for this, _not_ the browser plugin) for storing your SSH keys, and not have local plain text copies on your machine, you can do so. 
 
 This is done by following [this guide](https://docs.keeper.io/en/keeperpam/privileged-access-manager/ssh-agent#activating-the-ssh-agent) with your public key, private key and passphrase filled in. 
 
 You may need to [turn the `OpenSSH` agent off](https://docs.keeper.io/en/keeperpam/privileged-access-manager/ssh-agent#windows-note-on-ssh-agent-conflicts) if it's on your machine - see if `ssh-agent` is running in your services in task manager. 
+
+It would also be a good idea to change the vault timeout to something relatively short to minimise scope of access for when the SSH keys are available. 
 
 ### SSH works and prompts to use passphrase, but git doesn't show the prompt
  If `ssh git@github.com` works fine, your SSH key has been added to Github and `ssh` is using it.  
