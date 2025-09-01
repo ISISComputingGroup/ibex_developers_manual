@@ -4,9 +4,6 @@ This page collects information that will be useful for the implementation of the
 ## Background & Timeline ##
 MUSR is a general purpose muon spin rotation spectrometer at ISIS, on TS1. However, the emphasis of the experimental work conducted is investigating magnetism and superconductivity.  The [MUSR](https://www.isis.stfc.ac.uk/Pages/MUSR.aspx) web page describes the background to the instrument.
 
-## Control System ##
-MUSR will migrate from the SECI control system to the IBEX control system in MMMMMMMM YYYY.
-
 ## MUSR Equipment ##
 The equipment listed below is used on MUSR. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).
 

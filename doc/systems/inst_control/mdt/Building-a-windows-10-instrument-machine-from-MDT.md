@@ -1,6 +1,6 @@
 # Building a new instrument virtual machine from MDT
 
-Note: this page documents the process of booting and building a windows 10 **system** in an empty virtual machine. This page does not focus on deploying IBEX itself, and if you are converting an instrument from SECI to IBEX you will generally not need to perform this process as a suitable NDX machine will already exist.
+Note: this page documents the process of booting and building a windows 10 **system** in an empty virtual machine. This page does not focus on deploying IBEX itself.
  - if you do not see hyper-v on your windows desktop, you just need to enable it via `turn windows feature on or off` , Select `Hyper-V` and sub items.
 
 **Note**: boot and build can take a while, 3 hours on an NDH with SSDs, longer of you have spinning disks.
@@ -62,12 +62,6 @@ After iso boot it will go into MDT install
   * in `data acquisition` select the dropdown next to wiring, detector and spectra tables - choose the only option offered that is an `ibextest` table
   * now apply changes
  
-### starting SECI
-
-There is also LabVIEW, SECI and a copy on EMU’s LabVIEW modules installed. SECI should start fine if you navigate to `C:\Program Files (x86)\STFC ISIS Facility\SECI` and double click on `SECIUserinterface` (the file of type `Application`). There is a file that displays the name `SeciUserInterface.exe` but this is actually `SeciUserInterface.exe.symlink` and is a link to the `SeciUserInterface.exe.config` configuration file on the settings disk.
-
-There is an issue that the open GENIE window will look blank – if you leave the blank window on screen and then disconnect and reconnect remote desktop, the text appears. No idea what is going on…
-
 ## Upgrading/changing IBEX VHDs
 
 If you need to upgrade/change IBEX VHDS, the process is as follows:

@@ -4,9 +4,6 @@ This page collects information that will be useful for the implementation of the
 ## Background & Timeline ##
 VESUVIO (previously known as EVS) is a long established instrument at ISIS, on TS1. The [VESUVIO](http://www.isis.stfc.ac.uk/instruments/vesuvio/) web page describes the background to the instrument.  An image of VESUVIO is shown in ​[this diagram](http://www.isis.stfc.ac.uk/instruments/vesuvio/vesuvio-configuration6163.jpg).<br>
 
-## Control System ##
-VESUVIO will migrate from the SECI control system to the IBEX control system.
-
 ## VESUVIO Equipment ##
 The equipment listed below is used on VESUVIO. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).
 

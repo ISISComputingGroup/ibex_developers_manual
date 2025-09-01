@@ -6,9 +6,6 @@ HRPD, the High Resolution Powder Diffractometer is an instrument on TS1 at ISIS.
 
 There is a proposal to re-build HRPD at some point in the next 3-5 years.
 
-## Control System ##
-HRPD will migrate from the SECI control system to the IBEX control system.
-
 ## HRPD Equipment ##
 The equipment listed below is used on HRPD. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).
 

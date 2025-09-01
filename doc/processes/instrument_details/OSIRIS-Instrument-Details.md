@@ -5,9 +5,6 @@ This page collects information that will be useful for the implementation of the
 OSIRIS is a long established instrument at ISIS, on TS1. The [OSIRIS](https://www.isis.stfc.ac.uk/Pages/osiris.aspx) web page describes the background to the instrument.  A schematic layout of OSIRIS is shown in ​[this diagram](https://www.isis.stfc.ac.uk/Gallery/OSIRIS_3D_BW_Labelled.JPG).<br>
 OSIRIS shares a port with [IRIS](https://www.isis.stfc.ac.uk/Pages/iris.aspx). We may need to have a way of sharing information between the IRIS and OSIRIS control systems. It might also be worth migrating IRIS and ​OSIRIS to IBEX at the same time. 
 
-## Control System ##
-OSIRIS will migrate from the SECI control system to the IBEX control system.
-
 ## OSIRIS Equipment ##
 The equipment listed below is used on OSIRIS. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).
 

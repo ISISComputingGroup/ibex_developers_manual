@@ -4,9 +4,6 @@ This page collects information that will be useful for the implementation of the
 ## Background & Timeline ##
 NIMROD is a diffractometer instrument at ISIS, on TS2. The [NIMROD](https://www.isis.stfc.ac.uk/Pages/NIMROD.aspx) web page describes the background to the instrument.
 
-## Control System ##
-NIMROD will migrate from the SECI control system to the IBEX control system ahead of Cycle 2019/02.
-
 ## NIMROD Equipment ##
 The equipment listed below is used on NIMROD. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).
 

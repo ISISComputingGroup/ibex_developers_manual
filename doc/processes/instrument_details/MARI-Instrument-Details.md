@@ -5,9 +5,6 @@ This page collects information that will be useful for the implementation of the
 ## Background & Timeline ##
 MARI is a chopper spectrometer on TS1 at ISIS. The [MARI](https://www.isis.stfc.ac.uk/Pages/mari.aspx) web page describes the background to the instrument.
 
-## Control System ##
-It is proposed that MARI will migrate from the SECI control system to the IBEX control system in time for Cycle 2018/04.
-
 ## MARI Equipment ##
 The equipment listed below is used on MARI. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).
 
