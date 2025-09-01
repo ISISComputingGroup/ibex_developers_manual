@@ -12,9 +12,6 @@ This page collects information that will be useful for the implementation of the
 IRIS is a long established instrument at ISIS, on TS1. The [IRIS](http://www.isis.stfc.ac.uk/instruments/iris/iris4691.html) web page describes the background to the instrument.  A schematic layout of IRIS is shown in ​[this diagram](http://www.isis.stfc.ac.uk/images/instruments/iris-/iris-schematic4923.jpg).<br>
 IRIS shares a port with [OSIRIS](http://www.isis.stfc.ac.uk/instruments/osiris/osiris4667.html). We may need to have a way of sharing information between the IRIS and OSIRIS control systems. It might also be worth migrating IRIS and ​OSIRIS to IBEX at the same time. 
 
-## Control System ##
-IRIS will migrate from the SECI control system to the IBEX control system.
-
 ## IRIS Equipment ##
 The equipment listed below is used on IRIS. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).
 
@@ -126,15 +123,6 @@ _no comment (as yet)_
 {#iris_noteCryovalve}
 ##### Note: CryoValve Controller #####
 Due to be superseded by the Exchange Gas Controller.
-
-## IRIS SECI Configs ##
-Over the years, IRIS has built up a significant collection of SECI configs. Not all of them are current (some may no longer be used, or used only infrequently). We will need to investigate how to convert them to IBEX configs.  The current list of IRIS configs is listed on [trac](https://trac.isis.rl.ac.uk/ICP/wiki/IRIS).
-The config files are located in the folder `SECI\Configurations\` on the control server and have the extension `.conf`.  Sub-configuration files have the extension `.comp` (component).  The files with numbers as extensions (`.1`, `.2`, `.3`,etc.) are backups of the configuration and sub-configuration files.
-
-## IRIS Genie Scripts ##
-Similarly, IRIS has built up a significant collection of genie scripts over the years. Again, many scripts are old and may no longer be used regularly. Most runs on IRIS are controlled via scripts. There will be a need to convert some of these scripts to genie-python, but probably not all.
-
-The current list of IRIS genie scripts is listed on [trac](https://trac.isis.rl.ac.uk/ICP/wiki/IRIS).
 
 ## Tested IOCs ##
 

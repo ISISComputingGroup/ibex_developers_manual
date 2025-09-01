@@ -71,8 +71,6 @@ Eurotherms are used to control temperature Orange Cryostat, CCR and Furnace devi
 CRISP uses two types of water bath
 1. Julabo (which model(s)?)
 1. Grant Water Bath
-   * Update (25-06-2019): Grant water baths are no longer used.  No longer any need to support them.  See [#4457](https://github.com/ISISComputingGroup/IBEX/issues/4457)
-1. Haake N6 Water Bath.  Haake has now been taken over by [ThermoFisher](https://www.thermofisher.com/uk/en/home/life-science/lab-equipment/water-baths-circulators-chillers.html).  N6 model may be obsolete.  Check existing SECI VI for logic and manual.
    * Update (25-06-2019): Haake water baths are no longer used.  No longer any need to support them.  See [#4456](https://github.com/ISISComputingGroup/IBEX/issues/4456)
 
 {#crisp_noteKeithley}
@@ -86,16 +84,16 @@ CRISP uses two types of water bath
 
 {#crisp_noteHitachi}
 ##### Note: Hitachi #####
-Hitachi L-7100 HPLC pump.  Can't find L-7100 on Hitachi web-site (may be obsolete).  Check existing SECI VI for logic and manual.
+Hitachi pumps are no longer supported in ISIS
 
 {#crisp_noteKnauer}
 ##### Note: Knauer #####
 Knauer K-6 Electric Valve Drive.  [Knauer web site](https://www.knauer.net)<br>
-K-6 model appears to have been superseded.  Check existing SECI VI for logic and manual.
+K-6 model appears to have been superseded. 
 
 {#crisp_noteKnauerHPLC}
 ##### Note: Knauer HPLC #####
-Knauer HPLC 1050 [Knauer HPLC 1050 is discontinued.](https://www.knauer.net/en/discontinued-smartline-pump-1050-successor-azura-p-61l/p14161).  Check existing SECI VI for logic and manual.
+Knauer HPLC 1050 [Knauer HPLC 1050 is discontinued.](https://www.knauer.net/en/discontinued-smartline-pump-1050-successor-azura-p-61l/p14161).
 
 {#crisp_noteNimaTrough}
 ##### Note: Nima Trough #####
@@ -120,16 +118,7 @@ Thurlby EX355P PSU - see [#155](https://github.com/ISISComputingGroup/IBEX/issue
 ##### Note: He3 Monitor #####
 He3 Monitor is an obsolete piece of equipment.  It is no longer used.  No need to support it.
 
-## CRISP SECI Configs ##
-Document information about CRISP SECI configs here.
 
-Configuration Name                     | Sub-Configurations                                 | Last Accessed | Required |
----------------------------------------|----------------------------------------------------|---------------|----------|
-CRISP_place_holder1.conf             | -                                                  | dd/mm/yyyy    | -        |
-CRISP_place_holder2.conf             | -                                                  | dd/mm/yyyy    | -        |
-
-## CRISP Genie Scripts ##
-Similarly, Document information about CRISP SECI Genie scripts here.
 
 ## CRISP Notes ##
 CRISP has the following specialist panels:

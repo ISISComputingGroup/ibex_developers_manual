@@ -30,7 +30,30 @@ example, by being copied onto instruments). Do not share your **private** key. T
 is additionally encrypted using your selected password.
 :::
 
-## Setting up SSH agent
+{#keeper_ssh}
+## Keeper
+
+To avoid having to copy and paste your passphrase every time, you can use [Keeper](https://ukri.sharepoint.com/sites/thesource/SitePages/Keeper-Password-Manager.aspx) to store your passwords and SSH keys.
+
+If you want to use Keeper (you'll need the desktop client for this, _not_ the browser plugin) for storing your SSH keys, and not have local plain text copies on your machine, you can do so. 
+
+This is done by following [this guide](https://docs.keeper.io/en/keeperpam/privileged-access-manager/ssh-agent#activating-the-ssh-agent) with your public key, private key and passphrase filled in. 
+
+You may need to [turn the `OpenSSH` agent off](https://docs.keeper.io/en/keeperpam/privileged-access-manager/ssh-agent#windows-note-on-ssh-agent-conflicts) if it's on your machine - see if `ssh-agent` is running in your services in task manager. 
+
+It would also be a good idea to change the vault timeout to something relatively short to minimise scope of access for when the SSH keys are available. 
+
+### SSH works and prompts to use passphrase, but git doesn't show the prompt
+ If `ssh git@github.com` works fine, your SSH key has been added to Github and `ssh` is using it.  
+
+You may need to set the `GIT_SSH` environment variable to wherever your ssh executable is, as git might try and use its own ssh executable which doesn't seem to work with Keeper. `where ssh` will tell you where this is. 
+
+{#manual_ssh_agent}
+## Manually Setting up SSH agent
+
+```{note}
+Ignore this section if you followed {ref}`the section on setting up keeper as your ssh agent<keeper_ssh>`.
+```
 
 In a powershell window, run the following commands:
 ```powershell
@@ -59,7 +82,7 @@ To connect via SSH to an instrument, use:
 ssh spudulike@NDXINST
 ```
 
-This will prompt you on each connection for the passphrase to unlock your SSH key, this is the
+(If you aren't [using Keeper](#keeper_ssh)) This will prompt you on each connection for the passphrase to unlock your SSH key, this is the
 password you set earlier for your personal SSH key. You will not be prompted for an
 account password; your key is sufficient to grant you access.
 
@@ -72,7 +95,7 @@ run a command as a privileged user.
 :::
 
 Typing the password to unlock your SSH key for each instrument would be tedious.
-To avoid this, we can **temporarily** add the key to the SSH agent:
+To avoid this, we can either [use Keeper](#keeper_ssh), or **temporarily** add the key to the SSH agent:
 
 ```
 ssh-add

@@ -44,7 +44,7 @@ Database disc space is taken up by tables stored in `C:\Instrument\Var\mysql\dat
 Run the script in:
 
 ```
-<public share>\ibex_utils\installation_and_upgrade\truncate_database.bat
+\\isis\shares\ISIS_Experiment_Controls_Public\ibex_utils\installation_and_upgrade\truncate_database.bat
 ```
 
 Note that you may need the full name of the public share root.
