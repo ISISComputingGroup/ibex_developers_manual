@@ -39,21 +39,19 @@ If you want to use Keeper (you'll need the desktop client for this, _not_ the br
 
 This is done by following [this guide](https://docs.keeper.io/en/keeperpam/privileged-access-manager/ssh-agent#activating-the-ssh-agent) with your public key, private key and passphrase filled in. 
 
-In `Settings -> Developer`, enable the "SSH Agent" which will add your keys, without needing to enter the passphrases, when the keeper vault is unlocked.
-
-Ignore the section below as you don't need to manually set up an SSH agent.
-
 You may need to [turn the `OpenSSH` agent off](https://docs.keeper.io/en/keeperpam/privileged-access-manager/ssh-agent#windows-note-on-ssh-agent-conflicts) if it's on your machine - see if `ssh-agent` is running in your services in task manager. 
 
-### Troubleshooting
+### SSH works and prompts to use passphrase, but git doesn't show the prompt
+ If `ssh git@github.com` works fine, your SSH key has been added to Github and `ssh` is using it.  
 
-#### SSH works and prompts to use passphrase, but git doesn't show the prompt
- If `ssh git@github.com` works fine, your SSH key has been added to Github, so that's a good start. 
+You may need to set the `GIT_SSH` environment variable to wherever your ssh executable is, as git might try and use its own ssh executable which doesn't seem to work with Keeper. `where ssh` will tell you where this is. 
 
-You may need to set the `GIT_SSH` environment variable to wherever your git installation is as git might try and use its own ssh executable which doesn't seem to work with Keeper. `where ssh` will tell you where this is. 
-
-
+{#manual_ssh_agent}
 ## Manually Setting up SSH agent
+
+```{note}
+Ignore this section if you followed {ref}`the section on setting up keeper as your ssh agent<keeper_ssh>`.
+```
 
 In a powershell window, run the following commands:
 ```powershell
