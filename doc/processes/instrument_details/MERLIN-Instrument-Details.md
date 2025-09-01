@@ -5,9 +5,6 @@ This page collects information that will be useful for the implementation of the
 ## Background & Timeline ##
 Merlin is a high count rate, medium energy resolution, direct geometry chopper spectrometer on TS1 at ISIS. The [MERLIN](https://www.isis.stfc.ac.uk/Pages/Merlin.aspx) web page describes the background to the instrument.
 
-## Control System ##
-MERLIN will migrate from the SECI control system to the IBEX control system.
-
 ## MERLIN Equipment ##
 The equipment listed below is used on MERLIN. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).
 

@@ -4,9 +4,6 @@ This page collects information that will be useful for the implementation of the
 ## Background & Timeline ##
 SURF is a reflectometer on TS1, used primarily for liquid interface research. The [SURF](https://www.isis.stfc.ac.uk/Pages/SURF.aspx) web page describes the background to the instrument.
 
-## Control System ##
-It is proposed that SURF will migrate from the SECI control system to the IBEX control system in time for Cycle 2018/04.
-
 ## SURF Equipment ##
 The equipment listed below is used on SURF. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).
 

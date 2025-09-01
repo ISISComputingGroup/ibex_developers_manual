@@ -4,9 +4,6 @@ This page collects information that will be useful for the implementation of the
 ## Background & Timeline ##
 GEM is a diffractometer instrument at ISIS, on TS1. The [GEM](http://www.isis.stfc.ac.uk/instruments/gem/gem2467.html) web page describes the background to the instrument.
 
-## Control System ##
-GEM will migrate from the SECI control system to the IBEX control system in summer 2017.  During the summer 2017 shutdown, new jaws will be installed on GEM.
-
 ## GEM Equipment ##
 The equipment listed below is used on GEM. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).
 
@@ -98,7 +95,6 @@ Furnaces are controlled via a temperature controller (e.g. Eurotherm), so nothin
 [see Collimator note](#gem_noteCollimator)
 
 ## GEM SECI Configs ##
-Document information about GEM SECI configs here.
 
 Configuration Name                                        | Sub-Configurations                                             | Last Accessed | Required |
 ----------------------------------------------------------|----------------------------------------------------------------|---------------|----------|

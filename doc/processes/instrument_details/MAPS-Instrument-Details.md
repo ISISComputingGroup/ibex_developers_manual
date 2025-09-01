@@ -5,9 +5,6 @@ This page collects information that will be useful for the implementation of the
 ## Background & Timeline ##
 MAPS is a chopper spectrometer on TS1 at ISIS. The [MAPS](http://www.isis.stfc.ac.uk/instruments/maps/) web page describes the background to the instrument.
 
-## Control System ##
-MAPS will migrate from the SECI control system to the IBEX control system.
-
 ## MAPS Equipment ##
 The equipment listed below is used on MAPS. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).
 

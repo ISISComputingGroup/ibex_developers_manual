@@ -113,7 +113,7 @@ Should be followed by the hall identifier. We could use `HA:TS1:*` etc, or be mo
 Sub domain is full instrument name e.g GEM. If we wish to distinguish the instrument “front end” from the rest, could use `*:FE` sub-domain
 
 - `IN:GEM:*`: Prefix for all variables related to GEM instrument
-- `IN:GEM:SB:*`: Where to record short SECI block (short/friendly) names if we use them
+- `IN:GEM:SB:*`: Where to record block (short/friendly) names if we use them
 - `IN:GEM:MOT:*`: Motion control equipment - see below
 - `IN:GEM:VAC:*`: Vacuum equipment
 - `IN:GEM:CS:*`: Variables related to instrument control system software - see below

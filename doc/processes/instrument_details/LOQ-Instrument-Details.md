@@ -6,9 +6,6 @@ LOQ is a time-of-flight SANS instrument instrument at ISIS, on TS1. The [LOQ](ht
 
 It has 3 collimation apertures (only A2 is computer-controlled), 4 monitors (insertion/removal of M3 is computer-controlled), and 2 detectors (an ORDELA He-3 MWPC 'main' detector and a annular 4-module 'high-angle' scintillator detector, _neither of which move!_). _There are no jaw sets on LOQ._
 
-## Control System ##
-LOQ will migrate from the SECI control system to the IBEX control system in time for Cycle 2018/04.
-
 ## LOQ Equipment ##
 The equipment listed below is used on LOQ. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. as necessary).
 

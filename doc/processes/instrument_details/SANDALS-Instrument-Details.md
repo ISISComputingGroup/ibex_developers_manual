@@ -4,9 +4,6 @@ This page collects information that will be useful for the implementation of the
 ## Background & Timeline ##
 SANDALS is a diffractometer instrument at ISIS, on TS1. The [SANDALS](https://www.isis.stfc.ac.uk/Pages/sandals.aspx) web page describes the background to the instrument.
 
-## Control System ##
-SANDALS will migrate from the SECI control system to the IBEX control system in January 2018.
-
 ## SANDALS Equipment ##
 The equipment listed below is used on SANDALS. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).
 

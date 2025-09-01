@@ -4,9 +4,6 @@ This page collects information that will be useful for the implementation of the
 ## Background & Timeline ##
 CRISP is a reflectometer instrument at ISIS, on TS1. The [CRISP](https://www.isis.stfc.ac.uk/Pages/CRISP.aspx) web page describes the background to the instrument.
 
-## Control System ##
-CRISP will migrate from the SECI control system to the IBEX control system in MMMMMMMM YYYY.
-
 ## CRISP Equipment ##
 The equipment listed below is used on CRISP. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).
 

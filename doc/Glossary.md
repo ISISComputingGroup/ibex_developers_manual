@@ -177,7 +177,7 @@ The journal parser is a program that runs as part of the end run processes. It l
 
 ## [LabVIEW](/system_components/LabVIEW)
 
-**Laboratory Virtual Instrument Engineering Workbench**.  A graphical programming language in which the device drivers for [SECI](#seci) are written.
+**Laboratory Virtual Instrument Engineering Workbench**.  A graphical programming language in which the device drivers for [SECI](#seci) were written. A small number of drivers still use LabVIEW, despite SECI having been retired.
 
 ## [LeWIS](https://github.com/DMSC-Instrument-Data/lewis)
 
@@ -189,7 +189,7 @@ A named abstraction for a variable setting, e.g. the macro is PORT, referenced a
 
 ## Mini-Inst
 
-A term used to describe an instrument which uses components from both the [SECI](#seci) and [IBEX](#ibex) control systems.  For example, an [IOC](#ioc) wrapped with a [VI](#vi) on a [SECI](#seci) instrument (using [CALab](#calab)).
+A term used to describe an instrument which runs a minimal set of IBEX services, as opposed to a full IBEX installation.
 
 ## [Momentum Slits](specific_iocs/motor_extensions/jaws/Barndoors-and-Momentum-Slits-on-MUON-Front-End)
 

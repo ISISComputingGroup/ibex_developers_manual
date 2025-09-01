@@ -6,9 +6,6 @@ CHIPIR is a neutron instrument dedicated to the irradiation of microelectronics 
 
 It was originally intended that IBEX should be piloted on CHIPIR, but commissioning of the instrument has taken longer than expected and, therefore, this idea has been shelved.  Nevertheless, there is no reason why IBEX cannot be installed on CHIPIR at some future date.
 
-## Control System ##
-CHIPIR currently uses the SECI control system.  It will migrate to the IBEX control system at a convenient date (yet to be decided).
-
 ## CHIPIR Equipment ##
 The equipment listed below is used on CHIPIR. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).
 

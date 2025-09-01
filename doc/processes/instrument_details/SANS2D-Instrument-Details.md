@@ -8,20 +8,6 @@ Images of SANS2D equipment can be found here [SANS2D equipment](https://github.c
 
 The SANS2D instrument scientists have provided a description of the [instrument beamline](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/SANS2D/Beam_line_descriptors(Sarah%20and%20Najet).docx) and some [schematic drawings](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/SANS2D/Sans2d_drawing_for%20_IBEX(Sarah%20and%20Najet).pptx).
 
-## Mini-IBEX on SANS2D ##
-This section contains relating to the mini-IBEX server on SANS2D.  This information can be deleted once SANS2D has migrated to a full IBEX server.
-
-SANS2D is a SECI instrument, but uses the IBEX interactions for dealing with the CAEN HV.
-As such, it has some setup which is not automated, but is needed to function correctly.
-
-If NDXSANS2D is restarted, then, you will need to run start_inst (the version of IBEX is still currently that old, as the CAEN hasn't changed in that time). This should run the reduced version of the start_inst code, but it does kill SECI as well as everything else. After this SECI can be restarted.
-
-If the HVCAEN_01 IOC doesn't automatically start, then either use the console to connect and start the IOC, or use the reset comms button on the CAEN VI which will start the IOC via the console in the background.
-
-
-## Control System ##
-SANS2D will migrate from the SECI control system to the IBEX control system in MMMMMMMM YYYY.
-
 ## SANS2D Equipment ##
 The equipment listed below is used on SANS2D. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).
 
