@@ -99,25 +99,3 @@ LET has the following specialist systems:
    * LET has two rotation stages;
    1. A McLennan rotation stage (same as MERLIN, used with CCRs & Orange Cryostats))
    1. A McLennan-Newport rotation stage (used with the 9T Magnet)
-
-## LET SECI Configs ##
-LET has a number of SECI configurations.  Equivalent IBEX configs for the following combinations of equipment are required:
-   * Eurotherm (for Cryostat or CCR) + rotation stage
-   * Eurotherm (for Cryostat or CCR) + ORC + rotation stage
-   * Eurotherm (for Cryostat or CCR) + dilution fridge (Triton) + rotation stage
-   * Eurotherm (for Cryostat or CCR) + dilution fridge (Triton)+ ORC + rotation stage
-   * Eurotherm (for Cryostat or CCR) + dilution fridge (Heliox) + rotation stage
-   * Eurotherm (for Cryostat or CCR) + dilution fridge (Heliox)+ ORC + rotation stage
-   * 9T Magnet + McLennan-Newport rotation stage
-
-## LET Genie Scripts ##
-LET has a number of instrument specific Genie scripts. The key scripts to be migrated to genie_python are:
-
-Script| Purpose | Notes | 
------------- | ------------- | -------------------------------------------
-`park_choppers`| It parks the choppers, of course | Needed because LET has 4 choppers
-`set_ei5` | Sets chopper speed/phase | This is the LET version of `set_ei`.  It is **not** the same as `set_ei` used on other excitations instruments.  It would be helpful if `set_ei5` could be extended to better support vetoes and wiring tables.  Ignore the older versions `set_ei1` - `set_ei4`.
-`mono` | | 
-
-On LET user scripts are usually created by modifying an old user script.  Create a template genie_python script (based on an old user script) which can be used in future.
-
