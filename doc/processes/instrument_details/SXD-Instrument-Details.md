@@ -114,15 +114,4 @@ SXD has the following specialist panels/systems:
 
 SXD has the following devices under motion control:
 1. goniometer
-1. XYZ stage
 
-## SXD SECI Configs ##
-Document information about SXD SECI configs here.
-
-Configuration Name                     | Sub-Configurations                                 | Last Accessed | Required |
----------------------------------------|----------------------------------------------------|---------------|----------|
-SXD_place_holder1.conf                 | -                                                  | dd/mm/yyyy    | -        |
-SXD_place_holder2.conf                 | -                                                  | dd/mm/yyyy    | -        |
-
-## SXD Genie Scripts ##
-Similarly, Document information about SXD SECI Genie scripts here.
