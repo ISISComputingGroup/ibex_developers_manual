@@ -39,7 +39,7 @@ There is a section on each below as well as how to set the communication setting
 {#mercury_itc_setup}
 #### Setup
 
-To activate a card you must set the related IOC macro (note that this is different from in SECI where there was a separate VI to talk to each individual card e.g. Mercury_1_Temp_4 to talk to the 4th card as a temperature card). The following macros set the <I> for the possible IOC slot:
+To activate a card you must set the related IOC macro. The following macros set the <I> for the possible IOC slot:
 
 | Macro | IOC Name | 
 | ----  | -------- | 
