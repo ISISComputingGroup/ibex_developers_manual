@@ -30,7 +30,20 @@ example, by being copied onto instruments). Do not share your **private** key. T
 is additionally encrypted using your selected password.
 :::
 
-## Setting up SSH agent
+{#keeper_ssh}
+## Keeper
+
+To avoid having to copy and paste your passphrase every time, you can use [Keeper](https://ukri.sharepoint.com/sites/thesource/SitePages/Keeper-Password-Manager.aspx) to store your passwords.
+
+If you want to use Keeper (you'll need the desktop client for this, _not_ the browser plugin) for storing your SSH keys, and not have local plaintext copies on your machine, you can do so. 
+
+This is done by adding your newly-generated key to keeper (with the `SSH key` record type) with your public key, private key and passphrase filled in. 
+
+In `Settings -> Developer`, enable the "SSH Agent" which will add your keys, without needing to enter the passphrases, when the keeper vault is unlocked.
+
+Ignore the section below as you don't need to manually set up an SSH agent. 
+
+## Manually Setting up SSH agent
 
 In a powershell window, run the following commands:
 ```powershell
@@ -59,7 +72,7 @@ To connect via SSH to an instrument, use:
 ssh spudulike@NDXINST
 ```
 
-This will prompt you on each connection for the passphrase to unlock your SSH key, this is the
+(If you aren't [using Keeper](#keeper_ssh)) This will prompt you on each connection for the passphrase to unlock your SSH key, this is the
 password you set earlier for your personal SSH key. You will not be prompted for an
 account password; your key is sufficient to grant you access.
 
@@ -72,7 +85,7 @@ run a command as a privileged user.
 :::
 
 Typing the password to unlock your SSH key for each instrument would be tedious.
-To avoid this, we can **temporarily** add the key to the SSH agent:
+To avoid this, we can either [use Keeper](#keeper_ssh), or **temporarily** add the key to the SSH agent:
 
 ```
 ssh-add
