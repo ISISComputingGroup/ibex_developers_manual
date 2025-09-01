@@ -1,11 +1,10 @@
 # HRPD
 
 This page collects information that will be useful for the implementation of the IBEX control system on HRPD.
-
 ## Background & Timeline ##
 HRPD, the High Resolution Powder Diffractometer is an instrument on TS1 at ISIS.  It is the highest resolution neutron powder diffractometer of its type in the world.  The [HRPD](http://www.isis.stfc.ac.uk/instruments/hrpd/hrpd.html) web page describes the background to the instrument.
 
-HRPD is currentl being rebuilt as HRPD-X
+There is a proposal to re-build HRPD at some point in the next 3-5 years.
 
 ## HRPD Equipment ##
 The equipment listed below is used on HRPD. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).
@@ -103,3 +102,26 @@ See [magnets at ISIS](http://www.isis.stfc.ac.uk/sample-environment/high-magneti
 {#hrpd_noteRamanSpect}
 ##### Note: mini-Raman Spectrometer #####
 1. [B&W Tek i-Raman Plus](http://bwtek.com/products/i-raman-plus/) A Raman Spectrometer is something that HRPD would like to use at a future date (TBD).  See also SXD.
+
+## HRPD SECI Configs ##
+HRPD has numerous heritage SECI configurations only two of which are now used routinely.
+
+1. One is used for day-to-day operation with samples at RT, in cryostats or furnace (`HRPD_Eurotherms_2.conf`).
+1. The second is used with the sample changer (`HRPD_Sample_Changer_new_oct16.conf`).
+
+All located in `C:\\Program Files (x86)\STFC ISIS Facility\SECI\Configurations`
+
+The HRPD team would probably wish to have separate configurations for experiments involving:
+
+1. High-pressure devices (incl. various pressure transducers)
+1. Gas handling
+1. Magnets
+1. In-situ light scattering (laser control, spectrometer data acquisition)
+
+## HRPD Genie Scripts ##
+The critical OpenGenie scripts, for initialisation and focussing, are in `C:\\OG` (duplicated, more or less, in `C:\\scripts\OG`)
+
+HRPD has a large collection of Genie scripts accumulated over the years, each of results from a specific user running a specific operation. A number of editable seed scripts are kept in (`C:\\scripts\keep`).  These might appropriately be converted to genie_python.
+
+## HRPD Notes ##
+Add any notes about special items of equipment, setup or conditions on HRPD that might impact the deployment and configuration of IBEX.
