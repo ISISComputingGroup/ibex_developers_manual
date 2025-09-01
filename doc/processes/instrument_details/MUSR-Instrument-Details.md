@@ -127,17 +127,3 @@ MUSR has the following motion control items:
 
 MUSR also has the following system:
 1. MUON Script Generator (muongui.exe)
-
-## MUSR SECI Configs ##
-Document information about MUSR SECI configs here.
-
-Configuration Name                     | Sub-Configurations                                 | Last Accessed | Required |
----------------------------------------|----------------------------------------------------|---------------|----------|
-EMU_place_holder1.conf                 | -                                                  | dd/mm/yyyy    | -        |
-EMU_place_holder2.conf                 | -                                                  | dd/mm/yyyy    | -        |
-
-## MUSR Genie Scripts ##
-Similarly, Document information about MUSR SECI Genie scripts here.
-
-## MUSR configs from EMU 
-Configurations have been removed that were migrated from SECI + EMU as they are being phased out or have not been in use. Commit `63303d94400cd0270b3c07357a08cbdf5945d8e8` should still contain the configurations before removal. 
