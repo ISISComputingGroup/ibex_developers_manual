@@ -4,9 +4,6 @@ This page collects information that will be useful for the implementation of the
 ## Background & Timeline ##
 WISH is a long-wavelength diffractometer, on TS2. The [WISH](https://www.isis.stfc.ac.uk/Pages/WISH.aspx) web page describes the background to the instrument.
 
-## Control System ##
-WISH has migrated to IBEX from SECI
-
 ## WISH Equipment ##
 The equipment listed below is used on WISH. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).
 
@@ -156,15 +153,3 @@ WISH also tends to borrow things from other instruments. Commonly used equipment
 1. IRIS Baratron Gas cell 
 1. Automatic needle valve - see note on [ticket #6695](https://github.com/ISISComputingGroup/IBEX/issues/6695) for investigation, [ticket #4240](https://github.com/ISISComputingGroup/IBEX/issues/4240) for IOC implementation and [ticket #6777](https://github.com/ISISComputingGroup/IBEX/issues/6777) for OPI. 
 
-## WISH SECI Configs ##
-Document information about WISH SECI configs here.
-
-Note: Most of WISH configs revolve around the WISH base config. This has been created as a component in IBEX and subsequent components for each thing that is added to the WISH base config should be added as components (i.e. the Teslatron, Strain Cell, Rotation stages etc.) 
-
-Configuration Name                     | Sub-Configurations                                 | Last Accessed | Required |
----------------------------------------|----------------------------------------------------|---------------|----------|
-WISH_base.conf                | WISH_base.comp                                                 | 01/07/2021    | -        |
-WISH_base + Oxford Cryostat.conf                | WISH_base.comp,     Oxford - teslatron.comp                                              | ""    | -        |
-
-## WISH Genie Scripts ##
-Similarly, Document information about WISH SECI Genie scripts here.
