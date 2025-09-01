@@ -7,7 +7,7 @@ The [ZOOM](http://www.isis.stfc.ac.uk/instruments/zoom/zoom8060.html) web page d
 The ZOOM shutter is due to open in February 2017 (see Zoom plan 28th May 2016). 
 
 ## Control System ##
-ZOOM will use the IBEX control system.
+ZOOM uses the IBEX control system.
 
 ## ZOOM Equipment ##
 The equipment listed below is to be used on ZOOM. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).
@@ -290,8 +290,7 @@ As used on: [LARMOR](LARMOR-Instrument-Details)<br>
 
 {#zoom_noteHitachi}
 ##### Note: Hitachi #####
-Hitachi L-7100 HPLC pump (no longer supported at ISIS).  ~Can't find L-7100 on [Hitachi web-site](http://www.hitachi-hightech.com/global/about/corporate/group/hhs) (may be obsolete).  Check existing SECI VI for logic and manual: both VI and manual are located here: `C:\LabVIEW Modules\Drivers\Hitachi L-7100`.~
-   * Update (27-06-2019): Hitachi pumps are no longer used.  No longer any need to support them.  See [#3780](https://github.com/ISISComputingGroup/IBEX/issues/3780).
+Hitachi pumps are no longer used.  No longer any need to support them.  See [#3780](https://github.com/ISISComputingGroup/IBEX/issues/3780).
 
 {#zoom_noteHaake}
 ##### Note: Thermo Scientific (Haake) #####
