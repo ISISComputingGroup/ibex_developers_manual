@@ -77,13 +77,5 @@ The temperature control will be handled by a Eurotherm.<br>
 [Project Details](https://stfc365.sharepoint.com/sites/ISISProject-1122) and 
 [Project Plan](https://tasks.office.com/stfc365.onmicrosoft.com/en-US/Home/PlanViews/8bdu_4UTBUeZwF_PB8SLIpYAESGr)
 
-## MARI SECI Configs ##
-MARI has a number of SECI configurations, which need to be migrated.
-
-## MARI Genie Scripts ##
-Critical OpenGenie scripts for initialisation and focussing.
-
-MARI has a number of instrument specific Genie scripts. These have now been migrated to genie_python.
-
 ## MARI Notes ##
 1. MARI does not currently use a script generator, but there is interest in having one in the future.
