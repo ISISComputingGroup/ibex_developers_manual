@@ -5,9 +5,6 @@ This page contains information pertinent to the automation of the Muon Front End
 ## Background & Timeline ##
 The system is due on line September 2016.
 
-## Control System ##
-Whilst the Front End control will be undertaken under IBEX, it must integrate with SECI as well as part of the system is to be used on existing instruments. Some of the IOCs will only be controlled from instrument PCs, whilst in some situations only monitoring will be required.
-
 ## Equipment ##
 | Manufacturer | Model | Type | Connection | Driver | Notes |
 | --- | --- | --- | --- | --- | --- |
