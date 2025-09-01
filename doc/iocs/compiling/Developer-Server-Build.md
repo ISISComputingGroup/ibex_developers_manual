@@ -44,6 +44,9 @@ robocopy "\\isis.cclrc.ac.uk\inst$\Kits$\CompGroup\ICP\developer\zips" "." EPICS
 Note that this pre-allocates the full file space before starting the copy. I found that if I interrupt the copy with Ctrl-C and then type the command again, it picks up where it left off, so it looks hopeful it will handle network connection breaks.
  </details>
 
+After running the `install_developer_build.bat` script, you will need to create `.venv`s for python processes,
+by running the developer update script from [the `ibex_utils` repository](https://github.com/ISISComputingGroup/ibex_utils/tree/master/installation_and_upgrade).
+
 ### Using Files
 
 After copying note that all submodules will be on a detached HEAD. 
