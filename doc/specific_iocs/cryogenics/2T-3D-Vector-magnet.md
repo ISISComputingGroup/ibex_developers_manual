@@ -37,7 +37,7 @@ IP address : DHCP reserved and visible on front screen when connected to ISIS ne
 
 ### Rotation Stage
 
-Standard unit controlled by a Galil axis on both SECI and IBEX instruments.  Details:
+Standard unit controlled by a Galil axis.  Details:
 
 * +- 370 degrees
 * Motor with encoder
