@@ -26,7 +26,6 @@ If you do not have either a D: or O: network drive, then you will need to specif
     - If you want to install a non-default release you need to set the `SUFFIX` variable in the batch file. For example with `x.y.z` being the current release and `hotfix` being the suffix, it will look for the folder `Releases/x.y.z-hotfix`
     - Apart from the below points, just follow instructions - most options should be answered `Y` (yes) to, but if you are unsure on a particular machine ask on technical.
     - Be warned the upgrade runs in 3 steps and so will claim to have finished the upgrade 3 times
-    - Do not remove any SECI icons from the task list if this is not the first time install
 1. Compare screenshots taken earlier to current state
 
 
@@ -65,7 +64,7 @@ installed on NDX computers.
 
 ## Install IBEX for the first time
 :::{note}
-This is unlikely to happen now we've migrated most instruments, and SECI instruments should have a copy of IBEX at the least.
+This is unlikely to happen now we've migrated all instruments from SECI.
 :::
 <details>
 <summary> Click to expand</summary>
