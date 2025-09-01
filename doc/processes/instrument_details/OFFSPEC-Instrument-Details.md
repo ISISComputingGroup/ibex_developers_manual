@@ -83,7 +83,7 @@ Nima Trough | ??? | Trough | ??? | | [see Nima Trough note](#note-nima-trough)
 [KEPCO](http://www.kepcopower.com/bop.htm) | BOP 100-10MG | Bi-Polar Power Supply | RS232 | #187 |[see Kepco note](#note-kepco)
 [KEPCO](http://www.kepcopower.com/bop.htm) | BIT 4886 | I/F card | GPIB, RS-232 |  |[see Kepco note](#note-kepco)
 [KEPCO](http://www.kepcopower.com/bop.htm) | BOP 50-2M-4886 | Bi-Polar Power Supply | RS232 | |[see Kepco note](#note-kepco)
-Delta-Elektronika | SM300-5 | PSU | ??? | | [see Delta Elektronika note](#note-delta-elektronika )
+Delta-Elektronika | SM300-5 | PSU | ??? | | [see Delta Elektronika note](#note-delta-elektronika)
 Thurlby | EX355P | PSU | ??? | | [see Thurlby note](#note-thurlby)
 Thurlby | TGA1240 | Arbitrary Waveform Generator | ??? | | [see Thurlby note](#note-thurlby)
 Thurlby | TSX3510P | PSU | ??? | | [see Thurlby note](#note-thurlby)
@@ -95,18 +95,23 @@ Watson Marlow | 323 | Peristaltic Pump | ??? | | [see Peristaltic Pumps note](#n
 WPI | Aladdin-1000 | Syringe Pump | ??? | | [see Syringe Pumps note](#note-syringe-pumps)
 WPI | SP2xx | Syringe Pump | ??? | | [see Syringe Pumps note](#note-syringe-pumps)
 
+{#note-dae}
 ##### Note: DAE #####
 See multi-detector and single-detector below.
 
+{#note-chopper}
 ##### Note: Choppers #####
 OFFSPEC has a Mk3 chopper.<br>
 
+{#note-jaws}
 ##### Note: Jaws #####
 Provide information about OFFSPEC jaws.
 
+{#note-vacuum}
 ##### Note: Vacuum System #####
 TPG300 support is implemented via [#216](https://github.com/ISISComputingGroup/IBEX/issues/216) and [#2063](https://github.com/ISISComputingGroup/IBEX/issues/2063)
 
+{#note-eurotherm}
 ##### Note: Eurotherm #####
 [Eurotherms](http://www.facilities.rl.ac.uk/isis/computing/ICPdiscussions/OFFSPEC/OFFSPEC_Eurotherms.jpg) are used to control temperature Orange Cryostat, CCR and Furnace devices.
 
@@ -122,6 +127,7 @@ OFFSPEC uses Julabo water baths & re-circulating coolers
 1. [Kepco BIT 4886](http://www.kepcopower.com/bit.htm) is an interface card for Kepco bi-polar ([BOP](http://www.kepcopower.com/bop.htm)) power supplies.
 1. [KEPCO BOP 50-2M-4886 PSU](http://www.kepcopower.com/bophimod.htm).<br>  See also [#188](https://github.com/ISISComputingGroup/IBEX/issues/188) & [#200](https://github.com/ISISComputingGroup/IBEX/issues/200)
 
+{#note-keithley}
 ##### Note: Keithley #####
 1. [Keithley 2400 Series Source Meter](https://uk.tek.com/keithley-source-measure-units/keithley-smu-2400-series-sourcemeter).<br>
 See also tickets [#1826](https://github.com/ISISComputingGroup/IBEX/issues/1826), [#2695](https://github.com/ISISComputingGroup/IBEX/issues/2695), [#2801](https://github.com/ISISComputingGroup/IBEX/issues/2801) and [#3176](https://github.com/ISISComputingGroup/IBEX/issues/3176).
@@ -129,20 +135,24 @@ See also tickets [#1826](https://github.com/ISISComputingGroup/IBEX/issues/1826)
 ##### Note: Hitachi #####
 Hitachi L-7100 HPLC pump (no longer supported at ISIS).  ~Can't find L-7100 on [Hitachi web-site](http://www.hitachi-hightech.com/global/about/corporate/group/hhs (may be obsolete).  Check existing SECI VI for logic and manual.~
 
+{#note-jasco-hplc-pump}
 ##### Note: JASCO HPLC Pump #####
 [JASCO HPLC pump](https://jascoinc.com/products/chromatography/hplc/modules/hplc-pumps/) is a new (for ISIS) model of HPLC pump.
    * See `C:\LabVIEW Modules\Drivers\Jasco PU-4180 HPLC Pump\Documentation` for documentation.
    * See also [#3743](https://github.com/ISISComputingGroup/IBEX/issues/3743) & [#3923](https://github.com/ISISComputingGroup/IBEX/issues/3923)
 
+{#note-knauer}
 ##### Note: Knauer #####
 1. Knauer K-6 Electric Valve Drive.  [Knauer web site](https://www.knauer.net)<br>
    * K-6 model appears to have been superseded.  Check existing SECI VI for logic and manual.
    * Support now implemented (28-03-2019).  See [#3781](https://github.com/ISISComputingGroup/IBEX/issues/3781).
 
+{#note-knauerHPLC}
 ##### Note: Knauer HPLC #####
 Knauer HPLC 1050 [Knauer HPLC 1050 is discontinued.](https://www.knauer.net/en/discontinued-smartline-pump-1050-successor-azura-p-61l/p14161).  Check existing SECI VI for logic and manual.
    1. Support now implemented (04-01-2019).  See [#3262](https://github.com/ISISComputingGroup/IBEX/issues/3262).
 
+{#note-nima-trough}
 ##### Note: Nima Trough #####
 Nima Trough: SECI used a manufacturer supplied VI.  We may need to do the same in IBEX (via lvDCOM).<br>
    * **Note:** NIMA Technologies Ltd now seems to be part of [Biolin Scientific](https://www.biolinscientific.com/ksvnima).<br>
@@ -150,9 +160,11 @@ Nima Trough: SECI used a manufacturer supplied VI.  We may need to do the same i
    * The manufacturer has made additional software available for download.  A copy of this software is located in `\\isis\shares\ISIS_Experiment_Controls\NIMA Trough\Nima_TR8.1.zip`.
    * Support now implemented (25-05-2019).  See [#3783](https://github.com/ISISComputingGroup/IBEX/issues/3783)
 
+{#note-delta-elektronika}
 ##### Note: Delta-Elektronika #####
 1. Delta-Elektronika SM300-5 is a DC power supply.  It is listed on page for [Delta-Elektronika SM1500 series](http://www.delta-elektronika.nl/en/products/dc-power-supplies-1500w-sm1500-series.html) products.
 
+{#note-thurlby}
 ##### Note: Thurlby #####
 [Thurlby Thandar Instruments](https://www.aimtti.com/)
 1. [Thurlby Thandar Instruments EX355P PSU](https://www.aimtti.com/product-category/dc-power-supplies/aim-ex-rseries)
@@ -162,24 +174,29 @@ Nima Trough: SECI used a manufacturer supplied VI.  We may need to do the same i
 1. [Thurlby TGA1240 Arbitrary Waveform Generator](https://www.aimtti.com/product-category/arbitrary-generators/aim-tga1240series)
 1. [Thurlby TSX3510P DC Power Supply](https://www.aimtti.com/product-category/dc-power-supplies/aim-tsxseries)
 
+{#note-oxford-instruments}
 ##### Note: Oxford Instruments #####
 1. Support for OI ITC503 created as part of [#2593](https://github.com/ISISComputingGroup/IBEX/issues/2593)
 1. Support for Mercury Temperature Controller was created as part of [#2840](https://github.com/ISISComputingGroup/IBEX/issues/2840)
 
+{#note-linkam}
 ##### Note: Linkam #####
 There are VIs for this.<br>
 See also [Linkam T95 controller](http://www.linkam.co.uk/t95-system-controllers/) and tickets [#1106](https://github.com/ISISComputingGroup/IBEX/issues/1106), [#1496](https://github.com/ISISComputingGroup/IBEX/issues/1496), [#1509](https://github.com/ISISComputingGroup/IBEX/issues/1509).
 
+{#note-peristaltic-pumps}
 ##### Note: Peristaltic Pumps #####
 1. [Watson Marlow 323 Peristaltic Pump](http://www.watson-marlow.com/gb-en/range/watson-marlow/300-tube-pumps/323d/)
    * Support now implemented (14-08-2019).  See [#3786](https://github.com/ISISComputingGroup/IBEX/issues/3786)
 
+{#note-syringe-pumps}
 ##### Note: Syringe Pumps #####
 1. [WPI Aladdin-1000 Syringe Pump](https://www.wpi-europe.com/products/pumps--microinjection/laboratory-syringe-pumps/al1000-220.aspx)
    * Support now implemented (20-06-2019).  See [#3787](https://github.com/ISISComputingGroup/IBEX/issues/3787)
 1. [WPI SP2xx Syringe Pump](https://www.wpi-europe.com/products/pumps--microinjection/laboratory-syringe-pumps.aspx) - check specific model.
    * Support now implemented (05-07-2018).  See [#3261](https://github.com/ISISComputingGroup/IBEX/issues/3261)
 
+{#note-tektronix}
 ##### Note: Tektronix #####
 1. Tektronix Function Generator: [AFG 3021B](https://www.tek.com/datasheet/afg3000-series)
    * See also [#237](https://github.com/ISISComputingGroup/IBEX/issues/237)
