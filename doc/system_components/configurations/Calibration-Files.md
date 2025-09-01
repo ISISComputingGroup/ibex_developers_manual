@@ -62,12 +62,6 @@ You will then need to push these files to the common config area and update the 
 
 If the common calibration file change and they need updating on all instruments, then you can run the [calibration update script which can be found in ibex utils](https://github.com/ISISComputingGroup/ibex_utils/blob/master/installation_and_upgrade/calibration_files_updater.py)
 
-To update those instruments still on SECI use the folder `...\CompGroup\Calibration Files`:
-
-1. Update files in `Calibration Files\Temperature Sensors\Files`
-1. Run the deployment script in `Calibration Files\Temperature Sensors\Deployment Scripts`. 
-    - There should be 1 error per instrument for deleting the network path
-
 ## Calibration file format
 
 1. First lines start with `# ISIS calibration`.
