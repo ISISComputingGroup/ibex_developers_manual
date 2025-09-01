@@ -71,7 +71,7 @@ A "Beam current" block may not be showing the accelerator beam current, it may b
 
 ## Value shows zero in IBEX but non-zero with `db_access` on MERECKX
 
-If the third column in `params.txt` contains a `z` (e.g. `tz`) then this means that the parameter will be monitored for a stale (non updating) state and if this is detected it will send 0 as the value to IBEX/SECI. At time of writing this had only been requested for the decoupled methane, sending 0 when the value is uncertain means they will go into a WAITING state as they run control on methane temperature and it is important that they are not collecting data when a methane charge-change happens. In future the value could be EPICS alarmed, but for SECI instruments we need to send 0
+If the third column in `params.txt` contains a `z` (e.g. `tz`) then this means that the parameter will be monitored for a stale (non updating) state and if this is detected it will send 0 as the value to IBEX. At time of writing this had only been requested for the decoupled methane, sending 0 when the value is uncertain means they will go into a WAITING state as they run control on methane temperature and it is important that they are not collecting data when a methane charge-change happens. In future the value could be EPICS alarmed, but for SECI instruments we needed to send 0.
 
 You may be able to confirm a value is not updating by running `db_access` on it a few times with a reasonable time delay in-between, but some values are quite stable or fluctuate only a bit so this may be difficult to determine. You can view the typical value and variation in an accelerator parameter by following the links on values at [http://beamlog.nd.rl.ac.uk/status.xml](http://beamlog.nd.rl.ac.uk/status.xml) 
 
