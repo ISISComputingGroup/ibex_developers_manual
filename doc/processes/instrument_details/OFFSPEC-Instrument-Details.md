@@ -11,9 +11,6 @@ This page collects information that will be useful for the implementation of the
 
 Bench moves so that angle is correct this requires motors at front and back to change positions and the bench to slide in and out. This maintains the distance from the detector to the sample in an arc.
 
-## Control System ##
-OFFSPEC will migrate from the SECI control system to the IBEX control system in MMMMMMMM YYYY.
-
 ## OFFSPEC Equipment ##
 The equipment listed below is used on OFFSPEC. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).
 
@@ -64,7 +61,6 @@ The equipment listed below is used on OFFSPEC. Please add new information (e.g. 
 <details>
   <summary>Older information:</summary>
 
-```
 Manufacturer | Model | Type | Connection | Driver | Notes |
 ------------ | ------------- | ------------- | ------------- | ------------- | -------------------------------------------
 ISIS | DAE 2 | Detector Electronics | Ethernet | | [see DAE note](#note-dae)
@@ -217,16 +213,6 @@ OFFSPEC has the following devices under motion control:
 1. point detector
 1. Polarizer
 1. reflectometer sample stack
-
-## OFFSPEC SECI Configs ##
-Document information about OFFSPEC SECI configs here.
-
-Configuration Name                     | Sub-Configurations                                 | Last Accessed | Required |
----------------------------------------|----------------------------------------------------|---------------|----------|
-OFFSPEC_place_holder1.conf             | -                                                  | dd/mm/yyyy    | -        |
-OFFSPEC_place_holder2.conf             | -                                                  | dd/mm/yyyy    | -        |
-
-```
 
 </details>
 
