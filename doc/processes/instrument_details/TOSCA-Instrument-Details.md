@@ -4,9 +4,6 @@ This page collects information that will be useful for the implementation of the
 ## Background & Timeline ##
 TOSCA is an indirect geometry spectrometer, on TS1. The [TOSCA](https://www.isis.stfc.ac.uk/Pages/TOSCA.aspx) web page describes the background to the instrument.
 
-## Control System ##
-TOSCA will migrate from the SECI control system to the IBEX control system in late October 2018 (prior to Cycle 2018/03).
-
 ## TOSCA Equipment ##
 The equipment listed below is used on TOSCA. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).
 
@@ -80,13 +77,3 @@ TOSCA has the following specialist panels/systems:
 
 TOSCA has the following devices under motion control:
 1. XY beam scanner (2 axis GALIL motor - this GALIL moves about and is not permanently on TOSCA).
-
-## TOSCA SECI Configs ##
-Document information about TOSCA SECI configs here.
-
-Configuration Name                     | Sub-Configurations                                 | Last Accessed | Required |
----------------------------------------|----------------------------------------------------|---------------|----------|
-Standard + Rotation Stage.conf               | -                                                  | 25/10/2018    | -        |
-
-## TOSCA Genie Scripts ##
-Similarly, Document information about TOSCA SECI Genie scripts here.
