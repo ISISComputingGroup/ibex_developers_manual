@@ -6,9 +6,6 @@ The [ZOOM](http://www.isis.stfc.ac.uk/instruments/zoom/zoom8060.html) web page d
 
 The ZOOM shutter is due to open in February 2017 (see Zoom plan 28th May 2016). 
 
-## Control System ##
-ZOOM uses the IBEX control system.
-
 ## ZOOM Equipment ##
 The equipment listed below is to be used on ZOOM. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).
 
