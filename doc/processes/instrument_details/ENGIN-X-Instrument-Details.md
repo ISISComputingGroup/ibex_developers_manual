@@ -123,7 +123,7 @@ The Stress Rig is driven from its own PC (fitted with a GPIB card).  IBEX commun
 
 {#enginx_noteHuber}
 ##### Note: Huber #####
-2-degree of freedom Eulerian cradle.  The Huber can be driven from a Galil.  Gareth has created a VI to control this via SECI.
+2-degree of freedom Eulerian cradle.  The Huber can be driven from a Galil. 
 
 {#enginx_noteTheodolite}
 ##### Note: Theodolite #####
@@ -163,11 +163,3 @@ ENGIN-X are consider whether it would be useful to use a high-performance GigE c
 ## ENGIN-X Notes ##
 * For each run, ENGIN-X generates .log and .txt files from the NeXus data file.  The .txt files are "3-column" files (as opposed to the "2-column" data files used on other instruments.  We need to determine if these "3-column" files are still required in the future and, if so, document how these "3-column" files are generated.
 * OpenGENIE is currently used to analyse ENGIN-X data.  In due course, the ENGIN-X team should consider migrating to Mantid.
-
-## ENGIN-X SECI Configs ##
-Document information about ENGIN-X SECI configs here.
-
-## ENGIN-X Genie Scripts ##
-Similarly, Document information about ENGIN-X SECI Genie scripts here.
-* ENGIN-X currently has one large master OpenGENIE script, which is used in (almost?) all runs.  This script has to be migrated to genie_python (or to a library of genie_python methods).
-* ENGIN-X also uses a position compensation script (to compensate for the movement of the target position as the sample is stretched on the stress rig).

@@ -92,7 +92,7 @@ Both the OMEGA™ iBTHX and OMEGA™ PAC devices (see above) have proved unrelia
 {#loq_note-vacuum-system}
 ##### Note: Vacuum System #####
 1. There are 2 vacuum gauges on LOQ. Both are TPG300's. One is atop the Galil at the sample position monitoring the collimation, and the other is integrated into the detector tank pumping system.
-2. Only the detector tank TPG300 is currently read back in SECI. There are two sensors, one at the pump, and one on the tank.
+2. Only the detector tank TPG300 was read back in SECI. There are two sensors, one at the pump, and one on the tank.
 3. **It is highly desirable to have the collimation TPG300 integrated into Ibex too.**
 4. TPG300 support is implemented via [#216](https://github.com/ISISComputingGroup/IBEX/issues/216) and [#2063](https://github.com/ISISComputingGroup/IBEX/issues/2063)
 
@@ -199,40 +199,4 @@ LOQ has the following devices under motion control:
    * The sample changer moves in a grid fashion - left/right translation across the beam and up/down vertical translation.  Sample changer positions can be set directly in mm, or  via preset positions (defined in a file, which is edited regularly).  The preset positions use several naming conventions, according to the type of sample rack in use.
 3. Transmission Monitor (M3)
    * moves in/out of the beam.
-
-## LOQ SECI Configs ##
-Document information about LOQ SECI configs here.
-
-Configuration Name                     | Sub-Configurations                                 | Last Accessed | Required |
----------------------------------------|----------------------------------------------------|---------------|----------|
-LOQ_NORMAL_25Hz_Cryostat.conf | -                                                      | dd/mm/yyyy    | Y          |
-LOQ_NORMAL_25Hz_DurhamRack | -                                                         | dd/mm/yyyy    | Y          |
-LOQ_NORMAL_25Hz_Flowcell.conf | -                                                      | dd/mm/yyyy    | see note 1 |
-LOQ_NORMAL_25Hz_Furnace.conf | -                                                       | dd/mm/yyyy    | Y          |
-LOQ_NORMAL_25Hz_Huber_stages.conf | -                                                  | dd/mm/yyyy    | Y          |
-LOQ_NORMAL_25Hz_Magnet.conf | -                                                        | dd/mm/yyyy    | Y          |
-LOQ_NORMAL_25Hz_PressuceCell.conf | -                                                  | dd/mm/yyyy    | N          |
-LOQ_NORMAL_25Hz_PressureCell.conf | -                                                  | dd/mm/yyyy    | Y          |
-LOQ_NORMAL_25Hz_Rheometer.conf | -                                                     | dd/mm/yyyy    | Y          |
-LOQ_NORMAL_25Hz_SampleChanger.conf | -                                                 | dd/mm/yyyy    | Y          |
-LOQ_NORMAL_25Hz_SampleChanger_eurotherm_controller.conf | -                            | dd/mm/yyyy    | Y          |
-LOQ_NORMAL_25Hz_SampleChanger_eurotherm_controller_2.conf | -                          | dd/mm/yyyy    | ?          |
-LOQ_NORMAL_25Hz_SampleChanger_NOLIVEVIEW.conf | -                                      | dd/mm/yyyy    | see note 2 |
-LOQ_NORMAL_25Hz_Shear.conf | -                                                         | dd/mm/yyyy    | see note 1 |
-LOQ_NORMAL_25Hz_StopFlow.conf | -                                                      | dd/mm/yyyy    | Y          |
-LOQ_NORMAL_25Hz_TJump.conf | -                                                         | dd/mm/yyyy    | Y          |
-LOQ_NORMAL_25Hz_UnileverCell.conf | -                                                  | dd/mm/yyyy    | Y |
-LOQ_QUIET.conf | -                                                                     | dd/mm/yyyy    | see note 3 |
-
-##### Note: 1 #####
-Need to establish what devices these relate to!
-
-##### Note: 2 #####
-This is LOQ_NORMAL_25Hz_SampleChanger.conf without the second time regime. Occasionally used with non-standard detector mapping.
-
-##### Note: 3 #####
-Configures LOQ for running on internal clock.
-
-## LOQ Genie Scripts ##
-Similarly, Document information about LOQ SECI Genie scripts here.
 

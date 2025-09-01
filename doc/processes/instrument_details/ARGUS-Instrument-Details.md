@@ -1,11 +1,9 @@
 # ARGUS
 
 This page collects information that will be useful for the implementation of the IBEX control system on ARGUS.
+
 ## Background & Timeline ##
 ARGUS is a general purpose muon spectrometer at ISIS, on TS1. The [ARGUS](https://www.isis.stfc.ac.uk/Pages/argus.aspx) web page describes the background to the instrument.
-
-## Control System ##
-ARGUS will migrate from the SECI control system to the IBEX control system in MMMMMMMM YYYY.
 
 ## ARGUS Equipment ##
 The equipment listed below is used on ARGUS. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).
@@ -112,31 +110,3 @@ Low temperature experiments?[Neocera LTC-21 Manual](http://www.submm.caltech.edu
 Support for McLennan devices is well established (see [#1099](https://github.com/ISISComputingGroup/IBEX/issues/1099) and [#1100](https://github.com/ISISComputingGroup/IBEX/issues/1100) and subsequent tickets.
    * muon instruments don't use motors in their sample environment
 
-## ARGUS SECI Configs ##
-Document information about ARGUS SECI configs here.
-
-Configuration Name                     | Sub-Configurations                                 | Last Accessed | Required |
----------------------------------------|----------------------------------------------------|---------------|----------|
-ARGUS_place_holder1.conf             | -                                                  | dd/mm/yyyy    | -        |
-ARGUS_place_holder2.conf             | -                                                  | dd/mm/yyyy    | -        |
-
-## ARGUS Genie Scripts ##
-Similarly, Document information about ARGUS SECI Genie scripts here.
-
-## ARGUS Notes ##
-ARGUS has the following specialist panels:
-1. serial port commands - individual commands via serial port (cf. SDTEST)
-1. ARGUS [zero field controller](/specific_iocs/magnets/Zero-field-controller)
-1. CHRONUS Danfysik
-1. MUON [Zero field controller (magnetselected.vi)](/specific_iocs/magnets/Zero-field-controller)
-1. ARGUS Leiden Dilution Fridge
-1. ARGUS Danfysik
-1. ARGUS [Zero field controller](/specific_iocs/magnets/Zero-field-controller)
-
-## Obsolete ARGUS Equipment & SECI Configs ##
-The equipment listed below is referenced in SECI config files on ARGUS. It is highly likely that the config files are no longer relevant (they are old, dating from 2011 or 2012), therefore, the references are to devices that are obsolete or simply not used on ARGUS.
-
-Manufacturer | Model | Type | Connection | Driver | Notes |
------------- | ------------- | ------------- | ------------- | ------------- | -------------------------------------------
-GALIL | [DMC2280](http://www.galilmc.com/products/dmc-22x0.php) | Motion Controller | Ethernet | [EPICS](http://www.aps.anl.gov/epics/modules/manufacturer.php#Galil%20Motion%20Control) | | 
-McLennan | PM600 | Motion Controller | RS-232 | [EPICS](http://www.aps.anl.gov/epics/modules/manufacturer.php#McLennan%20Servo%20Supplies) | [see McLennan note](#argus_note-mclennan)

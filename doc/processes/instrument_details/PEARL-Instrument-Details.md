@@ -137,14 +137,3 @@ This is a weird `Servostep` box which contains a Galil 4000 series inside. It lo
 Compare with similar systems on GEM and POLARIS.
 
 There are some inaccessible front end jaws on PEARL controlled by the Galil, these are not used but must be kept open for operation. They are homed to the forward limit and seem to typically be kept about 4/5mm inside that position for running. This should be kept in mind when migrating the Galil.
-
-## PEARL SECI Configs ##
-Document information about PEARL SECI configs here.
-
-Configuration Name                     | Sub-Configurations                                 | Last Accessed | Required |
----------------------------------------|----------------------------------------------------|---------------|----------|
-PEARL_place_holder1.conf               | -                                                  | dd/mm/yyyy    | -        |
-PEARL_place_holder2.conf               | -                                                  | dd/mm/yyyy    | -        |
-
-## PEARL Genie Scripts ##
-Similarly, Document information about PEARL SECI Genie scripts here.

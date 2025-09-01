@@ -5,9 +5,6 @@ This page collects information that will be useful for the implementation of the
 ## Background & Timeline ##
 POLREF is a general purpose polarised neutron reflectometer, on TS2. The [POLREF](https://www.isis.stfc.ac.uk/Pages/polref.aspx) web page describes the background to the instrument.
 
-## Control System ##
-POLREF will migrate from the SECI control system to the IBEX control system in MMMMMMMM YYYY.
-
 ## POLREF Equipment ##
 The equipment listed below is used on POLREF. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).
 
@@ -75,9 +72,7 @@ Eurotherms are used to control temperature Orange Cryostat, CCR and Furnace devi
 ##### Note: Water Baths #####
 1. Julabo Water Bath (apparently the following Julabos: WB23 )
    * consult the [Julabo commands](/specific_iocs/temp_controllers/julabo_commands.xlsx) spreadsheet for specific details of which set of commands is used by these water baths.
-1. Haake Water Bath (no longer supported at ISIS)
-   1. ~Haake N6 Water Bath.  Haake has now been taken over by [ThermoFisher](https://www.thermofisher.com/uk/en/home/life-science/lab-equipment/water-baths-circulators-chillers.html).  N6 model may be obsolete.  Check existing SECI VI for logic and manual~.
-1. ~See also [Water Baths](https://www.isis.stfc.ac.uk/Pages/Water-Baths.aspx) list~
+1. Haake Water Baths are no longer supported at ISIS
 
 ##### Note: KEPCO #####
 1. [Kepco BOP 100-10MG PSU](http://www.kepcopower.com/bophimod.htm).
@@ -89,7 +84,7 @@ Eurotherms are used to control temperature Orange Cryostat, CCR and Furnace devi
 See also tickets [#1826](https://github.com/ISISComputingGroup/IBEX/issues/1826), [#2695](https://github.com/ISISComputingGroup/IBEX/issues/2695), [#2801](https://github.com/ISISComputingGroup/IBEX/issues/2801) and [#3176](https://github.com/ISISComputingGroup/IBEX/issues/3176).
 
 ##### Note: Hitachi #####
-Hitachi L-7100 HPLC pump (no longer supported at ISIS).  ~Can't find L-7100 on [Hitachi web-site](http://www.hitachi-hightech.com/global/about/corporate/group/hhs (may be obsolete).  Check existing SECI VI for logic and manual.~
+Hitachi pumps are no longer supported at ISIS
 
 ##### Note: JASCO HPLC Pump #####
 [JASCO HPLC pump](https://jascoinc.com/products/chromatography/hplc/modules/hplc-pumps/) is a new (for ISIS) model of HPLC pump.  Jasco pumps are replacing the old Hitachi pumps.
@@ -98,10 +93,10 @@ Hitachi L-7100 HPLC pump (no longer supported at ISIS).  ~Can't find L-7100 on [
 
 ##### Note: Knauer #####
 1. Knauer K-6 Electric Valve Drive.  [Knauer web site](https://www.knauer.net)<br>
-   * K-6 model appears to have been superseded.  Check existing SECI VI for logic and manual.
+   * K-6 model appears to have been superseded. 
 
 ##### Note: Knauer HPLC #####
-Knauer HPLC 1050 [Knauer HPLC 1050 is discontinued.](https://www.knauer.net/en/discontinued-smartline-pump-1050-successor-azura-p-61l/p14161).  Check existing SECI VI for logic and manual.
+Knauer HPLC 1050 [Knauer HPLC 1050 is discontinued.](https://www.knauer.net/en/discontinued-smartline-pump-1050-successor-azura-p-61l/p14161).
 
 ##### Note: LakeShore #####
 1. [Model 327](https://www.lakeshore.com/products/Cryogenic-Temperature-Controllers/Pages/default.aspx).  Model 327 is not listed.  Is it an obsolete model, or should it be Model-372?
@@ -151,13 +146,3 @@ POLREF has the following devices under motion control:
 **Note:** (from original POLREF notes (may now be obsolete - check with Kathryn))
 Note for when the time comes - check with the instrument scientist if the calibration function for the Danfysik is still used (allows for specific hysteresis curves to use between the limits in use), if it is, make sure we capture this functionality again - likely to be some SNL or a genie-python script might be able to do it instead.
 
-## POLREF SECI Configs ##
-Document information about POLREF SECI configs here.
-
-Configuration Name                     | Sub-Configurations                                 | Last Accessed | Required |
----------------------------------------|----------------------------------------------------|---------------|----------|
-POLREF_place_holder1.conf              | -                                                  | dd/mm/yyyy    | -        |
-POLREF_place_holder2.conf              | -                                                  | dd/mm/yyyy    | -        |
-
-## POLREF Genie Scripts ##
-Similarly, Document information about POLREF SECI Genie scripts here.

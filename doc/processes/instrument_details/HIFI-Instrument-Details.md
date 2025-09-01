@@ -4,9 +4,6 @@ This page collects information that will be useful for the implementation of the
 ## Background & Timeline ##
 HIFI is high magnetic-field muon instrument at ISIS, on TS1. The [HIFI](https://www.isis.stfc.ac.uk/Pages/HIFI.aspx) web page describes the background to the instrument.
 
-## Control System ##
-HIFI will migrate from the SECI control system to the IBEX control system in MMMMMMMM YYYY.
-
 ## HIFI Equipment ##
 The equipment listed below is used on HIFI. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).
 
@@ -65,8 +62,6 @@ There appears to be no driver for the Aeroflex 2023A in `C:\LabVIEW Modules\`. H
    * no information on specific Julabo Water Baths - maybe HIFI uses water baths from the pool?
    * consult the [Julabo commands](/specific_iocs/temp_controllers/julabo_commands.xlsx) spreadsheet for specific details of which set of commands are used individual water baths.
 1. Haake Water Bath is now obsolete (replaced by Julabo, according to instrument scientist)
-   * ~Haake Water Bath (apparently the following Haake water bath: WB9)~
-   * ~Haake N6 Water Bath.  Haake has now been taken over by [ThermoFisher](https://www.thermofisher.com/uk/en/home/life-science/lab-equipment/water-baths-circulators-chillers.html).  N6 model may be obsolete.  Check existing SECI VI for logic and manual (see `C:\LabVIEW Modules\Drivers\Haake N6`).~
 1. See also [Water Baths](https://www.isis.stfc.ac.uk/Pages/Water-Baths.aspx) list
 
 {#hifi_note-neocera}
@@ -103,20 +98,7 @@ See also `C:\LabVIEW Modules\Drivers\Caen`.
 ##### Note: Metrolab #####
 1. [PT2025 NMR Precision Teslameter](https://www.metrolab.com/products/pt2025/)
    * The PT2025 is now obsolete. Replaced by model PT2026.
-   * See `C:\LabVIEW Modules\Instruments\HIFI\Metrolab PT2025 NMR` for SECI VI
    * See `\\isis\shares\ISIS_Experiment_Controls\Metrolab PT2025 Teslameter` for the technical manual.
-
-
-## HIFI SECI Configs ##
-Document information about HIFI SECI configs here.
-
-Configuration Name                     | Sub-Configurations                                 | Last Accessed | Required |
----------------------------------------|----------------------------------------------------|---------------|----------|
-HIFI_place_holder1.conf             | -                                                  | dd/mm/yyyy    | -        |
-HIFI_place_holder2.conf             | -                                                  | dd/mm/yyyy    | -        |
-
-## HIFI Genie Scripts ##
-Similarly, Document information about HIFI SECI Genie scripts here.
 
 ## HIFI Notes ##
 HIFI has the following specialist panels:
@@ -132,6 +114,3 @@ HIFI has the following specialist panels:
 1. HIFI Metrolab PT2025 (NMR Readout)
 1. MUON FrontEnd Magnet Monitoring
 1. MUON Jaws
-
-HIFI also has the following system:
-1. MUON Script (generator)

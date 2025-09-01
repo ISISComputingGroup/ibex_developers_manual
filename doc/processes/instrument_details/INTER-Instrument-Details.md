@@ -80,7 +80,7 @@ See also tickets [#1826](https://github.com/ISISComputingGroup/IBEX/issues/1826)
 
 {#inter_noteHitachi}
 ##### Note: Hitachi #####
-Hitachi L-7100 HPLC pump (no longer supported at ISIS).  ~Can't find L-7100 on [Hitachi web-site](http://www.hitachi-hightech.com/global/about/corporate/group/hhs (may be obsolete).  Check existing SECI VI for logic and manual.~
+Hitachi pumps are no longer supported at ISIS
 
 {#inter_note-linkam}
 ##### Note: Linkam #####
@@ -90,12 +90,12 @@ See also [Linkam T95 controller](http://www.linkam.co.uk/t95-system-controllers/
 {#inter_note-knauer}
 ##### Note: Knauer #####
 Knauer K-6 Electric Valve Drive.  [Knauer web site](https://www.knauer.net)<br>
-K-6 model appears to have been superseded.  Check existing SECI VI for logic and manual.
+K-6 model appears to have been superseded.  
    1. Support now implemented (28-03-2019).  See [#3781](https://github.com/ISISComputingGroup/IBEX/issues/3781).
 
 {#inter_note-knauer-HPLC}
 ##### Note: Knauer HPLC #####
-Knauer HPLC 1050 [Knauer HPLC 1050 is discontinued.](https://www.knauer.net/en/discontinued-smartline-pump-1050-successor-azura-p-61l/p14161).  Check existing SECI VI for logic and manual.
+Knauer HPLC 1050 [Knauer HPLC 1050 is discontinued.](https://www.knauer.net/en/discontinued-smartline-pump-1050-successor-azura-p-61l/p14161). 
    1. Support now implemented (04-01-2019).  See [#3262](https://github.com/ISISComputingGroup/IBEX/issues/3262).
 
 {#inter_note-jasco-hplc-pump}
@@ -115,9 +115,8 @@ Knauer HPLC 1050 [Knauer HPLC 1050 is discontinued.](https://www.knauer.net/en/d
 
 {#inter_note-nima-trough}
 ##### Note: Nima Trough #####
-Nima Trough: SECI uses a manufacturer supplied VI (see `C:\LabVIEW Modules\Drivers\Nima Trough`).  We may need to do the same in IBEX (via lvDCOM).
+Nima Trough: 
    * **Note:** NIMA Technologies Ltd now seems to be part of [Biolin Scientific](https://www.biolinscientific.com/ksvnima).<br>
-   * The NIMA trough is used regularly on SURF.  The manufacturer supplied VI is used to view graphs showing information about thin films.
    * The manufacturer has made additional software available for download.  A copy of this software is located in `\\isis\shares\ISIS_Experiment_Controls\NIMA Trough\Nima_TR8.1.zip`.
    * Support now implemented (25-05-2019).  See [#3783](https://github.com/ISISComputingGroup/IBEX/issues/3783)
 
@@ -165,11 +164,10 @@ Thurlby EX355P PSU - see [#155](https://github.com/ISISComputingGroup/IBEX/issue
 
 ##### Note: Vacuum Chamber #####
 1.  Vacuum chamber – specialist setup using HV and vacuum with some safety trips integrated (instrument scientists says this is be a high priority to enable in IBEX).  
-   * Check SECI VI.
    * Is the vacuum chamber related to the INTER High Voltage VI (listed below)?
 
 ## INTER Mirror Guides ##
-INTER is due to get new mirror guides (prior to Cycle 2019/01).  These will be operational (under SECI) before INTER is migrated to IBEX.  There is a [sketch showing the three mirror guide sections](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/INTER/Defined%20Axis%20and%20Rotations.pdf) (MG1 - MG3).  MG1 is fixed; it requires no control.  MG2 and MG3 are moveable and, therefore, do require control.
+INTER is due to get new mirror guides (prior to Cycle 2019/01).  There is a [sketch showing the three mirror guide sections](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/INTER/Defined%20Axis%20and%20Rotations.pdf) (MG1 - MG3).  MG1 is fixed; it requires no control.  MG2 and MG3 are moveable and, therefore, do require control.
 
 There will be, essentially, 3 modes of operation:
    1. **no bounce:** all three sections centred in height around the incident beam height  to allow straight through beam on sample
@@ -178,27 +176,6 @@ There will be, essentially, 3 modes of operation:
 
 In modes 2 and 3 several beamline components need to track: intermediate slit (S1b), slit 2, sample monitor, sample height, slit 3 and detector.
 
-In May 2019, SECI was updated to handle the new mirror guides.  IBEX will need to replicate the new functionality in SECI.  The is a document [describing the SECI changes](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/INTER/INTER%20SECI%20changes.docx).
-
-## INTER SECI Configs ##
-Document information about INTER SECI configs here.
-
-Configuration Name                   | Sub-Configurations                                 | Last Accessed | Required |
--------------------------------------|----------------------------------------------------|---------------|----------|
-INTER_place_holder1.conf             | -                                                  | dd/mm/yyyy    | -        |
-INTER_place_holder2.conf             | -                                                  | dd/mm/yyyy    | -        |
-
-## INTER Genie Scripts ##
-Similarly, Document information about INTER SECI Genie scripts here.
-
-## INTER Notes ##
-INTER has the following specialist panels:
-1. INTER Front Panel
-1. INTER KEYENCE LK-G
-1. INTER Galil DIO
-1. INTER High Voltage
-1. OFFSPEC Piezo Stage
-1. SURF Galil DIO
 
 INTER has the following devices under motion control:
 1. FOM
