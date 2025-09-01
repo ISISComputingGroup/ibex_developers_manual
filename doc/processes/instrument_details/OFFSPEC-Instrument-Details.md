@@ -122,6 +122,7 @@ OFFSPEC uses Julabo water baths & re-circulating coolers
 1. [Julabo FL300](https://www.julabo.com/en/products/recirculating-coolers/fl300-recirculating-cooler)
 1. Julabo Water Bath (which models?)
 
+{#note-Kepco}
 ##### Note: KEPCO #####
 1. [Kepco BOP 100-10MG PSU](http://www.kepcopower.com/bophimod.htm).<br>  See also [#3005](https://github.com/ISISComputingGroup/IBEX/issues/3005)
 1. [Kepco BIT 4886](http://www.kepcopower.com/bit.htm) is an interface card for Kepco bi-polar ([BOP](http://www.kepcopower.com/bop.htm)) power supplies.
@@ -210,10 +211,10 @@ OFFSPEC has the following specialist panels/systems:
 1. OFFSPEC Delft System
 1. OFFSPEC ISIS Sample Environment
 1. OFFSPEC Linkam
-   * [see Linkam note](#noteLinkam)
+   * [see Linkam note](#note-linkam)
 1. OFFSPEC Newport Piezo Stage
 1. OFFSPEC BH (KEPCO 100-10MG & Keithley 2400)
-   * [see Kepco note](#noteKepco) & [see Keithley note](#noteKeithley)
+   * [see Kepco note](#note-Kepco) & [see Keithley note](#note-keithley)
 1. OFFSPEC Delft RF
 1. OFFSPEC PI Motion Stage
 1. POLREF Danfysik
