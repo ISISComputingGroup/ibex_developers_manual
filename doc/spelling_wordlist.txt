@@ -228,6 +228,7 @@ Ecorr
 efxclipse
 EGU
 Eilidh
+Elektronika
 enablement
 endian
 ENGINX
