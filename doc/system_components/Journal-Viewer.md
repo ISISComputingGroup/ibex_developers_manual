@@ -30,4 +30,4 @@ Contains information on the IBEX journal viewer. This feature is intended to pro
     - Note that you need to prefix your instrument with "NDW" in the last argument as this will get stripped by the script
 
 ## Repopulate Journals following truncation
-To add journal entries back on an instrument following a truncation (e.g. if there is the following nagios error: `EPICS MYSQL Journal Entries` or `ERROR: empty journal table`),  run `[group public share]\JournalParser\add_journal_entries.bat` on the instrument. 
+To add journal entries back on an instrument following a truncation (e.g. if there is the following nagios error: `EPICS MYSQL Journal Entries` or `ERROR: empty journal table`),  run `\\isis\shares\ISIS_Experiment_Controls_Public\JournalParser\add_journal_entries.bat` on the instrument. 
