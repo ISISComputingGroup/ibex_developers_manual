@@ -69,7 +69,7 @@ If something does appear to have gone wrong with this service (e.g. values are n
 
 A "Beam current" block may not be showing the accelerator beam current, it may be showing the effective beam current from the DAE. Blocks read from the accelerator will all be referring to global PV names starting AC: and TG: so if the block refers to an IN: it will be something on the local instrument. The DAE:BEAMCURRENT value is the effective DAE beam current, but if the dae is not counting (SETUP, WAITING, PAUSED) then this value will be zero. If the DAE is vetoing this value will vary between 0 and something else depending on what % of frames are being vetoed. If the chopper is being run at a lower frequency, the value will be lower too as the DAE is seeing less pulses and hence a lower effective beam current.    
 
-## Value shows zero in IBEX but non-zero with `db_access` on MERECKX
+## Value shows zero in IBEX but non-zero with `db_access` on MERCKX
 
 If the third column in `params.txt` contains a `z` (e.g. `tz`) then this means that the parameter will be monitored for a stale (non updating) state and if this is detected it will send 0 as the value to IBEX. At time of writing this had only been requested for the decoupled methane, sending 0 when the value is uncertain means they will go into a WAITING state as they run control on methane temperature and it is important that they are not collecting data when a methane charge-change happens. In future the value could be EPICS alarmed, but for SECI instruments we needed to send 0.
 

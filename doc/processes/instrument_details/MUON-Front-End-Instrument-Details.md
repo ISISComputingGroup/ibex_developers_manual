@@ -23,7 +23,3 @@ The system is due on line September 2016.
 {#muonfe_noteMomentumSlits}
 ## Barndoors and Momentum Slits ##
 The barn doors and momentum slits control the muon beam delivered to the 3 muon instruments: HIFI, muSR and EMU.  The control of these devices is described on the [Barndoors & Momentum-Slits](/specific_iocs/motor_extensions/jaws/Barndoors-and-Momentum-Slits-on-MUON-Front-End) page.
-
-{#muonfe_noteMotion}
-##### Note: Motion #####
-There is a project relating to the motion on the South Side Muons in progress, this information may be out of date

@@ -106,7 +106,3 @@ An evacuated furnace cell for measuring resistivity.  Controlled by Eurotherms a
 {#polaris_noteHVCentreStick}
 ##### Note: CS155 Centre Stick #####
 Not possible to control this device via software.  It connects to the [Spellman](#polaris_noteSpellman) HV-PS.
-
-s currently used on POLARIS here.
-
-## POLARIS Notes ##
