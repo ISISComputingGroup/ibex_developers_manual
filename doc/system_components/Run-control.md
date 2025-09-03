@@ -41,6 +41,9 @@ detector count rate exceeds a limit.
 
 ## Troubleshooting
 
+{#force_runcontrol_resync}
+### Force a re-sync of runcontrol
+
 If the system gets stuck in a WAITING state with no blocks being outside runcontrol limits, 
 then you can force a resync of the system with
 ```

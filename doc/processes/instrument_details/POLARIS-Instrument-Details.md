@@ -106,27 +106,3 @@ An evacuated furnace cell for measuring resistivity.  Controlled by Eurotherms a
 {#polaris_noteHVCentreStick}
 ##### Note: CS155 Centre Stick #####
 Not possible to control this device via software.  It connects to the [Spellman](#polaris_noteSpellman) HV-PS.
-
-## POLARIS SECI Configs ##
-Document information about POLARIS SECI configs here.
-
-Configuration Name                                        | Sub-Configurations                                             | Last Accessed | Required |
-----------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|---------------|----------|
- POLARIS Base + Hydrothermal                                | Chopper, Vacuum, Jaws, Eurotherms Test                         | 03/02/2017 | -
- POLARIS Base + Dilution Fridge                             | Chopper, Vacuum, Jaws, Oxford - Dilution Fridge                | 15/12/2016 | -
- POLARIS Base + Sample Changer + Eurotherms_matt            | Chopper, Vacuum, Jaws, Eurotherms Test, Sample Changer         | 12/12/2016 | -
- POLARIS Base + Sample Changer + Eurotherms + Heliox        | Chopper, Vacuum, Jaws, Eurotherms Test, Sample Changer, Heliox | 19/09/2016 | -
- POLARIS Base                                               | Chopper, Vacuum, Jaws                                       | 30/11/2015 | -
- POLARIS Base + Sample Changer + Eurotherms                 | Chopper, Vacuum, Jaws, Eurotherms Test, Sample Changer         | 18/11/2015 | -
- POLARIS Base + Sample Changer + Eurotherms + ITC_matt      | Chopper, Vacuum, Jaws, Eurotherms Test, Sample Changer         | 25/06/2015 | -
- POLARIS Base + Eurotherms                                  | Chopper, Vacuum, Jaws, Eurotherms Test                         | 05/06/2014 | -
- POLARIS Base + Keithley (Voltage) + Eurotherms             | Chopper, Vacuum, Jaws, Eurotherms Test, Keithley (Voltage)     | 02/06/2014 | -
- POLARIS Base + Keithley + Eurotherms                       | Chopper, Vacuum, Jaws, Eurotherms Test, Keithley               | 25/03/2013 | -
- delete                                                     | -                                                              | 01/10/2012 | -
- POLARIS Base + Sample Changer                              | Chopper, Vacuum, Jaws, Sample Changer                          | 14/03/2012 | -
- test                                                       | -                                                              | 10/11/2011 | -
-
-## POLARIS Genie Scripts ##
-Similarly, document information about SECI Genie scripts currently used on POLARIS here.
-
-## POLARIS Notes ##

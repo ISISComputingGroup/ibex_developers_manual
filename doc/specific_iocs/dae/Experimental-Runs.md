@@ -36,9 +36,7 @@ This is from a problem see on IRIS.
 
 ## Experiment stuck in `Waiting` state after beginning a run
 
-This issue was encountered on Iris during the transition between Seci and Ibex. SECI was in a waiting state prior to shutdown, then IBEX was left in this waiting state. Usually SECI run control is transient i.e. set by Open GENIE and cleared on a SECI restart, so just restarting SECI would usually clear it. The is now a new PV that you can write to from IBEX to force a resync of run control
-
-    caput %MYPVPREFIX%CS:RC:SYNC:SP 1
+There is now a new PV that you can write to from IBEX to [force a resync of run control](#force_runcontrol_resync).
 
 ## Experimental Files not being Archived and so not Appearing in the Journal
 
@@ -51,4 +49,4 @@ If this has failed:
 To archive files end a run.
 Should you have runs ending and read only files, then check on the archive in `INST\instrument\logs\cycle_nn_n`, the log files there will provide some extra information. If the file `exception_copy.log` doesn't exist, or hasn't been updated for a long time, then the script above isn't running the code to clean up old files, or it has hung.
 
-* Problems with the end of run script can be diagnosed by looking at the `post_command_<day>.log'` file in the ICP logs area on the instrument. The ICP log files (in the same area) may also be instructive to check for other issues - for example, if the files are not being set read-only.
+* Problems with the end of run script can be diagnosed by looking at the `post_command_<day>.log` file in the ICP logs area on the instrument. The ICP log files (in the same area) may also be instructive to check for other issues - for example, if the files are not being set read-only.

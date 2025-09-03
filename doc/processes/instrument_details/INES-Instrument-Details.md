@@ -4,9 +4,6 @@ This page collects information that will be useful for the implementation of the
 ## Background & Timeline ##
 INES is a powder diffractometer instrument at ISIS, on TS1. The [INES](https://www.isis.stfc.ac.uk/Pages/ines.aspx) web page describes the background to the instrument.
 
-## Control System ##
-INES will migrate from the SECI control system to the IBEX control system in late October 2018 (prior to Cycle 2018/03).
-
 ## INES Equipment ##
 The equipment listed below is used on INES. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).
 
@@ -29,7 +26,7 @@ INES uses DAE-2.  INES has 2 fixed monitors.
 {#ines_noteShutter}
 ##### Note: Shutter #####
 INES shares a shutter with TOSCA.  INES needs to know the status of the TOSCA shutter.<br>
-INES also has a secondary shutter.  The status of the secondary shutter cannot currently (September 2018) be read (it requires the installation of an appropriate electronic device to provide a signal).  At the present time, INES has no need to monitor the secondary shutter via IBEX (for the same reasons, the secondary shutter cannot be monitored with SECI).
+INES also has a secondary shutter.  The status of the secondary shutter cannot currently (September 2018) be read (it requires the installation of an appropriate electronic device to provide a signal).  At the present time, INES has no need to monitor the secondary shutter via IBEX.
 
 {#ines_noteChopper}
 ##### Note: Choppers #####
@@ -60,36 +57,7 @@ Eurotherms are used to control temperature in the vacuum tank.
 See also tickets [#1826](https://github.com/ISISComputingGroup/IBEX/issues/1826), [#2695](https://github.com/ISISComputingGroup/IBEX/issues/2695), [#2801](https://github.com/ISISComputingGroup/IBEX/issues/2801) and [#3176](https://github.com/ISISComputingGroup/IBEX/issues/3176).
 1. Keithley 2410 is used only rarely (for neutron instrumentation projects)
 
-## INES SECI Configs ##
-Document information about INES SECI configs here.
-
-Configuration Name                     | Sub-Configurations                                 | Last Accessed | Required |
----------------------------------------|----------------------------------------------------|---------------|----------|
-5_Axis                                 | -                                                  | 14/02/2011    | -        |
-AncientCharm                           | -                                                  | 14/02/2011    | -        |
-Blank                                  | -                                                  | 18/02/2011    | -        |
-Eurotherms & Keithley                  | Keithley                                           | 06/06/2014    | Yes      |
-Eurotherms                             | -                                                  | 19/05/2014    | Yes      |
-Goniometer                             | -                                                  | 01/07/2011    | Yes      |
-INES Base                              | -                                                  | 28/04/2014    | Yes      |
-practice                               | -                                                  | 14/02/2011    | -        |
-Sample_Changer                         | -                                                  | 01/07/2011    | Yes      |
-TEST                                   | -                                                  | 19/08/2010    | -        |
-Tomography                             | -                                                  | 24/05/2011    | -        |
-
-## INES Genie Scripts ##
-Similarly, Document information about INES SECI Genie scripts here.
-
 ## INES Notes ##
-INES has the following specialist panels:
-1. INES IV
-   1. This is a SECI VI, customised for INES.  We should check what information it displays that is not already included in the standard IBEX dashboard.  A new OPI may be required.
-1. GEM Jaws
-   1. **Note:** GEM has been upgraded and now has new jaws.  "GEM Jaws" may refer to the old GEM jaws VI.
-   1. Check if the behaviour of the standard jaws OPI meets the needs of INES.
-1. Walter SE `Rotacq2` 
-   1. This refers to an old rotation stage, which is no longer used.
-
 INES has the following devices under motion control:
 1. Goniometer
    1. INES has 2 goniometers: one large, one small.

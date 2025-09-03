@@ -72,13 +72,5 @@ Eurotherms in use on MAPS.  Used to control temperature of all top-loading CCRs,
 ##### Note: Neocera #####
 Neocera is used only occasionally.  [Neocera LTC-21 Manual](http://www.submm.caltech.edu/~sharc/technical/LTC-21%20manual.pdf)
 
-## MAPS SECI Configs ##
-MAPS has a number of SECI configurations, which need to be migrated.
-
-## MAPS Genie Scripts ##
-Critical OpenGenie scripts for initialisation and focussing.
-
-MAPS has a number of instrument specific Genie scripts. These need to be migrated to genie_python.
-
 ## MAPS Notes ##
 Add any notes about special items of equipment, setup or conditions on MAPS that might impact the deployment and configuration of IBEX.

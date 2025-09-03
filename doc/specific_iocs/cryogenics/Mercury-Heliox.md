@@ -155,7 +155,7 @@ Example ramp (260mK-1.8K in steps of 20mK) demonstrating these instabilities (no
 
 ![](mercury_heliox_ramp_example.PNG)
 
-There is nothing the driver does in either SECI or IBEX which can affect the stability. Consult cryogenics to check outer cryostat performance, PID parameters, flow rates etc.
+There is nothing the driver does in IBEX which can affect the stability. Consult cryogenics to check outer cryostat performance, PID parameters, flow rates etc.
 
 ### Regeneration starts when I set temperature setpoint = 0
 

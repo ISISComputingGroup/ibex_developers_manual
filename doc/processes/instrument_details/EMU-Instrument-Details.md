@@ -4,9 +4,6 @@ This page collects information that will be useful for the implementation of the
 ## Background & Timeline ##
 EMU is a new 96-detector muon spin rotation spectrometer which is optimised for zero field and longitudinal field measurements at ISIS, on TS1. The [EMU](https://www.isis.stfc.ac.uk/Pages/EMU.aspx) web page describes the background to the instrument.
 
-## Control System ##
-EMU will migrate from the SECI control system to the IBEX control system in MMMMMMMM YYYY.
-
 ## EMU Equipment ##
 The equipment listed below is used on EMU. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).
 
@@ -119,16 +116,7 @@ Aeroflex has been through a complicated series of sales in recent years.  The Ae
 
 There appears to be no driver for the Aeroflex 2023A in `C:\LabVIEW Modules\`.  However, there is a driver for an Aeroflex 2030 in `C:\LabVIEW Modules\Drivers\Aeroflex 2030`.
 
-## EMU SECI Configs ##
-Document information about EMU SECI configs here.
 
-Configuration Name                 | Sub-Configurations                                 | Last Accessed | Required |
------------------------------------|----------------------------------------------------|---------------|----------|
-EMU_place_holder1.conf             | -                                                  | dd/mm/yyyy    | -        |
-EMU_place_holder2.conf             | -                                                  | dd/mm/yyyy    | -        |
-
-## EMU Genie Scripts ##
-Similarly, Document information about EMU SECI Genie scripts here.
 ### Booster heater issues
 
 Scientists initially raised concerns about intermittent invalid alarms and it appears this is due to communication failures to a mercury (see [#6286](https://github.com/ISISComputingGroup/IBEX/issues/6286)).

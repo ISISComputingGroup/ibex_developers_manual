@@ -72,15 +72,3 @@ OSIRIS has the following devices under motion control:
    * single axis, "IN/OUT" device moving between two setpoints.
 1. Sample Changer
    * **N.B.**  For the avoidance of doubt: OSIRIS does not currently (September 2018) have a sample changer.  There have been discussions about building one but, for the foreseeable future, there is no sample changer.
-
-
-## OSIRIS SECI Configs ##
-Over the years, OSIRIS has built up a significant collection of SECI configs. Not all of them are current (some may no longer be used, or used only infrequently). We will need to investigate how to convert them to IBEX configs.  The config files are located in the folder `SECI\Configurations\` on the control server and have the extension `.conf`.  Sub-configuration files have the extension `.comp` (component).  The files with numbers as extensions (`.1`,`.2`,`.3`,etc.) are backups of the configuration and sub-configuration files.  The current list of OSIRIS configs is listed on [trac](https://trac.isis.rl.ac.uk/ICP/wiki/OSIRIS).
-
-
-## OSIRIS Genie Scripts ##
-Similarly, OSIRIS has built up a significant collection of genie scripts over the years. Again, many scripts are old and may no longer be used regularly. Most runs on OSIRIS are controlled via scripts. There will be a need to convert some of these scripts to genie-python, but probably not all.
-
-UPDATE (11/01/2016) Franz has explained how the scripts are used: Usually, each time a user arrives to perform an experiment, they would create a new script by modifying an existing one and alter the appropriate parameters. There is NO common set of OSIRIS specific scripts and/or routines that are included in every new script.  Therefore a conversion of OSIRIS scripts to Genie-Python couldn't be done en-masse. Although a few examples could be carefully chosen for users to work from.
-
-The current list of OSIRIS genie scripts is listed on [trac](https://trac.isis.rl.ac.uk/ICP/wiki/OSIRIS).

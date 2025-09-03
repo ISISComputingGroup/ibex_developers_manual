@@ -65,7 +65,7 @@ See also tickets [#1826](https://github.com/ISISComputingGroup/IBEX/issues/1826)
 
 {#sxd_note-kammrath-and-weiss}
 ##### Note: Kammrath and Weiss #####
-1. The Kammrath-Weiss tensile stress rig is controlled from a dedicated laptop running the manufacturer's software.  SECI communicates with the PC to send/read values to/from the manufacturer's software.
+1. The Kammrath-Weiss tensile stress rig is controlled from a dedicated laptop running the manufacturer's software.  IBEX communicates with the PC to send/read values to/from the manufacturer's software using [`LVREMOTE`](https://github.com/ISISComputingGroup/EPICS-LVREMOTE).
 1. [Kammrath and Weiss](https://www.kammrath-weiss.com/en/tensile-compression-modules/).<br>
    * See also ticket [#2681](https://github.com/ISISComputingGroup/IBEX/issues/2681)
 
@@ -114,15 +114,4 @@ SXD has the following specialist panels/systems:
 
 SXD has the following devices under motion control:
 1. goniometer
-1. XYZ stage
 
-## SXD SECI Configs ##
-Document information about SXD SECI configs here.
-
-Configuration Name                     | Sub-Configurations                                 | Last Accessed | Required |
----------------------------------------|----------------------------------------------------|---------------|----------|
-SXD_place_holder1.conf                 | -                                                  | dd/mm/yyyy    | -        |
-SXD_place_holder2.conf                 | -                                                  | dd/mm/yyyy    | -        |
-
-## SXD Genie Scripts ##
-Similarly, Document information about SXD SECI Genie scripts here.

@@ -6,9 +6,6 @@ EMMA is an instrument at ISIS, on TS1 and used primarily for test purposes. The 
 
 Instrument scientist contact is **Jeffrey Sykora**.
 
-## Control System ##
-EMMA will migrate from the SECI control system to the IBEX control system in summer 2017.
-
 ## EMMA Equipment ##
 The equipment listed below is used on EMMA. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).
 
@@ -67,7 +64,7 @@ The Fermi chopper control crates (located in the EMMA rack) look like this:
 ##### Note: Fermi Chopper Lift #####
 The Fermi chopper is lifted into position by a Galil controlled motor.<br>
 The Fermi chopper must not be operated when it is not in the beam (i.e. in the parked/upper position)
-There is a hardware interlock to prevent the Fermi chopper from being operated in the parked position.  This interlock is implemented in the Galil controller, via a Galil program (described in the [EMMA chopper lifter - Handover](https://stfc365.sharepoint.com/:w:/r/sites/ISISExperimentControls/ICP%20Discussions/EMMA/EMMA%20chopper%20lifter%20-%20Handover.docx?d=wafc19324e3354636b5ab702a140668aa&csf=1&web=1&e=A6BnDe) document).  In SECI a simple VI is used to provide a GUI, which passes parameters to the Galil program, so that the user can control the Fermi Chopper lift.  IBEX should provide a similar capability via an IOC and OPI.
+There is a hardware interlock to prevent the Fermi chopper from being operated in the parked position.  This interlock is implemented in the Galil controller, via a Galil program (described in the [EMMA chopper lifter - Handover](https://stfc365.sharepoint.com/:w:/r/sites/ISISExperimentControls/ICP%20Discussions/EMMA/EMMA%20chopper%20lifter%20-%20Handover.docx?d=wafc19324e3354636b5ab702a140668aa&csf=1&web=1&e=A6BnDe) document).  
 
 {#emma_noteJaws}
 ##### Note: Jaws #####
@@ -81,13 +78,11 @@ The vacuum system ([TPG300](https://stfc365.sharepoint.com/:i:/r/sites/ISISExper
 {#emma_noteYZTable}
 ##### Note: Y-Z Table #####
 Driven by Galil controlled motors.
-In SECI, Y-Z Table has its own GUI.  No particular reason for this; it could be merged with the Rotation Stage UI.<br>
 [Photograph of Y-Z table](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/EMMA/EMMA_Y_Z_Table_2017_06_05.jpg).
 
 {#emma_noteRotationStage}
 ##### Note: Rotation Stage #####
 Driven by Galil controlled motors.
-In SECI, Rotation Stage has its own GUI.  No particular reason for this; it could be merged with the Y-Z Table UI.<br>
 [Photograph of Rotation Stage](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/EMMA/EMMA_Rotation_Stage_2017_06_05.jpg).  It sits on top of the Y-Z table when in use.
 
 {#emma_noteCAENHT}
@@ -116,14 +111,6 @@ For the future - it's on the wish list.  Desired models are:
 1. [Tektronix Oscilloscope DPO7000](http://www.tek.com/oscilloscope/dpo7000-digital-phosphor-oscilloscope)
 1. [Tektronix Oscilloscope MSO4054](http://www.tek.com/oscilloscope/mdo4000c-mixed-domain-oscilloscope)
 
-## EMMA SECI Configs ##
-Document information about EMMA SECI configs here.
-
-Configuration Name                                        | Sub-Configurations                                             | Last Accessed | Required |
-----------------------------------------------------------|----------------------------------------------------------------|---------------|----------|
-
-## EMMA Genie Scripts ##
-Similarly, Document information about EMMA SECI Genie scripts here.
 
 ## EMMA Notes ##
 Add any notes about special items of equipment, setup or conditions on EMMA that might impact the deployment and configuration of IBEX.
