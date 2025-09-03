@@ -36,7 +36,7 @@ This is from a problem see on IRIS.
 
 ## Experiment stuck in `Waiting` state after beginning a run
 
-There is now a new PV that you can write to from IBEX to [force a resync of run control](system_components/Run-control.html#troubleshooting)
+There is now a new PV that you can write to from IBEX to [force a resync of run control](#force_runcontrol_resync).
 
 ## Experimental Files not being Archived and so not Appearing in the Journal
 

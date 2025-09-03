@@ -32,4 +32,7 @@ On LOQ a separate :DC: instance is also created, this calls a procedure to put i
 
 ## Troubleshooting
 
+{#force_runcontrol_resync}
+### Force a re-sync of runcontrol
+
 If the system gets stuck in a WAITING state with no blocks being outside of runcontrol limits, then you can force a resync of the system with e.g. for OFFSPEC `caput IN:OFFSPEC:CS:RC:SYNC:SP 1`
