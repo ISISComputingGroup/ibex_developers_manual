@@ -47,4 +47,4 @@ If a config menu set called `defaults` is present, then these values are automat
 * Go into the `Load and save settings...` screen
 * Check these is a set named `defaults` listed as the first line
 * If there isn't, type in the name `defaults` and if all the threshold values on the other screen are correct press `save` 
-* this will create a `vmeconfig_defaults.sav` snapshot file in the autosave area for caenvme_01 IOC to use on restart
+* this will create a `vmeconfig_defaults.sav` snapshot file in the autosave area for `CAENVME_01` IOC to use on restart
