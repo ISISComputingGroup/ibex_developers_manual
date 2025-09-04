@@ -40,7 +40,7 @@ configMenu docs: https://epics.anl.gov/bcda/synApps/autosave/autoSaveRestore_R5-
 
 It should be noted that a channel does not have to be disabled for the setting to be sent and applied, e.g. a threshold.
 
-## applying defults on startup
+## Applying defaults on startup
 
 If a config menu set called `defaults` is present, then these values are automatically applied at startup. It is possible to create other named sets to save and restore. You can check if these boot time defaults are present by: 
 
