@@ -39,3 +39,12 @@ configMenu docs: https://epics.anl.gov/bcda/synApps/autosave/autoSaveRestore_R5-
 ## Sending settings
 
 It should be noted that a channel does not have to be disabled for the setting to be sent and applied, e.g. a threshold.
+
+## applying defults on startup
+
+If a config menu set called `defaults` is present, then these values are automatically applied at startup. It is possible to create other named sets to save and restore. You can check if these boot time defaults are present by: 
+
+* Go into the `Load and save settings...` screen
+* Check these is a set named `defaults` listed as the first line
+* If there isn't, type in the name `defaults` and if all the threshold values on the other screen are correct press `save` 
+* this will create a `vmeconfig_defaults.sav` snapshot file in the autosave area for caenvme_01 IOC to use on restart
