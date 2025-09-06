@@ -51,7 +51,11 @@ Configuration files for the DAE.
 
 ### Configuration of devices and extensions
 
-These are directories which configure devices which would be too complicated for macro configuration. For example the Galil configuration with the need to setup the controller, homing routines etc. Historically this was named after a category of device, e.g. galil. This allow configuration of devices as a whole. They can also be named after an IOC which allow configuration of a single IOC, e.g SM300_01. 
+```{note}
+Motion-related configuration has now been moved to [motorExtensions](https://github.com/ISISComputingGroup/EPICS-motorExtensions/tree/master/settings) as per [this ticket](https://github.com/ISISComputingGroup/IBEX/issues/8427)
+```
+
+These are directories which configure devices which would be too complicated for macro configuration. For example the Galil configuration with the need to setup the controller, homing routines etc. Historically this was named after a category of device, e.g. galil. This allow configuration of devices as a whole. They can also be named after an IOC which allow configuration of a single IOC, e.g TC_01. 
 
 The extensions are items which extend an IOC for example a motion setpoints which allow a motor to stop at labelled positions. These are configured from the IOC configuration directory and may need optional extra configuration directories.
 
@@ -61,14 +65,13 @@ Directories:
 
 - `galil`: configures the galil [Galil](/specific_iocs/motors/Galil) and extensions
 - `mclen`: configures McLennan motors [McLennan](/specific_iocs/motors/McLennan-motors) and extensions
-- `sm300_01`: configures the [SM300_01](/specific_iocs/motors/SM300) motor extensions 
 - `motionSetPoints`: setpoint look up files
 - `refl` (for reflectometers only): contains a file `config.py`, which tells instruments using the [Reflectometry IOC](/specific_iocs/Reflectometry-IOC) what their beamline looks like (follow the link for details)
 
 Common extensions:
- - [Motion Set points](/specific_iocs/motor_extensions/Motion-Set-points) (works for galil, McLennan and SM300)
- - [axes](/specific_iocs/motor_extensions/Axis) (works for galil, McLennan and SM300)
- - [sample changer](/specific_iocs/motor_extensions/Sample-Changer-Support-Module) (works for galil, McLennan and SM300)
+ - [Motion Set points](/specific_iocs/motor_extensions/Motion-Set-points) (works for galil, McLennan and TC)
+ - [axes](/specific_iocs/motor_extensions/Axis) (works for galil, McLennan and TC)
+ - [sample changer](/specific_iocs/motor_extensions/Sample-Changer-Support-Module) (works for galil McLennan and TC)
  - [Barn doors and Momentum slits](/specific_iocs/motor_extensions/jaws/Barndoors-and-Momentum-Slits-on-MUON-Front-End)
 
 ### Version Control

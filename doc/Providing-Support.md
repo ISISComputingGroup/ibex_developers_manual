@@ -132,14 +132,14 @@ There are a number of tips for [trouble shooting](#all_troubleshooting_links) al
   1. I can't use this button to get to more details/why doesn't this bit of the OPI work
       - Check they are in manager mode
   1. I need to add this device to my system
-      - Check {external+ibex_user_manual:doc}`the user manual <index>` for IBEX, for SECI, if you don't know already ask someone else
+      - Check {external+ibex_user_manual:doc}`the user manual <index>`
   1. My motor won't move
       - Are both limits made?
           - Yes: Something has happened in the physical realm, refer it to EUSG via the MCR
           - No: Go to next consideration
       - Is any of the other information updating for that motor controller?
           - Yes: Go to next consideration
-          - No: Under IBEX go to the engineering device screen, under SECI open the advanced motor functions and go to the console tab, do not send any characters but send a command, if the response is anything but `:` then the Galil is in a fault mode of some kind which will involve restarts etc.
+          - No: Under IBEX go to the engineering device screen, do not send any characters but send a command, if the response is anything but `:` then the Galil is in a fault mode of some kind which will involve restarts etc.
               * If the Galil is unresponsive refer it to EUSG via the MCR 
      - Looking at the specific motor:
          - Are you trying to move in the same direction as an active limit switch?

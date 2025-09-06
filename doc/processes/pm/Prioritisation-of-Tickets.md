@@ -16,8 +16,3 @@ These are notes on prioritisation this is not an ordered list yet:
  - Operations requested feature enhancement
  - Dev requested feature enhancement
  - New functionality (e.g. script server)
-
-Plus categories
- - Instrument is pure IBEX
- - Instrument is pure SECI
- - Instrument feature could work in SECI but is IBEX instrument

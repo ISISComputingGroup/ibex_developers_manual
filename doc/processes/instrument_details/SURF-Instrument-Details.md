@@ -4,9 +4,6 @@ This page collects information that will be useful for the implementation of the
 ## Background & Timeline ##
 SURF is a reflectometer on TS1, used primarily for liquid interface research. The [SURF](https://www.isis.stfc.ac.uk/Pages/SURF.aspx) web page describes the background to the instrument.
 
-## Control System ##
-It is proposed that SURF will migrate from the SECI control system to the IBEX control system in time for Cycle 2018/04.
-
 ## SURF Equipment ##
 The equipment listed below is used on SURF. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).
 
@@ -63,7 +60,7 @@ Eurotherms are used to control temperature.
 1. Grant Water Bath (no longer supported at ISIS) ~(apparently the following Grant water bath: WB27)~
    * Update (25-06-2019): Grant water baths are no longer used.  No longer any need to support them.  See [#4457](https://github.com/ISISComputingGroup/IBEX/issues/4457)
 1. Haake Water Bath (no longer supported at ISIS)
-   1. ~Haake N6 Water Bath (apparently the following Haake water bath: WB9).  Haake has now been taken over by [ThermoFisher](https://www.thermofisher.com/uk/en/home/life-science/lab-equipment/water-baths-circulators-chillers.html).  N6 model may be obsolete.  Check existing SECI VI for logic and manual.~
+   1. ~Haake N6 Water Bath (apparently the following Haake water bath: WB9).  Haake has now been taken over by [ThermoFisher](https://www.thermofisher.com/uk/en/home/life-science/lab-equipment/water-baths-circulators-chillers.html).  N6 model may be obsolete. 
    * Update (25-06-2019): Haake water baths are no longer used.  No longer any need to support them.  See [#4456](https://github.com/ISISComputingGroup/IBEX/issues/4456)
 1. See also [Water Baths](https://www.isis.stfc.ac.uk/Pages/Water-Baths.aspx) list
 
@@ -80,7 +77,7 @@ Hitachi L-7100 HPLC pump (no longer supported at ISIS).  ~Can't find L-7100 on [
 
 ##### Note: Knauer #####
 1. Knauer K-6 Electric Valve Drive.  [Knauer web site](https://www.knauer.net)<br>
-   * K-6 model appears to have been superseded.  Check existing SECI VI for logic and manual.
+   * K-6 model appears to have been superseded.
    * See `C:\LabVIEW Modules\Drivers\Knauer Electric Valve Drive K-6\Documentation` for existing VI.
    * The Knauer K-6 Electric Valve Drive is (nearly) always used with the [Knauer HPLC pump](#note-knauer-hplc-pump).
 
@@ -114,16 +111,11 @@ Nima Trough: SECI uses a manufacturer supplied VI (see `C:\LabVIEW Modules\Drive
 
 ##### Note: Peristaltic Pumps #####
 1. [Watson Marlow 323 Peristaltic Pump](http://www.watson-marlow.com/gb-en/range/watson-marlow/300-tube-pumps/323d/)
-1. Check existing SECI VI for logic and manual: VI and manuals are located here: 
-   * `C:\LabVIEW Modules\Drivers\Watson Marlow 323 Pump`
 
 ##### Note: Syringe Pumps #####
 1. [WPI Aladdin-1000 Syringe Pump](https://www.wpi-europe.com/products/pumps--microinjection/laboratory-syringe-pumps/al1000-220.aspx)
 1. [WPI SP2xx Syringe Pump](https://www.wpi-europe.com/products/pumps--microinjection/laboratory-syringe-pumps.aspx) - check specific model.  See also [#3261](https://github.com/ISISComputingGroup/IBEX/issues/3261)
 1. The Watson Marlow and WPI Aladdin-1000 syringe pumps are the ones used most frequently on SURF (usually depending on which one is available).
-1. Check existing SECI VIs for logic and manual: VIs and manuals are located here: 
-   * `C:\LabVIEW Modules\Drivers\WPI Aladdin-1000 Syringe Pump`
-   * `C:\LabVIEW Modules\Drivers\WPI SP2XX Pumps`
 
 ## SURF Notes ##
 SURF has the following specialist panels/systems:
@@ -144,14 +136,3 @@ SURF has the following devices under motion control:
 1. transmission monitor
 1. XYZ stage
 
-
-## SURF SECI Configs ##
-Document information about SURF SECI configs here.
-
-Configuration Name                     | Sub-Configurations                                 | Last Accessed | Required |
----------------------------------------|----------------------------------------------------|---------------|----------|
-SURF_place_holder1.conf                | -                                                  | dd/mm/yyyy    | -        |
-SURF_place_holder2.conf                | -                                                  | dd/mm/yyyy    | -        |
-
-## SURF Genie Scripts ##
-Similarly, Document information about SURF SECI Genie scripts here.

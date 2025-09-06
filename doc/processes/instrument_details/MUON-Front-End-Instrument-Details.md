@@ -5,9 +5,6 @@ This page contains information pertinent to the automation of the Muon Front End
 ## Background & Timeline ##
 The system is due on line September 2016.
 
-## Control System ##
-Whilst the Front End control will be undertaken under IBEX, it must integrate with SECI as well as part of the system is to be used on existing instruments. Some of the IOCs will only be controlled from instrument PCs, whilst in some situations only monitoring will be required.
-
 ## Equipment ##
 | Manufacturer | Model | Type | Connection | Driver | Notes |
 | --- | --- | --- | --- | --- | --- |
@@ -26,7 +23,3 @@ Whilst the Front End control will be undertaken under IBEX, it must integrate wi
 {#muonfe_noteMomentumSlits}
 ## Barndoors and Momentum Slits ##
 The barn doors and momentum slits control the muon beam delivered to the 3 muon instruments: HIFI, muSR and EMU.  The control of these devices is described on the [Barndoors & Momentum-Slits](/specific_iocs/motor_extensions/jaws/Barndoors-and-Momentum-Slits-on-MUON-Front-End) page.
-
-{#muonfe_noteMotion}
-##### Note: Motion #####
-There is a project relating to the motion on the South Side Muons in progress, this information may be out of date

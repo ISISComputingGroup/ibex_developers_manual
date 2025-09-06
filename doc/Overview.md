@@ -34,7 +34,6 @@ overview/Links-and-Resources
 ## Documentation & Processes
 
 - [How to edit this documentation](Editing-the-Wiki)
-- [How to demonstrate IBEX](processes/meetings_with_scientists/Demo-notes): Some notes on what to show someone when demonstrating IBEX for the first time
 - [Notes from Retrospectives](processes/Retrospective-Notes): Notes from Sprint Retrospective meetings are recorded here.
 - [Decision Log](processes/Decision-Log): A place to write down decisions made.
 - [Documentation](processes/dev_processes/Project-Documentation): Documentation of the project and processes _(including why we have 3 wikis)_

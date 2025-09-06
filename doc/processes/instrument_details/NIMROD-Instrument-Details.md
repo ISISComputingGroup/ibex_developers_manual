@@ -4,9 +4,6 @@ This page collects information that will be useful for the implementation of the
 ## Background & Timeline ##
 NIMROD is a diffractometer instrument at ISIS, on TS2. The [NIMROD](https://www.isis.stfc.ac.uk/Pages/NIMROD.aspx) web page describes the background to the instrument.
 
-## Control System ##
-NIMROD will migrate from the SECI control system to the IBEX control system ahead of Cycle 2019/02.
-
 ## NIMROD Equipment ##
 The equipment listed below is used on NIMROD. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).
 
@@ -80,37 +77,14 @@ The [MKS PDR2000A](https://www.mksinst.com/f/pdr2000a-2-channel-digital-power-su
 The [MKS PR4000B](https://www.mksinst.com/f/pr4000b-digital-power-supply) Digital Power Supply and Display module is available with either one or two channels.  The single-channel version controls one pressure transducer or one mass flow controller.  The two-channel version supports up to two pressure transducers or two mass flow controllers, or one of each.
 
 There are [EPICS drivers](http://www.aps.anl.gov/epics/modules/manufacturer.php#MKS%20Instruments) for a variety of MKS devices (although there is a driver for a PR4000B pressure transducer, there does not appear to be one for a PDR2000). 
-The manual for the MKS PR4000B is here: `\\isis\shares\ISIS_Experiment_Controls\MKS_PR4000B_Controller`.<br>
-The SECI VI for the MKS PDR2000 is here: `C:\LabVIEW Modules\Drivers\MKS PDR2000 Pressure Gauge`.  
+The manual for the MKS PR4000B is here: `\\isis\shares\ISIS_Experiment_Controls\MKS_PR4000B_Controller`.
+
   
 **Note:** Please refer to ticket [#3962](https://github.com/ISISComputingGroup/IBEX/issues/3692) when implementing support for the PDR2000 on NIMROD.
 
 ## NIMROD Specialist UI Panels ##
 NIMROD has the following specialist panels/systems:
 1. NIMROD Jaws - calculates jaw settings based on moderator projection.
-
-## NIMROD SECI Configs ##
-Document information about NIMROD SECI configs here.
-
-Configuration Name                     | Sub-Configurations                                 | Last Accessed | Required |
----------------------------------------|----------------------------------------------------|---------------|----------|
-NIMROD_temp.conf                       | -                                                  | dd/mm/yyyy    | -        |
-NIMROD_SuperStick.conf                 | -                                                  | dd/mm/yyyy    | -        |
-NIMROD_SC.conf                         | -                                                  | dd/mm/yyyy    | -        |
-NIMROD_RB1410637.conf                  | -                                                  | dd/mm/yyyy    | -        |
-NIMROD_RB1410416.conf                  | -                                                  | dd/mm/yyyy    | -        |
-NIMROD_CCR.conf                        | -                                                  | dd/mm/yyyy    | -        |
-NIMROD_Basic.conf                      | -                                                  | dd/mm/yyyy    | -        |
-NiceIceSECI.conf                       | -                                                  | dd/mm/yyyy    | -        |
-
-## NIMROD Genie Scripts ##
-On NIMROD, normal practice is to adapt an earlier script.  There is no library of scripts.  Most scripts are similar to those used on SANDALS.  It might be useful to create some genie_python scripts to serve as examples.  One script that could be converted (to serve as an example) is `fraser10_depwarmup.gcl`.
-
-Script Name               | Notes                                                   | Last Accessed | Required |
---------------------------|---------------------------------------------------------|---------------|----------|
-`fraser10_depwarmup.gcl`    | Convert to use an a template/example for future scripts | dd/mm/yyyy    | -        |
-
-The "dry_run" feature used on SANDALS scripts could be handy for NIMROD too.
 
 ## NIMROD Notes ##
 #### Pumps ####

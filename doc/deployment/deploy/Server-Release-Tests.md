@@ -14,7 +14,7 @@ These are tests/checks that should be performed on the IBEX server after a relea
     1. `git status`
     1. Ensure that the message says `up-to-date with 'origin/<Instrument Name>'`.
 1. Ensure that a block PV is being logged. Do this by right-clicking a PV (one which would be expected to change a little) and select `Display block history -> create a new plot`. There should be data on the plot from after the instrument was upgraded.
-1. Confirm that the web dashboard is working for the specific instrument (http://dataweb.isis.rl.ac.uk/)
+1. Confirm that the web dashboard is working for the specific instrument (https://isiscomputinggroup.github.io/WebDashboard/instruments & http://dataweb.isis.rl.ac.uk/)
 
 ### Instruments which are having their first IBEX installation
 1. Setup or find a block which is logging itself. Ensure that a log file with this block value in appears in `c:\data\*.log`. If this doesn't happen see [DAE troubleshooting](/specific_iocs/dae/DAE-Trouble-Shooting)

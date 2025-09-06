@@ -4,9 +4,6 @@ This page collects information that will be useful for the implementation of the
 ## Background & Timeline ##
 MUSR is a general purpose muon spin rotation spectrometer at ISIS, on TS1. However, the emphasis of the experimental work conducted is investigating magnetism and superconductivity.  The [MUSR](https://www.isis.stfc.ac.uk/Pages/MUSR.aspx) web page describes the background to the instrument.
 
-## Control System ##
-MUSR will migrate from the SECI control system to the IBEX control system in MMMMMMMM YYYY.
-
 ## MUSR Equipment ##
 The equipment listed below is used on MUSR. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).
 
@@ -130,17 +127,3 @@ MUSR has the following motion control items:
 
 MUSR also has the following system:
 1. MUON Script Generator (muongui.exe)
-
-## MUSR SECI Configs ##
-Document information about MUSR SECI configs here.
-
-Configuration Name                     | Sub-Configurations                                 | Last Accessed | Required |
----------------------------------------|----------------------------------------------------|---------------|----------|
-EMU_place_holder1.conf                 | -                                                  | dd/mm/yyyy    | -        |
-EMU_place_holder2.conf                 | -                                                  | dd/mm/yyyy    | -        |
-
-## MUSR Genie Scripts ##
-Similarly, Document information about MUSR SECI Genie scripts here.
-
-## MUSR configs from EMU 
-Configurations have been removed that were migrated from SECI + EMU as they are being phased out or have not been in use. Commit `63303d94400cd0270b3c07357a08cbdf5945d8e8` should still contain the configurations before removal. 

@@ -5,9 +5,6 @@ This page collects information that will be useful for the implementation of the
 ## Background & Timeline ##
 MARI is a chopper spectrometer on TS1 at ISIS. The [MARI](https://www.isis.stfc.ac.uk/Pages/mari.aspx) web page describes the background to the instrument.
 
-## Control System ##
-It is proposed that MARI will migrate from the SECI control system to the IBEX control system in time for Cycle 2018/04.
-
 ## MARI Equipment ##
 The equipment listed below is used on MARI. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).
 
@@ -79,14 +76,6 @@ The changer should only be rotated in one direction, otherwise there is a risk t
 The temperature control will be handled by a Eurotherm.<br>
 [Project Details](https://stfc365.sharepoint.com/sites/ISISProject-1122) and 
 [Project Plan](https://tasks.office.com/stfc365.onmicrosoft.com/en-US/Home/PlanViews/8bdu_4UTBUeZwF_PB8SLIpYAESGr)
-
-## MARI SECI Configs ##
-MARI has a number of SECI configurations, which need to be migrated.
-
-## MARI Genie Scripts ##
-Critical OpenGenie scripts for initialisation and focussing.
-
-MARI has a number of instrument specific Genie scripts. These have now been migrated to genie_python.
 
 ## MARI Notes ##
 1. MARI does not currently use a script generator, but there is interest in having one in the future.

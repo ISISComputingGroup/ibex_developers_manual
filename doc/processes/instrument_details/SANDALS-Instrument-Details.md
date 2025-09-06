@@ -4,9 +4,6 @@ This page collects information that will be useful for the implementation of the
 ## Background & Timeline ##
 SANDALS is a diffractometer instrument at ISIS, on TS1. The [SANDALS](https://www.isis.stfc.ac.uk/Pages/sandals.aspx) web page describes the background to the instrument.
 
-## Control System ##
-SANDALS will migrate from the SECI control system to the IBEX control system in January 2018.
-
 ## SANDALS Equipment ##
 The equipment listed below is used on SANDALS. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).
 
@@ -45,7 +42,7 @@ _**Note:**_ NIMROD does not have choppers either.
 
 {#sandals_noteJaws}
 ##### Note: Jaws #####
-SANDALS has a single set of jaws controlled by a [Parker controller](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/SANDALS/SANDALS_Parker_Controller.jpg), which is not currently controlled by SECI.  There is no requirement to support the Parker system in IBEX, although it would be very convenient if such a thing were possible.
+SANDALS has a single set of jaws controlled by a [Parker controller](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/SANDALS/SANDALS_Parker_Controller.jpg), which was not controlled by SECI.  There is no requirement to support the Parker system in IBEX, although it would be very convenient if such a thing were possible.
 
 It is proposed to replace the Parker controller with a Galil DMC4040 controller (see [#3259](https://github.com/ISISComputingGroup/IBEX/issues/3259)).
 
@@ -106,17 +103,6 @@ Experiments requiring pressure transducer. [Chell CCD100](http://www.chell.co.uk
 ##### Note: Keithley #####
 Experiments requiring source meter. [Keithley 2400 Source Meter](http://uk.tek.com/keithley-source-measure-units/keithley-smu-2400-series-sourcemeter).<br>
 See also [#1826](https://github.com/ISISComputingGroup/IBEX/issues/1826).
-
-## SANDALS SECI Configs ##
-Document information about SANDALS SECI configs here.
-
-Configuration Name                     | Sub-Configurations                                 | Last Accessed | Required |
----------------------------------------|----------------------------------------------------|---------------|----------|
-SANDALS_place_holder1.conf             | -                                                  | dd/mm/yyyy    | -        |
-SANDALS_place_holder2.conf             | -                                                  | dd/mm/yyyy    | -        |
-
-## SANDALS Genie Scripts ##
-Similarly, Document information about SANDALS SECI Genie scripts here.
 
 ## SANDALS Notes ##
 Add any notes about special items of equipment, setup or conditions on SANDALS that might impact the deployment and configuration of IBEX.

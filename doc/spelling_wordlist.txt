@@ -8,6 +8,7 @@ Aeroflex
 AeroflexIFR
 Agilent
 Ahlburg
+Ambrell
 Amperometry
 analyzer
 Andor
@@ -210,6 +211,7 @@ dlls
 dockerized
 docstring
 docstrings
+Documentathon
 Docusaurus
 docx
 Dolica
@@ -226,6 +228,7 @@ Ecorr
 efxclipse
 EGU
 Eilidh
+Elektronika
 enablement
 endian
 ENGINX
@@ -603,6 +606,7 @@ parallelisation
 parameterise
 params
 passcode
+passwordless
 pasynUser
 pcaspy
 pcount
@@ -815,6 +819,7 @@ switchToCombo
 SWT
 synoptics
 sysinternals
+syslog
 systemd
 targetID
 targetplatform
@@ -895,6 +900,7 @@ url
 userdef
 usr
 utils
+uv
 uzhex
 vala
 validator

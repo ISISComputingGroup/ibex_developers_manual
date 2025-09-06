@@ -55,8 +55,8 @@ you run a test).
 
 ## RDP to Server
 
-It is possible to remote desktop to the squish server but when you disconnect you must use the "Disconnect from RDP"
-shortcut on the desktop. To do this you must be an Admin on the desktop.
+It is possible to remote desktop to the squish servers but when you disconnect you must use the "Disconnect from RDP"
+shortcut on the desktop. This will prompt for escalated privileges - enter your federal ID and password on the CLRC domain.
 
 ## Setup For Build Server
 
@@ -184,12 +184,11 @@ the screenshots from the most recent build will be available.
 ## License server
 
 This was set up as per https://doc.qt.io/squish/setting-up-the-squish-floating-license-server.html on
-`control-svcs.isis.cclrc.ac.uk` in the directory `/usr/local/squish-licenceserver`. The service is automatically started
-at boot time via systemd, the file `squish-licenseserver.service` has the service details and is symbolically linked
-from the systemd `/etc/systemd/system` area. The log file is `/var/log/squish-licenseserver.log` and the service is
-running on the default port of 49345.
+`control-svcs.isis.cclrc.ac.uk` The executable runs from `/opt/squish-license-server/bin/licenseserver` and licence is stored in `/etc/squish-license-server/licenses` The service is automatically started
+at boot time via systemd. Data is logged to syslog and the service is
+running on the default port of 49345. To see the log you can use e.g. `journalctl -u squish-license-server.service --since today`
 
-To restart the licence server process, use `sudo systemctl restart squish-licenseserver.service` on the licence server
+To restart the licence server process, use `sudo systemctl restart squish-license-server.service` on the licence server
 machine.
 
 ## Troubleshooting

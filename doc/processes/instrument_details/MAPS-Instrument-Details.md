@@ -5,9 +5,6 @@ This page collects information that will be useful for the implementation of the
 ## Background & Timeline ##
 MAPS is a chopper spectrometer on TS1 at ISIS. The [MAPS](http://www.isis.stfc.ac.uk/instruments/maps/) web page describes the background to the instrument.
 
-## Control System ##
-MAPS will migrate from the SECI control system to the IBEX control system.
-
 ## MAPS Equipment ##
 The equipment listed below is used on MAPS. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).
 
@@ -74,14 +71,6 @@ Eurotherms in use on MAPS.  Used to control temperature of all top-loading CCRs,
 {#maps_noteNeocera}
 ##### Note: Neocera #####
 Neocera is used only occasionally.  [Neocera LTC-21 Manual](http://www.submm.caltech.edu/~sharc/technical/LTC-21%20manual.pdf)
-
-## MAPS SECI Configs ##
-MAPS has a number of SECI configurations, which need to be migrated.
-
-## MAPS Genie Scripts ##
-Critical OpenGenie scripts for initialisation and focussing.
-
-MAPS has a number of instrument specific Genie scripts. These need to be migrated to genie_python.
 
 ## MAPS Notes ##
 Add any notes about special items of equipment, setup or conditions on MAPS that might impact the deployment and configuration of IBEX.

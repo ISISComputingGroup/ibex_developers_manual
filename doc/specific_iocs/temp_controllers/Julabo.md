@@ -1,6 +1,6 @@
 # Julabo
 
-Julabo is a temperature control unit. There are many different versions. The commands for each model are slightly different. When migrating an instrument, care must be taken to check exactly which command set it is using under SECI and to configure an equivalent command set in IBEX. A spreadsheet of LabVIEW settings against command set is in [this spreadsheet](julabo_commands.xlsx).
+Julabo is a temperature control unit. There are many different versions. The commands for each model are slightly different. A spreadsheet of previous LabVIEW settings against command set is in [this spreadsheet](julabo_commands.xlsx).
 
 The IOC copes with these variations in commands by making 4 commands configurable via macros:
 - `READ_POWER_CMD_NUMBER` configures the command used to read power. This macro should be the 2-digit number at the end of the read power command in the spreadsheet above (for the relevant model of Julabo).

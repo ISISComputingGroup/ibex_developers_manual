@@ -17,9 +17,6 @@ Galils, choppers etc are fed through `DS31-DS35` which lives in the little serve
 
 There is a large patch panel in the main PEARL cabin which links to the blockhouse ports, sat above some Eurotherm racks. The confusing bit - there are also ports that live outside the setup cabin, on the left side above the beamline itself. Ports 1-5 here ALSO route through to the large rack-mounted patch panel which lives in the main cabin. For example, port 3 outside the setup cabin, commonly used for the `PACE 5000` pressure controller, routes to port 3 on the large patch panel (in the rack in the PEARL cabin). This is then fed to the Moxa which is sat above. Each of the ports on the large patch panel have a code that looks like `9MC4180` which means nothing to us - we only care about the patch panel number which is underneath. 
 
-## Control System ##
-PEARL will migrate from the SECI control system to the IBEX control system.
-
 ## PEARL Equipment ##
 The equipment listed below is used on PEARL. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).
 
@@ -140,14 +137,3 @@ This is a weird `Servostep` box which contains a Galil 4000 series inside. It lo
 Compare with similar systems on GEM and POLARIS.
 
 There are some inaccessible front end jaws on PEARL controlled by the Galil, these are not used but must be kept open for operation. They are homed to the forward limit and seem to typically be kept about 4/5mm inside that position for running. This should be kept in mind when migrating the Galil.
-
-## PEARL SECI Configs ##
-Document information about PEARL SECI configs here.
-
-Configuration Name                     | Sub-Configurations                                 | Last Accessed | Required |
----------------------------------------|----------------------------------------------------|---------------|----------|
-PEARL_place_holder1.conf               | -                                                  | dd/mm/yyyy    | -        |
-PEARL_place_holder2.conf               | -                                                  | dd/mm/yyyy    | -        |
-
-## PEARL Genie Scripts ##
-Similarly, Document information about PEARL SECI Genie scripts here.

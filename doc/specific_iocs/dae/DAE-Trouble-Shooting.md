@@ -54,9 +54,6 @@ Qxtrm_channel::RDMARead failed rdma2 address 0x40010 nbytes 4(Quixtream: The tim
 
 In general if you see an error like this or starting with `NIVISA` you should restart the DAE, then [contact electronics](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/Contact%20details%20for%20other%20groups.docx).
 
-### No log files are produced in `c:\data` even though blocks are set to log.
-The reason may be because the isisicp program that writes the datafile hasn't been configured to read values from MySQL for EPICS - the old SECI program used a different route. This is a one off change needed for SECI -> IBEX migration. In `C:\LabVIEW Modules\dae\isisicp.properties` set `isisicp.epicsdb.use = true` to enable this. You will need to restart the `isisicp` process for this to take effect. To do this, just end the `isisicp` process in task manager. 
-
 ### DAE doesn't seem to be connected/I want to run without a DAE connected
 The DAE can be set to run in simulation mode, this must be unset before data will be collected. To set the mode run `g.set_dae_simulation_mode(True)` or `g.set_dae_simulation_mode(False)` to unset.
 
@@ -64,7 +61,7 @@ To change the simulation mode manually, in `icp_config.xml` change the simulate 
 
 ### Log file for LabVIEW modules DAE
 
-Both SECI and IBEX use the same underlying `isisicp` program (located in `labview modules\dae`) that writes to `C:\Data\Export only\logs\icp\log\icp-<date>log`. There is an [example DAE log in this wiki](DAE-Normal-Log). This is a good place to locate DAE specific issues, not all of the details in this log appear in the ISISDAE IOC log. 
+IBEX uses  `isisicp` program (located in `labview modules\dae`) that writes to `C:\Data\Export only\logs\icp\log\icp-<date>log`. There is an [example DAE log in this wiki](DAE-Normal-Log). This is a good place to locate DAE specific issues, not all of the details in this log appear in the ISISDAE IOC log. 
 
 ### Error pop up: `*** ICP failed to start - your DAE may be switched OFF or is missing cards ***`
 The DAE unit may be switched off. This is particularly likely during shut down. Change the DAE into simulation mode as described above.
@@ -145,7 +142,7 @@ From an issue in Ticket https://github.com/ISISComputingGroup/IBEX/issues/3099 -
 [2018-04-09 15:26:49] : Exception occurred.
 ```
 
-The issue here is that the default simulated DAE has 2 detector cards in it, but the real DAE has more cards. To fix edit `isisicp.properties` in LabVIEW modules to create more cards. Note this is not an ibex issue - it will also affect DAE simulation mode under SECI. The number of cards on each crate is given by the maximum missing card for the crate (see log), more crates can be added as well as cards. An example from wish with 3 crates, 10, 10 and 12 card per crate is:
+The issue here is that the default simulated DAE has 2 detector cards in it, but the real DAE has more cards. To fix edit `isisicp.properties` in LabVIEW modules to create more cards. The number of cards on each crate is given by the maximum missing card for the crate (see log), more crates can be added as well as cards. An example from wish with 3 crates, 10, 10 and 12 card per crate is:
 
 ```
 isisicp.simulation.detcards.crate0.number = 10
@@ -204,9 +201,9 @@ One cause would be the IOC is trying to call a function in the ISISICP that it c
 
 DAE3 is new ethernet based acquisition electronics on ZOOM and MARI, it used `ISISICP` and looks like DAE2 for most purposes. If everything remains in processing, it may be that the `arp` network entries did not get created - these should be done as a system time boot task. Do `arp -a` and see if there is an entry for 192.168.1.101 etc.  If not, run `set_dae3_arp.bat` in `c:\labview modules\dae` as as administrator
 
-Note that DAE3 does not ping, so the only way to know if it is there is by running `qxtalk` or the `isisicp` (via ibex or seci)
+Note that DAE3 does not ping, so the only way to know if it is there is by running `qxtalk` or the `isisicp` (via ibex)
 
-If IBEX/SECI has either been in simulation mode or not running for a long time previously, then some of the tcp ports used by dae3 may have been grabbed by the operating system as described in `Real DAE complains about missing cards (but was previously working)` above on this page. You will see errors like
+If IBEX has either been in simulation mode or not running for a long time previously, then some of the tcp ports used by dae3 may have been grabbed by the operating system as described in `Real DAE complains about missing cards (but was previously working)` above on this page. You will see errors like
 ```
 Quixtream Error: Failed to bind the socket to the local port."
 ``` 
@@ -455,18 +452,18 @@ you probably need to follow https://knowledge.ni.com/KnowledgeArticleDetails?id=
 If you need to recover a system that has filled up its `c:\data` area due to a long event mode run with e.g. noisy detectors then you can use the following. This assumes the scientists do not need the data, you can move the files off instrument but recovery is hard and may not be possible.   
 
 * log onto NDX computer
-* Run `stop_ibex_server` or  `kill seci` as appropriate
+* Run `stop_ibex_server` 
 * open `c:\data` in windows explorer and sort files by name
 * look for a very large `eventsYYYYY.tmp` file, make a note of the `YYYYY` number and then select and `shift+delete` this file (you do not want to move it to recycle bin - make sure the prompt says "permanently delete this file" and not "delete this file")
 * Also now shift+delete `current.run`, `current.runYYYYY`, `data.run`, `data.runYYYYY`
 * open `c:\data\events` and shift+delete the folder `run_YYYYY`
-* start ibex or seci again
+* start ibex again
 
 Hopefully there is either only one `eventsYYYYY.tmp` file, or the most recent one (largest YYYYY number) is also the largest in size. If there are several files making a decision may need a bit more thought. It is possible that a very large run was done earlier which nearly filled up the disk, then a new one was started that pushed it over the limit while the previous one was ending in the background. Check with the scientists if it is ok to delete this earlier bigger run. You should always delete all YYYYY files corresponding to the run that was in progress when the system filled up, but you may also need to handle an earlier YYYYY number set of files to free up enough disk space. 
 
 For info, the `eventsYYYYY.tmp` file is the NeXus HDF5 file being written as the run goes along, and the `run_YYYYY` folder is the raw events read from the electronics. The `.tmp` is renamed to `.nxs` during an END is nothing has gone wrong, otherwise raw events can be replayed from `run_YYYYY` to create a NeXus file from scratch       
 
-If the run number comes back incorrectly (like as `000001`) then it means `c:\data\recovery.run` has been corrupted. There are backup weekday copies in c:\data e.g. `recovery.run_Thu` so you can pick one to copy to `recovery.run` however note that this may include an old run number so after restarting you may need to reset the run number (see on this page) 
+If the run number comes back incorrectly (like as `000001`) then it means `c:\data\recovery.run` has been corrupted. There are backup weekday copies in c:\data e.g. `recovery.run_Thu` so you can pick one to copy to `recovery.run` however note that this may include an old run number so after restarting you may need to reset the run number (see on this page). Looking at file sizes of `recovery.run_*` to see which looks to be the most recent good one.  
 
 If after the above you get SQLite/selogger database errors in the isisicp log, then stop isisdae/isisicp and delete `c:\data\selog.*` (`.sq3`, `.sq3-shm`, and `.sh3-wal` files)
 
@@ -484,8 +481,6 @@ Check to see if you have any errors similar to the following:
 ```
 
 If so, you haven't registered your `isisicp.exe` program with the registry. Follow the steps to [Configure DAE for simulation mode on developer's computer](#first_time_install_configure_dae)
-
-If you have done this it may be that the isisicp.exe program is too old. Older versions do not contain a function which is needed by IBEX. Check the file `svn_revision.txt` in `c:\labview modules\dae` - it needs to be 1633 or higher. If it needs updating, ask a SECI specialist to update the program.
 
 ## Multiple VXI devices
 

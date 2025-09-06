@@ -9,24 +9,6 @@
 release/*
 ```
 
-## Understanding Java Licensing
-Make sure you [understand how Java is licensed](/processes/dev_processes/Understanding-Java-Licensing), so that we do not inadvertently make ISIS liable for licensing fees.
-
-## Release tickets
-
-Text for release ticket:
-
-> As a developer I want an IBEX release so I can install it on the instrument machines for the start of machine physics on 26th.
-> 
-> Acceptance Criteria:
-> 
-> - [ ] [Pre Testing Steps](#creating_release_pre_testing_steps)
-> - [ ] [Testing steps](#creating_release_testing_steps)
-> - [ ] [Post Testing](#creating_release_post_testing_steps)
-> - [ ] [Create a ticket to update dependencies to latest versions and test](/processes/dev_processes/Dependency-Updates)
-> - [ ] [Create a ticket to give instrument demos](https://github.com/ISISComputingGroup/IBEX/wiki/Timetable-for-Instrument-Demos)
-> - [ ] Distribute release notes via email [Instrument scientist release email](#updating_instrument_new_release_email_template)
-
 ## Standard Release
 
 Project is ready to be released not for a specific event, e.g. at the end of a sprint. Script Generator version number always differs to the client's.
@@ -34,8 +16,10 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
 {#creating_release_pre_testing_steps}
 ### Pre Testing
 
-1. Contact computing group to let us know of the upgrade. Find out anything that needs to be in the release that isn't and mark with `for release` label. (This does not prevent a release)
-1. Look at the released features in this branch [Upcoming Changes](https://github.com/ISISComputingGroup/IBEX/blob/master/release_notes/ReleaseNotes_Upcoming.md) and find the most significant level of change (i.e. is this cumulatively a major change, a minor change, or a patch?).
+1. Find out anything that needs to be in the release that isn't and mark with `for release` label. (This does not prevent a release)
+1. Ensure the version of `cs-studio` [referenced in the GUI's target platform](https://github.com/ISISComputingGroup/ibex_gui/blob/master/base/uk.ac.stfc.isis.ibex.targetplatform/targetplatform.target)
+is recent enough to include the most recent changes in the
+[`isis_css_top` repository](https://github.com/ISISComputingGroup/isis_css_top).
 1. Update the [upgrade script](https://github.com/ISISComputingGroup/EPICS-upgrade/blob/master/upgrade.py) to include the latest version (this is done on master). Steps to do this are in [Config Upgrader in section *creating a production upgrade script*](/tools/Config-Upgrader) 
     1. After committing these changes to `master` on the `EPICS-upgrade` submodule, don't forget to push the new submodule version to `master` on the top `EPICS` branch. This is needed to make sure you changes appear on the release branch created in the next step. 
 1. For packages which are published on `PyPI`, in particular `genie_python` and `ibex_bluesky_core`, create PyPI releases if needed.
@@ -43,38 +27,29 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
     1. `genie` should be released with a version number matching the main IBEX version number. The release takes around 15 minutes in GHA.
     1. `ibex_bluesky_core` should generally have a minor/patch version incremented for now until we reach v1. The release takes a couple of minutes in GHA.
     1. **Ensure these releases were successful** by checking on [pypi](https://pypi.org/) for the new release number before proceeding.
-1. Start the Jenkins pipeline [Release Branches](https://epics-jenkins.isis.rl.ac.uk/job/Release_branches/).
-    - Click on 'Build with Parameters'.
+1. Start the Github Actions pipeline [`create-release-branches`](https://github.com/ISISComputingGroup/ibex_utils/actions/workflows/create-release-branches.yml).
+    - Click on 'Run workflow'
     - Set `VERSION` to the new release version (e.g. `X.x.m`).
-    - Set `TAG` if you wish to branch off a commit other than the latest top level `HEAD`. If you do branch off an earlier commit, also set `REMOTE` to `false` as it now does not make sense to verify if you are on the latest submodule versions. 
-    - Check `REMOTE` if the `EPICS` submodules should be checked for later versions on their remote - the script will fail if there are submodule commits unpushed to top level. For a normal release you will be expecting all submodules to be on the latest version. If you want the currently pinned (not necessarily latest) versions, do not check REMOTE. If you should/expect to be using the latest versions of all dependent submodules, check REMOTE box to verify this. If there are unpushed submodules the `EPICS repo checks` Jenkins build will likely be in error already.
+    - Set `TAG` if you wish to branch off a commit other than the latest top level `HEAD`. If you do branch off an earlier commit, also set `REMOTE` to `false` as it now does not make sense to verify if you are on the latest submodule versions.
     - The script will then (as selected):
         - Create the release branches (named `Release_X.x.m` except `Release_Script_Gen_X.x.m` for script generator) for:
             - `EPICS` and submodules.
             - `IBEX GUI`.
             - `Script Generator`.
             - `Uktena`.
-            - `JSON_bourne`. (not none by default as it does not often change and is also not directly deployed to instruments)
         - Update or add version numbers:
             - In `ioc/master/INSTETC/INSTETC-IOC-01App/Db/svn-revision.db.tmpl` for `EPICS`.
             - In `/uk.ac.stfc.isis.ibex.e4.client/pom.xml` and `/uk.ac.stfc.isis.ibex.e4.client/META-INF/MANIFEST.mf` for `IBEX GUI`.
             - In `/uk.ac.stfc.isis.scriptgenerator.client/pom.xml` and `/uk.ac.stfc.isis.scriptgenerator.client/META-INF/MANIFEST.mf` for `Script Generator`.
             - Note: `genie_python` library version numbers are set automatically from the git tag, and no longer need manually updating.
         - Push these changes to remote release branch.
-        - Start the Jenkins builds (click `Scan Repository` on the ones that are multibranch pipelines):
-            - `EPICS_release`. (Build will be in `Kits$\CompGroup\ICP\Releases\X.x.m\EPICS`)
-            - `EPICS_release32`. (Build will be in `Kits$\CompGroup\ICP\Releases\X.x.m\EPICS32`)
-            - `uktena_release_pipeline`. (Build will be in `Kits$\CompGroup\ICP\Releases\X.x.m\genie_python_3`)
-            - `ibex_gui_releases_pipeline`. (Build will be in `Kits$\CompGroup\ICP\Releases\X.x.m\Client`)
-            - `scriptgenerator_release`. (Build will be in `Kits$\CompGroup\ICP\Releases\script_generator_release\X.x.m`)
-1. Move the `Upcoming Release Notes` page (copy & paste) into a new blank `Release Notes "X.x.m"` file: Check that all of the merged tickets have also had their [release notes merged](https://github.com/ISISComputingGroup/IBEX/pulls) then move the changes which have been merged into the new release from the [upcoming page](https://github.com/ISISComputingGroup/IBEX/blob/master/release_notes/ReleaseNotes_Upcoming.md) to a new release notes page for the version, and commit this change to the master branch. Check that the release notes are as understandable as possible. 
+1. Start all of [these builds](https://epics-jenkins.isis.rl.ac.uk/view/Release/) in Jenkins.
+1. Copy the new version's release notes (copy & paste) into a new blank `Release Notes "X.x.m"` (where `X.x.m` is the upcoming version) file and clear the contents: Check that all of the merged tickets have also had their [release notes merged](https://github.com/ISISComputingGroup/IBEX/pulls). Check that the release notes are as understandable as possible. 
 1. Create a released version entry in the [releases table](https://github.com/ISISComputingGroup/IBEX/blob/master/docs/all-releases.md) (including link to release notes) and commit to master.
-1. Update the "Latest Stable Release" link on the [IBEX wiki homepage](https://github.com/ISISComputingGroup/IBEX) to be the new `"Release X.x.m"` and commit to master.
-1. Remove all entries from `Upcoming Release Notes`, leaving a blank file with only the headers, e.g. "Instrument Specific Changes", etc. and commit to master.
+1. Update the "Latest Stable Release" and "Upcoming release" links on the [IBEX wiki homepage](https://github.com/ISISComputingGroup/IBEX) to be the new release and commit to master.
 1. If applicable, update the dependencies since the last release and add them to the bottom of the release notes. To find the python dependencies list, run a `pip freeze` on a cleanly released `uktena`. Note that you will need to specify the scripts directory to run pip commands. i.e. `C:\Instrument\Apps\Python3\Scripts\Pip.exe freeze`
-1. Update the {external+ibex_user_manual:doc}`user manual <index>` with any relevant changes
-1. copy the release to `control-svcs`, this is so we can set git remotes for hotfixes etc. as part of the deploy. So if release is number 1.2.3
-    - `robocopy "Kits$\CompGroup\ICP\Releases\1.2.3\EPICS\.git" "\\control-svcs.nd.rl.ac.uk\git$\releases\1.2.3\EPICS.git" /mir /nfl /ndl`
+1. copy the release to the `git$` share on `control-svcs` (see Keeper for the username and password for this), this is so we can set git remotes for hotfixes etc. as part of the deploy. So if release is number 1.2.3
+    - `robocopy "\\isis\inst$\Kits$\CompGroup\ICP\Releases\1.2.3\EPICS\.git" "\\control-svcs.nd.rl.ac.uk\git$\releases\1.2.3\EPICS.git" /mir /nfl /ndl`
     - edit `EPICS.git\config` on the control-svcs version (you can browse straight to the `\\control-svcs` share above)
         - change `bare = false` to `bare = true`
         - Add an extra section at end of file
@@ -89,7 +64,7 @@ Project is ready to be released not for a specific event, e.g. at the end of a s
 {#creating_release_testing_steps}
 ### Testing
 
-Using GitBash, update the `experiment controls public share` has the most recent version of `ibex_utils` from Git (i.e. do git pull) - this is so the most recent install script will be used for testing and install. In git bash you can do a `cd` with the windows path but just change `\` to `/` e.g. `cd //isis/somewhere`. When you do a git operation it may warn about directory ownership, just follow the command it suggests to add an exception and then git try again. You should:
+Update `\\isis\shares\ISIS_Experiment_Controls_Public\ibex_utils` - this is so the most recent install script will be used for testing and install. You should:
 * do a `git branch` and check it is on `master` and not e.g. a test or ticket branch
 * do a `git status` and check for any changes, if there are post on Teams
 * do a `git pull` so you are on the latest `master` branch with no local changes
@@ -103,7 +78,7 @@ These steps should only be done once all changes to a release have been made and
 which will become inconsistent if further changes are made to the release branch. Hence it is important to delete
 the relevant release branch after it has been tagged.
     
-1. Create a release tag in the EPICS, ibex_gui, uktena and JSON_bourne repositories. For each repo
+1. Create a release tag in the EPICS, ibex_gui and uktena repositories. For each repo
     1. Go to `[REPO_URL]/releases`, e.g. `https://github.com/ISISComputingGroup/ibex_gui/releases`
     1. Click `Draft a new release`
     1. Enter the tag version in the format `vX.x.p` and target the release branch
@@ -115,12 +90,11 @@ the relevant release branch after it has been tagged.
     1. `git submodule foreach --recursive "git push origin tag Release_ibex_X.x.x && git push --delete origin Release_X.x.x || exit 0"` // Push tags and delete release branch
 
     _Note: you may need to run `git config fsck.badEmail ignore` for the above step_
-1. Make sure any changes on the release branch are merged back onto master for EPICS, ibex_gui, genie_python, and JSON_bourne (except version numbering)
+1. Make sure any changes on the release branch are merged back onto master for EPICS, ibex_gui, and uktena (except version numbering)
 1. Consider which instruments need this release:
     * Breaking release: upgrade everyone
     * Big improvement:  upgrade everyone if there is a big improvement that everyone will benefit from
     * Standard release: upgrade instruments that need updates, i.e. they need a newly released feature, and all those that are in the current release group, see [column in instruments table](https://github.com/ISISComputingGroup/IBEX/wiki#instrument-information). Note on the release ticket which instruments need to be released to using checkboxes (one for start and one for finish).
-1. Deploy a new JSON_bourne if required see [here](/webdashboard/Web-Dashboard)
 1. [Create repository for recording instrument changes post release](release/Release-based-repository) the deploy script automatically puts the instrument onto a branch of this repository
 ## Partial Release
 For any release in which GUI version increments but server version does not, ensure the previous server version is added to the release folder via symbolic links or junctions, [see this ticket](https://github.com/ISISComputingGroup/IBEX/issues/7250).

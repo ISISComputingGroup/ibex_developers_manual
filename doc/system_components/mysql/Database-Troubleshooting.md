@@ -13,7 +13,7 @@ To see which PVs are doing this
 Look for mysqld.exe task running in task manager or for the service MYSQLXX (currently 80) running. If it is not running log files are in `...var\mysql\Data\XXX.err`. To start it as an admin start the services from the start menu then start the MYSQLXX service.
 
 {#database_troubleshooting_reduce_space}
-## Reducing database disc space
+## Reducing database disc space (Database truncate)
 
 The database resides on the `Var` instrument disk volume, so can be responsible for this looking full; however there are also IOC log files on this volume that may instead be, or also be, the cause.
 
@@ -44,7 +44,7 @@ Database disc space is taken up by tables stored in `C:\Instrument\Var\mysql\dat
 Run the script in:
 
 ```
-<public share>\ibex_utils\installation_and_upgrade\truncate_database.bat
+\\isis\shares\ISIS_Experiment_Controls_Public\ibex_utils\installation_and_upgrade\truncate_database.bat
 ```
 
 Note that you may need the full name of the public share root.
@@ -87,8 +87,4 @@ The commands for recreating the database are in the ibex [install script in the 
 
 1. Stop mysqld processes
 1. Move the database `../instrument/var/mysql` to `old`
-1. Recreate the database files: `c:\Instrument\Apps\MySQL\bin\mysqld.exe --datadir="c:/instrument/var/mysql/data" --initialize-insecure --console --log-error-verbosity=3`
-1. Start the mysql service.
-1. Set the database password with: `c:\Instrument\Apps\MySQL\bin\mysql.exe -u root -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '<password>';FLUSH privileges;"`
-1. Run the schema setup in an epics terminal: `c:\instrument\Apps\EPICS\systemsetup\config_mysql.bat`
-1. Restart the epics server
+1. Run `upgrade_mysql.bat` in `<public share>\ibex_utils\installation_and_upgrade` 

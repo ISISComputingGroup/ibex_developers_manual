@@ -5,18 +5,18 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
 ## Preparatory Steps for Client and Server
 
 - Inform the instrument scientist that you are going to upgrade the instrument in 5 minutes so that they are not surprised when you remote desktop to the instrument, include a link to the release notes of the latest release in this email. Wait 5 minutes.
-- Visit each instrument on which code will be released and check for changes which have been made which are not summarised on the [IBEX wiki](https://github.com/ISISComputingGroup/IBEX/wiki#tocInstrumentInfo). Do this by running `git status` in the EPICs directory and looking at the diff and comparing with those changes.
 - Make sure that the public share has the most recent version of `ibex_utils` from Git (i.e. do git pull).
+- Take over the instrument with an RDP session - not VNC. 
 
-## Notes on network share access
+:::{note}
 The install will need to access both `<public share>\ibex_utils` (where the install script is located) and `kits$` (where the ibex release and a genie python instance is kept). As we will be updating python, we cannot use the locally installed python for the deploy. 
 
 On an instrument NDX computer the D: and O: drives will be mapped to the instrument archive and have sufficient access rights, however they can sometimes become disconnected and then things don't work. So before starting look in windows explorer and if D: and/or O: are showing as Disconnected click on them to reconnect.
 
 If you do not have either a D: or O: network drive, then you will need to specify network credentials to map the drive via the `net use` command.    
+:::
 
 ## Upgrading IBEX to the latest version
-1. If an instrument, check D: network drive status as per above _Notes on network share access_
 1. Ensure the instrument is running and in a setup state
 1. Take screenshots of blocks, motors, running VIs, etc. to allow later comparison
 1. Ensure all command lines to EPICS or windows accessing the EPICS path are closed (though there is no need to stop the IBEX Server)
@@ -24,10 +24,23 @@ If you do not have either a D: or O: network drive, then you will need to specif
     - you can double click on this, but usually better to drag the path into a new empty cmd window so you don't miss any errors on abort  
     - It will look for the highest version number in the release folder as a source.
     - If you want to install a non-default release you need to set the `SUFFIX` variable in the batch file. For example with `x.y.z` being the current release and `hotfix` being the suffix, it will look for the folder `Releases/x.y.z-hotfix`
-    - Apart from the below points, just follow instructions
+    - Apart from the below points, just follow instructions - most options should be answered `Y` (yes) to, but if you are unsure on a particular machine ask on technical.
     - Be warned the upgrade runs in 3 steps and so will claim to have finished the upgrade 3 times
-    - Do not remove any SECI icons from the task list if this is not the first time install
 1. Compare screenshots taken earlier to current state
+
+
+### Notes on steps
+
+#### Hotfixes
+
+The script runs `git status` in `C:\Instrument\Apps\EPICS` for uncommitted changes on an instrument.
+These _should_ be documented on [this page](https://github.com/ISISComputingGroup/IBEX/wiki#instrument-information--hotfixes) and should hopefully all be submitted upstream. If not, ask on technical what to do - we may need to re-patch them after the release has been deployed. 
+
+#### Python virtual environments
+
+The script will set up virtual environments for anything that uses the mechanism documented in the {ref}`Dependency updates notes. <dep_update_venvs>`
+
+It does this by searching for `requirements-frozen.txt` recursively in the top of EPICS, then uses `uv` to set virtual environments up and install dependencies.
 
 ## Restore IBEX from backup(s)
 
@@ -50,7 +63,9 @@ archives which can be browsed using any zip tool - for example `7-zip` is relati
 installed on NDX computers.
 
 ## Install IBEX for the first time
-_Note this is unlikely to happen now we've migrated most instruments, and SECI instruments should have a copy of IBEX at the least._
+:::{note}
+This is unlikely to happen now we've migrated all instruments from SECI.
+:::
 <details>
 <summary> Click to expand</summary>
 

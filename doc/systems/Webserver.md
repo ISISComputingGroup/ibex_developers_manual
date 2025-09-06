@@ -7,10 +7,7 @@ NDAEXTWEB3 is a central Windows 2019 server, which is hosted on the FIT Hyper-V 
 * The [old IBEX web dashboard (JSON_Bourne)](/webdashboard/Web-Dashboard)
 * The [Automation application](/processes/git_and_github/Automation-Application)
 * [MCR news](https://www.isis.stfc.ac.uk/Pages/MCR-News.aspx)
-* The SECI web dashboard
 * The central proxy created [here](https://github.com/ISISComputingGroup/IBEX/issues/5112)
-* WAP access to SECI web dashboard
-
 
 Most of these services can be started and stopped by the [IIS Manager](https://www.iis.net/). To access the IIS Manager, select IIS in the Server Manager, then click on Manage in the top right hand corner of that screen. 
 
@@ -22,3 +19,7 @@ If a new server is setup, then ciphers and old TLS versions may need to be disab
 ## NDAEXTWEB4
 
 NDAEXTWEB4 is similar in that it also runs on the Hyper-V cluster. This currently hosts the [PVWS](/webdashboard/PVWS) which is a PVWS instance for the IBEX web dashboard. 
+
+## Shadow
+    
+Some web services run on Shadow - see [here](/systems/Shadow) for more information. 

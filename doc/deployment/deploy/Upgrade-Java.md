@@ -2,22 +2,7 @@
 
 ## Instrument
 
-```{note}
-If you are following this link from the first-time installation guide, then you do not need to worry about this section.
-```
-
-1. Before you start, ensure you understand [Java's licensing](/processes/dev_processes/Understanding-Java-Licensing).
-1. If any previous java version is installed on the system, uninstall it. Note that previous java versions may be under "Oracle", "AdoptOpenJDK", or "Eclipse Temurin JDK".
-1. Install an appropriate version of java:
-   - For developer installs, use the latest java in `...\ISIS_Experiment_Controls_Public\third_party_installers\latest_versions\OpenJDK...`
-   - For IBEX version v11 and before, use JDK 11 in `...\ISIS_Experiment_Controls_Public\third_party_installers\old_versions`
-   - For IBEX version v12 onwards, use JDK 17 in `...\ISIS_Experiment_Controls_Public\third_party_installers\latest_versions\OpenJDK...`
-   - Do not use a copy downloaded from the internet as it may not have been tested with IBEX
-1. Run the installer and install all components. The install menu should look like this:
-
-![open_jdk_install_prompt](open_jdk_install_prompt.PNG)
-1. Make sure you run the instrument, either now or before you finish
-   - Answer any firewall questions "yes, allow through the firewall".
+The deploy scripts will check the locally installed Java version and upgrade it as needed.
 
 {#developer_upgrade_java}
 ## Developer

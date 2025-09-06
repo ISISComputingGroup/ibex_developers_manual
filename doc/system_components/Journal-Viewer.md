@@ -28,3 +28,6 @@ Contains information on the IBEX journal viewer. This feature is intended to pro
     - Change `<Instrument Name>` to the name of your instrument
     - Change `<Run Number>` to one that exists in `C:\Data\Journal\journal_00_0.xml` on your machine
     - Note that you need to prefix your instrument with "NDW" in the last argument as this will get stripped by the script
+
+## Repopulate Journals following truncation
+To add journal entries back on an instrument following a truncation (e.g. if there is the following nagios error: `EPICS MYSQL Journal Entries` or `ERROR: empty journal table`),  run `\\isis\shares\ISIS_Experiment_Controls_Public\JournalParser\add_journal_entries.bat` on the instrument. 

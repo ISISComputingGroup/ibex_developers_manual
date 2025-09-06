@@ -8,20 +8,6 @@ Images of SANS2D equipment can be found here [SANS2D equipment](https://github.c
 
 The SANS2D instrument scientists have provided a description of the [instrument beamline](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/SANS2D/Beam_line_descriptors(Sarah%20and%20Najet).docx) and some [schematic drawings](https://stfc365.sharepoint.com/sites/ISISExperimentControls/ICP%20Discussions/SANS2D/Sans2d_drawing_for%20_IBEX(Sarah%20and%20Najet).pptx).
 
-## Mini-IBEX on SANS2D ##
-This section contains relating to the mini-IBEX server on SANS2D.  This information can be deleted once SANS2D has migrated to a full IBEX server.
-
-SANS2D is a SECI instrument, but uses the IBEX interactions for dealing with the CAEN HV.
-As such, it has some setup which is not automated, but is needed to function correctly.
-
-If NDXSANS2D is restarted, then, you will need to run start_inst (the version of IBEX is still currently that old, as the CAEN hasn't changed in that time). This should run the reduced version of the start_inst code, but it does kill SECI as well as everything else. After this SECI can be restarted.
-
-If the HVCAEN_01 IOC doesn't automatically start, then either use the console to connect and start the IOC, or use the reset comms button on the CAEN VI which will start the IOC via the console in the background.
-
-
-## Control System ##
-SANS2D will migrate from the SECI control system to the IBEX control system in MMMMMMMM YYYY.
-
 ## SANS2D Equipment ##
 The equipment listed below is used on SANS2D. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).
 
@@ -160,18 +146,15 @@ Eurotherms are used to control temperature Orange Cryostat, CCR and Furnace devi
 1. See also [#3784](https://github.com/ISISComputingGroup/IBEX/issues/3784)
 
 ##### Note: Hitachi #####
-Hitachi L-7100 HPLC pump (no longer supported at ISIS).  ~Can't find L-7100 on [Hitachi web-site](http://www.hitachi-hightech.com/global/about/corporate/group/hhs (may be obsolete).  Check existing SECI VI for logic and manual.~
-   * Update (27-06-2019): Hitachi pumps are being retired.  No longer any need to support them.  See [#3780](https://github.com/ISISComputingGroup/IBEX/issues/3780)
-   * SANS2D will not be using Hitachi pumps in future.  They will use the [Knauer](#note-knauer-hplc) or Jasco HPLC pumps.
+Hitachi pumps are being retired.  No longer any need to support them.  SANS2D will not be using Hitachi pumps in future.  They will use the [Knauer](#note-knauer-hplc) or Jasco HPLC pumps.
 
 ##### Note: Knauer #####
 1. Knauer K-6 Electric Valve Drive.  [Knauer web site](https://www.knauer.net)<br>
-   * K-6 model appears to have been superseded.  Check existing SECI VI for logic and manual.
+   * K-6 model appears to have been superseded.  
 1. See also [#3781](https://github.com/ISISComputingGroup/IBEX/issues/3781)
 
 ##### Note: Knauer HPLC #####
 Knauer HPLC 1050 [Knauer HPLC 1050 is discontinued.](https://www.knauer.net/en/discontinued-smartline-pump-1050-successor-azura-p-61l/p14161).  
-1. Check existing SECI VI for logic and manual.
 1. Support for Knauer HPLC 1050 is implemented via the following tickets:
 [#3262](https://github.com/ISISComputingGroup/IBEX/issues/3262), 
 [#3782](https://github.com/ISISComputingGroup/IBEX/issues/3782), 
@@ -250,7 +233,7 @@ SANS2D has two baffle trolleys (in the vacuum tank).  One for the front baffle, 
 ##### Note: Beamstops #####
 SANS2D has beamstops on the front and rear detectors
 1. Front Detector:
-   * has a single beamstop, mounted on the detector trolley.  Rotates in the plane of the detector array.  The beamstop must not be moved when the detector is rotated (in SECI this requirement is implemented as a software inhibit).
+   * has a single beamstop, mounted on the detector trolley.  Rotates in the plane of the detector array.  The beamstop must not be moved when the detector is rotated (in SECI this requirement was implemented as a software inhibit).
    * has a strip beamstop, mounted on the detector trolley.  Moves linearly across the face of the detector array.  Primarily used for commissioning purposes (usually "parked" out of the way).
 1. Rear Detector: 
    * has three beamstops, mounted on a pillar attached to the detector trolley.  Pillar moves linearly across the face of the detector array.  The individual beam stops move independently up/down on the pillar.
@@ -281,21 +264,11 @@ SANS2D has the following devices under motion control:
 Specialist requirements:
 1. There is a requirement within SANS2D to inhibit the movement of the detectors when they are powered (the CAEN HV is ON)
 
-## SANS2D SECI Configs ##
-Document information about SANS2D SECI configs here.
-
-Configuration Name                     | Sub-Configurations                                 | Last Accessed | Required |
----------------------------------------|----------------------------------------------------|---------------|----------|
-SANS2D_place_holder1.conf              | -                                                  | dd/mm/yyyy    | -        |
-SANS2D_place_holder2.conf              | -                                                  | dd/mm/yyyy    | -        |
-
-## SANS2D Genie Scripts ##
-Similarly, Document information about SANS2D SECI Genie scripts here.
 
 ## SANS2D Baldor Drives ##
 SANS2D has 5 guides on the front end. Each of these has a significant weight - ~3 tonnes. The motors used to lift the guides are servo motors.  Galil controllers cannot provide sufficient power to motors capable of lifting such weights.  As a result, some Baldor drives were introduced to provide the power required to lift these guides. They are digital motion controllers that can communicate with a control system and have settings in each controller to drive the motor.
 
-However, ISIS uses them as pseudo dumb power amplifiers only. A Galil drives the axes like a servo - it provides an analogue signal to the Baldor to ask it to drive, but no core power. The Baldor drives the axes.  Therefore, from the point of view of SECI or IBEX, the Baldor drives appear as Galil axes. 
+However, ISIS uses them as pseudo dumb power amplifiers only. A Galil drives the axes like a servo - it provides an analogue signal to the Baldor to ask it to drive, but no core power. The Baldor drives the axes.  Therefore, from the point of view of IBEX, the Baldor drives appear as Galil axes. 
 
 The Baldor drives do need to be set up – but this is done independently. Historically, this entire arrangement caused a lot of problems during commissioning.  There is a bespoke homing routine in use with this setup (the need for such a thing has been questioned but, for now, a bespoke homing routine continues in use).
 

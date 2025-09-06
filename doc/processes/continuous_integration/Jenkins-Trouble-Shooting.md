@@ -30,7 +30,7 @@ In this log it couldn't read open a given jar file. This appeared to be a proble
 
 ## Build Agent is OffLine
 
-Remote desktop to the machine in question and start the Jenkins slave service using services.msc. 
+Remote desktop to the machine in question and start the Jenkins slave service using services.msc or using start_jenkins.bat in the Jenkins directory (a shortcut to this should be in the windows programmes start-up directory for the user as well). 
 
 If the service fails to start have a look in `C:\Jenkins` at `jenkins-slave.wrapper.log` it shows what the command line is. Run the command line and see the error then fix it. If it is the path to java this is set in `jenkins-slave.xml`. If you have some time you might try and couple this to the system path so that we no longer need the path in here.
 

@@ -5,9 +5,6 @@ This page collects information that will be useful for the implementation of the
 ## Background & Timeline ##
 Merlin is a high count rate, medium energy resolution, direct geometry chopper spectrometer on TS1 at ISIS. The [MERLIN](https://www.isis.stfc.ac.uk/Pages/Merlin.aspx) web page describes the background to the instrument.
 
-## Control System ##
-MERLIN will migrate from the SECI control system to the IBEX control system.
-
 ## MERLIN Equipment ##
 The equipment listed below is used on MERLIN. Please add new information (e.g. new items of equipment, new notes, information about drivers, etc. to this table).
 
@@ -112,14 +109,3 @@ Neocera is used only occasionally.  [Neocera LTC-21 Manual](http://www.submm.cal
 ##### Note: McWhan #####
 [McWhan pressure cell](http://www.isis.stfc.ac.uk/sample-environment/high-pressure-and-gas-handling-/clamped-cells/mcwhan-clamped-cell-8653.html).  McWhan refers to the design of the cell (not to the manufacturer).  Cell cannot be controlled directly from IBEX.  It may be possible to report the current pressure via a device such as a Chell pressure transducer.
 See also [General Clamped Cells](http://www.isis.stfc.ac.uk/sample-environment/high-pressure/clamped-cells/general-clamped-cells/general-clamped-cells14180.html) and [High Pressure Gas Cells](http://www.isis.stfc.ac.uk/sample-environment/sample-containers/high-pressure-gas-cells/high-pressure-gas-cells8936.html).
-
-## MERLIN SECI Configs ##
-MERLIN has a number of SECI configurations, which need to be migrated.
-
-## MERLIN Genie Scripts ##
-The critical OpenGenie scripts, for initialisation and focussing, are in `C:\\OG` (duplicated, more or less, in `C:\\scripts\OG`)
-
-MERLIN has a number of instrument specific Genie scripts. These need to be migrated to genie_python.
-
-## MERLIN Notes ##
-Add any notes about special items of equipment, setup or conditions on MERLIN that might impact the deployment and configuration of IBEX.
