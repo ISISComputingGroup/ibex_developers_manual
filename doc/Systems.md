@@ -8,6 +8,10 @@
 systems/*
 ```
 
+```{seealso}
+- [Jenkins Build Server setup](/processes/continuous_integration/Adding-a-new-Windows-machine-to-Jenkins)
+```
+
 ## Looking up Dell service-tag numbers
 
 You can check specifications of Dell machines by getting their service tag, using the following command in `powershell`:
