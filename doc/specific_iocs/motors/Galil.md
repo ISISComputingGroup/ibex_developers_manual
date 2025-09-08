@@ -172,6 +172,23 @@ If it is a soft limit, these are set in IBEX. For axes where the [motor and enco
 the internal limits in the galil should match closely with the limits set in IBEX. However, if the motor-encoder resync
 tolerance is set very high, it is possible for the internal galil limits to differ from those configured in IBEX.
 
+### Checking historic Galil parameters
+
+It may be useful to check when a Galil parameter was changed. The easiest way to do this is via the `autosave`
+directory, which keeps historic files.
+
+For example, if you were interested in the setting `MENCTYPE_CMD` on motor `0403`, the following command
+could be used:
+```
+cd /c/Instrument/var/autosave/GALIL_04
+grep -rF "0403_MENCTYPE_CMD"
+```
+
+This will list all autosave files that refer to this setting, along with the value it had at that time.
+
+For more fine-grained information, the ICP putlog files (on the archive, or in `c:\data\Export only`) can equally
+be searched, using a similar command, to find exactly when a setting was changed.
+
 ## Further Information
 
 ```{toctree}
