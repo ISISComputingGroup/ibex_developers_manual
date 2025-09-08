@@ -186,7 +186,7 @@ grep -rF "0403_MENCTYPE_CMD"
 
 This will list all autosave files that refer to this setting, along with the value it had at that time.
 
-For more fine-grained information, the ICP putlog files (on the archive, or in `c:\data\Export only`) can equally
+For more fine-grained information, the ICP put log files (`*_ICPputlog.txt`) (on the archive, or in `c:\data\Export only`) can equally
 be searched, using a similar command, to find exactly when a setting was changed.
 
 ## Further Information
