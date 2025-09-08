@@ -14,7 +14,7 @@ Each instrument needs to be aware of the magnitude and direction (positive/negat
 
 Each steering magnet will be set to the desired value by the scientist/user, and the system should correct the actual value sent, based on the power of the main magnets of the other instruments. The time to react should be less than two seconds, though ideally faster. 
 
-A set of linear coefficients (to be provided by the scientists, and ideally alterable by them as well) should be enough to provide this information. It should be possible to run the system without the corrections being used (i.e. the coefficients are not actioned), as this will be required for calibration and refining these cooeffecients. 
+A set of linear coefficients (to be provided by the scientists, and ideally alterable by them as well) should be enough to provide this information. It should be possible to run the system without the corrections being used (i.e. the coefficients are not actioned), as this will be required for calibration and refining these coefficients. 
 
 Both the corrected and set values should be exposed through the GUI.
 
