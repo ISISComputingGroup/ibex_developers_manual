@@ -63,6 +63,8 @@ The bare minimum requirements for a system tests node are:
   * Must be checked out onto an instrument branch
 - Ensure there is a calibrations directory for this instrument, in `C:\Instrument\Settings\config\common`
   * Must be a git checkout, on `master` branch
+- LabVIEW
+- NI DaqMX
 
 ## Adding to Jenkins
 
