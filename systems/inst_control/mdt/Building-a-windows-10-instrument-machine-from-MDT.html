@@ -1,0 +1,277 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Building a new instrument virtual machine from MDT &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Powershell Remote" href="../PS-Remote.html" />
+    <link rel="prev" title="Building an MDT build server" href="Building-a-windows-10-MDT-build-server.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../Systems.html">Systems Administration &amp; Hardware</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../External.html">External systems/services</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../Inst-Control.html">Instrument control computers</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Archive-Watcher.html">Archive Watcher</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Automated-log-rotation.html">Automated log rotation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Change-Windows-Theme.html">Change Windows Theme</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Computer-Troubleshooting.html">Computer Troubleshooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Data-Generation-and-Storage-on-Instrument-PCs-%28NDX%27s%29.html">Data Storage &amp; Production</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Increase-VM-memory.html">Increase VM memory</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../MDT-%28Microsoft-deployment-toolkit%29.html">MDT (Microsoft deployment toolkit)</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="Building-a-windows-10-MDT-build-server.html">Building an MDT build server</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Building a new instrument virtual machine from MDT</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../PS-Remote.html">Powershell Remote</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Rebuild-Performance-Counters.html">Rebuild Performance Counters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Script-to-connect-to-all-instruments.html">Script to connect to all instruments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../TreeSize-Pro.html">TreeSize</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../VM-VHD-replication.html">VM VHD Replication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cron-jobs-and-windows-scheduled-tasks.html">Cron Jobs &amp; Scheduled Tasks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Nagios.html">Nagios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Shadow.html">Shadow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Sparrowhawk.html">Sparrowhawk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Test-Machines.html">Test Machines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Webserver.html">Webserver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../control-svcs.html"><code class="docutils literal notranslate"><span class="pre">control-svcs</span></code></a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../Systems.html">Systems Administration &amp; Hardware</a></li>
+          <li class="breadcrumb-item"><a href="../../Inst-Control.html">Instrument control computers</a></li>
+          <li class="breadcrumb-item"><a href="../MDT-%28Microsoft-deployment-toolkit%29.html">MDT (Microsoft deployment toolkit)</a></li>
+      <li class="breadcrumb-item active">Building a new instrument virtual machine from MDT</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/systems/inst_control/mdt/Building-a-windows-10-instrument-machine-from-MDT.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="building-a-new-instrument-virtual-machine-from-mdt">
+<h1>Building a new instrument virtual machine from MDT<a class="headerlink" href="#building-a-new-instrument-virtual-machine-from-mdt" title="Link to this heading"></a></h1>
+<p>Note: this page documents the process of booting and building a windows 10 <strong>system</strong> in an empty virtual machine. This page does not focus on deploying IBEX itself.</p>
+<ul class="simple">
+<li><p>if you do not see hyper-v on your windows desktop, you just need to enable it via <code class="docutils literal notranslate"><span class="pre">turn</span> <span class="pre">windows</span> <span class="pre">feature</span> <span class="pre">on</span> <span class="pre">or</span> <span class="pre">off</span></code> , Select <code class="docutils literal notranslate"><span class="pre">Hyper-V</span></code> and sub items.</p></li>
+</ul>
+<p><strong>Note</strong>: boot and build can take a while, 3 hours on an NDH with SSDs, longer of you have spinning disks.</p>
+<section id="find-a-suitable-physical-host">
+<h2>Find a suitable physical host<a class="headerlink" href="#find-a-suitable-physical-host" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Find a suitable physical host server. The server will need a minimum of 14GB of memory and 256GB of hard disk space free. You can use hyper-v on your own Windows 10 desktop if your machine is powerful enough.</p>
+<ul>
+<li><p>If you are building a real instrument machine, the hyper-v host will usually be <code class="docutils literal notranslate"><span class="pre">NDHINST</span></code>, and the virtual machine <VMname> that you’re building will usually be <code class="docutils literal notranslate"><span class="pre">NDXINST</span></code></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="copy-needed-files-onto-physical-host">
+<h2>Copy needed files onto physical host<a class="headerlink" href="#copy-needed-files-onto-physical-host" title="Link to this heading"></a></h2>
+<p>Choose a virtual machine name <VMname> to use later - this name will need to be unique on the network (for an instrument this is the NDX name). For developing, choose a name with an <code class="docutils literal notranslate"><span class="pre">NDXTEST</span></code> prefix followed by a number. Choose a free number and record your choice in the spreadsheet called <code class="docutils literal notranslate"><span class="pre">w10_test_machines.xslx</span></code> in the General channel of Teams.</p>
+<ul class="simple">
+<li><p>Make a copy of a boot ISO from <code class="docutils literal notranslate"><span class="pre">&lt;Kits&gt;\CompGroup\ICP\W10Clone\Boot</span></code> on your local computer. You may see several ISOs in here, see the <code class="docutils literal notranslate"><span class="pre">README.txt</span></code> and choose the appropriate one. This iso does an initial boot and the loads the rest off a network share name embedded within it, thus the iso itself doesn’t need to change often, it is just pointing to the appropriate location to install from.</p>
+<ul>
+<li><p><em>Note: This ISO is not really a windows PE iso, it is instead an ISO which has been built by MDT. You cannot just use a version downloaded from <code class="docutils literal notranslate"><span class="pre">microsoft.com</span></code></em></p></li>
+</ul>
+</li>
+<li><p>Next make a local copy of the VHD disks from <code class="docutils literal notranslate"><span class="pre">&lt;Kits&gt;\CompGroup\ICP\W10Clone\VHDS</span></code> - choose either an appropriate IBEX release or latest Jenkins build. You will need to copy the <code class="docutils literal notranslate"><span class="pre">apps</span></code>, <code class="docutils literal notranslate"><span class="pre">var</span></code> and <code class="docutils literal notranslate"><span class="pre">settings</span></code> VHDS. If you plan to have several local VMs, you may wish to rename these to <code class="docutils literal notranslate"><span class="pre">&lt;VMname&gt;-settings.vhdx</span></code> etc. Make a copy of the <code class="docutils literal notranslate"><span class="pre">var</span></code> disk name rename it to <code class="docutils literal notranslate"><span class="pre">scratch.vhdx</span></code> or <code class="docutils literal notranslate"><span class="pre">&lt;VMname&gt;-scratch.vhdx</span></code> as appropriate. Make sure you are copying them to a disk with enough free space.</p>
+<ul>
+<li><p>Note: you can check the VHDs are not corrupt by mounting them on your local machine (right click on file) if they fail to mount, they may be corrupt and you should select a different set of VHDs. After mounting each VHD should contain some files, e.g. the Apps VHD should contain an EPICS installation and a client.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="configure-the-vm">
+<h2>Configure the VM <VMname><a class="headerlink" href="#configure-the-vm" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Don’t use hyper-v quick create, start hyper-v manager as your admin account.</p></li>
+<li><p>in hyper-v settings (right click on your computer name in hyper-v) - adjust hyper-v paths for where to create machines and disks if you want a non-default location. Make sure disk path is somewhere with lots of space.</p></li>
+<li><p>in virtual switch manager: there will probably be a default switch there connected to “internal network”. You need to create a new virtual switch of type “external” and attach it to the correct ISIS network adapter. If you have several network interfaces, you may need to look at you system network setting to get the right adapter name.</p></li>
+<li><p>Now select new -&gt; virtual machine. Create a generation 2 VM, 12GB memory = 12288mb is ample, less may be fine. Select use dynamic memory.
+chose “external network” switch for the VM, create a new virtual hard disk (the default, 128GB), choose install os from iso for booting, select above iso file saved above</p>
+<ul>
+<li><p>(note: in hyper-v set to NUMA architecture limit which is usually just below 14gb).</p></li>
+</ul>
+</li>
+</ul>
+<p>right click on VM</p>
+<ul>
+<li><p>in firmware/bios settings of VM, put hard disk/network/dvd as boot order, this helps on booting, initially giving you some time (while it is failing to network boot) to get ready to press key to boot from dvd. After initial dvd boot you don’t want to boot from dvd iso again.</p></li>
+<li><p>increase number of processors say to 4</p></li>
+<li><p>add scsi hard drives and attach vhds, add scratch first and then add rest in any order. You do not need to specify a mount point, just make the disks available.</p>
+<ul class="simple">
+<li><p>These should be <code class="docutils literal notranslate"><span class="pre">apps.vhdx</span></code>, <code class="docutils literal notranslate"><span class="pre">var.vhdx</span></code>, <code class="docutils literal notranslate"><span class="pre">settings.vhdx</span></code> and <code class="docutils literal notranslate"><span class="pre">scratch.vhdx</span></code>. You <strong>MUST</strong> mount <code class="docutils literal notranslate"><span class="pre">scratch.vhdx</span></code> as the first SCSI drive in the VM as it gets formatted and partitioned during the MDT task sequence (into <code class="docutils literal notranslate"><span class="pre">Data</span></code> and <code class="docutils literal notranslate"><span class="pre">Scratch</span></code>). <code class="docutils literal notranslate"><span class="pre">scratch.vhdx</span></code> is actually a blank VHDX so an empty one called something different will work as well (or a copy of one of the others)</p></li>
+</ul>
+<ul class="simple">
+<li><p>Note: if you are replacing existing disks, you <strong>still need to eject and re-add them in Hyper-V for them to be recognized!</strong></p></li>
+</ul>
+</li>
+</ul>
+<p>go to checkpoints of VM and disable automatic checkpoints, but create a checkpoint before you start - this lets you revert back (apply) and re-run a boot without having to recreate the VM</p>
+<p>start vm and connect to screen of vm</p>
+<ul class="simple">
+<li><p>If it blue screens try the boot again. I’ve seen this occasionally on windows 10 hyper v, not on the windows server hyper-v.</p></li>
+</ul>
+<p>After iso boot it will go into MDT install</p>
+<ul class="simple">
+<li><p>choose reclone full system (thick w10 image) as install type</p></li>
+<li><p>change computer name to your unique <VMname> from above, other defaults should be fine (join ISISWG, Don’t restore settings or data)</p></li>
+<li><p>When asked for admin password, refer to passwords page and add the new password there if necessary for NDX. If this is your own desktop, change it to whatever you like - this is just the password for the <code class="docutils literal notranslate"><span class="pre">Administrator</span></code> account after boot.</p></li>
+<li><p>now leave it installing, it will reboot several times and may look like it is doing nothing at times. Wait until you see the final dialogue box displayed on the screen that says the <code class="docutils literal notranslate"><span class="pre">installation</span> <span class="pre">has</span> <span class="pre">completed</span> <span class="pre">with</span> <span class="pre">0</span> <span class="pre">warnings</span> <span class="pre">and</span> <span class="pre">0</span> <span class="pre">errors</span></code></p></li>
+</ul>
+</section>
+<section id="setting-up-ibex-before-first-use">
+<h2>Setting up IBEX before first use<a class="headerlink" href="#setting-up-ibex-before-first-use" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Check settings folder name - it should have been renamed during install to correct <VMname></p></li>
+<li><p>(NDX instrument) Inside the settings folder, do a git checkout to the correct config branch and pull</p></li>
+</ul>
+</section>
+<section id="starting-ibex">
+<h2>Starting IBEX<a class="headerlink" href="#starting-ibex" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>At this stage you should be able to start IBEX. Make sure you start it as our <strong>standard user</strong>, not <code class="docutils literal notranslate"><span class="pre">Administrator</span></code> that you are probably still logged in as, otherwise all of the log files and directories will be created with the wrong permissions. It is probably easiest if you now remote desktop into your new VM rather than use the hyper-v console</p>
+<ul>
+<li><p>It seems that the Var and Settings VHDs in particular are very sensitive to getting into a state where the files are “owned” by admin but admin can’t delete them, and a reboot does not fix this. To fix this, install fresh settings/var vhds by following the “upgrade/change vhd” instructions below.</p></li>
+</ul>
+</li>
+<li><p>Start ibex client, initially you will have no configuration loaded so not everything will start. Go to <code class="docutils literal notranslate"><span class="pre">configuration</span> <span class="pre">-&gt;</span> <span class="pre">edit</span> <span class="pre">current</span> <span class="pre">configuration</span> <span class="pre">-&gt;</span> <span class="pre">save</span> <span class="pre">as</span></code> and save it as something like <code class="docutils literal notranslate"><span class="pre">test</span></code> and switch to this configuration. This should now start DAE processes and you should end up in <code class="docutils literal notranslate"><span class="pre">SETUP</span></code> rather than <code class="docutils literal notranslate"><span class="pre">UNKNOWN</span></code> runstate after everything restarts. This seems to take a while for some reason, be patient.</p></li>
+<li><p>to be able to start a run with <code class="docutils literal notranslate"><span class="pre">Begin</span></code> you need to set some DAE parameters:</p>
+<ul>
+<li><p>in <code class="docutils literal notranslate"><span class="pre">experiment</span> <span class="pre">setup</span> <span class="pre">-&gt;</span> <span class="pre">time</span> <span class="pre">channels</span></code> set first row of time regime 1 to be   10, 10000, 100, dT=C</p></li>
+<li><p>in <code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">acquisition</span></code> select the dropdown next to wiring, detector and spectra tables - choose the only option offered that is an <code class="docutils literal notranslate"><span class="pre">ibextest</span></code> table</p></li>
+<li><p>now apply changes</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="upgrading-changing-ibex-vhds">
+<h2>Upgrading/changing IBEX VHDs<a class="headerlink" href="#upgrading-changing-ibex-vhds" title="Link to this heading"></a></h2>
+<p>If you need to upgrade/change IBEX VHDS, the process is as follows:</p>
+<ul class="simple">
+<li><p>Shutdown the NDX machine (gracefully)</p></li>
+<li><p>Go into hyper-V and remove the three IBEX VHDS from the VM (Apps, Settings, Var)</p></li>
+<li><p>Replace the VHDS on the filesystem on the NDH with the new versions you wish to install</p></li>
+<li><p>Add these back in to the VM via Hyper-V manager</p></li>
+<li><p>Boot the VM</p></li>
+<li><p>Ensure that the filesystem looks sensible e.g. that <code class="docutils literal notranslate"><span class="pre">Apps/</span></code> contains EPICS and a client, <code class="docutils literal notranslate"><span class="pre">Settings</span></code> contains a settings directory, and <code class="docutils literal notranslate"><span class="pre">Var/</span></code> contains the expected file structure.</p></li>
+</ul>
+<p>Note: you can not simply replace the VHDs on the NDH by name. This is because Hyper-V sets some attributes on the VHDs when they are explicitly added; if these attributes are not set, you will get an error on attempting to boot the VM.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Building-a-windows-10-MDT-build-server.html" class="btn btn-neutral float-left" title="Building an MDT build server" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../PS-Remote.html" class="btn btn-neutral float-right" title="Powershell Remote" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Sep 09, 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
