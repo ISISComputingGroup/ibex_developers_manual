@@ -16,8 +16,8 @@ The following faults can be seen when operating the magnet fully from the front 
 The IPS IOC now supports the SCPI protocol, which is more feature rich than Legacy mode.
 Effort was made to ensure that the top level EPICS interface was was changed as little as possible.
 It was particularly important that the SNL state-machine logic was not altered.
-This all required some careful shoe-horning of the new interface to provide PV compatibility with the legacy mode.
-There is now significantly more diagnostic information available, along with support for daughter-boards, such as He and N leve meters, pressure measurement, etc., all of which have necessitated additions to the user interface in the IBEX client.
+This all required some careful designing of the new interface to provide PV compatibility with the legacy mode.
+There is now significantly more diagnostic information available, along with support for daughter-boards, such as He and N level meters, pressure measurement, etc., all of which have necessitated additions to the user interface in the IBEX client.
 The IOC can be configured to run with either legacy or SCPI protocols via a STREAMPROTOCOL macro ("SCPI" | "LEGACY"). The IOC publishes a new PV $(P)PROTOCOL, which reflects the configuration mode, allowing the user interface to hide or show attributes and controls relevant to SCPI or LEGACY modes.
 
 As already mentioned, SCPI mode provides additional status reporting, much of which is based on the return string from the "READ:SYS:ALRM" command, which is poorly documented in the supplier's documentation. The status strings are assumed to all conform to the "Directory of Alarms" section (17.3) of the Operator's Manual (Issue 20, July 2018).
