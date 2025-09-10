@@ -64,6 +64,40 @@ The IOC implements the following state machine in SNL:
   * Set the IPS activity to "Ramp to Zero" and wait for the supplied current to drop to zero
   * At the end of this state, the magnet is set to "persistent" mode.
 
+The SNL state machine is also described in the following diagram:
+```{mermaid}
+---
+title: IPS State Machine
+---
+stateDiagram-v2
+    direction TB
+    [*] --> initial
+    at_field: At Field<br>statemachine_pv=1
+    set_psu_to_match_magnet: Set PSU to match magnet<br>statemachine_pv=2
+    wait_for_voltage_to_stabilise: Wait for voltage to stabilise<br>statemachine_pv=3
+    ensure_switch_heater_warm: Ensure switch heater warm<br>statemachine_pv=4
+    set_psu_output: Set PSU output<br>statemachine_pv=5
+    switch_off_heater: Switch off heater<br>statemachine_pv=6
+    ramp_down_psu: Ramp down PSU<br>statemachine_pv=7
+    initial --> at_field: field_setpoint_alarm == 0
+    at_field --> set_psu_to_match_magnet: field_setpoint != field_setpoint_readback<br>&& field_setpoint_alarm == 0<br> && (heater == 0 || heater == 2)
+    at_field --> set_psu_output: field_setpoint != field_setpoint_readback<br>&& field_setpoint_alarm == 0<br>&& heater == 1
+    set_psu_to_match_magnet --> wait_for_voltage_to_stabilise: field_setpoint_readback == magnet_field<br>&& psu_field == magnet_field<br>"&& ((sweepmode == SWEEP_MODE)<br> || (sweepmode == SWEEP_MODE_ALT))<br>&& (sweep_active == 0)
+    set_psu_to_match_magnet --> set_psu_to_match_magnet: timeout 300s
+    wait_for_voltage_to_stabilise --> ensure_switch_heater_warm: supplyvoltage_stable == 1
+    wait_for_voltage_to_stabilise --> set_psu_to_match_magnet: field_setpoint_readback != field_setpoint_raw
+    wait_for_voltage_to_stabilise --> set_psu_to_match_magnet: timeout 300s
+    ensure_switch_heater_warm --> set_psu_output: activity == ACTIVITY_HOLD<br>&& heater == 1<br> && heater_ontime_ok == 1
+    ensure_switch_heater_warm --> ensure_switch_heater_warm: timeout heater_wait_time + 30.0s
+    set_psu_output --> switch_off_heater: field_setpoint_readback == field_setpoint<br>&& (field_setpoint == psu_field<br>&& persistent == 1<br>&& (sweep_active == 0)<br>
+    set_psu_output --> at_field: field_setpoint_readback == field_setpoint<br>&& field_setpoint == psu_field<br>&& persistent == 0<br>&& (sweep_active == 0)<br>
+    set_psu_output --> set_psu_output: timeout 300s
+    switch_off_heater --> ramp_down_psu: heater == 0 || heater == 2<br>
+    switch_off_heater --> switch_off_heater: timeout 30s
+    ramp_down_psu --> at_field: psu_field == 0<br>&& (sweep_active == 0) <br>
+    ramp_down_psu --> ramp_down_psu: timeout 300s
+```
+
 ## IOC notes
 
 - The IOC does not enter it's state machine until a setpoint is set.
