@@ -687,6 +687,7 @@ pywin
 quickstream
 RAL
 Raman
+rastering
 RBox
 rbv
 rc
