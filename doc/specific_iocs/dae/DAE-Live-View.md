@@ -2,51 +2,38 @@
 
 ## normal integral 2D detector live view
  
-The DAE, when in [event mode](#dae_event_histogram_modes), can serve up an [AreaDetector](https://github.com/areaDetector/ADCore) image as a live view of the neutron data. This can be viewed using an ImageJ plugin or as an Intensity plot in CSS.
+The DAE, when in [event mode](#dae_event_histogram_modes), can serve up an [AreaDetector](https://github.com/areaDetector/ADCore) image of the neutron data as a `detector live view` device screen. The data created by areaDetector canalso be viewed using an ImageJ plugin or as an Intensity plot in CSS.
 
-Using the live view device screen you should be able to add a view with the DET macro as 1 or 2
+Using the live view device screens you can add several views, the DET macro indicates a view number and starts at 1 and can go up to 10
 
-You need to run the DAE in event mode, this will need an event mode wiring table and also defining a second time regime in the time channels section. 
+Running the DAE in event mode works best (is quickest), this will need an event mode wiring table and also defining a second time regime in the time channels section. If you nede to run it in histogram mode it will be slower as it will have to download all histograms to integrate every time, in event mode these are pre-created for fast access. 
  
-Live view PVs have a root at `%MYPVPREFIX%DAE:AD1` and `%MYPVPREFIX%DAE:AD2` for the two detector case
+Live view PVs have a root prefix of `%MYPVPREFIX%DAE:AD1:` for detector view 1 etc
 
-You first need to tell it the spectra to use for the live view e.g.
-```
-caput %MYPVPREFIX%DAE:AD1:INTG:SPEC:START:SP 11
-caput %MYPVPREFIX%DAE:AD1:INTG:SPEC:SIZEX:SP 80
-caput %MYPVPREFIX%DAE:AD1:INTG:SPEC:SIZEY:SP 80
-```
-will tell it to start from spectrum 11 and use consecutive spectra in an 80x80 grid. Setting `SPEC:SIZEX` sets the underlying area detector `SizeX` and `MaxSizeX`. Though `SizeX` can be smaller, we do binning and size changes etc using a region of interest plugin later so they should always be the same here. 
+Open the live view settings page and then you need to specify a few items. Standard data is stored in the DAE as a set of spectra starting at nuber 1 (spectrum 0 is a special spectrum for unassigned data). The DAE has no knowledge of detector shape, however a contiguous block of spectrum numbers usually corresponds to rastering by row or column of a 2D detector. So for example you may have a detector sized 600x400 pixels - in the DAE this may be stored as 600 contiguous blocks of 400 elements, so you need to tell the view 
+* starting spectrum number: at what spectrum number does the first detector pixel correspond to. This is usually not 1 as the first few spectra are usually assigned to monitors.
+* x pixels and y pixels: size of the detector
+The liveview dispay will then real xsize x ysize spectra and recreate the two dimensional structure. Other variables you can set are:  
 
-Live view is disabled by default, it is enabled with
-```
-caput %MYPVPREFIX%DAE:AD1:INTG:ENABLE:SP 1
-```
-depending on the number of spectra, MAX_ARRAY_BYTES may need adjusting
+* integral mode: see total counts so far, or counts since last poll
+* integral trans mode: do you want to see plot of pure counts, logarithm of counts etc.
+* scale to zero: is scale to use  `0 -> max counts` or `min counts` to `max counts`
+* specify a region of interest (ROI) and binning, or just leave as as to see all
+* spec mode: is the dae in event or [histogram mode](#dae_event_histogram_modes)
+* data mode: noremally `TOFSummed`, `TOF channel` is a special mode for linear (1D) detectors, it uses the linear detector pixel number as one axes and the time of flight as the other giving a 2D view. Used on POLREF amnd INTER for example.
+* rotation: is the image the right way round or needs to be flipped
+* period: dae period number to display, or use 0 for current period 
+* running: choose to enable or disable liveview.
 
-## Live view in histogram mode
+depending on the number of spectra, EPICS `MAX_ARRAY_BYTES` may need adjusting - this would only be for a PCAS based server, so the gateway for example if you nede to view teh liveview off instrument.
 
-It is possible to use liveview in [histogram mode](#dae_event_histogram_modes), but this is slower and puts more load on the DAE unless a separate integrating detector card is used (such as on LOQ or SANS2D). Use the parameters to define spectrum numbers etc. as above and then enable this way with:
-```  
-caput %MYPVPREFIX%DAE:AD1:INTG:SPEC:MODE:SP 1
-```
-
-## 1D detector with TOF axis giving 2D view
+## 1D detector with TOF axis giving 2D view (data mode: `TOF channel`)
 
 In this case Y is the spectrum number and X is the time of flight bin. 
 
-* `SIZEY` is the number of spectra in the 1D detector
-* `SIZEX` is (number_of_time_channels + 1)  
-    - `number_of_time_channels` is shown on the DAE Information tab as `Time Channels`
-* `SPEC:START:SP` is number_of_dae_spectra_to_skip_to_get_to_1D_detector_spectra
-
-Typically `number_of_dae_spectra_to_skip_to_get_to_1D_detector_spectra` will be the number of monitor spectra if they occur first in the spectra order, but on a multiple detector instrument it could be larger.  
-
-You then need to put the live view into "TOFChannel" rather than "TOFSummed" mode either on the OPI or with:
-```
-caput %MYPVPREFIX%DAE:AD1:INTG:DATAMODE:SP 1
-```
-`number_of_time_channels` is displayed on the DAE Run Information tab as "time channels". Note that this value will change if they ever change their time channel boundaries.     
+* `Y Pixels` is the number of spectra in the 1D detector
+* `X Pixels` is (number_of_time_channels + 1)  
+    - `number_of_time_channels` is shown on the DAE Run Information tab as `Time Channels` (this number will change if you change time channel boundaries)
 
 ## error on profile picture about not enough data for `dataWidth*height`
 
