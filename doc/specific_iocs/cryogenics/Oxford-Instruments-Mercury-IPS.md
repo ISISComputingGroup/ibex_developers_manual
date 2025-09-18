@@ -29,6 +29,11 @@ noticed, along with additional, undocumented status, such as "Magnet Safety".
 It has not been possible to test all alarm scenarios with the IPS unit and as such unable to fully 
 ascertain that all the expected message strings are correct - they may need to be adjusted later on,
 if/when they arise.
+Tested and verified to date:
+- PSU board open circuit
+- PSU board short circuit
+- Temperature board open circuit
+- Temperature board short circuit
 
 The support module exports an aSub record subroutine to facilitate handling of the responses to 
 `READ:SYS:ALRM`, which is not feasible with a StreamDevice protocol handler.
@@ -107,56 +112,27 @@ temperature sensor will be `MB1.T1`, the UID for the level meter will be `DB1.L1
 the magnet supply will be `GRPZ` for all 4 of the systems.
 The 10T system will have an additional temperature sensor `DB8.T1` and a pressure sensor `DB5.P1`.
 
-It appears that:
-devices connected to the motherboard are prefixed: `MB1`\
-devices connected to a daughter-board are prefixed: `DB<slot #>`
+Devices connected to the motherboard are prefixed: `MB1`\
+Devices connected to a daughter-board are prefixed: `DB<slot #>`
 
-
-Conversation between Chris Lawson and Oxford Instruments (18 Feb 2025)
-SCPI Equivalents:
-Yes we are looking for the equivalent between Mercury iPS and iPS-120 control syntax. It may be 
-some things are missing/changed, but wondered if there was a table of all of this somewhere 
-internally.
-I do not think we have a document which succinctly summarises differences between Mercury iPS and 
-the IPS-120 in the context of their remote command sets.
+### A comparison of availability of legacy vs SCPI features
+| Function                        | Legacy | SCPI          |
+|---------------------------------|--------|---------------|
+| Trip current readback           | `F17`  | Not available |
+| Trip field readback             | `F19`  | Not available |
+| Ramp mode reporting (fast/slow) | Yes    | Not available |
+| Status reporting                | Yes    | Detailed      |
+| He Level reporting              | No     | Yes           |
+ | N2 Level reporting              | No     | Yes           |
  
-Q: What are the new commands to use on the Mercury iPS which are equivalent to the commands from 
-the old iPS-120 below?\
-`F17` (Trip Current)\
-`F19` (Trip Field)\
-`Xmn`\
-`m = 1` quenched\
-`m = 2` overheated
  
-Answer from Oxford Instruments:\
-<em>`F17/F19`\
-I assume that you mean legacy commands `R17` (Trip Current) and `R19` (Trip Field).
-This functionality is preserved when Mercury iPS remote interface is set to use legacy command set.
-But when using "SCPI-style" command set, this exact information cannot be retrieved directly from 
-the iPS.
-Under certain (limited) circumstances `R17/R19` are equivalent to `DEV:<UID>:PSU:SIG:PCUR` and 
-`DEV:<UID>:PSU:SIG:PFLD` (note that UID must be a group, not an individual PSU).
- 
-`Xmn`
-There is no equivalent for `X` (examine status) command in the "SCPI-style" command set.
-As far as the first portion (`mn`) of the reply to `X` command is concerned, certain `m` values 
-correspond loosely to the bits of the status word in Mercury iPS group device 
-(`READ:DEV:<UID>:PSU:STAT`).
-The `n` part is not applicable to the Mercury iPS at all.
-</em> 
 
-Q: For `Xmn`, I note that these may be dealt with by alarms which can be read with 
-`READ:DEV:<UID>:PSU:STAT` in some hex format which is not defined in the manual 
-(p. 162 in Issue 20). Could this be clarified?\
-
-Answer from Oxford Instruments:\
-<em>
-`READ:DEV:<UID>:PSU:STAT`\
+### PSU Status:
+Using the SCPI command: `READ:DEV:<UID>:PSU:STAT`\
 It is important to note that the STATus word should be examined at the group device level, 
 not the individual PSU level.\
 It is also very important to mask out (ignore) all other bits in this 32-bit word (i.e. ones 
 not defined in the list given below):\
-</em>
 
 | Status | Bit value |
 | ------ | --------- |
@@ -177,21 +153,8 @@ not defined in the list given below):\
 | Voltage ADC error | 00010000 |
 | Current ADC error | 00020000 |
 
-Q: Also, is it possible to read if the Mercury iPS has tripped due to a low helium level signal 
-from the level card (something like the `X` command on the old `iLM200` which has a low level flag at 
-bit 5 of S)?
- 
-Answer:\
-<em>
-Low helium level
 
-There is no direct indication of the fact that iPS has run the magnet down as a result of helium 
-level dropping below a set threshold.\
-It is possible to read both the helium level (`DEV:<UID>:LVL:SIG:HEL`) and the configured threshold 
-for low helium alarm (`DEV:<UID>:LVL:HEL:LOW`).
-</em>
-
-## Compromises with SCPI command set and EPICS
+### Compromises with SCPI command set and EPICS
 `STS:SYSTEM:LIMIT`\
 Is an `mbbi` and has has 5 possible values:\
 - 0: "Normal"
@@ -203,4 +166,30 @@ Is an `mbbi` and has has 5 possible values:\
 The limit flags came from the legacy command: `Xmn`
 with the index denoted by the `n` value.
 SCPI does not provide this information.
+
+## IOC Test Framework:
+With support for the new SCPI based IPS command set, there are now two sets of StreamDevice 
+protocols. The appropriate protocol is implemented by use of a macro (`PROTOCOL` = `SCPI` | `LEGACY`) defined 
+prior to running the IOC.
+
+The test framework has been adapted by splitting the existing legacy tests into common tests 
+and tests specific to either control interface. For instance, the legacy command set knows 
+nothing about cryogen levels, which the SCPI command set does.
+
+The IOC support provides two protocol files: 
+- Legacy: OxInstIPS.protocol
+- SCPI: OxInstIPS_SCPI.protocol
+
+The lewis emulator and IOC test framework for the Mercury IPS is located within the IPS support
+module. Manually running the tests is achievable using the following approach:
+1. `cd` to `C:\Instrument\Apps\EPICS\support\IPS\master\system_tests`
+2. `run_tests.bat -t ips_scpi -a -f` - this will run all the SCPI specific tests
+3. `run_tests.bat -t ips -a -f` - this will run all the legacy specific tests
+4. To run a specific test, use something like: `run_tests.bat -t ips_scpi.test_WHEN_inductance_set_via_backdoor_THEN_value_in_ioc_updates_0__0_12345 -a -f`
+- Note that the -a flag simply prompts as to whether to run tests or simply run the emulator.
+- The -f flag forces a fast fail on error and no further tests are run.
+
+
+## Related Documentation:
+[Oxford Instruments IPS](https://isiscomputinggroup.github.io/ibex_developers_manual/specific_iocs/cryogenics/Oxford-Instruments-IPS.html)
 
