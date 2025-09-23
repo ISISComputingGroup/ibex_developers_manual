@@ -144,3 +144,6 @@ Check remote mode is enabled.
 ### Magnet system status reports something other than "normal" - e.g. "quenched" or "fault"
 
 This indicates a hardware fault. Inform instrument scientists that the magnet has a problem and has likely gone to zero field (even if the IPS still claims to be producing a non-zero field). Consult cryogenics for help.
+
+## Related Documentation:
+[Oxford Instruments Mercury IPS](https://isiscomputinggroup.github.io/ibex_developers_manual/specific_iocs/cryogenics/Oxford-Instruments-Mercury-IPS.html)
