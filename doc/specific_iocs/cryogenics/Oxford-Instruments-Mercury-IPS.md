@@ -4,14 +4,6 @@ The Oxford Instruments Mercury IPS is a superconducting magnet power supply. It 
 the [IPS](Oxford-Instruments-IPS). Much of the information on the IPS wiki page also applies to the Mercury IPS.
 
 
-## Hardware quirks (Legacy mode)
-
-The following faults can be seen when operating the magnet fully from the front panel, but it is 
-likely that software will also run into the same conditions:
-  * The firmware will sometimes crash/freeze. To reset it, the whole power supply needs to be power-cycled. This is obviously undesirable for a magnet power supply, and cryogenics are chasing OI about this issue. It's not clear whether this issue is general to all Mercury IPS units or whether we have one faulty unit.
-  * The switch heater occasionally reports that it's ON when it's actually OFF
-  * The power supply reports a voltage of ~9000V which is incorrect (a sensible voltage for this power supply would be around ~8V while ramping)
-  
 ## SCPI Protocol
 
 The IPS IOC now supports the SCPI protocol, which is more feature rich than Legacy mode.
@@ -26,9 +18,11 @@ documentation. The status strings are assumed to all conform to the "Directory o
 (17.3) of the Operator's Manual (Issue 20, July 2018).
 Whilst many of the system alarms that we could test, mostly conformed, some differences were
 noticed, along with additional, undocumented status, such as "Magnet Safety".
-It has not been possible to test all alarm scenarios with the IPS unit and as such unable to fully 
-ascertain that all the expected message strings are correct - they may need to be adjusted later on,
-if/when they arise.
+It has not been possible to test all alarm scenarios with the IPS unit. Some messages are 
+undocumented and were 'discovered'. Our best guess is that the IPS Manual presents some level of
+truth, but as such it has not been possible to fully ascertain that all the expected message 
+strings are correct - they may need to be adjusted later on, if/when they arise.
+
 Tested and verified to date:
 - PSU board open circuit
 - PSU board short circuit
@@ -37,6 +31,7 @@ Tested and verified to date:
 
 The support module exports an aSub record subroutine to facilitate handling of the responses to 
 `READ:SYS:ALRM`, which is not feasible with a StreamDevice protocol handler.
+See the section on [System Alarms](#system-alarms) below for more details.
 
 ### CONTROL and CONTROL:SP
 These records have been removed from the SCPI variant database
@@ -123,7 +118,9 @@ Devices connected to a daughter-board are prefixed: `DB<slot #>`
 | Ramp mode reporting (fast/slow) | Yes    | Not available |
 | Status reporting                | Yes    | Detailed      |
 | He Level reporting              | No     | Yes           |
- | N2 Level reporting              | No     | Yes           |
+| N2 Level reporting              | No     | Yes           |
+| Pressure reporting              | No     | Yes           |
+| Front panel control lock        | Yes    | No            |
  
  
 
@@ -169,8 +166,8 @@ SCPI does not provide this information.
 
 ## IOC Test Framework:
 With support for the new SCPI based IPS command set, there are now two sets of StreamDevice 
-protocols. The appropriate protocol is implemented by use of a macro (`PROTOCOL` = `SCPI` | `LEGACY`) defined 
-prior to running the IOC.
+protocols. The appropriate protocol is implemented by use of a macro 
+(`PROTOCOL` = `SCPI` | `LEGACY`) defined prior to running the IOC.
 
 The test framework has been adapted by splitting the existing legacy tests into common tests 
 and tests specific to either control interface. For instance, the legacy command set knows 
