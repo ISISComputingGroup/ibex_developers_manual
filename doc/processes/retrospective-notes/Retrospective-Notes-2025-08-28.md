@@ -19,7 +19,7 @@
  - GR identified that there was a problem where some issues were not picked up and missed from being actioned.
  - GR suggested a formal handover at the end of a week, perhaps write up a Friday summary of the week.
  - GR mentioned that Top Desk is the corporate platform and maybe we should look at using it.
- - FA Mentioned Jira, but it's not free and we would need to look at licensing.
+ - FA Mentioned `Jira`, but it's not free and we would need to look at licensing.
  - FA suggests adopting a system where we can enter issues and close them out.
  - *ACTION*: FA to consider options in conversation with team members.
 
@@ -46,7 +46,7 @@ historical content and may not be up to date.
  - TW stated that small discs on various machines has caused repeated issues.
  - *ACTION*: GR to set up a group meeting with CMS to discuss.
 
-### Wierd permissions on stage-deleted
+### Weird permissions on stage-deleted
  - Could we modify permissions of the stage-deleted folder or perhaps don't use it?
  - Issue bumped until CMS is available to discuss.
 
@@ -58,7 +58,7 @@ can be problematic, the Summer being of particular issue.
 ### Deploy script refinement
  - TW pointed out that occasionally a manual step in the deployment process does not get done, but 
 there is no check that it actually has been done.
- - The Roadmap should incorporate procedures to address this.
+ - The Road-map should incorporate procedures to address this.
 
 ### Renaming of 'server-common'
  - JH suggested that we should rename 'server-common' to 'ibex-ca-helpers'.
