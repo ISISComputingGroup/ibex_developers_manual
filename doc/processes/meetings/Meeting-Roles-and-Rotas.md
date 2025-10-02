@@ -92,8 +92,8 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
 | 2025_07_31_Planning| KB | x | DM| x | SC| x |
 | 2025_07_31_Review/Retro| ~~FA~~ GR | x | ~~CMS~~ JH| x | DM| x |
 | 2025_08_28_Planning| DM |  | TW|  | ~~LC~~ GR|  |
-| 2025_08_28_Review/Retro| TW |  | KB|  | LJ|  |
-| 2025_10_02_Planning| LC |  | FA|  | IG|  |
+| 2025_08_28_Review/Retro| TW | x | KB| x | ~~LJ~~ IG| x |
+| 2025_10_02_Planning| LC |  | FA|  | ~~IG~~ LJ|  |
 | 2025_10_02_Review/Retro| CMS |  | ES|  | DK|  |
 | 2025_11_27_Planning| GR |  | SpC|  | ES|  |
 | 2025_11_27_Review/Retro| FA |  | KB|  | SpC|  |
