@@ -1,0 +1,340 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Building on Linux &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Conventions" href="../Conventions.html" />
+    <link rel="prev" title="Using VS with EPICS" href="Using-Visual-Studio-with-the-EPICS-build-system.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../Compiling.html">Compiling</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Build-Arch.html">Build Arch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Building-multiple-architectures-%28e.g.-32-%26-64-bit-builds%29.html">Building multiple architectures (e.g. 32/64-bit builds)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Compile-Errors.html">Compile Errors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Developer-Server-Build.html">Developer Server Build</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Developer-Updating.html">Updating your local IBEX EPICS directory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IOC-Libraries-to-include-with-order.html">IOC Libraries to include with order</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Install-Visual-Studio.html">Install Visual Studio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reducing-Build-Dependencies.html">Reducing build dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Removing-or-Renaming-IOC-module.html">Removing or renaming an IOC module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SpeedUpBuilding.html">Speed Up Building</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Static-builds.html">Static Builds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Using-Visual-Studio-with-the-EPICS-build-system.html">Using VS with EPICS</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Building on Linux</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Conventions.html">Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Creation.html">IOC Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tips-and-Tricks.html">Tips, Tricks &amp; Techniques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tools.html">Tools &amp; Support Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Systems.html">Systems Administration &amp; Hardware</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+          <li class="breadcrumb-item"><a href="../Compiling.html">Compiling</a></li>
+      <li class="breadcrumb-item active">Building on Linux</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/iocs/compiling/building-on-linux.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="building-on-linux">
+<h1>Building on Linux<a class="headerlink" href="#building-on-linux" title="Link to this heading"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This page documents an advanced compilation workflow.</p>
+<p>These instructions are unnecessary for a “standard” build</p>
+</div>
+<section id="creating-a-linux-box-on-your-desktop">
+<h2>Creating a linux box on your desktop<a class="headerlink" href="#creating-a-linux-box-on-your-desktop" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Install virtual box</p></li>
+<li><p>Install vagrant (<a class="reference external" href="https://www.vagrantup.com/downloads.html">https://www.vagrantup.com/downloads.html</a>)</p></li>
+<li><p>Clone repo (<a class="reference external" href="https://github.com/ISISComputingGroup/ibex_utils.git">https://github.com/ISISComputingGroup/ibex_utils.git</a>)</p></li>
+<li><p>cd …/ibexutils/linux_env</p></li>
+<li><p>vagrant up (this may not work from the Windows command line, but it should work from the Git Bash)</p></li>
+</ol>
+<p>Should start a fresh vagrant machine (will take a while but is quicker second time round). With a gui you can log into. Login details are: <code class="docutils literal notranslate"><span class="pre">vagrant</span></code> (for username) and <code class="docutils literal notranslate"><span class="pre">vagrant</span></code> (for password).</p>
+<p>If you get the following error:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">VT</span><span class="o">-</span><span class="n">x</span> <span class="ow">is</span> <span class="n">disabled</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">BIOS</span> <span class="k">for</span> <span class="nb">all</span> <span class="n">CPU</span> <span class="n">modes</span> <span class="p">(</span><span class="n">VERR_VMX_MSR_ALL_VMX_DISABLED</span><span class="p">)</span><span class="o">.</span>
+
+<span class="n">Result</span> <span class="n">Code</span><span class="p">:</span> 
+<span class="n">E_FAIL</span> <span class="p">(</span><span class="mh">0x80004005</span><span class="p">)</span>
+<span class="n">Component</span><span class="p">:</span> 
+<span class="n">ConsoleWrap</span>
+<span class="n">Interface</span><span class="p">:</span> 
+<span class="n">IConsole</span> <span class="p">{</span><span class="mi">872</span><span class="n">da645</span><span class="o">-</span><span class="mi">4</span><span class="n">a9b</span><span class="o">-</span><span class="mi">1727</span><span class="o">-</span><span class="n">bee2</span><span class="o">-</span><span class="mi">5585105</span><span class="n">b9eed</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>you should try entering your BIOS (power off your machine; restart and immediately press the <code class="docutils literal notranslate"><span class="pre">F2</span></code> key) and verify that virtualisation options are enabled. See also [this related post] (<a class="reference external" href="https://forums.virtualbox.org/viewtopic.php?f=6&amp;amp;t=77139">https://forums.virtualbox.org/viewtopic.php?f=6&amp;t=77139</a>).</p>
+<p>If you get the following error:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">==&gt;</span> <span class="n">default</span><span class="p">:</span> <span class="n">Errors</span> <span class="n">were</span> <span class="n">encountered</span> <span class="k">while</span> <span class="n">processing</span><span class="p">:</span>
+<span class="o">==&gt;</span> <span class="n">default</span><span class="p">:</span>  <span class="n">dictionaries</span><span class="o">-</span><span class="n">common</span>
+<span class="o">==&gt;</span> <span class="n">default</span><span class="p">:</span>  <span class="n">aspell</span>
+<span class="o">==&gt;</span> <span class="n">default</span><span class="p">:</span>  <span class="n">aspell</span><span class="o">-</span><span class="n">en</span>
+<span class="o">==&gt;</span> <span class="n">default</span><span class="p">:</span>  <span class="n">hunspell</span><span class="o">-</span><span class="n">en</span><span class="o">-</span><span class="n">us</span>
+<span class="o">==&gt;</span> <span class="n">default</span><span class="p">:</span>  <span class="n">libenchant1c2a</span><span class="p">:</span><span class="n">amd64</span>
+<span class="o">==&gt;</span> <span class="n">default</span><span class="p">:</span>  <span class="n">libwebkitgtk</span><span class="o">-</span><span class="mf">3.0</span><span class="o">-</span><span class="mi">0</span><span class="p">:</span><span class="n">amd64</span>
+<span class="o">==&gt;</span> <span class="n">default</span><span class="p">:</span>  <span class="n">empathy</span>
+<span class="o">==&gt;</span> <span class="n">default</span><span class="p">:</span>  <span class="n">mcp</span><span class="o">-</span><span class="n">account</span><span class="o">-</span><span class="n">manager</span><span class="o">-</span><span class="n">uoa</span>
+<span class="o">==&gt;</span> <span class="n">default</span><span class="p">:</span>  <span class="n">account</span><span class="o">-</span><span class="n">plugin</span><span class="o">-</span><span class="n">aim</span>
+<span class="o">==&gt;</span> <span class="n">default</span><span class="p">:</span>  <span class="n">account</span><span class="o">-</span><span class="n">plugin</span><span class="o">-</span><span class="n">jabber</span>
+<span class="o">==&gt;</span> <span class="n">default</span><span class="p">:</span>  <span class="n">account</span><span class="o">-</span><span class="n">plugin</span><span class="o">-</span><span class="n">salut</span>
+<span class="o">==&gt;</span> <span class="n">default</span><span class="p">:</span>  <span class="n">account</span><span class="o">-</span><span class="n">plugin</span><span class="o">-</span><span class="n">yahoo</span>
+<span class="o">==&gt;</span> <span class="n">default</span><span class="p">:</span>  <span class="n">gir1</span><span class="mf">.2</span><span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="mf">3.0</span>
+<span class="o">==&gt;</span> <span class="n">default</span><span class="p">:</span>  <span class="n">apturl</span>
+<span class="o">==&gt;</span> <span class="n">default</span><span class="p">:</span>  <span class="n">enchant</span>
+<span class="o">==&gt;</span> <span class="n">default</span><span class="p">:</span>  <span class="n">gedit</span>
+<span class="o">==&gt;</span> <span class="n">default</span><span class="p">:</span>  <span class="n">librhythmbox</span><span class="o">-</span><span class="n">core8</span>
+<span class="o">==&gt;</span> <span class="n">default</span><span class="p">:</span>  <span class="n">gir1</span><span class="mf">.2</span><span class="o">-</span><span class="n">rb</span><span class="o">-</span><span class="mf">3.0</span>
+<span class="o">==&gt;</span> <span class="n">default</span><span class="p">:</span>  <span class="n">libyelp0</span>
+<span class="o">==&gt;</span> <span class="n">default</span><span class="p">:</span>  <span class="n">yelp</span>
+<span class="o">==&gt;</span> <span class="n">default</span><span class="p">:</span>  <span class="n">gnome</span><span class="o">-</span><span class="n">user</span><span class="o">-</span><span class="n">guide</span>
+<span class="o">==&gt;</span> <span class="n">default</span><span class="p">:</span>  <span class="n">zenity</span>
+<span class="o">==&gt;</span> <span class="n">default</span><span class="p">:</span>  <span class="n">nautilus</span><span class="o">-</span><span class="n">sendto</span><span class="o">-</span><span class="n">empathy</span>
+<span class="o">==&gt;</span> <span class="n">default</span><span class="p">:</span>  <span class="n">nautilus</span><span class="o">-</span><span class="n">share</span>
+<span class="o">==&gt;</span> <span class="n">default</span><span class="p">:</span>  <span class="n">rhythmbox</span>
+<span class="o">==&gt;</span> <span class="n">default</span><span class="p">:</span>  <span class="n">rhythmbox</span><span class="o">-</span><span class="n">mozilla</span>
+<span class="o">==&gt;</span> <span class="n">default</span><span class="p">:</span>  <span class="n">rhythmbox</span><span class="o">-</span><span class="n">plugin</span><span class="o">-</span><span class="n">cdrecorder</span>
+<span class="o">==&gt;</span> <span class="n">default</span><span class="p">:</span>  <span class="n">rhythmbox</span><span class="o">-</span><span class="n">plugin</span><span class="o">-</span><span class="n">magnatune</span>
+<span class="o">==&gt;</span> <span class="n">default</span><span class="p">:</span>  <span class="n">rhythmbox</span><span class="o">-</span><span class="n">plugin</span><span class="o">-</span><span class="n">zeitgeist</span>
+<span class="o">==&gt;</span> <span class="n">default</span><span class="p">:</span>  <span class="n">rhythmbox</span><span class="o">-</span><span class="n">plugins</span>
+<span class="o">==&gt;</span> <span class="n">default</span><span class="p">:</span>  <span class="n">software</span><span class="o">-</span><span class="n">center</span>
+<span class="o">==&gt;</span> <span class="n">default</span><span class="p">:</span>  <span class="n">ubuntu</span><span class="o">-</span><span class="n">release</span><span class="o">-</span><span class="n">upgrader</span><span class="o">-</span><span class="n">gtk</span>
+<span class="o">==&gt;</span> <span class="n">default</span><span class="p">:</span>  <span class="n">unity</span><span class="o">-</span><span class="n">control</span><span class="o">-</span><span class="n">center</span>
+<span class="o">==&gt;</span> <span class="n">default</span><span class="p">:</span>  <span class="n">ubuntu</span><span class="o">-</span><span class="n">desktop</span>
+<span class="o">==&gt;</span> <span class="n">default</span><span class="p">:</span>  <span class="n">ubuntu</span><span class="o">-</span><span class="n">docs</span>
+<span class="o">==&gt;</span> <span class="n">default</span><span class="p">:</span>  <span class="n">unity</span><span class="o">-</span><span class="n">control</span><span class="o">-</span><span class="n">center</span><span class="o">-</span><span class="n">signon</span>
+<span class="o">==&gt;</span> <span class="n">default</span><span class="p">:</span>  <span class="n">webaccounts</span><span class="o">-</span><span class="n">extension</span><span class="o">-</span><span class="n">common</span>
+<span class="o">==&gt;</span> <span class="n">default</span><span class="p">:</span>  <span class="n">xul</span><span class="o">-</span><span class="n">ext</span><span class="o">-</span><span class="n">webaccounts</span>
+<span class="o">==&gt;</span> <span class="n">default</span><span class="p">:</span>  <span class="n">shotwell</span>
+<span class="o">==&gt;</span> <span class="n">default</span><span class="p">:</span>  <span class="n">update</span><span class="o">-</span><span class="n">notifier</span>
+<span class="o">==&gt;</span> <span class="n">default</span><span class="p">:</span>  <span class="n">update</span><span class="o">-</span><span class="n">manager</span>
+<span class="o">==&gt;</span> <span class="n">default</span><span class="p">:</span>  <span class="n">indicator</span><span class="o">-</span><span class="n">bluetooth</span>
+<span class="o">==&gt;</span> <span class="n">default</span><span class="p">:</span> <span class="n">E</span><span class="p">:</span> <span class="n">Sub</span><span class="o">-</span><span class="n">process</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">dpkg</span> <span class="n">returned</span> <span class="n">an</span> <span class="n">error</span> <span class="n">code</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">The</span> <span class="n">SSH</span> <span class="n">command</span> <span class="n">responded</span> <span class="k">with</span> <span class="n">a</span> <span class="n">non</span><span class="o">-</span><span class="n">zero</span> <span class="n">exit</span> <span class="n">status</span><span class="o">.</span> <span class="n">Vagrant</span>
+<span class="n">assumes</span> <span class="n">that</span> <span class="n">this</span> <span class="n">means</span> <span class="n">the</span> <span class="n">command</span> <span class="n">failed</span><span class="o">.</span> <span class="n">The</span> <span class="n">output</span> <span class="k">for</span> <span class="n">this</span> <span class="n">command</span>
+<span class="n">should</span> <span class="n">be</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">log</span> <span class="n">above</span><span class="o">.</span> <span class="n">Please</span> <span class="n">read</span> <span class="n">the</span> <span class="n">output</span> <span class="n">to</span> <span class="n">determine</span> <span class="n">what</span>
+<span class="n">went</span> <span class="n">wrong</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>it may be that some packages failed to install within the virtual machine, but you still should be able to operate without them. In the same console where you started vagrant, type:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">vagrant</span> <span class="pre">halt</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vagrant</span> <span class="pre">up</span></code></p></li>
+</ol>
+<p>and the VM should start normally.</p>
+</section>
+<section id="installing-the-client">
+<h2>Installing the client<a class="headerlink" href="#installing-the-client" title="Link to this heading"></a></h2>
+<p>I have not done this from scratch you will need to experiment the following is what I did before I ran out of time on the ticket. Ideally I think the plan is to place the compiled version of the client and an install script into the linux_env directory then on the Ubuntu machine this appears in <code class="docutils literal notranslate"><span class="pre">/vagrant</span></code> (not home directory). You should be run install.sh and it should install and possibly start the client. To do this you will need at least java installed but I am unsure what else. see the instructions below of how I built and started my client.</p>
+</section>
+<section id="create-virtual-machine">
+<h2>Create virtual machine<a class="headerlink" href="#create-virtual-machine" title="Link to this heading"></a></h2>
+<p>I am currently on a windows machine so it is useful to have a virtual machine on which to install. Using Michaels vagrant script seems like a good choice. So:</p>
+<ol class="arabic simple">
+<li><p>Install virtual box</p></li>
+<li><p>Install vagrant (<a class="reference external" href="https://www.vagrantup.com/downloads.html">https://www.vagrantup.com/downloads.html</a>)</p></li>
+<li><p>Clone repo (<a class="reference external" href="https://github.com/DMSC-Instrument-Data/ecp-dev-envs">https://github.com/DMSC-Instrument-Data/ecp-dev-envs</a>)</p></li>
+<li><p>cd directory</p></li>
+<li><p>change virtual machine to use</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">box</span> <span class="o">=</span> <span class="s2">&quot;ubuntu/trusty64&quot;</span>
+<span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">box_url</span> <span class="o">=</span> <span class="s2">&quot;ubuntu/trusty64&quot;</span> <span class="c1">#&quot;../../vagrant_ubuntu_minimal/package.box&quot;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>cd <code class="docutils literal notranslate"><span class="pre">.../ecp-dev-envs\nicos-dev-env</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vagrant</span> <span class="pre">up</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vagrant</span> <span class="pre">ssh</span></code> from a git bash terminal</p></li>
+</ol>
+</section>
+<section id="building-it">
+<h2>Building it<a class="headerlink" href="#building-it" title="Link to this heading"></a></h2>
+<p>Install prerequisites (this for the backend and front end so not all of these are needed for the client)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">DEBIAN_FRONTEND</span><span class="o">=</span><span class="n">noninteractive</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">install</span><span class="o">-</span><span class="n">recommends</span> \
+        <span class="n">build</span><span class="o">-</span><span class="n">essential</span> \
+        <span class="n">cmake</span> \
+        <span class="n">conserver</span><span class="o">-</span><span class="n">client</span> \
+        <span class="n">conserver</span><span class="o">-</span><span class="n">server</span> \
+        <span class="n">default</span><span class="o">-</span><span class="n">jdk</span> \
+        <span class="n">doxygen</span> \
+        <span class="n">git</span> \
+        <span class="n">ipython</span> \
+        <span class="n">libcurl4</span><span class="o">-</span><span class="n">openssl</span><span class="o">-</span><span class="n">dev</span> \
+        <span class="n">libjpeg8</span><span class="o">-</span><span class="n">dev</span> \
+        <span class="n">libnet1</span><span class="o">-</span><span class="n">dev</span> \
+        <span class="n">libpcap</span><span class="o">-</span><span class="n">dev</span> \
+        <span class="n">libreadline</span><span class="o">-</span><span class="n">dev</span> \
+        <span class="n">libxml2</span><span class="o">-</span><span class="n">dev</span> \
+        <span class="n">libxslt1</span><span class="o">-</span><span class="n">dev</span> \
+        <span class="n">maven</span> \
+        <span class="n">mysql</span><span class="o">-</span><span class="n">server</span><span class="o">-</span><span class="mf">5.6</span> \
+        <span class="n">perl</span> \
+        <span class="n">php5</span> \
+        <span class="n">php5</span><span class="o">-</span><span class="n">dev</span> \
+        <span class="n">procServ</span> \
+        <span class="n">python</span> \
+        <span class="n">python</span><span class="o">-</span><span class="n">dev</span> \
+        <span class="n">python</span><span class="o">-</span><span class="n">matplotlib</span> \
+        <span class="n">python</span><span class="o">-</span><span class="n">pip</span> \
+        <span class="n">python</span><span class="o">-</span><span class="n">tk</span> \
+        <span class="n">re2c</span> \
+        <span class="n">swig</span> \
+        <span class="n">python</span><span class="o">-</span><span class="n">docutils</span> \
+        <span class="n">rst2pdf</span>
+</pre></div>
+</div>
+<p>clone epics repo</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/ISISComputingGroup/ibex_gui.git
+</pre></div>
+</div>
+<p>alter preference supplier to be linux aware (there is an extra path in here to which needs to be updates for epics utils)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd &quot;$INSTALL_DIR/ibex_gui&quot;
+PREFERENCE_SUPPLIER=&quot;./base/uk.ac.stfc.isis.ibex.preferences/src/uk/ac/stfc/isis/ibex/preferences/PreferenceSupplier.java&quot;
+ 
+    sed -i -- &quot;/DEFAULT_EPICS_BASE_DIRECTORY/s|\&quot;.*\&quot;|\&quot;$INSTALL_DIR/EPICS/base/master/bin/linux-x86_64\&quot;|&quot;  $PREFERENCE_SUPPLIER
+    sed -i -- &#39;/DEFAULT_PYTHON_INTERPRETER_PATH/s|&quot;.*&quot;|&quot;/usr/bin/python&quot;|&#39; $PREFERENCE_SUPPLIER
+    sed -i -- &quot;/DEFAULT_GENIE_PYTHON_DIRECTORY/s|\&quot;.*\&quot;|\&quot;$PACKAGE_DIR/genie_python\&quot;|&quot; $PREFERENCE_SUPPLIER
+    sed -i -- &quot;/DEFAULT_PYEPICS_DIRECTORY/s|\&quot;.*\&quot;|\&quot;$PACKAGE_DIR\&quot;|&quot; $PREFERENCE_SUPPLIER
+</pre></div>
+</div>
+<p>Build the client (this must be done in a gui environment for all the tests to pass)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">build</span>
+<span class="o">./</span><span class="n">build</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<p>Install python modules:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>./install_python_modules.sh (not all of these install but this seemed not to be a problem install those that work)
+</pre></div>
+</div>
+<p>Add genie python to default python build:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>GENIE_DIR=&quot;$INSTALL_DIR/genie_python/source&quot;
+PACKAGE_DIR=`python -c &quot;import site; print site.getsitepackages()[0]&quot;`
+sudo cp -r &quot;$GENIE_DIR&quot; &quot;$PACKAGE_DIR/genie_python&quot;
+</pre></div>
+</div>
+<p>Run product:</p>
+<p><code class="docutils literal notranslate"><span class="pre">ibex_gui\base\uk.ac.stfc.isis.ibex.client.product\target\products\ibex.product\linux\gtk\x86_64\ibex-client</span></code></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Using-Visual-Studio-with-the-EPICS-build-system.html" class="btn btn-neutral float-left" title="Using VS with EPICS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Conventions.html" class="btn btn-neutral float-right" title="Conventions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Oct 02, 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,171 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alert Relay &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Providing Support" href="../../Providing-Support.html" />
+    <link rel="prev" title="control-svcs" href="../control-svcs.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../Systems.html">Systems Administration &amp; Hardware</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../External.html">External systems/services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Inst-Control.html">Instrument control computers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../MinimumSpecs.html">Minimum machine specifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Nagios.html">Nagios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Shadow.html">Shadow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Sparrowhawk.html">Sparrowhawk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Test-Machines.html">Test Machines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Webserver.html">Webserver</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../control-svcs.html"><code class="docutils literal notranslate"><span class="pre">control-svcs</span></code></a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Alert Relay</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Systems.html">Systems Administration &amp; Hardware</a></li>
+          <li class="breadcrumb-item"><a href="../control-svcs.html"><code class="docutils literal notranslate"><span class="pre">control-svcs</span></code></a></li>
+      <li class="breadcrumb-item active">Alert Relay</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/systems/control_svcs/Alert-Relay.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="alert-relay">
+<h1>Alert Relay<a class="headerlink" href="#alert-relay" title="Link to this heading"></a></h1>
+<p>This is a python file <code class="docutils literal notranslate"><span class="pre">/isis/cgi/sendmess.py</span></code> living on control-svcs and invoked as <code class="docutils literal notranslate"><span class="pre">http://control-svcs.isis.cclrc.ac.uk/isiscgi/sendmess.py</span></code></p>
+<p>It is only possible to invoke this file when on RAL site, and you also need to pass a correct passcode (see IBEX access sharepoint) as one of the parameters for it to send a message. The parameters passed are:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mobiles</span><span class="p">:</span> <span class="n">a</span> <span class="n">semicolon</span> <span class="n">separated</span> <span class="n">mobiles</span> <span class="nb">list</span> <span class="k">for</span> <span class="n">sms</span> <span class="n">text</span>
+<span class="n">emails</span><span class="p">:</span> <span class="n">a</span> <span class="n">semicolon</span> <span class="n">separated</span> <span class="n">email</span> <span class="nb">list</span>
+<span class="n">pw</span><span class="p">:</span> <span class="n">correct</span> <span class="n">passcode</span>
+<span class="n">inst</span><span class="p">:</span> <span class="n">instrument</span> <span class="n">name</span> <span class="k">for</span> <span class="n">slack</span><span class="o">/</span><span class="n">teams</span> <span class="n">alerts</span>
+<span class="n">message</span><span class="p">:</span> <span class="n">the</span> <span class="n">message</span>
+</pre></div>
+</div>
+<p>An IOC usually posts to this service from the :AC: (alert control) system loaded by the run control IOC</p>
+<p>To do the alerting it will use <code class="docutils literal notranslate"><span class="pre">sendAlert.db</span></code> from <code class="docutils literal notranslate"><span class="pre">support/webget</span></code>. This combines several PVs with mobiles, emails etc. and encodes into the format required for a http POST using the aSub function <code class="docutils literal notranslate"><span class="pre">webFormURLEncode</span></code>. It then sends this to control-svcs using the aSub function <code class="docutils literal notranslate"><span class="pre">webPOSTRequest</span></code></p>
+<p>To see the debug output of what <code class="docutils literal notranslate"><span class="pre">sendAlerts.db</span></code> is sending set <code class="docutils literal notranslate"><span class="pre">epicsEnvSet(&quot;WEBGET_POST_DEBUG&quot;,&quot;1&quot;)</span></code> in the <code class="docutils literal notranslate"><span class="pre">st.cmd</span></code> of the runcontrol IOC. This is suppressed by default as it may contain sensitive user data.</p>
+<p>The PVs in IBEX which hold the URL &amp; password for sending alerts are in the form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">MYPVPREFIX</span><span class="o">%</span><span class="n">CS</span><span class="p">:</span><span class="n">AC</span><span class="p">:</span><span class="n">ALERTS</span><span class="p">:</span><span class="n">URL</span><span class="p">:</span><span class="n">SP</span>
+<span class="o">%</span><span class="n">MYPVPREFIX</span><span class="o">%</span><span class="n">CS</span><span class="p">:</span><span class="n">AC</span><span class="p">:</span><span class="n">ALERTS</span><span class="p">:</span><span class="n">PW</span><span class="p">:</span><span class="n">SP</span>
+</pre></div>
+</div>
+<p>There is further documentation in the <a class="reference external" href="https://github.com/ISISComputingGroup/EPICS-ioc/blob/master/RUNCTRL/README.md"><code class="docutils literal notranslate"><span class="pre">RUNCTRL</span></code> README file</a>.</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../control-svcs.html" class="btn btn-neutral float-left" title="control-svcs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../Providing-Support.html" class="btn btn-neutral float-right" title="Providing Support" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Oct 02, 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
