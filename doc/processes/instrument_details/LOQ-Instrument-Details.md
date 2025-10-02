@@ -1,5 +1,8 @@
 # LOQ
 
+```{include} migration_notes_warning.mdinc
+```
+
 This page collects information that will be useful for the implementation of the IBEX control system on LOQ.
 ## Background & Timeline ##
 LOQ is a time-of-flight SANS instrument instrument at ISIS, on TS1. The [LOQ](https://www.isis.stfc.ac.uk/Pages/LOQ.aspx) web page describes the background to the instrument.

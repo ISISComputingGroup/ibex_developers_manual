@@ -1,5 +1,8 @@
 # SURF
 
+```{include} migration_notes_warning.mdinc
+```
+
 This page collects information that will be useful for the implementation of the IBEX control system on SURF.
 ## Background & Timeline ##
 SURF is a reflectometer on TS1, used primarily for liquid interface research. The [SURF](https://www.isis.stfc.ac.uk/Pages/SURF.aspx) web page describes the background to the instrument.

@@ -1,5 +1,8 @@
 # SANDALS
 
+```{include} migration_notes_warning.mdinc
+```
+
 This page collects information that will be useful for the implementation of the IBEX control system on SANDALS.
 ## Background & Timeline ##
 SANDALS is a diffractometer instrument at ISIS, on TS1. The [SANDALS](https://www.isis.stfc.ac.uk/Pages/sandals.aspx) web page describes the background to the instrument.

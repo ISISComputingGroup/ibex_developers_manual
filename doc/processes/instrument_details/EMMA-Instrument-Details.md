@@ -1,5 +1,8 @@
 # EMMA
 
+```{include} migration_notes_warning.mdinc
+```
+
 This page collects information that will be useful for the implementation of the IBEX control system on EMMA.
 ## Background & Timeline ##
 EMMA is an instrument at ISIS, on TS1 and used primarily for test purposes. The primary users of EMMA are the sample environment team and the detector team.  There appears to be no web pages (or other material) describing the background to the instrument.

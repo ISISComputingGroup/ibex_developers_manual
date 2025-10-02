@@ -1,5 +1,8 @@
 # INES
 
+```{include} migration_notes_warning.mdinc
+```
+
 This page collects information that will be useful for the implementation of the IBEX control system on INES.
 ## Background & Timeline ##
 INES is a powder diffractometer instrument at ISIS, on TS1. The [INES](https://www.isis.stfc.ac.uk/Pages/ines.aspx) web page describes the background to the instrument.

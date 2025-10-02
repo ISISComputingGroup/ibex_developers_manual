@@ -1,5 +1,8 @@
 # EMU
 
+```{include} migration_notes_warning.mdinc
+```
+
 This page collects information that will be useful for the implementation of the IBEX control system on EMU.
 ## Background & Timeline ##
 EMU is a new 96-detector muon spin rotation spectrometer which is optimised for zero field and longitudinal field measurements at ISIS, on TS1. The [EMU](https://www.isis.stfc.ac.uk/Pages/EMU.aspx) web page describes the background to the instrument.
