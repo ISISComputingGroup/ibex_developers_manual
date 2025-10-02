@@ -1,5 +1,8 @@
 # SXD
 
+```{include} migration_notes_warning.mdinc
+```
+
 This page collects information that will be useful for the implementation of the IBEX control system on SXD.
 ## Background & Timeline ##
 SXD is a Single Crystal Diffractometer, on TS1, which uses the time-of-flight techniques. The [SXD](https://www.isis.stfc.ac.uk/Pages/SXD.aspx) web page describes the background to the instrument.

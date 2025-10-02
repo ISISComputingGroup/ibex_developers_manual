@@ -1,5 +1,8 @@
 # CHIPIR
 
+```{include} migration_notes_warning.mdinc
+```
+
 This page collects information that will be useful for the implementation of the new control system on CHIPR.
 ## Background & Timeline ##
 CHIPIR is a neutron instrument dedicated to the irradiation of microelectronics with atmospheric-like neutrons, on TS2. The [CHIPIR](https://www.isis.stfc.ac.uk/Pages/Chipir.aspx) web page describes the background to the instrument.

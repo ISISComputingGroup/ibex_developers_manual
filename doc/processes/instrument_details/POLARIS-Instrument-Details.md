@@ -1,5 +1,8 @@
 # POLARIS
 
+```{include} migration_notes_warning.mdinc
+```
+
 This page collects information that will be useful for the implementation of the IBEX control system on POLARIS.
 ## Background & Timeline ##
 POLARIS is a diffractometer instrument at ISIS, on TS1. The [POLARIS](http://www.isis.stfc.ac.uk/instruments/polaris/polaris4643.html) web page describes the background to the instrument.
