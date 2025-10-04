@@ -21,4 +21,5 @@ These are intended to be able to host a client and run remote desktop/VNC connec
 Still to be agreed, the above spec for equipment support PCs likely represents a floor for this specification, but a higher spec may be required. 
 
 ## Notes
-These were last agreed at a [series of meetings ](https://github.com/ISISComputingGroup/ControlsWork/issues/805#issuecomment-3201337769) in the summer of 2025. 
+These were last agreed at a [series of meetings ](https://github.com/ISISComputingGroup/ControlsWork/issues/805#issuecomment-3201337769) in the summer of 2025. These specifications were based on a 6-year lifetime from the
+date of the meeting (i.e. machines bought with the above specifications are expected to become obsolete in 2031).
