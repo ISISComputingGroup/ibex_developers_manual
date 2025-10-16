@@ -348,6 +348,7 @@ idn
 ie
 IFR
 ilm
+iLM200
 ImageJ
 ini
 inits
@@ -368,6 +369,7 @@ iocs
 iocsh
 ioLogik
 ip
+iPS
 IPv
 ipython
 ish
@@ -883,6 +885,7 @@ uncheck
 unclamped
 uncomment
 uncommented
+underivable
 unintuitive
 uno
 unpadded
