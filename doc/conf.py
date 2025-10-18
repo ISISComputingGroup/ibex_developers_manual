@@ -100,6 +100,7 @@ redirects = {
     "client/coding/Migrating-or-adding-a-button-to-the-E4-perspective-switcher": "Perspectives.html",  # noqa E501
     "client/coding/Adding-a-Button-to-the-Perspective-Switcher": "Perspectives.html",
     "client/testing/Using-Mockito-for-Testing-in-the-GUI": "Mockito.html",
+    "scripting/uv": "../system_components/python/Python-venvs.html",
 }
 
 intersphinx_mapping = {
@@ -108,4 +109,7 @@ intersphinx_mapping = {
     # If it does, then fall back to local inventory. This local inventory should be
     # updated periodically.
     "EPICS": ("https://docs.epics-controls.org/en/latest/", (None, "epics-controls.inv")),
+    "genie_python": ("https://isiscomputinggroup.github.io/genie/", None),
+    "ibex_bluesky_core": ("https://isiscomputinggroup.github.io/ibex_bluesky_core/", None),
+    "matplotlib": ("https://matplotlib.org/stable/", None),
 }
