@@ -14,4 +14,4 @@ genie_python/*
 ### User documentation
 
 - {external+ibex_user_manual:doc}`Scripting in the user manual <Scripting>`
-- [genie_python reference](http://shadow.nd.rl.ac.uk/genie_python/sphinx/genie_python.html)
+- {external+genie_python:doc}`genie_python reference manual <genie_python>`

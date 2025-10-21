@@ -1,4 +1,4 @@
-# Python (Uktena)
+# Python (including Uktena, `uv`)
 
 ```{toctree}
 :glob:

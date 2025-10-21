@@ -1,5 +1,5 @@
 {#uv}
-# `uv` and python environments
+# Virtual environments (`uv`)
 
 [`uv`](https://github.com/astral-sh/uv) is a Python package and project manager. See [`uv`'s docs](https://docs.astral.sh/uv/) for more information.
 
