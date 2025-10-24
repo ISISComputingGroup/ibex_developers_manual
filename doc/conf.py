@@ -100,6 +100,7 @@ redirects = {
     "client/coding/Migrating-or-adding-a-button-to-the-E4-perspective-switcher": "Perspectives.html",  # noqa E501
     "client/coding/Adding-a-Button-to-the-Perspective-Switcher": "Perspectives.html",
     "client/testing/Using-Mockito-for-Testing-in-the-GUI": "Mockito.html",
+    "webdashboard/PVWS": "Web-Dashboard.html",
 }
 
 intersphinx_mapping = {

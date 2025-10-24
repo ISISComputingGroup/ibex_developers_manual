@@ -5,7 +5,6 @@
 :titlesonly:
 
 webdashboard/Web-Dashboard
-webdashboard/PVWS
 webdashboard/ISIS-Info-Slack
 webdashboard/MCR-News-in-Teams
 ```
