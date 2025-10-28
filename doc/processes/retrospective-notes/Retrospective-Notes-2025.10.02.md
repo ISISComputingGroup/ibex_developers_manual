@@ -74,7 +74,7 @@
 - No one in the room wanted to take the supervisor job on.
 - *Action*: Check in with those that are not present.
 
-### Organasational Diagram
+### Organisational Diagram
 - Not currently appropriate given the structure of the team.
 
 ### Contact Cards
