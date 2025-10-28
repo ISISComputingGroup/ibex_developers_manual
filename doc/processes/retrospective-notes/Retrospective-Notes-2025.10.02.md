@@ -31,9 +31,9 @@
 - Caution for network going down is in place, but not enough space necessarily for the data coming in should the network go down.
 - Return again when CMS is in the room.
 
-### Support for non-NDH/NDX
+### Support for non-`NDH`/`NDX`
 - Evidence that at one point NDCs were our responsibility, but that was not widely known about.
-- Daxtens also getting out of support.
+- Existing remote viewing/control (`Daxtens`) also getting out of support.
 - See [Instrument Machine Standards](https://stfc365.sharepoint.com/:w:/r/sites/ISISExperimentControls/_layouts/15/Doc.aspx?sourcedoc=%7B6CC20F26-86D9-4F1B-8BEA-0E96B69E5A32%7D&file=Instrument%20Machine%20standards.doc&action=default&mobileredirect=true) for the existing evidence
 - *Action*: FA to make sure the expected policy for support and machine names is written down and agreed by CMS, the rest of the group and DI, and then it is communicated to all stakeholders.
 
@@ -74,7 +74,7 @@
 - No one in the room wanted to take the supervisor job on.
 - *Action*: Check in with those that are not present.
 
-### Organogram
+### Organasational Diagram
 - Not currently appropriate given the structure of the team.
 
 ### Contact Cards
@@ -86,5 +86,5 @@
 ## Mad/Sad/Glad
 - Got through cycle
 - Glad that SECI is now done with
-- Removal of the SECI related items should continue, e.g. SECI2IBEX, the re-organisation of the mini-insts etc. may be needed, needs a think and discuss for some aspects
+- Removal of the SECI related items should continue, e.g. SECI2IBEX, the re-organisation of the `mini-insts` etc. may be needed, needs a think and discuss for some aspects
 - Sad that Lilith is moving on to a new role
