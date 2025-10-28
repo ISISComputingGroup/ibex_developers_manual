@@ -87,4 +87,4 @@
 - Got through cycle
 - Glad that SECI is now done with
 - Removal of the SECI related items should continue, e.g. SECI2IBEX, the re-organisation of the `mini-insts` etc. may be needed, needs a think and discuss for some aspects
-- Sad that Lilith is moving on to a new role
+- Sad that LC is moving on to a new role
