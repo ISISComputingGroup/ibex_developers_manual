@@ -183,10 +183,10 @@ The developer branch has been created to store useful configurations that may be
 
 ## Installing technique scripts
 Some sets of instruments use shared scripts based on the techniques they employ, so installing these scripts would be helpful. Note that these are stored in a repo in an organisation that includes more of the scientists than our typical organisation.
-If the `C:\Instrument\Settings\scripts` directory already exists, cd into it and do a `git pull` on master. Else run the following command from a Git-enabled command prompt (or modify target to run with Git Bash):
+If the `C:\Instrument\Scripts` directory already exists, cd into it and do a `git pull` on master. Else run the following command from a Git-enabled command prompt (or modify target to run with Git Bash):
 
 ```
-git clone https://github.com/ISISNeutronMuon/InstrumentScripts.git C:/Instrument/Settings/scripts
+git clone https://github.com/ISISNeutronMuon/InstrumentScripts.git C:/Instrument/Scripts
 ```
 
 ## Setting up a calibrations directory
