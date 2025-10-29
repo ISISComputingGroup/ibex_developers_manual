@@ -112,4 +112,5 @@ intersphinx_mapping = {
     "genie_python": ("https://isiscomputinggroup.github.io/genie/", None),
     "ibex_bluesky_core": ("https://isiscomputinggroup.github.io/ibex_bluesky_core/", None),
     "matplotlib": ("https://matplotlib.org/stable/", None),
+    "secop": ("https://sampleenvironment.github.io/secop-site/", None),
 }

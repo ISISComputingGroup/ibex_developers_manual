@@ -233,7 +233,11 @@ The version of [IBEX](#ibex) to be deployed.
 
 ## SECI
 
-**Sample Environment Control Interface. An old instrument control system, used before IBEX. No longer in use on any instruments. Written in C# and incorporating [LabVIEW](#labview) drivers for the sample environment equipment.
+**Sample Environment Control Interface**. An old instrument control system, used before IBEX. No longer in use on any instruments. Written in C# and incorporating [LabVIEW](#labview) drivers for the sample environment equipment.
+
+## SECoP
+
+**Sample Environment Communication Protocol**. See {external+secop:doc}`SECoP docs <index>` for details.
 
 ## Sequencer
 
