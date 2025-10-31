@@ -58,6 +58,27 @@ isisicp.kafkastream.topic.suffix.sampleenv = _sampleEnv
 isisicp.kafkastream.topic.suffix.alarms = _alarms
 ```
 
+In the same file, you will also need to ensure the following properties are set:
+
+```
+isisicp.incrementaleventnexus = true
+
+# Event rate, can adjust up or down
+isisicp.simulation.neventssim = 5000
+
+# Ensure simulated data is switched on
+isisicp.simulation.simulatedata = true
+isisicp.simulation.simulatespec0 = true
+isisicp.simulation.simulatebin0 = true
+isisicp.simulation.spreadsimevents = true
+```
+
+You additionally need to ensure you are running in event mode. You can do this using the DAE tables `wiring_event_ibextest.dat`, `detector_ibextest.dat` & `spectra_ibextest.dat`. Copies of these tables can be found at:
+
+```
+\\isis\shares\ISIS_Experiment_Controls\event_mode_tables
+```
+
 ## SE Data
 
 See [Forwarding Sample Environment](datastreaming/Datastreaming---Sample-Environment)
