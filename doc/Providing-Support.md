@@ -97,9 +97,12 @@ There are a number of tips for [trouble shooting](#all_troubleshooting_links) al
       - out of hours, if in cycle then in zoom phone call "ISIS IT Infrastructure on-call" (phone number 94499)
     - If attempting to connect to EMMA, remember the -A
   1. Unable to connect to NDX via RDP
-    - Try yourself to RDP, if you can ask reporter to try again, if they can't it is a connectivity issue for the system they are using to site, in hours refer them to the service desk, out of hours this is best efforts. Check the ISIS Computing O365 SharePoint for more information.
+    - This is no longer an option, please use VNC
+    - If they don't know the password, check that they are an instrument scientist with appropriate access to the information required. If they are not an instrument scientist ask them to contact their local contact to resolve this. If they are, add them to the appropriate group if they are the local contact for this experiment
+  1. Unable to connect to NDX via VNC
     - Check ping to the NDX, and to the NDH
-      - If there are any issues with these pings, you can check DRAC. [Basic DRAC information here](https://stfc365.sharepoint.com/sites/ISISExperimentControls/SitePages/Getting%20to%20Instrument%20DRACs.aspx) and instrument [DRAC IDs here](https://stfc365.sharepoint.com/sites/ISISExperimentControls/Lists/Instrument%20Control%20Computers/AllItems.aspx).
+      - If there are any issues with these pings, you can check DRAC. [Basic DRAC information here](https://stfc365.sharepoint.com/sites/ISISExperimentControls/SitePages/Getting%20to%20Instrument%20DRACs.aspx) and instrument [DRAC IDs here](https://stfc365.sharepoint.com/sites/ISISExperimentControls/Lists/Instrument%20Control%20Computers/AllItems.aspx). It is worth following the DRAC connections
+      - If you are restarting via the DRAC, using `power cycle system (cold reboot)` shoule bring the system back
   1. Wrong password entered too many times on anything other than NDX
     - We can't resolve this
 </details>
