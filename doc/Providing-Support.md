@@ -102,7 +102,7 @@ There are a number of tips for [trouble shooting](#all_troubleshooting_links) al
   1. Unable to connect to NDX via VNC
     - Check ping to the NDX, and to the NDH
       - If there are any issues with these pings, you can check DRAC. [Basic DRAC information here](https://stfc365.sharepoint.com/sites/ISISExperimentControls/SitePages/Getting%20to%20Instrument%20DRACs.aspx) and instrument [DRAC IDs here](https://stfc365.sharepoint.com/sites/ISISExperimentControls/Lists/Instrument%20Control%20Computers/AllItems.aspx). It is worth following the DRAC connections
-      - If you are restarting via the DRAC, using `power cycle system (cold reboot)` shoule bring the system back
+      - If you are restarting via the DRAC, using `power cycle system (cold reboot)` should bring the system back
   1. Wrong password entered too many times on anything other than NDX
     - We can't resolve this
 </details>
