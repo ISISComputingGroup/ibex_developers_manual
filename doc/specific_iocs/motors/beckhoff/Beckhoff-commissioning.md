@@ -37,6 +37,7 @@ Although commissioning a Beckhoff is far simpler than a Galil from an IBEX persp
 - Axis description (`.DESC`) - [ticket to automatically populate](https://github.com/ISISComputingGroup/IBEX/issues/6860)
   - Note, if `stDescription` is actually filled out on a Beckhoff you can use the `FORWARD_DESC` macro set to `1` which will forward the PLC description to the corresponding motor record's `.DESC` field. 
 - Soft limits - [ticket to automatically populate](https://github.com/ISISComputingGroup/IBEX/issues/8763)
+- Velocities (`.VELO`, `.JVEL`, `.VMAX` and others)
 
 These can be set via a `caput` and will be autosaved thereafter.
 
