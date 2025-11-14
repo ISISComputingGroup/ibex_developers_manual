@@ -176,7 +176,7 @@ given state transitions) are defined, alongside a table of possible transitions 
 respective actions to process when performing them. 
 
 ```{note}
-To avoid a circular dependancy, the state machine imports a dummy version of the main driver, 
+To avoid a circular dependency, the state machine imports a dummy version of the main driver, 
 defined in `StateMachineDriver.h`, which the main driver inherits from and then overloads the 
 methods of.
 ```
@@ -239,7 +239,7 @@ Similar to Pause, when abort is set to 1 it will process an "abort" event immedi
 it will not suspend the state machine. It will then attempt to stop any warming or cooling by 
 queuing a "cool" or "warm" respectively. If the PSU was instead ramping, it will pause the ramp, 
 set the PSU ramp endpoint to the current output, empty the rest of the event queue, then resume 
-sso that the PSU immediately accepts that the ramp has reached its target at its current output. 
+so that the PSU immediately accepts that the ramp has reached its target at its current output. 
 
 
 ## Performing a Ramp
@@ -253,7 +253,7 @@ queue a fast ramp of the leads to bring them to the persistent current if this i
 it will warm the magnet up to take it out of persistent mode.
 
 ```{note}
-The leads can be ramped much faster than the coils, so a seperate ramp rate set by the 
+The leads can be ramped much faster than the coils, so a separate ramp rate set by the 
 macro `FAST_RATE` is used when ramping only them. 
 ```
 
@@ -271,7 +271,7 @@ event for immediately after it.
 In the cases where the start point and end point have opposite polarities, the above process 
 will be performed first by going from the start to 0, then from 0 up to the end point.
 
-Finally, the driver will queue a cooldown event if the user wants the magnet to be persisting at 
+Finally, the driver will queue a cool-down event if the user wants the magnet to be persisting at 
 the end point, and will ram the leads to 0 if the user wants that to happen also.
 
 ### Ramp Events
@@ -285,7 +285,7 @@ Ramps are passed to the state machine with four values:
 When processed, the driver will set the PSU's output midpoint (in the context of 
 0 - arbitrary midpoint - max; midpoint doesn't have to be half of max and rarely is) and its 
 ramp rate, then tell it to ramp to the midpoint. If a ramp's start point is 0, it will first 
-make sure the polarity set on the PSU is the same as the enpoint's polarity. 
+make sure the polarity set on the PSU is the same as the endpoint's polarity. 
 
 After being processed, the event queue thread will wait until the PSU's output is within a 
 tolerance of the ramp's endpoint and the PSU is reporting that it is holding at target, then 
