@@ -10,7 +10,9 @@ cryosms/*
 ```
 
 ```{seealso}
-See also [design notes](cryosms/Cryogenic-SMS-PSU-design) for background on the implementation of this IOC.
+See also [design notes](cryosms/Cryogenic-SMS-PSU-design) for details of the inner functioning of 
+this 
+IOC.
 ```
 
 It was originally designed to be used for the HIFI main instrument cryomagnet, but has also been used to control the Oxford Instruments 9T magnet.
