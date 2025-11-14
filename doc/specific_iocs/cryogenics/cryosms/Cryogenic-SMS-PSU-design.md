@@ -33,10 +33,10 @@ quench.
 Attached to the driver is a queued state machine, implemented with a thread that 
 decides when to pop events from a queue to an implementation of boost's meta state machine. This 
 part of the system is mostly just to ensure all the reads, writes, waits, etc. happen 
-consistently and in the  right order. 
+consistently and in the right order. 
 
-Safety is the number one concern of this system, and if there appears to be an overly  
-complicated implementation for something, chances are that if it wasn't there it could lead to  
+Safety is the number one concern of this system, and if there appears to be an overly 
+complicated implementation for something, chances are that if it wasn't there it could lead to 
 a magnet quench. This needs to happen at IOC level because the PSU itself will happily quench 
 the magnet if you give it the wrong commands.
 
@@ -156,7 +156,7 @@ macro-defined timeout, the checks thread will automatically change everything ba
 
 ## Event Queue
 
-The event queue is a double-ended queue which is used to queue up state transitions to be  
+The event queue is a double-ended queue which is used to queue up state transitions to be
 performed on the state machine. It is processed in a while loop on the `eventQueueThread`, which 
 determines when to pop an event and push it to the state machine based on factors that vary by 
 whichever state the state machine is currently in (for example, making sure the PSU is at a ramp 
@@ -220,7 +220,7 @@ as the previously superconducting current rapidly changes to meet the current th
 ### Start
 
 Tells the driver to perform a ramp based on settings provided to other PVs. See [Performing a 
-Ramp](#performing-a-ramp 
+Ramp](#performing-a-ramp)
 
 ### Pause
 
