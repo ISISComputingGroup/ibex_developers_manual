@@ -9,7 +9,7 @@ This of course breaks our naming convention the blocks rely on to work. So the I
 ## IOC Setup
 When connecting to the real device, the IOC requires its IP address, but the software installed on the device has a bug and does not return the correct IP address. Its network name, however, is correct.
 
-To use the device, set the `IPADDR` macro to be the device hostname, e.g. `LKSH336_01__HOST=ls336-1`.
+To use the device, set the `HOST` macro to be the device hostname, e.g. `LSCI-336-1`.
 
 ### Troubleshooting: device not reachable for IOC using hostname
 
