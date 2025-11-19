@@ -1,0 +1,279 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SSH key-based auth &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Shared Utility Scripts (ibex_utils)" href="Shared-utility-scripts.html" />
+    <link rel="prev" title="Networking tools" href="Network-traffic.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Systems.html">Systems Administration &amp; Hardware</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../Tools.html">Tools</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Archive-Tools.html">Archive Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CA-snooper.html">CA snooper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Check-db-file.html">Check db file script</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Common-config-upgrade-steps.html">Common config upgrade steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Config-Checker.html">Config Checker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Config-IOC-Finder.html">Config IOC Finder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Config-Upgrader.html">Config Upgrader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Moxa-Tools.html">Moxa Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Network-traffic.html">Networking tools</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">SSH key-based auth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Shared-utility-scripts.html">Shared Utility Scripts (<code class="docutils literal notranslate"><span class="pre">ibex_utils</span></code>)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../Tools.html">Tools</a></li>
+      <li class="breadcrumb-item active">SSH key-based auth</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/tools/SSH-keys.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="ssh-key-based-auth">
+<h1>SSH key-based auth<a class="headerlink" href="#ssh-key-based-auth" title="Link to this heading"></a></h1>
+<p>Instruments run an SSH server, which can be used to execute commands remotely.</p>
+<p>It is possible to access this SSH server using key-based authentication. Keys are associated with
+an individual, but are used to grant access to the instrument accounts. This means that keys
+for individuals no longer on the team can be easily revoked.</p>
+<section id="key-pair-generation">
+<h2>Key-pair generation<a class="headerlink" href="#key-pair-generation" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you already have a suitable SSH key, which is encrypted using a passphrase, you may
+skip this step.</p>
+</div>
+<p>Generate a key-pair using a strong algorithm, for example <code class="docutils literal notranslate"><span class="pre">ed25519</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span><span class="o">-</span><span class="n">keygen</span> <span class="o">-</span><span class="n">t</span> <span class="n">ed25519</span>
+</pre></div>
+</div>
+<p><strong>You must encrypt this key with a strong password when prompted.</strong>
+Don’t use an empty passphrase for these keys. This is not a shared
+password, it is a password for your personal key-pair; store it in your password
+manager. This will generate two files: <code class="docutils literal notranslate"><span class="pre">~\.ssh\id_ed25519</span></code> and <code class="docutils literal notranslate"><span class="pre">~\.ssh\id_ed25519.pub</span></code>. The file
+ending in <code class="docutils literal notranslate"><span class="pre">.pub</span></code> is a public key, the one without the <code class="docutils literal notranslate"><span class="pre">.pub</span></code> extension is a private key. It
+would be sensible to store copies of these two files in your password manager too.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>For the avoidance of doubt, the <strong>public</strong> key (<code class="docutils literal notranslate"><span class="pre">*.pub</span></code>) can be freely shared with everyone (for
+example, by being copied onto instruments). Do not share your <strong>private</strong> key. The private key
+is additionally encrypted using your selected password.</p>
+</div>
+</section>
+<section id="keeper-ssh">
+<h2>Keeper<a class="headerlink" href="#keeper-ssh" title="Link to this heading"></a></h2>
+<p>To avoid having to copy and paste your passphrase every time, you can use <a class="reference external" href="https://ukri.sharepoint.com/sites/thesource/SitePages/Keeper-Password-Manager.aspx">Keeper</a> to store your passwords and SSH keys.</p>
+<p>If you want to use Keeper (you’ll need the desktop client for this, <em>not</em> the browser plugin) for storing your SSH keys, and not have local plain text copies on your machine, you can do so.</p>
+<p>This is done by following <a class="reference external" href="https://docs.keeper.io/en/keeperpam/privileged-access-manager/ssh-agent#activating-the-ssh-agent">this guide</a> with your public key, private key and passphrase filled in.</p>
+<p>You may need to <a class="reference external" href="https://docs.keeper.io/en/keeperpam/privileged-access-manager/ssh-agent#windows-note-on-ssh-agent-conflicts">turn the <code class="docutils literal notranslate"><span class="pre">OpenSSH</span></code> agent off</a> if it’s on your machine - see if <code class="docutils literal notranslate"><span class="pre">ssh-agent</span></code> is running in your services in task manager.</p>
+<p>It would also be a good idea to change the vault timeout to something relatively short to minimise scope of access for when the SSH keys are available.</p>
+<section id="ssh-works-and-prompts-to-use-passphrase-but-git-doesn-t-show-the-prompt">
+<h3>SSH works and prompts to use passphrase, but git doesn’t show the prompt<a class="headerlink" href="#ssh-works-and-prompts-to-use-passphrase-but-git-doesn-t-show-the-prompt" title="Link to this heading"></a></h3>
+<p>If <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">git&#64;github.com</span></code> works fine, your SSH key has been added to Github and <code class="docutils literal notranslate"><span class="pre">ssh</span></code> is using it.</p>
+<p>You may need to set the <code class="docutils literal notranslate"><span class="pre">GIT_SSH</span></code> environment variable to wherever your ssh executable is, as git might try and use its own ssh executable which doesn’t seem to work with Keeper. <code class="docutils literal notranslate"><span class="pre">where</span> <span class="pre">ssh</span></code> will tell you where this is.</p>
+</section>
+</section>
+<section id="manual-ssh-agent">
+<h2>Manually Setting up SSH agent<a class="headerlink" href="#manual-ssh-agent" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Ignore this section if you followed <a class="reference internal" href="#keeper-ssh"><span class="std std-ref">the section on setting up keeper as your ssh agent</span></a>.</p>
+</div>
+<p>In a powershell window, run the following commands:</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Get-Service</span> <span class="n">ssh-agent</span> <span class="p">|</span> <span class="nb">Set-Service</span> <span class="n">-StartupType</span> <span class="n">Automatic</span>
+<span class="nb">Start-Service</span> <span class="n">ssh-agent</span>
+</pre></div>
+</div>
+</section>
+<section id="deploying-the-public-key">
+<h2>Deploying the public key<a class="headerlink" href="#deploying-the-public-key" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Add your public key to the <a class="reference external" href="https://github.com/ISISComputingGroup/keys">keys repository</a>.</p></li>
+<li><p>Ask a developer whose key is <em>already</em> deployed to run the <a class="reference external" href="https://github.com/ISISComputingGroup/keys/blob/main/deploy_keys.py"><code class="docutils literal notranslate"><span class="pre">deploy_keys.py</span></code> script</a>, which will
+update the <code class="docutils literal notranslate"><span class="pre">authorized_keys</span></code> files on each instrument.</p></li>
+</ul>
+<p>If the permissions on <code class="docutils literal notranslate"><span class="pre">administrators_authorized_keys</span></code> are wrong, that file won’t work. The
+permissions can be fixed by running:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">icacls</span><span class="o">.</span><span class="n">exe</span> <span class="s2">&quot;c:\ProgramData\ssh</span><span class="se">\a</span><span class="s2">dministrators_authorized_keys&quot;</span> <span class="o">/</span><span class="n">inheritance</span><span class="p">:</span><span class="n">r</span> <span class="o">/</span><span class="n">grant</span> <span class="s2">&quot;Administrators:F&quot;</span> <span class="o">/</span><span class="n">grant</span> <span class="s2">&quot;SYSTEM:F&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="one-off-usage">
+<h2>One-off usage<a class="headerlink" href="#one-off-usage" title="Link to this heading"></a></h2>
+<p>To connect via SSH to an instrument, use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="n">spudulike</span><span class="nd">@NDXINST</span>
+</pre></div>
+</div>
+<p>(If you aren’t <a class="reference internal" href="#keeper-ssh">using Keeper</a>) This will prompt you on each connection for the passphrase to unlock your SSH key, this is the
+password you set earlier for your personal SSH key. You will not be prompted for an
+account password; your key is sufficient to grant you access.</p>
+</section>
+<section id="bulk-usage">
+<h2>Bulk usage<a class="headerlink" href="#bulk-usage" title="Link to this heading"></a></h2>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>If you intend to run a command across many instruments, it is worth getting that command
+reviewed by another developer and running it together. This is <strong>especially</strong> true if you intend to
+run a command as a privileged user.</p>
+</div>
+<p>Typing the password to unlock your SSH key for each instrument would be tedious.
+To avoid this, we can either <a class="reference internal" href="#keeper-ssh">use Keeper</a>, or <strong>temporarily</strong> add the key to the SSH agent:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span><span class="o">-</span><span class="n">add</span>
+</pre></div>
+</div>
+<p>This will prompt for the passphrase to unlock your SSH key. You can check that your key is now in
+the SSH agent by running:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span><span class="o">-</span><span class="n">add</span> <span class="o">-</span><span class="n">l</span>
+</pre></div>
+</div>
+<p>Once the key has been added to the agent, you can SSH to an instrument without any further prompts:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="n">spudulike</span><span class="nd">@NDXINST</span>
+</pre></div>
+</div>
+<p>Commands can be executed like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="n">spudulike</span><span class="nd">@NDXINST</span> <span class="s2">&quot;dir /?&quot;</span>
+</pre></div>
+</div>
+<p>Since we no longer have any authentication prompts (having added our key to the SSH-agent),
+this command is suitable for automating in a loop over instruments - for example from python
+or a <code class="docutils literal notranslate"><span class="pre">.bat</span></code> script.</p>
+<p>Once you have finished with the administration task which needed SSH across multiple instruments, you
+should remove your key from the agent (and then verify that it has been removed):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span><span class="o">-</span><span class="n">add</span> <span class="o">-</span><span class="n">D</span>
+<span class="n">ssh</span><span class="o">-</span><span class="n">add</span> <span class="o">-</span><span class="n">l</span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Do not leave these keys permanently added to the SSH agent - having <em>immediate</em> SSH access to <em>every</em>
+instrument is an unnecessary risk most of the time (for example if your developer machine was compromised).
+Add the keys to the SSH agent only when needed, and remove them from the agent again when your administration
+task is complete. The usual sudo lecture applies:</p>
+<blockquote>
+<div><p>We trust you have received the usual lecture from the local System
+Administrator. It usually boils down to these three things:</p>
+<ol class="arabic simple">
+<li><p>Respect the privacy of others.</p></li>
+<li><p>Think before you type.</p></li>
+<li><p>With great power comes great responsibility.</p></li>
+</ol>
+</div></blockquote>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Network-traffic.html" class="btn btn-neutral float-left" title="Networking tools" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Shared-utility-scripts.html" class="btn btn-neutral float-right" title="Shared Utility Scripts (ibex_utils)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Nov 19, 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
