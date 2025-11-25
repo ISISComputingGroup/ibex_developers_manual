@@ -53,6 +53,8 @@ A Galil is used to drive the jaws.
 ##### Note: Jaws #####
 Single 4-blade jaw-set.  Jaws are driven by a Galil.
 
+These are actually servo motors with effectively an "absolute" encoder fed in via the galil's analog inputs. 
+
 ##### Note: Pfeiffer #####
 [Model TPG 300](https://www.pfeiffer-vacuum.com/en/products/measurement/modulline/controllers/?detailPdoId=3407), used for vacuum system read-back.  May actually be read back via PLC.
 
