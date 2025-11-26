@@ -11,8 +11,7 @@ The project manager (or an agreed alternative team member) should do the followi
 1. Update the `Planning Board` and `Planning Table` tabs to filter on the Sprint to be planned.
 1. Any items from the current sprint in the backlog, but without a rework label, are assigned to the Sprint to be planned.
 1. Create a support ticket based on the contents of the support channel (adding one tally for each thread, and for every multiple of 10 in the comments, so a thread with 23 comments would get 3 tally marks), and assign it to ISIS Builder with the appropriate number of points
-1. Remove the automation from the `Review Complete` column of the IBEX board, rename that column to be the name of the sprint ending
-1. Create a new `Review Complete` column which is automated to the `Done` type based on the closing of a ticket
+1. Update the sprint filter
 
 ### During meeting
 1. Post a link to the planning poker site and a reminder of the points estimates to the chat in zoom. This information is available in the `Planning` tab on the IBEX Developers MS Teams `announce` channel.
