@@ -505,3 +505,4 @@ in these cases when the "scan for new hardware" happens on the PC, it thinks it 
 - if it is still not showing reboot NDH computer, after reboot visa server may be running again so stop it
 - right click on Frame0 of VXI0 and "add VME device" then choose DAE2 from VME profile
 - start visa server
+
