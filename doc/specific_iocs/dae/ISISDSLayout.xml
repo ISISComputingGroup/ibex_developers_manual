@@ -1,143 +1,184 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<mxfile host="app.diagrams.net" modified="2020-06-04T13:01:29.057Z" agent="5.0 (Windows)" version="13.1.14" etag="b1lGKWChZgIRg0aMCgad" type="github">
-  <diagram id="Hcih1Z2I40CavoK4oXOS">
-    <mxGraphModel dx="2574" dy="1449" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" version="29.1.1">
+  <diagram id="Hcih1Z2I40CavoK4oXOS" name="Page-1">
+    <mxGraphModel dx="2037" dy="1076" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="2" value="" style="group" vertex="1" connectable="0" parent="1">
-          <mxGeometry x="40" y="1140" width="1030" height="590" as="geometry" />
-        </mxCell>
-        <mxCell id="3" value="Current ISIS layout with data streaming" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="2">
-          <mxGeometry width="220" height="20" as="geometry" />
-        </mxCell>
-        <mxCell id="4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;startArrow=none;startFill=0;" edge="1" parent="2" source="6">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="970" y="488" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="5" value="Forwarder Configuration" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="4">
-          <mxGeometry x="-0.2724" y="-1" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="6" value="Kafka Cluster + Zookeeper" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="2">
-          <mxGeometry x="670" y="270" width="140" height="140" as="geometry" />
-        </mxCell>
-        <mxCell id="7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="2" source="9">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="440" y="120" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="8" value="Detector Event histograms" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="7">
-          <mxGeometry x="-0.2162" y="-4" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="9" value="DAE" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="2">
-          <mxGeometry y="90" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="10" value="Instrument Control Program" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="2">
-          <mxGeometry x="440" y="100" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="2" source="10" target="6">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="360" y="-10" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="12" value="Forwards to (Instrument)_events topic" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="11">
-          <mxGeometry x="-0.2" y="1" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="2" source="14">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="200" y="380" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="14" value="EPICS PVs" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="2">
-          <mxGeometry y="350" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="2" source="19" target="6">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="16" value="Sends forwarder configuration" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="15">
-          <mxGeometry x="-0.5" y="-1" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="2" source="19" target="10">
+        <mxCell id="7KtQmuTptNfZlMXJsWDl-50" edge="1" parent="1" source="9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="6">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="260" y="300" />
-              <mxPoint x="500" y="300" />
+              <mxPoint x="330" y="780" />
+              <mxPoint x="330" y="1230" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="18" value="Sample Env data (PVs)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="17">
-          <mxGeometry x="-0.3023" relative="1" as="geometry">
+        <mxCell id="7KtQmuTptNfZlMXJsWDl-70" edge="1" parent="1" source="7KtQmuTptNfZlMXJsWDl-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="7KtQmuTptNfZlMXJsWDl-33">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="280" y="940" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7KtQmuTptNfZlMXJsWDl-71" connectable="0" parent="7KtQmuTptNfZlMXJsWDl-70" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="hook for run starts/stops" vertex="1">
+          <mxGeometry relative="1" x="0.3273" y="-2" as="geometry">
+            <mxPoint x="10" y="12" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="30" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="NeXus File" vertex="1">
+          <mxGeometry height="80" width="80" x="850" y="890" as="geometry" />
+        </mxCell>
+        <mxCell id="7KtQmuTptNfZlMXJsWDl-51" edge="1" parent="1" source="7KtQmuTptNfZlMXJsWDl-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="330" y="1230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7KtQmuTptNfZlMXJsWDl-52" connectable="0" parent="7KtQmuTptNfZlMXJsWDl-51" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="EV44 events OR hs01 histograms, pulse metadata" vertex="1">
+          <mxGeometry relative="1" x="0.4556" as="geometry">
+            <mxPoint y="31" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4" edge="1" parent="1" source="6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;startArrow=none;startFill=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1010" y="1488" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5" connectable="0" parent="4" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="fc00 forwarder config" vertex="1">
+          <mxGeometry relative="1" x="-0.2724" y="-1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="19" value="Blockserver" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="2">
-          <mxGeometry x="200" y="350" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="2" source="22" target="19">
+        <mxCell id="7KtQmuTptNfZlMXJsWDl-59" edge="1" parent="1" source="6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="7KtQmuTptNfZlMXJsWDl-61">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="21" value="Configures" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="20">
-          <mxGeometry x="0.2875" y="4" relative="1" as="geometry">
-            <mxPoint as="offset" />
+        <mxCell id="7KtQmuTptNfZlMXJsWDl-60" connectable="0" parent="7KtQmuTptNfZlMXJsWDl-59" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="f144 (and associated SE schemas), ev44, hs01, pulse meta, pl72 run starts, 6s4t runstops&amp;nbsp;" vertex="1">
+          <mxGeometry relative="1" x="-0.4192" y="4" as="geometry">
+            <mxPoint x="166" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="22" value="IBEX" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="2">
-          <mxGeometry x="320" y="450" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="23" value="EPICS monitor" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="2">
-          <mxGeometry x="150" y="380" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="2" source="28" target="6">
+        <mxCell id="7KtQmuTptNfZlMXJsWDl-64" edge="1" parent="1" source="6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=classic;startFill=1;endArrow=none;endFill=0;" target="7KtQmuTptNfZlMXJsWDl-61">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="25" value="Forwarded PVs" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="24">
-          <mxGeometry x="-0.0429" y="1" relative="1" as="geometry">
+        <mxCell id="7KtQmuTptNfZlMXJsWDl-65" connectable="0" parent="7KtQmuTptNfZlMXJsWDl-64" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="filewriter status x5f2" vertex="1">
+          <mxGeometry relative="1" x="0.0658" y="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" edge="1" parent="2" source="28" target="14">
+        <mxCell id="6" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" value="Kafka Cluster" vertex="1">
+          <mxGeometry height="140" width="140" x="530" y="1160" as="geometry" />
+        </mxCell>
+        <mxCell id="24" edge="1" parent="1" source="28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="25" connectable="0" parent="24" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Forwarded PV updates from monitor (f144 and others)" vertex="1">
+          <mxGeometry relative="1" x="-0.0429" y="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="28" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="forwarder" vertex="1">
+          <mxGeometry height="60" width="120" x="950" y="1490" as="geometry" />
+        </mxCell>
+        <mxCell id="7KtQmuTptNfZlMXJsWDl-53" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Blockserver" vertex="1">
+          <mxGeometry height="60" width="120" x="90" y="1360" as="geometry" />
+        </mxCell>
+        <mxCell id="7KtQmuTptNfZlMXJsWDl-55" edge="1" parent="1" source="7KtQmuTptNfZlMXJsWDl-54" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="7KtQmuTptNfZlMXJsWDl-53">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7KtQmuTptNfZlMXJsWDl-56" connectable="0" parent="7KtQmuTptNfZlMXJsWDl-55" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Polls for block names" vertex="1">
+          <mxGeometry relative="1" x="0.4" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7KtQmuTptNfZlMXJsWDl-57" edge="1" parent="1" source="7KtQmuTptNfZlMXJsWDl-54" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=1;entryDx=0;entryDy=0;" target="6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7KtQmuTptNfZlMXJsWDl-58" connectable="0" parent="7KtQmuTptNfZlMXJsWDl-57" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="fc00 forwarder config - blocks and archived vals. runlog?" vertex="1">
+          <mxGeometry relative="1" x="-0.464" y="2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7KtQmuTptNfZlMXJsWDl-54" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="BSTOKAFKA" vertex="1">
+          <mxGeometry height="60" width="120" x="90" y="1450" as="geometry" />
+        </mxCell>
+        <mxCell id="7KtQmuTptNfZlMXJsWDl-62" edge="1" parent="1" source="7KtQmuTptNfZlMXJsWDl-61" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7KtQmuTptNfZlMXJsWDl-61" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="filewriter" vertex="1">
+          <mxGeometry height="60" width="120" x="830" y="1030" as="geometry" />
+        </mxCell>
+        <mxCell id="7KtQmuTptNfZlMXJsWDl-72" connectable="0" parent="1" style="group" value="" vertex="1">
+          <mxGeometry height="320" width="170" x="110" y="690" as="geometry" />
+        </mxCell>
+        <mxCell id="7KtQmuTptNfZlMXJsWDl-34" edge="1" parent="7KtQmuTptNfZlMXJsWDl-72" source="9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;" target="7KtQmuTptNfZlMXJsWDl-33">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7KtQmuTptNfZlMXJsWDl-35" connectable="0" parent="7KtQmuTptNfZlMXJsWDl-34" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="UDP" vertex="1">
+          <mxGeometry relative="1" x="0.0167" y="-2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9" parent="7KtQmuTptNfZlMXJsWDl-72" style="rounded=0;whiteSpace=wrap;html=1;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="FPGA streaming boards" vertex="1">
+          <mxGeometry height="60" width="120" x="20" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7KtQmuTptNfZlMXJsWDl-33" parent="7KtQmuTptNfZlMXJsWDl-72" style="rounded=0;whiteSpace=wrap;html=1;" value="(borzoi)~&lt;br&gt;process that&lt;br&gt;A) bridges FPGA UDP config and EPICS and&lt;br&gt;B) provides an interface very similar to ISISDAE&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="130" width="120" x="20" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="7KtQmuTptNfZlMXJsWDl-47" parent="7KtQmuTptNfZlMXJsWDl-72" style="swimlane;" value="For new instruments" vertex="1">
+          <mxGeometry height="320" width="170" as="geometry" />
+        </mxCell>
+        <mxCell id="7KtQmuTptNfZlMXJsWDl-73" edge="1" parent="1" source="7KtQmuTptNfZlMXJsWDl-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=0;entryDy=0;" target="6">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="970" y="590" />
-              <mxPoint x="60" y="590" />
+              <mxPoint x="170" y="1181" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="27" value="EPICS monitor" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="26">
-          <mxGeometry x="0.0726" relative="1" as="geometry">
+        <mxCell id="7KtQmuTptNfZlMXJsWDl-74" connectable="0" parent="7KtQmuTptNfZlMXJsWDl-73" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="pl72 run starts/ 6s4t run stops" vertex="1">
+          <mxGeometry relative="1" x="-0.1243" y="-4" as="geometry">
+            <mxPoint x="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7KtQmuTptNfZlMXJsWDl-75" connectable="0" parent="1" style="group" value="" vertex="1">
+          <mxGeometry height="380" width="170" x="450" y="670" as="geometry" />
+        </mxCell>
+        <mxCell id="7KtQmuTptNfZlMXJsWDl-36" parent="7KtQmuTptNfZlMXJsWDl-75" style="rounded=0;whiteSpace=wrap;html=1;" value="ISISDAE IOC" vertex="1">
+          <mxGeometry height="100" width="120" x="20" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="7KtQmuTptNfZlMXJsWDl-38" edge="1" parent="7KtQmuTptNfZlMXJsWDl-75" source="7KtQmuTptNfZlMXJsWDl-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=classic;startFill=1;" target="7KtQmuTptNfZlMXJsWDl-36">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7KtQmuTptNfZlMXJsWDl-43" connectable="0" parent="7KtQmuTptNfZlMXJsWDl-38" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="asyn calls?" vertex="1">
+          <mxGeometry relative="1" x="0.075" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="28" value="Forwarder (forward-epics-to-kafka)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="2">
-          <mxGeometry x="910" y="490" width="120" height="60" as="geometry" />
+        <mxCell id="7KtQmuTptNfZlMXJsWDl-41" edge="1" parent="7KtQmuTptNfZlMXJsWDl-75" source="7KtQmuTptNfZlMXJsWDl-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="7KtQmuTptNfZlMXJsWDl-42">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="80" y="40" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
-        <mxCell id="29" value="IBEX" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="2">
-          <mxGeometry x="320" y="450" width="120" height="60" as="geometry" />
+        <mxCell id="7KtQmuTptNfZlMXJsWDl-44" connectable="0" parent="7KtQmuTptNfZlMXJsWDl-41" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="NIVISA/Qxtream respectively" vertex="1">
+          <mxGeometry relative="1" x="0.1143" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
         </mxCell>
-        <mxCell id="30" value="NeXus File" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="2">
-          <mxGeometry x="760" y="80" width="80" height="80" as="geometry" />
+        <mxCell id="7KtQmuTptNfZlMXJsWDl-37" parent="7KtQmuTptNfZlMXJsWDl-75" style="rounded=0;whiteSpace=wrap;html=1;" value="ISISICP" vertex="1">
+          <mxGeometry height="60" width="120" x="20" y="160" as="geometry" />
         </mxCell>
-        <mxCell id="31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=none;startFill=0;" edge="1" parent="2" source="10" target="30">
+        <mxCell id="7KtQmuTptNfZlMXJsWDl-42" parent="7KtQmuTptNfZlMXJsWDl-75" style="rounded=0;whiteSpace=wrap;html=1;" value="DAE2/DAE3" vertex="1">
+          <mxGeometry height="60" width="120" x="20" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="7KtQmuTptNfZlMXJsWDl-48" parent="7KtQmuTptNfZlMXJsWDl-75" style="swimlane;" value="For existing dae2/dae3 insts" vertex="1">
+          <mxGeometry height="380" width="170" as="geometry" />
+        </mxCell>
+        <mxCell id="7KtQmuTptNfZlMXJsWDl-77" edge="1" parent="1" source="7KtQmuTptNfZlMXJsWDl-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=0;entryDy=0;startArrow=classic;startFill=1;endArrow=none;endFill=0;" target="7KtQmuTptNfZlMXJsWDl-53">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="500" y="60" />
-              <mxPoint x="800" y="60" />
+              <mxPoint x="70" y="925" />
+              <mxPoint x="70" y="1390" />
+              <mxPoint x="90" y="1390" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="32" value="Writes experiment data to file" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="31">
-          <mxGeometry x="-0.2278" y="-1" relative="1" as="geometry">
+        <mxCell id="7KtQmuTptNfZlMXJsWDl-78" connectable="0" parent="7KtQmuTptNfZlMXJsWDl-77" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="PV for block names in order &lt;br&gt;to construct pl72 run starts" vertex="1">
+          <mxGeometry relative="1" x="0.0779" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
