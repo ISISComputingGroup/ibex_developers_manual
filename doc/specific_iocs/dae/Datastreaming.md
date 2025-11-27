@@ -15,9 +15,9 @@ In general this works by producing both neutron events and histograms, sample en
 
 All data is serialised into [Flatbuffers](https://flatbuffers.dev/) blobs using [these schemas](https://github.com/ess-dmsc/streaming-data-types) - we have a tool called [saluki](https://github.com/ISISComputingGroup/saluki) which can deserialise these and make them human-readable after they've been put into Kafka. 
 
-Overall architecture is still being decided, but this is an initial idea of how it could look. 
+Overall architecture is still being decided, but this is an initial idea of how it could look:
 
-<TODO>
+![](ISISDSLayout.drawio.svg)
 
 
 {#kafkacluster}
