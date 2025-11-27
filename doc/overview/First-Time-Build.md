@@ -21,6 +21,8 @@ See  [Install Visual Studio](/iocs/compiling/Install-Visual-Studio)
 
 Install **OpenJDK 21 hotspot** from https://adoptium.net/?variant=openjdk21&jvmVariant=hotspot (the MSI installer is fine, tick all the boxes when it asks you which components to install)
 
+The installation location should be `C:\Instrument\Apps\JDK\<version>`. 
+
 ```{important}
 **Do not install an Oracle JDK**. It has an unsuitable license.
 ```
