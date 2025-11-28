@@ -1,16 +1,18 @@
 # Dependency Updates
 
-After a release all of the dependencies of the system should be considered for update. This will ensure that we do not get too far out of date and any upgrade will, hopefully, be small and not require much effort. In general we do not want to be on the bleeding edge but at the last stable release (i.e. prefer LTS versions when they are available). The list of dependency will get shipped with the release notes and should be kept up-to-date with any notes. This page documents the process of updating.
+After a release, the dependencies of the system should be considered for update. This will ensure that we do not get too far out of date and any upgrade will, hopefully, be small and not require much effort. In general we do not want to be on the bleeding edge but at the last stable release (i.e. prefer LTS versions when they are available). The list of dependencies will be shipped with the release notes and should be kept up-to-date with any notes. This page documents the process of updating.
 
-**Any dependencies which should not be updated should be listed with a reason [here](/processes/dev_processes/Unupdated-dependencies)**
+:::{note}
+Any dependencies which should not be updated should be listed with a reason [here](/processes/dev_processes/Unupdated-dependencies).
 
-**When updating dependencies add the new dependencies to the upcoming release notes**
+When updating dependencies add the new dependencies to the upcoming release notes.
+:::
 
 ## WebDashboard
 
 - [Update `tomcat` on external webserver](https://github.com/isiscomputinggroup/pvws-config?tab=readme-ov-file#updating). This is an external-facing process so **must** be kept up-to-date with latest security bug fixes.
 - Update java JDK on external webserver. This is used to run tomcat, which is an external-facing process, so **must** be kept up-to-date with latest security bug fixes.
-- Update [javascript dependencies](https://github.com/ISISComputingGroup/WebDashboard/blob/main/package.json)
+- Update [javascript dependencies](https://github.com/ISISComputingGroup/WebDashboard/blob/main/package.json). This is done automatically by dependabot, so this step is to ensure that no outstanding dependabot pull requests are unmerged, and to check any dependencies which dependabot is not configured to upgrade.
 
 ## GUI
 
@@ -29,7 +31,9 @@ General update process:
 - Some repositories are updated "in-place". Do upgrade these, simply delete and then re-add them to the target platform, when they are re-added they will pick up the latest versions.
 - For maven dependencies referenced in target platform, look up latest version on maven central then update the version number in target platform to correspond. If the version numbers are hardcoded in `feature.xml` or `MANIFEST.MF` for individual plugins, update it there too.
 
-**Note: when updating the eclipse framework itself, you will need to download the same eclipse IDE with the same version number or else some jars may not be found. You also need to update `client.tycho.parent` - see below for details. Make sure you update the [gui build wiki page](/client/compiling/Building-the-GUI) to ensure new starters get the correct version.**
+:::{note}
+When updating the eclipse framework itself, you will need to download the same eclipse IDE with the same version number or else some jars may not be found. You also need to update `client.tycho.parent` - see below for details. Make sure you update the [gui build wiki page](/client/compiling/Building-the-GUI) to ensure new starters get the correct version.
+:::
 
 ### Parent POM
 
@@ -41,8 +45,8 @@ The GUI builds copy a JRE from `\\isis\inst$\Kits$\CompGroup\ICP\ibex_client_jdk
 
 ### Pydev
 
-- git clone --recurse-submodules the latest version of [our fork](https://github.com/ISISComputingGroup/Pydev) and create a new dependency update branch off of master. 
-- git clone --recurse-submodules the latest version of [the upstream](https://github.com/fabioz/Pydev) on to a vendor branch and merge this branch into the dependency update branch.
+- `git clone --recurse-submodules` the latest version of [our fork](https://github.com/ISISComputingGroup/Pydev) and create a new dependency update branch off of master. 
+- `git clone --recurse-submodules` the latest version of [the upstream](https://github.com/fabioz/Pydev) on to a vendor branch and merge this branch into the dependency update branch.
 - Run `mvn install` in the dependency update branch base directory. 
 - After a successful build, create a PR to merge the changes into master, and upload the updated repo to `\\shadow.isis.cclrc.ac.uk\ICP_P2W$`, this latest version should be named 'Pydev'.
 - Remove and re-add the Pydev target platform dependency in the GUI
@@ -51,7 +55,7 @@ The GUI builds copy a JRE from `\\isis\inst$\Kits$\CompGroup\ICP\ibex_client_jdk
 
 ### Uktena python distribution
 
-- Check on Python.org for newer versions of python itself
+- Check on https://python.org for newer versions of python itself
 - If a newer version is available, download the "windows installer".
 - Select custom install, install python to a location of your choice (not `c:\instrument\apps\python3`).
 - During the python installation process, **ensure that you tick the box asking whether you want to install TCL/TK support** in optional features. This is needed for independent matplotlib plots in standalone genie_python windows.
@@ -65,13 +69,20 @@ We depend on a variety of python packages that we publish ourselves, either via 
 
 These may need to be updated to allow new python versions. For packages published on PyPI, a new pypi release will need to be made.
 
+These packages are _libraries_, so they can support multiple python versions. Many of these packages aim to run CI on
+3 recent python releases, following recommendations from [SPEC 0](https://scientific-python.org/specs/spec-0000/). Therefore,
+the dependency update is to ensure that these libraries work on the new python version we are targeting, and to drop support
+for python releases more than 3 years old.
+
 These packages include:
-- `genie`
-- `ibex_bluesky_core`
-- `lewis`
-- `pcaspy`
-- `CaChannel`
-- `epicscorelibs_pcas`
+- [`genie`](https://github.com/isiscomputinggroup/genie)
+- [`ibex_bluesky_core`](https://github.com/isiscomputinggroup/ibex_bluesky_core)
+- [`lewis`](https://github.com/isiscomputinggroup/lewis)
+- [`pcaspy`](https://github.com/isiscomputinggroup/pcaspy)
+- [`CaChannel`](https://github.com/isiscomputinggroup/cachannel)
+- [`epicscorelibs_pcas`](https://github.com/isiscomputinggroup/epicscorelibs_pcas)
+- [`epicscorelibs`](https://github.com/isiscomputinggroup/epicscorelibs)
+  - This is currently built manually, generating explicit wheels uploaded to [github releases](https://github.com/ISISComputingGroup/epicscorelibs/releases).
 
 {#dep_update_venvs}
 #### Virtual environments for our packages
@@ -177,7 +188,7 @@ Our CS-Studio GUI dependencies are located on a share on shadow, a read only ver
 
 CS-Studio requires a version of jdk11 to build that it gets from `C:\Program Files\AdoptOpenJDK` or `C:\Program Files\Eclipse Adoptium`.
 - Install the latest jdk11, and ensure `isis_css_top\build.bat` points at the correct jdk location.
-- You will need JavaFX binaries. These can be patched onto the AdoptOpenJDK/Eclipse Temurin installation. Download the Windows SDK from \\isis\inst$\Kits$\CompGroup\ICP\Java_utils\openjfx-19_windows-x64_bin-sdk\javafx-sdk-19 (originally from [gluon](https://gluonhq.com/products/javafx/)) and copy the bin, lib, and legal directories over the corresponding directories in the jdk. Note that the JavaFX version does not necessarily need to match your java installation, as long as the versions are compatible. For example we can use JavaFX 19 on a Java 11 installation. Please check that the license is still appropriate before you install.
+- You will need JavaFX binaries. These can be patched onto the AdoptOpenJDK/Eclipse Temurin installation. Download the Windows SDK from `\\isis\inst$\Kits$\CompGroup\ICP\Java_utils\openjfx-19_windows-x64_bin-sdk\javafx-sdk-19` (originally from [gluon](https://gluonhq.com/products/javafx/)) and copy the `bin`, `lib`, and `legal` directories over the corresponding directories in the JDK. The JavaFX version does not necessarily need to match your java installation, as long as the versions are compatible. For example, we can use JavaFX 19 on a Java 11 installation. Please check that the license is still appropriate before you install.
 
 To update the CS-Studio components that the GUI uses:
 - `git clone --recursive https://github.com/ISISComputingGroup/isis_css_top.git`
@@ -187,7 +198,7 @@ To update the CS-Studio components that the GUI uses:
 - Updated the gui target platform to point at the new folder, i.e. `http://shadow.nd.rl.ac.uk/ICP_P2/css_gui_dependencies_<year_month_day>/p2repo/`
 - Reload the target platform and rebuild the gui.
 - Test that your changes work correctly!
-- if you cannot write to the `ICP_P2W$` share on shadow, your fed id account will need adding to the `icp` local group on shadow itself. This just requires somebody to run the `vigr` command on shadow and then possibly `service smb restart` too 
+- If you cannot write to the `ICP_P2W$` share on shadow, your fed id account will need adding to the `icp` local group on shadow itself. This just requires somebody to run the `vigr` command on shadow and then possibly `service smb restart` too 
 
 ### Archive engines / alarm servers
 
