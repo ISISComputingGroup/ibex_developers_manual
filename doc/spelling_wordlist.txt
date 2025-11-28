@@ -193,6 +193,7 @@ deadbands
 deadman
 deenergise
 dehex
+dependabot
 deprioritise
 dereferenced
 deserialise
@@ -889,6 +890,7 @@ uncomment
 uncommented
 underivable
 unintuitive
+unmerged
 uno
 unpadded
 unpark
