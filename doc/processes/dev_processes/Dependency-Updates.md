@@ -96,6 +96,8 @@ The new mechanism uses `uv pip compile pyproject.toml -o requirements-frozen.txt
 
 It also uses a `.python-version` file to say which version of python should be used at runtime, which `uv` respects.
 
+Also search for `UV_PYTHON` environment variables and update those packages to use a recent python version.
+
 ### External packages
 
 Check on PyPi for any package updates, then edit `requirements.txt` to install new versions where needed. Note that since we decided [all python projects should use virtual environments](/system_components/python/Python-dependencies) there will be a `pyproject.toml` or legacy `requirements.txt` file for all Python projects using the new import mechanism, ensure these are also updated.
