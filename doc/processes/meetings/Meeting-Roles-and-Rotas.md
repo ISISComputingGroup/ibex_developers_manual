@@ -36,35 +36,6 @@ It was decided that we would set up a rota for the various roles in IBEX meeting
 
 ## Rotas
 
-  | Standup | Week Commencing | x for Done |
- |--- | --- | --- |
- |FA | 02/06/2025 |x |
- |KB | 09/06/2025 |x |
- |ES | 16/06/2025 |x |
- |LJ | 23/06/2025 |x |
- |TW | 30/06/2025 |x |
- |LC | 07/07/2025 |x |
- |GR | 14/07/2025 |x |
- |DK | 21/07/2025 |x |
- |SC | 28/07/2025 |x |
- |JH | 04/08/2025 |x |
- |IG | 11/08/2025 |x |
- |CMS | 18/08/2025 |x |
- |FA | 25/08/2025 |x |
- |KB | 01/09/2025 |x |
- |DM | 08/09/2025 |x |
- |GR | 15/09/2025 |x |
- |LJ | 22/09/2025 |x |
- |LC | 29/09/2025 |x |
- |SpC | 06/10/2025 |x |
- |DK | 13/10/2025 |x |
- |TW | 20/10/2025 |x |
- |SC | 27/10/2025 |x |
- |JH | 03/11/2025 |x |
- |FA | 10/11/2025 |x |
- |DM | 17/11/2025 |x |
- |GR | 24/11/2025 | |
-
 From week commencing 1/12/25, the standup will be hosted by whoever is undertaking first-line support.
 
 ***
