@@ -1,4 +1,4 @@
-# 2025-10-02
+# 2025-10-30
 
 ## Sprint 2025-10-30 Retrospective (2025-11-25)
 
@@ -11,7 +11,7 @@
 - continuing as is 
 
 ### 1926 Build server
-- reimagined and back doing builds
+- reimaged and back doing builds
 
 ### Server Common
 
@@ -37,7 +37,7 @@
 - GR to setup a technical discussion to discuss further for anyone interested
 
 ### Internal Facing Docs
-- TW to write a ticket to put through to a planning meeting an discuss more then
+- TW to write a ticket to put through to a planning meeting and discuss more then
 
 ### SSH Keys
 - Issue bumped to next retrospective
