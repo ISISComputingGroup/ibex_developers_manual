@@ -11,7 +11,7 @@
 - continuing as is 
 
 ### 1926 Build server
-- reimaged and back doing builds
+- re-imaged and back doing builds
 
 ### Server Common
 
