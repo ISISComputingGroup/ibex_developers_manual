@@ -52,7 +52,7 @@
 ### Standup
 - Issue bumped to the end of next sprint after ways of working meeting
 
-### Maintaining archivewatcher
+### Maintaining `archivewatcher`
 - Issue bumped to next retrospective when JH is here
 
 ## Mad/Sad/Glad
