@@ -1,3 +1,4 @@
+{#controlsvcs}
 # `control-svcs`
 
 control-svcs.isis.cclrc.ac.uk
