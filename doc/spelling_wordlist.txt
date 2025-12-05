@@ -471,8 +471,8 @@ luarocks
 lvdcom
 lvDCOM
 lvDCOMConfigure
-Löhnert
 Lynx
+Löhnert
 mA
 machinename
 mak
