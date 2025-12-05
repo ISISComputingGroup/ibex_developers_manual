@@ -5,11 +5,12 @@ PVs which are for instrument level, e.g. motors moving and security pvs
 
 ## User variables
 
-There are a host of user variables which are autosaved for the users to set. The number of these is controlled with the macro `NUM_USER_VARS`. There are 3 types:
+There are a host of user variables which are autosaved for the users to set. The number of these is controlled with the macro `NUM_USER_VARS`. There are 4 types:
 
 - Integer in `IN:<instrument>:PARS:USER:IX` (X is index)
 - Reals in `IN:<instrument>:PARS:USER:RX` (X is index)
 - Strings in `IN:<instrument>:PARS:USER:SX` (X is index), NB these are maximum of 40 characters
+- Character arrays in `IN:<instrument>:PARS:USER:LSX` (X is index), these are character arrays with a maximum size of 65536 characters
 
 ## User Buttons
 
