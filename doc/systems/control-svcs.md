@@ -51,7 +51,18 @@ The logs are located in `/var/log/httpd` which may be useful for troubleshooting
 
 ### Gateways unavailable / Beam Logger details not updating
 
-If PVs are visible in R3 then probably the gateway on the control service machine need to be updated.
+If there is an issue with the gateway (i.e. Beam status PVs cannot not be found or are showing outdated values)
+
+`ssh isissupport@control-svcs`
+
+`ps -ux -U epics`
+
+Depending on which gateway you are looking for, please look for the following where \<GATEWAY\> is either gateway_R55, gateway_R80 or gateway_R2.
+
+`COMMAND: ../support/gateway/master/bin/linux-x86_64/gateway -pvlist /home/epics/EPICS/gateway/gwsite.pvlist -access /home/epics/EPICS/gateway/gwsite.acf -putlog /home/epics/var/logs/<GATEWAY>/putlog.log`
+
+`sudo kill -9 <PID>`
+
 
 ## Further Information
 
