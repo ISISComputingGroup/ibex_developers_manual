@@ -56,7 +56,7 @@ If there is an issue with the gateway (i.e. Beam status PVs cannot not be found 
 
 `ps -ux -U epics`
 
-Depending on which gateway you are looking for, please look for the following where <GATEWAY> is either gateway_R55, gateway_R80 or gateway_R2.
+Depending on which gateway you are looking for, please look for the following where \<GATEWAY\> is either gateway_R55, gateway_R80 or gateway_R2.
 
 `COMMAND: ../support/gateway/master/bin/linux-x86_64/gateway -pvlist /home/epics/EPICS/gateway/gwsite.pvlist -access /home/epics/EPICS/gateway/gwsite.acf -putlog /home/epics/var/logs/<GATEWAY>/putlog.log`
 
