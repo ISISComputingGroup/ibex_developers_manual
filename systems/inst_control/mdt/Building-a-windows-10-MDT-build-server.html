@@ -1,0 +1,268 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Building an MDT build server &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Building a new instrument virtual machine from MDT" href="Building-a-windows-10-instrument-machine-from-MDT.html" />
+    <link rel="prev" title="MDT (Microsoft deployment toolkit)" href="../MDT-%28Microsoft-deployment-toolkit%29.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../../../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../Systems.html">Systems Administration &amp; Hardware</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../External.html">External systems/services</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../Inst-Control.html">Instrument control computers</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Archive-Watcher.html">Archive Watcher</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Automated-log-rotation.html">Automated log rotation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Change-Windows-Theme.html">Change Windows Theme</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Computer-Troubleshooting.html">Computer Troubleshooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Data-Generation-and-Storage-on-Instrument-PCs-%28NDX%27s%29.html">Data Storage &amp; Production</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Increase-VM-memory.html">Increase VM memory</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../MDT-%28Microsoft-deployment-toolkit%29.html">MDT (Microsoft deployment toolkit)</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Building an MDT build server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Building-a-windows-10-instrument-machine-from-MDT.html">Building a new instrument virtual machine from MDT</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../PS-Remote.html">Powershell Remote</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Rebuild-Performance-Counters.html">Rebuild Performance Counters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Script-to-connect-to-all-instruments.html">Script to connect to all instruments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../TreeSize-Pro.html">TreeSize</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../VM-VHD-replication.html">VM VHD Replication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cron-jobs-and-windows-scheduled-tasks.html">Cron Jobs &amp; Scheduled Tasks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../MinimumSpecs.html">Minimum machine specifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Nagios.html">Nagios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Shadow.html">Shadow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Sparrowhawk.html">Sparrowhawk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Test-Machines.html">Test Machines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Webserver.html">Webserver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../control-svcs.html"><code class="docutils literal notranslate"><span class="pre">control-svcs</span></code></a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../Systems.html">Systems Administration &amp; Hardware</a></li>
+          <li class="breadcrumb-item"><a href="../../Inst-Control.html">Instrument control computers</a></li>
+          <li class="breadcrumb-item"><a href="../MDT-%28Microsoft-deployment-toolkit%29.html">MDT (Microsoft deployment toolkit)</a></li>
+      <li class="breadcrumb-item active">Building an MDT build server</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/systems/inst_control/mdt/Building-a-windows-10-MDT-build-server.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="building-an-mdt-build-server">
+<h1>Building an MDT build server<a class="headerlink" href="#building-an-mdt-build-server" title="Link to this heading"></a></h1>
+<p>This wiki page documents the process for setting up a new MDT (Microsoft deployment toolkit) build server to create new windows 10 clones.</p>
+<p>The central source of truth for MDT configuration files is the MDT deployment share location, which can be found on the usual passwords page.</p>
+<section id="mental-model">
+<h2>Mental model<a class="headerlink" href="#mental-model" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">NDXINST</span></code> - this is the windows 10 virtual machine to be built. This is a usual NDX in the sense that it runs IBEX.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NDHINST</span></code> - this is the physical host on which the NDX virtual machine executes</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NDXMDTSERVPROD</span></code> - This is an MDT server which contains instructions which the NDX can execute to install standard operating systems and/or software. This server can be either real or virtual as convenient. It never hosts a VM itself - it only contains the configuration files and setup for MDT. A new machine will need to be called something different (e.g. <code class="docutils literal notranslate"><span class="pre">NDXMDTSERVDEV</span></code>)</p></li>
+</ul>
+<p>This wiki page describes the process for setting up a new <code class="docutils literal notranslate"><span class="pre">NDXMDTSERVPROD</span></code> machine (NOT an <code class="docutils literal notranslate"><span class="pre">NDHINST</span></code> or <code class="docutils literal notranslate"><span class="pre">NDXINST</span></code> machine).</p>
+</section>
+<section id="how-to-build-a-new-mdt-server">
+<h2>How to build a new MDT server<a class="headerlink" href="#how-to-build-a-new-mdt-server" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>If you are creating <code class="docutils literal notranslate"><span class="pre">NDXMDTSERVPROD</span></code> as a virtual machine, you need to find a physical host for the MDT server.</p>
+<ul>
+<li><p>Ideally use same specifications as for an instrument machine (14GB memory, 256GB free disk space)</p></li>
+<li><p>If memory or disk space are tight, an MDT server can probably get by with ~6GB of memory and ~100GB of free disk space.</p></li>
+<li><p><strong>NB: if you are considering using your local machine as a host while working from home the VPN can cause issues where NDHBUILD cannot be found. We haven’t found an easy fix for this so it’s probably best to use an on-site host machine.</strong></p></li>
+</ul>
+</li>
+<li><p>If you are creating <code class="docutils literal notranslate"><span class="pre">NDXMDTSERVPROD</span></code> as a virtual machine, go into hyper-v manager on the MDT server host and select new machine. Default settings are mostly ok other than:</p>
+<ul>
+<li><p>Set the name to the intended hostname of the <code class="docutils literal notranslate"><span class="pre">NDXMDTSERVPROD</span></code> machine</p></li>
+<li><p>You’ll need to create it on a disk which has enough space (will need ~256GB free)</p></li>
+<li><p>Set startup memory to 14GB (or less - see above)</p></li>
+<li><p>Set it to connect to ISIS network if you get the option, otherwise it will be ok on the default.</p></li>
+<li><p>Set virtual hard disk size to 128GB (or a bit less - see above)</p></li>
+<li><p>Install OS later</p></li>
+</ul>
+</li>
+<li><p>Copy the windows 10 ISO file from <code class="docutils literal notranslate"><span class="pre">\\isis\inst$\mdt$\dev1\MDTDeploymentShare\Boot\LiteTouchPE_x64_Hyper-V.iso</span></code> and copy in onto the host server for <code class="docutils literal notranslate"><span class="pre">NDXMDTSERVPROD</span></code>.</p>
+<ul>
+<li><p>This ISO is not really a windows PE iso, it is instead an ISO which has been built in the past by a different MDT server machine, and this will have configured the menus which are available when booting this ISO. This is <strong>not</strong> substitutable for e.g. a version downloaded from <code class="docutils literal notranslate"><span class="pre">microsoft.com</span></code></p></li>
+</ul>
+</li>
+<li><p>Tell Hyper-V to boot from this ISO by adding it as a disk in the virtual disk drive (right click on the machine in hyper-v and select “settings”)</p></li>
+<li><p>You might choose to increase number of processors available to the VM</p></li>
+<li><p>Boot the machine</p></li>
+<li><p>This will boot into a “Microsoft Deployment Wizard”, which will then launch a set of menus embedded within the ISO.</p></li>
+<li><p>Select “Build thick updated windows 10 image”</p>
+<ul>
+<li><p>Thin image == Just windows 10</p></li>
+<li><p>Thick image == windows 10 + software such as LabVIEW, NPort, notepad++, 7-zip, IBEX (if you have access to the existing MDT build server you may wish to disable the IBEX installation as it won’t be required for this machine)</p></li>
+</ul>
+</li>
+<li><p>Computer name - set it to the hostname (same as name in Hyper-V)</p></li>
+<li><p>Join the default ISIS workgroup (the name of this workgroup can be found on the passwords page)</p></li>
+<li><p>Don’t restore settings or data</p></li>
+<li><p>When asked for an administrator password generate a secure random password following STFC password guidance, and then add this to the usual passwords page alongside hostname.</p></li>
+<li><p>Don’t capture any image</p></li>
+<li><p>Set it off, it will now take ~1 hour and will install everything unattended</p></li>
+<li><p>After it has finished installing, it is wise to take a hyper-v snapshot so that you can roll back to this point if needed</p></li>
+<li><p>Create a new account to use and remove unneeded accounts (e.g. the default ones created for instrument machines). You can use <code class="docutils literal notranslate"><span class="pre">lusrmgr.msc</span></code> to access these settings quickly, or click through from the control panel.</p>
+<ul>
+<li><p>Add the account as <code class="docutils literal notranslate"><span class="pre">mdtbuilder</span></code>, set a password conforming to STFC password policy and add it to the usual passwords page</p></li>
+<li><p>Add the ability to remote desktop as this account by adding it to group <code class="docutils literal notranslate"><span class="pre">Remote</span> <span class="pre">Desktop</span> <span class="pre">Users</span></code></p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">mdtbuilder</span></code> to <code class="docutils literal notranslate"><span class="pre">Administrators</span></code> group (this is important for later)</p></li>
+</ul>
+</li>
+<li><p>Now log out of the admin account and log back in as <code class="docutils literal notranslate"><span class="pre">mdtbuilder</span></code></p></li>
+<li><p>Copy the following files from <code class="docutils literal notranslate"><span class="pre">\\isis.cclrc.ac.uk\inst$\kits$\CompGroup\ICP\MDT</span></code> into <code class="docutils literal notranslate"><span class="pre">NDXMDTSERVPROD</span></code>(if it asks for credentials use your fed id, <strong>do not save these to the machine</strong>):</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">adksetup.exe</span></code> - a utility for measuring performance of machines (“assessment and deployment toolkit”)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MicrosoftDeploymentToolkit_x64.exe</span></code> - this is MDT itself</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">adkwinpsetup.exe</span></code> - this may not be necessary?</p></li>
+</ul>
+</li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">adksetup.exe</span></code></p></li>
+<li><p>When asked which features to install remove “windows performance toolkit”, “user experience virtualisation”, “Microsoft application virtualisation”, “Media experience analyzer”</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">adkwinpsetup.exe</span></code>, accept defaults</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">MicrosoftDeploymentToolkit_x64.exe</span></code></p></li>
+<li><p>Open an <strong>administrator</strong> command prompt and type <code class="docutils literal notranslate"><span class="pre">net</span> <span class="pre">use</span> <span class="pre">&lt;deployment</span> <span class="pre">share</span> <span class="pre">location&gt;</span> <span class="pre">/USER:&lt;account</span> <span class="pre">on</span> <span class="pre">passwords</span> <span class="pre">page</span></code></p></li>
+<li><p>Go to start -&gt; MDT -&gt; Deployment workbench and <strong>run it as admin</strong></p></li>
+<li><p>Right click “deployment shares” -&gt; “open” -&gt; MDT deployment share location (found on passwords page) -&gt; next -&gt; finish</p>
+<ul>
+<li><p>If MDT complains that the directory does not exist, check you did the <code class="docutils literal notranslate"><span class="pre">net</span> <span class="pre">use</span></code> above correctly.</p></li>
+</ul>
+</li>
+<li><p>Make changes to MDT process as required</p></li>
+<li><p>Right click “MDT Deployment Share” -&gt; Properties</p></li>
+<li><p>Set “Network (UNC) path” to the MDT deployment share location (found on passwords page). Note that this <strong>cannot</strong> be a DFS filesystem, it must point to a real server. DFS shares are not supported by MDT.</p></li>
+<li><p>If this is a new share, under “Rules” tab you will need to set the following (these may already be set if using an existing share):</p>
+<ul>
+<li><p>You will need to set paths: <code class="docutils literal notranslate"><span class="pre">SLShare</span></code> to <code class="docutils literal notranslate"><span class="pre">&lt;logging_location&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">SLShareDynamicLogging</span></code> to <code class="docutils literal notranslate"><span class="pre">&lt;logging_location&gt;\dynlogs</span></code> and <code class="docutils literal notranslate"><span class="pre">BackupShare</span></code> to <code class="docutils literal notranslate"><span class="pre">&lt;logging_location&gt;</span></code>. These are directories where logs will be written during the MDT build process, so that you can debug any failures. <code class="docutils literal notranslate"><span class="pre">&lt;logging_location&gt;</span></code> can be found on the passwords page.</p></li>
+<li><p>Ensure user details in this file match the MDT account detailed on the passwords page</p></li>
+</ul>
+</li>
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">bootstrap.ini</span></code></p>
+<ul>
+<li><p>Set <code class="docutils literal notranslate"><span class="pre">DeployRoot</span></code> to the MDT deployment share location (found on passwords page)</p></li>
+<li><p>Ensure user details in this file match the MDT account detailed on the passwords page</p></li>
+</ul>
+</li>
+<li><p>Right click “MDT Deployment Share” -&gt; update deployment share</p></li>
+</ul>
+<p>Congratulations! You should now have a working MDT build server. See <a class="reference internal" href="../MDT-%28Microsoft-deployment-toolkit%29.html"><span class="doc std std-doc">here</span></a> for details about how to <em>use</em> MDT.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../MDT-%28Microsoft-deployment-toolkit%29.html" class="btn btn-neutral float-left" title="MDT (Microsoft deployment toolkit)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Building-a-windows-10-instrument-machine-from-MDT.html" class="btn btn-neutral float-right" title="Building a new instrument virtual machine from MDT" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Dec 05, 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
