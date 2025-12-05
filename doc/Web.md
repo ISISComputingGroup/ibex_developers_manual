@@ -11,5 +11,5 @@ webdashboard/MCR-News-in-Teams
 ```
 
 ```{seealso}
-- [WebServer](systems/Webserver), for the physical computer on which the web dashboard is hosted.
+- [WebServer](systems/Webserver) for the physical computer where the [PVWS](webdashboard/PVWS) instance, which the [Web Dashboard](webdashboard/Web-Dashboard) relies on, is hosted.
 ```

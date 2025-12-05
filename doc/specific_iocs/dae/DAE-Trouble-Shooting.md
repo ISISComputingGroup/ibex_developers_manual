@@ -26,8 +26,6 @@ Either change the [tcb file](#dae_configuration) you are using or do the followi
 
 ### DAE switches from processing to Unknown and never goes into SetUp / Run can not be ended
 
-See [here](#webdashboard_troubleshooting_instrument_page_not_working)
-
 *DAE2*
 
 This issue has been observed on LARMOR and TOSCA, accompanied by the following error messages continuously being logged to `C:\data\log\icp-<date>.log`:

@@ -4,7 +4,6 @@
 
 NDAEXTWEB3 is a central Windows 2019 server, which is hosted on the FIT Hyper-V cluster, that runs a number of the web services associated with IBEX. The login credentials for this are in sharepoint. The server holds:
 
-* The [old IBEX web dashboard (JSON_Bourne)](/webdashboard/Web-Dashboard)
 * The [Automation application](/processes/git_and_github/Automation-Application)
 * [MCR news](https://www.isis.stfc.ac.uk/Pages/MCR-News.aspx)
 * The central proxy created [here](https://github.com/ISISComputingGroup/IBEX/issues/5112)
