@@ -96,18 +96,18 @@ To fix this and other errors see [experimental runs troubleshooting](Experimenta
 
 ### No frames/beam current registered by the DAE
 
-Try switching the timing source to "Internal test clock" (found in experiment setup tab of DAE) and starting a run. If frames are received in this state, it means that the DAE isn't receiving timing pulses from the central source. If that's the case, it needs attention from the electronics group (e.g. Simon Moorby).  Note, this may occur on more than one beam line so keep an ear open for any other reports.
+Try switching the timing source to "Internal test clock" (found in experiment setup tab of DAE) and starting a run. If frames are received in this state, it means that the DAE isn't receiving timing pulses from the central source. If that's the case, it needs attention from the electronics group (`ISIS Detector Systems Group` in Zoom).  Note, this may occur on more than one beam line so keep an ear open for any other reports - if it does it is likely to be a problem with the PPP signal centrally.
 
 Don't forget to switch the timing source back when you're done!
 
 Other things to to check in this state are:
 
-- [ ] Visit the beamline - (possibly with electronics is suspecting a hardware problem).
+- Visit the beamline - (possibly with electronics if suspecting a hardware problem).
    Software usually doesn't just stop normally when other things are working  - right? :smile: 
-- [ ] Most importantly, ask the scientists if anything happened around the time of the problem, in a recent case they mentioned someone had moved a cable on an ADC (although this was not the problem!).
-- [ ] Look at the lights on the ADC or detector input module cards on the DAE. If no lights flickering, there is no data coming in and this is a good indicator that the HT might be off (a few lights might mean shutter closed or beam off).
-- [ ] data/transfer lights on a DAEII, flickering & transfer lights inactive not a good sign.  Could be the link to the PC if transfer lights are not showing activity.
-- [ ] If frame/raw counts are not showing up, a good diagnostic is to put the DAE into "Internal Test Clock".  If this works and frames appear, it is likely that there may be a problem with a Time of Flight signal (this often affects more than one beamline.
+- Most importantly, ask the scientists if anything happened around the time of the problem, in a recent case they mentioned someone had moved a cable on an ADC (although this was not the problem!).
+- Look at the lights on the ADC or detector input module cards on the DAE. If no lights flickering, there is no data coming in and this is a good indicator that the HT might be off (a few lights might mean shutter closed or beam off).
+- data/transfer lights on a DAEII, flickering & transfer lights inactive not a good sign.  Could be the link to the PC if transfer lights are not showing activity.
+- If frame/raw counts are not showing up, a good diagnostic is to put the DAE into "Internal Test Clock".  If this works and frames appear, it is likely that there may be a problem with a Time of Flight signal (this often affects more than one beamline.
 
 ### My total counts are low
 Make sure that the timing is appropriate (e.g. a DAE Timing Source of `ISIS (first TS1)` will only count the first pulse not all 4). If it is left on "internal test clock" you will receive no uamps at all.
