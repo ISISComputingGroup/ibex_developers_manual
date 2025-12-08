@@ -19,15 +19,11 @@ See  [Install Visual Studio](/iocs/compiling/Install-Visual-Studio)
 {#first_time_install_java}
 ## Install Java JDK
 
-Install **OpenJDK 21 hotspot** from https://adoptium.net/?variant=openjdk21&jvmVariant=hotspot (the MSI installer is fine, tick all the boxes when it asks you which components to install)
-
-The installation location should be `C:\Instrument\Apps\JDK\<version>`. 
+Install the **OpenJDK 21 hotspot** binary zip from https://adoptium.net and extract to `\instrument\apps\JDK\21.x.x`
 
 ```{important}
 **Do not install an Oracle JDK**. It has an unsuitable license.
 ```
-
-You may wish to install some optional java components [as detailed here](#developer_upgrade_java).
 
 {#first_time_install_maven}
 ## Install Maven 
