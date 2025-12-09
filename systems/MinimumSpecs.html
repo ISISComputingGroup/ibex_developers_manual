@@ -1,0 +1,178 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minimum machine specifications &mdash; IBEX Developer&#39;s Manual</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=e6a88b47" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Nagios" href="Nagios.html" />
+    <link rel="prev" title="Cron Jobs &amp; Scheduled Tasks" href="inst_control/cron-jobs-and-windows-scheduled-tasks.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            IBEX Developer's Manual
+              <img src="../_static/logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Editing-the-Wiki.html">Editing this Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Glossary.html">Glossary</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Interfaces &amp; Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Client.html">IBEX GUI (Eclipse)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Script-Generator.html">Script Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scripting.html">Scripting (Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Web.html">Web Dashboard &amp; Chat</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">IBEX Server &amp; Systems</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../System-components.html">Backend System Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IOCs.html">EPICS IOCs &amp; Support Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Specific-IOCs.html">Specific Devices &amp; IOCs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../Systems.html">Systems Administration &amp; Hardware</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="External.html">External systems/services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Inst-Control.html">Instrument control computers</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Minimum machine specifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Nagios.html">Nagios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Shadow.html">Shadow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Sparrowhawk.html">Sparrowhawk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Test-Machines.html">Test Machines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Webserver.html">Webserver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="control-svcs.html"><code class="docutils literal notranslate"><span class="pre">control-svcs</span></code></a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Processes &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Providing-Support.html">Providing Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Deployment.html">Releases &amp; Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Processes.html">Processes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IBEX Developer's Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../Systems.html">Systems Administration &amp; Hardware</a></li>
+      <li class="breadcrumb-item active">Minimum machine specifications</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ISISComputingGroup/ibex_developers_manual/blob/master/doc/systems/MinimumSpecs.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="minimum-machine-specifications">
+<h1>Minimum machine specifications<a class="headerlink" href="#minimum-machine-specifications" title="Link to this heading"></a></h1>
+<p>The following are the currently agreed minimum specifications for hosts that the group maintains or provides advice on the procurement of. To ease support, the minimum number of groups of hardware possible were chosen.</p>
+<section id="equipment-specific-pcs-and-setup-machines">
+<h2>Equipment specific PCs and setup machines<a class="headerlink" href="#equipment-specific-pcs-and-setup-machines" title="Link to this heading"></a></h2>
+<p><em>e.g. NDXWish_Setup, NDHHIFI-CRYOMAG</em>
+These have been grouped together as their requirements are broadly similar and having the same spec makes support easier.</p>
+<ul class="simple">
+<li><p>small form factor</p></li>
+<li><p>64 GB (2 x32GB)</p></li>
+<li><p>dual 1 TB SSD TLC in a RAID configuration</p></li>
+</ul>
+</section>
+<section id="ndc-hosts">
+<h2>NDC hosts<a class="headerlink" href="#ndc-hosts" title="Link to this heading"></a></h2>
+<p>These are intended to be able to host a client and run remote desktop/VNC connections. A lower spec has been chosen than other hosts (rather than simplifying support by having one spec) in order to keep the price down for science groups and encourage them to purchase these over their own choice of boxes.</p>
+<ul class="simple">
+<li><p>small form factor</p></li>
+<li><p>32GB (1x32GB) Memory</p></li>
+<li><p>single 512 GB SSD</p></li>
+</ul>
+</section>
+<section id="ndh-hosts">
+<h2>NDH hosts<a class="headerlink" href="#ndh-hosts" title="Link to this heading"></a></h2>
+<p>Still to be agreed, the above spec for equipment support PCs likely represents a floor for this specification, but a higher spec may be required.</p>
+</section>
+<section id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Link to this heading"></a></h2>
+<p>These were last agreed at a <a class="reference external" href="https://github.com/ISISComputingGroup/ControlsWork/issues/805#issuecomment-3201337769">series of meetings </a> in the summer of 2025. These specifications were based on a 6-year lifetime from the
+date of the meeting (i.e. machines bought with the above specifications are expected to become obsolete in 2031).</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="inst_control/cron-jobs-and-windows-scheduled-tasks.html" class="btn btn-neutral float-left" title="Cron Jobs &amp; Scheduled Tasks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Nagios.html" class="btn btn-neutral float-right" title="Nagios" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Dec 09, 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
