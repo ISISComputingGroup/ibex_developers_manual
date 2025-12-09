@@ -11,9 +11,9 @@ A manual for the device is available at:
 ```
 
 ## Hardware / Networking
-
+:::{important}
 We do **not** talk to this device from IBEX in any way.
-
+:::
 The hardware is an ethernet device, which should be set up in DHCP mode to automatically acquire an IP address.
 
 Configuration screens for the hardware are available by visiting its IP address in a web browser. Use:
