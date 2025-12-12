@@ -1,5 +1,7 @@
 # Exercise 1 - Parameters, Drivers, Components
 
+## Introduction to Reflectomery and Specific Terminology
+
 ![image](refl_beamline_setup.PNG)
 
 Fundamentally, the Reflectometry Config defines a geometry model of the beamline, which we use to calculate relative positions for each axis in the model based on the current beam path. We think about this model in 3 layers:
@@ -18,44 +20,43 @@ To Note:
 - Parameters/Drivers have a many-to-one relationship to Components
 - Parameters and Drivers do not _have_ to be a one-to-one match, even though often this is the case (like a height offset parameter on the POLREF bench will equally displace front and back height jacks).
 
+## The `config.py` file
+
 In the following exercise, we will add a single item to the reflectometry configuration, a Supermirror, complete with Parameters and Drivers.
 Before we start making changes, let's review the content of the blank config in front of you:
 
-```
-# Reference documentation for writing reflectometry configurations available at Reflectometry-Configuration
+```Python
+from typing import Dict
 
-from ReflectometryServer import *
+from ReflectometryServer.beamline import Beamline
+from ReflectometryServer.config_helper import (
+    add_mode,
+    get_configured_beamline,
+)
 
 
-def get_beamline(macros):
-    """
-
-    Returns: The beamline model
-
-    """
+def get_beamline(macros: Dict[str, str]) -> Beamline:
     #########################
     # FIXED BEAMLINE VALUES #
     #########################
-    add_constant(BeamlineConstant("OPI", "SURF", "OPIs to show on front panel"))
-
-    DISTANCE = 10.0
-    angle_of_movement = 90
 
     # Modes
-    nr = add_mode("NR")
+    _nr = add_mode("NR")
 
     ##############################
     # BEAMLINE MODEL STARTS HERE #
     ##############################
 
     return get_configured_beamline()
+
 ```
-- `from ReflectometryServer import *`: This is required to use classes and helper methods which are used to  construct the model of the beamline
+
+- `from typing import Dict` relates to the output of the function and the enforcement of typing via PyRight.
+- The various imports from `ReflectometryServer` are the items used below. Any classes or helper methods needed to construct the model of the beamline is within this namespace.
 - `def get_beamline`: While the python config file gives you tremendous freedom to include arbitrary python code, this is the one method we expect to be here as the reflectometry server calls it on config load. It should return an object of type `Beamline`
-- `add_constant(BeamlineConstant("OPI", "SURF", "OPIs to show on front panel"))`: This adds a PV intended to expose constant values that are used across the instrument so that these do not have to be defined in multiple places. In this case, we are creating the PV `REFL_01:CONST:OPI` which holds the value "SURF". This PV then is used to populate the Front Panel OPI with hardcoded items for the named beamline.
-- `DISTANCE`: This is a constant we will be using just inside the config file to space every item in the beamline model an equal distance apart for simplicity as it helps with understanding & verifying position tracking behaviour. This is just for the training course, you will not find this on a real beamline.
-- `ANGLE_OF_MOVEMENT`: Another constant we will be using throughout the config. This lets us define the angle of movement of our physical components relative to the natural beam which defines our coordinate system, i.e. the angle between the dotted blue line and the dotted grey lines above. Usually this is 90 + 1.5 for TS1, and 90 + 2.3 for TS2 instruments. However, in this training course for now we will assume that the natural beam is level to the floor for simplicity.
-- `nr = add_mode("NR")`: Modes are "presets" used to define which devices are in use & should automatically track depending on the type of experiment being run.
+- The `fixed beamline values` will contain variables and things which do not change. For example, the distances between components.
+- The `beamline model` describes the actual beamline, in order, from the beam entry point to the detectors. 
+- `_nr = add_mode("NR")`: Modes are "presets" used to define which devices are in use & should automatically track depending on the type of experiment being run. At least one mode should be specified. This version has the underscore `_` at the front because at present the variable is not used, and PyRight requires the variable to be used, but it accepts one with an underscore at the front.
 
 ## Exercise 1
 
