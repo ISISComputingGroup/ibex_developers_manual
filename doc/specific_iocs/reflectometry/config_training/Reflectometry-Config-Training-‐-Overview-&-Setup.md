@@ -22,7 +22,7 @@ This training unit presents a series of exercises which take you through the cre
 8. Make sure the Reflectomery perspective is available to you, if it isn't you can make it visible via the `Preferences` menu.
 9. At this point if you open the Relectometry perspective the `Server Status` should indicate an `ERROR` as it can't find the configuration.
 10. In the configurations folder for the computer you are using create a folder called `refl`, and in `refl` create `config.py`.
-11. If you restart the `REFL_01` IOC at this point, the server will still be in error, but the error text should have changed to being unable to read the file rather than beinig unable to find it.
+11. If you restart the `REFL_01` IOC at this point, the server will still be in error, but the error text should have changed to being unable to read the file rather than being unable to find it.
 12. Open `config.py` in the editor of your choice, and copy in this code, which is the most reflectometry configuration you have that will load.
 
 ```Python
