@@ -47,7 +47,7 @@ $(IFIOC_GALIL_02) dbLoadRecords("$(AXIS)/db/axis.db","P=$(MYPVPREFIX)MOT:,AXIS=M
 | 04 | Jaws 1, West | Bench Back | |
 | 05 | Jaws 2, North | Bench Slide | Sample Stack Translation |
 | 06 | Jaws 2, South | Supermirror Position | Sample Stack Phi | 
-| 07 | Jaws 2, East | Sumpermirror Angle | Sample Stack Height/Offset |
+| 07 | Jaws 2, East | Supermirror Angle | Sample Stack Height/Offset |
 | 08 | Jaws 2, West | Monitor | Sample Stack Psi |
 
 12. Make sure the Reflectometry perspective is available to you, if it isn't you can make it visible via the `Preferences` menu.
