@@ -82,5 +82,5 @@ def get_beamline(macros: Dict[str, str]) -> Beamline:
     
 ```
 
-17. At this point you should be able to edit `config.py` in the following pages and build up your example system.
+17. At this point you should be able to edit `config.py` in the following pages and build up your example system. The make up of the configuration will be covered there as well.
 
