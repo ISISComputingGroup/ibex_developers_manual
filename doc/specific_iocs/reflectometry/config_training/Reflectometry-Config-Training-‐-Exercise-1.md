@@ -85,7 +85,7 @@ There are different subclasses of Components:
     - `Component` just tracks the beam path in height
     - `TiltingComponent` tracks the beam path in height and angle 
     - `ReflectingComponent` tracks the in height and angle and can also change the path of the beam for components further downstream
-This will be a `ReflectingComponent`, which can be added using the `add_component` helper method. This will need a `name` and a geometry setup, in this case a `PositionAndAngle` setup will be suitable, setting `x` to `0`, `y` to `z_mirror`, and `angle` to `angle_of_movement`
+This will be a `ReflectingComponent`, as it can impact on the direction of the beam. It can be added using the `add_component` helper method. This will need a `name` and a geometry setup, in this case a `PositionAndAngle` setup will be suitable, setting `x` to `0`, `y` to `SM_Z`, and `angle` to `NATURAL_ANGLE`
 ### 3. Add parameters for the supermirror
 Our supermirror has two things which can be varied, its height, and its angle. Each of these will need a parameter to interact with them.
 The generic code for adding a parameter is as follows:
