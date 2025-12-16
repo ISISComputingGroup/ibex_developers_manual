@@ -1,6 +1,6 @@
 # Exercise 1 - Parameters, Drivers, Components
 
-## Introduction to Reflectomery and Specific Terminology
+## Introduction to Reflectometry and Specific Terminology
 
 ![image](refl_beamline_setup.PNG)
 
@@ -62,7 +62,7 @@ def get_beamline(macros: Dict[str, str]) -> Beamline:
 The first thing to add to our configuration is the `NATURAL_ANGLE` as per [here](../Reflectometry-Configuration). This defines the angle of movement of the physical components relative to the natural beam which defines our coordinate system, i.e. the angle between the dotted blue line and the dotted grey lines above. Usually this is 90 + 1.5 for TS1, and 90 + 2.3 for TS2 instruments. However, in this training course for now we will assume that the natural beam is level to the floor for simplicity.
 The constants which need to be named according to the interactions above do need to be set somewhere. This could be as a set of constants in another file, or simply a block before the definition for `get_beamline`, which is what will be used here. For the training, please set `NATURAL_ANGLE` to `90`.
 
-This is a fixed beamline paramater, so can be set as a constant value in the `FIXED BEAMLINE VALUES` section.
+This is a fixed beamline parameter, so can be set as a constant value in the `FIXED BEAMLINE VALUES` section.
 ```python
 def get_beamline(macros: Dict[str, str]) -> Beamline:
     #########################
