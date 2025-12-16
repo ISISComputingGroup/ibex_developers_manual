@@ -79,7 +79,7 @@ def get_beamline(macros: Dict[str, str]) -> Beamline:
 The first item on our imagined reflectometer is going to be a supermirror. This supermirror will have a few things that need to be added.
 
 ### 1. Add a constant for the distance
-The supermirror will have a distance from the beam entry point, and this will be constant. Add it in a similar way to the previous constant, using `SM_Z` as a name, and a value of `10.0`.
+The supermirror will have a distance from the beam entry point, and this will be constant. Add it in a similar way to the previous constant, using `SM_Z` as a name, and a value of `20.0`.
 
 ### 2. Add the supermirror component
 The supermirror is considered a component within the beam line model, see above for the definition of this. 
@@ -149,7 +149,7 @@ from ReflectometryServer.pv_wrapper import MotorPVWrapper
 
 # Beamline Constants
 NATURAL_ANGLE = 90
-SM_Z = 10.0
+SM_Z = 20.0
 
 
 def get_beamline(macros: Dict[str, str]) -> Beamline:
