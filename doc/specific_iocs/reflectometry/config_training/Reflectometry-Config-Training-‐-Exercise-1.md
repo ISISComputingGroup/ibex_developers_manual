@@ -76,16 +76,23 @@ def get_beamline(macros: Dict[str, str]) -> Beamline:
     _nr = add_mode("NR")
 ```
 
-The first item on our imagined reflectometer is going to be a supermirror. This supermirror will have a few things that need to be add.
+The first item on our imagined reflectometer is going to be a supermirror. This supermirror will have a few things that need to be added.
+
 ### 1. Add a constant for the distance
 The supermirror will have a distance from the beam entry point, and this will be constant. Add it in a similar way to the previous constant, using `SM_Z` as a name, and a value of `10.0`.
+
 ### 2. Add the supermirror component
 The supermirror is considered a component within the beam line model, see above for the definition of this. 
+The generic code for adding a component is as follows:
+```python
+component = add_component(Component("comp_name", PositionAndAngle(Y, Z, Angle)))
+```
 There are different subclasses of Components: 
     - `Component` just tracks the beam path in height
     - `TiltingComponent` tracks the beam path in height and angle 
     - `ReflectingComponent` tracks the in height and angle and can also change the path of the beam for components further downstream
-This will be a `ReflectingComponent`, as it can impact on the direction of the beam. It can be added using the `add_component` helper method. This will need a `name` and a geometry setup, in this case a `PositionAndAngle` setup will be suitable, setting `x` to `0`, `y` to `SM_Z`, and `angle` to `NATURAL_ANGLE`
+This will be a `ReflectingComponent`, as it can impact on the direction of the beam. It can be added using the `add_component` helper method shown above. This will need a `name` and a geometry setup, in this case a `PositionAndAngle` setup will be suitable, setting `Y` to `0`, `Z` to `SM_Z`, and `Angle` to `NATURAL_ANGLE`
+
 ### 3. Add parameters for the supermirror
 Our supermirror has two things which can be varied, its height, and its angle. Each of these will need a parameter to interact with them.
 The generic code for adding a parameter is as follows:
@@ -94,6 +101,7 @@ add_parameter(AxisParameter("param_name", component, ChangeAxis.[Axis parameter]
 ```
 `ChangeAxis` is used to link a given `AxisParameter` to a given `IocDriver`. For more information on the different options for `AxisParameter`, see [here](../Reflectometry-Configuration)
 Here, the angle, to be called `sm_angle`, will be of the type `ANGLE` and the height, to be called `sm_offset`, of type `POSITION`
+
 ### 4. Add drivers for the supermirror
 Those items which can be varied here will need a driver as well, although that isn't always the case for every parameter.
 The generic code for adding a driver is as follows:
