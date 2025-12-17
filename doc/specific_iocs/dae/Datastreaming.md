@@ -23,7 +23,7 @@ Overall architecture is still being decided, but this is an initial idea of how 
 {#kafkacluster}
 ## The Kafka Cluster
 
-There is a (non-production!) Kafka cluster at `livedata.isis.cclrc.ac.uk:31092`.
+There is a (non-production!) [Redpanda](https://www.redpanda.com/) Kafka cluster at `livedata.isis.cclrc.ac.uk:31092`.
 A web interface is available [here](https://reduce.isis.cclrc.ac.uk/redpanda-console/overview).
 
 :::{important}

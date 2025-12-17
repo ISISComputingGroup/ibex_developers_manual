@@ -4,4 +4,4 @@ The [filewriter](https://github.com/ess-dmsc/kafka-to-nexus) is responsible for 
 
 There is also a [filewriter written for the SuperMuSR project](https://github.com/STFC-ICD-Research-and-Design/supermusr-data-pipeline/tree/main/nexus-writer) which we may choose to use. This will be decided in [this ticket](https://github.com/ISISComputingGroup/DataStreaming/issues/2) 
 
-We are currently figuring out topology on how to run this, ie one-per-instrument or a central one. For now it is not deployed or running anywhere.
+We are currently figuring out topology on how to run this, ie one-per-instrument or centrally.
