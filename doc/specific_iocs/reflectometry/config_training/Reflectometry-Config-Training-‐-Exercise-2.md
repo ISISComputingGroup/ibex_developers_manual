@@ -58,8 +58,7 @@ Once you have added all these components, you should now be able to set the para
 <details>
 <summary>Should you have trouble the following is what the code could look like</summary>
 
-```python
-from typing import Dict
+```pythofrom typing import Dict
 
 from ReflectometryServer.beamline import Beamline
 from ReflectometryServer.beamline_constant import BeamlineConstant
@@ -108,7 +107,9 @@ def get_beamline(macros: Dict[str, str]) -> Beamline:
     add_constant(BeamlineConstant("S2_Z", S2_Z, "The distance to slits 2"))
 
     # Modes
-    nr = add_mode("NR")
+    _nr = add_mode(
+        "NR"
+    )  # Using underscore to pass pyright as mode has to be created but is not used
 
     ##############################
     # BEAMLINE MODEL STARTS HERE #
@@ -117,15 +118,36 @@ def get_beamline(macros: Dict[str, str]) -> Beamline:
     # Slits 1
     add_slit_parameters(1, include_centres=True)
     s1_comp = add_component(Component("s1", PositionAndAngle(0.0, S1_Z, NATURAL_ANGLE)))
-    add_parameter(AxisParameter("S1OFFSET", s1_comp, ChangeAxis.POSITION, nr))
+    add_parameter(
+        AxisParameter(
+            "S1OFFSET",
+            s1_comp,
+            ChangeAxis.POSITION,
+            description="Vertical Position of Slit 1",
+        )
+    )
     add_driver(IocDriver(s1_comp, ChangeAxis.POSITION, MotorPVWrapper("MOT:MTR0301")))
 
     # Mirror
     mirror_comp = add_component(
         ReflectingComponent("Mirror", PositionAndAngle(0, SM_Z, NATURAL_ANGLE))
     )
-    add_parameter(AxisParameter("SMANGLE", mirror_comp, ChangeAxis.ANGLE, nr))
-    add_parameter(AxisParameter("SMOFFSET", mirror_comp, ChangeAxis.POSITION, nr))
+    add_parameter(
+        AxisParameter(
+            "SMANGLE",
+            mirror_comp,
+            ChangeAxis.ANGLE,
+            description="Angle of the Supermirror",
+        )
+    )
+    add_parameter(
+        AxisParameter(
+            "SMOFFSET",
+            mirror_comp,
+            ChangeAxis.POSITION,
+            description="Vertical Position of the Supermirror",
+        )
+    )
     add_driver(IocDriver(mirror_comp, ChangeAxis.ANGLE, MotorPVWrapper("MOT:MTR0207")))
     add_driver(
         IocDriver(mirror_comp, ChangeAxis.POSITION, MotorPVWrapper("MOT:MTR0206"))
@@ -134,17 +156,52 @@ def get_beamline(macros: Dict[str, str]) -> Beamline:
     # Slits 2
     add_slit_parameters(2, include_centres=True)
     s2_comp = add_component(Component("s2", PositionAndAngle(0.0, S2_Z, NATURAL_ANGLE)))
-    add_parameter(AxisParameter("S2OFFSET", s2_comp, ChangeAxis.POSITION, nr))
+    add_parameter(
+        AxisParameter(
+            "S2OFFSET",
+            s2_comp,
+            ChangeAxis.POSITION,
+            description="Vertical Position of Slit 2",
+        )
+    )
     add_driver(IocDriver(s2_comp, ChangeAxis.POSITION, MotorPVWrapper("MOT:MTR0302")))
 
     # SAMPLE
     sample_comp = add_component(
         TiltingComponent("sample", PositionAndAngle(0, SAMPLE_Z, NATURAL_ANGLE))
     )
-    add_parameter(AxisParameter("SAMPOFFSET", sample_comp, ChangeAxis.POSITION, nr))
-    add_parameter(AxisParameter("SAMPPHI", sample_comp, ChangeAxis.ANGLE, nr))
-    add_parameter(AxisParameter("SAMPPSI", sample_comp, ChangeAxis.PSI, nr))
-    add_parameter(AxisParameter("SAMPTRANS", sample_comp, ChangeAxis.TRANS))
+    add_parameter(
+        AxisParameter(
+            "SAMPOFFSET",
+            sample_comp,
+            ChangeAxis.POSITION,
+            description="Vertical Position of Sample",
+        )
+    )
+    add_parameter(
+        AxisParameter(
+            "SAMPPHI",
+            sample_comp,
+            ChangeAxis.ANGLE,
+            description="Phi Angle of Sample (Pitch)",
+        )
+    )
+    add_parameter(
+        AxisParameter(
+            "SAMPPSI",
+            sample_comp,
+            ChangeAxis.PSI,
+            description="Psi Angle of Sample (Roll)",
+        )
+    )
+    add_parameter(
+        AxisParameter(
+            "SAMPTRANS",
+            sample_comp,
+            ChangeAxis.TRANS,
+            description="Horizontal Position of Sample",
+        )
+    )
     add_driver(
         IocDriver(sample_comp, ChangeAxis.POSITION, MotorPVWrapper("MOT:MTR0307"))
     )
