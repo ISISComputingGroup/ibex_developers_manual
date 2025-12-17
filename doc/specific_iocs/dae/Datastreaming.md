@@ -15,10 +15,16 @@ In general this works by producing both neutron events and histograms, sample en
 
 All data is serialised into [Flatbuffers](https://flatbuffers.dev/) blobs using [these schemas](https://github.com/ess-dmsc/streaming-data-types) - we have a tool called [saluki](https://github.com/ISISComputingGroup/saluki) which can deserialise these and make them human-readable after they've been put into Kafka. 
 
-Overall architecture is still being decided, but this is an initial idea of how it could look:
+Overall architecture is as follows:
 
 ![](ISISDSLayout.drawio.svg)
 
+This comprises of a few different consumers and producers: 
+- [`azawakh`](https://github.com/ISISComputingGroup/azawakh) - This is a soft IOC which provides `areaDetector` views, spectra plots and so on by consuming events from the cluster and displaying them over EPICS CA/PVA.
+- [`borzoi`](https://github.com/ISISComputingGroup/borzoi) - This is also a soft IOC which is more or less a drop-in replacement for the ISISDAE. It provides an interface that several clients (ie. [genie](https://github.com/ISISComputingGroup/genie), [ibex_bluesky_core](https://github.com/ISISComputingGroup/ibex_bluesky_core), [ibex_gui](https://github.com/ISISComputingGroup/ibex_gui)) talk to to start/stop runs and configure streaming electronics. `borzoi` will send UDP packets to the streaming electronics to configure it. 
+- [`BSTOKAFKA`](https://github.com/ISISComputingGroup/BSKAFKA) - This configures the `forwarder` with the blocks that are in an instrument's current configuration, as well as other PVs which will either get written to a file or archived for eg. the log plotter. 
+- `forwarder` - See [Forwarding Sample Environment](datastreaming/Datastreaming---Sample-Environment)
+- `filewriter` - See [File writing](datastreaming/Datastreaming---File-writing)
 
 {#kafkacluster}
 ## The Kafka Cluster
