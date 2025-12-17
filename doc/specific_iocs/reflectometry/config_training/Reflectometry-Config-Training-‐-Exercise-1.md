@@ -170,7 +170,9 @@ def get_beamline(macros: Dict[str, str]) -> Beamline:
     add_constant(BeamlineConstant("SM_Z", SM_Z, "The distance to the supermirror"))
 
     # Modes
-    _nr = add_mode("NR")
+    _nr = add_mode(
+        "NR"
+    )  # Using underscre to pass pyright as mode has to be created but is not used
 
     ##############################
     # BEAMLINE MODEL STARTS HERE #
@@ -180,8 +182,22 @@ def get_beamline(macros: Dict[str, str]) -> Beamline:
     mirror_comp = add_component(
         ReflectingComponent("Mirror", PositionAndAngle(0, SM_Z, NATURAL_ANGLE))
     )
-    add_parameter(AxisParameter("SMANGLE", mirror_comp, ChangeAxis.ANGLE, description="Angle of the Supermirror"))
-    add_parameter(AxisParameter("SMOFFSET", mirror_comp, ChangeAxis.POSITION, description="Vertical Position of the Supermirror"))
+    add_parameter(
+        AxisParameter(
+            "SMANGLE",
+            mirror_comp,
+            ChangeAxis.ANGLE,
+            description="Angle of the Supermirror",
+        )
+    )
+    add_parameter(
+        AxisParameter(
+            "SMOFFSET",
+            mirror_comp,
+            ChangeAxis.POSITION,
+            description="Vertical Position of the Supermirror",
+        )
+    )
     add_driver(IocDriver(mirror_comp, ChangeAxis.ANGLE, MotorPVWrapper("MOT:MTR0207")))
     add_driver(
         IocDriver(mirror_comp, ChangeAxis.POSITION, MotorPVWrapper("MOT:MTR0206"))
