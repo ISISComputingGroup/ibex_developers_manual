@@ -52,7 +52,7 @@ Once you have added all these components, you should now be able to set the para
     - `SAMPOFFSET` similar to `S2OFFSET` i.e. should be at -20
     - `SAMPPHI` as still sitting perpendicular to the natural beam, but the reflected beam has been bounced up 45 degrees, i.e. this should now read back -45
 5. At this stage, if you look at the table of motors, only the supermirror angle will have moved, everything else is reported according to the relationship to the beam.
-6. If you now click move on any of the downstream parameters, you should see it re-apply its last SP of 0, i.e. move to re-centre itself on the new, reflected beam. When the move has finished the `Collimation` tab in the reflectometry perspective should have 0s for everthying except `SMANGLE`. The appropriate motor axes on the table of motors should now read back the offset required to move these parameters back into the beam i.e. 10, 20 and 45 respectively, alongside the value of 22.5 for the supermirror angle.
+6. If you now click move on any of the downstream parameters, you should see it re-apply its last SP of 0, i.e. move to re-centre itself on the new, reflected beam. When the move has finished the `Collimation` tab in the reflectometry perspective should have 0s for everything except `SMANGLE`. The appropriate motor axes on the table of motors should now read back the offset required to move these parameters back into the beam i.e. 10, 20 and 45 respectively, alongside the value of 22.5 for the supermirror angle.
 
 ## Solution
 <details>
