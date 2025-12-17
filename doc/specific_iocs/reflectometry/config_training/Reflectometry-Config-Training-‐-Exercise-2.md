@@ -58,7 +58,8 @@ Once you have added all these components, you should now be able to set the para
 <details>
 <summary>Should you have trouble the following is what the code could look like</summary>
 
-```pythofrom typing import Dict
+```python
+from typing import Dict
 
 from ReflectometryServer.beamline import Beamline
 from ReflectometryServer.beamline_constant import BeamlineConstant
