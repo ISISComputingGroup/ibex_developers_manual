@@ -9,7 +9,7 @@
 datastreaming/*
 ```
 
-The data streaming system is being built as a requirement for HRPD-X and possibly SANDALS-II, separate (and complementary) to the `MNeuData` project. HRPD-X, SANDALS-II and other future instruments will not have a traditional DAE2/DAE3 as they are now obselete. It is architecturally similar to the system that the ESS uses to take data (neutron events, sample environment, and anything else that we can throw into a streaming platform) and write it to file. Previously ISIS aided development to the ESS' streaming pipeline as part of an in-kind project. The system will replace the ICP at ISIS.
+The data streaming system is being built as a requirement for HRPD-X and possibly SANDALS-II, separate (and complementary) to the `MNeuData` project. HRPD-X, SANDALS-II and other future instruments will not have a traditional DAE2/DAE3 as they are now obsolete. It is architecturally similar to the system that the ESS uses to take data (neutron events, sample environment, and anything else that we can throw into a streaming platform) and write it to file. Previously ISIS aided development to the ESS' streaming pipeline as part of an in-kind project. The system will replace the ICP at ISIS.
 
 In general this works by producing both neutron events and histograms, sample environment data, and other diagnostic data into a [Kafka](https://kafka.apache.org/) cluster and having clients (consumers in Kafka lingo!) that either view data live and act on it or write the data to a nexus file. Additional information can be found [here](http://accelconf.web.cern.ch/AccelConf/icalepcs2017/papers/tupha029.pdf) and [here](https://iopscience.iop.org/article/10.1088/1742-6596/1021/1/012013). 
 
