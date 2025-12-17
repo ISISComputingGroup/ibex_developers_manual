@@ -97,11 +97,11 @@ This will be a `ReflectingComponent`, as it can impact on the direction of the b
 Our supermirror has two things which can be varied, its height, and its angle. Each of these will need a parameter to interact with them.
 The generic code for adding a parameter is as follows:
 ```python
-add_parameter(AxisParameter("param_name", component, ChangeAxis.[Axis parameter], modes))
+add_parameter(AxisParameter("param_name", component, ChangeAxis.[Axis parameter], "description of parameter"))
 ```
 `ChangeAxis` is used to link a given `AxisParameter` to a given `IocDriver`. For more information on the different options for `AxisParameter`, see [here](../Reflectometry-Configuration)
 Here, the angle, to be called `SMANGLE`, will be of the type `ANGLE` and the height, to be called `SMOFFSET`, of type `POSITION`
-Note that you need to name parameters according to a certain standard in order to be able to view them readily in the reflectometry OPIs.
+Note that you need to name parameters according to a certain standard in order to be able to view them readily in the reflectometry OPIs. That naming makes the use of a description, which will appear as a tooltip in the GUI extremely useful.
 
 ### 4. Add drivers for the supermirror
 Those items which can be varied here will need a driver as well, although that isn't always the case for every parameter.
@@ -115,7 +115,7 @@ add_driver(IocDriver(component, ChangeAxis.[Axis parameter], MotorPVWrapper("MOT
 
 Once you are done making changes, you can load the updated config by restarting the REFL_01 IOC. 
 On the `Front Panel` tab, the `SM Angle` value should now be visible. Don't worry about the rest of the disconnected items, they will be added in as you progress through the exercises.
-You should be able to see 2 parameters in the `Collimation Plane Parameters` tab, that, when set, will move the appropriate Galil axes.
+You should be able to see 2 parameters in the `Collimation Plane Parameters` tab, that, when set, will move the appropriate Galil axes. If you hover the parameter names the description should appear in the tool tip.
 You should also be able to see 2 constants in the `Constants` tab.
 
 ## Troubleshooting:
@@ -170,7 +170,7 @@ def get_beamline(macros: Dict[str, str]) -> Beamline:
     add_constant(BeamlineConstant("SM_Z", SM_Z, "The distance to the supermirror"))
 
     # Modes
-    nr = add_mode("NR")
+    _nr = add_mode("NR")
 
     ##############################
     # BEAMLINE MODEL STARTS HERE #
@@ -180,13 +180,14 @@ def get_beamline(macros: Dict[str, str]) -> Beamline:
     mirror_comp = add_component(
         ReflectingComponent("Mirror", PositionAndAngle(0, SM_Z, NATURAL_ANGLE))
     )
-    add_parameter(AxisParameter("SMANGLE", mirror_comp, ChangeAxis.ANGLE, nr))
-    add_parameter(AxisParameter("SMOFFSET", mirror_comp, ChangeAxis.POSITION, nr))
+    add_parameter(AxisParameter("SMANGLE", mirror_comp, ChangeAxis.ANGLE, description="Angle of the Supermirror"))
+    add_parameter(AxisParameter("SMOFFSET", mirror_comp, ChangeAxis.POSITION, description="Vertical Position of the Supermirror"))
     add_driver(IocDriver(mirror_comp, ChangeAxis.ANGLE, MotorPVWrapper("MOT:MTR0207")))
     add_driver(
         IocDriver(mirror_comp, ChangeAxis.POSITION, MotorPVWrapper("MOT:MTR0206"))
     )
 
     return get_configured_beamline()
+
 ```
 </details>
