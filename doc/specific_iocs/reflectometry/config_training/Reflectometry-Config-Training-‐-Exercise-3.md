@@ -15,7 +15,7 @@ Add another mode called `PNR` in the same way that `NR` is added.
 Create a list `all_modes` which includes both `nr` and `pnr`.
 
 ### 2. Add modes to parameters
-Give each parameter a `modes` argument follwoing on after the `AxisParameter` argument. Note that `modes` has to be a list, so if you are only applying a single mode don't forget to add square brackets.
+Give each parameter a `modes` argument following on after the `AxisParameter` argument. Note that `modes` has to be a list, so if you are only applying a single mode don't forget to add square brackets.
 The slit offsets should track the beam in `all_modes`.
 Both of the supermirror parameters should use `pnr` mode.
 The sample axes should never track the beam automatically. This is because the scientists don't want this component to move implicitly on beam changes, only when they explicitly tell it to. 
