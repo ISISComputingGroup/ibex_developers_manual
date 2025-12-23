@@ -38,7 +38,7 @@ Copy `jenkins-agent.exe` and `jenkins-agent.xml` into same directory on the targ
 Edit `jenkins-agent.xml` and change  https://epics-jenkins.isis.rl.ac.uk/computer/COMPUTER/jenkins-agent.jnlp and the SECRET field to the same as they are from the Jenkins' Node page, add `-workDir` argument of `c:\jenkins`
 COMPUTER should be capitalised in same way as written on Jenkins.
 
-Open an admin cmd window and run `jenkins-agent.exe install` and then `servies.msc`
+Open an admin cmd window and run `jenkins-agent.exe install` and then `services.msc`
 
 Find the jenkins service in the Service Manager window on the machine, and change it to run as `isis\ibexbuilder` rather than local service account, you'll need to enter `ISISBuilder` password.
 
