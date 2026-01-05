@@ -471,6 +471,7 @@ luarocks
 lvdcom
 lvDCOM
 lvDCOMConfigure
+Lynx
 Löhnert
 mA
 machinename
@@ -508,6 +509,7 @@ middleware
 Mihai
 minidump
 mins
+Mirion
 misconfigured
 mitigations
 mK

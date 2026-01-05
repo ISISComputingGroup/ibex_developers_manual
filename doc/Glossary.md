@@ -135,7 +135,7 @@ A service that controls access between two or more networks.
 
 ## Genie Python
 
-An implementation of the [OpenGenie](http://www.opengenie.org) scripting language in Python, or at least its commands specific to instrument control.  Documentation [here](http://shadow.nd.rl.ac.uk/genie_python/sphinx/genie_python.html).
+An implementation of the [OpenGenie](http://www.opengenie.org) scripting language in Python, or at least its commands specific to instrument control.  Documentation at {external+genie_python:doc}`genie_python`.
 
 ## GIT
 

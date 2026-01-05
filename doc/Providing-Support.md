@@ -173,7 +173,7 @@ There are a number of tips for [trouble shooting](#all_troubleshooting_links) al
 
   1. There are a few things that have services which run, especially the databases, and it is possible after a crash/other restart that these don't start up again, starting task manager as an administrator should allow you to start the service in question
   1. If it is not one of our services (e.g. swipe systems, ERA), we cannot resolve the issue, escalate as appropriate (TODO: Make sure the different escalation methods are documented)
-  1. If the MCR news service isn't working, then so long as there is space, restarting our [webserver](/systems/Webserver) may help.
+  1. If the MCR news service isn't working, then so long as there is space, restarting our {external+sysadmin:doc}`systems/Webserver` may help.
   
 </details>
 
