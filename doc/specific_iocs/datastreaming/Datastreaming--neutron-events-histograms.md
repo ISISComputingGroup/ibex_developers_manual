@@ -6,8 +6,8 @@ The ICP (communicated to via the ISISDAE IOC) is responsible for communicating w
 
 
 ## For new instruments using FPGA-based acquisition electronics
-`borzoi` is responsible for communicating with the electronics and sending run starts/stops. It will have a similar interface to `ISISDAE` so we can drop-in replace it in the GUI.(?)
+`kdae_control` is responsible for communicating with the electronics and sending run starts/stops. It will have a similar interface to `ISISDAE` so we can drop-in replace it in the GUI.(?)
 
 
 ## Live view, spectra plots etc. 
-These will be provided by a soft IOC (`azawakh`) which effectively consumes from event and histogram topics (and possibly run starts?) which will serve areaDetector and other PVs. 
+These will be provided by a soft IOC (`kdae_diagnostics`) which effectively consumes from event and histogram topics (and possibly run starts?) which will serve areaDetector and other PVs. 

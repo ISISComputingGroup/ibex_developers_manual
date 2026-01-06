@@ -1,5 +1,5 @@
 {#datastreaminghowto}
-# Data streaming how-to guide
+# Data streaming: how-to guide
 
 This is a guide for basic operations using either the development or production Kafka clusters we use for data streaming at ISIS. 
 

@@ -45,6 +45,7 @@ extensions = [
     "sphinxcontrib.mermaid",
 ]
 mermaid_d3_zoom = True
+mermaid_params = ["--iconPacks", "@material-icon-theme"]
 napoleon_google_docstring = True
 napoleon_numpy_docstring = False
 
