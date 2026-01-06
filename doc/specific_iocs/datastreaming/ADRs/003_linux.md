@@ -2,7 +2,7 @@
 
 ## Status
 
-What is the status, such as proposed, accepted, rejected, deprecated, superseded, etc.?
+Accepted. 
 
 ## Context
 
