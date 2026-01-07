@@ -420,6 +420,7 @@ junit
 jvisualvm
 Jython
 Jülich
+Kafka
 Kammrath
 Kanban
 kbaud
@@ -462,6 +463,7 @@ longin
 longout
 lookups
 loopback
+lossy
 lowlimit
 lowT
 LSi
@@ -637,6 +639,7 @@ PLCs
 plt
 PNG
 png
+podman
 polarisers
 polref
 postfixed
@@ -879,6 +882,7 @@ ua
 uA
 uamps
 UC
+UDP
 UI
 ui
 uk
