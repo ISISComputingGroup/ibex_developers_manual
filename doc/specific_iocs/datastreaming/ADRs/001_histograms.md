@@ -28,5 +28,5 @@ histogram mode.
 ## Consequences
 
 - Data volumes on HRPD-x will be higher running in event mode compared to histogram mode. This includes both data in-flight
-during networking and kafka processing, as well as final Nexus file sizes.
+during networking and Kafka processing, as well as final Nexus file sizes.
 - Only considering events will simplify components of the HRPD-x data streaming implementation.
