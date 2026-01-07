@@ -27,7 +27,7 @@ Run control is controlled by IBEX using the existing {doc}`/system_components/Ru
 
 There will be a register, in the streaming control VXI crate that `kdae_control` can write to, which will be set via EPICS by the run control IOC. This register will act exactly like a hardware veto signal, except will be controlled by software. The runcontrol status will be monitored by `kdae_control`, and when it changes, `kdae_control` will write to the corresponding register in the streaming control VXI crate.
 
-The overall concept of {external+ibex_user_manual:ref}`concept-good-raw-frames` will still be needed, as scientists will use {external+genie_python:py:obj}`genie.waitfor_frames` and similar functions to control their run durations.
+The overall concept of {external+ibex_user_manual:ref}`concept_good_raw_frames` will still be needed, as scientists will use {external+genie_python:py:obj}`genie.waitfor_frames` and similar functions to control their run durations.
 
 We have also agreed with DSG that the WLSF modules should _not_ be allowed to individually veto data despite this being technically possible and this should be the responsibility of the VXI control board. 
 
