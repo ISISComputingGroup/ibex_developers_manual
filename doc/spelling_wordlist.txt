@@ -58,6 +58,7 @@ autosaved
 autosaving
 autostart
 autotune
+Avro
 backend
 Baldor
 Baratron
@@ -89,6 +90,7 @@ booleans
 bootable
 bottlenecking
 breakpoint
+brokerless
 bruteforce
 bumpstrip
 burndown
@@ -533,6 +535,7 @@ moxas
 MPa
 msc
 msg
+msgpack
 msi
 MSLITS
 msm
@@ -668,6 +671,7 @@ procserver
 profiler
 programmatically
 proto
+protobuffers
 pseudocode
 psu
 pugixml

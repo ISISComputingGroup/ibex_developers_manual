@@ -59,7 +59,7 @@ IBEX will not need to talk to these except for "advanced" diagnostics.
 ### Linux streaming server
 This hosts a Kafka cluster, for this bit of infrastructure there are three topics: 
 - `runInfo` - this contains `pl72` and `6s4t` run starts/stops send by `kdae_control` 
-- `raw_udp` - this contains kafka messages corresponding to each UDP packet which was received (with metadata such as IP address) sent by the [rust udp to Kafka process](https://gitlab.stfc.ac.uk/isis-detector-systems-group/software/data-streaming/rust-udp-to-kafka) which is also hosted on this server
+- `raw_udp` - this contains Kafka messages corresponding to each UDP packet which was received (with metadata such as IP address) sent by the [rust udp to Kafka process](https://gitlab.stfc.ac.uk/isis-detector-systems-group/software/data-streaming/rust-udp-to-kafka) which is also hosted on this server
 - `events` -  this contains `ev44` formed by the [event stream processor](https://gitlab.stfc.ac.uk/isis-detector-systems-group/software/data-streaming/rust-data-stream-processor/-/tree/main?ref_type=heads) which is also hosted on this server
 
 

@@ -17,7 +17,7 @@ We would ideally like to run the data streaming software in containers as they o
 
 Docker Desktop _is_ supported on Windows, but uses the WSL with a strict licensing agreement which does not suit our needs. Other alternatives also use the WSL. Many container configuration options (e.g. host networking, volume mounting options) cannot be supported with containers on Windows (whether via Docker desktop or another solution). 
 
-One of the long-term goals on the Experiment Controls roadmap is to revisit our operating system choice. It is very likely this will be a distribution of Linux.
+One of the long-term goals on the Experiment Controls road-map is to revisit our operating system choice. It is very likely this will be a distribution of Linux.
 
 For HRPD-X specifically, the NDX and NDH is unsuitable for deploying data streaming software, as it will remain using Windows (in the short term).
 

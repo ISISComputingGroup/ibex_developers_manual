@@ -9,7 +9,7 @@ Accepted
 We need to decide on a technology through which we are going to do data streaming. 
 
 There are several options here: 
-- Kafka or kafka compatible solutions such as Redpanda
+- Kafka or Kafka compatible solutions such as Redpanda
 - Redis
 - ZeroMQ/RabbitMQ/ActiveMQ
 
