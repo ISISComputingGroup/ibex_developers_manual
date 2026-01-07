@@ -20,9 +20,9 @@ Overall architecture is as follows:
 ![](datastreaming/ISISDSLayout.drawio.svg)
 
 This comprises of a few different consumers and producers: 
-- [`kdae_diagnostics`](https://github.com/ISISComputingGroup/azawakh) - This is a soft IOC which provides `areaDetector` views, spectra plots and so on by consuming events from the cluster and displaying them over EPICS CA/PVA.
-- [`kdae_control`](https://github.com/ISISComputingGroup/borzoi) - This is also a soft IOC which is more or less a drop-in replacement for the ISISDAE. It provides an interface that several clients (ie. [genie](https://github.com/ISISComputingGroup/genie), [ibex_bluesky_core](https://github.com/ISISComputingGroup/ibex_bluesky_core), [ibex_gui](https://github.com/ISISComputingGroup/ibex_gui)) talk to to start/stop runs and configure streaming electronics. `borzoi` will send UDP packets to the streaming electronics to configure it. 
-- [`BSTOKAFKA`](https://github.com/ISISComputingGroup/BSKAFKA) - This configures the `forwarder` with the blocks that are in an instrument's current configuration, as well as other PVs which will either get written to a file or archived for e.g. the log plotter. 
+- [`kafka_dae_diagnostics`](https://github.com/ISISComputingGroup/kafka_dae_diagnostics) - This is a soft IOC which provides `areaDetector` views, spectra plots and so on by consuming events from the cluster and displaying them over EPICS CA/PVA.
+- [`kafka_dae_control`](https://github.com/ISISComputingGroup/kafka_dae_control) - This is also a soft IOC which is more or less a drop-in replacement for the ISISDAE. It provides an interface that several clients (ie. [genie](https://github.com/ISISComputingGroup/genie), [ibex_bluesky_core](https://github.com/ISISComputingGroup/ibex_bluesky_core), [ibex_gui](https://github.com/ISISComputingGroup/ibex_gui)) talk to to start/stop runs and configure streaming electronics. `kafka_dae_control` will send UDP packets to the streaming electronics to configure it. 
+- [`kafka_forwarder_configurer`](https://github.com/ISISComputingGroup/kafka_forwarder_configurer) - This configures the `forwarder` with the blocks that are in an instrument's current configuration, as well as other PVs which will either get written to a file or archived for e.g. the log plotter. 
 - `forwarder` - See [Forwarding Sample Environment](datastreaming/Datastreaming---Sample-Environment)
 - `filewriter` - See [File writing](datastreaming/Datastreaming---File-writing)
 
