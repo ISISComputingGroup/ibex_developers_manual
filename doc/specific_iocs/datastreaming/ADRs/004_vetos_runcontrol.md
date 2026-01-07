@@ -25,7 +25,7 @@ Run control is controlled by IBEX using the existing {doc}`/system_components/Ru
 
 ## Decision
 
-There will be a register, in the streaming control VXI crate that `kdae_control` can write to, which will be set via EPICS by the run control IOC. This register will act exactly like a hardware veto signal, except will be controlled by software. The runcontrol status will be monitored by `kdae_control`, and when it changes, `kdae_control` will write to the corresponding register in the streaming control VXI crate.
+There will be a register, in the streaming control VXI crate that `kafka_dae_control` can write to, which will be set via EPICS by the run control IOC. This register will act exactly like a hardware veto signal, except will be controlled by software. The runcontrol status will be monitored by `kafka_dae_control`, and when it changes, `kafka_dae_control` will write to the corresponding register in the streaming control VXI crate.
 
 The overall concept of {external+ibex_user_manual:ref}`concept_good_raw_frames` will still be needed, as scientists will use {external+genie_python:py:obj}`genie.waitfor_frames` and similar functions to control their run durations.
 
@@ -36,4 +36,4 @@ We have also agreed with DSG that the WLSF modules should _not_ be allowed to in
 - The existing concept of {doc}`/system_components/Run-control` is retained. This means that commands such as {external+genie_python:py:obj}`genie.waitfor_frames` will work largely as before, minimising required changes to instrument scripts. 
 - The existing concepts of {external+ibex_user_manual:ref}`concept_good_raw_frames` are retained.
 - Existing vetoes will largely map across onto the new system.
-- `kdae_control` will need to monitor the run control [this PV](https://github.com/ISISComputingGroup/EPICS-RunControl/blob/master/RunControlApp/Db/gencontrolMgr.db#L54C28-L54C35) for changes. 
+- `kafka_dae_control` will need to monitor the run control [this PV](https://github.com/ISISComputingGroup/EPICS-RunControl/blob/master/RunControlApp/Db/gencontrolMgr.db#L54C28-L54C35) for changes. 

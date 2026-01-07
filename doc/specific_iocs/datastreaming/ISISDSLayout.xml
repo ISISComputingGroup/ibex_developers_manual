@@ -122,7 +122,7 @@
         <mxCell id="9" parent="7KtQmuTptNfZlMXJsWDl-72" style="rounded=0;whiteSpace=wrap;html=1;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="FPGA streaming boards" vertex="1">
           <mxGeometry height="60" width="120" x="20" y="60" as="geometry" />
         </mxCell>
-        <mxCell id="7KtQmuTptNfZlMXJsWDl-33" parent="7KtQmuTptNfZlMXJsWDl-72" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;" value="(kdae_control)~&lt;br&gt;process that&lt;br&gt;A) bridges FPGA UDP config and EPICS and&lt;br&gt;B) provides an interface very similar to ISISDAE&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+        <mxCell id="7KtQmuTptNfZlMXJsWDl-33" parent="7KtQmuTptNfZlMXJsWDl-72" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;" value="(kafka_dae_control)~&lt;br&gt;process that&lt;br&gt;A) bridges FPGA UDP config and EPICS and&lt;br&gt;B) provides an interface very similar to ISISDAE&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="130" width="120" x="20" y="170" as="geometry" />
         </mxCell>
         <mxCell id="7KtQmuTptNfZlMXJsWDl-47" parent="7KtQmuTptNfZlMXJsWDl-72" style="swimlane;" value="For new instruments" vertex="1">
@@ -195,7 +195,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="MyJvBkN_DfxryQa6yyBt-30" parent="1" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;" value="(kdae_diagnostics)&lt;div&gt;consumer soft ioc that provides areadetector live view from kafka stream/spectra plots over epics&lt;/div&gt;" vertex="1">
+        <mxCell id="MyJvBkN_DfxryQa6yyBt-30" parent="1" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;" value="(kafka_dae_diagnostics)&lt;div&gt;consumer soft ioc that provides areadetector live view from kafka stream/spectra plots over epics&lt;/div&gt;" vertex="1">
           <mxGeometry height="100" width="200" x="680" y="670" as="geometry" />
         </mxCell>
         <mxCell id="MyJvBkN_DfxryQa6yyBt-34" parent="1" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;" value="IOCs&amp;nbsp; - blocks and archived vals, maybe runlog" vertex="1">
