@@ -33,7 +33,7 @@ There is a (non-production!) [Redpanda](https://www.redpanda.com/) Kafka cluster
 A web interface is available [here](https://reduce.isis.cclrc.ac.uk/redpanda-console/overview).
 
 :::{important}
-It was decided that we no longer maintain the Kafka cluster, and it will be handled by the the Flexible Interactive
+It was decided that we no longer maintain the Kafka cluster, and it will be handled by the Flexible Interactive
 Automation team. See `\\isis\shares\ISIS_Experiment_Controls\On Call\autoreduction_livedata_support.txt` for their
 support information.
 :::

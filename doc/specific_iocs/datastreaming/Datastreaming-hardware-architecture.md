@@ -1,3 +1,5 @@
+{#ds_hardware_architecture}
+
 # Data streaming: hardware architecture
 
 ```{mermaid}
