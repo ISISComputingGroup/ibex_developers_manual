@@ -19,7 +19,7 @@ See  [Install Visual Studio](/iocs/compiling/Install-Visual-Studio)
 {#first_time_install_java}
 ## Install Java JDK
 
-Install the **OpenJDK 25 hotspot** binary zip from https://adoptium.net and extract to `\instrument\apps\JDK\21`
+Install the **OpenJDK 25 hotspot** binary zip from https://adoptium.net and extract to `\instrument\apps\JDK\25`
 
 ```{important}
 **Do not install an Oracle JDK**. It has an unsuitable license.
