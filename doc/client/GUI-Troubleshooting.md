@@ -129,3 +129,8 @@ For example `ssh –L 12345:127.0.0.1:66666 spudulike@ndxscidemo`
 [Memory "leaks"](troubleshooting/Debugging-memory-leaks-in-the-IBEX-GUI)
 
 [PV Manager and Observers](troubleshooting/PV-Manager-and-Observers-Logging)
+
+### Accessing pydev's preferences
+
+To access pydev's "secret menu" to change preferences in the interactive console, press `ctrl-alt-p` when focused on the console. 
+This allows you to set things like ad-hoc commands that get run before `genie` is loaded. 
