@@ -151,16 +151,16 @@ In `create_icp_binaries.bat`, update the unpacked version of MySQL used during t
 In `c:\instrument\apps\epics\support\mysql\master\MySQLCppApp\src\mysql-connector-c++`, update the vendor submodule to a recent version, then rebuild `mysql`, `pvdump`, and then all IOCs, in that order.
 
 ### Java
-- Get the latest AdoptOpen JDK msi file from `https://adoptium.net/releases.html?jvmVariant=hotspot` and put it in `\\isis\shares\ISIS_Experiment_Controls_Public\third_party_installers\latest_versions`.
+- Get the latest AdoptOpen JDK zip file from `https://adoptium.net/releases.html?jvmVariant=hotspot` and put it in `C:\instrument\apps\JDK\<majorver>\`.
   * Only upgrade major versions to another LTS version.
-- Copy the older version onto the `\\isis\shares\ISIS_Experiment_Controls_Public\third_party_installers\old_versions`. 
-- Uninstall the older version from control Panel and install the new version.
+- Uninstall the older version from control Panel, remove any references from the `PATH` environment variable.
 - Test that running `start_ibex_server.bat` completes successfully, and ensure there are no obvious errors in the IOC log files for:
   * ARBLOCK
   * ARINST
   * ALARM
   * IOCLOG
 - Check that CS Studio IDE is loaded correctly
+- Update the Ansible playbook with the new version as per [these instructions](https://github.com/ISISComputingGroup/ansible-playbooks/tree/main?tab=readme-ov-file#updating-jdk-version). 
 
 ### Maven
 - There are two versions of maven, this is to update the one following the format `maven-X.x.x`
