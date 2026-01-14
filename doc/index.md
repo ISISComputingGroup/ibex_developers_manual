@@ -52,5 +52,6 @@ Processes
 
 - [IBEX project wiki](https://github.com/isiscomputinggroup/ibex/wiki)
 - {external+ibex_user_manual:doc}`IBEX user manual <index>`
+- {external+sysadmin:doc}`index`
 - [Python shared scripts (also known as shared instrument scripts)](https://github.com/ISISNeutronMuon/InstrumentScripts/wiki)
 - [Scientific Advisory Group (sharepoint)](https://stfc365.sharepoint.com/sites/IBEXSAG)

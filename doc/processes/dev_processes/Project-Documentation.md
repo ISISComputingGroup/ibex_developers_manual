@@ -6,6 +6,7 @@ We have three wikis:
 1. {external+ibex_user_manual:doc}`IBEX user manual <index>`
     - [on shadow](http://shadow.nd.rl.ac.uk/ibex_user_manual/)
 1. [IBEX developer wiki](/index)
+1. {external+sysadmin:doc}`index` (on shadow only)
 
 ## IBEX wiki
 
