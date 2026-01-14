@@ -106,6 +106,8 @@ By default, the Galil IOC will stop all running threads when it restarts. If you
 ### Assigning IP addresses
 
 The IP address of a Galil can only be established using a serial connection. This must be set up.
+
+As a convention, we use `192.168.1.2XX` where `XX` is the respective number of the galil crate - ie. `192.168.1.201` for the first crate. 
   
 For a Galil DMC 2280, there are no problems
 1) Enter the command IA n1,n2,n3,n4 e.g. IA 192,168,1,201
