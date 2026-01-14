@@ -113,4 +113,7 @@ intersphinx_mapping = {
     "ibex_bluesky_core": ("https://isiscomputinggroup.github.io/ibex_bluesky_core/", None),
     "matplotlib": ("https://matplotlib.org/stable/", None),
     "secop": ("https://sampleenvironment.github.io/secop-site/", None),
+    # This inventory needs to be periodically updated (manually) if new pages are added or
+    # page layouts changed.
+    "sysadmin": ("https://shadow.nd.rl.ac.uk/ibex_sysadmin_manual/", "sysadmin_manual.inv"),
 }

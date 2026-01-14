@@ -35,7 +35,6 @@ Web
 System-components
 IOCs
 Specific-IOCs
-Systems
 ```
 
 ```{toctree}

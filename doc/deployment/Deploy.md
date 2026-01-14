@@ -16,5 +16,4 @@ deploy/Reviewing-Deploy-Tickets
 deploy/Upgrade-ISISICP
 deploy/Upgrade-Java
 deploy/Installing-and-Upgrading-MySQL
-deploy/NPort-install
 ```

@@ -49,5 +49,5 @@ Yes, this is a good idea. Call the file `Sprintreview_start_<date>`. Add start a
 
 - We are happy that POLREF is now running on IBEX and SURF is planning to use it this cycle.
 - We are making good progress on SANS2D. Different groups coordinating well with each other (us, scientists, network team, ...)
-- We are excited about Windows 10 updates. Build is "mostly" automated, process is now documented [(Link)](/systems/inst_control/mdt/Building-a-windows-10-instrument-machine-from-MDT), everyone should in principle be able to set this up.
+- We are excited about Windows 10 updates. Build is "mostly" automated, process is now documented on SysAdmin manual, everyone should in principle be able to set this up.
 - What to do with trivial support issues? Creating a ticket every time seems like a lot of overhead --> Put them in a teams channel, then record them permanently in a ticket at the end of the sprint. `support-issues` channel has now been created

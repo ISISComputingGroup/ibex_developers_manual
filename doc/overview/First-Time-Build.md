@@ -286,4 +286,4 @@ Download and install latest stable version from https://wixtoolset.org/docs/wix3
 ### Add your SSH key to the `keys` repository
 
 Adding an SSH key to the [keys repository](https://github.com/isiscomputinggroup/keys) can be used to give
-passwordless access to instrument machines. Follow the instructions [here](/tools/SSH-keys).
+passwordless access to instrument machines. Follow the instructions {external+sysadmin:doc}`services/SSH-keys`.

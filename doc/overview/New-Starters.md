@@ -101,7 +101,6 @@ Some pages to read over:
 Pages to skim over. Read in detail only when needed:
 
 - [Settings and Configurations](../system_components/Settings-and-Configurations)
-- [Data Generation and Storage](../systems/inst_control/Data-Generation-and-Storage-on-Instrument-PCs-(NDX's))
 - [Information for User Scientists](https://github.com/ISISComputingGroup/IBEX/wiki)
 
 Every section after this line contains reference information that you do not necessarily have to read before you do your first ticket, but it is where you should take a look when you find out you need to learn new things in order to do your work.

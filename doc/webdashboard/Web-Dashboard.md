@@ -21,7 +21,7 @@ See {ref}`pvws`
 
 ### Web dashboard showing outdated or incorrect information
 
-If you cannot subscribe directly to a PV by using the [PVWS homepage](https://ndaextweb4/pvws/) ie it gets no update with a value in it, this is likely due to a gateway issue on NDAEXTWEB4, a central gateway issue (on {ref}`controlsvcs`) or an issue with the NDX.
+If you cannot subscribe directly to a PV by using the [PVWS homepage](https://ndaextweb4/pvws/) ie it gets no update with a value in it, this is likely due to a gateway issue on NDAEXTWEB4, a central gateway issue (on {external+sysadmin:doc}`systems/linux_support_systems/control-svcs`) or an issue with the NDX.
 
 First VNC into the instrument and find out whether this is happening on the NDX. If it is, your problems are not gateway related. 
 
