@@ -1,4 +1,4 @@
-# File writing
+# Data streaming: File writing
 
 The [filewriter](https://github.com/ess-dmsc/kafka-to-nexus) is responsible for taking the neutron and SE data out of Kafka and writing it to a nexus file. When the ICP ends a run it sends a config message to the filewriter, via Kafka, to tell it to start writing to file.
 

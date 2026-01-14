@@ -1,4 +1,4 @@
-# Data streaming topics
+# Data streaming: topics
 
 We have a number of topics per-instrument on `livedata`, the {ref}`Kafka cluster<kafkacluster>` we use. 
 
