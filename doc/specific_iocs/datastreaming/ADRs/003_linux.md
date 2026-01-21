@@ -37,3 +37,7 @@ Wherever possible, software will be deployed in containers, which will minimise 
 - The OS will be different. Developers will need _some_ understanding of Linux to maintain these servers.
   * Mitigation: do as little as possible on the host, ideally limit it to just having a container engine installed via a configuration management tool such as Ansible.
 - Data-streaming infrastructure will not be on the NDH/NDX machine with the rest of IBEX. This is fine - EPICS is explicitly designed to run in a distributed way.
+- We will need to carefully consider the system specification of the Linux server in order to ensure it is adequate for expected data rates (including data rates from e.g. noisy detectors, to a point). In particular we expect to need to carefully consider:
+  * Disk write performance (for the Kafka broker and the filewriter)
+  * Network interface speeds (both from the electronics into this server, and from this server onwards to consumers such as Mantid)
+  * Memory (for any processes which need to histogram the data - must be able to keep a histogram in memory)
