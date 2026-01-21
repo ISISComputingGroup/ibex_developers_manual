@@ -3,7 +3,7 @@
 
 ## Status
 
-Current, but may be superseded after HRPD-X.
+Pending discussion with HRPD-X interested parties (including instrument scientists & Mantid).
 
 ## Context
 
