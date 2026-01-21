@@ -41,3 +41,5 @@ Wherever possible, software will be deployed in containers, which will minimise 
   * Disk write performance (for the Kafka broker and the filewriter)
   * Network interface speeds (both from the electronics into this server, and from this server onwards to consumers such as Mantid)
   * Memory (for any processes which need to histogram the data - must be able to keep a histogram in memory)
+ - The data streaming stack will be unaffected by a restart of the NDX system, and will keep running in the background.
+ - We will configure the relevant containers for data streaming software to automatically start on reboot of the data streaming Linux server.
