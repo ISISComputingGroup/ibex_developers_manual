@@ -163,6 +163,7 @@ Culham
 customisable
 cxx
 Cybaman
+cyber
 cybersecurity
 cygwin
 DAC
@@ -933,6 +934,7 @@ vhds
 vhdx
 viewmodel
 virtualbox
+virtualised
 vis
 Viscotherm
 vm

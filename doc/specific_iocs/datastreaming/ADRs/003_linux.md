@@ -37,9 +37,9 @@ The main drawbacks for this approach are that:
 - the NDXes do not have sufficient resources for the software currently
 - Windows is different to everyone else running the streaming software, and we may waste effort porting software to Windows
 - Kafka itself will not run on Windows
-- Deployment and patching will become difficult for a system which will need to be patched frequently and will interfere with the rest of the control system. As an example, we do not use virtual environments in python, so updating a python depdendency for the `forwarder` runs the risk that it may break something in user scripts and/or the block server, which would be very bad. 
+- Deployment and patching will become difficult for a system which will need to be patched frequently and will interfere with the rest of the control system. As an example, we do not use virtual environments in python, so updating a python dependency for the `forwarder` runs the risk that it may break something in user scripts and/or the block server, which would be very bad. 
 - Task scheduling/service management can be difficult on Windows, we could use `procserv` but in most cases we don't require an interactive terminal for processes.
-- Moving away from Windows is on the roadmap - we would be creating more work for ourselves when we migrate over eventually. 
+- Moving away from Windows is on the road-map - we would be creating more work for ourselves when we migrate over eventually. 
 
 
 ### 2 - Running natively on a separate Linux machine
