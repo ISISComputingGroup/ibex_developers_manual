@@ -13,7 +13,7 @@ Streaming software is linux-centric and running Kafka itself natively on Windows
 
 Running software under WSL is an option, but is not [built for production use.](https://learn.microsoft.com/en-us/windows/wsl/faq#can-i-use-wsl-for-production-scenarios-) It also adds several layers of complexity with networking, file systems and so on. Container networking configuration is difficult and limited using WSL.
 
-We would ideally like to run the data streaming software in containers as they offer security, deployment and repeatability benefits and are extremely popular in the software development industry.
+We would ideally like to run the data streaming software in containers as they offer security, deployment and repeatability benefits and are extremely popular in the software development industry. HRPD-X coming online with a new detector technology means that we will need to be able to easily apply new versions of data-streaming software at short notice. Containers give us an easy, repeatable path to be able to do this.
 
 Docker Desktop _is_ supported on Windows, but uses the WSL with a strict licensing agreement which does not suit our needs. Other alternatives also use the WSL. Many container configuration options (e.g. host networking, volume mounting options) cannot be supported with containers on Windows (whether via Docker desktop or another solution). 
 
