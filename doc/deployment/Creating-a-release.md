@@ -60,7 +60,7 @@ is recent enough to include the most recent changes in the
 
 1. Do the same for the `EPICS32` 32-bit build, replacing `EPICS` with `EPICS32` everywhere in the commands above.
 1. Check release is now listed in [`https://control-svcs.isis.cclrc.ac.uk/git/?a=project_list;pf=releases`](https://control-svcs.isis.cclrc.ac.uk/git/?a=project_list;pf=releases)
-1. Run the [`instrument_deploy.yaml` ansible playbook](https://github.com/ISISComputingGroup/ansible-playbooks/tree/main?tab=readme-ov-file#instrument_deployyaml) which currently installs the JDK on instruments. 
+1. Run the [`instrument_deploy.yaml` ansible playbook](https://github.com/ISISComputingGroup/ansible-playbooks/tree/main?tab=readme-ov-file#instrument_deployyaml) on any test machines which will be used for manual system testing. 
 
 
 {#creating_release_testing_steps}
