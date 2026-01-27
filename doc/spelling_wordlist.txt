@@ -58,6 +58,7 @@ autosaved
 autosaving
 autostart
 autotune
+Avro
 backend
 Baldor
 Baratron
@@ -89,6 +90,7 @@ booleans
 bootable
 bottlenecking
 breakpoint
+brokerless
 bruteforce
 bumpstrip
 burndown
@@ -161,6 +163,7 @@ Culham
 customisable
 cxx
 Cybaman
+cyber
 cybersecurity
 cygwin
 DAC
@@ -420,6 +423,7 @@ junit
 jvisualvm
 Jython
 Jülich
+Kafka
 Kammrath
 Kanban
 kbaud
@@ -462,6 +466,7 @@ longin
 longout
 lookups
 loopback
+lossy
 lowlimit
 lowT
 LSi
@@ -531,6 +536,7 @@ moxas
 MPa
 msc
 msg
+msgpack
 msi
 MSLITS
 msm
@@ -637,6 +643,7 @@ PLCs
 plt
 PNG
 png
+podman
 polarisers
 polref
 postfixed
@@ -665,6 +672,7 @@ procserver
 profiler
 programmatically
 proto
+protobuffers
 pseudocode
 psu
 pugixml
@@ -879,6 +887,7 @@ ua
 uA
 uamps
 UC
+UDP
 UI
 ui
 uk
@@ -925,6 +934,7 @@ vhds
 vhdx
 viewmodel
 virtualbox
+virtualised
 vis
 Viscotherm
 vm
