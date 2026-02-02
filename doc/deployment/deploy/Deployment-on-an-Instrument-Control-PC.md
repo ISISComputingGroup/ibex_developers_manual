@@ -4,12 +4,14 @@ This document describes the steps necessary to install/upgrade IBEX on an Instru
 
 ## Preparatory Steps for Client and Server
 
-Before starting any manual deployments, run the [`instrument_deploy.yaml` ansible playbook](https://github.com/ISISComputingGroup/ansible-playbooks/tree/main?tab=readme-ov-file#instrument_deployyaml) which currently installs the JDK on instruments. This should be run on the relevant deploy group - the playbook will prompt for the hosts to run it on to avoid accidentally deploying to all instruments. As an example, to deploy to the winter group, enter `winter_deploy` (as specified in the [inventory file](https://github.com/ISISComputingGroup/ansible-playbooks/blob/main/hosts.yaml)).
+Before the group starts any manual deployments, one developer should run the [`instrument_deploy.yaml` ansible playbook](https://github.com/ISISComputingGroup/ansible-playbooks/tree/main?tab=readme-ov-file#instrument_deployyaml) which currently installs the JDK on instruments. This should be run on the relevant deploy group - the playbook will prompt for the hosts to run it on to avoid accidentally deploying to all instruments. As an example, to deploy to the winter group, enter `winter_deploy` (as specified in the [inventory file](https://github.com/ISISComputingGroup/ansible-playbooks/blob/main/hosts.yaml)).
 This playbook has been designed so it is idempotent, ie. if a step has already occurred such as deploying the JDK it will not be repeated.
 
 - Inform the instrument scientist that you are going to upgrade the instrument in 5 minutes so that they are not surprised when you remote desktop to the instrument, include a link to the release notes of the latest release in this email. Wait 5 minutes.
-- Make sure that `\\isis\shares\ISIS_Experiment_Controls_Public\ibex_utils` is pointing at `master` and is up to date  (i.e. do git pull).
-- Take over the instrument with an RDP session - not VNC. 
+- Make sure that `\\isis\shares\ISIS_Experiment_Controls_Public\ibex_utils` is pointing at `master` and is up to date (i.e. do git pull).
+
+:::{note}
+If the Git Bash window is not pointing to the 'master' branch, you need to register the repository path as a safe directory. Run `git config --global --add safe.directory '%(prefix)///isis/shares/ISIS_Experiment_Controls_Public/ibex_utils` in Git Bash to resolve this.
 
 :::{note}
 The install will need to access both `\\isis\shares\ISIS_Experiment_Controls_Public\ibex_utils` (where the install script is located) and `\\isis\inst$\kits$` (where the ibex release and a genie python instance is kept). As we will be updating python, we cannot use the locally installed python for the deploy. 
