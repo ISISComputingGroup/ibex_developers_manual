@@ -9,7 +9,6 @@ This playbook has been designed so it is idempotent, ie. if a step has already o
 
 - Inform the instrument scientist that you are going to upgrade the instrument in 5 minutes so that they are not surprised when you remote desktop to the instrument, include a link to the release notes of the latest release in this email. Wait 5 minutes.
 - Make sure that `\\isis\shares\ISIS_Experiment_Controls_Public\ibex_utils` is pointing at `master` and is up to date  (i.e. do git pull).
-- Take over the instrument with an RDP session - not VNC. 
 
 :::{note}
 The install will need to access both `\\isis\shares\ISIS_Experiment_Controls_Public\ibex_utils` (where the install script is located) and `\\isis\inst$\kits$` (where the ibex release and a genie python instance is kept). As we will be updating python, we cannot use the locally installed python for the deploy. 
