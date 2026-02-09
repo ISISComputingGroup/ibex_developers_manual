@@ -24,7 +24,7 @@ If you do not have either a D: or O: network drive, then you will need to specif
 
 ## Upgrading IBEX to the latest version
 1. Ensure the instrument is running and in a setup state
-1. Take screenshots of blocks, motors, running VIs, etc. to allow later comparison
+1. Take screenshots of server status, blocks, motors, running VIs, etc. to allow later comparison
 1. Ensure all command lines to EPICS or windows accessing the EPICS path are closed (though there is no need to stop the IBEX Server)
 1. Run `\\isis\shares\ISIS_Experiment_Controls_Public\ibex_utils\installation_and_upgrade\instrument_deploy.bat` (or for 32-bit releases run with the parameter `x86`)
     - you can double click on this, but usually better to drag the path into a new empty cmd window so you don't miss any errors on abort  
