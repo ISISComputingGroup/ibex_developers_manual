@@ -12,6 +12,7 @@ This playbook has been designed so it is idempotent, ie. if a step has already o
 
 :::{note}
 If the Git Bash window is not pointing to the 'master' branch, you need to register the repository path as a safe directory. Run `git config --global --add safe.directory '%(prefix)///isis/shares/ISIS_Experiment_Controls_Public/ibex_utils` in Git Bash to resolve this.
+:::
 
 :::{note}
 The install will need to access both `\\isis\shares\ISIS_Experiment_Controls_Public\ibex_utils` (where the install script is located) and `\\isis\inst$\kits$` (where the ibex release and a genie python instance is kept). As we will be updating python, we cannot use the locally installed python for the deploy. 
