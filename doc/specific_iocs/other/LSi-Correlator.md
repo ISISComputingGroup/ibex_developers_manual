@@ -11,6 +11,8 @@ The software struggles to find the correlator's IP address on our network. Inste
 
 In this file, change the default setting of the correlator's IP address to the actual device IP then reboot the software.
 
+The correlator name on the network is `LSI-Correlator-01cb39c4` which can be pinged to find an IP address. The device does respond to a ping.
+
 ## The Vendor Python API
 
 The python 'API' is little more than a reference implementation of a websocket client. It is installed with the vendor software. This code has been placed in a private repository as we have not got permission from LSI to publicly distribute it.
