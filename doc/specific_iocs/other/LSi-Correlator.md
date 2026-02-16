@@ -11,7 +11,7 @@ The software struggles to find the correlator's IP address on our network. Inste
 
 In this file, change the default setting of the correlator's IP address to the actual device IP then reboot the software.
 
-The correlator name on the network is `LSI-Correlator-01cb39c4` which can be pinged to find an IP address. The device does respond to a ping.
+The correlator name on the network is `LSI-Correlator-01cb39c4` - prefer connecting by name over IP address, as the device has historically changed MAC address for unknown reasons.
 
 :::{important}
 The device is _very_ fiddly in terms of connection.
