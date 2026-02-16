@@ -5,6 +5,20 @@
 ### Motors are hitting a hard limit in an unexpected place
 This implies that the controller has lost it's positions. The best thing to here is to rehome the axis. This can be done by selecting the offending motor in the table of motors and pressing the home button. Note that you should home one axis at a time as homing multiple axes in parallel can lead to the operation timing out.
 
+### Jaw blade(s) are stopping in an unexpected place
+
+Check if the motor is part of a jaw set. Jaws [may define a minimum gap](https://github.com/ISISComputingGroup/EPICS-jaws/pull/20), which sends a stop command to both motors in the jaw set if the current
+gap is smaller than the defined minimum. This occurs both during a standard move, and during a home.
+
+This calculation may be incorrect if motor positions have been lost. The minimum gap is configured using PVs of the
+form:
+```
+IN:INST:MOT:JAWS<N>:VGAP:MIN:SP
+```
+
+On many instruments, this has been set to `-2147483648` to effectively disable the minimum-gap checking. This can
+also be set temporarily.
+
 ### Position needs to be restored 
 
 Note: [a script exists for this](/tools/archive_tools/Restore-Motor-Positions-from-Archive)
