@@ -169,7 +169,7 @@ Archives [PV](#pv) values using the [CSS Archive Engine](#archive-engine) which 
 
 ## Journal Viewer
 
-Journal viewer is an overloaded term. There are two, one as [part of the ibex GUI](/system_components/Journal-Viewer) and the other is a standalone application supported by the instrument scientists, we only provide data for this.
+Journal viewer is an overloaded term. There are two, one as [part of the ibex GUI](/system_components/Journal-Viewer) and the other is a standalone application supported by the instrument scientists, we only provide data for this (at `http://journals.isis.cclrc.ac.uk/jv/`)
 
 ## Journal Parser
 
