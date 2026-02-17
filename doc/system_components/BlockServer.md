@@ -107,7 +107,7 @@ Note: This PV is currently used by the web dashboard
     Command: caget -S %MYPVPREFIX%CS:BLOCKSERVER:ALL_COMPONENT_DETAILS
     Returns a list of the available components with all their details, as if reading e.g. the current configuration. Read as compressed then hexed JSON (CHAR waveform)
         [{
-            "blocks": [{"log_rate": 30, "log_deadband": 0.0, "component": null, "runcontrol": false, "visible": true, "pv": "TE:NDLT882:DAE:BEAMCURRENT", "name": "BEAMCURR", "highlimit": 0.0, "log_periodic": true, "lowlimit": 0.0, "local": true}], 
+            "blocks": [{"log_rate": 30, "log_deadband": 0.0, "component": null, "runcontrol": false, "visible": true, "pv": "TE:NDLT882:DAE:BEAMCURRENT", "name": "BEAMCURR", "highlimit": 0.0, "log_periodic": true, "lowlimit": 0.0, "local": true, "alarmenabled": true, "alarmlatched": true, "alarmdelay": 25.0, "alarmguidance": "Some guidance"}], 
             "groups": [{"component": null, "blocks": ["BEAMCURR"], "name": "NONE"}], 
             "iocs": [{"macros": [], "pvs": [{"name": "NEW_PV", "value": "NEW_VALUE"}], "name": "GALIL_01", "autostart": false, "pvsets": [], "component": null, "restart": false, "simlevel": "recsim"}], 
             "description": "pong", 
@@ -149,9 +149,9 @@ Note: This PV is currently used by the web dashboard
                   {"simlevel": "devsim", "autostart": true, "restart": false, "pvsets": [{"name": "SET", "enabled": "true"}], "pvs": [], "macros": [], "name": "SIMPLE2", "component": null}
                  ],
           "blocks":
-                   [{"name": "testblock1", "local": true, "pv": "NDWXXX:xxxx:SIMPLE:VALUE1", "component": null, "visible": true, "log_periodic": true, "log_rate": 10, "log_deadband": 0},
-                    {"name": "testblock2", "local": true, "pv": "NDWXXX:xxxx:SIMPLE:VALUE1", "component": null, "visible": true, "log_periodic": true, "log_rate": 5, "log_deadband": 0},
-                    {"name": "testblock3", "local": true, "pv": "NDWXXX:xxxx:EUROTHERM1:RBV", "component": null, "visible": true, "log_periodic": false, "log_rate": 0, "log_deadband": 1.0}
+                   [{"name": "testblock1", "local": true, "pv": "NDWXXX:xxxx:SIMPLE:VALUE1", "component": null, "visible": true, "log_periodic": true, "log_rate": 10, "log_deadband": 0, "alarmenabled": true, "alarmlatched": true, "alarmdelay": 25.0, "alarmguidance": "Some guidance"},
+                    {"name": "testblock2", "local": true, "pv": "NDWXXX:xxxx:SIMPLE:VALUE1", "component": null, "visible": true, "log_periodic": true, "log_rate": 5, "log_deadband": 0, "alarmenabled": true, "alarmlatched": true, "alarmdelay": 25.0, "alarmguidance": "Some guidance"},
+                    {"name": "testblock3", "local": true, "pv": "NDWXXX:xxxx:EUROTHERM1:RBV", "component": null, "visible": true, "log_periodic": false, "log_rate": 0, "log_deadband": 1.0, "alarmenabled": true, "alarmlatched": true, "alarmdelay": 25.0, "alarmguidance": "Some guidance"}
                    ],
           "components":
                        [{"name": "comp1"}],
@@ -174,9 +174,9 @@ Note: This PV is currently used by the web dashboard
                   {"simlevel": "devsim", "autostart": true, "restart": false, "pvsets": [{"name": "SET", "enabled": "true"}], "pvs": [], "macros": [], "name": "SIMPLE2", "component": null}
                  ],
           "blocks":
-                   [{"name": "testblock1", "local": true, "pv": "NDWXXX:xxxx:SIMPLE:VALUE1", "component": null, "visible": true, "log_periodic": true, "log_rate": 10, "log_deadband": 0},
-                    {"name": "testblock2", "local": true, "pv": "NDWXXX:xxxx:SIMPLE:VALUE1", "component": null, "visible": true, "log_periodic": true, "log_rate": 5, "log_deadband": 0},
-                    {"name": "testblock3", "local": true, "pv": "NDWXXX:xxxx:EUROTHERM1:RBV", "component": null, "visible": true, "log_periodic": false, "log_rate": 0, "log_deadband": 1.0}
+                   [{"name": "testblock1", "local": true, "pv": "NDWXXX:xxxx:SIMPLE:VALUE1", "component": null, "visible": true, "log_periodic": true, "log_rate": 10, "log_deadband": 0, "alarmenabled": true, "alarmlatched": true, "alarmdelay": 25.0, "alarmguidance": "Some guidance"},
+                    {"name": "testblock2", "local": true, "pv": "NDWXXX:xxxx:SIMPLE:VALUE1", "component": null, "visible": true, "log_periodic": true, "log_rate": 5, "log_deadband": 0, "alarmenabled": true, "alarmlatched": true, "alarmdelay": 25.0, "alarmguidance": "Some guidance"},
+                    {"name": "testblock3", "local": true, "pv": "NDWXXX:xxxx:EUROTHERM1:RBV", "component": null, "visible": true, "log_periodic": false, "log_rate": 0, "log_deadband": 1.0, "alarmenabled": true, "alarmlatched": true, "alarmdelay": 25.0, "alarmguidance": "Some guidance"}
                    ],
           "components":
                        [{"name": "comp1"}],
@@ -199,9 +199,9 @@ Note: This PV is currently used by the web dashboard
                   {"simlevel": "devsim", "autostart": true, "restart": false, "pvsets": [{"name": "SET", "enabled": "true"}], "pvs": [], "macros": [], "name": "SIMPLE2", "component": null}
                  ],
           "blocks":
-                   [{"name": "testblock1", "local": true, "pv": "NDWXXX:xxxx:SIMPLE:VALUE1", "component": null, "visible": true, "log_periodic": true, "log_rate": 10, "log_deadband": 0},
-                    {"name": "testblock2", "local": true, "pv": "NDWXXX:xxxx:SIMPLE:VALUE1", "component": null, "visible": true, "log_periodic": true, "log_rate": 5, "log_deadband": 0},
-                    {"name": "testblock3", "local": true, "pv": "NDWXXX:xxxx:EUROTHERM1:RBV", "component": null, "visible": true, "log_periodic": false, "log_rate": 0, "log_deadband": 1.0}
+                   [{"name": "testblock1", "local": true, "pv": "NDWXXX:xxxx:SIMPLE:VALUE1", "component": null, "visible": true, "log_periodic": true, "log_rate": 10, "log_deadband": 0, "alarmenabled": true, "alarmlatched": true, "alarmdelay": 25.0, "alarmguidance": "Some guidance"},
+                    {"name": "testblock2", "local": true, "pv": "NDWXXX:xxxx:SIMPLE:VALUE1", "component": null, "visible": true, "log_periodic": true, "log_rate": 5, "log_deadband": 0, "alarmenabled": true, "alarmlatched": true, "alarmdelay": 25.0, "alarmguidance": "Some guidance"},
+                    {"name": "testblock3", "local": true, "pv": "NDWXXX:xxxx:EUROTHERM1:RBV", "component": null, "visible": true, "log_periodic": false, "log_rate": 0, "log_deadband": 1.0, "alarmenabled": true, "alarmlatched": true, "alarmdelay": 25.0, "alarmguidance": "Some guidance"}
                    ],
           "components": [],
           "groups":
@@ -356,9 +356,9 @@ Some of these commands take a few seconds to process, so if done using caput it 
                   {"simlevel": "recsim", "autostart": true, "restart": false, "pvsets": [{"name": "SET", "enabled": "true"}], "pvs": [], "macros": [], "name": "SIMPLE2", "component": null}
                  ],
           "blocks":
-                   [{"name": "testblock1", "local": true, "pv": "NDWXXX:xxxx:SIMPLE:VALUE1", "component": null, "visible": true, "log_periodic": true, "log_rate": 10, "log_deadband": 0},
-                    {"name": "testblock2", "local": true, "pv": "NDWXXX:xxxx:SIMPLE:VALUE1", "component": null, "visible": true, "log_periodic": true, "log_rate": 5, "log_deadband": 0},
-                    {"name": "testblock3", "local": true, "pv": "NDWXXX:xxxx:EUROTHERM1:RBV", "component": null, "visible": true, "log_periodic": false, "log_rate": 0, "log_deadband": 1.0}
+                   [{"name": "testblock1", "local": true, "pv": "NDWXXX:xxxx:SIMPLE:VALUE1", "component": null, "visible": true, "log_periodic": true, "log_rate": 10, "log_deadband": 0, "alarmenabled": true, "alarmlatched": true, "alarmdelay": 25.0, "alarmguidance": "Some guidance"},
+                    {"name": "testblock2", "local": true, "pv": "NDWXXX:xxxx:SIMPLE:VALUE1", "component": null, "visible": true, "log_periodic": true, "log_rate": 5, "log_deadband": 0, "alarmenabled": true, "alarmlatched": true, "alarmdelay": 25.0, "alarmguidance": "Some guidance"},
+                    {"name": "testblock3", "local": true, "pv": "NDWXXX:xxxx:EUROTHERM1:RBV", "component": null, "visible": true, "log_periodic": false, "log_rate": 0, "log_deadband": 1.0, "alarmenabled": true, "alarmlatched": true, "alarmdelay": 25.0, "alarmguidance": "Some guidance"}
                    ],
           "components":
                        [{"name": "comp1"}],
@@ -384,9 +384,9 @@ Some of these commands take a few seconds to process, so if done using caput it 
 				  {"simlevel": "recsim", "autostart": true, "restart": false, "pvsets": [{"name": "SET", "enabled": "true"}], "pvs": [], "macros": [], "name": "SIMPLE2", "component": null}
 				 ],
 		  "blocks":
-                   [{"name": "testblock1", "local": true, "pv": "NDWXXX:xxxx:SIMPLE:VALUE1", "component": null, "visible": true, "log_periodic": true, "log_rate": 10, "log_deadband": 0},
-                    {"name": "testblock2", "local": true, "pv": "NDWXXX:xxxx:SIMPLE:VALUE1", "component": null, "visible": true, "log_periodic": true, "log_rate": 5, "log_deadband": 0},
-                    {"name": "testblock3", "local": true, "pv": "NDWXXX:xxxx:EUROTHERM1:RBV", "component": null, "visible": true, "log_periodic": false, "log_rate": 0, "log_deadband": 1.0}
+                   [{"name": "testblock1", "local": true, "pv": "NDWXXX:xxxx:SIMPLE:VALUE1", "component": null, "visible": true, "log_periodic": true, "log_rate": 10, "log_deadband": 0, "alarmenabled": true, "alarmlatched": true, "alarmdelay": 25.0, "alarmguidance": "Some guidance"},
+                    {"name": "testblock2", "local": true, "pv": "NDWXXX:xxxx:SIMPLE:VALUE1", "component": null, "visible": true, "log_periodic": true, "log_rate": 5, "log_deadband": 0, "alarmenabled": true, "alarmlatched": true, "alarmdelay": 25.0, "alarmguidance": "Some guidance"},
+                    {"name": "testblock3", "local": true, "pv": "NDWXXX:xxxx:EUROTHERM1:RBV", "component": null, "visible": true, "log_periodic": false, "log_rate": 0, "log_deadband": 1.0, "alarmenabled": true, "alarmlatched": true, "alarmdelay": 25.0, "alarmguidance": "Some guidance"}
 				   ],
 		  "components":
 					   [{"name": "comp1"}],
@@ -412,9 +412,9 @@ Some of these commands take a few seconds to process, so if done using caput it 
 				  {"simlevel": "recsim", "autostart": true, "restart": false, "pvsets": [{"name": "SET", "enabled": "true"}], "pvs": [], "macros": [], "name": "SIMPLE2", "component": null}
 				 ],
 		  "blocks":
-                   [{"name": "testblock1", "local": true, "pv": "NDWXXX:xxxx:SIMPLE:VALUE1", "component": null, "visible": true, "log_periodic": true, "log_rate": 10, "log_deadband": 0},
-                    {"name": "testblock2", "local": true, "pv": "NDWXXX:xxxx:SIMPLE:VALUE1", "component": null, "visible": true, "log_periodic": true, "log_rate": 5, "log_deadband": 0},
-                    {"name": "testblock3", "local": true, "pv": "NDWXXX:xxxx:EUROTHERM1:RBV", "component": null, "visible": true, "log_periodic": false, "log_rate": 0, "log_deadband": 1.0}
+                   [{"name": "testblock1", "local": true, "pv": "NDWXXX:xxxx:SIMPLE:VALUE1", "component": null, "visible": true, "log_periodic": true, "log_rate": 10, "log_deadband": 0, "alarmenabled": true, "alarmlatched": true, "alarmdelay": 25.0, "alarmguidance": "Some guidance"},
+                    {"name": "testblock2", "local": true, "pv": "NDWXXX:xxxx:SIMPLE:VALUE1", "component": null, "visible": true, "log_periodic": true, "log_rate": 5, "log_deadband": 0, "alarmenabled": true, "alarmlatched": true, "alarmdelay": 25.0, "alarmguidance": "Some guidance"},
+                    {"name": "testblock3", "local": true, "pv": "NDWXXX:xxxx:EUROTHERM1:RBV", "component": null, "visible": true, "log_periodic": false, "log_rate": 0, "log_deadband": 1.0, "alarmenabled": true, "alarmlatched": true, "alarmdelay": 25.0, "alarmguidance": "Some guidance"}
 				   ],
 		  "groups":
 				   [{"blocks": ["testblock1"], "name": "Group1", "component": null},
