@@ -31,7 +31,7 @@ Limit switch positions are set to give approx +/- 1 degree of motion from the re
 | Tower    | Upper limit switch | Reference position | Lower limit switch |
 |----------|--------------------|--------------------|--------------------|
 | T4 Lower | 0                  | -0.90              | -2.38              |
-| T4 Upper | 0                  | -1.00              | -2.60              |
+| T4 Upper | 0                  | -1.60              | -2.60              |
 | T3 Lower | 0                  | -1.02              | -2.07              |
 | T3 Upper | 0                  | -0.97              | -2.10              |
 | T2 Lower | 0                  | -1.04              | -1.96              |
