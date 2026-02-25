@@ -4,7 +4,7 @@ The Lumacam is an imaging camera, which has been used on INES. It is comparable 
 
 ## Lumacam control PC
 
-This camera has a dedicated Ubuntu Linux control PC, which travels with the camera. We do not manage (and do not
+This camera will have a pair of dedicated Ubuntu Linux control PCs, one on IMAT and one on INES. We do not manage (and do not
 have credentials for) this PC. 
 
 The Lumacam PC runs several IOCs and an EPICS gateway, under `docker-compose`.
