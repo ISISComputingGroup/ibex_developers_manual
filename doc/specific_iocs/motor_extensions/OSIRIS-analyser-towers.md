@@ -7,6 +7,15 @@ be adjusted.
 There are 4 analyser towers in total; these are labelled Towers 4, 3, 2, 1 looking left-to-right from the sample
 position. Each tower has two plates, an upper and a lower plate, which can drive independently.
 
+![](OSIRIS_analyser_diagram.png)
+
+````{seealso}
+User documentation and maintenance documentation for this system in 
+```
+\\isis\shares\ISIS_Experiment_Controls\Manuals\OSIRIS_Analyser_towers
+```
+````
+
 ## Setup notes
 
 - This setup is unusual in that only two galil axes are used at a time (always an upper/lower pair for one tower).
