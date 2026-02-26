@@ -65,4 +65,14 @@ As of https://github.com/ISISComputingGroup/IBEX/issues/3993 this mapping should
 - Because the device responds to some commands very slowly, need to be quite careful about the overall command rate - ensure that the device can actually keep up with all the commands being sent.
 - Switching "closed loop" on can change the setpoint temperature - I think it changes the setpoint to match the current temperature. This is usually not desirable. See https://github.com/ISISComputingGroup/IBEX/issues/4103 for more details.
   * The workaround is to set the temperature setpoint, wait 500ms, change closed loop mode, wait 500ms, then set the temperature setpoint again.
-- Sometimes the channel mapping will appear to be correct from the Oxford software, but will not report correctly from the remote interface. For example, the fridge may report it has no `SORB` channel, even if one is correctly configured. This is a bug in the oxford instruments software running on the triton control PC. To get out of this state, the triton software (on the OI pc) must be restarted. **Check with cryogenics before doing this!**
+
+## Troubleshooting
+
+### Unrealistic Values / Values in GUI do not match value on device
+
+The most common explanation for issue would be that GUI is connected to wrong fridge. To check this, type `hostname` at a command prompt on the Triton control PC and ensure that this matches with the `Configuration < Edit Current Configuration... < IOCs < TRITON_0X < IPADDR` in IBEX. If the `hostname` does not match, replace the name within IBEX to the name on the control PC.
+
+### Channel mapping incorrect on remote interface
+
+Sometimes the channel mapping will appear to be correct from the Oxford software, but will not report correctly from the remote interface. For example, the fridge may report it has no `SORB` channel, even if one is correctly configured. This is a bug in the oxford instruments software running on the triton control PC. To get out of this state, the triton software (on the OI pc) must be restarted. **Check with cryogenics before doing this!**
+
