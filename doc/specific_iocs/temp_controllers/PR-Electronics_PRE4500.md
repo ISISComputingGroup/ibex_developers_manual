@@ -18,7 +18,7 @@ The device requires a MOXA NPort capable of RS-485 communication, e.g. an NPort 
 
 ### Bespoke Cable
 
-As the device communicates via RS-485 (**not** RS-232 as the vast majority of devices at ISIS do), a standard MOXA cable and adatpers cannot be used.
+As the device communicates via RS-485 (**not** RS-232 as the vast majority of devices at ISIS do), a standard MOXA cable and adapters cannot be used.
 
 Both the PRE4511 and MOXA NPort use RJ45 (aka 8P8C) device sockets (PRE4511 brought out to rear of chassis).  It is therefore simpler to create a bespoke cable to connect them.
 
@@ -27,6 +27,8 @@ Both the PRE4511 and MOXA NPort use RJ45 (aka 8P8C) device sockets (PRE4511 brou
 ``` {tip}
 The following diagram shows the pin numbering while looking **end-on** to the plug with the cable going **away** from the viewer ('barb' underneath):
 ![RJ45 / 8P8C plug](8P8C_plug_pin_diagram.svg.png)
+
+[Image source](https://commons.wikimedia.org/wiki/File:8P8C_plug_pin_diagram.svg)
 ```
 
 | MOXA NPort | PRE4511 | Colour     |
