@@ -47,6 +47,8 @@ e.g.
     GALIL_03__DEVSIM=1
     EGXCOLIM_01__RECSIM=1
 
+*Note inline comments are not possible within `globals.txt`, so should be on a new line. If added in line they may be read as part of the configuration value.*
+
 ## Reading a Compressed Hex PV
 
 Use the following to read a waveform PV of a compressed hexed string
