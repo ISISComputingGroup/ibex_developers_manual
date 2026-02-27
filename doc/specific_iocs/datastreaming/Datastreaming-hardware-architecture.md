@@ -44,7 +44,7 @@ architecture-beta
 
 ### VXI Control Board
 
-Each instrument will have exactly one VXI streaming control board. It controls "global" instrument state, gets timing signals and PPP fed into it. It it what `kafka_dae_control` primarily talks to begin and end event streaming.
+Each instrument will have exactly one VXI streaming control board. It controls "global" instrument state, gets timing signals and PPP fed into it. It is what `kafka_dae_control` primarily talks to begin and end event streaming.
 
 ### Timing Fanout board
 
